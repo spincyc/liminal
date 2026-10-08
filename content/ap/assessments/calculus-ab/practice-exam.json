@@ -1,0 +1,1563 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "practice-exam",
+  "kind": "practice-exam",
+  "title": "Practice exam (May 2027 format)",
+  "author": "ab-x",
+  "directions": "This full-length practice exam follows the May 2027 format of the AP® Calculus AB Exam. Section I has 42 multiple-choice questions: Part A, 29 questions in 62 minutes with no calculator, and Part B, 13 questions in 38 minutes with a graphing calculator required. Section II has 6 free-response questions worth 9 points each: Part A, 2 questions in 30 minutes with a graphing calculator, and Part B, 4 questions in 60 minutes with no calculator. Take each part under its time limit with no notes and no formula sheet, and use a calculator only where a part allows one. Unless a question says otherwise, angles are in radians, the domain of a function is the set of real numbers for which it is defined, exact answers are expected without a calculator, and calculator answers are given to three decimal places. Score Section I with the key (1 point per correct answer, no penalty for wrong answers) and Section II with the scoring guidelines, then record raw points by section and by unit. Raw points are for practice only; they are not an AP® score and are not converted to one.",
+  "figures": [
+    {
+      "id": "ab-pe-f1",
+      "alt": "Graph of y = h(x) for −3 ≤ x ≤ 5, made of line segments. A segment rises from a filled point at (−3, 1) to an open circle at (−1, 3). A filled point sits at (−1, 0). A segment falls from the open circle at (−1, 3) to (1, 1), and another rises from (1, 1) to a filled point at (3, 3). A last segment rises from an open circle at (3, −1) to a filled point at (5, 1)."
+    },
+    {
+      "id": "ab-pe-f2",
+      "alt": "Graph of y = f′(x) for −3 ≤ x ≤ 4, made of line segments joining the points (−3, −2), (−2, 0), (−1, 2), (1, 2), (2, 0), (3, −2), and (4, −1)."
+    },
+    {
+      "id": "ab-pe-f3",
+      "alt": "Slope field on the grid −2 ≤ x ≤ 2 and −2 ≤ y ≤ 2 at half-unit steps. Segments along the diagonal line through the origin with slope 1 are horizontal. Below that diagonal the segments slope upward, above it they slope downward, and they grow steeper farther from the diagonal."
+    },
+    {
+      "id": "ab-pe-f4",
+      "alt": "Graph of y = f(x) for −4 ≤ x ≤ 4. From (−4, 0) to (0, 0) the graph is the lower half of a circle centered at (−2, 0) with radius 2, reaching its lowest point at (−2, −2). A segment rises from (0, 0) to (2, 2), and another falls from (2, 2) to (4, −2), crossing the x-axis at (3, 0)."
+    },
+    {
+      "id": "ab-pe-f5",
+      "alt": "The region R enclosed between the bell-shaped curve y = 6/(1 + x^2), with its peak at (0, 6), and the upward-opening parabola y = x^2 − 1, with its vertex at (0, −1). The curves cross at two points symmetric about the y-axis; R is shaded."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 62,
+          "calculator": "none",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet. No calculator is allowed in this part.",
+          "items": [
+            {
+              "id": "ab-pe-mc01",
+              "prompt": "What is lim as x→3 of (x^2 − 2x − 3)/(2x^2 − 5x − 3)?",
+              "choices": [
+                "1/2",
+                "4/7",
+                "0",
+                "The limit does not exist."
+              ],
+              "key": "B",
+              "rationale": "Factor: (x − 3)(x + 1)/((2x + 1)(x − 3)) = (x + 1)/(2x + 1) for x ≠ 3, which approaches 4/7 as x→3.",
+              "distractorNotes": {
+                "A": "1/2 is the ratio of leading coefficients, which gives the limit as x→∞, not as x→3.",
+                "C": "The numerator approaches 0, but so does the denominator; 0/0 is not 0.",
+                "D": "The form 0/0 means more work is needed, not that the limit fails to exist."
+              },
+              "topics": [
+                "AB.1.6",
+                "AB.1.5"
+              ]
+            },
+            {
+              "id": "ab-pe-mc02",
+              "prompt": "The graph of the function h is shown. Which of the following limits does not exist?",
+              "figureIds": [
+                "ab-pe-f1"
+              ],
+              "choices": [
+                "lim as x→−1 of h(x)",
+                "lim as x→1 of h(x)",
+                "lim as x→3 of h(x)",
+                "lim as x→4 of h(x)"
+              ],
+              "key": "C",
+              "rationale": "As x→3 from the left, h(x) approaches 3; from the right, h(x) approaches −1. The one-sided limits differ, so the limit does not exist.",
+              "distractorNotes": {
+                "A": "Both sides approach 3, so the limit is 3; the value h(−1) = 0 does not affect the limit.",
+                "B": "The graph has a corner at x = 1, but both sides approach 1, so the limit is 1.",
+                "D": "h is continuous at x = 4, so the limit is h(4) = 0."
+              },
+              "topics": [
+                "AB.1.3",
+                "AB.1.2"
+              ]
+            },
+            {
+              "id": "ab-pe-mc03",
+              "prompt": "Let f(x) = (x^2 − 1)/(x^2 − 4x + 3). Which statement about the graph of f is true?",
+              "choices": [
+                "It has vertical asymptotes at x = 1 and at x = 3.",
+                "It has the horizontal asymptote y = 0.",
+                "It has a removable discontinuity at x = 3.",
+                "Its only vertical asymptote is x = 3, and y = 1 is a horizontal asymptote."
+              ],
+              "key": "D",
+              "rationale": "f(x) = (x − 1)(x + 1)/((x − 1)(x − 3)) = (x + 1)/(x − 3) for x ≠ 1. At x = 1 the limit is −1 (a hole); at x = 3 the numerator approaches 4 and the denominator 0, so x = 3 is a vertical asymptote. Equal degrees give y = 1/1 = 1.",
+              "distractorNotes": {
+                "A": "x = 1 is a zero of the denominator, but the common factor cancels, so x = 1 is a hole, not an asymptote.",
+                "B": "The degrees are equal, so the horizontal asymptote is the ratio of leading coefficients, 1.",
+                "C": "At x = 3 the numerator does not approach 0, so the discontinuity is infinite, not removable."
+              },
+              "topics": [
+                "AB.1.14",
+                "AB.1.15",
+                "AB.1.10"
+              ]
+            },
+            {
+              "id": "ab-pe-mc04",
+              "prompt": "A function f is continuous on [0, 2], with f(0) = 1 and f(2) = 0. Which of the following must be true?",
+              "choices": [
+                "f(c) = c for some c in (0, 2).",
+                "f(c) = 2 for some c in (0, 2).",
+                "f′(c) = −1/2 for some c in (0, 2).",
+                "f(x) ≤ 1 for all x in [0, 2]."
+              ],
+              "key": "A",
+              "rationale": "Let g(x) = f(x) − x, which is continuous on [0, 2], with g(0) = 1 > 0 and g(2) = −2 < 0. By the Intermediate Value Theorem g(c) = 0 for some c in (0, 2), so f(c) = c.",
+              "distractorNotes": {
+                "B": "2 is not between f(0) = 1 and f(2) = 0, so the Intermediate Value Theorem says nothing about it.",
+                "C": "The Mean Value Theorem needs f to be differentiable on (0, 2), which is not given.",
+                "D": "A continuous function can rise above 1 between the endpoints."
+              },
+              "topics": [
+                "AB.1.16",
+                "AB.1.12"
+              ]
+            },
+            {
+              "id": "ab-pe-mc05",
+              "prompt": "What is lim as h→0 of (tan(π/4 + h) − 1)/h?",
+              "choices": [
+                "0",
+                "√2",
+                "2",
+                "The limit does not exist."
+              ],
+              "key": "C",
+              "rationale": "Since tan(π/4) = 1, the limit is the derivative of tan x at x = π/4, which is sec^2(π/4) = (√2)^2 = 2.",
+              "distractorNotes": {
+                "A": "Substituting h = 0 gives 0/0, not 0; the expression is a difference quotient.",
+                "B": "√2 is sec(π/4); the derivative of tan x is sec^2 x.",
+                "D": "The limit is a derivative of a differentiable function, so it exists."
+              },
+              "topics": [
+                "AB.2.2",
+                "AB.2.10"
+              ]
+            },
+            {
+              "id": "ab-pe-mc06",
+              "prompt": "The graph of the function h is shown. At which value of x is h continuous but not differentiable?",
+              "figureIds": [
+                "ab-pe-f1"
+              ],
+              "choices": [
+                "x = −1",
+                "x = 1",
+                "x = 3",
+                "x = 4"
+              ],
+              "key": "B",
+              "rationale": "At x = 1 the graph is unbroken but has a corner: the slope is −1 on the left and 1 on the right, so h is continuous but not differentiable there.",
+              "distractorNotes": {
+                "A": "h is not continuous at x = −1, because h(−1) = 0 while the limit is 3.",
+                "C": "h has a jump at x = 3, so it is not continuous there.",
+                "D": "Near x = 4 the graph is a straight segment, so h is differentiable there."
+              },
+              "topics": [
+                "AB.2.4"
+              ]
+            },
+            {
+              "id": "ab-pe-mc07",
+              "prompt": "If y = (3x − 1)/(x^2 + 1), what is the value of dy/dx at x = 1?",
+              "choices": [
+                "1/2",
+                "3/2",
+                "−1/2",
+                "1"
+              ],
+              "key": "A",
+              "rationale": "By the quotient rule, dy/dx = [3(x^2 + 1) − (3x − 1)(2x)]/(x^2 + 1)^2. At x = 1: (6 − 4)/4 = 1/2.",
+              "distractorNotes": {
+                "B": "3/2 divides the derivatives, 3/(2x), which is not the quotient rule.",
+                "C": "This reverses the order of the terms in the numerator of the quotient rule.",
+                "D": "This forgets to square the denominator: (6 − 4)/2 = 1."
+              },
+              "topics": [
+                "AB.2.9"
+              ]
+            },
+            {
+              "id": "ab-pe-mc08",
+              "prompt": "Which is an equation of the line tangent to the graph of y = 2tan x − x at x = π/4?",
+              "choices": [
+                "y − 2 = 3(x − π/4)",
+                "y − (2 − π/4) = (2√2 − 1)(x − π/4)",
+                "y − (2 − π/4) = 4(x − π/4)",
+                "y − (2 − π/4) = 3(x − π/4)"
+              ],
+              "key": "D",
+              "rationale": "At x = π/4, y = 2·1 − π/4 = 2 − π/4. The slope is 2sec^2(π/4) − 1 = 2·2 − 1 = 3.",
+              "distractorNotes": {
+                "A": "The point's y-coordinate is 2 − π/4, not 2.",
+                "B": "This uses sec x instead of sec^2 x as the derivative of tan x.",
+                "C": "This drops the derivative of −x."
+              },
+              "topics": [
+                "AB.2.10",
+                "AB.2.6"
+              ]
+            },
+            {
+              "id": "ab-pe-mc09",
+              "prompt": "What is d/dx [ln(cos(2x))] for values of x where cos(2x) > 0?",
+              "choices": [
+                "−tan(2x)",
+                "−2tan(2x)",
+                "2tan(2x)",
+                "1/cos(2x)"
+              ],
+              "key": "B",
+              "rationale": "By the chain rule, d/dx ln(cos(2x)) = (1/cos(2x))·(−sin(2x))·2 = −2tan(2x).",
+              "distractorNotes": {
+                "A": "This omits the factor 2 from the innermost function 2x.",
+                "C": "The derivative of cos u is −sin u, so the sign is negative.",
+                "D": "This differentiates only the logarithm and stops."
+              },
+              "topics": [
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-pe-mc10",
+              "prompt": "If y = x·arcsin x, what is the value of dy/dx at x = 1/2?",
+              "choices": [
+                "√3/3",
+                "π/6 + √3/4",
+                "π/6 + √3/3",
+                "π/6 + 2√3/3"
+              ],
+              "key": "C",
+              "rationale": "dy/dx = arcsin x + x/√(1 − x^2). At x = 1/2: π/6 + (1/2)/(√3/2) = π/6 + 1/√3 = π/6 + √3/3.",
+              "distractorNotes": {
+                "A": "This omits the first term of the product rule, arcsin(1/2) = π/6.",
+                "B": "This uses √(1 − x^2) instead of 1/√(1 − x^2) as the derivative of arcsin x.",
+                "D": "This omits the factor x in the second term of the product rule."
+              },
+              "topics": [
+                "AB.3.4",
+                "AB.2.8"
+              ]
+            },
+            {
+              "id": "ab-pe-mc11",
+              "prompt": "The number of people waiting in line at a ticket booth is P(t), where t is measured in minutes. At t = 10, P′(10) = 3 and P″(10) = −0.5. Which statement is true?",
+              "choices": [
+                "At t = 10 the number of people in line is increasing at 3 people per minute, and that rate is decreasing.",
+                "At t = 10 the number of people in line is decreasing, because P″(10) < 0.",
+                "At t = 10 there are 3 people in line.",
+                "At t = 10 the number of people in line is decreasing at 0.5 people per minute."
+              ],
+              "key": "A",
+              "rationale": "P′(10) = 3 > 0 means the line grows at 3 people per minute at that instant; P″(10) < 0 means that growth rate is decreasing, by 0.5 people per minute per minute.",
+              "distractorNotes": {
+                "B": "The sign of P′, not of P″, tells whether the number of people is increasing.",
+                "C": "P′(10) is a rate, not the number of people.",
+                "D": "−0.5 is the rate of change of the rate, in people per minute per minute."
+              },
+              "topics": [
+                "AB.4.1",
+                "AB.4.3"
+              ]
+            },
+            {
+              "id": "ab-pe-mc12",
+              "prompt": "A particle moves along the x-axis with position x(t) = 2t^3 − 9t^2 + 12t for t ≥ 0. During which interval is the particle moving to the left and slowing down?",
+              "choices": [
+                "0 < t < 1",
+                "1 < t < 1.5",
+                "1.5 < t < 2",
+                "t > 2"
+              ],
+              "key": "C",
+              "rationale": "v(t) = 6t^2 − 18t + 12 = 6(t − 1)(t − 2) is negative only on (1, 2), and a(t) = 12t − 18 is positive for t > 1.5. On (1.5, 2), v < 0 and a > 0, so the particle moves left and slows down.",
+              "distractorNotes": {
+                "A": "v > 0 on (0, 1), so the particle moves to the right.",
+                "B": "On (1, 1.5) both v and a are negative, so the particle speeds up.",
+                "D": "v > 0 for t > 2, so the particle moves to the right."
+              },
+              "topics": [
+                "AB.4.2"
+              ]
+            },
+            {
+              "id": "ab-pe-mc13",
+              "prompt": "What is lim as x→2 of (x^2 − 4)/ln(x − 1)?",
+              "choices": [
+                "4",
+                "0",
+                "1/4",
+                "The limit does not exist."
+              ],
+              "key": "A",
+              "rationale": "Substitution gives 0/0 because ln 1 = 0. By L'Hospital's Rule the limit is lim as x→2 of 2x/(1/(x − 1)) = 2·2·1 = 4.",
+              "distractorNotes": {
+                "B": "The numerator approaches 0, but so does the denominator.",
+                "C": "This inverts the ratio of the derivatives.",
+                "D": "A 0/0 form needs further work; here L'Hospital's Rule gives a finite value."
+              },
+              "topics": [
+                "AB.4.7"
+              ]
+            },
+            {
+              "id": "ab-pe-mc14",
+              "prompt": "What value of c satisfies the conclusion of the Mean Value Theorem for f(x) = √x on the interval [1, 9]?",
+              "choices": [
+                "1/4",
+                "4",
+                "5",
+                "16"
+              ],
+              "key": "B",
+              "rationale": "The average rate of change is (3 − 1)/(9 − 1) = 1/4. Setting f′(c) = 1/(2√c) = 1/4 gives √c = 2, so c = 4.",
+              "distractorNotes": {
+                "A": "1/4 is the average rate of change, not the value of c.",
+                "C": "5 is the midpoint of the interval; the theorem does not say c is the midpoint.",
+                "D": "This solves 1/√c = 1/4, forgetting the factor 2 in f′."
+              },
+              "topics": [
+                "AB.5.1"
+              ]
+            },
+            {
+              "id": "ab-pe-mc15",
+              "prompt": "The graph of f′, the derivative of a differentiable function f, is shown for −3 ≤ x ≤ 4. At what value of x does f have a relative maximum?",
+              "figureIds": [
+                "ab-pe-f2"
+              ],
+              "choices": [
+                "x = −2",
+                "x = 1",
+                "x = 2",
+                "x = 3"
+              ],
+              "key": "C",
+              "rationale": "f has a relative maximum where f′ changes from positive to negative, which happens at x = 2.",
+              "distractorNotes": {
+                "A": "At x = −2, f′ changes from negative to positive, so f has a relative minimum.",
+                "B": "At x = 1, f′ is positive and only begins to decrease; this is a point of inflection of f.",
+                "D": "At x = 3, f′ is negative and has a minimum; f is decreasing there."
+              },
+              "topics": [
+                "AB.5.4",
+                "AB.5.3"
+              ]
+            },
+            {
+              "id": "ab-pe-mc16",
+              "prompt": "The graph of f′, the derivative of a differentiable function f, is shown for −3 ≤ x ≤ 4. On which interval is the graph of f concave down?",
+              "figureIds": [
+                "ab-pe-f2"
+              ],
+              "choices": [
+                "(−3, −2)",
+                "(−1, 1)",
+                "(−2, 2)",
+                "(1, 3)"
+              ],
+              "key": "D",
+              "rationale": "The graph of f is concave down where f′ is decreasing, which is on (1, 3).",
+              "distractorNotes": {
+                "A": "On (−3, −2), f′ is increasing, so f is concave up there.",
+                "B": "On (−1, 1), f′ is constant, so f is linear there.",
+                "C": "f′ is positive on (−2, 2), which makes f increasing, not concave down."
+              },
+              "topics": [
+                "AB.5.9",
+                "AB.5.6"
+              ]
+            },
+            {
+              "id": "ab-pe-mc17",
+              "prompt": "What is the absolute maximum value of f(x) = x + 2cos x on the interval [0, π]?",
+              "choices": [
+                "2",
+                "π/6 + √3",
+                "π − 2",
+                "5π/6 − √3"
+              ],
+              "key": "B",
+              "rationale": "f′(x) = 1 − 2sin x = 0 at x = π/6 and x = 5π/6. Candidates: f(0) = 2, f(π/6) = π/6 + √3 ≈ 2.26, f(5π/6) = 5π/6 − √3 ≈ 0.89, f(π) = π − 2 ≈ 1.14. The largest is π/6 + √3.",
+              "distractorNotes": {
+                "A": "2 is the value at the left endpoint, which is smaller than f(π/6).",
+                "C": "π − 2 is the value at the right endpoint.",
+                "D": "5π/6 − √3 is the value at the relative minimum."
+              },
+              "topics": [
+                "AB.5.5",
+                "AB.5.2"
+              ]
+            },
+            {
+              "id": "ab-pe-mc18",
+              "prompt": "A closed box with a square base must have a volume of 64 cubic centimeters. What is the least possible total surface area of the box?",
+              "choices": [
+                "48 cm^2",
+                "64 cm^2",
+                "96 cm^2",
+                "128 cm^2"
+              ],
+              "key": "C",
+              "rationale": "With base edge x and height 64/x^2, the surface area is S(x) = 2x^2 + 256/x. S′(x) = 4x − 256/x^2 = 0 gives x = 4, and S″ > 0 for x > 0, so the minimum is S(4) = 32 + 64 = 96.",
+              "distractorNotes": {
+                "A": "This counts only one square face and two of the four sides at x = 4.",
+                "B": "64 is the volume, not an area.",
+                "D": "This counts the square base and top twice."
+              },
+              "topics": [
+                "AB.5.11",
+                "AB.5.10"
+              ]
+            },
+            {
+              "id": "ab-pe-mc19",
+              "prompt": "At which points does the curve y^2 − 2xy + 3x^2 = 24 have a horizontal tangent line?",
+              "choices": [
+                "(2, 6) and (−2, −6)",
+                "(6, 2) and (−6, −2)",
+                "(2√3, 2√3) and (−2√3, −2√3)",
+                "(0, 2√6) and (0, −2√6)"
+              ],
+              "key": "A",
+              "rationale": "Implicitly, 2y·y′ − 2y − 2x·y′ + 6x = 0, so y′ = (y − 3x)/(y − x). Horizontal tangents need y = 3x with y ≠ x: 9x^2 − 6x^2 + 3x^2 = 6x^2 = 24, so x = ±2 and the points are (2, 6) and (−2, −6).",
+              "distractorNotes": {
+                "B": "These points do not satisfy y = 3x and are not on the curve.",
+                "C": "These points have y = x, where the denominator is 0: the tangent lines there are vertical.",
+                "D": "At x = 0 the slope is y/y = 1, not 0."
+              },
+              "topics": [
+                "AB.5.12",
+                "AB.3.2"
+              ]
+            },
+            {
+              "id": "ab-pe-mc20",
+              "prompt": "A continuous function r has the values shown.\n\n| t | 0 | 2 | 5 | 6 | 10 |\n| --- | --- | --- | --- | --- | --- |\n| r(t) | 4 | 6 | 3 | 5 | 1 |\n\nWhat is the trapezoidal-sum approximation of ∫ from 0 to 10 of r(t) dt using the four subintervals given by the table?",
+              "choices": [
+                "30",
+                "39.5",
+                "41.25",
+                "49"
+              ],
+              "key": "B",
+              "rationale": "The widths are 2, 3, 1, and 4: (4 + 6)/2·2 + (6 + 3)/2·3 + (3 + 5)/2·1 + (5 + 1)/2·4 = 10 + 13.5 + 4 + 12 = 39.5.",
+              "distractorNotes": {
+                "A": "30 is the right Riemann sum.",
+                "C": "This treats the four subintervals as equal, each 2.5 wide.",
+                "D": "49 is the left Riemann sum."
+              },
+              "topics": [
+                "AB.6.2"
+              ]
+            },
+            {
+              "id": "ab-pe-mc21",
+              "prompt": "Which value equals lim as n→∞ of the sum from k = 1 to n of (2/n)e^(1 + 2k/n)?",
+              "choices": [
+                "e^2 − 1",
+                "2(e^3 − e)",
+                "e^3",
+                "e^3 − e"
+              ],
+              "key": "D",
+              "rationale": "This is a right Riemann sum with Δx = 2/n and x_k = 1 + 2k/n on [1, 3], so the limit is ∫ from 1 to 3 of e^x dx = e^3 − e.",
+              "distractorNotes": {
+                "A": "This integrates over [0, 2] instead of [1, 3].",
+                "B": "The factor 2/n is Δx; it is not an extra factor of 2.",
+                "C": "This evaluates the antiderivative only at the upper limit."
+              },
+              "topics": [
+                "AB.6.3"
+              ]
+            },
+            {
+              "id": "ab-pe-mc22",
+              "prompt": "Let F(x) = ∫ from sin x to 2 of √(1 + t^2) dt. What is F′(x)?",
+              "choices": [
+                "−cos x·√(1 + sin^2 x)",
+                "cos x·√(1 + sin^2 x)",
+                "−√(1 + sin^2 x)",
+                "√(1 + sin^2 x)"
+              ],
+              "key": "A",
+              "rationale": "F(x) = −∫ from 2 to sin x of √(1 + t^2) dt, so by the Fundamental Theorem and the chain rule F′(x) = −√(1 + sin^2 x)·cos x.",
+              "distractorNotes": {
+                "B": "The variable limit is the lower limit, which makes the derivative negative.",
+                "C": "This omits the chain-rule factor cos x.",
+                "D": "This omits both the sign and the chain-rule factor."
+              },
+              "topics": [
+                "AB.6.4"
+              ]
+            },
+            {
+              "id": "ab-pe-mc23",
+              "prompt": "The function f is continuous and odd, and ∫ from 0 to 3 of f(x) dx = 4. What is ∫ from −3 to 3 of (f(x) + x^2) dx?",
+              "choices": [
+                "8",
+                "18",
+                "22",
+                "26"
+              ],
+              "key": "B",
+              "rationale": "Because f is odd, the areas on [−3, 0] and [0, 3] cancel: ∫ from −3 to 3 of f(x) dx = 0. Also ∫ from −3 to 3 of x^2 dx = [x^3/3] from −3 to 3 = 18. The total is 0 + 18 = 18.",
+              "distractorNotes": {
+                "A": "This doubles ∫ from 0 to 3 of f(x) dx and leaves out the x^2 term.",
+                "C": "This uses 4 as the integral of f over [−3, 3], ignoring the negative half.",
+                "D": "This treats f as even, so that ∫ from −3 to 3 of f(x) dx = 8."
+              },
+              "topics": [
+                "AB.6.6",
+                "AB.6.7"
+              ]
+            },
+            {
+              "id": "ab-pe-mc24",
+              "prompt": "What is ∫ from 1 to e of (ln x)^3/x dx?",
+              "choices": [
+                "1/3",
+                "1/4",
+                "3",
+                "(e^4 − 1)/4"
+              ],
+              "key": "B",
+              "rationale": "Let u = ln x, du = dx/x; the limits become 0 and 1. ∫ from 0 to 1 of u^3 du = 1/4.",
+              "distractorNotes": {
+                "A": "This lowers the power to 2 before integrating.",
+                "C": "This differentiates u^3 instead of integrating it, giving 3u^2 = 3 at u = 1.",
+                "D": "This substitutes but does not change the limits of integration."
+              },
+              "topics": [
+                "AB.6.9"
+              ]
+            },
+            {
+              "id": "ab-pe-mc25",
+              "prompt": "What is ∫ from −2 to −1 of 1/(x^2 + 4x + 5) dx?",
+              "choices": [
+                "π/4",
+                "ln 2",
+                "π/2",
+                "arctan 2 − π/4"
+              ],
+              "key": "A",
+              "rationale": "Complete the square: x^2 + 4x + 5 = (x + 2)^2 + 1. The integral is arctan(x + 2) from −2 to −1, which is arctan 1 − arctan 0 = π/4.",
+              "distractorNotes": {
+                "B": "This treats the integrand as the derivative of a logarithm, which it is not.",
+                "C": "This doubles the arctangent difference.",
+                "D": "This antidifferentiates as arctan x, without the shift to x + 2."
+              },
+              "topics": [
+                "AB.6.10"
+              ]
+            },
+            {
+              "id": "ab-pe-mc26",
+              "prompt": "The slope field for a differential equation is shown. Which differential equation could it represent?",
+              "figureIds": [
+                "ab-pe-f3"
+              ],
+              "choices": [
+                "dy/dx = x + y",
+                "dy/dx = x − y",
+                "dy/dx = y − x",
+                "dy/dx = xy"
+              ],
+              "key": "B",
+              "rationale": "The slopes are 0 along the line y = x, positive below it, and negative above it. That matches dy/dx = x − y.",
+              "distractorNotes": {
+                "A": "x + y is 0 along y = −x, not along y = x.",
+                "C": "y − x is 0 along y = x but positive above it, the opposite of the field shown.",
+                "D": "xy is 0 along both axes."
+              },
+              "topics": [
+                "AB.7.4",
+                "AB.7.3"
+              ]
+            },
+            {
+              "id": "ab-pe-mc27",
+              "prompt": "Which of the following is the general solution of the differential equation dy/dx = 3x^2·e^(−y)?",
+              "choices": [
+                "y = ln(x^3) + C",
+                "y = ln(x^3 + C)",
+                "y = −ln(x^3 + C)",
+                "y = x^3·e^(−y) + C"
+              ],
+              "key": "B",
+              "rationale": "Separate: e^y dy = 3x^2 dx. Integrating gives e^y = x^3 + C, so y = ln(x^3 + C). The constant belongs inside the logarithm because it is added before solving for y.",
+              "distractorNotes": {
+                "A": "The constant is added after taking the logarithm, which gives functions that do not satisfy the equation.",
+                "C": "This integrates e^(−y) instead of separating to e^y dy.",
+                "D": "This leaves y on both sides; it is not a solution in explicit form."
+              },
+              "topics": [
+                "AB.7.6",
+                "AB.7.2"
+              ]
+            },
+            {
+              "id": "ab-pe-mc28",
+              "prompt": "What is the average value of f(x) = sec^2 x on the interval [0, π/4]?",
+              "choices": [
+                "π/4",
+                "1",
+                "4/π",
+                "√2"
+              ],
+              "key": "C",
+              "rationale": "Average value = (1/(π/4))∫ from 0 to π/4 of sec^2 x dx = (4/π)(tan(π/4) − tan 0) = 4/π.",
+              "distractorNotes": {
+                "A": "π/4 is the length of the interval.",
+                "B": "1 is the value of the integral before dividing by the length.",
+                "D": "√2 is sec(π/4), a value of sec x, not the average of sec^2 x."
+              },
+              "topics": [
+                "AB.8.1"
+              ]
+            },
+            {
+              "id": "ab-pe-mc29",
+              "prompt": "Which expression gives the area of the region enclosed by the graphs of x = y^2 and x = y + 2?",
+              "choices": [
+                "∫ from −2 to 1 of (y + 2 − y^2) dy",
+                "∫ from −1 to 2 of (y^2 − y − 2) dy",
+                "∫ from −1 to 2 of (y + 2 − y^2) dy",
+                "∫ from 0 to 4 of (y + 2 − y^2) dy"
+              ],
+              "key": "C",
+              "rationale": "The curves meet where y^2 = y + 2, at y = −1 and y = 2. On (−1, 2) the line x = y + 2 is to the right of the parabola, so the area is ∫ from −1 to 2 of ((y + 2) − y^2) dy.",
+              "distractorNotes": {
+                "A": "These limits solve y^2 = −y + 2, not y^2 = y + 2.",
+                "B": "This subtracts right from left, which gives the negative of the area.",
+                "D": "0 and 4 are x-values of the intersections, not y-values."
+              },
+              "topics": [
+                "AB.8.5"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator required",
+          "minutes": 38,
+          "calculator": "graphing",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet. A graphing calculator is required for some questions. If the exact value is not one of the choices, choose the choice that best approximates it.",
+          "items": [
+            {
+              "id": "ab-pe-mc30",
+              "prompt": "What is the best approximation of lim as x→0 of (3^x − 2^x)/x?",
+              "choices": [
+                "0.405",
+                "0.693",
+                "1.000",
+                "1.099"
+              ],
+              "key": "A",
+              "rationale": "A table of values on both sides of 0 (for example x = ±0.001) gives about 0.405; the exact value is ln 3 − ln 2 = ln(1.5).",
+              "distractorNotes": {
+                "B": "0.693 is ln 2, the limit of (2^x − 1)/x alone.",
+                "C": "1.000 comes from comparing the bases 3 − 2, not the limit.",
+                "D": "1.099 is ln 3, the limit of (3^x − 1)/x alone."
+              },
+              "topics": [
+                "AB.1.4",
+                "AB.1.7"
+              ]
+            },
+            {
+              "id": "ab-pe-mc31",
+              "prompt": "Let f(x) = e^x − x^3. At how many values of x in the open interval (0, 5) does the graph of f have a horizontal tangent line?",
+              "choices": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "key": "C",
+              "rationale": "Horizontal tangents occur where f′(x) = e^x − 3x^2 = 0. Graphing f′ on (0, 5) shows two zeros, near x = 0.910 and x = 3.733.",
+              "distractorNotes": {
+                "A": "f′ does change sign on (0, 5); a viewing window that is too small can hide the zeros.",
+                "B": "This finds only the first zero and misses the one near 3.733.",
+                "D": "The third zero of e^x − 3x^2 is negative, near −0.459, outside (0, 5)."
+              },
+              "topics": [
+                "AB.2.7",
+                "AB.2.3"
+              ]
+            },
+            {
+              "id": "ab-pe-mc32",
+              "prompt": "Let f(x) = 2x + cos x, and let g be the inverse function of f. What is the value of g′(2)?",
+              "choices": [
+                "0.582",
+                "0.690",
+                "0.917",
+                "1.450"
+              ],
+              "key": "B",
+              "rationale": "Solve f(a) = 2a + cos a = 2: a ≈ 0.582, so g(2) ≈ 0.582. Then g′(2) = 1/f′(a) = 1/(2 − sin a) ≈ 0.690.",
+              "distractorNotes": {
+                "A": "0.582 is g(2), not g′(2).",
+                "C": "This evaluates f′ at 2 instead of at g(2).",
+                "D": "This is f′(g(2)) without taking the reciprocal."
+              },
+              "topics": [
+                "AB.3.3"
+              ]
+            },
+            {
+              "id": "ab-pe-mc33",
+              "prompt": "A particle moves along a line with velocity v(t) = t·sin t − 1 for t ≥ 0. What is the acceleration of the particle at the first time t > 0 at which it is at rest?",
+              "choices": [
+                "−2.225",
+                "0.491",
+                "0.898",
+                "1.389"
+              ],
+              "key": "D",
+              "rationale": "Solve t·sin t − 1 = 0: the first positive solution is t ≈ 1.114. Then a(t) = v′(t) = sin t + t·cos t, so a(1.114) ≈ 1.389.",
+              "distractorNotes": {
+                "A": "−2.225 is the acceleration at the second time the particle is at rest.",
+                "B": "0.491 is only the term t·cos t of the product rule.",
+                "C": "0.898 is only the term sin t of the product rule."
+              },
+              "topics": [
+                "AB.4.2"
+              ]
+            },
+            {
+              "id": "ab-pe-mc34",
+              "prompt": "Air is pumped into a spherical balloon at a rate of R(t) = 50 + 20sin t cubic centimeters per second. At t = 5 seconds the radius of the balloon is 6 centimeters. At what rate is the radius increasing at that instant?",
+              "choices": [
+                "0.068 cm/s",
+                "0.114 cm/s",
+                "0.204 cm/s",
+                "0.409 cm/s"
+              ],
+              "key": "A",
+              "rationale": "V = (4/3)πr^3 gives dV/dt = 4πr^2(dr/dt). With dV/dt = R(5) ≈ 30.822 and r = 6, dr/dt = 30.822/(144π) ≈ 0.068 cm/s.",
+              "distractorNotes": {
+                "B": "This evaluates sin 5 in degree mode.",
+                "C": "This uses (4/3)πr^2 as the derivative of the volume.",
+                "D": "This uses 4πr instead of 4πr^2."
+              },
+              "topics": [
+                "AB.4.5",
+                "AB.4.4"
+              ]
+            },
+            {
+              "id": "ab-pe-mc35",
+              "prompt": "The derivative of a function f is f′(x) = x·cos x + 1. At what value of x in the open interval (0, 5) does f have a relative minimum?",
+              "choices": [
+                "0.860",
+                "2.074",
+                "3.426",
+                "4.488"
+              ],
+              "key": "D",
+              "rationale": "f′(x) = 0 at x ≈ 2.074 and x ≈ 4.488 in (0, 5). At x ≈ 4.488, f′ changes from negative to positive, so f has a relative minimum there.",
+              "distractorNotes": {
+                "A": "At x ≈ 0.860, f′ has a relative maximum; f′ is positive there.",
+                "B": "At x ≈ 2.074, f′ changes from positive to negative: a relative maximum of f.",
+                "C": "At x ≈ 3.426, f′ has its minimum, which locates a point of inflection of f."
+              },
+              "topics": [
+                "AB.5.4",
+                "AB.5.3"
+              ]
+            },
+            {
+              "id": "ab-pe-mc36",
+              "prompt": "Let f(x) = x^4/4 − x^3 + 2sin(2x). At what value of x in the open interval (1, 3) does the graph of f have a point of inflection?",
+              "choices": [
+                "1.674",
+                "2.000",
+                "2.670",
+                "2.702"
+              ],
+              "key": "A",
+              "rationale": "f″(x) = 3x^2 − 6x − 8sin(2x). On (1, 3), f″ changes sign once, at x ≈ 1.674.",
+              "distractorNotes": {
+                "B": "2.000 is a zero of 3x^2 − 6x only; it ignores the term −8sin(2x).",
+                "C": "2.670 is a zero of f′, a relative extremum of f.",
+                "D": "2.702 is a zero of f‴, where f″ has an extremum."
+              },
+              "topics": [
+                "AB.5.9",
+                "AB.5.6"
+              ]
+            },
+            {
+              "id": "ab-pe-mc37",
+              "prompt": "Let F(x) = 5 + ∫ from 2 to x of ln(1 + t^3) dt. What is F(3)?",
+              "choices": [
+                "2.796",
+                "3.332",
+                "7.796",
+                "8.332"
+              ],
+              "key": "C",
+              "rationale": "F(3) = 5 + ∫ from 2 to 3 of ln(1 + t^3) dt ≈ 5 + 2.796 = 7.796.",
+              "distractorNotes": {
+                "A": "This omits the initial value 5.",
+                "B": "3.332 is F′(3) = ln 28, the rate, not the value.",
+                "D": "This adds the rate F′(3) to 5 instead of the accumulated change."
+              },
+              "topics": [
+                "AB.6.7",
+                "AB.6.4"
+              ]
+            },
+            {
+              "id": "ab-pe-mc38",
+              "prompt": "Let h(x) = ∫ from 0 to x of (2 − e^(sin t)) dt. At what value of x in the closed interval [0, 6] does h attain its absolute maximum?",
+              "choices": [
+                "x = 0",
+                "x = 0.766",
+                "x = 2.376",
+                "x = 6"
+              ],
+              "key": "D",
+              "rationale": "h′(x) = 2 − e^(sin x) = 0 when sin x = ln 2: x ≈ 0.766 and x ≈ 2.376. Candidates: h(0) = 0, h(0.766) ≈ 0.406, h(2.376) ≈ −0.332, h(6) ≈ 4.292. The absolute maximum is at x = 6.",
+              "distractorNotes": {
+                "A": "h(0) = 0 is smaller than h(6).",
+                "B": "x ≈ 0.766 is only a relative maximum; h(0.766) ≈ 0.406 < h(6).",
+                "C": "At x ≈ 2.376, h has a relative minimum."
+              },
+              "topics": [
+                "AB.6.5",
+                "AB.5.5"
+              ]
+            },
+            {
+              "id": "ab-pe-mc39",
+              "prompt": "The number of active users of a new app grows at a rate proportional to the number of users. There are 250 users at t = 0 and 400 users at t = 3 weeks. At what time will there be 1000 users?",
+              "choices": [
+                "2.950 weeks",
+                "6.000 weeks",
+                "8.849 weeks",
+                "15.000 weeks"
+              ],
+              "key": "C",
+              "rationale": "U(t) = 250e^(kt) with e^(3k) = 1.6, so k = (ln 1.6)/3. Solve 250e^(kt) = 1000: t = (ln 4)/k = 3ln 4/ln 1.6 ≈ 8.849 weeks.",
+              "distractorNotes": {
+                "A": "This omits the factor 3 in k: it computes ln 4/ln 1.6.",
+                "B": "This assumes the number of users doubles every 3 weeks.",
+                "D": "This assumes linear growth of 50 users per week."
+              },
+              "topics": [
+                "AB.7.8"
+              ]
+            },
+            {
+              "id": "ab-pe-mc40",
+              "prompt": "A particle moves along a line with velocity v(t) = ln(1 + t^2) − 1.2 for 0 ≤ t ≤ 3. What is the total distance the particle travels during this time?",
+              "choices": [
+                "−0.194",
+                "0.194",
+                "1.523",
+                "1.939"
+              ],
+              "key": "D",
+              "rationale": "Total distance is ∫ from 0 to 3 of |ln(1 + t^2) − 1.2| dt ≈ 1.939. The velocity changes sign at t ≈ 1.523.",
+              "distractorNotes": {
+                "A": "−0.194 is the displacement, ∫ from 0 to 3 of v(t) dt.",
+                "B": "0.194 is the magnitude of the displacement, which is not the distance because v changes sign.",
+                "C": "1.523 is the time when the particle changes direction."
+              },
+              "topics": [
+                "AB.8.2"
+              ]
+            },
+            {
+              "id": "ab-pe-mc41",
+              "prompt": "The base of a solid is the region bounded by y = ln x, the x-axis, and the line x = 3. Each cross section perpendicular to the x-axis is a square. What is the volume of the solid?",
+              "choices": [
+                "0.404",
+                "1.029",
+                "1.296",
+                "3.233"
+              ],
+              "key": "B",
+              "rationale": "Each square has side ln x, so the volume is ∫ from 1 to 3 of (ln x)^2 dx ≈ 1.029. The region starts at x = 1, where ln x = 0.",
+              "distractorNotes": {
+                "A": "This uses semicircles, (π/8)(ln x)^2.",
+                "C": "This is the area of the base, ∫ from 1 to 3 of ln x dx, not the volume.",
+                "D": "This uses discs, π(ln x)^2, as if revolving about the x-axis."
+              },
+              "topics": [
+                "AB.8.7"
+              ]
+            },
+            {
+              "id": "ab-pe-mc42",
+              "prompt": "Let R be the region bounded by the graph of y = e^(x/2), the horizontal line y = 1, and the vertical line x = 2. What is the volume of the solid generated when R is revolved about the line y = 1?",
+              "choices": [
+                "4.513",
+                "4.762",
+                "13.789",
+                "20.072"
+              ],
+              "key": "B",
+              "rationale": "The radius is the distance to y = 1, e^(x/2) − 1, for 0 ≤ x ≤ 2. Volume = π∫ from 0 to 2 of (e^(x/2) − 1)^2 dx ≈ 4.762.",
+              "distractorNotes": {
+                "A": "This omits the square: π∫ (e^(x/2) − 1) dx.",
+                "C": "This uses washers about the x-axis, π∫ ((e^(x/2))^2 − 1^2) dx.",
+                "D": "This revolves the whole region under y = e^(x/2) about the x-axis."
+              },
+              "topics": [
+                "AB.8.10",
+                "AB.8.9"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator required",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show your work: write the integral, derivative, or equation you use before its value. Calculator answers are to three decimal places. Justify answers when a question asks you to.",
+          "items": [
+            {
+              "id": "ab-pe-fr1",
+              "prompt": "Paper for recycling arrives at a collection bin at a rate modeled by A(t) = 24t·e^(−0.3t) kilograms per hour, for 0 ≤ t ≤ 10, where t is measured in hours. A compactor removes paper from the bin at a constant rate of 15 kilograms per hour throughout this time. At time t = 0 the bin holds 50 kilograms of paper.",
+              "context": true,
+              "topics": [
+                "AB.8.3",
+                "AB.4.1",
+                "AB.5.5",
+                "AB.6.7"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the total mass of paper that arrives at the bin during the time interval 0 ≤ t ≤ 10.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the integral ∫ from 0 to 10 of A(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 213.560 kilograms (accept 213.559–213.561)."
+                    }
+                  ],
+                  "answer": "∫ from 0 to 10 of A(t) dt ≈ 213.560 kilograms.",
+                  "steps": [
+                    "The total arriving is the integral of the arrival rate over 0 ≤ t ≤ 10.",
+                    "The calculator gives ∫ from 0 to 10 of 24t·e^(−0.3t) dt ≈ 213.560."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find A′(6). Using correct units, interpret the meaning of A′(6) in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A′(6) = −3.174 (accept −3.175 to −3.173)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interpretation: at t = 6 hours the rate at which paper arrives is decreasing by 3.174 kilograms per hour per hour."
+                    }
+                  ],
+                  "answer": "A′(6) ≈ −3.174. At time t = 6 hours, the rate at which paper arrives at the bin is decreasing at 3.174 kilograms per hour per hour.",
+                  "steps": [
+                    "The calculator's numerical derivative gives A′(6) ≈ −3.174 (exactly, A′(t) = 24e^(−0.3t)(1 − 0.3t)).",
+                    "A is in kilograms per hour and t in hours, so A′ is in kilograms per hour per hour; the negative sign means the arrival rate is falling."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Is the amount of paper in the bin increasing or decreasing at time t = 4? Give a reason for your answer.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Increasing, because A(4) − 15 ≈ 13.915 > 0 (A(4) ≈ 28.915 exceeds the removal rate 15)."
+                    }
+                  ],
+                  "answer": "Increasing, because A(4) ≈ 28.915 > 15, so the net rate A(4) − 15 is positive.",
+                  "steps": [
+                    "The amount changes at the net rate A(t) − 15.",
+                    "A(4) = 96e^(−1.2) ≈ 28.915, so the net rate is about 13.915 kilograms per hour > 0."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "At what time t, for 0 ≤ t ≤ 10, is the amount of paper in the bin greatest? Find the greatest amount. Justify your answer.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Considers A(t) − 15 = 0, the critical points of the amount."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds t ≈ 8.825 (and t ≈ 0.793)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies: the amount is 50 at t = 0 and about 113.560 at t = 10 and has a relative minimum at t ≈ 0.793, so the maximum is at t ≈ 8.825; or a sign analysis of A(t) − 15 together with the endpoints."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Greatest amount about 115.400 kilograms (accept 115.399–115.401)."
+                    }
+                  ],
+                  "answer": "The amount is greatest at t ≈ 8.825 hours, when the bin holds about 115.400 kilograms.",
+                  "steps": [
+                    "The amount is P(t) = 50 + ∫ from 0 to t of (A(s) − 15) ds, so P′(t) = A(t) − 15.",
+                    "A(t) − 15 = 0 at t ≈ 0.793 and t ≈ 8.825; P′ < 0 on (0, 0.793), P′ > 0 on (0.793, 8.825), and P′ < 0 on (8.825, 10).",
+                    "Candidates: P(0) = 50, P(8.825) = 50 + ∫ from 0 to 8.825 of (A(t) − 15) dt ≈ 115.400, P(10) = 50 + 213.560 − 150 ≈ 113.560.",
+                    "The greatest amount is about 115.400 kilograms, at t ≈ 8.825 hours."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-pe-fr2",
+              "prompt": "Let R be the region enclosed by the graphs of y = 6/(1 + x^2) and y = x^2 − 1, as shown in the figure.",
+              "figureIds": [
+                "ab-pe-f5"
+              ],
+              "topics": [
+                "AB.8.4",
+                "AB.8.8",
+                "AB.8.12",
+                "AB.6.4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the area of the region R enclosed by the two graphs.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the limits x = ±1.627 (that is, ±7^(1/4))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the integrand 6/(1 + x^2) − (x^2 − 1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Area 12.619 (accept 12.618–12.620)."
+                    }
+                  ],
+                  "answer": "The graphs meet at x = ±1.627; the area is ∫ from −1.627 to 1.627 of (6/(1 + x^2) − x^2 + 1) dx ≈ 12.619.",
+                  "steps": [
+                    "Solve 6/(1 + x^2) = x^2 − 1 (or x^4 = 7): x = ±1.627; store the positive value as q.",
+                    "On (−q, q) the graph of y = 6/(1 + x^2) is on top.",
+                    "The calculator gives the area ≈ 12.619."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "A solid has R as its base. Its cross sections taken perpendicular to the x-axis are semicircles with diameters spanning R. Find the volume of the solid.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the integrand (π/8)(6/(1 + x^2) − x^2 + 1)^2 with the limits ±q."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Volume 25.422 (accept 25.421–25.423)."
+                    }
+                  ],
+                  "answer": "Volume = ∫ from −q to q of (π/8)(6/(1 + x^2) − x^2 + 1)^2 dx ≈ 25.422.",
+                  "steps": [
+                    "A semicircle with diameter d has area (1/2)π(d/2)^2 = (π/8)d^2.",
+                    "Here d = 6/(1 + x^2) − (x^2 − 1), so the volume is ∫ from −q to q of (π/8)d^2 dx ≈ 25.422."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "R is rotated about the line y = −2, which lies below R. Find the volume of the resulting solid.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses π and the limits ±q in a washer setup."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the integrand (6/(1 + x^2) + 2)^2 − (x^2 − 1 + 2)^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Volume 317.844 (accept 317.843–317.845)."
+                    }
+                  ],
+                  "answer": "Volume = π∫ from −q to q of [(6/(1 + x^2) + 2)^2 − (x^2 + 1)^2] dx ≈ 317.844.",
+                  "steps": [
+                    "The line y = −2 is below R; the outer radius is 6/(1 + x^2) + 2 and the inner radius is (x^2 − 1) + 2 = x^2 + 1.",
+                    "π∫ from −q to q of (R^2 − r^2) dx ≈ 317.844."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "For 0 < h ≤ 7^(1/4), let K(h) be the area of the part of R that lies between the vertical lines x = −h and x = h. Find K′(1).",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "K′(1) = 6, with K′(h) = 2(6/(1 + h^2) − h^2 + 1) by the Fundamental Theorem."
+                    }
+                  ],
+                  "answer": "K′(1) = 6.",
+                  "steps": [
+                    "K(h) = ∫ from −h to h of (6/(1 + x^2) − x^2 + 1) dx, so by the Fundamental Theorem and symmetry K′(h) = 2(6/(1 + h^2) − h^2 + 1).",
+                    "K′(1) = 2(3 − 0) = 6."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 60,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show your work and give exact answers. Justify answers when a question asks you to; answers without supporting work may not earn credit.",
+          "items": [
+            {
+              "id": "ab-pe-fr3",
+              "prompt": "The continuous function f is defined on the closed interval [−4, 4]. The graph of f consists of the lower half of the circle with center (−2, 0) and radius 2 for −4 ≤ x ≤ 0, and two line segments for 0 ≤ x ≤ 4, as shown. Let g(x) = ∫ from 0 to x of f(t) dt.",
+              "figureIds": [
+                "ab-pe-f4"
+              ],
+              "topics": [
+                "AB.6.4",
+                "AB.6.5",
+                "AB.5.4",
+                "AB.5.9",
+                "AB.5.5"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the graph of f to evaluate g(−4) and g(4).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "g(−4) = 2π."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "g(4) = 2."
+                    }
+                  ],
+                  "answer": "g(−4) = 2π and g(4) = 2.",
+                  "steps": [
+                    "g(−4) = ∫ from 0 to −4 of f(t) dt = −∫ from −4 to 0 of f(t) dt; the half-disk below the axis has area 2π, so ∫ from −4 to 0 of f(t) dt = −2π and g(−4) = 2π.",
+                    "g(4) = ∫ from 0 to 4 of f(t) dt = 2 + 1 − 1 = 2 (triangles on [0, 2], [2, 3], and [3, 4])."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "At what values of x in the open interval (−4, 4) does g have a relative minimum or a relative maximum? Identify which, and justify your answers.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Relative minimum at x = 0 because g′ = f changes from negative to positive."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Relative maximum at x = 3 because g′ = f changes from positive to negative."
+                    }
+                  ],
+                  "answer": "g has a relative minimum at x = 0 and a relative maximum at x = 3.",
+                  "steps": [
+                    "g′(x) = f(x), which is 0 at x = −4, 0, 3, and 4.",
+                    "f < 0 on (−4, 0) and f > 0 on (0, 3): relative minimum at x = 0.",
+                    "f > 0 on (0, 3) and f < 0 on (3, 4): relative maximum at x = 3."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the x-coordinates of all points of inflection of the graph of g on (−4, 4). Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Points of inflection at x = −2 and x = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justification: g″ = f′ changes sign there (f changes from decreasing to increasing at x = −2 and from increasing to decreasing at x = 2)."
+                    }
+                  ],
+                  "answer": "x = −2 and x = 2.",
+                  "steps": [
+                    "g″ = f′, so the graph of g changes concavity where f changes between increasing and decreasing.",
+                    "f decreases on (−4, −2), increases on (−2, 2), and decreases on (2, 4), so the inflection points are at x = −2 and x = 2; at x = 0, f is increasing on both sides."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the absolute maximum value of g on the closed interval [−4, 4]. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Considers the critical points x = 0 and x = 3 and the endpoints x = −4 and x = 4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Values: g(−4) = 2π, g(0) = 0, g(3) = 3, g(4) = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Absolute maximum value 2π, at x = −4, with the comparison of candidates."
+                    }
+                  ],
+                  "answer": "The absolute maximum value is 2π, at x = −4.",
+                  "steps": [
+                    "Candidates: endpoints −4 and 4, and the critical points 0 and 3.",
+                    "g(−4) = 2π ≈ 6.28, g(0) = 0, g(3) = 2 + 1 = 3, g(4) = 2.",
+                    "The largest is g(−4) = 2π."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-pe-fr4",
+              "prompt": "The area covered by algae on the surface of a pond is A(t) square meters, where t is time in weeks, 0 ≤ t ≤ 12. The area satisfies the differential equation dA/dt = A(6 − t)/12, and at time t = 0 the covered area is 1 square meter.",
+              "context": true,
+              "topics": [
+                "AB.7.7",
+                "AB.7.6",
+                "AB.7.1",
+                "AB.4.6",
+                "AB.5.2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Write an equation for the line tangent to the graph of A at t = 0. Use the tangent line to approximate A(1).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope 1/2 at (0, 1), so the tangent line is A = 1 + t/2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A(1) ≈ 3/2 square meters."
+                    }
+                  ],
+                  "answer": "A = 1 + t/2; A(1) ≈ 3/2 square meters.",
+                  "steps": [
+                    "At t = 0, A = 1: dA/dt = 1·6/12 = 1/2.",
+                    "Tangent line: A = 1 + (1/2)t, so A(1) ≈ 3/2."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find d^2A/dt^2 in terms of A and t. Use it to determine whether the approximation in part (a) is an overestimate or an underestimate of A(1). Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "d^2A/dt^2 = (dA/dt)(6 − t)/12 − A/12 = A((6 − t)^2 − 12)/144."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Underestimate, because d^2A/dt^2 = 1/6 > 0 at (0, 1), so the graph is concave up near t = 0."
+                    }
+                  ],
+                  "answer": "d^2A/dt^2 = A((6 − t)^2 − 12)/144; at (0, 1) it equals 1/6 > 0, so the graph of A is concave up and the approximation is an underestimate.",
+                  "steps": [
+                    "Product rule: d^2A/dt^2 = (dA/dt)(6 − t)/12 + A(−1)/12.",
+                    "Substitute dA/dt = A(6 − t)/12: d^2A/dt^2 = A(6 − t)^2/144 − A/12 = A((6 − t)^2 − 12)/144.",
+                    "At t = 0, A = 1: (36 − 12)/144 = 1/6 > 0, so the tangent line lies below the graph near t = 0."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find A(t), the particular solution to the differential equation with A(0) = 1.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates the variables: dA/A = (6 − t)/12 dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Antiderivatives: ln|A| = (12t − t^2)/24 + C (or t/2 − t^2/24 + C)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses A(0) = 1 to get C = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves: A(t) = e^((12t − t^2)/24)."
+                    }
+                  ],
+                  "answer": "A(t) = e^((12t − t^2)/24).",
+                  "steps": [
+                    "Separate: (1/A) dA = ((6 − t)/12) dt.",
+                    "Integrate: ln|A| = t/2 − t^2/24 + C.",
+                    "At t = 0: ln 1 = 0 = C.",
+                    "A > 0, so A(t) = e^(t/2 − t^2/24) = e^((12t − t^2)/24)."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "According to the model, at what time t in 0 ≤ t ≤ 12 is the area covered by algae greatest, and what is that area?",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "t = 6 weeks, because dA/dt changes from positive to negative there (A > 0), with greatest area e^(3/2) square meters."
+                    }
+                  ],
+                  "answer": "At t = 6 weeks; the greatest area is e^(3/2) square meters.",
+                  "steps": [
+                    "Since A > 0, dA/dt has the sign of 6 − t: positive before t = 6 and negative after, so A has its absolute maximum on [0, 12] at t = 6.",
+                    "A(6) = e^((72 − 36)/24) = e^(3/2)."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-pe-fr5",
+              "prompt": "Water flows through a gate into an irrigation canal. The rate of flow is W(t) cubic meters per minute, where W is a differentiable function of t, the number of minutes after the gate opens. Selected values of W(t) are shown.\n\n| t (min) | 0 | 4 | 10 | 16 | 20 |\n| --- | --- | --- | --- | --- | --- |\n| W(t) (m^3/min) | 12 | 18 | 21 | 15 | 9 |",
+              "context": true,
+              "topics": [
+                "AB.6.2",
+                "AB.2.3",
+                "AB.5.1",
+                "AB.8.1",
+                "AB.1.16"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the data in the table to estimate W′(13). Show the computation that leads to your answer, and indicate units of measure.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "W′(13) ≈ (W(16) − W(10))/(16 − 10) = −1 cubic meter per minute per minute."
+                    }
+                  ],
+                  "answer": "W′(13) ≈ (15 − 21)/(16 − 10) = −1 cubic meter per minute per minute.",
+                  "steps": [
+                    "13 lies between the table values 10 and 16, which bracket it most closely.",
+                    "The difference quotient is −6/6 = −1, in cubic meters per minute per minute."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use a trapezoidal sum with the four subintervals indicated by the table to approximate ∫ from 0 to 20 of W(t) dt. Using correct units, explain the meaning of ∫ from 0 to 20 of W(t) dt in the context of the problem.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Trapezoidal sum with the table's widths: (12 + 18)/2·4 + (18 + 21)/2·6 + (21 + 15)/2·6 + (15 + 9)/2·4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Value 333."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Meaning: the total volume of water, in cubic meters, that flows through the gate during the first 20 minutes."
+                    }
+                  ],
+                  "answer": "About 333 cubic meters. The integral is the total volume of water, in cubic meters, that flows through the gate from t = 0 to t = 20 minutes.",
+                  "steps": [
+                    "Trapezoids: 60 + 117 + 108 + 48 = 333.",
+                    "W is a rate in cubic meters per minute, so its integral over [0, 20] is a volume in cubic meters."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Must there be a time t, for 0 < t < 20, at which W′(t) = 0? Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the Intermediate Value Theorem: W is continuous and W(16) = 15 < 18 < 21 = W(10), so W(c) = 18 for some c in (10, 16)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies the Mean Value Theorem (or Rolle's theorem) on [4, c], where W(4) = W(c) = 18."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes yes, citing that W is differentiable (hence continuous). An argument with the Extreme Value Theorem on [4, 16] (an interior maximum, where W′ = 0) also earns these points."
+                    }
+                  ],
+                  "answer": "Yes. Because W is differentiable, it is continuous. Since W(16) = 15 < 18 < 21 = W(10), the Intermediate Value Theorem gives c in (10, 16) with W(c) = 18 = W(4). By the Mean Value Theorem on [4, c], W′(t) = (W(c) − W(4))/(c − 4) = 0 for some t in (4, c).",
+                  "steps": [
+                    "Differentiability makes W continuous on every closed interval, so both theorems apply.",
+                    "W takes the value 18 at t = 4 and again at some c between 10 and 16.",
+                    "Equal values at t = 4 and t = c force a horizontal tangent between them."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "For 0 ≤ t ≤ 20, the rate of flow is modeled by M(t) = 12 + (9/5)t − t^2/10 cubic meters per minute. Use the model to find the average rate of flow over 0 ≤ t ≤ 20.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes (1/20)∫ from 0 to 20 of M(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Average rate 50/3 cubic meters per minute."
+                    }
+                  ],
+                  "answer": "(1/20)∫ from 0 to 20 of (12 + (9/5)t − t^2/10) dt = 50/3 cubic meters per minute.",
+                  "steps": [
+                    "∫ from 0 to 20 of M(t) dt = [12t + (9/10)t^2 − t^3/30] from 0 to 20 = 240 + 360 − 800/3 = 1000/3.",
+                    "Average = (1/20)(1000/3) = 50/3 ≈ 16.7 cubic meters per minute."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-pe-fr6",
+              "prompt": "Consider the curve given by y^3 − 3xy + x^2 = 3.",
+              "topics": [
+                "AB.3.2",
+                "AB.4.6",
+                "AB.5.12",
+                "AB.3.6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Show that dy/dx = (3y − 2x)/(3y^2 − 3x).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates implicitly: 3y^2(dy/dx) − 3y − 3x(dy/dx) + 2x = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves for dy/dx to obtain the given expression."
+                    }
+                  ],
+                  "answer": "3y^2(dy/dx) − 3y − 3x(dy/dx) + 2x = 0, so (3y^2 − 3x)(dy/dx) = 3y − 2x and dy/dx = (3y − 2x)/(3y^2 − 3x).",
+                  "steps": [
+                    "The product rule on 3xy gives 3y + 3x(dy/dx).",
+                    "Collect the dy/dx terms and divide by 3y^2 − 3x."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Write an equation for the line tangent to the curve at the point (1, 2). Use it to approximate the y-coordinate of the point on the curve near (1, 2) with x = 1.2.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope 4/9 at (1, 2), so the tangent line is y = 2 + (4/9)(x − 1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "y ≈ 2 + (4/9)(0.2) = 94/45 (about 2.089)."
+                    }
+                  ],
+                  "answer": "y = 2 + (4/9)(x − 1); at x = 1.2, y ≈ 94/45 ≈ 2.089.",
+                  "steps": [
+                    "(1, 2) is on the curve: 8 − 6 + 1 = 3.",
+                    "dy/dx = (6 − 2)/(12 − 3) = 4/9.",
+                    "2 + (4/9)(0.2) = 2 + 4/45 = 94/45."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Show that the point (1, −1) is on the curve and that the line tangent to the curve there is vertical.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Verifies −1 + 3 + 1 = 3 and finds that the denominator 3y^2 − 3x is 0 at (1, −1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Notes the numerator 3y − 2x = −5 ≠ 0, so the tangent line is vertical."
+                    }
+                  ],
+                  "answer": "(−1)^3 − 3(1)(−1) + 1 = 3, so the point is on the curve. At (1, −1), 3y^2 − 3x = 0 while 3y − 2x = −5 ≠ 0, so dy/dx is undefined with a nonzero numerator and the tangent line is vertical (x = 1).",
+                  "steps": [
+                    "Substitute x = 1, y = −1 into the equation of the curve.",
+                    "A zero denominator with a nonzero numerator means dx/dy = 0: the tangent line is vertical."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Evaluate the second derivative d^2y/dx^2 at (1, 2), and use its sign to decide whether the tangent-line value from part (b) is too large or too small.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates dy/dx with the quotient rule, using dy/dx = 4/9 at (1, 2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "d^2y/dx^2 = −46/243."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Overestimate, because d^2y/dx^2 < 0 means the curve is concave down near (1, 2), so the tangent line lies above it."
+                    }
+                  ],
+                  "answer": "d^2y/dx^2 = −46/243 at (1, 2); the approximation is an overestimate because the curve is concave down there.",
+                  "steps": [
+                    "With N = 3y − 2x and D = 3y^2 − 3x, d^2y/dx^2 = (N′D − ND′)/D^2, where N′ = 3(dy/dx) − 2 and D′ = 6y(dy/dx) − 3.",
+                    "At (1, 2) with dy/dx = 4/9: N = 4, D = 9, N′ = 4/3 − 2 = −2/3, D′ = 16/3 − 3 = 7/3.",
+                    "d^2y/dx^2 = ((−2/3)(9) − 4(7/3))/81 = (−6 − 28/3)/81 = −46/243 < 0."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "unit-2",
+  "kind": "unit-test",
+  "unitId": "u2",
+  "title": "Unit 2 test: Differentiation: Definition and Fundamental Properties",
+  "author": "ab-1",
+  "directions": "This practice test has two sections. Section I is multiple choice: Part A without a calculator and Part B with a graphing calculator. Section II is free response: Part A with a graphing calculator and Part B without one. Show your work on free-response questions; answers without supporting work may not earn full credit. Unless a question says otherwise, angles are in radians, exact answers are expected without a calculator, and calculator answers are given to three decimal places. Results are raw points for practice only.",
+  "figures": [
+    {
+      "id": "ab-u2-f1",
+      "alt": "Graph of y = f(x) for −3 ≤ x ≤ 5. A segment rises from a filled point at (−3, 1) to (−1, 3), where a second segment falls to an open circle at (2, 0). A filled point sits near (2, 0.74), where a curve begins that rises, becomes vertical as it passes through (4, 2), and continues to a filled point at (5, 3)."
+    },
+    {
+      "id": "ab-u2-f2",
+      "alt": "Graph of y = g(x) for −4 ≤ x ≤ 4 made of three segments joining the points (−4, −2), (0, 2), (2, 2), and (4, −2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Choose the best answer. No calculator is allowed.",
+          "items": [
+            {
+              "id": "ab-u2-mc01",
+              "prompt": "What is the average rate of change of f(x) = x^3 − 2x on the interval [−1, 2]?",
+              "choices": [
+                "3",
+                "1",
+                "4",
+                "−1"
+              ],
+              "key": "B",
+              "rationale": "f(2) = 4 and f(−1) = 1, so (4 − 1)/(2 − (−1)) = 3/3 = 1.",
+              "distractorNotes": {
+                "A": "3 is the change in f without dividing by the interval length.",
+                "C": "4 is f(2), a value rather than a rate.",
+                "D": "Reverses the subtraction in the numerator only."
+              },
+              "topics": [
+                "AB.2.1"
+              ]
+            },
+            {
+              "id": "ab-u2-mc02",
+              "prompt": "What is lim as h→0 of ((3 + h)^4 − 81)/h?",
+              "choices": [
+                "81",
+                "0",
+                "27",
+                "108"
+              ],
+              "key": "D",
+              "rationale": "This is the derivative of x^4 at x = 3: 4·3^3 = 108.",
+              "distractorNotes": {
+                "A": "81 is 3^4, the function value.",
+                "B": "Substitution gives 0/0, which is not 0.",
+                "C": "27 is 3^3, missing the factor 4 from the power rule."
+              },
+              "topics": [
+                "AB.2.2",
+                "AB.2.5"
+              ]
+            },
+            {
+              "id": "ab-u2-mc03",
+              "prompt": "Selected values of a differentiable function f are shown.\n\n| x | 2 | 4 | 7 | 9 |\n| --- | --- | --- | --- | --- |\n| f(x) | 10 | 16 | 25 | 28 |\n\nUsing the data, what is the best estimate of f′(5)?",
+              "choices": [
+                "3",
+                "9",
+                "18/7",
+                "5"
+              ],
+              "key": "A",
+              "rationale": "5 lies between 4 and 7, so f′(5) ≈ (25 − 16)/(7 − 4) = 3.",
+              "distractorNotes": {
+                "B": "9 is the change in f without dividing by 3.",
+                "C": "18/7 is the average rate over the whole table, not near x = 5.",
+                "D": "5 is the input, not a rate."
+              },
+              "topics": [
+                "AB.2.3"
+              ]
+            },
+            {
+              "id": "ab-u2-mc04",
+              "prompt": "The graph of f is shown. At how many values of x in the open interval (−3, 5) is f not differentiable?",
+              "figureIds": [
+                "ab-u2-f1"
+              ],
+              "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "key": "C",
+              "rationale": "f fails to be differentiable at x = −1 (corner), x = 2 (jump discontinuity), and x = 4 (vertical tangent).",
+              "distractorNotes": {
+                "A": "Counts only the jump.",
+                "B": "Misses the vertical tangent at x = 4, where the slope is unbounded.",
+                "D": "Counts a point where f is smooth."
+              },
+              "topics": [
+                "AB.2.4"
+              ]
+            },
+            {
+              "id": "ab-u2-mc05",
+              "prompt": "If y = (x^3 − 4√x)/x for x > 0, what is dy/dx?",
+              "choices": [
+                "2x − 2x^(−3/2)",
+                "2x + 2x^(−3/2)",
+                "3x^2 − 2x^(−1/2)",
+                "2x + 4x^(−3/2)"
+              ],
+              "key": "B",
+              "rationale": "Divide first: y = x^2 − 4x^(−1/2). Then dy/dx = 2x + 2x^(−3/2).",
+              "distractorNotes": {
+                "A": "Sign error: the derivative of −4x^(−1/2) is +2x^(−3/2).",
+                "C": "Differentiates the numerator and ignores the denominator.",
+                "D": "Multiplies by the exponent incorrectly (−4·(−1) instead of −4·(−1/2))."
+              },
+              "topics": [
+                "AB.2.6",
+                "AB.2.5"
+              ]
+            },
+            {
+              "id": "ab-u2-mc06",
+              "prompt": "Which is an equation of the line tangent to y = e^x + sin x at x = 0?",
+              "choices": [
+                "y = 2x + 1",
+                "y = x + 1",
+                "y = 2x",
+                "y = x + 2"
+              ],
+              "key": "A",
+              "rationale": "y(0) = 1 and y′ = e^x + cos x gives y′(0) = 2, so y = 1 + 2x.",
+              "distractorNotes": {
+                "B": "Uses slope 1, forgetting the cosine term.",
+                "C": "Uses the point (0, 0) instead of (0, 1).",
+                "D": "Swaps the slope and the y-intercept."
+              },
+              "topics": [
+                "AB.2.7"
+              ]
+            },
+            {
+              "id": "ab-u2-mc07",
+              "prompt": "Suppose f(2) = −3, f′(2) = 4, g(2) = 5, and g′(2) = 2. If h(x) = f(x)g(x), what is h′(2)?",
+              "choices": [
+                "8",
+                "26",
+                "−6",
+                "14"
+              ],
+              "key": "D",
+              "rationale": "h′(2) = f′(2)g(2) + f(2)g′(2) = 4·5 + (−3)·2 = 14.",
+              "distractorNotes": {
+                "A": "8 is f′(2)g′(2), which is not the product rule.",
+                "B": "Subtracts the second term.",
+                "C": "Keeps only the term f(2)g′(2)."
+              },
+              "topics": [
+                "AB.2.8"
+              ]
+            },
+            {
+              "id": "ab-u2-mc08",
+              "prompt": "If y = (1 + sin x)/cos x, what is the value of dy/dx at x = 0?",
+              "choices": [
+                "0",
+                "2",
+                "1",
+                "−1"
+              ],
+              "key": "C",
+              "rationale": "Quotient rule: (cos x·cos x − (1 + sin x)(−sin x))/cos^2 x = (1 + sin x)/cos^2 x, which is 1 at x = 0. (Equivalently, y = sec x + tan x.)",
+              "distractorNotes": {
+                "A": "Uses only the derivative of sec x, which is 0 at x = 0.",
+                "B": "Counts sec^2 x twice.",
+                "D": "Reverses the order of the quotient-rule numerator."
+              },
+              "topics": [
+                "AB.2.9",
+                "AB.2.10"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 10,
+          "calculator": "graphing",
+          "directions": "Choose the best answer. A graphing calculator is required for some questions. If the exact value is not a choice, choose the closest approximation.",
+          "items": [
+            {
+              "id": "ab-u2-mc09",
+              "prompt": "Let f(x) = x^3/e^x. What is f′(1)?",
+              "choices": [
+                "0.736",
+                "0.368",
+                "1.104",
+                "−0.736"
+              ],
+              "key": "A",
+              "rationale": "f′(x) = (3x^2 − x^3)/e^x, so f′(1) = 2/e ≈ 0.736.",
+              "distractorNotes": {
+                "B": "0.368 is f(1) = 1/e.",
+                "C": "Uses 3x^2/e^x and drops the −x^3 term.",
+                "D": "Reverses the quotient-rule numerator."
+              },
+              "topics": [
+                "AB.2.9"
+              ]
+            },
+            {
+              "id": "ab-u2-mc10",
+              "prompt": "The graphs of y = e^x and y = x + 2 intersect at a point with x > 0. What is the slope of the line tangent to y = e^x at that point?",
+              "choices": [
+                "1.146",
+                "3.146",
+                "2.000",
+                "3.000"
+              ],
+              "key": "B",
+              "rationale": "The intersection is at x ≈ 1.146, and the slope of e^x there is e^1.146 ≈ 3.146 (which also equals x + 2).",
+              "distractorNotes": {
+                "A": "1.146 is the x-coordinate, not the slope.",
+                "C": "2 is the y-intercept of the line.",
+                "D": "Uses x = 1 instead of the intersection, so x + 2 = 3."
+              },
+              "topics": [
+                "AB.2.7",
+                "AB.2.2"
+              ]
+            },
+            {
+              "id": "ab-u2-mc11",
+              "prompt": "Let f(x) = x^2/(1 + sin x). What is f′(1)?",
+              "choices": [
+                "0.543",
+                "1.707",
+                "3.702",
+                "0.927"
+              ],
+              "key": "D",
+              "rationale": "Quotient rule or numerical derivative: f′(1) = (2(1 + sin 1) − cos 1)/(1 + sin 1)^2 ≈ 0.927.",
+              "distractorNotes": {
+                "A": "0.543 is f(1).",
+                "B": "Forgets to square the denominator.",
+                "C": "Divides the derivative of the numerator by the derivative of the denominator."
+              },
+              "topics": [
+                "AB.2.9"
+              ]
+            },
+            {
+              "id": "ab-u2-mc12",
+              "prompt": "Let f(x) = x·tan x. For what value of x in (0, 1.5) is f′(x) = 4?",
+              "choices": [
+                "1.326",
+                "0.785",
+                "0.934",
+                "1.107"
+              ],
+              "key": "C",
+              "rationale": "f′(x) = tan x + x sec^2 x. Solving tan x + x sec^2 x = 4 gives x ≈ 0.934.",
+              "distractorNotes": {
+                "A": "Solves tan x = 4, dropping the product rule's second term.",
+                "B": "π/4 gives f′ = 1 + π/2 ≈ 2.571.",
+                "D": "Solves tan x = 2."
+              },
+              "topics": [
+                "AB.2.10",
+                "AB.2.8"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show the setup for every calculator result, and give answers to three decimal places with units.",
+          "items": [
+            {
+              "id": "ab-u2-fr1",
+              "context": true,
+              "prompt": "Rainwater collects in a barrel. The volume of water in the barrel, in liters, t hours after a storm begins is R(t). Selected measurements are shown.\n\n| t (h) | 0 | 1 | 3 | 4 | 6 |\n| --- | --- | --- | --- | --- | --- |\n| R(t) (L) | 12.0 | 16.1 | 21.9 | 24.2 | 26.7 |\n\nA model for the volume is M(t) = 12 + 4.5t·e^(−0.1t) liters, for 0 ≤ t ≤ 6.",
+              "topics": [
+                "AB.2.3",
+                "AB.2.1",
+                "AB.2.2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the data to estimate R′(2). Show the computation and include units.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the data at t = 1 and t = 3: (21.9 − 16.1)/(3 − 1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gets 2.9 liters per hour."
+                    }
+                  ],
+                  "answer": "R′(2) ≈ 2.9 liters per hour",
+                  "steps": [
+                    "The nearest data on either side of t = 2 are at t = 1 and t = 3.",
+                    "(21.9 − 16.1)/2 = 2.9."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find M′(2). Using correct units, interpret M′(2) in this context.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "M′(2) ≈ 2.947 (accept 2.946–2.948)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets it: at t = 2 hours the modeled volume is increasing at about 2.947 liters per hour."
+                    }
+                  ],
+                  "answer": "M′(2) ≈ 2.947: two hours after the storm begins, the model's volume is increasing at about 2.947 liters per hour.",
+                  "steps": [
+                    "Use the calculator's numerical derivative of M at t = 2.",
+                    "Units: liters per hour."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the time t in (0, 6) at which the modeled volume is increasing at 2 liters per hour.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up M′(t) = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the calculator to solve, for example by intersecting the graph of M′ with y = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "t ≈ 3.618 hours (accept 3.617–3.619)."
+                    }
+                  ],
+                  "answer": "t ≈ 3.618 hours",
+                  "steps": [
+                    "Graph the numerical derivative of M and the line y = 2.",
+                    "Their intersection in (0, 6) is at t ≈ 3.618."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Write an equation of the line tangent to the graph of M at t = 4, and use it to approximate the volume at t = 4.5.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds M(4) ≈ 24.066 and M′(4) ≈ 1.810, and writes y = 24.066 + 1.810(t − 4)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Approximates the volume at t = 4.5 as about 24.971 liters (accept 24.970–24.972)."
+                    }
+                  ],
+                  "answer": "y = 24.066 + 1.810(t − 4); the approximation is about 24.971 liters.",
+                  "steps": [
+                    "M(4) ≈ 24.066 and M′(4) ≈ 1.810.",
+                    "At t = 4.5: 24.066 + 1.810(0.5) ≈ 24.971."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show your work and give exact answers.",
+          "items": [
+            {
+              "id": "ab-u2-fr2",
+              "context": false,
+              "prompt": "The graph of the function g, made of three line segments on −4 ≤ x ≤ 4, is shown.",
+              "figureIds": [
+                "ab-u2-f2"
+              ],
+              "topics": [
+                "AB.2.8",
+                "AB.2.9",
+                "AB.2.4",
+                "AB.2.10"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Let h(x) = x^2·g(x). Find h′(3).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies the product rule: h′(x) = 2x·g(x) + x^2·g′(x)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reads g(3) = 0 and g′(3) = −2 and gets h′(3) = −18."
+                    }
+                  ],
+                  "answer": "h′(3) = −18",
+                  "steps": [
+                    "On [2, 4], g has slope −2 and g(3) = 0.",
+                    "h′(3) = 2·3·0 + 9·(−2) = −18."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Let k(x) = g(x)/e^x. Find k′(−2).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies the quotient rule: k′(x) = (g′(x)e^x − g(x)e^x)/e^(2x)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses g(−2) = 0 and g′(−2) = 1 to get k′(−2) = 1/e^(−2) = e^2."
+                    }
+                  ],
+                  "answer": "k′(−2) = e^2",
+                  "steps": [
+                    "k′(x) = (g′(x) − g(x))/e^x.",
+                    "At −2: (1 − 0)/e^(−2) = e^2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Is g differentiable at x = 0? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the one-sided slopes at 0: 1 on the left and 0 on the right."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes g is not differentiable at 0 because the one-sided derivatives differ (a corner), even though g is continuous there."
+                    }
+                  ],
+                  "answer": "No. The slope is 1 just left of 0 and 0 just right of 0, so the one-sided derivatives differ and the graph has a corner at (0, 2).",
+                  "steps": [
+                    "Read the slopes of the segments meeting at (0, 2).",
+                    "Unequal one-sided derivatives mean g′(0) does not exist."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Let m(x) = x·tan x. Find m′(π/4).",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the product rule: m′(x) = tan x + x·sec^2 x."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses tan(π/4) = 1 and sec^2(π/4) = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gets m′(π/4) = 1 + π/2."
+                    }
+                  ],
+                  "answer": "m′(π/4) = 1 + π/2",
+                  "steps": [
+                    "m′(x) = tan x + x sec^2 x.",
+                    "At π/4: 1 + (π/4)(2) = 1 + π/2."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

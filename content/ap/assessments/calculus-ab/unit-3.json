@@ -1,0 +1,508 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "unit-3",
+  "kind": "unit-test",
+  "unitId": "u3",
+  "title": "Unit 3 test: Differentiation: Composite, Implicit, and Inverse Functions",
+  "author": "ab-2",
+  "directions": "This practice unit test has two sections: Section I, multiple choice (12 questions, 32 minutes), and Section II, free response (2 questions, 30 minutes). Each part states whether a graphing calculator may be used. Record raw points only: 1 point for each multiple-choice question and the points shown for each free-response part, 30 points in all.",
+  "figures": [
+    {
+      "id": "ab-u3-f1",
+      "alt": "Graph of a function f made of three line segments on 0 ≤ x ≤ 6: from (0, 1) to (2, 5), from (2, 5) to (4, 1), and from (4, 1) to (6, 2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 20,
+          "calculator": "none",
+          "directions": "No calculator. Choose the best answer for each question. Angles are in radians.",
+          "items": [
+            {
+              "id": "ab-u3-mc01",
+              "prompt": "What is the derivative of y = cos(e^(2x))?",
+              "choices": [
+                "−sin(e^(2x))",
+                "−2e^(2x)sin(e^(2x))",
+                "2e^(2x)sin(e^(2x))",
+                "−e^(2x)sin(e^(2x))"
+              ],
+              "key": "B",
+              "rationale": "By the chain rule, d/dx cos(u) = −sin(u)·u′ with u = e^(2x) and u′ = 2e^(2x).",
+              "distractorNotes": {
+                "A": "Omits the derivative of the inner function e^(2x).",
+                "C": "Drops the negative sign from the derivative of cosine.",
+                "D": "Differentiates e^(2x) as e^(2x), missing the factor 2."
+              },
+              "topics": [
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-u3-mc02",
+              "prompt": "The graph of f, made of line segments, is shown. Let h(x) = f(x^2 − 1). What is h′(2)?",
+              "figureIds": [
+                "ab-u3-f1"
+              ],
+              "choices": [
+                "−8",
+                "−2",
+                "8",
+                "−4"
+              ],
+              "key": "A",
+              "rationale": "h′(x) = f′(x^2 − 1)·2x. At x = 2 the inner value is 3, where the segment from (2, 5) to (4, 1) has slope −2, so h′(2) = (−2)(4) = −8.",
+              "distractorNotes": {
+                "B": "Uses f′(3) but omits the inner derivative 2x.",
+                "C": "Uses the slope +2 of the first segment instead of the segment containing x = 3.",
+                "D": "Multiplies by 2 instead of the inner derivative 2x = 4."
+              },
+              "topics": [
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-u3-mc03",
+              "prompt": "The curve x^2y + y^3 = 10 passes through (1, 2). What is dy/dx at that point?",
+              "choices": [
+                "−4/5",
+                "4/13",
+                "−2/13",
+                "−4/13"
+              ],
+              "key": "D",
+              "rationale": "Implicit differentiation gives 2xy + x^2(dy/dx) + 3y^2(dy/dx) = 0, so dy/dx = −2xy/(x^2 + 3y^2) = −4/(1 + 12) = −4/13.",
+              "distractorNotes": {
+                "A": "Drops the 3y^2 term from the coefficient of dy/dx.",
+                "B": "Sign error when moving 2xy to the other side.",
+                "C": "Differentiates x^2y as x^2(dy/dx) only, losing the 2xy term's factor of 2."
+              },
+              "topics": [
+                "AB.3.2"
+              ]
+            },
+            {
+              "id": "ab-u3-mc04",
+              "prompt": "Let f(x) = x^3 + x + 2 and let g be the inverse function of f. What is g′(4)?",
+              "choices": [
+                "1/49",
+                "4",
+                "1/4",
+                "1/13"
+              ],
+              "key": "C",
+              "rationale": "f(1) = 4, so g(4) = 1. f′(x) = 3x^2 + 1 gives f′(1) = 4, and g′(4) = 1/f′(1) = 1/4.",
+              "distractorNotes": {
+                "A": "Evaluates f′ at 4 instead of at g(4) = 1.",
+                "B": "Gives f′(1) instead of its reciprocal.",
+                "D": "Evaluates f′ at 2."
+              },
+              "topics": [
+                "AB.3.3"
+              ]
+            },
+            {
+              "id": "ab-u3-mc05",
+              "prompt": "If f(x) = arctan(2x), what is f′(1/2)?",
+              "choices": [
+                "1/2",
+                "1",
+                "2",
+                "2/5"
+              ],
+              "key": "B",
+              "rationale": "f′(x) = 2/(1 + 4x^2), so f′(1/2) = 2/(1 + 1) = 1.",
+              "distractorNotes": {
+                "A": "Omits the inner derivative 2.",
+                "C": "Uses 1 + x^2 with x = 0 instead of 1 + (2x)^2.",
+                "D": "Evaluates at x = 1 instead of x = 1/2."
+              },
+              "topics": [
+                "AB.3.4"
+              ]
+            },
+            {
+              "id": "ab-u3-mc06",
+              "prompt": "Which expression equals d/dx arcsin(x^2) for −1 < x < 1?",
+              "choices": [
+                "2x/√(1 − x^4)",
+                "1/√(1 − x^4)",
+                "2x/√(1 − x^2)",
+                "2x/(1 + x^4)"
+              ],
+              "key": "A",
+              "rationale": "d/dx arcsin(u) = u′/√(1 − u^2) with u = x^2: 2x/√(1 − x^4).",
+              "distractorNotes": {
+                "B": "Omits the inner derivative 2x.",
+                "C": "Uses x^2 instead of (x^2)^2 under the radical.",
+                "D": "Uses the arctan derivative."
+              },
+              "topics": [
+                "AB.3.4"
+              ]
+            },
+            {
+              "id": "ab-u3-mc07",
+              "prompt": "What is the derivative of x^2 sin(3x)?",
+              "choices": [
+                "6x cos(3x)",
+                "2x sin(3x) + x^2 cos(3x)",
+                "2x sin(3x) − 3x^2 cos(3x)",
+                "2x sin(3x) + 3x^2 cos(3x)"
+              ],
+              "key": "D",
+              "rationale": "The last operation is a product: (x^2)′sin(3x) + x^2(sin(3x))′ = 2x sin(3x) + 3x^2 cos(3x).",
+              "distractorNotes": {
+                "A": "Multiplies the derivatives of the factors instead of using the product rule.",
+                "B": "Omits the inner derivative 3 of sin(3x).",
+                "C": "Uses the derivative of cosine for sine."
+              },
+              "topics": [
+                "AB.3.5",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-u3-mc08",
+              "prompt": "If y = e^(x^2), what is the value of d^2y/dx^2 at x = 1?",
+              "choices": [
+                "2e",
+                "4e",
+                "6e",
+                "8e"
+              ],
+              "key": "C",
+              "rationale": "y′ = 2xe^(x^2) and y″ = 2e^(x^2) + 4x^2e^(x^2) = (2 + 4x^2)e^(x^2), which is 6e at x = 1.",
+              "distractorNotes": {
+                "A": "Stops at the first derivative's value.",
+                "B": "Differentiates 2xe^(x^2) using only the derivative of e^(x^2).",
+                "D": "Doubles the 4x^2 term."
+              },
+              "topics": [
+                "AB.3.6"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required for some questions in this part. Choose the best answer; when the exact value is not among the choices, choose the closest decimal. Angles are in radians.",
+          "items": [
+            {
+              "id": "ab-u3-mc09",
+              "prompt": "Let h(x) = √(1 + arctan(x^2)). What is h′(1.3)?",
+              "choices": [
+                "0.118",
+                "0.236",
+                "1.427",
+                "0.473"
+              ],
+              "key": "B",
+              "rationale": "h′(x) = (2x/(1 + x^4))/(2√(1 + arctan(x^2))); the calculator's numerical derivative at 1.3 is about 0.236.",
+              "distractorNotes": {
+                "A": "Misses a factor of 2 (from 2x).",
+                "C": "This is h(1.3), not h′(1.3).",
+                "D": "Omits the 1/2 from the square-root derivative."
+              },
+              "topics": [
+                "AB.3.4",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-u3-mc10",
+              "prompt": "Let f(x) = x^3 + 2x + e^(0.5x), and let g be the inverse function of f. What is g′(5)?",
+              "choices": [
+                "0.161",
+                "0.012",
+                "1.058",
+                "6.209"
+              ],
+              "key": "A",
+              "rationale": "Solve f(x) = 5 on the calculator: g(5) ≈ 1.0584. Then f′(1.0584) = 3(1.0584)^2 + 2 + 0.5e^(0.5292) ≈ 6.209, so g′(5) ≈ 1/6.209 ≈ 0.161.",
+              "distractorNotes": {
+                "B": "Computes 1/f′(5) instead of 1/f′(g(5)).",
+                "C": "This is g(5).",
+                "D": "This is f′(g(5)), not its reciprocal."
+              },
+              "topics": [
+                "AB.3.3"
+              ]
+            },
+            {
+              "id": "ab-u3-mc11",
+              "prompt": "The curve y^3 + 2y + x^2 = 7 has exactly one point with x = 1.5. What is the slope of the curve at that point?",
+              "choices": [
+                "−0.600",
+                "0.427",
+                "1.293",
+                "−0.427"
+              ],
+              "key": "D",
+              "rationale": "Solve y^3 + 2y = 4.75: y ≈ 1.2933. Implicitly, (3y^2 + 2)(dy/dx) = −2x, so dy/dx = −3/(3(1.2933)^2 + 2) ≈ −0.427.",
+              "distractorNotes": {
+                "A": "Uses 3 + 2 in the denominator, as if y = 1.",
+                "B": "Sign error in solving for dy/dx.",
+                "C": "This is the y-coordinate of the point."
+              },
+              "topics": [
+                "AB.3.2"
+              ]
+            },
+            {
+              "id": "ab-u3-mc12",
+              "prompt": "Let f(x) = ln(1 + x^2)·arctan(x). What is f″(2)?",
+              "choices": [
+                "0.203",
+                "1.208",
+                "−0.203",
+                "−0.406"
+              ],
+              "key": "C",
+              "rationale": "Use the calculator to take the numerical derivative of f′ at x = 2 (or differentiate twice): f″(2) ≈ −0.203.",
+              "distractorNotes": {
+                "A": "Sign error.",
+                "B": "This is f′(2).",
+                "D": "Doubles the second derivative."
+              },
+              "topics": [
+                "AB.3.6"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show the setup for every calculator result (the expression you evaluate or the equation you solve), give decimal answers to three decimal places, include units where the question asks, and justify your conclusions.",
+          "items": [
+            {
+              "id": "ab-u3-fr1",
+              "prompt": "A weather balloon is released at time t = 0 minutes. Its altitude is h(t) = 6ln(1 + 0.2t) kilometers. For altitudes 0 ≤ h ≤ 8 kilometers, the air temperature at altitude h is T(h) = 15 − 6.5h degrees Celsius.",
+              "context": true,
+              "topics": [
+                "AB.3.1",
+                "AB.3.3",
+                "AB.3.6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the rate at which the air temperature at the balloon is changing at t = 10 minutes. Indicate units of measure.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the chain rule: dT/dt = T′(h(t))·h′(t) = −6.5·1.2/(1 + 0.2t)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "dT/dt = −2.6 degrees Celsius per minute at t = 10."
+                    }
+                  ],
+                  "answer": "dT/dt = −2.6 °C per minute",
+                  "steps": [
+                    "h′(t) = 6(0.2)/(1 + 0.2t) = 1.2/(1 + 0.2t), which is 0.4 at t = 10.",
+                    "dT/dt = −6.5(0.4) = −2.6 °C per minute."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find h″(10). Using correct units, explain what this value says about the balloon's motion.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "h″(10) ≈ −0.027 kilometer per minute per minute."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets: at t = 10 the balloon's rate of climb is decreasing (it is still rising, but more slowly)."
+                    }
+                  ],
+                  "answer": "h″(10) ≈ −0.027 km/min^2: the balloon is rising, and its rate of climb is decreasing at about 0.027 km/min per minute.",
+                  "steps": [
+                    "h″(t) = −1.2(0.2)/(1 + 0.2t)^2 = −0.24/9 ≈ −0.027 at t = 10.",
+                    "h′(10) = 0.4 > 0 while h″(10) < 0."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "The function h has an inverse function g, so t = g(h) gives the time at which the balloon reaches altitude h. Find g′(4) and interpret it in context.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Solves h(t) = 4 to get t ≈ 4.739."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "h′(4.739) ≈ 0.616 and g′(4) = 1/h′(4.739)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "g′(4) ≈ 1.623 minutes per kilometer, interpreted as the time per kilometer of climb at 4 km."
+                    }
+                  ],
+                  "answer": "g′(4) ≈ 1.623 minutes per kilometer: when the balloon is at 4 km, it takes about 1.623 minutes to climb each additional kilometer at its current rate.",
+                  "steps": [
+                    "6ln(1 + 0.2t) = 4 gives t = 5(e^(2/3) − 1) ≈ 4.739.",
+                    "h′(4.739) = 1.2/e^(2/3) ≈ 0.6161, so g′(4) ≈ 1/0.6161 ≈ 1.623."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "At what time is the air temperature at the balloon decreasing at 3 degrees Celsius per minute?",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets −6.5h′(t) = −3, that is, 7.8/(1 + 0.2t) = 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "t = 8 minutes."
+                    }
+                  ],
+                  "answer": "t = 8 minutes",
+                  "steps": [
+                    "dT/dt = −7.8/(1 + 0.2t) = −3 gives 1 + 0.2t = 2.6.",
+                    "So t = 8 minutes; the calculator's intersection of dT/dt with y = −3 agrees."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "No calculator. Show your work, justify your answers, and give exact values.",
+          "items": [
+            {
+              "id": "ab-u3-fr2",
+              "prompt": "The twice-differentiable function f is increasing, and the differentiable function g is defined for all real numbers. The table gives selected values of f, its derivatives, g, and g′.\n| x | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- |\n| f(x) | 2 | 3 | 5 | 8 |\n| f′(x) | 1 | 2 | 3 | 4 |\n| f″(x) | 1 | 1 | 2 | 1 |\n| g(x) | 4 | 1 | 2 | 3 |\n| g′(x) | −2 | 5 | 3 | −1 |",
+              "topics": [
+                "AB.3.1",
+                "AB.3.4",
+                "AB.3.3",
+                "AB.3.6",
+                "AB.3.5"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Let h(x) = f(g(x)). Find h′(1).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes h′(1) = f′(g(1))·g′(1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "h′(1) = f′(4)(−2) = −8."
+                    }
+                  ],
+                  "answer": "h′(1) = −8",
+                  "steps": [
+                    "g(1) = 4, so h′(1) = f′(4)·g′(1).",
+                    "f′(4) = 4 and g′(1) = −2, so h′(1) = −8."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Let k(x) = arctan(g(x)). Find k′(2).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses k′(x) = g′(x)/(1 + [g(x)]^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "k′(2) = 5/(1 + 1) = 5/2."
+                    }
+                  ],
+                  "answer": "k′(2) = 5/2",
+                  "steps": [
+                    "The derivative of arctan u is u′/(1 + u^2).",
+                    "g(2) = 1 and g′(2) = 5, so k′(2) = 5/2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the derivative of the inverse function of f at x = 5.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses f(3) = 5, so the inverse sends 5 to 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "(f^(−1))′(5) = 1/f′(3) = 1/3."
+                    }
+                  ],
+                  "answer": "1/3",
+                  "steps": [
+                    "From the table f(3) = 5.",
+                    "(f^(−1))′(5) = 1/f′(3) = 1/3."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Let p(x) = x·f(x^2). Find p″(1).",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "p′(x) = f(x^2) + 2x^2f′(x^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "p″(x) = 6xf′(x^2) + 4x^3f″(x^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "p″(1) = 6f′(1) + 4f″(1) = 6(1) + 4(1) = 10."
+                    }
+                  ],
+                  "answer": "p″(1) = 10",
+                  "steps": [
+                    "Product and chain rules: p′(x) = f(x^2) + x·f′(x^2)·2x = f(x^2) + 2x^2f′(x^2).",
+                    "p″(x) = 2xf′(x^2) + 4xf′(x^2) + 2x^2·f″(x^2)·2x = 6xf′(x^2) + 4x^3f″(x^2).",
+                    "At x = 1, x^2 = 1, so p″(1) = 6f′(1) + 4f″(1) = 6(1) + 4(1) = 10."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,515 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "unit-7",
+  "kind": "unit-test",
+  "unitId": "u7",
+  "title": "Unit 7 test: Differential Equations",
+  "author": "ab-3",
+  "directions": "This practice test has two sections. Section I is multiple choice: Part A without a calculator and Part B with a graphing calculator. Section II is free response: Part A with a graphing calculator and Part B without one. Show your work on free-response questions; answers without supporting work may not earn full credit. Unless a question says otherwise, angles are in radians, exact answers are expected without a calculator, and calculator answers are given to three decimal places. Results are raw points for practice only.",
+  "figures": [
+    {
+      "id": "ab-u7-f1",
+      "alt": "A slope field drawn at points spaced 0.5 apart for −3 ≤ x ≤ 2 and −2 ≤ y ≤ 2. Segments are horizontal along the vertical line x = −1 and along the x-axis. To the right of x = −1 the segments rise above the x-axis and fall below it; to the left of x = −1 they fall above the x-axis and rise below it. Segments are steeper farther from these two lines."
+    },
+    {
+      "id": "ab-u7-f2",
+      "alt": "Coordinate axes with a grid and nine dots at the points with x = −1, 0, 1 and y = 0, 1, 2."
+    },
+    {
+      "id": "ab-u7-f3",
+      "alt": "The nine grid points with slope segments for dy/dx = x^2(1 − y): slope 1 at (−1, 0) and (1, 0); slope 0 at (0, 0), at all three points with y = 1, and at (0, 2); slope −1 at (−1, 2) and (1, 2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Choose the best answer. No calculator is allowed.",
+          "items": [
+            {
+              "id": "ab-u7-mc01",
+              "prompt": "A town has 5000 residents. The number N of residents who have heard a piece of news increases at a rate proportional to the number of residents who have not yet heard it. Which differential equation models N, where k is a positive constant?",
+              "choices": [
+                "dN/dt = k(5000 − N)",
+                "dN/dt = kN",
+                "dN/dt = kN(5000 − N)",
+                "N = k(5000 − N)"
+              ],
+              "key": "A",
+              "rationale": "The residents who have not heard are 5000 − N, and \"rate proportional to\" means dN/dt = k(5000 − N).",
+              "distractorNotes": {
+                "B": "Makes the rate proportional to those who have heard.",
+                "C": "Makes the rate proportional to the product of both groups, which is not what is described.",
+                "D": "Sets N itself, not its rate of change, proportional to 5000 − N."
+              },
+              "topics": [
+                "AB.7.1"
+              ]
+            },
+            {
+              "id": "ab-u7-mc02",
+              "prompt": "Which function is a solution of the differential equation x·dy/dx = 3y for x > 0?",
+              "choices": [
+                "y = e^(3x)",
+                "y = 5x^3",
+                "y = 3x",
+                "y = x^3 + 1"
+              ],
+              "key": "B",
+              "rationale": "For y = 5x^3: x·15x^2 = 15x^3 = 3(5x^3).",
+              "distractorNotes": {
+                "A": "x·3e^(3x) = 3xe^(3x), which is not 3e^(3x).",
+                "C": "x·3 = 3x but 3y = 9x.",
+                "D": "x·3x^2 = 3x^3 but 3y = 3x^3 + 3."
+              },
+              "topics": [
+                "AB.7.2"
+              ]
+            },
+            {
+              "id": "ab-u7-mc03",
+              "prompt": "Which differential equation has the slope field shown?",
+              "figureIds": [
+                "ab-u7-f1"
+              ],
+              "choices": [
+                "dy/dx = (x − 1)y/2",
+                "dy/dx = (y + 1)x/2",
+                "dy/dx = (x + 1)y/2",
+                "dy/dx = −(x + 1)y/2"
+              ],
+              "key": "C",
+              "rationale": "Slopes are 0 along x = −1 and along y = 0, and they are positive for x > −1 and y > 0, which matches (x + 1)y/2.",
+              "distractorNotes": {
+                "A": "Would have horizontal segments along x = 1, not x = −1.",
+                "B": "Would have horizontal segments along x = 0 and y = −1.",
+                "D": "Has the right zero lines but the opposite sign everywhere."
+              },
+              "topics": [
+                "AB.7.3"
+              ]
+            },
+            {
+              "id": "ab-u7-mc04",
+              "prompt": "Let y = f(x) be the solution of dy/dx = y^2 − x with f(1) = 2. At x = 1, the graph of f is",
+              "choices": [
+                "decreasing and concave down",
+                "decreasing and concave up",
+                "increasing and concave down",
+                "increasing and concave up"
+              ],
+              "key": "D",
+              "rationale": "dy/dx = 4 − 1 = 3 > 0, and d^2y/dx^2 = 2y·dy/dx − 1 = 2(2)(3) − 1 = 11 > 0.",
+              "distractorNotes": {
+                "A": "Both signs are wrong: the slope is 3 and the second derivative is 11.",
+                "B": "The slope 4 − 1 = 3 is positive.",
+                "C": "Differentiating y^2 gives 2y·dy/dx, which makes d^2y/dx^2 positive."
+              },
+              "topics": [
+                "AB.7.4"
+              ]
+            },
+            {
+              "id": "ab-u7-mc05",
+              "prompt": "Which is the general solution of dy/dx = (y + 2)/x^2 for x > 0?",
+              "choices": [
+                "y = Ae^(−1/x) − 2",
+                "y = Ae^(1/x) − 2",
+                "y = e^(−1/x) + C",
+                "y = A/x^2 − 2"
+              ],
+              "key": "A",
+              "rationale": "dy/(y + 2) = x^(−2) dx gives ln|y + 2| = −1/x + C, so y + 2 = Ae^(−1/x).",
+              "distractorNotes": {
+                "B": "Integrates x^(−2) to +1/x instead of −1/x.",
+                "C": "Adds the constant after exponentiating and drops the −2.",
+                "D": "Does not integrate; it keeps 1/x^2 as a factor."
+              },
+              "topics": [
+                "AB.7.6"
+              ]
+            },
+            {
+              "id": "ab-u7-mc06",
+              "prompt": "Let y = f(x) be the solution of dy/dx = xy^2 with f(0) = 1. What is f(1)?",
+              "choices": [
+                "1",
+                "−2/3",
+                "2/3",
+                "2"
+              ],
+              "key": "D",
+              "rationale": "y^(−2) dy = x dx gives −1/y = x^2/2 + C; f(0) = 1 gives C = −1, so y = 2/(2 − x^2) and f(1) = 2.",
+              "distractorNotes": {
+                "A": "Uses the tangent line at x = 0, where the slope is 0, instead of solving.",
+                "B": "Solves −1/1 = 0 + C as C = 1, giving −1/y = 3/2 at x = 1.",
+                "C": "Drops the negative sign from integrating y^(−2), giving 1/y = x^2/2 + 1."
+              },
+              "topics": [
+                "AB.7.7"
+              ]
+            },
+            {
+              "id": "ab-u7-mc07",
+              "prompt": "A substance decays at a rate proportional to the amount present. After 30 years, 1/8 of the original amount remains. What is its half-life?",
+              "choices": [
+                "15 years",
+                "10 years",
+                "3.75 years",
+                "240 years"
+              ],
+              "key": "B",
+              "rationale": "1/8 = (1/2)^3, so 30 years is three half-lives: 10 years each.",
+              "distractorNotes": {
+                "A": "Halves 30 instead of finding how many halvings give 1/8.",
+                "C": "Divides 30 by 8.",
+                "D": "Multiplies 30 by 8."
+              },
+              "topics": [
+                "AB.7.8"
+              ]
+            },
+            {
+              "id": "ab-u7-mc08",
+              "prompt": "Which line is a solution of the differential equation dy/dx = x − 2y?",
+              "choices": [
+                "y = x/2",
+                "y = 2x − 1",
+                "y = x/2 − 1/4",
+                "y = x − 1/2"
+              ],
+              "key": "C",
+              "rationale": "For y = x/2 − 1/4, dy/dx = 1/2 and x − 2(x/2 − 1/4) = 1/2.",
+              "distractorNotes": {
+                "A": "dy/dx = 1/2 but x − 2(x/2) = 0.",
+                "B": "dy/dx = 2 but x − 2(2x − 1) = 2 − 3x.",
+                "D": "dy/dx = 1 but x − 2(x − 1/2) = 1 − x."
+              },
+              "topics": [
+                "AB.7.2",
+                "AB.7.4"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 10,
+          "calculator": "graphing",
+          "directions": "Choose the best answer. A graphing calculator is required for some questions. If the exact value is not a choice, choose the closest approximation.",
+          "items": [
+            {
+              "id": "ab-u7-mc09",
+              "prompt": "A town's population grows at a rate proportional to its size. It was 12,000 in 2020 and 15,500 in 2026. To the nearest person, what does the model predict for 2030?",
+              "choices": [
+                "17,833",
+                "20,021",
+                "23,745",
+                "18,384"
+              ],
+              "key": "D",
+              "rationale": "P = 12000e^(kt) with e^(6k) = 15500/12000, so P(10) = 12000(15500/12000)^(10/6) ≈ 18,384.",
+              "distractorNotes": {
+                "A": "Assumes linear growth of 3500 every 6 years.",
+                "B": "Multiplies 15,500 by the 6-year growth factor, a 6-year step, not 4 years.",
+                "C": "Projects 10 years forward from 2026 instead of from 2020."
+              },
+              "topics": [
+                "AB.7.8"
+              ]
+            },
+            {
+              "id": "ab-u7-mc10",
+              "prompt": "Let y = f(x) be the solution of dy/dx = y^2 cos x with f(0) = 0.5. What is f(2)?",
+              "choices": [
+                "0.917",
+                "0.344",
+                "1.091",
+                "−0.344"
+              ],
+              "key": "A",
+              "rationale": "−1/y = sin x + C with C = −2, so y = 1/(2 − sin x) and f(2) = 1/(2 − sin 2) ≈ 0.917.",
+              "distractorNotes": {
+                "B": "Uses 1/(2 + sin x), a sign error in the constant.",
+                "C": "Reports 2 − sin 2, the reciprocal of the answer.",
+                "D": "Uses −1/(2 + sin x), losing the sign when solving for y."
+              },
+              "topics": [
+                "AB.7.7",
+                "AB.7.6"
+              ]
+            },
+            {
+              "id": "ab-u7-mc11",
+              "prompt": "Let y = f(x) be the solution of dy/dx = ln(x + y) with f(1) = 2. Using the line tangent to the graph of f at x = 1, what is the approximation of f(1.3)?",
+              "choices": [
+                "2.300",
+                "1.099",
+                "2.330",
+                "2.659"
+              ],
+              "key": "C",
+              "rationale": "The slope at (1, 2) is ln 3 ≈ 1.099, so f(1.3) ≈ 2 + 0.3(1.099) ≈ 2.330.",
+              "distractorNotes": {
+                "A": "Uses slope 1 instead of ln 3.",
+                "B": "This is the slope ln 3, not the approximate value.",
+                "D": "Uses a step of 0.6 instead of 0.3."
+              },
+              "topics": [
+                "AB.7.4"
+              ]
+            },
+            {
+              "id": "ab-u7-mc12",
+              "prompt": "A pan at 95 °C cools in a 22 °C kitchen according to dT/dt = −k(T − 22), where t is in minutes. After 10 minutes the pan is at 70 °C. At what time does it reach 40 °C?",
+              "choices": [
+                "22.000",
+                "33.394",
+                "28.325",
+                "23.394"
+              ],
+              "key": "B",
+              "rationale": "T = 22 + 73e^(−kt) with 48 = 73e^(−10k), so k = (1/10)ln(73/48). Then 18 = 73e^(−kt) gives t = ln(73/18)/k ≈ 33.394 minutes.",
+              "distractorNotes": {
+                "A": "Assumes the temperature falls at a constant 2.5 °C per minute.",
+                "C": "Ignores the kitchen temperature and uses T = 95e^(−kt).",
+                "D": "Gives the time after the 10-minute reading rather than from t = 0."
+              },
+              "topics": [
+                "AB.7.8",
+                "AB.7.7"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show the setup for every calculator result, and give answers to three decimal places with units.",
+          "items": [
+            {
+              "id": "ab-u7-fr1",
+              "context": true,
+              "prompt": "A pesticide residue on a field breaks down at a rate proportional to the amount present, so dR/dt = −kR, where R is the amount in kilograms, t is time in weeks, and k > 0. Measurements show 140 kg of residue at t = 2 and 95 kg at t = 5.",
+              "topics": [
+                "AB.7.8",
+                "AB.7.6",
+                "AB.7.7"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use separation of variables to show that R(t) = Ce^(−kt) for some constant C.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates: dR/R = −k dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates to ln|R| = −kt + C1 and exponentiates to R = Ce^(−kt)."
+                    }
+                  ],
+                  "answer": "dR/R = −k dt, so ln R = −kt + C1 (R > 0) and R = e^(C1)e^(−kt) = Ce^(−kt).",
+                  "steps": [
+                    "Separate, integrate both sides, then exponentiate; C = e^(C1)."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the values of k and C.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Divides the measurements: e^(−3k) = 95/140."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "k = (1/3)ln(140/95) ≈ 0.129 per week."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "C = 140e^(2k) ≈ 181.300 kg."
+                    }
+                  ],
+                  "answer": "k = (1/3)ln(140/95) ≈ 0.129; C ≈ 181.300",
+                  "steps": [
+                    "Ce^(−5k)/Ce^(−2k) = 95/140, so e^(−3k) = 95/140.",
+                    "From Ce^(−2k) = 140, C = 140e^(2k)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "At what time will 40 kg of residue remain?",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets Ce^(−kt) = 40 (or 140e^(−k(t − 2)) = 40)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "t ≈ 11.692 weeks."
+                    }
+                  ],
+                  "answer": "t ≈ 11.692 weeks",
+                  "steps": [
+                    "t = ln(C/40)/k ≈ 11.692."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find dR/dt at t = 5. Using correct units, explain what this value means.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "dR/dt = −k(95) ≈ −12.279 kg per week."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets: at t = 5 weeks the residue is decreasing at about 12.279 kilograms per week."
+                    }
+                  ],
+                  "answer": "dR/dt ≈ −12.279 kg/week: at week 5 the residue is decreasing at about 12.279 kilograms per week.",
+                  "steps": [
+                    "Use the differential equation directly: dR/dt = −kR with R(5) = 95."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show your work and give exact answers.",
+          "items": [
+            {
+              "id": "ab-u7-fr2",
+              "context": false,
+              "prompt": "Consider the differential equation dy/dx = x^2(1 − y).",
+              "topics": [
+                "AB.7.3",
+                "AB.7.4",
+                "AB.7.6",
+                "AB.7.7"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On the axes provided, sketch a slope field for the differential equation at the nine points indicated.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Horizontal segments at the three points with y = 1 and at the points with x = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Slope 1 at (−1, 0) and (1, 0) and slope −1 at (−1, 2) and (1, 2), drawn with the correct signs."
+                    }
+                  ],
+                  "answer": "See the completed slope field: slopes 1, 0, 1 in the row y = 0; 0, 0, 0 in the row y = 1; and −1, 0, −1 in the row y = 2 (for x = −1, 0, 1).",
+                  "steps": [
+                    "Evaluate x^2(1 − y) at each point.",
+                    "x^2 ≥ 0, so the sign of each slope is the sign of 1 − y."
+                  ],
+                  "figureIds": [
+                    "ab-u7-f2"
+                  ],
+                  "answerFigureIds": [
+                    "ab-u7-f3"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Let y = f(x) be the particular solution with f(1) = 3. Write an equation for the line tangent to the graph of f at x = 1, and use it to approximate f(1.1).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope 1^2(1 − 3) = −2 and tangent line y = 3 − 2(x − 1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "f(1.1) ≈ 2.8."
+                    }
+                  ],
+                  "answer": "y = 3 − 2(x − 1); f(1.1) ≈ 2.8",
+                  "steps": [
+                    "dy/dx at (1, 3) is −2.",
+                    "3 − 2(0.1) = 2.8."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find d^2y/dx^2 at the point (1, 3). Is the approximation in part (b) an overestimate or an underestimate? Explain.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "d^2y/dx^2 = 2x(1 − y) − x^2·dy/dx = −4 + 2 = −2 at (1, 3)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Overestimate, because the graph of f is concave down near x = 1, so the tangent line lies above it."
+                    }
+                  ],
+                  "answer": "d^2y/dx^2 = −2; overestimate, since f is concave down near x = 1.",
+                  "steps": [
+                    "Product rule: d/dx [x^2(1 − y)] = 2x(1 − y) + x^2(−dy/dx).",
+                    "At (1, 3): 2(1)(−2) − (1)(−2) = −2 < 0."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find y = f(x), the particular solution with f(1) = 3.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates: dy/(1 − y) = x^2 dx (or dy/(y − 1) = −x^2 dx)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates: −ln|1 − y| = x^3/3 + C."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses f(1) = 3 and solves: y = 1 + 2e^((1 − x^3)/3)."
+                    }
+                  ],
+                  "answer": "f(x) = 1 + 2e^((1 − x^3)/3)",
+                  "steps": [
+                    "ln|y − 1| = −x^3/3 + C; at (1, 3): ln 2 = −1/3 + C, so C = ln 2 + 1/3.",
+                    "y − 1 > 0 at the start, so y − 1 = 2e^((1 − x^3)/3)."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

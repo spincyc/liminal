@@ -1,0 +1,528 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "unit-5",
+  "kind": "unit-test",
+  "unitId": "u5",
+  "title": "Unit 5 test: Analytical Applications of Differentiation",
+  "author": "ab-2",
+  "directions": "This practice unit test has two sections: Section I, multiple choice (12 questions, 32 minutes), and Section II, free response (2 questions, 30 minutes). Each part states whether a graphing calculator may be used. Record raw points only: 1 point for each multiple-choice question and the points shown for each free-response part, 30 points in all.",
+  "figures": [
+    {
+      "id": "ab-u5-f1",
+      "alt": "Graph of a smooth wave-shaped function y = f(x) for 0 ≤ x ≤ 8. It starts at (0, 2), rises to a high point at (2, 4), falls through (4, 2) to a low point at (6, 0), and rises to (8, 2). Four points on the curve are labeled with letters A, B, C, and D at x = 1, 3, 5, and 7, in that order."
+    },
+    {
+      "id": "ab-u5-f2",
+      "alt": "Graph of y = f′(x) made of four line segments for −3 ≤ x ≤ 4: from (−3, −2) to (−2, 0), from (−2, 0) to (0, 2), from (0, 2) to (2, −2), and from (2, −2) to (4, 2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 20,
+          "calculator": "none",
+          "directions": "No calculator. Choose the best answer for each question. Angles are in radians.",
+          "items": [
+            {
+              "id": "ab-u5-mc01",
+              "prompt": "For f(x) = x^3 on [0, 3], what value of c satisfies the conclusion of the Mean Value Theorem?",
+              "choices": [
+                "3/2",
+                "√3",
+                "3",
+                "1"
+              ],
+              "key": "B",
+              "rationale": "The secant slope is (27 − 0)/3 = 9, and f′(c) = 3c^2 = 9 gives c = √3 in (0, 3).",
+              "distractorNotes": {
+                "A": "This is the midpoint of the interval, not where f′(c) equals the secant slope.",
+                "C": "An endpoint; the theorem gives c strictly inside the interval.",
+                "D": "Solves 3c^2 = 3 instead of 3c^2 = 9."
+              },
+              "topics": [
+                "AB.5.1"
+              ]
+            },
+            {
+              "id": "ab-u5-mc02",
+              "prompt": "At which x-value does f(x) = x^3 − 3x^2 − 9x have a local minimum?",
+              "choices": [
+                "x = 3",
+                "x = −1",
+                "x = 0",
+                "x = 1"
+              ],
+              "key": "A",
+              "rationale": "f′(x) = 3x^2 − 6x − 9 = 3(x − 3)(x + 1); f′ changes from negative to positive at x = 3.",
+              "distractorNotes": {
+                "B": "f′ changes from positive to negative there, a local maximum.",
+                "C": "f′(0) = −9 ≠ 0, so 0 is not a critical point.",
+                "D": "This is where f″ = 0, a point of inflection."
+              },
+              "topics": [
+                "AB.5.4",
+                "AB.5.2"
+              ]
+            },
+            {
+              "id": "ab-u5-mc03",
+              "prompt": "The derivative of f is f′(x) = x^2 − 2x − 8. On which intervals is f increasing?",
+              "choices": [
+                "(−2, 4)",
+                "(−∞, −4) and (2, ∞)",
+                "(4, ∞) only",
+                "(−∞, −2) and (4, ∞)"
+              ],
+              "key": "D",
+              "rationale": "f′(x) = (x − 4)(x + 2) is positive for x < −2 and for x > 4.",
+              "distractorNotes": {
+                "A": "This is where f′ < 0, so f is decreasing.",
+                "B": "Uses the wrong signs for the zeros of f′.",
+                "C": "Leaves out the interval to the left of x = −2."
+              },
+              "topics": [
+                "AB.5.3"
+              ]
+            },
+            {
+              "id": "ab-u5-mc04",
+              "prompt": "What is the absolute minimum value of f(x) = x^3 − 12x on [0, 3]?",
+              "choices": [
+                "−9",
+                "0",
+                "−16",
+                "16"
+              ],
+              "key": "C",
+              "rationale": "f′(x) = 3x^2 − 12 = 0 at x = 2 in [0, 3]. Candidates: f(0) = 0, f(2) = −16, f(3) = −9.",
+              "distractorNotes": {
+                "A": "This is f(3), an endpoint value, not the smallest value.",
+                "B": "This is the absolute maximum, f(0).",
+                "D": "Sign error in f(2)."
+              },
+              "topics": [
+                "AB.5.5"
+              ]
+            },
+            {
+              "id": "ab-u5-mc05",
+              "prompt": "On which interval is the graph of f(x) = x^4 − 6x^2 concave down?",
+              "choices": [
+                "(−√3, √3)",
+                "(−1, 1)",
+                "(−∞, −1) and (1, ∞)",
+                "(0, √3)"
+              ],
+              "key": "B",
+              "rationale": "f″(x) = 12x^2 − 12 = 12(x − 1)(x + 1), which is negative on (−1, 1).",
+              "distractorNotes": {
+                "A": "Uses the zeros of f′ instead of f″.",
+                "C": "These are the intervals where f is concave up.",
+                "D": "This is an interval where f is decreasing."
+              },
+              "topics": [
+                "AB.5.6"
+              ]
+            },
+            {
+              "id": "ab-u5-mc06",
+              "prompt": "A twice-differentiable function g has g′(2) = 0 and g″(2) = −3. Which statement is true?",
+              "choices": [
+                "g has a local maximum at x = 2.",
+                "g has a local minimum at x = 2.",
+                "The graph of g has a point of inflection at x = 2.",
+                "g is increasing at x = 2."
+              ],
+              "key": "A",
+              "rationale": "By the second derivative test, g′(2) = 0 and g″(2) < 0 give a local maximum.",
+              "distractorNotes": {
+                "B": "A negative second derivative at a critical point gives a maximum.",
+                "C": "g″(2) ≠ 0, so the concavity does not change there.",
+                "D": "g′(2) = 0, so g is neither increasing nor decreasing at that point."
+              },
+              "topics": [
+                "AB.5.7"
+              ]
+            },
+            {
+              "id": "ab-u5-mc07",
+              "prompt": "The graph of f is shown. At which labeled point are f′ and f″ both negative?",
+              "figureIds": [
+                "ab-u5-f1"
+              ],
+              "choices": [
+                "Point A",
+                "Point B",
+                "Point C",
+                "Point D"
+              ],
+              "key": "B",
+              "rationale": "f′ < 0 where the graph falls and f″ < 0 where it is concave down; both hold between the high point and the point (4, 2), at B.",
+              "distractorNotes": {
+                "A": "At A the graph rises, so f′ > 0.",
+                "C": "At C the graph falls but bends upward, so f″ > 0.",
+                "D": "At D the graph rises and bends upward."
+              },
+              "topics": [
+                "AB.5.9",
+                "AB.5.8"
+              ]
+            },
+            {
+              "id": "ab-u5-mc08",
+              "prompt": "At which points does the curve x^2 + y^2 − 6x + 4y = 12 have horizontal tangent lines?",
+              "choices": [
+                "(3, 3) only",
+                "(8, −2) and (−2, −2)",
+                "(3, 3) and (3, −7)",
+                "(0, 2) and (0, −6)"
+              ],
+              "key": "C",
+              "rationale": "dy/dx = −(2x − 6)/(2y + 4) = 0 when x = 3; then y^2 + 4y − 21 = 0 gives y = 3 or y = −7, where 2y + 4 ≠ 0.",
+              "distractorNotes": {
+                "A": "Misses the second solution of y^2 + 4y − 21 = 0.",
+                "B": "These are the points with vertical tangents.",
+                "D": "Uses x = 0 instead of the zero of the numerator of dy/dx."
+              },
+              "topics": [
+                "AB.5.12"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required for some questions in this part. Choose the best answer; when the exact value is not among the choices, choose the closest decimal. Angles are in radians.",
+          "items": [
+            {
+              "id": "ab-u5-mc09",
+              "prompt": "For f(x) = e^(0.5x) − x on [0, 3], what value of c satisfies the conclusion of the Mean Value Theorem?",
+              "choices": [
+                "1.500",
+                "0.161",
+                "1.684",
+                "2.321"
+              ],
+              "key": "C",
+              "rationale": "The secant slope is (e^1.5 − 3 − 1)/3 ≈ 0.1606; solving 0.5e^(0.5c) − 1 = 0.1606 gives c ≈ 1.684.",
+              "distractorNotes": {
+                "A": "The midpoint of the interval.",
+                "B": "This is the secant slope, not c.",
+                "D": "This is e^(0.5c), not c."
+              },
+              "topics": [
+                "AB.5.1"
+              ]
+            },
+            {
+              "id": "ab-u5-mc10",
+              "prompt": "What is the absolute maximum value of f(x) = 3x^2e^(−x) − x on [0, 4]?",
+              "choices": [
+                "0.108",
+                "0.000",
+                "1.090",
+                "−0.104"
+              ],
+              "key": "A",
+              "rationale": "f′(x) = 3e^(−x)(2x − x^2) − 1 = 0 at x ≈ 0.241 and x ≈ 1.090. Candidates: f(0) = 0, f(0.241) ≈ −0.104, f(1.090) ≈ 0.108, f(4) ≈ −3.121.",
+              "distractorNotes": {
+                "B": "This is f(0); the interior local maximum is larger.",
+                "C": "This is where the maximum occurs, not the maximum value.",
+                "D": "This is the local minimum value."
+              },
+              "topics": [
+                "AB.5.5"
+              ]
+            },
+            {
+              "id": "ab-u5-mc11",
+              "prompt": "A rectangle has its base on the x-axis and its upper corners on the curve y = cos x, for −π/2 ≤ x ≤ π/2. What is the largest possible area of the rectangle?",
+              "choices": [
+                "0.860",
+                "2.000",
+                "0.561",
+                "1.122"
+              ],
+              "key": "D",
+              "rationale": "A(x) = 2x cos x; A′(x) = 2cos x − 2x sin x = 0 at x ≈ 0.8603, and A(0.8603) ≈ 1.122 is the maximum since A = 0 at both ends.",
+              "distractorNotes": {
+                "A": "This is the x-value of the upper right corner.",
+                "B": "This is the area under the whole arch, not a rectangle.",
+                "C": "Uses x cos x, half the width."
+              },
+              "topics": [
+                "AB.5.11",
+                "AB.5.10"
+              ]
+            },
+            {
+              "id": "ab-u5-mc12",
+              "prompt": "The derivative of a function f is f′(x) = x^2 − 2sin(2x). At what value of x in 0 < x < 2 does the graph of f have a point of inflection?",
+              "choices": [
+                "1.183",
+                "0.785",
+                "0.000",
+                "0.626"
+              ],
+              "key": "D",
+              "rationale": "f″(x) = 2x − 4cos(2x) changes sign once in (0, 2), at x ≈ 0.626.",
+              "distractorNotes": {
+                "A": "This is a zero of f′, where f has an extremum.",
+                "B": "This is π/4, where sin(2x) is largest, not where f″ changes sign.",
+                "C": "Outside the open interval."
+              },
+              "topics": [
+                "AB.5.9",
+                "AB.5.6"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show the setup for every calculator result (the expression you evaluate or the equation you solve), give decimal answers to three decimal places, include units where the question asks, and justify your conclusions.",
+          "items": [
+            {
+              "id": "ab-u5-fr1",
+              "prompt": "A company makes and sells x thousand units of a product per month, 0 ≤ x ≤ 10. Its monthly revenue is R(x) = 40xe^(−0.25x) thousand dollars and its monthly cost is C(x) = 5 + 3x thousand dollars. The profit is P(x) = R(x) − C(x).",
+              "context": true,
+              "topics": [
+                "AB.5.11",
+                "AB.5.5",
+                "AB.5.6",
+                "AB.5.1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the production level x that maximizes profit on 0 ≤ x ≤ 10. Justify your answer.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "P′(x) = 40e^(−0.25x)(1 − 0.25x) − 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves P′(x) = 0 to get x ≈ 3.313."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates P(0) = −5 and P(10) ≈ −2.166 (or shows P′ changes from positive to negative at the only critical point)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that x ≈ 3.313 thousand units gives the maximum profit."
+                    }
+                  ],
+                  "answer": "x ≈ 3.313 thousand units",
+                  "steps": [
+                    "P′(x) = R′(x) − 3 with R′(x) = 40e^(−0.25x)(1 − 0.25x).",
+                    "The calculator finds the only zero of P′ in [0, 10] at x ≈ 3.313.",
+                    "Candidates: P(0) = −5, P(3.313) ≈ 42.947, P(10) ≈ −2.166."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the maximum monthly profit.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "P(3.313) ≈ 42.947 thousand dollars."
+                    }
+                  ],
+                  "answer": "About 42.947 thousand dollars",
+                  "steps": [
+                    "Evaluate P at x ≈ 3.313."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On what interval is the graph of R concave down? What does this say about the revenue from each additional unit?",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "R″(x) = 40e^(−0.25x)(0.0625x − 0.5) < 0 for 0 ≤ x < 8."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets: on that interval the marginal revenue R′(x) is decreasing, so each additional unit adds less revenue than the one before."
+                    }
+                  ],
+                  "answer": "Concave down on 0 < x < 8; there the marginal revenue is decreasing.",
+                  "steps": [
+                    "Differentiate R twice, or graph R″: it is negative before x = 8 and positive after.",
+                    "R concave down means R′ is decreasing."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find a value of x in 0 < x < 10 at which the instantaneous rate of change of profit equals the average rate of change of profit over 0 ≤ x ≤ 10. Explain why such a value must exist.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that P is differentiable (so continuous) on [0, 10], so the Mean Value Theorem applies, and computes the average rate (P(10) − P(0))/10 ≈ 0.283."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves P′(x) ≈ 0.283 to get x ≈ 3.259."
+                    }
+                  ],
+                  "answer": "x ≈ 3.259",
+                  "steps": [
+                    "(P(10) − P(0))/10 = (−2.166 + 5)/10 ≈ 0.2834 thousand dollars per thousand units.",
+                    "The calculator solves P′(x) = 0.2834 at x ≈ 3.259 (the only solution in (0, 10))."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "No calculator. Show your work, justify your answers, and give exact values.",
+          "items": [
+            {
+              "id": "ab-u5-fr2",
+              "prompt": "The function f is defined and differentiable on [−3, 4], with f(1) = 3. The graph of its derivative f′, made of line segments, is shown.",
+              "figureIds": [
+                "ab-u5-f2"
+              ],
+              "topics": [
+                "AB.5.9",
+                "AB.5.4",
+                "AB.5.6",
+                "AB.5.8",
+                "AB.4.6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the x-coordinates of all relative minima and relative maxima of f on −3 < x < 4. Justify.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Relative minima at x = −2 and x = 3; relative maximum at x = 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with sign changes of f′ (− to + at −2 and 3, + to − at 1)."
+                    }
+                  ],
+                  "answer": "Relative minima at x = −2 and x = 3; relative maximum at x = 1.",
+                  "steps": [
+                    "The zeros of f′ are −2, 1 (on the segment from (0, 2) to (2, −2)), and 3 (on the segment from (2, −2) to (4, 2)).",
+                    "f′ changes from negative to positive at −2 and 3, and from positive to negative at 1."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On what open intervals is the graph of f concave up? Justify.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Concave up on (−3, 0) and (2, 4)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with f′ increasing on those intervals."
+                    }
+                  ],
+                  "answer": "(−3, 0) and (2, 4)",
+                  "steps": [
+                    "The graph of f′ rises on (−3, 0) and on (2, 4) and falls on (0, 2).",
+                    "f′ increasing means f″ > 0, so f is concave up."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the x-coordinates of the points of inflection of f.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "x = 0 and x = 2, where f′ changes from increasing to decreasing or the reverse."
+                    }
+                  ],
+                  "answer": "x = 0 and x = 2",
+                  "steps": [
+                    "f″ changes sign where f′ has its peak (x = 0) and its valley (x = 2)."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Write an equation for the line tangent to the graph of f at x = 1.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Reads f′(1) = 0 from the graph."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "y = 3."
+                    }
+                  ],
+                  "answer": "y = 3",
+                  "steps": [
+                    "The segment from (0, 2) to (2, −2) gives f′(1) = 0.",
+                    "The tangent line through (1, 3) with slope 0 is y = 3."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Use the tangent line from part (d) to approximate f(1.1). Is the approximation greater than or less than f(1.1)? Explain.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "The approximation is f(1.1) ≈ 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Greater than f(1.1), because f is concave down on (0, 2), so its graph lies below the tangent line."
+                    }
+                  ],
+                  "answer": "f(1.1) ≈ 3, which is greater than f(1.1).",
+                  "steps": [
+                    "The tangent line is constant, so the approximation is 3.",
+                    "f′ is decreasing on (0, 2), so f is concave down there and f(1.1) < 3."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

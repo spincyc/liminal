@@ -1,0 +1,497 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "unit-4",
+  "kind": "unit-test",
+  "unitId": "u4",
+  "title": "Unit 4 test: Contextual Applications of Differentiation",
+  "author": "ab-2",
+  "directions": "This practice unit test has two sections: Section I, multiple choice (12 questions, 32 minutes), and Section II, free response (2 questions, 30 minutes). Each part states whether a graphing calculator may be used. Record raw points only: 1 point for each multiple-choice question and the points shown for each free-response part, 30 points in all.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 20,
+          "calculator": "none",
+          "directions": "No calculator. Choose the best answer for each question. Angles are in radians.",
+          "items": [
+            {
+              "id": "ab-u4-mc01",
+              "prompt": "V(t) is the volume of water, in liters, in a tank t hours after noon. Which statement is the best interpretation of V′(5) = −3?",
+              "choices": [
+                "Five hours after noon, the tank holds 3 liters less than it did at noon.",
+                "At 5 p.m., the volume of water is decreasing at 3 liters per hour.",
+                "The volume decreases by exactly 3 liters during every hour.",
+                "At 5 p.m., the tank holds −3 liters of water."
+              ],
+              "key": "B",
+              "rationale": "V′(5) is the instantaneous rate of change of the volume at t = 5, in liters per hour; the negative sign means decreasing.",
+              "distractorNotes": {
+                "A": "Describes a total change over 5 hours, not a rate at t = 5.",
+                "C": "A derivative at one instant does not describe every hour.",
+                "D": "Confuses the rate V′(5) with the amount V(5)."
+              },
+              "topics": [
+                "AB.4.1"
+              ]
+            },
+            {
+              "id": "ab-u4-mc02",
+              "prompt": "A particle moves along the x-axis with position x(t) = t^3 − 3t^2 − 24t + 5 for t ≥ 0. On which interval is the particle moving to the left?",
+              "choices": [
+                "0 < t < 4",
+                "t > 4",
+                "−2 < t < 4",
+                "0 < t < 1"
+              ],
+              "key": "A",
+              "rationale": "v(t) = 3t^2 − 6t − 24 = 3(t − 4)(t + 2), which is negative for 0 ≤ t < 4.",
+              "distractorNotes": {
+                "B": "This is where v(t) > 0, so the particle moves right.",
+                "C": "Includes negative times, which are outside t ≥ 0.",
+                "D": "Uses the zero of a(t) instead of the zero of v(t)."
+              },
+              "topics": [
+                "AB.4.2"
+              ]
+            },
+            {
+              "id": "ab-u4-mc03",
+              "prompt": "A particle moves along a line with velocity v(t) = t^2 − 6t + 8. At which of these times is the particle's speed increasing?",
+              "choices": [
+                "t = 0.5",
+                "t = 1.5",
+                "t = 3.5",
+                "t = 2.5"
+              ],
+              "key": "D",
+              "rationale": "a(t) = 2t − 6. At t = 2.5, v = −0.25 and a = −1 have the same sign, so the speed is increasing.",
+              "distractorNotes": {
+                "A": "v(0.5) > 0 and a(0.5) < 0, so the speed is decreasing.",
+                "B": "v(1.5) > 0 and a(1.5) < 0, so the speed is decreasing.",
+                "C": "v(3.5) < 0 and a(3.5) > 0, so the speed is decreasing."
+              },
+              "topics": [
+                "AB.4.2"
+              ]
+            },
+            {
+              "id": "ab-u4-mc04",
+              "prompt": "The mass of the first x centimeters of a thin rod is m(x) = 3x^2 + x grams. What is the linear density of the rod at x = 4 centimeters?",
+              "choices": [
+                "52 g/cm",
+                "13 g/cm",
+                "25 g/cm",
+                "24 g/cm"
+              ],
+              "key": "C",
+              "rationale": "Linear density is dm/dx = 6x + 1, which is 25 g/cm at x = 4.",
+              "distractorNotes": {
+                "A": "This is the mass m(4), not its rate of change.",
+                "B": "This is the average density m(4)/4 over the first 4 cm.",
+                "D": "Omits the derivative of the x term."
+              },
+              "topics": [
+                "AB.4.3",
+                "AB.4.1"
+              ]
+            },
+            {
+              "id": "ab-u4-mc05",
+              "prompt": "The area of a circle is increasing at 12π square centimeters per second. How fast is the radius increasing when the radius is 3 centimeters?",
+              "choices": [
+                "4 cm/s",
+                "2 cm/s",
+                "6 cm/s",
+                "2/3 cm/s"
+              ],
+              "key": "B",
+              "rationale": "dA/dt = 2πr(dr/dt), so 12π = 2π(3)(dr/dt) and dr/dt = 2 cm/s.",
+              "distractorNotes": {
+                "A": "Divides 12π by 3π.",
+                "C": "Divides 12π by 2π, leaving out the radius.",
+                "D": "Divides by 2πr^2 instead of 2πr."
+              },
+              "topics": [
+                "AB.4.4"
+              ]
+            },
+            {
+              "id": "ab-u4-mc06",
+              "prompt": "A point moves along the curve y = x^2 so that dx/dt = 3. At the point (2, 4), how fast is its distance from the origin changing?",
+              "choices": [
+                "27√5/5",
+                "3√5/5",
+                "54",
+                "12√5/5"
+              ],
+              "key": "A",
+              "rationale": "With D^2 = x^2 + y^2, D(dD/dt) = x(dx/dt) + y(dy/dt). Here dy/dt = 2x(dx/dt) = 12 and D = √20 = 2√5, so dD/dt = (6 + 48)/(2√5) = 27/√5 = 27√5/5.",
+              "distractorNotes": {
+                "B": "Treats y as constant, so dy/dt is left out.",
+                "C": "Omits dividing by the distance √20.",
+                "D": "Uses dy/dt = 12 but leaves out the x(dx/dt) term."
+              },
+              "topics": [
+                "AB.4.5",
+                "AB.4.4"
+              ]
+            },
+            {
+              "id": "ab-u4-mc07",
+              "prompt": "A twice-differentiable function f has f(2) = 5, f′(2) = −3, and f″(x) > 0 for all x. Which is the tangent-line approximation of f(2.1), and how does it compare with f(2.1)?",
+              "choices": [
+                "5.3, an overestimate",
+                "4.7, an overestimate",
+                "5.3, an underestimate",
+                "4.7, an underestimate"
+              ],
+              "key": "D",
+              "rationale": "L(2.1) = 5 + (−3)(0.1) = 4.7. Since f″ > 0, the graph lies above its tangent lines, so 4.7 < f(2.1).",
+              "distractorNotes": {
+                "A": "Adds the change instead of subtracting it.",
+                "B": "A concave-up graph lies above its tangent line, so the line gives an underestimate.",
+                "C": "Adds the change instead of subtracting it."
+              },
+              "topics": [
+                "AB.4.6"
+              ]
+            },
+            {
+              "id": "ab-u4-mc08",
+              "prompt": "What is lim_(x→0) (1 − cos(4x))/x^2?",
+              "choices": [
+                "4",
+                "16",
+                "8",
+                "2"
+              ],
+              "key": "C",
+              "rationale": "The form is 0/0; L'Hospital's Rule gives 4sin(4x)/(2x), still 0/0, and then 16cos(4x)/2 → 8.",
+              "distractorNotes": {
+                "A": "Applies the rule once and then evaluates incorrectly.",
+                "B": "Forgets the 1/2 from differentiating x^2 twice.",
+                "D": "Uses cos(2x) instead of cos(4x)."
+              },
+              "topics": [
+                "AB.4.7"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required for some questions in this part. Choose the best answer; when the exact value is not among the choices, choose the closest decimal. Angles are in radians.",
+          "items": [
+            {
+              "id": "ab-u4-mc09",
+              "prompt": "A particle's position is x(t) = t^2e^(−0.5t). What is its acceleration at t = 2.5?",
+              "choices": [
+                "0.537",
+                "−0.412",
+                "−0.206",
+                "0.412"
+              ],
+              "key": "B",
+              "rationale": "a(t) = x″(t); the calculator gives x″(2.5) ≈ −0.412.",
+              "distractorNotes": {
+                "A": "This is the velocity v(2.5).",
+                "C": "Halves the acceleration.",
+                "D": "Sign error."
+              },
+              "topics": [
+                "AB.4.2"
+              ]
+            },
+            {
+              "id": "ab-u4-mc10",
+              "prompt": "Water flows at 2 cubic meters per minute into an inverted conical tank with rim radius 3 meters and depth 4 meters. How fast is the water level rising when the tank holds 10 cubic meters?",
+              "choices": [
+                "0.171 m/min",
+                "0.200 m/min",
+                "0.057 m/min",
+                "2.570 m/min"
+              ],
+              "key": "A",
+              "rationale": "r = 3h/4 gives V = 3πh^3/16. At V = 10, h ≈ 2.5701, and dV/dt = (9πh^2/16)(dh/dt) gives dh/dt ≈ 2/11.672 ≈ 0.171 m/min.",
+              "distractorNotes": {
+                "B": "Divides the inflow rate by the volume.",
+                "C": "Drops the factor 3 from differentiating h^3.",
+                "D": "This is the depth h, not dh/dt."
+              },
+              "topics": [
+                "AB.4.5"
+              ]
+            },
+            {
+              "id": "ab-u4-mc11",
+              "prompt": "Let f(x) = (ln x)e^(0.2x). What is the tangent-line approximation of f(2.2) based at x = 2?",
+              "choices": [
+                "3.130",
+                "0.844",
+                "0.191",
+                "1.225"
+              ],
+              "key": "D",
+              "rationale": "f(2) ≈ 1.0341 and f′(2) ≈ 0.9527, so L(2.2) ≈ 1.0341 + 0.9527(0.2) ≈ 1.225.",
+              "distractorNotes": {
+                "A": "Multiplies f′(2) by 2.2 instead of by 0.2.",
+                "B": "Subtracts the change instead of adding it.",
+                "C": "Gives only the change f′(2)(0.2)."
+              },
+              "topics": [
+                "AB.4.6"
+              ]
+            },
+            {
+              "id": "ab-u4-mc12",
+              "prompt": "A bird population on an island is modeled by P(t) = 1200/(1 + 5e^(−0.25t)), t years after a survey. At what rate is the population changing at t = 6?",
+              "choices": [
+                "567.201 birds per year",
+                "18.694 birds per year",
+                "74.776 birds per year",
+                "149.552 birds per year"
+              ],
+              "key": "C",
+              "rationale": "The calculator's numerical derivative of P at t = 6 is about 74.776 birds per year.",
+              "distractorNotes": {
+                "A": "This is the population P(6).",
+                "B": "Divides the correct rate by 4.",
+                "D": "Doubles the correct rate."
+              },
+              "topics": [
+                "AB.4.3",
+                "AB.4.1"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show the setup for every calculator result (the expression you evaluate or the equation you solve), give decimal answers to three decimal places, include units where the question asks, and justify your conclusions.",
+          "items": [
+            {
+              "id": "ab-u4-fr1",
+              "prompt": "Sand falls onto a conical pile whose base radius is always 1.5 times its height. Sand is added at the rate R(t) = 2 + sin(t/2) cubic meters per minute, t minutes after the pouring starts. At t = 3 minutes, the pile is 1.8 meters high.",
+              "context": true,
+              "topics": [
+                "AB.4.5",
+                "AB.4.4",
+                "AB.4.1",
+                "AB.4.6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the rate at which the height of the pile is increasing at t = 3. Indicate units of measure.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes V = (1/3)π(1.5h)^2h = 0.75πh^3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates: dV/dt = 2.25πh^2(dh/dt), with dV/dt = R(3)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "dh/dt ≈ 0.131 meter per minute."
+                    }
+                  ],
+                  "answer": "dh/dt ≈ 0.131 m/min",
+                  "steps": [
+                    "r = 1.5h, so V = (1/3)π(2.25h^2)h = 0.75πh^3.",
+                    "R(3) = 2 + sin(1.5) ≈ 2.9975, and 2.25π(1.8)^2 ≈ 22.902.",
+                    "dh/dt ≈ 2.9975/22.902 ≈ 0.131 m/min."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the rate at which the radius of the base is increasing at t = 3.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "dr/dt = 1.5(dh/dt) ≈ 0.196 meter per minute."
+                    }
+                  ],
+                  "answer": "dr/dt ≈ 0.196 m/min",
+                  "steps": [
+                    "r = 1.5h, so dr/dt = 1.5(0.13088) ≈ 0.196."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Is the rate at which sand is added increasing or decreasing at t = 3? Give a reason, and state the units of R′(3).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "R′(3) = 0.5cos(1.5) ≈ 0.035 > 0, so the rate is increasing."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Units of R′(3): cubic meters per minute per minute."
+                    }
+                  ],
+                  "answer": "Increasing, because R′(3) ≈ 0.035 > 0; units m^3/min^2.",
+                  "steps": [
+                    "R′(t) = 0.5cos(t/2), and cos(1.5) > 0.",
+                    "R is in m^3/min and t in minutes, so R′ is in m^3/min per minute."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use a tangent line to the graph of the height of the pile at t = 3 to estimate the height at t = 3.5. Interpret the answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the tangent line H(t) ≈ 1.8 + 0.131(t − 3)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Estimates H(3.5) ≈ 1.865 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that the pile is about 1.865 m high half a minute later, by the linear approximation."
+                    }
+                  ],
+                  "answer": "About 1.865 m",
+                  "steps": [
+                    "The tangent line uses the height 1.8 and slope dh/dt ≈ 0.13088 from part (a).",
+                    "1.8 + 0.13088(0.5) ≈ 1.865 m: half a minute later the pile is about 1.865 m high."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "No calculator. Show your work, justify your answers, and give exact values.",
+          "items": [
+            {
+              "id": "ab-u4-fr2",
+              "prompt": "A particle moves along the x-axis with position x(t) = 2t^3 − 21t^2 + 60t for 0 ≤ t ≤ 6.",
+              "topics": [
+                "AB.4.2",
+                "AB.4.7"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On what open interval is the particle moving to the left? Justify.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "v(t) = 6t^2 − 42t + 60 = 6(t − 2)(t − 5)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Moving left on 2 < t < 5 because v(t) < 0 there."
+                    }
+                  ],
+                  "answer": "2 < t < 5",
+                  "steps": [
+                    "Factor v(t) = 6(t − 2)(t − 5).",
+                    "v(t) < 0 between its zeros, so the particle moves left on (2, 5)."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Is the speed of the particle increasing or decreasing at t = 3? Justify.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "v(3) = −12 and a(3) = −6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Increasing, because velocity and acceleration have the same sign."
+                    }
+                  ],
+                  "answer": "Increasing",
+                  "steps": [
+                    "a(t) = 12t − 42, so a(3) = −6, and v(3) = 6(1)(−2) = −12.",
+                    "Both are negative, so the speed is increasing."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the total distance the particle travels for 0 ≤ t ≤ 6.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the turning points t = 2 and t = 5."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "x(0) = 0, x(2) = 52, x(5) = 25, x(6) = 36."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Total distance 52 + 27 + 11 = 90."
+                    }
+                  ],
+                  "answer": "90",
+                  "steps": [
+                    "The particle turns at t = 2 and t = 5.",
+                    "|52 − 0| + |25 − 52| + |36 − 25| = 52 + 27 + 11 = 90."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find lim_(t→2) (x(t) − 52)/(t − 2)^2.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the 0/0 form (x(2) = 52) and applies L'Hospital's Rule, getting v(t)/(2(t − 2)), again 0/0 since v(2) = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies the rule again: a(t)/2 → a(2)/2 = −9."
+                    }
+                  ],
+                  "answer": "−9",
+                  "steps": [
+                    "x(2) − 52 = 0 and (2 − 2)^2 = 0, so the form is 0/0; the derivative quotient is v(t)/(2(t − 2)).",
+                    "v(2) = 0 makes this 0/0 again; the next quotient is a(t)/2, and a(2) = 24 − 42 = −18, so the limit is −9."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
