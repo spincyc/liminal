@@ -64,6 +64,9 @@ K–12 corpus and the Advanced levels complete separately:
 `node tools/check-daily-reading.js --complete` requires K–12, and
 `--complete-advanced` requires Advanced 1–4.
 
+Printed packets use one fixed two-column style, specified in
+[reading packets](reading-packets.md).
+
 ## Canonical contract
 
 Each `content/reading-daily/{k,1,...,12,a1,...,a4}.json` is one complete grade
