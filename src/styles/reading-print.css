@@ -21,7 +21,8 @@
   .daily-page :is(.page-width, #dailyReader) { width: 100%; max-width: none; }
   /* Reserve footer space in every printed fragment, including long readings. */
   .daily-main { padding: 0 0 .3in; box-decoration-break: clone; }
-  .daily-reading { columns: 2; column-gap: .28in; column-fill: balance; }
+  /* Fill each page left to right, including short works and the final page. */
+  .daily-reading { columns: 2; column-gap: .28in; column-fill: auto; }
   .daily-heading { column-span: all; border: 0; padding: 0; margin-bottom: 16pt; text-align: center; break-inside: avoid; }
   .daily-heading :is(h1, h2) { font: 700 18pt/1.15 var(--font-serif); letter-spacing: normal; margin-block: 6pt; }
   .daily-mode { font: italic 9pt/1.25 var(--font-serif); color: #333; }

@@ -11,6 +11,11 @@ updating this page and the test together.
 Browser printing and downloaded reading HTML also use Computer Modern text,
 two-column reading text, separate reading/questions sections, a compact source
 note, and a small footer with the grade, week, day and Liminal.
+All works fill columns sequentially: down the left column, then down the right,
+then onto the next page. Short works and the final page are not balanced into
+equal-height columns. This shared rule also travels with downloaded HTML;
+native TeX two-column packets already use this flow. Keep stanza and section
+break protections, without using them to balance the overall document.
 
 ## The style
 
