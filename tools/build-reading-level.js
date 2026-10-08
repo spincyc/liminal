@@ -141,7 +141,9 @@ function bundle({ data, courses, resolved, levels, labels }) {
       items: probe.items.map(item => ({ id: item.id, skill: item.skill, stem: item.stem, options: item.options.slice(), key: item.key, rationale: item.rationale })) };
   });
   const library = courses.map(course => ({ level: course.grade, label: L.levelLabel(course.grade, labels),
-    nights: course.days.map(day => [day.title, day.time.totalMinutes]) }));
+    // [title, minutes, continues]: continues is 1 when the night runs on into
+    // the next, so plans never put a stretch night inside a continued reading.
+    nights: course.days.map(day => [day.title, day.time.totalMinutes, day.excerpt.continuesTo ? 1 : 0]) }));
   return { schemaVersion: 1, review: data.review.status, labels, levels: levels.map(level => ({ level, label: L.levelLabel(level, labels) })), library, probes };
 }
 

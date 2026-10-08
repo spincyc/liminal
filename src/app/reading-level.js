@@ -26,7 +26,7 @@
   function probeAt(level, form) { return probes.find(probe => probe.level === level && probe.form === form) || null; }
 
   // ---- Dates (ISO strings; shown in UTC so the stored day never shifts) ----
-  function today() { const now = new Date(); return now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0"); }
+  function today() { return L.localDate(new Date()); }
   const dateFormat = new Intl.DateTimeFormat(undefined, { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
   const longDate = new Intl.DateTimeFormat(undefined, { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   function showDate(iso, long = false) { return (long ? longDate : dateFormat).format(new Date(iso + "T00:00:00Z")); }
@@ -48,13 +48,8 @@
   }
 
   // ---- Attempts ----
-  function history() {
-    let order = 0;
-    return state.attempts.flatMap(attempt => attempt.responses.map(response => {
-      const probe = probesById[response.probeId];
-      return probe ? { level: probe.level, form: probe.form, order: order++ } : null;
-    }).filter(Boolean));
-  }
+  // Every passage ever shown here, kept when a check is stopped.
+  function history() { return L.seenHistory(state, probesById); }
   function attemptById(id) { return state.attempts.find(attempt => attempt.id === id) || null; }
   function latest(kind) { return state.attempts.filter(attempt => attempt.kind === kind && attempt.finishedAt).pop() || null; }
   function newAttempt(kind, startLevel) {
@@ -64,6 +59,7 @@
   function present(attempt, level, preference) {
     const choice = L.chooseForm(level, history(), preference), probe = probeAt(level, choice.form);
     state.current = { attemptId: attempt.id, probeId: probe.id, phase: "reading", answers: [], readingMs: null, rating: null, repeat: choice.repeat };
+    L.markSeen(state, probe.id, new Date().toISOString());
     readingStarted = null; save(); go("", "");
   }
   function startCalibration(level) {
@@ -71,7 +67,7 @@
     present(attempt, L.nextStep([], ladder, level).level, ["a", "b"]);
   }
   function startRecheck() {
-    if (!state.plan) return;
+    if (!state.plan || state.plan.complete) return;
     const attempt = newAttempt("recheck", null);
     present(attempt, L.recheckLevel(state.plan, ladder), ["b", "a"]);
   }
@@ -79,7 +75,7 @@
     const current = state.current;
     state.current = null;
     if (current) state.attempts = state.attempts.filter(attempt => attempt.id !== current.attemptId);
-    readingStarted = null; save(); go("", "Check stopped. Nothing from it was kept.");
+    readingStarted = null; save(); go("", "Check stopped. Its answers were not kept; passages already shown count as seen.");
   }
   function continueAttempt() {
     const attempt = attemptById(state.current.attemptId);
@@ -90,11 +86,18 @@
       attempt.finishedAt = new Date().toISOString(); save(); go("#result", "Check finished.");
       return;
     }
-    const result = L.replay(attempt, probesById)[0];
-    const decision = L.applyRecheck(state.plan, result, today(), libraryLevels, labels);
     attempt.finishedAt = new Date().toISOString();
-    state.plan = { ...decision.inputs, createdAt: new Date().toISOString(), note: decision.message };
-    save(); go("#plan", decision.message);
+    // A decision that cannot be applied leaves the plan as it was; the student
+    // is never stuck on a screen whose only button fails.
+    try {
+      const result = L.replay(attempt, probesById)[0];
+      if (!result || !state.plan) throw new Error("No re-check result");
+      const decision = L.applyRecheck(state.plan, result, today(), libraryLevels, labels);
+      state.plan = { ...decision.inputs, createdAt: new Date().toISOString(), note: decision.message };
+      save(); go(state.plan ? "#plan" : "", decision.message);
+    } catch (_) {
+      save(); go(state.plan ? "#plan" : "", "This re-check could not be applied, so your plan is unchanged.");
+    }
   }
 
   // ---- Navigation ----
@@ -222,7 +225,8 @@
     wrap.append(list, sourceSection(probe));
     const done = attempt.kind === "recheck" || L.nextStep(L.replay(attempt, probesById), ladder, attempt.startLevel).done;
     const actions = el("div", undefined, "rl-actions");
-    actions.append(button(done ? (attempt.kind === "recheck" ? "See the decision" : "See your starting point") : "Next passage", continueAttempt, "rl-primary"));
+    actions.append(button(done ? (attempt.kind === "recheck" ? "See the decision" : "See your starting point") : "Next passage", continueAttempt, "rl-primary"),
+      button("Stop this check", stopAttempt, "rl-quiet"));
     wrap.append(actions); view.append(wrap);
   }
   function homeView() {
@@ -233,10 +237,12 @@
       const next = plan.weeks.map(week => week.recheck).filter(Boolean).find(recheck => recheck.date >= today());
       const card = el("section", undefined, "rl-card rl-summary");
       card.append(heading("Your plan"));
-      card.append(el("p", label(state.plan.core.level) + " nights" + (state.plan.stretch ? ", with stretch nights from " + label(state.plan.stretch.level) : "") + ". " + (next ? "Next re-check: " + showDate(next.date, true) + "." : "A re-check is due.")));
+      if (state.plan.complete) card.append(el("p", "You have reached the top of the library."));
+      else card.append(el("p", label(state.plan.core.level) + " nights" + (state.plan.stretch ? ", with stretch nights from " + label(state.plan.stretch.level) : "") + ". " + (next ? "Next re-check: " + showDate(next.date, true) + "." : "A re-check is due.")));
       if (state.plan.note) card.append(el("p", state.plan.note, "rl-muted"));
       const actions = el("div", undefined, "rl-actions");
-      actions.append(link("Open the plan", "#plan", "rl-button rl-primary"), button("Take the re-check now", startRecheck));
+      actions.append(link("Open the plan", "#plan", "rl-button rl-primary"));
+      if (!state.plan.complete) actions.append(button("Take the re-check now", startRecheck));
       if (latest("calibration")) actions.append(link("See the starting point", "#result", "rl-button"));
       card.append(actions); view.append(card);
     }
@@ -276,7 +282,11 @@
     if (!attempt) { go("", "No finished check yet."); return; }
     const results = L.replay(attempt, probesById), place = L.placement(results, ladder, labels);
     const card = el("section", undefined, "rl-card");
-    card.append(el("p", "Finished " + showDate(attempt.finishedAt.slice(0, 10), true), "rl-step"), heading("Your starting point"));
+    if (!place) {
+      card.append(heading("Take a new check"), el("p", "The passages from this check are no longer available, so it gives no starting point."), link("Start a new check", "#", "rl-button rl-primary"));
+      view.append(card); return;
+    }
+    card.append(el("p", "Finished " + showDate(L.localDate(attempt.finishedAt), true), "rl-step"), heading("Your starting point"));
     card.append(el("p", label(place.level) + " · week " + place.week, "rl-placement"));
     card.append(el("p", place.explanation));
     if (place.supported) {
@@ -333,6 +343,14 @@
   }
   function planView() {
     if (!state.plan) { go("", "No plan yet."); return; }
+    if (state.plan.complete) {
+      const done = el("section", undefined, "rl-card rl-plan-head");
+      done.append(heading("Top of the library"), el("p", state.plan.note || "You have read through the top level in the library."),
+        el("p", "There is nothing higher to schedule yet. Reread favourite nights, or erase your results to start a new plan.", "rl-muted"));
+      const actions = el("div", undefined, "rl-actions");
+      actions.append(link("Browse the daily library", L.route(state.plan.core.level, 1, 1), "rl-button rl-primary"), link("Home", "#", "rl-button"));
+      done.append(actions); view.append(done); return;
+    }
     const plan = L.makePlan({ ...state.plan, libraryLevels, titles });
     const card = el("section", undefined, "rl-card rl-plan-head");
     card.append(heading("Reading plan"));
@@ -375,11 +393,24 @@
     if (plan.endOfLibrary) view.append(el("p", "The plan reaches the end of the levels now in the library.", "rl-notice"));
   }
 
+  // A view that throws (for example on edited or outdated saved data) drops
+  // the unfinished passage and falls back to home, rather than leaving a
+  // broken screen that fails again after every reload.
   function render() {
+    try { renderView(); }
+    catch (_) {
+      view.replaceChildren();
+      if (state.current) { state.current = null; save(); }
+      if (window.location.hash) history_replace("");
+      try { homeView(); } catch (__) { /* nothing more to show */ }
+      announce("Something in the saved check could not be shown, so it was set aside. Your plan and seen passages are kept.");
+    }
+  }
+  function renderView() {
     view.replaceChildren();
     if (state.current) {
       const attempt = attemptById(state.current.attemptId), probe = probesById[state.current.probeId];
-      if (!attempt || !probe) { state.current = null; save(); render(); return; }
+      if (!attempt || !probe) { state.current = null; save(); renderView(); return; }
       document.title = "Reading level — Liminal";
       if (state.current.phase === "reading") readingView(attempt, probe);
       else if (state.current.phase === "questions") questionsView(attempt, probe);

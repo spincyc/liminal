@@ -198,8 +198,11 @@ Sunday–Thursday), for 4, 8 or 12 weeks, starting on the first reading evening
 on or after the chosen date. Main-level nights run in library order from the
 placement. Stretch nights come from the next level in the library, in its
 order from week 1, placed mid-week: 1 a week in the first four weeks, then 2
-(`STRETCH_NIGHTS_BY_STAGE`), never more than 2 of 5. When the main level's
-year ends, it continues at the stretch level where the stretch nights reached.
+(`STRETCH_NIGHTS_BY_STAGE`), never more than 2 of 5. A stretch night never
+comes between a main-level night and the night that continues it: it moves
+later in that week, or is skipped that week if no slot remains. When the main
+level's year ends, it continues at the stretch level where the stretch nights
+reached; past the last night of the top level the plan simply ends.
 Unconfirmed placements get no stretch nights. Each night links to
 `daily-reading.html#<level>/<week>/<day>`.
 
@@ -216,12 +219,21 @@ a student up. The decision applies at the student's current place in the plan
 | Close | Hold and keep stretching (the share of stretch nights keeps growing) |
 | Hard | Hold, back to one stretch night a week |
 | Unconfirmed placement | Its own level is re-checked; a pass confirms it and starts stretch nights |
+| Past the end of the top level | The plan is marked complete ("top of the library"): nothing higher to schedule and no further re-checks |
+
+If a decision cannot be applied, the re-check is closed and the plan stays as
+it was; a saved screen that cannot be shown is set aside and the page returns
+home, keeping the plan and the seen-passage log. A finished check whose
+passages no longer exist gives no starting point and asks for a new check.
 
 ## Storage
 
 `liminal:reading-level:v1` in `localStorage` holds attempts (dates, probe IDs,
-answers, reading times, self-ratings), the unfinished passage, and the plan
-inputs. No names or personal details are asked for or stored. Every read and
+answers, reading times, self-ratings), the unfinished passage, the plan
+inputs, and a log of every passage shown (`seen`). Stopping a check discards
+its answers but not the log, so a passage whose answers were revealed always
+counts as a repeat; only Erase clears it. Dates shown on the page are the
+viewer's local dates. No names or personal details are asked for or stored. Every read and
 write is wrapped in `try`/`catch`; the saved value is parsed as untrusted, and
 anything malformed is dropped. The page offers an erase with confirmation.
 
@@ -235,8 +247,8 @@ node --test test/reading-level.test.js
 
 `tools/check-all.js` runs the first; the build validates before writing the
 bundle, which holds the resolved passages, the items, and each library night's
-title and minutes for printed plans (about 200 KB), so the quiz never
-downloads a whole grade file.
+title, minutes and continuation flag for printed plans (about 270 KB, about
+85 KB compressed), so the quiz never downloads a whole grade file.
 
 ## Limits
 
@@ -250,7 +262,13 @@ downloads a whole grade file.
   not recorded.
 - Kindergarten is not calibrated, and a level without probes is skipped by the
   ladder (a re-check uses the next probed level above it).
-- Only probe attempts count as repeats. A student who already read a probe's
-  night in the library, with its discussion, is not flagged.
+- Only passages shown by this page count as repeats. A student who already
+  read a probe's night in the library, with its discussion, is not flagged.
+- Each level has two forms. After both have been seen at a stretch level
+  (for example the first check and one re-check that did not pass), every
+  later re-check there is a repeat, which can hold but not advance. Advancing
+  past that level then waits for the main level's year to run out, when the
+  plan continues at the stretch level anyway. More forms per level would
+  remove this limit.
 - Readability comparisons used to choose forms are heuristic (syllable
   counts on older prose) and were checked by reading, not measured.

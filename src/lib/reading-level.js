@@ -188,6 +188,9 @@
     const passed = results.filter(entry => entry.result === "pass").sort((a, b) => b.level - a.level);
     const evidence = results.map(entry => ({ level: entry.level, correct: entry.correct, total: entry.total, wpm: entry.wpm, pace: entry.pace, rating: entry.rating, result: entry.result }));
     const label = level => levelLabel(level, labels);
+    // No results (a finished attempt whose probes no longer exist, or edited
+    // storage) give no placement; the page asks for a new check.
+    if (!results.length) return null;
     if (!passed.length) {
       const lowest = Math.min(...results.map(entry => entry.level));
       const lower = below(levels, lowest);
@@ -253,6 +256,10 @@
     let first = startDate;
     while (weekday(first) !== days[0]) first = addDays(first, 1);
     const plan = { startDate, firstNight: first, weeks: [], nights, stage, endOfLibrary: false };
+    // titles[level][index] is [title, minutes, continues]: continues is 1 when
+    // the night runs on into the next night of its level.
+    function continues(cursor) { const night = titles && titles[cursor.level] && titles[cursor.level][cursor.index]; return !!night && night[2] === 1; }
+    let lastCore = null;
     function take(cursor) {
       const at = nightAt(cursor.index), title = titles && titles[cursor.level] && titles[cursor.level][cursor.index];
       return { level: cursor.level, week: at.week, day: at.day, href: route(cursor.level, at.week, at.day),
@@ -269,14 +276,19 @@
       const weekStage = stage + Math.floor(week / RECHECK_EVERY_WEEKS), slots = STRETCH_SLOTS[stretchCount(weekStage)] || [];
       const entry = { number: week + 1, stage: weekStage, nights: [], recheck: null };
       const weekStart = addDays(first, week * 7);
+      // A stretch night waits for its preferred slot, and never comes between
+      // a core night and the night that continues it: it moves later in the
+      // week, or is skipped that week, so a continued reading stays together.
+      let placed = 0;
       days.forEach((dayOfWeek, position) => {
         const date = addDays(weekStart, (dayOfWeek - days[0] + 7) % 7);
-        if (stretch && slots.includes(position) && stretch.index < NIGHTS_PER_YEAR) {
-          entry.nights.push({ date, kind: "stretch", ...take(stretch) }); stretch.index++;
+        const due = placed < slots.length && position >= slots[placed];
+        if (due && stretch && stretch.index < NIGHTS_PER_YEAR && !(lastCore && continues(lastCore))) {
+          entry.nights.push({ date, kind: "stretch", ...take(stretch) }); stretch.index++; placed++;
           return;
         }
         if (!core) { plan.endOfLibrary = true; return; }
-        entry.nights.push({ date, kind: "core", ...take(core) }); advanceCore();
+        entry.nights.push({ date, kind: "core", ...take(core) }); lastCore = { ...core }; advanceCore();
       });
       if ((week + 1) % RECHECK_EVERY_WEEKS === 0) {
         const last = entry.nights.length ? entry.nights[entry.nights.length - 1].date : addDays(weekStart, 4);
@@ -336,6 +348,13 @@
     const at = cursorsOn(planInputs, date, libraryLevels);
     const label = level => levelLabel(level, labels);
     const base = { startDate: addDays(date, 1), weeks: planInputs.weeks, nights: planInputs.nights };
+    // Past the last night of the top level there is nothing to place: the plan
+    // is complete and keeps its last position. Never a throw.
+    if (!at.core) {
+      const top = Math.max(...libraryLevels.filter(level => level >= 1), planInputs.core.level);
+      return { action: "complete", message: "You have read through " + label(top) + ", the top level in the library. There is no higher level yet: reread favourite nights or browse the library.",
+        inputs: { ...planInputs, ...base, complete: true, stage: planInputs.stage, core: { level: top, index: NIGHTS_PER_YEAR - 1 }, stretch: null } };
+    }
     if (!planInputs.confirmed) {
       if (result.result === "pass") {
         const up = above(libraryLevels, at.core.level);
@@ -366,7 +385,27 @@
   }
 
   // ---- Saved state ----
-  function emptyState() { return { version: STATE_VERSION, attempts: [], current: null, plan: null }; }
+  // seen: every probe ever shown on this device, in order, kept when a check
+  // is stopped (only Erase clears it), so a passage whose answers were shown
+  // always counts as a repeat.
+  function emptyState() { return { version: STATE_VERSION, attempts: [], current: null, plan: null, seen: [] }; }
+  // History for chooseForm: the seen log, then any answered probe it lacks
+  // (records saved before the log existed).
+  function seenHistory(state, probesById) {
+    const ids = [...(state.seen || []).map(entry => entry.probeId)];
+    for (const attempt of state.attempts || []) for (const response of attempt.responses) if (!ids.includes(response.probeId)) ids.push(response.probeId);
+    return ids.map(id => probesById[id]).filter(Boolean).map((probe, order) => ({ level: probe.level, form: probe.form, order }));
+  }
+  function markSeen(state, probeId, at) {
+    state.seen = (state.seen || []).filter(entry => entry.probeId !== probeId).concat([{ probeId, at }]).slice(-200);
+    return state;
+  }
+  // A timestamp's calendar date where the viewer is (not UTC).
+  function localDate(value) {
+    const date = value instanceof Date ? value : new Date(value);
+    if (!Number.isFinite(date.getTime())) return null;
+    return date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, "0") + "-" + String(date.getDate()).padStart(2, "0");
+  }
   function isRecord(value) { return !!value && typeof value === "object" && !Array.isArray(value); }
   function validTime(value) { return typeof value === "string" && value.length <= 40 && Number.isFinite(Date.parse(value)); }
   function validId(value) { return typeof value === "string" && /^[a-z0-9][a-z0-9-]{0,63}$/.test(value); }
@@ -387,7 +426,7 @@
     const stretch = value.stretch === null ? null : parseCursor(value.stretch);
     if (value.stretch !== null && !stretch) return null;
     return { startDate: value.startDate, weeks: value.weeks, nights: value.nights, stage: value.stage, core, stretch,
-      confirmed: value.confirmed === true, supported: value.supported === true, createdAt: validTime(value.createdAt) ? value.createdAt : null,
+      confirmed: value.confirmed === true, supported: value.supported === true, complete: value.complete === true, createdAt: validTime(value.createdAt) ? value.createdAt : null,
       note: typeof value.note === "string" ? value.note.slice(0, 600) : null };
   }
   function parseAttempt(value) {
@@ -414,7 +453,8 @@
         rating: RATINGS.includes(value.current.rating) ? value.current.rating : null, repeat: value.current.repeat === true };
       if (current.phase !== "reading" && !current.readingMs) current = null;
     }
-    return { version: STATE_VERSION, attempts, current, plan: value.plan === null || value.plan === undefined ? null : parsePlan(value.plan) };
+    const seen = Array.isArray(value.seen) ? value.seen.slice(-200).filter(entry => isRecord(entry) && validId(entry.probeId)).map(entry => ({ probeId: entry.probeId, at: validTime(entry.at) ? entry.at : null })) : [];
+    return { version: STATE_VERSION, attempts, current, plan: value.plan === null || value.plan === undefined ? null : parsePlan(value.plan), seen };
   }
   function serializeState(state) { return JSON.stringify({ ...state, version: STATE_VERSION }); }
 
@@ -433,6 +473,6 @@
     validLevel, levelKey, levelLabel, itemCount, comfortableFloor, route, nightAt, nightIndex,
     tableRows, wordCount, score, comprehension, pace, evaluate, ladderLevels, startLevel, nextStep, placement, skillSummary,
     validDate, addDays, weekday, planCursors, makePlan, cursorsOn, recheckLevel, chooseForm, applyRecheck, reasonText,
-    emptyState, parseState, serializeState, replay,
+    emptyState, parseState, serializeState, replay, seenHistory, markSeen, localDate,
   };
 });

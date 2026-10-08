@@ -206,12 +206,72 @@ test("an unconfirmed placement is confirmed by passing its own re-check", () => 
   assert.equal(hold.action, "hold"); assert.equal(hold.inputs.supported, true); assert.equal(hold.inputs.stretch, null);
 });
 
+// ---- Cold-review regressions (2026-10-08) ----
+test("a re-check past the end of the library completes the plan instead of throwing", () => {
+  const inputs = { startDate: "2026-10-07", weeks: 4, nights: "weekdays", stage: 2, core: { level: 12, index: 170 }, stretch: null, confirmed: true, supported: false };
+  for (const result of [evalAt(12, 0, 150, null, "b"), evalAt(12, 2, 150, null, "b"), evalAt(12, 4, 150, null, "b")]) {
+    const decision = L.applyRecheck(inputs, result, "2026-11-20", LIBRARY);
+    assert.equal(decision.action, "complete"); assert.match(decision.message, /top level in the library/);
+    assert.equal(decision.inputs.complete, true); assert.equal(decision.inputs.stretch, null);
+    const saved = L.parseState(L.serializeState({ ...L.emptyState(), plan: { ...decision.inputs, createdAt: "2026-11-20T10:00:00.000Z", note: decision.message } }));
+    assert.equal(saved.plan.complete, true, "the complete plan survives a reload");
+    assert.doesNotThrow(() => L.makePlan({ ...saved.plan, libraryLevels: LIBRARY }));
+  }
+  const unconfirmed = { ...inputs, confirmed: false };
+  assert.equal(L.applyRecheck(unconfirmed, evalAt(12, 4, 150, null, "b"), "2026-11-20", LIBRARY).action, "complete");
+  assert.equal(L.applyRecheck(inputs, evalAt(12, 4, 150, null, "b"), "2026-10-08", LIBRARY).action, "hold", "before the end it still holds at the top");
+});
+test("passages stay seen after a check is stopped, so a restart gets a repeat-flagged or fresh form", () => {
+  const probesById = { "rl-5-a": probe(5, "a"), "rl-5-b": probe(5, "b") };
+  let state = L.emptyState();
+  L.markSeen(state, "rl-5-a", "2026-10-08T10:00:00.000Z"); // shown, answers revealed, then stopped: no attempt kept
+  state = L.parseState(L.serializeState(state));
+  assert.deepEqual(state.seen.map(entry => entry.probeId), ["rl-5-a"]);
+  assert.deepEqual(L.chooseForm(5, L.seenHistory(state, probesById), ["a", "b"]), { form: "b", repeat: false });
+  L.markSeen(state, "rl-5-b", "2026-10-08T10:10:00.000Z");
+  assert.deepEqual(L.chooseForm(5, L.seenHistory(state, probesById), ["a", "b"]), { form: "a", repeat: true });
+  const old = L.emptyState(); delete old.seen;
+  old.attempts.push({ id: "cal-old", kind: "calibration", startedAt: "2026-10-07T10:00:00.000Z", finishedAt: "2026-10-07T10:20:00.000Z", startLevel: 5,
+    responses: [{ probeId: "rl-5-a", answers: [0, 1, 2, 3], readingMs: 120000, rating: null, repeat: false, at: null }] });
+  assert.deepEqual(L.seenHistory(L.parseState(JSON.stringify(old)), probesById).map(entry => entry.form), ["a"], "older saves count answered probes");
+  assert.deepEqual(L.parseState(JSON.stringify({ version: 1, attempts: [], seen: [{ probeId: "BAD ID" }, "x", { probeId: "rl-5-a" }] })).seen, [{ probeId: "rl-5-a", at: null }]);
+});
+test("finish dates use the viewer's calendar date, not UTC", () => {
+  const zone = process.env.TZ;
+  try {
+    process.env.TZ = "America/Los_Angeles";
+    assert.equal(L.localDate("2026-10-09T02:30:00.000Z"), "2026-10-08"); // 19:30 PDT on 8 October
+    process.env.TZ = "Asia/Tokyo";
+    assert.equal(L.localDate("2026-10-08T20:00:00.000Z"), "2026-10-09");
+  } finally { if (zone === undefined) delete process.env.TZ; else process.env.TZ = zone; }
+  assert.equal(L.localDate("not a date"), null);
+});
+test("no results give no placement", () => {
+  assert.equal(L.placement([], LADDER), null);
+});
+test("stretch nights never split a continued reading", () => {
+  // Core Grade 5 nights 0–1 are one continued reading (night 0 continues into 1), as are 6–7.
+  const titles = { 5: Array.from({ length: 180 }, (_, i) => ["Night " + i, 15, i === 1 || i === 6 ? 1 : 0]) };
+  titles[5][0][2] = 0;
+  const plan = L.makePlan({ ...planFor({ level: 5, week: 1, confirmed: true }), libraryLevels: LIBRARY, titles });
+  for (const week of plan.weeks) week.nights.forEach((night, i) => {
+    if (night.kind !== "core") return;
+    const next = week.nights[i + 1], continuesOn = titles[5][L.nightIndex(night.week, night.day)][2] === 1;
+    if (continuesOn && next) assert.equal(next.kind, "core", "night " + night.week + "/" + night.day + " is followed by its continuation");
+  });
+  assert.deepEqual(plan.weeks[0].nights.map(night => night.kind), ["core", "core", "core", "stretch", "core"], "the stretch moved after the continued pair");
+  const flat = plan.weeks.flatMap(week => week.nights).filter(night => night.kind === "core");
+  flat.forEach((night, i) => assert.equal(L.nightIndex(night.week, night.day), i));
+  const plain = L.makePlan({ ...planFor({ level: 5, week: 1, confirmed: true }), libraryLevels: LIBRARY });
+  assert.deepEqual(plain.weeks[0].nights.map(night => night.kind), ["core", "core", "stretch", "core", "core"], "without continuations the slot is unchanged");
+});
+
 // ---- Saved state ----
 test("saved state round-trips and drops anything malformed", () => {
   const state = L.emptyState();
   state.attempts.push({ id: "cal-abc", kind: "calibration", startedAt: "2026-10-07T10:00:00.000Z", finishedAt: "2026-10-07T10:20:00.000Z", startLevel: 5,
     responses: [{ probeId: "rl-5-a", answers: [0, 1, 2, 3], readingMs: 120000, rating: "right", repeat: false, at: "2026-10-07T10:05:00.000Z" }] });
-  state.plan = { ...planFor({ level: 5, week: 19, confirmed: true }), createdAt: "2026-10-07T10:21:00.000Z", note: "Placed." };
+  state.plan = { ...planFor({ level: 5, week: 19, confirmed: true }), complete: false, createdAt: "2026-10-07T10:21:00.000Z", note: "Placed." };
   const parsed = L.parseState(L.serializeState(state));
   assert.deepEqual(parsed.attempts, state.attempts); assert.deepEqual(parsed.plan, state.plan);
   for (const raw of [null, "", "{", "[]", JSON.stringify({ version: 2, attempts: state.attempts }), JSON.stringify({ version: 1, attempts: "x" })]) {
