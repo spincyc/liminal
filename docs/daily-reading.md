@@ -2,8 +2,10 @@
 
 The daily library supplements the weekly reading courses with 180 new reading
 selections per grade: five nights in each of 36 weeks, kindergarten through
-Grade 12, and then four Advanced levels for readers well past Grade 12. It
-supplies the actual public-domain text, followed by discussion.
+Grade 12. It supplies the actual public-domain text, followed by discussion.
+Four Advanced levels for readers well past Grade 12 are in preparation; the
+schema and tools below already accept them, and each appears in the library
+only when its complete 180-night year passes review.
 The selections are authentic literary and documentary works, not rewritten
 classics or book recommendations. Editorial sequence and estimated time are
 teaching judgments, not measured reading levels or a standards certification.
@@ -54,7 +56,8 @@ license excising or avoiding passages of a chosen work.
 
 ## Levels beyond Grade 12
 
-Advanced 1–4 continue the same contract for students well past Grade 12.
+Advanced 1–4 (in preparation; none is published yet) continue the same
+contract for students well past Grade 12.
 They are reading levels within this library, not courses, credits, years of
 college or certificates. Each level steps further back in English (from
 nineteenth-century density to sixteenth-century and glossed Middle English),
