@@ -10,7 +10,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const K = require("../../../tools/lib/figure-kit");
 
-const COURSES = ["calculus-ab", "physics-1", "physics-c-mechanics"];
+const COURSES = ["calculus-ab", "calculus-bc", "physics-1", "physics-c-mechanics"];
 
 function plan() {
   const source = { id: "fixture-ced", title: "Fixture course framework", publisher: "Liminal test fixture", edition: "Synthetic", url: "https://example.org/fixture-ced", accessed: "2026-10-08", note: "Synthetic test reference; not a College Board document." };
@@ -18,7 +18,7 @@ function plan() {
   const courses = COURSES.map((id, c) => {
     const refs = [1, 2].map(u => ({ id: `FX${c}.${u}`, label: `Fixture topic ${c}.${u}`, sourceId: source.id, locator: `Unit ${u}`, gradeBand: "AP course; flexible placement", kind: "content" }));
     standards.push(...refs);
-    return { id, title: { "calculus-ab": "Course for AP® Calculus AB", "physics-1": "Course for AP® Physics 1", "physics-c-mechanics": "Course for AP® Physics C: Mechanics" }[id],
+    return { id, title: { "calculus-ab": "Course for AP® Calculus AB", "calculus-bc": "Course for AP® Calculus BC", "physics-1": "Course for AP® Physics 1", "physics-c-mechanics": "Course for AP® Physics C: Mechanics" }[id],
       summary: "Fixture course.", scopeNote: "Synthetic fixture; not an authorized AP course.", prerequisites: ["Fixture prerequisite"], outcomes: ["Fixture outcome"], nextStep: "Fixture next step.",
       units: refs.map((ref, u) => ({ id: "u" + (u + 1), title: "Fixture unit " + (u + 1), weeks: u === 0 ? 3 : 33, focus: "Fixture focus.", learning: ["Fixture learning."], standards: [ref.id], activities: ["Fixture activity."], evidence: ["Fixture evidence."], bridge: "Fixture bridge." })) };
   });
@@ -108,6 +108,7 @@ function course() {
 function fillerCourse(courseId) {
   const p = plan().courses.find(c => c.id === courseId);
   const weeks = Array.from({ length: 36 }, (_, i) => fillerWeek(i + 1, i < 3 ? "u1" : "u2", p.units[i < 3 ? 0 : 1].standards[0]));
+  if (courseId === "calculus-bc") weeks.forEach(week => week.worksheets.forEach(sheet => { sheet.calculator = "none"; }));
   return { format: "liminal-weekly-course", version: 1, trackId: "ap", courseId, author: "test-fixture", weeks };
 }
 

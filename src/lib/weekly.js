@@ -24,8 +24,8 @@
       planGlobal: "LIMINAL_AP_PLAN", planOutput: "ap-plan", planLabel: "AP",
       context: "Prepares for the AP® exam · flexible placement", notice: AP_DISCLAIMER,
       inventory: true,
-      courses: ["calculus-ab", "physics-1", "physics-c-mechanics"],
-      labels: { "calculus-ab": "Calculus AB", "physics-1": "Physics 1", "physics-c-mechanics": "Physics C: Mechanics" },
+      courses: ["calculus-ab", "calculus-bc", "physics-1", "physics-c-mechanics"],
+      labels: { "calculus-ab": "Calculus AB", "calculus-bc": "Calculus BC", "physics-1": "Physics 1", "physics-c-mechanics": "Physics C: Mechanics" },
       aliases: {},
     },
   };

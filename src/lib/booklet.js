@@ -8,10 +8,12 @@
     typeof module === "object" && module.exports
       ? require("./core.js")
       : root.PracticeCore,
+    typeof module === "object" && module.exports ? require("./assessment") : root.LiminalAssessment,
+    typeof module === "object" && module.exports ? require("./assessment-adapters") : root.LiminalAssessmentAdapters,
   );
   if (typeof module === "object" && module.exports) module.exports = api;
   else root.PracticeBooklet = api;
-})(typeof globalThis !== "undefined" ? globalThis : this, function (core) {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (core, Assessment, Adapters) {
   "use strict";
 
 // `options.code`, when given, is the form's rebuild code (SAT template forms,
@@ -19,10 +21,13 @@
 // label is derived from it.
 function buildModel(form, blueprint, seed, options) {
   const settings = options || {};
-  let number = 0;
-  const sections = form.map((group, index) => {
-    const questions = group.questions.map((question) => {
-      number += 1;
+  const assessment = Adapters.practiceForm(form);
+  const numbered = Assessment.entries(assessment);
+  const totals = Assessment.totals(assessment);
+  const sections = assessment.sections.map((section, index) => {
+    const group = section.source;
+    const questions = numbered.filter(entry => entry.section === section).map(({ item, number }) => {
+      const question = item.source;
       const letters = core.answerLetters(blueprint.test, number);
       return {
         number,
@@ -53,8 +58,8 @@ function buildModel(form, blueprint, seed, options) {
     // code on an SAT booklet and an ACT booklet.
     formCode: formCode(settings.code || `${blueprint.id}-${seed}`),
     sections,
-    total: number,
-    minutes: sections.reduce((sum, section) => sum + (section.minutes || 0), 0),
+    total: totals.items,
+    minutes: totals.minutes,
   };
 }
 
@@ -223,7 +228,8 @@ function passageLastNumber(items, index) {
 }
 
 function questionHtml(item, previous, render, lastNumber) {
-  const { question, number, letters } = item;
+  const { number, letters } = item;
+  const question = Adapters.practiceStudent(item.question);
   const rich = Boolean(render && render.rich);
   const shared = passageSection(question);
   const repeated = repeatedStimulus(question, previous);
@@ -815,7 +821,7 @@ function renderTex(model, options) {
     .map((section) => {
       const questions = section.questions
         .map((item, index) => {
-          const q = item.question;
+          const q = Adapters.practiceStudent(item.question);
           const before = section.questions[index - 1];
           const repeated = repeatedStimulus(q, before);
           const shared = passageSection(q);

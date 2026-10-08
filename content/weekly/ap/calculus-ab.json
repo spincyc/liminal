@@ -2824,7 +2824,7 @@
       "explanation": [
         "The derivative of a product is not the product of the derivatives. Think of the area of a rectangle with sides f(x) and g(x): when both sides change, the area changes by a strip along each side. That gives the product rule, (fg)′ = f′g + fg′. For example, d/dx (x^2 sin x) = 2x sin x + x^2 cos x. A quick check that (fg)′ ≠ f′g′: for x·x = x^2, f′g′ = 1 but the derivative is 2x.",
         "The quotient rule is (f/g)′ = (f′g − fg′)/g^2, wherever g ≠ 0. The order in the numerator matters, because subtraction is not commutative: the derivative of the top times the bottom comes first. A reliable memory aid is to write the denominator squared first, then the numerator in that order. When the denominator is a single power of x, dividing first and using the power rule is often faster: (x^2 + 3)/x = x + 3x^(−1).",
-        "Writing the other trigonometric functions as quotients of sine and cosine and applying the quotient rule gives d/dx tan x = sec^2 x, d/dx cot x = −csc^2 x, d/dx sec x = sec x tan x, and d/dx csc x = −csc x cot x. The three \"co\" functions all have negative derivatives. As always, these hold for angles in radians, and exact values at multiples of π/6 and π/4 come from the unit circle.",
+        "Writing the other trigonometric functions as quotients of sine and cosine and applying the quotient rule gives d/dx tan x = sec^2 x, d/dx cot x = −csc^2 x, d/dx sec x = sec x tan x, and d/dx csc x = −csc x cot x. The derivative formulas for cosine, cotangent, and cosecant each contain a minus sign; the derivative value can still be positive or negative depending on x. As always, these hold for angles in radians, and exact values at multiples of π/6 and π/4 come from the unit circle.",
         "The rules also work with tables and graphs. If h(x) = f(x)g(x), then h′(a) = f′(a)g(a) + f(a)g′(a), so read values from the table or the graph and slopes from the table or from the graph's straight segments. Common errors: dropping one term of the product rule, reversing the quotient-rule numerator, forgetting to square the denominator, and using f′(a) where f(a) is needed. At a corner of a graph a needed slope does not exist, so choose evaluation points on straight pieces."
       ],
       "figures": [
@@ -7816,7 +7816,7 @@
               "steps": [
                 "(a) ∫ from 2 to 6 of f = −2 (on [2, 4]) − 1 (on [4, 5]) + 1 (on [5, 6]) = −2, so h(6) = 1.",
                 "(b) h(4) = 3 + (−2) = 1 and h′(4) = f(4) = −2.",
-                "(c) h″(x) = f′(x): positive on (−2, 0), negative on (0, 4), positive on (4, 6)."
+                "(c) h′ = f increases on (−2, 0), decreases throughout (0, 4), and increases on (4, 6), so h changes concavity at 0 and 4. Where h″ = f′ exists it is positive on (−2, 0), negative on (0, 2) and (2, 4), and positive on (4, 6). At the join x = 2, f′ and h″ do not exist, but h′ keeps decreasing, so 2 is not an inflection point."
               ],
               "passageIds": [],
               "skill": "Analyze a shifted accumulation function"

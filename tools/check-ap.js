@@ -19,7 +19,7 @@ const A = require("../src/lib/ap-assessment");
 const { checkFigureSvg, FIGURE_ID } = require("./lib/weekly-figures");
 
 const ROOT = path.resolve(__dirname, "..");
-const COURSE_CALCULATORS = { "calculus-ab": ["none", "graphing"], "physics-1": ["any"], "physics-c-mechanics": ["any"] };
+const COURSE_CALCULATORS = { "calculus-ab": ["none", "graphing"], "calculus-bc": ["none", "graphing"], "physics-1": ["any"], "physics-c-mechanics": ["any"] };
 const PHYSICS = new Set(["physics-1", "physics-c-mechanics"]);
 const MAX_ASSESSMENT_BYTES = 1024 * 1024;
 
@@ -108,7 +108,15 @@ function validatePlan(plan, c) {
     for (const key of ["id", "label", "locator", "gradeBand"]) c.text(standard[key], "reference " + standard.id + "." + key);
     c.check(plan.sources.some(s => s.id === standard.sourceId), "reference " + standard.id, "unresolved source");
     c.check(["content", "editorial-objective"].includes(standard.kind), "reference " + standard.id, "kind must be content or editorial-objective");
-    if (standard.kind === "content") c.check(A.topicUnit(standard.id) !== null, "reference " + standard.id, "content references look like AB.1.2");
+    if (standard.kind === "content") c.check(!standard.id.startsWith("BC.") && A.topicUnit(standard.id) !== null, "reference " + standard.id, "content references look like AB.1.2");
+    if (standard.id.startsWith("BC.")) {
+      c.check(standard.kind === "editorial-objective", "reference " + standard.id, "BC references are editorial objectives, not numbered CED topics");
+      c.check(A.isAssessmentTopic(standard, "calculus-bc") || ["BC.REVIEW", "BC.BEYOND"].includes(standard.id), "reference " + standard.id, "BC objectives use BC.<1–10>.<DESCRIPTIVE_UPPERCASE_SLUG>");
+      if (A.isAssessmentTopic(standard, "calculus-bc")) {
+        const source = plan.sources.find(s => s.id === standard.sourceId);
+        c.check(source && /^https:\/\/apcentral\.collegeboard\.org\/courses\/ap-calculus-bc\/?(?:#.*)?$/.test(source.url), "reference " + standard.id, "BC objectives cite the official HTML course unit overview");
+      }
+    }
   }
   c.check(JSON.stringify(plan.courses.map(course => course.id)) === JSON.stringify(A.COURSES), "ap.courses", "must be " + A.COURSES.join(", ") + " in order");
   const covered = new Set();
@@ -128,12 +136,17 @@ function validatePlan(plan, c) {
     if (PHYSICS.has(course.id)) {
       c.check(course.reference === course.id, where + ".reference", "physics courses have a formula reference named for the course");
       c.check(typeof course.labNote === "string" && /25%/.test(course.labNote) && /do not replace/i.test(course.labNote), where + ".labNote", "must state that paper investigations do not replace the required lab work");
-    } else c.check(course.reference === null, where + ".reference", "Calculus AB has no formula reference");
+    } else c.check(course.reference === null, where + ".reference", "Calculus has no formula reference");
     if (!c.check(Array.isArray(course.units) && course.units.length > 1, where, "needs units")) continue;
     c.unique(course.units.map(u => u.id), where + ".units");
     c.check(course.units.reduce((sum, u) => sum + u.weeks, 0) === 36, where, "units must total 36 weeks");
     const contentUnits = course.units.filter(u => u.unit !== null);
     const review = course.units[course.units.length - 1];
+    if (course.id === "calculus-bc") {
+      c.check(contentUnits.length === 10 && course.units.length === 11, where + ".units", "BC needs ten instructional units and a final review unit");
+      const weights = ["5–10%", "5–10%", "5–10%", "5–10%", "10–15%", "15–20%", "5–10%", "5–10%", "10–15%", "15–20%"];
+      c.check(JSON.stringify(contentUnits.map(u => u.mcWeight)) === JSON.stringify(weights), where + ".units", "BC weights must match the sourced course overview");
+    }
     course.units.forEach((unit, index) => {
       const at = where + "." + unit.id;
       c.check(unit.id === "u" + (index + 1), at, "units are u1, u2, … in order");
@@ -146,12 +159,12 @@ function validatePlan(plan, c) {
         if (!c.check(standard, at, "unresolved reference " + ref)) return;
         c.check(ref.startsWith(prefix + "."), at, "reference from another course " + ref);
         covered.add(ref);
-        if (standard.kind === "content") c.check(A.topicUnit(ref) === unit.unit, at, ref + " belongs to unit " + A.topicUnit(ref));
+        if (A.isAssessmentTopic(standard, course.id)) c.check(A.topicUnit(ref) === unit.unit, at, ref + " belongs to unit " + A.topicUnit(ref));
       });
       if (unit.unit !== null) {
-        const expected = plan.standards.filter(s => s.kind === "content" && s.id.startsWith(prefix + ".") && A.topicUnit(s.id) === unit.unit).map(s => s.id);
+        const expected = A.topicsForUnit(plan, course.id, unit.unit).map(s => s.id);
         if (course.id === "physics-c-mechanics" && unit.unit === 1) expected.push("CM.TOOLKIT");
-        c.check(JSON.stringify([...unit.standards].sort()) === JSON.stringify(expected.sort()), at + ".standards", "must contain exactly the unit's framework topics" + (course.id === "physics-c-mechanics" && unit.unit === 1 ? " and CM.TOOLKIT" : ""));
+        c.check(JSON.stringify([...unit.standards].sort()) === JSON.stringify(expected.sort()), at + ".standards", (course.id === "calculus-bc" ? "must contain exactly the unit's course objectives" : "must contain exactly the unit's framework topics") + (course.id === "physics-c-mechanics" && unit.unit === 1 ? " and CM.TOOLKIT" : ""));
       }
       c.check(unit.test === (unit === review ? "practice-exam" : "unit-" + unit.unit), at + ".test", "content units name unit-<n>; the final review unit names practice-exam");
     });
@@ -202,6 +215,10 @@ function validatePlan(plan, c) {
           c.check(COURSE_CALCULATORS[course.id].includes(part.calculator), where + ".exam." + section.id + part.id, "calculator policy not allowed for the course");
         });
       });
+      if (course.id === "calculus-bc") {
+        const shape = sections => sections.map(s => s.parts.map(p => [p.questions, p.minutes, p.calculator]));
+        c.check(JSON.stringify(shape(exam.sections)) === JSON.stringify([[[29, 62, "none"], [13, 38, "graphing"]], [[2, 30, "graphing"], [4, 60, "none"]]]), where + ".exam", "BC exam parts must match the May 2027 counts, minutes and calculator policies");
+      }
       const mc = exam.sections[0].parts.reduce((s, p) => s + p.questions, 0);
       const blueprint = course.blueprints && course.blueprints.practiceExam;
       if (c.check(blueprint && blueprint.mcByUnit, where + ".blueprints.practiceExam", "needs mcByUnit")) {
@@ -217,6 +234,10 @@ function validatePlan(plan, c) {
         });
       }
       const unitTest = course.blueprints && course.blueprints.unitTest;
+      if (course.id === "calculus-bc") {
+        const shape = unitTest.sections.map(s => s.parts.map(p => [p.questions, p.calculator]));
+        c.check(JSON.stringify(shape) === JSON.stringify([[[8, "none"], [4, "graphing"]], [[1, "graphing"], [1, "none"]]]), where + ".blueprints.unitTest", "BC unit tests require the calculus four-part blueprint");
+      }
       c.check(Array.isArray(unitTest.minutes) && unitTest.minutes.length === 2 && unitTest.minutes.every(n => Number.isInteger(n) && n > 0) && unitTest.minutes[0] <= unitTest.minutes[1], where + ".blueprints.unitTest", "needs a valid minutes range");
       c.check(unitTest.sections.length === 2, where + ".blueprints.unitTest", "needs two sections");
       unitTest.sections.forEach((section, i) => {
@@ -238,6 +259,7 @@ function validatePlan(plan, c) {
           if (kind === "unitTest") c.check(Number.isInteger(rule.minTypeUsesAcrossUnitTests) && rule.minTypeUsesAcrossUnitTests >= 3, at, "must require every free-response type in at least three unit tests");
         } else {
           c.check(Number.isInteger(rule.frPoints) && rule.frPoints > 0, at, "needs whole free-response points");
+          if (course.id === "calculus-bc") c.check(rule.frPoints === 9, at, "BC free-response questions are worth nine points");
           if (kind === "practiceExam") c.check(Number.isInteger(rule.minContextFr) && rule.minContextFr >= 2, at, "must require at least two free-response questions in context");
         }
       }
@@ -341,7 +363,7 @@ function validateAssessment(doc, expected, ctx, c) {
       c.unique(item.topics, at + ".topics");
       item.topics.forEach(ref => {
         const standard = ctx.plan.standards.find(s => s.id === ref);
-        c.check(standard && standard.kind === "content" && ref.startsWith(A.TOPIC_PREFIX[doc.courseId] + "."), at + ".topics", "not a framework topic of this course: " + ref);
+        c.check(A.isAssessmentTopic(standard, doc.courseId), at + ".topics", (doc.courseId === "calculus-bc" ? "not a course objective of this course: " : "not a framework topic of this course: ") + ref);
         ctx.testedTopics.add(ref);
       });
     }
@@ -372,7 +394,7 @@ function validateAssessment(doc, expected, ctx, c) {
       c.check(new RegExp("^" + prefix + "-fr" + number + "$").test(item.id || ""), at, "ID must be " + prefix + "-fr" + number);
       for (const key of ["key", "rationale", "distractorNotes", "answer", "steps", "rubric"]) c.check(item[key] === undefined, at, "free-response answers and rubrics belong to its parts, not " + key);
       if (PHYSICS.has(doc.courseId)) c.check(Object.prototype.hasOwnProperty.call(A.FR_TYPES, item.type), at + ".type", "physics free response needs a type: " + Object.keys(A.FR_TYPES).join(", "));
-      else c.check(item.type === undefined, at + ".type", "Calculus AB free response has no type");
+      else c.check(item.type === undefined, at + ".type", "Calculus free response has no type");
       c.check(item.context === undefined || typeof item.context === "boolean", at + ".context", "is true, false or absent");
       if (!c.check(Array.isArray(item.parts) && item.parts.length > 0, at + ".parts", "needs parts")) return;
       item.parts.forEach((part, index) => {
@@ -541,7 +563,7 @@ function loadAp({ contentDir = path.join(ROOT, "content"), pagesDir = path.join(
       } else result.pending.push(course.id + "/reference");
     }
     // Coverage: every framework topic in at least one test item and one week.
-    const topics = plan.standards.filter(s => s.kind === "content" && s.id.startsWith(A.TOPIC_PREFIX[course.id] + ".")).map(s => s.id);
+    const topics = plan.standards.filter(s => A.isAssessmentTopic(s, course.id)).map(s => s.id);
     const untested = topics.filter(t => !ctx.testedTopics.has(t));
     if (untested.length) result.pending.push(`${course.id}: ${untested.length} of ${topics.length} topics not yet in a test item`);
     if (complete && untested.length) c.fail(course.id, "topics without a test item: " + untested.slice(0, 10).join(", ") + (untested.length > 10 ? ", …" : ""));

@@ -1,0 +1,485 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "unit-3",
+  "kind": "unit-test",
+  "unitId": "u3",
+  "title": "Unit 3 test: Differentiation: Composite, Implicit, and Inverse Functions",
+  "author": "bc-tests-foundation",
+  "directions": "This original practice test reports raw points only. Work without a calculator in Section I Part A and Section II Part B. A graphing calculator is allowed in the other parts. Angles are in radians. Give exact answers without a calculator and numerical answers to three decimal places when needed. Show mathematical reasoning on every free-response part.",
+  "figures": [],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Choose one answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-u3-mc01",
+              "prompt": "If f(x) = ln(1 + x^4), what is f′(1)?",
+              "choices": [
+                "1/2",
+                "4",
+                "8",
+                "2"
+              ],
+              "key": "D",
+              "rationale": "The chain rule gives f′(x) = 4x^3/(1 + x^4), which equals 2 at x = 1.",
+              "distractorNotes": {
+                "A": "Differentiates the logarithm but omits the inner derivative.",
+                "B": "Uses the inner derivative alone.",
+                "C": "Multiplies by 1 + x^4 instead of dividing by it."
+              },
+              "topics": [
+                "BC.3.CHAIN_RULE"
+              ]
+            },
+            {
+              "id": "bc-u3-mc02",
+              "prompt": "The curve x^2 + xy + y^2 = 7 passes through (1, 2). What is dy/dx at this point?",
+              "choices": [
+                "−5/4",
+                "−4/5",
+                "−2",
+                "4/5"
+              ],
+              "key": "B",
+              "rationale": "Differentiation gives 2x + y + x y′ + 2y y′ = 0, so y′ = −(2x + y)/(x + 2y) = −4/5.",
+              "distractorNotes": {
+                "A": "Takes the reciprocal of the required slope.",
+                "C": "Uses −y/x instead of implicitly differentiating the curve equation.",
+                "D": "Loses the negative sign when isolating dy/dx."
+              },
+              "topics": [
+                "BC.3.IMPLICIT_DIFFERENTIATION"
+              ]
+            },
+            {
+              "id": "bc-u3-mc03",
+              "prompt": "A differentiable one-to-one function f satisfies f(2) = 5 and f′(2) = −3. If g is its differentiable inverse, what is g′(5)?",
+              "choices": [
+                "1/3",
+                "1/5",
+                "−1/3",
+                "−3"
+              ],
+              "key": "C",
+              "rationale": "Differentiate f(g(y)) = y: f′(g(y))g′(y) = 1. At y = 5, g(5) = 2, giving g′(5) = −1/3.",
+              "distractorNotes": {
+                "A": "Drops the negative sign.",
+                "B": "Takes the reciprocal of an output value rather than a derivative.",
+                "D": "Uses the slope of f rather than the reciprocal slope of its inverse."
+              },
+              "topics": [
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-u3-mc04",
+              "prompt": "If f(x) = arctan(2x), what is f′(1/2)?",
+              "choices": [
+                "1",
+                "1/2",
+                "2",
+                "4/3"
+              ],
+              "key": "A",
+              "rationale": "The derivative is 2/(1 + 4x^2); substitution of x = 1/2 gives 2/2.",
+              "distractorNotes": {
+                "B": "Omits the factor 2 from the inner derivative.",
+                "C": "Does not divide by 1 + (2x)^2.",
+                "D": "Uses the mistaken formula 1/(1 − x^2), both choosing the wrong inverse-trigonometric formula and omitting the inner factor 2."
+              },
+              "topics": [
+                "BC.3.INVERSE_TRIGONOMETRIC_DERIVATIVES",
+                "BC.3.CHAIN_RULE"
+              ]
+            },
+            {
+              "id": "bc-u3-mc05",
+              "prompt": "If f(x) = x^2 e^x, what is f″(0)?",
+              "choices": [
+                "4",
+                "0",
+                "2",
+                "1"
+              ],
+              "key": "C",
+              "rationale": "Twice applying the product rule gives f″(x) = (x^2 + 4x + 2)e^x; at zero only 2 remains.",
+              "distractorNotes": {
+                "A": "The constant term after two differentiations is 2, not 4; every remaining term contains x and vanishes at zero.",
+                "B": "Differentiates x^2e^x as though its zero factor persists through two derivatives.",
+                "D": "Omits the coefficient 2 from differentiating x^2 twice."
+              },
+              "topics": [
+                "BC.3.HIGHER_DERIVATIVES",
+                "BC.3.DIFFERENTIATION_METHOD_SELECTION"
+              ]
+            },
+            {
+              "id": "bc-u3-mc06",
+              "prompt": "Which expression equals the derivative of y = ln((x^2 + 1)^3) for all real x?",
+              "choices": [
+                "6x(x^2 + 1)^2",
+                "2x/(x^2 + 1)",
+                "3/(x^2 + 1)",
+                "6x/(x^2 + 1)"
+              ],
+              "key": "D",
+              "rationale": "Simplify to y = 3 ln(x^2 + 1), then differentiate to obtain 6x/(x^2 + 1). A nested chain rule gives the same result.",
+              "distractorNotes": {
+                "A": "Differentiates the inner cube but omits the outer logarithm derivative.",
+                "B": "Omits the factor 3 from the logarithm of a cube.",
+                "C": "Omits the derivative 2x after using the logarithm power rule."
+              },
+              "topics": [
+                "BC.3.DIFFERENTIATION_METHOD_SELECTION",
+                "BC.3.CHAIN_RULE"
+              ]
+            },
+            {
+              "id": "bc-u3-mc07",
+              "prompt": "The table gives exact values for differentiable functions f and g. For H(x) = f(g(x)), what is H′(1)?\nx | f(x) | f′(x) | g(x) | g′(x)\n1 | 2 | 5 | 4 | −2\n4 | 7 | 3 | 1 | 6",
+              "choices": [
+                "−10",
+                "−6",
+                "3",
+                "18"
+              ],
+              "key": "B",
+              "rationale": "H′(1) = f′(g(1))g′(1) = f′(4)(−2) = 3(−2).",
+              "distractorNotes": {
+                "A": "Uses f′(1) rather than f′(g(1)) = f′(4).",
+                "C": "Uses only the outer derivative and omits g′(1).",
+                "D": "Uses g′(4) instead of g′(1)."
+              },
+              "topics": [
+                "BC.3.CHAIN_RULE"
+              ]
+            },
+            {
+              "id": "bc-u3-mc08",
+              "prompt": "A positive differentiable function y satisfies y^2 = x + 3 near (1, 2). What is y″ at (1, 2)?",
+              "choices": [
+                "−1/32",
+                "1/32",
+                "1/4",
+                "−1/16"
+              ],
+              "key": "A",
+              "rationale": "From 2y y′ = 1, y′ = 1/4. Differentiating again gives 2(y′)^2 + 2y y″ = 0, hence y″ = −(1/16)/2.",
+              "distractorNotes": {
+                "B": "Drops the negative sign in y″ = −(y′)^2/y.",
+                "C": "Gives y′ rather than y″.",
+                "D": "Omits division by y in the second implicit derivative."
+              },
+              "topics": [
+                "BC.3.HIGHER_DERIVATIVES",
+                "BC.3.IMPLICIT_DIFFERENTIATION"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "Choose one answer for each question. A graphing calculator is needed for some numerical work.",
+          "items": [
+            {
+              "id": "bc-u3-mc09",
+              "prompt": "For f(x) = e^(−x) sin(x^2), what is f′(0.8) to three decimal places?",
+              "choices": [
+                "0.308",
+                "0.093",
+                "0.845",
+                "0.577"
+              ],
+              "key": "A",
+              "rationale": "Product and chain rules give f′(x) = e^(−x)[2x cos(x^2) − sin(x^2)], which at 0.8 is 0.308.",
+              "distractorNotes": {
+                "B": "Omits the factor 2x from differentiating sin(x^2).",
+                "C": "Uses a positive sign for the derivative of e^(−x).",
+                "D": "Keeps the differentiated sine term but omits the differentiated exponential term."
+              },
+              "topics": [
+                "BC.3.CHAIN_RULE",
+                "BC.3.DIFFERENTIATION_METHOD_SELECTION"
+              ]
+            },
+            {
+              "id": "bc-u3-mc10",
+              "prompt": "Let f(x) = x + e^x, and let g be its inverse. Which number best approximates g′(3)?",
+              "choices": [
+                "0.047",
+                "3.208",
+                "0.312",
+                "0.792"
+              ],
+              "key": "C",
+              "rationale": "Solve a + e^a = 3, obtaining a ≈ 0.792. Then g′(3) = 1/(1 + e^a) ≈ 0.312.",
+              "distractorNotes": {
+                "A": "Uses 1/f′(3) instead of evaluating f′ at the preimage of 3.",
+                "B": "Uses the original function slope at the preimage without taking its reciprocal.",
+                "D": "Reports the preimage g(3), not its derivative."
+              },
+              "topics": [
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-u3-mc11",
+              "prompt": "For f(x) = arcsin(x/3), what is f′(1.2) to three decimal places?",
+              "choices": [
+                "0.309",
+                "1.091",
+                "0.132",
+                "0.364"
+              ],
+              "key": "D",
+              "rationale": "The derivative (1/3)/√(1 − x^2/9) simplifies to 1/√(9 − x^2), giving 0.364.",
+              "distractorNotes": {
+                "A": "Uses 9 + x^2 inside the square root, confusing inverse-trigonometric formulas.",
+                "B": "Omits the inner derivative 1/3.",
+                "C": "Uses 9 − x^2 instead of its square root in the denominator."
+              },
+              "topics": [
+                "BC.3.INVERSE_TRIGONOMETRIC_DERIVATIVES",
+                "BC.3.CHAIN_RULE"
+              ]
+            },
+            {
+              "id": "bc-u3-mc12",
+              "prompt": "If f(x) = ln(1 + x^2), what is f″(1.7) to three decimal places?",
+              "choices": [
+                "0.514",
+                "−0.250",
+                "0.250",
+                "0.874"
+              ],
+              "key": "B",
+              "rationale": "First f′(x) = 2x/(1 + x^2). The quotient rule gives f″(x) = 2(1 − x^2)/(1 + x^2)^2, hence −0.250.",
+              "distractorNotes": {
+                "A": "Differentiates only the numerator of f′ and keeps the denominator fixed.",
+                "C": "Reverses the subtraction in the quotient-rule numerator.",
+                "D": "Reports f′(1.7) instead of the second derivative."
+              },
+              "topics": [
+                "BC.3.HIGHER_DERIVATIVES",
+                "BC.3.DIFFERENTIATION_METHOD_SELECTION"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show the equations used for numerical results and include units where appropriate.",
+          "items": [
+            {
+              "id": "bc-u3-fr1",
+              "prompt": "A calibration assigns a reading r = F(x) = x + ln x to each positive input x. Both x and r are dimensionless. Since F is strictly increasing with range all real numbers, it has an inverse G.",
+              "context": true,
+              "topics": [
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES",
+                "BC.3.CHAIN_RULE",
+                "BC.3.HIGHER_DERIVATIVES"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find a = G(2.6), and write the equation you solve.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the inverse relation F(a) = 2.6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Sets up a + ln a = 2.6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds a ≈ 1.938."
+                    }
+                  ],
+                  "answer": "a ≈ 1.938.",
+                  "steps": [
+                    "G(2.6) is the positive input for which F(a) = 2.6.",
+                    "Solve a + ln a = 2.6.",
+                    "The positive solution is a ≈ 1.938."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find G′(2.6), using your value of a. Explain the reciprocal derivative relationship.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates the inverse identity using the chain rule."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains F′(a) = 1 + 1/a and its reciprocal."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes 0.660."
+                    }
+                  ],
+                  "answer": "G′(2.6) = 1/(1 + 1/a) ≈ 0.660.",
+                  "steps": [
+                    "Differentiate F(G(r)) = r to get F′(G(r))G′(r) = 1.",
+                    "F′(x) = 1 + 1/x.",
+                    "Substitute r = 2.6 and G(2.6) = a."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Differentiate the identity from part (b) again to find G″(2.6). Show how both chain-rule factors enter.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains the differentiated identity including (G′)^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Isolates G″ with the cube of F′ in the denominator."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes correctly and obtains 0.076."
+                    }
+                  ],
+                  "answer": "G″(2.6) = −F″(a)/(F′(a))^3 = a/(a + 1)^3 ≈ 0.076.",
+                  "steps": [
+                    "The differentiated identity is F″(G(r))(G′(r))^2 + F′(G(r))G″(r) = 0.",
+                    "Substitute G′ = 1/F′ and solve for G″.",
+                    "Use F″(a) = −1/a^2."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show your reasoning and give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-u3-fr2",
+              "prompt": "Consider the ellipse x^2 + 4y^2 = 20 near the point (2, 2), where the upper branch defines y as a differentiable function of x.",
+              "context": false,
+              "topics": [
+                "BC.3.IMPLICIT_DIFFERENTIATION",
+                "BC.3.HIGHER_DERIVATIVES",
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find dy/dx at (2, 2) and write an equation of the tangent line there.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates implicitly with the factor y′."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the slope as −1/4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the correct tangent line."
+                    }
+                  ],
+                  "answer": "y′ = −1/4; y − 2 = −(1/4)(x − 2).",
+                  "steps": [
+                    "Differentiate to get 2x + 8y y′ = 0.",
+                    "Thus y′ = −x/(4y), which is −1/4 at (2, 2).",
+                    "Use the point and slope in the line equation."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find d²y/dx² at (2, 2).",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Includes both (y′)^2 and y y″ when differentiating the product."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes the correct point and first derivative."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves for y″ = −5/32."
+                    }
+                  ],
+                  "answer": "−5/32",
+                  "steps": [
+                    "Differentiate 2x + 8y y′ = 0 again: 2 + 8(y′)^2 + 8y y″ = 0.",
+                    "At (2, 2), substitute y′ = −1/4.",
+                    "Then 2 + 1/2 + 16y″ = 0."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Near (2, 2), the same branch can also be written as x = g(y). Find g′(2) and justify its relationship to your answer in part (a).",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Recognizes the local inverse relationship or differentiates with respect to y."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Correctly uses the nonzero original slope or the differentiated equation."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains −4 and identifies it as the reciprocal slope."
+                    }
+                  ],
+                  "answer": "g′(2) = −4",
+                  "steps": [
+                    "Locally the two function descriptions are inverses.",
+                    "Differentiate x(y)^2 + 4y^2 = 20: 2x g′(y) + 8y = 0.",
+                    "At (2, 2), g′(2) = −4, the reciprocal of −1/4."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

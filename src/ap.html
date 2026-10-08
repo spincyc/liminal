@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="description" content="Original 36-week courses for AP® Calculus AB, AP® Physics 1, and AP® Physics C: Mechanics, with unit tests and a printable practice exam." />
+    <meta name="description" content="Original 36-week courses for AP® Calculus AB, AP® Calculus BC, AP® Physics 1, and AP® Physics C: Mechanics, with unit tests and a printable practice exam." />
     <title>Courses for AP® exams — Liminal</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles/tokens.css" />
@@ -20,6 +20,8 @@
     <script defer src="content/weekly-index.js"></script>
     <script defer src="lib/high-school.js"></script>
     <script defer src="lib/weekly.js"></script>
+    <script defer src="lib/assessment.js"></script>
+    <script defer src="lib/assessment-adapters.js"></script>
     <script defer src="lib/ap-assessment.js"></script>
     <script defer src="app/render.js"></script>
     <script defer src="app/ap-render.js"></script>
@@ -29,7 +31,7 @@
     <a class="skip-link" href="#main">Skip to main content</a>
     <!-- liminal:site-header -->
     <main id="main" class="page-width weekly-main" tabindex="-1">
-      <header class="weekly-intro"><h1>Courses for AP® exams</h1><p>Calculus AB · Physics 1 · Physics C: Mechanics</p></header>
+      <header class="weekly-intro"><h1>Courses for AP® exams</h1><p>Calculus AB · Calculus BC · Physics 1 · Physics C: Mechanics</p></header>
       <noscript><p>Turn on JavaScript to browse the plans, or <a href="content/ap-plan.json" download>download the course plans and sources</a>.</p></noscript>
       <p id="apStatus" class="weekly-status" role="status" aria-live="polite">Opening course plans…</p>
       <div id="apBrowser" hidden>
@@ -38,6 +40,6 @@
       </div>
       <details class="weekly-about"><summary>Using these courses</summary><p>Each course runs 36 weeks, unit by unit, with a unit test at the end of each unit and a full-length practice exam in week 33. Tests and exams print as a student copy with an answer sheet and a separate answer key with scoring guidelines.</p><p>Results are raw points by section and unit. They are practice, not AP scores, and no score conversion is given. These are independent courses, not authorized AP courses, and they do not award credit.</p><p><a href="content/ap-plan.json" download>Download the course plans and sources</a></p></details>
     </main>
-    <footer class="home-footer page-width weekly-footer"><p>Independent educational coursework. Original explanations and questions; topic numbers identify alignment only.</p><p>AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.</p></footer>
+    <footer class="home-footer page-width weekly-footer"><p>Independent educational coursework. Original explanations and questions; topic references and Liminal objectives identify scope only.</p><p>AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.</p></footer>
   </body>
 </html>

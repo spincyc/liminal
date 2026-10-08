@@ -278,7 +278,7 @@ test("named coursework preserves named identity through routing, navigation, pro
   assert.equal(weekly.answerWorksheet(course, 1, "a").courseId, "calculus");
 });
 
-test("complete inventory counts 44 original courses and 47 views without duplicating authored aliases", () => {
+test("complete inventory counts 45 original courses and 48 views without duplicating authored aliases", () => {
   const plans = builder.loadHighSchool(curriculum);
   const scratch = path.resolve(__dirname, "../.scratch/weekly-engine");
   fs.mkdirSync(scratch, { recursive: true });
@@ -294,8 +294,8 @@ test("complete inventory counts 44 original courses and 47 views without duplica
     for (const id of weekly.namedCourses("ap")) write(apFixture.fillerCourse(id));
     const options = { directory, curriculum, highSchool: plans, plans: { ap: builder.normalizeNamedPlan("ap", apFixture.plan(), curriculum) }, output };
     const report = inspect({ ...options, complete: true });
-    assert.equal(report.courses, 44); assert.equal(report.courseViews, 47); assert.equal(report.aliasViews, 3);
-    assert.equal(report.weeks, 44 * 36); assert.equal(report.worksheets, 44 * 36 * 3); assert.deepEqual(report.missing, []);
+    assert.equal(report.courses, 45); assert.equal(report.courseViews, 48); assert.equal(report.aliasViews, 3);
+    assert.equal(report.weeks, 45 * 36); assert.equal(report.worksheets, 45 * 36 * 3); assert.deepEqual(report.missing, []);
     const loaded = builder.loadWeekly(options);
     const source = loaded.physicalCourses.find(c => c.trackId === "common-core-math" && c.grade === 11);
     const alias = loaded.courses.find(c => c.courseId === "algebra-2");

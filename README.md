@@ -46,22 +46,38 @@ claim of complete Common Core or AP alignment. See the
 [sequence and prerequisite bridges](docs/high-school-math.md).
 
 **Courses for AP® exams** adds original 36-week courses for Calculus AB,
-Physics 1, and Physics C: Mechanics at `ap.html`. Each has weekly teaching and
-worksheets, one test per framework unit (23 in total), and a full-length
+Calculus BC, Physics 1, and Physics C: Mechanics at `ap.html`. Each has weekly teaching and
+worksheets, one test per framework unit (33 in total), and a full-length
 practice exam using the May 2027 format. Student copies and worked keys print
 separately; physics includes original formula references and paper
 investigations. Reports show raw points, with no AP score conversion or
 prediction. These are independent preparation materials, not authorized AP
 courses. Paper investigations do not replace required hands-on physics labs
 or establish lab credit. See the [course contract](docs/ap-courses.md) and
-[completion review](docs/reviews/2026-10-08-ap-completion.md).
+[initial AP completion review](docs/reviews/2026-10-08-ap-completion.md).
+Calculus BC begins with precalculus prerequisites and teaches all ten units,
+including the shared AB content, integration techniques, parametric and polar
+calculus, and sequences and series. Its 36-week sequence includes cumulative
+review, a full practice exam, targeted remediation and original investigations.
+It supplies 130 worked examples, 707 exercises across 108 worksheets, ten unit
+tests, and separate worked keys. Align its week-33 exam with the school calendar;
+prior Calculus AB is not required.
 
-The 44 original full-year courses contain 1,584 weekly lessons, 4,752 worksheets,
-28,651 exercises, and 3,274 worked examples. The three reused named courses do
+SAT, ACT and all four AP courses share assessment ordering, timing metadata,
+student/key projections and typed scoring through a small
+[assessment platform](docs/assessment-platform.md). SAT template generation
+and adaptive practice, ACT banks and unscored essays, and AP handwritten
+free-response rubrics retain their own policies. The shared layer preserves
+existing run codes and saved progress; AP prep remains a printable workflow.
+
+The 45 original full-year courses contain 1,620 weekly lessons, 4,860 worksheets,
+29,358 exercises, and 3,404 worked examples. The three reused named courses do
 not inflate these counts. Independent sampled content review and browser/print
 checks for the earlier 41 courses are recorded in
 [the integration review](docs/reviews/2026-10-07-weekly-integration.md);
 the AP completion review records its separate coverage and verification limits.
+The [BC and assessment-platform review](docs/reviews/2026-10-08-bc-platform-completion.md)
+records the later course, shared infrastructure and independent review results.
 
 **Nightly reading** supplies 180 public-domain selections for each grade K–12,
 five per week. The age-adjusted reading and discussion budget grows from about
@@ -286,7 +302,7 @@ npm run check:families -- --reps 3000   # a deeper pass over every template
 npm run templates  # register new templates and re-version changed ones
 node tools/check-courses.js # validate classroom guides and worksheet generation
 node tools/build-weekly.js  # validate and build available weekly courses
-node tools/check-ap.js --complete # require all three AP courses' assessments and references
+node tools/check-ap.js --complete # require all four AP courses' assessments and references
 node tools/course-packet.js --unit topic-1 --days 10 --count 20 --seed home-1 --out .scratch/print/home-1 --pdf
 node tools/course-packet.js --unit topic-1 --days 3 --count 20 --worksheets B,C,A --combined --out .scratch/print/mixed --pdf
 ```

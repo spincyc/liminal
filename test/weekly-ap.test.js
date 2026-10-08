@@ -30,7 +30,7 @@ function withTemp(callback) {
 }
 
 test("the AP track is registry-driven: routes, labels, context, plan links and notice", () => {
-  assert.deepEqual(W.namedCourses("ap"), ["calculus-ab", "physics-1", "physics-c-mechanics"]);
+  assert.deepEqual(W.namedCourses("ap"), ["calculus-ab", "calculus-bc", "physics-1", "physics-c-mechanics"]);
   assert.ok(W.TRACKS.includes("ap"));
   assert.deepEqual(W.NAMED_COURSES, ["algebra", "geometry", "algebra-2", "trigonometry", "calculus"]);
   assert.equal(W.route("ap", "physics-c-mechanics", 36), "#ap/physics-c-mechanics/36");
@@ -56,10 +56,10 @@ test("the AP track is registry-driven: routes, labels, context, plan links and n
   assert.equal(W.calculatorLabel("graphing"), "Graphing calculator"); assert.equal(W.calculatorLabel("abacus"), ""); assert.equal(W.calculatorLabel("__proto__"), "");
 });
 
-test("AP plans use the named-plan contract with three authored courses and no aliases", () => {
+test("AP plans use the named-plan contract with four authored courses and no aliases", () => {
   assert.deepEqual(plan.courses.map(c => c.id), W.namedCourses("ap"));
   function rejectPlan(change, pattern) { const data = F.plan(); change(data); assert.throws(() => builder.normalizeNamedPlan("ap", data, curriculum), pattern); }
-  rejectPlan(p => p.courses.pop(), /three courses/);
+  rejectPlan(p => p.courses.pop(), /four courses/);
   rejectPlan(p => p.courses[0].id = "calculus", /invalid AP course ID|duplicate/);
   rejectPlan(p => { p.courses[0].source = { trackId: "common-core-math", grade: 12 }; }, /cannot alias/);
   rejectPlan(p => p.courses[1].units[1].weeks = 32, /pacing/);
@@ -172,7 +172,7 @@ test("loading admits figure directories, inlines figures and enforces the course
   assert.equal(course.weeks[0].figures[0].svg, F.figures().get("fx-w01-f1"));
   assert.equal(inspect(options).figures, 7);
   // The release inventory requires every AP course.
-  assert.deepEqual(inspect(options).missing.filter(c => c.trackId === "ap").map(c => c.courseId), ["physics-1", "physics-c-mechanics"]);
+  assert.deepEqual(inspect(options).missing.filter(c => c.trackId === "ap").map(c => c.courseId), ["calculus-bc", "physics-1", "physics-c-mechanics"]);
   const built = builder.build(options);
   assert.deepEqual(built.courses.map(c => c.file), ["content/weekly/ap/calculus-ab.json"]);
   const json = JSON.parse(fs.readFileSync(path.join(output, built.courses[0].file), "utf8"));
@@ -253,4 +253,25 @@ test("student projections carry choices, points, policies and given figures but 
   assert.deepEqual(Object.keys(W.studentWorksheet(course, 4, "a").worksheet.items[0]), ["id", "prompt", "passageIds"]);
   // The skill label can name the targeted error, so only the key carries it.
   assert.equal(W.answerWorksheet(course, 4, "a").worksheet.items[0].skill, course.weeks[3].worksheets[0].items[0].skill);
+});
+
+
+test("BC is an independent weekly course with explicit calculus calculator policies", () => {
+  const course = F.fillerCourse("calculus-bc");
+  assert.doesNotThrow(() => validate(course, new Map()));
+  assert.equal(W.route("ap", "calculus-bc", 30), "#ap/calculus-bc/30");
+  assert.equal(W.planRoute("ap", "calculus-bc"), "ap.html#calculus-bc");
+  assert.equal(W.courseShortLabel(course), "Calculus BC");
+  const selected = W.resolve({ courses: [course] }, "#ap/calculus-bc/30");
+  assert.equal(selected.courseId, "calculus-bc");
+  assert.equal(selected.week, 30);
+  for (const policy of [undefined, "scientific", "any"]) {
+    course.weeks[0].worksheets[0].calculator = policy;
+    assert.throws(() => validate(course, new Map()), /BC worksheet calculator policy/);
+  }
+  for (const policy of ["none", "graphing"]) {
+    course.weeks[0].worksheets[0].calculator = policy;
+    assert.doesNotThrow(() => validate(course, new Map()));
+    assert.equal(W.studentWorksheet(course, 1, "a").worksheet.calculator, policy);
+  }
 });

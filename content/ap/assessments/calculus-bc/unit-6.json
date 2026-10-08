@@ -1,0 +1,494 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "unit-6",
+  "kind": "unit-test",
+  "unitId": "u6",
+  "title": "Unit 6 test: Integration and Accumulation of Change",
+  "author": "bc-tests-extensions",
+  "directions": "Original Liminal practice. Section I Part A and Section II Part B are without a calculator; the other parts require a graphing calculator. Show supporting work and justify conclusions in free response. Angles are in radians. Use exact answers without a calculator and three decimal places for calculator work unless a question specifies otherwise. Report raw practice points only.",
+  "figures": [
+    {
+      "id": "bc-u6-f1",
+      "alt": "Line segments connect (0, 2), (1, 4), (3, −2), and (4, 0) on a graph of signed flow q against time t."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Select one answer for each question.",
+          "items": [
+            {
+              "id": "bc-u6-mc01",
+              "prompt": "A tank contains 7 L at t = 0. Its signed net flow q is the piecewise linear function shown. How much liquid is in the tank at t = 4 minutes?",
+              "choices": [
+                "4 L",
+                "13 L",
+                "11 L",
+                "3 L"
+              ],
+              "key": "C",
+              "rationale": "The signed trapezoid areas are 3, 2, and −1 L. Thus the net addition is 4 L, and the final amount is 7 + 4 = 11 L.",
+              "distractorNotes": {
+                "A": "This is the net change, not the final amount.",
+                "B": "This replaces the last negative triangular contribution by a positive contribution.",
+                "D": "This subtracts the signed integral instead of adding it."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION"
+              ],
+              "figureIds": [
+                "bc-u6-f1"
+              ]
+            },
+            {
+              "id": "bc-u6-mc02",
+              "prompt": "Which definite integral is represented by lim as n → ∞ of Σ from i = 1 to n of (3/n)(2 + 3i/n)^2?",
+              "choices": [
+                "∫ from 2 to 5 of x^2 dx",
+                "∫ from 0 to 3 of x^2 dx",
+                "∫ from 2 to 3 of x^2 dx",
+                "3∫ from 2 to 5 of x^2 dx"
+              ],
+              "key": "A",
+              "rationale": "The width is Δx = 3/n and the right endpoints are 2 + iΔx, so the interval is [2, 5].",
+              "distractorNotes": {
+                "B": "The sample points start at 2, not 0.",
+                "C": "The interval has width 3, not right endpoint 3.",
+                "D": "The factor 3 is already included in the interval width."
+              },
+              "topics": [
+                "BC.6.DEFINITE_INTEGRAL_NOTATION",
+                "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS"
+              ]
+            },
+            {
+              "id": "bc-u6-mc03",
+              "prompt": "Let F(x) = ∫ from 1 to x^2 of ln(1 + t^2) dt. What is F′(x)?",
+              "choices": [
+                "ln(1 + x^4)",
+                "2x ln(1 + x^2)",
+                "4x^3/(1 + x^4)",
+                "2x ln(1 + x^4)"
+              ],
+              "key": "D",
+              "rationale": "The Fundamental Theorem and chain rule give F′(x) = ln(1 + (x^2)^2)·2x.",
+              "distractorNotes": {
+                "A": "This omits the derivative of the upper limit.",
+                "B": "The integrand must be evaluated at t = x^2.",
+                "C": "This differentiates the substituted integrand instead of the integral."
+              },
+              "topics": [
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.6.ACCUMULATION_FUNCTIONS"
+              ]
+            },
+            {
+              "id": "bc-u6-mc04",
+              "prompt": "A continuous function f satisfies ∫ from −1 to 2 of f(x) dx = 6 and ∫ from 2 to 5 of f(x) dx = −3. What is ∫ from 5 to −1 of [2f(x) − 1] dx?",
+              "choices": [
+                "−6",
+                "0",
+                "−12",
+                "12"
+              ],
+              "key": "B",
+              "rationale": "On [−1, 5], the integral is 2(6 − 3) − 6 = 0. Reversing limits still gives 0.",
+              "distractorNotes": {
+                "A": "This reverses the f integral but omits the constant term.",
+                "C": "This gives the constant contribution the wrong orientation.",
+                "D": "This changes the second signed integral to positive and also keeps the forward integration limits."
+              },
+              "topics": [
+                "BC.6.INTEGRAL_PROPERTIES"
+              ]
+            },
+            {
+              "id": "bc-u6-mc05",
+              "prompt": "For x > −1, which is an antiderivative of (x^2 + 2x + 3)/(x + 1)?",
+              "choices": [
+                "x^2/2 + x + 2 ln(x + 1)",
+                "x^2/2 + 2x + 3 ln(x + 1)",
+                "x^2/2 + x − 2/(x + 1)",
+                "x^2/2 + x + ln(x + 1)"
+              ],
+              "key": "A",
+              "rationale": "Polynomial division gives x + 1 + 2/(x + 1); integrate each term. Differentiating the result recovers the integrand.",
+              "distractorNotes": {
+                "B": "This divides individual numerator terms without preserving the denominator.",
+                "C": "This integrates the remainder as an inverse square instead of an inverse first power.",
+                "D": "This loses the remainder coefficient 2."
+              },
+              "topics": [
+                "BC.6.ANTIDERIVATIVES",
+                "BC.6.ALGEBRAIC_INTEGRATION",
+                "BC.6.INTEGRATION_METHOD_SELECTION"
+              ]
+            },
+            {
+              "id": "bc-u6-mc06",
+              "prompt": "What is ∫ from 0 to π/4 of x cos(2x) dx?",
+              "choices": [
+                "(π + 2)/8",
+                "π/8",
+                "(π − 2)/8",
+                "(π − 2)/4"
+              ],
+              "key": "C",
+              "rationale": "With u = x and dv = cos(2x) dx, an antiderivative is x sin(2x)/2 + cos(2x)/4. Evaluating from 0 to π/4 gives π/8 − 1/4 = (π − 2)/8.",
+              "distractorNotes": {
+                "A": "This gives the lower-endpoint cosine contribution the wrong sign.",
+                "B": "This retains the boundary product but omits the remaining integral.",
+                "D": "This loses a factor of 1/2 from integrating the trigonometric function."
+              },
+              "topics": [
+                "BC.6.INTEGRATION_BY_PARTS"
+              ]
+            },
+            {
+              "id": "bc-u6-mc07",
+              "prompt": "On an interval not containing −3 or −1, which expression is an antiderivative of 1/[(x + 1)(x + 3)]?",
+              "choices": [
+                "ln|(x + 1)/(x + 3)|",
+                "(1/2) ln|(x + 1)/(x + 3)|",
+                "(1/2) ln|(x + 3)/(x + 1)|",
+                "(1/2) ln|(x + 1)(x + 3)|"
+              ],
+              "key": "B",
+              "rationale": "The decomposition is (1/2)/(x + 1) − (1/2)/(x + 3). Its integral is the stated logarithmic difference.",
+              "distractorNotes": {
+                "A": "This omits the factor 1/2 in the partial fractions.",
+                "C": "This reverses the signs of both partial-fraction coefficients.",
+                "D": "This adds the fractions where their difference is required."
+              },
+              "topics": [
+                "BC.6.PARTIAL_FRACTIONS"
+              ]
+            },
+            {
+              "id": "bc-u6-mc08",
+              "prompt": "Let I = ∫ from 0 to 1 of x^(−2/3) dx and J = ∫ from 1 to ∞ of x^(−2/3) dx. Which statement is correct?",
+              "choices": [
+                "I diverges; J = 3.",
+                "I = 3; J = 3.",
+                "I diverges; J diverges.",
+                "I = 3; J diverges."
+              ],
+              "key": "D",
+              "rationale": "The antiderivative is 3x^(1/3). Its limit at zero is 0, but its limit at infinity is infinite.",
+              "distractorNotes": {
+                "A": "The power thresholds near zero and near infinity are different.",
+                "B": "The antiderivative grows without bound at infinity.",
+                "C": "An unbounded integrand near zero need not have a divergent integral."
+              },
+              "topics": [
+                "BC.6.SINGULAR_INTEGRALS",
+                "BC.6.INFINITE_INTERVAL_INTEGRALS",
+                "BC.6.IMPROPER_CONVERGENCE"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "Select one answer. Numerical choices are rounded as displayed.",
+          "items": [
+            {
+              "id": "bc-u6-mc09",
+              "prompt": "A calibration pulse has intensity e^(−x^2) for 0 ≤ x ≤ 2. What is its integrated intensity ∫ from 0 to 2 of e^(−x^2) dx, to three decimal places?",
+              "choices": [
+                "0.491",
+                "0.882",
+                "1.764",
+                "0.441"
+              ],
+              "key": "B",
+              "rationale": "Numerical integration gives 0.8820813908, so the integrated intensity is 0.882.",
+              "distractorNotes": {
+                "A": "This treats e^(−x^2) as though its antiderivative were −e^(−x^2)/2.",
+                "C": "This doubles the integral over the stated interval.",
+                "D": "This reports the average intensity instead of the integral."
+              },
+              "topics": [
+                "BC.6.DEFINITE_INTEGRAL_NOTATION"
+              ]
+            },
+            {
+              "id": "bc-u6-mc10",
+              "prompt": "A feeder adds material at rate 2 + sin(t^2) grams per minute. Starting with an empty container, at what time b > 0 does it first contain 5 grams?",
+              "choices": [
+                "2.500 min",
+                "1.667 min",
+                "3.181 min",
+                "2.181 min"
+              ],
+              "key": "D",
+              "rationale": "Solve ∫ from 0 to b of [2 + sin(t^2)] dt = 5 numerically. The solution is b = 2.1808472203; the rate is at least 1, so the solution is unique.",
+              "distractorNotes": {
+                "A": "This ignores the oscillating contribution.",
+                "B": "This assumes the rate stays at its maximum value 3.",
+                "C": "This does not satisfy the accumulated-mass equation."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION",
+                "BC.6.ACCUMULATION_FUNCTIONS"
+              ]
+            },
+            {
+              "id": "bc-u6-mc11",
+              "prompt": "A positive rate r is sampled below. Using all three table subintervals, what is the trapezoidal estimate of ∫ from 0 to 2.7 of r(t) dt?\n\nt | 0 | 0.6 | 1.5 | 2.7\nr(t) | 4.0 | 5.2 | 4.7 | 3.1",
+              "choices": [
+                "11.895",
+                "12.105",
+                "12.720",
+                "11.070"
+              ],
+              "key": "A",
+              "rationale": "The estimate is 0.6(4 + 5.2)/2 + 0.9(5.2 + 4.7)/2 + 1.2(4.7 + 3.1)/2 = 11.895.",
+              "distractorNotes": {
+                "B": "This uses width 0.9 for all three trapezoids.",
+                "C": "This is the left-endpoint sum with the actual widths.",
+                "D": "This is the right-endpoint sum with the actual widths."
+              },
+              "topics": [
+                "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS"
+              ]
+            },
+            {
+              "id": "bc-u6-mc12",
+              "prompt": "The tail cost of a process is modeled by ∫ from 2 to ∞ of (ln x)/x^2 dx. Which value is correct, to three decimal places?",
+              "choices": [
+                "0.347",
+                "1.693",
+                "0.847",
+                "The integral diverges."
+              ],
+              "key": "C",
+              "rationale": "An antiderivative is −(ln x + 1)/x, whose limit at infinity is 0. The integral is (ln 2 + 1)/2 = 0.8465735903.",
+              "distractorNotes": {
+                "A": "This omits the integral left after integration by parts.",
+                "B": "This fails to divide the lower-endpoint contribution by 2.",
+                "D": "Although ln x grows, division by x^2 makes this integral converge."
+              },
+              "topics": [
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.6.INFINITE_INTERVAL_INTEGRALS",
+                "BC.6.IMPROPER_CONVERGENCE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show integral or equation setups and justify conclusions.",
+          "items": [
+            {
+              "id": "bc-u6-fr1",
+              "prompt": "A collection system holds A(t) liters at time t minutes, where A(0) = 8 and A′(t) = q(t) = 3 + sin(t^2/2) − 0.2t for 0 ≤ t ≤ 4. Define B(t) = ∫ from 0 to t^2 of q(s) ds for 0 ≤ t ≤ 2.",
+              "topics": [
+                "BC.6.ACCUMULATION",
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.6.ACCUMULATION_FUNCTIONS"
+              ],
+              "context": true,
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find A(4), with units.",
+                  "points": 3,
+                  "answer": "A(4) = 19.308 L.",
+                  "steps": [
+                    "A(4) = 8 + ∫ from 0 to 4 of q(t) dt.",
+                    "The integral is 11.307513420 L; add the initial amount."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Relates the final amount to the initial amount plus the integral of q."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Correctly evaluates the definite integral numerically."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reports 19.308 L, including the initial amount and units."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find B′(1.3). Show the derivative expression before evaluating.",
+                  "points": 3,
+                  "answer": "B′(1.3) = 9.495.",
+                  "steps": [
+                    "B′(t) = 2t q(t^2).",
+                    "Thus B′(1.3) = 2.6[3 + sin(1.69^2/2) − 0.2(1.69)] = 9.494755482."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates q at the upper limit t^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Includes the chain-rule factor 2t."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates B′(1.3) as 9.495."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the time when A(t) first reaches 15 L. Explain why there is exactly one such time on [0, 4].",
+                  "points": 3,
+                  "answer": "t = 2.117 min; A is strictly increasing.",
+                  "steps": [
+                    "Solve ∫ from 0 to t of q(s) ds = 7 to obtain 2.116984635.",
+                    "Since q(t) ≥ 3 − 1 − 0.8 = 1.2 > 0 on [0, 4], A is strictly increasing.",
+                    "Continuity and 8 < 15 < A(4) give existence; strict increase gives uniqueness."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets the accumulated addition equal to 7 and obtains t = 2.117."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Establishes q > 0 on the entire interval."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses continuity, endpoint amounts, and strict increase to justify existence and uniqueness."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show exact work and reasoning.",
+          "items": [
+            {
+              "id": "bc-u6-fr2",
+              "prompt": "Evaluate the first two integrals exactly and determine whether the third converges. Show the transformations and limiting expressions that justify each result.",
+              "topics": [
+                "BC.6.SUBSTITUTION",
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.6.ALGEBRAIC_INTEGRATION",
+                "BC.6.INTEGRATION_METHOD_SELECTION",
+                "BC.6.SINGULAR_INTEGRALS",
+                "BC.6.IMPROPER_CONVERGENCE"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "∫ from 0 to 1 of 6x/(1 + x^2) dx",
+                  "points": 3,
+                  "answer": "3 ln 2",
+                  "steps": [
+                    "Set u = 1 + x^2 and du = 2x dx, changing the limits to 1 and 2.",
+                    "The integral is 3∫ from 1 to 2 of 1/u du = 3 ln 2."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Makes a correct substitution with differential."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses consistent limits or back-substitution."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates as 3 ln 2."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "∫ from 0 to 1 of x ln(1 + x) dx",
+                  "points": 3,
+                  "answer": "1/4",
+                  "steps": [
+                    "Use u = ln(1 + x), dv = x dx to obtain ln 2/2 − (1/2)∫ from 0 to 1 of x^2/(1 + x) dx.",
+                    "Divide: x^2/(1 + x) = x − 1 + 1/(1 + x).",
+                    "The remaining integral is ln 2 − 1/2, so the result is 1/4."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies integration by parts correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Divides x^2 by x + 1 and integrates the result."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Combines the boundary term and remaining integral to obtain 1/4."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "∫ from −1 to 1 of 1/x^2 dx",
+                  "points": 3,
+                  "answer": "The improper integral diverges.",
+                  "steps": [
+                    "The singularity at 0 requires two one-sided integrals, each of which must converge.",
+                    "For example, lim as b → 0+ of ∫ from b to 1 of x^(−2) dx = lim as b → 0+ of (1/b − 1) = ∞.",
+                    "Thus the improper integral diverges; endpoint substitution across 0 is invalid."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Splits at the singularity and states that both sides must converge."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Displays a correct one-sided limit and antiderivative."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes divergence from an infinite one-sided limit."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

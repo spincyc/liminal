@@ -96,14 +96,15 @@ For a coherent ACT bank batch:
   verification. Textbook references identify scope; all instruction and
   exercises are original. Never commit scanned textbook pages or student work.
 
-- Courses for AP® exams (track `ap`: `calculus-ab`, `physics-1`,
+- Courses for AP® exams (track `ap`: `calculus-ab`, `calculus-bc`, `physics-1`,
   `physics-c-mechanics`) follow `docs/ap-courses.md`. Weekly work uses the
   weekly engine; unit tests and practice exams are `liminal-ap-assessment`
   documents in `content/ap/assessments/<course>/`, validated by
   `node tools/check-ap.js` (`--complete` for release) and built by
   `tools/build-ap.js`. `ap.html` loads `content/ap-plan.js`, `content/ap.js`,
   `content/weekly-index.js`, `lib/high-school.js`, `lib/weekly.js`,
-  `lib/ap-assessment.js`, `app/render.js`, `app/ap-render.js`, `app/ap.js`;
+  `lib/assessment.js`, `lib/assessment-adapters.js`, `lib/ap-assessment.js`,
+  `app/render.js`, `app/ap-render.js`, `app/ap.js`;
   student copies and answer keys are separate routes and printouts. Report
   raw points only (no score prediction or conversion), never claim an
   authorized AP course, keep the exact College Board disclaimer on every page
@@ -128,7 +129,8 @@ For a coherent ACT bank batch:
     or progress storage. SAT/ACT module links select `?test=SAT` or `?test=ACT`.
   - `practice.html`: the generated catalog, answer signs and template registries,
     then `lib/core.js`, `lib/template-mask.js`, `lib/question-identity.js`, `lib/runs.js`,
-    `lib/modules.js`, `lib/simulation.js`, `lib/test-engine.js`,
+    `lib/modules.js`, `lib/simulation.js`, `lib/assessment.js`,
+    `lib/assessment-adapters.js`, `lib/test-engine.js`,
     `lib/session-store.js`, `lib/annotations.js`, `lib/line-reader.js`,
     `lib/progress.js`, `lib/review-queue.js`,
     `lib/practice.js`, `lib/analytics.js`, `lib/progress-io.js`,
@@ -141,11 +143,16 @@ For a coherent ACT bank batch:
     it routes `#<pageId>` and `#<pageId>/<anchor>`.
   - `print.html`: the catalog and registries, `lib/core.js`,
     `lib/template-mask.js`, `lib/question-identity.js`, `lib/runs.js`, `lib/modules.js`,
-    `lib/booklet.js`, `lib/progress.js`, `app/render.js`, `app/site.js`, `app/print.js`.
+    `lib/assessment.js`, `lib/assessment-adapters.js`, `lib/booklet.js`,
+    `lib/progress.js`, `app/render.js`, `app/site.js`, `app/print.js`.
   ACT section banks load on demand from `content/<section>.js`; a SAT
   section's templates load from `lib/families/<section>.js` when needed.
   The built registries (`content/templates.js`) carry every template's tier,
   domain, skill and subskill, so labels and re-tiering never need a bundle.
+- SAT, ACT and AP assessment mechanics share `lib/assessment.js` through
+  explicit adapters. Follow `docs/assessment-platform.md`: keep generators,
+  numeric comparisons, session/progress storage and program scoring policies
+  with their existing owners; student projections use display allowlists.
 - `app/app.js` is the page shell: routing, the one place sets are launched
   and recorded, and the `ctx` it hands each view. The view interface is
   documented at its top; each view (`practice`, `progress`, `review`, `tips`)

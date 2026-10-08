@@ -98,7 +98,7 @@
   .weekly-section { padding-block: 12pt; }
   .weekly-passage { max-width: none; background: #fff; }
   .weekly-heading h2 { font-size: 20pt; }
-  .weekly-section h3 { font-size: 16pt; }
+  .weekly-section h3 { font-size: 16pt; break-after: avoid; }
   .weekly-answer { background: #fff; }
   .weekly-page a { color: #000; }
   .weekly-page .weekly-item-answer, .weekly-page .weekly-example-answer { display: none !important; }

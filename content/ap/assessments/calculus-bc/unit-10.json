@@ -1,0 +1,501 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "unit-10",
+  "kind": "unit-test",
+  "unitId": "u10",
+  "title": "Unit 10 test: Infinite Sequences and Series",
+  "author": "bc-tests-extensions",
+  "directions": "Original Liminal practice. Section I Part A and Section II Part B are without a calculator; the other parts require a graphing calculator. Show supporting work and justify conclusions in free response. Angles are in radians. Use exact answers without a calculator and three decimal places for calculator work unless a question specifies otherwise. Report raw practice points only.",
+  "figures": [
+    {
+      "id": "bc-u10-f1",
+      "alt": "Discrete points show partial sums S_n = 4 − 3/(n + 1) for integer n from 1 through 6. A dashed horizontal line is drawn at 4; no connecting curve is drawn."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Select one answer for each question.",
+          "items": [
+            {
+              "id": "bc-u10-mc01",
+              "prompt": "For a_n = (3n + 1)/(n + 2), n ≥ 1, which statement correctly describes the sequence and its associated infinite series?",
+              "choices": [
+                "The sequence tends to 3; the series converges to 3.",
+                "The sequence tends to 0; the series converges to 3.",
+                "The sequence tends to 3; the series diverges.",
+                "The sequence tends to 0; the series diverges."
+              ],
+              "key": "C",
+              "rationale": "Dividing numerator and denominator by n gives lim a_n = 3. A necessary condition for convergence of Σ a_n is a_n → 0, so this series diverges.",
+              "distractorNotes": {
+                "A": "A sequence limit is not the sum of its terms.",
+                "B": "The leading coefficients give term limit 3, not 0.",
+                "D": "The series conclusion is correct, but the sequence limit is not zero."
+              },
+              "topics": [
+                "BC.10.SEQUENCES",
+                "BC.10.NTH_TERM_TEST"
+              ]
+            },
+            {
+              "id": "bc-u10-mc02",
+              "prompt": "The partial sums S_n = a_1 + ⋯ + a_n of a series are S_n = 4 − 3/(n + 1) for every integer n ≥ 1; the first six are shown. Which pair gives a_3 and the infinite sum?",
+              "choices": [
+                "a_3 = 13/4; sum = 4.",
+                "a_3 = 1/4; sum = 3.",
+                "a_3 = −1/4; sum = 4.",
+                "a_3 = 1/4; sum = 4."
+              ],
+              "key": "D",
+              "rationale": "a_3 = S_3 − S_2 = 13/4 − 3 = 1/4, while lim S_n = 4 is the infinite sum.",
+              "distractorNotes": {
+                "A": "This confuses a_3 with S_3.",
+                "B": "This uses the numerator 3 instead of the limit of S_n.",
+                "C": "This subtracts S_3 from S_2 rather than the reverse."
+              },
+              "topics": [
+                "BC.10.SERIES_AND_PARTIAL_SUMS",
+                "BC.10.SEQUENCES"
+              ],
+              "figureIds": [
+                "bc-u10-f1"
+              ]
+            },
+            {
+              "id": "bc-u10-mc03",
+              "prompt": "What is the sum of Σ from n = 0 to ∞ of 6(−2/3)^n?",
+              "choices": [
+                "18/5",
+                "18",
+                "−12/5",
+                "10"
+              ],
+              "key": "A",
+              "rationale": "The common ratio is −2/3 with magnitude less than 1. The sum is 6/[1 − (−2/3)] = 18/5.",
+              "distractorNotes": {
+                "B": "This uses a positive ratio 2/3 instead of −2/3.",
+                "C": "This starts at n = 1 and omits the first term 6.",
+                "D": "This divides by the reciprocal of 1 − r."
+              },
+              "topics": [
+                "BC.10.GEOMETRIC_SERIES"
+              ]
+            },
+            {
+              "id": "bc-u10-mc04",
+              "prompt": "For series starting at n = 1, which pair consists of two divergent series?",
+              "choices": [
+                "Σ 1/n and Σ 1/n^2",
+                "Σ 1/n and Σ 1/√n",
+                "Σ 1/n^2 and Σ 1/n^3",
+                "Σ 1/√n and Σ 1/n^(3/2)"
+              ],
+              "key": "B",
+              "rationale": "A p-series Σ 1/n^p converges exactly when p > 1. Here p = 1 and p = 1/2 both give divergence.",
+              "distractorNotes": {
+                "A": "The first is harmonic and divergent, but the second is a convergent p-series.",
+                "C": "Both are convergent p-series because p > 1.",
+                "D": "The first diverges, but the second converges."
+              },
+              "topics": [
+                "BC.10.HARMONIC_SERIES",
+                "BC.10.P_SERIES"
+              ]
+            },
+            {
+              "id": "bc-u10-mc05",
+              "prompt": "Which comparison proves convergence of Σ from n = 1 to ∞ of 1/(n^2 + 7)?",
+              "choices": [
+                "0 < 1/(n^2 + 7) ≤ 1/n, and Σ 1/n diverges.",
+                "1/(n^2 + 7) ≥ 1/n^2, and Σ 1/n^2 converges.",
+                "1/(n^2 + 7) → 0, so its series must converge.",
+                "0 < 1/(n^2 + 7) ≤ 1/n^2, and Σ 1/n^2 converges."
+              ],
+              "key": "D",
+              "rationale": "All terms are positive and bounded above by the terms of the convergent p-series with p = 2, so direct comparison proves convergence.",
+              "distractorNotes": {
+                "A": "Being smaller than a divergent series does not establish convergence.",
+                "B": "The inequality is false, and this comparison direction would not prove convergence.",
+                "C": "A zero term limit is necessary but not sufficient for series convergence."
+              },
+              "topics": [
+                "BC.10.DIRECT_COMPARISON",
+                "BC.10.P_SERIES"
+              ]
+            },
+            {
+              "id": "bc-u10-mc06",
+              "prompt": "Use b_n = 1/n^2 to assess Σ from n = 1 to ∞ of (2n + 1)/(n^3 + 4). Which pair gives lim as n → ∞ of a_n/b_n and the conclusion?",
+              "choices": [
+                "Limit 0; the series diverges.",
+                "Limit 2; the series converges.",
+                "Limit 2; the series diverges.",
+                "Limit ∞; the series converges."
+              ],
+              "key": "B",
+              "rationale": "The ratio is n^2(2n + 1)/(n^3 + 4), which tends to 2. Both sequences are positive, and Σ 1/n^2 converges, so the given series converges.",
+              "distractorNotes": {
+                "A": "The ratio tends to 2, not 0; the comparison series converges.",
+                "C": "A finite positive limit transfers convergence from Σ 1/n^2.",
+                "D": "The numerator and denominator of the ratio both have degree 3."
+              },
+              "topics": [
+                "BC.10.LIMIT_COMPARISON"
+              ]
+            },
+            {
+              "id": "bc-u10-mc07",
+              "prompt": "For a_n = 3^n/n!, n ≥ 1, which ratio-test calculation and conclusion are valid for Σ a_n?",
+              "choices": [
+                "a_(n+1)/a_n = 3/(n + 1) → 0; converges.",
+                "a_(n+1)/a_n = 3n → ∞; diverges.",
+                "a_(n+1)/a_n = 3 → 3; diverges.",
+                "a_(n+1)/a_n = (n + 1)/3 → ∞; diverges."
+              ],
+              "key": "A",
+              "rationale": "The ratio is [3^(n+1)/(n+1)!][n!/3^n] = 3/(n+1). Its limit 0 is less than 1, so the series converges.",
+              "distractorNotes": {
+                "B": "The factorial quotient is inverted incorrectly.",
+                "C": "This ignores the factorial in the denominator.",
+                "D": "This computes the reciprocal ratio."
+              },
+              "topics": [
+                "BC.10.RATIO_TEST"
+              ]
+            },
+            {
+              "id": "bc-u10-mc08",
+              "prompt": "Define g(x) = sin(x^2)/x^2 for x ≠ 0 and g(0) = 1. Using the Maclaurin series sin z = Σ from n = 0 to ∞ of (−1)^n z^(2n+1)/(2n+1)!, what is the coefficient of x^8 in the Maclaurin series of g?",
+              "choices": [
+                "−1/6",
+                "1/24",
+                "1/120",
+                "−1/5040"
+              ],
+              "key": "C",
+              "rationale": "Substitution and division give g(x) = 1 − x^4/3! + x^8/5! − ⋯ for all real x. The coefficient is 1/5! = 1/120.",
+              "distractorNotes": {
+                "A": "This is the coefficient of x^4, not x^8.",
+                "B": "This uses 4! instead of the factorial attached to the sine term.",
+                "D": "This is the coefficient of x^12, not x^8."
+              },
+              "topics": [
+                "BC.10.KNOWN_SERIES_SUBSTITUTION",
+                "BC.10.TAYLOR_SERIES"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "Select one answer. Numerical choices are rounded as displayed.",
+          "items": [
+            {
+              "id": "bc-u10-mc09",
+              "prompt": "Let f(x) = 1/[x(ln x)^2] for x ≥ 2 and S = Σ from n = 2 to ∞ of f(n). Let S_N be the sum through n = N. The integral-test remainder estimate, when applicable, gives 0 < S − S_N ≤ 1/ln N. Which statement both justifies convergence of S and gives the least integer N for which this bound is at most 0.15?",
+              "choices": [
+                "f is positive, continuous, and decreasing; ∫ from 2 to ∞ of f(x) dx = 1/ln 2 < ∞. Least N = 786.",
+                "f is positive, continuous, and decreasing; ∫ from 2 to ∞ of f(x) dx = 1/ln 2 < ∞. Least N = 785.",
+                "Since f(n) tends to zero, the series must converge by the term test. Least N = 786.",
+                "The integral test gives divergence because ∫ from 2 to ∞ of f(x) dx is infinite. No finite N works."
+              ],
+              "key": "A",
+              "rationale": "For x ≥ 2, f is continuous and positive, and f′(x) = −(ln x + 2)/[x^2(ln x)^3] < 0. An antiderivative is −1/ln x, so the improper integral equals 1/ln 2 and the integral test proves convergence. The remainder requirement is N ≥ e^(1/0.15) ≈ 785.772, so the least integer is 786.",
+              "distractorNotes": {
+                "B": "The convergence argument is valid, but rounding the threshold down fails the error requirement.",
+                "C": "A zero term limit does not prove convergence, so the claimed justification fails.",
+                "D": "The improper integral equals 1/ln 2, which is finite; the divergence claim is false."
+              },
+              "topics": [
+                "BC.10.INTEGRAL_TEST"
+              ]
+            },
+            {
+              "id": "bc-u10-mc10",
+              "prompt": "For S = Σ from n = 1 to ∞ of (−1)^(n−1)/n^1.3, what is the least number N of terms for which the alternating-series error bound guarantees |S − S_N| ≤ 0.004?",
+              "choices": [
+                "68",
+                "70",
+                "69",
+                "250"
+              ],
+              "key": "C",
+              "rationale": "The positive magnitudes decrease to zero. Require 1/(N + 1)^1.3 ≤ 0.004, so N + 1 ≥ 250^(1/1.3) ≈ 69.915. Thus N = 69 is least.",
+              "distractorNotes": {
+                "A": "The next term is still larger than 0.004.",
+                "B": "This works but is not the least number of terms.",
+                "D": "This treats the exponent 1.3 as 1 and is not minimal."
+              },
+              "topics": [
+                "BC.10.ALTERNATING_SERIES",
+                "BC.10.ALTERNATING_REMAINDER"
+              ]
+            },
+            {
+              "id": "bc-u10-mc11",
+              "prompt": "The degree-4 Maclaurin polynomial for e^x approximates e^0.7. Using M = e^0.7 as a bound for the absolute fifth derivative on the entire interval [0, 0.7], what Lagrange remainder bound results?",
+              "choices": [
+                "0.00140058",
+                "0.00282043",
+                "0.01410214",
+                "0.00402918"
+              ],
+              "key": "B",
+              "rationale": "For every point between 0 and 0.7, |f^(5)(x)| ≤ e^0.7. Hence |R_4(0.7)| ≤ e^0.7(0.7)^5/5! = 0.00282042848.",
+              "distractorNotes": {
+                "A": "This uses M = 1, which does not bound e^x throughout [0, 0.7].",
+                "C": "This uses 4! instead of 5! in the denominator.",
+                "D": "This uses 0.7^4 instead of 0.7^5."
+              },
+              "topics": [
+                "BC.10.LAGRANGE_REMAINDER",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS"
+              ]
+            },
+            {
+              "id": "bc-u10-mc12",
+              "prompt": "A function f has four continuous derivatives on [2, 2.3], with |f^(4)(x)| ≤ 4 throughout that interval. Its derivative values at 2 are listed below. Which pair gives the degree-3 Taylor estimate of f(2.3) and a guaranteed upper bound on its absolute error? Keep the displayed precision.\n\nk | 0 | 1 | 2 | 3\nf^(k)(2) | 3 | −2 | 5 | 7",
+              "choices": [
+                "Estimate 3.0390; error ≤ 0.00135.",
+                "Estimate 2.6565; error ≤ 0.000135.",
+                "Estimate 2.6250; error ≤ 0.00135.",
+                "Estimate 2.6565; error ≤ 0.00135."
+              ],
+              "key": "D",
+              "rationale": "The polynomial gives 3 − 2(0.3) + (5/2)(0.3)^2 + (7/6)(0.3)^3 = 2.6565. The Lagrange bound is 4(0.3)^4/4! = 0.00135.",
+              "distractorNotes": {
+                "A": "This omits factorial denominators in the Taylor polynomial.",
+                "B": "This makes the remainder bound ten times too small; the given derivative bound does not guarantee it.",
+                "C": "This omits the cubic Taylor term."
+              },
+              "topics": [
+                "BC.10.TAYLOR_COEFFICIENTS",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS",
+                "BC.10.LAGRANGE_REMAINDER"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show integral or equation setups and justify conclusions.",
+          "items": [
+            {
+              "id": "bc-u10-fr1",
+              "prompt": "Consider S = Σ from n = 1 to ∞ of (−1)^(n−1)(0.8)^n/n, and let S_N denote the sum of its first N terms. In error bounds below, use the alternating-series bound, not comparison to a decimal value of S.",
+              "topics": [
+                "BC.10.ALTERNATING_SERIES",
+                "BC.10.ALTERNATING_REMAINDER",
+                "BC.10.ABSOLUTE_AND_CONDITIONAL_CONVERGENCE",
+                "BC.10.RATIO_TEST"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Compute S_6 and give an upper bound for |S − S_6|. State the hypotheses that justify that bound. Retain at least six decimal places in the bound.",
+                  "points": 3,
+                  "answer": "S_6 = 0.570112; |S − S_6| ≤ 0.8^7/7 ≈ 0.029959315.",
+                  "steps": [
+                    "The magnitudes b_n = 0.8^n/n are positive; b_(n+1)/b_n = 0.8n/(n+1) < 1, and b_n → 0.",
+                    "The six-term sum is 0.570112, and the next magnitude is 0.029959314286."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes S_6 correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Establishes decreasing positive magnitudes tending to zero."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the seventh term for the error bound, preserving sufficient precision or exact form."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the least N for which the bound guarantees |S − S_N| < 0.00001. Show that your N works and that the preceding integer does not.",
+                  "points": 3,
+                  "answer": "N = 35.",
+                  "steps": [
+                    "The bound is b_(N+1) = 0.8^(N+1)/(N+1).",
+                    "For N = 35 it is approximately 0.000009014; for N = 34 it is approximately 0.000011590.",
+                    "The bound decreases with N, so 35 is the least value."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up the next-term inequality with N + 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Shows the bound at N = 35 is less than 0.00001."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Checks N = 34 fails and invokes decreasing bounds to establish minimality."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Does the series converge absolutely or conditionally? Give a test and its hypotheses or calculation.",
+                  "points": 3,
+                  "answer": "It converges absolutely.",
+                  "steps": [
+                    "Apply the ratio test to the positive terms 0.8^n/n.",
+                    "Their consecutive ratio is 0.8n/(n + 1), which tends to 0.8 < 1.",
+                    "Thus the absolute-value series converges, establishing absolute convergence of S.",
+                    "Alternatively, 0 < 0.8^n/n ≤ 0.8^n for n ≥ 1, and the geometric series with ratio 0.8 converges, so direct comparison proves absolute convergence."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies a valid test to the absolute-value series."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Supplies the test-specific calculation and hypotheses: for example the ratio limit 0.8 < 1, or positive-term comparison with the convergent geometric series Σ 0.8^n."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes absolute convergence, not merely alternating convergence."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show exact work and reasoning.",
+          "items": [
+            {
+              "id": "bc-u10-fr2",
+              "prompt": "Let H(x) = Σ from n = 1 to ∞ of (x − 2)^n/(n·3^n).",
+              "topics": [
+                "BC.10.RADIUS_AND_INTERVAL",
+                "BC.10.ENDPOINT_TESTS",
+                "BC.10.HARMONIC_SERIES",
+                "BC.10.ALTERNATING_SERIES",
+                "BC.10.ABSOLUTE_AND_CONDITIONAL_CONVERGENCE",
+                "BC.10.SERIES_DIFFERENTIATION",
+                "BC.10.SERIES_INTEGRATION",
+                "BC.10.TAYLOR_SERIES",
+                "BC.10.TAYLOR_COEFFICIENTS",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the radius and full real interval of convergence. Test both endpoints explicitly, and classify endpoint convergence as absolute or conditional when it occurs.",
+                  "points": 3,
+                  "answer": "Radius 3; interval [−1, 5). At −1 convergence is conditional; at 5 the series diverges.",
+                  "steps": [
+                    "The ratio of absolute terms tends to |x − 2|/3, giving convergence when |x − 2| < 3.",
+                    "At x = −1, the series is Σ (−1)^n/n, convergent by alternation with decreasing magnitudes tending to 0; its absolute series is harmonic and divergent.",
+                    "At x = 5, the series is Σ 1/n, which diverges."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains radius 3 and the open interval (−1, 5)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Tests x = −1 and identifies conditional convergence."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Tests x = 5, identifies divergence, and gives [−1, 5)."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "For |x − 2| < 3, find H′(x) in closed form and give a power series for ∫ from 2 to x of H(t) dt. State why these operations are valid.",
+                  "points": 3,
+                  "answer": "H′(x) = 1/(5 − x); ∫ from 2 to x of H(t) dt = Σ from n = 1 to ∞ of (x − 2)^(n+1)/[n(n + 1)3^n].",
+                  "steps": [
+                    "Power series can be differentiated and integrated term by term inside their radius of convergence.",
+                    "Differentiation gives (1/3)Σ from n = 1 to ∞ of [(x − 2)/3]^(n−1) = 1/(5 − x).",
+                    "Termwise integration from 2 makes every lower-endpoint term zero and introduces a factor n + 1 in each denominator."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates term by term and sums the geometric series correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives the integrated power series with correct coefficients and lower-endpoint constant."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States validity inside |x − 2| < 3, without assuming endpoint differentiability."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Identify H as an elementary function on |x − 2| < 3, then give its degree-3 Taylor polynomial about x = 2 and the value H‴(2).",
+                  "points": 3,
+                  "answer": "H(x) = −ln[1 − (x − 2)/3]; T_3(x) = (x − 2)/3 + (x − 2)^2/18 + (x − 2)^3/81; H‴(2) = 2/27.",
+                  "steps": [
+                    "An antiderivative of H′ = 1/(5 − x) is −ln(5 − x) + C. H(2) = 0 gives C = ln 3.",
+                    "The first three terms give T_3. A power series centered at 2 has Taylor coefficients H^(n)(2)/n!.",
+                    "Hence H‴(2) = 3!·(1/81) = 2/27."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains the logarithmic function using H′ and H(2), or recognizes and correctly substitutes into the known logarithm series."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives all three correct Taylor polynomial terms."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Converts the cubic coefficient to H‴(2) using 3!."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

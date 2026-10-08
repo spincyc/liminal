@@ -157,6 +157,7 @@ function validateCourse(data, track, options = {}) {
       assert(["a", "b", "c"].includes(sheet.id), "invalid worksheet ID at " + where);
       for (const field of ["title", "directions"]) text(sheet[field], where + ".worksheet." + field);
       assert(sheet.calculator === undefined || Object.prototype.hasOwnProperty.call(CALCULATOR, sheet.calculator), "invalid calculator policy at " + where + "/" + sheet.id);
+      if (data.trackId === "ap" && data.courseId === "calculus-bc") assert(["none", "graphing"].includes(sheet.calculator), "BC worksheet calculator policy must be none or graphing at " + where + "/" + sheet.id);
       assert(sheet.minutes === undefined || Number.isInteger(sheet.minutes) && sheet.minutes >= 1 && sheet.minutes <= 240, "invalid suggested minutes at " + where + "/" + sheet.id);
       assert(Array.isArray(sheet.items) && sheet.items.length >= 6, "need six worksheet items at " + where + "/" + sheet.id);
       sheet.items.forEach((item, i) => task(item, where + "/" + sheet.id + "/" + (i + 1), week.passages, false, figureState));

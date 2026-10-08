@@ -1,0 +1,485 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "unit-7",
+  "kind": "unit-test",
+  "unitId": "u7",
+  "title": "Unit 7 test: Differential Equations",
+  "author": "bc-tests-extensions",
+  "directions": "Original Liminal practice. Section I Part A and Section II Part B are without a calculator; the other parts require a graphing calculator. Show supporting work and justify conclusions in free response. Angles are in radians. Use exact answers without a calculator and three decimal places for calculator work unless a question specifies otherwise. Report raw practice points only.",
+  "figures": [
+    {
+      "id": "bc-u7-f1",
+      "alt": "Slope segments on a grid from −1 to 2 in both coordinates. Segments have zero slope along y = x. At (0, 1) the segment rises one unit per unit to the right; at (1, 0) it falls one unit per unit to the right."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Select one answer for each question.",
+          "items": [
+            {
+              "id": "bc-u7-mc01",
+              "prompt": "The temperature M(t) of a sample approaches a room temperature of 12°C. Its instantaneous rate of change is negative 0.08 times its excess above room temperature. Which model expresses this statement?",
+              "choices": [
+                "M′ = −0.08M − 12",
+                "M′ = −0.08(M − 12)",
+                "M′ = 0.08(M − 12)",
+                "M′ = −0.08(M + 12)"
+              ],
+              "key": "B",
+              "rationale": "The excess temperature is M − 12, and multiplying it by −0.08 gives the stated rate.",
+              "distractorNotes": {
+                "A": "This subtracts the room temperature after multiplying instead of modeling the excess.",
+                "C": "This makes a hot sample heat up instead of cool.",
+                "D": "This uses the sum of sample and room temperatures instead of the excess."
+              },
+              "topics": [
+                "BC.7.DIFFERENTIAL_EQUATION_MODELS"
+              ]
+            },
+            {
+              "id": "bc-u7-mc02",
+              "prompt": "Which initial-value problem is satisfied by y = 2 + 3e^(−2x)?",
+              "choices": [
+                "y′ = −2y, y(0) = 5",
+                "y′ = −2(y − 2), y(0) = 3",
+                "y′ = 2(y − 2), y(0) = 5",
+                "y′ = −2(y − 2), y(0) = 5"
+              ],
+              "key": "D",
+              "rationale": "Differentiation gives y′ = −6e^(−2x) = −2(y − 2), and y(0) = 2 + 3 = 5.",
+              "distractorNotes": {
+                "A": "The constant offset 2 means y′ is not −2y.",
+                "B": "Substitution at x = 0 gives 5, not 3.",
+                "C": "The derivative has the opposite sign."
+              },
+              "topics": [
+                "BC.7.VERIFY_SOLUTIONS",
+                "BC.7.INITIAL_VALUE_PROBLEMS"
+              ]
+            },
+            {
+              "id": "bc-u7-mc03",
+              "prompt": "Which differential equation matches the displayed slope field?",
+              "choices": [
+                "y′ = y − x",
+                "y′ = x − y",
+                "y′ = xy",
+                "y′ = x + y"
+              ],
+              "key": "A",
+              "rationale": "The field has zero slope when y = x, positive slope at (0, 1), and negative slope at (1, 0), matching y − x.",
+              "distractorNotes": {
+                "B": "Its slopes at (0, 1) and (1, 0) have the opposite signs.",
+                "C": "It has zero slopes on both axes, unlike the field.",
+                "D": "Its zero slopes lie on y = −x, not y = x."
+              },
+              "topics": [
+                "BC.7.SLOPE_FIELDS"
+              ],
+              "figureIds": [
+                "bc-u7-f1"
+              ]
+            },
+            {
+              "id": "bc-u7-mc04",
+              "prompt": "For y′ = x + y with y(0) = 1, what is the Euler approximation to y(0.5) using two steps of size 0.25?",
+              "choices": [
+                "1.500",
+                "1.5625",
+                "1.625",
+                "1.750"
+              ],
+              "key": "C",
+              "rationale": "The first point is (0.25, 1.25). Its slope is 1.5, so the second value is 1.25 + 0.25(1.5) = 1.625.",
+              "distractorNotes": {
+                "A": "This uses the original slope for both steps.",
+                "B": "This omits x from the second slope.",
+                "D": "This uses one step of size 0.5 and the wrong starting slope."
+              },
+              "topics": [
+                "BC.7.EULER_METHOD"
+              ]
+            },
+            {
+              "id": "bc-u7-mc05",
+              "prompt": "The solution of y′ = x/y with y(0) = −2 is defined near x = 0. Which expression gives this solution?",
+              "choices": [
+                "y = √(x^2 + 4)",
+                "y = −√(2x + 4)",
+                "y = −√(x^2 + 4)",
+                "y = −2e^(x^2/2)"
+              ],
+              "key": "C",
+              "rationale": "Separating gives y dy = x dx, hence y^2 = x^2 + 4. The initial value selects the negative square root.",
+              "distractorNotes": {
+                "A": "This has the wrong initial sign.",
+                "B": "This integrates x as x instead of x^2/2.",
+                "D": "This would solve y′ = xy, not y′ = x/y."
+              },
+              "topics": [
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.INITIAL_VALUE_PROBLEMS"
+              ]
+            },
+            {
+              "id": "bc-u7-mc06",
+              "prompt": "A population satisfies P′ = 0.3P(1 − P/90), with 0 < P < 90. At which population is P′ largest?",
+              "choices": [
+                "45",
+                "90",
+                "30",
+                "0"
+              ],
+              "key": "A",
+              "rationale": "The rate is a downward-opening quadratic in P with zeros 0 and 90. Its vertex is at P = 45.",
+              "distractorNotes": {
+                "B": "At carrying capacity the growth rate is zero.",
+                "C": "This uses one third of the capacity instead of the vertex of the quadratic.",
+                "D": "The growth rate is zero at this equilibrium."
+              },
+              "topics": [
+                "BC.7.LOGISTIC_MODELS"
+              ]
+            },
+            {
+              "id": "bc-u7-mc07",
+              "prompt": "For y′ = y(y − 2)(4 − y), which equilibrium solutions attract nearby solutions from both sides as x increases?",
+              "choices": [
+                "y = 2 only",
+                "y = 0 and y = 2",
+                "y = 2 and y = 4",
+                "y = 0 and y = 4"
+              ],
+              "key": "D",
+              "rationale": "The signs of y′ on the intervals cut by 0, 2, and 4 are +, −, +, −. Thus the directions point toward 0 and 4 and away from 2.",
+              "distractorNotes": {
+                "A": "The arrows point away from 2 on both sides.",
+                "B": "The equilibrium at 2 is repelling, not attracting.",
+                "C": "The attracting equilibrium at 0 is omitted and the repelling one at 2 is included."
+              },
+              "topics": [
+                "BC.7.EQUILIBRIUM_SOLUTIONS"
+              ]
+            },
+            {
+              "id": "bc-u7-mc08",
+              "prompt": "A function satisfies y′ = 2xy and y(0) = 3. What is y(1)?",
+              "choices": [
+                "3e^2",
+                "3e",
+                "e^3",
+                "6"
+              ],
+              "key": "B",
+              "rationale": "Separation gives ln|y| = x^2 + C. The initial condition gives y = 3e^(x^2), so y(1) = 3e.",
+              "distractorNotes": {
+                "A": "This omits the factor 1/2 when integrating 2x.",
+                "C": "This places the initial multiplier in the exponent incorrectly.",
+                "D": "This uses a constant-rate linear approximation over the whole interval."
+              },
+              "topics": [
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.INITIAL_VALUE_PROBLEMS"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "Select one answer. Numerical choices are rounded as displayed.",
+          "items": [
+            {
+              "id": "bc-u7-mc09",
+              "prompt": "A culture grows according to M′ = kM with constant k. Its mass is 7 mg initially and 11 mg after 3 hours. What mass does the model predict after 8 hours?",
+              "choices": [
+                "23.364 mg",
+                "17.667 mg",
+                "27.429 mg",
+                "15.714 mg"
+              ],
+              "key": "A",
+              "rationale": "From 11 = 7e^(3k), k = ln(11/7)/3. Then M(8) = 7(11/7)^(8/3) = 23.364173740 mg.",
+              "distractorNotes": {
+                "B": "This extends the average increase linearly instead of using exponential growth.",
+                "C": "This uses an incorrect growth exponent.",
+                "D": "This applies the 3-hour multiplier only once to an incorrect initial value."
+              },
+              "topics": [
+                "BC.7.EXPONENTIAL_MODELS"
+              ]
+            },
+            {
+              "id": "bc-u7-mc10",
+              "prompt": "A logistic model is P(t) = 120/[1 + 5e^(−0.4t)], where t is measured in days. At what time does the population first reach 80?",
+              "choices": [
+                "4.024 days",
+                "5.756 days",
+                "2.290 days",
+                "7.489 days"
+              ],
+              "key": "B",
+              "rationale": "Setting P = 80 gives 5e^(−0.4t) = 0.5, so t = ln 10/0.4 = 5.756462732.",
+              "distractorNotes": {
+                "A": "This solves for a denominator of 2 instead of 1.5.",
+                "C": "This uses the reciprocal logarithmic relation incorrectly.",
+                "D": "This corresponds to a different target population."
+              },
+              "topics": [
+                "BC.7.LOGISTIC_MODELS"
+              ]
+            },
+            {
+              "id": "bc-u7-mc11",
+              "prompt": "An algae model satisfies P′ = 0.6P(1 − P/50), P(0) = 10. Using Euler’s method with two steps of size 0.5, what is the estimate of P(1)?",
+              "choices": [
+                "14.800",
+                "15.376",
+                "16.000",
+                "15.197"
+              ],
+              "key": "D",
+              "rationale": "The first estimate is 10 + 0.5(4.8) = 12.4. The second is 12.4 + 0.5[0.6(12.4)(1 − 12.4/50)] = 15.19744.",
+              "distractorNotes": {
+                "A": "This repeats the initial slope for both steps.",
+                "B": "This uses an incorrect second-step rate.",
+                "C": "This takes one full step of size 1 using the unrestricted initial growth rate 0.6(10) = 6."
+              },
+              "topics": [
+                "BC.7.EULER_METHOD",
+                "BC.7.LOGISTIC_MODELS"
+              ]
+            },
+            {
+              "id": "bc-u7-mc12",
+              "prompt": "A solution satisfies y′ = cos t/(1 + y^2) and y(0) = 0.8. What is y(2)?",
+              "choices": [
+                "1.709",
+                "0.385",
+                "1.242",
+                "1.880"
+              ],
+              "key": "C",
+              "rationale": "Separation gives y + y^3/3 = sin t + 0.8 + 0.8^3/3. At t = 2, solving this strictly increasing cubic gives 1.241741408.",
+              "distractorNotes": {
+                "A": "This integrates cos t but omits the y-dependent factor.",
+                "B": "This value fails the separated relation y + y^3/3 = sin 2 + 0.8 + 0.8^3/3.",
+                "D": "This reports y + y^3/3 instead of solving for y."
+              },
+              "topics": [
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.INITIAL_VALUE_PROBLEMS"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show integral or equation setups and justify conclusions.",
+          "items": [
+            {
+              "id": "bc-u7-fr1",
+              "prompt": "A culture’s population Q(t), measured in thousands of cells, satisfies Q′ = 0.42Q(1 − Q/160), with Q(0) = 25 and time in hours. Its solution is Q(t) = 160/[1 + 5.4e^(−0.42t)].",
+              "topics": [
+                "BC.7.LOGISTIC_MODELS",
+                "BC.7.DIFFERENTIAL_EQUATION_MODELS"
+              ],
+              "context": true,
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find Q(5) and Q′(5), with units.",
+                  "points": 3,
+                  "answer": "Q(5) = 96.312 thousand cells; Q′(5) = 16.102 thousand cells/hour.",
+                  "steps": [
+                    "Evaluate the given solution at 5 to obtain 96.312164335.",
+                    "Substitute that unrounded value into 0.42Q(1 − Q/160) to obtain 16.101522399."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates Q(5) correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes Q(5) into the differential equation to find Q′(5)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reports both results with correct units."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the first time Q reaches 100 thousand cells. Explain why the model reaches that value only once.",
+                  "points": 3,
+                  "answer": "t = 5.231 hours.",
+                  "steps": [
+                    "100 = 160/[1 + 5.4e^(−0.42t)] gives e^(−0.42t) = 1/9.",
+                    "Thus t = ln 9/0.42 = 5.231487089.",
+                    "The solution stays between 25 and 160 and has positive derivative, so it crosses 100 once."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Forms the correct equation for the threshold."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves for t = 5.231."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies uniqueness using positivity of the growth rate on the solution range."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Is the population growth rate increasing or decreasing at t = 5? Justify with a derivative calculation.",
+                  "points": 3,
+                  "answer": "The growth rate is decreasing; Q″(5) = −1.379 thousand cells/hour^2.",
+                  "steps": [
+                    "Differentiate: Q″ = 0.42Q′(1 − Q/80).",
+                    "At 5, Q′ > 0 and Q > 80, so Q″ < 0; numerical substitution gives −1.378916067."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates the differential equation with the chain rule."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Correctly establishes the sign or numerical value of Q″(5)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets Q″ < 0 as a decreasing growth rate."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show exact work and reasoning.",
+          "items": [
+            {
+              "id": "bc-u7-fr2",
+              "prompt": "Let y be the solution of y′ = (x + 1)(y − 3), y(0) = 5.",
+              "topics": [
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.INITIAL_VALUE_PROBLEMS",
+                "BC.7.VERIFY_SOLUTIONS",
+                "BC.7.EQUILIBRIUM_SOLUTIONS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find an explicit formula for y. Show the separation and use of the initial condition.",
+                  "points": 3,
+                  "answer": "y = 3 + 2e^(x^2/2 + x)",
+                  "steps": [
+                    "Integrate dy/(y − 3) = (x + 1) dx to obtain ln|y − 3| = x^2/2 + x + C.",
+                    "Thus y − 3 = Ce^(x^2/2 + x); y(0) = 5 gives C = 2."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates and integrates correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the initial condition to find the constant."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives the correct explicit solution."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Verify your solution in the differential equation, and determine whether it is increasing or decreasing at x = −2.",
+                  "points": 3,
+                  "answer": "It satisfies the equation and is decreasing at x = −2.",
+                  "steps": [
+                    "Differentiating gives y′ = 2(x + 1)e^(x^2/2 + x), which equals (x + 1)(y − 3).",
+                    "At x = −2, y′ = −2 < 0."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates the proposed solution correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Shows equality with (x + 1)(y − 3)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses y′(−2) = −2 to conclude decreasing."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the constant solution of the differential equation. Can the solution with y(0) = 5 meet this constant solution at a finite x? Justify.",
+                  "points": 3,
+                  "answer": "The constant solution is y = 3; the initial-value solution never meets it.",
+                  "steps": [
+                    "A constant y = c requires (x + 1)(c − 3) = 0 for every x, so c = 3.",
+                    "For every finite real x, 2e^(x^2/2 + x) > 0, so y > 3. Alternatively, uniqueness for the smooth right-hand side rules out crossing the equilibrium solution."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies y = 3 as the constant solution."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains why a constant requires c = 3 for every x."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Rules out a finite intersection using positivity of the exponential or a valid uniqueness argument for this smooth differential equation."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

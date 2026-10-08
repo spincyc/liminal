@@ -9,7 +9,7 @@
 .ap-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .ap-lede { max-width: 70ch; color: var(--color-muted); }
 .ap-note { max-width: 75ch; margin-block: 14px; padding: 10px 14px; border-left: 3px solid var(--color-line-strong); background: var(--color-softer); font-size: .875rem; }
-.ap-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-block: 18px; }
+.ap-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-block: 18px; }
 .ap-card { padding: 18px; border: 1px solid var(--color-line); border-radius: var(--radius-sm); background: var(--color-surface); }
 .ap-card h3 { font: 400 1.25rem/1.25 var(--font-serif); margin-bottom: 8px; }
 .ap-card p { font-size: .9375rem; }
@@ -67,6 +67,7 @@
 .ap-part-head { break-inside: avoid; break-after: avoid; }
 .ap-item-fr > .ap-item-points { break-after: avoid; }
 .ap-item-points, .ap-points, .ap-topics, .ap-key-answer { font-size: .8125rem; color: var(--color-muted); }
+.ap-topics { overflow-wrap: anywhere; }
 .ap-item-points, .ap-key-answer { font-weight: 650; color: var(--color-ink); }
 .ap-choices { list-style: none; padding: 0; margin-top: 10px; display: grid; gap: 6px; }
 .ap-choices li { display: flex; gap: 10px; align-items: baseline; }
@@ -143,6 +144,9 @@
   .ap-section { padding-block: 10pt; }
   .ap-section-fr { break-before: page; padding-bottom: 0; border-bottom: 0; }
   .ap-items > li:not(.ap-item-fr), .ap-fr-parts > li, .ap-guideline-head, .ap-guideline-part, .ap-table tr { break-inside: avoid; }
+  /* Keep each FR introduction and its given figures with the first part. */
+  .ap-item-fr > :not(.ap-fr-parts) { break-inside: avoid; break-after: avoid; }
+  .ap-fr-parts { break-before: avoid; }
   .ap-guideline-head > h4, .ap-guideline-part > h5, .ap-section > :is(h3, h4) { break-after: avoid; }
   .ap-workspace { min-height: 55mm; border-color: #777; }
   .ap-doc .lm-figure svg { max-height: 90mm; }

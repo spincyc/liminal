@@ -89,6 +89,33 @@
       "edition": "Exam format effective May 2027",
       "accessed": "2026-10-08",
       "note": "Source of the practice-exam format: section counts, timing, calculator policy, and the four free-response question types and their points. Recheck each fall."
+    },
+    {
+      "id": "course-calculus-bc",
+      "title": "AP® Calculus BC course overview",
+      "url": "https://apcentral.collegeboard.org/courses/ap-calculus-bc",
+      "publisher": "College Board",
+      "edition": "HTML overview checked for 2026–27",
+      "accessed": "2026-10-08",
+      "note": "Scope and exam-format metadata only. Granular BC objectives are Liminal editorial checklists for the published unit scope, not official numbered CED topics. No official questions, scoring materials, or CED PDFs were used."
+    },
+    {
+      "id": "student-calculus-bc",
+      "title": "AP® Calculus BC student course overview",
+      "url": "https://apstudents.collegeboard.org/courses/ap-calculus-bc",
+      "publisher": "College Board",
+      "edition": "HTML overview checked for 2026–27",
+      "accessed": "2026-10-08",
+      "note": "Scope and exam-format metadata only. Granular BC objectives are Liminal editorial checklists for the published unit scope, not official numbered CED topics. No official questions, scoring materials, or CED PDFs were used."
+    },
+    {
+      "id": "exam-calculus-bc",
+      "title": "AP® Calculus BC Exam",
+      "url": "https://apcentral.collegeboard.org/courses/ap-calculus-bc/exam",
+      "publisher": "College Board",
+      "edition": "HTML overview checked for 2026–27",
+      "accessed": "2026-10-08",
+      "note": "Scope and exam-format metadata only. Granular BC objectives are Liminal editorial checklists for the published unit scope, not official numbered CED topics. No official questions, scoring materials, or CED PDFs were used."
     }
   ],
   "standards": [
@@ -1467,6 +1494,910 @@
       "locator": "Editorial; not part of the Physics C: Mechanics framework",
       "gradeBand": "High school; flexible placement",
       "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.LIMIT_MEANING",
+      "label": "Limit meaning",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.ONE_SIDED_LIMITS",
+      "label": "One sided limits",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.LIMIT_LAWS",
+      "label": "Limit laws",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.ALGEBRAIC_LIMITS",
+      "label": "Algebraic limits",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.SQUEEZE_THEOREM",
+      "label": "Squeeze theorem",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.CONTINUITY_AT_A_POINT",
+      "label": "Continuity at a point",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.CONTINUITY_ON_INTERVALS",
+      "label": "Continuity on intervals",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.DISCONTINUITIES",
+      "label": "Discontinuities",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.INFINITE_LIMITS",
+      "label": "Infinite limits",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.LIMITS_AT_INFINITY",
+      "label": "Limits at infinity",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.1.INTERMEDIATE_VALUE_THEOREM",
+      "label": "Intermediate value theorem",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 1 scope: Limits and Continuity; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.2.DERIVATIVE_DEFINITION",
+      "label": "Derivative definition",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 2 scope: Differentiation: Definition and Fundamental Properties; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.2.DERIVATIVE_REPRESENTATIONS",
+      "label": "Derivative representations",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 2 scope: Differentiation: Definition and Fundamental Properties; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.2.DIFFERENTIABILITY",
+      "label": "Differentiability",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 2 scope: Differentiation: Definition and Fundamental Properties; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.2.BASIC_DERIVATIVE_RULES",
+      "label": "Basic derivative rules",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 2 scope: Differentiation: Definition and Fundamental Properties; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.2.PRODUCT_RULE",
+      "label": "Product rule",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 2 scope: Differentiation: Definition and Fundamental Properties; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.2.QUOTIENT_RULE",
+      "label": "Quotient rule",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 2 scope: Differentiation: Definition and Fundamental Properties; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.2.TRIGONOMETRIC_DERIVATIVES",
+      "label": "Trigonometric derivatives",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 2 scope: Differentiation: Definition and Fundamental Properties; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.3.CHAIN_RULE",
+      "label": "Chain rule",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 3 scope: Differentiation: Composite, Implicit, and Inverse Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.3.IMPLICIT_DIFFERENTIATION",
+      "label": "Implicit differentiation",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 3 scope: Differentiation: Composite, Implicit, and Inverse Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.3.DIFFERENTIATION_METHOD_SELECTION",
+      "label": "Differentiation method selection",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 3 scope: Differentiation: Composite, Implicit, and Inverse Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.3.INVERSE_FUNCTION_DERIVATIVES",
+      "label": "Inverse function derivatives",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 3 scope: Differentiation: Composite, Implicit, and Inverse Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.3.INVERSE_TRIGONOMETRIC_DERIVATIVES",
+      "label": "Inverse trigonometric derivatives",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 3 scope: Differentiation: Composite, Implicit, and Inverse Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.3.HIGHER_DERIVATIVES",
+      "label": "Higher derivatives",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 3 scope: Differentiation: Composite, Implicit, and Inverse Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.4.DERIVATIVE_UNITS",
+      "label": "Derivative units",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 4 scope: Contextual Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.4.STRAIGHT_LINE_MOTION",
+      "label": "Straight line motion",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 4 scope: Contextual Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.4.RELATED_RATE_MODELS",
+      "label": "Related rate models",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 4 scope: Contextual Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.4.RELATED_RATE_SOLUTIONS",
+      "label": "Related rate solutions",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 4 scope: Contextual Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.4.LINEARIZATION",
+      "label": "Linearization",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 4 scope: Contextual Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.4.LHOSPITAL_RULE",
+      "label": "Lhospital rule",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 4 scope: Contextual Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.MEAN_VALUE_THEOREM",
+      "label": "Mean value theorem",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.EXTREME_VALUE_THEOREM",
+      "label": "Extreme value theorem",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.CRITICAL_POINTS",
+      "label": "Critical points",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.FIRST_DERIVATIVE_TEST",
+      "label": "First derivative test",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.CONCAVITY",
+      "label": "Concavity",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.SECOND_DERIVATIVE_TEST",
+      "label": "Second derivative test",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+      "label": "Derivative graph connections",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.OPTIMIZATION",
+      "label": "Optimization",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.5.IMPLICIT_CURVE_ANALYSIS",
+      "label": "Implicit curve analysis",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 5 scope: Analytical Applications of Differentiation; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.ACCUMULATION",
+      "label": "Accumulation",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS",
+      "label": "Riemann and trapezoidal sums",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.DEFINITE_INTEGRAL_NOTATION",
+      "label": "Definite integral notation",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.FUNDAMENTAL_THEOREM",
+      "label": "Fundamental theorem",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.ACCUMULATION_FUNCTIONS",
+      "label": "Accumulation functions",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.INTEGRAL_PROPERTIES",
+      "label": "Integral properties",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.ANTIDERIVATIVES",
+      "label": "Antiderivatives",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.SUBSTITUTION",
+      "label": "Substitution",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.ALGEBRAIC_INTEGRATION",
+      "label": "Algebraic integration",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.INTEGRATION_BY_PARTS",
+      "label": "Integration by parts",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.PARTIAL_FRACTIONS",
+      "label": "Partial fractions",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.INTEGRATION_METHOD_SELECTION",
+      "label": "Integration method selection",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.INFINITE_INTERVAL_INTEGRALS",
+      "label": "Infinite interval integrals",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.SINGULAR_INTEGRALS",
+      "label": "Singular integrals",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.6.IMPROPER_CONVERGENCE",
+      "label": "Improper convergence",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 6 scope: Integration and Accumulation of Change; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.DIFFERENTIAL_EQUATION_MODELS",
+      "label": "Differential equation models",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.VERIFY_SOLUTIONS",
+      "label": "Verify solutions",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.SLOPE_FIELDS",
+      "label": "Slope fields",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.EULER_METHOD",
+      "label": "Euler method",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.SEPARATION_OF_VARIABLES",
+      "label": "Separation of variables",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.INITIAL_VALUE_PROBLEMS",
+      "label": "Initial value problems",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.EXPONENTIAL_MODELS",
+      "label": "Exponential models",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.LOGISTIC_MODELS",
+      "label": "Logistic models",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.7.EQUILIBRIUM_SOLUTIONS",
+      "label": "Equilibrium solutions",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 7 scope: Differential Equations; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.AVERAGE_VALUE",
+      "label": "Average value",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.MOTION_INTEGRALS",
+      "label": "Motion integrals",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.NET_AND_TOTAL_CHANGE",
+      "label": "Net and total change",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.AREA_DX",
+      "label": "Area dx",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.AREA_DY",
+      "label": "Area dy",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.MULTIPLE_INTERSECTION_AREAS",
+      "label": "Multiple intersection areas",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.CROSS_SECTION_VOLUMES",
+      "label": "Cross section volumes",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.DISC_VOLUMES",
+      "label": "Disc volumes",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.WASHER_VOLUMES",
+      "label": "Washer volumes",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.SHIFTED_AXES",
+      "label": "Shifted axes",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.CARTESIAN_ARC_LENGTH",
+      "label": "Cartesian arc length",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.8.GEOMETRIC_MODELS",
+      "label": "Geometric models",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 8 scope: Applications of Integration; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.PARAMETRIC_ORIENTATION",
+      "label": "Parametric orientation",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.PARAMETRIC_DERIVATIVES",
+      "label": "Parametric derivatives",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.PARAMETRIC_TANGENTS",
+      "label": "Parametric tangents",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.PARAMETRIC_ARC_LENGTH",
+      "label": "Parametric arc length",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS",
+      "label": "Vector derivatives and integrals",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.PLANAR_MOTION",
+      "label": "Planar motion",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.SPEED_AND_DISTANCE",
+      "label": "Speed and distance",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.POLAR_COORDINATES",
+      "label": "Polar coordinates",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.POLAR_TRACING",
+      "label": "Polar tracing",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.POLAR_DERIVATIVES",
+      "label": "Polar derivatives",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.POLAR_TANGENTS",
+      "label": "Polar tangents",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.POLAR_AREA_ONE_CURVE",
+      "label": "Polar area one curve",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.POLAR_AREA_TWO_CURVES",
+      "label": "Polar area two curves",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.9.POLAR_INTERVAL_JUSTIFICATION",
+      "label": "Polar interval justification",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 9 scope: Parametric Equations, Polar Coordinates, and Vector-Valued Functions; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.SEQUENCES",
+      "label": "Sequences",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.SERIES_AND_PARTIAL_SUMS",
+      "label": "Series and partial sums",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.GEOMETRIC_SERIES",
+      "label": "Geometric series",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.HARMONIC_SERIES",
+      "label": "Harmonic series",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.NTH_TERM_TEST",
+      "label": "Nth term test",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.INTEGRAL_TEST",
+      "label": "Integral test",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.P_SERIES",
+      "label": "P series",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.DIRECT_COMPARISON",
+      "label": "Direct comparison",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.LIMIT_COMPARISON",
+      "label": "Limit comparison",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.ALTERNATING_SERIES",
+      "label": "Alternating series",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.ABSOLUTE_AND_CONDITIONAL_CONVERGENCE",
+      "label": "Absolute and conditional convergence",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.RATIO_TEST",
+      "label": "Ratio test",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.ALTERNATING_REMAINDER",
+      "label": "Alternating remainder",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.TAYLOR_COEFFICIENTS",
+      "label": "Taylor coefficients",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS",
+      "label": "Taylor and maclaurin polynomials",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.TAYLOR_SERIES",
+      "label": "Taylor series",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.LAGRANGE_REMAINDER",
+      "label": "Lagrange remainder",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.RADIUS_AND_INTERVAL",
+      "label": "Radius and interval",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.ENDPOINT_TESTS",
+      "label": "Endpoint tests",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.KNOWN_SERIES_SUBSTITUTION",
+      "label": "Known series substitution",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.SERIES_DIFFERENTIATION",
+      "label": "Series differentiation",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.10.SERIES_INTEGRATION",
+      "label": "Series integration",
+      "sourceId": "course-calculus-bc",
+      "locator": "Liminal editorial checklist for College Board official unit 10 scope: Infinite Sequences and Series; not an official numbered CED topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.REVIEW",
+      "label": "Review",
+      "sourceId": "student-calculus-bc",
+      "locator": "Liminal editorial synthesis and further-study objective; not a College Board numbered topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "BC.BEYOND",
+      "label": "Beyond",
+      "sourceId": "student-calculus-bc",
+      "locator": "Liminal editorial synthesis and further-study objective; not a College Board numbered topic",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
     }
   ],
   "courses": [
@@ -2264,6 +3195,932 @@
             "6": 8,
             "7": 3,
             "8": 5
+          },
+          "frPoints": 9,
+          "minContextFr": 2
+        }
+      }
+    },
+    {
+      "id": "calculus-bc",
+      "title": "Course for AP® Calculus BC",
+      "shortTitle": "Calculus BC",
+      "examName": "AP® Calculus BC Exam",
+      "summary": "A complete first-calculus course in 36 weeks: AB foundations plus integration techniques, differential equations, parametric and polar calculus, vectors, and infinite series.",
+      "scopeNote": "Original independent preparation organized around College Board’s ten published unit overviews. No prior Calculus AB course is required. BC objective codes are granular Liminal editorial checklists, not official numbered CED topics. This is not an authorized AP course and does not award credit or predict an AP score. Align week 33 before the local examination date and place enrichment afterward.",
+      "prerequisites": [
+        "Complete Trigonometry or precalculus: function families, composition and inverses, radians, and exact trigonometric values.",
+        "Simplify rational and radical expressions, solve equations and inequalities, and keep domain restrictions.",
+        "Read graphs, tables, and verbal descriptions of functions and interpret average rates of change with units."
+      ],
+      "prerequisiteLinks": [
+        {
+          "label": "Trigonometry course plan",
+          "href": "high-school.html#trigonometry"
+        }
+      ],
+      "outcomes": [
+        "Reason about limits and continuity from graphs, tables, and formulas.",
+        "Differentiate fluently, including composite, implicit, and inverse functions, and interpret derivatives in context.",
+        "Analyze functions and solve optimization and related-rates problems with written justification.",
+        "Interpret definite integrals as accumulated change, solve separable differential equations, and compute areas and volumes.",
+        "Write complete justifications with and without a graphing calculator.",
+        "Analyze parametric and polar curves and vector-valued motion.",
+        "Determine convergence and use power series with justified intervals and approximation error bounds."
+      ],
+      "nextStep": "Continue to multivariable calculus, differential equations, linear algebra, or proof-based analysis; check local prerequisites.",
+      "reference": null,
+      "referenceNote": "The BC exam supplies no formula sheet.",
+      "calculatorNote": "Each test part is marked No calculator or Graphing calculator, matching the exam's split.",
+      "levelLabel": "Flexible placement",
+      "units": [
+        {
+          "id": "u1",
+          "unit": 1,
+          "title": "Limits and Continuity",
+          "weeks": 3,
+          "mcWeight": "5–10%",
+          "focus": "Describe nearby and long-run behavior, and use continuity to justify the existence of function values.",
+          "learning": [
+            "Estimate and evaluate limits using tables, graphs, algebra, and the squeeze theorem.",
+            "Distinguish infinite limits from limits at infinity and classify discontinuities.",
+            "Verify continuity conditions and apply the Intermediate Value Theorem with its hypotheses."
+          ],
+          "standards": [
+            "BC.1.LIMIT_MEANING",
+            "BC.1.ONE_SIDED_LIMITS",
+            "BC.1.LIMIT_LAWS",
+            "BC.1.ALGEBRAIC_LIMITS",
+            "BC.1.SQUEEZE_THEOREM",
+            "BC.1.CONTINUITY_AT_A_POINT",
+            "BC.1.CONTINUITY_ON_INTERVALS",
+            "BC.1.DISCONTINUITIES",
+            "BC.1.INFINITE_LIMITS",
+            "BC.1.LIMITS_AT_INFINITY",
+            "BC.1.INTERMEDIATE_VALUE_THEOREM"
+          ],
+          "activities": [
+            "Compare a deliberately misleading table with a graph and a limiting argument.",
+            "Repair a piecewise function at a boundary and justify whether a target value must occur."
+          ],
+          "evidence": [
+            "Separate function values from one-sided and two-sided limits.",
+            "Write a complete continuity or Intermediate Value Theorem argument."
+          ],
+          "bridge": "Use this unit’s methods in differentiation: definition and fundamental properties.",
+          "test": "unit-1"
+        },
+        {
+          "id": "u2",
+          "unit": 2,
+          "title": "Differentiation: Definition and Fundamental Properties",
+          "weeks": 2,
+          "mcWeight": "5–10%",
+          "focus": "Build the derivative from difference quotients, then establish fluent basic differentiation.",
+          "learning": [
+            "Interpret the derivative as a tangent slope and an instantaneous rate with units.",
+            "Estimate derivatives from data and distinguish differentiability from continuity.",
+            "Differentiate elementary functions, products, quotients, and trigonometric functions."
+          ],
+          "standards": [
+            "BC.2.DERIVATIVE_DEFINITION",
+            "BC.2.DERIVATIVE_REPRESENTATIONS",
+            "BC.2.DIFFERENTIABILITY",
+            "BC.2.BASIC_DERIVATIVE_RULES",
+            "BC.2.PRODUCT_RULE",
+            "BC.2.QUOTIENT_RULE",
+            "BC.2.TRIGONOMETRIC_DERIVATIVES"
+          ],
+          "activities": [
+            "Shrink a secant interval and explain the limiting rate.",
+            "Compare symbolic derivatives with slopes inferred from supplied graphs and tables."
+          ],
+          "evidence": [
+            "Write both equivalent limit definitions and identify the evaluation point.",
+            "Choose and execute the relevant rule while preserving the function’s domain."
+          ],
+          "bridge": "Use this unit’s methods in differentiation: composite, implicit, and inverse functions.",
+          "test": "unit-2"
+        },
+        {
+          "id": "u3",
+          "unit": 3,
+          "title": "Differentiation: Composite, Implicit, and Inverse Functions",
+          "weeks": 2,
+          "mcWeight": "5–10%",
+          "focus": "Differentiate compositions, implicit relations, inverses, and higher derivatives.",
+          "learning": [
+            "Decompose a composite function and retain every chain-rule factor.",
+            "Differentiate an implicit relation and find tangent information.",
+            "Use inverse-function derivatives, inverse-trigonometric derivatives, and higher derivatives."
+          ],
+          "standards": [
+            "BC.3.CHAIN_RULE",
+            "BC.3.IMPLICIT_DIFFERENTIATION",
+            "BC.3.DIFFERENTIATION_METHOD_SELECTION",
+            "BC.3.INVERSE_FUNCTION_DERIVATIVES",
+            "BC.3.INVERSE_TRIGONOMETRIC_DERIVATIVES",
+            "BC.3.HIGHER_DERIVATIVES"
+          ],
+          "activities": [
+            "Use a supplied table to evaluate a composite or inverse derivative.",
+            "Check an implicit tangent against the original relation and its local graph."
+          ],
+          "evidence": [
+            "Justify each rule in a multi-step derivative.",
+            "State the nonzero-derivative condition needed for a local inverse derivative."
+          ],
+          "bridge": "Use this unit’s methods in contextual applications of differentiation.",
+          "test": "unit-3"
+        },
+        {
+          "id": "u4",
+          "unit": 4,
+          "title": "Contextual Applications of Differentiation",
+          "weeks": 2,
+          "mcWeight": "5–10%",
+          "focus": "Translate rates, motion, approximations, and changing geometry into derivative statements.",
+          "learning": [
+            "Interpret position, velocity, acceleration, speed, and contextual derivative units.",
+            "Build and differentiate a related-rates constraint before substituting current values.",
+            "Construct a local linearization and apply L’Hospital’s Rule only to eligible limits."
+          ],
+          "standards": [
+            "BC.4.DERIVATIVE_UNITS",
+            "BC.4.STRAIGHT_LINE_MOTION",
+            "BC.4.RELATED_RATE_MODELS",
+            "BC.4.RELATED_RATE_SOLUTIONS",
+            "BC.4.LINEARIZATION",
+            "BC.4.LHOSPITAL_RULE"
+          ],
+          "activities": [
+            "Label a changing geometric diagram, including which quantities vary with time.",
+            "Compare a tangent-line approximation with concavity and a numerical check."
+          ],
+          "evidence": [
+            "Give a rate answer with units and a defensible sign.",
+            "Name the indeterminate form before using L’Hospital’s Rule."
+          ],
+          "bridge": "Use this unit’s methods in analytical applications of differentiation.",
+          "test": "unit-4"
+        },
+        {
+          "id": "u5",
+          "unit": 5,
+          "title": "Analytical Applications of Differentiation",
+          "weeks": 3,
+          "mcWeight": "10–15%",
+          "focus": "Justify extrema and graph behavior using derivative signs and theorem hypotheses.",
+          "learning": [
+            "Apply Mean Value and Extreme Value Theorems under their required conditions.",
+            "Connect monotonicity, extrema, concavity, and inflection to derivative evidence.",
+            "Model and verify optimization solutions and analyze implicit curves."
+          ],
+          "standards": [
+            "BC.5.MEAN_VALUE_THEOREM",
+            "BC.5.EXTREME_VALUE_THEOREM",
+            "BC.5.CRITICAL_POINTS",
+            "BC.5.FIRST_DERIVATIVE_TEST",
+            "BC.5.CONCAVITY",
+            "BC.5.SECOND_DERIVATIVE_TEST",
+            "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+            "BC.5.OPTIMIZATION",
+            "BC.5.IMPLICIT_CURVE_ANALYSIS"
+          ],
+          "activities": [
+            "Reconstruct function behavior from an original derivative graph.",
+            "Compare interior critical points, singular candidates, and endpoints in a constrained model."
+          ],
+          "evidence": [
+            "Distinguish a candidate from a justified extremum.",
+            "Support a graph or optimization conclusion with intervals and derivative tests."
+          ],
+          "bridge": "Use this unit’s methods in integration and accumulation of change.",
+          "test": "unit-5"
+        },
+        {
+          "id": "u6",
+          "unit": 6,
+          "title": "Integration and Accumulation of Change",
+          "weeks": 4,
+          "mcWeight": "15–20%",
+          "focus": "Connect accumulation with antiderivatives and extend integration to advanced techniques and improper limits.",
+          "learning": [
+            "Represent signed accumulation by sums and definite integrals, including units and estimation bias.",
+            "Use both Fundamental Theorem connections, integral properties, and substitution.",
+            "Select algebraic preparation, integration by parts, or partial fractions as appropriate.",
+            "Define and evaluate improper integrals using limits, splitting at every singularity."
+          ],
+          "standards": [
+            "BC.6.ACCUMULATION",
+            "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS",
+            "BC.6.DEFINITE_INTEGRAL_NOTATION",
+            "BC.6.FUNDAMENTAL_THEOREM",
+            "BC.6.ACCUMULATION_FUNCTIONS",
+            "BC.6.INTEGRAL_PROPERTIES",
+            "BC.6.ANTIDERIVATIVES",
+            "BC.6.SUBSTITUTION",
+            "BC.6.ALGEBRAIC_INTEGRATION",
+            "BC.6.INTEGRATION_BY_PARTS",
+            "BC.6.PARTIAL_FRACTIONS",
+            "BC.6.INTEGRATION_METHOD_SELECTION",
+            "BC.6.INFINITE_INTERVAL_INTEGRALS",
+            "BC.6.SINGULAR_INTEGRALS",
+            "BC.6.IMPROPER_CONVERGENCE"
+          ],
+          "activities": [
+            "Analyze an accumulation function from a supplied graph and rate table.",
+            "Compare plausible integration methods and verify antiderivatives by differentiation.",
+            "Explain why an apparently finite calculator output does not establish improper convergence."
+          ],
+          "evidence": [
+            "Show the bounds, differential, and method before a numerical integral value.",
+            "Determine improper convergence from the necessary separate limits."
+          ],
+          "bridge": "Use this unit’s methods in differential equations.",
+          "test": "unit-6"
+        },
+        {
+          "id": "u7",
+          "unit": 7,
+          "title": "Differential Equations",
+          "weeks": 2,
+          "mcWeight": "5–10%",
+          "focus": "Model and approximate differential equations, then solve separable initial-value and growth models.",
+          "learning": [
+            "Verify solutions, interpret slope fields, and construct Euler approximations.",
+            "Separate variables with equilibrium and domain restrictions retained.",
+            "Solve initial-value problems and compare exponential and logistic behavior."
+          ],
+          "standards": [
+            "BC.7.DIFFERENTIAL_EQUATION_MODELS",
+            "BC.7.VERIFY_SOLUTIONS",
+            "BC.7.SLOPE_FIELDS",
+            "BC.7.EULER_METHOD",
+            "BC.7.SEPARATION_OF_VARIABLES",
+            "BC.7.INITIAL_VALUE_PROBLEMS",
+            "BC.7.EXPONENTIAL_MODELS",
+            "BC.7.LOGISTIC_MODELS",
+            "BC.7.EQUILIBRIUM_SOLUTIONS"
+          ],
+          "activities": [
+            "Compare two Euler step sizes with a slope-field prediction.",
+            "Analyze equilibria and limiting population in a fully specified original logistic model."
+          ],
+          "evidence": [
+            "Substitute the solution and initial condition back into the model.",
+            "Explain why dividing by a factor can lose equilibrium solutions."
+          ],
+          "bridge": "Use this unit’s methods in applications of integration.",
+          "test": "unit-7"
+        },
+        {
+          "id": "u8",
+          "unit": 8,
+          "title": "Applications of Integration",
+          "weeks": 3,
+          "mcWeight": "5–10%",
+          "focus": "Use integrals to quantify averages, motion, regions, solids, and Cartesian arc length.",
+          "learning": [
+            "Distinguish average value, net change, and total change in context.",
+            "Select dx or dy slices and split area integrals at necessary intersections.",
+            "Model cross sections, discs, and washers about coordinate or shifted axes.",
+            "Set up Cartesian arc length with a justified interval and units."
+          ],
+          "standards": [
+            "BC.8.AVERAGE_VALUE",
+            "BC.8.MOTION_INTEGRALS",
+            "BC.8.NET_AND_TOTAL_CHANGE",
+            "BC.8.AREA_DX",
+            "BC.8.AREA_DY",
+            "BC.8.MULTIPLE_INTERSECTION_AREAS",
+            "BC.8.CROSS_SECTION_VOLUMES",
+            "BC.8.DISC_VOLUMES",
+            "BC.8.WASHER_VOLUMES",
+            "BC.8.SHIFTED_AXES",
+            "BC.8.CARTESIAN_ARC_LENGTH",
+            "BC.8.GEOMETRIC_MODELS"
+          ],
+          "activities": [
+            "Sketch a representative slice and label its bounds, radii, or cross-sectional dimensions.",
+            "Compare a path’s displacement, distance, and geometric length."
+          ],
+          "evidence": [
+            "Explain integrand dimensions and interval choices before evaluation.",
+            "Justify all splits introduced by signs, curve crossings, or geometric boundaries."
+          ],
+          "bridge": "Use this unit’s methods in parametric equations, polar coordinates, and vector-valued functions.",
+          "test": "unit-8"
+        },
+        {
+          "id": "u9",
+          "unit": 9,
+          "title": "Parametric Equations, Polar Coordinates, and Vector-Valued Functions",
+          "weeks": 4,
+          "mcWeight": "10–15%",
+          "focus": "Describe planar curves and motion through parametric, vector, and polar representations.",
+          "learning": [
+            "Analyze orientation, parametric first and second derivatives, and tangents.",
+            "Integrate vector components and distinguish speed, distance, and displacement.",
+            "Convert and trace polar curves, including negative radius and repeated tracing.",
+            "Compute polar tangents and one-curve or two-curve areas with justified intervals."
+          ],
+          "standards": [
+            "BC.9.PARAMETRIC_ORIENTATION",
+            "BC.9.PARAMETRIC_DERIVATIVES",
+            "BC.9.PARAMETRIC_TANGENTS",
+            "BC.9.PARAMETRIC_ARC_LENGTH",
+            "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS",
+            "BC.9.PLANAR_MOTION",
+            "BC.9.SPEED_AND_DISTANCE",
+            "BC.9.POLAR_COORDINATES",
+            "BC.9.POLAR_TRACING",
+            "BC.9.POLAR_DERIVATIVES",
+            "BC.9.POLAR_TANGENTS",
+            "BC.9.POLAR_AREA_ONE_CURVE",
+            "BC.9.POLAR_AREA_TWO_CURVES",
+            "BC.9.POLAR_INTERVAL_JUSTIFICATION"
+          ],
+          "activities": [
+            "Trace a curve in increasing parameter order and mark a tangent.",
+            "Use symmetry, intersections, and tracing information to construct a polar-area integral."
+          ],
+          "evidence": [
+            "Check tangent conditions when a parameter derivative vanishes.",
+            "Explain why a chosen interval counts each requested region exactly once."
+          ],
+          "bridge": "Use this unit’s methods in infinite sequences and series.",
+          "test": "unit-9"
+        },
+        {
+          "id": "u10",
+          "unit": 10,
+          "title": "Infinite Sequences and Series",
+          "weeks": 5,
+          "mcWeight": "15–20%",
+          "focus": "Determine convergence and use infinite series as justified representations and approximations.",
+          "learning": [
+            "Separate sequence limits, terms, partial sums, and infinite series.",
+            "Choose and justify geometric, nth-term, integral, p-series, comparison, alternating, and ratio tests.",
+            "Distinguish absolute from conditional convergence and bound alternating error.",
+            "Build Taylor approximations with derivative coefficients and Lagrange error bounds.",
+            "Determine power-series radius and endpoints and perform substitution, differentiation, and integration."
+          ],
+          "standards": [
+            "BC.10.SEQUENCES",
+            "BC.10.SERIES_AND_PARTIAL_SUMS",
+            "BC.10.GEOMETRIC_SERIES",
+            "BC.10.HARMONIC_SERIES",
+            "BC.10.NTH_TERM_TEST",
+            "BC.10.INTEGRAL_TEST",
+            "BC.10.P_SERIES",
+            "BC.10.DIRECT_COMPARISON",
+            "BC.10.LIMIT_COMPARISON",
+            "BC.10.ALTERNATING_SERIES",
+            "BC.10.ABSOLUTE_AND_CONDITIONAL_CONVERGENCE",
+            "BC.10.RATIO_TEST",
+            "BC.10.ALTERNATING_REMAINDER",
+            "BC.10.TAYLOR_COEFFICIENTS",
+            "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS",
+            "BC.10.TAYLOR_SERIES",
+            "BC.10.LAGRANGE_REMAINDER",
+            "BC.10.RADIUS_AND_INTERVAL",
+            "BC.10.ENDPOINT_TESTS",
+            "BC.10.KNOWN_SERIES_SUBSTITUTION",
+            "BC.10.SERIES_DIFFERENTIATION",
+            "BC.10.SERIES_INTEGRATION"
+          ],
+          "activities": [
+            "Audit a false convergence argument by checking the test’s hypotheses.",
+            "Compare Taylor approximations of different degrees with a proved error bound.",
+            "Track how substitution and termwise operations change coefficients and convergence intervals."
+          ],
+          "evidence": [
+            "Give a named applicable test and its actual limiting or inequality evidence.",
+            "Test each endpoint separately and state a valid interval for series operations."
+          ],
+          "bridge": "Use this unit’s methods in review, practice examination, and investigations.",
+          "test": "unit-10"
+        },
+        {
+          "id": "u11",
+          "unit": null,
+          "title": "Review, practice examination, and investigations",
+          "weeks": 6,
+          "focus": "Synthesize the complete course, use practice evidence to repair understanding, and carry out original investigations.",
+          "learning": [
+            "Solve mixed AB foundations and BC extensions under declared calculator conditions.",
+            "Prepare for the separate practice exam, score raw points, and classify errors by reasoning cause.",
+            "Reassess repaired ideas with fresh tasks rather than answer recall.",
+            "Develop and critique models using motion, accumulation, and approximation with explicit assumptions."
+          ],
+          "standards": [
+            "BC.REVIEW",
+            "BC.BEYOND"
+          ],
+          "activities": [
+            "Take the separate original practice exam and record raw points by unit and section.",
+            "Compare an initial solution, a repaired argument, and a fresh reassessment.",
+            "Write a mathematical report using the supplied original investigation data."
+          ],
+          "evidence": [
+            "Support corrections with fresh mathematical evidence.",
+            "State a model’s assumptions, approximation error, and limits of its conclusions."
+          ],
+          "bridge": "Further study may include multivariable calculus, differential equations, and proof-based analysis.",
+          "test": "practice-exam"
+        }
+      ],
+      "schedule": [
+        {
+          "week": 1,
+          "unitId": "u1",
+          "title": "Limits from graphs, tables, and algebra",
+          "standards": [
+            "BC.1.LIMIT_MEANING",
+            "BC.1.ONE_SIDED_LIMITS",
+            "BC.1.LIMIT_LAWS",
+            "BC.1.ALGEBRAIC_LIMITS"
+          ]
+        },
+        {
+          "week": 2,
+          "unitId": "u1",
+          "title": "Squeeze theorem and continuity",
+          "standards": [
+            "BC.1.SQUEEZE_THEOREM",
+            "BC.1.CONTINUITY_AT_A_POINT",
+            "BC.1.CONTINUITY_ON_INTERVALS",
+            "BC.1.DISCONTINUITIES"
+          ]
+        },
+        {
+          "week": 3,
+          "unitId": "u1",
+          "title": "Infinite behavior and the Intermediate Value Theorem",
+          "standards": [
+            "BC.1.INFINITE_LIMITS",
+            "BC.1.LIMITS_AT_INFINITY",
+            "BC.1.INTERMEDIATE_VALUE_THEOREM"
+          ],
+          "assessment": "unit-1"
+        },
+        {
+          "week": 4,
+          "unitId": "u2",
+          "title": "Derivative definitions, differentiability, and basic rules",
+          "standards": [
+            "BC.2.DERIVATIVE_DEFINITION",
+            "BC.2.DERIVATIVE_REPRESENTATIONS",
+            "BC.2.DIFFERENTIABILITY",
+            "BC.2.BASIC_DERIVATIVE_RULES"
+          ]
+        },
+        {
+          "week": 5,
+          "unitId": "u2",
+          "title": "Product, quotient, and trigonometric derivatives",
+          "standards": [
+            "BC.2.PRODUCT_RULE",
+            "BC.2.QUOTIENT_RULE",
+            "BC.2.TRIGONOMETRIC_DERIVATIVES"
+          ],
+          "assessment": "unit-2"
+        },
+        {
+          "week": 6,
+          "unitId": "u3",
+          "title": "Chain rule and implicit differentiation",
+          "standards": [
+            "BC.3.CHAIN_RULE",
+            "BC.3.IMPLICIT_DIFFERENTIATION",
+            "BC.3.DIFFERENTIATION_METHOD_SELECTION"
+          ]
+        },
+        {
+          "week": 7,
+          "unitId": "u3",
+          "title": "Inverse functions and higher derivatives",
+          "standards": [
+            "BC.3.INVERSE_FUNCTION_DERIVATIVES",
+            "BC.3.INVERSE_TRIGONOMETRIC_DERIVATIVES",
+            "BC.3.HIGHER_DERIVATIVES"
+          ],
+          "assessment": "unit-3"
+        },
+        {
+          "week": 8,
+          "unitId": "u4",
+          "title": "Rates in context, motion, and related-rate models",
+          "standards": [
+            "BC.4.DERIVATIVE_UNITS",
+            "BC.4.STRAIGHT_LINE_MOTION",
+            "BC.4.RELATED_RATE_MODELS"
+          ]
+        },
+        {
+          "week": 9,
+          "unitId": "u4",
+          "title": "Related rates, linearization, and indeterminate limits",
+          "standards": [
+            "BC.4.RELATED_RATE_SOLUTIONS",
+            "BC.4.LINEARIZATION",
+            "BC.4.LHOSPITAL_RULE"
+          ],
+          "assessment": "unit-4"
+        },
+        {
+          "week": 10,
+          "unitId": "u5",
+          "title": "Mean Value Theorem, extrema, and monotonicity",
+          "standards": [
+            "BC.5.MEAN_VALUE_THEOREM",
+            "BC.5.EXTREME_VALUE_THEOREM",
+            "BC.5.CRITICAL_POINTS",
+            "BC.5.FIRST_DERIVATIVE_TEST"
+          ]
+        },
+        {
+          "week": 11,
+          "unitId": "u5",
+          "title": "Concavity and connections among derivative graphs",
+          "standards": [
+            "BC.5.CONCAVITY",
+            "BC.5.SECOND_DERIVATIVE_TEST",
+            "BC.5.DERIVATIVE_GRAPH_CONNECTIONS"
+          ]
+        },
+        {
+          "week": 12,
+          "unitId": "u5",
+          "title": "Optimization and implicit-curve analysis",
+          "standards": [
+            "BC.5.OPTIMIZATION",
+            "BC.5.IMPLICIT_CURVE_ANALYSIS"
+          ],
+          "assessment": "unit-5"
+        },
+        {
+          "week": 13,
+          "unitId": "u6",
+          "title": "Accumulation, numerical sums, and definite integrals",
+          "standards": [
+            "BC.6.ACCUMULATION",
+            "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS",
+            "BC.6.DEFINITE_INTEGRAL_NOTATION"
+          ]
+        },
+        {
+          "week": 14,
+          "unitId": "u6",
+          "title": "Fundamental Theorem, antiderivatives, and substitution",
+          "standards": [
+            "BC.6.FUNDAMENTAL_THEOREM",
+            "BC.6.ACCUMULATION_FUNCTIONS",
+            "BC.6.INTEGRAL_PROPERTIES",
+            "BC.6.ANTIDERIVATIVES",
+            "BC.6.SUBSTITUTION"
+          ]
+        },
+        {
+          "week": 15,
+          "unitId": "u6",
+          "title": "Algebraic preparation, parts, and partial fractions",
+          "standards": [
+            "BC.6.ALGEBRAIC_INTEGRATION",
+            "BC.6.INTEGRATION_BY_PARTS",
+            "BC.6.PARTIAL_FRACTIONS",
+            "BC.6.INTEGRATION_METHOD_SELECTION"
+          ]
+        },
+        {
+          "week": 16,
+          "unitId": "u6",
+          "title": "Improper integrals and convergence",
+          "standards": [
+            "BC.6.INFINITE_INTERVAL_INTEGRALS",
+            "BC.6.SINGULAR_INTEGRALS",
+            "BC.6.IMPROPER_CONVERGENCE"
+          ],
+          "assessment": "unit-6"
+        },
+        {
+          "week": 17,
+          "unitId": "u7",
+          "title": "Differential equations, slope fields, and Euler approximation",
+          "standards": [
+            "BC.7.DIFFERENTIAL_EQUATION_MODELS",
+            "BC.7.VERIFY_SOLUTIONS",
+            "BC.7.SLOPE_FIELDS",
+            "BC.7.EULER_METHOD"
+          ]
+        },
+        {
+          "week": 18,
+          "unitId": "u7",
+          "title": "Separation, initial values, exponential and logistic models",
+          "standards": [
+            "BC.7.SEPARATION_OF_VARIABLES",
+            "BC.7.INITIAL_VALUE_PROBLEMS",
+            "BC.7.EXPONENTIAL_MODELS",
+            "BC.7.LOGISTIC_MODELS",
+            "BC.7.EQUILIBRIUM_SOLUTIONS"
+          ],
+          "assessment": "unit-7"
+        },
+        {
+          "week": 19,
+          "unitId": "u8",
+          "title": "Average value, motion, accumulation, and area",
+          "standards": [
+            "BC.8.AVERAGE_VALUE",
+            "BC.8.MOTION_INTEGRALS",
+            "BC.8.NET_AND_TOTAL_CHANGE",
+            "BC.8.AREA_DX",
+            "BC.8.AREA_DY",
+            "BC.8.MULTIPLE_INTERSECTION_AREAS"
+          ]
+        },
+        {
+          "week": 20,
+          "unitId": "u8",
+          "title": "Volumes by cross sections, discs, and washers",
+          "standards": [
+            "BC.8.CROSS_SECTION_VOLUMES",
+            "BC.8.DISC_VOLUMES",
+            "BC.8.WASHER_VOLUMES",
+            "BC.8.SHIFTED_AXES"
+          ]
+        },
+        {
+          "week": 21,
+          "unitId": "u8",
+          "title": "Arc length and geometric modeling",
+          "standards": [
+            "BC.8.CARTESIAN_ARC_LENGTH",
+            "BC.8.GEOMETRIC_MODELS"
+          ],
+          "assessment": "unit-8"
+        },
+        {
+          "week": 22,
+          "unitId": "u9",
+          "title": "Parametric curves, derivatives, and tangents",
+          "standards": [
+            "BC.9.PARAMETRIC_ORIENTATION",
+            "BC.9.PARAMETRIC_DERIVATIVES",
+            "BC.9.PARAMETRIC_TANGENTS"
+          ]
+        },
+        {
+          "week": 23,
+          "unitId": "u9",
+          "title": "Parametric arc length and planar vector motion",
+          "standards": [
+            "BC.9.PARAMETRIC_ARC_LENGTH",
+            "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS",
+            "BC.9.PLANAR_MOTION",
+            "BC.9.SPEED_AND_DISTANCE"
+          ]
+        },
+        {
+          "week": 24,
+          "unitId": "u9",
+          "title": "Polar coordinates, tracing, and tangents",
+          "standards": [
+            "BC.9.POLAR_COORDINATES",
+            "BC.9.POLAR_TRACING",
+            "BC.9.POLAR_DERIVATIVES",
+            "BC.9.POLAR_TANGENTS"
+          ]
+        },
+        {
+          "week": 25,
+          "unitId": "u9",
+          "title": "Polar areas and interval justification",
+          "standards": [
+            "BC.9.POLAR_AREA_ONE_CURVE",
+            "BC.9.POLAR_AREA_TWO_CURVES",
+            "BC.9.POLAR_INTERVAL_JUSTIFICATION"
+          ],
+          "assessment": "unit-9"
+        },
+        {
+          "week": 26,
+          "unitId": "u10",
+          "title": "Sequences, geometric and harmonic series",
+          "standards": [
+            "BC.10.SEQUENCES",
+            "BC.10.SERIES_AND_PARTIAL_SUMS",
+            "BC.10.GEOMETRIC_SERIES",
+            "BC.10.HARMONIC_SERIES",
+            "BC.10.NTH_TERM_TEST"
+          ]
+        },
+        {
+          "week": 27,
+          "unitId": "u10",
+          "title": "Integral, p-series, and comparison tests",
+          "standards": [
+            "BC.10.INTEGRAL_TEST",
+            "BC.10.P_SERIES",
+            "BC.10.DIRECT_COMPARISON",
+            "BC.10.LIMIT_COMPARISON"
+          ]
+        },
+        {
+          "week": 28,
+          "unitId": "u10",
+          "title": "Alternation, absolute convergence, ratio, and remainders",
+          "standards": [
+            "BC.10.ALTERNATING_SERIES",
+            "BC.10.ABSOLUTE_AND_CONDITIONAL_CONVERGENCE",
+            "BC.10.RATIO_TEST",
+            "BC.10.ALTERNATING_REMAINDER"
+          ]
+        },
+        {
+          "week": 29,
+          "unitId": "u10",
+          "title": "Taylor and Maclaurin approximations with error bounds",
+          "standards": [
+            "BC.10.TAYLOR_COEFFICIENTS",
+            "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS",
+            "BC.10.TAYLOR_SERIES",
+            "BC.10.LAGRANGE_REMAINDER"
+          ]
+        },
+        {
+          "week": 30,
+          "unitId": "u10",
+          "title": "Power series, endpoints, and series operations",
+          "standards": [
+            "BC.10.RADIUS_AND_INTERVAL",
+            "BC.10.ENDPOINT_TESTS",
+            "BC.10.KNOWN_SERIES_SUBSTITUTION",
+            "BC.10.SERIES_DIFFERENTIATION",
+            "BC.10.SERIES_INTEGRATION"
+          ],
+          "assessment": "unit-10"
+        },
+        {
+          "week": 31,
+          "unitId": "u11",
+          "title": "Synthesis of limits, derivatives, and integral calculus",
+          "standards": [
+            "BC.REVIEW"
+          ]
+        },
+        {
+          "week": 32,
+          "unitId": "u11",
+          "title": "Synthesis of BC extensions and timed written reasoning",
+          "standards": [
+            "BC.REVIEW"
+          ]
+        },
+        {
+          "week": 33,
+          "unitId": "u11",
+          "title": "Practice examination preparation and error analysis",
+          "standards": [
+            "BC.REVIEW"
+          ],
+          "assessment": "practice-exam"
+        },
+        {
+          "week": 34,
+          "unitId": "u11",
+          "title": "Targeted repair and fresh reassessment",
+          "standards": [
+            "BC.REVIEW"
+          ]
+        },
+        {
+          "week": 35,
+          "unitId": "u11",
+          "title": "Investigation: motion, accumulation, and approximation",
+          "standards": [
+            "BC.BEYOND"
+          ]
+        },
+        {
+          "week": 36,
+          "unitId": "u11",
+          "title": "Capstone, mathematical critique, and further study",
+          "standards": [
+            "BC.BEYOND"
+          ]
+        }
+      ],
+      "exam": {
+        "name": "AP® Calculus BC Exam",
+        "effective": "May 2027",
+        "sourceId": "exam-calculus-bc",
+        "checked": "2026-10-08",
+        "delivery": "Hybrid digital: multiple-choice responses and free-response prompts in Bluebook, with handwritten free-response answers in a paper booklet. Liminal practice examinations are printed.",
+        "calculator": "Only where a part says so: Section I Part B and Section II Part A require a graphing calculator.",
+        "reference": "No formula sheet is supplied.",
+        "sections": [
+          {
+            "id": "I",
+            "title": "Multiple choice",
+            "weight": "50%",
+            "parts": [
+              {
+                "id": "A",
+                "questions": 29,
+                "minutes": 62,
+                "calculator": "none"
+              },
+              {
+                "id": "B",
+                "questions": 13,
+                "minutes": 38,
+                "calculator": "graphing"
+              }
+            ]
+          },
+          {
+            "id": "II",
+            "title": "Free response",
+            "weight": "50%",
+            "parts": [
+              {
+                "id": "A",
+                "questions": 2,
+                "minutes": 30,
+                "calculator": "graphing"
+              },
+              {
+                "id": "B",
+                "questions": 4,
+                "minutes": 60,
+                "calculator": "none"
+              }
+            ]
+          }
+        ],
+        "notes": [
+          "Each free-response question is worth 9 points.",
+          "At least two free-response questions use real-world contexts.",
+          "The actual examination reports an AB subscore. Liminal reports practice raw points only and does not estimate that subscore."
+        ]
+      },
+      "blueprints": {
+        "unitTest": {
+          "minutes": [
+            50,
+            70
+          ],
+          "sections": [
+            {
+              "id": "I",
+              "kind": "mc",
+              "parts": [
+                {
+                  "id": "A",
+                  "questions": 8,
+                  "calculator": "none"
+                },
+                {
+                  "id": "B",
+                  "questions": 4,
+                  "calculator": "graphing"
+                }
+              ]
+            },
+            {
+              "id": "II",
+              "kind": "fr",
+              "parts": [
+                {
+                  "id": "A",
+                  "questions": 1,
+                  "calculator": "graphing"
+                },
+                {
+                  "id": "B",
+                  "questions": 1,
+                  "calculator": "none"
+                }
+              ]
+            }
+          ],
+          "frPoints": 9
+        },
+        "practiceExam": {
+          "mcByUnit": {
+            "1": 3,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 5,
+            "6": 7,
+            "7": 3,
+            "8": 3,
+            "9": 5,
+            "10": 7
           },
           "frPoints": 9,
           "minContextFr": 2

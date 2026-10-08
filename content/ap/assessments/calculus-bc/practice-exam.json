@@ -1,0 +1,1488 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "practice-exam",
+  "kind": "practice-exam",
+  "title": "Liminal practice exam for AP® Calculus BC (May 2027 format)",
+  "author": "bc-practice-exam-author",
+  "directions": "This original Liminal practice exam uses the May 2027 format: Section I Part A has 29 multiple-choice questions in 62 minutes without a calculator; Part B has 13 questions in 38 minutes with a graphing calculator. Section II Part A has two free-response questions in 30 minutes with a graphing calculator; Part B has four questions in 60 minutes without a calculator. Each free-response question is worth 9 points. Work without notes or a formula sheet. Unless stated otherwise, angles are in radians, exact answers are expected in no-calculator work, and numerical answers in calculator work are rounded to three decimal places. Show supporting work for free response, including mathematical setups for calculator computations, and retain unrounded intermediate values. Report raw practice points by section only; these materials do not estimate an AP® score or an AB subscore.",
+  "figures": [
+    {
+      "id": "bc-pe-f1",
+      "alt": "Slope field on −2 ≤ x ≤ 2 and −1 ≤ y ≤ 3. Segments are horizontal on y = 1, have positive slopes below y = 1, and have negative slopes above y = 1. Each horizontal row has the same slope at every x."
+    },
+    {
+      "id": "bc-pe-f2",
+      "alt": "Graph of f′ made of line segments joining (0, 2), (1, 0), (3, −2), and (5, 2), on axes labeled x and f′(x)."
+    },
+    {
+      "id": "bc-pe-f3",
+      "alt": "Graph of f′ made of line segments joining (−3, 0), (−1, 2), (1, −2), (3, 0), and (5, 2), on axes labeled x and f′(x)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 62,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-pe-mc01",
+              "prompt": "What is lim as h→0 of (√(9 + 2h) − 3)/h?",
+              "choices": [
+                "2/3",
+                "0",
+                "3",
+                "1/3"
+              ],
+              "key": "D",
+              "rationale": "Multiply numerator and denominator by √(9 + 2h) + 3. The quotient equals 2/(√(9 + 2h) + 3), which tends to 1/3.",
+              "distractorNotes": {
+                "A": "Rationalization gives 2/(√(9 + 2h) + 3), whose denominator tends to 6, not 3.",
+                "B": "Both numerator and denominator tend to zero; substituting only in the numerator is invalid.",
+                "C": "This inverts the limiting ratio."
+              },
+              "topics": [
+                "BC.1.ALGEBRAIC_LIMITS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc02",
+              "prompt": "What is ∫ from 0 to 1 of x e^(2x) dx?",
+              "choices": [
+                "(e^2 + 1)/4",
+                "(e^2 − 1)/4",
+                "e^2/2",
+                "(e^2 + 1)/2"
+              ],
+              "key": "A",
+              "rationale": "Integration by parts gives [(x/2 − 1/4)e^(2x)] from 0 to 1 = (e^2 + 1)/4.",
+              "distractorNotes": {
+                "B": "The lower endpoint contributes −1/4 before subtraction, so its final contribution is positive.",
+                "C": "This retains the boundary product but drops the remaining integral.",
+                "D": "This misses a factor 1/2 when integrating the exponential."
+              },
+              "topics": [
+                "BC.6.INTEGRATION_BY_PARTS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc03",
+              "prompt": "A curve is given by x = t^2 + 1 and y = t^3 − 3t. What is d^2y/dx^2 at t = 1?",
+              "choices": [
+                "0",
+                "3/2",
+                "3",
+                "6"
+              ],
+              "key": "B",
+              "rationale": "dy/dx = (3/2)(t − 1/t); differentiating with respect to t gives (3/2)(1 + 1/t^2). Divide by 2t and evaluate at 1 to obtain 3/2.",
+              "distractorNotes": {
+                "A": "The first derivative is zero at t = 1, but that does not make the second derivative zero.",
+                "C": "This is d/dt(dy/dx), before dividing by dx/dt.",
+                "D": "This is d^2y/dt^2, not d^2y/dx^2."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-pe-mc04",
+              "prompt": "A function f is differentiable at 4, with f(4) = 7 and f′(4) = −3. What is lim as h→0 of [f(4 − 2h) − 7]/h?",
+              "choices": [
+                "−3",
+                "−6",
+                "6",
+                "3/2"
+              ],
+              "key": "C",
+              "rationale": "Set k = −2h. The expression is −2[f(4 + k) − f(4)]/k, so the limit is −2f′(4) = 6.",
+              "distractorNotes": {
+                "A": "This ignores that the change in the input is −2h.",
+                "B": "The inner change contributes a negative factor, reversing the sign of f′(4).",
+                "D": "The factor −2 multiplies the derivative; it is not a divisor."
+              },
+              "topics": [
+                "BC.2.DERIVATIVE_DEFINITION"
+              ]
+            },
+            {
+              "id": "bc-pe-mc05",
+              "prompt": "Which series converges conditionally?",
+              "choices": [
+                "∑ from n = 1 to ∞ of 1/√n",
+                "∑ from n = 1 to ∞ of (−1)^(n+1)/n^2",
+                "∑ from n = 1 to ∞ of (−1)^n n/(n + 1)",
+                "∑ from n = 1 to ∞ of (−1)^(n+1)/√n"
+              ],
+              "key": "D",
+              "rationale": "The alternating terms 1/√n decrease to zero, so the series converges. The series of absolute values is a divergent p-series with p = 1/2.",
+              "distractorNotes": {
+                "A": "This positive p-series diverges because p = 1/2.",
+                "B": "This series converges absolutely because ∑1/n^2 converges.",
+                "C": "Its terms fail to approach zero."
+              },
+              "topics": [
+                "BC.10.ABSOLUTE_AND_CONDITIONAL_CONVERGENCE"
+              ]
+            },
+            {
+              "id": "bc-pe-mc06",
+              "prompt": "A function f is continuous on [−2, 4] and differentiable on (−2, 4). If f(−2) = 5 and f(4) = −7, which statement must be true?",
+              "choices": [
+                "There is c in (−2, 4) with f′(c) = 0.",
+                "There is c in (−2, 4) with f(c) = −2c.",
+                "There is c in (−2, 4) with f′(c) = −2.",
+                "For every c in (−2, 4), f′(c) = −2."
+              ],
+              "key": "C",
+              "rationale": "The hypotheses of the Mean Value Theorem hold, and the secant slope is (−7 − 5)/(4 − (−2)) = −2.",
+              "distractorNotes": {
+                "A": "The endpoint values are unequal, so Rolle’s theorem does not apply.",
+                "B": "The Mean Value Theorem concerns a derivative value, not this function equation.",
+                "D": "Only existence of at least one such point follows; f need not be linear."
+              },
+              "topics": [
+                "BC.5.MEAN_VALUE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-pe-mc07",
+              "prompt": "The differentiable function f is one-to-one, and f′ is nonzero near x = 2. The table gives selected values. If g is the inverse of f, what is g′(5)?\n\n| x | 2 | 5 |\n| --- | --- | --- |\n| f(x) | 5 | 11 |\n| f′(x) | 4 | 7 |",
+              "choices": [
+                "1/4",
+                "1/7",
+                "4",
+                "7"
+              ],
+              "key": "A",
+              "rationale": "Since f(2) = 5, g(5) = 2 and g′(5) = 1/f′(2) = 1/4.",
+              "distractorNotes": {
+                "B": "Use f′ at g(5) = 2, not at the input 5 of the inverse.",
+                "C": "The inverse derivative is the reciprocal of f′(2).",
+                "D": "This uses the derivative of f at the wrong point and does not take the reciprocal."
+              },
+              "topics": [
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-pe-mc08",
+              "prompt": "The displayed slope field has slope zero on y = 1, positive slopes below y = 1, and negative slopes above y = 1. Along every horizontal line the slopes are constant. Which differential equation produces this field?",
+              "choices": [
+                "dy/dx = y − 1",
+                "dy/dx = 1 − x",
+                "dy/dx = (1 − y)^2",
+                "dy/dx = 1 − y"
+              ],
+              "key": "D",
+              "rationale": "The field depends only on y, is zero at y = 1, and decreases through zero as y increases. These features agree with 1 − y.",
+              "distractorNotes": {
+                "A": "The signs above and below y = 1 are reversed.",
+                "B": "The slopes would be constant on vertical lines and zero on x = 1.",
+                "C": "This would have nonnegative slopes above as well as below y = 1."
+              },
+              "topics": [
+                "BC.7.SLOPE_FIELDS"
+              ],
+              "figureIds": [
+                "bc-pe-f1"
+              ]
+            },
+            {
+              "id": "bc-pe-mc09",
+              "prompt": "For x ≠ 2, let f(x) = (x^2 + ax − 10)/(x − 2), and define f(2) = b. Which values of a and b make f continuous at x = 2?",
+              "choices": [
+                "a = 3 and b = 0",
+                "a = 3 and b = 7",
+                "a = −3 and b = 1",
+                "a = 5 and b = 9"
+              ],
+              "key": "B",
+              "rationale": "A finite limit requires 4 + 2a − 10 = 0, giving a = 3. Then the numerator is (x − 2)(x + 5), so b must equal 7.",
+              "distractorNotes": {
+                "A": "The numerator must vanish, but the limiting quotient is 7, not 0.",
+                "C": "The numerator does not vanish at x = 2 when a = −3.",
+                "D": "These values do not remove the pole at x = 2."
+              },
+              "topics": [
+                "BC.1.CONTINUITY_AT_A_POINT"
+              ]
+            },
+            {
+              "id": "bc-pe-mc10",
+              "prompt": "For which real values of p does ∫ from 0 to 1 of x^(−p) dx converge?",
+              "choices": [
+                "p > 1",
+                "p < 1",
+                "p ≥ 1",
+                "All real p except 1"
+              ],
+              "key": "B",
+              "rationale": "For p ≠ 1 the truncated integral is (1 − ε^(1−p))/(1 − p). Its limit as ε→0+ is finite precisely when p < 1; p = 1 gives −ln ε.",
+              "distractorNotes": {
+                "A": "The convergence inequality at a finite singular endpoint is opposite the familiar inequality for ∫ from 1 to ∞.",
+                "C": "The case p = 1 also diverges logarithmically.",
+                "D": "The power antiderivative still has a divergent lower-endpoint limit when p > 1."
+              },
+              "topics": [
+                "BC.6.SINGULAR_INTEGRALS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc11",
+              "prompt": "A spotlight at ground level is 12 m from a vertical wall. Its beam makes an angle θ with the horizontal, and the illuminated point is h meters above the ground, so h = 12 tan θ. At an instant when h = 9 m, θ is increasing at 1/10 rad/s. How fast is the illuminated point rising?",
+              "choices": [
+                "15/8 m/s",
+                "6/5 m/s",
+                "27/40 m/s",
+                "8/15 m/s"
+              ],
+              "key": "A",
+              "rationale": "dh/dt = 12 sec^2 θ · dθ/dt. Since tan θ = 3/4, sec^2 θ = 25/16, giving dh/dt = 15/8 m/s.",
+              "distractorNotes": {
+                "B": "This omits the factor sec^2 θ.",
+                "C": "This substitutes tan^2 θ for sec^2 θ.",
+                "D": "This inverts the resulting related rate."
+              },
+              "topics": [
+                "BC.4.RELATED_RATE_SOLUTIONS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc12",
+              "prompt": "What is the interval of convergence of ∑ from n = 1 to ∞ of (x − 2)^n/(n 3^n)?",
+              "choices": [
+                "(−1, 5)",
+                "[−1, 5)",
+                "(−1, 5]",
+                "[−1, 5]"
+              ],
+              "key": "B",
+              "rationale": "The ratio test gives |x − 2| < 3. At x = −1 the series is ∑(−1)^n/n and converges; at x = 5 it is ∑1/n and diverges.",
+              "distractorNotes": {
+                "A": "At x = −1 the alternating harmonic series converges, so that endpoint is included.",
+                "C": "The left endpoint converges and the right endpoint diverges, not the reverse.",
+                "D": "At x = 5 the harmonic series diverges."
+              },
+              "topics": [
+                "BC.10.ENDPOINT_TESTS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc13",
+              "prompt": "The graph of f′ consists of line segments joining (0, 2), (1, 0), (3, −2), and (5, 2). The function f is differentiable on [0, 5]. At which x-value does f have a local minimum in (0, 5)?",
+              "choices": [
+                "1",
+                "3",
+                "4",
+                "5"
+              ],
+              "key": "C",
+              "rationale": "On the last segment f′ crosses zero at x = 4 and changes from negative to positive. Thus f has a local minimum there.",
+              "distractorNotes": {
+                "A": "At x = 1, f′ changes from positive to negative, producing a local maximum.",
+                "B": "The minimum of f′ does not give a local minimum of f.",
+                "D": "This is an endpoint and is outside the requested open interval."
+              },
+              "topics": [
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS"
+              ],
+              "figureIds": [
+                "bc-pe-f2"
+              ]
+            },
+            {
+              "id": "bc-pe-mc14",
+              "prompt": "The graph of f′ consists of line segments joining (0, 2), (1, 0), (3, −2), and (5, 2). The function f is differentiable on [0, 5]. If f(0) = 6, what is f(5)?",
+              "choices": [
+                "5",
+                "−1",
+                "7",
+                "11"
+              ],
+              "key": "A",
+              "rationale": "The signed areas under f′ are 1 on [0, 1], −2 on [1, 3], and 0 on [3, 5]. Hence f(5) = 6 + 1 − 2 + 0 = 5.",
+              "distractorNotes": {
+                "B": "This is the signed integral of f′, before adding f(0).",
+                "C": "This reverses the sign of the net change.",
+                "D": "This adds unsigned area rather than signed area."
+              },
+              "topics": [
+                "BC.6.INTEGRAL_PROPERTIES"
+              ],
+              "figureIds": [
+                "bc-pe-f2"
+              ]
+            },
+            {
+              "id": "bc-pe-mc15",
+              "prompt": "For the polar curve r = 2 + sin θ, what is the slope of the tangent line at θ = 0?",
+              "choices": [
+                "1/2",
+                "0",
+                "1",
+                "2"
+              ],
+              "key": "D",
+              "rationale": "With x = r cos θ and y = r sin θ, dy/dx = (r′ sin θ + r cos θ)/(r′ cos θ − r sin θ). At θ = 0, r = 2 and r′ = 1, giving 2.",
+              "distractorNotes": {
+                "A": "This is dx/dy at the point rather than dy/dx.",
+                "B": "A point on the polar axis need not have a horizontal tangent.",
+                "C": "This is dr/dθ at θ = 0, not the Cartesian tangent slope."
+              },
+              "topics": [
+                "BC.9.POLAR_TANGENTS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc16",
+              "prompt": "Differentiable functions f and g satisfy f(−1) = 3, f′(−1) = −2, g(−1) = 4, and g′(−1) = 5. If h(x) = x f(x)g(x), what is h′(−1)?",
+              "choices": [
+                "−7",
+                "19",
+                "5",
+                "−10"
+              ],
+              "key": "C",
+              "rationale": "h′ = fg + x(f′g + fg′). At −1 this gives 12 − ((−2)4 + 3·5) = 5.",
+              "distractorNotes": {
+                "A": "This differentiates only f(x)g(x) and retains the factor x, omitting f(x)g(x).",
+                "B": "This loses the negative sign of x = −1 in the second product-rule term.",
+                "D": "Multiplying derivatives is not the product rule."
+              },
+              "topics": [
+                "BC.2.PRODUCT_RULE"
+              ]
+            },
+            {
+              "id": "bc-pe-mc17",
+              "prompt": "What is the coefficient of x^6 in the Maclaurin series for cos(x^2) + x^2 e^x?",
+              "choices": [
+                "1/24",
+                "−1/720",
+                "1/720",
+                "−1/2"
+              ],
+              "key": "A",
+              "rationale": "The powers in cos(x^2) are 0, 4, 8, …, so it contributes no x^6 term. The needed contribution in x^2 e^x is x^2·x^4/4!, with coefficient 1/24.",
+              "distractorNotes": {
+                "B": "This takes the x^6 coefficient of cos x rather than cos(x^2).",
+                "C": "This takes the x^6 coefficient of e^x before accounting for the factor x^2.",
+                "D": "This is the x^4 coefficient of cos(x^2)."
+              },
+              "topics": [
+                "BC.10.KNOWN_SERIES_SUBSTITUTION"
+              ]
+            },
+            {
+              "id": "bc-pe-mc18",
+              "prompt": "On the curve x^2 + xy + y^2 = 7, what is the slope of the tangent line at (1, 2)?",
+              "choices": [
+                "−4/5",
+                "−5/4",
+                "−2/5",
+                "4/5"
+              ],
+              "key": "A",
+              "rationale": "Differentiation gives 2x + y + xy′ + 2yy′ = 0, so y′ = −(2x + y)/(x + 2y) = −4/5.",
+              "distractorNotes": {
+                "B": "This interchanges the roles of dx and dy.",
+                "C": "This drops the y term from differentiating xy.",
+                "D": "This loses the negative sign when isolating y′."
+              },
+              "topics": [
+                "BC.3.IMPLICIT_DIFFERENTIATION"
+              ]
+            },
+            {
+              "id": "bc-pe-mc19",
+              "prompt": "Which expression is an antiderivative of 1/((x + 1)(x + 3)) on x > −1?",
+              "choices": [
+                "ln((x + 1)/(x + 3)) + C",
+                "(1/2)ln((x + 1)/(x + 3)) + C",
+                "(1/2)ln((x + 3)/(x + 1)) + C",
+                "(1/2)ln((x + 1)(x + 3)) + C"
+              ],
+              "key": "B",
+              "rationale": "The integrand is (1/2)/(x + 1) − (1/2)/(x + 3); integrate and combine the logarithms. The stated domain makes both factors positive.",
+              "distractorNotes": {
+                "A": "The partial-fraction coefficients are 1/2 and −1/2, not 1 and −1.",
+                "C": "This reverses the signs of the partial-fraction terms.",
+                "D": "A sum of logarithms gives the wrong numerator after differentiation."
+              },
+              "topics": [
+                "BC.6.PARTIAL_FRACTIONS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc20",
+              "prompt": "For every nonzero x with |x| < 1, a function q satisfies 2 − x^2 ≤ q(x) ≤ 2 + 3x^2. Nothing is specified about q(0). Which statement follows?",
+              "choices": [
+                "q(0) = 2",
+                "q is continuous at x = 0.",
+                "lim as x→0 of (q(x) − 2)/x^2 = 0",
+                "lim as x→0 of q(x) = 2"
+              ],
+              "key": "D",
+              "rationale": "Both bounding functions tend to 2, so the squeeze theorem determines the limit, regardless of the unspecified value at zero.",
+              "distractorNotes": {
+                "A": "Bounds on a punctured neighborhood do not specify the function value at zero.",
+                "B": "Continuity also needs q(0) to be defined and equal to the limit.",
+                "C": "The quotient is bounded between −1 and 3 but need not approach zero."
+              },
+              "topics": [
+                "BC.1.SQUEEZE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-pe-mc21",
+              "prompt": "A rectangle has its lower side on the x-axis and its upper vertices on y = 12 − x^2, symmetrically about the y-axis. What is its maximum possible area?",
+              "choices": [
+                "32",
+                "16",
+                "24",
+                "48"
+              ],
+              "key": "A",
+              "rationale": "If the positive upper vertex has x-coordinate x, the area is A = 2x(12 − x^2), 0 ≤ x ≤ √12. A′ = 24 − 6x^2 vanishes at x = 2, giving area 32; both endpoints give zero.",
+              "distractorNotes": {
+                "B": "This uses the half-width as the full width.",
+                "C": "This is not the area at the critical half-width.",
+                "D": "This combines width 4 at the optimizer with the parabola’s maximum height 12 instead of the rectangle’s actual height 8."
+              },
+              "topics": [
+                "BC.5.OPTIMIZATION"
+              ]
+            },
+            {
+              "id": "bc-pe-mc22",
+              "prompt": "What does the ratio test establish for ∑ from n = 1 to ∞ of n!/(4^n n^n)?",
+              "choices": [
+                "Divergence, because the ratio limit is e/4.",
+                "Convergence, because the ratio limit is 0.",
+                "No conclusion, because the ratio limit is 1.",
+                "Convergence, because the ratio limit is 1/(4e)."
+              ],
+              "key": "D",
+              "rationale": "a_(n+1)/a_n = (1/4)(n/(n + 1))^n → 1/(4e), which is less than 1.",
+              "distractorNotes": {
+                "A": "The factor (n/(n + 1))^n tends to e^(−1), not e; also e/4 is below 1.",
+                "B": "The factorial does not disappear relative to n^n in the consecutive-term ratio.",
+                "C": "The full ratio includes both a factor 1/4 and a factor tending to e^(−1)."
+              },
+              "topics": [
+                "BC.10.RATIO_TEST"
+              ]
+            },
+            {
+              "id": "bc-pe-mc23",
+              "prompt": "A population P satisfies dP/dt = 0.02P(80 − P), with P(0) = 20. While P is increasing toward its positive equilibrium, at what population is its growth rate greatest?",
+              "choices": [
+                "20",
+                "80",
+                "160",
+                "40"
+              ],
+              "key": "D",
+              "rationale": "The growth rate is a downward-opening quadratic in P with zeros 0 and 80. It is maximal halfway between them, at P = 40.",
+              "distractorNotes": {
+                "A": "This is the initial population, not the vertex of the growth-rate quadratic.",
+                "B": "The growth rate is zero at the positive equilibrium.",
+                "C": "Above 80 the stated model gives a negative growth rate."
+              },
+              "topics": [
+                "BC.7.LOGISTIC_MODELS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc24",
+              "prompt": "What is lim as x→0 of (e^(3x) − 1 − 3x)/x^2?",
+              "choices": [
+                "9/2",
+                "3/2",
+                "9",
+                "0"
+              ],
+              "key": "A",
+              "rationale": "Both numerator and denominator tend to zero. L’Hôpital’s rule gives (3e^(3x) − 3)/(2x), still 0/0; applying it again gives 9e^(3x)/2 → 9/2.",
+              "distractorNotes": {
+                "B": "The second derivative of e^(3x) includes the factor 3 twice.",
+                "C": "After two applications of L’Hôpital’s rule the denominator is 2.",
+                "D": "The numerator’s first-order cancellation does not eliminate its quadratic term."
+              },
+              "topics": [
+                "BC.4.LHOSPITAL_RULE"
+              ]
+            },
+            {
+              "id": "bc-pe-mc25",
+              "prompt": "Which definite integral equals lim as n→∞ of ∑ from k = 1 to n of (3/n)√(2 + 3k/n)?",
+              "choices": [
+                "∫ from 0 to 3 of √x dx",
+                "∫ from 2 to 3 of √x dx",
+                "∫ from 2 to 5 of √x dx",
+                "3∫ from 2 to 5 of √x dx"
+              ],
+              "key": "C",
+              "rationale": "The widths are Δx = 3/n and right endpoints are x_k = 2 + kΔx, describing √x on [2, 5].",
+              "distractorNotes": {
+                "A": "This omits the starting input 2 in the sample points.",
+                "B": "The interval has width 3, not upper endpoint 3.",
+                "D": "The factor 3/n already supplies the subinterval width."
+              },
+              "topics": [
+                "BC.6.DEFINITE_INTEGRAL_NOTATION"
+              ]
+            },
+            {
+              "id": "bc-pe-mc26",
+              "prompt": "The region between y = x and y = x^2 for 0 ≤ x ≤ 1 is revolved about y = 2. Which integral gives its volume?",
+              "choices": [
+                "π∫ from 0 to 1 of [x^2 − x^4] dx",
+                "π∫ from 0 to 1 of [(2 − x^2)^2 − (2 − x)^2] dx",
+                "π∫ from 0 to 1 of [(2 − x)^2 − (2 − x^2)^2] dx",
+                "π∫ from 0 to 1 of (x − x^2)^2 dx"
+              ],
+              "key": "B",
+              "rationale": "The axis lies above the region. The lower curve x^2 is farther from y = 2, so the outer radius is 2 − x^2 and the inner radius is 2 − x.",
+              "distractorNotes": {
+                "A": "This rotates the region about y = 0 rather than y = 2.",
+                "C": "This subtracts the outer-radius square from the inner-radius square.",
+                "D": "The gap between curves is not a washer radius."
+              },
+              "topics": [
+                "BC.8.SHIFTED_AXES"
+              ]
+            },
+            {
+              "id": "bc-pe-mc27",
+              "prompt": "The polar curve r = 2 cos(3θ) has a petal centered on the positive x-axis. Which integral gives the area of exactly that petal?",
+              "choices": [
+                "(1/2)∫ from 0 to π/6 of 4cos^2(3θ) dθ",
+                "(1/2)∫ from −π/3 to π/3 of 4cos^2(3θ) dθ",
+                "(1/2)∫ from −π/6 to π/6 of 4cos^2(3θ) dθ",
+                "∫ from −π/6 to π/6 of 4cos^2(3θ) dθ"
+              ],
+              "key": "C",
+              "rationale": "The consecutive zeros around θ = 0 are −π/6 and π/6. The radius is positive between them, so this interval traces the right-facing petal once, and polar area is (1/2)∫r^2 dθ.",
+              "distractorNotes": {
+                "A": "This covers only the upper half of the selected petal.",
+                "B": "This adds portions of other petals where r is negative.",
+                "D": "This omits the factor 1/2 in the polar area formula."
+              },
+              "topics": [
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION"
+              ]
+            },
+            {
+              "id": "bc-pe-mc28",
+              "prompt": "For |x| < 1, ∑ from n = 0 to ∞ of x^n = 1/(1 − x). What is ∑ from n = 1 to ∞ of n/(3^n)?",
+              "choices": [
+                "3/4",
+                "1/2",
+                "9/4",
+                "3/2"
+              ],
+              "key": "A",
+              "rationale": "Differentiate within the convergence interval and multiply by x: ∑n x^n = x/(1 − x)^2. At x = 1/3 the sum is 3/4.",
+              "distractorNotes": {
+                "B": "This is ∑(1/3)^n without the factor n.",
+                "C": "This evaluates the differentiated series before multiplying by x.",
+                "D": "This evaluates the original geometric series from n = 0 without differentiating: 1/(1 − 1/3) = 3/2."
+              },
+              "topics": [
+                "BC.10.SERIES_DIFFERENTIATION"
+              ]
+            },
+            {
+              "id": "bc-pe-mc29",
+              "prompt": "Let S = ∑ from n = 1 to ∞ of (−1)^(n+1)/n^3 and S_N be its first N terms. What is the smallest positive integer N for which the standard alternating-series bound 1/(N + 1)^3 is at most 1/1000?",
+              "choices": [
+                "8",
+                "11",
+                "9",
+                "1000"
+              ],
+              "key": "C",
+              "rationale": "The error bound is 1/(N + 1)^3. Requiring this to be at most 1/1000 gives N + 1 ≥ 10, so the least integer N is 9.",
+              "distractorNotes": {
+                "A": "The first omitted term is then 1/729, which exceeds 1/1000.",
+                "B": "This works but is not the smallest N meeting the bound.",
+                "D": "The cubic denominator makes far fewer terms sufficient."
+              },
+              "topics": [
+                "BC.10.ALTERNATING_REMAINDER"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator required",
+          "minutes": 38,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "id": "bc-pe-mc30",
+              "prompt": "What is the total area between y = sin(2x) and y = 0.2x on 0 ≤ x ≤ 4?",
+              "choices": [
+                "1.027",
+                "−1.027",
+                "1.879",
+                "2.730"
+              ],
+              "key": "D",
+              "rationale": "The intersections are x = 0, 1.426170947, and 3.534087179. Integrate |sin(2x) − 0.2x| across all three subintervals to obtain 2.729765602, or 2.730.",
+              "distractorNotes": {
+                "A": "This takes the absolute value of the net signed integral instead of adding all areas.",
+                "B": "This is the signed integral and cannot be a geometric area.",
+                "C": "This is the area of only the middle region between the two positive intersections; it omits the two other pieces."
+              },
+              "topics": [
+                "BC.8.MULTIPLE_INTERSECTION_AREAS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc31",
+              "prompt": "Let f(x) = sin x/(1 + x^2). What is the slope of its tangent line at x = 1.7?",
+              "choices": [
+                "−0.033",
+                "0.190",
+                "−0.256",
+                "0.255"
+              ],
+              "key": "C",
+              "rationale": "The quotient rule gives f′(x) = [(1 + x^2)cos x − 2x sin x]/(1 + x^2)^2. At 1.7 the slope is −0.255937077.",
+              "distractorNotes": {
+                "A": "This differentiates the numerator but treats the denominator as constant.",
+                "B": "This changes the subtraction in the quotient rule to addition.",
+                "D": "This is approximately the function value, not its derivative."
+              },
+              "topics": [
+                "BC.2.QUOTIENT_RULE"
+              ]
+            },
+            {
+              "id": "bc-pe-mc32",
+              "prompt": "The degree-n Maclaurin polynomial for e^x is used at x = 1.4. Using the derivative bound M = e^1.4 on [0, 1.4], what is the least n for which the Lagrange bound M(1.4)^(n+1)/(n + 1)! is less than 10^(−5)?",
+              "choices": [
+                "8",
+                "9",
+                "11",
+                "10"
+              ],
+              "key": "D",
+              "rationale": "The bounds at n = 9 and n = 10 are approximately 3.23243·10^(−5) and 4.11401·10^(−6). The bounds decrease from n = 0 onward here, so n = 10 is the first sufficient degree.",
+              "distractorNotes": {
+                "A": "The degree-8 bound is about 0.000230888, above the target.",
+                "B": "The degree-9 bound is about 0.000032324, above the target.",
+                "C": "Degree 11 meets the bound, but degree 10 already does."
+              },
+              "topics": [
+                "BC.10.LAGRANGE_REMAINDER"
+              ]
+            },
+            {
+              "id": "bc-pe-mc33",
+              "prompt": "At which x-value does f(x) = e^(−0.2x) sin x attain its absolute maximum on [0, 7]?",
+              "choices": [
+                "0.745",
+                "1.373",
+                "4.515",
+                "7.000"
+              ],
+              "key": "B",
+              "rationale": "Solve f′(x) = e^(−0.2x)(cos x − 0.2 sin x) = 0 to obtain x ≈ 1.373401 and 4.514993. Values at these points and the endpoints are approximately 0.745, −0.397, 0, and 0.162; the maximum occurs at x ≈ 1.373.",
+              "distractorNotes": {
+                "A": "This is the maximum function value, not its x-coordinate.",
+                "C": "This critical point is a local minimum.",
+                "D": "The right endpoint value is below the first local maximum."
+              },
+              "topics": [
+                "BC.5.CRITICAL_POINTS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc34",
+              "prompt": "Let F(x) = ∫ from 0 to x of e^(−t^2) dt for x ≥ 0. What value of x satisfies F(x) = 0.6?",
+              "choices": [
+                "0.699",
+                "0.600",
+                "0.886",
+                "1.200"
+              ],
+              "key": "A",
+              "rationale": "Solve the numerical integral equation ∫ from 0 to x of e^(−t^2) dt = 0.6. Since F′(x) is positive, the root is unique; x ≈ 0.698881648.",
+              "distractorNotes": {
+                "B": "The integrand is below 1 for t > 0, so F(0.6) is less than 0.6.",
+                "C": "This is approximately the entire improper integral from 0 to ∞, not the input x producing an accumulated value of 0.6.",
+                "D": "This accumulation is greater than the requested 0.6."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION_FUNCTIONS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc35",
+              "prompt": "A point moves in the plane with velocity vector ⟨cos(t^2), 1 + t/3⟩ meters per second for 0 ≤ t ≤ 2. How far does it travel during this interval?",
+              "choices": [
+                "2.667 m",
+                "2.706 m",
+                "4.160 m",
+                "3.119 m"
+              ],
+              "key": "D",
+              "rationale": "Distance is ∫ from 0 to 2 of √(cos^2(t^2) + (1 + t/3)^2) dt ≈ 3.119211975 m.",
+              "distractorNotes": {
+                "A": "This integrates only the positive vertical component.",
+                "B": "This approximates the magnitude of displacement rather than the distance along the path.",
+                "C": "This integrates |v_x| + |v_y| rather than the Euclidean speed √(v_x^2 + v_y^2)."
+              },
+              "topics": [
+                "BC.9.SPEED_AND_DISTANCE"
+              ]
+            },
+            {
+              "id": "bc-pe-mc36",
+              "prompt": "The function f(x) = x + ln x on x > 0 has inverse g. What is g′(2)?",
+              "choices": [
+                "0.667",
+                "0.609",
+                "1.557",
+                "1.642"
+              ],
+              "key": "B",
+              "rationale": "Solve u + ln u = 2 to get u = g(2) ≈ 1.557145599. Then g′(2) = 1/(1 + 1/u) ≈ 0.608938967.",
+              "distractorNotes": {
+                "A": "This evaluates 1/f′(2) instead of 1/f′(g(2)).",
+                "C": "This is g(2), before finding the inverse derivative.",
+                "D": "This is f′(g(2)), before taking its reciprocal."
+              },
+              "topics": [
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-pe-mc37",
+              "prompt": "What is the length of the graph y = ln(1 + x^3) from x = 0 to x = 2?",
+              "choices": [
+                "2.197",
+                "3.096",
+                "2.971",
+                "4.197"
+              ],
+              "key": "B",
+              "rationale": "The derivative is 3x^2/(1 + x^3). Integrate √(1 + [3x^2/(1 + x^3)]^2) from 0 to 2 to obtain 3.096469654.",
+              "distractorNotes": {
+                "A": "This is the vertical displacement ln 9.",
+                "C": "This is the straight-line distance between endpoints, not the curved length.",
+                "D": "This adds horizontal and vertical displacements instead of using arc length."
+              },
+              "topics": [
+                "BC.8.CARTESIAN_ARC_LENGTH"
+              ]
+            },
+            {
+              "id": "bc-pe-mc38",
+              "prompt": "The solution of dy/dx = x + y^2 satisfies y(0) = 0.6. Using Euler’s method with three steps of size 0.2, what is the approximation to y(0.6)?",
+              "choices": [
+                "0.802",
+                "0.816",
+                "1.011",
+                "1.173"
+              ],
+              "key": "C",
+              "rationale": "Euler updates give y_1 = 0.6 + 0.2(0 + 0.6^2) = 0.672, y_2 = 0.672 + 0.2(0.2 + 0.672^2) = 0.8023168, and y_3 = 1.011059250.",
+              "distractorNotes": {
+                "A": "This stops after two steps at x = 0.4.",
+                "B": "This uses the initial slope for all three steps.",
+                "D": "This evaluates slopes at shifted x-values instead of each step’s left endpoint."
+              },
+              "topics": [
+                "BC.7.EULER_METHOD"
+              ]
+            },
+            {
+              "id": "bc-pe-mc39",
+              "prompt": "A rectangular container is designed to have dimensions x, 5 − x, and 7 − x centimeters, with 0 < x < 5. What value of x maximizes its volume?",
+              "choices": [
+                "3.500 cm",
+                "4.000 cm",
+                "6.082 cm",
+                "1.918 cm"
+              ],
+              "key": "D",
+              "rationale": "V(x) = x(5 − x)(7 − x), so V′(x) = 35 − 24x + 3x^2. The roots are approximately 1.918334 and 6.081666; only the first is in (0, 5). V tends to zero at both endpoints and is positive inside, so the interior critical point gives the maximum.",
+              "distractorNotes": {
+                "A": "Half of one dimension parameter does not optimize this product of three changing dimensions.",
+                "B": "This is not a critical value of the volume function.",
+                "C": "This derivative root lies outside the physical domain."
+              },
+              "topics": [
+                "BC.5.OPTIMIZATION"
+              ]
+            },
+            {
+              "id": "bc-pe-mc40",
+              "prompt": "A scanning device records a continuous intensity I(t), in watts. Estimate the energy ∫ from 0 to 3.5 of I(t) dt using the trapezoidal rule on the four intervals in the table.\n\n| t (s) | 0 | 0.4 | 1.3 | 2.1 | 3.5 |\n| --- | --- | --- | --- | --- | --- |\n| I(t) (W) | 1.8 | 2.7 | 2.2 | 3.6 | 3.1 |",
+              "choices": [
+                "10.115 J",
+                "9.950 J",
+                "10.280 J",
+                "9.581 J"
+              ],
+              "key": "A",
+              "rationale": "The trapezoidal estimate is 0.4(1.8 + 2.7)/2 + 0.9(2.7 + 2.2)/2 + 0.8(2.2 + 3.6)/2 + 1.4(3.6 + 3.1)/2 = 10.115 J.",
+              "distractorNotes": {
+                "B": "This is the left-endpoint sum.",
+                "C": "This is the right-endpoint sum.",
+                "D": "This treats all four intervals as having width 3.5/4."
+              },
+              "topics": [
+                "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc41",
+              "prompt": "The mass of a growing crystal is modeled by m(t) = 10 + 3e^(0.4t) + t^2 milligrams, where t ≥ 0 is in hours. At the instant its mass first reaches 24 mg, how fast is its mass increasing?",
+              "choices": [
+                "2.451 mg/h",
+                "8.099 mg/h",
+                "3.198 mg/h",
+                "4.901 mg/h"
+              ],
+              "key": "B",
+              "rationale": "The mass function is strictly increasing for t ≥ 0. Solve 10 + 3e^(0.4t) + t^2 = 24 to get t ≈ 2.450510148 h. Then m′(t) = 1.2e^(0.4t) + 2t ≈ 8.099020302 mg/h.",
+              "distractorNotes": {
+                "A": "This reports the time when the mass reaches 24 mg, not its rate of increase.",
+                "C": "This differentiates only the exponential term and omits 2t.",
+                "D": "This differentiates only t^2 and omits the exponential contribution."
+              },
+              "topics": [
+                "BC.4.DERIVATIVE_UNITS"
+              ]
+            },
+            {
+              "id": "bc-pe-mc42",
+              "prompt": "For 0 ≤ θ ≤ π, consider the region consisting of all points with polar coordinates satisfying 0 ≤ r ≤ 1 + 0.4 sin θ and 0 ≤ r ≤ 1.1. What is its area?",
+              "choices": [
+                "1.901",
+                "2.496",
+                "1.874",
+                "0.596"
+              ],
+              "key": "C",
+              "rationale": "The radii agree at α = arcsin(0.25) ≈ 0.252680255 and π − α. Use r = 1 + 0.4 sin θ on [0, α] and [π − α, π], and r = 1.1 in between. The half-integral of the squared limiting radius is 1.873853536.",
+              "distractorNotes": {
+                "A": "This is the area of the entire radius-1.1 semicircle, including portions outside the other curve.",
+                "B": "This is the full area under r = 1 + 0.4 sin θ over the interval.",
+                "D": "This subtracts two full areas instead of selecting the lesser radius at each angle."
+              },
+              "topics": [
+                "BC.9.POLAR_AREA_TWO_CURVES"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator required",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "Show your work and justify requested conclusions. Write integrals, equations, or derivatives supporting numerical calculator results.",
+          "items": [
+            {
+              "id": "bc-pe-fr1",
+              "prompt": "A workshop builds up a protective coating on a metal panel for 0 ≤ t ≤ 6 minutes. Coating material is deposited at rate R(t) = 8 + 3 sin(t^2/12) grams per minute and is removed by polishing at rate S(t) = 5 + 0.25t^2 grams per minute. At t = 0, the panel holds 50 grams of coating. Let M(t) denote the mass of coating on the panel. Both processes run throughout the interval, and these are the only changes to its coating mass.",
+              "topics": [
+                "BC.6.ACCUMULATION",
+                "BC.5.CRITICAL_POINTS",
+                "BC.4.DERIVATIVE_UNITS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the total mass of coating material deposited during the six-minute interval.",
+                  "points": 2,
+                  "answer": "57.270 g",
+                  "steps": [
+                    "Deposited mass is ∫ from 0 to 6 of R(t) dt.",
+                    "Numerical integration gives 57.269571141 g, which rounds to 57.270 g."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up ∫ from 0 to 6 of R(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the deposited mass as 57.270 g, or a value within 0.001 g."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find M(6), the mass of coating on the panel after six minutes.",
+                  "points": 2,
+                  "answer": "59.270 g",
+                  "steps": [
+                    "M(6) = 50 + ∫ from 0 to 6 of [R(t) − S(t)] dt.",
+                    "The removal integral is 48 g, so M(6) = 50 + 57.269571141 − 48 = 59.269571141 g."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the initial mass plus the integral of deposition minus removal."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains M(6) = 59.270 g within 0.001 g; accepts consistent use of an earlier computed deposition integral."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "At what time on [0, 6] is the coating mass greatest? Find this greatest mass and justify that it is an absolute maximum.",
+                  "points": 3,
+                  "answer": "The greatest mass is 62.241 g at t = 4.818 min.",
+                  "steps": [
+                    "Solve M′(t) = 3 + 3 sin(t^2/12) − 0.25t^2 = 0: the only root in (0, 6) is t ≈ 4.818169624.",
+                    "The derivative of the net rate is (t/2)[cos(t^2/12) − 1] < 0 for 0 < t ≤ 6, so the net rate decreases and has only this one zero. Compare M(0) = 50, M(4.818169624) ≈ 62.240870859, and M(6) ≈ 59.269571141.",
+                    "The largest candidate value is 62.241 g at 4.818 min. Alternatively, M′ is positive before the root and negative after it."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets R(t) = S(t) and identifies the interior candidate t ≈ 4.818."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the greatest mass as 62.241 g within 0.001 g."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies the absolute maximum by comparing both endpoint masses with the candidate, or by establishing the positive-to-negative derivative signs throughout the interval."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Is the net rate at which coating mass changes increasing or decreasing at t = 2? Justify with a derivative and include its units.",
+                  "points": 2,
+                  "answer": "The net rate is decreasing; M″(2) = cos(1/3) − 1 ≈ −0.055 g/min^2.",
+                  "steps": [
+                    "Differentiate M′ = R − S to obtain M″(t) = (t/2)cos(t^2/12) − t/2.",
+                    "At t = 2 the derivative of the net rate is negative, so that net rate is decreasing."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Calculates M″(2) = cos(1/3) − 1 or approximately −0.055 g/min^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the negative sign of M″(2) to conclude that the net rate is decreasing, with units g/min^2 on the derivative."
+                    }
+                  ]
+                }
+              ],
+              "context": true
+            },
+            {
+              "id": "bc-pe-fr2",
+              "prompt": "A small inspection robot moves on a horizontal test floor. Its position is (x(t), y(t)), measured in meters in fixed perpendicular directions, and t is measured in seconds. For 0 ≤ t ≤ 4, x′(t) = 1 + sin(t^2) and y′(t) = 2 cos(0.6t) − 0.5t. At t = 0, its position is (−2, 1).",
+              "topics": [
+                "BC.9.PLANAR_MOTION",
+                "BC.9.SPEED_AND_DISTANCE",
+                "BC.9.PARAMETRIC_TANGENTS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the position of the robot at t = 4.",
+                  "points": 2,
+                  "answer": "(x(4), y(4)) ≈ (2.747, −0.748) m",
+                  "steps": [
+                    "x(4) = −2 + ∫ from 0 to 4 of [1 + sin(t^2)] dt ≈ 2.747133845.",
+                    "y(4) = 1 + ∫ from 0 to 4 of [2 cos(0.6t) − 0.5t] dt ≈ −0.748456065."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the initial x-coordinate and its velocity integral to obtain x(4) ≈ 2.747 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the initial y-coordinate and its velocity integral to obtain y(4) ≈ −0.748 m."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find every t in (0, 4) at which the path has a horizontal tangent. Justify that your time or times produce horizontal tangents.",
+                  "points": 2,
+                  "answer": "t ≈ 1.827 s",
+                  "steps": [
+                    "A horizontal tangent requires y′(t) = 0 and x′(t) ≠ 0.",
+                    "Solve 2 cos(0.6t) − 0.5t = 0 to obtain t ≈ 1.827292744. Its derivative −1.2 sin(0.6t) − 0.5 is negative for 0 < t < 4, so there is only one root.",
+                    "At the root x′(t) ≈ 0.804, which is nonzero."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Solves y′(t) = 0 and finds the sole time t ≈ 1.827 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Checks x′ is nonzero at that time and justifies completeness by monotonicity of y′ or a documented search of the entire interval."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the total distance traveled by the robot during 0 ≤ t ≤ 4.",
+                  "points": 2,
+                  "answer": "8.208 m",
+                  "steps": [
+                    "Speed is √([1 + sin(t^2)]^2 + [2 cos(0.6t) − 0.5t]^2).",
+                    "Integrate this speed from 0 to 4 to obtain 8.208131176 m."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up the integral of √((x′)^2 + (y′)^2) with bounds 0 and 4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the distance as 8.208 m within 0.001 m."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Is the robot’s speed increasing or decreasing at t = 3? Justify your answer using its velocity and acceleration.",
+                  "points": 3,
+                  "answer": "Its speed is decreasing at t = 3.",
+                  "steps": [
+                    "v(3) ≈ ⟨1.412118485, −1.954404189⟩ m/s.",
+                    "a(t) = ⟨2t cos(t^2), −1.2 sin(0.6t) − 0.5⟩, so a(3) ≈ ⟨−5.466781571, −1.668617157⟩ m/s^2.",
+                    "v(3)·a(3) ≈ −4.458590949 < 0. Since speed is nonzero, its derivative (v·a)/|v| is negative."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds both acceleration components at t = 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes the velocity-acceleration dot product or the derivative of speed and obtains a negative value."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that speed is decreasing from the sign, using the nonzero speed or equivalent valid reasoning."
+                    }
+                  ]
+                }
+              ],
+              "context": true
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 60,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-pe-fr3",
+              "prompt": "A function f is differentiable on [−3, 5], and f(1) = 4. Its derivative f′ is the continuous piecewise-linear function shown, whose graph joins (−3, 0), (−1, 2), (1, −2), (3, 0), and (5, 2) with line segments.",
+              "topics": [
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+                "BC.5.CONCAVITY",
+                "BC.6.FUNDAMENTAL_THEOREM"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find f(−3) and f(3).",
+                  "points": 2,
+                  "answer": "f(−3) = 2 and f(3) = 2.",
+                  "steps": [
+                    "∫ from −3 to 1 of f′(x) dx = 2 + 0 = 2, so f(−3) = f(1) − 2 = 2.",
+                    "∫ from 1 to 3 of f′(x) dx = −2, so f(3) = 4 − 2 = 2."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses signed area and the initial value to obtain f(−3) = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses signed area and the initial value to obtain f(3) = 2."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find every x-value where f attains its absolute minimum on [−3, 5], and justify your answer.",
+                  "points": 3,
+                  "answer": "The absolute minimum value is 2, attained at x = −3 and x = 3.",
+                  "steps": [
+                    "The derivative f′ is positive on (−3, 0), negative on (0, 3), and positive on (3, 5).",
+                    "The candidates for the absolute minimum are therefore the left endpoint −3 and the local minimum at 3; x = 5 has f(5) = 4 and x = 0 is a local maximum.",
+                    "Both candidate values are 2, so both x = −3 and x = 3 attain the absolute minimum."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Correctly describes the derivative signs and corresponding increasing/decreasing intervals, or identifies all endpoint and interior critical candidates x = −3, 0, 3, and 5 for comparison."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies both x = −3 and x = 3 as minimum locations."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Compares their equal values and excludes other locations using endpoint values or monotonicity."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the x-coordinates of all points of inflection of f in (−3, 5). Justify your answer.",
+                  "points": 2,
+                  "answer": "x = −1 and x = 1",
+                  "steps": [
+                    "f′ increases on (−3, −1), decreases on (−1, 1), and increases on (1, 5).",
+                    "Thus f changes concavity at −1 and 1; it does not change concavity at 3 because f′ increases on both sides."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies exactly x = −1 and x = 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies both by changes from increasing to decreasing, or decreasing to increasing, in f′."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "For x near √3, define H(x) = ∫ from 1 to x^2 of f(t) dt. Find H′(√3).",
+                  "points": 2,
+                  "answer": "4√3",
+                  "steps": [
+                    "By the Fundamental Theorem of Calculus and the chain rule, H′(x) = 2x f(x^2).",
+                    "At x = √3, f(3) = 2, so H′(√3) = 4√3."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains H′(x) = 2x f(x^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates H′(√3) = 4√3, or follows a consistent value of f(3) from part (a)."
+                    }
+                  ]
+                }
+              ],
+              "figureIds": [
+                "bc-pe-f3"
+              ]
+            },
+            {
+              "id": "bc-pe-fr4",
+              "prompt": "Let y be the solution of dy/dx = y(6 − y)/3 with y(0) = 2. Consider x ≥ 0.",
+              "topics": [
+                "BC.7.LOGISTIC_MODELS",
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.INITIAL_VALUE_PROBLEMS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the tangent line at x = 0 to approximate y(3/20).",
+                  "points": 2,
+                  "answer": "y(3/20) ≈ 12/5",
+                  "steps": [
+                    "The slope at (0, 2) is 2(6 − 2)/3 = 8/3.",
+                    "The tangent approximation gives 2 + (8/3)(3/20) = 12/5."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the initial slope 8/3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the tangent line to obtain 12/5."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find an explicit expression for y(x). Show the separation and integration that lead to your expression.",
+                  "points": 3,
+                  "answer": "y(x) = 6/(1 + 2e^(−2x))",
+                  "steps": [
+                    "Separate as dy/[y(6 − y)] = dx/3. Partial fractions give (1/6)(ln|y| − ln|6 − y|) = x/3 + C.",
+                    "Because y(0) = 2, the relevant solution has 0 < y < 6, and y/(6 − y) = (1/2)e^(2x).",
+                    "Solving for y gives y = 6/(1 + 2e^(−2x))."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates variables correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates to a valid logarithmic relation, including the needed factors."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses y(0) = 2 to obtain the explicit particular solution."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the x-coordinate of the point of inflection of this solution curve. Justify that the concavity changes there.",
+                  "points": 2,
+                  "answer": "x = (ln 2)/2",
+                  "steps": [
+                    "Differentiate the differential equation: y″ = (2 − (2/3)y)y′. For this solution, y′ > 0 and y increases from 2 toward 6.",
+                    "Therefore y″ changes from positive to negative as y passes through 3. Solving 3 = 6/(1 + 2e^(−2x)) gives x = (ln 2)/2."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds x = (ln 2)/2 by locating y = 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the sign change of y″, with y′ > 0, to establish the inflection."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the exact value of x when y first equals 5.",
+                  "points": 2,
+                  "answer": "x = (ln 10)/2",
+                  "steps": [
+                    "Set 5 = 6/(1 + 2e^(−2x)), giving e^(−2x) = 1/10.",
+                    "Taking logarithms yields x = (ln 10)/2. The solution increases, so this is its first such value."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up and rearranges the equation y(x) = 5."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains x = (ln 10)/2."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "bc-pe-fr5",
+              "prompt": "Let R be the region bounded by y = ln x, the x-axis, and the vertical line x = e. The curve meets the x-axis at x = 1.",
+              "topics": [
+                "BC.8.WASHER_VOLUMES",
+                "BC.8.CROSS_SECTION_VOLUMES",
+                "BC.6.INTEGRATION_BY_PARTS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the exact area of R. Show an antiderivative used in your work.",
+                  "points": 2,
+                  "answer": "1 square unit",
+                  "steps": [
+                    "The area is ∫ from 1 to e of ln x dx.",
+                    "Integration by parts gives x ln x − x, whose endpoint difference is 1."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the bounds 1 and e and obtains the antiderivative x ln x − x."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the exact area as 1."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "The region R is revolved about the x-axis. Find the exact volume of the resulting solid. Show the integration needed to evaluate your volume expression.",
+                  "points": 3,
+                  "answer": "π(e − 2) cubic units",
+                  "steps": [
+                    "V = π∫ from 1 to e of (ln x)^2 dx.",
+                    "Integration by parts gives ∫(ln x)^2 dx = x(ln x)^2 − 2∫ln x dx = x[(ln x)^2 − 2ln x + 2].",
+                    "The endpoint difference is e − 2, so V = π(e − 2)."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up π∫ from 1 to e of (ln x)^2 dx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Correctly applies integration by parts to obtain an antiderivative."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the volume as π(e − 2)."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "A different solid has base R. Its cross sections perpendicular to the y-axis are squares whose sides lie in R. Find its exact volume.",
+                  "points": 4,
+                  "answer": "(−e^2 + 4e − 1)/2 cubic units",
+                  "steps": [
+                    "For 0 ≤ y ≤ 1, the horizontal width of R is e − e^y, so the square’s area is (e − e^y)^2.",
+                    "The volume is ∫ from 0 to 1 of (e − e^y)^2 dy.",
+                    "An antiderivative is e^2 y − 2e e^y + (1/2)e^(2y).",
+                    "The endpoint difference simplifies to (−e^2 + 4e − 1)/2."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Expresses the horizontal side length as e − e^y."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates the square of that length over 0 ≤ y ≤ 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds a correct antiderivative of the expanded expression."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the exact volume as (−e^2 + 4e − 1)/2."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "bc-pe-fr6",
+              "prompt": "Define f(x) = ln(1 + x)/x for x > −1 and x ≠ 0, and define f(0) = 1.",
+              "topics": [
+                "BC.10.SERIES_INTEGRATION",
+                "BC.10.ENDPOINT_TESTS",
+                "BC.10.ALTERNATING_REMAINDER",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the degree-three Maclaurin polynomial for f. Show how you obtain its coefficients from a known power series.",
+                  "points": 2,
+                  "answer": "P_3(x) = 1 − x/2 + x^2/3 − x^3/4",
+                  "steps": [
+                    "Integrate the geometric series 1/(1 + x) = ∑ from n = 0 to ∞ of (−1)^n x^n to obtain ln(1 + x) = x − x^2/2 + x^3/3 − x^4/4 + … for |x| < 1.",
+                    "Divide by x and use the continuous value at 0 to obtain P_3(x) = 1 − x/2 + x^2/3 − x^3/4."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses a correct series for ln(1 + x), or derives it by integrating the geometric series."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Divides by x and gives all four correct coefficients of P_3."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Determine the full interval of convergence of the Maclaurin series for f, including justification at each endpoint.",
+                  "points": 3,
+                  "answer": "(−1, 1]",
+                  "steps": [
+                    "The series is ∑ from n = 0 to ∞ of (−1)^n x^n/(n + 1). The ratio test gives |x| < 1.",
+                    "At x = −1, the terms are 1/(n + 1), giving a divergent harmonic series.",
+                    "At x = 1, the series is alternating with decreasing magnitudes tending to zero, so it converges."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Establishes radius 1, for example with the ratio test."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Excludes −1 by identifying the divergent harmonic series."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Includes 1 by the alternating-series test and states (−1, 1]."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Approximate ∫ from 0 to 1/2 of f(x) dx by integrating the first three nonzero terms of the Maclaurin series. Give an exact rational approximation, determine whether it is an overestimate or underestimate, and show that its error is at most 1/256.",
+                  "points": 4,
+                  "answer": "The approximation is 65/144, an overestimate, with absolute error at most 1/256.",
+                  "steps": [
+                    "Integrate 1 − x/2 + x^2/3 on [0, 1/2]: [x − x^2/4 + x^3/9] from 0 to 1/2 = 1/2 − 1/16 + 1/72 = 65/144.",
+                    "The integrated series has terms (−1)^n (1/2)^(n+1)/(n + 1)^2, whose positive magnitudes decrease to zero.",
+                    "The first omitted integrated term is negative and has magnitude (1/2)^4/4^2 = 1/256.",
+                    "The alternating remainder therefore is negative with magnitude at most 1/256, so the approximation is an overestimate."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Integrates the correct first three terms with bounds 0 and 1/2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains the exact rational approximation 65/144."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Establishes the alternating remainder bound using decreasing magnitudes and the first omitted term 1/256."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the approximation as an overestimate and supports it with the negative first omitted term or a valid pointwise remainder argument."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

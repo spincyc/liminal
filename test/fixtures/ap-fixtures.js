@@ -13,11 +13,11 @@ const PHYSICS_POINTS = { MR: 10, TBR: 12, EDA: 10, QQT: 8 };
 
 function course(courseId) { return plan.courses.find(c => c.id === courseId); }
 function topicsOf(courseId, unit) {
-  return plan.standards.filter(s => s.kind === "content" && s.id.startsWith(A.TOPIC_PREFIX[courseId] + "." + unit + ".")).map(s => s.id);
+  return A.topicsForUnit(plan, courseId, Number(unit)).map(s => s.id);
 }
 function mc(courseId, segment, number, topic, extra = {}) {
   const letter = A.LETTERS[(number - 1) % 4];
-  const physics = courseId !== "calculus-ab";
+  const physics = !A.isCalculus(courseId);
   const unit = physics ? " m/s" : "";
   return { id: A.ITEM_PREFIX[courseId] + "-" + segment + "-mc" + String(number).padStart(2, "0"),
     prompt: `Fixture question ${A.ITEM_PREFIX[courseId]}-${segment}-${number}. For the placeholder function f(x) = x^2 − ${number}, which value is marked as the fixture answer?`,
@@ -40,7 +40,7 @@ function unitTest(courseId, unit = 1, options = {}) {
   const segment = "u" + unit;
   const topics = topicsOf(courseId, unit);
   const pick = n => topics[(n - 1) % topics.length];
-  const calculus = courseId === "calculus-ab";
+  const calculus = A.isCalculus(courseId);
   const items = Array.from({ length: 12 }, (_, i) => mc(courseId, segment, i + 1, pick(i + 1)));
   const figureId = A.ITEM_PREFIX[courseId] + "-" + segment + "-f1";
   items[1].figureIds = [figureId];
@@ -76,7 +76,7 @@ function practiceExam(courseId) {
   const items = mcs.map((topic, i) => mc(courseId, "pe", i + 1, topic));
   const topic = n => topicsOf(courseId, n)[0];
   let sections;
-  if (courseId === "calculus-ab") {
+  if (A.isCalculus(courseId)) {
     const frs = [1, 2, 3, 4, 5, 6].map(n => fr(courseId, "pe", n, topic(n + 2), 9, n <= 2 ? { context: true } : {}));
     sections = [
       { id: "I", title: "Multiple choice", kind: "mc", parts: [

@@ -74,7 +74,7 @@ test("paired key figures retain the given drawing and completed answer with thei
 test("ap.html loads its scripts in order and names every element its scripts use", () => {
   const html = fs.readFileSync(path.join(__dirname, "../src/ap.html"), "utf8");
   const scripts = [...html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
-  assert.deepEqual(scripts, ["content/ap-plan.js", "content/ap.js", "content/weekly-index.js", "lib/high-school.js", "lib/weekly.js", "lib/ap-assessment.js", "app/render.js", "app/ap-render.js", "app/ap.js"]);
+  assert.deepEqual(scripts, ["content/ap-plan.js", "content/ap.js", "content/weekly-index.js", "lib/high-school.js", "lib/weekly.js", "lib/assessment.js", "lib/assessment-adapters.js", "lib/ap-assessment.js", "app/render.js", "app/ap-render.js", "app/ap.js"]);
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
   assert.equal(new Set(ids).size, ids.length);
   const app = fs.readFileSync(path.join(__dirname, "../src/app/ap.js"), "utf8");

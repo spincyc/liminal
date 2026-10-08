@@ -84,6 +84,8 @@ for (const asset of [
   "lib/modules.js",
   "lib/simulation.js",
   "content/templates.js",
+  "lib/assessment.js",
+  "lib/assessment-adapters.js",
   "lib/test-engine.js",
   "lib/session-store.js",
   "lib/annotations.js",
@@ -230,6 +232,8 @@ for (const asset of [
   "lib/question-identity.js",
   "lib/runs.js",
   "lib/modules.js",
+  "lib/assessment.js",
+  "lib/assessment-adapters.js",
   "lib/booklet.js",
   "lib/progress.js",
   "app/render.js",
@@ -262,14 +266,14 @@ for (const [name, page, order] of [
   ["practice.html", html, [
     "styles/tokens.css", "styles/app.css", "styles/test-shell.css", "styles/math.css",
     "lib/core.js", "lib/template-mask.js", "lib/question-identity.js", "lib/runs.js", "lib/modules.js", "lib/simulation.js",
-    "lib/test-engine.js", "lib/session-store.js",
+    "lib/assessment.js", "lib/assessment-adapters.js", "lib/test-engine.js", "lib/session-store.js",
     "lib/annotations.js", "lib/line-reader.js",
     "lib/progress.js", "lib/review-queue.js", "lib/practice.js", "lib/analytics.js", "lib/progress-io.js",
     "app/test-shell.js", "app/site.js", ...VIEW_SCRIPTS, "app/app.js",
   ]],
   ["print.html", printHtml, [
     "styles/tokens.css", "styles/app.css",
-    "lib/template-mask.js", "lib/question-identity.js", "lib/runs.js", "lib/modules.js", "lib/progress.js", "app/site.js", "app/print.js",
+    "lib/template-mask.js", "lib/question-identity.js", "lib/runs.js", "lib/modules.js", "lib/assessment.js", "lib/assessment-adapters.js", "lib/booklet.js", "lib/progress.js", "app/site.js", "app/print.js",
   ]],
 ]) {
   const positions = order.map((asset) => page.indexOf(`"${asset}"`));
@@ -460,7 +464,7 @@ if (!highSchoolData || JSON.stringify(highSchoolData) !== JSON.stringify(highSch
 // assessments and references from tools/build-ap.js (content/ap.js).
 const apHtml = fs.readFileSync(path.join(root, "ap.html"), "utf8");
 const apScripts = pageScripts(apHtml);
-if (JSON.stringify(apScripts) !== JSON.stringify(["content/ap-plan.js", "content/ap.js", "content/weekly-index.js", "lib/high-school.js", "lib/weekly.js", "lib/ap-assessment.js", "app/render.js", "app/ap-render.js", "app/ap.js"])) throw new Error("AP scripts are missing or out of order");
+if (JSON.stringify(apScripts) !== JSON.stringify(["content/ap-plan.js", "content/ap.js", "content/weekly-index.js", "lib/high-school.js", "lib/weekly.js", "lib/assessment.js", "lib/assessment-adapters.js", "lib/ap-assessment.js", "app/render.js", "app/ap-render.js", "app/ap.js"])) throw new Error("AP scripts are missing or out of order");
 for (const match of apHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
   if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing AP asset: " + target);
@@ -478,7 +482,7 @@ const apCheck = require("./check-ap");
 const apSource = apCheck.loadAp();
 if (apSource.problems.length || JSON.stringify(apContext.window.LIMINAL_AP) !== JSON.stringify(require("./build-ap").bundle(apSource))) throw new Error("AP bundle differs from source");
 for (const entry of [...apContext.window.LIMINAL_AP.assessments, ...apContext.window.LIMINAL_AP.references]) {
-  if (!/^content\/ap\/(?:assessments\/(?:calculus-ab|physics-1|physics-c-mechanics)\/(?:unit-[1-8]|practice-exam)|references\/(?:physics-1|physics-c-mechanics))\.json$/.test(entry.file) || !fs.existsSync(path.join(root, entry.file))) throw new Error("Unsafe or missing AP file: " + entry.file);
+  if (!/^content\/ap\/(?:assessments\/(?:calculus-ab|calculus-bc|physics-1|physics-c-mechanics)\/(?:unit-(?:[1-9]|10)|practice-exam)|references\/(?:physics-1|physics-c-mechanics))\.json$/.test(entry.file) || !fs.existsSync(path.join(root, entry.file))) throw new Error("Unsafe or missing AP file: " + entry.file);
 }
 // Every built page that shows the AP® marks carries the exact disclaimer.
 const apDisclaimer = apCheck.disclaimerProblems(root);
@@ -563,7 +567,12 @@ vm.runInContext(
   `(function (module, exports, require) {\n${fs.readFileSync(bookletPath, "utf8")}\n})`,
   context,
   { filename: bookletPath },
-)(bookletModule, bookletModule.exports, () => practiceCore);
+)(bookletModule, bookletModule.exports, name => {
+  if (name === "./core.js") return practiceCore;
+  if (name === "./assessment") return require(path.join(root, "lib/assessment.js"));
+  if (name === "./assessment-adapters") return require(path.join(root, "lib/assessment-adapters.js"));
+  throw new Error("Unexpected booklet dependency: " + name);
+});
 const practiceBooklet = bookletModule.exports;
 
 for (const blueprint of practiceCore.FULL_TEST_BLUEPRINTS) {

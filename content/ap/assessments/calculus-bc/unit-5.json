@@ -1,0 +1,492 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "unit-5",
+  "kind": "unit-test",
+  "unitId": "u5",
+  "title": "Unit 5 test: Analytical Applications of Differentiation",
+  "author": "bc-tests-foundation",
+  "directions": "This original practice test reports raw points only. Work without a calculator in Section I Part A and Section II Part B. A graphing calculator is allowed in the other parts. Angles are in radians. Give exact answers without a calculator and numerical answers to three decimal places when needed. Show mathematical reasoning on every free-response part.",
+  "figures": [
+    {
+      "id": "bc-u5-f1",
+      "alt": "Graph of f′ consisting of straight line segments connecting (−3, −2), (−1, 2), (1, −2), and (3, 2). All four displayed vertices are filled."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Choose one answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-u5-mc01",
+              "prompt": "For f(x) = x^3 − x on [0, 2], which c satisfies the conclusion of the Mean Value Theorem?",
+              "choices": [
+                "2",
+                "2/√3",
+                "1",
+                "√(7/3)"
+              ],
+              "key": "B",
+              "rationale": "The secant slope is (6 − 0)/2 = 3. Solving 3c^2 − 1 = 3 gives c = 2/√3 in (0, 2).",
+              "distractorNotes": {
+                "A": "Uses an endpoint, which is outside the required open interval.",
+                "C": "Uses the midpoint rather than equating the derivative with the secant slope.",
+                "D": "Sets the derivative equal to the total output change instead of the average rate."
+              },
+              "topics": [
+                "BC.5.MEAN_VALUE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-u5-mc02",
+              "prompt": "Which hypothesis is sufficient for the Extreme Value Theorem to ensure that f attains both an absolute maximum and an absolute minimum?",
+              "choices": [
+                "f is continuous on the closed interval [a, b].",
+                "f is bounded on the open interval (a, b).",
+                "f is defined at every point of the closed interval [a, b].",
+                "f is differentiable on the open interval (a, b)."
+              ],
+              "key": "A",
+              "rationale": "Continuity on a closed bounded interval is the theorem’s hypothesis. It ensures actual attainment of both extreme values.",
+              "distractorNotes": {
+                "B": "A bound need not be attained on an open interval.",
+                "C": "Definedness alone does not give continuity or attainment.",
+                "D": "Endpoint exclusion permits unattained bounds even for smooth functions."
+              },
+              "topics": [
+                "BC.5.EXTREME_VALUE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-u5-mc03",
+              "prompt": "Let f(x) = x^(2/3)(x − 5), using the real cube root for all real x. What are all critical numbers of f?",
+              "choices": [
+                "2 only",
+                "0 and 5",
+                "0 only",
+                "0 and 2"
+              ],
+              "key": "D",
+              "rationale": "For x ≠ 0, f′(x) = (5x − 10)/(3x^(1/3)), which vanishes at 2. At 0, f is defined but the derivative does not exist.",
+              "distractorNotes": {
+                "A": "Omits the domain point 0 where f′ does not exist.",
+                "B": "Uses zeros of f instead of zeros or nonexistence of f′.",
+                "C": "Omits the point 2 where f′ equals zero."
+              },
+              "topics": [
+                "BC.5.CRITICAL_POINTS"
+              ]
+            },
+            {
+              "id": "bc-u5-mc04",
+              "prompt": "A differentiable function has f′(x) = (x − 1)^2(x + 2). Which statement is true?",
+              "choices": [
+                "f has no local extrema at either −2 or 1.",
+                "f has a local maximum at −2 and a minimum at 1.",
+                "f has a local minimum at −2 and no extremum at 1.",
+                "f has a local minimum at both −2 and 1."
+              ],
+              "key": "C",
+              "rationale": "The squared factor is positive except at 1. Thus f′ changes from negative to positive at −2 and stays positive across 1.",
+              "distractorNotes": {
+                "A": "The negative-to-positive derivative change at −2 does imply a minimum.",
+                "B": "The sign at −2 changes from negative to positive, and the squared factor does not change sign at 1.",
+                "D": "A zero derivative at 1 alone does not imply a minimum."
+              },
+              "topics": [
+                "BC.5.FIRST_DERIVATIVE_TEST"
+              ]
+            },
+            {
+              "id": "bc-u5-mc05",
+              "prompt": "If f″(x) = x(x − 3), on which intervals is the graph of f concave up?",
+              "choices": [
+                "(−∞, 3) only",
+                "(−∞, 0) and (3, ∞)",
+                "(0, ∞) only",
+                "(0, 3) only"
+              ],
+              "key": "B",
+              "rationale": "The two factors have matching signs for x < 0 and for x > 3, making f″ positive there.",
+              "distractorNotes": {
+                "A": "Ignores the sign change at zero.",
+                "C": "Ignores that the second derivative is negative between zero and three.",
+                "D": "Selects where the second derivative is negative."
+              },
+              "topics": [
+                "BC.5.CONCAVITY"
+              ]
+            },
+            {
+              "id": "bc-u5-mc06",
+              "prompt": "Suppose f is twice continuously differentiable near 4, f′(4) = 0, and f″(4) = −2. What follows?",
+              "choices": [
+                "f has a strict local maximum at 4.",
+                "f has a strict local minimum at 4.",
+                "f has an inflection point at 4.",
+                "The second derivative test is inconclusive at 4."
+              ],
+              "key": "A",
+              "rationale": "The second derivative test applies at the stationary point and classifies it as a local maximum because f″(4) < 0.",
+              "distractorNotes": {
+                "B": "A negative second derivative gives a maximum at the stationary point.",
+                "C": "A nonzero negative second derivative is not evidence of a concavity change there.",
+                "D": "The test is conclusive because the second derivative is strictly negative."
+              },
+              "topics": [
+                "BC.5.SECOND_DERIVATIVE_TEST"
+              ]
+            },
+            {
+              "id": "bc-u5-mc07",
+              "prompt": "The graph shown is f′, for a differentiable function f. At which x does f have a local maximum?",
+              "choices": [
+                "2",
+                "−2",
+                "0",
+                "−1"
+              ],
+              "key": "C",
+              "rationale": "At x = 0 the derivative crosses from positive to negative. The other two zero crossings give local minima.",
+              "distractorNotes": {
+                "A": "At 2 the derivative changes from negative to positive, producing a local minimum.",
+                "B": "At −2 the derivative changes from negative to positive, producing a local minimum.",
+                "D": "A local maximum of f′ need not be a local maximum of f."
+              },
+              "topics": [
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+                "BC.5.FIRST_DERIVATIVE_TEST"
+              ],
+              "figureIds": [
+                "bc-u5-f1"
+              ]
+            },
+            {
+              "id": "bc-u5-mc08",
+              "prompt": "On the curve x^2 + xy + y^2 = 12, which pair lists both points with horizontal tangent lines?",
+              "choices": [
+                "(2, 2) and (−2, −2)",
+                "(0, 2√3) and (0, −2√3)",
+                "(4, −2) and (−4, 2)",
+                "(2, −4) and (−2, 4)"
+              ],
+              "key": "D",
+              "rationale": "Implicit differentiation gives y′ = −(2x + y)/(x + 2y). For a horizontal tangent y = −2x; substituting gives 3x^2 = 12, so x = ±2, with denominators nonzero.",
+              "distractorNotes": {
+                "A": "These points lie on the curve but have nonzero tangent slope.",
+                "B": "These y-intercepts have slope −1/2, not zero.",
+                "C": "These make the derivative denominator zero and give vertical, not horizontal, tangents."
+              },
+              "topics": [
+                "BC.5.IMPLICIT_CURVE_ANALYSIS"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "Choose one answer for each question. A graphing calculator is needed for some numerical work.",
+          "items": [
+            {
+              "id": "bc-u5-mc09",
+              "prompt": "What is the absolute maximum value of f(x) = xe^(−0.3x^2) on [0, 4], to three decimal places?",
+              "choices": [
+                "0.783",
+                "1.291",
+                "0.033",
+                "0.000"
+              ],
+              "key": "A",
+              "rationale": "f′(x) = e^(−0.3x^2)(1 − 0.6x^2), so the only interior critical input is 1/√0.6. Compare its output, about 0.783, with f(0) = 0 and f(4) ≈ 0.033.",
+              "distractorNotes": {
+                "B": "Reports the maximizing input, not the maximum output.",
+                "C": "Uses the right endpoint without comparing the interior critical point.",
+                "D": "Uses the left endpoint, which is a minimum rather than the maximum."
+              },
+              "topics": [
+                "BC.5.CRITICAL_POINTS",
+                "BC.5.EXTREME_VALUE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-u5-mc10",
+              "prompt": "An open box has a square base of side x meters and fixed volume 20 m³. Base material costs 2 cost units per square meter; side material costs 1 cost unit per square meter. Which x minimizes the material cost?",
+              "choices": [
+                "2.154 m",
+                "3.420 m",
+                "2.714 m",
+                "2.000 m"
+              ],
+              "key": "C",
+              "rationale": "The height is 20/x^2. Cost C(x) = 2x^2 + 4x(20/x^2) = 2x^2 + 80/x. Its derivative 4x − 80/x^2 changes from negative to positive at x^3 = 20.",
+              "distractorNotes": {
+                "A": "Counts only two of the four vertical sides.",
+                "B": "Treats the base as costing only 1 cost unit per square meter.",
+                "D": "Uses an arbitrary convenient dimension without setting the cost derivative to zero."
+              },
+              "topics": [
+                "BC.5.OPTIMIZATION"
+              ]
+            },
+            {
+              "id": "bc-u5-mc11",
+              "prompt": "The function f is twice differentiable, and f′ is continuous on [1, 4]. The table gives exact derivative values. Which conclusion follows from the Mean Value Theorem applied to f′?\nx | 1 | 4\nf′(x) | −1.2 | 2.7",
+              "choices": [
+                "There is c in (1, 4) with f″(c) = 3.9.",
+                "There is c in (1, 4) with f(c) = 1.3.",
+                "There is c in (1, 4) with f′(c) = 3.9.",
+                "There is c in (1, 4) with f″(c) = 1.3."
+              ],
+              "key": "D",
+              "rationale": "The secant slope of f′ is [2.7 − (−1.2)]/(4 − 1) = 1.3. Since f′ is continuous on the closed interval and differentiable inside, its derivative f″ equals this slope somewhere inside.",
+              "distractorNotes": {
+                "A": "Uses the derivative change without dividing by the interval length.",
+                "B": "The table contains no function values from which to draw this conclusion.",
+                "C": "The theorem concerns f″, not a value of f′; the given derivative values do not force f′ to reach 3.9."
+              },
+              "topics": [
+                "BC.5.MEAN_VALUE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-u5-mc12",
+              "prompt": "For f(x) = e^(−x) sin x on [0, 4], what is the x-coordinate of its only inflection point in (0, 4)?",
+              "choices": [
+                "0.785",
+                "1.571",
+                "3.142",
+                "2.356"
+              ],
+              "key": "B",
+              "rationale": "Twice differentiating gives f″(x) = −2e^(−x) cos x. Its only zero in (0, 4) is π/2 ≈ 1.571, where its sign changes.",
+              "distractorNotes": {
+                "A": "Solves f′(x) = 0, identifying a stationary point instead of a concavity change.",
+                "C": "Uses a zero of f rather than a change of sign of f″.",
+                "D": "Uses an angle where sin x and cos x are opposite, which does not make f″ zero."
+              },
+              "topics": [
+                "BC.5.CONCAVITY"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show the equations used for numerical results and include units where appropriate.",
+          "items": [
+            {
+              "id": "bc-u5-fr1",
+              "prompt": "A rectangular sign is to fit above the x-axis and below the arch y = 5 − 0.4x^2, with x and y measured in meters. Its bottom side lies on the x-axis and its vertical sides lie at −x and x, where x > 0. Its upper corners touch the arch.",
+              "context": true,
+              "topics": [
+                "BC.5.OPTIMIZATION",
+                "BC.5.CRITICAL_POINTS",
+                "BC.5.EXTREME_VALUE_THEOREM"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Write the area A as a function of x and give the feasible closed interval, including zero-area endpoint configurations.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Forms the area as width times height."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives the complete feasible interval [0, √12.5]."
+                    }
+                  ],
+                  "answer": "A(x) = 2x(5 − 0.4x^2), with 0 ≤ x ≤ √12.5.",
+                  "steps": [
+                    "The width is 2x and the height is 5 − 0.4x^2.",
+                    "Nonnegative height requires x^2 ≤ 12.5."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the width and height of the sign with greatest area. Justify that your choice is the absolute maximum.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the derivative and interior critical point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Invokes continuity on the closed interval or a complete derivative-sign argument."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Compares all candidates or establishes increase followed by decrease."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives both correct dimensions."
+                    }
+                  ],
+                  "answer": "Width ≈ 4.082 m and height = 10/3 ≈ 3.333 m.",
+                  "steps": [
+                    "A′(x) = 10 − 2.4x^2 vanishes at x = √(25/6).",
+                    "A is continuous on the feasible closed interval, so its maximum is attained.",
+                    "Both endpoint areas are zero, while this interior critical point has positive area.",
+                    "Evaluate width 2x and height 5 − 0.4x^2 at that point."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the maximum area, and determine how much area is lost if the sign instead has width 5 meters.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes the maximum area."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Correctly converts width 5 to x = 2.5 and computes its area."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes the positive area loss with square-meter units."
+                    }
+                  ],
+                  "answer": "Maximum area ≈ 13.608 m²; a width-5 sign has area 12.500 m², so the loss is 1.108 m².",
+                  "steps": [
+                    "Evaluate A at x = √(25/6).",
+                    "A width of 5 means x = 2.5 and height 2.5.",
+                    "Subtract the alternative area from the maximum."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show your reasoning and give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-u5-fr2",
+              "prompt": "The graph gives f′ on [−3, 3] as three line segments. The function f is differentiable on an open interval containing [−3, 3].",
+              "context": false,
+              "topics": [
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+                "BC.5.FIRST_DERIVATIVE_TEST",
+                "BC.5.CONCAVITY",
+                "BC.5.MEAN_VALUE_THEOREM"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "State the open intervals where f is increasing and where it is decreasing. Identify every local extremum of f in (−3, 3), with justification.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Gives all increasing and decreasing intervals correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the two local minima with sign-change reasoning."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the local maximum with sign-change reasoning."
+                    }
+                  ],
+                  "answer": "Increasing on (−2, 0) and (2, 3); decreasing on (−3, −2) and (0, 2). Local minima at −2 and 2; a local maximum at 0.",
+                  "steps": [
+                    "Read zeros of f′ at −2, 0, and 2.",
+                    "Use the sign of f′ to determine monotonicity.",
+                    "Use changes from negative to positive for minima and positive to negative for maxima."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "State where f is concave up and concave down. Identify all inflection-point x-coordinates and explain why f″ need not exist there.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Reads all concavity intervals from the slope of f′."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies and justifies both concavity changes."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains failure of the second derivative at the corners without excluding inflection."
+                    }
+                  ],
+                  "answer": "Concave up on (−3, −1) and (1, 3); concave down on (−1, 1). Inflection points occur at x = −1 and x = 1, where the graph of f′ has corners.",
+                  "steps": [
+                    "f′ increases on the outer segments and decreases on the middle segment.",
+                    "Its change in monotonicity changes the concavity of f at each joining input.",
+                    "The slopes of f′ from the two sides differ at the corners, so f″ is undefined there."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Suppose additionally f(−3) = 7 and f(3) = 7. State why the Mean Value Theorem applies and find all c in (−3, 3) satisfying its conclusion.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Checks both continuity and differentiability hypotheses."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the required slope zero from the endpoint values."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Lists exactly the three inputs where f′ equals that slope."
+                    }
+                  ],
+                  "answer": "c = −2, 0, and 2.",
+                  "steps": [
+                    "Differentiability on an open interval containing the closed interval implies continuity on [−3, 3] and differentiability inside.",
+                    "The endpoint secant slope is (7 − 7)/6 = 0.",
+                    "The graph of f′ equals zero at −2, 0, and 2."
+                  ]
+                }
+              ],
+              "figureIds": [
+                "bc-u5-f1"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

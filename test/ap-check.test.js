@@ -2,7 +2,6 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
-const os = require("node:os");
 const path = require("node:path");
 const vm = require("node:vm");
 const A = require("../src/lib/ap-assessment");
@@ -11,7 +10,8 @@ const { loadAp, disclaimerProblems } = require("../tools/check-ap");
 const { build, bundle } = require("../tools/build-ap");
 
 const ROOT = path.resolve(__dirname, "..");
-function tempDir(t) { const dir = fs.mkdtempSync(path.join(os.tmpdir(), "liminal-ap-")); t.after(() => fs.rmSync(dir, { recursive: true, force: true })); return dir; }
+const scratch = path.join(ROOT, ".scratch/bc-validation");
+function tempDir(t) { fs.mkdirSync(scratch, { recursive: true }); const dir = fs.mkdtempSync(path.join(scratch, "liminal-ap-")); t.after(() => fs.rmSync(dir, { recursive: true, force: true })); return dir; }
 function emptyPages(t) { return tempDir(t); }
 function standardDocs() {
   return [F.unitTest("calculus-ab", 1), F.practiceExam("calculus-ab"), F.unitTest("physics-1", 1), F.unitTest("physics-c-mechanics", 2, { types: ["TBR", "EDA"] })];
@@ -22,16 +22,16 @@ function check(t, docs, { references = [], mutate, complete = false } = {}) {
   return loadAp({ contentDir: dir, pagesDir: emptyPages(t), complete });
 }
 
-test("the committed plan and pages pass; --complete reports the missing content", () => {
+test("the committed plan preserves all course units and legacy framework topics", () => {
   const result = loadAp();
   assert.deepEqual(result.problems, []);
   for (const [prefix, count] of [["AB", 81], ["P1", 43], ["CM", 41]]) {
     assert.equal(result.plan.standards.filter(s => s.kind === "content" && s.id.startsWith(prefix + ".")).length, count, prefix + " topic count");
   }
   const units = result.plan.courses.map(c => c.units.filter(u => u.unit !== null).length);
-  assert.deepEqual(units, [8, 8, 7]);
+  assert.deepEqual(units, [8, 10, 8, 7]);
   const complete = loadAp({ complete: true });
-  if (complete.assessments.length < 26) assert.ok(complete.problems.some(p => /missing \(required by --complete\)/.test(p)));
+  if (complete.assessments.length < 37) assert.ok(complete.problems.some(p => /missing \(required by --complete\)/.test(p)));
 });
 
 test("synthetic fixtures pass validation and build", t => {
@@ -68,7 +68,7 @@ test("the validator rejects malformed assessments", t => {
     [doc => { doc.sections[0].parts[0].items[0].figureIds = ["ab-u1-f7"]; }, /undeclared figure ab-u1-f7/],
     [doc => { doc.sections[0].parts[0].calculator = "any"; }, /must be one of none, graphing/],
     [doc => { doc.sections[0].parts[0].items[0].distractorNotes = { B: "x" }; }, /needs a note for each wrong choice/],
-    [doc => { doc.sections[1].parts[0].items[0].type = "MR"; }, /Calculus AB free response has no type/],
+    [doc => { doc.sections[1].parts[0].items[0].type = "MR"; }, /Calculus free response has no type/],
     [doc => { doc.unitId = "u2"; }, /must be u1/],
     [doc => { doc.sections[0].parts[0].items.forEach(i => { i.key = "A"; }); }, /key balance: key A is/],
   ];
@@ -135,14 +135,14 @@ test("plan validation preserves required blueprint and schedule constraints", t 
   const cases = [
     [plan => { delete plan.courses[0].blueprints.unitTest.frPoints; }, /needs whole free-response points/],
     [plan => { delete plan.courses[0].blueprints.practiceExam.minContextFr; }, /at least two free-response questions in context/],
-    [plan => { delete plan.courses[1].blueprints.practiceExam.frTypes; }, /point values for every physics free-response type/],
-    [plan => { delete plan.courses[1].blueprints.unitTest.distinctFrTypes; }, /must require distinct free-response types/],
-    [plan => { delete plan.courses[1].blueprints.unitTest.minTypeUsesAcrossUnitTests; }, /at least three unit tests/],
+    [plan => { delete plan.courses.find(c => c.id === "physics-1").blueprints.practiceExam.frTypes; }, /point values for every physics free-response type/],
+    [plan => { delete plan.courses.find(c => c.id === "physics-1").blueprints.unitTest.distinctFrTypes; }, /must require distinct free-response types/],
+    [plan => { delete plan.courses.find(c => c.id === "physics-1").blueprints.unitTest.minTypeUsesAcrossUnitTests; }, /at least three unit tests/],
     [plan => { const counts = plan.courses[0].blueprints.practiceExam.mcByUnit; counts[1] += 0.25; counts[2] -= 0.25; }, /positive whole question counts/],
     [plan => { plan.courses[0].blueprints.unitTest.minutes = [70, 50]; }, /valid minutes range/],
     [plan => { plan.courses[0].exam.sections[0].id = "II"; }, /sections are I and II/],
     [plan => { const schedule = plan.courses[0].schedule; delete schedule[32].assessment; schedule[33].assessment = "practice-exam"; }, /practice exam is placed in week 33/],
-    [plan => { const units = plan.courses[2].units; units[0].standards = units[0].standards.filter(s => s !== "CM.TOOLKIT"); units.at(-1).standards.push("CM.TOOLKIT"); }, /exactly the unit's framework topics and CM.TOOLKIT/],
+    [plan => { const units = plan.courses.find(c => c.id === "physics-c-mechanics").units; units[0].standards = units[0].standards.filter(s => s !== "CM.TOOLKIT"); units.at(-1).standards.push("CM.TOOLKIT"); }, /exactly the unit's framework topics and CM.TOOLKIT/],
   ];
   for (const [mutate, pattern] of cases) {
     const result = check(t, [], { mutate: dir => {
@@ -199,4 +199,84 @@ test("pages that use the AP® marks carry the exact disclaimer", t => {
   fs.writeFileSync(path.join(dir, "d.html"), '<h3>Courses for AP<span class="registered">®</span> exams</h3>');
   assert.deepEqual(disclaimerProblems(dir), ["a.html: uses the AP® marks without the exact disclaimer", "d.html: uses the AP® marks without the exact disclaimer"]);
   assert.deepEqual(disclaimerProblems(path.join(ROOT, "src")).filter(p => p.startsWith("ap.html")), []);
+});
+
+test("BC unit 10 and full exams build from editorial objectives with the calculus blueprint", t => {
+  const docs = [F.unitTest("calculus-bc", 10), F.practiceExam("calculus-bc")];
+  const result = check(t, docs);
+  assert.deepEqual(result.problems, []);
+  assert.equal(result.assessments[0].courseId, "calculus-bc");
+  const unit = result.assessments.find(d => d.id === "unit-10");
+  assert.equal(unit.unitId, "u10");
+  assert.ok(A.entries(unit).every(e => e.item.topics.every(ref => ref.startsWith("BC.10."))));
+  assert.ok(A.entries(unit).filter(e => !A.isMc(e.item)).every(e => A.itemPoints(e.item) === 9));
+  const exam = result.assessments.find(d => d.kind === "practice-exam");
+  assert.deepEqual(A.counts(exam), A.counts(F.practiceExam("calculus-ab")));
+  assert.equal(A.entries(exam).filter(e => !A.isMc(e.item) && e.item.context).length, 2);
+  const data = build({ output: tempDir(t), contentDir: F.writeContent(path.join(tempDir(t), "content"), docs), pagesDir: emptyPages(t) });
+  assert.ok(data.assessments.some(d => d.file === "content/ap/assessments/calculus-bc/unit-10.json"));
+  assert.deepEqual(data.references, []);
+});
+
+test("BC assessment guards reject review objectives, later units, wrong calculators and physics FR types", t => {
+  const cases = [
+    [doc => { doc.sections[0].parts[0].items[0].topics = ["BC.REVIEW"]; }, /not a course objective/],
+    [doc => { doc.sections[0].parts[0].items[0].topics = ["BC.BEYOND"]; }, /not a course objective/],
+    [doc => { doc.sections[0].parts[0].items[0].topics = [F.topicsOf("calculus-ab", 1)[0]]; }, /not a course objective/],
+    [doc => { doc.sections[0].parts[0].items[0].topics.push(F.topicsOf("calculus-bc", 10)[0]); }, /later topic/],
+    [doc => { doc.sections[0].parts[0].calculator = "any"; }, /must be one of none, graphing/],
+    [doc => { doc.sections[0].parts[1].calculator = "none"; }, /calculator/],
+    [doc => { doc.sections[1].parts[0].items[0].type = "MR"; }, /Calculus free response has no type/],
+    [doc => { doc.sections[1].parts[0].items[0].parts[0].points = 2; doc.sections[1].parts[0].items[0].parts[0].rubric.pop(); }, /free response is worth 9/],
+  ];
+  for (const [mutate, pattern] of cases) {
+    const doc = F.unitTest("calculus-bc", 1); mutate(doc);
+    assert.match(check(t, [doc]).problems.join("\n"), pattern);
+  }
+});
+
+test("BC plan guards require editorial IDs, HTML sources, sourced weights, instructional units and exam rules", t => {
+  const bc = plan => plan.courses.find(c => c.id === "calculus-bc");
+  const objective = plan => plan.standards.find(s => s.id.startsWith("BC.10."));
+  const cases = [
+    [plan => { objective(plan).kind = "content"; }, /BC references are editorial objectives/],
+    [plan => { objective(plan).id = "BC.10.1"; }, /BC objectives use/],
+    [plan => { objective(plan).sourceId = plan.standards.find(s => s.id === "AB.1.1").sourceId; }, /official HTML course unit overview/],
+    [plan => { bc(plan).units[9].mcWeight = "10–15%"; }, /BC weights must match/],
+    [plan => { bc(plan).units[9].unit = null; }, /ten instructional units/],
+    [plan => { bc(plan).exam.sections[0].parts[0].minutes++; }, /May 2027/],
+    [plan => { bc(plan).blueprints.unitTest.sections[0].parts[0].questions--; }, /calculus four-part blueprint/],
+    [plan => { bc(plan).blueprints.practiceExam.frPoints = 8; }, /worth nine points/],
+    [plan => { bc(plan).blueprints.practiceExam.minContextFr = 1; }, /at least two/],
+    [plan => { bc(plan).reference = "calculus-bc"; }, /Calculus has no formula reference/],
+  ];
+  for (const [mutate, pattern] of cases) {
+    const result = check(t, [], { mutate: dir => {
+      const file = path.join(dir, "ap.json"), plan = JSON.parse(fs.readFileSync(file, "utf8"));
+      mutate(plan); fs.writeFileSync(file, JSON.stringify(plan));
+    } });
+    assert.match(result.problems.join("\n"), pattern);
+  }
+});
+
+test("BC editorial objectives require schedule, weekly and assessment coverage", t => {
+  const omitted = F.topicsOf("calculus-bc", 10)[0];
+  const all = F.plan.standards.filter(s => A.isAssessmentTopic(s, "calculus-bc")).map(s => s.id);
+  const docs = Array.from({ length: 10 }, (_, i) => F.unitTest("calculus-bc", i + 1));
+  docs.forEach((doc, i) => { A.entries(doc)[0].item.topics = F.topicsOf("calculus-bc", i + 1); });
+  const unit10 = docs[9];
+  A.entries(unit10).forEach(({ item }) => { item.topics = item.topics.filter(ref => ref !== omitted); if (!item.topics.length) item.topics = [all.find(ref => ref.startsWith("BC.10.") && ref !== omitted)]; });
+  const result = check(t, docs, { complete: true, mutate: dir => {
+    fs.mkdirSync(path.join(dir, "weekly/ap"), { recursive: true });
+    fs.writeFileSync(path.join(dir, "weekly/ap/calculus-bc.json"), JSON.stringify({ weeks: [{ week: 1, standards: all.filter(ref => ref !== omitted) }] }));
+  } });
+  assert.ok(result.problems.some(p => p.startsWith("calculus-bc: topics without a test item:") && p.includes(omitted)), result.problems.join("\n"));
+  assert.ok(result.problems.some(p => p.startsWith("calculus-bc: topics without a week:") && p.includes(omitted)), result.problems.join("\n"));
+  assert.ok(!result.problems.some(p => /topics without/.test(p) && /BC\.(?:REVIEW|BEYOND)/.test(p)));
+  const scheduled = check(t, [], { mutate: dir => {
+    const file = path.join(dir, "ap.json"), plan = JSON.parse(fs.readFileSync(file, "utf8"));
+    plan.courses.find(c => c.id === "calculus-bc").schedule.forEach(week => { week.standards = week.standards.filter(ref => ref !== omitted); if (!week.standards.length) week.standards = [all.find(ref => ref.startsWith("BC.10.") && ref !== omitted)]; });
+    fs.writeFileSync(file, JSON.stringify(plan));
+  } });
+  assert.ok(scheduled.problems.some(p => p.includes("no week covers " + omitted)), scheduled.problems.join("\n"));
 });

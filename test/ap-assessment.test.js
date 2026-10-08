@@ -146,3 +146,25 @@ test("ap.html routes resolve and round-trip", () => {
   assert.deepEqual(at("#nope"), ["hub", null, null, null, null, true]);
   assert.deepEqual(A.planCourses(plan).map(c => c.id), A.COURSES);
 });
+
+test("BC uses editorial unit objectives without inventing official granular topic numbers", () => {
+  assert.equal(A.isCalculus("calculus-ab"), true);
+  assert.equal(A.isCalculus("calculus-bc"), true);
+  assert.equal(A.isCalculus("physics-c-mechanics"), false);
+  assert.equal(A.topicUnit("BC.10.POWER_SERIES"), 10);
+  assert.equal(A.topicUnit("BC.1.LIMITS"), 1);
+  assert.equal(A.topicUnit("AB.5.3"), 5);
+  for (const invalid of ["BC.1.1", "BC.0.LIMITS", "BC.11.SERIES", "BC.01.LIMITS", "BC.1.lowercase", "BC.1._LIMITS", "BC.1.LIMITS_", "BC.REVIEW", "BC.BEYOND"]) {
+    assert.equal(A.topicUnit(invalid), null, invalid);
+  }
+  assert.equal(A.isAssessmentTopic({ id: "BC.10.POWER_SERIES", kind: "editorial-objective" }, "calculus-bc"), true);
+  assert.equal(A.isAssessmentTopic({ id: "BC.10.POWER_SERIES", kind: "content" }, "calculus-bc"), false);
+  assert.equal(A.isAssessmentTopic({ id: "AB.1.2", kind: "content" }, "calculus-bc"), false);
+  assert.equal(A.isAssessmentTopic({ id: "AB.1.2", kind: "editorial-objective" }, "calculus-ab"), false);
+  const topics = A.topicsForUnit(plan, "calculus-bc", 10);
+  assert.ok(topics.length > 0);
+  assert.ok(topics.every(topic => topic.id.startsWith("BC.10.") && topic.kind === "editorial-objective"));
+  assert.equal(A.route("calculus-bc", "key", "unit-10"), "#calculus-bc/test/unit-10/key");
+  assert.equal(A.resolve(plan, "#calculus-bc/test/unit-10/key").copy, "key");
+  assert.equal(A.resolve(plan, "#calculus-bc/reference").invalid, true, "BC has no physics formula reference");
+});

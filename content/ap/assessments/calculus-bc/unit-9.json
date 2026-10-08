@@ -1,0 +1,490 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "unit-9",
+  "kind": "unit-test",
+  "unitId": "u9",
+  "title": "Unit 9 test: Parametric Equations, Polar Coordinates, and Vector-Valued Functions",
+  "author": "bc-tests-extensions",
+  "directions": "Original Liminal practice. Section I Part A and Section II Part B are without a calculator; the other parts require a graphing calculator. Show supporting work and justify conclusions in free response. Angles are in radians. Use exact answers without a calculator and three decimal places for calculator work unless a question specifies otherwise. Report raw practice points only.",
+  "figures": [
+    {
+      "id": "bc-u9-f1",
+      "alt": "A curved arc goes from (0, 0) through (−1, 1) to (0, 2). These three points are labeled t = −1, t = 0, and t = 1, respectively; no direction arrows are supplied."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Select one answer for each question.",
+          "items": [
+            {
+              "id": "bc-u9-mc01",
+              "prompt": "The displayed parametric curve has x = t^2 − 1 and y = t + 1 for −1 ≤ t ≤ 1. As t increases, which ordered sequence describes its motion?",
+              "choices": [
+                "(0, 2) → (−1, 1) → (0, 0)",
+                "(−1, 1) → (0, 0) → (0, 2)",
+                "(0, 0) → (0, 2) → (−1, 1)",
+                "(0, 0) → (−1, 1) → (0, 2)"
+              ],
+              "key": "D",
+              "rationale": "Substitute t = −1, 0, and 1 in that order to get (0, 0), (−1, 1), and (0, 2).",
+              "distractorNotes": {
+                "A": "This follows decreasing t.",
+                "B": "This starts at t = 0 instead of t = −1.",
+                "C": "This ignores the intermediate parameter value."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_ORIENTATION"
+              ],
+              "figureIds": [
+                "bc-u9-f1"
+              ]
+            },
+            {
+              "id": "bc-u9-mc02",
+              "prompt": "For x = t^2 and y = t^3 with t > 0, what is d^2y/dx^2 at t = 1?",
+              "choices": [
+                "3/2",
+                "3/4",
+                "3",
+                "6"
+              ],
+              "key": "B",
+              "rationale": "dy/dx = (3t^2)/(2t) = 3t/2. Then d^2y/dx^2 = (3/2)/(2t) = 3/(4t), yielding 3/4.",
+              "distractorNotes": {
+                "A": "This differentiates dy/dx with respect to t but does not divide by dx/dt.",
+                "C": "This divides the second t-derivatives instead of using the parametric rule.",
+                "D": "This reports d^2y/dt^2 instead of d^2y/dx^2."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-u9-mc03",
+              "prompt": "For x = t^3 − 3t and y = t^2, where does the curve have horizontal and vertical tangents?",
+              "choices": [
+                "Horizontal at t = −1 and 1; vertical at t = 0.",
+                "Horizontal at t = 0; no vertical tangents.",
+                "Horizontal at t = 0; vertical at t = −1 and 1.",
+                "No horizontal tangents; vertical at t = −1 and 1."
+              ],
+              "key": "C",
+              "rationale": "dx/dt = 3t^2 − 3 and dy/dt = 2t. A horizontal tangent needs dy/dt = 0 with dx/dt ≠ 0; a vertical tangent needs the reverse.",
+              "distractorNotes": {
+                "A": "This interchanges the numerator and denominator conditions.",
+                "B": "dx/dt vanishes at ±1 while dy/dt does not.",
+                "D": "dy/dt vanishes at 0 while dx/dt does not."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_TANGENTS"
+              ]
+            },
+            {
+              "id": "bc-u9-mc04",
+              "prompt": "A particle has velocity vector v(t) = (2t, 3t^2) and position r(0) = (2, −1). What is r(1)?",
+              "choices": [
+                "(3, 0)",
+                "(1, 1)",
+                "(4, 2)",
+                "(3, 1)"
+              ],
+              "key": "A",
+              "rationale": "Integrate velocity componentwise: r(t) = (2 + t^2, −1 + t^3). Therefore r(1) = (3, 0).",
+              "distractorNotes": {
+                "B": "This gives displacement rather than position.",
+                "C": "This adds endpoint velocity to the initial position.",
+                "D": "This omits the initial vertical coordinate."
+              },
+              "topics": [
+                "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS",
+                "BC.9.PLANAR_MOTION"
+              ]
+            },
+            {
+              "id": "bc-u9-mc05",
+              "prompt": "At one instant, a planar particle has velocity (3, 4) m/s and acceleration (−2, 1) m/s^2. What is the instantaneous rate of change of its speed?",
+              "choices": [
+                "√5 m/s^2",
+                "2/5 m/s^2",
+                "−2 m/s^2",
+                "−2/5 m/s^2"
+              ],
+              "key": "D",
+              "rationale": "The rate of change of speed is (v·a)/|v| = [3(−2) + 4(1)]/5 = −2/5 m/s^2.",
+              "distractorNotes": {
+                "A": "This is acceleration magnitude, not the signed rate of change of speed.",
+                "B": "This reverses the sign of the velocity–acceleration dot product.",
+                "C": "This omits division by speed."
+              },
+              "topics": [
+                "BC.9.SPEED_AND_DISTANCE",
+                "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS"
+              ]
+            },
+            {
+              "id": "bc-u9-mc06",
+              "prompt": "A point on r = 2 sin θ has θ = π/6. What are its Cartesian coordinates?",
+              "choices": [
+                "(1/2, √3/2)",
+                "(√3, 1)",
+                "(√3/2, 1/2)",
+                "(−√3/2, −1/2)"
+              ],
+              "key": "C",
+              "rationale": "At θ = π/6, r = 1. Thus x = r cos θ = √3/2 and y = r sin θ = 1/2.",
+              "distractorNotes": {
+                "A": "This swaps sine and cosine in the coordinate conversion.",
+                "B": "This uses radius 2 instead of the actual radius 1.",
+                "D": "This treats the positive radius as negative."
+              },
+              "topics": [
+                "BC.9.POLAR_COORDINATES"
+              ]
+            },
+            {
+              "id": "bc-u9-mc07",
+              "prompt": "For the polar curve r = 2 + cos θ, what is the slope dy/dx at θ = π/2?",
+              "choices": [
+                "1/2",
+                "−1/2",
+                "2",
+                "−1"
+              ],
+              "key": "A",
+              "rationale": "r = 2 and r′ = −1. Then dx/dθ = r′cos θ − r sin θ = −2 and dy/dθ = r′sin θ + r cos θ = −1, so the slope is 1/2.",
+              "distractorNotes": {
+                "B": "This loses one of the negative signs in the coordinate derivatives.",
+                "C": "This divides dx/dθ by dy/dθ.",
+                "D": "This reports dr/dθ rather than the Cartesian slope."
+              },
+              "topics": [
+                "BC.9.POLAR_DERIVATIVES",
+                "BC.9.POLAR_TANGENTS"
+              ]
+            },
+            {
+              "id": "bc-u9-mc08",
+              "prompt": "The curve r = 3 cos θ is traced once with r ≥ 0 as θ runs from −π/2 to π/2. What is the area it encloses?",
+              "choices": [
+                "9π/2",
+                "9π/4",
+                "9π",
+                "9π/8"
+              ],
+              "key": "B",
+              "rationale": "Area = (1/2)∫ from −π/2 to π/2 of 9 cos^2 θ dθ = 9π/4. The given interval traces the circle once.",
+              "distractorNotes": {
+                "A": "This omits the factor 1/2 in polar area.",
+                "C": "This treats 3 as the radius of the Cartesian circle.",
+                "D": "This integrates only one half of the enclosed region."
+              },
+              "topics": [
+                "BC.9.POLAR_AREA_ONE_CURVE"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "Select one answer. Numerical choices are rounded as displayed.",
+          "items": [
+            {
+              "id": "bc-u9-mc09",
+              "prompt": "A curve is parametrized by x = sin(t^2), y = t^2/2 for 0 ≤ t ≤ 2. What is its arc length?",
+              "choices": [
+                "2.138",
+                "3.506",
+                "4.000",
+                "1.753"
+              ],
+              "key": "B",
+              "rationale": "The speed is √[(2t cos(t^2))^2 + t^2] = t√[4 cos^2(t^2) + 1] on t ≥ 0. Numerical integration from 0 to 2 gives 3.506418990.",
+              "distractorNotes": {
+                "A": "This gives the distance between the endpoints, not curve length.",
+                "C": "This uses the incorrect speed 2t instead of the magnitude of the actual velocity vector.",
+                "D": "This inserts an unnecessary factor 1/2 into the arc-length formula."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_ARC_LENGTH"
+              ]
+            },
+            {
+              "id": "bc-u9-mc10",
+              "prompt": "A particle has velocity v(t) = (e^(−t), sin(t^2)) meters per second, for 0 ≤ t ≤ 2. What distance does it travel?",
+              "choices": [
+                "0.865 m",
+                "1.181 m",
+                "1.489 m",
+                "2.978 m"
+              ],
+              "key": "C",
+              "rationale": "Distance is ∫ from 0 to 2 of √[e^(−2t) + sin^2(t^2)] dt = 1.489014786 m.",
+              "distractorNotes": {
+                "A": "This uses only the horizontal displacement.",
+                "B": "This is the magnitude of displacement, not distance traveled.",
+                "D": "This doubles the speed integral."
+              },
+              "topics": [
+                "BC.9.PLANAR_MOTION",
+                "BC.9.SPEED_AND_DISTANCE"
+              ]
+            },
+            {
+              "id": "bc-u9-mc11",
+              "prompt": "For 0.2 ≤ θ ≤ 1.1, consider the polar region with 2 ≤ r ≤ 2 + sin θ. Both bounding radii are positive on this interval. What is its area?",
+              "choices": [
+                "1.226",
+                "2.451",
+                "0.173",
+                "3.026"
+              ],
+              "key": "A",
+              "rationale": "Since sin θ > 0 on the interval, the outer radius is 2 + sin θ. The area is (1/2)∫ from 0.2 to 1.1 of [(2 + sin θ)^2 − 4] dθ = 1.225556155.",
+              "distractorNotes": {
+                "B": "This omits the factor 1/2 in the difference-of-squares formula.",
+                "C": "This squares the difference of radii instead of subtracting squared radii.",
+                "D": "This includes the inner circular sector as well."
+              },
+              "topics": [
+                "BC.9.POLAR_AREA_TWO_CURVES"
+              ]
+            },
+            {
+              "id": "bc-u9-mc12",
+              "prompt": "The polar curve r = 1 + 0.3 cos(2θ) is traced once for 0 ≤ θ < 2π, with r always positive. What is the total length, in radians, of the set of angles for which the point is more than 1.2 units from the origin?",
+              "choices": [
+                "0.841",
+                "3.364",
+                "4.601",
+                "1.682"
+              ],
+              "key": "D",
+              "rationale": "Because r > 0, the distance condition is cos(2θ) > 2/3. There are two cosine periods on the θ interval; their total qualifying angular length is 2 arccos(2/3) = 1.682137341.",
+              "distractorNotes": {
+                "A": "This counts only half the qualifying angular intervals.",
+                "B": "This doubles the qualifying angular measure.",
+                "C": "This is the complementary angular measure."
+              },
+              "topics": [
+                "BC.9.POLAR_COORDINATES",
+                "BC.9.POLAR_TRACING",
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show integral or equation setups and justify conclusions.",
+          "items": [
+            {
+              "id": "bc-u9-fr1",
+              "prompt": "A plotter moves in a plane with position r(t) = (x(t), y(t)), measured in centimeters, and velocity v(t) = (1 + 0.4 cos(t^2), sin t + 0.2), measured in centimeters per second. Its initial position is r(0) = (0, 1), and 0 ≤ t ≤ 3.",
+              "topics": [
+                "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS",
+                "BC.9.PLANAR_MOTION",
+                "BC.9.SPEED_AND_DISTANCE",
+                "BC.9.PARAMETRIC_ARC_LENGTH"
+              ],
+              "context": true,
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the plotter’s position at t = 3.",
+                  "points": 3,
+                  "answer": "r(3) = (3.281, 3.590) cm.",
+                  "steps": [
+                    "Integrate each velocity component and add its initial coordinate.",
+                    "x(3) = ∫ from 0 to 3 of [1 + 0.4 cos(t^2)] dt = 3.281145423.",
+                    "y(3) = 1 + ∫ from 0 to 3 of [sin t + 0.2] dt = 3.589992497."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up componentwise integrals."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Includes the initial position and obtains x(3)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains y(3) and gives the coordinate pair with units."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the acceleration vector at t = 1 and determine whether speed is increasing or decreasing then. Justify.",
+                  "points": 3,
+                  "answer": "a(1) = (−0.673, 0.540) cm/s^2; speed is decreasing.",
+                  "steps": [
+                    "Differentiate v: a(t) = (−0.8t sin(t^2), cos t).",
+                    "At t = 1, v ≈ (1.216, 1.041) and a ≈ (−0.673, 0.540).",
+                    "Their dot product is −0.255955202 < 0. Since speed is positive, its derivative has the same negative sign."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates both velocity components correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the acceleration and correctly computes either the velocity–acceleration dot product or the derivative of speed."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the sign of that dot product or speed derivative to justify decreasing speed."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the total distance traveled from t = 0 to t = 3.",
+                  "points": 3,
+                  "answer": "4.321 cm.",
+                  "steps": [
+                    "Integrate the magnitude of velocity: ∫ from 0 to 3 of √[(1 + 0.4 cos(t^2))^2 + (sin t + 0.2)^2] dt.",
+                    "Numerical evaluation gives 4.321193771 cm."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Forms speed from both components."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates speed over the correct time interval."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates as 4.321 cm."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show exact work and reasoning.",
+          "items": [
+            {
+              "id": "bc-u9-fr2",
+              "prompt": "Let R be the region inside the polar curve r = 2 cos θ and outside the circle r = 1. Use the tracing interval −π/2 ≤ θ ≤ π/2 for r = 2 cos θ, where its radius is nonnegative and the curve is traced once.",
+              "topics": [
+                "BC.9.POLAR_AREA_TWO_CURVES",
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION",
+                "BC.9.POLAR_DERIVATIVES",
+                "BC.9.POLAR_TANGENTS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the boundary intersection angles in the given tracing interval. State and justify one continuous angular interval that describes all of R with inner radius 1.",
+                  "points": 3,
+                  "answer": "Intersection angles −π/3 and π/3; the interval is [−π/3, π/3].",
+                  "steps": [
+                    "Solve 2 cos θ = 1 to obtain θ = ±π/3 within the stated tracing interval.",
+                    "The outer radius is at least 1 exactly when cos θ ≥ 1/2, which holds on [−π/3, π/3]."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds both intersection angles."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives the full interval [−π/3, π/3]."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies the interval using 2 cos θ ≥ 1 and the specified single tracing."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the exact area of R.",
+                  "points": 3,
+                  "answer": "π/3 + √3/2",
+                  "steps": [
+                    "Area = (1/2)∫ from −π/3 to π/3 of [4 cos^2 θ − 1] dθ.",
+                    "Since 4 cos^2 θ − 1 = 1 + 2 cos(2θ), the area is (1/2)[θ + sin(2θ)] from −π/3 to π/3 = π/3 + √3/2."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses outer squared radius minus inner squared radius with factor 1/2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the correct bounds and a valid antiderivative."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the exact area."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the Cartesian tangent line to r = 2 cos θ at θ = π/4. Verify that the derivative denominator used for the slope is nonzero.",
+                  "points": 3,
+                  "answer": "The tangent line is y = 1.",
+                  "steps": [
+                    "At θ = π/4, r = √2 and the point is (1, 1).",
+                    "Here r′ = −2 sin θ, so dx/dθ = −4 sin θ cos θ = −2 and dy/dθ = 2(cos^2 θ − sin^2 θ) = 0.",
+                    "The slope is 0/(−2) = 0, giving y = 1."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the point (1, 1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes both coordinate derivatives and verifies dx/dθ ≠ 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives the tangent line y = 1."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

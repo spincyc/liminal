@@ -16,18 +16,20 @@
    points, rubric, answer, steps, figureIds, answerFigureIds) keep their
    weekly meaning. Scores are raw points only: there is no conversion. */
 (function (root, factory) {
-  const api = factory();
-  if (typeof module === "object" && module.exports) module.exports = api;
+  const node = typeof module === "object" && module.exports;
+  const api = factory(node ? require("./assessment") : root.LiminalAssessment,
+    node ? require("./assessment-adapters") : root.LiminalAssessmentAdapters);
+  if (node) module.exports = api;
   else root.LiminalAp = api;
-})(typeof window === "object" ? window : globalThis, function () {
+})(typeof window === "object" ? window : globalThis, function (Assessment, Adapters) {
   "use strict";
   const FORMAT = "liminal-ap-assessment";
   const REFERENCE_FORMAT = "liminal-ap-reference";
   const VERSION = 1;
   const DISCLAIMER = "AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.";
-  const COURSES = ["calculus-ab", "physics-1", "physics-c-mechanics"];
-  const TOPIC_PREFIX = { "calculus-ab": "AB", "physics-1": "P1", "physics-c-mechanics": "CM" };
-  const ITEM_PREFIX = { "calculus-ab": "ab", "physics-1": "p1", "physics-c-mechanics": "cm" };
+  const COURSES = ["calculus-ab", "calculus-bc", "physics-1", "physics-c-mechanics"];
+  const TOPIC_PREFIX = { "calculus-ab": "AB", "calculus-bc": "BC", "physics-1": "P1", "physics-c-mechanics": "CM" };
+  const ITEM_PREFIX = { "calculus-ab": "ab", "calculus-bc": "bc", "physics-1": "p1", "physics-c-mechanics": "cm" };
   const LETTERS = ["A", "B", "C", "D"];
   const CALCULATOR = { none: "No calculator", graphing: "Graphing calculator", any: "Calculator allowed" };
   const FR_TYPES = { MR: "Mathematical Routines", TBR: "Translation Between Representations", EDA: "Experimental Design and Analysis", QQT: "Qualitative/Quantitative Translation" };
@@ -39,108 +41,84 @@
 
   function own(object, key) { return !!object && Object.prototype.hasOwnProperty.call(object, key); }
   function isMc(item) { return !!item && Array.isArray(item.choices); }
+  function isCalculus(courseId) { return courseId === "calculus-ab" || courseId === "calculus-bc"; }
   function calculatorLabel(policy) { return own(CALCULATOR, policy) ? CALCULATOR[policy] : ""; }
   function kindLabel(kind) { return own(KIND_LABEL, kind) ? KIND_LABEL[kind] : ""; }
   function frTypeLabel(type) { return own(FR_TYPES, type) ? FR_TYPES[type] : ""; }
-  // "AB.5.3" → 5; editorial objectives and malformed references → null.
+  // BC uses Liminal editorial objective slugs, not invented official topic
+  // numbers. Review objectives and malformed references are not unit topics.
   function topicUnit(topic) {
-    const match = /^(?:AB|P1|CM)\.([1-9][0-9]*)\.[1-9][0-9]*$/.exec(String(topic || ""));
+    const value = String(topic || "");
+    const match = /^(?:AB|P1|CM)\.([1-9][0-9]*)\.[1-9][0-9]*$/.exec(value)
+      || /^BC\.([1-9]|10)\.[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$/.exec(value);
     return match ? Number(match[1]) : null;
+  }
+  function isAssessmentTopic(standard, courseId) {
+    return !!standard && own(TOPIC_PREFIX, courseId) && typeof standard.id === "string"
+      && standard.id.startsWith(TOPIC_PREFIX[courseId] + ".") && topicUnit(standard.id) !== null
+      && standard.kind === (courseId === "calculus-bc" ? "editorial-objective" : "content");
+  }
+  function topicsForUnit(plan, courseId, unit) {
+    return (plan && plan.standards || []).filter(standard => isAssessmentTopic(standard, courseId) && topicUnit(standard.id) === unit);
   }
   // An item counts toward the unit of its first (primary) topic.
   function primaryUnit(item) { return item && Array.isArray(item.topics) ? topicUnit(item.topics[0]) : null; }
   function assessmentId(kind, unit) { return kind === "practice-exam" ? "practice-exam" : "unit-" + unit; }
   function itemPoints(item) {
-    if (isMc(item)) return 1;
-    return (item && Array.isArray(item.parts) ? item.parts : []).reduce((sum, part) => sum + (Number.isInteger(part.points) ? part.points : 0), 0);
+    return item ? Assessment.maximum(Adapters.apItem(item).scoring) : 0;
   }
   function rubricPoints(rubric) { return (Array.isArray(rubric) ? rubric : []).reduce((sum, row) => sum + (Number.isInteger(row.points) ? row.points : 0), 0); }
 
   // Every item in reading order with its printed number: multiple choice is
   // numbered 1…n across Section I, free response 1…m across Section II.
   function entries(doc) {
-    const out = [];
-    let mc = 0, fr = 0;
-    (doc && doc.sections || []).forEach(section => (section.parts || []).forEach(part => (part.items || []).forEach(item => {
-      out.push({ section, part, item, number: isMc(item) ? ++mc : ++fr });
-    })));
-    return out;
+    return Assessment.entries(Adapters.apDocument(doc)).map(entry => ({
+      section: entry.section.source, part: entry.part.source, item: entry.item.source, number: entry.number,
+    }));
   }
-  function minutes(doc) { return (doc && doc.sections || []).reduce((sum, s) => sum + (s.parts || []).reduce((a, p) => a + (Number(p.minutes) || 0), 0), 0); }
+  function minutes(doc) { return Assessment.totals(Adapters.apDocument(doc)).minutes; }
   function counts(doc) {
-    const list = entries(doc);
-    return { mc: list.filter(e => isMc(e.item)).length, fr: list.filter(e => !isMc(e.item)).length, minutes: minutes(doc), points: list.reduce((s, e) => s + itemPoints(e.item), 0) };
+    const model = Adapters.apDocument(doc), list = Assessment.entries(model), total = Assessment.totals(model);
+    const mc = list.filter(entry => entry.item.scoring.kind === "binary").length;
+    return { mc, fr: total.items - mc, minutes: total.minutes, points: total.points };
   }
 
   // Maximum raw points by section and by unit (primary topic). A tally is a
   // record of raw points earned; it is never converted to a score.
   function tally(doc) {
-    const sections = (doc && doc.sections || []).map(section => {
-      const items = (section.parts || []).flatMap(part => part.items || []);
-      return { id: section.id, title: section.title, kind: section.kind, items: items.length, points: items.reduce((s, item) => s + itemPoints(item), 0) };
+    const model = Adapters.apDocument(doc), list = Assessment.entries(model);
+    const bySection = new Map(Assessment.groupTotals(list, entry => entry.section.id).map(row => [row.key, row]));
+    const sections = model.sections.map(section => {
+      const row = bySection.get(section.id) || { items: 0, points: 0 };
+      return { id: section.id, title: section.source.title, kind: section.source.kind, items: row.items, points: row.points };
     });
-    const units = new Map();
-    entries(doc).forEach(({ item }) => {
-      const unit = primaryUnit(item);
-      const row = units.get(unit) || { unit, items: 0, points: 0 };
-      row.items += 1; row.points += itemPoints(item); units.set(unit, row);
-    });
-    return { sections, units: [...units.values()].sort((a, b) => (a.unit || 0) - (b.unit || 0)),
-      total: { items: sections.reduce((s, r) => s + r.items, 0), points: sections.reduce((s, r) => s + r.points, 0) } };
+    const units = Assessment.groupTotals(list, entry => primaryUnit(entry.item.source))
+      .map(row => ({ unit: row.key, items: row.items, points: row.points })).sort((a, b) => (a.unit || 0) - (b.unit || 0));
+    const total = Assessment.totals(model);
+    return { sections, units, total: { items: total.items, points: total.points } };
   }
   // Raw points earned from recorded responses: { mc: { <number>: "B" },
   // fr: { <itemId>: { <label>: points } } }. Unanswered counts as zero.
   function rawPoints(doc, responses = {}) {
     const result = tally(doc);
-    const earned = new Map(result.sections.map(s => [s.id, 0]));
-    const byUnit = new Map(result.units.map(u => [u.unit, 0]));
-    entries(doc).forEach(({ section, item, number }) => {
-      let points = 0;
-      if (isMc(item)) points = responses.mc && responses.mc[number] === item.key ? 1 : 0;
-      else {
-        const given = responses.fr && responses.fr[item.id] || {};
-        item.parts.forEach(part => { const value = Number(given[part.label]); if (Number.isInteger(value)) points += Math.max(0, Math.min(part.points, value)); });
-      }
-      earned.set(section.id, earned.get(section.id) + points);
-      byUnit.set(primaryUnit(item), byUnit.get(primaryUnit(item)) + points);
-    });
-    return { sections: result.sections.map(s => ({ id: s.id, title: s.title, earned: earned.get(s.id), points: s.points })),
-      units: result.units.map(u => ({ unit: u.unit, earned: byUnit.get(u.unit), points: u.points })) };
+    const list = Assessment.entries(Adapters.apDocument(doc));
+    const outcomes = list.map(({ item, number }) => Assessment.outcome(item.scoring,
+      item.scoring.kind === "binary" ? responses.mc && responses.mc[number] : responses.fr && responses.fr[item.source.id]));
+    const earned = new Map(Assessment.groupTotals(list, entry => entry.section.id, outcomes).map(row => [row.key, row.earned]));
+    const byUnit = new Map(Assessment.groupTotals(list, entry => primaryUnit(entry.item.source), outcomes).map(row => [row.key, row.earned]));
+    return { sections: result.sections.map(s => ({ id: s.id, title: s.title, earned: earned.get(s.id) || 0, points: s.points })),
+      units: result.units.map(u => ({ unit: u.unit, earned: byUnit.get(u.unit) || 0, points: u.points })) };
   }
 
   function copyFigure(figure) {
     return { id: figure.id, alt: figure.alt, ...(figure.caption ? { caption: figure.caption } : {}),
       ...(figure.notToScale === true ? { notToScale: true } : {}), ...(typeof figure.svg === "string" ? { svg: figure.svg } : {}) };
   }
-  function ids(value) { return Array.isArray(value) && value.length ? value.slice() : null; }
-  // Explicit allowlists: a student copy carries prompts, choices, points and
-  // given figures only. Keys, rationales, rubrics, answers, steps, topics,
-  // question types and answer-only figures enter the key copy alone.
-  function projectItem(item, number, key) {
-    const base = { number, id: item.id, prompt: item.prompt, ...(ids(item.figureIds) ? { figureIds: ids(item.figureIds) } : {}) };
-    if (isMc(item)) {
-      return { ...base, kind: "mc", choices: item.choices.slice(), points: 1,
-        ...(key ? { key: item.key, rationale: item.rationale, topics: item.topics.slice(),
-          ...(item.distractorNotes ? { distractorNotes: LETTERS.filter(l => own(item.distractorNotes, l)).reduce((o, l) => (o[l] = item.distractorNotes[l], o), {}) } : {}),
-          ...(ids(item.answerFigureIds) ? { answerFigureIds: ids(item.answerFigureIds) } : {}) } : {}) };
-    }
-    return { ...base, kind: "fr", points: itemPoints(item),
-      ...(key ? { topics: item.topics.slice(), ...(item.type ? { type: item.type } : {}), ...(item.context === true ? { context: true } : {}),
-        ...(ids(item.answerFigureIds) ? { answerFigureIds: ids(item.answerFigureIds) } : {}) } : {}),
-      parts: item.parts.map(part => ({ label: part.label, prompt: part.prompt, points: part.points,
-        ...(ids(part.figureIds) ? { figureIds: ids(part.figureIds) } : {}),
-        ...(key ? { answer: part.answer, steps: part.steps.slice(), rubric: part.rubric.map(r => ({ points: r.points, criterion: r.criterion })),
-          ...(ids(part.answerFigureIds) ? { answerFigureIds: ids(part.answerFigureIds) } : {}) } : {}) })) };
-  }
   function figureRefs(item) {
     return [...(item.figureIds || []), ...(item.answerFigureIds || []), ...(item.parts || []).flatMap(p => [...(p.figureIds || []), ...(p.answerFigureIds || [])])];
   }
   function project(doc, key) {
-    const numbered = entries(doc);
-    let index = 0;
-    const sections = doc.sections.map(section => ({ id: section.id, title: section.title, kind: section.kind,
-      parts: section.parts.map(part => ({ id: part.id, ...(part.title ? { title: part.title } : {}), minutes: part.minutes, calculator: part.calculator,
-        directions: part.directions, items: part.items.map(item => projectItem(item, numbered[index++].number, key)) })) }));
+    const { sections } = Assessment.project(Adapters.apDocument(doc), key);
     const used = new Set(sections.flatMap(s => s.parts.flatMap(p => p.items.flatMap(figureRefs))));
     const figures = (doc.figures || []).filter(f => used.has(f.id)).map(copyFigure);
     const result = tally(doc);
@@ -321,7 +299,7 @@
     return { ...plain, invalid: true };
   }
   return { FORMAT, REFERENCE_FORMAT, VERSION, DISCLAIMER, COURSES, TOPIC_PREFIX, ITEM_PREFIX, LETTERS, CALCULATOR, FR_TYPES, KEY_SHARE, LONGEST_SHARE, CLAIMS,
-    isMc, calculatorLabel, kindLabel, frTypeLabel, topicUnit, primaryUnit, assessmentId, itemPoints, rubricPoints, entries, minutes, counts,
+    isMc, isCalculus, isAssessmentTopic, topicsForUnit, calculatorLabel, kindLabel, frTypeLabel, topicUnit, primaryUnit, assessmentId, itemPoints, rubricPoints, entries, minutes, counts,
     tally, rawPoints, studentCopy, keyCopy, answerSheet, keyBalance, blueprintProblems, claimProblems, strings, normalized, identity,
     route, resolve, planCourses };
 });

@@ -1,7 +1,7 @@
 # AP courses
 
 Liminal's courses for AP® exams are 36-week weekly courses for AP® Calculus
-AB, AP® Physics 1 and AP® Physics C: Mechanics. This document is the content
+AB and BC, AP® Physics 1 and AP® Physics C: Mechanics. This document is the content
 contract for their weekly coursework and figures. The general weekly contract
 in [weekly coursework](weekly-coursework.md) still applies. Unit tests and
 practice exams use their own assessment document type, documented in
@@ -14,13 +14,13 @@ AP® and Advanced Placement® are trademarks registered by the College Board, wh
 | Item | Value |
 | --- | --- |
 | Track | `ap` (registry entry in `src/lib/weekly.js`, `NAMED_TRACKS.ap`) |
-| Courses | `calculus-ab`, `physics-1`, `physics-c-mechanics`, in that order |
+| Courses | `calculus-ab`, `calculus-bc`, `physics-1`, `physics-c-mechanics`, in that order |
 | Plan | `content/ap.json`, built to `content/ap-plan.js` (`LIMINAL_AP_PLAN`) and `content/ap-plan.json` |
 | Weekly course | `content/weekly/ap/<courseId>.json`: `trackId: "ap"`, `courseId`, no `grade` |
 | Figures | `content/weekly/figures/ap/<courseId>/<figureId>.svg` |
 | Routes | `weeks.html#ap/<courseId>/<week>`; year-plan links go to `ap.html#<courseId>` and `ap.html#<courseId>/<unitId>` |
 | Context line | "Prepares for the AP® exam · flexible placement" |
-| IDs | items `ab-w05-a3`, figures `ab-w05-f2` (prefixes `ab`, `p1`, `cm`) |
+| IDs | items `ab-w05-a3`, figures `ab-w05-f2` (prefixes `ab`, `bc`, `p1`, `cm`) |
 
 `content/ap.json` follows the named-plan contract shared with
 `content/high-school-math.json`: `version: 1`; `track { id: "ap", title,
@@ -28,7 +28,7 @@ description, scopeNote }`; `sources` (each with `id`, `title`, `publisher`,
 `edition`, `note`, an HTTPS `url` and an `accessed` date); `standards` (each
 with `id`, `label`, `sourceId`, `locator`, `gradeBand`, and `kind` of
 `content`, `editorial-objective`, `practice` or `extension`); and exactly the
-three courses, each with `title`, `scopeNote`, `nextStep`, `prerequisites`,
+four courses, each with `title`, `scopeNote`, `nextStep`, `prerequisites`,
 `outcomes` and `units` totalling 36 weeks. A unit has `id` (`u1`, `u2`, …),
 `title`, `weeks`, `focus`, `bridge`, `learning`, `standards`, `activities` and
 `evidence`. CED topics are standards of kind `content` (`AB.1.2`, `P1.8.4`,
@@ -37,8 +37,26 @@ some unit, and every week's `standards` lie within its unit. Other fields
 (exam facts, blueprints, notes) pass through for the plan page.
 
 The AP track is in the release inventory (`inventory: true`), so
-`check-weekly --complete` requires all three courses, and the release gate runs
+`check-weekly --complete` requires all four courses, and the release gate runs
 `check-ap --complete`.
+
+BC's granular objectives use descriptive IDs such as
+`BC.10.ENDPOINT_TESTS`, with kind `editorial-objective`. They are Liminal's
+detailed checklist for the published ten-unit scope, sourced to the official
+HTML unit overview; they are not official numbered CED topics. These unit
+objectives participate in the same weekly and assessment coverage checks as
+the other courses' content references. `BC.REVIEW` and `BC.BEYOND` describe the
+editorial final unit and do not serve as assessment topic tags.
+
+BC is a complete first-calculus course with a precalculus prerequisite, not an
+AB sequel. Its 30 instructional weeks include the AB foundation, additional
+integration and differential-equation work, parametric/polar/vector functions,
+and sequences and series. Two review weeks precede the week-33 practice exam;
+remediation and investigations follow. Align this teaching sequence with the
+learner's actual examination calendar. Selected original AB material is adapted
+inside the separately authored BC course; no runtime fragment-hydration system
+is introduced. The actual examination's AB subscore is not estimated from
+Liminal points.
 
 ## Weekly fields used by AP courses
 
@@ -57,7 +75,7 @@ All are optional fields of the weekly contract; the
   `{ points, criterion }` rows summing to `points`. Rubrics award points for
   reasoning, not only final answers. Students see the point value; the rubric
   appears only in keys.
-- **Calculator policy:** every AP worksheet sets `calculator`. Calculus AB uses
+- **Calculator policy:** every AP worksheet sets `calculator`. Calculus uses
   `none` or `graphing`, matching the exam's split. Physics uses `any`
   (four-function, scientific or graphing, as on the exam). `scientific` is
   available for sheets that need only that.
@@ -121,8 +139,9 @@ State these in sheet directions where they matter:
 
 ## Sources and claims
 
-- Authors and reviewers receive only `.scratch/ap-design/ced-topics.json`
-  (unit and topic titles, weightings) and exam-format facts. Never give them,
+- Authors and reviewers receive only course/unit/topic scope metadata from
+  `content/ap.json` and sourced HTML overview/exam-format facts. BC's detailed
+  checklist remains explicitly editorial. Never give them,
   or quote, College Board course and exam description PDFs, released or
   sample questions, scoring guidelines, or equation sheets. College Board does
   not permit its copyrighted content to be used with generative AI.
@@ -150,11 +169,11 @@ State these in sheet directions where they matter:
 
 | Path | Holds |
 | --- | --- |
-| `content/ap.json` | Plan metadata for the `ap` track: sources, standards (framework topics `AB.1.2`, `P1.8.4`, `CM.2.9` with kind `content`, plus editorial objectives `AB.REVIEW`, `AB.BEYOND`, `P1.REVIEW`, `P1.SYNTHESIS`, `CM.TOOLKIT`, `CM.REVIEW`, `CM.SYNTHESIS`), and three courses. Each course has `units` (the named-plan contract plus `unit`, `mcWeight`, `classPeriods`, `test`), a 36-entry `schedule` (`week`, `unitId`, `title`, `standards`, optional `assessment` and `investigation`), the `exam` block (May 2027 format, `sourceId`, `checked`), and `blueprints`. The weekly build validates it as the named plan and writes `content/ap-plan.js` (`LIMINAL_AP_PLAN`) and `content/ap-plan.json`. |
-| `content/ap/assessments/<course>/unit-<n>.json`, `practice-exam.json` | One unit test per framework unit (8 / 8 / 7) and one practice exam per course. |
+| `content/ap.json` | Plan metadata for the `ap` track: sources, standards (framework topics `AB.1.2`, `P1.8.4`, `CM.2.9` with kind `content`, plus editorial objectives `AB.REVIEW`, `AB.BEYOND`, `P1.REVIEW`, `P1.SYNTHESIS`, `CM.TOOLKIT`, `CM.REVIEW`, `CM.SYNTHESIS`), and four courses, including the descriptive BC editorial objectives above. Each course has `units` (the named-plan contract plus `unit`, `mcWeight`, `classPeriods`, `test`), a 36-entry `schedule` (`week`, `unitId`, `title`, `standards`, optional `assessment` and `investigation`), the `exam` block (May 2027 format, `sourceId`, `checked`), and `blueprints`. The weekly build validates it as the named plan and writes `content/ap-plan.js` (`LIMINAL_AP_PLAN`) and `content/ap-plan.json`. |
+| `content/ap/assessments/<course>/unit-<n>.json`, `practice-exam.json` | One unit test per framework unit (8 / 10 / 8 / 7) and one practice exam per course. |
 | `content/ap/figures/<course>/<figureId>.svg` | Assessment figures, admitted by `tools/lib/weekly-figures.js` (loss-free sanitizer round trip, `currentColor`, `viewBox`, 12 KB). Kept apart from weekly figures so each build's orphan check owns one directory. |
 | `content/ap/references/<course>.json` | Physics formula references (Liminal's own grouping). |
-| `src/lib/ap-assessment.js` | Pure model (`LiminalAp`): projections, tallies, blueprint and key checks, claims lint, routes. |
+| `src/lib/ap-assessment.js` | AP policy/model (`LiminalAp`): projections, tallies, blueprint and key checks, claims lint, routes. Ordering, projection mechanics and typed outcomes use the [shared assessment platform](assessment-platform.md). |
 | `tools/check-ap.js` | Validator; `tools/build-ap.js` writes `dist/content/ap.js` (`LIMINAL_AP`: index of assessments and references) and `dist/content/ap/**`. |
 | `src/ap.html`, `src/app/ap.js`, `src/app/ap-render.js`, `src/styles/ap.css` | The page. |
 
@@ -170,10 +189,10 @@ State these in sheet directions where they matter:
 ```
 
 - Multiple choice: `{ id, prompt, choices[4], key: "A"–"D", rationale, distractorNotes?: { <each wrong letter>: text }, topics, figureIds?, answerFigureIds? }`.
-- Free response: `{ id, prompt (shared stimulus), type? (physics: MR | TBR | EDA | QQT), context? (Calculus AB: real-world context), topics, figureIds?, answerFigureIds?, parts: [{ label: "a", "b", …, prompt, points, rubric: [{ points, criterion }], answer, steps[≥1], figureIds?, answerFigureIds? }] }`.
+- Free response: `{ id, prompt (shared stimulus), type? (physics: MR | TBR | EDA | QQT), context? (calculus: real-world context), topics, figureIds?, answerFigureIds?, parts: [{ label: "a", "b", …, prompt, points, rubric: [{ points, criterion }], answer, steps[≥1], figureIds?, answerFigureIds? }] }`.
 - Shared item model: `prompt`, `choices`, `key`, `points`, `rubric`, `answer`, `steps`, `figureIds` and `answerFigureIds` mean what they mean on weekly worksheet items. Multiple choice is worth 1 point; a free-response item is worth the sum of its parts.
-- IDs: items `<ab|p1|cm>-<u<n>|pe>-mcNN` / `-frN`, numbered as printed (multiple choice 1…n across Section I, free response 1…m across Section II); figures `<prefix>-<u<n>|pe>-fN`.
-- Calculator: Calculus AB parts are `none` or `graphing`; physics parts are `any`.
+- IDs: items `<ab|bc|p1|cm>-<u<n>|pe>-mcNN` / `-frN`, numbered as printed (multiple choice 1…n across Section I, free response 1…m across Section II); figures `<prefix>-<u<n>|pe>-fN`.
+- Calculator: Calculus AB/BC parts are `none` or `graphing`; physics parts are `any`.
 - Text is plain (no markup, no LaTeX delimiters) and renders through `LiminalRender.renderText` with math typesetting.
 - The first topic of an item is its primary topic: it decides the unit in blueprints and tallies.
 
@@ -181,15 +200,15 @@ State these in sheet directions where they matter:
 
 Always:
 
-- Plan: three courses in order; units u1… total 36 weeks; each content unit's references are exactly its framework topics (C:M u1 adds `CM.TOOLKIT`); the last unit is the editorial review unit and holds the practice exam; every reference is mapped; each schedule week's references belong to its unit; every topic appears in a week; each unit's test sits in its last week and the practice exam in week 33; physics units each have a paper-investigation week; physics courses carry the lab note and a reference; course titles read "Course for AP® …"; `notice` is the exact disclaimer; sources have https URLs and accessed dates; the practice-exam `mcByUnit` totals 42 and every unit's share lies inside its framework weighting.
-- Each assessment: format, path-matching `courseId`/`id`, kind and `unitId`; IDs as above; four distinct choices; key letter; rationale; distractor notes cover exactly the wrong letters; topics are framework topics of the course; physics FR types; parts labeled a, b, c…; rubric rows sum to each part's points; figures declared once, used, present on disk and admissible; given and answer-only figure sets disjoint; alt text does not contain the keyed choice; plain text.
-- Blueprint (`LiminalAp.blueprintProblems`): unit tests use `blueprints.unitTest` (AB: I-A 8 none, I-B 4 graphing, II-A 1 graphing FR, II-B 1 none FR, 9 points each; physics: 12 MC and 2 FR of different types worth MR 10, TBR 12, EDA 10, QQT 8; 50–70 minutes in all); each item's primary topic is in the tested unit and no topic is from a later unit. Practice exams match the `exam` block exactly (counts, minutes, calculator per part), the multiple-choice count per unit, 9-point AB FR with at least two in context, and one physics FR of each type.
+- Plan: four courses in order; units u1… total 36 weeks; each content unit's references are exactly its course topics/objectives (C:M u1 adds `CM.TOOLKIT`); the last unit is the editorial review unit and holds the practice exam; every reference is mapped; each schedule week's references belong to its unit; every topic appears in a week; each unit's test sits in its last week and the practice exam in week 33; physics units each have a paper-investigation week; physics courses carry the lab note and a reference; course titles read "Course for AP® …"; `notice` is the exact disclaimer; sources have https URLs and accessed dates; the practice-exam `mcByUnit` totals 42 and every unit's share lies inside its framework weighting.
+- Each assessment: format, path-matching `courseId`/`id`, kind and `unitId`; IDs as above; four distinct choices; key letter; rationale; distractor notes cover exactly the wrong letters; topics are framework topics or BC editorial unit objectives of the course; physics FR types; parts labeled a, b, c…; rubric rows sum to each part's points; figures declared once, used, present on disk and admissible; given and answer-only figure sets disjoint; alt text does not contain the keyed choice; plain text.
+- Blueprint (`LiminalAp.blueprintProblems`): unit tests use `blueprints.unitTest` (AB/BC: I-A 8 none, I-B 4 graphing, II-A 1 graphing FR, II-B 1 none FR, 9 points each; physics: 12 MC and 2 FR of different types worth MR 10, TBR 12, EDA 10, QQT 8; 50–70 minutes in all); each item's primary topic is in the tested unit and no topic is from a later unit. Practice exams match the `exam` block exactly (counts, minutes, calculator per part), the multiple-choice count per unit, 9-point calculus FR with at least two in context, and one physics FR of each type.
 - Key balance (`LiminalAp.keyBalance`): each letter keys 15–35% of a test's multiple choice; the key is the unique longest choice in at most 40%.
 - Duplicates: no displayed item (normalized prompt, choices in any order, figure drawings, FR part prompts) repeats across any course's unit tests, practice exams, or AP weekly examples and worksheet items (`content/weekly/ap/<course>.json`).
 - Claims lint (`LiminalAp.claimProblems`) over the plan, assessments, references, AP weekly files, and the AP page copy: "guarantee" beside an outcome (score, pass, exam, AP, credit, grade, result, success, "a 5"; existence theorems and conservation laws may say "guarantees"), score prediction, "score a 5" and similar, 1–5 scale or scaled-score conversions, "official" (allowed when the sentence names College Board or Bluebook), endorsement or authorization claims, "pass the exam" or college-credit claims, and the mark used as a noun or possessive. A negated sentence passes ("not AP scores", "does not predict"), as does the disclaimer.
 - Disclaimer: any page in the pages directory (default `src/`, `--pages dist` after a build) that shows "AP®" or "Advanced Placement" contains the exact disclaimer; `lib/weekly.js`'s `AP_DISCLAIMER` equals it.
 
-With `--complete` (the release gate once the courses land): every unit test, practice exam and physics reference exists; every framework topic appears in at least one test item and in at least one weekly week; each physics FR type appears in at least three unit tests.
+With `--complete` (the release gate once the courses land): every unit test, practice exam and physics reference exists; every framework topic or BC editorial unit objective appears in at least one test item and in at least one weekly week; each physics FR type appears in at least three unit tests.
 
 ### Projections and scoring
 
@@ -202,7 +221,7 @@ With `--complete` (the release gate once the courses land): every unit test, pra
 - The plan reuses the high-school plan pattern (`LiminalHighSchool.pacedUnits`, `high-school.css`): units with goals, coursework, a week list (investigation and test marks), framework topics, and the unit test's student and key links ("in preparation" until the file exists); the exam format with source and date; the physics lab note; a raw-points note pointing to College Board's Bluebook practice; scope, starting points with links to prerequisite plans, and sources.
 - Student copy: header with name and date, directions, a sections-and-timing table, each part's calculator badge, numbered items with choices or FR parts, points and blank workspace, then a separate answer sheet (one bubble row per multiple-choice question). Physics booklets append the formula reference. The key is not in the page while a student copy is shown.
 - Answer key: multiple-choice key table, rationales with distractor notes and topics, FR scoring guidelines (answer, steps, rubric table per part), and a raw-point tally by section and unit to fill in by hand.
-- Print: the route on screen is what prints, so student and key copies are separate printouts. Section II, the answer sheet, the appended reference and the tally start new pages. Break rules keep items, FR parts and key question introductions together when they fit a page. Keys place given and completed part figures beside each other where space permits, retaining both drawings; figures are capped at 90 mm high in print. Navigation and controls are hidden; the footer with the disclaimer prints at the end. Plans print with every disclosure open.
+- Print: the route on screen is what prints, so student and key copies are separate printouts. Section II, the answer sheet, the appended reference and the tally start new pages. Break rules keep items, FR parts, student introductions with their first part, and key question introductions together when they fit a page. Keys place given and completed part figures beside each other where space permits, retaining both drawings; figures are capped at 90 mm high in print. Navigation and controls are hidden; the footer with the disclaimer prints at the end. Plans print with every disclosure open.
 - Phone (320–390 px) has no horizontal scroll; controls are at least 44 px; dark mode follows `tokens.css`; print is black on white.
 - The footer of `ap.html` carries the exact disclaimer, and the Liminal wordmark stays larger than the marks.
 

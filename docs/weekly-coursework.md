@@ -165,7 +165,7 @@ against an older request replacing a more recent selection.
 Named tracks are listed in the `NAMED_TRACKS` registry of
 `src/lib/weekly.js`: `high-school-math` (Algebra, Geometry and Algebra 2 reuse
 Common Core grades 9–11; Trigonometry and Calculus are authored) and `ap`
-(`calculus-ab`, `physics-1`, `physics-c-mechanics`, all authored). Each has a
+(`calculus-ab`, `calculus-bc`, `physics-1`, `physics-c-mechanics`, all authored). Each has a
 plan file (`content/high-school-math.json`, `content/ap.json`) validated by the
 same named-plan contract, a plan page used for year-plan links, a context line,
 and optionally a trademark notice that the reader footer and every export of
@@ -173,9 +173,9 @@ that track carry. The build emits each present plan as a script bundle
 (`content/high-school.js` as `LIMINAL_HIGH_SCHOOL`, `content/ap-plan.js` as
 `LIMINAL_AP_PLAN`) with a matching `.json`.
 
-The full repository gate requires all 44 original courses and all 47 available
+The full repository gate requires all 45 original courses and all 48 available
 course views, including the three reused named high-school courses. A track
-joins this inventory when its registry entry sets `inventory: true`; all three
+joins this inventory when its registry entry sets `inventory: true`; all four
 AP courses are included. A missing
 course therefore fails release validation even though the standalone builder
 can support incomplete inventories during authoring.

@@ -2,13 +2,13 @@
   if (typeof module === "object" && module.exports) {
     module.exports = factory(function () {
       return require("./core.js");
-    });
+    }, require("./assessment"), require("./assessment-adapters"));
   } else {
     root.LiminalTestEngine = factory(function () {
       return root.PracticeCore;
-    });
+    }, root.LiminalAssessment, root.LiminalAssessmentAdapters);
   }
-})(typeof globalThis !== "undefined" ? globalThis : this, function (loadCore) {
+})(typeof globalThis !== "undefined" ? globalThis : this, function (loadCore, Assessment, Adapters) {
   "use strict";
 
   // Session logic for the digital test mode: navigation, answers, marks,
@@ -403,9 +403,14 @@
   function summary(state, nowMs) {
     const api = core();
     const times = questionTimes(state, nowMs);
+    const outcomes = state.questions.map((question, index) => Assessment.outcome(
+      Adapters.practiceScoring(question), state.responses[index],
+      { correct: isCorrect(state, index), hinted: state.hinted[index] }));
+    const totals = Assessment.summarize(outcomes);
     const items = state.questions.map((question, index) => {
-      const answered = hasResponse(state.responses[index]);
-      const correct = isCorrect(state, index);
+      const outcome = outcomes[index];
+      const answered = outcome.answered;
+      const correct = outcome.correct;
       const hinted = Boolean(state.hinted[index]);
       return {
         index,
@@ -415,15 +420,15 @@
         answered,
         correct,
         // Right without a hint: what every count in the report uses.
-        countedCorrect: answered && correct === true && !hinted,
-        hintedCorrect: answered && correct === true && hinted,
+        countedCorrect: outcome.kind === "binary" && outcome.earned === 1,
+        hintedCorrect: outcome.hintedCorrect === true,
         marked: state.marked[index],
         checked: state.checked[index],
         hinted,
         timeMs: Math.round(times[index] || 0),
       };
     });
-    const correct = items.filter((item) => item.countedCorrect).length;
+    const correct = totals.binary.correct;
     // A set that mixes sections (a mini test) is paced question by question.
     const budget = typeof api.paceBudgetForQuestions === "function"
       ? api.paceBudgetForQuestions(state.questions)
@@ -461,17 +466,17 @@
         };
       })
       .sort((left, right) => left.accuracy - right.accuracy);
-    const scored = items.filter((item) => item.correct !== null).length;
+    const scored = totals.scored;
     return {
       feedback: state.feedback,
       finishReason: state.finishReason,
       total: items.length,
       scored,
-      unscored: items.length - scored,
+      unscored: totals.unscored,
       correct,
-      hintedCorrect: items.filter((item) => item.hintedCorrect).length,
-      answered: items.filter((item) => item.answered).length,
-      unanswered: items.filter((item) => !item.answered).length,
+      hintedCorrect: totals.binary.hintedCorrect,
+      answered: totals.answered,
+      unanswered: totals.items - totals.answered,
       marked: items.filter((item) => item.marked).length,
       accuracy: scored ? correct / scored : null,
       elapsedMs: elapsed,

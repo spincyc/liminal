@@ -1,0 +1,491 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "unit-2",
+  "kind": "unit-test",
+  "unitId": "u2",
+  "title": "Unit 2 test: Differentiation: Definition and Fundamental Properties",
+  "author": "bc-tests-foundation",
+  "directions": "This original practice test reports raw points only. Work without a calculator in Section I Part A and Section II Part B. A graphing calculator is allowed in the other parts. Angles are in radians. Give exact answers without a calculator and numerical answers to three decimal places when needed. Show mathematical reasoning on every free-response part.",
+  "figures": [
+    {
+      "id": "bc-u2-f1",
+      "alt": "Graph of f made of line segments joining filled points (−2, 3), (1, 0), and (3, 4)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Choose one answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-u2-mc01",
+              "prompt": "Which derivative is represented by lim as h→0 of (√(9 + h) − 3)/h?",
+              "choices": [
+                "f′(9), where f(x) = x^2",
+                "f′(9), where f(x) = √x",
+                "f′(3), where f(x) = √x",
+                "f′(0), where f(x) = √x"
+              ],
+              "key": "B",
+              "rationale": "The numerator is f(9 + h) − f(9), so the quotient defines f′(9) for f(x) = √x.",
+              "distractorNotes": {
+                "A": "The numerator contains square-root values, not square values.",
+                "C": "Confuses the function value 3 with the input 9.",
+                "D": "Uses the limiting increment as the base input."
+              },
+              "topics": [
+                "BC.2.DERIVATIVE_DEFINITION"
+              ]
+            },
+            {
+              "id": "bc-u2-mc02",
+              "prompt": "The graph of f consists of two line segments. What is f′(0)?",
+              "choices": [
+                "2",
+                "The derivative does not exist.",
+                "0",
+                "−1"
+              ],
+              "key": "D",
+              "rationale": "The segment containing x = 0 has slope (0 − 3)/(1 − (−2)) = −1.",
+              "distractorNotes": {
+                "A": "Uses the slope of the right-hand segment.",
+                "B": "The corner is at x = 1, not at x = 0.",
+                "C": "The value of the derivative is the segment slope, not the x-coordinate."
+              },
+              "topics": [
+                "BC.2.DERIVATIVE_REPRESENTATIONS"
+              ],
+              "figureIds": [
+                "bc-u2-f1"
+              ]
+            },
+            {
+              "id": "bc-u2-mc03",
+              "prompt": "If p(x) = 3x^(−2) + 4√x, what is p′(1)?",
+              "choices": [
+                "−4",
+                "−1",
+                "8",
+                "7"
+              ],
+              "key": "A",
+              "rationale": "p′(x) = −6x^(−3) + 2x^(−1/2), so p′(1) = −6 + 2.",
+              "distractorNotes": {
+                "B": "Omits the exponent factor 2 when differentiating x^(−2), giving −3 + 2.",
+                "C": "Loses the negative sign in the reciprocal-power derivative.",
+                "D": "Evaluates p(1) rather than p′(1)."
+              },
+              "topics": [
+                "BC.2.BASIC_DERIVATIVE_RULES"
+              ]
+            },
+            {
+              "id": "bc-u2-mc04",
+              "prompt": "The differentiable functions f and g satisfy f(2) = 3, f′(2) = −1, g(2) = 4, and g′(2) = 5. If P = fg, what is P′(2)?",
+              "choices": [
+                "−4",
+                "−5",
+                "11",
+                "15"
+              ],
+              "key": "C",
+              "rationale": "P′(2) = f′(2)g(2) + f(2)g′(2) = −4 + 15 = 11.",
+              "distractorNotes": {
+                "A": "Retains only f′(2)g(2).",
+                "B": "Multiplies the derivatives instead of using the product rule.",
+                "D": "Retains only f(2)g′(2)."
+              },
+              "topics": [
+                "BC.2.PRODUCT_RULE"
+              ]
+            },
+            {
+              "id": "bc-u2-mc05",
+              "prompt": "If q(x) = (x^2 + 1)/(x − 1), what is q′(3)?",
+              "choices": [
+                "1",
+                "6",
+                "1/2",
+                "−1/2"
+              ],
+              "key": "C",
+              "rationale": "q′(3) = [6(2) − 10(1)]/2^2 = 2/4.",
+              "distractorNotes": {
+                "A": "Divides by x − 1 instead of (x − 1)^2.",
+                "B": "Divides the numerator derivative by the denominator derivative.",
+                "D": "Reverses the two numerator terms in the quotient rule."
+              },
+              "topics": [
+                "BC.2.QUOTIENT_RULE"
+              ]
+            },
+            {
+              "id": "bc-u2-mc06",
+              "prompt": "If y = sec x, what is dy/dx at x = π/3?",
+              "choices": [
+                "2",
+                "2√3",
+                "√3",
+                "−2√3"
+              ],
+              "key": "B",
+              "rationale": "The derivative is sec x tan x. At π/3 these factors are 2 and √3.",
+              "distractorNotes": {
+                "A": "Uses sec x without the tan x factor.",
+                "C": "Uses tan x without the sec x factor.",
+                "D": "Adds a negative sign to the derivative of sec x."
+              },
+              "topics": [
+                "BC.2.TRIGONOMETRIC_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-u2-mc07",
+              "prompt": "For x > 0, let f(x) = x ln x − x. What is f′(e)?",
+              "choices": [
+                "e",
+                "0",
+                "2",
+                "1"
+              ],
+              "key": "D",
+              "rationale": "The product rule gives f′(x) = ln x + 1 − 1 = ln x, so f′(e) = 1.",
+              "distractorNotes": {
+                "A": "Uses the input e itself rather than evaluating the derivative.",
+                "B": "Cancels derivatives as if the derivative of x ln x were only 1.",
+                "C": "Differentiates x ln x correctly but forgets the derivative of −x."
+              },
+              "topics": [
+                "BC.2.PRODUCT_RULE",
+                "BC.2.BASIC_DERIVATIVE_RULES"
+              ]
+            },
+            {
+              "id": "bc-u2-mc08",
+              "prompt": "Let f(x) = |x − 2| + 3. Which statement describes f at x = 2?",
+              "choices": [
+                "It is continuous but not differentiable.",
+                "It is both continuous and differentiable.",
+                "It is neither continuous nor differentiable.",
+                "It is differentiable but not continuous."
+              ],
+              "key": "A",
+              "rationale": "The one-sided values both approach 3 = f(2), but the one-sided slopes differ.",
+              "distractorNotes": {
+                "B": "The left and right slopes are −1 and 1, not equal.",
+                "C": "The two sides meet at the defined value 3, so continuity holds.",
+                "D": "Differentiability implies continuity, and the corner prevents differentiability."
+              },
+              "topics": [
+                "BC.2.DIFFERENTIABILITY"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "Choose one answer for each question. A graphing calculator is needed for some numerical work.",
+          "items": [
+            {
+              "id": "bc-u2-mc09",
+              "prompt": "For f(x) = x^2 sin x, which value best approximates f′(1.4)?",
+              "choices": [
+                "1.931",
+                "2.759",
+                "3.092",
+                "0.333"
+              ],
+              "key": "C",
+              "rationale": "The product rule gives f′(x) = 2x sin x + x^2 cos x; evaluating at 1.4 gives 3.092.",
+              "distractorNotes": {
+                "A": "Evaluates f(1.4) instead of its derivative.",
+                "B": "Keeps only the term 2x sin x.",
+                "D": "Keeps only the term x^2 cos x."
+              },
+              "topics": [
+                "BC.2.PRODUCT_RULE",
+                "BC.2.TRIGONOMETRIC_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-u2-mc10",
+              "prompt": "What is the slope of the tangent to y = e^x − 2x at x = 0.7, to three decimal places?",
+              "choices": [
+                "0.014",
+                "−1.000",
+                "0.614",
+                "2.014"
+              ],
+              "key": "A",
+              "rationale": "The derivative is e^x − 2, so the slope is e^0.7 − 2 ≈ 0.014.",
+              "distractorNotes": {
+                "B": "Treats the derivative of e^x as the constant 1.",
+                "C": "Uses the function value e^0.7 − 1.4 rather than the derivative.",
+                "D": "Omits the derivative of −2x."
+              },
+              "topics": [
+                "BC.2.BASIC_DERIVATIVE_RULES",
+                "BC.2.DERIVATIVE_REPRESENTATIONS"
+              ]
+            },
+            {
+              "id": "bc-u2-mc11",
+              "prompt": "A smooth function has the values below. Using the secant through the two closest inputs on opposite sides of 3, estimate f′(3).\nx | 2.90 | 2.97 | 3.03 | 3.10\nf(x) | 5.40 | 5.814 | 6.186 | 6.66",
+              "choices": [
+                "6.300",
+                "6.200",
+                "12.400",
+                "0.372"
+              ],
+              "key": "B",
+              "rationale": "The centered secant slope is (6.186 − 5.814)/(3.03 − 2.97) = 0.372/0.06 = 6.2.",
+              "distractorNotes": {
+                "A": "Uses the farther pair rather than the specified closest pair.",
+                "C": "Divides by 0.03 even though the two inputs are 0.06 apart.",
+                "D": "Finds the output change but does not divide by the input change."
+              },
+              "topics": [
+                "BC.2.DERIVATIVE_REPRESENTATIONS"
+              ]
+            },
+            {
+              "id": "bc-u2-mc12",
+              "prompt": "For f(x) = x^3 − 2.3x^2 + sin x, which x in [1, 2] gives a horizontal tangent, to three decimal places?",
+              "choices": [
+                "1.000",
+                "1.533",
+                "1.800",
+                "1.523"
+              ],
+              "key": "D",
+              "rationale": "A horizontal tangent requires 3x^2 − 4.6x + cos x = 0. The graphing-calculator solution on [1, 2] is 1.523.",
+              "distractorNotes": {
+                "A": "Uses the interval endpoint without satisfying the zero-slope condition.",
+                "B": "Ignores the cosine term in the derivative.",
+                "C": "Does not solve the derivative equation; the derivative there is positive."
+              },
+              "topics": [
+                "BC.2.BASIC_DERIVATIVE_RULES",
+                "BC.2.TRIGONOMETRIC_DERIVATIVES"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show the equations used for numerical results and include units where appropriate.",
+          "items": [
+            {
+              "id": "bc-u2-fr1",
+              "prompt": "A sensor model gives electrical power P(t) = t ln t watts for 1 ≤ t ≤ 5, with t measured in seconds.",
+              "context": true,
+              "topics": [
+                "BC.2.PRODUCT_RULE",
+                "BC.2.DERIVATIVE_REPRESENTATIONS",
+                "BC.2.BASIC_DERIVATIVE_RULES"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find P′(2.4). Explain its meaning with units.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains P′(t) = ln t + 1 using the product rule."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes 1.875."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets the instantaneous rate at 2.4 seconds with W/s."
+                    }
+                  ],
+                  "answer": "1.875 W/s; this is the instantaneous rate of increase of power at 2.4 seconds.",
+                  "steps": [
+                    "Use the product rule: P′(t) = ln t + 1.",
+                    "Evaluate at t = 2.4.",
+                    "Power is measured in watts, so its time derivative is measured in watts per second."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Write an equation of the tangent line to the graph of P at t = 2.4.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes the correct point value."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the derivative as the slope."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes a line passing through that point with the correct slope."
+                    }
+                  ],
+                  "answer": "y = 2.101 + 1.875(t − 2.4), with coefficients shown rounded.",
+                  "steps": [
+                    "The point is (2.4, 2.4 ln 2.4).",
+                    "The slope is ln 2.4 + 1.",
+                    "Use point-slope form; an exact logarithmic form is also accepted."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the average rate of change of P from t = 1 to t = 5. Is it greater than or less than P′(2.4)? Support your comparison.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up the secant quotient correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes 2.012 W/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Makes the correct comparison with supporting values."
+                    }
+                  ],
+                  "answer": "(5 ln 5)/4 ≈ 2.012 W/s, greater than 1.875 W/s.",
+                  "steps": [
+                    "Use [P(5) − P(1)]/(5 − 1).",
+                    "P(1) = 0 and P(5) = 5 ln 5.",
+                    "Compare the average and instantaneous rates numerically."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show your reasoning and give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-u2-fr2",
+              "prompt": "Let f(x) = ax + b for x < 1 and f(x) = x^2 + 2x for x ≥ 1, where a and b are constants.",
+              "context": false,
+              "topics": [
+                "BC.2.DIFFERENTIABILITY",
+                "BC.2.DERIVATIVE_DEFINITION",
+                "BC.2.PRODUCT_RULE",
+                "BC.2.TRIGONOMETRIC_DERIVATIVES"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the condition on a and b that makes f continuous at 1. Justify it.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the left-hand limit."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the right-hand limit and point value."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Equates these values to obtain a + b = 3."
+                    }
+                  ],
+                  "answer": "a + b = 3",
+                  "steps": [
+                    "The left-hand limit is a + b.",
+                    "The right-hand limit and the defined value f(1) both equal 3.",
+                    "Set the left-hand limit equal to that value."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Determine a and b so that f is differentiable at 1. Use a difference quotient to find the derivative from the right.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up and simplifies the right-hand difference quotient."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Matches the limiting right slope with a = 4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses continuity to obtain b = −1."
+                    }
+                  ],
+                  "answer": "a = 4 and b = −1",
+                  "steps": [
+                    "For h > 0, [f(1 + h) − f(1)]/h = (4h + h^2)/h = 4 + h.",
+                    "The right derivative is 4; the left derivative must be a = 4.",
+                    "Continuity then gives 4 + b = 3."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use the values from part (b). Let g(x) = f(x) sin x. Find g′(0), showing the derivative rule used.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Selects the correct branch and its value and slope at zero."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies the product and sine derivative rules."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains −1."
+                    }
+                  ],
+                  "answer": "−1",
+                  "steps": [
+                    "Near zero, f(x) = 4x − 1, so f(0) = −1 and f′(0) = 4.",
+                    "g′(0) = f′(0) sin 0 + f(0) cos 0.",
+                    "This equals 4(0) − 1(1) = −1."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

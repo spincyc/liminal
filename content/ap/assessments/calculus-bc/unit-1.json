@@ -1,0 +1,501 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "unit-1",
+  "kind": "unit-test",
+  "unitId": "u1",
+  "title": "Unit 1 test: Limits and Continuity",
+  "author": "bc-tests-foundation",
+  "directions": "This original practice test reports raw points only. Work without a calculator in Section I Part A and Section II Part B. A graphing calculator is allowed in the other parts. Angles are in radians. Give exact answers without a calculator and numerical answers to three decimal places when needed. Show mathematical reasoning on every free-response part.",
+  "figures": [
+    {
+      "id": "bc-u1-f1",
+      "alt": "Graph of f formed by a segment from the filled point (−3, 1) to an open point (0, 4), and a separate segment from the filled point (0, 2) to the filled point (3, −1)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "title": "No calculator",
+          "minutes": 18,
+          "calculator": "none",
+          "directions": "Choose one answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-u1-mc01",
+              "prompt": "The graph of f consists of the two shown line segments. What is lim as x→0⁻ of f(2x)?",
+              "choices": [
+                "1",
+                "The limit does not exist.",
+                "4",
+                "2"
+              ],
+              "key": "C",
+              "rationale": "As x approaches 0 from below, 2x also approaches 0 from below, and the left segment approaches height 4.",
+              "distractorNotes": {
+                "A": "Uses the left endpoint value rather than the height approached near zero.",
+                "B": "The two-sided limit fails, but this question asks only for approach from the left.",
+                "D": "Uses f(0), the filled point, instead of the values approached from the left."
+              },
+              "topics": [
+                "BC.1.ONE_SIDED_LIMITS",
+                "BC.1.LIMIT_MEANING"
+              ],
+              "figureIds": [
+                "bc-u1-f1"
+              ]
+            },
+            {
+              "id": "bc-u1-mc02",
+              "prompt": "Suppose lim as x→a of f(x) = −2 and lim as x→a of g(x) = 3. What is lim as x→a of (f(x)^2 + g(x))/(g(x) − f(x))?",
+              "choices": [
+                "7/5",
+                "1/5",
+                "7",
+                "−1"
+              ],
+              "key": "A",
+              "rationale": "The denominator tends to 5, which is nonzero. The limit laws give (4 + 3)/(3 + 2) = 7/5.",
+              "distractorNotes": {
+                "B": "Does not square −2 correctly in the numerator.",
+                "C": "Uses 3 + (−2) in the denominator instead of 3 − (−2).",
+                "D": "Replaces the numerator f(x)^2 + g(x) by f(x) − g(x)."
+              },
+              "topics": [
+                "BC.1.LIMIT_LAWS"
+              ]
+            },
+            {
+              "id": "bc-u1-mc03",
+              "prompt": "What is lim as x→2 of (x^3 − 8)/(x^2 − 4)?",
+              "choices": [
+                "The limit does not exist.",
+                "3",
+                "0",
+                "6"
+              ],
+              "key": "B",
+              "rationale": "For x ≠ 2 near 2, factor and cancel to obtain (x^2 + 2x + 4)/(x + 2), whose limit is 12/4.",
+              "distractorNotes": {
+                "A": "Undefined at x = 2 does not prevent a limit there.",
+                "C": "Treats the indeterminate form 0/0 as zero.",
+                "D": "Divides the surviving numerator value 12 by x = 2 instead of x + 2 = 4."
+              },
+              "topics": [
+                "BC.1.ALGEBRAIC_LIMITS"
+              ]
+            },
+            {
+              "id": "bc-u1-mc04",
+              "prompt": "For 0 < |x| < 1, the function q satisfies 5 − 2x^2 ≤ q(x) ≤ 5 + x^2. Which conclusion follows?",
+              "choices": [
+                "q is continuous at 0.",
+                "lim as x→0 of q(x) = 0",
+                "q(0) = 5",
+                "lim as x→0 of q(x) = 5"
+              ],
+              "key": "D",
+              "rationale": "Both bounding expressions approach 5, so the Squeeze Theorem gives the limit, regardless of whether q(0) is defined.",
+              "distractorNotes": {
+                "A": "A limit does not establish that q(0) exists or equals that limit.",
+                "B": "The vanishing squared terms leave the constant 5.",
+                "C": "The inequality excludes x = 0, so it gives no value there."
+              },
+              "topics": [
+                "BC.1.SQUEEZE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-u1-mc05",
+              "prompt": "Let r(x) = (x^2 − 9)/(x − 3) for x ≠ 3 and r(3) = −1. How can r be made continuous at 3?",
+              "choices": [
+                "Replace r(3) by 3.",
+                "Replace r(3) by 6.",
+                "Replace r(3) by 0.",
+                "No choice of r(3) can work."
+              ],
+              "key": "B",
+              "rationale": "For x ≠ 3, r(x) = x + 3. Its limit at 3 is 6, and continuity requires the point value to equal 6.",
+              "distractorNotes": {
+                "A": "Uses the input rather than the limiting output.",
+                "C": "Uses the vanishing numerator without cancellation.",
+                "D": "The two-sided limit exists, so this discontinuity is removable."
+              },
+              "topics": [
+                "BC.1.CONTINUITY_AT_A_POINT",
+                "BC.1.DISCONTINUITIES"
+              ]
+            },
+            {
+              "id": "bc-u1-mc06",
+              "prompt": "What is the largest interval containing x = 0 on which p(x) = √(x + 2)/(x^2 − 1) is continuous?",
+              "choices": [
+                "(−1, 1)",
+                "(−∞, 1)",
+                "[−2, 1)",
+                "(−2, 2)"
+              ],
+              "key": "A",
+              "rationale": "The square root is continuous for x ≥ −2 and the quotient is continuous where x ≠ ±1. The component containing zero is (−1, 1).",
+              "distractorNotes": {
+                "B": "Includes inputs below −2 where the real square root is undefined.",
+                "C": "Includes x = −1, where the denominator is zero.",
+                "D": "Includes both zero-denominator inputs."
+              },
+              "topics": [
+                "BC.1.CONTINUITY_ON_INTERVALS"
+              ]
+            },
+            {
+              "id": "bc-u1-mc07",
+              "prompt": "What is lim as x→1 of (x + 2)/(x − 1)^2?",
+              "choices": [
+                "3",
+                "The one-sided limits have opposite signs.",
+                "+∞",
+                "−∞"
+              ],
+              "key": "C",
+              "rationale": "The numerator approaches 3 and the denominator approaches zero through positive values, so the quotient grows without bound on both sides.",
+              "distractorNotes": {
+                "A": "Substitutes only in the numerator and ignores the denominator tending to zero.",
+                "B": "A squared denominator does not change sign at 1.",
+                "D": "The squared denominator is positive on both sides and the numerator is positive."
+              },
+              "topics": [
+                "BC.1.INFINITE_LIMITS"
+              ]
+            },
+            {
+              "id": "bc-u1-mc08",
+              "prompt": "What is lim as x→−∞ of √(9x^2 + 4)/x?",
+              "choices": [
+                "3",
+                "0",
+                "−9",
+                "−3"
+              ],
+              "key": "D",
+              "rationale": "Write the quotient as (|x|/x)√(9 + 4/x^2). For negative x the first factor is −1, giving −3.",
+              "distractorNotes": {
+                "A": "Uses √(x^2) = x instead of |x| when x is negative.",
+                "B": "Treats the denominator as having higher growth than the numerator.",
+                "C": "Omits the square root of the leading coefficient."
+              },
+              "topics": [
+                "BC.1.LIMITS_AT_INFINITY"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Graphing calculator",
+          "minutes": 12,
+          "calculator": "graphing",
+          "directions": "Choose one answer for each question. A graphing calculator is needed for some numerical work.",
+          "items": [
+            {
+              "id": "bc-u1-mc09",
+              "prompt": "Using values on both sides of zero, which number best estimates lim as x→0 of sin(1.7x)/sin(0.6x)?",
+              "choices": [
+                "2.833",
+                "1.000",
+                "0.353",
+                "1.100"
+              ],
+              "key": "A",
+              "rationale": "For example, at x = ±0.001 the ratio is approximately 2.833332. Also sin(ax)/(ax) → 1, leaving 1.7/0.6.",
+              "distractorNotes": {
+                "B": "Assumes the two small sine values have the same size.",
+                "C": "Reverses the ratio of the two rates near zero.",
+                "D": "Subtracts the two coefficients rather than taking their ratio."
+              },
+              "topics": [
+                "BC.1.LIMIT_MEANING",
+                "BC.1.LIMIT_LAWS"
+              ]
+            },
+            {
+              "id": "bc-u1-mc10",
+              "prompt": "Let F(x) = e^(−x) − x^2. By evaluating F at the endpoints, which interval certifies a zero by the Intermediate Value Theorem?",
+              "choices": [
+                "[0.8, 1.0]",
+                "[1.1, 1.3]",
+                "[0.1, 0.3]",
+                "[0.6, 0.8]"
+              ],
+              "key": "D",
+              "rationale": "F is continuous; F(0.6) ≈ 0.189 and F(0.8) ≈ −0.191 have opposite signs.",
+              "distractorNotes": {
+                "A": "F is negative at both endpoints, so these endpoint values do not certify a zero.",
+                "B": "F is negative at both endpoints, so the required sign change is absent.",
+                "C": "F is positive at both endpoints, so these endpoint values do not certify a zero."
+              },
+              "topics": [
+                "BC.1.INTERMEDIATE_VALUE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-u1-mc11",
+              "prompt": "The displayed values were computed for a function with no other stated properties. What is justified by this table alone?\nx | 1.99 | 1.999 | 2.001 | 2.01\nf(x) | 6.96 | 6.996 | 7.004 | 7.04",
+              "choices": [
+                "The data prove that f(2) = 7.",
+                "The data prove that f is continuous at 2.",
+                "The data suggest a limit of 7 near x = 2.",
+                "The data prove that the limit cannot exist."
+              ],
+              "key": "C",
+              "rationale": "The values approach 7 from both sides in the sample. Finite data are evidence for an estimate, not a proof of a limit or continuity.",
+              "distractorNotes": {
+                "A": "The table does not give f(2), and nearby values do not fix it.",
+                "B": "Continuity requires both the limit and the actual point value.",
+                "D": "The displayed values are consistent with a common limit from both sides."
+              },
+              "topics": [
+                "BC.1.LIMIT_MEANING",
+                "BC.1.CONTINUITY_AT_A_POINT"
+              ]
+            },
+            {
+              "id": "bc-u1-mc12",
+              "prompt": "Define k(x) = (ln x − ln 2)/(x − 2) for positive x ≠ 2. Numerical evaluation at 1.999 and 2.001 suggests which value should be assigned to k(2) to make it continuous?",
+              "choices": [
+                "2.000",
+                "0.500",
+                "0.000",
+                "0.693"
+              ],
+              "key": "B",
+              "rationale": "The evaluations are approximately 0.500125 and 0.499875, both close to 0.500. This is the value required by continuity.",
+              "distractorNotes": {
+                "A": "Uses the reciprocal of the limiting ratio.",
+                "C": "Treats the numerator tending to zero as the value of the quotient.",
+                "D": "Uses ln 2 rather than the limiting ratio."
+              },
+              "topics": [
+                "BC.1.CONTINUITY_AT_A_POINT",
+                "BC.1.LIMIT_MEANING"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show the equations used for numerical results and include units where appropriate.",
+          "items": [
+            {
+              "id": "bc-u1-fr1",
+              "prompt": "A trail model gives elevation H(x) = 1.2 + 0.8 cos x − 0.15x kilometers at horizontal distance x kilometers, for 0 ≤ x ≤ 3.",
+              "context": true,
+              "topics": [
+                "BC.1.INTERMEDIATE_VALUE_THEOREM",
+                "BC.1.CONTINUITY_ON_INTERVALS",
+                "BC.1.DISCONTINUITIES"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the Intermediate Value Theorem to justify that H(x) = 0.5 for some x in (0, 3).",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States continuity on the full closed interval."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes and compares the endpoint elevations correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes existence of an interior point with elevation 0.5 using the theorem."
+                    }
+                  ],
+                  "answer": "H is continuous on [0, 3], and H(3) ≈ −0.042 < 0.5 < 2 = H(0). Thus H(c) = 0.5 for some c in (0, 3).",
+                  "steps": [
+                    "Cosine and a linear function are continuous, so their sum is continuous.",
+                    "Evaluate the two endpoints and compare 0.5 with them.",
+                    "Apply the Intermediate Value Theorem."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the smallest x in [0, 3] for which H(x) = 0.5. Report the equation entered into your calculator.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up the correct level equation."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds x ≈ 2.078 km."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the smallest solution by inspecting the full interval or using strict decrease."
+                    }
+                  ],
+                  "answer": "x ≈ 2.078 km.",
+                  "steps": [
+                    "Solve 1.2 + 0.8 cos x − 0.15x = 0.5 on [0, 3].",
+                    "The intersection occurs at x ≈ 2.078. On this interval cosine decreases and −0.15x decreases, so H is strictly decreasing and this is the only intersection."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Let c be the exact solution found in part (b). A stored data file defines J(x) = H(x) for x ≠ c but J(c) = 0.8. Determine lim as x→c of J(x), classify the discontinuity, and state how to repair it.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Explains and obtains the limit 0.5."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Classifies the discontinuity as removable."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Specifies the corrected point value 0.5."
+                    }
+                  ],
+                  "answer": "The limit is 0.5 km; the discontinuity is removable. Set J(c) = 0.5.",
+                  "steps": [
+                    "Changing a single value does not change the neighboring values.",
+                    "Continuity of H implies the neighboring values approach H(c) = 0.5.",
+                    "The stored value must be replaced by the limit."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show your reasoning and give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-u1-fr2",
+              "prompt": "For x ≥ −4 with x ≠ 0, let f(x) = (√(4 + x) − 2)/x. Let f(0) = k.",
+              "context": false,
+              "topics": [
+                "BC.1.ALGEBRAIC_LIMITS",
+                "BC.1.CONTINUITY_AT_A_POINT",
+                "BC.1.LIMITS_AT_INFINITY",
+                "BC.1.INTERMEDIATE_VALUE_THEOREM"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find lim as x→0 of f(x), showing algebra that removes the indeterminate form.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the conjugate correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Cancels x only for x ≠ 0 and obtains the simplified quotient."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the limit as 1/4."
+                    }
+                  ],
+                  "answer": "1/4",
+                  "steps": [
+                    "Multiply numerator and denominator by √(4 + x) + 2.",
+                    "For x ≠ 0, f(x) = 1/(√(4 + x) + 2).",
+                    "The resulting denominator tends to 4."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Choose k to make f continuous at 0, and justify your choice.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Chooses k = 1/4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Checks the point value exists and equals the existing two-sided limit."
+                    }
+                  ],
+                  "answer": "k = 1/4",
+                  "steps": [
+                    "The limit exists and equals 1/4.",
+                    "Define f(0) to equal that limit."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find lim as x→∞ of f(x), with a reason.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the simplified quotient or equivalent growth argument."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains and justifies zero."
+                    }
+                  ],
+                  "answer": "0",
+                  "steps": [
+                    "Use f(x) = 1/(√(4 + x) + 2).",
+                    "The denominator grows without bound while the numerator remains 1."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "With the value of k in part (b), justify that f(x) = 3/10 at some x in (−3, 0).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Checks continuity on [−3, 0]."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the correct strict endpoint comparison and concludes existence by the Intermediate Value Theorem."
+                    }
+                  ],
+                  "answer": "f is continuous on [−3, 0], and f(0) = 1/4 < 3/10 < 1/3 = f(−3); the Intermediate Value Theorem applies.",
+                  "steps": [
+                    "The repaired function equals 1/(√(4 + x) + 2) throughout [−3, 0].",
+                    "Compare its endpoint values with 3/10."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
