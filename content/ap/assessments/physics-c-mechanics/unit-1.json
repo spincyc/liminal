@@ -1,0 +1,524 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "unit-1",
+  "kind": "unit-test",
+  "unitId": "u1",
+  "title": "Unit 1 test: Kinematics",
+  "author": "cm-1",
+  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, and state your positive direction where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "figures": [
+    {
+      "id": "cm-u1-f1",
+      "alt": "Velocity–time graph made of straight segments: from 2 m/s at t = 0 up to 8 m/s at t = 3 s, constant at 8 m/s until t = 6 s, then down to 0 at t = 8 s.",
+      "caption": "Velocity of a cart"
+    },
+    {
+      "id": "cm-u1-f2",
+      "alt": "Blank grid for plotting, 11 squares wide and 7 squares tall, with the horizontal axis labeled t^2 (s^2) and the vertical axis labeled x (m)."
+    },
+    {
+      "id": "cm-u1-f3",
+      "alt": "Plot of x against t^2 for the six data points from t^2 = 0 to 4.0 s^2, lying close to a straight line through the origin labeled with a slope of about 0.31 m/s^2."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 25,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance.",
+          "items": [
+            {
+              "id": "cm-u1-mc01",
+              "prompt": "A displacement vector A has magnitude 12 m and points 150° counterclockwise from the +x-axis. What are its components?",
+              "choices": [
+                "A_x = −10 m, A_y = 6.0 m",
+                "A_x = 10 m, A_y = −6.0 m",
+                "A_x = −6.0 m, A_y = 10 m",
+                "A_x = 6.0 m, A_y = −10 m"
+              ],
+              "key": "A",
+              "rationale": "A_x = 12 cos 150° = −10.4 m ≈ −10 m and A_y = 12 sin 150° = +6.0 m. A vector in the second quadrant has a negative x-component and a positive y-component.",
+              "distractorNotes": {
+                "B": "Both signs are reversed; this vector points at 330°, in the fourth quadrant.",
+                "C": "Sine and cosine are swapped, as if the angle were measured from the y-axis.",
+                "D": "Sine and cosine are swapped and both signs are reversed."
+              },
+              "topics": [
+                "CM.1.1"
+              ]
+            },
+            {
+              "id": "cm-u1-mc02",
+              "prompt": "Two forces are P = (2.0 i − 5.0 j) N and Q = (−4.0 i + 1.0 j) N. What is the magnitude of P − Q?",
+              "choices": [
+                "1.3 N",
+                "8.5 N",
+                "4.5 N",
+                "12 N"
+              ],
+              "key": "B",
+              "rationale": "P − Q = (2.0 − (−4.0)) i + (−5.0 − 1.0) j = 6.0 i − 6.0 j N, so |P − Q| = √(6.0^2 + 6.0^2) = 8.5 N.",
+              "distractorNotes": {
+                "A": "This is |P| − |Q| = 5.4 N − 4.1 N; magnitudes do not subtract like that.",
+                "C": "This is |P + Q| = |−2.0 i − 4.0 j| = 4.5 N, the sum rather than the difference.",
+                "D": "This adds the component sizes 6.0 + 6.0 instead of combining them with the Pythagorean theorem."
+              },
+              "topics": [
+                "CM.1.1"
+              ]
+            },
+            {
+              "id": "cm-u1-mc03",
+              "prompt": "A cart's position is x(t) = 3.0t^2 − 0.50t^3, with x in meters and t in seconds. What is the cart's acceleration at t = 3.0 s?",
+              "choices": [
+                "13.5 m/s^2",
+                "4.5 m/s^2",
+                "−3.0 m/s^2",
+                "6.0 m/s^2"
+              ],
+              "key": "C",
+              "rationale": "v = dx/dt = 6.0t − 1.5t^2 and a = dv/dt = 6.0 − 3.0t, so a(3.0 s) = 6.0 − 9.0 = −3.0 m/s^2.",
+              "distractorNotes": {
+                "A": "13.5 is the position x(3.0 s) in meters, not an acceleration.",
+                "B": "4.5 is the velocity v(3.0 s) in m/s.",
+                "D": "6.0 m/s^2 is the acceleration at t = 0."
+              },
+              "topics": [
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-u1-mc04",
+              "prompt": "An object moves along the x-axis with velocity v(t) = 4.0 − 2.0t, in m/s, and is at x = 1.0 m at t = 0. Where is it at t = 3.0 s?",
+              "choices": [
+                "3.0 m",
+                "6.0 m",
+                "−2.0 m",
+                "4.0 m"
+              ],
+              "key": "D",
+              "rationale": "x(t) = 1.0 + 4.0t − 1.0t^2, so x(3.0 s) = 1.0 + 12 − 9.0 = 4.0 m.",
+              "distractorNotes": {
+                "A": "This is the displacement, 3.0 m, without the starting position.",
+                "B": "This adds the distance traveled (4.0 m out, then 1.0 m back) to the start instead of the displacement.",
+                "C": "−2.0 m/s is the velocity at 3.0 s, not a position."
+              },
+              "topics": [
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-u1-mc05",
+              "prompt": "A cart starts from rest at the origin with acceleration a(t) = 2.0t, in m/s^2. How far has it traveled at t = 3.0 s?",
+              "choices": [
+                "9.0 m",
+                "13.5 m",
+                "27 m",
+                "18 m"
+              ],
+              "key": "A",
+              "rationale": "v = 1.0t^2 (from rest) and x = t^3/3, so x(3.0 s) = 27/3 = 9.0 m.",
+              "distractorNotes": {
+                "B": "This uses the average acceleration, 3.0 m/s^2, in ½at^2, which is valid only for constant acceleration.",
+                "C": "This uses the final acceleration, 6.0 m/s^2, in ½at^2.",
+                "D": "This multiplies 2.0 by t^2 without integrating."
+              },
+              "topics": [
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-u1-mc06",
+              "prompt": "The graph shows the velocity of a cart along a straight track. What is the cart's displacement from t = 0 to t = 8.0 s?",
+              "figureIds": [
+                "cm-u1-f1"
+              ],
+              "choices": [
+                "44 m",
+                "47 m",
+                "64 m",
+                "8.0 m"
+              ],
+              "key": "B",
+              "rationale": "Displacement is the area under the graph: a trapezoid from 0 to 3.0 s, ½(2.0 + 8.0)(3.0) = 15 m; a rectangle from 3.0 to 6.0 s, 24 m; a triangle from 6.0 to 8.0 s, 8.0 m. Total 47 m.",
+              "distractorNotes": {
+                "A": "This treats the first 3.0 s as a triangle starting from zero velocity, missing the initial 2.0 m/s.",
+                "C": "This multiplies the largest velocity by the whole time.",
+                "D": "8.0 m/s is the largest velocity, not a displacement."
+              },
+              "topics": [
+                "CM.1.3"
+              ]
+            },
+            {
+              "id": "cm-u1-mc07",
+              "prompt": "For the cart whose velocity graph is shown, at which time is the magnitude of its acceleration greatest?",
+              "figureIds": [
+                "cm-u1-f1"
+              ],
+              "choices": [
+                "t = 1.0 s",
+                "t = 4.0 s",
+                "t = 7.0 s",
+                "The magnitude is the same at all three times."
+              ],
+              "key": "C",
+              "rationale": "Acceleration is the slope: 2.0 m/s^2 from 0 to 3.0 s, zero from 3.0 to 6.0 s, and −4.0 m/s^2 from 6.0 to 8.0 s, so its magnitude is greatest at 7.0 s.",
+              "distractorNotes": {
+                "A": "The slope there is 2.0 m/s^2, half the magnitude at 7.0 s.",
+                "B": "The graph is flat there, so the acceleration is zero even though the velocity is largest.",
+                "D": "The slopes differ on the three intervals."
+              },
+              "topics": [
+                "CM.1.3"
+              ]
+            },
+            {
+              "id": "cm-u1-mc08",
+              "prompt": "A motion sensor gives a cart's position:\n| t (s) | 0 | 1.0 | 2.0 | 3.0 |\n| --- | --- | --- | --- | --- |\n| x (m) | 0 | 0.80 | 3.20 | 7.20 |\nWhich description fits the data?",
+              "choices": [
+                "Constant velocity of 2.4 m/s",
+                "Constant acceleration of 1.6 m/s^2, starting from rest",
+                "Constant acceleration of 0.80 m/s^2, starting from rest",
+                "An acceleration that increases with time"
+              ],
+              "key": "B",
+              "rationale": "x is proportional to t^2 (0.80, 3.20 and 7.20 are 0.80 × 1, 4 and 9), so x = ½at^2 with ½a = 0.80 m/s^2 and a = 1.6 m/s^2, starting from rest.",
+              "distractorNotes": {
+                "A": "2.4 m/s is the average velocity over 3.0 s; the position does not change by equal amounts each second.",
+                "C": "This takes the coefficient 0.80 m/s^2 as the acceleration and forgets the factor ½.",
+                "D": "The second differences are constant (1.6 m each), so the acceleration is constant."
+              },
+              "topics": [
+                "CM.1.3",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-u1-mc09",
+              "prompt": "A boat that moves at 5.0 m/s relative to the water heads straight across a 60 m wide river that flows at 3.0 m/s. How far downstream of its starting point does it land?",
+              "choices": [
+                "20 m",
+                "45 m",
+                "60 m",
+                "36 m"
+              ],
+              "key": "D",
+              "rationale": "Crossing time = 60 m/5.0 m/s = 12 s; in that time the current carries the boat 3.0 m/s × 12 s = 36 m downstream.",
+              "distractorNotes": {
+                "A": "This divides the width by the current speed, which is not a time the boat spends doing anything.",
+                "B": "This uses the ratio 3.0/4.0 from a 3-4-5 triangle with the wrong side.",
+                "C": "This assumes the drift equals the river's width."
+              },
+              "topics": [
+                "CM.1.4"
+              ]
+            },
+            {
+              "id": "cm-u1-mc10",
+              "prompt": "A helicopter flies east at 40 m/s relative to the ground while a balloon drifts south at 9.0 m/s. What is the balloon's velocity relative to the helicopter?",
+              "choices": [
+                "41 m/s toward 13° south of west",
+                "41 m/s toward 13° north of east",
+                "49 m/s toward the west",
+                "31 m/s toward 13° south of west"
+              ],
+              "key": "A",
+              "rationale": "v_BH = v_BG − v_HG = (0 i − 9.0 j) − (40 i) = −40 i − 9.0 j m/s, which is √(40^2 + 9.0^2) = 41 m/s at arctan(9.0/40) = 13° south of west.",
+              "distractorNotes": {
+                "B": "This is the helicopter's velocity relative to the balloon, v_HB, which has the opposite direction.",
+                "C": "This adds the speeds and ignores that the velocities are perpendicular.",
+                "D": "This subtracts the speeds, 40 − 9.0, instead of subtracting vectors."
+              },
+              "topics": [
+                "CM.1.4",
+                "CM.1.1"
+              ]
+            },
+            {
+              "id": "cm-u1-mc11",
+              "prompt": "A particle's position is r(t) = (3.0t^2) i + (4.0t) j, with r in meters and t in seconds. What is its speed at t = 2.0 s?",
+              "choices": [
+                "6.0 m/s",
+                "14 m/s",
+                "16 m/s",
+                "13 m/s"
+              ],
+              "key": "D",
+              "rationale": "v = dr/dt = 6.0t i + 4.0 j, so v(2.0 s) = 12 i + 4.0 j m/s and the speed is √(12^2 + 4.0^2) = 12.6 m/s ≈ 13 m/s.",
+              "distractorNotes": {
+                "A": "6.0 m/s^2 is the magnitude of the acceleration.",
+                "B": "This is the distance from the origin, |r(2.0 s)| = |12 i + 8.0 j| = 14 m.",
+                "C": "This adds the velocity components 12 + 4.0."
+              },
+              "topics": [
+                "CM.1.5"
+              ]
+            },
+            {
+              "id": "cm-u1-mc12",
+              "prompt": "Ball A rolls off the edge of a 1.8 m high table at 3.0 m/s. At the same instant, ball B is dropped from rest from the same height beside the table. Neglect air resistance. Which statement is correct?",
+              "choices": [
+                "Ball B lands first.",
+                "Ball A lands first.",
+                "They land at the same time, with ball A about 1.8 m from the foot of the table.",
+                "They land at the same time, with ball A about 3.0 m from the foot of the table."
+              ],
+              "key": "C",
+              "rationale": "Both start with zero vertical velocity, so both fall 1.8 m in t = √(2(1.8)/9.8) = 0.61 s. Ball A moves 3.0 m/s × 0.61 s = 1.8 m horizontally.",
+              "distractorNotes": {
+                "A": "The horizontal motion does not slow the vertical fall.",
+                "B": "The horizontal motion does not speed up the vertical fall either.",
+                "D": "This assumes a flight time of 1.0 s."
+              },
+              "topics": [
+                "CM.1.5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 35,
+          "calculator": "any",
+          "directions": "Show your reasoning and include units. Question 2 is a paper investigation with supplied, invented data; such investigations do not replace the hands-on laboratory work that the course framework calls for.",
+          "items": [
+            {
+              "id": "cm-u1-fr1",
+              "type": "MR",
+              "topics": [
+                "CM.1.5",
+                "CM.1.2",
+                "CM.1.1"
+              ],
+              "prompt": "A small rover drives on a level test field. With x pointing east and y pointing north, its position is r(t) = (0.50t^2 − 2.0t) i + (6.0t − 0.75t^2) j, with r in meters and t in seconds, for 0 ≤ t ≤ 6.0 s.",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the rover's velocity v(t) and acceleration a(t) as vectors.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates the x-component: v_x = 1.0t − 2.0 (m/s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates the y-component: v_y = 6.0 − 1.5t (m/s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives a = (1.0 i − 1.5 j) m/s^2, constant, with units."
+                    }
+                  ],
+                  "answer": "v(t) = (1.0t − 2.0) i + (6.0 − 1.5t) j m/s; a = (1.0 i − 1.5 j) m/s^2.",
+                  "steps": [
+                    "Differentiate each component of r with the power rule.",
+                    "Differentiate each component of v; both are constants."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the time at which the rover is moving due north, and its speed at that time.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets v_x = 0 with v_y > 0 and finds t = 2.0 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Speed 3.0 m/s (accept 2.9–3.1 m/s)."
+                    }
+                  ],
+                  "answer": "t = 2.0 s; speed 3.0 m/s.",
+                  "steps": [
+                    "Due north means v_x = 0 and v_y > 0: 1.0t − 2.0 = 0 gives t = 2.0 s.",
+                    "v_y(2.0) = 6.0 − 3.0 = 3.0 m/s, so the speed is 3.0 m/s."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the rover's displacement from t = 0 to t = 6.0 s, both as a vector and as a magnitude.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Δr = (6.0 i + 9.0 j) m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Magnitude 10.8 m (accept 10.7–10.9 m, or 11 m)."
+                    }
+                  ],
+                  "answer": "Δr = (6.0 i + 9.0 j) m, magnitude 10.8 m.",
+                  "steps": [
+                    "r(0) = 0 and r(6.0) = (18 − 12) i + (36 − 27) j = 6.0 i + 9.0 j m.",
+                    "|Δr| = √(36 + 81) = 10.8 m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Is the rover speeding up, slowing down, or neither at t = 1.0 s? Justify your answer using the velocity and acceleration vectors.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates v(1.0 s) = (−1.0 i + 4.5 j) m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Shows that the component of a along v is negative, for example a · v = (1.0)(−1.0) + (−1.5)(4.5) = −7.75 m^2/s^3 < 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the rover is slowing down, consistent with the sign found."
+                    }
+                  ],
+                  "answer": "Slowing down: v(1.0 s) = −1.0 i + 4.5 j m/s and a · v = −7.75 m^2/s^3 < 0, so the acceleration has a component opposite the velocity.",
+                  "steps": [
+                    "v(1.0) = (1.0 − 2.0) i + (6.0 − 1.5) j = −1.0 i + 4.5 j m/s.",
+                    "a · v = (1.0)(−1.0) + (−1.5)(4.5) = −7.75; a negative value means the speed is decreasing.",
+                    "Check: speed^2 = (t − 2.0)^2 + (6.0 − 1.5t)^2 has derivative −15.5 at t = 1.0 s, which is negative."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-u1-fr2",
+              "type": "EDA",
+              "topics": [
+                "CM.1.3",
+                "CM.1.2"
+              ],
+              "prompt": "Paper investigation with supplied, invented data; it does not replace hands-on laboratory work. A student releases a cart from rest at x = 0 on a long, straight, slightly tilted track. A motion sensor records the cart's position x along the track, with down the track positive.\n| t (s) | 0 | 0.40 | 0.80 | 1.20 | 1.60 | 2.00 |\n| --- | --- | --- | --- | --- | --- | --- |\n| x (m) | 0.000 | 0.052 | 0.196 | 0.445 | 0.792 | 1.230 |",
+              "figureIds": [
+                "cm-u1-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Estimate the cart's velocity at t = 1.20 s from the data. Show your method.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses a symmetric difference with the readings at 0.80 s and 1.60 s (or a tangent drawn on a position–time graph)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gets about 0.75 m/s (accept 0.73–0.76 m/s)."
+                    }
+                  ],
+                  "answer": "About 0.75 m/s: (0.792 m − 0.196 m)/(1.60 s − 0.80 s) = 0.745 m/s.",
+                  "steps": [
+                    "The nearest readings on either side of 1.20 s are at 0.80 s and 1.60 s.",
+                    "v ≈ 0.596 m/0.80 s = 0.745 m/s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "The student suspects that the acceleration is constant. Choose quantities to graph so that the data fall on a straight line if the suspicion is correct, compute the values you need, and plot them on the grid provided. Draw a best-fit line.",
+                  "answerFigureIds": [
+                    "cm-u1-f3"
+                  ],
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Chooses x against t^2, because x = ½at^2 for a start from rest."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes t^2 = 0, 0.16, 0.64, 1.44, 2.56 and 4.00 s^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Plots the points on labeled, scaled axes and draws a single best-fit straight line."
+                    }
+                  ],
+                  "answer": "Graph x against t^2 (t^2 = 0, 0.16, 0.64, 1.44, 2.56, 4.00 s^2); the points lie close to a straight line through the origin.",
+                  "steps": [
+                    "With a constant and v_0 = 0, x = (a/2)t^2, which is linear in t^2 with slope a/2.",
+                    "Square each time and plot (t^2, x)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use your graph to determine the cart's acceleration.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the slope of the best-fit line, about 0.31 m/s^2 (accept 0.29–0.32 m/s^2), from points on the line rather than a single data point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "a = 2 × slope ≈ 0.62 m/s^2 (accept 0.58–0.64 m/s^2)."
+                    }
+                  ],
+                  "answer": "Slope ≈ 0.31 m/s^2, so a ≈ 0.62 m/s^2.",
+                  "steps": [
+                    "The line passes near (0, 0) and (4.00 s^2, 1.23 m), so its slope is about 0.31 m/s^2.",
+                    "Slope = a/2, so a = 2(0.31) = 0.62 m/s^2."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Compare your estimate from part (a) with the velocity the constant-acceleration model gives at t = 1.20 s. Explain why the method in part (a) works well for this motion.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes v = at ≈ 0.62 × 1.20 = 0.74 m/s and states that it agrees with part (a) to within about 1%."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that for a quadratic x(t) the symmetric difference over an interval equals the derivative at the interval's midpoint."
+                    }
+                  ],
+                  "answer": "The model gives v = (0.62 m/s^2)(1.20 s) = 0.74 m/s, within about 1% of 0.745 m/s. For x = ½at^2 the slope of the secant from 0.80 s to 1.60 s equals the tangent slope at the midpoint, 1.20 s, so the estimate is exact apart from measurement error.",
+                  "steps": [
+                    "v_model = at = (0.62 m/s^2)(1.20 s) = 0.74 m/s.",
+                    "Secant slope of ½at^2 from t − h to t + h is ½a(4th)/(2h) = at, the exact derivative at t."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "In a second run, the sensor's zero is set 0.050 m behind the cart's starting point, so every position reading is 0.050 m too large. Describe how the graph from part (b) would change and whether the acceleration found from it would change.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the line shifts up by 0.050 m (an intercept of 0.050 m) while the slope, and so the acceleration, is unchanged."
+                    }
+                  ],
+                  "answer": "Every point moves up by 0.050 m, so the best-fit line has a vertical intercept of 0.050 m instead of passing through the origin. The slope, and therefore the acceleration, does not change.",
+                  "steps": [
+                    "Adding a constant to every x shifts the graph vertically.",
+                    "The slope depends on changes in x, which the offset does not affect."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

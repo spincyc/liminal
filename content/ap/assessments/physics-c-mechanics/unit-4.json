@@ -1,0 +1,511 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "unit-4",
+  "kind": "unit-test",
+  "unitId": "u4",
+  "title": "Unit 4 test: Linear Momentum",
+  "author": "cm-3",
+  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, and state your positive direction where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "figures": [
+    {
+      "id": "cm-u4-f1",
+      "alt": "Graph of force F in newtons against time t in milliseconds: a triangle rising in a straight line from 0 at t = 0 to 300 N at t = 20 ms, then falling in a straight line to 0 at t = 50 ms.",
+      "caption": "Force of a bat on a ball"
+    },
+    {
+      "id": "cm-u4-f2",
+      "alt": "Blank grid for plotting, 10 squares wide and 8 squares tall, with the horizontal axis labeled Δv (m/s) and the vertical axis labeled J (N·s).",
+      "caption": "Grid for impulse against change in velocity"
+    },
+    {
+      "id": "cm-u4-f3",
+      "alt": "Plot of J against Δv for the five trials, with points close to a straight line through the origin of slope about 0.48 kg.",
+      "caption": "Impulse against change in velocity, with a best-fit line"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 25,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise.",
+          "items": [
+            {
+              "id": "cm-u4-mc01",
+              "prompt": "A 0.40 kg puck moves with velocity (−3.0 i + 4.0 j) m/s. What is the magnitude of its momentum?",
+              "choices": [
+                "2.0 kg·m/s",
+                "2.8 kg·m/s",
+                "5.0 kg·m/s",
+                "0.40 kg·m/s"
+              ],
+              "key": "A",
+              "rationale": "The speed is √(3.0^2 + 4.0^2) = 5.0 m/s, so |p| = (0.40 kg)(5.0 m/s) = 2.0 kg·m/s.",
+              "distractorNotes": {
+                "B": "This adds the component sizes, 3.0 + 4.0, before multiplying by the mass.",
+                "C": "5.0 is the speed in m/s, not the momentum.",
+                "D": "This adds the signed components, −3.0 + 4.0 = 1.0, and multiplies by the mass."
+              },
+              "topics": [
+                "CM.4.1"
+              ]
+            },
+            {
+              "id": "cm-u4-mc02",
+              "prompt": "Objects P and Q have equal momenta, and Q's mass is three times P's. What is the ratio K_P/K_Q of their kinetic energies?",
+              "choices": [
+                "1/3",
+                "3",
+                "9",
+                "1"
+              ],
+              "key": "B",
+              "rationale": "K = p^2/(2m); with equal p, K is inversely proportional to mass, so K_P/K_Q = m_Q/m_P = 3.",
+              "distractorNotes": {
+                "A": "This inverts the ratio: the lighter object has the larger kinetic energy.",
+                "C": "This squares the mass ratio, as if the speeds were in the ratio 3 and K grew with the mass as well.",
+                "D": "Equal momenta do not mean equal kinetic energies unless the masses are equal."
+              },
+              "topics": [
+                "CM.4.1"
+              ]
+            },
+            {
+              "id": "cm-u4-mc03",
+              "prompt": "A 0.25 kg ball moving at 10 m/s in the −x direction is struck by a bat. The graph shows the bat's force on the ball, in the +x direction. Ignoring other forces during the contact, what is the ball's velocity afterward?",
+              "figureIds": [
+                "cm-u4-f1"
+              ],
+              "choices": [
+                "+30 m/s",
+                "−40 m/s",
+                "+20 m/s",
+                "+5.0 m/s"
+              ],
+              "key": "C",
+              "rationale": "The impulse is the triangle's area, ½(0.050 s)(300 N) = 7.5 N·s, so v_f = v_i + J/m = −10 + 7.5/0.25 = −10 + 30 = +20 m/s.",
+              "distractorNotes": {
+                "A": "This is J/m, the change in velocity, without the initial −10 m/s.",
+                "B": "This subtracts the change in velocity instead of adding it.",
+                "D": "This uses half the triangle's area."
+              },
+              "topics": [
+                "CM.4.2"
+              ]
+            },
+            {
+              "id": "cm-u4-mc04",
+              "prompt": "A force F(t) = 12t − 3.0t^2, with F in newtons and t in seconds, acts on a cart from t = 0 to t = 4.0 s. What impulse does it deliver?",
+              "choices": [
+                "0",
+                "12 N·s",
+                "48 N·s",
+                "32 N·s"
+              ],
+              "key": "D",
+              "rationale": "J = ∫ from 0 to 4.0 of (12t − 3.0t^2) dt = 6.0t^2 − t^3 from 0 to 4.0 = 96 − 64 = 32 N·s.",
+              "distractorNotes": {
+                "A": "The force is zero at t = 4.0 s, but its integral over the interval is not.",
+                "B": "This is the peak force, 12 N at t = 2.0 s, times 1.0 s.",
+                "C": "This multiplies the peak force by the whole 4.0 s."
+              },
+              "topics": [
+                "CM.4.2"
+              ]
+            },
+            {
+              "id": "cm-u4-mc05",
+              "prompt": "A 0.30 kg ball moving at 20 m/s is caught and brought to rest in 0.050 s. What is the average force of the catcher's glove on the ball?",
+              "choices": [
+                "120 N",
+                "6.0 N",
+                "240 N",
+                "1.2 N"
+              ],
+              "key": "A",
+              "rationale": "F_avg = Δp/Δt = (0.30 kg)(20 m/s)/(0.050 s) = 6.0 N·s/0.050 s = 120 N.",
+              "distractorNotes": {
+                "B": "6.0 is the change in momentum in N·s, not a force.",
+                "C": "This doubles the change in momentum, as if the ball rebounded at 20 m/s.",
+                "D": "This multiplies the impulse by the time instead of dividing."
+              },
+              "topics": [
+                "CM.4.2"
+              ]
+            },
+            {
+              "id": "cm-u4-mc06",
+              "prompt": "A 60 kg skater at rest on ice throws a 3.0 kg ball horizontally at 4.0 m/s. What is the skater's recoil speed?",
+              "choices": [
+                "4.0 m/s",
+                "0.20 m/s",
+                "0.050 m/s",
+                "0.75 m/s"
+              ],
+              "key": "B",
+              "rationale": "Momentum stays zero: 0 = (3.0)(4.0) + (60)v, so v = −0.20 m/s, a speed of 0.20 m/s opposite the throw.",
+              "distractorNotes": {
+                "A": "Equal speeds would need equal masses.",
+                "C": "This divides the ball's mass by the skater's and ignores the ball's speed.",
+                "D": "This divides 3.0 × 4.0 by 16, a mistaken total mass."
+              },
+              "topics": [
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-u4-mc07",
+              "prompt": "A 4.0 kg cart moves east at 3.0 m/s and a 2.0 kg cart moves north at 6.0 m/s. What is the velocity of the two-cart system's center of mass?",
+              "choices": [
+                "4.0 m/s toward the northeast (45°)",
+                "4.5 m/s toward the northeast (45°)",
+                "2.8 m/s toward the northeast (45°)",
+                "2.8 m/s toward 63° north of east"
+              ],
+              "key": "C",
+              "rationale": "p = (12 i + 12 j) kg·m/s and M = 6.0 kg, so v_cm = (2.0 i + 2.0 j) m/s: 2.8 m/s at 45° north of east.",
+              "distractorNotes": {
+                "A": "This adds the momentum magnitudes, 12 + 12, as if they pointed the same way.",
+                "B": "This averages the two speeds without weighting by mass or adding as vectors.",
+                "D": "This uses the direction of the velocities, arctan(6.0/3.0), instead of the momenta."
+              },
+              "topics": [
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-u4-mc08",
+              "prompt": "A rocket coasting on a parabolic path explodes into several fragments in midair. Neglecting air resistance, how does the system's center of mass move until the first fragment lands?",
+              "choices": [
+                "It stops at the point of the explosion.",
+                "It moves in a straight line in the rocket's direction at the moment of the explosion.",
+                "It falls straight down from the point of the explosion.",
+                "It continues along the same parabola the rocket was following."
+              ],
+              "key": "D",
+              "rationale": "The explosion forces are internal, so the only external force is still gravity, F_ext = Mg, and the center of mass keeps accelerating at g along the original parabola.",
+              "distractorNotes": {
+                "A": "Internal forces cannot change the total momentum, so the center of mass keeps its velocity.",
+                "B": "Gravity still acts, so the path keeps curving.",
+                "C": "The horizontal momentum is unchanged by the explosion, so the center of mass keeps moving sideways."
+              },
+              "topics": [
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-u4-mc09",
+              "prompt": "A 2.0 kg cart moving at 6.0 m/s collides with a 4.0 kg cart at rest, and they stick together. How much kinetic energy is lost?",
+              "choices": [
+                "24 J",
+                "12 J",
+                "36 J",
+                "0"
+              ],
+              "key": "A",
+              "rationale": "V = (2.0)(6.0)/6.0 = 2.0 m/s; K before = 36 J and K after = ½(6.0)(2.0)^2 = 12 J, so 24 J is lost.",
+              "distractorNotes": {
+                "B": "12 J is the kinetic energy left after the collision.",
+                "C": "36 J is all the initial kinetic energy, but the joined carts still move.",
+                "D": "Kinetic energy is conserved only in elastic collisions."
+              },
+              "topics": [
+                "CM.4.4"
+              ]
+            },
+            {
+              "id": "cm-u4-mc10",
+              "prompt": "A 1.0 kg glider moving at +6.0 m/s collides elastically with a 2.0 kg glider at rest. What is the 1.0 kg glider's velocity after the collision?",
+              "choices": [
+                "+2.0 m/s",
+                "−2.0 m/s",
+                "0",
+                "+4.0 m/s"
+              ],
+              "key": "B",
+              "rationale": "v_1' = (m_1 − m_2)v_1/(m_1 + m_2) = (−1.0/3.0)(6.0) = −2.0 m/s: the lighter glider bounces back. The heavier one leaves at +4.0 m/s.",
+              "distractorNotes": {
+                "A": "The sign is wrong: a light object bounces back from a heavier one.",
+                "C": "Only an equal-mass target stops the incoming glider.",
+                "D": "+4.0 m/s is the 2.0 kg glider's final velocity."
+              },
+              "topics": [
+                "CM.4.4"
+              ]
+            },
+            {
+              "id": "cm-u4-mc11",
+              "prompt": "A 0.20 kg puck moving at 5.0 m/s in the +x direction collides with a 0.30 kg puck moving at 2.0 m/s in the +y direction, and they stick together. What is their velocity just afterward?",
+              "choices": [
+                "3.2 m/s at 31° from +x toward +y",
+                "2.3 m/s at 59° from +x toward +y",
+                "2.3 m/s at 31° from +x toward +y",
+                "3.5 m/s at 22° from +x toward +y"
+              ],
+              "key": "C",
+              "rationale": "p = (1.0 i + 0.60 j) kg·m/s and M = 0.50 kg, so V = (2.0 i + 1.2 j) m/s: 2.3 m/s at arctan(1.2/2.0) = 31° from +x.",
+              "distractorNotes": {
+                "A": "This adds the momentum magnitudes, 1.0 + 0.60 = 1.6 kg·m/s, as if they were parallel, then divides by 0.50 kg.",
+                "B": "This measures the angle from the y-axis.",
+                "D": "This averages the speeds and uses the ratio of the speeds for the angle."
+              },
+              "topics": [
+                "CM.4.4"
+              ]
+            },
+            {
+              "id": "cm-u4-mc12",
+              "prompt": "A 2.0 kg cart moving at 4.0 m/s hits a 2.0 kg cart at rest on a level track. Which reported outcome is possible without an internal energy source?",
+              "choices": [
+                "The carts move at −1.0 m/s and 5.0 m/s.",
+                "The carts move at 3.0 m/s and 3.0 m/s.",
+                "The first cart stops and the second moves at 3.0 m/s.",
+                "The carts move at 1.0 m/s and 3.0 m/s."
+              ],
+              "key": "D",
+              "rationale": "Momentum before is 8.0 kg·m/s. (1.0, 3.0) gives 2.0 + 6.0 = 8.0 kg·m/s and K = 1.0 + 9.0 = 10 J, less than the initial 16 J, so it is an allowed inelastic collision.",
+              "distractorNotes": {
+                "A": "Momentum checks (−2.0 + 10 = 8.0), but K = 1.0 + 25 = 26 J exceeds the initial 16 J.",
+                "B": "Momentum would be 12 kg·m/s, more than 8.0 kg·m/s.",
+                "C": "Momentum would be 6.0 kg·m/s, less than 8.0 kg·m/s."
+              },
+              "topics": [
+                "CM.4.4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 35,
+          "calculator": "any",
+          "directions": "Show your reasoning and include units. Partial credit is given for correct reasoning. Question 1 is a paper investigation with supplied, invented data; such investigations do not replace the hands-on laboratory work that the course framework calls for.",
+          "items": [
+            {
+              "id": "cm-u4-fr1",
+              "type": "EDA",
+              "topics": [
+                "CM.4.2",
+                "CM.4.1"
+              ],
+              "prompt": "Paper investigation with supplied, invented data; it does not replace the hands-on laboratory work that the course framework calls for. A student tests the impulse–momentum theorem with a cart on a level, low-friction track. The cart, whose mass on a balance is 0.500 kg, rolls toward a force sensor fixed at the end of the track, bounces off a spring bumper on the sensor, and rolls back. A motion sensor records the cart's velocity, with positive away from the force sensor. For each trial the student records the velocity just before the bounce, v_i, the velocity just after, v_f, and the impulse J that the force-sensor software reports.\n| Trial | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| v_i (m/s) | −0.42 | −0.61 | −0.80 | −1.02 | −1.19 |\n| v_f (m/s) | 0.35 | 0.50 | 0.66 | 0.83 | 0.97 |\n| J (N·s) | 0.37 | 0.54 | 0.70 | 0.88 | 1.04 |",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the software can find the impulse from the force sensor's readings, and how the student should obtain v_i and v_f from the motion sensor. Name one quantity that must be kept the same in every trial.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Impulse is the area under the force–time graph over the whole contact (adding force × time for each short reading interval)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Takes v_i and v_f from the motion-sensor velocity just before contact begins and just after it ends (or from the slopes of the position–time graph there); keeps the cart's mass (or the level track and bumper) the same."
+                    }
+                  ],
+                  "answer": "J is the area under the F–t curve from the start to the end of the contact, found by summing F Δt over the readings. v_i and v_f are read from the velocity record immediately before and after the contact. The cart's mass must stay the same.",
+                  "steps": [
+                    "A force sensor samples F many times per second; the impulse is ∫F dt over the contact.",
+                    "Velocities measured far from the bounce would include the effect of friction on the track."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Compute Δv = v_f − v_i for each trial. On the grid provided, plot J against Δv, label and scale the axes, and draw a best-fit line.",
+                  "figureIds": [
+                    "cm-u4-f2"
+                  ],
+                  "answerFigureIds": [
+                    "cm-u4-f3"
+                  ],
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes Δv = 0.77, 1.11, 1.46, 1.85 and 2.16 m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Labels the axes with quantities and units and plots all five points correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Draws a single straight best-fit line that passes close to the origin."
+                    }
+                  ],
+                  "answer": "Δv = 0.77, 1.11, 1.46, 1.85, 2.16 m/s; the points lie close to a straight line through the origin.",
+                  "steps": [
+                    "Subtract the signed velocities: for trial 1, 0.35 − (−0.42) = 0.77 m/s.",
+                    "Plot Δv horizontally and J vertically."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the slope of your line and explain what physical quantity it represents. Compare it with the balance reading.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds a slope of about 0.48 kg (accept 0.46–0.50 kg) from points on the line."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the slope as the cart's mass, since J = Δp = mΔv, and notes it is about 4% below 0.500 kg."
+                    }
+                  ],
+                  "answer": "Slope ≈ 0.48 kg. Because J = mΔv, the slope is the cart's mass; it is about 4% lower than the balance reading of 0.500 kg.",
+                  "steps": [
+                    "For example, (0, 0) and (2.16 m/s, 1.04 N·s) give 0.48 kg.",
+                    "The impulse–momentum theorem makes J proportional to Δv with constant m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The slope is consistently a few percent below the balance mass. Suggest one physical cause of this systematic difference, explain how it would lower the slope, and describe a test of your explanation.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Gives a plausible systematic cause, such as a force sensor that reads about 4% low, or friction slowing the cart between the velocity readings and the bounce, and explains that it lowers every J relative to mΔv (or raises every Δv), so the slope falls."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Describes a test, such as hanging a known mass from the force sensor to check its calibration, or measuring the velocities closer to the bounce."
+                    }
+                  ],
+                  "answer": "Sample: the force sensor reads about 4% low. Every reported J would be 4% smaller than the true mΔv, lowering the slope while keeping the line through the origin. Test: hang a known mass, such as 1.000 kg, from the sensor and compare its reading with 9.8 N.",
+                  "steps": [
+                    "A proportional error in J scales every point by the same factor, which changes the slope but not the intercept.",
+                    "Calibrating against a known weight checks the sensor directly."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "What does the vertical intercept of your line tell you about the measurements?",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that an intercept near zero means there is no constant offset in J (or Δv), consistent with J = mΔv; a nonzero intercept would point to such an offset, for example a sensor not zeroed."
+                    }
+                  ],
+                  "answer": "The line passes close to the origin, so there is no significant constant offset in the impulse readings; a sensor that was not zeroed would shift the line up or down.",
+                  "steps": [
+                    "J = mΔv has zero intercept.",
+                    "A constant added to every J would appear as a nonzero intercept."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-u4-fr2",
+              "type": "QQT",
+              "topics": [
+                "CM.4.4",
+                "CM.4.2",
+                "CM.4.3"
+              ],
+              "prompt": "Cart A, of mass m, moves at speed v_0 toward cart B, of mass 2m, which is at rest on a level, frictionless track. In trial 1 the carts have hook-and-loop pads and stick together. In trial 2 they have magnets that repel, and the collision is elastic.",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without doing any calculations, state in which trial the impulse on cart B is larger, and justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the impulse on B is larger in trial 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with momentum: in trial 2 cart A bounces back, so A's change in momentum is larger than in trial 1 (where A only slows), and by Newton's third law the impulse on B is equal and opposite to the impulse on A."
+                    }
+                  ],
+                  "answer": "Trial 2. In trial 1 cart A only slows to the common velocity, but in trial 2 it reverses, so its momentum changes by more. The impulse on B is equal and opposite to the impulse on A, so it is larger in trial 2.",
+                  "steps": [
+                    "The impulses on A and B are a third-law pair.",
+                    "An elastic bounce off a heavier cart sends A backward, a larger Δp than slowing down."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive expressions for cart B's final velocity in each trial, in terms of v_0.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Trial 1: mv_0 = 3mV, so v_B = v_0/3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Trial 2: uses momentum and kinetic energy (or the reversal of relative velocity)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Trial 2: v_B = 2v_0/3 (and v_A = −v_0/3)."
+                    }
+                  ],
+                  "answer": "Trial 1: v_B = v_0/3. Trial 2: v_B = 2v_0/3, with cart A moving back at v_0/3.",
+                  "steps": [
+                    "Trial 1: the carts share one velocity, so mv_0 = (3m)V.",
+                    "Trial 2: mv_0 = mv_A + 2mv_B and v_B − v_A = v_0 give 3v_B = 2v_0."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Show that your expressions in part (b) are consistent with your answer to part (a).",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes the impulses on B, 2mv_0/3 in trial 1 and 4mv_0/3 in trial 2, so the impulse is twice as large in trial 2."
+                    }
+                  ],
+                  "answer": "J_B = 2m(v_0/3) = 2mv_0/3 in trial 1 and 2m(2v_0/3) = 4mv_0/3 in trial 2: larger in trial 2, as claimed.",
+                  "steps": [
+                    "J_B = Δp_B = 2m v_B − 0."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "What fraction of the initial kinetic energy is converted to other forms in trial 1?",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "K_after = ½(3m)(v_0/3)^2 = mv_0^2/6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Fraction lost = (½ − 1/6)/(½) = 2/3."
+                    }
+                  ],
+                  "answer": "2/3 of the initial kinetic energy.",
+                  "steps": [
+                    "K_before = ½mv_0^2 and K_after = mv_0^2/6.",
+                    "Lost fraction = 1 − (1/6)/(1/2) = 2/3."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

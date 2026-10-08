@@ -1,0 +1,556 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "unit-3",
+  "kind": "unit-test",
+  "unitId": "u3",
+  "title": "Unit 3 test: Work, Energy, and Power",
+  "author": "cm-3",
+  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, and state your positive direction where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "figures": [
+    {
+      "id": "cm-u3-f1",
+      "alt": "Graph of force F in newtons against position x in meters made of straight segments: F rises from 0 at x = 0 to 5 N at x = 2 m, stays at 5 N until x = 4 m, then falls in a straight line to −3 N at x = 6 m.",
+      "caption": "Net force on a cart"
+    },
+    {
+      "id": "cm-u3-f2",
+      "alt": "Graph of potential energy U in joules against x in meters for U = 3x^2 − x^3 from x = −1 to 3 m: U falls from 4 J at x = −1 m to 0 at x = 0, rises to a peak of 4 J at x = 2 m, and falls back to 0 at x = 3 m.",
+      "caption": "Potential energy of the particle"
+    },
+    {
+      "id": "cm-u3-f3",
+      "alt": "Blank energy bar charts with two groups, at x = 0 and at x = 1.0 m, each with empty columns labeled K and U and a vertical scale marked from 0 to 4 J.",
+      "caption": "Energy bar charts to complete"
+    },
+    {
+      "id": "cm-u3-f4",
+      "alt": "Blank axes for a sketch: kinetic energy K in joules from 0 to 4 against x in meters from 0 to 2, with a light grid.",
+      "caption": "Axes for K against x"
+    },
+    {
+      "id": "cm-u3-f5",
+      "alt": "Completed bar charts. At x = 0, K is 3 J and U is empty. At x = 1.0 m, K is 1 J and U is 2 J.",
+      "caption": "Completed bar charts"
+    },
+    {
+      "id": "cm-u3-f6",
+      "alt": "Sketch of K against x: the curve starts at 3 J at x = 0 with a flat tangent, falls through 1 J at x = 1 m, and reaches 0 at about x = 1.35 m.",
+      "caption": "Kinetic energy against position"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 25,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise.",
+          "items": [
+            {
+              "id": "cm-u3-mc01",
+              "prompt": "Cart A has twice the mass of cart B and moves at half of cart B's speed. What is the ratio K_A/K_B of their kinetic energies?",
+              "choices": [
+                "1/4",
+                "1/2",
+                "1",
+                "2"
+              ],
+              "key": "B",
+              "rationale": "K_A = ½(2m)(v/2)^2 = ¼mv^2 and K_B = ½mv^2, so K_A/K_B = 1/2.",
+              "distractorNotes": {
+                "A": "This squares the speed ratio, 1/4, but leaves out the doubled mass.",
+                "C": "This treats kinetic energy like momentum, which is the same for both carts (2m × v/2 = mv).",
+                "D": "This doubles the mass but does not square the speed ratio."
+              },
+              "topics": [
+                "CM.3.1"
+              ]
+            },
+            {
+              "id": "cm-u3-mc02",
+              "prompt": "A 3.0 kg box speeds up from 2.0 m/s to 6.0 m/s. How much net work is done on it?",
+              "choices": [
+                "24 J",
+                "54 J",
+                "48 J",
+                "12 J"
+              ],
+              "key": "C",
+              "rationale": "W_net = ΔK = ½(3.0 kg)[(6.0 m/s)^2 − (2.0 m/s)^2] = 1.5 × 32 J = 48 J.",
+              "distractorNotes": {
+                "A": "This squares the change in speed, ½m(Δv)^2, instead of finding the change in ½mv^2.",
+                "B": "This is the final kinetic energy, ignoring the 6.0 J the box already had.",
+                "D": "This is mΔv, a change in momentum in kg·m/s, not a work."
+              },
+              "topics": [
+                "CM.3.1",
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-u3-mc03",
+              "prompt": "The graph shows the net force on a cart that moves along the x-axis. How much work does the net force do on the cart from x = 0 to x = 6.0 m?",
+              "figureIds": [
+                "cm-u3-f1"
+              ],
+              "choices": [
+                "15 J",
+                "19 J",
+                "30 J",
+                "17 J"
+              ],
+              "key": "D",
+              "rationale": "Work is the signed area under the F–x graph: 5.0 J (0 to 2 m) + 10 J (2 to 4 m) + 3.1 J above the axis from 4 m to 5.25 m − 1.1 J below the axis from 5.25 m to 6 m = 17 J.",
+              "distractorNotes": {
+                "A": "This stops at x = 4.0 m and leaves out the last 2.0 m.",
+                "B": "This counts the area below the axis as positive work.",
+                "C": "This multiplies the largest force, 5.0 N, by the whole 6.0 m."
+              },
+              "topics": [
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-u3-mc04",
+              "prompt": "A force F(x) = 3.0x^2, with F in newtons and x in meters, acts along +x on an object that moves from x = 1.0 m to x = 2.0 m. How much work does the force do?",
+              "choices": [
+                "7.0 J",
+                "12 J",
+                "7.5 J",
+                "3.0 J"
+              ],
+              "key": "A",
+              "rationale": "W = ∫ from 1.0 to 2.0 of 3.0x^2 dx = x^3 from 1.0 to 2.0 = 8.0 − 1.0 = 7.0 J.",
+              "distractorNotes": {
+                "B": "This uses the force at x = 2.0 m, 12 N, for the whole meter.",
+                "C": "This averages the forces at the endpoints (3.0 N and 12 N), which is exact only for a force that changes linearly with x.",
+                "D": "This uses the force at x = 1.0 m for the whole meter."
+              },
+              "topics": [
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-u3-mc05",
+              "prompt": "A constant force F = (5.0 i + 2.0 j) N acts on a puck while it moves through the displacement d = (−2.0 i + 6.0 j) m. How much work does the force do?",
+              "choices": [
+                "22 J",
+                "2.0 J",
+                "−10 J",
+                "34 J"
+              ],
+              "key": "B",
+              "rationale": "W = F · d = (5.0)(−2.0) + (2.0)(6.0) = −10 + 12 = 2.0 J.",
+              "distractorNotes": {
+                "A": "This adds the sizes of the two products, 10 + 12, ignoring the negative sign of the first.",
+                "C": "This keeps only the x-component product.",
+                "D": "This multiplies the magnitudes, 5.4 N × 6.3 m, as if the force and displacement were parallel."
+              },
+              "topics": [
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-u3-mc06",
+              "prompt": "A particle's potential energy is U(x) = 2.0x^3 − 6.0x, with U in joules and x in meters. What is the force on the particle at x = 2.0 m?",
+              "choices": [
+                "18 N",
+                "4.0 N",
+                "−18 N",
+                "6.0 N"
+              ],
+              "key": "C",
+              "rationale": "F = −dU/dx = −(6.0x^2 − 6.0); at x = 2.0 m, F = −(24 − 6.0) = −18 N.",
+              "distractorNotes": {
+                "A": "This is dU/dx without the minus sign, so it points the wrong way.",
+                "B": "This is the potential energy U(2.0) in joules, not a force.",
+                "D": "This is the force at x = 0."
+              },
+              "topics": [
+                "CM.3.3"
+              ]
+            },
+            {
+              "id": "cm-u3-mc07",
+              "prompt": "A particle's potential energy is U(x) = x^4 − 2.0x^2, with U in joules and x in meters. Which statement about its equilibrium positions is correct?",
+              "choices": [
+                "x = 0 is stable, and x = ±1.0 m are unstable.",
+                "Only x = 0 is an equilibrium, and it is stable.",
+                "x = ±1.0 m are equilibria where U = 0.",
+                "x = 0 is unstable, and x = ±1.0 m are stable."
+              ],
+              "key": "D",
+              "rationale": "dU/dx = 4x^3 − 4.0x = 0 at x = 0 and ±1.0 m. d^2U/dx^2 = 12x^2 − 4.0 is −4.0 at x = 0 (a maximum, unstable) and +8.0 at x = ±1.0 m (minima, stable).",
+              "distractorNotes": {
+                "A": "This reverses the stability test: a minimum of U is stable.",
+                "B": "This misses the roots x = ±1.0 m of 4x^3 − 4x = 0.",
+                "C": "U(±1.0) = 1.0 − 2.0 = −1.0 J, not zero; and the statement does not classify them."
+              },
+              "topics": [
+                "CM.3.3"
+              ]
+            },
+            {
+              "id": "cm-u3-mc08",
+              "prompt": "A satellite of mass m is moved from a distance r from the center of a planet of mass M to a distance 2r. What is the change in the satellite–planet gravitational potential energy?",
+              "choices": [
+                "+GMm/(2r)",
+                "−GMm/(2r)",
+                "+GMm/r",
+                "+3GMm/(4r)"
+              ],
+              "key": "A",
+              "rationale": "U = −GMm/r, so ΔU = −GMm/(2r) − (−GMm/r) = +GMm/(2r): the energy rises toward zero as the satellite moves away.",
+              "distractorNotes": {
+                "B": "The sign is reversed; moving apart against an attractive force increases U.",
+                "C": "This treats U at 2r as zero.",
+                "D": "This uses the inverse-square ratio of the forces, 1 − 1/4, instead of the inverse ratio of the energies."
+              },
+              "topics": [
+                "CM.3.3"
+              ]
+            },
+            {
+              "id": "cm-u3-mc09",
+              "prompt": "A spring (k = 500 N/m) compressed 0.10 m launches a 0.40 kg block up a frictionless incline. How much higher than its starting point does the block rise before stopping?",
+              "choices": [
+                "1.3 m",
+                "0.64 m",
+                "13 m",
+                "0.10 m"
+              ],
+              "key": "B",
+              "rationale": "½kx^2 = mgh: ½(500)(0.10)^2 = 2.5 J, so h = 2.5 J/((0.40 kg)(9.8 m/s^2)) = 0.64 m.",
+              "distractorNotes": {
+                "A": "This leaves out the ½ in the spring energy.",
+                "C": "This uses kx, a force, as if it were the stored energy.",
+                "D": "This is the compression of the spring, not the height reached."
+              },
+              "topics": [
+                "CM.3.4"
+              ]
+            },
+            {
+              "id": "cm-u3-mc10",
+              "prompt": "A 0.50 kg ball is dropped from rest 10 m above the ground and hits the ground at 12 m/s. How much mechanical energy has air resistance converted to other forms?",
+              "choices": [
+                "36 J",
+                "49 J",
+                "85 J",
+                "13 J"
+              ],
+              "key": "D",
+              "rationale": "Mechanical energy lost = mgh − ½mv^2 = (0.50)(9.8)(10) J − ½(0.50)(12)^2 J = 49 J − 36 J = 13 J.",
+              "distractorNotes": {
+                "A": "This is the kinetic energy at the ground, not the energy dissipated.",
+                "B": "This is the initial potential energy, as if none became kinetic energy.",
+                "C": "This adds the potential and kinetic energies instead of subtracting."
+              },
+              "topics": [
+                "CM.3.4"
+              ]
+            },
+            {
+              "id": "cm-u3-mc11",
+              "prompt": "A rope pulls a sled across level snow at a constant 2.0 m/s. The rope's tension is 50 N, directed 37° above the horizontal. At what rate does the rope do work on the sled?",
+              "choices": [
+                "80 W",
+                "100 W",
+                "60 W",
+                "25 W"
+              ],
+              "key": "A",
+              "rationale": "P = Tv cos 37° = (50 N)(2.0 m/s)(0.80) = 80 W.",
+              "distractorNotes": {
+                "B": "This ignores the angle, using the whole tension along the motion.",
+                "C": "This uses sin 37°, the vertical component, which does no work on a level sled.",
+                "D": "This divides the force by the speed."
+              },
+              "topics": [
+                "CM.3.5"
+              ]
+            },
+            {
+              "id": "cm-u3-mc12",
+              "prompt": "A car starts from rest, and its engine delivers constant power with no losses. It reaches speed v at time t. When does it reach speed 2v?",
+              "choices": [
+                "2t",
+                "√(2) t",
+                "4t",
+                "8t"
+              ],
+              "key": "C",
+              "rationale": "With constant power, ½mv^2 = Pt, so the time is proportional to v^2: twice the speed takes four times as long, 4t.",
+              "distractorNotes": {
+                "A": "This assumes constant acceleration, which constant power does not give.",
+                "B": "This takes the square root the wrong way: v ∝ √(t), so t ∝ v^2.",
+                "D": "This cubes the speed ratio, as for power against drag, not for the energy delivered."
+              },
+              "topics": [
+                "CM.3.5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 35,
+          "calculator": "any",
+          "directions": "Show your reasoning and include units. Partial credit is given for correct reasoning.",
+          "items": [
+            {
+              "id": "cm-u3-fr1",
+              "type": "MR",
+              "topics": [
+                "CM.3.2",
+                "CM.3.4",
+                "CM.3.5"
+              ],
+              "prompt": "A winch drags a 2.0 kg crate across a level floor, starting from rest at x = 0. The winch's horizontal pull depends on position: F(x) = 40 − 8.0x, with F in newtons and x in meters, for 0 ≤ x ≤ 6.0 m. The coefficient of kinetic friction between the crate and the floor is 0.30.",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the work done by the winch on the crate from x = 0 to x = 6.0 m.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes W = ∫ from 0 to 6.0 of (40 − 8.0x) dx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates W = 240 − 144 = 96 J."
+                    }
+                  ],
+                  "answer": "96 J",
+                  "steps": [
+                    "The force depends on position, so integrate: an antiderivative of 40 − 8.0x is 40x − 4.0x^2.",
+                    "W = 40(6.0) − 4.0(6.0)^2 = 240 − 144 = 96 J."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the work done by friction on the crate over the same 6.0 m.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "W_f = −μmgd = −(0.30)(2.0)(9.8)(6.0) = −35 J (accept −35.3 J)."
+                    }
+                  ],
+                  "answer": "−35 J (−35.3 J)",
+                  "steps": [
+                    "Friction is constant, f = μmg = 5.88 N, and opposes the motion.",
+                    "W_f = −(5.88 N)(6.0 m) = −35.3 J."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the crate's speed at x = 6.0 m.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies the work–energy theorem with both works: ½mv^2 = 96 J − 35.3 J = 60.7 J."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v = 7.8 m/s (accept 7.7–7.9 m/s)."
+                    }
+                  ],
+                  "answer": "7.8 m/s",
+                  "steps": [
+                    "W_net = 96 − 35.3 = 60.7 J = ½(2.0)v^2.",
+                    "v = √(60.7) m/s = 7.8 m/s."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "At what position is the crate's speed greatest? Justify your answer, and find that greatest speed.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the speed is greatest where the net force is zero, F(x) = f, because the crate speeds up while F > f and slows down after."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves 40 − 8.0x = 5.88 to get x = 4.3 m (accept 4.2–4.3 m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds K = 40x − 4.0x^2 − 5.88x = 72.8 J and v = 8.5 m/s (accept 8.4–8.6 m/s)."
+                    }
+                  ],
+                  "answer": "At x = 4.27 m, where the pull equals friction; v_max = 8.5 m/s.",
+                  "steps": [
+                    "The crate speeds up while the pull exceeds friction and slows down once the pull is smaller.",
+                    "40 − 8.0x = 5.88 gives x = 34.12/8.0 = 4.27 m.",
+                    "W_net(4.27) = 40(4.27) − 4.0(4.27)^2 − 5.88(4.27) = 72.8 J, so v = √(72.8) m/s = 8.5 m/s."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Find the power the winch delivers to the crate when the crate is at x = 2.0 m.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the speed at x = 2.0 m from the work–energy theorem: K = 64 − 11.8 = 52.2 J, v = 7.2 m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "P = F(2.0)v = (24 N)(7.2 m/s) = 1.7 × 10^2 W (accept 170–175 W)."
+                    }
+                  ],
+                  "answer": "1.7 × 10^2 W (173 W)",
+                  "steps": [
+                    "At x = 2.0 m: W_winch = 80 − 16 = 64 J and W_f = −11.8 J, so K = 52.2 J and v = √(52.2) = 7.23 m/s.",
+                    "The pull is 40 − 16 = 24 N along the velocity, so P = (24 N)(7.23 m/s) = 173 W."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-u3-fr2",
+              "type": "TBR",
+              "topics": [
+                "CM.3.3",
+                "CM.3.4",
+                "CM.3.2"
+              ],
+              "prompt": "A 0.50 kg particle moves along the x-axis. The only force on it is conservative, with the potential energy U(x) = 3.0x^2 − x^3 (U in joules, x in meters) shown in the graph. At x = 0 the particle is moving in the +x direction with 3.0 J of kinetic energy.",
+              "figureIds": [
+                "cm-u3-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On the bar charts provided, show the particle's kinetic energy K and potential energy U at x = 0 and at x = 1.0 m. Give the value of each bar.",
+                  "figureIds": [
+                    "cm-u3-f3"
+                  ],
+                  "answerFigureIds": [
+                    "cm-u3-f5"
+                  ],
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "At x = 0: K = 3.0 J and U = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "At x = 1.0 m: U = 2.0 J and K = 1.0 J."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The totals are equal (3.0 J) at both positions, because the force is conservative."
+                    }
+                  ],
+                  "answer": "x = 0: K = 3.0 J, U = 0. x = 1.0 m: K = 1.0 J, U = 2.0 J. Both totals are 3.0 J.",
+                  "steps": [
+                    "U(0) = 0, so E = K + U = 3.0 J.",
+                    "U(1.0) = 3.0 − 1.0 = 2.0 J, so K = 3.0 − 2.0 = 1.0 J."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the axes provided, sketch the particle's kinetic energy K as a function of x from x = 0 until it first stops.",
+                  "figureIds": [
+                    "cm-u3-f4"
+                  ],
+                  "answerFigureIds": [
+                    "cm-u3-f6"
+                  ],
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Starts at K = 3.0 J at x = 0 with a horizontal tangent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Decreases through K = 1.0 J at x = 1.0 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reaches K = 0 at about x = 1.3–1.4 m, where the sketch ends."
+                    }
+                  ],
+                  "answer": "K(x) = 3.0 − 3.0x^2 + x^3 falls from 3.0 J (flat at x = 0) through 1.0 J at 1.0 m to zero at about 1.35 m.",
+                  "steps": [
+                    "K = E − U = 3.0 − (3.0x^2 − x^3).",
+                    "K is zero where U = 3.0 J, between x = 1.3 m and 1.4 m."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the force on the particle as a function of x. Find the position where the particle first stops and the force on it there.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "F(x) = −dU/dx = −6.0x + 3.0x^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves 3.0x^2 − x^3 = 3.0 to get x = 1.35 m (accept 1.3–1.4 m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "F = −2.6 N (accept −2.5 to −2.7 N), toward −x."
+                    }
+                  ],
+                  "answer": "F(x) = 3.0x^2 − 6.0x; the particle stops at x = 1.35 m, where F = −2.6 N.",
+                  "steps": [
+                    "Differentiate U and change the sign.",
+                    "Solve U(x) = 3.0 J numerically on 0 < x < 2: x ≈ 1.347 m.",
+                    "F(1.347) = 3.0(1.815) − 6.0(1.347) = 5.44 − 8.08 = −2.6 N."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Explain how the slope of your sketch in part (b) at x = 0 and at the stopping point is consistent with your answers in part (c). Then describe the particle's motion after it stops.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that dK/dx = F (the work–energy theorem), so the slope of K(x) is the force."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Checks both points: the slope is zero at x = 0, where F = 0, and about −2.6 J/m at the stopping point, where F = −2.6 N."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Describes the later motion: the force pushes it back toward −x, it passes x = 0 with 3.0 J of kinetic energy and turns around again near x = −0.88 m, so it oscillates between about −0.88 m and 1.35 m."
+                    }
+                  ],
+                  "answer": "Because dK/dx = F, the K(x) sketch must be flat at x = 0 (F = 0) and slope down at about −2.6 J/m where the particle stops (F = −2.6 N). Afterward the particle moves back toward −x, passes x = 0 at its greatest speed, and stops again where U = 3.0 J on the left, near x = −0.88 m; it oscillates between the two turning points.",
+                  "steps": [
+                    "Over a small step dx, the work F dx equals the change dK, so the slope of K against x is the force.",
+                    "On the left, 3.0x^2 − x^3 = 3.0 at x ≈ −0.88 m; the peak of U at x = 2.0 m (4.0 J) is never reached."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

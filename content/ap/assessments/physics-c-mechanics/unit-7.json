@@ -1,0 +1,552 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "unit-7",
+  "kind": "unit-test",
+  "unitId": "u7",
+  "title": "Unit 7 test: Oscillations",
+  "author": "cm-5",
+  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, measure angular positions, angular speeds and phases in radians, and state your positive direction or sense of rotation where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "figures": [
+    {
+      "id": "cm-u7-f1",
+      "alt": "Graph of a cart's position x against time t from 0 to 2.0 s: a cosine curve starting at its maximum at t = 0, with four marked points P, Q, R and S at t = 0.5, 1.0, 1.5 and 2.0 s.",
+      "caption": "Position of an oscillating cart"
+    },
+    {
+      "id": "cm-u7-f2",
+      "alt": "Graph of position x in meters against time t in seconds from 0 to 2.4 s: a curve starting at its lowest value, −0.080 m, at t = 0, rising through 0 at t = 0.3 s to +0.080 m at t = 0.6 s, back through 0 at 0.9 s to −0.080 m at 1.2 s, and repeating.",
+      "caption": "Position of the cart"
+    },
+    {
+      "id": "cm-u7-f3",
+      "alt": "Two blank sets of axes stacked vertically sharing a time axis from 0 to 2.4 s with ticks every 0.3 s: velocity v (m/s) and acceleration a (m/s^2), each with an unmarked vertical scale.",
+      "caption": "Axes for v and a"
+    },
+    {
+      "id": "cm-u7-f4",
+      "alt": "Completed sketches: velocity is a sine curve starting at 0 and rising to 0.42 m/s at t = 0.3 s, with period 1.2 s; acceleration is a cosine curve starting at +2.2 m/s^2 at t = 0, with period 1.2 s.",
+      "caption": "Velocity and acceleration of the cart"
+    },
+    {
+      "id": "cm-u7-f5",
+      "alt": "Blank energy bar charts with two groups, at t = 0 and at t = 0.20 s, each with empty columns labeled K and U and a vertical scale marked 0, E/4, E/2, 3E/4 and E.",
+      "caption": "Energy bar charts to complete"
+    },
+    {
+      "id": "cm-u7-f6",
+      "alt": "Completed bar charts. At t = 0, K is empty and U reaches E. At t = 0.20 s, K reaches 3E/4 and U reaches E/4.",
+      "caption": "Completed bar charts"
+    },
+    {
+      "id": "cm-u7-f7",
+      "alt": "A uniform rod of length L hanging from a pivot at its top end, with a small clamp of mass M drawn at its bottom end.",
+      "caption": "Rod with a clamp at its lower end"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 25,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance and friction unless a question says otherwise.",
+          "items": [
+            {
+              "id": "cm-u7-mc01",
+              "prompt": "Which of these moves in simple harmonic motion?",
+              "choices": [
+                "A ball bouncing elastically on a hard floor",
+                "A block on a horizontal spring on a frictionless surface",
+                "A ball rolling back and forth in a V-shaped trough",
+                "A car driving around a circular track at constant speed"
+              ],
+              "key": "B",
+              "rationale": "Only the spring exerts a force proportional to the displacement from equilibrium and opposite to it, F = −kx, which is the condition for SHM.",
+              "distractorNotes": {
+                "A": "The ball repeats its motion, but the force on it is constant gravity plus brief impacts, not proportional to displacement.",
+                "C": "In a V-shaped trough the restoring force has a constant size on each side, not one proportional to displacement.",
+                "D": "The car moves in a circle; only the projection of its position onto a diameter would be SHM."
+              },
+              "topics": [
+                "CM.7.1"
+              ]
+            },
+            {
+              "id": "cm-u7-mc02",
+              "prompt": "An object's position is x(t) = 0.20 cos(5t + π/3), in meters with t in seconds. Which equation does x(t) satisfy?",
+              "choices": [
+                "d^2x/dt^2 = −25x",
+                "d^2x/dt^2 = −5x",
+                "d^2x/dt^2 = 25x",
+                "dx/dt = −5x"
+              ],
+              "key": "A",
+              "rationale": "Differentiating twice gives d^2x/dt^2 = −0.20(25) cos(5t + π/3) = −25x.",
+              "distractorNotes": {
+                "B": "This uses ω instead of ω^2.",
+                "C": "This has the wrong sign; it would describe motion away from equilibrium.",
+                "D": "This confuses the velocity with the acceleration; dx/dt is a sine, not a multiple of x."
+              },
+              "topics": [
+                "CM.7.1"
+              ]
+            },
+            {
+              "id": "cm-u7-mc03",
+              "prompt": "A 0.24 kg particle moves along x with potential energy U(x) = 3.0x^2 + 0.50x^4, with U in joules and x in meters. What is the period of its small oscillations about x = 0?",
+              "choices": [
+                "0.20 s",
+                "0.80 s",
+                "1.3 s",
+                "1.8 s"
+              ],
+              "key": "C",
+              "rationale": "Near x = 0, k_eff = d^2U/dx^2 = 6.0 + 6.0x^2 = 6.0 N/m, so ω = √(6.0/0.24) = 5.0 rad/s and T = 2π/5.0 = 1.3 s.",
+              "distractorNotes": {
+                "A": "This is 1/ω, not 2π/ω.",
+                "B": "This is the frequency in hertz, 0.80 Hz, given as a period.",
+                "D": "This takes the coefficient 3.0 N/m as k instead of the second derivative, 6.0 N/m."
+              },
+              "topics": [
+                "CM.7.1",
+                "CM.7.2"
+              ]
+            },
+            {
+              "id": "cm-u7-mc04",
+              "prompt": "A 0.30 kg block oscillates on a spring with k = 120 N/m. What is the frequency of its oscillation?",
+              "choices": [
+                "0.31 Hz",
+                "3.2 Hz",
+                "20 Hz",
+                "400 Hz"
+              ],
+              "key": "B",
+              "rationale": "ω = √(k/m) = √(400) = 20 rad/s and f = ω/(2π) = 3.2 Hz.",
+              "distractorNotes": {
+                "A": "This is the period in seconds, 0.31 s.",
+                "C": "This is the angular frequency in rad/s, not the frequency in hertz.",
+                "D": "This is k/m, the square of the angular frequency."
+              },
+              "topics": [
+                "CM.7.2"
+              ]
+            },
+            {
+              "id": "cm-u7-mc05",
+              "prompt": "A block on a spring oscillates with period T. The spring is cut in half, and the same block oscillates on one half. What is the new period?",
+              "choices": [
+                "T/√2",
+                "T/2",
+                "√2 T",
+                "2T"
+              ],
+              "key": "A",
+              "rationale": "Each half stretches half as much under the same force, so its spring constant is 2k, and T = 2π√(m/2k) = T/√2.",
+              "distractorNotes": {
+                "B": "This makes the period inversely proportional to k instead of to √k.",
+                "C": "This assumes a shorter spring is softer.",
+                "D": "This assumes a shorter spring is softer and drops the square root."
+              },
+              "topics": [
+                "CM.7.2"
+              ]
+            },
+            {
+              "id": "cm-u7-mc06",
+              "prompt": "The graph shows the position of an oscillating cart. At which marked point is the cart's velocity positive and greatest?",
+              "figureIds": [
+                "cm-u7-f1"
+              ],
+              "choices": [
+                "Point P",
+                "Point Q",
+                "Point R",
+                "Point S"
+              ],
+              "key": "C",
+              "rationale": "Velocity is the slope of the x–t graph. At R the graph crosses x = 0 rising with its steepest positive slope.",
+              "distractorNotes": {
+                "A": "At P the graph crosses zero falling, so the velocity is greatest but negative.",
+                "B": "At Q the cart is at x = −A, where the slope and the velocity are zero.",
+                "D": "At S the cart is at x = +A, where the velocity is zero."
+              },
+              "topics": [
+                "CM.7.3"
+              ]
+            },
+            {
+              "id": "cm-u7-mc07",
+              "prompt": "An oscillator's velocity is v(t) = 0.48 sin(8.0t), in m/s with t in seconds. What is the magnitude of its greatest acceleration?",
+              "choices": [
+                "0.060 m/s^2",
+                "0.48 m/s^2",
+                "3.8 m/s^2",
+                "31 m/s^2"
+              ],
+              "key": "C",
+              "rationale": "a = dv/dt = (0.48)(8.0) cos(8.0t), so a_max = 3.8 m/s^2 (Aω^2 with A = 0.060 m and ω = 8.0 rad/s).",
+              "distractorNotes": {
+                "A": "This is the amplitude of the position, 0.060 m.",
+                "B": "This is the greatest speed, not the greatest acceleration.",
+                "D": "This multiplies by ω^2 instead of ω starting from the velocity."
+              },
+              "topics": [
+                "CM.7.3"
+              ]
+            },
+            {
+              "id": "cm-u7-mc08",
+              "prompt": "A 0.50 kg block on a spring (k = 200 N/m) oscillates with amplitude 0.050 m. How fast is it moving when its displacement is 0.030 m?",
+              "choices": [
+                "0.60 m/s",
+                "0.80 m/s",
+                "1.0 m/s",
+                "0.40 m/s"
+              ],
+              "key": "B",
+              "rationale": "ω = √(200/0.50) = 20 rad/s, and energy gives v = ω√(A^2 − x^2) = 20√(0.0025 − 0.0009) = 0.80 m/s.",
+              "distractorNotes": {
+                "A": "This is ωx, which treats the speed as proportional to the displacement.",
+                "C": "This is the greatest speed, Aω, reached only at equilibrium.",
+                "D": "This is ω(A − x), which subtracts the displacements instead of their squares."
+              },
+              "topics": [
+                "CM.7.4"
+              ]
+            },
+            {
+              "id": "cm-u7-mc09",
+              "prompt": "The amplitude of a spring–block oscillator is tripled. By what factor does its total mechanical energy change?",
+              "choices": [
+                "3",
+                "6",
+                "1/3",
+                "9"
+              ],
+              "key": "D",
+              "rationale": "E = ½kA^2, so tripling A multiplies E by 3^2 = 9.",
+              "distractorNotes": {
+                "A": "This treats the energy as proportional to A.",
+                "B": "This doubles the factor of 3 instead of squaring it.",
+                "C": "This assumes a larger swing has less energy."
+              },
+              "topics": [
+                "CM.7.4"
+              ]
+            },
+            {
+              "id": "cm-u7-mc10",
+              "prompt": "A spring–block oscillator has total mechanical energy E and amplitude A. What is its kinetic energy when its displacement is 0.60A?",
+              "choices": [
+                "0.36E",
+                "0.40E",
+                "0.60E",
+                "0.64E"
+              ],
+              "key": "D",
+              "rationale": "U = ½k(0.60A)^2 = 0.36E, so K = E − U = 0.64E.",
+              "distractorNotes": {
+                "A": "This is the potential energy at that point.",
+                "B": "This subtracts 0.60 from 1 instead of 0.60^2.",
+                "C": "This assumes the energy divides in proportion to the displacement."
+              },
+              "topics": [
+                "CM.7.4"
+              ]
+            },
+            {
+              "id": "cm-u7-mc11",
+              "prompt": "A uniform rod 1.00 m long swings in a vertical plane about a horizontal pin through a point 0.25 m from one end. What is the period of small oscillations?",
+              "choices": [
+                "1.5 s",
+                "1.0 s",
+                "1.6 s",
+                "1.7 s"
+              ],
+              "key": "A",
+              "rationale": "d = 0.25 m from the center, I = m(1.00^2/12 + 0.25^2) = 0.146m, so T = 2π√(0.146/(9.8 × 0.25)) = 1.5 s.",
+              "distractorNotes": {
+                "B": "This is a simple pendulum 0.25 m long.",
+                "C": "This is the rod pivoted at its end, T = 2π√(2L/(3g)).",
+                "D": "This is a simple pendulum 0.75 m long, the distance from the pin to the far end."
+              },
+              "topics": [
+                "CM.7.5"
+              ]
+            },
+            {
+              "id": "cm-u7-mc12",
+              "prompt": "The length of a simple pendulum is increased by 44%. By what percentage does its period increase for small swings?",
+              "choices": [
+                "44%",
+                "10%",
+                "107%",
+                "20%"
+              ],
+              "key": "D",
+              "rationale": "T ∝ √L, and √1.44 = 1.20, so the period increases by 20%.",
+              "distractorNotes": {
+                "A": "This makes the period proportional to L.",
+                "B": "This uses the fourth root of 1.44 instead of the square root.",
+                "C": "This squares the factor, 1.44^2 = 2.07."
+              },
+              "topics": [
+                "CM.7.5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 35,
+          "calculator": "any",
+          "directions": "Show your reasoning and include units. Partial credit is given for correct reasoning.",
+          "items": [
+            {
+              "id": "cm-u7-fr1",
+              "type": "TBR",
+              "topics": [
+                "CM.7.3",
+                "CM.7.4",
+                "CM.7.2",
+                "CM.7.1"
+              ],
+              "prompt": "A 0.50 kg cart attached to a horizontal spring oscillates on a level track with negligible friction. The graph shows its position x against time t; positive x is to the right of the equilibrium position.",
+              "figureIds": [
+                "cm-u7-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the graph to find the amplitude and period of the motion, and calculate the spring constant.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A = 0.080 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "T = 1.2 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "k = 4π^2m/T^2 = 14 N/m (accept 13–14 N/m)."
+                    }
+                  ],
+                  "answer": "A = 0.080 m; T = 1.2 s; k = 14 N/m (13.7 N/m).",
+                  "steps": [
+                    "The graph swings between −0.080 m and +0.080 m and repeats every 1.2 s.",
+                    "k = mω^2 with ω = 2π/1.2 = 5.24 rad/s: (0.50)(5.24)^2 = 13.7 N/m."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the axes provided, sketch the cart's velocity and acceleration against time from t = 0 to t = 2.4 s. Label the greatest value on each vertical axis.",
+                  "figureIds": [
+                    "cm-u7-f3"
+                  ],
+                  "answerFigureIds": [
+                    "cm-u7-f4"
+                  ],
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Velocity graph is zero at t = 0, 0.6, 1.2 … s, positive from 0 to 0.6 s (a sine shape)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Acceleration graph is a cosine shape opposite to x: +2.2 m/s^2 at t = 0 and largest when x is most negative."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Labels v_max ≈ 0.42 m/s and a_max ≈ 2.2 m/s^2 (accept 0.41–0.43 m/s and 2.1–2.3 m/s^2)."
+                    }
+                  ],
+                  "answer": "v(t) = 0.42 sin(5.24t) m/s and a(t) = 2.2 cos(5.24t) m/s^2.",
+                  "steps": [
+                    "The x–t graph has zero slope at t = 0 and its steepest positive slope at t = 0.3 s, so v starts at 0 and peaks at 0.3 s.",
+                    "a = −ω^2x: x = −0.080 m at t = 0 gives a = +2.2 m/s^2; v_max = Aω = 0.42 m/s and a_max = Aω^2 = 2.2 m/s^2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the bar charts provided, show the kinetic energy K and the spring's potential energy U at t = 0 and at t = 0.20 s, as fractions of the total energy.",
+                  "figureIds": [
+                    "cm-u7-f5"
+                  ],
+                  "answerFigureIds": [
+                    "cm-u7-f6"
+                  ],
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "At t = 0: U = E and K = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "At t = 0.20 s (x = −0.040 m): U = E/4 and K = 3E/4."
+                    }
+                  ],
+                  "answer": "t = 0: K = 0, U = E. t = 0.20 s: x = −0.040 m, so U = E/4 and K = 3E/4.",
+                  "steps": [
+                    "At t = 0.20 s the phase is 2π(0.20/1.2) = π/3, and x = −0.080 cos(π/3) = −0.040 m = −A/2.",
+                    "U = ½kx^2 is a quarter of ½kA^2."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Write an equation for x(t), and show by substitution that it satisfies m d^2x/dt^2 = −kx with your value of k.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "x(t) = −0.080 cos(5.24t) (or 0.080 cos(5.24t + π)), x in meters, t in seconds."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates twice to get d^2x/dt^2 = −(5.24)^2x and shows m(5.24)^2 = (0.50)(27.4) = 13.7 N/m = k."
+                    }
+                  ],
+                  "answer": "x(t) = −0.080 cos(5.24t); d^2x/dt^2 = 0.080(5.24)^2 cos(5.24t) = −27.4x, and m(27.4) = 13.7 N/m = k.",
+                  "steps": [
+                    "dx/dt = 0.080(5.24) sin(5.24t) and d^2x/dt^2 = 0.080(5.24)^2 cos(5.24t) = −(5.24)^2x."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Calculate the total mechanical energy, and use it to check the greatest speed in your velocity sketch.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "E = ½kA^2 = ½(13.7)(0.080)^2 = 0.044 J."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v_max = √(2E/m) = 0.42 m/s, which matches Aω from the sketch."
+                    }
+                  ],
+                  "answer": "E = 0.044 J; √(2E/m) = 0.42 m/s, the same as Aω.",
+                  "steps": [
+                    "E = 0.0439 J.",
+                    "√(2(0.0439)/0.50) = 0.419 m/s."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-u7-fr2",
+              "type": "QQT",
+              "topics": [
+                "CM.7.5",
+                "CM.7.2"
+              ],
+              "prompt": "A uniform rod of mass M and length L hangs from a frictionless pivot at its top end and swings with small oscillations of period T_0, as shown. A small clamp, also of mass M, is then fixed to the bottom end of the rod.",
+              "figureIds": [
+                "cm-u7-f7"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without calculating, state whether the period with the clamp is greater than, less than, or equal to T_0, and justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the period increases."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies: the rod alone behaves like a simple pendulum of length 2L/3, while a mass at the end behaves like one of length L, so adding mass at the end moves the equivalent length toward L (or: the clamp raises I proportionally more than it raises the torque mgd)."
+                    }
+                  ],
+                  "answer": "Greater. The rod alone swings like a simple pendulum two thirds of its length; the clamp, at the full length L, would swing like a longer pendulum, so the combination's equivalent length, and its period, increase.",
+                  "steps": [
+                    "Equivalent length of a physical pendulum: I/(md).",
+                    "Rod: (ML^2/3)/(M × L/2) = 2L/3; point mass at the end: L."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the period with the clamp in terms of L and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "I = ML^2/3 + ML^2 = 4ML^2/3 about the pivot."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Center of mass of the rod and clamp is d = (M(L/2) + ML)/(2M) = 3L/4 below the pivot."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "T = 2π√(I/(2Mgd)) = 2π√(8L/(9g))."
+                    }
+                  ],
+                  "answer": "T = 2π√(8L/(9g)).",
+                  "steps": [
+                    "Physical pendulum: T = 2π√(I/(m_total g d)).",
+                    "(4ML^2/3)/((2M)g(3L/4)) = 8L/(9g)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Show that your result in part (b) is consistent with your answer to part (a).",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Compares with T_0 = 2π√(2L/(3g)): T/T_0 = √((8/9)/(2/3)) = √(4/3) ≈ 1.15 > 1."
+                    }
+                  ],
+                  "answer": "T/T_0 = √(4/3) = 1.15, so the period is greater, as claimed.",
+                  "steps": [
+                    "8/9 > 2/3 = 6/9."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "For L = 0.60 m, calculate T_0 and the period with the clamp.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "T_0 = 2π√(2(0.60)/(3(9.8))) = 1.27 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "T = 2π√(8(0.60)/(9(9.8))) = 1.47 s (accept 1.46–1.47 s)."
+                    }
+                  ],
+                  "answer": "T_0 = 1.27 s; T = 1.47 s.",
+                  "steps": [
+                    "2L/(3g) = 0.0408 s^2.",
+                    "8L/(9g) = 0.0544 s^2."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

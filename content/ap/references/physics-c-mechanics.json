@@ -1,0 +1,446 @@
+{
+  "format": "liminal-ap-reference",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "title": "Formula reference: Physics C: Mechanics",
+  "intro": "Liminal's own collection of the relations this course uses, grouped by the question each one answers and paired with a plain-language meaning and its SI units. Use it while you learn and on Liminal's tests. The exam supplies College Board's own equation sheet, which selects, names and arranges relations differently, so practice with that sheet from the exam page before the exam.",
+  "notes": [
+    "Symbols: x, y, z positions; t time; m and M masses; v speed or velocity; a acceleration; F force; p momentum; K kinetic energy; U potential energy; W work; P power; θ angle; ω angular velocity; α angular acceleration; τ torque; I rotational inertia; L angular momentum; r distance from an axis or a center.",
+    "Vectors are written in components with unit vectors i, j and k. State a positive direction (or sense of rotation) before writing any vector equation.",
+    "Angular quantities (θ in s = rθ, ω, α and the arguments of sine and cosine in oscillations) are in radians. Geometric angles, such as an incline's tilt, may be given in degrees.",
+    "A subscript 0 means a starting value; Δ means final minus initial; Σ means a sum over all the forces, torques or particles in the chosen system.",
+    "A relation marked \"constant only\" holds only when the stated quantity does not change; otherwise use the calculus form above it."
+  ],
+  "groups": [
+    {
+      "id": "calculus",
+      "title": "Calculus the course uses",
+      "rows": [
+        {
+          "relation": "d/dx (x^n) = nx^(n − 1)",
+          "meaning": "Power rule for derivatives, for any constant n.",
+          "units": "Units of the function divided by units of x"
+        },
+        {
+          "relation": "∫ x^n dx = x^(n + 1)/(n + 1) + C, for n ≠ −1",
+          "meaning": "Antiderivative of a power; C is fixed by a starting value, such as x(0) or v(0).",
+          "units": "Units of the function times units of x"
+        },
+        {
+          "relation": "∫ dx/x = ln|x| + C",
+          "meaning": "The n = −1 case: appears in drag, rocket and extended-body problems.",
+          "units": "Dimensionless (take ln of a pure number)"
+        },
+        {
+          "relation": "d/dx e^(ax) = ae^(ax) and ∫ e^(ax) dx = e^(ax)/a + C",
+          "meaning": "Exponential change at a rate proportional to the amount, as in linear drag and damping.",
+          "units": "a has units of 1/x"
+        },
+        {
+          "relation": "d/dx sin(ax) = a cos(ax) and d/dx cos(ax) = −a sin(ax)",
+          "meaning": "Derivatives of sinusoids, with ax in radians; used for oscillations.",
+          "units": "a has units of rad per unit of x"
+        },
+        {
+          "relation": "∫ sin(ax) dx = −cos(ax)/a + C and ∫ cos(ax) dx = sin(ax)/a + C",
+          "meaning": "Antiderivatives of sinusoids, for example the impulse of a sine-shaped force pulse.",
+          "units": "Units of the function times units of x"
+        },
+        {
+          "relation": "d/dx f(g(x)) = f′(g(x)) g′(x)",
+          "meaning": "Chain rule; for example a = dv/dt = (dv/dx)(dx/dt) = v dv/dx.",
+          "units": "Product of the two rates' units"
+        },
+        {
+          "relation": "d/dx [f(x)g(x)] = f′(x)g(x) + f(x)g′(x)",
+          "meaning": "Product rule; for example differentiating a decaying oscillation.",
+          "units": "Units of fg divided by units of x"
+        },
+        {
+          "relation": "∫ from a to b of f(x) dx = F(b) − F(a), where F′ = f",
+          "meaning": "A definite integral is the net accumulation: the signed area under the graph of f.",
+          "units": "Units of f times units of x"
+        },
+        {
+          "relation": "If dy/dx = g(x)h(y), then ∫ dy/h(y) = ∫ g(x) dx",
+          "meaning": "Separation of variables, for equations such as m dv/dt = −bv.",
+          "units": "Each side carries the units of its variable"
+        }
+      ]
+    },
+    {
+      "id": "vectors",
+      "title": "Vectors, angles and shapes",
+      "rows": [
+        {
+          "relation": "A_x = A cos θ and A_y = A sin θ",
+          "meaning": "Components of a vector of size A at angle θ measured from the +x-axis.",
+          "units": "Same as A"
+        },
+        {
+          "relation": "A = √(A_x^2 + A_y^2 + A_z^2)",
+          "meaning": "Size of a vector from its components.",
+          "units": "Same as the components"
+        },
+        {
+          "relation": "A·B = AB cos θ = A_xB_x + A_yB_y + A_zB_z",
+          "meaning": "Dot product: a scalar that uses the parts of A and B that point the same way.",
+          "units": "Product of the units of A and B"
+        },
+        {
+          "relation": "A × B = (A_yB_z − A_zB_y) i + (A_zB_x − A_xB_z) j + (A_xB_y − A_yB_x) k, with |A × B| = AB sin θ",
+          "meaning": "Cross product: a vector perpendicular to both, direction by the right-hand rule.",
+          "units": "Product of the units of A and B"
+        },
+        {
+          "relation": "s = rθ",
+          "meaning": "Arc length swept at radius r through angle θ (in radians).",
+          "units": "m"
+        },
+        {
+          "relation": "1 rev = 2π rad = 360°",
+          "meaning": "Converting between revolutions, radians and degrees; 1 rev/min = 2π/60 rad/s.",
+          "units": "rad"
+        },
+        {
+          "relation": "Circle: C = 2πr, A = πr^2. Sphere: A = 4πr^2, V = (4/3)πr^3. Cylinder: V = πr^2h",
+          "meaning": "Lengths, areas and volumes used for masses and densities.",
+          "units": "m, m^2, m^3"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "title": "How things move",
+      "rows": [
+        {
+          "relation": "v = dx/dt and a = dv/dt = d^2x/dt^2",
+          "meaning": "Velocity is the slope of position against time; acceleration is the slope of velocity.",
+          "units": "m/s and m/s^2"
+        },
+        {
+          "relation": "x(t) = x_0 + ∫ from 0 to t of v dt and v(t) = v_0 + ∫ from 0 to t of a dt",
+          "meaning": "Position and velocity accumulate from starting values; displacement is the signed area under v–t.",
+          "units": "m and m/s"
+        },
+        {
+          "relation": "v = v_0 + at, x = x_0 + v_0t + ½at^2, v^2 = v_0^2 + 2a(x − x_0)",
+          "meaning": "Constant acceleration only.",
+          "units": "m/s and m"
+        },
+        {
+          "relation": "r(t) = x i + y j + z k, v = dr/dt, a = dv/dt",
+          "meaning": "Motion in two or three dimensions, one component at a time; a projectile has a_x = 0 and a_y = −g.",
+          "units": "m, m/s, m/s^2"
+        },
+        {
+          "relation": "v_AC = v_AB + v_BC",
+          "meaning": "Relative velocity: the velocity of A relative to C from A relative to B and B relative to C.",
+          "units": "m/s"
+        },
+        {
+          "relation": "a_c = v^2/r = ω^2r toward the center, a_t = dv/dt along the path",
+          "meaning": "Acceleration of an object moving on a circle; the two parts are perpendicular.",
+          "units": "m/s^2"
+        }
+      ]
+    },
+    {
+      "id": "forces",
+      "title": "Why things move: forces",
+      "rows": [
+        {
+          "relation": "ΣF = ma = dp/dt",
+          "meaning": "Newton's second law for the net external force on a system; ΣF = 0 means constant velocity (first law).",
+          "units": "N = kg·m/s^2"
+        },
+        {
+          "relation": "F_A on B = −F_B on A",
+          "meaning": "Newton's third law: interaction forces are equal in size and opposite in direction, on different objects.",
+          "units": "N"
+        },
+        {
+          "relation": "x_cm = Σm_ix_i/Σm_i = (1/M)∫ x dm, with dm = λ dx for a rod",
+          "meaning": "Center of mass of particles or of a continuous body (same for y and z).",
+          "units": "m; λ in kg/m"
+        },
+        {
+          "relation": "ΣF_ext = Ma_cm",
+          "meaning": "The center of mass moves as if all the external force acted on the total mass there.",
+          "units": "N"
+        },
+        {
+          "relation": "f_s ≤ μ_sN and f_k = μ_kN",
+          "meaning": "Static friction adjusts to whatever is needed, up to a limit; kinetic friction is fixed by the normal force.",
+          "units": "N"
+        },
+        {
+          "relation": "F_s = −kΔx",
+          "meaning": "Ideal spring: pulls back toward its relaxed length in proportion to the stretch.",
+          "units": "N; k in N/m"
+        },
+        {
+          "relation": "F_G = Gm_1m_2/r^2, and near Earth's surface F_G = mg",
+          "meaning": "Gravitational attraction between two spherical (or point) masses.",
+          "units": "N"
+        },
+        {
+          "relation": "F_drag = −bv (linear) or size cv^2 (quadratic); for linear drag v_T = mg/b and the time constant is m/b",
+          "meaning": "Resistive forces that grow with speed and approach a terminal speed.",
+          "units": "N; b in kg/s, c in kg/m"
+        },
+        {
+          "relation": "ΣF_toward center = mv^2/r",
+          "meaning": "Net inward force needed for circular motion at speed v.",
+          "units": "N"
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "title": "Energy, work and power",
+      "rows": [
+        {
+          "relation": "K = ½mv^2",
+          "meaning": "Translational kinetic energy.",
+          "units": "J = kg·m^2/s^2"
+        },
+        {
+          "relation": "W = ∫ F·dr = ∫ F_x dx, and W = Fd cos θ for a constant force",
+          "meaning": "Work done by a force over a path: the area under F–x.",
+          "units": "J = N·m"
+        },
+        {
+          "relation": "W_net = ΔK",
+          "meaning": "Work–energy theorem for an object (or a system with no internal energy changes).",
+          "units": "J"
+        },
+        {
+          "relation": "F_x = −dU/dx and ΔU = −∫ F_x dx",
+          "meaning": "A conservative force points down the slope of its potential-energy graph; equilibrium where dU/dx = 0.",
+          "units": "N and J"
+        },
+        {
+          "relation": "U_g = mgy near Earth; U_G = −Gm_1m_2/r in general (zero far away)",
+          "meaning": "Gravitational potential energy.",
+          "units": "J"
+        },
+        {
+          "relation": "U_s = ½kx^2",
+          "meaning": "Potential energy of an ideal spring stretched or compressed by x.",
+          "units": "J"
+        },
+        {
+          "relation": "ΔK + ΔU + ΔE_internal = W_ext",
+          "meaning": "Energy accounting for a chosen system; with no external work and no friction inside it, K + U stays constant.",
+          "units": "J"
+        },
+        {
+          "relation": "P = dE/dt = F·v",
+          "meaning": "Power: the rate at which energy is transferred; average power is ΔE/Δt.",
+          "units": "W = J/s"
+        }
+      ]
+    },
+    {
+      "id": "momentum",
+      "title": "Momentum and collisions",
+      "rows": [
+        {
+          "relation": "p = mv and P_system = Σm_iv_i = Mv_cm",
+          "meaning": "Momentum of an object and of a system.",
+          "units": "kg·m/s"
+        },
+        {
+          "relation": "J = ∫ F dt = Δp",
+          "meaning": "Impulse: the area under F–t equals the change in momentum.",
+          "units": "N·s = kg·m/s"
+        },
+        {
+          "relation": "If ΣF_ext = 0 (or acts only briefly), then Σp_before = Σp_after",
+          "meaning": "Conservation of momentum, in each direction separately.",
+          "units": "kg·m/s"
+        },
+        {
+          "relation": "Elastic in one dimension: v_2' − v_1' = −(v_2 − v_1)",
+          "meaning": "In an elastic collision kinetic energy is conserved and the relative velocity reverses.",
+          "units": "m/s"
+        },
+        {
+          "relation": "Perfectly inelastic: v' = (m_1v_1 + m_2v_2)/(m_1 + m_2)",
+          "meaning": "Objects that stick share one final velocity; kinetic energy is lost.",
+          "units": "m/s"
+        }
+      ]
+    },
+    {
+      "id": "rotation",
+      "title": "Rotation",
+      "rows": [
+        {
+          "relation": "ω = dθ/dt and α = dω/dt",
+          "meaning": "Angular velocity and acceleration (counterclockwise positive unless stated).",
+          "units": "rad/s and rad/s^2"
+        },
+        {
+          "relation": "ω = ω_0 + αt, θ = θ_0 + ω_0t + ½αt^2, ω^2 = ω_0^2 + 2α(θ − θ_0)",
+          "meaning": "Constant angular acceleration only.",
+          "units": "rad/s and rad"
+        },
+        {
+          "relation": "v = rω and a_t = rα",
+          "meaning": "Linking a point's speed and tangential acceleration to the rotation (radians).",
+          "units": "m/s and m/s^2"
+        },
+        {
+          "relation": "τ = r × F, with |τ| = rF sin θ = r_⊥F",
+          "meaning": "Torque about a point: force times lever arm, direction by the right-hand rule.",
+          "units": "N·m"
+        },
+        {
+          "relation": "I = Σm_ir_i^2 = ∫ r^2 dm",
+          "meaning": "Rotational inertia about an axis; r is the distance from the axis.",
+          "units": "kg·m^2"
+        },
+        {
+          "relation": "I = I_cm + Md^2",
+          "meaning": "Parallel-axis theorem: an axis a distance d from a parallel axis through the center of mass.",
+          "units": "kg·m^2"
+        },
+        {
+          "relation": "Thin hoop MR^2; solid disk or cylinder ½MR^2; solid sphere (2/5)MR^2; thin spherical shell (2/3)MR^2; thin rod about its center (1/12)ML^2, about one end (1/3)ML^2",
+          "meaning": "Rotational inertias of uniform shapes about their symmetry axes (rods: perpendicular to the rod).",
+          "units": "kg·m^2"
+        },
+        {
+          "relation": "Στ = Iα",
+          "meaning": "Newton's second law for rotation about a fixed axis (or the center of mass).",
+          "units": "N·m"
+        },
+        {
+          "relation": "ΣF = 0 and Στ = 0 about any point",
+          "meaning": "Static equilibrium of an extended body; zero net torque alone means constant ω.",
+          "units": "N and N·m"
+        },
+        {
+          "relation": "K_rot = ½Iω^2, W = ∫ τ dθ, P = τω",
+          "meaning": "Rotational kinetic energy, work done by a torque, and power.",
+          "units": "J, J, W"
+        },
+        {
+          "relation": "L = r × p for a particle; L = Iω for a body about a fixed axis",
+          "meaning": "Angular momentum; for a particle moving in a line, |L| = mvr_⊥.",
+          "units": "kg·m^2/s"
+        },
+        {
+          "relation": "Στ_ext = dL/dt and ∫ τ dt = ΔL",
+          "meaning": "Angular impulse changes angular momentum; with no external torque about a point, L about that point is conserved.",
+          "units": "N·m·s = kg·m^2/s"
+        },
+        {
+          "relation": "v_cm = Rω, a_cm = Rα, K = ½Mv_cm^2 + ½I_cmω^2",
+          "meaning": "Rolling without slipping: the contact point is momentarily at rest.",
+          "units": "m/s, m/s^2, J"
+        }
+      ]
+    },
+    {
+      "id": "gravitation",
+      "title": "Gravitation and orbits",
+      "rows": [
+        {
+          "relation": "g(r) = GM/r^2",
+          "meaning": "Gravitational field (acceleration of free fall) at distance r from the center of a spherical body, outside it.",
+          "units": "N/kg = m/s^2"
+        },
+        {
+          "relation": "v = √(GM/r) and T^2 = (4π^2/GM)r^3",
+          "meaning": "Speed and period of a circular orbit of radius r.",
+          "units": "m/s and s"
+        },
+        {
+          "relation": "E = ½mv^2 − GMm/r, and E = −GMm/(2r) on a circular orbit",
+          "meaning": "Total energy of a satellite; it is constant when only gravity acts.",
+          "units": "J"
+        },
+        {
+          "relation": "v_esc = √(2GM/R)",
+          "meaning": "Least launch speed from radius R that reaches a very great distance (E = 0).",
+          "units": "m/s"
+        },
+        {
+          "relation": "r_1v_1 = r_2v_2 at the nearest and farthest points",
+          "meaning": "Angular momentum about the planet is conserved because gravity is a central force.",
+          "units": "m^2/s"
+        }
+      ]
+    },
+    {
+      "id": "oscillations",
+      "title": "Oscillations",
+      "rows": [
+        {
+          "relation": "d^2x/dt^2 = −ω^2x",
+          "meaning": "The equation of simple harmonic motion: acceleration proportional and opposite to displacement.",
+          "units": "m/s^2; ω in rad/s"
+        },
+        {
+          "relation": "x = A cos(ωt + φ), v = −Aω sin(ωt + φ), a = −ω^2x",
+          "meaning": "Position, velocity and acceleration in SHM (phase in radians); v_max = Aω and a_max = Aω^2.",
+          "units": "m, m/s, m/s^2"
+        },
+        {
+          "relation": "T = 2π/ω = 1/f",
+          "meaning": "Period and frequency.",
+          "units": "s; f in Hz"
+        },
+        {
+          "relation": "Spring and mass: ω = √(k/m), T = 2π√(m/k)",
+          "meaning": "Does not depend on the amplitude or on g.",
+          "units": "rad/s and s"
+        },
+        {
+          "relation": "Simple pendulum: T = 2π√(L/g)",
+          "meaning": "Small angles only.",
+          "units": "s"
+        },
+        {
+          "relation": "Physical pendulum: T = 2π√(I/(mgd))",
+          "meaning": "Small angles; I about the pivot and d from the pivot to the center of mass.",
+          "units": "s"
+        },
+        {
+          "relation": "E = ½kA^2 = ½mv^2 + ½kx^2",
+          "meaning": "Energy of a spring–mass oscillator, shared between kinetic and potential.",
+          "units": "J"
+        }
+      ]
+    },
+    {
+      "id": "constants",
+      "title": "Constants and values",
+      "rows": [
+        {
+          "relation": "g = 9.8 m/s^2",
+          "meaning": "Free-fall acceleration near Earth's surface (use 10 m/s^2 only when a question says so).",
+          "units": "m/s^2"
+        },
+        {
+          "relation": "G = 6.67 × 10^−11 N·m^2/kg^2",
+          "meaning": "Universal gravitational constant.",
+          "units": "N·m^2/kg^2"
+        },
+        {
+          "relation": "Earth: mass 5.97 × 10^24 kg, radius 6.37 × 10^6 m",
+          "meaning": "Values used in this course's questions; a question may supply its own.",
+          "units": "kg and m"
+        },
+        {
+          "relation": "k = 10^3, M = 10^6, m = 10^−3, μ = 10^−6",
+          "meaning": "Common SI prefixes (kilo, mega, milli, micro).",
+          "units": "Multiply the unit"
+        }
+      ]
+    }
+  ]
+}

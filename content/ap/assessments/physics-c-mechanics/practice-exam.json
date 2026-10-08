@@ -1,0 +1,1439 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "practice-exam",
+  "kind": "practice-exam",
+  "title": "Practice exam (May 2027 format)",
+  "author": "cm-x",
+  "directions": "This full-length practice exam follows the May 2027 format of the AP® Physics C: Mechanics exam. Section I has 42 multiple-choice questions in 85 minutes; Section II has 4 free-response questions in 95 minutes. A four-function, scientific or graphing calculator is allowed in both sections, and you may use the course's formula reference. Use g = 9.8 m/s^2 and SI units. Take counterclockwise as the positive sense of rotation unless a question says otherwise; angular quantities are in radians and geometric angles in degrees. Take the sections in two timed sittings. Score them with the answer key and scoring guidelines and record raw points by section and by unit; raw points are a practice tally, not an AP score, and are not converted to any other scale.",
+  "figures": [
+    {
+      "id": "cm-pe-f1",
+      "alt": "Graph of velocity v in m/s against time t in seconds from 0 to 12 s. The velocity rises in a straight line from 0 at t = 0 to 6.0 m/s at t = 3.0 s, stays at 6.0 m/s until t = 5.0 s, then falls in a straight line to −6.0 m/s at t = 11 s."
+    },
+    {
+      "id": "cm-pe-f2",
+      "alt": "Graph of net force F in newtons against position x in meters from 0 to 7 m. F is 6.0 N from x = 0 to x = 3.0 m, then falls in a straight line from 6.0 N at x = 3.0 m to −6.0 N at x = 7.0 m."
+    },
+    {
+      "id": "cm-pe-f3",
+      "alt": "Graph of potential energy U in joules against position x in meters from 0 to 4.5 m. The curve rises from 1 J at x = 0 to a peak of 5 J at x = 1.0 m, falls to a valley of 1 J at x = 3.0 m, then rises steeply to 11 J at x = 4.5 m. Labeled points: P at x = 0.5 m on the first rise, Q at the peak, R at x = 2.0 m on the descent, and S at x = 4.2 m on the final steep rise."
+    },
+    {
+      "id": "cm-pe-f4",
+      "alt": "A uniform beam 4.0 m long extends horizontally from a hinge on a wall at the left. A vertical rope attached to the beam 3.0 m from the hinge runs up to the ceiling. A box labeled 30 kg sits on the right end of the beam.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-pe-f5",
+      "alt": "Graph of acceleration a in m/s^2 against time t in seconds from 0 to 4 s. The graph is a sinusoid between +2.0 and −2.0 m/s^2: −2.0 at t = 0, 0 at t = 0.5 s, +2.0 at t = 1.0 s, 0 at t = 1.5 s, −2.0 at t = 2.0 s, and repeating."
+    },
+    {
+      "id": "cm-pe-f6",
+      "alt": "Graph of the force on cart B in newtons against time t in seconds from 0 to 0.6 s. The force rises in a straight line from 0 at t = 0 to 3.0 N at t = 0.20 s, falls in a straight line to 0 at t = 0.40 s, and stays 0 until t = 0.60 s."
+    },
+    {
+      "id": "cm-pe-f7",
+      "alt": "Blank axes for a sketch: force on cart A in newtons from −4 to 4 on the vertical axis and time t in seconds from 0 to 0.6 on the horizontal axis, with grid lines."
+    },
+    {
+      "id": "cm-pe-f8",
+      "alt": "Blank axes for a sketch: velocity v in m/s from −0.6 to 1.0 on the vertical axis and time t in seconds from 0 to 0.6 on the horizontal axis, with grid lines."
+    },
+    {
+      "id": "cm-pe-f9",
+      "alt": "Key graph of the force on cart A: a downward triangle from 0 at t = 0 to −3.0 N at t = 0.20 s, back to 0 at t = 0.40 s, then 0 until t = 0.60 s."
+    },
+    {
+      "id": "cm-pe-f10",
+      "alt": "Key graph of velocity against time. Curve A starts at 0.80 m/s, curves down through 0.20 m/s at t = 0.20 s and levels off at −0.40 m/s at t = 0.40 s. Curve B starts at 0, curves up through 0.20 m/s at t = 0.20 s and levels off at 0.40 m/s at t = 0.40 s. Both are flat after t = 0.40 s; the curves cross at t = 0.20 s."
+    },
+    {
+      "id": "cm-pe-f11",
+      "alt": "Blank grid for plotting, 10 columns by 8 rows, with axes for 1/v in s/m (vertical) and m in kg (horizontal)."
+    },
+    {
+      "id": "cm-pe-f12",
+      "alt": "Key graph of 1/v in s/m against m in kg from 0 to 0.30 kg: five points from (0.050, 1.25) to (0.250, 4.52) lying close to a straight best-fit line with slope about 16.4 s/(m·kg) that meets the vertical axis near 0.41 s/m."
+    },
+    {
+      "id": "cm-pe-f13",
+      "alt": "Left: cross-section of a spherical bowl with a small ball resting slightly up one side of its curved surface; the bowl's radius R is marked from its center of curvature to the surface. Right: a simple pendulum hanging from a pivot, its length marked R − r.",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 85,
+          "calculator": "any",
+          "directions": "42 questions, 85 minutes. Choose the best answer for each question and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question.",
+          "items": [
+            {
+              "id": "cm-pe-mc01",
+              "prompt": "Vectors A = (3.0 i + 4.0 j) m and B = (−2.0 i + 6.0 j) m lie in a plane. What is the angle between them?",
+              "choices": [
+                "35°",
+                "125°",
+                "55°",
+                "18°"
+              ],
+              "key": "C",
+              "rationale": "A·B = (3.0)(−2.0) + (4.0)(6.0) = 18 m^2, |A| = 5.0 m and |B| = √(40) = 6.32 m, so cos φ = 18/(5.0 × 6.32) = 0.569 and φ = 55°.",
+              "distractorNotes": {
+                "A": "This is the complement of the angle, 90° − 55°, as if the dot product gave a sine.",
+                "B": "This is the supplement; the dot product is positive, so the angle is less than 90°.",
+                "D": "This reads the value of the dot product, 18 m^2, as an angle."
+              },
+              "topics": [
+                "CM.1.1"
+              ]
+            },
+            {
+              "id": "cm-pe-mc02",
+              "prompt": "A particle moves along the x-axis with velocity v(t) = 6.0t − 3.0t^2, in m/s with t in seconds. What total distance does it travel from t = 0 to t = 3.0 s?",
+              "choices": [
+                "8.0 m",
+                "0",
+                "4.0 m",
+                "12 m"
+              ],
+              "key": "A",
+              "rationale": "v = 0 at t = 2.0 s, so split the motion: x(t) = 3.0t^2 − t^3 gives a displacement of +4.0 m from 0 to 2.0 s and −4.0 m from 2.0 to 3.0 s, so the distance is 4.0 + 4.0 = 8.0 m.",
+              "distractorNotes": {
+                "B": "This is the displacement, ∫v dt over the whole interval, not the distance.",
+                "C": "This counts only the motion before the particle turns around at t = 2.0 s.",
+                "D": "This evaluates 3.0t^2 alone at t = 2.0 s."
+              },
+              "topics": [
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc03",
+              "prompt": "The graph shows the velocity of a cart along a straight track. At what time is the cart farthest in the positive direction from its starting point?",
+              "choices": [
+                "5.0 s",
+                "11 s",
+                "3.0 s",
+                "8.0 s"
+              ],
+              "key": "D",
+              "rationale": "The position keeps increasing while v > 0 and starts decreasing once v < 0, so the farthest point is where the velocity crosses zero, at t = 8.0 s.",
+              "distractorNotes": {
+                "A": "The cart slows after 5.0 s but is still moving forward until 8.0 s.",
+                "B": "After 8.0 s the velocity is negative, so the cart is already returning.",
+                "C": "This is where the acceleration first changes, not where the motion reverses."
+              },
+              "topics": [
+                "CM.1.3"
+              ],
+              "figureIds": [
+                "cm-pe-f1"
+              ]
+            },
+            {
+              "id": "cm-pe-mc04",
+              "prompt": "An elevator moves upward at a constant 2.0 m/s. A passenger lets go of a ball 1.5 m above the elevator floor. How long does the ball take to reach the floor?",
+              "choices": [
+                "0.39 s",
+                "0.55 s",
+                "0.79 s",
+                "0.31 s"
+              ],
+              "key": "B",
+              "rationale": "In the elevator's frame, which moves at constant velocity, the ball starts from rest and falls with acceleration g: t = √(2(1.5)/9.8) = 0.55 s.",
+              "distractorNotes": {
+                "A": "This gives the ball a downward start of 2.0 m/s relative to the floor; it starts at rest relative to the elevator.",
+                "C": "This gives the ball an upward start of 2.0 m/s relative to the floor, mixing ground-frame and elevator-frame velocities.",
+                "D": "This divides 1.5 m by 4.9 m/s^2 instead of solving ½gt^2 = 1.5 m."
+              },
+              "topics": [
+                "CM.1.4",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc05",
+              "prompt": "A ball is launched from level ground at 25 m/s and 53° above the horizontal. Ignoring air resistance, what is its speed when it is 10 m above the ground on its way down?",
+              "choices": [
+                "15 m/s",
+                "21 m/s",
+                "29 m/s",
+                "14 m/s"
+              ],
+              "key": "B",
+              "rationale": "The horizontal velocity stays 15.0 m/s and v_y^2 = (20.0)^2 − 2(9.8)(10) = 204, so v_y = −14.2 m/s and the speed is √(15.0^2 + 14.2^2) = 21 m/s.",
+              "distractorNotes": {
+                "A": "This is only the horizontal component, the speed at the top of the path.",
+                "C": "This adds 2gh to v_0^2 instead of subtracting it.",
+                "D": "This is only the vertical component at that height."
+              },
+              "topics": [
+                "CM.1.5"
+              ]
+            },
+            {
+              "id": "cm-pe-mc06",
+              "prompt": "A thin uniform wire is bent into a semicircle of radius 0.30 m. How far from the center of the circle is the wire's center of mass?",
+              "choices": [
+                "0.13 m",
+                "0.15 m",
+                "0.19 m",
+                "0.095 m"
+              ],
+              "key": "C",
+              "rationale": "For a piece at angle φ, y = R sin φ and dm = (M/π) dφ, so y_cm = (1/π)∫ from 0 to π of R sin φ dφ = 2R/π = 0.19 m.",
+              "distractorNotes": {
+                "A": "This is 4R/(3π), the result for a solid half-disk, whose mass is spread toward the center.",
+                "B": "This is R/2, which ignores how the wire's mass lies along the arc.",
+                "D": "This is R/π, which drops the factor 2 from the integral."
+              },
+              "topics": [
+                "CM.2.1"
+              ]
+            },
+            {
+              "id": "cm-pe-mc07",
+              "prompt": "A small ball hangs from a string attached to the ceiling of a train car. While the train moves along a straight level track, the string makes a steady angle of 8.0° with the vertical, with the ball displaced toward the rear of the car. What is the train's acceleration?",
+              "choices": [
+                "1.4 m/s^2, backward",
+                "9.7 m/s^2, forward",
+                "70 m/s^2, forward",
+                "1.4 m/s^2, forward"
+              ],
+              "key": "D",
+              "rationale": "The string's tension has a vertical component that balances mg and a horizontal component that accelerates the ball: a = g tan 8.0° = 1.4 m/s^2, toward the front, opposite the ball's displacement.",
+              "distractorNotes": {
+                "A": "The horizontal pull of the string points forward, toward the front of the car, so the acceleration does too.",
+                "B": "This is g cos 8.0°, which is not a horizontal force per unit mass.",
+                "C": "This is g/tan 8.0°, inverting the ratio of the tension's components."
+              },
+              "topics": [
+                "CM.2.2",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-pe-mc08",
+              "prompt": "Two carts with magnets repel each other on a level, frictionless track. At one instant the 0.50 kg cart has an acceleration of 3.0 m/s^2. What is the magnitude of the 1.5 kg cart's acceleration at that instant?",
+              "choices": [
+                "1.0 m/s^2",
+                "3.0 m/s^2",
+                "9.0 m/s^2",
+                "0.33 m/s^2"
+              ],
+              "key": "A",
+              "rationale": "The force on the 0.50 kg cart is (0.50)(3.0) = 1.5 N; by Newton's third law the 1.5 kg cart feels 1.5 N, so its acceleration is 1.5/1.5 = 1.0 m/s^2.",
+              "distractorNotes": {
+                "B": "This assumes equal accelerations; the third law makes the forces, not the accelerations, equal.",
+                "C": "This multiplies by the mass ratio instead of dividing.",
+                "D": "This divides the acceleration by the mass ratio twice."
+              },
+              "topics": [
+                "CM.2.3",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-pe-mc09",
+              "prompt": "A 3.0 kg block on a frictionless table carries a 2.0 kg block on top of it, and the two move together without slipping. A light string tied to the lower block runs over a light frictionless pulley at the table's edge to a hanging 1.0 kg block. What friction force acts on the top block?",
+              "choices": [
+                "3.3 N",
+                "0",
+                "9.8 N",
+                "4.9 N"
+              ],
+              "key": "A",
+              "rationale": "The three blocks share one acceleration, a = (1.0)(9.8)/(6.0) = 1.63 m/s^2. Only friction accelerates the top block, so f = (2.0)(1.63) = 3.3 N, in the direction of motion.",
+              "distractorNotes": {
+                "B": "The top block accelerates, so a horizontal force, static friction, must act on it.",
+                "C": "This is the hanging block's weight, which accelerates all three blocks, not just the top one.",
+                "D": "This uses the lower block's mass, 3.0 kg, instead of the top block's."
+              },
+              "topics": [
+                "CM.2.5",
+                "CM.2.7"
+              ]
+            },
+            {
+              "id": "cm-pe-mc10",
+              "prompt": "A planet has the same average density as Earth and twice Earth's radius. What is the gravitational field strength at its surface, in terms of Earth's surface value g_E?",
+              "choices": [
+                "4g_E",
+                "g_E/2",
+                "2g_E",
+                "8g_E"
+              ],
+              "key": "C",
+              "rationale": "g = GM/R^2 and M = ρ(4/3)πR^3, so g = (4/3)πGρR, proportional to R at fixed density: twice the radius gives 2g_E.",
+              "distractorNotes": {
+                "A": "This treats g as proportional to R^2, missing the 1/R^2 in Newton's law.",
+                "B": "This treats g as inversely proportional to R; at fixed density the mass grows as R^3, so g grows with R.",
+                "D": "This uses the eightfold mass but forgets to divide by the fourfold R^2."
+              },
+              "topics": [
+                "CM.2.6"
+              ]
+            },
+            {
+              "id": "cm-pe-mc11",
+              "prompt": "A box is set down at rest on a conveyor belt that moves at a constant 1.5 m/s. The coefficient of kinetic friction between the box and the belt is 0.30. How far does the box slide relative to the belt before it moves with the belt?",
+              "choices": [
+                "0.77 m",
+                "0.38 m",
+                "0.19 m",
+                "0.51 m"
+              ],
+              "key": "B",
+              "rationale": "Friction gives the box a = μ_k g = 2.94 m/s^2 for t = 1.5/2.94 = 0.51 s. Meanwhile the box moves ½(1.5)(0.51) = 0.38 m and the belt 0.77 m, so the box slides 0.38 m relative to the belt.",
+              "distractorNotes": {
+                "A": "This is how far the belt moves while the box speeds up, not the relative slide.",
+                "C": "This halves the box's ground distance a second time.",
+                "D": "This is the sliding time, 0.51 s, read as a distance."
+              },
+              "topics": [
+                "CM.2.7"
+              ]
+            },
+            {
+              "id": "cm-pe-mc12",
+              "prompt": "A 0.50 kg block on a rough level floor is attached to a horizontal spring (k = 200 N/m) fixed to a wall. The coefficient of static friction is 0.40. What is the largest distance from the spring's relaxed position at which the block can be released from rest and stay at rest?",
+              "choices": [
+                "4.9 mm",
+                "20 mm",
+                "98 mm",
+                "9.8 mm"
+              ],
+              "key": "D",
+              "rationale": "The block stays put while kx ≤ μ_s mg: x ≤ (0.40)(0.50)(9.8)/200 = 9.8 × 10^−3 m.",
+              "distractorNotes": {
+                "A": "This halves the friction limit, as if using an average spring force.",
+                "B": "This uses ½kx = μ_s mg, mixing energy and force.",
+                "C": "This misplaces the decimal point in the result."
+              },
+              "topics": [
+                "CM.2.8",
+                "CM.2.7",
+                "CM.2.4"
+              ]
+            },
+            {
+              "id": "cm-pe-mc13",
+              "prompt": "A 0.050 kg ball is thrown straight down at 6.0 m/s into a liquid that exerts a drag force of size bv, with b = 0.10 kg/s. Ignore buoyancy. What is the ball's acceleration just after it enters the liquid?",
+              "choices": [
+                "2.2 m/s^2, downward",
+                "9.8 m/s^2, downward",
+                "2.2 m/s^2, upward",
+                "22 m/s^2, upward"
+              ],
+              "key": "C",
+              "rationale": "With down positive, ma = mg − bv = 0.49 − 0.60 = −0.11 N, so a = −2.2 m/s^2: the ball slows toward its terminal speed, mg/b = 4.9 m/s.",
+              "distractorNotes": {
+                "A": "The drag, 0.60 N, exceeds the weight, 0.49 N, so the net force points up.",
+                "B": "This ignores the drag force.",
+                "D": "This adds the weight to the drag instead of letting them oppose each other."
+              },
+              "topics": [
+                "CM.2.9",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-pe-mc14",
+              "prompt": "A 0.40 kg ball on a 0.75 m string swings in a vertical circle. At the instant the string is horizontal, the ball's speed is 3.0 m/s. What is the magnitude of the ball's acceleration at that instant?",
+              "choices": [
+                "15 m/s^2",
+                "12 m/s^2",
+                "9.8 m/s^2",
+                "22 m/s^2"
+              ],
+              "key": "A",
+              "rationale": "The centripetal part is v^2/r = 12 m/s^2 toward the center; the tangential part is g = 9.8 m/s^2, because the tension is horizontal. |a| = √(12^2 + 9.8^2) = 15 m/s^2.",
+              "distractorNotes": {
+                "B": "This is only the centripetal part; gravity also gives a tangential acceleration.",
+                "C": "This is only the tangential part.",
+                "D": "This adds perpendicular components as numbers instead of as vectors."
+              },
+              "topics": [
+                "CM.2.10"
+              ]
+            },
+            {
+              "id": "cm-pe-mc15",
+              "prompt": "A 0.40 kg ball has velocity v = (3.0 i − 4.0 j + 12 k) m/s. What is its kinetic energy?",
+              "choices": [
+                "24 J",
+                "2.6 J",
+                "68 J",
+                "34 J"
+              ],
+              "key": "D",
+              "rationale": "v^2 = 9.0 + 16 + 144 = 169 m^2/s^2, so K = ½(0.40)(169) = 34 J.",
+              "distractorNotes": {
+                "A": "This squares the sum of the components, (3.0 − 4.0 + 12)^2, instead of summing their squares.",
+                "B": "This uses the speed, 13 m/s, without squaring it.",
+                "C": "This omits the factor ½."
+              },
+              "topics": [
+                "CM.3.1"
+              ]
+            },
+            {
+              "id": "cm-pe-mc16",
+              "prompt": "A nonlinear spring exerts a force F = −kx^3 on an object at displacement x, with k = 400 N/m^3. How much work does the spring do on the object as it is compressed from x = 0 to x = 0.50 m?",
+              "choices": [
+                "−25 J",
+                "−6.3 J",
+                "−50 J",
+                "+6.3 J"
+              ],
+              "key": "B",
+              "rationale": "W = ∫ from 0 to 0.50 of −kx^3 dx = −k(0.50)^4/4 = −6.25 J; the spring pushes opposite the displacement, so its work is negative.",
+              "distractorNotes": {
+                "A": "This uses −kx^4 without the factor ¼ from the integral.",
+                "C": "This multiplies the final force, −kx^3, by the displacement as if the force were constant.",
+                "D": "This has the right size but the wrong sign: the spring opposes the compression."
+              },
+              "topics": [
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc17",
+              "prompt": "The graph shows the net force on a 2.0 kg cart that moves along the x-axis. The cart passes x = 0 at 2.0 m/s in the +x direction. What is its speed at x = 7.0 m?",
+              "choices": [
+                "4.7 m/s",
+                "4.2 m/s",
+                "5.8 m/s",
+                "5.3 m/s"
+              ],
+              "key": "A",
+              "rationale": "The net work is the signed area: 18 J from 0 to 3.0 m, +6.0 J from 3.0 to 5.0 m and −6.0 J from 5.0 to 7.0 m, a total of 18 J. K = 4.0 + 18 = 22 J, so v = √(2(22)/2.0) = 4.7 m/s.",
+              "distractorNotes": {
+                "B": "This forgets the cart's initial kinetic energy, 4.0 J.",
+                "C": "This adds the area below the axis as positive work.",
+                "D": "This stops the area at x = 5.0 m."
+              },
+              "topics": [
+                "CM.3.2",
+                "CM.3.1"
+              ],
+              "figureIds": [
+                "cm-pe-f2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc18",
+              "prompt": "A particle moving along the x-axis has potential energy U(x) = −8.0x/(x^2 + 1.0), with U in joules and x in meters. Where is it in stable equilibrium?",
+              "choices": [
+                "At x = −1.0 m",
+                "At x = 0",
+                "At x = 1.0 m",
+                "There is no stable equilibrium"
+              ],
+              "key": "C",
+              "rationale": "dU/dx = −8.0(1.0 − x^2)/(x^2 + 1.0)^2 is zero at x = ±1.0 m; U(1.0) = −4.0 J is a minimum, so x = 1.0 m is stable.",
+              "distractorNotes": {
+                "A": "U(−1.0) = +4.0 J is a maximum, so that equilibrium is unstable.",
+                "B": "F(0) = −dU/dx = 8.0 N, so the particle is not in equilibrium there.",
+                "D": "U has a minimum at x = 1.0 m, where a displaced particle is pushed back."
+              },
+              "topics": [
+                "CM.3.3"
+              ]
+            },
+            {
+              "id": "cm-pe-mc19",
+              "prompt": "The graph shows the potential energy of a particle moving along the x-axis. At which labeled point is the magnitude of the force on the particle greatest?",
+              "choices": [
+                "P",
+                "Q",
+                "R",
+                "S"
+              ],
+              "key": "D",
+              "rationale": "F = −dU/dx, so the force is largest where the graph is steepest, at S.",
+              "distractorNotes": {
+                "A": "The slope at P is moderate; the force there is smaller than at S.",
+                "B": "Q is at a maximum of U, where the slope and the force are zero.",
+                "C": "R lies on a falling part of the curve, but the slope there is less steep than at S."
+              },
+              "topics": [
+                "CM.3.3"
+              ],
+              "figureIds": [
+                "cm-pe-f3"
+              ]
+            },
+            {
+              "id": "cm-pe-mc20",
+              "prompt": "A 0.30 kg ball is fixed to one end of a light rod 0.60 m long whose other end turns on a frictionless pivot. The ball is released from rest with the rod horizontal. What force does the rod exert on the ball at the lowest point?",
+              "choices": [
+                "2.9 N",
+                "8.8 N",
+                "5.9 N",
+                "12 N"
+              ],
+              "key": "B",
+              "rationale": "Energy gives v^2 = 2gL at the bottom, so the needed centripetal force is m(2gL)/L = 2mg. Then T − mg = 2mg, so T = 3mg = 8.8 N, upward.",
+              "distractorNotes": {
+                "A": "This is only the ball's weight, mg.",
+                "C": "This is only the centripetal force, 2mg, without balancing the weight.",
+                "D": "This uses v^2 = 3gL or adds the weight twice."
+              },
+              "topics": [
+                "CM.3.4",
+                "CM.2.10"
+              ]
+            },
+            {
+              "id": "cm-pe-mc21",
+              "prompt": "A block slides down a rough ramp at constant speed. For the system of the block, the ramp and Earth, which statement is correct?",
+              "choices": [
+                "Mechanical energy is conserved because the speed is constant.",
+                "The kinetic energy decreases as the potential energy decreases.",
+                "The gravitational potential energy decreases and the thermal energy increases by the same amount, so the total energy is constant.",
+                "Friction does negative work on the system, so its total energy decreases."
+              ],
+              "key": "C",
+              "rationale": "The kinetic energy is constant. Friction inside the system converts gravitational potential energy into thermal energy of the block and ramp; no external work is done, so the total energy is unchanged.",
+              "distractorNotes": {
+                "A": "The block loses height at constant speed, so mechanical energy decreases.",
+                "B": "The speed, and so the kinetic energy, is constant.",
+                "D": "Friction acts between parts of this system; it transforms energy inside the system rather than removing it."
+              },
+              "topics": [
+                "CM.3.4"
+              ]
+            },
+            {
+              "id": "cm-pe-mc22",
+              "prompt": "A 2.0 kg cart moves along a straight track, and its kinetic energy is K = 3.0t^2, in joules with t in seconds. What is the net force on the cart at t = 2.0 s?",
+              "choices": [
+                "3.5 N",
+                "12 N",
+                "6.0 N",
+                "1.7 N"
+              ],
+              "key": "A",
+              "rationale": "Power P = dK/dt = 6.0t = 12 W at t = 2.0 s, and v = √(2K/m) = √(12) = 3.46 m/s, so F = P/v = 3.5 N. (In fact p = √(2mK) = 3.46t, so the force is constant.)",
+              "distractorNotes": {
+                "B": "This is the power in watts, not the force.",
+                "C": "This is d^2K/dt^2, the rate of change of the power, not a force.",
+                "D": "This divides the power by twice the speed."
+              },
+              "topics": [
+                "CM.3.5",
+                "CM.3.1"
+              ]
+            },
+            {
+              "id": "cm-pe-mc23",
+              "prompt": "A 0.40 kg ball moves at a constant speed of 3.0 m/s in a horizontal circle. What is the magnitude of the change in its momentum during one quarter of a revolution?",
+              "choices": [
+                "0",
+                "1.2 kg·m/s",
+                "2.4 kg·m/s",
+                "1.7 kg·m/s"
+              ],
+              "key": "D",
+              "rationale": "The momentum has magnitude 1.2 kg·m/s and turns through 90°, so |Δp| = √(2)(1.2) = 1.7 kg·m/s.",
+              "distractorNotes": {
+                "A": "The speed is constant, but momentum is a vector and its direction changes.",
+                "B": "This is the size of the momentum, not of its change.",
+                "C": "This is the change over half a revolution, when the momentum reverses."
+              },
+              "topics": [
+                "CM.4.1"
+              ]
+            },
+            {
+              "id": "cm-pe-mc24",
+              "prompt": "A 0.15 kg ball at rest is struck by a force F(t) = F_0 sin(πt/T) for 0 ≤ t ≤ T, with F_0 = 600 N and T = 0.010 s. What is the ball's speed afterward?",
+              "choices": [
+                "40.0 m/s",
+                "25.5 m/s",
+                "20.0 m/s",
+                "12.7 m/s"
+              ],
+              "key": "B",
+              "rationale": "J = ∫ from 0 to T of F_0 sin(πt/T) dt = 2F_0T/π = 3.82 N·s, so v = J/m = 25.5 m/s.",
+              "distractorNotes": {
+                "A": "This uses F_0T, as if the peak force acted for the whole time.",
+                "C": "This uses ½F_0T, the area of a triangle, not of a sine pulse.",
+                "D": "This uses F_0T/π, dropping the factor 2 from the integral."
+              },
+              "topics": [
+                "CM.4.2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc25",
+              "prompt": "A 3.0 kg object at rest in space explodes into three 1.0 kg pieces. One moves east at 6.0 m/s and another moves north at 8.0 m/s. What is the speed of the third piece?",
+              "choices": [
+                "14 m/s",
+                "2.0 m/s",
+                "7.0 m/s",
+                "10 m/s"
+              ],
+              "key": "D",
+              "rationale": "Total momentum stays zero, so the third piece's momentum is −(6.0 i + 8.0 j) kg·m/s, with size 10 kg·m/s; its speed is 10 m/s.",
+              "distractorNotes": {
+                "A": "This adds the perpendicular momenta as numbers instead of as vectors.",
+                "B": "This subtracts the speeds as if the pieces moved along one line.",
+                "C": "This averages the two speeds."
+              },
+              "topics": [
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-pe-mc26",
+              "prompt": "A ball of mass m moving at speed v collides elastically and head-on with a ball of mass M at rest. Afterward the first ball moves backward at v/3. What is M?",
+              "choices": [
+                "2m",
+                "3m",
+                "4m",
+                "m/2"
+              ],
+              "key": "A",
+              "rationale": "For an elastic collision with the target at rest, v_1' = (m − M)v/(m + M) = −v/3, so 3m − 3M = −m − M and M = 2m.",
+              "distractorNotes": {
+                "B": "That gives v_1' = −v/2.",
+                "C": "That gives v_1' = −3v/5.",
+                "D": "A lighter target cannot make the first ball bounce back."
+              },
+              "topics": [
+                "CM.4.4"
+              ]
+            },
+            {
+              "id": "cm-pe-mc27",
+              "prompt": "Two carts of equal mass move toward each other on a level track, one at speed v and the other at 2v. They collide and stick together. What fraction of the original kinetic energy is lost?",
+              "choices": [
+                "0.50",
+                "0.10",
+                "0.90",
+                "1.0"
+              ],
+              "key": "C",
+              "rationale": "Momentum: mv − 2mv = 2mV, so V = −v/2. K before = ½m(v^2 + 4v^2) = 2.5mv^2; K after = ½(2m)(v^2/4) = 0.25mv^2. The fraction lost is 2.25/2.5 = 0.90.",
+              "distractorNotes": {
+                "A": "This is the loss when a cart hits an identical cart at rest.",
+                "B": "This is the fraction that remains, not the fraction lost.",
+                "D": "The total momentum is not zero, so the carts keep moving and some kinetic energy remains."
+              },
+              "topics": [
+                "CM.4.4"
+              ]
+            },
+            {
+              "id": "cm-pe-mc28",
+              "prompt": "A disk's angular position is θ(t) = 2.0t^3 − 3.0t^2, in radians with t in seconds. At the instant after t = 0 when the disk is momentarily at rest, what is the acceleration of a point 0.10 m from its axis?",
+              "choices": [
+                "0",
+                "0.60 m/s^2",
+                "1.2 m/s^2",
+                "0.060 m/s^2"
+              ],
+              "key": "B",
+              "rationale": "ω = 6.0t^2 − 6.0t = 0 at t = 1.0 s, where α = 12t − 6.0 = 6.0 rad/s^2. With ω = 0 there is no centripetal part, so a = rα = 0.60 m/s^2.",
+              "distractorNotes": {
+                "A": "The disk is momentarily at rest, but its angular acceleration is not zero.",
+                "C": "This uses 12t alone for α, dropping the −6.0 term.",
+                "D": "This misplaces the decimal point."
+              },
+              "topics": [
+                "CM.5.1",
+                "CM.5.2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc29",
+              "prompt": "A thin uniform ring of mass M and radius R rotates about an axis along one of its diameters. Integrating over the ring, what is its rotational inertia about that axis?",
+              "choices": [
+                "½MR^2",
+                "MR^2",
+                "¼MR^2",
+                "2MR^2"
+              ],
+              "key": "A",
+              "rationale": "A piece at angle φ from the axis is R|sin φ| from it, with dm = (M/2π) dφ, so I = (M/2π)∫ from 0 to 2π of R^2 sin^2 φ dφ = ½MR^2.",
+              "distractorNotes": {
+                "B": "This is the ring about its central axis, where every piece is R away.",
+                "C": "This is a solid disk about a diameter.",
+                "D": "This is the ring about a point on its rim, perpendicular to its plane."
+              },
+              "topics": [
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-pe-mc30",
+              "prompt": "A uniform 20 kg beam 4.0 m long is hinged to a wall at its left end and held horizontal by a vertical rope attached 3.0 m from the hinge. A 30 kg box sits at the beam's right end, as shown. What force does the hinge exert on the beam?",
+              "choices": [
+                "33 N, upward",
+                "490 N, upward",
+                "33 N, downward",
+                "523 N, upward"
+              ],
+              "key": "C",
+              "rationale": "Torques about the hinge: T(3.0) = (196)(2.0) + (294)(4.0), so T = 523 N. Vertical forces: H + 523 = 196 + 294, so H = −33 N: the hinge pulls down.",
+              "distractorNotes": {
+                "A": "The rope pulls up with more than the total weight, so the hinge must pull down.",
+                "B": "This is the total weight, as if the hinge held everything up.",
+                "D": "This is the rope's tension, not the hinge's force."
+              },
+              "topics": [
+                "CM.5.5",
+                "CM.5.3"
+              ],
+              "figureIds": [
+                "cm-pe-f4"
+              ]
+            },
+            {
+              "id": "cm-pe-mc31",
+              "prompt": "A uniform rod of length L lies at rest on frictionless ice. A brief force F is applied at one end, perpendicular to the rod. Just after the force starts, which point on the rod has zero acceleration?",
+              "choices": [
+                "The center of the rod",
+                "The point 2L/3 from the struck end",
+                "The point L/3 from the struck end",
+                "The far end"
+              ],
+              "key": "B",
+              "rationale": "a_cm = F/M toward F, and α = F(L/2)/(ML^2/12) = 6F/(ML). A point a distance s beyond the center (away from the struck end) has a = F/M − αs = 0 at s = L/6, which is L/2 + L/6 = 2L/3 from the struck end.",
+              "distractorNotes": {
+                "A": "The center accelerates at F/M, the same as with no rotation.",
+                "C": "On that side of the center, rotation adds to the translation instead of canceling it.",
+                "D": "The far end moves backward: a = F/M − α(L/2) = −2F/M."
+              },
+              "topics": [
+                "CM.5.6",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-pe-mc32",
+              "prompt": "A car's wheels have radius 0.30 m and roll without slipping. The car speeds up uniformly from 10 m/s to 20 m/s in 5.0 s. How many revolutions does each wheel make during that time?",
+              "choices": [
+                "250",
+                "53",
+                "80",
+                "40"
+              ],
+              "key": "D",
+              "rationale": "The car travels (10 + 20)/2 × 5.0 = 75 m, and each revolution covers 2π(0.30) = 1.88 m, so the wheel turns 75/1.88 = 40 times.",
+              "distractorNotes": {
+                "A": "This is the angle in radians, 75/0.30.",
+                "B": "This uses the final speed for the whole 5.0 s.",
+                "C": "This treats 0.30 m as the diameter, using a radius of 0.15 m."
+              },
+              "topics": [
+                "CM.5.2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc33",
+              "prompt": "A motor exerts a constant 2.5 N·m torque on a wheel whose angular velocity is ω(t) = 4.0 + 3.0t, in rad/s with t in seconds. How much work does the torque do from t = 0 to t = 2.0 s?",
+              "choices": [
+                "35 J",
+                "25 J",
+                "50 J",
+                "20 J"
+              ],
+              "key": "A",
+              "rationale": "W = ∫τω dt = 2.5 ∫ from 0 to 2.0 of (4.0 + 3.0t) dt = 2.5(8.0 + 6.0) = 35 J.",
+              "distractorNotes": {
+                "B": "This is the power at t = 2.0 s, in watts.",
+                "C": "This multiplies the final power by the whole 2.0 s.",
+                "D": "This multiplies the starting power by 2.0 s."
+              },
+              "topics": [
+                "CM.6.2",
+                "CM.6.1"
+              ]
+            },
+            {
+              "id": "cm-pe-mc34",
+              "prompt": "A uniform 0.60 kg rod 1.0 m long turns about a fixed axle through one end. Starting from rest, a constant net torque of 0.30 N·m acts on it for 2.0 s. What are its angular momentum and angular speed then?",
+              "choices": [
+                "0.60 kg·m^2/s and 12 rad/s",
+                "0.15 kg·m^2/s and 0.75 rad/s",
+                "0.60 kg·m^2/s and 3.0 rad/s",
+                "1.2 kg·m^2/s and 6.0 rad/s"
+              ],
+              "key": "C",
+              "rationale": "Angular impulse: L = τt = 0.60 kg·m^2/s. With I = ML^2/3 = 0.20 kg·m^2, ω = L/I = 3.0 rad/s.",
+              "distractorNotes": {
+                "A": "This uses ML^2/12, the inertia about the center, not the end.",
+                "B": "This divides the torque by the time instead of multiplying.",
+                "D": "This doubles the angular impulse."
+              },
+              "topics": [
+                "CM.6.3"
+              ]
+            },
+            {
+              "id": "cm-pe-mc35",
+              "prompt": "A student sits on a stool that turns freely. The student and stool have a rotational inertia of 2.0 kg·m^2, not counting two 3.0 kg dumbbells, which the student holds 0.20 m from the axis while turning at 6.0 rad/s. The student then extends both arms so that the dumbbells are 0.80 m from the axis. What is the new angular speed?",
+              "choices": [
+                "1.5 rad/s",
+                "0.38 rad/s",
+                "16 rad/s",
+                "2.3 rad/s"
+              ],
+              "key": "D",
+              "rationale": "I_1 = 2.0 + 2(3.0)(0.20)^2 = 2.24 kg·m^2 and I_2 = 2.0 + 2(3.0)(0.80)^2 = 5.84 kg·m^2. L is conserved: ω_2 = (2.24)(6.0)/5.84 = 2.3 rad/s.",
+              "distractorNotes": {
+                "A": "This scales ω by the ratio of the radii, 0.20/0.80.",
+                "B": "This leaves out the student and stool's 2.0 kg·m^2.",
+                "C": "This inverts the ratio of rotational inertias."
+              },
+              "topics": [
+                "CM.6.4"
+              ]
+            },
+            {
+              "id": "cm-pe-mc36",
+              "prompt": "A uniform solid 2.0 kg sphere rolls without slipping down a 30° incline. What is the static friction force on it?",
+              "choices": [
+                "2.8 N, down the incline",
+                "2.8 N, up the incline",
+                "9.8 N, up the incline",
+                "0"
+              ],
+              "key": "B",
+              "rationale": "a = g sin θ/(1 + 2/5) = (5/7)g sin θ, and Mg sin θ − f = Ma gives f = (2/7)Mg sin θ = (2/7)(2.0)(9.8)(0.50) = 2.8 N, up the slope.",
+              "distractorNotes": {
+                "A": "Friction must provide a torque that spins the sphere faster as it speeds up, so it acts up the slope at the contact point.",
+                "C": "This is the whole gravity component along the slope, which would stop the sphere from accelerating.",
+                "D": "Without friction the sphere would slide without spinning up."
+              },
+              "topics": [
+                "CM.6.5"
+              ]
+            },
+            {
+              "id": "cm-pe-mc37",
+              "prompt": "A 500 kg satellite moves in a circular orbit of radius 8.0 × 10^6 m around Earth. What is the least additional energy that would let it escape to a very great distance? Use G = 6.67 × 10^−11 N·m^2/kg^2 and Earth's mass 5.97 × 10^24 kg.",
+              "choices": [
+                "1.2 × 10^10 J",
+                "2.5 × 10^10 J",
+                "6.2 × 10^9 J",
+                "5.0 × 10^10 J"
+              ],
+              "key": "A",
+              "rationale": "In the orbit E = −GMm/(2r) = −1.2 × 10^10 J; escape needs E ≥ 0, so add GMm/(2r) = 1.2 × 10^10 J.",
+              "distractorNotes": {
+                "B": "This is GMm/r, which ignores the kinetic energy the satellite already has.",
+                "C": "This halves the needed energy again.",
+                "D": "This doubles GMm/r."
+              },
+              "topics": [
+                "CM.6.6"
+              ]
+            },
+            {
+              "id": "cm-pe-mc38",
+              "prompt": "A 0.50 kg particle moves along the x-axis with potential energy U(x) = 2.0x^2 − 4.0x, with U in joules and x in meters. About what position does it oscillate, and with what period?",
+              "choices": [
+                "x = 0; 2.2 s",
+                "x = 1.0 m; 3.1 s",
+                "x = 1.0 m; 2.2 s",
+                "x = 2.0 m; 1.6 s"
+              ],
+              "key": "C",
+              "rationale": "F = −dU/dx = −4.0(x − 1.0), a restoring force about x = 1.0 m with k = 4.0 N/m, so T = 2π√(0.50/4.0) = 2.2 s.",
+              "distractorNotes": {
+                "A": "At x = 0 the force is 4.0 N, so it is not the equilibrium point.",
+                "B": "This uses k = 2.0 N/m, the coefficient of x^2, instead of d^2U/dx^2 = 4.0 N/m.",
+                "D": "U(2.0 m) = 0 is a zero of U, not its minimum, and the period does not follow from U."
+              },
+              "topics": [
+                "CM.7.1",
+                "CM.7.2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc39",
+              "prompt": "A block hanging from a spring oscillates vertically with period T on Earth. The same block and spring are taken to the Moon, where g is about one sixth as large. How do the period and the stretch of the spring at equilibrium compare with their values on Earth?",
+              "choices": [
+                "The period is longer, and the equilibrium stretch is smaller.",
+                "The period and the equilibrium stretch are both unchanged.",
+                "The period is shorter, and the equilibrium stretch is larger.",
+                "The period is the same, and the equilibrium stretch is smaller."
+              ],
+              "key": "D",
+              "rationale": "T = 2π√(m/k) does not depend on g; the equilibrium stretch, mg/k, is about one sixth as large.",
+              "distractorNotes": {
+                "A": "Weaker gravity shifts the equilibrium but does not change the restoring force per unit displacement, k.",
+                "B": "The stretch mg/k depends on g.",
+                "C": "Both change in the wrong direction."
+              },
+              "topics": [
+                "CM.7.2"
+              ]
+            },
+            {
+              "id": "cm-pe-mc40",
+              "prompt": "The graph shows the acceleration of a glider oscillating in simple harmonic motion. What is the amplitude of its motion?",
+              "choices": [
+                "0.20 m",
+                "0.64 m",
+                "0.051 m",
+                "1.0 m"
+              ],
+              "key": "A",
+              "rationale": "From the graph, a_max = 2.0 m/s^2 and T = 2.0 s, so ω = π rad/s and A = a_max/ω^2 = 2.0/π^2 = 0.20 m.",
+              "distractorNotes": {
+                "B": "This divides by ω instead of ω^2, giving a speed in m/s, not a length.",
+                "C": "This uses ω = 2π rad/s, taking the 1.0 s from a minimum to a maximum as the period.",
+                "D": "This divides a_max by the period, which has the wrong units."
+              },
+              "topics": [
+                "CM.7.3"
+              ],
+              "figureIds": [
+                "cm-pe-f5"
+              ]
+            },
+            {
+              "id": "cm-pe-mc41",
+              "prompt": "A block on a spring oscillates with amplitude A. At what distance from equilibrium is its speed half its greatest speed?",
+              "choices": [
+                "0.50A",
+                "0.87A",
+                "0.71A",
+                "0.25A"
+              ],
+              "key": "B",
+              "rationale": "Energy: ½kx^2 + ½m(v_max/2)^2 = ½kA^2 and ½mv_max^2 = ½kA^2, so x^2 = ¾A^2 and x = 0.87A.",
+              "distractorNotes": {
+                "A": "Speed does not fall linearly with distance from equilibrium.",
+                "C": "This is where kinetic and potential energy are equal, where the speed is 0.71 of its greatest value.",
+                "D": "This squares ½ for the position instead of for the energy."
+              },
+              "topics": [
+                "CM.7.4"
+              ]
+            },
+            {
+              "id": "cm-pe-mc42",
+              "prompt": "A simple pendulum 0.80 m long hangs inside a car that accelerates along a straight level road at 4.0 m/s^2. What is the period of its small oscillations about its tilted equilibrium position?",
+              "choices": [
+                "1.80 s",
+                "2.33 s",
+                "1.73 s",
+                "1.51 s"
+              ],
+              "key": "C",
+              "rationale": "In the car the effective gravity has size √(g^2 + a^2) = 10.6 m/s^2, so T = 2π√(0.80/10.6) = 1.73 s.",
+              "distractorNotes": {
+                "A": "This is the period when the car is not accelerating.",
+                "B": "This uses g − a, as for an elevator accelerating downward.",
+                "D": "This uses g + a, as for an elevator accelerating upward; the car's acceleration is horizontal."
+              },
+              "topics": [
+                "CM.7.5",
+                "CM.2.5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 95,
+          "calculator": "any",
+          "directions": "4 questions, 95 minutes. Show your reasoning, with equations, substitutions and units; points are awarded for reasoning as well as answers. Suggested times: Question 1 (mathematical routines, 10 points) 20–25 minutes; Question 2 (translation between representations, 12 points) 25–30 minutes; Question 3 (experimental design and analysis, 10 points) 25–30 minutes; Question 4 (qualitative/quantitative translation, 8 points) 15–20 minutes.",
+          "items": [
+            {
+              "id": "cm-pe-fr1",
+              "type": "MR",
+              "topics": [
+                "CM.2.9",
+                "CM.2.5",
+                "CM.3.2",
+                "CM.3.5"
+              ],
+              "prompt": "A 400 kg speedboat coasts in a straight line after its engine is cut, moving at 12 m/s at that moment. The water exerts a drag force of size cv^2, with c = 20 kg/m, opposite the boat's velocity. Ignore all other horizontal forces, and take the direction of motion as positive.",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Using a = v dv/dx, derive an expression for the boat's speed v as a function of the distance x it has traveled since the engine was cut. Express your answer in terms of v_0, c, m and x.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes Newton's second law in the form mv dv/dx = −cv^2 and separates it as dv/v = −(c/m) dx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates with v = v_0 at x = 0 to obtain v = v_0e^(−cx/m)."
+                    }
+                  ],
+                  "answer": "v = v_0e^(−cx/m)",
+                  "steps": [
+                    "The force depends on velocity and the question asks about distance, so use a = v dv/dx.",
+                    "∫ from v_0 to v of dv/v = −(c/m)∫ from 0 to x of dx gives ln(v/v_0) = −cx/m."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Calculate how far the boat travels while slowing from 12 m/s to 6.0 m/s.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets e^(−cx/m) = ½, so x = (m/c) ln 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds x = (400/20) ln 2 = 14 m (13.9 m); accept 13.8–14.0 m."
+                    }
+                  ],
+                  "answer": "14 m (13.9 m)",
+                  "steps": [
+                    "m/c = 20 m.",
+                    "x = 20 ln 2 = 13.9 m."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Derive an expression for v as a function of time t, and calculate the time the boat takes to slow from 12 m/s to 6.0 m/s.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes m dv/dt = −cv^2 and separates it as −dv/v^2 = (c/m) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates to get 1/v − 1/v_0 = (c/m)t, so v = v_0/(1 + cv_0t/m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds t = (m/c)(1/6.0 − 1/12) = 1.7 s (1.67 s)."
+                    }
+                  ],
+                  "answer": "v = v_0/(1 + cv_0t/m); t = 1.7 s",
+                  "steps": [
+                    "∫ from v_0 to v of −dv/v^2 = [1/v] from v_0 to v.",
+                    "(1/6.0 − 1/12) s/m = (1/12) s/m, and c/m = 0.050 m^−1, so t = 1.67 s.",
+                    "Consistency check: integrating v(t) gives x = (m/c) ln(1 + cv_0t/m) = 20 ln 2 m at t = 1.67 s, matching part (b)."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Calculate the work done by the drag force while the boat slows from 12 m/s to 6.0 m/s.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the work–energy theorem, W = ΔK."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds W = ½(400)(6.0^2 − 12^2) = −2.2 × 10^4 J (−21600 J)."
+                    }
+                  ],
+                  "answer": "−2.2 × 10^4 J",
+                  "steps": [
+                    "Drag is the only horizontal force, so its work equals the change in kinetic energy.",
+                    "½(400)(36 − 144) = −21600 J."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Calculate the rate at which the drag force removes energy from the boat at the instant the engine is cut.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds P = cv^3 = (20)(12)^3 = 3.5 × 10^4 W (34560 W), removed from the boat."
+                    }
+                  ],
+                  "answer": "3.5 × 10^4 W",
+                  "steps": [
+                    "The drag's power is F·v = −cv^2 × v = −cv^3."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-pe-fr2",
+              "type": "TBR",
+              "topics": [
+                "CM.4.2",
+                "CM.4.4",
+                "CM.2.3",
+                "CM.4.3"
+              ],
+              "prompt": "Cart A (0.50 kg) moves at +0.80 m/s along a level, frictionless track toward cart B (1.5 kg), which is at rest. Magnets on the carts repel each other, so the carts never touch. A force sensor on cart B records the force on B during the interaction, shown in the graph; the force is zero before t = 0 and after t = 0.40 s.",
+              "figureIds": [
+                "cm-pe-f6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On the axes provided, sketch the force on cart A as a function of time from t = 0 to t = 0.60 s. Justify the shape of your sketch.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Draws a triangle that mirrors cart B's graph below the axis: zero at t = 0, −3.0 N at t = 0.20 s and zero again at t = 0.40 s, then zero to 0.60 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies it with Newton's third law: at every instant the force on A is equal in size and opposite in direction to the force on B."
+                    }
+                  ],
+                  "answer": "A downward triangle: 0 at t = 0, −3.0 N at t = 0.20 s, 0 at t = 0.40 s, and 0 afterward (key graph).",
+                  "steps": [
+                    "The magnets exert an interaction pair of forces on the two carts.",
+                    "The forces are equal and opposite at every instant, not just on average."
+                  ],
+                  "figureIds": [
+                    "cm-pe-f7"
+                  ],
+                  "answerFigureIds": [
+                    "cm-pe-f9"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use the graph to calculate the velocity of each cart after the interaction.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the impulse on B as the area under the graph, ½(0.40 s)(3.0 N) = 0.60 N·s, so v_B = 0.60/1.5 = +0.40 m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses an impulse of −0.60 N·s on A (or momentum conservation) to find v_A = 0.80 − 1.2 = −0.40 m/s."
+                    }
+                  ],
+                  "answer": "v_B = +0.40 m/s; v_A = −0.40 m/s (cart A rebounds)",
+                  "steps": [
+                    "Impulse equals the change in momentum for each cart.",
+                    "Check: total momentum (0.50)(0.80) = 0.40 kg·m/s before; (0.50)(−0.40) + (1.5)(0.40) = 0.40 kg·m/s after."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the axes provided, sketch the velocity of each cart from t = 0 to t = 0.60 s, and label the two curves. Mark the time at which the carts have the same velocity, and give that velocity.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Shows A falling from +0.80 to −0.40 m/s and B rising from 0 to +0.40 m/s during 0–0.40 s, with both constant afterward."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Shows curved changes whose slopes are proportional to the force: zero slope at t = 0 and t = 0.40 s and steepest at t = 0.20 s, with A's slope three times as steep as B's."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Marks the crossing at t = 0.20 s, where both carts move at +0.20 m/s."
+                    }
+                  ],
+                  "answer": "S-shaped curves: A from 0.80 to −0.40 m/s, B from 0 to 0.40 m/s, crossing at t = 0.20 s at +0.20 m/s (key graph).",
+                  "steps": [
+                    "Half the impulse, 0.30 N·s, is delivered by t = 0.20 s: v_B = 0.20 m/s and v_A = 0.80 − 0.60 = 0.20 m/s.",
+                    "Slope of v–t is F/m: 3.0/1.5 = 2.0 m/s^2 for B and 3.0/0.50 = 6.0 m/s^2 for A at t = 0.20 s."
+                  ],
+                  "figureIds": [
+                    "cm-pe-f8"
+                  ],
+                  "answerFigureIds": [
+                    "cm-pe-f10"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Explain why the force between the carts is greatest at the instant their velocities are equal.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Explains that before that instant A moves faster than B, so the gap shrinks, and afterward B moves faster, so it grows: the gap is smallest when the velocities are equal."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Connects the smallest gap to the strongest magnetic repulsion, which is the largest force."
+                    }
+                  ],
+                  "answer": "The gap between the carts shrinks while v_A > v_B and grows once v_B > v_A, so it is smallest when the velocities are equal, and the repulsion is strongest when the magnets are closest.",
+                  "steps": [
+                    "The rate of change of the gap is v_B − v_A, which is zero at t = 0.20 s."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Determine whether the interaction is elastic. Then determine the total kinetic energy of the carts at t = 0.20 s and explain where the rest of the energy is at that instant.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Compares kinetic energies: 0.16 J before and (0.04 + 0.12) = 0.16 J after, so the interaction is elastic."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds K = ½(2.0 kg)(0.20 m/s)^2 = 0.040 J at t = 0.20 s and states that the other 0.12 J is stored as magnetic potential energy, returned as the carts separate."
+                    }
+                  ],
+                  "answer": "Elastic: 0.16 J before and after. At t = 0.20 s the carts have only 0.040 J of kinetic energy; 0.12 J is stored in the magnets' field.",
+                  "steps": [
+                    "½(0.50)(0.80)^2 = 0.16 J; ½(0.50)(0.40)^2 + ½(1.5)(0.40)^2 = 0.040 + 0.12 = 0.16 J.",
+                    "At equal velocities the carts move together like one 2.0 kg object."
+                  ]
+                },
+                {
+                  "label": "f",
+                  "prompt": "Describe the velocity of the two-cart system's center of mass from t = 0 to t = 0.60 s.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that it is constant at +0.20 m/s throughout, because no net external force acts on the system."
+                    }
+                  ],
+                  "answer": "Constant, +0.20 m/s.",
+                  "steps": [
+                    "v_cm = total momentum/total mass = 0.40/2.0 = 0.20 m/s; the magnetic forces are internal."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-pe-fr3",
+              "type": "EDA",
+              "topics": [
+                "CM.3.5",
+                "CM.2.5"
+              ],
+              "prompt": "Paper investigation. This is a paper investigation with supplied, invented data. It does not replace the hands-on laboratory work, at least 25% of instructional time, that College Board's framework for the AP® Physics C: Mechanics course calls for, and it does not count toward the AP Course Audit or college lab credit. A student studies a small electric motor that lifts loads by winding a string onto a spool. With the same battery each time, the student assumes the motor's mechanical output power P is constant. A small friction force f in the motor's bearing also opposes the motion, so the motor's pull on the string, P/v, must balance both the load's weight mg and f once the load rises at a steady speed v. The student measures the steady speed for five loads.\n| m (kg) | 0.050 | 0.100 | 0.150 | 0.200 | 0.250 |\n| --- | --- | --- | --- | --- | --- |\n| v (m/s) | 0.808 | 0.490 | 0.351 | 0.272 | 0.221 |",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe a procedure the student could use to measure the steady speed v for each load. Include the equipment, how the student can tell the speed is steady, and one thing to keep the same in every trial.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Describes measuring the time to rise a known distance (for example with a stopwatch, video or photogates over the last 0.50 m of a 1.0 m lift), or using a motion sensor, after the load has reached a steady speed."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Shows how to confirm steadiness (equal times over two successive equal distances, or a flat velocity reading) and names a control, such as the same battery charge, spool and string, with repeated trials averaged."
+                    }
+                  ],
+                  "answer": "Let each load rise 1.0 m; use photogates (or video) to time the last 0.50 m, and check that the times over two successive 0.25 m segments are equal so the speed is steady. Keep the same fresh battery, spool and string, and repeat each load three times, averaging.",
+                  "steps": [
+                    "Timing only after the load has stopped speeding up measures the steady speed rather than an average from rest.",
+                    "A weakening battery would lower P during the experiment."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Show that 1/v = (g/P)m + f/P. What should the student graph to obtain a straight line, and what do its slope and intercept represent?",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Starts from P/v = mg + f (constant speed, so the pull balances the weight and friction) and divides by P."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies 1/v against m as the straight line, with slope g/P and vertical intercept f/P."
+                    }
+                  ],
+                  "answer": "P = (mg + f)v, so 1/v = (g/P)m + f/P. Graph 1/v against m: slope g/P, intercept f/P.",
+                  "steps": [
+                    "At steady speed the net force on the load is zero, and the motor's pull times the speed is its output power."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Compute 1/v for each load. On the grid provided, plot 1/v against m, label and scale the axes, and draw a best-fit line.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes 1/v = 1.25, 2.04, 2.86, 3.68 and 4.52 s/m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Plots the points on labeled, scaled axes and draws a single straight best-fit line."
+                    }
+                  ],
+                  "answer": "1/v = 1.25, 2.04, 2.86, 3.68, 4.52 s/m; the points lie close to a straight line (key graph).",
+                  "steps": [
+                    "For example 1/(0.49 m/s) = 2.04 s/m.",
+                    "A scale of 0.025 kg per column and 0.5 s/m per row fits the grid."
+                  ],
+                  "figureIds": [
+                    "cm-pe-f11"
+                  ],
+                  "answerFigureIds": [
+                    "cm-pe-f12"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line to determine the motor's output power P and the friction force f.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds a slope of about 16.4 s/(m·kg) from the line (accept 15.5–17.5) and P = g/slope ≈ 0.60 W (accept 0.56–0.63 W)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds an intercept of about 0.41 s/m (accept 0.30–0.52) and f = P × intercept ≈ 0.25 N (accept 0.18–0.31 N)."
+                    }
+                  ],
+                  "answer": "P ≈ 0.60 W; f ≈ 0.25 N.",
+                  "steps": [
+                    "Least squares gives slope 16.37 s/(m·kg) and intercept 0.414 s/m.",
+                    "P = 9.8/16.37 = 0.599 W; f = (0.599)(0.414) = 0.248 N."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "The student tested the loads in order from lightest to heaviest, and the battery's output slowly weakened during the session. Explain how this would affect the graph and the value of P found from it, and suggest a change to the procedure that would reveal or remove the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the later, heavier loads were lifted with less power, so their speeds are too small and their 1/v values too large, which makes the line steeper and the value of P = g/slope too small."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Suggests randomizing the order of the loads, or repeating the first load at the end (and recharging or replacing the battery) to check whether P has drifted."
+                    }
+                  ],
+                  "answer": "The heaviest loads, tested last, rose too slowly, so their 1/v points lie too high; the best-fit slope is too large and P = g/slope comes out too small (the intercept, and so f, is also distorted). Testing the loads in random order spreads the drift instead of turning it into a slope error, and repeating the first load at the end shows whether the battery has weakened.",
+                  "steps": [
+                    "A drift that grows during the session and is correlated with m changes the slope, not just the scatter.",
+                    "A repeated trial that gives a smaller speed at the end is direct evidence of drift."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-pe-fr4",
+              "type": "QQT",
+              "topics": [
+                "CM.7.2",
+                "CM.6.5",
+                "CM.7.4",
+                "CM.7.5"
+              ],
+              "prompt": "A small uniform solid ball of radius r rolls without slipping back and forth near the bottom of a smooth-walled spherical bowl of radius R, so that the ball's center moves along a circular arc of radius R − r. Beside it, a simple pendulum of length R − r swings with the same small amplitude, as shown.",
+              "figureIds": [
+                "cm-pe-f13"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without writing or deriving equations, determine whether the ball or the pendulum bob has the longer period. Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the ball has the longer period."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that for the same height change, part of the ball's energy goes into spinning, so its center moves more slowly through the same arc than the sliding-free pendulum bob."
+                    }
+                  ],
+                  "answer": "The ball. At each position both have dropped the same height, so they have the same kinetic energy per unit mass, but the ball must share its kinetic energy with its spin; its center moves more slowly along the same arc and takes longer to complete a swing.",
+                  "steps": [
+                    "Gravity provides the same restoring effect per unit mass for both.",
+                    "The ball's kinetic energy is split between translation and rotation."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the period of small oscillations of the ball in terms of R, r and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the kinetic energy with the rotational term and the rolling condition: K = ½mv^2 + ½(2/5)mr^2(v/r)^2 = (7/10)mv^2, with v = (R − r) dθ/dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the potential energy for small angles, U ≈ ½mg(R − r)θ^2 (or the equivalent torque or force), as a restoring term proportional to θ^2 (or θ)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes ω^2 = 5g/(7(R − r)), so T = 2π√(7(R − r)/(5g))."
+                    }
+                  ],
+                  "answer": "T = 2π√(7(R − r)/(5g))",
+                  "steps": [
+                    "Energy: (7/10)m(R − r)^2 (dθ/dt)^2 + ½mg(R − r)θ^2 is constant, which has the form of a spring–block oscillator with 'mass' (7/5)m(R − r)^2 and 'spring constant' mg(R − r).",
+                    "ω^2 = mg(R − r)/((7/5)m(R − r)^2) = 5g/(7(R − r))."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "For R − r = 0.40 m, calculate the periods of the ball and the pendulum.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds T_ball = 2π√(7(0.40)/(5(9.8))) = 1.50 s and T_pendulum = 2π√(0.40/9.8) = 1.27 s."
+                    }
+                  ],
+                  "answer": "Ball 1.50 s; pendulum 1.27 s.",
+                  "steps": [
+                    "7(0.40)/49 = 0.0571 s^2 and √(0.0571 s^2) = 0.239 s, so T = 2π(0.239 s) = 1.50 s.",
+                    "0.40/9.8 = 0.0408 s^2 and √(0.0408 s^2) = 0.202 s, so T = 2π(0.202 s) = 1.27 s."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Do the expression in part (b) and the periods in part (c) confirm your claim in part (a)? Justify your answer. Then describe what the expression shows about how the ball's mass and its radius r affect its period.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the ball's period is longer by the factor √(7/5) = 1.18, supporting part (a), because the 7/5 comes from the rotational kinetic energy."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Notes that the mass cancels entirely and that r enters only through R − r (the path of the center), not through the share of energy in spin, which is fixed at 2/7 for any solid ball."
+                    }
+                  ],
+                  "answer": "They support it: T_ball/T_pendulum = √(7/5) = 1.18, and the factor 7/5 is exactly the extra rotational energy. Mass cancels; the radius matters only through the path radius R − r, because any uniform solid ball keeps the same 2/7 of its kinetic energy in rotation.",
+                  "steps": [
+                    "For a hollow ball (I = (2/3)mr^2) the factor would be √(5/3) = 1.29, even slower."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

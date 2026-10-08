@@ -1,0 +1,568 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "unit-5",
+  "kind": "unit-test",
+  "unitId": "u5",
+  "title": "Unit 5 test: Torque and Rotational Dynamics",
+  "author": "cm-4",
+  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units. Take counterclockwise as the positive sense of rotation unless a question says otherwise; angular quantities are in radians. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "figures": [
+    {
+      "id": "cm-u5-f1",
+      "alt": "Graph of angular velocity ω in rad/s against time t in seconds from 0 to 6 s. A straight line rises from −4 rad/s at t = 0 to 8 rad/s at t = 6 s, crossing zero at t = 2 s."
+    },
+    {
+      "id": "cm-u5-f2",
+      "alt": "A uniform beam 4.0 m long rests on a support at its left end and on a second support 3.0 m from the left end. A box sits on the beam's right end, 1.0 m beyond the second support.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-u5-f3",
+      "alt": "Top view of a rod 0.80 m long on a table. Its left end is attached to a fixed vertical axle shown as a circle with a dot. At the right, free end, an arrow labeled F points perpendicular to the rod, toward the top of the page. A curved arrow shows counterclockwise rotation.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-u5-f4",
+      "alt": "Graph of the force F in newtons against time t in seconds from 0 to 5 s. F rises in a straight line from 0 at t = 0 to 1.2 N at t = 2 s, stays at 1.2 N until t = 4 s, then drops to 0 and stays at 0 until t = 5 s."
+    },
+    {
+      "id": "cm-u5-f5",
+      "alt": "Blank axes for a sketch: angular acceleration α in rad/s^2 from 0 to 8 on the vertical axis and time t in seconds from 0 to 5 on the horizontal axis, with grid lines."
+    },
+    {
+      "id": "cm-u5-f6",
+      "alt": "Blank axes for a sketch: angular velocity ω in rad/s from 0 to 25 on the vertical axis and time t in seconds from 0 to 5 on the horizontal axis, with grid lines."
+    },
+    {
+      "id": "cm-u5-f7",
+      "alt": "Key graph of α against t: a straight line rising from 0 at t = 0 to 7.5 rad/s^2 at t = 2 s, flat at 7.5 rad/s^2 until t = 4 s, then zero from 4 s to 5 s."
+    },
+    {
+      "id": "cm-u5-f8",
+      "alt": "Key graph of ω against t: a curve bending upward from 0 at t = 0 to 7.5 rad/s at t = 2 s, a straight rising line to 22.5 rad/s at t = 4 s, then flat at 22.5 rad/s until t = 5 s."
+    },
+    {
+      "id": "cm-u5-f9",
+      "alt": "Key top view of the rod with two horizontal forces: F at the free end, perpendicular to the rod, and a force labeled F_axle at the pivot end pointing mostly along the rod toward the axle side and tilted slightly in the direction of F."
+    },
+    {
+      "id": "cm-u5-f10",
+      "alt": "Two wheels of equal size side by side, each on a fixed axle hung from a ceiling. Wheel A, on the left, is drawn as a thin ring with spokes; wheel B, on the right, is a solid disk. From the right edge of each wheel, a string hangs down to a block labeled 0.50 kg. Both blocks are 1.0 m above the floor.",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 25,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2. Counterclockwise is positive unless a question says otherwise.",
+          "items": [
+            {
+              "id": "cm-u5-mc01",
+              "prompt": "A wheel's angular velocity is ω(t) = 4.0 + 1.5t^2, with ω in rad/s and t in seconds. Through what angle does the wheel turn from t = 0 to t = 2.0 s?",
+              "choices": [
+                "14 rad",
+                "12 rad",
+                "20 rad",
+                "6.0 rad"
+              ],
+              "key": "B",
+              "rationale": "Δθ = ∫ from 0 to 2.0 of (4.0 + 1.5t^2) dt = [4.0t + 0.50t^3] from 0 to 2.0 = 8.0 + 4.0 = 12 rad.",
+              "distractorNotes": {
+                "A": "This multiplies the average of ω(0) = 4.0 rad/s and ω(2.0 s) = 10 rad/s by the time, which is valid only for constant angular acceleration.",
+                "C": "This multiplies the final angular velocity, 10 rad/s, by the whole 2.0 s.",
+                "D": "This is the change in angular velocity, 10 − 4.0 = 6.0 rad/s, not an angle."
+              },
+              "topics": [
+                "CM.5.1"
+              ]
+            },
+            {
+              "id": "cm-u5-mc02",
+              "prompt": "The graph shows the angular velocity of a disk, counterclockwise positive. What is the disk's angular displacement from t = 0 to t = 6.0 s?",
+              "figureIds": [
+                "cm-u5-f1"
+              ],
+              "choices": [
+                "20 rad",
+                "16 rad",
+                "12 rad",
+                "24 rad"
+              ],
+              "key": "C",
+              "rationale": "The angular displacement is the signed area under the ω–t graph. The line crosses zero at t = 2.0 s: the area is −½(2.0 s)(4.0 rad/s) + ½(4.0 s)(8.0 rad/s) = −4.0 + 16 = 12 rad.",
+              "distractorNotes": {
+                "A": "This adds the two areas as if both were positive; it is the total angle turned, not the displacement.",
+                "B": "This keeps only the area after t = 2.0 s and ignores the clockwise rotation at the start.",
+                "D": "This takes the area of a triangle with base 6.0 s and height 8.0 rad/s, as if ω started at zero."
+              },
+              "topics": [
+                "CM.5.1"
+              ]
+            },
+            {
+              "id": "cm-u5-mc03",
+              "prompt": "At one instant, a wheel of radius 0.40 m has an angular velocity of 5.0 rad/s and an angular acceleration of 3.0 rad/s^2. What is the magnitude of the acceleration of a point on its rim at that instant?",
+              "choices": [
+                "1.2 m/s^2",
+                "2.0 m/s^2",
+                "11 m/s^2",
+                "10 m/s^2"
+              ],
+              "key": "D",
+              "rationale": "a_t = rα = (0.40)(3.0) = 1.2 m/s^2 and a_c = ω^2r = (5.0)^2(0.40) = 10 m/s^2. These are perpendicular, so |a| = √(1.2^2 + 10^2) = 10.1 m/s^2 ≈ 10 m/s^2.",
+              "distractorNotes": {
+                "A": "This is only the tangential part; the rim point also accelerates toward the axis.",
+                "B": "This is the rim speed rω, in m/s, not an acceleration.",
+                "C": "This adds the two perpendicular components as if they were parallel."
+              },
+              "topics": [
+                "CM.5.2"
+              ]
+            },
+            {
+              "id": "cm-u5-mc04",
+              "prompt": "Gear P, of radius 0.060 m, turns counterclockwise at 25 rad/s. Its teeth mesh with those of gear Q, of radius 0.15 m. What is gear Q's angular velocity?",
+              "choices": [
+                "10 rad/s, clockwise",
+                "10 rad/s, counterclockwise",
+                "63 rad/s, clockwise",
+                "25 rad/s, clockwise"
+              ],
+              "key": "A",
+              "rationale": "Meshing teeth move together at the contact point: v = r_Pω_P = (0.060)(25) = 1.5 m/s, so ω_Q = v/r_Q = 1.5/0.15 = 10 rad/s. Two gears meshing edge to edge turn in opposite senses, so Q turns clockwise.",
+              "distractorNotes": {
+                "B": "Gears that mesh directly turn in opposite senses; a belt would keep the same sense.",
+                "C": "This inverts the radius ratio: the larger gear turns more slowly.",
+                "D": "Meshing gears share the speed of their teeth, not their angular velocity."
+              },
+              "topics": [
+                "CM.5.2",
+                "CM.5.1"
+              ]
+            },
+            {
+              "id": "cm-u5-mc05",
+              "prompt": "A force F = (3.0 i − 4.0 j) N acts at the point r = (2.0 i + 1.0 j) m. What is the torque of this force about the origin?",
+              "choices": [
+                "11 k N·m",
+                "−5.0 k N·m",
+                "−11 k N·m",
+                "2.0 k N·m"
+              ],
+              "key": "C",
+              "rationale": "τ = r × F has only a k component for vectors in the xy-plane: τ_z = xF_y − yF_x = (2.0)(−4.0) − (1.0)(3.0) = −8.0 − 3.0 = −11 N·m. The torque is −11 k N·m, clockwise.",
+              "distractorNotes": {
+                "A": "This is F × r, which reverses the sign of r × F.",
+                "B": "This adds yF_x instead of subtracting it.",
+                "D": "This is the dot product r · F, a scalar, not the torque."
+              },
+              "topics": [
+                "CM.5.3"
+              ]
+            },
+            {
+              "id": "cm-u5-mc06",
+              "prompt": "A 40 N force is applied at a point 0.25 m from a wheel's axle. The force's line of action passes within 0.15 m of the axle at its closest point. What is the magnitude of the torque of this force about the axle?",
+              "choices": [
+                "10 N·m",
+                "6.0 N·m",
+                "8.0 N·m",
+                "3.6 N·m"
+              ],
+              "key": "B",
+              "rationale": "The lever arm is the perpendicular distance from the axle to the line of action, r_⊥ = 0.15 m, so τ = r_⊥F = (0.15 m)(40 N) = 6.0 N·m.",
+              "distractorNotes": {
+                "A": "This uses the 0.25 m distance to the point of application, which equals the lever arm only when the force is perpendicular to r.",
+                "C": "This uses √(0.25^2 − 0.15^2) = 0.20 m, the distance along the line of action, not the perpendicular distance to it.",
+                "D": "This multiplies the lever arm by sin φ = 0.15/0.25 again, counting the angle twice."
+              },
+              "topics": [
+                "CM.5.3"
+              ]
+            },
+            {
+              "id": "cm-u5-mc07",
+              "prompt": "A thin hoop of mass 0.50 kg and radius 0.30 m hangs on a nail that touches the inside of its rim, so that the hoop can swing in its own plane about the nail. What is its rotational inertia about the nail?",
+              "choices": [
+                "0.045 kg·m^2",
+                "0.068 kg·m^2",
+                "0.023 kg·m^2",
+                "0.090 kg·m^2"
+              ],
+              "key": "D",
+              "rationale": "About its center, a hoop has I_cm = MR^2 = (0.50)(0.30)^2 = 0.045 kg·m^2. The nail is d = R from the center, so I = I_cm + MR^2 = 2MR^2 = 0.090 kg·m^2.",
+              "distractorNotes": {
+                "A": "This is the inertia about the hoop's center; the parallel-axis term is missing.",
+                "B": "This uses ½MR^2, the disk's value, for I_cm before adding MR^2.",
+                "C": "This is ½MR^2, a disk's inertia about its center."
+              },
+              "topics": [
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-u5-mc08",
+              "prompt": "A rod lies along the x-axis from x = 0 to x = L. Its linear density is λ(x) = λ_0(1 + x/L), where λ_0 is a constant. What is the rod's rotational inertia about a perpendicular axis through x = 0?",
+              "choices": [
+                "7λ_0L^3/12",
+                "λ_0L^3/2",
+                "λ_0L^3/3",
+                "2λ_0L^3/3"
+              ],
+              "key": "A",
+              "rationale": "I = ∫ from 0 to L of x^2λ_0(1 + x/L) dx = λ_0[L^3/3 + L^4/(4L)] = λ_0L^3(1/3 + 1/4) = 7λ_0L^3/12.",
+              "distractorNotes": {
+                "B": "This treats the rod as uniform with its average density, 1.5λ_0; the extra mass is concentrated at the far end, so the true inertia is larger.",
+                "C": "This ignores the variation and uses the density λ_0 everywhere.",
+                "D": "This uses the far end's density, 2λ_0, everywhere."
+              },
+              "topics": [
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-u5-mc09",
+              "prompt": "A uniform 50 kg beam 4.0 m long rests on two supports, one at its left end and one 3.0 m from the left end, as shown. A 30 kg box sits on the beam's right end. What is the upward force from the left support?",
+              "figureIds": [
+                "cm-u5-f2"
+              ],
+              "choices": [
+                "720 N",
+                "65 N",
+                "390 N",
+                "0 N"
+              ],
+              "key": "B",
+              "rationale": "Torques about the right support: the beam's weight (490 N) acts 1.0 m to its left and the box's weight (294 N) 1.0 m to its right, so N_L(3.0 m) + (294 N)(1.0 m) = (490 N)(1.0 m), giving N_L = 196/3.0 = 65 N.",
+              "distractorNotes": {
+                "A": "This is the force from the right support, (784 − 65) N.",
+                "C": "This splits the total weight of 784 N equally between the supports, ignoring where the loads act.",
+                "D": "The beam would be about to tip only if the box's torque about the right support equaled the beam's; here the beam's torque is larger."
+              },
+              "topics": [
+                "CM.5.5"
+              ]
+            },
+            {
+              "id": "cm-u5-mc10",
+              "prompt": "A wheel turns at a constant angular velocity on a frictionless axle while two forces act on its rim. Which statement must be true?",
+              "choices": [
+                "The net torque on the wheel about the axle is zero.",
+                "The two forces have equal magnitudes.",
+                "The wheel must be slowing down, because forces always change rotation.",
+                "The two forces point in the same direction."
+              ],
+              "key": "A",
+              "rationale": "Newton's first law in rotational form: the angular velocity is constant only if the net torque about the axle is zero. The axle's own force acts through the axis and adds no torque.",
+              "distractorNotes": {
+                "B": "Only the forces' torques must cancel; forces of different sizes at different angles to the radius can have equal and opposite torques.",
+                "C": "A body with zero net torque keeps its angular velocity; it does not need a torque to keep turning.",
+                "D": "Forces in the same direction on the rim generally produce torques that do not cancel."
+              },
+              "topics": [
+                "CM.5.5"
+              ]
+            },
+            {
+              "id": "cm-u5-mc11",
+              "prompt": "A 0.60 kg block hangs from a light string wound around a uniform 3.0 kg disk that turns freely on a fixed horizontal axle. The block is released from rest. What is its acceleration?",
+              "choices": [
+                "9.8 m/s^2",
+                "1.6 m/s^2",
+                "3.9 m/s^2",
+                "2.8 m/s^2"
+              ],
+              "key": "D",
+              "rationale": "Block: mg − T = ma. Disk: TR = (½MR^2)(a/R), so T = ½Ma. Adding: a = mg/(m + ½M) = (0.60)(9.8)/(0.60 + 1.5) = 2.8 m/s^2.",
+              "distractorNotes": {
+                "A": "This ignores the disk's rotational inertia, as if the pulley were massless and the block fell freely.",
+                "B": "This uses I = MR^2, the inertia of a hoop, for the disk.",
+                "C": "This assumes the string's tension equals the block's weight, mg, which cannot be true while the block accelerates."
+              },
+              "topics": [
+                "CM.5.6",
+                "CM.5.2"
+              ]
+            },
+            {
+              "id": "cm-u5-mc12",
+              "prompt": "A uniform rod lies on a frictionless horizontal table. In one trial it turns about a vertical axle through its center; in another, about a vertical axle through one end. The same net torque acts in both trials. What is the ratio of the angular acceleration about the center to the angular acceleration about the end?",
+              "choices": [
+                "1/4",
+                "2",
+                "4",
+                "1"
+              ],
+              "key": "C",
+              "rationale": "α = τ/I with the same τ, so α_center/α_end = I_end/I_center = (ML^2/3)/(ML^2/12) = 4.",
+              "distractorNotes": {
+                "A": "This inverts the ratio: the axis with the smaller inertia gives the larger angular acceleration.",
+                "B": "This compares the distances from the axis to the farthest point, L/2 and L, instead of the inertias.",
+                "D": "Rotational inertia depends on the axis, so the same torque does not give the same angular acceleration."
+              },
+              "topics": [
+                "CM.5.6",
+                "CM.5.4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 35,
+          "calculator": "any",
+          "directions": "Show your reasoning and include units. Partial credit is given for correct reasoning. Question 1 is worth 12 points and Question 2 is worth 8 points.",
+          "items": [
+            {
+              "id": "cm-u5-fr1",
+              "type": "TBR",
+              "topics": [
+                "CM.5.6",
+                "CM.5.3",
+                "CM.5.1",
+                "CM.5.4"
+              ],
+              "prompt": "A uniform rod of mass M = 0.60 kg and length L = 0.80 m lies on a frictionless horizontal table. One end is attached to a fixed vertical axle, about which the rod can turn freely; the first figure is a top view. The rod starts at rest. Beginning at t = 0, a horizontal force F is applied to the rod's free end, always perpendicular to the rod. The magnitude of F varies with time as shown in the graph. Take the sense in which F turns the rod (counterclockwise in the top view) as positive.",
+              "figureIds": [
+                "cm-u5-f3",
+                "cm-u5-f4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw and label the horizontal forces that act on the rod at t = 1.0 s. Start each arrow at the point where the force acts on the rod.",
+                  "answerFigureIds": [
+                    "cm-u5-f9"
+                  ],
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Draws F at the free end, perpendicular to the rod."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Draws a force exerted by the axle at the pivot end and no other horizontal forces."
+                    }
+                  ],
+                  "answer": "Two horizontal forces: F at the free end, perpendicular to the rod, and a force from the axle at the pivot end. (At t = 1.0 s the axle's force points mostly along the rod toward the axle, supplying the inward force for the rod's circular motion, with a smaller component in the direction of F.) Gravity and the table's normal force are vertical and cancel.",
+                  "steps": [
+                    "Only the axle and the applied force push on the rod horizontally; the table is frictionless.",
+                    "At t = 1.0 s, ω = 1.9 rad/s, so the rod's center needs an inward force Mω^2(L/2) = 0.84 N, which only the axle can supply."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Starting from Newton's second law in rotational form, derive an expression for the rod's angular acceleration α in terms of F, M, L and physical constants as appropriate. Calculate α when F = 1.2 N.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes Στ = FL (the axle's force has no lever arm about the axle) and I = ML^2/3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains α = 3F/(ML) and α = 7.5 rad/s^2 for F = 1.2 N."
+                    }
+                  ],
+                  "answer": "α = FL/(ML^2/3) = 3F/(ML); for F = 1.2 N, α = 3(1.2)/((0.60)(0.80)) = 7.5 rad/s^2.",
+                  "steps": [
+                    "I = ML^2/3 = (0.60)(0.80)^2/3 = 0.128 kg·m^2 about the axle.",
+                    "α = τ/I = (1.2 N)(0.80 m)/0.128 kg·m^2 = 7.5 rad/s^2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the axes provided, sketch the rod's angular acceleration α and its angular velocity ω as functions of time from t = 0 to t = 5.0 s. Label the values of α and ω at t = 2.0 s and t = 4.0 s.",
+                  "figureIds": [
+                    "cm-u5-f5",
+                    "cm-u5-f6"
+                  ],
+                  "answerFigureIds": [
+                    "cm-u5-f7",
+                    "cm-u5-f8"
+                  ],
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sketches α with the same shape as the F–t graph: rising linearly to 7.5 rad/s^2 at t = 2.0 s, constant until t = 4.0 s, then zero."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Sketches ω as a concave-up curve from 0 to 7.5 rad/s at t = 2.0 s, then a straight rising line to 22.5 rad/s at t = 4.0 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Shows ω constant at 22.5 rad/s after t = 4.0 s, with no jump at any time."
+                    }
+                  ],
+                  "answer": "α: a straight rise from 0 to 7.5 rad/s^2 over the first 2.0 s, a flat 7.5 rad/s^2 from 2.0 to 4.0 s, and 0 after 4.0 s. ω: 1.875t^2 up to 7.5 rad/s at 2.0 s (concave up), a straight line of slope 7.5 rad/s^2 to 22.5 rad/s at 4.0 s, then constant at 22.5 rad/s.",
+                  "steps": [
+                    "α is proportional to F, so its graph is the force graph scaled by 3/(ML) = 6.25 rad/(N·s^2).",
+                    "ω is the running area under the α–t graph, so it is continuous even where α jumps."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Calculate the rod's angular velocity at t = 4.0 s and the angle through which it turns during the first 2.0 s.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses ω = ∫ α dt, or the area under the α–t graph, from t = 0 to 4.0 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds ω(4.0 s) = 22.5 rad/s (accept 22–23 rad/s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates ω = 1.875t^2 from 0 to 2.0 s to find Δθ = 5.0 rad."
+                    }
+                  ],
+                  "answer": "ω(4.0 s) = 22.5 rad/s; Δθ (0 to 2.0 s) = 5.0 rad.",
+                  "steps": [
+                    "Area under α–t from 0 to 4.0 s: ½(2.0 s)(7.5 rad/s^2) + (2.0 s)(7.5 rad/s^2) = 7.5 + 15 = 22.5 rad/s.",
+                    "For 0 ≤ t ≤ 2.0 s, α = 3.75t, ω = 1.875t^2 and θ = 0.625t^3, so θ(2.0 s) = 0.625(8.0) = 5.0 rad."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "After t = 4.0 s the rod keeps turning. Use your ω–t graph to explain why its angular velocity is constant then, and explain why the axle must still exert a force on the rod.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Explains that after 4.0 s the only horizontal force, from the axle, acts at the axis and has zero torque, so α = 0 and the ω–t graph is horizontal (zero slope)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the rod's center of mass still moves in a circle and needs a net inward force Mω^2(L/2), about 1.2 × 10^2 N, which the axle supplies."
+                    }
+                  ],
+                  "answer": "With F gone, the axle's force acts through the axis, so the net torque is zero and the angular velocity stays at 22.5 rad/s: the slope of ω–t, which is α, is zero. But the rod's center of mass moves in a circle of radius L/2, which needs an inward net force Mω^2(L/2) = (0.60)(22.5)^2(0.40) ≈ 1.2 × 10^2 N; the axle pulls the rod inward with that force.",
+                  "steps": [
+                    "Zero net torque means constant ω (Newton's first law in rotational form).",
+                    "Mω^2(L/2) = (0.60 kg)(506 rad^2/s^2)(0.40 m) = 121 N."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-u5-fr2",
+              "type": "QQT",
+              "topics": [
+                "CM.5.6",
+                "CM.5.4",
+                "CM.5.2"
+              ],
+              "prompt": "Wheels A and B have the same mass, M = 2.0 kg, and the same radius, R = 0.15 m. Wheel A is a thin hoop (I = MR^2) and wheel B is a uniform disk (I = ½MR^2). Each turns on its own fixed, frictionless horizontal axle. A light string wound around each wheel's rim supports a 0.50 kg block, as shown. Both blocks are released from rest at the same moment, 1.0 m above the floor.",
+              "figureIds": [
+                "cm-u5-f10"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without writing or deriving equations, determine which block reaches the floor first. Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Chooses the block hanging from wheel B, the disk."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the disk's mass lies closer to its axis, so it has the smaller rotational inertia; the string needs less tension to spin it up, so more of the block's weight goes into accelerating the block."
+                    }
+                  ],
+                  "answer": "The block on wheel B. The disk has the same mass as the hoop, but its mass is spread closer to the axle, so it is easier to spin up. Less of the block's weight is used to turn the disk, so the string pulls up less on that block, and it accelerates faster.",
+                  "steps": [
+                    "Rotational inertia grows with mass placed far from the axis.",
+                    "The block's acceleration is reduced by the string's tension, which is what spins the wheel."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "For a wheel of rotational inertia I = βMR^2, derive an expression for the acceleration a of its block, of mass m. Express your answer in terms of m, M, β and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes Newton's second law for the block: mg − T = ma (down positive)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes Στ = Iα for the wheel with α = a/R: TR = βMR^2(a/R), so T = βMa."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Combines them to get a = mg/(m + βM)."
+                    }
+                  ],
+                  "answer": "a = mg/(m + βM)",
+                  "steps": [
+                    "The string does not slip, so the block's acceleration equals the rim's tangential acceleration: a = αR.",
+                    "Adding mg − T = ma and T = βMa eliminates T."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the time each block takes to reach the floor.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds about 1.0 s (1.01 s) for the hoop's block and 0.78 s for the disk's block."
+                    }
+                  ],
+                  "answer": "Hoop (β = 1): a = 1.96 m/s^2 and t = 1.01 s. Disk (β = ½): a = 3.27 m/s^2 and t = 0.78 s.",
+                  "steps": [
+                    "Hoop: a = (0.50)(9.8)/(0.50 + 2.0) = 1.96 m/s^2; t = √(2(1.0)/1.96) = 1.01 s.",
+                    "Disk: a = 4.9/(0.50 + 1.0) = 3.27 m/s^2; t = √(2(1.0)/3.27) = 0.78 s."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Explain how your results in parts (b) and (c) support or contradict your answer to part (a). Then explain what your expression in part (b) shows about the effect of the wheels' radius.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that a smaller β gives a larger a, so the disk's block lands first, about 0.23 s sooner, which supports part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Notes that R cancels from a = mg/(m + βM), so only how the mass is distributed (β), not the wheel's size, affects the result; as M → 0, a → g, as for a massless pulley."
+                    }
+                  ],
+                  "answer": "They support it: a = mg/(m + βM) is larger for the disk (β = ½) than for the hoop (β = 1), and the disk's block lands about 0.23 s sooner. The radius cancels: a bigger wheel needs more torque to reach the same α, but the string's lever arm grows by the same factor and the required α shrinks, so only β, the way the mass is spread, matters. In the limit M → 0 the expression gives a = g, as expected for a massless wheel.",
+                  "steps": [
+                    "β enters only the denominator, so a decreases as β increases.",
+                    "R appears in I = βMR^2, in τ = TR and in α = a/R, and cancels."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
