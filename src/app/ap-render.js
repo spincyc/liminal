@@ -178,14 +178,21 @@
       section.append(el("h3", "Free-response scoring guidelines"));
       fr.forEach(item => {
         const block = el("article", undefined, "ap-guideline");
-        block.append(el("h4", "Question " + item.number + " · " + plural(item.points, "point") + (item.type ? " · " + A().frTypeLabel(item.type) : "")), rich(item.prompt), ...figureNodes(packet, item.figureIds), ...figureNodes(packet, item.answerFigureIds));
+        const head = el("div", undefined, "ap-guideline-head");
+        head.append(el("h4", "Question " + item.number + " · " + plural(item.points, "point") + (item.type ? " · " + A().frTypeLabel(item.type) : "")), rich(item.prompt), ...figureNodes(packet, item.figureIds), ...figureNodes(packet, item.answerFigureIds));
+        block.append(head);
         item.parts.forEach(part => {
           const p = el("section", undefined, "ap-guideline-part");
           p.append(el("h5", "(" + part.label + ") · " + plural(part.points, "point")), rich(part.prompt, "ap-muted"));
           const answer = el("div", undefined, "ap-answer"); answer.append(rich(part.answer));
           const steps = el("ol", undefined, "weekly-steps"); part.steps.forEach(step => { const li = el("li"); li.append(rich(step)); steps.append(li); });
           answer.append(steps);
-          p.append(answer, ...figureNodes(packet, part.figureIds), ...figureNodes(packet, part.answerFigureIds));
+          p.append(answer);
+          const figures = [...figureNodes(packet, part.figureIds), ...figureNodes(packet, part.answerFigureIds)];
+          if (figures.length) {
+            const group = el("div", undefined, "ap-key-figures");
+            group.append(...figures); p.append(group);
+          }
           const rubric = el("table", undefined, "ap-table ap-rubric");
           const head = el("tr"); ["Points", "Award for"].forEach(h => { const th = el("th", h); th.scope = "col"; head.append(th); });
           const thead = el("thead"); thead.append(head); rubric.append(thead);

@@ -27,7 +27,8 @@ the three reused high-school courses do not inflate content counts.
 | Student/key transitions | Opening an uncached student test from a key left the old key visible and printable during the fetch. Routing now clears old content before awaiting data. Pending loads are shared, failures can be retried, and stale success/failure responses cannot replace the current copy. Three async controller regressions cover these cases. |
 | Figure admission | A figure could be given in one item and answer-only in another item in the same assessment. Validation now rejects this document-wide conflict. |
 | Validator robustness | Malformed nested plan, assessment and reference collections could throw before producing diagnostics. Shape checks now report those errors. Blueprint checks require scoring and FR rotation fields, whole MC allocations, valid timing ranges, ordered sections, exact unit topic membership and week-33 practice-exam placement. Mutation regressions exercise rejection. |
-| Print styling | The mobile reference layout is restricted to screen media. Printed assessment figures have a 90 mm height limit, matching weekly figures. These are bounded safeguards; current native pagination was not verified. |
+| Print styling | Native PDFs exposed a border-only page after the Mechanics exam's final FR item and Physics 1 rubrics separated from their diagrams. Terminal section spacing is removed in print; key figures share a responsive row, key question introductions stay with their figures, and the Points column does not break within the word. Given and completed drawings are both retained. The mobile reference layout is restricted to screen media and printed assessment figures have a 90 mm height limit. Targeted native reprints pass. |
+| Worksheet downloads | The standalone export's old wordmark class no longer inherited the shared header's symbol dimensions, producing an oversized logo. Export-local layout now keeps the symbol at 28 × 34 px; the actual downloaded worksheet was reopened offline, inspected at 320 px and printed to PDF. |
 | Documentation | Added the README course entry and exact trademark notice, updated inventory counts, and removed the stale statement that AP courses were excluded from release validation. |
 
 The new Physics 1 spring data independently give a fitted slope of
@@ -62,13 +63,37 @@ The integrated `TZ=UTC node tools/check-all.js` gate passed under Node
 This is the same entry point as `npm run check`; npm was not installed.
 `git diff --check` also passed.
 
-Native Chromium and ChromeDriver could not start because the execution
-sandbox denied socket operations; escalation was rejected by session policy.
-No new native phone, keyboard, dark-mode, download or PDF acceptance is
-claimed. Earlier AP assessment PDFs in scratch contain fixture questions;
-they are not evidence that the final authored assessments paginate correctly.
-Long answer-key parts containing multiple figures and a rubric still need
-native print inspection. The earlier documented Calculus 11 px superscript
+Native Chromium 153 verification ran through the already approved direct
+ChromeDriver and curl commands. This supersedes the initial tool-wrapper
+failures. The native checks used the actual authored content:
+
+- All 26 student assessments at 320 px had their expected item counts, given
+  figures, no key DOM, no page overflow and the disclaimer. All 26 keys at
+  both 320 and 390 px showed the key alone without page overflow.
+- A further 27 sampled hub, plan, unit, reference and assessment route loads
+  covered 1280 px light, 320 px light and 390 px dark. Native keyboard checks
+  covered the skip link, unit disclosure and answer-key navigation.
+- Eight assessment/plan/reference PDFs were checked. The repaired Mechanics
+  practice exam is 37 pages with no blank page. The Physics 1 unit 3 key is
+  12 pages: its shared graph stays with its question, and its paired energy
+  diagrams and rubrics stay together. Additional keys for Calculus unit 7
+  and the Physics 1 practice exam have no blank or rubric-only pages. Every
+  sampled PDF contains the exact disclaimer after whitespace normalization;
+  the Calculus plan prints all nine units through week 36.
+- The integrating reviewer exercised all 324 student worksheet exports and
+  324 keys in the native DOM against the deployed coursework. The 2,022
+  student items retain all 310 given-figure appearances; student projections
+  and exports exclude answer fields, answer DOM and rubrics, and every export
+  includes its notice. Actual Physics 1 week 35 B student/key downloads opened
+  offline with the expected six items/solutions and supplied table. The final
+  student download has no page overflow at 320 px; its six-page PDF retains
+  the table, graph, blank workspace and disclaimer without key material.
+
+Native assessment checks used local files; the weekly download flow also
+ran over the published HTTPS site. Earlier scratch fixture PDFs were not
+used as acceptance evidence. PDF coverage is sampled, not exhaustive, and
+does not establish other browser engines, assistive-technology usability or
+physical-printer behavior. The earlier documented Calculus 11 px superscript
 deferral is retained. No exhaustive new correctness or originality claim is
 made for unsampled content.
 

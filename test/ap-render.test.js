@@ -53,6 +53,24 @@ test("the answer key shows keys, rationales, rubrics and a raw-point tally", () 
   assert.equal(A.claimProblems(text).length, 0);
 });
 
+test("paired key figures retain the given drawing and completed answer with their captions", () => {
+  const doc = F.unitTest("calculus-ab", 1);
+  doc.figures = [
+    { id: "ab-u1-f1", alt: "Given axes", caption: "Blank graph", svg: F.FIGURE_SVG },
+    { id: "ab-u1-f2", alt: "Completed curve", caption: "Answer graph", svg: F.FIGURE_SVG },
+  ];
+  const part = doc.sections.find(section => section.kind === "fr").parts[0].items[0].parts[0];
+  part.figureIds = ["ab-u1-f1"]; part.answerFigureIds = ["ab-u1-f2"];
+  const node = R.key(A.keyCopy(doc));
+  const group = node.find("ap-key-figures")[0];
+  assert.deepEqual(group.find("lm-figure").map(figure => figure.attributes["aria-label"]), ["Given axes", "Completed curve"]);
+  assert.match(group.textContent, /Blank graph/);
+  assert.match(group.textContent, /Answer graph/);
+  const student = R.booklet(A.studentCopy(doc));
+  assert.equal(student.find("lm-figure").some(figure => figure.attributes["aria-label"] === "Completed curve"), false);
+  assert.equal(student.textContent.includes("Answer graph"), false);
+});
+
 test("ap.html loads its scripts in order and names every element its scripts use", () => {
   const html = fs.readFileSync(path.join(__dirname, "../src/ap.html"), "utf8");
   const scripts = [...html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);

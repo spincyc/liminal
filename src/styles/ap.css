@@ -100,6 +100,9 @@
 .ap-muted { color: var(--color-muted); }
 .ap-answer { margin-top: 8px; padding: 12px 16px; background: var(--color-soft); border-left: 2px solid var(--color-line-strong); }
 .ap-answer > * + * { margin-top: 8px; }
+.ap-key-figures { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0 16px; }
+.ap-key-figures > .lm-figure { flex: 1 1 240px; min-width: 0; }
+.ap-rubric :is(th, td):first-child { width: 1%; white-space: nowrap; }
 
 /* Reference */
 .ap-reference-sheet { padding-block: 10px 22px; }
@@ -134,11 +137,13 @@
   .ap-page[data-view="assessment"] .weekly-intro, .ap-page[data-view="reference"] .weekly-intro { display: none !important; }
   .ap-page[data-view="plan"] .weekly-intro, .ap-page[data-view="hub"] .weekly-intro { display: block !important; }
   .ap-doc { border-top: 0; padding-top: 0; }
-  .ap-section-fr { break-before: page; }
+  .ap-section-fr > .ap-part:last-child > .ap-items, .ap-section-fr .ap-fr-parts { margin-bottom: 0; }
+  .ap-section-fr > .ap-part:last-child > .ap-items > li:last-child { padding-bottom: 0; }
   .ap-answer-sheet, .ap-reference-appended, .ap-tally { break-before: page; }
   .ap-section { padding-block: 10pt; }
-  .ap-items > li:not(.ap-item-fr), .ap-fr-parts > li, .ap-guideline-part, .ap-table tr { break-inside: avoid; }
-  .ap-guideline > h4, .ap-guideline-part > h5, .ap-section > :is(h3, h4) { break-after: avoid; }
+  .ap-section-fr { break-before: page; padding-bottom: 0; border-bottom: 0; }
+  .ap-items > li:not(.ap-item-fr), .ap-fr-parts > li, .ap-guideline-head, .ap-guideline-part, .ap-table tr { break-inside: avoid; }
+  .ap-guideline-head > h4, .ap-guideline-part > h5, .ap-section > :is(h3, h4) { break-after: avoid; }
   .ap-workspace { min-height: 55mm; border-color: #777; }
   .ap-doc .lm-figure svg { max-height: 90mm; }
   .ap-answer { background: #fff; }

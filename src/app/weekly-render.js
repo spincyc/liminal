@@ -186,6 +186,8 @@
     *{box-sizing:border-box}body{margin:0;background:#fff;color:#000;font:16px/1.6 system-ui,sans-serif}
     main{max-width:800px;margin:32px auto;padding:0 24px}h1{font:28px/1.2 Georgia,serif;margin:20px 0 12px}
     h4{font-size:18px;margin:22px 0 12px}p{margin:8px 0}.wordmark{font-size:30px;line-height:1}
+    .wordmark{display:flex;align-items:center;gap:10px;font-family:Georgia,serif}
+    .wordmark .brand-symbol{display:block;flex:none;width:28px;height:34px}
     a{color:#000}.weekly-meta,footer{color:#333;font-size:13px}.weekly-workspace{min-height:150px}
     .weekly-items>li{break-inside:avoid}.weekly-passage{background:#fff;color:#000}.weekly-answer{background:#fff}
     .weekly-page .weekly-workspace{min-height:38mm}.weekly-print-control{margin:20px 0;padding:8px 14px;font:inherit}
