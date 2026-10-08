@@ -157,7 +157,7 @@
       "author": "James Joyce",
       "title": "Dubliners",
       "translator": null,
-      "edition": "New York: B. W. Huebsch, second printing, April 1917 (US first printing December 1916); scan-backed Wikisource transcription of 1917 Dubliners by James Joyce.djvu. HTML emphasis becomes plain text; page-number markers and zero-width page-boundary characters removed, prose line wrapping folded to spaces; original paragraph and embedded verse boundaries retained.",
+      "edition": "New York: B. W. Huebsch, second printing, April 1917 (US first printing December 1916); scan-backed Wikisource transcription of 1917 Dubliners by James Joyce.djvu. HTML emphasis becomes plain text; page-number markers and zero-width page-boundary characters removed, prose line wrapping folded to spaces; original paragraph and embedded verse boundaries retained. The printed row of spaced full stops marking the section break in Eveline (p. 47) is reproduced as its own line of nine spaced periods.",
       "publicationYear": 1917,
       "translationYear": null,
       "url": "https://en.wikisource.org/wiki/Dubliners",
@@ -375,7 +375,7 @@
       "translator": null,
       "publicationYear": 1866,
       "translationYear": null,
-      "edition": "Edited by William George Clark and William Aldis Wright; London and Cambridge: Macmillan and Co., 1866, Volume VIII. Project Gutenberg 49008 main edited Hamlet text, excluding the separately printed early quarto and textual apparatus. Footnote anchors (including the duplicated plain-text marker [619]), variant readings and page/line numbers omitted; HTML emphasis flattened and horizontal indentation normalized. Speech boundaries, stage directions and the transcription’s displayed verse/prose line breaks retained. An existing dotted lacuna belongs to this printed edition, not to the selection editor.",
+      "edition": "Edited by William George Clark and William Aldis Wright; London and Cambridge: Macmillan and Co., 1866, Volume VIII. Project Gutenberg 49008 main edited Hamlet text, excluding the separately printed early quarto and textual apparatus. Footnote anchors (including the duplicated plain-text marker [619]), variant readings and page/line numbers omitted; HTML emphasis flattened and horizontal indentation normalized. Speech boundaries, stage directions and the transcription’s displayed verse/prose line breaks retained. An existing dotted lacuna belongs to this printed edition, not to the selection editor. One transcription error is corrected: in Act I, scene V, Gutenberg’s “0 villain” (digit zero) is printed here as “O villain.”",
       "url": "https://www.gutenberg.org/ebooks/49008",
       "textUrl": "https://www.gutenberg.org/cache/epub/49008/pg49008-images.html",
       "rights": {
@@ -1780,7 +1780,7 @@
         "isCompleteWork": true,
         "continuesFrom": null,
         "continuesTo": null,
-        "textHash": "a7e7c1db4a08a0232a087677d0c1f4dac23a383614dc255015ba4a94ac43a4d4"
+        "textHash": "1a4a6607d9c7b3dfa54b77b123ef19b88c32d4456def1059b646a7a9c1b3bbe8"
       },
       "blocks": [
         {
@@ -1854,6 +1854,10 @@
         {
           "type": "paragraph",
           "text": "She stood up in a sudden impulse of terror. Escape! She must escape! Frank would save her. He would give her life, perhaps love, too. But she wanted to live. Why should she be unhappy? She had a right to happiness. Frank would take her in his arms, fold her in his arms. He would save her."
+        },
+        {
+          "type": "paragraph",
+          "text": ". . . . . . . . ."
         },
         {
           "type": "paragraph",
@@ -4300,7 +4304,7 @@
         "discussionMinutes": 14,
         "totalMinutes": 28
       },
-      "challenge": "Trace a defense that turns its accusers’ terms into a imagined future authority.",
+      "challenge": "Trace a defense that turns its accusers’ terms into an imagined future authority.",
       "focus": "The making of lovers into saints through poetry.",
       "context": "Canonization means recognition as a saint. The speaker applies religious and memorial language to an intimate relationship under criticism.",
       "contentNote": "Religious language is used provocatively to describe romantic and sexual union.",
@@ -20016,7 +20020,7 @@
         "isCompleteWork": false,
         "continuesFrom": "reading-12-w33-d2",
         "continuesTo": "reading-12-w33-d4",
-        "textHash": "399173e6c5919d886dbdd21d4408bde8bf4aef485cb1b312e78bcae30e1d326e"
+        "textHash": "3b57babf50d09ad3b11b6dead98b2cde61b40e00c0704321d88729dd785160c4"
       },
       "blocks": [
         {
@@ -20241,7 +20245,7 @@
         },
         {
           "type": "stanza",
-          "text": "Chorus.\n[Strophe.\n     Nothingness, nothingness,\n     Ye Children of Man, and less\n       I count you, waking or dreaming!\n     And none among mortals, none,\n     Seeking to live, hath won\n     More than to seem, and to cease\n       Again from his seeming.\n     While ever before mine eyes\n     One fate, one ensample, lies—\n     Thine, thine, O Oedipus, sore\n       Of God oppressèd—\n     What thing that is human more\n       Dare I call blessèd?\n[Antistrophe.\n     Straight his archery flew\n     To the heart of living; he knew\n       Joy and the fulness of power,\n     O Zeus, when the riddling breath\n     Was stayed and the Maid of Death\n     Slain, and we saw him through\n       The death-cloud, a tower!\n     For that he was called my king;\n     Yea, every precious thing\n     Wherewith men are honoured, down\n       We cast before him,\n     And great Thebes brought her crown\n       And kneeled to adore him.\n[Strophe.\nBut now, what man's story is such bitterness to speak?\n What life hath Delusion so visited, and Pain,\n       And swiftness of Disaster?\n       O great King, our master,\n How oped the one haven to the slayer and the slain?\nAnd the furrows of thy father, did they turn not nor shriek,\n Did they bear so long silent thy casting of the grain?\n[Antistrophe.\n'Tis Time, Time, desireless, hath shown thee what thou art;\n The long monstrous mating, it is judged and all its race.\n     O child of him that sleepeth,\n     Thy land weepeth, weepeth,\n Unfathered.... Would God, I had never seen thy face!\n In thee mine eye clouded and the dark is come apace.\n    [A Messenger rushes out from the Palace."
+          "text": "Chorus.\n[Strophe.\n     Nothingness, nothingness,\n     Ye Children of Man, and less\n       I count you, waking or dreaming!\n     And none among mortals, none,\n     Seeking to live, hath won\n     More than to seem, and to cease\n       Again from his seeming.\n     While ever before mine eyes\n     One fate, one ensample, lies—\n     Thine, thine, O Oedipus, sore\n       Of God oppressèd—\n     What thing that is human more\n       Dare I call blessèd?\n[Antistrophe.\n     Straight his archery flew\n     To the heart of living; he knew\n       Joy and the fulness of power,\n     O Zeus, when the riddling breath\n     Was stayed and the Maid of Death\n     Slain, and we saw him through\n       The death-cloud, a tower!\n     For that he was called my king;\n     Yea, every precious thing\n     Wherewith men are honoured, down\n       We cast before him,\n     And great Thebes brought her crown\n       And kneeled to adore him.\n[Strophe.\nBut now, what man's story is such bitterness to speak?\n What life hath Delusion so visited, and Pain,\n       And swiftness of Disaster?\n       O great King, our master,\n How oped the one haven to the slayer and the slain?\nAnd the furrows of thy father, did they turn not nor shriek,\n Did they bear so long silent thy casting of the grain?\n[Antistrophe.\n'Tis Time, Time, desireless, hath shown thee what thou art;\n The long monstrous mating, it is judged and all its race.\n     O child of him that sleepeth,\n     Thy land weepeth, weepeth,\n Unfathered.... Would God, I had never seen thy face!\nFrom thee in great peril fell peace upon my heart,\n In thee mine eye clouded and the dark is come apace.\n    [A Messenger rushes out from the Palace."
         }
       ],
       "questions": [
@@ -20299,7 +20303,7 @@
         "isCompleteWork": false,
         "continuesFrom": "reading-12-w33-d3",
         "continuesTo": "reading-12-w33-d5",
-        "textHash": "4d976496a8231f5f29c2de6e97cec574084c79ac326a5c00445f79e3a61c55fc"
+        "textHash": "4b8f8f75f9f93432fdd8c58b4dfcb3e8f6c700f4d9df12c005c2d2ed47916edd"
       },
       "blocks": [
         {
@@ -20336,7 +20340,7 @@
         },
         {
           "type": "stanza",
-          "text": "Leader.\n  I dare not raise mine eyes to thee;\n  Fain would I look and ask and see,\nBut shudder sickened from thy face."
+          "text": "Leader.\nO fallen, fallen in ghastly case,\n  I dare not raise mine eyes to thee;\n  Fain would I look and ask and see,\nBut shudder sickened from thy face."
         },
         {
           "type": "stanza",
@@ -21534,7 +21538,7 @@
         "isCompleteWork": false,
         "continuesFrom": "reading-12-w34-d3",
         "continuesTo": "reading-12-w34-d5",
-        "textHash": "e00f259cfe5b4dca8bc9fa2d942c83f0c41a9fa142811d0f88132ee775b21eda"
+        "textHash": "d3cc3086913f426b0c80825efed06961a603c55a9de50a012105f70539034896"
       },
       "blocks": [
         {
@@ -21763,7 +21767,7 @@
         },
         {
           "type": "stanza",
-          "text": "Ham. O all you host of heaven! O earth! what else?\nAnd shall I couple hell? O, fie! Hold, hold, my heart;\nAnd you, my sinews, grow not instant old,\nBut bear me stiffly up. Remember thee!\nAy, thou poor ghost, while memory holds a seat\nIn this distracted globe. Remember thee!\nYea, from the table of my memory\nI'll wipe away all trivial fond records,\nAll saws of books, all forms, all pressures past,\nThat youth and observation copied there;\nAnd thy commandment all alone shall live\nWithin the book and volume of my brain,\nUnmix'd with baser matter: yes, by heaven!\nO most pernicious woman!\n0 villain, villain, smiling, damned villain!\nMy tables,—meet it is I set it down,\nThat one may smile, and smile, and be a villain;\nAt least I'm sure it may be so in Denmark. [Writing.\nSo, uncle, there you are. Now to my word;\nIt is 'Adieu, adieu! remember me.'\nI have sworn't."
+          "text": "Ham. O all you host of heaven! O earth! what else?\nAnd shall I couple hell? O, fie! Hold, hold, my heart;\nAnd you, my sinews, grow not instant old,\nBut bear me stiffly up. Remember thee!\nAy, thou poor ghost, while memory holds a seat\nIn this distracted globe. Remember thee!\nYea, from the table of my memory\nI'll wipe away all trivial fond records,\nAll saws of books, all forms, all pressures past,\nThat youth and observation copied there;\nAnd thy commandment all alone shall live\nWithin the book and volume of my brain,\nUnmix'd with baser matter: yes, by heaven!\nO most pernicious woman!\nO villain, villain, smiling, damned villain!\nMy tables,—meet it is I set it down,\nThat one may smile, and smile, and be a villain;\nAt least I'm sure it may be so in Denmark. [Writing.\nSo, uncle, there you are. Now to my word;\nIt is 'Adieu, adieu! remember me.'\nI have sworn't."
         },
         {
           "type": "stanza",
