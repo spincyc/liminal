@@ -31,7 +31,7 @@
 .weekly-section { padding-block: 24px; border-bottom: 1px solid var(--color-line); }
 .weekly-section h3 { font: 400 1.5rem/1.25 var(--font-serif); margin-bottom: 14px; }
 .weekly-section h4 { font-size: 1rem; margin: 0 0 10px; }
-.weekly-section p + p, .weekly-rich > * + *, .weekly-answer > * + * { margin-top: 12px; }
+.weekly-section p + p, .weekly-rich > * + *, .weekly-rich + .weekly-rich, .weekly-answer > * + * { margin-top: 12px; }
 .weekly-rich { overflow-wrap: anywhere; }
 .weekly-rich p { white-space: pre-wrap; }
 .weekly-rich table { border-collapse: collapse; width: 100%; font-size: .9375rem; }
