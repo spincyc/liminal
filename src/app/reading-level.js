@@ -114,9 +114,26 @@
     section.append(title, el("p", probe.intro, "rl-context"));
     if (probe.contentNote) section.append(el("p", "Content note: " + probe.contentNote, "rl-content-note"));
     const text = el("div", undefined, "rl-text");
-    probe.blocks.forEach(block => text.append(el(block.type === "heading" ? "h4" : "p", block.text, "rl-" + block.type)));
+    probe.blocks.forEach(block => text.append(blockNode(block)));
     section.append(text, el("p", "The title, author and source appear after the questions.", "rl-muted"));
     return section;
+  }
+  // Tab-separated source tables render as a scrollable table (text nodes only).
+  function blockNode(block) {
+    const rows = block.type === "paragraph" && L.tableRows(block.text);
+    if (!rows) return el(block.type === "heading" ? "h4" : "p", block.text, "rl-" + block.type);
+    const width = Math.max(...rows.map(row => row.cells.length)), table = el("table", undefined, "rl-source-table"), body = el("tbody");
+    rows.forEach(row => {
+      const tr = el("tr", undefined, row.cells.length === 1 ? "rl-table-span" : undefined);
+      row.cells.forEach(cell => { const node = el(row.header ? "th" : "td", cell); if (row.header) node.scope = "col"; tr.append(node); });
+      // A one-cell row (a year) spans the table; other short rows keep their columns.
+      if (row.cells.length === 1) tr.firstChild.colSpan = width;
+      else for (let i = row.cells.length; i < width; i++) tr.append(el(row.header ? "th" : "td", ""));
+      body.append(tr);
+    });
+    table.append(body);
+    const wrap = el("div", undefined, "rl-table-wrap rl-source-table-wrap"); wrap.tabIndex = 0; wrap.setAttribute("role", "region"); wrap.setAttribute("aria-label", "Table from the passage");
+    wrap.append(table); return wrap;
   }
   function sourceSection(probe) {
     const box = el("section", undefined, "rl-source-card");

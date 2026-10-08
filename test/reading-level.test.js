@@ -15,6 +15,14 @@ function response(p, correct, wpm = 150, rating = null, extra = {}) { return { a
 const evalAt = (level, correct, wpm, rating, form = "a") => { const p = probe(level, form); return L.evaluate(p, response(p, correct, wpm, rating)); };
 const LADDER = [1, 3, 5, 6, 9, 11, 12];
 
+test("tab-separated passage blocks become table rows without changing their text", () => {
+  assert.equal(L.tableRows("An ordinary paragraph."), null);
+  const text = "Date\tNo.\tRemarks.\n1855\nDec. 13th\t1\tFine; starlight\n\" 14th\t75\tDrizzly and fog.\nDate.\tNo.\tRemarks\nTotal\t1,386";
+  const rows = L.tableRows(text);
+  assert.deepEqual(rows.map(row => row.header), [true, false, false, false, true, false]);
+  assert.deepEqual(rows[1].cells, ["1855"]); assert.deepEqual(rows[3].cells, ["\" 14th", "75", "Drizzly and fog."]);
+  assert.equal(rows.map(row => row.cells.join("\t")).join("\n"), text);
+});
 test("scoring counts correct answers by skill; blanks are wrong", () => {
   const p = probe(5, "a"), counts = L.score(p, [p.items[0].key, null, p.items[2].key, 3 - p.items[3].key === p.items[3].key ? 0 : 3 - p.items[3].key]);
   assert.equal(counts.total, 4); assert.equal(counts.correct, 2);
@@ -326,6 +334,10 @@ test("the cue report flags absolutes only in distractors and cross-item cues wit
   const cues = T.cueReport(T.validateProbes(data, courses).resolved);
   assert.ok(cues.some(line => /rl-1-a-1: absolute word only in a distractor/.test(line)));
   assert.ok(cues.some(line => /rl-1-a-1: key words .* appear in the stem of rl-1-a-2/.test(line)));
+  const named = probeData([1, 3]); named.probes[0].items[0].options[0] = "May fly larvae eat the boat crew";
+  assert.ok(!T.cueReport(T.validateProbes(named, courses).resolved).some(line => /rl-1-a-1: hedge/.test(line)), "a capitalized name is not a hedge");
+  const hedged = probeData([1, 3]); hedged.probes[0].items[0].options[0] = "Perhaps a boat has come home after winter"; hedged.probes[0].items[0].options[2] = "A gull has stolen the fish from them";
+  assert.ok(T.cueReport(T.validateProbes(hedged, courses).resolved).some(line => /rl-1-a-1: hedge only in the key/.test(line)));
 });
 test("the bundle resolves passage text and never includes facilitator notes", () => {
   const courses = [course(1), course(3)], data = probeData([1, 3]);

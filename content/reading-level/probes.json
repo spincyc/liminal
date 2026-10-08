@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "title": "Reading-level calibration probes",
   "review": {
-    "status": "unreviewed",
-    "note": "Repaired after the 2026-10-07 independent item review (docs/reviews/2026-10-07-reading-level-items-review.md); awaiting the reviewer's re-check."
+    "status": "independently-reviewed",
+    "note": "One independent agent's blind review and passage-hidden pass, with a re-review on 2026-10-08 (docs/reviews/2026-10-07-reading-level-items-review.md); S1–S7 reviewer-authored and author-checked. Not item statistics or human approval; see docs/reading-level.md."
   },
   "probes": [
     {
@@ -128,7 +128,7 @@
         {
           "id": "rl-2-a-2",
           "skill": "vocabulary",
-          "stem": "People called him Doctor Goldsmith, “for he had studied to be a phy-si-cian.” What is a physician?",
+          "stem": "Goldsmith “had studied to be a phy-si-cian.” What is a physician?",
           "options": [
             "A doctor",
             "A writer of books",
@@ -316,7 +316,7 @@
         {
           "id": "rl-3-b-4",
           "skill": "literal",
-          "stem": "Why does a leopard frog hiding at the bottom of the aquarium let its eyelids fall?",
+          "stem": "Why does the leopard frog at the bottom of the aquarium let its eyelids fall over its eyes?",
           "options": [
             "Because it is falling asleep",
             "So its eyes will not shine and give it away",
@@ -507,8 +507,8 @@
           "stem": "Why does the passage end with Mary deciding to carry the key whenever she goes out?",
           "options": [
             "It shows she fears that someone will take the key from her",
-            "It shows she has given up on the garden",
-            "It shows she plans to give the key back",
+            "It shows she means to try it in the closed rooms of the house",
+            "It shows she wants to make up a game of her own with it",
             "It shows she means to keep looking for the door"
           ],
           "key": 3,
@@ -628,7 +628,7 @@
         {
           "id": "rl-6-a-4",
           "skill": "structure",
-          "stem": "How does the narrator respond to the Catherine Wheel’s saying “Romance is dead” three times?",
+          "stem": "How does the narrator comment on the Catherine Wheel’s view that “Romance is dead”?",
           "options": [
             "By showing that the other fireworks agree with her",
             "By noting that repeating a thing does not make it true",
@@ -1007,9 +1007,9 @@
           "stem": "Why does Douglass list “Not because he earned it,—not because he had any hand in earning it”?",
           "options": [
             "To rule out every justification, leaving only force",
-            "To show that Master Hugh helped him earn the money",
-            "To explain how wages in the shipyard were calculated each week",
-            "To admit that he was unsure why he paid"
+            "To repeat the reasons Hugh gave for taking his wages",
+            "To show that the shipyard paid its calkers unfairly",
+            "To admit that he still owed Master Hugh some money"
           ],
           "key": 0,
           "rationale": "After the list he concludes that Hugh took the money “solely because he had the power to compel me to give it up.”"
@@ -1152,15 +1152,15 @@
         {
           "id": "rl-10-b-1",
           "skill": "literal",
-          "stem": "Why was Jim’s day in Black Hawk disappointing?",
+          "stem": "Why, according to Ambrosch, might Leo have run off into the pasture?",
           "options": [
-            "The night express was late and he missed it",
-            "Anton Jelinek would not talk with him",
-            "Heavy rain kept him inside the hotel",
-            "Many people and places he knew were gone"
+            "He had been sent ahead to open the lane gate",
+            "He is sorry Jim is leaving, or jealous of him",
+            "He wanted to go hunting up on the Niobrara",
+            "He meant to wave goodbye from the windmill"
           ],
-          "key": 3,
-          "rationale": "“Most of my old friends were dead or had moved away,” and the old trees by the Harlings’ gate were cut down."
+          "key": 1,
+          "rationale": "His brother says, “Maybe he’s sorry to have you go, and maybe he’s jealous.”"
         },
         {
           "id": "rl-10-b-2",
@@ -1209,7 +1209,8 @@
       "form": "a",
       "dayId": "reading-11-w12-d4",
       "textHash": "cca61373678d6f783cf5ce7a236a2076d8aa8887cdcf2d594f8913159ca538da",
-      "intro": "In this section of an 1837 address, Ralph Waldo Emerson discusses the scholar’s education. Bracketed numbers are reference marks from the printed edition.",
+      "intro": "In this section of an 1837 address, Ralph Waldo Emerson discusses the scholar’s education.",
+      "contentNote": "This 1837 address uses nineteenth-century gendered language.",
       "items": [
         {
           "id": "rl-11-a-1",

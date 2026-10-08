@@ -91,6 +91,23 @@
   function above(levels, level) { return levels.filter(value => value > level).sort((a, b) => a - b)[0]; }
   function below(levels, level) { return levels.filter(value => value < level).sort((a, b) => b - a); }
 
+  // ---- Passage display ----
+  // A passage block whose lines hold tab-separated columns (a source table,
+  // such as a naturalist's nightly counts) as rows of cells, so the page can
+  // show it as a table instead of run-together text. The text is unchanged:
+  // splitting on tabs and line breaks only. A row that repeats the first
+  // row's opening cell is a repeated header. Returns null for ordinary text.
+  function tableRows(text) {
+    if (typeof text !== "string" || !text.includes("\t")) return null;
+    const lines = text.split("\n").filter(line => line.trim());
+    const key = cell => cell.trim().replace(/[.:]+$/, "").toLowerCase();
+    const first = key(lines[0].split("\t")[0]);
+    return lines.map((line, index) => {
+      const cells = line.split("\t");
+      return { cells, header: index === 0 || (cells.length > 1 && key(cells[0]) === first) };
+    });
+  }
+
   // ---- Scoring ----
   function wordCount(text) { return (String(text).match(/\S+/g) || []).length; }
   function score(probe, answers) {
@@ -414,7 +431,7 @@
     STRETCH_NIGHTS_BY_STAGE, STRETCH_SLOTS, NIGHTS_PER_WEEK, PLAN_WEEKS, DEFAULT_PLAN_WEEKS, NIGHT_SETS, NIGHTS_PER_YEAR,
     FORMS, SKILLS, SKILL_LABELS, RATINGS, STORAGE_KEY, STATE_VERSION,
     validLevel, levelKey, levelLabel, itemCount, comfortableFloor, route, nightAt, nightIndex,
-    wordCount, score, comprehension, pace, evaluate, ladderLevels, startLevel, nextStep, placement, skillSummary,
+    tableRows, wordCount, score, comprehension, pace, evaluate, ladderLevels, startLevel, nextStep, placement, skillSummary,
     validDate, addDays, weekday, planCursors, makePlan, cursorsOn, recheckLevel, chooseForm, applyRecheck, reasonText,
     emptyState, parseState, serializeState, replay,
   };

@@ -158,7 +158,9 @@ function build(options = {}) {
 // Heuristic cues an author should look at during the passage-hidden pass
 // (docs/reading-level.md). Reported, never failed: each needs judgment.
 const ABSOLUTE = /\b(?:always|never|only|all|every|none|no one|nothing|everyone|everything|completely|entirely)\b/i;
-const HEDGE = /\b(?:some|often|usually|may|might|perhaps|seems?|more|mostly|partly|likely)\b/i;
+// Case-sensitive so names are not hedges ("May fly"); a hedge may open a
+// sentence, so the other words allow a capital.
+const HEDGE = /\b(?:[Ss]ome|[Oo]ften|[Uu]sually|may|might|[Pp]erhaps|[Ss]eems?|[Mm]ore|[Mm]ostly|[Pp]artly|[Ll]ikely)\b/;
 const STOP = new Set("a an the and or but of to in on at by for with from as is are was were be been it its this that these those he she they his her their them him you your i we our not no so than then there what why how who which when where does do did has have had can could would will".split(" "));
 function contentWords(value) { return new Set(words(value).filter(word => word.length > 3 && !STOP.has(word))); }
 function cueReport(resolved) {

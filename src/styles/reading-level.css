@@ -41,6 +41,12 @@
 .rl-text .rl-paragraph { white-space: pre-line; overflow-wrap: anywhere; }
 .rl-text .rl-stanza { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
 .rl-text .rl-heading { margin-block: 1.2em .5em; font: 600 1.0625rem/1.5 var(--font-serif); }
+.rl-source-table-wrap { margin-block: 1em; }
+.rl-source-table { border-collapse: collapse; font: 400 .9375rem/1.4 var(--font-serif); font-variant-numeric: tabular-nums; }
+.rl-source-table :is(th, td) { padding: 4px 10px 4px 0; border-bottom: 1px solid var(--color-line); text-align: left; vertical-align: top; }
+.rl-source-table th { font-weight: 600; }
+.rl-source-table td:nth-child(2) { text-align: right; padding-right: 14px; }
+.rl-source-table .rl-table-span td { font-weight: 600; padding-top: 8px; }
 .rl-source-card { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--color-line); font-size: .9375rem; }
 .rl-source-card h3 { margin-top: 0; }
 .rl-source-title { margin-top: 4px; font: italic 1.0625rem/1.4 var(--font-serif); }

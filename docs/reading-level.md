@@ -76,6 +76,23 @@ The file's `review.status` is `unreviewed` until an independent reviewer has
 checked every item, then `independently-reviewed` with a note naming the
 review record in `docs/reviews/`.
 
+**Current status: `independently-reviewed`** (2026-10-08). One independent
+review agent, not the author, answered all 92 items from the passages before
+seeing the keys, and also guessed every item with the passage hidden, on the
+committed set. It found two blocking items and wider cueing; after the repair
+pass it re-reviewed the changed set and found no blocking item
+(`docs/reviews/2026-10-07-reading-level-items-review.md`, "Re-review
+2026-10-08"). Its final edits S1–S7 (10-b-1; the stems of 3-b-4, 2-a-2 and
+6-a-4; options in 5-a-4 and 9-a-4; the 11-a intro and note) were written by
+the reviewer and checked by the author against each passage, so those
+wordings had one reading each, not a blind one. As with 2-b-3, 7-a-4 and 9-b-3
+from the first round, reviewer-written items have had no independent blind
+review. This status means agent review of the items' keys, wording and cues.
+It is not item statistics or field testing with students, not evidence of
+grade-level difficulty, and not human editorial approval. Any later change to
+an item, or a rebound night whose text changed, needs review again before the
+status is claimed for it.
+
 ## Item-writing rules
 
 - Grades 1–2: three items per probe; Grade 3 and up: four.
