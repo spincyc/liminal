@@ -186,6 +186,10 @@
     "(?<sups>[⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿⁱ]+)",
     "(?<word>[\\p{Lu}\\p{Ll}\\p{Lt}\\p{Lo}]+)",
     "(?<root>[√∛∜])",
+    // A subscript written with an underscore (v_0, μ_k, x_cm) stays as typed
+    // but belongs to its symbol, so F_net/m and Gm_1m_2/r^2 group correctly.
+    // Only directly after a letter or a bracket (see mathItems).
+    "(?<sub>_[\\p{L}\\p{N}]+)",
     "(?<space>\\s+)",
     "(?<other>[\\s\\S])",
   ].join("|"), "gu");
@@ -228,6 +232,12 @@
         // A closer that matches nothing open, or the wrong kind: unwind to
         // text so the brackets print exactly as written.
         top.items.push({ kind: "other", text: value });
+      } else if (kind === "sub" && !["word", "sub", "group"].includes((top.items[top.items.length - 1] || {}).kind)) {
+        // Not attached to a symbol (1869_A, a leading _x): plain text.
+        top.items.push({ kind: "other", text: "_" });
+        for (const rest of value.slice(1).matchAll(MATH_TOKEN)) {
+          top.items.push({ kind: rest.groups.num !== undefined ? "num" : "word", text: rest[0] });
+        }
       } else {
         top.items.push({ kind, text: value });
       }
@@ -247,9 +257,10 @@
     return item && item.kind === "node" && (!type || item.node.type === type);
   }
 
-  // Tokens that can be one factor of an operand: 3, x, ², (x + 1), √2, x^2.
+  // Tokens that can be one factor of an operand: 3, x, ², (x + 1), √2, x^2,
+  // and a subscript such as _0.
   function isFactor(item) {
-    return Boolean(item) && (item.kind === "num" || item.kind === "word" ||
+    return Boolean(item) && (item.kind === "num" || item.kind === "word" || item.kind === "sub" ||
       item.kind === "sups" || item.kind === "group" || isNode(item, "sup") || isNode(item, "root"));
   }
 
@@ -375,8 +386,8 @@
     } else {
       return -1;
     }
-    while (items[index] && (items[index].kind === "sups" || isNode(items[index], "sup") ||
-        isDegree(items[index], items[index - 1]))) {
+    while (items[index] && (items[index].kind === "sups" || items[index].kind === "sub" ||
+        isNode(items[index], "sup") || isDegree(items[index], items[index - 1]))) {
       index += 1;
     }
     if (isFactor(items[index])) return -1;
@@ -403,7 +414,9 @@
       if (index > 0 && items[index - 1].kind === "num" && ORDINALS.has(item.text)) return false;
       if (items[index + 1] && items[index + 1].kind === "group") {
         if (latinLetters(item.text) > 1 && !FUNCTION_WORDS.has(item.text)) return false;
-      } else if (!hasCoefficient && latinLetters(item.text) > 1) {
+      } else if (!hasCoefficient && latinLetters(item.text) > 1 &&
+          !(items[index + 1] && items[index + 1].kind === "sub")) {
+        // A subscript marks a letter run as symbols (Gm_1), not a word.
         return false;
       }
     }

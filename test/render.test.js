@@ -226,6 +226,22 @@ test("math: fractions stack with numeric, single-letter, or bracketed operands",
   assert.equal(typeset("(7/3)/(−2/3)"), "⟨⟨7 | 3⟩ | −⟨2 | 3⟩⟩");
 });
 
+test("math: underscore subscripts stay as typed and belong to their symbol", () => {
+  assert.equal(typeset("F_g = Gm_1m_2/r^2"), "F_g = ⟨Gm_1m_2 | r^{2}⟩");
+  assert.equal(typeset("ω_B = ω_A/2"), "ω_B = ⟨ω_A | 2⟩");
+  assert.equal(typeset("x_cm = Σm_ix_i/Σm_i"), "x_cm = ⟨Σm_ix_i | Σm_i⟩");
+  assert.equal(typeset("d/v_avg"), "⟨d | v_avg⟩");
+  assert.equal(typeset("m/r_E^2"), "⟨m | r_E^{2}⟩");
+  assert.equal(typeset("v_A^2/(2g)"), "⟨v_A^{2} | 2g⟩");
+  assert.equal(typeset("m_B/m_A"), "⟨m_B | m_A⟩");
+  assert.equal(typeset("log_2 8 = 3 and (u_1 + u_n)/2"), "log_2 8 = 3 and ⟨u_1 + u_n | 2⟩");
+  assert.equal(typeset("1869_MalayArchipelago/2"), "1869_MalayArchipelago/2", "a number takes no subscript");
+  assert.equal(typeset("_2/3"), "_⟨2 | 3⟩");
+  for (const text of ["the i_e pattern", "a_e/ai", "____/____", "x__", "wiki/Little_Men", "GMm/r_2", "x _1"]) {
+    assert.equal(typeset(text), text, text);
+  }
+});
+
 test("math: brackets around a lone fraction drop unless they carry meaning", () => {
   assert.equal(typeset("(1/2)x"), "⟨1 | 2⟩x");
   assert.equal(typeset("−(1/2)x + 3"), "−⟨1 | 2⟩x + 3");
