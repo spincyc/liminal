@@ -259,7 +259,8 @@
     { id: "mark-as-noun", pattern: /\bAP®?(?:'s|’s)\b|\bAPs\b/ },
   ];
   const NEGATION = /\b(?:not|no|never|neither|nor|without|cannot)\b|n['’]t\b/i;
-  function sentences(text) { return String(text).split(/(?<=[.!?])\s+|\n+/).filter(s => s.trim()); }
+  // No lookbehind: this file loads in browsers older than Safari 16.4.
+  function sentences(text) { return String(text).replace(/([.!?])\s+/g, "$1\n").split(/\n+/).filter(s => s.trim()); }
   function claimProblems(text) {
     const found = [];
     sentences(text).forEach(sentence => {
