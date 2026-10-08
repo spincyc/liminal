@@ -525,6 +525,13 @@
     {
       "id": "calculus",
       "title": "Calculus",
+      "related": [
+        {
+          "note": "Preparing for the AP® Calculus AB exam?",
+          "label": "Course for AP® Calculus AB",
+          "href": "ap.html#calculus-ab"
+        }
+      ],
       "levelLabel": "Flexible placement",
       "summary": "Study limits, derivatives, integrals, applications, and introductory differential equations in one variable.",
       "scopeNote": "A 36-week introduction to single-variable differential and integral calculus: limits, derivatives, the Fundamental Theorem, elementary integration and substitution, applications, and introductory differential equations. The course assumes the Trigonometry course’s precalculus foundations and includes readiness review. Infinite series, multivariable calculus, a comprehensive set of advanced integration methods, and formal epsilon-delta proof are outside the core plan. It is not labeled AP Calculus AB or BC and does not promise exam equivalence or college credit.",

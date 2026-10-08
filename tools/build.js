@@ -89,6 +89,9 @@ require("./build-courses").build();
 require("./build-work-samples").build();
 require("./build-curriculum").build();
 require("./build-weekly").build();
+// AP® unit tests, practice exams and references; the AP plan bundle
+// (content/ap-plan.js) comes from build-weekly as a named-track plan.
+require("./build-ap").build();
 require("./build-daily-reading").build();
 require("./build-reading-level").build();
 

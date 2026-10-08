@@ -39,6 +39,9 @@
   }
   const tracks = [...new Set(index.courses.map(course => course.trackId))];
   tracks.forEach(id => trackSelect.append(option(W.trackLabel(id), id)));
+  // Trademark notices for the tracks on offer (for example the AP® disclaimer).
+  const pageFooter = document.querySelector("body > footer");
+  if (pageFooter) tracks.map(W.trackNotice).filter(Boolean).forEach(notice => pageFooter.append(R.el("p", notice, "weekly-track-notice")));
   function pickers(selected) {
     const named = !!selected.course.courseId;
     trackSelect.value = selected.trackId;
@@ -47,7 +50,7 @@
     const courses = index.courses.filter(course => course.trackId === selected.trackId).slice();
     if (!named) courses.sort((a, b) => b.grade - a.grade);
     gradeSelect.replaceChildren(...courses.map(course => {
-      const node = option(named ? W.courseLabel(course) : W.gradeKey(course.grade).toUpperCase(), W.courseKey(course));
+      const node = option(named ? W.courseShortLabel(course) : W.gradeKey(course.grade).toUpperCase(), W.courseKey(course));
       node.setAttribute("aria-label", W.courseLabel(course)); return node;
     }));
     gradeSelect.value = W.courseKey(selected.course);
@@ -200,7 +203,7 @@
       const title = R.el("h2", week.title); title.id = "weeklyHeading"; title.tabIndex = -1;
       heading.append(title, R.rich(week.objective, course.trackId !== "common-core-reading"));
       const links = R.el("div", undefined, "weekly-links");
-      const yearRoute = course.courseId ? "high-school.html#" + W.courseKey(course) : "curriculum.html#" + selected.trackId + "/" + W.courseKey(course);
+      const yearRoute = W.planRoute(course.trackId, W.courseKey(course));
       links.append(R.link("Year plan", yearRoute), R.link("Unit and standards", yearRoute + "/" + encodeURIComponent(week.unitId)));
       if (course.trackId === "common-core-reading") links.append(R.link("Nightly reading", "daily-reading.html#" + W.courseKey(course) + "/" + week.week + "/1"));
       heading.append(links);

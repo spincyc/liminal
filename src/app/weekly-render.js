@@ -27,12 +27,70 @@
     const node = el("details", undefined, className);
     node.append(el("summary", title)); return node;
   }
-  function solution(item, math) {
+  // A figure { id, alt, caption?, notToScale?, svg } through the shared
+  // allow-list renderer; the caption is plain text.
+  function figure(data) {
+    const node = window.LiminalRender.renderFigure({ svg: data.svg, alt: data.alt, notToScale: data.notToScale === true });
+    if (!node) return null;
+    node.classList.add("weekly-figure");
+    if (data.caption) node.append(el("figcaption", data.caption, "weekly-figure-caption"));
+    return node;
+  }
+  function figureBlock(ids, figures) {
+    const block = el("div", undefined, "weekly-figures");
+    (ids || []).forEach(id => {
+      const data = (figures || []).find(f => f.id === id);
+      const node = data && figure(data);
+      if (node) block.append(node);
+    });
+    return block.childNodes.length ? block : null;
+  }
+  function choiceList(item, math, showKey) {
+    const list = el("ol", undefined, "weekly-choices");
+    item.choices.forEach((choice, index) => {
+      const letter = window.LiminalWeekly.CHOICE_LETTERS[index];
+      const li = el("li", undefined, showKey && item.key === letter ? "weekly-choice weekly-choice-key" : "weekly-choice");
+      li.append(el("span", "(" + letter + ")", "weekly-choice-letter"), rich(choice, math));
+      list.append(li);
+    });
+    return list;
+  }
+  // Prompt, point value, given figures and choices: everything a student sees.
+  function taskBody(target, item, math, figures, showKey) {
+    target.append(rich(item.prompt, math));
+    if (Number.isInteger(item.points)) target.append(el("p", "(" + item.points + (item.points === 1 ? " point)" : " points)"), "weekly-points"));
+    const given = figureBlock(item.figureIds, figures);
+    if (given) target.append(given);
+    if (Array.isArray(item.choices)) target.append(choiceList(item, math, showKey));
+  }
+  function solution(item, math, figures) {
     const body = el("div", undefined, "weekly-answer");
+    if (item.key) body.append(el("p", "Correct choice: (" + item.key + ")", "weekly-key"));
     body.append(rich(item.answer, math));
     const steps = el("ol", undefined, "weekly-steps");
     item.steps.forEach(step => { const li = el("li"); li.append(rich(step, math)); steps.append(li); });
-    body.append(steps); return body;
+    body.append(steps);
+    const drawn = figureBlock(item.answerFigureIds, figures);
+    if (drawn) body.append(drawn);
+    if (Array.isArray(item.rubric)) {
+      const rubric = el("div", undefined, "weekly-rubric");
+      rubric.append(el("p", "Scoring (" + item.points + (item.points === 1 ? " point)" : " points)"), "weekly-rubric-title"));
+      const rows = el("ul");
+      item.rubric.forEach(row => {
+        const li = el("li"); li.append(el("span", row.points + (row.points === 1 ? " point: " : " points: "), "weekly-rubric-points"), rich(row.criterion, math));
+        rows.append(li);
+      });
+      rubric.append(rows); body.append(rubric);
+    }
+    return body;
+  }
+  // Sheet-level calculator policy and suggested time, on screen and in print.
+  function sheetBadges(sheet) {
+    const W = window.LiminalWeekly;
+    const badges = el("p", undefined, "weekly-badges");
+    if (W.calculatorLabel(sheet.calculator)) badges.append(el("span", W.calculatorLabel(sheet.calculator), "weekly-badge weekly-calculator"));
+    if (Number.isInteger(sheet.minutes)) badges.append(el("span", "Suggested time: " + sheet.minutes + " min", "weekly-badge weekly-minutes"));
+    return badges.childNodes.length ? badges : null;
   }
   function passageId(prefix, id) { return prefix + "-passage-" + encodeURIComponent(id); }
   function passageLinks(item, passages, prefix, onRead) {
@@ -70,6 +128,8 @@
     const fragment = document.createDocumentFragment();
     const teaching = section("Understand the idea");
     week.explanation.forEach(paragraph => teaching.append(rich(paragraph, math)));
+    const explained = figureBlock(week.explanationFigureIds, week.figures);
+    if (explained) teaching.append(explained);
     const sequence = disclosure("The week at a glance", "weekly-teaching");
     sequence.append(el("p", "Builds on: " + week.connection.before));
     const days = el("ol"); week.days.forEach(day => days.append(el("li", day))); sequence.append(days, el("p", "Leads to: " + week.connection.after));
@@ -77,12 +137,13 @@
     const examples = section("Work through examples");
     week.examples.forEach((example, index) => {
       const article = el("article", undefined, "weekly-example");
-      article.append(el("h4", "Example " + (index + 1)), rich(example.prompt, math));
+      article.append(el("h4", "Example " + (index + 1)));
+      taskBody(article, example, math, week.figures, false);
       article.append(passageLinks(example, week.passages, "week", onRead));
       const answer = disclosure("Show reasoning and answer", "weekly-example-answer");
       // Insert solutions only when requested, so a closed guide stays quiet.
       answer.addEventListener("toggle", () => {
-        if (answer.open && answer.children.length === 1) answer.append(solution(example, math));
+        if (answer.open && answer.children.length === 1) answer.append(solution(example, math, week.figures));
       });
       article.append(answer); examples.append(article);
     });
@@ -92,12 +153,16 @@
     const math = packet.trackId !== "common-core-reading";
     const body = el("div", undefined, "weekly-worksheet");
     const sheet = packet.worksheet;
-    body.append(el("h4", "Worksheet " + sheet.id.toUpperCase() + " · " + sheet.title), rich(sheet.directions, math));
+    body.append(el("h4", "Worksheet " + sheet.id.toUpperCase() + " · " + sheet.title));
+    const badges = sheetBadges(sheet);
+    if (badges) body.append(badges);
+    body.append(rich(sheet.directions, math));
     if (options.includePassages) body.append(passagesBlock(packet.passages, math, "sheet"));
     const items = el("ol", undefined, "weekly-items");
     sheet.items.forEach((item, index) => {
-      const li = el("li"); li.append(rich(item.prompt, math), passageLinks(item, packet.passages, options.includePassages ? "sheet" : "week", options.onRead));
-      if (answers) li.append(solution(item, math));
+      const li = el("li"); taskBody(li, item, math, packet.figures, answers);
+      li.append(passageLinks(item, packet.passages, options.includePassages ? "sheet" : "week", options.onRead));
+      if (answers) li.append(solution(item, math, packet.figures));
       else { const space = el("div", undefined, "weekly-workspace"); space.setAttribute("aria-hidden", "true"); li.append(space); }
       // The final exercise is an existing unbreakable print unit. Keep the
       // document credit after its full workspace, rather than on a new sheet.
@@ -144,11 +209,13 @@
     if (!answers) heading.append(el("p", "Name: __________________________  Date: ______________"));
     const footer = el("footer", undefined, "weekly-footer");
     footer.append(el("p", "Original Liminal coursework. " + NOTICE));
+    const notice = window.LiminalWeekly.trackNotice(packet.trackId);
+    if (notice) footer.append(el("p", notice, "weekly-track-notice"));
     if (/^https?:\/\//i.test(sourceUrl)) {
       const source = el("p", "Coursework source: "); source.append(link(sourceUrl, sourceUrl)); footer.append(source);
     }
     main.append(heading, worksheet(packet, answers, { includePassages: true, footer }));
     doc.body.append(main); return doc;
   }
-  return { el, link, rich, section, disclosure, guide, reading, worksheet, exportDocument, NOTICE };
+  return { el, link, rich, section, disclosure, figure, guide, reading, worksheet, exportDocument, NOTICE };
 });

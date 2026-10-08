@@ -1,0 +1,140 @@
+/* ap.html: course plans (shared with high-school.css), unit tests, practice
+   exams and formula references. Colors come from tokens only, so dark mode
+   follows tokens.css and print is ink on white. The Liminal wordmark stays
+   larger than any use of the AP® mark. */
+.ap-page .weekly-intro h1 { font-size: clamp(1.5rem, 4.4vw, 1.875rem); }
+.ap-page .high-school-course h2, .ap-doc h2, .ap-reference-sheet h2 { font: 400 clamp(1.4rem, 4vw, 1.75rem)/1.2 var(--font-serif); margin-block: 8px 12px; overflow-wrap: anywhere; }
+.ap-page [tabindex="-1"]:focus { outline: none; }
+.ap-page:is([data-view="assessment"], [data-view="reference"]) :is(.ap-courses, .weekly-intro p) { display: none; }
+.ap-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.ap-lede { max-width: 70ch; color: var(--color-muted); }
+.ap-note { max-width: 75ch; margin-block: 14px; padding: 10px 14px; border-left: 3px solid var(--color-line-strong); background: var(--color-softer); font-size: .875rem; }
+.ap-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-block: 18px; }
+.ap-card { padding: 18px; border: 1px solid var(--color-line); border-radius: var(--radius-sm); background: var(--color-surface); }
+.ap-card h3 { font: 400 1.25rem/1.25 var(--font-serif); margin-bottom: 8px; }
+.ap-card p { font-size: .9375rem; }
+.ap-card-links { margin-top: 12px; }
+.ap-card-links a, .ap-test-links a, .ap-copies a, .ap-week-list a { display: inline-flex; align-items: center; min-height: 44px; }
+.ap-notes { border-top: 1px solid var(--color-line); padding-block: 4px; }
+.ap-notes p, .ap-notes ul { margin-block: 10px; max-width: 75ch; }
+.ap-notes li + li { margin-top: 6px; }
+.ap-exam table { margin-block: 10px; }
+.ap-week-list { padding-left: 0; list-style: none; font-size: .9375rem; }
+.ap-week-list li { min-height: 44px; display: flex; flex-wrap: wrap; align-items: center; gap: 0 6px; }
+.ap-test-links { margin-top: 12px; font-size: .9375rem; }
+.ap-test-label { font-weight: 600; }
+.ap-editorial { font-style: italic; }
+
+/* Tables */
+.ap-table { width: 100%; border-collapse: collapse; font-size: .9375rem; margin-block: 12px; }
+.ap-table caption { text-align: left; font-weight: 600; padding-bottom: 6px; }
+.ap-table :is(th, td) { text-align: left; vertical-align: top; padding: 7px 8px; border: 1px solid var(--color-line-strong); overflow-wrap: anywhere; }
+.ap-table thead th { background: var(--color-soft); font-weight: 600; }
+.ap-parts { max-width: 640px; }
+.ap-parts :is(th, td) { overflow-wrap: normal; }
+.ap-key-table { max-width: 360px; }
+.ap-key-letter { font-weight: 700; }
+.ap-tally-table { max-width: 520px; }
+.ap-tally-table .ap-blank { min-width: 90px; }
+
+/* Documents */
+.ap-assessment > .weekly-actions { margin-bottom: 18px; }
+.ap-copies { display: inline-flex; gap: 4px; }
+.ap-copies a { padding: 8px 12px; border: 1px solid var(--color-line); border-radius: var(--radius-sm); text-decoration: none; }
+.ap-copies a[aria-current="page"] { border-color: var(--color-ink); background: var(--color-soft); font-weight: 650; }
+.ap-doc { border-top: 1px solid var(--color-line-strong); padding-top: 14px; }
+.ap-copy-label { font-size: .8125rem; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; color: var(--color-muted); }
+.ap-key .ap-copy-label { color: var(--color-ink); }
+.ap-name { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-block: 14px; }
+.ap-name span { white-space: nowrap; }
+.ap-rich { overflow-wrap: anywhere; }
+.ap-rich > * + * { margin-top: 10px; }
+.ap-rich p { white-space: pre-wrap; }
+.ap-rich table { border-collapse: collapse; margin-block: 8px; }
+.ap-rich :is(th, td) { padding: 6px 8px; border: 1px solid var(--color-line-strong); }
+.ap-inline, .ap-inline > p { display: inline; }
+.ap-section { padding-block: 22px; border-bottom: 1px solid var(--color-line); }
+.ap-section > h3, .ap-answer-sheet > h3, .ap-reference-sheet > h3 { font: 400 1.4rem/1.25 var(--font-serif); margin-bottom: 12px; }
+.ap-part + .ap-part { margin-top: 24px; }
+.ap-part h4 { font-size: 1rem; font-weight: 650; }
+.ap-directions { margin-block: 8px; color: var(--color-muted); font-size: .9375rem; }
+.ap-calc { display: inline-block; margin-top: 6px; padding: 2px 8px; border: 1px solid var(--color-line-strong); border-radius: var(--radius-sm); font-size: .8125rem; font-weight: 650; }
+.ap-calc-none { border-style: dashed; }
+.ap-items { padding-left: 28px; margin-block: 14px; }
+.ap-items > li { padding: 12px 0 16px 4px; break-inside: avoid; }
+.ap-items > li + li { border-top: 1px solid var(--color-line); }
+.ap-items > li.ap-item-fr { break-inside: auto; }
+.ap-part-head { break-inside: avoid; break-after: avoid; }
+.ap-item-fr > .ap-item-points { break-after: avoid; }
+.ap-item-points, .ap-points, .ap-topics, .ap-key-answer { font-size: .8125rem; color: var(--color-muted); }
+.ap-item-points, .ap-key-answer { font-weight: 650; color: var(--color-ink); }
+.ap-choices { list-style: none; padding: 0; margin-top: 10px; display: grid; gap: 6px; }
+.ap-choices li { display: flex; gap: 10px; align-items: baseline; }
+.ap-letter { flex: none; display: inline-grid; place-items: center; width: 1.6em; height: 1.6em; border: 1px solid var(--color-line-strong); border-radius: 50%; font-size: .8125rem; font-weight: 650; }
+.ap-choice-text { min-width: 0; }
+.ap-fr-parts { list-style: none; padding: 0; margin-top: 12px; }
+.ap-fr-parts > li { padding-block: 10px; break-inside: avoid; }
+.ap-part-label { font-weight: 650; margin-right: 6px; float: left; }
+.ap-workspace { min-height: 140px; margin-top: 8px; border: 1px solid var(--color-line); border-radius: var(--radius-sm); }
+.ap-doc .lm-figure { margin: 12px 0; max-width: 100%; }
+.ap-doc .lm-figure svg { display: block; width: 100%; height: auto; color: var(--color-ink); }
+.ap-doc .lm-figure-note, .ap-figure-caption { margin-top: 6px; font-size: .8125rem; color: var(--color-muted); }
+
+/* Answer sheet */
+.ap-answer-sheet { padding-block: 22px; border-bottom: 1px solid var(--color-line); }
+.ap-sheet-note { font-size: .875rem; margin-block: 8px; max-width: 75ch; }
+.ap-bubbles { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 6px 18px; margin-top: 10px; }
+.ap-bubbles li { display: flex; align-items: center; gap: 6px; break-inside: avoid; }
+.ap-bubble-number { width: 2.4em; text-align: right; font-variant-numeric: tabular-nums; font-size: .875rem; }
+.ap-bubble { display: inline-grid; place-items: center; width: 1.7em; height: 1.7em; border: 1px solid var(--color-ink); border-radius: 50%; font-size: .75rem; }
+
+/* Key */
+.ap-rationales > li > * + * { margin-top: 6px; }
+.ap-distractors { padding-left: 18px; font-size: .9375rem; }
+.ap-letter-inline { font-weight: 650; }
+.ap-guideline { padding-block: 14px; }
+.ap-guideline + .ap-guideline { border-top: 1px solid var(--color-line); }
+.ap-guideline h4 { font-size: 1.0625rem; margin-bottom: 8px; }
+.ap-guideline-part { margin-top: 14px; }
+.ap-guideline-part h5 { font-size: .9375rem; margin-bottom: 6px; }
+.ap-muted { color: var(--color-muted); }
+.ap-answer { margin-top: 8px; padding: 12px 16px; background: var(--color-soft); border-left: 2px solid var(--color-line-strong); }
+.ap-answer > * + * { margin-top: 8px; }
+
+/* Reference */
+.ap-reference-sheet { padding-block: 10px 22px; }
+.ap-reference-table th { width: 34%; font-weight: 400; }
+.ap-reference-table td:last-child { width: 18%; }
+.ap-reference-notes { font-size: .875rem; padding-left: 18px; }
+
+@media (max-width: 900px) { .ap-cards { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .ap-items { padding-left: 22px; }
+  .ap-table { font-size: .875rem; }
+  .ap-table :is(th, td) { padding: 6px; }
+  .ap-parts { font-size: .8125rem; }
+  .ap-parts :is(th, td) { padding: 5px; }
+  .ap-reference-table th, .ap-reference-table td:last-child { width: auto; }
+  .ap-assessment > .weekly-actions { gap: 8px 12px; }
+  .ap-bubbles { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+}
+
+@media print {
+  .ap-page :is(.ap-courses, .ap-print-tools, .ap-copies) { display: none !important; }
+  .ap-page .weekly-intro h1 { font-size: 18pt; }
+  .ap-page :is(.high-school-course h2, .ap-doc h2, .ap-reference-sheet h2) { font-size: 16pt; }
+  .ap-page[data-view="assessment"] .weekly-intro, .ap-page[data-view="reference"] .weekly-intro { display: none !important; }
+  .ap-page[data-view="plan"] .weekly-intro, .ap-page[data-view="hub"] .weekly-intro { display: block !important; }
+  .ap-doc { border-top: 0; padding-top: 0; }
+  .ap-section-fr { break-before: page; }
+  .ap-answer-sheet, .ap-reference-appended, .ap-tally { break-before: page; }
+  .ap-section { padding-block: 10pt; }
+  .ap-items > li:not(.ap-item-fr), .ap-fr-parts > li, .ap-guideline-part, .ap-table tr { break-inside: avoid; }
+  .ap-guideline > h4, .ap-guideline-part > h5, .ap-section > :is(h3, h4) { break-after: avoid; }
+  .ap-workspace { min-height: 55mm; border-color: #777; }
+  .ap-answer { background: #fff; }
+  .ap-table thead th { background: #fff; }
+  .ap-note { background: #fff; }
+  .ap-page a { color: #000; text-decoration: none; }
+  .ap-card { break-inside: avoid; }
+}

@@ -34,6 +34,8 @@ const checks = [
   ["node", ["tools/check-families.js"]],
   ["node", ["tools/check-courses.js"]],
   ["node", ["tools/check-weekly.js", "--complete"]],
+  // AP® plans, unit tests and practice exams; add --complete when every AP course lands.
+  ["node", ["tools/check-ap.js"]],
   ["node", ["tools/check-daily-reading.js", "--complete"]],
   ["node", ["tools/check-reading-level.js"]],
   ["node", ["tools/build.js"]],

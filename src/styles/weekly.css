@@ -57,6 +57,31 @@
 .weekly-items > li + li { border-top: 1px solid var(--color-line); }
 .weekly-workspace { min-height: 110px; }
 .weekly-item-answer { margin-top: 8px; }
+.weekly-figures { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-block: 14px; }
+.weekly-figure { display: flex; flex-direction: column; align-items: center; flex: 1 1 260px; max-width: 100%; margin: 0; color: var(--color-ink); }
+.weekly-figure svg { display: block; width: 100%; height: auto; max-height: 60vh; overflow: visible; }
+.weekly-figure :is(.lm-figure-note, .weekly-figure-caption) { margin-top: 6px; font-size: .875rem; color: var(--color-muted); text-align: center; }
+.weekly-figure .lm-figure-note { font-style: italic; }
+.weekly-figure .lm-figure-fallback { padding: 10px; border: 1px dashed var(--color-line-strong); }
+.weekly-choices { list-style: none; padding: 0; margin-block: 12px 4px; display: grid; gap: 6px; }
+.weekly-choice { display: flex; gap: 8px; align-items: baseline; }
+.weekly-choice-letter { flex: none; min-width: 2.2em; font-weight: 650; }
+.weekly-choice .weekly-rich { flex: 1; min-width: 0; }
+.weekly-choice-key { font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+.weekly-points { margin-top: 6px; font-size: .875rem; color: var(--color-muted); }
+.weekly-key { font-weight: 650; }
+.weekly-badges { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-block: 0 10px; }
+.weekly-badge { display: inline-block; padding: 2px 10px; border: 1px solid var(--color-line-strong); border-radius: 999px; font-size: .8125rem; }
+.weekly-rubric { margin-top: 12px; }
+.weekly-rubric-title { font-weight: 650; }
+.weekly-rubric ul { padding-left: 22px; }
+.weekly-rubric li + li { margin-top: 6px; }
+.weekly-rubric li > .weekly-rich { display: inline; }
+.weekly-rubric li > .weekly-rich > p:first-child { display: inline; }
+.weekly-rubric-points { font-weight: 650; }
+.weekly-rich .lm-table-wrap { max-width: 100%; overflow-x: auto; }
+.weekly-rich table { font-variant-numeric: tabular-nums; }
+.weekly-rich th { font-weight: 650; }
 .weekly-about { margin-top: 24px; font-size: .875rem; }
 .weekly-about p { max-width: 75ch; margin-block: 12px; }
 .weekly-footer { padding-block: 22px 32px; font-size: .8125rem; overflow-wrap: anywhere; }
@@ -83,5 +108,8 @@
   .weekly-page a { color: #000; }
   .weekly-page .weekly-item-answer, .weekly-page .weekly-example-answer { display: none !important; }
   .weekly-page .weekly-workspace { min-height: 32mm; }
+  .weekly-figure { break-inside: avoid; color: #000; }
+  .weekly-figure svg { max-height: 90mm; }
+  .weekly-badge { border-color: #000; }
   .weekly-footer { padding-block: 10pt; }
 }

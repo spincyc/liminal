@@ -137,6 +137,10 @@ h1 em, h2 em { color: var(--home-teal); font-weight: 400; }
 .library-note h3 { margin-top: 14px; font: 400 1.75rem/1.25 var(--home-serif); }
 .library-note > p:not(.eyebrow) { margin-top: 16px; color: var(--home-muted); }
 .test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+/* The AP® card spans the row; its title stays smaller than the Liminal name. */
+.test-grid .ap-module { grid-column: 1 / -1; background: var(--home-sat); }
+.ap-module .test-title h3 { font-size: 1.75rem; line-height: 1.2; letter-spacing: -.03em; }
+.ap-module .registered { margin-top: 2px; }
 .test-title { display: flex; align-items: center; gap: 24px; margin-block: 0 18px; }
 .test-title h3 { font-size: 2.625rem; }
 .test-title p { margin: 0; font-size: .875rem; color: var(--home-muted); }

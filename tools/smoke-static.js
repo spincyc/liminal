@@ -395,11 +395,20 @@ if (!weeklyIndex || weeklyIndex.version !== 1 || JSON.stringify(weeklyIndex) !==
 const weeklyBuild = require("./build-weekly");
 const weeklySource = weeklyBuild.loadWeekly();
 if (JSON.stringify(weeklyJson) !== JSON.stringify(weeklySource.index)) throw new Error("Weekly index differs from source courses");
+const weeklyLib = require("../src/lib/weekly");
+const namedPaths = weeklyLib.NAMED_TRACK_IDS.map(id => id + "\\/(?:" + weeklyLib.namedCourses(id).join("|") + ")");
+const weeklyCoursePath = new RegExp("^content\\/weekly\\/(?:(?:" + weeklyLib.GRADE_TRACKS.join("|") + ")\\/(?:k|[1-9]|1[0-2])|" + namedPaths.join("|") + ")\\.json$");
 for (let i = 0; i < weeklyJson.courses.length; i++) {
   const entry = weeklyJson.courses[i];
-  if (!/^content\/weekly\/(?:(?:common-core-math|common-core-reading|singapore-math)\/(?:k|[1-9]|1[0-2])|high-school-math\/(?:algebra|geometry|algebra-2|trigonometry|calculus))\.json$/.test(entry.file)) throw new Error("Unsafe weekly course path");
+  if (!weeklyCoursePath.test(entry.file)) throw new Error("Unsafe weekly course path");
   const built = JSON.parse(fs.readFileSync(path.join(root, entry.file), "utf8"));
   if (JSON.stringify(built) !== JSON.stringify(weeklySource.courses[i])) throw new Error("Weekly course differs from source: " + entry.file);
+  if (fs.statSync(path.join(root, entry.file)).size > weeklyBuild.MAX_COURSE_BYTES) throw new Error("Weekly course exceeds its size budget: " + entry.file);
+  // Figures travel inline in the course and as standalone copies.
+  for (const week of built.weeks) for (const figure of week.figures || []) {
+    const copy = path.join(root, "content/weekly/figures", entry.trackId, entry.courseId || weeklyLib.gradeKey(entry.grade), figure.id + ".svg");
+    if (!entry.source && (!fs.existsSync(copy) || fs.readFileSync(copy, "utf8") !== figure.svg)) throw new Error("Weekly figure copy is missing or stale: " + figure.id);
+  }
 }
 
 // The named sequence shares validated plans but never assigns a fixed grade.
@@ -418,6 +427,34 @@ vm.runInContext(fs.readFileSync(path.join(root, "content/high-school.js"), "utf8
 const highSchoolData = highSchoolContext.window.LIMINAL_HIGH_SCHOOL;
 const highSchoolJson = JSON.parse(fs.readFileSync(path.join(root, "content/high-school.json"), "utf8"));
 if (!highSchoolData || JSON.stringify(highSchoolData) !== JSON.stringify(highSchoolJson) || JSON.stringify(highSchoolJson) !== JSON.stringify(weeklySource.highSchool)) throw new Error("High-school plan bundle differs from source or download");
+
+// AP® course pages: the plan comes from the weekly build (content/ap-plan.js),
+// assessments and references from tools/build-ap.js (content/ap.js).
+const apHtml = fs.readFileSync(path.join(root, "ap.html"), "utf8");
+const apScripts = [...apHtml.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)].map(m => m[1]);
+if (JSON.stringify(apScripts) !== JSON.stringify(["content/ap-plan.js", "content/ap.js", "content/weekly-index.js", "lib/high-school.js", "lib/weekly.js", "lib/ap-assessment.js", "app/render.js", "app/ap-render.js", "app/ap.js"])) throw new Error("AP scripts are missing or out of order");
+for (const match of apHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  const target = match[1].split(/[?#]/)[0];
+  if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing AP asset: " + target);
+}
+const apIds = [...apHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+if (new Set(apIds).size !== apIds.length) throw new Error("Duplicate AP element IDs");
+const apApp = fs.readFileSync(path.join(root, "app/ap.js"), "utf8");
+for (const [, id] of apApp.matchAll(/document\.getElementById\("([^"]+)"\)/g)) if (!apIds.includes(id) && !apApp.includes('.id = "' + id + '"')) throw new Error("ap.js references a missing element: " + id);
+apScripts.forEach(script => new vm.Script(fs.readFileSync(path.join(root, script), "utf8"), { filename: script }));
+const apContext = vm.createContext({ window: {} });
+vm.runInContext(fs.readFileSync(path.join(root, "content/ap-plan.js"), "utf8"), apContext);
+vm.runInContext(fs.readFileSync(path.join(root, "content/ap.js"), "utf8"), apContext);
+if (!apContext.window.LIMINAL_AP_PLAN || JSON.stringify(apContext.window.LIMINAL_AP_PLAN) !== JSON.stringify(weeklySource.plans.ap)) throw new Error("AP plan bundle differs from source");
+const apCheck = require("./check-ap");
+const apSource = apCheck.loadAp();
+if (apSource.problems.length || JSON.stringify(apContext.window.LIMINAL_AP) !== JSON.stringify(require("./build-ap").bundle(apSource))) throw new Error("AP bundle differs from source");
+for (const entry of [...apContext.window.LIMINAL_AP.assessments, ...apContext.window.LIMINAL_AP.references]) {
+  if (!/^content\/ap\/(?:assessments\/(?:calculus-ab|physics-1|physics-c-mechanics)\/(?:unit-[1-8]|practice-exam)|references\/(?:physics-1|physics-c-mechanics))\.json$/.test(entry.file) || !fs.existsSync(path.join(root, entry.file))) throw new Error("Unsafe or missing AP file: " + entry.file);
+}
+// Every built page that shows the AP® marks carries the exact disclaimer.
+const apDisclaimer = apCheck.disclaimerProblems(root);
+if (apDisclaimer.length) throw new Error(apDisclaimer.join("; "));
 
 // Nightly texts remain in separately loaded grade files, with a small index.
 const dailyHtml = fs.readFileSync(path.join(root, "daily-reading.html"), "utf8");
@@ -482,7 +519,7 @@ if (!levelContext.window.LiminalReadingLevel || levelContext.window.LiminalReadi
 
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
-for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html", "high-school.html", "daily-reading.html"]) {
+for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "curriculum.html", "weeks.html", "high-school.html", "ap.html", "daily-reading.html"]) {
   const file = path.join(root, page);
   if (!fs.existsSync(file)) continue;
   const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];

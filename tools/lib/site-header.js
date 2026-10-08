@@ -17,7 +17,7 @@ const NAV = [
   { href: "courses.html", label: "Courses" },
   { href: "daily-reading.html", label: "Daily reading" },
   { href: "reading-level.html", label: "Reading level" },
-  { href: "practice.html", label: "Test prep", pages: ["learn.html", "print.html"], section: true },
+  { href: "practice.html", label: "Test prep", pages: ["learn.html", "print.html", "ap.html"], section: true },
 ];
 
 // Test prep has its own views (Practice, Progress, Review…) with their own

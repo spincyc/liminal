@@ -191,3 +191,60 @@ test("named course plans preserve deep links, truthful availability, safe text a
   assert.equal(document.getElementById("highSchoolHeading").focused, true);
   assert.deepEqual(document.getElementById("highSchoolCourses").children.map(node => node.href), H.ORDER.map(id => "#" + id));
 }));
+
+// AP fields: figures go through the real allow-list renderer, with a
+// DOMParser built on the tooling XML parser.
+const { parseXml } = require("../tools/lib/svg-tree");
+const apFixture = require("./fixtures/weekly-ap");
+const { withFigures } = require("../tools/build-weekly");
+function withSvgDOM(callback) {
+  const old = global.DOMParser;
+  function toDom(node) {
+    if (typeof node.text === "string") return { nodeType: 3, nodeValue: node.text };
+    return { nodeType: 1, localName: node.name, namespaceURI: node.namespace, getElementsByTagName: () => [],
+      attributes: node.attributes.map(a => ({ name: a.name, namespaceURI: a.namespace, value: a.value })), childNodes: node.children.map(toDom) };
+  }
+  global.DOMParser = class { parseFromString(markup) { return { documentElement: toDom(parseXml(markup)) }; } };
+  try { return withDOM(callback); } finally { global.DOMParser = old; }
+}
+const apCourse = () => withFigures(apFixture.course(), apFixture.figures());
+
+test("AP student exports show choices, points, policy badges, given figures and the AP notice, never keys or rubrics", () => withSvgDOM(() => {
+  const course = apCourse();
+  const mcHtml = R.exportDocument(W.studentWorksheet(course, 1, "a"), false).documentElement.outerHTML;
+  assert.match(mcHtml, /No calculator/); assert.match(mcHtml, /Suggested time: 15 min/);
+  assert.match(mcHtml, /weekly-choices/); assert.match(mcHtml, /\(A\)/); assert.match(mcHtml, /\(D\)/);
+  assert.match(mcHtml, /<svg[^>]*aria-label="Parabola on an xy-plane/); assert.match(mcHtml, /<polyline/); assert.match(mcHtml, /Graph of f/);
+  assert.match(mcHtml, /<table class="lm-table">/); assert.match(mcHtml, /<th[^>]*>g\(x\)<\/th>|g\(x\)/);
+  assert.match(mcHtml, /trademarks registered by the College Board/);
+  assert.doesNotMatch(mcHtml, /Correct choice|weekly-choice-key|class="weekly-answer"/);
+  const frHtml = R.exportDocument(W.studentWorksheet(course, 2, "a"), false).documentElement.outerHTML;
+  assert.match(frHtml, /\(3 points\)/); assert.match(frHtml, /Slope field for dy\/dx/);
+  for (const secret of ["Key sketch", "same slope field with the solution curve", "Curve passes through", "Scoring", "Fixture model response"]) assert.ok(!frHtml.includes(secret), secret);
+  const physics = R.exportDocument(W.studentWorksheet(course, 3, "a"), false).documentElement.outerHTML;
+  assert.match(physics, /Any calculator/);
+  assert.match(physics, /Note: Figure not drawn to scale\./);
+}));
+
+test("AP answer keys add the key letter, rubric rows and answer-only figures", () => withSvgDOM(() => {
+  const course = apCourse();
+  const mcKey = R.exportDocument(W.answerWorksheet(course, 1, "a"), true).documentElement.outerHTML;
+  assert.match(mcKey, /Correct choice: \(C\)/); assert.match(mcKey, /weekly-choice weekly-choice-key/);
+  const frKey = R.exportDocument(W.answerWorksheet(course, 2, "a"), true).documentElement.outerHTML;
+  assert.match(frKey, /Scoring \(3 points\)/); assert.match(frKey, /1 point: /); assert.match(frKey, /Curve passes through/);
+  assert.match(frKey, /Key sketch/); assert.match(frKey, /aria-label="The same slope field/);
+  // Grade-track exports gain no AP notice.
+  const plain = R.exportDocument(W.studentWorksheet(courseFixture(), 1, "a"), false).documentElement.outerHTML;
+  assert.doesNotMatch(plain, /Advanced Placement/);
+}));
+
+test("the AP guide places explanation and example figures and reveals answer figures only on request", () => withSvgDOM(() => {
+  const course = apCourse();
+  const week1 = R.guide(course.weeks[0], true).outerHTML;
+  assert.match(week1, /Four left rectangles/); assert.match(week1, /Parabola on an xy-plane/); assert.match(week1, /weekly-choices/);
+  const guide = R.guide(course.weeks[2], true);
+  assert.doesNotMatch(guide.outerHTML, /Free-body diagram: normal force/);
+  function find(node, className, found = []) { if (node.className === className) found.push(node); (node.childNodes || []).forEach(child => find(child, className, found)); return found; }
+  const reveal = find(guide, "weekly-example-answer")[1]; reveal.open = true; reveal.events.toggle();
+  assert.match(guide.outerHTML, /Free-body diagram: normal force/);
+}));

@@ -1,0 +1,3698 @@
+{
+  "version": 1,
+  "track": {
+    "id": "ap",
+    "title": "Courses for AP® exams",
+    "description": "Calculus AB · Physics 1 · Physics C: Mechanics. 36-week courses, unit tests, and a printable practice exam.",
+    "scopeNote": "Original Liminal courses organized by the units of College Board's current course and exam descriptions. Topic references identify alignment only. Unit tests and practice exams report raw points by section and unit; they are practice, not AP scores, and give no score conversion. These are not authorized AP courses, do not award credit, and are not endorsed by College Board. For official practice, use College Board's Bluebook previews and released materials."
+  },
+  "notice": "AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.",
+  "checked": "2026-10-08",
+  "sources": [
+    {
+      "id": "ced-calculus-ab",
+      "title": "AP® Calculus AB and BC Course and Exam Description",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-and-bc-course-and-exam-description.pdf",
+      "publisher": "College Board",
+      "edition": "Framework effective fall 2020; PDF revised 2026-06-22; content unchanged for 2026–27",
+      "accessed": "2026-10-08",
+      "note": "Alignment reference only: unit and topic numbers and titles, multiple-choice weightings, and suggested class periods. AB topics exclude BC-only content. Liminal explanations, examples, and questions are original; no College Board text or questions are reproduced."
+    },
+    {
+      "id": "ced-calculus-ab-clarifications",
+      "title": "AP® Calculus AB and BC Course and Exam Description Clarifications",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-calculus-ab-bc-course-and-exam-description-clarifications.pdf",
+      "publisher": "College Board",
+      "edition": "2026–27 clarifications",
+      "accessed": "2026-10-08",
+      "note": "Checked for scope changes to the framework; none affect the AB unit structure used here."
+    },
+    {
+      "id": "exam-calculus-ab",
+      "title": "AP® Calculus AB Exam",
+      "url": "https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam",
+      "publisher": "College Board",
+      "edition": "Exam format effective May 2027",
+      "accessed": "2026-10-08",
+      "note": "Source of the practice-exam format: section and part counts, timing, calculator policy, and free-response points. Recheck each fall."
+    },
+    {
+      "id": "ced-physics-1",
+      "title": "AP® Physics 1 Course and Exam Description",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-physics-1-course-and-exam-description.pdf",
+      "publisher": "College Board",
+      "edition": "Revised framework effective fall 2024; PDF revised 2026-07-15",
+      "accessed": "2026-10-08",
+      "note": "Alignment reference only: unit and topic numbers and titles, multiple-choice weightings, and suggested class periods. Liminal instruction, investigations, and questions are original."
+    },
+    {
+      "id": "ced-physics-1-clarifications",
+      "title": "AP® Physics 1 Course and Exam Description Clarifications",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-physics-1-course-and-exam-description-clarifications.pdf",
+      "publisher": "College Board",
+      "edition": "2026–27 clarifications",
+      "accessed": "2026-10-08",
+      "note": "Checked for scope changes to the framework."
+    },
+    {
+      "id": "exam-physics-1",
+      "title": "AP® Physics 1 Exam",
+      "url": "https://apcentral.collegeboard.org/courses/ap-physics-1/exam",
+      "publisher": "College Board",
+      "edition": "Exam format effective May 2027",
+      "accessed": "2026-10-08",
+      "note": "Source of the practice-exam format: section counts, timing, calculator policy, and the four free-response question types and their points. Recheck each fall."
+    },
+    {
+      "id": "ced-physics-c-mechanics",
+      "title": "AP® Physics C: Mechanics Course and Exam Description",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-physics-c-mechanics-course-and-exam-description.pdf",
+      "publisher": "College Board",
+      "edition": "Revised framework effective fall 2024; PDF revised 2026-07-17",
+      "accessed": "2026-10-08",
+      "note": "Alignment reference only: unit and topic numbers and titles, multiple-choice weightings, suggested class periods, and the calculus prerequisite (taken previously or concurrently). Liminal instruction, investigations, and questions are original."
+    },
+    {
+      "id": "ced-physics-c-mechanics-clarifications",
+      "title": "AP® Physics C: Mechanics Course and Exam Description Clarifications",
+      "url": "https://apcentral.collegeboard.org/media/pdf/ap-physics-c-mechanics-course-and-exam-description-clarifications.pdf",
+      "publisher": "College Board",
+      "edition": "2026–27 clarifications",
+      "accessed": "2026-10-08",
+      "note": "Checked for scope changes to the framework."
+    },
+    {
+      "id": "exam-physics-c-mechanics",
+      "title": "AP® Physics C: Mechanics Exam",
+      "url": "https://apcentral.collegeboard.org/courses/ap-physics-c-mechanics/exam",
+      "publisher": "College Board",
+      "edition": "Exam format effective May 2027",
+      "accessed": "2026-10-08",
+      "note": "Source of the practice-exam format: section counts, timing, calculator policy, and the four free-response question types and their points. Recheck each fall."
+    }
+  ],
+  "standards": [
+    {
+      "id": "AB.1.1",
+      "label": "Introducing Calculus: Can Change Occur at an Instant?",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.2",
+      "label": "Defining Limits and Using Limit Notation",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.3",
+      "label": "Estimating Limit Values from Graphs",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.4",
+      "label": "Estimating Limit Values from Tables",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.5",
+      "label": "Determining Limits Using Algebraic Properties of Limits",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.6",
+      "label": "Determining Limits Using Algebraic Manipulation",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.7",
+      "label": "Selecting Procedures for Determining Limits",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.8",
+      "label": "Determining Limits Using the Squeeze Theorem",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.8",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.9",
+      "label": "Connecting Multiple Representations of Limits",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.9",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.10",
+      "label": "Exploring Types of Discontinuities",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.10",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.11",
+      "label": "Defining Continuity at a Point",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.11",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.12",
+      "label": "Confirming Continuity over an Interval",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.12",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.13",
+      "label": "Removing Discontinuities",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.13",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.14",
+      "label": "Connecting Infinite Limits and Vertical Asymptotes",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.14",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.15",
+      "label": "Connecting Limits at Infinity and Horizontal Asymptotes",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.15",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.1.16",
+      "label": "Working with the Intermediate Value Theorem (IVT)",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 1, Topic 1.16",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.1",
+      "label": "Defining Average and Instantaneous Rates of Change at a Point",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.2",
+      "label": "Defining the Derivative of a Function and Using Derivative Notation",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.3",
+      "label": "Estimating Derivatives of a Function at a Point",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.4",
+      "label": "Connecting Differentiability and Continuity: Determining When Derivatives Do and Do Not Exist",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.5",
+      "label": "Applying the Power Rule",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.6",
+      "label": "Derivative Rules: Constant, Sum, Difference, and Constant Multiple",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.7",
+      "label": "Derivatives of cos x, sin x, eˣ, and ln x",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.8",
+      "label": "The Product Rule",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.8",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.9",
+      "label": "The Quotient Rule",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.9",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.2.10",
+      "label": "Finding the Derivatives of Tangent, Cotangent, Secant, and/or Cosecant Functions",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 2, Topic 2.10",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.3.1",
+      "label": "The Chain Rule",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 3, Topic 3.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.3.2",
+      "label": "Implicit Differentiation",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 3, Topic 3.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.3.3",
+      "label": "Differentiating Inverse Functions",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 3, Topic 3.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.3.4",
+      "label": "Differentiating Inverse Trigonometric Functions",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 3, Topic 3.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.3.5",
+      "label": "Selecting Procedures for Calculating Derivatives",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 3, Topic 3.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.3.6",
+      "label": "Calculating Higher-Order Derivatives",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 3, Topic 3.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.4.1",
+      "label": "Interpreting the Meaning of the Derivative in Context",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 4, Topic 4.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.4.2",
+      "label": "Straight-Line Motion: Connecting Position, Velocity, and Acceleration",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 4, Topic 4.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.4.3",
+      "label": "Rates of Change in Applied Contexts Other Than Motion",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 4, Topic 4.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.4.4",
+      "label": "Introduction to Related Rates",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 4, Topic 4.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.4.5",
+      "label": "Solving Related Rates Problems",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 4, Topic 4.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.4.6",
+      "label": "Approximating Values of a Function Using Local Linearity and Linearization",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 4, Topic 4.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.4.7",
+      "label": "Using L’Hospital’s Rule for Determining Limits of Indeterminate Forms",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 4, Topic 4.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.1",
+      "label": "Using the Mean Value Theorem",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.2",
+      "label": "Extreme Value Theorem, Global Versus Local Extrema, and Critical Points",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.3",
+      "label": "Determining Intervals on Which a Function Is Increasing or Decreasing",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.4",
+      "label": "Using the First Derivative Test to Determine Relative (Local) Extrema",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.5",
+      "label": "Using the Candidates Test to Determine Absolute (Global) Extrema",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.6",
+      "label": "Determining Concavity of Functions over Their Domains",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.7",
+      "label": "Using the Second Derivative Test to Determine Extrema",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.8",
+      "label": "Sketching Graphs of Functions and Their Derivatives",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.8",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.9",
+      "label": "Connecting a Function, Its First Derivative, and Its Second Derivative",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.9",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.10",
+      "label": "Introduction to Optimization Problems",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.10",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.11",
+      "label": "Solving Optimization Problems",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.11",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.5.12",
+      "label": "Exploring Behaviors of Implicit Relations",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 5, Topic 5.12",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.1",
+      "label": "Exploring Accumulations of Change",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.2",
+      "label": "Approximating Areas with Riemann Sums",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.3",
+      "label": "Riemann Sums, Summation Notation, and Definite Integral Notation",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.4",
+      "label": "The Fundamental Theorem of Calculus and Accumulation Functions",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.5",
+      "label": "Interpreting the Behavior of Accumulation Functions Involving Area",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.6",
+      "label": "Applying Properties of Definite Integrals",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.7",
+      "label": "The Fundamental Theorem of Calculus and Definite Integrals",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.8",
+      "label": "Finding Antiderivatives and Indefinite Integrals: Basic Rules and Notation",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.8",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.9",
+      "label": "Integrating Using Substitution",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.9",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.10",
+      "label": "Integrating Functions Using Long Division and Completing the Square",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.10",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.6.14",
+      "label": "Selecting Techniques for Antidifferentiation",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 6, Topic 6.14",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.7.1",
+      "label": "Modeling Situations with Differential Equations",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 7, Topic 7.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.7.2",
+      "label": "Verifying Solutions for Differential Equations",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 7, Topic 7.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.7.3",
+      "label": "Sketching Slope Fields",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 7, Topic 7.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.7.4",
+      "label": "Reasoning Using Slope Fields",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 7, Topic 7.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.7.6",
+      "label": "Finding General Solutions Using Separation of Variables",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 7, Topic 7.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.7.7",
+      "label": "Finding Particular Solutions Using Initial Conditions and Separation of Variables",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 7, Topic 7.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.7.8",
+      "label": "Exponential Models with Differential Equations",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 7, Topic 7.8",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.1",
+      "label": "Finding the Average Value of a Function on an Interval",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.2",
+      "label": "Connecting Position, Velocity, and Acceleration of Functions Using Integrals",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.3",
+      "label": "Using Accumulation Functions and Definite Integrals in Applied Contexts",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.4",
+      "label": "Finding the Area Between Curves Expressed as Functions of x",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.5",
+      "label": "Finding the Area Between Curves Expressed as Functions of y",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.6",
+      "label": "Finding the Area Between Curves That Intersect at More Than Two Points",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.7",
+      "label": "Volumes with Cross Sections: Squares and Rectangles",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.8",
+      "label": "Volumes with Cross Sections: Triangles and Semicircles",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.8",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.9",
+      "label": "Volume with Disc Method: Revolving Around the x- or y-Axis",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.9",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.10",
+      "label": "Volume with Disc Method: Revolving Around Other Axes",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.10",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.11",
+      "label": "Volume with Washer Method: Revolving Around the x- or y-Axis",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.11",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.8.12",
+      "label": "Volume with Washer Method: Revolving Around Other Axes",
+      "sourceId": "ced-calculus-ab",
+      "locator": "Unit 8, Topic 8.12",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "AB.REVIEW",
+      "label": "Cumulative review and the practice exam: fluency, calculator and no-calculator work, and written justification",
+      "sourceId": "exam-calculus-ab",
+      "locator": "Exam format, May 2027",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "AB.BEYOND",
+      "label": "After the exam: an original modeling investigation and labeled enrichment beyond AB content",
+      "sourceId": "exam-calculus-ab",
+      "locator": "Editorial; not part of the AB framework",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "P1.1.1",
+      "label": "Scalars and Vectors in One Dimension",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 1, Topic 1.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.1.2",
+      "label": "Displacement, Velocity, and Acceleration",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 1, Topic 1.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.1.3",
+      "label": "Representing Motion",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 1, Topic 1.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.1.4",
+      "label": "Reference Frames and Relative Motion",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 1, Topic 1.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.1.5",
+      "label": "Vectors and Motion in Two Dimensions",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 1, Topic 1.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.1",
+      "label": "Systems and Center of Mass",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.2",
+      "label": "Forces and Free-Body Diagrams",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.3",
+      "label": "Newton’s Third Law",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.4",
+      "label": "Newton’s First Law",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.5",
+      "label": "Newton’s Second Law",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.6",
+      "label": "Gravitational Force",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.7",
+      "label": "Kinetic and Static Friction",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.8",
+      "label": "Spring Forces",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.8",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.2.9",
+      "label": "Circular Motion",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 2, Topic 2.9",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.3.1",
+      "label": "Translational Kinetic Energy",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 3, Topic 3.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.3.2",
+      "label": "Work",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 3, Topic 3.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.3.3",
+      "label": "Potential Energy",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 3, Topic 3.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.3.4",
+      "label": "Conservation of Energy",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 3, Topic 3.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.3.5",
+      "label": "Power",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 3, Topic 3.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.4.1",
+      "label": "Linear Momentum",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 4, Topic 4.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.4.2",
+      "label": "Change in Momentum and Impulse",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 4, Topic 4.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.4.3",
+      "label": "Conservation of Linear Momentum",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 4, Topic 4.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.4.4",
+      "label": "Elastic and Inelastic Collisions",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 4, Topic 4.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.5.1",
+      "label": "Rotational Kinematics",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 5, Topic 5.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.5.2",
+      "label": "Connecting Linear and Rotational Motion",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 5, Topic 5.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.5.3",
+      "label": "Torque",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 5, Topic 5.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.5.4",
+      "label": "Rotational Inertia",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 5, Topic 5.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.5.5",
+      "label": "Rotational Equilibrium and Newton’s First Law in Rotational Form",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 5, Topic 5.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.5.6",
+      "label": "Newton’s Second Law in Rotational Form",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 5, Topic 5.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.6.1",
+      "label": "Rotational Kinetic Energy",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 6, Topic 6.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.6.2",
+      "label": "Torque and Work",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 6, Topic 6.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.6.3",
+      "label": "Angular Momentum and Angular Impulse",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 6, Topic 6.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.6.4",
+      "label": "Conservation of Angular Momentum",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 6, Topic 6.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.6.5",
+      "label": "Rolling",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 6, Topic 6.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.6.6",
+      "label": "Motion of Orbiting Satellites",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 6, Topic 6.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.7.1",
+      "label": "Defining Simple Harmonic Motion (SHM)",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 7, Topic 7.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.7.2",
+      "label": "Frequency and Period of SHM",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 7, Topic 7.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.7.3",
+      "label": "Representing and Analyzing SHM",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 7, Topic 7.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.7.4",
+      "label": "Energy of Simple Harmonic Oscillators",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 7, Topic 7.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.8.1",
+      "label": "Internal Structure and Density",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 8, Topic 8.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.8.2",
+      "label": "Pressure",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 8, Topic 8.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.8.3",
+      "label": "Fluids and Newton’s Laws",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 8, Topic 8.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.8.4",
+      "label": "Fluids and Conservation Laws",
+      "sourceId": "ced-physics-1",
+      "locator": "Unit 8, Topic 8.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "P1.REVIEW",
+      "label": "Cumulative review and the practice exam: multiple choice and the four free-response question types",
+      "sourceId": "exam-physics-1",
+      "locator": "Exam format, May 2027",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "P1.SYNTHESIS",
+      "label": "After the exam: synthesis investigations with supplied data and optional household materials",
+      "sourceId": "exam-physics-1",
+      "locator": "Editorial; not part of the Physics 1 framework",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CM.1.1",
+      "label": "Scalars and Vectors",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 1, Topic 1.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.1.2",
+      "label": "Displacement, Velocity, and Acceleration",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 1, Topic 1.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.1.3",
+      "label": "Representing Motion",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 1, Topic 1.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.1.4",
+      "label": "Reference Frames and Relative Motion",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 1, Topic 1.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.1.5",
+      "label": "Motion in Two or Three Dimensions",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 1, Topic 1.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.1",
+      "label": "Systems and Center of Mass",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.2",
+      "label": "Forces and Free-Body Diagrams",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.3",
+      "label": "Newton’s Third Law",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.4",
+      "label": "Newton’s First Law",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.5",
+      "label": "Newton’s Second Law",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.6",
+      "label": "Gravitational Force",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.7",
+      "label": "Kinetic and Static Friction",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.7",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.8",
+      "label": "Spring Forces",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.8",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.9",
+      "label": "Resistive Forces",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.9",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.2.10",
+      "label": "Circular Motion",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 2, Topic 2.10",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.3.1",
+      "label": "Translational Kinetic Energy",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 3, Topic 3.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.3.2",
+      "label": "Work",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 3, Topic 3.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.3.3",
+      "label": "Potential Energy",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 3, Topic 3.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.3.4",
+      "label": "Conservation of Energy",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 3, Topic 3.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.3.5",
+      "label": "Power",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 3, Topic 3.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.4.1",
+      "label": "Linear Momentum",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 4, Topic 4.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.4.2",
+      "label": "Change in Momentum and Impulse",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 4, Topic 4.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.4.3",
+      "label": "Conservation of Linear Momentum",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 4, Topic 4.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.4.4",
+      "label": "Elastic and Inelastic Collisions",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 4, Topic 4.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.5.1",
+      "label": "Rotational Kinematics",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 5, Topic 5.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.5.2",
+      "label": "Connecting Linear and Rotational Motion",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 5, Topic 5.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.5.3",
+      "label": "Torque",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 5, Topic 5.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.5.4",
+      "label": "Rotational Inertia",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 5, Topic 5.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.5.5",
+      "label": "Rotational Equilibrium and Newton’s First Law in Rotational Form",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 5, Topic 5.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.5.6",
+      "label": "Newton’s Second Law in Rotational Form",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 5, Topic 5.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.6.1",
+      "label": "Rotational Kinetic Energy",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 6, Topic 6.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.6.2",
+      "label": "Torque and Work",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 6, Topic 6.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.6.3",
+      "label": "Angular Momentum and Angular Impulse",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 6, Topic 6.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.6.4",
+      "label": "Conservation of Angular Momentum",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 6, Topic 6.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.6.5",
+      "label": "Rolling",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 6, Topic 6.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.6.6",
+      "label": "Motion of Orbiting Satellites",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 6, Topic 6.6",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.7.1",
+      "label": "Defining Simple Harmonic Motion (SHM)",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 7, Topic 7.1",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.7.2",
+      "label": "Frequency and Period of SHM",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 7, Topic 7.2",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.7.3",
+      "label": "Representing and Analyzing SHM",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 7, Topic 7.3",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.7.4",
+      "label": "Energy of Simple Harmonic Oscillators",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 7, Topic 7.4",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.7.5",
+      "label": "Simple and Physical Pendulums",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Unit 7, Topic 7.5",
+      "gradeBand": "High school; flexible placement",
+      "kind": "content"
+    },
+    {
+      "id": "CM.TOOLKIT",
+      "label": "Calculus toolkit for motion: rate as derivative, accumulation as area and antiderivative, and units",
+      "sourceId": "ced-physics-c-mechanics",
+      "locator": "Course prerequisite: calculus taken previously or concurrently",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CM.REVIEW",
+      "label": "Cumulative review and the practice exam: multiple choice and the four free-response question types",
+      "sourceId": "exam-physics-c-mechanics",
+      "locator": "Exam format, May 2027",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    },
+    {
+      "id": "CM.SYNTHESIS",
+      "label": "After the exam: synthesis investigations and a bridge to further calculus-based physics",
+      "sourceId": "exam-physics-c-mechanics",
+      "locator": "Editorial; not part of the Physics C: Mechanics framework",
+      "gradeBand": "High school; flexible placement",
+      "kind": "editorial-objective"
+    }
+  ],
+  "courses": [
+    {
+      "id": "calculus-ab",
+      "title": "Course for AP® Calculus AB",
+      "shortTitle": "Calculus AB",
+      "examName": "AP® Calculus AB Exam",
+      "summary": "A 36-week course organized by the eight units of the current AP® Calculus AB framework: limits, derivatives and their applications, integration and accumulation, differential equations, and applications of integration.",
+      "scopeNote": "An original Liminal course aligned unit by unit to College Board's course and exam description, with a unit test for each unit and a print-first practice exam in the May 2027 format. Topic numbers identify alignment only; every explanation and problem is original. It is not an authorized AP course, which requires the AP Course Audit, and it does not award credit or predict an AP score.",
+      "prerequisites": [
+        "Complete Trigonometry or precalculus: function families, composition and inverses, radians, and exact trigonometric values.",
+        "Simplify rational and radical expressions, solve equations and inequalities, and keep domain restrictions.",
+        "Read graphs, tables, and verbal descriptions of functions and interpret average rates of change with units."
+      ],
+      "prerequisiteLinks": [
+        {
+          "label": "Trigonometry course plan",
+          "href": "high-school.html#trigonometry"
+        }
+      ],
+      "outcomes": [
+        "Reason about limits and continuity from graphs, tables, and formulas.",
+        "Differentiate fluently, including composite, implicit, and inverse functions, and interpret derivatives in context.",
+        "Analyze functions and solve optimization and related-rates problems with written justification.",
+        "Interpret definite integrals as accumulated change, solve separable differential equations, and compute areas and volumes.",
+        "Write complete justifications with and without a graphing calculator."
+      ],
+      "nextStep": "Continue with further single-variable calculus, multivariable calculus, statistics, or calculus-based physics. Check the receiving course's actual prerequisites.",
+      "reference": null,
+      "referenceNote": "The AB exam supplies no formula sheet. The review weeks list what to know.",
+      "calculatorNote": "Each test part is marked No calculator or Graphing calculator, matching the exam's split.",
+      "levelLabel": "Flexible placement",
+      "units": [
+        {
+          "id": "u1",
+          "unit": 1,
+          "title": "Limits and Continuity",
+          "weeks": 5,
+          "mcWeight": "10–15%",
+          "classPeriods": "~22–23",
+          "focus": "Describe what a function approaches near an input and connect limits to continuity and asymptotes.",
+          "learning": [
+            "Estimate limits from graphs and tables and determine them algebraically, including with the squeeze theorem.",
+            "Classify discontinuities, confirm continuity on an interval, and apply the Intermediate Value Theorem with its conditions."
+          ],
+          "standards": [
+            "AB.1.1",
+            "AB.1.2",
+            "AB.1.3",
+            "AB.1.4",
+            "AB.1.5",
+            "AB.1.6",
+            "AB.1.7",
+            "AB.1.8",
+            "AB.1.9",
+            "AB.1.10",
+            "AB.1.11",
+            "AB.1.12",
+            "AB.1.13",
+            "AB.1.14",
+            "AB.1.15",
+            "AB.1.16"
+          ],
+          "activities": [
+            "Compare a table, a graph, and a formula for the same original function near a removable discontinuity.",
+            "Write a continuity argument that checks all three conditions at a point."
+          ],
+          "evidence": [
+            "Determine a limit and name the procedure that justifies it.",
+            "Apply the Intermediate Value Theorem after stating why it applies."
+          ],
+          "bridge": "Limits of difference quotients define the derivative in Unit 2.",
+          "test": "unit-1"
+        },
+        {
+          "id": "u2",
+          "unit": 2,
+          "title": "Differentiation: Definition and Fundamental Properties",
+          "weeks": 3,
+          "mcWeight": "10–15%",
+          "classPeriods": "~13–14",
+          "focus": "Define the derivative as a limit and build the basic differentiation rules.",
+          "learning": [
+            "Interpret average and instantaneous rates, estimate derivatives from tables and graphs, and relate differentiability to continuity.",
+            "Apply the power, sum, product, and quotient rules and the derivatives of trigonometric, exponential, and logarithmic functions."
+          ],
+          "standards": [
+            "AB.2.1",
+            "AB.2.2",
+            "AB.2.3",
+            "AB.2.4",
+            "AB.2.5",
+            "AB.2.6",
+            "AB.2.7",
+            "AB.2.8",
+            "AB.2.9",
+            "AB.2.10"
+          ],
+          "activities": [
+            "Shrink secant intervals in a table to estimate an instantaneous rate with units.",
+            "Find inputs where an original piecewise function is continuous but not differentiable."
+          ],
+          "evidence": [
+            "Write the limit definition behind a given derivative value.",
+            "Differentiate products and quotients accurately and simplify."
+          ],
+          "bridge": "Composite and implicitly defined functions need the chain rule in Unit 3.",
+          "test": "unit-2"
+        },
+        {
+          "id": "u3",
+          "unit": 3,
+          "title": "Differentiation: Composite, Implicit, and Inverse Functions",
+          "weeks": 2,
+          "mcWeight": "5–10%",
+          "classPeriods": "~10–11",
+          "focus": "Differentiate composite, implicit, and inverse functions.",
+          "learning": [
+            "Apply the chain rule and implicit differentiation.",
+            "Find derivatives of inverse and inverse trigonometric functions and higher-order derivatives."
+          ],
+          "standards": [
+            "AB.3.1",
+            "AB.3.2",
+            "AB.3.3",
+            "AB.3.4",
+            "AB.3.5",
+            "AB.3.6"
+          ],
+          "activities": [
+            "Decompose original composite functions before differentiating.",
+            "Find a tangent line to an implicitly defined curve."
+          ],
+          "evidence": [
+            "Select and apply a differentiation procedure and explain the choice.",
+            "Find the derivative of an inverse function at a point from a table."
+          ],
+          "bridge": "Derivatives become rates in context in Unit 4.",
+          "test": "unit-3"
+        },
+        {
+          "id": "u4",
+          "unit": 4,
+          "title": "Contextual Applications of Differentiation",
+          "weeks": 3,
+          "mcWeight": "10–15%",
+          "classPeriods": "~10–11",
+          "focus": "Interpret derivatives as rates in motion and other contexts.",
+          "learning": [
+            "Interpret derivatives with units in straight-line motion and applied settings.",
+            "Solve related-rates problems, use local linearization, and evaluate indeterminate limits with L'Hospital's Rule."
+          ],
+          "standards": [
+            "AB.4.1",
+            "AB.4.2",
+            "AB.4.3",
+            "AB.4.4",
+            "AB.4.5",
+            "AB.4.6",
+            "AB.4.7"
+          ],
+          "activities": [
+            "Sketch and label a related-rates diagram before writing any equation.",
+            "Approximate a value with a tangent line and decide whether it over- or underestimates."
+          ],
+          "evidence": [
+            "Interpret a derivative value in a sentence with units.",
+            "Verify the indeterminate form before applying L'Hospital's Rule."
+          ],
+          "bridge": "Derivatives also reveal the shape of a graph in Unit 5.",
+          "test": "unit-4"
+        },
+        {
+          "id": "u5",
+          "unit": 5,
+          "title": "Analytical Applications of Differentiation",
+          "weeks": 4,
+          "mcWeight": "15–20%",
+          "classPeriods": "~15–16",
+          "focus": "Use derivatives to analyze functions and to optimize.",
+          "learning": [
+            "Apply the Mean Value and Extreme Value Theorems and find intervals of increase, concavity, and extrema.",
+            "Connect the graphs of f, f′, and f″, and solve optimization problems with justification."
+          ],
+          "standards": [
+            "AB.5.1",
+            "AB.5.2",
+            "AB.5.3",
+            "AB.5.4",
+            "AB.5.5",
+            "AB.5.6",
+            "AB.5.7",
+            "AB.5.8",
+            "AB.5.9",
+            "AB.5.10",
+            "AB.5.11",
+            "AB.5.12"
+          ],
+          "activities": [
+            "Annotate a graph of f′ to answer questions about f.",
+            "Model and solve an original optimization problem and verify the extremum."
+          ],
+          "evidence": [
+            "Write a first- or second-derivative-test justification.",
+            "Use the candidates test on a closed interval."
+          ],
+          "bridge": "Accumulation reverses differentiation in Unit 6.",
+          "test": "unit-5"
+        },
+        {
+          "id": "u6",
+          "unit": 6,
+          "title": "Integration and Accumulation of Change",
+          "weeks": 5,
+          "mcWeight": "15–20%",
+          "classPeriods": "~18–20",
+          "focus": "Interpret accumulation as the definite integral and connect it to antiderivatives.",
+          "learning": [
+            "Approximate accumulation with Riemann and trapezoidal sums and use definite-integral notation and properties.",
+            "Apply the Fundamental Theorem of Calculus and find antiderivatives, including by substitution."
+          ],
+          "standards": [
+            "AB.6.1",
+            "AB.6.2",
+            "AB.6.3",
+            "AB.6.4",
+            "AB.6.5",
+            "AB.6.6",
+            "AB.6.7",
+            "AB.6.8",
+            "AB.6.9",
+            "AB.6.10",
+            "AB.6.14"
+          ],
+          "activities": [
+            "Estimate total change from an original rate table with left, right, and trapezoidal sums.",
+            "Analyze an accumulation function defined by a graph."
+          ],
+          "evidence": [
+            "Evaluate a definite integral with the Fundamental Theorem.",
+            "Choose a technique: a basic rule, substitution, long division, or completing the square."
+          ],
+          "bridge": "Antiderivatives solve differential equations in Unit 7.",
+          "test": "unit-6"
+        },
+        {
+          "id": "u7",
+          "unit": 7,
+          "title": "Differential Equations",
+          "weeks": 2,
+          "mcWeight": "5–10%",
+          "classPeriods": "~8–9",
+          "focus": "Model change with differential equations and solve separable ones.",
+          "learning": [
+            "Verify solutions and sketch and reason with slope fields.",
+            "Find general and particular solutions by separation of variables and model exponential growth and decay."
+          ],
+          "standards": [
+            "AB.7.1",
+            "AB.7.2",
+            "AB.7.3",
+            "AB.7.4",
+            "AB.7.6",
+            "AB.7.7",
+            "AB.7.8"
+          ],
+          "activities": [
+            "Sketch a slope field on a grid and draw a solution curve through a given point.",
+            "Solve an original exponential model and interpret its constant."
+          ],
+          "evidence": [
+            "Verify that a function solves a differential equation.",
+            "Find a particular solution with the initial condition applied."
+          ],
+          "bridge": "Integrals measure average value, net change, area, and volume in Unit 8.",
+          "test": "unit-7"
+        },
+        {
+          "id": "u8",
+          "unit": 8,
+          "title": "Applications of Integration",
+          "weeks": 5,
+          "mcWeight": "10–15%",
+          "classPeriods": "~19–20",
+          "focus": "Use definite integrals to find average value, net change, area, and volume.",
+          "learning": [
+            "Find average values and use integrals for motion and accumulation in context.",
+            "Compute areas between curves and volumes by cross sections, discs, and washers."
+          ],
+          "standards": [
+            "AB.8.1",
+            "AB.8.2",
+            "AB.8.3",
+            "AB.8.4",
+            "AB.8.5",
+            "AB.8.6",
+            "AB.8.7",
+            "AB.8.8",
+            "AB.8.9",
+            "AB.8.10",
+            "AB.8.11",
+            "AB.8.12"
+          ],
+          "activities": [
+            "Sketch a region and a representative slice before writing an integral.",
+            "Use a graphing calculator to evaluate an applied integral to three decimal places."
+          ],
+          "evidence": [
+            "Set up and justify an area or volume integral.",
+            "Interpret a definite integral in context with units."
+          ],
+          "bridge": "The review weeks combine every unit before the practice exam.",
+          "test": "unit-8"
+        },
+        {
+          "id": "u9",
+          "unit": null,
+          "title": "Review, practice exam, and next steps",
+          "weeks": 7,
+          "focus": "Consolidate the eight units, take the practice exam under timed conditions, and target review from its results.",
+          "learning": [
+            "Practice no-calculator and graphing-calculator multiple choice and write complete free-response justifications.",
+            "Score the practice exam with its scoring guidelines, record raw points by section and unit, and plan targeted review."
+          ],
+          "standards": [
+            "AB.REVIEW",
+            "AB.BEYOND"
+          ],
+          "activities": [
+            "Take the practice exam in two timed sittings and self-score with the scoring guidelines.",
+            "Keep an error log by unit and redo missed items a week later."
+          ],
+          "evidence": [
+            "Explain each missed item's error and correct it.",
+            "Complete an original modeling investigation after the exam."
+          ],
+          "bridge": "After the exam, labeled enrichment previews further calculus; it is not AB content.",
+          "test": "practice-exam"
+        }
+      ],
+      "schedule": [
+        {
+          "week": 1,
+          "unitId": "u1",
+          "title": "Change at an instant; limits from graphs and tables",
+          "standards": [
+            "AB.1.1",
+            "AB.1.2",
+            "AB.1.3",
+            "AB.1.4"
+          ]
+        },
+        {
+          "week": 2,
+          "unitId": "u1",
+          "title": "Limit properties and algebraic manipulation",
+          "standards": [
+            "AB.1.5",
+            "AB.1.6",
+            "AB.1.7"
+          ]
+        },
+        {
+          "week": 3,
+          "unitId": "u1",
+          "title": "Squeeze theorem, representations, and discontinuities",
+          "standards": [
+            "AB.1.8",
+            "AB.1.9",
+            "AB.1.10",
+            "AB.1.11"
+          ]
+        },
+        {
+          "week": 4,
+          "unitId": "u1",
+          "title": "Continuity on intervals and asymptotes",
+          "standards": [
+            "AB.1.12",
+            "AB.1.13",
+            "AB.1.14",
+            "AB.1.15"
+          ]
+        },
+        {
+          "week": 5,
+          "unitId": "u1",
+          "title": "Intermediate Value Theorem and Unit 1 synthesis",
+          "standards": [
+            "AB.1.16"
+          ],
+          "assessment": "unit-1"
+        },
+        {
+          "week": 6,
+          "unitId": "u2",
+          "title": "Rates of change and the derivative",
+          "standards": [
+            "AB.2.1",
+            "AB.2.2",
+            "AB.2.3"
+          ]
+        },
+        {
+          "week": 7,
+          "unitId": "u2",
+          "title": "Differentiability and the first derivative rules",
+          "standards": [
+            "AB.2.4",
+            "AB.2.5",
+            "AB.2.6",
+            "AB.2.7"
+          ]
+        },
+        {
+          "week": 8,
+          "unitId": "u2",
+          "title": "Product and quotient rules; trigonometric derivatives",
+          "standards": [
+            "AB.2.8",
+            "AB.2.9",
+            "AB.2.10"
+          ],
+          "assessment": "unit-2"
+        },
+        {
+          "week": 9,
+          "unitId": "u3",
+          "title": "Chain rule, implicit differentiation, and inverses",
+          "standards": [
+            "AB.3.1",
+            "AB.3.2",
+            "AB.3.3"
+          ]
+        },
+        {
+          "week": 10,
+          "unitId": "u3",
+          "title": "Inverse trigonometric and higher-order derivatives",
+          "standards": [
+            "AB.3.4",
+            "AB.3.5",
+            "AB.3.6"
+          ],
+          "assessment": "unit-3"
+        },
+        {
+          "week": 11,
+          "unitId": "u4",
+          "title": "Derivatives in context and straight-line motion",
+          "standards": [
+            "AB.4.1",
+            "AB.4.2",
+            "AB.4.3"
+          ]
+        },
+        {
+          "week": 12,
+          "unitId": "u4",
+          "title": "Related rates",
+          "standards": [
+            "AB.4.4",
+            "AB.4.5"
+          ]
+        },
+        {
+          "week": 13,
+          "unitId": "u4",
+          "title": "Linearization and L'Hospital's Rule",
+          "standards": [
+            "AB.4.6",
+            "AB.4.7"
+          ],
+          "assessment": "unit-4"
+        },
+        {
+          "week": 14,
+          "unitId": "u5",
+          "title": "Mean Value Theorem, extrema, and increasing intervals",
+          "standards": [
+            "AB.5.1",
+            "AB.5.2",
+            "AB.5.3"
+          ]
+        },
+        {
+          "week": 15,
+          "unitId": "u5",
+          "title": "Derivative tests and concavity",
+          "standards": [
+            "AB.5.4",
+            "AB.5.5",
+            "AB.5.6",
+            "AB.5.7"
+          ]
+        },
+        {
+          "week": 16,
+          "unitId": "u5",
+          "title": "Connecting f, f′, and f″; optimization",
+          "standards": [
+            "AB.5.8",
+            "AB.5.9",
+            "AB.5.10",
+            "AB.5.11"
+          ]
+        },
+        {
+          "week": 17,
+          "unitId": "u5",
+          "title": "Implicit relations and semester review",
+          "standards": [
+            "AB.5.12"
+          ],
+          "assessment": "unit-5"
+        },
+        {
+          "week": 18,
+          "unitId": "u6",
+          "title": "Accumulation and Riemann sums",
+          "standards": [
+            "AB.6.1",
+            "AB.6.2"
+          ]
+        },
+        {
+          "week": 19,
+          "unitId": "u6",
+          "title": "Definite-integral notation and the Fundamental Theorem",
+          "standards": [
+            "AB.6.3",
+            "AB.6.4"
+          ]
+        },
+        {
+          "week": 20,
+          "unitId": "u6",
+          "title": "Accumulation functions and integral properties",
+          "standards": [
+            "AB.6.5",
+            "AB.6.6",
+            "AB.6.7"
+          ]
+        },
+        {
+          "week": 21,
+          "unitId": "u6",
+          "title": "Antiderivatives and substitution",
+          "standards": [
+            "AB.6.8",
+            "AB.6.9"
+          ]
+        },
+        {
+          "week": 22,
+          "unitId": "u6",
+          "title": "Long division, completing the square, and choosing techniques",
+          "standards": [
+            "AB.6.10",
+            "AB.6.14"
+          ],
+          "assessment": "unit-6"
+        },
+        {
+          "week": 23,
+          "unitId": "u7",
+          "title": "Differential equations and slope fields",
+          "standards": [
+            "AB.7.1",
+            "AB.7.2",
+            "AB.7.3",
+            "AB.7.4"
+          ]
+        },
+        {
+          "week": 24,
+          "unitId": "u7",
+          "title": "Separation of variables and exponential models",
+          "standards": [
+            "AB.7.6",
+            "AB.7.7",
+            "AB.7.8"
+          ],
+          "assessment": "unit-7"
+        },
+        {
+          "week": 25,
+          "unitId": "u8",
+          "title": "Average value and motion with integrals",
+          "standards": [
+            "AB.8.1",
+            "AB.8.2"
+          ]
+        },
+        {
+          "week": 26,
+          "unitId": "u8",
+          "title": "Accumulation in context; area between curves",
+          "standards": [
+            "AB.8.3",
+            "AB.8.4"
+          ]
+        },
+        {
+          "week": 27,
+          "unitId": "u8",
+          "title": "Area with respect to y and several intersections",
+          "standards": [
+            "AB.8.5",
+            "AB.8.6"
+          ]
+        },
+        {
+          "week": 28,
+          "unitId": "u8",
+          "title": "Volumes by cross sections and discs",
+          "standards": [
+            "AB.8.7",
+            "AB.8.8",
+            "AB.8.9"
+          ]
+        },
+        {
+          "week": 29,
+          "unitId": "u8",
+          "title": "Discs about other lines and washers",
+          "standards": [
+            "AB.8.10",
+            "AB.8.11",
+            "AB.8.12"
+          ],
+          "assessment": "unit-8"
+        },
+        {
+          "week": 30,
+          "unitId": "u9",
+          "title": "Review: limits, derivatives, and no-calculator multiple choice",
+          "standards": [
+            "AB.REVIEW"
+          ]
+        },
+        {
+          "week": 31,
+          "unitId": "u9",
+          "title": "Review: analysis and written justification",
+          "standards": [
+            "AB.REVIEW"
+          ]
+        },
+        {
+          "week": 32,
+          "unitId": "u9",
+          "title": "Review: accumulation, applications, and calculator work",
+          "standards": [
+            "AB.REVIEW"
+          ]
+        },
+        {
+          "week": 33,
+          "unitId": "u9",
+          "title": "Practice exam, self-scoring, and error analysis",
+          "standards": [
+            "AB.REVIEW"
+          ],
+          "assessment": "practice-exam"
+        },
+        {
+          "week": 34,
+          "unitId": "u9",
+          "title": "Targeted review from practice-exam results",
+          "standards": [
+            "AB.REVIEW"
+          ]
+        },
+        {
+          "week": 35,
+          "unitId": "u9",
+          "title": "Beyond the exam: a modeling investigation",
+          "standards": [
+            "AB.BEYOND"
+          ]
+        },
+        {
+          "week": 36,
+          "unitId": "u9",
+          "title": "Beyond the exam: enrichment and next steps",
+          "standards": [
+            "AB.BEYOND"
+          ]
+        }
+      ],
+      "exam": {
+        "name": "AP® Calculus AB Exam",
+        "effective": "May 2027",
+        "sourceId": "exam-calculus-ab",
+        "checked": "2026-10-08",
+        "delivery": "Hybrid digital: multiple choice in the Bluebook app and free response handwritten in a paper booklet. Liminal practice exams are printed.",
+        "calculator": "Only where a part says so: Section I Part B and Section II Part A require a graphing calculator.",
+        "reference": "No formula sheet is supplied.",
+        "sections": [
+          {
+            "id": "I",
+            "title": "Multiple choice",
+            "weight": "50%",
+            "parts": [
+              {
+                "id": "A",
+                "questions": 29,
+                "minutes": 62,
+                "calculator": "none"
+              },
+              {
+                "id": "B",
+                "questions": 13,
+                "minutes": 38,
+                "calculator": "graphing"
+              }
+            ]
+          },
+          {
+            "id": "II",
+            "title": "Free response",
+            "weight": "50%",
+            "parts": [
+              {
+                "id": "A",
+                "questions": 2,
+                "minutes": 30,
+                "calculator": "graphing"
+              },
+              {
+                "id": "B",
+                "questions": 4,
+                "minutes": 60,
+                "calculator": "none"
+              }
+            ]
+          }
+        ],
+        "notes": [
+          "Each free-response question is worth 9 points.",
+          "At least two free-response questions use real-world contexts."
+        ]
+      },
+      "blueprints": {
+        "unitTest": {
+          "minutes": [
+            50,
+            70
+          ],
+          "sections": [
+            {
+              "id": "I",
+              "kind": "mc",
+              "parts": [
+                {
+                  "id": "A",
+                  "questions": 8,
+                  "calculator": "none"
+                },
+                {
+                  "id": "B",
+                  "questions": 4,
+                  "calculator": "graphing"
+                }
+              ]
+            },
+            {
+              "id": "II",
+              "kind": "fr",
+              "parts": [
+                {
+                  "id": "A",
+                  "questions": 1,
+                  "calculator": "graphing"
+                },
+                {
+                  "id": "B",
+                  "questions": 1,
+                  "calculator": "none"
+                }
+              ]
+            }
+          ],
+          "frPoints": 9
+        },
+        "practiceExam": {
+          "mcByUnit": {
+            "1": 5,
+            "2": 5,
+            "3": 3,
+            "4": 5,
+            "5": 8,
+            "6": 8,
+            "7": 3,
+            "8": 5
+          },
+          "frPoints": 9,
+          "minContextFr": 2
+        }
+      }
+    },
+    {
+      "id": "physics-1",
+      "title": "Course for AP® Physics 1",
+      "shortTitle": "Physics 1",
+      "examName": "AP® Physics 1 Exam",
+      "summary": "A 36-week algebra-based mechanics course organized by the eight units of the current AP® Physics 1 framework, from kinematics to fluids, with paper investigations in every unit.",
+      "scopeNote": "An original Liminal course aligned unit by unit to College Board's course and exam description, with a unit test for each unit, a print-first practice exam in the May 2027 format, and Liminal's own formula reference. Topic numbers identify alignment only; every explanation, investigation, and problem is original. It is not an authorized AP course, which requires the AP Course Audit, and it does not award credit or predict an AP score.",
+      "prerequisites": [
+        "Complete Geometry; take Algebra 2 before or alongside this course.",
+        "Solve linear and quadratic equations, rearrange formulas, and use right-triangle trigonometry.",
+        "Read and make graphs, and report quantities with SI units and sensible precision."
+      ],
+      "prerequisiteLinks": [
+        {
+          "label": "Geometry course plan",
+          "href": "high-school.html#geometry"
+        },
+        {
+          "label": "Algebra 2 course plan",
+          "href": "high-school.html#algebra-2"
+        }
+      ],
+      "outcomes": [
+        "Model motion, forces, energy, momentum, rotation, oscillation, and fluids with diagrams, graphs, and equations.",
+        "Choose a system and justify which quantities are conserved.",
+        "Design and analyze investigations: linearize data, interpret slopes, and identify sources of uncertainty.",
+        "Translate between representations, and between qualitative claims and quantitative reasoning, in written arguments."
+      ],
+      "nextStep": "Continue with further physics, such as electricity and magnetism or calculus-based mechanics, or with chemistry. Check the receiving course's actual prerequisites.",
+      "reference": "physics-1",
+      "referenceNote": "The exam supplies an equation sheet. Use Liminal's reference while learning, and practice with College Board's sheet from the exam page before the exam.",
+      "calculatorNote": "Four-function, scientific, or graphing calculators are allowed throughout, as on the exam.",
+      "labNote": "College Board's AP® Physics course framework calls for at least 25% of instructional time in hands-on laboratory work. The paper investigations here use supplied original data; they do not replace that lab work and do not satisfy the AP Course Audit or college lab-credit requirements.",
+      "levelLabel": "Flexible placement",
+      "units": [
+        {
+          "id": "u1",
+          "unit": 1,
+          "title": "Kinematics",
+          "weeks": 3,
+          "mcWeight": "10–15%",
+          "classPeriods": "~12–17",
+          "focus": "Describe motion in one and two dimensions with vectors, graphs, and equations.",
+          "learning": [
+            "Distinguish scalars and vectors and relate displacement, velocity, and acceleration.",
+            "Represent motion with graphs and equations, analyze relative motion, and resolve projectile motion into components."
+          ],
+          "standards": [
+            "P1.1.1",
+            "P1.1.2",
+            "P1.1.3",
+            "P1.1.4",
+            "P1.1.5"
+          ],
+          "activities": [
+            "Turn a position–time graph into a velocity–time graph and a written description.",
+            "Paper investigation: linearize supplied position–time data to find an acceleration."
+          ],
+          "evidence": [
+            "Choose and apply a kinematic relation with a stated sign convention.",
+            "Explain how a reference frame changes a measured velocity."
+          ],
+          "bridge": "Forces explain changes in motion in Unit 2.",
+          "test": "unit-1"
+        },
+        {
+          "id": "u2",
+          "unit": 2,
+          "title": "Force and Translational Dynamics",
+          "weeks": 5,
+          "mcWeight": "18–23%",
+          "classPeriods": "~22–27",
+          "focus": "Explain motion with forces, systems, and Newton's laws.",
+          "learning": [
+            "Choose systems, locate centers of mass, and draw free-body diagrams.",
+            "Apply Newton's laws with gravitational, friction, spring, and tension forces, including in circular motion."
+          ],
+          "standards": [
+            "P1.2.1",
+            "P1.2.2",
+            "P1.2.3",
+            "P1.2.4",
+            "P1.2.5",
+            "P1.2.6",
+            "P1.2.7",
+            "P1.2.8",
+            "P1.2.9"
+          ],
+          "activities": [
+            "Draw free-body diagrams for each object and for the combined system in a two-block problem.",
+            "Paper investigation: analyze supplied spring-stretch data to find a spring constant."
+          ],
+          "evidence": [
+            "Identify Newton's third-law pairs and justify them.",
+            "Solve a multi-object or incline problem from free-body diagrams."
+          ],
+          "bridge": "Energy accounts for the same interactions in a different way in Unit 3.",
+          "test": "unit-2"
+        },
+        {
+          "id": "u3",
+          "unit": 3,
+          "title": "Work, Energy, and Power",
+          "weeks": 5,
+          "mcWeight": "18–23%",
+          "classPeriods": "~22–27",
+          "focus": "Account for energy transfers with work and conservation of energy.",
+          "learning": [
+            "Compute kinetic energy, work, and potential energy for a chosen system.",
+            "Apply conservation of energy with energy bar charts and compute power."
+          ],
+          "standards": [
+            "P1.3.1",
+            "P1.3.2",
+            "P1.3.3",
+            "P1.3.4",
+            "P1.3.5"
+          ],
+          "activities": [
+            "Draw energy bar charts for a system before and after a change.",
+            "Paper investigation: relate supplied release heights and speeds through a linearized graph."
+          ],
+          "evidence": [
+            "Explain how the choice of system decides whether a force does external work.",
+            "Solve a multistep problem that includes nonconservative work."
+          ],
+          "bridge": "Momentum describes collisions where energy alone is not enough (Unit 4).",
+          "test": "unit-3"
+        },
+        {
+          "id": "u4",
+          "unit": 4,
+          "title": "Linear Momentum",
+          "weeks": 3,
+          "mcWeight": "10–15%",
+          "classPeriods": "~10–15",
+          "focus": "Use momentum and impulse to analyze interactions and collisions.",
+          "learning": [
+            "Relate impulse to change in momentum, including from force–time graphs.",
+            "Apply momentum conservation and classify collisions as elastic or inelastic."
+          ],
+          "standards": [
+            "P1.4.1",
+            "P1.4.2",
+            "P1.4.3",
+            "P1.4.4"
+          ],
+          "activities": [
+            "Find impulse as the area under an original force–time graph.",
+            "Paper investigation: analyze supplied collision data for momentum and kinetic energy."
+          ],
+          "evidence": [
+            "Justify when a system's momentum is conserved.",
+            "Classify a collision from kinetic energy before and after."
+          ],
+          "bridge": "Rotational versions of motion and force follow in Unit 5.",
+          "test": "unit-4"
+        },
+        {
+          "id": "u5",
+          "unit": 5,
+          "title": "Torque and Rotational Dynamics",
+          "weeks": 4,
+          "mcWeight": "10–15%",
+          "classPeriods": "~15–20",
+          "focus": "Describe rotation and explain it with torque and rotational inertia.",
+          "learning": [
+            "Relate angular and linear quantities and use rotational kinematics.",
+            "Compute torque and rotational inertia and apply rotational equilibrium and Newton's second law in rotational form."
+          ],
+          "standards": [
+            "P1.5.1",
+            "P1.5.2",
+            "P1.5.3",
+            "P1.5.4",
+            "P1.5.5",
+            "P1.5.6"
+          ],
+          "activities": [
+            "Balance an original meterstick problem with several torques.",
+            "Paper investigation: linearize supplied hanging-mass data to find a rotational inertia."
+          ],
+          "evidence": [
+            "Choose an axis and justify the sign of each torque.",
+            "Solve a pulley problem in which the pulley has mass."
+          ],
+          "bridge": "Rotational energy and angular momentum extend the conservation laws in Unit 6.",
+          "test": "unit-5"
+        },
+        {
+          "id": "u6",
+          "unit": 6,
+          "title": "Energy and Momentum of Rotating Systems",
+          "weeks": 3,
+          "mcWeight": "5–8%",
+          "classPeriods": "~8–14",
+          "focus": "Extend energy and momentum conservation to rotating systems.",
+          "learning": [
+            "Compute rotational kinetic energy and work done by torque, and analyze rolling.",
+            "Apply angular impulse and conservation of angular momentum, including for orbiting satellites."
+          ],
+          "standards": [
+            "P1.6.1",
+            "P1.6.2",
+            "P1.6.3",
+            "P1.6.4",
+            "P1.6.5",
+            "P1.6.6"
+          ],
+          "activities": [
+            "Compare objects rolling down the same incline with energy reasoning.",
+            "Explain a spinning skater's change in speed with angular momentum."
+          ],
+          "evidence": [
+            "Justify when angular momentum is conserved.",
+            "Relate orbital speed and radius for a satellite."
+          ],
+          "bridge": "Restoring forces produce oscillations in Unit 7.",
+          "test": "unit-6"
+        },
+        {
+          "id": "u7",
+          "unit": 7,
+          "title": "Oscillations",
+          "weeks": 2,
+          "mcWeight": "5–8%",
+          "classPeriods": "~5–10",
+          "focus": "Model simple harmonic motion with forces, graphs, and energy.",
+          "learning": [
+            "Identify restoring forces and find the periods of springs and pendulums.",
+            "Represent SHM with graphs and equations and analyze its energy."
+          ],
+          "standards": [
+            "P1.7.1",
+            "P1.7.2",
+            "P1.7.3",
+            "P1.7.4"
+          ],
+          "activities": [
+            "Match position, velocity, and acceleration graphs for an oscillator.",
+            "Paper investigation: linearize supplied pendulum data to estimate g."
+          ],
+          "evidence": [
+            "Predict how mass, amplitude, or length changes a period.",
+            "Explain energy transfers within an oscillating system."
+          ],
+          "bridge": "Fluids apply forces and conservation laws to continuous matter in Unit 8.",
+          "test": "unit-7"
+        },
+        {
+          "id": "u8",
+          "unit": 8,
+          "title": "Fluids",
+          "weeks": 4,
+          "mcWeight": "10–15%",
+          "classPeriods": "~12–17",
+          "focus": "Apply density, pressure, Newton's laws, and conservation laws to fluids.",
+          "learning": [
+            "Relate density and pressure, including pressure with depth.",
+            "Apply buoyancy, continuity, and Bernoulli's equation."
+          ],
+          "standards": [
+            "P1.8.1",
+            "P1.8.2",
+            "P1.8.3",
+            "P1.8.4"
+          ],
+          "activities": [
+            "Draw a free-body diagram for a partly submerged object.",
+            "Paper investigation: analyze supplied flow data from a draining container."
+          ],
+          "evidence": [
+            "Explain buoyant force with pressure differences.",
+            "Apply continuity and Bernoulli's equation to an original pipe."
+          ],
+          "bridge": "The review weeks connect the eight units before the practice exam.",
+          "test": "unit-8"
+        },
+        {
+          "id": "u9",
+          "unit": null,
+          "title": "Review, practice exam, and synthesis",
+          "weeks": 7,
+          "focus": "Consolidate the eight units, take the practice exam under timed conditions, and target review from its results.",
+          "learning": [
+            "Practice multiple choice and each free-response type: mathematical routines, translation between representations, experimental design and analysis, and qualitative/quantitative translation.",
+            "Score the practice exam with its scoring guidelines, record raw points by section and unit, and plan targeted review."
+          ],
+          "standards": [
+            "P1.REVIEW",
+            "P1.SYNTHESIS"
+          ],
+          "activities": [
+            "Take the practice exam in two timed sittings and self-score with the scoring guidelines.",
+            "Synthesis investigation with supplied data, plus an optional household-materials version with safety notes."
+          ],
+          "evidence": [
+            "Explain each missed item's error and correct it.",
+            "Design an investigation and analyze its supplied data in writing."
+          ],
+          "bridge": "After the exam, synthesis investigations connect mechanics to further study.",
+          "test": "practice-exam"
+        }
+      ],
+      "schedule": [
+        {
+          "week": 1,
+          "unitId": "u1",
+          "title": "Scalars, vectors, and motion in one dimension",
+          "standards": [
+            "P1.1.1",
+            "P1.1.2"
+          ]
+        },
+        {
+          "week": 2,
+          "unitId": "u1",
+          "title": "Representing motion; reference frames",
+          "standards": [
+            "P1.1.3",
+            "P1.1.4"
+          ]
+        },
+        {
+          "week": 3,
+          "unitId": "u1",
+          "title": "Motion in two dimensions",
+          "standards": [
+            "P1.1.5"
+          ],
+          "assessment": "unit-1",
+          "investigation": true
+        },
+        {
+          "week": 4,
+          "unitId": "u2",
+          "title": "Systems, center of mass, and free-body diagrams",
+          "standards": [
+            "P1.2.1",
+            "P1.2.2"
+          ]
+        },
+        {
+          "week": 5,
+          "unitId": "u2",
+          "title": "Newton's third and first laws",
+          "standards": [
+            "P1.2.3",
+            "P1.2.4"
+          ]
+        },
+        {
+          "week": 6,
+          "unitId": "u2",
+          "title": "Newton's second law: multi-object systems and inclines",
+          "standards": [
+            "P1.2.5"
+          ]
+        },
+        {
+          "week": 7,
+          "unitId": "u2",
+          "title": "Gravitational, friction, and spring forces",
+          "standards": [
+            "P1.2.6",
+            "P1.2.7",
+            "P1.2.8"
+          ]
+        },
+        {
+          "week": 8,
+          "unitId": "u2",
+          "title": "Circular motion",
+          "standards": [
+            "P1.2.9"
+          ],
+          "assessment": "unit-2",
+          "investigation": true
+        },
+        {
+          "week": 9,
+          "unitId": "u3",
+          "title": "Kinetic energy and work",
+          "standards": [
+            "P1.3.1",
+            "P1.3.2"
+          ]
+        },
+        {
+          "week": 10,
+          "unitId": "u3",
+          "title": "Potential energy",
+          "standards": [
+            "P1.3.3"
+          ]
+        },
+        {
+          "week": 11,
+          "unitId": "u3",
+          "title": "Conservation of energy and energy bar charts",
+          "standards": [
+            "P1.3.4"
+          ]
+        },
+        {
+          "week": 12,
+          "unitId": "u3",
+          "title": "Nonconservative work and multistep systems",
+          "standards": [
+            "P1.3.4"
+          ],
+          "investigation": true
+        },
+        {
+          "week": 13,
+          "unitId": "u3",
+          "title": "Power and Unit 3 synthesis",
+          "standards": [
+            "P1.3.5"
+          ],
+          "assessment": "unit-3"
+        },
+        {
+          "week": 14,
+          "unitId": "u4",
+          "title": "Momentum and impulse",
+          "standards": [
+            "P1.4.1",
+            "P1.4.2"
+          ]
+        },
+        {
+          "week": 15,
+          "unitId": "u4",
+          "title": "Conservation of linear momentum",
+          "standards": [
+            "P1.4.3"
+          ]
+        },
+        {
+          "week": 16,
+          "unitId": "u4",
+          "title": "Elastic and inelastic collisions",
+          "standards": [
+            "P1.4.4"
+          ],
+          "assessment": "unit-4",
+          "investigation": true
+        },
+        {
+          "week": 17,
+          "unitId": "u5",
+          "title": "Rotational kinematics and its link to linear motion",
+          "standards": [
+            "P1.5.1",
+            "P1.5.2"
+          ]
+        },
+        {
+          "week": 18,
+          "unitId": "u5",
+          "title": "Torque and rotational inertia",
+          "standards": [
+            "P1.5.3",
+            "P1.5.4"
+          ]
+        },
+        {
+          "week": 19,
+          "unitId": "u5",
+          "title": "Rotational equilibrium",
+          "standards": [
+            "P1.5.5"
+          ]
+        },
+        {
+          "week": 20,
+          "unitId": "u5",
+          "title": "Newton's second law in rotational form",
+          "standards": [
+            "P1.5.6"
+          ],
+          "assessment": "unit-5",
+          "investigation": true
+        },
+        {
+          "week": 21,
+          "unitId": "u6",
+          "title": "Rotational kinetic energy and work by torque",
+          "standards": [
+            "P1.6.1",
+            "P1.6.2"
+          ]
+        },
+        {
+          "week": 22,
+          "unitId": "u6",
+          "title": "Angular momentum and its conservation",
+          "standards": [
+            "P1.6.3",
+            "P1.6.4"
+          ],
+          "investigation": true
+        },
+        {
+          "week": 23,
+          "unitId": "u6",
+          "title": "Rolling and orbiting satellites",
+          "standards": [
+            "P1.6.5",
+            "P1.6.6"
+          ],
+          "assessment": "unit-6"
+        },
+        {
+          "week": 24,
+          "unitId": "u7",
+          "title": "Simple harmonic motion: definition, frequency, and period",
+          "standards": [
+            "P1.7.1",
+            "P1.7.2"
+          ]
+        },
+        {
+          "week": 25,
+          "unitId": "u7",
+          "title": "Representing SHM and oscillator energy",
+          "standards": [
+            "P1.7.3",
+            "P1.7.4"
+          ],
+          "assessment": "unit-7",
+          "investigation": true
+        },
+        {
+          "week": 26,
+          "unitId": "u8",
+          "title": "Density and pressure",
+          "standards": [
+            "P1.8.1",
+            "P1.8.2"
+          ]
+        },
+        {
+          "week": 27,
+          "unitId": "u8",
+          "title": "Buoyancy and Newton's laws in fluids",
+          "standards": [
+            "P1.8.3"
+          ]
+        },
+        {
+          "week": 28,
+          "unitId": "u8",
+          "title": "Continuity and Bernoulli's equation",
+          "standards": [
+            "P1.8.4"
+          ]
+        },
+        {
+          "week": 29,
+          "unitId": "u8",
+          "title": "Fluids synthesis",
+          "standards": [
+            "P1.8.1",
+            "P1.8.2",
+            "P1.8.3",
+            "P1.8.4"
+          ],
+          "assessment": "unit-8",
+          "investigation": true
+        },
+        {
+          "week": 30,
+          "unitId": "u9",
+          "title": "Review: kinematics and dynamics",
+          "standards": [
+            "P1.REVIEW"
+          ]
+        },
+        {
+          "week": 31,
+          "unitId": "u9",
+          "title": "Review: energy, momentum, and rotation",
+          "standards": [
+            "P1.REVIEW"
+          ]
+        },
+        {
+          "week": 32,
+          "unitId": "u9",
+          "title": "Review: experimental design and written reasoning",
+          "standards": [
+            "P1.REVIEW"
+          ]
+        },
+        {
+          "week": 33,
+          "unitId": "u9",
+          "title": "Practice exam, self-scoring, and error analysis",
+          "standards": [
+            "P1.REVIEW"
+          ],
+          "assessment": "practice-exam"
+        },
+        {
+          "week": 34,
+          "unitId": "u9",
+          "title": "Targeted review from practice-exam results",
+          "standards": [
+            "P1.REVIEW"
+          ]
+        },
+        {
+          "week": 35,
+          "unitId": "u9",
+          "title": "Synthesis investigations",
+          "standards": [
+            "P1.SYNTHESIS"
+          ]
+        },
+        {
+          "week": 36,
+          "unitId": "u9",
+          "title": "Synthesis investigations and next steps",
+          "standards": [
+            "P1.SYNTHESIS"
+          ]
+        }
+      ],
+      "exam": {
+        "name": "AP® Physics 1 Exam",
+        "effective": "May 2027",
+        "sourceId": "exam-physics-1",
+        "checked": "2026-10-08",
+        "delivery": "Hybrid digital: multiple choice in the Bluebook app and free response handwritten in a paper booklet. Liminal practice exams are printed.",
+        "calculator": "A four-function, scientific, or graphing calculator is allowed in both sections.",
+        "reference": "An equation sheet is supplied.",
+        "sections": [
+          {
+            "id": "I",
+            "title": "Multiple choice",
+            "weight": "50%",
+            "parts": [
+              {
+                "id": "A",
+                "questions": 42,
+                "minutes": 85,
+                "calculator": "any"
+              }
+            ]
+          },
+          {
+            "id": "II",
+            "title": "Free response",
+            "weight": "50%",
+            "parts": [
+              {
+                "id": "A",
+                "questions": 4,
+                "minutes": 95,
+                "calculator": "any"
+              }
+            ]
+          }
+        ],
+        "notes": [
+          "Free response has one question of each type: Mathematical Routines (10 points), Translation Between Representations (12 points), Experimental Design and Analysis (10 points), and Qualitative/Quantitative Translation (8 points)."
+        ]
+      },
+      "blueprints": {
+        "unitTest": {
+          "minutes": [
+            50,
+            70
+          ],
+          "sections": [
+            {
+              "id": "I",
+              "kind": "mc",
+              "parts": [
+                {
+                  "id": "A",
+                  "questions": 12,
+                  "calculator": "any"
+                }
+              ]
+            },
+            {
+              "id": "II",
+              "kind": "fr",
+              "parts": [
+                {
+                  "id": "A",
+                  "questions": 2,
+                  "calculator": "any"
+                }
+              ]
+            }
+          ],
+          "frTypes": {
+            "MR": 10,
+            "TBR": 12,
+            "EDA": 10,
+            "QQT": 8
+          },
+          "distinctFrTypes": true,
+          "minTypeUsesAcrossUnitTests": 3
+        },
+        "practiceExam": {
+          "mcByUnit": {
+            "1": 5,
+            "2": 8,
+            "3": 8,
+            "4": 5,
+            "5": 5,
+            "6": 3,
+            "7": 3,
+            "8": 5
+          },
+          "frTypes": {
+            "MR": 10,
+            "TBR": 12,
+            "EDA": 10,
+            "QQT": 8
+          },
+          "oneOfEachFrType": true
+        }
+      }
+    },
+    {
+      "id": "physics-c-mechanics",
+      "title": "Course for AP® Physics C: Mechanics",
+      "shortTitle": "Physics C: Mechanics",
+      "examName": "AP® Physics C: Mechanics Exam",
+      "summary": "A 36-week calculus-based mechanics course organized by the seven units of the current AP® Physics C: Mechanics framework. Calculus may be studied at the same time: week 1 builds a calculus toolkit, and later weeks teach each technique in context when it is needed.",
+      "scopeNote": "An original Liminal course aligned unit by unit to College Board's course and exam description, with a unit test for each unit, a print-first practice exam in the May 2027 format, and Liminal's own formula reference. Topic numbers identify alignment only; every explanation, investigation, and problem is original. It is not an authorized AP course, which requires the AP Course Audit, and it does not award credit or predict an AP score.",
+      "prerequisites": [
+        "Take Calculus AB or Calculus before or alongside this course.",
+        "Complete Trigonometry: vectors, right-triangle trigonometry, and radian measure.",
+        "Solve systems of equations and rearrange symbolic relations."
+      ],
+      "prerequisiteLinks": [
+        {
+          "label": "Course for AP® Calculus AB",
+          "href": "ap.html#calculus-ab"
+        },
+        {
+          "label": "Calculus course plan",
+          "href": "high-school.html#calculus"
+        }
+      ],
+      "outcomes": [
+        "Describe motion with derivatives and integrals of position, velocity, and acceleration.",
+        "Apply Newton's laws to systems with variable and resistive forces.",
+        "Use work–energy, impulse–momentum, and angular momentum relations, computing work, impulse, and rotational inertia by integration where needed.",
+        "Analyze simple harmonic motion and pendulums, and design investigations with linearized data."
+      ],
+      "nextStep": "Continue with calculus-based electricity and magnetism, further mathematics such as multivariable calculus or differential equations, or engineering coursework. Check the receiving course's actual prerequisites.",
+      "reference": "physics-c-mechanics",
+      "referenceNote": "The exam supplies an equation sheet. Use Liminal's reference while learning, and practice with College Board's sheet from the exam page before the exam.",
+      "calculatorNote": "Four-function, scientific, or graphing calculators are allowed throughout, as on the exam.",
+      "labNote": "College Board's AP® Physics course framework calls for at least 25% of instructional time in hands-on laboratory work. The paper investigations here use supplied original data; they do not replace that lab work and do not satisfy the AP Course Audit or college lab-credit requirements.",
+      "levelLabel": "Flexible placement",
+      "units": [
+        {
+          "id": "u1",
+          "unit": 1,
+          "title": "Kinematics (with a calculus toolkit)",
+          "weeks": 5,
+          "mcWeight": "10–15%",
+          "classPeriods": "~14–19",
+          "focus": "Build a calculus toolkit and describe motion with derivatives and integrals.",
+          "learning": [
+            "Interpret rates as derivatives and accumulation as area and antiderivatives, keeping units.",
+            "Relate position, velocity, and acceleration by differentiation and integration, and analyze relative motion and motion in two or three dimensions."
+          ],
+          "standards": [
+            "CM.TOOLKIT",
+            "CM.1.1",
+            "CM.1.2",
+            "CM.1.3",
+            "CM.1.4",
+            "CM.1.5"
+          ],
+          "activities": [
+            "Find velocity and acceleration from an original polynomial position function.",
+            "Paper investigation: estimate velocities from supplied position data and compare them with a fitted model."
+          ],
+          "evidence": [
+            "Recover displacement from a velocity–time graph as an area.",
+            "Differentiate a position vector component by component."
+          ],
+          "bridge": "Newton's laws, including forces that vary, follow in Unit 2.",
+          "test": "unit-1"
+        },
+        {
+          "id": "u2",
+          "unit": 2,
+          "title": "Force and Translational Dynamics",
+          "weeks": 6,
+          "mcWeight": "20–25%",
+          "classPeriods": "~15–25",
+          "focus": "Apply Newton's laws to systems, including variable and resistive forces.",
+          "learning": [
+            "Locate centers of mass, including by integration for continuous objects, and draw free-body diagrams.",
+            "Apply Newton's second law with forces that depend on time, position, or velocity, and analyze circular motion."
+          ],
+          "standards": [
+            "CM.2.1",
+            "CM.2.2",
+            "CM.2.3",
+            "CM.2.4",
+            "CM.2.5",
+            "CM.2.6",
+            "CM.2.7",
+            "CM.2.8",
+            "CM.2.9",
+            "CM.2.10"
+          ],
+          "activities": [
+            "Verify a proposed velocity function for an object slowed by a resistive force.",
+            "Paper investigation: analyze supplied terminal-speed data."
+          ],
+          "evidence": [
+            "Use a = v dv/dx to relate force and position.",
+            "Find a center of mass from a linear density."
+          ],
+          "bridge": "Work as an integral of force leads to energy methods in Unit 3.",
+          "test": "unit-2"
+        },
+        {
+          "id": "u3",
+          "unit": 3,
+          "title": "Work, Energy, and Power",
+          "weeks": 4,
+          "mcWeight": "15–25%",
+          "classPeriods": "~12–17",
+          "focus": "Use work integrals, potential energy functions, and energy conservation.",
+          "learning": [
+            "Compute work as an integral and relate force to potential energy through F = −dU/dx.",
+            "Apply conservation of energy and compute power, including from energy diagrams."
+          ],
+          "standards": [
+            "CM.3.1",
+            "CM.3.2",
+            "CM.3.3",
+            "CM.3.4",
+            "CM.3.5"
+          ],
+          "activities": [
+            "Read equilibrium and turning points from a potential energy graph.",
+            "Paper investigation: find the work done by a supplied nonlinear spring force."
+          ],
+          "evidence": [
+            "Evaluate a work integral for a position-dependent force.",
+            "Classify an equilibrium from a potential energy curve."
+          ],
+          "bridge": "Impulse as an integral and momentum conservation follow in Unit 4.",
+          "test": "unit-3"
+        },
+        {
+          "id": "u4",
+          "unit": 4,
+          "title": "Linear Momentum",
+          "weeks": 3,
+          "mcWeight": "10–20%",
+          "classPeriods": "~11–15",
+          "focus": "Analyze interactions with impulse integrals and momentum conservation.",
+          "learning": [
+            "Compute impulse as an integral of force over time.",
+            "Apply momentum conservation, center-of-mass motion, and collision analysis in one and two dimensions."
+          ],
+          "standards": [
+            "CM.4.1",
+            "CM.4.2",
+            "CM.4.3",
+            "CM.4.4"
+          ],
+          "activities": [
+            "Find impulse from an original force function.",
+            "Analyze a two-dimensional collision with components."
+          ],
+          "evidence": [
+            "Justify momentum conservation for a chosen system.",
+            "Find the velocity of a system's center of mass."
+          ],
+          "bridge": "Rotation, with torque as a cross product, follows in Unit 5.",
+          "test": "unit-4"
+        },
+        {
+          "id": "u5",
+          "unit": 5,
+          "title": "Torque and Rotational Dynamics",
+          "weeks": 5,
+          "mcWeight": "10–15%",
+          "classPeriods": "~14–20",
+          "focus": "Describe rotation and explain it with torque and rotational inertia found by integration.",
+          "learning": [
+            "Relate angular and linear motion and compute torque as a cross product.",
+            "Find rotational inertia by integration and with the parallel-axis theorem, and apply rotational equilibrium and dynamics."
+          ],
+          "standards": [
+            "CM.5.1",
+            "CM.5.2",
+            "CM.5.3",
+            "CM.5.4",
+            "CM.5.5",
+            "CM.5.6"
+          ],
+          "activities": [
+            "Integrate r² dm for an original rod with nonuniform density.",
+            "Paper investigation: linearize supplied angular-acceleration data."
+          ],
+          "evidence": [
+            "Find a torque's magnitude and direction.",
+            "Apply the parallel-axis theorem."
+          ],
+          "bridge": "Rotational energy and angular momentum follow in Unit 6.",
+          "test": "unit-5"
+        },
+        {
+          "id": "u6",
+          "unit": 6,
+          "title": "Energy and Momentum of Rotating Systems",
+          "weeks": 4,
+          "mcWeight": "10–15%",
+          "classPeriods": "~13–19",
+          "focus": "Extend energy and momentum conservation to rotation, rolling, and orbits.",
+          "learning": [
+            "Compute rotational kinetic energy and work by torque, and analyze rolling with and without slipping.",
+            "Apply angular impulse, conservation of angular momentum, and energy reasoning to orbits."
+          ],
+          "standards": [
+            "CM.6.1",
+            "CM.6.2",
+            "CM.6.3",
+            "CM.6.4",
+            "CM.6.5",
+            "CM.6.6"
+          ],
+          "activities": [
+            "Compare rolling and sliding objects on the same incline.",
+            "Analyze a collision between a moving object and a pivoted rod."
+          ],
+          "evidence": [
+            "Justify when angular momentum is conserved about a chosen point.",
+            "Relate orbital energy, speed, and radius."
+          ],
+          "bridge": "Oscillations follow in Unit 7.",
+          "test": "unit-6"
+        },
+        {
+          "id": "u7",
+          "unit": 7,
+          "title": "Oscillations",
+          "weeks": 3,
+          "mcWeight": "10–15%",
+          "classPeriods": "~12–17",
+          "focus": "Model simple harmonic motion with differential equations, energy, and pendulums.",
+          "learning": [
+            "Verify solutions of the SHM differential equation and relate the period to system properties.",
+            "Analyze energy in oscillators and the periods of simple and physical pendulums."
+          ],
+          "standards": [
+            "CM.7.1",
+            "CM.7.2",
+            "CM.7.3",
+            "CM.7.4",
+            "CM.7.5"
+          ],
+          "activities": [
+            "Verify a proposed position function for an oscillator by substitution.",
+            "Paper investigation: analyze supplied physical-pendulum periods."
+          ],
+          "evidence": [
+            "Find the period of a physical pendulum from its rotational inertia.",
+            "Explain energy transfers within an oscillating system."
+          ],
+          "bridge": "The review weeks combine the units before the practice exam.",
+          "test": "unit-7"
+        },
+        {
+          "id": "u8",
+          "unit": null,
+          "title": "Review, practice exam, and synthesis",
+          "weeks": 6,
+          "focus": "Consolidate the seven units, take the practice exam under timed conditions, and target review from its results.",
+          "learning": [
+            "Practice multiple choice and each free-response type: mathematical routines, translation between representations, experimental design and analysis, and qualitative/quantitative translation.",
+            "Score the practice exam with its scoring guidelines, record raw points by section and unit, and plan targeted review."
+          ],
+          "standards": [
+            "CM.REVIEW",
+            "CM.SYNTHESIS"
+          ],
+          "activities": [
+            "Take the practice exam in two timed sittings and self-score with the scoring guidelines.",
+            "Synthesis investigation with supplied data and a calculus-based model."
+          ],
+          "evidence": [
+            "Explain each missed item's error and correct it.",
+            "Design an investigation and analyze its supplied data in writing."
+          ],
+          "bridge": "After the exam, synthesis investigations bridge to further calculus-based physics.",
+          "test": "practice-exam"
+        }
+      ],
+      "schedule": [
+        {
+          "week": 1,
+          "unitId": "u1",
+          "title": "Calculus toolkit for motion",
+          "standards": [
+            "CM.TOOLKIT"
+          ]
+        },
+        {
+          "week": 2,
+          "unitId": "u1",
+          "title": "Vectors, displacement, velocity, and acceleration",
+          "standards": [
+            "CM.1.1",
+            "CM.1.2"
+          ]
+        },
+        {
+          "week": 3,
+          "unitId": "u1",
+          "title": "Representing motion with slopes and areas",
+          "standards": [
+            "CM.1.3"
+          ]
+        },
+        {
+          "week": 4,
+          "unitId": "u1",
+          "title": "Reference frames and relative motion",
+          "standards": [
+            "CM.1.4"
+          ]
+        },
+        {
+          "week": 5,
+          "unitId": "u1",
+          "title": "Motion in two or three dimensions",
+          "standards": [
+            "CM.1.5"
+          ],
+          "assessment": "unit-1",
+          "investigation": true
+        },
+        {
+          "week": 6,
+          "unitId": "u2",
+          "title": "Systems and center of mass, discrete and continuous",
+          "standards": [
+            "CM.2.1"
+          ]
+        },
+        {
+          "week": 7,
+          "unitId": "u2",
+          "title": "Free-body diagrams and Newton's third and first laws",
+          "standards": [
+            "CM.2.2",
+            "CM.2.3",
+            "CM.2.4"
+          ]
+        },
+        {
+          "week": 8,
+          "unitId": "u2",
+          "title": "Newton's second law with variable forces",
+          "standards": [
+            "CM.2.5"
+          ]
+        },
+        {
+          "week": 9,
+          "unitId": "u2",
+          "title": "Gravitational, friction, and spring forces",
+          "standards": [
+            "CM.2.6",
+            "CM.2.7",
+            "CM.2.8"
+          ]
+        },
+        {
+          "week": 10,
+          "unitId": "u2",
+          "title": "Resistive forces and terminal speed",
+          "standards": [
+            "CM.2.9"
+          ]
+        },
+        {
+          "week": 11,
+          "unitId": "u2",
+          "title": "Circular motion",
+          "standards": [
+            "CM.2.10"
+          ],
+          "assessment": "unit-2",
+          "investigation": true
+        },
+        {
+          "week": 12,
+          "unitId": "u3",
+          "title": "Kinetic energy and work as an integral",
+          "standards": [
+            "CM.3.1",
+            "CM.3.2"
+          ]
+        },
+        {
+          "week": 13,
+          "unitId": "u3",
+          "title": "Potential energy functions and equilibrium",
+          "standards": [
+            "CM.3.3"
+          ]
+        },
+        {
+          "week": 14,
+          "unitId": "u3",
+          "title": "Conservation of energy",
+          "standards": [
+            "CM.3.4"
+          ],
+          "investigation": true
+        },
+        {
+          "week": 15,
+          "unitId": "u3",
+          "title": "Power",
+          "standards": [
+            "CM.3.5"
+          ],
+          "assessment": "unit-3"
+        },
+        {
+          "week": 16,
+          "unitId": "u4",
+          "title": "Momentum and impulse as an integral",
+          "standards": [
+            "CM.4.1",
+            "CM.4.2"
+          ]
+        },
+        {
+          "week": 17,
+          "unitId": "u4",
+          "title": "Momentum conservation and center-of-mass motion",
+          "standards": [
+            "CM.4.3"
+          ],
+          "investigation": true
+        },
+        {
+          "week": 18,
+          "unitId": "u4",
+          "title": "Collisions in one and two dimensions",
+          "standards": [
+            "CM.4.4"
+          ],
+          "assessment": "unit-4"
+        },
+        {
+          "week": 19,
+          "unitId": "u5",
+          "title": "Rotational kinematics and its link to linear motion",
+          "standards": [
+            "CM.5.1",
+            "CM.5.2"
+          ]
+        },
+        {
+          "week": 20,
+          "unitId": "u5",
+          "title": "Torque as a cross product",
+          "standards": [
+            "CM.5.3"
+          ]
+        },
+        {
+          "week": 21,
+          "unitId": "u5",
+          "title": "Rotational inertia by integration; parallel axes",
+          "standards": [
+            "CM.5.4"
+          ]
+        },
+        {
+          "week": 22,
+          "unitId": "u5",
+          "title": "Rotational equilibrium",
+          "standards": [
+            "CM.5.5"
+          ]
+        },
+        {
+          "week": 23,
+          "unitId": "u5",
+          "title": "Newton's second law in rotational form",
+          "standards": [
+            "CM.5.6"
+          ],
+          "assessment": "unit-5",
+          "investigation": true
+        },
+        {
+          "week": 24,
+          "unitId": "u6",
+          "title": "Rotational kinetic energy and work by torque",
+          "standards": [
+            "CM.6.1",
+            "CM.6.2"
+          ]
+        },
+        {
+          "week": 25,
+          "unitId": "u6",
+          "title": "Angular momentum and its conservation",
+          "standards": [
+            "CM.6.3",
+            "CM.6.4"
+          ]
+        },
+        {
+          "week": 26,
+          "unitId": "u6",
+          "title": "Rolling",
+          "standards": [
+            "CM.6.5"
+          ],
+          "investigation": true
+        },
+        {
+          "week": 27,
+          "unitId": "u6",
+          "title": "Orbiting satellites",
+          "standards": [
+            "CM.6.6"
+          ],
+          "assessment": "unit-6"
+        },
+        {
+          "week": 28,
+          "unitId": "u7",
+          "title": "Simple harmonic motion: definition, frequency, and period",
+          "standards": [
+            "CM.7.1",
+            "CM.7.2"
+          ]
+        },
+        {
+          "week": 29,
+          "unitId": "u7",
+          "title": "Representing SHM and oscillator energy",
+          "standards": [
+            "CM.7.3",
+            "CM.7.4"
+          ]
+        },
+        {
+          "week": 30,
+          "unitId": "u7",
+          "title": "Simple and physical pendulums",
+          "standards": [
+            "CM.7.5"
+          ],
+          "assessment": "unit-7",
+          "investigation": true
+        },
+        {
+          "week": 31,
+          "unitId": "u8",
+          "title": "Review: translational mechanics with calculus",
+          "standards": [
+            "CM.REVIEW"
+          ]
+        },
+        {
+          "week": 32,
+          "unitId": "u8",
+          "title": "Review: rotation, oscillation, and experimental design",
+          "standards": [
+            "CM.REVIEW"
+          ]
+        },
+        {
+          "week": 33,
+          "unitId": "u8",
+          "title": "Practice exam, self-scoring, and error analysis",
+          "standards": [
+            "CM.REVIEW"
+          ],
+          "assessment": "practice-exam"
+        },
+        {
+          "week": 34,
+          "unitId": "u8",
+          "title": "Targeted review from practice-exam results",
+          "standards": [
+            "CM.REVIEW"
+          ]
+        },
+        {
+          "week": 35,
+          "unitId": "u8",
+          "title": "Synthesis investigations",
+          "standards": [
+            "CM.SYNTHESIS"
+          ]
+        },
+        {
+          "week": 36,
+          "unitId": "u8",
+          "title": "Synthesis investigations and a bridge to further physics",
+          "standards": [
+            "CM.SYNTHESIS"
+          ]
+        }
+      ],
+      "exam": {
+        "name": "AP® Physics C: Mechanics Exam",
+        "effective": "May 2027",
+        "sourceId": "exam-physics-c-mechanics",
+        "checked": "2026-10-08",
+        "delivery": "Hybrid digital: multiple choice in the Bluebook app and free response handwritten in a paper booklet. Liminal practice exams are printed.",
+        "calculator": "A four-function, scientific, or graphing calculator is allowed in both sections.",
+        "reference": "An equation sheet is supplied.",
+        "sections": [
+          {
+            "id": "I",
+            "title": "Multiple choice",
+            "weight": "50%",
+            "parts": [
+              {
+                "id": "A",
+                "questions": 42,
+                "minutes": 85,
+                "calculator": "any"
+              }
+            ]
+          },
+          {
+            "id": "II",
+            "title": "Free response",
+            "weight": "50%",
+            "parts": [
+              {
+                "id": "A",
+                "questions": 4,
+                "minutes": 95,
+                "calculator": "any"
+              }
+            ]
+          }
+        ],
+        "notes": [
+          "Free response has one question of each type: Mathematical Routines (10 points), Translation Between Representations (12 points), Experimental Design and Analysis (10 points), and Qualitative/Quantitative Translation (8 points)."
+        ]
+      },
+      "blueprints": {
+        "unitTest": {
+          "minutes": [
+            50,
+            70
+          ],
+          "sections": [
+            {
+              "id": "I",
+              "kind": "mc",
+              "parts": [
+                {
+                  "id": "A",
+                  "questions": 12,
+                  "calculator": "any"
+                }
+              ]
+            },
+            {
+              "id": "II",
+              "kind": "fr",
+              "parts": [
+                {
+                  "id": "A",
+                  "questions": 2,
+                  "calculator": "any"
+                }
+              ]
+            }
+          ],
+          "frTypes": {
+            "MR": 10,
+            "TBR": 12,
+            "EDA": 10,
+            "QQT": 8
+          },
+          "distinctFrTypes": true,
+          "minTypeUsesAcrossUnitTests": 3
+        },
+        "practiceExam": {
+          "mcByUnit": {
+            "1": 5,
+            "2": 9,
+            "3": 8,
+            "4": 5,
+            "5": 5,
+            "6": 5,
+            "7": 5
+          },
+          "frTypes": {
+            "MR": 10,
+            "TBR": 12,
+            "EDA": 10,
+            "QQT": 8
+          },
+          "oneOfEachFrType": true
+        }
+      }
+    }
+  ]
+}

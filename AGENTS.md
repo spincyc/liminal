@@ -91,6 +91,20 @@ For a coherent ACT bank batch:
   verification. Textbook references identify scope; all instruction and
   exercises are original. Never commit scanned textbook pages or student work.
 
+- Courses for AP® exams (track `ap`: `calculus-ab`, `physics-1`,
+  `physics-c-mechanics`) follow `docs/ap-courses.md`. Weekly work uses the
+  weekly engine; unit tests and practice exams are `liminal-ap-assessment`
+  documents in `content/ap/assessments/<course>/`, validated by
+  `node tools/check-ap.js` (`--complete` for release) and built by
+  `tools/build-ap.js`. `ap.html` loads `content/ap-plan.js`, `content/ap.js`,
+  `content/weekly-index.js`, `lib/high-school.js`, `lib/weekly.js`,
+  `lib/ap-assessment.js`, `app/render.js`, `app/ap-render.js`, `app/ap.js`;
+  student copies and answer keys are separate routes and printouts. Report
+  raw points only (no score prediction or conversion), never claim an
+  authorized AP course, keep the exact College Board disclaimer on every page
+  and export that shows the marks, and say that paper investigations do not
+  replace the required physics lab work.
+
 - Every page has one Liminal header: its source holds the placeholder
   `<!-- liminal:site-header -->`, which `tools/build.js` replaces with the
   wordmark and the primary navigation from `tools/lib/site-header.js`

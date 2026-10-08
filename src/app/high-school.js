@@ -44,6 +44,10 @@
     const article = el("article", undefined, "high-school-course");
     const header = el("header"); const title = el("h2", course.title); title.id = "highSchoolHeading"; title.tabIndex = -1;
     header.append(el("p", "36 weeks · Course plan", "weekly-meta"), title, el("p", course.summary || course.scopeNote));
+    // Related courses from the plan data (for example Calculus → the AP® Calculus AB course); local links only.
+    (course.related || []).filter(entry => /^[a-z-]+\.html#[a-z0-9-]+$/.test(entry.href)).forEach(entry => {
+      const note = el("p", entry.note + " ", "weekly-meta"); note.append(link(entry.label, entry.href)); header.append(note);
+    });
     const tools = el("div", undefined, "weekly-actions high-school-print-tools");
     const ready = weeklyLink(course, 1, "Open weekly work →");
     if (ready) tools.append(ready); else tools.append(el("span", "Weekly work is being prepared.", "weekly-meta"));
