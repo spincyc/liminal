@@ -7,7 +7,7 @@
   "unitId": "u3",
   "title": "Unit 3 test: Work, Energy, and Power",
   "author": "cm-3",
-  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, and state your positive direction where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "directions": "Allow 70 minutes for this Unit 3 test on work, energy and power: 25 minutes for the 12 multiple-choice questions in Section I and 45 minutes for the 2 free-response questions in Section II. Any calculator is permitted. Use g = 9.8 m/s^2 and SI units, and name your positive direction and your system whenever signs matter. Add up raw points with the key as a practice tally; they are not an AP® score.",
   "figures": [
     {
       "id": "cm-u3-f1",
@@ -50,7 +50,7 @@
           "id": "A",
           "minutes": 25,
           "calculator": "any",
-          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise.",
+          "directions": "Select one answer for each question. Ignore air resistance unless a question includes it.",
           "items": [
             {
               "id": "cm-u3-mc01",
@@ -101,16 +101,16 @@
               ],
               "choices": [
                 "15 J",
+                "17 J",
                 "19 J",
-                "30 J",
-                "17 J"
+                "30 J"
               ],
-              "key": "D",
+              "key": "B",
               "rationale": "Work is the signed area under the F–x graph: 5.0 J (0 to 2 m) + 10 J (2 to 4 m) + 3.1 J above the axis from 4 m to 5.25 m − 1.1 J below the axis from 5.25 m to 6 m = 17 J.",
               "distractorNotes": {
                 "A": "This stops at x = 4.0 m and leaves out the last 2.0 m.",
-                "B": "This counts the area below the axis as positive work.",
-                "C": "This multiplies the largest force, 5.0 N, by the whole 6.0 m."
+                "C": "This counts the area below the axis as positive work.",
+                "D": "This multiplies the largest force, 5.0 N, by the whole 6.0 m."
               },
               "topics": [
                 "CM.3.2"
@@ -307,9 +307,9 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 35,
+          "minutes": 45,
           "calculator": "any",
-          "directions": "Show your reasoning and include units. Partial credit is given for correct reasoning.",
+          "directions": "Show equations, substitutions and units; partial credit is given for correct reasoning. Question 1 (10 points) should take about 20 minutes and Question 2 (12 points) about 25 minutes.",
           "items": [
             {
               "id": "cm-u3-fr1",
@@ -319,62 +319,62 @@
                 "CM.3.4",
                 "CM.3.5"
               ],
-              "prompt": "A winch drags a 2.0 kg crate across a level floor, starting from rest at x = 0. The winch's horizontal pull depends on position: F(x) = 40 − 8.0x, with F in newtons and x in meters, for 0 ≤ x ≤ 6.0 m. The coefficient of kinetic friction between the crate and the floor is 0.30.",
+              "prompt": "A winch drags a 2.0 kg crate across a level floor, starting from rest at x = 0. The winch's horizontal pull depends on position: F(x) = 40 − 8.0x, with F in newtons and x in meters, for 0 ≤ x ≤ 5.0 m. The coefficient of kinetic friction between the crate and the floor is 0.30.",
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Find the work done by the winch on the crate from x = 0 to x = 6.0 m.",
+                  "prompt": "Find the work done by the winch on the crate from x = 0 to x = 5.0 m.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Writes W = ∫ from 0 to 6.0 of (40 − 8.0x) dx."
+                      "criterion": "Writes W = ∫ from 0 to 5.0 of (40 − 8.0x) dx."
                     },
                     {
                       "points": 1,
-                      "criterion": "Evaluates W = 240 − 144 = 96 J."
+                      "criterion": "Evaluates W = 200 − 100 = 100 J."
                     }
                   ],
-                  "answer": "96 J",
+                  "answer": "100 J",
                   "steps": [
                     "The force depends on position, so integrate: an antiderivative of 40 − 8.0x is 40x − 4.0x^2.",
-                    "W = 40(6.0) − 4.0(6.0)^2 = 240 − 144 = 96 J."
+                    "W = 40(5.0) − 4.0(5.0)^2 = 200 − 100 = 100 J."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "Find the work done by friction on the crate over the same 6.0 m.",
+                  "prompt": "Find the work done by friction on the crate over the same 5.0 m.",
                   "points": 1,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "W_f = −μmgd = −(0.30)(2.0)(9.8)(6.0) = −35 J (accept −35.3 J)."
+                      "criterion": "W_f = −μmgd = −(0.30)(2.0)(9.8)(5.0) = −29 J (accept −28 to −30 J; −29.4 J unrounded)."
                     }
                   ],
-                  "answer": "−35 J (−35.3 J)",
+                  "answer": "−29 J (−29.4 J)",
                   "steps": [
                     "Friction is constant, f = μmg = 5.88 N, and opposes the motion.",
-                    "W_f = −(5.88 N)(6.0 m) = −35.3 J."
+                    "W_f = −(5.88 N)(5.0 m) = −29.4 J."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "Find the crate's speed at x = 6.0 m.",
+                  "prompt": "Find the crate's speed at x = 5.0 m.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Applies the work–energy theorem with both works: ½mv^2 = 96 J − 35.3 J = 60.7 J."
+                      "criterion": "Applies the work–energy theorem with both works: ½mv^2 = 100 J − 29.4 J = 70.6 J."
                     },
                     {
                       "points": 1,
-                      "criterion": "v = 7.8 m/s (accept 7.7–7.9 m/s)."
+                      "criterion": "v = 8.4 m/s (accept 8.3–8.5 m/s)."
                     }
                   ],
-                  "answer": "7.8 m/s",
+                  "answer": "8.4 m/s",
                   "steps": [
-                    "W_net = 96 − 35.3 = 60.7 J = ½(2.0)v^2.",
-                    "v = √(60.7) m/s = 7.8 m/s."
+                    "W_net = 100 − 29.4 = 70.6 J = ½(2.0)v^2.",
+                    "v = √(70.6) m/s = 8.4 m/s."
                   ]
                 },
                 {
@@ -384,7 +384,7 @@
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "States that the speed is greatest where the net force is zero, F(x) = f, because the crate speeds up while F > f and slows down after."
+                      "criterion": "States that the speed is greatest where the net force changes from forward to backward, where F(x) = f: the crate speeds up while F > f and slows down after."
                     },
                     {
                       "points": 1,
@@ -450,7 +450,7 @@
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "At x = 0: K = 3.0 J and U = 0."
+                      "criterion": "At x = 0: K = 3.0 J and U = 0 J."
                     },
                     {
                       "points": 1,
@@ -461,7 +461,7 @@
                       "criterion": "The totals are equal (3.0 J) at both positions, because the force is conservative."
                     }
                   ],
-                  "answer": "x = 0: K = 3.0 J, U = 0. x = 1.0 m: K = 1.0 J, U = 2.0 J. Both totals are 3.0 J.",
+                  "answer": "x = 0: K = 3.0 J, U = 0 J. x = 1.0 m: K = 1.0 J, U = 2.0 J. Both totals are 3.0 J.",
                   "steps": [
                     "U(0) = 0, so E = K + U = 3.0 J.",
                     "U(1.0) = 3.0 − 1.0 = 2.0 J, so K = 3.0 − 2.0 = 1.0 J."
@@ -488,7 +488,7 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "Reaches K = 0 at about x = 1.3–1.4 m, where the sketch ends."
+                      "criterion": "Reaches K = 0 J at about x = 1.3–1.4 m, where the sketch ends."
                     }
                   ],
                   "answer": "K(x) = 3.0 − 3.0x^2 + x^3 falls from 3.0 J (flat at x = 0) through 1.0 J at 1.0 m to zero at about 1.35 m.",
@@ -542,7 +542,7 @@
                   ],
                   "answer": "Because dK/dx = F, the K(x) sketch must be flat at x = 0 (F = 0) and slope down at about −2.6 J/m where the particle stops (F = −2.6 N). Afterward the particle moves back toward −x, passes x = 0 at its greatest speed, and stops again where U = 3.0 J on the left, near x = −0.88 m; it oscillates between the two turning points.",
                   "steps": [
-                    "Over a small step dx, the work F dx equals the change dK, so the slope of K against x is the force.",
+                    "By the work–energy theorem, K(x) = K(0) + ∫ from 0 to x of F dx, so by the fundamental theorem dK/dx = F: the slope of K against x is the force.",
                     "On the left, 3.0x^2 − x^3 = 3.0 at x ≈ −0.88 m; the peak of U at x = 2.0 m (4.0 J) is never reached."
                   ]
                 }

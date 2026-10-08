@@ -7,23 +7,23 @@
   "unitId": "u6",
   "title": "Unit 6 test: Energy and Momentum of Rotating Systems",
   "author": "cm-5",
-  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, measure angular positions, angular speeds and phases in radians, and state your positive direction or sense of rotation where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "directions": "Unit 6 test on the energy and momentum of rotating systems, 70 minutes. Spend 25 minutes on Section I (12 multiple-choice questions) and 45 minutes on Section II (2 free-response questions). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units; give angular positions and speeds in radians, and state the sense of rotation you take as positive. Raw points totalled with the key are a practice measure, not an AP® score.",
   "figures": [
     {
       "id": "cm-u6-f1",
-      "alt": "Side view of a turntable: a flat platter on a vertical axle above a base containing a rotation sensor. A thin ring is held centered just above the platter, with a dashed arrow showing it dropping straight down.",
-      "caption": "Dropping a ring onto a spinning turntable",
+      "alt": "Face-on view of a bicycle wheel on a fixed horizontal axle held by a post on a base. A felt pad on a spring clamp sits just above the top of the rim and can be lowered onto it. A rotation sensor is on the axle. A dimension marks 0.31 m from the axle to the rim on the right, where a spring scale pulls tangent to the rim for the torque test.",
+      "caption": "Bicycle wheel with a felt brake pad",
       "notToScale": true
     },
     {
       "id": "cm-u6-f2",
-      "alt": "Blank grid for plotting, 10 squares wide and 8 squares tall, with the horizontal axis labeled m (kg) and the vertical axis labeled ω_0/ω_f.",
-      "caption": "Grid for ω_0/ω_f against ring mass"
+      "alt": "Blank grid for plotting, 10 squares wide and 8 squares tall, with the horizontal axis labeled ω_0^2 (rad^2/s^2) and the vertical axis labeled n (revolutions).",
+      "caption": "Grid for n against ω_0^2"
     },
     {
       "id": "cm-u6-f3",
-      "alt": "Plot of ω_0/ω_f against ring mass m for the five trials, with points close to a straight line of slope about 1.66 per kilogram that meets the vertical axis at 1.0.",
-      "caption": "ω_0/ω_f against m, with a best-fit line"
+      "alt": "Plot of revolutions n against ω_0^2 for the five trials: points from (64, 3.9) to (576, 34.0) lie close to a straight line through the origin with a slope of about 0.059 revolution per rad^2/s^2.",
+      "caption": "n against ω_0^2, with a best-fit line"
     }
   ],
   "sections": [
@@ -36,7 +36,7 @@
           "id": "A",
           "minutes": 25,
           "calculator": "any",
-          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance and friction unless a question says otherwise.",
+          "directions": "Mark one answer for each question. Neglect air resistance and axle friction unless a question includes them.",
           "items": [
             {
               "id": "cm-u6-mc01",
@@ -123,16 +123,16 @@
               "prompt": "A wheel (I = 0.30 kg·m^2) spins counterclockwise at 2.0 rad/s. A constant counterclockwise torque of 0.40 N·m then acts on it for 3.0 s. What is its angular speed afterward?",
               "choices": [
                 "1.2 rad/s",
+                "2.0 rad/s",
                 "4.0 rad/s",
-                "6.0 rad/s",
-                "2.0 rad/s"
+                "6.0 rad/s"
               ],
-              "key": "C",
+              "key": "D",
               "rationale": "The angular impulse τΔt = (0.40)(3.0) = 1.2 N·m·s raises L from (0.30)(2.0) = 0.60 to 1.8 kg·m^2/s, so ω = 1.8/0.30 = 6.0 rad/s.",
               "distractorNotes": {
                 "A": "This reads the angular impulse, 1.2 N·m·s, as the angular speed.",
-                "B": "This is the change in angular speed only, leaving out the initial 2.0 rad/s.",
-                "D": "This assumes a steady torque only keeps a spinning wheel turning at the same rate."
+                "B": "This assumes a steady torque only keeps a spinning wheel turning at the same rate.",
+                "C": "This is the change in angular speed only, leaving out the initial 2.0 rad/s."
               },
               "topics": [
                 "CM.6.3"
@@ -290,9 +290,9 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 35,
+          "minutes": 45,
           "calculator": "any",
-          "directions": "Show your reasoning and include units. Partial credit is given for correct reasoning. Question 2 is a paper investigation with supplied, invented data; such investigations do not replace the hands-on laboratory work that the course framework calls for.",
+          "directions": "Show your work and units; points are awarded for reasoning as well as answers. Allow about 20 minutes for Question 1 (10 points) and 25 minutes for Question 2 (10 points). Question 2 is a paper investigation with supplied, invented data; such investigations do not replace the hands-on laboratory work the course framework calls for, and they do not count toward the AP Course Audit or college lab credit.",
           "items": [
             {
               "id": "cm-u6-fr1",
@@ -411,57 +411,57 @@
               "id": "cm-u6-fr2",
               "type": "EDA",
               "topics": [
-                "CM.6.4",
-                "CM.6.3"
+                "CM.6.2",
+                "CM.6.1"
               ],
-              "prompt": "Paper investigation with supplied, invented data; it does not replace the hands-on laboratory work that the course framework calls for. A student wants to find the rotational inertia I_0 of a turntable that spins freely on a low-friction bearing. She spins the turntable to ω_0 = 6.00 rad/s, then drops a thin metal ring of radius 0.10 m, centered on the axis, from just above the turntable, as shown. A rotation sensor records the angular speed ω_f after the ring has landed and turns with the turntable. She repeats the trial with rings of different masses, all of radius 0.10 m, each time starting at 6.00 rad/s.\n| Trial | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| ring mass m (kg) | 0.050 | 0.100 | 0.150 | 0.200 | 0.250 |\n| ω_f (rad/s) | 5.55 | 5.13 | 4.81 | 4.48 | 4.25 |",
+              "prompt": "The data below are invented for a paper investigation, which does not replace the hands-on laboratory work the course framework calls for and does not count toward the AP Course Audit or college lab credit. A student wants to find the rotational inertia I of a bicycle wheel that turns on a fixed horizontal axle, as shown. A felt pad held in a spring clamp can be lowered onto the rim, where it exerts a friction torque τ_f that she assumes is constant. To measure τ_f, she lowers the pad and pulls the rim around slowly at a steady rate with a spring scale held tangent to the rim, 0.31 m from the axle; the scale reads 0.48 N. In each trial she then spins the wheel with the pad raised, reads its angular speed ω_0 from a rotation sensor on the axle, lowers the pad at once and records the number of revolutions n the wheel turns before it stops.\n| Trial | 1 | 2 | 3 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| ω_0 (rad/s) | 8.0 | 12.0 | 16.0 | 20.0 | 24.0 |\n| n (revolutions) | 3.9 | 8.4 | 15.1 | 23.4 | 34.0 |",
               "figureIds": [
                 "cm-u6-f1"
               ],
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Describe how the student should carry out each trial so that her results test angular momentum conservation fairly. Include how she should release the ring and when she should read ω_f.",
+                  "prompt": "Describe how the student should carry out the spin-down trials so that every trial has the same braking torque and n is measured accurately. Include one way to reduce random uncertainty.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Releases the ring from rest (not spinning, no sideways push), centered on the axis and from a small height."
+                      "criterion": "Applies the pad the same way in every trial (same clamp setting and spring compression, same place on the rim, pad clean and allowed to cool between trials) and counts from the moment the pad touches the rim."
                     },
                     {
                       "points": 1,
-                      "criterion": "Reads ω_f just after the ring stops slipping on the turntable (or reads ω_0 just before the drop), so the bearing's friction torque has little time to act; repeats each trial."
+                      "criterion": "Measures n with the rotation sensor (or by counting a marked spoke passing a fixed pointer, including the last fraction of a turn) and repeats each ω_0 several times, averaging n."
                     }
                   ],
-                  "answer": "Sample: start the turntable at 6.00 rad/s with the sensor; hold the ring centered just above the platter and let go without twisting or pushing it; read ω_f as soon as the ring turns with the turntable, then repeat each mass several times and average.",
+                  "answer": "Sample: set the clamp once and never adjust it, so the pad presses equally hard each time; wipe the pad and let it cool between runs; lower the pad as soon as ω_0 is read and count revolutions from that moment until the wheel stops, using the rotation sensor's angle (or a chalk mark on one spoke and a fixed pointer, estimating the final fraction of a turn); repeat each starting speed three times and average n.",
                   "steps": [
-                    "The ring must bring no angular momentum of its own and must sit at the stated radius.",
-                    "The friction torque from the bearing changes L over time, so readings should be taken close to the drop."
+                    "The model needs the same constant torque in every trial, so the pad's pressure and condition must not change.",
+                    "Repeating trials and averaging reduces random error in n."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "Show that ω_0/ω_f = 1 + (r^2/I_0)m, where r is the ring's radius, and state what quantities the student should graph to obtain a straight line.",
+                  "prompt": "Use the rotational work–energy theorem to show that n = [I/(4πτ_f)]ω_0^2 if τ_f is constant, and state what the student should graph to obtain a straight line.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Writes I_0ω_0 = (I_0 + mr^2)ω_f, with the ring's rotational inertia mr^2."
+                      "criterion": "Writes −τ_f(2πn) = 0 − ½Iω_0^2: the brake's negative work through the angle 2πn radians equals the loss of rotational kinetic energy."
                     },
                     {
                       "points": 1,
-                      "criterion": "Rearranges to ω_0/ω_f = 1 + (r^2/I_0)m and states the graph: ω_0/ω_f on the vertical axis against m on the horizontal axis."
+                      "criterion": "Rearranges to n = [I/(4πτ_f)]ω_0^2 and states the graph: n on the vertical axis against ω_0^2, a straight line through the origin with slope I/(4πτ_f)."
                     }
                   ],
-                  "answer": "I_0ω_0 = (I_0 + mr^2)ω_f, so ω_0/ω_f = 1 + (r^2/I_0)m: plot ω_0/ω_f against m, a line with slope r^2/I_0 and intercept 1.",
+                  "answer": "W = −τ_fΔθ with Δθ = 2πn rad, and W = ΔK = −½Iω_0^2, so 2πnτ_f = ½Iω_0^2 and n = [I/(4πτ_f)]ω_0^2. Plot n against ω_0^2: a line through the origin with slope I/(4πτ_f).",
                   "steps": [
-                    "The ring has no angular momentum before landing, and the bearing exerts negligible torque during the brief landing.",
-                    "Divide both sides by I_0ω_f."
+                    "The pad's torque is the only torque that does work while the wheel stops (bearing friction is included in the measured τ_f, as part (d) explains).",
+                    "Divide both sides by 4πτ_f; n is proportional to ω_0^2."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "Calculate ω_0/ω_f for each trial, plot it against m on the grid provided, and draw a best-fit line.",
+                  "prompt": "Calculate ω_0^2 for each trial, plot n against ω_0^2 on the grid provided, and draw a best-fit line.",
                   "figureIds": [
                     "cm-u6-f2"
                   ],
@@ -472,57 +472,57 @@
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Computes ω_0/ω_f = 1.08, 1.17, 1.25, 1.34, 1.41 (±0.01) and plots the points on labeled, scaled axes."
+                      "criterion": "Computes ω_0^2 = 64, 144, 256, 400 and 576 rad^2/s^2 and plots the five points on labeled, scaled axes."
                     },
                     {
                       "points": 1,
-                      "criterion": "Draws one straight best-fit line through the points."
+                      "criterion": "Draws one straight best-fit line through the points, passing close to the origin."
                     }
                   ],
-                  "answer": "Points (0.050, 1.08), (0.100, 1.17), (0.150, 1.25), (0.200, 1.34), (0.250, 1.41) lie on a straight line.",
+                  "answer": "Points (64, 3.9), (144, 8.4), (256, 15.1), (400, 23.4) and (576, 34.0) lie close to a straight line through the origin.",
                   "steps": [
-                    "For example, trial 1: 6.00/5.55 = 1.081.",
-                    "The vertical axis may start at 1.0 to spread the points."
+                    "For example, trial 3: (16.0 rad/s)^2 = 256 rad^2/s^2.",
+                    "Start both axes at zero so the intercept can be seen."
                   ]
                 },
                 {
                   "label": "d",
-                  "prompt": "Use your line to find I_0.",
+                  "prompt": "Find τ_f from the spring-scale reading, explaining why the steady pull gives it, and use your line to find I.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Finds a slope of about 1.66 kg^−1 (accept 1.55–1.80 kg^−1) from two points on the line."
+                      "criterion": "The rim turns at a steady rate, so the net torque is zero and the friction torque balances the scale's: τ_f = FR = (0.48 N)(0.31 m) = 0.149 N·m (accept 0.14–0.15 N·m)."
                     },
                     {
                       "points": 1,
-                      "criterion": "I_0 = r^2/slope = (0.10)^2/1.66 = 0.0060 kg·m^2 (accept 0.0056–0.0065 kg·m^2)."
+                      "criterion": "Finds a slope of about 0.059 revolution per (rad/s)^2, that is 0.059 s^2 (accept 0.056–0.062), and I = 4πτ_f × slope = 0.11 kg·m^2 (accept 0.10–0.12 kg·m^2)."
                     }
                   ],
-                  "answer": "Slope ≈ 1.66 kg^−1, so I_0 ≈ 6.0 × 10^−3 kg·m^2.",
+                  "answer": "τ_f = 0.149 N·m; slope ≈ 0.059 s^2, so I = 4π(0.149 N·m)(0.059 s^2) ≈ 0.11 kg·m^2.",
                   "steps": [
-                    "A least-squares fit gives slope 1.66 kg^−1 and intercept 1.00, as the model requires.",
-                    "I_0 = 0.010 m^2/1.66 kg^−1 = 0.0060 kg·m^2."
+                    "Zero angular acceleration means zero net torque; the scale's torque is FR with the force tangent to the rim. The pull also balances the bearing's friction, so τ_f includes it.",
+                    "A least-squares fit gives slope 0.0588 s^2 and intercept 0.02 revolution, close to zero as the model requires; I = 4π(0.1488)(0.0588) = 0.110 kg·m^2."
                   ]
                 },
                 {
                   "label": "e",
-                  "prompt": "In a sixth trial the student accidentally drops the ring with its center 2 cm from the axis. Would the measured ω_f be larger or smaller than the line gives for that mass? Explain.",
+                  "prompt": "The spring-scale test was done with the wheel turning slowly, but the trials begin at much higher speeds. Suppose the pad's friction torque is about 10% smaller at the speeds of the trials than in the test. Would the student's value of I be too large or too small, and by roughly what fraction? Explain.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Smaller."
+                      "criterion": "Too large, by about 11% (a factor 1/0.9)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Explains that an off-center ring has rotational inertia m(r^2 + s^2) about the axis (parallel-axis theorem), larger than mr^2, so the same angular momentum is shared with a larger I."
+                      "criterion": "Explains that a smaller real torque, 0.9τ_f, lets the wheel turn more revolutions, so the slope is I/(4π × 0.9τ_f); multiplying that slope by 4π times the larger test value τ_f gives I/0.9."
                     }
                   ],
-                  "answer": "Smaller: by the parallel-axis theorem the ring's rotational inertia about the axis is m(r^2 + s^2) with s = 0.02 m, larger than mr^2, so the system turns more slowly for the same angular momentum.",
+                  "answer": "Too large by about 11%: during the trials the torque is 0.9τ_f, so the wheel turns farther and the slope is I/(4π(0.9τ_f)); the student multiplies it by 4πτ_f and gets I/0.9 ≈ 1.11I.",
                   "steps": [
-                    "I_ring = m(0.10^2 + 0.02^2) = 1.04mr^2.",
-                    "A larger total I with the same L gives a smaller ω_f."
+                    "n = Iω_0^2/(4πτ_real) with τ_real = 0.9τ_f.",
+                    "I_found = 4πτ_f × slope = I(τ_f/τ_real) = I/0.9."
                   ]
                 }
               ]

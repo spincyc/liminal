@@ -18,7 +18,7 @@
     },
     {
       "id": "cm-pe-f3",
-      "alt": "Graph of potential energy U in joules against position x in meters from 0 to 4.5 m. The curve rises from 1 J at x = 0 to a peak of 5 J at x = 1.0 m, falls to a valley of 1 J at x = 3.0 m, then rises steeply to 11 J at x = 4.5 m. Labeled points: P at x = 0.5 m on the first rise, Q at the peak, R at x = 2.0 m on the descent, and S at x = 4.2 m on the final steep rise."
+      "alt": "Graph of potential energy U in joules against position x in meters from 0 to 4.5 m. The curve rises from 1 J at x = 0 to a peak of 5 J at x = 1.0 m, falls to a valley of 1 J at x = 3.0 m, then rises to about 11 J at x = 4.5 m. Labeled points on the curve: P at (0.5 m, 4.1 J), Q at the peak (1.0 m, 5.0 J), R at (2.0 m, 3.0 J) and S at (4.2 m, 7.0 J)."
     },
     {
       "id": "cm-pe-f4",
@@ -31,23 +31,24 @@
     },
     {
       "id": "cm-pe-f6",
-      "alt": "Graph of the force on cart B in newtons against time t in seconds from 0 to 0.6 s. The force rises in a straight line from 0 at t = 0 to 3.0 N at t = 0.20 s, falls in a straight line to 0 at t = 0.40 s, and stays 0 until t = 0.60 s."
+      "alt": "Graph of the crate's velocity v in m/s against time t in seconds from 0 to 1.0 s. The velocity falls in a straight line from 2.4 m/s at t = 0 to 0.60 m/s at t = 0.50 s, then stays at 0.60 m/s until t = 1.0 s."
     },
     {
       "id": "cm-pe-f7",
-      "alt": "Blank axes for a sketch: force on cart A in newtons from −4 to 4 on the vertical axis and time t in seconds from 0 to 0.6 on the horizontal axis, with grid lines."
+      "alt": "Two dots for free-body diagrams, labeled crate on the left and sled on the right, with an arrow below them pointing right, labeled as the positive direction."
     },
     {
       "id": "cm-pe-f8",
-      "alt": "Blank axes for a sketch: velocity v in m/s from −0.6 to 1.0 on the vertical axis and time t in seconds from 0 to 0.6 on the horizontal axis, with grid lines."
+      "alt": "Axes for a sketch: velocity v in m/s from 0 to 3.0 against time t in seconds from 0 to 1.0, with grid lines. The crate's graph is repeated as a dashed line labeled crate: from 2.4 m/s at t = 0 down to 0.60 m/s at t = 0.50 s, then level."
     },
     {
       "id": "cm-pe-f9",
-      "alt": "Key graph of the force on cart A: a downward triangle from 0 at t = 0 to −3.0 N at t = 0.20 s, back to 0 at t = 0.40 s, then 0 until t = 0.60 s."
+      "alt": "Key free-body diagrams. Crate: an upward arrow N and a downward arrow mg of equal length, and a shorter arrow f pointing left. Sled: a long upward arrow N_ice; two downward arrows side by side, Mg and a shorter N for the crate's push, together as long as N_ice; and an arrow f pointing right. Each third-law partner (N on the crate and N on the sled, f and f) is drawn with the same length.",
+      "notToScale": true
     },
     {
       "id": "cm-pe-f10",
-      "alt": "Key graph of velocity against time. Curve A starts at 0.80 m/s, curves down through 0.20 m/s at t = 0.20 s and levels off at −0.40 m/s at t = 0.40 s. Curve B starts at 0, curves up through 0.20 m/s at t = 0.20 s and levels off at 0.40 m/s at t = 0.40 s. Both are flat after t = 0.40 s; the curves cross at t = 0.20 s."
+      "alt": "Key graph of velocity against time. The crate's line (dashed) falls from 2.4 m/s at t = 0 to 0.60 m/s at t = 0.50 s; the sled's line (solid) rises from 0 to 0.60 m/s over the same time; from t = 0.50 s to 1.0 s both stay at 0.60 m/s together. The region between the two lines from 0 to 0.50 s is shaded."
     },
     {
       "id": "cm-pe-f11",
@@ -55,11 +56,11 @@
     },
     {
       "id": "cm-pe-f12",
-      "alt": "Key graph of 1/v in s/m against m in kg from 0 to 0.30 kg: five points from (0.050, 1.25) to (0.250, 4.52) lying close to a straight best-fit line with slope about 16.4 s/(m·kg) that meets the vertical axis near 0.41 s/m."
+      "alt": "Key graph of 1/v in s/m against m in kg from 0 to 0.30 kg: five points from (0.050, 1.24) to (0.250, 4.52) lying close to a straight best-fit line with slope about 16.4 s/(m·kg) that meets the vertical axis near 0.40 s/m."
     },
     {
       "id": "cm-pe-f13",
-      "alt": "Left: cross-section of a spherical bowl with a small ball resting slightly up one side of its curved surface; the bowl's radius R is marked from its center of curvature to the surface. Right: a simple pendulum hanging from a pivot, its length marked R − r.",
+      "alt": "Two setups on a level air track, each drawn on its own track line. Setup 1 (top): a spring labeled k joins a fixed post at the left to glider A. Setup 2 (bottom): the same spring, labeled k, joins glider A on the left to an identical glider B on the right; nothing else is attached.",
       "notToScale": true
     }
   ],
@@ -398,7 +399,7 @@
               "rationale": "W = ∫ from 0 to 0.50 of −kx^3 dx = −k(0.50)^4/4 = −6.25 J; the spring pushes opposite the displacement, so its work is negative.",
               "distractorNotes": {
                 "A": "This uses −kx^4 without the factor ¼ from the integral.",
-                "C": "This multiplies the final force, −kx^3, by the displacement as if the force were constant.",
+                "C": "This is the spring's force at x = 0.50 m, −kx^3 = −50 N, reported as the work.",
                 "D": "This has the right size but the wrong sign: the spring opposes the compression."
               },
               "topics": [
@@ -439,7 +440,7 @@
                 "There is no stable equilibrium"
               ],
               "key": "C",
-              "rationale": "dU/dx = −8.0(1.0 − x^2)/(x^2 + 1.0)^2 is zero at x = ±1.0 m; U(1.0) = −4.0 J is a minimum, so x = 1.0 m is stable.",
+              "rationale": "dU/dx = −8.0(1.0 − x^2)/(x^2 + 1.0)^2 is zero at x = ±1.0 m. At x = 1.0 m it changes from negative to positive, so U(1.0) = −4.0 J is a minimum and the force pushes a displaced particle back: x = 1.0 m is stable.",
               "distractorNotes": {
                 "A": "U(−1.0) = +4.0 J is a maximum, so that equilibrium is unstable.",
                 "B": "F(0) = −dU/dx = 8.0 N, so the particle is not in equilibrium there.",
@@ -1078,34 +1079,37 @@
               "id": "cm-pe-fr2",
               "type": "TBR",
               "topics": [
-                "CM.4.2",
+                "CM.4.3",
                 "CM.4.4",
+                "CM.4.2",
+                "CM.2.7",
+                "CM.2.2",
                 "CM.2.3",
-                "CM.4.3"
+                "CM.3.4"
               ],
-              "prompt": "Cart A (0.50 kg) moves at +0.80 m/s along a level, frictionless track toward cart B (1.5 kg), which is at rest. Magnets on the carts repel each other, so the carts never touch. A force sensor on cart B records the force on B during the interaction, shown in the graph; the force is zero before t = 0 and after t = 0.40 s.",
+              "prompt": "A 12 kg crate slides off a chute at deck height onto one end of a long 36 kg sled that is at rest on level ice. The ice exerts negligible friction on the sled, but kinetic friction acts between the crate and the sled's flat wooden deck until the crate stops sliding along the deck. Video analysis gives the crate's velocity relative to the ice, shown in the graph, from the moment it lands on the deck at t = 0. Take the crate's initial direction of motion as positive.",
               "figureIds": [
                 "cm-pe-f6"
               ],
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "On the axes provided, sketch the force on cart A as a function of time from t = 0 to t = 0.60 s. Justify the shape of your sketch.",
+                  "prompt": "The dots represent the crate and the sled while the crate slides along the deck. On each dot, draw and label the forces (not components) exerted on that object, each as an arrow starting on the dot. Then identify the pairs of forces in your diagrams that are Newton's third-law pairs.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Draws a triangle that mirrors cart B's graph below the axis: zero at t = 0, −3.0 N at t = 0.20 s and zero again at t = 0.40 s, then zero to 0.60 s."
+                      "criterion": "Crate: its weight down, the deck's normal force up and the deck's kinetic friction pointing backward (negative direction). Sled: its weight down, the ice's normal force up, the crate's downward push on the deck and the crate's friction on the deck pointing forward; no horizontal force from the ice."
                     },
                     {
                       "points": 1,
-                      "criterion": "Justifies it with Newton's third law: at every instant the force on A is equal in size and opposite in direction to the force on B."
+                      "criterion": "Identifies two third-law pairs: the deck's friction on the crate with the crate's friction on the deck, and the deck's normal force on the crate with the crate's push on the deck (the weights pair with forces on Earth, not with forces in these diagrams)."
                     }
                   ],
-                  "answer": "A downward triangle: 0 at t = 0, −3.0 N at t = 0.20 s, 0 at t = 0.40 s, and 0 afterward (key graph).",
+                  "answer": "Crate: N up, mg down, f backward. Sled: N_ice up, Mg down, N (the crate's push) down, f forward (key figure). Third-law pairs: the two friction forces f, and the two normal forces N between crate and deck.",
                   "steps": [
-                    "The magnets exert an interaction pair of forces on the two carts.",
-                    "The forces are equal and opposite at every instant, not just on average."
+                    "Only contact forces and gravity act; the ice is frictionless, so the sled's only horizontal force comes from the crate.",
+                    "Third-law partners act on different objects, are equal in size and opposite in direction, and are the same kind of force."
                   ],
                   "figureIds": [
                     "cm-pe-f7"
@@ -1116,46 +1120,47 @@
                 },
                 {
                   "label": "b",
-                  "prompt": "Use the graph to calculate the velocity of each cart after the interaction.",
+                  "prompt": "Use the graph to determine the magnitude of the friction force on the crate and the coefficient of kinetic friction between the crate and the deck.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Finds the impulse on B as the area under the graph, ½(0.40 s)(3.0 N) = 0.60 N·s, so v_B = 0.60/1.5 = +0.40 m/s."
+                      "criterion": "Takes the slope of the graph while the crate slides, (0.60 − 2.4)/0.50 = −3.6 m/s^2, and finds f = ma = (12)(3.6) = 43 N (accept 42–44 N)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Uses an impulse of −0.60 N·s on A (or momentum conservation) to find v_A = 0.80 − 1.2 = −0.40 m/s."
+                      "criterion": "Uses the crate's normal force N = mg = 118 N (no vertical acceleration) to find μ_k = f/N = 0.37 (accept 0.36–0.38)."
                     }
                   ],
-                  "answer": "v_B = +0.40 m/s; v_A = −0.40 m/s (cart A rebounds)",
+                  "answer": "f = 43 N (43.2 N); μ_k = 0.37.",
                   "steps": [
-                    "Impulse equals the change in momentum for each cart.",
-                    "Check: total momentum (0.50)(0.80) = 0.40 kg·m/s before; (0.50)(−0.40) + (1.5)(0.40) = 0.40 kg·m/s after."
+                    "Slope of v–t is the acceleration: −3.6 m/s^2, and friction is the only horizontal force on the crate.",
+                    "μ_k = 43.2 N/((12 kg)(9.8 m/s^2)) = 43.2/117.6 = 0.367."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "On the axes provided, sketch the velocity of each cart from t = 0 to t = 0.60 s, and label the two curves. Mark the time at which the carts have the same velocity, and give that velocity.",
+                  "prompt": "Write an expression for the sled's velocity v_s as a function of time t while the crate slides along the deck. Use it to show that the crate stops sliding along the deck at t = 0.50 s, as the graph indicates. Then, on the axes provided, which repeat the crate's graph as a dashed line, sketch the sled's velocity from t = 0 to t = 1.0 s.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Shows A falling from +0.80 to −0.40 m/s and B rising from 0 to +0.40 m/s during 0–0.40 s, with both constant afterward."
+                      "criterion": "Applies Newton's second law to the sled, with the crate's friction as the only horizontal force: a_s = f/M = 43.2/36 = 1.2 m/s^2, so v_s = (1.2 m/s^2)t."
                     },
                     {
                       "points": 1,
-                      "criterion": "Shows curved changes whose slopes are proportional to the force: zero slope at t = 0 and t = 0.40 s and steepest at t = 0.20 s, with A's slope three times as steep as B's."
+                      "criterion": "Sets the two velocities equal, 2.4 − 3.6t = 1.2t, to get t = 0.50 s and a common velocity of 0.60 m/s, matching where the crate's graph levels off."
                     },
                     {
                       "points": 1,
-                      "criterion": "Marks the crossing at t = 0.20 s, where both carts move at +0.20 m/s."
+                      "criterion": "Sketches a straight line from 0 at t = 0 to 0.60 m/s at t = 0.50 s, then a horizontal line at 0.60 m/s on top of the crate's graph until t = 1.0 s."
                     }
                   ],
-                  "answer": "S-shaped curves: A from 0.80 to −0.40 m/s, B from 0 to 0.40 m/s, crossing at t = 0.20 s at +0.20 m/s (key graph).",
+                  "answer": "v_s = (1.2 m/s^2)t; the velocities match at t = 0.50 s, at 0.60 m/s, after which the crate and sled move together (key graph).",
                   "steps": [
-                    "Half the impulse, 0.30 N·s, is delivered by t = 0.20 s: v_B = 0.20 m/s and v_A = 0.80 − 0.60 = 0.20 m/s.",
-                    "Slope of v–t is F/m: 3.0/1.5 = 2.0 m/s^2 for B and 3.0/0.50 = 6.0 m/s^2 for A at t = 0.20 s."
+                    "The friction on the sled is the third-law partner of the friction on the crate: 43.2 N forward.",
+                    "Crate: v_c = 2.4 − 3.6t; sled: v_s = 1.2t. Equal when 4.8t = 2.4, at t = 0.50 s, where v = 0.60 m/s.",
+                    "Once the velocities match, the surfaces stop slipping, kinetic friction stops, and nothing horizontal acts on the pair, so both keep 0.60 m/s."
                   ],
                   "figureIds": [
                     "cm-pe-f8"
@@ -1166,56 +1171,58 @@
                 },
                 {
                   "label": "d",
-                  "prompt": "Explain why the force between the carts is greatest at the instant their velocities are equal.",
+                  "prompt": "Explain why the momentum of the crate–sled system is conserved even though friction acts on both objects. Then use values from the graph to show that it is conserved.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Explains that before that instant A moves faster than B, so the gap shrinks, and afterward B moves faster, so it grows: the gap is smallest when the velocities are equal."
+                      "criterion": "Explains that the friction forces are internal (a third-law pair), the vertical forces on the system balance, and the ice exerts no horizontal force, so the net external force on the system is zero."
                     },
                     {
                       "points": 1,
-                      "criterion": "Connects the smallest gap to the strongest magnetic repulsion, which is the largest force."
+                      "criterion": "Shows (12 kg)(2.4 m/s) = 28.8 kg·m/s at t = 0 and (12 kg + 36 kg)(0.60 m/s) = 28.8 kg·m/s after t = 0.50 s (or equal and opposite impulses of 21.6 N·s on the two objects)."
                     }
                   ],
-                  "answer": "The gap between the carts shrinks while v_A > v_B and grows once v_B > v_A, so it is smallest when the velocities are equal, and the repulsion is strongest when the magnets are closest.",
+                  "answer": "The friction forces are an internal third-law pair and the ice exerts no horizontal force, so the system's momentum is constant: 28.8 kg·m/s at the start and 28.8 kg·m/s when the two move together.",
                   "steps": [
-                    "The rate of change of the gap is v_B − v_A, which is zero at t = 0.20 s."
+                    "Impulse on the crate: (12)(0.60 − 2.4) = −21.6 N·s; on the sled: (36)(0.60) = +21.6 N·s. They cancel.",
+                    "Gravity and the ice's normal force are vertical and balance, because neither object accelerates vertically."
                   ]
                 },
                 {
                   "label": "e",
-                  "prompt": "Determine whether the interaction is elastic. Then determine the total kinetic energy of the carts at t = 0.20 s and explain where the rest of the energy is at that instant.",
+                  "prompt": "Use the crate's graph and your sketch to determine how far the crate slides along the deck. Then show that the kinetic energy the system loses equals the friction force multiplied by that distance.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Compares kinetic energies: 0.16 J before and (0.04 + 0.12) = 0.16 J after, so the interaction is elastic."
+                      "criterion": "Identifies the sliding distance as the area between the two velocity graphs from t = 0 to 0.50 s: ½(2.4 m/s)(0.50 s) = 0.60 m (the crate moves 0.75 m and the sled 0.15 m relative to the ice)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Finds K = ½(2.0 kg)(0.20 m/s)^2 = 0.040 J at t = 0.20 s and states that the other 0.12 J is stored as magnetic potential energy, returned as the carts separate."
+                      "criterion": "Finds the loss ½(12)(2.4)^2 − ½(48)(0.60)^2 = 34.6 − 8.6 = 26 J (25.9 J) and f × d = (43.2 N)(0.60 m) = 26 J (25.9 J), so they agree."
                     }
                   ],
-                  "answer": "Elastic: 0.16 J before and after. At t = 0.20 s the carts have only 0.040 J of kinetic energy; 0.12 J is stored in the magnets' field.",
+                  "answer": "The crate slides 0.60 m along the deck. The kinetic energy falls from 34.6 J to 8.6 J, a loss of 25.9 J, which equals (43.2 N)(0.60 m) = 25.9 J.",
                   "steps": [
-                    "½(0.50)(0.80)^2 = 0.16 J; ½(0.50)(0.40)^2 + ½(1.5)(0.40)^2 = 0.040 + 0.12 = 0.16 J.",
-                    "At equal velocities the carts move together like one 2.0 kg object."
+                    "Displacement is the area under each graph: crate ½(2.4 + 0.60)(0.50) = 0.75 m; sled ½(0.60)(0.50) = 0.15 m; the difference, 0.60 m, is the area between the graphs.",
+                    "Friction does −(43.2 N)(0.75 m) = −32.4 J on the crate and +(43.2 N)(0.15 m) = +6.5 J on the sled; the net −25.9 J is the kinetic energy turned into thermal energy at the sliding surfaces."
                   ]
                 },
                 {
                   "label": "f",
-                  "prompt": "Describe the velocity of the two-cart system's center of mass from t = 0 to t = 0.60 s.",
+                  "prompt": "A student says that if the sled were frozen into the ice, the crate would slide a shorter distance along the deck, because it would no longer have to drag the sled forward. Do you agree? Use the crate's graph to support your answer.",
                   "points": 1,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "States that it is constant at +0.20 m/s throughout, because no net external force acts on the system."
+                      "criterion": "Disagrees: with the sled fixed, the crate keeps the same deceleration, 3.6 m/s^2, until it stops at t = 0.67 s, so it slides the area under its extended line, ½(2.4 m/s)(0.67 s) = 0.80 m, farther than 0.60 m."
                     }
                   ],
-                  "answer": "Constant, +0.20 m/s.",
+                  "answer": "No. Friction on the crate is still 43 N, so its graph would continue down at the same slope to zero at t = 0.67 s; the area under that line is 0.80 m, more than the 0.60 m it slides on the free sled.",
                   "steps": [
-                    "v_cm = total momentum/total mass = 0.40/2.0 = 0.20 m/s; the magnetic forces are internal."
+                    "On the free sled, the deck moves forward with the crate, so the relative speed falls faster: 4.8 m/s^2 instead of 3.6 m/s^2.",
+                    "Relative sliding distance on the fixed sled: (2.4)^2/(2 × 3.6) = 0.80 m."
                   ]
                 }
               ]
@@ -1227,7 +1234,7 @@
                 "CM.3.5",
                 "CM.2.5"
               ],
-              "prompt": "Paper investigation. This is a paper investigation with supplied, invented data. It does not replace the hands-on laboratory work, at least 25% of instructional time, that College Board's framework for the AP® Physics C: Mechanics course calls for, and it does not count toward the AP Course Audit or college lab credit. A student studies a small electric motor that lifts loads by winding a string onto a spool. With the same battery each time, the student assumes the motor's mechanical output power P is constant. A small friction force f in the motor's bearing also opposes the motion, so the motor's pull on the string, P/v, must balance both the load's weight mg and f once the load rises at a steady speed v. The student measures the steady speed for five loads.\n| m (kg) | 0.050 | 0.100 | 0.150 | 0.200 | 0.250 |\n| --- | --- | --- | --- | --- | --- |\n| v (m/s) | 0.808 | 0.490 | 0.351 | 0.272 | 0.221 |",
+              "prompt": "This is a paper investigation with supplied, invented data. It does not replace the hands-on laboratory work, at least 25% of instructional time, that College Board's framework for the AP® Physics C: Mechanics course calls for, and it does not count toward the AP Course Audit or college lab credit. A student studies a small electric motor that lifts loads by winding a string onto a spool. With the same battery each time, the student assumes the motor's mechanical output power P is constant. A small friction force f in the motor's bearing also opposes the motion, so the motor's pull on the string, P/v, must balance both the load's weight mg and f once the load rises at a steady speed v. The student measures the steady speed for five loads.\n| m (kg) | 0.050 | 0.100 | 0.150 | 0.200 | 0.250 |\n| --- | --- | --- | --- | --- | --- |\n| v (m/s) | 0.808 | 0.490 | 0.351 | 0.272 | 0.221 |",
               "parts": [
                 {
                   "label": "a",
@@ -1275,16 +1282,16 @@
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Computes 1/v = 1.25, 2.04, 2.86, 3.68 and 4.52 s/m."
+                      "criterion": "Computes 1/v = 1.24, 2.04, 2.85, 3.68 and 4.52 s/m."
                     },
                     {
                       "points": 1,
                       "criterion": "Plots the points on labeled, scaled axes and draws a single straight best-fit line."
                     }
                   ],
-                  "answer": "1/v = 1.25, 2.04, 2.86, 3.68, 4.52 s/m; the points lie close to a straight line (key graph).",
+                  "answer": "1/v = 1.24, 2.04, 2.85, 3.68 and 4.52 s/m; the points lie close to a straight line (key graph).",
                   "steps": [
-                    "For example 1/(0.49 m/s) = 2.04 s/m.",
+                    "For example 1/(0.808 m/s) = 1.24 s/m and 1/(0.490 m/s) = 2.04 s/m.",
                     "A scale of 0.025 kg per column and 0.5 s/m per row fits the grid."
                   ],
                   "figureIds": [
@@ -1305,13 +1312,13 @@
                     },
                     {
                       "points": 1,
-                      "criterion": "Finds an intercept of about 0.41 s/m (accept 0.30–0.52) and f = P × intercept ≈ 0.25 N (accept 0.18–0.31 N)."
+                      "criterion": "Finds an intercept of about 0.40 s/m (accept 0.30–0.52) and f = P × intercept ≈ 0.24 N (accept 0.18–0.31 N)."
                     }
                   ],
-                  "answer": "P ≈ 0.60 W; f ≈ 0.25 N.",
+                  "answer": "P ≈ 0.60 W; f ≈ 0.24 N.",
                   "steps": [
-                    "Least squares gives slope 16.37 s/(m·kg) and intercept 0.414 s/m.",
-                    "P = 9.8/16.37 = 0.599 W; f = (0.599)(0.414) = 0.248 N."
+                    "Least squares gives slope 16.42 s/(m·kg) and intercept 0.403 s/m.",
+                    "P = 9.8/16.42 = 0.597 W; f = (0.597)(0.403) = 0.240 N. Units: g/slope is (m/s^2)/(s/(m·kg)) = kg·m^2/s^3 = W, and P × intercept is W·s/m = N."
                   ]
                 },
                 {
@@ -1341,92 +1348,95 @@
               "type": "QQT",
               "topics": [
                 "CM.7.2",
-                "CM.6.5",
-                "CM.7.4",
-                "CM.7.5"
+                "CM.7.1",
+                "CM.2.8",
+                "CM.2.1",
+                "CM.4.3"
               ],
-              "prompt": "A small uniform solid ball of radius r rolls without slipping back and forth near the bottom of a smooth-walled spherical bowl of radius R, so that the ball's center moves along a circular arc of radius R − r. Beside it, a simple pendulum of length R − r swings with the same small amplitude, as shown.",
+              "prompt": "Identical gliders, each of mass m, ride on a level air track with negligible friction, and a light spring has spring constant k. In setup 1, the spring joins glider A to a fixed post, and glider A oscillates along the track. In setup 2, the same spring joins glider A to glider B, and nothing else exerts a horizontal force on either glider. The gliders are pulled apart, stretching the spring, and released from rest at the same instant, so they oscillate toward and away from each other. Both setups are shown.",
               "figureIds": [
                 "cm-pe-f13"
               ],
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Without writing or deriving equations, determine whether the ball or the pendulum bob has the longer period. Explain your reasoning.",
+                  "prompt": "Without writing or deriving equations, determine whether glider A oscillates with a longer period in setup 1 or in setup 2, or whether the two periods are the same. Explain your reasoning.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "States that the ball has the longer period."
+                      "criterion": "States that the period is shorter in setup 2 (longer in setup 1)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Explains that for the same height change, part of the ball's energy goes into spinning, so its center moves more slowly through the same arc than the sliding-free pendulum bob."
+                      "criterion": "Explains that the gliders start from rest, so the system's momentum stays zero and its center of mass, the midpoint of the spring, stays at rest; each glider then acts as if tied to a fixed point by half the spring, which is stiffer, so the same mass has a larger restoring force per unit displacement. (Or: both ends move, so the spring stretches twice as much for a given displacement of A.)"
                     }
                   ],
-                  "answer": "The ball. At each position both have dropped the same height, so they have the same kinetic energy per unit mass, but the ball must share its kinetic energy with its spin; its center moves more slowly along the same arc and takes longer to complete a swing.",
+                  "answer": "The period is shorter in setup 2. Released from rest, the gliders have zero total momentum, so their center of mass, the midpoint of the spring, stays at rest. Each glider acts as if it were tied to that fixed point by half of the spring, and half a spring is twice as stiff, so each glider feels twice the restoring force per unit displacement.",
                   "steps": [
-                    "Gravity provides the same restoring effect per unit mass for both.",
-                    "The ball's kinetic energy is split between translation and rotation."
+                    "No external horizontal force acts in setup 2, so the total momentum stays zero and the center of mass does not move.",
+                    "Half of a spring stretches half as much under the same tension, so its spring constant is 2k."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "Derive an expression for the period of small oscillations of the ball in terms of R, r and g.",
+                  "prompt": "Derive an expression for the period T_2 of the oscillation in setup 2 in terms of m and k. Begin by applying Newton's second law to each glider.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Writes the kinetic energy with the rotational term and the rolling condition: K = ½mv^2 + ½(2/5)mr^2(v/r)^2 = (7/10)mv^2, with v = (R − r) dθ/dt."
+                      "criterion": "Writes the second law for both gliders with consistent signs, for example m d^2x_A/dt^2 = ks and m d^2x_B/dt^2 = −ks, where s = x_B − x_A − L_0 is the spring's stretch and L_0 its relaxed length."
                     },
                     {
                       "points": 1,
-                      "criterion": "Writes the potential energy for small angles, U ≈ ½mg(R − r)θ^2 (or the equivalent torque or force), as a restoring term proportional to θ^2 (or θ)."
+                      "criterion": "Combines them into one equation of simple harmonic form: d^2s/dt^2 = −(2k/m)s (or, with the center of mass fixed, m d^2u/dt^2 = −2ku for each glider's displacement u)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Concludes ω^2 = 5g/(7(R − r)), so T = 2π√(7(R − r)/(5g))."
+                      "criterion": "Concludes ω^2 = 2k/m, so T_2 = 2π√(m/(2k))."
                     }
                   ],
-                  "answer": "T = 2π√(7(R − r)/(5g))",
+                  "answer": "T_2 = 2π√(m/(2k))",
                   "steps": [
-                    "Energy: (7/10)m(R − r)^2 (dθ/dt)^2 + ½mg(R − r)θ^2 is constant, which has the form of a spring–block oscillator with 'mass' (7/5)m(R − r)^2 and 'spring constant' mg(R − r).",
-                    "ω^2 = mg(R − r)/((7/5)m(R − r)^2) = 5g/(7(R − r))."
+                    "The stretched spring pulls A toward B and B toward A with force ks: m d^2x_A/dt^2 = ks and m d^2x_B/dt^2 = −ks.",
+                    "Subtracting: d^2s/dt^2 = d^2x_B/dt^2 − d^2x_A/dt^2 = −(2k/m)s, which is simple harmonic motion with ω^2 = 2k/m.",
+                    "Check: each glider is s/2 from the fixed center of mass, and m d^2(s/2)/dt^2 = −ks = −2k(s/2), a glider on a spring of constant 2k."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "For R − r = 0.40 m, calculate the periods of the ball and the pendulum.",
+                  "prompt": "Each glider has mass 0.80 kg and k = 20 N/m. Calculate the periods in setups 1 and 2.",
                   "points": 1,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Finds T_ball = 2π√(7(0.40)/(5(9.8))) = 1.50 s and T_pendulum = 2π√(0.40/9.8) = 1.27 s."
+                      "criterion": "Finds T_1 = 2π√(0.80/20) = 1.26 s and T_2 = 2π√(0.80/40) = 0.889 s (accept 0.88–0.90 s)."
                     }
                   ],
-                  "answer": "Ball 1.50 s; pendulum 1.27 s.",
+                  "answer": "T_1 = 1.26 s; T_2 = 0.889 s.",
                   "steps": [
-                    "7(0.40)/49 = 0.0571 s^2 and √(0.0571 s^2) = 0.239 s, so T = 2π(0.239 s) = 1.50 s.",
-                    "0.40/9.8 = 0.0408 s^2 and √(0.0408 s^2) = 0.202 s, so T = 2π(0.202 s) = 1.27 s."
+                    "T_1 = 2π√(m/k) = 2π√(0.040 s^2) = 2π(0.200 s) = 1.26 s.",
+                    "T_2 = 2π√(m/(2k)) = 2π√(0.020 s^2) = 2π(0.141 s) = 0.889 s."
                   ]
                 },
                 {
                   "label": "d",
-                  "prompt": "Do the expression in part (b) and the periods in part (c) confirm your claim in part (a)? Justify your answer. Then describe what the expression shows about how the ball's mass and its radius r affect its period.",
+                  "prompt": "Does your expression from part (b) support your claim in part (a)? Justify your answer. Then predict how the period in setup 2 would change if glider B were replaced by a glider many times as massive as A, and explain how that limit connects the two setups.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "States that the ball's period is longer by the factor √(7/5) = 1.18, supporting part (a), because the 7/5 comes from the rotational kinetic energy."
+                      "criterion": "States that it supports the claim: T_2/T_1 = 1/√(2) = 0.71 (0.889 s against 1.26 s), and the factor 2 in 2k is the doubled stiffness of half the spring (or the doubled stretch when both ends move)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Notes that the mass cancels entirely and that r enters only through R − r (the path of the center), not through the share of energy in spin, which is fixed at 2/7 for any solid ball."
+                      "criterion": "Predicts that the period would increase toward T_1 = 1.26 s, because a very massive glider B hardly accelerates and so acts like the fixed post (for masses m_A and m_B the period is 2π√(m_Am_B/((m_A + m_B)k)), which tends to 2π√(m_A/k))."
                     }
                   ],
-                  "answer": "They support it: T_ball/T_pendulum = √(7/5) = 1.18, and the factor 7/5 is exactly the extra rotational energy. Mass cancels; the radius matters only through the path radius R − r, because any uniform solid ball keeps the same 2/7 of its kinetic energy in rotation.",
+                  "answer": "Yes: T_2/T_1 = 1/√(2) = 0.71, so setup 2 has the shorter period, and the factor 2 comes from the doubled stiffness each glider feels. A very massive glider B would barely move, like the post, so the period would rise toward T_1 = 1.26 s.",
                   "steps": [
-                    "For a hollow ball (I = (2/3)mr^2) the factor would be √(5/3) = 1.29, even slower."
+                    "0.889 s/1.26 s = 0.707 = 1/√(2).",
+                    "For unequal masses the same steps give d^2s/dt^2 = −k(1/m_A + 1/m_B)s, so T = 2π√(m_Am_B/((m_A + m_B)k)); as m_B grows, m_Am_B/(m_A + m_B) tends to m_A and T tends to T_1."
                   ]
                 }
               ]

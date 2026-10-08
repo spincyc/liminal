@@ -119,8 +119,8 @@
           "units": "m/s and m/s^2"
         },
         {
-          "relation": "x(t) = x_0 + ∫ from 0 to t of v dt and v(t) = v_0 + ∫ from 0 to t of a dt",
-          "meaning": "Position and velocity accumulate from starting values; displacement is the signed area under v–t.",
+          "relation": "x(t) = x_0 + ∫ from 0 to t of v(t′) dt′ and v(t) = v_0 + ∫ from 0 to t of a(t′) dt′",
+          "meaning": "Position and velocity accumulate from starting values; displacement is the signed area under v–t (t′ is the variable of integration, t the upper limit).",
           "units": "m and m/s"
         },
         {
@@ -308,8 +308,8 @@
           "units": "kg·m^2"
         },
         {
-          "relation": "Thin hoop MR^2; solid disk or cylinder ½MR^2; solid sphere (2/5)MR^2; thin spherical shell (2/3)MR^2; thin rod about its center (1/12)ML^2, about one end (1/3)ML^2",
-          "meaning": "Rotational inertias of uniform shapes about their symmetry axes (rods: perpendicular to the rod).",
+          "relation": "Thin hoop MR^2 and solid disk or cylinder ½MR^2, about the central axis perpendicular to the flat face; solid sphere (2/5)MR^2 and thin spherical shell (2/3)MR^2, about a diameter; thin rod (1/12)ML^2 about its center and (1/3)ML^2 about one end, perpendicular to the rod",
+          "meaning": "Rotational inertias of uniform shapes about the stated axes; for any other axis, integrate ∫r^2 dm, or use the parallel-axis theorem if the axis is parallel to a stated axis through the center of mass.",
           "units": "kg·m^2"
         },
         {
@@ -436,8 +436,8 @@
           "units": "kg and m"
         },
         {
-          "relation": "k = 10^3, M = 10^6, m = 10^−3, μ = 10^−6",
-          "meaning": "Common SI prefixes (kilo, mega, milli, micro).",
+          "relation": "kilo (k) 10^3, mega (M) 10^6, milli (m) 10^−3, micro (μ) 10^−6",
+          "meaning": "Common SI prefixes: each multiplies the unit it is attached to by the power of ten shown.",
           "units": "Multiply the unit"
         }
       ]

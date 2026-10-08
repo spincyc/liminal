@@ -7,11 +7,11 @@
   "unitId": "u7",
   "title": "Unit 7 test: Oscillations",
   "author": "cm-5",
-  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, measure angular positions, angular speeds and phases in radians, and state your positive direction or sense of rotation where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "directions": "The Unit 7 test on oscillations has 12 multiple-choice questions (Section I, 25 minutes) and 2 free-response questions (Section II, 45 minutes), 70 minutes in all, with any calculator. Use g = 9.8 m/s^2 and SI units; phases and angular frequencies are in radians, and positions are measured from equilibrium along a stated positive direction. Count raw points with the key as a practice tally; they are not converted and are not an AP® score.",
   "figures": [
     {
       "id": "cm-u7-f1",
-      "alt": "Graph of a cart's position x against time t from 0 to 2.0 s: a cosine curve starting at its maximum at t = 0, with four marked points P, Q, R and S at t = 0.5, 1.0, 1.5 and 2.0 s.",
+      "alt": "Graph of a cart's position x against time t from 0 to 2.2 s, with no scale on the x axis: a cosine curve of period 2.0 s starting at its maximum at t = 0. Four points are marked: P at t = 0.5 s and R at t = 1.5 s, where the curve crosses zero; Q at t = 1.0 s, at its minimum; and S at t = 2.0 s, at its next maximum.",
       "caption": "Position of an oscillating cart"
     },
     {
@@ -21,12 +21,12 @@
     },
     {
       "id": "cm-u7-f3",
-      "alt": "Two blank sets of axes stacked vertically sharing a time axis from 0 to 2.4 s with ticks every 0.3 s: velocity v (m/s) and acceleration a (m/s^2), each with an unmarked vertical scale.",
+      "alt": "Two blank sets of axes stacked vertically sharing a time axis from 0 to 2.4 s, labeled every 0.3 s with grid lines every 0.15 s: velocity v (m/s) and acceleration a (m/s^2), each with an unmarked vertical scale.",
       "caption": "Axes for v and a"
     },
     {
       "id": "cm-u7-f4",
-      "alt": "Completed sketches: velocity is a sine curve starting at 0 and rising to 0.42 m/s at t = 0.3 s, with period 1.2 s; acceleration is a cosine curve starting at +2.2 m/s^2 at t = 0, with period 1.2 s.",
+      "alt": "Completed sketches: velocity is a sine curve starting at 0 and rising to 0.42 m/s at t = 0.3 s, with period 1.2 s; acceleration is a cosine curve starting at +2.2 m/s^2 at t = 0, with period 1.2 s. One maximum on each graph is marked with a dot and a dashed line labeled 0.42 m/s and 2.2 m/s^2.",
       "caption": "Velocity and acceleration of the cart"
     },
     {
@@ -55,7 +55,7 @@
           "id": "A",
           "minutes": 25,
           "calculator": "any",
-          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance and friction unless a question says otherwise.",
+          "directions": "Choose the best answer. Treat springs as ideal and neglect friction and air resistance unless a question says otherwise.",
           "items": [
             {
               "id": "cm-u7-mc01",
@@ -265,15 +265,15 @@
               "id": "cm-u7-mc11",
               "prompt": "A uniform rod 1.00 m long swings in a vertical plane about a horizontal pin through a point 0.25 m from one end. What is the period of small oscillations?",
               "choices": [
-                "1.5 s",
                 "1.0 s",
+                "1.5 s",
                 "1.6 s",
                 "1.7 s"
               ],
-              "key": "A",
+              "key": "B",
               "rationale": "d = 0.25 m from the center, I = m(1.00^2/12 + 0.25^2) = 0.146m, so T = 2π√(0.146/(9.8 × 0.25)) = 1.5 s.",
               "distractorNotes": {
-                "B": "This is a simple pendulum 0.25 m long.",
+                "A": "This is a simple pendulum 0.25 m long.",
                 "C": "This is the rod pivoted at its end, T = 2π√(2L/(3g)).",
                 "D": "This is a simple pendulum 0.75 m long, the distance from the pin to the far end."
               },
@@ -312,9 +312,9 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 35,
+          "minutes": 45,
           "calculator": "any",
-          "directions": "Show your reasoning and include units. Partial credit is given for correct reasoning.",
+          "directions": "Show your reasoning, including any sketch a question asks for, with units. Question 1 (12 points) should take about 25 minutes and Question 2 (8 points) about 20 minutes.",
           "items": [
             {
               "id": "cm-u7-fr1",

@@ -7,7 +7,7 @@
   "unitId": "u2",
   "title": "Unit 2 test: Force and Translational Dynamics",
   "author": "cm-2",
-  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, and state your positive direction where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "directions": "This Unit 2 test on forces and translational dynamics runs 70 minutes: Section I has 12 multiple-choice questions (25 minutes) and Section II has 2 free-response questions (45 minutes). You may use any calculator. Use g = 9.8 m/s^2 and SI units, and state your positive direction before applying Newton's laws. Raw points from the key are a practice tally only; they are not an AP® score.",
   "figures": [
     {
       "id": "cm-u2-f1",
@@ -28,7 +28,8 @@
     },
     {
       "id": "cm-u2-f5",
-      "alt": "Top view of a turntable rotating counterclockwise about its center. Coin A sits 0.10 m from the axis and coin B sits 0.20 m from the axis, along the same radius.",
+      "alt": "A sphere of radius R spins about a vertical axis through its poles, drawn as a dashed line with a curved arrow labeled spin below the sphere; a dashed ellipse marks the equator. A spring scale with a block labeled m on it stands on the north pole, pointing straight up, and an identical scale and block stand on the equator, pointing straight out to the right.",
+      "caption": "Spring scales at the pole and on the equator",
       "notToScale": true
     }
   ],
@@ -42,7 +43,7 @@
           "id": "A",
           "minutes": 25,
           "calculator": "any",
-          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance unless a question describes a drag force.",
+          "directions": "Choose the best of the four answers. Neglect air resistance unless a question describes a drag force.",
           "items": [
             {
               "id": "cm-u2-mc01",
@@ -89,16 +90,16 @@
               "id": "cm-u2-mc03",
               "prompt": "A 0.40 kg ball falls freely toward the ground. What force does the ball exert on the Earth?",
               "choices": [
-                "3.9 N, upward",
                 "3.9 N, downward",
                 "Zero, because the ball is in free fall",
+                "3.9 N, upward",
                 "About 10^−24 N, because the Earth's mass is so large"
               ],
-              "key": "A",
+              "key": "C",
               "rationale": "The Earth pulls the ball down with mg = (0.40 kg)(9.8 m/s^2) = 3.9 N. By Newton's third law, the ball pulls the Earth with a force of the same size in the opposite direction: 3.9 N upward.",
               "distractorNotes": {
-                "B": "The partner force points opposite the Earth's pull on the ball, so it is upward, toward the ball.",
-                "C": "Free fall means gravity is the only force on the ball; the interaction, and so its third-law partner, still exists.",
+                "A": "The partner force points opposite the Earth's pull on the ball, so it is upward, toward the ball.",
+                "B": "Free fall means gravity is the only force on the ball; the interaction, and so its third-law partner, still exists.",
                 "D": "The Earth's large mass makes its acceleration tiny (about 10^−24 m/s^2), not the force on it."
               },
               "topics": [
@@ -139,7 +140,7 @@
                 "13 m/s"
               ],
               "key": "B",
-              "rationale": "The velocity increases while the force is positive, so the greatest speed is at t = 4.0 s, where the force reaches zero. The area under the graph from 0 to 4.0 s is (6.0 N)(2.0 s) + ½(2.0 s)(6.0 N) = 18 N·s, so v_max = 18 N·s/1.5 kg = 12 m/s.",
+              "rationale": "The cart moves in the + direction throughout. Its velocity increases while the force is positive and decreases once the force is negative, so the greatest speed is at t = 4.0 s, where the force changes from positive to negative. The area under the graph from 0 to 4.0 s is (6.0 N)(2.0 s) + ½(2.0 s)(6.0 N) = 18 N·s, so v_max = 18 N·s/1.5 kg = 12 m/s.",
               "distractorNotes": {
                 "A": "This uses only the area from 0 to 2.0 s, but the force is still positive until 4.0 s.",
                 "C": "This is the speed at t = 5.0 s, after the negative force has slowed the cart.",
@@ -301,9 +302,9 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 35,
+          "minutes": 45,
           "calculator": "any",
-          "directions": "Show your reasoning and include units. Question 1 is worth 12 points and Question 2 is worth 8 points.",
+          "directions": "Write out your reasoning and include units. Question 1 is worth 12 points (about 25 minutes) and Question 2 is worth 8 points (about 20 minutes).",
           "items": [
             {
               "id": "cm-u2-fr1",
@@ -439,91 +440,94 @@
               "type": "QQT",
               "topics": [
                 "CM.2.10",
-                "CM.2.7"
+                "CM.2.6",
+                "CM.2.5"
               ],
-              "prompt": "Two identical coins rest on a flat, horizontal turntable, as shown. Coin A is 0.10 m from the axis and coin B is 0.20 m from the axis. The coefficient of static friction between each coin and the turntable is μ_s = 0.50. Starting from rest, the turntable's rotation is sped up so slowly that at every moment each coin moves in uniform circular motion with the turntable's period T.",
+              "prompt": "A survey probe lands on a small asteroid that is a uniform sphere of mass M = 2.0 × 10^20 kg and radius R = 2.5 × 10^5 m. The asteroid spins about its axis once every T = 3.0 h. The probe sets a spring scale on the ground with a calibration mass m = 2.00 kg resting on it, first at the asteroid's north pole and then at a point on its equator, as shown; each time the scale pushes on the mass straight away from the asteroid's center. Use G = 6.67 × 10^−11 N·m^2/kg^2, and ignore the asteroid's motion around the Sun.",
               "figureIds": [
                 "cm-u2-f5"
               ],
               "parts": [
                 {
                   "label": "a",
-                  "prompt": "Without using equations, determine which coin starts to slide first as the rotation speeds up. Explain your reasoning.",
+                  "prompt": "A student claims that the scale must give the same reading at both places, because the gravitational force on the mass has the same size everywhere on the surface of a uniform sphere. Without using equations, explain whether you agree. If you do not, say where the scale reads less and why.",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Chooses coin B, the coin farther from the axis."
+                      "criterion": "Accepts that the gravitational force is the same at both places but rejects the claim, stating that the scale reads less on the equator."
                     },
                     {
                       "points": 1,
-                      "criterion": "Explains that at the same period B moves faster around a larger circle and needs a larger inward force, while the largest friction available is the same for both identical coins."
+                      "criterion": "Explains that the mass on the equator moves in a circle with the spinning asteroid, so the net force on it must point toward the center: the scale's outward push must be smaller than the gravitational pull, while at the pole the mass does not accelerate and the push equals the pull."
                     }
                   ],
-                  "answer": "Coin B. Both coins go around in the same time, but B travels a circle twice as large, so it moves faster and needs more inward force. Static friction supplies that force, and its maximum is the same for the two identical coins, so B reaches the limit first.",
+                  "answer": "I disagree. The gravitational force is the same at both places, but the reading is not. At the pole the mass sits on the axis and does not accelerate, so the scale pushes outward exactly as hard as gravity pulls inward. On the equator the mass travels in a circle as the asteroid spins, so it accelerates toward the center and needs a net inward force. Gravity (inward) must then be larger than the scale's outward push, so the scale reads less on the equator.",
                   "steps": [
-                    "The inward force needed grows with the speed and size of the circle.",
-                    "Identical coins on the same surface have the same maximum static friction."
+                    "The forces on the mass are the asteroid's gravitational pull toward the center and the scale's push away from it; the scale reads the size of its push.",
+                    "The mass has no acceleration at the pole but accelerates toward the center on the equator, so only on the equator must the inward pull exceed the outward push."
                   ]
                 },
                 {
                   "label": "b",
-                  "prompt": "Derive an expression for the shortest period T_min at which a coin at distance r from the axis does not slide. Express your answer in terms of r, μ_s and g.",
+                  "prompt": "Starting from Newton's second law, derive expressions for the scale readings F_P at the pole and F_E on the equator in terms of m, M, R, T and physical constants.",
                   "points": 3,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Identifies static friction as the only horizontal force and writes f_s = mv^2/r with v = 2πr/T, so f_s = 4π^2mr/T^2."
+                      "criterion": "Uses the gravitational force GMm/R^2 at the surface and writes F_P = GMm/R^2, because the mass at the pole has no acceleration."
                     },
                     {
                       "points": 1,
-                      "criterion": "Applies the limit f_s ≤ μ_s mg (with F_N = mg)."
+                      "criterion": "On the equator, writes the second law toward the center, GMm/R^2 − F_E = mv^2/R, with v = 2πR/T (or a_c = 4π^2R/T^2)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Solves to T_min = 2π√(r/(μ_s g))."
+                      "criterion": "Obtains F_E = m(GM/R^2 − 4π^2R/T^2)."
                     }
                   ],
-                  "answer": "T_min = 2π√(r/(μ_s g))",
+                  "answer": "F_P = GMm/R^2; F_E = m(GM/R^2 − 4π^2R/T^2).",
                   "steps": [
-                    "Inward: f_s = m(4π^2r/T^2) ≤ μ_s mg.",
-                    "So T^2 ≥ 4π^2r/(μ_s g), and T_min = 2π√(r/(μ_s g)); the mass cancels."
+                    "Pole: ΣF = 0, so F_P − GMm/R^2 = 0 and F_P = GMm/R^2.",
+                    "Equator, with toward the center positive: GMm/R^2 − F_E = ma_c, where a_c = v^2/R and v = 2πR/T, so a_c = 4π^2R/T^2.",
+                    "F_E = GMm/R^2 − 4π^2mR/T^2 = m(GM/R^2 − 4π^2R/T^2)."
                   ]
                 },
                 {
                   "label": "c",
-                  "prompt": "Calculate T_min for each coin.",
+                  "prompt": "Calculate F_P and F_E.",
                   "points": 1,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Finds T_min = 0.90 s for coin A and 1.3 s (1.27 s) for coin B."
+                      "criterion": "Finds F_P = 0.43 N (accept 0.42–0.44 N) and F_E = 0.26 N (accept 0.25–0.27 N), with T converted to 1.08 × 10^4 s."
                     }
                   ],
-                  "answer": "Coin A: 0.90 s; coin B: 1.27 s.",
+                  "answer": "F_P = 0.43 N (0.427 N); F_E = 0.26 N (0.258 N).",
                   "steps": [
-                    "Coin A: 2π√(0.10/((0.50)(9.8))) = 2π(0.143) = 0.90 s.",
-                    "Coin B: 2π√(0.20/4.9) = 1.27 s."
+                    "GM/R^2 = (6.67 × 10^−11)(2.0 × 10^20)/(2.5 × 10^5)^2 = 0.213 m/s^2, so F_P = (2.00 kg)(0.213 m/s^2) = 0.427 N.",
+                    "T = 3.0 h = 1.08 × 10^4 s, so 4π^2R/T^2 = 4π^2(2.5 × 10^5)/(1.08 × 10^4)^2 = 0.0846 m/s^2 and F_E = (2.00 kg)(0.213 − 0.0846) m/s^2 = 0.258 N."
                   ]
                 },
                 {
                   "label": "d",
-                  "prompt": "Explain how your results in parts (b) and (c) support or contradict your answer to part (a).",
+                  "prompt": "Over millions of years the asteroid's spin could speed up. Use your expression for F_E to find the shortest rotation period for which loose objects resting on the equator would stay on the surface. Then explain how this result and your values in part (c) are consistent with your reasoning in part (a).",
                   "points": 2,
                   "rubric": [
                     {
                       "points": 1,
-                      "criterion": "Explains that T_min grows with r, so coin B's limit (1.27 s) is reached first as the period falls from large values, which agrees with part (a)."
+                      "criterion": "Sets F_E = 0 to get T = 2π√(R^3/(GM)) = 6.8 × 10^3 s, about 1.9 h (accept 6.7–6.9 × 10^3 s)."
                     },
                     {
                       "points": 1,
-                      "criterion": "Notes that the mass cancels in part (b), consistent with the reasoning that the needed force and the available friction both scale with the coin's mass."
+                      "criterion": "Explains the consistency: F_E is less than F_P in part (c), and F_E falls as T shortens because the inward net force needed grows, reaching zero when gravity alone supplies it, as part (a) argued; F_P does not depend on T because the mass at the pole does not accelerate."
                     }
                   ],
-                  "answer": "They support it. Speeding up shortens the period, and T_min = 2π√(r/(μ_s g)) is larger for larger r, so the period falls to coin B's limit of 1.27 s before it reaches coin A's 0.90 s: B slides first. The mass cancels, matching the reasoning that both the needed inward force and the available friction are proportional to the coin's mass.",
+                  "answer": "T = 2π√(R^3/(GM)) = 6.8 × 10^3 s, about 1.9 h. A faster spin means the mass on the equator needs a larger inward net force, so the scale has to push less; at this period gravity alone just supplies the circular motion and the reading is zero, and at any shorter period loose objects would drift off. This agrees with part (a): the reading on the equator is less than at the pole (0.26 N against 0.43 N) because part of gravity's pull goes into keeping the mass on its circle, and the pole reading does not depend on T at all.",
                   "steps": [
-                    "The period decreases as the turntable speeds up, so the larger T_min is reached first.",
-                    "T_min ∝ √(r), independent of m."
+                    "F_E = 0 when GM/R^2 = 4π^2R/T^2, so T^2 = 4π^2R^3/(GM).",
+                    "T = 2π√((2.5 × 10^5)^3/((6.67 × 10^−11)(2.0 × 10^20))) = 2π√(1.17 × 10^6 s^2) = 6.8 × 10^3 s.",
+                    "The actual 3.0 h period is longer than 1.9 h, so the reading in part (c) is positive but less than F_P."
                   ]
                 }
               ]

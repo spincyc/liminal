@@ -7,7 +7,7 @@
   "unitId": "u5",
   "title": "Unit 5 test: Torque and Rotational Dynamics",
   "author": "cm-4",
-  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units. Take counterclockwise as the positive sense of rotation unless a question says otherwise; angular quantities are in radians. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "directions": "This 70-minute Unit 5 test covers torque and rotational dynamics: 12 multiple-choice questions in Section I (25 minutes) and 2 free-response questions in Section II (45 minutes). Use any calculator, g = 9.8 m/s^2 and SI units. Counterclockwise is the positive sense of rotation unless a question says otherwise, and angular quantities are in radians. Record raw points with the key; they are a practice tally, not an AP® score.",
   "figures": [
     {
       "id": "cm-u5-f1",
@@ -63,21 +63,21 @@
           "id": "A",
           "minutes": 25,
           "calculator": "any",
-          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2. Counterclockwise is positive unless a question says otherwise.",
+          "directions": "Choose the best answer for each question. Counterclockwise is positive unless a question says otherwise.",
           "items": [
             {
               "id": "cm-u5-mc01",
               "prompt": "A wheel's angular velocity is ω(t) = 4.0 + 1.5t^2, with ω in rad/s and t in seconds. Through what angle does the wheel turn from t = 0 to t = 2.0 s?",
               "choices": [
-                "14 rad",
                 "12 rad",
+                "14 rad",
                 "20 rad",
                 "6.0 rad"
               ],
-              "key": "B",
+              "key": "A",
               "rationale": "Δθ = ∫ from 0 to 2.0 of (4.0 + 1.5t^2) dt = [4.0t + 0.50t^3] from 0 to 2.0 = 8.0 + 4.0 = 12 rad.",
               "distractorNotes": {
-                "A": "This multiplies the average of ω(0) = 4.0 rad/s and ω(2.0 s) = 10 rad/s by the time, which is valid only for constant angular acceleration.",
+                "B": "This multiplies the average of ω(0) = 4.0 rad/s and ω(2.0 s) = 10 rad/s by the time, which is valid only for constant angular acceleration.",
                 "C": "This multiplies the final angular velocity, 10 rad/s, by the whole 2.0 s.",
                 "D": "This is the change in angular velocity, 10 − 4.0 = 6.0 rad/s, not an angle."
               },
@@ -325,9 +325,9 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 35,
+          "minutes": 45,
           "calculator": "any",
-          "directions": "Show your reasoning and include units. Partial credit is given for correct reasoning. Question 1 is worth 12 points and Question 2 is worth 8 points.",
+          "directions": "Justify each answer with equations or a written argument, and include units. Question 1 is worth 12 points (about 25 minutes) and Question 2 is worth 8 points (about 20 minutes).",
           "items": [
             {
               "id": "cm-u5-fr1",

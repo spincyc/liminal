@@ -286,4 +286,32 @@ All 243 figures use `currentColor`. They are legible on a dark background
   numerical integration in plain Python. Agreement was required within ±1 in
   the last reported digit.
 
+## Resolution (2026-10-08)
+
+Repair lanes fixed these findings in the authoring sources, recomputed each
+changed number, rendered each changed figure, and re-ran the lane checks,
+`check-ap --complete` and the course assembly. Rebuilding every lane from its
+sources reproduces its JSON and figures byte for byte.
+
+| ID | Resolution |
+| --- | --- |
+| B1 | Week 24 ¶3 and day 3 use the directional rule: angular speed is greatest where the torque changes from speeding the body up to slowing it down, and least where it changes the other way. Week 8 ¶2 states both cases. A course-wide sweep tightened the same undirected rule in 26 more places, among them weeks 1, 3, 8, 12, 14–16, 19, 24, 25, 29–31 and 36, `cm-u2-mc05`, `cm-u3-fr1`(d) and `cm-pe-mc18`. |
+| B2 | `cm-w27-f2`'s axis reads "energy (units of GMm/(2R))"; tick and curve labels no longer collide; the alt text is rewritten. |
+| S1 | `cm-pe-fr3` uses the table's 1/v values (1.24 … 4.52 s/m); part (d) gives an intercept of about 0.40 s/m and f ≈ 0.24 N. |
+| S2 | `cm-u3-fr1` runs from 0 to 5.0 m: 100 J, −29.4 J, 8.4 m/s. |
+| S3 | Both distractor notes reproduce their values. |
+| S4 | The shapes row names each axis; the meaning no longer implies the parallel-axis theorem for a hoop about a diameter. |
+| S5 | The full lab note, including the course-audit and lab-credit clause, is in weeks 5, 10 and 11 and in unit tests 1, 4 and 6. |
+| S6 | Week 12 derives the work–energy theorem from d(½v²)/dx and the fundamental theorem; three more differential splits (weeks 15 and 16, `cm-u3-fr2`(d)) are removed. No separation of variables appears before week 24. |
+| S7 | The extremum test, the derivative estimate Δg ≈ (dg/dr)h, the integral from ∞ and the power rule for t^(1/2) are taught where first used; `cm-w04-c5` expands the square instead of using the chain rule. |
+| S8 | `cm-w02-c5` reworded; `cm-w11-b6` uses a possible speed (2.2 m/s, T = 5.86 N); `cm-w10-c6` and `cm-pe-fr4` are replaced by new designs. |
+| S9 | Week 4 ¶3 (inertial frames), week 26 ¶3 and `cm-w26-b6`(a) (torque of the normal force) are corrected. |
+| S10 | `cm-w01-f1`, `cm-w04-f4` (now 48.6°, drawn to scale), `cm-w18-f2`, `cm-w24-f2` redrawn; `cm-w18-f4` marked not to scale. |
+| S11 | `cm-w33-b1`'s scoring model gives 0 points to the altered equation. |
+| S12 | Sheet directions read "directions and incline angles in degrees, and graph slopes with their units". |
+| N1 | Weekly MC keys are within 20–30% per letter (largest 26%); unit tests vary 2–4 keys per letter. |
+| N2 | Every unit test runs 25 + 45 = 70 minutes, with distinct directions. |
+| N3 | Seven designs replaced: week 10 sheet C (loaded balls sinking in syrup), `cm-u2-fr2` (spring-scale readings on a spinning asteroid), week 23 sheet C (a rotating stage on five hub radii), `cm-u6-fr2` (a brake pad, revolutions against ω₀²), week 30 sheet C (a pendulum on a tilted air table), `cm-pe-fr2` (a crate sliding onto a sled on ice), `cm-pe-fr4` (one and two gliders on the same spring). These, like the originals, were screened from memory only. |
+| N4–N14 | Fixed as proposed, including legibility in about 45 figures, a new figure `cm-w09-f5`, and dependent items made self-contained. `cm-w13-f2`'s alt text is kept; it describes what is drawn. |
+
 AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.

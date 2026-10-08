@@ -7,7 +7,7 @@
   "unitId": "u1",
   "title": "Unit 1 test: Kinematics",
   "author": "cm-1",
-  "directions": "This practice unit test has two sections: 12 multiple-choice questions (25 minutes) and 2 free-response questions (35 minutes). Any calculator is allowed. Use g = 9.8 m/s^2 and SI units, and state your positive direction where it matters. Record raw points with the key; they are a practice tally, not an AP® score.",
+  "directions": "Unit 1 practice test on kinematics, 70 minutes in all. Section I: 12 multiple-choice questions in 25 minutes. Section II: 2 free-response questions in 45 minutes. Any calculator may be used. Take g = 9.8 m/s^2, work in SI units, and say which direction you call positive before you use signs. Total your raw points with the answer key; the total is a practice tally, not an AP® score.",
   "figures": [
     {
       "id": "cm-u1-f1",
@@ -33,7 +33,7 @@
           "id": "A",
           "minutes": 25,
           "calculator": "any",
-          "directions": "Choose the best answer for each question. Use g = 9.8 m/s^2 and neglect air resistance.",
+          "directions": "Pick the one best answer to each question. Neglect air resistance.",
           "items": [
             {
               "id": "cm-u1-mc01",
@@ -79,17 +79,17 @@
               "id": "cm-u1-mc03",
               "prompt": "A cart's position is x(t) = 3.0t^2 − 0.50t^3, with x in meters and t in seconds. What is the cart's acceleration at t = 3.0 s?",
               "choices": [
-                "13.5 m/s^2",
-                "4.5 m/s^2",
                 "−3.0 m/s^2",
-                "6.0 m/s^2"
+                "4.5 m/s^2",
+                "6.0 m/s^2",
+                "13.5 m/s^2"
               ],
-              "key": "C",
+              "key": "A",
               "rationale": "v = dx/dt = 6.0t − 1.5t^2 and a = dv/dt = 6.0 − 3.0t, so a(3.0 s) = 6.0 − 9.0 = −3.0 m/s^2.",
               "distractorNotes": {
-                "A": "13.5 is the position x(3.0 s) in meters, not an acceleration.",
                 "B": "4.5 is the velocity v(3.0 s) in m/s.",
-                "D": "6.0 m/s^2 is the acceleration at t = 0."
+                "C": "6.0 m/s^2 is the acceleration at t = 0.",
+                "D": "13.5 is the position x(3.0 s) in meters, not an acceleration."
               },
               "topics": [
                 "CM.1.2"
@@ -294,9 +294,9 @@
       "parts": [
         {
           "id": "A",
-          "minutes": 35,
+          "minutes": 45,
           "calculator": "any",
-          "directions": "Show your reasoning and include units. Question 2 is a paper investigation with supplied, invented data; such investigations do not replace the hands-on laboratory work that the course framework calls for.",
+          "directions": "Show your reasoning, with units, in every part. Allow about 20 minutes for Question 1 (10 points) and 25 minutes for Question 2 (10 points). Question 2 is a paper investigation with supplied, invented data; such investigations do not replace the hands-on laboratory work the course framework calls for, and they do not count toward the AP Course Audit or college lab credit.",
           "items": [
             {
               "id": "cm-u1-fr1",
@@ -394,7 +394,7 @@
                   "steps": [
                     "v(1.0) = (1.0 − 2.0) i + (6.0 − 1.5) j = −1.0 i + 4.5 j m/s.",
                     "a · v = (1.0)(−1.0) + (−1.5)(4.5) = −7.75; a negative value means the speed is decreasing.",
-                    "Check: speed^2 = (t − 2.0)^2 + (6.0 − 1.5t)^2 has derivative −15.5 at t = 1.0 s, which is negative."
+                    "Check: speed^2 = (t − 2.0)^2 + (6.0 − 1.5t)^2 = 3.25t^2 − 22t + 40, whose derivative 6.5t − 22 is −15.5 m^2/s^3 at t = 1.0 s, which is negative."
                   ]
                 }
               ]
@@ -406,7 +406,7 @@
                 "CM.1.3",
                 "CM.1.2"
               ],
-              "prompt": "Paper investigation with supplied, invented data; it does not replace hands-on laboratory work. A student releases a cart from rest at x = 0 on a long, straight, slightly tilted track. A motion sensor records the cart's position x along the track, with down the track positive.\n| t (s) | 0 | 0.40 | 0.80 | 1.20 | 1.60 | 2.00 |\n| --- | --- | --- | --- | --- | --- | --- |\n| x (m) | 0.000 | 0.052 | 0.196 | 0.445 | 0.792 | 1.230 |",
+              "prompt": "Paper investigation with supplied, invented data; it does not replace hands-on laboratory work, and it does not count toward the AP Course Audit or college lab credit. A student releases a cart from rest at x = 0 on a long, straight, slightly tilted track. A motion sensor records the cart's position x along the track, with down the track positive.\n| t (s) | 0 | 0.40 | 0.80 | 1.20 | 1.60 | 2.00 |\n| --- | --- | --- | --- | --- | --- | --- |\n| x (m) | 0.000 | 0.052 | 0.196 | 0.445 | 0.792 | 1.230 |",
               "figureIds": [
                 "cm-u1-f2"
               ],
