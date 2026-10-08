@@ -171,8 +171,8 @@ test("loading admits figure directories, inlines figures and enforces the course
   assert.equal(course.courseTitle, "Course for AP® Calculus AB");
   assert.equal(course.weeks[0].figures[0].svg, F.figures().get("fx-w01-f1"));
   assert.equal(inspect(options).figures, 7);
-  // The release inventory does not require AP until the registry says so.
-  assert.equal(inspect(options).missing.some(c => c.trackId === "ap"), false);
+  // The release inventory requires every AP course.
+  assert.deepEqual(inspect(options).missing.filter(c => c.trackId === "ap").map(c => c.courseId), ["physics-1", "physics-c-mechanics"]);
   const built = builder.build(options);
   assert.deepEqual(built.courses.map(c => c.file), ["content/weekly/ap/calculus-ab.json"]);
   const json = JSON.parse(fs.readFileSync(path.join(output, built.courses[0].file), "utf8"));

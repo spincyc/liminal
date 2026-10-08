@@ -7,6 +7,7 @@ const vm = require("node:vm");
 const weekly = require("../src/lib/weekly");
 const builder = require("../tools/build-weekly");
 const { loadCurriculum } = require("../tools/build-curriculum");
+const apFixture = require("./fixtures/weekly-ap");
 const curriculum = loadCurriculum();
 const track = curriculum.tracks[0];
 function fixture(trackId = track.track.id, grade = 12) {
@@ -253,7 +254,7 @@ test("named coursework preserves named identity through routing, navigation, pro
   assert.equal(weekly.answerWorksheet(course, 1, "a").courseId, "calculus");
 });
 
-test("complete inventory counts 41 original courses and 44 views without duplicating authored aliases", () => {
+test("complete inventory counts 44 original courses and 47 views without duplicating authored aliases", () => {
   const plans = builder.loadHighSchool(curriculum);
   const scratch = path.resolve(__dirname, "../.scratch/weekly-engine");
   fs.mkdirSync(scratch, { recursive: true });
@@ -266,10 +267,11 @@ test("complete inventory counts 41 original courses and 44 views without duplica
   try {
     for (const trackId of weekly.GRADE_TRACKS) for (let grade = 0; grade <= 12; grade++) write(fixture(trackId, grade));
     for (const id of ["trigonometry", "calculus"]) write(namedFixture(id, plans));
-    const options = { directory, curriculum, highSchool: plans, output };
+    for (const id of weekly.namedCourses("ap")) write(apFixture.fillerCourse(id));
+    const options = { directory, curriculum, highSchool: plans, plans: { ap: builder.normalizeNamedPlan("ap", apFixture.plan(), curriculum) }, output };
     const report = inspect({ ...options, complete: true });
-    assert.equal(report.courses, 41); assert.equal(report.courseViews, 44); assert.equal(report.aliasViews, 3);
-    assert.equal(report.weeks, 41 * 36); assert.equal(report.worksheets, 41 * 36 * 3); assert.deepEqual(report.missing, []);
+    assert.equal(report.courses, 44); assert.equal(report.courseViews, 47); assert.equal(report.aliasViews, 3);
+    assert.equal(report.weeks, 44 * 36); assert.equal(report.worksheets, 44 * 36 * 3); assert.deepEqual(report.missing, []);
     const loaded = builder.loadWeekly(options);
     const source = loaded.physicalCourses.find(c => c.trackId === "common-core-math" && c.grade === 11);
     const alias = loaded.courses.find(c => c.courseId === "algebra-2");
@@ -280,7 +282,7 @@ test("complete inventory counts 41 original courses and 44 views without duplica
     assert.equal(alias.grade, undefined);
     assert.deepEqual(alias.source, { trackId: "common-core-math", grade: 11 });
     const built = builder.build(options);
-    const namedEntries = built.courses.filter(c => c.courseId);
+    const namedEntries = built.courses.filter(c => c.courseId && c.trackId === "high-school-math");
     assert.deepEqual(namedEntries.map(c => c.courseId), weekly.NAMED_COURSES);
     const aliasBuilt = JSON.parse(fs.readFileSync(path.join(output, "content/weekly/high-school-math/algebra-2.json"), "utf8"));
     assert.equal(aliasBuilt.courseTitle, "Algebra 2"); assert.equal(aliasBuilt.grade, undefined);

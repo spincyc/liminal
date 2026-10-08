@@ -36,9 +36,9 @@ three courses, each with `title`, `scopeNote`, `nextStep`, `prerequisites`,
 some unit, and every week's `standards` lie within its unit. Other fields
 (exam facts, blueprints, notes) pass through for the plan page.
 
-The AP track is outside the release inventory (`inventory: false`) until all
-three courses land; then set `inventory: true` so `check-weekly --complete`
-requires them.
+The AP track is in the release inventory (`inventory: true`), so
+`check-weekly --complete` requires all three courses, and the release gate runs
+`check-ap --complete`.
 
 ## Weekly fields used by AP courses
 

@@ -23,8 +23,7 @@
       label: "Courses for AP® exams", planFile: "content/ap.json", planPage: "ap.html",
       planGlobal: "LIMINAL_AP_PLAN", planOutput: "ap-plan", planLabel: "AP",
       context: "Prepares for the AP® exam · flexible placement", notice: AP_DISCLAIMER,
-      // Joins the complete inventory when the three AP courses land.
-      inventory: false,
+      inventory: true,
       courses: ["calculus-ab", "physics-1", "physics-c-mechanics"],
       labels: { "calculus-ab": "Calculus AB", "physics-1": "Physics 1", "physics-c-mechanics": "Physics C: Mechanics" },
       aliases: {},

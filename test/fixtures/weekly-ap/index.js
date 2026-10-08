@@ -104,6 +104,13 @@ function course() {
   return { format: "liminal-weekly-course", version: 1, trackId: "ap", courseId: "calculus-ab", author: "test-fixture", weeks };
 }
 
+// A filler-only course for any AP course ID, for inventory tests.
+function fillerCourse(courseId) {
+  const p = plan().courses.find(c => c.id === courseId);
+  const weeks = Array.from({ length: 36 }, (_, i) => fillerWeek(i + 1, i < 3 ? "u1" : "u2", p.units[i < 3 ? 0 : 1].standards[0]));
+  return { format: "liminal-weekly-course", version: 1, trackId: "ap", courseId, author: "test-fixture", weeks };
+}
+
 // Writes the fixture as a content/weekly tree: ap/calculus-ab.json and its
 // figure files. Returns the directory.
 function writeContent(directory) {
@@ -115,4 +122,4 @@ function writeContent(directory) {
   return directory;
 }
 
-module.exports = { plan, figures, course, writeContent };
+module.exports = { plan, figures, course, fillerCourse, writeContent };
