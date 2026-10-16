@@ -218,7 +218,8 @@ times. Read each value from the gridlines, not from how long a segment
 looks.
 
 > **Example.** A line graph shows a library's visitors, in thousands, each
-> year from 2018 to 2023. The plotted values are:
+> year from 2018 to 2023. Learn shows no images, so here are the plotted
+> values:
 >
 > | Year | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 |
 > | --- | --- | --- | --- | --- | --- | --- |
@@ -234,7 +235,7 @@ looks.
 > count as "more than".
 
 > **Try it.** A line graph shows the members of a running club at the start
-> of each month:
+> of each month. The plotted values are:
 >
 > | Month | Jan | Feb | Mar | Apr | May | Jun |
 > | --- | --- | --- | --- | --- | --- | --- |
@@ -249,6 +250,9 @@ looks.
 > to June.
 >
 > At least 28: 28, 30 and 32, so 3 months. "At least" includes the 28.
+
+On the test the graph itself is shown. Read line graphs from real figures in
+[two-variable data practice](practice.html#practice/sat-math/two-variable-data).
 
 ### Residuals {#residuals}
 
@@ -365,8 +369,9 @@ not k times the one-unit percent.
 > decrease of 1 − 0.81 = 0.19, or 19%. Twice 10% would give 20%.
 
 > **Desmos.** Put the data in a table (columns x₁ and y₁), then type
-> `y_1~mx_1+b`. Desmos reports m, b and r. For an exponential fit, type
-> `y_1~ab^{x_1}`. See [Desmos regressions](learn:sat/general/desmos#regressions).
+> `y1 ~ mx1 + b`; Desmos turns each 1 into a subscript as you type. It
+> reports m, b and r. For an exponential fit, type `y1 ~ ab^x1`. See
+> [Desmos regressions](learn:sat/general/desmos#regressions).
 
 For a harder version of scatterplot questions, see
 [removing an outlier](#removing-an-outlier).
@@ -440,10 +445,13 @@ included, then convert the answer from model units.
 > dollars. Home B has 50% more floor area than home A and a predicted cost
 > 20% higher. What is home A's floor area, in square feet?
 >
-> **First step.** Let A's area be x model units. Then B's is 1.5x, so
-> 4(1.5x) + 30 = 1.2(4x + 30). Now solve and convert.
+> **Hint.** Let A's area be x model units; the 20% applies to B's whole
+> predicted cost.
 >
 > **Answer.** 500 square feet
+>
+> Let A's area be x model units. Then B's is 1.5x, so 4(1.5x) + 30 =
+> 1.2(4x + 30).
 >
 > 6x + 30 = 4.8x + 36, so 1.2x = 6 and x = 5. A has 5 hundred, or 500,
 > square feet.

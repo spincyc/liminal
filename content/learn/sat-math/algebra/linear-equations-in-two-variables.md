@@ -72,19 +72,20 @@ up again and again:
 > $6 a bottle, so 4x + 6y = 48, where x is bags and y is bottles. What does
 > the y-intercept mean, is (6, 4) on the line, and what does the slope mean?
 >
-> **First step.** The x-intercept: set y = 0, so 4x = 48 and x = 12. With no
-> drinks the club can buy 12 bags of snacks. Now finish the other three parts.
+> **First step.** Solve for y: 6y = 48 − 4x, so y = 8 − (2/3)x. Now read
+> the y-intercept and the slope in context, and test the point.
 >
 > **Answer.** (0, 8): with no snacks, 8 bottles. (6, 4) is on the line. The
 > slope is −2/3: 2 fewer bottles for every 3 more bags.
 >
-> y-intercept: set x = 0, so 6y = 48 and y = 8.
+> y-intercept: x = 0 gives y = 8, so with no snacks the club can buy 8
+> bottles.
 >
 > (6, 4): 4(6) + 6(4) = 24 + 24 = 48, so 6 bags and 4 bottles cost exactly
 > $48.
 >
-> Slope: 6y = 48 − 4x, so y = 8 − (2/3)x. Each extra bag means 2/3 of a
-> bottle fewer.
+> Slope: −2/3 in y = 8 − (2/3)x. Each extra bag means 2/3 of a bottle
+> fewer.
 
 > **Trap.** Choosing an interpretation that swaps the variables ("each extra
 > pen costs 3 notebooks"). Write out which letter is which before reading
@@ -389,10 +390,13 @@ list them all for ax + by = c:
 > at $6 each, buying at least one of each. How many combinations of rose and
 > lily counts are possible?
 >
-> **First step.** Let x be roses and y lilies: 4x + 6y = 120. Divide by 2:
-> 2x + 3y = 60. One solution is x = 0, y = 20. Now step from it and count.
+> **Hint.** Write the cost equation, divide out the common factor, and find
+> one whole-number solution to step from.
 >
 > **Answer.** 9
+>
+> Let x be roses and y lilies: 4x + 6y = 120. Divide by 2: 2x + 3y = 60. One
+> solution is x = 0, y = 20.
 >
 > The step is 3 in x and −2 in y: (0, 20), (3, 18), (6, 16), …, (30, 0).
 > Those are x = 0, 3, 6, …, 30, which is 30/3 + 1 = 11 points.

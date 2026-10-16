@@ -14,7 +14,9 @@
 //   - on SAT Math pages, every subskill section holds at least one Try it,
 //     every Example is followed by a Try it before the next Example or the
 //     end of its ## section, and every Try it has a worked solution after
-//     its answer
+//     its answer; under Harder versions ({#hard}) a Try it gives no visible
+//     First step, only a hidden Hint, because there it would do the hard
+//     part
 //   - a "Before you start" section {#before-you-start} holds 2–5 Try it
 //     checks and links to the lessons or coursework that teach them
 //   - every lessons.html#… link names a published expanded lesson, every
@@ -50,6 +52,7 @@ const SKILL_KEYS = ["section", "domain", "skill"];
 const PLAN_FILE = "sat/general/math-plan.md";
 const MATH_SECTION = "sat-math";
 const PREREQUISITES = "before-you-start";
+const HARDER = "hard";
 const PREREQUISITE_CHECKS = { min: 2, max: 5 };
 const ROOT = path.resolve(__dirname, "..");
 const GRADE_KEYS = ["k", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
@@ -178,9 +181,15 @@ function siteLinks(blocks) {
 
 // Faded practice on a SAT Math page: each Example is followed by a Try it
 // before the next Example or the end of its ## section, and every Try it
-// shows a worked solution once it is opened.
+// shows a worked solution once it is opened. Visible First steps are the
+// fading in core sections; under Harder versions the support is a Hint.
 function checkPractice(page, add) {
   Learn.sections(page.blocks).forEach((section) => {
+    if (section.heading.id === HARDER) {
+      Learn.tries(section.blocks).filter((block) => block.first).forEach((block) => {
+        add(page.file, block.line, `a **Try it.** under {#${HARDER}} hides its support: write the **First step.** as a **Hint.**`);
+      });
+    }
     let waiting = null;
     section.blocks.forEach((block) => {
       if (isExample(block)) {

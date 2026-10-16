@@ -364,10 +364,11 @@ invitations.
 > many invitations should a new survey send for an interval of total width
 > at most 5 points, if the planning model predicts a 70% response rate?
 >
-> **First step.** Target margin: 5 ÷ 2 = 2.5 points, half the pilot margin.
-> Now finish.
+> **Hint.** The margin is half the interval's total width.
 >
 > **Answer.** 1,715 invitations
+>
+> Target margin: 5 ÷ 2 = 2.5 points, half the pilot margin.
 >
 > Completed responses needed: 300 × (5/2.5)² = 300 × 4 = 1,200.
 >

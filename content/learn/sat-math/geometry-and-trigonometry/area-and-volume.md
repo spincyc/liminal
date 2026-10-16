@@ -409,11 +409,13 @@ follows without either radius.
 > them has an area of 49π. A chord of the larger circle touches the smaller
 > circle at exactly one point. How long is the chord?
 >
-> **First step.** The smaller circle's radius to the touching point bisects
-> the chord at a right angle, so R² − r² = (half the chord)². Now use the
-> area.
+> **Hint.** The smaller circle's radius to the touching point meets the
+> chord at a right angle, at the chord's midpoint.
 >
 > **Answer.** 14
+>
+> The smaller circle's radius to the touching point bisects the chord at a
+> right angle, so R² − r² = (half the chord)².
 >
 > π(R² − r²) = 49π, so R² − r² = 49, and half the chord is √49 = 7.
 >
@@ -442,11 +444,13 @@ positive.
 > corner of the other, and each sheet is folded into an open box. The boxes
 > have equal volumes. What is the side length, in inches, of each sheet?
 >
-> **First step.** Let s be the side. The volumes are 1 · (s − 2)² and
-> 9 · (s − 18)², so (s − 2)² = 9(s − 18)². Now take square roots and check
-> both answers.
+> **Hint.** Each box's volume is its cut times (s − 2 · cut)². Set the two
+> equal and take square roots.
 >
 > **Answer.** 26
+>
+> Let s be the side. The volumes are 1 · (s − 2)² and 9 · (s − 18)², so (s −
+> 2)² = 9(s − 18)².
 >
 > s − 2 = 3(s − 18) gives 2s = 52, so s = 26.
 >

@@ -239,10 +239,11 @@ start with 100 or divide multipliers; never add or subtract the percents.
 > decreased by 60%. By what percent must the number increase from 2023 to
 > 2024 to return to the 2022 number?
 >
-> **First step.** Start with 100 visitors in 2022. After a 60% decrease,
-> 2023 has 40. Now find the percent increase from 40 back to 100.
+> **Hint.** Start with 100 visitors in 2022.
 >
 > **Answer.** 150%
+>
+> Start with 100 visitors in 2022. After a 60% decrease, 2023 has 40.
 >
 > The increase is 100 − 40 = 60, and 60/40 = 1.5, a 150% increase.
 >
@@ -285,10 +286,11 @@ by the whole's. Or start the whole at 100 and use actual numbers.
 > 25% to 30%. By what percent did the number of employees who work remotely
 > increase?
 >
-> **First step.** Start with 100 employees in 2020: 25% of 100 = 25 work
-> remotely. Now find the 2024 numbers.
+> **Hint.** Start with 100 employees in 2020.
 >
 > **Answer.** 44%
+>
+> Start with 100 employees in 2020: 25% of 100 = 25 work remotely.
 >
 > In 2024: 120 employees, and 30% of 120 = 36 work remotely.
 >

@@ -274,11 +274,14 @@ unstated, but they are real.
 > and 30 loaves meet both conditions? And if all 100 items sell, what is the
 > least number of loaves that works?
 >
-> **First step.** Money: 3(60) + 7(30) = 180 + 210 = 390, and 390 ≥ 430 is
-> false. So no, even though 60 + 30 = 90 ≤ 100. Now find the least number
-> of loaves.
+> **First step.** For the second question, all 100 items sold means
+> m = 100 − b, so the money condition becomes 3(100 − b) + 7b ≥ 430. Now
+> check the first question, then finish the second.
 >
 > **Answer.** No; 33 loaves.
+>
+> Money: 3(60) + 7(30) = 180 + 210 = 390, and 390 ≥ 430 is false. So no,
+> even though 60 + 30 = 90 ≤ 100.
 >
 > All 100 items sold means m = 100 − b. Substitute: 3(100 − b) + 7b ≥ 430,
 > so 300 + 4b ≥ 430 and b ≥ 32.5.
@@ -383,10 +386,12 @@ Solve, then round in the direction the question needs.
 > members who play chess. What is the least number of members it must add
 > so that at least 20% of its members play chess?
 >
-> **First step.** After adding n chess players, 9 + n of the 60 + n members
-> play chess: 9 + n ≥ 0.20(60 + n). Now solve and round.
+> **Hint.** The number added joins both the chess players and the total.
 >
 > **Answer.** 4
+>
+> After adding n chess players, 9 + n of the 60 + n members play chess: 9 +
+> n ≥ 0.20(60 + n).
 >
 > 9 + n ≥ 12 + 0.2n, so 0.8n ≥ 3 and n ≥ 3.75. The least whole number is 4.
 >
@@ -423,10 +428,12 @@ conditions include a point there.
 > **Try it.** The point (a, b) lies in the solution region of y ≤ 3x + 2
 > and y ≥ −x + 14. What is the least possible value of a?
 >
-> **First step.** The boundaries cross where 3x + 2 = −x + 14: 4x = 12, so
-> x = 3 and y = 11. Now decide on which side of x = 3 the region has room.
+> **Hint.** Find where the two boundary lines cross; on one side of that x,
+> the floor is above the ceiling.
 >
 > **Answer.** 3
+>
+> The boundaries cross where 3x + 2 = −x + 14: 4x = 12, so x = 3 and y = 11.
 >
 > For x < 3 the floor −x + 14 is above the ceiling 3x + 2 (at x = 2 they
 > are 12 and 8), so nothing fits.

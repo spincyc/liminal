@@ -159,7 +159,7 @@ long as the corrected value stays on the same side of the middle.
 > value is corrected to one above the median. Then the ordered list shifts
 > one place, and the median moves to the next value (or to the corrected
 > value, if it lands in between). With an even count, the value must stay
-> beyond both middle values for the median to hold.
+> on the same side of both middle values for the median to hold.
 
 ### Combining groups {#combining-groups}
 
@@ -463,23 +463,41 @@ To make one value as large as possible with a fixed mean and median, use
 the total (mean × count) and make every other value as small as the rules
 allow: the values below the median as small as possible, then the median,
 then each value above it no less than the median, or one more than the value
-before if the values must be different.
+before if the values must be different. Read the least allowed value from
+the question: positive integers start at 1, but whole numbers start at 0.
 
 > **Try it.** A data set consists of 5 different positive integers. The
 > mean is 12 and the median is 9. What is the greatest possible value of the
 > largest number?
 >
-> **First step.** The total is 5 × 12 = 60. The median is the 3rd value, 9,
-> and the 1st and 2nd are as small as possible: 1 and 2. Now make the 4th
-> as small as possible and finish.
+> **Hint.** Use the total, 5 × 12, and make every other value as small as
+> the rules allow.
 >
 > **Answer.** 38
+>
+> The total is 5 × 12 = 60. The median is the 3rd value, 9, and the 1st and
+> 2nd are as small as possible: 1 and 2.
 >
 > The 4th value must be greater than 9, so at least 10. Then the largest is
 > 60 − (1 + 2 + 9 + 10) = 38. Check: 1, 2, 9, 10, 38 has mean 60 ÷ 5 = 12
 > and median 9.
 >
 > Ignoring "different" (1, 1, 9, 9) gives 40.
+
+> **Try it.** A data set consists of 7 different whole numbers. The mean is
+> 9 and the median is 5. What is the greatest possible value of the largest
+> number?
+>
+> **Hint.** Whole numbers start at 0.
+>
+> **Answer.** 42
+>
+> The total is 7 × 9 = 63. The median is the 4th value, 5. The three below
+> it are as small as possible: 0, 1 and 2. The two above it, before the
+> largest, are as small as possible while different: 6 and 7.
+>
+> The largest is 63 − (0 + 1 + 2 + 5 + 6 + 7) = 42. Check: 0, 1, 2, 5, 6,
+> 7, 42 has mean 63 ÷ 7 = 9 and median 5. Starting at 1 (1, 2, 3) gives 39.
 
 ### Recover a count before correcting the data {#missing-count-correction}
 
@@ -503,10 +521,12 @@ first. Then put the corrected observation in its new position.
 > is 29 minutes. The time recorded as 40 minutes should be 20 minutes. What
 > is the corrected median?
 >
-> **First step.** The original total is 200 + 30x minutes and the count is
-> 7 + x, so 29(7 + x) = 200 + 30x. Now solve for x and finish.
+> **Hint.** Use the mean to find x first: the total is 29 times the count.
 >
 > **Answer.** 27.5 minutes
+>
+> The original total is 200 + 30x minutes and the count is 7 + x, so 29(7 +
+> x) = 200 + 30x.
 >
 > 203 + 29x = 200 + 30x, so x = 3 and the count is 10.
 >

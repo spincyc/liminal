@@ -105,6 +105,16 @@ test("SAT Math sections practise: a Try it after every Example, each with a work
     "> **Try it.** A minimal fixture problem for circle measures.\n>\n> **Answer.** 1\n"));
   expectError(bare, /circles\.md:16: this \*\*Try it\.\*\* needs a worked solution after its \*\*Answer\.\*\* line/);
 
+  // Under Harder versions, support is a hidden Hint, never a visible First step.
+  const hardFirst = run(edit(goodTree(), CIRCLES, "## Circle equations {#circle-equations}",
+    "## Harder versions {#hard}\n\n> **Try it.** A hard problem.\n>\n> **First step.** The hard part, shown.\n>\n" +
+    "> **Answer.** 1\n>\n> A solution.\n\n## Circle equations {#circle-equations}"));
+  expectError(hardFirst, /circles\.md:\d+: a \*\*Try it\.\*\* under \{#hard\} hides its support: write the \*\*First step\.\*\* as a \*\*Hint\.\*\*/);
+  const hardHint = run(edit(goodTree(), CIRCLES, "## Circle equations {#circle-equations}",
+    "## Harder versions {#hard}\n\n> **Try it.** A hard problem.\n>\n> **Hint.** A nudge, hidden.\n>\n" +
+    "> **Answer.** 1\n>\n> A solution.\n\n## Circle equations {#circle-equations}"));
+  assert.deepEqual(lines(hardHint), []);
+
   // Reading and Writing pages are not held to the Math practice rules.
   const words = "sat-reading-writing/craft-and-structure/words-in-context.md";
   assert.ok(!goodTree().files[words].includes("Try it"));

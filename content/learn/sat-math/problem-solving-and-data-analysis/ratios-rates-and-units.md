@@ -324,11 +324,13 @@ where T is the actual finish.
 > building in 10 days. They work for 4 days. To finish 3 days sooner than
 > planned, more workers join them at that point. How many workers must join?
 >
-> **First step.** The job is 6 × 10 = 60 worker-days, and the first 4 days
-> do 6 × 4 = 24 of it, leaving 36. Now find the days left and the crew
-> needed.
+> **Hint.** Count the job in worker-days and subtract what the first 4 days
+> did.
 >
 > **Answer.** 6
+>
+> The job is 6 × 10 = 60 worker-days, and the first 4 days do 6 × 4 = 24 of
+> it, leaving 36.
 >
 > Finishing 3 days early leaves 10 − 4 − 3 = 3 days, so the crew must be
 > 36 ÷ 3 = 12 workers: 12 − 6 = 6 more.
@@ -358,10 +360,13 @@ volume.
 > cavity has one-third the outer edge length. What is the outer edge length,
 > in centimeters?
 >
-> **First step.** 0.52 kilogram = 520 grams, so the material volume is
-> 520 ÷ 2.5 = 208 cubic centimeters. Now account for the cavity.
+> **Hint.** Convert the mass to grams; mass ÷ density gives only the
+> material's volume.
 >
 > **Answer.** 6 centimeters
+>
+> 0.52 kilogram = 520 grams, so the material volume is 520 ÷ 2.5 = 208 cubic
+> centimeters.
 >
 > The cavity takes up (1/3)³ = 1/27 of the outer volume, so the material is
 > 26/27 of it: (26/27)s³ = 208.

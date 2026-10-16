@@ -357,17 +357,22 @@ When a letter such as a sits in the equation beside x, solve for x as usual:
 the solution is an expression in a. Then write the condition the question
 gives (a value, a multiple of a, or an inequality) and solve it for a.
 
-> **Try it.** In 3(x − 2a) = x + 10, a is a constant. For which values of a
-> is the solution of the equation greater than 11?
+> **Try it.** In 5(x + 3a) = 2x + 12, a is a constant. For which values of a
+> is the solution of the equation greater than −6?
 >
-> **First step.** Distribute and collect: 3x − 6a = x + 10, so 2x = 10 + 6a
-> and x = 3a + 5. Now write the condition.
+> **Hint.** Solve for x first: the solution is an expression in a. Then
+> watch the sign when you solve for a.
 >
-> **Answer.** a > 2
+> **Answer.** a < 2
 >
-> The solution is greater than 11 when 3a + 5 > 11, so 3a > 6 and a > 2.
+> Distribute and collect: 5x + 15a = 2x + 12, so 3x = 12 − 15a and
+> x = 4 − 5a.
 >
-> Check a = 3: x = 14, and 3(14 − 6) = 24 = 14 + 10.
+> The solution is greater than −6 when 4 − 5a > −6, so −5a > −10.
+> Dividing by −5 reverses the inequality: a < 2.
+>
+> Check a = 1: x = −1, and 5(−1 + 3) = 10 = 2(−1) + 12. Forgetting to
+> reverse gives a > 2.
 
 ### A constant in more than one place {#constant-in-several-places}
 
@@ -391,10 +396,12 @@ makes that constant's term zero.
 > **Try it.** In k(4kx − 6) = 9x + 9, k is a constant. The equation has
 > infinitely many solutions. What is the value of k?
 >
-> **First step.** Multiply out: 4k²x − 6k = 9x + 9. Now match the
-> x-coefficients, then test each candidate.
+> **Hint.** Multiply out the left side and match the x-coefficients: that
+> gives two candidates for k.
 >
 > **Answer.** k = −3/2
+>
+> Multiply out: 4k²x − 6k = 9x + 9.
 >
 > The x-coefficients match when 4k² = 9, so k = 3/2 or k = −3/2.
 >

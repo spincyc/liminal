@@ -309,10 +309,13 @@ pair.
 > hiker the angle of elevation to the top of the mast is 60°; from the
 > farther hiker it is 30°. How tall is the mast?
 >
-> **First step.** Let x be the nearer hiker's distance from the base. Nearer:
-> h = √3 x. Farther: h = (x + 40)/√3. Now set them equal and solve.
+> **Hint.** Write the height twice, once from each hiker's triangle, with x
+> the nearer hiker's distance from the base.
 >
 > **Answer.** 20√3 meters, about 34.6 meters
+>
+> Let x be the nearer hiker's distance from the base. Nearer: h = √3 x.
+> Farther: h = (x + 40)/√3.
 >
 > √3 x = (x + 40)/√3. Multiply by √3: 3x = x + 40, so x = 20 and
 > h = 20√3 ≈ 34.6 meters.
@@ -349,11 +352,13 @@ length ratio. A difference between perimeters is neither whole perimeter.
 > and C. Triangle DEF has 4 times the area of triangle ABC and a perimeter
 > 30 units greater. How long is EF?
 >
-> **First step.** tan A = 5/12 gives sides in the ratio 5 : 12 : 13, with
-> BC, the side opposite A, as the 5. Now use the area ratio and the
-> perimeter difference.
+> **Hint.** tan A = 5/12 fixes the side ratio; the area ratio gives the
+> length factor.
 >
 > **Answer.** 10
+>
+> tan A = 5/12 gives sides in the ratio 5 : 12 : 13, with BC, the side
+> opposite A, as the 5.
 >
 > The area ratio gives a length factor of √4 = 2, so DEF's perimeter is 2P
 > and 2P − P = 30: P = 30. The ratio parts sum to 30, so ABC's sides are 5,

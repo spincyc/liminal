@@ -189,7 +189,7 @@ question asks only for their sum or product, you can skip solving.
 For a harder version, a value built from both solutions such as r² + s², see
 [the sum and product of the solutions](#sum-and-product).
 
-## Radical equations {#radical-equations}
+## Radical and rational equations {#radical-equations}
 
 Isolate the root, square both sides, solve, then check every answer in the
 original equation. Squaring can create solutions that don't work, called
@@ -390,10 +390,12 @@ side, then use r + s = −b/a and rs = c/a: r² + s² = (r + s)² − 2rs.
 > **Try it.** The solutions of (x + 3)(x − 2) = 4x + 1 are r and s. What is
 > r² + s²?
 >
-> **First step.** Expand and collect: x² + x − 6 = 4x + 1, so
-> x² − 3x − 7 = 0. Now use the sum and the product.
+> **Hint.** Move every term to one side first; the factors on the left are
+> not the solutions.
 >
 > **Answer.** 23
+>
+> Expand and collect: x² + x − 6 = 4x + 1, so x² − 3x − 7 = 0.
 >
 > r + s = 3 and rs = −7, so r² + s² = (r + s)² − 2rs = 9 + 14 = 23.
 >
@@ -432,10 +434,13 @@ a constant k in the equation, exactly two solutions need both of these:
 > **Try it.** The equation √(2x + k) = x − 1, where k is a constant, has
 > exactly two real solutions. What is the greatest possible value of k?
 >
-> **First step.** Square: 2x + k = x² − 2x + 1, so x² − 4x + 1 − k = 0.
-> Completing the square gives (x − 2)² = 3 + k. Now make both roots work.
+> **Hint.** Square both sides and complete the square; then the smaller root
+> must still make x − 1 ≥ 0.
 >
 > **Answer.** −2
+>
+> Square: 2x + k = x² − 2x + 1, so x² − 4x + 1 − k = 0. Completing the
+> square gives (x − 2)² = 3 + k.
 >
 > Two roots need 3 + k > 0, so k > −3, and the roots are 2 ± √(3 + k).
 >

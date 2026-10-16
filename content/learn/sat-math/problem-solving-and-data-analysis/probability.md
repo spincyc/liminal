@@ -159,11 +159,14 @@ school:
 >
 > Find P(morning given under 40) and P(under 40 given morning).
 >
-> **First step.** For P(morning given under 40), the group is the Under 40
-> row, 80 adults, and 24 of them prefer morning: 24/80 = 0.3. Now find the
-> other one.
+> **First step.** Name each group before you divide: "given under 40"
+> chooses from the Under 40 row, and "given morning" chooses from the
+> Morning column. Now find both.
 >
 > **Answer.** 0.3 and 1/3
+>
+> P(morning given under 40): the group is the Under 40 row, 80 adults, and
+> 24 of them prefer morning: 24/80 = 0.3.
 >
 > P(under 40 given morning): the group is the Morning column, 72 adults, and
 > 24 of them are under 40: 24/72 = 1/3, about 0.33.
@@ -239,10 +242,11 @@ group's total.
 > who plays a sport is chosen at random, what is the probability that the
 > student rides the bus?
 >
-> **First step.** Counts first: 0.30 × 200 = 60 bus riders play a sport.
-> Now count the other students who play, then choose the group.
+> **Hint.** Turn each percent into a count before you choose the group.
 >
 > **Answer.** 2/7
+>
+> Counts first: 0.30 × 200 = 60 bus riders play a sport.
 >
 > 0.50 × 300 = 150 of the other students play, so 60 + 150 = 210 students
 > play a sport.

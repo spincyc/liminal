@@ -363,10 +363,13 @@ constant, and only then find the factor and match the right sides.
 > **Try it.** The system ax + (a + 3)y = 15 and (a − 2)x + ay = b has
 > infinitely many solutions. What is b?
 >
-> **First step.** Proportional coefficients require a · a = (a + 3)(a − 2).
-> Expanding gives a² = a² + a − 6, so a = 6. Now find b.
+> **Hint.** Infinitely many solutions need proportional coefficients: a · a
+> = (a + 3)(a − 2).
 >
 > **Answer.** b = 10
+>
+> Proportional coefficients require a · a = (a + 3)(a − 2). Expanding gives
+> a² = a² + a − 6, so a = 6.
 >
 > The equations are now 6x + 9y = 15 and 4x + 6y = b. The second left side
 > is 2/3 of the first, so b = (2/3)(15) = 10.
@@ -409,11 +412,13 @@ fixed line in a given quadrant:
 > is a constant, intersect at (a, b), where a > 0 and b > 0. What are the
 > possible values of k?
 >
-> **First step.** The fixed line crosses the axes at (3, 0) and (0, 3), so
-> its part with a > 0 and b > 0 is the segment between them, without its
-> ends. Now turn y = kx + 1 about (0, 1) from one end to the other.
+> **Hint.** Find the part of y = −x + 3 inside Quadrant I, then turn y = kx
+> + 1 about (0, 1) to each end of it.
 >
 > **Answer.** k > −1/3
+>
+> The fixed line crosses the axes at (3, 0) and (0, 3), so its part with a >
+> 0 and b > 0 is the segment between them, without its ends.
 >
 > From (0, 1), the line to (3, 0) has slope (0 − 1)/(3 − 0) = −1/3. The
 > other end, (0, 3), is on the y-axis above (0, 1), so the turning line

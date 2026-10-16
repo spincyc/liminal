@@ -316,10 +316,13 @@ angles, 360 divided by each count.
 > Each interior angle of A is 27° greater than each interior angle of B.
 > How many sides does A have?
 >
-> **First step.** If B has n sides, A has n + 3, and A has the smaller
-> exterior angle: 360/n − 360/(n + 3) = 27. Now solve for n.
+> **Hint.** Work with exterior angles, 360 divided by each side count; the
+> polygon with more sides has the smaller one.
 >
 > **Answer.** 8
+>
+> If B has n sides, A has n + 3, and A has the smaller exterior angle:
+> 360/n − 360/(n + 3) = 27.
 >
 > Combine the fractions: 1,080/(n(n + 3)) = 27, so n(n + 3) = 40.
 > Then n² + 3n − 40 = (n − 5)(n + 8) = 0.
@@ -355,11 +358,13 @@ parallel to the third side.
 > the same measure as angle Q. If PS = 8, PT = 4, PQ = 10 and QR = 15, how
 > long is ST?
 >
-> **First step.** Triangles PTS and PQR share angle P, and angle T matches
-> angle Q, so T matches Q and S matches R. Now pair the sides and find the
-> scale factor.
+> **Hint.** Match the triangles by their equal angles, not by where they
+> sit: angle T matches angle Q.
 >
 > **Answer.** 6
+>
+> Triangles PTS and PQR share angle P, and angle T matches angle Q, so T
+> matches Q and S matches R.
 >
 > PT pairs with PQ: the scale factor is 4/10 = 2/5. ST pairs with QR, so
 > ST = (2/5) · 15 = 6.

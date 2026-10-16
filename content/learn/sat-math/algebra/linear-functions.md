@@ -426,10 +426,13 @@ the value you are given.
 > an amount equal to 8% of its purchase price. Four years after it was
 > bought, it is worth $27,200. What was its purchase price?
 >
-> **First step.** With purchase price a, the value after t years is
-> a − 0.08at. After 4 years it is a − 0.32a = 0.68a. Now finish.
+> **Hint.** The yearly drop is 8% of the purchase price, the same amount
+> every year.
 >
 > **Answer.** $40,000
+>
+> With purchase price a, the value after t years is a − 0.08at. After 4
+> years it is a − 0.32a = 0.68a.
 >
 > 0.68a = 27,200, so a = 40,000. Check: the value falls by 3,200 a year,
 > and 40,000 − 4(3,200) = 27,200.
@@ -467,10 +470,13 @@ constants must agree.
 > **Try it.** For a linear function f, f(3x) = 3f(x) − 8 for all x, and
 > f(2) = 10. What is f(5)?
 >
-> **First step.** Write f(x) = mx + b. Left side: f(3x) = 3mx + b. Right
-> side: 3(mx + b) − 8 = 3mx + 3b − 8. Now match the constants.
+> **Hint.** Write f(x) = mx + b and expand both sides; the x-terms already
+> agree.
 >
 > **Answer.** 19
+>
+> Write f(x) = mx + b. Left side: f(3x) = 3mx + b. Right side: 3(mx + b) −
+> 8 = 3mx + 3b − 8.
 >
 > The x-terms already agree, so the constants must: b = 3b − 8, which gives
 > b = 4.

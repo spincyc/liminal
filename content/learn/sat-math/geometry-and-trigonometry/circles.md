@@ -313,10 +313,13 @@ above a chord at its middle puts the center r − h from the chord, so
 > **Try it.** An arch is an arc of a circle. It spans 24 feet at its base
 > and rises 8 feet at its center. What is the radius, in feet?
 >
-> **First step.** Half the chord is 12, and the center is r − 8 below the
-> base: (r − 8)² + 12² = r². Now solve for r.
+> **Hint.** The center is r − 8 below the base, so r − 8, half the chord and
+> r form a right triangle.
 >
 > **Answer.** 13
+>
+> Half the chord is 12, and the center is r − 8 below the base: (r − 8)² +
+> 12² = r².
 >
 > r² − 16r + 64 + 144 = r², so 16r = 208 and r = 13.
 >
@@ -374,10 +377,12 @@ then passes through the point of tangency, not the center.
 > **Try it.** The circle (x − 2)² + (y + 3)² = 25 passes through (5, 1).
 > What is the y-intercept of the line tangent to the circle at (5, 1)?
 >
-> **First step.** Center: (2, −3). Slope of the radius:
-> (1 − (−3))/(5 − 2) = 4/3. Now find the tangent's slope and its equation.
+> **Hint.** The tangent is perpendicular to the radius from the center to
+> (5, 1).
 >
 > **Answer.** 19/4
+>
+> Center: (2, −3). Slope of the radius: (1 − (−3))/(5 − 2) = 4/3.
 >
 > Tangent slope: the negative reciprocal, −3/4.
 >

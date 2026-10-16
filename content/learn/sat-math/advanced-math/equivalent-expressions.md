@@ -91,6 +91,42 @@ product too: (x − 1)² = x² − 2x + 1, not x² + 1.
 > (x + 3)² = x² + 6x + 9. Subtract every term:
 > 3x² − 13x − 10 − x² − 6x − 9 = 2x² − 19x − 19, so b = −19.
 
+When two expressions are equal for every x, their x², x and constant terms
+are equal: expand, match one term at a time, and check with the term you
+didn't use.
+
+> **Example.** For all x, (2x − 3)(x + k) = 2x² + 7x − 15, where k is a
+> constant. What is k?
+>
+> Expand: 2x² + 2kx − 3x − 3k = 2x² + (2k − 3)x − 3k.
+>
+> Match the constants: −3k = −15, so k = 5. Check the x-terms:
+> 2(5) − 3 = 7, which matches.
+
+> **Try it.** For all x, (3x − 2)(x + k) = 3x² + 10x − 8, where k is a
+> constant. What is k?
+>
+> **First step.** Expand: 3x² + 3kx − 2x − 2k = 3x² + (3k − 2)x − 2k. Now
+> match the terms.
+>
+> **Answer.** k = 4
+>
+> Match the constants: −2k = −8, so k = 4. Check the x-terms:
+> 3(4) − 2 = 10, which matches.
+
+> **Try it.** For all x, (2x + a)(bx − 3) = 8x² + 14x − 15, where a and b
+> are constants. What is a + b?
+>
+> **Answer.** 9
+>
+> Expand the left side: 2bx² − 6x + abx − 3a.
+>
+> Match the x² terms: 2b = 8, so b = 4. Match the constants: −3a = −15, so
+> a = 5.
+>
+> Confirm the middle term: ab − 6 = 20 − 6 = 14, which matches. So
+> a + b = 9.
+
 | Pattern | Factored form |
 | --- | --- |
 | Common factor | ax + ay = a(x + y) |
@@ -156,8 +192,8 @@ form the minimum or maximum, and standard form the y-intercept (see
 [nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions#quadratic-functions)).
 Check that the form you pick is really equivalent.
 
-For a harder version of factoring, where unknown constants must make two
-expressions match for every x, see [matching coefficients](#matching-coefficients).
+For a harder version of factoring, where the constants come only as a sum
+and a product, see [matching coefficients](#matching-coefficients).
 
 ## Exponent rules {#exponent-rules}
 
@@ -362,33 +398,9 @@ hidden in the square of a given sum, or a fraction built from fractions.
 
 ### Matching coefficients {#matching-coefficients}
 
-When two expressions are equal for all x, their x², x and constant terms
-are equal. Expand, match one term at a time, and use the term you didn't
-need as a check.
-
-> **Example.** For all x, (ax − 4)(2x + b) = 6x² + x − 12, where a and b are
-> constants. What is a + b?
->
-> Expand the left side: 2ax² + abx − 8x − 4b.
->
-> Match the x² terms: 2a = 6, so a = 3. Match the constants: −4b = −12, so
-> b = 3.
->
-> Confirm the middle term: ab − 8 = 9 − 8 = 1, which matches. So a + b = 6.
-
-> **Try it.** For all x, (2x + a)(bx − 3) = 8x² + 14x − 15, where a and b
-> are constants. What is a + b?
->
-> **First step.** Expand the left side: 2bx² − 6x + abx − 3a. Now match
-> the terms.
->
-> **Answer.** 9
->
-> Match the x² terms: 2b = 8, so b = 4. Match the constants: −3a = −15, so
-> a = 5.
->
-> Confirm the middle term: ab − 6 = 20 − 6 = 14, which matches. So
-> a + b = 9.
+Matching terms (see [factoring](#factoring)) gets harder when the facts
+about the constants are a sum and a product, as in a + b = 5 with ab fixed
+by the x² term: nothing says which constant is which, so try both orders.
 
 > **Example.** For all x, (ax + 2)(bx + 1) = 6x² + kx + 2, where a + b = 5.
 > What are the possible values of k?
@@ -456,10 +468,12 @@ fractions. That clears them in one step; then factor and cancel as usual.
 > **Try it.** Simplify (1/a − 1/b)/(1/a² − 1/b²), where a and b are
 > positive and a ≠ b.
 >
-> **First step.** Multiply the top and the bottom by a²b²:
-> (ab² − a²b)/(b² − a²). Now factor and cancel.
+> **Hint.** Clear every small fraction at once: multiply the top and the
+> bottom by a common denominator of all of them.
 >
 > **Answer.** ab/(a + b)
+>
+> Multiply the top and the bottom by a²b²: (ab² − a²b)/(b² − a²).
 >
 > Factor: ab(b − a) over (b − a)(b + a), a difference of squares.
 >

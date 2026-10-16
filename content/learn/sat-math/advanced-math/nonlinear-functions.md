@@ -453,10 +453,13 @@ and f(p) > 0 and f(q) > 0.
 > **Try it.** For how many integer values of k does f(x) = x² − 4x + k have
 > two distinct zeros, both between −1 and 5?
 >
-> **First step.** Two zeros: 16 − 4k > 0, so k < 4. The vertex is at x = 2,
-> between −1 and 5. Now make both ends positive.
+> **Hint.** Check three things: the discriminant, where the vertex is, and
+> the signs of f(−1) and f(5).
 >
 > **Answer.** 8
+>
+> Two zeros: 16 − 4k > 0, so k < 4. The vertex is at x = 2, between −1 and
+> 5.
 >
 > f(−1) = 1 + 4 + k = k + 5 > 0 and f(5) = 25 − 20 + k = k + 5 > 0, so
 > k > −5.
@@ -474,10 +477,11 @@ inputs 2 apart, the ratio is b².
 > **Try it.** The function f(x) = a · bˣ + c, where a, b and c are constants
 > and b > 0, has f(0) = 1, f(1) = 7 and f(2) = 31. What are a, b and c?
 >
-> **First step.** The differences are 7 − 1 = 6 and 31 − 7 = 24. Now use
-> their ratio.
+> **Hint.** Subtract consecutive outputs: the constant c cancels.
 >
 > **Answer.** a = 2, b = 4, c = −1
+>
+> The differences are 7 − 1 = 6 and 31 − 7 = 24.
 >
 > The ratio of the differences is b = 24/6 = 4.
 >
@@ -518,10 +522,12 @@ then apply the outside operations to the old output.
 > **Try it.** A graph of f has a maximum at (4, 2) and passes through
 > (0, −6). For g(x) = 3f(2(x + 1)) − 1, where do those points move?
 >
-> **First step.** For the maximum's input, solve 2(x + 1) = 4, giving
-> x = 1. Now find its output, then move the second point.
+> **Hint.** For each point, solve 2(x + 1) = (the old input) for the new
+> input, then apply the outside operations to the old output.
 >
 > **Answer.** The maximum moves to (1, 5); (0, −6) moves to (−1, −19).
+>
+> For the maximum's input, solve 2(x + 1) = 4, giving x = 1.
 >
 > The output becomes 3(2) − 1 = 5. Multiplying by a positive 3 keeps
 > output order, so (1, 5) is still a maximum.
@@ -551,10 +557,12 @@ the vertex.
 > | --- | --- | --- | --- | --- |
 > | f(x) | 2 | 0 | 0 | 2 |
 >
-> **First step.** Equal outputs at x = 2 and x = 3 put the axis at
-> x = 5/2. Now find a from the differences.
+> **Hint.** Equal outputs put the axis of symmetry halfway between their
+> inputs.
 >
 > **Answer.** −9/4
+>
+> Equal outputs at x = 2 and x = 3 put the axis at x = 5/2.
 >
 > The differences are −2, 0 and 2, so 2a = 2 and a = 1. Then
 > f(x) = (x − 5/2)² + k, and f(2) = 1/4 + k = 0 gives k = −1/4.

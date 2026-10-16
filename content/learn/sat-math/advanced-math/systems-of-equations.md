@@ -288,10 +288,12 @@ solution, above 0 for two, or below 0 for none.
 > **Try it.** For what positive value of m does the line y = mx + 1 meet the
 > parabola y = x² + 2x + 10 at exactly one point?
 >
-> **First step.** Substitute: x² + 2x + 10 = mx + 1, so
-> x² + (2 − m)x + 9 = 0. Now set the discriminant to 0.
+> **Hint.** Set the two expressions equal, collect one quadratic, and use
+> its discriminant.
 >
 > **Answer.** m = 8
+>
+> Substitute: x² + 2x + 10 = mx + 1, so x² + (2 − m)x + 9 = 0.
 >
 > (2 − m)² − 4(1)(9) = 0, so (2 − m)² = 36 and 2 − m = 6 or 2 − m = −6.
 > That gives m = −4 or m = 8; the positive value is 8.
@@ -347,10 +349,13 @@ a tangent line, D > 0 for two points, D < 0 for none.
 > **Try it.** For which values of c does the line y = x + c meet the circle
 > (x + 2)² + y² = 18 at exactly one point?
 >
-> **First step.** Substitute: (x + 2)² + (x + c)² = 18, which collects to
-> 2x² + (2c + 4)x + (c² − 14) = 0. Now set the discriminant to 0.
+> **Hint.** Substitute y = x + c into the circle, collect one quadratic in
+> x, and use its discriminant.
 >
 > **Answer.** c = 8 or c = −4
+>
+> Substitute: (x + 2)² + (x + c)² = 18, which collects to 2x² + (2c + 4)x +
+> (c² − 14) = 0.
 >
 > (2c + 4)² − 4(2)(c² − 14) = 0. Expand: 4c² + 16c + 16 − 8c² + 112 = 0,
 > so −4c² + 16c + 128 = 0, and dividing by −4, c² − 4c − 32 = 0.
