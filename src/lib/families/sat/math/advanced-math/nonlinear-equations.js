@@ -325,7 +325,7 @@
         explanation: `${explanation} So q ${MINUS} p = ${ratio(s2)} ${MINUS} (${ratio(s1)}) = ${num(gap)}.`,
         steps: [...baseSteps, `q ${MINUS} p = ${ratio(s2)} ${MINUS} (${ratio(s1)}) = ${num(gap)}.`],
         principles,
-        trap: `|${inside}| = ${R} is found on the way, but ${R} is neither solution nor their difference; skipping the isolation step gives ${num(tidy(slipHi - slipLo))}.`,
+        trap: `|${inside}| = ${R} is found on the way, but ${R} is neither solution nor their difference; skipping the isolation step gives ${ratio(slipHi - slipLo)}.`,
         hint,
         verify: () => holds(s1) && holds(s2) && approx((2 * R) / a, gap),
       };
@@ -929,7 +929,8 @@
     const slip = (A.q + A.n) / (A.p + A.m);
     const slipOk = Number.isInteger(slip) && slip !== A.x1 && A.m * slip + A.n > 0;
     const slipWhy = (total) => `Solves the second case as ${lin(A.p, -A.q)} = ${lin(-A.m, A.n)}, changing the sign of only the ` +
-      `x-term on the right; that gives x = ${num(slip)}, which passes the check, and a sum of ${num(total)}.`;
+      `x-term on the right; that gives x = ${num(slip)}, which makes ${lin(A.m, A.n)} positive and so passes the sign check, ` +
+      `and a sum of ${num(total)}.`;
     let wrong;
     if (valid.length === 1) {
       const bad = A.ok1 ? A.x2 : A.x1;
@@ -1340,8 +1341,8 @@
         if (q === p || p + q === 0) return null;
         equation = `(${lin(1, p)})(${lin(1, q)}) = x(${lin(1, p + q)}) ${signed(p * q)}`;
         steps = [
-          `Expand the left side: x² ${signed(p + q)}x ${signed(p * q)}.`,
-          `Expand the right side: x² ${signed(p + q)}x ${signed(p * q)}.`,
+          `Expand the left side: ${poly([1, p + q, p * q])}.`,
+          `Expand the right side: ${poly([1, p + q, p * q])}.`,
           "The two sides are the same expression, so every real number x is a solution.",
         ];
         reasons = {
@@ -1355,7 +1356,7 @@
         const r = shape === "cancel-none" ? p * p + t.nonzero(-9, 9) : t.int(-12, 12);
         equation = `(${lin(1, p)})² = ${poly([1, q, r])}`;
         steps = [
-          `Expand the left side: x² ${signed(2 * p)}x + ${p * p}.`,
+          `Expand the left side: ${poly([1, 2 * p, p * p])}.`,
           `Subtract x² from both sides: ${lin(2 * p, p * p)} = ${lin(q, r)}.`,
           shape === "cancel-none"
             ? `The x-terms cancel too, leaving ${p * p} = ${num(r)}, which is false, so the equation has no solution.`
@@ -1562,7 +1563,9 @@
       steps = [
         `Multiply both sides by (${lin(1, p)})(${lin(1, q)}): ${a}(${lin(1, q)}) = ${b}(${lin(1, p)}).`,
         `Distribute: ${lin(a, a * q)} = ${lin(b, b * p)}.`,
-        `Collect terms: ${lin(a - b, 0)} = ${num(b * p - a * q)}, so x = ${num(key)}.`,
+        a - b === 1
+          ? `Collect terms: x = ${num(key)}.`
+          : `Collect terms: ${lin(a - b, 0)} = ${num(b * p - a * q)}, so x = ${num(key)}.`,
       ];
     } else if (form === "ratio") {
       const k = t.int(2, 6);
@@ -1635,7 +1638,7 @@
           [-product, `Gives the product of the solutions, ${num(-product)}, instead of their sum.`],
         ]
         : [
-          [w, `Solves x² ${signed(-b)}x ${MINUS} ${product} = 0 after a sign slip in the x-term, which gives ${w} as the positive solution.`],
+          [w, `Solves ${poly([1, -b, -product])} = 0 after a sign slip in the x-term, which gives ${w} as the positive solution.`],
           [product, `Stops at x(${lin(1, b)}) = ${product}, giving the product ${a} · ${c} instead of x.`],
           [u + w, "Takes the distance between the two solutions instead of the positive solution."],
           [(a * b) / (c - a), `Cross-multiplies the wrong pairs, solving ${a}(${lin(1, b)}) = ${c}x.`],
