@@ -1444,7 +1444,7 @@
       rel: "≤", money: false, xs: "boxes of books", ys: "boxes of tiles", x1: "box of books", y1: "box of tiles",
       make: (t) => ({ a: t.int(25, 45), b: t.int(50, 80), F: t.int(150, 230), L: 50 * t.int(24, 50) }),
       text: (v) =>
-        `A freight elevator can carry at most ${commas(v.L)} pounds. A worker who weighs ${v.F} pounds is loading the ` +
+        `A freight elevator can carry at most ${commas(v.L)} pounds. A worker who weighs ${v.F} pounds will ride in the ` +
         `elevator with boxes of books that weigh ${v.a} pounds each and boxes of tiles that weigh ${v.b} pounds each.`,
       fixed: "the worker's weight", total: "the total weight, in pounds, in the elevator",
     },
@@ -1567,7 +1567,8 @@
           const stemAsk = scene.xs === "minutes of jogging" ? ask
             : max ? `If ${y0} ${scene.ys} are included, what is the greatest number of ${scene.xs} possible?`
               : `If the club sells ${y0} ${scene.ys}, what is the least number of ${scene.xs} it must sell?`;
-          const boundaryText = frac(room, a);
+          // The bound as a quotient and a decimal, not an improper fraction.
+          const boundaryText = room % a === 0 ? num(room / a) : `${commas(room)} ÷ ${a} ≈ ${num(round2(room / a))}`;
           return commaChoices({
             ...common,
             responseType: numeric ? "numeric" : "multiple-choice",
@@ -1892,7 +1893,7 @@
   // B as A". Each condition offers [relation, sentence] pairs.
   const systemScenes = [
     {
-      A: "adult tickets", B: "student tickets", valueName: "ticket-sales",
+      A: "adult tickets", B: "student tickets", valueName: "ticket-sales", counted: "tickets",
       rates: (t) => [t.int(11, 16), t.int(5, 9)],
       lead: (a, b) => `A community theater sells adult tickets for ${usd(a)} each and student tickets for ${usd(b)} each for one show.`,
       count: [["≤", (N) => `The theater has ${N} seats, so it can sell at most ${N} tickets.`]],
@@ -1905,7 +1906,7 @@
       swap: "Pairs each ticket price with the other kind of ticket.",
     },
     {
-      A: "acres of corn", B: "acres of wheat", valueName: "spending",
+      A: "acres of corn", B: "acres of wheat", valueName: "spending", counted: "acres",
       rates: (t) => [10 * t.int(11, 16), 10 * t.int(6, 9)],
       lead: (a, b) => `A farmer will plant corn and wheat. Seed and fertilizer cost ${usd(a)} per acre for corn and ${usd(b)} per acre for wheat.`,
       count: [["≤", (N) => `The farmer has at most ${N} acres available for the two crops.`]],
@@ -1915,7 +1916,7 @@
       swap: "Pairs each crop's cost per acre with the other crop.",
     },
     {
-      A: "basketballs", B: "soccer balls", valueName: "spending",
+      A: "basketballs", B: "soccer balls", valueName: "spending", counted: "balls",
       rates: (t) => [t.int(24, 35), t.int(14, 21)],
       lead: (a, b) => `A coach is buying basketballs that cost ${usd(a)} each and soccer balls that cost ${usd(b)} each.`,
       count: [
@@ -1928,7 +1929,7 @@
       swap: "Pairs each ball's price with the other kind of ball.",
     },
     {
-      A: "hours at the library", B: "hours online", valueName: "earnings",
+      A: "hours at the library", B: "hours online", valueName: "earnings", counted: "hours",
       rates: (t) => [t.int(14, 19), t.int(22, 30)],
       lead: (a, b) => `A tutor earns ${usd(a)} per hour tutoring at the library and ${usd(b)} per hour tutoring online.`,
       count: [
@@ -1941,7 +1942,7 @@
       swap: "Pairs each hourly rate with the other kind of tutoring.",
     },
     {
-      A: "crates of tile", B: "crates of grout", valueName: "weight",
+      A: "crates of tile", B: "crates of grout", valueName: "weight", counted: "crates",
       rates: (t) => [t.int(45, 60), t.int(20, 35)],
       lead: (a, b) => `A truck is being loaded with crates of tile that weigh ${a} pounds each and crates of grout that weigh ${b} pounds each.`,
       count: [["≤", (N) => `The truck can hold at most ${N} crates.`]],
@@ -2044,7 +2045,7 @@
         const valueSentence = `the total is ${total(a, b)}, with each rate on its own variable, and it must be ${word(valueRel, valueText(L))} ${commas(L)}: ${valuePart(valueRel, false)}.`;
         const steps = form === "count"
           ? [
-            `Translate the count: the number of items is x + y, and it must be ${word(countRel, countText(N))} ${N}: ${countPart(countRel)}.`,
+            `Translate the count: the number of ${scene.counted} is x + y, and it must be ${word(countRel, countText(N))} ${N}: ${countPart(countRel)}.`,
             `Translate the ${scene.valueName} condition: ${valueSentence}`,
             `So the system is ${key}.`,
           ]
@@ -2157,14 +2158,17 @@
       "part + n compared with the percent of (whole + n), solve, and round the way the condition requires.",
     // Hard: the structure (the unknown is in the part and in the base of the
     // percent) must be seen first; the intuitive answer takes the percent of
-    // the current total and is offered.
+    // the current total and is offered, and the bound must be rounded the way
+    // the condition requires. (2026-10-16 pass 3: the "which inequality
+    // represents this situation" form was one translation step, official
+    // Medium, and was dropped; every draw now solves and rounds, asking for
+    // the least number to add or the greatest number that may be added.)
     rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
     tricks: ["percent-base", "rounding-direction", "intermediate-value"],
     build(t) {
-      const ask = t.chance(0.7) ? "value" : "inequality";
       const scene = t.pick(shareScenes);
       const [word, rel] = t.pick(SHARE_WORDS[scene.mode]);
-      const numericWanted = ask === "value" && t.chance(0.4);
+      const numericWanted = t.chance(0.4);
       for (;;) {
         const P = t.pick([25, 30, 35, 40, 45, 60]);
         const p = P / 100;
@@ -2183,50 +2187,34 @@
           : (isInt ? Math.round(B) - (strict ? 1 : 0) : Math.floor(B));
         const pText = num(p);
         const keyIneq = `${X0} + n ${rel} ${pText}(${N0} + n)`;
-        let correct;
-        let wrong;
-        if (ask === "value") {
-          if (isInt) continue; // a whole-number bound leaves no rounding decision
-          const roundRight = least ? Math.ceil : Math.floor;
-          const roundWrong = least ? Math.floor : Math.ceil;
-          const modelled = [
-            [roundRight(C0), `Takes ${P}% of the current ${N0} ${scene.whole}, forgetting that each added ${scene.one} also enlarges the group.`],
-            [roundWrong(B), `Solves the inequality correctly but rounds ${least ? "down" : "up"}; n must be ${word} ${num(Math.round(B * 100) / 100)}, so the answer rounds ${least ? "up" : "down"}.`],
-            [roundWrong(C0), `Takes ${P}% of the current ${N0} ${scene.whole}, and also rounds the wrong way.`],
-            [key + N0, `Gives the size of the whole group afterward, not the number added.`],
-            [roundRight(C0 / p), `Divides by ${pText} instead of by 1 ${MINUS} ${pText} when solving.`],
-          ].filter(([value]) => value > 0);
-          if (collides(key, modelled) || distinctWrong(key, modelled) < 3) continue;
-          correct = key;
-          // The percent-of-current-total answer is always offered.
-          const rest = modelled.slice(1).filter(([value]) => value !== modelled[0][0]);
-          if (modelled[0][0] === key || distinctWrong(key, rest) < 2) continue;
-          wrong = [modelled[0], ...spreadAround(t, key, rest, 2)];
-        } else {
-          const flip = { "≥": "≤", ">": "<", "≤": "≥", "<": ">" }[rel];
-          correct = keyIneq;
-          wrong = [
-            [`${X0} + n ${rel} ${pText}(${N0})`, `Takes ${P}% of the current ${N0} ${scene.whole}, forgetting that the added ${scene.part} are part of the new total.`],
-            [`${X0} + n ${flip} ${pText}(${N0} + n)`, `Reverses the inequality: "${word}" means ${rel}.`],
-            [`${X0} + n ${flip} ${pText}(${N0})`, `Takes ${P}% of the current total, and reverses the inequality.`],
-          ];
-        }
+        if (isInt) continue; // a whole-number bound leaves no rounding decision
+        const roundRight = least ? Math.ceil : Math.floor;
+        const roundWrong = least ? Math.floor : Math.ceil;
+        const modelled = [
+          [roundRight(C0), `Takes ${P}% of the current ${N0} ${scene.whole}, forgetting that each added ${scene.one} also enlarges the group.`],
+          [roundWrong(B), `Solves the inequality correctly but rounds ${least ? "down" : "up"}; n must be ${word} ${num(Math.round(B * 100) / 100)}, so the answer rounds ${least ? "up" : "down"}.`],
+          [roundWrong(C0), `Takes ${P}% of the current ${N0} ${scene.whole}, and also rounds the wrong way.`],
+          [key + N0, `Gives the size of the whole group afterward, not the number added.`],
+          [roundRight(C0 / p), `Divides by ${pText} instead of by 1 ${MINUS} ${pText} when solving.`],
+        ].filter(([value]) => value > 0);
+        if (collides(key, modelled) || distinctWrong(key, modelled) < 3) continue;
+        const correct = key;
+        // The percent-of-current-total answer is always offered.
+        const rest = modelled.slice(1).filter(([value]) => value !== modelled[0][0]);
+        if (modelled[0][0] === key || distinctWrong(key, rest) < 2) continue;
+        const wrong = [modelled[0], ...spreadAround(t, key, rest, 2)];
         const numeric = numericWanted && fitsGridHard(key);
         const steps = [
           `After n ${scene.part} are added, there are ${X0} + n ${scene.part} out of ${N0} + n ${scene.whole}.`,
           `The condition is ${keyIneq}.`,
           `Expand and collect: ${X0} + n ${rel} ${num(p * N0)} + ${pText}n, so ${num(1 - p)}n ${rel} ${num(Math.round(C0 * 1000) / 1000)}, and n ${rel} ${isInt ? num(B) : `${num(Math.round(C0 * 1000) / 1000)}/${num(1 - p)} ≈ ${num(Math.round(B * 100) / 100)}`}.`,
+          `n must be a whole number, so the ${least ? "least" : "greatest"} value is ${key}.`,
         ];
-        if (ask === "value") {
-          steps.push(`n must be a whole number, so the ${least ? "least" : "greatest"} value is ${key}.`);
-        }
         return {
           responseType: numeric ? "numeric" : "multiple-choice",
           estimatedSeconds: 120,
           stimulus: null,
-          stem: `${scene.text(N0, X0, P, word)} ${ask === "value"
-            ? scene.ask
-            : `Which inequality represents this situation, where n is ${scene.variable}?`}`,
+          stem: `${scene.text(N0, X0, P, word)} ${scene.ask}`,
           correct,
           wrong: numeric ? [] : wrong,
           explanation: steps.join(" "),
@@ -2248,14 +2236,7 @@
             if (!ok.length) return false;
             const answer = least ? ok[0] : ok[ok.length - 1];
             if (!least && ok[0] !== 0) return false;
-            if (ask === "value") return answer === key && wrong.every(([value]) => value !== key);
-            // An inequality is compared over real n (eighths), not only whole numbers.
-            const shows = (text, n) => holds(text, { n });
-            const agrees = (text) => {
-              for (let j = 0; j <= 3200; j += 1) if (shows(text, j / 8) !== meets(j / 8)) return false;
-              return true;
-            };
-            return answer === key && agrees(correct) && wrong.every(([text]) => !agrees(text));
+            return answer === key && wrong.every(([value]) => value !== key);
           },
         };
       }

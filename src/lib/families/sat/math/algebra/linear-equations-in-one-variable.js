@@ -1560,8 +1560,10 @@
   // p(x + qa) = rx + s, built from the solution it should have: x = ua + w,
   // with k = p − r the x-coefficient once the x-terms are collected. Returns
   // the displayed equation and its pieces, or null when the numbers do not fit.
-  function parameterEquation(t, u, w) {
-    const k = t.chance(0.6) ? t.pick([-4, -3, -2]) : t.pick([2, 3, 4]);
+  // `negativeK` forces k < 0, so the equation is divided by a negative number
+  // on the way to x even when the inequality needs no reversal.
+  function parameterEquation(t, u, w, negativeK = false) {
+    const k = negativeK || t.chance(0.6) ? t.pick([-4, -3, -2]) : t.pick([2, 3, 4]);
     const product = -u * k; // p·q
     const ps = [2, 3, 4, 5, 6, 7, 8, 9].filter((p) => product % p === 0 && p - k >= 2 && p - k <= 12 &&
       Math.abs(product / p) <= 9 && Math.abs(product / p) >= 1);
@@ -1602,125 +1604,96 @@
     rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
     tricks: ["sign-error", "wrong-quantity", "intermediate-value"],
     build(t) {
-      const form = t.chance(0.55) ? "condition" : "value";
+      // Every draw has a sign decision to get right: the inequality must be
+      // reversed (u < 0, 60%), or it must not be although the equation was
+      // divided by a negative number on the way to x (u > 0 with k < 0).
+      // (2026-10-16 pass 3: the "solution is k times a / d more than a" form
+      // was two linear steps, official Medium, and was dropped.)
+      const ask = t.chance(0.4) ? "integer" : "set";
       for (;;) {
-        // A negative u (the inequality must be reversed) in 60% of draws; a
-        // negative x-coefficient k, which tempts a reversal that is not
-        // needed, in 60%.
-        const u = (form === "condition" && t.chance(0.6) ? -1 : form === "condition" ? 1 : t.sign()) * t.int(2, 5);
-        if (form === "condition") {
-          const w = t.nonzero(-9, 9);
-          const made = parameterEquation(t, u, w);
-          if (!made) continue;
-          const B = t.nonzero(-6, 6);
-          const c = u * B + w;
-          if (Math.abs(c) > 30) continue;
-          const relation = t.pick([">", "<"]);
-          const keyRelation = u > 0 ? relation : flipRelation(relation);
-          const condition = c === 0
-            ? (relation === ">" ? "positive" : "negative")
-            : `${SIGN_WORD[relation]} ${num(c)}`;
-          const choice = (rel, bound) => `a ${rel} ${num(bound)}`;
-          const key = choice(keyRelation, B);
-          const directionReason = u < 0
-            ? `Divides both sides of ${lin(u, 0, "a")} ${relation} ${num(c - w)} by ${num(u)}, a negative number, without reversing the inequality symbol.`
-            : made.k < 0
-              ? `Reverses the inequality symbol because the equation was divided by ${num(made.k)}; dividing an equation by a negative number reverses nothing, and the final division is by ${u}, a positive number.`
-              : `Reverses the inequality symbol, which is needed only when both sides are divided by a negative number; here the division is by ${u}.`;
-          const slip = `Moves the a-term across the equals sign without changing its sign, so it gets x = ${lin(-u, w, "a")} instead of x = ${lin(u, w, "a")}`;
-          const wrong = [
-            [choice(flipRelation(keyRelation), B), directionReason],
-            [choice(flipRelation(keyRelation), -B), `${slip}, then solves that correctly.`],
-            [choice(keyRelation, -B), `${slip}, and then also reverses the direction of the inequality when solving it.`],
-          ];
-          const steps = [
-            `Distribute: ${made.distributed} = ${made.right}.`,
-            `Collect the x-terms: ${lin(made.k, 0)} = ${num(made.s)} ${made.p * made.q < 0 ? "+" : MINUS} ${lin(Math.abs(made.p * made.q), 0, "a")}, so x = ${lin(u, w, "a")}.`,
-            `The condition is ${lin(u, w, "a")} ${relation} ${num(c)}, so ${lin(u, 0, "a")} ${relation} ${num(c - w)}.`,
-            `Divide by ${num(u)}${u < 0 ? ", reversing the inequality because the divisor is negative" : ""}: ${key}.`,
-          ];
-          const inSet = (rel, bound) => (a) => (rel === ">" ? a > bound : a < bound);
-          return {
-            responseType: "multiple-choice",
-            estimatedSeconds: 120,
-            stimulus: { type: "equations", content: made.equation },
-            stem: `In the given equation, a is a constant. Which of the following describes all values of a for which the solution to the equation is ${condition}?`,
-            correct: key,
-            wrong,
-            explanation: `${steps.slice(0, 2).join(" ")} The solution is ${condition} exactly when ${lin(u, w, "a")} ${relation} ${num(c)}, which gives ${key}.`,
-            steps,
-            principles: [
-              "When a constant appears in an equation, the solution is an expression in that constant; a condition on the solution becomes a condition on the constant.",
-              "Multiplying or dividing both sides of an inequality by a negative number reverses the inequality.",
-            ],
-            trap: "There are two divisions by a coefficient, and only the one applied to the inequality can reverse it; the sign of the a-term must also survive the move across the equals sign.",
-            hint: "Find the solution x in terms of a first.",
-            verify: () => {
-              // Scan a over quarters, solve the displayed equation at each, and
-              // compare the condition with every choice's set.
-              const meets = (a) => {
-                const x = solutionAt(made.equation, a);
-                return relation === ">" ? x > c + 1e-9 : x < c - 1e-9;
-              };
-              const grid = [];
-              for (let j = -160; j <= 160; j += 1) grid.push(j / 4);
-              const sets = [[keyRelation, B], [flipRelation(keyRelation), B], [flipRelation(keyRelation), -B], [keyRelation, -B]];
-              const agree = sets.map(([rel, bound]) => grid.every((a) => meets(a) === inSet(rel, bound)(a)));
-              return agree[0] && !agree[1] && !agree[2] && !agree[3];
-            },
-          };
-        }
-
-        // The solution equals λa + d: find a.
-        const lambda = t.pick([1, 1, 2, 3]);
-        if (lambda === u) continue;
-        const a0 = t.nonzero(-9, 9);
-        const d = lambda === 1 ? t.nonzero(-9, 9) : 0;
-        const w = (lambda - u) * a0 + d;
-        if (w === 0 || Math.abs(w) > 12) continue;
-        const made = parameterEquation(t, u, w);
+        const u = (t.chance(0.6) ? -1 : 1) * t.int(2, 5);
+        const w = t.nonzero(-9, 9);
+        const made = parameterEquation(t, u, w, u > 0);
         if (!made) continue;
-        const x0 = lambda * a0 + d;
-        const relationText = lambda === 1
-          ? `${Math.abs(d)} ${d > 0 ? "more" : "less"} than a`
-          : `${lambda === 2 ? "twice" : "three times"} a`;
-        const target = lambda === 1 ? `a ${d > 0 ? "+" : MINUS} ${Math.abs(d)}` : `${lambda}a`;
-        const numeric = t.chance(0.65);
-        const modelled = [
-          [x0, `Gives the solution x, which is ${relationText}, instead of the value of a.`],
-          [(w - d) / (lambda + u), `Moves the a-term across the equals sign without changing its sign, so it uses x = ${lin(-u, w, "a")}.`],
-          [(d + w) / (u - lambda), `Moves the constant term across the equals sign without changing its sign, so it uses x = ${lin(u, -w, "a")}.`],
-          [(d - made.k * w) / (made.k * u - lambda), `Stops before dividing by ${num(made.k)}, the coefficient of x, so it uses x = ${lin(made.k * u, made.k * w, "a")}.`],
-        ].filter(([value]) => Number.isInteger(value));
-        if (!numeric && (collides(a0, modelled) || distinctWrong(a0, modelled) < 3)) continue;
-        const wrong = numeric ? [] : spreadAround(t, a0, modelled);
+        const B = t.nonzero(-6, 6);
+        const c = u * B + w;
+        if (Math.abs(c) > 30) continue;
+        const relation = t.pick([">", "<"]);
+        const keyRelation = u > 0 ? relation : flipRelation(relation);
+        const condition = c === 0
+          ? (relation === ">" ? "positive" : "negative")
+          : `${SIGN_WORD[relation]} ${num(c)}`;
+        const choice = (rel, bound) => `a ${rel} ${num(bound)}`;
+        const keySet = choice(keyRelation, B);
+        const directionReason = u < 0
+          ? `Divides both sides of ${lin(u, 0, "a")} ${relation} ${num(c - w)} by ${num(u)}, a negative number, without reversing the inequality symbol.`
+          : `Reverses the inequality symbol because the equation was divided by ${num(made.k)}; dividing an equation by a negative number reverses nothing, and the final division is by ${u}, a positive number.`;
+        const slip = `Moves the a-term across the equals sign without changing its sign, so it gets x = ${lin(-u, w, "a")} instead of x = ${lin(u, w, "a")}`;
         const steps = [
           `Distribute: ${made.distributed} = ${made.right}.`,
           `Collect the x-terms: ${lin(made.k, 0)} = ${num(made.s)} ${made.p * made.q < 0 ? "+" : MINUS} ${lin(Math.abs(made.p * made.q), 0, "a")}, so x = ${lin(u, w, "a")}.`,
-          `The solution is ${relationText}: ${lin(u, w, "a")} = ${target}.`,
-          u - lambda === 1
-            ? `Solve for a: a = ${num(a0)}.`
-            : `Solve for a: ${lin(u - lambda, 0, "a")} = ${num(d - w)}, so a = ${num(a0)}.`,
+          `The condition is ${lin(u, w, "a")} ${relation} ${num(c)}, so ${lin(u, 0, "a")} ${relation} ${num(c - w)}.`,
+          `Divide by ${num(u)}${u < 0 ? ", reversing the inequality because the divisor is negative" : ""}: ${keySet}.`,
         ];
+        // The solution meets the condition at a, read from the displayed equation.
+        const meets = (a) => {
+          const x = solutionAt(made.equation, a);
+          return relation === ">" ? x > c + 1e-9 : x < c - 1e-9;
+        };
+        const principles = [
+          "When a constant appears in an equation, the solution is an expression in that constant; a condition on the solution becomes a condition on the constant.",
+          "Multiplying or dividing both sides of an inequality by a negative number reverses the inequality.",
+        ];
+        if (ask === "integer") {
+          const greatest = keyRelation === "<";
+          const key = greatest ? B - 1 : B + 1;
+          return {
+            responseType: "numeric",
+            estimatedSeconds: 120,
+            stimulus: { type: "equations", content: made.equation },
+            stem: `In the given equation, a is a constant. What is the ${greatest ? "greatest" : "least"} integer value of a for which the solution to the equation is ${condition}?`,
+            correct: key,
+            explanation:
+              `${steps.slice(0, 2).join(" ")} The solution is ${condition} exactly when ${lin(u, w, "a")} ${relation} ${num(c)}, which gives ` +
+              `${keySet}. The ${greatest ? "greatest" : "least"} integer ${greatest ? "less" : "greater"} than ${num(B)} is ${num(key)}.`,
+            steps: [...steps, `The ${greatest ? "greatest" : "least"} integer with ${keySet} is ${num(key)}; ${num(B)} itself makes the solution equal ${num(c)}.`],
+            principles,
+            trap: `Reversing the inequality at the wrong division points the answer the wrong way, and a = ${num(B)} itself is excluded, since there the solution equals ${num(c)}.`,
+            hint: "Find the solution x in terms of a first.",
+            verify: () => {
+              // Scan integers: the key meets the condition, and nothing beyond it does.
+              const beyond = [];
+              for (let j = 1; j <= 60; j += 1) beyond.push(greatest ? key + j : key - j);
+              return meets(key) && beyond.every((a) => !meets(a));
+            },
+          };
+        }
+        const wrong = [
+          [choice(flipRelation(keyRelation), B), directionReason],
+          [choice(flipRelation(keyRelation), -B), `${slip}, then solves that correctly.`],
+          [choice(keyRelation, -B), `${slip}, and then also reverses the direction of the inequality when solving it.`],
+        ];
+        const inSet = (rel, bound) => (a) => (rel === ">" ? a > bound : a < bound);
         return {
-          responseType: numeric ? "numeric" : "multiple-choice",
-          estimatedSeconds: 115,
+          responseType: "multiple-choice",
+          estimatedSeconds: 120,
           stimulus: { type: "equations", content: made.equation },
-          stem: `In the given equation, a is a constant. If the solution to the equation is ${relationText}, what is the value of a?`,
-          correct: a0,
+          stem: `In the given equation, a is a constant. Which of the following describes all values of a for which the solution to the equation is ${condition}?`,
+          correct: keySet,
           wrong,
-          explanation: `${steps.slice(0, 2).join(" ")} Setting ${lin(u, w, "a")} = ${target} gives a = ${num(a0)}; the solution is then x = ${num(x0)}.`,
+          explanation: `${steps.slice(0, 2).join(" ")} The solution is ${condition} exactly when ${lin(u, w, "a")} ${relation} ${num(c)}, which gives ${keySet}.`,
           steps,
-          principles: [
-            "When a constant appears in an equation, the solution is an expression in that constant.",
-            "A statement about the solution is an equation in the constant; solve it as a separate step.",
-          ],
-          trap: `The solution x = ${num(x0)} comes out along the way, but the question asks for a.`,
+          principles,
+          trap: "There are two divisions by a coefficient, and only the one applied to the inequality can reverse it; the sign of the a-term must also survive the move across the equals sign.",
           hint: "Find the solution x in terms of a first.",
           verify: () => {
-            const x = solutionAt(made.equation, a0);
-            const fits = (a) => approx(solutionAt(made.equation, a), lambda * a + d);
-            return approx(x, x0) && fits(a0) && wrong.every(([value]) => !fits(value));
+            // Scan a over quarters, solve the displayed equation at each, and
+            // compare the condition with every choice's set.
+            const grid = [];
+            for (let j = -160; j <= 160; j += 1) grid.push(j / 4);
+            const sets = [[keyRelation, B], [flipRelation(keyRelation), B], [flipRelation(keyRelation), -B], [keyRelation, -B]];
+            const agree = sets.map(([rel, bound]) => grid.every((a) => meets(a) === inSet(rel, bound)(a)));
+            return agree[0] && !agree[1] && !agree[2] && !agree[3];
           },
         };
       }

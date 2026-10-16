@@ -698,9 +698,10 @@
       const isNumeric = numeric && isClean(value, 3) && fitsGrid(value);
       const legsLine = `${AC} and ${BC} are the legs and ${AB} is the hypotenuse.`;
       const missingName = given === "sin" ? AC : given === "cos" ? BC : AB;
+      // In terms of the common factor k throughout.
       const pythagoras = given === "tan"
-        ? `${AB} = √(${p}² + ${q}²) = ${h}k`
-        : `${missingName} = √(${h}² ${MINUS} ${given === "sin" ? p : q}²) = ${missing}k`;
+        ? `${AB} = √((${p}k)² + (${q}k)²) = ${h}k`
+        : `${missingName} = √((${h}k)² ${MINUS} (${given === "sin" ? p : q}k)²) = ${missing}k`;
       return {
         responseType: isNumeric ? "numeric" : "multiple-choice",
         correct: isNumeric ? tidy(value) : keyText,
@@ -801,7 +802,7 @@
           "A trigonometric ratio fixes the shape of a right triangle; one side length then fixes its size.",
           "The third side comes from the Pythagorean theorem, not from adding or subtracting the other two.",
         ],
-        trap: "Adding or subtracting sides instead of using the Pythagorean theorem, or answering with the other unknown side, gives an offered choice.",
+        trap: "Adding or subtracting sides instead of using the Pythagorean theorem, or answering with the other unknown side, gives a wrong length.",
         hint: `Write each side as a multiple of the same number k.`,
         estimatedSeconds: 85,
         verify: () => {
@@ -1291,7 +1292,7 @@
             "In a right triangle, sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse, and tan θ = opposite/adjacent.",
             "When the unknown is in the denominator of the ratio, divide the known side by the ratio.",
           ],
-          trap: `Using the wrong ratio, or multiplying where the unknown sits in the denominator, gives one of the other choices; so does a calculator left in radian mode.`,
+          trap: `Using the wrong ratio, or multiplying where the unknown sits in the denominator, gives a wrong length; so does a calculator left in radian mode.`,
           hint: `Relative to the ${angle}° angle, which two sides are involved?`,
           verify: () => {
             // Find the triangle by bisection on the angle measured with angleAt, then measure the asked side.
