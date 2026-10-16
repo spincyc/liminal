@@ -48,8 +48,11 @@
 //                  [text](#<anchor>), [text](https://<allowed host>/…),
 //                  [text](lessons.html#<track>/<grade>/<lesson>) for an
 //                  expanded lesson, [text](weeks.html#<track>/<grade or
-//                  course>/<week>) for a week of coursework, {{fact:<id>}},
-//                  and backslash escapes of punctuation
+//                  course>/<week>) for a week of coursework,
+//                  [text](practice.html#practice/<section>/<skill>) for a
+//                  skill's practice and [text](practice.html#desmos/<section>)
+//                  for the Desmos drill, {{fact:<id>}}, and backslash
+//                  escapes of punctuation
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
@@ -62,9 +65,10 @@
   // The parts of a Try it, in the order they must come.
   const TRY_PARTS = ["First step", "Hint", "Answer"];
   // Pages on the rest of the site a Learn page may link to by route: the
-  // expanded lessons and the weekly coursework. Their routes are checked
-  // against the lesson and weekly catalogs by tools/check-learn.js.
-  const SITE_PAGES = ["lessons", "weeks"];
+  // expanded lessons, the weekly coursework and practice. Each has its
+  // route shape here; tools/check-learn.js checks every route against the
+  // lesson and weekly catalogs, the section catalog and the Desmos routes.
+  const SITE_PAGES = ["lessons", "weeks", "practice"];
   const ALLOWED_HOSTS = [
     "satsuite.collegeboard.org",
     "collegeboard.org",
@@ -82,7 +86,16 @@
   const SAME_PAGE_TARGET = new RegExp(`^#(${SEGMENT})$`);
   // lessons.html#common-core-math/8/2-3 or weeks.html#common-core-math/8/31:
   // a track, a grade or course, and a lesson id or week, nothing else.
-  const SITE_ROUTE = new RegExp(`^${SEGMENT}/${SEGMENT}/${SEGMENT}$`);
+  // practice.html#practice/sat-math/linear-functions (a skill's practice)
+  // or practice.html#desmos/sat-math (the Desmos drill).
+  const SITE_ROUTES = {
+    lessons: { pattern: new RegExp(`^${SEGMENT}/${SEGMENT}/${SEGMENT}$`), shape: "lessons.html#<track>/<grade>/<lesson>" },
+    weeks: { pattern: new RegExp(`^${SEGMENT}/${SEGMENT}/${SEGMENT}$`), shape: "weeks.html#<track>/<grade or course>/<week>" },
+    practice: {
+      pattern: new RegExp(`^(?:practice/${SEGMENT}/${SEGMENT}|desmos/${SEGMENT})$`),
+      shape: "practice.html#practice/<section>/<skill> or practice.html#desmos/<section>",
+    },
+  };
   const SITE_TARGET = new RegExp(`^(${SITE_PAGES.join("|")})\\.html#(.*)$`);
 
   const HEADING = /^(#{1,6})(?:[ \t]+(.*?))?[ \t]*$/;
@@ -104,6 +117,8 @@
   const PUNCTUATION = /^[!-/:-@[-`{-~]$/;
 
   const hasOwn = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
+  const isSiteRoute = (site, route) => hasOwn(SITE_ROUTES, site) && typeof route === "string" &&
+    SITE_ROUTES[site].pattern.test(route);
   const calloutKind = (label) => label.toLowerCase().replace(/\s+/g, "-");
 
   /* ------------------------------------------------------------- inline */
@@ -152,10 +167,8 @@
     if (local) return { page: pageId, anchor: local[1] };
     const site = SITE_TARGET.exec(target);
     if (site) {
-      if (SITE_ROUTE.test(site[2])) return { site: site[1], route: site[2] };
-      return {
-        error: `link "${target}" must be ${site[1]}.html#<track>/<${site[1] === "lessons" ? "grade" : "grade or course"}>/<${site[1] === "lessons" ? "lesson" : "week"}>`,
-      };
+      if (isSiteRoute(site[1], site[2])) return { site: site[1], route: site[2] };
+      return { error: `link "${target}" must be ${SITE_ROUTES[site[1]].shape}` };
     }
     if (/^https?:/i.test(target)) {
       if (isAllowedUrl(target)) return { url: target };
@@ -165,7 +178,7 @@
     }
     return {
       error: `link target "${target}" must be learn:<page-id>, learn:<page-id>#<anchor>, #<anchor>, ` +
-        "lessons.html#<route>, weeks.html#<route>, or an https URL",
+        "lessons.html#<route>, weeks.html#<route>, practice.html#<route>, or an https URL",
     };
   }
 
@@ -976,9 +989,7 @@
   function linkHref(node) {
     if (node.url !== undefined) return isAllowedUrl(node.url) ? node.url : null;
     if (node.site !== undefined) {
-      return SITE_PAGES.includes(node.site) && typeof node.route === "string" && SITE_ROUTE.test(node.route)
-        ? `${node.site}.html#${node.route}`
-        : null;
+      return isSiteRoute(node.site, node.route) ? `${node.site}.html#${node.route}` : null;
     }
     if (typeof node.page === "string" && PAGE_ID.test(node.page) &&
       (!node.anchor || ANCHOR.test(node.anchor))) {

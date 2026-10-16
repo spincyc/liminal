@@ -201,6 +201,8 @@ A student-produced response here might ask for "one possible value"; any value
 in the range earns credit, so pick a simple one and check it. Entry rules are
 in [Format and scoring](learn:sat/general/format-and-scoring#student-produced-responses).
 
+For a harder version, see [a percent of a growing total](#percent-of-a-growing-total).
+
 ## Systems of inequalities {#systems-of-inequalities}
 
 A system of inequalities is a set of conditions that must all be true at
@@ -285,15 +287,111 @@ unstated, but they are real.
 > 201 + 231 = 432, which meets the goal; 32 loaves give 3(68) + 7(32) = 428,
 > which does not.
 
-For harder versions, see
-[the greatest or least value over a region](#region-corner) and
-[reading the side and the boundary](#boundary-and-side).
+Some questions give the context and ask which system represents it. Write
+one inequality per condition, pairing each rate with its own quantity, and
+read "at least k times as many A as B" as A ≥ kB.
+
+> **Example.** A florist makes small bouquets with 3 roses each and large
+> bouquets with 5 roses each. She has at most 120 roses and wants at least
+> twice as many small bouquets as large ones. Which system represents this,
+> where s is the number of small bouquets and b the number of large ones?
+>
+> Roses: 3 for each small bouquet and 5 for each large one, and "at most"
+> means ≤: 3s + 5b ≤ 120.
+>
+> The number of small bouquets is at least 2 times the number of large
+> ones: s ≥ 2b.
+>
+> The system is 3s + 5b ≤ 120 and s ≥ 2b. The traps pair 3 with b, write
+> b ≥ 2s, or use < for "at most".
+
+> **Try it.** A school sells T-shirts for $12 and hoodies for $30. It wants
+> to collect at least $1,500 and to sell at least three times as many
+> T-shirts as hoodies. Which system represents this, where x is the number
+> of hoodies sold and y is the number of T-shirts sold?
+>
+> - A) 12x + 30y ≥ 1,500 and y ≥ 3x
+> - B) 30x + 12y ≥ 1,500 and y ≥ 3x
+> - C) 30x + 12y ≥ 1,500 and x ≥ 3y
+> - D) 30x + 12y > 1,500 and y ≥ 3x
+>
+> **Answer.** B
+>
+> x counts hoodies at $30 and y counts T-shirts at $12, so the money is
+> 30x + 12y, and "at least" includes $1,500 exactly: 30x + 12y ≥ 1,500.
+>
+> At least three times as many T-shirts as hoodies: y ≥ 3x. A pairs each
+> price with the wrong item, C reverses the comparison, and D leaves out a
+> total of exactly $1,500.
+
+### Reading the side and the boundary {#boundary-and-side}
+
+When the region comes as a shaded graph, read each boundary's equation from
+two grid points, note whether it is solid (≤ or ≥) or dashed (< or >) and
+which side is shaded, and then test points algebraically. Points asked about
+often lie off the drawn grid, where the picture can't settle it.
+
+> **Example.** A graph has a dashed boundary through (0, 4) and (2, 0),
+> shaded on the side containing (0, 0). What inequality does it represent,
+> and is (−3, 10) a solution?
+>
+> The boundary slope is (0 − 4)/(2 − 0) = −2, so its equation is
+> y = −2x + 4. At (0, 0), 0 < 4, so the shaded side is below the line.
+> The dashed boundary gives y < −2x + 4.
+>
+> At (−3, 10), the boundary value is −2(−3) + 4 = 10. The point is on
+> the boundary, not below it, so it is excluded even if it lies off the
+> drawn grid.
+
+> **Try it.** A graph has a solid boundary through (0, −2) and (3, 4),
+> shaded on the side containing (0, 0). What inequality does it represent,
+> and is (−10, −21) a solution?
+>
+> **First step.** The boundary slope is (4 − (−2))/(3 − 0) = 2, so its
+> equation is y = 2x − 2. Now decide the side and the sign, then test the
+> point.
+>
+> **Answer.** y ≥ 2x − 2; yes, (−10, −21) is a solution.
+>
+> At (0, 0), 0 > −2, so the shaded side is above the line. The solid
+> boundary gives y ≥ 2x − 2.
+>
+> At (−10, −21), the boundary value is 2(−10) − 2 = −22, and −21 ≥ −22 is
+> true. The point is just above the boundary, so it is a solution.
+
+> **Trap.** Using (0, 0) as a test point when the boundary passes through
+> it. A boundary point cannot tell you which side to shade. Choose a point
+> away from the line. For a vertical boundary x = c, test left versus right
+> directly; there is no above/below rule in y.
+
+For a harder version, see
+[the greatest or least value over a region](#region-corner).
 
 ## Harder versions {#hard}
 
-The harder questions hide what is being asked: the greatest or least
-coordinate over a region, or whether a point off a shaded graph's grid is a
-solution.
+The harder questions hide what is being asked: how many must be added to
+reach a percent of a growing total, or the greatest or least coordinate over
+a region.
+
+### A percent of a growing total {#percent-of-a-growing-total}
+
+When the items you add belong to the group whose percent is asked, the
+unknown is in both the part and the whole: part + n ≥ P% of (total + n).
+Solve, then round in the direction the question needs.
+
+> **Try it.** A club has 60 members, 9 of whom play chess. It will add only
+> members who play chess. What is the least number of members it must add
+> so that at least 20% of its members play chess?
+>
+> **First step.** After adding n chess players, 9 + n of the 60 + n members
+> play chess: 9 + n ≥ 0.20(60 + n). Now solve and round.
+>
+> **Answer.** 4
+>
+> 9 + n ≥ 12 + 0.2n, so 0.8n ≥ 3 and n ≥ 3.75. The least whole number is 4.
+>
+> Check: 13 of 64 members is about 20.3%, but 12 of 63 is about 19.0%.
+> Taking 20% of the current 60 members gives n ≥ 3, the trap answer.
 
 ### The greatest or least value over a region {#region-corner}
 
@@ -335,43 +433,3 @@ conditions include a point there.
 >
 > Both boundaries are included (≤ and ≥), so the corner (3, 11) is in the
 > region, and the least a is 3.
-
-### Reading the side and the boundary {#boundary-and-side}
-
-When the region comes as a shaded graph, read each boundary's equation from
-two grid points, note whether it is solid (≤ or ≥) or dashed (< or >) and
-which side is shaded, and then test points algebraically. Points asked about
-often lie off the drawn grid, where the picture can't settle it.
-
-> **Example.** A graph has a dashed boundary through (0, 4) and (2, 0),
-> shaded on the side containing (0, 0). What inequality does it represent,
-> and is (−3, 10) a solution?
->
-> The boundary slope is (0 − 4)/(2 − 0) = −2, so its equation is
-> y = −2x + 4. At (0, 0), 0 < 4, so the shaded side is below the line.
-> The dashed boundary gives y < −2x + 4.
->
-> At (−3, 10), the boundary value is −2(−3) + 4 = 10. The point is on
-> the boundary, not below it, so it is excluded even if it lies off the
-> drawn grid.
-
-> **Try it.** A graph has a solid boundary through (0, −2) and (3, 4),
-> shaded on the side containing (0, 0). What inequality does it represent,
-> and is (−10, −21) a solution?
->
-> **First step.** The boundary slope is (4 − (−2))/(3 − 0) = 2, so its
-> equation is y = 2x − 2. Now decide the side and the sign, then test the
-> point.
->
-> **Answer.** y ≥ 2x − 2; yes, (−10, −21) is a solution.
->
-> At (0, 0), 0 > −2, so the shaded side is above the line. The solid
-> boundary gives y ≥ 2x − 2.
->
-> At (−10, −21), the boundary value is 2(−10) − 2 = −22, and −21 ≥ −22 is
-> true. The point is just above the boundary, so it is a solution.
-
-> **Trap.** Using (0, 0) as a test point when the boundary passes through
-> it. A boundary point cannot tell you which side to shade. Choose a point
-> away from the line. For a vertical boundary x = c, test left versus right
-> directly; there is no above/below rule in y.

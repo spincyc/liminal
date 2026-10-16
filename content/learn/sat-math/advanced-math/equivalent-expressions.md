@@ -58,6 +58,39 @@ Expanding and factoring are the same skill run in opposite directions.
 Expand by multiplying every term by every term; factor by recognizing a
 pattern.
 
+To add or subtract polynomials, combine like terms. A minus sign in front of
+parentheses changes the sign of every term inside.
+
+> **Try it.** Which expression is equivalent to
+> (4x² − 3x + 7) − (x² − 5x − 2)?
+>
+> **Answer.** 3x² + 2x + 9
+>
+> The minus sign changes every sign: 4x² − 3x + 7 − x² + 5x + 2. Combine
+> like terms: 3x² + 2x + 9. Changing only the first sign gives 3x² − 8x + 5.
+
+To multiply, multiply every term by every term, then combine. A square is a
+product too: (x − 1)² = x² − 2x + 1, not x² + 1.
+
+> **Example.** Which expression is equivalent to (2x − 3)(x + 4) − (x − 1)²?
+>
+> Multiply: (2x − 3)(x + 4) = 2x² + 8x − 3x − 12 = 2x² + 5x − 12.
+>
+> Square: (x − 1)² = x² − 2x + 1.
+>
+> Subtract every term: 2x² + 5x − 12 − x² + 2x − 1 = x² + 7x − 13.
+
+> **Try it.** The expression (3x + 2)(x − 5) − (x + 3)² is equivalent to
+> ax² + bx + c, where a, b and c are constants. What is the value of b?
+>
+> **First step.** Multiply: (3x + 2)(x − 5) = 3x² − 15x + 2x − 10 =
+> 3x² − 13x − 10. Now expand the square and subtract.
+>
+> **Answer.** −19
+>
+> (x + 3)² = x² + 6x + 9. Subtract every term:
+> 3x² − 13x − 10 − x² − 6x − 9 = 2x² − 19x − 19, so b = −19.
+
 | Pattern | Factored form |
 | --- | --- |
 | Common factor | ax + ay = a(x + y) |
@@ -207,9 +240,34 @@ each exponent, and then compare exponents.
 > be compared only when each side is a single power of the base. It also
 > fails when no common base exists, as in 2^x = 5; then use Desmos.
 
-For a harder version of exponent rules, finding a value through a
-combination you are given, see
-[a value through a known combination](#known-combination).
+### A value through a known combination {#known-combination}
+
+Some questions give an equation you can't solve for x and y separately, such
+as 2x − y = 3, and ask for the value of a power such as 81^x/9^y. Don't try
+to find x and y. Rewrite every base as a power of one number; the exponent
+turns out to be a multiple of the given combination:
+81^x/9^y = 3^(4x)/3^(2y) = 3^(4x − 2y).
+
+> **Example.** If 2x − y = 3, what is the value of 81^x/9^y?
+>
+> 81^x/9^y = 3^(4x − 2y) = 3^(2(2x − y)) = 3^(2 · 3) = 3⁶ = 729.
+>
+> Check with a pair that fits, x = 2 and y = 1: 81²/9 = 6,561/9 = 729.
+
+> **Trap.** Using the given value as the exponent. 4x − 2y is 2 times
+> 2x − y, so the exponent is 2 · 3 = 6, not 3.
+
+> **Try it.** If 3x + 2y = 2, what is the value of 64^x · 16^y?
+>
+> **Answer.** 16
+>
+> 64 = 2⁶ and 16 = 2⁴, so 64^x · 16^y = 2^(6x + 4y) = 2^(2(3x + 2y)) =
+> 2^(2 · 2) = 2⁴ = 16.
+>
+> Check with a pair that fits, x = 0 and y = 1: 64⁰ · 16¹ = 16.
+
+For a harder version of exponent rules, a value hidden in the square of a
+given sum, see [a square that contains the given sum](#square-of-a-sum).
 
 ## Rational expressions {#rational-expressions}
 
@@ -300,8 +358,7 @@ fractions, see [fractions inside fractions](#complex-fractions).
 
 The hardest questions in this skill ask you to see structure before doing
 algebra: constants that make two expressions match for every x, a value
-reached through a combination you are given, or a fraction built from
-fractions.
+hidden in the square of a given sum, or a fraction built from fractions.
 
 ### Matching coefficients {#matching-coefficients}
 
@@ -353,29 +410,11 @@ need as a check.
 > Two numbers with sum 7 and product 10 are 2 and 5, in either order.
 > a = 2, b = 5 gives k = 2 + 15 = 17; a = 5, b = 2 gives k = 5 + 6 = 11.
 
-### A value through a known combination {#known-combination}
+### A square that contains the given sum {#square-of-a-sum}
 
-Some questions give an equation you can't solve for x and y separately and
-ask for the value of another expression. Don't try to find x and y. Rewrite
-the target in terms of what is given.
-
-- A quotient or product of powers becomes one power of a common base, and its exponent turns out to be a multiple of the given combination. For example, 81^x/9^y = 3^(4x)/3^(2y) = 3^(4x − 2y).
-- A square contains the given sum and product: (x + y)² = x² + y² + 2xy, and (x − 1/x)² = x² − 2 + 1/x².
-
-> **Example.** If 2x − y = 3, what is the value of 81^x/9^y?
->
-> 81^x/9^y = 3^(4x − 2y) = 3^(2(2x − y)) = 3^(2 · 3) = 3⁶ = 729.
->
-> Check with a pair that fits, x = 2 and y = 1: 81²/9 = 6,561/9 = 729.
-
-> **Try it.** If 3x + 2y = 2, what is the value of 64^x · 16^y?
->
-> **Answer.** 16
->
-> 64 = 2⁶ and 16 = 2⁴, so 64^x · 16^y = 2^(6x + 4y) = 2^(2(3x + 2y)) =
-> 2^(2 · 2) = 2⁴ = 16.
->
-> Check with a pair that fits, x = 0 and y = 1: 64⁰ · 16¹ = 16.
+When the given equation is a sum or difference such as x + 1/x = 5, square
+it: the square holds the asked expression plus a middle term.
+(x + y)² = x² + y² + 2xy, and (x − 1/x)² = x² − 2 + 1/x².
 
 > **Example.** If x + 1/x = 5, what is x² + 1/x²?
 >
@@ -385,8 +424,7 @@ the target in terms of what is given.
 > x² + 1/x² = 23.
 
 > **Trap.** Squaring term by term. (x + 1/x)² is not x² + 1/x²; the middle
-> term 2 is why the answer is 23 and not 25. Likewise, the exponent in the
-> first example is 2 times the given 3, not 3.
+> term 2 is why the answer is 23 and not 25.
 
 > **Try it.** If x − 1/x = 3, what is x² + 1/x²?
 >

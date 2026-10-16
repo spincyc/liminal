@@ -89,8 +89,43 @@ generalize reliably even to its own population.
 > **Trap.** The choice that generalizes too far ("most teenagers", "students
 > nationwide"). The population is set by where the random sample came from.
 
-For a harder version, see
-[samples from groups of different sizes](#separate-samples).
+### Samples from groups of different sizes {#separate-samples}
+
+When each of two groups is sampled separately, each sample describes only
+its own group. Estimate each group from its own sample, then add. Pooling
+the samples into one fraction works only when both groups were sampled at
+the same rate.
+
+> **Example.** A town has 2,000 households north of its river and 500 south
+> of it. A random sample of 50 northern households has 10 with a garden; a
+> random sample of 50 southern households has 30. Estimate the number of
+> households in the town with a garden.
+>
+> North: 10/50 of 2,000 = 400. South: 30/50 of 500 = 300.
+>
+> Estimate: 400 + 300 = 700 households.
+>
+> Pooling gives 40/100 of 2,500 = 1,000, far too many: the south, sampled at
+> 1 in 10, would count as much as the north, sampled at 1 in 40.
+
+> **Try it.** A college has 3,000 undergraduates and 600 graduate students.
+> A random sample of 60 undergraduates has 15 who bike to campus; a random
+> sample of 40 graduate students has 18 who do. Estimate the number of
+> students at the college who bike to campus.
+>
+> **First step.** Undergraduates: 15/60 of 3,000 = 750. Now finish.
+>
+> **Answer.** 1,020 students
+>
+> Graduate students: 18/40 of 600 = 270. Estimate: 750 + 270 = 1,020.
+>
+> Pooling gives 33/100 of 3,600 = 1,188, too many: the graduate students,
+> sampled at 1 in 15, would count as much as the undergraduates, sampled at
+> 1 in 50.
+
+> **Fails when.** Pooling is right only when the groups were sampled at the
+> same rate (the same fraction of each group). Check the rates before
+> combining.
 
 ## Margin of error {#margin-of-error}
 
@@ -304,46 +339,8 @@ For a harder version, see
 
 ## Harder versions {#hard}
 
-The hardest questions in this skill combine steps: separate samples, a
-survey planned backward from a target, or both halves of a design.
-
-### Samples from groups of different sizes {#separate-samples}
-
-When each of two groups is sampled separately, each sample describes only
-its own group. Estimate each group from its own sample, then add. Pooling
-the samples into one fraction works only when both groups were sampled at
-the same rate.
-
-> **Example.** A town has 2,000 households north of its river and 500 south
-> of it. A random sample of 50 northern households has 10 with a garden; a
-> random sample of 50 southern households has 30. Estimate the number of
-> households in the town with a garden.
->
-> North: 10/50 of 2,000 = 400. South: 30/50 of 500 = 300.
->
-> Estimate: 400 + 300 = 700 households.
->
-> Pooling gives 40/100 of 2,500 = 1,000, far too many: the south, sampled at
-> 1 in 10, would count as much as the north, sampled at 1 in 40.
-
-> **Try it.** A college has 3,000 undergraduates and 600 graduate students.
-> A random sample of 60 undergraduates has 15 who bike to campus; a random
-> sample of 40 graduate students has 18 who do. Estimate the number of
-> students at the college who bike to campus.
->
-> **First step.** Undergraduates: 15/60 of 3,000 = 750. Now finish.
->
-> **Answer.** 1,020 students
->
-> Graduate students: 18/40 of 600 = 270. Estimate: 750 + 270 = 1,020.
->
-> Pooling gives 33/100 of 3,600 = 1,188, too many: the graduate students,
-> sampled at 1 in 15, would count as much as the undergraduates, sampled at
-> 1 in 50.
-
-> **Fails when.** Pooling is right only when the groups were sampled at the
-> same rate (the same fraction of each group). Check the rates before
-> combining.
+The hardest questions in this skill combine steps: a survey planned
+backward from a target, or both halves of a design.
 
 ### Planning a survey {#planning-a-survey}
 

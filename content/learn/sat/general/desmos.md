@@ -198,8 +198,8 @@ specific value. Skip it when the question is about meaning or form.
 
 About twenty minutes a day for a week. Each day starts with a few minutes of
 one tool at [desmos.com/calculator](https://www.desmos.com/calculator), then
-one set of Liminal's Desmos drill: open `practice.html#desmos/sat-math` on
-this site. The drill draws only SAT Math question types that have a Desmos
+one set of Liminal's [Desmos drill](practice.html#desmos/sat-math). The
+drill draws only SAT Math question types that have a Desmos
 route and gives feedback after each question. Keep Desmos open beside the
 question with the Calculator button.
 

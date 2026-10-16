@@ -125,7 +125,87 @@ equation and keep the one that works.
 > decimals and substitution is slower than solving. Backsolving is a check,
 > not a habit.
 
-For a harder version, see [two quantities that change at once](#two-quantities).
+### Two quantities that change at once {#two-quantities}
+
+When one quantity starts late, write both in the same time
+variable, count the late one's change from t minus the delay, and write the
+comparison the right way round.
+
+> **Example.** At 8:00 a.m. a warehouse holds 900 boxes and ships 15 boxes a
+> minute. A second warehouse holds 100 boxes, and starting at 8:10 a.m. it
+> receives 20 boxes a minute. How many minutes after 8:00 does the first
+> warehouse hold twice as many boxes as the second?
+>
+> First warehouse after t minutes: 900 − 15t. Second, for t ≥ 10:
+> 100 + 20(t − 10).
+>
+> "The first is twice the second": 900 − 15t = 2(100 + 20(t − 10)) =
+> 40t − 200. So 1,100 = 55t and t = 20.
+>
+> Check: at t = 20 the first holds 600 and the second 100 + 20(10) = 300.
+
+> **Try it.** At 6:00 p.m., parking garage A holds 400 cars, and cars leave
+> it at a steady 6 cars a minute. Garage B holds 50 cars; starting at
+> 6:10 p.m., cars arrive at it at 3 cars a minute. How many minutes after
+> 6:00 p.m. does garage A hold twice as many cars as garage B?
+>
+> **First step.** Garage A after t minutes: 400 − 6t. Garage B, for
+> t ≥ 10: 50 + 3(t − 10) = 3t + 20. Now write the comparison and solve.
+>
+> **Answer.** 30 minutes
+>
+> "A holds twice as many as B": 400 − 6t = 2(3t + 20) = 6t + 40. So
+> 360 = 12t and t = 30.
+>
+> Check: at t = 30, garage A holds 400 − 180 = 220 cars and garage B holds
+> 50 + 3(20) = 110.
+
+> **Trap.** Writing 20t for the second warehouse, which starts its clock 10
+> minutes early, or doubling the wrong side. Each slip gives a different,
+> offered answer.
+
+### A target letter in two terms {#target-in-two-terms}
+
+When the target letter appears twice, collect both terms on one side and
+factor it out before dividing.
+
+> **Example.** Solve kx + 5 = 2x + m for x.
+>
+> Collect the x terms on the left and the rest on the right: kx − 2x = m − 5.
+>
+> Factor out x: x(k − 2) = m − 5.
+>
+> Divide: x = (m − 5)/(k − 2), which needs k ≠ 2.
+
+> **Fails when.** The factor you would divide by is zero. If k = 2, the
+> original equation becomes 5 = m: every x works when m = 5, and no x
+> works otherwise. A rearrangement that divides by a variable expression
+> must state that it is nonzero.
+
+> **Try it.** A store mixes 4 pounds of coffee beans that cost c dollars in
+> all with w pounds of beans that cost $12 a pound. The mixture's cost per
+> pound is p = (c + 12w)/(4 + w). Which equation gives w in terms of c and p?
+>
+> - A) w = (c − 4p)/(12 − p)
+> - B) w = (c + 4p)/(p − 12)
+> - C) w = (c − 4p)/(p − 12)
+> - D) w = (4p − c)/(p + 12)
+>
+> **First step.** Multiply both sides by 4 + w: 4p + pw = c + 12w. Now
+> collect the w terms and factor.
+>
+> **Answer.** C
+>
+> Collect the w terms on the left: pw − 12w = c − 4p.
+>
+> Factor out w: w(p − 12) = c − 4p, so w = (c − 4p)/(p − 12).
+>
+> Check with numbers: c = 20 and w = 6 give p = 92/10 = 9.2, and
+> (20 − 36.8)/(9.2 − 12) = 6. Choice A gives −6.
+
+For harder versions, see
+[a solution that depends on a constant](#solution-with-a-constant) and
+[a rate that changes partway](#rate-that-changes).
 
 ## Rearranging formulas {#rearranging-formulas}
 
@@ -162,7 +242,8 @@ fixed number and use the same steps as above.
 > the original formula, and see whether your rearranged version gives the
 > same value. A wrong rearrangement almost never passes this test.
 
-For a harder version, see [a target letter in two terms](#target-in-two-terms).
+When the target letter appears in two terms, see
+[a target letter in two terms](#target-in-two-terms).
 
 ## Interpret constants {#interpret-constants}
 
@@ -247,86 +328,47 @@ For a harder version, see [a constant in more than one place](#constant-in-sever
 
 ## Harder versions {#hard}
 
-The harder questions add structure, not arithmetic: a quantity that starts
-late, a target letter in two terms, or a constant in more than one place.
+The harder questions add a layer: a solution written in terms of a
+constant, a rate that changes partway, or a constant in more than one place.
 
-### Two quantities that change at once {#two-quantities}
+### A solution that depends on a constant {#solution-with-a-constant}
 
-When one quantity starts late, write both in the same time
-variable, count the late one's change from t minus the delay, and write the
-comparison the right way round.
+When a letter such as a sits in the equation beside x, solve for x as usual:
+the solution is an expression in a. Then write the condition the question
+gives (a value, a multiple of a, or an inequality) and solve it for a.
 
-> **Example.** At 8:00 a.m. a warehouse holds 900 boxes and ships 15 boxes a
-> minute. A second warehouse holds 100 boxes, and starting at 8:10 a.m. it
-> receives 20 boxes a minute. How many minutes after 8:00 does the first
-> warehouse hold twice as many boxes as the second?
+> **Try it.** In 3(x − 2a) = x + 10, a is a constant. For which values of a
+> is the solution of the equation greater than 11?
 >
-> First warehouse after t minutes: 900 − 15t. Second, for t ≥ 10:
-> 100 + 20(t − 10).
+> **First step.** Distribute and collect: 3x − 6a = x + 10, so 2x = 10 + 6a
+> and x = 3a + 5. Now write the condition.
 >
-> "The first is twice the second": 900 − 15t = 2(100 + 20(t − 10)) =
-> 40t − 200. So 1,100 = 55t and t = 20.
+> **Answer.** a > 2
 >
-> Check: at t = 20 the first holds 600 and the second 100 + 20(10) = 300.
+> The solution is greater than 11 when 3a + 5 > 11, so 3a > 6 and a > 2.
+>
+> Check a = 3: x = 14, and 3(14 − 6) = 24 = 14 + 10.
 
-> **Try it.** At 6:00 p.m., parking garage A holds 400 cars, and cars leave
-> it at a steady 6 cars a minute. Garage B holds 50 cars; starting at
-> 6:10 p.m., cars arrive at it at 3 cars a minute. How many minutes after
-> 6:00 p.m. does garage A hold twice as many cars as garage B?
->
-> **First step.** Garage A after t minutes: 400 − 6t. Garage B, for
-> t ≥ 10: 50 + 3(t − 10) = 3t + 20. Now write the comparison and solve.
->
-> **Answer.** 30 minutes
->
-> "A holds twice as many as B": 400 − 6t = 2(3t + 20) = 6t + 40. So
-> 360 = 12t and t = 30.
->
-> Check: at t = 30, garage A holds 400 − 180 = 220 cars and garage B holds
-> 50 + 3(20) = 110.
+### A rate that changes partway {#rate-that-changes}
 
-> **Trap.** Writing 20t for the second warehouse, which starts its clock 10
-> minutes early, or doubling the wrong side. Each slip gives a different,
-> offered answer.
+When a rate changes past a threshold (overtime pay, a second price tier),
+first find the total at the threshold. If the given total is larger, the
+extra is charged at the second rate; if it is smaller, only the first rate
+applies. Then write one equation for the piece that applies.
 
-### A target letter in two terms {#target-in-two-terms}
-
-When the target letter appears twice, collect both terms on one side and
-factor it out before dividing.
-
-> **Example.** Solve kx + 5 = 2x + m for x.
+> **Try it.** A garage charges $4 an hour for the first 3 hours of parking
+> and $2.50 an hour after that. A driver paid $19.50. How many hours was the
+> car parked?
 >
-> Collect the x terms on the left and the rest on the right: kx − 2x = m − 5.
+> **First step.** The first 3 hours cost 4 × 3 = $12, less than $19.50, so
+> the car stayed longer than 3 hours. Now write the equation for the rest.
 >
-> Factor out x: x(k − 2) = m − 5.
+> **Answer.** 6 hours
 >
-> Divide: x = (m − 5)/(k − 2), which needs k ≠ 2.
-
-> **Fails when.** The factor you would divide by is zero. If k = 2, the
-> original equation becomes 5 = m: every x works when m = 5, and no x
-> works otherwise. A rearrangement that divides by a variable expression
-> must state that it is nonzero.
-
-> **Try it.** A store mixes 4 pounds of coffee beans that cost c dollars in
-> all with w pounds of beans that cost $12 a pound. The mixture's cost per
-> pound is p = (c + 12w)/(4 + w). Which equation gives w in terms of c and p?
+> 12 + 2.50(h − 3) = 19.50, so 2.50(h − 3) = 7.50, h − 3 = 3 and h = 6.
 >
-> - A) w = (c − 4p)/(12 − p)
-> - B) w = (c + 4p)/(p − 12)
-> - C) w = (c − 4p)/(p − 12)
-> - D) w = (4p − c)/(p + 12)
->
-> **First step.** Multiply both sides by 4 + w: 4p + pw = c + 12w. Now
-> collect the w terms and factor.
->
-> **Answer.** C
->
-> Collect the w terms on the left: pw − 12w = c − 4p.
->
-> Factor out w: w(p − 12) = c − 4p, so w = (c − 4p)/(p − 12).
->
-> Check with numbers: c = 20 and w = 6 give p = 92/10 = 9.2, and
-> (20 − 36.8)/(9.2 − 12) = 6. Choice A gives −6.
+> Using $4 for every hour gives 19.50 ÷ 4 = 4.875 hours, past the 3 hours
+> where that rate stops.
 
 ### A constant in more than one place {#constant-in-several-places}
 

@@ -163,6 +163,35 @@ sin x° = cos(90° − x°) and cos x° = sin(90° − x°).
 > A and B are the two acute angles, so they add to 90°. The side opposite A
 > is the side adjacent to B, so cos B = sin A = 12/13.
 
+Given one ratio, sketch the triangle: the ratio gives two sides, and the
+Pythagorean theorem gives the third. Then read any other ratio, for either
+acute angle.
+
+> **Example.** In right triangle ABC, the right angle is at C and
+> sin A = 20/29. What are tan A and cos B?
+>
+> sin A = opposite/hypotenuse, so take BC = 20 and AB = 29. The other leg is
+> AC = √(29² − 20²) = √(841 − 400) = √441 = 21.
+>
+> tan A = 20/21. For angle B, the adjacent side is BC = 20, so
+> cos B = 20/29, which equals sin A.
+>
+> The trap leg is 29 − 20 = 9, from subtracting instead of using the
+> Pythagorean theorem.
+
+> **Try it.** In right triangle PQR, the right angle is at R and
+> cos P = 12/37. What is tan Q?
+>
+> **First step.** cos P = adjacent/hypotenuse, so take PR = 12 and PQ = 37.
+> The other leg is QR = √(37² − 12²). Now finish.
+>
+> **Answer.** 12/35
+>
+> QR = √(1,369 − 144) = √1,225 = 35. For angle Q, the opposite side is
+> PR = 12 and the adjacent side is QR = 35, so tan Q = 12/35.
+>
+> tan P = 35/12 is the ratio at the other angle.
+
 > **Example.** For acute angles, sin(2x + 10)° = cos(x + 20)°. What is x?
 >
 > Sine and cosine are equal for complementary angles:

@@ -112,6 +112,29 @@ second.
 >
 > Use (6, 1): 1 = −(1/3)(6) + b = −2 + b, so b = 3.
 
+A line parallel to a given line has the same slope. Find that slope, then
+use the point the new line passes through to find its intercept.
+
+> **Example.** Line ℓ is defined by 2x + 3y = 12. Line m is parallel to ℓ
+> and passes through (6, 1). What is the y-intercept of line m?
+>
+> Solve for y: 3y = −2x + 12, so ℓ has slope −2/3, and so does m.
+>
+> Line m: y = −(2/3)x + b. Use (6, 1): 1 = −4 + b, so b = 5. The
+> y-intercept is (0, 5).
+>
+> The traps are 4, line ℓ's own intercept, and −8, from the perpendicular
+> slope 3/2.
+
+> **Try it.** Line ℓ passes through (−2, 7) and (4, −5). Line m is parallel
+> to ℓ and passes through (3, 2). What is the y-intercept of line m?
+>
+> **Answer.** (0, 8)
+>
+> ℓ's slope: (−5 − 7)/(4 − (−2)) = −12/6 = −2, so m is y = −2x + b.
+>
+> Use (3, 2): 2 = −6 + b, so b = 8.
+
 From a table, use any two rows, then confirm with a third. If x = 1, 3, 7
 gives f(x) = 5, 11, 23, the slope is (11 − 5)/(3 − 1) = 3, and
 (23 − 11)/(7 − 3) = 3 confirms the table is linear.
@@ -130,7 +153,50 @@ gives f(x) = 5, 11, 23, the slope is (11 − 5)/(3 − 1) = 3, and
 > (3 − 9)/(1 − (−2)) = −6/3 = −2, and (−9 − 3)/(7 − 1) = −12/6 = −2
 > confirms it.
 
-For a harder version, see [a table with a letter in it](#table-with-a-letter).
+### A table with a letter in it {#table-with-a-letter}
+
+When an output is a letter and the inputs are unevenly spaced, each change
+in f(x) is the slope times its own gap in x. Write that for two pairs of
+rows and solve for the letter.
+
+> **Example.** For the linear function f, f(−2) = a, f(1) = 3a and
+> f(3) = 26, where a is a constant. What is f(0)?
+>
+> From x = −2 to x = 1 the gap in x is 3 and the change is 3a − a = 2a, so
+> the slope is 2a/3.
+>
+> From x = 1 to x = 3 the gap is 2, so the change 26 − 3a is 2 times the
+> slope: 26 − 3a = 4a/3. Multiply by 3: 78 − 9a = 4a, so a = 6.
+>
+> The slope is 2(6)/3 = 4 and f(1) = 18, so f(0) = 18 − 4 = 14. Check:
+> f(x) = 4x + 14 gives f(−2) = 6 and f(3) = 26.
+
+> **Trap.** Treating the rows as equally spaced, or assuming f(x) = kx
+> because the outputs are a and 3a. Neither is given; only the slope is
+> the same everywhere.
+
+> **Try it.** The table shows three values of x and f(x) for a linear
+> function f, where a is a constant. What is f(0)?
+>
+> | x | f(x) |
+> | --- | --- |
+> | −1 | a |
+> | 3 | 2a |
+> | 5 | 20 |
+>
+> **First step.** From x = −1 to x = 3 the gap is 4 and the change is
+> 2a − a = a, so the slope is a/4. Now use the other pair of rows.
+>
+> **Answer.** 10
+>
+> From x = 3 to x = 5 the gap is 2, so 20 − 2a = 2(a/4) = a/2. Multiply
+> by 2: 40 − 4a = a, so a = 8.
+>
+> The slope is 8/4 = 2 and f(3) = 16, so f(0) = 16 − 3(2) = 10. Check:
+> f(x) = 2x + 10 gives f(−1) = 8 and f(5) = 20.
+
+For a harder version, see
+[a yearly change that is a percent of the start](#percent-of-the-start).
 
 ## Intercepts {#intercepts}
 
@@ -311,9 +377,30 @@ For a harder version, see [a rule that holds for every x](#identity).
 
 ## Harder versions {#hard}
 
-The harder questions give only part of the function, a rule that holds for
-every x or a table with a letter in it, and make you build f(x) = mx + b
-first.
+The harder questions make you build f(x) = mx + b from indirect facts: a
+rule that holds for every x, or a yearly change set by the starting value.
+
+### A yearly change that is a percent of the start {#percent-of-the-start}
+
+"Each year its value falls by 6% of its purchase price" describes a linear
+model, not an exponential one: the yearly change is a fixed percent of the
+starting value a, so V(t) = a − 0.06at. Write the model in a alone, then use
+the value you are given.
+
+> **Try it.** Each year after a machine is bought, its value decreases by
+> an amount equal to 8% of its purchase price. Four years after it was
+> bought, it is worth $27,200. What was its purchase price?
+>
+> **First step.** With purchase price a, the value after t years is
+> a − 0.08at. After 4 years it is a − 0.32a = 0.68a. Now finish.
+>
+> **Answer.** $40,000
+>
+> 0.68a = 27,200, so a = 40,000. Check: the value falls by 3,200 a year,
+> and 40,000 − 4(3,200) = 27,200.
+>
+> Taking 8% of $27,200 as the yearly drop, or 8% of each year's value,
+> gives a different, wrong price.
 
 ### A rule that holds for every x {#identity}
 
@@ -373,45 +460,3 @@ constants must agree.
 > From f(2) = 5: −6 + b = 5, so b = 11 and f(x) = −3x + 11.
 >
 > f(−3) = 9 + 11 = 20.
-
-### A table with a letter in it {#table-with-a-letter}
-
-When an output is a letter and the inputs are unevenly spaced, each change
-in f(x) is the slope times its own gap in x. Write that for two pairs of
-rows and solve for the letter.
-
-> **Example.** For the linear function f, f(−2) = a, f(1) = 3a and
-> f(3) = 26, where a is a constant. What is f(0)?
->
-> From x = −2 to x = 1 the gap in x is 3 and the change is 3a − a = 2a, so
-> the slope is 2a/3.
->
-> From x = 1 to x = 3 the gap is 2, so the change 26 − 3a is 2 times the
-> slope: 26 − 3a = 4a/3. Multiply by 3: 78 − 9a = 4a, so a = 6.
->
-> The slope is 2(6)/3 = 4 and f(1) = 18, so f(0) = 18 − 4 = 14. Check:
-> f(x) = 4x + 14 gives f(−2) = 6 and f(3) = 26.
-
-> **Trap.** Treating the rows as equally spaced, or assuming f(x) = kx
-> because the outputs are a and 3a. Neither is given; only the slope is
-> the same everywhere.
-
-> **Try it.** The table shows three values of x and f(x) for a linear
-> function f, where a is a constant. What is f(0)?
->
-> | x | f(x) |
-> | --- | --- |
-> | −1 | a |
-> | 3 | 2a |
-> | 5 | 20 |
->
-> **First step.** From x = −1 to x = 3 the gap is 4 and the change is
-> 2a − a = a, so the slope is a/4. Now use the other pair of rows.
->
-> **Answer.** 10
->
-> From x = 3 to x = 5 the gap is 2, so 20 − 2a = 2(a/4) = a/2. Multiply
-> by 2: 40 − 4a = a, so a = 8.
->
-> The slope is 8/4 = 2 and f(3) = 16, so f(0) = 16 − 3(2) = 10. Check:
-> f(x) = 2x + 10 gives f(−1) = 8 and f(5) = 20.
