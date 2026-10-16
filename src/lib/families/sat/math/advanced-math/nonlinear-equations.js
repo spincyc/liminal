@@ -1460,8 +1460,11 @@
         "With every term on one side as ax² + bx + c = 0, the discriminant b² − 4ac is positive for two real solutions, 0 for one, and negative for none.",
         "If the x²-terms cancel, the equation is linear: one solution, none, or every x.",
       ],
-      trap: "Count only after every term is on one side; the right side changes the coefficients.",
-      hint: "What does the equation look like with every term on one side?",
+      // An equation already in the form ax² + bx + c = 0 needs no moving.
+      trap: /= 0$/.test(equation.trim())
+        ? "Read a, b and c with their signs: a discriminant of 0 means one solution, not none, and a negative one means none."
+        : "Count only after every term is on one side; the right side changes the coefficients.",
+      hint: /= 0$/.test(equation.trim()) ? "What is the sign of b² − 4ac?" : "What does the equation look like with every term on one side?",
       verify: () => countFromText(equation) === key,
     };
   }
@@ -1554,14 +1557,16 @@
       if (!Number.isInteger(key) || Math.abs(key) > 40) return null;
       excluded = [-p, -q];
       equation = `${a}/(${lin(1, p)}) = ${b}/(${lin(1, q)})`;
+      // c(x + p), or x + p when c is 1.
+      const times = (c, shift) => (c === 1 ? lin(1, shift) : `${c}(${lin(1, shift)})`);
       wrong = [
-        [(b * q - a * p) / (a - b), `Multiplies each numerator by its own denominator, solving ${a}(${lin(1, p)}) = ${b}(${lin(1, q)}).`],
+        [(b * q - a * p) / (a - b), `Multiplies each numerator by its own denominator, solving ${times(a, p)} = ${times(b, q)}.`],
         [-key, "Collects the x-terms with a sign slip, which reverses the sign of the solution."],
         [(p - q) / (a - b), `Multiplies only the x in each binomial, solving ${lin(a, q)} = ${lin(b, p)}.`],
         [(b * p - a * q) / (a + b), `Moves ${lin(b, 0)} to the left side without changing its sign.`],
       ];
       steps = [
-        `Multiply both sides by (${lin(1, p)})(${lin(1, q)}): ${a}(${lin(1, q)}) = ${b}(${lin(1, p)}).`,
+        `Multiply both sides by (${lin(1, p)})(${lin(1, q)}): ${times(a, q)} = ${times(b, p)}.`,
         `Distribute: ${lin(a, a * q)} = ${lin(b, b * p)}.`,
         a - b === 1
           ? `Collect terms: x = ${num(key)}.`

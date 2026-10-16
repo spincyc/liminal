@@ -351,7 +351,7 @@
             `Round up to cover everything: ${key}.`,
           ],
           principles: UNIT_PRINCIPLES,
-          trap: "Converting square feet with the linear factor 3, or rounding the quotient down, gives an offered but wrong count.",
+          trap: "Converting square feet with the linear factor 3, or rounding the quotient down, gives a wrong count.",
           hint: "How many square feet are in one square yard?",
           verify: () => {
             const yards = (L / 3) * (W / 3);
@@ -1861,6 +1861,8 @@
           [d * linear, "Converts the area with the length factor 1.6 instead of 1.6 × 1.6 = 2.56."],
           [d * wrongWay, `Converts the area in the wrong direction, ${toKm ? "dividing" : "multiplying"} by 2.56.`],
           [d * askArea / 1.6, "Converts the area and then divides by 1.6 again."],
+          [d * askArea * 1.6, "Converts the area and then multiplies by 1.6 again."],
+          [askArea, `Stops at the converted area, ${fmt(askArea)} ${askUnit}s, without multiplying by the density.`],
         ], {
           stimulus: null,
           stem:
@@ -1878,7 +1880,8 @@
           trap: `The density is per ${askUnit}, so the area must be in ${askUnit}s, converted with 1.6 × 1.6, not 1.6.`,
           hint: `In which unit must the area be before it is multiplied by the density?`,
           verify: () => close((P / d) / (toKm ? mi2 : km2), toKm ? 1.6 * 1.6 : 1 / (1.6 * 1.6)),
-        }, { show: fmt, places: 2 });
+          // A count of residents or animals is a whole number, so wrong counts are too.
+        }, { show: fmt, places: 0 });
       }
       return packRanked(t, numeric, d, [
         [P / givenArea, `Divides by the area in ${givenUnit}, which gives ${group.unitWho} per ${givenUnit.slice(0, -1)}, not per ${askUnit}.`],
@@ -1898,7 +1901,7 @@
           `Density: ${fmt(P)} ÷ ${fmt(askArea)} = ${fmt(d)}.`,
         ],
         principles: DENSITY_PRINCIPLES,
-        trap: "A square mile is 1.6 × 1.6 square kilometers; converting with 1.6 alone, or dividing by the area in the wrong unit, gives an offered choice.",
+        trap: "A square mile is 1.6 × 1.6 square kilometers; converting with 1.6 alone, or dividing by the area in the wrong unit, gives a wrong density.",
         hint: `How many square kilometers are in one square mile?`,
         verify: () => {
           // Convert the density instead of the area: per square mile is 2.56 times per square kilometer.
@@ -1990,7 +1993,8 @@
           steps: [
             `Whole job: ${n} × ${D} = ${total} ${crew.one}-${crew.units}.`,
             `Left after ${time(d1)}: ${total} ${MINUS} ${n * d1} = ${left}.`,
-            `Time left to finish early: ${D - d1} ${MINUS} ${early} = ${time(remaining)}; crew needed: ${left} ÷ ${remaining} = ${needed}.`,
+            `Time left on the plan: ${D} ${MINUS} ${d1} = ${time(D - d1)}; to finish ${time(early)} early: ${D - d1} ${MINUS} ${early} = ${time(remaining)}.`,
+            `Crew needed: ${left} ÷ ${remaining} = ${needed}.`,
             `More ${crew.many} needed: ${needed} ${MINUS} ${n} = ${key}.`,
           ],
           principles: CREW_PRINCIPLES,

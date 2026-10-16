@@ -1121,6 +1121,11 @@
     };
     const minus = t.chance(0.4);
     const op = minus ? MINUS : "+";
+    // When the equation hides x ± 1/x, the hint points at that first step,
+    // not at the squaring or cubing that comes after it.
+    const hintFor = (power) => (shape === "reciprocal"
+      ? `What happens when both sides are ${power}?`
+      : `Can the given equation be written in terms of x ${op} 1/x?`);
     if (kind === "square") {
       // x + 1/x = k (or x − 1/x = k): x² + 1/x² = k² ∓ 2.
       const k = t.int(minus ? 1 : 3, 14);
@@ -1152,7 +1157,7 @@
         ],
         principles: ["(a ± b)² = a² ± 2ab + b², and here ab = x · (1/x) = 1."],
         trap: `Squaring term by term drops the cross term and gives ${k * k}.`,
-        hint: "What happens when both sides are squared?",
+        hint: hintFor("squared"),
         verify: () => {
           // Solve for x numerically and evaluate the target.
           const roots = minus ? quadraticRoots(-k, -1) : quadraticRoots(-k, 1);
@@ -1194,7 +1199,7 @@
       ],
       principles: [`(a ${op} b)³ = a³ ${op} b³ ${op} 3ab(a ${op} b), and here ab = x · (1/x) = 1.`],
       trap: `Cubing term by term drops the middle terms and gives ${k ** 3}; those terms are 3 times the given ${minus ? "difference" : "sum"}.`,
-      hint: "What happens when both sides are cubed?",
+      hint: hintFor("cubed"),
       verify: () => {
         const roots = minus ? quadraticRoots(-k, -1) : quadraticRoots(-k, 1);
         return roots.length === 2 && roots.every((x) => approx(x ** 3 + (minus ? -1 : 1) / x ** 3, key, 1e-9));

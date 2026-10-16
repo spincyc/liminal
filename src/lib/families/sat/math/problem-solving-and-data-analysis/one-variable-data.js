@@ -2234,13 +2234,13 @@
   // median, or than the next whole numbers after it when no two are equal.
   const CENTER_SETS = [
     { intro: (n) => `A data set consists of ${n} different positive integers.`, low: 1, distinct: true, item: "integer" },
-    { intro: (n) => `A data set consists of ${n} different whole numbers.`, low: 0, distinct: true, item: "number" },
+    { intro: (n) => `A data set consists of ${n} different nonnegative integers.`, low: 0, distinct: true, item: "integer" },
     {
       intro: (n) => `The ages, in whole years, of the ${n} members of a committee are all different, and every member is at least 18 years old.`,
       low: 18, distinct: true, item: "age", values: "ages",
     },
     {
-      intro: (n) => `A basketball player scored a whole number of points in each of ${n} games; some of these numbers may be equal.`,
+      intro: (n) => `A basketball player scored a whole number of points, possibly 0, in each of ${n} games; some of these numbers may be equal.`,
       low: 0, distinct: false, item: "number of points", values: "numbers of points",
     },
     {
@@ -2307,17 +2307,25 @@
         const repeats = T - m * L - m * D;
         const strictAll = T - (m * L + (m * (m - 1)) / 2) - (D + m * D + (m * (m - 1)) / 2) + D;
         const ignoreCap = T - leastSum(n - 1, L, L + n, set.distinct);
+        // Starting the smaller values one away from the least allowed value.
+        const offStart = L === 1
+          ? [shift(largest + m), "Starts the values below the median at 0, which is not a positive integer."]
+          : L === 0
+            ? [shift(largest - m), "Starts the values below the median at 1, but 0 is allowed."]
+            : [shift(largest - m), `Reads "at least ${L}" as "more than ${L}" and starts the values below the median at ${L + 1}.`];
+        // With repeats allowed and 5 values, making the others all different
+        // gives the same number as starting one too high; one reason names both.
+        const allDifferent = [shift(strictAll), "Makes the other values all different, but the values may repeat, so the smaller ones can all be the least allowed value."];
+        const sameSlip = !set.distinct && allDifferent[0] === offStart[0];
         const candidates = [
           set.distinct
             ? [shift(repeats), "Lets values repeat, but the values must all be different, so the ones below and above the median must differ from each other."]
-            : [shift(strictAll), "Makes the other values all different, but the values may repeat, so the smaller ones can all be the least allowed value."],
+            : sameSlip
+              ? [allDifferent[0], `${offStart[1].replace(/\.$/, "")}; making the other values all different, though they may repeat, gives the same number.`]
+              : allDifferent,
           [shift(ignoreCap), `Makes every other value as small as possible without keeping the median at ${D}; the values above the median cannot be less than ${D}.`],
           [shift(largest + D), `Leaves the median, ${D}, out of the total that the other values use.`],
-          L === 1
-            ? [shift(largest + m), "Starts the values below the median at 0, which is not a positive integer."]
-            : L === 0
-              ? [shift(largest - m), "Starts the values below the median at 1, but 0 is a whole number and is allowed."]
-              : [shift(largest - m), `Reads "at least ${L}" as "more than ${L}" and starts the values below the median at ${L + 1}.`],
+          ...(sameSlip ? [] : [offStart]),
           [askRange ? largest : M, askRange
             ? `Gives the greatest possible largest value, ${largest}, instead of the range, which subtracts the least value, ${L}.`
             : `Gives the mean, ${M}, as if every value could equal it.`],
@@ -2335,12 +2343,13 @@
               : `What is the greatest possible value of the largest ${set.item}?`),
           explanation:
             `The total is ${n} × ${M} = ${T}. With ${n} ${of}, the median is the ${["", "", "", "3rd", "4th", "5th"][m + 1]} in order, so ${m} of the others are at most ${D} ` +
-            `and ${m} are at least ${D}. Making the others as small as possible: ${belowList.join(", ")} below the median, then ${D}, ` +
+            `and ${m} are at least ${D}. Making the others as small as possible, starting from ${L}, the least value allowed: ` +
+            `${belowList.join(", ")} below the median, then ${D}, ` +
             `then ${aboveList.join(", ")}${aboveList.length ? "" : "nothing else"} above it. They add to ${T - largest}, so the largest can be ` +
             `${T} ${MINUS} ${T - largest} = ${largest}${askRange ? `, and the greatest range is ${largest} ${MINUS} ${L} = ${key}` : ""}.`,
           steps: [
             `Total: ${n} × ${M} = ${T}.`,
-            `Below the median, as small as allowed: ${belowList.join(" + ")} = ${below}.`,
+            `Below the median, as small as allowed, starting from ${L}: ${belowList.join(" + ")} = ${below}.`,
             `The median ${D}, and above it (except the largest) as small as allowed: ${aboveList.length > 1 ? `${aboveList.join(" + ")} = ${above}` : aboveList[0]}.`,
             `Largest: ${T} ${MINUS} ${below} ${MINUS} ${D}${aboveList.length ? ` ${MINUS} ${above}` : ""} = ${largest}.`,
             ...(askRange ? [`Range: ${largest} ${MINUS} ${L} = ${key}.`] : []),
@@ -2349,7 +2358,7 @@
             "The mean times the number of values is the total, so making some values smaller leaves more for the others.",
             "With an odd number of values, half of the others are at most the median and half are at least the median.",
           ],
-          trap: `The values above the median cannot be made smaller than ${D}${set.distinct ? " (and then the next whole numbers, since no two are equal)" : ""}; ignoring that gives a largest value that would change the median.`,
+          trap: `The values above the median cannot be made smaller than ${D}${set.distinct ? " (and then the next integers, since no two are equal)" : ""}; ignoring that gives a largest value that would change the median.`,
           hint: "If the largest value is to be as great as possible, how small can each of the other values be?",
           estimatedSeconds: 135,
           verify: () => {
