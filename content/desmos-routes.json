@@ -1,0 +1,18 @@
+{
+  "format": "liminal-desmos-routes",
+  "version": 1,
+  "sections": {
+    "sat-math": {
+      "linear-equation-solve": {
+        "enter": "y = (left side) on one line and y = (right side) on the next, copied as written; a fraction such as x/4 is typed with /.",
+        "read": "The x-coordinate of the point where the two graphs cross (click it). That is the solution.",
+        "fails": "When the solution is a fraction, Desmos shows a rounded decimal: match it to the choices, or enter the fraction. If no crossing shows, zoom out before deciding there is none."
+      },
+      "system-intersection-point": {
+        "enter": "Both equations exactly as given, one per line. There is no need to solve for y first.",
+        "read": "The coordinates of the point where the lines cross (click it). Use the coordinate the question asks for.",
+        "fails": "When the crossing is off screen, zoom out. When the coordinates are fractions, Desmos shows decimals: match them to the choices."
+      }
+    }
+  }
+}
