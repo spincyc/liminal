@@ -251,6 +251,9 @@ origin). That often removes two choices.
 > point: find where each candidate crosses an axis and check it against the
 > graph's labeled values.
 
+For a harder version, see
+[an x-intercept limited to one side](#intercept-on-one-side).
+
 ## Function notation {#function-notation}
 
 f(3) means "the output when the input is 3". The statement f(2) = 11 is the
@@ -378,7 +381,39 @@ For a harder version, see [a rule that holds for every x](#identity).
 ## Harder versions {#hard}
 
 The harder questions make you build f(x) = mx + b from indirect facts: a
-rule that holds for every x, or a yearly change set by the starting value.
+rule that holds for every x, a yearly change set by the starting value, or
+an x-intercept that must lie on one side of a value.
+
+### An x-intercept limited to one side {#intercept-on-one-side}
+
+A line with unknown slope m through a fixed point (p, q) meets the x-axis at
+x = p − q/m. A condition such as "the x-intercept is greater than 6" is then
+an inequality with m in a denominator. Decide the sign of m first:
+multiplying by a negative m reverses the inequality, so clearing the
+fraction without checking the sign keeps slopes that cannot work.
+
+> **Try it.** In the xy-plane, line ℓ has slope m and passes through the
+> point (2, 4). The x-intercept of ℓ is (k, 0), where k > 6. Which of the
+> following describes all possible values of m?
+>
+> - A) m > −1
+> - B) −1 < m < 0
+> - C) m < −1
+> - D) m < 0
+>
+> **Hint.** From (2, 4), above the x-axis, which way must the line slope to
+> meet the axis to the right of x = 6?
+>
+> **Answer.** B
+>
+> The line is y − 4 = m(x − 2). Setting y = 0 gives k = 2 − 4/m, and k > 6
+> means 4/m < −4.
+>
+> That needs m < 0: the line must fall to the right. Multiplying by the
+> negative m reverses the inequality: 4 > −4m, so m > −1. Together,
+> −1 < m < 0. Check m = −1/2: k = 2 + 8 = 10.
+>
+> Multiplying without reversing gives C; A forgets that m must be negative.
 
 ### A yearly change that is a percent of the start {#percent-of-the-start}
 
