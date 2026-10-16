@@ -13,9 +13,46 @@ quantity in different units. This skill is part of Problem-Solving and Data
 Analysis, {{fact:sat-math-psda}} of the Math section. The math is
 arithmetic. The points are lost to setup: a rate turned upside down, a
 part-to-part ratio read as part-to-whole, or an area converted with a length
-factor. Hard questions ask for the speed one part of a trip needs to reach
-an overall average, or recover a hollow object's outer size from its
-material density, mass, and cavity dimensions.
+factor.
+
+## Before you start {#before-you-start}
+
+This page uses equivalent ratios
+([Grade 6, week 8](weeks.html#common-core-math/6/8)), unit rates
+([lesson 2-7](lessons.html#common-core-math/8/2-7)), proportions
+([Grade 7, week 9](weeks.html#common-core-math/7/9)) and unit
+conversion ([Grade 6, week 11](weeks.html#common-core-math/6/11)). Try these
+first, and rebuild any that goes wrong.
+
+> **Try it.** Write the ratio 12 : 18 in lowest terms.
+>
+> **Answer.** 2 : 3
+>
+> Divide both terms by their greatest common factor, 6: 12 ÷ 6 = 2 and
+> 18 ÷ 6 = 3. Shaky? [Grade 6, week 8](weeks.html#common-core-math/6/8).
+
+> **Try it.** A cyclist rides 54 miles in 3 hours. What is her speed in
+> miles per hour?
+>
+> **Answer.** 18 miles per hour
+>
+> Miles per hour means miles ÷ hours: 54 ÷ 3 = 18. Shaky?
+> [Lesson 2-7](lessons.html#common-core-math/8/2-7).
+
+> **Try it.** If 4 notebooks cost $10, how much do 6 notebooks cost at the
+> same price each?
+>
+> **Answer.** $15
+>
+> One notebook costs 10 ÷ 4 = $2.50, so 6 cost 6 × 2.50 = $15. Shaky?
+> [Grade 7, week 9](weeks.html#common-core-math/7/9).
+
+> **Try it.** How many inches are in 3.5 feet? (1 foot = 12 inches)
+>
+> **Answer.** 42 inches
+>
+> Each foot is 12 inches, so multiply: 3.5 × 12 = 42. Shaky?
+> [Grade 6, week 11](weeks.html#common-core-math/6/11).
 
 ## Unit rates {#unit-rates}
 
@@ -34,6 +71,15 @@ distance = rate × time        work done = rate × time
 >
 > The 24-ounce box costs 1 cent less per ounce.
 
+> **Try it.** A 12-pack of water costs $4.20 and a 20-pack costs $6.60.
+> Which is the better buy per bottle, and by how much?
+>
+> **Answer.** The 20-pack, by 2 cents per bottle.
+>
+> 4.20 ÷ 12 = 0.35 dollars per bottle. 6.60 ÷ 20 = 0.33 dollars per bottle.
+>
+> The 20-pack costs 0.35 − 0.33 = 0.02 dollars, 2 cents, less per bottle.
+
 Average speed is total distance over total time, not the average of the
 speeds.
 
@@ -45,9 +91,31 @@ speeds.
 > Total: 240 miles in 5 hours, so 48 miles per hour. The trap answer is 50,
 > the average of 60 and 40.
 
+> **Try it.** A bus travels 90 miles at 45 miles per hour, then another 90
+> miles at 30 miles per hour. What is its average speed for the whole trip?
+>
+> **Answer.** 36 miles per hour
+>
+> First part: 90 ÷ 45 = 2 hours. Second part: 90 ÷ 30 = 3 hours.
+>
+> Total: 180 miles in 5 hours, so 180 ÷ 5 = 36 miles per hour. The average
+> of 45 and 30 is 37.5, the trap answer.
+
 When two workers share a job, add their rates, not their times. If one pump
 fills a tank in 4 hours and another in 6 hours, together they fill
 1/4 + 1/6 = 5/12 of the tank per hour, so the job takes 12/5 = 2.4 hours.
+
+> **Try it.** One machine can label a day's bottles in 3 hours, and a second
+> machine can label them in 6 hours. Working together, how many hours do the
+> two machines take?
+>
+> **Answer.** 2 hours
+>
+> Together they label 1/3 + 1/6 = 1/2 of the bottles per hour, so the job
+> takes 1 ÷ (1/2) = 2 hours. Averaging the times gives 4.5 hours, longer than
+> the faster machine alone.
+
+For a harder version, see [a required speed](#required-speed).
 
 ## Proportions {#proportions}
 
@@ -63,6 +131,17 @@ a/b = c/d with the same units in the same positions, then cross-multiply.
 > Cross-multiply: 12f = 45, so f = 3.75 cups. (Or: 30 is 2.5 times 12, so
 > the flour is 2.5 × 1.5 = 3.75 cups.)
 
+> **Try it.** A car uses 4 gallons of gas to travel 110 miles. At this rate,
+> how many gallons does it use to travel 165 miles?
+>
+> **First step.** Gallons over miles on both sides: 4/110 = g/165. Now solve
+> for g.
+>
+> **Answer.** 6 gallons
+>
+> Cross-multiply: 110g = 660, so g = 6. (Or: 165 is 1.5 times 110, so the
+> gas is 1.5 × 4 = 6 gallons.)
+
 A ratio a : b describes parts. If a class has boys and girls in the ratio
 3 : 5, there are 8 parts in all, so boys are 3/8 of the class, not 3/5.
 
@@ -72,6 +151,15 @@ A ratio a : b describes parts. If a class has boys and girls in the ratio
 > Let one part be x kilograms: 3x + 5x = 96, so 8x = 96 and x = 12.
 >
 > Sand: 3 · 12 = 36 kilograms. (Gravel is 60; 36 + 60 = 96.)
+
+> **Try it.** A paint mix is 2 parts blue to 7 parts white by volume. How
+> many liters of white paint are in 36 liters of the mix?
+>
+> **Answer.** 28 liters
+>
+> Let one part be x liters: 2x + 7x = 36, so 9x = 36 and x = 4.
+>
+> White: 7 · 4 = 28 liters. (Blue is 8; 8 + 28 = 36.)
 
 > **Trap.** Reading a part-to-part ratio as a fraction of the whole. 3 : 5
 > means 3 of every 8, which is 37.5%, not 60%.
@@ -83,7 +171,7 @@ miles, 6.5 inches represents 6.5 × 8 = 52 miles.
 
 Multiply by conversion factors written as fractions equal to 1, arranged so
 the unwanted unit cancels. If the units don't cancel to what you want, the
-setup is wrong, which is exactly why writing them is worth the time.
+setup is wrong.
 
 ```
 45 miles     5,280 feet      1 hour         45 · 5,280
@@ -100,6 +188,17 @@ setup is wrong, which is exactly why writing them is worth the time.
 > Ink: 4,500 × 0.6 = 2,700 milliliters. Since 1 liter = 1,000 milliliters,
 > that is 2.7 liters.
 
+> **Try it.** A machine puts 0.8 gram of sugar on each cookie and decorates
+> 30 cookies per minute. How many kilograms of sugar does it use in 5 hours?
+>
+> **First step.** Cookies per hour: 30 × 60 = 1,800. In 5 hours: 9,000
+> cookies. Now find the sugar and convert.
+>
+> **Answer.** 7.2 kilograms
+>
+> Sugar: 9,000 × 0.8 = 7,200 grams. Since 1 kilogram = 1,000 grams, that is
+> 7.2 kilograms.
+
 Area and volume convert by the square and the cube of the length factor.
 1 foot = 12 inches, so 1 square foot = 12² = 144 square inches and 1 cubic
 foot = 12³ = 1,728 cubic inches.
@@ -113,17 +212,53 @@ foot = 12³ = 1,728 cubic inches.
 > 3 × 10,000 = 30,000 square centimeters. The trap answer is 300, from using
 > the length factor.
 
-Derived units combine two units: kilowatt-hours are power times time,
-people per square kilometer are a count divided by an area. A town of 12,000
+> **Try it.** A fish tank holds 2 cubic feet of water. How many cubic inches
+> is that?
+>
+> **Answer.** 3,456 cubic inches
+>
+> 1 cubic foot = 12³ = 1,728 cubic inches, so 2 cubic feet is
+> 2 × 1,728 = 3,456 cubic inches. Using the length factor gives 24, the trap
+> answer.
+
+> **Example.** Fabric costs $14 per square yard. What does a rectangular
+> piece 6 feet by 9 feet cost?
+>
+> Area: 6 × 9 = 54 square feet. 1 yard = 3 feet, so 1 square yard = 9 square
+> feet, and 54 square feet = 6 square yards.
+>
+> Cost: 6 × 14 = 84 dollars. Using 3 instead of 9 gives 18 square yards and
+> the trap answer $252.
+
+> **Try it.** Carpet costs $30 per square yard. What does it cost to carpet a
+> rectangular room 12 feet by 15 feet?
+>
+> **Answer.** $600
+>
+> Area: 12 × 15 = 180 square feet. 1 square yard = 3² = 9 square feet, so
+> 180 square feet = 20 square yards.
+>
+> Cost: 20 × 30 = 600 dollars. Dividing by 3 instead of 9 gives 60 square
+> yards and the trap answer $1,800.
+
+A derived unit combines two units. A town of 12,000
 people on 15 square kilometers has a density of 12,000 ÷ 15 = 800 people per
 square kilometer. The density of a material works the same way: mass per
 unit of volume, so mass = density × volume (see
 [density in area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#density)).
 
-## What Hard looks like {#hard}
+For a harder version, see [a hollow cube from its density](#hollow-cube).
 
-- The speed one part of a trip must have for a given overall average. The average fixes the total time (total distance ÷ average speed); subtract the known part's time, then divide the remaining distance by the time left.
-- A hollow cube's outer size from its mass and material density. Mass divided by density gives only the material volume. If the cavity's edge is half the outer edge, its volume is 1/8 of the outer volume, so the material occupies 7/8. Recover the outer volume before taking a cube root.
+## Harder versions {#hard}
+
+The harder questions give a total and ask for a hidden piece: a speed still
+needed, or a hollow object's size.
+
+### A required speed {#required-speed}
+
+An overall average speed fixes the total time: total distance ÷ average.
+Subtract the time already used, then divide the remaining distance by the
+time left.
 
 > **Example.** A cyclist rides 30 miles at 15 miles per hour. How fast must
 > she ride the next 30 miles to average 20 miles per hour over all 60?
@@ -136,14 +271,24 @@ unit of volume, so mass = density × volume (see
 > The trap is 25, the speed that averages with 15 to make 20. It ignores
 > that she spends more time at the slower speed.
 
-> **Example.** Fabric costs $14 per square yard. What does a rectangular
-> piece 6 feet by 9 feet cost?
+> **Try it.** A boat travels 60 miles at 20 miles per hour. How fast must it
+> travel the next 60 miles to average 24 miles per hour over all 120?
 >
-> Area: 6 × 9 = 54 square feet. 1 yard = 3 feet, so 1 square yard = 9 square
-> feet, and 54 square feet = 6 square yards.
+> **First step.** An average of 24 over 120 miles means 120 ÷ 24 = 5 hours
+> in all. Now subtract the time the first part took.
 >
-> Cost: 6 × 14 = 84 dollars. Using 3 instead of 9 gives 18 square yards and
-> the trap answer $252.
+> **Answer.** 30 miles per hour
+>
+> The first 60 miles took 60 ÷ 20 = 3 hours, so 2 hours are left for 60
+> miles: 60 ÷ 2 = 30 miles per hour.
+>
+> The trap is 28, the speed that averages with 20 to make 24.
+
+### A hollow cube from its density {#hollow-cube}
+
+Mass ÷ density gives only the volume of the material, not of the whole
+cube. A cavity whose edge is k times the outer edge takes up k³ of the outer
+volume.
 
 > **Example.** A hollow cube has mass 14 kilograms and material density
 > 2 grams per cubic centimeter. Its sealed cubical cavity has half the
@@ -155,3 +300,19 @@ unit of volume, so mass = density × volume (see
 > Therefore (7/8)s³ = 7,000, so s³ = 8,000 and s = 20 centimeters.
 >
 > The cavity occupies 1/8 of the outer volume, not 1/2; cube the length ratio.
+
+> **Try it.** A hollow cube has a mass of 0.52 kilogram and is made of a
+> material with density 2.5 grams per cubic centimeter. Its sealed cubical
+> cavity has one-third the outer edge length. What is the outer edge length,
+> in centimeters?
+>
+> **First step.** 0.52 kilogram = 520 grams, so the material volume is
+> 520 ÷ 2.5 = 208 cubic centimeters. Now account for the cavity.
+>
+> **Answer.** 6 centimeters
+>
+> The cavity takes up (1/3)³ = 1/27 of the outer volume, so the material is
+> 26/27 of it: (26/27)s³ = 208.
+>
+> So s³ = 208 × 27/26 = 216, and s = 6 centimeters. Taking the cavity as 1/3
+> of the volume gives s³ = 312, which is not a whole-number cube.
