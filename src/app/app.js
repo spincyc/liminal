@@ -770,8 +770,8 @@
       } else {
         notes.push(`Stage${placement.skipped.length > 1 ? "s" : ""} ${placement.skipped.join(" and ")} cover only ` +
           `domains you showed, so the plan starts at stage ${start.stage} (${stageTitle(start)}). A skill from an ` +
-          "earlier stage comes back once you practise it and it is below the practice target, and all of them once the " +
-          "later stages have met the practice target.");
+          "earlier stage comes back once you practise it and it is below the practice target, and the rest come back " +
+          "in the plan's second pass.");
       }
     } else {
       notes.push(`Until a skill has ${Analytics.MIN_ATTEMPTS} answers, your next step here is the skill you have ` +

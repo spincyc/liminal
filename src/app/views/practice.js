@@ -991,11 +991,12 @@
         elements.drillLevelNote.textContent = "";
         return;
       }
-      const { level } = Analytics.skillLevel(row);
+      const { level, why } = Analytics.skillLevel(row);
       setDrillLevel(level || "");
-      elements.drillLevelNote.textContent = level
+      elements.drillLevelNote.textContent = (level
         ? `Set to your next level for this skill. ${ctx.levelWords(row)}`
-        : ctx.levelWords(row);
+        : ctx.levelWords(row)) +
+        (why === "medium-routine" ? " This drill takes the level you choose; the next step's drill mixes the Hard ones in." : "");
     }
 
     function drillCount() {
