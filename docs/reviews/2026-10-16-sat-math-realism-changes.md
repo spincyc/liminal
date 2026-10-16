@@ -888,3 +888,46 @@ author, so the reviewers re-review the two files.
 
 The displayed questions are unchanged; only hint and teaching text differ.
 The registry re-versions every template in the two files.
+
+## Pass 5 fixes (after the cold content re-check)
+
+The re-check found two slips in crew-rate-change. Both are fixed, and the
+template's other rationales were audited against their values.
+
+- **Seed 58, choice B (12).** The rationale divided the whole job by the
+  days left but did not subtract the crew already working. Every reason now
+  states the computation that gives its value, for example "Divides the whole
+  job, 80 volunteer-days, by the 4 days left (20), then subtracts the 8
+  already working, ignoring the part already done". The proportional slip
+  now shows "8 × 4/8". The two "when" slips show the work equation they set
+  up.
+- **Seed 88 (one pump added).** The rationale, explanation and steps now
+  name "the other pump" (or "the other pumps") through the count, and the
+  hint no longer says "the others".
+- **New test.** `test/sat-math-realism.test.js` recomputes every wrong
+  answer of crew-rate-change on 400 draws from the numbers in the stem, by
+  the computation its reason names. Each stated intermediate value must
+  match too. Every category of reason was exercised.
+
+**Verification.**
+- `check-families` passes 218/218 at default reps and at `--reps 3000`.
+- `update-templates --check` passes.
+- The full gate except reviews passes, including check-desmos and
+  `node --test "test/**/*.test.js"` (990/990).
+- The slip scan finds 0 hits in 1,200 crew-rate-change draws.
+
+**Pass 5 stale templates (11), compared on 600 draws with 6479022:**
+- **Shown changed:** none.
+- **Text only (1):** crew-rate-change (rationales and teaching text differ in
+  492 of 600 draws).
+- **Identical draws (10):** the other templates in ratios-rates-and-units:
+  - proportional-rate-scaling
+  - ratio-share-of-total
+  - rate-unit-conversion
+  - ratio-after-change
+  - multi-unit-rate
+  - average-rate-two-legs
+  - average-rate-required-leg
+  - density-cube-edge
+  - combined-work-rate
+  - population-density

@@ -1976,9 +1976,10 @@
         const finishBy = D - early;
         return packRanked(t, numeric, key, [
           [needed, `Gives the size of the whole crew needed, ${needed}, instead of how many must be added to the ${n} already working.`],
-          [total / finishBy - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by ${time(finishBy)}, ignoring the part already done and that the added ${crew.many} work only for the last ${time(remaining)}.`],
-          [(n * D) / remaining - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by the ${time(remaining)} left, ignoring the part already done.`],
-          [(n * early) / (D - d1), `Adds ${crew.many} in proportion to the share of the remaining ${time(D - d1)} to be saved, instead of dividing the work left by the time left.`],
+          // Each reason states the computation that gives its value.
+          [total / finishBy - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by ${time(finishBy)} (${fmt(total / finishBy)}), then subtracts the ${n} already working, ignoring the part already done and that the added ${crew.many} work only for the last ${time(remaining)}.`],
+          [(n * D) / remaining - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by the ${time(remaining)} left (${fmt((n * D) / remaining)}), then subtracts the ${n} already working, ignoring the part already done.`],
+          [(n * early) / (D - d1), `Scales the crew of ${n} by the share of the remaining ${time(D - d1)} to be saved, ${n} × ${early}/${D - d1}, instead of dividing the work left by the time left.`],
           [key + 1, `Adds one more ${crew.one} than the remaining work needs.`],
         ], {
           stimulus: null,
@@ -2020,10 +2021,13 @@
       const after = D - early - d;
       if (d < 1 || after < 1) return null;
       const key = d;
+      // "the added pump" or "the added pumps"; "was added" or "were added".
+      const addedWork = k === 1 ? `added ${crew.one}'s work` : `added ${crew.many}' work`;
+      const joinedAfter = crew.joined[k === 1 ? 0 : 1].replace(/ the (crew|group)$/, "");
       return packRanked(t, numeric, key, [
-        [after, `Gives the ${crew.units} worked after the extra ${crew.many} joined, ${after}, instead of the ${crew.units} before.`],
-        [D - early - ((n + k) * early) / k, `Sets the work of the added ${crew.many} equal to ${time(early)} of the larger crew's work instead of the original crew's.`],
-        [D - (n * early) / k, `Matches the added ${crew.many}' work to the time saved but measures from the planned finish, ${time(D)}, instead of the actual one.`],
+        [after, `Gives the ${crew.units} worked after the ${k === 1 ? `other ${crew.one}` : `other ${crew.many}`} ${joinedAfter}, ${after}, instead of the ${crew.units} before.`],
+        [D - early - ((n + k) * early) / k, `Sets the ${addedWork}, ${k} × (${D - early} ${MINUS} d), equal to ${time(early)} of the larger crew's work, ${n + k} × ${early}, instead of the original crew's, ${n} × ${early}.`],
+        [D - (n * early) / k, `Sets the ${addedWork} equal to the ${n} × ${early} saved but measures it from the planned finish, ${k} × (${D} ${MINUS} d), instead of the actual one.`],
         [(n * D) / (n + k), `Divides the whole job by the larger crew, as if all ${n + k} had worked from the start.`],
         [d + early, `Adds the ${time(early)} saved to the answer.`],
       ], {
@@ -2035,17 +2039,17 @@
           `${k === 1 ? crew.joined[0].replace(/ the (crew|group)$/, " them") : crew.joined[1].replace(/ the (crew|group)$/, " them")}?`,
         explanation:
           `The whole job is ${n} × ${D} = ${total} ${crew.one}-${crew.units}, and it took ${D} ${MINUS} ${early} = ${time(D - early)}. ` +
-          `If the others joined after d ${crew.units}, then ${n}d + ${n + k}(${D - early} ${MINUS} d) = ${total}, so ` +
+          `If the ${k === 1 ? `other ${crew.one}` : `other ${crew.many}`} joined after d ${crew.units}, then ${n}d + ${n + k}(${D - early} ${MINUS} d) = ${total}, so ` +
           `${(n + k) * (D - early)} ${MINUS} ${k === 1 ? "" : k}d = ${total}, and d = ${k === 1 ? "" : `${top} ÷ ${k} = `}${d}.`,
         steps: [
           `Whole job: ${n} × ${D} = ${total} ${crew.one}-${crew.units}; it took ${D} ${MINUS} ${early} = ${time(D - early)}.`,
-          `With d ${crew.units} before the others joined: ${n}d + ${n + k}(${D - early} ${MINUS} d) = ${total}.`,
+          `With d ${crew.units} before the ${k === 1 ? `other ${crew.one}` : `other ${crew.many}`} joined: ${n}d + ${n + k}(${D - early} ${MINUS} d) = ${total}.`,
           `Simplify: ${(n + k) * (D - early)} ${MINUS} ${k === 1 ? "" : k}d = ${total}, so ${k === 1 ? "" : k}d = ${top}.`,
           ...(k === 1 ? [] : [`d = ${top} ÷ ${k} = ${d}.`]),
         ],
         principles: CREW_PRINCIPLES,
         trap: "The job finished early, so the time the larger crew worked is the actual finish minus the time before the change, not the planned finish minus it.",
-        hint: "Write the work done before and after the others joined, using one unknown for the time before.",
+        hint: "Write the work done before and after the change, using one unknown for the time before it.",
         estimatedSeconds: 140,
         verify: () => {
           // Try every whole start time and keep those that finish the job on the stated day.
