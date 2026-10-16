@@ -96,6 +96,8 @@ each fixed afterwards and checked again:
 | The radical-equation route ignored cube roots (19% of draws) | Fixed (`cbrt`), confirmed live |
 | A `crew-rate-change` rationale omitted a step; a plural slip | Fixed; a recompute test was added, and the pass-5 review accepted it |
 | A stale "one-week Desmos plan" phrase; results and summary wording | Fixed |
+| Answers from before the fix lost their drill class when the 500-session cap dropped their session | Fixed: `Progress.classAttempts` copies the set onto older answers on load and before every save. Confirmed through the real load/save path |
+| A record whose oldest sessions were trimmed before this build blocked the ledger | Fixed: an unclassed answer older than every kept session counts as no drill's and no longer blocks the checkpoint |
 
 ## Still open
 
