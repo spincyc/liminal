@@ -388,13 +388,13 @@ For a coherent ACT bank batch:
   under its explanation only after the answer is checked or the set is
   finished, never names the template, and hides the feature when the bundle
   is missing. When a template changes what it shows, re-verify its route or
-  remove it. The Calculator button opens desmos.com in one window beside the
-  test, reused while the page stays loaded; the window is detached
-  (`opener = null`) so Desmos cannot reach the page, which means a reload
-  opens a second window. Do not frame desmos.com or embed its API without
-  Desmos's written consent: its Terms (section 5) forbid framing the tools
-  without prior consent, and the free API tier excludes public production
-  use (`docs/roadmap.md`, Next item 4).
+  remove it. The site has no calculator launcher: on 2026-10-16 the owner
+  decided to leave the graphing calculator out, and math directions tell
+  students to open their own, such as desmos.com/calculator, in another
+  window beside the practice (`LiminalShell.calculatorNote`). Do not frame
+  desmos.com or embed its API without Desmos's written consent: its Terms
+  (section 5) forbid framing the tools without prior consent, and the free
+  API tier excludes public production use (`docs/roadmap.md`, Next item 4).
 - `content/guides/answer-signs.js` powers the Study tips view. It is a study
   guide of probabilistic tells, not a question bank: never run it through the
   generators, and keep every tell's caution, each principle's caution, and

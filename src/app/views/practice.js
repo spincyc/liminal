@@ -741,7 +741,7 @@
       desmos.text.textContent = available
         ? `${Analytics.ROTATION.desmos.count} SAT Math questions, each one where graphing in Desmos is a real route, ` +
           "skills you have started first. Feedback comes after each question, and the explanation shows the route. " +
-          "Open the calculator from the test screen."
+          "Open desmos.com/calculator yourself, in another window beside the practice."
         : "The Desmos drill is unavailable: its solution routes did not load with this page. Refresh the page to try " +
           "again. The Desmos lesson in Learn still has the method.";
     }
@@ -834,8 +834,9 @@
         return;
       }
       ctx.setStatus(elements.miniTestStatus, "");
-      // The test screen offers the calculator on math questions only and the
-      // reference sheet on SAT Math only, switching at each section.
+      // The test screen allows a calculator (the student's own) on math
+      // questions only and offers the reference sheet on SAT Math only,
+      // switching at each section.
       await tryLaunch({
         title: blueprint.label,
         sectionKey: blueprint.sections[0].sectionKey,

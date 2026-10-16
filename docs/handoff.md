@@ -53,7 +53,7 @@ numbers are retained; completed item 1 is recorded below.
 | 7 | P2 | Browser, accessibility, concurrency and print coverage is incomplete | Verification gap; no corresponding open failure established |
 | 8 | P2 | Two unreviewed WIP branches exist only in this workspace | Preserved, unmerged and absent from fetched remote refs |
 | 9 | P3 | Archived SAT banks and large modules remain | Maintenance backlog; compatibility paths still use banks |
-| 10 | P3 | Calculator opens in a reusable window beside the test instead of being embedded | Blocked: embedding needs Desmos's written consent (Terms §5) |
+| 10 | P3 | No in-site calculator: students open desmos.com/calculator themselves | Owner's decision (2026-10-16); embedding would also need Desmos's written consent (Terms §5) |
 
 ## P1 — instructional capability and evidence
 
@@ -238,12 +238,14 @@ platform proposal selectively. Split views/helpers around concrete responsibilit
 without changing grading, storage or review semantics. Preserve the full gate and
 browser/Node parity checks.
 
-### 10. Evaluate an embedded calculator
+### 10. No in-site calculator
 
-The calculator opens desmos.com in one reusable window beside the test (2026-10-16). Embedding needs Desmos's written consent: its Terms forbid framing without it, and the free API tier excludes public production use (see `docs/roadmap.md`, Next item 4).
-Before implementation, verify current provider licensing, integration and credential
-requirements; obtain owner input where needed. Preserve the working external link until
-keyboard, mobile and accessibility behavior is verified. See [calculator
+On 2026-10-16 the owner decided to leave the graphing calculator out of the site: the test
+screen has no calculator button, and math directions tell students to open their own, such
+as desmos.com/calculator, in another window beside the practice. Embedding would also need
+Desmos's written consent: its Terms forbid framing without it, and the free API tier
+excludes public production use (see `docs/roadmap.md`, Next item 4). Revisit only with the
+owner's decision and Desmos's consent. See [calculator
 guidance](../content/learn/sat/general/desmos.md).
 
 ## Completed work and continuation rules

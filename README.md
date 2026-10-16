@@ -222,10 +222,11 @@ never recorded. Liminal is now built to keep practice honest:
   on the real digital test: a timer you can hide with a five-minute alert, a
   question navigator, Mark for Review, an answer eliminator, highlights with
   notes (Annotate) and a line reader on reading passages, a review page,
-  typeset math, figures, a reference sheet, and a Calculator button that
-  opens Desmos in a window beside the test, reused between questions. After
-  a SAT Math answer, the explanation adds a Desmos route when the question
-  type has one: what to type, what to read, and when it fails. Exit saves
+  typeset math, figures and a reference sheet. There is no calculator in
+  the screen (the owner's choice): math directions tell students to open
+  their own, such as desmos.com/calculator in another window. After a SAT
+  Math answer, the explanation adds a Desmos route when the question type
+  has one: what to type, what to read, and when it fails. Exit saves
   the set to finish later (a test module's clock keeps running, as on test
   day) unless you discard it, which records what you saw. Starting a new set
   or test asks before replacing a saved one, and a practice set never

@@ -17,11 +17,6 @@
   const SHELL_SCHEMA = "liminal-test-shell";
   const SHELL_VERSION = 1;
   const SVG_NS = "http://www.w3.org/2000/svg";
-  const CALCULATOR_URL = "https://www.desmos.com/calculator";
-  // One named window, reused on every press, so a graph survives between
-  // questions; the question stays visible beside it, as with Bluebook's
-  // built-in calculator. (Embedding Desmos would need its API key and script.)
-  const CALCULATOR_WINDOW = "liminal-desmos";
   const SAVE_EVERY_MS = 15000;
   // Typing an answer changes the state on every keystroke; snapshots are
   // written once the typing pauses, and at once when the page is hidden.
@@ -89,7 +84,6 @@
   const mounted = [];
   let pageOverflow;
   const inerted = new Set();
-  let calculatorWindow = null;
 
   /* ---------------------------------------------------------- Desmos */
 
@@ -123,23 +117,13 @@
       ? route : null;
   }
 
-  // window.open features for the calculator: a popup beside the browser
-  // window when the screen has room, else against the screen's right edge,
-  // about 40% of the screen wide and nearly its full height.
-  function calculatorFeatures(screenInfo) {
-    const info = screenInfo || {};
-    const number = (value, fallback) => (Number.isFinite(value) ? value : fallback);
-    const screenLeft = number(info.availLeft, 0);
-    const screenTop = number(info.availTop, 0);
-    const screenWidth = Math.max(320, number(info.availWidth, 1280));
-    const screenHeight = Math.max(320, number(info.availHeight, 800));
-    const width = Math.round(Math.min(screenWidth, Math.max(360, Math.min(600, screenWidth * 0.4))));
-    const height = Math.round(Math.min(screenHeight, Math.max(400, screenHeight - 80)));
-    const screenRight = screenLeft + screenWidth;
-    const besideLeft = number(info.screenX, NaN) + number(info.outerWidth, NaN);
-    const left = Number.isFinite(besideLeft) && besideLeft >= screenLeft && besideLeft + width <= screenRight
-      ? besideLeft : screenRight - width;
-    return `popup,width=${width},height=${height},left=${Math.round(left)},top=${Math.round(screenTop)}`;
+  // Math sections allow a calculator, but the screen carries none: the owner
+  // chose on 2026-10-16 to leave it out (Desmos's terms forbid framing its
+  // calculator without consent). Students open their own beside this one.
+  function calculatorNote(sectionKey) {
+    return sectionKey === "sat-math"
+      ? "Use your own graphing calculator, for example desmos.com/calculator in another window beside this one; the digital SAT builds Desmos in on test day."
+      : "Use your own calculator, for example desmos.com/calculator in another window beside this one.";
   }
 
   /* ------------------------------------------------------------- utilities */
@@ -193,11 +177,6 @@
   }
 
   const ICONS = {
-    calculator: [
-      ["rect", { x: 5, y: 2.5, width: 14, height: 19, rx: 2 }],
-      ["rect", { x: 8, y: 5.5, width: 8, height: 3.5, rx: 0.5 }],
-      ["path", { d: "M8.5 12.5h.01M12 12.5h.01M15.5 12.5h.01M8.5 15.5h.01M12 15.5h.01M15.5 15.5h.01M8.5 18.5h.01M12 18.5h.01M15.5 18.5h.01", "stroke-width": 2.4 }],
-    ],
     reference: [
       ["path", { d: "M6 3h9l4 4v14H6z" }],
       ["path", { d: "M15 3v4h4" }],
@@ -951,11 +930,6 @@
     });
     refs.centerLabel = h("p", { className: "lm-center-label" });
 
-    refs.calcButton = tools.calculator
-      ? toolButton("calculator", "Calculator", openCalculator, {
-        title: "Calculator (opens the Desmos graphing calculator in a window beside the test)",
-      })
-      : null;
     refs.refButton = tools.reference
       ? toolButton("reference", "Reference", () => togglePanel("reference"), {
         "aria-expanded": "false",
@@ -992,7 +966,7 @@
       h("div", { className: "lm-top-center" }, [refs.timer, refs.timerToggle, refs.centerLabel]),
       h("div", { className: "lm-top-right" }, [
         refs.annotateButton, refs.readerButton,
-        refs.calcButton, refs.refButton, refs.reportButton, refs.exitButton,
+        refs.refButton, refs.reportButton, refs.exitButton,
       ]),
     ]);
 
@@ -1249,6 +1223,7 @@
         ]),
         h("div", { className: "lm-directions-body" }, directionsFor()
           .map((text) => h("p", { text }))
+          .concat(toolAvailable("calculator") ? [h("p", { text: calculatorNote(currentSectionKey()) })] : [])
           .concat(currentQuestion().responseType === "essay"
             ? [] : session.state.feedback === "instant"
             ? [h("p", { text: "Instant feedback is on: use Check to see whether your answer is right, then read the explanation. A checked answer is locked." })]
@@ -1321,54 +1296,6 @@
               : refs.refButton;
         if (target && target.isConnected && !target.hidden) target.focus();
       }
-    }
-
-    // Opens Desmos in one sized window beside the test, or brings it back
-    // with its graphs intact while this page stays loaded. The window starts
-    // blank and is cut off from this page (opener = null) before it loads
-    // desmos.com, so Desmos cannot reach the test. That cut is deliberate
-    // and has a cost: after a reload this page can no longer find the
-    // detached window by name, so the button opens a second one (Chromium,
-    // checked 2026-10-16). With pop-ups blocked, a tab instead.
-    function openCalculator() {
-      const detach = (win) => { try { win.opener = null; } catch (error) { /* cross-origin */ } };
-      const focus = (win) => { try { win.focus(); } catch (error) { /* closed meanwhile */ } };
-      if (calculatorWindow && !calculatorWindow.closed) {
-        focus(calculatorWindow);
-        return;
-      }
-      const screenInfo = root.screen || {};
-      let popup = null;
-      try {
-        popup = root.open("", CALCULATOR_WINDOW, calculatorFeatures({
-          availLeft: screenInfo.availLeft,
-          availTop: screenInfo.availTop,
-          availWidth: screenInfo.availWidth,
-          availHeight: screenInfo.availHeight,
-          screenX: root.screenX,
-          outerWidth: root.outerWidth,
-        }));
-      } catch (error) {
-        popup = null;
-      }
-      if (popup) {
-        let blank = false;
-        try { blank = popup.location.href === "about:blank"; } catch (error) { blank = false; }
-        if (blank) {
-          detach(popup);
-          popup.location.replace(CALCULATOR_URL);
-        }
-        calculatorWindow = popup;
-        focus(popup);
-        return;
-      }
-      let tab = null;
-      try { tab = root.open(CALCULATOR_URL, "_blank"); } catch (error) { tab = null; }
-      if (tab) {
-        detach(tab);
-        return;
-      }
-      showNotice("The browser blocked the calculator window. Allow pop-ups for this site, or open desmos.com/calculator in another tab.");
     }
 
     /* ---- dialogs */
@@ -2096,8 +2023,8 @@
       const name = current.section || current.sectionKey;
       const toolsText = toolAvailable("calculator")
         ? toolAvailable("reference")
-          ? " The calculator and the reference sheet are available."
-          : " The calculator is available."
+          ? " A calculator is allowed (your own, such as desmos.com/calculator in another window), and the reference sheet is available."
+          : " A calculator is allowed (your own, such as desmos.com/calculator in another window)."
         : " No calculator in this section.";
       return h("div", { className: "lm-notice lm-section-start", role: "note" }, [
         h("p", { text: `${name} section: questions ${index + 1}–${last + 1}.${toolsText}` }),
@@ -3306,7 +3233,6 @@
         refs.exitButton.title = exitLabel;
         refs.exitButton.querySelector(".lm-tool-label").textContent = exitLabel;
       }
-      if (refs.calcButton) refs.calcButton.hidden = view === "report" || !toolAvailable("calculator");
       if (refs.refButton) refs.refButton.hidden = view === "report" || !toolAvailable("reference");
       if (openPanel === "reference" && !toolAvailable("reference")) closePanel(false);
       if (refs.annotateButton) refs.annotateButton.hidden = !toolAvailable("annotate");
@@ -3472,7 +3398,7 @@
     formatClock,
     describeDiscard,
     desmosRoute,
-    calculatorFeatures,
+    calculatorNote,
     DESMOS_TYPING_TIP,
   };
 });

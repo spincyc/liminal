@@ -3,8 +3,9 @@
 // The Desmos routes (content/desmos-routes.json): the data contract that
 // tools/check-desmos.js enforces, that every route's template draws
 // questions the test screen can match, and how the screen shows a route
-// (only after an answer, never naming the template) and opens the
-// calculator window.
+// (only after an answer, never naming the template). The screen carries no
+// calculator of its own (the owner's decision, 2026-10-16); math sections
+// tell students to open their own.
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
@@ -244,21 +245,6 @@ test("the screen finds a route by template id or question id, and tolerates no r
   assert.equal(shell.desmosRoute({ sectionKey: "sat-math", templateId: "tmpl-a" }), null, "no global bundle");
 });
 
-test("the calculator window sits beside the browser window when there is room, else at the screen's edge", () => {
-  const parse = (features) => Object.fromEntries(features.split(",").map((part) => part.split("="))
-    .map(([key, value]) => [key, value === undefined ? true : Number(value)]));
-  const beside = parse(shell.calculatorFeatures({ availLeft: 0, availTop: 0, availWidth: 1920, availHeight: 1040, screenX: 0, outerWidth: 1200 }));
-  assert.deepEqual(beside, { popup: true, width: 600, height: 960, left: 1200, top: 0 });
-  const edge = parse(shell.calculatorFeatures({ availLeft: 0, availTop: 0, availWidth: 1366, availHeight: 728, screenX: 0, outerWidth: 1366 }));
-  assert.equal(edge.width, 546);
-  assert.equal(edge.left, 1366 - 546);
-  assert.equal(edge.height, 648);
-  const small = parse(shell.calculatorFeatures({ availWidth: 390, availHeight: 700 }));
-  assert.ok(small.width >= 360 && small.width <= 390 && small.left >= 0, JSON.stringify(small));
-  const unknown = parse(shell.calculatorFeatures(undefined));
-  assert.ok(unknown.width > 0 && unknown.height > 0 && Number.isFinite(unknown.left));
-});
-
 const routed = {
   id: "sat-math:tmpl-a:7", templateId: "tmpl-a", sectionKey: "sat-math", test: "SAT", section: "Math",
   responseType: "multiple-choice", stem: "Choose two.", choices: ["2", "3", "4", "5"], correctAnswer: 0,
@@ -335,37 +321,25 @@ test("without the routes bundle the screen shows no route and no report note", (
   screen.close();
 });
 
-test("Calculator opens one detached, sized window and brings it back; a blocked pop-up falls back to a tab", () => {
-  const { env, screen } = routedShell("instant");
-  const calls = [];
-  const fakeWindow = () => ({ closed: false, opener: {}, focused: 0, location: { href: "about:blank", replace(url) { this.href = url; } }, focus() { this.focused += 1; } });
-  let popup = fakeWindow();
-  env.window.screen = { availLeft: 0, availTop: 0, availWidth: 1920, availHeight: 1040 };
-  env.window.open = (...args) => { calls.push(args); return popup; };
-  const button = screen.element.querySelector(".lm-tool-calculator");
-  button.click();
-  assert.equal(calls.length, 1);
-  assert.equal(calls[0][0], "");
-  assert.equal(calls[0][1], "liminal-desmos");
-  assert.match(calls[0][2], /^popup,width=\d+,height=\d+,left=\d+,top=\d+$/);
-  assert.equal(popup.opener, null, "the calculator cannot reach this page");
-  assert.equal(popup.location.href, "https://www.desmos.com/calculator");
-  button.click();
-  assert.equal(calls.length, 1, "the open window is reused");
-  assert.equal(popup.focused, 2);
+test("the screen has no calculator button; math directions say to open one's own, other sections don't", () => {
+  const { screen } = routedShell("instant");
+  assert.equal(screen.element.querySelector(".lm-tool-calculator"), null);
+  assert.ok(!screen.element.querySelectorAll(".lm-tool").some((tool) => /calculator/i.test(tool.textContent)));
+  screen.element.querySelector(".lm-directions-toggle").click();
+  const directions = screen.element.querySelector(".lm-directions-body").textContent;
+  assert.match(directions, /A calculator is allowed on every question/);
+  assert.ok(directions.includes(shell.calculatorNote("sat-math")));
+  assert.match(shell.calculatorNote("sat-math"), /your own graphing calculator, for example desmos\.com\/calculator in another window beside this one/);
+  assert.match(shell.calculatorNote("act-mathematics"), /your own calculator, for example desmos\.com\/calculator/);
+  assert.doesNotMatch(shell.calculatorNote("act-mathematics"), /SAT/);
   screen.close();
 
-  // Pop-ups blocked: a tab, also detached; both blocked: a notice.
-  const second = routedShell("instant");
-  const tab = fakeWindow();
-  const opened = [];
-  second.env.window.open = (...args) => { opened.push(args); return args[1] === "_blank" ? tab : null; };
-  second.screen.element.querySelector(".lm-tool-calculator").click();
-  assert.deepEqual(opened.map((args) => args[1]), ["liminal-desmos", "_blank"]);
-  assert.equal(opened[1][0], "https://www.desmos.com/calculator");
-  assert.equal(tab.opener, null);
-  second.env.window.open = () => null;
-  second.screen.element.querySelector(".lm-tool-calculator").click();
-  assert.match(second.screen.element.textContent, /blocked the calculator window/);
-  second.screen.close();
+  const env = environment();
+  env.load("render.js");
+  env.load("test-shell.js");
+  const reading = { ...routed, id: "sat-reading-writing:tmpl-r:1", templateId: "tmpl-r", sectionKey: "sat-reading-writing", section: "Reading and Writing" };
+  const rw = env.window.LiminalShell.start({ questions: [reading], feedback: "instant" });
+  rw.element.querySelector(".lm-directions-toggle").click();
+  assert.doesNotMatch(rw.element.querySelector(".lm-directions-body").textContent, /desmos|calculator/i);
+  rw.close();
 });

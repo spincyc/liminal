@@ -602,8 +602,8 @@
         title: `Desmos drill: ${plural(step.count, "question")}`,
         section: sectionName(step.sectionKey),
         reason: "Questions where graphing in Desmos is a real route, most from systems, nonlinear equations and functions, " +
-          "lines, inequalities, circles and scatterplots. After each one, the explanation shows the route. Open the " +
-          "calculator from the test screen.",
+          "lines, inequalities, circles and scatterplots. After each one, the explanation shows the route. Open " +
+          "desmos.com/calculator yourself, in another window beside the practice.",
         button: "Start the Desmos drill",
       });
     }

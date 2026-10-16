@@ -11,11 +11,12 @@ on test day, it wastes minutes. Practice with the free version at
 [desmos.com/calculator](https://www.desmos.com/calculator), then try the one
 inside Bluebook's practice tools so nothing surprises you.
 
-In a Liminal Math set, the Calculator button opens desmos.com in its own
-window beside the question, and pressing it again brings back the same
-window with your graphs. After you answer a question whose type has a
-Desmos route, its explanation adds one: what to type, what to read, and
-when the route fails. See [the practice plan](#practice-protocol).
+Liminal has no calculator of its own. For a Math set, open
+[desmos.com/calculator](https://www.desmos.com/calculator) yourself in
+another window and put it side by side with the practice window, so the
+question stays in view as it does on test day. After you answer a question
+whose type has a Desmos route, its explanation adds one: what to type, what
+to read, and when the route fails. See [the practice plan](#practice-protocol).
 
 Start with [Reading graphs](learn:sat/general/reading-graphs) if you need to
 separate input from output, slope from intercept, or an endpoint from the
@@ -215,8 +216,8 @@ from SAT Math question types that have a Desmos route, weighted toward the
 skills where Desmos solves the question rather than only checks it, with
 feedback after each question. Next step offers it when you have not done one
 in a week, until you have done four; after that, about every two weeks. You
-can start one from that link at any time. Keep Desmos open beside the
-question with the Calculator button.
+can start one from that link at any time. Keep desmos.com/calculator open
+in its own window beside the practice window.
 
 Before your first drill, spend ten minutes at
 [desmos.com/calculator](https://www.desmos.com/calculator) on the keys:

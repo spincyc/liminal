@@ -37,8 +37,8 @@ and the dated independent template reviews:
   models, systems of inequalities from context, solution counts, rational
   equations, population density, line graphs and trig ratio from ratio.
 - **Desmos routes.** Routes cover the templates where Desmos genuinely
-  solves or checks a question, and are shown after answering. The
-  calculator opens in one reusable window beside the test.
+  solves or checks a question, and are shown after answering. The site has
+  no calculator of its own; students open desmos.com/calculator themselves.
 - **Learn has practice.** Every SAT Math lesson puts a Try it problem after
   each worked example, opens with prerequisite checks linked to Grade 6–8
   and high-school lessons, and puts core material before Harder versions.
@@ -142,8 +142,8 @@ Remaining product work:
    current implementation; neither is ready for automatic integration.
 4. Expand genuinely distinct ACT designs, then review and calibrate them.
    Current banks contain exercise variants; ACT tiers remain unused.
-5. Consider an embedded calculator when an appropriate API key is available,
-   and split large modules when a concrete change benefits from doing so.
+5. Split large modules when a concrete change benefits from doing so. (No
+   in-site calculator: see Next item 4.)
 
 The dated history below records earlier decisions; the 2026-10-02 source-based
 version policy replaces the older eight-seed, visible-fields-only policy.
@@ -264,21 +264,21 @@ are in [`handoff.md`](handoff.md).
 3. **Measure the tiers.** Tiers are still judged by a rubric; the new Hard
    templates of 2026-09-26 were checked by their authors, not by a cold
    reader. A cold read of the new Hard designs, then calibration (item 2).
-4. **An embedded graphing calculator: blocked on Desmos's consent**
-   (checked 2026-10-16).
-   - **Framing.** The owner approved framing desmos.com in the test screen.
-     Desmos's Terms of Service, section 5 (last modified 2026-07-15), say:
-     "You may not frame or mirror the Desmos Tools without our prior
-     consent."
-   - **The API.** The free API tier is limited to personal, non-commercial
-     use or a 90-day internal trial, and a public page counts as
-     production use.
-   - **What happens now.** The calculator keeps opening desmos.com in a
-     window beside the test, where the student uses it as an end user.
-   - **To embed.** Get written consent from Desmos
-     (partnerships@desmos.com) first. A look-alike calculator was
-     considered and rejected: practice should use the real tool's
-     keystrokes and behaviour, as on test day.
+4. **No in-site graphing calculator, by the owner's choice** (2026-10-16).
+   - **Decision.** The site carries no calculator and no launcher. Math
+     directions tell students to open their own, such as
+     desmos.com/calculator, in another window beside the practice, as an
+     end user of desmos.com. The Desmos routes, the Desmos drill and the
+     Desmos Learn page stay.
+   - **Why not embed.** Embedding would also need Desmos's consent. Its
+     Terms of Service, section 5 (last modified 2026-07-15), say: "You may
+     not frame or mirror the Desmos Tools without our prior consent." The
+     free API tier is limited to personal, non-commercial use or a 90-day
+     internal trial, and a public page counts as production use. A
+     look-alike calculator was considered and rejected: practice should use
+     the real tool's keystrokes and behaviour, as on test day.
+   - **To revisit.** Get written consent from Desmos
+     (partnerships@desmos.com) and the owner's decision first.
 5. **ACT templates.** ACT Math templates are being built (2026-09-26); then
    passage-set templates for Science, slot templates over authored English
    passages, and Reading kept as authored sets. Until then the ACT banks
