@@ -1785,7 +1785,11 @@
             [askB ? a : b, `Gives the value of ${askB ? "a" : "b"}, the other intercept.`],
             [askB ? bSlip : aSlip, "Takes the slope to be b/a, the rise over the run with the sign of the run lost."],
             [askB ? aSlip : bSlip, `Takes the slope to be b/a and then reports ${askB ? "a" : "b"}.`],
-            [total / 2, "Assumes the two intercepts are equal."],
+            // Equal intercepts can only meet a sum; for a difference, b − a,
+            // the matching slip is opposite intercepts (a = −b).
+            useSum
+              ? [total / 2, "Assumes the two intercepts are equal."]
+              : [askB ? total / 2 : -total / 2, "Assumes the two intercepts are opposites (a = −b), so b − a = 2b."],
           ].filter(([value]) => Number.isFinite(value) && exact(value) && Math.abs(value) < 1000);
           const numeric = t.chance(0.4);
           // The sign slip is the key's negation, so it is offered only with
@@ -1814,7 +1818,9 @@
               `b = ${bInA}. Substituting into ${condition} gives a = ${num(a)} and b = ${num(b)}.`,
             steps: [
               `Slope between the intercepts: ${MINUS}b/a = ${slope}, so b = ${bInA}.`,
-              `Substitute into ${condition}: ${slopeTerm(useSum ? a + b : b - a, a, "a")} = ${num(total)}, so a = ${num(a)}.`,
+              slopeTerm(useSum ? a + b : b - a, a, "a") === "a"
+                ? `Substitute into ${condition}: a = ${num(a)}.`
+                : `Substitute into ${condition}: ${slopeTerm(useSum ? a + b : b - a, a, "a")} = ${num(total)}, so a = ${num(a)}.`,
               `Then b = ${num(b)}.`,
             ],
             principles: [
@@ -2110,28 +2116,28 @@
     { equation: "{a}x + {b}y = {c}", solved: "y = −({a}/{b})x + {c}/{b}", slope: "−{a}/{b}", yInt: "{c}/{b}", xInt: "{c}/{a}",
       s: (a, b) => -a * b, y: (a, b, c) => b * c, x: (a, b, c) => a * c,
       slopeSlip: "Takes the slope to be {a}/{b}, forgetting the negative sign that comes from moving {a}x to the other side.",
-      ySlip: "Takes the y-intercept to be −{c}/{b}, as if {c} had crossed the equals sign.",
-      xSlip: "Takes the x-intercept to be −{c}/{a}, as if {c} had crossed the equals sign." },
+      ySlip: "Takes the y-coordinate of the y-intercept to be −{c}/{b}, as if {c} had crossed the equals sign.",
+      xSlip: "Takes the x-coordinate of the x-intercept to be −{c}/{a}, as if {c} had crossed the equals sign." },
     { equation: "{a}x = {b}y + {c}", solved: "y = ({a}/{b})x − {c}/{b}", slope: "{a}/{b}", yInt: "−{c}/{b}", xInt: "{c}/{a}",
       s: (a, b) => a * b, y: (a, b, c) => -b * c, x: (a, b, c) => a * c,
       slopeSlip: "Takes the slope to be −{a}/{b}, as for {a}x + {b}y = {c}, but here {a}x and {b}y are on opposite sides.",
-      ySlip: "Takes the y-intercept to be {c}/{b}, without the negative sign that comes from moving {c} to the other side.",
-      xSlip: "Takes the x-intercept to be −{c}/{a}, as if {c} had to cross the equals sign when y = 0." },
+      ySlip: "Takes the y-coordinate of the y-intercept to be {c}/{b}, without the negative sign that comes from moving {c} to the other side.",
+      xSlip: "Takes the x-coordinate of the x-intercept to be −{c}/{a}, as if {c} had to cross the equals sign when y = 0." },
     { equation: "{a}x − {b}y = {c}", solved: "y = ({a}/{b})x − {c}/{b}", slope: "{a}/{b}", yInt: "−{c}/{b}", xInt: "{c}/{a}",
       s: (a, b) => a * b, y: (a, b, c) => -b * c, x: (a, b, c) => a * c,
       slopeSlip: "Takes the slope to be −{a}/{b}, as for {a}x + {b}y = {c}, overlooking the minus sign in front of {b}y.",
-      ySlip: "Takes the y-intercept to be {c}/{b}, overlooking the minus sign in front of {b}y.",
-      xSlip: "Takes the x-intercept to be −{c}/{a}, as if {c} had to cross the equals sign when y = 0." },
+      ySlip: "Takes the y-coordinate of the y-intercept to be {c}/{b}, overlooking the minus sign in front of {b}y.",
+      xSlip: "Takes the x-coordinate of the x-intercept to be −{c}/{a}, as if {c} had to cross the equals sign when y = 0." },
     { equation: "{a}x + {b}y + {c} = 0", solved: "y = −({a}/{b})x − {c}/{b}", slope: "−{a}/{b}", yInt: "−{c}/{b}", xInt: "−{c}/{a}",
       s: (a, b) => -a * b, y: (a, b, c) => -b * c, x: (a, b, c) => -a * c,
       slopeSlip: "Takes the slope to be {a}/{b}, forgetting the negative sign that comes from moving {a}x to the other side.",
-      ySlip: "Takes the y-intercept to be {c}/{b}, without the negative sign that comes from moving {c} to the other side.",
-      xSlip: "Takes the x-intercept to be {c}/{a}, without the negative sign that comes from moving {c} to the other side." },
+      ySlip: "Takes the y-coordinate of the y-intercept to be {c}/{b}, without the negative sign that comes from moving {c} to the other side.",
+      xSlip: "Takes the x-coordinate of the x-intercept to be {c}/{a}, without the negative sign that comes from moving {c} to the other side." },
     { equation: "{b}y = {a}x + {c}", solved: "y = ({a}/{b})x + {c}/{b}", slope: "{a}/{b}", yInt: "{c}/{b}", xInt: "−{c}/{a}",
       s: (a, b) => a * b, y: (a, b, c) => b * c, x: (a, b, c) => -a * c,
       slopeSlip: "Takes the slope to be −{a}/{b}, as if {a}x had crossed the equals sign.",
-      ySlip: "Takes the y-intercept to be −{c}/{b}, as if {c} had crossed the equals sign.",
-      xSlip: "Takes the x-intercept to be {c}/{a}, without the negative sign that comes from setting y = 0 and moving {c}." },
+      ySlip: "Takes the y-coordinate of the y-intercept to be −{c}/{b}, as if {c} had crossed the equals sign.",
+      xSlip: "Takes the x-coordinate of the x-intercept to be {c}/{a}, without the negative sign that comes from setting y = 0 and moving {c}." },
   ];
   const LETTER_SETS = [["a", "b", "c"], ["p", "q", "r"], ["r", "s", "t"], ["j", "k", "n"]];
 
@@ -2191,7 +2197,7 @@
           [xSign, -ySign, rename(shape.ySlip)],
           [-xSign, -ySign, both(rename(shape.xSlip), rename(shape.ySlip))],
         ];
-        label = ([x, y]) => `The x-intercept is ${signWord(x)}, and the y-intercept is ${signWord(y)}.`;
+        label = ([x, y]) => `The x-coordinate of the x-intercept is ${signWord(x)}, and the y-coordinate of the y-intercept is ${signWord(y)}.`;
       } else {
         grid = [
           [slopeSign, ySign, null],
@@ -2201,18 +2207,18 @@
         ];
         label = ask === "quadrant"
           ? ([m, k]) => `Quadrant ${QUADRANT[`${m},${k}`]}`
-          : ([m, k]) => `The slope is ${signWord(m)}, and the y-intercept is ${signWord(k)}.`;
+          : ([m, k]) => `The slope is ${signWord(m)}, and the y-coordinate of the y-intercept is ${signWord(k)}.`;
       }
       const key = label(grid[0]);
       const wrong = grid.slice(1).map((option) => [label(option), option[2]]);
       const missed = QUADRANT[`${slopeSign},${ySign}`];
       const equation = rename(shape.equation);
       const steps = [
-        `Solve for y: ${rename(shape.solved)}. The slope is ${rename(shape.slope)}, the y-intercept is ${rename(shape.yInt)}, and the x-intercept (where y = 0) is ${rename(shape.xInt)}.`,
+        `Solve for y: ${rename(shape.solved)}. The slope is ${rename(shape.slope)}, the y-intercept is (0, ${rename(shape.yInt)}), and the x-intercept (where y = 0) is (${rename(shape.xInt)}, 0).`,
         `From ${facts}: ${deduce}`,
         ask === "intercepts"
-          ? `So the x-intercept, ${rename(shape.xInt)}, is ${signWord(xSign)}, and the y-intercept, ${rename(shape.yInt)}, is ${signWord(ySign)}.`
-          : `So the slope, ${rename(shape.slope)}, is ${signWord(slopeSign)}, and the y-intercept, ${rename(shape.yInt)}, is ${signWord(ySign)}.`,
+          ? `So the x-coordinate of the x-intercept, ${rename(shape.xInt)}, is ${signWord(xSign)}, and the y-coordinate of the y-intercept, ${rename(shape.yInt)}, is ${signWord(ySign)}.`
+          : `So the slope, ${rename(shape.slope)}, is ${signWord(slopeSign)}, and the y-coordinate of the y-intercept, ${rename(shape.yInt)}, is ${signWord(ySign)}.`,
       ];
       if (ask === "quadrant") {
         steps.push(`A line with a ${signWord(slopeSign)} slope and a ${signWord(ySign)} y-intercept passes through Quadrants ${PASSES[missed]}, and never enters Quadrant ${missed}.`);
@@ -2262,8 +2268,8 @@
               const truth = ask === "quadrant"
                 ? `Quadrant ${missedQuadrant(m, k)}`
                 : ask === "slope"
-                  ? `The slope is ${signWord(Math.sign(m))}, and the y-intercept is ${signWord(Math.sign(k))}.`
-                  : `The x-intercept is ${signWord(Math.sign(xi))}, and the y-intercept is ${signWord(Math.sign(k))}.`;
+                  ? `The slope is ${signWord(Math.sign(m))}, and the y-coordinate of the y-intercept is ${signWord(Math.sign(k))}.`
+                  : `The x-coordinate of the x-intercept is ${signWord(Math.sign(xi))}, and the y-coordinate of the y-intercept is ${signWord(Math.sign(k))}.`;
               if (truth !== key || wrong.some(([choice]) => choice === truth)) return false;
             }
           }

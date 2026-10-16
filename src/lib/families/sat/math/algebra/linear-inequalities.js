@@ -1495,8 +1495,10 @@
         const model = (p, q, rel) => `${commas(F)} + ${p}x + ${q}y ${rel} ${commas(L)}`;
         const keyModel = model(a, b, scene.rel);
         const define = `where x is the number of ${scene.xs} and y is the number of ${scene.ys}`;
+        // Only the "model" stem names x and y; the other forms name them in the solution.
+        const letX = `Let x be the number of ${scene.xs} and y the number of ${scene.ys}`;
         const common = {
-          explanation: `${scene.total[0].toUpperCase()}${scene.total.slice(1)} is ${commas(F)} + ${a}x + ${b}y, and it must be ${max ? "at most" : "at least"} ${commas(L)}: ${keyModel}.`,
+          explanation: `${form === "model" ? "" : `${letX}. `}${scene.total[0].toUpperCase()}${scene.total.slice(1)} is ${commas(F)} + ${a}x + ${b}y, and it must be ${max ? "at most" : "at least"} ${commas(L)}: ${keyModel}.`,
           principles: [
             "In a two-variable linear inequality, each rate multiplies the variable for its own quantity, and a fixed amount is added once.",
             "\"At most\" is ≤ and \"at least\" is ≥.",
@@ -1574,10 +1576,10 @@
             stem: `${scene.text(v)} ${stemAsk}`,
             correct: key,
             wrong: numeric ? [] : wrong,
-            explanation: `${keyModel}. Substitute y = ${y0} and subtract the known amounts: ${a}x ${scene.rel} ${commas(room)}, ` +
+            explanation: `${letX}: ${keyModel}. Substitute y = ${y0} and subtract the known amounts: ${a}x ${scene.rel} ${commas(room)}, ` +
               `so x ${scene.rel} ${boundaryText}. The ${max ? "greatest" : "least"} whole number that meets the condition is ${key}.`,
             steps: [
-              `Write the inequality: ${keyModel}.`,
+              `${letX}: ${keyModel}.`,
               `Substitute y = ${y0}: ${a}x ${scene.rel} ${commas(L)} ${MINUS} ${commas(F)} ${MINUS} ${commas(b * y0)} = ${commas(room)}.`,
               `x ${scene.rel} ${boundaryText}, so the ${max ? "greatest" : "least"} whole number is ${key}.`,
             ],
@@ -1628,7 +1630,7 @@
           correct: key,
           wrong,
           steps: [
-            `Write the condition: ${keyModel}.`,
+            `${letX}: ${keyModel}.`,
             `Test each combination: ${key} gives ${commas(total(kx, ky))}, which is at most ${commas(L)}.`,
             "Each other combination gives a total over the limit.",
           ],
@@ -2167,7 +2169,8 @@
         const P = t.pick([25, 30, 35, 40, 45, 60]);
         const p = P / 100;
         const N0 = t.int(20, 80);
-        const X0 = t.int(1, Math.floor(p * N0) - 1);
+        // At least 2 already, so "X0 of whom are …" never reads "1 of whom are".
+        const X0 = t.int(2, Math.floor(p * N0) - 1);
         const C0 = p * N0 - X0; // the shortfall measured against the current total
         const B = C0 / (1 - p); // the bound on n
         if (C0 < 1.5 || B > 60) continue;

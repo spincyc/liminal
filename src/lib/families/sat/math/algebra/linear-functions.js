@@ -404,7 +404,9 @@
         const common = {
           estimatedSeconds: 50,
           stimulus: { type: "equations", content: equation },
-          explanation: `Setting x = 0 leaves ${lin(b, 0, "y")} = ${num(c)}, so y = ${num(Y)}.`,
+          explanation: b === 1
+            ? `Setting x = 0 leaves y = ${num(Y)}.`
+            : `Setting x = 0 leaves ${lin(b, 0, "y")} = ${num(c)}, so y = ${num(Y)}.`,
           steps,
           principles: ["The y-intercept of a graph is the point where x = 0."],
           trap: "Setting y = 0 instead of x = 0 gives the x-intercept.",
@@ -1609,9 +1611,11 @@
         }[ask];
         const [sn, sd] = slopeOf(keyA);
         const perUnit = slopeTerm(c - 1, d1, "a");
+        // A negative or compound factor goes in parentheses: "4 · (−3a)", never "4 · −3a".
+        const factor = /^\(/.test(perUnit) ? perUnit : /^−|[\s/]/.test(perUnit) ? `(${perUnit})` : perUnit;
         const steps = [
           `The slope between the first two rows is (${cell} ${MINUS} a) ÷ ${d1} = ${perUnit}.`,
-          `The third row is ${d2} more in x, so f(${num(x3)}) = ${cell} + ${d2} · ${/^\(/.test(perUnit) || !/[\s/]/.test(perUnit) ? perUnit : `(${perUnit})`}, which gives ${num(y3)} = ${slopeTerm(c * d1 + (c - 1) * d2, d1, "a")}.`,
+          `The third row is ${d2} more in x, so f(${num(x3)}) = ${cell} + ${d2} · ${factor}, which gives ${num(y3)} = ${slopeTerm(c * d1 + (c - 1) * d2, d1, "a")}.`,
           `So a = ${num(a0)}.`,
         ];
         if (ask === "slope") steps.push(`The slope is ${perUnit} with a = ${num(a0)}: ${text([sn, sd])}.`);
@@ -1747,7 +1751,7 @@
             [G + sign * rG * (T2 - T), `Takes ${num(r)}% of ${show(G)}, the value at t = ${T}, as the change per ${scene.unit}.`],
             [G + sign * b * T2, `Counts ${T2} ${scene.units} of change from the value at t = ${T}, instead of ${T2 - T}.`],
             [a, `Gives the value of a, ${scene.start}, found on the way.`],
-            [Math.round(G * Math.pow(1 + (sign * r) / 100, T2 - T)), `Applies a ${num(r)}% change to each ${scene.unit}'s new value, as if the change compounded.`],
+            [Math.round(G * Math.pow(1 + (sign * r) / 100, T2 - T)), `Applies ${S.article(r)} ${num(r)}% change to each ${scene.unit}'s new value, as if the change compounded.`],
           ];
           stemAsk = `What is the value of ${f}(${T2})?`;
         }
@@ -1805,8 +1809,260 @@
     },
   };
 
+
+  /* ------------------------------------------------ line-intercept-parameter-range */
+
+  // A line through a fixed point (p, q) in Quadrant I, with an unknown slope
+  // m or an unknown y-intercept b, and a condition on its x-intercept k
+  // compared with a number c > p. The x-intercept is p − q/m, so the
+  // condition is an inequality with the parameter in a denominator:
+  // clearing it by a negative m reverses the inequality, and the boundary
+  // value gives k = c exactly.
+  // The x-intercept of the line through (p, q) with slope m, found by
+  // bisecting y = 0 on the line itself rather than from the formula
+  // p − q/m that the explanation uses.
+  const xInterceptOf = (p, q, m) => {
+    const f = (x) => q + m * (x - p);
+    let lo = -1e6;
+    let hi = 1e6;
+    if (Math.sign(f(lo)) === Math.sign(f(hi))) return NaN;
+    for (let i = 0; i < 200; i += 1) {
+      const mid = (lo + hi) / 2;
+      if (Math.sign(f(mid)) === Math.sign(f(lo))) lo = mid;
+      else hi = mid;
+    }
+    return (lo + hi) / 2;
+  };
+
+  function slopeRangeItem(t) {
+    for (;;) {
+      const p = t.int(1, 6);
+      const q = t.int(2, 9);
+      const gap = t.int(2, 9); // |c − p|
+      // "Greater than" a number to the right of p, or "less than" a number
+      // to its left; either way only slopes of one sign can work.
+      const greater = t.chance(0.5);
+      const c = greater ? p + gap : p - gap;
+      const B = (greater ? -q : q) / gap; // the boundary slope: k = c exactly
+      if (Math.abs(B) > 4) continue;
+      const ask = t.chance(0.5) ? "all" : "could";
+      const Btext = frac(greater ? -q : q, gap);
+      const mirror = frac(greater ? q : -q, gap);
+      const rel = greater ? ">" : "<";
+      const valid = (m) => m !== 0 && (greater ? p - q / m > c : p - q / m < c);
+      // The valid slopes lie strictly between 0 and B.
+      const interval = greater ? `${Btext} < m < 0` : `0 < m < ${Btext}`;
+      const sign = greater ? "negative" : "positive";
+      const stem =
+        `In the xy-plane, line ℓ has slope m and passes through the point ${point(p, q)}, where m is a constant. ` +
+        `The x-intercept of line ℓ is (k, 0), where k ${rel} ${num(c)}. ` +
+        (ask === "could" ? "Which of the following could be the value of m?" : "Which of the following describes all possible values of m?");
+      const cleared = greater ? `${MINUS}${q} < ${gap}m, so m > ${Btext}` : `${q} > ${gap}m, so m < ${Btext}`;
+      const shared = {
+        stimulus: null,
+        stem,
+        explanation:
+          `Line ℓ is y ${MINUS} ${q} = m(x ${MINUS} ${p}). Setting y = 0 gives k = ${p} ${MINUS} ${q}/m, so ${p} ${MINUS} ${q}/m ${rel} ${num(c)}, ` +
+          `or ${greater ? `${MINUS}${q}/m > ${gap}` : `${q}/m > ${gap}`}. That can hold only when m is ${sign}. ` +
+          `${greater ? "Multiplying by the negative m reverses the inequality" : "Multiplying by the positive m keeps the inequality"}: ` +
+          `${cleared}. So ${interval}.`,
+        steps: [
+          `Setting y = 0 in y ${MINUS} ${q} = m(x ${MINUS} ${p}) gives the x-intercept k = ${p} ${MINUS} ${q}/m.`,
+          `The condition becomes ${greater ? `${MINUS}${q}/m > ${gap}` : `${q}/m > ${gap}`}, which needs a ${sign} m.`,
+          `${greater ? "Multiplying by m < 0 reverses the inequality" : "Multiplying by m > 0 keeps the inequality"}: ${cleared}. So ${interval}.`,
+        ],
+        principles: [
+          "Multiplying or dividing both sides of an inequality by a negative number reverses it, so the sign of a parameter must be known before clearing it from a denominator.",
+          "The x-intercept of a line is where y = 0.",
+        ],
+        trap: `Clearing m from the denominator without first deciding its sign keeps slopes of the wrong sign, and m = ${Btext} puts the x-intercept exactly at ${num(c)}.`,
+        hint: "Write the x-intercept in terms of m, then think about the sign of m before clearing the fraction.",
+      };
+      const noSign = greater
+        ? "Multiplies both sides by m without reversing the inequality; for a negative m it reverses."
+        : "Clears the fraction without noting that only a positive m can work, so it keeps negative slopes too.";
+      const reversed = greater
+        ? "Reverses the inequality correctly but forgets that only a negative m can make the x-intercept greater than " + `${num(c)}.`
+        : "Reverses the inequality when multiplying by m, but m must be positive here, so the inequality keeps its direction.";
+      if (ask === "all") {
+        const options = greater
+          ? [
+            [interval, null],
+            [`m < ${Btext}`, noSign],
+            [`0 < m < ${mirror}`, `Takes the x-intercept to be ${p} + ${q}/m, losing the sign of ${q}/m.`],
+            [`m > ${Btext}`, reversed],
+          ]
+          : [
+            [interval, null],
+            [`m < ${Btext}`, noSign],
+            [`${mirror} < m < 0`, `Takes the x-intercept to be ${p} + ${q}/m, losing the sign of ${q}/m.`],
+            [`m > ${Btext}`, reversed],
+          ];
+        const [keyText] = options[0];
+        const wrong = options.slice(1);
+        const value = (text) => { const [a, b] = text.replace(MINUS, "-").split("/").map(Number); return b ? a / b : a; };
+        const inSet = (text, m) => {
+          const two = text.match(/^(.+) < m < (.+)$/);
+          if (two) return m > value(two[1]) && m < value(two[2]);
+          const one = text.match(/^m ([<>]) (.+)$/);
+          return one[1] === "<" ? m < value(one[2]) : m > value(one[2]);
+        };
+        // Compare a set with the displayed condition on slopes 1/64 apart.
+        const agrees = (text) => {
+          for (let i = -1280; i <= 1280; i += 1) {
+            const m = i / 64;
+            if (m === 0 || Math.abs(m - B) < 1e-9) continue;
+            const k = xInterceptOf(p, q, m);
+            if (inSet(text, m) !== (greater ? k > c : k < c)) return false;
+          }
+          return true;
+        };
+        return {
+          ...shared,
+          responseType: "multiple-choice",
+          estimatedSeconds: 120,
+          correct: keyText,
+          wrong,
+          verify: () => agrees(keyText) && wrong.every(([text]) => !agrees(text)),
+        };
+      }
+      // "Could be": one valid slope, three invalid ones with their reasons.
+      const pretty = (m) => {
+        // A fraction with a small denominator, or null.
+        for (let d = 1; d <= 12; d += 1) {
+          if (Math.abs(m * d - Math.round(m * d)) < 1e-9) return frac(Math.round(m * d), d);
+        }
+        return null;
+      };
+      const keyValue = t.pick([B / 2, B / 4, (3 * B) / 4, B / 3, (2 * B) / 3].filter((m) => pretty(m) && valid(m)));
+      if (keyValue === undefined) continue;
+      const invalid = [
+        [B, `Includes the boundary: a slope of ${Btext} puts the x-intercept at exactly ${num(c)}, which is not ${greater ? "greater" : "less"} than ${num(c)}.`],
+        [2 * B, greater ? noSign : reversed],
+        [(3 * B) / 2, greater ? noSign : reversed],
+        [0, `A slope of 0 gives a horizontal line through ${point(p, q)}, which never meets the x-axis.`],
+        [-B / 2, greater ? `Takes the x-intercept to be ${p} + ${q}/m; a line with a positive slope through ${point(p, q)} meets the x-axis to the left of ${p}.` : noSign],
+        [-B, greater ? `Takes the x-intercept to be ${p} + ${q}/m, losing the sign of ${q}/m, and includes the boundary.` : noSign],
+      ];
+      const keyText = pretty(keyValue);
+      const pool = invalid.filter(([m]) => pretty(m) && !valid(m)).map(([m, reason]) => [pretty(m), reason]);
+      if (collides(keyText, pool) || distinctWrong(keyText, pool) < 3) continue;
+      const wrong = spreadAround(t, keyText, pool);
+      if (wrong.length < 3) continue;
+      return {
+        ...shared,
+        responseType: "multiple-choice",
+        estimatedSeconds: 115,
+        correct: keyText,
+        wrong,
+        verify: () => {
+          const read = (text) => { const [a, b] = text.replace(MINUS, "-").split("/").map(Number); return b ? a / b : a; };
+          const holdsAt = (text) => {
+            const m = read(text);
+            if (m === 0) return false;
+            const k = xInterceptOf(p, q, m);
+            return greater ? k > c + 1e-7 : k < c - 1e-7;
+          };
+          return holdsAt(keyText) && wrong.every(([text]) => !holdsAt(text));
+        },
+      };
+    }
+  }
+
+  // The y-intercept b is unknown; the x-intercept must pass c. Only b
+  // between q and cq/(c − p) works, so the answer is the greatest whole b.
+  function interceptBoundItem(t) {
+    const numeric = t.chance(0.6);
+    for (;;) {
+      const p = t.int(1, 6);
+      const q = t.int(2, 9);
+      const gap = t.int(2, 9);
+      const c = p + gap;
+      const B = (c * q) / gap;
+      const strict = t.chance(0.6);
+      const isInt = Math.abs(B - Math.round(B)) < 1e-9;
+      if (B > 60 || B - q < 2) continue;
+      if (strict === false && !isInt && t.chance(0.5)) continue;
+      const key = isInt ? Math.round(B) - (strict ? 1 : 0) : Math.floor(B);
+      const modelled = [
+        [isInt && strict ? Math.round(B) : Math.ceil(B), isInt && strict
+          ? `Includes the boundary: b = ${num(Math.round(B))} puts the x-intercept at exactly ${c}, which is not greater than ${c}.`
+          : `Rounds ${num(Math.round(B * 100) / 100)} up; a larger b moves the x-intercept to ${strict ? `${c} or less` : `less than ${c}`}.`],
+        [q, `Gives the least value b must exceed, ${q}, where the line would be horizontal.`],
+        [Math.ceil(q / gap) - 1, `Distributes ${c} over b ${MINUS} ${q} as ${c}b ${MINUS} ${q} instead of ${c}b ${MINUS} ${c * q}, then takes the greatest whole number below the result.`],
+        [key - 1, "Stops one short of the greatest whole number that works."],
+      ].filter(([value]) => value > 0 && value !== key);
+      if (collides(key, modelled) || distinctWrong(key, modelled) < 3) continue;
+      const wrong = numeric ? [] : spreadAround(t, key, modelled);
+      if (!numeric && wrong.length < 3) continue;
+      const rel = strict ? ">" : "≥";
+      // "3b" and "(9 − b)/3", written without a coefficient or divisor of 1.
+      const pb = p === 1 ? "b" : `${p}b`;
+      const slopeText = p === 1 ? `${q} ${MINUS} b` : `(${q} ${MINUS} b)/${p}`;
+      return {
+        responseType: numeric ? "numeric" : "multiple-choice",
+        estimatedSeconds: 125,
+        stimulus: null,
+        stem:
+          `In the xy-plane, line ℓ passes through the points ${point(p, q)} and (0, b), where b is a constant. ` +
+          `The x-intercept of line ℓ is (k, 0), where k ${rel} ${c}. What is the greatest possible integer value of b?`,
+        correct: key,
+        wrong,
+        explanation:
+          `The slope of ℓ is ${slopeText}, so setting y = 0 in y = (${slopeText})x + b gives k = ${pb}/(b ${MINUS} ${q}). ` +
+          `Since k must be ${strict ? "greater than" : "at least"} ${c}, which is to the right of ${p}, b must be greater than ${q}: a smaller b puts k to the left of ${p}. Then b ${MINUS} ${q} is positive, and ` +
+          `${pb}/(b ${MINUS} ${q}) ${rel} ${c} gives ${pb} ${rel} ${c}b ${MINUS} ${c * q}, so ${gap}b ${strict ? "<" : "≤"} ${c * q} and b ${strict ? "<" : "≤"} ${frac(c * q, gap)}. ` +
+          `The greatest integer value is ${key}.`,
+        steps: [
+          `With slope ${slopeText} and y-intercept b, the x-intercept is k = ${pb}/(b ${MINUS} ${q}).`,
+          `Only b > ${q} can make k greater than ${p}, so b ${MINUS} ${q} > 0 and the inequality can be cleared without reversing it.`,
+          `${pb} ${rel} ${c}(b ${MINUS} ${q}) gives ${gap}b ${strict ? "<" : "≤"} ${c * q}, so b ${strict ? "<" : "≤"} ${frac(c * q, gap)}.`,
+          `The greatest integer value of b is ${key}.`,
+        ],
+        principles: [
+          "Multiplying both sides of an inequality by an expression is safe only once its sign is known; a negative factor reverses the inequality.",
+          "The x-intercept of a line is where y = 0.",
+        ],
+        trap: `Whether the boundary b = ${frac(c * q, gap)} is allowed depends on "${strict ? "greater than" : "greater than or equal to"}", and the answer must be a whole number on the allowed side.`,
+        hint: "Write the x-intercept in terms of b. Which values of b can make it greater than the given number?",
+        verify: () => {
+          // Try every integer b and compute the x-intercept from the two displayed points.
+          const ok = [];
+          for (let b = -200; b <= 200; b += 1) {
+            if (b === q) continue;
+            const m = (q - b) / p;
+            const k = xInterceptOf(0, b, m);
+            if (Number.isFinite(k) && (strict ? k > c + 1e-7 : k >= c - 1e-7)) ok.push(b);
+          }
+          return ok.length > 0 && Math.max(...ok) === key && ok.every((b) => b > q);
+        },
+      };
+    }
+  }
+
+  const interceptRange = {
+    id: "line-intercept-parameter-range",
+    domain: "Algebra",
+    skill: "Linear functions",
+    subskill: "intercepts",
+    difficulty: "Hard",
+    title: "Slopes or intercepts that move a line's x-intercept past a point",
+    recognize:
+      "Write the x-intercept in terms of the unknown constant; the condition is then an inequality with the constant " +
+      "in a denominator. Decide the sign of what you multiply by before clearing it, and check the boundary.",
+    // Hard: the structure (an inequality with the parameter in a
+    // denominator) must be set up before anything can be computed; clearing
+    // it without regard to sign, including the boundary, and losing the sign
+    // of q/m are all offered.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
+    tricks: ["sign-error", "reversed-condition", "rounding-direction"],
+    build(t) {
+      return t.chance(0.6) ? slopeRangeItem(t) : interceptBoundItem(t);
+    },
+  };
+
   return [
     functionValue, slopeTwoPoints, lineIntercepts, functionConstant, perpendicularLine, parallelLine, linearTransform,
-    graphTransform, tableUnknown, functionIdentity, percentRate,
+    graphTransform, tableUnknown, functionIdentity, percentRate, interceptRange,
   ];
 });
