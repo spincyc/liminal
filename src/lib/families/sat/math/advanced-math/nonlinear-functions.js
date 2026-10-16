@@ -645,6 +645,353 @@
     };
   }
 
+  /* ================================================ quadratic-context-model */
+
+  // Reads displayed math text at the given values: numbers (with thousands
+  // commas), one-letter variables, superscript powers, parentheses, + and −,
+  // juxtaposition, "·" and "/". Verification evaluates the model the student
+  // reads, not the constants that built it.
+  function readMath(text, values) {
+    const SUPS = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+    const source = String(text).replace(/\s+/g, "").replace(/−/g, "-").replace(/(\d),(?=\d{3}(?!\d))/g, "$1");
+    let position = 0;
+    const peek = () => source[position];
+    const fail = () => {
+      throw new Error(`cannot read "${text}"`);
+    };
+    function primary() {
+      if (peek() === "(") {
+        position += 1;
+        const inner = sum();
+        if (peek() !== ")") fail();
+        position += 1;
+        return inner;
+      }
+      const match = /^\d+(\.\d+)?/.exec(source.slice(position));
+      if (match) {
+        position += match[0].length;
+        return Number(match[0]);
+      }
+      const letter = peek();
+      if (letter && /[A-Za-z]/.test(letter)) {
+        position += 1;
+        if (!(letter in values)) fail();
+        return values[letter];
+      }
+      return fail();
+    }
+    function power() {
+      const base = primary();
+      let digits = "";
+      while (position < source.length && SUPS.includes(peek())) digits += SUPS.indexOf(source[position++]);
+      return digits ? base ** Number(digits) : base;
+    }
+    function product() {
+      let value = power();
+      while (position < source.length && (/[\d.A-Za-z(]/.test(peek()) || peek() === "·")) {
+        if (peek() === "·") position += 1;
+        value *= power();
+      }
+      return value;
+    }
+    function quotient() {
+      let value = product();
+      while (peek() === "/") {
+        position += 1;
+        value /= product();
+      }
+      return value;
+    }
+    function sum() {
+      let value = peek() === "-" ? (position += 1, -quotient()) : quotient();
+      while (peek() === "+" || peek() === "-") {
+        const add = source[position++] === "+";
+        const next = quotient();
+        value = add ? value + next : value - next;
+      }
+      return value;
+    }
+    const value = sum();
+    if (position !== source.length) fail();
+    return value;
+  }
+
+  // Revenue when a price rises in $1 steps: R(x) = (P + x)(N − Dx), where x is
+  // the number of $1 increases. The vertex is halfway between the zeros −P
+  // and N/D, and every quantity the questions ask for is a whole number.
+  const PRICE_SCENES = [
+    {
+      intro: (P, N) => `A community theater sells tickets to its shows for $${P} each and sells ${S.grouped(N)} tickets per show.`,
+      drop: (D) => `for each $1 increase in the ticket price, it will sell ${D} fewer tickets per show`,
+      who: "theater", price: "ticket price", items: "tickets", per: "per show",
+    },
+    {
+      intro: (P, N) => `A bakery sells boxes of muffins for $${P} each and sells ${S.grouped(N)} boxes per week.`,
+      drop: (D) => `for each $1 increase in the price of a box, it will sell ${D} fewer boxes per week`,
+      who: "bakery", price: "price of a box", items: "boxes", per: "per week",
+    },
+    {
+      intro: (P, N) => `A climbing gym charges $${P} per month for a membership and has ${S.grouped(N)} members.`,
+      drop: (D) => `for each $1 increase in the monthly fee, it will have ${D} fewer members`,
+      who: "gym", price: "monthly fee", items: "members", per: "per month",
+    },
+    {
+      intro: (P, N) => `A farm stand sells baskets of peaches for $${P} each and sells ${S.grouped(N)} baskets per weekend.`,
+      drop: (D) => `for each $1 increase in the price of a basket, it will sell ${D} fewer baskets per weekend`,
+      who: "farm stand", price: "price of a basket", items: "baskets", per: "per weekend",
+    },
+    {
+      intro: (P, N) => `A kayak rental company charges $${P} per rental and has ${S.grouped(N)} rentals per month.`,
+      drop: (D) => `for each $1 increase in the rental price, it will have ${D} fewer rentals per month`,
+      who: "company", price: "rental price", items: "rentals", per: "per month",
+    },
+  ];
+
+  function revenueItem(t, ask, numeric) {
+    const scene = t.pick(PRICE_SCENES);
+    const P = t.int(4, 40);
+    const D = t.pick([2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 25]);
+    const xs = t.int(2, 12);
+    const Z = P + 2 * xs;
+    const N = D * Z;
+    if (N > 2000 || N < 40) return null;
+    const best = P + xs;
+    const sold = D * best;
+    const maxR = D * best * best;
+    const factored = t.chance(0.6);
+    const rhs = factored
+      ? `(${P} + x)(${S.grouped(N)} ${MINUS} ${D}x)`
+      : `${MINUS}${D}x² + ${2 * D * xs}x + ${S.grouped(P * N)}`;
+    const R = (x) => readMath(rhs, { x });
+    const model = `R(x) = ${rhs}`;
+    const lead =
+      `${scene.intro(P, N)} The ${scene.who} estimates that ${scene.drop(D)}. The given function R models the ${scene.who}'s ` +
+      `estimated revenue, in dollars, ${scene.per} when the ${scene.price} is increased by x dollars.`;
+    const vertexStep = factored
+      ? `R(x) = 0 at x = ${MINUS}${P} and at x = ${Z}, so the vertex is midway between them, at x = (${MINUS}${P} + ${Z})/2 = ${xs}.`
+      : `The vertex of R is at x = ${MINUS}b/(2a) = ${MINUS}${2 * D * xs}/(2 · ${MINUS}${D}) = ${xs}.`;
+    let stem;
+    let key;
+    let wrong;
+    let steps;
+    let trap;
+    if (ask === "price") {
+      stem = `${lead} Based on the model, what ${scene.price}, in dollars, gives the greatest estimated revenue?`;
+      key = best;
+      wrong = [
+        [xs, `Gives the number of $1 increases, x = ${xs}, instead of the ${scene.price}.`],
+        [P - xs, `Makes a sign slip in finding the vertex, x = ${MINUS}${xs}, and lowers the price instead.`],
+        [P + Z, `Gives the price at which no ${scene.items} would be sold, where the revenue is 0.`],
+        [sold, `Gives the number of ${scene.items}, ${sold}, at the best price instead of the price.`],
+        [maxR, "Gives the greatest revenue instead of the price that produces it."],
+      ];
+      steps = [vertexStep, `The ${scene.price} is ${P} + ${xs} = ${best} dollars.`];
+      trap = `The vertex gives x, the number of $1 increases; the ${scene.price} is ${P} + x.`;
+    } else if (ask === "max") {
+      stem = `${lead} Based on the model, what is the greatest estimated revenue, in dollars, ${scene.per}?`;
+      key = maxR;
+      wrong = [
+        [P * N, `Gives R(0) = ${S.grouped(P * N)}, the revenue at the current price.`],
+        [best, `Gives the ${scene.price}, ${best} dollars, that produces the greatest revenue, not the revenue.`],
+        [sold, `Gives the number of ${scene.items} at the best price, not the revenue.`],
+        [best * N, `Multiplies the best price by the current ${S.grouped(N)} ${scene.items}, ignoring the drop in sales.`],
+      ];
+      steps = [vertexStep, `R(${xs}) = (${P} + ${xs})(${S.grouped(N)} ${MINUS} ${D} · ${xs}) = ${best} · ${S.grouped(sold)} = ${S.grouped(maxR)}.`];
+      trap = `The vertex's x-coordinate, ${xs}, is an intermediate value; the greatest revenue is R(${xs}).`;
+    } else {
+      const x1 = t.int(1, xs - 1);
+      const x2 = 2 * xs - x1;
+      const target = R(x1);
+      stem =
+        `${lead} The ${scene.who} wants an estimated revenue of $${S.grouped(target)} ${scene.per}. Of the ` +
+        `${scene.price}s that give this revenue, it will choose the one with more ${scene.items}. Based on the model, what ` +
+        `${scene.price}, in dollars, will it choose?`;
+      key = P + x1;
+      wrong = [
+        [P + x2, `Chooses the higher ${scene.price}, which gives the same revenue with fewer ${scene.items}.`],
+        [x1, `Gives the number of $1 increases, x = ${x1}, instead of the ${scene.price}.`],
+        [x2, `Gives the larger number of $1 increases, x = ${x2}, instead of a price.`],
+        [D * (P + x1), `Gives the number of ${scene.items} at that price instead of the price.`],
+      ];
+      steps = [
+        `Set R(x) = ${S.grouped(target)}: ${rhs} = ${S.grouped(target)}.`,
+        `${factored ? "Expand and collect" : "Collect terms"}: ${D}x² ${MINUS} ${2 * D * xs}x + ${S.grouped(target - P * N)} = 0, so x² ${MINUS} ${2 * xs}x + ${x1 * x2} = 0, giving x = ${x1} or x = ${x2}.`,
+        `More ${scene.items} means the smaller increase, x = ${x1}, so the ${scene.price} is ${P} + ${x1} = ${key} dollars.`,
+      ];
+      trap = `Both x = ${x1} and x = ${x2} give the same revenue; the context picks the smaller increase, and the answer is a price, not x.`;
+    }
+    if (wrong.some(([value]) => value === key)) return null;
+    const usable = wrong.filter(([value]) => Number.isFinite(value) && value > 0);
+    // The other solution, ruled out by the context, is always offered.
+    const offer = (record) => (ask === "pick" && !numeric
+      ? { ...record, wrong: [usable[0], ...t.sample(usable.slice(1), 2)] }
+      : spreadChoices(t, record));
+    return offer({
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: model },
+      stem,
+      correct: key,
+      wrong: usable,
+      explanation: steps.join(" "),
+      steps,
+      principles: [
+        "A quadratic model that opens downward has its greatest value at the vertex, midway between its zeros.",
+        "Decide which quantity the question asks for, x itself or a value computed from it, before answering.",
+      ],
+      trap,
+      hint: ask === "max" ? "At what value of x does R stop increasing?" : "What does x stand for in this model?",
+      verify: () => {
+        // Scan the model on a fine grid; the best x and its revenue, or the
+        // two inputs that give the target, must match the key.
+        let bestX = 0;
+        for (let x = 0; x <= Z; x += 0.25) if (R(x) > R(bestX)) bestX = x;
+        if (ask === "price") return approx(P + bestX, key);
+        if (ask === "max") return approx(R(bestX), key);
+        const hits = [];
+        for (let x = 0; x <= Z; x += 1) if (approx(R(x), R(key - P))) hits.push(x);
+        return hits.length === 2 && approx(P + hits[0], key);
+      },
+    });
+  }
+
+  // A rectangular pen fenced on three sides: A(x) = x(F − 2x), where x is the
+  // length of each side perpendicular to the wall.
+  const PEN_SCENES = [
+    { who: "A farmer", what: "a rectangular pen", against: "a barn wall", the: "the wall", unit: "feet", short: "pen", material: "fencing" },
+    { who: "A homeowner", what: "a rectangular garden", against: "the back wall of a house", the: "the wall", unit: "feet", short: "garden", material: "fencing" },
+    { who: "A school", what: "a rectangular play area", against: "an existing fence", the: "the existing fence", unit: "feet", short: "play area", material: "fencing" },
+    { who: "A lifeguard crew", what: "a rectangular swimming area", against: "a straight beach", the: "the beach", unit: "meters", short: "swimming area", material: "rope" },
+  ];
+
+  function penItem(t, ask, numeric) {
+    const scene = t.pick(PEN_SCENES);
+    const F = 12 * t.int(5, 40);
+    const { material } = scene;
+    const factored = t.chance(0.6);
+    const rhs = factored ? `x(${F} ${MINUS} 2x)` : `${F}x ${MINUS} 2x²`;
+    const area = (x) => readMath(rhs, { x });
+    const unit = scene.unit;
+    const lead =
+      `${scene.who} has ${F} ${unit} of ${material} to enclose ${scene.what}. One side of the ${scene.short} lies along ` +
+      `${scene.against} and needs no ${material}. If each of the two sides perpendicular to ${scene.the} is x ${unit} ` +
+      `long, the area, in square ${unit}, of the ${scene.short} is given by the function A shown.`;
+    const xs = F / 4;
+    const vertexStep = factored
+      ? `A(x) = 0 at x = 0 and at x = ${F / 2}, so the greatest area is at x = ${xs}, midway between them.`
+      : `The vertex of A is at x = ${MINUS}b/(2a) = ${MINUS}${F}/(2 · ${MINUS}2) = ${xs}.`;
+    let stem;
+    let key;
+    let wrong;
+    let steps;
+    let trap;
+    if (ask === "area") {
+      stem = `${lead} What is the greatest possible area, in square ${unit}, of the ${scene.short}?`;
+      key = (F * F) / 8;
+      wrong = [
+        [xs, `Gives x = ${xs}, the length of each perpendicular side, instead of the area.`],
+        [F / 2, `Gives the length of the side along ${scene.the}, ${F / 2} ${unit}, instead of the area.`],
+        [(F * F) / 9, `Makes all three fenced sides equal, ${F / 3} ${unit} each; that shape is not the one with the greatest area.`],
+        [(F * F) / 16, `Uses a square with side ${F / 4} ${unit}, as if all four sides were fenced.`],
+        [(F * F) / 4, `Multiplies x = ${xs} by all ${F} ${unit} of ${material}, forgetting to subtract 2x.`],
+      ];
+      steps = [vertexStep, `A(${xs}) = ${xs}(${F} ${MINUS} ${2 * xs}) = ${xs} · ${F / 2} = ${S.grouped(key)}.`];
+      trap = `x = ${xs} is the input at the vertex, an intermediate value; the greatest area is A(${xs}).`;
+    } else if (ask === "side") {
+      stem = `${lead} For the ${scene.short} with the greatest possible area, what is the length, in ${unit}, of the side along ${scene.the}?`;
+      key = F / 2;
+      wrong = [
+        [xs, `Gives x = ${xs}, the length of each side perpendicular to ${scene.the}.`],
+        [F / 3, `Makes all three fenced sides equal, ${F / 3} ${unit} each.`],
+        [F - xs, `Subtracts only one perpendicular side from ${F}, getting ${F} ${MINUS} ${xs}.`],
+        [(F * F) / 8, "Gives the greatest area instead of a length."],
+      ];
+      steps = [vertexStep, `The side along ${scene.the} is ${F} ${MINUS} 2x = ${F} ${MINUS} ${2 * xs} = ${F / 2} ${unit}.`];
+      trap = `The vertex gives x, a perpendicular side; the side along ${scene.the} is ${F} ${MINUS} 2x.`;
+    } else {
+      // Two widths give the same area; the context keeps the smaller one.
+      const x1 = t.int(1, Math.ceil(F / 6) - 1);
+      const x2 = F / 2 - x1;
+      const target = x1 * (F - 2 * x1);
+      stem =
+        `${lead} The area of the ${scene.short} is ${S.grouped(target)} square ${unit}, and the side along ${scene.the} ` +
+        `is longer than each of the other two sides. What is the value of x?`;
+      key = x1;
+      wrong = [
+        [x2, `Gives the other solution of A(x) = ${S.grouped(target)}; with x = ${x2}, the side along ${scene.the} is only ${F - 2 * x2} ${unit}, shorter than x.`],
+        [F - 2 * x1, `Gives the length of the side along ${scene.the} instead of x.`],
+        [xs, `Gives the x-value of the vertex, where the area is greatest, not where it is ${S.grouped(target)}.`],
+        [x1 + x2, "Adds the two solutions of the equation instead of choosing one."],
+      ];
+      steps = [
+        `Set A(x) = ${S.grouped(target)}: ${rhs} = ${S.grouped(target)}, so 2x² ${MINUS} ${F}x + ${S.grouped(target)} = 0.`,
+        `Divide by 2 and factor: (x ${MINUS} ${x1})(x ${MINUS} ${x2}) = 0, so x = ${x1} or x = ${x2}.`,
+        `At x = ${x1} the side along ${scene.the} is ${F - 2 * x1} ${unit}, longer than x; at x = ${x2} it is ${F - 2 * x2} ${unit}, shorter. So x = ${x1}.`,
+      ];
+      trap = `Both x = ${x1} and x = ${x2} give an area of ${S.grouped(target)}; only one makes the side along ${scene.the} the longest.`;
+    }
+    if (wrong.some(([value]) => value === key)) return null;
+    const usable = wrong.filter(([value]) => Number.isFinite(value) && value > 0 && Number.isInteger(value));
+    // The other solution, ruled out by the context, is always offered.
+    const offer = (record) => (ask === "fit" && !numeric
+      ? { ...record, wrong: [usable[0], ...t.sample(usable.slice(1), 2)] }
+      : spreadChoices(t, record));
+    return offer({
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: `A(x) = ${rhs}` },
+      stem,
+      correct: key,
+      wrong: usable,
+      explanation: steps.join(" "),
+      steps,
+      principles: [
+        "A quadratic model that opens downward has its greatest value at the vertex, midway between its zeros.",
+        "A solution of the model's equation answers the question only if it fits the context.",
+      ],
+      trap,
+      hint: ask === "fit" ? "Which of the solutions makes the shape described?" : "For which x is the area greatest, and what does the question ask for?",
+      verify: () => {
+        let bestX = 0;
+        for (let x = 0; x <= F / 2; x += 0.5) if (area(x) > area(bestX)) bestX = x;
+        if (ask === "area") return approx(area(bestX), key);
+        if (ask === "side") return approx(F - 2 * bestX, key);
+        const hits = [];
+        for (let x = 1; x < F / 2; x += 1) if (approx(area(x), area(key))) hits.push(x);
+        return hits.length === 2 && hits[0] === key && F - 2 * key > key && F - 2 * hits[1] < hits[1];
+      },
+    });
+  }
+
+  // Multiple-choice numbers print as "12,250", as on the test; numeric keys stay plain.
+  function groupedChoices(record) {
+    if (!record || record.responseType !== "multiple-choice") return record;
+    return { ...record, correct: S.grouped(record.correct), wrong: record.wrong.map(([value, why]) => [S.grouped(value), why]) };
+  }
+
+  const quadraticContextModel = {
+    id: "quadratic-context-model",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Nonlinear functions",
+    subskill: "quadratic functions",
+    title: "Quadratic model of revenue or area",
+    recognize:
+      "The model opens downward, so its greatest value is at the vertex, midway between its zeros; decide whether the " +
+      "question wants the input, the model's value, or another quantity built from them, and let the context choose " +
+      "between two inputs that give the same value.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["intermediate-value", "wrong-quantity", "context-constraint"],
+    build(t) {
+      const roll = t.random();
+      const numeric = t.chance(0.4);
+      const make = roll < 0.2 ? () => revenueItem(t, "price", numeric)
+        : roll < 0.38 ? () => revenueItem(t, "max", numeric)
+          : roll < 0.55 ? () => revenueItem(t, "pick", numeric)
+            : roll < 0.7 ? () => penItem(t, "area", numeric)
+              : roll < 0.85 ? () => penItem(t, "side", numeric) : () => penItem(t, "fit", numeric);
+      return { estimatedSeconds: 100, ...drawUntilDistinct(() => groupedChoices(make())) };
+    },
+  };
+
   /* ================================================= exponential-table-model */
 
   // Bases as exact fractions top/bottom, with the text a student sees.
@@ -2668,14 +3015,6 @@
   ];
 
   // Statements about the constants: text, the constants they use, and their value.
-  const VERTEX_STATEMENTS = [
-    ["k > 0", ["k"], (v) => v.k > 0], ["k < 0", ["k"], (v) => v.k < 0],
-    ["h > 0", ["h"], (v) => v.h > 0], ["h < 0", ["h"], (v) => v.h < 0],
-    ["ak > 0", ["a", "k"], (v) => v.a * v.k > 0], ["ak < 0", ["a", "k"], (v) => v.a * v.k < 0],
-    ["ah > 0", ["a", "h"], (v) => v.a * v.h > 0], ["ah < 0", ["a", "h"], (v) => v.a * v.h < 0],
-    ["hk > 0", ["h", "k"], (v) => v.h * v.k > 0], ["hk < 0", ["h", "k"], (v) => v.h * v.k < 0],
-    [`a ${MINUS} k > 0`, ["a", "k"], (v) => v.a - v.k > 0], [`a ${MINUS} k < 0`, ["a", "k"], (v) => v.a - v.k < 0],
-  ];
   const STANDARD_STATEMENTS = [
     ["c > 0", ["c"], (v) => v.c > 0], ["c < 0", ["c"], (v) => v.c < 0],
     ["b > 0", ["b"], (v) => v.b > 0], ["b < 0", ["b"], (v) => v.b < 0],
@@ -2708,12 +3047,115 @@
     return out;
   }
 
-  const vertexShown = (v) => `f(x) = ${lead(v.a)}(${lin(1, -v.h)})²${v.k === 0 ? "" : ` ${signed(v.k)}`}`;
   const standardShown = (v) => `f(x) = ${poly([v.a, v.b, v.c])}`;
 
+  // A graph described in words and the signs of the standard-form constants
+  // that must follow: b = −2ah, the discriminant and the y-intercept must be
+  // reasoned out from the description.
+  function mustBeTrueItem(t) {
+    for (;;) {
+      const fact = t.pick(PARABOLA_FACTS);
+      const statements = STANDARD_STATEMENTS;
+      const samples = parabolaSamples(fact);
+      const status = (test) => {
+        const count = samples.filter(test).length;
+        return count === samples.length ? "must" : count === 0 ? "cannot" : "could";
+      };
+      const classified = statements.map(([text, uses, test]) => ({ text, uses, test, kind: status(test) }));
+      // A key the description does not state outright, whose reasons are known.
+      const keys = classified.filter((entry) => entry.kind === "must" &&
+        !(entry.uses.length === 1 && fact.given.includes(entry.uses[0])) &&
+        entry.uses.every((name) => fact.why[name]));
+      const could = classified.filter((entry) => entry.kind === "could");
+      const cannot = classified.filter((entry) => entry.kind === "cannot");
+      if (!keys.length || could.length < 1 || cannot.length < 1) continue;
+      // Statements that many descriptions force (k > 0, ak > 0) are the key
+      // less often, so no statement is usually the answer when it is offered.
+      const common = (entry) => entry.uses.length === 1 || entry.text.startsWith("ac ");
+      const rarer = keys.filter((entry) => !common(entry));
+      const key = t.pick(rarer.length && t.chance(0.6) ? rarer : keys);
+      // At least one could-be statement (the must-versus-could trap), with
+      // look-alike pairs that point to the key no more often than chance.
+      const byText = new Map([...could, ...cannot].map((entry) => [entry.text, entry]));
+      let chosen = null;
+      for (let attempt = 0; attempt < 12 && !chosen; attempt += 1) {
+        const triple = pairBalanced(t, key.text, [...could, ...cannot].map((entry) => [entry.text, ""]))
+          .map(([text]) => byText.get(text));
+        // Statements that are often the key are offered as wrong answers
+        // whenever they can be, so offering one says nothing.
+        const offersCommon = triple.some((entry) => common(entry) && entry.text !== key.text);
+        if (triple.length === 3 && triple.some((entry) => entry.kind === "could") &&
+          (offersCommon || attempt >= 8)) chosen = triple;
+      }
+      if (!chosen) continue;
+      const show = standardShown;
+      const reasonFor = (entry) => {
+        if (entry.kind === "cannot") {
+          const because = entry.uses.map((name) => fact.why[name]).filter(Boolean).join(" ");
+          return `Is false for every parabola that fits the description.${because ? ` ${because}` : ""}`;
+        }
+        // Counterexamples with whole-number constants in the form shown, when there are any.
+        const whole = (v) => [v.a, v.b, v.c].every(Number.isInteger);
+        const find = (test) => samples.find((v) => test(v) && whole(v)) || samples.find(test);
+        const yes = find(entry.test);
+        const no = find((sample) => !entry.test(sample));
+        return `Could be true but need not be: ${show(yes)} fits the description and satisfies it, but ${show(no)} also fits and does not.`;
+      };
+      const keyWhy = key.uses.map((name) => fact.why[name]);
+      const form = "f(x) = ax² + bx + c";
+      const steps = [
+        ...keyWhy,
+        ...(key.uses.length === 2 ? [`So ${key.text}${/ − /.test(key.text)
+          ? `: ${samples[0].a > 0 ? "a positive" : "a negative"} number minus ${samples[0].a > 0 ? "a negative" : "a positive"} number is ${samples[0].a > 0 ? "positive" : "negative"}`
+          : ""}.`] : []),
+        "The other statements are either false for every such parabola or true for only some of them.",
+      ];
+      return {
+        responseType: "multiple-choice",
+        estimatedSeconds: 120,
+        stimulus: null,
+        stem:
+          `The function f is defined by ${form}, where a, b, and c are nonzero constants. ` +
+          `In the xy-plane, the graph of y = f(x) ${fact.words}. Which of the following must be true?`,
+        correct: key.text,
+        wrong: chosen.map((entry) => [entry.text, reasonFor(entry)]),
+        explanation: steps.join(" "),
+        steps,
+        principles: [
+          "For f(x) = ax² + bx + c, the sign of a gives the opening, c = f(0) is the y-intercept, and b = −2ah, where h is the vertex's x-coordinate.",
+          "A statement must be true only if it holds for every function that fits the given facts.",
+        ],
+        trap: "A statement that fits one example could be true without having to be; test it against the facts, not against a single drawing.",
+        hint: "Turn each fact about the graph into a statement about the sign of a constant.",
+        verify: () => {
+          // Recheck on non-integer parabolas: the key holds for every one, and each distractor fails for at least one.
+          const pool = [];
+          for (let i = 0; i < 4000; i += 1) {
+            const a = ((i * 7919) % 97) / 16 - 3.03;
+            const h = ((i * 104729) % 131) / 11 - 5.95;
+            const k = ((i * 1299709) % 173) / 9 - 9.6;
+            const b = -2 * a * h;
+            const c = a * h * h + k;
+            if (a === 0 || h === 0 || k === 0 || c === 0 || !fact.holds(a, h, k)) continue;
+            pool.push({ a, h, k, b, c, disc: b * b - 4 * a * c });
+          }
+          return pool.length > 20 && pool.every(key.test) && chosen.every((entry) => pool.some((sample) => !entry.test(sample)));
+        },
+      };
+    }
+  }
+
+  // Hard: the official band for sign reasoning about a quadratic's constants
+  // in standard form from a description of its graph, where a could-be
+  // statement is offered. (2026-10-16: relabelled from Medium and limited to
+  // standard form. The vertex-form draws, where the opening and the vertex
+  // give a, h and k almost directly, were the directly settled branches the
+  // 2026-10-03 relabel to Medium rested on; on their own their statement
+  // space was too small to pass the answer-tell checks, so they were removed
+  // rather than split into a Medium sibling.)
   const quadraticMustBeTrue = {
     id: "quadratic-must-be-true",
-    difficulty: "Medium",
+    difficulty: "Hard",
     domain: "Advanced Math",
     skill: "Nonlinear functions",
     subskill: "quadratic functions",
@@ -2722,104 +3164,17 @@
       "Translate each fact about the graph into a sign: the opening gives a, the vertex's position gives h and k, the " +
       "y-intercept gives c = f(0), the number of x-intercepts gives the discriminant, and b = −2ah. A statement must " +
       "be true only if it follows for every parabola that fits; one that fits some of them only could be true.",
-    // Universal sign statements require care, but familiar graph facts can
-    // settle some branches directly; retain the parameter reasoning at Medium.
-    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    // The governing structure (how each graph fact fixes a sign, and b = −2ah)
+    // must be seen before any statement can be tested, the verbal description
+    // and the algebraic form must be reconciled, and a could-be statement is
+    // always offered.
+    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
     tricks: ["must-vs-could", "reversed-condition", "sign-error"],
     build(t) {
-      for (;;) {
-        const fact = t.pick(PARABOLA_FACTS);
-        const standard = t.chance(0.5);
-        const statements = standard ? STANDARD_STATEMENTS : VERTEX_STATEMENTS;
-        const samples = parabolaSamples(fact);
-        const status = (test) => {
-          const count = samples.filter(test).length;
-          return count === samples.length ? "must" : count === 0 ? "cannot" : "could";
-        };
-        const classified = statements.map(([text, uses, test]) => ({ text, uses, test, kind: status(test) }));
-        // A key the description does not state outright, whose reasons are known.
-        const keys = classified.filter((entry) => entry.kind === "must" &&
-          !(entry.uses.length === 1 && fact.given.includes(entry.uses[0])) &&
-          entry.uses.every((name) => fact.why[name]));
-        const could = classified.filter((entry) => entry.kind === "could");
-        const cannot = classified.filter((entry) => entry.kind === "cannot");
-        if (!keys.length || could.length < 1 || cannot.length < 1) continue;
-        // Statements that many descriptions force (k > 0, ak > 0) are the key
-        // less often, so no statement is usually the answer when it is offered.
-        const common = (entry) => entry.uses.length === 1 || entry.text.startsWith("ak ") || entry.text.startsWith("ac ");
-        const rarer = keys.filter((entry) => !common(entry));
-        const key = t.pick(rarer.length && t.chance(0.6) ? rarer : keys);
-        // At least one could-be statement (the must-versus-could trap), with
-        // look-alike pairs that point to the key no more often than chance.
-        const byText = new Map([...could, ...cannot].map((entry) => [entry.text, entry]));
-        let chosen = null;
-        for (let attempt = 0; attempt < 12 && !chosen; attempt += 1) {
-          const triple = pairBalanced(t, key.text, [...could, ...cannot].map((entry) => [entry.text, ""]))
-            .map(([text]) => byText.get(text));
-          // Statements that are often the key are offered as wrong answers
-          // whenever they can be, so offering one says nothing.
-          const offersCommon = triple.some((entry) => common(entry) && entry.text !== key.text);
-          if (triple.length === 3 && triple.some((entry) => entry.kind === "could") &&
-            (offersCommon || attempt >= 8)) chosen = triple;
-        }
-        if (!chosen) continue;
-        const show = standard ? standardShown : vertexShown;
-        const reasonFor = (entry) => {
-          if (entry.kind === "cannot") {
-            const because = entry.uses.map((name) => fact.why[name]).filter(Boolean).join(" ");
-            return `Is false for every parabola that fits the description.${because ? ` ${because}` : ""}`;
-          }
-          // Counterexamples with whole-number constants in the form shown, when there are any.
-          const whole = (v) => (standard ? [v.a, v.b, v.c] : [v.a, v.h, v.k]).every(Number.isInteger);
-          const find = (test) => samples.find((v) => test(v) && whole(v)) || samples.find(test);
-          const yes = find(entry.test);
-          const no = find((sample) => !entry.test(sample));
-          return `Could be true but need not be: ${show(yes)} fits the description and satisfies it, but ${show(no)} also fits and does not.`;
-        };
-        const keyWhy = key.uses.map((name) => fact.why[name]);
-        const form = standard ? "f(x) = ax² + bx + c" : "f(x) = a(x − h)² + k";
-        const steps = [
-          ...keyWhy,
-          ...(key.uses.length === 2 ? [`So ${key.text}${/ − /.test(key.text)
-            ? `: ${samples[0].a > 0 ? "a positive" : "a negative"} number minus ${samples[0].a > 0 ? "a negative" : "a positive"} number is ${samples[0].a > 0 ? "positive" : "negative"}`
-            : ""}.`] : []),
-          "The other statements are either false for every such parabola or true for only some of them.",
-        ];
-        return {
-          responseType: "multiple-choice",
-          estimatedSeconds: 120,
-          stimulus: null,
-          stem:
-            `The function f is defined by ${form}, where ${standard ? "a, b, and c" : "a, h, and k"} are nonzero constants. ` +
-            `In the xy-plane, the graph of y = f(x) ${fact.words}. Which of the following must be true?`,
-          correct: key.text,
-          wrong: chosen.map((entry) => [entry.text, reasonFor(entry)]),
-          explanation: steps.join(" "),
-          steps,
-          principles: [
-            "In f(x) = a(x − h)² + k, the sign of a gives the opening and (h, k) is the vertex; in standard form, c = f(0) and b = −2ah.",
-            "A statement must be true only if it holds for every function that fits the given facts.",
-          ],
-          trap: "A statement that fits one example could be true without having to be; test it against the facts, not against a single drawing.",
-          hint: "Turn each fact about the graph into a statement about the sign of a constant.",
-          verify: () => {
-            // Recheck on non-integer parabolas: the key holds for every one, and each distractor fails for at least one.
-            const pool = [];
-            for (let i = 0; i < 4000; i += 1) {
-              const a = ((i * 7919) % 97) / 16 - 3.03;
-              const h = ((i * 104729) % 131) / 11 - 5.95;
-              const k = ((i * 1299709) % 173) / 9 - 9.6;
-              const b = -2 * a * h;
-              const c = a * h * h + k;
-              if (a === 0 || h === 0 || k === 0 || c === 0 || !fact.holds(a, h, k)) continue;
-              pool.push({ a, h, k, b, c, disc: b * b - 4 * a * c });
-            }
-            return pool.length > 20 && pool.every(key.test) && chosen.every((entry) => pool.some((sample) => !entry.test(sample)));
-          },
-        };
-      }
+      return mustBeTrueItem(t);
     },
   };
+
 
   /* ======================================== shifted-exponential-recovery */
 
@@ -3208,7 +3563,7 @@
 
   return [
     factoredPolynomialIntercepts, exponentialModelReading, quadraticVertexReading,
-    projectileHeightModel, exponentialTableModel, functionTableEvaluate, polynomialConstantFromRemainder,
+    projectileHeightModel, quadraticContextModel, exponentialTableModel, functionTableEvaluate, polynomialConstantFromRemainder,
     exponentialFromWords, graphTransformation, vertexFromConditions, exponentialRewrite, functionTransformationTable,
     polynomialFactorRemainder, graphWhichFunction, quadraticMustBeTrue, shiftedExponentialRecovery, quadraticZerosInInterval,
     graphQuadraticLevel, graphPolynomialSign,

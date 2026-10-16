@@ -13,7 +13,7 @@
   const { MINUS, num, paren, lin, point, frac, approx } = S;
   const {
     clean, whole, commas, usd, money, distinctWrong, commaChoices, moveText, holds, readPoint,
-    round2, commasHard, usdHard, commaChoicesHard, distinctWrongHard, compile, fitsGridHard,
+    round2, commasHard, usdHard, commaChoicesHard, distinctWrongHard, compile, fitsGridHard, collides, spreadAround,
   } = C;
 
   const FLIP = { "<": ">", ">": "<", "≤": "≥", "≥": "≤" };
@@ -1437,7 +1437,7 @@
       make: (t) => ({ a: t.int(4, 9), b: t.int(11, 18), F: t.pick([5, 6, 8, 10]), L: 10 * t.int(10, 24) }),
       text: (v) =>
         `A customer is buying small candles that cost ${usd(v.a)} each and large candles that cost ${usd(v.b)} each. ` +
-        `The order has a ${usd(v.F)} shipping fee, and the customer will spend at most ${usd(v.L)} in all.`,
+        `The order has ${S.article(v.F)} ${usd(v.F)} shipping fee, and the customer will spend at most ${usd(v.L)} in all.`,
       fixed: "the shipping fee", total: "the total cost, in dollars, of the order",
     },
     {
@@ -1471,12 +1471,15 @@
     domain: "Algebra",
     skill: "Linear inequalities",
     subskill: "solve inequalities",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "Two-variable linear inequality in context",
     recognize:
       "Each quantity's rate pairs with its own variable, the fixed part is added once, and \"at most\" or \"at least\" " +
       "sets the direction; fixing one variable turns the inequality into a one-variable bound that is rounded the safe way.",
-    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    // Official Easy: one direct translation, or one substitution and a
+    // rounding; the wrong choices are slips (rates swapped, symbol flipped)
+    // (retiered 2026-10-16).
+    rubric: { steps: 1, concept: 0, interpretation: 1, distractors: 0, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["reversed-condition", "rounding-direction", "wrong-quantity"],
     build(t) {
       const scene = t.pick(twoItemScenes);
@@ -1861,16 +1864,398 @@
     domain: "Algebra",
     skill: "Linear inequalities",
     subskill: "systems of inequalities",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Solutions of linear inequalities read from a shaded graph",
     recognize:
       "The picture fixes the inequality, not the answer: read each boundary's equation from lattice points, note " +
       "dashed or solid and the shaded side, then work with the inequality, because the points asked about lie off " +
       "the drawn grid.",
-    rubric: { steps: 2, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 1, trap: 1 },
+    // Official Medium: read each boundary, then test or bound with the
+    // inequality (retiered 2026-10-16).
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "rounding-direction", "wrong-quantity", "reversed-condition"],
     build(t) {
       return t.chance(0.5) ? extrapolateItem(t) : offGridPointItem(t);
+    },
+  };
+
+  /* ------------------------------------------------- inequality-system-from-context */
+
+  const TIMES_AS = { 2: "twice", 3: "three times", 4: "four times" };
+  const WORD = { "≤": ["at most", "no more than"], "≥": ["at least"], "<": ["fewer than", "less than"], ">": ["more than"] };
+  const TOGGLE_STRICT = { "≤": "<", "<": "≤", "≥": ">", ">": "≥" };
+
+  // Two kinds of item, A and B, with a value per item (a for A, b for B), a
+  // count condition, a value condition, and a ratio "at least k times as many
+  // B as A". Each condition offers [relation, sentence] pairs.
+  const systemScenes = [
+    {
+      A: "adult tickets", B: "student tickets", valueName: "ticket-sales",
+      rates: (t) => [t.int(11, 16), t.int(5, 9)],
+      lead: (a, b) => `A community theater sells adult tickets for ${usd(a)} each and student tickets for ${usd(b)} each for one show.`,
+      count: [["≤", (N) => `The theater has ${N} seats, so it can sell at most ${N} tickets.`]],
+      value: [
+        ["≥", (L) => `The theater needs to collect at least ${usd(L)} from ticket sales.`],
+        [">", (L) => `The theater wants to collect more than ${usd(L)} from ticket sales.`],
+      ],
+      ratio: (k) => `The theater expects to sell at least ${TIMES_AS[k]} as many student tickets as adult tickets.`,
+      xName: "the number of adult tickets sold", yName: "the number of student tickets sold",
+      swap: "Pairs each ticket price with the other kind of ticket.",
+    },
+    {
+      A: "acres of corn", B: "acres of wheat", valueName: "spending",
+      rates: (t) => [10 * t.int(11, 16), 10 * t.int(6, 9)],
+      lead: (a, b) => `A farmer will plant corn and wheat. Seed and fertilizer cost ${usd(a)} per acre for corn and ${usd(b)} per acre for wheat.`,
+      count: [["≤", (N) => `The farmer has at most ${N} acres available for the two crops.`]],
+      value: [["≤", (L) => `The farmer can spend no more than ${usd(L)} on seed and fertilizer.`]],
+      ratio: (k) => `The farmer wants to plant at least ${TIMES_AS[k]} as many acres of wheat as acres of corn.`,
+      xName: "the number of acres of corn planted", yName: "the number of acres of wheat planted",
+      swap: "Pairs each crop's cost per acre with the other crop.",
+    },
+    {
+      A: "basketballs", B: "soccer balls", valueName: "spending",
+      rates: (t) => [t.int(24, 35), t.int(14, 21)],
+      lead: (a, b) => `A coach is buying basketballs that cost ${usd(a)} each and soccer balls that cost ${usd(b)} each.`,
+      count: [
+        ["≥", (N) => `The coach needs at least ${N} balls in all.`],
+        [">", (N) => `The coach needs more than ${N} balls in all.`],
+      ],
+      value: [["≤", (L) => `The coach can spend at most ${usd(L)}.`]],
+      ratio: (k) => `The coach wants at least ${TIMES_AS[k]} as many soccer balls as basketballs.`,
+      xName: "the number of basketballs", yName: "the number of soccer balls",
+      swap: "Pairs each ball's price with the other kind of ball.",
+    },
+    {
+      A: "hours at the library", B: "hours online", valueName: "earnings",
+      rates: (t) => [t.int(14, 19), t.int(22, 30)],
+      lead: (a, b) => `A tutor earns ${usd(a)} per hour tutoring at the library and ${usd(b)} per hour tutoring online.`,
+      count: [
+        ["≤", (N) => `This week she can tutor at most ${N} hours in all.`],
+        ["<", (N) => `This week she can tutor fewer than ${N} hours in all.`],
+      ],
+      value: [["≥", (L) => `She wants to earn at least ${usd(L)} this week.`]],
+      ratio: (k) => `She plans to tutor at least ${TIMES_AS[k]} as many hours online as at the library.`,
+      xName: "the number of hours she tutors at the library", yName: "the number of hours she tutors online",
+      swap: "Pairs each hourly rate with the other kind of tutoring.",
+    },
+    {
+      A: "crates of tile", B: "crates of grout", valueName: "weight",
+      rates: (t) => [t.int(45, 60), t.int(20, 35)],
+      lead: (a, b) => `A truck is being loaded with crates of tile that weigh ${a} pounds each and crates of grout that weigh ${b} pounds each.`,
+      count: [["≤", (N) => `The truck can hold at most ${N} crates.`]],
+      value: [
+        ["≤", (L) => `The crates can weigh no more than ${commas(L)} pounds in all.`],
+        ["<", (L) => `The crates must weigh less than ${commas(L)} pounds in all.`],
+      ],
+      ratio: (k) => `The order calls for at least ${TIMES_AS[k]} as many crates of grout as crates of tile.`,
+      xName: "the number of crates of tile", yName: "the number of crates of grout",
+      swap: "Pairs each crate's weight with the other kind of crate.",
+    },
+  ];
+
+  const systemFromContext = {
+    id: "inequality-system-from-context",
+    domain: "Algebra",
+    skill: "Linear inequalities",
+    subskill: "systems of inequalities",
+    difficulty: "Medium",
+    title: "System of linear inequalities that models a situation",
+    recognize:
+      "Each condition in the story is one inequality: a count adds the two variables, a total multiplies each " +
+      "variable by its own rate, and a comparison such as \"at least twice as many\" puts the factor on the smaller " +
+      "quantity. Then match each phrase to its symbol, including whether the boundary itself is allowed.",
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["reversed-condition", "wrong-quantity"],
+    build(t) {
+      const form = t.chance(0.6) ? "count" : "ratio";
+      // Chosen once, so that redraws below do not favour any scene.
+      const scene = t.pick(systemScenes);
+      const [countRel, countText] = t.pick(scene.count);
+      const [valueRel, valueText] = t.pick(scene.value);
+      for (;;) {
+        const [a, b] = scene.rates(t);
+        if (a === b) continue;
+        const N = t.int(12, 60);
+        const k = t.pick([2, 3, 4]);
+        const compare = (left, rel, right) => ({ "≤": left <= right, "<": left < right, "≥": left >= right, ">": left > right })[rel];
+        // The value boundary passes through a whole-number pair that meets the
+        // other condition, so a slip in strictness changes the solutions;
+        // totals are round.
+        const A1 = t.int(1, N);
+        const B1 = t.int(1, form === "count" ? N + 4 : k * N);
+        if (form === "count" ? !compare(A1 + B1, countRel, N) : B1 < k * A1) continue;
+        const L = a * A1 + b * B1;
+        if (L % (L >= 1000 ? 50 : 10) !== 0 || L < 200) continue;
+        // x stands for A or for B, as the stem says.
+        const aIsX = t.chance(0.6);
+        const [xName, yName] = aIsX ? [scene.xName, scene.yName] : [scene.yName, scene.xName];
+        const [Av, Bv] = aIsX ? ["x", "y"] : ["y", "x"];
+        const total = (coefA, coefB) => (aIsX
+          ? `${lin(coefA, 0)} + ${lin(coefB, 0, "y")}`
+          : `${lin(coefB, 0)} + ${lin(coefA, 0, "y")}`);
+        const countPart = (rel) => `x + y ${rel} ${N}`;
+        const valuePart = (rel, swap) => `${swap ? total(b, a) : total(a, b)} ${rel} ${commas(L)}`;
+        const ratioPart = (reversed) => (reversed ? `${Av} ≥ ${k}${Bv}` : `${Bv} ≥ ${k}${Av}`);
+        const word = (rel, text) => WORD[rel].find((phrase) => text.includes(phrase)) || WORD[rel][0];
+        let kinds;
+        let build;
+        let truth;
+        const reasons = {
+          swap: scene.swap,
+          dirValue: `Writes the ${scene.valueName} condition in the wrong direction: "${word(valueRel, valueText(L))}" means ${valueRel}.`,
+          dirCount: `Writes the count condition in the wrong direction: "${word(countRel, countText(N))}" means ${countRel}.`,
+          strict: /[<>]/.test(valueRel)
+            ? `Uses ${TOGGLE_STRICT[valueRel]} for "${word(valueRel, valueText(L))}", which wrongly allows a total of exactly ${commas(L)}.`
+            : `Uses ${TOGGLE_STRICT[valueRel]} for "${word(valueRel, valueText(L))}", which leaves out a total of exactly ${commas(L)}.`,
+          ratio: `Reverses the comparison, so it says there are at least ${TIMES_AS[k]} as many ${scene.A} as ${scene.B}.`,
+        };
+        if (form === "count") {
+          kinds = t.pick([["swap", "dirValue"], ["swap", "dirCount"], ["swap", "strict"], ["dirCount", "dirValue"], ["strict", "dirCount"]]);
+          build = (errors) => {
+            const cRel = errors.includes("dirCount") ? FLIP[countRel] : countRel;
+            let vRel = errors.includes("dirValue") ? FLIP[valueRel] : valueRel;
+            if (errors.includes("strict")) vRel = TOGGLE_STRICT[vRel];
+            return `${countPart(cRel)} and ${valuePart(vRel, errors.includes("swap"))}`;
+          };
+        } else {
+          kinds = t.pick([["ratio", "swap"], ["ratio", "dirValue"], ["ratio", "strict"]]);
+          build = (errors) => {
+            let vRel = errors.includes("dirValue") ? FLIP[valueRel] : valueRel;
+            if (errors.includes("strict")) vRel = TOGGLE_STRICT[vRel];
+            return `${valuePart(vRel, errors.includes("swap"))} and ${ratioPart(errors.includes("ratio"))}`;
+          };
+        }
+        const key = build([]);
+        const both = `Makes both slips. ${reasons[kinds[0]]} ${reasons[kinds[1]]}`;
+        const wrong = [
+          [build([kinds[0]]), reasons[kinds[0]]],
+          [build([kinds[1]]), reasons[kinds[1]]],
+          [build(kinds), both],
+        ];
+        // The situation itself, in terms of the counts of A and B.
+        truth = (countA, countB) => (form === "count"
+          ? compare(countA + countB, countRel, N) && compare(a * countA + b * countB, valueRel, L)
+          : compare(a * countA + b * countB, valueRel, L) && countB >= k * countA);
+        const lines = form === "count"
+          ? [countText(N), valueText(L)]
+          : [valueText(L), scene.ratio(k)];
+        const valueSentence = `the total is ${total(a, b)}, with each rate on its own variable, and it must be ${word(valueRel, valueText(L))} ${commas(L)}: ${valuePart(valueRel, false)}.`;
+        const steps = form === "count"
+          ? [
+            `Translate the count: the number of items is x + y, and it must be ${word(countRel, countText(N))} ${N}: ${countPart(countRel)}.`,
+            `Translate the ${scene.valueName} condition: ${valueSentence}`,
+            `So the system is ${key}.`,
+          ]
+          : [
+            `Translate the ${scene.valueName} condition: ${valueSentence}`,
+            `Translate the comparison: the ${scene.B} must number at least ${k} times the ${scene.A}, so ${ratioPart(false)}.`,
+            `So the system is ${key}.`,
+          ];
+        return {
+          responseType: "multiple-choice",
+          estimatedSeconds: 100,
+          stimulus: null,
+          stem: `${scene.lead(a, b)} ${lines.join(" ")} Which system of inequalities represents this situation, where x is ${xName} and y is ${yName}?`,
+          correct: key,
+          wrong,
+          explanation: steps.join(" "),
+          steps,
+          principles: [
+            "Each condition in a situation becomes its own inequality; together they form the system.",
+            "\"At least\" is ≥ and \"at most\" or \"no more than\" is ≤; \"more than\" and \"fewer than\" leave out the boundary.",
+            "\"At least k times as many B as A\" means B ≥ kA: the factor multiplies the smaller quantity.",
+          ],
+          trap: form === "count"
+            ? "Each rate belongs to its own variable, and each phrase fixes both the direction of its inequality and whether the boundary counts."
+            : `"At least ${TIMES_AS[k]} as many ${scene.B} as ${scene.A}" puts the ${k} on the ${scene.A}, not on the ${scene.B}.`,
+          hint: "Write one inequality for each condition in the description.",
+          verify: () => {
+            // Compare each displayed system with the situation at every whole-number pair in a window.
+            const agrees = (text) => {
+              const parts = text.split(" and ").map((part) => {
+                const [left, rel, right] = part.split(/ (≤|≥|<|>) /);
+                return [compile(left), rel, compile(right)];
+              });
+              const span = Math.max(N, k * N) + 4;
+              for (let x = 0; x <= span; x += 1) {
+                for (let y = 0; y <= span; y += 1) {
+                  const [countA, countB] = aIsX ? [x, y] : [y, x];
+                  const shown = parts.every(([left, rel, right]) => compare(left({ x, y }), rel, right({ x, y })));
+                  if (shown !== truth(countA, countB)) return false;
+                }
+              }
+              return true;
+            };
+            return agrees(key) && wrong.every(([text]) => !agrees(text));
+          },
+        };
+      }
+    },
+  };
+
+  /* ------------------------------------------------- inequality-percent-of-total */
+
+  // A group of N0 holds X0 of one kind; only that kind is added, and its share
+  // of the whole group must stay above ("least") or below ("greatest") P%.
+  // The unknown is in the part and in the whole.
+  const shareScenes = [
+    {
+      mode: "least", whole: "members", part: "seniors", one: "senior",
+      text: (N0, X0, P, word) =>
+        `A school club has ${N0} members, ${X0} of whom are seniors. The club will recruit new members, all of ` +
+        `whom are seniors, and no current members will leave. The club wants ${word} ${P}% of its members to be seniors.`,
+      ask: "What is the least number of seniors the club must recruit?",
+      variable: "the number of seniors the club recruits",
+    },
+    {
+      mode: "least", whole: "volunteers", part: "bilingual volunteers", one: "bilingual volunteer",
+      text: (N0, X0, P, word) =>
+        `A food bank has ${N0} volunteers, ${X0} of whom are bilingual. It will add only bilingual volunteers, and ` +
+        `no current volunteers will leave. The food bank wants ${word} ${P}% of its volunteers to be bilingual.`,
+      ask: "What is the least number of bilingual volunteers the food bank must add?",
+      variable: "the number of bilingual volunteers added",
+    },
+    {
+      mode: "least", whole: "songs", part: "songs by local musicians", one: "song by a local musician",
+      text: (N0, X0, P, word) =>
+        `A radio station's playlist has ${N0} songs, ${X0} of which are by local musicians. The station will add ` +
+        `only songs by local musicians and remove none. It wants ${word} ${P}% of the songs on the playlist to be ` +
+        "by local musicians.",
+      ask: "What is the least number of songs by local musicians the station must add?",
+      variable: "the number of songs by local musicians added",
+    },
+    {
+      mode: "greatest", whole: "members", part: "first-year members", one: "first-year member",
+      text: (N0, X0, P, word) =>
+        `A choir has ${N0} members, ${X0} of whom are first-year members. The choir will add only first-year members, ` +
+        `and no current members will leave. The director requires that ${word} ${P}% of the members be first-year members.`,
+      ask: "What is the greatest number of first-year members the choir can add?",
+      variable: "the number of first-year members added",
+    },
+    {
+      mode: "greatest", whole: "paintings", part: "borrowed paintings", one: "borrowed painting",
+      text: (N0, X0, P, word) =>
+        `A museum exhibit has ${N0} paintings, ${X0} of which are borrowed from other museums. The curator will add ` +
+        `only borrowed paintings and remove none, and borrowed paintings must make up ${word} ${P}% of the exhibit.`,
+      ask: "What is the greatest number of borrowed paintings the curator can add?",
+      variable: "the number of borrowed paintings added",
+    },
+  ];
+  const SHARE_WORDS = { least: [["at least", "≥"], ["more than", ">"]], greatest: [["at most", "≤"], ["less than", "<"]] };
+
+  const percentShare = {
+    id: "inequality-percent-of-total",
+    domain: "Algebra",
+    skill: "Linear inequalities",
+    subskill: "solve inequalities",
+    difficulty: "Hard",
+    title: "A share of a group that the additions also enlarge",
+    recognize:
+      "Every item added joins both the part and the whole, so the unknown appears on both sides: write " +
+      "part + n compared with the percent of (whole + n), solve, and round the way the condition requires.",
+    // Hard: the structure (the unknown is in the part and in the base of the
+    // percent) must be seen first; the intuitive answer takes the percent of
+    // the current total and is offered.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["percent-base", "rounding-direction", "intermediate-value"],
+    build(t) {
+      const ask = t.chance(0.7) ? "value" : "inequality";
+      const scene = t.pick(shareScenes);
+      const [word, rel] = t.pick(SHARE_WORDS[scene.mode]);
+      const numericWanted = ask === "value" && t.chance(0.4);
+      for (;;) {
+        const P = t.pick([25, 30, 35, 40, 45, 60]);
+        const p = P / 100;
+        const N0 = t.int(20, 80);
+        const X0 = t.int(1, Math.floor(p * N0) - 1);
+        const C0 = p * N0 - X0; // the shortfall measured against the current total
+        const B = C0 / (1 - p); // the bound on n
+        if (C0 < 1.5 || B > 60) continue;
+        const least = scene.mode === "least";
+        const strict = rel === ">" || rel === "<";
+        // The whole-number answer: the least n meeting the condition, or the greatest.
+        const isInt = Math.abs(B - Math.round(B)) < 1e-9;
+        const key = least
+          ? (isInt ? Math.round(B) + (strict ? 1 : 0) : Math.ceil(B))
+          : (isInt ? Math.round(B) - (strict ? 1 : 0) : Math.floor(B));
+        const pText = num(p);
+        const keyIneq = `${X0} + n ${rel} ${pText}(${N0} + n)`;
+        let correct;
+        let wrong;
+        if (ask === "value") {
+          if (isInt) continue; // a whole-number bound leaves no rounding decision
+          const roundRight = least ? Math.ceil : Math.floor;
+          const roundWrong = least ? Math.floor : Math.ceil;
+          const modelled = [
+            [roundRight(C0), `Takes ${P}% of the current ${N0} ${scene.whole}, forgetting that each added ${scene.one} also enlarges the group.`],
+            [roundWrong(B), `Solves the inequality correctly but rounds ${least ? "down" : "up"}; n must be ${word} ${num(Math.round(B * 100) / 100)}, so the answer rounds ${least ? "up" : "down"}.`],
+            [roundWrong(C0), `Takes ${P}% of the current ${N0} ${scene.whole}, and also rounds the wrong way.`],
+            [key + N0, `Gives the size of the whole group afterward, not the number added.`],
+            [roundRight(C0 / p), `Divides by ${pText} instead of by 1 ${MINUS} ${pText} when solving.`],
+          ].filter(([value]) => value > 0);
+          if (collides(key, modelled) || distinctWrong(key, modelled) < 3) continue;
+          correct = key;
+          // The percent-of-current-total answer is always offered.
+          const rest = modelled.slice(1).filter(([value]) => value !== modelled[0][0]);
+          if (modelled[0][0] === key || distinctWrong(key, rest) < 2) continue;
+          wrong = [modelled[0], ...spreadAround(t, key, rest, 2)];
+        } else {
+          const flip = { "≥": "≤", ">": "<", "≤": "≥", "<": ">" }[rel];
+          correct = keyIneq;
+          wrong = [
+            [`${X0} + n ${rel} ${pText}(${N0})`, `Takes ${P}% of the current ${N0} ${scene.whole}, forgetting that the added ${scene.part} are part of the new total.`],
+            [`${X0} + n ${flip} ${pText}(${N0} + n)`, `Reverses the inequality: "${word}" means ${rel}.`],
+            [`${X0} + n ${flip} ${pText}(${N0})`, `Takes ${P}% of the current total, and reverses the inequality.`],
+          ];
+        }
+        const numeric = numericWanted && fitsGridHard(key);
+        const steps = [
+          `After n ${scene.part} are added, there are ${X0} + n ${scene.part} out of ${N0} + n ${scene.whole}.`,
+          `The condition is ${keyIneq}.`,
+          `Expand and collect: ${X0} + n ${rel} ${num(p * N0)} + ${pText}n, so ${num(1 - p)}n ${rel} ${num(Math.round(C0 * 1000) / 1000)}, and n ${rel} ${isInt ? num(B) : `${num(Math.round(C0 * 1000) / 1000)}/${num(1 - p)} ≈ ${num(Math.round(B * 100) / 100)}`}.`,
+        ];
+        if (ask === "value") {
+          steps.push(`n must be a whole number, so the ${least ? "least" : "greatest"} value is ${key}.`);
+        }
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 120,
+          stimulus: null,
+          stem: `${scene.text(N0, X0, P, word)} ${ask === "value"
+            ? scene.ask
+            : `Which inequality represents this situation, where n is ${scene.variable}?`}`,
+          correct,
+          wrong: numeric ? [] : wrong,
+          explanation: steps.join(" "),
+          steps,
+          principles: [
+            "A percent is of a base; when the additions join the group, the base grows with them.",
+            "Round a bound up when the answer must be at least it, and down when it must be at most it.",
+          ],
+          trap: `${P}% of the current ${N0} ${scene.whole} ignores that every added ${scene.one} also joins the total.`,
+          hint: "After n are added, how many are in the part, and how many are in the whole?",
+          verify: () => {
+            // Count up from n = 0 and test the share directly.
+            const meets = (n) => {
+              const share = (X0 + n) / (N0 + n);
+              return { "≥": share >= p - 1e-12, ">": share > p + 1e-12, "≤": share <= p + 1e-12, "<": share < p - 1e-12 }[rel];
+            };
+            const ok = [];
+            for (let n = 0; n <= 400; n += 1) if (meets(n)) ok.push(n);
+            if (!ok.length) return false;
+            const answer = least ? ok[0] : ok[ok.length - 1];
+            if (!least && ok[0] !== 0) return false;
+            if (ask === "value") return answer === key && wrong.every(([value]) => value !== key);
+            // An inequality is compared over real n (eighths), not only whole numbers.
+            const shows = (text, n) => holds(text, { n });
+            const agrees = (text) => {
+              for (let j = 0; j <= 3200; j += 1) if (shows(text, j / 8) !== meets(j / 8)) return false;
+              return true;
+            };
+            return answer === key && agrees(correct) && wrong.every(([text]) => !agrees(text));
+          },
+        };
+      }
     },
   };
 
@@ -2129,8 +2514,7 @@
   };
 
   return [
-    inequalityRange, inequalitySolve, inequalityWord, inequalitySystem, inequalityOptimization, twoVariableContext,
-    regionCorner, graphRegion, parameterRange,
-    solutionContainment,
+    inequalityRange, inequalitySolve, inequalityWord, twoVariableContext, inequalitySystem, inequalityOptimization,
+    systemFromContext, graphRegion, parameterRange, regionCorner, solutionContainment, percentShare,
   ];
 });

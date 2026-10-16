@@ -1559,7 +1559,7 @@
     },
   };
 
-  /* ================================= stratified-sample-total (Hard) */
+  /* =============================== stratified-sample-total (Medium) */
 
   // Two groups of known, unequal sizes, each sampled at random at its own
   // rate. The estimate for everyone scales each group's sample by that
@@ -1729,12 +1729,15 @@
     domain: DATA,
     skill: "Statistical inference",
     subskill: "samples and populations",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Combining random samples taken from groups of different sizes",
     recognize:
       "Each sample was drawn from one group of known size, at its own rate. Estimate each group from its own sample and add; " +
       "pooling the samples, or averaging their rates, weights the groups wrongly.",
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    // Medium (relabelled from Hard, 2026-10-16 realism review; official
+    // Medium): two proportional estimates, one per group, then a sum;
+    // pooling the samples or averaging their rates is the offered trap.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
     tricks: ["unweighted-average", "part-vs-whole", "wrong-quantity"],
     build(t) {
       const scene = t.pick(STRATA_SCENES);

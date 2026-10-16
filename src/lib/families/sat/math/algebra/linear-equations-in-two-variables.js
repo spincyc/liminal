@@ -1753,12 +1753,14 @@
     domain: "Algebra",
     skill: "Linear equations in two variables",
     subskill: "equation modeling",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "A line pinned down by conditions on its intercepts",
     recognize:
       "Name the intercepts (a, 0) and (0, b). The slope between them is −b/a, and the line is x/a + y/b = 1; a " +
       "condition on the intercepts then becomes an equation in a or b alone.",
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    // Medium: the slope −b/a or the intercept form turns the condition into
+    // one equation in one letter (retiered 2026-10-16).
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["sign-error", "wrong-quantity", "neighbouring-rule"],
     build(t) {
       const form = t.pick(["slope-sum", "ratio-point"]);
@@ -2081,8 +2083,198 @@
     },
   };
 
+  /* ------------------------------------------------------- standard-form-sign-quadrants */
+
+  const QUADRANT = { "1,1": "IV", "1,-1": "II", "-1,1": "III", "-1,-1": "I" };
+  const PASSES = { IV: "III, II, and I", II: "III, IV, and I", III: "II, I, and IV", I: "II, III, and IV" };
+  const signWord = (sign) => (sign > 0 ? "positive" : "negative");
+  const relationOf = (sign) => (sign > 0 ? ">" : "<");
+
+  // The quadrant a line y = mx + k (m, k nonzero) never enters, found by
+  // walking along the line rather than from the sign table.
+  function missedQuadrant(m, k) {
+    const seen = new Set();
+    for (let x = -400; x <= 400; x += 0.5) {
+      const y = m * x + k;
+      if (Math.abs(x) < 1e-9 || Math.abs(y) < 1e-9) continue;
+      seen.add(x > 0 ? (y > 0 ? "I" : "IV") : (y > 0 ? "II" : "III"));
+    }
+    const missing = ["I", "II", "III", "IV"].filter((q) => !seen.has(q));
+    return missing.length === 1 ? missing[0] : null;
+  }
+
+  // Equations of a line with letter constants. slope, yInt and xInt give the
+  // sign of each quantity from the signs (±1) of the three constants; the
+  // texts use the letters a, b, c, which build() renames.
+  const LETTER_SHAPES = [
+    { equation: "{a}x + {b}y = {c}", solved: "y = −({a}/{b})x + {c}/{b}", slope: "−{a}/{b}", yInt: "{c}/{b}", xInt: "{c}/{a}",
+      s: (a, b) => -a * b, y: (a, b, c) => b * c, x: (a, b, c) => a * c,
+      slopeSlip: "Takes the slope to be {a}/{b}, forgetting the negative sign that comes from moving {a}x to the other side.",
+      ySlip: "Takes the y-intercept to be −{c}/{b}, as if {c} had crossed the equals sign.",
+      xSlip: "Takes the x-intercept to be −{c}/{a}, as if {c} had crossed the equals sign." },
+    { equation: "{a}x = {b}y + {c}", solved: "y = ({a}/{b})x − {c}/{b}", slope: "{a}/{b}", yInt: "−{c}/{b}", xInt: "{c}/{a}",
+      s: (a, b) => a * b, y: (a, b, c) => -b * c, x: (a, b, c) => a * c,
+      slopeSlip: "Takes the slope to be −{a}/{b}, as for {a}x + {b}y = {c}, but here {a}x and {b}y are on opposite sides.",
+      ySlip: "Takes the y-intercept to be {c}/{b}, without the negative sign that comes from moving {c} to the other side.",
+      xSlip: "Takes the x-intercept to be −{c}/{a}, as if {c} had to cross the equals sign when y = 0." },
+    { equation: "{a}x − {b}y = {c}", solved: "y = ({a}/{b})x − {c}/{b}", slope: "{a}/{b}", yInt: "−{c}/{b}", xInt: "{c}/{a}",
+      s: (a, b) => a * b, y: (a, b, c) => -b * c, x: (a, b, c) => a * c,
+      slopeSlip: "Takes the slope to be −{a}/{b}, as for {a}x + {b}y = {c}, overlooking the minus sign in front of {b}y.",
+      ySlip: "Takes the y-intercept to be {c}/{b}, overlooking the minus sign in front of {b}y.",
+      xSlip: "Takes the x-intercept to be −{c}/{a}, as if {c} had to cross the equals sign when y = 0." },
+    { equation: "{a}x + {b}y + {c} = 0", solved: "y = −({a}/{b})x − {c}/{b}", slope: "−{a}/{b}", yInt: "−{c}/{b}", xInt: "−{c}/{a}",
+      s: (a, b) => -a * b, y: (a, b, c) => -b * c, x: (a, b, c) => -a * c,
+      slopeSlip: "Takes the slope to be {a}/{b}, forgetting the negative sign that comes from moving {a}x to the other side.",
+      ySlip: "Takes the y-intercept to be {c}/{b}, without the negative sign that comes from moving {c} to the other side.",
+      xSlip: "Takes the x-intercept to be {c}/{a}, without the negative sign that comes from moving {c} to the other side." },
+    { equation: "{b}y = {a}x + {c}", solved: "y = ({a}/{b})x + {c}/{b}", slope: "{a}/{b}", yInt: "{c}/{b}", xInt: "−{c}/{a}",
+      s: (a, b) => a * b, y: (a, b, c) => b * c, x: (a, b, c) => -a * c,
+      slopeSlip: "Takes the slope to be −{a}/{b}, as if {a}x had crossed the equals sign.",
+      ySlip: "Takes the y-intercept to be −{c}/{b}, as if {c} had crossed the equals sign.",
+      xSlip: "Takes the x-intercept to be {c}/{a}, without the negative sign that comes from setting y = 0 and moving {c}." },
+  ];
+  const LETTER_SETS = [["a", "b", "c"], ["p", "q", "r"], ["r", "s", "t"], ["j", "k", "n"]];
+
+  const signQuadrants = {
+    id: "standard-form-sign-quadrants",
+    domain: "Algebra",
+    skill: "Linear equations in two variables",
+    subskill: "graph interpretation",
+    difficulty: "Hard",
+    title: "A line's direction and intercepts from the signs of its constants",
+    recognize:
+      "Solve the equation for y in letters: the slope and the intercepts are quotients of the constants, so only " +
+      "their signs matter. Turn the given products into 'same sign' or 'opposite signs', find the sign of the slope " +
+      "and of each intercept, and picture the line.",
+    // Hard: the structure (slope and intercepts as quotients of letters) must
+    // be found before any sign can be read, and each sign slip is an offered
+    // answer.
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 2 },
+    tricks: ["sign-error", "neighbouring-rule"],
+    build(t) {
+      const ask = t.pick(["quadrant", "quadrant", "slope", "intercepts"]);
+      const shape = t.pick(LETTER_SHAPES);
+      const given = t.chance(0.7) ? "products" : "signs";
+      const [A, B, Cn] = t.pick(LETTER_SETS);
+      const rename = (text) => text.replace(/\{([abc])\}/g, (match, letter) => ({ a: A, b: B, c: Cn })[letter]);
+      const signs = { a: t.sign(), b: t.sign(), c: t.sign() };
+      const sab = signs.a * signs.b;
+      const sbc = signs.b * signs.c;
+      const sac = signs.a * signs.c;
+      const slopeSign = shape.s(signs.a, signs.b, signs.c);
+      const ySign = shape.y(signs.a, signs.b, signs.c);
+      const xSign = shape.x(signs.a, signs.b, signs.c);
+      const sameOrNot = (sign) => (sign > 0 ? "the same sign" : "opposite signs");
+      let facts;
+      let deduce;
+      if (given === "products") {
+        const pair = t.pick([["ab", "bc"], ["ab", "bc"], ["ac", "bc"], ["ab", "ac"]]);
+        const value = { ab: sab, bc: sbc, ac: sac };
+        const product = (letters) => letters.split("").map((letter) => ({ a: A, b: B, c: Cn })[letter]).join("");
+        facts = `${product(pair[0])} ${relationOf(value[pair[0]])} 0 and ${product(pair[1])} ${relationOf(value[pair[1]])} 0`;
+        const pairText = { ab: `${A} and ${B}`, bc: `${B} and ${Cn}`, ac: `${A} and ${Cn}` };
+        const third = ["ab", "bc", "ac"].find((name) => !pair.includes(name));
+        deduce = `${pairText[pair[0]]} have ${sameOrNot(value[pair[0]])}, and ${pairText[pair[1]]} have ` +
+          `${sameOrNot(value[pair[1]])}, so ${pairText[third]} have ${sameOrNot(value[third])}.`;
+      } else {
+        facts = `${A} ${relationOf(signs.a)} 0, ${B} ${relationOf(signs.b)} 0, and ${Cn} ${relationOf(signs.c)} 0`;
+        deduce = `${A} and ${B} have ${sameOrNot(sab)}, ${B} and ${Cn} have ${sameOrNot(sbc)}, and ${A} and ${Cn} have ${sameOrNot(sac)}.`;
+      }
+      const lower = (text) => `${text.charAt(0).toLowerCase()}${text.slice(1, -1)}`;
+      const both = (one, two) => `Makes both slips: it ${lower(one).replace(/^takes/, "takes")}, and it ${lower(two)}.`;
+      let grid;
+      let label;
+      if (ask === "intercepts") {
+        grid = [
+          [xSign, ySign, null],
+          [-xSign, ySign, rename(shape.xSlip)],
+          [xSign, -ySign, rename(shape.ySlip)],
+          [-xSign, -ySign, both(rename(shape.xSlip), rename(shape.ySlip))],
+        ];
+        label = ([x, y]) => `The x-intercept is ${signWord(x)}, and the y-intercept is ${signWord(y)}.`;
+      } else {
+        grid = [
+          [slopeSign, ySign, null],
+          [-slopeSign, ySign, rename(shape.slopeSlip)],
+          [slopeSign, -ySign, rename(shape.ySlip)],
+          [-slopeSign, -ySign, both(rename(shape.slopeSlip), rename(shape.ySlip))],
+        ];
+        label = ask === "quadrant"
+          ? ([m, k]) => `Quadrant ${QUADRANT[`${m},${k}`]}`
+          : ([m, k]) => `The slope is ${signWord(m)}, and the y-intercept is ${signWord(k)}.`;
+      }
+      const key = label(grid[0]);
+      const wrong = grid.slice(1).map((option) => [label(option), option[2]]);
+      const missed = QUADRANT[`${slopeSign},${ySign}`];
+      const equation = rename(shape.equation);
+      const steps = [
+        `Solve for y: ${rename(shape.solved)}. The slope is ${rename(shape.slope)}, the y-intercept is ${rename(shape.yInt)}, and the x-intercept (where y = 0) is ${rename(shape.xInt)}.`,
+        `From ${facts}: ${deduce}`,
+        ask === "intercepts"
+          ? `So the x-intercept, ${rename(shape.xInt)}, is ${signWord(xSign)}, and the y-intercept, ${rename(shape.yInt)}, is ${signWord(ySign)}.`
+          : `So the slope, ${rename(shape.slope)}, is ${signWord(slopeSign)}, and the y-intercept, ${rename(shape.yInt)}, is ${signWord(ySign)}.`,
+      ];
+      if (ask === "quadrant") {
+        steps.push(`A line with a ${signWord(slopeSign)} slope and a ${signWord(ySign)} y-intercept passes through Quadrants ${PASSES[missed]}, and never enters Quadrant ${missed}.`);
+      }
+      const stem = `In the xy-plane, the graph of the given equation is a line, where ${A}, ${B}, and ${Cn} are constants such that ${facts}. ` +
+        (ask === "quadrant"
+          ? "The line does not pass through which quadrant of the xy-plane?"
+          : "Which of the following must be true about the line?");
+      return {
+        responseType: "multiple-choice",
+        estimatedSeconds: 110,
+        stimulus: { type: "equations", content: equation },
+        stem,
+        correct: key,
+        wrong,
+        explanation: steps.join(" "),
+        steps,
+        principles: [
+          "Solving a line's equation for y in letters gives its slope and y-intercept as quotients; a quotient has the sign of the matching product.",
+          "A line with nonzero slope and nonzero y-intercept passes through exactly three quadrants.",
+        ],
+        trap: "Every term changes sign when it crosses the equals sign, so the slope and the intercepts each carry a sign that is easy to drop.",
+        hint: `Write the slope and the intercepts in terms of ${A}, ${B}, and ${Cn}.`,
+        verify: () => {
+          // Every assignment of magnitudes and signs that satisfies the
+          // displayed facts must give the same answer, read from the displayed
+          // equation with numbers in place of the letters.
+          const factList = facts.split(/, and | and |, /).map((fact) => fact.trim());
+          const ok = (values) => factList.every((fact) => {
+            const [term, relation] = fact.split(" ");
+            const value = term.split("").reduce((product, letter) => product * values[letter], 1);
+            return relation === ">" ? value > 0 : value < 0;
+          });
+          let consistent = 0;
+          for (const sa of [-1, 1]) for (const sb of [-1, 1]) for (const sc of [-1, 1]) {
+            for (const [ma, mb, mc] of [[2, 3, 5], [7, 1, 4], [1, 6, 9]]) {
+              const values = { [A]: sa * ma, [B]: sb * mb, [Cn]: sc * mc };
+              if (!ok(values)) continue;
+              consistent += 1;
+              // "2·x + (−3)·y = 5" style text that compile reads.
+              const text = equation.replace(new RegExp(`[${A}${B}${Cn}]`, "g"), (letter) => `(${values[letter]})`.replace("-", MINUS))
+                .replace(/\)([xy])/g, ")·$1");
+              const [P, Q, R] = lineCoefficients(text);
+              const m = -P / Q;
+              const k = R / Q;
+              const xi = R / P;
+              const truth = ask === "quadrant"
+                ? `Quadrant ${missedQuadrant(m, k)}`
+                : ask === "slope"
+                  ? `The slope is ${signWord(Math.sign(m))}, and the y-intercept is ${signWord(Math.sign(k))}.`
+                  : `The x-intercept is ${signWord(Math.sign(xi))}, and the y-intercept is ${signWord(Math.sign(k))}.`;
+              if (truth !== key || wrong.some(([choice]) => choice === truth)) return false;
+            }
+          }
+          return consistent > 0;
+        },
+      };
+    },
+  };
+
   return [
     pointOnLine, standardFormSlope, equationModel, graphContext, linearModelUnits, interceptMeaning, pointShift,
-    translatedLine, interceptConditions, comboCount,
+    translatedLine, interceptConditions, comboCount, signQuadrants,
   ];
 });

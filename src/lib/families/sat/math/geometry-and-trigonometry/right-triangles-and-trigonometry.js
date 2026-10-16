@@ -592,6 +592,250 @@
     },
   };
 
+  /* =================================== trig-ratio-from-ratio (Medium) */
+
+  // One trigonometric ratio of an acute angle is given; another ratio of the
+  // same angle or of the other acute angle is asked, or a side length. The
+  // missing side comes from the Pythagorean theorem, and the other acute
+  // angle trades opposite and adjacent legs.
+  const GIVEN_TRIPLES = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29], [9, 40, 41], [12, 35, 37], [11, 60, 61]];
+
+  // The ratios of a right triangle with legs p (opposite the first acute
+  // angle) and q, and hypotenuse h, at the first angle ("A") and the other ("B").
+  const ratioParts = (p, q, h) => ({
+    A: { sin: [p, h], cos: [q, h], tan: [p, q] },
+    B: { sin: [q, h], cos: [p, h], tan: [q, p] },
+  });
+
+  const RATIO_WORDS = { sin: "opposite/hypotenuse", cos: "adjacent/hypotenuse", tan: "opposite/adjacent" };
+
+  // Three wrong fractions around a fraction key: the key is the smallest or
+  // largest choice in about half the items where both an end and a middle
+  // rank can be filled, so a blind pick of the middle values gains nothing.
+  // Null when a candidate prints as the key or no rank can be filled.
+  function aroundKey(t, keyText, candidates) {
+    const key = fractionValue(keyText);
+    const seen = new Set([keyText]);
+    const pool = [];
+    for (const [text, reason] of candidates) {
+      if (!text) continue;
+      if (text === keyText) return null;
+      if (seen.has(text)) continue;
+      seen.add(text);
+      pool.push([text, reason, fractionValue(text)]);
+    }
+    const below = pool.filter((entry) => entry[2] < key);
+    const above = pool.filter((entry) => entry[2] > key);
+    const ranks = [0, 1, 2, 3].filter((rank) => below.length >= rank && above.length >= 3 - rank);
+    if (!ranks.length) return null;
+    const ends = ranks.filter((rank) => rank === 0 || rank === 3);
+    const middles = ranks.filter((rank) => rank === 1 || rank === 2);
+    const rank = ends.length && middles.length ? t.pick(t.chance(0.5) ? ends : middles) : t.pick(ranks);
+    return [...below.slice(0, rank), ...above.slice(0, 3 - rank)].map(([text, reason]) => [text, reason]);
+  }
+
+  function ratioFromRatioItem(t, names, numeric) {
+    return retry(() => {
+      const [x, y, z] = t.pick(GIVEN_TRIPLES);
+      const [p, q] = t.chance(0.5) ? [x, y] : [y, x];
+      const h = z;
+      const [An, Bn, Cn] = t.chance(0.5) ? names : [names[1], names[0], names[2]];
+      const triangle = names.join("");
+      const segment = (u, v) => [u, v].sort().join("");
+      const [AC, BC, AB] = [segment(An, Cn), segment(Bn, Cn), segment(An, Bn)];
+      const parts = ratioParts(p, q, h);
+      const given = t.pick(["sin", "cos", "tan"]);
+      const sameAngle = t.chance(0.5);
+      const askAt = sameAngle ? "A" : "B";
+      const askName = sameAngle ? An : Bn;
+      const asked = t.pick(["sin", "cos", "tan"].filter((fn) => !(sameAngle && fn === given)));
+      const [gTop, gBottom] = parts.A[given];
+      const [kTop, kBottom] = parts[askAt][asked];
+      const keyText = frac(kTop, kBottom);
+      const givenText = frac(gTop, gBottom);
+      // The side the given ratio leaves out, and the value a student gets by
+      // subtracting (or adding) the two sides instead of using the
+      // Pythagorean theorem.
+      const missing = given === "sin" ? q : given === "cos" ? p : h;
+      const slip = given === "tan" ? p + q : h - (given === "sin" ? p : q);
+      const withSlip = (value) => (value === missing ? slip : value);
+      const label = (top, bottom) => frac(top, bottom);
+      // Every basic ratio of the triangle, named as the student would read it.
+      // The given ratio itself is offered only when the other angle is
+      // asked, where taking the two angles' ratios to be equal is a real slip.
+      const basics = [
+        [label(p, h), `sin ${An}`], [label(q, h), `cos ${An}`], [label(p, q), `tan ${An}`], [label(q, p), `tan ${Bn}`],
+        ...(asked === "tan" ? [] : [[label(kBottom, kTop), "the ratio inverted"]]),
+      ].filter(([text]) => text !== keyText && !(sameAngle && text === givenText));
+      const reasonFor = (text, readAs) => {
+        if (text === givenText) return `Assumes ${asked} ${Bn} equals ${given} ${An}; at ${Bn} the opposite and adjacent legs trade places.`;
+        if (readAs === "the ratio inverted") return `Inverts the ratio, putting the hypotenuse on top; a sine or cosine is never greater than 1.`;
+        return `Gives ${readAs}, not ${asked} ${askName}${sameAngle ? "" : `; from ${Bn}, the leg opposite is ${AC}`}.`;
+      };
+      const ratioChoices = basics.map(([text, readAs]) => [text, reasonFor(text, readAs)]);
+      // The key with the missing side found by subtraction instead of the
+      // Pythagorean theorem, and that slip's reciprocal.
+      const slipTop = withSlip(kTop);
+      const slipBottom = withSlip(kBottom);
+      // A slip that leaves a leg of 1 or a whole-number ratio would print as
+      // an odd one out, so it is not offered.
+      const slipped = slip > 1 && (slipTop !== kTop || slipBottom !== kBottom) &&
+        slipTop % slipBottom !== 0 && slipBottom % slipTop !== 0 ? label(slipTop, slipBottom) : null;
+      const slipReason = given === "tan"
+        ? `Takes the hypotenuse to be ${p} + ${q} = ${slip}, adding the legs instead of using the Pythagorean theorem.`
+        : `Finds the missing leg as ${h} ${MINUS} ${given === "sin" ? p : q} = ${slip}, subtracting instead of using the Pythagorean theorem.`;
+      // The candidates are spread around the key by value, so the key is
+      // the smallest or largest choice as often as a middle one.
+      const flipped = slipped ? label(slipBottom, slipTop) : null;
+      const candidates = t.shuffle([
+        ...(slipped ? [[slipped, slipReason]] : []),
+        ...(flipped && t.chance(0.5) ? [[flipped, `${slipReason.replace(/\.$/, "")}, and inverts the ratio.`]] : []),
+        ...ratioChoices,
+      ]);
+      const wrong = aroundKey(t, keyText, candidates);
+      if (!wrong || wrong.length < 3) return null;
+      const value = kTop / kBottom;
+      const isNumeric = numeric && isClean(value, 3) && fitsGrid(value);
+      const legsLine = `${AC} and ${BC} are the legs and ${AB} is the hypotenuse.`;
+      const missingName = given === "sin" ? AC : given === "cos" ? BC : AB;
+      const pythagoras = given === "tan"
+        ? `${AB} = √(${p}² + ${q}²) = ${h}k`
+        : `${missingName} = √(${h}² ${MINUS} ${given === "sin" ? p : q}²) = ${missing}k`;
+      return {
+        responseType: isNumeric ? "numeric" : "multiple-choice",
+        correct: isNumeric ? tidy(value) : keyText,
+        wrong: isNumeric ? [] : wrong,
+        stimulus: null,
+        figure: null,
+        stem: `In triangle ${triangle}, angle ${Cn} is a right angle and ${given} ${An} = ${givenText}. What is the value of ${asked} ${askName}?`,
+        explanation:
+          `Since ${given} ${An} = ${RATIO_WORDS[given]} = ${givenText}, the sides can be taken as multiples of a positive number k: ` +
+          `${given === "tan" ? `${BC} = ${p}k and ${AC} = ${q}k` : `${given === "sin" ? `${BC} = ${p}k` : `${AC} = ${q}k`} and ${AB} = ${h}k`}. ` +
+          `Then ${pythagoras}. ${sameAngle ? `From ${An},` : `From ${Bn}, the leg opposite is ${AC} and the adjacent leg is ${BC}, so`} ` +
+          `${asked} ${askName} = ${RATIO_WORDS[asked]} = ${keyText}.`,
+        steps: [
+          `${legsLine} ${given} ${An} = ${givenText}, so ${{ sin: BC, cos: AC, tan: BC }[given]} : ${{ sin: AB, cos: AB, tan: AC }[given]} = ${gTop} : ${gBottom}.`,
+          `Find the third side with the Pythagorean theorem: ${pythagoras}.`,
+          sameAngle
+            ? `${asked} ${An} = ${RATIO_WORDS[asked]} = ${keyText}.`
+            : `At ${Bn}, opposite is ${AC} and adjacent is ${BC}: ${asked} ${Bn} = ${keyText}.`,
+        ],
+        principles: [
+          "Two sides in a given ratio fix the third side by the Pythagorean theorem; the triangle's size does not change any ratio.",
+          "For the two acute angles of a right triangle, sin of one equals cos of the other, and their tangents are reciprocals.",
+        ],
+        trap: sameAngle
+          ? "The missing side is not the difference of the other two; and the ratio must be measured from the named angle."
+          : `At the other acute angle the opposite and adjacent legs trade places, so ${asked} ${Bn} is not ${asked} ${An}.`,
+        hint: `Which side does ${given} ${An} leave out, and how long is it?`,
+        estimatedSeconds: 75,
+        verify: () => {
+          // Coordinates: C at the origin, A on the x-axis, B on the y-axis.
+          const C0 = [0, 0];
+          const A0 = [q, 0];
+          const B0 = [0, p];
+          const atA = toRad(angleAt(A0, B0, C0));
+          const atB = toRad(angleAt(B0, A0, C0));
+          const shownGiven = fractionValue(givenText);
+          const shownKey = isNumeric ? value : fractionValue(keyText);
+          return close(Math[given](atA), shownGiven) && close(Math[asked](sameAngle ? atA : atB), shownKey) &&
+            close(dist(A0, B0), h) && wrong.every(([text]) => !close(fractionValue(text), shownKey));
+        },
+      };
+    });
+  }
+
+  // A ratio and one side are given; another side is asked.
+  function sideFromRatioItem(t, names, numeric) {
+    return retry(() => {
+      const [x, y, z] = t.pick(GIVEN_TRIPLES.slice(0, 5));
+      const [p, q] = t.chance(0.5) ? [x, y] : [y, x];
+      const k = t.int(2, 6);
+      const [An, Bn, Cn] = t.chance(0.5) ? names : [names[1], names[0], names[2]];
+      const triangle = names.join("");
+      const sides = { opp: p * k, adj: q * k, hyp: z * k };
+      const given = t.pick(["sin", "cos", "tan"]);
+      const parts = { sin: [p, z], cos: [q, z], tan: [p, q] }[given];
+      const givenText = frac(parts[0], parts[1]);
+      const segment = (u, v) => [u, v].sort().join("");
+      const sideName = { opp: segment(Bn, Cn), adj: segment(An, Cn), hyp: segment(An, Bn) };
+      // The side shown is one the ratio uses, so the asked side needs the
+      // third side or the other ratio.
+      const usedSides = { sin: ["opp", "hyp"], cos: ["adj", "hyp"], tan: ["opp", "adj"] }[given];
+      const known = t.pick(usedSides);
+      const target = t.pick(["opp", "adj", "hyp"].filter((side) => side !== known));
+      const key = sides[target];
+      const leftOut = ["opp", "adj", "hyp"].find((side) => !usedSides.includes(side));
+      const wrongRatioSide = (() => {
+        // Applies the given ratio with the roles of the known and asked sides swapped.
+        const ratio = parts[0] / parts[1];
+        const fromKnown = usedSides[0] === known ? sides[known] / ratio : sides[known] * ratio;
+        return fromKnown;
+      })();
+      const candidates = [
+        [sides[["opp", "adj", "hyp"].find((side) => side !== known && side !== target)], `Gives ${sideName[["opp", "adj", "hyp"].find((side) => side !== known && side !== target)]}, the other unknown side, instead of ${sideName[target]}.`],
+        [target === leftOut ? null : wrongRatioSide, `Multiplies by the ratio where it should divide (or divides where it should multiply).`],
+        [leftOut === "hyp" ? sides.opp + sides.adj : Math.abs(sides.hyp - sides[usedSides.find((side) => side !== "hyp")]),
+          leftOut === "hyp" ? "Adds the legs to get the hypotenuse instead of using the Pythagorean theorem." : "Subtracts the known leg from the hypotenuse to get the other leg."],
+        [sides[known], `Gives ${sideName[known]}, the side that is already known.`],
+        [sides[known] + (target === "hyp" ? z - (known === "opp" ? p : q) : 0) * k || null, "Adds the difference of the ratio's terms to the known side."],
+      ];
+      const fields = {
+        stimulus: null,
+        figure: null,
+        stem: `In triangle ${triangle}, angle ${Cn} is a right angle, ${given} ${An} = ${givenText}, and ${sideName[known]} = ${sides[known]}. What is the length of ${sideName[target]}?`,
+        explanation:
+          `${given} ${An} = ${RATIO_WORDS[given]} = ${givenText}, so the sides are ${p}k, ${q}k and ${z}k (opposite ${An}, adjacent to ${An}, hypotenuse). ` +
+          `${sideName[known]} = ${sides[known]} gives k = ${k}, so ${sideName[target]} = ${({ opp: p, adj: q, hyp: z })[target]} × ${k} = ${key}.`,
+        steps: [
+          `${given} ${An} = ${givenText}: the ${({ sin: "opposite leg and hypotenuse", cos: "adjacent leg and hypotenuse", tan: "opposite and adjacent legs" })[given]} are in the ratio ${parts[0]} : ${parts[1]}.`,
+          `The third side, by the Pythagorean theorem, makes the sides ${p}k, ${q}k and ${z}k.`,
+          `${sideName[known]} = ${({ opp: p, adj: q, hyp: z })[known]}k = ${sides[known]}, so k = ${k}.`,
+          `${sideName[target]} = ${({ opp: p, adj: q, hyp: z })[target]}k = ${key}.`,
+        ],
+        principles: [
+          "A trigonometric ratio fixes the shape of a right triangle; one side length then fixes its size.",
+          "The third side comes from the Pythagorean theorem, not from adding or subtracting the other two.",
+        ],
+        trap: "Adding or subtracting sides instead of using the Pythagorean theorem, or answering with the other unknown side, gives an offered choice.",
+        hint: `Write each side as a multiple of the same number k.`,
+        estimatedSeconds: 85,
+        verify: () => {
+          const C0 = [0, 0];
+          const A0 = [sides.adj, 0];
+          const B0 = [0, sides.opp];
+          const atA = toRad(angleAt(A0, B0, C0));
+          const length = { opp: dist(B0, C0), adj: dist(A0, C0), hyp: dist(A0, B0) };
+          return close(Math[given](atA), fractionValue(givenText)) && close(length[known], sides[known]) && close(length[target], key);
+        },
+      };
+      return packSpread(t, numeric, key, key, candidates, fields, { positive: true, whole: true });
+    });
+  }
+
+  const trigRatioFromRatio = {
+    id: "trig-ratio-from-ratio",
+    domain: DOMAIN,
+    skill: "Right triangles and trigonometry",
+    subskill: "trigonometric ratios",
+    difficulty: "Medium",
+    title: "One trigonometric ratio from another",
+    recognize:
+      "A given ratio names two sides of the right triangle up to a common factor; the Pythagorean theorem gives the third. " +
+      "Then read the asked ratio from the named angle: at the other acute angle the opposite and adjacent legs trade places.",
+    // Medium: no figure; the student must set up the sides from the ratio,
+    // find the third side, and read the asked ratio, often at the other
+    // acute angle. The leg found by subtraction, the ratio at the other
+    // angle, and the given ratio itself are offered.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 1, trap: 1 },
+    tricks: ["neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      const names = t.pick(RATIO_NAMES);
+      if (t.chance(0.3)) return sideFromRatioItem(t, names, t.chance(0.5));
+      return ratioFromRatioItem(t, names, t.chance(0.2));
+    },
+  };
+
   const trigCofunction = {
     id: "trig-similar-cofunction",
     difficulty: "Hard",
@@ -1493,5 +1737,5 @@
     },
   };
 
-  return [ratioRead, specialRight, pythagoreanTwoStep, trigContext, cofunctionAngles, trigCofunction, unitCircle, twoObservers];
+  return [ratioRead, specialRight, pythagoreanTwoStep, trigContext, cofunctionAngles, trigRatioFromRatio, trigCofunction, unitCircle, twoObservers];
 });

@@ -842,6 +842,314 @@
     },
   };
 
+  /* ===================================== line-graph-reading (Easy) */
+
+  // A line graph in the test's style: one value per labelled time, dots
+  // joined by straight segments over light gridlines. Values sit on
+  // gridlines, so every value can be read exactly.
+  const LINE_DOT = 3.75;
+  const LINE_PLOT = { left: 66, right: 382, top: 16, bottom: 226 };
+
+  function lineGraph({ labels, values, yMax, yStep, xTitle, yTitle, alt }) {
+    const { left, right, top, bottom } = LINE_PLOT;
+    const gap = (right - left - 28) / (labels.length - 1);
+    const xs = labels.map((_, index) => left + 14 + index * gap);
+    const py = (y) => bottom - (y / yMax) * (bottom - top);
+    const lines = Math.round(yMax / yStep);
+    const labelEvery = lines > 12 ? 2 : 1;
+    const parts = [];
+    for (let j = 0; j <= lines; j += 1) {
+      const y = py(j * yStep);
+      if (j > 0) parts.push(gridLine([left, y], [right, y]));
+      if (j % labelEvery === 0) parts.push(chartText(left - 7, y, fmt(tidy(j * yStep)), "end", 12));
+    }
+    parts.push(seg([left, bottom], [right, bottom], 1.5), seg([left, bottom], [left, top], 1.5));
+    labels.forEach((label, index) => {
+      parts.push(seg([xs[index], bottom], [xs[index], bottom + 5], 1.5));
+      parts.push(chartText(xs[index], bottom + 17, label, "middle", 12));
+    });
+    values.forEach((value, index) => {
+      if (index) parts.push(seg([xs[index - 1], py(values[index - 1])], [xs[index], py(value)], 2));
+    });
+    values.forEach((value, index) => parts.push(dataDot(xs[index], py(value), LINE_DOT)));
+    parts.push(chartText((left + right) / 2, 266, xTitle, "middle", 13));
+    parts.push(chartText(17, (top + bottom) / 2, yTitle, "middle", 13, -90));
+    return { svg: S.svg(400, 282, parts, alt), alt, notToScale: false };
+  }
+
+  // Reads a line graph back from the SVG: the labelled gridlines fix the
+  // vertical scale, and each dot, left to right, gives one value.
+  function readLineGraph(svg) {
+    const ticks = [...svg.matchAll(/<text x="([\d.]+)" y="([\d.]+)"[^>]*text-anchor="end"[^>]*>([^<]+)<\/text>/g)]
+      .map((match) => [Number(match[2]), parseNumber(match[3])]);
+    if (ticks.length < 2) return null;
+    const [[y0, v0], [y1, v1]] = [ticks[0], ticks[ticks.length - 1]];
+    // Drawn positions are rounded to a tenth of a pixel, so a value is read
+    // to a hundredth of the labelled spacing.
+    const spacing = (v1 - v0) / (ticks.length - 1);
+    const value = (cy) => Math.round(((v0 + ((cy - y0) * (v1 - v0)) / (y1 - y0)) / spacing) * 100) / 100 * spacing;
+    const dots = [...svg.matchAll(new RegExp(`<circle cx="([\\d.]+)" cy="([\\d.]+)" r="${LINE_DOT}"`, "g"))]
+      .map((match) => [Number(match[1]), value(Number(match[2]))])
+      .sort((p, q) => p[0] - q[0]);
+    return dots.map(([, v]) => v);
+  }
+
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"];
+
+  // Each scene: the times (axis labels and the words for them), the value
+  // scale (gridline step and the range values are drawn from), and wording.
+  const LINE_SCENES = [
+    {
+      times: (t) => { const start = t.int(2012, 2016); return range(start, start + 7).map((year) => [String(year), String(year)]); },
+      xTitle: "Year", yTitle: "Visitors (thousands)", step: 5, low: 10, high: 60, per: "year",
+      about: "the number of visitors, in thousands, to a state park each year",
+      thing: "the number of visitors", unitWord: "thousand visitors", count: (n) => `${n},000`,
+      above: (v) => `did the park have more than ${v},000 visitors`, below: (v) => `did the park have fewer than ${v},000 visitors`,
+      change: (word, a, b) => `By how many thousand visitors did the park's yearly attendance ${word} from ${a} to ${b}?`,
+    },
+    {
+      times: () => MONTHS.slice(0, 8).map((month) => [month.slice(0, 3), month]),
+      xTitle: "Month", yTitle: "Members", step: 10, low: 20, high: 120, per: "month",
+      about: "the number of members in a library's reading program at the end of each month from January to August",
+      thing: "the number of members", unitWord: "members", count: (n) => fmt(n),
+      above: (v) => `did the program have more than ${v} members`, below: (v) => `did the program have fewer than ${v} members`,
+      change: (word, a, b) => `By how many members did the program's membership ${word} from the end of ${a} to the end of ${b}?`,
+    },
+    {
+      times: () => range(1, 8).map((week) => [String(week), `week ${week}`]),
+      xTitle: "Week", yTitle: "Smoothies sold", step: 20, low: 40, high: 240, per: "week",
+      about: "the number of smoothies a juice stand sold in each of 8 weeks",
+      thing: "the number of smoothies sold", unitWord: "smoothies", count: (n) => fmt(n),
+      above: (v) => `did the stand sell more than ${v} smoothies`, below: (v) => `did the stand sell fewer than ${v} smoothies`,
+      change: (word, a, b) => `How many ${word === "increase" ? "more" : "fewer"} smoothies did the stand sell in ${b} than in ${a}?`,
+    },
+    {
+      times: (t) => { const start = t.int(2014, 2017); return range(start, start + 6).map((year) => [String(year), String(year)]); },
+      xTitle: "Year", yTitle: "Club members", step: 2, low: 4, high: 28, per: "year",
+      about: "the number of students in a school's robotics club at the start of each school year",
+      thing: "the number of students in the club", unitWord: "students", count: (n) => fmt(n),
+      above: (v) => `did the club have more than ${v} students`, below: (v) => `did the club have fewer than ${v} students`,
+      change: (word, a, b) => `By how many students did the club's membership ${word} from ${a} to ${b}?`,
+    },
+    {
+      times: (t) => { const start = t.int(2013, 2016); return range(start, start + 7).map((year) => [String(year), String(year)]); },
+      xTitle: "Year", yTitle: "Recycled material (tons)", step: 50, low: 100, high: 600, per: "year",
+      about: "the amount of material, in tons, that a town recycled each year",
+      thing: "the amount of material recycled", unitWord: "tons", count: (n) => fmt(n),
+      above: (v) => `did the town recycle more than ${fmt(v)} tons`, below: (v) => `did the town recycle less than ${fmt(v)} tons`,
+      change: (word, a, b) => `By how many tons did the amount of material the town recycled ${word} from ${a} to ${b}?`,
+    },
+  ];
+
+  // "2017 and 2018", "March and April", "week 3 and week 4".
+  const between = (times, index) => `${times[index][1]} and ${times[index + 1][1]}`;
+
+  function lineSeries(t, scene) {
+    return retry(() => {
+      const times = scene.times(t);
+      const n = times.length;
+      const steps = (scene.high - scene.low) / scene.step;
+      const values = [scene.low + t.int(1, steps - 2) * scene.step];
+      for (let i = 1; i < n; i += 1) {
+        const next = values[i - 1] + t.pick([-3, -2, -1, 1, 1, 2, 2, 3, 4]) * scene.step;
+        if (next < scene.low || next > scene.high) return null;
+        values.push(next);
+      }
+      const changes = values.slice(1).map((value, i) => value - values[i]);
+      if (changes.filter((c) => c < 0).length < 2 || changes.filter((c) => c > 0).length < 3) return null;
+      const yMax = Math.ceil((Math.max(...values) + scene.step) / scene.step) * scene.step;
+      return { times, values, changes, yMax };
+    });
+  }
+
+  function lineGraphFigure(scene, series) {
+    const { times, values, yMax } = series;
+    const alt =
+      `A line graph with ${inSentence(scene.xTitle)} on the horizontal axis, from ${times[0][1]} to ${times[times.length - 1][1]}, ` +
+      `and ${inSentence(scene.yTitle)} on the vertical axis, from 0 to ${fmt(yMax)}, with gridlines every ${fmt(scene.step)}. ` +
+      `The plotted values, in order, are ${values.map(fmt).join(", ")}.`;
+    return lineGraph({ labels: times.map(([label]) => label), values, yMax, yStep: scene.step, xTitle: scene.xTitle, yTitle: scene.yTitle, alt });
+  }
+
+  // Between which two consecutive times did the value rise (or fall) the most?
+  function lineGreatestChange(t, scene) {
+    return retry(() => {
+      const series = lineSeries(t, scene);
+      const { times, values, changes } = series;
+      const rise = t.chance(0.6);
+      const signed = changes.map((c) => (rise ? c : -c));
+      const best = Math.max(...signed);
+      const key = signed.indexOf(best);
+      if (signed.filter((c) => c === best).length > 1) return null;
+      // The interval that ends at the greatest (or least) value, the largest
+      // change the other way, the next-largest change, and a neighbour.
+      const peak = rise ? values.indexOf(Math.max(...values)) : values.indexOf(Math.min(...values));
+      const opposite = signed.indexOf(Math.min(...signed));
+      const second = signed.map((c, i) => [c, i]).filter(([, i]) => i !== key).sort((p, q) => q[0] - p[0])[0][1];
+      const candidates = [];
+      if (peak > 0 && peak - 1 !== key) candidates.push([peak - 1, `Picks the interval that ends at the ${rise ? "greatest" : "least"} value shown, not the one with the ${rise ? "greatest increase" : "greatest decrease"}.`]);
+      candidates.push([opposite, `Picks the ${rise ? "greatest decrease" : "greatest increase"}, the steepest segment in the other direction.`]);
+      candidates.push([second, `Picks the ${rise ? "second-greatest increase" : "second-greatest decrease"}; it is ${fmt(Math.abs(changes[second]))} ${scene.unitWord}, less than the ${fmt(Math.abs(changes[key]))} of the steepest ${rise ? "rise" : "drop"}.`]);
+      [key - 1, key + 1].filter((i) => i >= 0 && i < changes.length).forEach((i) =>
+        candidates.push([i, `Picks a segment next to the steepest ${rise ? "rise" : "drop"}, misreading which pair of ${scene.per}s it joins.`]));
+      const seen = new Set([key]);
+      const wrong = [];
+      candidates.forEach(([i, reason]) => {
+        if (!seen.has(i) && wrong.length < 3) {
+          seen.add(i);
+          wrong.push([between(times, i), reason]);
+        }
+      });
+      if (wrong.length < 3) return null;
+      const figure = lineGraphFigure(scene, series);
+      const word = rise ? "increase" : "decrease";
+      return {
+        responseType: "multiple-choice",
+        stimulus: null,
+        figure,
+        stem: `The line graph shows ${scene.about}. Between which two consecutive ${scene.per}s shown did ${scene.thing} ${word} the most?`,
+        correct: between(times, key),
+        wrong,
+        explanation:
+          `The greatest ${word} is the steepest ${rise ? "upward" : "downward"} segment. From ${times[key][1]} to ${times[key + 1][1]}, ` +
+          `${scene.thing} went from ${fmt(values[key])} to ${fmt(values[key + 1])}, a change of ${fmt(Math.abs(changes[key]))}, ` +
+          `more than any other ${word} between consecutive ${scene.per}s.`,
+        steps: [
+          `Read each change between consecutive ${scene.per}s: ${changes.map((c) => (c < 0 ? `${MINUS}${fmt(-c)}` : `+${fmt(c)}`)).join(", ")}.`,
+          `The ${rise ? "largest increase" : "largest decrease"} is ${fmt(Math.abs(changes[key]))}, from ${times[key][1]} to ${times[key + 1][1]}.`,
+        ],
+        principles: [
+          "On a line graph, the change between two consecutive times is the rise or fall of the segment joining them; the steepest segment shows the greatest change.",
+        ],
+        trap: `The ${rise ? "highest" : "lowest"} point is not necessarily at the end of the greatest ${word}; compare the changes, not the values.`,
+        hint: "Compare the segments, not the heights of the points.",
+        estimatedSeconds: 60,
+        verify: () => {
+          const read = readLineGraph(figure.svg);
+          if (!read || read.length !== values.length) return false;
+          const seenChanges = read.slice(1).map((v, i) => (rise ? v - read[i] : read[i] - v));
+          const top = Math.max(...seenChanges);
+          return seenChanges.filter((c) => close(c, top)).length === 1 && close(seenChanges[key], top);
+        },
+      };
+    });
+  }
+
+  // For how many of the times shown was the value above (or below) a level?
+  function lineCountAbove(t, scene, numeric) {
+    return retry(() => {
+      const series = lineSeries(t, scene);
+      const { times, values, yMax } = series;
+      const above = t.chance(0.5);
+      // A level on a gridline that one or two values sit exactly on, so
+      // "more than" must exclude them.
+      const levels = range(1, yMax / scene.step - 1).map((k) => k * scene.step)
+        .filter((v) => values.includes(v));
+      if (!levels.length) return null;
+      const level = t.pick(levels);
+      const on = values.filter((v) => v === level).length;
+      const key = values.filter((v) => (above ? v > level : v < level)).length;
+      const other = values.filter((v) => (above ? v < level : v > level)).length;
+      if (key < 2 || key === values.length) return null;
+      const figure = lineGraphFigure(scene, series);
+      const phrase = above ? scene.above(level) : scene.below(level);
+      return packRanked(t, numeric, key, [
+        [key + on, `Also counts the ${on === 1 ? `${scene.per} whose value is` : `${on} ${scene.per}s whose values are`} exactly ${fmt(level)}, which is not ${above ? "more" : "less"} than ${fmt(level)}.`],
+        [other, `Counts the ${scene.per}s ${above ? "below" : "above"} the level instead.`],
+        [other + on, `Counts the ${scene.per}s ${above ? "at or below" : "at or above"} the level, the opposite condition.`],
+        [values.length, `Counts every ${scene.per} shown.`],
+        [key - 1, "Leaves out one of the points beyond the level."],
+      ], {
+        stimulus: null,
+        figure,
+        stem: `The line graph shows ${scene.about}. For how many of the ${scene.per}s shown ${phrase}?`,
+        explanation:
+          `Those ${scene.per}s have points ${above ? "above" : "below"} the gridline at ${fmt(level)}. ` +
+          `There are ${key}; ${on === 1 ? "the point" : "the points"} exactly on that gridline ${on === 1 ? "does" : "do"} not count.`,
+        steps: [
+          `Find the gridline at ${fmt(level)}.`,
+          `Count the points strictly ${above ? "above" : "below"} it: ${key}.`,
+        ],
+        principles: ["Each point on a line graph is one value; a point on a gridline has exactly that value."],
+        trap: `${above ? "More" : "Less"} than ${fmt(level)} leaves out a value equal to ${fmt(level)}.`,
+        hint: `Which points lie strictly ${above ? "above" : "below"} the level?`,
+        estimatedSeconds: 55,
+        verify: () => {
+          const read = readLineGraph(figure.svg);
+          return Boolean(read) && read.length === values.length &&
+            read.filter((v) => (above ? v > level + 1e-6 : v < level - 1e-6)).length === key;
+        },
+      }, { show: (v) => fmt(v), places: 0 });
+    });
+  }
+
+  // How much did the value change from one named time to a later one?
+  function lineChangeBetween(t, scene, numeric) {
+    return retry(() => {
+      const series = lineSeries(t, scene);
+      const { times, values } = series;
+      const a = t.int(0, times.length - 3);
+      const b = t.int(a + 2, Math.min(times.length - 1, a + 5));
+      const change = values[b] - values[a];
+      if (change === 0) return null;
+      const rise = change > 0;
+      const key = Math.abs(change);
+      const word = rise ? "increase" : "decrease";
+      const figure = lineGraphFigure(scene, series);
+      const nearby = b + 1 < times.length ? b + 1 : b - 1;
+      return packRanked(t, numeric, key, [
+        [values[b], `Gives the value in ${times[b][1]} rather than the change since ${times[a][1]}.`],
+        [key + scene.step, `Misreads one of the two points by a gridline, ${fmt(scene.step)} ${scene.unitWord}.`],
+        [key - scene.step, `Misreads one of the two points by a gridline, ${fmt(scene.step)} ${scene.unitWord}.`],
+        [Math.abs(values[nearby] - values[a]), `Reads the value in ${times[nearby][1]} instead of ${times[b][1]}.`],
+        [Math.abs(values[b] - values[b - 1]), `Gives only the last ${scene.per}'s change, from ${times[b - 1][1]} to ${times[b][1]}.`],
+      ], {
+        stimulus: null,
+        figure,
+        stem: `The line graph shows ${scene.about}. ${scene.change(word, times[a][1], times[b][1])}`,
+        explanation:
+          `In ${times[a][1]} the value was ${fmt(values[a])}, and in ${times[b][1]} it was ${fmt(values[b])}. ` +
+          `The ${word} is ${fmt(Math.max(values[a], values[b]))} ${MINUS} ${fmt(Math.min(values[a], values[b]))} = ${fmt(key)}.`,
+        steps: [
+          `Read ${times[a][1]}: ${fmt(values[a])}; read ${times[b][1]}: ${fmt(values[b])}.`,
+          `Subtract: ${fmt(Math.max(values[a], values[b]))} ${MINUS} ${fmt(Math.min(values[a], values[b]))} = ${fmt(key)}.`,
+        ],
+        principles: ["The change between two times is the later value minus the earlier value; the values in between do not matter."],
+        trap: "The ups and downs between the two times do not change the answer, and the later value alone is not the change.",
+        hint: `Read the two points for ${times[a][1]} and ${times[b][1]}.`,
+        estimatedSeconds: 55,
+        verify: () => {
+          const read = readLineGraph(figure.svg);
+          return Boolean(read) && read.length === values.length && close(Math.abs(read[b] - read[a]), key);
+        },
+      }, { show: (v) => fmt(v), places: 0 });
+    });
+  }
+
+  const lineGraphReading = {
+    id: "line-graph-reading",
+    domain: DATA,
+    skill: "Two-variable data",
+    subskill: "scatterplots",
+    difficulty: "Easy",
+    title: "Reading a line graph over time",
+    recognize:
+      "Each point is one value at one time; a change between two times is the later value minus the earlier, and the " +
+      "steepest segment is the greatest change between consecutive times.",
+    // Easy: one reading of the graph, then a comparison or a subtraction;
+    // the highest point (for the greatest rise), the later value (for the
+    // change) and a value on the level line (for "more than") are offered.
+    rubric: { steps: 0, concept: 0, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["wrong-quantity", "reversed-condition"],
+    build(t) {
+      const scene = t.pick(LINE_SCENES);
+      const form = t.pick(["change", "change", "count", "between"]);
+      if (form === "change") return lineGreatestChange(t, scene);
+      if (form === "count") return lineCountAbove(t, scene, t.chance(0.55));
+      return lineChangeBetween(t, scene, t.chance(0.55));
+    },
+  };
+
   /* ================================== two-group-fit-lines (Medium) */
 
   const GROUP_SCENES = [
@@ -2185,7 +2493,7 @@
     };
   }
 
-  /* ===================================== residual-actual-predicted (Hard) */
+  /* =================================== residual-actual-predicted (Medium) */
 
   // A line of best fit and a table: either the data themselves (to find the
   // point farthest above or below its prediction) or the residuals (to
@@ -2230,16 +2538,17 @@
     domain: DATA,
     skill: "Two-variable data",
     subskill: "scatterplots",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Residuals: actual against predicted",
     recognize:
       "A residual is actual − predicted: positive above the line, negative below it. The point farthest below its prediction " +
       "has the most negative residual, which need not be the smallest value, and an actual value is the prediction plus its residual.",
-    // Hard: two representations (the model and a table) must be reconciled
-    // point by point, and the sign convention decides the answer; the
-    // smallest value, the largest residual, and predicted − residual are all
-    // offered.
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 1, trap: 2 },
+    // Medium (relabelled from Hard, 2026-10-16 realism review; official
+    // Medium): two representations (the model and a table) must be
+    // reconciled point by point, and the sign convention decides the
+    // answer; the smallest value, the largest residual, and predicted −
+    // residual are all offered.
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["sign-error", "wrong-quantity", "neighbouring-rule"],
     build(t) {
       const scene = t.pick(RESIDUAL_SCENES);
@@ -2432,7 +2741,7 @@
   };
 
   return [
-    bestFitEquation, shapeAndCount, scatterReading, twoGroupLines, fitModelChoice, unevenTable, rescaledSlope, outlierRemoval,
+    bestFitEquation, shapeAndCount, lineGraphReading, scatterReading, twoGroupLines, fitModelChoice, unevenTable, rescaledSlope, outlierRemoval,
     expFitInterpretation, slopeUnitRate, residualActual, residualPlotReconstruction,
   ].map(withAgreement);
 });

@@ -14,7 +14,7 @@
   const { term } = C;
   const {
     tidy, ratio, drawUntilDistinct, denominatorHard, ratioHard, enoughChoicesHard, drawUntilDistinctHard, plus, terms,
-    sampleQuadratic, realRoots, quadraticRoots, labelValue,
+    sampleQuadratic, realRoots, quadraticRoots, labelValue, pairBalanced,
   } = C;
 
   // "a and b" for a pair of solutions, smaller first.
@@ -1209,6 +1209,518 @@
     };
   }
 
+  /* ================================= quadratic-solution-count / rational-equation-solve */
+
+  // Reads displayed math text at the given values: numbers, one-letter
+  // variables, superscript powers ("x²", "(x − 1)²"), parentheses, + and −,
+  // juxtaposition, "·" and "/". Juxtaposition binds tighter than "/", so
+  // "5x/3" is (5x)/3. Verification evaluates exactly what the student reads.
+  function readMath(text, values) {
+    const SUPS = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+    const source = String(text).replace(/\s+/g, "").replace(/−/g, "-");
+    let position = 0;
+    const peek = () => source[position];
+    const fail = () => {
+      throw new Error(`cannot read "${text}"`);
+    };
+    function primary() {
+      if (peek() === "(") {
+        position += 1;
+        const inner = sum();
+        if (peek() !== ")") fail();
+        position += 1;
+        return inner;
+      }
+      const match = /^\d+(\.\d+)?/.exec(source.slice(position));
+      if (match) {
+        position += match[0].length;
+        return Number(match[0]);
+      }
+      const letter = peek();
+      if (letter && /[A-Za-z]/.test(letter)) {
+        position += 1;
+        if (!(letter in values)) fail();
+        return values[letter];
+      }
+      return fail();
+    }
+    function power() {
+      const base = primary();
+      let digits = "";
+      while (position < source.length && SUPS.includes(peek())) digits += SUPS.indexOf(source[position++]);
+      return digits ? base ** Number(digits) : base;
+    }
+    function product() {
+      let value = power();
+      while (position < source.length && (/[\d.A-Za-z(]/.test(peek()) || peek() === "·")) {
+        if (peek() === "·") position += 1;
+        value *= power();
+      }
+      return value;
+    }
+    function quotient() {
+      let value = product();
+      while (peek() === "/") {
+        position += 1;
+        value /= product();
+      }
+      return value;
+    }
+    function sum() {
+      let value = peek() === "-" ? (position += 1, -quotient()) : quotient();
+      while (peek() === "+" || peek() === "-") {
+        const add = source[position++] === "+";
+        const next = quotient();
+        value = add ? value + next : value - next;
+      }
+      return value;
+    }
+    const value = sum();
+    if (position !== source.length) fail();
+    return value;
+  }
+
+  // Left side minus right side of a displayed equation in x.
+  const differenceOf = (equation) => {
+    const [left, right] = equation.split(" = ");
+    return (x) => readMath(left, { x }) - readMath(right, { x });
+  };
+
+  // The number of real solutions of a displayed equation of degree at most 2,
+  // read from the text: the cleared side is fitted at −1, 0 and 1 and checked
+  // elsewhere, then counted by its discriminant. Null when it is not a
+  // polynomial of degree at most 2.
+  function countFromText(equation) {
+    const f = differenceOf(equation);
+    const [A, B, Cc] = sampleQuadratic(f);
+    if (![-3.5, 2, 4.25].every((x) => approx(A * x * x + B * x + Cc, f(x), 1e-9))) return null;
+    const tiny = (value) => Math.abs(value) < 1e-9;
+    if (tiny(A)) return tiny(B) ? (tiny(Cc) ? "Infinitely many" : "Zero") : "Exactly one";
+    const disc = B * B - 4 * A * Cc;
+    return tiny(disc) ? "Exactly one" : disc > 0 ? "Exactly two" : "Zero";
+  }
+
+  const countOf = (A, B, Cc) => {
+    if (!A) return B ? "Exactly one" : Cc ? "Zero" : "Infinitely many";
+    const disc = B * B - 4 * A * Cc;
+    return disc === 0 ? "Exactly one" : disc > 0 ? "Exactly two" : "Zero";
+  };
+
+  // A·x² + B·x + C with the requested number of real solutions.
+  function coefficientsWithCount(t, count) {
+    for (;;) {
+      const A = t.pick([1, 1, 1, 2, 3, 4]);
+      if (count === "Exactly one") {
+        // A(x − r)².
+        const r = t.nonzero(-6, 6);
+        return [A, -2 * A * r, A * r * r];
+      }
+      const B = t.int(-12, 12);
+      const Cc = t.nonzero(-20, 20);
+      const disc = B * B - 4 * A * Cc;
+      if (count === "Zero" ? disc < 0 : disc > 0) return [A, B, Cc];
+    }
+  }
+
+  function solutionCountItem(t) {
+    const roll = t.random();
+    const key = roll < 0.34 ? "Zero" : roll < 0.6 ? "Exactly one" : roll < 0.9 ? "Exactly two" : "Infinitely many";
+    const linearShapes = { Zero: "cancel-none", "Exactly one": "cancel-one", "Infinitely many": "identity" };
+    const shape = key === "Infinitely many" || (key !== "Exactly two" && t.chance(0.15))
+      ? linearShapes[key]
+      : t.pick(["one-side", "line", "line", "moved", "product", "square"]);
+    let equation;
+    let reasons = {};
+    let steps;
+    let explanation;
+    if (shape === "cancel-none" || shape === "cancel-one" || shape === "identity") {
+      const p = t.nonzero(-7, 7);
+      if (shape === "identity") {
+        const q = t.nonzero(-7, 7);
+        if (q === p || p + q === 0) return null;
+        equation = `(${lin(1, p)})(${lin(1, q)}) = x(${lin(1, p + q)}) ${signed(p * q)}`;
+        steps = [
+          `Expand the left side: x² ${signed(p + q)}x ${signed(p * q)}.`,
+          `Expand the right side: x² ${signed(p + q)}x ${signed(p * q)}.`,
+          "The two sides are the same expression, so every real number x is a solution.",
+        ];
+        reasons = {
+          Zero: "Sees every term cancel and concludes that no x works; a true statement such as 0 = 0 means every x works.",
+          "Exactly one": "Expands one side with a slip, which leaves a linear equation; expanded correctly, the two sides are identical.",
+          "Exactly two": "Treats the equation as a quadratic with two roots without simplifying it; the two sides are the same expression.",
+        };
+      } else {
+        const q = shape === "cancel-none" ? 2 * p : t.nonzero(-9, 9);
+        if (shape === "cancel-one" && q === 2 * p) return null;
+        const r = shape === "cancel-none" ? p * p + t.nonzero(-9, 9) : t.int(-12, 12);
+        equation = `(${lin(1, p)})² = ${poly([1, q, r])}`;
+        steps = [
+          `Expand the left side: x² ${signed(2 * p)}x + ${p * p}.`,
+          `Subtract x² from both sides: ${lin(2 * p, p * p)} = ${lin(q, r)}.`,
+          shape === "cancel-none"
+            ? `The x-terms cancel too, leaving ${p * p} = ${num(r)}, which is false, so the equation has no solution.`
+            : `This linear equation has exactly one solution, x = ${ratio((r - p * p) / (2 * p - q))}.`,
+        ];
+        reasons = shape === "cancel-none"
+          ? {
+            "Exactly one": `Squares term by term, writing (${lin(1, p)})² as x² + ${p * p}, which leaves an x-term and one solution.`,
+            "Exactly two": "Assumes an equation with an x²-term has two solutions; the x²-terms cancel.",
+            "Infinitely many": `Concludes every x works because the x²- and x-terms cancel; the constants ${p * p} and ${num(r)} are not equal.`,
+          }
+          : {
+            Zero: "Concludes there is no solution once the x²-terms cancel; the linear equation that is left has one solution.",
+            "Exactly two": "Assumes an equation with an x²-term has two solutions; the x²-terms cancel, leaving a linear equation.",
+            "Infinitely many": "Concludes every x works because the x²-terms cancel; the x-terms do not cancel.",
+          };
+      }
+      explanation = steps.join(" ");
+    } else {
+      const [A, B, Cc] = coefficientsWithCount(t, key);
+      let left;
+      let right;
+      let moved;
+      if (shape === "one-side") {
+        equation = `${poly([A, B, Cc])} = 0`;
+        moved = null;
+      } else if (shape === "line") {
+        const d = t.nonzero(-9, 9);
+        const e = t.int(-12, 12);
+        left = [A, B + d, Cc + e];
+        right = [d, e];
+        if (!left[1] && !left[2]) return null;
+        equation = `${poly(left)} = ${lin(d, e)}`;
+        moved = [A, B + 2 * d, Cc + 2 * e];
+      } else if (shape === "moved") {
+        if (!B) return null;
+        equation = `${poly([A, B, 0])} = ${num(-Cc)}`;
+        left = [A, B, 0];
+        moved = [A, B, -Cc];
+      } else if (shape === "product") {
+        if (!B) return null;
+        equation = `x(${lin(A, B)}) = ${num(-Cc)}`;
+        left = [A, B, 0];
+        moved = [A, B, -Cc];
+      } else {
+        // (x + p)² = qx + r, A = 1 only.
+        if (A !== 1) return null;
+        const p = t.nonzero(-6, 6);
+        const q = 2 * p - B;
+        const r = p * p - Cc;
+        equation = `(${lin(1, p)})² = ${lin(q, r)}`;
+        left = [1, 2 * p, p * p];
+        moved = [1, 2 * p + q, p * p + r];
+      }
+      const disc = B * B - 4 * A * Cc;
+      const errors = [];
+      if (left) {
+        errors.push([countOf(...left), `Counts the solutions of ${poly(left)} = 0, leaving out the right side of the equation.`]);
+      }
+      if (moved) errors.push([countOf(...moved), "Moves the terms on the right side to the left without changing their signs."]);
+      errors.push([countOf(A, B, -Cc), `Computes b² + 4ac instead of b² − 4ac, getting ${num(B * B + 4 * A * Cc)}.`]);
+      const fallback = {
+        Zero: {
+          "Exactly one": `Treats the negative discriminant, ${num(disc)}, as if it were 0.`,
+          "Exactly two": `Assumes a quadratic equation always has two real solutions; its discriminant, ${num(disc)}, is negative.`,
+        },
+        "Exactly one": {
+          Zero: "Treats a discriminant of 0 as meaning there is no real solution; it means exactly one.",
+          "Exactly two": `Counts the repeated solution, x = ${ratio(-B / (2 * A))}, twice.`,
+        },
+        "Exactly two": {
+          Zero: Number.isInteger(Math.sqrt(disc))
+            ? `Makes a sign slip in b² − 4ac; the discriminant is ${num(disc)}, which is positive.`
+            : `Concludes there is no solution because the quadratic does not factor over the integers; its discriminant, ${num(disc)}, is positive.`,
+          "Exactly one": "Keeps only one sign of the ± in the quadratic formula; both signs give real solutions.",
+        },
+      }[key];
+      COUNTS.filter((choice) => choice !== key).forEach((choice) => {
+        const error = errors.find(([count]) => count === choice);
+        reasons[choice] = error ? error[1] : fallback[choice] ||
+          "A quadratic equation whose x²-terms do not cancel has at most two solutions; infinitely many would need the two sides to be the same expression.";
+      });
+      const standard = `${poly([A, B, Cc])} = 0`;
+      steps = [
+        ...(shape === "one-side" ? [] : [`Move every term to one side: ${standard}.`]),
+        `The discriminant is b² − 4ac = ${paren(B)}² − 4(${A})(${num(Cc)}) = ${num(disc)}.`,
+        disc === 0 ? "A discriminant of 0 means exactly one real solution."
+          : disc > 0 ? "A positive discriminant means two real solutions." : "A negative discriminant means no real solutions.",
+      ];
+      explanation = steps.join(" ");
+    }
+    return {
+      responseType: "multiple-choice",
+      stimulus: { type: "equations", content: equation },
+      stem: "How many distinct real solutions does the given equation have?",
+      correct: key,
+      wrong: COUNTS.filter((choice) => choice !== key).map((choice) => [choice, reasons[choice]]),
+      explanation,
+      steps,
+      principles: [
+        "With every term on one side as ax² + bx + c = 0, the discriminant b² − 4ac is positive for two real solutions, 0 for one, and negative for none.",
+        "If the x²-terms cancel, the equation is linear: one solution, none, or every x.",
+      ],
+      trap: "Count only after every term is on one side; the right side changes the coefficients.",
+      hint: "What does the equation look like with every term on one side?",
+      verify: () => countFromText(equation) === key,
+    };
+  }
+
+  // Which of four equations has the stated number of real solutions.
+  function whichEquationItem(t) {
+    const target = t.pick(["Zero", "Exactly one", "Exactly two"]);
+    const A = t.pick([1, 1, 1, 2, 3]);
+    const m = t.nonzero(-5, 5);
+    const B = 2 * A * m;
+    const c1 = A * m * m;
+    const up = t.int(1, 6);
+    const down = t.int(1, Math.max(1, c1 - 1));
+    const constants = {
+      zero: c1 + up,
+      zero2: c1 + up + t.int(1, 5),
+      one: c1,
+      two: c1 - down,
+      negative: -t.pick([c1, c1 + up, Math.max(1, c1 - down)]),
+    };
+    if (constants.two <= 0) return null;
+    const moved = t.chance(0.35);
+    const show = (c) => (moved ? `${poly([A, B, 0])} = ${num(-c)}` : `${poly([A, B, c])} = 0`);
+    const words = { Zero: "no real solutions", "Exactly one": "exactly one real solution", "Exactly two": "two distinct real solutions" };
+    const why = (c) => {
+      const disc = B * B - 4 * A * c;
+      const count = countOf(A, B, c);
+      return `Has ${words[count]}: its discriminant is ${paren(B)}² − 4(${A})(${num(c)}) = ${num(disc)}.`;
+    };
+    let key;
+    let others;
+    if (target === "Zero") {
+      key = constants.zero;
+      others = [constants.one, constants.two, constants.negative];
+    } else if (target === "Exactly one") {
+      key = constants.one;
+      others = [constants.zero, constants.two, constants.negative];
+    } else {
+      key = t.pick([constants.two, constants.negative]);
+      others = [constants.one, constants.zero, constants.zero2];
+    }
+    if (new Set([key, ...others]).size < 4) return null;
+    const keyText = show(key);
+    const wrong = others.map((c) => [show(c), why(c)]);
+    const lengths = [keyText, ...wrong.map(([text]) => text)].map((text) => text.length);
+    const longest = Math.max(...lengths);
+    const shortest = Math.min(...lengths);
+    const unique = (value) => lengths.filter((length) => length === value).length === 1;
+    if (((lengths[0] === longest && unique(longest)) || (lengths[0] === shortest && unique(shortest))) && t.chance(0.6)) return null;
+    const disc = B * B - 4 * A * key;
+    const steps = [
+      "For ax² + bx + c = 0, the number of real solutions follows from the sign of b² − 4ac.",
+      `In ${keyText}, ${moved ? `c = ${num(key)} once every term is on one side, and ` : ""}b² − 4ac = ${paren(B)}² − 4(${A})(${num(key)}) = ${num(disc)}.`,
+      `${disc < 0 ? "A negative" : disc === 0 ? "A zero" : "A positive"} discriminant means ${words[target]}.`,
+    ];
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      stem: `Which of the following equations has ${words[target]}?`,
+      correct: keyText,
+      wrong,
+      explanation: steps.join(" "),
+      steps,
+      principles: ["The discriminant b² − 4ac of ax² + bx + c = 0 is positive for two real solutions, 0 for one, and negative for none."],
+      trap: target === "Exactly two"
+        ? "A perfect-square trinomial has only one real solution, a repeated root."
+        : "Equations that differ only in their constant term can have different numbers of solutions; compute each discriminant.",
+      hint: "What decides how many times the graph of y = ax² + bx + c meets the x-axis?",
+      verify: () => countFromText(keyText) === target && wrong.every(([text]) => countFromText(text) !== target),
+    };
+  }
+
+  // Rational equations that clear to a linear or a factorable quadratic
+  // equation. (An equation whose cleared form has a root the original
+  // excludes is the extraneous-roots template's.)
+  function rationalSolveItem(t, form, numeric) {
+    let equation;
+    let key;
+    let wrong;
+    let steps;
+    let stem = t.pick(["What value of x is the solution to the given equation?", "What is the solution to the given equation?"]);
+    let excluded;
+    if (form === "proportion") {
+      const a = t.int(1, 9);
+      const b = t.int(1, 9);
+      const p = t.nonzero(-9, 9);
+      const q = t.nonzero(-9, 9);
+      if (a === b || p === q) return null;
+      key = (b * p - a * q) / (a - b);
+      if (!Number.isInteger(key) || Math.abs(key) > 40) return null;
+      excluded = [-p, -q];
+      equation = `${a}/(${lin(1, p)}) = ${b}/(${lin(1, q)})`;
+      wrong = [
+        [(b * q - a * p) / (a - b), `Multiplies each numerator by its own denominator, solving ${a}(${lin(1, p)}) = ${b}(${lin(1, q)}).`],
+        [-key, "Collects the x-terms with a sign slip, which reverses the sign of the solution."],
+        [(p - q) / (a - b), `Multiplies only the x in each binomial, solving ${lin(a, q)} = ${lin(b, p)}.`],
+        [(b * p - a * q) / (a + b), `Moves ${lin(b, 0)} to the left side without changing its sign.`],
+      ];
+      steps = [
+        `Multiply both sides by (${lin(1, p)})(${lin(1, q)}): ${a}(${lin(1, q)}) = ${b}(${lin(1, p)}).`,
+        `Distribute: ${lin(a, a * q)} = ${lin(b, b * p)}.`,
+        `Collect terms: ${lin(a - b, 0)} = ${num(b * p - a * q)}, so x = ${num(key)}.`,
+      ];
+    } else if (form === "ratio") {
+      const k = t.int(2, 6);
+      const p = t.nonzero(-12, 12);
+      const q = t.nonzero(-9, 9);
+      if (p === q) return null;
+      key = (p - k * q) / (k - 1);
+      if (!Number.isInteger(key) || Math.abs(key) > 40) return null;
+      excluded = [-q];
+      equation = `(${lin(1, p)})/(${lin(1, q)}) = ${k}`;
+      wrong = [
+        [(p - q) / (k - 1), `Multiplies only x by ${k}, solving ${lin(1, p)} = ${lin(k, q)}.`],
+        [-key, "Collects the x-terms with a sign slip, which reverses the sign of the solution."],
+        [(q - k * p) / (k - 1), `Divides by ${k} instead of multiplying, solving ${lin(1, p)} = (${lin(1, q)})/${k}.`],
+        [p - k * q, `Stops before dividing by ${k - 1}, the coefficient of x after collecting terms.`],
+      ];
+      steps = [
+        `Multiply both sides by ${lin(1, q)}: ${lin(1, p)} = ${k}(${lin(1, q)}) = ${lin(k, k * q)}.`,
+        `Collect terms: ${num(p - k * q)} = ${lin(k - 1, 0)}.`,
+        `x = ${num(key)}, which does not make ${lin(1, q)} equal to 0.`,
+      ];
+    } else if (form === "reciprocal") {
+      const m = t.int(2, 5);
+      const minus = t.chance(0.35);
+      const j = t.int(1, 6);
+      const n = m * j;
+      key = j * (minus ? m - 1 : m + 1);
+      excluded = [0];
+      equation = `1/x ${minus ? MINUS : "+"} 1/(${m}x) = 1/${n}`;
+      const top = minus ? m - 1 : m + 1;
+      wrong = minus
+        ? [
+          [n * top, `Solves ${top}/x = 1/${n}, dropping the factor ${m} from the denominator ${m}x.`],
+          [j * (m + 1), `Adds the fractions instead of subtracting them, getting ${m + 1}/(${m}x).`],
+          [-n / top, `Flips every fraction, solving x ${MINUS} ${m}x = ${n}.`],
+          [(2 * n) / m, `Rewrites 1/x as 1/(${m}x) without multiplying its numerator by ${m}, then adds instead of subtracting.`],
+        ]
+        : [
+          [(2 * n) / top, `Adds the numerators and the denominators, writing 1/x + 1/(${m}x) as 2/(x + ${m}x).`],
+          [n * top, `Solves ${top}/x = 1/${n}, dropping the factor ${m} from the denominator ${m}x.`],
+          [(2 * n) / m, `Rewrites 1/x as 1/(${m}x) without multiplying its numerator by ${m}, getting 2/(${m}x).`],
+          [n / top, `Flips every fraction, solving x + ${m}x = ${n}.`],
+        ];
+      steps = [
+        `Write the left side over the common denominator ${m}x: ${m}/(${m}x) ${minus ? MINUS : "+"} 1/(${m}x) = ${minus ? m - 1 : m + 1}/(${m}x).`,
+        `So ${minus ? m - 1 : m + 1}/(${m}x) = 1/${n}; cross-multiply: ${m}x = ${n * (minus ? m - 1 : m + 1)}.`,
+        `x = ${key}.`,
+      ];
+    } else {
+      // a/x = (x + b)/c clears to x² + bx − ac = 0 with roots u > 0 and −w.
+      const u = t.int(2, 12);
+      const w = t.int(1, 12);
+      if (u === w) return null;
+      const b = w - u;
+      const product = u * w;
+      const pairs = [];
+      for (let a = 2; a <= product / 2; a += 1) if (product % a === 0) pairs.push([a, product / a]);
+      if (!pairs.length) return null;
+      const [a, c] = t.pick(pairs);
+      excluded = [0];
+      equation = `${a}/x = (${lin(1, b)})/${c}`;
+      const askSum = t.chance(0.3);
+      stem = askSum ? "What is the sum of the solutions to the given equation?" : "What is the positive solution to the given equation?";
+      key = askSum ? u - w : u;
+      wrong = askSum
+        ? [
+          [w - u, `Takes the sum of the solutions to be b, ${num(b)}, instead of ${MINUS}b.`],
+          [u, "Gives only the positive solution."],
+          [u + w, `Adds the sizes of the solutions, ignoring the sign of ${MINUS}${w}.`],
+          [-product, `Gives the product of the solutions, ${num(-product)}, instead of their sum.`],
+        ]
+        : [
+          [w, `Solves x² ${signed(-b)}x ${MINUS} ${product} = 0 after a sign slip in the x-term, which gives ${w} as the positive solution.`],
+          [product, `Stops at x(${lin(1, b)}) = ${product}, giving the product ${a} · ${c} instead of x.`],
+          [u + w, "Takes the distance between the two solutions instead of the positive solution."],
+          [(a * b) / (c - a), `Cross-multiplies the wrong pairs, solving ${a}(${lin(1, b)}) = ${c}x.`],
+        ];
+      steps = [
+        `Cross-multiply: x(${lin(1, b)}) = ${a} · ${c} = ${product}.`,
+        `Move every term to one side: ${poly([1, b, -product])} = 0, which factors as (x ${MINUS} ${u})(x + ${w}) = 0.`,
+        askSum ? `The solutions are ${u} and ${MINUS}${w}; neither makes x = 0, so both count, and their sum is ${num(u - w)}.`
+          : `The solutions are ${u} and ${MINUS}${w}; the positive solution is ${u}.`,
+      ];
+    }
+    if (wrong.some(([value]) => approx(value, key))) return null;
+    const nice = (value) => Number.isFinite(value) && Math.abs(value) <= 400 && denominatorHard(value) <= 12;
+    const usable = wrong.filter(([value]) => nice(value));
+    const holds = (value) => !excluded.some((x) => approx(x, value)) && approx(differenceOf(equation)(value), 0, 1e-9);
+    const shown = numeric ? usable : pairBalanced(t, ratio(key), usable.map(([value, why]) => [ratio(value), why]));
+    if (!numeric && shown.length < 3) return null;
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: equation },
+      stem,
+      correct: numeric ? key : ratio(key),
+      wrong: shown,
+      explanation: steps.join(" "),
+      steps,
+      principles: [
+        "Multiplying both sides of an equation by an expression that is not 0 clears the fractions without changing the solutions.",
+        "A value that makes a denominator 0 can never be a solution.",
+      ],
+      trap: form === "reciprocal"
+        ? "Fractions add only over a common denominator; adding numerators and denominators separately is not allowed."
+        : form === "product"
+          ? "Clearing the fractions gives a quadratic, so there are two candidates; read which one the question asks for."
+          : "Each denominator multiplies the numerator on the other side, and every term of a binomial is multiplied.",
+      hint: "What could you multiply both sides by so that no variable is left in a denominator?",
+      verify: () => {
+        if (form === "product") {
+          // Scan the integers for every solution and compare with the key.
+          const found = [];
+          for (let x = -60; x <= 60; x += 1) if (x !== 0 && holds(x)) found.push(x);
+          const answer = stem.startsWith("What is the sum") ? found.reduce((s, x) => s + x, 0) : found.find((x) => x > 0);
+          return found.length === 2 && approx(answer, key) && usable.every(([value]) => !approx(value, key));
+        }
+        return holds(key) && usable.every(([value]) => !holds(value));
+      },
+    };
+  }
+
+  const quadraticSolutionCount = {
+    id: "quadratic-solution-count",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Nonlinear equations",
+    subskill: "quadratic equations",
+    title: "Number of real solutions of a quadratic equation",
+    recognize:
+      "Move every term to one side first; the sign of b² − 4ac then counts the real solutions. If the x²-terms " +
+      "cancel, the equation is linear: one solution, none, or every x.",
+    rubric: { steps: 1, concept: 1, interpretation: 0, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "reversed-condition"],
+    build(t) {
+      const make = t.chance(0.65) ? () => solutionCountItem(t) : () => whichEquationItem(t);
+      return { estimatedSeconds: 85, ...drawUntilDistinctHard(make) };
+    },
+  };
+
+  const rationalEquationSolve = {
+    id: "rational-equation-solve",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Nonlinear equations",
+    subskill: "radical equations",
+    title: "Rational equation cleared and solved",
+    recognize:
+      "Multiply both sides by every denominator (or cross-multiply a proportion), solve what is left, and keep only " +
+      "solutions that leave every denominator nonzero; fractions add only over a common denominator.",
+    rubric: { steps: 1, concept: 1, interpretation: 0, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      const form = t.pick(["proportion", "proportion", "ratio", "reciprocal", "product", "product"]);
+      const numeric = t.chance(0.45);
+      return { estimatedSeconds: 90, ...drawUntilDistinctHard(() => rationalSolveItem(t, form, numeric)) };
+    },
+  };
+
   const quadraticSquareRootSolve = {
     id: "quadratic-square-root-solve",
     difficulty: "Easy",
@@ -1606,9 +2118,11 @@
     },
   };
 
+  // Medium: the official band for |linear| = linear with a case check is
+  // Medium; the work is two linear cases and a sign check on each candidate.
   const absoluteValueCases = {
     id: "absolute-value-cases",
-    difficulty: "Hard",
+    difficulty: "Medium",
     domain: "Advanced Math",
     skill: "Nonlinear equations",
     subskill: "absolute value",
@@ -1616,7 +2130,7 @@
     recognize:
       "An absolute value equals an expression in x only where that expression is nonnegative, so each case's candidate " +
       "must be checked; two absolute values are equal when their insides are equal or opposite, and a case can be empty or hold everywhere.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["extraneous-solution", "reversed-condition", "sign-error", "wrong-quantity"],
     build(t) {
       const roll = t.random();
@@ -1768,7 +2282,7 @@
 
   return [
     quadraticSquareRootSolve, radicalEquationSolve, absoluteValueEquation,
-    quadraticIrrationalSolutions, extraneousRoots, rootSumProduct, rationalEquationStructure, absoluteValueCases,
-    radicalParameter,
+    quadraticIrrationalSolutions, extraneousRoots, absoluteValueCases, quadraticSolutionCount, rationalEquationSolve,
+    rootSumProduct, rationalEquationStructure, radicalParameter,
   ];
 });

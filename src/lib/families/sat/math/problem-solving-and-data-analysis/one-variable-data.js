@@ -1122,18 +1122,19 @@
     domain: DOMAIN,
     skill: "One-variable data",
     subskill: "distributions",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "How a data change moves each statistic",
     recognize:
       "Each statistic depends on something different: the mean and standard deviation on every value, the median on the " +
       "middle position, the range on the extremes, and a frequency table's data on its values repeated by their counts.",
-    // Hard: the student must decide, for a change described in words, which
-    // statistic must move and which only could, or see from two frequency
-    // columns (symmetric about one center, or mirror images) which statistic
-    // differs; no computation settles it. The list form, where each
-    // statistic can simply be recomputed, is Medium work and lives in
-    // data-change-median.
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    // Medium (relabelled from Hard, 2026-10-16 realism review; official
+    // Medium): the student must decide, for a change described in words,
+    // which statistic must move and which only could, or see from two
+    // frequency columns (symmetric about one center, or mirror images) which
+    // statistic differs; no computation settles it, but each statistic's
+    // dependence is a known rule. The list form, where each statistic can
+    // simply be recomputed, is Easy work and lives in data-change-median.
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["must-vs-could", "part-vs-whole", "neighbouring-rule", "wrong-quantity"],
     build(t) {
       if (t.chance(0.45)) return { estimatedSeconds: 95, ...statsCompareSpread(t) };
@@ -1146,14 +1147,16 @@
     domain: DATA,
     skill: "One-variable data",
     subskill: "distributions",
-    difficulty: "Medium",
+    difficulty: "Easy",
     title: "The center and spread after a change to the data",
     recognize:
       "Rebuild the data after the change: a frequency table's data are its values repeated by their counts, so recount " +
       "and find the new middle position; adding a constant to every value moves the center but not the spread.",
-    // Medium: the change is stated exactly and the new statistic can be
-    // found directly; the trap is using the frequency column as the data.
-    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    // Easy (relabelled from Medium, 2026-10-16 realism review; official
+    // Easy): the change is stated exactly and the question names the
+    // statistic, which can be found directly; the trap is using the
+    // frequency column as the data.
+    rubric: { steps: 1, concept: 0, interpretation: 0, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["part-vs-whole", "neighbouring-rule"],
     build(t) {
       if (t.chance(0.5)) return { estimatedSeconds: 100, ...statsNewMedian(t, t.chance(0.5)) };
@@ -1554,7 +1557,7 @@
     },
   };
 
-  /* ============================================= could-be-median (Hard) */
+  /* =========================================== could-be-median (Medium) */
 
   // A data set with one unknown value x. However large or small x is, it can
   // move the middle of the ordered data by at most one position, so the
@@ -1579,15 +1582,16 @@
     domain: DOMAIN,
     skill: "One-variable data",
     subskill: "mean and median",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Which medians an unknown value allows",
     recognize:
       "Order the known values and find which positions the middle can occupy: x can shift the middle by at most one place, " +
       "so the median lies between two neighbouring known values (or, for an even count, between their half-way points).",
-    // Hard: nothing can be computed until the student sees that x can only
+    // Medium (relabelled from Hard, 2026-10-16 realism review; official
+    // Medium): the student orders the known values and sees that x can only
     // slide the middle between two neighbours; the median of the known
     // values alone, and values one place off, are offered.
-    rubric: { steps: 1, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["must-vs-could", "wrong-quantity", "intermediate-value"],
     build(t) {
       const ctx = t.pick(UNKNOWN_LISTS);
@@ -2211,8 +2215,151 @@
     },
   };
 
+  /* ========================== greatest-value-from-center (Hard) */
+
+  // A data set of n whole numbers with a stated mean and an odd count, so
+  // the median is the middle value. To make the largest value as great as
+  // possible, every other value is made as small as the conditions allow:
+  // the values below the median start at the least allowed value, and the
+  // values above it (other than the largest) cannot be less than the
+  // median, or than the next whole numbers after it when no two are equal.
+  const CENTER_SETS = [
+    { intro: (n) => `A data set consists of ${n} different positive integers.`, low: 1, distinct: true, item: "integer" },
+    { intro: (n) => `A data set consists of ${n} different whole numbers.`, low: 0, distinct: true, item: "number" },
+    {
+      intro: (n) => `The ages, in whole years, of the ${n} members of a committee are all different, and every member is at least 18 years old.`,
+      low: 18, distinct: true, item: "age", values: "ages",
+    },
+    {
+      intro: (n) => `A basketball player scored a whole number of points in each of ${n} games; some of these numbers may be equal.`,
+      low: 0, distinct: false, item: "number of points", values: "numbers of points",
+    },
+    {
+      intro: (n) => `A runner ran a whole number of minutes on each of ${n} days, at least 15 minutes each day; some of these numbers may be equal.`,
+      low: 15, distinct: false, item: "number of minutes", values: "numbers of minutes",
+    },
+  ];
+
+  // The least possible sum of `count` allowed values from `from` upward,
+  // found by trying every choice (brute force, used only to verify).
+  function leastSum(count, from, to, distinct) {
+    let best = Infinity;
+    const walk = (start, left, total) => {
+      if (total >= best) return;
+      if (!left) {
+        best = total;
+        return;
+      }
+      for (let v = start; v <= to; v += 1) walk(distinct ? v + 1 : v, left - 1, total + v);
+    };
+    walk(from, count, 0);
+    return best;
+  }
+
+  const greatestFromCenter = {
+    id: "greatest-value-from-center",
+    domain: DOMAIN,
+    skill: "One-variable data",
+    subskill: "mean and median",
+    difficulty: "Hard",
+    title: "The greatest possible value allowed by a mean and a median",
+    recognize:
+      "The mean fixes the total. To make one value as large as possible, make every other value as small as the conditions " +
+      "allow: below the median, start at the least allowed value; above it, no value can be less than the median (or than " +
+      "the next whole numbers when the values are all different).",
+    // Hard: the student must see that the question is an optimization
+    // under the total the mean fixes, and that the median caps how small
+    // the upper half can be; ignoring that cap, ignoring "different", or
+    // leaving out the median gives an offered answer.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    tricks: ["intermediate-value", "neighbouring-rule", "wrong-quantity"],
+    build(t) {
+      const set = t.pick(CENTER_SETS);
+      // A range is asked only when the least allowed value is not 0, where
+      // the range and the largest value would coincide.
+      const askRange = set.low > 0 && t.chance(0.4);
+      const numeric = t.chance(0.4);
+      return retry(() => {
+        const n = t.pick([5, 7, 7, 9]);
+        const m = (n - 1) / 2;
+        const L = set.low;
+        const D = L + t.int(m + 1, set.distinct ? m + 14 : 12);
+        const M = D + t.int(1, 12);
+        const T = n * M;
+        // The least sums below and above the median (other than the largest value).
+        const below = set.distinct ? m * L + (m * (m - 1)) / 2 : m * L;
+        const above = set.distinct ? (m - 1) * D + (m * (m - 1)) / 2 : (m - 1) * D;
+        const largest = T - below - D - above;
+        const nextBelowTop = set.distinct ? D + m - 1 : D;
+        if (largest <= nextBelowTop || largest > 400) return null;
+        const key = askRange ? largest - L : largest;
+        // Modelled mistakes, each on the largest value (then less L for range).
+        const shift = (value) => (askRange ? value - L : value);
+        const repeats = T - m * L - m * D;
+        const strictAll = T - (m * L + (m * (m - 1)) / 2) - (D + m * D + (m * (m - 1)) / 2) + D;
+        const ignoreCap = T - leastSum(n - 1, L, L + n, set.distinct);
+        const candidates = [
+          set.distinct
+            ? [shift(repeats), "Lets values repeat, but the values must all be different, so the ones below and above the median must differ from each other."]
+            : [shift(strictAll), "Makes the other values all different, but the values may repeat, so the smaller ones can all be the least allowed value."],
+          [shift(ignoreCap), `Makes every other value as small as possible without keeping the median at ${D}; the values above the median cannot be less than ${D}.`],
+          [shift(largest + D), `Leaves the median, ${D}, out of the total that the other values use.`],
+          L === 1
+            ? [shift(largest + m), "Starts the values below the median at 0, which is not a positive integer."]
+            : L === 0
+              ? [shift(largest - m), "Starts the values below the median at 1, but 0 is a whole number and is allowed."]
+              : [shift(largest - m), `Reads "at least ${L}" as "more than ${L}" and starts the values below the median at ${L + 1}.`],
+          [askRange ? largest : M, askRange
+            ? `Gives the greatest possible largest value, ${largest}, instead of the range, which subtracts the least value, ${L}.`
+            : `Gives the mean, ${M}, as if every value could equal it.`],
+        ];
+        const belowList = Array.from({ length: m }, (_, i) => (set.distinct ? L + i : L));
+        const aboveList = Array.from({ length: m - 1 }, (_, i) => (set.distinct ? D + 1 + i : D));
+        const data = [...belowList, D, ...aboveList, largest];
+        const of = set.values || "values";
+        return packRanked(t, numeric, key, candidates, {
+          stimulus: null,
+          stem:
+            `${set.intro(n)} The mean of the ${n} ${of} is ${M}, and the median is ${D}. ` +
+            (askRange
+              ? `What is the greatest possible range of the ${n} ${of}?`
+              : `What is the greatest possible value of the largest ${set.item}?`),
+          explanation:
+            `The total is ${n} × ${M} = ${T}. With ${n} ${of}, the median is the ${["", "", "", "3rd", "4th", "5th"][m + 1]} in order, so ${m} of the others are at most ${D} ` +
+            `and ${m} are at least ${D}. Making the others as small as possible: ${belowList.join(", ")} below the median, then ${D}, ` +
+            `then ${aboveList.join(", ")}${aboveList.length ? "" : "nothing else"} above it. They add to ${T - largest}, so the largest can be ` +
+            `${T} ${MINUS} ${T - largest} = ${largest}${askRange ? `, and the greatest range is ${largest} ${MINUS} ${L} = ${key}` : ""}.`,
+          steps: [
+            `Total: ${n} × ${M} = ${T}.`,
+            `Below the median, as small as allowed: ${belowList.join(" + ")} = ${below}.`,
+            `The median ${D}, and above it (except the largest) as small as allowed: ${aboveList.length > 1 ? `${aboveList.join(" + ")} = ${above}` : aboveList[0]}.`,
+            `Largest: ${T} ${MINUS} ${below} ${MINUS} ${D}${aboveList.length ? ` ${MINUS} ${above}` : ""} = ${largest}.`,
+            ...(askRange ? [`Range: ${largest} ${MINUS} ${L} = ${key}.`] : []),
+          ],
+          principles: [
+            "The mean times the number of values is the total, so making some values smaller leaves more for the others.",
+            "With an odd number of values, half of the others are at most the median and half are at least the median.",
+          ],
+          trap: `The values above the median cannot be made smaller than ${D}${set.distinct ? " (and then the next whole numbers, since no two are equal)" : ""}; ignoring that gives a largest value that would change the median.`,
+          hint: "If the largest value is to be as great as possible, how small can each of the other values be?",
+          estimatedSeconds: 135,
+          verify: () => {
+            // The data set shown in the explanation meets every condition...
+            const sorted = data.slice().sort((p, q) => p - q);
+            const ok = data.length === n && close(mean(data), M) && sorted[m] === D && Math.min(...data) >= L &&
+              (!set.distinct || new Set(data).size === n) && Math.max(...data) === largest;
+            // ...and no other choice of the remaining values leaves more for the largest.
+            const leastBelow = leastSum(m, L, D - (set.distinct ? 1 : 0), set.distinct);
+            const leastAbove = m > 1 ? leastSum(m - 1, set.distinct ? D + 1 : D, D + 20, set.distinct) : 0;
+            return ok && T - leastBelow - D - leastAbove === largest && key === (askRange ? largest - L : largest);
+          },
+        }, { show: fmt, places: 0 });
+      });
+    },
+  };
+
   return [
-    listCenter, boxPlotSummary, meanMissing, displayCenter, dataChangeMedian, histogramIntervals,
-    compareSpreadPlots, weightedMeanGroups, dataChangeStatistics, couldBeMedian, extremeCorrection,
+    listCenter, boxPlotSummary, meanMissing, dataChangeMedian, displayCenter, histogramIntervals,
+    compareSpreadPlots, weightedMeanGroups, dataChangeStatistics, couldBeMedian, extremeCorrection, greatestFromCenter,
   ];
 });
