@@ -563,25 +563,21 @@
 
   // The words for a next step, the same on every page: { title, section,
   // reason, level, then, more, button, learnHref }, plain text; null
-  // without a step. `more` names Review still due once the day's Review is
-  // done; `learnHref` is the skill's Learn page when it entered flight with
+  // without a step. `more` says, calmly, how much Review is waiting once the
+  // day's Review is done; `learnHref` is the skill's Learn page when it entered flight with
   // few answers ("Read the lesson").
   function stepWords(step) {
     if (!step) return null;
     const words = { title: "", section: "", reason: "", level: "", then: "", more: "", button: "Start next step", learnHref: null };
-    if (step.reviewDue) {
-      words.more = `${plural(step.reviewDue, "Review question")} ${step.reviewDue === 1 ? "is" : "are"} still due. Today's ` +
-        "Review is done, so the plan moves on; open Review any time to do more.";
-    }
+    const limit = (ReviewQueue && ReviewQueue.SET_LIMIT) || 6;
+    if (step.reviewDue) words.more = Analytics.reviewLoadText(step.reviewDue, limit, true).line;
     if (step.kind === "review") {
       const then = stepWords(step.then);
       const set = reviewSetCount(step.dueCount);
       return Object.assign(words, {
-        title: set < step.dueCount
-          ? `Review: ${set} of ${plural(step.dueCount, "missed question")} due`
-          : `Review: ${plural(step.dueCount, "missed question")} due`,
-        reason: "Missed questions come back on a spaced schedule. Review is the first step once a day, up to " +
-          `${plural((ReviewQueue && ReviewQueue.SET_LIMIT) || step.dueCount, "question")}, most overdue first; after that the plan moves on.`,
+        title: `Review: up to ${set} missed question${set === 1 ? "" : "s"} today`,
+        reason: `Missed questions come back on a spaced schedule, once a day, most overdue first. ` +
+          Analytics.reviewLoadText(step.dueCount, limit, false).line,
         then: then ? `Then: ${then.title}${then.section ? ` (${then.section})` : ""}.` : "",
         button: "Open Review",
       });

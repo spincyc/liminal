@@ -289,3 +289,22 @@ test("ACT: the accuracy-only step is unchanged, with no tracks, budget, Hard mix
   assert.equal(Analytics.planState(rows.filter((row) => row.sectionKey === "act-english"), { sectionKey: "act-english", attempts }), null);
   assert.deepEqual(Analytics.checkPrompts(rows, []), []);
 });
+
+test("Review's load reads calmly, and a backlog alone never makes the report say Needs attention", () => {
+  assert.deepEqual(Analytics.reviewLoadText(94, Queue.SET_LIMIT, false),
+    { heading: "Up to 6 today", line: "Up to 6 today; 88 more waiting. Your plan keeps moving." });
+  assert.deepEqual(Analytics.reviewLoadText(4, 6, false), { heading: "Up to 4 today", line: "Up to 4 today. Your plan keeps moving." });
+  assert.equal(Analytics.reviewLoadText(94, 6, true).line,
+    "Today's Review is done; 94 more waiting. Your plan keeps moving; do more by choice, up to 6 at a time.");
+  assert.deepEqual(Analytics.reviewLoadText(0, 6, false), { heading: "Nothing is due today", line: "" });
+  // An on-track week plus sixty missed Review answers: still on track.
+  const steady = [0, 1, 2, 3, 4].flatMap((day) => many(4, trackA[0], day));
+  const module = { id: "m", kind: "module", sectionKey: "sat-math", finishedAt: NOW - 2 * DAY, total: 22, correct: 12 };
+  const review = { id: "rev", kind: "review", step: "review", sectionKey: "sat-math", finishedAt: NOW - DAY };
+  const misses = many(60, trackA[0], 1, { difficulty: "Hard", correct: false, reviewOf: "sat-math:t0", sessionId: "rev" });
+  const due = Queue.summarize(Queue.build(steady.concat(misses)), NOW + 2 * DAY).due.length;
+  assert.ok(due > 0, "misses are waiting in Review");
+  const result = report({ attempts: steady.concat(misses), sessions: [module, review] });
+  assert.equal(result.reviewQuestions, 60);
+  assert.deepEqual([result.signal.status, result.signal.reasons], ["on-track", []]);
+});

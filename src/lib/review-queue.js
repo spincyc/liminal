@@ -47,7 +47,11 @@
   // supported (2026-10-16, moderate learner, 45 minutes a day, 12 weeks):
   // Review 22% of questions with the backlog levelling off, against 26% at
   // seven, 32% at eight and 40% at ten; no size started every skill by
-  // week 8 in 8 of 10 runs (six: 5, seven: 7, eight: 3).
+  // week 8 in 8 of 10 runs (six: 5, seven: 7, eight: 3). Re-run at the
+  // 20-answer budget (moderate learner, Friday due count, week 8 to week
+  // 12): six rose by 10 (Review 22%), seven by 17 (27%), eight by 13 (32%);
+  // none levelled off within 30% of questions, so the set stays at six and
+  // Review presents what waits calmly (Analytics.reviewLoadText).
   const SET_LIMIT = 6;
   const MS_PER_DAY = 24 * 60 * 60 * 1000;
   const REASONS = Progress.ERROR_REASONS;

@@ -602,9 +602,13 @@
       const status = statusLine();
       const card = h("section", { className: "card review-summary", "aria-label": "Due today" });
       const dueCount = schedule.due.length;
-      card.appendChild(h("h2", {
-        text: dueCount ? `${plural(dueCount, "question")} due today` : "Nothing is due today",
-      }));
+      const limit = Queue.SET_LIMIT;
+      const Analytics = window.LiminalAnalytics;
+      const done = Boolean(Analytics && Analytics.reviewDoneToday(ctx.store.get().sessions, model.test, Date.now()));
+      // The load reads calmly: up to a set today, the rest waiting.
+      const load = Analytics && Analytics.reviewLoadText ? Analytics.reviewLoadText(dueCount, limit, done)
+        : { heading: dueCount ? `${plural(dueCount, "question")} due today` : "Nothing is due today", line: "" };
+      card.appendChild(h("h2", { text: load.heading }));
       const facts = [];
       if (schedule.nextDue) {
         facts.push(`Next: ${plural(schedule.nextDue.count, "question")} ${formatDay(schedule.nextDue.day)}.`);
@@ -628,16 +632,10 @@
             "your history. In Missed, choose Try current version for a new attempt when an eligible current question is available.",
         }));
       }
-      const limit = Queue.SET_LIMIT;
-      const done = window.LiminalAnalytics && window.LiminalAnalytics.reviewDoneToday(ctx.store.get().sessions, model.test, Date.now());
-      if (dueCount) {
+      if (dueCount && load.line) {
         card.appendChild(h("p", {
           className: "review-cap",
-          text: done
-            ? `Today's Review is done, so your plan has moved on. ${plural(dueCount, "question")} ${dueCount === 1 ? "is" : "are"} ` +
-              `still due: keep going by choice, up to ${limit} at a time, or leave ${dueCount === 1 ? "it" : "them"} for tomorrow.`
-            : `Review is your first step today: up to ${limit} questions, most overdue first. After one set the plan moves on, ` +
-              "and anything still due waits, or you can do more by choice.",
+          text: done ? load.line : `${load.line} Review is your first step today, most overdue first; after one set the plan moves on.`,
         }));
       }
       if (dueCount) {
