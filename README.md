@@ -246,14 +246,17 @@ never recorded. Liminal is now built to keep practice honest:
   and weekly goal, and one next step that every page agrees on: Review
   first once a day, then the SAT Math plan. The plan keeps two skills in
   flight, one from Algebra and data and one from Advanced Math and geometry,
-  each with a budget of questions before it moves on (skills that fall short
-  come back in the next pass). It rotates in a mixed set after each drill, a
-  timed 22-question module about weekly, and an early Desmos drill, and
-  mixes Hard questions into a skill's drills once Medium is routine. The
+  each with a budget of two drills before it moves on (skills that fall
+  short are flagged, prompted for an official check, and come back). It
+  rotates in a mixed set after each drill, a timed 22-question module about
+  weekly, and a Desmos drill weekly at first and then every two weeks, and
+  mixes Hard questions into a skill's drills once Medium is routine.
+  Missed questions on skills you haven't reached wait until you get there. The
   diagnostic reports by domain and places you in the plan. Practice opens
   with "Start here": a Bluebook baseline, the diagnostic, then the next
   step. A weekly report you can print or copy for a parent says On track
-  or Needs attention and why, and official question-bank checks (X of N
+  or Needs attention and why (including practice that isn't turning into
+  learning), and official question-bank checks (X of N
   College Board questions per skill) confirm a skill or send it back. Record your official
   Bluebook practice-test and SAT scores there too: each sits beside your
   Liminal accuracy in the four weeks before it, and is never converted.

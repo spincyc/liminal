@@ -255,7 +255,9 @@ For a coherent ACT bank batch:
   attempts and stores nothing. A generated question's schedule belongs to
   its template: every version of a design shares one, and a right answer to
   any version in any set counts once it is due; a bank question has its
-  own. A miss (wrong, blank, or right only after a
+  own. In SAT Math, misses on skills never in flight are parked: they are
+  not due until the skill first flies, and misses on drilled skills come
+  first among those due. A miss (wrong, blank, or right only after a
   hint: `LiminalProgress.isMiss`) returns after 1 day, then 3, 7 and 21
   days after each correct answer, with a fresh version of the same template
   from the second return; a wrong, blank or hinted answer restarts it; a
@@ -281,14 +283,19 @@ For a coherent ACT bank batch:
   and the Learn page by a test) as two tracks, stages 1–2 and 3–4, each with
   one skill in flight (`Analytics.planState`, replayed from the attempts), so
   Advanced Math starts in the first week. A skill leaves flight at the gate
-  or after `BUDGET` first answers at any level; one that leaves short of the
-  gate has moved on (flagged when Easy was not yet routine) and returns in
-  the next pass, as does a skill whose latest official check is low
-  (`OFFICIAL_CHECK`). After Review, the rotation (`ROTATION`, `rotationStep`)
-  offers a timed Module 1 once three skills are started, a mixed set after
-  a drill (`mixedSpec`, `practice.buildMixedSet`), and once, early, the
-  Desmos drill (`#desmos/sat-math`, only when `window.LiminalDesmosRoutes`
-  loaded); otherwise a drill on the track drilled least recently: Easy until
+  or after `BUDGET` (20) answers from its own drills at any level (the
+  diagnostic, modules, mixed and Desmos sets spend nothing); one that leaves
+  short of the gate has moved on (flagged when its drills never left Easy,
+  and prompted for an official check) and returns in the next pass, while a
+  skill whose latest official check is low (`OFFICIAL_CHECK`) returns at the
+  next opening in its track. After Review, the rotation (`ROTATION`,
+  `rotationStep`) offers a timed Module 1 after 7 days without one, or after
+  10 practice sets and 3 days, once three skills are started; a mixed set
+  after a drill (`mixedSpec`, `practice.buildMixedSet`); and the Desmos drill
+  (`#desmos/sat-math`, only when `window.LiminalDesmosRoutes` loaded) when
+  none was taken in 7 days until four are done, then every 14 days, drawn
+  from routed templates where a graph genuinely solves; otherwise a drill on
+  the track drilled least recently: Easy until
   routine (`ROUTINE`: 8 of the last 10 Easy or Medium first answers), then
   Medium with `HARD_MIX` Hard once routine at Medium (`MEDIUM_ROUTINE`), then
   Hard-led at the gate (`skillLevel`). The gate and Hard bar are practice
@@ -296,7 +303,9 @@ For a coherent ACT bank batch:
   is the weakest skill with evidence; for ACT the lowest accuracy, with no
   level, track, budget or rotation. The diagnostic reports by domain and
   places the student in the plan (`PLACEMENT`) but does not by itself make
-  a timed module due. `app.js` holds `ctx.guide`, `stepWords`, `startStep`
+  a timed module due. "Read the lesson" is offered until a skill's first
+  drill. Results pages lead with the next step; "Practice what I missed"
+  (`missed-drill`) counts as Review-like and spends no budget. `app.js` holds `ctx.guide`, `stepWords`, `startStep`
   (which launches every step kind), `startDiagnostic`, `startMixed` and
   `startDesmos`. Practice's "Start here" opens on a first visit with the
   Math diagnostic first and stays dismissible (`liminal:start-hidden:v1`,
@@ -308,8 +317,12 @@ For a coherent ACT bank batch:
   printable, with plain text from `weeklyReportText` for Copy summary, so a
   student can send it to a parent) with an On track / Needs attention
   signal that lists each reason: practice days, timed modules, pace toward
-  the test date, flat official scores, and official checks well below
-  Liminal accuracy. SAT-only parts are omitted for ACT, and it never
+  the test date, flat official scores (two at least 14 days apart with
+  practice between), official checks well below Liminal accuracy, and
+  practising without learning (a skill whose turn ended below routine at
+  Medium, no target reached in 21 days of practice, or flat Medium
+  accuracy). Its copied summary is plain English for a parent, without plan
+  jargon. Backlog size alone never makes it say Needs attention. SAT-only parts are omitted for ACT, and it never
   estimates a score. Official question-bank checks (`officialChecks`)
   record X of N College Board Student Question Bank questions per skill
   and tier; a confirming check is shown on the skill, and a low one returns
