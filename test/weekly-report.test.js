@@ -241,7 +241,9 @@ test("ACT: Review is the step once a day and a set takes SET_LIMIT, as for SAT",
   const rows = Analytics.skillMap(misses, actSections, { tiered: () => false });
   const first = Analytics.nextStep(rows, { dueCount: 14, reviewedToday: false, sessions: [], now: NOW });
   assert.deepEqual([first.kind, first.dueCount], ["review", 14]);
-  const review = { id: "r", kind: "review", sectionKey: "act-english", finishedAt: NOW - HOUR };
+  const review = { id: "r", kind: "review", step: "review", sectionKey: "act-english", finishedAt: NOW - HOUR };
+  assert.equal(Analytics.reviewDoneToday([Object.assign({}, review, { step: undefined })], "ACT", NOW), false,
+    "an ACT Marked or Missed set is practice by choice");
   assert.equal(Analytics.reviewDoneToday([review], "ACT", NOW), true);
   assert.equal(Analytics.reviewDoneToday([review], "SAT", NOW), false, "ACT Review does not close SAT's");
   const after = Analytics.nextStep(rows, { dueCount: 14, reviewedToday: Analytics.reviewDoneToday([review], "ACT", NOW),

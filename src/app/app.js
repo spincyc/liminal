@@ -396,6 +396,7 @@
       plans[section.key] = Analytics.planState(rows.filter((row) => row.sectionKey === section.key), {
         sectionKey: section.key,
         attempts,
+        ledger: (progress.planLedger || {})[section.key],
         sessions: progress.sessions,
         placement: placements[section.key],
         officialChecks,
@@ -891,8 +892,31 @@
     return result;
   }
 
+  // The plan ledger (Progress planLedger, Analytics.planState's
+  // checkpoint) is refreshed with every save, so a plan's passes, budgets
+  // and departures survive the record's cap on attempts.
+  function withPlanLedger(progress) {
+    if (!Analytics || !Analytics.planState || !Progress.setPlanLedger || !progress) return progress;
+    let next = progress;
+    catalog.sections.filter((section) => Analytics.PLANS[section.key]).forEach((section) => {
+      const attempts = Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test: section.test }), templateInfo());
+      if (!attempts.some((attempt) => (attempt.sectionKey || Progress.sectionOfId(attempt.questionId)) === section.key)) return;
+      const rows = Analytics.skillMap(attempts, [section], { tiered: practice.usesTemplates });
+      const state = Analytics.planState(rows, {
+        sectionKey: section.key,
+        attempts,
+        ledger: (progress.planLedger || {})[section.key],
+        sessions: progress.sessions,
+        placement: Analytics.diagnosticPlacement(attempts, progress.sessions, section),
+        officialChecks: progress.officialChecks || [],
+      });
+      if (state && state.checkpoint) next = Progress.setPlanLedger(next, section.key, state.checkpoint);
+    });
+    return next;
+  }
+
   function update(change) {
-    const result = store.update(change);
+    const result = store.update((progress) => withPlanLedger(typeof change === "function" ? change(progress) || progress : progress));
     if (!result.ok) {
       console.warn("Progress could not be saved in this browser. Practice can continue.");
       warnStorage("progress");
