@@ -35,6 +35,15 @@
 //             attempted (1-50), correct (0-attempted), date, at? }. They
 //             check a skill's practice target on official questions
 //             (lib/analytics.js); a record without the field has none.
+//   planLedger  per section with a plan: a checkpoint of the plan's
+//             replay (lib/analytics.js planState), so the plan's pass,
+//             budgets, departures and gate windows survive the cap on
+//             attempts: { [sectionKey]: { version, from, at, pass,
+//             flownThisPass, inFlight, skills, departures } }. Derived,
+//             rewritten with every save; across tabs and restores the later
+//             checkpoint wins.
+// Fields this version does not know are kept as they are, so a newer
+// build's additions survive a save from this one.
 // v2 (liminal:progress:v2) is migrated on first load and left untouched as a
 // backup.
 (function (root, factory) {
@@ -61,6 +70,10 @@
     servedPerSection: 400,
     officialScores: 200,
     officialChecks: 500,
+    // A plan ledger's departures, and its window of Medium first answers
+    // per skill (lib/analytics.js GATE.window).
+    planDepartures: 200,
+    planWindow: 30,
     // What a save falls back to when the quota is hit.
     attemptsWhenFull: 2000,
   };
@@ -165,8 +178,14 @@
       plan: {},
       officialScores: [],
       officialChecks: [],
+      planLedger: {},
     };
   }
+
+  // The record's own fields; anything else in a stored record is kept.
+  const KNOWN_FIELDS = ["version", "epoch", "attempts", "marked", "errorLog", "history", "sessions", "plan",
+    "officialScores", "officialChecks", "planLedger"];
+  const UNSAFE_KEYS = ["__proto__", "constructor", "prototype"];
 
   const isObject = (value) => Boolean(value) && typeof value === "object" && !Array.isArray(value);
   const strings = (list) => (Array.isArray(list) ? list.filter((item) => typeof item === "string") : []);
@@ -241,7 +260,100 @@
     progress.officialScores = (Array.isArray(raw.officialScores) ? raw.officialScores : [])
       .filter((score) => isObject(score) && typeof score.id === "string");
     progress.officialChecks = officialCheckList(raw.officialChecks);
+    progress.planLedger = cleanPlanLedger(raw.planLedger);
+    // A field from a newer build (officialChecks was one) passes through,
+    // so saving from this build does not erase it.
+    Object.keys(raw).forEach((key) => {
+      if (!KNOWN_FIELDS.includes(key) && !UNSAFE_KEYS.includes(key)) progress[key] = raw[key];
+    });
     return progress;
+  }
+
+  /* ---------------------------------------------------------- plan ledger */
+
+  const finiteNumber = (value) => typeof value === "number" && Number.isFinite(value);
+  const wholeNumber = (value) => (Number.isSafeInteger(value) && value >= 0 ? value : 0);
+  const timeOrNull = (value) => (finiteNumber(value) ? value : null);
+  const textOrNull = (value) => (typeof value === "string" && value ? value : null);
+
+  // One section's plan checkpoint, or null when it cannot be read. Only the
+  // fields the replay restores are kept.
+  function cleanLedgerEntry(raw) {
+    if (!isObject(raw) || raw.version !== 1 || !finiteNumber(raw.from) || !finiteNumber(raw.at) || raw.at < raw.from) return null;
+    if (!Number.isSafeInteger(raw.pass) || raw.pass < 1 || !isObject(raw.skills) || !isObject(raw.inFlight)) return null;
+    const skills = {};
+    Object.keys(raw.skills).forEach((skill) => {
+      const saved = raw.skills[skill];
+      if (!skill || UNSAFE_KEYS.includes(skill) || !isObject(saved)) return;
+      skills[skill] = {
+        attempted: wholeNumber(saved.attempted),
+        medium: (Array.isArray(saved.medium) ? saved.medium : [])
+          .filter((item) => Array.isArray(item) && (item[0] === 0 || item[0] === 1) && typeof item[1] === "string" &&
+            typeof item[2] === "string")
+          .slice(-LIMITS.planWindow).map((item) => [item[0], item[1], item[2]]),
+        flown: saved.flown === true,
+        practised: saved.practised === true,
+        pass: wholeNumber(saved.pass),
+        entry: textOrNull(saved.entry),
+        enteredAt: timeOrNull(saved.enteredAt),
+        enteredWith: wholeNumber(saved.enteredWith),
+        spent: wholeNumber(saved.spent),
+        leftAt: timeOrNull(saved.leftAt),
+        leftBy: textOrNull(saved.leftBy),
+        movedOn: saved.movedOn === true,
+        reachedTarget: saved.reachedTarget === true,
+      };
+    });
+    const inFlight = {};
+    Object.keys(raw.inFlight).forEach((track) => {
+      if (!UNSAFE_KEYS.includes(track)) inFlight[track] = textOrNull(raw.inFlight[track]);
+    });
+    return {
+      version: 1,
+      from: raw.from,
+      at: raw.at,
+      pass: raw.pass,
+      flownThisPass: unique(strings(raw.flownThisPass)),
+      inFlight,
+      skills,
+      departures: (Array.isArray(raw.departures) ? raw.departures : [])
+        .filter((item) => isObject(item) && typeof item.skill === "string" && finiteNumber(item.at) &&
+          Number.isSafeInteger(item.pass) && typeof item.by === "string")
+        .map((item) => ({ skill: item.skill, track: textOrNull(item.track), pass: item.pass, at: item.at, by: item.by }))
+        .slice(-LIMITS.planDepartures),
+    };
+  }
+
+  function cleanPlanLedger(raw) {
+    const ledger = {};
+    if (!isObject(raw)) return ledger;
+    Object.keys(raw).forEach((sectionKey) => {
+      if (!TEMPLATE_SECTIONS.includes(sectionKey)) return;
+      const entry = cleanLedgerEntry(raw[sectionKey]);
+      if (entry) ledger[sectionKey] = entry;
+    });
+    return ledger;
+  }
+
+  // Two ledgers joined: per section, the later checkpoint (`at`); the
+  // first argument's on a tie.
+  function mergePlanLedger(first, second) {
+    const result = Object.assign({}, cleanPlanLedger(first));
+    const other = cleanPlanLedger(second);
+    Object.keys(other).forEach((sectionKey) => {
+      if (!result[sectionKey] || other[sectionKey].at > result[sectionKey].at) result[sectionKey] = other[sectionKey];
+    });
+    return result;
+  }
+
+  // Stores a section's checkpoint (planState's `checkpoint`); an unreadable
+  // one, or one older than the stored, changes nothing.
+  function setPlanLedger(progress, sectionKey, checkpoint) {
+    const entry = TEMPLATE_SECTIONS.includes(sectionKey) ? cleanLedgerEntry(checkpoint) : null;
+    const current = (progress.planLedger || {})[sectionKey];
+    if (!entry || (current && current.at > entry.at)) return progress;
+    if (current && JSON.stringify(current) === JSON.stringify(entry)) return progress;
+    return Object.assign({}, progress, { planLedger: Object.assign({}, progress.planLedger, { [sectionKey]: entry }) });
   }
 
   /* ------------------------------------------------------ official checks */
@@ -543,6 +655,7 @@
       sessions: unionById(stored.sessions, local.sessions,
         (left, right) => (left.finishedAt || 0) - (right.finishedAt || 0)),
       history: mergeHistory(stored.history, local.history),
+      planLedger: mergePlanLedger(stored.planLedger, local.planLedger),
     });
   }
 
@@ -1228,6 +1341,9 @@
     cleanOfficialCheck,
     addOfficialCheck,
     removeOfficialCheck,
+    cleanPlanLedger,
+    mergePlanLedger,
+    setPlanLedger,
     serveTemplates,
     noteScenes,
     serveQuestions,
