@@ -1464,7 +1464,7 @@
       trap: /= 0$/.test(equation.trim())
         ? "Read a, b and c with their signs: a discriminant of 0 means one solution, not none, and a negative one means none."
         : "Count only after every term is on one side; the right side changes the coefficients.",
-      hint: /= 0$/.test(equation.trim()) ? "What is the sign of b² − 4ac?" : "What does the equation look like with every term on one side?",
+      hint: /= 0$/.test(equation.trim()) ? "What decides how many times the graph of y = ax² + bx + c meets the x-axis?" : "What does the equation look like with every term on one side?",
       verify: () => countFromText(equation) === key,
     };
   }

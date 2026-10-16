@@ -869,3 +869,22 @@ identical.
 
 **Identical draws (68):** every other template in those 7 files; only the
 source changed.
+
+## Pass 4 fixes (coordinator-20261016)
+
+Two one-line text fixes after the pass-3 reviews; the coordinator is their
+author, so the reviewers re-review the two files.
+
+- `quadratic-solution-count` (`nonlinear-equations.js`): the hint for an
+  equation already set to 0 named the method ("What is the sign of
+  b² − 4ac?"). It now reuses the sibling form's nudge, "What decides how
+  many times the graph of y = ax² + bx + c meets the x-axis?", as
+  `docs/question-templates.md` requires.
+- `inequality-two-variable-context` (`linear-inequalities.js`): the bound
+  printed "≈" when the division came out exact (for example 38 ÷ 4 ≈ 9.5).
+  It now prints "=" whenever the two-place value is exact. Of 3,000 draws,
+  382 now print "=" and 861 "≈"; each sign was checked against the true
+  quotient, with no mismatches.
+
+The displayed questions are unchanged; only hint and teaching text differ.
+The registry re-versions every template in the two files.

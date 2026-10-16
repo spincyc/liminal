@@ -1568,7 +1568,7 @@
             : max ? `If ${y0} ${scene.ys} are included, what is the greatest number of ${scene.xs} possible?`
               : `If the club sells ${y0} ${scene.ys}, what is the least number of ${scene.xs} it must sell?`;
           // The bound as a quotient and a decimal, not an improper fraction.
-          const boundaryText = room % a === 0 ? num(room / a) : `${commas(room)} ÷ ${a} ≈ ${num(round2(room / a))}`;
+          const boundaryText = room % a === 0 ? num(room / a) : `${commas(room)} ÷ ${a} ${round2(room / a) === room / a ? "=" : "≈"} ${num(round2(room / a))}`;
           return commaChoices({
             ...common,
             responseType: numeric ? "numeric" : "multiple-choice",
