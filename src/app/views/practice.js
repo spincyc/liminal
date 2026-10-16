@@ -8,6 +8,13 @@
   // opens, and a SAT section's template bundle only when a set needs its
   // questions: counts come from the built registries.
   //
+  // A first visit to SAT practice leads to the SAT Math next step and its
+  // diagnostic: "Start here" opens, the Math diagnostic comes first, and
+  // the drill and builder start on SAT Math. The Desmos drill
+  // (#desmos/sat-math) and Hard math reps sit among the other tools; Hard
+  // reps sit last, since the plan opens Hard in a skill once it is routine
+  // at Medium.
+  //
   // Interface: window.LiminalViews.practice(ctx) returns the view object
   // described at the top of app/app.js. `ctx` is app.js's shared context:
   // catalog, core, site, runs, Progress, practice, store, update, loaders
@@ -16,8 +23,9 @@
   // describeSaved, startTest, startDrill, startDiagnostic, guide,
   // stepWords, levelWords, startStep, activeSession, showView, and
   // formatting helpers. Every start button asks ctx.confirmReplace before
-  // it builds anything. Hash: #practice, or
-  // #practice/<sectionKey>/<skillSlug> to open the drill set to one skill.
+  // it builds anything. Hash: #practice,
+  // #practice/<sectionKey>/<skillSlug> to open the drill set to one skill,
+  // or #desmos/<sectionKey> (app.js routes it here) for the Desmos drill.
 
   // Question counts that match a real module (SAT) or section (ACT).
   const MODULE_SIZES = {
@@ -134,6 +142,12 @@
       return key === "sat-math" || key === "act-mathematics";
     }
 
+    // The section a first visit starts in: the one with a plan (SAT Math),
+    // else the first available.
+    function planSection(sections) {
+      return sections.find((section) => Analytics.PLANS[section.key]) || sections[0];
+    }
+
     // The next-step engine's view of the record, rebuilt when progress or
     // the test changes.
     let guideCache = null;
@@ -163,7 +177,7 @@
       const remembered = sectionByTest[ctx.currentTest()] || guide().recentSection;
       elements.section.value = sections.some((section) => section.key === remembered)
         ? remembered
-        : sections[0].key;
+        : planSection(sections).key;
     }
 
     // SAT questions are generated from finite designs, so the honest number is
@@ -480,14 +494,27 @@
           `${ctx.formatDuration(budget * 1000)}, the real test's pace.`;
     }
 
+    // "Read the lesson" beside Recommended next's button, for a skill that
+    // entered flight with few answers.
+    const recommendLearn = document.createElement("a");
+    recommendLearn.className = "button secondary hidden";
+    recommendLearn.textContent = "Read the lesson";
+    const recommendActions = document.createElement("div");
+    recommendActions.className = "recommend-actions";
+    elements.recommendBtn.replaceWith(recommendActions);
+    recommendActions.append(recommendLearn, elements.recommendBtn);
+
     // The next step for the builder's section (ctx.guide), in the words
-    // Progress and every report use. Review comes first when any is due.
+    // Progress and every report use. Review comes first once a day when any
+    // is due. A section with a plan shows its step from the first visit;
+    // the diagnostic can then place the student later in the plan.
     function updateRecommendation() {
       const key = sectionKey();
       const current = guide();
       const answered = current.rows.some((row) => row.sectionKey === key && row.attempted);
-      const step = answered || current.dueCount ? current.step([key]) : null;
+      const step = answered || current.dueCount || Analytics.PLANS[key] ? current.step([key]) : null;
       recommended = step;
+      recommendLearn.classList.add("hidden");
       if (!step) {
         elements.recommendText.textContent = practice.usesTemplates(key)
           ? "No answers in this section yet. Take its diagnostic (Start here, or on Progress), and your next step appears here."
@@ -499,29 +526,28 @@
       const words = ctx.stepWords(step);
       const title = document.createElement("strong");
       title.textContent = words.title;
+      const fresh = !answered && Analytics.PLANS[key] && !current.placements[key];
       elements.recommendText.replaceChildren(title,
-        `${words.section ? ` (${words.section})` : ""}. ${[words.reason, words.level, words.then].filter(Boolean).join(" ")}`);
-      elements.recommendBtn.textContent = step.kind === "review"
-        ? "Open Review"
-        : step.kind === "mixed"
-          ? "Start a whole-section mix"
-          : `Start ${ctx.DRILL_COUNT} ${step.level ? `${step.level} ` : ""}questions`;
+        `${words.section ? ` (${words.section})` : ""}. ${[words.reason, words.level, words.then, words.more].filter(Boolean).join(" ")}` +
+        (fresh ? " Or take the diagnostic under Start here first: it can start you later in the plan." : ""));
+      elements.recommendBtn.textContent = step.kind === "skill"
+        ? `Start ${ctx.DRILL_COUNT} ${step.level ? `${step.level} ` : ""}questions`
+        : words.button;
       elements.recommendBtn.disabled = false;
+      if (words.learnHref) {
+        recommendLearn.href = words.learnHref;
+        recommendLearn.setAttribute("aria-label", `Read the lesson: ${step.skill}`);
+        recommendLearn.classList.remove("hidden");
+      }
     }
 
-    // Recommended next's button: the step's drill, Review, or, with every
-    // skill mastered, a whole-section mix.
+    // Recommended next's button: the step's drill, Review, mixed set,
+    // timed module or Desmos drill.
     async function startRecommended() {
       const step = recommended;
       if (!step) return;
-      if (step.kind === "mixed") {
-        elements.mode.value = "mix";
-        updateMatches();
-        startSession();
-        return;
-      }
       elements.recommendBtn.disabled = true;
-      if (step.kind === "skill") ctx.setStatus(elements.bankStatus, "Preparing your drill…", "loading");
+      if (step.kind !== "review") ctx.setStatus(elements.bankStatus, "Preparing your set…", "loading");
       try {
         const opened = await ctx.startStep(step);
         ctx.setStatus(elements.bankStatus, opened === 0 ? "No questions match this step yet." : "", opened === 0 ? "error" : "");
@@ -674,6 +700,84 @@
       updateMatches();
       scrollToForm();
       ctx.setStatus(elements.hardRepsStatus, "The practice form is set to SAT Math, Hard only. Choose the count, feedback, and timer there.", "success");
+    }
+
+    /* ------------------------------------------------- tools: Desmos, Hard */
+
+    // The Desmos drill's card among the practice tools (SAT only), built
+    // here so it sits with them; #desmos/sat-math opens it.
+    const desmos = (() => {
+      const card = node("details", "prep-disclosure desmos-card");
+      card.id = "desmosCard";
+      card.dataset.testOnly = "SAT";
+      const summary = node("summary");
+      const heading = node("h3");
+      const title = node("span", null, "Desmos drill");
+      title.id = "desmosHeading";
+      heading.append(title, " ", node("span", "prep-summary-note", "SAT Math questions where graphing is a real route"));
+      summary.appendChild(heading);
+      const body = node("div", "prep-disclosure-body");
+      const text = node("p");
+      const button = node("button", "button primary", "Start the Desmos drill");
+      button.type = "button";
+      const lesson = link("learn.html#sat/general/desmos", "Desmos lesson");
+      const actions = node("div", "card-actions");
+      actions.append(button, lesson);
+      const status = node("div", "status-line");
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+      body.append(text, actions, status);
+      card.append(summary, body);
+      return { card, text, button, actions, status };
+    })();
+
+    // Shown among the tools when the routes loaded; without them it hides,
+    // unless #desmos/sat-math asked for it, which then says why it cannot run.
+    let desmosAsked = false;
+    function renderDesmos() {
+      const available = Boolean(ctx.desmosRoutes("sat-math"));
+      desmos.card.hidden = ctx.currentTest() !== "SAT" || (!available && !desmosAsked);
+      desmos.actions.firstChild.hidden = !available;
+      desmos.text.textContent = available
+        ? `${Analytics.ROTATION.desmos.count} SAT Math questions, each one where graphing in Desmos is a real route, ` +
+          "skills you have started first. Feedback comes after each question, and the explanation shows the route. " +
+          "Open the calculator from the test screen."
+        : "The Desmos drill is unavailable: its solution routes did not load with this page. Refresh the page to try " +
+          "again. The Desmos lesson in Learn still has the method.";
+    }
+
+    async function startDesmosDrill() {
+      desmos.button.disabled = true;
+      ctx.setStatus(desmos.status, "Preparing your Desmos drill…", "loading");
+      try {
+        const opened = await ctx.startDesmos("sat-math");
+        ctx.setStatus(desmos.status, opened === 0 ? "No questions with a Desmos route are available." : "",
+          opened === 0 ? "error" : "");
+      } catch (error) {
+        ctx.setStatus(desmos.status, error.message, "error");
+      } finally {
+        desmos.button.disabled = false;
+      }
+    }
+
+    // Hard math reps stay reachable but no longer lead: the plan opens Hard
+    // in a skill once it is routine at Medium, so the card sits last among
+    // the tools, its button secondary, and says where it fits.
+    function demoteHardReps() {
+      const card = byId("hardRepsCard");
+      if (!card) return;
+      const note = card.querySelector(".prep-summary-note");
+      if (note) note.textContent = "Extra Hard SAT Math, outside the plan";
+      const body = card.querySelector(".prep-disclosure-body > p");
+      if (body) {
+        body.textContent = "Ten generated Hard-tier SAT Math problems, no timer, with a full report at the end. Your " +
+          "plan already mixes Hard into a skill's drills once it is routine at Medium; use these for extra challenge.";
+      }
+      elements.hardRepsBtn.className = "button secondary";
+      const tools = card.parentElement;
+      const paper = tools && tools.querySelector(".prep-paper-link");
+      if (paper) tools.insertBefore(card, paper);
+      if (tools) tools.insertBefore(desmos.card, tools.firstChild);
     }
 
     /* --------------------------------------------------------- mini test */
@@ -906,9 +1010,17 @@
       const current = elements.drillSection.value;
       replaceOptions(elements.drillSection, sections.map((section) => ({ value: section.key, label: section.shortLabel })));
       const recent = guide().recentSection;
+      let preferred;
       if (sections.some((section) => section.key === current)) elements.drillSection.value = current;
       else if (sections.some((section) => section.key === recent)) elements.drillSection.value = recent;
-      populateDrillSkills();
+      else {
+        // A first visit: the plan's section, set to its next skill.
+        elements.drillSection.value = planSection(sections).key;
+        const step = guide().step([elements.drillSection.value]);
+        const skillStep = step && step.kind === "review" ? step.then : step;
+        if (skillStep && skillStep.kind === "skill") preferred = skillStep.skill;
+      }
+      populateDrillSkills(preferred);
     }
 
     function populateDrillSkills(preferred) {
@@ -1080,6 +1192,8 @@
     }
 
     const startHiddenNow = {};
+    // Tests whose guide this visit has opened once.
+    const startOpened = {};
 
     function node(tag, className, text) {
       const element = document.createElement(tag);
@@ -1151,6 +1265,12 @@
       elements.startHere.classList.toggle("hidden", !show);
       if (!show) return;
 
+      // A first visit opens the guide once; after that it stays as the
+      // student leaves it.
+      if (!answered && !startOpened[test]) {
+        startOpened[test] = true;
+        elements.startHere.open = true;
+      }
       const steps = [];
       if (test === "SAT") {
         elements.startHereLede.textContent = "Three steps to a plan. Liminal reports accuracy and suggests what to " +
@@ -1163,10 +1283,16 @@
           last ? ` Recorded: ${last.label || "an official test"} on ${last.date}.` : "",
         ]));
         const buttons = node("div", "start-actions");
-        diagnosable.forEach((section) => {
+        // The plan's section (SAT Math) first.
+        diagnosable.slice().sort((left, right) => Number(Boolean(Analytics.PLANS[right.key])) -
+          Number(Boolean(Analytics.PLANS[left.key]))).forEach((section) => {
           const taken = Boolean(current.placements[section.key]);
           buttons.appendChild(runButton(`${taken ? "Retake the" : "Take the"} ${section.shortLabel} diagnostic`, !taken,
             () => ctx.startDiagnostic(section.key)));
+        });
+        const firstTaken = buttons.querySelector(".button.primary");
+        buttons.querySelectorAll(".button.primary").forEach((button) => {
+          if (button !== firstTaken) button.className = "button secondary";
         });
         const takenText = diagnosable.filter((section) => current.placements[section.key]).map((section) => {
           const placement = current.placements[section.key];
@@ -1188,13 +1314,25 @@
           "A timed mini test samples the core sections and reports accuracy by section and domain.",
         ], blueprint ? runButton(`Start the ${blueprint.label}`, !answered, (button) => startMiniTest(blueprint, button)) : null));
       }
-      const step = answered || current.dueCount ? current.step() : null;
+      const planned = current.sections.some((section) => Analytics.PLANS[section.key]);
+      const step = answered || current.dueCount || planned ? current.step() : null;
       const words = ctx.stepWords(step);
+      let actions = null;
+      if (step) {
+        actions = node("div", "start-actions");
+        if (words.learnHref) {
+          const lesson = link(words.learnHref, "Read the lesson");
+          lesson.className = "button secondary";
+          actions.appendChild(lesson);
+        }
+        actions.appendChild(runButton(step.kind === "skill" ? "Start next step" : words.button, answered,
+          () => ctx.startStep(step)));
+      }
       steps.push(startItem(false, "Follow your next step", words
-        ? [node("strong", null, words.title), `${words.section ? ` (${words.section})` : ""}. ${words.reason}`]
+        ? [node("strong", null, words.title), `${words.section ? ` (${words.section})` : ""}. ${words.reason}` +
+          (answered ? "" : " After the diagnostic, this step may move later in the plan.")]
         : ["Once you have answers, it appears here, under Recommended next below, and on Progress."],
-      step && step.kind !== "mixed" ? runButton(step.kind === "review" ? "Open Review" : "Start next step", true,
-        () => ctx.startStep(step)) : null));
+      actions));
       elements.startHereSteps.replaceChildren(...steps);
     }
 
@@ -1210,6 +1348,19 @@
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
       if (focus) focus.focus({ preventScroll: true });
+    }
+
+    // #desmos/<sectionKey>: the Desmos drill's card, open, or why it is
+    // unavailable.
+    function showDesmos(sectionKey) {
+      if (sectionKey && sectionKey !== "sat-math") {
+        ctx.setStatus(desmos.status, "The Desmos drill is for SAT Math.", "error");
+      }
+      if (ctx.currentTest() !== "SAT") ctx.site.setTest("SAT");
+      desmosAsked = true;
+      renderDesmos();
+      desmos.card.open = true;
+      scrollToCard(desmos.card, ctx.desmosRoutes("sat-math") ? desmos.button : null);
     }
 
     // index.html#practice/<sectionKey>/<skillSlug> (Learn's "Practice this
@@ -1277,6 +1428,7 @@
     elements.recommendBtn.addEventListener("click", startRecommended);
     elements.startHereHide.addEventListener("click", hideStart);
     elements.hardRepsBtn.addEventListener("click", startHardReps);
+    desmos.button.addEventListener("click", startDesmosDrill);
     elements.hardRepsCustomize.addEventListener("click", customizeHardReps);
     elements.retakeForm.addEventListener("submit", retake);
     elements.retakeInput.addEventListener("input", resetRetake);
@@ -1308,6 +1460,8 @@
       renderSetupCopy();
       renderMiniTests();
       renderStartHere();
+      renderDesmos();
+      ctx.setStatus(desmos.status, "");
       ctx.setStatus(elements.hardRepsStatus, "");
       ctx.setStatus(elements.retakeStatus, "");
       ctx.setStatus(elements.testStatus, "");
@@ -1317,12 +1471,14 @@
       else stale = true;
     }
 
+    demoteHardReps();
     populateSections();
     populateDrillSections();
     renderSetupCopy();
     renderMiniTests();
     renderResumeBanner();
     renderStartHere();
+    renderDesmos();
 
     return {
       name: "setup",
@@ -1335,7 +1491,8 @@
           changeSection();
           updateDrillNote();
         }
-        if (params && params.length >= 2) applyDeepLink(params);
+        if (params && params[0] === "desmos") showDesmos(params[1]);
+        else if (params && params.length >= 2) applyDeepLink(params);
       },
       onTestChange,
       onProgressChange() {

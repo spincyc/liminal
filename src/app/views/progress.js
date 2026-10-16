@@ -3,9 +3,12 @@
 
   // The Progress view: what to study next, told honestly. From the top: the
   // "Start here" diagnostic, the plan (test date, weekly goal, next focus),
-  // official scores beside recent accuracy (SAT), the stat cards, the skill map with its practice states, pacing, the
-  // history of finished sets with a trend chart, and saving, restoring, or
-  // clearing the record. Every number comes from LiminalProgress.stats, the
+  // the weekly report (printable, with a plain-text summary to copy for a
+  // parent, and an On track / Needs attention signal), official scores
+  // beside recent accuracy (SAT), the stat cards, the skill map with its
+  // practice states and plan status, official question-bank checks (SAT),
+  // pacing, the history of finished sets with a trend chart, and saving,
+  // restoring, or clearing the record. Every number comes from LiminalProgress.stats, the
   // one accuracy model (through LiminalAnalytics): the retired fixed SAT
   // banks are left out, a blank counts as wrong, and a correct answer after
   // a hint is shown apart rather than counted as correct. Answers to
@@ -19,6 +22,18 @@
 
   const SVG_NS = "http://www.w3.org/2000/svg";
   const BLUEBOOK = "https://bluebook.collegeboard.org/";
+  const QUESTION_BANK = "https://satsuite.collegeboard.org/practice/student-question-bank";
+  // How the plan describes a skill's place in it (Analytics.planState).
+  const PLAN_STATUS = {
+    "in-flight": "In flight",
+    "moved-on": "Moved on: back in the next pass",
+    "passed-over": "Passed over by your diagnostic",
+    waiting: "Waiting its turn",
+  };
+  const OFFICIAL_LABELS = {
+    confirmed: "Confirmed on official questions",
+    low: "Official check low \u2014 keep practising",
+  };
   // The trend chart shows this many of the latest sets; the table lists all.
   const TREND_POINTS = 30;
   const TREND_POINTS_NARROW = 15;
@@ -45,6 +60,8 @@
     "missed-drill": "Missed drill",
     review: "Review",
     mix: "Whole-section mix",
+    mixed: "Mixed set",
+    desmos: "Desmos drill",
     discarded: "Discarded",
   };
 
@@ -259,6 +276,86 @@
       return { card, form, dateInput, kindSelect, labelInput, rwInput, mathInput, status, tableWrap, note };
     })();
 
+    // The weekly report: the last week for the student or a parent, with
+    // the off-track signal; printed on its own, or copied as plain text.
+    const weekly = (() => {
+      const { card } = cardWith("weekly-card", "Weekly report");
+      const lede = el("p", "muted");
+      const signal = el("div", "weekly-signal");
+      const facts = el("dl", "weekly-facts");
+      const note = el("p", "field-note");
+      const actions = el("div", "card-actions weekly-actions");
+      const copy = el("button", "button secondary", "Copy summary");
+      copy.type = "button";
+      const print = el("button", "button secondary", "Print report");
+      print.type = "button";
+      actions.append(copy, print);
+      const status = statusLine();
+      const fallback = el("textarea", "weekly-text hidden");
+      fallback.readOnly = true;
+      fallback.rows = 8;
+      fallback.setAttribute("aria-label", "Weekly report summary");
+      card.append(lede, signal, facts, note, actions, status, fallback);
+      return { card, lede, signal, facts, note, copy, print, status, fallback };
+    })();
+
+    // Official question-bank checks: a skill at its practice target,
+    // checked on College Board's own questions.
+    const checks = (() => {
+      const { card } = cardWith("checks-card", "Official question checks");
+      const lede = el("p", "muted");
+      const bank = el("a", null, "Student Question Bank");
+      bank.href = QUESTION_BANK;
+      bank.target = "_blank";
+      bank.rel = "noopener";
+      lede.append("Liminal\u2019s Easy, Medium and Hard are its own labels. When a skill meets its practice target, check it ",
+        "on official questions: open College Board\u2019s ", bank, ` (from My Practice), filter to the skill at Medium, and do ` +
+        `about ${Analytics.OFFICIAL_CHECK.suggested} questions you haven\u2019t seen. Record how many you got right. At least ` +
+        `${Math.round(Analytics.OFFICIAL_CHECK.confirm * 100)}% confirms the skill on official questions; below ` +
+        `${Math.round(Analytics.OFFICIAL_CHECK.low * 100)}%, the skill comes back into your plan to keep practising.`);
+      const prompts = el("div", "check-prompts");
+      const form = el("form", "plan-form check-form");
+      form.noValidate = true;
+      const field = (labelText, input) => {
+        const label = el("label", "field");
+        label.append(el("span", "field-label", labelText), input);
+        return label;
+      };
+      const skillSelect = el("select");
+      skillSelect.name = "skill";
+      const levelSelect = el("select");
+      levelSelect.name = "difficulty";
+      Progress.CHECK_DIFFICULTIES.forEach((tier) => {
+        const option = el("option", null, tier);
+        option.value = tier;
+        levelSelect.appendChild(option);
+      });
+      const number = (name, value) => {
+        const input = el("input");
+        input.type = "number";
+        input.name = name;
+        input.min = name === "correct" ? "0" : "1";
+        input.max = String(Progress.CHECK_MAX_QUESTIONS);
+        input.step = "1";
+        input.inputMode = "numeric";
+        if (value !== undefined) input.value = String(value);
+        return input;
+      };
+      const correctInput = number("correct");
+      const attemptedInput = number("attempted", Analytics.OFFICIAL_CHECK.suggested);
+      const dateInput = el("input");
+      dateInput.type = "date";
+      dateInput.name = "date";
+      const save = el("button", "button secondary", "Record check");
+      save.type = "submit";
+      form.append(field("Skill", skillSelect), field("Level", levelSelect), field("Right", correctInput),
+        field("Out of", attemptedInput), field("Date", dateInput), save);
+      const status = statusLine();
+      const tableWrap = el("div", "table-wrap");
+      card.append(lede, prompts, form, status, tableWrap);
+      return { card, prompts, form, skillSelect, levelSelect, correctInput, attemptedInput, dateInput, status, tableWrap };
+    })();
+
     const pacing = (() => {
       const { card } = cardWith("pacing-card", "Pacing");
       const intro = el("p", "muted");
@@ -308,8 +405,8 @@
       return { note, actions, download, restore, input, panel, status };
     })();
 
-    elements.view.querySelector(".page-head").after(loadStatus, start.card, plan.card, official.card);
-    masteryCard.after(pacing.card, history.card);
+    elements.view.querySelector(".page-head").after(loadStatus, start.card, plan.card, weekly.card, official.card);
+    masteryCard.after(checks.card, pacing.card, history.card);
     elements.clearNote.after(data.note);
     dangerZone.classList.add("data-zone");
     dangerZone.append(data.actions, data.panel, data.status);
@@ -318,8 +415,8 @@
     elements.masteryNote.replaceWith(mapHelp);
     mapHelp.append(el("summary", null, "How skill states work"), elements.masteryNote);
     const sections = new Map([
-      ["plan", plan.card], ["scores", official.card], ["skills", masteryCard],
-      ["pacing", pacing.card], ["history", history.card], ["saved", dangerZone],
+      ["plan", plan.card], ["report", weekly.card], ["scores", official.card], ["skills", masteryCard],
+      ["checks", checks.card], ["pacing", pacing.card], ["history", history.card], ["saved", dangerZone],
     ]);
     const sectionNav = el("nav", "progress-sections");
     sectionNav.setAttribute("aria-label", "Progress sections");
@@ -410,6 +507,7 @@
         rows: guide.rows,
         guide,
         trend,
+        checks: Analytics.checksBySkill(progress.officialChecks || []),
       };
     }
 
@@ -446,8 +544,11 @@
       renderNotes();
       renderStart();
       renderPlan();
+      renderWeekly();
       renderOfficial();
+      renderChecks();
       sectionNav.querySelector('[data-section="scores"]').hidden = model.test !== "SAT";
+      sectionNav.querySelector('[data-section="checks"]').hidden = model.test !== "SAT";
       populateMapSections();
       renderMap();
       renderPacing();
@@ -637,10 +738,11 @@
       }
 
       // Each test has its own goal, counted from that test's answers: every
-      // question answered since Monday, a Review question answered again
-      // included; blanks are not.
+      // question answered since Monday, once (Analytics.weekCount): a Review
+      // question answered again is not a new question; blanks do not count.
       const done = Analytics.weekCount(model.attempts);
-      const counts = "Weeks start on Monday. Every question you answer counts, Review ones included; blanks do not.";
+      const counts = "Weeks start on Monday. Each question counts once: a Review question you answered before does " +
+        "not count again, a fresh version does, and blanks do not.";
       plan.week.replaceChildren(el("h3", null, "This week"));
       if (goal) {
         plan.week.appendChild(meter(done / goal, `${ctx.formatNumber(done)} of ${ctx.formatNumber(goal)} answered`));
@@ -707,15 +809,339 @@
       plan.focus.appendChild(line);
       if (words.level) plan.focus.appendChild(el("p", "muted", words.level));
       if (words.then) plan.focus.appendChild(el("p", "muted", words.then));
+      if (words.more) plan.focus.appendChild(el("p", "muted", words.more));
       if (step.kind === "review") {
         const links = el("span", "row-links");
         const link = el("a", null, "Open Review");
         link.href = "#review";
         links.appendChild(link);
         plan.focus.appendChild(links);
-      } else if (step.kind === "skill") {
-        plan.focus.appendChild(studyLinks(step.row, step.level));
+        return;
       }
+      const actions = el("div", "card-actions");
+      if (words.learnHref) {
+        const lesson = el("a", "button secondary", "Read the lesson");
+        lesson.href = words.learnHref;
+        lesson.setAttribute("aria-label", `Read the lesson: ${step.skill}`);
+        actions.appendChild(lesson);
+      }
+      const go = el("button", "button primary", words.button);
+      go.type = "button";
+      go.addEventListener("click", () => startFocus(step, go));
+      actions.appendChild(go);
+      plan.focus.appendChild(actions);
+      if (step.kind === "skill") plan.focus.appendChild(studyLinks(step.row, step.level));
+    }
+
+    async function startFocus(step, button) {
+      button.disabled = true;
+      ctx.setStatus(plan.status, "Preparing your set\u2026", "loading");
+      try {
+        const opened = await ctx.startStep(step);
+        ctx.setStatus(plan.status, opened === 0 ? "No questions match this step yet." : "", opened === 0 ? "error" : "");
+      } catch (error) {
+        ctx.setStatus(plan.status, `${error.message} Refresh the page and try again.`, "error");
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    /* ------------------------------------------------------ weekly report */
+
+    function weeklyModel() {
+      const progress = model.progress;
+      return Analytics.weeklyReport({
+        test: model.test,
+        attempts: model.attempts,
+        sessions: progress.sessions,
+        rows: model.rows,
+        plan: model.guide.plans ? model.guide.plans["sat-math"] : null,
+        officialChecks: progress.officialChecks || [],
+        officialScores: progress.officialScores || [],
+        testDate: Progress.planFor(progress, model.test).testDate,
+        now: Date.now(),
+      });
+    }
+
+    function factRow(term, value) {
+      const wrap = el("div", "weekly-fact");
+      wrap.append(el("dt", null, term));
+      const dd = el("dd");
+      [].concat(value).forEach((part) => dd.append(part));
+      wrap.append(dd);
+      return wrap;
+    }
+
+    function shortDay(text) {
+      const date = Analytics.parseDate(text);
+      return date ? dayLabel(date.getTime()) : text;
+    }
+
+    function skillList(entries) {
+      if (!entries.length) return "None";
+      const list = el("ul", "weekly-list");
+      entries.forEach((entry) => {
+        const item = el("li");
+        item.append(el("strong", null, entry.skill),
+          ` \u00b7 Track ${entry.track} \u00b7 ${Analytics.STATE_LABELS[entry.state]} \u00b7 ${entry.spent} of ${entry.budget} used` +
+          (entry.official ? ` \u00b7 ${OFFICIAL_LABELS[entry.official]}` : ""));
+        list.appendChild(item);
+      });
+      return list;
+    }
+
+    function renderWeekly() {
+      const report = weeklyModel();
+      weekly.report = report;
+      const fromText = dayLabel(report.from);
+      weekly.lede.textContent = `Your ${model.test} practice from ${fromText} to today, for you or a parent. Print it, or ` +
+        "copy a plain-text summary to send. It reports practice, never a score.";
+      const status = report.signal.status;
+      const badge = el("p", `weekly-status is-${status}`);
+      badge.append(el("strong", null, Analytics.SIGNAL_LABELS[status]));
+      if (status === "on-track") badge.append(" \u2014 nothing in the last week needs attention.");
+      const reasons = el("ul", "weekly-reasons");
+      report.signal.reasons.forEach((reason) => {
+        const item = el("li", null, reason.text);
+        if (reason.href) {
+          const link = el("a", null, "Read it");
+          link.href = reason.href;
+          item.append(" ", link);
+        }
+        reasons.appendChild(item);
+      });
+      weekly.signal.replaceChildren(badge, ...(report.signal.reasons.length ? [reasons] : []));
+
+      const rows = [
+        factRow("Practice days", `${report.practiceDays} of the last ${report.days}`),
+        factRow("Time in sets", count(report.minutes, "minute")),
+        factRow("Questions", `${ctx.formatNumber(report.newQuestions)} new, ${ctx.formatNumber(report.reviewQuestions)} Review`),
+      ];
+      if (report.modules) {
+        rows.push(factRow("Timed modules", report.modules.length
+          ? report.modules.map((entry) => `${ctx.sectionLabel(entry.sectionKey)}: ${entry.correct} of ${entry.total}, ` +
+            `Hard ${entry.hardCorrect} of ${entry.hardTotal} (${dayLabel(entry.at)})`).join("; ")
+          : "None this week"));
+      }
+      if (report.skills) {
+        rows.push(factRow("Math skills in flight", skillList(report.skills.inFlight)));
+        rows.push(factRow("Moved on", skillList(report.skills.movedOn)));
+      }
+      if (report.checks) {
+        rows.push(factRow("Official checks", report.checks.length
+          ? report.checks.map((check) => `${check.skill}: ${check.correct} of ${check.attempted} ${check.difficulty} ` +
+            `(${percent(check.accuracy)}, ${shortDay(check.date)})`).join("; ")
+          : "None this week"));
+      }
+      if (report.scores) {
+        rows.push(factRow("Official Math scores", report.scores.length
+          ? report.scores.slice().reverse().map((score) => `${score.math} (${shortDay(score.date)}` +
+            `${score.kind === "sat" ? ", real SAT" : score.kind === "practice" ? ", practice test" : ""})`).join("; ")
+          : "None recorded"));
+      }
+      if (report.pace) {
+        rows.push(factRow("Plan pace", report.pace.enough
+          ? `${count(report.pace.departures, "skill")} left flight in the last ${report.pace.windowDays} days; ` +
+            `${report.pace.remaining} still in the first pass`
+          : "Not enough history yet"));
+      }
+      rows.push(factRow("Test date", report.testDate
+        ? `${dayLabel(Analytics.parseDate(report.testDate).getTime())}` +
+          (report.daysLeft !== null && report.daysLeft >= 0 ? ` (${count(report.daysLeft, "day")} left)` : " (passed)")
+        : "Not set: add it under Your plan"));
+      weekly.facts.replaceChildren(...rows);
+      weekly.note.textContent = report.unavailable.length
+        ? `Timed modules, plan tracks, official checks and official scores are SAT-only, so they are not available for ${model.test}. ` +
+          "Accuracy here is practice feedback, not a score."
+        : "Accuracy here is practice feedback. Liminal never estimates or predicts a score; official practice tests are the score gauge.";
+      weekly.fallback.classList.add("hidden");
+    }
+
+    function reportText() {
+      return Analytics.weeklyReportText(weekly.report || weeklyModel(), { sectionName: ctx.sectionLabel });
+    }
+
+    async function copySummary() {
+      const text = reportText();
+      try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("no clipboard");
+        await navigator.clipboard.writeText(text);
+        weekly.fallback.classList.add("hidden");
+        ctx.setStatus(weekly.status, "Summary copied. Paste it into a message or email.", "success");
+      } catch (error) {
+        // Without clipboard access, show the text selected to copy by hand.
+        weekly.fallback.value = text;
+        weekly.fallback.classList.remove("hidden");
+        weekly.fallback.focus();
+        weekly.fallback.select();
+        ctx.setStatus(weekly.status, "This browser did not allow copying. The summary is selected below: copy it from there.", "error");
+      }
+    }
+
+    // Prints the weekly report on its own (progress.css, body.print-weekly).
+    function printReport() {
+      document.body.classList.add("print-weekly");
+      try {
+        window.print();
+      } finally {
+        window.setTimeout(() => document.body.classList.remove("print-weekly"), 0);
+      }
+    }
+
+    /* ------------------------------------------------------ official checks */
+
+    function populateCheckSkills(selected) {
+      const previous = selected || checks.skillSelect.value;
+      // SAT Math, the section with a plan, first.
+      const groups = model.sections.filter((section) => Progress.TEMPLATE_SECTIONS.includes(section.key))
+        .sort((left, right) => Number(Boolean(Analytics.PLANS[right.key])) - Number(Boolean(Analytics.PLANS[left.key])))
+        .map((section) => {
+        const group = el("optgroup");
+        group.label = section.shortLabel;
+        section.domains.forEach((domain) => Object.keys(domain.skills).forEach((skill) => {
+          const option = el("option", null, skill);
+          option.value = `${section.key}|${skill}`;
+          group.appendChild(option);
+        }));
+        return group;
+      });
+      checks.skillSelect.replaceChildren(...groups);
+      if ([...checks.skillSelect.options].some((option) => option.value === previous)) checks.skillSelect.value = previous;
+    }
+
+    // From a skill row or a prompt: the form set to that skill, focused.
+    function checkSkill(row) {
+      focusSection("checks");
+      checks.skillSelect.value = `${row.sectionKey}|${row.skill}`;
+      checks.levelSelect.value = "Medium";
+      checks.correctInput.focus();
+    }
+
+    let removeCheckArmed = null;
+
+    function renderChecks() {
+      checks.card.classList.toggle("hidden", model.test !== "SAT");
+      if (model.test !== "SAT") return;
+      populateCheckSkills();
+      checks.dateInput.max = Analytics.formatDate(new Date());
+      if (!checks.form.contains(document.activeElement) && !checks.dateInput.value) {
+        checks.dateInput.value = Analytics.formatDate(new Date());
+      }
+      const list = (model.progress.officialChecks || []).filter((check) => Progress.testOf(check.sectionKey) === model.test);
+      const prompts = Analytics.checkPrompts(model.rows, list);
+      checks.prompts.replaceChildren(...(prompts.length ? [el("h3", null, "Check it on official questions")] : []),
+        ...prompts.map((row) => {
+          const item = el("div", "start-item");
+          const text = el("div", "start-text");
+          text.append(el("strong", null, row.skill),
+            el("span", "muted", `${ctx.sectionLabel(row.sectionKey)} \u00b7 practice target met. Do about ` +
+              `${Analytics.OFFICIAL_CHECK.suggested} of its official Medium questions you haven\u2019t seen.`));
+          const button = el("button", "button secondary", "Record a check");
+          button.type = "button";
+          button.setAttribute("aria-label", `Record an official check of ${row.skill}`);
+          button.addEventListener("click", () => checkSkill(row));
+          item.append(text, button);
+          return item;
+        }));
+      if (!list.length) {
+        checks.tableWrap.replaceChildren(el("p", "muted", "No official checks recorded yet."));
+        return;
+      }
+      const bySkill = Analytics.checksBySkill(list);
+      const table = el("table", "pg-table official-table check-table");
+      table.appendChild(el("caption", "sr-only", "Official question checks, newest first"));
+      const head = el("thead");
+      const headRow = el("tr");
+      ["Date", "Skill", "Result", "Effect", ""].forEach((text) => {
+        const th = el("th", null, text);
+        th.scope = "col";
+        headRow.appendChild(th);
+      });
+      head.appendChild(headRow);
+      const body = el("tbody");
+      list.slice().reverse().forEach((check) => {
+        const tr = el("tr");
+        const date = el("td", "date", shortDay(check.date));
+        date.dataset.label = "Date";
+        const skill = el("th", null, check.skill);
+        skill.scope = "row";
+        skill.dataset.label = "Skill";
+        const result = el("td", "num", `${check.correct} of ${check.attempted} ${check.difficulty}`);
+        result.dataset.label = "Result";
+        result.appendChild(el("span", "cell-note", percent(Analytics.checkAccuracy(check))));
+        const key = `${check.sectionKey}|${check.skill}`;
+        const latest = (bySkill.get(key) || {}).latest === check;
+        const row = model.rows.find((entry) => entry.sectionKey === check.sectionKey && entry.skill === check.skill);
+        const status = latest ? Analytics.officialStatus(check, row) : null;
+        const effect = el("td", null, !latest ? "Superseded by a later check" : status ? OFFICIAL_LABELS[status]
+          : Analytics.checkAccuracy(check) >= Analytics.OFFICIAL_CHECK.confirm
+            ? "Confirms the skill once it meets its practice target" : "No change to the plan");
+        effect.dataset.label = "Effect";
+        const actions = el("td");
+        const remove = el("button", "button secondary", removeCheckArmed === check.id ? "Click again to remove" : "Remove");
+        remove.type = "button";
+        remove.setAttribute("aria-label", `${removeCheckArmed === check.id ? "Click again to remove" : "Remove"} the check of ${check.skill} from ${date.textContent}`);
+        remove.addEventListener("click", () => removeCheck(check.id));
+        actions.appendChild(remove);
+        tr.append(date, skill, result, effect, actions);
+        body.appendChild(tr);
+      });
+      table.append(head, body);
+      checks.tableWrap.replaceChildren(table);
+    }
+
+    function addCheck(event) {
+      event.preventDefault();
+      const [sectionKey, skill] = checks.skillSelect.value.split("|");
+      const cleaned = Analytics.cleanCheckInput({
+        sectionKey,
+        skill,
+        difficulty: checks.levelSelect.value,
+        correct: checks.correctInput.value,
+        attempted: checks.attemptedInput.value,
+        date: checks.dateInput.value,
+      }, { now: Date.now() });
+      const bad = [checks.correctInput, checks.attemptedInput, checks.dateInput].some((input) => input.validity.badInput);
+      if (bad || !cleaned.check) {
+        const errors = cleaned.errors;
+        ctx.setStatus(checks.status, errors.includes("skill") ? "Choose the skill you checked."
+          : errors.includes("attempted") ? `Enter how many questions you did, from 1 to ${Progress.CHECK_MAX_QUESTIONS}.`
+            : errors.includes("correct") ? "Enter how many you got right: a whole number, no more than you did."
+              : "Enter the day you did them; it cannot be after today.", "error");
+        return;
+      }
+      const check = Object.assign(cleaned.check, { id: Progress.newId("c"), at: Date.now() });
+      const result = ctx.update((progress) => Progress.addOfficialCheck(progress, check));
+      if (result.ok) {
+        checks.correctInput.value = "";
+        checks.correctInput.focus();
+      }
+      const accuracy = Analytics.checkAccuracy(check);
+      const effect = accuracy < Analytics.OFFICIAL_CHECK.low
+        ? " It is below the bar, so the skill comes back into your plan in its next pass."
+        : accuracy >= Analytics.OFFICIAL_CHECK.confirm ? " That meets the bar for official questions." : "";
+      ctx.setStatus(checks.status, result.ok ? `Check recorded: ${check.skill}, ${check.correct} of ${check.attempted}.${effect}`
+        : "The check could not be saved in this browser.", result.ok ? "success" : "error");
+    }
+
+    function removeCheck(id) {
+      if (removeCheckArmed !== id) {
+        removeCheckArmed = id;
+        window.setTimeout(() => {
+          if (removeCheckArmed !== id) return;
+          removeCheckArmed = null;
+          if (model) renderChecks();
+        }, 5000);
+        renderChecks();
+        const again = [...checks.tableWrap.querySelectorAll("button")].find((button) => button.textContent.startsWith("Click again"));
+        if (again) again.focus();
+        return;
+      }
+      removeCheckArmed = null;
+      const result = ctx.update((progress) => Progress.removeOfficialCheck(progress, id));
+      ctx.setStatus(checks.status, result.ok ? "Check removed." : "The change could not be saved in this browser.",
+        result.ok ? "success" : "error");
+      checks.skillSelect.focus();
     }
 
     function savePlan(event) {
@@ -914,6 +1340,42 @@
       return el("span", `state-badge state-${state}`, Analytics.STATE_LABELS[state]);
     }
 
+    // The state badge, with the plan's place for the skill and its latest
+    // official check under it.
+    function stateCell(row) {
+      const cell = el("span", "state-stack");
+      cell.appendChild(stateBadge(row.state));
+      const plan = model.guide.plans && model.guide.plans[row.sectionKey];
+      const entry = plan && plan.skills[row.skill];
+      if (entry && PLAN_STATUS[entry.status]) {
+        const track = plan.tracks.find((item) => item.key === entry.track);
+        cell.appendChild(el("small", "cell-note plan-note", entry.status === "in-flight"
+          ? `In flight, ${track ? track.name : "its track"}: ${entry.spent} of ${entry.budget} used`
+          : PLAN_STATUS[entry.status]));
+      }
+      const latest = (model.checks.get(`${row.sectionKey}|${row.skill}`) || {}).latest;
+      if (latest) {
+        const status = Analytics.officialStatus(latest, row);
+        cell.appendChild(el("small", `cell-note official-note${status ? ` is-${status}` : ""}`,
+          `${status ? `${OFFICIAL_LABELS[status]}: ` : "Official check: "}${latest.correct} of ${latest.attempted} ${latest.difficulty}`));
+      }
+      return cell;
+    }
+
+    // Learn and Practice, and for a skill at its target with no official
+    // check yet, "Check it on official questions".
+    function studyCell(row) {
+      const cell = studyLinks(row);
+      if (model.test === "SAT" && Analytics.checkPrompts([row], model.progress.officialChecks).length) {
+        const button = el("button", "text-link", "Check it on official questions");
+        button.type = "button";
+        button.setAttribute("aria-label", `Check ${row.skill} on official questions`);
+        button.addEventListener("click", () => checkSkill(row));
+        cell.appendChild(button);
+      }
+      return cell;
+    }
+
     function skillRow(row, showDomain) {
       const tr = el("tr");
       // The skill names the row for screen readers.
@@ -930,8 +1392,8 @@
         ["Medium", row.tiered ? tierCell(row.medium) : el("span", "tier-cell", "—")],
         ["Hard", row.tiered ? tierCell(row.hard) : el("span", "tier-cell", "—")],
         [`Gate: last ${Analytics.GATE.window} Medium`, row.tiered ? gateCell(row) : el("span", "gate-cell", "No gate"), "gate-cell-wrap"],
-        [null, stateBadge(row.state), "state-cell"],
-        [null, studyLinks(row), "study-cell"],
+        [null, stateCell(row), "state-cell"],
+        [null, studyCell(row), "study-cell"],
       ].map((entry) => {
         if (!Array.isArray(entry)) return entry;
         const td = el("td", entry[2]);
@@ -1531,6 +1993,9 @@
     });
     plan.form.addEventListener("submit", savePlan);
     official.form.addEventListener("submit", addOfficial);
+    checks.form.addEventListener("submit", addCheck);
+    weekly.copy.addEventListener("click", copySummary);
+    weekly.print.addEventListener("click", printReport);
     pacing.expectedButton.addEventListener("click", loadExpected);
     data.download.addEventListener("click", download);
     data.restore.addEventListener("click", () => data.input.click());

@@ -361,11 +361,22 @@
     return ReviewQueue.summarize(ReviewQueue.build(attempts), Date.now(), { skip: (entry) => !live(entry) }).due.length;
   }
 
+  // The Desmos routes the desmos data file sets (content/desmos-routes.js),
+  // for a section, or null when the file did not load: the Desmos drill
+  // then explains it is unavailable and the plan never offers it.
+  function desmosRoutes(sectionKey) {
+    const data = window.LiminalDesmosRoutes;
+    const routes = data && data.sections && data.sections[sectionKey || "sat-math"];
+    return routes && typeof routes === "object" && Object.keys(routes).length ? routes : null;
+  }
+
   // The engine's inputs for a test from the saved record. `prepared` is
   // the test's attempts already re-tiered (the Progress view's, which may
   // fill in skills from the banks). Returns { test, sections, rows,
-  // placements, dueCount, recentSection, step(sectionKeys?), row(sectionKey,
-  // skill) }; step() without keys covers the test's required sections.
+  // placements, dueCount, reviewedToday, recentSection, plans, attempts,
+  // step(sectionKeys?), row(sectionKey, skill) }; step() without keys
+  // covers the test's required sections. `plans` holds each planned
+  // section's Analytics.planState.
   function guide(test, prepared) {
     const which = test || currentTest();
     const progress = store.get();
@@ -377,19 +388,45 @@
     const placements = Analytics.placements(attempts, progress.sessions, sections);
     const dueCount = reviewDueCount(progress, which);
     const recentSection = Analytics.recentSection(attempts, keys);
+    const now = Date.now();
+    const reviewedToday = Analytics.reviewDoneToday(progress.sessions, which, now);
+    const officialChecks = progress.officialChecks || [];
+    const plans = {};
+    sections.filter((section) => Analytics.PLANS[section.key]).forEach((section) => {
+      plans[section.key] = Analytics.planState(rows.filter((row) => row.sectionKey === section.key), {
+        sectionKey: section.key,
+        attempts,
+        sessions: progress.sessions,
+        placement: placements[section.key],
+        officialChecks,
+        now,
+      });
+    });
+    const options = {
+      dueCount,
+      reviewedToday,
+      placements,
+      recentSection,
+      plans,
+      attempts,
+      sessions: progress.sessions,
+      officialChecks,
+      desmos: Boolean(desmosRoutes("sat-math")),
+      now,
+    };
     return {
       test: which,
       sections,
       rows,
       placements,
       dueCount,
+      reviewedToday,
       recentSection,
-      step: (sectionKeys) => Analytics.nextStep(rows, {
+      plans,
+      attempts,
+      step: (sectionKeys) => Analytics.nextStep(rows, Object.assign({}, options, {
         sectionKeys: sectionKeys && sectionKeys.length ? sectionKeys : keys,
-        dueCount,
-        placements,
-        recentSection,
-      }),
+      })),
       row: (sectionKey, skill) => rows.find((row) => row.sectionKey === sectionKey && row.skill === skill) || null,
     };
   }
@@ -405,16 +442,24 @@
     switch (step.reason) {
       case "plan": {
         const stage = step.stage;
-        if (step.returned) {
-          return `Every skill from stage ${step.startStage} of the ${plan.name} on has met the practice target, so the plan comes ` +
-            `back to stage ${stage.stage} (${stageTitle(stage)}), which your diagnostic let you pass over.`;
+        const where = `${step.trackName ? `${step.trackName} of the ${plan.name}` : `The ${plan.name}`}, stage ${stage.stage} ` +
+          `(${stageTitle(stage)})`;
+        const budget = step.budget ? ` ${step.budget.used} of its ${step.budget.size}-question budget used.` : "";
+        const pass = step.pass > 1 ? `Pass ${step.pass}: ` : "";
+        switch (step.entry) {
+          case "official-low":
+            return `${pass}${where}. Your latest official check in this skill was below ` +
+              `${Math.round(Analytics.OFFICIAL_CHECK.low * 100)}%, so it is back in flight: official check low, keep practising.${budget}`;
+          case "moved-on":
+            return `${pass}${where}. It moved on before reaching the practice target, so it is back with a fresh budget.${budget}`;
+          case "passed-over":
+            return `${pass}${where}. Your diagnostic let you pass over this stage; with the first pass done, it comes back.${budget}`;
+          case "slipped":
+            return `${pass}${where}. It had met the practice target and has slipped below it, so it is back in flight.${budget}`;
+          default:
+            return `${where}: the skill in flight on this track.` +
+              (step.startStage > 1 ? ` Your diagnostic started you at stage ${step.startStage}.` : "") + budget;
         }
-        if (stage.stage < step.startStage) {
-          return `Stage ${stage.stage} of the ${plan.name} (${stageTitle(stage)}). Your diagnostic started you at ` +
-            `stage ${step.startStage}, but you have practised this skill and it has not yet met the practice target.`;
-        }
-        return `Stage ${stage.stage} of the ${plan.name} (${stageTitle(stage)}): the first skill in it still below the practice target.` +
-          (step.startStage > 1 ? ` Your diagnostic started you at stage ${step.startStage}.` : "");
       }
       case "plan-hard":
         return `Every skill in the ${plan.name} has met the practice target, so Hard questions come next, in plan order.`;
@@ -436,15 +481,27 @@
   function levelReason(step) {
     const { row } = step;
     const tallyText = (tally) => (tally.attempted ? `you have ${tally.correct} of ${tally.attempted}` : "none yet");
+    const target = `${Analytics.GATE.correct} of your last ${Analytics.GATE.window} Medium answers right, over two days and ` +
+      `two question designs (${tallyText(row.gate)})`;
     switch (step.levelWhy) {
       case "not-routine": {
         const { correct, window } = Analytics.ROUTINE;
         return `Easy until the method is routine: ${correct} of your last ${window} Easy answers right ` +
           `(${tallyText(row.routine.easy)}).`;
       }
-      case "routine":
-        return `Medium toward the practice target: ${Analytics.GATE.correct} of your last ${Analytics.GATE.window} Medium ` +
-          `answers right, over two days and two question designs (${tallyText(row.gate)}).`;
+      case "routine": {
+        const plan = Analytics.PLANS[row.sectionKey];
+        const { correct, window } = Analytics.MEDIUM_ROUTINE;
+        return `Medium toward the practice target: ${target}.` + (plan
+          ? ` Hard joins the drill once ${correct} of your last ${window} Medium answers are right ` +
+            `(${tallyText(row.mediumRoutine)}).`
+          : "");
+      }
+      case "medium-routine": {
+        const { hard, size } = Analytics.HARD_MIX;
+        return `Medium with Hard mixed in, ${hard} of every ${size}: Medium is routine (${tallyText(row.mediumRoutine)} of ` +
+          `your last ${Analytics.MEDIUM_ROUTINE.window}). Toward the practice target: ${target}.`;
+      }
       case "at-gate":
         return `Practice target met; Hard next, toward the advanced practice target: ${Analytics.HARD_BAR.correct} of your last ` +
           `${Analytics.HARD_BAR.window} Hard answers right (${tallyText(row.hardBar)}).`;
@@ -460,36 +517,89 @@
     return levelReason({ row, levelWhy: Analytics.skillLevel(row).why });
   }
 
+  // The on-screen module the plan's rotation runs: { size, minutes }.
+  function moduleSize(sectionKey) {
+    const section = Modules && Modules.SECTIONS[sectionKey || "sat-math"];
+    return section ? { size: section.size, minutes: section.minutes } : { size: 22, minutes: 35 };
+  }
+
+  // A Review step's set: the most a Review set takes, or what is due.
+  function reviewSetCount(due) {
+    return Math.min(due, (ReviewQueue && ReviewQueue.SET_LIMIT) || due);
+  }
+
   // The words for a next step, the same on every page: { title, section,
-  // reason, level, then }, plain text; null without a step.
+  // reason, level, then, more, button, learnHref }, plain text; null
+  // without a step. `more` names Review still due once the day's Review is
+  // done; `learnHref` is the skill's Learn page when it entered flight with
+  // few answers ("Read the lesson").
   function stepWords(step) {
     if (!step) return null;
+    const words = { title: "", section: "", reason: "", level: "", then: "", more: "", button: "Start next step", learnHref: null };
+    if (step.reviewDue) {
+      words.more = `${plural(step.reviewDue, "Review question")} ${step.reviewDue === 1 ? "is" : "are"} still due. Today's ` +
+        "Review is done, so the plan moves on; open Review any time to do more.";
+    }
     if (step.kind === "review") {
       const then = stepWords(step.then);
-      return {
-        title: `Review: ${plural(step.dueCount, "missed question")} due`,
-        section: "",
-        reason: "Missed questions come back on a spaced schedule, and each session starts with them.",
-        level: "",
-        then: then ? `Then: ${then.title} (${then.section}).` : "",
-      };
+      const set = reviewSetCount(step.dueCount);
+      return Object.assign(words, {
+        title: set < step.dueCount
+          ? `Review: ${set} of ${plural(step.dueCount, "missed question")} due`
+          : `Review: ${plural(step.dueCount, "missed question")} due`,
+        reason: "Missed questions come back on a spaced schedule. Review is the first step once a day, up to " +
+          `${plural((ReviewQueue && ReviewQueue.SET_LIMIT) || step.dueCount, "question")}, most overdue first; after that the plan moves on.`,
+        then: then ? `Then: ${then.title}${then.section ? ` (${then.section})` : ""}.` : "",
+        button: "Open Review",
+      });
+    }
+    if (step.kind === "module") {
+      const { size, minutes } = moduleSize(step.sectionKey);
+      const why = step.why === "first"
+        ? "Timed, mixed practice under test conditions."
+        : step.why === "sessions"
+          ? `You have done ${plural(step.sinceModule, "practice set")} since your last timed module.`
+          : "Your last timed module was a week or more ago.";
+      return Object.assign(words, {
+        title: `Timed module: ${size} questions in ${minutes} minutes`,
+        section: sectionName(step.sectionKey),
+        reason: `${why} A Module 1 from the practice blueprint, every skill at test pace, with answers and explanations ` +
+          "at the end. The plan asks for one at least once a week.",
+        button: "Start the timed module",
+      });
+    }
+    if (step.kind === "desmos") {
+      return Object.assign(words, {
+        title: `Desmos drill: ${plural(step.count, "question")}`,
+        section: sectionName(step.sectionKey),
+        reason: "Questions where graphing in Desmos is a real route. After each one, the explanation shows the route. " +
+          "Open the calculator from the test screen.",
+        button: "Start the Desmos drill",
+      });
     }
     if (step.kind === "mixed") {
-      return {
-        title: "Keep every skill alive",
+      const skills = (step.spec || []).length;
+      const pace = core.paceBudgetSeconds(step.sectionKey, step.count);
+      return Object.assign(words, {
+        title: `Mixed set: ${plural(step.count, "question")}`,
         section: sectionName(step.sectionKey),
-        reason: "Every skill here has met the advanced practice target. Mix them in a timed set each week, and measure with an official practice test.",
-        level: "",
-        then: "",
-      };
+        reason: (step.reason === "all-mastered"
+          ? "Every skill here has met the advanced practice target. Keep them all alive with a mixed set, and measure with an official practice test. "
+          : `Questions from ${plural(skills, "skill")} you have started, each at your level in it, most from skills in flight or moved on. ` +
+            "Mixing skills is what makes practice carry over to the test. ") +
+          (pace ? `Timed at real-test pace (${formatDuration(pace * 1000)}), with answers at the end.` : "Answers at the end."),
+        button: "Start the mixed set",
+      });
     }
-    return {
-      title: step.level ? `${step.skill}, ${step.level}` : step.skill,
+    const mixText = step.mix ? `, ${step.mix.Hard} of ${step.mix.Medium + step.mix.Hard} Hard` : "";
+    return Object.assign(words, {
+      title: step.level ? `${step.skill}, ${step.level}${mixText}` : step.skill,
       section: `${sectionName(step.sectionKey)}, ${step.domain}`,
       reason: stepReason(step),
       level: levelReason(step),
-      then: "",
-    };
+      button: "Start drill",
+      learnHref: step.learnPage ? `learn.html#${step.learnPage}` : null,
+    });
   }
 
   function goToView(hash) {
@@ -497,19 +607,104 @@
     else window.location.hash = `#${hash}`;
   }
 
-  // Starts a next step: Review opens the Review page; a skill opens a
-  // drill at its level (every level when that level has no questions).
-  // Resolves like startDrill: the questions it opened with, 0, or null.
+  // Starts a next step: Review opens the Review page; a timed module opens
+  // an on-screen module test; a mixed set and the Desmos drill open their
+  // sets; a skill opens a drill at its level, with Hard mixed in when the
+  // step says so (every level when that level has no questions). Resolves
+  // like startDrill: the questions it opened with, 0, or null.
   async function startStep(step) {
-    if (!step || step.kind === "mixed") return 0;
+    if (!step) return 0;
     if (step.kind === "review") {
       goToView("review");
       return null;
     }
-    const request = { sectionKey: step.sectionKey, skill: step.skill, difficulty: step.level, count: DRILL_COUNT };
+    if (step.kind === "module") {
+      const opened = await startTest({ kind: "module", sectionKey: step.sectionKey, module: step.module || "1" });
+      return opened ? moduleSize(step.sectionKey).size : null;
+    }
+    if (step.kind === "mixed") return startMixed(step);
+    if (step.kind === "desmos") return startDesmos(step.sectionKey);
+    const request = { sectionKey: step.sectionKey, skill: step.skill, difficulty: step.level, count: DRILL_COUNT,
+      mix: step.mix || null, step: "drill" };
     const opened = await startDrill(request);
-    if (opened === 0 && step.level) return startDrill(Object.assign(request, { difficulty: null }));
+    if (opened === 0 && step.level) return startDrill(Object.assign(request, { difficulty: null, mix: null }));
     return opened;
+  }
+
+  // The plan's mixed set (Analytics.nextStep's `spec`), timed at real-test
+  // pace with answers at the end; a step without a spec mixes the whole
+  // section. Resolves like startDrill.
+  async function startMixed(step) {
+    if (!(await confirmReplace("set"))) return null;
+    const sectionKey = step.sectionKey;
+    const templates = await sectionTemplates(sectionKey);
+    let questions;
+    let practiceWarnings;
+    if (practice.usesTemplates(sectionKey) && step.spec && step.spec.length) {
+      const set = practice.buildMixedSet({
+        sectionKey,
+        templates,
+        spec: step.spec,
+        history: Progress.historyFor(store.get(), sectionKey),
+        instantiate: window.LiminalFamilyShared.instantiate,
+      });
+      if (set.served.length) {
+        update((progress) => set.served.reduce((current, round) => Progress.serveTemplates(current, sectionKey, round), progress));
+      }
+      questions = stampVersions(set.questions);
+      practiceWarnings = practice.runWarnings(set);
+    } else {
+      const run = buildRun({ sectionKey, count: step.count || 12 });
+      questions = run.questions;
+      practiceWarnings = practice.runWarnings(run);
+    }
+    if (!questions.length) return 0;
+    const opened = await launch({
+      title: `${sectionName(sectionKey)}: mixed set`,
+      sectionKey,
+      kind: "mixed",
+      questions,
+      practiceWarnings,
+      feedback: "end",
+      timeLimitSeconds: core.paceBudgetSeconds(sectionKey, questions.length),
+      sessionFields: { step: "mixed" },
+    });
+    return opened ? questions.length : null;
+  }
+
+  // The Desmos drill (practice.html#desmos/sat-math): questions only from
+  // templates with a Desmos route, skills the student has started first,
+  // feedback after each so the explanation shows the route. Rejects when
+  // the routes did not load. Resolves like startDrill.
+  async function startDesmos(sectionKey) {
+    const key = sectionKey || "sat-math";
+    const routes = desmosRoutes(key);
+    if (!routes) throw new Error("The Desmos drill is unavailable: its solution routes did not load.");
+    if (!(await confirmReplace("set"))) return null;
+    const templates = await sectionTemplates(key);
+    const plan = guide(sectionByKey(key).test).plans[key];
+    const chosen = practice.chooseDesmosTemplates(templates, routes, {
+      started: plan ? plan.started : [],
+      recency: practice.recencyFor(Progress.historyFor(store.get(), key), templates),
+      count: Analytics.ROTATION.desmos.count,
+      seed: practice.newRunSeed(),
+    });
+    if (!chosen.length) return 0;
+    const run = buildRun({ sectionKey: key, count: chosen.length, templates: chosen });
+    if (!run.questions.length) return 0;
+    const opened = await launch({
+      title: `${sectionName(key)}: Desmos drill`,
+      sectionKey: key,
+      kind: "desmos",
+      questions: run.questions,
+      practiceWarnings: practice.runWarnings(run),
+      runCode: run.code,
+      setCode: run.setCode,
+      feedback: "instant",
+      timeLimitSeconds: null,
+      sessionFields: { step: "desmos" },
+    });
+    return opened ? run.questions.length : null;
   }
 
   // The "Start here" diagnostic for one template section: Medium and Hard
@@ -1490,12 +1685,13 @@
   // template when a skill has few (lib/practice.js buildDrill) and records
   // each round as served; a bank section takes matching questions not seen
   // recently. `request`: { sectionKey, skill, difficulty? (null for every
-  // tier), count? }.
+  // tier), count?, mix? ({ Medium, Hard } per Analytics.HARD_MIX.size,
+  // scaled to `count`: the plan's Medium drill with Hard mixed in) }.
   async function drillQuestions(request) {
     const count = Math.max(1, Math.round(Number(request.count) || DRILL_COUNT));
     if (practice.usesTemplates(request.sectionKey)) {
       const templates = await sectionTemplates(request.sectionKey);
-      const drill = practice.buildDrill({
+      const settings = {
         sectionKey: request.sectionKey,
         templates,
         skill: request.skill,
@@ -1503,7 +1699,9 @@
         count,
         history: Progress.historyFor(store.get(), request.sectionKey),
         instantiate: window.LiminalFamilyShared.instantiate,
-      });
+      };
+      const mix = request.mix ? Analytics.drillMix("medium-routine", count) : null;
+      const drill = mix ? practice.buildMixedDrill(Object.assign(settings, { mix })) : practice.buildDrill(settings);
       if (drill.served.length) {
         update((progress) => drill.served.reduce((current, round) =>
           Progress.serveTemplates(current, request.sectionKey, round), progress));
@@ -1528,14 +1726,16 @@
     const { questions, practiceWarnings } = await drillQuestions(request);
     if (!questions.length) return 0;
     const section = sectionByKey(request.sectionKey);
+    const level = request.mix && request.difficulty ? `${request.difficulty} and Hard` : request.difficulty;
     const opened = await launch({
-      title: `${section.test} ${section.shortLabel}: ${request.skill}${request.difficulty ? `, ${request.difficulty}` : ""}`,
+      title: `${section.test} ${section.shortLabel}: ${request.skill}${level ? `, ${level}` : ""}`,
       sectionKey: request.sectionKey,
       kind: "drill",
       questions,
       practiceWarnings,
       feedback: request.feedback === "end" ? "end" : "instant",
       timeLimitSeconds: null,
+      sessionFields: Object.assign({ skill: request.skill }, request.step ? { step: request.step } : {}),
     });
     return opened ? questions.length : null;
   }
@@ -1543,10 +1743,12 @@
   // A report's button for the next step, or null when there is none.
   function stepAction(step) {
     const words = stepWords(step);
-    if (!words || step.kind === "mixed") return null;
+    if (!words) return null;
     const note = step.kind === "review"
       ? `${words.reason} ${words.then}`
-      : `${words.section}. ${words.reason} ${words.level} ${DRILL_COUNT} questions, feedback after each.`;
+      : step.kind === "skill"
+        ? `${words.section}. ${words.reason} ${words.level} ${DRILL_COUNT} questions, feedback after each. ${words.more}`
+        : `${words.section}. ${words.reason} ${words.more}`;
     return {
       label: `Next step: ${words.title}`,
       note: note.trim(),
@@ -1621,10 +1823,14 @@
     startTest,
     startDrill,
     startDiagnostic,
+    startMixed,
+    startDesmos,
+    desmosRoutes,
     guide,
     stepWords,
     levelWords,
     startStep,
+    moduleSize,
     DRILL_COUNT,
     activeSession,
     showView,
@@ -1680,8 +1886,13 @@
     view.open(options || {}, params || []);
   }
 
+  // #desmos/<sectionKey> is the Desmos drill, on the Practice view.
   function openFromHash(options) {
     const route = practice.parseRoute(window.location.hash);
+    if (route.view === "desmos" && views.setup) {
+      openView("setup", options, ["desmos", ...route.params]);
+      return true;
+    }
     const name = viewByHash[route.view];
     if (name) openView(name, options, route.params);
     return Boolean(name);
