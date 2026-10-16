@@ -118,11 +118,6 @@
         "read": "The choice point inside both shadings. For k, click where x = (the given x) meets each edge, and take the greatest or least whole y still inside.",
         "fails": "A point exactly on a dashed edge is not a solution, and these questions often put one there; a solid edge counts. Zoom out when a point is off screen."
       },
-      "inequality-region-corner": {
-        "enter": "Both inequalities as given, using <= or >=; then each edge again as an equation, y = (its right side), so the corner can be clicked.",
-        "read": "Click where the two edges cross. Its x-coordinate is the greatest or least possible a, or its y-coordinate the greatest or least possible b, when the shading narrows to that corner on the asked side.",
-        "fails": "A corner at a fraction shows as a rounded decimal; type every digit the box allows, or work out the fraction. Zoom out when the corner is off screen."
-      },
       "inequality-graph-region": {
         "enter": "Each boundary through its two marked points as y > m(x − x₀) + y₀ or y < …, with m = rise/run; use >= or <= for a solid line. Then the choice points, or x = (the given x).",
         "read": "The choice point inside all the shading. For k, click where x = (the given x) meets the line, and take the nearest whole y on the shaded side (past the line if it is dashed).",
@@ -132,6 +127,11 @@
         "enter": "The inequality exactly as given, using <= or >=, with a slider for c (step 1 for a whole-number answer, finer otherwise). Desmos shades all x, none, or a half-plane.",
         "read": "Drag c and note where the shading switches between everything and nothing. The greatest or least c that gives what the question wants is the answer; for choices, the one at the switch.",
         "fails": "At the switch both sides are the same line, and whether it counts depends on < or ≤, so decide by the symbol, not the picture. A fractional answer to type in falls between slider steps; get it exactly by algebra."
+      },
+      "inequality-region-corner": {
+        "enter": "Both inequalities as given, using <= or >=; then each edge again as an equation, y = (its right side), so the corner can be clicked.",
+        "read": "Click where the two edges cross. Its x-coordinate is the greatest or least possible a, or its y-coordinate the greatest or least possible b, when the shading narrows to that corner on the asked side.",
+        "fails": "A corner at a fraction shows as a rounded decimal; type every digit the box allows, or work out the fraction. Zoom out when the corner is off screen."
       },
       "monomial-exponent-rules": {
         "enter": "For x^k: ln( )/ln(2), with the left side inside the ln and 2 in place of each x. For a choice question: y = (the given expression), then y = (each choice) one at a time.",
@@ -193,6 +193,11 @@
         "read": "Click the intersection points; add their x-values if the question asks for a sum. Only true solutions show up, because the graphs never meet at an extraneous value.",
         "fails": "Near a vertical asymptote the curves shoot off together and can look as if they meet; only a marked point counts. Solving by hand gives extra answers that the graph rightly leaves out."
       },
+      "absolute-value-cases": {
+        "enter": "y = (left side) and y = (right side), one per line, using abs( ) or | | for each absolute value.",
+        "read": "Count the intersection points, or add their x-values for a sum. Graphs that lie on top of each other along a stretch mean infinitely many solutions.",
+        "fails": "A crossing can sit off screen: zoom out before settling on zero or one. Click each graph so Desmos marks every crossing, since one at the corner of a V is easy to miss."
+      },
       "root-sum-product": {
         "enter": "y = (left side) and y = (right side), one per line, copied as written.",
         "read": "Click both crossings for r and s, then type the asked expression with those decimals, such as 1/r + 1/s, and pick the nearest choice.",
@@ -202,11 +207,6 @@
         "enter": "y = (left side) and y = (right side), one per line, with brackets around every numerator and denominator.",
         "read": "Count the intersection points. Desmos marks no point where a denominator is zero, so a solution there doesn't count, as in the algebra.",
         "fails": "Covers only the version that asks how many solutions. When a constant must make the equation have no solution, the deciding point is one Desmos never draws, so solve by hand. Zoom out before counting."
-      },
-      "absolute-value-cases": {
-        "enter": "y = (left side) and y = (right side), one per line, using abs( ) or | | for each absolute value.",
-        "read": "Count the intersection points, or add their x-values for a sum. Graphs that lie on top of each other along a stretch mean infinitely many solutions.",
-        "fails": "A crossing can sit off screen: zoom out before settling on zero or one. Click each graph so Desmos marks every crossing, since one at the corner of a V is easy to miss."
       },
       "radical-parameter-extraneous": {
         "enter": "y = (radical side) and y = (other side), one per line, with a slider for k. To test a choice, set k = (that choice), typing fractions with /.",
