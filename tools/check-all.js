@@ -32,6 +32,7 @@ const checks = [
   ["node", ["tools/update-templates.js", "--check"]],
   ["node", ["tools/check-template-reviews.js"]],
   ["node", ["tools/check-families.js"]],
+  ["node", ["tools/check-desmos.js"]],
   ["node", ["tools/check-lesson-modules.js"]],
   ["node", ["tools/check-weekly.js", "--complete"]],
   // AP® plans, unit tests, practice exams and formula references.

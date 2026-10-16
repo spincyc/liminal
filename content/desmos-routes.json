@@ -1,0 +1,393 @@
+{
+  "format": "liminal-desmos-routes",
+  "version": 1,
+  "sections": {
+    "sat-math": {
+      "linear-equation-solve": {
+        "enter": "y = (left side) on one line and y = (right side) on the next, copied as written; use / for a fraction bar.",
+        "read": "Click the point where the two lines cross. Its x-coordinate is the solution.",
+        "fails": "The crossing is often above or below the starting view, so zoom out until you see it. By hand is faster when one or two steps isolate x."
+      },
+      "equation-solution-count": {
+        "enter": "y = (left side) and y = (right side), one per line. If the equation has a constant k, add a slider for k.",
+        "read": "One crossing means one solution; parallel lines mean none; one line on top of the other means infinitely many. For k, drag until the lines are parallel (no solution) or on top of each other (infinitely many).",
+        "fails": "The slider starts at −10 to 10; widen it if no value works. Lines that look identical may not be, so toggle one off and on. Comparing the x-terms and constants by hand is usually faster."
+      },
+      "linear-expression-from-equation": {
+        "enter": "y = (left side) and y = (right side) of the given equation; then the expression the question asks about, with the crossing's x-value written in place of x.",
+        "read": "Click the crossing to get x. Desmos shows the expression's value beside it; that is the answer.",
+        "fails": "If x shows as a repeating decimal (such as 1.667), the value lands a few thousandths from a whole number; round it. Noticing that the expression is a multiple of a group in the equation is faster."
+      },
+      "function-value-and-input": {
+        "enter": "The definition as given, such as g(x) = (its rule). Then g(the input) on the next line; to find an input instead, y = g(x) and y = (the given output).",
+        "read": "Desmos shows the value of g(the input) beside it. For an input, click the crossing; its x-coordinate is the answer.",
+        "fails": "The crossing can sit off the starting view; zoom out. Substituting by hand takes one line, so Desmos is mainly a check on signs."
+      },
+      "slope-from-two-points": {
+        "enter": "A table (the + button, then table) with the two given points, or the table's rows, as x_1 and y_1; then y_1 ~ mx_1 + b on the next line. An intercept such as (4, 0) counts as a point.",
+        "read": "Desmos reports m, the slope. Match it to a choice or enter it.",
+        "fails": "m shows as a decimal, so compare it with each choice's decimal value, and when typing it in, fill every place the answer box allows. Rise over run by hand is faster with two clean points."
+      },
+      "line-intercept-read": {
+        "enter": "The equation exactly as given; there is no need to solve for y.",
+        "read": "Click the line. Desmos marks where it crosses each axis: the x-intercept is the marked point on the x-axis, the y-intercept the one on the y-axis.",
+        "fails": "An intercept may be off the starting view; zoom out. Choices that swap the coordinates, such as (0, a) and (a, 0), are a trap: check which axis the point is on."
+      },
+      "function-constant-from-value": {
+        "enter": "f(x) = (the rule as given), adding a slider for its unknown constant, and the known point as (input, output) on its own line.",
+        "read": "Drag the slider until the line passes through the point. Then f(the asked input) shows the value, or y = (the asked output) crosses the line at the asked x.",
+        "fails": "The constant can lie outside the slider's −10 to 10, so widen the range. Substituting the known value by hand finds the constant in one step."
+      },
+      "linear-function-transformation": {
+        "enter": "A table of the known x and f(x) values as x_1 and y_1, then y_1 ~ mx_1 + b; then f(x) = mx + b and g(x) exactly as the question defines it.",
+        "read": "g(the input) shows its value. For an x-intercept, click where y = g(x) crosses the x-axis. For a slope, type g(1) − g(0).",
+        "fails": "When the question gives values of g instead of f, this route needs the transformation undone by hand first. Copy the rule for g exactly: f(−2x) and −2f(x) are different. Enter the regression before using m and b elsewhere, and don't add sliders for them."
+      },
+      "linear-graph-transform-parameter": {
+        "enter": "A table with the two marked points of f, then y_1 ~ mx_1 + b and f(x) = mx + b; then y = (the rule for g) with a slider for its constant, and the given point.",
+        "read": "Drag the slider, or type each choice as the constant, until the line for g passes through the point. That value is the answer.",
+        "fails": "A fractional constant falls between slider steps, so type the choices instead. A misread point gives a wrong f; check that your f line passes through both marked points. Enter the regression before using m and b elsewhere, and don't add sliders for them."
+      },
+      "point-on-line": {
+        "enter": "The line: the equation as given, or y = m(x − x₀) + y₀ from a slope m and a point (x₀, y₀). Then each choice point on its own line, or x = (the given x) when the point has an unknown k.",
+        "read": "The choice point that sits on the line. For k, click where x = (the given x) meets the line; its y-coordinate is k.",
+        "fails": "Points can be far outside the starting view; zoom out. A point that only looks close may miss by a little, so zoom in on it. Substituting each point by hand is just as fast."
+      },
+      "standard-form-slope": {
+        "enter": "The given equation exactly as written; for an equivalent-equation question, also each choice on its own line.",
+        "read": "For a slope, click the line to see its two intercepts; the slope is −(y-intercept) ÷ (x-intercept). For an equation, the choice whose line lies exactly on the given one (toggle it to check).",
+        "fails": "Intercept labels round to three decimals, so a slope you type in can come out a hair off; then solve for y by hand. Solving for y is faster anyway; use Desmos to check the sign."
+      },
+      "linear-graph-context": {
+        "enter": "A table of the two marked points as x_1 and y_1, then y_1 ~ mx_1 + b, then y = mx + b. Add y = (the target amount) or x = (the given time).",
+        "read": "m is the change per unit of time; negative means decreasing. Click where y = mx + b meets your added line: x is the time, y the amount. Empty or zero is where it meets the x-axis.",
+        "fails": "The amounts sit far above the starting view; zoom out until the line shows. A misread point gives a wrong line, so check it passes through both marked points. Enter the regression before using m and b elsewhere, and don't add sliders for them."
+      },
+      "translated-line-intercept": {
+        "enter": "A table of the two marked points moved as described (add to x to move right, to y to move up), then y_1 ~ mx_1 + b and y = mx + b. For an equation question, also each choice.",
+        "read": "Click where y = mx + b crosses the axis asked about and read that coordinate. For an equation, the choice whose line lies exactly on yours.",
+        "fails": "Left subtracts from x and down subtracts from y; a sign slip moves the line the wrong way. Fractions show as decimals (−8.333 for −25/3), so compare the choices as decimals. Enter the regression before using m and b elsewhere, and don't add sliders for them."
+      },
+      "system-intersection-point": {
+        "enter": "Both equations exactly as given, one per line; there is no need to solve for y.",
+        "read": "Click the crossing point. Its x-coordinate is a and its y-coordinate is b.",
+        "fails": "Zoom out if the crossing isn't on screen. Elimination by hand is just as quick when a variable cancels at once."
+      },
+      "system-combination-value": {
+        "enter": "Both equations exactly as given, one per line; then the asked expression with the crossing's coordinates written in place of x and y.",
+        "read": "Click the crossing for x and y; Desmos shows the expression's value beside it.",
+        "fails": "When the crossing shows repeating decimals, the value lands a few thousandths from a whole number; round it. Adding or subtracting the equations often gives the expression directly, and faster."
+      },
+      "system-word-totals": {
+        "enter": "Two equations, with x for one kind and y for the other: x + y = (the total count) and (value of each x)x + (value of each y)y = (the total value), one per line.",
+        "read": "Click the crossing: x and y are the two counts. For the total of one kind, multiply its count by its value.",
+        "fails": "Writing the equations is the hard part, and Desmos can't check it. Keep units matched: with a total in dollars, coins are 0.10 and 0.25. The crossing is far off the starting view; zoom out."
+      },
+      "system-parameter-solution-count": {
+        "enter": "Both equations exactly as given, with a slider for k, or each choice typed as k = (choice) in turn.",
+        "read": "The value of k that makes the two lines parallel, with no crossing point, is the answer.",
+        "fails": "This covers only the version with one constant k; with two constants a and b, compare coefficients by hand. k is often outside the slider's −10 to 10, so widen it or type the choices."
+      },
+      "two-plan-crossover": {
+        "enter": "Each plan as y = (starting amount) + (rate)x, with a negative rate for draining or losing. For a plan given as a table, use the table and y_1 ~ mx_1 + b instead.",
+        "read": "Click the crossing. For the equal amount, read y. For the least or greatest whole number where one plan costs less, step from the crossing's x to the nearest whole number on the side where that plan's line is lower.",
+        "fails": "If the crossing is exactly a whole number, the plans are equal there, so step one further. The crossing is far off the starting view; zoom out a lot. Setting up the two expressions is the real work."
+      },
+      "system-graph-two-lines": {
+        "enter": "Each line in the figure as y = (rise/run)x + (its y-intercept), from its two marked points, with the slope typed as a fraction such as (−3)/6. Add any given equation as written.",
+        "read": "Click the crossing. Its x-coordinate is a and its y-coordinate is b; match the decimal to a choice or enter it.",
+        "fails": "The crossing is between grid lines, so the figure alone can't give it. A misread point or rise and run swapped gives a wrong line; check that it passes through both points."
+      },
+      "system-mixture-blend": {
+        "enter": "Two parts: x + y = (total amount) and (rate)x + (rate)y = (the mix's total ingredient, cost or interest), percents as decimals. One batch plus water or pure ingredient: y = (ingredient after adding x) and y = (target rate)(start + x).",
+        "read": "Click the crossing; the coordinate for the amount asked about is the answer.",
+        "fails": "Writing the equations is the hard part, and Desmos can't check it. Water adds no ingredient; pure ingredient adds all of x. The crossing is usually far off the starting view; zoom out."
+      },
+      "system-intersection-region": {
+        "enter": "Both equations exactly as given, with a slider for k set to step 1, or each choice typed as k = (choice) in turn.",
+        "read": "For each k, click the crossing and check the signs of its coordinates against the question. The answer is the choice that works, or the greatest or least whole k that works.",
+        "fails": "Near the cutoff the crossing runs far off screen, so zoom out before deciding. A k that makes the lines parallel has no crossing. Solving for the crossing in terms of k by hand shows the cutoff exactly."
+      },
+      "linear-inequality-solve": {
+        "enter": "The inequality exactly as written, using <= or >= for ≤ or ≥; a double inequality works too. Desmos shades every x that satisfies it.",
+        "read": "The edge of the shading is the boundary: solid means included, dashed means not. Pick the choice that matches the shaded side, the value inside the shading, or the whole number inside it nearest the edge.",
+        "fails": "If the edge isn't on a grid line, add y = (left side) and y = (right side) and click their crossing for the exact x. This catches the usual slip by hand: forgetting to flip the sign when dividing by a negative."
+      },
+      "inequality-system-check": {
+        "enter": "Both inequalities exactly as given, using <= or >= for ≤ or ≥. Then each choice point on its own line, or x = (the given x) for a point with an unknown k.",
+        "read": "The choice point inside both shadings. For k, click where x = (the given x) meets each edge, and take the greatest or least whole y still inside.",
+        "fails": "A point exactly on a dashed edge is not a solution, and these questions often put one there; a solid edge counts. Zoom out when a point is off screen."
+      },
+      "inequality-region-corner": {
+        "enter": "Both inequalities as given, using <= or >=; then each edge again as an equation, y = (its right side), so the corner can be clicked.",
+        "read": "Click where the two edges cross. Its x-coordinate is the greatest or least possible a, or its y-coordinate the greatest or least possible b, when the shading narrows to that corner on the asked side.",
+        "fails": "A corner at a fraction shows as a rounded decimal; type every digit the box allows, or work out the fraction. Zoom out when the corner is off screen."
+      },
+      "inequality-graph-region": {
+        "enter": "Each boundary through its two marked points as y > m(x − x₀) + y₀ or y < …, with m = rise/run; use >= or <= for a solid line. Then the choice points, or x = (the given x).",
+        "read": "The choice point inside all the shading. For k, click where x = (the given x) meets the line, and take the nearest whole y on the shaded side (past the line if it is dashed).",
+        "fails": "The points are far outside the drawn grid; zoom out. A misread slope gives a wrong boundary, so check that your line passes through both marked points before reading."
+      },
+      "inequality-parameter-range": {
+        "enter": "The inequality exactly as given, using <= or >=, with a slider for c (step 1 for a whole-number answer, finer otherwise). Desmos shades all x, none, or a half-plane.",
+        "read": "Drag c and note where the shading switches between everything and nothing. The greatest or least c that gives what the question wants is the answer; for choices, the one at the switch.",
+        "fails": "At the switch both sides are the same line, and whether it counts depends on < or ≤, so decide by the symbol, not the picture. A fractional answer to type in falls between slider steps; get it exactly by algebra."
+      },
+      "monomial-exponent-rules": {
+        "enter": "For x^k: ln( )/ln(2), with the left side inside the ln and 2 in place of each x. For a choice question: y = (the given expression), then y = (each choice) one at a time.",
+        "read": "The value Desmos shows for the ln line is k itself. For choices, the right one draws exactly on top of the given curve; toggle the given curve off and on to see it hiding underneath.",
+        "fails": "Expressions with a second letter, such as y, can't be graphed this way. The exponent rules by hand are usually faster, so use Desmos as a check."
+      },
+      "quadratic-factor-match": {
+        "enter": "y = (the given quadratic). For an equivalent-expression question, also y = (each choice) one at a time.",
+        "read": "An equivalent choice draws exactly on top of the quadratic. For a factor, click the x-intercepts: a factor ax + b goes with the intercept x = −b/a, so x − 3 would go with 3.",
+        "fails": "Two choices can look alike near the vertex: toggle curves or zoom out before deciding. Factoring by hand is often quicker; the graph is a check."
+      },
+      "rational-expression-combine": {
+        "enter": "For A and B: f(x) = (left side)(the right side's denominator), then f(0). For a choice question: y = (the given expression), then y = (each choice) one at a time.",
+        "read": "f(0) is B, because f is the line Ax + B. Otherwise, the choice that draws exactly on top of the given curve is equivalent; toggle one off to check.",
+        "fails": "Wrap the whole left side in brackets before multiplying, or only its last fraction is multiplied. Curves crowd together near vertical asymptotes, so compare them away from those x-values."
+      },
+      "rational-exponent-rewrite": {
+        "enter": "ln( )/ln(2), with the left side (or the given expression) inside the ln and 2 in place of each x. Type a root as (…)^(1/5), with brackets.",
+        "read": "The result is the exponent c. For choices written as x^(p/q), pick the one whose p/q equals it; 0.333333 is 1/3.",
+        "fails": "Expressions with a second letter, such as y, need the rules by hand. A missing bracket around a fractional exponent gives a wrong number. Numeric entry needs the fraction or a decimal that fits the box."
+      },
+      "common-base-exponent": {
+        "enter": "y = ln(left side) on one line and y = ln(right side) on the next, with ^ and brackets for each exponent. Both graphs are straight lines.",
+        "read": "The x-coordinate of the intersection point (click it) is the solution.",
+        "fails": "Without ln, the curves meet where they are tiny or huge (in about half the draws the crossing hugs the x-axis). Even the lines often cross off screen, so zoom out. Compare fraction choices as decimals."
+      },
+      "quadratic-structure-form": {
+        "enter": "y = f(x) as given, then y = (each choice) one at a time to see which choices draw exactly on top of f.",
+        "read": "Click the x-intercepts, or the vertex for a minimum or maximum. The answer is the equivalent choice that shows those numbers: factors (x − r) for an intercept r, or a(x − h)^2 + k with k the vertex's y.",
+        "fails": "Several choices can be equivalent, so overlap alone doesn't decide; the question is about which form shows the feature. Watch signs: an intercept at −4 appears as the factor x + 4."
+      },
+      "signed-cube-root-value": {
+        "enter": "The expression as shown, using cbrt( ) for the cube root.",
+        "read": "The value. Desmos takes the cube root of a negative number, so the sign comes out right; match the decimal to the choices.",
+        "fails": "A fraction answer shows as a long decimal: for numeric entry, enter the fraction or the decimal cut to fit the box. When the number under the root is a known cube, it is quicker by hand."
+      },
+      "quadratic-square-root-solve": {
+        "enter": "y = (left side) on one line and y = (right side) on the next, copied as written.",
+        "read": "The x-coordinates of the intersection points (click them) are the solutions; pick the positive one if asked.",
+        "fails": "The crossings are almost always above the default window: zoom out until both show. Taking square roots by hand is quicker once you see the form."
+      },
+      "radical-equation-solve": {
+        "enter": "y = sqrt(…) for the radical side on one line and y = (the other side) on the next.",
+        "read": "The x-coordinate of the intersection point (click it) is the solution.",
+        "fails": "The crossing is usually off the default window, sometimes with x in the hundreds: zoom out until the curves meet. Squaring both sides by hand is quick when the numbers are small."
+      },
+      "absolute-value-equation": {
+        "enter": "y = (left side) and y = (right side), one per line, using abs( ) or | | for the absolute value.",
+        "read": "Click the intersection points: their x-values are the solutions. Pick the one asked for, or subtract them for q − p.",
+        "fails": "The crossings are often above the default window: zoom out until both show. A missing second crossing usually means it is off screen, not that it doesn't exist."
+      },
+      "quadratic-irrational-solutions": {
+        "enter": "y = (left side) and y = (right side), one per line, copied as written.",
+        "read": "Click the crossings and note their x-values. Type each choice into Desmos to get its decimal, and pick the one that matches.",
+        "fails": "Desmos shows decimals, never √ forms, so every choice must be converted to compare. Choices built from the same numbers (+ or −, halved or not) are told apart only by those decimals."
+      },
+      "extraneous-roots": {
+        "enter": "y = (left side) and y = (right side), one per line, using sqrt( ) for a root and brackets around every numerator and denominator.",
+        "read": "Click the intersection points; add their x-values if the question asks for a sum. Only true solutions show up, because the graphs never meet at an extraneous value.",
+        "fails": "Near a vertical asymptote the curves shoot off together and can look as if they meet; only a marked point counts. Solving by hand gives extra answers that the graph rightly leaves out."
+      },
+      "root-sum-product": {
+        "enter": "y = (left side) and y = (right side), one per line, copied as written.",
+        "read": "Click both crossings for r and s, then type the asked expression with those decimals, such as 1/r + 1/s, and pick the nearest choice.",
+        "fails": "Desmos rounds clicked coordinates, so the result is close but not exact: fine for choosing, not for a numeric-entry answer, which needs the sum and product of the solutions by algebra. Zoom out to find both crossings."
+      },
+      "rational-equation-structure": {
+        "enter": "y = (left side) and y = (right side), one per line, with brackets around every numerator and denominator.",
+        "read": "Count the intersection points. Desmos marks no point where a denominator is zero, so a solution there doesn't count, as in the algebra.",
+        "fails": "Covers only the version that asks how many solutions. When a constant must make the equation have no solution, the deciding point is one Desmos never draws, so solve by hand. Zoom out before counting."
+      },
+      "absolute-value-cases": {
+        "enter": "y = (left side) and y = (right side), one per line, using abs( ) or | | for each absolute value.",
+        "read": "Count the intersection points, or add their x-values for a sum. Graphs that lie on top of each other along a stretch mean infinitely many solutions.",
+        "fails": "A crossing can sit off screen: zoom out before settling on zero or one. Click each graph so Desmos marks every crossing, since one at the corner of a V is easy to miss."
+      },
+      "radical-parameter-extraneous": {
+        "enter": "y = (radical side) and y = (other side), one per line, with a slider for k. To test a choice, set k = (that choice), typing fractions with /.",
+        "read": "Count the crossings at each k. Two crossings is the case asked about; the greatest such k puts the curve's starting point on the line.",
+        "fails": "A crossing can sit a hair past the curve's starting point: zoom in there before counting. Whole-number slider steps can miss the narrow two-crossing range, or a greatest k that isn't whole, so type exact values."
+      },
+      "system-constant-from-solution": {
+        "enter": "The equation that contains k, with a slider for k, and the given point, such as (2, 14), on its own line.",
+        "read": "Drag k until the graph passes exactly through the point; that slider value is k.",
+        "fails": "The default slider runs from −10 to 10; widen it if the graph never reaches the point. Substituting the point by hand is usually quicker; the slider shows why it works."
+      },
+      "parabola-line-solution-check": {
+        "enter": "Both equations as given, one per line.",
+        "read": "Click the intersection points. Pick the choice that matches a point, or read the x-value with the sign asked for.",
+        "fails": "The crossings are often outside the default window: zoom out. A choice that lies on only one of the graphs is not a solution; it must sit at a crossing."
+      },
+      "line-parabola-solve": {
+        "enter": "Both equations as given, one per line.",
+        "read": "Click the intersection points and read the coordinate asked for, using any condition (such as x > 0) to pick the point; add the two y-values for y₁ + y₂.",
+        "fails": "One crossing is often off screen: zoom out before choosing. Read the right coordinate, since the condition may be on x while the question asks for y."
+      },
+      "nonlinear-system-solve": {
+        "enter": "Both equations as given, one per line. If Desmos marks no crossing points, retype a product such as xy = 18 as y = 18/x.",
+        "read": "Click the intersection points and read the value asked for; use a condition such as x > y to pick the point, and compute x − y from it if asked.",
+        "fails": "The crossings are often outside the default window: zoom out. When both crossings share the asked coordinate, either one gives it."
+      },
+      "system-square-identity": {
+        "enter": "Both equations as given, one per line.",
+        "read": "Click an intersection point (x, y), then work out the asked expression, such as xy or (x − y)^2, from its coordinates.",
+        "fails": "If Desmos marks no points on the circle, read the crossings from the grid: here they fall on whole numbers. They are often off the default window, so zoom out. Expanding (x + y)^2 by hand is faster."
+      },
+      "discriminant-parameter": {
+        "enter": "Both sides (or both equations), one per line, with a slider for k.",
+        "read": "Drag k until the graphs just touch: that k gives one solution, and on each side of it the count is 2 or 0. For the touching point when k only moves a graph up or down, set k so they cross twice: it lies halfway between the crossings.",
+        "fails": "Touching is easy to misjudge by eye, and whole-number slider steps can miss a k that isn't whole; the halfway point avoids both. The discriminant by hand is the exact route."
+      },
+      "line-circle-tangent": {
+        "enter": "The circle as given and the line with a slider for c, or c = (each choice), typing a root as sqrt( ).",
+        "read": "Drag c until the line just touches the circle. There are two such values, so take the one asked for; for choices, the right c gives exactly one touching point.",
+        "fails": "The circle often runs past the default window: zoom out. Touching is judged by eye, so check that nearby values of c give two crossings on one side and none on the other."
+      },
+      "factored-polynomial-intercepts": {
+        "enter": "y = (the polynomial), copied as written.",
+        "read": "Click the curve to see its x-intercepts and y-intercept, and pick the marked point the question asks for.",
+        "fails": "Mixing up (0, b) with (b, 0) is the trap; Desmos labels both. The y-intercept can be far above the window: zoom out. Reading the factors by hand is just as quick."
+      },
+      "quadratic-vertex-reading": {
+        "enter": "y = f(x) as given. For a table: a table of the values, then y_1 ~ ax_1^2 + bx_1 + c, then y = ax^2 + bx + c.",
+        "read": "Click the vertex, the point at the bottom or top of the parabola, and read the coordinate asked for.",
+        "fails": "The vertex is often outside the default window: zoom out. For a table, the vertex's x is halfway between two inputs with equal outputs, which is quicker."
+      },
+      "projectile-height-model": {
+        "enter": "y = (the height function) with x in place of t, since t would make a slider.",
+        "read": "Click the top of the parabola for the maximum height, or the positive x-intercept for when it lands. For a given height, add y = (that height) and click the crossings.",
+        "fails": "The graph is far outside the default window, with heights in the hundreds: use zoom to fit or set the window. Time is x and height is y, so read the right coordinate."
+      },
+      "exponential-table-model": {
+        "enter": "A table of the given values, then y_1 ~ ab^(x_1) on the next line.",
+        "read": "Desmos reports a and b. Pick the choice with that a and that b (0.333333 is 1/3). For a value, type a*b^(the x asked) on a new line: Desmos uses the full a and b, not the rounded ones shown.",
+        "fails": "Matching only one number is the trap, since choices share a or b. The table's first value is a only when its x is 0."
+      },
+      "polynomial-constant-from-remainder": {
+        "enter": "p(x) = (the polynomial) with a slider for k, and p(a) on the next line, where a makes the factor or divisor zero (a = −2 for x + 2).",
+        "read": "Drag k, or type each choice as k = …, until p(a) shows 0 for a factor or the remainder. In p(x)/(x − a) = q(x) + r/(x − a), the remainder is r.",
+        "fails": "It rests on the remainder theorem: the usual slip is the sign of a. Widen the slider if k is beyond −10 to 10."
+      },
+      "vertex-from-conditions": {
+        "enter": "A table of points on the parabola: the given ones, plus mirror points (same y, other side of the axis) until there is one point per unknown. Then y_1 ~ ax_1^2 + bx_1 + c, using the given leading number for a if any.",
+        "read": "Desmos reports a, b and c: add them for a + b + c, or graph y = ax^2 + bx + c and click the vertex for a minimum or maximum.",
+        "fails": "The mirror point is the real step: the axis is halfway between two inputs with equal outputs. With fewer points than unknowns Desmos can't settle the fit. The vertex form by hand is about as quick."
+      },
+      "exponential-rewrite": {
+        "enter": "f(x) = (the given function, with x in place of t). For a choice that defines g, also g(x) = (that choice).",
+        "read": "f(n)/f(0) is the factor over n units of t: 0.8 means a 20% decrease, 1.96 a 96% increase. f(0) is a. A choice g is right when it matches f over the same time, such as g(12) = f(1) for months.",
+        "fails": "Mind the units: if t counts months, a year is f(12)/f(0). The versions given only in words have no function to type."
+      },
+      "function-transformation-table": {
+        "enter": "A table of the values, then y_1 ~ ax_1^2 + bx_1 + c. Next, f(x) = ax^2 + bx + c and g(x) as the question defines it, in terms of f.",
+        "read": "Click the vertex of g's graph: its coordinates are (r, s), and its y-value is the minimum.",
+        "fails": "The vertex can be off the default window: zoom out. By hand, f's vertex is halfway between equal outputs in the table and the shift moves it, which is often quicker."
+      },
+      "graph-which-function": {
+        "enter": "y = (each choice), one at a time.",
+        "read": "Compare each graph with the one shown: the same x-intercepts, touching or crossing at each, the same y-intercept, and the same direction or level line. Only one choice matches every feature.",
+        "fails": "The picture isn't data, so check every marked feature rather than the overall look: a square on the wrong factor turns a touch into a crossing."
+      },
+      "shifted-exponential-recovery": {
+        "enter": "A table of the three given points, then y_1 ~ ab^(x_1) + c on the next line.",
+        "read": "Desmos reports a, b and c. Read a, or add a + c for f(0).",
+        "fails": "Check that R² is 1 and b is greater than 1: a fit with three unknowns can stall on a wrong answer. Then use the algebra: differences of equally spaced values grow by a constant factor."
+      },
+      "graph-quadratic-level": {
+        "enter": "A table with the vertex and the other marked point, then y_1 ~ a(x_1 − h)^2 + k using the vertex's numbers. Then y = a(x − h)^2 + k and y = (the given value), one per line.",
+        "read": "Click the two crossings and take the larger or smaller x-value, as asked.",
+        "fails": "The given value is far outside the default window: zoom out until both crossings show. Read the labeled points, not the grid. Finding a by hand from the two points is just as quick."
+      },
+      "average-rate-required-leg": {
+        "enter": "y = (total distance)/(time for the first part + (distance of the other part)/x) on one line, with x for the unknown speed, and y = the average speed for the whole trip on the next. The first part's time is its distance divided by its speed.",
+        "read": "The x-coordinate of the intersection is the unknown speed.",
+        "fails": "Writing the model is the real work: average speed is total distance over total time, never the mean of the two speeds, and a round trip's total is twice one way. The crossing can sit far to the right; zoom out or use zoom to fit."
+      },
+      "list-mean-or-median": {
+        "enter": "L = [the values, separated by commas], then mean(L) or median(L) on the next line. For a table, copy its data column into the list.",
+        "read": "The number Desmos prints beside mean(L) or median(L) is the answer.",
+        "fails": "Desmos doesn't check your typing: a skipped or doubled value changes the result, so compare length(L) with the count in the question. Type numbers without thousands commas, or Desmos reads 1,160 as two entries. For a short list, sorting by hand for the median is as fast."
+      },
+      "mean-missing-value": {
+        "enter": "y = mean([the values, with x in place of the unknown]) on one line, and y = the stated mean on the next. If the unknown appears twice, type x twice.",
+        "read": "The x-coordinate of the intersection is the unknown value.",
+        "fails": "Multiplying the mean by the number of values and subtracting the known ones is often quicker. With large values the crossing is off screen; zoom out or use zoom to fit. An unknown labeled k must be typed as x to graph, and numbers go in without thousands commas."
+      },
+      "data-display-center": {
+        "enter": "V = [the values] and F = [how many times each occurs], then total(V*F)/total(F) for the mean. For a median, L = [every value, written out as often as it occurs], then median(L).",
+        "read": "The printed result is the mean or median. Check that total(F) or length(L) equals the number of people or items the question states.",
+        "fails": "Writing out every repeat for a median is slow and easy to miscount; counting to the middle position (the average of the two middle values for an even count) is often faster. A dot plot's counts must first be read off the figure."
+      },
+      "could-be-median": {
+        "enter": "y = median([the values, with x in place of the unknown]). If the question gives the median, also y = that median on the next line.",
+        "read": "The graph is flat at the least and greatest possible medians and climbs between them. A value is possible if the graph reaches it at a whole-number x; for a given median, the possible x are where the graph meets that line.",
+        "fails": "The climbing part also passes through values that need a non-whole x: with an odd count of whole numbers the median is a whole number, and with an even count it can end in .5. Zoom out until both flat parts show."
+      },
+      "two-group-fit-lines": {
+        "enter": "f(x) = the first line's right side and g(x) = the second's, each on its own line. If the lines are only drawn, build each from two points read off the graph: the y-intercept plus (rise/run)x.",
+        "read": "For the same predicted value, click the intersection and read its x. For a difference at a given x, type f(that x) − g(that x), subtracting in the order the question names the groups.",
+        "fails": "Statements comparing starting values and rates come straight from the intercepts and slopes; graphing adds nothing there. Points read off a drawn line are only as exact as the grid. Swapping f and g flips the sign of a difference."
+      },
+      "fit-model-choice": {
+        "enter": "A table with the data in columns x_1 and y_1, then each choice's equation on its own line, typed without commas in numbers.",
+        "read": "The right model passes through every point of the table; each other choice misses at least one point.",
+        "fails": "A linear and an exponential choice can share a point and run close together, so zoom in or click points to confirm the curve goes exactly through all of them. Substituting two rows into each choice is about as fast."
+      },
+      "uneven-table-growth": {
+        "enter": "A table with the data in columns x_1 and y_1 (no commas in numbers), then y_1 ~ mx_1 + c and y_1 ~ ab^x_1 on the next two lines.",
+        "read": "The model with R² = 1 fits exactly. For a value, type that model at the asked x, such as m*7 + c or a*b^7. For the change per step, m is the amount; for the exponential, b − 1 is the percent change as a decimal.",
+        "fails": "If neither model shows R² = 1, recheck the typed data. The table skips some steps, so a change between neighboring rows is not a per-step change; that is the trap the regression avoids. Desmos rounds the constants it shows."
+      },
+      "residual-actual-predicted": {
+        "enter": "X = [the x-values, in table order]. Given residuals: R = [them], then the model's right side with X for x, plus R (the actual values). Given actual values: Y = [them], then Y minus the model's right side with X for x (the residuals).",
+        "read": "Desmos lists the results in table order. The greatest or least entry marks the row asked for; farthest above means the greatest residual and farthest below the least.",
+        "fails": "Mapping a list position back to its row is where slips happen, so count positions carefully. A residual is actual minus predicted, never the reverse. With five rows, the arithmetic by hand is about as fast."
+      },
+      "probability-after-change": {
+        "enter": "y = (favorable count after the change)/(total after the change), with x for the unknown, and y = the target probability on the next line. Given only a starting probability, let x be the starting total; the favorable count is that probability times x.",
+        "read": "The x-coordinate of the intersection is the unknown: the number to add, or the starting total. If the question asks how many favorable items there were, multiply x by the starting probability.",
+        "fails": "The setup is the work: adding favorable items raises both the top and the bottom of the fraction. Type a probability as a fraction with /. A crossing at a non-whole or negative x means the setup is wrong."
+      },
+      "equal-volume-folded-boxes": {
+        "enter": "y = c(x − 2c)^2 for each sheet, with its cut size for c, one line per sheet: the box's base is x − 2c on a side, its height is c, and x is the sheet's side length.",
+        "read": "Use the intersection whose x is greater than twice the larger cut: its x is the sheet's side length and its y is the volume.",
+        "fails": "The setup is the hard part. The curves also cross at a smaller x where the larger cut leaves no base, which is not a real box. The useful crossing is often far to the right and high; zoom out or use zoom to fit."
+      },
+      "regular-polygon-angles": {
+        "enter": "y = 360/x − 360/(x + d), with d for how many more sides the larger polygon has, and y = the angle difference in degrees on the next line. Each interior angle of an n-sided polygon is 180 − 360/n, so this is their gap.",
+        "read": "The intersection with positive x gives x, the smaller polygon's number of sides; add d if the question asks about the larger polygon.",
+        "fails": "Writing the model is the hard part. The curves also cross at a negative x, which is not a polygon. A small angle difference puts the crossing far to the right; zoom out."
+      },
+      "trig-context-length": {
+        "enter": "First switch Desmos to degrees (wrench icon, then Degrees). Then the known length times or divided by sin, cos or tan of the given angle, as the right triangle requires.",
+        "read": "The printed value, rounded to the nearest tenth.",
+        "fails": "Desmos starts in radians, and a radian result looks just as plausible, so set degrees first. Choosing the ratio is the real work: opposite and adjacent are relative to the given angle, and an unknown hypotenuse means dividing."
+      },
+      "two-observer-elevation": {
+        "enter": "Switch to degrees (wrench icon, then Degrees). Then y = x/tan(far angle) − x/tan(near angle), the people's distance apart when the height is x, and y = their given distance apart on the next line.",
+        "read": "The intersection's x is the height. The nearer person's distance to the base is that height divided by tan(near angle). Turn each choice into a decimal to match.",
+        "fails": "The setup is the hard part. Exact choices with radicals, such as a number times √3, must each be converted to a decimal to compare. In radian mode the curves are meaningless."
+      },
+      "circle-equation-features": {
+        "enter": "Each choice's equation on its own line, plus the question's points as ordered pairs. If the question gives the circle's equation and a point (a, t), type that equation and the point with a slider for t instead.",
+        "read": "Keep the choice centered where the question says (the midpoint, for a diameter) that passes through the given point or just touches the named axis. For t, drag the slider until the point sits on the circle on the side the question names.",
+        "fails": "Choices that differ only on the right side (r versus r squared) share a center, so check that the point is actually on the curve. A slider moves in steps; set its step to 1 and check the value in the equation."
+      },
+      "circle-equation-complete-square": {
+        "enter": "The given equation exactly as written; Desmos graphs it without rearranging. For a point question, also each choice's point on its own line.",
+        "read": "Pick the point that falls inside the circle. For the center, read the circle's middle off the grid; for the radius, count grid units from the center to the edge, and double it for the diameter.",
+        "fails": "Grid reading is safe only for whole-number centers and radii; a radius like √51 next to a choice of 7 can't be told apart by eye, so complete the square (divide by the x² coefficient first) to confirm. A point near the edge needs a zoom."
+      },
+      "circle-tangent-line": {
+        "enter": "The given circle equation as written, then each choice's line on its own line. For a slope choice m, the line through the point of tangency (a, b) is y = m(x − a) + b.",
+        "read": "The tangent line touches the circle only at the given point; every other choice crosses the circle a second time.",
+        "fails": "Choices that are y-intercept values, and numeric-entry answers, can't be tested this way: take the slope from the center to the point and use its negative reciprocal. A wrong line through the point can cross close to it; zoom in there."
+      }
+    }
+  }
+}

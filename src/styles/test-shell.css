@@ -2252,6 +2252,27 @@
   outline-offset: var(--focus-offset);
 }
 
+/* The Desmos route under an explanation: three labeled steps, in a label
+   column beside the text where there is room, stacked on phones. */
+.lm-shell .lm-desmos-steps {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 6px 14px;
+  margin: 6px 0 0;
+}
+
+.lm-shell .lm-desmos-steps dt {
+  color: var(--lm-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.lm-shell .lm-desmos-steps dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 .lm-shell .lm-learn {
   margin: 12px 0 0;
 }
@@ -2385,6 +2406,15 @@
 @media (max-width: 640px) {
   .lm-shell {
     --lm-bar-h: 60px;
+  }
+
+  .lm-shell .lm-desmos-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+
+  .lm-shell .lm-desmos-steps dd + dt {
+    margin-top: 8px;
   }
 
   .lm-shell .lm-top {

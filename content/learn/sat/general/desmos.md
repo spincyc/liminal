@@ -11,6 +11,12 @@ on test day, it wastes minutes. Practice with the free version at
 [desmos.com/calculator](https://www.desmos.com/calculator), then try the one
 inside Bluebook's practice tools so nothing surprises you.
 
+In a Liminal Math set, the Calculator button opens desmos.com in its own
+window beside the question, and pressing it again brings back the same
+window with your graphs. After you answer a question whose type has a
+Desmos route, its explanation adds one: what to type, what to read, and
+when the route fails. See [the practice plan](#practice-protocol).
+
 Start with [Reading graphs](learn:sat/general/reading-graphs) if you need to
 separate input from output, slope from intercept, or an endpoint from the
 edge of the viewing window. Decide what the answer represents before reading
@@ -49,8 +55,12 @@ exponentials, fractions.
 
 Type both equations exactly as given, for example `3x+2y=16` and `5x-2y=8`.
 You don't need to solve for y first. Click the intersection. Distinct parallel
-lines mean no solution. Apparently overlapping lines need an algebraic check:
-only equations describing the same line have infinitely many solutions.
+lines mean no solution.
+
+> **Fails when.** Lines look as if they overlap. Nearly parallel lines can
+> look identical at one zoom, so check algebraically: only equations
+> describing the same line have infinitely many solutions. A system with a
+> letter such as a or k needs a slider (next section) or algebra.
 
 ## Sliders for "what value of k" {#sliders}
 
@@ -90,8 +100,11 @@ Choose "table" from the + menu, type x-values, and add a column for any
 function you have defined, such as `f(x)`. Tables are good for checking a
 model at several inputs, comparing two expressions, and deciding whether
 data are linear (constant differences) or exponential (constant ratios),
-when the x-values are equally spaced. Matching at sampled inputs alone does
-not prove that two expressions are equivalent.
+when the x-values are equally spaced.
+
+> **Fails when.** The x-values are not equally spaced: then compare
+> differences per unit of x, not row to row. Matching at sampled inputs alone
+> does not prove that two expressions are equivalent.
 
 ## Statistics {#statistics}
 
@@ -107,6 +120,12 @@ deviation; choose the definition the question needs. These tools calculate
 summaries but do not replace interpreting the data. See
 [one-variable data](learn:sat-math/problem-solving-and-data-analysis/one-variable-data).
 
+> **Fails when.** The data come as a frequency table or a dot plot: a list
+> of the distinct values gives the wrong mean and median. Weight them, as in
+> `total(V*F)/total(F)` for the mean with values V and counts F, or count to
+> the middle by hand for the median. A question about how a change moves
+> the mean or median is often faster to reason out.
+
 ## Regressions {#regressions}
 
 Put data in a table (columns x₁ and y₁), then type a model with `~`:
@@ -114,11 +133,22 @@ Put data in a table (columns x₁ and y₁), then type a model with `~`:
 for an exponential. Desmos reports the constants. Use it when a question
 gives data and asks about the model's slope, intercept or a prediction.
 
+> **Fails when.** The points come from a scatterplot you read by eye: the
+> fit is only as good as your readings, so check it against the line drawn.
+> A question about the line of best fit shown asks about that line, not one
+> you compute. Rounded data give rounded constants; match them to the
+> nearest choice.
+
 ## Inequalities {#inequalities}
 
 Type inequalities directly, for example `y>2x-3` and `y<=-x+5`. Desmos
 shades each one; where the shadings overlap, both hold. Type a point such as
 `(3,1)` to see where it falls. Dashed boundaries are not included.
+
+> **Fails when.** A point sits on a boundary line: from the picture alone
+> you can't tell whether it counts. Substitute it, and read < or ≤ in the
+> inequality itself. Overlapping shades are also hard to see; turn off one
+> inequality at a time.
 
 ## Vertices, zeros and intercepts {#key-points}
 
@@ -135,7 +165,12 @@ directly.
 
 Type a circle equation as given, even expanded, for example
 `x^2+y^2+8x-6y=0`. Desmos draws it, so you can read the center and radius
-from the grid and check your completing-the-square work.
+from the grid and check your completing-the-square work. To test a point,
+type it too and see whether it falls inside, on, or outside the circle.
+
+> **Fails when.** The center or radius is not a whole number, such as a
+> radius of √13: the grid can only suggest it, so complete the square. A
+> point very close to the circle needs substituting, not a look.
 
 ## When not to use it {#when-not-to-use}
 
@@ -161,15 +196,32 @@ specific value. Skip it when the question is about meaning or form.
 
 ## A one-week practice plan {#practice-protocol}
 
-Twenty minutes a day at desmos.com/calculator:
+About twenty minutes a day for a week. Each day starts with a few minutes of
+one tool at [desmos.com/calculator](https://www.desmos.com/calculator), then
+one set of Liminal's Desmos drill: open `practice.html#desmos/sat-math` on
+this site. The drill draws only SAT Math question types that have a Desmos
+route and gives feedback after each question. Keep Desmos open beside the
+question with the Calculator button.
 
-1. Typing only: exponents, fractions, roots, absolute values, subscripts.
-2. Graph ten equations and click every intercept and vertex.
-3. Solve ten systems by graphing.
-4. Sliders on ten "what value of k" questions.
-5. Tables and equivalence checks.
-6. Statistics on lists and one regression.
-7. Twenty mixed practice questions, using Desmos even where it is slower, to learn where it isn't worth it.
+For every drill question, decide your route before you type: what you will
+graph, and what you will read. After you check your answer, compare your
+route with the Desmos route shown under the explanation, and read its "When
+it fails" line.
 
-After that week, note in each practice set which questions you did by hand
-that would have been faster graphed, and the reverse.
+1. Typing only: exponents, fractions, roots, absolute values, subscripts. Then a drill set, using Desmos on every question.
+2. [Solving by graphing](#solve-by-graphing) and [systems](#systems): redo this page's examples and click every crossing. Then a drill set.
+3. [Sliders](#sliders): redo the slider example and drag k past both answers. Then a drill set, confirming each slider answer with algebra.
+4. [Tables](#tables), [statistics](#statistics) and [regressions](#regressions): make one list and one regression from a table in an earlier set. Then a drill set.
+5. [Inequalities](#inequalities), [circles](#circles) and [key points](#key-points). Then a drill set at the real test's pace, about a minute and a half a question.
+6. A drill set without the routes: cover each explanation's Desmos route until you have written your own, then compare.
+7. A mixed SAT Math set, not the drill. Use Desmos only where it beats algebra, and note which questions you did by hand that would have been faster graphed, and the reverse.
+
+After the week, keep the habit in every Math set: read the Desmos route under
+each explanation, including on questions you got right by hand.
+
+> **Fails when.** You practise only the drill. It draws only questions that
+> have a Desmos route, so it makes Desmos look more useful than it is on a
+> real test, where many questions are about meaning or form (see
+> [when not to use it](#when-not-to-use)). Day 7's mixed set, and mixed
+> sets after the week, are the correction. A route is a starting point,
+> not a guarantee: its "When it fails" line names the cases it misses.

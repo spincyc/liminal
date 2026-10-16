@@ -101,6 +101,7 @@ for (const asset of [
   "lib/modules.js",
   "lib/simulation.js",
   "content/templates.js",
+  "content/desmos-routes.js",
   "lib/assessment.js",
   "lib/assessment-adapters.js",
   "lib/test-engine.js",
@@ -282,7 +283,7 @@ if (html.includes('"lib/booklet.js"')) throw new Error("practice.html loads lib/
 for (const [name, page, order] of [
   ["practice.html", html, [
     "styles/tokens.css", "styles/app.css", "styles/test-shell.css", "styles/math.css",
-    "lib/core.js", "lib/template-mask.js", "lib/question-identity.js", "lib/runs.js", "lib/modules.js", "lib/simulation.js",
+    "content/desmos-routes.js", "lib/core.js", "lib/template-mask.js", "lib/question-identity.js", "lib/runs.js", "lib/modules.js", "lib/simulation.js",
     "lib/assessment.js", "lib/assessment-adapters.js", "lib/test-engine.js", "lib/session-store.js",
     "lib/annotations.js", "lib/line-reader.js",
     "lib/progress.js", "lib/review-queue.js", "lib/practice.js", "lib/analytics.js", "lib/progress-io.js",
@@ -637,6 +638,17 @@ for (const blueprint of practiceCore.FULL_TEST_BLUEPRINTS) {
   if (/[^\x00-\x7F]/.test(texSource)) {
     throw new Error(`Form "${blueprint.id}" emitted non-ASCII LaTeX source.`);
   }
+}
+
+// The Desmos routes load as a plain script that registers exactly the
+// checked JSON (tools/check-desmos.js); the test screen reads the global.
+const routesContext = vm.createContext({ window: {} });
+vm.runInContext(fs.readFileSync(path.join(root, "content/desmos-routes.js"), "utf8"), routesContext,
+  { filename: "content/desmos-routes.js" });
+const desmosRoutes = routesContext.window.LiminalDesmosRoutes;
+if (JSON.stringify(desmosRoutes) !==
+    JSON.stringify(JSON.parse(fs.readFileSync(path.resolve(__dirname, "../content/desmos-routes.json"), "utf8")))) {
+  throw new Error("content/desmos-routes.js does not register content/desmos-routes.json as window.LiminalDesmosRoutes");
 }
 
 const guidePath = path.join(root, "content/answer-signs.js");
