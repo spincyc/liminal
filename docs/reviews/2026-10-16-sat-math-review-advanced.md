@@ -496,3 +496,103 @@ All of these are correct, and none changes a displayed question or key.
   displayed and teaching field, with the source reviewed in pass 1.
 - **Text-only templates.** These rest on displayed-question equality plus the
   changed text read on the draws listed above.
+
+## Pass 3 (after the cold content review, `feature/sat` 4d7c613)
+
+- **Scope:** the 26 Advanced Math templates on
+  `.scratch/lane/stale-templates-pass3.txt`. That is every template in
+  `equivalent-expressions.js` (15) and `nonlinear-equations.js` (11). The
+  author's changes are in `2026-10-16-sat-math-realism-changes.md`, "Pass 3
+  fixes".
+- **Baseline:** 3f8e23a. Its `src/lib/families` and
+  `content/templates/sat-math.json` are identical to 47d553a, the source
+  accepted in pass 2. `git diff 47d553a 3f8e23a` on those paths is empty.
+- **Result:** 26 accepted, 0 rejected.
+  - No displayed question changed, so no new blind solves were needed.
+  - 123 pass-2 samples were carried forward, with 0 misses.
+  - No tier, rubric or other metadata changed.
+
+### Pass 3 comparison against 3f8e23a (600 draws each)
+
+| Template | Displayed question differs | Text only differs |
+| --- | --- | --- |
+| expression-substitution | 0 | 408 (hint) |
+| quadratic-solution-count | 0 | 56 (trap, hint) |
+| rational-equation-solve | 0 | 34 (explanation, steps, rationales) |
+| the other 23 | 0 | 0 (every displayed and teaching field) |
+
+This matches the author's classification; the counts differ slightly because
+the runtime-shaped seed set differs.
+
+### Changed text reviewed
+
+- **expression-substitution.** When the equation hides x ± 1/x, the hint
+  now asks "Can the given equation be written in terms of x + 1/x?" (or
+  x − 1/x). I checked it on 3,000 draws.
+  - For all 2,029 hidden-form draws, the sign in the hint matches the
+    equation. x² − 1 = kx and x² − kx − 1 = 0 hide x − 1/x; the "+ 1" forms
+    hide x + 1/x.
+  - All 971 draws that give x ± 1/x directly keep "What happens when both
+    sides are squared/cubed?", matched to the asked power.
+  - Seeds 1, 2, 3 and 5 were read in full. The hint nudges without naming
+    the method or the answer.
+- **rational-equation-solve.** The cross-multiplied equation drops a
+  multiplier of 1 on either side ("5(x + 9) = x − 7", "x + 6 = 2(x − 1)").
+  So does the "own denominator" rationale ("5(x − 7) = x + 9"). The
+  arithmetic is unchanged and correct on seeds 0, 23, 28 and 39. This
+  resolves the pass-2 optional note.
+- **quadratic-solution-count.** For a count-form equation already ending in
+  "= 0" (298 of 3,000 draws), the trap now reads "Read a, b and c with their
+  signs: a discriminant of 0 means one solution, not none, and a negative one
+  means none." No other draw gets this trap or hint (0 mismatches). The trap
+  is correct.
+  - **The hint is new: "What is the sign of b² − 4ac?"** It names the method.
+    The family contract in `docs/question-templates.md` says "the hint nudges
+    without naming the method". The template's own which-equation form keeps
+    a hint that does not name it ("What decides how many times the graph of
+    y = ax² + bx + c meets the x-axis?"). This is the only SAT Math hint that
+    names b² − 4ac.
+  - **Judgment: non-blocking.** No key, step, rationale or explanation is
+    wrong. Hints are opened only on request, and a hinted correct answer is
+    not counted as correct. The brief's mandatory rejection grounds do not
+    cover hint wording.
+  - **Suggested fix:** reuse the sibling's wording, or ask "What do the signs
+    and sizes of a, b and c tell you about the solutions?"
+  - **Minor:** three of the 298 draws are "(x ± n)² = 0". For these the new
+    trap ("Read a, b and c") and the older explanation ("Move every term to
+    one side: x² − 8x + 16 = 0", seed 155) are roundabout; the direct reading
+    is one repeated root. Both are correct. Optional polish.
+
+### Pass 3 checks
+
+- **Gate and text test.** The family gate passes for all three changed
+  templates, and the author's `test/sat-math-text.test.js` passes.
+- **Carried forward.** All 123 samples in the 26 records were rebuilt under
+  3f8e23a and under the current source. Each displays the same question,
+  choice order and key, and agrees with the recorded blind answer. The
+  samples are the pass-1 `rv1016-adv.*` seeds; for nonlinear-formula-rearrange
+  they are the pass-2 `rv1016b-adv.*` seeds.
+- **Not in this pass's scope.** The optional quadratic-must-be-true
+  rationale trim (pass 2) is not here: its file, `nonlinear-functions.js`, is
+  not on the pass-3 list.
+
+### Pass 3 fragment and validation
+
+- **Fragment:** `.scratch/review-advanced/reviews-pass3.json` in the templates
+  worktree.
+  - It holds 26 accepted records and 123 samples.
+  - `templateVersion` and `fingerprint` come from the current registry, and
+    `difficulty` from the source.
+- **Validation:**
+  - My checker, `.scratch/review-advanced/pass3/check-fragment-pass3.js`,
+    passes.
+  - Run in memory on these 26 records, `tools/check-template-reviews.js`
+    (`reviewProblems`) reports 0 problems.
+  - A tampered copy, with a stale fingerprint and a missing record, was
+    refused.
+
+### Pass 3 uncertainty
+
+As in passes 1 and 2, sampled seeds and scans cannot exclude rare defects.
+The 23 identical templates rest on 600-draw equality with the source accepted
+in pass 2.

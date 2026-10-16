@@ -565,3 +565,167 @@ plural noun. The remaining long-decimal hits are exact values:
 - **Tiers.** The tier for `crew-rate-change` is still an editorial judgement.
   A reviewer who treats the "join" form as Medium could call the template
   Medium–Hard.
+
+## Pass 3 (`feature/sat` at `4d7c613`)
+
+A cold content review followed pass 2, and the author changed two
+`problem-solving-and-data-analysis` files in response: `ratios-rates-and-units.js`
+and `one-variable-data.js`. Pass 3 re-reviews the 23 Problem-Solving and Data
+Analysis templates from those files on `.scratch/lane/stale-templates-pass3.txt`.
+
+The baseline for "identical" is `3f8e23a`. Its families source is identical
+to `47d553a`, the source reviewed in pass 2.
+
+### Result
+
+| | Count |
+| --- | --- |
+| Templates | 23 |
+| Accepted | 23 |
+| Rejected | 0 |
+| Fresh blind solves | 6, all agreeing with the key |
+| Blind misses | 0 |
+| Tier changes | None |
+
+### Method
+
+- **Fresh blind solves.** I solved the two templates whose displayed
+  questions changed on fresh seeds `rv1016c-psda.<id>.<n>`, n = 0, 1, 2,
+  using the pass-1 blind filter.
+  - Each answer was recorded before its full view was generated.
+  - I read the pass-3 diff only after these six answers were recorded.
+- **Field-by-field comparison.**
+  - **Draws.** All 23 templates were instantiated on 603–606 seeds from
+    `3f8e23a` and from `4d7c613`, in separate processes: 300 integer seeds,
+    300 runtime-shaped seeds and my recorded seeds.
+  - **Fields compared.** The displayed question, key, rationales,
+    explanation, steps, principles, trap, hint, strategy, difficulty and
+    `verified`.
+- **Scans.**
+  - **Stem-only scans** check `greatest-value-from-center` and
+    `population-density` from the displayed text alone. Run on `3f8e23a`, the
+    same scans flag the old defects: 1,555 draws whose least allowed value is
+    unstated, and 321 non-whole count choices.
+  - **The pass-2 equation-exactness scan** found 0 inexact chains in 2,000
+    draws each of the four changed templates.
+  - **The pass-1 text scan** found no hits for any of those four.
+- **Gates and tests.**
+  - `check-families --family` passes for the four changed templates.
+  - `test/sat-math-text.test.js` and `test/sat-math-realism.test.js` pass 8/8.
+
+### Fresh blind solves
+
+| Template | Tier | Seeds | Blind | Agree |
+| --- | --- | --- | --- | --- |
+| greatest-value-from-center | Hard | `rv1016c-psda.greatest-value-from-center.0–2` | 88, A, A | 3/3 |
+| population-density | Medium | `rv1016c-psda.population-density.0–2` | 7500, 50, D | 3/3 |
+
+### greatest-value-from-center (Hard, v3): the ambiguity is gone
+
+- **The scan.** It covers 4,000 draws, roughly 800 for each of the five
+  scenes. It parses each stem's least allowed value and computes the key from
+  the stem alone.
+  - **The five scenes and their least values:**
+    - "different positive integers": 1;
+    - "different nonnegative integers": 0;
+    - "a whole number of points, possibly 0": 0;
+    - "at least 15 minutes each day": 15;
+    - committee ages "at least 18 years old": 18.
+  - **Result:**
+    - every stem states its least allowed value;
+    - no stem says only "whole numbers";
+    - all 4,000 keys agree with the stem-only computation, including 1,004
+      greatest-range draws.
+- **The merged rationale is correct.** It appears with repeats allowed and
+  5 values. There, starting the smaller values one too high and forcing all
+  the values to differ both give the largest value minus 2. All 205 merged
+  rationales sit on exactly that value.
+  - Example, seed 7: 49, "Reads 'at least 15' as 'more than 15' … ; making
+    the other values all different … gives the same number".
+- **The explanation and steps now name the least value used.** For example,
+  "starting from 0, the least value allowed: 0, 1, 2 below the median".
+  - For distinct values, the trap now says "the next integers".
+- **Tier:** Hard, unchanged.
+
+### population-density (Medium, v3): only whole-number wrong counts
+
+- **The scan.** It covers 4,000 draws, of which 757 ask for the count
+  (425 multiple choice).
+  - **Whole numbers:** every count choice is a whole number.
+  - **Keys:** every key equals density × converted area, recomputed from the
+    stem.
+  - **Rationales:** each one recomputes exactly to its choice. The formulas
+    are:
+    - the area left unconverted;
+    - the 1.6 length factor;
+    - the wrong direction;
+    - dividing by 1.6 again;
+    - multiplying by 1.6 again (new);
+    - stopping at the converted area (new).
+- **Example, seed 16:**
+  - Key 14,250 = 285 × 50.
+  - New slip "Stops at the converted area, 50 square miles, without
+    multiplying by the density".
+  - 36,480 = 285 × 128.
+  - 22,800 = 285 × 80.
+- **Draws that changed.** 61 draws changed only because the larger slip set
+  shifts the redraws. The number-form traps no longer mention offered
+  choices.
+- **Tier:** Medium, unchanged.
+
+### Text only: the displayed question and key are identical on all draws
+
+- **`multi-unit-rate` (v6).** The trap now reads "gives a wrong count"
+  instead of "gives an offered but wrong count".
+  - This changed 112 of 603 draws: 65 multiple choice and 47 numeric.
+  - No numeric draw mentions choices anywhere.
+- **`crew-rate-change` (v3).** In the "how many must join" form, the step now
+  reads: "Time left on the plan: 9 − 2 = 7 hours; to finish 4 hours early:
+  7 − 4 = 3 hours." The crew needed is then its own step.
+  - This changed 317 of 606 draws.
+  - Every printed chain is exact (16,417 checked).
+- **Samples.** Both templates carry forward their recorded samples:
+  - `multi-unit-rate`: pass-1 seeds;
+  - `crew-rate-change`: pass-2 seeds `rv1016b-psda.crew-rate-change.0–2`.
+
+### Identical draws (19)
+
+Every field is identical between `3f8e23a` and `4d7c613` on all 603 or 606
+draws of each template. The pass-3 diff of the two files touches none of
+their code. The recorded samples carry forward:
+
+- the pass-2 seeds for `data-change-statistics` and `density-cube-edge`;
+- the pass-1 seeds for the other 17.
+
+The 19 templates:
+
+- `proportional-rate-scaling`, `ratio-share-of-total`, `rate-unit-conversion`
+- `ratio-after-change`, `average-rate-two-legs`
+- `list-mean-or-median`, `box-plot-summary`, `data-display-center`,
+  `mean-missing-value`, `weighted-mean-groups`
+- `data-change-statistics`, `average-rate-required-leg`, `density-cube-edge`
+- `combined-work-rate`, `data-change-median`, `histogram-class-intervals`
+- `compare-spread-plots`, `could-be-median`, `extreme-value-correction`
+
+### Pass-3 admission records
+
+- **Records:** the reviewer's fragment holds 23 records, one per template on
+  the pass-3 list.
+  - **Fresh samples:** `greatest-value-from-center` and `population-density`.
+  - **Carried forward:** the other 21 keep their samples from the pass-2
+    fragment.
+- **Current values:** version and fingerprint come from the current registry,
+  and difficulty from the source. All 23 versions match the pass-3 list.
+- **Validation.** The adapted checker passes. It confirms that all 69 samples
+  rebuild to their recorded answers, each template has three distinct
+  displayed questions, and the version, fingerprint and tier are current.
+
+### Pass-3 uncertainty
+
+- **Identical-draw templates.** Equality is shown on about 600 draws per
+  template, not proven for all seeds.
+- **The new blind seeds miss the changed scenes.** None of the three new
+  `greatest-value-from-center` blind seeds drew the nonnegative-integers or
+  basketball scenes. Those scenes and the merged rationale were checked by the
+  4,000-draw scan and by reading full views (seeds 4, 7 and 8), not by blind
+  solving.

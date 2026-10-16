@@ -477,3 +477,150 @@ All 55 are accepted.
 - **Coverage of the new template:** the Hard tier rests on 3 blind and 20 read seeds. I did not rerun `check-families --reps 3000`; the author reports that it passes.
 - **Desmos routes:** I did not check the routes for the changed templates; the author reports them verified.
 - **Identical-draw templates:** "identical" means identical on 603 seeds, or 6,000 for the tier-only and text-only templates. The fingerprint changed only because each template's source file changed.
+
+## Pass 3 (after the cold content review), 2026-10-16
+
+- **Source reviewed:** the worktree at `4d7c613`.
+- **Comparison base:** `3f8e23a`. Its family source is byte-identical to the `47d553a` source I reviewed in pass 2. `src/lib/families/shared` and the catalog are unchanged in this pass.
+- **Scope:** the 32 Algebra and Geometry and Trigonometry templates on `.scratch/lane/stale-templates-pass3.txt`:
+  - all of `linear-equations-in-one-variable`, `linear-inequalities` and `right-triangles-and-trigonometry`;
+  - my own classification on 603 draws per template agrees with the author's.
+
+  | Kind | Count | What pass 3 did |
+  | --- | --- | --- |
+  | Displayed question changed | 3 | Fresh blind solves at `rv1016c-alg.<id>.0–2` and the full judgement |
+  | Teaching text only | 3 | Confirmed identical displayed questions; read the changed text; carried pass-2 samples |
+  | Identical draws | 26 | Confirmed identical; carried pass-2 samples |
+
+This is still sampled agent review, not human editorial approval or a calibration of SAT difficulty.
+
+### Pass 3 outcome
+
+| | Count |
+| --- | --- |
+| Templates reviewed | 32 |
+| Accepted | 32 |
+| Rejected | 0 |
+| Fresh blind solves | 9 |
+| Fresh blind answers that agreed with the key | 9 |
+| Blind misses | 0 |
+| Pass-2 samples carried forward | 29 templates × 3; each still rebuilds to the answer I recorded |
+
+**Tiers:** no tier changed in my domain. My judgements on the two Hard templates the coordinator asked about are below.
+
+### Pass 3 method
+
+1. **Fresh blind solves.** I chose seeds by comparing displayed questions only; n = 0–2 were distinct for all three templates.
+   - I solved them through the brief's blind pipeline.
+   - I locked the 9 answers (SHA-256 `f0f6c956…`) before opening any full view or the diff.
+   - All 9 agree with the key.
+2. **Draw comparison against `3f8e23a`.**
+   - **Draws:** 603 per template (the pass-2 sample seeds, 300 integer seeds and 300 runtime-shaped seeds).
+   - **Fields:** the displayed question, the key and the teaching text are counted separately; metadata is checked too.
+   - **Text-only templates:** repeated on 6,003 draws each; no displayed question or key differs.
+   - **Carried samples:** every carried-forward sample rebuilds to an identical displayed question and key.
+3. **Changed templates.** I read the diff and 10–12 further full-view seeds of each shown-changed template, with explanations.
+   - For the text-only templates, I printed old and new text side by side on 2–4 changed draws and checked them.
+   - `check-families --family` passes for all six changed templates.
+   - `test/sat-math-text.test.js` (3/3) and `test/sat-math-realism.test.js` (5/5) pass.
+   - My text scan, with the same patterns as passes 1 and 2, finds nothing in 600 draws of all 32 templates.
+4. **Fragment.** `reviews-pass3.json` holds all 32 records, built by script.
+   - Versions and fingerprints come from the current registry, and difficulty from the source.
+   - It passes my adapted checker. Against the current source, the pass-2 fragment now reports stale, as expected.
+
+### Fixes confirmed (scans of 10,000 integer plus 10,000 runtime-shaped draws)
+
+- **`linear-solution-parameter-condition`:**
+  - Only two forms remain: "which values of a" (5,920 draws) and the new numeric "greatest/least integer a" form (4,080).
+  - The "k times a / d more than a" form is gone.
+  - Every draw has either u < 0 (the inequality in a must be reversed) or k < 0 (the equation is divided by a negative number when x is collected on the parenthesized side). No draw has neither.
+- **`inequality-percent-of-total`:**
+  - Only the least form (5,982) and the greatest form (4,018) remain.
+  - There is no "which inequality" form.
+  - There is still no "1 of whom" in any draw.
+- **`inequality-two-variable-context`:**
+  - No elevator stem says "is loading"; the worker "will ride in the elevator", so the worker's weight belongs in the model.
+  - No bound is written as an improper fraction; 8,216 draws show "quotient ≈ decimal".
+- **Text-only fixes:**
+  - **`trig-ratio-from-ratio`:** "YZ = √((17k)² − (15k)²) = 8k" in both the explanation and the steps.
+  - **Numeric traps:** the traps in `trig-ratio-from-ratio` and `trig-context-length` say "gives a wrong length" instead of naming offered choices.
+  - **`inequality-system-from-context`:** names what it counts ("the number of tickets/crates is x + y"), not "items".
+
+  All are correct on the draws I read.
+
+### Judgements on the shown-changed templates
+
+**`linear-solution-parameter-condition` (Hard, v3): accepted. Not Hard in every draw.**
+- **Blind solves:**
+  - `rv1016c-alg….0`: 3x − 3 = 6(x + 2a), least integer a with x < −9. Answer 3.
+  - `….1`: answer A (a < 1).
+  - `….2`: answer C (a < −2).
+
+  All three agree with the key.
+- **Further seeds:** 12 more (n = 3–14) checked by hand in both forms, including the integer keys 1, 7, −6 and 4. Each integer key is the nearest whole a strictly past the boundary. Explanations, the boundary step and rationales are correct.
+- **Tier: Medium–Hard.**
+  - **The 60% of draws with u < 0** need a genuine reversal. In the integer form they also need the strict boundary excluded. These are Medium–Hard to Hard.
+  - **The 40% with u > 0** have their "trap" (k < 0) only on one solving path. A student who collects x on the side with the larger coefficient never divides by a negative. Example: 6(x + a) = 8x − 18 gives 2x = 6a + 18. That happens in every u > 0 draw where the sides are displayed swapped, for example seed 13, 4x + 14 = 2(x + 2a). Those draws are a two-step linear solve followed by a positive-coefficient inequality, which I judge official Medium. The integer form adds only the boundary step.
+  - The template is therefore on the Medium–Hard border. Hard is within one band, so it is acceptable, but not every draw is Hard.
+  - **Suggestion** if the author wants every draw Hard: require u < 0 in every draw, or make the u > 0 draws integer-form only.
+
+**`inequality-percent-of-total` (Hard, v3): accepted.**
+- **Blind solves:** `….0` C (9), `….1` 18, `….2` D (4). All agree with the key.
+- **Further seeds:** 10 more checked by hand (n = 3–12) across all five scenes, both modes and all four relations. Keys, rounding direction, the boundary and every rationale are correct.
+- **Tier:** every draw now sets the unknown in both the part and the whole, then rounds in the direction the condition requires. I judge it official Medium–Hard, unchanged from pass 1, so Hard is acceptable.
+
+**`inequality-two-variable-context` (Easy, v7): accepted.**
+- **Blind solves:** `….0` 55 (the worker rides; 38b ≤ 2,125), `….1` C, `….2` 9. All agree with the key.
+- **Further seeds:** 10 more checked by hand. Combination totals and rationales are correct.
+- **Tier:** unchanged from pass 1. The template is Easy; the bound form is Easy–Medium.
+- **Nit, not blocking:** "≈" also prints when the quotient is an exact short decimal ("38 ÷ 4 ≈ 9.5", "460 ÷ 8 ≈ 57.5"). That happens in 2,567 of 20,000 draws. "=" would be exact there.
+
+### Pass 3 per-template results
+
+Columns:
+- **Kind:** Shown, Text or Same, as in pass 2.
+- **Draws differing:** of 603, against `3f8e23a`, counted as displayed / key / teaching text.
+- **Samples:** for the three fresh templates, the fresh blind answers in seed order; otherwise the pass-2 samples, carried forward unchanged.
+
+All 32 are accepted.
+
+| Template | Kind | Tier | Ver | Draws differing (displayed / key / teaching) | Samples |
+| --- | --- | --- | --- | --- | --- |
+| inequality-two-variable-context | Shown | Easy | 7 | 153 / 0 / 275 | fresh `rv1016c-alg`: 55, C, 9 (3/3) |
+| linear-solution-parameter-condition | Shown | Hard | 3 | 542 / 519 / 542 | fresh `rv1016c-alg`: 3, A, C (3/3) |
+| inequality-percent-of-total | Shown | Hard | 3 | 603 / 530 / 603 | fresh `rv1016c-alg`: C, 18, D (3/3) |
+| trig-context-length | Text | Medium | 6 | 0 / 0 / 603 | pass 2, carried |
+| inequality-system-from-context | Text | Medium | 3 | 0 / 0 / 359 | pass 2, carried |
+| trig-ratio-from-ratio | Text | Medium | 3 | 0 / 0 / 603 | pass 2, carried |
+| linear-equation-solve | Same | Easy | 6 | 0 / 0 / 0 | pass 2, carried |
+| linear-equation-context-meaning | Same | Easy | 6 | 0 / 0 / 0 | pass 2, carried |
+| equation-solution-count | Same | Medium | 6 | 0 / 0 / 0 | pass 2, carried |
+| linear-equation-word-model | Same | Easy | 5 | 0 / 0 / 0 | pass 2, carried |
+| literal-equation-rearrange | Same | Medium | 6 | 0 / 0 / 0 | pass 2, carried |
+| linear-expression-from-equation | Same | Medium | 5 | 0 / 0 / 0 | pass 2, carried |
+| inequality-allowed-range | Same | Easy | 7 | 0 / 0 / 0 | pass 2, carried |
+| linear-inequality-solve | Same | Easy | 7 | 0 / 0 / 0 | pass 2, carried |
+| inequality-word-limit | Same | Easy | 6 | 0 / 0 / 0 | pass 2, carried |
+| inequality-system-check | Same | Medium | 6 | 0 / 0 / 0 | pass 2, carried |
+| inequality-integer-optimization | Same | Medium | 7 | 0 / 0 / 0 | pass 2, carried |
+| inequality-region-corner | Same | Hard | 8 | 0 / 0 / 0 | pass 2, carried |
+| right-triangle-ratio-read | Same | Easy | 6 | 0 / 0 / 0 | pass 2, carried |
+| special-right-triangle | Same | Easy | 6 | 0 / 0 / 0 | pass 2, carried |
+| pythagorean-two-step | Same | Medium | 7 | 0 / 0 / 0 | pass 2, carried |
+| trig-similar-cofunction | Same | Hard | 6 | 0 / 0 / 0 | pass 2, carried |
+| unit-circle-quadrant | Same | Medium | 6 | 0 / 0 / 0 | pass 2, carried |
+| literal-equation-factor-target | Same | Medium | 6 | 0 / 0 / 0 | pass 2, carried |
+| linear-equation-unknown-constants | Same | Hard | 6 | 0 / 0 / 0 | pass 2, carried |
+| linear-equation-two-quantities | Same | Medium | 6 | 0 / 0 / 0 | pass 2, carried |
+| inequality-graph-region | Same | Medium | 6 | 0 / 0 / 0 | pass 2, carried |
+| inequality-parameter-range | Same | Medium | 7 | 0 / 0 / 0 | pass 2, carried |
+| cofunction-complementary-angles | Same | Medium | 5 | 0 / 0 / 0 | pass 2, carried |
+| two-observer-elevation | Same | Hard | 6 | 0 / 0 / 0 | pass 2, carried |
+| inequality-solution-containment | Same | Hard | 4 | 0 / 0 / 0 | pass 2, carried |
+| tiered-rate-regime | Same | Medium | 3 | 0 / 0 / 0 | pass 2, carried |
+
+### Pass 3 uncertainty
+
+- **Same limits as earlier passes:** the reviewer is the same model family as the author, coverage is sampled, and tier calls are editorial opinions.
+- **Not rechecked:** I did not rerun `check-families --reps 3000` or the Desmos verifiers; the author reports that both pass.
+- **Desmos route text:** the author notes that the routes for `linear-solution-parameter-condition` and `inequality-percent-of-total` still describe dropped forms. That is for the desmos lane, and it does not affect these templates' admission.
