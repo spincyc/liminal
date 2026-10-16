@@ -78,9 +78,34 @@ This is agent review with synthetic students, not a study of real learning.
 | Level placement and two-part Try-its in Learn | Fixed |
 | A pass-3 hint named the method (b² − 4ac) | Fixed in pass 4 and re-reviewed |
 
+## Re-check on the final build
+
+The same three reviewers re-ran their probes, scenarios and live Desmos
+checks at `6479022`. Nothing regressed. The experience reviewer's verdict
+became "clearly a better path from ~530". The re-check found more problems,
+each fixed afterwards and checked again:
+
+| Finding | Disposition |
+| --- | --- |
+| **High:** a drill answer is saved before its session exists, so once the record trimmed, the ledger moved past drill answers. Drills then stopped spending budgets and the plan stalled | Fixed: attempts record `setKind`/`setSkill`, and the checkpoint stops before answers without a session. Covered by an app-pattern test that fails without the fix |
+| "No target in 21 days" fired with every skill at target; `medium-flat` fired on high plateaus | Fixed: it fires only while a skill is short, and only below 80% |
+| Misses stayed parked on a skill that reached its target outside the plan | Fixed: unparked at first flight, first drill or reaching target |
+| A merged import dropped unknown fields | Fixed |
+| Answers older than the ledger checkpoint, merged in later, don't change the plan | Documented as inherent to the checkpoint |
+| Two-drill turns often ended at Easy | Fixed: a turn whose drills never left Easy gets one extra drill. Simulated, 190 of 190 first turns (moderate) and 186 of 190 (slow) reach a Medium drill |
+| The radical-equation route ignored cube roots (19% of draws) | Fixed (`cbrt`), confirmed live |
+| A `crew-rate-change` rationale omitted a step; a plural slip | Fixed; a recompute test was added, and the pass-5 review accepted it |
+| A stale "one-week Desmos plan" phrase; results and summary wording | Fixed |
+
 ## Still open
 
 - Tiers remain editorial, and the student model is synthetic.
+- The Review backlog still grows slowly: about 90 due by week 12 for a
+  simulated moderate learner, with six questions a day. No set size from 6
+  to 8 levels it off without taking more than 30% of practice. It is shown
+  calmly and never by itself marks the week Needs attention.
+- The Desmos drill draws by template, so some draws are question forms
+  their route says it does not cover.
 - Desmos behaviour was confirmed on desmos.com, not in Bluebook.
 - Pre-existing text slips in files these changes did not otherwise touch,
   named in `test/sat-math-text.test.js`.

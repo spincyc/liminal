@@ -230,7 +230,10 @@ For a coherent ACT bank batch:
     or imported later, do not change it (a full replay runs whenever the
     kept answers reach back to the ledger's first answer). Attempts carry
     `setKind` and `setSkill` from the set that showed them, so a drill
-    answer saved before its session still spends its skill's budget. The
+    answer saved before its session still spends its skill's budget.
+    Answers from before that take both from their session on load and
+    before every save (`Progress.classAttempts`), while the session is
+    still kept, so the session cap cannot unclass them. The
     record, restore and merge keep top-level fields they do not know, so an
     older tab cannot erase a newer field. It
     migrates
