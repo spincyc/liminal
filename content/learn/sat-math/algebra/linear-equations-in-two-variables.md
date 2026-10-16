@@ -10,10 +10,39 @@ skill: Linear equations in two variables
 An equation such as 3x + 5y = 60 has two unknowns, so it has many solutions:
 every point on its line. Questions in this skill ask you to build such an
 equation from a situation, or to read meaning from its graph. It sits in
-Algebra, {{fact:sat-math-algebra}} of the Math section. Medium questions can
-ask how a point or intercept changes when a line is shifted. Hard questions
-give a condition on unknown intercepts or require counting whole-number
-solutions to an exact total.
+Algebra, {{fact:sat-math-algebra}} of the Math section.
+
+## Before you start {#before-you-start}
+
+This page uses three skills from Grade 8: the slope between two points,
+the slope and y-intercept of y = mx + b, and solving a two-step equation.
+Try these first. If one goes wrong, rebuild it with
+[lesson 2-8, slope](lessons.html#common-core-math/8/2-8),
+[lesson 2-11, y = mx + b](lessons.html#common-core-math/8/2-11) or
+[lesson 2-1, solving equations](lessons.html#common-core-math/8/2-1).
+
+> **Try it.** What is the slope of the line through (1, 2) and (4, 11)?
+>
+> **Answer.** 3
+>
+> The rise is 11 − 2 = 9 and the run is 4 − 1 = 3, so the slope is
+> 9/3 = 3. Shaky? [Lesson 2-8](lessons.html#common-core-math/8/2-8).
+
+> **Try it.** For y = −2x + 7, what are the slope and the y-intercept?
+>
+> **Answer.** The slope is −2 and the y-intercept is (0, 7).
+>
+> In y = mx + b, m is the slope and b is the value of y at x = 0:
+> y = −2(0) + 7 = 7. Shaky?
+> [Lesson 2-10](lessons.html#common-core-math/8/2-10) and
+> [lesson 2-11](lessons.html#common-core-math/8/2-11).
+
+> **Try it.** If 4x + 3y = 24 and x = 3, what is y?
+>
+> **Answer.** y = 4
+>
+> Substitute: 4(3) + 3y = 24, so 12 + 3y = 24. Subtract 12: 3y = 12, so
+> y = 4. Shaky? [Lesson 2-1](lessons.html#common-core-math/8/2-1).
 
 ## Graph interpretation {#graph-interpretation}
 
@@ -39,6 +68,24 @@ up again and again:
 > Slope: solve for y to get y = 12 − (3/5)x. The slope is −3/5: each extra
 > notebook means 3/5 of a pen fewer, or 3 fewer pens for every 5 notebooks.
 
+> **Try it.** A club spends exactly $48 on snacks at $4 a bag and drinks at
+> $6 a bottle, so 4x + 6y = 48, where x is bags and y is bottles. What does
+> the y-intercept mean, is (6, 4) on the line, and what does the slope mean?
+>
+> **First step.** The x-intercept: set y = 0, so 4x = 48 and x = 12. With no
+> drinks the club can buy 12 bags of snacks. Now finish the other three parts.
+>
+> **Answer.** (0, 8): with no snacks, 8 bottles. (6, 4) is on the line. The
+> slope is −2/3: 2 fewer bottles for every 3 more bags.
+>
+> y-intercept: set x = 0, so 6y = 48 and y = 8.
+>
+> (6, 4): 4(6) + 6(4) = 24 + 24 = 48, so 6 bags and 4 bottles cost exactly
+> $48.
+>
+> Slope: 6y = 48 − 4x, so y = 8 − (2/3)x. Each extra bag means 2/3 of a
+> bottle fewer.
+
 > **Trap.** Choosing an interpretation that swaps the variables ("each extra
 > pen costs 3 notebooks"). Write out which letter is which before reading
 > the choices.
@@ -58,10 +105,26 @@ the x-coefficient over the y-coefficient, with the sign changed.
 >
 > By solving: −10y = −4x + 30, so y = (2/5)x − 3. The slope is 2/5.
 
+> **Try it.** What is the slope of the graph of 6x + 9y = 45?
+>
+> **Answer.** −2/3
+>
+> Shortcut: −A/B = −6/9 = −2/3.
+>
+> By solving: 9y = −6x + 45, so y = −(2/3)x + 5.
+
 > **Fails when.** The x-term and the y-term are not on the same side. In
 > 2x = 3y + 6, A is 2 but B is not 3: rewrite it as 2x − 3y = 6 first, and
 > the slope is −2/(−3) = 2/3, not −2/3.
 > If B = 0 and A ≠ 0, the line is vertical and its slope is undefined.
+
+> **Try it.** What is the slope of the graph of 8x = 2y + 10?
+>
+> **Answer.** 4
+>
+> The terms are on opposite sides, so solve for y: 2y = 8x − 10, and
+> y = 4x − 5. Reading −8/2 = −4 straight from the equation gives the wrong
+> sign.
 
 ### Moving along a line {#moving-along-a-line}
 
@@ -77,6 +140,19 @@ unknown point (s, t) on the line, you never need s, t, or the constant.
 >
 > Check by subtracting: 5(p − 4) + 2(q + k) = 17 and 5p + 2q = 17 leave
 > −20 + 2k = 0, so k = 10 again.
+
+> **Try it.** The points (a, b) and (a + 6, b + t) both lie on the graph of
+> 2x − 3y = 9. What is t?
+>
+> **Hint.** Find the slope first, then use Δy = m · Δx.
+>
+> **Answer.** t = 4
+>
+> The slope is −2/(−3) = 2/3. Moving 6 right means Δx = 6, so
+> Δy = (2/3)(6) = 4.
+>
+> Check by subtracting: 2(a + 6) − 3(b + t) = 9 and 2a − 3b = 9 leave
+> 12 − 3t = 0, so t = 4.
 
 > **Trap.** Using the coefficients themselves as the step. In 5x + 2y = 17
 > a step of 5 in x and 2 in y does not stay on the line; a step of 2 in x
@@ -103,9 +179,23 @@ y = 0.
 > In standard form: 3x + 4y = 12 becomes 3x + 4(y + 6) = 12, or
 > 3x + 4y = −12, and y = 0 gives x = −4 again.
 
+> **Try it.** A line passes through (0, 4) and (2, 0). It is translated 2
+> units up. What is the x-intercept of the new line?
+>
+> **Answer.** (3, 0)
+>
+> The slope is (0 − 4)/(2 − 0) = −2, so the line is y = −2x + 4. Moving it
+> 2 up gives y = −2x + 6.
+>
+> Set y = 0: 2x = 6, so x = 3. The x-intercept moved 1 unit, from 2 to 3,
+> not 2 units.
+
 > **Trap.** Moving the x-intercept by the size of the vertical shift, or
 > replacing y with y + d to move a line up. Up d means y − d inside the
 > equation.
+
+For a harder version of graph interpretation, where the line is known only
+through its intercepts, see [a line from its intercepts](#line-from-intercepts).
 
 ## Equation modeling {#equation-modeling}
 
@@ -131,6 +221,19 @@ total.
 >
 > Subtract 600: 7c = 420, so c = 60.
 
+> **Try it.** A fundraiser sold shirts at $15 and hats at $9 and took in
+> $1,230. Write an equation, then find the number of hats sold if 40 shirts
+> were sold.
+>
+> **First step.** Let s be shirts and h be hats. Each term is dollars:
+> 15s + 9h = 1,230. Now substitute and solve.
+>
+> **Answer.** 70 hats
+>
+> Substitute s = 40: 15(40) + 9h = 1,230, so 600 + 9h = 1,230.
+>
+> Subtract 600: 9h = 630, so h = 70.
+
 > **Example.** A caterer charges a setup fee of $150 plus $22 per guest. A
 > second caterer charges $40 per guest and no setup fee. Write each total
 > cost as an equation in g, the number of guests, and find when the costs
@@ -143,9 +246,32 @@ total.
 > At 8 guests the second caterer is cheaper (320 against 326); at 9 guests
 > the first is (348 against 360).
 
+> **Try it.** One gym charges a $60 joining fee plus $25 per month. Another
+> charges $40 per month and no joining fee. Write each total cost as an
+> equation in m, the number of months. After how many months are the totals
+> equal, and which gym costs less for a full year?
+>
+> **Answer.** 4 months ($160 at each); for a year the first gym costs less.
+>
+> First gym: C = 60 + 25m. Second gym: C = 40m.
+>
+> Equal totals: 60 + 25m = 40m, so 60 = 15m and m = 4. Check:
+> 60 + 25(4) = 160 and 40(4) = 160.
+>
+> For 12 months: 60 + 25(12) = 360 against 40(12) = 480.
+
 > **Check.** Before choosing a model, test it with a number you can reason
 > about without algebra. If 0 guests should cost $150, the equation must
 > give C = 150 at g = 0.
+
+For a harder version of equation modeling, counting the whole-number
+combinations that reach an exact total, see
+[whole-number solutions](#whole-number-solutions).
+
+## Harder versions {#hard}
+
+The hardest questions in this skill test the line itself: which
+whole-number points lie on it, or what a condition on its intercepts forces.
 
 ### Whole-number solutions {#whole-number-solutions}
 
@@ -173,6 +299,22 @@ list them all for ax + by = c:
 >
 > Check (8, 6): 6(8) + 8(6) = 48 + 48 = 96.
 
+> **Try it.** A florist spends exactly $120 on roses at $4 each and lilies
+> at $6 each, buying at least one of each. How many combinations of rose and
+> lily counts are possible?
+>
+> **First step.** Let x be roses and y lilies: 4x + 6y = 120. Divide by 2:
+> 2x + 3y = 60. One solution is x = 0, y = 20. Now step from it and count.
+>
+> **Answer.** 9
+>
+> The step is 3 in x and −2 in y: (0, 20), (3, 18), (6, 16), …, (30, 0).
+> Those are x = 0, 3, 6, …, 30, which is 30/3 + 1 = 11 points.
+>
+> At least one of each rules out (0, 20) and (30, 0), leaving 9.
+>
+> Check (12, 12): 4(12) + 6(12) = 48 + 72 = 120.
+
 > **Trap.** Stepping by the original coefficients. From 6x + 8y, a step of
 > 8 in x and 6 in y skips every other solution, (4, 9) and (12, 3) here.
 > Divide out the common factor first. And count both ends: from x = 4 to
@@ -195,6 +337,17 @@ into an equation in one letter:
 >
 > Check: from (2, 0) to (0, −6) the slope is (−6 − 0)/(0 − 2) = 3.
 
+> **Try it.** A line has slope −2, x-intercept (a, 0) and y-intercept
+> (0, b), and a + b = 9. What is b?
+>
+> **Answer.** b = 6
+>
+> The slope is −b/a = −2, so b = 2a.
+>
+> Substitute: a + 2a = 9, so a = 3 and b = 6.
+>
+> Check: from (3, 0) to (0, 6) the slope is (6 − 0)/(0 − 3) = −2.
+
 > **Example.** Which equation has x-intercept (6, 0) and y-intercept
 > (0, −4)?
 >
@@ -202,21 +355,23 @@ into an equation in one letter:
 >
 > Check: x = 6, y = 0 gives 12; x = 0, y = −4 gives 12.
 
+> **Try it.** Which equation has x-intercept (−5, 0) and y-intercept (0, 2)?
+>
+> - A) 2x + 5y = 10
+> - B) −2x + 5y = 10
+> - C) 5x − 2y = 10
+> - D) 5x + 2y = −10
+>
+> **Answer.** B
+>
+> x/(−5) + y/2 = 1. Multiply by 10: −2x + 5y = 10.
+>
+> Check: x = −5, y = 0 gives 10; x = 0, y = 2 gives 10. Choice A gives −10
+> at (−5, 0), and C and D give −25 there.
+
 > **Trap.** Taking the slope as b/a. The run from (a, 0) to (0, b) is −a,
 > so the slope is −b/a: same steepness, opposite tilt.
 
 > **Fails when.** The line passes through the origin (both intercepts are 0)
 > or is horizontal or vertical (one intercept is missing). Then there is no
 > x/a + y/b form; use slope and a point instead.
-
-## What Hard looks like {#hard}
-
-Hard questions in this skill test the line itself rather than a story:
-
-- A line known only through its intercepts: a slope and a sum of intercepts, or a ratio of intercepts and a point (see [a line from its intercepts](#line-from-intercepts)).
-- A story whose two counts must be whole numbers: how many combinations reach an exact total, or the greatest or least possible count. Step from one solution, and read whether "none" of one kind is allowed (see [whole-number solutions](#whole-number-solutions)).
-
-At Medium, questions about another point on a line use Δy = m · Δx, and
-questions about a translated graph require its new equation before finding
-an intercept. See [moving along a line](#moving-along-a-line) and
-[translating a line](#translating-a-line).

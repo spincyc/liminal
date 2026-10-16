@@ -10,12 +10,41 @@ skill: Linear functions
 A linear function changes by the same amount every time its input goes up
 by one. Written f(x) = mx + b, the slope m is that constant change and b is
 the output when x = 0. Linear functions are part of Algebra, which is
-{{fact:sat-math-algebra}} of the Math section. Easy questions ask you to read
-a slope or evaluate f(3). Hard ones give an identity that holds for every
-input or a table with unknown entries, then ask about the resulting function.
+{{fact:sat-math-algebra}} of the Math section.
 
 If graph axes or input/output readings are still uncertain, start with
 [Reading graphs](learn:sat/general/reading-graphs#scales).
+
+## Before you start {#before-you-start}
+
+This page uses the slope between two points, the intercepts of
+y = mx + b, and function notation. If a check below goes wrong, rebuild it
+with [lesson 2-8, slope](lessons.html#common-core-math/8/2-8),
+[lesson 2-11, y = mx + b](lessons.html#common-core-math/8/2-11) or
+[Algebra, week 7: function notation](weeks.html#high-school-math/algebra/7).
+
+> **Try it.** What is the slope of the line through (0, 6) and (4, −2)?
+>
+> **Answer.** −2
+>
+> The rise is −2 − 6 = −8 and the run is 4 − 0 = 4, so the slope is
+> −8/4 = −2. Shaky? [Lesson 2-8](lessons.html#common-core-math/8/2-8).
+
+> **Try it.** For y = 5 − 2x, what is y when x = 0, and what is x when
+> y = 0?
+>
+> **Answer.** y = 5 when x = 0, and x = 5/2 when y = 0.
+>
+> x = 0 gives y = 5 − 0 = 5. y = 0 gives 0 = 5 − 2x, so 2x = 5 and
+> x = 5/2. Shaky? [Lesson 2-10](lessons.html#common-core-math/8/2-10) and
+> [lesson 2-11](lessons.html#common-core-math/8/2-11).
+
+> **Try it.** If f(x) = 3x − 4, what is f(5)?
+>
+> **Answer.** 11
+>
+> Replace x with 5: f(5) = 3(5) − 4 = 15 − 4 = 11. Shaky?
+> [Algebra, week 7](weeks.html#high-school-math/algebra/7).
 
 ## Slope {#slope}
 
@@ -42,6 +71,14 @@ second.
 >
 > m = −9/6 = −3/2. The line falls 3 units for every 2 units to the right.
 
+> **Try it.** A line passes through (−4, −3) and (2, 1). What is its slope?
+>
+> **Answer.** 2/3
+>
+> Rise: 1 − (−3) = 4. Run: 2 − (−4) = 6.
+>
+> m = 4/6 = 2/3. The line rises 2 units for every 3 units to the right.
+
 > **Example.** What is the slope of a line perpendicular to 3x + 4y = 12?
 >
 > Solve for y: 4y = −3x + 12, so y = −(3/4)x + 3. The slope is −3/4.
@@ -54,9 +91,46 @@ second.
 > flip the fraction; −4/3 is what you get if you flip but forget to change
 > the sign. Both are common distractors.
 
+> **Try it.** What is the slope of a line perpendicular to 5x − 2y = 8?
+>
+> **First step.** Solve for y: −2y = −5x + 8, so y = (5/2)x − 4. The slope
+> is 5/2. Now finish.
+>
+> **Answer.** −2/5
+>
+> Take the negative reciprocal: flip to 2/5, then change the sign: −2/5.
+>
+> Check: (5/2) · (−2/5) = −1.
+
+> **Try it.** Line k is defined by y = 3x − 7. Line j is perpendicular to
+> line k and passes through (6, 1). What is the y-coordinate of the
+> y-intercept of line j?
+>
+> **Answer.** 3
+>
+> Line k has slope 3, so line j has slope −1/3: y = −(1/3)x + b.
+>
+> Use (6, 1): 1 = −(1/3)(6) + b = −2 + b, so b = 3.
+
 From a table, use any two rows, then confirm with a third. If x = 1, 3, 7
 gives f(x) = 5, 11, 23, the slope is (11 − 5)/(3 − 1) = 3, and
 (23 − 11)/(7 − 3) = 3 confirms the table is linear.
+
+> **Try it.** The table shows three values of x and f(x) for a linear
+> function f. What is the slope of the graph of y = f(x)?
+>
+> | x | f(x) |
+> | --- | --- |
+> | −2 | 9 |
+> | 1 | 3 |
+> | 7 | −9 |
+>
+> **Answer.** −2
+>
+> (3 − 9)/(1 − (−2)) = −6/3 = −2, and (−9 − 3)/(7 − 1) = −12/6 = −2
+> confirms it.
+
+For a harder version, see [a table with a letter in it](#table-with-a-letter).
 
 ## Intercepts {#intercepts}
 
@@ -75,11 +149,32 @@ gives f(x) = 5, 11, 23, the slope is (11 − 5)/(3 − 1) = 3, and
 >
 > The slope −5 is the change in charge per hour: it falls 5 points each hour.
 
+> **Try it.** A gift card's balance is f(n) = 60 − 4n dollars after n
+> coffees are bought with it. What do the two intercepts mean?
+>
+> **First step.** f(0) = 60: the balance before any coffee is bought. Now
+> find and interpret the other intercept.
+>
+> **Answer.** (0, 60) is the starting balance, $60. (15, 0) means the card
+> is empty after 15 coffees.
+>
+> Set f(n) = 0: 60 − 4n = 0, so n = 15.
+>
+> The slope −4 is the change in balance per coffee: each one costs $4.
+
 > **Example.** Find both intercepts of 2x − 5y = 20.
 >
 > x-intercept: set y = 0, so 2x = 20 and x = 10. The point is (10, 0).
 >
 > y-intercept: set x = 0, so −5y = 20 and y = −4. The point is (0, −4).
+
+> **Try it.** Find both intercepts of 3x + 4y = −24.
+>
+> **Answer.** (−8, 0) and (0, −6)
+>
+> x-intercept: set y = 0, so 3x = −24 and x = −8.
+>
+> y-intercept: set x = 0, so 4y = −24 and y = −6.
 
 A fast first look at a graph-matching question is to check the sign of the
 slope (rising or falling) and the sign of the y-intercept (above or below the
@@ -105,6 +200,15 @@ point (2, 11) on the graph. Two kinds of question:
 >
 > Set 4 − 2x = −6: subtract 4 to get −2x = −10, so x = 5.
 
+> **Try it.** For h(x) = 3x + 7, find h(−4), then find the x with
+> h(x) = 25.
+>
+> **Answer.** h(−4) = −5, and h(x) = 25 when x = 6.
+>
+> h(−4) = 3(−4) + 7 = −12 + 7 = −5.
+>
+> Set 3x + 7 = 25: subtract 7 to get 3x = 18, so x = 6.
+
 > **Example.** A linear function f has f(2) = 11 and f(6) = 23. What is
 > f(10)?
 >
@@ -114,39 +218,29 @@ point (2, 11) on the graph. Two kinds of question:
 >
 > f(10) = 3(10) + 5 = 35.
 
+> **Try it.** A linear function f has f(−1) = 8 and f(3) = −4. What is
+> f(5)?
+>
+> **First step.** Slope: (−4 − 8)/(3 − (−1)) = −12/4 = −3. Now find b and
+> f(5).
+>
+> **Answer.** −10
+>
+> Use a point to find b: 8 = −3(−1) + b, so b = 5 and f(x) = −3x + 5.
+>
+> f(5) = −3(5) + 5 = −10.
+
 > **Trap.** Reading f(2) = 11 as the point (11, 2). The input always comes
 > first.
 
-### A rule that holds for every x {#identity}
-
-Some questions give a relation such as f(x + 3) = f(x) + 12 or
-f(2x) = 2f(x) + 5 and say it is true for all x. Write f(x) = mx + b, work
-out both sides, and match them term by term: the x-terms must agree and the
-constants must agree.
-
-- Shifting the input, f(x + h), adds mh to the output, so the relation fixes the slope: f(x + 3) = f(x) + 12 means 3m = 12.
-- Scaling the input, f(kx), leaves the constant b alone, so the relation fixes the intercept instead.
-
-> **Example.** For a linear function f, f(2x) = 2f(x) + 5 for all x, and
-> f(3) = 1. What is f(−1)?
+> **Try it.** The function f is defined by f(x) = kx − 4, where k is a
+> constant. If f(3) = 11, what is the value of f(−2)?
 >
-> Left side: f(2x) = 2mx + b. Right side: 2(mx + b) + 5 = 2mx + 2b + 5.
+> **Answer.** −14
 >
-> The x-terms already agree, so the constants must: b = 2b + 5, which gives
-> b = −5.
+> f(3) = 11 means 3k − 4 = 11, so 3k = 15 and k = 5.
 >
-> From f(3) = 1: 3m − 5 = 1, so m = 2 and f(x) = 2x − 5.
->
-> f(−1) = −2 − 5 = −7. Check the relation at x = 1: f(2) = −1, and
-> 2f(1) + 5 = 2(−3) + 5 = −1.
-
-> **Trap.** Reading the 5 in the relation as the y-intercept. The relation
-> says b = 2b + 5, so b is −5, and it says nothing about the slope, which
-> comes from the one given value.
-
-> **Fails when.** The relation holds for one value of x only, such as
-> "f(2) = 2f(1) + 5". That is a single equation, not an identity, and you
-> can't match terms; use it together with the other facts as one equation.
+> f(−2) = 5(−2) − 4 = −14.
 
 ### Functions built from another function {#built-from-f}
 
@@ -175,6 +269,22 @@ a fact about g is a fact about f at some input. Work in this order:
 >
 > Check: f(2) = 3, and moving the graph 4 right carries (2, 3) to (6, 3).
 
+> **Try it.** The graph of the linear function f passes through (−1, 1)
+> and (2, 7). The function g is defined by g(x) = a · f(x) − 3, where a is a
+> constant, and the graph of g passes through (4, 30). What is a?
+>
+> **First step.** From the graph: f has slope (7 − 1)/(2 − (−1)) = 2, so
+> f(x) = 2x + 3. Now write g(4) = 30 as an equation about f.
+>
+> **Answer.** a = 3
+>
+> g(4) = 30 means a · f(4) − 3 = 30. Undo the outside change first:
+> a · f(4) = 33.
+>
+> f(4) = 2(4) + 3 = 11, so 11a = 33 and a = 3.
+>
+> Check: g(x) = 3(2x + 3) − 3 = 6x + 6, and g(4) = 30.
+
 > **Example.** For the linear function f, f(1) = 2 and f(4) = 11. The
 > function g is defined by g(x) = f(−2x) + 1. What is the slope of g?
 >
@@ -183,20 +293,92 @@ a fact about g is a fact about f at some input. Work in this order:
 > g(x) = 3(−2x) − 1 + 1 = −6x, so the slope is −6. The slope of f times the
 > factor −2.
 
+> **Try it.** For the linear function f, f(1) = 4 and f(5) = 6. The
+> function g is defined by g(x) = f(−6x) + 2. What is the slope of the
+> graph of y = g(x)?
+>
+> **Answer.** −3
+>
+> f has slope (6 − 4)/(5 − 1) = 1/2, so f(x) = (1/2)x + 7/2.
+>
+> g(x) = (1/2)(−6x) + 7/2 + 2 = −3x + 11/2, so the slope is −3: the slope
+> of f times the factor −6.
+
 > **Trap.** Using f's own slope, or dropping the sign of the factor inside
 > f. A factor inside f multiplies the slope, sign and all.
 
-## What Hard looks like {#hard}
+For a harder version, see [a rule that holds for every x](#identity).
 
-Hard questions in this skill give you only part of the function and make you
-build the rule first:
+## Harder versions {#hard}
 
-- A relation that is true for all x, such as f(4x) = 4f(x) + 6 or f(x + 2) = f(x) − 10, plus one value. Match terms to get one coefficient, and let the value give the other (see [a rule that holds for every x](#identity)).
-- A table whose inputs are unevenly spaced and whose outputs include a letter, such as f(2) = a, f(4) = 2a, f(9) = 18. Each change in f(x) is the slope times its own gap in x, so write that for both pairs of rows and solve for the letter.
+The harder questions give only part of the function, a rule that holds for
+every x or a table with a letter in it, and make you build f(x) = mx + b
+first.
 
-At Medium, a graph of f and a point on g can determine a constant in
-g(x) = a · f(x) + 2 or g(x) = f(x + k) − 3. See
-[functions built from another function](#built-from-f).
+### A rule that holds for every x {#identity}
+
+Some questions give a relation such as f(x + 3) = f(x) + 12 or
+f(2x) = 2f(x) + 5 and say it is true for all x. Write f(x) = mx + b, work
+out both sides, and match them term by term: the x-terms must agree and the
+constants must agree.
+
+- Shifting the input, f(x + h), adds mh to the output, so the relation fixes the slope: f(x + 3) = f(x) + 12 means 3m = 12.
+- Scaling the input, f(kx), leaves the constant b alone, so the relation fixes the intercept instead.
+
+> **Example.** For a linear function f, f(2x) = 2f(x) + 5 for all x, and
+> f(3) = 1. What is f(−1)?
+>
+> Left side: f(2x) = 2mx + b. Right side: 2(mx + b) + 5 = 2mx + 2b + 5.
+>
+> The x-terms already agree, so the constants must: b = 2b + 5, which gives
+> b = −5.
+>
+> From f(3) = 1: 3m − 5 = 1, so m = 2 and f(x) = 2x − 5.
+>
+> f(−1) = −2 − 5 = −7. Check the relation at x = 1: f(2) = −1, and
+> 2f(1) + 5 = 2(−3) + 5 = −1.
+
+> **Trap.** Reading the 5 in the relation as the y-intercept. The relation
+> says b = 2b + 5, so b is −5, and it says nothing about the slope, which
+> comes from the one given value.
+
+> **Try it.** For a linear function f, f(3x) = 3f(x) − 8 for all x, and
+> f(2) = 10. What is f(5)?
+>
+> **First step.** Write f(x) = mx + b. Left side: f(3x) = 3mx + b. Right
+> side: 3(mx + b) − 8 = 3mx + 3b − 8. Now match the constants.
+>
+> **Answer.** 19
+>
+> The x-terms already agree, so the constants must: b = 3b − 8, which gives
+> b = 4.
+>
+> From f(2) = 10: 2m + 4 = 10, so m = 3 and f(x) = 3x + 4.
+>
+> f(5) = 15 + 4 = 19. Check the relation at x = 1: f(3) = 13, and
+> 3f(1) − 8 = 3(7) − 8 = 13.
+
+> **Fails when.** The relation holds for one value of x only, such as
+> "f(2) = 2f(1) + 5". That is a single equation, not an identity, and you
+> can't match terms; use it together with the other facts as one equation.
+
+> **Try it.** For a linear function f, f(x + 4) = f(x) − 12 for all x, and
+> f(2) = 5. What is f(−3)?
+>
+> **Answer.** 20
+>
+> Shifting the input by 4 adds 4m: f(x + 4) = f(x) + 4m. So 4m = −12 and
+> m = −3.
+>
+> From f(2) = 5: −6 + b = 5, so b = 11 and f(x) = −3x + 11.
+>
+> f(−3) = 9 + 11 = 20.
+
+### A table with a letter in it {#table-with-a-letter}
+
+When an output is a letter and the inputs are unevenly spaced, each change
+in f(x) is the slope times its own gap in x. Write that for two pairs of
+rows and solve for the letter.
 
 > **Example.** For the linear function f, f(−2) = a, f(1) = 3a and
 > f(3) = 26, where a is a constant. What is f(0)?
@@ -213,3 +395,23 @@ g(x) = a · f(x) + 2 or g(x) = f(x + k) − 3. See
 > **Trap.** Treating the rows as equally spaced, or assuming f(x) = kx
 > because the outputs are a and 3a. Neither is given; only the slope is
 > the same everywhere.
+
+> **Try it.** The table shows three values of x and f(x) for a linear
+> function f, where a is a constant. What is f(0)?
+>
+> | x | f(x) |
+> | --- | --- |
+> | −1 | a |
+> | 3 | 2a |
+> | 5 | 20 |
+>
+> **First step.** From x = −1 to x = 3 the gap is 4 and the change is
+> 2a − a = a, so the slope is a/4. Now use the other pair of rows.
+>
+> **Answer.** 10
+>
+> From x = 3 to x = 5 the gap is 2, so 20 − 2a = 2(a/4) = a/2. Multiply
+> by 2: 40 − 4a = a, so a = 8.
+>
+> The slope is 8/4 = 2 and f(3) = 16, so f(0) = 16 − 3(2) = 10. Check:
+> f(x) = 2x + 10 gives f(−1) = 8 and f(5) = 20.
