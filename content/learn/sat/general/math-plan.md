@@ -35,26 +35,29 @@ the first stage. Those skills recur in lines, curves and data displays.
 
 Use Desmos from the first week, not as a last-minute trick. Do the one-week
 [Desmos practice plan](learn:sat/general/desmos#practice-protocol) alongside
-stage 1, then graph to solve or check in every later stage. Early on,
-Liminal's next step offers a Desmos drill once: ten questions where Desmos
-is a real route, with the route shown after each.
+stage 1, then graph to solve or check in every later stage. Liminal's next
+step offers a Desmos drill of about 20 minutes once a week until you have
+done four, then every 14 days: ten questions where Desmos is a real route,
+most of them systems, nonlinear equations and functions, lines,
+inequalities, circles and scatterplots, with the route shown after each.
 
 For each skill, the loop is:
 
-1. Read the Learn page and work its examples by hand, covering the solution first. A skill's first drill offers its lesson beside the drill.
-2. Practice the skill at Easy until the method is routine: at least 8 of your last 10 Easy or Medium questions in the skill right, each counted once, with no hints.
-3. Practice it at Medium, with feedback after each question. Once at least 6 of your last 10 Medium questions are right, about 3 of every 10 drill questions are Hard: many question types that official tests treat as Medium are Hard here.
+1. Read the Learn page and work its examples by hand, covering the solution first. Until a skill's first drill, the next step offers its lesson beside the drill.
+2. Practice the skill at Easy until the method is routine: at least 8 of your last 10 Easy or Medium questions in the skill right, each level counted on its own (8 of your last 10 Easy, or 8 of your last 10 Medium), each question counted once, with no hints.
+3. Practice it at Medium, with feedback after each question. Once at least 6 of your last 10 Medium questions are right, about 3 of every 10 drill questions are Hard, so harder versions become routine before the real test.
 4. Log every miss in your [error log](learn:sat/general/error-log) with its type and a rule.
 5. Move on at the practice target below, or when the skill's budget is used up. It comes back later.
 
 ### How Liminal picks the next step {#next-step}
 
 - **One skill in flight on each track.** It is the track's first skill, in the order above, that has not met the practice target and has not had its turn yet. Drills alternate between the tracks, the one you drilled less recently first.
-- **A budget per skill.** A skill leaves flight when it meets the practice target, or after 40 questions in it, at any level, since it came into flight, from any set. A skill that uses its budget first has moved on: it stays in mixed sets and Review. If Easy was not yet routine when it moved on, Progress flags it, and its lesson is worth rereading before it comes back.
+- **A budget per skill.** A skill leaves flight when it meets the practice target, or after 20 questions in its own drills, at any level, since it came into flight: two drills. The diagnostic, mixed sets, timed modules and the Desmos drill do not use it up. A skill that uses its budget first has moved on: it stays in mixed sets and Review, and Progress asks you to see where you stand on about ten official Medium questions. If its drills never got past Easy, Progress flags it too, and its lesson and prerequisite checks are worth rereading before it comes back.
 - **A second pass.** When both tracks have been through every skill, the skills that moved on come back into flight in the same order, each with a fresh budget.
 - **The diagnostic can start you later.** A stage is passed over while each of its domains went well on the diagnostic (at least 80% of at least 3 questions) and you have not practised its skills. Practising a passed-over skill brings it back, and the rest return in the second pass.
-- **Review first, once a day.** When a missed question is due, the day starts with one Review set of up to 6 questions, most overdue first. After that the plan moves on, even if more are due; Review shows what is still due, and you can do more by choice.
-- **Then a rotation.** A timed module of 22 questions in 35 minutes, with answers at the end, once three skills are started (the diagnostic places you but does not count), and again whenever a week or four practice sets have passed since the last one. After a drill, a mixed set: 12 questions from every skill you have started, most from skills in flight or moved on, timed at real-test pace, with answers at the end. Early on, once, the Desmos drill. Otherwise a drill: 10 questions on a skill in flight, with feedback and a hint after each.
+- **A low official check.** A skill whose latest official check is below 60% comes back into flight at the next opening in its track, ahead of skills not yet started.
+- **Review first, once a day.** When a missed question is due, the day starts with one Review set of up to 6 questions, most overdue first, misses on skills you have drilled before others. After that the plan moves on, even if more are due; Review shows what is still due, and you can do more by choice. A miss on a skill you have not reached in the plan, such as a Hard question in a timed module, is parked: it does not count as due until the skill's first turn, and comes back from that day.
+- **Then a rotation.** A timed module of 22 questions in 35 minutes, with answers at the end, once three skills are started (the diagnostic places you but does not count), whenever none was taken in the last 7 days, or after 10 practice sets and at least 3 days since the last one. After a drill, a mixed set: 12 questions from every skill you have started, most from skills in flight or moved on, timed at real-test pace, with answers at the end. The Desmos drill, weekly until you have done four, then every 14 days. Otherwise a drill: 10 questions on a skill in flight, with feedback and a hint after each. "Practice what I missed" counts with Review, not as a drill.
 
 ## The practice target {#mastery-gate}
 
@@ -120,12 +123,13 @@ opened from My Practice, has official questions you can filter by skill and
 by difficulty. Use it as a check: after a skill meets the practice target
 here, filter the bank to that skill at Medium and do about ten questions you
 haven't seen. Record how many you got right under Progress, in Official
-question checks; Progress prompts you when a skill reaches the target. After
+question checks; Progress prompts you when a skill reaches the target, and
+when a skill's turn ends short of it, to see where you stand. After
 the advanced target, check some of its Hard ones too. The latest check of a
 skill counts:
 
 - At least 70% right confirms the skill on official questions.
-- Below 60%, the skill comes back into flight in the plan's next pass, flagged "official check low, keep practising". Trust the official questions.
+- Below 60%, the skill comes back into flight at the next opening in its track, ahead of skills not yet started, flagged "official check low, keep practising". Trust the official questions.
 - In between, nothing changes.
 
 The weekly report on Progress also flags a skill whose latest official
@@ -153,11 +157,12 @@ yet.
 - Four or five sessions of 45 to 60 minutes.
 - Start the day with Review when something is due: one set of up to 6 missed questions, most overdue first. That is the day's Review; what is still due waits for tomorrow, or for a set you choose.
 - Then follow the next step. It alternates drills on the skills in flight, one per track, with a mixed set after each drill.
-- At least once a week, a timed module of 22 questions in 35 minutes; the next step offers one after a week or four practice sets.
+- At least once a week, a timed module of 22 questions in 35 minutes; the next step offers one after a week, or after 10 practice sets and 3 days.
+- About 20 minutes for the Desmos drill when the next step offers it: weekly until you have done four, then every 14 days.
 - End with 5 to 10 minutes on your error log.
-- When a skill meets its practice target, check it on about ten official questions and record the result.
+- When a skill meets its practice target, or its turn ends short of it, check it on about ten official questions and record the result.
 - Every 2 to 3 weeks, an official practice test in place of a timed module, with its score recorded under Official scores.
-- Once a week, read the weekly report on Progress: it says On track or Needs attention, with the reasons, and you can print it or copy a summary for a parent. It reports practice, never a score.
+- Once a week, read the weekly report on Progress: it says On track or Needs attention, with the reasons, and you can print it or copy a summary for a parent. Besides missed days and missing modules, it flags practising without learning: a skill that used its turn without becoming reliable at Medium, no skill reaching its target in three weeks of steady practice, and Medium accuracy that is not rising. It reports practice, never a score.
 
 How long a skill takes depends on your answers: it leaves flight at the
 practice target or after its budget, so no skill holds the plan for long,
