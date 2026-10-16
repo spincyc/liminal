@@ -330,3 +330,37 @@ test("answers with no set at all (migrated from v2) do not hold the ledger back"
   assert.ok(plan.checkpoint, "a checkpoint is taken");
   assert.equal(plan.checkpoint.at, drills[drills.length - 1].timestamp);
 });
+
+test("answers whose sessions the cap dropped before they were classed count as no drill's and do not hold the ledger back", () => {
+  // Three drills whose sessions were trimmed before this build: their
+  // answers name no set and their sessions are gone for good.
+  const gone = [0, 1, 2].flatMap((set) => answers(10, trackA[0], { difficulty: "Easy", correct: false, sessionId: `g${set}` }));
+  // Then kept drills, older-style too, each with its session.
+  const kept = [];
+  const sessions = [];
+  [trackA[0], trackB[0], trackA[0], trackB[0]].forEach((skill, set) => {
+    kept.push(...answers(10, skill, { difficulty: "Easy", correct: set % 2 === 0, sessionId: `k${set}` }));
+    sessions.push({ id: `k${set}`, kind: "drill", skill, sectionKey: "sat-math", finishedAt: clock + 1 });
+  });
+  const record = gone.concat(kept);
+  const full = planOf(record, undefined, { sessions });
+  assert.equal(full.skills[trackA[0]].drillAnswers, 20, "the gone drills are not counted");
+  assert.ok(full.checkpoint, "the oldest answers do not block the checkpoint");
+  assert.equal(full.checkpoint.at, kept[kept.length - 1].timestamp);
+  // Two more drills; the attempt cap trims the record; the plan resumes
+  // from the ledger and matches the full replay.
+  const later = [];
+  [trackA[0], trackB[0]].forEach((skill, set) => {
+    later.push(...answers(10, skill, { difficulty: "Medium", correct: false, sessionId: `n${set}` }));
+    sessions.push({ id: `n${set}`, kind: "drill", skill, sectionKey: "sat-math", finishedAt: clock + 1 });
+  });
+  const whole = planOf(record.concat(later), undefined, { sessions });
+  const resumed = planOf(record.slice(25).concat(later), full.checkpoint, { sessions });
+  assert.equal(resumed.fromLedger, true);
+  assert.deepEqual(shape(resumed), shape(whole));
+  assert.ok(whole.departures.length >= 1, "a budget is spent after the checkpoint");
+  // A newer set still in progress (no session yet) does hold it back.
+  const pending = answers(5, trackB[0], { difficulty: "Easy", sessionId: "p" });
+  const withPending = planOf(record.concat(later, pending), undefined, { sessions });
+  assert.equal(withPending.checkpoint.at, later[later.length - 1].timestamp, "the checkpoint stops before the set in progress");
+});

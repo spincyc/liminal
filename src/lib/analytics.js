@@ -815,11 +815,20 @@
     };
     // An older answer whose set has no session yet cannot be classed: the
     // checkpoint stops before it, so it is replayed once its session exists.
-    // One with no set at all (migrated from v2) never will be, so it does
-    // not hold the checkpoint back. Progress classes older answers from
-    // their sessions before the session cap drops them (classAttempts).
+    // Its session can only still arrive when the answer is not older than
+    // the oldest kept session (sessions are kept newest first): an older
+    // one lost its session to the cap, before Progress classed older
+    // answers from their sessions (classAttempts), and one with no set at
+    // all (migrated from v2) never had one. Those count as no drill's, as
+    // the full replay counts them, and hold nothing back.
+    // With no session kept, nothing is older than one.
+    const keptFrom = (settings.sessions || []).reduce((oldest, session) => {
+      const at = session ? Number(session.finishedAt) : NaN;
+      return Number.isFinite(at) && (oldest === null || at < oldest) ? at : oldest;
+    }, null);
     const unclassed = (attempt) => drillsKnown && !(typeof attempt.setKind === "string" && attempt.setKind) &&
-      typeof attempt.sessionId === "string" && attempt.sessionId !== "" && !sessionById.has(attempt.sessionId);
+      typeof attempt.sessionId === "string" && attempt.sessionId !== "" && !sessionById.has(attempt.sessionId) &&
+      !(keptFrom !== null && Number(attempt.timestamp) < keptFrom);
     const startStage = settings.placement && settings.placement.stage > 1 ? settings.placement.stage : 1;
     const history = Array.isArray(settings.attempts);
     const now = settings.now === undefined ? Date.now() : Number(settings.now);
