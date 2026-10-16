@@ -18,13 +18,19 @@ problem:
 The changes, recorded in the [author notes](reviews/2026-10-16-sat-math-realism-changes.md)
 and the dated independent template reviews:
 
-- **The plan runs two tracks.** One skill from stages 1–2 and one from
-  stages 3–4 are in flight at once, each with a budget, and skills that
-  fall short come back in a second pass. A rotation adds a mixed set after
-  each drill, a timed Module 1 about weekly, and an early Desmos drill. Hard
-  mixes into drills once Medium is routine, and Review leads once a day with
-  up to six questions. Simulated, a moderate learner starts Advanced Math on
-  day 1, and Review falls from 55% to 22% of questions.
+- **The plan runs two tracks.**
+  - One skill from stages 1–2 and one from stages 3–4 are in flight at
+    once. Each has a budget of 20 answers from its own drills (two drills).
+  - Skills that fall short are flagged and prompted for an official check,
+    then come back in a second pass, or sooner after a low check.
+  - A rotation adds a mixed set after each drill, a timed Module 1 about
+    weekly, and a Desmos drill weekly at first, then every 14 days.
+  - Hard mixes into drills once Medium is routine.
+  - Review leads once a day with up to six questions. Misses on skills not
+    yet reached are parked until the skill comes up.
+  - Simulated, a moderate learner starts Advanced Math on day 1, every skill
+    is drilled by about week 9, the first pass ends in week 10, and Review
+    falls from 55% to 22% of questions.
 - **Tiers moved toward official bands, and new question types were added.**
   Twelve official-Medium types moved from Hard to Medium. The new types
   include polynomial operations, parallel lines, non-projectile quadratic
@@ -36,16 +42,26 @@ and the dated independent template reviews:
 - **Learn has practice.** Every SAT Math lesson puts a Try it problem after
   each worked example, opens with prerequisite checks linked to Grade 6–8
   and high-school lessons, and puts core material before Harder versions.
-- **Progress adds a weekly report** (print or copy for a parent) with an On
-  track / Needs attention signal, and official question-bank checks per
-  skill.
+- **Progress adds a weekly report** (print or copy for a parent, in plain
+  English) with an On track / Needs attention signal, and official
+  question-bank checks per skill. The signal flags practice that isn't
+  turning into learning, not only missed effort. A small plan ledger keeps
+  the plan intact when old answers are trimmed from storage.
 
 Known limits:
 - Tiers are still editorial, not calibrated.
 - The simulation's learning rates are assumptions.
-- In simulation, every skill is started by about week 9, not 8.
-- A slow learner's Review backlog still grows slowly.
-- Desmos is not embedded.
+- Two drills per skill per pass trades depth for breadth before a test
+  7–20 weeks away.
+- The Review backlog still grows slowly with a six-question daily set,
+  about 10 questions a month for a moderate learner. It is shown calmly and
+  never by itself marks the week Needs attention.
+- Desmos is not embedded, and its routes were confirmed on desmos.com, not
+  in Bluebook.
+
+Three cold reviews followed (code, the student experience in a browser, and
+content); their findings and dispositions are recorded in the
+[cold review](reviews/2026-10-16-sat-math-cold-review.md).
 
 The ACT carry-over is decided below.
 
