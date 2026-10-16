@@ -50,13 +50,19 @@ function texts(q) {
 
 const seeds = Array.from({ length: 400 }, (_, index) => (index < 200 ? String(index) : `text.${index}.check`));
 
+// Every template's draws, built once for both scans.
+let cache = null;
+function draws() {
+  if (!cache) cache = families.map((family) => ({ family, questions: seeds.map((seed) => [seed, instantiate(family, seed)]) }));
+  return cache;
+}
+
 test("SAT Math text has no plural, article or coefficient-of-one slips", () => {
   const found = [];
-  for (const family of families) {
+  for (const { family, questions } of draws()) {
     const allowed = new Set(KNOWN[family.id] || []);
     const seen = new Set();
-    for (const seed of seeds) {
-      const q = instantiate(family, seed);
+    for (const [seed, q] of questions) {
       for (const text of texts(q)) {
         for (const [name, pattern] of CLASSES) {
           if (allowed.has(name) || seen.has(name) || !pattern.test(text)) continue;
@@ -69,7 +75,33 @@ test("SAT Math text has no plural, article or coefficient-of-one slips", () => {
   assert.deepEqual(found, []);
 });
 
+// A numeric-entry item has no choices, so its teaching text must not refer
+// to them ("gives an offered choice", "one of the other choices").
+const MENTIONS_CHOICES = /\boffered\b|\banswer choices?\b|\bother choices\b|\bthe choices\b/i;
+
+// A known case in a file this change did not edit; remove it when that file is next edited.
+const KNOWN_CHOICE_TEXT = new Set(["altitude-hypotenuse-similarity"]);
+
+test("numeric-entry items never mention offered choices", () => {
+  const found = [];
+  for (const { family, questions } of draws()) {
+    if (KNOWN_CHOICE_TEXT.has(family.id)) continue;
+    for (const [seed, q] of questions) {
+      if (q.choices) continue;
+      const text = [q.explanation, q.trap, q.hint, q.strategy, ...(q.solutionSteps || []), ...(q.principles || [])]
+        .filter((entry) => typeof entry === "string").find((entry) => MENTIONS_CHOICES.test(entry));
+      if (text) {
+        found.push(`${family.id} seed ${seed}: "${text.slice(0, 120)}"`);
+        break;
+      }
+    }
+  }
+  assert.deepEqual(found, []);
+});
+
 test("the slip patterns catch the forms they name", () => {
+  assert.ok(MENTIONS_CHOICES.test("gives an offered choice") && MENTIONS_CHOICES.test("gives one of the other choices"));
+  assert.ok(!MENTIONS_CHOICES.test("The two options are two lines") && !MENTIONS_CHOICES.test("limits the choice to the 88 students"));
   const caught = (text) => CLASSES.filter(([, pattern]) => pattern.test(text)).map(([name]) => name);
   assert.deepEqual(caught("To finish 1 hours early"), ["a count of one with a plural noun"]);
   assert.deepEqual(caught("an area of 1 square kilometers"), ["a count of one with a plural noun"]);
