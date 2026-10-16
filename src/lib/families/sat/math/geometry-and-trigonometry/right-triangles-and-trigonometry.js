@@ -775,8 +775,12 @@
       const candidates = [
         [sides[["opp", "adj", "hyp"].find((side) => side !== known && side !== target)], `Gives ${sideName[["opp", "adj", "hyp"].find((side) => side !== known && side !== target)]}, the other unknown side, instead of ${sideName[target]}.`],
         [target === leftOut ? null : wrongRatioSide, `Multiplies by the ratio where it should divide (or divides where it should multiply).`],
-        [leftOut === "hyp" ? sides.opp + sides.adj : Math.abs(sides.hyp - sides[usedSides.find((side) => side !== "hyp")]),
-          leftOut === "hyp" ? "Adds the legs to get the hypotenuse instead of using the Pythagorean theorem." : "Subtracts the known leg from the hypotenuse to get the other leg."],
+        // The third side by adding or subtracting the other two instead of
+        // the Pythagorean theorem; offered only when that side is the one asked.
+        [target !== leftOut ? null : leftOut === "hyp" ? sides.opp + sides.adj : Math.abs(sides.hyp - sides[usedSides.find((side) => side !== "hyp")]),
+          leftOut === "hyp"
+            ? `Finds ${sideName.hyp} by adding ${sideName.opp} and ${sideName.adj} instead of using the Pythagorean theorem.`
+            : `Finds ${sideName[leftOut]} as ${sideName.hyp} ${MINUS} ${sideName[usedSides.find((side) => side !== "hyp")]} instead of using the Pythagorean theorem.`],
         [sides[known], `Gives ${sideName[known]}, the side that is already known.`],
         [sides[known] + (target === "hyp" ? z - (known === "opp" ? p : q) : 0) * k || null, "Adds the difference of the ratio's terms to the known side."],
       ];

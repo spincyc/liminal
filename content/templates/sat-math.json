@@ -411,43 +411,43 @@
     {
       "id": "proportional-rate-scaling",
       "bit": 58,
-      "version": 4,
-      "fingerprint": "37bfada501f92a57f9c16b8422127b4c8b33b1e76f1db8a6ce56219feaa3bfdc",
+      "version": 5,
+      "fingerprint": "1709868d383d3ea4e9543ad062c023b3027271f4095794caee31372ee39143ab",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "ratio-share-of-total",
       "bit": 59,
-      "version": 4,
-      "fingerprint": "8451a6d25eb8172c28048aff56d8fee3a6bc053c6235b76e06f0083acdb0a706",
+      "version": 5,
+      "fingerprint": "78a5b23fddcab3f80f75bb2cfeb359a6b1760d7b4b80cb3da8ce64e369ba8f2e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rate-unit-conversion",
       "bit": 60,
-      "version": 4,
-      "fingerprint": "dcb2baab53af808cd2746a01862b2520132b5b61722f7520bf73c6bbe1732f27",
+      "version": 5,
+      "fingerprint": "7ee96f0e62378fe10c8a9a3ec5b41bd9ee0000e6fc1e5cddf6fc09ae615c89aa",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "ratio-after-change",
       "bit": 61,
-      "version": 3,
-      "fingerprint": "e6350e6b9050e6d7e2cd732aaf8fdec3e6c37fc76567d980be93e57f13ba5214",
+      "version": 4,
+      "fingerprint": "f71afc3d2a05fb8517beac8966ad85bdac3910e35fd4b4a892980181e696fc67",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "multi-unit-rate",
       "bit": 62,
-      "version": 4,
-      "fingerprint": "9f39dee81428a73d3cb1573474d112e27af81b7cb86438b709ae10a9877ee7c9",
+      "version": 5,
+      "fingerprint": "8df1722750b4302c2c958dfc08af4f796b655b11f780b84f974501db8144d31e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "average-rate-two-legs",
       "bit": 63,
-      "version": 4,
-      "fingerprint": "4aae717b21c87dd44d8cf96b8f0c45c63b0d9c1871043a3e14460de0a5aef8cd",
+      "version": 5,
+      "fingerprint": "a6a558291bb7ed2291149a5e1b708c59c7e73515e311640756affeb3da258b69",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -495,85 +495,85 @@
     {
       "id": "list-mean-or-median",
       "bit": 70,
-      "version": 4,
-      "fingerprint": "c546da1003ed84a04c2f422ce5a78bc7092018dc03501af148ca776aa4fddb2f",
+      "version": 5,
+      "fingerprint": "9eca38fc7af2108d185531f9c50a119e388e9770bdb002bde4b958f186bebe26",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "box-plot-summary",
       "bit": 71,
-      "version": 4,
-      "fingerprint": "f86dcdc2c2c4df3c49efb902afb834d4d40860c7994e53faeea5599c0a4754f6",
+      "version": 5,
+      "fingerprint": "4bfd92a1db32e101d8d2362e8b162ab3753db10593c4dd33610eebde9e3daa74",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "data-display-center",
       "bit": 72,
-      "version": 5,
-      "fingerprint": "dc40f7b4b60035b07ef1d9c325c74b5c46b3b3129c34b108eeb5a7458082f3ff",
+      "version": 6,
+      "fingerprint": "d68153653fa20577da330f4b24ce6a65724aca12997d82bbe1d138986dd70df1",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "mean-missing-value",
       "bit": 73,
-      "version": 4,
-      "fingerprint": "5c5c311899d3f07aaba4e7e54e3017ebebddbc63f31071e0e0b8d40e39698204",
+      "version": 5,
+      "fingerprint": "4a90567f2302362a9c9d6c5b83ad0b757fdc85be287f82321d04b002f1ff8fbb",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "weighted-mean-groups",
       "bit": 74,
-      "version": 4,
-      "fingerprint": "4225a918320df2cbf9ff052a22d1225c41cc57a93e74058dd09e2f27c7a5f739",
+      "version": 5,
+      "fingerprint": "cbda8534c4215ed8eb51568999d52412d0946813f04306853788a5651e232497",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "data-change-statistics",
       "bit": 75,
-      "version": 5,
-      "fingerprint": "f80082609fbafe261718e7d0f304555f6d0b9dc70455f46e8c7d37daa70bc006",
+      "version": 6,
+      "fingerprint": "225de62a79bcf7a74200d24301485fd513d337b42ee4b9868e1ed9d0f94443e9",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "best-fit-line-equation",
       "bit": 76,
-      "version": 5,
-      "fingerprint": "7c3d42e54547283b5cf96cffc84644771040bcba2cbc8ce1d11b05677e82e084",
+      "version": 6,
+      "fingerprint": "2e0ca2153eca3833d5993629774e8969ef776a5c7e62e84bda2d15f99eb23755",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "scatterplot-shape-and-count",
       "bit": 77,
-      "version": 5,
-      "fingerprint": "9cc00ee5f146f2a3d1cd7ae1a9097f5bf62f09ef893e76526b4dbd70426ba863",
+      "version": 6,
+      "fingerprint": "9a4429a773ee229363d47d7824683c21f2466b406431f054d36b34075f82f93e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "scatterplot-fit-reading",
       "bit": 78,
-      "version": 5,
-      "fingerprint": "d187cb0496446f1203013715b2ad1c001fef7730803a3c85034fbd81b9035d33",
+      "version": 6,
+      "fingerprint": "6bc8fe719546778ef31da064b27e52cdd0acb315d26a5bd4b7af41262abe84f3",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-group-fit-lines",
       "bit": 79,
-      "version": 5,
-      "fingerprint": "ab08916e7ef234e0c429abc42222e1c2c8dc288cc8d74f281e86d74a7878f462",
+      "version": 6,
+      "fingerprint": "232dd2ca98fb8679f8669c31b377bc493eedbc98ef16bc18ae71ca9c05f1920a",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "uneven-table-growth",
       "bit": 80,
-      "version": 5,
-      "fingerprint": "0bccd4252c9f79d0063af2328427dbe24bcdae64d33d79a0b2b2684933ef53b7",
+      "version": 6,
+      "fingerprint": "d9fe193b422e6d45820324c1fc44139ef5be6260d66231ba02de77542846b033",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-slope-rescaled-units",
       "bit": 81,
-      "version": 6,
-      "fingerprint": "7f4ac80a2f619489afc661bd6b3c67fc41437a7d7ae57c079507d230c4107ad6",
+      "version": 7,
+      "fingerprint": "28d0a2691313d208e64b346eb2f431ea88dc36c632f997360555b89e70be88c4",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -621,43 +621,43 @@
     {
       "id": "sampling-method-choice",
       "bit": 88,
-      "version": 4,
-      "fingerprint": "e68c5ed08513a8a7aeb8fe2b8461c2a03f9b2c40b685d78b30e300a6bc75118a",
+      "version": 5,
+      "fingerprint": "b8b52748423ff681a386f72cd2499605bd8000bf036d024aeb3b6d650eec917b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "margin-and-sample-size",
       "bit": 89,
-      "version": 4,
-      "fingerprint": "4e2cf84dd243b632f4bfdb0d5bf26514eaef438df94e30c317849363ab10b520",
+      "version": 5,
+      "fingerprint": "5ee1a365c555b21cbaeb7c7ed0a5481e2d31b12d86b82be7c83885115681aa67",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sample-proportion-estimate",
       "bit": 90,
-      "version": 4,
-      "fingerprint": "8296ef6417dd8f8dd04dcb7a97f7b55b12e86581c28d06f295338b01f9b09ec6",
+      "version": 5,
+      "fingerprint": "dee1037c0465afe94f68ecc8d617ae9eb810193381e5c9785200cbac38d46643",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "mark-recapture-estimate",
       "bit": 91,
-      "version": 4,
-      "fingerprint": "2d82299a61ad58444424db9eb39e2944ef2e39a9f09069868aa8121d43ac785e",
+      "version": 5,
+      "fingerprint": "31833ac3e54c7264e2a16a5aecf63567f4c2e5aa8e93aa681fa244fce8dd61e3",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sample-inference",
       "bit": 92,
-      "version": 4,
-      "fingerprint": "fec666a6ee91a85b2054ec0a0875add4ab4b3d0e54cf8e34ab1cf98ba7680e4b",
+      "version": 5,
+      "fingerprint": "6dba08858ed5544c983307518316d75f5cc9ed8c9112bbe0b80fac16c127bc87",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-estimates-compare",
       "bit": 93,
-      "version": 4,
-      "fingerprint": "00f007cd83e3627980849c51b096d8841f54b40db8068697aa25b796c2c71676",
+      "version": 5,
+      "fingerprint": "a81376995f895948680d4713a53135ff9f5bc8458b14c4c044f8495f913de1db",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -747,43 +747,43 @@
     {
       "id": "right-triangle-ratio-read",
       "bit": 106,
-      "version": 4,
-      "fingerprint": "cc3a1646c54d07062732741f74998f3c11ee0eb9117065a0fc9c0603b95b30ff",
+      "version": 5,
+      "fingerprint": "8860643b33977ebe2220cebad80ca74edb31cee91bb4c451db92b742dcf043e2",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "special-right-triangle",
       "bit": 107,
-      "version": 4,
-      "fingerprint": "7edef298ef97fefe332531777b7f34f51bc7ea31e1c0cd9d67202518bb78b26d",
+      "version": 5,
+      "fingerprint": "7246f1bca1d08bdda7927fe1c4f4cb721fbbb84a5a3e6ae00a58b8833ed6c4e7",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "pythagorean-two-step",
       "bit": 108,
-      "version": 5,
-      "fingerprint": "a251817ae0ee0dd5d7a45628ac5ca6b4997dfd77163a69225f26b744b0fe1e3c",
+      "version": 6,
+      "fingerprint": "b85801e8bc0d85604fe5398e1a8367b36b771df8ccb7eb757eb63b83b1529e28",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "trig-context-length",
       "bit": 109,
-      "version": 4,
-      "fingerprint": "1664afde72d82f3338c07ac6c189bee8588617c77e76d7e892447709994e1c7a",
+      "version": 5,
+      "fingerprint": "8bb365d47c44e961c485ee7c3dae7df205c467d18d549a17a0fa656860e497ec",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "trig-similar-cofunction",
       "bit": 110,
-      "version": 4,
-      "fingerprint": "0641d2a012c158d2964f2d3a861d342a66716862d5a8f86d1d474f733f9b9918",
+      "version": 5,
+      "fingerprint": "e3ae74a454ec949dd95ad82962cbe9354c09f3f51445ca384de136da4775b7d1",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "unit-circle-quadrant",
       "bit": 111,
-      "version": 4,
-      "fingerprint": "132b77c200569a793adc0211d3b49fb48764bb9540e90cf86e6f50559645b47b",
+      "version": 5,
+      "fingerprint": "b50dbfb75437af305134c928e9eab0b58a47e2cf2a59db27fc96df587bfb7118",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1020,22 +1020,22 @@
     {
       "id": "average-rate-required-leg",
       "bit": 145,
-      "version": 4,
-      "fingerprint": "ad11f09b9f4d7be7d4270dd7eed24fbe98019b158429b010903a2125b959e1b0",
+      "version": 5,
+      "fingerprint": "2e8fa21537110a49d8379af562e0265c48441fff19339d2acc1b1b336b17df6c",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "density-cube-edge",
       "bit": 146,
-      "version": 4,
-      "fingerprint": "220e953a09026845e4c4d5480b96045553e7bb294d72164af9b66031e5547271",
+      "version": 5,
+      "fingerprint": "27e56d1291d6c79e4d824a5897b5087c3e1f2c6982cddde9bde58d684466bb4c",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "combined-work-rate",
       "bit": 147,
-      "version": 4,
-      "fingerprint": "59cbaad088adeb97f1b3ea32080b7a471af183ef51910fb36ffaeee85d895b43",
+      "version": 5,
+      "fingerprint": "e006ce8753a241afa2fed5d5d7a653344f88eed31db6657b251e3deb11f7eb5b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1062,50 +1062,50 @@
     {
       "id": "data-change-median",
       "bit": 151,
-      "version": 4,
-      "fingerprint": "bdaf7326071366ddeee8efc66e99953d8c9353ca696be546b2c3844da8fdda26",
+      "version": 5,
+      "fingerprint": "e0466f7460a641f3bc10317680d772a4ef4bc6f94fb39449753a8418d9a34178",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "histogram-class-intervals",
       "bit": 152,
-      "version": 3,
-      "fingerprint": "061bfe5303b4b018430ae68e4d04560c65a4c4df036907319b72aa8f240f0211",
+      "version": 4,
+      "fingerprint": "899f5b141543d319ce1cb3289261fa0494b679132fc619b031bcbc0cfaaaba70",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "compare-spread-plots",
       "bit": 153,
-      "version": 3,
-      "fingerprint": "7875269624bb46c0070e1baaecfaab2a6ea0d4d3f734870f4010e83079d97514",
+      "version": 4,
+      "fingerprint": "356aabf21da1ae0ef350ee5754a5091a5f4322b2056106b02eb158ddd8b9f6a6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "could-be-median",
       "bit": 154,
-      "version": 4,
-      "fingerprint": "cbe521dd84508d68d5407b1692e9f2e3696a7e471be146653ba33a5cc3ff0ebb",
+      "version": 5,
+      "fingerprint": "a1cd947c42a4574b88a54caf3ff63a8187cd264fab206eb7f92100de182d3421",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-model-choice",
       "bit": 155,
-      "version": 4,
-      "fingerprint": "3e214c7c0155e8ae53baf5b0e0a155304eede76327a91aa756d312e6937c87d4",
+      "version": 5,
+      "fingerprint": "da86d712abf30e5939aaf55c04350468b7f1fac1088a9c4547135929f0dfd16b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "outlier-removal-fit",
       "bit": 156,
-      "version": 5,
-      "fingerprint": "455b4ce35c94bfc4ce2442426b59ef5e30e289eab51abd68e4f8891f311b1803",
+      "version": 6,
+      "fingerprint": "3f8553813bd3c6164003974df448fc001ebeb5cedc05deb85ed6e6338df2edd9",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-fit-interpretation",
       "bit": 157,
-      "version": 5,
-      "fingerprint": "656acccfa93a6e4825dbded2f29f630db4da47c47c748e249e5151f1120c467e",
+      "version": 6,
+      "fingerprint": "25053aed71242dba38a381c869aa78f019bdb1131014aae832a7a39e92430a75",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1125,8 +1125,8 @@
     {
       "id": "interval-mean-scope",
       "bit": 160,
-      "version": 4,
-      "fingerprint": "f9272fcf3a046a5ee38736fcaee09838dd611c247356a7b11a1b2a88bb067e3c",
+      "version": 5,
+      "fingerprint": "42d00fae1daeaaa680bec0a7f1219453c2edfdfcc71f95cf961db16983b2a826",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1174,15 +1174,15 @@
     {
       "id": "cofunction-complementary-angles",
       "bit": 167,
-      "version": 3,
-      "fingerprint": "c0bdea7a26e7522d0ffd552b886d06d0c918115c8abbd788e1a71d079ee03ff6",
+      "version": 4,
+      "fingerprint": "2ad75a750b5dfd6b678e829cb4c59b84237b98a614d215fd0704fe107c5b2948",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-observer-elevation",
       "bit": 168,
-      "version": 4,
-      "fingerprint": "9eeb1ddc75750f70abbd7c7785b1ea17fbe4aa9d78c0b6734c63842b06e44f21",
+      "version": 5,
+      "fingerprint": "45d2b99e5c9a21693257bfbb6e1084e68429ed96f2f5664a4750cde071b45ff4",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1202,8 +1202,8 @@
     {
       "id": "stratified-sample-total",
       "bit": 171,
-      "version": 3,
-      "fingerprint": "7b049cbe299ed2f4d274100f9cf36c9484f7b35fa13eef46624a875bd0d23c4b",
+      "version": 4,
+      "fingerprint": "7fd4427f8ac51756c8b0ac0c6d604d89938da8fd66bddd04164a20c2fb232cd8",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1223,36 +1223,36 @@
     {
       "id": "extreme-value-correction",
       "bit": 174,
-      "version": 4,
-      "fingerprint": "6ef5680666c7b593ea78f30d780256e424bae3e316735b0078569404a9e08870",
+      "version": 5,
+      "fingerprint": "b9386b3516479aed80288d4faeb7549f7cf36cbf5c4f639b1f4fc08e9759b69c",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-slope-unit-rate",
       "bit": 175,
-      "version": 4,
-      "fingerprint": "0bff10de65022788d4124260b66749e953b57459454279c8b3a8518273d75667",
+      "version": 5,
+      "fingerprint": "c3a804e2b0fdd1daf5b058c33c11606bdff556b35d8bd707b6f9a43e17b34c95",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "residual-actual-predicted",
       "bit": 176,
-      "version": 4,
-      "fingerprint": "8e9cfa82633a3332b1a328ee06e96f2a969b16fc1e618993911317a277ba2c54",
+      "version": 5,
+      "fingerprint": "be2d0e5d708b72bfe27e7a754d0b32b58f04eee22c8d37c4230d305635430882",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "experiment-scope-grid",
       "bit": 177,
-      "version": 3,
-      "fingerprint": "05b168c66b3ce2090c7dc042cdfaf81b98708144fcc2bb9b55622d9691bb7ccd",
+      "version": 4,
+      "fingerprint": "009bf824c9b8a42c6a16a8216b23ee0135ddc39b92f8ff757db401b16974a65f",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "margin-sample-size-scaling",
       "bit": 178,
-      "version": 4,
-      "fingerprint": "fcaf6d72e4f77ca3fded3b9856a1f3991208138a2a3397c06062208cfa0476fa",
+      "version": 5,
+      "fingerprint": "d0936f8c7bc5d754d4a9a76c820d86ed18a5622c927a69312081250bc9d7f63f",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1398,8 +1398,8 @@
     {
       "id": "residual-plot-reconstruction",
       "bit": 199,
-      "version": 2,
-      "fingerprint": "964068ddbdfde3d0795e38879c8eadd83e1040cf391543ae1d44862c69ec2166",
+      "version": 3,
+      "fingerprint": "87387a1a5c1c0d447499d3b95d3c428d50911405685ce9cf46aa931147bff7c2",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1489,36 +1489,36 @@
     {
       "id": "population-density",
       "bit": 212,
-      "version": 1,
-      "fingerprint": "5cd0e8416e54095e5809d4ba31a18fe7726e924d40f4aedf6210d166b46661a4",
+      "version": 2,
+      "fingerprint": "46e6be4b27d4f5c9dd13d98d8d1cb8e1b1de1a3878876b5fad6719712b629175",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "crew-rate-change",
       "bit": 213,
-      "version": 1,
-      "fingerprint": "cd0c8cddea55c21a9c3b512453c183fc95a9949d67367c37bd4ffaea405690db",
+      "version": 2,
+      "fingerprint": "2d9ea0972bf1cda7546f4f05cb755948c8c43b79091eb88673aff80aa7854fbf",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "greatest-value-from-center",
       "bit": 214,
-      "version": 1,
-      "fingerprint": "9dee726c06dcc82f70e327051dd67c407fffc9e528f564df99526564d8b973bc",
+      "version": 2,
+      "fingerprint": "b9c0b2fc7661e0c83b2247f2ab5bd8be7a7a7f6792abadd9d30d92a01dcf5324",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-graph-reading",
       "bit": 215,
-      "version": 1,
-      "fingerprint": "4c52e1d32c0973365fff4b545241c379eed2d16a4e1f4ee4c5e946e6624a89b3",
+      "version": 2,
+      "fingerprint": "3224be1623ffc0949ee548976d7131f44a7a6974838a5d83829943b8f7aeb2b6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "trig-ratio-from-ratio",
       "bit": 216,
-      "version": 1,
-      "fingerprint": "03f1e87d534e2289a609d2f6d9563040d15e05705116c44c11cfc290f46eebc6",
+      "version": 2,
+      "fingerprint": "5e6bfd177f0848f57d3f4282126baec2268ffbec17e815eff4711a76bb0c8dc0",
       "fingerprintAlgorithm": "source-v1"
     },
     {

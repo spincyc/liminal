@@ -1073,20 +1073,23 @@
         ].filter(Boolean);
         const change = adding ? scene.add(d, scene.names[i]) : scene.remove(d, scene.names[i]);
         const sign = adding ? "+" : MINUS;
-        const lhs = i === 0 ? `(${a}k ${sign} ${d}) : ${b}k` : `${a}k : (${b}k ${sign} ${d})`;
+        // "9k", or "k" for a share of 1; a factor of 1 is not written.
+        const share = (count) => (count === 1 ? "k" : `${count}k`);
+        const times = (factor, term) => (factor === 1 ? term.replace(/^\((.*)\)$/, "$1") : `${factor}(${term.replace(/^\((.*)\)$/, "$1")})`);
+        const lhs = i === 0 ? `(${share(a)} ${sign} ${d}) : ${share(b)}` : `${share(a)} : (${share(b)} ${sign} ${d})`;
         const cross = i === 0
-          ? `${nr[1]}(${a}k ${sign} ${d}) = ${nr[0]}(${b}k)`
-          : `${nr[1]}(${a}k) = ${nr[0]}(${b}k ${sign} ${d})`;
+          ? `${times(nr[1], `(${share(a)} ${sign} ${d})`)} = ${times(nr[0], share(b))}`
+          : `${times(nr[1], share(a))} = ${times(nr[0], `(${share(b)} ${sign} ${d})`)}`;
         return packStrict(numeric, key, fmt(key), candidates, {
           stimulus: null,
           figure: null,
           stem: `${scene.before(words(a, b))} ${change} ${scene.after(words(nr[0], nr[1]))} ${askText}`,
           explanation:
-            `Let the original numbers be ${a}k ${scene.names[0]} and ${b}k ${scene.names[1]}. After the change the ratio ${lhs} equals ` +
+            `Let the original numbers be ${share(a)} ${scene.names[0]} and ${share(b)} ${scene.names[1]}. After the change the ratio ${lhs} equals ` +
             `${nr[0]} : ${nr[1]}, so ${cross}, which gives k = ${k}. Before the change there were ${fmt(before[0])} and ${fmt(before[1])}; ` +
             `now there are ${fmt(after[0])} and ${fmt(after[1])}. The answer is ${fmt(key)}.`,
           steps: [
-            `Write the original amounts with one share size k: ${a}k and ${b}k.`,
+            `Write the original amounts with one share size k: ${share(a)} and ${share(b)}.`,
             `Apply the change and set up the new ratio: ${cross}.`,
             `Solve: k = ${k}, so the original amounts were ${fmt(before[0])} and ${fmt(before[1])}.`,
             `After the change: ${fmt(after[0])} and ${fmt(after[1])}; the question asks for ${fmt(key)}.`,
@@ -1452,7 +1455,7 @@
           `Speed for the rest: ${d2} ÷ ${num(t2)} = ${key}.`,
         ],
         principles: AVERAGE_PRINCIPLES,
-        trap: `An average speed is total distance over total time, so it is not a mean of the two speeds by distance or by count; weighting by distance gives ${num(byDistance)}.`,
+        trap: `An average speed is total distance over total time, so it is not a mean of the two speeds by distance or by count; weighting by distance gives ${about(byDistance)}.`,
         hint: "What does the average speed for the whole distance say about the total time?",
         verify: () => {
           // Rebuild the trip from the key and recompute the overall average.
@@ -1503,6 +1506,14 @@
 
   const EDGES = [4, 5, 6, 8, 10, 12, 14, 15, 16, 18, 20, 24, 25, 28, 30, 32, 35, 40, 45, 50, 60];
 
+  // A whole number of cubic centimeters in cubic meters, printed exactly
+  // (up to six decimal places), so an equation in the text is never rounded.
+  const cubicMeters = (cubicCentimeters) => {
+    const [whole, part = ""] = String(cubicCentimeters).padStart(7, "0").replace(/^(\d*)(\d{6})$/, "$1.$2").split(".");
+    const trimmed = part.replace(/0+$/, "");
+    return `${Number(whole)}${trimmed ? `.${trimmed}` : ""}`;
+  };
+
   function densityCube(t, numeric) {
     const ctx = t.pick(MATERIALS);
     const askArea = t.chance(0.4);
@@ -1522,12 +1533,12 @@
         ? `${num(d)} kilograms per cubic meter`
         : `${num(d)} grams per cubic centimeter`;
       const key = askArea ? 6 * e * e : e;
-      const volumeText = ctx.system === "si" ? `${num(M)} ÷ ${num(d)} = ${num(tidy(materialVolume / 1e6))} cubic meter` : `${fmt(M * 1000)} ÷ ${num(d)} = ${fmt(materialVolume)} cubic centimeters`;
-      const inCm = ctx.system === "si" ? `${num(tidy(materialVolume / 1e6))} × 1,000,000 = ${fmt(materialVolume)} cubic centimeters` : `${fmt(materialVolume)} cubic centimeters`;
+      const volumeText = ctx.system === "si" ? `${num(M)} ÷ ${num(d)} = ${cubicMeters(materialVolume)} cubic meters` : `${fmt(M * 1000)} ÷ ${num(d)} = ${fmt(materialVolume)} cubic centimeters`;
+      const inCm = ctx.system === "si" ? `${cubicMeters(materialVolume)} × 1,000,000 = ${fmt(materialVolume)} cubic centimeters` : `${fmt(materialVolume)} cubic centimeters`;
       // The unit slip: meters for centimeters (si), or kilograms read as grams (cgs).
       const slipEdge = ctx.system === "si" ? e / 100 : e / 10;
       const slipReason = ctx.system === "si"
-        ? `Takes the cube root of the volume in cubic meters, ${num(tidy(cm3 / 1e6))}, which gives the edge in meters, not centimeters.`
+        ? `Takes the cube root of the volume in cubic meters, ${cubicMeters(cm3)}, which gives the edge in meters, not centimeters.`
         : `Divides the mass in kilograms by the density in grams per cubic centimeter without converting ${num(M)} kilograms to ${fmt(M * 1000)} grams.`;
       const candidates = askArea
         ? [
@@ -1648,7 +1659,7 @@
             `At these rates, how many ${u} would it take ${both} working together to ${ctx.job}?`,
           explanation:
             `${rates}. Together they do 1/${a} + 1/${b} = ${S.frac(a + b, a * b)} of the job per ${ctx.one}, so the whole job takes ` +
-            `${S.frac(a * b, a + b)} = ${plural(c, ctx.one)}.`,
+            `${(a * b) % (a + b) ? `${S.frac(a * b, a + b)} = ` : ""}${plural(c, ctx.one)}.`,
           steps: [
             `Rates: 1/${a} and 1/${b} of the job per ${ctx.one}.`,
             `Combined rate: 1/${a} + 1/${b} = ${S.frac(a + b, a * b)} of the job per ${ctx.one}.`,
@@ -1792,8 +1803,8 @@
       if (!Number.isInteger(P) || P < 30 || P > group.maxP) return null;
       return packRanked(t, numeric, d, [
         [P / ((L * W) / 1000), `Divides the area in square meters by 1,000, as if 1 square kilometer were 1,000 square meters, instead of 1,000 × 1,000.`],
-        [km2, `Stops at the area, ${fmt(km2)} square kilometers.`],
-        [P / (L / 1000), `Divides by the length alone, ${fmt(L / 1000)} kilometers, instead of by the area.`],
+        [km2, `Stops at the area, ${plural(km2, "square kilometer")}.`],
+        [P / (L / 1000), `Divides by the length alone, ${plural(L / 1000, "kilometer")}, instead of by the area.`],
         [P / ((L + W) / 1000), `Divides by the sum of the length and width in kilometers, ${fmt((L + W) / 1000)}, instead of their product.`],
         [P * km2, `Multiplies the number of ${group.who} by the area instead of dividing.`],
         [km2 / P * 1e6, `Divides the area by the number of ${group.who}, which gives square meters per individual, not a density.`],
@@ -1923,37 +1934,36 @@
   /* ======================================== crew-rate-change (Hard) */
 
   // A crew of identical workers (or machines) can finish a job in a known
-  // time; partway through, the crew changes size. Work is measured in
-  // worker-days: the job's total is fixed, the part done is subtracted, and
-  // the rest is divided by the new crew. Time and crew size are inversely
-  // proportional, so scaling the time by the crew ratio the other way, or
-  // restarting the whole job with the new crew, gives an offered answer.
+  // time, and more of them join partway through so that the job finishes
+  // early. Work is measured in worker-days (or worker-hours): the job's total
+  // is fixed. Either the number to add is asked (the work left over the time
+  // left, less the crew already working) or the day they joined is (an
+  // equation with that day as the unknown). (2026-10-16 pass 2: the forms
+  // that only divided the work left by a new crew size were official Medium
+  // and were dropped; the "how many after the change" form duplicated the
+  // Medium combined-work-rate.)
   const CHANGING_CREWS = [
-    { one: "painter", many: "painters", job: "paint every classroom in a school", unit: "day", units: "days", n: [4, 10], D: [8, 24], join: "join the crew", leave: "leave the crew" },
-    { one: "machine", many: "machines", job: "fill a large order of bottles", unit: "hour", units: "hours", n: [3, 8], D: [10, 36], join: "are switched on", leave: "are shut down for repairs" },
-    { one: "pump", many: "pumps", job: "drain a flooded basement", unit: "hour", units: "hours", n: [3, 8], D: [6, 20], join: "are added", leave: "break down" },
-    { one: "volunteer", many: "volunteers", job: "plant all the trees for a new park", unit: "day", units: "days", n: [6, 15], D: [5, 15], join: "join the group", leave: "leave the group" },
+    { one: "painter", many: "painters", job: "paint every classroom in a school", unit: "day", units: "days", n: [4, 10], D: [8, 24], join: "join the crew", added: "join the crew", joined: ["joined the crew", "joined the crew"] },
+    { one: "machine", many: "machines", job: "fill a large order of bottles", unit: "hour", units: "hours", n: [3, 8], D: [10, 36], join: "are switched on", added: "be switched on", joined: ["was switched on", "were switched on"] },
+    { one: "pump", many: "pumps", job: "drain a flooded basement", unit: "hour", units: "hours", n: [3, 8], D: [6, 20], join: "are added", added: "be added", joined: ["was added", "were added"] },
+    { one: "volunteer", many: "volunteers", job: "plant all the trees for a new park", unit: "day", units: "days", n: [6, 15], D: [5, 15], join: "join the group", added: "join the group", joined: ["joined the group", "joined the group"] },
   ];
 
-  // "are switched on" → "is switched on", "leave the crew" → "leaves the crew" for one worker.
-  const singularVerb = (count, phrase) => (count !== 1 ? phrase : phrase
-    .replace(/^are /, "is ").replace(/^join /, "joins ").replace(/^leave /, "leaves ").replace(/^break /, "breaks "));
 
   function crewItem(t, numeric) {
     const crew = t.pick(CHANGING_CREWS);
-    const form = t.pick(["more", "more", "total", "add"]);
-    const cap = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+    const form = t.pick(["add", "when"]);
+    const time = (count) => plural(count, crew.unit, crew.units);
     return retry(() => {
       const n = t.int(crew.n[0], crew.n[1]);
       const D = t.int(crew.D[0], crew.D[1]);
-      const d1 = t.int(2, D - 3);
       const total = n * D;
-      const left = n * (D - d1);
-      const intro =
-        `Working together at the same constant rate, ${n} ${crew.many} can ${crew.job} in ${plural(D, crew.unit, crew.units)}. ` +
-        `The ${crew.many} work for ${plural(d1, crew.unit, crew.units)}`;
+      const opening = `Working together at the same constant rate, ${n} ${crew.many} can ${crew.job} in ${time(D)}.`;
       if (form === "add") {
-        // The job must finish early; how many more workers are needed?
+        // After d1 units of time, the job must finish `early` units early;
+        // how many more workers are needed?
+        const d1 = t.int(2, D - 3);
+        const left = n * (D - d1);
         const early = t.int(1, D - d1 - 2);
         const remaining = D - d1 - early;
         if (left % remaining) return null;
@@ -1963,31 +1973,32 @@
         const finishBy = D - early;
         return packRanked(t, numeric, key, [
           [needed, `Gives the size of the whole crew needed, ${needed}, instead of how many must be added to the ${n} already working.`],
-          [total / finishBy - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by ${finishBy} ${crew.units}, ignoring the part already done and that the extra ${crew.many} work only for the last ${remaining} ${crew.units}.`],
-          [(n * D) / remaining - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by the ${remaining} ${crew.units} left, ignoring the part already done.`],
-          [(n * early) / (D - d1), `Adds ${crew.many} in proportion to the share of the remaining ${D - d1} ${crew.units} to be saved, instead of dividing the work left by the time left.`],
-          [key + 1, `Rounds the crew size up by one ${crew.one} that the remaining work does not need.`],
+          [total / finishBy - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by ${time(finishBy)}, ignoring the part already done and that the added ${crew.many} work only for the last ${time(remaining)}.`],
+          [(n * D) / remaining - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by the ${time(remaining)} left, ignoring the part already done.`],
+          [(n * early) / (D - d1), `Adds ${crew.many} in proportion to the share of the remaining ${time(D - d1)} to be saved, instead of dividing the work left by the time left.`],
+          [key + 1, `Adds one more ${crew.one} than the remaining work needs.`],
         ], {
           stimulus: null,
           stem:
-            `${intro}. To finish the job ${plural(early, crew.unit, crew.units)} sooner than planned, more ${crew.many} working at the same ` +
-            `rate ${crew.join} at that point. How many ${crew.many} must ${crew.join === "are switched on" || crew.join === "are added" ? "be added" : "join"} so that the job is finished exactly ${plural(early, crew.unit, crew.units)} early?`,
+            `${opening} The ${crew.many} work for ${time(d1)}. To finish the job ${time(early)} sooner than planned, more ${crew.many} ` +
+            `working at the same rate ${crew.join} at that point. How many ${crew.many} must ${crew.added} so that the job is finished ` +
+            `exactly ${time(early)} early?`,
           explanation:
-            `The whole job is ${n} × ${D} = ${total} ${crew.one}-${crew.units}. After ${d1} ${crew.units}, ${n} × ${d1} = ${n * d1} are done, ` +
-            `leaving ${left}. To finish ${early} ${crew.units} early, those must be done in ${D} ${MINUS} ${d1} ${MINUS} ${early} = ${remaining} ${crew.units}, ` +
+            `The whole job is ${n} × ${D} = ${total} ${crew.one}-${crew.units}. After ${time(d1)}, ${n} × ${d1} = ${n * d1} are done, ` +
+            `leaving ${left}. To finish ${time(early)} early, those must be done in ${D} ${MINUS} ${d1} ${MINUS} ${early} = ${time(remaining)}, ` +
             `which takes ${left} ÷ ${remaining} = ${needed} ${crew.many}. That is ${needed} ${MINUS} ${n} = ${key} more.`,
           steps: [
             `Whole job: ${n} × ${D} = ${total} ${crew.one}-${crew.units}.`,
-            `Left after ${d1} ${crew.units}: ${total} ${MINUS} ${n * d1} = ${left}.`,
-            `Time left to finish early: ${D - d1} ${MINUS} ${early} = ${remaining} ${crew.units}; crew needed: ${left} ÷ ${remaining} = ${needed}.`,
+            `Left after ${time(d1)}: ${total} ${MINUS} ${n * d1} = ${left}.`,
+            `Time left to finish early: ${D - d1} ${MINUS} ${early} = ${time(remaining)}; crew needed: ${left} ÷ ${remaining} = ${needed}.`,
             `More ${crew.many} needed: ${needed} ${MINUS} ${n} = ${key}.`,
           ],
           principles: CREW_PRINCIPLES,
           trap: `The ${crew.many} already working stay on the job, and only the work left has to be done in the time left.`,
-          hint: `How much work, in ${crew.one}-${crew.units}, is left, and how much time is left for it?`,
+          hint: "How much of the job is left when the change is made, and how much time is left for it?",
           estimatedSeconds: 130,
           verify: () => {
-            // Simulate the job unit by unit.
+            // Simulate the job one unit of time at a time.
             let done = 0;
             for (let step = 0; step < d1; step += 1) done += n;
             for (let step = 0; step < remaining; step += 1) done += n + key;
@@ -1995,58 +2006,58 @@
           },
         }, { show: fmt, places: 0 });
       }
-      const grow = t.chance(0.6);
-      const change = grow ? t.int(1, Math.max(2, Math.round(n / 2))) : t.int(1, Math.max(1, Math.floor(n / 3)));
-      const after = grow ? n + change : n - change;
-      if (after < 2 || left % after) return null;
-      const more = left / after;
-      if (more === D - d1 || !Number.isInteger(more)) return null;
-      const key = form === "total" ? d1 + more : more;
-      const restart = total / after;
-      const direct = ((D - d1) * after) / n;
-      const lead =
-        `${intro}; then ${plural(change, crew.one, crew.many)} ${singularVerb(change, grow ? crew.join : crew.leave)}` +
-        `${grow ? `, working at the same rate` : ""}, and the job is finished with ${plural(after, crew.one, crew.many)}.`;
-      const correction = (value, reason) => [form === "total" ? d1 + value : value, form === "total" ? `${reason.replace(/\.$/, "")}, then adds the first ${d1} ${crew.units}.` : reason];
+      // k more join after an unknown time d; the job finishes `early` units
+      // early. n·d + (n + k)(D − early − d) = n·D, so k·d = (n + k)(D − early) − n·D.
+      const k = t.int(1, Math.max(2, Math.round(n / 2)));
+      const early = t.int(1, Math.max(1, Math.floor(D / 4)));
+      const top = (n + k) * (D - early) - n * D;
+      if (top <= 0 || top % k) return null;
+      const d = top / k;
+      const after = D - early - d;
+      if (d < 1 || after < 1) return null;
+      const key = d;
       return packRanked(t, numeric, key, [
-        form === "total"
-          ? [more, `Gives only the time after the change, ${more} ${crew.units}, not the time for the whole job.`]
-          : [d1 + more, `Gives the time for the whole job, including the first ${d1} ${crew.units}, instead of the time after the change.`],
-        correction(restart, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by the new crew, ignoring the work already done`),
-        correction(restart - d1, `Finds the time for the whole job with the new crew, ${fmt(restart)} ${crew.units}, and subtracts the ${d1} ${crew.units} already worked`),
-        correction(direct, `Scales the remaining time by ${after}/${n} instead of ${n}/${after}; more ${crew.many} take less time, not more`),
-        correction(D - d1, `Ignores the change in the crew and uses the ${D - d1} ${crew.units} left on the original plan`),
+        [after, `Gives the ${crew.units} worked after the extra ${crew.many} joined, ${after}, instead of the ${crew.units} before.`],
+        [D - early - ((n + k) * early) / k, `Sets the work of the added ${crew.many} equal to ${time(early)} of the larger crew's work instead of the original crew's.`],
+        [D - (n * early) / k, `Matches the added ${crew.many}' work to the time saved but measures from the planned finish, ${time(D)}, instead of the actual one.`],
+        [(n * D) / (n + k), `Divides the whole job by the larger crew, as if all ${n + k} had worked from the start.`],
+        [d + early, `Adds the ${time(early)} saved to the answer.`],
       ], {
         stimulus: null,
         stem:
-          `${lead} ${form === "total"
-            ? `How many ${crew.units} did the whole job take?`
-            : `How many ${crew.units} did it take to finish the job after the change?`}`,
+          `${opening} After the ${crew.many} had worked for some time, ${plural(k, `more ${crew.one}`, `more ${crew.many}`)} working at ` +
+          `the same rate ${crew.joined[k === 1 ? 0 : 1]}, and the job was finished ${time(early)} sooner than planned. For how many ` +
+          `${crew.units} did the original ${plural(n, crew.one, crew.many)} work before the ${k === 1 ? `other ${crew.one}` : `other ${crew.many}`} ` +
+          `${k === 1 ? crew.joined[0].replace(/ the (crew|group)$/, " them") : crew.joined[1].replace(/ the (crew|group)$/, " them")}?`,
         explanation:
-          `The whole job is ${n} × ${D} = ${total} ${crew.one}-${crew.units}. In the first ${d1} ${crew.units}, ${n} × ${d1} = ${n * d1} are done, ` +
-          `leaving ${left}. The ${after} ${crew.many} need ${left} ÷ ${after} = ${more} ${crew.units}` +
-          `${form === "total" ? `, so the whole job took ${d1} + ${more} = ${key} ${crew.units}.` : "."}`,
+          `The whole job is ${n} × ${D} = ${total} ${crew.one}-${crew.units}, and it took ${D} ${MINUS} ${early} = ${time(D - early)}. ` +
+          `If the others joined after d ${crew.units}, then ${n}d + ${n + k}(${D - early} ${MINUS} d) = ${total}, so ` +
+          `${(n + k) * (D - early)} ${MINUS} ${k === 1 ? "" : k}d = ${total}, and d = ${k === 1 ? "" : `${top} ÷ ${k} = `}${d}.`,
         steps: [
-          `Whole job: ${n} × ${D} = ${total} ${crew.one}-${crew.units}.`,
-          `Done in the first ${d1} ${crew.units}: ${n} × ${d1} = ${n * d1}; left: ${left}.`,
-          `With ${after} ${crew.many}: ${left} ÷ ${after} = ${more} ${crew.units}.`,
-          ...(form === "total" ? [`Whole job: ${d1} + ${more} = ${key} ${crew.units}.`] : []),
+          `Whole job: ${n} × ${D} = ${total} ${crew.one}-${crew.units}; it took ${D} ${MINUS} ${early} = ${time(D - early)}.`,
+          `With d ${crew.units} before the others joined: ${n}d + ${n + k}(${D - early} ${MINUS} d) = ${total}.`,
+          `Simplify: ${(n + k) * (D - early)} ${MINUS} ${k === 1 ? "" : k}d = ${total}, so ${k === 1 ? "" : k}d = ${top}.`,
+          ...(k === 1 ? [] : [`d = ${top} ÷ ${k} = ${d}.`]),
         ],
         principles: CREW_PRINCIPLES,
-        trap: `More ${crew.many} take less time: the time left is inversely proportional to the crew size, and only the work not yet done remains.`,
-        hint: `Measure the job in ${crew.one}-${crew.units}. How much of it is left after the first ${d1} ${crew.units}?`,
-        estimatedSeconds: 120,
+        trap: "The job finished early, so the time the larger crew worked is the actual finish minus the time before the change, not the planned finish minus it.",
+        hint: "Write the work done before and after the others joined, using one unknown for the time before.",
+        estimatedSeconds: 140,
         verify: () => {
-          // Simulate the job unit by unit until it is done.
-          let done = 0;
-          let time = 0;
-          while (done < total && time < 1000) {
-            done += time < d1 ? n : after;
-            time += 1;
+          // Try every whole start time and keep those that finish the job on the stated day.
+          const fits = [];
+          for (let start = 1; start < D; start += 1) {
+            let done = 0;
+            let clock = 0;
+            while (done < total && clock < 10 * D) {
+              done += clock < start ? n : n + k;
+              clock += 1;
+            }
+            if (done === total && clock === D - early) fits.push(start);
           }
-          return done === total && (form === "total" ? time : time - d1) === key;
+          return fits.length === 1 && fits[0] === key;
         },
-      }, { show: fmt, places: 2 });
+      }, { show: fmt, places: 0 });
     });
   }
 
@@ -2063,13 +2074,15 @@
     difficulty: "Hard",
     title: "A crew that changes size partway through a job",
     recognize:
-      "Count the job in worker-units of time: it is fixed. Subtract the part done before the change, then divide what is " +
-      "left by the new crew (or by the time left, for the crew needed).",
-    // Hard: the student must see the inverse proportion and the fixed total
-    // before anything can be computed; restarting the whole job with the
-    // new crew, scaling time the wrong way, and the total time for the
-    // time after the change are all offered.
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+      "Count the job in worker-units of time: it is fixed. For the crew to add, divide the work left by the time left and " +
+      "subtract the crew already working; for when the others joined, write the work before and after the change with that " +
+      "time as the unknown and set the total equal to the whole job.",
+    // Hard: the fixed total must be seen before anything can be computed,
+    // and then either the work left is set against the time left (the crew
+    // to add) or an equation is written with the joining time as the
+    // unknown; the whole crew needed, the time after the change, and the
+    // planned rather than the actual finish are all offered.
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
     tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
     build(t) {
       return crewItem(t, t.chance(0.35));
