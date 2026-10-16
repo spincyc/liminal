@@ -284,11 +284,23 @@ test("Review is the step at most once a calendar day; after that the plan moves 
   const rows = Analytics.skillMap([], [mathSection]);
   const due = Analytics.nextStep(rows, { dueCount: 23, sessions: [], now, reviewedToday: false });
   assert.deepEqual([due.kind, due.dueCount, due.then.kind], ["review", 23, "skill"]);
-  const review = (at, extra) => Object.assign({ id: `r${at}`, kind: "review", sectionKey: "sat-math", finishedAt: at }, extra);
+  // The due set carries step "review"; Missed, Marked and single-question
+  // sets from the Review page are kind "review" too, but by choice.
+  const review = (at, extra) => Object.assign({ id: `r${at}`, kind: "review", step: Analytics.REVIEW_STEP, sectionKey: "sat-math",
+    finishedAt: at }, extra);
+  assert.equal(Analytics.REVIEW_STEP, "review");
   assert.equal(Analytics.reviewDoneToday([review(now - HOUR)], "SAT", now), true);
   assert.equal(Analytics.reviewDoneToday([review(now - DAY)], "SAT", now), false, "yesterday's does not count");
-  assert.equal(Analytics.reviewDoneToday([{ id: "d", kind: "discarded", discardedKind: "review", sectionKey: "sat-math",
-    finishedAt: now - HOUR }], "SAT", now), true, "a discarded Review set counts");
+  assert.equal(Analytics.reviewDoneToday([{ id: "d", kind: "discarded", discardedKind: "review", step: "review", sectionKey: "sat-math",
+    finishedAt: now - HOUR }], "SAT", now), true, "a discarded due set counts");
+  ["marked", "missed", "one question"].forEach((which) => assert.equal(Analytics.reviewDoneToday([{ id: which, kind: "review",
+    sectionKey: "sat-math", finishedAt: now - HOUR, total: 1 }], "SAT", now), false, `a ${which} set is practice by choice`));
+  assert.equal(Analytics.reviewDoneToday([{ id: "old", kind: "review", sectionKey: "sat-reading-writing", finishedAt: now - HOUR }], "SAT", now),
+    false, "an untagged Review-page set never closes the day's Review");
+  // Midnight: a due set at 23:59 closes that day only.
+  const late = new Date(2026, 10, 1, 23, 59).getTime();
+  assert.equal(Analytics.reviewDoneToday([review(late)], "SAT", late + 30000), true);
+  assert.equal(Analytics.reviewDoneToday([review(late)], "SAT", new Date(2026, 10, 2, 0, 1).getTime()), false);
   assert.equal(Analytics.reviewDoneToday([{ id: "x", kind: "drill", sectionKey: "sat-math", finishedAt: now }], "SAT", now), false);
   assert.equal(Analytics.reviewDoneToday([review(now - HOUR)], "ACT", now), false, "each test has its own Review");
   assert.equal(Analytics.reviewDoneToday([review(now - HOUR, { sectionKey: "sat-reading-writing", sections: ["sat-reading-writing", "sat-math"] })],
@@ -301,8 +313,9 @@ test("Review is the step at most once a calendar day; after that the plan moves 
 });
 
 test("official checks: a low one brings a skill back in the next pass; a high one confirms it", () => {
+  // A check is placed on the day the student took it.
   const check = (skill, correct, fields) => Object.assign({ id: `c${skill}${correct}${counter}`, sectionKey: "sat-math", skill,
-    difficulty: "Medium", attempted: 10, correct, date: "2026-09-02", at: clock + 1 }, fields);
+    difficulty: "Medium", attempted: 10, correct, date: Analytics.formatDate(new Date(clock)), at: clock + 1 }, fields);
   const target = gate(trackA[0]);
   let plan = state(target, { officialChecks: [check(trackA[0], 8)] });
   assert.deepEqual([plan.skills[trackA[0]].official, plan.skills[trackA[0]].status], ["confirmed", "at-gate"]);
@@ -321,7 +334,7 @@ test("official checks: a low one brings a skill back in the next pass; a high on
   const next = step(target.concat(rest), { officialChecks: [low] });
   assert.deepEqual([next.skill, next.entry, next.official, next.level], [trackA[0], "official-low", "low", "Hard"]);
   // A newer check that is not low releases it.
-  const better = check(trackA[0], 7, { date: "2026-12-01", at: clock + 2 * DAY });
+  const better = check(trackA[0], 7, { date: Analytics.formatDate(new Date(clock + 2 * DAY)), at: clock + 2 * DAY });
   clock += 3 * DAY;
   plan = state(target.concat(rest), { officialChecks: [low, better] });
   assert.equal(plan.skills[trackA[0]].leftBy, "check");

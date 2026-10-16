@@ -642,10 +642,11 @@
     return result;
   }
 
-  // The moment a check is known for the replay: when it was recorded, else
-  // the start of its day.
+  // Where a check sits in the replay: the start of the day the student
+  // took it. Checks of one day keep the order they were recorded in (`at`),
+  // so the replay's latest check is checksBySkill's and Progress's: by
+  // date, then `at`.
   function checkTime(check) {
-    if (Number(check.at) > 0) return Number(check.at);
     const date = parseDate(check.date);
     return date ? date.getTime() : 0;
   }
@@ -660,8 +661,21 @@
       new Set(windowed.map((entry) => entry.design)).size >= GATE.templates;
   }
 
-  // The plan's state in one section, replayed from its answers in time
-  // order (each question's first answer, as the accuracy model counts it).
+  // The plan ledger (Progress planLedger): a checkpoint of planState's
+  // replay, so the plan survives the record's cap on attempts (the newest
+  // 5,000 kept, 2,000 when storage is full). The app writes it with every
+  // save (planState's `checkpoint`); while the attempts still reach back to
+  // the ledger's first answer (`from`) the plan is replayed in full and the
+  // ledger is only refreshed, and once older answers have been trimmed the
+  // replay resumes from the ledger and replays only answers after its
+  // `at`. LEDGER_DEPARTURES bounds its list of departures.
+  const LEDGER_VERSION = 1;
+  const LEDGER_DEPARTURES = 200;
+  const LEDGER_ENTRIES = ["plan", "moved-on", "passed-over", "slipped", "official-low"];
+  const LEDGER_EXITS = ["gate", "budget", "check"];
+
+  // A section's plan state, replayed from its answers in time order (each
+  // question's first answer, as the accuracy model counts it).
   //
   // - Each track keeps one skill in flight: its first skill in plan order
   //   that is not at the gate, has not flown in this pass, and, in the
@@ -681,6 +695,8 @@
   //   attempts        the attempts, re-tiered like the rows; without them
   //                   the state is a snapshot of the rows, with nothing
   //                   spent and nothing moved on
+  //   ledger          the section's plan ledger (Progress planLedger), used
+  //                   once the attempts no longer reach back to its start
   //   sessions        Progress sessions, for the track drilled last
   //   placement       the section's diagnosticPlacement
   //   officialChecks  Progress officialChecks
@@ -691,13 +707,15 @@
   //     tracks: [{ key, name, stages, skills, inFlight, lastDrilledAt }],
   //     skills: { [skill]: { skill, domain, stage, track, row, status,
   //       started, flown, practised, pass, entry, enteredAt, enteredWith,
-  //       spent, budget, leftAt, leftBy, movedOn, easyStuck, check,
-  //       official } } }
+  //       spent, budget, leftAt, leftBy, movedOn, reachedTarget, easyStuck,
+  //       check, official } },
+  //     fromLedger, checkpoint }
   // with status "in-flight", "at-gate" (at or past the target now),
   // "moved-on", "passed-over" or "waiting"; entry, why a skill last
-  // entered flight: "plan", "moved-on", "passed-over", "slipped" (back
-  // below the target) or "official-low"; leftBy "gate", "budget" or
-  // "check".
+  // entered flight: "plan", "moved-on", "passed-over" (by the
+  // diagnostic), "slipped" (back below a target it had met, in the plan or
+  // on its own) or "official-low"; leftBy "gate", "budget" or "check".
+  // `checkpoint` is the ledger entry to store (null without attempts).
   function planState(rows, options) {
     const settings = options || {};
     const sectionKey = settings.sectionKey || ((rows || [])[0] || {}).sectionKey;
@@ -732,6 +750,7 @@
         leftBy: null,
         movedOn: false,
         practised: false,
+        reachedTarget: false,
         check: null,
         official: null,
       };
@@ -744,7 +763,7 @@
     const medium = new Map();
     const checkNow = new Map();
     const inFlight = new Map(tracks.map((track) => [track.key, null]));
-    const departures = [];
+    let departures = [];
     let pass = 1;
     let flownThisPass = new Set();
 
@@ -768,7 +787,8 @@
       entry.entry = pass === 1 ? "plan"
         : gateNow(skill) ? "official-low"
           : entry.movedOn ? "moved-on"
-            : entry.flown ? "slipped" : "passed-over";
+            : entry.flown || entry.reachedTarget ? "slipped"
+              : entry.stage < startStage ? "passed-over" : "plan";
       Object.assign(entry, { flown: true, pass, enteredAt: at, enteredWith: answers(skill), spent: 0, leftAt: null, leftBy: null });
       flownThisPass.add(skill);
       inFlight.set(track.key, skill);
@@ -801,7 +821,7 @@
       });
     }
 
-    const events = [];
+    const answerEvents = [];
     if (history) {
       const seen = new Set();
       Progress.markRepeats(settings.attempts.filter(Boolean))
@@ -810,16 +830,52 @@
         .forEach((attempt) => {
           if (seen.has(attempt.questionId)) return;
           seen.add(attempt.questionId);
-          events.push({ at: Number(attempt.timestamp) || 0, attempt });
+          answerEvents.push({ at: Number(attempt.timestamp) || 0, attempt });
         });
     }
-    (settings.officialChecks || []).filter((check) => check && check.sectionKey === sectionKey && info[check.skill])
+    const checkEvents = (settings.officialChecks || [])
+      .filter((check) => check && check.sectionKey === sectionKey && info[check.skill])
       .slice().sort(byCheck)
-      .forEach((check) => events.push({ at: checkTime(check), check }));
+      .map((check) => ({ at: checkTime(check), check }));
+    const firstHeld = answerEvents.length ? answerEvents[0].at : null;
+    // The ledger takes over once older answers are gone: the attempts no
+    // longer reach back to the ledger's first answer.
+    const ledger = history && settings.ledger && settings.ledger.version === LEDGER_VERSION &&
+      Number.isFinite(settings.ledger.from) && Number.isFinite(settings.ledger.at) &&
+      firstHeld !== null && firstHeld > settings.ledger.from ? settings.ledger : null;
+    let firstAnswerAt = firstHeld;
+    let lastAt = null;
+    let events = answerEvents.concat(checkEvents);
+    if (ledger) {
+      firstAnswerAt = ledger.from;
+      lastAt = ledger.at;
+      pass = Math.max(1, Math.trunc(Number(ledger.pass)) || 1);
+      flownThisPass = new Set((ledger.flownThisPass || []).filter((skill) => info[skill]));
+      tracks.forEach((track) => {
+        const skill = (ledger.inFlight || {})[track.key];
+        inFlight.set(track.key, info[skill] && info[skill].track === track.key ? skill : null);
+      });
+      Object.keys(ledger.skills || {}).forEach((skill) => {
+        const saved = ledger.skills[skill];
+        if (!info[skill] || !saved) return;
+        attempted.set(skill, Number(saved.attempted) || 0);
+        medium.set(skill, (saved.medium || []).map(([right, day, design]) => ({ right: right === 1, day, design })));
+        LEDGER_SKILL_FIELDS.forEach((field) => {
+          if (saved[field] !== undefined) info[skill][field] = saved[field];
+        });
+      });
+      departures = (ledger.departures || []).filter((entry) => info[entry.skill]).map((entry) => Object.assign({}, entry));
+      // What the ledger had seen; checks known by its time set the latest.
+      checkEvents.filter((event) => event.at <= ledger.at).forEach((event) => checkNow.set(event.check.skill, event.check));
+      events = events.filter((event) => event.at > ledger.at);
+    } else if (!history) {
+      events = checkEvents;
+    }
     events.sort((left, right) => left.at - right.at);
 
-    settle(events.length ? events[0].at : now);
+    settle(ledger ? ledger.at : events.length ? events[0].at : now);
     events.forEach((event) => {
+      lastAt = event.at;
       if (event.check) {
         const skill = event.check.skill;
         checkNow.set(skill, event.check);
@@ -836,7 +892,10 @@
       attempted.set(skill, (attempted.get(skill) || 0) + 1);
       if (attempt.difficulty === GATE.tier) {
         if (!medium.has(skill)) medium.set(skill, []);
-        medium.get(skill).push({ right: attempt.correct === true && !attempt.hinted, day: dayOf(attempt.timestamp), design: designOf(attempt) });
+        const list = medium.get(skill);
+        list.push({ right: attempt.correct === true && !attempt.hinted, day: dayOf(attempt.timestamp), design: designOf(attempt) });
+        if (list.length > GATE.window) list.splice(0, list.length - GATE.window);
+        if (gateMet(list)) entry.reachedTarget = true;
       }
       if (inFlight.get(entry.track) === skill) {
         entry.practised = true;
@@ -863,26 +922,43 @@
 
     Object.values(info).forEach((entry) => {
       const { row } = entry;
+      // At the target now: from the replay's own windows, which the ledger
+      // keeps when older answers are trimmed; without history, the row's.
+      const atTarget = gateNow(entry.skill);
+      if (!history && atTarget) entry.reachedTarget = true;
       entry.check = checkNow.get(entry.skill) || null;
-      entry.official = officialStatus(entry.check, row);
+      entry.official = officialStatus(entry.check, atTarget && !atOrPastGate(row) ? Object.assign({}, row, { state: "at-gate" }) : row);
       if (inFlight.get(entry.track) === entry.skill) entry.status = "in-flight";
-      else if (atOrPastGate(row)) entry.status = "at-gate";
+      else if (atTarget) entry.status = "at-gate";
       else if (entry.movedOn) entry.status = "moved-on";
       else if (!entry.flown && pass === 1 && passedOver(entry.skill)) entry.status = "passed-over";
       else entry.status = "waiting";
       // Started: answered while in flight (or, without history, in flight
       // with answers), or at the target. A skill just taken into flight
       // is not started until its first answer.
-      entry.started = atOrPastGate(row) || entry.practised || (!history && entry.flown && row.attempted > 0);
+      entry.started = atTarget || entry.practised || (!history && entry.flown && row.attempted > 0);
       // Moved on while Easy was still not routine: flagged, so the student
       // goes back to its lesson before its next pass.
       entry.easyStuck = entry.status === "moved-on" && !(row.routine && row.routine.met);
     });
+    const checkpoint = history && firstAnswerAt !== null ? {
+      version: LEDGER_VERSION,
+      from: firstAnswerAt,
+      at: lastAt === null ? firstAnswerAt : lastAt,
+      pass,
+      flownThisPass: [...flownThisPass],
+      inFlight: Object.fromEntries(tracks.map((track) => [track.key, inFlight.get(track.key)])),
+      skills: Object.fromEntries(Object.values(info).map((entry) => [entry.skill, Object.assign({
+        attempted: attempted.get(entry.skill) || 0,
+        medium: (medium.get(entry.skill) || []).slice(-GATE.window).map((item) => [item.right ? 1 : 0, item.day, item.design]),
+      }, Object.fromEntries(LEDGER_SKILL_FIELDS.map((field) => [field, entry[field]])))])),
+      departures: departures.slice(-LEDGER_DEPARTURES),
+    } : null;
     return {
       sectionKey,
       pass,
       startStage,
-      firstAnswerAt: events.find((event) => event.attempt) ? events.find((event) => event.attempt).at : null,
+      firstAnswerAt,
       firstPassLeft: pass === 1
         ? Object.values(info).filter((entry) => entry.status === "in-flight" || entry.status === "waiting").length
         : 0,
@@ -893,8 +969,14 @@
         lastDrilledAt: lastDrilled.has(track.key) ? lastDrilled.get(track.key) : null,
       })),
       skills: info,
+      fromLedger: Boolean(ledger),
+      checkpoint,
     };
   }
+
+  // The per-skill replay fields a ledger keeps besides answers and window.
+  const LEDGER_SKILL_FIELDS = ["flown", "practised", "pass", "entry", "enteredAt", "enteredWith", "spent", "leftAt", "leftBy",
+    "movedOn", "reachedTarget"];
 
   // Finished sets in a section that the rotation counts, oldest first:
   // everything but Review, discarded sets, and the extra record a section
@@ -1087,10 +1169,14 @@
     return least ? skillStep(least, "least-practised") : null;
   }
 
-  // Whether a Review set ended today (local time), finished or discarded,
-  // in `scope`: a test ("SAT" or "ACT", whose Review queue it is), a list
-  // of section keys, or every section when omitted. Review is the next step
-  // at most once a calendar day.
+  // Whether today's Review step is done: a due set (the Review page's
+  // "Start review", recorded with `step: "review"`) ended today, local
+  // time, finished or discarded, in `scope`: a test ("SAT" or "ACT", whose
+  // Review queue it is), a list of section keys, or every section when
+  // omitted. Other Review-page sets (Missed, Marked, one question again)
+  // are kind "review" too but are practice by choice and do not count.
+  // Review is the next step at most once a calendar day.
+  const REVIEW_STEP = "review";
   function reviewDoneToday(sessions, scope, now) {
     const inScope = (session) => (!scope ? true
       : typeof scope === "string" ? sessionTest(session) === scope
@@ -1100,7 +1186,8 @@
     const to = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1).getTime();
     return (sessions || []).some((session) => {
       if (!session) return false;
-      const review = session.kind === "review" || (session.kind === "discarded" && session.discardedKind === "review");
+      const review = session.step === REVIEW_STEP &&
+        (session.kind === "review" || (session.kind === "discarded" && session.discardedKind === "review"));
       const at = finishedAt(session);
       return review && at >= from && at < to && inScope(session);
     });
@@ -1893,6 +1980,10 @@
     PLANS,
     BUDGET,
     ROTATION,
+    LEDGER_VERSION,
+    LEDGER_DEPARTURES,
+    LEDGER_ENTRIES,
+    LEDGER_EXITS,
     DRILL_KINDS,
     OFFICIAL_CHECK,
     SIGNALS,
@@ -1918,6 +2009,7 @@
     practiceHistory,
     mixedSpec,
     reviewDoneToday,
+    REVIEW_STEP,
     diagnosticPlacement,
     placements,
     recentSection,
