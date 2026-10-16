@@ -5,134 +5,134 @@
     {
       "id": "linear-equation-solve",
       "bit": 0,
-      "version": 3,
-      "fingerprint": "459cbf9c87d3b7c2500ccdcc5b7681471499a66a5494f42b1632b4860483f716",
+      "version": 4,
+      "fingerprint": "f57a81d9a3e7843f8e1d1b9d2592160e89a41c437825431242fee8ff86c37af7",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-equation-context-meaning",
       "bit": 1,
-      "version": 3,
-      "fingerprint": "ed7cdc8f0292ae884a6d18d01e9eb29c761b63536bbb2e5b5c8e859e13d45eef",
+      "version": 4,
+      "fingerprint": "38014477e03a61e4b3899333290636f63c8f15d0a67285c76249565890222726",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "equation-solution-count",
       "bit": 2,
-      "version": 3,
-      "fingerprint": "d8fd54d9ae4202d126a5de010de636cbe726628f87d22a6fe4a453a122c11796",
+      "version": 4,
+      "fingerprint": "ab3760ae851c7c4527690c47e23272d285dba261696f556e92ed833ecbc4af80",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-equation-word-model",
       "bit": 3,
-      "version": 2,
-      "fingerprint": "27ea53f7918e35669f84ac71fc27fab546a08d86d5491a8f5d9aceba29c05097",
+      "version": 3,
+      "fingerprint": "868a4d4d39016a55f13d442890cf4f5775b88d705e24a4bb52874ca2493a7a70",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "literal-equation-rearrange",
       "bit": 4,
-      "version": 3,
-      "fingerprint": "51cb3fe2561b27c46b611577162e8402d2276de7a658748a032db6a95470cc9e",
+      "version": 4,
+      "fingerprint": "8dfbc254c6f11a63472b84420c3d48e0657191f59a0af74aaed5501112e08ccf",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-expression-from-equation",
       "bit": 5,
-      "version": 2,
-      "fingerprint": "a0f8182be7e9001de89e46be09d6a733c39e1e0b3bc7c60f71681b4e1f292e7e",
+      "version": 3,
+      "fingerprint": "cfa0bd74b52e4ce10f455dde3504e9b4b6a80b4ead5512498b48ee132c04d63b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "function-value-and-input",
       "bit": 6,
-      "version": 3,
-      "fingerprint": "46c08888bd8c09139171e07f174d18cec2cfa51185c9dbf4c9e95c855cac1ae5",
+      "version": 4,
+      "fingerprint": "c0582c1e932e8105f6e4a21d68f206e3c6a2a41cf617761b75cacf91e4013866",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "slope-from-two-points",
       "bit": 7,
-      "version": 3,
-      "fingerprint": "83b9b72d52cdb11dd04c6eac6bbb8716d1364cfedbd7254338282ce85bdf4a5e",
+      "version": 4,
+      "fingerprint": "d4e4384a408cd9877656c4a34bf65dd03528a3ef540325f90981e632c2d783da",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-intercept-read",
       "bit": 8,
-      "version": 3,
-      "fingerprint": "f34e33aad4d3970efc4e64b4339c218443bbcfb2e32504e4f51a8ba14d6198ee",
+      "version": 4,
+      "fingerprint": "6cd46961e69741c9a0965a77b3ab45fa9dd2877ac3b9565b9dbd32db0d463639",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "function-constant-from-value",
       "bit": 9,
-      "version": 3,
-      "fingerprint": "8b5ec72dcaf0504f49894867cb73710673faa7ef96d4864629447ddb6ccd5f95",
+      "version": 4,
+      "fingerprint": "ec613c68da3ceca7b600b2c36edd315d6160a5555e4f1a5cf6f9fcf93b856fb0",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "perpendicular-line-through-point",
       "bit": 10,
-      "version": 2,
-      "fingerprint": "63713bcc91abafed7cf66e974bf1e2a5872974513b991a5283ce1c6ebf0b9112",
+      "version": 3,
+      "fingerprint": "10e96a26b646934b0c74e9b860c59877abc72711dbf8eaebc3467ff818bf9705",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-function-transformation",
       "bit": 11,
-      "version": 3,
-      "fingerprint": "50a5dc3a0e3bd1a6ee046878f682cdcad4c751a28101d90766304ae3b2b214e9",
+      "version": 4,
+      "fingerprint": "06f3e72d9b887c4007fab9ac4f765c9fb0b9e9a27391d494d6e192b371a71d58",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-function-identity",
       "bit": 12,
-      "version": 3,
-      "fingerprint": "ca29d4d48b395cfcbabb6dc04307a5c2faa1e1968692b86113fb61630e84ffa9",
+      "version": 4,
+      "fingerprint": "40493bdf58fd459a52df758a07cd13604541444a735de72b303a92d603cee275",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "point-on-line",
       "bit": 13,
-      "version": 3,
-      "fingerprint": "a0b39fd57dcc0826301d9e8141edfa9b9df03398a129e948ce5f28fe67c98a1e",
+      "version": 4,
+      "fingerprint": "930989683ee46f42bfe01532a7103e3ce3b3a56d220a80746b3991f9f7f87de6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "standard-form-slope",
       "bit": 14,
-      "version": 3,
-      "fingerprint": "4fe308bd4ce2c72eb9bb161e46c8982da32f6e6a1c3a482a3f6ba60f8615a850",
+      "version": 4,
+      "fingerprint": "e16d45ac4cd307146f89a4765a4cd63b927685f523ca889021fa9aa7947c01e3",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-variable-equation-model",
       "bit": 15,
-      "version": 3,
-      "fingerprint": "18ef9a08072cb35708971ec41b01b7ac7825d4354529b4561193dd6d0b716e9e",
+      "version": 4,
+      "fingerprint": "935d8e1a4e15fc5c7173a58d8993d0867541d3f2bce92d87b0b211b0b44c7399",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-graph-context",
       "bit": 16,
-      "version": 3,
-      "fingerprint": "a9c2ea1e938d4217286257fb7b8e047176ee676f44826b179f349089adac364a",
+      "version": 4,
+      "fingerprint": "328eb9164125781d228ab57d37190317232efea6d26d29c74490b2daf25b1080",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-model-interpretation",
       "bit": 17,
-      "version": 3,
-      "fingerprint": "3848c76055b733c9d8d00d18980fa01193ce884dfab887326f7f326dfd401097",
+      "version": 4,
+      "fingerprint": "366e266b7653aab35478108b30e7aadbecfb0dbf00f60e87c890ab56746e37e7",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-point-shift",
       "bit": 18,
-      "version": 3,
-      "fingerprint": "f287151888c003c8f19abfb2443dfe58280593a86bb6c5ec5cff0c39081cd188",
+      "version": 4,
+      "fingerprint": "c2f215d4a0632e380994eaeef140139d4926f444e39682d62ee831201659afa6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -180,43 +180,43 @@
     {
       "id": "inequality-allowed-range",
       "bit": 25,
-      "version": 4,
-      "fingerprint": "dda7bfe8f6fa53c3f63662ce619281238faf7145e21eceb44fde6d9be6ed01b9",
+      "version": 5,
+      "fingerprint": "178910c2e8d01ff2e0923e6c6ca75a8d82c37fd7511f24308e0def5cd7f58836",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-inequality-solve",
       "bit": 26,
-      "version": 4,
-      "fingerprint": "8c68cb582323444e05e01355da041d96e9f4c71359a7268bd8a914241761465e",
+      "version": 5,
+      "fingerprint": "a167fdcb993c7b56485985496cddca30ed3fde189316cefb4fc4d871764097fa",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-word-limit",
       "bit": 27,
-      "version": 3,
-      "fingerprint": "a400f5a778bd73aab93e4f1f4af46f6e09f0e3ceda0c81717d7cb786d989ac05",
+      "version": 4,
+      "fingerprint": "1f8defd416b933b18cd06e02bc7fe424a70ffd9b5c605f3b2ddd8cf0c2ac1a38",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-system-check",
       "bit": 28,
-      "version": 3,
-      "fingerprint": "ffb571a0f2b5bdf894797fa85ddb4b7b7c9dfbe51f076b28e7784eb89b5af888",
+      "version": 4,
+      "fingerprint": "74434d6619ff3401e8e4aa47320bc58ed9e24b680c02ee46d8f13e670a7a99cc",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-integer-optimization",
       "bit": 29,
-      "version": 4,
-      "fingerprint": "dabaceb20cc1bc8abde79254c5e563f876b3d1c9197cbb4e9a908d3732f40599",
+      "version": 5,
+      "fingerprint": "1c854d0bff5e3a243e4c7701687744059a447c678d40f30121059ddf7f0c69e0",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-region-corner",
       "bit": 30,
-      "version": 5,
-      "fingerprint": "ea64dac45771665f9d906871a9631df128789c50b31bb90585d95e4285197aa6",
+      "version": 6,
+      "fingerprint": "50ce288b8b6b5afe9158f4a52062d6fe8b2a1068f58c62bbf86a8886d7b15e44",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -831,57 +831,57 @@
     {
       "id": "literal-equation-factor-target",
       "bit": 118,
-      "version": 3,
-      "fingerprint": "9928f4eb4fbaaab676cd8db8ec2f99152b5ff6a050e54186e80c45c1985c7fd0",
+      "version": 4,
+      "fingerprint": "eb838822e72a4a4d0a1c40090e6b7e07f86c80f0daf3046c039a114fa07d1ae2",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-equation-unknown-constants",
       "bit": 119,
-      "version": 3,
-      "fingerprint": "5950a304354da90ee64ce7f280d7aa8ba48cc3699197129252f6069a48902743",
+      "version": 4,
+      "fingerprint": "f69d4a50943c1018aef2e808e4af6837fec8630a764338d0757b65b8add9495d",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-equation-two-quantities",
       "bit": 120,
-      "version": 3,
-      "fingerprint": "b98c0a3d640317654020ca4200e0b00648fa070fcb1b12fc881a7ca1ef2f936d",
+      "version": 4,
+      "fingerprint": "c103faaf951b3251a5e09a9fa917731ae4036f6f796ac92e72810cf10aeac26f",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-graph-transform-parameter",
       "bit": 121,
-      "version": 3,
-      "fingerprint": "d56c56ff9babef10f4a41c44201763a6b40c2c5a83b894d038682961ab930056",
+      "version": 4,
+      "fingerprint": "632ecb9b697ce4ad26107e7c12ca597ec09a5265a4adf72886b250ee2116ab83",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-table-unknown-entry",
       "bit": 122,
-      "version": 3,
-      "fingerprint": "95e8b1fc70f846280d54e68115317d24a7fd831dc87e6e61642fc4bcc2d32485",
+      "version": 4,
+      "fingerprint": "cbecab176f34c996bd1c61789d9a2d9930276c92b0df5d2c954eb791b416580d",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "linear-intercept-meaning",
       "bit": 123,
-      "version": 2,
-      "fingerprint": "92626ee45e36de3b6818d100331ba5798ef458363e3648d6da752f37bf731c43",
+      "version": 3,
+      "fingerprint": "438160415806ea8170265941bd52b1014a6e2b697b22020409d24e6f08f28ddd",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "translated-line-intercept",
       "bit": 124,
-      "version": 2,
-      "fingerprint": "a256d112e49535fa629c1fce5ff803d9c6daf1013548988e32c34bf5d04b3aa4",
+      "version": 3,
+      "fingerprint": "1f8b5e0ff30a33af5679346563f3345c70aa66c616ae7c0294693ecff49933b6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "line-intercept-conditions",
       "bit": 125,
-      "version": 3,
-      "fingerprint": "3ba25de04f8f58f27c3b5aad4d7e707df430ed5e08155893c290fec53ee9e51a",
+      "version": 4,
+      "fingerprint": "cb32251d41c9235722924011846c27e29238f11819c87919f53adc8860973f94",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -908,22 +908,22 @@
     {
       "id": "inequality-two-variable-context",
       "bit": 129,
-      "version": 4,
-      "fingerprint": "dcf68ff516497d9c9b60153bef7b59e28a50979ccfb6571b9cc6028467302ae3",
+      "version": 5,
+      "fingerprint": "bd3bcb60932dd036e039484a1d8c9b277a93de1cdeb58e93589fc0cdaf76dc8e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-graph-region",
       "bit": 130,
-      "version": 3,
-      "fingerprint": "287571c8ea9f7cc7ffe71e75f7b3301c1a1b2ce54b284f9f2917a556d10ddcce",
+      "version": 4,
+      "fingerprint": "041d7c794c905971c83cf5d2513b44d525cc53cde3ed862ce3a85de205d2e5d9",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "inequality-parameter-range",
       "bit": 131,
-      "version": 4,
-      "fingerprint": "d01bb979f79b42dff9727b7c4464c618b580ccd45ed2e002be4c594ed2d30003",
+      "version": 5,
+      "fingerprint": "3783cbfe80c7400c697e579c197528f55b3acc93c8a9210529143c7d58e5d66e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1286,8 +1286,8 @@
     {
       "id": "integer-combination-count",
       "bit": 183,
-      "version": 3,
-      "fingerprint": "596e4fb1ed75d52f47b470c85c4799871773152841acfc1829866496035cd96d",
+      "version": 4,
+      "fingerprint": "bf56a86e22b13cb6231dd85722e9ef5b36dce85dbf376c10fe25c84120427eba",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1328,8 +1328,8 @@
     {
       "id": "inequality-solution-containment",
       "bit": 189,
-      "version": 1,
-      "fingerprint": "57e2fa28b4c91c9c6df137e7ac5e4d77d499c841cb312e0c7726ad3e98ef4245",
+      "version": 2,
+      "fingerprint": "364ccc0b536699cbc3b4a1b12fcf3aaa05f25c3f14bfcc89039b5b0de982b02d",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1400,6 +1400,55 @@
       "bit": 199,
       "version": 1,
       "fingerprint": "a6ad8d178baca13215e65ebf74a8247cb908249ef28d947532c500ad4c267cd7",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "linear-solution-parameter-condition",
+      "bit": 200,
+      "version": 1,
+      "fingerprint": "4cfe180944b2b7d0f68f2f3ee9b4cef8150f4262e4007e1d10b5e27853cda0be",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "tiered-rate-regime",
+      "bit": 201,
+      "version": 1,
+      "fingerprint": "9daf05195b524c0f02e2547ce32610b5b63511693bb2f03d776e28cd4438e597",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "parallel-line-through-point",
+      "bit": 202,
+      "version": 1,
+      "fingerprint": "170a4aae18d74f315319924e9fd7e66c7cb1022967edff1a1375ca48cb5fd31e",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "linear-percent-of-original-rate",
+      "bit": 203,
+      "version": 1,
+      "fingerprint": "ef9dc02cfd2b23b64218f558cb06df486a48667577fd9d496768fae09595ae75",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "standard-form-sign-quadrants",
+      "bit": 204,
+      "version": 1,
+      "fingerprint": "c0e28556883befac8fbc3521ce237455466b1b12faaf099400e2166ebeb091f3",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "inequality-system-from-context",
+      "bit": 205,
+      "version": 1,
+      "fingerprint": "db3964ce8b2f900e8852a6e85b6fbdd78b2cf31ceccc233da48e9744ecc669a4",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "inequality-percent-of-total",
+      "bit": 206,
+      "version": 1,
+      "fingerprint": "c657e4ee6e7927779f8d4a3084ab982cdeb0bb69e8bb8514fc18239113ee7667",
       "fingerprintAlgorithm": "source-v1"
     }
   ]

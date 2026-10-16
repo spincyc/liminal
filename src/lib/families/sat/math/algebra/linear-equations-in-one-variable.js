@@ -948,18 +948,19 @@
     domain: "Algebra",
     skill: "Linear equations in one variable",
     subskill: "solve",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Solving for a variable that appears in more than one term",
     recognize:
       "The target appears in two places, so no single move isolates it: clear any fraction, gather every term that " +
       "contains the target on one side and everything else on the other, factor the target out, and divide by the " +
       "whole factor.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    // Official Medium: the gather-and-factor move is one known rule in an
+    // unfamiliar setting, not a structure to discover (retiered 2026-10-16).
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
     tricks: ["equivalent-form", "sign-error", "neighbouring-rule"],
     build(t) {
-      // The linear form with letter coefficients, m1(ax + c1) = m2(bx + c2),
-      // was Medium work (one gather-and-factor on a linear equation) and was
-      // dropped; both remaining forms put the target in a product and a sum.
+      // Both forms put the target in a product and a sum, so clearing the
+      // fraction leaves it in two terms that must be factored together.
       const form = t.pick(["mixture", "mixture", "mixture", "harmonic"]);
 
       if (form === "mixture") {
@@ -1402,13 +1403,15 @@
     domain: "Algebra",
     skill: "Linear equations in one variable",
     subskill: "solve",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Two changing quantities compared at one moment",
     recognize:
       "Write each quantity as a function of the same time variable, counting the second one's change only from when " +
       "it starts (t minus the delay); then turn the comparison into an equation, keeping straight which quantity is " +
       "the multiple, or which one is larger.",
-    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 2 },
+    // Official Medium: one modelling translation with a delayed start
+    // (retiered 2026-10-16).
+    rubric: { steps: 1, concept: 1, interpretation: 2, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["reversed-condition", "wrong-quantity", "sign-error"],
     build(t) {
       const form = t.pick(["equation", "equation", "time", "amount"]);
@@ -1550,6 +1553,390 @@
     },
   };
 
+  /* ------------------------------------------------ linear-solution-parameter-condition */
+
+  // p(x + qa) = rx + s, built from the solution it should have: x = ua + w,
+  // with k = p − r the x-coefficient once the x-terms are collected. Returns
+  // the displayed equation and its pieces, or null when the numbers do not fit.
+  function parameterEquation(t, u, w) {
+    const k = t.chance(0.6) ? t.pick([-4, -3, -2]) : t.pick([2, 3, 4]);
+    const product = -u * k; // p·q
+    const ps = [2, 3, 4, 5, 6, 7, 8, 9].filter((p) => product % p === 0 && p - k >= 2 && p - k <= 12 &&
+      Math.abs(product / p) <= 9 && Math.abs(product / p) >= 1);
+    if (!ps.length) return null;
+    const p = t.pick(ps);
+    const q = product / p;
+    const r = p - k;
+    const s = w * k;
+    if (s === 0 || Math.abs(s) > 40) return null;
+    const grouped = `${p}(x ${q < 0 ? MINUS : "+"} ${lin(Math.abs(q), 0, "a")})`;
+    const right = lin(r, s);
+    const equation = t.chance(0.65) ? `${grouped} = ${right}` : `${right} = ${grouped}`;
+    const distributed = `${p}x ${q * p < 0 ? MINUS : "+"} ${lin(Math.abs(p * q), 0, "a")}`;
+    return { equation, p, q, r, s, k, grouped, right, distributed };
+  }
+
+  // The solution x of the displayed equation at a given a, read from the text.
+  function solutionAt(equation, a) {
+    const { slope, constant, straight } = linearDifference(equation, { a });
+    if (!straight || approx(slope, 0)) return NaN;
+    return -constant / slope;
+  }
+
+  const SIGN_WORD = { ">": "greater than", "<": "less than" };
+  const flipRelation = (relation) => (relation === ">" ? "<" : ">");
+
+  const solutionCondition = {
+    id: "linear-solution-parameter-condition",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    subskill: "solve",
+    difficulty: "Hard",
+    title: "The solution of a linear equation as an expression in a constant",
+    recognize:
+      "The constant a stays in the answer: solve for x as an expression in a, then put the condition on that " +
+      "expression and solve again for a. Dividing by a negative coefficient reverses an inequality; dividing an " +
+      "equation by one reverses nothing.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
+    tricks: ["sign-error", "wrong-quantity", "intermediate-value"],
+    build(t) {
+      const form = t.chance(0.55) ? "condition" : "value";
+      for (;;) {
+        // A negative u (the inequality must be reversed) in 60% of draws; a
+        // negative x-coefficient k, which tempts a reversal that is not
+        // needed, in 60%.
+        const u = (form === "condition" && t.chance(0.6) ? -1 : form === "condition" ? 1 : t.sign()) * t.int(2, 5);
+        if (form === "condition") {
+          const w = t.nonzero(-9, 9);
+          const made = parameterEquation(t, u, w);
+          if (!made) continue;
+          const B = t.nonzero(-6, 6);
+          const c = u * B + w;
+          if (Math.abs(c) > 30) continue;
+          const relation = t.pick([">", "<"]);
+          const keyRelation = u > 0 ? relation : flipRelation(relation);
+          const condition = c === 0
+            ? (relation === ">" ? "positive" : "negative")
+            : `${SIGN_WORD[relation]} ${num(c)}`;
+          const choice = (rel, bound) => `a ${rel} ${num(bound)}`;
+          const key = choice(keyRelation, B);
+          const directionReason = u < 0
+            ? `Divides both sides of ${lin(u, 0, "a")} ${relation} ${num(c - w)} by ${num(u)}, a negative number, without reversing the inequality symbol.`
+            : made.k < 0
+              ? `Reverses the inequality symbol because the equation was divided by ${num(made.k)}; dividing an equation by a negative number reverses nothing, and the final division is by ${u}, a positive number.`
+              : `Reverses the inequality symbol, which is needed only when both sides are divided by a negative number; here the division is by ${u}.`;
+          const slip = `Moves the a-term across the equals sign without changing its sign, so it gets x = ${lin(-u, w, "a")} instead of x = ${lin(u, w, "a")}`;
+          const wrong = [
+            [choice(flipRelation(keyRelation), B), directionReason],
+            [choice(flipRelation(keyRelation), -B), `${slip}, then solves that correctly.`],
+            [choice(keyRelation, -B), `${slip}, and then also reverses the direction of the inequality when solving it.`],
+          ];
+          const steps = [
+            `Distribute: ${made.distributed} = ${made.right}.`,
+            `Collect the x-terms: ${lin(made.k, 0)} = ${num(made.s)} ${made.p * made.q < 0 ? "+" : MINUS} ${lin(Math.abs(made.p * made.q), 0, "a")}, so x = ${lin(u, w, "a")}.`,
+            `The condition is ${lin(u, w, "a")} ${relation} ${num(c)}, so ${lin(u, 0, "a")} ${relation} ${num(c - w)}.`,
+            `Divide by ${num(u)}${u < 0 ? ", reversing the inequality because the divisor is negative" : ""}: ${key}.`,
+          ];
+          const inSet = (rel, bound) => (a) => (rel === ">" ? a > bound : a < bound);
+          return {
+            responseType: "multiple-choice",
+            estimatedSeconds: 120,
+            stimulus: { type: "equations", content: made.equation },
+            stem: `In the given equation, a is a constant. Which of the following describes all values of a for which the solution to the equation is ${condition}?`,
+            correct: key,
+            wrong,
+            explanation: `${steps.slice(0, 2).join(" ")} The solution is ${condition} exactly when ${lin(u, w, "a")} ${relation} ${num(c)}, which gives ${key}.`,
+            steps,
+            principles: [
+              "When a constant appears in an equation, the solution is an expression in that constant; a condition on the solution becomes a condition on the constant.",
+              "Multiplying or dividing both sides of an inequality by a negative number reverses the inequality.",
+            ],
+            trap: "There are two divisions by a coefficient, and only the one applied to the inequality can reverse it; the sign of the a-term must also survive the move across the equals sign.",
+            hint: "Find the solution x in terms of a first.",
+            verify: () => {
+              // Scan a over quarters, solve the displayed equation at each, and
+              // compare the condition with every choice's set.
+              const meets = (a) => {
+                const x = solutionAt(made.equation, a);
+                return relation === ">" ? x > c + 1e-9 : x < c - 1e-9;
+              };
+              const grid = [];
+              for (let j = -160; j <= 160; j += 1) grid.push(j / 4);
+              const sets = [[keyRelation, B], [flipRelation(keyRelation), B], [flipRelation(keyRelation), -B], [keyRelation, -B]];
+              const agree = sets.map(([rel, bound]) => grid.every((a) => meets(a) === inSet(rel, bound)(a)));
+              return agree[0] && !agree[1] && !agree[2] && !agree[3];
+            },
+          };
+        }
+
+        // The solution equals λa + d: find a.
+        const lambda = t.pick([1, 1, 2, 3]);
+        if (lambda === u) continue;
+        const a0 = t.nonzero(-9, 9);
+        const d = lambda === 1 ? t.nonzero(-9, 9) : 0;
+        const w = (lambda - u) * a0 + d;
+        if (w === 0 || Math.abs(w) > 12) continue;
+        const made = parameterEquation(t, u, w);
+        if (!made) continue;
+        const x0 = lambda * a0 + d;
+        const relationText = lambda === 1
+          ? `${Math.abs(d)} ${d > 0 ? "more" : "less"} than a`
+          : `${lambda === 2 ? "twice" : "three times"} a`;
+        const target = lambda === 1 ? `a ${d > 0 ? "+" : MINUS} ${Math.abs(d)}` : `${lambda}a`;
+        const numeric = t.chance(0.65);
+        const modelled = [
+          [x0, `Gives the solution x, which is ${relationText}, instead of the value of a.`],
+          [(w - d) / (lambda + u), `Moves the a-term across the equals sign without changing its sign, so it uses x = ${lin(-u, w, "a")}.`],
+          [(d + w) / (u - lambda), `Moves the constant term across the equals sign without changing its sign, so it uses x = ${lin(u, -w, "a")}.`],
+          [(d - made.k * w) / (made.k * u - lambda), `Stops before dividing by ${num(made.k)}, the coefficient of x, so it uses x = ${lin(made.k * u, made.k * w, "a")}.`],
+        ].filter(([value]) => Number.isInteger(value));
+        if (!numeric && (collides(a0, modelled) || distinctWrong(a0, modelled) < 3)) continue;
+        const wrong = numeric ? [] : spreadAround(t, a0, modelled);
+        const steps = [
+          `Distribute: ${made.distributed} = ${made.right}.`,
+          `Collect the x-terms: ${lin(made.k, 0)} = ${num(made.s)} ${made.p * made.q < 0 ? "+" : MINUS} ${lin(Math.abs(made.p * made.q), 0, "a")}, so x = ${lin(u, w, "a")}.`,
+          `The solution is ${relationText}: ${lin(u, w, "a")} = ${target}.`,
+          u - lambda === 1
+            ? `Solve for a: a = ${num(a0)}.`
+            : `Solve for a: ${lin(u - lambda, 0, "a")} = ${num(d - w)}, so a = ${num(a0)}.`,
+        ];
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 115,
+          stimulus: { type: "equations", content: made.equation },
+          stem: `In the given equation, a is a constant. If the solution to the equation is ${relationText}, what is the value of a?`,
+          correct: a0,
+          wrong,
+          explanation: `${steps.slice(0, 2).join(" ")} Setting ${lin(u, w, "a")} = ${target} gives a = ${num(a0)}; the solution is then x = ${num(x0)}.`,
+          steps,
+          principles: [
+            "When a constant appears in an equation, the solution is an expression in that constant.",
+            "A statement about the solution is an equation in the constant; solve it as a separate step.",
+          ],
+          trap: `The solution x = ${num(x0)} comes out along the way, but the question asks for a.`,
+          hint: "Find the solution x in terms of a first.",
+          verify: () => {
+            const x = solutionAt(made.equation, a0);
+            const fits = (a) => approx(solutionAt(made.equation, a), lambda * a + d);
+            return approx(x, x0) && fits(a0) && wrong.every(([value]) => !fits(value));
+          },
+        };
+      }
+    },
+  };
+
+  /* ------------------------------------------------------- tiered-rate-regime */
+
+  // A rate that changes once a threshold T is passed: r1 per unit up to T and
+  // r2 per unit beyond it, plus a fixed amount F. `values` draws the numbers;
+  // `under` says whether the answer may fall below the threshold.
+  const tierScenes = [
+    {
+      v: "h", unit: "hour", units: "hours", under: true,
+      values: (t) => {
+        const p = t.pick([16, 18, 20, 22, 24, 26, 28, 30]);
+        return { T: 40, r1: p, r2: 1.5 * p, F: 0, step: 0.5, overMax: 14, underMin: 22 };
+      },
+      text: (v, E) =>
+        `A technician is paid ${usd(v.r1)} per hour for the first 40 hours worked in a week and ${usd(v.r2)} per hour ` +
+        `for each hour worked beyond 40 hours. Last week the technician earned ${usd(E)}.`,
+      askValue: "How many hours did the technician work last week?",
+      askEquation: "Which equation can be solved for h, the number of hours the technician worked last week?",
+      rate: "pay rate", at: (v) => "The pay for exactly 40 hours", quantity: "number of hours worked",
+    },
+    {
+      v: "k", unit: "kWh", units: "kWh", under: true,
+      values: (t) => ({
+        T: t.pick([500, 600, 800]), r1: t.pick([0.1, 0.12, 0.15, 0.2]), r2: t.pick([0.25, 0.3, 0.4]),
+        F: t.pick([10, 12, 15]), step: 10, overMax: 400, underMin: 200,
+      }),
+      text: (v, E) =>
+        `An electric company charges a monthly fee of ${usd(v.F)} plus ${usd(v.r1)} per kilowatt-hour (kWh) for the ` +
+        `first ${commas(v.T)} kWh used in a month and ${usd(v.r2)} per kWh for each kWh used beyond ${commas(v.T)}. ` +
+        `A customer's bill for one month was ${usd(E)}.`,
+      askValue: "How many kWh did the customer use that month?",
+      askEquation: "Which equation can be solved for k, the number of kWh the customer used that month?",
+      rate: "price", at: (v) => `The bill for exactly ${commas(v.T)} kWh`, quantity: "number of kWh used",
+    },
+    {
+      v: "h", unit: "hour", units: "hours", under: true,
+      values: (t) => ({
+        T: t.pick([3, 4]), r1: t.pick([140, 150, 160, 180]), r2: t.pick([80, 90, 100, 110]), F: 0,
+        step: 0.5, overMax: 5, underMin: 1,
+      }),
+      text: (v, E) =>
+        `A moving company charges ${usd(v.r1)} per hour for the first ${v.T} hours of a job and ${usd(v.r2)} per hour ` +
+        `for each hour after the first ${v.T}. One job cost ${usd(E)}.`,
+      askValue: "How many hours did the job take?",
+      askEquation: "Which equation can be solved for h, the number of hours the job took?",
+      rate: "hourly rate", at: (v) => `The charge for exactly ${v.T} hours`, quantity: "number of hours",
+    },
+    {
+      v: "t", unit: "hour", units: "hours", under: false,
+      values: (t) => ({
+        T: t.pick([1, 1.5, 2]), r1: t.pick([18, 20, 24]), r2: t.pick([12, 14, 15, 16]), F: 0,
+        step: 0.25, overMax: 3,
+      }),
+      text: (v, E) =>
+        `A cyclist rides at an average speed of ${v.r1} kilometers per hour for the ` +
+        `${v.T === 1 ? "first hour" : `first ${num(v.T)} hours`} of a ride and then at an average speed of ${v.r2} kilometers per hour for the ` +
+        `rest of the ride. The whole ride is ${num(E)} kilometers long.`,
+      askValue: "How many hours does the whole ride take?",
+      askEquation: "Which equation can be solved for t, the number of hours the whole ride takes?",
+      rate: "speed", at: (v) => `The distance covered in the ${v.T === 1 ? "first hour" : `first ${num(v.T)} hours`}`, quantity: "ride time",
+    },
+  ];
+
+  const tieredRate = {
+    id: "tiered-rate-regime",
+    domain: "Algebra",
+    skill: "Linear equations in one variable",
+    subskill: "solve",
+    difficulty: "Hard",
+    title: "A rate that changes after a threshold",
+    recognize:
+      "One rate applies up to the threshold and another after it, so first decide which piece the total falls in: " +
+      "compare the total with the amount at the threshold. Only then write the one equation that holds there.",
+    // Hard: the structure (which piece applies) must be decided before any
+    // equation can be written, and the one-rate answer, which lands in the
+    // other piece, is offered.
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["context-constraint", "intermediate-value", "neighbouring-rule"],
+    build(t) {
+      const ask = t.chance(0.6) ? "value" : "equation";
+      const scene = t.pick(tierScenes);
+      const over = !scene.under || t.chance(0.65);
+      // Below the threshold the value is asked as a student-produced
+      // response: the offered wrong values there would rarely be exact.
+      const numericWanted = ask === "value" && (!over || t.chance(0.4));
+      for (;;) {
+        const v = scene.values(t);
+        const { T, r1, r2, F, step } = v;
+        const x0 = over
+          ? T + step * t.int(1, Math.round(v.overMax / step))
+          : step * t.int(Math.round(v.underMin / step), Math.round(T / step) - 1);
+        const cost = (x) => F + (x <= T ? r1 * x : r1 * T + r2 * (x - T));
+        const E = clean(cost(x0));
+        if (Math.abs(E * 100 - Math.round(E * 100)) > 1e-6) continue;
+        const atT = clean(F + r1 * T);
+        const name = scene.v;
+        const show = (value) => num(clean(value));
+        const unitsT = `${show(T)} ${T === 1 ? scene.unit : scene.units}`;
+        const firstT = T === 1 ? `first ${scene.unit}` : `first ${unitsT}`;
+        // Displayed equations.
+        const fee = F ? `${show(F)} + ` : "";
+        const eq = {
+          piece: `${fee}${show(r1)}(${show(T)}) + ${show(r2)}(${name} ${MINUS} ${show(T)}) = ${commas(E)}`,
+          single: `${fee}${lin(r1, 0, name)} = ${commas(E)}`,
+          second: `${fee}${lin(r2, 0, name)} = ${commas(E)}`,
+          slip: `${fee}${show(r1)}(${show(T)}) + ${lin(r2, 0, name)} = ${commas(E)}`,
+          swapped: `${fee}${show(r2)}(${show(T)}) + ${show(r1)}(${name} ${MINUS} ${show(T)}) = ${commas(E)}`,
+          double: `${fee}${lin(r1, 0, name)} + ${show(r2)}(${name} ${MINUS} ${show(T)}) = ${commas(E)}`,
+        };
+        const rootOf = (text) => {
+          const [left, right] = sidesOf(text);
+          const D = (x) => left({ [name]: x }) - right({ [name]: x });
+          return -D(0) / (D(1) - D(0));
+        };
+        let key;
+        let wrong;
+        if (ask === "value") {
+          key = x0;
+          const single = (E - F) / r1;
+          const modelled = over
+            ? [
+              [single, `Uses the first ${scene.rate} for the whole amount; that answer is more than ${unitsT}, where the second ${scene.rate} applies.`],
+              [(E - F - r1 * T) / r2, `Gives only the ${scene.units} beyond ${show(T)}, not the total.`],
+              [(E - F) / r2, `Uses the second ${scene.rate} for the whole amount.`],
+              [T + (E - F - r2 * T) / r1, `Swaps the two ${scene.rate}s.`],
+              [T + (E - F) / r2, `Adds ${unitsT} to the whole total divided by the second ${scene.rate}, without first taking off the amount for the ${firstT}.`],
+              ...(F ? [[T + (E - r1 * T) / r2, `Leaves out the ${usd(F)} monthly fee.`]] : []),
+            ]
+            : [
+              [T + (E - F - r1 * T) / r2, `Applies the second ${scene.rate}, although the total is less than ${commas(atT)}, so the second ${scene.rate} never starts.`],
+              [(E - F) / r2, `Uses the second ${scene.rate} for the whole amount.`],
+              ...(F ? [[E / r1, `Leaves out the ${usd(F)} monthly fee.`]] : []),
+              [(E - F) / (r1 + r2), `Adds the two ${scene.rate}s, as if both applied to every unit.`],
+            ];
+          const shown = modelled
+            .map(([value, reason]) => [clean(value), reason])
+            .filter(([value]) => value > 0 && Math.abs(value * 100 - Math.round(value * 100)) < 1e-6);
+          if (!numericWanted && (collides(key, shown) || distinctWrong(key, shown) < 3)) continue;
+          // The one-rate answer, which lands past the threshold, is always offered.
+          const rest = shown.slice(1).filter(([value]) => !approx(value, shown[0][0]));
+          if (!numericWanted && (shown[0][1] !== modelled[0][1] || distinctWrong(key, rest) < 2)) continue;
+          wrong = numericWanted ? [] : [shown[0], ...spreadAround(t, key, rest, 2)];
+        } else {
+          key = over ? eq.piece : eq.single;
+          wrong = over
+            ? [
+              [eq.single, `Uses the first ${scene.rate} for the whole amount, but the total is more than ${commas(atT)}, so the ${scene.quantity} is more than ${show(T)}.`],
+              [eq.swapped, `Swaps the two ${scene.rate}s: the ${firstT} get the second ${scene.rate}.`],
+              t.pick([
+                [eq.slip, `Applies the second ${scene.rate} to every unit instead of only to the ${scene.units} beyond ${show(T)}.`],
+                [eq.double, `Applies the first ${scene.rate} to every unit and the second ${scene.rate} to the ${scene.units} beyond ${show(T)} as well, counting those twice.`],
+              ]),
+            ]
+            : [
+              [eq.piece, `Applies the second ${scene.rate}, but the total is less than ${commas(atT)}, so the second ${scene.rate} never starts.`],
+              [eq.slip, `Counts the ${firstT} at the first ${scene.rate} and then applies the second ${scene.rate} to every unit as well.`],
+              [eq.second, `Uses the second ${scene.rate} for the whole amount.`],
+            ];
+        }
+        // No other displayed equation may share the key's solution.
+        if (ask === "equation" && wrong.some(([text]) => approx(rootOf(text), x0))) continue;
+        if (numericWanted && !C.fitsGrid(key)) continue;
+        const numeric = numericWanted;
+        const regime = over
+          ? `${scene.at(v)} is ${fee}${show(r1)}(${show(T)}) = ${commas(atT)}, which is less than ${commas(E)}, so the ${scene.quantity} is more than ${unitsT}.`
+          : `${scene.at(v)} is ${fee}${show(r1)}(${show(T)}) = ${commas(atT)}, which is more than ${commas(E)}, so the ${scene.quantity} is less than ${unitsT}.`;
+        const solve = over
+          ? `${eq.piece}, so ${lin(r2, 0, name)} = ${commas(clean(E - F - r1 * T + r2 * T))} and ${name} = ${show(x0)}.`
+          : `${eq.single}, so ${name} = ${show(x0)}.`;
+        const steps = [
+          regime,
+          over ? `Only the ${scene.units} beyond ${show(T)} use the second ${scene.rate}: ${eq.piece}.` : `Only the first ${scene.rate} applies: ${eq.single}.`,
+          `Solve: ${solve}`,
+        ];
+        return commaChoices({
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 120,
+          stimulus: null,
+          stem: `${scene.text(v, E)} ${ask === "value" ? scene.askValue : scene.askEquation}`,
+          correct: key,
+          wrong: numeric ? [] : wrong,
+          explanation: `${regime} ${over ? "The equation is" : "So"} ${solve}`,
+          steps,
+          principles: [
+            "With a rate that changes at a threshold, find the total at the threshold first; it tells you which piece applies.",
+            "An answer from one rate alone is valid only if it stays on that rate's side of the threshold.",
+          ],
+          trap: over
+            ? `Dividing the total by the first rate gives an amount past ${show(T)}, where the first rate no longer applies.`
+            : `The second rate starts only after ${show(T)}; this total ends before that.`,
+          hint: "How much would the total be exactly at the threshold?",
+          verify: () => {
+            // Accumulate the total one small step at a time, charging each
+            // step at the rate in force for it, and find where it reaches E.
+            let x = 0;
+            let total = F;
+            let reached = null;
+            while (x < 5000 && reached === null) {
+              const rate = x < T - 1e-9 ? r1 : r2;
+              total += rate * step;
+              x += step;
+              if (Math.abs(total - E) < 1e-6) reached = x;
+              if (total > E + 1e-6) break;
+            }
+            if (reached === null || !approx(reached, x0)) return false;
+            if (ask === "value") return wrong.every(([value]) => !approx(Number(String(value).replace(/,/g, "")), x0));
+            return approx(rootOf(key), x0) && wrong.every(([text]) => !approx(rootOf(text), x0));
+          },
+        });
+      }
+    },
+  };
+
   // True when the displayed equation in t holds at the given time.
   function holdsText(text, time) {
     const [left, right] = sidesOf(text);
@@ -1558,6 +1945,6 @@
 
   return [
     equationSolve, contextMeaning, wordModel, solutionCount, expressionFromEquation, literalRearrange,
-    literalFactor, unknownConstants, twoQuantities,
+    literalFactor, twoQuantities, unknownConstants, solutionCondition, tieredRate,
   ];
 });

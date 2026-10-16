@@ -13,7 +13,7 @@
   const { MINUS, num, paren, signed, lin, frac, approx, point } = S;
   const {
     fitsGrid, distinctWrong, standardForm, moveText, compile, holds, distinctWrongHard, lineFrom,
-    lineCoefficients, cramer, slopeTerm, collides, spreadAround, spreadWithMirror,
+    lineCoefficients, cramer, slopeTerm, collides, spreadAround, spreadWithMirror, commas, commaChoices,
   } = C;
 
   /* ----------------------------------------------------------- line-intercept-read */
@@ -993,6 +993,195 @@
     },
   };
 
+  /* ------------------------------------------------ parallel-line-through-point */
+
+  // Line ℓ, y = (n/d)x + c1, as the student sees it: an equation, two points,
+  // or a graph on a unit grid. Returns null when the numbers do not fit.
+  function showLineL(t, given, n, d, c1) {
+    const slopeText = frac(n, d);
+    const slopeIntercept = `y = ${slopeTerm(n, d)}${c1 ? ` ${signed(c1)}` : ""}`;
+    if (given === "slope") {
+      return {
+        text: `In the xy-plane, line ℓ is defined by ${slopeIntercept}.`, equation: slopeIntercept,
+        step: `Line ℓ is in slope-intercept form, so its slope is ${slopeText}.`,
+        signSlip: `Uses ${frac(-n, d)}, the opposite of line ℓ's slope.`,
+        figure: null,
+      };
+    }
+    if (given === "standard") {
+      const sign = n > 0 ? 1 : -1;
+      const equation = standardForm(sign * n, -sign * d, -sign * d * c1);
+      return {
+        text: `In the xy-plane, line ℓ is defined by ${equation}.`, equation,
+        step: `Solve ${equation} for y: ${slopeIntercept}, so line ℓ's slope is ${slopeText}.`,
+        signSlip: `Reads the slope of ${equation} as the x-coefficient over the y-coefficient, ${frac(-n, d)}; the slope of Ax + By = C is −A/B.`,
+        figure: null,
+      };
+    }
+    if (given === "points") {
+      const x1 = d * t.int(-3, 1);
+      const x2 = x1 + d * t.int(1, 3);
+      const points = [x1, x2].map((x) => [x, (n * x) / d + c1]);
+      if (points.some(([, y]) => Math.abs(y) > 30)) return null;
+      return {
+        text: `In the xy-plane, line ℓ passes through the points ${point(...points[0])} and ${point(...points[1])}.`,
+        points,
+        step: `Line ℓ's slope is ${slopeWork(points)} = ${slopeText}.`,
+        signSlip: "Subtracts the y-coordinates and the x-coordinates in opposite orders, which reverses the sign of the slope.",
+        figure: null,
+      };
+    }
+    // A graph: both lattice points used in the alt text must be in the window.
+    const lattice = [-2 * d, -d, 0, d, 2 * d].map((x) => [x, (n * x) / d + c1])
+      .filter(([x, y]) => Math.abs(x) <= 6 && Math.abs(y) <= 6);
+    if (lattice.length < 2 || Math.abs(c1) > 5) return null;
+    const P = S.plane({ xMin: -7, xMax: 7, yMin: -7, yMax: 7 });
+    const [p1, p2] = [lattice[0], lattice[lattice.length - 1]];
+    // The name sits beside the line, on the open side, away from the axes.
+    const spot = [5, 4, -4, -5, 3, -3, 2, -2].map((x) => [x, (n * x) / d + c1])
+      .find(([x, y]) => Math.abs(y) >= 1.5 && Math.abs(y) <= 6) || [p2[0], p2[1]];
+    const label = P.label(spot[0], spot[1], "ℓ", { italic: true, anchor: "start", dx: 10, dy: n > 0 ? 12 : -12 });
+    const alt = `Line ℓ graphed in ${P.describe()}, with grid lines 1 unit apart. Line ℓ passes through ` +
+      `${point(...p1)} and ${point(...p2)}.`;
+    return {
+      text: "Line ℓ is shown in the xy-plane.",
+      points: [p1, p2],
+      step: `Line ℓ passes through ${point(...p1)} and ${point(...p2)}, so its slope is ${slopeWork([p1, p2])} = ${slopeText}.`,
+      signSlip: "Reads the rise of line ℓ with the wrong sign, which reverses the sign of the slope.",
+      figure: { svg: P.svg([...P.grid(), ...P.axes(), P.line(-n, d, c1 * d), label], alt), alt, notToScale: false },
+    };
+  }
+
+  const parallelLine = {
+    id: "parallel-line-through-point",
+    domain: "Algebra",
+    skill: "Linear functions",
+    subskill: "slope",
+    difficulty: "Medium",
+    title: "Line parallel to a given line through a given point",
+    recognize:
+      "Parallel lines have the same slope. Read line ℓ's slope from whatever form it is given in, keep that slope, " +
+      "and let the given point fix the new line's intercept; then answer what is asked about the new line.",
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 1 },
+    tricks: ["neighbouring-rule", "sign-error", "intermediate-value"],
+    build(t) {
+      const given = t.pick(["standard", "standard", "points", "graph", "graph", "slope"]);
+      const ask = t.pick(["intercept", "equation", "value"]);
+      const numeric = ask !== "equation" && t.chance(0.45);
+      for (;;) {
+        const graph = given === "graph";
+        const n = graph ? t.nonzero(-3, 3) : t.nonzero(-5, 5);
+        const d = graph ? t.int(1, 3) : t.int(1, 5);
+        if (S.gcd(n, d) !== 1 || (Math.abs(n) === d && d !== 1)) continue;
+        if (Math.abs(n) === 1 && d === 1 && t.chance(0.6)) continue;
+        const c1 = t.int(-6, 6);
+        const shown = showLineL(t, given, n, d, c1);
+        if (!shown) continue;
+        const x0 = d * t.nonzero(-4, 4);
+        const y0 = t.int(-9, 9);
+        const b2 = y0 - (n * x0) / d;
+        if (b2 === c1 || Math.abs(b2) > 40) continue;
+        const slope = frac(n, d);
+        const lineM = (sn, sd, cn, cd) => `y = ${slopeTerm(sn, sd)}${constantTerm(cn, cd)}`;
+        const keyEquation = lineM(n, d, b2, 1);
+        let key;
+        let modelled;
+        let stemAsk;
+        let finish;
+        let p = null;
+        if (ask === "intercept") {
+          key = b2;
+          modelled = [
+            [frac(y0 * n + d * x0, n), `Uses ${frac(-d, n)}, the slope of a line perpendicular to ℓ, instead of ℓ's slope.`],
+            [frac(y0 * d + n * x0, d), shown.signSlip],
+            [c1, "Gives the y-intercept of line ℓ, not of line m."],
+            [frac(y0 * n - d * x0, n), `Uses ${frac(d, n)}, the reciprocal of ℓ's slope, as if parallel meant reciprocal.`],
+          ];
+          stemAsk = "What is the y-coordinate of the y-intercept of line m?";
+          finish = `The y-intercept of line m is ${num(b2)}.`;
+        } else if (ask === "value") {
+          p = x0 + d * t.nonzero(-3, 3);
+          if (p === 0) continue;
+          const k = y0 + (n * (p - x0)) / d;
+          if (Math.abs(k) > 60) continue;
+          key = k;
+          modelled = [
+            [frac(y0 * n - d * (p - x0), n), `Uses ${frac(-d, n)}, the slope of a line perpendicular to ℓ, instead of ℓ's slope.`],
+            [y0 - (n * (p - x0)) / d, shown.signSlip],
+            [(n * p) / d + c1, `Finds the point on line ℓ with x-coordinate ${num(p)}, not the point on line m.`],
+            [frac(y0 * n + d * (p - x0), n), `Uses ${frac(d, n)}, the reciprocal of ℓ's slope, as if parallel meant reciprocal.`],
+            [b2, `Gives the y-intercept of line m, found on the way, not its y-coordinate at x = ${num(p)}.`],
+          ];
+          stemAsk = `The point (${num(p)}, k) lies on line m. What is the value of k?`;
+          finish = `At x = ${num(p)}, y = (${slope})(${num(p)})${b2 ? ` ${signed(b2)}` : ""} = ${num(k)}, so k = ${num(k)}.`;
+        } else {
+          key = keyEquation;
+          modelled = [
+            [lineM(-d, n, y0 * n + d * x0, n), `Uses ${frac(-d, n)}, the slope of a line perpendicular to ℓ, so this line is perpendicular to ℓ.`],
+            [lineM(n, d, c1, 1), `Has the right slope but keeps line ℓ's y-intercept: it is line ℓ itself and misses ${point(x0, y0)}.`],
+            ...t.shuffle([
+              [lineM(-n, d, y0 * d + n * x0, d), shown.signSlip],
+              [lineM(d, n, y0 * n - d * x0, n), `Uses ${frac(d, n)}, the reciprocal of ℓ's slope, as if parallel meant reciprocal.`],
+            ]),
+          ];
+          stemAsk = "Which equation defines line m?";
+          finish = `So line m is ${keyEquation}.`;
+        }
+        if (typeof key === "number") {
+          // Whole-number distractors only, so the key is not the only whole number.
+          modelled = modelled.filter(([value]) => typeof value === "number" || !String(value).includes("/"))
+            .map(([value, reason]) => [typeof value === "number" ? value : Number(String(value).replace(MINUS, "-")), reason]);
+        }
+        if (collides(key, modelled) || (!numeric && distinctWrongHard(key, modelled) < 3)) continue;
+        const wrong = numeric ? [] : typeof key === "number" ? spreadAround(t, key, modelled) : modelled;
+        const steps = [
+          shown.step,
+          `Line m is parallel to line ℓ, so its slope is also ${slope}.`,
+          `Substitute ${point(x0, y0)} into y = ${slopeTerm(n, d)} + b: b = ${num(y0)} ${MINUS} (${slope})(${num(x0)}) = ${num(b2)}.`,
+          finish,
+        ];
+        return {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 90,
+          stimulus: null,
+          figure: shown.figure,
+          stem: `${shown.text} Line m is parallel to line ℓ and passes through the point ${point(x0, y0)}. ${stemAsk}`,
+          correct: key,
+          wrong,
+          explanation:
+            `Line ℓ has slope ${slope}, and a line parallel to it has the same slope. Line m passes through ` +
+            `${point(x0, y0)}, so its y-intercept is ${num(y0)} ${MINUS} (${slope})(${num(x0)}) = ${num(b2)}, and line m ` +
+            `is ${keyEquation}. ${ask === "equation" ? "" : finish}`.trim(),
+          steps,
+          principles: [
+            "Two distinct nonvertical lines are parallel exactly when they have the same slope.",
+            "The y-intercept of a line with slope m through (x, y) is y − mx.",
+          ],
+          trap: "Parallel means equal slopes, not negative reciprocals; and line m keeps ℓ's slope but not ℓ's intercept.",
+          hint: "What does parallel tell you about the slope of line m?",
+          verify: () => {
+            // ℓ's slope is read back from what the student sees.
+            const slopeL = shown.points
+              ? lineFrom(shown.points).slope
+              : (() => {
+                const [A, B] = lineCoefficients(shown.equation);
+                return -A / B;
+              })();
+            const f = (x) => y0 + slopeL * (x - x0);
+            if (shown.points && !lineFrom(shown.points).consistent) return false;
+            if (ask === "intercept") return approx(f(0), key) && wrong.every(([value]) => !approx(f(0), value));
+            if (ask === "value") return approx(f(p), key) && wrong.every(([value]) => !approx(f(p), value));
+            const fits = (text) => {
+              const g = compile(text.replace(/^y = /, ""));
+              return approx(g({ x: x0 }), y0) && approx(g({ x: 1 }) - g({ x: 0 }), slopeL);
+            };
+            return fits(key) && wrong.every(([text]) => !fits(text));
+          },
+        };
+      }
+    },
+  };
+
   /* -------------------------------------------------------- linear-function-identity */
 
   const functionIdentity = {
@@ -1339,17 +1528,19 @@
     domain: "Algebra",
     skill: "Linear functions",
     subskill: "slope",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "Linear function with an unknown entry in its table",
     recognize:
       "A linear function changes by the same amount for each unit of x, so each change in f(x) is the slope times the " +
       "gap in x, even when the gaps are unequal and an entry is a letter. Write that for both pairs of rows, solve for " +
       "the letter, and then answer the question asked.",
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
+    // Official Medium: once the two changes are written as slope times gap,
+    // it is two equations in a (retiered 2026-10-16).
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 0, trap: 1 },
     tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
     build(t) {
-      // Finding a alone was Medium work (two slopes set equal) and was
-      // dropped; every ask now goes on from a to the line itself.
+      // Finding a alone (two slopes set equal) is not asked; every ask goes
+      // on from a to the line itself.
       const ask = t.pick(["slope", "intercept", "intercept", "value"]);
       const asTable = t.chance(0.6);
       const numericWanted = t.chance(0.4);
@@ -1463,8 +1654,159 @@
     },
   };
 
+  /* ------------------------------------------------ linear-percent-of-original-rate */
+
+  // Each scene's quantity changes every year (or day) by r% of its starting
+  // value, so f(t) = a ± bt with b = (r/100)a.
+  const percentScenes = [
+    {
+      name: "V", down: true, unit: "year", units: "years", starts: [12000, 15000, 16000, 18000, 20000, 24000, 25000, 30000, 32000, 40000, 48000],
+      rates: [5, 8, 10, 12.5, 6, 4],
+      text: (r) => `Each year after a delivery van is purchased, its value decreases by an amount equal to ${num(r)}% of its purchase price.`,
+      model: "gives the value, in dollars, of the van t years after it was purchased",
+      start: "the purchase price of the van, in dollars", money: true,
+    },
+    {
+      name: "P", down: false, unit: "year", units: "years", starts: [12000, 16000, 20000, 24000, 25000, 30000, 40000, 50000],
+      rates: [2, 2.5, 3, 4, 5, 1.5],
+      text: (r) => `Each year since 2010, the population of a town has increased by ${num(r)}% of its population in 2010.`,
+      model: "estimates the population of the town t years after 2010",
+      start: "the population of the town in 2010", money: false,
+    },
+    {
+      name: "W", down: true, unit: "day", units: "days", starts: [8000, 12000, 16000, 20000, 24000, 30000, 40000],
+      rates: [2, 2.5, 4, 5, 1.5],
+      text: (r) => `During a dry spell, the amount of water in a storage tank decreased each day by ${num(r)}% of the amount it held when the dry spell began.`,
+      model: "gives the amount of water, in gallons, in the tank t days after the dry spell began",
+      start: "the amount of water, in gallons, in the tank when the dry spell began", money: false,
+    },
+    {
+      name: "A", down: false, unit: "year", units: "years", starts: [2000, 2500, 4000, 5000, 6000, 8000, 10000],
+      rates: [3, 4, 5, 6, 2.5],
+      text: (r) => `Each year, a savings bond earns simple interest equal to ${num(r)}% of the amount originally invested.`,
+      model: "gives the value of the bond, in dollars, t years after it was bought",
+      start: "the amount originally invested, in dollars", money: true,
+    },
+  ];
+
+  const percentRate = {
+    id: "linear-percent-of-original-rate",
+    domain: "Algebra",
+    skill: "Linear functions",
+    subskill: "slope",
+    difficulty: "Hard",
+    title: "Linear model whose rate is a percent of the starting value",
+    recognize:
+      "A change of r% of the starting value each period is the same amount every period, so the model is linear and " +
+      "its slope is r% of the starting value, which is itself unknown. Write the slope in terms of the starting " +
+      "value, use the one known value of the function to find the starting value, then answer the question.",
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 2, trap: 2 },
+    tricks: ["percent-base", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      const ask = t.pick(["rate", "rate", "start", "later"]);
+      const numericWanted = t.chance(0.35);
+      for (;;) {
+        const scene = t.pick(percentScenes);
+        const r = t.pick(scene.rates);
+        const a = t.pick(scene.starts);
+        const b = (r * a) / 100;
+        if (!Number.isInteger(b)) continue;
+        const sign = scene.down ? -1 : 1;
+        const T = t.int(2, scene.down ? Math.min(8, Math.floor(60 / r)) : 8);
+        const G = a + sign * b * T;
+        const T2 = T + t.int(2, 6);
+        const later = a + sign * b * T2;
+        if (G <= 0 || later <= 0 || T < 2) continue;
+        const rG = (r * G) / 100;
+        const f = scene.name;
+        const show = (value) => commas(value);
+        let key;
+        let modelled;
+        let stemAsk;
+        if (ask === "rate") {
+          key = b;
+          modelled = [
+            [rG, `Takes ${num(r)}% of ${show(G)}, the value at t = ${T}, instead of ${num(r)}% of the starting value.`],
+            [a, `Gives the value of a, ${scene.start}, found on the way, not b.`],
+            [b * T, `Gives the total change over ${T} ${scene.units}, not the change per ${scene.unit}.`],
+            [G / T, `Divides ${show(G)} by ${T}, treating the value at t = ${T} as the total change.`],
+          ];
+          stemAsk = "What is the value of b?";
+        } else if (ask === "start") {
+          key = a;
+          modelled = [
+            [G - sign * rG * T, `Takes ${num(r)}% of ${show(G)}, the value at t = ${T}, as the change per ${scene.unit} and works back from it.`],
+            [b, `Gives b, the change per ${scene.unit}, not a.`],
+            [(G * (100 + sign * r * T)) / 100, `Applies the ${num(r * T)}% total change to ${show(G)} again instead of undoing it.`],
+            [G - sign * b, `Works back only one ${scene.unit} from t = ${T}.`],
+          ];
+          stemAsk = `What is the value of a?`;
+        } else {
+          key = later;
+          modelled = [
+            [G + sign * rG * (T2 - T), `Takes ${num(r)}% of ${show(G)}, the value at t = ${T}, as the change per ${scene.unit}.`],
+            [G + sign * b * T2, `Counts ${T2} ${scene.units} of change from the value at t = ${T}, instead of ${T2 - T}.`],
+            [a, `Gives the value of a, ${scene.start}, found on the way.`],
+            [Math.round(G * Math.pow(1 + (sign * r) / 100, T2 - T)), `Applies a ${num(r)}% change to each ${scene.unit}'s new value, as if the change compounded.`],
+          ];
+          stemAsk = `What is the value of ${f}(${T2})?`;
+        }
+        modelled = modelled.filter(([value]) => Number.isInteger(value) && value > 0);
+        if (collides(key, modelled) || distinctWrongHard(key, modelled) < 3) continue;
+        const numeric = numericWanted && fitsGrid(key);
+        const wrong = numeric ? [] : spreadAround(t, key, modelled);
+        const op = scene.down ? MINUS : "+";
+        const fraction = (r * T) / 100;
+        const steps = [
+          `a is ${f}(0), ${scene.start}, and b is the change per ${scene.unit}, so b = ${num(r / 100)}a.`,
+          `${f}(${T}) = a ${op} ${num(r / 100)}a(${T}) = ${num(1 + sign * fraction)}a = ${show(G)}, so a = ${show(a)}.`,
+          `b = ${num(r / 100)}(${show(a)}) = ${show(b)}.`,
+        ];
+        if (ask === "later") steps.push(`${f}(${T2}) = ${show(a)} ${op} ${show(b)}(${T2}) = ${show(later)}.`);
+        const instance = {
+          responseType: numeric ? "numeric" : "multiple-choice",
+          estimatedSeconds: 125,
+          stimulus: null,
+          stem:
+            `${scene.text(r)} The function ${f}, defined by ${f}(t) = a ${op} bt, where a and b are constants, ` +
+            `${scene.model}. If ${f}(${T}) = ${show(G)}, ${stemAsk.charAt(0).toLowerCase()}${stemAsk.slice(1)}`,
+          correct: key,
+          wrong,
+          explanation:
+            `The change each ${scene.unit} is ${num(r)}% of the starting value a, so b = ${num(r / 100)}a and ` +
+            `${f}(${T}) = a ${op} ${num(r / 100)}a(${T}) = ${num(1 + sign * fraction)}a. Setting this equal to ${show(G)} ` +
+            `gives a = ${show(a)}, so b = ${show(b)}` +
+            (ask === "later" ? ` and ${f}(${T2}) = ${show(later)}.` : "."),
+          steps,
+          principles: [
+            "A change of a fixed percent of the starting value is the same amount every period, so the model is linear.",
+            "A percent is always a percent of some base; read which base the words name.",
+          ],
+          trap: `${num(r)}% of ${show(G)} uses the value at t = ${T} as the base, but the change is ${num(r)}% of the starting value, which is not given.`,
+          hint: `Write b in terms of a before using ${f}(${T}) = ${show(G)}.`,
+          verify: () => {
+            // Step the quantity one period at a time from each candidate start
+            // and keep the one that reaches G at t = T.
+            const found = [];
+            for (let start = 100; start <= 100000; start += 100) {
+              let value = start;
+              for (let k = 0; k < T; k += 1) value += (sign * r * start) / 100;
+              if (approx(value, G)) found.push(start);
+            }
+            if (found.length !== 1) return false;
+            const start = found[0];
+            const perPeriod = (r * start) / 100;
+            const answer = ask === "rate" ? perPeriod : ask === "start" ? start : start + sign * perPeriod * T2;
+            return approx(answer, key);
+          },
+        };
+        return commaChoices(instance);
+      }
+    },
+  };
+
   return [
-    functionValue, slopeTwoPoints, lineIntercepts, functionConstant, perpendicularLine, linearTransform,
-    graphTransform, functionIdentity, tableUnknown,
+    functionValue, slopeTwoPoints, lineIntercepts, functionConstant, perpendicularLine, parallelLine, linearTransform,
+    graphTransform, tableUnknown, functionIdentity, percentRate,
   ];
 });
