@@ -13,6 +13,18 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for graph interpretation.
 
+> **Try it.** A minimal fixture problem for graph interpretation.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Equation modeling {#equation-modeling}
 
 > **Example.** A minimal fixture example for equation modeling.
+
+> **Try it.** A minimal fixture problem for equation modeling.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

@@ -13,6 +13,18 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for basic probability.
 
+> **Try it.** A minimal fixture problem for basic probability.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Conditional probability {#conditional-probability}
 
 > **Example.** A minimal fixture example for conditional probability.
+
+> **Try it.** A minimal fixture problem for conditional probability.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

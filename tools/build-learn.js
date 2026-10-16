@@ -97,6 +97,8 @@ function parseFacts(factsText) {
 // Parses every page, fills in facts, and checks links between pages.
 // Returns { pages: { id: page }, facts: Map, errors: [{ file, line, message }] }.
 // A page is kept even when it has errors, so later checks can say more.
+// Links to lessons.html and weeks.html are tools/check-learn.js's to check,
+// against the lesson and weekly catalogs.
 function loadLearn(tree) {
   const { facts, errors } = parseFacts(tree.factsText);
   const parsed = {};
@@ -156,6 +158,7 @@ function loadLearn(tree) {
     });
     record.file = page.file;
     record.meta = page.meta;
+    record.links = page.links;
     pages[page.id] = record;
   });
   return { pages, facts, errors };
@@ -200,6 +203,7 @@ function bundleSource(pages, index) {
     const page = Object.assign({}, pages[id]);
     delete page.file;
     delete page.meta;
+    delete page.links;
     shipped[id] = page;
   });
   const json = JSON.stringify({ pages: shipped, index }, (key, value) => (key === "line" ? undefined : value));

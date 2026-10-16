@@ -13,6 +13,18 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for solve systems.
 
+> **Try it.** A minimal fixture problem for solve systems.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Interpret intersection {#interpret-intersection}
 
 > **Example.** A minimal fixture example for interpret intersection.
+
+> **Try it.** A minimal fixture problem for interpret intersection.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

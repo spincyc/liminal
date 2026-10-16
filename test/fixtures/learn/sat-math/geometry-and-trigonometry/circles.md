@@ -13,6 +13,18 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for circle measures.
 
+> **Try it.** A minimal fixture problem for circle measures.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Circle equations {#circle-equations}
 
 > **Example.** A minimal fixture example for circle equations.
+
+> **Try it.** A minimal fixture problem for circle equations.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

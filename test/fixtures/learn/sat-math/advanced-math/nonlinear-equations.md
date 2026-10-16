@@ -13,10 +13,28 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for quadratic equations.
 
+> **Try it.** A minimal fixture problem for quadratic equations.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Radical equations {#radical-equations}
 
 > **Example.** A minimal fixture example for radical equations.
 
+> **Try it.** A minimal fixture problem for radical equations.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Absolute value {#absolute-value}
 
 > **Example.** A minimal fixture example for absolute value.
+
+> **Try it.** A minimal fixture problem for absolute value.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

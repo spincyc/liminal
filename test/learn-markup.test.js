@@ -31,18 +31,115 @@ test("a fixture page using every construct parses cleanly into a block tree", ()
     skill: "Linear inequalities",
   });
   const types = result.blocks.map((block) => block.type);
-  assert.deepEqual(new Set(types), new Set(["heading", "paragraph", "list", "callout", "table", "pre"]));
+  assert.deepEqual(new Set(types), new Set(["heading", "paragraph", "list", "callout", "try", "table", "pre"]));
   const kinds = result.blocks.filter((block) => block.type === "callout").map((block) => block.kind);
   assert.deepEqual(new Set(kinds), new Set(["rule", "example", "trap", "fails-when", "desmos", "check", "note"]));
   const example = result.blocks.find((block) => block.type === "callout" && block.kind === "example");
   assert.deepEqual(strip(example.blocks[1]), { type: "pre", text: "3x − 5 ≤ 7\n    3x ≤ 12\n     x ≤ 4" });
   assert.deepEqual(Learn.outline(result.blocks).map((entry) => entry.id), [
+    "before-you-start",
     "solve-inequalities",
     "systems-of-inequalities",
     "where-these-show-up",
   ]);
   assert.deepEqual(result.facts.map((use) => use.id), ["sat-math-minutes"]);
-  assert.equal(result.links.length, 3);
+  assert.equal(result.links.length, 5);
+  assert.deepEqual(strip(result.links.filter((link) => link.site)), [
+    { site: "lessons", route: "common-core-math/8/2-3" },
+    { site: "weeks", route: "common-core-math/7/17" },
+  ]);
+  const tries = Learn.tries(result.blocks);
+  assert.equal(tries.length, 6);
+  assert.deepEqual(Object.keys(tries[2]), ["type", "line", "problem", "first", "hint", "answer", "solution"]);
+  assert.deepEqual(tries[2].answer, ["x ≤ 4"]);
+  assert.deepEqual(strip(tries[2].solution), [{ type: "pre", text: "4x + 2 ≤ 18\n    4x ≤ 16\n     x ≤ 4" }]);
+});
+
+test("a Try it splits into its problem, first step, hint, answer and worked solution", () => {
+  const result = page(
+    "> **Try it.** Solve 4(x − 2) = 3x + 5.\n>\n> It takes two steps.\n>\n" +
+    "> **First step.** Distribute: 4x − 8 = 3x + 5.\n>\n" +
+    "> **Hint.** Gather the x terms\n> on one side.\n>\n" +
+    "> **Answer.** x = 13, the only\n> solution.\n>\n" +
+    "> ```\n> 4x − 8 = 3x + 5\n>      x = 13\n> ```\n>\n> - Check: 4(11) = 44.\n",
+  );
+  assert.deepEqual(result.errors, []);
+  assert.deepEqual(strip(result.blocks[1]), {
+    type: "try",
+    problem: [
+      { type: "paragraph", content: ["Solve 4(x − 2) = 3x + 5."] },
+      { type: "paragraph", content: ["It takes two steps."] },
+    ],
+    first: [{ type: "paragraph", content: ["Distribute: 4x − 8 = 3x + 5."] }],
+    hint: [{ type: "paragraph", content: ["Gather the x terms on one side."] }],
+    answer: ["x = 13, the only solution."],
+    solution: [
+      { type: "pre", text: "4x − 8 = 3x + 5\n     x = 13" },
+      { type: "list", ordered: false, items: [["Check: 4(11) = 44."]] },
+    ],
+  });
+  // The smallest Try it: a problem and an answer; first step and hint are
+  // optional, and only the parts present are kept.
+  const small = page("> **Try it.** What is 2 + 2?\n>\n> **Answer.** 4\n");
+  assert.deepEqual(small.errors, []);
+  assert.deepEqual(strip(small.blocks[1]), {
+    type: "try", problem: [{ type: "paragraph", content: ["What is 2 + 2?"] }], answer: ["4"], solution: [],
+  });
+});
+
+test("a Try it reports missing, repeated and misplaced parts on their lines", () => {
+  assertError(page("> **Try it.** No answer here.\n>\n> **Hint.** None.\n"), 7, /needs an \*\*Answer\.\*\* line/);
+  assertError(page("> **Try it.**\n> **Answer.** 4\n"), 7, /starts with its problem/);
+  assertError(page("> **Try it.** P.\n>\n> **Answer.** 4\n>\n> **Hint.** Late.\n"), 11, /\*\*Hint\.\*\* must come before \*\*Answer\.\*\*/);
+  assertError(page("> **Try it.** P.\n>\n> **Hint.** One.\n>\n> **Hint.** Two.\n>\n> **Answer.** 4\n"), 11, /appears twice/);
+  assertError(page("> **Try it.** P.\n>\n> **Hint.**\n>\n> **Answer.** 4\n"), 9, /\*\*Hint\.\*\* needs text/);
+  assertError(page("> **Try it.** P.\n>\n> **Answer.**\n>\n> 4, because 2 + 2 = 4.\n"), 9, /answer itself on the \*\*Answer\.\*\* line/);
+  assertError(page("> **Try it 3.** P.\n>\n> **Answer.** 4\n"), 7, /takes no number or suffix/);
+  // A blank line without > ends the callout, so the answer would show as a
+  // second, broken callout; the parts belong to a Try it only.
+  assertError(page("> **Try it.** P.\n\n> **Answer.** 4\n"), 9, /keep the parts in that callout/);
+  assertError(page("> **Example.** Worked.\n>\n> **Answer.** 4\n"), 9, /belongs only inside a \*\*Try it\.\*\* callout/);
+  assertError(page("> **Try it.** P.\n>\n> **Example.** Inside.\n>\n> **Answer.** 4\n"), 9, /a new callout starts after a blank line/);
+  assertError(page("> **Try it.** P.\n>\n> ## Heading\n>\n> **Answer.** 4\n"), 9, /heading cannot go inside a callout/);
+});
+
+test("links to expanded lessons and coursework keep to a three-part route", () => {
+  const { content, errors } = Learn.parseInline(
+    "[lesson](lessons.html#common-core-math/8/2-3) and [week](weeks.html#high-school-math/algebra/15)",
+  );
+  assert.deepEqual(errors, []);
+  assert.deepEqual(content, [
+    { type: "link", site: "lessons", route: "common-core-math/8/2-3", content: ["lesson"] },
+    " and ",
+    { type: "link", site: "weeks", route: "high-school-math/algebra/15", content: ["week"] },
+  ]);
+  ["lessons.html#common-core-math/8", "lessons.html#common-core-math/8/2-3/x", "weeks.html#Common-Core/8/1",
+    "weeks.html#a/b/c?x=1", "lessons.html"].forEach((target) => {
+    const result = Learn.parseInline(`[x](${target})`);
+    assert.ok(result.errors.some((error) => /must be (lessons|weeks)\.html#|must be learn:/.test(error.message)), target);
+  });
+  assert.equal(Learn.linkHref({ site: "lessons", route: "common-core-math/8/2-3" }), "lessons.html#common-core-math/8/2-3");
+  assert.equal(Learn.linkHref({ site: "weeks", route: "common-core-math/8/31" }), "weeks.html#common-core-math/8/31");
+  // A tampered bundle cannot point anywhere else.
+  assert.equal(Learn.linkHref({ site: "practice", route: "a/b/c" }), null);
+  assert.equal(Learn.linkHref({ site: "lessons", route: "a/b\"><x/c" }), null);
+  assert.equal(Learn.linkHref({ site: "weeks", route: "javascript:alert(1)" }), null);
+});
+
+test("facts, links and math prose inside a Try it are found like any other", () => {
+  const result = page(
+    "> **Try it.** It runs {{fact:sat-math-minutes}}; see [one](#one).\n>\n" +
+    "> **Hint.** x^2 grows.\n>\n> **Answer.** 12/3\n>\n> Then √(x + 7).\n\n## One {#one}\n\nText.\n",
+  );
+  assert.deepEqual(result.errors, []);
+  assert.deepEqual(result.facts.map((use) => use.id), ["sat-math-minutes"]);
+  assert.deepEqual(strip(result.links), [{ page: "sat/general/sample", anchor: "one" }]);
+  const seen = [];
+  Learn.walkInline(result.blocks, (node) => seen.push(node.type));
+  assert.deepEqual(seen, ["fact", "link"]);
+  const runs = [];
+  Learn.proseRuns(result.blocks, (text) => runs.push(text));
+  assert.deepEqual(runs, ["It runs ", "; see ", "one", ".", "x^2 grows.", "12/3", "Then √(x + 7).", "Text."]);
 });
 
 test("inline markup becomes typed nodes and everything else stays text", () => {

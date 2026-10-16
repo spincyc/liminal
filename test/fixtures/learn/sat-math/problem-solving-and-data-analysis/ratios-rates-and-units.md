@@ -13,10 +13,28 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for unit rates.
 
+> **Try it.** A minimal fixture problem for unit rates.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Proportions {#proportions}
 
 > **Example.** A minimal fixture example for proportions.
 
+> **Try it.** A minimal fixture problem for proportions.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Unit conversion {#unit-conversion}
 
 > **Example.** A minimal fixture example for unit conversion.
+
+> **Try it.** A minimal fixture problem for unit conversion.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

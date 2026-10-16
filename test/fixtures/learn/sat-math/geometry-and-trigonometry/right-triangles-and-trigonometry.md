@@ -13,6 +13,18 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for Pythagorean theorem.
 
+> **Try it.** A minimal fixture problem for Pythagorean theorem.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Trigonometric ratios {#trigonometric-ratios}
 
 > **Example.** A minimal fixture example for trigonometric ratios.
+
+> **Try it.** A minimal fixture problem for trigonometric ratios.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

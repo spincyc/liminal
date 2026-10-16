@@ -342,6 +342,90 @@
   --callout-ink: var(--color-muted);
 }
 
+/* ------------------------------------------------------------------ try it */
+
+/* A practice problem: an outlined box on the page surface, so it reads as
+   the student's turn rather than one more worked example (filled). The
+   hint and answer panels open in place under the buttons. */
+.learn-try {
+  padding: 18px 20px;
+  border: 1.5px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.learn-try > * + *,
+.learn-try-first > * + *,
+.learn-try-hint > * + *,
+.learn-try-answer > * + * {
+  margin-top: 10px;
+}
+
+.learn-try-label,
+.learn-try-part-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.learn-try-label {
+  color: var(--color-accent);
+}
+
+.learn-try > .learn-try-label + * {
+  margin-top: 4px;
+}
+
+.learn-try-part-label {
+  color: var(--color-muted);
+}
+
+.learn-try-part-label + * {
+  margin-top: 4px !important;
+}
+
+.learn-try-first {
+  padding: 10px 14px;
+  border-left: 3px solid var(--color-line-strong);
+  background: var(--color-softer);
+}
+
+.learn-try-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.learn-try-hint,
+.learn-try-answer {
+  padding-top: 12px;
+  border-top: 1px dashed var(--color-line-strong);
+}
+
+.learn-try-result {
+  font-weight: var(--weight-bold);
+}
+
+/* The answers collected for print; see the print rules below. */
+.learn-try-key {
+  display: none;
+}
+
+.learn-try-key-list {
+  margin: 8px 0 0;
+  padding-left: 1.75em;
+}
+
+.learn-try-key-list > li + li {
+  margin-top: 12px;
+}
+
+.learn-try-key-list > li > * + *,
+.learn-try-key-hint > * + * {
+  margin-top: 6px;
+}
+
 /* ------------------------------------------------------------------ tables */
 
 .learn-table-wrap {
@@ -458,7 +542,8 @@
 }
 
 @media screen and (max-width: 640px) {
-  .callout {
+  .callout,
+  .learn-try {
     padding: 12px 12px 12px 14px;
   }
 
@@ -508,6 +593,44 @@
   }
 
   .learn-table tr {
+    break-inside: avoid;
+  }
+
+  /* Try it on paper: the problem and any given first step print where
+     they are; hints, answers and worked solutions print once, at the end
+     of the page under "Answers", numbered to match (learn.js builds that
+     list from the page data). Whatever the reader opened on screen does
+     not change the printout. */
+  .learn-try {
+    border: 1px solid #333;
+    background: #fff;
+    break-inside: avoid;
+  }
+
+  .learn-try-label {
+    color: #000;
+  }
+
+  .learn-try-first {
+    border-left-color: #333;
+    background: #fff;
+  }
+
+  .learn-try-actions,
+  .learn-try-hint,
+  .learn-try-answer {
+    display: none !important;
+  }
+
+  .learn-try-key {
+    display: block;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #333;
+    font-size: 0.92em;
+  }
+
+  .learn-try-key-list > li {
     break-inside: avoid;
   }
 }

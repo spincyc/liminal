@@ -22,9 +22,34 @@
 //   preformatted   ``` fenced blocks, kept verbatim, for aligned work
 //   callouts       "> **Example.** …" and following "> " lines; labels
 //                  Example, Fails when, Trap, Desmos, Check, Note, Rule
+//   try it         a practice problem the student works before seeing the
+//                  answer: a callout labelled "> **Try it.**" (no suffix;
+//                  the page numbers them). Inside it, a line that starts
+//                  with one of these labels starts a part, in this order:
+//                    **First step.**  optional; the step given, shown
+//                    **Hint.**        optional; hidden until asked for
+//                    **Answer.**      required; the text on its line (and
+//                                     any lines joined to it) is the
+//                                     answer, and the blocks after it are
+//                                     the worked solution
+//                  The problem is everything before the first part. The
+//                  parts stay in the one callout ("> " on blank lines too);
+//                  the labels mean nothing anywhere else.
+//                  Screen (learn.js): the problem and first step show; the
+//                  hint and answer open in place from "Show a hint" and
+//                  "Show answer" buttons (aria-expanded, keyboard).
+//                  Print (learn.css): the buttons, hints and answers drop
+//                  out of the problems, and every hint, answer and
+//                  solution prints at the end of the page under "Answers",
+//                  numbered to match, so a printed page can still be tried
+//                  before it is checked. The key is built from the block
+//                  tree, never from what the reader has opened.
 //   inline         **bold**, *italic*, `code`, [text](learn:<page>#<anchor>),
 //                  [text](#<anchor>), [text](https://<allowed host>/…),
-//                  {{fact:<id>}}, and backslash escapes of punctuation
+//                  [text](lessons.html#<track>/<grade>/<lesson>) for an
+//                  expanded lesson, [text](weeks.html#<track>/<grade or
+//                  course>/<week>) for a week of coursework, {{fact:<id>}},
+//                  and backslash escapes of punctuation
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
@@ -33,6 +58,13 @@
   "use strict";
 
   const CALLOUT_LABELS = ["Example", "Fails when", "Trap", "Desmos", "Check", "Note", "Rule"];
+  const TRY_LABEL = "Try it";
+  // The parts of a Try it, in the order they must come.
+  const TRY_PARTS = ["First step", "Hint", "Answer"];
+  // Pages on the rest of the site a Learn page may link to by route: the
+  // expanded lessons and the weekly coursework. Their routes are checked
+  // against the lesson and weekly catalogs by tools/check-learn.js.
+  const SITE_PAGES = ["lessons", "weeks"];
   const ALLOWED_HOSTS = [
     "satsuite.collegeboard.org",
     "collegeboard.org",
@@ -48,6 +80,10 @@
   const FACT_ID = /^[a-z0-9]+(?:[-.][a-z0-9]+)*$/;
   const LEARN_TARGET = new RegExp(`^learn:(${SEGMENT}(?:/${SEGMENT})*)(?:#(${SEGMENT}))?$`);
   const SAME_PAGE_TARGET = new RegExp(`^#(${SEGMENT})$`);
+  // lessons.html#common-core-math/8/2-3 or weeks.html#common-core-math/8/31:
+  // a track, a grade or course, and a lesson id or week, nothing else.
+  const SITE_ROUTE = new RegExp(`^${SEGMENT}/${SEGMENT}/${SEGMENT}$`);
+  const SITE_TARGET = new RegExp(`^(${SITE_PAGES.join("|")})\\.html#(.*)$`);
 
   const HEADING = /^(#{1,6})(?:[ \t]+(.*?))?[ \t]*$/;
   const BULLET = /^-[ \t]+(.*)$/;
@@ -58,8 +94,9 @@
   const SETEXT = /^=+[ \t]*$/;
   const FENCE_CLOSE = /^```[ \t]*$/;
   const CALLOUT_LABEL = new RegExp(
-    `^\\*\\*(${CALLOUT_LABELS.join("|")})( [^*]*?)?[.:]?\\*\\*[.:]?(?=\\s|$)\\s*`,
+    `^\\*\\*(${CALLOUT_LABELS.concat([TRY_LABEL]).join("|")})( [^*]*?)?[.:]?\\*\\*[.:]?(?=\\s|$)\\s*`,
   );
+  const TRY_PART = new RegExp(`^\\*\\*(${TRY_PARTS.join("|")})[.:]?\\*\\*[.:]?(?=\\s|$)\\s*`);
   // Raw HTML anywhere, even inside code, fails: a page never needs it, and
   // an autolink or entity would show as literal text anyway.
   const RAW_HTML = /<\/?[A-Za-z][A-Za-z0-9-]*(?:\s[^<>]*)?\/?>|<!--|<[A-Za-z][A-Za-z0-9+.-]*:[^\s<>]*>/;
@@ -113,6 +150,13 @@
     if (learn) return learn[2] ? { page: learn[1], anchor: learn[2] } : { page: learn[1] };
     const local = SAME_PAGE_TARGET.exec(target);
     if (local) return { page: pageId, anchor: local[1] };
+    const site = SITE_TARGET.exec(target);
+    if (site) {
+      if (SITE_ROUTE.test(site[2])) return { site: site[1], route: site[2] };
+      return {
+        error: `link "${target}" must be ${site[1]}.html#<track>/<${site[1] === "lessons" ? "grade" : "grade or course"}>/<${site[1] === "lessons" ? "lesson" : "week"}>`,
+      };
+    }
     if (/^https?:/i.test(target)) {
       if (isAllowedUrl(target)) return { url: target };
       return {
@@ -120,7 +164,8 @@
       };
     }
     return {
-      error: `link target "${target}" must be learn:<page-id>, learn:<page-id>#<anchor>, #<anchor>, or an https URL`,
+      error: `link target "${target}" must be learn:<page-id>, learn:<page-id>#<anchor>, #<anchor>, ` +
+        "lessons.html#<route>, weeks.html#<route>, or an https URL",
     };
   }
 
@@ -518,12 +563,23 @@
       }
     });
     if (!label) {
+      const part = TRY_PART.exec(opening);
       ctx.report(
         first.line,
-        `a > block is a callout and starts with a label: ${CALLOUT_LABELS.map((name) => `**${name}.**`).join(", ")}`,
+        part
+          ? `**${part[1]}.** starts a part of the **${TRY_LABEL}.** callout above it; keep the parts in that callout, with "> " on blank lines`
+          : `a > block is a callout and starts with a label: ${CALLOUT_LABELS.concat([TRY_LABEL]).map((name) => `**${name}.**`).join(", ")}`,
       );
       return cursor;
     }
+    if (label[1] === TRY_LABEL) {
+      parseTry(inner.slice(firstIndex), label, ctx, blocks);
+      return cursor;
+    }
+    inner.slice(firstIndex + 1).forEach((entry) => {
+      const part = TRY_PART.exec(entry.text.trim());
+      if (part) ctx.report(entry.line, `**${part[1]}.** belongs only inside a **${TRY_LABEL}.** callout`);
+    });
     const body = parseBlocks(
       [{ text: opening.slice(label[0].length), line: first.line }].concat(inner.slice(firstIndex + 1)),
       ctx,
@@ -538,6 +594,72 @@
       blocks: body,
     });
     return cursor;
+  }
+
+  // A "> **Try it.**" callout, its "> " markers already removed; lines[0]
+  // holds the label. Splits the lines into the problem and its parts and
+  // pushes { type: "try", line, problem, first?, hint?, answer, solution },
+  // where answer is inline content and the rest are block lists.
+  function parseTry(lines, label, ctx, blocks) {
+    const head = lines[0];
+    if (label[2] && label[2].trim()) {
+      ctx.report(head.line, `**${TRY_LABEL}.** takes no number or suffix; the page numbers its problems`);
+    }
+    const segments = [{ part: null, line: head.line, lines: [{ text: head.text.trim().slice(label[0].length), line: head.line }] }];
+    let last = -1;
+    lines.slice(1).forEach((entry) => {
+      const part = TRY_PART.exec(entry.text.trim());
+      if (!part) {
+        segments[segments.length - 1].lines.push(entry);
+        return;
+      }
+      const order = TRY_PARTS.indexOf(part[1]);
+      if (segments.some((segment) => segment.part === part[1])) {
+        ctx.report(entry.line, `**${part[1]}.** appears twice in one **${TRY_LABEL}.**`);
+      } else if (order < last) {
+        ctx.report(entry.line, `**${part[1]}.** must come before **${TRY_PARTS[last]}.** (the order is ${TRY_PARTS.map((name) => `**${name}.**`).join(", ")})`);
+      }
+      last = Math.max(last, order);
+      segments.push({ part: part[1], line: entry.line, lines: [{ text: entry.text.trim().slice(part[0].length), line: entry.line }] });
+    });
+
+    const block = { type: "try", line: head.line, problem: [] };
+    segments.forEach((segment) => {
+      const parsed = parseBlocks(segment.lines, ctx, true);
+      if (segment.part === null) {
+        if (!parsed.length) ctx.report(head.line, `a **${TRY_LABEL}.** starts with its problem, before any part`);
+        block.problem = parsed;
+        return;
+      }
+      if (hasOwn(block, segment.part === "Answer" ? "answer" : segment.part === "Hint" ? "hint" : "first")) return;
+      if (segment.part === "Answer") {
+        const opening = parsed[0];
+        if (!segment.lines[0].text.trim() || !opening || opening.type !== "paragraph" || opening.line !== segment.line) {
+          ctx.report(segment.line, "write the answer itself on the **Answer.** line; the worked solution follows it");
+          block.answer = [];
+          block.solution = parsed;
+          return;
+        }
+        block.answer = opening.content;
+        block.solution = parsed.slice(1);
+        return;
+      }
+      if (!parsed.length) ctx.report(segment.line, `**${segment.part}.** needs text`);
+      block[segment.part === "Hint" ? "hint" : "first"] = parsed;
+    });
+    if (!hasOwn(block, "answer")) {
+      ctx.report(head.line, `a **${TRY_LABEL}.** needs an **Answer.** line, so the student can check their work`);
+      block.answer = [];
+      block.solution = [];
+    }
+    // Key order for a stable bundle: problem, first, hint, answer, solution.
+    const ordered = { type: "try", line: block.line, problem: block.problem };
+    ["first", "hint"].forEach((key) => {
+      if (block[key]) ordered[key] = block[key];
+    });
+    ordered.answer = block.answer;
+    ordered.solution = block.solution;
+    blocks.push(ordered);
   }
 
   function parseParagraph(lines, index, ctx, blocks) {
@@ -670,9 +792,10 @@
   /* -------------------------------------------------------------- parse */
 
   // Returns { meta, blocks, errors: [{ line, message }], facts: [{ id, line }],
-  // links: [{ page, anchor?, line } | { url, line }] }. Every block keeps
-  // its source line (the build drops them); inline content is an array of
-  // strings and { type: strong | em | code | link | fact } nodes.
+  // links: [{ page, anchor?, line } | { site, route, line } | { url, line }] }.
+  // Every block keeps its source line (the build drops them); inline content
+  // is an array of strings and { type: strong | em | code | link | fact }
+  // nodes.
   function parse(source) {
     const errors = [];
     const report = (line, message) => errors.push({ line, message });
@@ -726,7 +849,17 @@
       if (block.head) block.head.forEach(inline);
       if (block.rows) block.rows.forEach((row) => row.forEach(inline));
       if (block.blocks) walkInline(block.blocks, visit);
+      if (block.type === "try") {
+        ["problem", "first", "hint"].forEach((key) => walkInline(block[key], visit));
+        inline(block.answer);
+        walkInline(block.solution, visit);
+      }
     });
+  }
+
+  // The Try it blocks of a block list, in page order.
+  function tries(blocks) {
+    return (blocks || []).filter((block) => block.type === "try");
   }
 
   // Anchors on a page, with the heading level each is on.
@@ -780,7 +913,8 @@
   }
 
   // Calls visit(text) for every string a Math page typesets: prose in
-  // paragraphs, list items, table cells and callouts, including bold,
+  // paragraphs, list items, table cells, callouts and every part of a
+  // Try it (its answer too), including bold,
   // italic and link text, but never inline code or fact values.
   function proseRuns(blocks, visit) {
     const inline = (content) => (content || []).forEach((node) => {
@@ -790,6 +924,10 @@
     (blocks || []).forEach((block) => {
       if (block.type === "callout") {
         proseRuns(block.blocks, visit);
+      } else if (block.type === "try") {
+        ["problem", "first", "hint"].forEach((key) => proseRuns(block[key], visit));
+        inline(block.answer);
+        proseRuns(block.solution, visit);
       } else if (isProseBlock(block)) {
         if (block.content) inline(block.content);
         (block.items || []).forEach(inline);
@@ -837,6 +975,11 @@
   // render as text (a URL that fails the allow-list is never followed).
   function linkHref(node) {
     if (node.url !== undefined) return isAllowedUrl(node.url) ? node.url : null;
+    if (node.site !== undefined) {
+      return SITE_PAGES.includes(node.site) && typeof node.route === "string" && SITE_ROUTE.test(node.route)
+        ? `${node.site}.html#${node.route}`
+        : null;
+    }
     if (typeof node.page === "string" && PAGE_ID.test(node.page) &&
       (!node.anchor || ANCHOR.test(node.anchor))) {
       return pageHash(node.page, node.anchor);
@@ -846,6 +989,9 @@
 
   return {
     CALLOUT_LABELS,
+    TRY_LABEL,
+    TRY_PARTS,
+    SITE_PAGES,
     ALLOWED_HOSTS,
     FRONT_MATTER_KEYS,
     ANCHOR,
@@ -864,6 +1010,7 @@
     },
     plainText,
     walkInline,
+    tries,
     anchors,
     outline,
     sections,

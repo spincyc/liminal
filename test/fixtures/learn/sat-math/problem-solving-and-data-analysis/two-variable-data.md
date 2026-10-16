@@ -13,6 +13,18 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for linear models.
 
+> **Try it.** A minimal fixture problem for linear models.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Scatterplots {#scatterplots}
 
 > **Example.** A minimal fixture example for scatterplots.
+
+> **Try it.** A minimal fixture problem for scatterplots.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

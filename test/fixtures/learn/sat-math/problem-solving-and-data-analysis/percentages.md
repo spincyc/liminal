@@ -13,6 +13,18 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for percent change.
 
+> **Try it.** A minimal fixture problem for percent change.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Percent applications {#percent-applications}
 
 > **Example.** A minimal fixture example for percent applications.
+
+> **Try it.** A minimal fixture problem for percent applications.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

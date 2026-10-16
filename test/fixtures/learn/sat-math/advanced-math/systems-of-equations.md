@@ -13,6 +13,18 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for linear-quadratic systems.
 
+> **Try it.** A minimal fixture problem for linear-quadratic systems.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Nonlinear systems {#nonlinear-systems}
 
 > **Example.** A minimal fixture example for nonlinear systems.
+
+> **Try it.** A minimal fixture problem for nonlinear systems.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

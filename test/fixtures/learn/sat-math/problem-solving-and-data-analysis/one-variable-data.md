@@ -13,10 +13,28 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for mean and median.
 
+> **Try it.** A minimal fixture problem for mean and median.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Spread {#spread}
 
 > **Example.** A minimal fixture example for spread.
 
+> **Try it.** A minimal fixture problem for spread.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Distributions {#distributions}
 
 > **Example.** A minimal fixture example for distributions.
+
+> **Try it.** A minimal fixture problem for distributions.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

@@ -13,10 +13,28 @@ Test fixture for tools/check-learn.js; not a lesson.
 
 > **Example.** A minimal fixture example for angle relationships.
 
+> **Try it.** A minimal fixture problem for angle relationships.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Similarity {#similarity}
 
 > **Example.** A minimal fixture example for similarity.
 
+> **Try it.** A minimal fixture problem for similarity.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.
+
 ## Triangle geometry {#triangle-geometry}
 
 > **Example.** A minimal fixture example for triangle geometry.
+
+> **Try it.** A minimal fixture problem for triangle geometry.
+>
+> **Answer.** 1
+>
+> A minimal fixture solution.

@@ -14,6 +14,26 @@ Math section runs {{fact:sat-math-minutes}}; see the
 [official structure](https://satsuite.collegeboard.org/sat/whats-on-the-test/structure)
 and [linear functions](learn:sat-math/algebra/linear-functions#slope).
 
+## Before you start {#before-you-start}
+
+Two quick checks. If either is shaky, relearn it in
+[Grade 8 lesson 2-3](lessons.html#common-core-math/8/2-3) or
+[Grade 7, week 17](weeks.html#common-core-math/7/17) first.
+
+> **Try it.** Solve 2x + 3 = 11.
+>
+> **Answer.** x = 4
+>
+> Subtract 3, then divide by 2.
+
+> **Try it.** Is −5 less than −2?
+>
+> **Hint.** Picture a number line.
+>
+> **Answer.** Yes
+>
+> −5 lies to the left of −2.
+
 ## Solve inequalities {#solve-inequalities}
 
 1. Undo addition and subtraction first.
@@ -34,10 +54,30 @@ and [linear functions](learn:sat-math/algebra/linear-functions#slope).
 >
 > Check x = 0: 3(0) − 5 = −5, and −5 ≤ 7. ✓
 
+> **Try it.** Solve 4x + 2 ≤ 18.
+>
+> **First step.** Subtract 2 from both sides: 4x ≤ 16.
+>
+> **Hint.** Divide by 4, a positive number.
+>
+> **Answer.** x ≤ 4
+>
+> ```
+> 4x + 2 ≤ 18
+>     4x ≤ 16
+>      x ≤ 4
+> ```
+
 > **Example 2.** Solve −2x + 1 > 9.
 >
 > - Subtract 1: −2x > 8.
 > - Divide by −2 and flip: x < −4.
+
+> **Try it.** Solve −3x − 2 < 7.
+>
+> **Answer.** x > −3
+>
+> Add 2: −3x < 9. Divide by −3 and flip: x > −3.
 
 > **Trap.** Forgetting the flip gives x > −4, which is often a choice.
 
@@ -75,6 +115,12 @@ such as `x^2 <= 9` stays as written.
 >
 > Multiply by 2, then add 1: x > 7. Check x = 9: (9 − 1)/2 = 4, and 4 > 3.
 
+> **Try it.** Solve (x + 2)/3 ≥ 2.
+>
+> **Answer.** x ≥ 4
+>
+> Multiply by 3: x + 2 ≥ 6, so x ≥ 4.
+
 ### A note on notation {#notation}
 
 Write "at most" as ≤ and "fewer than" as <. An open circle on a number
@@ -92,6 +138,15 @@ A point is a solution of a system when it makes **every** inequality true.
 > | y > −x + 4 | 3 > 2 | yes |
 >
 > Both hold, so (2, 3) is a solution.
+
+> **Try it.** Is (1, 1) a solution of the same system?
+>
+> **Answer.** No
+>
+> | Inequality | Substitute (1, 1) | True? |
+> | --- | --- | --- |
+> | y ≤ 2x + 1 | 1 ≤ 3 | yes |
+> | y > −x + 4 | 1 > 3 | no |
 
 > **Desmos.** Type both inequalities; the doubly shaded region is the
 > solution set.

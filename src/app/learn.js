@@ -7,7 +7,9 @@
   // page as a text node, through textContent, or through
   // LiminalRender.appendMath (which builds math from elements and text
   // nodes), and every href comes from LiminalLearn, which re-checks it;
-  // nothing is ever parsed as HTML.
+  // nothing is ever parsed as HTML. Try it problems open their hints and
+  // answers in place (renderTry) and print their answers at the end of the
+  // page (renderTryKey).
 
   const learn = window.LiminalLearn;
   const render = window.LiminalRender;
@@ -22,6 +24,10 @@
 
   let shownPage = null;
   let sectionHeadings = new Map();
+  // The page's Try it problems in order, numbered from 1, for the printed
+  // answers (see renderTryKey).
+  let tryCount = 0;
+  let tryBlocks = [];
 
   /* ------------------------------------------------------------ helpers */
 
@@ -152,6 +158,98 @@
     return box;
   }
 
+  // A button that opens and closes `panel` in place. The panel follows the
+  // button in the reading order, so opening it never moves focus.
+  function disclosure(panel, showText, hideText) {
+    const button = el("button", "button secondary learn-try-toggle", showText);
+    button.type = "button";
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", panel.id);
+    panel.hidden = true;
+    button.addEventListener("click", () => {
+      const open = button.getAttribute("aria-expanded") !== "true";
+      button.setAttribute("aria-expanded", String(open));
+      button.textContent = open ? hideText : showText;
+      panel.hidden = !open;
+      // Tables and wide work inside a closed panel had no width to fit.
+      if (open) fitWidths();
+    });
+    return button;
+  }
+
+  function tryPart(className, labelText, blocks, math) {
+    const part = el("div", className);
+    part.append(el("p", "learn-try-part-label", labelText));
+    renderBlocks(part, blocks, math);
+    return part;
+  }
+
+  // A practice problem: the problem and any given first step show; the
+  // hint and the answer with its worked solution open from buttons.
+  function renderTry(block, math) {
+    tryCount += 1;
+    tryBlocks.push(block);
+    const number = tryCount;
+    const box = el("div", "learn-try");
+    box.setAttribute("role", "group");
+    const label = el("p", "learn-try-label", `Try it ${number}`);
+    label.id = `try-${number}`;
+    box.setAttribute("aria-labelledby", label.id);
+    box.append(label);
+    renderBlocks(box, block.problem, math);
+    if (block.first && block.first.length) {
+      box.append(tryPart("learn-try-first", "First step, done for you", block.first, math));
+    }
+    const actions = el("div", "learn-try-actions");
+    const panels = [];
+    if (block.hint && block.hint.length) {
+      const hint = tryPart("learn-try-hint", "Hint", block.hint, math);
+      hint.id = `try-${number}-hint`;
+      actions.append(disclosure(hint, "Show a hint", "Hide the hint"));
+      panels.push(hint);
+    }
+    const answer = el("div", "learn-try-answer");
+    answer.id = `try-${number}-answer`;
+    answer.append(el("p", "learn-try-part-label", "Answer"));
+    const result = el("p", "learn-try-result");
+    renderInline(result, block.answer, math);
+    answer.append(result);
+    renderBlocks(answer, block.solution, math);
+    actions.append(disclosure(answer, "Show answer", "Hide answer"));
+    panels.push(answer);
+    box.append(actions, ...panels);
+    return box;
+  }
+
+  // Printed pages carry every hint, answer and worked solution here, after
+  // the lesson and numbered to match, so a printout can still be tried
+  // before it is checked; learn.css shows this only in print and hides the
+  // buttons and panels there. It is built from the page data, never from
+  // which answers the reader has opened.
+  function renderTryKey(math) {
+    if (!tryBlocks.length) return null;
+    const key = el("section", "learn-try-key");
+    key.setAttribute("aria-label", "Answers to the Try it problems");
+    key.append(el("h2", null, "Answers"));
+    const list = el("ol", "learn-try-key-list");
+    tryBlocks.forEach((block) => {
+      const item = el("li");
+      if (block.hint && block.hint.length) {
+        const hint = el("div", "learn-try-key-hint");
+        hint.append(el("p", "learn-try-part-label", "Hint"));
+        renderBlocks(hint, block.hint, math);
+        item.append(hint);
+      }
+      const result = el("p", "learn-try-result");
+      renderInline(result, block.answer, math);
+      item.append(result);
+      renderBlocks(item, block.solution, math);
+      list.append(item);
+    });
+    key.append(list);
+    return key;
+  }
+
   function renderHeading(block) {
     const level = block.level === 3 ? 3 : 2;
     const heading = el(`h${level}`, "learn-heading");
@@ -189,6 +287,8 @@
         parent.append(el("pre", "learn-pre", String(block.text)));
       } else if (block.type === "callout") {
         parent.append(renderCallout(block, math));
+      } else if (block.type === "try") {
+        parent.append(renderTry(block, math));
       }
     });
   }
@@ -199,6 +299,9 @@
   function fitWidths() {
     view.querySelectorAll(".learn-table-wrap").forEach((wrap) => {
       wrap.classList.remove("is-stacked");
+      // A table in a closed answer or the print-only key has no width yet;
+      // it is fitted when its answer opens, and prints as a table.
+      if (!wrap.getClientRects().length) return;
       const columns = Number(wrap.dataset.columns) || 1;
       const cramped = wrap.clientWidth < columns * MIN_COLUMN_PX;
       if (cramped || wrap.scrollWidth > wrap.clientWidth + 1) wrap.classList.add("is-stacked");
@@ -352,6 +455,8 @@
   function renderPage(page) {
     view.replaceChildren();
     sectionHeadings = new Map();
+    tryCount = 0;
+    tryBlocks = [];
     const blocks = page.blocks || [];
     const titleBlock = blocks[0] && blocks[0].type === "heading" && blocks[0].level === 1 ? blocks[0] : null;
     const { head, title } = pageHead(titleBlock ? learn.plainText(titleBlock.content) : String(page.title), breadcrumbs(page));
@@ -385,7 +490,8 @@
     if (page.kind === "skill" && page.section === "sat-reading-writing") article.classList.add("is-reading");
     article.setAttribute("aria-labelledby", "learnTitle");
     title.id = "learnTitle";
-    renderBlocks(article, titleBlock ? blocks.slice(1) : blocks, learn.typesetsMath(page));
+    const math = learn.typesetsMath(page);
+    renderBlocks(article, titleBlock ? blocks.slice(1) : blocks, math);
     // Each line of a quoted poem or passage becomes its own line, so a line
     // that wraps on a narrow screen hangs under itself instead of looking
     // like the poem's next line.
@@ -395,6 +501,8 @@
         pre.replaceChildren(...lines.map((line) => el("span", "learn-pre-line", line || "\u00a0")));
       });
     }
+    const key = renderTryKey(math);
+    if (key) article.append(key);
     const facts = factsNote(page);
     if (facts) article.append(facts);
     const endPractice = practiceLink(page);
