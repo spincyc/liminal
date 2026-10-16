@@ -18,6 +18,10 @@
   const SHELL_VERSION = 1;
   const SVG_NS = "http://www.w3.org/2000/svg";
   const CALCULATOR_URL = "https://www.desmos.com/calculator";
+  // One named window, reused on every press, so a graph survives between
+  // questions; the question stays visible beside it, as with Bluebook's
+  // built-in calculator. (Embedding Desmos would need its API key and script.)
+  const CALCULATOR_WINDOW = "liminal-desmos";
   const SAVE_EVERY_MS = 15000;
   // Typing an answer changes the state on every keystroke; snapshots are
   // written once the typing pauses, and at once when the page is hidden.
@@ -85,6 +89,54 @@
   const mounted = [];
   let pageOverflow;
   const inerted = new Set();
+  let calculatorWindow = null;
+
+  /* ---------------------------------------------------------- Desmos */
+
+  const ROUTE_FIELDS = ["enter", "read", "fails"];
+
+  // The Desmos route for a question's template, from the routes bundle
+  // (content/desmos-routes.json as window.LiminalDesmosRoutes), or null.
+  // Only templates where Desmos is a real route have one, and a missing or
+  // malformed bundle hides the feature. Generated ids are
+  // <section>:<template>:<seed>, for questions saved without templateId.
+  function desmosRoute(question, routes) {
+    const data = routes === undefined ? root.LiminalDesmosRoutes : routes;
+    if (!question || !data || typeof data !== "object" || !data.sections) return null;
+    let sectionKey = question.sectionKey;
+    let templateId = question.templateId;
+    if (!templateId && typeof question.id === "string") {
+      const parts = question.id.split(":");
+      if (parts.length === 3) {
+        sectionKey = sectionKey || parts[0];
+        templateId = parts[1];
+      }
+    }
+    const section = sectionKey && data.sections[sectionKey];
+    if (!section || !templateId || !Object.prototype.hasOwnProperty.call(section, templateId)) return null;
+    const route = section[templateId];
+    return route && ROUTE_FIELDS.every((field) => typeof route[field] === "string" && route[field].trim())
+      ? route : null;
+  }
+
+  // window.open features for the calculator: a popup beside the browser
+  // window when the screen has room, else against the screen's right edge,
+  // about 40% of the screen wide and nearly its full height.
+  function calculatorFeatures(screenInfo) {
+    const info = screenInfo || {};
+    const number = (value, fallback) => (Number.isFinite(value) ? value : fallback);
+    const screenLeft = number(info.availLeft, 0);
+    const screenTop = number(info.availTop, 0);
+    const screenWidth = Math.max(320, number(info.availWidth, 1280));
+    const screenHeight = Math.max(320, number(info.availHeight, 800));
+    const width = Math.round(Math.min(screenWidth, Math.max(360, Math.min(600, screenWidth * 0.4))));
+    const height = Math.round(Math.min(screenHeight, Math.max(400, screenHeight - 80)));
+    const screenRight = screenLeft + screenWidth;
+    const besideLeft = number(info.screenX, NaN) + number(info.outerWidth, NaN);
+    const left = Number.isFinite(besideLeft) && besideLeft >= screenLeft && besideLeft + width <= screenRight
+      ? besideLeft : screenRight - width;
+    return `popup,width=${width},height=${height},left=${Math.round(left)},top=${Math.round(screenTop)}`;
+  }
 
   /* ------------------------------------------------------------- utilities */
 
@@ -897,7 +949,7 @@
 
     refs.calcButton = tools.calculator
       ? toolButton("calculator", "Calculator", openCalculator, {
-        title: "Calculator (opens the Desmos graphing calculator in a new window)",
+        title: "Calculator (opens the Desmos graphing calculator in a window beside the test)",
       })
       : null;
     refs.refButton = tools.reference
@@ -1267,8 +1319,50 @@
       }
     }
 
+    // Opens Desmos in one sized window beside the test, or brings it back
+    // with its graphs intact. The window starts blank and is cut off from
+    // this page (opener = null) before it loads desmos.com. A named window
+    // already showing Desmos (after a reload) is cross-origin, so it is
+    // only focused, never reloaded. With pop-ups blocked, a tab instead.
     function openCalculator() {
-      root.open(CALCULATOR_URL, "_blank", "noopener,noreferrer");
+      const detach = (win) => { try { win.opener = null; } catch (error) { /* cross-origin */ } };
+      const focus = (win) => { try { win.focus(); } catch (error) { /* closed meanwhile */ } };
+      if (calculatorWindow && !calculatorWindow.closed) {
+        focus(calculatorWindow);
+        return;
+      }
+      const screenInfo = root.screen || {};
+      let popup = null;
+      try {
+        popup = root.open("", CALCULATOR_WINDOW, calculatorFeatures({
+          availLeft: screenInfo.availLeft,
+          availTop: screenInfo.availTop,
+          availWidth: screenInfo.availWidth,
+          availHeight: screenInfo.availHeight,
+          screenX: root.screenX,
+          outerWidth: root.outerWidth,
+        }));
+      } catch (error) {
+        popup = null;
+      }
+      if (popup) {
+        let blank = false;
+        try { blank = popup.location.href === "about:blank"; } catch (error) { blank = false; }
+        if (blank) {
+          detach(popup);
+          popup.location.replace(CALCULATOR_URL);
+        }
+        calculatorWindow = popup;
+        focus(popup);
+        return;
+      }
+      let tab = null;
+      try { tab = root.open(CALCULATOR_URL, "_blank"); } catch (error) { tab = null; }
+      if (tab) {
+        detach(tab);
+        return;
+      }
+      showNotice("The browser blocked the calculator window. Allow pop-ups for this site, or open desmos.com/calculator in another tab.");
     }
 
     /* ---- dialogs */
@@ -1855,9 +1949,26 @@
           mathText("p", question, question.strategy),
         ]));
       }
+      const route = desmosRoute(question);
+      if (route) parts.push(desmosBlock(route));
       const learn = learnLink(question);
       if (learn) parts.push(learn);
       return h("div", { className: "lm-explanation" }, parts);
+    }
+
+    // How to do this question type in Desmos: what to type, what to read,
+    // and when the route fails. Shown only with the explanation, after an
+    // answer is checked or the set is finished. Plain text: the keystrokes
+    // (x^2, y_1 ~ mx_1 + b) must show as typed, not typeset.
+    function desmosBlock(route) {
+      return h("section", { className: "lm-exp-section lm-desmos" }, [
+        h("h3", { text: "Desmos route" }),
+        h("dl", { className: "lm-desmos-steps" }, [
+          h("dt", { text: "Type" }), h("dd", { text: route.enter }),
+          h("dt", { text: "Read" }), h("dd", { text: route.read }),
+          h("dt", { text: "When it fails" }), h("dd", { text: route.fails }),
+        ]),
+      ]);
     }
 
     // "Learn: <skill> — <subskill>", opening the skill's Learn page in a new
@@ -3089,8 +3200,15 @@
       const showDifficulty = tieredSections.length > 0;
       const columns = ["Question", "Your answer", "Correct answer", "Result", "Marked", "Domain", "Skill"];
       if (showDifficulty) columns.push("Difficulty");
+      // Questions whose template has a Desmos route say so, and Review
+      // answers shows the route under each explanation.
+      const routed = report.items.filter((item) => desmosRoute(item.question)).length;
+      const routeColumn = routed ? columns.push("Desmos") - 1 : -1;
       children.push(h("section", { className: "lm-report-section" }, [
         h("h3", { text: "Question by question" }),
+        routed ? h("p", { className: "lm-report-note lm-desmos-note", text:
+          `${routed} of these questions ${routed === 1 ? "has" : "have"} a Desmos route. ` +
+          "Use Review answers to see what to type in Desmos, what to read, and when the route fails." }) : null,
         h("table", { className: "lm-table lm-items-table" }, [
           h("thead", {}, [h("tr", {}, columns.map((text) => h("th", { scope: "col", text })))]),
           h("tbody", {}, report.items.map((item) => {
@@ -3120,6 +3238,8 @@
               h("td", { "data-label": columns[6], text: item.question.skill || "" }),
               showDifficulty ? h("td", { "data-label": columns[7],
                 text: Core.supportsDifficulty(item.question.sectionKey) ? item.question.difficulty || "" : "—" }) : null,
+              routeColumn >= 0 ? h("td", { "data-label": columns[routeColumn],
+                text: desmosRoute(item.question) ? "Route" : "—" }) : null,
             ]);
           })),
         ]),
@@ -3344,5 +3464,7 @@
     startBreak,
     formatClock,
     describeDiscard,
+    desmosRoute,
+    calculatorFeatures,
   };
 });
