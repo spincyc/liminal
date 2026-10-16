@@ -25,8 +25,9 @@ a calculator coordinate.
 The keys you need: `^` for exponents, `/` for fractions (the arrow keys move
 you out of an exponent or a denominator), `sqrt` for √, and `abs` or `|`
 for absolute value. Each line of the list on the left is its own object; the
-colored circle turns it on and off. Clicking a curve labels its key points
-and intersections with coordinates.
+colored circle turns it on and off. Clicking a curve shows its key points
+and its crossings with other curves as gray dots; click a dot to see its
+coordinates.
 
 > **Trap.** Desmos keeps typing inside a fraction's bottom, an exponent or a
 > root until you press →. Type `y=x/4-2` and Desmos draws y = x/(4 − 2),

@@ -146,10 +146,10 @@
       "inequality-parameter-range": {
         "enter": "The inequality exactly as given, using <= or >=, with a slider for c (step 1 for a whole-number answer, finer otherwise). Desmos shades all x, none, or a half-plane.",
         "read": "Drag c and note where the shading switches between everything and nothing. The greatest or least c that gives what the question wants is the answer; for choices, the one at the switch.",
-        "fails": "At the switch both sides are the same line, and whether it counts depends on < or ≤, so decide by the symbol, not the picture. A fractional answer to type in falls between slider steps; get it exactly by algebra."
+        "fails": "At the switch the two sides are equal for every x, and whether that counts depends on < or ≤, so decide by the symbol, not the picture. A fractional answer to type in falls between slider steps; get it exactly by algebra."
       },
       "inequality-region-corner": {
-        "enter": "Both inequalities as given, using <= or >=; then each edge again as an equation, y = (its right side), so the corner can be clicked.",
+        "enter": "Both inequalities as given, using <= or >=. Desmos marks the corner where the two edges cross; click it.",
         "read": "Click where the two edges cross. Its x-coordinate is the greatest or least possible a, or its y-coordinate the greatest or least possible b, when the shading narrows to that corner on the asked side.",
         "fails": "A corner at a fraction shows as a rounded decimal; type every digit the box allows, or work out the fraction. Zoom out when the corner is off screen."
       },
@@ -209,9 +209,9 @@
         "fails": "The crossings are almost always above the default window: zoom out until both show. Taking square roots by hand is quicker once you see the form."
       },
       "radical-equation-solve": {
-        "enter": "y = sqrt(…) for the radical side on one line, pressing → to leave the root before typing on, and y = (the other side) on the next.",
+        "enter": "y = (the radical side), typing sqrt(…) for a square root and cbrt(…) for a cube root and pressing → to leave the root before typing on; then y = (the other side) on the next line.",
         "read": "The x-coordinate of the intersection point (click it) is the solution.",
-        "fails": "The crossing is usually off the default window, sometimes with x in the hundreds: zoom out until the curves meet. Squaring both sides by hand is quick when the numbers are small."
+        "fails": "A cube root typed as sqrt draws a different curve and a wrong crossing. The crossing is usually off the default window, sometimes with x in the hundreds: zoom out until the curves meet."
       },
       "absolute-value-equation": {
         "enter": "y = (left side) and y = (right side), one per line, using abs( ) or | | for the absolute value.",
