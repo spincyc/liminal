@@ -12,8 +12,40 @@ heights, daily rainfall. Questions ask for the center (mean, median), the
 spread (range, interquartile range, standard deviation) and the shape, read
 from lists, frequency tables, dot plots, histograms and box plots. The skill
 is part of Problem-Solving and Data Analysis, {{fact:sat-math-psda}} of the
-Math section. Hard questions ask which changes to summary statistics must
-hold without knowing the full data, or which medians an unknown value allows.
+Math section.
+
+## Before you start {#before-you-start}
+
+These checks cover the Grade 6 mean, median and quartiles. If one goes
+wrong, rebuild it with
+[Grade 6, week 33: mean, median, and center](weeks.html#common-core-math/6/33)
+or [Grade 6, week 35: quartiles and box plots](weeks.html#common-core-math/6/35).
+
+> **Try it.** What is the mean of 6, 9, 10, 13 and 17?
+>
+> **Answer.** 11
+>
+> The sum is 6 + 9 + 10 + 13 + 17 = 55, and there are 5 values, so the mean
+> is 55 ÷ 5 = 11. Shaky? [Grade 6, week 33](weeks.html#common-core-math/6/33).
+
+> **Try it.** What is the median of 14, 8, 21, 10, 17 and 12?
+>
+> **Answer.** 13
+>
+> In order: 8, 10, 12, 14, 17, 21. With 6 values, the median is the mean of
+> the 3rd and 4th: (12 + 14)/2 = 13. Shaky?
+> [Grade 6, week 33](weeks.html#common-core-math/6/33).
+
+> **Try it.** For the data 3, 5, 6, 8, 9, 11, 12, 15, what are the range and
+> the interquartile range?
+>
+> **Answer.** The range is 12 and the interquartile range is 6.
+>
+> Range: 15 − 3 = 12.
+>
+> The lower half is 3, 5, 6, 8, so Q1 = (5 + 6)/2 = 5.5. The upper half is
+> 9, 11, 12, 15, so Q3 = (11 + 12)/2 = 11.5. The interquartile range is
+> 11.5 − 5.5 = 6. Shaky? [Grade 6, week 35](weeks.html#common-core-math/6/35).
 
 ## Mean and median {#mean-and-median}
 
@@ -30,6 +62,16 @@ their sum is n × m.
 >
 > The removed number is 60 − 52 = 8.
 
+> **Try it.** Six numbers have a mean of 15. One number is removed, and the
+> remaining five have a mean of 14. What number was removed?
+>
+> **First step.** Sum of all six: 6 × 15 = 90. Now find the sum of the five
+> and finish.
+>
+> **Answer.** 20
+>
+> Sum of the five: 5 × 14 = 70. The removed number is 90 − 70 = 20.
+
 > **Example.** In a survey, 20 students reported how many books they read
 > last month: 3 read 1 book, 5 read 2, 8 read 3, and 4 read 4. Find the mean
 > and the median.
@@ -41,6 +83,18 @@ their sum is n × m.
 > Median: with 20 values, it is the mean of the 10th and 11th. The first 3
 > values are 1s, the next 5 (4th to 8th) are 2s, and the next 8 (9th to 16th)
 > are 3s. The 10th and 11th are both 3, so the median is 3.
+
+> **Try it.** In a survey, 25 students reported how many pets they have: 6
+> have 0 pets, 9 have 1, 7 have 2, and 3 have 3. What are the mean and the
+> median?
+>
+> **Answer.** The mean is 1.28 pets and the median is 1 pet.
+>
+> Mean: (6 · 0 + 9 · 1 + 7 · 2 + 3 · 3)/25 = (0 + 9 + 14 + 9)/25 = 32/25 =
+> 1.28 pets.
+>
+> Median: with 25 values, it is the 13th. The first 6 values are 0s and the
+> next 9 (7th to 15th) are 1s, so the 13th is 1.
 
 What happens to each measure when the data change:
 
@@ -58,6 +112,13 @@ median.
 > New data 4, 5, 5, 6: mean 20/4 = 5, median (5 + 5)/2 = 5.
 >
 > Removing the outlier lowered the mean by 5 and left the median unchanged.
+
+> **Try it.** The data 10, 12, 12, 14, 52 have mean 100/5 = 20 and median 12.
+> What happens to the mean and the median when the 52 is removed?
+>
+> **Answer.** The mean falls by 8, to 12, and the median stays 12.
+>
+> New data 10, 12, 12, 14: mean 48/4 = 12, median (12 + 12)/2 = 12.
 
 ### Correcting one extreme value {#correcting-an-extreme-value}
 
@@ -77,9 +138,22 @@ long as the corrected value stays on the same side of the middle.
 > The median is the 8th time in order. The corrected time, 65, is still
 > above 40, so the 8th time is unchanged: the median stays 40 minutes.
 
+> **Try it.** The 11 scores in a diving contest have a mean of 80 points and
+> a median of 84 points. The lowest score was recorded as 29 points but was
+> really 62 points. What are the mean and the median after the correction?
+>
+> **First step.** The sum rises by 62 − 29 = 33 points. Now finish.
+>
+> **Answer.** The mean is 83 points and the median is 84 points.
+>
+> The mean rises by 33 ÷ 11 = 3, to 83 points. (Check: 11 × 80 = 880, and
+> 913 ÷ 11 = 83.)
+>
+> The median is the 6th score in order. The corrected score, 62, is still
+> below 84, so the 6th score is unchanged: the median stays 84 points.
+
 > **Trap.** Moving the mean by the whole correction, 30 minutes, or moving
-> the median with the mean. One value's change is spread over every value in
-> the mean, and the median depends only on the middle.
+> the median with the mean.
 
 > **Fails when.** The corrected value crosses the middle, as when a low
 > value is corrected to one above the median. Then the ordered list shifts
@@ -100,42 +174,45 @@ into a total (mean × size), add the totals, and divide by the combined size.
 > Mean: 1,950 ÷ 25 = 78, not 77, the average of the two means.
 
 The combined mean always lies between the group means, closer to the larger
-group. The distances are in the inverse ratio of the sizes: here 78 is 6
-from 72 and 4 from 82, and 6 : 4 is 15 : 10. That shortcut finds a missing
-group size quickly.
+group. The distances are in the inverse ratio of the sizes: 78 is 6 from 72
+and 4 from 82, and 6 : 4 is 15 : 10. That shortcut finds a missing group
+size quickly.
+
+> **Try it.** In one section of a course, 12 students have a mean test score
+> of 85. In another, 18 students have a mean of 75. What is the mean score of
+> all 30 students?
+>
+> **First step.** Totals: 12 × 85 = 1,020 and 18 × 75 = 1,350. Now finish.
+>
+> **Answer.** 79
+>
+> Combined total: 1,020 + 1,350 = 2,370. Mean: 2,370 ÷ 30 = 79, not 80, the
+> average of the two means.
+>
+> Check with the shortcut: 79 is 6 from 85 and 4 from 75, and 6 : 4 is
+> 18 : 12.
 
 > **Fails when.** Some people are in both groups, so a total would count them
 > twice, or you are given medians. Medians of groups can't be combined this
 > way at all.
 
-The same idea runs backward. If 10 values have a mean of 50 and adding 5
-more makes the mean of all 15 equal 46, the 5 added values total
-15 × 46 − 10 × 50 = 690 − 500 = 190, a mean of 38.
+The same idea runs backward: if 10 values have mean 50 and 5 more make the
+mean of all 15 equal 46, the 5 added total 15 × 46 − 10 × 50 = 190, a mean
+of 38.
 
-### Which values could be the median {#possible-medians}
-
-When one value, x, is unknown, list the known values in order and see where
-the middle position falls. However large or small x is, it can push the
-middle only one place.
-
-> **Example.** The data are 12, 5, 9, 20, x, 15 and 7. Which values could the
-> median be?
+> **Try it.** The 20 employees at one office have a mean commute of 30
+> minutes. After 5 more employees are included, the mean commute of all 25
+> is 32 minutes. What is the mean commute, in minutes, of the 5 added
+> employees?
 >
-> In order, the known values are 5, 7, 9, 12, 15, 20. With x there are 7
-> values, so the median is the 4th.
+> **Answer.** 40 minutes
 >
-> If x ≤ 9, the 4th value is 9. If x ≥ 12, it is 12. If x is between 9 and
-> 12, the median is x itself.
->
-> So the median can be anything from 9 to 12, and nothing else: not 8, and
-> not 15, whatever x is.
+> All 25 total 25 × 32 = 800 minutes, and the first 20 total 20 × 30 = 600.
+> The 5 added total 800 − 600 = 200 minutes, a mean of 200 ÷ 5 = 40.
 
-With an even count, the median is the mean of two middle values, so it can
-range between two half-way points instead.
-
-> **Fails when.** More than one value is unknown, or x stands for several
-> equal values (a count in a frequency table). Then x can push the middle
-> more than one place; count positions again.
+For harder versions of mean and median questions, see
+[which values could be the median](#possible-medians) and
+[recover a count before correcting the data](#missing-count-correction).
 
 ## Spread {#spread}
 
@@ -157,9 +234,57 @@ from it have a large one. Where the center sits doesn't matter.
 > Every B score except the middle one is twice as far from 80 as the matching
 > A score, so B has the larger standard deviation (exactly twice A's).
 
+> **Try it.** Data set P is 12, 14, 16, 18, 20 and data set Q is 6, 11, 16,
+> 21, 26. Compare the means, ranges and standard deviations.
+>
+> **Answer.** Both means are 16, the ranges are 8 for P and 20 for Q, and Q
+> has the larger standard deviation.
+>
+> Both sums are 80, so both means are 80/5 = 16.
+>
+> Ranges: P is 20 − 12 = 8, Q is 26 − 6 = 20.
+>
+> Each Q value is 2.5 times as far from 16 as the matching P value (10
+> against 4, 5 against 2), so Q has the larger standard deviation.
+
 > **Trap.** Thinking that adding 10 points to every score raises the
 > standard deviation. The whole list shifts together, so the distances from
 > the mean don't change.
+
+Adding or removing one value affects each measure differently: the mean and
+standard deviation depend on every value, the median on the middle, the
+range on the extremes.
+
+> **Example.** The data are 2, 4, 6, 8 and 20. A sixth value, equal to the
+> mean, is added. What happens to the mean, the median, the range and the
+> standard deviation?
+>
+> The mean is 40 ÷ 5 = 8, so 8 is added: 2, 4, 6, 8, 8, 20.
+>
+> Mean: 48 ÷ 6 = 8, unchanged. Median: from 6 to (6 + 8)/2 = 7. Range: still
+> 20 − 2 = 18.
+>
+> Standard deviation: it decreases. The new value is 0 from the mean, so it
+> adds nothing to the spread while making the list longer.
+
+> **Try it.** The data are 12, 15, 20, 25 and 38. A sixth value, equal to the
+> mean, is added. Which of the following is true about the new data?
+>
+> - A) The mean is greater than before.
+> - B) The median is the same as before.
+> - C) The range is less than before.
+> - D) The standard deviation is less than before.
+>
+> **Answer.** D
+>
+> The mean is 110 ÷ 5 = 22, so 22 is added: 12, 15, 20, 22, 25, 38.
+>
+> Mean: 132 ÷ 6 = 22, unchanged. Median: from 20 to (20 + 22)/2 = 21.
+> Range: still 38 − 12 = 26. The new value is 0 from the mean, so the
+> standard deviation decreases.
+
+For a harder version, where the data are not all given, see
+[what must be true](#must-be-true).
 
 ## Distributions {#distributions}
 
@@ -201,44 +326,166 @@ The five-number summaries of two box plots of delivery times, in minutes:
 > Mean: it can't be determined. A box plot shows positions, not the values
 > needed to add up, so any choice claiming one mean is larger is unsupported.
 
+> **Try it.** The five-number summaries of two classes' test scores:
+>
+> | Summary | Class 1 | Class 2 |
+> | --- | --- | --- |
+> | minimum | 52 | 48 |
+> | Q1 | 64 | 66 |
+> | median | 73 | 75 |
+> | Q3 | 81 | 80 |
+> | maximum | 95 | 92 |
+>
+> Which class has the greater median, the greater interquartile range and
+> the greater range?
+>
+> **Answer.** Class 2, class 1 and class 2.
+>
+> Median: class 2, 75 against 73.
+>
+> IQR: class 1 is 81 − 64 = 17, class 2 is 80 − 66 = 14, so class 1.
+>
+> Range: class 1 is 95 − 52 = 43, class 2 is 92 − 48 = 44, so class 2,
+> barely.
+
 In a histogram, each bar is a count of values in an interval. To find which
 interval contains a middle observation, count positions using cumulative
 bar heights. For an even total, locate both middle observations: if they
 lie in different intervals, the interval containing their average may not
 be determined from the histogram alone.
 
+> **Try it.** A histogram of 25 commute times has bars of height 4 for 0 to
+> 10 minutes, 7 for 10 to 20 minutes, 9 for 20 to 30 minutes and 5 for 30
+> to 40 minutes. Each interval includes its left endpoint but not its right.
+> Which interval contains the median?
+>
+> **Answer.** 20 to 30 minutes
+>
+> With 25 values, the median is the 13th. The cumulative heights are 4, 11,
+> 20 and 25, so the 12th to 20th values are in the third bar, and the 13th
+> is between 20 and 30 minutes.
+
 > **Desmos.** For a list, type `L=[4,5,5,6,30]`, then `mean(L)`,
 > `median(L)`, `stdev(L)` or `quartile(L,1)`. See
 > [Desmos statistics](learn:sat/general/desmos#statistics).
 
+## Harder versions {#hard}
+
+The hardest questions in this skill hide part of the data: an unknown
+value, an unknown count, or a change described without the values.
+
+### Which values could be the median {#possible-medians}
+
+When one value, x, is unknown, list the known values in order and see where
+the middle position falls. However large or small x is, it can push the
+middle only one place.
+
+> **Example.** The data are 12, 5, 9, 20, x, 15 and 7. Which values could the
+> median be?
+>
+> In order, the known values are 5, 7, 9, 12, 15, 20. With x there are 7
+> values, so the median is the 4th.
+>
+> If x ≤ 9, the 4th value is 9. If x ≥ 12, it is 12. If x is between 9 and
+> 12, the median is x itself.
+>
+> So the median can be anything from 9 to 12, and nothing else: not 8, and
+> not 15, whatever x is.
+
+> **Try it.** The data are 10, 3, 17, 8, x, 14 and 6. Which of the following
+> could be the median?
+>
+> - A) 7
+> - B) 9
+> - C) 11
+> - D) 14
+>
+> **First step.** In order, the known values are 3, 6, 8, 10, 14, 17. With x
+> there are 7 values, so the median is the 4th. Now find what the 4th value
+> can be.
+>
+> **Answer.** B
+>
+> If x ≤ 8, the 4th value is 8. If x ≥ 10, it is 10. If x is between 8 and
+> 10, the median is x itself.
+>
+> So the median is from 8 to 10, and only 9 fits.
+
+With an even count, the median is the mean of two middle values, so it can
+range between two half-way points instead.
+
+> **Try it.** The data are 15, 4, 20, 9, 12 and x. What is the greatest
+> possible value of the median?
+>
+> **Answer.** 13.5
+>
+> In order, the known values are 4, 9, 12, 15, 20. With x there are 6
+> values, so the median is the mean of the 3rd and 4th.
+>
+> If x ≥ 15, the 3rd and 4th values are 12 and 15, so the median is
+> (12 + 15)/2 = 13.5. If x < 15, the 4th value is less than 15 and the 3rd
+> is at most 12, so the median is less than 13.5.
+
+> **Fails when.** More than one value is unknown, or x stands for several
+> equal values (a count in a frequency table). Then x can push the middle
+> more than one place; count positions again.
+
 ### Recover a count before correcting the data {#missing-count-correction}
 
-A table lists appointment durations of 32, 36, 40, 44, and 48 minutes, with
-frequencies 2, 3, x, 2, and 1. The original mean is 39 minutes. The appointment
-recorded as 48 minutes should be 32 minutes. What is the corrected median?
+When a frequency table has an unknown count, use the mean to find the count
+first. Then put the corrected observation in its new position.
 
-The original total is 308 + 40x and the count is 8 + x, so
-39(8 + x) = 308 + 40x. Solving gives x = 4 and a count of 12.
-
-After the correction, 32 occurs three times and 36 occurs three times.
-The 6th observation is 36 and the 7th is 40, so the corrected median is
-(36 + 40)/2 = **38 minutes**. Finding the missing count is only the first
-step: the corrected observation must then be put in its new position.
-
-## What Hard looks like {#hard}
-
-- A change to the data, such as adding a value equal to the mean, and a question about which statement is true. Each measure depends on something different: the mean and standard deviation on every value, the median on the middle position, the range on the two extremes.
-- A list with one unknown value and a question about which medians are possible (see [which values could be the median](#possible-medians)).
-- A frequency table has an unknown count, and its original mean is given. Use a weighted-sum equation to find the missing count, then correct an extreme observation and locate the new middle position or positions. A correction across the middle can change the median.
-
-> **Example.** The data are 2, 4, 6, 8 and 20. A sixth value, equal to the
-> mean, is added. What happens to the mean, the median, the range and the
-> standard deviation?
+> **Example.** A table lists appointment durations of 32, 36, 40, 44, and 48
+> minutes, with frequencies 2, 3, x, 2, and 1. The original mean is 39
+> minutes. The appointment recorded as 48 minutes should be 32 minutes. What
+> is the corrected median?
 >
-> The mean is 40 ÷ 5 = 8, so 8 is added: 2, 4, 6, 8, 8, 20.
+> The original total is 308 + 40x and the count is 8 + x, so
+> 39(8 + x) = 308 + 40x. Solving gives x = 4 and a count of 12.
 >
-> Mean: 48 ÷ 6 = 8, unchanged. Median: from 6 to (6 + 8)/2 = 7. Range: still
-> 20 − 2 = 18.
+> After the correction, 32 occurs three times and 36 occurs three times.
+> The 6th observation is 36 and the 7th is 40, so the corrected median is
+> (36 + 40)/2 = 38 minutes.
+
+> **Try it.** A table lists the times students spent on an assignment: 20,
+> 25, 30, 35 and 40 minutes, with frequencies 2, 2, x, 2 and 1. The mean time
+> is 29 minutes. The time recorded as 40 minutes should be 20 minutes. What
+> is the corrected median?
 >
-> Standard deviation: it decreases. The new value is 0 from the mean, so it
-> adds nothing to the spread while making the list longer.
+> **First step.** The original total is 200 + 30x minutes and the count is
+> 7 + x, so 29(7 + x) = 200 + 30x. Now solve for x and finish.
+>
+> **Answer.** 27.5 minutes
+>
+> 203 + 29x = 200 + 30x, so x = 3 and the count is 10.
+>
+> After the correction, 20 occurs 3 times, 25 twice, 30 three times and 35
+> twice. The 5th time is 25 and the 6th is 30, so the corrected median is
+> (25 + 30)/2 = 27.5 minutes. Before the correction it was 30 minutes.
+
+### What must be true {#must-be-true}
+
+Some questions describe a change without listing the data. Reject any choice
+that holds for some data sets but not for all.
+
+> **Try it.** A data set has 9 different whole numbers. A tenth value, equal
+> to the median of the 9 values, is added. Which of the following must be
+> true about the new data set?
+>
+> - A) The mean is the same as before.
+> - B) The median is the same as before.
+> - C) The range is greater than before.
+> - D) The standard deviation is the same as before.
+>
+> **Hint.** Try two small data sets: one where the mean equals the median,
+> and one with a large value at the top.
+>
+> **Answer.** B
+>
+> The old median is the 5th of 9 values. With a copy of it added, the 5th
+> and 6th of the 10 values are both that number, so the median is unchanged.
+>
+> A: for 1, 2, 3, 4, 5, 6, 7, 8, 100, the mean is 136 ÷ 9 ≈ 15.1, and adding
+> 5 lowers it. C: the median lies between the extremes, so the range is
+> unchanged. D: for 1 to 9, adding 5 (also the mean) shrinks the standard
+> deviation.
