@@ -49,6 +49,11 @@ function textProblems(text) {
     problems.push("contains HTML (or a \"<\" without a space after it)");
   }
   if (/`|\*\*|\]\(/.test(text)) problems.push("contains Markdown");
+  // Keystrokes that fail on desmos.com (checked live, 2026-10-16): a typed
+  // underscore subscript swallows the ~ of a regression (type y1, x1; Desmos
+  // subscripts them), and "zoom to fit" exists only for tables.
+  if (/\b[a-zA-Z]_\d/.test(text)) problems.push("types a subscript with _ (write y1 ~ mx1 + b; Desmos subscripts it)");
+  if (/zoom to fit/i.test(text)) problems.push("says zoom to fit (desmos.com offers it only for tables; say zoom out)");
   return problems;
 }
 

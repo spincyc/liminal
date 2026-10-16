@@ -28,6 +28,16 @@ for absolute value. Each line of the list on the left is its own object; the
 colored circle turns it on and off. Clicking a curve labels its key points
 and intersections with coordinates.
 
+> **Trap.** Desmos keeps typing inside a fraction's bottom, an exponent or a
+> root until you press →. Type `y=x/4-2` and Desmos draws y = x/(4 − 2),
+> which is the line y = x/2, so the crossing you click is wrong. Type
+> `y=x/4`, press →, then type `-2`. Brackets don't end a fraction:
+> `y=(x+3)/4+2` still puts the + 2 under the 4. After `^`, a single number
+> ends at the next + or −, so `x^2+3x` is safe, but `x^2(x+4)` puts the
+> (x + 4) in the exponent; after `sqrt(`, everything stays under the root.
+> Type numbers without commas: Desmos reads `1,050` as two numbers and shows
+> an error. Look at what Desmos drew before you trust a crossing.
+
 ## Solve an equation by graphing {#solve-by-graphing}
 
 For many equations in one real variable, graph each side of
@@ -129,9 +139,12 @@ summaries but do not replace interpreting the data. See
 ## Regressions {#regressions}
 
 Put data in a table (columns x₁ and y₁), then type a model with `~`:
-`y_1~mx_1+b` for a line, `y_1~ax_1^2+bx_1+c` for a quadratic, `y_1~ab^{x_1}`
-for an exponential. Desmos reports the constants. Use it when a question
-gives data and asks about the model's slope, intercept or a prediction.
+`y1~mx1+b` for a line, `y1~ax1^2+bx1+c` for a quadratic, `y1~ab^x1` for an
+exponential. Type y1 and x1 as a letter and a digit: Desmos makes them y₁
+and x₁ itself, and typing `_` yourself breaks the `~`. Desmos reports the
+constants, and later lines can use them: `a*b^7` uses the full values, not
+the rounded ones shown. Use it when a question gives data and asks about the
+model's slope, intercept or a prediction.
 
 > **Fails when.** The points come from a scatterplot you read by eye: the
 > fit is only as good as your readings, so check it against the line drawn.
@@ -194,34 +207,40 @@ specific value. Skip it when the question is about meaning or form.
 > degrees, switch the angle mode in the settings (the wrench icon), or
 > sin 30 will give about −0.99 instead of 0.5.
 
-## A one-week practice plan {#practice-protocol}
+## Practising with the Desmos drill {#practice-protocol}
 
-About twenty minutes a day for a week. Each day starts with a few minutes of
-one tool at [desmos.com/calculator](https://www.desmos.com/calculator), then
-one set of Liminal's [Desmos drill](practice.html#desmos/sat-math). The
-drill draws only SAT Math question types that have a Desmos
-route and gives feedback after each question. Keep Desmos open beside the
+Liminal's [Desmos drill](practice.html#desmos/sat-math) is a set drawn only
+from SAT Math question types that have a Desmos route, weighted toward the
+skills where Desmos solves the question rather than only checks it, with
+feedback after each question. Next step offers it when you have not done one
+in a week, until you have done four; after that, about every two weeks. You
+can start one from that link at any time. Keep Desmos open beside the
 question with the Calculator button.
+
+Before your first drill, spend ten minutes at
+[desmos.com/calculator](https://www.desmos.com/calculator) on the keys:
+type `y=x/4`, press →, then `-2`, and see how the line differs from the one
+you get without →; graph two lines and click their crossing; add a slider;
+put three points in a table and fit a line.
 
 For every drill question, decide your route before you type: what you will
 graph, and what you will read. After you check your answer, compare your
 route with the Desmos route shown under the explanation, and read its "When
-it fails" line.
+it fails" line. Between drills, read one part of this page at a time:
 
-1. Typing only: exponents, fractions, roots, absolute values, subscripts. Then a drill set, using Desmos on every question.
-2. [Solving by graphing](#solve-by-graphing) and [systems](#systems): redo this page's examples and click every crossing. Then a drill set.
-3. [Sliders](#sliders): redo the slider example and drag k past both answers. Then a drill set, confirming each slider answer with algebra.
-4. [Tables](#tables), [statistics](#statistics) and [regressions](#regressions): make one list and one regression from a table in an earlier set. Then a drill set.
-5. [Inequalities](#inequalities), [circles](#circles) and [key points](#key-points). Then a drill set at the real test's pace, about a minute and a half a question.
-6. A drill set without the routes: cover each explanation's Desmos route until you have written your own, then compare.
-7. A mixed SAT Math set, not the drill. Use Desmos only where it beats algebra, and note which questions you did by hand that would have been faster graphed, and the reverse.
+1. Before the first drill: [solving by graphing](#solve-by-graphing) and [systems](#systems).
+2. Before the second: [sliders](#sliders) and [key points](#key-points).
+3. Before the third: [tables](#tables), [statistics](#statistics) and [regressions](#regressions).
+4. Before the fourth: [inequalities](#inequalities) and [circles](#circles). Do this drill at the real test's pace, about a minute and a half a question.
 
-After the week, keep the habit in every Math set: read the Desmos route under
-each explanation, including on questions you got right by hand.
+After the first four, keep the habit in every Math set: read the Desmos route
+under each explanation, including on questions you got right by hand, and
+note which questions you did by hand that would have been faster graphed,
+and the reverse.
 
 > **Fails when.** You practise only the drill. It draws only questions that
 > have a Desmos route, so it makes Desmos look more useful than it is on a
 > real test, where many questions are about meaning or form (see
-> [when not to use it](#when-not-to-use)). Day 7's mixed set, and mixed
-> sets after the week, are the correction. A route is a starting point,
-> not a guarantee: its "When it fails" line names the cases it misses.
+> [when not to use it](#when-not-to-use)). Mixed sets are the correction. A
+> route is a starting point, not a guarantee: its "When it fails" line names
+> the cases it misses.

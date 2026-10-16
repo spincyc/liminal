@@ -94,6 +94,10 @@
   /* ---------------------------------------------------------- Desmos */
 
   const ROUTE_FIELDS = ["enter", "read", "fails"];
+  // Desmos keeps typing inside a fraction's bottom, an exponent or a root
+  // until → is pressed, so x/4 - 2 becomes x/(4 - 2); and 1,050 is an error.
+  // Every route is typed under this rule (checked live on desmos.com).
+  const DESMOS_TYPING_TIP = "In Desmos, press → to leave a fraction's bottom, an exponent or a root before typing more, and type numbers without commas.";
 
   // The Desmos route for a question's template, from the routes bundle
   // (content/desmos-routes.json as window.LiminalDesmosRoutes), or null.
@@ -1970,6 +1974,7 @@
           h("dt", { text: "Read" }), h("dd", { text: route.read }),
           h("dt", { text: "When it fails" }), h("dd", { text: route.fails }),
         ]),
+        h("p", { className: "lm-desmos-tip", text: DESMOS_TYPING_TIP }),
       ]);
     }
 
@@ -3468,5 +3473,6 @@
     describeDiscard,
     desmosRoute,
     calculatorFeatures,
+    DESMOS_TYPING_TIP,
   };
 });

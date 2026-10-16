@@ -2273,6 +2273,12 @@
   overflow-wrap: anywhere;
 }
 
+.lm-shell .lm-desmos-tip {
+  margin: 10px 0 0;
+  color: var(--lm-muted);
+  font-size: 0.9rem;
+}
+
 .lm-shell .lm-learn {
   margin: 12px 0 0;
 }

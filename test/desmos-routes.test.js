@@ -226,7 +226,10 @@ test("the check rejects a wrong format, unknown or misordered ids and unsafe tex
   assert.match(problems(doc({ [ids[0]]: { ...ROUTE, enter: "y<x" } })), /contains HTML/);
   assert.match(problems(doc({ [ids[0]]: { ...ROUTE, enter: "Type `y = x`." } })), /contains Markdown/);
   assert.match(problems(doc({ [ids[0]]: { ...ROUTE, enter: "One.\nTwo." } })), /one line/);
+  assert.match(problems(doc({ [ids[0]]: { ...ROUTE, enter: "A table, then y_1 ~ mx_1 + b." } })), /subscript with _/);
+  assert.match(problems(doc({ [ids[0]]: { ...ROUTE, fails: "Use zoom to fit." } })), /zoom to fit/);
   assert.deepEqual(check.textProblems("y < 2x and y >= −3, then mean(L)."), []);
+  assert.deepEqual(check.textProblems("A table, then y1 ~ mx1 + b; x/4 → − 2."), []);
 });
 
 test("the screen finds a route by template id or question id, and tolerates no routes", () => {
@@ -285,6 +288,9 @@ test("instant feedback shows the route only after Check, and never names the tem
   assert.ok(block, "shown after Check");
   assert.deepEqual(block.querySelectorAll("dt").map((node) => node.textContent), ["Type", "Read", "When it fails"]);
   assert.deepEqual(block.querySelectorAll("dd").map((node) => node.textContent), [ROUTE.enter, ROUTE.read, ROUTE.fails]);
+  // The standing typing rule: → leaves a fraction's bottom, exponent or root.
+  assert.equal(block.querySelector(".lm-desmos-tip").textContent, shell.DESMOS_TYPING_TIP);
+  assert.match(shell.DESMOS_TYPING_TIP, /press → .*fraction.*exponent.*root.*without commas/);
   assert.doesNotMatch(screen.element.textContent, /tmpl-a/);
   screen.element.querySelector(".lm-next").click();
   screen.element.querySelector(".lm-choice").click();
