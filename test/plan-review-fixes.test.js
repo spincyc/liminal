@@ -52,9 +52,11 @@ test("only a skill's own drills spend its budget: the diagnostic, mixed sets and
   const drillIds = new Set(record.sessions.filter((entry) => entry.kind === "drill" && entry.skill === skill).map((entry) => entry.id));
   const own = Progress.markRepeats(record.attempts).filter((attempt) => attempt.skill === skill && drillIds.has(attempt.sessionId) &&
     attempt.repeat !== true);
-  // Its 20 drill answers, nothing from other sets: exactly its budget.
+  // Its 20 drill answers, nothing from other sets: exactly its budget,
+  // with a Medium drill in the turn, so no extra drill.
   assert.equal(own.length, Analytics.BUDGET.answers);
-  assert.deepEqual([plan.skills[skill].status, plan.skills[skill].leftBy, plan.skills[skill].spent], ["moved-on", "budget", own.length]);
+  assert.deepEqual([plan.skills[skill].status, plan.skills[skill].leftBy, plan.skills[skill].spent, plan.skills[skill].extraGiven],
+    ["moved-on", "budget", own.length, false]);
   assert.equal(plan.skills[skill].drillAnswers, own.length);
   const leftAt = (state) => state.departures.find((entry) => entry.skill === skill).at;
   assert.ok(leftAt(legacy) < leftAt(plan), "counting every set spent it sooner");
@@ -65,7 +67,7 @@ test("only a skill's own drills spend its budget: the diagnostic, mixed sets and
   const early = planOf(before, record.sessions).plan.skills[skill];
   assert.deepEqual([early.spent, early.practised], [0, false]);
   // A skill stuck at Easy still moves on: Easy drill answers spend it too.
-  const stuck = answers(Analytics.BUDGET.answers, trackA[0], { difficulty: "Easy", correct: false, sessionId: "d1" });
+  const stuck = answers(Analytics.BUDGET.answers + Analytics.BUDGET.extra, trackA[0], { difficulty: "Easy", correct: false, sessionId: "d1" });
   const stuckPlan = planOf(stuck, [session("d1", "drill", { skill: trackA[0] })]).plan;
   assert.deepEqual([stuckPlan.skills[trackA[0]].status, stuckPlan.skills[trackA[0]].easyStuck], ["moved-on", true]);
   // "Practice what I missed" is not a drill.
@@ -259,11 +261,27 @@ test("a merged file keeps the fields this version does not know, and the copied 
   const mine = IO.mergeImport(Object.assign({}, here, { futureField: "mine" }), IO.parseImport(JSON.stringify(file)).progress).progress;
   assert.equal(mine.futureField, "mine", "this browser's copy wins");
   // "Stuck at Easy" in the parent's summary: what happened, not a judgement.
-  const stuck = answers(20, trackA[0], { difficulty: "Easy", correct: true, sessionId: "d1", setKind: "drill", setSkill: trackA[0] });
+  const stuck = answers(30, trackA[0], { difficulty: "Easy", correct: true, sessionId: "d1", setKind: "drill", setSkill: trackA[0] });
   const rows = Analytics.skillMap(stuck, [mathSection]);
   const plan = Analytics.planState(rows, { sectionKey: "sat-math", attempts: stuck, sessions: [], now: clock + HOUR });
-  assert.deepEqual([plan.skills[trackA[0]].status, plan.skills[trackA[0]].easyStuck, plan.skills[trackA[0]].spent], ["moved-on", true, 20]);
+  assert.deepEqual([plan.skills[trackA[0]].status, plan.skills[trackA[0]].easyStuck, plan.skills[trackA[0]].spent], ["moved-on", true, 30]);
   const text = Analytics.weeklyReportText(Analytics.weeklyReport({ test: "SAT", attempts: stuck, sessions: [], rows, plan, now: clock + HOUR }));
   assert.match(text, /Linear equations in one variable \(working toward its target, was still practising at the easier level when its turn ended\)/);
   assert.doesNotMatch(text, /not yet reliable/);
+});
+
+test("a turn whose drills never left Easy gets one extra drill; a Medium drill in the turn means none", () => {
+  const drill = [session("d1", "drill", { skill: trackA[0] })];
+  const easy = (count, fields) => answers(count, trackA[0], Object.assign({ difficulty: "Easy", correct: false, sessionId: "d1" }, fields));
+  // 20 Easy drill answers: the budget grows to 30 and the turn stays in flight.
+  const twenty = planOf(easy(Analytics.BUDGET.answers), drill).plan.skills[trackA[0]];
+  assert.deepEqual([twenty.status, twenty.budget, twenty.extraGiven, twenty.spent], ["in-flight", 30, true, 20]);
+  // 29: still in flight; 30: moves on, once, with no second extra.
+  assert.equal(planOf(easy(29), drill).plan.skills[trackA[0]].status, "in-flight");
+  const thirty = planOf(easy(30), drill).plan.skills[trackA[0]];
+  assert.deepEqual([thirty.status, thirty.leftBy, thirty.spent], ["moved-on", "budget", 30]);
+  // One Medium drill answer in the turn: it moves on at 20.
+  const mixed = easy(19).concat(answers(1, trackA[0], { correct: false, sessionId: "d1" }));
+  const medium = planOf(mixed, drill).plan.skills[trackA[0]];
+  assert.deepEqual([medium.status, medium.spent, medium.extraGiven], ["moved-on", 20, false]);
 });

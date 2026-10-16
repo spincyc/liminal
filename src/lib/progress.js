@@ -309,7 +309,10 @@
         lowAtTarget: saved.lowAtTarget === true,
         firstReachedAt: timeOrNull(saved.firstReachedAt),
         firstDrillAt: timeOrNull(saved.firstDrillAt),
+        extraGiven: saved.extraGiven === true,
+        turnAboveEasy: saved.turnAboveEasy === true,
       };
+      if (Number.isSafeInteger(saved.budget) && saved.budget > 0) skills[skill].budget = saved.budget;
     });
     const inFlight = {};
     Object.keys(raw.inFlight).forEach((track) => {

@@ -144,8 +144,12 @@
   // and thirty or twenty-five, three drills, likewise (16); twenty ends it
   // in week 10 (moderate) or 11 (slow) with every skill drilled, the most
   // skills at the target (9 against 7), at the cost of a larger Review
-  // backlog once every skill has flown and nothing stays parked.
-  const BUDGET = { answers: 20 };
+  // backlog once every skill has flown and nothing stays parked. A turn
+  // whose drills never left Easy gets `extra` more (one drill, at Medium
+  // once Easy is routine) before it moves on: simulated, about one first
+  // turn in eight ended at Easy without it; with it, none (moderate) or
+  // 4 of 190 (slow), and the first pass ends in week 11 (10 to 11 without).
+  const BUDGET = { answers: 20, extra: 10 };
   // The rotation after Review in a section with a plan (rotationStep):
   //   module  an on-screen Module 1 (lib/modules.js) once `started` skills
   //           have been started (a diagnostic alone is not enough: it places
@@ -734,8 +738,9 @@
   //     tracks: [{ key, name, stages, skills, inFlight, lastDrilledAt }],
   //     skills: { [skill]: { skill, domain, stage, track, row, status,
   //       started, flown, practised, pass, entry, enteredAt, enteredWith,
-  //       spent, budget, leftAt, leftBy, movedOn, reachedTarget, easyStuck,
-  //       firstEnteredAt, firstDrillAt, firstReachedAt, check, official } },
+  //       spent, budget, extraGiven, leftAt, leftBy, movedOn, reachedTarget,
+  //       easyStuck, firstEnteredAt, firstDrillAt, firstReachedAt, check,
+  //       official } },
   //     fromLedger, checkpoint }
   // with status "in-flight", "at-gate" (at or past the target now),
   // "moved-on", "passed-over" or "waiting"; entry, why a skill last
@@ -785,6 +790,8 @@
         drillAnswers: 0,
         aboveEasy: false,
         lowAtTarget: false,
+        extraGiven: false,
+        turnAboveEasy: false,
         check: null,
         official: null,
       };
@@ -868,7 +875,7 @@
             : entry.flown || entry.reachedTarget ? "slipped"
               : entry.stage < startStage ? "passed-over" : "plan";
       Object.assign(entry, { flown: true, pass, enteredAt: at, enteredWith: answers(skill), spent: 0, leftAt: null, leftBy: null,
-        lowAtTarget: low && gateNow(skill) });
+        lowAtTarget: low && gateNow(skill), budget: BUDGET.answers, extraGiven: false, turnAboveEasy: false });
       if (entry.firstEnteredAt === null) entry.firstEnteredAt = at;
       flownThisPass.add(skill);
       inFlight.set(track.key, skill);
@@ -998,9 +1005,17 @@
         if (drilled) {
           entry.practised = true;
           entry.spent += 1;
+          if (attempt.difficulty === "Medium" || attempt.difficulty === "Hard") entry.turnAboveEasy = true;
         }
         if (!entry.lowAtTarget && gateNow(skill)) depart(skill, event.at, "gate");
-        else if (entry.spent >= BUDGET.answers) depart(skill, event.at, "budget");
+        else if (entry.spent >= entry.budget) {
+          // A turn whose drills never left Easy gets one more drill
+          // (BUDGET.extra), at Medium once Easy is routine; then it moves on.
+          if (!entry.turnAboveEasy && !entry.extraGiven) {
+            entry.extraGiven = true;
+            entry.budget += BUDGET.extra;
+          } else depart(skill, event.at, "budget");
+        }
       }
       settle(event.at);
     });
@@ -1070,7 +1085,7 @@
   // The per-skill replay fields a ledger keeps besides answers and window.
   const LEDGER_SKILL_FIELDS = ["flown", "practised", "pass", "entry", "enteredAt", "enteredWith", "spent", "leftAt", "leftBy",
     "movedOn", "reachedTarget", "reachedAt", "firstEnteredAt", "drillAnswers", "aboveEasy", "lowAtTarget",
-    "firstReachedAt", "firstDrillAt"];
+    "firstReachedAt", "firstDrillAt", "budget", "extraGiven", "turnAboveEasy"];
 
   // Finished sets in a section that the rotation counts, oldest first:
   // everything but Review, discarded sets, and the extra record a section
