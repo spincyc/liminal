@@ -206,23 +206,51 @@
       (left.questionId < right.questionId ? -1 : left.questionId > right.questionId ? 1 : 0);
   }
 
-  // The schedule as of `now`. `options.skip(entry)` leaves entries out (a
-  // retired template, say) and counts them in `unavailable`. Returns { due
-  // (most overdue first), upcoming (soonest first), learned, unavailable,
-  // today, nextDue: { day, count } | null }.
+  // The schedule as of `now`. Options:
+  //   skip(entry)      true leaves an entry out (a retired template, say)
+  //                    and counts it in `unavailable`
+  //   flightAt(entry)  for a section with a plan: null while the miss's
+  //                    skill has never been in flight, so the entry is
+  //                    parked (not due, listed in `parked`); else the moment
+  //                    it first entered flight, and a miss from before that
+  //                    is scheduled from that day (its interval counted from
+  //                    it); undefined outside a plan
+  //   prefer(entry)    true for entries to take first among those due
+  //                    (misses on skills already drilled), each group most
+  //                    overdue first
+  // Returns { due, upcoming (soonest first), learned, unavailable, parked,
+  // today, nextDue: { day, count } | null }. Entries rescheduled from their
+  // skill's first flight are copies with the later dueDay.
   function summarize(entries, now, options) {
     const settings = options || {};
     const today = dayOf(now === undefined ? Date.now() : now);
-    const summary = { today, due: [], upcoming: [], learned: [], unavailable: [], nextDue: null };
+    const summary = { today, due: [], upcoming: [], learned: [], unavailable: [], parked: [], nextDue: null };
     const list = entries instanceof Map ? [...entries.values()] : (entries || []);
-    list.forEach((entry) => {
-      if (entry.learned) summary.learned.push(entry);
-      else if (!Core.questionAvailable(entry.exactId || entry.questionId, entry.sectionKey) ||
-          (settings.skip && settings.skip(entry))) summary.unavailable.push(entry);
-      else if (isDue(entry, today)) summary.due.push(entry);
+    list.forEach((original) => {
+      let entry = original;
+      if (entry.learned) {
+        summary.learned.push(entry);
+        return;
+      }
+      if (!Core.questionAvailable(entry.exactId || entry.questionId, entry.sectionKey) ||
+          (settings.skip && settings.skip(entry))) {
+        summary.unavailable.push(entry);
+        return;
+      }
+      const flight = settings.flightAt ? settings.flightAt(entry) : undefined;
+      if (flight === null) {
+        summary.parked.push(entry);
+        return;
+      }
+      if (Number.isFinite(flight) && dayOf(entry.lastMissAt) < dayOf(flight)) {
+        const from = dayOf(flight) + INTERVALS[Math.max(0, entry.stage - 1)];
+        if (from > entry.dueDay) entry = Object.assign({}, entry, { dueDay: from });
+      }
+      if (isDue(entry, today)) summary.due.push(entry);
       else summary.upcoming.push(entry);
     });
-    summary.due.sort(byDue);
+    const prefer = settings.prefer || (() => true);
+    summary.due.sort((left, right) => Number(Boolean(prefer(right))) - Number(Boolean(prefer(left))) || byDue(left, right));
     summary.upcoming.sort(byDue);
     if (summary.upcoming.length) {
       const day = summary.upcoming[0].dueDay;

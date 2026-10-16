@@ -129,35 +129,50 @@
     },
   };
   // A skill's budget in flight: it leaves flight at the practice target, or
-  // once it has had this many first answers, at any tier, since it entered
-  // flight, whichever comes first. Easy answers count too, so a skill that
-  // never becomes routine at Easy cannot hold its track for ever. A skill
-  // that spends its budget short of the target has "moved on": it stays in
-  // mixed sets and Review, and comes back with a fresh budget in the next
-  // pass. The gate (GATE) and HARD_BAR stay as practice targets; they no
-  // longer hold a student on one skill. Forty answers is four drills'
-  // worth, about a week of one track at 45 minutes a day.
-  const BUDGET = { answers: 40 };
+  // once it has had this many first answers in its own drills, at any
+  // tier, since it entered flight, whichever comes first. Only its drills
+  // spend it: the diagnostic, mixed sets, modules and the Desmos drill
+  // teach nothing new about one skill, so they leave its budget alone.
+  // Easy answers count, so a skill that never becomes routine at Easy
+  // cannot hold its track for ever. A skill that spends its budget short of
+  // the target has "moved on": it stays in mixed sets and Review, and comes
+  // back with a fresh budget in the next pass. The gate (GATE) and HARD_BAR
+  // stay as practice targets; they no longer hold a student on one skill.
+  // Twenty answers is two drills. Simulated (2026-10-16, 45 minutes a day,
+  // only drills spending): forty left the first pass unfinished after 12
+  // weeks for moderate and slow learners (13 and 12 of 19 skills drilled),
+  // and thirty or twenty-five, three drills, likewise (16); twenty ends it
+  // in week 10 (moderate) or 11 (slow) with every skill drilled, the most
+  // skills at the target (9 against 7), at the cost of a larger Review
+  // backlog once every skill has flown and nothing stays parked.
+  const BUDGET = { answers: 20 };
   // The rotation after Review in a section with a plan (rotationStep):
   //   module  an on-screen Module 1 (lib/modules.js) once `started` skills
   //           have been started (a diagnostic alone is not enough: it places
-  //           the student, and the first module waits for practice), when no module
-  //           was taken in the last `days` days or `sessions` other
-  //           practice sets have passed since the last one;
+  //           the student, and the first module waits for practice), when
+  //           none was taken in the last `days` days, or after at least
+  //           `sessions` other practice sets and `minDays` days since the
+  //           last one;
   //   mixed   after a drill, once `started` skills have been started:
   //           `count` questions over every started skill, `weights` toward
   //           skills in flight or moved on, timed at real pace, answers at
   //           the end;
-  //   desmos  once, within the first `within` practice sets, when Desmos
-  //           routes are loaded: `count` questions that each have a route.
+  //   desmos  when Desmos routes are loaded and no Desmos drill was taken
+  //           in the last `days` days (`laterDays` once `first` have been
+  //           finished), never as the very first set: `count` questions,
+  //           `preferred` of them from the skills where a graph genuinely
+  //           solves (lib/practice.js DESMOS_SKILLS).
   const ROTATION = {
-    module: { started: 3, days: 7, sessions: 4, module: "1" },
+    module: { started: 3, days: 7, sessions: 10, minDays: 3, module: "1" },
     mixed: { started: 2, count: 12, weights: { flight: 2, other: 1 } },
-    desmos: { within: 5, count: 10 },
+    desmos: { days: 7, first: 4, laterDays: 14, count: 10, preferred: 7 },
   };
-  // Session kinds that are drills on one skill, for the rotation and for
-  // which track was drilled last.
-  const DRILL_KINDS = ["drill", "skill-drill", "missed-drill"];
+  // Session kinds that are drills on one skill: they spend its budget, mark
+  // it practised, decide the track drilled last, and are followed by a
+  // mixed set. "Practice what I missed" (missed-drill) is Review-like and
+  // counts as neither a drill nor a practice set in the rotation.
+  const DRILL_KINDS = ["drill", "skill-drill"];
+  const REVIEW_LIKE = ["review", "missed-drill"];
   // Official question-bank checks (Progress.officialChecks): the latest
   // check of a skill counts. At least `confirm` right after the practice
   // target is met confirms the skill on official questions; below `low`
@@ -168,10 +183,21 @@
   // The weekly report's off-track signal (weeklyReport): fewer than
   // `practiceDays` practice days in the last `days`; no timed module in
   // `moduleDays` once `moduleStarted` skills are started; first-pass skills
-  // left exceeding what the pace of skills leaving flight over `paceDays`
-  // covers before the test (only with `paceMinDays` of history); the last
-  // two official Math scores within `flatScore` points.
-  const SIGNALS = { days: 7, practiceDays: 4, moduleDays: 14, moduleStarted: 3, paceDays: 21, paceMinDays: 14, flatScore: 10 };
+  // left exceeding what the pace of skills leaving flight over the last
+  // `paceDays` (or the history, if shorter) covers before the test (only
+  // with `paceMinDays` of history); the last two official Math scores
+  // within `flatScore` points, at least `scoreGapDays` apart with
+  // `scorePracticeDays` practice days between them; and three signs of
+  // practising without learning: a skill that used its budget below
+  // routine at Medium; no skill reaching its target in `targetDays` despite
+  // `targetPracticeDays` practice days; Medium first-answer accuracy over
+  // the last `trendDays` not above the `trendDays` before, with at least
+  // `trendMin` answers in each.
+  const SIGNALS = {
+    days: 7, practiceDays: 4, moduleDays: 14, moduleStarted: 3, paceDays: 21, paceMinDays: 14,
+    flatScore: 10, scoreGapDays: 14, scorePracticeDays: 4,
+    targetDays: 21, targetPracticeDays: 8, trendDays: 14, trendMin: 30,
+  };
   // A pacing row needs this many timed answers before it is listed.
   const PACE_MIN = 3;
   const DAY_MS = 24 * 60 * 60 * 1000;
@@ -751,10 +777,26 @@
         movedOn: false,
         practised: false,
         reachedTarget: false,
+        reachedAt: null,
+        firstEnteredAt: null,
+        drillAnswers: 0,
+        aboveEasy: false,
+        lowAtTarget: false,
         check: null,
         official: null,
       };
     }));
+    // Which answers came from a skill's own drills: only those spend its
+    // budget and mark it practised. Without sessions every answer counts.
+    const drillsKnown = Array.isArray(settings.sessions);
+    const sessionById = new Map((settings.sessions || []).filter(Boolean).map((session) => [session.id, session]));
+    const ownDrill = (attempt) => {
+      if (!drillsKnown) return true;
+      const session = sessionById.get(attempt.sessionId);
+      if (!session) return false;
+      const kind = session.kind === "discarded" ? session.discardedKind : session.kind;
+      return DRILL_KINDS.includes(kind) && (!session.skill || session.skill === attempt.skill);
+    };
     const startStage = settings.placement && settings.placement.stage > 1 ? settings.placement.stage : 1;
     const history = Array.isArray(settings.attempts);
     const now = settings.now === undefined ? Date.now() : Number(settings.now);
@@ -762,6 +804,7 @@
     const attempted = new Map();
     const medium = new Map();
     const checkNow = new Map();
+    const checkAt = new Map();
     const inFlight = new Map(tracks.map((track) => [track.key, null]));
     let departures = [];
     let pass = 1;
@@ -775,6 +818,11 @@
     };
     const passedOver = (skill) => info[skill].stage < startStage && answers(skill) < MIN_ATTEMPTS;
     const canFly = (skill) => !gateNow(skill) || lowNow(skill);
+    // A low official check brings its skill back at the next opening in its
+    // track, ahead of skills not yet started, once: unless it has flown since.
+    const lowReturnDue = (skill) => lowNow(skill) && inFlight.get(info[skill].track) !== skill &&
+      !(info[skill].enteredAt !== null && info[skill].enteredAt >= checkAt.get(skill));
+    const pick = (track) => track.skills.find(lowReturnDue) || track.skills.find(eligible);
 
     function eligible(skill) {
       if (flownThisPass.has(skill)) return false;
@@ -784,12 +832,15 @@
 
     function enter(track, skill, at) {
       const entry = info[skill];
-      entry.entry = pass === 1 ? "plan"
-        : gateNow(skill) ? "official-low"
+      const low = lowNow(skill) && (lowReturnDue(skill) || gateNow(skill));
+      entry.entry = low ? "official-low"
+        : pass === 1 ? "plan"
           : entry.movedOn ? "moved-on"
             : entry.flown || entry.reachedTarget ? "slipped"
               : entry.stage < startStage ? "passed-over" : "plan";
-      Object.assign(entry, { flown: true, pass, enteredAt: at, enteredWith: answers(skill), spent: 0, leftAt: null, leftBy: null });
+      Object.assign(entry, { flown: true, pass, enteredAt: at, enteredWith: answers(skill), spent: 0, leftAt: null, leftBy: null,
+        lowAtTarget: low && gateNow(skill) });
+      if (entry.firstEnteredAt === null) entry.firstEnteredAt = at;
       flownThisPass.add(skill);
       inFlight.set(track.key, skill);
     }
@@ -809,14 +860,14 @@
     function settle(at) {
       tracks.forEach((track) => {
         if (inFlight.get(track.key)) return;
-        const skill = track.skills.find(eligible);
+        const skill = pick(track);
         if (skill) enter(track, skill, at);
       });
       if (tracks.some((track) => inFlight.get(track.key)) || !ordered.some(canFly)) return;
       pass += 1;
       flownThisPass = new Set();
       tracks.forEach((track) => {
-        const skill = track.skills.find(eligible);
+        const skill = pick(track);
         if (skill) enter(track, skill, at);
       });
     }
@@ -866,7 +917,10 @@
       });
       departures = (ledger.departures || []).filter((entry) => info[entry.skill]).map((entry) => Object.assign({}, entry));
       // What the ledger had seen; checks known by its time set the latest.
-      checkEvents.filter((event) => event.at <= ledger.at).forEach((event) => checkNow.set(event.check.skill, event.check));
+      checkEvents.filter((event) => event.at <= ledger.at).forEach((event) => {
+        checkNow.set(event.check.skill, event.check);
+        checkAt.set(event.check.skill, event.at);
+      });
       events = events.filter((event) => event.at > ledger.at);
     } else if (!history) {
       events = checkEvents;
@@ -879,6 +933,7 @@
       if (event.check) {
         const skill = event.check.skill;
         checkNow.set(skill, event.check);
+        checkAt.set(skill, event.at);
         const entry = info[skill];
         if (inFlight.get(entry.track) === skill && entry.entry === "official-low" && !lowNow(skill)) {
           depart(skill, event.at, "check");
@@ -893,14 +948,25 @@
       if (attempt.difficulty === GATE.tier) {
         if (!medium.has(skill)) medium.set(skill, []);
         const list = medium.get(skill);
+        const before = gateMet(list);
         list.push({ right: attempt.correct === true && !attempt.hinted, day: dayOf(attempt.timestamp), design: designOf(attempt) });
         if (list.length > GATE.window) list.splice(0, list.length - GATE.window);
-        if (gateMet(list)) entry.reachedTarget = true;
+        if (gateMet(list)) {
+          entry.reachedTarget = true;
+          if (!before) entry.reachedAt = event.at;
+        }
+      }
+      const drilled = ownDrill(attempt);
+      if (drilled) {
+        entry.drillAnswers += 1;
+        if (attempt.difficulty === "Medium" || attempt.difficulty === "Hard") entry.aboveEasy = true;
       }
       if (inFlight.get(entry.track) === skill) {
-        entry.practised = true;
-        entry.spent += 1;
-        if (entry.entry !== "official-low" && gateNow(skill)) depart(skill, event.at, "gate");
+        if (drilled) {
+          entry.practised = true;
+          entry.spent += 1;
+        }
+        if (!entry.lowAtTarget && gateNow(skill)) depart(skill, event.at, "gate");
         else if (entry.spent >= BUDGET.answers) depart(skill, event.at, "budget");
       }
       settle(event.at);
@@ -939,7 +1005,10 @@
       entry.started = atTarget || entry.practised || (!history && entry.flown && row.attempted > 0);
       // Moved on while Easy was still not routine: flagged, so the student
       // goes back to its lesson before its next pass.
-      entry.easyStuck = entry.status === "moved-on" && !(row.routine && row.routine.met);
+      // Only when its drills never left Easy: a skill whose drills reached
+      // Medium was past Easy, whatever its windows say now.
+      entry.easyStuck = entry.status === "moved-on" && (drillsKnown ? !entry.aboveEasy : !(row.routine && row.routine.met));
+      entry.drillsKnown = drillsKnown;
     });
     const checkpoint = history && firstAnswerAt !== null ? {
       version: LEDGER_VERSION,
@@ -976,14 +1045,14 @@
 
   // The per-skill replay fields a ledger keeps besides answers and window.
   const LEDGER_SKILL_FIELDS = ["flown", "practised", "pass", "entry", "enteredAt", "enteredWith", "spent", "leftAt", "leftBy",
-    "movedOn", "reachedTarget"];
+    "movedOn", "reachedTarget", "reachedAt", "firstEnteredAt", "drillAnswers", "aboveEasy", "lowAtTarget"];
 
   // Finished sets in a section that the rotation counts, oldest first:
   // everything but Review, discarded sets, and the extra record a section
   // or full-length test keeps beside its modules.
   function practiceHistory(sessions, sectionKey) {
     return (sessions || []).filter((session) => session && sessionInSection(session, sectionKey) &&
-      !["review", "discarded", "section", "full"].includes(session.kind))
+      !REVIEW_LIKE.includes(session.kind) && !["discarded", "section", "full"].includes(session.kind))
       .slice()
       .sort((left, right) => finishedAt(left) - finishedAt(right));
   }
@@ -1050,13 +1119,14 @@
     const since = lastModule
       ? history.filter((session) => session.kind !== "module" && finishedAt(session) > finishedAt(lastModule)).length
       : 0;
-    const { module } = ROTATION;
+    const { module, desmos } = ROTATION;
+    const daysSinceModule = lastModule ? (now - finishedAt(lastModule)) / DAY_MS : Infinity;
     if (started >= module.started &&
-        (!lastModule || now - finishedAt(lastModule) >= module.days * DAY_MS || since >= module.sessions)) {
+        (daysSinceModule >= module.days || (since >= module.sessions && daysSinceModule >= module.minDays))) {
       return Object.assign(base, {
         kind: "module",
         module: module.module,
-        why: !lastModule ? "first" : since >= module.sessions ? "sessions" : "days",
+        why: !lastModule ? "first" : daysSinceModule >= module.days ? "days" : "sessions",
         lastModuleAt: lastModule ? finishedAt(lastModule) : null,
         sinceModule: since,
       });
@@ -1066,11 +1136,23 @@
       const { count } = ROTATION.mixed;
       return Object.assign(base, { kind: "mixed", count, spec: planMixedSpec(state, count, String(history.length)) });
     }
-    if (settings.desmos && history.length >= 1 && history.length < ROTATION.desmos.within &&
-        !history.some((session) => session.kind === "desmos")) {
-      return Object.assign(base, { kind: "desmos", count: ROTATION.desmos.count });
+    if (settings.desmos && desmosDue(settings.sessions, state.sectionKey, now) && history.length >= 1) {
+      return Object.assign(base, { kind: "desmos", count: desmos.count });
     }
     return null;
+  }
+
+  // Whether the Desmos drill is due (ROTATION.desmos): none taken, finished
+  // or left, in the last `days` days, or `laterDays` once `first` have been
+  // finished. A returning student with a long history gets it too.
+  function desmosDue(sessions, sectionKey, now) {
+    const { days, first, laterDays } = ROTATION.desmos;
+    const all = (sessions || []).filter((session) => session && sessionInSection(session, sectionKey) &&
+      (session.kind === "desmos" || (session.kind === "discarded" && session.discardedKind === "desmos")));
+    const finished = all.filter((session) => session.kind === "desmos").length;
+    const latest = all.reduce((at, session) => Math.max(at, finishedAt(session)), -Infinity);
+    const gap = finished >= first ? laterDays : days;
+    return now - latest >= gap * DAY_MS;
   }
 
   // A section with a plan (planState): the rotation's module, mixed set or
@@ -1115,7 +1197,9 @@
       });
       const mix = drillMix(step.levelWhy, HARD_MIX.size);
       if (mix) step.mix = mix;
-      if (entry.enteredWith < MIN_ATTEMPTS) step.learnPage = learnPageOf(entry.row);
+      // The lesson first while the skill has had no drill of its own;
+      // answers from the diagnostic or a module do not count.
+      if (entry.drillsKnown ? entry.drillAnswers === 0 : entry.enteredWith < MIN_ATTEMPTS) step.learnPage = learnPageOf(entry.row);
       return step;
     }
     const ordered = state.started.concat(entries.map((entry) => entry.skill).filter((skill) => !state.started.includes(skill)))
@@ -1583,6 +1667,22 @@
     return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day ? date : null;
   }
 
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  // "Oct 23" for a moment or a "YYYY-MM-DD" date, in local time, for the
+  // weekly report's plain text; `withYear` adds ", 2026".
+  function monthDay(value, withYear) {
+    const date = typeof value === "string" ? parseDate(value) : new Date(Number(value));
+    if (!date || Number.isNaN(date.getTime())) return String(value);
+    return `${MONTHS[date.getMonth()]} ${date.getDate()}${withYear ? `, ${date.getFullYear()}` : ""}`;
+  }
+
+  // "A", "A and B", "A, B and C".
+  function listText(items) {
+    if (items.length <= 1) return items.join("");
+    return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
+  }
+
   function formatDate(date) {
     const pad = (value) => String(value).padStart(2, "0");
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
@@ -1752,13 +1852,57 @@
     return { check, errors };
   }
 
-  // Skills of `rows` at or past their practice target with no official
-  // check yet: the Progress prompt "Check it on official questions".
-  // Only sections whose tiers are trusted (SAT) have targets.
-  function checkPrompts(rows, checks) {
+  // Skills to check on official questions, for Progress's prompts:
+  // [{ row, reason }] with reason "target" (at or past the practice target
+  // and never checked) or "moved-on" (left flight on its budget short of the
+  // target, with no check since: "see where you stand"). `plans`:
+  // { [sectionKey]: planState }. Only sections whose tiers are trusted
+  // (SAT) have targets.
+  function checkPromptList(rows, checks, plans) {
     const checked = checksBySkill(checks);
-    return (rows || []).filter((row) => row.tiered !== false && row.inCatalog !== false && atOrPastGate(row) &&
-      Progress.TEMPLATE_SECTIONS.includes(row.sectionKey) && !checked.has(skillKey(row.sectionKey, row.skill)));
+    const result = [];
+    (rows || []).forEach((row) => {
+      if (row.tiered === false || row.inCatalog === false || !Progress.TEMPLATE_SECTIONS.includes(row.sectionKey)) return;
+      const own = checked.get(skillKey(row.sectionKey, row.skill));
+      if (atOrPastGate(row)) {
+        if (!own) result.push({ row, reason: "target" });
+        return;
+      }
+      const entry = plans && plans[row.sectionKey] && plans[row.sectionKey].skills[row.skill];
+      if (!entry || entry.status !== "moved-on" || entry.leftAt === null) return;
+      if (!own || own.latest.date < formatDate(new Date(entry.leftAt))) result.push({ row, reason: "moved-on" });
+    });
+    return result;
+  }
+
+  // The rows of checkPromptList.
+  function checkPrompts(rows, checks, plans) {
+    return checkPromptList(rows, checks, plans).map((item) => item.row);
+  }
+
+  /* --------------------------------------------------- Review and the plan */
+
+  // For LiminalReviewQueue.summarize's `flightAt`: when a miss's skill
+  // first entered flight in its section's plan, null while it never has
+  // (the miss is parked until the student reaches the skill), undefined
+  // outside a plan. `plans`: { [sectionKey]: planState }.
+  function reviewFlightAt(plans) {
+    return (entry) => {
+      const plan = plans && plans[entry.sectionKey];
+      const skill = plan && entry.skill ? plan.skills[entry.skill] : null;
+      if (!skill) return undefined;
+      return skill.firstEnteredAt === null ? null : skill.firstEnteredAt;
+    };
+  }
+
+  // For summarize's `prefer`: misses on skills the student has drilled come
+  // first among those due; outside a plan every miss is preferred alike.
+  function reviewPrefer(plans) {
+    return (entry) => {
+      const plan = plans && plans[entry.sectionKey];
+      const skill = plan && entry.skill ? plan.skills[entry.skill] : null;
+      return skill ? skill.drillAnswers > 0 : true;
+    };
   }
 
   /* -------------------------------------------------------- weekly report */
@@ -1865,36 +2009,83 @@
           "Take one from Practice: 22 questions in 35 minutes." });
       }
 
+      const practiceDaysBetween = (fromMs, toMs) => new Set(attempts.filter((attempt) => attempt.answered === true &&
+        Number(attempt.timestamp) >= fromMs && Number(attempt.timestamp) < toMs).map((attempt) => dayOf(attempt.timestamp))).size;
+      const rows = (settings.rows || []).filter((row) => row.sectionKey === MATH && row.inCatalog !== false);
+      report.mathTargets = { met: rows.filter(atOrPastGate).length, total: rows.length };
+
       if (plan) {
-        const historyDays = plan.firstAnswerAt === null ? 0 : Math.max(0, (now - plan.firstAnswerAt) / DAY_MS);
-        const span = Math.min(SIGNALS.paceDays, historyDays);
-        const departures = plan.departures.filter((entry) => entry.at > now - SIGNALS.paceDays * DAY_MS && entry.at <= now).length;
-        const perDay = span > 0 ? departures / span : 0;
+        // The pace: skills leaving flight over the last paceDays, or over the
+        // whole history when that is shorter, said with the span it uses.
+        const historyDays = plan.firstAnswerAt === null ? 0 : Math.max(0, Math.floor((now - plan.firstAnswerAt) / DAY_MS));
+        const spanDays = Math.min(SIGNALS.paceDays, historyDays);
+        // The window starts paceDays ago, or with the first answer when the
+        // history is shorter (all of it then counts).
+        const windowStart = historyDays < SIGNALS.paceDays ? plan.firstAnswerAt : now - SIGNALS.paceDays * DAY_MS;
+        const departures = plan.departures.filter((entry) => entry.at >= windowStart && entry.at <= now).length;
+        const perDay = spanDays > 0 ? departures / spanDays : 0;
         const enough = historyDays >= SIGNALS.paceMinDays;
         report.pace = {
           departures,
-          windowDays: SIGNALS.paceDays,
-          historyDays: Math.floor(historyDays),
+          windowDays: spanDays,
+          historyDays,
           enough,
           remaining: plan.firstPassLeft,
           perWeek: Math.round(perDay * 7 * 10) / 10,
           covered: daysLeft !== null && daysLeft > 0 ? Math.floor(perDay * daysLeft) : null,
         };
         if (enough && daysLeft !== null && daysLeft > 0 && plan.firstPassLeft > report.pace.covered) {
-          reasons.push({ key: "pace", text: `At your recent pace (${departures} skill${departures === 1 ? "" : "s"} left flight ` +
-            `in ${SIGNALS.paceDays} days), about ${report.pace.covered} of the ${plan.firstPassLeft} skills still in the ` +
-            `first pass would leave flight in the ${daysLeft} days before your test.` });
+          reasons.push({ key: "pace", text: `At the recent pace (${departures} skill${departures === 1 ? "" : "s"} finished ` +
+            `${departures === 1 ? "its" : "their"} turn in the last ${spanDays} days), about ${report.pace.covered} of the ` +
+            `${plan.firstPassLeft} skills still waiting for a first turn would get one in the ${daysLeft} days before the test.` });
+        }
+
+        // Practising without learning, from Liminal's own answers.
+        const stalled = planned.filter((entry) => entry.status === "moved-on" && !atOrPastGate(entry.row) &&
+          !(entry.row.mediumRoutine && entry.row.mediumRoutine.met)).map((entry) => entry.skill);
+        if (stalled.length) {
+          reasons.push({ key: "stalled-skills", skills: stalled, text: `${listText(stalled)} used ${stalled.length === 1 ? "its" : "their"} ` +
+            "practice turn without becoming reliable at Medium. Reread the lesson and its prerequisite checks, then try about " +
+            `${OFFICIAL_CHECK.suggested} official Medium questions to see where you stand.` });
+        }
+        const targetFrom = now - SIGNALS.targetDays * DAY_MS;
+        const daysPractised = practiceDaysBetween(targetFrom, now + 1);
+        const reached = planned.some((entry) => entry.reachedAt !== null && entry.reachedAt > targetFrom);
+        if (!reached && daysPractised >= SIGNALS.targetPracticeDays) {
+          reasons.push({ key: "no-target", text: `No skill reached its practice target in the last ${SIGNALS.targetDays} days, ` +
+            `across ${daysPractised} practice days.` });
         }
       }
+      // Medium first answers in Math: the last trendDays against the trendDays before.
+      const mediumIn = (fromMs, toMs) => Progress.stats(attempts.filter((attempt) => sectionOf(attempt) === MATH &&
+        attempt.difficulty === "Medium" && Number(attempt.timestamp) >= fromMs && Number(attempt.timestamp) < toMs));
+      const recentMedium = mediumIn(now - SIGNALS.trendDays * DAY_MS, now + 1);
+      const priorMedium = mediumIn(now - 2 * SIGNALS.trendDays * DAY_MS, now - SIGNALS.trendDays * DAY_MS);
+      report.mediumTrend = { recent: tally(recentMedium), prior: tally(priorMedium) };
+      if (recentMedium.attempted >= SIGNALS.trendMin && priorMedium.attempted >= SIGNALS.trendMin &&
+          recentMedium.accuracy <= priorMedium.accuracy) {
+        reasons.push({ key: "medium-flat", text: `Medium accuracy is not rising: ${Math.round(recentMedium.accuracy * 100)}% in ` +
+          `the last ${SIGNALS.trendDays} days against ${Math.round(priorMedium.accuracy * 100)}% in the ${SIGNALS.trendDays} before.` });
+      }
 
+      // Two official Math scores close together only mean something when
+      // they are at least scoreGapDays apart with practice between them.
       const [earlier, later] = report.scores.length === 2 ? report.scores : [];
-      if (later && Math.abs(Number(later.math) - Number(earlier.math)) <= SIGNALS.flatScore) {
-        reasons.push({
-          key: "flat-scores",
-          text: `Your last two official Math scores (${earlier.math}, then ${later.math}) differ by ${SIGNALS.flatScore} ` +
-            "points or less. See “If your score isn’t moving” in the SAT Math plan.",
-          href: "learn.html#sat/general/math-plan/adjust",
-        });
+      if (later) {
+        const earlierDay = parseDate(earlier.date);
+        const laterDay = parseDate(later.date);
+        const apart = Math.round((laterDay - earlierDay) / DAY_MS);
+        const between = practiceDaysBetween(new Date(earlierDay.getFullYear(), earlierDay.getMonth(), earlierDay.getDate() + 1).getTime(),
+          laterDay.getTime());
+        if (Math.abs(Number(later.math) - Number(earlier.math)) <= SIGNALS.flatScore && apart >= SIGNALS.scoreGapDays &&
+            between >= SIGNALS.scorePracticeDays) {
+          reasons.push({
+            key: "flat-scores",
+            text: `Your last two official Math scores (${earlier.math}, then ${later.math}) differ by ${SIGNALS.flatScore} ` +
+              "points or less. See “If your score isn’t moving” in the SAT Math plan.",
+            href: "learn.html#sat/general/math-plan/adjust",
+          });
+        }
       }
 
       checksBySkill(settings.officialChecks).forEach(({ checks }) => {
@@ -1918,49 +2109,64 @@
   }
 
   const SIGNAL_LABELS = { "on-track": "On track", "needs-attention": "Needs attention" };
+  // A skill's state in words a parent can read, for the copied summary.
+  const PLAIN_STATES = {
+    "not-started": "not started yet",
+    "not-enough-data": "just started",
+    building: "working toward its target",
+    "at-gate": "target met",
+    mastered: "advanced target met",
+    "accuracy-only": "practising",
+  };
 
-  // The weekly report as plain text, for "Copy summary". `options`:
-  // { sectionName(sectionKey) } for module lines (default: the key).
+  // The weekly report as plain text for a parent ("Copy summary"), in plain
+  // English: no plan jargon, real dates. `options`: { sectionName(sectionKey) }
+  // for module lines (default: the key).
   function weeklyReportText(report, options) {
     const settings = options || {};
     const name = settings.sectionName || ((key) => key);
     const pct = (value) => `${Math.round(value * 100)}%`;
     const lines = [
-      `Liminal weekly report: ${report.test}, ${formatDate(new Date(report.from))} to ${formatDate(new Date(report.to))}`,
+      `Liminal weekly report: ${report.test}, ${monthDay(report.from)} to ${monthDay(report.to, true)}`,
       `Status: ${SIGNAL_LABELS[report.signal.status]}`,
       ...report.signal.reasons.map((reason) => `- ${reason.text}`),
       "",
-      `Practice days: ${report.practiceDays} of ${report.days}`,
-      `Time in sets: ${report.minutes} minutes`,
-      `Questions: ${report.newQuestions} new, ${report.reviewQuestions} Review`,
+      `Practice days: ${report.practiceDays} of the last ${report.days}`,
+      `Time in practice sets: ${report.minutes} minutes`,
+      `Questions: ${report.newQuestions} new, ${report.reviewQuestions} going over earlier mistakes`,
     ];
+    if (report.mathTargets) lines.push(`Math skills at their practice target: ${report.mathTargets.met} of ${report.mathTargets.total}`);
     if (report.modules) {
       lines.push(report.modules.length
-        ? `Timed modules: ${report.modules.map((entry) => `${name(entry.sectionKey)} ${entry.correct} of ${entry.total}` +
-          ` (Hard ${entry.hardCorrect} of ${entry.hardTotal}), ${formatDate(new Date(entry.at))}`).join("; ")}`
-        : "Timed modules: none this week");
+        ? `Timed test sections: ${report.modules.map((entry) => `${name(entry.sectionKey)} ${entry.correct} of ${entry.total} right` +
+          ` (hardest questions ${entry.hardCorrect} of ${entry.hardTotal}), ${monthDay(entry.at)}`).join("; ")}`
+        : "Timed test sections: none this week");
     }
     if (report.skills) {
-      const skill = (entry) => `${entry.skill} (Track ${entry.track}, ${STATE_LABELS[entry.state]}, ${entry.spent} of ${entry.budget} used` +
-        `${entry.easyStuck ? ", Easy not yet routine" : ""}` +
-        `${entry.official === "low" ? ", official check low" : entry.official === "confirmed" ? ", confirmed on official questions" : ""})`;
-      lines.push(`Math skills in flight: ${report.skills.inFlight.map(skill).join("; ") || "none"}`);
-      lines.push(`Moved on: ${report.skills.movedOn.map(skill).join("; ") || "none"}`);
+      const skill = (entry) => `${entry.skill} (${PLAIN_STATES[entry.state] || "practising"}` +
+        `${entry.status === "in-flight" ? `, ${entry.spent} of ${entry.budget} practice questions used` : ""}` +
+        `${entry.easyStuck ? ", the easier questions are not yet reliable" : ""}` +
+        `${entry.official === "low" ? ", official practice questions went poorly" : entry.official === "confirmed" ? ", confirmed on official practice questions" : ""})`;
+      lines.push(`Math skills practising now: ${report.skills.inFlight.map(skill).join("; ") || "none"}`);
+      lines.push(`Paused until the next round: ${report.skills.movedOn.map(skill).join("; ") || "none"}`);
     }
     if (report.checks) {
-      lines.push(`Official checks: ${report.checks.map((check) => `${check.skill} ${check.correct} of ${check.attempted} ` +
-        `${check.difficulty} (${pct(check.accuracy)}), ${check.date}`).join("; ") || "none this week"}`);
+      lines.push(`Official practice questions: ${report.checks.map((check) => `${check.skill} ${check.correct} of ${check.attempted} ` +
+        `${check.difficulty} right (${pct(check.accuracy)}), ${monthDay(check.date)}`).join("; ") || "none this week"}`);
     }
     if (report.scores) {
-      lines.push(`Official Math scores: ${report.scores.slice().reverse().map((score) => `${score.math} on ${score.date}` +
+      lines.push(`Official Math scores: ${report.scores.slice().reverse().map((score) => `${score.math} on ${monthDay(score.date)}` +
         `${score.kind === "sat" ? " (real SAT)" : score.kind === "practice" ? " (practice test)" : ""}`).join("; ") || "none recorded"}`);
     }
     if (report.pace && !report.pace.enough) lines.push("Pace: not enough history yet");
-    else if (report.pace) lines.push(`Pace: ${report.pace.departures} skills left flight in the last ${report.pace.windowDays} days`);
+    else if (report.pace) {
+      lines.push(`Pace: ${report.pace.departures} skill${report.pace.departures === 1 ? "" : "s"} finished ` +
+        `${report.pace.departures === 1 ? "its" : "their"} turn in the last ${report.pace.windowDays} days`);
+    }
     lines.push(report.testDate
-      ? `Test date: ${report.testDate}${report.daysLeft !== null && report.daysLeft >= 0 ? ` (${report.daysLeft} days left)` : " (passed)"}`
+      ? `Test date: ${monthDay(report.testDate, true)}${report.daysLeft !== null && report.daysLeft >= 0 ? ` (${report.daysLeft} days left)` : " (passed)"}`
       : "Test date: not set");
-    if (report.unavailable.length) lines.push(`Not available for ${report.test}: timed modules, plan tracks, official checks and scores.`);
+    if (report.unavailable.length) lines.push(`Not available for ${report.test}: timed test sections, the Math plan, official checks and scores.`);
     lines.push("Liminal reports practice accuracy only. It does not estimate or predict a score.");
     return lines.join("\n");
   }
@@ -2043,8 +2249,13 @@
     checksBySkill,
     officialStatus,
     checkPrompts,
+    checkPromptList,
+    reviewFlightAt,
+    reviewPrefer,
     // weekly report
     weeklyReport,
     weeklyReportText,
+    monthDay,
+    PLAIN_STATES,
   };
 });

@@ -154,6 +154,10 @@
       const live = (entry) => entry.source === "template"
         ? Boolean((info[entry.sectionKey] || {})[entry.templateId]) : Boolean(entry.contentIdentity);
       const entries = Queue.build(attempts);
+      // The plan's options (ctx.guide): SAT Math misses on skills never in
+      // flight are parked, and misses on drilled skills come first.
+      const planned = ctx.guide && window.LiminalAnalytics ? ctx.guide(test).reviewOptions() : null;
+      const options = Object.assign({ skip: (entry) => !live(entry) }, planned || {});
       const latest = new Map();
       attempts.forEach((attempt) => {
         if (attempt.correct === true || attempt.correct === false) latest.set(attempt.questionId, attempt);
@@ -164,7 +168,7 @@
         errorLog: progress.errorLog || {},
         latest,
         entries,
-        schedule: Queue.summarize(entries, Date.now(), { skip: (entry) => !live(entry) }),
+        schedule: Queue.summarize(entries, Date.now(), options),
         missed: Queue.missedAttempts(attempts),
         marked: Progress.markedIds(progress, { test }),
       };
@@ -608,6 +612,14 @@
       const scheduled = schedule.due.length + schedule.upcoming.length;
       facts.push(`${plural(scheduled, "question")} in the schedule, ${ctx.formatNumber(schedule.learned.length)} learned.`);
       card.appendChild(h("p", { className: "muted", text: facts.join(" ") }));
+      const parked = (schedule.parked || []).length;
+      if (parked) {
+        card.appendChild(h("p", {
+          className: "field-note review-parked",
+          text: `${plural(parked, "missed question")} ${parked === 1 ? "is" : "are"} parked until you reach ${parked === 1 ? "its" : "their"} ` +
+            "skill in your plan: misses on skills you have not been taught yet wait, then come back from the day you start the skill.",
+        }));
+      }
       if (schedule.unavailable.length) {
         card.appendChild(h("p", {
           className: "field-note",
@@ -747,7 +759,7 @@
 
     function duePanel() {
       const { schedule } = model;
-      const scheduled = schedule.due.length + schedule.upcoming.length + schedule.unavailable.length;
+      const scheduled = schedule.due.length + schedule.upcoming.length + schedule.unavailable.length + (schedule.parked || []).length;
       if (!scheduled && !schedule.learned.length) {
         const box = message(`Nothing to re-practise yet in ${model.test}.`,
           "Questions you answer wrong or leave blank come back here after a day, then again after 3, 7, and 21 " +
