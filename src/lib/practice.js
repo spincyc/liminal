@@ -469,6 +469,119 @@
     return result;
   }
 
+  // Places the questions of `parts` (lists, the first the main level) in
+  // one drill: the later lists' questions spread evenly through it, so a
+  // drill of 7 Medium and 3 Hard reads M M H M M H M M H M, not all Hard at
+  // the end. Order inside each list is kept.
+  function spread(parts) {
+    const [main, ...others] = parts.map((list) => (list || []).slice());
+    const extra = others.flat();
+    const total = main.length + extra.length;
+    if (!extra.length) return main;
+    const slots = new Set(extra.map((_, index) => Math.floor(((index + 1) * total) / (extra.length + 1))));
+    const result = [];
+    for (let place = 0; place < total; place += 1) {
+      const list = slots.has(place) && extra.length ? extra : main.length ? main : extra;
+      result.push(list.shift());
+    }
+    return result;
+  }
+
+  function joinDrills(drills, ordered) {
+    const questions = ordered;
+    return {
+      questions,
+      templates: drills.reduce((sum, drill) => sum + drill.templates, 0),
+      served: drills.flatMap((drill) => drill.served),
+      itemIdentities: drills.flatMap((drill) => drill.itemIdentities),
+      repeats: drills.flatMap((drill) => drill.repeats),
+      skipped: drills.flatMap((drill) => drill.skipped),
+      shortfall: drills.reduce((sum, drill) => sum + drill.shortfall, 0),
+    };
+  }
+
+  // A drill on one skill with its questions split by tier, as the SAT Math
+  // plan's step asks once a skill is routine at Medium (`mix`:
+  // { Medium: 7, Hard: 3 }). Each tier is a buildDrill of its own, Hard
+  // spread through the Medium questions; a tier the skill has no template
+  // at gives its share to the other. `options`: buildDrill's, with `mix`
+  // in place of `difficulty` and `count`. Returns buildDrill's shape.
+  function buildMixedDrill(options) {
+    const settings = options || {};
+    const mix = settings.mix || {};
+    const tiers = ["Easy", "Medium", "Hard"].filter((tier) => Number(mix[tier]) > 0);
+    const has = (tier) => (settings.templates || []).some((template) => template.skill === settings.skill && template.difficulty === tier);
+    const counts = {};
+    tiers.forEach((tier) => {
+      const target = has(tier) ? tier : tiers.find(has);
+      if (target) counts[target] = (counts[target] || 0) + Number(mix[tier]);
+    });
+    const seed = settings.seed || newRunSeed();
+    const drills = Object.keys(counts).map((tier) => buildDrill(Object.assign({}, settings, {
+      difficulty: tier, count: counts[tier], seed: `${seed}${tier.charAt(0).toLowerCase()}`,
+    })));
+    const lead = Object.keys(counts).sort((left, right) => counts[right] - counts[left]);
+    const ordered = spread(lead.map((tier) => drills[Object.keys(counts).indexOf(tier)].questions));
+    return joinDrills(drills, ordered);
+  }
+
+  // A mixed set (the plan's rotation, lib/analytics.js mixedSpec): `spec`
+  // is [{ skill, Medium, Hard }]; each skill's questions come from a drill
+  // at each tier (several seeds per template when a skill has few), a tier
+  // with no template giving its share to the other, and the whole set is
+  // shuffled with `seed` so no skill or tier sits together. `options`:
+  // { sectionKey, templates, spec, seed?, history, instantiate }. Returns
+  // buildDrill's shape over the whole set.
+  function buildMixedSet(options) {
+    const settings = options || {};
+    const seed = settings.seed || newRunSeed();
+    const drills = [];
+    (settings.spec || []).forEach((entry, index) => {
+      const mix = { Medium: Number(entry.Medium) || 0, Hard: Number(entry.Hard) || 0 };
+      if (!mix.Medium && !mix.Hard) return;
+      drills.push(buildMixedDrill({
+        sectionKey: settings.sectionKey,
+        templates: settings.templates,
+        skill: entry.skill,
+        mix,
+        seed: `${seed}${index.toString(36)}`,
+        history: settings.history,
+        instantiate: settings.instantiate,
+      }));
+    });
+    const questions = Core.deterministicShuffle(drills.flatMap((drill) => drill.questions), `${seed}-mixed`);
+    return joinDrills(drills, questions);
+  }
+
+  function seededOrder(text) {
+    let value = 2166136261;
+    for (let index = 0; index < text.length; index += 1) {
+      value ^= text.charCodeAt(index);
+      value = Math.imul(value, 16777619);
+    }
+    return value >>> 0;
+  }
+
+  // The templates a Desmos drill draws from: SAT Math templates whose id
+  // has a route in `routes` (window.LiminalDesmosRoutes.sections[...]),
+  // those in `options.started` skills first, then the rest, each group
+  // least recently served first (`options.recency`, recencyFor), then in a
+  // seeded order. At most `options.count` (default 10).
+  function chooseDesmosTemplates(templates, routes, options) {
+    const settings = options || {};
+    const count = Math.max(0, Math.trunc(Number(settings.count) || 10));
+    const recency = settings.recency || {};
+    const started = new Set(settings.started || []);
+    const seed = String(settings.seed || "");
+    const freshness = (template) => (Object.prototype.hasOwnProperty.call(recency, template.id) ? Number(recency[template.id]) : -1);
+    return (templates || [])
+      .filter((template) => routes && typeof routes === "object" && Object.prototype.hasOwnProperty.call(routes, template.id))
+      .sort((left, right) => Number(started.has(right.skill)) - Number(started.has(left.skill)) ||
+        freshness(left) - freshness(right) ||
+        seededOrder(`${seed}|${left.id}`) - seededOrder(`${seed}|${right.id}`))
+      .slice(0, count);
+  }
+
   // Pure counts for setup/report warnings; selection metadata stays out of
   // individual question screens. A question can repeat both its item and topic.
   function runWarnings(run) {
@@ -536,6 +649,9 @@
     templateMiniTest,
     buildModuleRun,
     buildDrill,
+    buildMixedDrill,
+    buildMixedSet,
+    chooseDesmosTemplates,
     itemKey,
     runWarnings,
     onePerTemplate,

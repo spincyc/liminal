@@ -609,9 +609,13 @@ test("a skill is practised at Easy until routine, then Medium to the gate, then 
   assert.deepEqual(level([...mathAnswers(2, skill, { difficulty: "Easy", correct: false }), ...mathAnswers(8, skill, { difficulty: "Easy" })]),
     { level: "Medium", why: "routine" });
   assert.deepEqual(level(mathAnswers(9, skill, { difficulty: "Easy" })), { level: "Easy", why: "not-routine" }, "needs ten");
-  // Or 8 of the last 10 Medium: a student sure at Medium is not sent back.
+  // Or 8 of the last 10 Medium: a student sure at Medium is not sent back,
+  // and in SAT Math, routine at Medium too, gets Hard mixed into the drill.
   assert.deepEqual(level([...mathAnswers(2, skill, { correct: false }), ...mathAnswers(8, skill, {})]),
-    { level: "Medium", why: "routine" });
+    { level: "Medium", why: "medium-routine" });
+  // Routine at Easy with 5 of the last 10 Medium right: Medium alone.
+  assert.deepEqual(level([...mathAnswers(10, skill, { difficulty: "Easy" }), ...mathAnswers(5, skill, { correct: false }),
+    ...mathAnswers(5, skill, {})]), { level: "Medium", why: "routine" });
   // Hints do not count as right.
   assert.deepEqual(level(mathAnswers(10, skill, { difficulty: "Easy", hinted: true })), { level: "Easy", why: "not-routine" });
   assert.deepEqual(level(atGate(skill)), { level: "Hard", why: "at-gate" });
@@ -619,7 +623,7 @@ test("a skill is practised at Easy until routine, then Medium to the gate, then 
   assert.deepEqual(Analytics.skillLevel({ tiered: false, state: "accuracy-only" }), { level: null, why: "accuracy-only" });
 });
 
-test("SAT Math's next step is the first skill in plan order not yet at the gate", () => {
+test("without history, SAT Math's step is Track A's first skill short of the target, in plan order", () => {
   let step = mathStep([]);
   assert.deepEqual([step.kind, step.skill, step.level, step.reason, step.stage.stage, step.startStage],
     ["skill", "Linear equations in one variable", "Easy", "plan", 1, 1]);
@@ -641,8 +645,11 @@ test("SAT Math's next step is the first skill in plan order not yet at the gate"
   assert.deepEqual([step.skill, step.level, step.reason, step.levelWhy], ["Linear equations in one variable", "Hard", "plan-hard", "at-gate"]);
   step = mathStep([...mastered("Linear equations in one variable"), ...planSkills.slice(1).flatMap(atGate)]);
   assert.equal(step.skill, "Linear functions");
-  // Every skill mastered: a mix.
-  assert.deepEqual(mathStep(planSkills.flatMap(mastered)), { kind: "mixed", reason: "all-mastered", sectionKey: "sat-math" });
+  // Every skill mastered: a mixed set over all of them, Medium and Hard.
+  step = mathStep(planSkills.flatMap(mastered));
+  assert.deepEqual([step.kind, step.reason, step.sectionKey, step.count], ["mixed", "all-mastered", "sat-math", 12]);
+  assert.equal(step.spec.reduce((sum, entry) => sum + entry.Medium + entry.Hard, 0), 12);
+  assert.ok(step.spec.every((entry) => planSkills.includes(entry.skill)));
 });
 
 test("Review comes first whenever questions are due", () => {
