@@ -411,43 +411,43 @@
     {
       "id": "proportional-rate-scaling",
       "bit": 58,
-      "version": 3,
-      "fingerprint": "a8f0e9ba5b0a5a892d53ca0486d96561be7bf3228970c31884bf9173b2a936b7",
+      "version": 4,
+      "fingerprint": "37bfada501f92a57f9c16b8422127b4c8b33b1e76f1db8a6ce56219feaa3bfdc",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "ratio-share-of-total",
       "bit": 59,
-      "version": 3,
-      "fingerprint": "62a4923aa3eaf829d97f62c7b042dbafe4ea9da5b539e2b24b53c8ede3c2cc8b",
+      "version": 4,
+      "fingerprint": "8451a6d25eb8172c28048aff56d8fee3a6bc053c6235b76e06f0083acdb0a706",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rate-unit-conversion",
       "bit": 60,
-      "version": 3,
-      "fingerprint": "bfc265d0751bff032085bf0e4b2a9f31a9880e57f12ab0b79ed4a9b338455479",
+      "version": 4,
+      "fingerprint": "dcb2baab53af808cd2746a01862b2520132b5b61722f7520bf73c6bbe1732f27",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "ratio-after-change",
       "bit": 61,
-      "version": 2,
-      "fingerprint": "bb64fadeced90db49af60e8c4e4b8c7da09009712970dafff30c0cb1c03ceb27",
+      "version": 3,
+      "fingerprint": "e6350e6b9050e6d7e2cd732aaf8fdec3e6c37fc76567d980be93e57f13ba5214",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "multi-unit-rate",
       "bit": 62,
-      "version": 3,
-      "fingerprint": "26156ec014b8e1fda816b101c1aaafdd92a4d73c4a4c94280fa579b1e07a01b8",
+      "version": 4,
+      "fingerprint": "9f39dee81428a73d3cb1573474d112e27af81b7cb86438b709ae10a9877ee7c9",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "average-rate-two-legs",
       "bit": 63,
-      "version": 3,
-      "fingerprint": "7d36e6f4cc6f0bf260ab3007edd5e016a6f50355d872b66226c35b1dd6e219fa",
+      "version": 4,
+      "fingerprint": "4aae717b21c87dd44d8cf96b8f0c45c63b0d9c1871043a3e14460de0a5aef8cd",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -495,85 +495,85 @@
     {
       "id": "list-mean-or-median",
       "bit": 70,
-      "version": 3,
-      "fingerprint": "aa0a5cefbf65da73cf20b8499fc5b5dbe00e89770e585c59447c3e2199d3f7c4",
+      "version": 4,
+      "fingerprint": "c546da1003ed84a04c2f422ce5a78bc7092018dc03501af148ca776aa4fddb2f",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "box-plot-summary",
       "bit": 71,
-      "version": 3,
-      "fingerprint": "2cd49a94d189a1b38d7c84bc9cd8c3dbf6227159998d7c1ab385638db20bd581",
+      "version": 4,
+      "fingerprint": "f86dcdc2c2c4df3c49efb902afb834d4d40860c7994e53faeea5599c0a4754f6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "data-display-center",
       "bit": 72,
-      "version": 4,
-      "fingerprint": "807c623c22a8e2aacf7305c7a684f4abb9662f0395723930b8637c887f0ef088",
+      "version": 5,
+      "fingerprint": "dc40f7b4b60035b07ef1d9c325c74b5c46b3b3129c34b108eeb5a7458082f3ff",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "mean-missing-value",
       "bit": 73,
-      "version": 3,
-      "fingerprint": "c61b3b7f717cb811fd99e7742ba2c84c2fad8f1dd2938eb0711df7408abfdc25",
+      "version": 4,
+      "fingerprint": "5c5c311899d3f07aaba4e7e54e3017ebebddbc63f31071e0e0b8d40e39698204",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "weighted-mean-groups",
       "bit": 74,
-      "version": 3,
-      "fingerprint": "c07fb12fcf521f984bf6720e207df7fe4ad5fda6f65bafd8a55258f28c54a645",
+      "version": 4,
+      "fingerprint": "4225a918320df2cbf9ff052a22d1225c41cc57a93e74058dd09e2f27c7a5f739",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "data-change-statistics",
       "bit": 75,
-      "version": 4,
-      "fingerprint": "e4bfd752842194f6fc98aa672421074add0d5f23bc387a0a35eae2e94c9d14d1",
+      "version": 5,
+      "fingerprint": "f80082609fbafe261718e7d0f304555f6d0b9dc70455f46e8c7d37daa70bc006",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "best-fit-line-equation",
       "bit": 76,
-      "version": 4,
-      "fingerprint": "3edb75acfbc89b78361362519eae5ca6bcb29e16471236cb68a33fe0d962dfb6",
+      "version": 5,
+      "fingerprint": "7c3d42e54547283b5cf96cffc84644771040bcba2cbc8ce1d11b05677e82e084",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "scatterplot-shape-and-count",
       "bit": 77,
-      "version": 4,
-      "fingerprint": "979502003f27f70d0bf2aa4e6f40723f7e30a5ac12a3e372f6f7d4fbfaa29714",
+      "version": 5,
+      "fingerprint": "9cc00ee5f146f2a3d1cd7ae1a9097f5bf62f09ef893e76526b4dbd70426ba863",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "scatterplot-fit-reading",
       "bit": 78,
-      "version": 4,
-      "fingerprint": "0142f163d9c7e5be0f7a4ab1a95b00467f65bcfecd260fd4bf120b21be525c89",
+      "version": 5,
+      "fingerprint": "d187cb0496446f1203013715b2ad1c001fef7730803a3c85034fbd81b9035d33",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-group-fit-lines",
       "bit": 79,
-      "version": 4,
-      "fingerprint": "76fb4a30f93ce6c48d8a9875efa2fdb5e2f1136688a95b166a63d09c7ba2ae44",
+      "version": 5,
+      "fingerprint": "ab08916e7ef234e0c429abc42222e1c2c8dc288cc8d74f281e86d74a7878f462",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "uneven-table-growth",
       "bit": 80,
-      "version": 4,
-      "fingerprint": "d6cefc2116a28f9e7f347b4a52d7c7ac863dcec9e2428dd2058e6958e2d62024",
+      "version": 5,
+      "fingerprint": "0bccd4252c9f79d0063af2328427dbe24bcdae64d33d79a0b2b2684933ef53b7",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-slope-rescaled-units",
       "bit": 81,
-      "version": 5,
-      "fingerprint": "355590e3337c5340afa700dd62bdd928205e049fc1fd30a640ca1de7cef65f05",
+      "version": 6,
+      "fingerprint": "7f4ac80a2f619489afc661bd6b3c67fc41437a7d7ae57c079507d230c4107ad6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -621,43 +621,43 @@
     {
       "id": "sampling-method-choice",
       "bit": 88,
-      "version": 3,
-      "fingerprint": "476fbeadc3211a6da196b329b0e47c2bb05edc0a4029faffea9fd7fd74160aaa",
+      "version": 4,
+      "fingerprint": "e68c5ed08513a8a7aeb8fe2b8461c2a03f9b2c40b685d78b30e300a6bc75118a",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "margin-and-sample-size",
       "bit": 89,
-      "version": 3,
-      "fingerprint": "7f1522c82d72023b6eeb18fb19e403df83ba6601c48563ad3e7662b95d6c4ac6",
+      "version": 4,
+      "fingerprint": "4e2cf84dd243b632f4bfdb0d5bf26514eaef438df94e30c317849363ab10b520",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sample-proportion-estimate",
       "bit": 90,
-      "version": 3,
-      "fingerprint": "d940f2e51add5b8387663f90521b767533f25ffc5739dd4f894efa0cb69478d0",
+      "version": 4,
+      "fingerprint": "8296ef6417dd8f8dd04dcb7a97f7b55b12e86581c28d06f295338b01f9b09ec6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "mark-recapture-estimate",
       "bit": 91,
-      "version": 3,
-      "fingerprint": "7fdbc8dc8d4325c69c7897c71e1dd376a635933b3e647e77485a996cecd81bcd",
+      "version": 4,
+      "fingerprint": "2d82299a61ad58444424db9eb39e2944ef2e39a9f09069868aa8121d43ac785e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "sample-inference",
       "bit": 92,
-      "version": 3,
-      "fingerprint": "b73900de64bd6a50646e9c0e081f975d62dc37e3382d6ef6696b68eb48b0a26a",
+      "version": 4,
+      "fingerprint": "fec666a6ee91a85b2054ec0a0875add4ab4b3d0e54cf8e34ab1cf98ba7680e4b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-estimates-compare",
       "bit": 93,
-      "version": 3,
-      "fingerprint": "dfbc4d6dba9d743b4c33d025aecd13cd1cc18d980e81f451685e96f10812d784",
+      "version": 4,
+      "fingerprint": "00f007cd83e3627980849c51b096d8841f54b40db8068697aa25b796c2c71676",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -747,43 +747,43 @@
     {
       "id": "right-triangle-ratio-read",
       "bit": 106,
-      "version": 3,
-      "fingerprint": "8c3488dde4bd44979160d716a02039734f1b769736ac3eb4e4b187236e0e37fd",
+      "version": 4,
+      "fingerprint": "cc3a1646c54d07062732741f74998f3c11ee0eb9117065a0fc9c0603b95b30ff",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "special-right-triangle",
       "bit": 107,
-      "version": 3,
-      "fingerprint": "00d51620b45b68af7cfc1685cc51f7215f38ab87a6b43ad32c81d9310b2776d4",
+      "version": 4,
+      "fingerprint": "7edef298ef97fefe332531777b7f34f51bc7ea31e1c0cd9d67202518bb78b26d",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "pythagorean-two-step",
       "bit": 108,
-      "version": 4,
-      "fingerprint": "c8f72a0588eb27ab4e84e65526148e341a32063cb4aeeb386d52d9c5d264ab11",
+      "version": 5,
+      "fingerprint": "a251817ae0ee0dd5d7a45628ac5ca6b4997dfd77163a69225f26b744b0fe1e3c",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "trig-context-length",
       "bit": 109,
-      "version": 3,
-      "fingerprint": "29070a844ba007022bba9b546b0004141d565d5698dace50a700e710b54fea76",
+      "version": 4,
+      "fingerprint": "1664afde72d82f3338c07ac6c189bee8588617c77e76d7e892447709994e1c7a",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "trig-similar-cofunction",
       "bit": 110,
-      "version": 3,
-      "fingerprint": "625f6dfa5b79b9564311347c7ad6f1c9e85e9ccfc8042678609c28f109020181",
+      "version": 4,
+      "fingerprint": "0641d2a012c158d2964f2d3a861d342a66716862d5a8f86d1d474f733f9b9918",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "unit-circle-quadrant",
       "bit": 111,
-      "version": 3,
-      "fingerprint": "cf0c1a7852542ce3ce9e74654815bef35c029f057849d4cee420ce0643f9c882",
+      "version": 4,
+      "fingerprint": "132b77c200569a793adc0211d3b49fb48764bb9540e90cf86e6f50559645b47b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1020,22 +1020,22 @@
     {
       "id": "average-rate-required-leg",
       "bit": 145,
-      "version": 3,
-      "fingerprint": "210402a7f3faae692aa3c0e18ddbf6d76723da4fd7d12d39716a4ac717593959",
+      "version": 4,
+      "fingerprint": "ad11f09b9f4d7be7d4270dd7eed24fbe98019b158429b010903a2125b959e1b0",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "density-cube-edge",
       "bit": 146,
-      "version": 3,
-      "fingerprint": "bd21830a1b624d40f5227228c7c13850b6eeceec19db434cf570e64e3df68302",
+      "version": 4,
+      "fingerprint": "220e953a09026845e4c4d5480b96045553e7bb294d72164af9b66031e5547271",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "combined-work-rate",
       "bit": 147,
-      "version": 3,
-      "fingerprint": "7b6ab799c03c5c539311425f1ae93be0e2d1ebf984afcdb670a049bb4a4fdca6",
+      "version": 4,
+      "fingerprint": "59cbaad088adeb97f1b3ea32080b7a471af183ef51910fb36ffaeee85d895b43",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1062,50 +1062,50 @@
     {
       "id": "data-change-median",
       "bit": 151,
-      "version": 3,
-      "fingerprint": "a259c180426249e4de9e1e95e708c59a0840a05a8b64c8dc62f8a76f3336f84a",
+      "version": 4,
+      "fingerprint": "bdaf7326071366ddeee8efc66e99953d8c9353ca696be546b2c3844da8fdda26",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "histogram-class-intervals",
       "bit": 152,
-      "version": 2,
-      "fingerprint": "3ec31d3fce28f117f691548ab9c076230286c7942a18a56d125096c26fbd75e4",
+      "version": 3,
+      "fingerprint": "061bfe5303b4b018430ae68e4d04560c65a4c4df036907319b72aa8f240f0211",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "compare-spread-plots",
       "bit": 153,
-      "version": 2,
-      "fingerprint": "0adb21220d16787d41932dfb392b014c1aa931b778e38d74efe45582037b7251",
+      "version": 3,
+      "fingerprint": "7875269624bb46c0070e1baaecfaab2a6ea0d4d3f734870f4010e83079d97514",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "could-be-median",
       "bit": 154,
-      "version": 3,
-      "fingerprint": "7dbfd4a4be8e9b9d016e40a758cba495303df41fecd2d8eeae72cf5bf055e587",
+      "version": 4,
+      "fingerprint": "cbe521dd84508d68d5407b1692e9f2e3696a7e471be146653ba33a5cc3ff0ebb",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-model-choice",
       "bit": 155,
-      "version": 3,
-      "fingerprint": "d8a1b7c87c0efd5864fa0dfb25d4f4bb00d73ca076de803a7d34f3a75c3bc04e",
+      "version": 4,
+      "fingerprint": "3e214c7c0155e8ae53baf5b0e0a155304eede76327a91aa756d312e6937c87d4",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "outlier-removal-fit",
       "bit": 156,
-      "version": 4,
-      "fingerprint": "c12548a66aa24e9c81c8d02d4e1a667fdd15b80222cbe553e90830cbb0f749f4",
+      "version": 5,
+      "fingerprint": "455b4ce35c94bfc4ce2442426b59ef5e30e289eab51abd68e4f8891f311b1803",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-fit-interpretation",
       "bit": 157,
-      "version": 4,
-      "fingerprint": "f68f1177c25ae3e5d4b0b5fe2ca5173f2a355320b1099b4710bbb1b31a7f0262",
+      "version": 5,
+      "fingerprint": "656acccfa93a6e4825dbded2f29f630db4da47c47c748e249e5151f1120c467e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1125,8 +1125,8 @@
     {
       "id": "interval-mean-scope",
       "bit": 160,
-      "version": 3,
-      "fingerprint": "9e614e0cbbdea954b0e93cbd30e16c1094f5943d0f1f11a758c86543f36108f1",
+      "version": 4,
+      "fingerprint": "f9272fcf3a046a5ee38736fcaee09838dd611c247356a7b11a1b2a88bb067e3c",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1174,15 +1174,15 @@
     {
       "id": "cofunction-complementary-angles",
       "bit": 167,
-      "version": 2,
-      "fingerprint": "8497d727f322b5b9ccb43c9e924a828536214dd806011e21e2430dbaa8fb455a",
+      "version": 3,
+      "fingerprint": "c0bdea7a26e7522d0ffd552b886d06d0c918115c8abbd788e1a71d079ee03ff6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "two-observer-elevation",
       "bit": 168,
-      "version": 3,
-      "fingerprint": "70dfbb9092a9f6a3d06a5f7cd954482a3d8d4c690fff6e68ed7dd494dc7e75c5",
+      "version": 4,
+      "fingerprint": "9eeb1ddc75750f70abbd7c7785b1ea17fbe4aa9d78c0b6734c63842b06e44f21",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1202,8 +1202,8 @@
     {
       "id": "stratified-sample-total",
       "bit": 171,
-      "version": 2,
-      "fingerprint": "8b7369d391bc0428aa15dea08f2249e4d0def77a19f5dbd6aa24e510b46a3a80",
+      "version": 3,
+      "fingerprint": "7b049cbe299ed2f4d274100f9cf36c9484f7b35fa13eef46624a875bd0d23c4b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1223,36 +1223,36 @@
     {
       "id": "extreme-value-correction",
       "bit": 174,
-      "version": 3,
-      "fingerprint": "d22ba138b0a979815199f36ade265fcd40485354b0e045dbc44b651230337e1d",
+      "version": 4,
+      "fingerprint": "6ef5680666c7b593ea78f30d780256e424bae3e316735b0078569404a9e08870",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "fit-slope-unit-rate",
       "bit": 175,
-      "version": 3,
-      "fingerprint": "0ea227c517e42fe39857db45208d8fc0814f0efb4d32676eeaae2e73df16a48e",
+      "version": 4,
+      "fingerprint": "0bff10de65022788d4124260b66749e953b57459454279c8b3a8518273d75667",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "residual-actual-predicted",
       "bit": 176,
-      "version": 3,
-      "fingerprint": "af9318985c0fe7dfa08c31f15bf2448497b305a52a310e11b31daa171c5d68b9",
+      "version": 4,
+      "fingerprint": "8e9cfa82633a3332b1a328ee06e96f2a969b16fc1e618993911317a277ba2c54",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "experiment-scope-grid",
       "bit": 177,
-      "version": 2,
-      "fingerprint": "b93b54fa66bb4a59dd2e9ccd9dc9e1e54f6ee9910b7f3b8e0f5e9ac6061fa99c",
+      "version": 3,
+      "fingerprint": "05b168c66b3ce2090c7dc042cdfaf81b98708144fcc2bb9b55622d9691bb7ccd",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "margin-sample-size-scaling",
       "bit": 178,
-      "version": 3,
-      "fingerprint": "70e90efac7cfa1d8c624ab2aaa1075744c2e1a37c87d5bf7257b20b135667b4d",
+      "version": 4,
+      "fingerprint": "fcaf6d72e4f77ca3fded3b9856a1f3991208138a2a3397c06062208cfa0476fa",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1398,8 +1398,8 @@
     {
       "id": "residual-plot-reconstruction",
       "bit": 199,
-      "version": 1,
-      "fingerprint": "a6ad8d178baca13215e65ebf74a8247cb908249ef28d947532c500ad4c267cd7",
+      "version": 2,
+      "fingerprint": "964068ddbdfde3d0795e38879c8eadd83e1040cf391543ae1d44862c69ec2166",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1484,6 +1484,41 @@
       "bit": 211,
       "version": 1,
       "fingerprint": "55b1cafb73e01a596854ca060fb337f3d8db271faf3a1a28f4f82b1cac6861ef",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "population-density",
+      "bit": 212,
+      "version": 1,
+      "fingerprint": "5cd0e8416e54095e5809d4ba31a18fe7726e924d40f4aedf6210d166b46661a4",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "crew-rate-change",
+      "bit": 213,
+      "version": 1,
+      "fingerprint": "cd0c8cddea55c21a9c3b512453c183fc95a9949d67367c37bd4ffaea405690db",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "greatest-value-from-center",
+      "bit": 214,
+      "version": 1,
+      "fingerprint": "9dee726c06dcc82f70e327051dd67c407fffc9e528f564df99526564d8b973bc",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "line-graph-reading",
+      "bit": 215,
+      "version": 1,
+      "fingerprint": "4c52e1d32c0973365fff4b545241c379eed2d16a4e1f4ee4c5e946e6624a89b3",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "trig-ratio-from-ratio",
+      "bit": 216,
+      "version": 1,
+      "fingerprint": "03f1e87d534e2289a609d2f6d9563040d15e05705116c44c11cfc290f46eebc6",
       "fingerprintAlgorithm": "source-v1"
     }
   ]

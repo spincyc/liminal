@@ -1340,7 +1340,7 @@
     },
   };
 
-  /* ================================= average-rate-required-leg (Hard) */
+  /* =============================== average-rate-required-leg (Medium) */
 
   // The whole trip's average is given and one leg's speed is wanted: the
   // average fixes the total time, and the unknown leg gets what is left.
@@ -1468,15 +1468,17 @@
     domain: DOMAIN,
     skill: "Ratios, rates, and units",
     subskill: "unit rates",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "The speed one part must have for a given overall average",
     recognize:
       "The overall average speed is not a mean of the two speeds; it fixes the total time (total distance ÷ average). " +
       "Subtract the known part's time, then divide the remaining distance by the time left.",
-    // Hard: the average is given and a part's rate is asked, so the
-    // student must see that an average rate fixes a total time; averaging
-    // the speeds, by count or by distance, produces an offered answer.
-    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    // Medium (relabelled from Hard, 2026-10-16 realism review; official
+    // Medium): the average is given and a part's rate is asked, so the
+    // student must see that an average rate fixes a total time, then work
+    // three short steps; averaging the speeds, by count or by distance,
+    // produces an offered answer.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
     tricks: ["unweighted-average", "intermediate-value", "wrong-quantity"],
     build(t) {
       const numeric = t.chance(0.35);
@@ -1742,5 +1744,340 @@
     },
   };
 
-  return [rateScaling, ratioShare, rateConversion, ratioAfterChange, multiUnitRate, averageRate, requiredLeg, densityCubeEdge, combinedWorkRate];
+  /* ===================================== population-density (Medium) */
+
+  // Density is an amount per unit of area. An area in one unit is converted
+  // to another by the square of the length factor: 1 square kilometer is
+  // 1,000 × 1,000 square meters, and with 1 mile = 1.6 kilometers, 1 square
+  // mile is 1.6 × 1.6 = 2.56 square kilometers.
+  const DENSITY_GROUPS = [
+    {
+      who: "residents", place: "a neighborhood", unitWho: "people", d: [1500, 12000], dStep: 250, maxP: 60000,
+      has: (P) => `The neighborhood has ${fmt(P)} residents.`, density: "the population density of the neighborhood",
+      howMany: "How many people live in the neighborhood?",
+    },
+    {
+      who: "residents", place: "a town", unitWho: "people", d: [40, 1200], dStep: 20, maxP: 120000,
+      has: (P) => `The town has ${fmt(P)} residents.`, density: "the population density of the town",
+      howMany: "How many people live in the town?",
+    },
+    {
+      who: "deer", place: "a wildlife refuge", unitWho: "deer", d: [4, 40], dStep: 1, maxP: 9000,
+      has: (P) => `There are ${fmt(P)} deer in the refuge.`, density: "the density of deer in the refuge",
+      howMany: "How many deer are in the refuge?",
+    },
+    {
+      who: "nesting pairs", place: "a coastal preserve", unitWho: "nesting pairs", d: [20, 300], dStep: 5, maxP: 20000,
+      has: (P) => `There are ${fmt(P)} nesting pairs of terns in the preserve.`, density: "the density of nesting pairs of terns in the preserve",
+      howMany: "How many nesting pairs of terns are in the preserve?",
+    },
+  ];
+
+  const DENSITY_PRINCIPLES = [
+    "Population density is the number of individuals divided by the area they occupy.",
+    "An area converts by the square of the length factor: 1 square kilometer = 1,000 × 1,000 = 1,000,000 square meters.",
+  ];
+
+  // A rectangle measured in meters; the density is asked per square kilometer.
+  function densityMeters(t, numeric) {
+    // A town is too large to measure in meters; a neighborhood too small for square miles.
+    const group = t.pick(DENSITY_GROUPS.filter((entry) => entry.place !== "a town"));
+    return retry(() => {
+      const L = t.int(6, 30) * 100;
+      const W = t.int(8, 36) * 50;
+      if (W >= L) return null;
+      const km2 = (L * W) / 1e6;
+      const d = t.int(group.d[0] / group.dStep, group.d[1] / group.dStep) * group.dStep;
+      const P = tidy(d * km2);
+      if (!Number.isInteger(P) || P < 30 || P > group.maxP) return null;
+      return packRanked(t, numeric, d, [
+        [P / ((L * W) / 1000), `Divides the area in square meters by 1,000, as if 1 square kilometer were 1,000 square meters, instead of 1,000 × 1,000.`],
+        [km2, `Stops at the area, ${fmt(km2)} square kilometers.`],
+        [P / (L / 1000), `Divides by the length alone, ${fmt(L / 1000)} kilometers, instead of by the area.`],
+        [P / ((L + W) / 1000), `Divides by the sum of the length and width in kilometers, ${fmt((L + W) / 1000)}, instead of their product.`],
+        [P * km2, `Multiplies the number of ${group.who} by the area instead of dividing.`],
+        [km2 / P * 1e6, `Divides the area by the number of ${group.who}, which gives square meters per individual, not a density.`],
+      ], {
+        stimulus: null,
+        stem:
+          `${group.place.charAt(0).toUpperCase()}${group.place.slice(1)} has the shape of a rectangle that measures ${fmt(L)} meters by ` +
+          `${fmt(W)} meters. ${group.has(P)} What is ${group.density}, in ${group.unitWho} per square kilometer? ` +
+          `(1 kilometer = 1,000 meters)`,
+        explanation:
+          `In kilometers the rectangle is ${fmt(L / 1000)} by ${fmt(W / 1000)}, so its area is ${fmt(km2)} square kilometers. ` +
+          `The density is ${fmt(P)} ÷ ${fmt(km2)} = ${fmt(d)} ${group.unitWho} per square kilometer.`,
+        steps: [
+          `Convert each side to kilometers: ${fmt(L)} m = ${fmt(L / 1000)} km and ${fmt(W)} m = ${fmt(W / 1000)} km.`,
+          `Area: ${fmt(L / 1000)} × ${fmt(W / 1000)} = ${fmt(km2)} square kilometers.`,
+          `Density: ${fmt(P)} ÷ ${fmt(km2)} = ${fmt(d)}.`,
+        ],
+        principles: DENSITY_PRINCIPLES,
+        trap: "Converting square meters with the length factor 1,000, instead of 1,000 × 1,000, gives a density a thousand times too small.",
+        hint: "How many square meters are in one square kilometer?",
+        verify: () => {
+          // Count the area in square meters, then convert once at the end.
+          const perSquareMeter = P / (L * W);
+          return close(perSquareMeter * 1000 * 1000, d);
+        },
+      }, { show: fmt, places: 2 });
+    });
+  }
+
+  // An area in square miles or square kilometers; the density, or the
+  // number of individuals, in the other unit, with 1 mile = 1.6 kilometers.
+  function densityMiles(t, numeric) {
+    const group = t.pick(DENSITY_GROUPS.filter((entry) => entry.place !== "a neighborhood"));
+    const reverse = t.chance(0.35);
+    const toKm = t.chance(0.5);
+    return retry(() => {
+      // Square miles that make a whole number of square kilometers (× 2.56).
+      const mi2 = t.pick([25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375]);
+      const km2 = tidy(mi2 * 2.56);
+      const d = t.int(group.d[0] / group.dStep, group.d[1] / group.dStep) * group.dStep;
+      const [givenArea, givenUnit, askUnit] = toKm ? [mi2, "square miles", "square kilometer"] : [km2, "square kilometers", "square mile"];
+      const askArea = toKm ? km2 : mi2;
+      const P = tidy(d * askArea);
+      if (!Number.isInteger(P) || P < 50 || P > group.maxP) return null;
+      const linear = toKm ? mi2 * 1.6 : km2 / 1.6;
+      const wrongWay = toKm ? km2 / 2.56 / 2.56 : km2 * 2.56;
+      const conversion = toKm
+        ? `${fmt(mi2)} square miles = ${fmt(mi2)} × 1.6 × 1.6 = ${fmt(km2)} square kilometers`
+        : `${fmt(km2)} square kilometers = ${fmt(km2)} ÷ (1.6 × 1.6) = ${fmt(mi2)} square miles`;
+      const lead = `${group.place.charAt(0).toUpperCase()}${group.place.slice(1)} has an area of ${fmt(givenArea)} ${givenUnit}.`;
+      if (reverse) {
+        return packRanked(t, numeric, P, [
+          [d * givenArea, `Multiplies the density by the area in ${givenUnit} without converting it to ${askUnit}s.`],
+          [d * linear, "Converts the area with the length factor 1.6 instead of 1.6 × 1.6 = 2.56."],
+          [d * wrongWay, `Converts the area in the wrong direction, ${toKm ? "dividing" : "multiplying"} by 2.56.`],
+          [d * askArea / 1.6, "Converts the area and then divides by 1.6 again."],
+        ], {
+          stimulus: null,
+          stem:
+            `${lead} ${group.density.charAt(0).toUpperCase()}${group.density.slice(1)} is ${fmt(d)} ${group.unitWho} per ${askUnit}. ` +
+            `${group.howMany} (1 mile = 1.6 kilometers)`,
+          explanation:
+            `The density is per ${askUnit}, so convert the area: ${conversion}. ` +
+            `Then ${fmt(d)} × ${fmt(askArea)} = ${fmt(P)} ${group.who}.`,
+          steps: [
+            `1 square mile = 1.6 × 1.6 = 2.56 square kilometers.`,
+            `Convert: ${conversion}.`,
+            `Number = density × area = ${fmt(d)} × ${fmt(askArea)} = ${fmt(P)}.`,
+          ],
+          principles: DENSITY_PRINCIPLES,
+          trap: `The density is per ${askUnit}, so the area must be in ${askUnit}s, converted with 1.6 × 1.6, not 1.6.`,
+          hint: `In which unit must the area be before it is multiplied by the density?`,
+          verify: () => close((P / d) / (toKm ? mi2 : km2), toKm ? 1.6 * 1.6 : 1 / (1.6 * 1.6)),
+        }, { show: fmt, places: 2 });
+      }
+      return packRanked(t, numeric, d, [
+        [P / givenArea, `Divides by the area in ${givenUnit}, which gives ${group.unitWho} per ${givenUnit.slice(0, -1)}, not per ${askUnit}.`],
+        [P / linear, "Converts the area with the length factor 1.6 instead of 1.6 × 1.6 = 2.56."],
+        [P / wrongWay, `Converts the area in the wrong direction, ${toKm ? "dividing" : "multiplying"} by 2.56.`],
+        [askArea, `Stops at the converted area, ${fmt(askArea)} ${askUnit}s.`],
+        [(P / givenArea) * 1.6, "Multiplies the density per given unit by 1.6 instead of converting the area."],
+      ], {
+        stimulus: null,
+        stem:
+          `${lead} ${group.has(P)} What is ${group.density}, in ${group.unitWho} per ${askUnit}? (1 mile = 1.6 kilometers)`,
+        explanation:
+          `Convert the area first: ${conversion}. Then the density is ${fmt(P)} ÷ ${fmt(askArea)} = ${fmt(d)} ${group.unitWho} per ${askUnit}.`,
+        steps: [
+          `1 square mile = 1.6 × 1.6 = 2.56 square kilometers.`,
+          `Convert: ${conversion}.`,
+          `Density: ${fmt(P)} ÷ ${fmt(askArea)} = ${fmt(d)}.`,
+        ],
+        principles: DENSITY_PRINCIPLES,
+        trap: "A square mile is 1.6 × 1.6 square kilometers; converting with 1.6 alone, or dividing by the area in the wrong unit, gives an offered choice.",
+        hint: `How many square kilometers are in one square mile?`,
+        verify: () => {
+          // Convert the density instead of the area: per square mile is 2.56 times per square kilometer.
+          const perGiven = P / givenArea;
+          return close(toKm ? perGiven / 2.56 : perGiven * 2.56, d);
+        },
+      }, { show: fmt, places: 2 });
+    });
+  }
+
+  const populationDensity = {
+    id: "population-density",
+    domain: DOMAIN,
+    skill: "Ratios, rates, and units",
+    subskill: "unit conversion",
+    difficulty: "Medium",
+    title: "Population density with area units converted",
+    recognize:
+      "Density is a count per unit of area. Put the area in the unit the question names first, converting with the square " +
+      "of the length factor, then divide (or multiply for the count).",
+    // Medium: a known ratio, density = count ÷ area, after one area
+    // conversion; the linear factor (1,000 or 1.6 instead of its square)
+    // and the area in the wrong unit are the offered traps.
+    rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["unit-mismatch", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      const numeric = t.chance(0.4);
+      const instance = t.chance(0.45) ? densityMeters(t, numeric) : densityMiles(t, numeric);
+      return { estimatedSeconds: 95, ...instance };
+    },
+  };
+
+  /* ======================================== crew-rate-change (Hard) */
+
+  // A crew of identical workers (or machines) can finish a job in a known
+  // time; partway through, the crew changes size. Work is measured in
+  // worker-days: the job's total is fixed, the part done is subtracted, and
+  // the rest is divided by the new crew. Time and crew size are inversely
+  // proportional, so scaling the time by the crew ratio the other way, or
+  // restarting the whole job with the new crew, gives an offered answer.
+  const CHANGING_CREWS = [
+    { one: "painter", many: "painters", job: "paint every classroom in a school", unit: "day", units: "days", n: [4, 10], D: [8, 24], join: "join the crew", leave: "leave the crew" },
+    { one: "machine", many: "machines", job: "fill a large order of bottles", unit: "hour", units: "hours", n: [3, 8], D: [10, 36], join: "are switched on", leave: "are shut down for repairs" },
+    { one: "pump", many: "pumps", job: "drain a flooded basement", unit: "hour", units: "hours", n: [3, 8], D: [6, 20], join: "are added", leave: "break down" },
+    { one: "volunteer", many: "volunteers", job: "plant all the trees for a new park", unit: "day", units: "days", n: [6, 15], D: [5, 15], join: "join the group", leave: "leave the group" },
+  ];
+
+  // "are switched on" → "is switched on", "leave the crew" → "leaves the crew" for one worker.
+  const singularVerb = (count, phrase) => (count !== 1 ? phrase : phrase
+    .replace(/^are /, "is ").replace(/^join /, "joins ").replace(/^leave /, "leaves ").replace(/^break /, "breaks "));
+
+  function crewItem(t, numeric) {
+    const crew = t.pick(CHANGING_CREWS);
+    const form = t.pick(["more", "more", "total", "add"]);
+    const cap = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+    return retry(() => {
+      const n = t.int(crew.n[0], crew.n[1]);
+      const D = t.int(crew.D[0], crew.D[1]);
+      const d1 = t.int(2, D - 3);
+      const total = n * D;
+      const left = n * (D - d1);
+      const intro =
+        `Working together at the same constant rate, ${n} ${crew.many} can ${crew.job} in ${plural(D, crew.unit, crew.units)}. ` +
+        `The ${crew.many} work for ${plural(d1, crew.unit, crew.units)}`;
+      if (form === "add") {
+        // The job must finish early; how many more workers are needed?
+        const early = t.int(1, D - d1 - 2);
+        const remaining = D - d1 - early;
+        if (left % remaining) return null;
+        const needed = left / remaining;
+        const key = needed - n;
+        if (key < 1 || needed > 3 * n) return null;
+        const finishBy = D - early;
+        return packRanked(t, numeric, key, [
+          [needed, `Gives the size of the whole crew needed, ${needed}, instead of how many must be added to the ${n} already working.`],
+          [total / finishBy - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by ${finishBy} ${crew.units}, ignoring the part already done and that the extra ${crew.many} work only for the last ${remaining} ${crew.units}.`],
+          [(n * D) / remaining - n, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by the ${remaining} ${crew.units} left, ignoring the part already done.`],
+          [(n * early) / (D - d1), `Adds ${crew.many} in proportion to the share of the remaining ${D - d1} ${crew.units} to be saved, instead of dividing the work left by the time left.`],
+          [key + 1, `Rounds the crew size up by one ${crew.one} that the remaining work does not need.`],
+        ], {
+          stimulus: null,
+          stem:
+            `${intro}. To finish the job ${plural(early, crew.unit, crew.units)} sooner than planned, more ${crew.many} working at the same ` +
+            `rate ${crew.join} at that point. How many ${crew.many} must ${crew.join === "are switched on" || crew.join === "are added" ? "be added" : "join"} so that the job is finished exactly ${plural(early, crew.unit, crew.units)} early?`,
+          explanation:
+            `The whole job is ${n} × ${D} = ${total} ${crew.one}-${crew.units}. After ${d1} ${crew.units}, ${n} × ${d1} = ${n * d1} are done, ` +
+            `leaving ${left}. To finish ${early} ${crew.units} early, those must be done in ${D} ${MINUS} ${d1} ${MINUS} ${early} = ${remaining} ${crew.units}, ` +
+            `which takes ${left} ÷ ${remaining} = ${needed} ${crew.many}. That is ${needed} ${MINUS} ${n} = ${key} more.`,
+          steps: [
+            `Whole job: ${n} × ${D} = ${total} ${crew.one}-${crew.units}.`,
+            `Left after ${d1} ${crew.units}: ${total} ${MINUS} ${n * d1} = ${left}.`,
+            `Time left to finish early: ${D - d1} ${MINUS} ${early} = ${remaining} ${crew.units}; crew needed: ${left} ÷ ${remaining} = ${needed}.`,
+            `More ${crew.many} needed: ${needed} ${MINUS} ${n} = ${key}.`,
+          ],
+          principles: CREW_PRINCIPLES,
+          trap: `The ${crew.many} already working stay on the job, and only the work left has to be done in the time left.`,
+          hint: `How much work, in ${crew.one}-${crew.units}, is left, and how much time is left for it?`,
+          estimatedSeconds: 130,
+          verify: () => {
+            // Simulate the job unit by unit.
+            let done = 0;
+            for (let step = 0; step < d1; step += 1) done += n;
+            for (let step = 0; step < remaining; step += 1) done += n + key;
+            return done === total && d1 + remaining === D - early;
+          },
+        }, { show: fmt, places: 0 });
+      }
+      const grow = t.chance(0.6);
+      const change = grow ? t.int(1, Math.max(2, Math.round(n / 2))) : t.int(1, Math.max(1, Math.floor(n / 3)));
+      const after = grow ? n + change : n - change;
+      if (after < 2 || left % after) return null;
+      const more = left / after;
+      if (more === D - d1 || !Number.isInteger(more)) return null;
+      const key = form === "total" ? d1 + more : more;
+      const restart = total / after;
+      const direct = ((D - d1) * after) / n;
+      const lead =
+        `${intro}; then ${plural(change, crew.one, crew.many)} ${singularVerb(change, grow ? crew.join : crew.leave)}` +
+        `${grow ? `, working at the same rate` : ""}, and the job is finished with ${plural(after, crew.one, crew.many)}.`;
+      const correction = (value, reason) => [form === "total" ? d1 + value : value, form === "total" ? `${reason.replace(/\.$/, "")}, then adds the first ${d1} ${crew.units}.` : reason];
+      return packRanked(t, numeric, key, [
+        form === "total"
+          ? [more, `Gives only the time after the change, ${more} ${crew.units}, not the time for the whole job.`]
+          : [d1 + more, `Gives the time for the whole job, including the first ${d1} ${crew.units}, instead of the time after the change.`],
+        correction(restart, `Divides the whole job, ${total} ${crew.one}-${crew.units}, by the new crew, ignoring the work already done`),
+        correction(restart - d1, `Finds the time for the whole job with the new crew, ${fmt(restart)} ${crew.units}, and subtracts the ${d1} ${crew.units} already worked`),
+        correction(direct, `Scales the remaining time by ${after}/${n} instead of ${n}/${after}; more ${crew.many} take less time, not more`),
+        correction(D - d1, `Ignores the change in the crew and uses the ${D - d1} ${crew.units} left on the original plan`),
+      ], {
+        stimulus: null,
+        stem:
+          `${lead} ${form === "total"
+            ? `How many ${crew.units} did the whole job take?`
+            : `How many ${crew.units} did it take to finish the job after the change?`}`,
+        explanation:
+          `The whole job is ${n} × ${D} = ${total} ${crew.one}-${crew.units}. In the first ${d1} ${crew.units}, ${n} × ${d1} = ${n * d1} are done, ` +
+          `leaving ${left}. The ${after} ${crew.many} need ${left} ÷ ${after} = ${more} ${crew.units}` +
+          `${form === "total" ? `, so the whole job took ${d1} + ${more} = ${key} ${crew.units}.` : "."}`,
+        steps: [
+          `Whole job: ${n} × ${D} = ${total} ${crew.one}-${crew.units}.`,
+          `Done in the first ${d1} ${crew.units}: ${n} × ${d1} = ${n * d1}; left: ${left}.`,
+          `With ${after} ${crew.many}: ${left} ÷ ${after} = ${more} ${crew.units}.`,
+          ...(form === "total" ? [`Whole job: ${d1} + ${more} = ${key} ${crew.units}.`] : []),
+        ],
+        principles: CREW_PRINCIPLES,
+        trap: `More ${crew.many} take less time: the time left is inversely proportional to the crew size, and only the work not yet done remains.`,
+        hint: `Measure the job in ${crew.one}-${crew.units}. How much of it is left after the first ${d1} ${crew.units}?`,
+        estimatedSeconds: 120,
+        verify: () => {
+          // Simulate the job unit by unit until it is done.
+          let done = 0;
+          let time = 0;
+          while (done < total && time < 1000) {
+            done += time < d1 ? n : after;
+            time += 1;
+          }
+          return done === total && (form === "total" ? time : time - d1) === key;
+        },
+      }, { show: fmt, places: 2 });
+    });
+  }
+
+  const CREW_PRINCIPLES = [
+    "For identical workers at a constant rate, work = number of workers × time, so a job's total in worker-hours (or worker-days) is fixed.",
+    "Time and crew size are inversely proportional: for the same work, twice the crew takes half the time.",
+  ];
+
+  const crewRateChange = {
+    id: "crew-rate-change",
+    domain: DOMAIN,
+    skill: "Ratios, rates, and units",
+    subskill: "unit rates",
+    difficulty: "Hard",
+    title: "A crew that changes size partway through a job",
+    recognize:
+      "Count the job in worker-units of time: it is fixed. Subtract the part done before the change, then divide what is " +
+      "left by the new crew (or by the time left, for the crew needed).",
+    // Hard: the student must see the inverse proportion and the fixed total
+    // before anything can be computed; restarting the whole job with the
+    // new crew, scaling time the wrong way, and the total time for the
+    // time after the change are all offered.
+    rubric: { steps: 2, concept: 2, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    tricks: ["neighbouring-rule", "intermediate-value", "wrong-quantity"],
+    build(t) {
+      return crewItem(t, t.chance(0.35));
+    },
+  };
+
+  return [
+    rateScaling, ratioShare, rateConversion, ratioAfterChange, multiUnitRate, averageRate, requiredLeg, combinedWorkRate,
+    populationDensity, densityCubeEdge, crewRateChange,
+  ];
 });
