@@ -256,6 +256,7 @@
     progress.history = normalizeHistory(raw.history);
     progress.sessions = (Array.isArray(raw.sessions) ? raw.sessions : [])
       .filter((session) => isObject(session) && typeof session.id === "string");
+    progress.attempts = classAttempts(progress.attempts, progress.sessions);
     progress.plan = planShape(raw.plan);
     progress.officialScores = (Array.isArray(raw.officialScores) ? raw.officialScores : [])
       .filter((score) => isObject(score) && typeof score.id === "string");
@@ -591,11 +592,41 @@
     return (Number(left.timestamp) || 0) - (Number(right.timestamp) || 0);
   }
 
-  // Keeps the newest records within the limits.
+  // Answers saved before builds that name their set (setKind, setSkill)
+  // are classed by their session alone, and the session cap drops sessions
+  // separately from answers. So each such answer takes its set's kind and
+  // skill from its session while the session is still kept: on load and
+  // before every save. An answer that names its set is left alone, and one
+  // whose session is gone stays as it is. Returns `attempts` itself when
+  // nothing changes.
+  function classAttempts(attempts, sessions) {
+    const sessionById = new Map((sessions || []).map((session) => [session.id, session]));
+    let changed = false;
+    const classed = attempts.map((attempt) => {
+      if (typeof attempt.setKind === "string" && attempt.setKind) return attempt;
+      const session = typeof attempt.sessionId === "string" && attempt.sessionId ? sessionById.get(attempt.sessionId) : undefined;
+      if (!session || typeof session.kind !== "string" || !session.kind) return attempt;
+      // A discarded set keeps its own kind in discardedKind.
+      const kind = session.kind === "discarded" && typeof session.discardedKind === "string" && session.discardedKind
+        ? session.discardedKind : session.kind;
+      const record = Object.assign({}, attempt, { setKind: kind });
+      if (typeof session.skill === "string" && session.skill && !(typeof attempt.setSkill === "string" && attempt.setSkill)) {
+        record.setSkill = session.skill;
+      }
+      changed = true;
+      return record;
+    });
+    return changed ? classed : attempts;
+  }
+
+  // Keeps the newest records within the limits, classing answers by their
+  // sessions first (classAttempts) so none outlives the session that
+  // classes it.
   function capped(progress, attemptLimit) {
     const limit = attemptLimit || LIMITS.attempts;
+    const attempts = classAttempts(progress.attempts, progress.sessions);
     return Object.assign({}, progress, {
-      attempts: progress.attempts.length > limit ? progress.attempts.slice(-limit) : progress.attempts,
+      attempts: attempts.length > limit ? attempts.slice(-limit) : attempts,
       sessions: progress.sessions.length > LIMITS.sessions
         ? progress.sessions.slice(-LIMITS.sessions)
         : progress.sessions,
@@ -1357,6 +1388,7 @@
     addOfficialCheck,
     removeOfficialCheck,
     KNOWN_FIELDS,
+    classAttempts,
     cleanPlanLedger,
     mergePlanLedger,
     setPlanLedger,

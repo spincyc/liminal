@@ -815,8 +815,11 @@
     };
     // An older answer whose set has no session yet cannot be classed: the
     // checkpoint stops before it, so it is replayed once its session exists.
+    // One with no set at all (migrated from v2) never will be, so it does
+    // not hold the checkpoint back. Progress classes older answers from
+    // their sessions before the session cap drops them (classAttempts).
     const unclassed = (attempt) => drillsKnown && !(typeof attempt.setKind === "string" && attempt.setKind) &&
-      !sessionById.has(attempt.sessionId);
+      typeof attempt.sessionId === "string" && attempt.sessionId !== "" && !sessionById.has(attempt.sessionId);
     const startStage = settings.placement && settings.placement.stage > 1 ? settings.placement.stage : 1;
     const history = Array.isArray(settings.attempts);
     const now = settings.now === undefined ? Date.now() : Number(settings.now);

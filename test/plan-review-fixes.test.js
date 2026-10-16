@@ -47,7 +47,11 @@ const session = (id, kind, extra) => Object.assign({ id, kind, sectionKey: "sat-
 
 test("only a skill's own drills spend its budget: the diagnostic, mixed sets and modules do not", () => {
   const { plan } = planOf(record.attempts, record.sessions);
-  const { plan: legacy } = planOf(record.attempts, undefined);
+  // Without sessions or set kinds every answer counts (the record's answers
+  // take their set kinds from their sessions when it loads).
+  const bare = record.attempts.map(({ setKind, setSkill, ...rest }) => rest);
+  assert.ok(record.attempts.some((attempt) => attempt.setKind === "drill"));
+  const { plan: legacy } = planOf(bare, undefined);
   const skill = "Equivalent expressions";
   const drillIds = new Set(record.sessions.filter((entry) => entry.kind === "drill" && entry.skill === skill).map((entry) => entry.id));
   const own = Progress.markRepeats(record.attempts).filter((attempt) => attempt.skill === skill && drillIds.has(attempt.sessionId) &&

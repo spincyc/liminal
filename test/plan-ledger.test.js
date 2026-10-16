@@ -272,3 +272,61 @@ test("answers saved one by one before their drill's session still spend budgets 
     responseType: "numeric" }, { response: "1", correct: true }, { id: "a", setKind: "drill", setSkill: "Circles", now: 1 });
   assert.deepEqual([record.setKind, record.setSkill], ["drill", "Circles"]);
 });
+
+test("answers from before set kinds keep their class when the session cap drops their sessions", () => {
+  // Three drills of ten Easy misses, saved before answers named their set:
+  // classed by their sessions alone (the cold review's sessiontrim probe).
+  const skill = trackA[0];
+  const legacy = [0, 1, 2].flatMap((set) => answers(10, skill, { difficulty: "Easy", correct: false, sessionId: `d${set}` }));
+  const sessions = [0, 1, 2].map((set) => ({ id: `d${set}`, kind: "drill", skill, sectionKey: "sat-math",
+    finishedAt: legacy[set * 10 + 9].timestamp + 1000 }));
+  const full = planOf(legacy, undefined, { sessions });
+  assert.deepEqual([full.departures.length, full.skills[skill].spent, full.skills[skill].status], [1, 30, "moved-on"]);
+  // Loaded, then saved under a session cap that drops the oldest drill.
+  const memory = new Map();
+  const storage = { getItem: (key) => (memory.has(key) ? memory.get(key) : null), setItem: (key, value) => memory.set(key, String(value)),
+    removeItem: (key) => memory.delete(key) };
+  memory.set(Progress.STORAGE_KEY, JSON.stringify(Object.assign(Progress.empty({ epoch: "e-trim" }), { attempts: legacy, sessions })));
+  const limit = Progress.LIMITS.sessions;
+  Progress.LIMITS.sessions = 2;
+  let saved;
+  try {
+    saved = Progress.save(storage, Progress.load(storage).progress).progress;
+  } finally {
+    Progress.LIMITS.sessions = limit;
+  }
+  const kept = Progress.load(storage).progress;
+  assert.deepEqual(kept.sessions.map((session) => session.id), ["d1", "d2"], "the oldest drill's session is gone");
+  assert.equal(kept.attempts.length, 30, "its answers are kept");
+  const trimmed = planOf(kept.attempts, undefined, { sessions: kept.sessions });
+  assert.deepEqual(shape(trimmed), shape(full), "the plan does not rewind");
+  assert.ok(trimmed.checkpoint, "and the ledger keeps updating");
+  assert.deepEqual(saved.attempts, kept.attempts);
+  assert.ok(kept.attempts.every((attempt) => attempt.setKind === "drill" && attempt.setSkill === skill));
+  // Idempotent, and through export, import and merge.
+  assert.deepEqual(Progress.normalize(JSON.parse(JSON.stringify(kept))).attempts, kept.attempts);
+  const file = IO.parseImport(IO.exportFile(kept, clock).text).progress;
+  assert.deepEqual(file.attempts.map((attempt) => [attempt.setKind, attempt.setSkill]), kept.attempts.map(() => ["drill", skill]));
+  const merged = IO.mergeImport(Progress.empty({ epoch: "e-other" }), file).progress;
+  assert.ok(merged.attempts.every((attempt) => attempt.setKind === "drill"));
+  // A set kind is never overwritten; a discarded set gives its own kind; an
+  // answer whose session is gone, or that never had one, stays as it is.
+  const others = [answer(skill, { sessionId: "d0", setKind: "mixed" }), answer(skill, { sessionId: "x" }),
+    answer(skill, { sessionId: "gone" }), answer(skill, { sessionId: null })];
+  const classed = Progress.classAttempts(others, [{ id: "d0", kind: "drill", skill },
+    { id: "x", kind: "discarded", discardedKind: "drill", skill }]);
+  assert.deepEqual(classed.map((attempt) => [attempt.setKind, attempt.setSkill]),
+    [["mixed", undefined], ["drill", skill], [undefined, undefined], [undefined, undefined]]);
+  assert.equal(Progress.classAttempts(classed, []), classed, "nothing to class: the same list");
+});
+
+test("answers with no set at all (migrated from v2) do not hold the ledger back", () => {
+  const skill = trackA[0];
+  const migrated = answers(5, skill, { sessionId: null, difficulty: "Easy" });
+  const drills = [0, 1].flatMap((set) => answers(10, skill, { difficulty: "Easy", correct: false, sessionId: `m${set}` }));
+  const sessions = [0, 1].map((set) => ({ id: `m${set}`, kind: "drill", skill, sectionKey: "sat-math", finishedAt: clock }));
+  const plan = planOf(migrated.concat(drills), undefined, { sessions });
+  assert.equal(plan.skills[skill].spent, 20);
+  assert.ok(plan.checkpoint, "a checkpoint is taken");
+  assert.equal(plan.checkpoint.at, drills[drills.length - 1].timestamp);
+});
