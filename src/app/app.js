@@ -451,7 +451,8 @@
             return `${pass}${where}. Your latest official check in this skill was below ` +
               `${Math.round(Analytics.OFFICIAL_CHECK.low * 100)}%, so it is back in flight: official check low, keep practising.${budget}`;
           case "moved-on":
-            return `${pass}${where}. It moved on before reaching the practice target, so it is back with a fresh budget.${budget}`;
+            return `${pass}${where}. It moved on before reaching the practice target, so it is back with a fresh budget.` +
+              (row.routine && !row.routine.met ? " Easy is not routine in it yet: reread its lesson first." : "") + budget;
           case "passed-over":
             return `${pass}${where}. Your diagnostic let you pass over this stage; with the first pass done, it comes back.${budget}`;
           case "slipped":

@@ -884,6 +884,7 @@
         const item = el("li");
         item.append(el("strong", null, entry.skill),
           ` \u00b7 Track ${entry.track} \u00b7 ${Analytics.STATE_LABELS[entry.state]} \u00b7 ${entry.spent} of ${entry.budget} used` +
+          (entry.easyStuck ? " \u00b7 Easy not yet routine" : "") +
           (entry.official ? ` \u00b7 ${OFFICIAL_LABELS[entry.official]}` : ""));
         list.appendChild(item);
       });
@@ -1351,7 +1352,8 @@
         const track = plan.tracks.find((item) => item.key === entry.track);
         cell.appendChild(el("small", "cell-note plan-note", entry.status === "in-flight"
           ? `In flight, ${track ? track.name : "its track"}: ${entry.spent} of ${entry.budget} used`
-          : PLAN_STATUS[entry.status]));
+          : entry.easyStuck ? "Moved on before Easy was routine: reread its lesson; back in the next pass"
+            : PLAN_STATUS[entry.status]));
       }
       const latest = (model.checks.get(`${row.sectionKey}|${row.skill}`) || {}).latest;
       if (latest) {

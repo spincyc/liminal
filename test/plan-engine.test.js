@@ -95,15 +95,15 @@ test("drill steps alternate tracks, the one drilled least recently first", () =>
   assert.deepEqual([next.skill, next.track], [trackA[0], "A"]);
 });
 
-test("a skill leaves flight at the gate or after its budget of Medium and Hard first answers, then moves on", () => {
-  const { answers: budget, tiers } = Analytics.BUDGET;
-  assert.deepEqual([budget, tiers], [40, ["Medium", "Hard"]]);
-  // Easy answers spend nothing, nor do answers from before it was in flight.
-  const easy = answers(30, trackA[0], { difficulty: "Easy", correct: false });
-  let plan = state(easy);
-  assert.deepEqual([plan.skills[trackA[0]].status, plan.skills[trackA[0]].spent], ["in-flight", 0]);
-  // Thirty-nine wrong Medium or Hard answers: still in flight.
-  const spending = easy.concat(answers(20, trackA[0], { correct: false }), answers(19, trackA[0], { correct: false, difficulty: "Hard" }));
+test("a skill leaves flight at the gate or after its budget of first answers at any tier, then moves on", () => {
+  assert.deepEqual(Analytics.BUDGET, { answers: 40 });
+  // Answers from before it was in flight spend nothing.
+  const before = answers(6, trackA[1], { difficulty: "Easy", correct: false });
+  let plan = state(before);
+  assert.deepEqual([plan.tracks[0].inFlight, plan.skills[trackA[1]].spent], [trackA[0], 0]);
+  // Every first answer in flight spends, Easy included: 39 is still in flight.
+  const spending = before.concat(answers(20, trackA[0], { difficulty: "Easy", correct: false }),
+    answers(10, trackA[0], { correct: false }), answers(9, trackA[0], { correct: false, difficulty: "Hard" }));
   plan = state(spending);
   assert.deepEqual([plan.tracks[0].inFlight, plan.skills[trackA[0]].spent], [trackA[0], 39]);
   // The fortieth moves it on; the next skill in Track A takes flight.
@@ -115,6 +115,7 @@ test("a skill leaves flight at the gate or after its budget of Medium and Hard f
   assert.equal(plan.skills[trackA[1]].spent, 0, "a fresh budget");
   assert.deepEqual(plan.departures.map((item) => [item.skill, item.by, item.pass]), [[trackA[0], "budget", 1]]);
   assert.deepEqual(plan.started, [trackA[0]], "a skill counts as started from its first answer in flight");
+  assert.equal(entry.easyStuck, true, "it moved on before Easy was routine: flagged");
   // The gate: 30 Medium first answers, 24 right, over two days and designs.
   const atTarget = gate(trackA[1]);
   plan = state(spent.concat(atTarget));
@@ -126,6 +127,24 @@ test("a skill leaves flight at the gate or after its budget of Medium and Hard f
   assert.equal(plan.skills[trackA[3]].flown, false);
   assert.equal(plan.skills[trackA[3]].status, "at-gate");
   assert.equal(plan.skills[trackA[3]].started, true, "at the target counts as started");
+});
+
+test("a student stuck at Easy moves on after the budget, flagged, and the skill returns in the next pass", () => {
+  // Forty Easy answers, never 8 of 10 right: the skill does not hold Track A.
+  const stuck = answers(40, trackA[0], { difficulty: "Easy", correct: false });
+  let plan = state(stuck);
+  const entry = plan.skills[trackA[0]];
+  assert.deepEqual([entry.status, entry.leftBy, entry.easyStuck], ["moved-on", "budget", true]);
+  assert.equal(plan.tracks[0].inFlight, trackA[1]);
+  // A skill that moved on after Easy became routine is not flagged.
+  const routine = answers(10, trackA[0], { difficulty: "Easy" }).concat(answers(30, trackA[0], { correct: false }));
+  assert.equal(state(routine).skills[trackA[0]].easyStuck, false);
+  // When both tracks are through, it is back in flight in the second pass.
+  const rest = trackA.slice(1).concat(trackB).flatMap((skill) => answers(40, skill, { correct: false }));
+  plan = state(stuck.concat(rest));
+  assert.deepEqual([plan.pass, plan.tracks[0].inFlight, plan.skills[trackA[0]].entry], [2, trackA[0], "moved-on"]);
+  const next = step(stuck.concat(rest));
+  assert.deepEqual([next.skill, next.level, next.pass], [trackA[0], "Easy", 2]);
 });
 
 test("the second pass brings moved-on skills back with a fresh budget once both tracks are through", () => {
@@ -215,7 +234,11 @@ test("the rotation: a timed module, a mixed set after a drill, and one early Des
   const three = two.concat(answers(40, trackA[0], { correct: false }), answers(2, trackA[1], { difficulty: "Easy" }));
   const module = run(three, [set("drill", 1)]);
   assert.deepEqual([module.kind, module.module, module.why], ["module", "1", "first"]);
-  assert.equal(run(two, [set("drill", 1)], { placements: { "sat-math": { stage: 1 } } }).kind, "module", "the diagnostic opens modules");
+  // A finished diagnostic alone does not open modules: it places the
+  // student, and the first module waits for three started skills.
+  assert.equal(run(two, [set("diagnostic", 2), set("drill", 1)], { placements: { "sat-math": { stage: 1 } } }).kind, "mixed");
+  assert.equal(run(one, [set("diagnostic", 1)], { placements: { "sat-math": { stage: 1 } } }).kind, "skill",
+    "right after the diagnostic: a drill, not a module");
   // Within a week of a module and fewer than four sets since: no module.
   assert.equal(run(three, [set("module", 2), set("drill", 1.5), set("mixed", 1), set("drill", 0.5)]).kind, "mixed");
   // Four sets since (Review and discarded sets do not count): a module.

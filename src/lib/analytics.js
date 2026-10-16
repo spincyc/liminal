@@ -129,17 +129,19 @@
     },
   };
   // A skill's budget in flight: it leaves flight at the practice target, or
-  // once it has had this many first answers at Medium or Hard since it
-  // entered flight, whichever comes first. A skill that spends its budget
-  // short of the target has "moved on": it stays in mixed sets and Review,
-  // and comes back with a fresh budget in the next pass. The gate (GATE)
-  // and HARD_BAR stay as practice targets; they no longer hold a student
-  // on one skill. Forty answers is four drills' worth, about a week of one
-  // track at 45 minutes a day.
-  const BUDGET = { answers: 40, tiers: ["Medium", "Hard"] };
+  // once it has had this many first answers, at any tier, since it entered
+  // flight, whichever comes first. Easy answers count too, so a skill that
+  // never becomes routine at Easy cannot hold its track for ever. A skill
+  // that spends its budget short of the target has "moved on": it stays in
+  // mixed sets and Review, and comes back with a fresh budget in the next
+  // pass. The gate (GATE) and HARD_BAR stay as practice targets; they no
+  // longer hold a student on one skill. Forty answers is four drills'
+  // worth, about a week of one track at 45 minutes a day.
+  const BUDGET = { answers: 40 };
   // The rotation after Review in a section with a plan (rotationStep):
   //   module  an on-screen Module 1 (lib/modules.js) once `started` skills
-  //           have been started or the diagnostic is done, when no module
+  //           have been started (a diagnostic alone is not enough: it places
+  //           the student, and the first module waits for practice), when no module
   //           was taken in the last `days` days or `sessions` other
   //           practice sets have passed since the last one;
   //   mixed   after a drill, once `started` skills have been started:
@@ -666,7 +668,7 @@
   //   first pass, is not passed over by the diagnostic (a skill in a stage
   //   before the placement's with fewer than MIN_ATTEMPTS answers).
   // - A skill in flight leaves at the gate, or once BUDGET.answers of its
-  //   first answers at BUDGET.tiers have come since it entered, from any
+  //   first answers, at any tier, have come since it entered, from any
   //   set: then it has moved on. A skill back in flight for a low official
   //   check leaves by its budget or a newer check that is not low.
   // - When neither track has a skill to fly, the next pass starts: every
@@ -689,7 +691,8 @@
   //     tracks: [{ key, name, stages, skills, inFlight, lastDrilledAt }],
   //     skills: { [skill]: { skill, domain, stage, track, row, status,
   //       started, flown, practised, pass, entry, enteredAt, enteredWith,
-  //       spent, budget, leftAt, leftBy, movedOn, check, official } } }
+  //       spent, budget, leftAt, leftBy, movedOn, easyStuck, check,
+  //       official } } }
   // with status "in-flight", "at-gate" (at or past the target now),
   // "moved-on", "passed-over" or "waiting"; entry, why a skill last
   // entered flight: "plan", "moved-on", "passed-over", "slipped" (back
@@ -837,7 +840,7 @@
       }
       if (inFlight.get(entry.track) === skill) {
         entry.practised = true;
-        if (BUDGET.tiers.includes(attempt.difficulty)) entry.spent += 1;
+        entry.spent += 1;
         if (entry.entry !== "official-low" && gateNow(skill)) depart(skill, event.at, "gate");
         else if (entry.spent >= BUDGET.answers) depart(skill, event.at, "budget");
       }
@@ -871,6 +874,9 @@
       // with answers), or at the target. A skill just taken into flight
       // is not started until its first answer.
       entry.started = atOrPastGate(row) || entry.practised || (!history && entry.flown && row.attempted > 0);
+      // Moved on while Easy was still not routine: flagged, so the student
+      // goes back to its lesson before its next pass.
+      entry.easyStuck = entry.status === "moved-on" && !(row.routine && row.routine.met);
     });
     return {
       sectionKey,
@@ -957,15 +963,13 @@
     const history = practiceHistory(settings.sessions, state.sectionKey);
     const started = state.started.length;
     const base = { sectionKey: state.sectionKey, reason: "rotation" };
-    const diagnosed = Boolean((settings.placements || {})[state.sectionKey]) ||
-      history.some((session) => session.kind === "diagnostic");
     const modules = history.filter((session) => session.kind === "module");
     const lastModule = modules[modules.length - 1] || null;
     const since = lastModule
       ? history.filter((session) => session.kind !== "module" && finishedAt(session) > finishedAt(lastModule)).length
       : 0;
     const { module } = ROTATION;
-    if ((started >= module.started || diagnosed) &&
+    if (started >= module.started &&
         (!lastModule || now - finishedAt(lastModule) >= module.days * DAY_MS || since >= module.sessions)) {
       return Object.assign(base, {
         kind: "module",
@@ -1751,7 +1755,7 @@
       const plan = settings.plan || null;
       const describe = (entry) => ({
         skill: entry.skill, track: entry.track, state: entry.row.state, status: entry.status,
-        spent: entry.spent, budget: entry.budget, official: entry.official,
+        spent: entry.spent, budget: entry.budget, official: entry.official, easyStuck: Boolean(entry.easyStuck),
       });
       const planned = plan ? Object.values(plan.skills) : [];
       report.skills = {
@@ -1851,6 +1855,7 @@
     }
     if (report.skills) {
       const skill = (entry) => `${entry.skill} (Track ${entry.track}, ${STATE_LABELS[entry.state]}, ${entry.spent} of ${entry.budget} used` +
+        `${entry.easyStuck ? ", Easy not yet routine" : ""}` +
         `${entry.official === "low" ? ", official check low" : entry.official === "confirmed" ? ", confirmed on official questions" : ""})`;
       lines.push(`Math skills in flight: ${report.skills.inFlight.map(skill).join("; ") || "none"}`);
       lines.push(`Moved on: ${report.skills.movedOn.map(skill).join("; ") || "none"}`);
