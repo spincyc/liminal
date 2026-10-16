@@ -151,7 +151,7 @@ Liminal is a study tool as well as a question bank: it teaches each SAT skill,
 drills it, tests it the way the digital SAT does, and brings back what you
 missed until you can do it.
 
-SAT questions are generated from question templates: 200 for SAT Math and
+SAT questions are generated from question templates: 217 for SAT Math and
 163 for SAT Reading and Writing, covering the catalog's tested skills.
 ACT English, Mathematics, Reading, and Writing draw from 575 original exercise
 variants each. ACT Science has 80 questions in 14 original passage sets. Every
@@ -162,7 +162,7 @@ wrong.
 | Section | Source | Easy / Medium / Hard |
 | --- | --- | --- |
 | SAT Reading and Writing | 163 templates | 42 / 75 / 46 |
-| SAT Math | 200 templates | 48 / 102 / 50 |
+| SAT Math | 217 templates | 52 / 118 / 47 |
 | ACT English, Mathematics, Reading, Writing | 575 exercise variants each | Tiers unverified |
 | ACT Science | 80 questions in 14 passage sets | Tiers unverified |
 
@@ -198,6 +198,11 @@ never recorded. Liminal is now built to keep practice honest:
   traps, and when each shortcut fails, linked from every question's
   explanation and from Progress; plus pages on format and scoring, pacing,
   the error log, Desmos, and a SAT Math plan for a student around 500.
+  In Math, a problem to try follows every worked example (its answer and
+  solution open in place, and print at the end of the page); each lesson
+  starts with quick prerequisite checks linked to the Grade 6–8 and
+  high-school lessons that teach them, and keeps the hardest versions in a
+  section of their own.
 - **Practice.** A set of any size, by domain, skill and difficulty, with
   feedback after each question or at the end and an optional real-pace timer.
   **Drill one skill** varies numbers or context; finite scene pools can repeat.
@@ -217,7 +222,10 @@ never recorded. Liminal is now built to keep practice honest:
   on the real digital test: a timer you can hide with a five-minute alert, a
   question navigator, Mark for Review, an answer eliminator, highlights with
   notes (Annotate) and a line reader on reading passages, a review page,
-  typeset math, figures, a reference sheet, and a calculator link. Exit saves
+  typeset math, figures, a reference sheet, and a Calculator button that
+  opens Desmos in a window beside the test, reused between questions. After
+  a SAT Math answer, the explanation adds a Desmos route when the question
+  type has one: what to type, what to read, and when it fails. Exit saves
   the set to finish later (a test module's clock keeps running, as on test
   day) unless you discard it, which records what you saw. Starting a new set
   or test asks before replacing a saved one, and a practice set never
@@ -225,7 +233,9 @@ never recorded. Liminal is now built to keep practice honest:
 - **Review that brings mistakes back.** A missed question returns the next
   day, then after 3, 7 and 21 days each time you get it right; from the
   second return you get a fresh version built the same way, so you practise
-  the method rather than remember an answer. The error log shows each miss
+  the method rather than remember an answer. Every version of a question
+  design shares one schedule, so a right answer in any set counts. Review
+  comes first once a day, up to six questions, most overdue first. The error log shows each miss
   with its passage or figure and both answers; tag why you missed it
   (content, process, careless, time) and write the rule you will remember.
 - **Progress that tells you what to do next.** A 20-question "Start here"
@@ -233,11 +243,18 @@ never recorded. Liminal is now built to keep practice honest:
   skill's last 30 Medium questions, then 10 of the last 15 Hard, each
   question counted once), pacing against real-test
   pace, a history of sets with an accuracy trend, a plan with your test date
-  and weekly goal, and one next step that every page agrees on: Review when
-  something is due, then the SAT Math plan's next skill at its next level
-  (Easy until routine, then Medium, then Hard). The diagnostic reports by
-  domain and places you in the plan. Practice opens with "Start here": a
-  Bluebook baseline, the diagnostic, then the next step. Record your official
+  and weekly goal, and one next step that every page agrees on: Review
+  first once a day, then the SAT Math plan. The plan keeps two skills in
+  flight, one from Algebra and data and one from Advanced Math and geometry,
+  each with a budget of questions before it moves on (skills that fall short
+  come back in the next pass). It rotates in a mixed set after each drill, a
+  timed 22-question module about weekly, and an early Desmos drill, and
+  mixes Hard questions into a skill's drills once Medium is routine. The
+  diagnostic reports by domain and places you in the plan. Practice opens
+  with "Start here": a Bluebook baseline, the diagnostic, then the next
+  step. A weekly report you can print or copy for a parent says On track
+  or Needs attention and why, and official question-bank checks (X of N
+  College Board questions per skill) confirm a skill or send it back. Record your official
   Bluebook practice-test and SAT scores there too: each sits beside your
   Liminal accuracy in the four weeks before it, and is never converted.
 - **Printable booklets.** SAT booklets are built from templates to the

@@ -1,5 +1,54 @@
 # Roadmap
 
+## SAT Math learning loop — 2026-10-16
+
+A student's retake after the September repairs still placed SAT Math in the
+low 500s. An outcome review found the question content sound: 360 blind
+solves, every key right, mostly SAT-realistic. The loop around it was the
+problem:
+- It drilled one skill at a time behind a 24-of-30 gate, so a moderate
+  learner in simulation never reached Advanced Math in 12 weeks.
+- It never offered timed or mixed practice.
+- It put official-Medium question types at Liminal Hard and locked Hard.
+- It did not train Desmos.
+- It taught by reading only.
+- It let Review crowd out new work.
+- It gave no off-track signal.
+
+The changes, recorded in the [author notes](reviews/2026-10-16-sat-math-realism-changes.md)
+and the dated independent template reviews:
+
+- **The plan runs two tracks.** One skill from stages 1–2 and one from
+  stages 3–4 are in flight at once, each with a budget, and skills that
+  fall short come back in a second pass. A rotation adds a mixed set after
+  each drill, a timed Module 1 about weekly, and an early Desmos drill. Hard
+  mixes into drills once Medium is routine, and Review leads once a day with
+  up to six questions. Simulated, a moderate learner starts Advanced Math on
+  day 1, and Review falls from 55% to 22% of questions.
+- **Tiers moved toward official bands, and new question types were added.**
+  Twelve official-Medium types moved from Hard to Medium. The new types
+  include polynomial operations, parallel lines, non-projectile quadratic
+  models, systems of inequalities from context, solution counts, rational
+  equations, population density, line graphs and trig ratio from ratio.
+- **Desmos routes.** Routes cover the templates where Desmos genuinely
+  solves or checks a question, and are shown after answering. The
+  calculator opens in one reusable window beside the test.
+- **Learn has practice.** Every SAT Math lesson puts a Try it problem after
+  each worked example, opens with prerequisite checks linked to Grade 6–8
+  and high-school lessons, and puts core material before Harder versions.
+- **Progress adds a weekly report** (print or copy for a parent) with an On
+  track / Needs attention signal, and official question-bank checks per
+  skill.
+
+Known limits:
+- Tiers are still editorial, not calibrated.
+- The simulation's learning rates are assumptions.
+- In simulation, every skill is started by about week 9, not 8.
+- A slow learner's Review backlog still grows slowly.
+- Desmos is not embedded.
+
+The ACT carry-over is decided below.
+
 ## Common Core grade expansions — 2026-10-08
 
 The detailed Grade 8 lessons are now an expansion of Common Core mathematics,
@@ -199,8 +248,9 @@ are in [`handoff.md`](handoff.md).
 3. **Measure the tiers.** Tiers are still judged by a rubric; the new Hard
    templates of 2026-09-26 were checked by their authors, not by a cold
    reader. A cold read of the new Hard designs, then calibration (item 2).
-4. **An embedded graphing calculator.** Desmos needs an API key, so the
-   calculator opens desmos.com in a new window instead.
+4. **An embedded graphing calculator.** Desmos needs an API key and an
+   external script, both needing the owner's approval, so the calculator
+   opens desmos.com in one reusable window beside the test (2026-10-16).
 5. **ACT templates.** ACT Math templates are being built (2026-09-26); then
    passage-set templates for Science, slot templates over authored English
    passages, and Reading kept as authored sets. Until then the ACT banks
@@ -229,6 +279,27 @@ are in [`handoff.md`](handoff.md).
   test module's clock runs on the wall clock, as on test day.
 - **ACT difficulty labels are not used** (2026-09-26) until ACT is built
   from judged templates: Hard differed from Easy by label only.
+- **The SAT Math learning-loop changes are not ported to ACT yet**
+  (2026-10-16).
+  - **What reaches ACT anyway.** Only the section-agnostic parts apply
+    unchanged, and tests hold them: the once-a-day Review cap and set
+    limit, and the weekly report's counts (its SAT-only parts are omitted).
+  - **Blocked or needing an ACT design.** Tracks, budgets, Hard mixing,
+    gates and tier moves are blocked by unverified ACT tiers and banks too
+    small for the gate's windows. Desmos routes would need keys by bank
+    family. Official checks have no ACT question bank, only four official
+    tests tagged by reporting category. ACT has no in-site lessons.
+  - **Revisit** after the SAT changes have run for a few weeks, or at once
+    if a student switches to the ACT.
+  - **Cheapest ACT steps, in order:**
+    - English and Reading next steps as timed passage sets, since today a
+      10-question drill spans about 10 passages;
+    - a 40-minute Writing timer;
+    - ACT Math drills reading the `templateFamily:` tag when spreading
+      families;
+    - official ACT scores (1–36) by reporting category.
+  - **Found by the same review.** The English bank follows the legacy
+    blueprint (about 54% Conventions), against the enhanced ACT's 38–43%.
 
 - **No scaled score estimates** (2026-09-25). The prototype above mapped
   accuracy on its own generated items onto an official practice test's

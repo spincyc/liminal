@@ -133,8 +133,8 @@ For a coherent ACT bank batch:
   - `index.html`: the compact learning directory, `styles/home.css`, and
     `app/home.js` for legacy practice-hash redirects. It loads no test banks
     or progress storage. SAT/ACT module links select `?test=SAT` or `?test=ACT`.
-  - `practice.html`: the generated catalog, answer signs and template registries,
-    then `lib/core.js`, `lib/template-mask.js`, `lib/question-identity.js`, `lib/runs.js`,
+  - `practice.html`: the generated catalog, answer signs, template registries
+    and Desmos routes (`content/desmos-routes.js`), then `lib/core.js`, `lib/template-mask.js`, `lib/question-identity.js`, `lib/runs.js`,
     `lib/modules.js`, `lib/simulation.js`, `lib/assessment.js`,
     `lib/assessment-adapters.js`, `lib/test-engine.js`,
     `lib/session-store.js`, `lib/annotations.js`, `lib/line-reader.js`,
@@ -218,7 +218,10 @@ For a coherent ACT bank batch:
     session summaries; the error log; the plan (per test: SAT and ACT each
     keep a test date and weekly goal); and official scores the
     student reports (Bluebook practice tests and real SATs, shown beside
-    Liminal accuracy over the 28 days before each, never predicted). It
+    Liminal accuracy over the 28 days before each, never predicted); and
+    official question-bank checks (`officialChecks`: `{ id, sectionKey,
+    skill, difficulty Medium|Hard, attempted 1–50, correct, date }`,
+    validated by `LiminalProgress.cleanOfficialCheck`). It
     migrates
     `liminal:progress:v2` (kept as a backup; answers from the retired SAT
     banks are tagged `legacy-bank`) and merges what another tab saved.
@@ -244,7 +247,10 @@ For a coherent ACT bank batch:
   `sat-math-hard:<family>:<seed>`), so it can be rebuilt exactly while its
   template's version is unchanged; never store generated questions in a bank.
 - Review's spaced schedule (`src/lib/review-queue.js`) is derived from
-  attempts and stores nothing: a miss (wrong, blank, or right only after a
+  attempts and stores nothing. A generated question's schedule belongs to
+  its template: every version of a design shares one, and a right answer to
+  any version in any set counts once it is due; a bank question has its
+  own. A miss (wrong, blank, or right only after a
   hint: `LiminalProgress.isMiss`) returns after 1 day, then 3, 7 and 21
   days after each correct answer, with a fresh version of the same template
   from the second return; a wrong, blank or hinted answer restarts it; a
@@ -261,18 +267,47 @@ For a coherent ACT bank batch:
   windows are long because a student checks them after
   every set, and short windows are met by chance. `npm run check:learn`
   fails unless the SAT Math plan page in Learn states the same bars.
-- One next step for every page (`Analytics.nextStep`): Review when anything
-  is due; for SAT Math the first skill of the plan's stages
-  (`Analytics.PLANS`, held to the catalog and the Learn page by a test) not
-  at the gate, at Easy until routine (`ROUTINE`: 8 of the last 10 Easy or
-  Medium first answers), then Medium, then Hard (`skillLevel`); for Reading
-  and Writing the weakest skill with evidence; for ACT the lowest accuracy,
-  with no level. The diagnostic reports by domain and places the student in
-  the plan (`PLACEMENT`). `app.js` holds `ctx.guide`, `stepWords`,
-  `startStep` and `startDiagnostic`. Practice offers a collapsed, dismissible
-  "Start here" (`liminal:start-hidden:v1`, per viewer). Template bundles
-  load only when a set needs its questions; counts and labels come from
-  the built registries (`practice.registryTemplates`).
+- One next step for every page (`Analytics.nextStep`, built by `ctx.guide`):
+  Review when anything is due, at most once a calendar day per test
+  (`Analytics.reviewDoneToday`; a set takes `LiminalReviewQueue.SET_LIMIT`,
+  six, most overdue first); after that the step moves on and carries
+  `reviewDue`. SAT Math runs the plan (`Analytics.PLANS`, held to the catalog
+  and the Learn page by a test) as two tracks, stages 1–2 and 3–4, each with
+  one skill in flight (`Analytics.planState`, replayed from the attempts), so
+  Advanced Math starts in the first week. A skill leaves flight at the gate
+  or after `BUDGET` first answers at any level; one that leaves short of the
+  gate has moved on (flagged when Easy was not yet routine) and returns in
+  the next pass, as does a skill whose latest official check is low
+  (`OFFICIAL_CHECK`). After Review, the rotation (`ROTATION`, `rotationStep`)
+  offers a timed Module 1 once three skills are started, a mixed set after
+  a drill (`mixedSpec`, `practice.buildMixedSet`), and once, early, the
+  Desmos drill (`#desmos/sat-math`, only when `window.LiminalDesmosRoutes`
+  loaded); otherwise a drill on the track drilled least recently: Easy until
+  routine (`ROUTINE`: 8 of the last 10 Easy or Medium first answers), then
+  Medium with `HARD_MIX` Hard once routine at Medium (`MEDIUM_ROUTINE`), then
+  Hard-led at the gate (`skillLevel`). The gate and Hard bar are practice
+  targets and no longer block moving on. For Reading and Writing the step
+  is the weakest skill with evidence; for ACT the lowest accuracy, with no
+  level, track, budget or rotation. The diagnostic reports by domain and
+  places the student in the plan (`PLACEMENT`) but does not by itself make
+  a timed module due. `app.js` holds `ctx.guide`, `stepWords`, `startStep`
+  (which launches every step kind), `startDiagnostic`, `startMixed` and
+  `startDesmos`. Practice's "Start here" opens on a first visit with the
+  Math diagnostic first and stays dismissible (`liminal:start-hidden:v1`,
+  per viewer). Sessions may carry `step` (the step kind that launched them)
+  and, for drills, `skill`. Template bundles load only when a set needs
+  their questions; counts and labels come from the built registries
+  (`practice.registryTemplates`).
+- Progress shows a weekly report per test (`Analytics.weeklyReport`,
+  printable, with plain text from `weeklyReportText` for Copy summary, so a
+  student can send it to a parent) with an On track / Needs attention
+  signal that lists each reason: practice days, timed modules, pace toward
+  the test date, flat official scores, and official checks well below
+  Liminal accuracy. SAT-only parts are omitted for ACT, and it never
+  estimates a score. Official question-bank checks (`officialChecks`)
+  record X of N College Board Student Question Bank questions per skill
+  and tier; a confirming check is shown on the skill, and a low one returns
+  the skill to flight.
 - `src/lib/modules.js` is a practice approximation of the digital test's
   modules (sizes, difficulty mixes, domain counts, order); it builds the
   booklets and the on-screen tests, and every screen that uses it says the
@@ -304,7 +339,29 @@ For a coherent ACT bank batch:
   every template's skill and subskill to resolve to such a section, dated
   and sourced facts, and working links. Link into Learn with
   `learn.html#<pageId>[/<anchor>]`. Every heuristic is followed by when it
-  fails, and SAT pages hold no ACT-only rules.
+  fails, and SAT pages hold no ACT-only rules. SAT Math pages put a
+  `> **Try it.**` problem (answer and worked solution required; optional
+  `**First step.**` and `**Hint.**`) after every Example, with at least one
+  in each subskill section; `## Before you start {#before-you-start}` holds
+  2–5 checks and links to `lessons.html#common-core-math/8/<lesson>` or
+  `weeks.html#<track>/<grade-or-course>/<week>`, which `check:learn`
+  validates against the lesson-module catalog and the published courses.
+  Material at the official Easy/Medium level comes first; Hard-only material
+  sits under `## Harder versions {#hard}`, kept in step with template tiers.
+  Never rename or delete an anchor: templates and other pages link to them.
+- `content/desmos-routes.json` gives a Desmos route (`enter`, `read`,
+  `fails`; plain text, one line, at most 300 characters each) for each SAT
+  Math template where Desmos genuinely solves or checks the question,
+  verified against generated questions when written. `tools/check-desmos.js`
+  (in `npm run check`) holds the format, active template ids in template
+  order, and the text rules. The build emits `content/desmos-routes.js`
+  (`window.LiminalDesmosRoutes`). The test screen shows a question's route
+  under its explanation only after the answer is checked or the set is
+  finished, never names the template, and hides the feature when the bundle
+  is missing. When a template changes what it shows, re-verify its route or
+  remove it. The Calculator button opens desmos.com in one reusable window
+  beside the test; embedding the Desmos API needs the owner's approval (an
+  API key and an external script).
 - `content/guides/answer-signs.js` powers the Study tips view. It is a study
   guide of probabilistic tells, not a question bank: never run it through the
   generators, and keep every tell's caution, each principle's caution, and
