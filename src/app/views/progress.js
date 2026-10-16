@@ -980,12 +980,18 @@
     }
 
     // Prints the weekly report on its own (progress.css, body.print-weekly).
+    // The class goes when printing ends (afterprint), which a print dialog
+    // that does not block cannot outrun; only a browser without the event
+    // removes it on a timer.
     function printReport() {
       document.body.classList.add("print-weekly");
+      const done = () => document.body.classList.remove("print-weekly");
+      const hasEvent = "onafterprint" in window;
+      if (hasEvent) window.addEventListener("afterprint", done, { once: true });
       try {
         window.print();
       } finally {
-        window.setTimeout(() => document.body.classList.remove("print-weekly"), 0);
+        if (!hasEvent) window.setTimeout(done, 0);
       }
     }
 

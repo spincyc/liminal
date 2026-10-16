@@ -299,7 +299,9 @@
     /* ----------------------------------------------------- launching sets */
 
     // Opens a review set; returns an error message, or null when it opened.
-    async function launchSet(title, questions, feedback) {
+    // `sessionFields` join the set's record: the due set carries
+    // `step: "review"`, which alone closes the day's Review step.
+    async function launchSet(title, questions, feedback, sessionFields) {
       try {
         await ctx.launch({
           title,
@@ -308,6 +310,7 @@
           questions,
           feedback: feedback || "instant",
           timeLimitSeconds: null,
+          sessionFields: sessionFields || undefined,
         });
         return null;
       } catch (error) {
@@ -330,7 +333,7 @@
           return;
         }
         ctx.setStatus(status, "");
-        const error = await launchSet(set.title, set.questions, set.feedback);
+        const error = await launchSet(set.title, set.questions, set.feedback, set.sessionFields);
         if (error) ctx.setStatus(status, error, "error");
       } catch (error) {
         ctx.setStatus(status, `The set could not be built (${error.message}). Refresh the page and try again.`, "error");
@@ -638,6 +641,8 @@
           title: `${model.test} review: due today`,
           questions: await dueQuestions(picked),
           feedback: feedbackAtEnd ? "end" : "instant",
+          // The capped Review step itself: only this set closes today's Review.
+          sessionFields: { step: window.LiminalAnalytics ? window.LiminalAnalytics.REVIEW_STEP : "review" },
           empty: "The original versions of these due questions are no longer available or could not be verified. " +
             "Your results are kept. Use Missed or Marked to practise current versions as new attempts.",
         })));
