@@ -729,3 +729,46 @@ The 19 templates:
   basketball scenes. Those scenes and the merged rationale were checked by the
   4,000-draw scan and by reading full views (seeds 4, 7 and 8), not by blind
   solving.
+
+## Pass 5 (`a7db009`)
+
+All 11 templates on `.scratch/lane/stale-templates-pass5.txt` are accepted.
+They all come from `ratios-rates-and-units.js`.
+
+**Identical draws (10).** On 603–606 draws per template, every displayed and
+teaching field is identical to `6479022`. The source of
+`ratios-rates-and-units.js` at `6479022` is the source reviewed in pass 3.
+
+**`crew-rate-change` (v4): text only.**
+
+- **Displayed questions and keys** are identical to `6479022` on all 606
+  draws. Rationales, explanation, steps and hint changed in 414 of them.
+- **Every rationale recomputes to its choice.** An independent checker, which
+  uses no template code, read 4,000 draws (2,000 integer and 2,000
+  runtime-shaped seeds). For each of the 7,875 rationales it:
+  - parsed the stem's numbers;
+  - redid the computation the reason states;
+  - checked every number the reason quotes, for example "(20)",
+    "8 × 4/8" or "1 × (12 − d)".
+  - **Result:** 0 mismatches. All nine reason categories occurred: 245 to
+    1,322 times each.
+  - **Example, seed 58, choice B (12):** "by the 4 days left (20), then
+    subtracts the 8 already working": 80 ÷ 4 − 8 = 12.
+- **Singular forms when one worker is added (557 draws), all correct.** The
+  explanation, steps, rationales and hint all say:
+  - "the other pump";
+  - "the added pump's work";
+  - "before and after the change".
+  - None says "the others", "extra pumps" or "added pumps'". Seed 88 is an
+    example.
+- **The checker can see the old defect.** Run on `6479022`, it rejects the
+  old reasons and flags all 557 single-worker draws.
+- **Gates and tests.**
+  - `check-families --family crew-rate-change` passes.
+  - `test/sat-math-realism.test.js` and `test/sat-math-text.test.js` pass
+    9/9.
+
+**Records.** The reviewer's fragment holds 11 records. The pass-3 samples
+carry forward with the current registry versions and fingerprints and the
+tiers from source. The adapted checker passes: 33 samples rebuild to their
+recorded answers.
