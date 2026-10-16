@@ -194,8 +194,8 @@ y = 0.
 > replacing y with y + d to move a line up. Up d means y − d inside the
 > equation.
 
-For a harder version of graph interpretation, where the line is known only
-through its intercepts, see [a line from its intercepts](#line-from-intercepts).
+For a harder version of graph interpretation, where only the signs of the
+constants are known, see [which quadrants a line passes through](#signs-and-quadrants).
 
 ## Equation modeling {#equation-modeling}
 
@@ -264,62 +264,6 @@ total.
 > about without algebra. If 0 guests should cost $150, the equation must
 > give C = 150 at g = 0.
 
-For a harder version of equation modeling, counting the whole-number
-combinations that reach an exact total, see
-[whole-number solutions](#whole-number-solutions).
-
-## Harder versions {#hard}
-
-The hardest questions in this skill test the line itself: which
-whole-number points lie on it, or what a condition on its intercepts forces.
-
-### Whole-number solutions {#whole-number-solutions}
-
-When x and y count things, only whole-number points on the line count. To
-list them all for ax + by = c:
-
-1. Find the greatest common divisor of a and b. If it does not divide c, there are no whole-number solutions. Otherwise divide all three coefficients by it.
-2. Find one solution: try x = 0, 1, 2, ... (or y) until the other variable comes out whole.
-3. Step from it: add the new y-coefficient to x and take the new x-coefficient from y, or the reverse. No smaller step stays on whole numbers.
-4. Keep stepping both ways until a count would drop below what is allowed: 0 if "none" is allowed, 1 if the question says "at least one of each".
-
-> **Example.** A bakery packs an order of exactly 96 muffins into boxes of 6
-> and boxes of 8, filling every box. How many combinations of box counts
-> are possible if at least one box of each size is used? What if one size
-> may be left out?
->
-> Let x be the boxes of 6 and y the boxes of 8: 6x + 8y = 96. Divide by 2:
-> 3x + 4y = 48.
->
-> One solution: x = 0 gives y = 12. The step is 4 in x and 3 in y: (0, 12),
-> (4, 9), (8, 6), (12, 3), (16, 0).
->
-> With at least one of each, (0, 12) and (16, 0) are out: 3 combinations.
-> With one size allowed to be missing: 5.
->
-> Check (8, 6): 6(8) + 8(6) = 48 + 48 = 96.
-
-> **Try it.** A florist spends exactly $120 on roses at $4 each and lilies
-> at $6 each, buying at least one of each. How many combinations of rose and
-> lily counts are possible?
->
-> **First step.** Let x be roses and y lilies: 4x + 6y = 120. Divide by 2:
-> 2x + 3y = 60. One solution is x = 0, y = 20. Now step from it and count.
->
-> **Answer.** 9
->
-> The step is 3 in x and −2 in y: (0, 20), (3, 18), (6, 16), …, (30, 0).
-> Those are x = 0, 3, 6, …, 30, which is 30/3 + 1 = 11 points.
->
-> At least one of each rules out (0, 20) and (30, 0), leaving 9.
->
-> Check (12, 12): 4(12) + 6(12) = 48 + 72 = 120.
-
-> **Trap.** Stepping by the original coefficients. From 6x + 8y, a step of
-> 8 in x and 6 in y skips every other solution, (4, 9) and (12, 3) here.
-> Divide out the common factor first. And count both ends: from x = 4 to
-> x = 12 in steps of 4 is 3 values, not 8 ÷ 4 = 2.
-
 ### A line from its intercepts {#line-from-intercepts}
 
 Call the intercepts (a, 0) and (0, b). Two facts turn a condition on them
@@ -375,3 +319,89 @@ into an equation in one letter:
 > **Fails when.** The line passes through the origin (both intercepts are 0)
 > or is horizontal or vertical (one intercept is missing). Then there is no
 > x/a + y/b form; use slope and a point instead.
+
+For a harder version of equation modeling, counting the whole-number
+combinations that reach an exact total, see
+[whole-number solutions](#whole-number-solutions).
+
+## Harder versions {#hard}
+
+The hardest questions in this skill test the line itself: which
+whole-number points lie on it, or which quadrants it can pass through when
+only the signs of its constants are known.
+
+### Which quadrants a line passes through {#signs-and-quadrants}
+
+For ax + by = c with b ≠ 0, the slope is −a/b and the y-intercept is c/b.
+When only the signs of the constants are known, find the sign of each; the
+pair of signs decides the quadrant the line misses:
+
+| Slope | y-intercept | Misses |
+| --- | --- | --- |
+| positive | positive | Quadrant IV |
+| positive | negative | Quadrant II |
+| negative | positive | Quadrant III |
+| negative | negative | Quadrant I |
+
+> **Try it.** In the xy-plane, the graph of ax + by = c is a line, where a,
+> b and c are constants with ab > 0 and bc < 0. Which quadrant does the line
+> not pass through?
+>
+> **Hint.** Find the signs of the slope, −a/b, and of the y-intercept, c/b.
+>
+> **Answer.** Quadrant I
+>
+> ab > 0 means a and b have the same sign, so the slope −a/b is negative.
+> bc < 0 means b and c have opposite signs, so the y-intercept c/b is
+> negative. A falling line through a negative y-intercept misses
+> Quadrant I.
+>
+> Check with a = 1, b = 1 and c = −2: the line y = −x − 2 passes through
+> Quadrants II, III and IV only.
+
+### Whole-number solutions {#whole-number-solutions}
+
+When x and y count things, only whole-number points on the line count. To
+list them all for ax + by = c:
+
+1. Find the greatest common divisor of a and b. If it does not divide c, there are no whole-number solutions. Otherwise divide all three coefficients by it.
+2. Find one solution: try x = 0, 1, 2, ... (or y) until the other variable comes out whole.
+3. Step from it: add the new y-coefficient to x and take the new x-coefficient from y, or the reverse. No smaller step stays on whole numbers.
+4. Keep stepping both ways until a count would drop below what is allowed: 0 if "none" is allowed, 1 if the question says "at least one of each".
+
+> **Example.** A bakery packs an order of exactly 96 muffins into boxes of 6
+> and boxes of 8, filling every box. How many combinations of box counts
+> are possible if at least one box of each size is used? What if one size
+> may be left out?
+>
+> Let x be the boxes of 6 and y the boxes of 8: 6x + 8y = 96. Divide by 2:
+> 3x + 4y = 48.
+>
+> One solution: x = 0 gives y = 12. The step is 4 in x and 3 in y: (0, 12),
+> (4, 9), (8, 6), (12, 3), (16, 0).
+>
+> With at least one of each, (0, 12) and (16, 0) are out: 3 combinations.
+> With one size allowed to be missing: 5.
+>
+> Check (8, 6): 6(8) + 8(6) = 48 + 48 = 96.
+
+> **Try it.** A florist spends exactly $120 on roses at $4 each and lilies
+> at $6 each, buying at least one of each. How many combinations of rose and
+> lily counts are possible?
+>
+> **First step.** Let x be roses and y lilies: 4x + 6y = 120. Divide by 2:
+> 2x + 3y = 60. One solution is x = 0, y = 20. Now step from it and count.
+>
+> **Answer.** 9
+>
+> The step is 3 in x and −2 in y: (0, 20), (3, 18), (6, 16), …, (30, 0).
+> Those are x = 0, 3, 6, …, 30, which is 30/3 + 1 = 11 points.
+>
+> At least one of each rules out (0, 20) and (30, 0), leaving 9.
+>
+> Check (12, 12): 4(12) + 6(12) = 48 + 72 = 120.
+
+> **Trap.** Stepping by the original coefficients. From 6x + 8y, a step of
+> 8 in x and 6 in y skips every other solution, (4, 9) and (12, 3) here.
+> Divide out the common factor first. And count both ends: from x = 4 to
+> x = 12 in steps of 4 is 3 values, not 8 ÷ 4 = 2.

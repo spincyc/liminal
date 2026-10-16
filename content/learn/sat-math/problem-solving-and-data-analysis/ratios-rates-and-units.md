@@ -115,7 +115,37 @@ fills a tank in 4 hours and another in 6 hours, together they fill
 > takes 1 ÷ (1/2) = 2 hours. Averaging the times gives 4.5 hours, longer than
 > the faster machine alone.
 
-For a harder version, see [a required speed](#required-speed).
+### A required speed {#required-speed}
+
+An overall average speed fixes the total time: total distance ÷ average.
+Subtract the time already used, then divide the remaining distance by the
+time left.
+
+> **Example.** A cyclist rides 30 miles at 15 miles per hour. How fast must
+> she ride the next 30 miles to average 20 miles per hour over all 60?
+>
+> An average of 20 over 60 miles means 60 ÷ 20 = 3 hours in all.
+>
+> The first 30 miles took 30 ÷ 15 = 2 hours, so 1 hour is left for 30
+> miles: 30 miles per hour.
+>
+> The trap is 25, the speed that averages with 15 to make 20. It ignores
+> that she spends more time at the slower speed.
+
+> **Try it.** A boat travels 60 miles at 20 miles per hour. How fast must it
+> travel the next 60 miles to average 24 miles per hour over all 120?
+>
+> **First step.** An average of 24 over 120 miles means 120 ÷ 24 = 5 hours
+> in all. Now subtract the time the first part took.
+>
+> **Answer.** 30 miles per hour
+>
+> The first 60 miles took 60 ÷ 20 = 3 hours, so 2 hours are left for 60
+> miles: 60 ÷ 2 = 30 miles per hour.
+>
+> The trap is 28, the speed that averages with 20 to make 24.
+
+For a harder version, see [a crew that changes size](#crew-changes).
 
 ## Proportions {#proportions}
 
@@ -247,42 +277,57 @@ square kilometer. The density of a material works the same way: mass per
 unit of volume, so mass = density × volume (see
 [density in area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume#density)).
 
+A density per area converts its area by the square of the length factor:
+1 square kilometer = 1,000 × 1,000 = 1,000,000 square meters, and with
+1 mile = 1.6 kilometers, 1 square mile = 1.6² = 2.56 square kilometers.
+
+> **Example.** A rectangular wetland measures 900 meters by 400 meters and
+> has 54 heron nests. What is the density of nests, in nests per square
+> kilometer?
+>
+> Convert the lengths first: 0.9 kilometer by 0.4 kilometer, an area of
+> 0.36 square kilometer.
+>
+> Density: 54 ÷ 0.36 = 150 nests per square kilometer. Dividing 360,000
+> square meters by 1,000 instead of 1,000,000 gives the trap answer, 0.15.
+
+> **Try it.** A county has an area of 250 square miles and 32,000
+> residents. What is its population density, in residents per square
+> kilometer? (1 mile = 1.6 kilometers)
+>
+> **First step.** 1 square mile is 1.6² = 2.56 square kilometers, so the
+> area is 250 × 2.56 = 640 square kilometers. Now finish.
+>
+> **Answer.** 50 residents per square kilometer
+>
+> 32,000 ÷ 640 = 50. Using 1.6 instead of 2.56 gives 32,000 ÷ 400 = 80,
+> the trap answer.
+
 For a harder version, see [a hollow cube from its density](#hollow-cube).
 
 ## Harder versions {#hard}
 
-The harder questions give a total and ask for a hidden piece: a speed still
-needed, or a hollow object's size.
+The harder questions give a total and ask for a hidden piece: the time
+left when a crew changes size, or a hollow object's size.
 
-### A required speed {#required-speed}
+### A crew that changes size {#crew-changes}
 
-An overall average speed fixes the total time: total distance ÷ average.
-Subtract the time already used, then divide the remaining distance by the
-time left.
+A job done by a crew working at a steady rate has a fixed size in
+worker-days (or worker-hours): workers × days. When the crew changes
+partway, subtract the work already done, then divide what is left by the
+new crew.
 
-> **Example.** A cyclist rides 30 miles at 15 miles per hour. How fast must
-> she ride the next 30 miles to average 20 miles per hour over all 60?
+> **Try it.** Working at the same constant rate, 10 workers can paint a
+> building in 12 days. They work for 4 days, and then 2 of them leave. How
+> many more days do the remaining workers take to finish?
 >
-> An average of 20 over 60 miles means 60 ÷ 20 = 3 hours in all.
+> **Answer.** 10 days
 >
-> The first 30 miles took 30 ÷ 15 = 2 hours, so 1 hour is left for 30
-> miles: 30 miles per hour.
+> The job is 10 × 12 = 120 worker-days. In 4 days the crew does
+> 10 × 4 = 40, leaving 80. Eight workers need 80 ÷ 8 = 10 more days.
 >
-> The trap is 25, the speed that averages with 15 to make 20. It ignores
-> that she spends more time at the slower speed.
-
-> **Try it.** A boat travels 60 miles at 20 miles per hour. How fast must it
-> travel the next 60 miles to average 24 miles per hour over all 120?
->
-> **First step.** An average of 24 over 120 miles means 120 ÷ 24 = 5 hours
-> in all. Now subtract the time the first part took.
->
-> **Answer.** 30 miles per hour
->
-> The first 60 miles took 60 ÷ 20 = 3 hours, so 2 hours are left for 60
-> miles: 60 ÷ 2 = 30 miles per hour.
->
-> The trap is 28, the speed that averages with 20 to make 24.
+> Dividing the whole job by the new crew gives 15, and ignoring the change
+> gives 8.
 
 ### A hollow cube from its density {#hollow-cube}
 

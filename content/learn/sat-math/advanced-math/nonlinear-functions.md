@@ -153,61 +153,52 @@ of symmetry halfway between their inputs. Then one more point fixes a.
 >
 > Check: g(−2) = −16 + 10 = −6 and g(6) = −16 + 10 = −6.
 
-### Signs of the constants from a description {#signs-from-the-graph}
+A product of two linear factors models many contexts besides a thrown
+ball: revenue is price times number sold, and a rectangle's area is length
+times width. The zeros are easy to read, and the greatest value is halfway
+between them.
 
-Some questions describe a parabola in words and ask which statement must
-be true. Turn each fact into a sign:
+> **Example.** A bike shop rents 160 bikes a day at $12 each. For each $1
+> increase in price, it expects to rent 4 fewer bikes. Its daily revenue for
+> an increase of x dollars is R(x) = (12 + x)(160 − 4x). What price gives the
+> greatest revenue, and what is that revenue?
+>
+> The zeros are x = −12 and x = 40, so the vertex is halfway, at x = 14.
+>
+> The price is 12 + 14 = $26, with 160 − 4(14) = 104 rentals, so the
+> revenue is 26 · 104 = $2,704.
+>
+> The traps are 14, the increase rather than the price, and 104, the number
+> of rentals.
 
-| Description | What it forces |
-| --- | --- |
-| opens up, or down | a > 0, or a < 0 |
-| vertex (h, k) in a quadrant | the signs of h and k |
-| y-intercept above, or below, the x-axis | c = f(0) > 0, or c < 0 |
-| two x-intercepts, one, or none | b² − 4ac > 0, = 0, or < 0; in vertex form, two exactly when a and k have opposite signs |
-| both zeros positive | their sum −b/a > 0 and their product c/a > 0 |
-| zeros on opposite sides of the y-axis | their product c/a < 0 |
+> **Try it.** A farm stand sells 240 jars of jam a week at $6 each. For each
+> $1 increase in price, it expects to sell 12 fewer jars. Its weekly revenue
+> for an increase of x dollars is R(x) = (6 + x)(240 − 12x). What price gives
+> the greatest revenue, and what is that revenue?
+>
+> **First step.** The zeros are x = −6 and x = 20, since 240 − 12x = 0 at
+> x = 20. Now find the vertex and the revenue.
+>
+> **Answer.** $13; $2,028
+>
+> The vertex is halfway between −6 and 20, at x = 7. The price is
+> 6 + 7 = $13, with 240 − 12(7) = 156 jars, so the revenue is
+> 13 · 156 = $2,028.
 
-For b, use h = −b/(2a), which gives b = −2ah. Then decide each statement:
-"must" if the facts force it, "cannot" if the facts rule it out, and
-"could" if one parabola that fits makes it true and another makes it false.
+> **Try it.** A gardener has 60 meters of fencing for a rectangular pen
+> against a wall, fencing only the other three sides. If each side
+> perpendicular to the wall is x meters, the area is A(x) = x(60 − 2x). What
+> is the greatest possible area?
+>
+> **Answer.** 450 square meters
+>
+> The zeros are x = 0 and x = 30, so the greatest area is at x = 15. The
+> side along the wall is 60 − 2(15) = 30 meters, and the area is
+> 15 · 30 = 450 square meters. The traps are 15 and 30, the side lengths.
 
-> **Example.** The graph of f(x) = ax² + bx + c, where a, b and c are
-> nonzero, opens downward and has its vertex in Quadrant II. Which must be
-> true: b > 0, c > 0, or b² − 4ac > 0?
->
-> Facts: a < 0; the vertex has h < 0 and k > 0.
->
-> b = −2ah is −2 times a negative times a negative, so b < 0: "b > 0"
-> cannot be true.
->
-> The vertex is above the x-axis and the parabola opens downward, so it
-> crosses the x-axis twice: b² − 4ac > 0 must be true.
->
-> c could go either way. f(x) = −(x + 1)² + 4 = −x² − 2x + 3 fits and has
-> c = 3; f(x) = −(x + 3)² + 1 = −x² − 6x − 8 fits and has c = −8.
-
-> **Trap.** Deciding from one sketch. "c > 0" holds for the first parabola
-> above but not the second, and both fit. Before calling a statement
-> "must", try to build a parabola that fits the description and breaks it.
-
-> **Try it.** The graph of f(x) = ax² + bx + c, where a, b and c are
-> nonzero, opens upward and has its vertex in Quadrant III. Which must be
-> true: b > 0, c > 0, or b² − 4ac < 0?
->
-> **Answer.** b > 0
->
-> Facts: a > 0; the vertex has h < 0 and k < 0.
->
-> b = −2ah is −2 times a positive times a negative, so b > 0 must be true.
->
-> The vertex is below the x-axis and the parabola opens upward, so it
-> crosses the x-axis twice: b² − 4ac > 0, and "b² − 4ac < 0" cannot be
-> true.
->
-> c could go either way. f(x) = (x + 1)² − 4 = x² + 2x − 3 fits and has
-> c = −3; f(x) = (x + 3)² − 1 = x² + 6x + 8 fits and has c = 8.
-
-For a harder version, see [two zeros in an interval](#zeros-in-an-interval).
+For harder versions, see
+[signs of the constants from a description](#signs-from-the-graph) and
+[two zeros in an interval](#zeros-in-an-interval).
 
 ## Exponential functions {#exponential-functions}
 
@@ -395,8 +386,63 @@ For harder versions, see [stretches and reflections](#stretches) and
 
 ## Harder versions {#hard}
 
-The harder questions combine facts: where both zeros lie, a shift that
+The harder questions combine facts: what a description forces about a
+quadratic's constants in standard form, where both zeros lie, a shift that
 hides an exponential's base, or a graph to rebuild before transforming it.
+
+### Signs of the constants from a description {#signs-from-the-graph}
+
+Some questions describe a parabola in words and ask which statement must
+be true. Turn each fact into a sign:
+
+| Description | What it forces |
+| --- | --- |
+| opens up, or down | a > 0, or a < 0 |
+| vertex (h, k) in a quadrant | the signs of h and k |
+| y-intercept above, or below, the x-axis | c = f(0) > 0, or c < 0 |
+| two x-intercepts, one, or none | b² − 4ac > 0, = 0, or < 0; in vertex form, two exactly when a and k have opposite signs |
+| both zeros positive | their sum −b/a > 0 and their product c/a > 0 |
+| zeros on opposite sides of the y-axis | their product c/a < 0 |
+
+For b, use h = −b/(2a), which gives b = −2ah. Then decide each statement:
+"must" if the facts force it, "cannot" if the facts rule it out, and
+"could" if one parabola that fits makes it true and another makes it false.
+
+> **Example.** The graph of f(x) = ax² + bx + c, where a, b and c are
+> nonzero, opens downward and has its vertex in Quadrant II. Which must be
+> true: b > 0, c > 0, or b² − 4ac > 0?
+>
+> Facts: a < 0; the vertex has h < 0 and k > 0.
+>
+> b = −2ah is −2 times a negative times a negative, so b < 0: "b > 0"
+> cannot be true.
+>
+> The vertex is above the x-axis and the parabola opens downward, so it
+> crosses the x-axis twice: b² − 4ac > 0 must be true.
+>
+> c could go either way. f(x) = −(x + 1)² + 4 = −x² − 2x + 3 fits and has
+> c = 3; f(x) = −(x + 3)² + 1 = −x² − 6x − 8 fits and has c = −8.
+
+> **Trap.** Deciding from one sketch. "c > 0" holds for the first parabola
+> above but not the second, and both fit. Before calling a statement
+> "must", try to build a parabola that fits the description and breaks it.
+
+> **Try it.** The graph of f(x) = ax² + bx + c, where a, b and c are
+> nonzero, opens upward and has its vertex in Quadrant III. Which must be
+> true: b > 0, c > 0, or b² − 4ac < 0?
+>
+> **Answer.** b > 0
+>
+> Facts: a > 0; the vertex has h < 0 and k < 0.
+>
+> b = −2ah is −2 times a positive times a negative, so b > 0 must be true.
+>
+> The vertex is below the x-axis and the parabola opens upward, so it
+> crosses the x-axis twice: b² − 4ac > 0, and "b² − 4ac < 0" cannot be
+> true.
+>
+> c could go either way. f(x) = (x + 1)² − 4 = x² + 2x − 3 fits and has
+> c = −3; f(x) = (x + 3)² − 1 = x² + 6x + 8 fits and has c = 8.
 
 ### Two zeros in an interval {#zeros-in-an-interval}
 

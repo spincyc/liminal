@@ -210,9 +210,65 @@ of 38.
 > All 25 total 25 × 32 = 800 minutes, and the first 20 total 20 × 30 = 600.
 > The 5 added total 800 − 600 = 200 minutes, a mean of 200 ÷ 5 = 40.
 
-For harder versions of mean and median questions, see
-[which values could be the median](#possible-medians) and
-[recover a count before correcting the data](#missing-count-correction).
+### Which values could be the median {#possible-medians}
+
+When one value, x, is unknown, list the known values in order and see where
+the middle position falls. However large or small x is, it can push the
+middle only one place.
+
+> **Example.** The data are 12, 5, 9, 20, x, 15 and 7. Which values could the
+> median be?
+>
+> In order, the known values are 5, 7, 9, 12, 15, 20. With x there are 7
+> values, so the median is the 4th.
+>
+> If x ≤ 9, the 4th value is 9. If x ≥ 12, it is 12. If x is between 9 and
+> 12, the median is x itself.
+>
+> So the median can be anything from 9 to 12, and nothing else: not 8, and
+> not 15, whatever x is.
+
+> **Try it.** The data are 10, 3, 17, 8, x, 14 and 6. Which of the following
+> could be the median?
+>
+> - A) 7
+> - B) 9
+> - C) 11
+> - D) 14
+>
+> **First step.** In order, the known values are 3, 6, 8, 10, 14, 17. With x
+> there are 7 values, so the median is the 4th. Now find what the 4th value
+> can be.
+>
+> **Answer.** B
+>
+> If x ≤ 8, the 4th value is 8. If x ≥ 10, it is 10. If x is between 8 and
+> 10, the median is x itself.
+>
+> So the median is from 8 to 10, and only 9 fits.
+
+With an even count, the median is the mean of two middle values, so it can
+range between two half-way points instead.
+
+> **Try it.** The data are 15, 4, 20, 9, 12 and x. What is the greatest
+> possible value of the median?
+>
+> **Answer.** 13.5
+>
+> In order, the known values are 4, 9, 12, 15, 20. With x there are 6
+> values, so the median is the mean of the 3rd and 4th.
+>
+> If x ≥ 15, the 3rd and 4th values are 12 and 15, so the median is
+> (12 + 15)/2 = 13.5. If x < 15, the 4th value is less than 15 and the 3rd
+> is at most 12, so the median is less than 13.5.
+
+> **Fails when.** More than one value is unknown, or x stands for several
+> equal values (a count in a frequency table). Then x can push the middle
+> more than one place; count positions again.
+
+For harder versions, see
+[recover a count before correcting the data](#missing-count-correction) and
+[the greatest possible value](#greatest-possible-value).
 
 ## Spread {#spread}
 
@@ -283,8 +339,7 @@ range on the extremes.
 > Range: still 38 − 12 = 26. The new value is 0 from the mean, so the
 > standard deviation decreases.
 
-For a harder version, where the data are not all given, see
-[what must be true](#must-be-true).
+When the data are not all given, see [what must be true](#must-be-true).
 
 ## Distributions {#distributions}
 
@@ -369,66 +424,62 @@ be determined from the histogram alone.
 > `median(L)`, `stdev(L)` or `quartile(L,1)`. See
 > [Desmos statistics](learn:sat/general/desmos#statistics).
 
-## Harder versions {#hard}
+### What must be true {#must-be-true}
 
-The hardest questions in this skill hide part of the data: an unknown
-value, an unknown count, or a change described without the values.
+Some questions describe a change without listing the data. Reject any choice
+that holds for some data sets but not for all.
 
-### Which values could be the median {#possible-medians}
-
-When one value, x, is unknown, list the known values in order and see where
-the middle position falls. However large or small x is, it can push the
-middle only one place.
-
-> **Example.** The data are 12, 5, 9, 20, x, 15 and 7. Which values could the
-> median be?
+> **Try it.** A data set has 9 different whole numbers. A tenth value, equal
+> to the median of the 9 values, is added. Which of the following must be
+> true about the new data set?
 >
-> In order, the known values are 5, 7, 9, 12, 15, 20. With x there are 7
-> values, so the median is the 4th.
+> - A) The mean is the same as before.
+> - B) The median is the same as before.
+> - C) The range is greater than before.
+> - D) The standard deviation is the same as before.
 >
-> If x ≤ 9, the 4th value is 9. If x ≥ 12, it is 12. If x is between 9 and
-> 12, the median is x itself.
->
-> So the median can be anything from 9 to 12, and nothing else: not 8, and
-> not 15, whatever x is.
-
-> **Try it.** The data are 10, 3, 17, 8, x, 14 and 6. Which of the following
-> could be the median?
->
-> - A) 7
-> - B) 9
-> - C) 11
-> - D) 14
->
-> **First step.** In order, the known values are 3, 6, 8, 10, 14, 17. With x
-> there are 7 values, so the median is the 4th. Now find what the 4th value
-> can be.
+> **Hint.** Try two small data sets: one where the mean equals the median,
+> and one with a large value at the top.
 >
 > **Answer.** B
 >
-> If x ≤ 8, the 4th value is 8. If x ≥ 10, it is 10. If x is between 8 and
-> 10, the median is x itself.
+> The old median is the 5th of 9 values. With a copy of it added, the 5th
+> and 6th of the 10 values are both that number, so the median is unchanged.
 >
-> So the median is from 8 to 10, and only 9 fits.
+> A: for 1, 2, 3, 4, 5, 6, 7, 8, 100, the mean is 136 ÷ 9 ≈ 15.1, and adding
+> 5 lowers it. C: the median lies between the extremes, so the range is
+> unchanged. D: for 1 to 9, adding 5 (also the mean) shrinks the standard
+> deviation.
 
-With an even count, the median is the mean of two middle values, so it can
-range between two half-way points instead.
+## Harder versions {#hard}
 
-> **Try it.** The data are 15, 4, 20, 9, 12 and x. What is the greatest
-> possible value of the median?
->
-> **Answer.** 13.5
->
-> In order, the known values are 4, 9, 12, 15, 20. With x there are 6
-> values, so the median is the mean of the 3rd and 4th.
->
-> If x ≥ 15, the 3rd and 4th values are 12 and 15, so the median is
-> (12 + 15)/2 = 13.5. If x < 15, the 4th value is less than 15 and the 3rd
-> is at most 12, so the median is less than 13.5.
+The hardest questions in this skill hide part of the data: an unknown
+count in a frequency table, or the values that make one value as large as
+possible.
 
-> **Fails when.** More than one value is unknown, or x stands for several
-> equal values (a count in a frequency table). Then x can push the middle
-> more than one place; count positions again.
+### The greatest possible value {#greatest-possible-value}
+
+To make one value as large as possible with a fixed mean and median, use
+the total (mean × count) and make every other value as small as the rules
+allow: the values below the median as small as possible, then the median,
+then each value above it no less than the median, or one more than the value
+before if the values must be different.
+
+> **Try it.** A data set consists of 5 different positive integers. The
+> mean is 12 and the median is 9. What is the greatest possible value of the
+> largest number?
+>
+> **First step.** The total is 5 × 12 = 60. The median is the 3rd value, 9,
+> and the 1st and 2nd are as small as possible: 1 and 2. Now make the 4th
+> as small as possible and finish.
+>
+> **Answer.** 38
+>
+> The 4th value must be greater than 9, so at least 10. Then the largest is
+> 60 − (1 + 2 + 9 + 10) = 38. Check: 1, 2, 9, 10, 38 has mean 60 ÷ 5 = 12
+> and median 9.
+>
+> Ignoring "different" (1, 1, 9, 9) gives 40.
 
 ### Recover a count before correcting the data {#missing-count-correction}
 
@@ -462,30 +513,3 @@ first. Then put the corrected observation in its new position.
 > After the correction, 20 occurs 3 times, 25 twice, 30 three times and 35
 > twice. The 5th time is 25 and the 6th is 30, so the corrected median is
 > (25 + 30)/2 = 27.5 minutes. Before the correction it was 30 minutes.
-
-### What must be true {#must-be-true}
-
-Some questions describe a change without listing the data. Reject any choice
-that holds for some data sets but not for all.
-
-> **Try it.** A data set has 9 different whole numbers. A tenth value, equal
-> to the median of the 9 values, is added. Which of the following must be
-> true about the new data set?
->
-> - A) The mean is the same as before.
-> - B) The median is the same as before.
-> - C) The range is greater than before.
-> - D) The standard deviation is the same as before.
->
-> **Hint.** Try two small data sets: one where the mean equals the median,
-> and one with a large value at the top.
->
-> **Answer.** B
->
-> The old median is the 5th of 9 values. With a copy of it added, the 5th
-> and 6th of the 10 values are both that number, so the median is unchanged.
->
-> A: for 1, 2, 3, 4, 5, 6, 7, 8, 100, the mean is 136 ÷ 9 ≈ 15.1, and adding
-> 5 lowers it. C: the median lies between the extremes, so the range is
-> unchanged. D: for 1 to 9, adding 5 (also the mean) shrinks the standard
-> deviation.

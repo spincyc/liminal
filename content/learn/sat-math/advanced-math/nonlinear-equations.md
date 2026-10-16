@@ -113,6 +113,33 @@ has no real solution and its graph never touches the x-axis.
 >
 > As decimals, x ≈ −0.63 or x ≈ −2.37.
 
+To count real solutions without solving, move every term to one side first;
+the discriminant of that equation decides. A quadratic equal to a line, such
+as x² − 3x + 7 = 3x − 2, is the same question: how many points the parabola
+and the line share.
+
+> **Example.** How many distinct real solutions does x² − 3x + 7 = 3x − 2
+> have?
+>
+> Move every term to one side: x² − 6x + 9 = 0.
+>
+> D = (−6)² − 4(1)(9) = 36 − 36 = 0, so there is exactly one real solution,
+> x = 3, since x² − 6x + 9 = (x − 3)².
+>
+> Counting from x² − 3x + 7 = 0 alone, where D = 9 − 28 < 0, gives the trap
+> answer, zero.
+
+> **Try it.** How many distinct real solutions does 2x² + 3x − 2 = 7x − 5
+> have?
+>
+> **Answer.** Zero
+>
+> Move every term to one side: 2x² − 4x + 3 = 0.
+>
+> D = (−4)² − 4(2)(3) = 16 − 24 = −8, which is negative, so there is no real
+> solution. Counting from 2x² + 3x − 2 = 0 alone, where D = 25, would give
+> two.
+
 > **Example.** For what values of k does x² + kx + 25 = 0 have exactly one
 > real solution?
 >
@@ -195,6 +222,23 @@ extraneous solutions, because squaring hides a sign.
 
 Simple rational equations work the same way: multiply by the common
 denominator, solve, then throw out any answer that makes a denominator zero.
+When each side is a single fraction, cross-multiplying does the same job.
+
+> **Example.** What value of x is the solution to 9/(x − 1) = 6/(x − 3)?
+>
+> Cross-multiply: 9(x − 3) = 6(x − 1), so 9x − 27 = 6x − 6.
+>
+> Then 3x = 21 and x = 7. Check: 9/6 = 1.5 and 6/4 = 1.5, and neither
+> denominator is zero.
+
+> **Try it.** What value of x is the solution to 4/(x + 2) = 7/(x + 8)?
+>
+> **Answer.** x = 6
+>
+> Cross-multiply: 4(x + 8) = 7(x + 2), so 4x + 32 = 7x + 14. Then 3x = 18
+> and x = 6.
+>
+> Check: 4/8 = 0.5 and 7/14 = 0.5.
 
 > **Example.** Solve x/(x − 3) = 3/(x − 3) + 2.
 >
@@ -267,14 +311,65 @@ means x is 7 away from 3, so x = 10 or x = −4. If |x − a| = 4 has solutions
 > `y=19`, then click the two intersections. Desmos reads the bars as absolute
 > value. See [Desmos for solving by graphing](learn:sat/general/desmos#solve-by-graphing).
 
-For a harder version, where the other side also contains x, see
-[when the other side has x](#absolute-value-with-x).
+### When the other side has x {#absolute-value-with-x}
+
+An absolute value is never negative, so |A| = B, where B contains x, can hold
+only where B ≥ 0. Solve both cases, A = B and A = −B, then keep only the
+candidates that make B nonnegative.
+
+> **Example.** How many solutions does |x − 4| = 2x + 1 have?
+>
+> Case 1: x − 4 = 2x + 1, so x = −5. Then 2x + 1 = −9, which is negative,
+> so x = −5 fails. (Check: |−9| = 9, not −9.)
+>
+> Case 2: x − 4 = −(2x + 1), so 3x = 3 and x = 1. Then 2x + 1 = 3, and
+> |1 − 4| = 3. It works.
+>
+> One solution: x = 1.
+
+> **Try it.** How many solutions does |3x + 2| = x − 2 have?
+>
+> **First step.** Case 1: 3x + 2 = x − 2, so x = −2. Then x − 2 = −4, which
+> is negative, so x = −2 fails. Now try case 2.
+>
+> **Answer.** None (0 solutions)
+>
+> Case 2: 3x + 2 = −(x − 2), so 4x = 0 and x = 0. Then x − 2 = −2, which
+> is negative, so x = 0 fails too. (Check: |2| = 2, not −2.)
+>
+> Neither case survives, so the equation has no solutions.
+
+Two special shapes:
+
+- |A| = |B|: then A = B or A = −B. Both sides are absolute values, so no candidate needs the sign check.
+- |A| = −A: this holds for every x that makes A ≤ 0, so there are infinitely many solutions. |A| = A holds for every x that makes A ≥ 0.
+
+> **Example.** How many solutions does |2x − 6| = 6 − 2x have?
+>
+> The right side is the opposite of the inside: 6 − 2x = −(2x − 6). So the
+> equation holds whenever 2x − 6 ≤ 0, that is, for every x ≤ 3.
+>
+> Infinitely many. Check x = 0: |−6| = 6 and 6 − 0 = 6. Check x = 5: |4| = 4
+> but 6 − 10 = −4, so x = 5 is not a solution.
+
+> **Try it.** How many solutions does |5 − x| = x − 5 have?
+>
+> **Answer.** Infinitely many (every x ≥ 5)
+>
+> The right side is the opposite of the inside: x − 5 = −(5 − x). So the
+> equation holds whenever 5 − x ≤ 0, that is, for every x ≥ 5.
+>
+> Check x = 8: |−3| = 3 and 8 − 5 = 3. Check x = 0: |5| = 5 but
+> 0 − 5 = −5, so x = 0 is not a solution.
+
+> **Trap.** Counting two solutions because there are two cases. A case can
+> give a candidate that fails the sign check, or give no single number at
+> all.
 
 ## Harder versions {#hard}
 
 The harder questions turn on which solutions count: a value built from
-both solutions, a constant that decides how many roots survive, or an
-absolute value equal to an expression in x.
+both solutions, or a constant that decides how many roots survive.
 
 ### The sum and product of the solutions {#sum-and-product}
 
@@ -351,58 +446,3 @@ a constant k in the equation, exactly two solutions need both of these:
 >
 > Check k = −2: the roots are 1 and 3. At x = 1, √0 = 0 = 1 − 1; at x = 3,
 > √4 = 2 = 3 − 1.
-
-### When the other side has x {#absolute-value-with-x}
-
-An absolute value is never negative, so |A| = B, where B contains x, can hold
-only where B ≥ 0. Solve both cases, A = B and A = −B, then keep only the
-candidates that make B nonnegative.
-
-> **Example.** How many solutions does |x − 4| = 2x + 1 have?
->
-> Case 1: x − 4 = 2x + 1, so x = −5. Then 2x + 1 = −9, which is negative,
-> so x = −5 fails. (Check: |−9| = 9, not −9.)
->
-> Case 2: x − 4 = −(2x + 1), so 3x = 3 and x = 1. Then 2x + 1 = 3, and
-> |1 − 4| = 3. It works.
->
-> One solution: x = 1.
-
-> **Try it.** How many solutions does |3x + 2| = x − 2 have?
->
-> **First step.** Case 1: 3x + 2 = x − 2, so x = −2. Then x − 2 = −4, which
-> is negative, so x = −2 fails. Now try case 2.
->
-> **Answer.** None (0 solutions)
->
-> Case 2: 3x + 2 = −(x − 2), so 4x = 0 and x = 0. Then x − 2 = −2, which
-> is negative, so x = 0 fails too. (Check: |2| = 2, not −2.)
->
-> Neither case survives, so the equation has no solutions.
-
-Two special shapes:
-
-- |A| = |B|: then A = B or A = −B. Both sides are absolute values, so no candidate needs the sign check.
-- |A| = −A: this holds for every x that makes A ≤ 0, so there are infinitely many solutions. |A| = A holds for every x that makes A ≥ 0.
-
-> **Example.** How many solutions does |2x − 6| = 6 − 2x have?
->
-> The right side is the opposite of the inside: 6 − 2x = −(2x − 6). So the
-> equation holds whenever 2x − 6 ≤ 0, that is, for every x ≤ 3.
->
-> Infinitely many. Check x = 0: |−6| = 6 and 6 − 0 = 6. Check x = 5: |4| = 4
-> but 6 − 10 = −4, so x = 5 is not a solution.
-
-> **Try it.** How many solutions does |5 − x| = x − 5 have?
->
-> **Answer.** Infinitely many (every x ≥ 5)
->
-> The right side is the opposite of the inside: x − 5 = −(5 − x). So the
-> equation holds whenever 5 − x ≤ 0, that is, for every x ≥ 5.
->
-> Check x = 8: |−3| = 3 and 8 − 5 = 3. Check x = 0: |5| = 5 but
-> 0 − 5 = −5, so x = 0 is not a solution.
-
-> **Trap.** Counting two solutions because there are two cases. A case can
-> give a candidate that fails the sign check, or give no single number at
-> all.

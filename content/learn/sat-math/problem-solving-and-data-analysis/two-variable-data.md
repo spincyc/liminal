@@ -209,6 +209,105 @@ quick and usually close enough to pick among the choices.
 > the trend, or the choices are close together. Then use points on the drawn
 > line itself, or run a regression in Desmos.
 
+### Line graphs over time {#line-graphs}
+
+A line graph joins one value for each time with segments. The change
+between two times is the later value minus the earlier one, and the
+steepest segment, up or down, is the greatest change between consecutive
+times. Read each value from the gridlines, not from how long a segment
+looks.
+
+> **Example.** A line graph shows a library's visitors, in thousands, each
+> year from 2018 to 2023. The plotted values are:
+>
+> | Year | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 |
+> | --- | --- | --- | --- | --- | --- | --- |
+> | Visitors (thousands) | 42 | 45 | 39 | 30 | 38 | 47 |
+>
+> Between which two consecutive years did visits increase the most, and in
+> how many of the years were there more than 40 thousand visitors?
+>
+> Changes: +3, −6, −9, +8 and +9. The greatest increase, +9, is from 2022
+> to 2023. The −9 from 2020 to 2021 is just as steep, but it is a decrease.
+>
+> More than 40: 42, 45 and 47, so 3 years. A value of exactly 40 would not
+> count as "more than".
+
+> **Try it.** A line graph shows the members of a running club at the start
+> of each month:
+>
+> | Month | Jan | Feb | Mar | Apr | May | Jun |
+> | --- | --- | --- | --- | --- | --- | --- |
+> | Members | 24 | 20 | 28 | 30 | 22 | 32 |
+>
+> Between which two consecutive months did membership increase the most,
+> and in how many of the months were there at least 28 members?
+>
+> **Answer.** From May to June; 3 months.
+>
+> Changes: −4, +8, +2, −8 and +10. The greatest increase is +10, from May
+> to June.
+>
+> At least 28: 28, 30 and 32, so 3 months. "At least" includes the 28.
+
+### Residuals {#residuals}
+
+A residual compares a point only with its own prediction:
+
+- "Farthest below the prediction" means the most negative residual.
+- "Farthest from the line" means the residual largest in size, ignoring its sign: −3 is farther than 2.5. A residual measures straight up or down to the line.
+- The largest residual is not always the largest actual value.
+
+For some puppies, a line of best fit is y = 0.8x + 3, where y is the
+predicted weight in pounds and x is the age in weeks. The table gives three
+puppies' ages and residuals.
+
+| Puppy | Age (weeks) | Residual (pounds) |
+| --- | --- | --- |
+| Ace | 5 | 2.5 |
+| Bo | 10 | −1 |
+| Cy | 12 | −3 |
+
+> **Example.** Using the table above, which puppy weighs the most, and which
+> is farthest from the line?
+>
+> Predictions: Ace 0.8(5) + 3 = 7, Bo 0.8(10) + 3 = 11, Cy 0.8(12) + 3 =
+> 12.6.
+>
+> Actual weights, predicted + residual: Ace 7 + 2.5 = 9.5, Bo 11 − 1 = 10,
+> Cy 12.6 − 3 = 9.6. Bo weighs the most, though Ace has the largest
+> residual.
+>
+> Farthest from the line: Cy, 3 pounds below it, more than Ace's 2.5 above.
+
+> **Try it.** For some small businesses, a line of best fit is
+> y = 1.5x + 20, where y is the predicted monthly revenue in thousands of
+> dollars and x is the number of employees.
+>
+> | Business | Employees | Residual (thousands of dollars) |
+> | --- | --- | --- |
+> | P | 4 | 5 |
+> | Q | 10 | −1 |
+> | R | 12 | −3.5 |
+>
+> Which business has the greatest actual revenue, and which is farthest from
+> the line?
+>
+> **First step.** Predictions: P 1.5(4) + 20 = 26, Q 1.5(10) + 20 = 35,
+> R 1.5(12) + 20 = 38. Now finish.
+>
+> **Answer.** R has the greatest revenue; P is farthest from the line.
+>
+> Actual revenues, predicted + residual: P 26 + 5 = 31, Q 35 − 1 = 34,
+> R 38 − 3.5 = 34.5. R has the greatest revenue, though its residual is the
+> most negative.
+>
+> Farthest from the line: P, 5 above it, more than R's 3.5 below.
+
+> **Trap.** Subtracting a residual from the prediction. A positive residual
+> means the actual value is more than predicted, so add it: Ace is 9.5
+> pounds, not 4.5.
+
 ### Reading a residual plot {#residual-pattern}
 
 A residual plot keeps x on the horizontal axis but replaces the original y
@@ -269,72 +368,13 @@ not k times the one-unit percent.
 > `y_1~mx_1+b`. Desmos reports m, b and r. For an exponential fit, type
 > `y_1~ab^{x_1}`. See [Desmos regressions](learn:sat/general/desmos#regressions).
 
-For harder versions of scatterplot questions, see [residuals](#residuals)
-and [removing an outlier](#removing-an-outlier).
+For a harder version of scatterplot questions, see
+[removing an outlier](#removing-an-outlier).
 
 ## Harder versions {#hard}
 
 The hardest questions in this skill make you work through the model: from
-residuals back to actual values, from a removed point to a new line, or
-from percents to the model's units.
-
-### Residuals {#residuals}
-
-A residual compares a point only with its own prediction:
-
-- "Farthest below the prediction" means the most negative residual.
-- "Farthest from the line" means the residual largest in size, ignoring its sign: −3 is farther than 2.5. A residual measures straight up or down to the line.
-- The largest residual is not always the largest actual value.
-
-For some puppies, a line of best fit is y = 0.8x + 3, where y is the
-predicted weight in pounds and x is the age in weeks. The table gives three
-puppies' ages and residuals.
-
-| Puppy | Age (weeks) | Residual (pounds) |
-| --- | --- | --- |
-| Ace | 5 | 2.5 |
-| Bo | 10 | −1 |
-| Cy | 12 | −3 |
-
-> **Example.** Using the table above, which puppy weighs the most, and which
-> is farthest from the line?
->
-> Predictions: Ace 0.8(5) + 3 = 7, Bo 0.8(10) + 3 = 11, Cy 0.8(12) + 3 =
-> 12.6.
->
-> Actual weights, predicted + residual: Ace 7 + 2.5 = 9.5, Bo 11 − 1 = 10,
-> Cy 12.6 − 3 = 9.6. Bo weighs the most, though Ace has the largest
-> residual.
->
-> Farthest from the line: Cy, 3 pounds below it, more than Ace's 2.5 above.
-
-> **Try it.** For some small businesses, a line of best fit is
-> y = 1.5x + 20, where y is the predicted monthly revenue in thousands of
-> dollars and x is the number of employees.
->
-> | Business | Employees | Residual (thousands of dollars) |
-> | --- | --- | --- |
-> | P | 4 | 5 |
-> | Q | 10 | −1 |
-> | R | 12 | −3.5 |
->
-> Which business has the greatest actual revenue, and which is farthest from
-> the line?
->
-> **First step.** Predictions: P 1.5(4) + 20 = 26, Q 1.5(10) + 20 = 35,
-> R 1.5(12) + 20 = 38. Now finish.
->
-> **Answer.** R has the greatest revenue; P is farthest from the line.
->
-> Actual revenues, predicted + residual: P 26 + 5 = 31, Q 35 − 1 = 34,
-> R 38 − 3.5 = 34.5. R has the greatest revenue, though its residual is the
-> most negative.
->
-> Farthest from the line: P, 5 above it, more than R's 3.5 below.
-
-> **Trap.** Subtracting a residual from the prediction. A positive residual
-> means the actual value is more than predicted, so add it: Ace is 9.5
-> pounds, not 4.5.
+a removed point to a new line, or from percents to the model's units.
 
 ### Removing an outlier {#removing-an-outlier}
 
