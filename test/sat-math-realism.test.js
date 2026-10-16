@@ -157,3 +157,41 @@ test("density-cube-edge prints every volume equation exactly", () => {
   }
   assert.ok(equations > 0);
 });
+
+test("crew-rate-change wrong answers equal the computation their reasons state", () => {
+  const word = (text) => Number(text.replace(/,/g, ""));
+  for (const seed of Array.from({ length: 400 }, (_, i) => (i < 200 ? i : `crew.${i}.check`))) {
+    const q = draw("crew-rate-change", seed);
+    // "n workers can do the job in D units"; the add form: "work for d1", "sooner by e";
+    // the when form: "k more ... joined ... e sooner".
+    const [, n, D] = /, (\d+) \w+ can .+? in (\d+) (?:days?|hours?)\./.exec(q.stem).map(Number);
+    const e = Number(/finish(?:ed)? the job (\d+) (?:days?|hours?) sooner|job was finished (\d+)/.exec(q.stem).slice(1).find(Boolean));
+    const key = number(keyText(q));
+    const add = /work for (\d+) (?:days?|hours?)\./.exec(q.stem);
+    for (const { index, reason } of q.distractorRationales || []) {
+      const value = number(q.choices[index]);
+      let expected;
+      if (add) {
+        const d1 = Number(add[1]);
+        const left = n * (D - d1);
+        const remaining = D - d1 - e;
+        if (/whole crew needed/.test(reason)) expected = left / remaining;
+        else if (/by \d+ (?:days|hours) \((\d+)\), then subtracts/.test(reason)) expected = (n * D) / (D - e) - n;
+        else if (/left \((\d+)\), then subtracts/.test(reason)) expected = (n * D) / remaining - n;
+        else if (/Scales the crew/.test(reason)) expected = (n * e) / (D - d1);
+        else if (/one more/.test(reason)) expected = key + 1;
+        const stated = /\(([\d,]+)\), then subtracts the (\d+)/.exec(reason);
+        if (stated) assert.equal(value, word(stated[1]) - Number(stated[2]), `${seed}: ${reason}`);
+      } else {
+        const k = Number(/, (\d+) more /.exec(q.stem)[1]);
+        if (/worked after/.test(reason)) expected = D - e - key;
+        else if (/larger crew's work/.test(reason)) expected = D - e - ((n + k) * e) / k;
+        else if (/planned finish/.test(reason)) expected = D - (n * e) / k;
+        else if (/as if all/.test(reason)) expected = (n * D) / (n + k);
+        else if (/saved to the answer/.test(reason)) expected = key + e;
+      }
+      assert.ok(expected !== undefined, `${seed}: unmatched reason "${reason}"`);
+      assert.ok(Math.abs(value - expected) < 1e-9, `${seed}: ${value} ≠ ${expected} for "${reason}"`);
+    }
+  }
+});
