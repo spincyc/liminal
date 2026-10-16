@@ -11,6 +11,14 @@
 //     general page at sat/general/<slug>.md without those keys
 //   - each catalog subskill has one ## section anchored {#<slug(subskill)>}
 //     holding at least one Example callout
+//   - on SAT Math pages, every subskill section holds at least one Try it,
+//     every Example is followed by a Try it before the next Example or the
+//     end of its ## section, and every Try it has a worked solution after
+//     its answer
+//   - a "Before you start" section {#before-you-start} holds 2–5 Try it
+//     checks and links to the lessons or coursework that teach them
+//   - every lessons.html#… link names a published expanded lesson and every
+//     weeks.html#… link a week of published coursework
 //   - every SAT template's (skill, subskill) resolves to such a section
 //   - every fact has a real YYYY-MM-DD "verified" date and an https source
 //   - the SAT Math plan page states the next step's routine bar and the
@@ -19,10 +27,12 @@
 //
 //   node tools/check-learn.js [--root <learn dir>]
 
+const fs = require("node:fs");
 const path = require("node:path");
 
 const Learn = require("../src/lib/learn-markup");
 const Analytics = require("../src/lib/analytics");
+const Weekly = require("../src/lib/weekly");
 const { slug } = require("./lib/families");
 const {
   DEFAULT_ROOT,
@@ -36,6 +46,49 @@ const {
 
 const SKILL_KEYS = ["section", "domain", "skill"];
 const PLAN_FILE = "sat/general/math-plan.md";
+const MATH_SECTION = "sat-math";
+const PREREQUISITES = "before-you-start";
+const PREREQUISITE_CHECKS = { min: 2, max: 5 };
+const ROOT = path.resolve(__dirname, "..");
+const GRADE_KEYS = ["k", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+
+const readJson = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
+
+// Every route a Learn page may link to on the rest of the site:
+// { lessons: Set("common-core-math/8/2-3"), weeks: Set("common-core-math/8/31") }.
+// Expanded lessons come from the lesson-module catalog and its modules;
+// weeks from the course files under content/weekly, with the named
+// high-school courses resolved through src/lib/weekly.js. Only content
+// that exists is listed, so a link to an unpublished grade fails.
+function siteRoutes(root) {
+  const base = root || ROOT;
+  const lessonsRoot = path.join(base, "content", "lesson-modules");
+  const weeklyRoot = path.join(base, "content", "weekly");
+  const lessons = new Set();
+  readJson(path.join(lessonsRoot, "catalog.json")).modules.forEach((entry) => {
+    const module = readJson(path.join(lessonsRoot, entry.file));
+    const prefix = `${entry.trackId}/${Weekly.gradeKey(entry.grade)}`;
+    module.units.forEach((unit) => unit.lessons.forEach((lesson) => lessons.add(`${prefix}/${lesson.id}`)));
+  });
+  const weeks = new Set();
+  const addCourse = (prefix, file) => {
+    if (!fs.existsSync(file)) return;
+    readJson(file).weeks.forEach((week) => weeks.add(`${prefix}/${week.week}`));
+  };
+  Weekly.GRADE_TRACKS.forEach((track) => GRADE_KEYS.forEach((key) => {
+    addCourse(`${track}/${key}`, path.join(weeklyRoot, track, `${key}.json`));
+  }));
+  Weekly.NAMED_TRACK_IDS.forEach((track) => {
+    const named = Weekly.NAMED_TRACKS[track];
+    named.courses.forEach((course) => {
+      const alias = named.aliases[course];
+      addCourse(`${track}/${course}`, alias
+        ? path.join(weeklyRoot, alias.trackId, `${Weekly.gradeKey(alias.grade)}.json`)
+        : path.join(weeklyRoot, track, `${course}.json`));
+    });
+  });
+  return { lessons, weeks };
+}
 
 // The phrases the plan must contain, built from the live constants, so a
 // change to either the page or the code that leaves them apart fails here.
@@ -94,11 +147,52 @@ function isHttpsUrl(value) {
   }
 }
 
-const hasExample = (blocks) => blocks.some((block) => block.type === "callout" && block.kind === "example");
+const isExample = (block) => block.type === "callout" && block.kind === "example";
+const hasExample = (blocks) => blocks.some(isExample);
+
+// The site links (lessons.html, weeks.html) inside a list of blocks.
+function siteLinks(blocks) {
+  const found = [];
+  Learn.walkInline(blocks, (node) => {
+    if (node.type === "link" && node.site !== undefined) found.push(node);
+  });
+  return found;
+}
+
+// Faded practice on a SAT Math page: each Example is followed by a Try it
+// before the next Example or the end of its ## section, and every Try it
+// shows a worked solution once it is opened.
+function checkPractice(page, add) {
+  Learn.sections(page.blocks).forEach((section) => {
+    let waiting = null;
+    section.blocks.forEach((block) => {
+      if (isExample(block)) {
+        if (waiting) add(page.file, waiting.line, "this Example needs a **Try it.** after it, before the next Example");
+        waiting = block;
+      } else if (block.type === "try") {
+        waiting = null;
+      }
+    });
+    if (waiting) {
+      add(page.file, waiting.line, `this Example needs a **Try it.** after it, before the end of section {#${section.heading.id}}`);
+    }
+  });
+  const all = [];
+  const collect = (blocks) => (blocks || []).forEach((block) => {
+    if (block.type === "try") all.push(block);
+  });
+  collect(page.blocks);
+  all.forEach((block) => {
+    if (!block.solution || !block.solution.length) {
+      add(page.file, block.line, "this **Try it.** needs a worked solution after its **Answer.** line");
+    }
+  });
+}
 
 // Returns { errors: [{ file, line, message }], summary }. `today` is a
 // YYYY-MM-DD string; a fact cannot be verified after it.
-function checkLearn({ tree, catalog, templates, today }) {
+// `routes` ({ lessons, weeks } sets of routes) defaults to siteRoutes().
+function checkLearn({ tree, catalog, templates, today, routes }) {
   if (!tree.exists) {
     return { errors: [{ file: "", line: 0, message: "the Learn directory does not exist" }], summary: null };
   }
@@ -133,17 +227,54 @@ function checkLearn({ tree, catalog, templates, today }) {
     });
     const anchors = Learn.anchors(page.blocks);
     const sections = new Map(Learn.sections(page.blocks).map((section) => [section.heading.id, section]));
+    const math = want.section === MATH_SECTION;
     want.subskills.forEach((subskill) => {
       const anchor = slug(subskill);
       const level = anchors.get(anchor);
       if (level === undefined) {
         add(page.file, 0, `no "## … {#${anchor}}" section for subskill "${subskill}"`);
-      } else if (level !== 2) {
+        return;
+      }
+      if (level !== 2) {
         add(page.file, 0, `{#${anchor}} (subskill "${subskill}") must be on a ## heading`);
-      } else if (!hasExample(sections.get(anchor).blocks)) {
-        const heading = sections.get(anchor).heading;
+        return;
+      }
+      const { heading, blocks } = sections.get(anchor);
+      if (!hasExample(blocks)) {
         add(page.file, heading.line, `section {#${anchor}} needs at least one **Example.** callout`);
       }
+      if (math && !Learn.tries(blocks).length) {
+        add(page.file, heading.line, `section {#${anchor}} needs at least one **Try it.** problem`);
+      }
+    });
+    if (math) checkPractice(page, add);
+  });
+
+  // A prerequisite block is a few quick checks plus where to relearn them.
+  Object.values(pages).forEach((page) => {
+    const section = Learn.sections(page.blocks).find((entry) => entry.heading.id === PREREQUISITES);
+    if (!section) return;
+    const count = Learn.tries(section.blocks).length;
+    if (count < PREREQUISITE_CHECKS.min || count > PREREQUISITE_CHECKS.max) {
+      add(page.file, section.heading.line,
+        `{#${PREREQUISITES}} holds ${PREREQUISITE_CHECKS.min}–${PREREQUISITE_CHECKS.max} **Try it.** checks; it has ${count}`);
+    }
+    if (!siteLinks(section.blocks).length) {
+      add(page.file, section.heading.line,
+        `{#${PREREQUISITES}} links to the lessons.html or weeks.html pages that teach its checks`);
+    }
+  });
+
+  // Links to expanded lessons and coursework name pages that exist.
+  const known = routes || siteRoutes();
+  Object.values(pages).forEach((page) => {
+    (page.links || []).forEach((link) => {
+      if (link.site === undefined) return;
+      const set = link.site === "lessons" ? known.lessons : known.weeks;
+      if (set && set.has(link.route)) return;
+      add(page.file, link.line, link.site === "lessons"
+        ? `link lessons.html#${link.route}: no such expanded lesson in content/lesson-modules`
+        : `link weeks.html#${link.route}: no such week of coursework in content/weekly`);
     });
   });
 
@@ -233,4 +364,4 @@ function main(argv) {
 
 if (require.main === module) main(process.argv.slice(2));
 
-module.exports = { checkLearn, expectedPages, satTemplates, isCalendarDate, planPhrases };
+module.exports = { checkLearn, expectedPages, satTemplates, siteRoutes, isCalendarDate, planPhrases };

@@ -5,7 +5,7 @@ const assert = require("node:assert/strict");
 const path = require("node:path");
 const vm = require("node:vm");
 const { readTree, loadLearn, buildIndex, bundleSource } = require("../tools/build-learn");
-const { checkLearn, satTemplates } = require("../tools/check-learn");
+const { checkLearn, satTemplates, siteRoutes } = require("../tools/check-learn");
 const catalog = require("../content/catalog.json");
 
 // test/fixtures/learn is a complete, passing Learn tree for the real catalog
@@ -15,9 +15,10 @@ const FIXTURES = path.join(__dirname, "fixtures", "learn");
 const LINEAR = "sat-math/algebra/linear-inequalities.md";
 const CIRCLES = "sat-math/geometry-and-trigonometry/circles.md";
 const templates = satTemplates();
+const routes = siteRoutes();
 
 const goodTree = () => JSON.parse(JSON.stringify(readTree(FIXTURES)));
-const run = (tree, options) => checkLearn(Object.assign({ tree, catalog, templates, today: "2026-09-25" }, options));
+const run = (tree, options) => checkLearn(Object.assign({ tree, catalog, templates, routes, today: "2026-09-25" }, options));
 const lines = (result) => result.errors
   .map((error) => `${error.file}${error.line ? `:${error.line}` : ""}: ${error.message}`);
 
@@ -81,6 +82,64 @@ test("each subskill needs one ## section with its anchor and an Example", () => 
   const noExample = run(edit(goodTree(), CIRCLES, "> **Example.** A minimal fixture example for circle measures.",
     "> **Note.** A note is not a worked example."));
   expectError(noExample, /circles\.md:\d+: section \{#circle-measures\} needs at least one \*\*Example\.\*\* callout/);
+});
+
+test("SAT Math sections practise: a Try it after every Example, each with a worked solution", () => {
+  const MEASURES_TRY = "> **Try it.** A minimal fixture problem for circle measures.\n>\n> **Answer.** 1\n>\n> A minimal fixture solution.\n";
+  const none = run(edit(goodTree(), CIRCLES, MEASURES_TRY, ""));
+  expectError(none, /circles\.md:\d+: section \{#circle-measures\} needs at least one \*\*Try it\.\*\* problem/);
+  expectError(none, /circles\.md:14: this Example needs a \*\*Try it\.\*\* after it, before the end of section \{#circle-measures\}/);
+
+  // Two Examples in a row: the first has no practice of its own.
+  const pair = run(edit(goodTree(), CIRCLES, "> **Example.** A minimal fixture example for circle measures.\n",
+    "> **Example.** A minimal fixture example for circle measures.\n\n> **Example.** A second worked example.\n"));
+  expectError(pair, /circles\.md:14: this Example needs a \*\*Try it\.\*\* after it, before the next Example/);
+  assert.equal(lines(pair).length, 1);
+
+  // An Example under a later heading, such as a page's harder versions, too.
+  const later = run(edit(goodTree(), CIRCLES, "## Circle equations {#circle-equations}",
+    "## Harder versions {#hard}\n\n> **Example.** A hard worked example.\n\n## Circle equations {#circle-equations}"));
+  expectError(later, /circles\.md:\d+: this Example needs a \*\*Try it\.\*\* after it, before the end of section \{#hard\}/);
+
+  const bare = run(edit(goodTree(), CIRCLES, MEASURES_TRY,
+    "> **Try it.** A minimal fixture problem for circle measures.\n>\n> **Answer.** 1\n"));
+  expectError(bare, /circles\.md:16: this \*\*Try it\.\*\* needs a worked solution after its \*\*Answer\.\*\* line/);
+
+  // Reading and Writing pages are not held to the Math practice rules.
+  const words = "sat-reading-writing/craft-and-structure/words-in-context.md";
+  assert.ok(!goodTree().files[words].includes("Try it"));
+  assert.deepEqual(lines(run(goodTree())).filter((line) => line.includes("words-in-context")), []);
+});
+
+test("a Before you start section holds a few checks and links to where they are taught", () => {
+  const one = run(edit(goodTree(), LINEAR, "> **Try it.** Is −5 less than −2?\n>\n> **Hint.** Picture a number line.\n>\n> **Answer.** Yes\n>\n> −5 lies to the left of −2.\n", ""));
+  expectError(one, /linear-inequalities\.md:17: \{#before-you-start\} holds 2–5 \*\*Try it\.\*\* checks; it has 1/);
+  const unlinked = run(edit(goodTree(), LINEAR,
+    "[Grade 8 lesson 2-3](lessons.html#common-core-math/8/2-3) or\n[Grade 7, week 17](weeks.html#common-core-math/7/17) first.",
+    "the earlier grades first."));
+  expectError(unlinked, /linear-inequalities\.md:17: \{#before-you-start\} links to the lessons\.html or weeks\.html pages/);
+});
+
+test("links to expanded lessons and coursework must name published ones", () => {
+  assert.ok(routes.lessons.has("common-core-math/8/2-3"));
+  assert.ok(routes.weeks.has("common-core-math/8/31"));
+  // A named high-school course resolves through its alias to Grade 9.
+  assert.ok(routes.weeks.has("high-school-math/algebra/15"));
+  assert.ok(routes.weeks.has("high-school-math/trigonometry/1"));
+  assert.ok(!routes.lessons.has("common-core-math/7/2-3"), "only grades with an expansion have lessons");
+  assert.ok(!routes.weeks.has("common-core-math/8/37"));
+
+  const lesson = run(edit(goodTree(), LINEAR, "lessons.html#common-core-math/8/2-3", "lessons.html#common-core-math/8/9-9"));
+  expectError(lesson, /linear-inequalities\.md:20: link lessons\.html#common-core-math\/8\/9-9: no such expanded lesson/);
+  const grade = run(edit(goodTree(), LINEAR, "lessons.html#common-core-math/8/2-3", "lessons.html#common-core-math/7/2-3"));
+  expectError(grade, /link lessons\.html#common-core-math\/7\/2-3: no such expanded lesson/);
+  const week = run(edit(goodTree(), LINEAR, "weeks.html#common-core-math/7/17", "weeks.html#common-core-math/7/40"));
+  expectError(week, /linear-inequalities\.md:21: link weeks\.html#common-core-math\/7\/40: no such week of coursework/);
+  const shape = run(edit(goodTree(), LINEAR, "lessons.html#common-core-math/8/2-3", "lessons.html#common-core-math/8"));
+  expectError(shape, /linear-inequalities\.md:20: link "lessons\.html#common-core-math\/8" must be lessons\.html#<track>\/<grade>\/<lesson>/);
+  // The catalogs are inputs, so the same page fails when a lesson is withdrawn.
+  const withdrawn = run(goodTree(), { routes: { lessons: new Set(), weeks: routes.weeks } });
+  expectError(withdrawn, /link lessons\.html#common-core-math\/8\/2-3: no such expanded lesson/);
 });
 
 test("a template whose subskill has no section fails", () => {
@@ -166,6 +225,10 @@ test("the bundle lists sections in catalog order with facts filled in and no sou
   assert.equal(skill.section, "sat-math");
   assert.equal(skill.skillSlug, "linear-inequalities");
   assert.equal(skill.file, undefined);
+  assert.equal(skill.links, undefined);
+  const practice = skill.blocks.find((block) => block.type === "try" && block.first);
+  assert.deepEqual(practice.answer, ["x ≤ 4"]);
+  assert.deepEqual(practice.hint, [{ type: "paragraph", content: ["Divide by 4, a positive number."] }]);
 });
 
 test("the Math plan must state the gate and mastered bars the Progress page applies", () => {
