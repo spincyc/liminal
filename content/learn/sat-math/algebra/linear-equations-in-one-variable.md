@@ -203,9 +203,29 @@ factor it out before dividing.
 > Check with numbers: c = 20 and w = 6 give p = 92/10 = 9.2, and
 > (20 − 36.8)/(9.2 − 12) = 6. Choice A gives −6.
 
-For harder versions, see
-[a solution that depends on a constant](#solution-with-a-constant) and
-[a rate that changes partway](#rate-that-changes).
+### A rate that changes partway {#rate-that-changes}
+
+When a rate changes past a threshold (overtime pay, a second price tier),
+first find the total at the threshold. If the given total is larger, the
+extra is charged at the second rate; if it is smaller, only the first rate
+applies. Then write one equation for the piece that applies.
+
+> **Try it.** A garage charges $4 an hour for the first 3 hours of parking
+> and $2.50 an hour after that. A driver paid $19.50. How many hours was the
+> car parked?
+>
+> **First step.** The first 3 hours cost 4 × 3 = $12, less than $19.50, so
+> the car stayed longer than 3 hours. Now write the equation for the rest.
+>
+> **Answer.** 6 hours
+>
+> 12 + 2.50(h − 3) = 19.50, so 2.50(h − 3) = 7.50, h − 3 = 3 and h = 6.
+>
+> Using $4 for every hour gives 19.50 ÷ 4 = 4.875 hours, past the 3 hours
+> where that rate stops.
+
+For a harder version, see
+[a solution that depends on a constant](#solution-with-a-constant).
 
 ## Rearranging formulas {#rearranging-formulas}
 
@@ -329,7 +349,7 @@ For a harder version, see [a constant in more than one place](#constant-in-sever
 ## Harder versions {#hard}
 
 The harder questions add a layer: a solution written in terms of a
-constant, a rate that changes partway, or a constant in more than one place.
+constant, or a constant in more than one place.
 
 ### A solution that depends on a constant {#solution-with-a-constant}
 
@@ -348,27 +368,6 @@ gives (a value, a multiple of a, or an inequality) and solve it for a.
 > The solution is greater than 11 when 3a + 5 > 11, so 3a > 6 and a > 2.
 >
 > Check a = 3: x = 14, and 3(14 − 6) = 24 = 14 + 10.
-
-### A rate that changes partway {#rate-that-changes}
-
-When a rate changes past a threshold (overtime pay, a second price tier),
-first find the total at the threshold. If the given total is larger, the
-extra is charged at the second rate; if it is smaller, only the first rate
-applies. Then write one equation for the piece that applies.
-
-> **Try it.** A garage charges $4 an hour for the first 3 hours of parking
-> and $2.50 an hour after that. A driver paid $19.50. How many hours was the
-> car parked?
->
-> **First step.** The first 3 hours cost 4 × 3 = $12, less than $19.50, so
-> the car stayed longer than 3 hours. Now write the equation for the rest.
->
-> **Answer.** 6 hours
->
-> 12 + 2.50(h − 3) = 19.50, so 2.50(h − 3) = 7.50, h − 3 = 3 and h = 6.
->
-> Using $4 for every hour gives 19.50 ÷ 4 = 4.875 hours, past the 3 hours
-> where that rate stops.
 
 ### A constant in more than one place {#constant-in-several-places}
 

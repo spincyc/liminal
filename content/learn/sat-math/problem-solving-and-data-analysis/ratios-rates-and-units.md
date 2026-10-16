@@ -307,27 +307,34 @@ For a harder version, see [a hollow cube from its density](#hollow-cube).
 
 ## Harder versions {#hard}
 
-The harder questions give a total and ask for a hidden piece: the time
-left when a crew changes size, or a hollow object's size.
+The harder questions give a total and ask for a hidden piece: the workers
+a crew needs to finish early, or a hollow object's size.
 
 ### A crew that changes size {#crew-changes}
 
 A job done by a crew working at a steady rate has a fixed size in
-worker-days (or worker-hours): workers × days. When the crew changes
-partway, subtract the work already done, then divide what is left by the
-new crew.
+worker-days: workers × days. When workers join partway to finish early,
+subtract the work already done; what is left, divided by the days left, is
+the crew needed, and the extra workers are that crew minus the workers
+already there. If instead the joining day d is unknown, write the whole job
+as the work before plus the work after: n · d + (n + k)(T − d) = whole job,
+where T is the actual finish.
 
-> **Try it.** Working at the same constant rate, 10 workers can paint a
-> building in 12 days. They work for 4 days, and then 2 of them leave. How
-> many more days do the remaining workers take to finish?
+> **Try it.** Working at the same constant rate, 6 workers can paint a
+> building in 10 days. They work for 4 days. To finish 3 days sooner than
+> planned, more workers join them at that point. How many workers must join?
 >
-> **Answer.** 10 days
+> **First step.** The job is 6 × 10 = 60 worker-days, and the first 4 days
+> do 6 × 4 = 24 of it, leaving 36. Now find the days left and the crew
+> needed.
 >
-> The job is 10 × 12 = 120 worker-days. In 4 days the crew does
-> 10 × 4 = 40, leaving 80. Eight workers need 80 ÷ 8 = 10 more days.
+> **Answer.** 6
 >
-> Dividing the whole job by the new crew gives 15, and ignoring the change
-> gives 8.
+> Finishing 3 days early leaves 10 − 4 − 3 = 3 days, so the crew must be
+> 36 ÷ 3 = 12 workers: 12 − 6 = 6 more.
+>
+> The traps are 12, the whole crew, and 14, from dividing the whole job,
+> 60, by the 3 days left and subtracting 6.
 
 ### A hollow cube from its density {#hollow-cube}
 
