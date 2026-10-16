@@ -41,10 +41,14 @@
   const INTERVALS = [1, 3, 7, 21];
   // The most questions one Review set takes, most overdue first. The plan
   // makes Review the next step at most once a calendar day
-  // (lib/analytics.js REVIEW_CAP), so a day's Review stays about ten
-  // minutes; whatever is still due waits for the student's choice or the
-  // next day.
-  const SET_LIMIT = 10;
+  // (lib/analytics.js reviewDoneToday), so a day's Review stays about ten
+  // to fifteen minutes; whatever is still due waits for the student's
+  // choice or the next day. Six is the largest size the plan's simulation
+  // supported (2026-10-16, moderate learner, 45 minutes a day, 12 weeks):
+  // Review 22% of questions with the backlog levelling off, against 26% at
+  // seven, 32% at eight and 40% at ten; no size started every skill by
+  // week 8 in 8 of 10 runs (six: 5, seven: 7, eight: 3).
+  const SET_LIMIT = 6;
   const MS_PER_DAY = 24 * 60 * 60 * 1000;
   const REASONS = Progress.ERROR_REASONS;
   // A skill's error log suggests its Learn page when at least this many of

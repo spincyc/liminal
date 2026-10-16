@@ -3,7 +3,7 @@
 // The weekly report (lib/analytics.js weeklyReport, weeklyReportText) and
 // its On track / Needs attention signal, for SAT and for ACT, plus the ACT
 // side of the Review cap: ACT keeps its accuracy-only step and gets the same
-// once-a-day Review and ten-question sets as SAT.
+// once-a-day Review and the same set size (ReviewQueue.SET_LIMIT) as SAT.
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
@@ -230,13 +230,13 @@ test("ACT: the weekly report counts per test and leaves SAT-only parts out, neve
   assert.equal(Analytics.weeklyReport({ test: "ACT", now: NOW }).practiceDays, 0);
 });
 
-test("ACT: Review is the step once a day and a set takes ten, as for SAT", () => {
+test("ACT: Review is the step once a day and a set takes SET_LIMIT, as for SAT", () => {
   const misses = Array.from({ length: 14 }, (_, index) => actAnswer("act-english", 20 - index, { correct: false }));
   const summary = Queue.summarize(Queue.build(misses), NOW);
   assert.equal(summary.due.length, 14);
   const { picked } = Queue.pickSet(summary.due);
-  assert.equal(picked.length, 10);
-  assert.deepEqual(picked.map((entry) => entry.questionId), misses.slice(0, 10).map((attempt) => attempt.questionId),
+  assert.equal(picked.length, Queue.SET_LIMIT);
+  assert.deepEqual(picked.map((entry) => entry.questionId), misses.slice(0, Queue.SET_LIMIT).map((attempt) => attempt.questionId),
     "most overdue first");
   const rows = Analytics.skillMap(misses, actSections, { tiered: () => false });
   const first = Analytics.nextStep(rows, { dueCount: 14, reviewedToday: false, sessions: [], now: NOW });

@@ -275,15 +275,15 @@ test("every version of a design shares one schedule, whatever set answers it", (
   assert.equal(Queue.rootOf({ questionId: "act-english-0003", source: "bank" }), "act-english-0003");
 });
 
-test("a review set takes at most SET_LIMIT (ten), most overdue first", () => {
-  assert.equal(Queue.SET_LIMIT, 10);
+test("a review set takes at most SET_LIMIT (six), most overdue first", () => {
+  assert.equal(Queue.SET_LIMIT, 6);
   const attempts = Array.from({ length: 14 }, (_, index) =>
     miss(`sat-math:t${index}:1`, `2026-09-${String(index + 1).padStart(2, "0")}T10:00`, { templateId: `t${index}` }));
   const summary = Queue.summarize(Queue.build(attempts), at("2026-10-01T12:00"));
   assert.equal(summary.due.length, 14);
   const { picked, left } = Queue.pickSet(summary.due);
-  assert.deepEqual(picked.map((entry) => entry.templateId), Array.from({ length: 10 }, (_, index) => `t${index}`));
-  assert.equal(left.length, 4);
+  assert.deepEqual(picked.map((entry) => entry.templateId), Array.from({ length: 6 }, (_, index) => `t${index}`));
+  assert.equal(left.length, 8);
 });
 
 test("a review set takes the most overdue items, one per template", () => {

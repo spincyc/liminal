@@ -3,7 +3,7 @@
 
   // The Review view, where mistakes become practice, for the current test:
   //   Due     misses on a spaced schedule (lib/review-queue.js), practised in
-  //           sets of up to ten, most overdue first: the same question the
+  //           sets of up to SET_LIMIT (six), most overdue first: the same question the
   //           next day, then fresh versions of its template at 3, 7, and 21
   //           days. Review is the plan's next step once a day; after that
   //           the page says how many are still due, offers more by choice,

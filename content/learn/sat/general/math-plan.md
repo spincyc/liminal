@@ -50,11 +50,11 @@ For each skill, the loop is:
 ### How Liminal picks the next step {#next-step}
 
 - **One skill in flight on each track.** It is the track's first skill, in the order above, that has not met the practice target and has not had its turn yet. Drills alternate between the tracks, the one you drilled less recently first.
-- **A budget per skill.** A skill leaves flight when it meets the practice target, or after 40 Medium or Hard questions in it since it came into flight, from any set. A skill that uses its budget first has moved on: it stays in mixed sets and Review.
+- **A budget per skill.** A skill leaves flight when it meets the practice target, or after 40 questions in it, at any level, since it came into flight, from any set. A skill that uses its budget first has moved on: it stays in mixed sets and Review. If Easy was not yet routine when it moved on, Progress flags it, and its lesson is worth rereading before it comes back.
 - **A second pass.** When both tracks have been through every skill, the skills that moved on come back into flight in the same order, each with a fresh budget.
 - **The diagnostic can start you later.** A stage is passed over while each of its domains went well on the diagnostic (at least 80% of at least 3 questions) and you have not practised its skills. Practising a passed-over skill brings it back, and the rest return in the second pass.
-- **Review first, once a day.** When a missed question is due, the day starts with one Review set of up to 10 questions, most overdue first. After that the plan moves on, even if more are due; Review shows what is still due, and you can do more by choice.
-- **Then a rotation.** A timed module of 22 questions in 35 minutes, with answers at the end, once three skills are started or the diagnostic is done, and again whenever a week or four practice sets have passed since the last one. After a drill, a mixed set: 12 questions from every skill you have started, most from skills in flight or moved on, timed at real-test pace, with answers at the end. Early on, once, the Desmos drill. Otherwise a drill: 10 questions on a skill in flight, with feedback and a hint after each.
+- **Review first, once a day.** When a missed question is due, the day starts with one Review set of up to 6 questions, most overdue first. After that the plan moves on, even if more are due; Review shows what is still due, and you can do more by choice.
+- **Then a rotation.** A timed module of 22 questions in 35 minutes, with answers at the end, once three skills are started (the diagnostic places you but does not count), and again whenever a week or four practice sets have passed since the last one. After a drill, a mixed set: 12 questions from every skill you have started, most from skills in flight or moved on, timed at real-test pace, with answers at the end. Early on, once, the Desmos drill. Otherwise a drill: 10 questions on a skill in flight, with feedback and a hint after each.
 
 ## The practice target {#mastery-gate}
 
@@ -151,7 +151,7 @@ yet.
 ## A week in the plan {#week}
 
 - Four or five sessions of 45 to 60 minutes.
-- Start the day with Review when something is due: one set of up to 10 missed questions, most overdue first. That is the day's Review; what is still due waits for tomorrow, or for a set you choose.
+- Start the day with Review when something is due: one set of up to 6 missed questions, most overdue first. That is the day's Review; what is still due waits for tomorrow, or for a set you choose.
 - Then follow the next step. It alternates drills on the skills in flight, one per track, with a mixed set after each drill.
 - At least once a week, a timed module of 22 questions in 35 minutes; the next step offers one after a week or four practice sets.
 - End with 5 to 10 minutes on your error log.

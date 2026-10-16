@@ -100,7 +100,7 @@ three skills that show up most are next week's targets.
 
 ## Using Liminal for this {#liminal}
 
-- Review has three lists: Due (the returns above, practiced in sets of up to ten, most overdue first), Missed (every missed answer, which is your error log) and Marked. Review is your plan's first step once a day; after that set the plan moves on, and anything still due waits or can be done by choice.
+- Review has three lists: Due (the returns above, practiced in sets of up to six, most overdue first), Missed (every missed answer, which is your error log) and Marked. Review is your plan's first step once a day; after that set the plan moves on, and anything still due waits or can be done by choice.
 - Mark a question for review during a set whenever you guessed or weren't sure, not only when you know you're wrong.
 - Progress shows your accuracy by skill, with Hard accuracy on its own. Use it to choose which skills to study next. It is practice feedback on Liminal's questions, not an SAT score.
 - In Review's Missed list, tag each miss with its reason (content, process, careless or time) and write the rule you will remember. The log then lives next to the question, and Review counts your misses by reason and filters by reason, section and skill, which is the weekly count above done for you.
