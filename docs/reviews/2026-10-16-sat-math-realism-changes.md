@@ -713,3 +713,159 @@ differ.
 **Source only, identical draws (110).** Every other template in the 12
 edited skill files: 36 Algebra, 33 Advanced Math, 33 Problem-Solving and Data
 Analysis, and 8 Geometry and Trigonometry.
+
+## Pass 3 fixes (after the cold content review)
+
+All 147 pass-2 templates were accepted by independent review and committed at
+3f8e23a. A cold content review then blind-solved 74 template draws, all
+correct, and found the issues below. This pass, made on 3f8e23a, fixes them.
+
+### Ambiguity and tier honesty
+
+- **greatest-value-from-center.** Two kinds of draw changed.
+  - **The problem.** "7 different whole numbers" did not say whether 0 is
+    allowed, and the key needed it.
+  - **The fix.**
+    - That set now says "different nonnegative integers". The basketball
+      scene says "a whole number of points, possibly 0".
+    - The explanation and steps name the least value used ("starting from 0,
+      the least value allowed").
+    - With repeats allowed and 5 values, starting the smaller values one too
+      high gives the same number as forcing all the values to differ. That
+      choice now gets one rationale naming both slips.
+- **linear-solution-parameter-condition (Hard).** Every draw now has a sign
+  decision to make.
+  - **Dropped:** the "solution is k times a / d more than a" form, two linear
+    steps and official Medium.
+  - **Kept:** the "which values of a" form, which needs the sign reversal.
+  - **Added:** a numeric form, "the greatest (or least) integer value of a",
+    where the reversal and the strict boundary both matter.
+  - **Forced:** when the inequality needs no reversal (u > 0), the equation
+    is divided by a negative number on the way to x (k < 0), so the
+    unnecessary reversal is always a live trap.
+  - Rubric unchanged (12). Algebra keeps 12 Hard templates.
+- **inequality-percent-of-total (Hard).**
+  - **Dropped:** the "which inequality represents this" form, a single
+    translation step and official Medium.
+  - **Remaining forms:** the least number to add (at least / more than) and
+    the greatest number that may be added (at most / less than). Each is
+    solved and rounded, multiple choice or numeric.
+
+### Text slips
+
+| Template | Fix |
+| --- | --- |
+| trig-ratio-from-ratio | The Pythagorean step is written in k throughout: "DF = √((37k)² − (12k)²) = 35k" |
+| trig-ratio-from-ratio, population-density, multi-unit-rate, trig-context-length | Numeric-entry traps no longer mention "an offered choice" or "the other choices" |
+| crew-rate-change | The step now introduces the time left on the plan before subtracting the time saved |
+| inequality-system-from-context | Each scene names what it counts (tickets, acres, balls, hours, crates) instead of "items" |
+| quadratic-solution-count | An equation already "= 0" gets a sign-reading trap and hint, not "move every term to one side" |
+| inequality-two-variable-context | The worker now rides in the elevator, so the worker's weight belongs in the model; the bound is "1,396 ÷ 27 ≈ 51.7", not an improper fraction |
+| expression-substitution | When the equation hides x ± 1/x, the hint asks for that rewriting instead of jumping to squaring or cubing |
+| population-density | Counts of residents or animals offer only whole-number wrong answers; two whole-number slips were added for that form |
+| rational-equation-solve | "5(x + 9) = x − 7", not "1(x − 7)" |
+
+The optional quadratic-must-be-true "so a > 0" trim was not made: its file is
+not otherwise edited in this pass.
+
+### Regression checks
+
+`test/sat-math-text.test.js` adds a check that numeric-entry items never
+mention offered choices: "offered", "answer choice(s)", "other choices" or
+"the choices".
+
+- **Known case:** altitude-hypotenuse-similarity, in a file this change did
+  not edit. It is listed by name, as before.
+- **Speed:** both scans now share one set of draws, about 9 seconds in all.
+
+### Desmos routes
+
+These checks used the desmos lane's verifiers, copied so they run against
+this tree. `content/desmos-routes.json` is unchanged in this pass.
+
+| Template | Seeds | Result |
+| --- | --- | --- |
+| linear-solution-parameter-condition | 400 | 400 ok, 163 of them the new integer form |
+| inequality-percent-of-total | 400 | 400 ok, 170 of them the greatest form |
+| quadratic-solution-count | 300 | 300 ok |
+| rational-equation-solve | 300 | 300 ok |
+| trig-ratio-from-ratio | 300 | 300 ok |
+| trig-context-length | 200 | 200 ok |
+
+**The verifier copy now checks two more forms.**
+- The integer form takes the nearest whole a beyond the edge, on the asked
+  side.
+- The greatest form takes the last whole number before the crossing, and
+  keeps a whole-number crossing only for "at most".
+
+**Route text the desmos lane may want to update** (it owns route text):
+- **linear-solution-parameter-condition:** the route still mentions the
+  dropped "x = 2a or x = a + 3" form. It could add that for the integer form
+  the answer is the nearest whole a past the edge, never the edge.
+- **inequality-percent-of-total:**
+  - The read text describes only the least form (round up). The greatest
+    form needs rounding down, with a whole-number crossing kept only for
+    "at most".
+  - The fails text's sentence about "which inequality" questions no longer
+    applies.
+
+### Pass 3 verification
+
+- **Families gate:** `node tools/check-families.js` passes 218/218 for SAT
+  Math (52 / 119 / 47):
+  - numeric share 30.7%;
+  - hub strategy by tier 28/27/28%;
+  - look-alike pairs by tier 26/26/24%.
+- **Deep pass:** `--reps 3000` passes 218/218.
+- **All other checks pass:**
+  - syntax, `validate-content --complete`, `audit-questions --admission`;
+  - passages, science, shapes, answer positions;
+  - `update-templates --check`, check-desmos;
+  - lesson modules, weekly, AP, daily reading, reading level;
+  - build and smoke-static;
+  - check-guides and check-learn;
+  - `node --test "test/**/*.test.js"` (980/980).
+- **`check-template-reviews`** fails only for the 81 stale templates below.
+
+### Pass 3 stale templates (81)
+
+These are every template in the 7 edited skill files:
+
+- linear-equations-in-one-variable;
+- linear-inequalities;
+- equivalent-expressions;
+- nonlinear-equations;
+- ratios-rates-and-units;
+- one-variable-data;
+- right-triangles-and-trigonometry.
+
+Each was compared on 600 draws with 3f8e23a, covering the displayed question,
+key, rationales and teaching text. `.scratch/lane/stale-templates-pass3.txt`
+in the templates worktree lists them all.
+
+**Shown changed (5):**
+
+| Template | Displayed questions that differ (of 600) |
+| --- | --- |
+| linear-solution-parameter-condition | 546 |
+| inequality-percent-of-total | 600 |
+| greatest-value-from-center | 244, plus teaching text in 356 more |
+| inequality-two-variable-context | 165, plus teaching text in 212 more |
+| population-density | 61, plus teaching text in 211 more |
+
+**Text only (8):** teaching text or rationales differ, but the questions are
+identical.
+
+| Template | Draws that differ (of 600) |
+| --- | --- |
+| trig-ratio-from-ratio | 600 |
+| trig-context-length | 600 |
+| expression-substitution | 403 |
+| inequality-system-from-context | 357 |
+| crew-rate-change | 303 |
+| multi-unit-rate | 110 |
+| quadratic-solution-count | 51 |
+| rational-equation-solve | 33 |
+
+**Identical draws (68):** every other template in those 7 files; only the
+source changed.
