@@ -119,11 +119,33 @@ test("links to expanded lessons and coursework keep to a three-part route", () =
     assert.ok(result.errors.some((error) => /must be (lessons|weeks)\.html#|must be learn:/.test(error.message)), target);
   });
   assert.equal(Learn.linkHref({ site: "lessons", route: "common-core-math/8/2-3" }), "lessons.html#common-core-math/8/2-3");
+  assert.equal(Learn.linkHref({ site: "practice", route: "desmos/sat-math" }), "practice.html#desmos/sat-math");
+  assert.equal(Learn.linkHref({ site: "practice", route: "practice/sat-math/linear-functions" }),
+    "practice.html#practice/sat-math/linear-functions");
+  assert.equal(Learn.linkHref({ site: "practice", route: "common-core-math/8/2-3" }), null);
+  assert.equal(Learn.linkHref({ site: "lessons", route: "desmos/sat-math" }), null);
   assert.equal(Learn.linkHref({ site: "weeks", route: "common-core-math/8/31" }), "weeks.html#common-core-math/8/31");
   // A tampered bundle cannot point anywhere else.
   assert.equal(Learn.linkHref({ site: "practice", route: "a/b/c" }), null);
   assert.equal(Learn.linkHref({ site: "lessons", route: "a/b\"><x/c" }), null);
   assert.equal(Learn.linkHref({ site: "weeks", route: "javascript:alert(1)" }), null);
+});
+
+test("links to practice name a skill's practice or the Desmos drill, nothing else", () => {
+  const { content, errors } = Learn.parseInline(
+    "[drill](practice.html#desmos/sat-math) and [practise](practice.html#practice/sat-math/linear-functions)",
+  );
+  assert.deepEqual(errors, []);
+  assert.deepEqual(content, [
+    { type: "link", site: "practice", route: "desmos/sat-math", content: ["drill"] },
+    " and ",
+    { type: "link", site: "practice", route: "practice/sat-math/linear-functions", content: ["practise"] },
+  ]);
+  ["practice.html#practice/sat-math", "practice.html#desmos/sat-math/extra", "practice.html#progress",
+    "practice.html#review/due", "practice.html"].forEach((target) => {
+    const result = Learn.parseInline(`[x](${target})`);
+    assert.ok(result.errors.some((error) => /must be practice\.html#practice\/<section>\/<skill> or practice\.html#desmos\/<section>|must be learn:/.test(error.message)), target);
+  });
 });
 
 test("facts, links and math prose inside a Try it are found like any other", () => {

@@ -137,6 +137,16 @@ test("links to expanded lessons and coursework must name published ones", () => 
   expectError(week, /linear-inequalities\.md:21: link weeks\.html#common-core-math\/7\/40: no such week of coursework/);
   const shape = run(edit(goodTree(), LINEAR, "lessons.html#common-core-math/8/2-3", "lessons.html#common-core-math/8"));
   expectError(shape, /linear-inequalities\.md:20: link "lessons\.html#common-core-math\/8" must be lessons\.html#<track>\/<grade>\/<lesson>/);
+  // Practice links name a catalog skill, or a section with Desmos routes.
+  assert.ok(routes.practice.has("practice/sat-math/linear-inequalities"));
+  assert.ok(routes.practice.has("desmos/sat-math"));
+  assert.ok(!routes.practice.has("desmos/sat-reading-writing"));
+  const drill = run(edit(goodTree(), LINEAR, "lessons.html#common-core-math/8/2-3", "practice.html#desmos/sat-math"));
+  assert.deepEqual(lines(drill), []);
+  const skill = run(edit(goodTree(), LINEAR, "lessons.html#common-core-math/8/2-3", "practice.html#practice/sat-math/quadratics"));
+  expectError(skill, /linear-inequalities\.md:20: link practice\.html#practice\/sat-math\/quadratics: no such skill/);
+  const section = run(edit(goodTree(), LINEAR, "lessons.html#common-core-math/8/2-3", "practice.html#desmos/sat-reading-writing"));
+  expectError(section, /link practice\.html#desmos\/sat-reading-writing: no such skill in content\/catalog\.json, or no Desmos routes/);
   // The catalogs are inputs, so the same page fails when a lesson is withdrawn.
   const withdrawn = run(goodTree(), { routes: { lessons: new Set(), weeks: routes.weeks } });
   expectError(withdrawn, /link lessons\.html#common-core-math\/8\/2-3: no such expanded lesson/);

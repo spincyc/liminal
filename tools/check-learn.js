@@ -17,8 +17,10 @@
 //     its answer
 //   - a "Before you start" section {#before-you-start} holds 2–5 Try it
 //     checks and links to the lessons or coursework that teach them
-//   - every lessons.html#… link names a published expanded lesson and every
-//     weeks.html#… link a week of published coursework
+//   - every lessons.html#… link names a published expanded lesson, every
+//     weeks.html#… link a week of published coursework, and every
+//     practice.html#… link a catalog skill's practice or a section with
+//     Desmos routes
 //   - every SAT template's (skill, subskill) resolves to such a section
 //   - every fact has a real YYYY-MM-DD "verified" date and an https source
 //   - the SAT Math plan page states the next step's routine bar and the
@@ -55,11 +57,16 @@ const GRADE_KEYS = ["k", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"
 const readJson = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
 
 // Every route a Learn page may link to on the rest of the site:
-// { lessons: Set("common-core-math/8/2-3"), weeks: Set("common-core-math/8/31") }.
+// { lessons: Set("common-core-math/8/2-3"), weeks: Set("common-core-math/8/31"),
+//   practice: Set("practice/sat-math/linear-functions", "desmos/sat-math") }.
 // Expanded lessons come from the lesson-module catalog and its modules;
 // weeks from the course files under content/weekly, with the named
-// high-school courses resolved through src/lib/weekly.js. Only content
-// that exists is listed, so a link to an unpublished grade fails.
+// high-school courses resolved through src/lib/weekly.js; practice from
+// the section catalog (practice.html#practice/<section>/<slug(skill)>)
+// and content/desmos-routes.json (practice.html#desmos/<section>, the
+// drill src/app/app.js opens). Only content that exists is listed, so a
+// link to an unpublished grade, an unknown skill or a section without
+// Desmos routes fails.
 function siteRoutes(root) {
   const base = root || ROOT;
   const lessonsRoot = path.join(base, "content", "lesson-modules");
@@ -87,7 +94,17 @@ function siteRoutes(root) {
         : path.join(weeklyRoot, track, `${course}.json`));
     });
   });
-  return { lessons, weeks };
+  const practice = new Set();
+  readJson(path.join(base, "content", "catalog.json")).sections.forEach((section) => {
+    section.domains.forEach((domain) => Object.keys(domain.skills).forEach((skill) => {
+      practice.add(`practice/${section.key}/${slug(skill)}`);
+    }));
+  });
+  const desmos = path.join(base, "content", "desmos-routes.json");
+  if (fs.existsSync(desmos)) {
+    Object.keys(readJson(desmos).sections || {}).forEach((key) => practice.add(`desmos/${key}`));
+  }
+  return { lessons, weeks, practice };
 }
 
 // The phrases the plan must contain, built from the live constants, so a
@@ -191,7 +208,8 @@ function checkPractice(page, add) {
 
 // Returns { errors: [{ file, line, message }], summary }. `today` is a
 // YYYY-MM-DD string; a fact cannot be verified after it.
-// `routes` ({ lessons, weeks } sets of routes) defaults to siteRoutes().
+// `routes` ({ lessons, weeks, practice } sets of routes) defaults to
+// siteRoutes().
 function checkLearn({ tree, catalog, templates, today, routes }) {
   if (!tree.exists) {
     return { errors: [{ file: "", line: 0, message: "the Learn directory does not exist" }], summary: null };
@@ -259,7 +277,7 @@ function checkLearn({ tree, catalog, templates, today, routes }) {
       add(page.file, section.heading.line,
         `{#${PREREQUISITES}} holds ${PREREQUISITE_CHECKS.min}–${PREREQUISITE_CHECKS.max} **Try it.** checks; it has ${count}`);
     }
-    if (!siteLinks(section.blocks).length) {
+    if (!siteLinks(section.blocks).some((link) => link.site === "lessons" || link.site === "weeks")) {
       add(page.file, section.heading.line,
         `{#${PREREQUISITES}} links to the lessons.html or weeks.html pages that teach its checks`);
     }
@@ -270,11 +288,14 @@ function checkLearn({ tree, catalog, templates, today, routes }) {
   Object.values(pages).forEach((page) => {
     (page.links || []).forEach((link) => {
       if (link.site === undefined) return;
-      const set = link.site === "lessons" ? known.lessons : known.weeks;
+      const set = known[link.site];
       if (set && set.has(link.route)) return;
-      add(page.file, link.line, link.site === "lessons"
-        ? `link lessons.html#${link.route}: no such expanded lesson in content/lesson-modules`
-        : `link weeks.html#${link.route}: no such week of coursework in content/weekly`);
+      const why = {
+        lessons: "no such expanded lesson in content/lesson-modules",
+        weeks: "no such week of coursework in content/weekly",
+        practice: "no such skill in content/catalog.json, or no Desmos routes for that section",
+      };
+      add(page.file, link.line, `link ${link.site}.html#${link.route}: ${why[link.site] || "unknown page"}`);
     });
   });
 
