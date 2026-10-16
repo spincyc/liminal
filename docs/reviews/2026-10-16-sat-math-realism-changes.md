@@ -467,3 +467,249 @@ the same list with old and new versions):
   quadratic-solution-count (graph both sides and count the intersections),
   rational-equation-solve, quadratic-context-model and
   trig-ratio-from-ratio (side lengths).
+
+## Pass 2 fixes (after independent review)
+
+Three independent reviewers reviewed the 146 stale templates at 2928051. Their
+evidence is in `2026-10-16-sat-math-review-algebra-geometry.md`,
+`2026-10-16-sat-math-review-advanced.md` and `2026-10-16-sat-math-review-data.md`.
+
+- **Blind solves:** 495, every one agreeing with the key.
+- **Accepted:** 141. **Rejected:** 5.
+- **Tiers:** two of the new Hard refills were judged one band too high.
+
+This pass, made on the integrated `feature/sat` at fa9b23c, fixes every
+rejection, makes the two refills honest, fixes every wording slip the
+reviewers listed, and adds regression checks. The author is the same
+templates lane, so the 147 templates listed below need renewed independent
+review.
+
+### The five rejections
+
+| Template | Defect | Fix |
+| --- | --- | --- |
+| inequality-percent-of-total | "1 of whom are seniors" when the starting count was 1 | The starting count is now drawn from 2 up; no scene can show a count of one |
+| line-intercept-conditions | "Assumes the two intercepts are equal" was offered in the b − a form, where it cannot apply | That slip is offered only in the a + b form. The b − a form offers the opposite-intercepts slip instead (a = −b, so b − a = 2b) with its own value and reason |
+| quadratic-context-model | The "count" rationale described the count at the other, rejected price; "price of a boxs" in the stem | The count is now N − D·x at the chosen price, with its arithmetic shown. The stem reads "Of the two prices that give this revenue". Each scene has its own "no sales" phrase |
+| data-change-statistics | The explanation said the greater-SD set had more values at the extremes and fewer at the center when the counts did not show it (about 17% of symmetric draws); the mirror form said "more at the high end" when the end counts were equal | Draws are kept only when the counts support the explanation's statement. That happens exactly when the explanation's comparison holds, and then 8 × outer + 2 × inner in step², and so the SD, is larger too. The explanation and steps now give both sets' counts. `test/sat-math-realism.test.js` rechecks the counts from the table |
+| density-cube-edge | kg/m³ draws printed rounded cubic-meter volumes inside exact equations ("0.008 × 1,000,000 = 7,992") | Volumes are printed exactly, to up to six decimal places ("0.007992 cubic meters"), and a regression test checks every printed equation |
+
+### Tier honesty for the two Hard refills
+
+- **tiered-rate-regime → Medium.** The reviewer's judgement is accepted: once
+  a strong student compares the total with the amount at the threshold, one
+  equation in one piece remains. The cyclist scene has no real threshold
+  decision at all. The rubric goes from 10 to 7 (2,1,1,2,0,0,1). The draws
+  are unchanged, so its Desmos route still holds.
+- **New Hard: line-intercept-parameter-range** (Linear functions /
+  intercepts, rubric 11 = 1,2,1,2,2,1,2). It keeps the Algebra domain at the
+  12 Hard templates `test/sat-freshness.test.js` needs.
+  - **Slope form.** A line with unknown slope m passes through a fixed point,
+    and its x-intercept must lie to one side of a value. The question asks
+    which set of slopes, or which slope, is possible.
+  - **Why it is Hard.** The parameter sits in a denominator, so clearing it
+    without regard to its sign reverses the inequality. That set is offered,
+    along with the boundary slope and slopes of the wrong sign.
+  - **Intercept form.** A line through a fixed point and (0, b); the question
+    asks for the greatest integer b that keeps the x-intercept beyond a
+    value. A case split on the sign of b − q decides it.
+  - **verify** bisects for each x-intercept and scans the parameter.
+  - Seeds 51–57 and 81–84 were read blind by the sub-lane, and 91–93 by the
+    lane author. All match the key.
+- **crew-rate-change → made genuinely Hard, kept Hard.** The Medium forms
+  were dropped: "how long after the change" and "the whole job" only divide
+  the work left by a new crew. The Medium combined-work-rate already asks a
+  harder version of that question. Two forms remain:
+  - "How many more must join to finish k units early": the work left over
+    the time left, less the crew already working. The reviewer judged this
+    form closest to Hard.
+  - "For how long did the original crew work before the others joined",
+    given that the job finished early: an equation with the joining time as
+    the unknown, n·d + (n + k)(T − d) = n·D. Offered slips:
+    - the time after the change;
+    - the saved time valued at the larger crew's rate;
+    - the planned finish used instead of the actual one;
+    - the whole job divided by the larger crew.
+  - The rubric goes from 9 to 11 (2,2,2,2,1,0,2). `verify` simulates every
+    whole joining time.
+  - Seeds 1–6 and 8 were read blind; all match the key.
+
+Hard templates per cell stay at 2 or more. Algebra has 12 Hard and the domain
+counts meet the freshness test.
+
+### Wording slips fixed
+
+The visible slips in the table below changed what students see. In each
+case only the named field changed, as the stale list below records.
+
+| Template | Fix |
+| --- | --- |
+| linear-percent-of-original-rate | "a 8%" now uses `S.article` |
+| linear-table-unknown-entry | Negative factors are in parentheses: "4 · (−3a)" |
+| inequality-two-variable-context | x and y are defined in the bound-form and pair-form explanations (the bound form was not split) |
+| standard-form-sign-quadrants | "The x-coordinate of the x-intercept" and "the y-coordinate of the y-intercept", in choices, steps and rationales |
+| linear-expression-from-equation, line-intercept-read, line-intercept-conditions, rational-equation-solve | No "x = −17, so x = −17" clause when the coefficient is 1 |
+| quadratic-must-be-true | The two dead fact entries were removed, which changes which fact is drawn (302/600). The doubled "so a > 0" was trimmed |
+| polynomial-multiply, quadratic-factor-match, quadratic-solution-count, rational-equation-solve, rational-expression-combine | A coefficient of one is no longer written out: "−k", "x² + x − 12", "x/(x + 5)" |
+| exponential-table-model | "f(x) = 4^x", not "1(4)^x", in choices and teaching text |
+| exponential-rewrite | "an 87.5% decrease" and two more percent sites now use `S.article` |
+| nonlinear-formula-rearrange | "the given formula" (Math shows the formula above the stem) |
+| absolute-value-cases | The slip rationale says the candidate passes the sign check, not the equation |
+| absolute-value-equation, exponential-from-words | Exact fractions, or "about", instead of cut-off decimals |
+| crew-rate-change | `plural()` for every count of time ("1 hour"), and the hint no longer names the method; the punctuation and shrinking-crew slips went with the dropped forms |
+| population-density | `plural()` for "1 kilometer" and "1 square kilometer" |
+| average-rate-required-leg | The trap's distance-weighted slip prints exactly or as "about 59.67" |
+| stratified-sample-total | The rationale describes the computation: each group's sample count scaled by the other group's ratio of group size to sample size |
+| weighted-mean-groups | The trap prints "about 4.33" |
+| uneven-table-growth | The trap prints "about …" instead of a cut-off decimal |
+| fit-model-choice | Ratios print exactly to three decimals or as "about 0.889" |
+| scatterplot-fit-reading | No "each square is 1 unit" contradiction when gridlines are 1 apart |
+| combined-work-rate | No "18 = 18 minutes" when the fraction is a whole number |
+| histogram-class-intervals | "the mean of values number 14 and 15" |
+| ratio-after-change | "9k and k", and no factor of 1 in the cross-multiplied equation |
+| trig-ratio-from-ratio | The add or subtract slip names the sides it uses ("Finds XZ as XY − YZ") and is offered only when that side is the one asked |
+
+### Regression checks
+
+- **`test/sat-math-text.test.js`** scans 400 draws of every SAT Math template.
+  It checks every field a student can see, rationales and teaching text
+  included. It looks for:
+  - a count of one with a plural noun;
+  - "1 of whom are";
+  - "a" before a vowel-sound number, or "an" before a consonant-sound one;
+  - a written-out coefficient of one.
+
+  Five pre-existing hits sit in files this change did not edit. They are
+  listed by name in the test, because fixing them would put 42 more templates
+  up for review:
+
+  | Template | File | Slip |
+  | --- | --- | --- |
+  | frequency-distribution-probability | probability | "the 1 students" |
+  | inscribed-composite-solids | area-and-volume | "a 8-by-8 patch" |
+  | volume-unit-conversion | area-and-volume | "1 liters" |
+  | regular-polygon-angle-ratio | lines-angles-and-triangles | "1u" |
+  | system-word-totals | systems-of-two-linear-equations | "1b = 23" |
+
+  Fix each one, and remove it from the list, the next time its file is
+  edited.
+- **`test/sat-math-realism.test.js`** gains the data-change-statistics and
+  density-cube-edge checks described above.
+
+### Desmos routes
+
+These checks used the desmos lane's verifiers, copied so they run against
+this tree.
+
+| Template | Seeds | Result |
+| --- | --- | --- |
+| quadratic-context-model | 200 | 200 ok |
+| inequality-percent-of-total | 400 | 158 ok, 242 out of the route's scope |
+| standard-form-sign-quadrants | 400 | 400 ok |
+| trig-ratio-from-ratio | 200 | 200 ok |
+| polynomial-multiply | 200 | 156 ok, 44 out of scope |
+| quadratic-solution-count | 200 | 200 ok |
+| rational-equation-solve | 200 | 200 ok |
+| tiered-rate-regime | 200 | 200 ok |
+| exponential-table-model | 40 | 40 ok (that verifier's fixed count) |
+| average-rate-required-leg, uneven-table-growth, fit-model-choice | 200 | 200 ok each |
+
+**standard-form-sign-quadrants** needed only the verifier's expected wording
+updated for "x-coordinate of the x-intercept". The route text names no
+wording, so the route is unchanged.
+
+**`content/desmos-routes.json`:** one change. The tiered-rate-regime entry
+moved before linear-solution-parameter-condition, to follow the templates'
+order after the re-tier; `check-desmos` passes.
+
+No route text changed, and line-intercept-conditions has no route.
+
+### Pass 2 matrix
+
+218 templates (52 / 119 / 47). The pass-1 matrix changes in two rows:
+
+| Skill | Pass 1 (E / M / H) | Pass 2 (E / M / H) |
+| --- | --- | --- |
+| Linear equations in one variable | 3 / 5 / 3 | 3 / 6 / 2 |
+| Linear functions | 3 / 6 / 2 | 3 / 6 / 3 |
+
+Domain Hard counts are Algebra 12, Advanced Math 14, Problem-Solving and Data
+Analysis 13, and Geometry and Trigonometry 8.
+
+### Pass 2 verification
+
+- **Families gate:** `node tools/check-families.js` passes 218/218 for SAT Math:
+  - numeric share 30.7%;
+  - hub strategy by tier 28/27/28%;
+  - look-alike pairs by tier 26/26/24%.
+- **Deep pass:** `--reps 3000` passes 218/218.
+- **All other checks pass:**
+  - syntax, `validate-content --complete`, `audit-questions --admission`;
+  - passages, science, shapes, answer positions;
+  - `update-templates --check`, check-desmos;
+  - lesson modules, weekly, AP, daily reading, reading level;
+  - build and smoke-static (218 bundles);
+  - check-guides and check-learn (381 templates resolve);
+  - `node --test "test/**/*.test.js"` (972/972).
+- **`check-template-reviews`** fails only for the stale templates below.
+
+### Pass 2 stale templates (147)
+
+Every SAT Math template whose registry fingerprint differs from fa9b23c. Each
+was classified by comparing 600 draws (300 integer and 300 runtime-shaped
+seeds) with fa9b23c's source. The comparison covered:
+
+- the displayed question (stem, stimulus, figure, choices) and the key;
+- the rationales;
+- the explanation, steps, principles, trap and hint.
+
+`.scratch/lane/stale-templates-pass2.txt` in the templates worktree lists each
+template with its versions.
+
+**Draws changed (37).** Counts are out of 600 draws. "Shown" means the
+displayed question differs; "text" means only the teaching text or rationales
+differ.
+
+| Template | Change |
+| --- | --- |
+| line-intercept-parameter-range | new |
+| crew-rate-change | shown 600 |
+| standard-form-sign-quadrants | shown 290, text 310 more |
+| inequality-percent-of-total | shown 327 |
+| nonlinear-formula-rearrange | shown 314 |
+| quadratic-must-be-true | shown 302, text 118 more |
+| quadratic-context-model | shown 103, text 15 more |
+| data-change-statistics | shown 26, text 114 more |
+| exponential-table-model | shown 23 |
+| line-intercept-conditions | shown 11, text 12 more |
+| tiered-rate-regime | tier only, identical draws (Hard → Medium) |
+| inequality-two-variable-context | text 354 |
+| density-cube-edge | text 317 |
+| stratified-sample-total | text 289 |
+| fit-model-choice | text 278 |
+| linear-table-unknown-entry | text 229 |
+| ratio-after-change | text 205 |
+| average-rate-required-leg | text 161 |
+| histogram-class-intervals | text 130 |
+| combined-work-rate | text 86 |
+| quadratic-factor-match | text 81 |
+| trig-ratio-from-ratio | text 75 |
+| scatterplot-fit-reading | text 59 |
+| linear-expression-from-equation | text 54 |
+| absolute-value-cases | text 50 |
+| rational-equation-solve | text 37 |
+| absolute-value-equation | text 24 |
+| weighted-mean-groups | text 22 |
+| rational-expression-combine | text 21 |
+| line-intercept-read | text 14 |
+| exponential-from-words | text 14 |
+| uneven-table-growth | text 11 |
+| polynomial-multiply | text 10 |
+| exponential-rewrite | text 8 |
+| population-density | text 4 |
+| quadratic-solution-count | text 4 |
+| linear-percent-of-original-rate | text 2 |
+
+**Source only, identical draws (110).** Every other template in the 12
+edited skill files: 36 Algebra, 33 Advanced Math, 33 Problem-Solving and Data
+Analysis, and 8 Geometry and Trigonometry.
