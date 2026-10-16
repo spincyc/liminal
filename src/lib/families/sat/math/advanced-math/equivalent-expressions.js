@@ -318,7 +318,7 @@
       stimulus: null,
       explanation:
         `${expr} = ${bin(m, p)}${bin(1, q)}: the product of the first terms is ${m}x², the product of the constants is ` +
-        `${num(p)} · ${paren(q)} = ${num(p * q)}, and the outer and inner products add to ${num(m * q)}x ${signed(p)}x = ${lin(coefficients[1], 0)}.`,
+        `${num(p)} · ${paren(q)} = ${num(p * q)}, and the outer and inner products add to ${lin(m * q, 0)} ${p < 0 ? MINUS : "+"} ${lin(Math.abs(p), 0)} = ${lin(coefficients[1], 0)}.`,
       principles: ["(mx + p)(x + q) = mx² + (mq + p)x + pq: the x-term comes from the outer and inner products."],
       hint: "Expand a choice in your head: does it give the x-term as well as the first and last terms?",
     };
@@ -337,7 +337,7 @@
         wrong: t.shuffle(offers).map(([[mm, k], why]) => [lin(mm, k), why]),
         steps: [
           `Look for (mx + p)(x + q) with m · 1 = ${m} and pq = ${num(p * q)} whose outer and inner products add to ${lin(coefficients[1], 0)}.`,
-          `${bin(m, p)}${bin(1, q)} works: ${num(m * q)}x ${signed(p)}x = ${lin(coefficients[1], 0)}.`,
+          `${bin(m, p)}${bin(1, q)} works: ${lin(m * q, 0)} ${p < 0 ? MINUS : "+"} ${lin(Math.abs(p), 0)} = ${lin(coefficients[1], 0)}.`,
           `So ${lin(key[0], key[1])} is a factor.`,
         ],
         trap: `The constants must sit in the right factors: swapping ${num(p)} and ${num(q)} keeps the constant term but changes the x-term.`,
@@ -359,7 +359,7 @@
       wrong: t.shuffle(offers).map(([pair, why]) => [show(pair), why]),
       steps: [
         `The first terms multiply to ${m}x² and the constants to ${num(p * q)}.`,
-        `The x-term is the sum of the outer and inner products: ${num(m)}(${num(q)})x + ${paren(p)}x = ${lin(coefficients[1], 0)}.`,
+        `The x-term is the sum of the outer and inner products: ${num(m)}(${num(q)})x ${p < 0 ? MINUS : "+"} ${lin(Math.abs(p), 0)} = ${lin(coefficients[1], 0)}.`,
         `So ${expr} = ${show(key)}.`,
       ],
       trap: "Several products give the right first and last terms; only one gives the right x-term.",
@@ -431,7 +431,7 @@
       const original = (x) => a / (x + p) + b;
       const offers = [
         { text: over(`${a + b}`, single), fn: (x) => (a + b) / (x + p), why: `Adds ${b} to the numerator only, leaving the denominator as it is.` },
-        { text: over(lin(b, a), single), fn: (x) => (b * x + a) / (x + p), why: `Rewrites ${b} as ${b}x/${single}, multiplying ${b} by x but not by the whole denominator.` },
+        { text: over(lin(b, a), single), fn: (x) => (b * x + a) / (x + p), why: `Rewrites ${num(b)} as ${lin(b, 0)}/${single}, multiplying ${num(b)} by x but not by the whole denominator.` },
         { text: over(`${a + b}`, bin(1, p + 1)), fn: (x) => (a + b) / (x + p + 1), why: `Treats ${b} as ${b}/1 and adds numerators and denominators separately.` },
       ];
       return {
@@ -467,7 +467,9 @@
       offers.push({
         text: over(lin(A, a * q + b * p), den),
         fn: (x) => (A * x + a * q + b * p) / denProduct(x),
-        why: `Distributes the minus sign to ${b}x but not to the constant ${num(b * p)} in ${b}${bin(1, p)} = ${lin(b, b * p)}.`,
+        why: b === 1
+          ? `Distributes the minus sign to x but not to the constant ${num(p)} in ${lin(1, p)}.`
+          : `Distributes the minus sign to ${lin(b, 0)} but not to the constant ${num(b * p)} in ${b}${bin(1, p)} = ${lin(b, b * p)}.`,
       });
     }
     offers.push(
@@ -1478,9 +1480,9 @@
     // out = k√(A·B), solved for A.
     (t) => {
       const scene = t.pick([
-        { out: "v", A: "h", B: "g", text: "The speed v of water leaving a tank through a small hole at depth h is modeled by the formula below, where g is a constant." },
-        { out: "r", A: "A", B: "n", text: "A botanist models the radius r of a flower bed that holds n plants, each needing area A, with the formula below." },
-        { out: "T", A: "L", B: "c", text: "A lab models the time T for a signal to cross a cable of length L with the formula below, where c is a constant for the cable." },
+        { out: "v", A: "h", B: "g", text: "The speed v of water leaving a tank through a small hole at depth h is modeled by the given formula, where g is a constant." },
+        { out: "r", A: "A", B: "n", text: "A botanist models the radius r of a flower bed that holds n plants, each needing area A, with the given formula." },
+        { out: "T", A: "L", B: "c", text: "A lab models the time T for a signal to cross a cable of length L with the given formula, where c is a constant for the cable." },
       ]);
       const k = t.pick([2, 3, 4, 5, 6]);
       const swap = t.chance(0.5);
@@ -1504,9 +1506,9 @@
     // out = kP/d², solved for d (d > 0).
     (t) => {
       const scene = t.pick([
-        { out: "I", A: "P", B: "d", text: "The brightness I of light from a lamp of power P, measured d meters away, is modeled by the formula below." },
+        { out: "I", A: "P", B: "d", text: "The brightness I of light from a lamp of power P, measured d meters away, is modeled by the given formula." },
         { out: "F", A: "q", B: "r", text: "A physics class models the force F between two charged spheres a distance r apart, where q depends on the charges." },
-        { out: "S", A: "W", B: "x", text: "A sound engineer models the loudness S at a distance x from a speaker of power W with the formula below." },
+        { out: "S", A: "W", B: "x", text: "A sound engineer models the loudness S at a distance x from a speaker of power W with the given formula." },
       ]);
       const k = t.pick([2, 3, 4, 5, 6, 8, 10]);
       const { out, A, B } = scene;
@@ -1527,9 +1529,9 @@
     // 1/out = k/A + 1/B, solved for B.
     (t) => {
       const scene = t.pick([
-        { out: "R", A: "a", B: "b", text: "Two resistors are connected side by side. Their combined resistance R, in ohms, satisfies the equation below, where a and b are the two resistances in ohms." },
-        { out: "f", A: "p", B: "q", text: "For a lens, the focal length f, the object distance p, and the image distance q satisfy the equation below." },
-        { out: "T", A: "m", B: "n", text: "Two pumps working together fill a tank in T hours. Their separate filling times m and n, in hours, satisfy the equation below." },
+        { out: "R", A: "a", B: "b", text: "Two resistors are connected side by side. Their combined resistance R, in ohms, satisfies the given equation, where a and b are the two resistances in ohms." },
+        { out: "f", A: "p", B: "q", text: "For a lens, the focal length f, the object distance p, and the image distance q satisfy the given equation." },
+        { out: "T", A: "m", B: "n", text: "Two pumps working together fill a tank in T hours. Their separate filling times m and n, in hours, satisfy the given equation." },
       ]);
       // These scenes describe two components, so each reciprocal appears once.
       const k = 1;
@@ -1553,9 +1555,9 @@
     // out = k√(A/B), solved for A.
     (t) => {
       const scene = t.pick([
-        { out: "T", A: "L", B: "g", text: "The time T, in seconds, for one swing of a pendulum of length L is modeled by the formula below, where g is a constant." },
-        { out: "v", A: "F", B: "m", text: "The speed v of a wave along a rope under tension F is modeled by the formula below, where m depends on the rope." },
-        { out: "t", A: "h", B: "a", text: "The time t for a ball to roll down a ramp of height h is modeled by the formula below, where a depends on the ramp." },
+        { out: "T", A: "L", B: "g", text: "The time T, in seconds, for one swing of a pendulum of length L is modeled by the given formula, where g is a constant." },
+        { out: "v", A: "F", B: "m", text: "The speed v of a wave along a rope under tension F is modeled by the given formula, where m depends on the rope." },
+        { out: "t", A: "h", B: "a", text: "The time t for a ball to roll down a ramp of height h is modeled by the given formula, where a depends on the ramp." },
       ]);
       const k = t.pick([2, 3, 4, 5, 6]);
       const { out, A, B } = scene;
@@ -2247,8 +2249,8 @@
     const equation = `${left} = ${right}`;
     const wrong = [
       [B - p, `Takes the x-coefficient to be k ${signed(p)}, leaving out the factor ${a} on k.`],
-      [-k, `Solves ${num(p)}k = ${num(C)} with the sign reversed.`],
-      [B / a, `Divides the x-coefficient ${num(B)} by ${a}, ignoring the ${num(p)}x that the product also contributes.`],
+      [-k, `Solves ${lin(p, 0, "k")} = ${num(C)} with the sign reversed.`],
+      [B / a, `Divides the x-coefficient ${num(B)} by ${a}, ignoring the ${lin(p, 0)} that the product also contributes.`],
       [C, `Takes the constant term ${num(C)} itself as k, ignoring the factor ${num(p)}.`],
     ].filter(([value]) => Number.isFinite(value) && Math.abs(value) <= 99);
     if (wrong.some(([value]) => approx(value, k))) return null;
@@ -2257,7 +2259,7 @@
     if (!numeric && shown.length < 3) return null;
     const steps = [
       `Expand the left side: (${lin(a, p)})(x + k) = ${a}x² + (${a}k ${signed(p)})x ${p < 0 ? MINUS : "+"} ${Math.abs(p) === 1 ? "" : Math.abs(p)}k.`,
-      `Match the constant terms: ${num(p)}k = ${num(C)}, so k = ${num(k)}.`,
+      `Match the constant terms: ${lin(p, 0, "k")} = ${num(C)}, so k = ${num(k)}.`,
       `Check the x-terms: ${a}(${num(k)}) ${signed(p)} = ${num(B)}, which matches.`,
     ];
     return {

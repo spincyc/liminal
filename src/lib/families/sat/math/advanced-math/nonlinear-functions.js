@@ -723,27 +723,27 @@
     {
       intro: (P, N) => `A community theater sells tickets to its shows for $${P} each and sells ${S.grouped(N)} tickets per show.`,
       drop: (D) => `for each $1 increase in the ticket price, it will sell ${D} fewer tickets per show`,
-      who: "theater", price: "ticket price", items: "tickets", per: "per show",
+      who: "theater", price: "ticket price", items: "tickets", per: "per show", none: "no tickets would be sold",
     },
     {
       intro: (P, N) => `A bakery sells boxes of muffins for $${P} each and sells ${S.grouped(N)} boxes per week.`,
       drop: (D) => `for each $1 increase in the price of a box, it will sell ${D} fewer boxes per week`,
-      who: "bakery", price: "price of a box", items: "boxes", per: "per week",
+      who: "bakery", price: "price of a box", items: "boxes", per: "per week", none: "no boxes would be sold",
     },
     {
       intro: (P, N) => `A climbing gym charges $${P} per month for a membership and has ${S.grouped(N)} members.`,
       drop: (D) => `for each $1 increase in the monthly fee, it will have ${D} fewer members`,
-      who: "gym", price: "monthly fee", items: "members", per: "per month",
+      who: "gym", price: "monthly fee", items: "members", per: "per month", none: "the gym would have no members",
     },
     {
       intro: (P, N) => `A farm stand sells baskets of peaches for $${P} each and sells ${S.grouped(N)} baskets per weekend.`,
       drop: (D) => `for each $1 increase in the price of a basket, it will sell ${D} fewer baskets per weekend`,
-      who: "farm stand", price: "price of a basket", items: "baskets", per: "per weekend",
+      who: "farm stand", price: "price of a basket", items: "baskets", per: "per weekend", none: "no baskets would be sold",
     },
     {
       intro: (P, N) => `A kayak rental company charges $${P} per rental and has ${S.grouped(N)} rentals per month.`,
       drop: (D) => `for each $1 increase in the rental price, it will have ${D} fewer rentals per month`,
-      who: "company", price: "rental price", items: "rentals", per: "per month",
+      who: "company", price: "rental price", items: "rentals", per: "per month", none: "there would be no rentals",
     },
   ];
 
@@ -781,8 +781,8 @@
       wrong = [
         [xs, `Gives the number of $1 increases, x = ${xs}, instead of the ${scene.price}.`],
         [P - xs, `Makes a sign slip in finding the vertex, x = ${MINUS}${xs}, and lowers the price instead.`],
-        [P + Z, `Gives the price at which no ${scene.items} would be sold, where the revenue is 0.`],
-        [sold, `Gives the number of ${scene.items}, ${sold}, at the best price instead of the price.`],
+        [P + Z, `Gives the price at which ${scene.none}, where the revenue is 0.`],
+        [sold, `Gives the number of ${scene.items}, ${S.grouped(sold)}, at the best price instead of the price.`],
         [maxR, "Gives the greatest revenue instead of the price that produces it."],
       ];
       steps = [vertexStep, `The ${scene.price} is ${P} + ${xs} = ${best} dollars.`];
@@ -803,15 +803,15 @@
       const x2 = 2 * xs - x1;
       const target = R(x1);
       stem =
-        `${lead} The ${scene.who} wants an estimated revenue of $${S.grouped(target)} ${scene.per}. Of the ` +
-        `${scene.price}s that give this revenue, it will choose the one with more ${scene.items}. Based on the model, what ` +
+        `${lead} The ${scene.who} wants an estimated revenue of $${S.grouped(target)} ${scene.per}. Of the two ` +
+        `prices that give this revenue, it will choose the one with more ${scene.items}. Based on the model, what ` +
         `${scene.price}, in dollars, will it choose?`;
       key = P + x1;
       wrong = [
         [P + x2, `Chooses the higher ${scene.price}, which gives the same revenue with fewer ${scene.items}.`],
         [x1, `Gives the number of $1 increases, x = ${x1}, instead of the ${scene.price}.`],
         [x2, `Gives the larger number of $1 increases, x = ${x2}, instead of a price.`],
-        [D * (P + x1), `Gives the number of ${scene.items} at that price instead of the price.`],
+        [N - D * x1, `Gives the number of ${scene.items}, ${S.grouped(N)} ${MINUS} ${D} · ${x1} = ${S.grouped(N - D * x1)}, at that price instead of the price.`],
       ];
       steps = [
         `Set R(x) = ${S.grouped(target)}: ${rhs} = ${S.grouped(target)}.`,
@@ -992,6 +992,13 @@
     },
   };
 
+  // A rate split into n equal parts, as the test would print it: "12.5%",
+  // or "about 16.67%" when the share does not terminate.
+  const splitShare = (rate, n) => {
+    const share = rate / n;
+    return Math.abs(share * 100 - Math.round(share * 100)) < 1e-9 ? `${num(share)}%` : `about ${num(Math.round(share * 100) / 100)}%`;
+  };
+
   /* ================================================= exponential-table-model */
 
   // Bases as exact fractions top/bottom, with the text a student sees.
@@ -1043,7 +1050,10 @@
     const decimalStyle = base.text.includes(".");
     const stepText = step === 1 ? base.text : fractionText(stepTop, stepBottom, decimalStyle);
     const inverse = fractionText(base.bottom, base.top, decimalStyle);
-    const form = (coef, baseText) => `f(x) = ${commas(coef)}(${baseText})^x`;
+    // "f(x) = 3(4)^x"; a coefficient of 1 is not written: "f(x) = 4^x", "f(x) = (1/2)^x".
+    const form = (coef, baseText) => (coef === 1
+      ? `f(x) = ${/^\d+$/.test(baseText) ? baseText : `(${baseText})`}^x`
+      : `f(x) = ${commas(coef)}(${baseText})^x`);
     const intro = "The table shows values of the exponential function f for selected values of x.";
     const backSteps = x0 > 0
       ? `Work back to x = 0: f(0) = ${commas(values[0])} ÷ ${x0 === 1 ? base.text : `(${base.text})${sup(x0)}`} = ${commas(a)}.`
@@ -1074,8 +1084,8 @@
         stem: `${intro} Which equation defines f?`,
         correct: keyText,
         wrong: offers.map(([text, why]) => [text, why]),
-        explanation: `${steps.join(" ")} So f(x) = ${commas(a)}(${base.text})^x.`,
-        steps: [...steps, `So f(x) = ${commas(a)}(${base.text})^x.`],
+        explanation: `${steps.join(" ")} So ${form(a, base.text)}.`,
+        steps: [...steps, `So ${form(a, base.text)}.`],
         principles: ["An exponential function multiplies by the same factor for each increase of 1 in x; its coefficient is f(0), which may lie outside the table."],
         trap: `${commas(values[0])} is f(${num(x0)}), not f(0), and the base is the factor for a change of 1 in x.`,
         hint: "Compare consecutive outputs by dividing. What would f be at x = 0?",
@@ -1083,7 +1093,7 @@
           const rows = readTable(content);
           const fits = (fn) => rows.every(([x, y]) => approx(fn(x), y));
           // The key is rebuilt from its displayed coefficient and base.
-          const [, coef, baseShown] = keyText.match(/^f\(x\) = ([\d,]+)\(([\d./]+)\)\^x$/);
+          const [, coef = "1", baseShown] = keyText.match(/^f\(x\) = (?:([\d,]+)\(|\()?([\d./]+)\)?\^x$/);
           const [top, bottom = "1"] = baseShown.split("/");
           const shown = (x) => Number(coef.replace(/,/g, "")) * (Number(top) / Number(bottom)) ** x;
           return fits(shown) && offers.every(([, , fn]) => !fits(fn));
@@ -1528,7 +1538,7 @@
         explanation:
           `A change of ${count(P)} multiplies the quantity by ${b.text}^(${exponentNote}) = ${F.text}` +
           `${n / g === 1 ? "" : `, because ${b.text} = ${factorPower(s, 1).text}^${n / g}`}. ` +
-          `A factor of ${F.text} is a ${F.change}% ${word}.`,
+          `A factor of ${F.text} is ${S.article(F.change)} ${F.change}% ${word}.`,
         steps: [
           `Over ${count(n)} the quantity is multiplied by ${b.text}.`,
           `Write ${b.text} as a power of the factor for ${count(g)}: ${b.text} = ${factorPower(s, 1).text}^${n / g}.`,
@@ -1596,7 +1606,7 @@
           wrong,
           explanation:
             `${b.text} = ${one.text}^${n}, so (${b.text})^(t/${n}) = (${one.text}^${n})^(t/${n}) = ${one.text}^t. ` +
-            `The equation is f(t) = ${commas(A)}(${one.text})^t, which shows a ${one.change}% ${one.up ? "increase" : "decrease"} each year.`,
+            `The equation is f(t) = ${commas(A)}(${one.text})^t, which shows ${S.article(one.change)} ${one.change}% ${one.up ? "increase" : "decrease"} each year.`,
           steps: [
             `Recognize ${b.text} as a perfect ${n === 2 ? "square" : n === 3 ? "cube" : "fourth power"}: ${b.text} = ${one.text}^${n}.`,
             `Apply the power of a power: (${one.text}^${n})^(t/${n}) = ${one.text}^(${n} · t/${n}) = ${one.text}^t.`,
@@ -1705,12 +1715,12 @@
         wrong,
         explanation:
           `(${b.text})^(${MINUS}t/${n}) = [(${b.text})^(${MINUS}1/${n})]^t. Since ${b.text} = ${inv.text}^${n}, ` +
-          `(${b.text})^(${MINUS}1/${n}) = 1/${inv.text} = ${perYear.text}. The yearly factor ${perYear.text} is a ${perYear.change}% ${perYear.up ? "increase" : "decrease"}.`,
+          `(${b.text})^(${MINUS}1/${n}) = 1/${inv.text} = ${perYear.text}. The yearly factor ${perYear.text} is ${S.article(perYear.change)} ${perYear.change}% ${perYear.up ? "increase" : "decrease"}.`,
         steps: [
           `Split the exponent: (${b.text})^(${MINUS}t/${n}) = [(${b.text})^(${MINUS}1/${n})]^t.`,
           `Take the root: (${b.text})^(1/${n}) = ${inv.text}.`,
           `The negative exponent takes the reciprocal: 1/${inv.text} = ${perYear.text}.`,
-          `A factor of ${perYear.text} per year is a ${perYear.change}% ${perYear.up ? "increase" : "decrease"} each year.`,
+          `A factor of ${perYear.text} per year is ${S.article(perYear.change)} ${perYear.change}% ${perYear.up ? "increase" : "decrease"} each year.`,
         ],
         principles: ["b^(−t) = (1/b)^t, so a base below 1 with a negative exponent describes growth.", "Percent changes are not symmetric: undoing a 20% decrease takes a 25% increase."],
         trap: `A base ${b.up ? "above" : "below"} 1 suggests ${b.up ? "growth" : "decay"}, but the negative exponent reverses it.`,
@@ -2500,8 +2510,8 @@
     // units) and the exponent (t divided by n, or t multiplied by n).
     const wrong = [
       [form(B, `(${n}t)`), `Multiplies t by ${n}, as if the ${rate}% change happened ${n} times each ${scene.unit} instead of once every ${n} ${units}.`],
-      [form(Bsplit, `(t/${n})`), `Splits the ${rate}% into ${num(rate / n)}% per ${scene.unit} and also divides t by ${n}, dividing by ${n} twice.`],
-      [form(Bsplit, `(${n}t)`), `Splits the ${rate}% into ${num(rate / n)}% per ${scene.unit} and then applies it ${n} times each ${scene.unit}.`],
+      [form(Bsplit, `(t/${n})`), `Splits the ${rate}% into ${splitShare(rate, n)} per ${scene.unit} and also divides t by ${n}, dividing by ${n} twice.`],
+      [form(Bsplit, `(${n}t)`), `Splits the ${rate}% into ${splitShare(rate, n)} per ${scene.unit} and then applies it ${n} times each ${scene.unit}.`],
     ];
     const value = (text) => {
       const [, coef, base, top, times] = text.match(/^f\(t\) = ([\d,]+)\(([\d.]+)\)\^\((?:t\/(\d+)|(\d+)t)\)$/);
@@ -2527,7 +2537,7 @@
         "A change by a fixed percent per period multiplies by the same factor each period, which makes the model exponential.",
         "When the period is n units of t, the exponent is t/n.",
       ],
-      trap: `The ${rate}% belongs to every ${n} ${units}; splitting it into ${num(rate / n)}% per ${scene.unit} treats a compounding change as proportional.`,
+      trap: `The ${rate}% belongs to every ${n} ${units}; splitting it into ${splitShare(rate, n)} per ${scene.unit} treats a compounding change as proportional.`,
       hint: `How many ${n}-${scene.unit} periods fit into t ${units}?`,
       verify: () => {
         const model = value(key);
@@ -2553,7 +2563,7 @@
       [Math.round(A * factor), `Applies the ${rate}% change only once.`],
       [Math.round(A * factor ** (k + 1)), `Applies the change ${k + 1} times; ${k * n} ${units} contain ${k} periods of ${n} ${units}.`],
       [Math.round(A * factor ** (k * n)), `Applies the ${rate}% change every ${scene.unit} instead of every ${n} ${units}.`],
-      [Math.round(A * ((scene.up ? 100 + rate / n : 100 - rate / n) / 100) ** (k * n)), `Splits the ${rate}% into ${num(rate / n)}% per ${scene.unit} and applies that every ${scene.unit}.`],
+      [Math.round(A * ((scene.up ? 100 + rate / n : 100 - rate / n) / 100) ** (k * n)), `Splits the ${rate}% into ${splitShare(rate, n)} per ${scene.unit} and applies that every ${scene.unit}.`],
     ].filter(([v]) => v > 0 && v <= 999999 && Number.isFinite(v));
     const wrong = spreadAround(t, value, pool);
     return {
@@ -2920,16 +2930,6 @@
   // constants the description states directly.
   const PARABOLA_FACTS = [
     {
-      words: "opens downward and has two x-intercepts",
-      holds: (a, h, k) => a < 0 && k > 0,
-      given: ["a", "disc"],
-      why: {
-        a: "It opens downward, so a < 0.",
-        k: "A parabola that opens downward crosses the x-axis twice only when its highest point, the vertex, is above the x-axis, so k > 0.",
-        disc: "Two x-intercepts means two real zeros, so b² − 4ac > 0.",
-      },
-    },
-    {
       words: "opens upward and has no x-intercepts",
       holds: (a, h, k) => a > 0 && k > 0,
       given: ["a", "disc"],
@@ -2997,19 +2997,6 @@
         c: "The zeros have opposite signs, so their product c/a is negative; with a < 0, that makes c > 0.",
         k: "A downward-opening parabola with two x-intercepts reaches its maximum above the x-axis. Its vertex's y-coordinate is k, so k > 0.",
         disc: "Two x-intercepts means b² − 4ac > 0.",
-      },
-    },
-    {
-      words: "opens upward, crosses the y-axis below the x-axis, and has its vertex to the right of the y-axis",
-      holds: (a, h, k) => a > 0 && h > 0 && a * h * h + k < 0,
-      given: ["a", "h", "c"],
-      why: {
-        a: "It opens upward, so a > 0.",
-        h: "The vertex is to the right of the y-axis, so h > 0.",
-        c: "It crosses the y-axis below the x-axis, so c = f(0) < 0.",
-        k: "The y-intercept is below the x-axis, so f(0) < 0. The vertex is the lowest point, giving k ≤ f(0) < 0.",
-        b: "Let h denote the vertex's x-coordinate, which is positive here. The parabola opens upward, so a > 0; therefore b = −2ah < 0.",
-        disc: "An upward parabola that takes a negative value crosses the x-axis twice, so b² − 4ac > 0.",
       },
     },
   ];
@@ -3101,7 +3088,9 @@
         const no = find((sample) => !entry.test(sample));
         return `Could be true but need not be: ${show(yes)} fits the description and satisfies it, but ${show(no)} also fits and does not.`;
       };
-      const keyWhy = key.uses.map((name) => fact.why[name]);
+      // The reason for b already says which way the parabola opens, so a
+      // statement about a and b does not repeat the reason for a.
+      const keyWhy = key.uses.filter((name) => !(name === "a" && key.uses.includes("b"))).map((name) => fact.why[name]);
       const form = "f(x) = ax² + bx + c";
       const steps = [
         ...keyWhy,

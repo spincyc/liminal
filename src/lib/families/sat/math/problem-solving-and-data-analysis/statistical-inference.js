@@ -1657,7 +1657,7 @@
         const item = packRanked(t, numeric, key, [
           [tidy(((x[0] + x[1]) / (n[0] + n[1])) * 100), `Pools the two samples (${x[0] + x[1]} of ${n[0] + n[1]}), ignoring that the groups were sampled at different rates.`],
           [tidy(((rate[0] + rate[1]) / 2) * 100), `Averages the two sample percents as if the groups were the same size; there are ${fmt(N[0])} ${scene.group(0)} and ${fmt(N[1])} ${scene.group(1)}.`],
-          [tidy(((k[1] * x[0] + k[0] * x[1]) / all) * 100), "Scales each group's sample by the other group's size."],
+          [tidy(((k[1] * x[0] + k[0] * x[1]) / all) * 100), "Scales each group's sample count by the other group's ratio of group size to sample size."],
           [tidy(rate[0] * 100), `Gives the percent for ${scene.group(0)} alone.`],
           [tidy(rate[1] * 100), `Gives the percent for ${scene.group(1)} alone.`],
         ], {
@@ -1684,7 +1684,7 @@
       if (!Number.isInteger(pooled)) return null;
       const item = packRanked(t, numeric, total, [
         [pooled, `Pools the two samples (${x[0] + x[1]} of ${n[0] + n[1]}) and scales by all ${fmt(all)}, ignoring that the groups were sampled at different rates.`],
-        [k[1] * x[0] + k[0] * x[1], "Scales each group's sample by the other group's size."],
+        [k[1] * x[0] + k[0] * x[1], "Scales each group's sample count by the other group's ratio of group size to sample size."],
         [tidy(((rate[0] + rate[1]) / 2) * all), `Averages the two sample rates as if the groups were the same size; there are ${fmt(N[0])} ${scene.group(0)} and ${fmt(N[1])} ${scene.group(1)}.`],
         // One group's estimate only: with both on offer, the key would be
         // their sum.

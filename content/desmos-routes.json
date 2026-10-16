@@ -18,15 +18,15 @@
         "read": "Click the crossing to get x. Desmos shows the expression's value beside it; that is the answer.",
         "fails": "If x shows as a repeating decimal (such as 1.667), the value lands a few thousandths from a whole number; round it. Noticing that the expression is a multiple of a group in the equation is faster."
       },
-      "linear-solution-parameter-condition": {
-        "enter": "y = (left side) and y = (right side) with a slider for a. Add a vertical line for the condition: x = 2a or x = a + 3 as the question says, or x = (the stated number) for a range question, x = 0 for positive or negative.",
-        "read": "Drag a until the crossing sits on the vertical line; that a is the answer or the edge of the range. Then nudge a to see which side of that edge puts the crossing on the asked side.",
-        "fails": "An edge that isn't a whole number falls between slider steps; set a finer step. Solving for x in terms of a by hand is exact and often quicker."
-      },
       "tiered-rate-regime": {
         "enter": "y = {x <= t: (first rate)x, (first rate)t + (second rate)(x − t)} with the threshold's number for t, plus any flat fee in both parts; then y = (the stated total).",
         "read": "The crossing's x is the hours or units. For a which-equation question, type each choice with x for its letter: Desmos draws it as a vertical line, and the right one passes through the crossing.",
         "fails": "Writing the two parts is the work: the second rate applies only past the threshold, so a total below the threshold's amount uses one rate alone. The crossing is often far off screen; zoom to fit."
+      },
+      "linear-solution-parameter-condition": {
+        "enter": "y = (left side) and y = (right side) with a slider for a. Add a vertical line for the condition: x = 2a or x = a + 3 as the question says, or x = (the stated number) for a range question, x = 0 for positive or negative.",
+        "read": "Drag a until the crossing sits on the vertical line; that a is the answer or the edge of the range. Then nudge a to see which side of that edge puts the crossing on the asked side.",
+        "fails": "An edge that isn't a whole number falls between slider steps; set a finer step. Solving for x in terms of a by hand is exact and often quicker."
       },
       "function-value-and-input": {
         "enter": "The definition as given, such as g(x) = (its rule). Then g(the input) on the next line; to find an input instead, y = g(x) and y = (the given output).",

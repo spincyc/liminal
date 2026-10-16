@@ -145,7 +145,7 @@
           `Solve: n = ${n2}.`,
         ],
         principles: MEAN_PRINCIPLES,
-        trap: `The ${ctx.members} ${ctx.g[0]} are ${d1} from the combined mean and the others are ${d2} from it; the sizes are in the inverse ratio, and flipping it gives ${num(reversed)}.`,
+        trap: `The ${ctx.members} ${ctx.g[0]} are ${d1} from the combined mean and the others are ${d2} from it; the sizes are in the inverse ratio, and flipping it gives ${about(reversed)}.`,
         hint: MEAN_HINT,
         verify: () => {
           const first = valuesWithMean(n1, m1);
@@ -718,6 +718,9 @@
         const higher = meanFirst > meanSecond ? A : B;
         const lower = higher === A ? B : A;
         const heavy = higher === A ? first : second;
+        // The explanation counts values at each end, so the higher-mean set
+        // must have strictly more of its values at the high end.
+        if (heavy[3] + heavy[4] <= heavy[0] + heavy[1]) return null;
         const grid = statementGrid((i, j) => {
           const stat = ["standard deviation", "mean value"][i];
           const name = [A, B][j];
@@ -749,6 +752,12 @@
         if ((sdFirst > sdSecond) === (freqFirst > freqSecond) || Math.abs(freqFirst - freqSecond) < 0.5) return null;
         const bigger = sdFirst > sdSecond ? A : B;
         const smaller = bigger === A ? B : A;
+        // The explanation compares the counts at the extremes and at the
+        // center, so the set with the greater spread must have strictly more
+        // values at the extremes and strictly fewer at the center. (Then its
+        // squared distances, 8 × outer + 2 × inner in step², are larger too.)
+        const [wide, narrow] = bigger === A ? [first, second] : [second, first];
+        if (wide[0] <= narrow[0] || wide[2] >= narrow[2]) return null;
         const grid = statementGrid((i, j) => {
           const stat = ["standard deviation", "mean value"][i];
           const name = [A, B][j];
@@ -763,15 +772,15 @@
         if (!grid) return null;
         key = grid.correct;
         wrong = grid.wrong;
-        const edge = bigger === A ? first : second;
         explanation =
           `Both data sets have ${sum(first)} values, are symmetric about ${values[2]}, and so share the same mean and median. ` +
-          `${bigger} has ${edge[0] + edge[4]} values at the extremes (${values[0]} and ${values[4]}) and only ${edge[2]} at the ` +
-          `center, so its values sit farther from the mean on average: its standard deviation is greater.`;
+          `${bigger} has ${wide[0] + wide[4]} values at the extremes (${values[0]} and ${values[4]}) and ${wide[2]} at the center, ` +
+          `while ${smaller} has ${narrow[0] + narrow[4]} at the extremes and ${narrow[2]} at the center. ${bigger}'s values sit farther ` +
+          `from the mean on average, so its standard deviation is greater.`;
         steps = [
           `Note that both distributions are symmetric about ${values[2]}, so both means are ${values[2]}.`,
           "Compare how many values sit far from the center in each set.",
-          `${bigger} puts more of its values at the extremes and fewer at the center.`,
+          `${bigger} has more values at the extremes (${wide[0] + wide[4]} against ${narrow[0] + narrow[4]}) and fewer at the center (${wide[2]} against ${narrow[2]}).`,
           `So ${bigger} has the greater standard deviation.`,
         ];
       }
@@ -1817,7 +1826,7 @@
             figure,
             stem: `${intro} Which of the following could be the median of the data?`,
             explanation:
-              `There are ${counts.join(" + ")} = ${total} values, so the median is value number ${total % 2 ? (total + 1) / 2 : `${total / 2} and ${total / 2 + 1}`} in order. ` +
+              `There are ${counts.join(" + ")} = ${total} values, so the median is ${total % 2 ? `value number ${(total + 1) / 2}` : `the mean of values number ${total / 2} and ${total / 2 + 1}`} in order. ` +
               `Adding bar heights from the left, the running totals are ${cumulative.join(", ")}, so the median falls in the class from ${label(low)}. ` +
               `Only ${num(key)} is in that class.`,
             steps: [

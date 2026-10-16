@@ -1148,7 +1148,9 @@
           const r = t.nonzero(-15, 15);
           const s = r + (a - b) * u;
           if (s === 0 || Math.abs(s) > 60) continue;
-          const solveStep = `Solve: ${lin(a - b, 0, "u")} = ${num(s - r)}, so u = ${num(u)}.`;
+          const solveStep = a - b === 1
+            ? `Collect the u-terms and the constants: u = ${num(u)}.`
+            : `Solve: ${lin(a - b, 0, "u")} = ${num(s - r)}, so u = ${num(u)}.`;
           if (form === "repeated") {
             equation = `${a}(${chunk}) ${signed(r)} = ${b}(${chunk}) ${signed(s)}`;
             if (Math.abs(a - b) !== 1) {
@@ -1792,15 +1794,16 @@
     domain: "Algebra",
     skill: "Linear equations in one variable",
     subskill: "solve",
-    difficulty: "Hard",
+    difficulty: "Medium",
     title: "A rate that changes after a threshold",
     recognize:
       "One rate applies up to the threshold and another after it, so first decide which piece the total falls in: " +
       "compare the total with the amount at the threshold. Only then write the one equation that holds there.",
-    // Hard: the structure (which piece applies) must be decided before any
-    // equation can be written, and the one-rate answer, which lands in the
-    // other piece, is offered.
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 0, synthesis: 0, trap: 2 },
+    // Medium (relabelled from Hard after the 2026-10-16 independent review;
+    // official Medium): comparing the total with the amount at the threshold
+    // is quick, and one equation in one piece remains. The steps are many and
+    // the one-rate answer, which lands in the other piece, is offered.
+    rubric: { steps: 2, concept: 1, interpretation: 1, distractors: 2, abstraction: 0, synthesis: 0, trap: 1 },
     tricks: ["context-constraint", "intermediate-value", "neighbouring-rule"],
     build(t) {
       const ask = t.chance(0.6) ? "value" : "equation";
@@ -1945,6 +1948,6 @@
 
   return [
     equationSolve, contextMeaning, wordModel, solutionCount, expressionFromEquation, literalRearrange,
-    literalFactor, twoQuantities, unknownConstants, solutionCondition, tieredRate,
+    literalFactor, twoQuantities, tieredRate, unknownConstants, solutionCondition,
   ];
 });

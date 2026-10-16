@@ -13,8 +13,12 @@
   const { MINUS, num } = S;
   const {
     DATA, tidy, isClean, fmt, shown, range, retry, pack, close, r1, seg, chartText, dataDot, parseTable, parseNumber, offerHard,
-    packRanked, statementGrid, fitsGrid,
+    packRanked, statementGrid, fitsGrid, about,
   } = C;
+
+  // A ratio for teaching text: exact to three decimal places, or "about"
+  // and rounded there, so no repeating decimal is printed cut off.
+  const ratioShown = (ratio) => (isClean(ratio, 3) ? num(tidy(ratio)) : `about ${num(Math.round(ratio * 1000) / 1000)}`);
 
   // "+ 1,250" or "− 1,250": a signed term with thousands separators.
   const signedGrouped = (value) => `${value < 0 ? MINUS : "+"} ${fmt(Math.abs(value))}`;
@@ -451,7 +455,9 @@
               `Predicted value: the line of best fit crosses x = ${x} at y = ${num(predicted)}.`,
               `Difference: ${num(Math.max(actual, predicted))} ${MINUS} ${num(Math.min(actual, predicted))} = ${num(key)}.`,
             ],
-            trap: `The point is ${d} grid squares from the line, but each square is ${yStep} ${yStep === 1 ? "unit" : "units"}; the predicted value ${num(predicted)} is only a step on the way.`,
+            trap: yStep === 1
+              ? `The difference is the vertical distance between the point and the line, ${d} grid squares here; the predicted value ${num(predicted)} is only a step on the way.`
+              : `The point is ${d} grid squares from the line, but each square is ${yStep} units; the predicted value ${num(predicted)} is only a step on the way.`,
             hint: "Where is the data point, and where is the line, at that value of x?",
             verify: () => {
               const { points: seen, line } = read();
@@ -1645,7 +1651,7 @@
             `So the ${scene.noun} is multiplied by ${fmt(rate)} each ${scene.unit}.`,
             `${scene.at(X).charAt(0).toUpperCase()}${scene.at(X).slice(1)}: ${fmt(yl)} × ${fmt(rate)}${d > 1 ? S.sup(d) : ""} = ${fmt(key)}.`,
           ],
-          trap: `Filling the gap by equal amounts gives ${fmt(even)}; the change is by equal factors.`,
+          trap: `Filling the gap by equal amounts gives ${isClean(even, 2) ? fmt(even) : `about ${fmt(Math.round(even * 100) / 100)}`}; the change is by equal factors.`,
           hint: `How many ${scene.unit}s apart are the rows, and what happens in one ${scene.unit}?`,
           verify: verify(X, key),
         }, { places: 9, show: roundedShow });
@@ -2416,7 +2422,7 @@
         const otherFamily = exponential ? "linear" : "exponential";
         const changes = exponential
           ? `the differences change (${num(firstDiff)}, ${num(ys[2] - ys[1])}, …), so the change is not a constant amount`
-          : `the ratios change (${num(firstRatio)}, ${num(tidy(ys[2] / ys[1]))}, …), so the change is not a constant percent`;
+          : `the ratios change (${ratioShown(firstRatio)}, ${ratioShown(ys[2] / ys[1])}, …), so the change is not a constant percent`;
         const reasons = {
           keyShift: `Uses ${fmt(ys[0])}, the value at x = 1, as the value at x = 0.`,
           other: `Chooses the ${otherFamily} form, using the first two rows; ${changes}.`,
@@ -2441,7 +2447,7 @@
             : `Each row changes by ${num(rate)} (${diffs.map(num).join(", ")}), so the model is linear with slope ${num(rate)}. ` +
               `One step before x = 1, the value is ${fmt(ys[0])} ${S.signed(-rate)} = ${fmt(y0)}, so ${lin(rate, y0)}.`,
           steps: [
-            `Differences between rows: ${diffs.map(num).join(", ")}; ratios: ${ratios.map((r) => num(r)).join(", ")}.`,
+            `Differences between rows: ${diffs.map(num).join(", ")}; ratios: ${ratios.map(ratioShown).join(", ")}.`,
             exponential ? `The ratios are constant, so the model is ${family}.` : `The differences are constant, so the model is ${family}.`,
             `The value at x = 0 is one step back from x = 1: ${fmt(y0)}.`,
           ],
