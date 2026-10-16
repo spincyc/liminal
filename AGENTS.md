@@ -224,9 +224,15 @@ For a coherent ACT bank batch:
     validated by `LiminalProgress.cleanOfficialCheck`); and `planLedger`,
     a per-section checkpoint of the plan's replay (`Analytics.planState`
     `checkpoint`), refreshed on every save, so the plan survives the cap on
-    kept attempts (the newer `at` wins across tabs and imports). The record
-    keeps top-level fields it does not know, so an older tab cannot erase a
-    newer field. It
+    kept attempts (the newer `at` wins across tabs and imports). Once the
+    record is trimmed, the plan resumes from the ledger and replays only
+    answers newer than its checkpoint, so answers older than that, merged
+    or imported later, do not change it (a full replay runs whenever the
+    kept answers reach back to the ledger's first answer). Attempts carry
+    `setKind` and `setSkill` from the set that showed them, so a drill
+    answer saved before its session still spends its skill's budget. The
+    record, restore and merge keep top-level fields they do not know, so an
+    older tab cannot erase a newer field. It
     migrates
     `liminal:progress:v2` (kept as a backup; answers from the retired SAT
     banks are tagged `legacy-bank`) and merges what another tab saved.
@@ -283,7 +289,8 @@ For a coherent ACT bank batch:
   and the Learn page by a test) as two tracks, stages 1–2 and 3–4, each with
   one skill in flight (`Analytics.planState`, replayed from the attempts), so
   Advanced Math starts in the first week. A skill leaves flight at the gate
-  or after `BUDGET` (20) answers from its own drills at any level (the
+  or after `BUDGET` (20, plus one extra drill when its drills never left
+  Easy) answers from its own drills at any level (the
   diagnostic, modules, mixed and Desmos sets spend nothing); one that leaves
   short of the gate has moved on (flagged when its drills never left Easy,
   and prompted for an official check) and returns in the next pass, while a
