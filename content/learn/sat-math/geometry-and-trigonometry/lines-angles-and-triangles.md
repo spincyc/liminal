@@ -12,9 +12,43 @@ a transversal, triangle angle sums, isosceles triangles, congruent and
 similar triangles. It belongs to Geometry and Trigonometry,
 {{fact:sat-math-geometry}} of the Math section. Most questions come with a
 figure. Label every angle and length you know on your scratch paper before
-you compute. Hard questions hide a reversed similarity correspondence or connect the
-angles of two regular polygons. A direct altitude-to-hypotenuse proportion
-or a single polygon’s angle ratio is Medium.
+you compute.
+
+## Before you start {#before-you-start}
+
+These checks cover angle pairs, triangle angle sums and similar triangles
+from Grades 7 and 8. If one goes wrong, rebuild it with
+[Grade 7, week 21: angle relationships](weeks.html#common-core-math/7/21),
+[Grade 8, week 29: parallel lines and triangle angles](weeks.html#common-core-math/8/29)
+or [Grade 8, week 30: AA similarity](weeks.html#common-core-math/8/30).
+
+> **Try it.** Two lines cross, and one of the four angles they form is 48°.
+> What are the other three angles?
+>
+> **Answer.** 132°, 48° and 132°
+>
+> The angle beside the 48° angle shares a straight line with it, so it is
+> 180 − 48 = 132°. The angle across from 48° is vertical to it, so it is
+> also 48°, and the last angle is vertical to the 132° angle. Shaky?
+> [Grade 7, week 21](weeks.html#common-core-math/7/21).
+
+> **Try it.** A triangle has angles of 52° and 71°. What is the third
+> angle?
+>
+> **Answer.** 57°
+>
+> The angles of a triangle add to 180°: 180 − 52 − 71 = 57. Shaky?
+> [Grade 8, week 29](weeks.html#common-core-math/8/29).
+
+> **Try it.** Triangle ABC is similar to triangle DEF, with A, B and C
+> matching D, E and F. AB = 3, BC = 5 and AC = 6, and DE = 9. How long are
+> EF and DF?
+>
+> **Answer.** EF = 15 and DF = 18
+>
+> DE is 9/3 = 3 times AB, so every side of DEF is 3 times its match:
+> EF = 3 · 5 = 15 and DF = 3 · 6 = 18. Shaky?
+> [Grade 8, week 30](weeks.html#common-core-math/8/30).
 
 ## Angle relationships {#angle-relationships}
 
@@ -48,15 +82,28 @@ those two add to 180°.
 > 3x + 10 = 5x − 30 gives x = 20. Name the relationship before you write an
 > equation.
 
+> **Try it.** Lines j and k are parallel, cut by a transversal. Two
+> same-side interior angles measure (2x + 15)° and (4x − 21)°. What is the
+> measure of the larger angle?
+>
+> **First step.** Same-side interior angles are supplementary:
+> (2x + 15) + (4x − 21) = 180. Now solve for x and find both angles.
+>
+> **Answer.** 103°
+>
+> 6x − 6 = 180, so 6x = 186 and x = 31.
+>
+> The angles are 2(31) + 15 = 77° and 4(31) − 21 = 103°. Check:
+> 77 + 103 = 180.
+
 The interior angles of a polygon with n sides add to (n − 2) · 180°, so a
 pentagon's add to 540°.
 
 ### Exterior angles and regular polygons {#exterior-angles}
 
 At each corner of a polygon, the exterior angle is the turn you make walking
-around it, and it adds to the interior angle to make 180°. Walking once
-around any polygon turns you through 360°, so the exterior angles add to
-360°, whatever the number of sides.
+around it; it and the interior angle add to 180°. One trip around turns you
+through 360°, so the exterior angles of any polygon add to 360°.
 
 In a regular polygon with n sides every exterior angle is 360°/n, so
 n = 360 ÷ (one exterior angle). Turn any condition into a statement about
@@ -73,26 +120,21 @@ the exterior angle first.
 > **Trap.** Stopping at 30°, which is the angle, not the count, or dividing
 > 180 by it, which counts only half the turn.
 
-When neither polygon’s side count is known, a difference between the counts
-and a difference between the angles can form a quadratic equation. The
-exterior angle depends on the reciprocal of the count, not on its difference.
+> **Try it.** Each interior angle of a regular polygon is 4 times each
+> exterior angle. How many sides does the polygon have?
+>
+> **First step.** Let the exterior angle be e. Then 4e + e = 180. Now find e
+> and the number of sides.
+>
+> **Answer.** 10
+>
+> 5e = 180, so e = 36°, and n = 360 ÷ 36 = 10.
+>
+> Check with the interior sum: (10 − 2) · 180 = 1,440, and
+> 1,440 ÷ 10 = 144 = 4 · 36.
 
-> **Example.** Regular polygon P has 4 more sides than regular polygon Q.
-> Each interior angle of P is 24° greater than each interior angle of Q.
-> How many sides does P have?
->
-> If Q has n sides, P has n + 4. Their exterior angles are 360/n and
-> 360/(n + 4). The larger interior angle has the smaller exterior angle,
-> so 360/n − 360/(n + 4) = 24.
->
-> Combine the fractions: 1,440/(n(n + 4)) = 24, so n(n + 4) = 60.
-> Then n² + 4n − 60 = (n − 6)(n + 10) = 0.
->
-> Reject n = −10 because a polygon cannot have a negative number of sides.
-> Q has 6 sides, so P has 6 + 4 = 10.
-
-> **Trap.** Dividing 360 by 24 treats the difference as an exterior angle.
-> Giving 6 stops at Q’s side count instead of answering about P.
+For a harder version with two unknown side counts, see
+[two regular polygons](#two-polygons).
 
 ## Similarity {#similarity}
 
@@ -113,6 +155,18 @@ triangles that share an angle.
 > BC = 2.5 × DE = 2.5 × 5 = 12.5. The trap answer is 7.5, from using DB
 > instead of AB.
 
+> **Try it.** In triangle PQR, point S is on PQ and point T is on PR, with
+> ST parallel to QR. PS = 6, SQ = 3 and ST = 8. What is the length of QR?
+>
+> **First step.** ST ∥ QR, so triangle PST is similar to triangle PQR. PS
+> corresponds to PQ = 6 + 3 = 9. Now find the scale factor and finish.
+>
+> **Answer.** 12
+>
+> The scale factor is 9/6 = 1.5, so QR = 1.5 × ST = 1.5 × 8 = 12.
+>
+> Using SQ = 3 in place of PQ gives 8 × 3/6 = 4, the trap answer.
+
 > **Example.** A 6-foot person casts a 4-foot shadow at the same time that a
 > flagpole casts a 22-foot shadow. How tall is the flagpole?
 >
@@ -121,34 +175,20 @@ triangles that share an angle.
 >
 > h = 6 · 22/4 = 33 feet.
 
+> **Try it.** A 4-foot post casts a 6-foot shadow at the same time that a
+> streetlight casts a 27-foot shadow. How tall, in feet, is the
+> streetlight?
+>
+> **Answer.** 18
+>
+> The triangles are similar, so 4/6 = h/27, and h = 4 · 27/6 = 18 feet.
+
 ### Similar triangles that aren't a parallel cut {#matching-by-angles}
 
 Match similar triangles by their equal angles, never by where they sit on
-the page. Two cases come up often.
-
-A segment inside a triangle can cut off a similar triangle without being
-parallel to the third side.
-
-> **Example.** In triangle ABC, D is on AB and E is on AC, and angle AED
-> has the same measure as angle B. If AD = 6, AE = 4, AB = 12 and BC = 15,
-> how long is DE?
->
-> The triangles AED and ABC share angle A, and angle E matches angle B, so
-> they are similar with E matching B and D matching C.
->
-> So AE pairs with AB: the scale factor is 4/12 = 1/3. DE pairs with BC, so
-> DE = 15/3 = 5.
->
-> AD pairs with AC, so AC = 3 · 6 = 18. The side ratios 4/12, 6/18 and 5/15
-> all equal 1/3, which confirms the matching.
-
-> **Fails when.** You use the side-splitter proportion (AD/AB = AE/AC).
-> That holds only for a segment parallel to BC. Here DE is not parallel to
-> BC, so pair sides by the matching angles instead.
-
-The altitude to the hypotenuse of a right triangle splits it into two
-triangles, each similar to the whole triangle and to each other. Matching
-their angles gives:
+the page. The altitude to the hypotenuse of a right triangle splits it into
+two triangles, each similar to the whole triangle and to each other.
+Matching their angles gives:
 
 - The altitude squared equals the product of the two pieces of the hypotenuse.
 - Each leg squared equals the whole hypotenuse times the piece next to that leg.
@@ -168,6 +208,25 @@ their angles gives:
 > **Trap.** Trying the Pythagorean theorem alone. With only AD and DB known,
 > each right triangle has two unknown sides; similarity is what connects
 > them.
+
+> **Try it.** In right triangle PQR the right angle is at R, and the
+> altitude from R meets the hypotenuse PQ at S. If PS = 3 and SQ = 12, how
+> long is RS, and how long is RQ?
+>
+> **First step.** Triangles PSR and RSQ are similar, so PS/RS = RS/SQ and
+> RS² = 3 · 12. Now find RS, then use the leg fact for RQ.
+>
+> **Answer.** RS = 6 and RQ = 6√5
+>
+> RS² = 36, so RS = 6.
+>
+> RQ is next to the piece SQ = 12, and the whole hypotenuse is
+> PQ = 3 + 12 = 15, so RQ² = 15 · 12 = 180 and RQ = √180 = 6√5.
+>
+> Check with the Pythagorean theorem in triangle RSQ: 6² + 12² = 180.
+
+For a harder version, where the cutting segment is not parallel to the
+third side, see [a segment that isn't parallel](#nonparallel-segment).
 
 ## Triangle geometry {#triangle-geometry}
 
@@ -189,12 +248,33 @@ their angles gives:
 > The exterior angle next to a base angle is 180 − 70 = 110°. Check with the
 > exterior angle fact: it equals 40 + 70 = 110°.
 
+> **Try it.** An isosceles triangle has a 36° angle between its two equal
+> sides. The base is extended past one base angle to form an exterior
+> angle. What are the base angles, and what is that exterior angle?
+>
+> **Answer.** Each base angle is 72°, and the exterior angle is 108°.
+>
+> The base angles are equal: 2b + 36 = 180, so 2b = 144 and b = 72.
+>
+> The exterior angle is 180 − 72 = 108°. Check with the exterior angle
+> fact: 36 + 72 = 108.
+
 > **Example.** Two sides of a triangle are 7 and 12. How many whole-number
 > lengths are possible for the third side?
 >
 > The third side must be greater than 12 − 7 = 5 and less than 12 + 7 = 19.
 >
 > Whole numbers from 6 through 18: 18 − 6 + 1 = 13 lengths.
+
+> **Try it.** Two sides of a triangle have lengths 9 and 15. How many
+> whole-number lengths are possible for the third side?
+>
+> **Answer.** 17
+>
+> The third side must be greater than 15 − 9 = 6 and less than
+> 15 + 9 = 24.
+>
+> Whole numbers from 7 through 23: 23 − 7 + 1 = 17 lengths.
 
 On the SAT, figures are drawn to scale unless a note says otherwise, so you
 can use one to check a result: an angle that looks acute can't be 120°.
@@ -203,7 +283,86 @@ can use one to check a result: an angle that looks acute can't be 120°.
 > choices are close together. Estimation only rules out answers that are far
 > off; it never picks between 70° and 75°.
 
-## What Hard looks like {#hard}
+## Harder versions {#hard}
 
-- A segment across a triangle that makes a marked angle equal to one of the triangle's angles, but is not parallel to the third side. Pair the vertices by the equal angles, not by position.
-- Two regular polygons have unknown side counts linked by an additive difference, and their interior angles differ by a given amount. Combine the reciprocal exterior-angle formulas to obtain a quadratic, then reject any impossible side count (see [exterior angles and regular polygons](#exterior-angles)).
+The hardest questions here hide which parts match: two polygons with
+unknown side counts, or a segment that cuts off a similar triangle without
+being parallel.
+
+### Two regular polygons {#two-polygons}
+
+When both side counts are unknown, a difference in the counts and a
+difference in the angles give a quadratic equation. Work with the exterior
+angles, 360 divided by each count.
+
+> **Example.** Regular polygon P has 4 more sides than regular polygon Q.
+> Each interior angle of P is 24° greater than each interior angle of Q.
+> How many sides does P have?
+>
+> If Q has n sides, P has n + 4. Their exterior angles are 360/n and
+> 360/(n + 4). The larger interior angle has the smaller exterior angle,
+> so 360/n − 360/(n + 4) = 24.
+>
+> Combine the fractions: 1,440/(n(n + 4)) = 24, so n(n + 4) = 60.
+> Then n² + 4n − 60 = (n − 6)(n + 10) = 0.
+>
+> Reject n = −10 because a polygon cannot have a negative number of sides.
+> Q has 6 sides, so P has 6 + 4 = 10.
+
+> **Trap.** Dividing 360 by 24 treats the difference as an exterior angle.
+> Giving 6 stops at Q’s side count instead of answering about P.
+
+> **Try it.** Regular polygon A has 3 more sides than regular polygon B.
+> Each interior angle of A is 27° greater than each interior angle of B.
+> How many sides does A have?
+>
+> **First step.** If B has n sides, A has n + 3, and A has the smaller
+> exterior angle: 360/n − 360/(n + 3) = 27. Now solve for n.
+>
+> **Answer.** 8
+>
+> Combine the fractions: 1,080/(n(n + 3)) = 27, so n(n + 3) = 40.
+> Then n² + 3n − 40 = (n − 5)(n + 8) = 0.
+>
+> Reject n = −8. B has 5 sides, so A has 5 + 3 = 8.
+>
+> Check: a regular pentagon's angles are 540 ÷ 5 = 108°, a regular
+> octagon's are 1,080 ÷ 8 = 135°, and 135 − 108 = 27.
+
+### A segment that isn't parallel {#nonparallel-segment}
+
+A segment inside a triangle can cut off a similar triangle without being
+parallel to the third side.
+
+> **Example.** In triangle ABC, D is on AB and E is on AC, and angle AED
+> has the same measure as angle B. If AD = 6, AE = 4, AB = 12 and BC = 15,
+> how long is DE?
+>
+> The triangles AED and ABC share angle A, and angle E matches angle B, so
+> they are similar with E matching B and D matching C.
+>
+> So AE pairs with AB: the scale factor is 4/12 = 1/3. DE pairs with BC, so
+> DE = 15/3 = 5.
+>
+> AD pairs with AC, so AC = 3 · 6 = 18. The side ratios 4/12, 6/18 and 5/15
+> all equal 1/3, which confirms the matching.
+
+> **Fails when.** You use the side-splitter proportion (AD/AB = AE/AC).
+> That holds only for a segment parallel to BC. Here DE is not parallel to
+> BC, so pair sides by the matching angles instead.
+
+> **Try it.** In triangle PQR, S is on PQ and T is on PR, and angle PTS has
+> the same measure as angle Q. If PS = 8, PT = 4, PQ = 10 and QR = 15, how
+> long is ST?
+>
+> **First step.** Triangles PTS and PQR share angle P, and angle T matches
+> angle Q, so T matches Q and S matches R. Now pair the sides and find the
+> scale factor.
+>
+> **Answer.** 6
+>
+> PT pairs with PQ: the scale factor is 4/10 = 2/5. ST pairs with QR, so
+> ST = (2/5) · 15 = 6.
+>
+> PS pairs with PR, so PR = 8 ÷ (2/5) = 20. The ratios 4/10, 8/20 and 6/15
+> all equal 2/5. Pairing PS with PQ instead gives 15 · 8/10 = 12.
