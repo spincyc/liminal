@@ -1320,10 +1320,12 @@
     }
 
     // Opens Desmos in one sized window beside the test, or brings it back
-    // with its graphs intact. The window starts blank and is cut off from
-    // this page (opener = null) before it loads desmos.com. A named window
-    // already showing Desmos (after a reload) is cross-origin, so it is
-    // only focused, never reloaded. With pop-ups blocked, a tab instead.
+    // with its graphs intact while this page stays loaded. The window starts
+    // blank and is cut off from this page (opener = null) before it loads
+    // desmos.com, so Desmos cannot reach the test. That cut is deliberate
+    // and has a cost: after a reload this page can no longer find the
+    // detached window by name, so the button opens a second one (Chromium,
+    // checked 2026-10-16). With pop-ups blocked, a tab instead.
     function openCalculator() {
       const detach = (win) => { try { win.opener = null; } catch (error) { /* cross-origin */ } };
       const focus = (win) => { try { win.focus(); } catch (error) { /* closed meanwhile */ } };

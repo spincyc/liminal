@@ -359,9 +359,11 @@ For a coherent ACT bank batch:
   under its explanation only after the answer is checked or the set is
   finished, never names the template, and hides the feature when the bundle
   is missing. When a template changes what it shows, re-verify its route or
-  remove it. The Calculator button opens desmos.com in one reusable window
-  beside the test; embedding the Desmos API needs the owner's approval (an
-  API key and an external script).
+  remove it. The Calculator button opens desmos.com in one window beside the
+  test, reused while the page stays loaded; the window is detached
+  (`opener = null`) so Desmos cannot reach the page, which means a reload
+  opens a second window. Embedding the Desmos API needs the owner's approval
+  (an API key and an external script).
 - `content/guides/answer-signs.js` powers the Study tips view. It is a study
   guide of probabilistic tells, not a question bank: never run it through the
   generators, and keep every tell's caution, each principle's caution, and
