@@ -221,7 +221,12 @@ For a coherent ACT bank batch:
     Liminal accuracy over the 28 days before each, never predicted); and
     official question-bank checks (`officialChecks`: `{ id, sectionKey,
     skill, difficulty Medium|Hard, attempted 1–50, correct, date }`,
-    validated by `LiminalProgress.cleanOfficialCheck`). It
+    validated by `LiminalProgress.cleanOfficialCheck`); and `planLedger`,
+    a per-section checkpoint of the plan's replay (`Analytics.planState`
+    `checkpoint`), refreshed on every save, so the plan survives the cap on
+    kept attempts (the newer `at` wins across tabs and imports). The record
+    keeps top-level fields it does not know, so an older tab cannot erase a
+    newer field. It
     migrates
     `liminal:progress:v2` (kept as a backup; answers from the retired SAT
     banks are tagged `legacy-bank`) and merges what another tab saved.
@@ -271,7 +276,8 @@ For a coherent ACT bank batch:
   Review when anything is due, at most once a calendar day per test
   (`Analytics.reviewDoneToday`; a set takes `LiminalReviewQueue.SET_LIMIT`,
   six, most overdue first); after that the step moves on and carries
-  `reviewDue`. SAT Math runs the plan (`Analytics.PLANS`, held to the catalog
+  `reviewDue`; only the due set (`step: "review"`) closes the day's Review,
+  not Missed, Marked or single-question retries. SAT Math runs the plan (`Analytics.PLANS`, held to the catalog
   and the Learn page by a test) as two tracks, stages 1–2 and 3–4, each with
   one skill in flight (`Analytics.planState`, replayed from the attempts), so
   Advanced Math starts in the first week. A skill leaves flight at the gate
