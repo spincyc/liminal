@@ -908,3 +908,49 @@ test("each test keeps its own plan; an older shared plan becomes both", () => {
   assert.deepEqual(JSON.parse(JSON.stringify(Progress.planFor(act, "ACT"))), { weeklyQuestions: 60 });
   assert.deepEqual(Progress.planFor(Progress.empty(), "SAT"), {});
 });
+
+test("official checks are validated on load, kept in date order, and capped", () => {
+  const check = (id, fields) => Object.assign({ id, sectionKey: "sat-math", skill: "Circles", difficulty: "Medium",
+    attempted: 10, correct: 7, date: "2026-10-12" }, fields);
+  assert.deepEqual(Progress.empty().officialChecks, []);
+  assert.deepEqual(Progress.normalize({ version: 3 }).officialChecks, [], "an older record has none");
+  const normalized = Progress.normalize({ version: 3, officialChecks: [
+    check("b"), check("a", { date: "2026-09-01" }), "junk", check("no-skill", { skill: " " }),
+    check("easy", { difficulty: "Easy" }), check("act", { sectionKey: "act-english" }),
+    check("zero", { attempted: 0, correct: 0 }), check("over", { attempted: 51 }), check("more-right", { correct: 11 }),
+    check("text", { attempted: "10" }), check("bad-date", { date: "2026-02-30" }),
+    check("extra", { note: "kept out", at: 5 }),
+  ] }).officialChecks;
+  assert.deepEqual(normalized.map((entry) => entry.id), ["a", "b", "extra"]);
+  assert.deepEqual(normalized[2], check("extra", { at: 5 }), "only the check's own fields are kept");
+  let progress = Progress.empty({ epoch: "e1" });
+  progress = Progress.addOfficialCheck(progress, check("c1"));
+  progress = Progress.addOfficialCheck(progress, check("c1", { correct: 9 }));
+  progress = Progress.addOfficialCheck(progress, check("bad", { correct: -1 }));
+  assert.deepEqual(progress.officialChecks.map((entry) => [entry.id, entry.correct]), [["c1", 9]], "replaced by id; a bad check changes nothing");
+  assert.equal(Progress.removeOfficialCheck(progress, "missing"), progress);
+  assert.deepEqual(Progress.removeOfficialCheck(progress, "c1").officialChecks, []);
+  const many = Array.from({ length: Progress.LIMITS.officialChecks + 5 }, (_, index) =>
+    check(`k${index}`, { date: `2026-01-${String((index % 28) + 1).padStart(2, "0")}`, at: index + 1 }));
+  assert.equal(Progress.normalize({ version: 3, officialChecks: many }).officialChecks.length, Progress.LIMITS.officialChecks);
+});
+
+test("official checks follow storage across tabs and survive a failed save", () => {
+  const check = (id, fields) => Object.assign({ id, sectionKey: "sat-math", skill: "Circles", difficulty: "Medium",
+    attempted: 10, correct: 7, date: "2026-10-12" }, fields);
+  const storage = memoryStorage();
+  const first = Progress.createStore(storage);
+  const second = Progress.createStore(storage);
+  first.update((progress) => Progress.addOfficialCheck(progress, check("b", { date: "2026-10-13" })));
+  second.update((progress) => Progress.addOfficialCheck(progress, check("a")));
+  assert.deepEqual(first.refresh().officialChecks.map((entry) => entry.id), ["a", "b"]);
+  second.update((progress) => Progress.removeOfficialCheck(progress, "a"));
+  first.update((progress) => progress);
+  assert.deepEqual(first.get().officialChecks.map((entry) => entry.id), ["b"], "an older copy does not bring a removal back");
+  storage.full = true;
+  first.update((progress) => Progress.addOfficialCheck(progress, check("c", { correct: 4 })));
+  assert.deepEqual(first.refresh().officialChecks.map((entry) => entry.id), ["c", "b"], "in date order");
+  storage.full = false;
+  assert.equal(first.update().ok, true);
+  assert.deepEqual(Progress.load(storage).progress.officialChecks.map((entry) => entry.id), ["c", "b"]);
+});

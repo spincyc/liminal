@@ -126,8 +126,9 @@
   // safe to merge or store, or { ok: false, error } with a sentence for the
   // student. info: { source: "export" | "record", version, migrated,
   // exportedAt, attempts, sessions, marked, tests: { SAT, ACT }, firstAt,
-  // lastAt, officialScores, dropped: { attempts, sessions, errorLog, plan,
-  // officialScores } }.
+  // lastAt, officialScores, officialChecks, dropped: { attempts, sessions,
+  // errorLog, plan, officialScores, officialChecks } }. A record from before
+  // official checks has none, and loses nothing.
   function parseImport(text, options) {
     const settings = options || {};
     if (typeof text !== "string" || !text.trim()) return refuse("The file is empty.");
@@ -195,6 +196,9 @@
     const rawScores = Array.isArray(candidate.officialScores) ? candidate.officialScores : [];
     const officialScores = rawScores.map((score) => Analytics.cleanOfficialScore(score).score)
       .filter((score) => score && score.id);
+    // Official checks keep only what LiminalProgress.cleanOfficialCheck
+    // accepts (normalize applies it), one per id.
+    const rawChecks = Array.isArray(candidate.officialChecks) ? candidate.officialChecks : [];
     const progress = Progress.normalize(Object.assign({}, candidate, {
       version: VERSION,
       attempts,
@@ -202,6 +206,7 @@
       errorLog,
       plan: plan.plan,
       officialScores,
+      officialChecks: rawChecks,
     }));
     if (!progress) return refuse(FOREIGN);
     if (candidate.attempts.length && !progress.attempts.length) {
@@ -232,6 +237,7 @@
         sessions: progress.sessions.length,
         marked: progress.marked.length,
         officialScores: progress.officialScores.length,
+        officialChecks: progress.officialChecks.length,
         tests,
         firstAt,
         lastAt,
@@ -241,6 +247,7 @@
           errorLog: droppedTags,
           plan: plan.errors.length,
           officialScores: rawScores.length - officialScores.length,
+          officialChecks: rawChecks.length - progress.officialChecks.length,
         },
       },
     };
@@ -264,11 +271,12 @@
   // treats a different epoch as a clear, so the file takes this browser's
   // epoch first. Beyond merge: marks are unioned (a file's marks are the
   // student's too), the plan keeps this browser's values, filling gaps
-  // from the file, and official scores are unioned by id (this browser's
-  // copy wins). An imported attempt whose id this browser already uses
+  // from the file, and official scores and official checks are unioned by
+  // id (this browser's copy wins). An imported attempt whose id this browser already uses
   // for a different answer is kept under "<id>~<file epoch>", so merging
   // the same file twice changes nothing. Returns { progress, added:
-  // { attempts, sessions, marked, officialScores }, over: attempts beyond what the browser
+  // { attempts, sessions, marked, officialScores, officialChecks }, over:
+  // attempts beyond what the browser
   // keeps (LIMITS.attempts; the oldest go first) }.
   function mergeImport(current, imported) {
     const known = new Map(current.attempts.map((attempt) => [attempt.id, attempt]));
@@ -305,6 +313,12 @@
         : Progress.addOfficialScore(record, score)),
       { officialScores: current.officialScores || [] },
     ).officialScores;
+    const officialChecks = (imported.officialChecks || []).reduce(
+      (record, check) => (record.officialChecks.some((entry) => entry.id === check.id)
+        ? record
+        : Progress.addOfficialCheck(record, check)),
+      { officialChecks: current.officialChecks || [] },
+    ).officialChecks;
     const progress = Object.assign({}, merged, {
       marked,
       errorLog: Object.assign({}, errorLog, current.errorLog),
@@ -312,6 +326,7 @@
         .map((test) => [test, Object.assign({}, (imported.plan || {})[test], (current.plan || {})[test])])
         .filter(([, own]) => Object.keys(own).length)),
       officialScores,
+      officialChecks,
     });
     return {
       progress,
@@ -320,6 +335,7 @@
         sessions: progress.sessions.length - current.sessions.length,
         marked: marked.length - current.marked.length,
         officialScores: officialScores.length - (current.officialScores || []).length,
+        officialChecks: officialChecks.length - (current.officialChecks || []).length,
       },
       over: Math.max(0, progress.attempts.length - Progress.LIMITS.attempts),
     };
