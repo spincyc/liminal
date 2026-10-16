@@ -411,43 +411,43 @@
     {
       "id": "proportional-rate-scaling",
       "bit": 58,
-      "version": 6,
-      "fingerprint": "4d07c97ff61db3785ccb5fdce56d80ee176785ba23a26bcfc852e2a742111463",
+      "version": 7,
+      "fingerprint": "dfb4c0822339986e470a3cd3959a7c3da8cfe67dd1a9591532063de708bb8a8b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "ratio-share-of-total",
       "bit": 59,
-      "version": 6,
-      "fingerprint": "e7e6a0bf3bf0c9dcd6546949c0e442d6bddb73817d859f1d24ade0b186a7fc82",
+      "version": 7,
+      "fingerprint": "c328f06b27a812c59069da80411b34f44ca1a0048715040e4e04eddbe105e8de",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rate-unit-conversion",
       "bit": 60,
-      "version": 6,
-      "fingerprint": "82f588b882c59dd4edfb64e57f3f2f0c33ae5dbd20b31084496438bdd1e976b2",
+      "version": 7,
+      "fingerprint": "cca9f2a5c1163333defae4de1ed80e53dfbeba6010b4326c84fd4cb5cf523ebb",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "ratio-after-change",
       "bit": 61,
-      "version": 5,
-      "fingerprint": "cd41437dfe38445f29e03d54a008ec866d48265bc36b713e03658ac21e2e9a77",
+      "version": 6,
+      "fingerprint": "41163f214c51fbe907d13d2ddc51d38dad3db3ebbc042dd3a1e8c8627562d424",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "multi-unit-rate",
       "bit": 62,
-      "version": 6,
-      "fingerprint": "e8ff130b92c8d87b2dbdc8e424e1f6fc0f9e17d48094a4468255728fc75c57ee",
+      "version": 7,
+      "fingerprint": "4ae31a659f6c5a00da61b9108420490c95aa9bf088f9ae2b7b905a0b96f875dc",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "average-rate-two-legs",
       "bit": 63,
-      "version": 6,
-      "fingerprint": "2926376e023e3a65fde78e263b13f3c94a08e9c3042f236d88c96e18ee8d7a42",
+      "version": 7,
+      "fingerprint": "c274bff7fe4ee477991fd65cbd531bbd703f6696b3c814eb1ef9189be477969c",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1020,22 +1020,22 @@
     {
       "id": "average-rate-required-leg",
       "bit": 145,
-      "version": 6,
-      "fingerprint": "de6428f5674b0ae29bcc58e440af8cd35ad0bd3f65c1300a855afb238c057da2",
+      "version": 7,
+      "fingerprint": "b6159128f82af7149639daf86118da0fb703c91c8137bf55f6594919fcc822d0",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "density-cube-edge",
       "bit": 146,
-      "version": 6,
-      "fingerprint": "a271cea2ba44e11a0d857c70d00e9801be68c0883ff5e7ee442f30d007d9a78a",
+      "version": 7,
+      "fingerprint": "b3bf254841adb96da0ed258e78c036a4422ec9440bc011622ed43d15b5e9e551",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "combined-work-rate",
       "bit": 147,
-      "version": 6,
-      "fingerprint": "99036b39436afa6e98463f696f7840d589a7411d70d8dc332c8a29b9c21e4958",
+      "version": 7,
+      "fingerprint": "1a64a395836870c1183574d3a66a4bd4bd9fca24326e57049500a082c02f1451",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1489,15 +1489,15 @@
     {
       "id": "population-density",
       "bit": 212,
-      "version": 3,
-      "fingerprint": "95421dce77865e22e8537af5838430939a4d9fcd8ff52528454e7f9468bc56e7",
+      "version": 4,
+      "fingerprint": "8305af86d649c916fafe5a2b1b14a4f7dcfddd8a6408d2358bc0288d2757b9b5",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "crew-rate-change",
       "bit": 213,
-      "version": 3,
-      "fingerprint": "69f9a1bf250b0ae209999748b709fd95845fd68873fe448fd01613c5003f3223",
+      "version": 4,
+      "fingerprint": "7418f28a3a035e18da8d807f187fb110e66d0603952eaac522b771d9e9708363",
       "fingerprintAlgorithm": "source-v1"
     },
     {
