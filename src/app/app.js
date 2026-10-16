@@ -352,13 +352,33 @@
   // Review questions due now in `test`, as the Review view counts them: a
   // template no longer in its registry cannot be drawn again and is left
   // out.
-  function reviewDueCount(progress, test) {
-    if (!ReviewQueue) return 0;
+  // `plans` (planState by section) park SAT Math misses on skills never in
+  // flight and put misses on drilled skills first (reviewOptions).
+  function reviewDueCount(progress, test, plans) {
+    return reviewSummary(progress, test, plans).due.length;
+  }
+
+  // The Review queue's summarize options for a test: retired templates and
+  // unverifiable bank questions are left out; in a section with a plan, a
+  // miss on a skill never in flight is parked until the student reaches it,
+  // and misses on skills already drilled come first among those due.
+  function reviewOptions(test, plans) {
     const info = Progress.registryTemplateInfo(window.PRACTICE_TEMPLATES || {});
-    const attempts = Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test }), info);
     const live = (entry) => entry.source === "template"
       ? Boolean((info[entry.sectionKey] || {})[entry.templateId]) : Boolean(entry.contentIdentity);
-    return ReviewQueue.summarize(ReviewQueue.build(attempts), Date.now(), { skip: (entry) => !live(entry) }).due.length;
+    const options = { skip: (entry) => !live(entry) };
+    if (plans && Analytics && Analytics.reviewFlightAt) {
+      options.flightAt = Analytics.reviewFlightAt(plans);
+      options.prefer = Analytics.reviewPrefer(plans);
+    }
+    return options;
+  }
+
+  function reviewSummary(progress, test, plans) {
+    if (!ReviewQueue) return { due: [], parked: [] };
+    const info = Progress.registryTemplateInfo(window.PRACTICE_TEMPLATES || {});
+    const attempts = Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test }), info);
+    return ReviewQueue.summarize(ReviewQueue.build(attempts), Date.now(), reviewOptions(test, plans));
   }
 
   // The Desmos routes the desmos data file sets (content/desmos-routes.js),
@@ -386,7 +406,6 @@
     const keys = sections.filter((section) => !section.optional).map((section) => section.key);
     const rows = Analytics.skillMap(attempts, sections, { tiered: practice.usesTemplates });
     const placements = Analytics.placements(attempts, progress.sessions, sections);
-    const dueCount = reviewDueCount(progress, which);
     const recentSection = Analytics.recentSection(attempts, keys);
     const now = Date.now();
     const reviewedToday = Analytics.reviewDoneToday(progress.sessions, which, now);
@@ -403,6 +422,8 @@
         now,
       });
     });
+    const review = reviewSummary(progress, which, plans);
+    const dueCount = review.due.length;
     const options = {
       dueCount,
       reviewedToday,
@@ -421,10 +442,12 @@
       rows,
       placements,
       dueCount,
+      parkedCount: review.parked.length,
       reviewedToday,
       recentSection,
       plans,
       attempts,
+      reviewOptions: () => reviewOptions(which, plans),
       step: (sectionKeys) => Analytics.nextStep(rows, Object.assign({}, options, {
         sectionKeys: sectionKeys && sectionKeys.length ? sectionKeys : keys,
       })),
@@ -482,31 +505,39 @@
   // Why a skill step names its level.
   function levelReason(step) {
     const { row } = step;
-    const tallyText = (tally) => (tally.attempted ? `you have ${tally.correct} of ${tally.attempted}` : "none yet");
+    // A window's count in words that never read as met before it is: "6
+    // right of 9 so far, of the 10 it needs", or "7 of your last 10 right".
+    const windowText = (tally) => {
+      if (!tally || !tally.attempted) return "none yet";
+      return tally.attempted < tally.window
+        ? `${tally.correct} right of ${tally.attempted} so far, of the ${tally.window} it needs`
+        : `${tally.correct} of your last ${tally.window} right`;
+    };
     const target = `${Analytics.GATE.correct} of your last ${Analytics.GATE.window} Medium answers right, over two days and ` +
-      `two question designs (${tallyText(row.gate)})`;
+      `two question designs (now ${windowText(row.gate)})`;
     switch (step.levelWhy) {
       case "not-routine": {
+        // ROUTINE counts each level on its own: Easy, or Medium.
         const { correct, window } = Analytics.ROUTINE;
-        return `Easy until the method is routine: ${correct} of your last ${window} Easy answers right ` +
-          `(${tallyText(row.routine.easy)}).`;
+        const medium = row.routine.medium && row.routine.medium.attempted ? `; Medium: ${windowText(row.routine.medium)}` : "";
+        return `Easy until the method is routine: ${correct} of your last ${window} Easy answers right, or ${correct} of your ` +
+          `last ${window} Medium (Easy: ${windowText(row.routine.easy)}${medium}).`;
       }
       case "routine": {
         const plan = Analytics.PLANS[row.sectionKey];
         const { correct, window } = Analytics.MEDIUM_ROUTINE;
         return `Medium toward the practice target: ${target}.` + (plan
-          ? ` Hard joins the drill once ${correct} of your last ${window} Medium answers are right ` +
-            `(${tallyText(row.mediumRoutine)}).`
+          ? ` Hard joins the drill once ${correct} of your last ${window} Medium answers are right (now ${windowText(row.mediumRoutine)}).`
           : "");
       }
       case "medium-routine": {
         const { hard, size } = Analytics.HARD_MIX;
-        return `Medium with Hard mixed in, ${hard} of every ${size}: Medium is routine (${tallyText(row.mediumRoutine)} of ` +
-          `your last ${Analytics.MEDIUM_ROUTINE.window}). Toward the practice target: ${target}.`;
+        return `Medium with Hard mixed in, ${hard} of every ${size}: Medium is routine (${windowText(row.mediumRoutine)}). ` +
+          `Toward the practice target: ${target}.`;
       }
       case "at-gate":
         return `Practice target met; Hard next, toward the advanced practice target: ${Analytics.HARD_BAR.correct} of your last ` +
-          `${Analytics.HARD_BAR.window} Hard answers right (${tallyText(row.hardBar)}).`;
+          `${Analytics.HARD_BAR.window} Hard answers right (now ${windowText(row.hardBar)}).`;
       case "mastered":
         return "Advanced practice target met: keep practising with a few questions a week.";
       default:
@@ -574,8 +605,9 @@
       return Object.assign(words, {
         title: `Desmos drill: ${plural(step.count, "question")}`,
         section: sectionName(step.sectionKey),
-        reason: "Questions where graphing in Desmos is a real route. After each one, the explanation shows the route. " +
-          "Open the calculator from the test screen.",
+        reason: "Questions where graphing in Desmos is a real route, most from systems, nonlinear equations and functions, " +
+          "lines, inequalities, circles and scatterplots. After each one, the explanation shows the route. Open the " +
+          "calculator from the test screen.",
         button: "Start the Desmos drill",
       });
     }
@@ -675,8 +707,10 @@
   }
 
   // The Desmos drill (practice.html#desmos/sat-math): questions only from
-  // templates with a Desmos route, skills the student has started first,
-  // feedback after each so the explanation shows the route. Rejects when
+  // templates with a Desmos route where Desmos is not slower than by hand,
+  // most from the skills where a graph genuinely solves
+  // (practice.chooseDesmosTemplates), feedback after each so the
+  // explanation shows the route. Rejects when
   // the routes did not load. Resolves like startDrill.
   async function startDesmos(sectionKey) {
     const key = sectionKey || "sat-math";
@@ -684,11 +718,10 @@
     if (!routes) throw new Error("The Desmos drill is unavailable: its solution routes did not load.");
     if (!(await confirmReplace("set"))) return null;
     const templates = await sectionTemplates(key);
-    const plan = guide(sectionByKey(key).test).plans[key];
     const chosen = practice.chooseDesmosTemplates(templates, routes, {
-      started: plan ? plan.started : [],
       recency: practice.recencyFor(Progress.historyFor(store.get(), key), templates),
       count: Analytics.ROTATION.desmos.count,
+      preferred: Analytics.ROTATION.desmos.preferred,
       seed: practice.newRunSeed(),
     });
     if (!chosen.length) return 0;
@@ -1805,7 +1838,10 @@
     const sectionKeys = [...new Set(report.items.map((item) => item.question.sectionKey).filter(Boolean))];
     const test = Progress.testOf(sectionKeys[0] || meta.sectionKey);
     const next = stepAction(guide(test).step(sectionKeys));
-    return (meta.kind === "diagnostic" ? [next, missedAction] : [missedAction, next]).filter(Boolean);
+    // After a diagnostic, drill, mixed set, Desmos drill or timed test the
+    // next step leads (primary); after Review-like sets, what was missed.
+    const nextFirst = ["diagnostic", "drill", "skill-drill", "mixed", "desmos", "module", "section", "full", "mini"].includes(meta.kind);
+    return (nextFirst ? [next, missedAction] : [missedAction, next]).filter(Boolean);
   }
 
   /* ---------------------------------------------------------------- views */
@@ -1851,6 +1887,7 @@
     startMixed,
     startDesmos,
     desmosRoutes,
+    reviewOptions,
     guide,
     stepWords,
     levelWords,

@@ -583,6 +583,20 @@
         : counted;
     }
 
+    // Practice targets met, by section: SAT Math's count leads, so the Math
+    // plan is not read against Reading and Writing's skills too.
+    function targetsCard(rows, states) {
+      const met = (key) => rows.filter((row) => row.sectionKey === key &&
+        (row.state === "at-gate" || row.state === "mastered")).length;
+      const total = (key) => rows.filter((row) => row.sectionKey === key).length;
+      const keys = model.sections.map((section) => section.key).filter((key) => total(key));
+      const lead = keys.find((key) => Analytics.PLANS[key]) || keys[0];
+      if (!lead) return card("Practice targets met", "0 / 0", "");
+      const others = keys.filter((key) => key !== lead).map((key) => `${ctx.sectionLabel(key)} ${met(key)} / ${total(key)}`);
+      return card(`${ctx.sectionLabel(lead)} practice targets met`, `${met(lead)} / ${total(lead)}`,
+        [...others, `${states.mastered} advanced met`].join(" \u00b7 "));
+    }
+
     function renderStats() {
       const { summary, rows, progress, test, tiered } = model;
       const hard = summary.byDifficulty.Hard;
@@ -604,9 +618,7 @@
         tiered
           ? card("Hard accuracy", percent(hard.accuracy), hardNote(hard))
           : card("Hard accuracy", "—", untiered),
-        tiered
-          ? card("Practice targets met", `${states["at-gate"] + states.mastered} / ${rows.length}`,
-            `${states.mastered} advanced targets met`)
+        tiered ? targetsCard(rows, states)
           : card("Skills practised", `${rows.length - states["not-started"]} / ${rows.length}`, "Accuracy only, no gate"),
         card("Missed / marked", `${ctx.formatNumber(missed)} / ${ctx.formatNumber(marked)}`, "",
           missed || marked ? { href: "#review", text: "Review them" } : null),
@@ -884,7 +896,7 @@
         const item = el("li");
         item.append(el("strong", null, entry.skill),
           ` \u00b7 Track ${entry.track} \u00b7 ${Analytics.STATE_LABELS[entry.state]} \u00b7 ${entry.spent} of ${entry.budget} used` +
-          (entry.easyStuck ? " \u00b7 Easy not yet routine" : "") +
+          (entry.easyStuck ? " \u00b7 drills never got past Easy" : "") +
           (entry.official ? ` \u00b7 ${OFFICIAL_LABELS[entry.official]}` : ""));
         list.appendChild(item);
       });
@@ -894,8 +906,7 @@
     function renderWeekly() {
       const report = weeklyModel();
       weekly.report = report;
-      const fromText = dayLabel(report.from);
-      weekly.lede.textContent = `Your ${model.test} practice from ${fromText} to today, for you or a parent. Print it, or ` +
+      weekly.lede.textContent = `Your ${model.test} practice from ${dayLabel(report.from)} to ${dayLabel(report.to)}, for you or a parent. Print it, or ` +
         "copy a plain-text summary to send. It reports practice, never a score.";
       const status = report.signal.status;
       const badge = el("p", `weekly-status is-${status}`);
@@ -918,6 +929,9 @@
         factRow("Time in sets", count(report.minutes, "minute")),
         factRow("Questions", `${ctx.formatNumber(report.newQuestions)} new, ${ctx.formatNumber(report.reviewQuestions)} Review`),
       ];
+      if (report.mathTargets) {
+        rows.push(factRow("Math practice targets met", `${report.mathTargets.met} of ${report.mathTargets.total} skills`));
+      }
       if (report.modules) {
         rows.push(factRow("Timed modules", report.modules.length
           ? report.modules.map((entry) => `${ctx.sectionLabel(entry.sectionKey)}: ${entry.correct} of ${entry.total}, ` +
@@ -1035,14 +1049,16 @@
         checks.dateInput.value = Analytics.formatDate(new Date());
       }
       const list = (model.progress.officialChecks || []).filter((check) => Progress.testOf(check.sectionKey) === model.test);
-      const prompts = Analytics.checkPrompts(model.rows, list);
+      const prompts = Analytics.checkPromptList(model.rows, list, model.guide.plans);
       checks.prompts.replaceChildren(...(prompts.length ? [el("h3", null, "Check it on official questions")] : []),
-        ...prompts.map((row) => {
+        ...prompts.map(({ row, reason }) => {
           const item = el("div", "start-item");
           const text = el("div", "start-text");
+          const { suggested } = Analytics.OFFICIAL_CHECK;
           text.append(el("strong", null, row.skill),
-            el("span", "muted", `${ctx.sectionLabel(row.sectionKey)} \u00b7 practice target met. Do about ` +
-              `${Analytics.OFFICIAL_CHECK.suggested} of its official Medium questions you haven\u2019t seen.`));
+            el("span", "muted", `${ctx.sectionLabel(row.sectionKey)} \u00b7 ` + (reason === "moved-on"
+              ? `its practice turn is over, short of the target: see where you stand on ${suggested} official Medium questions you haven\u2019t seen.`
+              : `practice target met. Do about ${suggested} of its official Medium questions you haven\u2019t seen.`)));
           const button = el("button", "button secondary", "Record a check");
           button.type = "button";
           button.setAttribute("aria-label", `Record an official check of ${row.skill}`);
@@ -1358,7 +1374,7 @@
         const track = plan.tracks.find((item) => item.key === entry.track);
         cell.appendChild(el("small", "cell-note plan-note", entry.status === "in-flight"
           ? `In flight, ${track ? track.name : "its track"}: ${entry.spent} of ${entry.budget} used`
-          : entry.easyStuck ? "Moved on before Easy was routine: reread its lesson; back in the next pass"
+          : entry.easyStuck ? "Moved on while its drills were still Easy: reread its lesson; back in the next pass"
             : PLAN_STATUS[entry.status]));
       }
       const latest = (model.checks.get(`${row.sectionKey}|${row.skill}`) || {}).latest;
@@ -1370,11 +1386,11 @@
       return cell;
     }
 
-    // Learn and Practice, and for a skill at its target with no official
-    // check yet, "Check it on official questions".
+    // Learn and Practice, and "Check it on official questions" for a skill
+    // at its target with no check yet, or one whose turn ended short of it.
     function studyCell(row) {
       const cell = studyLinks(row);
-      if (model.test === "SAT" && Analytics.checkPrompts([row], model.progress.officialChecks).length) {
+      if (model.test === "SAT" && Analytics.checkPrompts([row], model.progress.officialChecks, model.guide.plans).length) {
         const button = el("button", "text-link", "Check it on official questions");
         button.type = "button";
         button.setAttribute("aria-label", `Check ${row.skill} on official questions`);
