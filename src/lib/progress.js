@@ -29,6 +29,12 @@
 //             Bluebook practice test or a real SAT), oldest first:
 //             { id, date, kind, label?, readingWriting?, math?, at }. They
 //             are only ever shown beside practice accuracy, never predicted.
+//   officialChecks  results the student reported from College Board's
+//             Student Question Bank for one skill, oldest first:
+//             { id, sectionKey, skill, difficulty ("Medium" | "Hard"),
+//             attempted (1-50), correct (0-attempted), date, at? }. They
+//             check a skill's practice target on official questions
+//             (lib/analytics.js); a record without the field has none.
 // v2 (liminal:progress:v2) is migrated on first load and left untouched as a
 // backup.
 (function (root, factory) {
@@ -54,6 +60,7 @@
     recentItems: 400,
     servedPerSection: 400,
     officialScores: 200,
+    officialChecks: 500,
     // What a save falls back to when the quota is hit.
     attemptsWhenFull: 2000,
   };
@@ -157,6 +164,7 @@
       sessions: [],
       plan: {},
       officialScores: [],
+      officialChecks: [],
     };
   }
 
@@ -232,7 +240,58 @@
     progress.plan = planShape(raw.plan);
     progress.officialScores = (Array.isArray(raw.officialScores) ? raw.officialScores : [])
       .filter((score) => isObject(score) && typeof score.id === "string");
+    progress.officialChecks = officialCheckList(raw.officialChecks);
     return progress;
+  }
+
+  /* ------------------------------------------------------ official checks */
+
+  const CHECK_DIFFICULTIES = ["Medium", "Hard"];
+  // The most questions one check records: a Student Question Bank session
+  // on one skill, not a whole test.
+  const CHECK_MAX_QUESTIONS = 50;
+  const CHECK_TEXT_MAX = 120;
+
+  function realDate(text) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(text || ""));
+    if (!match) return false;
+    const [year, month, day] = match.slice(1).map(Number);
+    const date = new Date(year, month - 1, day);
+    return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day;
+  }
+
+  // An official check as stored, or null when any field is missing or out
+  // of range: a SAT template section, a skill name, Medium or Hard, a whole
+  // number of questions (1-CHECK_MAX_QUESTIONS) and of right answers (no
+  // more than that), and a real date. Only these fields are kept.
+  function cleanOfficialCheck(raw) {
+    if (!isObject(raw)) return null;
+    const id = typeof raw.id === "string" ? raw.id : "";
+    const skill = typeof raw.skill === "string" ? raw.skill.trim().replace(/\s+/g, " ") : "";
+    const { attempted, correct } = raw;
+    if (!id || id.length > CHECK_TEXT_MAX || !skill || skill.length > CHECK_TEXT_MAX) return null;
+    if (!TEMPLATE_SECTIONS.includes(raw.sectionKey) || !CHECK_DIFFICULTIES.includes(raw.difficulty)) return null;
+    if (!Number.isInteger(attempted) || attempted < 1 || attempted > CHECK_MAX_QUESTIONS) return null;
+    if (!Number.isInteger(correct) || correct < 0 || correct > attempted) return null;
+    if (!realDate(raw.date)) return null;
+    const check = { id, sectionKey: raw.sectionKey, skill, difficulty: raw.difficulty, attempted, correct, date: raw.date };
+    if (Number.isFinite(Number(raw.at)) && Number(raw.at) > 0) check.at = Number(raw.at);
+    return check;
+  }
+
+  function byCheckDate(left, right) {
+    return String(left.date).localeCompare(String(right.date)) || (Number(left.at) || 0) - (Number(right.at) || 0);
+  }
+
+  // A stored or imported list: readable checks only, one per id (the last
+  // wins), in date order, the newest LIMITS.officialChecks.
+  function officialCheckList(list) {
+    const byId = new Map();
+    (Array.isArray(list) ? list : []).forEach((raw) => {
+      const check = cleanOfficialCheck(raw);
+      if (check) byId.set(check.id, check);
+    });
+    return [...byId.values()].sort(byCheckDate).slice(-LIMITS.officialChecks);
   }
 
   // Only the earliest retained answer to an identifiable item can be first.
@@ -471,7 +530,8 @@
   // What another tab stored (`stored`) plus what this tab holds (`local`).
   // Attempts and sessions are append-only, so they are unioned by id; history
   // only grows, so it takes the larger of each value. Marks, the error log's
-  // existing entries, the plan, and official scores come from storage.
+  // existing entries, the plan, official scores and official checks come
+  // from storage.
   // createStore overlays only this tab's pending edits after a failed save,
   // so a stale copy cannot resurrect another tab's deletions.
   // A different epoch means the record was cleared since this tab read it,
@@ -496,7 +556,7 @@
     let lastSaveOk = true;
     let observedEpoch = first.readable && !first.absent ? current.epoch : null;
     let pendingReplacement = false;
-    const pending = Object.fromEntries(["marked", "errorLog", "officialScores", ...PLAN_TESTS]
+    const pending = Object.fromEntries(["marked", "errorLog", "officialScores", "officialChecks", ...PLAN_TESTS]
       .map((field) => [field, new Map()]));
     const clearPending = () => Object.values(pending).forEach((edits) => edits.clear());
     if (first.migrated) {
@@ -514,6 +574,7 @@
         marked: Object.fromEntries(progress.marked.map((id) => [id, true])),
         errorLog: progress.errorLog,
         officialScores: Object.fromEntries(progress.officialScores.map((score) => [score.id, score])),
+        officialChecks: Object.fromEntries((progress.officialChecks || []).map((check) => [check.id, check])),
         SAT: planFor(progress, "SAT"),
         ACT: planFor(progress, "ACT"),
       };
@@ -536,6 +597,8 @@
         else if (field === "officialScores") {
           result.officialScores = [...entries.values()].map((value) => JSON.parse(value))
             .sort(byScoreDate).slice(-LIMITS.officialScores);
+        } else if (field === "officialChecks") {
+          result.officialChecks = officialCheckList([...entries.values()].map((value) => JSON.parse(value)));
         } else {
           const values = Object.fromEntries([...entries].filter(([, value]) => value !== undefined)
             .map(([id, value]) => [id, JSON.parse(value)]));
@@ -712,6 +775,22 @@
     const list = progress.officialScores || [];
     if (!list.some((entry) => entry.id === id)) return progress;
     return Object.assign({}, progress, { officialScores: list.filter((entry) => entry.id !== id) });
+  }
+
+  // Adds an official check (cleanOfficialCheck must accept it), replacing
+  // one with the same id; the list stays in date order and keeps the newest
+  // LIMITS.officialChecks. An unreadable check changes nothing.
+  function addOfficialCheck(progress, check) {
+    const clean = cleanOfficialCheck(check);
+    if (!clean) return progress;
+    const list = (progress.officialChecks || []).filter((entry) => entry.id !== clean.id).concat(clean);
+    return Object.assign({}, progress, { officialChecks: officialCheckList(list) });
+  }
+
+  function removeOfficialCheck(progress, id) {
+    const list = progress.officialChecks || [];
+    if (!list.some((entry) => entry.id === id)) return progress;
+    return Object.assign({}, progress, { officialChecks: list.filter((entry) => entry.id !== id) });
   }
 
   function sectionHistory(history, sectionKey) {
@@ -1144,6 +1223,11 @@
     planShape,
     addOfficialScore,
     removeOfficialScore,
+    CHECK_DIFFICULTIES,
+    CHECK_MAX_QUESTIONS,
+    cleanOfficialCheck,
+    addOfficialCheck,
+    removeOfficialCheck,
     serveTemplates,
     noteScenes,
     serveQuestions,

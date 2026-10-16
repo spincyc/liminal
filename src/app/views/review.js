@@ -3,8 +3,11 @@
 
   // The Review view, where mistakes become practice, for the current test:
   //   Due     misses on a spaced schedule (lib/review-queue.js), practised in
-  //           one set: the same question the next day, then fresh versions
-  //           of its template at 3, 7, and 21 days.
+  //           sets of up to ten, most overdue first: the same question the
+  //           next day, then fresh versions of its template at 3, 7, and 21
+  //           days. Review is the plan's next step once a day; after that
+  //           the page says how many are still due, offers more by choice,
+  //           and names the next step every page shows.
   //   Missed  the error log: every missed answer with the student's answer,
   //           date, time, and hint use, a reason and a rule the student
   //           writes (Progress.tagError), filters, and a retry or a fresh
@@ -21,9 +24,9 @@
   // #review/missed, #review/marked to open a list.
 
   const PAGE_SIZE = 20;
-  // A due set's size, and the most a "practise these" set from the error
-  // log takes (newest first).
-  const DUE_SET_LIMIT = 20;
+  // The most a "practise these" set from the error log takes (newest
+  // first). A due set takes LiminalReviewQueue.SET_LIMIT, most overdue
+  // first, and Review is the plan's next step at most once a day.
   const MISSED_SET_LIMIT = 30;
   const RULE_MAX_LENGTH = 200;
   const REASONS = [
@@ -610,11 +613,24 @@
             "your history. In Missed, choose Try current version for a new attempt when an eligible current question is available.",
         }));
       }
+      const limit = Queue.SET_LIMIT;
+      const done = window.LiminalAnalytics && window.LiminalAnalytics.reviewDoneToday(ctx.store.get().sessions, model.test, Date.now());
       if (dueCount) {
-        const { picked, left } = Queue.pickSet(schedule.due, { limit: DUE_SET_LIMIT });
+        card.appendChild(h("p", {
+          className: "review-cap",
+          text: done
+            ? `Today's Review is done, so your plan has moved on. ${plural(dueCount, "question")} ${dueCount === 1 ? "is" : "are"} ` +
+              `still due: keep going by choice, up to ${limit} at a time, or leave ${dueCount === 1 ? "it" : "them"} for tomorrow.`
+            : `Review is your first step today: up to ${limit} questions, most overdue first. After one set the plan moves on, ` +
+              "and anything still due waits, or you can do more by choice.",
+        }));
+      }
+      if (dueCount) {
+        const { picked, left } = Queue.pickSet(schedule.due, { limit });
+        // Once today's Review is done, more is by choice: the next step leads.
         const start = h("button", {
           type: "button",
-          className: "button primary",
+          className: `button ${done ? "secondary" : "primary"}`,
           text: `Start review (${picked.length})`,
         });
         start.dataset.focusKey = "start-due";
@@ -637,8 +653,8 @@
         ]));
         const notes = ["No timer."];
         if (left.length) {
-          notes.push(`The other ${plural(left.length, "due question")} come in the next set: a set takes up to ` +
-            `${DUE_SET_LIMIT}, one per template.`);
+          notes.push(`The other ${plural(left.length, "due question")} wait for another set: a set takes up to ` +
+            `${limit}, most overdue first, one per question design.`);
         }
         card.appendChild(h("p", { className: "field-note", text: notes.join(" ") }));
       }
@@ -692,6 +708,38 @@
       ]);
     }
 
+    // The one next step every page names (ctx.guide), once today's Review
+    // is done or when nothing is due.
+    function nextStepCard() {
+      if (!ctx.guide || !ctx.stepWords) return null;
+      const step = ctx.guide(model.test).step();
+      if (!step || step.kind === "review") return null;
+      const words = ctx.stepWords(step);
+      const status = statusLine();
+      const button = h("button", { type: "button", className: "button primary", text: words.button });
+      button.addEventListener("click", async () => {
+        button.disabled = true;
+        ctx.setStatus(status, "Preparing your set\u2026", "loading");
+        try {
+          const opened = await ctx.startStep(step);
+          ctx.setStatus(status, opened === 0 ? "No questions match this step yet." : "", opened === 0 ? "error" : "");
+        } catch (error) {
+          ctx.setStatus(status, `${error.message} Refresh the page and try again.`, "error");
+        } finally {
+          button.disabled = false;
+        }
+      });
+      return h("section", { className: "card review-next", "aria-label": "Next step" }, [
+        h("h2", { text: "Next step" }),
+        h("p", {}, [h("strong", { text: words.title }), `${words.section ? ` (${words.section})` : ""}. ${words.reason}`]),
+        h("div", { className: "card-actions" }, [
+          words.learnHref ? h("a", { className: "button secondary", href: words.learnHref, text: "Read the lesson" }) : null,
+          button,
+        ]),
+        status,
+      ]);
+    }
+
     function duePanel() {
       const { schedule } = model;
       const scheduled = schedule.due.length + schedule.upcoming.length + schedule.unavailable.length;
@@ -700,9 +748,9 @@
           "Questions you answer wrong or leave blank come back here after a day, then again after 3, 7, and 21 " +
           "days, until you get them right each time.");
         box.appendChild(practiceLink());
-        return [box];
+        return [nextStepCard(), box].filter(Boolean);
       }
-      const nodes = [dueSummary()];
+      const nodes = [nextStepCard(), dueSummary()].filter(Boolean);
       if (schedule.due.length) {
         const list = h("ul", { className: "review-due-list", "aria-label": "Due questions" });
         const { nodes: rows, more } = paged("due", schedule.due, dueRow, list);
@@ -1053,7 +1101,7 @@
           "Questions you answer wrong or leave blank are saved here with your answer, so you can see why " +
           "you missed them and try them again.");
         box.appendChild(practiceLink());
-        return [box];
+        return [nextStepCard(), box].filter(Boolean);
       }
       if (filters.sectionKey && !sectionsIn(model.missed).some((entry) => entry.key === filters.sectionKey)) {
         filters.sectionKey = "";
@@ -1113,7 +1161,7 @@
         const box = message(`No marked ${model.test} questions.`,
           "Use Mark for Review during a set and the question is saved here.");
         box.appendChild(practiceLink());
-        return [box];
+        return [nextStepCard(), box].filter(Boolean);
       }
       const status = statusLine();
       const ids = model.marked.filter((id) => core.questionAvailable(id));

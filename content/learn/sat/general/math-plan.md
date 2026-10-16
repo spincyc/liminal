@@ -15,12 +15,14 @@ to organize work, and checks transfer with official practice tests.
 
 - Algebra is {{fact:sat-math-algebra}} and Advanced Math is {{fact:sat-math-advanced}} of Math. Together that is about 70% of the section.
 - Your Module 1 performance decides whether you get the harder or the easier Module 2 (see [Module 1 decides the route](learn:sat/general/modules-and-pacing#module-1)). College Board doesn't publish the rule. Module 1 mixes easy, medium and hard questions. Use your own misses to choose accessible skills to improve; a score around 500 does not identify the difficulty of every question you can solve.
-- Questions are not all worth the same. College Board says two students with the same number right can earn different scores, depending on which questions they got right, including how hard those were (see [how scores are calculated](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)). Build reliable methods on accessible questions before spending most of your time on the hardest work. That is the reason this plan introduces Medium practice before Hard; Liminal's labels do not establish official item weights or routing effects.
+- Questions are not all worth the same. College Board says two students with the same number right can earn different scores, depending on which questions they got right, including how hard those were (see [how scores are calculated](https://satsuite.collegeboard.org/scores/what-scores-mean/how-scores-calculated)). Build reliable methods on accessible questions before spending most of your time on the hardest work. That is the reason this plan introduces Medium practice before Hard, and opens Hard once Medium is routine; Liminal's labels do not establish official item weights or routing effects.
 
 ## The sequence {#sequence}
 
-Work through the skills in this order. Each stage builds on the one before,
-and each skill has a Learn page with the method and worked examples.
+The skills come in four stages, and each skill has a Learn page with the
+method and worked examples. You work two stages at a time: Track A runs
+stages 1 and 2, Track B runs stages 3 and 4. So Advanced Math starts in the
+first week, beside Algebra; together they are most of the section.
 
 If your misses involve axes, scales, endpoints or which coordinate to report,
 work through [Reading graphs](learn:sat/general/reading-graphs) alongside
@@ -33,24 +35,26 @@ the first stage. Those skills recur in lines, curves and data displays.
 
 Use Desmos from the first week, not as a last-minute trick. Do the one-week
 [Desmos practice plan](learn:sat/general/desmos#practice-protocol) alongside
-stage 1, then graph to solve or check in every later stage.
+stage 1, then graph to solve or check in every later stage. Early on,
+Liminal's next step offers a Desmos drill once: ten questions where Desmos
+is a real route, with the route shown after each.
 
 For each skill, the loop is:
 
-1. Read the Learn page and work its examples by hand, covering the solution first.
+1. Read the Learn page and work its examples by hand, covering the solution first. A skill's first drill offers its lesson beside the drill.
 2. Practice the skill at Easy until the method is routine: at least 8 of your last 10 Easy or Medium questions in the skill right, each counted once, with no hints.
-3. Practice it at Medium, with feedback after each question at first.
+3. Practice it at Medium, with feedback after each question. Once at least 6 of your last 10 Medium questions are right, about 3 of every 10 drill questions are Hard: many question types that official tests treat as Medium are Hard here.
 4. Log every miss in your [error log](learn:sat/general/error-log) with its type and a rule.
-5. Use the practice target below to decide when to add harder and mixed practice.
+5. Move on at the practice target below, or when the skill's budget is used up. It comes back later.
 
-Liminal's next step follows this sequence: Review first when a missed
-question is due, then the first skill in this order that is not yet at the
-gate, at Easy, Medium or Hard as the loop says. The diagnostic can start you
-later in the sequence: a stage is skipped while each of its domains went
-well on the diagnostic (at least 80% of at least 3 questions) and you have
-not practised its skills yet. Practising a skipped skill brings it back into
-its place, and every skipped skill returns once the later stages are at the
-gate.
+### How Liminal picks the next step {#next-step}
+
+- **One skill in flight on each track.** It is the track's first skill, in the order above, that has not met the practice target and has not had its turn yet. Drills alternate between the tracks, the one you drilled less recently first.
+- **A budget per skill.** A skill leaves flight when it meets the practice target, or after 40 Medium or Hard questions in it since it came into flight, from any set. A skill that uses its budget first has moved on: it stays in mixed sets and Review.
+- **A second pass.** When both tracks have been through every skill, the skills that moved on come back into flight in the same order, each with a fresh budget.
+- **The diagnostic can start you later.** A stage is passed over while each of its domains went well on the diagnostic (at least 80% of at least 3 questions) and you have not practised its skills. Practising a passed-over skill brings it back, and the rest return in the second pass.
+- **Review first, once a day.** When a missed question is due, the day starts with one Review set of up to 10 questions, most overdue first. After that the plan moves on, even if more are due; Review shows what is still due, and you can do more by choice.
+- **Then a rotation.** A timed module of 22 questions in 35 minutes, with answers at the end, once three skills are started or the diagnostic is done, and again whenever a week or four practice sets have passed since the last one. After a drill, a mixed set: 12 questions from every skill you have started, most from skills in flight or moved on, timed at real-test pace, with answers at the end. Early on, once, the Desmos drill. Otherwise a drill: 10 questions on a skill in flight, with feedback and a hint after each.
 
 ## The practice target {#mastery-gate}
 
@@ -60,7 +64,9 @@ gate.
 > once, at your first answer: a miss that Review brings back as it was does
 > not count again, but a fresh version of it does.
 
-This is a planning rule, not a statistical demonstration of mastery. Checking
+The target no longer holds you on one skill: a skill leaves flight when it
+meets the target or uses its budget, whichever comes first. This is a
+planning rule, not a statistical demonstration of mastery. Checking
 a rolling window repeatedly can produce a passing result by chance, and
 familiar question designs can raise accuracy without improving transfer.
 Use several question designs across days and check unfamiliar official
@@ -69,9 +75,9 @@ not just Medium ones, contribute to the real test's routing and score.
 Progress counts practice attempts for you. If you fall short, inspect the
 error log for the ideas or steps that need more work.
 
-After a skill passes, keep it alive: include a few of its questions in a
-mixed set each week. Start Hard questions in a skill only after its Medium
-gate, beginning with the big Algebra and Advanced Math skills.
+After a skill passes, the mixed sets and timed modules keep it alive. Hard
+questions join a skill's drills once Medium is routine, and lead them once it
+meets the target.
 
 Progress shows each skill in one of these states:
 
@@ -111,10 +117,21 @@ review, but remembered questions make its score a weaker estimate.
 Liminal's Easy, Medium and Hard are its own labels. College Board's
 [Student Question Bank](https://satsuite.collegeboard.org/practice/student-question-bank),
 opened from My Practice, has official questions you can filter by skill and
-by difficulty. Use it as a check: after a skill passes the gate here, do ten
-or so of its official Medium questions, and after the advanced target, some of its
-Hard ones. If you miss far more of them than you miss here, trust the
-official questions, and keep working the skill before you move on.
+by difficulty. Use it as a check: after a skill meets the practice target
+here, filter the bank to that skill at Medium and do about ten questions you
+haven't seen. Record how many you got right under Progress, in Official
+question checks; Progress prompts you when a skill reaches the target. After
+the advanced target, check some of its Hard ones too. The latest check of a
+skill counts:
+
+- At least 70% right confirms the skill on official questions.
+- Below 60%, the skill comes back into flight in the plan's next pass, flagged "official check low, keep practising". Trust the official questions.
+- In between, nothing changes.
+
+The weekly report on Progress also flags a skill whose latest official
+Medium check is 20 or more percentage points below your Liminal Medium
+accuracy in it: practice here isn't transferring, so slow down and work its
+Learn page and error log before more drills.
 
 > **Fails when.** You judge from two or three questions. A few misses in a
 > handful prove little either way; look for a clear gap, such as missing half
@@ -134,15 +151,19 @@ yet.
 ## A week in the plan {#week}
 
 - Four or five sessions of 45 to 60 minutes.
-- Start each session with 10 minutes of redoing missed questions from Review.
-- Spend 25 to 35 minutes on the current skill: Learn page, then Easy or Medium practice.
+- Start the day with Review when something is due: one set of up to 10 missed questions, most overdue first. That is the day's Review; what is still due waits for tomorrow, or for a set you choose.
+- Then follow the next step. It alternates drills on the skills in flight, one per track, with a mixed set after each drill.
+- At least once a week, a timed module of 22 questions in 35 minutes; the next step offers one after a week or four practice sets.
 - End with 5 to 10 minutes on your error log.
-- Once a week, one timed mixed set of 22 questions in 35 minutes from skills you have passed.
-- Every 2 to 3 weeks, an official practice test in place of the mixed set, with its score recorded under Official scores.
+- When a skill meets its practice target, check it on about ten official questions and record the result.
+- Every 2 to 3 weeks, an official practice test in place of a timed module, with its score recorded under Official scores.
+- Once a week, read the weekly report on Progress: it says On track or Needs attention, with the reasons, and you can print it or copy a summary for a parent. It reports practice, never a score.
 
-How long each stage takes depends on your gate results, not on the calendar.
-Stages 1 and 3 usually take the longest, and they are worth it: they cover
-most of the section.
+How long a skill takes depends on your answers: it leaves flight at the
+practice target or after its budget, so no skill holds the plan for long,
+and the ones that moved on come back in the second pass. Stages 1 and 3
+usually take the longest, and they are worth it: they cover most of the
+section.
 
 ## If your score isn't moving {#adjust}
 

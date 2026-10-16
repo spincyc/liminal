@@ -973,6 +973,13 @@ body {
   flex: 1 1 280px;
 }
 
+.recommend-row > .recommend-actions {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .recommend-row h4 {
   font-size: var(--text-base);
 }

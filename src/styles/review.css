@@ -18,6 +18,24 @@
   margin-top: 0;
 }
 
+.review-next {
+  display: grid;
+  gap: 8px;
+}
+
+.review-next > * + * {
+  margin-top: 0;
+}
+
+.review-next h2 {
+  font-size: var(--text-lg);
+}
+
+.review-cap {
+  padding-left: 12px;
+  border-left: 3px solid var(--color-accent);
+}
+
 .review-summary h2 {
   font-size: 1.75rem;
 }

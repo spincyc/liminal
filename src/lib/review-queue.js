@@ -39,6 +39,12 @@
 
   // Days until the next re-practice at each stage (stage n uses INTERVALS[n - 1]).
   const INTERVALS = [1, 3, 7, 21];
+  // The most questions one Review set takes, most overdue first. The plan
+  // makes Review the next step at most once a calendar day
+  // (lib/analytics.js REVIEW_CAP), so a day's Review stays about ten
+  // minutes; whatever is still due waits for the student's choice or the
+  // next day.
+  const SET_LIMIT = 10;
   const MS_PER_DAY = 24 * 60 * 60 * 1000;
   const REASONS = Progress.ERROR_REASONS;
   // A skill's error log suggests its Learn page when at least this many of
@@ -68,8 +74,21 @@
 
   /* ------------------------------------------------------------ schedule */
 
+  // The schedule an answer belongs to. A generated question's schedule is
+  // its design's: "<sectionKey>:<templateId>", so every version of a
+  // template, from any set, counts toward the one schedule (Review serves
+  // fresh versions from the second return anyway), and a student who
+  // misses several versions of one design has one entry, not one per
+  // version. A bank question's is the miss it was built to re-practise
+  // (reviewOf) or else its own id.
   function rootOf(attempt) {
-    return (attempt && (attempt.reviewOf || attempt.questionId)) || null;
+    if (!attempt) return null;
+    const parsed = Progress.parseQuestionId(attempt.questionId);
+    const templateId = attempt.templateId || (parsed && parsed.templateId);
+    if (templateId && (attempt.source === "template" || parsed)) {
+      return `${attempt.sectionKey || (parsed && parsed.sectionKey) || Progress.sectionOfId(attempt.questionId)}:${templateId}`;
+    }
+    return attempt.reviewOf || attempt.questionId || null;
   }
 
   function scored(attempt) {
@@ -208,11 +227,12 @@
     return summary;
   }
 
-  // The due entries one review set takes, in order: at most `limit`, and at
-  // most one per template (a set never repeats a template; bank questions
-  // count by id). Returns { picked, left } where `left` is what stays due.
+  // The due entries one review set takes, in order (pass summarize's `due`,
+  // most overdue first): at most `limit` (default SET_LIMIT), and at most
+  // one per template (a set never repeats a template; bank questions count
+  // by id). Returns { picked, left } where `left` is what stays due.
   function pickSet(due, options) {
-    const limit = (options && options.limit) || 20;
+    const limit = (options && options.limit) || SET_LIMIT;
     const used = new Set();
     const picked = [];
     const left = [];
@@ -300,6 +320,7 @@
 
   return {
     INTERVALS,
+    SET_LIMIT,
     CONTENT_GAP_MIN,
     dayOf,
     startOfDay,

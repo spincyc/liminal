@@ -35,6 +35,8 @@ function answer(questionId, local, extra) {
 const miss = (questionId, local, extra) => answer(questionId, local, Object.assign({ correct: false }, extra));
 
 const Q = "sat-math:slope-t:s1.slope-t.0";
+// A generated question's schedule is its design's (Queue.rootOf).
+const T = "sat-math:slope-t";
 const FRESH_1 = "sat-math:slope-t:f1.slope-t.0";
 const FRESH_2 = "sat-math:slope-t:f2.slope-t.2";
 
@@ -66,7 +68,7 @@ test("fixed-bank review schedules do not credit a revised question for an earlie
 });
 
 test("a miss is due the next local day and comes back as the same question", () => {
-  const entry = Queue.build([miss(Q, "2026-09-20T21:00")]).get(Q);
+  const entry = Queue.build([miss(Q, "2026-09-20T21:00")]).get(T);
   assert.equal(entry.stage, 1);
   assert.equal(key(entry.dueDay), "2026-09-21");
   assert.equal(entry.exactId, Q);
@@ -80,7 +82,7 @@ test("correct answers step through 3, 7 and 21 days, then graduate; later stages
   const attempts = [miss(Q, "2026-09-01T10:00")];
   const steps = [];
   const record = () => {
-    const entry = Queue.build(attempts).get(Q);
+    const entry = Queue.build(attempts).get(T);
     steps.push([entry.stage, entry.learned ? "learned" : key(entry.dueDay), Queue.modeOf(entry)]);
     return entry;
   };
@@ -116,7 +118,7 @@ test("a wrong answer at any stage resets to one day and re-serves what was misse
   ];
   const entries = Queue.build(attempts);
   assert.equal(entries.size, 1, "a fresh version belongs to the original miss");
-  const entry = entries.get(Q);
+  const entry = entries.get(T);
   assert.equal(entry.stage, 1);
   assert.equal(key(entry.dueDay), "2026-09-13");
   assert.equal(entry.exactId, FRESH_2, "stage 1 re-serves the version just missed");
@@ -128,13 +130,13 @@ test("a correct answer before the due day changes nothing; a hinted one restarts
   const early = Queue.build([
     miss(Q, "2026-09-01T10:00"),
     answer(Q, "2026-09-01T10:05"),
-  ]).get(Q);
+  ]).get(T);
   assert.equal(early.stage, 1);
   assert.equal(key(early.dueDay), "2026-09-02");
   const stepped = [miss(Q, "2026-09-01T10:00"), answer(Q, "2026-09-02T10:00")];
-  assert.equal(Queue.build(stepped).get(Q).stage, 2);
+  assert.equal(Queue.build(stepped).get(T).stage, 2);
   const hinted = Queue.build(stepped.concat(answer(FRESH_1, "2026-09-05T10:00", { reviewOf: Q, hinted: true })))
-    .get(Q);
+    .get(T);
   assert.equal(hinted.stage, 1);
   assert.equal(key(hinted.dueDay), "2026-09-06");
   assert.equal(hinted.exactId, FRESH_1);
@@ -143,15 +145,15 @@ test("a correct answer before the due day changes nothing; a hinted one restarts
 test("answers from any set count, and a learned question re-enters when missed again", () => {
   // The same question answered correctly in an ordinary set (no reviewOf).
   const attempts = [miss(Q, "2026-09-01T10:00"), answer(Q, "2026-09-03T10:00", { sessionId: "practice-set" })];
-  assert.equal(Queue.build(attempts).get(Q).stage, 2);
+  assert.equal(Queue.build(attempts).get(T).stage, 2);
   attempts.push(
     answer(FRESH_1, "2026-09-06T10:00", { reviewOf: Q }),
     answer(FRESH_2, "2026-09-13T10:00", { reviewOf: Q }),
     answer("sat-math:slope-t:f3.slope-t.0", "2026-10-04T10:00", { reviewOf: Q }),
   );
-  assert.equal(Queue.build(attempts).get(Q).learned, true);
+  assert.equal(Queue.build(attempts).get(T).learned, true);
   attempts.push(miss(Q, "2026-11-20T10:00"));
-  const entry = Queue.build(attempts).get(Q);
+  const entry = Queue.build(attempts).get(T);
   assert.equal(entry.learned, false);
   assert.equal(entry.stage, 1);
   assert.equal(key(entry.dueDay), "2026-11-21");
@@ -167,8 +169,9 @@ test("only misses start a schedule, a correct answer after a hint among them; re
       templateId: undefined }),
     miss("sat-math:blank-t:1", "2026-09-01T10:00", { answered: false, response: null }),
   ]);
-  assert.deepEqual([...entries.keys()].sort(), ["act-english-0007", "sat-math:blank-t:1", "sat-math:other:2"]);
-  assert.equal(entries.get("sat-math:other:2").stage, 1, "the hint means the method is not yet the student's own");
+  assert.deepEqual([...entries.keys()].sort(), ["act-english-0007", "sat-math:blank-t", "sat-math:other"]);
+  assert.equal(entries.get("sat-math:other").stage, 1, "the hint means the method is not yet the student's own");
+  assert.equal(entries.get("sat-math:other").exactId, "sat-math:other:2");
   const bank = entries.get("act-english-0007");
   bank.stage = 3;
   assert.equal(Queue.modeOf(bank), "exact", "bank questions always come back as they were");
@@ -182,8 +185,8 @@ test("attempts in any order build the same schedule", () => {
     miss(FRESH_2, "2026-09-14T10:00", { reviewOf: Q }),
     answer(FRESH_2, "2026-09-15T10:00", { reviewOf: Q }),
   ];
-  const forward = Queue.build(attempts).get(Q);
-  const shuffled = Queue.build([attempts[3], attempts[0], attempts[4], attempts[2], attempts[1]]).get(Q);
+  const forward = Queue.build(attempts).get(T);
+  const shuffled = Queue.build([attempts[3], attempts[0], attempts[4], attempts[2], attempts[1]]).get(T);
   assert.deepEqual(shuffled, forward);
   assert.deepEqual([forward.stage, key(forward.dueDay), forward.misses, forward.steps], [2, "2026-09-18", 2, 3]);
 });
@@ -193,7 +196,7 @@ test("due days are calendar days across daylight-saving changes", () => {
   const spring = Queue.build([
     miss(Q, "2026-03-07T23:30"),
     answer(Q, "2026-03-08T00:15"),
-  ]).get(Q);
+  ]).get(T);
   assert.equal(spring.stage, 2, "a 23-hour day still starts at local midnight");
   assert.equal(key(spring.dueDay), "2026-03-11");
   assert.equal(new Date(Queue.startOfDay(spring.dueDay)).getHours(), 0);
@@ -204,7 +207,7 @@ test("due days are calendar days across daylight-saving changes", () => {
     answer(FRESH_1, "2026-10-05T00:00", { reviewOf: Q }),
     answer(FRESH_2, "2026-10-12T22:00", { reviewOf: Q }),
   ];
-  const entry = Queue.build(fall).get(Q);
+  const entry = Queue.build(fall).get(T);
   assert.equal(entry.stage, 4);
   assert.equal(key(entry.dueDay), "2026-11-02", "21 days that include a 25-hour day");
   const before = Queue.summarize(Queue.build(fall), at("2026-11-01T23:59"));
@@ -213,7 +216,7 @@ test("due days are calendar days across daylight-saving changes", () => {
   assert.equal(key(before.nextDue.day), "2026-11-02");
 
   // Local midnight at the start of the 25-hour day is still that day.
-  const onFallDay = Queue.build([miss(Q, "2026-10-31T23:59"), answer(Q, "2026-11-01T00:00")]).get(Q);
+  const onFallDay = Queue.build([miss(Q, "2026-10-31T23:59"), answer(Q, "2026-11-01T00:00")]).get(T);
   assert.equal(key(onFallDay.dueDay), "2026-11-04");
 });
 
@@ -222,7 +225,7 @@ test("the southern hemisphere's daylight-saving change keeps calendar days too",
   process.env.TZ = "Australia/Sydney";
   try {
     // Sydney springs forward at 02:00 on 2026-10-04.
-    const entry = Queue.build([miss(Q, "2026-10-03T22:00"), answer(Q, "2026-10-04T03:30")]).get(Q);
+    const entry = Queue.build([miss(Q, "2026-10-03T22:00"), answer(Q, "2026-10-04T03:30")]).get(T);
     assert.equal(key(Queue.dayOf(at("2026-10-04T03:30"))), "2026-10-04");
     assert.equal(entry.stage, 2);
     assert.equal(key(entry.dueDay), "2026-10-07");
@@ -242,14 +245,45 @@ test("the summary lists what is due, what is next, and what cannot be built", ()
   const summary = Queue.summarize(entries, at("2026-09-15T12:00"), {
     skip: (entry) => entry.templateId === "gone",
   });
-  assert.deepEqual(summary.due.map((entry) => entry.questionId), ["sat-math:a:1", "sat-math:b:1"],
+  assert.deepEqual(summary.due.map((entry) => entry.exactId), ["sat-math:a:1", "sat-math:b:1"],
     "most overdue first");
-  assert.deepEqual(summary.upcoming.map((entry) => entry.questionId), ["sat-math:c:1", "sat-math:d:1"]);
-  assert.deepEqual(summary.unavailable.map((entry) => entry.questionId), ["sat-math:gone:1"]);
+  assert.deepEqual(summary.upcoming.map((entry) => entry.questionId), ["sat-math:c", "sat-math:d"]);
+  assert.deepEqual(summary.unavailable.map((entry) => entry.questionId), ["sat-math:gone"]);
   assert.equal(key(summary.nextDue.day), "2026-09-21");
   assert.equal(summary.nextDue.count, 2);
   assert.equal(key(summary.today), "2026-09-15");
   assert.equal(Queue.summarize(new Map(), at("2026-09-15T12:00")).nextDue, null);
+});
+
+test("every version of a design shares one schedule, whatever set answers it", () => {
+  // Two versions missed on one day are one entry; stage 1 re-serves the
+  // later one.
+  const twice = Queue.build([miss(Q, "2026-09-01T10:00"), miss(FRESH_1, "2026-09-01T10:05")]);
+  assert.equal(twice.size, 1);
+  assert.deepEqual([twice.get(T).misses, twice.get(T).exactId], [2, FRESH_1]);
+  // A fresh version answered right in an ordinary drill on the due day
+  // steps the schedule, as a Review set's would.
+  const drilled = Queue.build([miss(Q, "2026-09-01T10:00"), answer(FRESH_2, "2026-09-02T10:00", { sessionId: "drill" })]).get(T);
+  assert.deepEqual([drilled.stage, key(drilled.dueDay)], [2, "2026-09-05"]);
+  // A miss on any version restarts it.
+  const restarted = Queue.build([miss(Q, "2026-09-01T10:00"), answer(Q, "2026-09-02T10:00"),
+    miss(FRESH_2, "2026-09-03T10:00", { sessionId: "mixed" })]).get(T);
+  assert.deepEqual([restarted.stage, restarted.exactId, key(restarted.dueDay)], [1, FRESH_2, "2026-09-04"]);
+  // Older Review answers named the missed question; they still land on the design.
+  assert.equal(Queue.rootOf(answer(FRESH_1, "2026-09-02T10:00", { reviewOf: Q })), T);
+  assert.equal(Queue.rootOf({ questionId: "act-english-0003", reviewOf: "act-english-0002", source: "bank" }), "act-english-0002");
+  assert.equal(Queue.rootOf({ questionId: "act-english-0003", source: "bank" }), "act-english-0003");
+});
+
+test("a review set takes at most SET_LIMIT (ten), most overdue first", () => {
+  assert.equal(Queue.SET_LIMIT, 10);
+  const attempts = Array.from({ length: 14 }, (_, index) =>
+    miss(`sat-math:t${index}:1`, `2026-09-${String(index + 1).padStart(2, "0")}T10:00`, { templateId: `t${index}` }));
+  const summary = Queue.summarize(Queue.build(attempts), at("2026-10-01T12:00"));
+  assert.equal(summary.due.length, 14);
+  const { picked, left } = Queue.pickSet(summary.due);
+  assert.deepEqual(picked.map((entry) => entry.templateId), Array.from({ length: 10 }, (_, index) => `t${index}`));
+  assert.equal(left.length, 4);
 });
 
 test("a review set takes the most overdue items, one per template", () => {

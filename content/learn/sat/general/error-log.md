@@ -88,13 +88,19 @@ return. Answering it again before it is due changes
 nothing in the schedule. You may still review it sooner, but memory of the
 answer makes that attempt weaker evidence of independent recall.
 
+In SAT practice the schedule belongs to the question's design, not to one
+version of it: miss two versions of one design and they share one schedule,
+and a right answer to any version in any set, a drill or a mixed set
+included, counts once its day has come. Fixed ACT questions keep a schedule
+each.
+
 Once a week, count your log by error type and by skill. Mostly content: study
 those skills. Mostly careless: fix habits before adding content. The two or
 three skills that show up most are next week's targets.
 
 ## Using Liminal for this {#liminal}
 
-- Review has three lists: Due (the returns above, practiced in one set), Missed (every missed answer, which is your error log) and Marked.
+- Review has three lists: Due (the returns above, practiced in sets of up to ten, most overdue first), Missed (every missed answer, which is your error log) and Marked. Review is your plan's first step once a day; after that set the plan moves on, and anything still due waits or can be done by choice.
 - Mark a question for review during a set whenever you guessed or weren't sure, not only when you know you're wrong.
 - Progress shows your accuracy by skill, with Hard accuracy on its own. Use it to choose which skills to study next. It is practice feedback on Liminal's questions, not an SAT score.
 - In Review's Missed list, tag each miss with its reason (content, process, careless or time) and write the rule you will remember. The log then lives next to the question, and Review counts your misses by reason and filters by reason, section and skill, which is the weekly count above done for you.

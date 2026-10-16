@@ -55,6 +55,8 @@ function record(fields) {
     plan: { testDate: "2026-11-07", weeklyQuestions: 120 },
     officialScores: [{ id: "o1", date: "2026-09-12", kind: "practice", label: "Practice Test 4",
       readingWriting: 560, math: 510, at: 3000 }],
+    officialChecks: [{ id: "c1", sectionKey: "sat-math", skill: "Linear functions", difficulty: "Medium",
+      attempted: 10, correct: 7, date: "2026-09-14", at: 3100 }],
   }, fields);
 }
 
@@ -68,8 +70,10 @@ test("an export round-trips through the file", () => {
   const parsed = IO.parseImport(file.text);
   assert.equal(parsed.ok, true);
   assert.deepEqual(parsed.progress, Progress.normalize(original));
-  assert.deepEqual(parsed.info.dropped, { attempts: 0, sessions: 0, errorLog: 0, plan: 0, officialScores: 0 });
+  assert.deepEqual(parsed.info.dropped, { attempts: 0, sessions: 0, errorLog: 0, plan: 0, officialScores: 0, officialChecks: 0 });
   assert.equal(parsed.info.officialScores, 1);
+  assert.equal(parsed.info.officialChecks, 1);
+  assert.deepEqual(parsed.progress.officialChecks, original.officialChecks, "official checks round-trip");
   assert.equal(parsed.info.source, "export");
   assert.equal(parsed.info.attempts, 2);
   assert.deepEqual(parsed.info.tests, { SAT: 2, ACT: 0 });
@@ -209,6 +213,14 @@ test("entries that do not match the v3 shape are dropped and counted", () => {
       { date: "2026-09-01", kind: "sat", math: 500 },
       { id: "off-scale", date: "2026-09-01", kind: "sat", math: 505 },
     ],
+    officialChecks: [
+      { id: "check", sectionKey: "sat-math", skill: "Circles", difficulty: "Hard", attempted: 8, correct: 3, date: "2026-09-02" },
+      { id: "too-many-right", sectionKey: "sat-math", skill: "Circles", difficulty: "Medium", attempted: 8, correct: 9, date: "2026-09-02" },
+      { id: "easy", sectionKey: "sat-math", skill: "Circles", difficulty: "Easy", attempted: 8, correct: 3, date: "2026-09-02" },
+      { id: "act", sectionKey: "act-english", skill: "Punctuation", difficulty: "Medium", attempted: 8, correct: 3, date: "2026-09-02" },
+      { id: "no-date", sectionKey: "sat-math", skill: "Circles", difficulty: "Medium", attempted: 8, correct: 3 },
+      "junk",
+    ],
   }));
   const result = IO.parseImport(text);
   assert.equal(result.ok, true);
@@ -218,7 +230,8 @@ test("entries that do not match the v3 shape are dropped and counted", () => {
   // An older shared plan becomes both tests' plan.
   assert.deepEqual(result.progress.plan, { SAT: { weeklyQuestions: 100 }, ACT: { weeklyQuestions: 100 } });
   assert.deepEqual(result.progress.officialScores.map((entry) => entry.id), ["good"]);
-  assert.deepEqual(result.info.dropped, { attempts: 6, sessions: 2, errorLog: 1, plan: 1, officialScores: 3 });
+  assert.deepEqual(result.progress.officialChecks.map((entry) => entry.id), ["check"]);
+  assert.deepEqual(result.info.dropped, { attempts: 6, sessions: 2, errorLog: 1, plan: 1, officialScores: 3, officialChecks: 5 });
   // Fields added later pass through untouched.
   const extra = IO.parseImport(JSON.stringify(record({ attempts: [attempt("r", { reviewOf: "sat-math:x:1" })] })));
   assert.equal(extra.progress.attempts[0].reviewOf, "sat-math:x:1");
@@ -241,6 +254,9 @@ test("merging a file unions answers and sets, and merging it again changes nothi
     errorLog: { a2: { reason: "content", at: 9 } },
     plan: { SAT: { weeklyQuestions: 200 } },
     officialScores: [{ id: "here", date: "2026-09-19", kind: "practice", math: 540 }],
+    officialChecks: [{ id: "c1", sectionKey: "sat-math", skill: "Linear functions", difficulty: "Medium",
+      attempted: 10, correct: 9, date: "2026-09-14" }, { id: "c-here", sectionKey: "sat-math", skill: "Circles",
+      difficulty: "Medium", attempted: 10, correct: 5, date: "2026-09-20" }],
   });
   const imported = IO.parseImport(JSON.stringify(record())).progress;
   const first = IO.mergeImport(current, imported);
@@ -258,11 +274,16 @@ test("merging a file unions answers and sets, and merging it again changes nothi
   assert.equal(merged.history["sat-math"].serve, 3);
   // Official scores join by id, in date order.
   assert.deepEqual(merged.officialScores.map((entry) => entry.id), ["o1", "here"]);
-  assert.deepEqual(first.added, { attempts: 1, sessions: 1, marked: 1, officialScores: 1 });
+  // Official checks join by id; this browser's copy of a shared id wins.
+  assert.deepEqual(merged.officialChecks.map((entry) => [entry.id, entry.correct]), [["c1", 9], ["c-here", 5]]);
+  assert.deepEqual(first.added, { attempts: 1, sessions: 1, marked: 1, officialScores: 1, officialChecks: 0 });
   assert.equal(first.over, 0);
+  const fresh = IO.mergeImport(Object.assign({}, current, { officialChecks: [] }), imported);
+  assert.equal(fresh.added.officialChecks, 1);
+  assert.deepEqual(fresh.progress.officialChecks.map((entry) => entry.id), ["c1"]);
 
   const again = IO.mergeImport(merged, imported);
-  assert.deepEqual(again.added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0 });
+  assert.deepEqual(again.added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0, officialChecks: 0 });
   assert.deepEqual(again.progress.attempts, merged.attempts);
 });
 
@@ -277,7 +298,7 @@ test("two browsers' migrated ids that name different answers are both kept", () 
   const merged = IO.mergeImport(current, imported).progress;
   assert.deepEqual(merged.attempts.map((entry) => entry.id), ["v2:0", "v2:0~e-there"]);
   assert.deepEqual(Object.keys(merged.errorLog), ["v2:0~e-there"]);
-  assert.deepEqual(IO.mergeImport(merged, imported).added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0 });
+  assert.deepEqual(IO.mergeImport(merged, imported).added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0, officialChecks: 0 });
 });
 
 test("colliding migrated answers remain distinct across repeated restores and shared epochs", () => {
@@ -378,7 +399,7 @@ test("importing another device's answer to the same question does not count it t
   const merged = IO.mergeImport(current, imported).progress;
   assert.deepEqual(merged.attempts.map((entry) => entry.repeat), [false, true]);
   assert.equal(Progress.stats(merged.attempts).accuracy, 0);
-  assert.deepEqual(IO.mergeImport(merged, imported).added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0 });
+  assert.deepEqual(IO.mergeImport(merged, imported).added, { attempts: 0, sessions: 0, marked: 0, officialScores: 0, officialChecks: 0 });
 });
 
 test("invalid calendar timestamps and unreadable imported fields are rejected before restore", () => {
@@ -449,4 +470,16 @@ test("progress replacement leaves unfinished set and test slots, including draft
   const exported = IO.exportFile(store.get(), 1).text;
   assert.equal(exported.includes("Private unfinished draft"), false);
   assert.equal(exported.includes("simulation"), false);
+});
+
+test("a record from before official checks restores with none, and a restore keeps a file's checks", () => {
+  const older = record();
+  delete older.officialChecks;
+  const parsed = IO.parseImport(JSON.stringify(older));
+  assert.equal(parsed.ok, true);
+  assert.deepEqual(parsed.progress.officialChecks, []);
+  assert.equal(parsed.info.dropped.officialChecks, 0);
+  const replaced = IO.replaceWith(IO.parseImport(JSON.stringify(record())).progress, "e-new");
+  assert.deepEqual(replaced.officialChecks.map((entry) => entry.id), ["c1"]);
+  assert.equal(replaced.epoch, "e-new");
 });
