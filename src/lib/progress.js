@@ -302,6 +302,11 @@
         leftBy: textOrNull(saved.leftBy),
         movedOn: saved.movedOn === true,
         reachedTarget: saved.reachedTarget === true,
+        reachedAt: timeOrNull(saved.reachedAt),
+        firstEnteredAt: timeOrNull(saved.firstEnteredAt),
+        drillAnswers: wholeNumber(saved.drillAnswers),
+        aboveEasy: saved.aboveEasy === true,
+        lowAtTarget: saved.lowAtTarget === true,
       };
     });
     const inFlight = {};

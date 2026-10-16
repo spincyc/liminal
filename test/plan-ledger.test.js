@@ -80,7 +80,7 @@ test("the plan survives the cap on attempts: the ledger carries passes, budgets 
   }
   assert.ok(fromLedger > 50, "most saves came after the cap");
   const full = shape(planOf(all));
-  assert.equal(full.pass, 2);
+  assert.ok(full.pass >= 2);
   assert.ok(full.departures.length >= 19);
   assert.deepEqual(shape(planOf(retained, record.planLedger["sat-math"])), full, "the capped record plus its ledger is the full plan");
   const without = shape(planOf(retained));

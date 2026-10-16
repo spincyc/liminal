@@ -44,10 +44,15 @@ function answer(skill, daysAgo, fields) {
 }
 const many = (count, skill, daysAgo, fields) => Array.from({ length: count }, () => answer(skill, daysAgo, fields));
 
+// The answers here come from drills unless a test says otherwise: each
+// set the answers name and the sessions do not is taken for a drill.
 function report(input) {
   const attempts = input.attempts || [];
   const rows = Analytics.skillMap(attempts, [mathSection]);
-  const plan = Analytics.planState(rows, { sectionKey: "sat-math", attempts, sessions: input.sessions || [],
+  const known = new Set((input.sessions || []).map((session) => session.id));
+  const drills = [...new Set(attempts.map((attempt) => attempt.sessionId))].filter((id) => !known.has(id))
+    .map((id) => ({ id, kind: "drill", sectionKey: "sat-math", finishedAt: 0 }));
+  const plan = Analytics.planState(rows, { sectionKey: "sat-math", attempts, sessions: (input.sessions || []).concat(drills),
     officialChecks: input.officialChecks || [], now: NOW });
   return Analytics.weeklyReport(Object.assign({ test: "SAT", rows, plan, sessions: [], now: NOW }, input));
 }
@@ -105,14 +110,22 @@ test("the signal names each reason that fires, and is On track when none does", 
   assert.ok(!report({ attempts: steady, sessions: [] }).signal.reasons.some((reason) => reason.key === "no-module"),
     "not before three skills are started");
   // The last two official Math scores within ten points.
+  // ...at least 14 days apart with at least 4 practice days between them.
   const scores = [{ id: "a", date: "2026-08-23", kind: "practice", math: 520 }, { id: "b", date: "2026-10-03", kind: "sat", math: 530 },
     { id: "rw", date: "2026-10-04", kind: "practice", readingWriting: 700 }];
-  result = report({ attempts: steady, sessions: [module], officialScores: scores });
+  const between = [30, 31, 32, 33].flatMap((day) => many(2, trackA[0], day));
+  result = report({ attempts: steady.concat(between), sessions: [module], officialScores: scores });
   const flat = result.signal.reasons.find((reason) => reason.key === "flat-scores");
   assert.equal(flat.href, "learn.html#sat/general/math-plan/adjust");
   assert.deepEqual(result.scores.map((score) => score.math), [520, 530]);
-  assert.ok(!report({ attempts: steady, sessions: [module], officialScores: [scores[0], Object.assign({}, scores[1], { math: 560 })] })
-    .signal.reasons.some((reason) => reason.key === "flat-scores"));
+  const flatWith = (list, attempts) => report({ attempts, sessions: [module], officialScores: list })
+    .signal.reasons.some((reason) => reason.key === "flat-scores");
+  assert.equal(flatWith([scores[0], Object.assign({}, scores[1], { math: 560 })], steady.concat(between)), false, "30 points apart");
+  assert.equal(flatWith(scores, steady.concat(between.slice(0, 6))), false, "three practice days between");
+  assert.equal(flatWith(scores, steady), false, "no practice between them");
+  // A real SAT on Oct 3 and a Bluebook test on Oct 17, practising from Oct 16: not a stall.
+  assert.equal(flatWith([{ id: "s", date: "2026-10-03", kind: "sat", math: 530 }, { id: "p", date: "2026-10-12", kind: "practice", math: 540 }],
+    [5, 6, 7, 8, 9].flatMap((day) => many(2, trackA[0], day))), false, "nine days apart");
   // An official Medium check 20 points or more below Liminal Medium accuracy.
   const check = { id: "c", sectionKey: "sat-math", skill: trackA[0], difficulty: "Medium", attempted: 10, correct: 7, date: "2026-10-15" };
   result = report({ attempts: steady, sessions: [module], officialChecks: [check] });
@@ -137,14 +150,22 @@ test("the transfer reason compares the latest Medium check with Liminal Medium a
 
 test("pace: first-pass skills left against skills leaving flight, or not enough history yet", () => {
   // Two weeks of practice where one skill left flight.
-  const early = many(40, trackA[0], 20, { correct: false });
-  const later = [0, 1, 2, 3, 4].flatMap((day) => many(4, trackA[1], day, { difficulty: "Easy" }));
+  const early = many(Analytics.BUDGET.answers, trackA[0], 20, { correct: false });
+  const later = [0, 1, 2, 3, 4].flatMap((day) => many(3, trackA[1], day, { difficulty: "Easy" }));
   const module = { id: "m", kind: "module", sectionKey: "sat-math", finishedAt: NOW - DAY };
   let result = report({ attempts: early.concat(later), sessions: [module], testDate: "2026-11-07" });
-  assert.deepEqual([result.pace.enough, result.pace.departures, result.pace.remaining], [true, 1, 18]);
-  assert.equal(result.pace.covered, 1, "one skill in 21 days covers about one more in 22 days");
+  // 20 days of history: 1 departure in 20 days, 22 days left: 1 x 22 / 20 = 1.1, so about 1.
+  assert.deepEqual([result.pace.enough, result.pace.departures, result.pace.remaining, result.pace.windowDays, result.pace.historyDays],
+    [true, 1, 18, 20, 20]);
+  assert.equal(result.pace.covered, Math.floor((1 / 20) * 22));
+  assert.equal(result.pace.perWeek, 0.4, "1 in 20 days is 0.35 a week, shown as 0.4");
   const pace = result.signal.reasons.find((reason) => reason.key === "pace");
-  assert.match(pace.text, /about 1 of the 18 skills still in the first pass/);
+  assert.match(pace.text, /\(1 skill finished its turn in the last 20 days\), about 1 of the 18 skills still waiting for a first turn would get one in the 22 days before the test/);
+  assert.match(Analytics.weeklyReportText(result), /Pace: 1 skill finished its turn in the last 20 days/);
+  // With a longer history the window is 21 days and says so.
+  const old = many(2, trackA[2], 40);
+  const longer = report({ attempts: old.concat(early, later), sessions: [module], testDate: "2026-11-07" });
+  assert.deepEqual([longer.pace.windowDays, longer.pace.departures], [21, 1]);
   // Without a test date there is nothing to compare.
   result = report({ attempts: early.concat(later), sessions: [module] });
   assert.ok(!result.signal.reasons.some((reason) => reason.key === "pace"));
@@ -161,14 +182,17 @@ test("the copied summary is plain text that reports practice and never a score e
     correct: 14, hard: { total: 7, correct: 3 } }], testDate: "2026-11-07",
     officialScores: [{ id: "b", date: "2026-10-03", kind: "sat", math: 530 }] });
   const text = Analytics.weeklyReportText(result, { sectionName: () => "Math" });
-  assert.match(text, /^Liminal weekly report: SAT, 2026-10-10 to 2026-10-16/);
+  assert.match(text, /^Liminal weekly report: SAT, Oct 10 to Oct 16, 2026/);
   assert.match(text, /Status: Needs attention\n- Practised on 3 of the last 7 days/);
-  assert.match(text, /Timed modules: Math 14 of 22 \(Hard 3 of 7\)/);
-  assert.match(text, /Math skills in flight: Linear equations in one variable \(Track A, Building, 12 of 40 used\); Equivalent expressions \(Track B, Not started, 0 of 40 used\)/);
-  assert.match(text, /Official Math scores: 530 on 2026-10-03 \(real SAT\)/);
-  assert.match(text, /Test date: 2026-11-07 \(22 days left\)/);
+  assert.match(text, /Math skills at their practice target: 0 of 19/);
+  assert.match(text, /Timed test sections: Math 14 of 22 right \(hardest questions 3 of 7\), Oct 15/);
+  assert.match(text, /Math skills practising now: Linear equations in one variable \(working toward its target, 12 of 20 practice questions used\); Equivalent expressions \(not started yet, 0 of 20 practice questions used\)/);
+  assert.match(text, /Official Math scores: 530 on Oct 3 \(real SAT\)/);
+  assert.match(text, /Test date: Nov 7, 2026 \(22 days left\)/);
   assert.match(text, /It does not estimate or predict a score\.$/);
   assert.doesNotMatch(text, /<|predicted score|estimated score|projected/i);
+  // No plan jargon for a parent.
+  assert.doesNotMatch(text, /in flight|Track [AB]|Building|moved on|first pass|left flight/i);
 });
 
 /* --------------------------------------------------------------- ACT */
@@ -221,8 +245,8 @@ test("ACT: the weekly report counts per test and leaves SAT-only parts out, neve
   assert.equal(result.daysLeft, 57);
   const text = Analytics.weeklyReportText(result);
   assert.match(text, /^Liminal weekly report: ACT/);
-  assert.match(text, /Not available for ACT: timed modules, plan tracks, official checks and scores\./);
-  assert.doesNotMatch(text, /Official Math scores|Skills in flight|Timed modules:/);
+  assert.match(text, /Not available for ACT: timed test sections, the Math plan, official checks and scores\./);
+  assert.doesNotMatch(text, /Official Math scores|practising now|Timed test sections:|practice target/);
   // Too few ACT practice days still fires, as for SAT.
   const sparse = Analytics.weeklyReport({ test: "ACT", attempts: attempts.slice(0, 2), sessions, rows, now: NOW });
   assert.deepEqual(sparse.signal.reasons.map((reason) => reason.key), ["practice-days"]);

@@ -96,17 +96,19 @@ test("drill steps alternate tracks, the one drilled least recently first", () =>
 });
 
 test("a skill leaves flight at the gate or after its budget of first answers at any tier, then moves on", () => {
-  assert.deepEqual(Analytics.BUDGET, { answers: 40 });
+  assert.deepEqual(Analytics.BUDGET, { answers: 20 });
   // Answers from before it was in flight spend nothing.
-  const before = answers(6, trackA[1], { difficulty: "Easy", correct: false });
+  // (Track A's second skill also has 15 right Medium answers from before
+  // its turn: they fill its gate window but spend nothing.)
+  const before = answers(6, trackA[1], { difficulty: "Easy", correct: false }).concat(gate(trackA[1]).slice(0, 15));
   let plan = state(before);
   assert.deepEqual([plan.tracks[0].inFlight, plan.skills[trackA[1]].spent], [trackA[0], 0]);
-  // Every first answer in flight spends, Easy included: 39 is still in flight.
-  const spending = before.concat(answers(20, trackA[0], { difficulty: "Easy", correct: false }),
-    answers(10, trackA[0], { correct: false }), answers(9, trackA[0], { correct: false, difficulty: "Hard" }));
+  // Every first answer in flight spends, Easy included: 19 is still in flight.
+  const spending = before.concat(answers(10, trackA[0], { difficulty: "Easy", correct: false }),
+    answers(5, trackA[0], { correct: false }), answers(4, trackA[0], { correct: false, difficulty: "Hard" }));
   plan = state(spending);
-  assert.deepEqual([plan.tracks[0].inFlight, plan.skills[trackA[0]].spent], [trackA[0], 39]);
-  // The fortieth moves it on; the next skill in Track A takes flight.
+  assert.deepEqual([plan.tracks[0].inFlight, plan.skills[trackA[0]].spent], [trackA[0], 19]);
+  // The twentieth moves it on; the next skill in Track A takes flight.
   const spent = spending.concat(answers(1, trackA[0], { correct: false }));
   plan = state(spent);
   const entry = plan.skills[trackA[0]];
@@ -116,8 +118,9 @@ test("a skill leaves flight at the gate or after its budget of first answers at 
   assert.deepEqual(plan.departures.map((item) => [item.skill, item.by, item.pass]), [[trackA[0], "budget", 1]]);
   assert.deepEqual(plan.started, [trackA[0]], "a skill counts as started from its first answer in flight");
   assert.equal(entry.easyStuck, true, "it moved on before Easy was routine: flagged");
-  // The gate: 30 Medium first answers, 24 right, over two days and designs.
-  const atTarget = gate(trackA[1]);
+  // The gate: 30 Medium first answers, 24 right, over two days and designs,
+  // reached in its turn before the budget runs out.
+  const atTarget = gate(trackA[1]).slice(0, 15);
   plan = state(spent.concat(atTarget));
   assert.deepEqual([plan.skills[trackA[1]].status, plan.skills[trackA[1]].leftBy, plan.tracks[0].inFlight],
     ["at-gate", "gate", trackA[2]]);
@@ -163,7 +166,7 @@ test("the second pass brings moved-on skills back with a fresh budget once both 
   assert.deepEqual([plan.skills[trackA[0]].entry, plan.skills[trackA[0]].spent, plan.skills[trackA[0]].pass], ["moved-on", 0, 2]);
   assert.equal(plan.firstPassLeft, 0);
   const second = step(trackADone.concat(trackB.flatMap(moveOn)));
-  assert.deepEqual([second.pass, second.returned, second.entry, second.budget], [2, true, "moved-on", { used: 0, size: 40 }]);
+  assert.deepEqual([second.pass, second.returned, second.entry, second.budget], [2, true, "moved-on", { used: 0, size: Analytics.BUDGET.answers }]);
 });
 
 test("the diagnostic's placement passes over earlier stages in the first pass", () => {
@@ -183,12 +186,14 @@ test("Hard joins a drill once a skill is routine at Medium; drills stay Easy unt
   assert.deepEqual(Analytics.drillMix("medium-routine", 20), { Medium: 14, Hard: 6 });
   assert.equal(Analytics.drillMix("routine", 10), null);
   const skill = trackA[0];
-  let next = step(answers(5, skill, { difficulty: "Easy" }));
+  // (Answers outside drills: they leave the budget alone.)
+  const outside = { sessions: [] };
+  let next = step(answers(5, skill, { difficulty: "Easy" }), outside);
   assert.deepEqual([next.level, next.levelWhy, next.mix], ["Easy", "not-routine", undefined]);
   const routine = answers(10, skill, { difficulty: "Easy" });
-  next = step(routine.concat(answers(5, skill, { correct: false }), answers(5, skill)));
+  next = step(routine.concat(answers(5, skill, { correct: false }), answers(5, skill)), outside);
   assert.deepEqual([next.level, next.levelWhy, next.mix], ["Medium", "routine", undefined], "5 of 10 at Medium");
-  next = step(routine.concat(answers(4, skill, { correct: false }), answers(6, skill)));
+  next = step(routine.concat(answers(4, skill, { correct: false }), answers(6, skill)), outside);
   assert.deepEqual([next.level, next.levelWhy, next.mix], ["Medium", "medium-routine", { Medium: 7, Hard: 3 }]);
   // Reading and Writing keeps its levels: no Hard mixed in.
   const rw = Analytics.skillMap([...Array.from({ length: 10 }, () => answer("Inferences", { sectionKey: "sat-reading-writing",
@@ -210,52 +215,68 @@ test("a skill that enters flight with few answers names its Learn page, by Pract
   assert.deepEqual([next.skill, next.learnPage], [trackA[1], undefined]);
 });
 
-test("the rotation: a timed module, a mixed set after a drill, and one early Desmos drill", () => {
+test("the rotation: a timed module, a mixed set after a drill, and the Desmos drill on its cadence", () => {
   const now = new Date(2026, 9, 1, 18).getTime();
-  const set = (kind, daysAgo, extra) => Object.assign({ id: `${kind}${Math.random()}`, kind, sectionKey: "sat-math",
+  let serial = 0;
+  const set = (kind, daysAgo, extra) => Object.assign({ id: `${kind}${serial += 1}`, kind, sectionKey: "sat-math",
     finishedAt: now - daysAgo * DAY }, extra);
+  // A drill set on one skill: its session and its answers, which are what
+  // spend the skill's budget and mark it started.
+  const drill = (skill, count, daysAgo, fields) => {
+    const session = set("drill", daysAgo, { skill });
+    return { session, answers: answers(count, skill, Object.assign({ sessionId: session.id, difficulty: "Easy" }, fields)) };
+  };
   const rows = (attempts) => Analytics.skillMap(attempts, [mathSection]);
   const run = (attempts, sessions, extra) => Analytics.nextStep(rows(attempts), Object.assign({ attempts, sessions, now }, extra));
-  // One skill started, one drill done: not yet a mixed set (two started), but
-  // early on, the Desmos drill when routes are loaded.
-  const one = answers(5, trackA[0], { difficulty: "Easy" });
-  assert.equal(run(one, [set("drill", 1)]).kind, "skill");
-  assert.deepEqual([run(one, [set("drill", 1)], { desmos: true }).kind, run(one, [set("drill", 1)], { desmos: true }).count], ["desmos", 10]);
-  assert.equal(run(one, [set("drill", 1), set("desmos", 0.5)], { desmos: true }).kind, "skill", "once only");
-  assert.equal(run(one, [], { desmos: true }).kind, "skill", "never the first set");
-  const fiveSets = ["drill", "mixed", "drill", "mixed", "drill"].map((kind, index) => set(kind, 5 - index));
-  assert.notEqual(run(one, fiveSets, { desmos: true }).kind, "desmos", "not after the first five sets");
-  // One started skill is not enough for a mixed set; two are.
-  assert.equal(run(one, [set("drill", 1)]).kind, "skill");
-  const two = one.concat(answers(3, trackB[0], { difficulty: "Easy" }));
-  assert.deepEqual(state(two).started, [trackA[0], trackB[0]]);
-  assert.deepEqual([run(two, [set("drill", 1)]).kind, run(two, [set("drill", 1)]).count], ["mixed", 12]);
-  // Three started, or the diagnostic done: a timed module when none was taken.
-  const three = two.concat(answers(40, trackA[0], { correct: false }), answers(2, trackA[1], { difficulty: "Easy" }));
-  const module = run(three, [set("drill", 1)]);
+  const a0 = drill(trackA[0], 5, 3);
+  // One skill started, one drill done: no mixed set yet (two needed), but
+  // the Desmos drill when routes are loaded, never as the very first set.
+  assert.equal(run(a0.answers, [a0.session]).kind, "skill");
+  assert.deepEqual([run(a0.answers, [a0.session], { desmos: true }).kind, run(a0.answers, [a0.session], { desmos: true }).count],
+    ["desmos", 10]);
+  assert.equal(run([], [], { desmos: true }).kind, "skill", "never the first set");
+  // Cadence: weekly until four are finished, then every 14 days; a left
+  // (discarded) one spaces the next but does not count toward the four.
+  const kindWith = (...extra) => run(a0.answers, [a0.session, ...extra], { desmos: true }).kind;
+  assert.equal(kindWith(set("desmos", 2)), "skill");
+  assert.equal(kindWith(set("desmos", 8)), "desmos");
+  assert.equal(kindWith(set("discarded", 2, { discardedKind: "desmos" })), "skill");
+  const four = [20, 15, 12, 9].map((days) => set("desmos", days));
+  assert.equal(kindWith(...four), "skill", "after four, 14 days");
+  assert.equal(kindWith(...[30, 25, 20, 15].map((days) => set("desmos", days))), "desmos");
+  // A returning student with a long history gets it too.
+  const long = Array.from({ length: 30 }, (_, index) => set(index % 2 ? "mixed" : "module", 60 - index));
+  assert.equal(run(a0.answers, [a0.session, ...long, set("module", 0.5)], { desmos: true }).kind, "desmos");
+  // Two started and the last set a drill: a mixed set of 12.
+  const b0 = drill(trackB[0], 3, 1);
+  const two = a0.answers.concat(b0.answers);
+  assert.deepEqual(state(two, { sessions: [a0.session, b0.session] }).started, [trackA[0], trackB[0]]);
+  assert.deepEqual([run(two, [a0.session, b0.session]).kind, run(two, [a0.session, b0.session]).count], ["mixed", 12]);
+  // "Practice what I missed" is Review-like: not a drill, not a practice set.
+  assert.equal(run(two, [a0.session, b0.session, set("missed-drill", 0.5)]).kind, "mixed");
+  // Three started (Track A's first skill used its budget, the second is
+  // drilled): a timed module when none was taken in 7 days...
+  const aDone = drill(trackA[0], 35, 2.5, { correct: false });
+  const a1 = drill(trackA[1], 3, 0.8);
+  const three = two.concat(aDone.answers, a1.answers);
+  const base = [a0.session, b0.session, aDone.session, a1.session];
+  assert.deepEqual(state(three, { sessions: base }).started, [trackA[0], trackA[1], trackB[0]]);
+  const module = run(three, base);
   assert.deepEqual([module.kind, module.module, module.why], ["module", "1", "first"]);
-  // A finished diagnostic alone does not open modules: it places the
-  // student, and the first module waits for three started skills.
-  assert.equal(run(two, [set("diagnostic", 2), set("drill", 1)], { placements: { "sat-math": { stage: 1 } } }).kind, "mixed");
-  assert.equal(run(one, [set("diagnostic", 1)], { placements: { "sat-math": { stage: 1 } } }).kind, "skill",
-    "right after the diagnostic: a drill, not a module");
-  // Within a week of a module and fewer than four sets since: no module.
-  assert.equal(run(three, [set("module", 2), set("drill", 1.5), set("mixed", 1), set("drill", 0.5)]).kind, "mixed");
-  // Four sets since (Review and discarded sets do not count): a module.
-  const four = [set("module", 2), set("drill", 1.9), set("mixed", 1.5), set("review", 1.4), set("discarded", 1.3),
-    set("drill", 1), set("mixed", 0.5)];
-  assert.deepEqual([run(three, four).kind, run(three, four).why, run(three, four).sinceModule], ["module", "sessions", 4]);
-  // A week since the last module: a module.
-  assert.deepEqual([run(three, [set("module", 8), set("drill", 1)]).kind, run(three, [set("module", 8), set("drill", 1)]).why],
-    ["module", "days"]);
-  // After anything but a drill, and no module due: the drill.
-  assert.equal(run(three, [set("module", 2), set("mixed", 1)]).kind, "skill");
-  // The mixed set: 12 questions over every started skill, weighted toward
-  // skills in flight or moved on, at each skill's level.
-  const spec = run(three, [set("module", 2), set("drill", 1)]).spec;
+  assert.deepEqual([run(three, base.concat(set("module", 8))).kind, run(three, base.concat(set("module", 8))).why], ["module", "days"]);
+  // ...or after 10 practice sets and 3 days since the last; not before.
+  const sets = (count, from) => Array.from({ length: count }, (_, index) => set(index % 2 ? "mixed" : "drill", from - index * 0.1));
+  // (The four drills in `base` all came after a module 4 days ago.)
+  assert.notEqual(run(three, [set("module", 4), ...sets(5, 3.9), ...base]).kind, "module", "nine sets is not enough");
+  assert.deepEqual([run(three, [set("module", 4), ...sets(6, 3.9), ...base]).kind,
+    run(three, [set("module", 4), ...sets(6, 3.9), ...base]).why], ["module", "sessions"]);
+  assert.notEqual(run(three, [set("module", 2), ...sets(12, 1.9), ...base]).kind, "module", "ten sets but under 3 days");
+  // A diagnostic alone does not open modules.
+  assert.equal(run(two, [set("diagnostic", 2), a0.session, b0.session], { placements: { "sat-math": { stage: 1 } } }).kind, "mixed");
+  // The mixed set: 12 questions over every started skill, at each skill's level.
+  const spec = run(three, [set("module", 2), ...base]).spec;
   assert.equal(spec.reduce((sum, entry) => sum + entry.Medium + entry.Hard, 0), 12);
   assert.deepEqual(spec.map((entry) => entry.skill).sort(), [trackA[0], trackA[1], trackB[0]].sort());
-  assert.ok(spec.every((entry) => entry.Hard === 0), "no skill is routine at Medium or past its target yet");
 });
 
 test("a mixed set's seats follow the weights, and Hard joins skills routine at Medium or past the target", () => {
@@ -312,7 +333,7 @@ test("Review is the step at most once a calendar day; after that the plan moves 
   assert.equal(Analytics.nextStep(rows, { dueCount: 2 }).kind, "review");
 });
 
-test("official checks: a low one brings a skill back in the next pass; a high one confirms it", () => {
+test("official checks: a low one brings a skill back at its track's next opening; a high one confirms it", () => {
   // A check is placed on the day the student took it.
   const check = (skill, correct, fields) => Object.assign({ id: `c${skill}${correct}${counter}`, sectionKey: "sat-math", skill,
     difficulty: "Medium", attempted: 10, correct, date: Analytics.formatDate(new Date(clock)), at: clock + 1 }, fields);
@@ -322,21 +343,27 @@ test("official checks: a low one brings a skill back in the next pass; a high on
   plan = state(target, { officialChecks: [check(trackA[0], 6)] });
   assert.equal(plan.skills[trackA[0]].official, null, "60-69% changes nothing");
   assert.equal(Analytics.officialStatus(check(trackA[0], 8), { state: "building" }), null, "confirmation needs the target met");
-  const low = check(trackA[0], 4);
+  // Taken the day after the target was met, while the next skill flies.
+  const low = check(trackA[0], 4, { date: Analytics.formatDate(new Date(clock + DAY)) });
   plan = state(target, { officialChecks: [low] });
   assert.equal(plan.skills[trackA[0]].official, "low");
-  assert.equal(plan.tracks[0].inFlight, trackA[1], "not back until the next pass");
-  // Next pass: every other skill moved on; the low skill flies again, Hard-led, until its budget is spent.
-  const rest = trackA.slice(1).concat(trackB).flatMap((skill) => answers(40, skill, { correct: false }));
-  plan = state(target.concat(rest), { officialChecks: [low] });
-  assert.equal(plan.pass, 2);
+  assert.equal(plan.tracks[0].inFlight, trackA[1], "the skill in flight keeps its turn");
+  // The next opening in Track A: ahead of skills not yet started.
+  clock += 2 * DAY;
+  const turn = answers(40, trackA[1], { correct: false });
+  plan = state(target.concat(turn), { officialChecks: [low] });
+  assert.equal(plan.pass, 1);
   assert.deepEqual([plan.tracks[0].inFlight, plan.skills[trackA[0]].entry], [trackA[0], "official-low"]);
-  const next = step(target.concat(rest), { officialChecks: [low] });
+  const next = step(target.concat(turn), { officialChecks: [low] });
   assert.deepEqual([next.skill, next.entry, next.official, next.level], [trackA[0], "official-low", "low", "Hard"]);
+  // Back once: after that turn the track goes on in plan order.
+  const again = turn.concat(answers(40, trackA[0], { difficulty: "Hard", correct: false }));
+  plan = state(target.concat(again), { officialChecks: [low] });
+  assert.deepEqual([plan.skills[trackA[0]].leftBy, plan.tracks[0].inFlight], ["budget", trackA[2]]);
   // A newer check that is not low releases it.
   const better = check(trackA[0], 7, { date: Analytics.formatDate(new Date(clock + 2 * DAY)), at: clock + 2 * DAY });
   clock += 3 * DAY;
-  plan = state(target.concat(rest), { officialChecks: [low, better] });
+  plan = state(target.concat(turn), { officialChecks: [low, better] });
   assert.equal(plan.skills[trackA[0]].leftBy, "check");
   assert.notEqual(plan.tracks[0].inFlight, trackA[0]);
 });
