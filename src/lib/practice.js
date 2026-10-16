@@ -562,25 +562,75 @@
     return value >>> 0;
   }
 
-  // The templates a Desmos drill draws from: SAT Math templates whose id
-  // has a route in `routes` (window.LiminalDesmosRoutes.sections[...]),
-  // those in `options.started` skills first, then the rest, each group
-  // least recently served first (`options.recency`, recencyFor), then in a
-  // seeded order. At most `options.count` (default 10).
+  // The SAT Math skills where a graph genuinely solves the question:
+  // systems, nonlinear equations and functions, linear equations in two
+  // variables, inequalities, circles and two-variable data. The Desmos drill
+  // takes most of its questions from them.
+  const DESMOS_SKILLS = ["Systems of two linear equations", "Systems of equations", "Nonlinear equations",
+    "Nonlinear functions", "Linear equations in two variables", "Linear inequalities", "Circles", "Two-variable data"];
+  // A route's "fails" line comparing it with working by hand: as fast or
+  // faster, exact, a check only. Said only of a stated case ("when", "with
+  // two clean points", "for a short list"), it does not count.
+  const HAND_FIRST = new RegExp(["\\b(usually|often|anyway)\\b[^.;]*\\b(faster|quicker|as quick|as fast)\\b",
+    "\\b(faster|quicker)\\b[^.;]*\\b(usually|often|anyway)\\b", "\\b(just|about) as (quick|fast)\\b", "\\bas fast\\b",
+    "\\bis (exact|the exact route)\\b", "\\bin one (line|step)\\b", "\\btakes one line\\b", "\\b(mainly|is|as) a check\\b",
+    "\\bis (faster|quicker)\\b"].join("|"), "i");
+  const HAND_CASE = /^(when|for a|with)\b|\bwhen\b|\bwith (two|five|small)\b|\bonce you see\b/i;
+
+  // Whether a route's own words say working by hand is usually as fast or
+  // faster (content/desmos-routes.json "fails"): such a template stays out
+  // of the Desmos drill while others remain.
+  function handFirst(route) {
+    const sentences = String((route && route.fails) || "").split(/[.;]\s+/);
+    return sentences.some((sentence) => HAND_FIRST.test(sentence) && !HAND_CASE.test(sentence));
+  }
+
+  // The templates a Desmos drill draws from: every SAT Math template whose
+  // id has a route in `routes` (window.LiminalDesmosRoutes.sections[...]),
+  // leaving out routes whose words say by hand is usually faster (unless
+  // too few remain). `options.preferred` (default 7) of `options.count`
+  // (default 10) come from `options.skills` (default DESMOS_SKILLS), the
+  // rest from other skills; either group fills in for the other when short.
+  // Within a group the skills take turns, in a seeded order, each giving
+  // its least recently served template first (`options.recency`,
+  // recencyFor).
   function chooseDesmosTemplates(templates, routes, options) {
     const settings = options || {};
     const count = Math.max(0, Math.trunc(Number(settings.count) || 10));
     const recency = settings.recency || {};
-    const started = new Set(settings.started || []);
     const seed = String(settings.seed || "");
+    const preferredSkills = new Set(settings.skills || DESMOS_SKILLS);
+    const wantPreferred = Math.min(count, settings.preferred === undefined ? 7 : Math.max(0, Math.trunc(settings.preferred)));
     const freshness = (template) => (Object.prototype.hasOwnProperty.call(recency, template.id) ? Number(recency[template.id]) : -1);
-    return (templates || [])
-      .filter((template) => routes && typeof routes === "object" && Object.prototype.hasOwnProperty.call(routes, template.id))
-      .sort((left, right) => Number(started.has(right.skill)) - Number(started.has(left.skill)) ||
-        freshness(left) - freshness(right) ||
+    const routed = (templates || []).filter((template) => routes && typeof routes === "object" &&
+      Object.prototype.hasOwnProperty.call(routes, template.id));
+    const good = routed.filter((template) => !handFirst(routes[template.id]));
+    const pool = good.length >= count ? good : good.concat(routed.filter((template) => handFirst(routes[template.id])));
+    // Skills take turns; within one, least recently served first.
+    const turns = (list) => {
+      const bySkill = new Map();
+      list.slice().sort((left, right) => freshness(left) - freshness(right) ||
         seededOrder(`${seed}|${left.id}`) - seededOrder(`${seed}|${right.id}`))
-      .slice(0, count);
+        .forEach((template) => {
+          if (!bySkill.has(template.skill)) bySkill.set(template.skill, []);
+          bySkill.get(template.skill).push(template);
+        });
+      const skills = [...bySkill.keys()].sort((left, right) => seededOrder(`${seed}|${left}`) - seededOrder(`${seed}|${right}`));
+      const ordered = [];
+      for (let round = 0; ordered.length < list.length; round += 1) {
+        skills.forEach((skill) => {
+          const template = bySkill.get(skill)[round];
+          if (template) ordered.push(template);
+        });
+      }
+      return ordered;
+    };
+    const preferred = turns(pool.filter((template) => preferredSkills.has(template.skill)));
+    const other = turns(pool.filter((template) => !preferredSkills.has(template.skill)));
+    const fromPreferred = Math.min(preferred.length, Math.max(wantPreferred, count - other.length));
+    return preferred.slice(0, fromPreferred).concat(other.slice(0, count - fromPreferred));
   }
+
 
   // Pure counts for setup/report warnings; selection metadata stays out of
   // individual question screens. A question can repeat both its item and topic.
@@ -652,6 +702,8 @@
     buildMixedDrill,
     buildMixedSet,
     chooseDesmosTemplates,
+    DESMOS_SKILLS,
+    handFirst,
     itemKey,
     runWarnings,
     onePerTemplate,

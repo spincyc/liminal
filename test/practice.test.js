@@ -331,3 +331,33 @@ test("a module run keeps the module's order and names every template it chose", 
   });
   assert.deepEqual(next.chosenIds.filter((id) => run.chosenIds.includes(id)), []);
 });
+
+test("the Desmos drill draws from every routed template, mostly where a graph solves, never where by hand is faster", () => {
+  const routes = require("../content/desmos-routes.json").sections["sat-math"];
+  // A route's own words decide: by hand usually faster, exact, or just a check.
+  assert.equal(Practice.handFirst({ fails: "Zoom out first. Combining like terms by hand is usually faster; the graph is a check on signs." }), true);
+  assert.equal(Practice.handFirst({ fails: "Substituting each point by hand is just as fast." }), true);
+  assert.equal(Practice.handFirst({ fails: "The discriminant by hand is the exact route." }), true);
+  assert.equal(Practice.handFirst({ fails: "By hand is faster when one or two steps isolate x." }), false, "only in a stated case");
+  assert.equal(Practice.handFirst({ fails: "This catches the usual slip by hand: forgetting to flip the sign." }), false);
+  assert.equal(Practice.handFirst({ fails: "The crossing can sit off the starting view; zoom out." }), false);
+  const routed = mathTemplates.filter((template) => routes[template.id]);
+  const handFirst = routed.filter((template) => Practice.handFirst(routes[template.id]));
+  assert.ok(handFirst.length > 0 && handFirst.length < routed.length / 2);
+  const picks = Practice.chooseDesmosTemplates(mathTemplates, routes, { count: 10, seed: "a" });
+  assert.equal(picks.length, 10);
+  assert.ok(picks.every((template) => routes[template.id] && !Practice.handFirst(routes[template.id])));
+  assert.equal(picks.filter((template) => Practice.DESMOS_SKILLS.includes(template.skill)).length, 7, "7 of 10 where a graph solves");
+  assert.ok(new Set(picks.map((template) => template.skill)).size >= 7, "skills take turns");
+  // No started skills needed: a new or returning student gets the same pool.
+  assert.deepEqual(Practice.chooseDesmosTemplates(mathTemplates, routes, { count: 10, seed: "a", started: [] }).map((t) => t.id),
+    picks.map((template) => template.id));
+  // Least recently served first: what was just served goes last.
+  const recency = Object.fromEntries(picks.map((template, index) => [template.id, 100 + index]));
+  const next = Practice.chooseDesmosTemplates(mathTemplates, routes, { count: 10, seed: "a", recency });
+  assert.ok(next.filter((template) => recency[template.id] !== undefined).length < 5);
+  // Too few routes without by-hand-first ones: those fill in.
+  const few = Object.fromEntries(handFirst.slice(0, 3).map((template) => [template.id, routes[template.id]]));
+  assert.equal(Practice.chooseDesmosTemplates(mathTemplates, few, { count: 10 }).length, 3);
+  assert.deepEqual(Practice.chooseDesmosTemplates(mathTemplates, null, { count: 10 }), []);
+});
