@@ -117,3 +117,43 @@ test("population-density keys are the count over the area in the unit asked", ()
     }
   }
 });
+
+test("data-change-statistics explanations count what the table shows", () => {
+  for (const seed of seeds) {
+    const q = draw("data-change-statistics", seed);
+    if (!q.stimulus) continue;
+    const [head, ...body] = q.stimulus.content.split("\n");
+    const names = head.split(" | ").slice(1).map((column) => column.replace(/ frequency$/, ""));
+    const rows = body.map((row) => row.split(" | ").map(number));
+    const column = (name) => rows.map((row) => row[names.indexOf(name) + 1]);
+    const mirror = /so the standard deviations are equal, but (.+?) has/.exec(q.explanation);
+    if (mirror) {
+      const f = column(mirror[1]);
+      assert.ok(f[3] + f[4] > f[0] + f[1], `${seed}: the higher-mean set does not have more values at the high end`);
+      continue;
+    }
+    const m = /\. (.+?) has (\d+) values at the extremes .*? and (\d+) at the center, while (.+?) has (\d+) at the extremes and (\d+) at the center/
+      .exec(q.explanation);
+    assert.ok(m, `${seed}: ${q.explanation}`);
+    const [wide, narrow] = [column(m[1]), column(m[4])];
+    assert.deepEqual([m[2], m[3], m[5], m[6]].map(Number), [wide[0] + wide[4], wide[2], narrow[0] + narrow[4], narrow[2]], `${seed}`);
+    assert.ok(wide[0] > narrow[0] && wide[2] < narrow[2], `${seed}: the counts do not support the explanation`);
+  }
+});
+
+test("density-cube-edge prints every volume equation exactly", () => {
+  let equations = 0;
+  for (const seed of seeds) {
+    const q = draw("density-cube-edge", seed);
+    for (const text of [q.explanation, ...q.solutionSteps]) {
+      for (const [, mass, density, volume] of text.matchAll(/([\d.,]+) ÷ ([\d.,]+) = ([\d.,]+) cubic meters/g)) {
+        equations += 1;
+        assert.ok(Math.abs(number(mass) / number(density) - number(volume)) < 1e-12, `${seed}: ${text}`);
+      }
+      for (const [, cubicMeters, cubicCentimeters] of text.matchAll(/([\d.]+) × 1,000,000 = ([\d,]+) cubic centimeters/g)) {
+        assert.ok(Math.abs(number(cubicMeters) * 1e6 - number(cubicCentimeters)) < 1e-6, `${seed}: ${text}`);
+      }
+    }
+  }
+  assert.ok(equations > 0);
+});
