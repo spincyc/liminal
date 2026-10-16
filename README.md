@@ -151,7 +151,7 @@ Liminal is a study tool as well as a question bank: it teaches each SAT skill,
 drills it, tests it the way the digital SAT does, and brings back what you
 missed until you can do it.
 
-SAT questions are generated from question templates: 217 for SAT Math and
+SAT questions are generated from question templates: 218 for SAT Math and
 163 for SAT Reading and Writing, covering the catalog's tested skills.
 ACT English, Mathematics, Reading, and Writing draw from 575 original exercise
 variants each. ACT Science has 80 questions in 14 original passage sets. Every
@@ -162,7 +162,7 @@ wrong.
 | Section | Source | Easy / Medium / Hard |
 | --- | --- | --- |
 | SAT Reading and Writing | 163 templates | 42 / 75 / 46 |
-| SAT Math | 217 templates | 52 / 118 / 47 |
+| SAT Math | 218 templates | 52 / 119 / 47 |
 | ACT English, Mathematics, Reading, Writing | 575 exercise variants each | Tiers unverified |
 | ACT Science | 80 questions in 14 passage sets | Tiers unverified |
 
