@@ -74,7 +74,8 @@
     if (attempt.visibleIdentity !== undefined && !Identity.isVisibleIdentity(attempt.visibleIdentity)) return false;
     if (attempt.response !== undefined && attempt.response !== null && typeof attempt.response !== "string" &&
         !(typeof attempt.response === "number" && Number.isFinite(attempt.response))) return false;
-    return ["sectionKey", "domain", "skill", "subskill", "templateId", "seed", "sessionId", "runCode", "feedback", "reviewOf"]
+    return ["sectionKey", "domain", "skill", "subskill", "templateId", "seed", "sessionId", "runCode", "feedback", "reviewOf",
+      "setKind", "setSkill"]
       .every((field) => optionalString(attempt[field]));
   }
 

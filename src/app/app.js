@@ -898,6 +898,8 @@
     return Number(question.templateVersion) || currentVersion(question.sectionKey, question.templateId);
   }
 
+  // Each answer names its set (kind, and a drill's skill), so the plan can
+  // class it when it is saved, before the set's session exists.
   function attemptFor(meta, item, now) {
     return Progress.buildAttempt(item.question, item, {
       id: `${meta.sessionId}:${item.index}`,
@@ -906,6 +908,8 @@
       runCode: meta.runCode,
       templateVersion: templateVersionOf(item.question),
       now,
+      setKind: meta.kind,
+      setSkill: (meta.sessionFields || {}).skill,
     });
   }
 

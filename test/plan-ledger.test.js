@@ -206,3 +206,69 @@ test("a skill that met its target on its own and slipped comes back as slipped, 
   const second = planOf(Progress.markRepeats(placed), null, { placement: { stage: 3 } });
   assert.deepEqual([second.pass, second.tracks[0].inFlight, second.skills[trackA[0]].entry], [2, trackA[0], "passed-over"]);
 });
+
+// The app's own save pattern (app.js update): a drill saves each answer as
+// it is checked, before its session exists, and the session at the end;
+// every save refreshes the ledger, then the record keeps only the newest
+// `cap` answers. The plan must match the full replay, and budgets must keep
+// being spent after the record trims.
+function appPattern(withSetKind) {
+  const cap = 40;
+  const memory = new Map();
+  const storage = { getItem: (key) => (memory.has(key) ? memory.get(key) : null), setItem: (key, value) => memory.set(key, String(value)),
+    removeItem: (key) => memory.delete(key) };
+  const limits = Object.assign({}, Progress.LIMITS);
+  Progress.LIMITS.attempts = cap;
+  Progress.LIMITS.attemptsWhenFull = cap;
+  try {
+    const store = Progress.createStore(storage);
+    const all = { attempts: [], sessions: [] };
+    const withLedger = (progress) => {
+      const plan = planOf(progress.attempts, progress.planLedger["sat-math"], { sessions: progress.sessions });
+      return Progress.setPlanLedger(progress, "sat-math", plan.checkpoint);
+    };
+    let serial = 0;
+    const departures = [];
+    for (let set = 0; set < 16; set += 1) {
+      const progress = store.get();
+      const plan = planOf(progress.attempts, progress.planLedger["sat-math"], { sessions: progress.sessions });
+      departures.push(plan.departures.length);
+      const track = plan.tracks[set % 2];
+      const skill = track.inFlight;
+      const id = `set${serial += 1}`;
+      for (let index = 0; index < 10; index += 1) {
+        const item = answer(skill, Object.assign({ correct: index % 4 === 0, difficulty: "Easy", sessionId: id },
+          withSetKind ? { setKind: "drill", setSkill: skill } : {}));
+        all.attempts.push(item);
+        store.update((current) => withLedger(Progress.recordAttempts(current, [item])));
+      }
+      const session = { id, kind: "drill", skill, step: "drill", sectionKey: "sat-math", finishedAt: clock + 1 };
+      all.sessions.push(session);
+      store.update((current) => withLedger(Progress.recordSession(current, session)));
+    }
+    const kept = store.get();
+    return {
+      kept,
+      departures,
+      capped: shape(planOf(kept.attempts, kept.planLedger["sat-math"], { sessions: kept.sessions })),
+      full: shape(planOf(Progress.markRepeats(all.attempts), undefined, { sessions: all.sessions })),
+    };
+  } finally {
+    Object.assign(Progress.LIMITS, limits);
+  }
+}
+
+test("answers saved one by one before their drill's session still spend budgets after the record trims", () => {
+  [true, false].forEach((withSetKind) => {
+    const run = appPattern(withSetKind);
+    assert.equal(run.kept.attempts.length, 40, "the record is capped");
+    assert.deepEqual(run.capped, run.full, withSetKind ? "answers naming their set" : "older answers without it");
+    assert.ok(run.full.departures.length >= 4, "skills keep leaving flight on their budgets");
+    run.departures.forEach((count, index) => assert.ok(index === 0 || count >= run.departures[index - 1], "never backward"));
+    assert.ok(run.departures[run.departures.length - 1] > run.departures[6], "departures continue after the trim");
+  });
+  // An answer names its set when the app records it.
+  const record = Progress.buildAttempt({ id: "sat-math:t:1", sectionKey: "sat-math", templateId: "t", skill: "Circles",
+    responseType: "numeric" }, { response: "1", correct: true }, { id: "a", setKind: "drill", setSkill: "Circles", now: 1 });
+  assert.deepEqual([record.setKind, record.setSkill], ["drill", "Circles"]);
+});

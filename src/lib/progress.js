@@ -1015,7 +1015,10 @@
   const hasResponse = (value) => value !== null && value !== undefined && value !== "";
 
   // One attempt record from a question and what happened to it. `context`:
-  // { id, sessionId, feedback, runCode, templateVersion, now }.
+  // { id, sessionId, feedback, runCode, templateVersion, now, setKind,
+  // setSkill }: the set it was given in (its kind, and for a drill its
+  // skill), so the plan can class the answer before the set's session is
+  // saved.
   function buildAttempt(question, outcome, context) {
     const settings = context || {};
     const essay = question.responseType === "essay";
@@ -1059,6 +1062,8 @@
       record.contentIdentity = contentIdentity(question);
     }
     if (settings.runCode) record.runCode = settings.runCode;
+    if (typeof settings.setKind === "string" && settings.setKind) record.setKind = settings.setKind;
+    if (typeof settings.setSkill === "string" && settings.setSkill) record.setSkill = settings.setSkill;
     // A question built to re-practise an earlier miss names it, so the
     // review schedule (lib/review-queue.js) follows a fresh version back to
     // the original.

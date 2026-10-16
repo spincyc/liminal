@@ -790,13 +790,23 @@
     // budget and mark it practised. Without sessions every answer counts.
     const drillsKnown = Array.isArray(settings.sessions);
     const sessionById = new Map((settings.sessions || []).filter(Boolean).map((session) => [session.id, session]));
+    // An answer names the set it was given in (setKind, setSkill), as the
+    // app records it, so it is classed the moment it is saved, before the
+    // set's session exists. Older answers are classed by their session.
     const ownDrill = (attempt) => {
+      if (typeof attempt.setKind === "string" && attempt.setKind) {
+        return DRILL_KINDS.includes(attempt.setKind) && (!attempt.setSkill || attempt.setSkill === attempt.skill);
+      }
       if (!drillsKnown) return true;
       const session = sessionById.get(attempt.sessionId);
       if (!session) return false;
       const kind = session.kind === "discarded" ? session.discardedKind : session.kind;
       return DRILL_KINDS.includes(kind) && (!session.skill || session.skill === attempt.skill);
     };
+    // An older answer whose set has no session yet cannot be classed: the
+    // checkpoint stops before it, so it is replayed once its session exists.
+    const unclassed = (attempt) => drillsKnown && !(typeof attempt.setKind === "string" && attempt.setKind) &&
+      !sessionById.has(attempt.sessionId);
     const startStage = settings.placement && settings.placement.stage > 1 ? settings.placement.stage : 1;
     const history = Array.isArray(settings.attempts);
     const now = settings.now === undefined ? Date.now() : Number(settings.now);
@@ -811,6 +821,22 @@
     let flownThisPass = new Set();
 
     const answers = (skill) => (history ? attempted.get(skill) || 0 : info[skill].row.attempted);
+    // The replay's state as a ledger checkpoint at `at` (planLedger).
+    function snapshot(at) {
+      return {
+        version: LEDGER_VERSION,
+        from: firstAnswerAt,
+        at,
+        pass,
+        flownThisPass: [...flownThisPass],
+        inFlight: Object.fromEntries(tracks.map((track) => [track.key, inFlight.get(track.key)])),
+        skills: Object.fromEntries(Object.values(info).map((entry) => [entry.skill, Object.assign({
+          attempted: attempted.get(entry.skill) || 0,
+          medium: (medium.get(entry.skill) || []).slice(-GATE.window).map((item) => [item.right ? 1 : 0, item.day, item.design]),
+        }, Object.fromEntries(LEDGER_SKILL_FIELDS.map((field) => [field, entry[field]])))])),
+        departures: departures.slice(-LEDGER_DEPARTURES).map((item) => Object.assign({}, item)),
+      };
+    }
     const gateNow = (skill) => (history ? gateMet(medium.get(skill) || []) : atOrPastGate(info[skill].row));
     const lowNow = (skill) => {
       const accuracy = checkAccuracy(checkNow.get(skill));
@@ -928,7 +954,9 @@
     events.sort((left, right) => left.at - right.at);
 
     settle(ledger ? ledger.at : events.length ? events[0].at : now);
+    let pending = null;
     events.forEach((event) => {
+      if (!pending && event.attempt && unclassed(event.attempt) && lastAt !== null) pending = snapshot(lastAt);
       lastAt = event.at;
       if (event.check) {
         const skill = event.check.skill;
@@ -1010,19 +1038,10 @@
       entry.easyStuck = entry.status === "moved-on" && (drillsKnown ? !entry.aboveEasy : !(row.routine && row.routine.met));
       entry.drillsKnown = drillsKnown;
     });
-    const checkpoint = history && firstAnswerAt !== null ? {
-      version: LEDGER_VERSION,
-      from: firstAnswerAt,
-      at: lastAt === null ? firstAnswerAt : lastAt,
-      pass,
-      flownThisPass: [...flownThisPass],
-      inFlight: Object.fromEntries(tracks.map((track) => [track.key, inFlight.get(track.key)])),
-      skills: Object.fromEntries(Object.values(info).map((entry) => [entry.skill, Object.assign({
-        attempted: attempted.get(entry.skill) || 0,
-        medium: (medium.get(entry.skill) || []).slice(-GATE.window).map((item) => [item.right ? 1 : 0, item.day, item.design]),
-      }, Object.fromEntries(LEDGER_SKILL_FIELDS.map((field) => [field, entry[field]])))])),
-      departures: departures.slice(-LEDGER_DEPARTURES),
-    } : null;
+    // No checkpoint while the very first answers cannot be classed yet.
+    const blocked = !ledger && answerEvents.length && unclassed(answerEvents[0].attempt);
+    const checkpoint = history && firstAnswerAt !== null && !blocked
+      ? pending || snapshot(lastAt === null ? firstAnswerAt : lastAt) : null;
     return {
       sectionKey,
       pass,
