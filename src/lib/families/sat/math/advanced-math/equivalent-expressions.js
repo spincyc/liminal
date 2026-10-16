@@ -13,7 +13,7 @@
   const { MINUS, num, paren, signed, lin, approx, poly, sup } = S;
   const {
     tidy, ratio, gridable, drawUntilDistinct, bin, drawUntilDistinctHard, term, terms, realRoots,
-    ratioText, quadraticRoots, lead, rootFactor, sampleQuadratic, denominatorHard,
+    ratioText, quadraticRoots, lead, rootFactor, sampleQuadratic, denominatorHard, pairBalanced,
   } = C;
 
   // pw("x", 3) -> "x³", pw("x", 1) -> "x"
@@ -1095,7 +1095,9 @@
 
   // x ± 1/x = k: the target is a power sum that the square or the cube of the
   // given expression contains. (Finding x² + y² or (x − y)² from a given sum
-  // and product was Medium work and was dropped.)
+  // and product was Medium work and was dropped.) Modelled slips sit on both
+  // sides of the key, and the shown three are balanced by pairBalanced, so the
+  // key's rank among the choices gives nothing away.
   function substitutionReciprocal(t, numeric) {
     const kind = t.pick(["square", "square", "cube"]);
     // The given equation is x ± 1/x = k itself, or a quadratic that is that
@@ -1109,29 +1111,40 @@
     const unhide = (minus, k) => (shape === "reciprocal"
       ? []
       : [`x = 0 does not satisfy the equation, so divide ${shape === "product" ? "both sides" : "every term"} by x: x ${minus ? MINUS : "+"} 1/x = ${k}.`]);
+    const finish = (key, wrong) => {
+      if (wrong.some(([value]) => value === key)) return null;
+      if (numeric) return wrong;
+      const picked = pairBalanced(t, S.label(key), wrong.map(([value, why]) => [S.label(value), why]));
+      return picked.length === 3 ? picked : null;
+    };
+    const minus = t.chance(0.4);
+    const op = minus ? MINUS : "+";
     if (kind === "square") {
       // x + 1/x = k (or x − 1/x = k): x² + 1/x² = k² ∓ 2.
-      const minus = t.chance(0.4);
-      const k = t.int(minus ? 1 : 3, 12);
+      const k = t.int(minus ? 1 : 3, 14);
       const key = minus ? k * k + 2 : k * k - 2;
       const given = givenFor(minus, k);
+      const wrong = finish(key, [
+        [k * k, `Squares each term of x ${op} 1/x separately and forgets the cross term 2 · x · (1/x) = 2.`],
+        [minus ? k * k - 2 : k * k + 2, `Expands (x ${op} 1/x)² correctly but then ${minus ? "subtracts" : "adds"} the 2 instead of ${minus ? "adding" : "subtracting"} it when isolating x² + 1/x².`],
+        [minus ? k * k + 1 : k * k - 1, "Uses x · (1/x) = 1 as the cross term, forgetting the factor of 2 in 2ab."],
+        [minus ? k * k + 4 : k * k - 4, "Doubles the cross term a second time, moving 4 instead of 2 across the equals sign."],
+        [minus ? 2 * k + 2 : 2 * k - 2, `Doubles ${k} instead of squaring it, then ${minus ? "adds" : "subtracts"} the 2.`],
+      ]);
+      if (!wrong) return null;
       return {
         responseType: numeric ? "numeric" : "multiple-choice",
         stimulus: { type: "equations", content: given },
         stem: "If x satisfies the given equation, what is the value of x² + 1/x²?",
         correct: key,
-        wrong: [
-          [k * k, `Squares each term of x ${minus ? MINUS : "+"} 1/x separately and forgets the cross term 2 · x · (1/x) = 2.`],
-          [minus ? k * k - 2 : k * k + 2, `Expands (x ${minus ? MINUS : "+"} 1/x)² correctly but then ${minus ? "subtracts" : "adds"} the 2 instead of ${minus ? "adding" : "subtracting"} it when isolating x² + 1/x².`],
-          [minus ? k * k + 1 : k * k - 1, "Uses x · (1/x) = 1 as the cross term, forgetting the factor of 2 in 2ab."],
-        ],
+        wrong,
         explanation:
-          `${unhide(minus, k).join(" ")}${shape === "reciprocal" ? "" : " "}Square x ${minus ? MINUS : "+"} 1/x = ${k}: (x ${minus ? MINUS : "+"} 1/x)² = x² ${minus ? MINUS : "+"} 2 + 1/x² = ${k * k}. ` +
+          `${unhide(minus, k).join(" ")}${shape === "reciprocal" ? "" : " "}Square x ${op} 1/x = ${k}: (x ${op} 1/x)² = x² ${op} 2 + 1/x² = ${k * k}. ` +
           `So x² + 1/x² = ${k * k} ${minus ? "+" : MINUS} 2 = ${key}.`,
         steps: [
           ...unhide(minus, k),
-          `Recognize x² + 1/x² inside the square of x ${minus ? MINUS : "+"} 1/x.`,
-          `Square both sides: x² ${minus ? MINUS : "+"} 2(x)(1/x) + 1/x² = ${k * k}.`,
+          `Recognize x² + 1/x² inside the square of x ${op} 1/x.`,
+          `Square both sides: x² ${op} 2(x)(1/x) + 1/x² = ${k * k}.`,
           `The cross term is ${minus ? MINUS : ""}2 because x · (1/x) = 1.`,
           `x² + 1/x² = ${key}.`,
         ],
@@ -1146,36 +1159,43 @@
       };
     }
     // x + 1/x = k: (x + 1/x)³ = x³ + 1/x³ + 3(x + 1/x), so x³ + 1/x³ = k³ − 3k.
-    const k = t.int(3, 9);
-    const key = k ** 3 - 3 * k;
-    const given = givenFor(false, k);
+    // x − 1/x = k: (x − 1/x)³ = x³ − 1/x³ − 3(x − 1/x), so x³ − 1/x³ = k³ + 3k.
+    const k = t.int(minus ? 2 : 3, 9);
+    const s = minus ? 1 : -1;
+    const key = k ** 3 + s * 3 * k;
+    const given = givenFor(minus, k);
+    const target = `x³ ${op} 1/x³`;
+    const square = minus ? k * k + 2 : k * k - 2;
+    const wrong = finish(key, [
+      [k ** 3, `Cubes each term of x ${op} 1/x separately and drops the middle terms.`],
+      [k ** 3 + s * 3, `Treats the middle terms of the cube as the number 3 instead of 3(x ${op} 1/x).`],
+      [k ** 3 + s * 2 * k, `Multiplies x² + 1/x² = ${square} by x ${op} 1/x = ${k} but forgets that the product also contains x ${op} 1/x.`],
+      [k ** 3 - s * 3 * k, `${minus ? "Subtracts" : "Adds"} 3(x ${op} 1/x) instead of ${minus ? "adding" : "subtracting"} it when isolating ${target}.`],
+      [k ** 3 + s * 3 * k * k, `Writes the middle terms of the cube as 3(x ${op} 1/x)² instead of 3(x ${op} 1/x).`],
+    ]);
+    if (!wrong) return null;
     return {
       responseType: numeric ? "numeric" : "multiple-choice",
       stimulus: { type: "equations", content: given },
-      stem: "If x satisfies the given equation, what is the value of x³ + 1/x³?",
+      stem: `If x satisfies the given equation, what is the value of ${target}?`,
       correct: key,
-      wrong: t.shuffle([
-        [k ** 3, "Cubes each term of x + 1/x separately and drops the middle terms 3x + 3/x."],
-        [k ** 3 - 3, "Treats the middle terms of the cube, 3x + 3/x, as the number 3 instead of 3(x + 1/x)."],
-        [k ** 3 - 2 * k, `Multiplies x² + 1/x² = ${k * k - 2} by x + 1/x = ${k} but forgets that the product also contains x + 1/x.`],
-        [k ** 3 + 3 * k, "Adds 3(x + 1/x) instead of subtracting it when isolating x³ + 1/x³."],
-      ]),
+      wrong,
       explanation:
-        `${unhide(false, k).join(" ")}${shape === "reciprocal" ? "" : " "}Cube x + 1/x = ${k}: (x + 1/x)³ = x³ + 3x + 3/x + 1/x³ = x³ + 1/x³ + 3(x + 1/x). ` +
-        `So ${k ** 3} = x³ + 1/x³ + 3(${k}), and x³ + 1/x³ = ${k ** 3} ${MINUS} ${3 * k} = ${key}.`,
+        `${unhide(minus, k).join(" ")}${shape === "reciprocal" ? "" : " "}Cube x ${op} 1/x = ${k}: (x ${op} 1/x)³ = x³ ${minus ? `${MINUS} 3x + 3/x` : "+ 3x + 3/x"} ${op} 1/x³ = ${target} ${minus ? MINUS : "+"} 3(x ${op} 1/x). ` +
+        `So ${k ** 3} = ${target} ${minus ? MINUS : "+"} 3(${k}), and ${target} = ${k ** 3} ${minus ? "+" : MINUS} ${3 * k} = ${key}.`,
       steps: [
-        ...unhide(false, k),
-        "Recognize x³ + 1/x³ inside the cube of x + 1/x.",
-        "Expand: (x + 1/x)³ = x³ + 3x²(1/x) + 3x(1/x²) + 1/x³ = x³ + 1/x³ + 3(x + 1/x).",
-        `Substitute x + 1/x = ${k}: ${k ** 3} = x³ + 1/x³ + ${3 * k}.`,
-        `x³ + 1/x³ = ${key}.`,
+        ...unhide(minus, k),
+        `Recognize ${target} inside the cube of x ${op} 1/x.`,
+        `Expand: (x ${op} 1/x)³ = x³ ${minus ? MINUS : "+"} 3x²(1/x) + 3x(1/x²) ${op} 1/x³ = ${target} ${minus ? MINUS : "+"} 3(x ${op} 1/x).`,
+        `Substitute x ${op} 1/x = ${k}: ${k ** 3} = ${target} ${minus ? MINUS : "+"} ${3 * k}.`,
+        `${target} = ${key}.`,
       ],
-      principles: ["(a + b)³ = a³ + b³ + 3ab(a + b), and here ab = x · (1/x) = 1."],
-      trap: `Cubing term by term drops the middle terms and gives ${k ** 3}; those terms are 3 times the given sum.`,
+      principles: [`(a ${op} b)³ = a³ ${op} b³ ${op} 3ab(a ${op} b), and here ab = x · (1/x) = 1.`],
+      trap: `Cubing term by term drops the middle terms and gives ${k ** 3}; those terms are 3 times the given ${minus ? "difference" : "sum"}.`,
       hint: "What happens when both sides are cubed?",
       verify: () => {
-        const roots = quadraticRoots(-k, 1);
-        return roots.length === 2 && roots.every((x) => approx(x ** 3 + 1 / x ** 3, key, 1e-9));
+        const roots = minus ? quadraticRoots(-k, -1) : quadraticRoots(-k, 1);
+        return roots.length === 2 && roots.every((x) => approx(x ** 3 + (minus ? -1 : 1) / x ** 3, key, 1e-9));
       },
     };
   }
@@ -1798,6 +1818,504 @@
     };
   }
 
+  /* ======================================= polynomial-add-subtract / -multiply */
+
+  // Reads displayed math text at the given values: numbers, one-letter
+  // variables, superscript powers ("x²", "(x − 1)²"), parentheses, + and −,
+  // juxtaposition, "·" and "/". Juxtaposition binds tighter than "/", so
+  // "5x/3" is (5x)/3. Verification evaluates exactly what the student reads,
+  // so a slip in the displayed text cannot hide behind correct coefficients.
+  function readMath(text, values) {
+    const SUPS = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+    const source = String(text).replace(/\s+/g, "").replace(/−/g, "-");
+    let position = 0;
+    const peek = () => source[position];
+    const fail = () => {
+      throw new Error(`cannot read "${text}"`);
+    };
+    function primary() {
+      if (peek() === "(") {
+        position += 1;
+        const inner = sum();
+        if (peek() !== ")") fail();
+        position += 1;
+        return inner;
+      }
+      const match = /^\d+(\.\d+)?/.exec(source.slice(position));
+      if (match) {
+        position += match[0].length;
+        return Number(match[0]);
+      }
+      const letter = peek();
+      if (letter && /[A-Za-z]/.test(letter)) {
+        position += 1;
+        if (!(letter in values)) fail();
+        return values[letter];
+      }
+      return fail();
+    }
+    function power() {
+      const base = primary();
+      let digits = "";
+      while (position < source.length && SUPS.includes(peek())) digits += SUPS.indexOf(source[position++]);
+      return digits ? base ** Number(digits) : base;
+    }
+    function product() {
+      let value = power();
+      while (position < source.length && (/[\d.A-Za-z(]/.test(peek()) || peek() === "·")) {
+        if (peek() === "·") position += 1;
+        value *= power();
+      }
+      return value;
+    }
+    function quotient() {
+      let value = product();
+      while (peek() === "/") {
+        position += 1;
+        value /= product();
+      }
+      return value;
+    }
+    function sum() {
+      let value = peek() === "-" ? (position += 1, -quotient()) : quotient();
+      while (peek() === "+" || peek() === "-") {
+        const add = source[position++] === "+";
+        const next = quotient();
+        value = add ? value + next : value - next;
+      }
+      return value;
+    }
+    const value = sum();
+    if (position !== source.length) fail();
+    return value;
+  }
+
+  // Descending coefficients [c3, c2, c1, c0] of a polynomial of degree at most
+  // 3, read from its values at 0, 1, 2 and 3 by finite differences; null when
+  // a fifth value shows a higher degree.
+  function cubicCoefficients(fn) {
+    const [f0, f1, f2, f3] = [0, 1, 2, 3].map(fn);
+    const c3 = (f3 - 3 * f2 + 3 * f1 - f0) / 6;
+    const c2 = (f2 - 2 * f1 + f0 - 6 * c3) / 2;
+    const c1 = f1 - f0 - c3 - c2;
+    const fit = (x) => ((c3 * x + c2) * x + c1) * x + f0;
+    return [-2.5, 4, 5.5].every((x) => approx(fit(x), fn(x), 1e-9)) ? [c3, c2, c1, f0] : null;
+  }
+
+  // Three numeric distractors chosen by the shared look-alike balancer, so
+  // neither the key's rank nor a look-alike pair singles it out.
+  function balancedNumbers(t, key, wrong) {
+    const keyText = S.label(key);
+    const entries = wrong.map(([value, why]) => [S.label(value), why])
+      .filter(([text], index, list) => text !== keyText && list.findIndex(([other]) => other === text) === index);
+    return pairBalanced(t, keyText, entries);
+  }
+
+  const POLY_LETTERS = ["x", "x", "x", "x", "x", "t", "n"];
+
+  // "(4x² + 3x − 2) − (x² − 5x + 6)", "(4x² + 3x − 2) + (x² − 5x + 6)", or
+  // "−3x(2x² − 5x + 4)". Each set of choices crosses two independent slips,
+  // so every choice is one change from two others.
+  function addSubtractItem(t, kind, numeric) {
+    const v = t.pick(POLY_LETTERS);
+    const sq = `${v}²`;
+    const at = (text) => (x) => readMath(text, { [v]: x });
+    let expr;
+    let key;
+    let offers;
+    let steps;
+    let principles;
+    let trap;
+    let hint;
+    if (kind === "difference" || kind === "sum") {
+      const a1 = t.int(2, 9);
+      const a2 = t.int(1, 8);
+      const b1 = t.nonzero(-9, 9);
+      const b2 = t.nonzero(-9, 9);
+      const c1 = t.nonzero(-12, 12);
+      const c2 = t.nonzero(-12, 12);
+      if (a1 === a2) return null;
+      const P = poly([a1, b1, c1], v);
+      const Q = poly([a2, b2, c2], v);
+      if (kind === "difference") {
+        const [A, B, Cc] = [a1 - a2, b1 - b2, c1 - c2];
+        if (!B || !Cc || !(b1 + b2) || !(c1 + c2)) return null;
+        expr = `(${P}) ${MINUS} (${Q})`;
+        key = [A, B, Cc];
+        offers = [
+          [[A, b1 + b2, Cc], `Changes the signs of ${term(a2, sq)} and ${num(c2)} but not of ${term(b2, v)}; the minus sign changes the sign of every term in the second polynomial.`],
+          [[A, B, c1 + c2], `Changes the signs of ${term(a2, sq)} and ${term(b2, v)} but not of ${num(c2)}; the minus sign changes the sign of every term in the second polynomial.`],
+          [[A, b1 + b2, c1 + c2], `Subtracts only the first term, ${term(a2, sq)}, and adds the rest of the second polynomial.`],
+        ];
+        steps = [
+          `Distribute the minus sign: ${P} ${poly([-a2, -b2, -c2], v).replace(/^−/, `${MINUS} `)}.`,
+          `Combine like terms: (${a1} ${MINUS} ${a2})${sq} + (${num(b1)} ${MINUS} ${paren(b2)})${v} + (${num(c1)} ${MINUS} ${paren(c2)}).`,
+          `The result is ${poly(key, v)}.`,
+        ];
+        principles = [
+          "Subtracting a polynomial subtracts every one of its terms: −(a + b + c) = −a − b − c.",
+          "Like terms have the same variable raised to the same power; combining them adds or subtracts the coefficients.",
+        ];
+        trap = "The minus sign in front of the parentheses changes the sign of every term inside, not just the first one.";
+        hint = "What does the minus sign in front of the second parentheses do to each term inside them?";
+      } else {
+        const [A, B, Cc] = [a1 + a2, b1 + b2, c1 + c2];
+        const slipB = b1 - b2;
+        if (!B || !Cc || !slipB) return null;
+        expr = `(${P}) + (${Q})`;
+        key = [A, B, Cc];
+        offers = [
+          [[A, 0, B, 0, Cc], `Adds the exponents when it adds like terms, writing ${sq} + ${sq} as ${v}⁴ and ${v} + ${v} as ${sq}; adding like terms keeps the power.`],
+          [[A, slipB, Cc], `Subtracts ${term(b2, v)} instead of adding it, getting ${term(slipB, v)} for the ${v}-term.`],
+          [[A, 0, slipB, 0, Cc], `Makes two slips: it adds the exponents of like terms, and it subtracts ${term(b2, v)} instead of adding it.`],
+        ];
+        steps = [
+          `Group like terms: (${a1} + ${a2})${sq} + (${num(b1)} + ${paren(b2)})${v} + (${num(c1)} + ${paren(c2)}).`,
+          `Add the coefficients; each power of ${v} stays the same.`,
+          `The result is ${poly(key, v)}.`,
+        ];
+        principles = ["Like terms have the same variable raised to the same power; adding them adds the coefficients and keeps the power."];
+        trap = `${sq} + ${sq} is 2${sq}, not ${v}⁴: adding like terms never changes the exponent.`;
+        hint = "Which terms are like terms, and what happens to the power of a variable when like terms are added?";
+      }
+    } else {
+      // m·v·(av² + bv + c), m < 0, with one negative term inside, so one
+      // product is of two negative factors.
+      const m = -t.int(2, 6);
+      const a = t.int(1, 5);
+      const negMiddle = t.chance(0.5);
+      const b = negMiddle ? -t.int(1, 9) : t.int(1, 9);
+      const c = negMiddle ? t.int(1, 9) : -t.int(1, 9);
+      const inside = poly([a, b, c], v);
+      const outside = `${num(m)}${v}`;
+      expr = `${outside}(${inside})`;
+      key = [m * a, m * b, m * c, 0];
+      const flip = negMiddle ? [m * a, -m * b, m * c] : [m * a, m * b, -m * c];
+      const negTerm = negMiddle ? term(b, v) : num(c);
+      offers = [
+        [[m * a, m * b, m * c], `Multiplies each term by ${num(m)} but not by ${v}; multiplying by ${outside} also raises each power of ${v} by 1.`],
+        [[...flip, 0], `Gives the product of ${outside} and ${negTerm} a negative sign; the product of two negative factors is positive.`],
+        [flip, `Makes two slips: it multiplies each term by ${num(m)} but not by ${v}, and it gives the product with ${negTerm} the wrong sign.`],
+      ];
+      steps = [
+        `Multiply ${outside} by each term inside: ${outside} · ${term(a, sq)} = ${term(m * a, `${v}³`)}, ${outside} · ${negMiddle ? `(${term(b, v)})` : term(b, v)} = ${term(m * b, sq)}, and ${outside} · ${negMiddle ? num(c) : `(${num(c)})`} = ${term(m * c, v)}.`,
+        `The result is ${poly(key, v)}.`,
+      ];
+      principles = ["A product distributes over a sum: k(p + q + r) = kp + kq + kr, and v · vⁿ = vⁿ⁺¹."];
+      trap = `Both the number ${num(m)} and the variable ${v} multiply every term, and ${outside} times a negative term is positive.`;
+      hint = `Multiply ${outside} by each term inside the parentheses, one at a time.`;
+    }
+    const keyText = poly(key, v);
+    const shown = offers.map(([coefficients, why]) => [poly(coefficients, v), why]);
+    const fn = at(expr);
+    if (numeric) {
+      const degree = key.length - 1;
+      const form = degree === 3 ? `a${v}³ + b${v}² + c${v}` : `a${sq} + b${v} + c`;
+      // The second or third coefficient: the x-term's or the constant of a
+      // sum or difference, the x²-term's or the x-term's of a product.
+      const index = t.pick([1, 2]);
+      const asked = ["a", "b", "c"][index];
+      const offered = offers.filter(([coefficients]) => coefficients.length === key.length)
+        .map(([coefficients, why]) => [coefficients[index], why]);
+      return {
+        responseType: "numeric",
+        stimulus: null,
+        stem: `The expression ${expr} is equivalent to ${form}, where a, b, and c are constants. What is the value of ${asked}?`,
+        correct: key[index],
+        wrong: offered.filter(([value]) => value !== key[index]),
+        explanation: `${steps.join(" ")} So ${asked} = ${num(key[index])}.`,
+        steps: [...steps, `Read off the coefficient: ${asked} = ${num(key[index])}.`],
+        principles,
+        trap,
+        hint,
+        verify: () => {
+          const read = cubicCoefficients(fn);
+          return Boolean(read) && approx(read[3 - degree + index], key[index], 1e-9) &&
+            agrees(fn, at(keyText));
+        },
+      };
+    }
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      stem: `Which expression is equivalent to ${expr}?`,
+      correct: keyText,
+      wrong: shown,
+      explanation: steps.join(" "),
+      steps,
+      principles,
+      trap,
+      hint,
+      verify: () => agrees(fn, at(keyText)) && shown.every(([text]) => !agrees(fn, at(text))),
+    };
+  }
+
+  // (ax + b)(x + c) − (x + d)², the square first half the time; or
+  // (ax + b)(x² + cx + e). Both choice sets cross two slips.
+  function multiplyExpansion(t, kind) {
+    const v = t.pick(POLY_LETTERS);
+    const sq = `${v}²`;
+    const at = (text) => (x) => readMath(text, { [v]: x });
+    if (kind === "difference") {
+      const a = t.int(2, 5);
+      const b = t.nonzero(-9, 9);
+      const c = t.nonzero(-9, 9);
+      const d = t.nonzero(-6, 6);
+      if (S.gcd(a, Math.abs(b)) !== 1) return null;
+      const P = [a, a * c + b, b * c];
+      const squareFirst = t.chance(0.4);
+      const s = squareFirst ? -1 : 1;
+      // s·(product) − s·(square), and the two slips: the square written as
+      // v² + d², and the minus sign applied to the first term only.
+      const combine = (product, square) => product.map((value, i) => s * value - s * square[i]);
+      const key = combine(P, [1, 2 * d, d * d]);
+      const lostMiddle = combine(P, [1, 0, d * d]);
+      const firstOnly = squareFirst
+        ? [1 - a, 2 * d + P[1], d * d + P[2]]
+        : [a - 1, P[1] + 2 * d, P[2] + d * d];
+      const both = squareFirst ? [1 - a, P[1], d * d + P[2]] : [a - 1, P[1], P[2] + d * d];
+      const all = [key, lostMiddle, firstOnly, both];
+      if (all.some((list) => !list[1] || !list[2])) return null;
+      if (new Set(all.map((list) => list.join())).size < 4) return null;
+      const productText = `(${lin(a, b, v)})(${lin(1, c, v)})`;
+      const squareText = `(${lin(1, d, v)})²`;
+      const expr = squareFirst ? `${squareText} ${MINUS} ${productText}` : `${productText} ${MINUS} ${squareText}`;
+      const subtracted = squareFirst ? productText : squareText;
+      const offers = [
+        [lostMiddle, `Squares ${lin(1, d, v)} as ${poly([1, 0, d * d], v)}, leaving out the middle term ${term(2 * d, v)}.`],
+        [firstOnly, `Subtracts only the first term of the expansion of ${subtracted} and adds its other terms.`],
+        [both, `Makes two slips: it squares ${lin(1, d, v)} as ${poly([1, 0, d * d], v)}, and it subtracts only the first term of ${subtracted}.`],
+      ];
+      const keyText = poly(key, v);
+      const shown = offers.map(([list, why]) => [poly(list, v), why]);
+      const steps = [
+        `Expand the product: ${productText} = ${poly(P, v)}.`,
+        `Expand the square: ${squareText} = ${poly([1, 2 * d, d * d], v)}.`,
+        `Subtract, changing the sign of every term of ${squareFirst ? "the product" : "the square"}: ${keyText}.`,
+      ];
+      const fn = at(expr);
+      return {
+        responseType: "multiple-choice",
+        stimulus: null,
+        stem: `Which expression is equivalent to ${expr}?`,
+        correct: keyText,
+        wrong: shown,
+        explanation: steps.join(" "),
+        steps,
+        principles: [
+          "(p + q)² = p² + 2pq + q², not p² + q².",
+          "Subtracting an expanded product subtracts every one of its terms.",
+        ],
+        trap: `${squareText} has a middle term, and the minus sign applies to every term of ${subtracted} once it is expanded.`,
+        hint: "Expand each part completely before you subtract.",
+        verify: () => agrees(fn, at(keyText)) && shown.every(([text]) => !agrees(fn, at(text))),
+      };
+    }
+    // (ax + b)(x² + cx + e).
+    const a = t.pick([1, 2, 2, 3, 3, 4]);
+    const b = t.nonzero(-7, 7);
+    const c = t.nonzero(-6, 6);
+    const e = t.nonzero(-9, 9);
+    if (S.gcd(a, Math.abs(b)) !== 1) return null;
+    const key = [a, a * c + b, a * e + b * c, b * e];
+    const noSquare = [a, a * c, a * e + b * c, b * e];
+    const noMiddle = [a, a * c + b, a * e, b * e];
+    const constantOnly = [a, a * c, a * e, b * e];
+    const all = [key, noSquare, noMiddle, constantOnly];
+    if (all.some((list) => !list[1] || !list[2])) return null;
+    if (new Set(all.map((list) => list.join())).size < 4) return null;
+    const bin1 = `(${lin(a, b, v)})`;
+    const tri = `(${poly([1, c, e], v)})`;
+    const expr = t.chance(0.5) ? `${bin1}${tri}` : `${tri}${bin1}`;
+    const bTerm = num(b);
+    const offers = [
+      [noSquare, `Leaves out the product of ${bTerm} and ${sq}.`],
+      [noMiddle, `Leaves out the product of ${bTerm} and ${term(c, v)}.`],
+      [constantOnly, `Multiplies ${term(a, v)} by every term of the trinomial but multiplies ${bTerm} only by the constant ${num(e)}.`],
+    ];
+    const keyText = poly(key, v);
+    const shown = offers.map(([list, why]) => [poly(list, v), why]);
+    const steps = [
+      `Multiply ${term(a, v)} by each term of the trinomial: ${poly([a, a * c, a * e, 0], v)}.`,
+      `Multiply ${bTerm} by each term of the trinomial: ${poly([b, b * c, b * e], v)}.`,
+      `Combine like terms: ${keyText}.`,
+    ];
+    const fn = at(expr);
+    return {
+      responseType: "multiple-choice",
+      stimulus: null,
+      stem: `Which expression is equivalent to ${expr}?`,
+      correct: keyText,
+      wrong: shown,
+      explanation: steps.join(" "),
+      steps,
+      principles: ["Multiplying two polynomials multiplies every term of one by every term of the other: a binomial times a trinomial gives six products."],
+      trap: `${bTerm} must multiply all three terms of the trinomial, not just its constant.`,
+      hint: "How many products should there be before you combine like terms?",
+      verify: () => agrees(fn, at(keyText)) && shown.every(([text]) => !agrees(fn, at(text))),
+    };
+  }
+
+  // The value of one coefficient of an expanded product (numeric).
+  function multiplyCoefficient(t) {
+    const v = "x";
+    const product = t.chance(0.5);
+    let expr;
+    let key;
+    let letters;
+    let form;
+    let index;
+    let wrong;
+    let steps;
+    if (product) {
+      const a = t.pick([2, 3, 4, 5]);
+      const b = t.nonzero(-7, 7);
+      const c = t.nonzero(-6, 6);
+      const e = t.nonzero(-9, 9);
+      if (S.gcd(a, Math.abs(b)) !== 1) return null;
+      const full = [a, a * c + b, a * e + b * c, b * e];
+      index = t.pick([1, 2]);
+      expr = `(${lin(a, b)})(${poly([1, c, e])})`;
+      key = full[index];
+      letters = ["a", "b", "c", "d"];
+      form = "ax³ + bx² + cx + d";
+      wrong = index === 1
+        ? [[a * c, `Leaves out the product of ${num(b)} and x².`], [b, `Leaves out the product of ${term(a, "x")} and ${term(c, "x")}.`]]
+        : [[a * e, `Leaves out the product of ${num(b)} and ${term(c, "x")}.`], [b * c, `Leaves out the product of ${term(a, "x")} and ${num(e)}.`]];
+      steps = [
+        `Multiply ${term(a, "x")} by each term of the trinomial: ${poly([a, a * c, a * e, 0])}.`,
+        `Multiply ${num(b)} by each term of the trinomial: ${poly([b, b * c, b * e])}.`,
+        `Combine like terms: ${poly(full)}.`,
+      ];
+    } else {
+      const a = t.int(2, 5);
+      const b = t.nonzero(-9, 9);
+      const c = t.nonzero(-9, 9);
+      const d = t.nonzero(-6, 6);
+      if (S.gcd(a, Math.abs(b)) !== 1) return null;
+      const P = [a, a * c + b, b * c];
+      const full = [a - 1, P[1] - 2 * d, P[2] - d * d];
+      index = t.pick([1, 2]);
+      expr = `(${lin(a, b)})(${lin(1, c)}) ${MINUS} (${lin(1, d)})²`;
+      key = full[index];
+      letters = ["a", "b", "c"];
+      form = "ax² + bx + c";
+      wrong = index === 1
+        ? [[P[1], `Squares ${lin(1, d)} as ${poly([1, 0, d * d])}, leaving out its middle term.`], [P[1] + 2 * d, "Subtracts only the first term of the square."]]
+        : [[P[2] + d * d, "Subtracts only the first term of the square."], [P[2], `Leaves out the constant ${d * d} of the square.`]];
+      steps = [
+        `Expand the product: (${lin(a, b)})(${lin(1, c)}) = ${poly(P)}.`,
+        `Expand the square: (${lin(1, d)})² = ${poly([1, 2 * d, d * d])}.`,
+        `Subtract every term of the square: ${poly(full)}.`,
+      ];
+    }
+    if (!key || Math.abs(key) > 99) return null;
+    const asked = letters[index];
+    const degree = letters.length - 1;
+    const fn = (x) => readMath(expr, { x });
+    return {
+      responseType: "numeric",
+      stimulus: null,
+      stem: `The expression ${expr} is equivalent to ${form}, where ${letters.slice(0, -1).join(", ")}, and ${letters[letters.length - 1]} are constants. What is the value of ${asked}?`,
+      correct: key,
+      wrong,
+      explanation: `${steps.join(" ")} So ${asked} = ${num(key)}.`,
+      steps: [...steps, `${asked} is the ${index === degree ? "constant term" : `coefficient of ${["x³", "x²", "x"][3 - degree + index]}`}: ${asked} = ${num(key)}.`],
+      principles: ["Expand completely and combine like terms before reading a coefficient."],
+      trap: product
+        ? "Every term of the binomial must multiply every term of the trinomial; a coefficient usually collects two of those products."
+        : "The square has a middle term, and subtracting it changes the sign of all three of its terms.",
+      hint: `Which products contribute to the term that ${asked} multiplies?`,
+      verify: () => {
+        const read = cubicCoefficients(fn);
+        return Boolean(read) && approx(read[3 - degree + index], key, 1e-9) && (degree === 3 || approx(read[0], 0, 1e-9));
+      },
+    };
+  }
+
+  // (ax + p)(x + k) = ax² + Bx + C for all x: find k.
+  function multiplyIdentity(t, numeric) {
+    const a = t.int(2, 5);
+    const p = t.nonzero(-9, 9);
+    const k = t.nonzero(-9, 9);
+    if (S.gcd(a, Math.abs(p)) !== 1) return null;
+    const B = a * k + p;
+    const C = p * k;
+    if (!B || Math.abs(C) > 60) return null;
+    const left = `(${lin(a, p)})(x + k)`;
+    const right = poly([a, B, C]);
+    const equation = `${left} = ${right}`;
+    const wrong = [
+      [B - p, `Takes the x-coefficient to be k ${signed(p)}, leaving out the factor ${a} on k.`],
+      [-k, `Solves ${num(p)}k = ${num(C)} with the sign reversed.`],
+      [B / a, `Divides the x-coefficient ${num(B)} by ${a}, ignoring the ${num(p)}x that the product also contributes.`],
+      [C, `Takes the constant term ${num(C)} itself as k, ignoring the factor ${num(p)}.`],
+    ].filter(([value]) => Number.isFinite(value) && Math.abs(value) <= 99);
+    if (wrong.some(([value]) => approx(value, k))) return null;
+    const holdsAt = (value) => SAMPLES.every((x) => approx(readMath(left, { x, k: value }), readMath(right, { x }), 1e-9));
+    const shown = numeric ? wrong : balancedNumbers(t, k, wrong.map(([value, why]) => [ratio(value), why]));
+    if (!numeric && shown.length < 3) return null;
+    const steps = [
+      `Expand the left side: (${lin(a, p)})(x + k) = ${a}x² + (${a}k ${signed(p)})x ${p < 0 ? MINUS : "+"} ${Math.abs(p) === 1 ? "" : Math.abs(p)}k.`,
+      `Match the constant terms: ${num(p)}k = ${num(C)}, so k = ${num(k)}.`,
+      `Check the x-terms: ${a}(${num(k)}) ${signed(p)} = ${num(B)}, which matches.`,
+    ];
+    return {
+      responseType: numeric ? "numeric" : "multiple-choice",
+      stimulus: { type: "equations", content: equation },
+      stem: "In the given equation, k is a constant. If the equation is true for all values of x, what is the value of k?",
+      correct: numeric ? k : ratio(k),
+      wrong: numeric ? wrong : shown,
+      explanation: steps.join(" "),
+      steps,
+      principles: ["Two polynomials are equal for all x only when the coefficients of each power of x are equal."],
+      trap: `The x-term of the product collects two products, ${a}k and ${num(p)}; matching it to k alone, or ignoring the factor ${a}, gives a wrong value.`,
+      hint: "Expand the left side and match it to the right side term by term.",
+      verify: () => holdsAt(k) && wrong.every(([value]) => !holdsAt(value)),
+    };
+  }
+
+  const polynomialAddSubtract = {
+    id: "polynomial-add-subtract",
+    difficulty: "Easy",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "factoring",
+    title: "Adding, subtracting, and distributing polynomials",
+    recognize:
+      "Combine only like terms, which keep their power; a minus sign before parentheses changes the sign of every " +
+      "term inside, and a monomial outside parentheses multiplies every term inside.",
+    rubric: { steps: 0, concept: 0, interpretation: 0, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "neighbouring-rule"],
+    build(t) {
+      const kind = t.pick(["difference", "difference", "sum", "monomial"]);
+      const numeric = t.chance(0.3);
+      return { estimatedSeconds: 55, ...drawUntilDistinct(() => addSubtractItem(t, kind, numeric)) };
+    },
+  };
+
+  const polynomialMultiply = {
+    id: "polynomial-multiply",
+    difficulty: "Medium",
+    domain: "Advanced Math",
+    skill: "Equivalent expressions",
+    subskill: "factoring",
+    title: "Multiplying polynomials",
+    recognize:
+      "Multiply every term of one factor by every term of the other, expand a square as p² + 2pq + q², subtract " +
+      "every term of an expanded product, and match coefficients term by term when two sides are equal for all x.",
+    rubric: { steps: 1, concept: 1, interpretation: 0, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
+    tricks: ["sign-error", "neighbouring-rule", "equivalent-form"],
+    build(t) {
+      const roll = t.random();
+      const make = roll < 0.3 ? () => multiplyExpansion(t, "difference")
+        : roll < 0.5 ? () => multiplyExpansion(t, "trinomial")
+          : roll < 0.75 ? () => multiplyCoefficient(t)
+            : () => multiplyIdentity(t, t.chance(0.5));
+      return { estimatedSeconds: 90, ...drawUntilDistinctHard(make) };
+    },
+  };
+
   const monomialExponentRules = {
     id: "monomial-exponent-rules",
     difficulty: "Easy",
@@ -1913,9 +2431,10 @@
     },
   };
 
-  // Hard: the target is a power of a different base, or a power sum hidden in
-  // the square or cube of x + 1/x; the structure has to be seen before
-  // anything can be computed.
+  // Hard: a power sum hidden in the square or cube of x ± 1/x, which may itself
+  // be hidden in a quadratic; the structure has to be seen before anything can
+  // be computed. (The different-base power form, 16^x · 64^y from 2x + 3y, is
+  // official Medium work and moved to expression-from-combination.)
   const expressionSubstitution = {
     id: "expression-substitution",
     difficulty: "Hard",
@@ -1924,20 +2443,20 @@
     subskill: "exponent rules",
     title: "Evaluate an expression through a known combination",
     recognize:
-      "The variables cannot be found one at a time; the target is a power of a common base whose exponent is a " +
-      "multiple of the given combination, or a power sum inside the square or cube of the given expression.",
-    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 2, synthesis: 1, trap: 2 },
-    tricks: ["wrong-quantity", "equivalent-form", "neighbouring-rule", "sign-error", "intermediate-value"],
+      "x itself is awkward to find; the target x² + 1/x² or x³ + 1/x³ sits inside the square or cube of the given " +
+      "x ± 1/x, and a quadratic such as x² − kx + 1 = 0 becomes x + 1/x = k after dividing by x.",
+    rubric: { steps: 1, concept: 2, interpretation: 1, distractors: 2, abstraction: 1, synthesis: 1, trap: 2 },
+    tricks: ["equivalent-form", "neighbouring-rule", "sign-error", "intermediate-value"],
     build(t) {
-      const powers = t.chance(0.55);
       const numeric = t.chance(0.36);
-      const make = powers ? () => substitutionPowers(t, numeric) : () => substitutionReciprocal(t, numeric);
-      return { estimatedSeconds: 110, ...drawUntilDistinctHard(make) };
+      return { estimatedSeconds: 110, ...drawUntilDistinctHard(() => substitutionReciprocal(t, numeric)) };
     },
   };
 
   // Medium: the target is a visible multiple of the given linear combination,
-  // or a power of the same base as the given equation.
+  // a power of the same base as the given equation, or a power of a different
+  // base whose exponent is a multiple of the given combination once both bases
+  // are written as powers of one number (16^x · 64^y from 2x + 3y).
   const expressionFromCombination = {
     id: "expression-from-combination",
     difficulty: "Medium",
@@ -1946,15 +2465,17 @@
     subskill: "exponent rules",
     title: "Value of an expression from a given equation without solving it",
     recognize:
-      "The target is a multiple of the given combination plus a constant, or a power of the same base split into a " +
-      "product of powers; rewrite the target in terms of what is given.",
+      "The target is a multiple of the given combination plus a constant, a power of the same base split into a " +
+      "product of powers, or a power whose bases are all powers of one number, so its exponent is a multiple of the " +
+      "given combination; rewrite the target in terms of what is given.",
     rubric: { steps: 1, concept: 1, interpretation: 1, distractors: 1, abstraction: 1, synthesis: 0, trap: 1 },
-    tricks: ["wrong-quantity", "sign-error", "intermediate-value", "neighbouring-rule"],
+    tricks: ["wrong-quantity", "sign-error", "intermediate-value", "neighbouring-rule", "equivalent-form"],
     build(t) {
-      const linear = t.chance(0.55);
-      const numeric = t.chance(0.4);
-      const make = linear ? () => substitutionLinear(t, numeric) : () => substitutionExponent(t, numeric);
-      return { estimatedSeconds: 85, ...drawUntilDistinctHard(make) };
+      const roll = t.random();
+      const numeric = t.chance(roll < 0.65 ? 0.4 : 0.36);
+      const make = roll < 0.4 ? () => substitutionLinear(t, numeric)
+        : roll < 0.65 ? () => substitutionExponent(t, numeric) : () => substitutionPowers(t, numeric);
+      return { estimatedSeconds: 90, ...drawUntilDistinctHard(make) };
     },
   };
 
@@ -2390,8 +2911,8 @@
 
 
   return [
-    monomialExponentRules, quadraticFactorMatch, rationalExpressionCombine, rationalExponentRewrite,
-    expressionFromCombination, nonlinearFormulaRearrange, commonBaseExponent, quadraticStructureForm,
+    monomialExponentRules, quadraticFactorMatch, polynomialAddSubtract, rationalExpressionCombine, rationalExponentRewrite,
+    expressionFromCombination, nonlinearFormulaRearrange, commonBaseExponent, quadraticStructureForm, polynomialMultiply,
     unknownCoefficientProduct, expressionSubstitution, complexFractionEquivalence,
     signedCubeRootValue, quadraticSquareCoefficient,
   ];

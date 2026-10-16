@@ -222,85 +222,85 @@
     {
       "id": "monomial-exponent-rules",
       "bit": 31,
-      "version": 4,
-      "fingerprint": "da886e142ff3095f270970bf3d05e795ec6e63c993aceab25bfc4a869beeeeb7",
+      "version": 5,
+      "fingerprint": "7e955014bd0f49650f29a240f6c62f03233bb5dc7db5de0e7cab1d4869754a49",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-factor-match",
       "bit": 32,
-      "version": 4,
-      "fingerprint": "c794a2aae66118682658acdcb59d690ea9b9353418e407a29e9a7737939e82ba",
+      "version": 5,
+      "fingerprint": "e88d81934f07ae977f5ed4595c9dd8478349477e416cc874e83f601c66f24643",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rational-expression-combine",
       "bit": 33,
-      "version": 3,
-      "fingerprint": "add5d713a2543efccad4c13c8e4cc1a366388b9d0820832c1285242dfb4c34f5",
+      "version": 4,
+      "fingerprint": "b185f9d146723bbf1f80eafc580ac7a09886887da1409b125ff9a92fa96399bc",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rational-exponent-rewrite",
       "bit": 34,
-      "version": 5,
-      "fingerprint": "14fd5b3d582d6f631df3fa1b97bf6bae773456694c864b788caf43cf9382cc0c",
+      "version": 6,
+      "fingerprint": "3aaf9f8c6ad49978c523505a6a6087c50ec39bf0a9439ab48b8a440f4a322517",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "unknown-coefficient-product",
       "bit": 35,
-      "version": 4,
-      "fingerprint": "57af7dcee4e2e40b5ea8b2471344f02222e3ce187a8f4b2e57f0e509d22bcbe1",
+      "version": 5,
+      "fingerprint": "f10632f7d22467aa73cdb6b520ca80f480537442a8c156c312f7ff9ae61abb8d",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "expression-substitution",
       "bit": 36,
-      "version": 5,
-      "fingerprint": "60856aac43304dc088240b5702ca6f0551cb07b73f72f2cb7b1e47f5284d940b",
+      "version": 6,
+      "fingerprint": "b854feb84828eff97c267ee10403595d99b7f457a8c5decd7bd39ea8597e18f8",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-square-root-solve",
       "bit": 37,
-      "version": 3,
-      "fingerprint": "de392bfffc6099ffc8d0209e406017406b375345b51b5e00cfc3b669e22f19bf",
+      "version": 4,
+      "fingerprint": "f0cc4cd63e14e64f0ac84b1e41dd274d4e5d4300702b8bbb6a129e84909caac1",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "radical-equation-solve",
       "bit": 38,
-      "version": 2,
-      "fingerprint": "3ba7e4949ab6f4f267ea77a2f2c171068a63b6631b89476a44d81753e677a7d5",
+      "version": 3,
+      "fingerprint": "b201056845a2f398dc0e6b56143bda5703f22b7e287fa641500e01e39b5b79a9",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "absolute-value-equation",
       "bit": 39,
-      "version": 3,
-      "fingerprint": "2f200dde56c66256055423f279ac83e2c8621a3b201e11757c16cdb66b111169",
+      "version": 4,
+      "fingerprint": "fbd962254dccda87584c1c391b957f56eefa9f00e55bc7f6614b00d9ef306d3b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-irrational-solutions",
       "bit": 40,
-      "version": 4,
-      "fingerprint": "ed09179c7358e88144202908270ec243906f21a549de0f588c6c7f39dcdea9cb",
+      "version": 5,
+      "fingerprint": "a78f2b35e629d718a98836cc994ab6f21ca09c2358f1f1ea8b6517376ae7de1a",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "root-sum-product",
       "bit": 41,
-      "version": 4,
-      "fingerprint": "3d959e47baea6eace4b9127a5046780e7dc99b5561bcd7d0408911f1f45c0485",
+      "version": 5,
+      "fingerprint": "d2c6760b71432205aeaa0d33662174638b3e0498d45e24e174bcb6a26639b0df",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "extraneous-roots",
       "bit": 42,
-      "version": 3,
-      "fingerprint": "7cc80bff5eacf95ab3b3fb24fa502d7907471659b343f825c5a32578e8fe67ea",
+      "version": 4,
+      "fingerprint": "dc537a8f464f667444f4552ba7e5684f30186874a883a24ec3d1bfa716eb82ff",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -348,64 +348,64 @@
     {
       "id": "factored-polynomial-intercepts",
       "bit": 49,
-      "version": 5,
-      "fingerprint": "6b91930b2c8e3116fa87ce032a7d79b31c95cc90c6a5a14896a4e0ab69e3e2fc",
+      "version": 6,
+      "fingerprint": "8405f63221f8c847578cec28266c64fd1e5febb7a4b87381e76ea00d320e2404",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-model-reading",
       "bit": 50,
-      "version": 5,
-      "fingerprint": "f640aa7e4b437d93750132e0b053cc8dd9ddc085787193373bcf619177852558",
+      "version": 6,
+      "fingerprint": "e74ece8678ba1ed1709254a697bb9e185c7b62623d0238b36d391098e5a53fc7",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-vertex-reading",
       "bit": 51,
-      "version": 5,
-      "fingerprint": "a607db8dd25a06b7603e2823d186aec58648a8db8af8b6d1f51cef31accaac36",
+      "version": 6,
+      "fingerprint": "aea24bc418e4667bc0835a0bf63e37fe7448e17650947cf9a4117e67da02299f",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "projectile-height-model",
       "bit": 52,
-      "version": 5,
-      "fingerprint": "e566552f1a78387187d1402b48730685da894a64e6e6d2708f6eb4944f8eb28d",
+      "version": 6,
+      "fingerprint": "e039a4aba4653a8b8e8c6ececa7add1f75ea2ed4fb0698a8321ed565c6ab8e9e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-table-model",
       "bit": 53,
-      "version": 5,
-      "fingerprint": "4c5b6d3e4a436f3f82a580ae407ce7b3e9004146ab29d465e43b626e6b3f13e1",
+      "version": 6,
+      "fingerprint": "a38b6d4af727a713daed48b6b7f71726f635823386d481a7b20b39be8a204909",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "vertex-from-conditions",
       "bit": 54,
-      "version": 6,
-      "fingerprint": "ca2dcc6abb15e134a301404975e7ce2cf53cb9bc24ee3e3141d897de8f035a93",
+      "version": 7,
+      "fingerprint": "f3d3362c16cb037f7a1678752ff4ddaad4090d6a28bae4593273f01464c10289",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-rewrite",
       "bit": 55,
-      "version": 5,
-      "fingerprint": "6993eb1f97526f9c5dc50ab4c4ba9e4cd0c53a37fa76081726f917ada3c35658",
+      "version": 6,
+      "fingerprint": "05fea4fe4641557442d36f13cb4e322fd6b540551ad666d1f1fd530b9c8375f9",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "function-transformation-table",
       "bit": 56,
-      "version": 6,
-      "fingerprint": "87e19fe724ff23fe75bc641158472a909da79629cab6ae308180d7bf1cc00740",
+      "version": 7,
+      "fingerprint": "5511392446374477d1988ad3a0b35930d6118c7a605173fe6a9a6c5a07e0643e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "polynomial-factor-remainder",
       "bit": 57,
-      "version": 6,
-      "fingerprint": "5414c6acf6ecc8c964a8c4fe59206a5c644885c13ae95e51b5616752d80d18f1",
+      "version": 7,
+      "fingerprint": "99895424cf77995e607015cea73ceea47e19712b99168d808456c4b69178f809",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -929,43 +929,43 @@
     {
       "id": "expression-from-combination",
       "bit": 132,
-      "version": 3,
-      "fingerprint": "86a3981ab315c3557317e45903849208950e0dd0183985fe02e4ca386476a3c5",
+      "version": 4,
+      "fingerprint": "bbf012ae9a3d9eb3482473ce497b9882f1fd4058d22365da9cf922f2db957c97",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "nonlinear-formula-rearrange",
       "bit": 133,
-      "version": 3,
-      "fingerprint": "07e1c5dee07dbd4603c95cef48b35c6d999fcb45419ab08dbcd466e194c1ebe1",
+      "version": 4,
+      "fingerprint": "e5b78fd2d42ad5cea9a445549f5d14c4fc24540d1f15b3ec02d558b0f264541d",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "common-base-exponent",
       "bit": 134,
-      "version": 3,
-      "fingerprint": "886c4a9741665b21961ffab2b15b9c25cb4312b35d93a3a12aaff48e44d7ee6b",
+      "version": 4,
+      "fingerprint": "459e1d9e3d748a292262f97f7f482b74ab0ee3d24bb5b6e4a774be089618c05f",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-structure-form",
       "bit": 135,
-      "version": 4,
-      "fingerprint": "e9a028d29b7bfa5f92c76407ccfefde0a11160c53784c327a5eaccb0df245b03",
+      "version": 5,
+      "fingerprint": "2e61c880ba2a8d5c6d40057936dc79c28395fe9a8842000c5a4c7514e79bcf4e",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "rational-equation-structure",
       "bit": 136,
-      "version": 3,
-      "fingerprint": "49539df5ac4e521dbbfa1823c6f217ac159d10203035cc9d01bfc388d03d93f0",
+      "version": 4,
+      "fingerprint": "9fc65c74b401242ab55ac523c5fc403d9a20aeefb5c343b68353aa8a70dfa30b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "absolute-value-cases",
       "bit": 137,
-      "version": 3,
-      "fingerprint": "b208b080fbca754cee7d919092b773effea3d9674b5398cc0cff9ebd52178e2d",
+      "version": 4,
+      "fingerprint": "a2832d50a507502f44ae79c77715af46082c5bc07ede200cf459567183990bf0",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -985,36 +985,36 @@
     {
       "id": "function-table-evaluate",
       "bit": 140,
-      "version": 5,
-      "fingerprint": "f6f3cb7dd43824697d904248a06663c8b7824aa6684a7cd1687ff33246708d49",
+      "version": 6,
+      "fingerprint": "b8d3ac059851b13f67a092747983ab246f9d300feda1e1f0ad6a030ede42d30f",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "polynomial-constant-from-remainder",
       "bit": 141,
-      "version": 5,
-      "fingerprint": "6547a22ff20286b5569cd3773a932c8af49a0fa5089a4fb145fe446b7aba608b",
+      "version": 6,
+      "fingerprint": "72d6597daa2ae138e1e23f32e4d01223cf3165dfe6e3b4455fc6f40045933c22",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "exponential-from-words",
       "bit": 142,
-      "version": 4,
-      "fingerprint": "bec87158d93abd3c34785a8dd95f83e08522d2746a00d04c94814812be34a217",
+      "version": 5,
+      "fingerprint": "b6001713e188cbd4cef28c6e67219616dae37496f6928e7bb461d6519791a1b9",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "graph-which-function",
       "bit": 143,
-      "version": 5,
-      "fingerprint": "69f80ff5f0984f6aa2641274aa68ce63cb04a6d2c60d6c0b430f6bd3778ca2e0",
+      "version": 6,
+      "fingerprint": "cdb43f6db10ba5faebd45fb250ab39f133b16ecdd40642ae2043a456f579ab58",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "graph-transformation",
       "bit": 144,
-      "version": 4,
-      "fingerprint": "ae781faec298656f5b8da4f44b04297d72958e1f4ec7fbd5ff80318f7aa8e50d",
+      "version": 5,
+      "fingerprint": "ee8f6eb75112f568743c16d7d460a0a893ec1b912fd44470c51dee17c1e4b7f2",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1300,22 +1300,22 @@
     {
       "id": "complex-fraction-equivalence",
       "bit": 185,
-      "version": 3,
-      "fingerprint": "a91fdb63e59796764d4b2d65d4f46cf922142f363b0189628d2de141387e56b6",
+      "version": 4,
+      "fingerprint": "3c359757f963e5b9f05793fd71e5ce40ad73388351403efb7249276b8b2ce1fb",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "radical-parameter-extraneous",
       "bit": 186,
-      "version": 2,
-      "fingerprint": "2fb70434d90ffb13a2c68dbeed6a7d2899895e8bbfdf6dd18fa849587f1cc2ab",
+      "version": 3,
+      "fingerprint": "625f1f962fe412742dcbfd9fe658011b6366a0f91eda21b035e3dbfef1a7a57b",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-must-be-true",
       "bit": 187,
-      "version": 4,
-      "fingerprint": "3d1a3c6712cc3806ecb94edfad1dcb988024852cb2ddd203c127b8dd55ef43ca",
+      "version": 5,
+      "fingerprint": "9dc9fd4f072d0dd60179ea13997dfe08dcad7f95481f039a7969945d9bf0bbd3",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1335,15 +1335,15 @@
     {
       "id": "signed-cube-root-value",
       "bit": 190,
-      "version": 1,
-      "fingerprint": "5eb2f27364a8e385dc7db2640e7379ed853ef4ea7b225a7ba9a661cfa6e3ca58",
+      "version": 2,
+      "fingerprint": "3e375bbca7f45d037deb1439f06f2a66d582f42457404e119d72ded8cd948895",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-square-coefficient",
       "bit": 191,
-      "version": 1,
-      "fingerprint": "8b0947b590a02dd424490d1bf44e7dc96835ae3f0082dad2fe25298cf6a6ec30",
+      "version": 2,
+      "fingerprint": "cff68ba98df5db2da85f6ab253ec87b7bca746c2db3e2b5883587669f21675ac",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1356,15 +1356,15 @@
     {
       "id": "shifted-exponential-recovery",
       "bit": 193,
-      "version": 2,
-      "fingerprint": "91eb3b9690f98da510fad7c391bd6780ab5e27ffea4bc34a70d5673bc5dd7cf1",
+      "version": 3,
+      "fingerprint": "eaede5bbf8381d54732f62c8d06fbad29be9909d178498f746d00fc817181ef6",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "quadratic-zeros-in-interval",
       "bit": 194,
-      "version": 2,
-      "fingerprint": "0b4618fb48efc7f0f897aec63dafd6c70eab2f91400ec9194ab9ff247cf0c82d",
+      "version": 3,
+      "fingerprint": "1cd30ec72cc4cf70c266a3a98c01e58c5000eb2d80aab72c5f6951d9df5d2bb7",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1384,15 +1384,15 @@
     {
       "id": "graph-quadratic-level",
       "bit": 197,
-      "version": 1,
-      "fingerprint": "358a67a45da27c60096f7f39f76e16c830dab6fabc91e8bf81e011de839689e4",
+      "version": 2,
+      "fingerprint": "3ee008e12379111340a46e9825a18c383e954aa7f377a5a02c322683080a6c4d",
       "fingerprintAlgorithm": "source-v1"
     },
     {
       "id": "graph-polynomial-sign-integers",
       "bit": 198,
-      "version": 1,
-      "fingerprint": "6082a91fa314aa7e8f496e6423a3b77d260cd611512ae1c022f2a870d37e2f0d",
+      "version": 2,
+      "fingerprint": "43956f0729a9ec5d375e9cebbc68c58a95b41ca66f71479ff0fdb62a2d25cb3c",
       "fingerprintAlgorithm": "source-v1"
     },
     {
@@ -1449,6 +1449,41 @@
       "bit": 206,
       "version": 1,
       "fingerprint": "c657e4ee6e7927779f8d4a3084ab982cdeb0bb69e8bb8514fc18239113ee7667",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "polynomial-add-subtract",
+      "bit": 207,
+      "version": 1,
+      "fingerprint": "e9ad670a82d2c06e08d387436ddf685927a11b2e38983be797097e569a32242b",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "polynomial-multiply",
+      "bit": 208,
+      "version": 1,
+      "fingerprint": "efa178895cc9686cf803f8e2ea3b6e516a2045f7c508da51fc65f3028ec0fd50",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "quadratic-solution-count",
+      "bit": 209,
+      "version": 1,
+      "fingerprint": "31210e5053a4ec68ab52f217c6ec2840dd74bf831c0150af68f9260650d85b68",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "rational-equation-solve",
+      "bit": 210,
+      "version": 1,
+      "fingerprint": "07cb06a8de9956d8e934d934f171b3f9d9f13ea8b56919c237eed1a4b9dc49b9",
+      "fingerprintAlgorithm": "source-v1"
+    },
+    {
+      "id": "quadratic-context-model",
+      "bit": 211,
+      "version": 1,
+      "fingerprint": "55b1cafb73e01a596854ca060fb337f3d8db271faf3a1a28f4f82b1cac6861ef",
       "fingerprintAlgorithm": "source-v1"
     }
   ]
