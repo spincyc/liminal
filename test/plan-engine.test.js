@@ -96,7 +96,7 @@ test("drill steps alternate tracks, the one drilled least recently first", () =>
 });
 
 test("a skill leaves flight at the gate or after its budget of first answers at any tier, then moves on", () => {
-  assert.deepEqual(Analytics.BUDGET, { answers: 20 });
+  assert.deepEqual(Analytics.BUDGET, { answers: 20, extra: 10 });
   // Answers from before it was in flight spend nothing.
   // (Track A's second skill also has 15 right Medium answers from before
   // its turn: they fill its gate window but spend nothing.)

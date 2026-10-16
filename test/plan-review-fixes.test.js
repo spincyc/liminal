@@ -52,9 +52,11 @@ test("only a skill's own drills spend its budget: the diagnostic, mixed sets and
   const drillIds = new Set(record.sessions.filter((entry) => entry.kind === "drill" && entry.skill === skill).map((entry) => entry.id));
   const own = Progress.markRepeats(record.attempts).filter((attempt) => attempt.skill === skill && drillIds.has(attempt.sessionId) &&
     attempt.repeat !== true);
-  // Its 20 drill answers, nothing from other sets: exactly its budget.
+  // Its 20 drill answers, nothing from other sets: exactly its budget,
+  // with a Medium drill in the turn, so no extra drill.
   assert.equal(own.length, Analytics.BUDGET.answers);
-  assert.deepEqual([plan.skills[skill].status, plan.skills[skill].leftBy, plan.skills[skill].spent], ["moved-on", "budget", own.length]);
+  assert.deepEqual([plan.skills[skill].status, plan.skills[skill].leftBy, plan.skills[skill].spent, plan.skills[skill].extraGiven],
+    ["moved-on", "budget", own.length, false]);
   assert.equal(plan.skills[skill].drillAnswers, own.length);
   const leftAt = (state) => state.departures.find((entry) => entry.skill === skill).at;
   assert.ok(leftAt(legacy) < leftAt(plan), "counting every set spent it sooner");
@@ -65,7 +67,7 @@ test("only a skill's own drills spend its budget: the diagnostic, mixed sets and
   const early = planOf(before, record.sessions).plan.skills[skill];
   assert.deepEqual([early.spent, early.practised], [0, false]);
   // A skill stuck at Easy still moves on: Easy drill answers spend it too.
-  const stuck = answers(Analytics.BUDGET.answers, trackA[0], { difficulty: "Easy", correct: false, sessionId: "d1" });
+  const stuck = answers(Analytics.BUDGET.answers + Analytics.BUDGET.extra, trackA[0], { difficulty: "Easy", correct: false, sessionId: "d1" });
   const stuckPlan = planOf(stuck, [session("d1", "drill", { skill: trackA[0] })]).plan;
   assert.deepEqual([stuckPlan.skills[trackA[0]].status, stuckPlan.skills[trackA[0]].easyStuck], ["moved-on", true]);
   // "Practice what I missed" is not a drill.
@@ -196,4 +198,90 @@ test("the two-week record: the report no longer says On track while nothing is b
   const text = Analytics.weeklyReportText(result, { sectionName: () => "Math" });
   assert.match(text, /^Liminal weekly report: SAT, Oct 24 to Oct 30, 2026/);
   assert.doesNotMatch(text, /in flight|Track [AB]|Building|moved on|first pass|left flight/i);
+});
+
+test("no false Needs attention: every skill at its target, or a high Medium plateau", () => {
+  const now = clock + 60 * DAY;
+  const at = (daysAgo, minute) => now - daysAgo * DAY + (minute || 0) * 60000;
+  const report = (list, sessions) => {
+    const rows = Analytics.skillMap(list, [mathSection]);
+    const plan = Analytics.planState(rows, { sectionKey: "sat-math", attempts: list, sessions, now });
+    return Analytics.weeklyReport({ test: "SAT", attempts: list, sessions, rows, plan, now });
+  };
+  const keys = (result) => result.signal.reasons.map((reason) => reason.key);
+  // Every plan skill at its target long ago (over two days), steady practice since: nothing left to reach.
+  const skills = PLAN.stages.flatMap((stage) => stage.skills);
+  const old = skills.flatMap((skill, index) => Array.from({ length: 30 }, (_, k) => answer(skill, { sessionId: "old",
+    timestamp: at(40 - (k % 2), index * 30 + k) })));
+  const steady = Array.from({ length: 12 }, (_, day) => answer(skills[day], { sessionId: "now", timestamp: at(day + 1, 5) }));
+  const all = report(old.concat(steady), [session("old", "mixed"), session("now", "mixed")]);
+  assert.equal(all.mathTargets.met, 19);
+  assert.ok(!keys(all).includes("no-target"), "nothing is left to reach");
+  // A flat Medium plateau at 92%: not flagged; the same tie at 67% is.
+  const medium = (count, daysAgo, right) => Array.from({ length: count }, (_, index) => answer(trackB[1], {
+    correct: index < right, sessionId: "d", timestamp: at(daysAgo, index) }));
+  const sessions = [session("d", "drill", { skill: trackB[1] })];
+  assert.ok(!keys(report(medium(50, 20, 46).concat(medium(50, 3, 46)), sessions)).includes("medium-flat"), "92% and 92%");
+  assert.ok(keys(report(medium(30, 20, 20).concat(medium(30, 3, 20)), sessions)).includes("medium-flat"), "67% and 67%");
+  assert.ok(!keys(report(medium(30, 20, 20).concat(medium(30, 3, 22)), sessions)).includes("medium-flat"), "rising");
+});
+
+test("a parked miss comes back at the skill's first turn, first drill or target, whichever is first", () => {
+  const miss = (skill, at, extra) => Object.assign(answer(skill, { correct: false, timestamp: at, difficulty: "Hard", sessionId: "mod",
+    templateId: `p-${skill.length}`, questionId: `sat-math:p-${skill.length}:${at}` }), extra);
+  const day = (offset) => new Date(2026, 7, 1 + offset, 10).getTime();
+  const X = trackB[3];
+  const parkedMiss = miss(X, day(0));
+  // At its target without a turn in flight (drilled from the form and in mixed sets).
+  const target = Array.from({ length: 30 }, (_, index) => answer(X, { sessionId: "mx", timestamp: day(1) + index * 3 * HOUR }));
+  const list = [parkedMiss].concat(target);
+  const plan = Analytics.planState(Analytics.skillMap(list, [mathSection]), { sectionKey: "sat-math", attempts: list,
+    sessions: [session("mod", "module"), session("mx", "mixed")], now: day(10) });
+  assert.equal(plan.skills[X].firstEnteredAt, null);
+  assert.ok(plan.skills[X].firstReachedAt !== null);
+  const summary = Queue.summarize(Queue.build(list), day(10), { flightAt: Analytics.reviewFlightAt({ "sat-math": plan }) });
+  assert.deepEqual(summary.parked, [], "reaching the target unparks it");
+  // A first drill of its own unparks it too.
+  const drilled = [parkedMiss, answer(X, { sessionId: "own", timestamp: day(2), setKind: "drill", setSkill: X })];
+  const drillPlan = Analytics.planState(Analytics.skillMap(drilled, [mathSection]), { sectionKey: "sat-math", attempts: drilled,
+    sessions: [session("mod", "module")], now: day(3) });
+  assert.equal(Analytics.reviewFlightAt({ "sat-math": drillPlan })({ sectionKey: "sat-math", skill: X }), day(2));
+  // Never reached: parked.
+  const never = Analytics.planState(Analytics.skillMap([parkedMiss], [mathSection]), { sectionKey: "sat-math", attempts: [parkedMiss],
+    sessions: [session("mod", "module")], now: day(3) });
+  assert.equal(Analytics.reviewFlightAt({ "sat-math": never })({ sectionKey: "sat-math", skill: X }), null);
+});
+
+test("a merged file keeps the fields this version does not know, and the copied summary words Easy turns plainly", () => {
+  const IO = require("../src/lib/progress-io");
+  const here = Progress.empty({ epoch: "e-here" });
+  const file = Object.assign(Progress.empty({ epoch: "e-file" }), { futureField: { kept: true } });
+  const merged = IO.mergeImport(here, IO.parseImport(JSON.stringify(file)).progress).progress;
+  assert.deepEqual(merged.futureField, { kept: true });
+  const mine = IO.mergeImport(Object.assign({}, here, { futureField: "mine" }), IO.parseImport(JSON.stringify(file)).progress).progress;
+  assert.equal(mine.futureField, "mine", "this browser's copy wins");
+  // "Stuck at Easy" in the parent's summary: what happened, not a judgement.
+  const stuck = answers(30, trackA[0], { difficulty: "Easy", correct: true, sessionId: "d1", setKind: "drill", setSkill: trackA[0] });
+  const rows = Analytics.skillMap(stuck, [mathSection]);
+  const plan = Analytics.planState(rows, { sectionKey: "sat-math", attempts: stuck, sessions: [], now: clock + HOUR });
+  assert.deepEqual([plan.skills[trackA[0]].status, plan.skills[trackA[0]].easyStuck, plan.skills[trackA[0]].spent], ["moved-on", true, 30]);
+  const text = Analytics.weeklyReportText(Analytics.weeklyReport({ test: "SAT", attempts: stuck, sessions: [], rows, plan, now: clock + HOUR }));
+  assert.match(text, /Linear equations in one variable \(working toward its target, was still practising at the easier level when its turn ended\)/);
+  assert.doesNotMatch(text, /not yet reliable/);
+});
+
+test("a turn whose drills never left Easy gets one extra drill; a Medium drill in the turn means none", () => {
+  const drill = [session("d1", "drill", { skill: trackA[0] })];
+  const easy = (count, fields) => answers(count, trackA[0], Object.assign({ difficulty: "Easy", correct: false, sessionId: "d1" }, fields));
+  // 20 Easy drill answers: the budget grows to 30 and the turn stays in flight.
+  const twenty = planOf(easy(Analytics.BUDGET.answers), drill).plan.skills[trackA[0]];
+  assert.deepEqual([twenty.status, twenty.budget, twenty.extraGiven, twenty.spent], ["in-flight", 30, true, 20]);
+  // 29: still in flight; 30: moves on, once, with no second extra.
+  assert.equal(planOf(easy(29), drill).plan.skills[trackA[0]].status, "in-flight");
+  const thirty = planOf(easy(30), drill).plan.skills[trackA[0]];
+  assert.deepEqual([thirty.status, thirty.leftBy, thirty.spent], ["moved-on", "budget", 30]);
+  // One Medium drill answer in the turn: it moves on at 20.
+  const mixed = easy(19).concat(answers(1, trackA[0], { correct: false, sessionId: "d1" }));
+  const medium = planOf(mixed, drill).plan.skills[trackA[0]];
+  assert.deepEqual([medium.status, medium.spent, medium.extraGiven], ["moved-on", 20, false]);
 });

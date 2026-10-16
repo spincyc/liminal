@@ -898,6 +898,8 @@
     return Number(question.templateVersion) || currentVersion(question.sectionKey, question.templateId);
   }
 
+  // Each answer names its set (kind, and a drill's skill), so the plan can
+  // class it when it is saved, before the set's session exists.
   function attemptFor(meta, item, now) {
     return Progress.buildAttempt(item.question, item, {
       id: `${meta.sessionId}:${item.index}`,
@@ -906,6 +908,8 @@
       runCode: meta.runCode,
       templateVersion: templateVersionOf(item.question),
       now,
+      setKind: meta.kind,
+      setSkill: (meta.sessionFields || {}).skill,
     });
   }
 
@@ -1834,10 +1838,8 @@
     const sectionKeys = [...new Set(report.items.map((item) => item.question.sectionKey).filter(Boolean))];
     const test = Progress.testOf(sectionKeys[0] || meta.sectionKey);
     const next = stepAction(guide(test).step(sectionKeys));
-    // After a diagnostic, drill, mixed set, Desmos drill or timed test the
-    // next step leads (primary); after Review-like sets, what was missed.
-    const nextFirst = ["diagnostic", "drill", "skill-drill", "mixed", "desmos", "module", "section", "full", "mini"].includes(meta.kind);
-    return (nextFirst ? [next, missedAction] : [missedAction, next]).filter(Boolean);
+    // The next step leads (primary) after every set; what was missed second.
+    return [next, missedAction].filter(Boolean);
   }
 
   /* ---------------------------------------------------------------- views */

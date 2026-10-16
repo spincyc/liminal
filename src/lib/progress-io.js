@@ -74,7 +74,8 @@
     if (attempt.visibleIdentity !== undefined && !Identity.isVisibleIdentity(attempt.visibleIdentity)) return false;
     if (attempt.response !== undefined && attempt.response !== null && typeof attempt.response !== "string" &&
         !(typeof attempt.response === "number" && Number.isFinite(attempt.response))) return false;
-    return ["sectionKey", "domain", "skill", "subskill", "templateId", "seed", "sessionId", "runCode", "feedback", "reviewOf"]
+    return ["sectionKey", "domain", "skill", "subskill", "templateId", "seed", "sessionId", "runCode", "feedback", "reviewOf",
+      "setKind", "setSkill"]
       .every((field) => optionalString(attempt[field]));
   }
 
@@ -319,7 +320,14 @@
         : Progress.addOfficialCheck(record, check)),
       { officialChecks: current.officialChecks || [] },
     ).officialChecks;
-    const progress = Object.assign({}, merged, {
+    // Fields this version does not know: this browser's win, the file's
+    // fill the gaps, as a restore keeps them.
+    const unknown = {};
+    Object.keys(imported || {}).forEach((key) => {
+      if (!Progress.KNOWN_FIELDS.includes(key) && !["__proto__", "constructor", "prototype"].includes(key) &&
+          !Object.prototype.hasOwnProperty.call(current, key)) unknown[key] = imported[key];
+    });
+    const progress = Object.assign({}, merged, unknown, {
       marked,
       errorLog: Object.assign({}, errorLog, current.errorLog),
       plan: Object.fromEntries(["SAT", "ACT"]

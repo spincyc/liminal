@@ -94,8 +94,8 @@ and a right answer to any version in any set, a drill or a mixed set
 included, counts once its day has come. Fixed ACT questions keep a schedule
 each. A SAT Math miss on a skill you have not reached in the plan yet (a
 Hard question in a timed module, say) is parked: it waits until the skill's
-first turn and then comes back from that day, and Review says how many are
-parked.
+first turn, its first drill or its practice target, whichever comes first,
+and then comes back from that day, and Review says how many are parked.
 
 Once a week, count your log by error type and by skill. Mostly content: study
 those skills. Mostly careless: fix habits before adding content. The two or
