@@ -391,8 +391,10 @@ For a coherent ACT bank batch:
   remove it. The Calculator button opens desmos.com in one window beside the
   test, reused while the page stays loaded; the window is detached
   (`opener = null`) so Desmos cannot reach the page, which means a reload
-  opens a second window. Embedding the Desmos API needs the owner's approval
-  (an API key and an external script).
+  opens a second window. Do not frame desmos.com or embed its API without
+  Desmos's written consent: its Terms (section 5) forbid framing the tools
+  without prior consent, and the free API tier excludes public production
+  use (`docs/roadmap.md`, Next item 4).
 - `content/guides/answer-signs.js` powers the Study tips view. It is a study
   guide of probabilistic tells, not a question bank: never run it through the
   generators, and keep every tell's caution, each principle's caution, and

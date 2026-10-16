@@ -264,9 +264,21 @@ are in [`handoff.md`](handoff.md).
 3. **Measure the tiers.** Tiers are still judged by a rubric; the new Hard
    templates of 2026-09-26 were checked by their authors, not by a cold
    reader. A cold read of the new Hard designs, then calibration (item 2).
-4. **An embedded graphing calculator.** Desmos needs an API key and an
-   external script, both needing the owner's approval, so the calculator
-   opens desmos.com in one reusable window beside the test (2026-10-16).
+4. **An embedded graphing calculator: blocked on Desmos's consent**
+   (checked 2026-10-16).
+   - **Framing.** The owner approved framing desmos.com in the test screen.
+     Desmos's Terms of Service, section 5 (last modified 2026-07-15), say:
+     "You may not frame or mirror the Desmos Tools without our prior
+     consent."
+   - **The API.** The free API tier is limited to personal, non-commercial
+     use or a 90-day internal trial, and a public page counts as
+     production use.
+   - **What happens now.** The calculator keeps opening desmos.com in a
+     window beside the test, where the student uses it as an end user.
+   - **To embed.** Get written consent from Desmos
+     (partnerships@desmos.com) first. A look-alike calculator was
+     considered and rejected: practice should use the real tool's
+     keystrokes and behaviour, as on test day.
 5. **ACT templates.** ACT Math templates are being built (2026-09-26); then
    passage-set templates for Science, slot templates over authored English
    passages, and Reading kept as authored sets. Until then the ACT banks
