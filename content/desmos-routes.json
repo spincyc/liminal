@@ -24,9 +24,9 @@
         "fails": "Writing the two parts is the work: the second rate applies only past the threshold, so a total below the threshold's amount uses one rate alone. The crossing is often far off screen; zoom out."
       },
       "linear-solution-parameter-condition": {
-        "enter": "y = (left side) and y = (right side) with a slider for a. Add a vertical line for the condition: x = 2a or x = a + 3 as the question says, or x = (the stated number) for a range question, x = 0 for positive or negative.",
-        "read": "Drag a until the crossing sits on the vertical line; that a is the answer or the edge of the range. Then nudge a to see which side of that edge puts the crossing on the asked side.",
-        "fails": "An edge that isn't a whole number falls between slider steps; set a finer step. Solving for x in terms of a by hand is exact and often quicker."
+        "enter": "y = (left side) and y = (right side) with a slider for a, and x = (the stated number) on its own line, using x = 0 when the question says positive or negative.",
+        "read": "Drag a until the crossing sits on the vertical line: that a is the edge. Nudge a to see which side of the edge puts the crossing on the asked side. For the greatest or least integer a, take the nearest whole a past the edge on that side, never the edge.",
+        "fails": "An edge that isn’t a whole number falls between slider steps; set a finer step. At the edge itself the solution equals the number, which a strict condition excludes. Solving for x in terms of a by hand is exact and often quicker."
       },
       "function-value-and-input": {
         "enter": "The definition as given, such as g(x) = (its rule). Then g(the input) on the next line; to find an input instead, y = g(x) and y = (the given output).",
@@ -156,7 +156,7 @@
       "inequality-percent-of-total": {
         "enter": "y = (current count + x)/(current total + x), with x for the number added, and y = (the target percent as a decimal) on the next line.",
         "read": "Click the crossing. For the least number, round its x up; for the greatest, round down. If the crossing is exactly a whole number, keep it for \"at least\" or \"at most\"; go one higher for \"more than\" and one lower for \"less than\".",
-        "fails": "The added items join both the count and the total; adding them to the count alone is the usual slip. Questions asking which inequality models the situation are about setup and not covered. Zoom out if needed."
+        "fails": "The added items join both the count and the total; adding them to the count alone is the usual slip. Zoom out if the crossing is off screen."
       },
       "monomial-exponent-rules": {
         "enter": "For k: log(the left side with 10 in place of x), pressing → after each exponent. For a choice question: the given expression with 2 in place of x (and 3 for any y), then each choice the same way.",
