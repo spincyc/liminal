@@ -320,7 +320,14 @@
         : Progress.addOfficialCheck(record, check)),
       { officialChecks: current.officialChecks || [] },
     ).officialChecks;
-    const progress = Object.assign({}, merged, {
+    // Fields this version does not know: this browser's win, the file's
+    // fill the gaps, as a restore keeps them.
+    const unknown = {};
+    Object.keys(imported || {}).forEach((key) => {
+      if (!Progress.KNOWN_FIELDS.includes(key) && !["__proto__", "constructor", "prototype"].includes(key) &&
+          !Object.prototype.hasOwnProperty.call(current, key)) unknown[key] = imported[key];
+    });
+    const progress = Object.assign({}, merged, unknown, {
       marked,
       errorLog: Object.assign({}, errorLog, current.errorLog),
       plan: Object.fromEntries(["SAT", "ACT"]

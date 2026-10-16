@@ -33,9 +33,9 @@ the first stage. Those skills recur in lines, curves and data displays.
 3. Equivalent expressions, quadratics and exponentials: [equivalent expressions](learn:sat-math/advanced-math/equivalent-expressions), [nonlinear equations](learn:sat-math/advanced-math/nonlinear-equations), [nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions), [systems of equations](learn:sat-math/advanced-math/systems-of-equations).
 4. The rest, which is smaller but often quick to learn: [probability](learn:sat-math/problem-solving-and-data-analysis/probability), [statistical inference](learn:sat-math/problem-solving-and-data-analysis/statistical-inference), and the four Geometry and Trigonometry skills, starting with [right triangles and trigonometry](learn:sat-math/geometry-and-trigonometry/right-triangles-and-trigonometry) and [circles](learn:sat-math/geometry-and-trigonometry/circles).
 
-Use Desmos from the first week, not as a last-minute trick. Do the one-week
-[Desmos practice plan](learn:sat/general/desmos#practice-protocol) alongside
-stage 1, then graph to solve or check in every later stage. Liminal's next
+Use Desmos from the first week, not as a last-minute trick. Start the
+[Desmos drill routine](learn:sat/general/desmos#practice-protocol) in stage 1,
+then graph to solve or check in every later stage. Liminal's next
 step offers a Desmos drill of about 20 minutes once a week until you have
 done four, then every 14 days: ten questions where Desmos is a real route,
 most of them systems, nonlinear equations and functions, lines,
@@ -56,7 +56,7 @@ For each skill, the loop is:
 - **A second pass.** When both tracks have been through every skill, the skills that moved on come back into flight in the same order, each with a fresh budget.
 - **The diagnostic can start you later.** A stage is passed over while each of its domains went well on the diagnostic (at least 80% of at least 3 questions) and you have not practised its skills. Practising a passed-over skill brings it back, and the rest return in the second pass.
 - **A low official check.** A skill whose latest official check is below 60% comes back into flight at the next opening in its track, ahead of skills not yet started.
-- **Review first, once a day.** When a missed question is due, the day starts with one Review set of up to 6 questions, most overdue first, misses on skills you have drilled before others. After that the plan moves on, even if more are waiting: Review shows up to 6 for today and how many more wait, your plan keeps moving, and you can do more by choice. A miss on a skill you have not reached in the plan, such as a Hard question in a timed module, is parked: it does not count as due until the skill's first turn, and comes back from that day.
+- **Review first, once a day.** When a missed question is due, the day starts with one Review set of up to 6 questions, most overdue first, misses on skills you have drilled before others. After that the plan moves on, even if more are waiting: Review shows up to 6 for today and how many more wait, your plan keeps moving, and you can do more by choice. A miss on a skill you have not reached in the plan, such as a Hard question in a timed module, is parked: it does not count as due until the skill's first turn, its first drill or its practice target, whichever comes first, and comes back from that day.
 - **Then a rotation.** A timed module of 22 questions in 35 minutes, with answers at the end, once three skills are started (the diagnostic places you but does not count), whenever none was taken in the last 7 days, or after 10 practice sets and at least 3 days since the last one. After a drill, a mixed set: 12 questions from every skill you have started, most from skills in flight or moved on, timed at real-test pace, with answers at the end. The Desmos drill, weekly until you have done four, then every 14 days. Otherwise a drill: 10 questions on a skill in flight, with feedback and a hint after each. "Practice what I missed" counts with Review, not as a drill.
 
 ## The practice target {#mastery-gate}

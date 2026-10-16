@@ -307,6 +307,8 @@
         drillAnswers: wholeNumber(saved.drillAnswers),
         aboveEasy: saved.aboveEasy === true,
         lowAtTarget: saved.lowAtTarget === true,
+        firstReachedAt: timeOrNull(saved.firstReachedAt),
+        firstDrillAt: timeOrNull(saved.firstDrillAt),
       };
     });
     const inFlight = {};
@@ -1351,6 +1353,7 @@
     cleanOfficialCheck,
     addOfficialCheck,
     removeOfficialCheck,
+    KNOWN_FIELDS,
     cleanPlanLedger,
     mergePlanLedger,
     setPlanLedger,

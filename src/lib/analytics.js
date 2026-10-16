@@ -190,13 +190,14 @@
   // `scorePracticeDays` practice days between them; and three signs of
   // practising without learning: a skill that used its budget below
   // routine at Medium; no skill reaching its target in `targetDays` despite
-  // `targetPracticeDays` practice days; Medium first-answer accuracy over
-  // the last `trendDays` not above the `trendDays` before, with at least
-  // `trendMin` answers in each.
+  // `targetPracticeDays` practice days, while some skill is still short of
+  // it; Medium first-answer accuracy over the last `trendDays` not above the
+  // `trendDays` before and under `trendCeiling`, with at least `trendMin`
+  // answers in each.
   const SIGNALS = {
     days: 7, practiceDays: 4, moduleDays: 14, moduleStarted: 3, paceDays: 21, paceMinDays: 14,
     flatScore: 10, scoreGapDays: 14, scorePracticeDays: 4,
-    targetDays: 21, targetPracticeDays: 8, trendDays: 14, trendMin: 30,
+    targetDays: 21, targetPracticeDays: 8, trendDays: 14, trendMin: 30, trendCeiling: 0.8,
   };
   // A pacing row needs this many timed answers before it is listed.
   const PACE_MIN = 3;
@@ -734,7 +735,7 @@
   //     skills: { [skill]: { skill, domain, stage, track, row, status,
   //       started, flown, practised, pass, entry, enteredAt, enteredWith,
   //       spent, budget, leftAt, leftBy, movedOn, reachedTarget, easyStuck,
-  //       check, official } },
+  //       firstEnteredAt, firstDrillAt, firstReachedAt, check, official } },
   //     fromLedger, checkpoint }
   // with status "in-flight", "at-gate" (at or past the target now),
   // "moved-on", "passed-over" or "waiting"; entry, why a skill last
@@ -778,7 +779,9 @@
         practised: false,
         reachedTarget: false,
         reachedAt: null,
+        firstReachedAt: null,
         firstEnteredAt: null,
+        firstDrillAt: null,
         drillAnswers: 0,
         aboveEasy: false,
         lowAtTarget: false,
@@ -982,11 +985,13 @@
         if (gateMet(list)) {
           entry.reachedTarget = true;
           if (!before) entry.reachedAt = event.at;
+          if (entry.firstReachedAt === null) entry.firstReachedAt = event.at;
         }
       }
       const drilled = ownDrill(attempt);
       if (drilled) {
         entry.drillAnswers += 1;
+        if (entry.firstDrillAt === null) entry.firstDrillAt = event.at;
         if (attempt.difficulty === "Medium" || attempt.difficulty === "Hard") entry.aboveEasy = true;
       }
       if (inFlight.get(entry.track) === skill) {
@@ -1064,7 +1069,8 @@
 
   // The per-skill replay fields a ledger keeps besides answers and window.
   const LEDGER_SKILL_FIELDS = ["flown", "practised", "pass", "entry", "enteredAt", "enteredWith", "spent", "leftAt", "leftBy",
-    "movedOn", "reachedTarget", "reachedAt", "firstEnteredAt", "drillAnswers", "aboveEasy", "lowAtTarget"];
+    "movedOn", "reachedTarget", "reachedAt", "firstEnteredAt", "drillAnswers", "aboveEasy", "lowAtTarget",
+    "firstReachedAt", "firstDrillAt"];
 
   // Finished sets in a section that the rotation counts, oldest first:
   // everything but Review, discarded sets, and the extra record a section
@@ -1924,16 +1930,18 @@
 
   /* --------------------------------------------------- Review and the plan */
 
-  // For LiminalReviewQueue.summarize's `flightAt`: when a miss's skill
-  // first entered flight in its section's plan, null while it never has
-  // (the miss is parked until the student reaches the skill), undefined
-  // outside a plan. `plans`: { [sectionKey]: planState }.
+  // For LiminalReviewQueue.summarize's `flightAt`: when the student first
+  // reached a miss's skill in its section's plan (the earliest of its first
+  // turn in flight, its first drill, or its first time at the target), null
+  // while none has happened (the miss is parked), undefined outside a plan.
+  // `plans`: { [sectionKey]: planState }.
   function reviewFlightAt(plans) {
     return (entry) => {
       const plan = plans && plans[entry.sectionKey];
       const skill = plan && entry.skill ? plan.skills[entry.skill] : null;
       if (!skill) return undefined;
-      return skill.firstEnteredAt === null ? null : skill.firstEnteredAt;
+      const times = [skill.firstEnteredAt, skill.firstDrillAt, skill.firstReachedAt].filter((at) => at !== null && at !== undefined);
+      return times.length ? Math.min(...times) : null;
     };
   }
 
@@ -2093,7 +2101,8 @@
         const targetFrom = now - SIGNALS.targetDays * DAY_MS;
         const daysPractised = practiceDaysBetween(targetFrom, now + 1);
         const reached = planned.some((entry) => entry.reachedAt !== null && entry.reachedAt > targetFrom);
-        if (!reached && daysPractised >= SIGNALS.targetPracticeDays) {
+        const shortOfTarget = planned.some((entry) => !atOrPastGate(entry.row));
+        if (!reached && shortOfTarget && daysPractised >= SIGNALS.targetPracticeDays) {
           reasons.push({ key: "no-target", text: `No skill reached its practice target in the last ${SIGNALS.targetDays} days, ` +
             `across ${daysPractised} practice days.` });
         }
@@ -2105,7 +2114,7 @@
       const priorMedium = mediumIn(now - 2 * SIGNALS.trendDays * DAY_MS, now - SIGNALS.trendDays * DAY_MS);
       report.mediumTrend = { recent: tally(recentMedium), prior: tally(priorMedium) };
       if (recentMedium.attempted >= SIGNALS.trendMin && priorMedium.attempted >= SIGNALS.trendMin &&
-          recentMedium.accuracy <= priorMedium.accuracy) {
+          recentMedium.accuracy <= priorMedium.accuracy && recentMedium.accuracy < SIGNALS.trendCeiling) {
         reasons.push({ key: "medium-flat", text: `Medium accuracy is not rising: ${Math.round(recentMedium.accuracy * 100)}% in ` +
           `the last ${SIGNALS.trendDays} days against ${Math.round(priorMedium.accuracy * 100)}% in the ${SIGNALS.trendDays} before.` });
       }
@@ -2187,7 +2196,7 @@
     if (report.skills) {
       const skill = (entry) => `${entry.skill} (${PLAIN_STATES[entry.state] || "practising"}` +
         `${entry.status === "in-flight" ? `, ${entry.spent} of ${entry.budget} practice questions used` : ""}` +
-        `${entry.easyStuck ? ", the easier questions are not yet reliable" : ""}` +
+        `${entry.easyStuck ? ", was still practising at the easier level when its turn ended" : ""}` +
         `${entry.official === "low" ? ", official practice questions went poorly" : entry.official === "confirmed" ? ", confirmed on official practice questions" : ""})`;
       lines.push(`Math skills practising now: ${report.skills.inFlight.map(skill).join("; ") || "none"}`);
       lines.push(`Paused until the next round: ${report.skills.movedOn.map(skill).join("; ") || "none"}`);
