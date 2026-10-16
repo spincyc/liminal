@@ -44,9 +44,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 6,
+      "templateVersion": 7,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "034fe1c80a1b8c99ceadab39b5658d317ac25581fb7c7d81de429b92c80c9e7b"
+      "fingerprint": "adee397b7f69a9a20451fe9a09f6bc9c15863e9eddf83175af7477062bdb4587"
     },
     {
       "sectionKey": "sat-math",
@@ -75,9 +75,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 6,
+      "templateVersion": 7,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "45aab8829b0467ec01b3a4d1897410ac7351ea5c9737ebd277c66796061b3d0c"
+      "fingerprint": "c6eb1fecbd3d680438e8653504cb777dab36a8c45c42a33e994c0883cc9497c1"
     },
     {
       "sectionKey": "sat-math",
@@ -1488,9 +1488,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 6,
+      "templateVersion": 7,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "ba5466581d1c10d6a0d4d097e2af9c34fbb551438318d243f39c66576f105e3f"
+      "fingerprint": "296053e5e1ee2e89e33c532b40e15a0a64c4e491d0439f11748d41cad83f33a1"
     },
     {
       "sectionKey": "sat-math",
@@ -1922,9 +1922,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 7,
+      "templateVersion": 8,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "99b92d3246c5bb94081f224aaca09658fbb3e1849b74357fd4212aeeed82ed63"
+      "fingerprint": "a1b3221601c3d9c41bf98b376959be9fb37b13dbfc9d7b0312752ffb8aea5f79"
     },
     {
       "sectionKey": "sat-math",
@@ -1953,9 +1953,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 6,
+      "templateVersion": 7,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "7ff9a96d879c0667f5981047cc8dfb940884cd78ff6f5ea1f2bc363695fc1862"
+      "fingerprint": "303549cffd1bc594634b67e5b96689af16412a7c3459658a87155138e2c4d212"
     },
     {
       "sectionKey": "sat-math",
@@ -1984,9 +1984,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 7,
+      "templateVersion": 8,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "6861def330a1b77d3f9ffc07610d011226f95ba6bd45ccb462a075e233d9d414"
+      "fingerprint": "6e7e01c381a4564b85701f3d4270acc1d94f1650080c09e2d1cdc75bfabc5d09"
     },
     {
       "sectionKey": "sat-math",
@@ -2015,9 +2015,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 7,
+      "templateVersion": 8,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "9d6e516c69a1dc9289479464d3c441123e7840a7fe9a194bc4b617bb1fd3b8b8"
+      "fingerprint": "b9268e98111def68738e4be6bc658ce54666b4c077d3d90078142181f4339fec"
     },
     {
       "sectionKey": "sat-math",
@@ -2046,9 +2046,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 8,
+      "templateVersion": 9,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "72587602ac4466de1bbf6229cac8d7456fa8420d535baba13951e342e95994d5"
+      "fingerprint": "f7c39d05e807f65b34b140eb7f95b185c9fd1a891c05e741b78436c0cbfbed7a"
     },
     {
       "sectionKey": "sat-math",
@@ -2077,16 +2077,16 @@
           "scene": null
         }
       ],
-      "templateVersion": 6,
+      "templateVersion": 7,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "6003f44f9adf400b08dbc20778e1b0ed1fbe58db975ac78f8007c2626bed938a"
+      "fingerprint": "3a4fd51643c48b27344c851cb9474baef6d4da50021eddddc60260331a4bfd72"
     },
     {
       "sectionKey": "sat-math",
       "templateId": "inequality-two-variable-context",
       "difficulty": "Easy",
       "reviewer": "review-20261016-algebra-geometry",
-      "author": "templates-lane-20261016",
+      "author": "coordinator-20261016",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-16",
@@ -2108,9 +2108,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 7,
+      "templateVersion": 8,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "8c3c1b1321e05afcdf16f55180d668a171357118df2b0cda2dd911a2e087e976"
+      "fingerprint": "56082ba9fb71a930da306048679433ca3d2c1974c0a558e98a83ee337d636a47"
     },
     {
       "sectionKey": "sat-math",
@@ -2139,9 +2139,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 6,
+      "templateVersion": 7,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "94c4484ba4f450c07ee033c0dd05a25204111d41c6868545f9941d8a98f3dafb"
+      "fingerprint": "571e6b1cd028bc506f7a11815d9ea33e4d306d45eabdae5261a3451261d072f8"
     },
     {
       "sectionKey": "sat-math",
@@ -2764,9 +2764,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 7,
+      "templateVersion": 8,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "6e164c4a9ebe4f6220ca81e73e6940ebf9b7d269899f1ca714884697ed96edfe"
+      "fingerprint": "f693dc4d3bcc34d55d72e0b64e0e1a39ac83734430d851219814bc619e3fec70"
     },
     {
       "sectionKey": "sat-math",
@@ -3942,9 +3942,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 7,
+      "templateVersion": 8,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "af0099370af316d5307c1202995f2b738631a4fde74c1d22362d97d447566a76"
+      "fingerprint": "96d6151547c37e31ee4fd1a3e661732cc5fddb255cb14b783f2d092c7511e933"
     },
     {
       "sectionKey": "sat-math",
@@ -4019,9 +4019,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 6,
+      "templateVersion": 7,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "c8961ffa24d807cdc6da02203fbf5d6967500e81ac4a41e88a49f0420e50bff3"
+      "fingerprint": "0c0efddb66de6aa15394b745688da8db8b2843810b6ffef3b0b43d7f797b5471"
     },
     {
       "sectionKey": "sat-math",
@@ -4112,9 +4112,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 5,
+      "templateVersion": 6,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "b32947b304fa072d4ef10ea44ecd2fd80c29956b84829d7d3b149e6b65dab1d6"
+      "fingerprint": "5628b7317dc30e7c6de685a311eecea439aa8025037f4e20a94d0159ee1f7d89"
     },
     {
       "sectionKey": "sat-math",
@@ -4143,9 +4143,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 5,
+      "templateVersion": 6,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "a9419f8fd1986bd35079548c11873d8db6accb984d011c7bbcbcfd30df087519"
+      "fingerprint": "74fc620c9df785c9b96a7d18251c001c2a431ec42a2536e64452cdfba31a691d"
     },
     {
       "sectionKey": "sat-math",
@@ -4267,9 +4267,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 6,
+      "templateVersion": 7,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "6ed05bdfca2db56847f14e1234126a7c821c0d633dfc031ef032f8c7363f75bf"
+      "fingerprint": "d16ea0c13c57a24d415706d02a9b88ce015e779feb1b7d1f3f6785c8c2e977f6"
     },
     {
       "sectionKey": "sat-math",
@@ -4515,9 +4515,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 7,
+      "templateVersion": 8,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "9a15993c8720c1093c67429cf4aec14e2acae0450924aeee5e4d6c4589d1fe16"
+      "fingerprint": "63efbd4ab6015a8abf46f5dfb39f5d5809b534b7ea0e735f6838ecc429564c1d"
     },
     {
       "sectionKey": "sat-math",
@@ -10146,9 +10146,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 4,
+      "templateVersion": 5,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "d1aa84d4ce60f152aca620ac140456a0cbd984cbbaa09742d09803d6eb814c43"
+      "fingerprint": "a2a22b6e8691ba846dc5131e261ea07f36e07b98d437816bce761df32bc5dd2f"
     },
     {
       "sectionKey": "sat-math",
@@ -12172,9 +12172,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "0938baf2bf2221af4a745f6a6ed269ef9243221d69a7a720c26d1e0a80e111e7"
+      "fingerprint": "5fa1c8bbb61dc1e3270a5acc4f02f596519fbb1dbcb0cbbc770fd677276b04a3"
     },
     {
       "sectionKey": "sat-math",
@@ -12203,9 +12203,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "05c0f65df8b6733a787d39cbb5ea6917d0918a8398259d68e059b8a5e1e64a60"
+      "fingerprint": "2fb06cfd5a9f20e824506e15ecae841aafb0f482fb59d4f28a7925df6b5b4a66"
     },
     {
       "sectionKey": "sat-math",
@@ -12391,7 +12391,7 @@
       "templateId": "quadratic-solution-count",
       "difficulty": "Medium",
       "reviewer": "review-20261016-advanced",
-      "author": "templates-lane-20261016",
+      "author": "coordinator-20261016",
       "method": "independent-agent-blind-solve",
       "verdict": "accepted",
       "reviewedAt": "2026-10-16",
@@ -12448,9 +12448,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "7bd3f88533e70dd2ae623010527c91b1096cf0f7515ae30064a1a2b58e034b53"
+      "fingerprint": "b0363e68092ebdf2e9900f35592088cfd82f15c8c3f3b2c956d91ee5a53ea7b4"
     },
     {
       "sectionKey": "sat-math",
@@ -12529,9 +12529,9 @@
           "scene": null
         }
       ],
-      "templateVersion": 3,
+      "templateVersion": 4,
       "fingerprintAlgorithm": "source-v1",
-      "fingerprint": "f1a5220cfbec8c265ad35d5f57bc80fc299a7d830f1bd1aff55dc3f8dbc8f3ce"
+      "fingerprint": "e98aa729152f70df2ed7c5e4575714e18a69ed0ba948485635fc859ff9ad1964"
     },
     {
       "sectionKey": "sat-math",

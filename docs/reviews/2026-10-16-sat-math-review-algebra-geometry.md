@@ -624,3 +624,24 @@ All 32 are accepted.
 - **Same limits as earlier passes:** the reviewer is the same model family as the author, coverage is sampled, and tier calls are editorial opinions.
 - **Not rechecked:** I did not rerun `check-families --reps 3000` or the Desmos verifiers; the author reports that both pass.
 - **Desmos route text:** the author notes that the routes for `linear-solution-parameter-condition` and `inequality-percent-of-total` still describe dropped forms. That is for the desmos lane, and it does not affect these templates' admission.
+
+## Pass 4 (coordinator's one-line fix), 2026-10-16
+
+**The change.** Commit `2434762` makes `inequality-two-variable-context` print "=" instead of "≈" when the two-place bound is exact. Its author is `coordinator-20261016`. The change re-versions all 12 templates in `linear-inequalities.js`. The reviewer is still `review-20261016-algebra-geometry`, who is not the author of this change.
+
+**Identical draws.**
+- I compared the 12 templates with `d309339` on 2,003 draws each (the pass-3 sample seeds, 1,000 integer seeds and 1,000 runtime-shaped seeds).
+- No displayed question or key differs.
+- The only differences are the explanation and steps of `inequality-two-variable-context`, in 268 draws. The other 11 templates are identical in every field, as is their metadata.
+
+**The "=" / "≈" choice.**
+- On 20,000 draws I recomputed every printed bound with integer arithmetic. A bound is exact when 100 · numerator is divisible by the denominator.
+- **Signs:** all 16,432 printed bounds use the right sign, 5,134 "=" and 11,298 "≈", with no mismatches. For example, seed `rv1016c-alg.….2` now reads "x ≤ 38 ÷ 4 = 9.5".
+- **Values:** every printed value is within 0.005 of the true quotient.
+- **Ties:** three quotients fall exactly halfway, with 5 in the third decimal place. They print the lower neighbour ("791 ÷ 40 ≈ 19.77" for 19.775, "781 ÷ 40 ≈ 19.52" and "711 ÷ 40 ≈ 17.77"). This comes from the floating-point rounding in `round2`. Both neighbours are equally close and "≈" is correct, so this is not blocking.
+
+**Outcome.** All 12 templates are accepted.
+- The pass-3 blind samples carry forward unchanged, because the displayed questions are identical.
+- `reviews-pass4.json` takes the current registry versions and fingerprints, and its tiers are unchanged.
+- `author` is `coordinator-20261016` for `inequality-two-variable-context`. The other 11 records keep `templates-lane-20261016`, since their output is unchanged and the earlier review still covers their content.
+- My adapted checker passes all 12 records.

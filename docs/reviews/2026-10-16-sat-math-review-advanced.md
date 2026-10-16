@@ -596,3 +596,32 @@ the runtime-shaped seed set differs.
 As in passes 1 and 2, sampled seeds and scans cannot exclude rare defects.
 The 23 identical templates rest on 600-draw equality with the source accepted
 in pass 2.
+
+## Pass 4 (coordinator's hint fix, `feature/sat` 2434762)
+
+- **Change:** commit 2434762, by `coordinator-20261016`, re-versions all 11
+  templates in `nonlinear-equations.js`.
+- **Comparison:** 600 draws per template (300 integer, 300 runtime-shaped)
+  against d309339.
+  - Every displayed field and key is identical for all 11 templates.
+  - The only other difference is the `quadratic-solution-count` hint, in
+    56 of 600 draws. Every other teaching field is identical.
+- **Hint judgment:** accepted.
+  - Over 3,000 draws, all 298 count-form equations already "= 0" now get "What
+    decides how many times the graph of y = ax² + bx + c meets the x-axis?".
+    That is the which-equation form's hint, and it nudges without naming the
+    method.
+  - No hint names b² − 4ac or the discriminant. Other count-form equations
+    keep "What does the equation look like with every term on one side?".
+  - This resolves my pass-3 finding. The gate passes.
+- **Records:** 11 accepted, 0 rejected. The 53 pass-3 samples were carried
+  forward; each rebuilds to the same question, choice order and key as under
+  d309339 and agrees with my recorded answer. Versions and fingerprints come
+  from the current registry. `quadratic-solution-count` records
+  `author: "coordinator-20261016"`; the other 10 keep
+  `templates-lane-20261016`.
+- **Fragment:** `.scratch/review-advanced/reviews-pass4.json`.
+  - My checker, `.scratch/review-advanced/pass4/check-fragment-pass4.js`,
+    passes, and refused a copy with the wrong author.
+  - Run in memory on these 11 records, `tools/check-template-reviews.js`
+    (`reviewProblems`) reports 0 problems.
