@@ -250,6 +250,8 @@ test("the hint and the answer stay closed until their buttons open them", () => 
   buttons.forEach((button) => {
     assert.equal(button.type, "button");
     assert.equal(button.getAttribute("aria-expanded"), "false");
+    // Each page has many "Show answer" buttons; each names its problem.
+    assert.equal(button.getAttribute("aria-describedby"), "try-1");
   });
   const panelOf = (button) => box.childNodes.find((node) => node.id === button.getAttribute("aria-controls"));
   const [hintButton, answerButton] = buttons;

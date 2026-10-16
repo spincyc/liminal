@@ -26,6 +26,17 @@ not the number of tick marks, and keep any multiplier such as "thousands."
 > On the page the line rises two squares and runs two squares, but a slope
 > of 1 would ignore the different units per square.
 
+> **Try it.** On a line graph, each horizontal grid interval represents
+> 5 minutes and each vertical interval represents 40 meters. A line passes
+> through (10, 120) and (25, 300). What is its rate of change?
+>
+> **Answer.** 12 meters per minute
+>
+> The output rises 300 − 120 = 180 meters while time increases
+> 25 − 10 = 15 minutes, so the rate is 180/15 = 12 meters per minute. On
+> the page the line rises 4.5 squares over 3 squares; that 1.5 is not the
+> rate.
+
 A cropped vertical axis does not change the values, but it can make a small
 difference look large. If bars end at 48 and 52 on an axis starting at 40,
 the second value is 4 greater; it is not 50% greater because its visible
@@ -56,6 +67,16 @@ For a function, (a, b) means f(a) = b. Read the coordinates in that order.
 > x = 4, so there are two solutions. The maximum value is 9, occurring
 > at x = 2. The answer to "maximum value" is not 2.
 
+> **Try it.** The full graph of g(x) = (x + 1)² − 4 has vertex (−1, −4) and
+> passes through (−3, 0), (0, −3) and (1, 0). Find g(0), the solutions to
+> g(x) = 0, and the minimum value.
+>
+> **Answer.** g(0) = −3; x = −3 and x = 1; the minimum value is −4.
+>
+> g(0) is the output at x = 0, read from (0, −3). The solutions to
+> g(x) = 0 are the inputs where the graph meets y = 0: −3 and 1. The
+> minimum value is the lowest output, −4, which occurs at x = −1.
+
 For a line, slope and intercept answer different questions. In C(t) = 12t + 35,
 the slope is 12 cost units per time unit, and the starting cost is 35.
 The line's height at a particular t is neither of those in general. See
@@ -81,6 +102,15 @@ that point; a filled circle includes it. An arrow means the graph continues.
 > The smallest output comes from the right endpoint, so copying the
 > domain's inequality signs in the same order would be wrong.
 
+> **Try it.** A graph consists only of a straight segment from a filled
+> circle at (−1, 4) to an open circle at (5, −2). Find its domain and range.
+>
+> **Answer.** Domain −1 ≤ x < 5; range −2 < y ≤ 4.
+>
+> The inputs run from −1, included, to 5, excluded. The outputs run from
+> −2, excluded because it belongs to the open right endpoint, up to 4,
+> included.
+
 An open point removes one ordered pair. Its x-value or y-value can still
 occur at a different included point elsewhere on a multi-piece graph.
 
@@ -92,12 +122,30 @@ occur at a different included point elsewhere on a multi-piece graph.
 > output from −1 through values below 3, including 0, so the range stays
 > −1 ≤ y < 3. The excluded output 3 is not supplied by the filled point.
 
+> **Try it.** A graph consists of y = 2x for 0 ≤ x < 3, together with the
+> single filled point (3, 1). What are f(3), the domain and the range?
+>
+> **Answer.** f(3) = 1; domain 0 ≤ x ≤ 3; range 0 ≤ y < 6.
+>
+> The line ends with an open circle at (3, 6), and the filled point gives
+> f(3) = 1. The inputs now include 3. The line already reaches every output
+> from 0 up to, but not including, 6, and 1 is among them, so the range is
+> unchanged.
+
 For a curve, check interior turning points too. On the restricted domain
 0 ≤ x ≤ 3, f(x) = (x − 2)² has range 0 ≤ y ≤ 4: the vertex gives 0,
 while the endpoints give 4 and 1.
 
 > **Trap.** Using only endpoints to find a curved graph's range, including
 > an open endpoint, or assuming the edge of a viewing window is an endpoint.
+
+> **Try it.** What is the range of f(x) = (x − 1)² on the domain
+> 0 ≤ x ≤ 4?
+>
+> **Answer.** 0 ≤ y ≤ 9
+>
+> The vertex, at x = 1, gives the least output, 0. The endpoints give
+> f(0) = 1 and f(4) = 9. Endpoints alone would suggest 1 ≤ y ≤ 9.
 
 ## Intersections and shaded regions {#solutions}
 
@@ -110,6 +158,15 @@ A touch counts as an intersection even when the curves do not cross.
 >
 > The solutions for x are 0 and 3. The intersection points are (0, 1)
 > and (3, 4); their y-coordinates, 1 and 4, are not the solutions for x.
+
+> **Try it.** The graphs of y = 2x and y = x² − 3 meet where
+> 2x = x² − 3. What are the solutions for x, and what are the intersection
+> points?
+>
+> **Answer.** x = −1 and x = 3; the points are (−1, −2) and (3, 6).
+>
+> Rearrange: x² − 2x − 3 = 0, so (x − 3)(x + 1) = 0. Each y-coordinate
+> comes from y = 2x: 2(−1) = −2 and 2(3) = 6.
 
 For inequalities, check both the boundary and the side. Solid boundaries
 include equality; dashed ones exclude it. A system needs the overlap of all
@@ -127,6 +184,15 @@ observed − predicted. A positive residual means the model predicted too low.
 > the observed trip took 31 minutes. The residual is 31 − 26 = 5 minutes.
 > The point lies above the model line. It does not mean the distance was
 > 5 kilometers greater, or that the model predicted too high.
+
+> **Try it.** A model predicts 140 visitors to a pool on a day with a high
+> of 25°C, but 128 visitors came. What is the residual, and does the point
+> lie above or below the model line?
+>
+> **Answer.** −12 visitors; below the line.
+>
+> Residual = observed − predicted = 128 − 140 = −12. A negative residual
+> means the model predicted too high, so the point lies below the line.
 
 Use the plotted line for a prediction and the plotted point for an
 observation. When a fitted line is supplied, find its slope from two readable
@@ -152,9 +218,20 @@ for the accuracy-and-relevance test.
 > a greater percentage: 9/15 = 60%, compared with A's 10/40 = 25%.
 > A statement about "faster percentage growth" needs the latter comparison.
 
+> **Try it.** A line graph records annual sales, in thousands. Store P goes
+> from 60 to 72; Store Q goes from 20 to 28 over the same years. Which store
+> had the greater increase in sales, and which had the greater percent
+> increase?
+>
+> **Answer.** P had the greater increase; Q had the greater percent
+> increase.
+>
+> P increased by 12,000 and Q by 8,000. As percents: 12/60 = 20% for P
+> and 8/20 = 40% for Q.
+
 ## Practice by the error you made {#practice}
 
-Cover each solution before working an example. Afterward, name the error
+Work each Try it before opening its answer. Afterward, name the error
 precisely and use the corresponding lesson:
 
 | Error | Next lesson |

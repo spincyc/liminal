@@ -159,12 +159,15 @@
   }
 
   // A button that opens and closes `panel` in place. The panel follows the
-  // button in the reading order, so opening it never moves focus.
-  function disclosure(panel, showText, hideText) {
+  // button in the reading order, so opening it never moves focus. Every
+  // problem has a "Show answer", so each button is described by its
+  // problem's label ("Try it 4").
+  function disclosure(panel, showText, hideText, labelId) {
     const button = el("button", "button secondary learn-try-toggle", showText);
     button.type = "button";
     button.setAttribute("aria-expanded", "false");
     button.setAttribute("aria-controls", panel.id);
+    button.setAttribute("aria-describedby", labelId);
     panel.hidden = true;
     button.addEventListener("click", () => {
       const open = button.getAttribute("aria-expanded") !== "true";
@@ -205,7 +208,7 @@
     if (block.hint && block.hint.length) {
       const hint = tryPart("learn-try-hint", "Hint", block.hint, math);
       hint.id = `try-${number}-hint`;
-      actions.append(disclosure(hint, "Show a hint", "Hide the hint"));
+      actions.append(disclosure(hint, "Show a hint", "Hide the hint", label.id));
       panels.push(hint);
     }
     const answer = el("div", "learn-try-answer");
@@ -215,7 +218,7 @@
     renderInline(result, block.answer, math);
     answer.append(result);
     renderBlocks(answer, block.solution, math);
-    actions.append(disclosure(answer, "Show answer", "Hide answer"));
+    actions.append(disclosure(answer, "Show answer", "Hide answer", label.id));
     panels.push(answer);
     box.append(actions, ...panels);
     return box;
@@ -335,7 +338,8 @@
       "p",
       "lede",
       "One lesson for every SAT skill: what the question asks, worked examples, the traps, " +
-        "and when each shortcut fails. Each lesson links straight to practice for its skill.",
+        "and when each shortcut fails. Math lessons put a problem to try after every example. " +
+        "Each lesson links straight to practice for its skill.",
     ));
     view.append(head);
 
