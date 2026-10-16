@@ -1261,6 +1261,29 @@
   // are kind "review" too but are practice by choice and do not count.
   // Review is the next step at most once a calendar day.
   const REVIEW_STEP = "review";
+
+  // How Review's load reads, calmly: a day takes up to `setLimit`; the rest
+  // waits and the plan keeps moving. `due`: questions due now; `doneToday`:
+  // today's Review step is done. { heading, line }.
+  function reviewLoadText(due, setLimit, doneToday) {
+    const count = Math.max(0, Math.trunc(Number(due) || 0));
+    const limit = Math.max(1, Math.trunc(Number(setLimit) || 1));
+    if (doneToday) {
+      return {
+        heading: "Today's Review is done",
+        line: `Today's Review is done${count ? `; ${count} more waiting` : ""}. Your plan keeps moving; do more by choice, ` +
+          `up to ${limit} at a time.`,
+      };
+    }
+    if (!count) return { heading: "Nothing is due today", line: "" };
+    const today = Math.min(count, limit);
+    const waiting = count - today;
+    return {
+      heading: `Up to ${today} today`,
+      line: `Up to ${today} today${waiting ? `; ${waiting} more waiting` : ""}. Your plan keeps moving.`,
+    };
+  }
+
   function reviewDoneToday(sessions, scope, now) {
     const inScope = (session) => (!scope ? true
       : typeof scope === "string" ? sessionTest(session) === scope
@@ -2216,6 +2239,7 @@
     mixedSpec,
     reviewDoneToday,
     REVIEW_STEP,
+    reviewLoadText,
     diagnosticPlacement,
     placements,
     recentSection,
