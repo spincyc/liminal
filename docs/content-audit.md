@@ -3,6 +3,48 @@
 Older commit hashes in this log refer to the project's earlier history, which
 this repository does not include.
 
+## SAT Math tier realism and new question types — 2026-10-16
+
+[Author notes](reviews/2026-10-16-sat-math-realism-changes.md) record two
+passes.
+
+**Pass 1.**
+- Twelve official-Medium question types moved from Hard to Medium, two
+  Medium types moved to Easy, and one Medium type moved to Hard.
+- Seventeen templates were added: the missing official types (polynomial
+  operations, parallel lines, non-projectile quadratic models, systems of
+  inequalities from context, solution counts, rational equations, population
+  density, line graphs, trig ratio from ratio) plus Hard refills.
+- Independent reviewers, never the author, solved every changed template
+  blind. They solved 495 samples, every one agreeing with its key, and
+  rejected 5 templates for wrong explanations or ungrammatical draws, 3 of
+  those defects predating the change.
+
+**Pass 2.**
+- All five rejected templates were fixed.
+- Two Hard refills judged one band low were made genuinely Hard, or
+  re-tiered with a new Hard design.
+- A text test now catches plural, article and coefficient slips.
+- Reviewers re-solved every template whose displayed question changed. For
+  templates whose draws were identical, they confirmed that on hundreds of
+  seeds before carrying their blind samples forward. They accepted all 147.
+
+The evidence is in the [Algebra and Geometry](reviews/2026-10-16-sat-math-review-algebra-geometry.md),
+[Advanced Math](reviews/2026-10-16-sat-math-review-advanced.md) and
+[data](reviews/2026-10-16-sat-math-review-data.md) review files.
+
+Accepted SAT inventory is now 218 Math templates (52 Easy / 119 Medium / 47
+Hard) and 163 Reading and Writing templates, all with source-bound
+independent agent reviews.
+
+Pre-existing slips are recorded for a later pass, because fixing them would
+put their whole files up for review again:
+- five allowlisted in `test/sat-math-text.test.js`;
+- cut-off decimals in two percentage templates;
+- a repeated "so a > 0" in some `quadratic-must-be-true` rationales.
+
+Tiers remain editorial judgments, not calibrated difficulty.
+
 ## SAT and ACT graphing review — 2026-10-03
 
 The [graphing review](reviews/2026-10-03-graphing-review.md) records three new
