@@ -203,6 +203,13 @@ never recorded. Liminal is now built to keep practice honest:
   starts with quick prerequisite checks linked to the Grade 6–8 and
   high-school lessons that teach them, and keeps the hardest versions in a
   section of their own.
+  A geometry-first route brings the weakest Math domain into the first week
+  while keeping Algebra, Advanced Math and data work active. An original
+  [mixed learning check](https://spincyc.github.io/liminal/learn.html#sat/general/math-transfer)
+  asks students to choose methods without skill labels, record their setup,
+  repair specific gaps and try a different set on another day. Geometry
+  lessons contrast neighboring methods and include independent practice;
+  these checks guide teaching rather than estimate scores.
 - **Practice.** A set of any size, by domain, skill and difficulty, with
   feedback after each question or at the end and an optional real-pace timer.
   **Drill one skill** varies numbers or context; finite scene pools can repeat.

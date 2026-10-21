@@ -67,7 +67,8 @@ The SAT guides moved into the app's Learn pages, one page per catalog skill.
 | --- | --- |
 | [Format and scoring](https://spincyc.github.io/liminal/learn.html#sat/general/format-and-scoring) | Structure, domains, adaptive modules, scoring, answer-entry rules, reference sheet |
 | [Modules and pacing](https://spincyc.github.io/liminal/learn.html#sat/general/modules-and-pacing) | Why Module 1 matters, time budgets, checkpoints |
-| [SAT Math plan from around 500](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan) | Skill order, practice targets, official practice tests |
+| [SAT Math plan from around 500](https://spincyc.github.io/liminal/learn.html#sat/general/math-plan) | Domain-report priorities, an early geometry route, Reading and Writing maintenance, official checks |
+| [SAT Math from lessons to unfamiliar problems](https://spincyc.github.io/liminal/learn.html#sat/general/math-transfer) | Two unlabelled mixed sets, method-selection contrasts, delayed practice and worked repairs |
 | [Error log](https://spincyc.github.io/liminal/learn.html#sat/general/error-log) | The four error types, the rule column, Review and Progress |
 | [Desmos](https://spincyc.github.io/liminal/learn.html#sat/general/desmos) | Solving, systems, sliders, statistics, regressions |
 | [Reading graphs](https://spincyc.github.io/liminal/learn.html#sat/general/reading-graphs) | Scales, inputs and outputs, domain and range, endpoints, intersections, predictions and evidence |

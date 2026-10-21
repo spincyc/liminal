@@ -7,9 +7,80 @@ title: SAT Math plan from around 500
 This plan is for a student whose real SAT Math score, or official practice
 test score, is around 500 and who wants to improve. Use your official practice
 results to identify content gaps, process errors and pacing problems; a score
-alone cannot tell you which is responsible. This plan starts with Algebra and
-Advanced Math because they make up most of the section, uses practice targets
-to organize work, and checks transfer with official practice tests.
+alone cannot tell you which is responsible. The default sequence starts with
+Algebra and Advanced Math because they make up most of the section. If your
+domain report puts Geometry and Trigonometry below the other Math domains,
+use the [geometry-first study route](#geometry-first) immediately alongside
+those foundations. Check whether learning transfers to unfamiliar questions;
+successful repetitions alone are not the goal.
+
+## Use your domain report {#domain-report}
+
+The score report describes domains with {{fact:sat-domain-performance-bands}}.
+Treat the bars and ranges as broad performance bands: they are not exact
+scores for individual topics, percentages correct, or a count of missed
+questions. A lower Geometry and Trigonometry band identifies a place to
+investigate first; it does not tell you whether circles, similarity or
+trigonometry caused the difficulty. Even a full bar does not mean every
+question in the domain was correct.
+
+Use the [mixed learning check](learn:sat/general/math-transfer#set-a) and
+your own official-test misses to find the specific gaps. Work out whether
+you could choose a relationship without a hint, execute it, and answer the
+quantity asked for. When Math is substantially below Reading and Writing,
+give most study time to Math while keeping short Reading and Writing checks.
+
+## Start geometry in the first week {#geometry-first}
+
+Use this route when Geometry and Trigonometry is your lowest Math domain.
+For the first two weeks, give it the first teaching block in each Math
+session. Keep Algebra, Advanced Math and data work in the same week: a
+smaller share of the test can still be your weakest area, and a low geometry
+band does not make the other domains secure.
+
+| Session | Geometry teaching and independent practice | Other Math work |
+| --- | --- | --- |
+| 1 | Attempt [Set A](learn:sat/general/math-transfer#set-a) without lessons or answers open; classify the misses before choosing a lesson. | Check equation setup, requested quantity and units on the non-geometry problems too. |
+| 2 | [Lines, angles and triangles](learn:sat-math/geometry-and-trigonometry/lines-angles-and-triangles): turn angle labels into equations and match corresponding sides. | [Linear equations](learn:sat-math/algebra/linear-equations-in-one-variable) and [linear functions](learn:sat-math/algebra/linear-functions): build the equation before solving. |
+| 3 | [Right triangles and trigonometry](learn:sat-math/geometry-and-trigonometry/right-triangles-and-trigonometry): choose sides relative to the named angle; distinguish a ratio from a length. | [Equivalent expressions](learn:sat-math/advanced-math/equivalent-expressions) and [nonlinear equations](learn:sat-math/advanced-math/nonlinear-equations): check what transformations preserve. |
+| 4 | [Area and volume](learn:sat-math/geometry-and-trigonometry/area-and-volume): distinguish perimeter, area and capacity; use perpendicular height and the right scale factor. | [Percentages](learn:sat-math/problem-solving-and-data-analysis/percentages) and [ratios, rates and units](learn:sat-math/problem-solving-and-data-analysis/ratios-rates-and-units): identify the base and units. |
+| 5 | [Circles](learn:sat-math/geometry-and-trigonometry/circles): separate radius, diameter, arc, sector and equation; choose the quantity before a formula. | [Nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions): distinguish roots, vertex and function values. |
+| 6 | Attempt [Set B](learn:sat/general/math-transfer#set-b) on another day after repairing Set A. Explain the setup before checking answers. | Compare setup errors with execution errors; use [official questions](#official-questions) to check repaired skills on unfamiliar material. |
+
+This is a starting sequence, not six compulsory days or a diagnosis of every
+skill. Skip teaching you can already explain and solve independently; spend
+more time where the check reveals a gap. A possible 50-minute session is
+5 minutes recalling yesterday's rule, 20 minutes learning and trying
+geometry, 15 minutes on another Math domain and 10 minutes on mixed practice
+and the error log. A timed module replaces those blocks on its day.
+
+Open a lesson above, attempt its prerequisite checks and compare the
+contrasting examples before doing a
+[geometry drill](practice.html#practice/sat-math/lines-angles-and-triangles).
+Select the skill you just learned; the linked drill starts with lines,
+angles and triangles. After learning a method, work independent problems
+with answers at the end, then revisit it on another day among other skills.
+An immediately repeated example tests less than an unfamiliar setup.
+
+The app's automatic next step still follows the two tracks described below.
+Use these targeted lesson and practice links to start geometry now; a new
+score report does not automatically reorder those tracks. The mixed
+learning check is worked on paper and does not add attempts to Progress.
+
+### Maintain Reading and Writing {#reading-maintenance}
+
+Keep two short Reading and Writing sessions each week while Math receives
+the main teaching time. When Information and Ideas and Expression of Ideas
+are below your other Reading and Writing domains, alternate
+[evidence](learn:sat-reading-writing/information-and-ideas/command-of-evidence),
+[inferences](learn:sat-reading-writing/information-and-ideas/inferences),
+[transitions](learn:sat-reading-writing/expression-of-ideas/transitions)
+and [rhetorical goals](learn:sat-reading-writing/expression-of-ideas/rhetorical-synthesis).
+For each answer, point to the passage evidence or the exact goal that rules
+out its closest competitor. Include occasional vocabulary, structure,
+grammar and punctuation questions to maintain Craft and Structure and
+Standard English Conventions. Use timed Reading and Writing practice to
+notice slippage; strong domain bars do not warrant abandoning the section.
 
 ## Where the points are {#where-the-points-are}
 
@@ -31,7 +102,7 @@ the first stage. Those skills recur in lines, curves and data displays.
 1. Linear equations and functions, with percents and ratios: [linear equations in one variable](learn:sat-math/algebra/linear-equations-in-one-variable), [linear functions](learn:sat-math/algebra/linear-functions), [linear equations in two variables](learn:sat-math/algebra/linear-equations-in-two-variables), [percentages](learn:sat-math/problem-solving-and-data-analysis/percentages), [ratios, rates, and units](learn:sat-math/problem-solving-and-data-analysis/ratios-rates-and-units).
 2. Systems, inequalities and models: [systems of two linear equations](learn:sat-math/algebra/systems-of-two-linear-equations), [linear inequalities](learn:sat-math/algebra/linear-inequalities), [two-variable data](learn:sat-math/problem-solving-and-data-analysis/two-variable-data), [one-variable data](learn:sat-math/problem-solving-and-data-analysis/one-variable-data).
 3. Equivalent expressions, quadratics and exponentials: [equivalent expressions](learn:sat-math/advanced-math/equivalent-expressions), [nonlinear equations](learn:sat-math/advanced-math/nonlinear-equations), [nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions), [systems of equations](learn:sat-math/advanced-math/systems-of-equations).
-4. The rest, which is smaller but often quick to learn: [probability](learn:sat-math/problem-solving-and-data-analysis/probability), [statistical inference](learn:sat-math/problem-solving-and-data-analysis/statistical-inference), and the four Geometry and Trigonometry skills, starting with [right triangles and trigonometry](learn:sat-math/geometry-and-trigonometry/right-triangles-and-trigonometry) and [circles](learn:sat-math/geometry-and-trigonometry/circles).
+4. Probability, statistics, geometry and trigonometry: [probability](learn:sat-math/problem-solving-and-data-analysis/probability), [statistical inference](learn:sat-math/problem-solving-and-data-analysis/statistical-inference), and the four Geometry and Trigonometry skills, starting with [right triangles and trigonometry](learn:sat-math/geometry-and-trigonometry/right-triangles-and-trigonometry) and [circles](learn:sat-math/geometry-and-trigonometry/circles). This is their place in the default automatic plan; use the geometry-first route above when your report or unfamiliar problems show they need earlier teaching.
 
 Use Desmos from the first week, not as a last-minute trick. Start the
 [Desmos drill routine](learn:sat/general/desmos#practice-protocol) in stage 1,
@@ -173,7 +244,15 @@ section.
 ## If your score isn't moving {#adjust}
 
 After two official practice tests without a gain, count your error log by
-type. Mostly content: slow down and redo the Learn pages for the skills that
-keep appearing. Mostly careless: change habits (write every step, circle what
-is asked) before adding new content. Mostly time: pacing practice, and check
-whether slow questions are really content gaps.
+type, then inspect the first written step of the misses. A low domain band
+alone cannot explain the cause.
+
+- **Could not choose a method or wrote the wrong model:** use the [mixed learning check](learn:sat/general/math-transfer). Compare competing methods, explain why one fits, then attempt the delayed set without a skill label or hint. Repeating the same named drill is not this check.
+- **Correct model, failed execution:** isolate the failed step, such as rearranging an equation, using a negative sign, squaring a scale factor or converting units. Work the lesson's prerequisite check and a fresh problem before repeating the full task.
+- **Solved for the wrong quantity:** write the requested quantity and units before solving, then make a final comparison with that line. Check whether the error was radius versus diameter, input versus output, or an intermediate value.
+- **Could solve independently, but too slowly:** use pacing practice and compare your timed work with untimed work. If you cannot solve it untimed either, return to teaching before increasing time pressure.
+
+Use unfamiliar official questions to check each repair. If familiar Liminal
+questions go well but official questions still do not, change the teaching
+and the problem mix before adding more of the same drills. Keep your own
+written setup so the next study decision has evidence behind it.

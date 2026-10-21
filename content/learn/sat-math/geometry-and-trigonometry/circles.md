@@ -10,8 +10,9 @@ skill: Circles
 Circle questions cover arcs, sectors and angles in a circle, the equation of
 a circle in the xy-plane, and radian measure with the unit circle. They
 belong to Geometry and Trigonometry, {{fact:sat-math-geometry}} of the Math
-section. The radius is the key length in almost every circle problem: find
-it first.
+section. First name the requested quantity: a length, an area, an angle or
+an equation. The radius often connects what is given to what is asked;
+sometimes a radius squared or a fraction of a full circle is enough.
 
 ## Before you start {#before-you-start}
 
@@ -56,6 +57,12 @@ completing the square from Algebra. If one goes wrong, rebuild it with
 | Sector area for a central angle of θ degrees | (θ/360) · πr² |
 
 Both arc and sector are "the fraction of the circle" times the whole.
+
+An arc is part of the boundary; its length uses ordinary length units. A
+sector is the region between two radii and their arc; its area uses square
+units. An arc's measure in degrees describes its angle, not its length.
+Before substituting an angle, locate its vertex: at the center it is a
+central angle; on the circle it is an inscribed angle.
 
 - A central angle has the same measure as its arc.
 - An inscribed angle (vertex on the circle) is half its arc, so an angle inscribed in a semicircle is 90°.
@@ -114,6 +121,30 @@ the fraction from whichever measure you have, then apply it to the other.
 >
 > The sector is 1/4 of the circle's area: (1/4) · π · 12² = 36π.
 
+> **Example.** An inscribed angle of 40° intercepts a minor arc of a
+> circle with radius 9 centimeters. What is the length of that arc?
+>
+> The vertex is on the circle, so the intercepted arc measures 2 · 40 =
+> 80°. The central angle for that same arc is 80°, not 40°.
+>
+> The fraction of the full turn is 80/360 = 2/9. Arc length uses
+> circumference: (2/9) · 2π · 9 = 4π centimeters. Using πr² would find
+> sector area instead.
+
+> **Try it.** A circle has a circumference of 30π centimeters. An
+> inscribed angle of 36° intercepts a minor arc. What is the area, in
+> square centimeters, of the sector bounded by that arc and the two radii
+> to its endpoints?
+>
+> **Answer.** 45π
+>
+> The radius satisfies 2πr = 30π, so r = 15 centimeters. The central angle
+> for the intercepted arc is 2 · 36 = 72°, giving a fraction of
+> 72/360 = 1/5.
+>
+> Sector area: (1/5) · π · 15² = 45π square centimeters. The value 6π
+> would be the arc's length, a different measurement.
+
 ### Chords and the center {#chords}
 
 The perpendicular from the center to a chord bisects the chord. So the
@@ -141,6 +172,10 @@ unknown, see [when the center isn't given](#center-not-given).
 ```
 (x − h)² + (y − k)² = r²        center (h, k), radius r
 ```
+
+This is the distance rule: x − h and y − k are the horizontal and vertical
+gaps from the center, so their squares add to the radius squared. The
+right-hand side is r²; take a square root only if you need the radius.
 
 Watch the signs: (x − 3)² + (y + 2)² = 25 has center (3, −2) and radius 5,
 not center (−3, 2) and not radius 25.
@@ -219,6 +254,18 @@ complete the squares: x² + y² − 6x + 2y = 6 becomes
 >
 > The squared distance from (0, 3) to the center is
 > (0 + 2)² + (3 − 1)² = 4 + 4 = 8, and 8 < 12, so the point is inside.
+
+> **Try it.** The endpoints of a diameter of a circle are (−4, 1) and
+> (8, 1). What is the area of the circle, in square units?
+>
+> **Answer.** 36π
+>
+> The endpoints have the same y-coordinate, so the diameter is the
+> horizontal distance 8 − (−4) = 12. The radius is half of that, 6.
+>
+> Area: π · 6² = 36π square units. The distance between the two given
+> points is a diameter because the question says so; it is not a radius
+> or an arbitrary chord. Stopping at 12 would not answer the area question.
 
 > **Desmos.** Type the equation as given, even in expanded form, for example
 > `x^2+y^2+8x-6y=0`. Desmos draws the circle, and you can read the center and

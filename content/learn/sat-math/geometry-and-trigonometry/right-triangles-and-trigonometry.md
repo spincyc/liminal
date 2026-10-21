@@ -60,6 +60,22 @@ The reference sheet gives the theorem and the two special right triangles:
 | 45°-45°-90° | x : x : x√2 |
 | 30°-60°-90° | x : x√3 : 2x (short leg, long leg, hypotenuse) |
 
+Choose a relationship from what is known before substituting numbers:
+
+| What you know | What to use |
+| --- | --- |
+| Two side lengths of a right triangle | Pythagorean theorem for the third side |
+| A 45° angle, or a 30° or 60° angle, in a right triangle | Special-triangle ratios |
+| An acute angle and one side of a right triangle | A trig ratio connecting that side to the wanted side |
+| One trig ratio, but no side length | Side proportions; an actual length needs scale information |
+
+First locate the 90° angle: only the side opposite it is the hypotenuse.
+The Pythagorean theorem and these side ratios need a right triangle; a
+slanted-looking triangle alone is not enough. If no right angle is given
+or follows from a stated fact, revisit
+[angle relationships](learn:sat-math/geometry-and-trigonometry/lines-angles-and-triangles#angle-relationships)
+before choosing a right-triangle method.
+
 > **Example.** A 13-foot ladder leans against a wall with its foot 5 feet
 > from the wall. How high up the wall does it reach?
 >
@@ -119,6 +135,12 @@ cos A = adjacent / hypotenuse
 tan A = opposite / adjacent
 ```
 
+Label sides from the named angle. Opposite is across from that angle;
+adjacent is the leg touching it, excluding the hypotenuse. Changing to the
+other acute angle swaps the two legs' roles. Rotating the page does not.
+Choose the ratio that contains the given side and the wanted side, then
+write an equation with a letter for the unknown before calculating.
+
 These ratios depend only on the angle, because any two right triangles with
 the same acute angle are similar. That is why a table or a calculator can
 give sin 35° for every triangle at once.
@@ -167,6 +189,12 @@ Given one ratio, sketch the triangle: the ratio gives two sides, and the
 Pythagorean theorem gives the third. Then read any other ratio, for either
 acute angle.
 
+A ratio fixes a shape, not its size. For sin A = 3/5, the opposite side
+and hypotenuse can be written 3t and 5t, with t > 0. Using 3 and 5 is
+enough to find another ratio; to find an actual length, use a given length
+to determine t. If that step is difficult, rebuild
+[proportions](learn:sat-math/problem-solving-and-data-analysis/ratios-rates-and-units#proportions).
+
 > **Example.** In right triangle ABC, the right angle is at C and
 > sin A = 20/29. What are tan A and cos B?
 >
@@ -191,6 +219,21 @@ acute angle.
 > PR = 12 and the adjacent side is QR = 35, so tan Q = 12/35.
 >
 > tan P = 35/12 is the ratio at the other angle.
+
+> **Try it.** Right triangle ABC has its right angle at C. If cos A = 4/5
+> and BC = 18 centimeters, what is the perimeter of the triangle, in
+> centimeters?
+>
+> **Answer.** 72
+>
+> Cosine gives AC/AB = 4/5, so write AC = 4t and AB = 5t. Then
+> BC² = (5t)² − (4t)² = 9t², so BC = 3t.
+>
+> The given side BC is opposite A: 3t = 18, so t = 6. The side lengths
+> are 18, 24 and 30, giving perimeter 18 + 24 + 30 = 72 centimeters.
+>
+> Check: 24/30 = 4/5 and 18² + 24² = 30². Treating 4 and 5 as actual
+> centimeter lengths would contradict BC = 18.
 
 > **Example.** For acute angles, sin(2x + 10)° = cos(x + 20)°. What is x?
 >
@@ -227,6 +270,20 @@ acute angle.
 > tan 52° = h/30.
 >
 > h = 30 tan 52° ≈ 30 × 1.280 ≈ 38.4, or 38 meters.
+
+> **Try it.** A straight ramp rises 6 feet from level ground and makes a
+> 30° angle with the horizontal ground. What is the horizontal distance,
+> in feet, from its lower end to the point directly below its upper end?
+> Give an exact answer.
+>
+> **Answer.** 6√3
+>
+> The vertical rise is opposite the 30° angle and the requested horizontal
+> distance x is adjacent. Thus tan 30° = 6/x = 1/√3, so x = 6√3 feet.
+>
+> Alternatively, the rise is the short leg of a 30°-60°-90° triangle, so
+> the horizontal long leg is 6√3. The ramp itself is the hypotenuse, 12
+> feet, which is not the requested distance.
 
 | Angle | sin | cos | tan |
 | --- | --- | --- | --- |

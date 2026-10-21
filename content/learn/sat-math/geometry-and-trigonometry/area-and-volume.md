@@ -60,6 +60,39 @@ rebuild it with
 | Trapezoid | ½(b₁ + b₂)h | no |
 | Equilateral triangle with side s | (s²√3)/4 | no |
 
+Choose the measurement before the formula. A border or distance around a
+shape asks for perimeter (length units); covering a flat region asks for
+area (square units). A triangle's height is the perpendicular distance to
+its chosen base, not necessarily a side of the triangle.
+
+When a dimension is missing, put a letter in its place and set the formula
+equal to the given measurement. If solving that equation is the sticking
+point, review [rearranging formulas](learn:sat-math/algebra/linear-equations-in-one-variable#rearranging-formulas).
+
+> **Example.** An isosceles triangular sign has a base of 12 inches, two
+> sides of 10 inches and a perpendicular height of 8 inches. How much area
+> does it cover, and how much trim goes around its edge?
+>
+> Covering uses area: (1/2) · 12 · 8 = 48 square inches. The height, 8,
+> meets the base at 90°; the slanted side, 10, does not.
+>
+> Trim uses perimeter: 12 + 10 + 10 = 32 inches. The height is inside the
+> sign and is not part of its boundary.
+
+> **Try it.** A triangular sign has an area of 84 square centimeters and a
+> base of 24 centimeters. A scale copy has every length 1.5 times the
+> corresponding original length. What is the height of the copy, in
+> centimeters, perpendicular to the corresponding base?
+>
+> **Answer.** 10.5
+>
+> First find the original height h: 84 = (1/2) · 24 · h = 12h, so h = 7
+> centimeters. The copy's height is 1.5 · 7 = 10.5 centimeters.
+>
+> Check: the copy's base is 36 and its area is (1/2) · 36 · 10.5 = 189
+> square centimeters, which is 1.5² · 84. Heights scale by 1.5; areas scale
+> by 1.5².
+
 For a composite shape, split it into pieces you know, then add or subtract.
 
 > **Example.** A garden is a 10-meter by 6-meter rectangle with a semicircle
@@ -157,6 +190,11 @@ For a harder ring-shaped region, see
 [the region between two circles](#concentric-circles).
 
 ## Surface area {#surface-area}
+
+Surface area counts exposed faces, while volume counts the space inside.
+For paint or wrapping, list which faces are included before calculating;
+for capacity, use [volume](#volume). The same dimensions can answer either
+question, so the numbers alone do not choose the formula.
 
 These surface area formulas are not on the reference sheet:
 
@@ -285,6 +323,10 @@ exposed:
 The pattern: a prism or cylinder is base area × height, and a cone or
 pyramid with the same base and height is one third of that. If every length
 is multiplied by k, the volume is multiplied by k³.
+
+Write the requested quantity beside your work: depth, radius, edge or
+volume. A volume equation may be only a bridge to a requested length. Keep
+going until both the quantity and its units match the question.
 
 > **Example.** A full cylindrical can with radius 4 cm and height 9 cm is
 > poured into an empty rectangular tank whose base is 12 cm by 8 cm. How deep

@@ -14,6 +14,12 @@ similar triangles. It belongs to Geometry and Trigonometry,
 figure. Label every angle and length you know on your scratch paper before
 you compute.
 
+Read labels as instructions for a sketch. In angle ABC, B is the vertex:
+the rays run from B through A and from B through C. A point on a segment
+splits its length into pieces that add to the whole. Mark stated right
+angles, equal sides and parallel lines; use those facts to justify your
+equation rather than guessing from the drawing's appearance.
+
 ## Before you start {#before-you-start}
 
 These checks cover angle pairs, triangle angle sums and similar triangles
@@ -96,6 +102,28 @@ those two add to 180°.
 > The angles are 2(31) + 15 = 77° and 4(31) − 21 = 103°. Check:
 > 77 + 103 = 180.
 
+If the problem does not name the angle pair, sketch its rays. Opposite
+angles at a crossing are equal; angles sharing a side with their other
+rays pointing in opposite directions add to 180°. Write that relationship
+as an equation before solving. If the algebra is shaky, review
+[solving linear equations](learn:sat-math/algebra/linear-equations-in-one-variable#solve).
+
+> **Try it.** Two straight lines intersect at O. Rays OA and OC point in
+> opposite directions, as do rays OB and OD. Angle AOB measures
+> (2x + 16)° and angle COD measures (5x − 29)°. What is the measure of
+> angle BOC?
+>
+> **Answer.** 134°
+>
+> AOB and COD are opposite angles, so 2x + 16 = 5x − 29. Then 45 = 3x
+> and x = 15.
+>
+> Angle AOB is 2(15) + 16 = 46°. Since OA and OC point in opposite
+> directions, AOB and BOC share a straight line: BOC = 180 − 46 = 134°.
+>
+> Check: COD is 5(15) − 29 = 46° too. Neither x = 15 nor the known
+> angle 46° is the angle the question asks for.
+
 The interior angles of a polygon with n sides add to (n − 2) · 180°, so a
 pentagon's add to 540°.
 
@@ -144,6 +172,13 @@ is k times the matching side of the other, and the angles are unchanged.
 Look for a line drawn parallel to one side of a triangle, or two right
 triangles that share an angle.
 
+Before using a proportion, write the vertex matches. If A matches D, B
+matches E and C matches F, then AB matches DE, BC matches EF and AC
+matches DF. A rotation or reflection does not change these matches. Keep
+the same direction in both ratios, such as small/large = small/large;
+never mix small/large with large/small. A helpful-looking pair of lengths
+does not establish similarity: use the given matching or equal angles.
+
 > **Example.** In triangle ABC, point D is on AB and point E is on AC, with
 > DE parallel to BC. AD = 4, DB = 6 and DE = 5. Find BC.
 >
@@ -182,6 +217,20 @@ triangles that share an angle.
 > **Answer.** 18
 >
 > The triangles are similar, so 4/6 = h/27, and h = 4 · 27/6 = 18 feet.
+
+> **Try it.** Triangles ABC and DEF are similar, with A matching E, B
+> matching F and C matching D. AB = 6, BC = 9, EF = 10 and DE = 12.
+> What is the perimeter of triangle DEF?
+>
+> **Answer.** 37
+>
+> The matching gives AB ↔ EF, BC ↔ FD and AC ↔ ED. From ABC to DEF the
+> length factor is EF/AB = 10/6 = 5/3.
+>
+> FD = (5/3) · 9 = 15, so the requested perimeter is 10 + 15 + 12 = 37.
+> The factor 5/3 and the missing side 15 are intermediate quantities.
+> Pairing AB with DE just because both names use the first two letters
+> would ignore the stated angle matches.
 
 ### Similar triangles that aren't a parallel cut {#matching-by-angles}
 
