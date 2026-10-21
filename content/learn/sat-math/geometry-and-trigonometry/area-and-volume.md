@@ -65,6 +65,13 @@ shape asks for perimeter (length units); covering a flat region asks for
 area (square units). A triangle's height is the perpendicular distance to
 its chosen base, not necessarily a side of the triangle.
 
+{{figure:triangle-height}}
+
+For the pictured base AB, use CH as the height: area = (1/2)bh.
+The sloping side AC, labeled s, belongs to the boundary; it does not
+replace h. First identify the base and the right-angle mark, then attach
+the question's measurements to those labels.
+
 When a dimension is missing, put a letter in its place and set the formula
 equal to the given measurement. If solving that equation is the sticking
 point, review [rearranging formulas](learn:sat-math/algebra/linear-equations-in-one-variable#rearranging-formulas).

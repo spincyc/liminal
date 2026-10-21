@@ -65,12 +65,12 @@ function step(attempts, options) {
   return Analytics.nextStep(rows, Object.assign({ attempts, now: clock + HOUR }, options));
 }
 
-test("two tracks fly a skill each: Advanced Math starts on day one beside Algebra", () => {
+test("two tracks fly a skill each: Geometry starts beside Algebra, with Advanced Math next", () => {
   assert.deepEqual(Analytics.planTracks(PLAN).map((track) => [track.key, track.stages]), [["A", [1, 2]], ["B", [3, 4]]]);
-  assert.deepEqual(Analytics.planTracks(PLAN).flatMap((track) => track.skills), planSkills, "every plan skill, once, in order");
+  assert.deepEqual(Analytics.planTracks(PLAN).flatMap((track) => track.skills).sort(), planSkills.slice().sort(), "every plan skill, once");
   const fresh = state([]);
-  assert.deepEqual(fresh.tracks.map((track) => track.inFlight), [trackA[0], trackB[0]]);
-  assert.equal(domainOf(trackB[0]), "Advanced Math");
+  assert.deepEqual(fresh.tracks.map((track) => track.inFlight), [trackA[0], "Lines, angles, and triangles"]);
+  assert.equal(domainOf(Analytics.planTracks(PLAN)[1].skills[1]), "Advanced Math");
   assert.deepEqual([fresh.pass, fresh.firstPassLeft, fresh.started], [1, 19, []], "in flight, not yet started");
   // With no history, Track A leads; ReadingWriting and sections without a plan have none.
   assert.deepEqual([step([]).skill, step([]).track, step([]).trackName], [trackA[0], "A", "Track A"]);
@@ -172,7 +172,7 @@ test("the second pass brings moved-on skills back with a fresh budget once both 
 test("the diagnostic's placement passes over earlier stages in the first pass", () => {
   const placement = { stage: 3 };
   let plan = state([], { placement });
-  assert.deepEqual(plan.tracks.map((track) => track.inFlight), [null, trackB[0]], "stages 1 and 2 are passed over");
+  assert.deepEqual(plan.tracks.map((track) => track.inFlight), [null, "Lines, angles, and triangles"], "stages 1 and 2 are passed over");
   assert.equal(plan.skills[trackA[0]].status, "passed-over");
   assert.equal(plan.firstPassLeft, trackB.length);
   // A passed-over skill with MIN_ATTEMPTS answers comes back into flight.
@@ -212,7 +212,7 @@ test("a skill that enters flight with few answers names its Learn page, by Pract
   const before = answers(Analytics.MIN_ATTEMPTS, trackA[1], { difficulty: "Easy" });
   const moved = answers(40, trackA[0], { correct: false });
   const next = step(before.concat(moved));
-  assert.deepEqual([next.skill, next.learnPage], [trackA[1], undefined]);
+  assert.deepEqual([next.skill, next.lessonFirst, next.learnPage], [trackA[1], false, Analytics.learnPageOf(next.row)]);
 });
 
 test("the rotation: a timed module, a mixed set after a drill, and the Desmos drill on its cadence", () => {

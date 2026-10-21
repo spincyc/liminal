@@ -224,7 +224,10 @@ For a coherent ACT bank batch:
     validated by `LiminalProgress.cleanOfficialCheck`); and `planLedger`,
     a per-section checkpoint of the plan's replay (`Analytics.planState`
     `checkpoint`), refreshed on every save, so the plan survives the cap on
-    kept attempts (the newer `at` wins across tabs and imports). Once the
+    kept attempts (the newer `at` wins across tabs and imports). Optional
+    `orderFrom` pins the practice-order transition: preserve it through
+    normalization, export, restore and merge so older answers retain their
+    original flight/budget history. Once the
     record is trimmed, the plan resumes from the ledger and replays only
     answers newer than its checkpoint, so answers older than that, merged
     or imported later, do not change it (a full replay runs whenever the
@@ -289,9 +292,13 @@ For a coherent ACT bank batch:
   six, most overdue first); after that the step moves on and carries
   `reviewDue`; only the due set (`step: "review"`) closes the day's Review,
   not Missed, Marked or single-question retries. SAT Math runs the plan (`Analytics.PLANS`, held to the catalog
-  and the Learn page by a test) as two tracks, stages 1–2 and 3–4, each with
-  one skill in flight (`Analytics.planState`, replayed from the attempts), so
-  Advanced Math starts in the first week. A skill leaves flight at the gate
+  and the Learn page by a test) as two tracks, each with one skill in flight
+  (`Analytics.planState`, replayed from the attempts). Stages retain topical
+  placement groups; explicit Track B skill order starts Geometry, then
+  interleaves Geometry and Advanced Math. The persisted `orderFrom` boundary
+  preserves existing turns and changes future openings. Broad SAT guidance
+  favors Math while a Math turn remains; explicit Reading and Writing scopes
+  retain their choice. A skill leaves flight at the gate
   or after `BUDGET` (20, plus one extra drill when its drills never left
   Easy) answers from its own drills at any level (the
   diagnostic, modules, mixed and Desmos sets spend nothing); one that leaves
@@ -313,8 +320,12 @@ For a coherent ACT bank batch:
   is the weakest skill with evidence; for ACT the lowest accuracy, with no
   level, track, budget or rotation. The diagnostic reports by domain and
   places the student in the plan (`PLACEMENT`) but does not by itself make
-  a timed module due. "Read the lesson" is offered until a skill's first
-  drill. Results pages lead with the next step; "Practice what I missed"
+  a timed module due. "Read the lesson" remains available after drills;
+  `lessonFirst` marks its first drill. Practice and Progress also offer
+  `buildTransferRun`: 12 untimed questions with feedback at the end, six
+  Geometry and two each Algebra, Advanced Math and data, half Easy and half
+  Medium, distinct templates and shared serve history. This is a focused
+  learning check, not the module blueprint. Results pages lead with the next step; "Practice what I missed"
   (`missed-drill`) counts as Review-like and spends no budget. `app.js` holds `ctx.guide`, `stepWords`, `startStep`
   (which launches every step kind), `startDiagnostic`, `startMixed` and
   `startDesmos`. Practice's "Start here" opens on a first visit with the

@@ -123,11 +123,6 @@
         "read": "Click the crossing; the coordinate for the amount asked about is the answer.",
         "fails": "Writing the equations is the hard part, and Desmos can't check it. Water adds no ingredient; pure ingredient adds all of x. The crossing is usually far off the starting view; zoom out."
       },
-      "system-intersection-region": {
-        "enter": "Both equations exactly as given, pressing → after a fraction's bottom, with a slider for k set to step 1, or each choice typed as k = (choice) in turn.",
-        "read": "For each k, click the crossing and check the signs of its coordinates against the question. The answer is the choice that works, or the greatest or least whole k that works.",
-        "fails": "Near the cutoff the crossing runs far off screen, so zoom out before deciding. A k that makes the lines parallel has no crossing. Solving for the crossing in terms of k by hand shows the cutoff exactly."
-      },
       "linear-inequality-solve": {
         "enter": "The inequality exactly as written, using <= or >= for ≤ or ≥; a double inequality works too. Desmos shades every x that satisfies it.",
         "read": "The edge of the shading is the boundary: solid means included, dashed means not. Pick the choice that matches the shaded side, the value inside the shading, or the whole number inside it nearest the edge.",

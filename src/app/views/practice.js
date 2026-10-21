@@ -87,6 +87,11 @@
       start: byId("startBtn"),
       recommendText: byId("recommendText"),
       recommendBtn: byId("recommendBtn"),
+      transfer: byId("transferPractice"),
+      transferLesson: byId("transferLesson"),
+      transferLessonText: byId("transferLessonText"),
+      transferStart: byId("transferStart"),
+      transferStatus: byId("transferStatus"),
       hardRepsBtn: byId("hardRepsBtn"),
       hardRepsCustomize: byId("hardRepsCustomizeBtn"),
       hardRepsStatus: byId("hardRepsStatus"),
@@ -511,6 +516,7 @@
     function updateRecommendation() {
       const key = sectionKey();
       const current = guide();
+      renderTransfer();
       const answered = current.rows.some((row) => row.sectionKey === key && row.attempted);
       const step = answered || current.dueCount || Analytics.PLANS[key] ? current.step([key]) : null;
       recommended = step;
@@ -538,6 +544,35 @@
         recommendLearn.href = words.learnHref;
         recommendLearn.setAttribute("aria-label", `Read the lesson: ${step.skill}`);
         recommendLearn.classList.remove("hidden");
+      }
+    }
+
+    function renderTransfer() {
+      const sat = ctx.currentTest() === "SAT";
+      elements.transfer.classList.toggle("hidden", !sat);
+      if (!sat) return;
+      const current = guide();
+      const step = current.lessonStep("sat-math");
+      const words = step && ctx.stepWords(step);
+      elements.transferLesson.href = words && words.learnHref ||
+        "learn.html#sat-math/geometry-and-trigonometry/lines-angles-and-triangles";
+      elements.transferLesson.textContent = step ? `Learn: ${step.skill}` : "Start with triangles and similarity";
+      elements.transferLessonText.textContent = step
+        ? `Current Math lesson: ${step.skill}. Solve its Try it problems before opening the answers, even if you have drilled this skill before.`
+        : "Start with the Geometry lesson and solve its Try it problems before opening the answers.";
+    }
+
+    async function startTransfer() {
+      elements.transferStart.disabled = true;
+      ctx.setStatus(elements.transferStatus, "Preparing your check…", "loading");
+      try {
+        const opened = await ctx.startTransfer("sat-math");
+        ctx.setStatus(elements.transferStatus, opened === 0 ? "No accessible Math questions are available for this check." : "",
+          opened === 0 ? "error" : "");
+      } catch (error) {
+        ctx.setStatus(elements.transferStatus, `${error.message} Refresh the page and try again.`, "error");
+      } finally {
+        elements.transferStart.disabled = false;
       }
     }
 
@@ -1428,6 +1463,7 @@
       elements.resume[slot].discard.addEventListener("click", () => discardSaved(slot));
     });
     elements.recommendBtn.addEventListener("click", startRecommended);
+    elements.transferStart.addEventListener("click", startTransfer);
     elements.startHereHide.addEventListener("click", hideStart);
     elements.hardRepsBtn.addEventListener("click", startHardReps);
     desmos.button.addEventListener("click", startDesmosDrill);
@@ -1460,6 +1496,7 @@
       populateSections();
       populateDrillSections();
       renderSetupCopy();
+      renderTransfer();
       renderMiniTests();
       renderStartHere();
       renderDesmos();
@@ -1477,6 +1514,7 @@
     populateSections();
     populateDrillSections();
     renderSetupCopy();
+    renderTransfer();
     renderMiniTests();
     renderResumeBanner();
     renderStartHere();
@@ -1500,6 +1538,7 @@
       onProgressChange() {
         guideCache = null;
         renderStartHere();
+        renderTransfer();
         applyDrillLevel();
         updateDrillNote();
         if (!ready) return;

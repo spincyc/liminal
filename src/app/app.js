@@ -399,7 +399,17 @@
   // section's Analytics.planState.
   function guide(test, prepared) {
     const which = test || currentTest();
-    const progress = store.get();
+    // Establish the schedule cutover before recommending or serving a set. This
+    // direct store save does not notify views from inside their render path.
+    // It creates no attempts; existing flights and their budgets stay intact.
+    let progress = store.get();
+    const initialMath = catalog.sections.find((section) => section.key === "sat-math");
+    if (which === "SAT" && initialMath &&
+        !Number.isFinite(((progress.planLedger || {})[initialMath.key] || {}).orderFrom)) {
+      const saved = store.update(withPlanLedger);
+      if (!saved.ok) warnStorage("progress");
+      progress = store.get();
+    }
     const attempts = prepared ||
       Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test: which }), templateInfo());
     const sections = scoredSections(which);
@@ -450,6 +460,13 @@
       reviewOptions: () => reviewOptions(which, plans),
       step: (sectionKeys) => Analytics.nextStep(rows, Object.assign({}, options, {
         sectionKeys: sectionKeys && sectionKeys.length ? sectionKeys : keys,
+        preferredSection: (!sectionKeys || !sectionKeys.length) && which === "SAT" &&
+          plans["sat-math"] && plans["sat-math"].tracks.some((track) => track.inFlight) ? "sat-math" : null,
+      })),
+      // Learning stays available while Review or a transfer set is next.
+      // The prebuilt plan keeps the same current flights and track order.
+      lessonStep: (sectionKey) => Analytics.nextStep(rows, Object.assign({}, options, {
+        sectionKeys: [sectionKey], dueCount: 0, sessions: undefined,
       })),
       row: (sectionKey, skill) => rows.find((row) => row.sectionKey === sectionKey && row.skill === skill) || null,
     };
@@ -483,6 +500,7 @@
             return `${pass}${where}. It had met the practice target and has slipped below it, so it is back in flight.${budget}`;
           default:
             return `${where}: the skill in flight on this track.` +
+              (step.track === "B" ? " Geometry and Advanced Math alternate on this track." : "") +
               (step.startStage > 1 ? ` Your diagnostic started you at stage ${step.startStage}.` : "") + budget;
         }
       }
@@ -629,6 +647,7 @@
       level: levelReason(step),
       button: "Start drill",
       learnHref: step.learnPage ? `learn.html#${step.learnPage}` : null,
+      lessonFirst: step.lessonFirst === true,
     });
   }
 
@@ -698,6 +717,37 @@
       feedback: "end",
       timeLimitSeconds: core.paceBudgetSeconds(sectionKey, questions.length),
       sessionFields: { step: "mixed" },
+    });
+    return opened ? questions.length : null;
+  }
+
+  // An independent learning check: all four Math domains, with half the
+  // questions in Geometry. Answers wait until the end; the first check has
+  // no timer so a setup gap can be distinguished from a pacing problem.
+  async function startTransfer(sectionKey) {
+    const key = sectionKey || "sat-math";
+    if (!(await confirmReplace("set"))) return null;
+    const templates = await sectionTemplates(key);
+    const run = practice.buildTransferRun({
+      sectionKey: key,
+      templates,
+      history: Progress.historyFor(store.get(), key),
+      instantiate: window.LiminalFamilyShared.instantiate,
+    });
+    recordServed(run);
+    const questions = stampVersions(run.questions);
+    if (!questions.length) return 0;
+    const opened = await launch({
+      title: `${sectionName(key)}: mixed learning check`,
+      sectionKey: key,
+      kind: "transfer",
+      questions,
+      runCode: run.code,
+      setCode: run.setCode,
+      practiceWarnings: practice.runWarnings(run),
+      feedback: "end",
+      timeLimitSeconds: null,
+      sessionFields: { step: "transfer" },
     });
     return opened ? questions.length : null;
   }
@@ -815,12 +865,12 @@
 
   function recordServed(run) {
     if (!run.templateIds.length) return;
-    store.update((progress) => Progress.serveTemplates(progress, run.sectionKey, {
+    store.update((progress) => withPlanLedger(Progress.serveTemplates(progress, run.sectionKey, {
       templateIds: run.templateIds,
       scenes: run.scenes,
       itemIdentities: run.itemIdentities,
       mask: run.servedMaskCode,
-    }));
+    })));
   }
 
   // A fresh template run, preferring templates served least recently and
@@ -933,7 +983,6 @@
     let next = progress;
     catalog.sections.filter((section) => Analytics.PLANS[section.key]).forEach((section) => {
       const attempts = Progress.withCurrentTemplates(Progress.attemptsFor(progress, { test: section.test }), templateInfo());
-      if (!attempts.some((attempt) => (attempt.sectionKey || Progress.sectionOfId(attempt.questionId)) === section.key)) return;
       const rows = Analytics.skillMap(attempts, [section], { tiered: practice.usesTemplates });
       const state = Analytics.planState(rows, {
         sectionKey: section.key,
@@ -1883,6 +1932,7 @@
     startDrill,
     startDiagnostic,
     startMixed,
+    startTransfer,
     startDesmos,
     desmosRoutes,
     reviewOptions,

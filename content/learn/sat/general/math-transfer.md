@@ -13,6 +13,14 @@ These are original learning exercises, not an official diagnostic or a
 score estimate. Work Set A before reading the teaching below it. Save Set B
 for another day after repairing the difficulties Set A reveals.
 
+For continuing practice, open Math Practice and choose **Start a fresh
+12-question check** under **Learn, then check**. Each check draws new
+variations from the generated practice designs, with six Geometry questions
+and two from each other Math domain, split between Easy and Medium.
+Feedback comes at the end. Use these fresh checks after teaching and on
+later days; the two authored sets below remain a worked starting point.
+The focused mix is for learning and does not copy the SAT's domain weights.
+
 ## How to attempt a set {#attempt}
 
 Use paper and your usual calculator. Keep lessons and answer buttons closed

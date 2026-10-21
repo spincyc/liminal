@@ -50,9 +50,10 @@ const shape = (plan) => ({
 function longHistory() {
   const list = [];
   const order = [];
-  for (let index = 0; index < Math.max(trackA.length, trackB.length); index += 1) {
+  const practiceB = Analytics.planTracks(PLAN)[1].skills;
+  for (let index = 0; index < Math.max(trackA.length, practiceB.length); index += 1) {
     if (trackA[index]) order.push(trackA[index]);
-    if (trackB[index]) order.push(trackB[index]);
+    if (practiceB[index]) order.push(practiceB[index]);
   }
   order.forEach((skill, index) => list.push(...answers(index % 2 ? 40 : 30, skill, { correct: !(index % 2) })));
   order.filter((_, index) => index % 2).forEach((skill) => list.push(...answers(30, skill)));
@@ -62,7 +63,8 @@ function longHistory() {
 test("the plan survives the cap on attempts: the ledger carries passes, budgets and departures", () => {
   const all = longHistory();
   const cap = 150;
-  let record = Progress.empty({ epoch: "e" });
+  let record = Progress.setPlanLedger(Progress.empty({ epoch: "e" }), "sat-math",
+    planOf([], undefined, { now: all[0].timestamp - 1 }).checkpoint);
   let retained = [];
   let lastDepartures = 0;
   let lastPass = 1;
@@ -79,7 +81,7 @@ test("the plan survives the cap on attempts: the ledger carries passes, budgets 
     retained = inMemory.slice(-cap);
   }
   assert.ok(fromLedger > 50, "most saves came after the cap");
-  const full = shape(planOf(all));
+  const full = shape(planOf(all, record.planLedger["sat-math"]));
   assert.ok(full.pass >= 2);
   assert.ok(full.departures.length >= 19);
   assert.deepEqual(shape(planOf(retained, record.planLedger["sat-math"])), full, "the capped record plus its ledger is the full plan");
@@ -101,8 +103,11 @@ test("while the attempts still reach back to the ledger's start, the plan is rep
   const stale = Object.assign({}, plan.checkpoint, { from: list[0].timestamp, pass: 9 });
   assert.equal(planOf(list, stale).pass, 1);
   assert.equal(planOf(list, stale).fromLedger, false);
-  // Without attempts there is no checkpoint.
-  assert.equal(Analytics.planState(Analytics.skillMap([], [mathSection]), { sectionKey: "sat-math" }).checkpoint, null);
+  // A new record can save scheduling metadata before its first answer.
+  const fresh = Analytics.planState(Analytics.skillMap([], [mathSection]), { sectionKey: "sat-math", attempts: [], now: clock });
+  assert.equal(fresh.firstAnswerAt, null);
+  assert.equal(fresh.checkpoint.orderFrom, clock - 1);
+  assert.ok(Object.values(fresh.checkpoint.skills).every((entry) => entry.attempted === 0));
 });
 
 test("the ledger normalises, keeps the later checkpoint across tabs, and round-trips through files", () => {
@@ -251,7 +256,7 @@ function appPattern(withSetKind) {
       kept,
       departures,
       capped: shape(planOf(kept.attempts, kept.planLedger["sat-math"], { sessions: kept.sessions })),
-      full: shape(planOf(Progress.markRepeats(all.attempts), undefined, { sessions: all.sessions })),
+      full: shape(planOf(Progress.markRepeats(all.attempts), kept.planLedger["sat-math"], { sessions: all.sessions })),
     };
   } finally {
     Object.assign(Progress.LIMITS, limits);
@@ -354,7 +359,7 @@ test("answers whose sessions the cap dropped before they were classed count as n
     later.push(...answers(10, skill, { difficulty: "Medium", correct: false, sessionId: `n${set}` }));
     sessions.push({ id: `n${set}`, kind: "drill", skill, sectionKey: "sat-math", finishedAt: clock + 1 });
   });
-  const whole = planOf(record.concat(later), undefined, { sessions });
+  const whole = planOf(record.concat(later), full.checkpoint, { sessions });
   const resumed = planOf(record.slice(25).concat(later), full.checkpoint, { sessions });
   assert.equal(resumed.fromLedger, true);
   assert.deepEqual(shape(resumed), shape(whole));

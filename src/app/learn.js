@@ -99,6 +99,36 @@
 
   /* ------------------------------------------------------------- blocks */
 
+  function renderFigure(block) {
+    const figure = data.figures && Object.prototype.hasOwnProperty.call(data.figures, block.id) && data.figures[block.id];
+    if (!figure) return el("p", "learn-figure-fallback", "Figure unavailable.");
+    const wrap = el("figure", "learn-figure");
+    const clean = render && render.sanitizeSvgTree(figure.svg);
+    const size = clean && render.svgSize(clean);
+    // Rebuild only the shared renderer's allowlisted tree, with text nodes
+    // and SVG DOM calls. Source strings never become HTML markup.
+    const draw = (tree) => {
+      if (typeof tree.text === "string") return document.createTextNode(tree.text);
+      const node = document.createElementNS(render.SVG_NS, tree.name);
+      tree.attributes.forEach((attribute) => node.setAttribute(attribute.name, attribute.value));
+      tree.children.forEach((child) => node.appendChild(draw(child)));
+      return node;
+    };
+    if (clean && size && Number.isFinite(size.width) && Number.isFinite(size.height) &&
+        size.width >= 160 && size.width <= 640 && size.height >= 120 && size.height <= 480) {
+      const svg = draw(clean);
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", String(figure.alt));
+      svg.setAttribute("focusable", "false");
+      svg.style.maxWidth = `${size.width}px`;
+      svg.style.aspectRatio = `${size.width} / ${size.height}`;
+      wrap.append(svg);
+    } else wrap.append(el("p", "learn-figure-fallback", String(figure.alt)));
+    wrap.append(el("figcaption", null, String(figure.caption)));
+    if (figure.notToScale) wrap.append(el("p", "learn-figure-note", "Note: Figure not drawn to scale."));
+    return wrap;
+  }
+
   function renderTable(block, math) {
     const wrap = el("div", "learn-table-wrap");
     const table = el("table", "learn-table");
@@ -288,6 +318,8 @@
         parent.append(renderTable(block, prose));
       } else if (block.type === "pre") {
         parent.append(el("pre", "learn-pre", String(block.text)));
+      } else if (block.type === "figure") {
+        parent.append(renderFigure(block));
       } else if (block.type === "callout") {
         parent.append(renderCallout(block, math));
       } else if (block.type === "try") {

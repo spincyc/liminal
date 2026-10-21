@@ -833,7 +833,25 @@
   }
 }
 
+.transfer-focus {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-line);
+}
+
+.transfer-focus > p {
+  max-width: 72ch;
+}
+
+.transfer-focus .card-actions {
+  margin-block: 12px;
+}
+
 @media print {
+  .transfer-focus .card-actions {
+    display: none;
+  }
+
   .progress-sections,
   .data-zone,
   .start-card,

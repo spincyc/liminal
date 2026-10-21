@@ -157,7 +157,7 @@ function shellFixture() {
   return env;
 }
 
-function appFixture(blockStorage = false, practiceCore) {
+function appFixture(blockStorage = false, practiceCore, practiceOverrides) {
   const env = environment();
   const { window, document } = env;
   env.sessionProblems = [];
@@ -174,7 +174,7 @@ function appFixture(blockStorage = false, practiceCore) {
   window.PRACTICE_CATALOG = { sections: [] };
   window.LiminalProgress = require("../src/lib/progress");
   window.LiminalSessionStore = require("../src/lib/session-store");
-  window.LiminalPractice = require("../src/lib/practice");
+  window.LiminalPractice = Object.assign({}, require("../src/lib/practice"), practiceOverrides);
   window.LiminalSite = { getTest: () => "SAT", onTestChange() {} };
   window.LiminalViews = {};
   const header = document.createElement("header");
@@ -788,4 +788,39 @@ test("Review keeps its start control busy until deferred launch settles and repo
   await startSet(button, status, build);
   assert.equal(button.disabled, false);
   assert.equal(status.textContent, "");
+});
+
+
+test("the transfer launcher keeps its replay code through the shell, saved set, report and progress", async () => {
+  const question = { ...mc, id: "sat-math:transfer-equation:1", templateId: "transfer-equation", templateVersion: 1,
+    skill: "Linear equations in one variable", difficulty: "Easy" };
+  const run = { sectionKey: "sat-math", questions: [question], templateIds: [question.templateId],
+    scenes: [], itemIdentities: [], servedMaskCode: "1", code: "1-transfer-0", setCode: "math-1-transfer-0" };
+  const { document, window, ctx } = appFixture(false, undefined, { buildTransferRun: () => run });
+  window.PRACTICE_TEMPLATES = { "sat-math": { templates: [{ id: question.templateId, bit: 0, version: 1,
+    domain: question.domain, skill: question.skill, difficulty: question.difficulty }] } };
+  window.LiminalFamilies = { "sat-math": [{ id: question.templateId, domain: question.domain,
+    skill: question.skill, difficulty: question.difficulty }] };
+  window.LiminalFamilyShared = { instantiate: () => question };
+  let screen;
+  const start = window.LiminalShell.start;
+  window.LiminalShell.start = (options) => (screen = start(options));
+  const opening = ctx.startTransfer("sat-math");
+  await settled();
+  document.head.querySelector("script").onload();
+  assert.equal(await opening, 1);
+  const unfinished = ctx.activeSession.load("set");
+  assert.equal(unfinished.config.runCode, run.code);
+  assert.equal(unfinished.config.setCode, run.setCode);
+  assert.equal(unfinished.config.kind, "transfer");
+  finishWrong(screen);
+  assert.ok(screen.element.textContent.includes(`Set code ${run.setCode}`), "report names the replayable set");
+  const progress = ctx.store.get();
+  assert.equal(progress.sessions[0].kind, "transfer");
+  assert.equal(progress.sessions[0].runCode, run.code);
+  assert.equal(progress.attempts.length, 1);
+  assert.equal(progress.attempts[0].setKind, "transfer");
+  assert.equal(progress.attempts[0].runCode, run.code);
+  assert.equal(ctx.activeSession.load("set"), null);
+  screen.close();
 });

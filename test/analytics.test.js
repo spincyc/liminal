@@ -693,7 +693,7 @@ test("the diagnostic places a student in the plan by domain, not by skill", () =
   const placements = { "sat-math": placement };
   let step = mathStep(strong.answers, { placements });
   assert.deepEqual([step.skill, step.level, step.stage.stage, step.startStage, step.returned],
-    ["Equivalent expressions", "Easy", 3, 3, false]);
+    ["Lines, angles, and triangles", "Easy", 4, 3, false]);
   // A skill from a stage passed over comes back once it is practised and short of the gate.
   step = mathStep([...strong.answers, ...mathAnswers(5, "Linear functions", { difficulty: "Easy", correct: false })], { placements });
   assert.deepEqual([step.skill, step.stage.stage, step.returned], ["Linear functions", 1, false]);

@@ -286,6 +286,79 @@
     return result;
   }
 
+  // A teaching check, not a module blueprint: Geometry gets half the set,
+  // with the other domains still present so the student must choose a method.
+  // Keep one design per question and split each domain between Easy/Medium.
+  // A smaller accessible pool stays smaller rather than borrowing from Hard
+  // or silently dropping a domain. Normal run codes reproduce the whole set.
+  const TRANSFER_TARGETS = {
+    "Geometry and Trigonometry": 6,
+    Algebra: 2,
+    "Advanced Math": 2,
+    "Problem-Solving and Data Analysis": 2,
+  };
+
+  // Options match buildTemplateRun (sectionKey must be sat-math). Record the
+  // returned run once with Progress.serveTemplates, using servedMaskCode.
+  function buildTransferRun(options) {
+    const settings = options || {};
+    const sectionKey = settings.sectionKey || "sat-math";
+    if (sectionKey !== "sat-math") throw new RangeError("The transfer check is for SAT Math.");
+    const templates = settings.templates || [];
+    const history = settings.history || { serve: 0, lastServed: {}, scenes: {}, mask: "0" };
+    const seed = settings.seed || newRunSeed();
+    const recency = recencyFor(history, templates);
+    const chosen = [];
+    Object.entries(TRANSFER_TARGETS).forEach(([domain, count]) => {
+      const pool = templates.filter((template) => template.domain === domain &&
+        ["Easy", "Medium"].includes(template.difficulty));
+      ["Easy", "Medium"].forEach((difficulty) => {
+        const choice = Runs.chooseTemplates(pool, {
+          count: count / 2, filters: { difficulties: [difficulty] }, seed, recency,
+        });
+        chosen.push(...choice.templates);
+      });
+      const ids = new Set(chosen.map((template) => template.id));
+      const missing = count - chosen.filter((template) => template.domain === domain).length;
+      if (missing > 0) chosen.push(...Runs.chooseTemplates(pool.filter((template) => !ids.has(template.id)), {
+        count: missing, seed, recency,
+      }).templates);
+    });
+    const drawn = Runs.drawQuestions(chosen, seed, settings.instantiate, `${sectionKey}:`,
+      Runs.exposureOptions(history));
+    // The shared drawer may reuse an unavoidable item after exhausting its
+    // candidates. A check can reuse a recent item, but must never show the
+    // same visible question twice. Settle collisions in the drawer's bit
+    // order, retain its shuffled order and pin only the surviving designs.
+    const byId = new Map(drawn.map((question) => [question.templateId, question]));
+    const identities = new Set();
+    const kept = new Set();
+    const collisions = [];
+    chosen.slice().sort((left, right) => left.bit - right.bit).forEach((template) => {
+      const question = byId.get(template.id);
+      if (!question) return;
+      const identity = itemKey(question);
+      if (identity && identities.has(identity)) {
+        collisions.push({ templateId: template.id, reason: "duplicate-visible-item" });
+        return;
+      }
+      if (identity) identities.add(identity);
+      kept.add(template.id);
+    });
+    const retained = Object.assign(drawn.filter((question) => kept.has(question.templateId)), {
+      attempts: drawn.attempts,
+      skipped: drawn.skipped.concat(collisions),
+      repeats: drawn.repeats.filter((entry) => kept.has(entry.templateId)),
+    });
+    const mask = Mask.fromBits(chosen.filter((template) => kept.has(template.id)).map((template) => template.bit));
+    const run = describeRun(sectionKey, mask, seed, retained, templates);
+    run.shortfall = Math.max(0, 12 - run.questions.length);
+    run.domainShortfalls = Object.entries(TRANSFER_TARGETS).map(([domain, requested]) => ({
+      domain, requested, actual: run.questions.filter((question) => question.domain === domain).length,
+    })).filter((entry) => entry.actual < entry.requested);
+    return run;
+  }
+
   // A run code's attempts keyed by template id. Normally lib/runs.js maps
   // them onto the live templates; when a template in the code has retired,
   // its digits are placed with the registry, which keeps every bit.
@@ -695,6 +768,8 @@
     newRunSeed,
     recencyFor,
     buildTemplateRun,
+    buildTransferRun,
+    TRANSFER_TARGETS,
     rebuildRun,
     templateMiniTest,
     buildModuleRun,

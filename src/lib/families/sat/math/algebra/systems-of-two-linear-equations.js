@@ -1648,12 +1648,9 @@
 
   /* ------------------------------------------------ system-intersection-region */
 
-  // Line ℓ crosses the axes at (r, 0) and (0, p); the line y = kx + q turns
-  // about (0, q) as k changes. Slopes are handled as J = 2k and M = 2m, so
-  // every coordinate is an exact fraction of integers.
-  const QUADRANT_WORDS = { "1,1": "a > 0 and b > 0", "-1,1": "a < 0 and b > 0", "-1,-1": "a < 0 and b < 0", "1,-1": "a > 0 and b < 0" };
-  const sgn = (value) => (value > 0 ? 1 : value < 0 ? -1 : 0);
-
+  // The coordinate restrictions cut out an open segment on one side of the
+  // y-axis. Each restriction excludes a different end; neither follows from
+  // the other. Slopes from (0, q) to its endpoints give two finite bounds.
   const intersectionRegion = {
     id: "system-intersection-region",
     domain: "Algebra",
@@ -1662,140 +1659,120 @@
     difficulty: "Hard",
     title: "Constant that places the intersection of two lines in a region",
     recognize:
-      "Every line y = kx + q passes through (0, q), so k only turns the line about that point. Find the part of the " +
-      "given line where the intersection is allowed, and the slopes from (0, q) to the ends of that part bound k; a " +
-      "slope equal to the given line's never meets it, and an end on an axis breaks a strict inequality.",
-    // Hard: a parameter, two sign conditions at once, and the structure (a
-    // pivot point) must be seen before any computing.
-    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 2, abstraction: 2, synthesis: 0, trap: 1 },
-    tricks: ["must-vs-could", "reversed-condition", "sign-error", "context-constraint"],
+      "Translate both coordinate restrictions into a segment of the fixed line. Every line y = kx + q passes through " +
+      "(0, q), so the slopes to the segment's endpoints bound k. Both endpoints are excluded; use the whole open range " +
+      "to test a possible value or count its integers.",
+    // Hard: reconcile two coordinate restrictions with a parameter range,
+    // then distinguish feasible choices or count integers at strict bounds.
+    rubric: { steps: 2, concept: 2, interpretation: 2, distractors: 1, abstraction: 2, synthesis: 0, trap: 1 },
+    tricks: ["reversed-condition", "context-constraint", "rounding-direction"],
     build(t) {
       const could = t.chance(0.5);
       const asStandard = t.chance(0.5);
       for (;;) {
         const M = t.pick([-6, -4, -3, -2, -1, 1, 2, 3, 4, 6]); // 2m
-        const md = M % 2 === 0 ? 1 : 2;
-        const r = md * t.nonzero(-6 / md, 6 / md);
-        const p = (-M * r) / 2;
+        const p = t.nonzero(-9, 9);
         const q = t.nonzero(-6, 6);
-        if (!Number.isInteger(p) || p === 0 || Math.abs(p) > 9 || q === p) continue;
-        // The three quadrants the line passes through: the segment between
-        // its intercepts, the ray past (r, 0), and the ray past (0, p).
-        const parts = {
-          segment: [sgn(r), sgn(p)],
-          xRay: [sgn(r), -sgn(p)],
-          yRay: [-sgn(r), sgn(p)],
-        };
-        // "Could be" items need a region bounded on both sides in k.
-        const part = could ? "xRay" : t.pick(["segment", "xRay", "yRay"]);
-        const [sx, sy] = parts[part];
-        // The intersection for J = 2k: a = 2(q − p)/(M − J), b = (Mq − Jp)/(M − J).
-        const meet = (J) => (J === M ? null : { a: [2 * (q - p), M - J], b: [M * q - J * p, M - J] });
-        const signOf = ([top, bottom]) => sgn(top) * sgn(bottom);
+        if (q === p) continue;
+        const start = t.int(1, 4);
+        const width = t.int(2, 7);
+        const negative = t.chance(0.5);
+        const xLow = negative ? -start - width : start;
+        const xHigh = negative ? -start : start + width;
+        const yAt = (x) => M * x / 2 + p;
+        const boundXBelow = t.chance(0.5);
+        const xBound = boundXBelow ? xLow : xHigh;
+        const yBound = yAt(boundXBelow ? xHigh : xLow);
+        const yAbove = (M < 0) === boundXBelow;
+        const xCondition = `a ${boundXBelow ? ">" : "<"} ${num(xBound)}`;
+        const yCondition = `b ${yAbove ? ">" : "<"} ${num(yBound)}`;
+        const where = `${xCondition} and ${yCondition}`;
+        const conditions = ([a, b]) => [boundXBelow ? a > xBound : a < xBound, yAbove ? b > yBound : b < yBound];
+        const meet = (J) => J === M ? null : [2 * (q - p) / (M - J), (M * q - J * p) / (M - J)];
         const inside = (J) => {
-          const at = meet(J);
-          return Boolean(at) && signOf(at.a) === sx && signOf(at.b) === sy;
+          const spot = meet(J);
+          return Boolean(spot) && conditions(spot).every(Boolean);
         };
         const kText = (J) => frac(J, 2);
-        const at = (J) => {
-          const { a, b } = meet(J);
-          return `(${frac(...a)}, ${frac(...b)})`;
-        };
+        const at = (J) => `(${frac(2 * (q - p), M - J)}, ${frac(M * q - J * p, M - J)})`;
+        const endpoints = [xLow, xHigh].map((x) => ({ x, y: yAt(x), top: M * x + 2 * (p - q), bottom: 2 * x }));
+        const ends = endpoints.map((end) => ({ value: end.top / end.bottom, text: frac(end.top, end.bottom), ...end }));
+        ends.sort((left, right) => left.value - right.value);
+        const [low, high] = ends;
         const valid = [];
-        for (let J = -24; J <= 24; J += 1) if (inside(J)) valid.push(J);
-        if (valid.length < 2) continue;
+        const onlyX = [];
+        const onlyY = [];
+        for (let J = -48; J <= 48; J += 1) {
+          const spot = meet(J);
+          if (!spot) continue;
+          const [xOK, yOK] = conditions(spot);
+          if (xOK && yOK) valid.push(J);
+          else if (xOK) onlyX.push(J);
+          else if (yOK) onlyY.push(J);
+        }
+        if (valid.length < 3 || !onlyX.length || !onlyY.length) continue;
+        const firstInteger = Math.floor(low.value) + 1;
+        const lastInteger = Math.ceil(high.value) - 1;
+        const integerCount = lastInteger - firstInteger + 1;
+        // The counting form needs both bounds and more than a lone candidate.
+        if (!could && (integerCount < 2 || integerCount > 10 ||
+          !onlyX.some((J) => J % 2 === 0) || !onlyY.some((J) => J % 2 === 0))) continue;
         const lineText = asStandard
           ? standardFormHard(...(() => {
-            // ℓ: y = (M/2)x + p, written as Ax + By = C with A > 0.
             const [A, B, C0] = [M, -2, -2 * p];
-            const d = S.gcd(S.gcd(A, B), C0) * sgn(A);
+            const d = S.gcd(S.gcd(A, B), C0) * Math.sign(A);
             return [A / d, B / d, C0 / d];
           })())
           : `y = ${M % 2 === 0 ? lin(M / 2, 0) : `${M < 0 ? MINUS : ""}(${Math.abs(M)}/2)x`} ${signed(p)}`;
         const turning = `y = kx ${signed(q)}`;
-        const where = QUADRANT_WORDS[`${sx},${sy}`];
-        // Bounds of k: the slope from (0, q) to (r, 0) is −q/r; the line's own
-        // slope is m; a part that reaches the y-axis leaves k unbounded.
-        const axisJ = (-2 * q) / r;
-        const lowJ = Math.min(...valid);
-        const highJ = Math.max(...valid);
-        const boundedBelow = lowJ > -24;
-        const boundedAbove = highJ < 24;
-        const reason = (J) => {
-          if (J === M) return `With k = ${kText(J)}, the line ${turning} is parallel to the given line, so the lines never intersect.`;
-          const spot = meet(J);
-          const bad = [];
-          if (signOf(spot.a) !== sx) bad.push(signOf(spot.a) === 0 ? "a is 0" : `a is ${signOf(spot.a) > 0 ? "positive" : "negative"}`);
-          if (signOf(spot.b) !== sy) bad.push(signOf(spot.b) === 0 ? "b is 0" : `b is ${signOf(spot.b) > 0 ? "positive" : "negative"}`);
-          return `With k = ${kText(J)}, the lines intersect at ${at(J)}, where ${bad.join(" and ")}.`;
-        };
-        const partWords = {
-          segment: `the segment between (${num(r)}, 0) and (0, ${num(p)})`,
-          xRay: `the part of the line beyond (${num(r)}, 0), away from the y-axis`,
-          yRay: `the part of the line beyond (0, ${num(p)}), away from the x-axis`,
-        }[part];
-        // The open interval of k, from its finite ends, each [value, text].
-        const ends = [];
-        if (part !== "yRay") ends.push([-q / r, frac(-q, r)]);
-        if (part !== "segment") ends.push([M / 2, kText(M)]);
-        ends.sort((left, right) => left[0] - right[0]);
-        const [low, high] = ends.length === 2 ? ends : boundedBelow ? [ends[0], null] : [null, ends[0]];
-        const kLow = low ? low[0] : -Infinity;
-        const kHigh = high ? high[0] : Infinity;
-        // The analysis must match the scan of the sign conditions.
-        if (valid.some((J) => !(J / 2 > kLow && J / 2 < kHigh)) ||
-          [lowJ - 1, highJ + 1].some((J) => J > -24 && J < 24 && J / 2 > kLow && J / 2 < kHigh && J !== M)) continue;
-        const intervalText = low && high
-          ? `${low[1]} < k < ${high[1]}`
-          : low ? `k > ${low[1]}` : `k < ${high[1]}`;
+        const intervalText = `${low.text} < k < ${high.text}`;
         const common = {
-          estimatedSeconds: 140,
+          estimatedSeconds: 145,
           stimulus: { type: "equations", content: `${lineText}\n${turning}` },
           principles: [
+            "Both coordinate restrictions must hold at the same intersection point.",
             "Every line y = kx + q passes through (0, q); changing k turns the line about that point.",
-            "Two lines with the same slope and different y-intercepts never intersect.",
+            "A strict inequality excludes its boundary value, even when that value is an integer.",
           ],
-          hint: "Which point does the second line pass through no matter what k is?",
+          hint: "Which part of the first line satisfies both coordinate restrictions?",
         };
         const lead =
           `In the xy-plane, the graphs of the given equations intersect at the point (a, b), where k is a constant. ` +
           `If ${where}, `;
         const pivotSteps = [
-          `The given line crosses the axes at (${num(r)}, 0) and (0, ${num(p)}), and ${turning} passes through (0, ${num(q)}) for every k.`,
-          `The points of the given line with ${where} form ${partWords}.`,
-          `Turning a line about (0, ${num(q)}) to meet that part gives ${intervalText}.`,
-          [
-            ...(part === "yRay" ? [] : [`At k = ${frac(-q, r)} the lines meet at (${num(r)}, 0), on the x-axis`]),
-            ...(part === "segment" ? [] : [`at k = ${kText(M)} the lines are parallel and never meet`]),
-          ].join("; ").replace(/^a/, "A") + ".",
+          `On the fixed line, ${where} together give ${num(xLow)} < a < ${num(xHigh)}. The endpoints are ${point(xLow, yAt(xLow))} and ${point(xHigh, yAt(xHigh))}; neither is included.`,
+          `The second line passes through (0, ${num(q)}), so an intersection (a, b) requires k = (b ${MINUS} ${paren(q)})/a.`,
+          ...ends.map((end) => `The slope from (0, ${num(q)}) to ${point(end.x, end.y)} is (${num(end.y)} ${MINUS} ${paren(q)})/${paren(end.x)} = ${end.text}.`),
+          `Throughout the allowed segment, a stays ${negative ? "negative" : "positive"}, and k = ${frac(M, 2)} + (${num(p - q)})/a moves between those endpoint slopes: ${intervalText}.`,
         ];
+        // Independent verification parses the displayed equations, then solves
+        // by Cramer's rule rather than using the endpoint-slope calculation.
+        const fixed = lineCoefficients(lineText);
+        const solveAt = (k) => cramer(fixed, lineCoefficients(substitute(turning, { k })));
+        const holdsAt = (k) => {
+          const spot = solveAt(k);
+          return Boolean(spot) && conditions(spot).every(Boolean);
+        };
         if (could) {
-          // Distractors: parallel, beyond each end, and on an axis.
-          const outside = [];
-          for (let J = lowJ - 6; J <= highJ + 6; J += 1) if (!inside(J)) outside.push(J);
-          // k = 0 is valid in many regions; it is the key only now and then, so
-          // "0" does not mark the answer.
-          const keyPool = valid.filter((J) => (J % 2 === 0 || t.chance(0.3)) && (J !== 0 || t.chance(0.2)));
+          const keyPool = valid.filter((J) => J % 2 === 0 || t.chance(0.25));
           if (!keyPool.length) continue;
           const keyJ = t.pick(keyPool);
-          // Whole-number distractors, plus the parallel slope and the axis
-          // crossing when they are halves.
-          const special = (J) => J === M || J === axisJ;
-          const usable = outside.filter((J) => J % 2 === 0 || special(J));
-          // The parallel slope and the axis crossing come first most of the time.
-          const prefer = (list) => {
-            const shuffled = t.shuffle(list);
-            return t.chance(0.7) ? [...shuffled.filter(special), ...shuffled.filter((J) => !special(J))] : shuffled;
+          const reason = (J) => {
+            if (J === M) return `With k = ${kText(J)}, the two lines have equal slopes and different y-intercepts, so they never intersect.`;
+            const [xOK, yOK] = conditions(meet(J));
+            return `With k = ${kText(J)}, the lines intersect at ${at(J)}, which ${xOK ? "satisfies" : "fails"} ${xCondition} and ${yOK ? "satisfies" : "fails"} ${yCondition}.`;
           };
-          const under = prefer(usable.filter((J) => J < lowJ));
-          const over = prefer(usable.filter((J) => J > highJ));
-          const split = t.int(0, 3); // how many distractors lie below the key
-          if (under.length < split || over.length < 3 - split) continue;
-          const chosen = [...under.slice(0, split), ...over.slice(0, 3 - split)];
-          const wrong = chosen.map((J) => [kText(J), reason(J)]);
+          // Require an offered wrong value satisfying each condition alone.
+          // The third wrong value can be on either side, so the key's rank
+          // varies even though the feasible range is bounded.
+          const chosen = [t.pick(onlyX), t.pick(onlyY)];
+          const extra = [];
+          for (let J = -48; J <= 48; J += 1) if (!inside(J) && !chosen.includes(J)) extra.push(J);
+          const special = extra.filter((J) => J === M || ends.some((end) => J / 2 === end.value));
+          chosen.push(t.pick(special.length && t.chance(0.5) ? special : extra));
           const key = kText(keyJ);
-          if (hitsKey(key, wrong)) continue;
-          const steps = [...pivotSteps, `Only k = ${key} lies in that range: the lines then intersect at ${at(keyJ)}.`];
+          const wrong = t.shuffle(chosen).map((J) => [kText(J), reason(J)]);
+          const steps = [...pivotSteps, `Of the offered values, only k = ${key} lies in that range. The intersection is then ${at(keyJ)}.`];
           return {
             ...common,
             responseType: "multiple-choice",
@@ -1804,54 +1781,26 @@
             wrong,
             explanation: steps.join(" "),
             steps,
-            trap: `The line ${turning} meets the given line for every k except ${kText(M)}, but only some of those meetings have ${where}; an intersection on an axis fails a strict inequality.`,
-            verify: () => {
-              // Read both lines back from the displayed text and solve each system by Cramer's rule.
-              const fixed = lineCoefficients(lineText);
-              const holdsAt = (text) => {
-                const J = Math.round(2 * Number(text.replace(MINUS, "-").split("/")[0]) / Number(text.split("/")[1] || 1));
-                const solution = cramer(fixed, lineCoefficients(substitute(turning, { k: J / 2 })));
-                return Boolean(solution) && sgn(solution[0]) === sx && sgn(solution[1]) === sy;
-              };
-              return holdsAt(key) && wrong.every(([text]) => !holdsAt(text));
-            },
+            trap: "A value can satisfy either coordinate restriction by itself and still fail the other. Test their common range, excluding both endpoints.",
+            verify: () => holdsAt(keyJ / 2) && chosen.every((J) => !holdsAt(J / 2)),
           };
         }
-        // The greatest or least integer k, on a bounded side of the range.
-        const sides = [...(boundedAbove ? ["greatest"] : []), ...(boundedBelow ? ["least"] : [])];
-        if (!sides.length) continue;
-        const ask = t.pick(sides);
-        const integers = valid.filter((J) => J % 2 === 0).map((J) => J / 2);
-        if (!integers.length) continue;
-        const key = ask === "greatest" ? Math.max(...integers) : Math.min(...integers);
-        const edge = ask === "greatest" ? kHigh : kLow;
-        // The trap: the bound itself when it is a whole number.
-        if (!Number.isInteger(edge) && t.chance(0.6)) continue;
-        const steps = [...pivotSteps, `The ${ask} integer in that range is ${num(key)}.`];
-        const edgeWhy = !Number.isInteger(edge)
-          ? ""
-          : edge === M / 2
-            ? ` k = ${num(edge)} is not allowed: that line is parallel to the given line.`
-            : ` k = ${num(edge)} is not allowed: the lines then meet on the x-axis, where b = 0.`;
+        const steps = [...pivotSteps,
+          `The first integer strictly greater than ${low.text} is ${num(firstInteger)}, and the last integer strictly less than ${high.text} is ${num(lastInteger)}.`,
+          `There are ${num(lastInteger)} ${MINUS} ${paren(firstInteger)} + 1 = ${integerCount} possible integer values of k.`,
+        ];
         return {
           ...common,
           responseType: "numeric",
-          stem: `${lead}what is the ${ask} possible integer value of k?`,
-          correct: key,
+          stem: `${lead}how many integer values of k are possible?`,
+          correct: integerCount,
           explanation: steps.join(" "),
           steps,
-          trap: `The range of k is open.${edgeWhy}${low && high ? " The other end of the range answers the opposite question." : ""}`,
+          trap: "The question asks for a count of integers, not the least or greatest value. Exclude both boundary slopes before counting, and include both the first and last allowed integers.",
           verify: () => {
-            // Scan integer k, reading both lines from the displayed text.
-            const fixed = lineCoefficients(lineText);
-            const found = [];
-            for (let k = -30; k <= 30; k += 1) {
-              const solution = cramer(fixed, lineCoefficients(substitute(turning, { k })));
-              if (solution && sgn(solution[0]) === sx && sgn(solution[1]) === sy) found.push(k);
-            }
-            const expected = ask === "greatest" ? Math.max(...found) : Math.min(...found);
-            return found.length > 0 && found.length < 61 && expected === key &&
-              (ask === "greatest" ? !found.includes(30) : !found.includes(-30));
+            let found = 0;
+            for (let k = -30; k <= 30; k += 1) if (holdsAt(k)) found += 1;
+            return found === integerCount && !holdsAt(-30) && !holdsAt(30);
           },
         };
       }

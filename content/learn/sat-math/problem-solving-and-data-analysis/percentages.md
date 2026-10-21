@@ -134,6 +134,58 @@ the percent.
 > **Trap.** Percent against percentage points. A rate going from 20% to 25%
 > rose 5 percentage points, but it rose 25 percent (5/20 = 0.25).
 
+### Which amount is the reference? {#choose-the-base}
+
+Translate the relation before deciding whether to multiply or divide.
+For positive amounts, "A is 20% less than B" means A = 0.80B. The percent
+is of B. Finding A from B multiplies by 0.80; finding B from A divides by
+0.80. Asking how much greater B is than A uses A as the new reference.
+
+> **Example.** A printer's sale price is $72 after a 20% discount. Find its
+> original price and the percent by which the original price exceeds
+> the sale price.
+>
+> The sale price is 80% of the original P: 0.80P = 72, so P = $90.
+> Check: 20% of 90 is 18, and 90 − 18 = 72.
+>
+> The original exceeds the sale price by $18. Relative to the sale price,
+> this is 18/72 = 0.25, or 25%.
+>
+> Adding 20% of $72 gives $86.40 because it uses the sale price as the
+> base. The discount was 20% of $90. The reverse comparison is 25%
+> because its reference amount is $72; the dollar difference stays $18.
+
+> **Try it.** A container holds 84 liters after 30% of its original
+> contents are removed. How many liters did it hold originally?
+>
+> **Answer.** 120 liters
+>
+> Seventy percent remains: 0.70V = 84, so V = 84/0.70 = 120.
+> Check: 30% of 120 is 36, and 120 − 36 = 84. Adding 30% of 84
+> gives 109.2, but the removed portion was 30% of the original amount.
+
+> **Try it.** A is 25% greater than B, where both are positive. B is what
+> percent of A?
+>
+> **Answer.** 80%
+>
+> A = 1.25B, so B/A = 1/1.25 = 0.80 = 80%. Check with B = 100 and
+> A = 125: 100/125 = 0.80. Answering 75% subtracts 25 percentage
+> points from 100% without accounting for the different reference amount.
+
+> **Try it.** A school has 250 students, of whom 80 are in a music club.
+> Another 50 students enroll, including 10 who join the club. No other
+> membership changes occur. What percent of the school's students are
+> now in the music club?
+>
+> **Answer.** 30%
+>
+> The new club has 80 + 10 = 90 members, and the new school total is
+> 250 + 50 = 300 students. The share is 90/300 = 0.30 = 30%.
+> Using 90/250 keeps the old whole; using 10/50 gives the share among
+> the new students only. The old share, 80/250 = 32%, need not stay fixed
+> when a new group has a different share.
+
 For a harder version, see
 [the change that restores an amount](#restoring-change).
 

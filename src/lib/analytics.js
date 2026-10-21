@@ -87,20 +87,26 @@
   // The sequence of the SAT Math plan in Learn
   // (content/learn/sat/general/math-plan.md, "The sequence"): four stages,
   // each a list of catalog skill names in the page's order. Stage 4's
-  // Geometry and Trigonometry skills start, as the page says, with right
-  // triangles and circles; the other two follow in catalog order.
+  // Stage 4 keeps its original topical grouping for placement and legacy
+  // replay; the explicit Track B list below gives the new practice order.
   // test/analytics.test.js holds this list to the catalog (every SAT Math
   // skill exactly once) and to the page's links.
   // Each plan runs as two tracks, each with one skill in flight at a time
-  // (planState): Track A is stages 1 and 2, Track B stages 3 and 4, so
-  // Advanced Math starts in the first week alongside Algebra.
+  // (planState): Track A is stages 1 and 2, Track B stages 3 and 4.
+  // Algebra and Geometry start together; Track B interleaves geometry
+  // with Advanced Math instead of postponing every geometry skill. Stages
+  // remain topical groups for diagnostic placement, not calendar blocks.
   const PLANS = {
     "sat-math": {
       name: "SAT Math plan",
       learnPage: "sat/general/math-plan",
       tracks: [
         { key: "A", name: "Track A", stages: [1, 2] },
-        { key: "B", name: "Track B", stages: [3, 4] },
+        { key: "B", name: "Track B", stages: [3, 4], skills: [
+          "Lines, angles, and triangles", "Equivalent expressions", "Right triangles and trigonometry",
+          "Nonlinear equations", "Circles", "Nonlinear functions", "Area and volume",
+          "Systems of equations", "Probability", "Statistical inference",
+        ] },
       ],
       stages: [
         {
@@ -607,15 +613,17 @@
 
   /* ---------------------------------------------------------- plan engine */
 
-  // A plan's tracks with their skills in plan order: [{ key, name,
-  // stages, skills }]. A plan without tracks is one track.
+  // A plan's tracks in practice order: [{ key, name, stages, skills }].
+  // Explicit skills interleave topical stages; the old stage order is kept
+  // only for replay before a saved orderFrom cutover. A plan without tracks
+  // is one track.
   function planTracks(plan) {
     const tracks = plan.tracks || [{ key: "A", name: plan.name, stages: plan.stages.map((stage) => stage.stage) }];
     return tracks.map((track) => ({
       key: track.key,
       name: track.name,
       stages: track.stages.slice(),
-      skills: plan.stages.filter((stage) => track.stages.includes(stage.stage)).flatMap((stage) => stage.skills),
+      skills: track.skills ? track.skills.slice() : plan.stages.filter((stage) => track.stages.includes(stage.stage)).flatMap((stage) => stage.skills),
     }));
   }
 
@@ -713,8 +721,8 @@
   //   first pass, is not passed over by the diagnostic (a skill in a stage
   //   before the placement's with fewer than MIN_ATTEMPTS answers).
   // - A skill in flight leaves at the gate, or once BUDGET.answers of its
-  //   first answers, at any tier, have come since it entered, from any
-  //   set: then it has moved on. A skill back in flight for a low official
+  //   first answers, at any tier, have come from its own drills since it
+  //   entered: then it has moved on. A skill back in flight for a low official
   //   check leaves by its budget or a newer check that is not low.
   // - When neither track has a skill to fly, the next pass starts: every
   //   skill not at the gate (moved on, passed over, or slipped below it)
@@ -741,13 +749,15 @@
   //       spent, budget, extraGiven, leftAt, leftBy, movedOn, reachedTarget,
   //       easyStuck, firstEnteredAt, firstDrillAt, firstReachedAt, check,
   //       official } },
-  //     fromLedger, checkpoint }
+  //     fromLedger, orderFrom, checkpoint }
   // with status "in-flight", "at-gate" (at or past the target now),
   // "moved-on", "passed-over" or "waiting"; entry, why a skill last
   // entered flight: "plan", "moved-on", "passed-over" (by the
   // diagnostic), "slipped" (back below a target it had met, in the plan or
   // on its own) or "official-low"; leftBy "gate", "budget" or "check".
-  // `checkpoint` is the ledger entry to store (null without attempts).
+  // `checkpoint` is the ledger entry to store (null without a history
+  // array). Before the first answer it keeps only initial scheduling state;
+  // that empty checkpoint never becomes practice evidence on replay.
   function planState(rows, options) {
     const settings = options || {};
     const sectionKey = settings.sectionKey || ((rows || [])[0] || {}).sectionKey;
@@ -849,6 +859,7 @@
         version: LEDGER_VERSION,
         from: firstAnswerAt,
         at,
+        orderFrom,
         pass,
         flownThisPass: [...flownThisPass],
         inFlight: Object.fromEntries(tracks.map((track) => [track.key, inFlight.get(track.key)])),
@@ -870,7 +881,19 @@
     // track, ahead of skills not yet started, once: unless it has flown since.
     const lowReturnDue = (skill) => lowNow(skill) && inFlight.get(info[skill].track) !== skill &&
       !(info[skill].enteredAt !== null && info[skill].enteredAt >= checkAt.get(skill));
-    const pick = (track) => track.skills.find(lowReturnDue) || track.skills.find(eligible);
+    // Existing answers retain their original sequence. An old checkpoint
+    // acquires a cutover once; keeping that marker even during a full replay
+    // prevents a later save, trim or import from rewriting earlier flights.
+    // Only future openings use the interleaving; a current turn keeps its
+    // skill, spent budget, pass and review eligibility.
+    let replayAt = now;
+    const legacySkills = new Map(tracks.map((track) => [track.key,
+      plan.stages.filter((stage) => track.stages.includes(stage.stage)).flatMap((stage) => stage.skills)
+        .filter((skill) => rowOf.has(skill))]));
+    const pick = (track) => {
+      const skills = orderFrom !== null && replayAt <= orderFrom ? legacySkills.get(track.key) : track.skills;
+      return skills.find(lowReturnDue) || skills.find(eligible);
+    };
 
     function eligible(skill) {
       if (flownThisPass.has(skill)) return false;
@@ -906,6 +929,7 @@
     // Fills every empty track; with both empty, starts the next pass when
     // any skill can fly again.
     function settle(at) {
+      replayAt = at;
       tracks.forEach((track) => {
         if (inFlight.get(track.key)) return;
         const skill = pick(track);
@@ -941,7 +965,20 @@
     // longer reach back to the ledger's first answer.
     const ledger = history && settings.ledger && settings.ledger.version === LEDGER_VERSION &&
       Number.isFinite(settings.ledger.from) && Number.isFinite(settings.ledger.at) &&
-      firstHeld !== null && firstHeld > settings.ledger.from ? settings.ledger : null;
+      firstHeld !== null && firstHeld > settings.ledger.from &&
+      Object.values(settings.ledger.skills || {}).some((entry) => entry.attempted > 0) ? settings.ledger : null;
+    // The saved cutover is scheduling metadata, so it also governs a full
+    // replay when all old answers are still held. With no marker, replay
+    // everything already recorded in the old order before changing future
+    // openings. An initial empty checkpoint fixes the new order before any
+    // first answer is saved; it supplies metadata, never replayed evidence.
+    const savedOrder = settings.ledger && settings.ledger.version === LEDGER_VERSION &&
+      Number.isFinite(settings.ledger.orderFrom) ? settings.ledger.orderFrom : null;
+    const orderFrom = savedOrder !== null ? savedOrder
+      : settings.ledger && settings.ledger.version === LEDGER_VERSION && Number.isFinite(settings.ledger.at)
+        ? settings.ledger.at
+        : history && (answerEvents.length || checkEvents.length)
+          ? answerEvents.concat(checkEvents).reduce((at, event) => Math.max(at, event.at), -Infinity) : now - 1;
     let firstAnswerAt = firstHeld;
     let lastAt = null;
     let events = answerEvents.concat(checkEvents);
@@ -1072,8 +1109,9 @@
     });
     // No checkpoint while the very first answers cannot be classed yet.
     const blocked = !ledger && answerEvents.length && unclassed(answerEvents[0].attempt);
-    const checkpoint = history && firstAnswerAt !== null && !blocked
-      ? pending || snapshot(lastAt === null ? firstAnswerAt : lastAt) : null;
+    const checkpoint = history && !blocked
+      ? firstAnswerAt !== null ? pending || snapshot(lastAt === null ? firstAnswerAt : lastAt)
+        : Object.assign(snapshot(now), { from: now }) : null;
     return {
       sectionKey,
       pass,
@@ -1090,6 +1128,7 @@
       })),
       skills: info,
       fromLedger: Boolean(ledger),
+      orderFrom,
       checkpoint,
     };
   }
@@ -1249,9 +1288,11 @@
       });
       const mix = drillMix(step.levelWhy, HARD_MIX.size);
       if (mix) step.mix = mix;
-      // The lesson first while the skill has had no drill of its own;
-      // answers from the diagnostic or a module do not count.
-      if (entry.drillsKnown ? entry.drillAnswers === 0 : entry.enteredWith < MIN_ATTEMPTS) step.learnPage = learnPageOf(entry.row);
+      // Keep the lesson within reach on every turn, including returns. The
+      // first-drill flag lets the UI distinguish first learning from a reread;
+      // diagnostic and module answers do not count as a skill's own drill.
+      step.lessonFirst = entry.drillsKnown ? entry.drillAnswers === 0 : entry.enteredWith < MIN_ATTEMPTS;
+      step.learnPage = learnPageOf(entry.row);
       return step;
     }
     const ordered = state.started.concat(entries.map((entry) => entry.skill).filter((skill) => !state.started.includes(skill)))
@@ -1359,6 +1400,7 @@
   //                  Review is the step at most once a calendar day, so
   //                  with it true the step moves on and carries `reviewDue`
   //   placements     { [sectionKey]: diagnosticPlacement }
+  //   preferredSection an explicit focus when that section is in view
   //   recentSection  the section to name a step in when several are in view
   //                  (recentSection()); else the first with answers, else
   //                  the first with a plan, else the first
@@ -1375,7 +1417,7 @@
   //   { kind: "review", reason: "review-due", dueCount, then: <step> }
   //   { kind: "skill", sectionKey, domain, skill, row, reason, level,
   //     levelWhy, stage?, startStage?, returned?, track?, trackName?, pass?,
-  //     entry?, budget?, official?, mix?, learnPage?, reviewDue? }
+  //     entry?, budget?, official?, mix?, learnPage?, lessonFirst?, reviewDue? }
   //   { kind: "module", reason: "rotation", sectionKey, module, why, ... }
   //   { kind: "mixed", reason: "rotation" | "all-mastered", sectionKey,
   //     count, spec: [{ skill, domain, Medium, Hard }], reviewDue? }
@@ -1392,8 +1434,9 @@
     if (!pool.length) return null;
     const inView = [...new Set(pool.map((row) => row.sectionKey))];
     const answered = (key) => pool.some((row) => row.sectionKey === key && row.attempted);
-    const sectionKey = inView.includes(settings.recentSection) ? settings.recentSection
-      : inView.find(answered) || inView.find((key) => PLANS[key]) || inView[0];
+    const sectionKey = inView.includes(settings.preferredSection) ? settings.preferredSection
+      : inView.includes(settings.recentSection) ? settings.recentSection
+        : inView.find(answered) || inView.find((key) => PLANS[key]) || inView[0];
     const own = pool.filter((row) => row.sectionKey === sectionKey);
     let step;
     if (own.some((row) => row.tiered === false)) step = accuracyStep(own);

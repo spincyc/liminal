@@ -38,7 +38,7 @@
 //   planLedger  per section with a plan: a checkpoint of the plan's
 //             replay (lib/analytics.js planState), so the plan's pass,
 //             budgets, departures and gate windows survive the cap on
-//             attempts: { [sectionKey]: { version, from, at, pass,
+//             attempts: { [sectionKey]: { version, from, at, orderFrom?, pass,
 //             flownThisPass, inFlight, skills, departures } }. Derived,
 //             rewritten with every save; across tabs and restores the later
 //             checkpoint wins.
@@ -323,6 +323,7 @@
       version: 1,
       from: raw.from,
       at: raw.at,
+      ...(finiteNumber(raw.orderFrom) ? { orderFrom: raw.orderFrom } : {}),
       pass: raw.pass,
       flownThisPass: unique(strings(raw.flownThisPass)),
       inFlight,

@@ -7,10 +7,11 @@ title: SAT Math plan from around 500
 This plan is for a student whose real SAT Math score, or official practice
 test score, is around 500 and who wants to improve. Use your official practice
 results to identify content gaps, process errors and pacing problems; a score
-alone cannot tell you which is responsible. The default sequence starts with
-Algebra and Advanced Math because they make up most of the section. If your
-domain report puts Geometry and Trigonometry below the other Math domains,
-use the [geometry-first study route](#geometry-first) immediately alongside
+alone cannot tell you which is responsible. The automatic plan starts with
+Algebra and Geometry, then interleaves Geometry with Advanced Math so all
+three receive early attention. If your domain report puts Geometry and
+Trigonometry below the other Math domains, give the
+[geometry-first study route](#geometry-first) extra teaching time alongside
 those foundations. Check whether learning transfers to unfamiliar questions;
 successful repetitions alone are not the goal.
 
@@ -24,9 +25,13 @@ investigate first; it does not tell you whether circles, similarity or
 trigonometry caused the difficulty. Even a full bar does not mean every
 question in the domain was correct.
 
-Use the [mixed learning check](learn:sat/general/math-transfer#set-a) and
-your own official-test misses to find the specific gaps. Work out whether
-you could choose a relationship without a hint, execute it, and answer the
+Use the mixed learning check in Practice or Progress and your own
+official-test misses to find the specific gaps. The app check gives 12 fresh Easy and Medium
+questions: six Geometry and two each from Algebra, Advanced Math and data,
+with answers at the end and no timer. Repeat it on another day after
+repairing the misses; the app chooses fresh variants while its question
+pool allows. The [paper checks](learn:sat/general/math-transfer#set-a) add
+written setup and method comparisons. Work out whether you could choose a relationship without a hint, execute it, and answer the
 quantity asked for. When Math is substantially below Reading and Writing,
 give most study time to Math while keeping short Reading and Writing checks.
 
@@ -62,10 +67,13 @@ angles and triangles. After learning a method, work independent problems
 with answers at the end, then revisit it on another day among other skills.
 An immediately repeated example tests less than an unfamiliar setup.
 
-The app's automatic next step still follows the two tracks described below.
-Use these targeted lesson and practice links to start geometry now; a new
-score report does not automatically reorder those tracks. The mixed
-learning check is worked on paper and does not add attempts to Progress.
+The automatic next step now starts Geometry alongside Algebra for new
+plans, with Advanced Math next on Geometry's track. Returning plans keep
+the skill already in flight, its budget and previous passes; Geometry joins
+at the next opening rather than rewriting completed work. A score report
+does not diagnose individual skills or automatically change the plan. The
+app's mixed learning check records attempts in Progress but spends no
+skill's drill budget. The paper checks do not record attempts.
 
 ### Maintain Reading and Writing {#reading-maintenance}
 
@@ -90,10 +98,15 @@ notice slippage; strong domain bars do not warrant abandoning the section.
 
 ## The sequence {#sequence}
 
-The skills come in four stages, and each skill has a Learn page with the
-method and worked examples. You work two stages at a time: Track A runs
-stages 1 and 2, Track B runs stages 3 and 4. So Advanced Math starts in the
-first week, beside Algebra; together they are most of the section.
+The skills are grouped into four stages, and each skill has a Learn page
+with the method and worked examples. The stages organize content and the
+diagnostic; they are not four blocks you must finish in order. Track A runs
+stages 1 and 2. Track B alternates Geometry and Advanced Math from stages
+3 and 4, then covers probability and statistical inference. A fresh plan
+opens Algebra and Geometry immediately; Advanced Math follows the first
+Geometry turn, usually in the first week of regular sessions. If Easy needs
+an extra drill, that can take longer. Keep learning the method before
+rushing through a turn.
 
 If your misses involve axes, scales, endpoints or which coordinate to report,
 work through [Reading graphs](learn:sat/general/reading-graphs) alongside
@@ -102,7 +115,13 @@ the first stage. Those skills recur in lines, curves and data displays.
 1. Linear equations and functions, with percents and ratios: [linear equations in one variable](learn:sat-math/algebra/linear-equations-in-one-variable), [linear functions](learn:sat-math/algebra/linear-functions), [linear equations in two variables](learn:sat-math/algebra/linear-equations-in-two-variables), [percentages](learn:sat-math/problem-solving-and-data-analysis/percentages), [ratios, rates, and units](learn:sat-math/problem-solving-and-data-analysis/ratios-rates-and-units).
 2. Systems, inequalities and models: [systems of two linear equations](learn:sat-math/algebra/systems-of-two-linear-equations), [linear inequalities](learn:sat-math/algebra/linear-inequalities), [two-variable data](learn:sat-math/problem-solving-and-data-analysis/two-variable-data), [one-variable data](learn:sat-math/problem-solving-and-data-analysis/one-variable-data).
 3. Equivalent expressions, quadratics and exponentials: [equivalent expressions](learn:sat-math/advanced-math/equivalent-expressions), [nonlinear equations](learn:sat-math/advanced-math/nonlinear-equations), [nonlinear functions](learn:sat-math/advanced-math/nonlinear-functions), [systems of equations](learn:sat-math/advanced-math/systems-of-equations).
-4. Probability, statistics, geometry and trigonometry: [probability](learn:sat-math/problem-solving-and-data-analysis/probability), [statistical inference](learn:sat-math/problem-solving-and-data-analysis/statistical-inference), and the four Geometry and Trigonometry skills, starting with [right triangles and trigonometry](learn:sat-math/geometry-and-trigonometry/right-triangles-and-trigonometry) and [circles](learn:sat-math/geometry-and-trigonometry/circles). This is their place in the default automatic plan; use the geometry-first route above when your report or unfamiliar problems show they need earlier teaching.
+4. Probability, statistics, geometry and trigonometry: [probability](learn:sat-math/problem-solving-and-data-analysis/probability), [statistical inference](learn:sat-math/problem-solving-and-data-analysis/statistical-inference), and the four Geometry and Trigonometry skills, starting with [right triangles and trigonometry](learn:sat-math/geometry-and-trigonometry/right-triangles-and-trigonometry) and [circles](learn:sat-math/geometry-and-trigonometry/circles). These are topical groups: the automatic order below starts geometry earlier, with lines, angles and triangles.
+
+Track B's practice order is lines, angles and triangles; equivalent
+expressions; right triangles and trigonometry; nonlinear equations; circles;
+nonlinear functions; area and volume; systems of equations; probability;
+statistical inference. This keeps all four Geometry skills between Advanced
+Math turns. Track A's order stays as listed in stages 1 and 2.
 
 Use Desmos from the first week, not as a last-minute trick. Start the
 [Desmos drill routine](learn:sat/general/desmos#practice-protocol) in stage 1,
@@ -114,7 +133,7 @@ inequalities, circles and scatterplots, with the route shown after each.
 
 For each skill, the loop is:
 
-1. Read the Learn page and work its examples by hand, covering the solution first. Until a skill's first drill, the next step offers its lesson beside the drill.
+1. Read the Learn page and work its examples by hand, covering the solution first. The lesson stays beside the next drill so you can reread it on a later turn. Practice and Progress keep the current lesson visible even when Review or mixed practice is next.
 2. Practice the skill at Easy until the method is routine: at least 8 of your last 10 Easy or Medium questions in the skill right, each level counted on its own (8 of your last 10 Easy, or 8 of your last 10 Medium), each question counted once, with no hints.
 3. Practice it at Medium, with feedback after each question. Once at least 6 of your last 10 Medium questions are right, about 3 of every 10 drill questions are Hard, so harder versions become routine before the real test.
 4. Log every miss in your [error log](learn:sat/general/error-log) with its type and a rule.
@@ -122,8 +141,9 @@ For each skill, the loop is:
 
 ### How Liminal picks the next step {#next-step}
 
-- **One skill in flight on each track.** It is the track's first skill, in the order above, that has not met the practice target and has not had its turn yet. Drills alternate between the tracks, the one you drilled less recently first.
+- **One skill in flight on each track.** It is the track's first skill in its practice order, that has not met the practice target and has not had its turn yet. Drills alternate between the tracks, the one you drilled less recently first.
 - **A budget per skill.** A skill leaves flight when it meets the practice target, or after 20 questions in its own drills, at any level, since it came into flight: two drills. A turn whose drills were all Easy gets one more drill first, at Medium if Easy has become routine. The diagnostic, mixed sets, timed modules and the Desmos drill do not use it up. A skill that uses its budget first has moved on: it stays in mixed sets and Review, and Progress asks you to see where you stand on about ten official Medium questions. If its drills never got past Easy, Progress flags it too, and its lesson and prerequisite checks are worth rereading before it comes back.
+- **Keep earlier work.** When a returning plan adopts the new order, the current skill finishes with its existing budget and pass. Only future openings change; previous attempts, Review eligibility and completed turns stay as recorded.
 - **A second pass.** When both tracks have been through every skill, the skills that moved on come back into flight in the same order, each with a fresh budget.
 - **The diagnostic can start you later.** A stage is passed over while each of its domains went well on the diagnostic (at least 80% of at least 3 questions) and you have not practised its skills. Practising a passed-over skill brings it back, and the rest return in the second pass.
 - **A low official check.** A skill whose latest official check is below 60% comes back into flight at the next opening in its track, ahead of skills not yet started.
@@ -227,7 +247,8 @@ yet.
 
 - Four or five sessions of 45 to 60 minutes.
 - Start the day with Review when something is due: one set of up to 6 missed questions, most overdue first. That is the day's Review; what is still due waits for tomorrow, or for a set you choose.
-- Then follow the next step. It alternates drills on the skills in flight, one per track, with a mixed set after each drill.
+- Then read or reread the current lesson, explain the worked setup and try an independent problem before following the next drill. The next step alternates the skills in flight, one per track, with a mixed set after each drill.
+- On another day after repairing misses, repeat the mixed learning check from Practice or Progress. It includes unfamiliar skills from all four domains even when the regular mixed sets still draw from only a few started skills. Explain the setup before checking answers; then use official questions to test transfer.
 - At least once a week, a timed module of 22 questions in 35 minutes; the next step offers one after a week, or after 10 practice sets and 3 days.
 - About 20 minutes for the Desmos drill when the next step offers it: weekly until you have done four, then every 14 days.
 - End with 5 to 10 minutes on your error log.
@@ -237,9 +258,9 @@ yet.
 
 How long a skill takes depends on your answers: it leaves flight at the
 practice target or after its budget, so no skill holds the plan for long,
-and the ones that moved on come back in the second pass. Stages 1 and 3
-usually take the longest, and they are worth it: they cover most of the
-section.
+and the ones that moved on come back in the second pass. Algebra and Advanced Math still receive sustained work: they cover most of
+the section. Liminal's order is a study plan, not College Board's adaptive
+routing rule or a prediction of your score.
 
 ## If your score isn't moving {#adjust}
 

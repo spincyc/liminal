@@ -41,6 +41,7 @@ const { slug } = require("./lib/families");
 const {
   DEFAULT_ROOT,
   FACTS_FILE,
+  FIGURES_FILE,
   GENERAL_PREFIX,
   readTree,
   readCatalog,
@@ -227,7 +228,7 @@ function checkLearn({ tree, catalog, templates, today, routes }) {
   const add = (file, line, message) => errors.push({ file, line, message });
   const now = today || new Date().toISOString().slice(0, 10);
 
-  tree.others.forEach((file) => add(file, 0, `only .md pages and ${FACTS_FILE} belong in the Learn directory`));
+  tree.others.forEach((file) => add(file, 0, `only .md pages, ${FACTS_FILE} and ${FIGURES_FILE} belong in the Learn directory`));
 
   facts.forEach((fact) => {
     if (!isCalendarDate(fact.verified)) {

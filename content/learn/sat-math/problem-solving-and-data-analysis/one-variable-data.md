@@ -163,8 +163,9 @@ long as the corrected value stays on the same side of the middle.
 
 ### Combining groups {#combining-groups}
 
-The means of two groups of different sizes can't be averaged. Turn each mean
-into a total (mean × size), add the totals, and divide by the combined size.
+To combine group means, turn each into a total (mean × size), add the totals,
+and divide by the combined size. Simply averaging the means is generally
+wrong when the groups have different sizes.
 
 > **Example.** In one class, 10 students have a mean score of 72. In another,
 > 15 students have a mean of 82. What is the mean of all 25?
@@ -209,6 +210,68 @@ of 38.
 >
 > All 25 total 25 × 32 = 800 minutes, and the first 20 total 20 × 30 = 600.
 > The 5 added total 800 − 600 = 200 minutes, a mean of 200 ÷ 5 = 40.
+
+### What does each average count? {#choose-the-weight}
+
+A mean represents a total divided by a count. Before combining means,
+identify what was counted: people, observations, or groups. Each observation
+gets one share of the combined mean; each group gets a share proportional
+to its size.
+
+> **Example.** One workshop has 4 participants with a mean age of 18
+> years, and another has 12 participants with a mean age of 26 years.
+> Everyone attends exactly one workshop. Find the mean age of all
+> participants. How would the answer differ if each workshop had 4
+> participants with those same means?
+>
+> For the actual sizes, the age totals are 4(18) = 72 and 12(26) = 312.
+> The mean is (72 + 312)/(4 + 12) = 384/16 = 24 years.
+>
+> With equal sizes of 4, the mean would be
+> (4(18) + 4(26))/8 = 22 years, which also equals (18 + 26)/2.
+>
+> Averaging the two means gives each workshop equal weight. That works
+> when their counts are equal, but in the actual groups the mean age 26
+> represents three times as many people as the mean age 18.
+
+> **Try it.** A data set has the following frequency table. What is its
+> mean?
+>
+> | Value | Number of observations |
+> | --- | --- |
+> | 2 | 6 |
+> | 5 | 3 |
+> | 8 | 1 |
+>
+> **Answer.** 3.5
+>
+> There are 6 + 3 + 1 = 10 observations with total
+> 2(6) + 5(3) + 8(1) = 35. The mean is 35/10 = 3.5. The unweighted
+> mean (2 + 5 + 8)/3 = 5 treats each distinct value as equally frequent.
+> Dividing 35 by 3 uses the number of table rows rather than observations.
+
+> **Try it.** A set of 8 measurements has mean 14. Four new measurements
+> are added, giving all 12 measurements a mean of 17. What is the mean of
+> the four new measurements?
+>
+> **Answer.** 23
+>
+> The original total is 8(14) = 112; the combined total is 12(17) = 204.
+> The four added measurements total 204 − 112 = 92, so their mean is
+> 92/4 = 23. Subtracting the means, 17 − 14 = 3, finds the increase in
+> the combined mean rather than the new group's mean.
+
+> **Try it.** A club has 12 junior members with a mean age of 15 years and
+> n senior members with a mean age of 25 years. No member is in both
+> groups. The mean age of all members is 21 years. How many senior
+> members are there?
+>
+> **Answer.** 18
+>
+> The juniors' total age is 12(15) = 180. The seniors' total is 25n.
+> Thus 180 + 25n = 21(12 + n), giving 4n = 72 and n = 18.
+> Check: (180 + 18(25))/30 = 630/30 = 21. Assuming equal group sizes
+> would give a mean of 20, contrary to the given combined mean.
 
 ### Which values could be the median {#possible-medians}
 

@@ -20,6 +20,10 @@
 //                  a pipe splits cells only with spaces on both sides, so
 //                  |x − 3| stays text (or write \|)
 //   preformatted   ``` fenced blocks, kept verbatim, for aligned work
+//   figures        {{figure:<id>}} on its own line (also inside callouts
+//                  and any Try it part). The id names original SVG tree
+//                  data in content/learn/figures.json; the build checks
+//                  the drawing, accessible description and caption.
 //   callouts       "> **Example.** …" and following "> " lines; labels
 //                  Example, Fails when, Trap, Desmos, Check, Note, Rule
 //   try it         a practice problem the student works before seeing the
@@ -82,6 +86,7 @@
   const ANCHOR = new RegExp(`^${SEGMENT}$`);
   const PAGE_ID = new RegExp(`^${SEGMENT}(?:/${SEGMENT})*$`);
   const FACT_ID = /^[a-z0-9]+(?:[-.][a-z0-9]+)*$/;
+  const FIGURE = /^\{\{figure:([a-z0-9]+(?:-[a-z0-9]+)*)\}\}$/;
   const LEARN_TARGET = new RegExp(`^learn:(${SEGMENT}(?:/${SEGMENT})*)(?:#(${SEGMENT}))?$`);
   const SAME_PAGE_TARGET = new RegExp(`^#(${SEGMENT})$`);
   // lessons.html#common-core-math/8/2-3 or weeks.html#common-core-math/8/31:
@@ -407,7 +412,7 @@
   function startsBlock(lines, index) {
     const text = lines[index].text;
     return text.startsWith("```") || text.startsWith("~~~") || HEADING.test(text) ||
-      text.startsWith(">") || BULLET.test(text) || ORDERED.test(text) || isTableStart(lines, index);
+      text.startsWith(">") || text.startsWith("{{figure:") || BULLET.test(text) || ORDERED.test(text) || isTableStart(lines, index);
   }
 
   function parseHeading(entry, match, ctx) {
@@ -706,6 +711,16 @@
         index += 1;
         continue;
       }
+      if (text.startsWith("{{figure:")) {
+        const figure = FIGURE.exec(text);
+        if (!figure) ctx.report(entry.line, "a figure is {{figure:<lower-case-hyphenated-id>}} on its own line");
+        else {
+          blocks.push({ type: "figure", id: figure[1], line: entry.line });
+          ctx.uses.figures.push({ id: figure[1], line: entry.line });
+        }
+        index += 1;
+        continue;
+      }
       if (/^[ \t]/.test(text)) {
         ctx.report(entry.line, "a block cannot start indented (no indented code or nested lists; use ``` for aligned work)");
         while (index < lines.length && lines[index].text.trim()) index += 1;
@@ -805,7 +820,8 @@
   /* -------------------------------------------------------------- parse */
 
   // Returns { meta, blocks, errors: [{ line, message }], facts: [{ id, line }],
-  // links: [{ page, anchor?, line } | { site, route, line } | { url, line }] }.
+  // links: [{ page, anchor?, line } | { site, route, line } | { url, line }],
+  // figures: [{ id, line }] }.
   // Every block keeps its source line (the build drops them); inline content
   // is an array of strings and { type: strong | em | code | link | fact }
   // nodes.
@@ -826,7 +842,7 @@
       }
     });
 
-    const ctx = { report, uses: { facts: [], links: [] }, pageId: front.meta.id || null };
+    const ctx = { report, uses: { facts: [], links: [], figures: [] }, pageId: front.meta.id || null };
     const blocks = parseBlocks(lines.slice(front.next), ctx, false);
 
     const headings = blocks.filter((block) => block.type === "heading");
@@ -843,7 +859,7 @@
     });
 
     errors.sort((a, b) => a.line - b.line);
-    return { meta: front.meta, blocks, errors, facts: ctx.uses.facts, links: ctx.uses.links };
+    return { meta: front.meta, blocks, errors, facts: ctx.uses.facts, links: ctx.uses.links, figures: ctx.uses.figures };
   }
 
   /* ------------------------------------------------------------ helpers */

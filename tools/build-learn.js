@@ -4,9 +4,9 @@
 // Builds the Learn bundle, dist/content/learn-sat.js, from content/learn:
 // every page parsed with src/lib/learn-markup.js, {{fact:id}} values filled
 // in from content/learn/facts.json, and an index in catalog order. A page
-// outside the markup subset, an undefined fact, or a link to a page or
-// anchor that does not exist stops the build. Completeness against the
-// catalog and the templates is tools/check-learn.js's job.
+// outside the markup subset, an undefined fact/figure, unsafe SVG tree,
+// or a link to a missing page or anchor stops the build. Completeness
+// against the catalog and templates is tools/check-learn.js's job.
 //
 //   node tools/build-learn.js [--root <learn dir>] [--out <file>]
 //
@@ -17,12 +17,15 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const Learn = require("../src/lib/learn-markup");
+const Render = require("../src/app/render");
+const { isDeepStrictEqual } = require("node:util");
 const { slug } = require("./lib/families");
 
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_ROOT = path.join(ROOT, "content", "learn");
 const DEFAULT_OUT = path.join(ROOT, "dist", "content", "learn-sat.js");
 const FACTS_FILE = "facts.json";
+const FIGURES_FILE = "figures.json";
 const GENERAL_PREFIX = "sat/general/";
 const GENERAL_TITLE = "Across the SAT";
 
@@ -35,19 +38,84 @@ function listFiles(root, relative) {
   }).sort();
 }
 
-// { exists, files: { "<id>.md": text }, others: [paths], factsText }
+// { exists, files: { "<id>.md": text }, others: [paths], factsText, figuresText }
 function readTree(root) {
   if (!fs.existsSync(root)) return { exists: false, files: {}, others: [], factsText: null };
   const files = {};
   const others = [];
   let factsText = null;
+  let figuresText = null;
   listFiles(root).forEach((rel) => {
     const full = path.join(root, rel);
     if (rel === FACTS_FILE) factsText = fs.readFileSync(full, "utf8");
+    else if (rel === FIGURES_FILE) figuresText = fs.readFileSync(full, "utf8");
     else if (rel.endsWith(".md")) files[rel] = fs.readFileSync(full, "utf8");
     else others.push(rel);
   });
-  return { exists: true, files, others, factsText };
+  return { exists: true, files, others, factsText, figuresText };
+}
+
+// Figures are SVG trees, never XML/HTML strings or external asset URLs.
+// Match the shared renderer's exact canonical allowlist output: a script,
+// event, unknown field, truncated tree or invalid attribute fails rather
+// than silently disappearing. Viewports stay small enough for a lesson.
+function parseFigures(source) {
+  const figures = {};
+  const errors = [];
+  const add = (message) => errors.push({ file: FIGURES_FILE, line: 1, message });
+  if (source == null) return { figures, errors };
+  let list;
+  try { list = JSON.parse(source); }
+  catch (error) { add(`not valid JSON (${error.message})`); return { figures, errors }; }
+  if (!Array.isArray(list)) { add("must be an array of { id, alt, caption, svg, notToScale? }"); return { figures, errors }; }
+  list.forEach((figure, index) => {
+    const label = `figure ${figure && figure.id || index}`;
+    if (!figure || typeof figure !== "object" || Array.isArray(figure) ||
+        typeof figure.id !== "string" || !Learn.ANCHOR.test(figure.id)) {
+      add(`${label}: needs a lower-case hyphenated id`); return;
+    }
+    if (Object.hasOwn(figures, figure.id)) { add(`${label}: duplicate id`); return; }
+    const fields = ["id", "alt", "caption", "svg", "notToScale"];
+    if (Object.keys(figure).some((key) => !fields.includes(key))) add(`${label}: unknown field`);
+    ["alt", "caption"].forEach((key) => {
+      const value = figure[key];
+      if (typeof value !== "string" || !value.trim() || value.length > (key === "alt" ? 2500 : 400) || /[<>\x00-\x1f]/.test(value)) {
+        add(`${label}: ${key} must be nonempty plain text (at most ${key === "alt" ? 2500 : 400} characters)`);
+      }
+    });
+    if (figure.notToScale !== undefined && typeof figure.notToScale !== "boolean") add(`${label}: notToScale must be boolean`);
+    let clean = null;
+    try { clean = Render.sanitizeSvgTree(figure.svg); }
+    catch (error) { /* Malformed arrays/objects fail the same strict check. */ }
+    if (!clean || !isDeepStrictEqual(clean, figure.svg)) add(`${label}: svg must be a canonical safe SVG tree (no dropped nodes, attributes or fields)`);
+    const finiteTree = (node) => {
+      if (typeof node.text === "string") return node.text.length <= 400;
+      return node.attributes.every((attribute) => {
+        // Paint and font names are not coordinates. Other numeric values,
+        // including path/transform parameters, must remain finite and local.
+        if (["fill", "stroke", "font-family"].includes(attribute.name)) return true;
+        const numbers = attribute.value.match(/[-+]?(?:\d*\.?\d+)(?:e[-+]?\d+)?/gi) || [];
+        return numbers.every((value) => Number.isFinite(Number(value)) && Math.abs(Number(value)) <= 1000000);
+      }) && node.children.every(finiteTree);
+    };
+    if (clean && !finiteTree(clean)) add(`${label}: SVG numbers must be finite and within ±1000000; text nodes at most 400 characters`);
+    const uniqueAttributes = (node) => typeof node.text === "string" ||
+      (new Set(node.attributes.map((attribute) => attribute.name)).size === node.attributes.length &&
+       node.children.every(uniqueAttributes));
+    if (clean && !uniqueAttributes(clean)) add(`${label}: SVG attribute names must be unique on each element`);
+    // Validate the explicit viewport itself. svgSize() intentionally falls
+    // back to width/height for other renderers; that fallback must not hide
+    // an invalid authored viewBox here. Duplicate attributes are ambiguous
+    // because tree lookup reads the first while DOM assignment keeps the last.
+    const viewBoxes = clean ? clean.attributes.filter((attribute) => attribute.name === "viewBox") : [];
+    const viewport = viewBoxes.length === 1 ? viewBoxes[0].value.trim().split(/[\s,]+/).map(Number) : [];
+    if (viewport.length !== 4 || !viewport.every(Number.isFinite) ||
+        viewport[2] < 160 || viewport[2] > 640 || viewport[3] < 120 || viewport[3] > 480) {
+      add(`${label}: SVG needs a finite viewBox, width 160–640 and height 120–480`);
+    }
+    figures[figure.id] = figure;
+  });
+  return { figures, errors };
 }
 
 function readCatalog() {
@@ -101,6 +169,9 @@ function parseFacts(factsText) {
 // against the lesson and weekly catalogs.
 function loadLearn(tree) {
   const { facts, errors } = parseFacts(tree.factsText);
+  const figureData = parseFigures(tree.figuresText);
+  errors.push(...figureData.errors);
+  const figures = figureData.figures;
   const parsed = {};
   Object.keys(tree.files).forEach((file) => {
     const id = file.replace(/\.md$/, "");
@@ -113,6 +184,9 @@ function loadLearn(tree) {
       errors.push({ file, line: 1, message: `front matter id "${result.meta.id}" must be the page's path, "${id}"` });
     }
     parsed[id] = Object.assign({ id, file }, result);
+    result.figures.forEach((use) => {
+      if (!Object.hasOwn(figures, use.id)) errors.push({ file, line: use.line, message: `{{figure:${use.id}}} is not defined in ${FIGURES_FILE}` });
+    });
   });
 
   const pages = {};
@@ -161,7 +235,7 @@ function loadLearn(tree) {
     record.links = page.links;
     pages[page.id] = record;
   });
-  return { pages, facts, errors };
+  return { pages, facts, figures, errors };
 }
 
 // The index in catalog order: each SAT section's domains and skills, then
@@ -197,7 +271,7 @@ function buildIndex(pages, catalog) {
 }
 
 // The browser bundle: source lines and build-only fields are dropped.
-function bundleSource(pages, index) {
+function bundleSource(pages, index, figures) {
   const shipped = {};
   Object.keys(pages).sort().forEach((id) => {
     const page = Object.assign({}, pages[id]);
@@ -206,7 +280,7 @@ function bundleSource(pages, index) {
     delete page.links;
     shipped[id] = page;
   });
-  const json = JSON.stringify({ pages: shipped, index }, (key, value) => (key === "line" ? undefined : value));
+  const json = JSON.stringify({ pages: shipped, index, figures: figures || {} }, (key, value) => (key === "line" ? undefined : value));
   return `/* Generated by tools/build-learn.js from content/learn. */\nwindow.LIMINAL_LEARN = ${json};\n`;
 }
 
@@ -235,7 +309,7 @@ function build(options) {
     process.exit(1);
   }
   fs.mkdirSync(path.dirname(out), { recursive: true });
-  fs.writeFileSync(out, bundleSource(loaded.pages, buildIndex(loaded.pages, readCatalog())));
+  fs.writeFileSync(out, bundleSource(loaded.pages, buildIndex(loaded.pages, readCatalog()), loaded.figures));
   const count = Object.keys(loaded.pages).length;
   if (!tree.exists) {
     console.warn(`Learn: ${path.relative(ROOT, root)} is missing; wrote an empty Learn bundle.`);
@@ -267,10 +341,12 @@ if (require.main === module) {
 module.exports = {
   DEFAULT_ROOT,
   FACTS_FILE,
+  FIGURES_FILE,
   GENERAL_PREFIX,
   readTree,
   readCatalog,
   parseFacts,
+  parseFigures,
   loadLearn,
   buildIndex,
   bundleSource,

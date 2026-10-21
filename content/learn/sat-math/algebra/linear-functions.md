@@ -251,6 +251,72 @@ origin). That often removes two choices.
 > point: find where each candidate crosses an axis and check it against the
 > graph's labeled values.
 
+### Rate, start, or requested value? {#choose-the-quantity}
+
+Before calculating, name what the answer must describe. A rate, a starting
+amount, and an amount later in the process have different meanings even
+when they come from the same line.
+
+| Asked for | Read or calculate | Units in a cost model |
+| --- | --- | --- |
+| change per unit of input | slope m | dollars per hour |
+| starting amount | f(0), the y-intercept's output | dollars |
+| amount at input c | f(c) | dollars |
+| input giving output d | solve f(x) = d | hours |
+
+> **Example.** A tank's volume V(t), in liters, is linear in time t, in
+> minutes. Its table gives V(2) = 34, V(5) = 25 and V(9) = 13. Find the
+> rate of change, the initial volume and the volume after 7 minutes.
+>
+> The input gaps are 3 and 4, so compare changes per minute:
+> (25 − 34)/(5 − 2) = −3 and (13 − 25)/(9 − 5) = −3 liters per minute.
+>
+> Since V(2) = 34, the volume at time 0 was 34 + 2(3) = 40 liters.
+> Thus V(t) = 40 − 3t and V(7) = 19 liters.
+>
+> The answers −3, 40 and 19 describe different quantities. Subtracting
+> adjacent outputs alone gives −9 and −12 because the time gaps differ.
+> Dividing volume by time, such as 34/2, includes the starting volume and
+> does not give the draining rate.
+
+> **Try it.** Renting a tool for h hours costs C(h) = 9 + 6h dollars. A
+> customer says that $9 is the hourly charge and $6 is the starting fee.
+> Correct those claims and find the cost of renting the tool for 4 hours.
+>
+> **Answer.** The hourly charge is $6, the starting fee is $9, and 4 hours
+> costs $33.
+>
+> Increasing h by 1 adds $6. At h = 0, C(0) = 9. At h = 4,
+> C(4) = 9 + 6(4) = 33. Returning 6 or 9 for the final cost stops before
+> using the requested input.
+
+> **Try it.** The table gives values of a linear function f. At what input
+> is f(x) = 8?
+>
+> | x | f(x) |
+> | --- | --- |
+> | −2 | 18 |
+> | 1 | 12 |
+> | 5 | 4 |
+>
+> **Answer.** x = 3
+>
+> The slopes are (12 − 18)/(1 − (−2)) = −2 and
+> (4 − 12)/(5 − 1) = −2. From (1, 12), reaching output 8 means
+> decreasing by 4, which takes 2 more input units: x = 1 + 2 = 3.
+> Check: f(x) = 14 − 2x gives f(3) = 8. The rate −2 is not the
+> requested input; 8 is the specified output, not the answer.
+
+> **Try it.** A linear function f increases by 12 whenever its input
+> increases by 4. Its graph passes through (3, 17). What is f(0)?
+>
+> **Answer.** 8
+>
+> The slope is 12/4 = 3 per input unit. Move back 3 input units from
+> (3, 17): f(0) = 17 − 3(3) = 8. Check: f(x) = 3x + 8 gives f(3) = 17.
+> Using 12 as the slope treats a four-unit change as a one-unit change;
+> using 17 as the intercept treats x = 3 as x = 0.
+
 For a harder version, see
 [an x-intercept limited to one side](#intercept-on-one-side).
 

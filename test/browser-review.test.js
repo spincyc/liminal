@@ -65,10 +65,20 @@ function dom() {
     set textContent(value) { this.childNodes = [new Text(value)]; }
     get textContent() { return this.childNodes.map((child) => child.textContent).join(""); }
     get children() { return this.childNodes.filter((child) => child.nodeType === 1); }
+    get firstChild() { return this.childNodes[0] || null; }
     get firstElementChild() { return this.children[0] || null; }
+    get options() { return this.querySelectorAll("option"); }
+    set innerHTML(value) { if (value !== "") throw Error("Only clearing is supported by this DOM harness"); this.replaceChildren(); }
     get parentElement() { return this.parentNode && this.parentNode.nodeType === 1 ? this.parentNode : null; }
     get isConnected() { return this === document.documentElement || Boolean(this.parentNode && this.parentNode.isConnected); }
     appendChild(node) { node.remove(); this.childNodes.push(node); node.parentNode = this; return node; }
+    insertBefore(node, reference) {
+      if (!reference) return this.appendChild(node);
+      node.remove();
+      this.childNodes.splice(this.childNodes.indexOf(reference), 0, node);
+      node.parentNode = this;
+      return node;
+    }
     before(...nodes) {
       const parent = this.parentNode;
       if (!parent) return;
@@ -228,6 +238,124 @@ function appFixture(blockStorage = false, practiceCore) {
 }
 
 const mc = { id: "sat-math-0001", sectionKey: "sat-math", test: "SAT", section: "Math", responseType: "multiple-choice", stem: "Choose two.", choices: ["2", "3", "4", "5"], correctAnswer: 0, hint: "Use the first option.", domain: "Algebra", skill: "Equations", difficulty: "Medium" };
+
+// Mount the real setup/progress markup into the behavioral harness. Layout,
+// native focus and printing still need a browser; these tests exercise wiring.
+function learningViewsFixture() {
+  const env = environment();
+  const { window, document } = env;
+  const source = fs.readFileSync(path.join(__dirname, "../src/practice.html"), "utf8");
+  const stack = [document.body];
+  const voids = new Set(["meta", "link", "input", "br", "hr", "img"]);
+  for (const match of source.matchAll(/<!--[\s\S]*?-->|<![^>]*>|<\/?([a-z][a-z0-9-]*)\b([^>]*)>|([^<]+)/gi)) {
+    if (!match[1]) continue;
+    const tag = match[1].toLowerCase();
+    if (match[0].startsWith("</")) { if (!voids.has(tag) && stack.length > 1) stack.pop(); continue; }
+    const element = document.createElement(tag);
+    for (const [, key, value] of match[2].matchAll(/([a-z][\w-]*)(?:="([^"]*)")?/gi)) {
+      element.setAttribute(key, value || "");
+      if (["value", "type", "name", "href"].includes(key)) element[key] = value || "";
+      if (key === "checked") element.checked = true;
+    }
+    stack.at(-1).appendChild(element);
+    if (!voids.has(tag)) stack.push(element);
+  }
+  window.LiminalAnalytics = require("../src/lib/analytics");
+  window.LiminalProgressIO = require("../src/lib/progress-io");
+  const Progress = require("../src/lib/progress");
+  const practice = require("../src/lib/practice");
+  const catalog = require("../content/catalog.json");
+  let record = Progress.empty();
+  let testName = "SAT";
+  let stepSkill = "Lines, angles, and triangles";
+  const core = window.PracticeCore;
+  const section = (key) => catalog.sections.find((entry) => entry.key === key);
+  const rows = (test) => window.LiminalAnalytics.skillMap([], catalog.sections.filter((entry) => entry.test === test));
+  const guide = (test) => {
+    const map = rows(test);
+    const row = map.find((entry) => entry.sectionKey === "sat-math" && entry.skill === stepSkill);
+    const step = row ? { kind: "skill", sectionKey: "sat-math", skill: row.skill, row, level: "Easy" } : null;
+    return { test, sections: catalog.sections.filter((entry) => entry.test === test), rows: map,
+      recentSection: test === "SAT" ? "sat-math" : "act-english", placements: {}, dueCount: 0, plans: {},
+      step: () => step, lessonStep: () => step, row: (key, skill) => map.find((entry) => entry.sectionKey === key && entry.skill === skill),
+    };
+  };
+  const ctx = {
+    core, practice, Progress, catalog, runs: require("../src/lib/runs"), DRILL_COUNT: 10,
+    store: { get: () => record }, currentTest: () => testName, guide,
+    sectionByKey: section, testSections: (test = testName) => catalog.sections.filter((entry) => entry.test === test),
+    registry: (key) => key === "sat-math" ? require("../content/templates/sat-math.json") : null,
+    templatesNow: () => [], bankIfLoaded: () => [], desmosRoutes: () => null,
+    templateInfo: () => ({}),
+    activeSession: { load: () => null }, showView() {},
+    levelWords: () => "Start at Easy.",
+    stepWords: (step) => step && ({ title: step.skill, reason: "Current focus.", button: "Start next step",
+      learnHref: practice.learnHref(step.row) }),
+    formatNumber: String, formatDuration: String, sectionLabel: (key) => section(key).shortLabel,
+    setStatus: (node, message, type) => { node.textContent = message; node.className = `status-line ${type || ""}`; },
+    startTransfer: async () => 12,
+  };
+  return { ...env, ctx, setTest: (value) => { testName = value; }, setSkill: (value) => { stepSkill = value; },
+    setRecord: (value) => { record = value; } };
+}
+
+test("Practice keeps the current lesson and fresh check visible after drilling and restores its button after failure", async () => {
+  const env = learningViewsFixture();
+  env.load("views/practice.js");
+  const view = env.window.LiminalViews.practice(env.ctx);
+  const region = env.document.getElementById("transferPractice");
+  const lesson = env.document.getElementById("transferLesson");
+  assert.equal(region.classList.contains("hidden"), false);
+  assert.match(lesson.href, /lines-angles-and-triangles$/);
+  env.setRecord({ ...env.ctx.Progress.empty(), sessions: [{ id: "d", kind: "drill", skill: "Lines, angles, and triangles", sectionKey: "sat-math" }] });
+  view.onProgressChange();
+  assert.match(lesson.href, /lines-angles-and-triangles$/, "drilling does not remove the lesson");
+  env.setSkill("Circles");
+  view.onProgressChange();
+  assert.match(lesson.href, /circles$/);
+  assert.match(lesson.textContent, /Circles/);
+  const button = env.document.getElementById("transferStart");
+  env.ctx.startTransfer = async (key) => { assert.equal(key, "sat-math"); throw Error("Temporary loading failure"); };
+  button.click();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(button.disabled, false);
+  assert.match(env.document.getElementById("transferStatus").textContent, /Temporary loading failure/);
+  let opened = 0;
+  env.ctx.startTransfer = async () => { opened += 1; return 12; };
+  button.click();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(opened, 1);
+  env.setTest("ACT");
+  view.onTestChange(false);
+  assert.equal(region.classList.contains("hidden"), true);
+});
+
+test("Progress offers a repair lesson and fresh check before any answers, with no SAT controls in ACT", async () => {
+  const env = learningViewsFixture();
+  env.setSkill(null);
+  env.load("views/progress.js");
+  const view = env.window.LiminalViews.progress(env.ctx);
+  await view.open({});
+  let focus = env.document.querySelector(".transfer-focus");
+  assert.ok(focus);
+  assert.match(focus.textContent, /Unpractised skills may appear/);
+  assert.match(focus.querySelector("a").href, /lines-angles-and-triangles$/);
+  assert.match(focus.textContent, /Start with triangles and similarity/);
+  env.setSkill("Circles");
+  await view.open({});
+  focus = env.document.querySelector(".transfer-focus");
+  assert.match(focus.querySelector("a").href, /circles$/, "repair follows the current guide even before any answers");
+  const check = focus.querySelector("button");
+  let launched;
+  env.ctx.startTransfer = async (key) => { launched = key; return 12; };
+  check.click();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(launched, "sat-math");
+  assert.equal(check.disabled, false);
+  env.setTest("ACT");
+  await view.open({});
+  assert.equal(env.document.querySelector(".transfer-focus"), null);
+});
 const essay = { id: "act-writing-0001", sectionKey: "act-writing", test: "ACT", section: "Writing", responseType: "essay", stem: "Develop a position on shared gardens.", stimulus: { type: "writing-prompt", content: "Consider shared gardens and their costs." }, domain: "Ideas and Analysis", skill: "Engage perspectives", difficulty: "Medium", hint: "Compare values.", correctAnswer: { sampleThesis: "A trial can test the idea.", outline: ["State a position.", "Address a limitation."], reviewCriteria: ["Develop your reasons."] } };
 const draft = "A shared garden can help neighbors.\n\nA trial would measure both benefits and costs.";
 

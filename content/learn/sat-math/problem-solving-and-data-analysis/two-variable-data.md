@@ -209,24 +209,56 @@ quick and usually close enough to pick among the choices.
 > the trend, or the choices are close together. Then use points on the drawn
 > line itself, or run a regression in Desmos.
 
+### Read the line and the observation separately {#read-the-display}
+
+The display can give information without an equation. Read the question's
+input on the horizontal axis, move vertically to the requested object, then
+read across to the vertical axis. Do not switch inputs while comparing a
+model and an observation.
+
+> **Example.** For a 6-kilometer trip in the graph, find the predicted time
+> and the observed time.
+>
+> {{figure:model-read-example}}
+>
+> Above x = 6, the dashed model line is at 40 minutes. The filled dot is
+> at 50 minutes. Thus the prediction is 40 and the observation is 50.
+> The residual is 50 − 40 = 10 minutes; the model predicted too low.
+> Reading a neighboring dot would compare two different trips.
+
+> **Try it.** For the workshop that operated 10 hours in this graph, find
+> the model's prediction and the observed number of parts. Calculate the
+> residual, with its sign and units.
+>
+> {{figure:model-read-try}}
+>
+> **Answer.** Predicted 100 parts; observed 90 parts; residual −10 parts.
+>
+> At x = 10, read the dashed line at 100 and the filled dot at 90, halfway
+> between the 80 and 100 ticks. Residual = observed − predicted =
+> 90 − 100 = −10 parts. The model predicted too high by 10 parts.
+
 ### Line graphs over time {#line-graphs}
 
 A line graph joins one value for each time with segments. The change
-between two times is the later value minus the earlier one, and the
-steepest segment, up or down, is the greatest change between consecutive
-times. Read each value from the gridlines, not from how long a segment
-looks.
+between two times is the later value minus the earlier one. With equal
+time intervals, the steepest rising segment has the greatest increase and
+the steepest falling segment has the greatest decrease. With unequal time
+intervals, compare endpoint differences for change, and divide by elapsed
+time for a rate. Read the axis units and values from the graph before
+comparing; segment length alone does not tell you the change.
 
 > **Example.** A line graph shows a library's visitors, in thousands, each
-> year from 2018 to 2023. Learn shows no images, so here are the plotted
-> values:
+> year from 2018 to 2023.
 >
-> | Year | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 |
-> | --- | --- | --- | --- | --- | --- | --- |
-> | Visitors (thousands) | 42 | 45 | 39 | 30 | 38 | 47 |
+> {{figure:visitors-line}}
 >
 > Between which two consecutive years did visits increase the most, and in
 > how many of the years were there more than 40 thousand visitors?
+>
+> Read the horizontal axis one year at a time. Read the six heights as
+> 42, 45, 39, 30, 38 and 47 thousand visitors; the small labels above the
+> dots give exact values between the gridlines.
 >
 > Changes: +3, −6, −9, +8 and +9. The greatest increase, +9, is from 2022
 > to 2023. The −9 from 2020 to 2021 is just as steep, but it is a decrease.
@@ -235,11 +267,9 @@ looks.
 > count as "more than".
 
 > **Try it.** A line graph shows the members of a running club at the start
-> of each month. The plotted values are:
+> of each month.
 >
-> | Month | Jan | Feb | Mar | Apr | May | Jun |
-> | --- | --- | --- | --- | --- | --- | --- |
-> | Members | 24 | 20 | 28 | 30 | 22 | 32 |
+> {{figure:members-line}}
 >
 > Between which two consecutive months did membership increase the most,
 > and in how many of the months were there at least 28 members?
@@ -251,7 +281,7 @@ looks.
 >
 > At least 28: 28, 30 and 32, so 3 months. "At least" includes the 28.
 
-On the test the graph itself is shown. Read line graphs from real figures in
+Read more original line graphs in
 [two-variable data practice](practice.html#practice/sat-math/two-variable-data).
 
 ### Residuals {#residuals}

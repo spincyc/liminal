@@ -196,6 +196,46 @@ between them.
 > side along the wall is 60 − 2(15) = 30 meters, and the area is
 > 15 · 30 = 450 square meters. The traps are 15 and 30, the side lengths.
 
+### Zeros, extreme values, and their inputs {#choose-the-feature}
+
+A zero is an input where the output is 0. A minimum or maximum value is
+an output. The input where that extreme occurs is the other coordinate of
+the vertex. Name which one the question requests before choosing a form
+or reading a point.
+
+> **Example.** For f(x) = −2(x − 1)(x − 7), find its zeros, the input
+> where its maximum occurs, and its maximum value.
+>
+> f(x) = 0 at x = 1 and x = 7. The vertex is halfway between these
+> inputs, at x = 4. Since the leading coefficient is negative, this vertex
+> is a maximum. Its output is f(4) = −2(3)(−3) = 18.
+>
+> The zeros are 1 and 7, the maximizing input is 4, and the maximum value
+> is 18. Solving f(x) = 0 answers where the graph meets the axis; it does
+> not find the highest output. Averaging the zeros finds the vertex's
+> input, so a second step is needed to find its output.
+
+> **Try it.** The function g is defined for all real x by
+> g(x) = (x + 2)² − 9. What is its minimum value, and at what input does
+> that value occur? What are its zeros?
+>
+> **Answer.** Minimum value −9 at x = −2; zeros −5 and 1.
+>
+> The square is at least 0, becoming 0 at x = −2. Thus the least output
+> is −9. For zeros, (x + 2)² = 9 gives x + 2 = 3 or −3, hence x = 1 or
+> −5. The input −2 is not the minimum value, and setting g(x) = 0
+> finds outputs equal to 0 rather than the least output.
+
+> **Try it.** A downward-opening parabola has vertex (3, 16) and
+> x-intercepts (−1, 0) and (7, 0). What is its maximum value? For which
+> inputs is its output 0?
+>
+> **Answer.** Maximum value 16; output 0 at inputs −1 and 7.
+>
+> The vertex is the highest point, so its output coordinate, 16, is the
+> maximum. Each x-intercept has output 0, so its input supplies a zero.
+> Answering 3 for the maximum gives where it occurs rather than its value.
+
 For harder versions, see
 [signs of the constants from a description](#signs-from-the-graph) and
 [two zeros in an interval](#zeros-in-an-interval).
@@ -292,6 +332,61 @@ period, and the percent does not scale with the period.
 >
 > The factor per half hour is 0.9: the mass decreases 10% every half hour
 > (not 9.5%, which is half of 19%).
+
+### What stays fixed? {#choose-the-model}
+
+Check the input spacing before comparing outputs. With unequal gaps,
+constant output differences are not a test for a line, and constant output
+ratios are not a test for an exponential. A line has the same change per
+input unit. For f(x) = a · bˣ with nonzero a and b > 0, an input gap of d
+multiplies the output by b raised to d. Ratios over gaps of 2 and 3 need
+not match.
+
+In words, ask what a percent is taken of. A fixed percent of the original
+amount produces equal additions or subtractions. A fixed percent of the
+current amount compounds.
+
+> **Example.** Three accounts each start with $1,000. Account A gains $100
+> a year, B gains 10% of its original balance a year, and C gains 10% of
+> its current balance a year. With no other transactions, what are their
+> balances after 3 years?
+>
+> A adds $100 three times: 1,000 + 3(100) = $1,300. B also adds $100
+> each year because 10% of the original $1,000 stays $100. Both follow
+> the linear rule 1,000 + 100t.
+>
+> C multiplies by 1.10 each year: 1,000, then 1,100, then 1,210, then
+> $1,331. Its rule is `1000·1.10^t`.
+>
+> The word "percent" alone does not choose an exponential model. The
+> changing balance used as the base makes C exponential; taking 30% of
+> the original balance would miss the later increases in C.
+
+> **Try it.** The table lists values of an exponential function
+> f(x) = a · bˣ, where a > 0 and b > 0. Find b and f(3).
+>
+> | x | f(x) |
+> | --- | --- |
+> | 0 | 8 |
+> | 2 | 32 |
+> | 5 | 256 |
+>
+> **Answer.** b = 2 and f(3) = 64.
+>
+> The first gap of 2 gives b² = 32/8 = 4, so b = 2. The next gap is 3,
+> and 256/32 = 8 = 2³, which confirms the same per-unit factor. Since
+> a = f(0) = 8, f(3) = 8 · 2³ = 64. The ratios 4 and 8 differ because
+> the input gaps differ; neither is the factor for a one-unit step.
+
+> **Try it.** A machine bought for $250 loses an amount equal to 20% of
+> its purchase price each year. What is it worth after 3 years?
+>
+> **Answer.** $100
+>
+> Each year's loss is the same 0.20(250) = $50. After 3 years, the value
+> is 250 − 3(50) = 100. Using `250·0.80^3` gives $128, but models
+> losing 20% of each year's current value. The problem fixes the loss
+> against the purchase price, so the second year's loss is still $50.
 
 For a harder version, see [an exponential with a shift](#shifted-exponential).
 

@@ -89,7 +89,7 @@ test("stuck at Easy only when the skill's drills never left Easy", () => {
     ["moved-on", true, false]);
 });
 
-test("the lesson is offered until a skill's first drill, whatever other sets asked of it", () => {
+test("the lesson remains available after a first drill, with first learning distinguished", () => {
   // Six diagnostic and module answers, no drill: the lesson is still offered.
   const others = answers(3, trackA[0], { sessionId: "diag" }).concat(answers(3, trackA[0], { sessionId: "mod" }));
   const sessions = [session("diag", "diagnostic"), session("mod", "module")];
@@ -97,8 +97,7 @@ test("the lesson is offered until a skill's first drill, whatever other sets ask
   let step = Analytics.nextStep(rows, { attempts: others, sessions, now: clock + HOUR });
   assert.equal(step.skill, trackA[0]);
   assert.equal(step.learnPage, "sat-math/algebra/linear-equations-in-one-variable");
-  // After its first drill, no: once Track B has had its first drill (with
-  // its lesson offered), the step comes back to Track A without it.
+  // The lesson stays available when the turn comes back, now as a reread.
   const drilled = others.concat(answers(2, trackA[0], { difficulty: "Easy", sessionId: "d" }));
   const withDrill = sessions.concat(session("d", "drill", { skill: trackA[0] }));
   step = Analytics.nextStep(Analytics.skillMap(drilled, [mathSection]), { attempts: drilled, sessions: withDrill, now: clock + HOUR });
@@ -107,7 +106,8 @@ test("the lesson is offered until a skill's first drill, whatever other sets ask
   const after = withDrill.concat(session("e", "drill", { skill: trackB[0] }), session("mx", "mixed"));
   step = Analytics.nextStep(Analytics.skillMap(both, [mathSection]), { attempts: both, sessions: after, now: clock + HOUR });
   assert.equal(step.skill, trackA[0]);
-  assert.equal(step.learnPage, undefined);
+  assert.equal(step.learnPage, Analytics.learnPageOf(step.row));
+  assert.equal(step.lessonFirst, false);
 });
 
 test("an official check is prompted when a skill's turn ends short of its target, until one is recorded", () => {

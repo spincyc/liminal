@@ -8,6 +8,31 @@
   margin-bottom: 24px;
 }
 
+/* Figures keep their authored size and shrink to the reading column. Dark
+   ink on a white plot preserves open endpoints and dashed lines in either
+   screen theme and on paper; no information relies on color. */
+.learn-figure {
+  margin: 20px 0;
+  max-width: 100%;
+  break-inside: avoid;
+}
+
+.learn-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  color: #111;
+  border: 1px solid var(--color-line);
+}
+
+.learn-figure figcaption,
+.learn-figure-note {
+  margin: 8px 0 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
 /* ------------------------------------------------------------------ index */
 
 .learn-group + .learn-group {
@@ -553,6 +578,11 @@
 }
 
 @media print {
+  .learn-figure svg {
+    border-color: #777;
+    print-color-adjust: exact;
+  }
+
   .learn-toc,
   .learn-actions,
   .learn-subjects,

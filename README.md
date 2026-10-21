@@ -203,13 +203,18 @@ never recorded. Liminal is now built to keep practice honest:
   starts with quick prerequisite checks linked to the Grade 6–8 and
   high-school lessons that teach them, and keeps the hardest versions in a
   section of their own.
-  A geometry-first route brings the weakest Math domain into the first week
-  while keeping Algebra, Advanced Math and data work active. An original
+  Fresh Math plans begin with Algebra and Geometry, then interleave Geometry
+  and Advanced Math while keeping data work active. Actual plotted examples
+  teach unequal axis scales, open and closed endpoints, and observations
+  versus predictions; a triangle diagram shows perpendicular height.
+  An original
   [mixed learning check](https://spincyc.github.io/liminal/learn.html#sat/general/math-transfer)
   asks students to choose methods without skill labels, record their setup,
   repair specific gaps and try a different set on another day. Geometry
-  lessons contrast neighboring methods and include independent practice;
-  these checks guide teaching rather than estimate scores.
+  lessons contrast neighboring methods and include independent practice.
+  Algebra, functions, percentages and data lessons also contrast competing
+  methods and requested quantities. These checks guide teaching rather than
+  estimate scores.
 - **Practice.** A set of any size, by domain, skill and difficulty, with
   feedback after each question or at the end and an optional real-pace timer.
   **Drill one skill** varies numbers or context; finite scene pools can repeat.
@@ -218,6 +223,11 @@ never recorded. Liminal is now built to keep practice honest:
   has a code that retakes it exactly.
   Fresh sets and booklets share recent content and topic history. A notice
   explains when a limited pool requires recent material to appear again.
+  **Learn, then check** keeps the current Math lesson visible after drills
+  and offers a fresh 12-question check with answers at the end: six Geometry
+  questions and two from each other Math domain, half Easy and half Medium.
+  Designs rotate with serve history. This focused learning mix differs from
+  a test module; unfamiliar skills can identify what needs teaching next.
 - **Take a test.** One SAT module (27 Reading and Writing questions in 32
   minutes, or 22 Math in 35), one section (Module 1, then a harder or easier
   Module 2 by how Module 1 went), or the full-length SAT with a 10-minute
@@ -253,9 +263,11 @@ never recorded. Liminal is now built to keep practice honest:
   pace, a history of sets with an accuracy trend, a plan with your test date
   and weekly goal, and one next step that every page agrees on: Review
   first once a day, then the SAT Math plan. The plan keeps two skills in
-  flight, one from Algebra and data and one from Advanced Math and geometry,
-  each with a budget of two drills before it moves on (skills that fall
-  short are flagged, prompted for an official check, and come back). It
+  flight, one from Algebra and data and one interleaving Geometry with
+  Advanced Math. Each skill moves on at its practice target or after two
+  drills, with an extra drill if its turn never left Easy. Skills that fall
+  short are flagged, prompted for an official check, and come back.
+  Returning plans keep their current turns and used budgets. The plan
   rotates in a mixed set after each drill, a timed 22-question module about
   weekly, and a Desmos drill weekly at first and then every two weeks, and
   mixes Hard questions into a skill's drills once Medium is routine.

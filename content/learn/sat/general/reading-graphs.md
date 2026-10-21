@@ -16,9 +16,13 @@ Equal distances on a linear axis represent equal changes in value. The two
 axes need not use the same step. Count intervals between labeled ticks,
 not the number of tick marks, and keep any multiplier such as "thousands."
 
-> **Example.** On a line graph, each horizontal grid interval represents
-> 2 hours and each vertical interval represents 30 liters. A line passes
-> through (2, 90) and (6, 150). What is its rate of change?
+> **Example.** What rate of change does this line show, in liters per hour?
+>
+> {{figure:scale-rate-example}}
+>
+> Start with the horizontal axis: each interval is 2 hours. The vertical
+> intervals are 30 liters. Reading across and down from the two dots gives
+> (2, 90) and (6, 150).
 >
 > The output rises 150 − 90 = 60 liters while time increases
 > 6 − 2 = 4 hours. The rate is 60/4 = 15 liters per hour.
@@ -26,13 +30,18 @@ not the number of tick marks, and keep any multiplier such as "thousands."
 > On the page the line rises two squares and runs two squares, but a slope
 > of 1 would ignore the different units per square.
 
-> **Try it.** On a line graph, each horizontal grid interval represents
-> 5 minutes and each vertical interval represents 40 meters. A line passes
-> through (10, 120) and (25, 300). What is its rate of change?
+> **Try it.** Read this graph to find the rate of change in meters per
+> minute. Write two coordinates before calculating.
+>
+> {{figure:scale-rate-try}}
+>
+> **Hint.** Read the units per tick on each axis. The upper point sits
+> halfway between 280 and 320 meters.
 >
 > **Answer.** 12 meters per minute
 >
-> The output rises 300 − 120 = 180 meters while time increases
+> The dots are (10, 120) and (25, 300). The output rises
+> 300 − 120 = 180 meters while time increases
 > 25 − 10 = 15 minutes, so the rate is 180/15 = 12 meters per minute. On
 > the page the line rises 4.5 squares over 3 squares; that 1.5 is not the
 > rate.
@@ -93,8 +102,13 @@ The domain contains all allowed inputs, read horizontally. The range
 contains all attained outputs, read vertically. An open circle excludes
 that point; a filled circle includes it. An arrow means the graph continues.
 
-> **Example.** A graph consists only of a straight segment from an open
-> circle at (−2, 5) to a filled circle at (4, −1). Find its domain and range.
+> **Example.** Find the domain and range of the entire graph shown.
+>
+> {{figure:endpoint-example}}
+>
+> Read the endpoint coordinates first: (−2, 5) is open and (4, −1) is
+> filled. Project the segment onto the horizontal axis for the domain,
+> then onto the vertical axis for the range.
 >
 > The inputs extend from −2, excluded, to 4, included: −2 < x ≤ 4.
 >
@@ -102,8 +116,12 @@ that point; a filled circle includes it. An arrow means the graph continues.
 > The smallest output comes from the right endpoint, so copying the
 > domain's inequality signs in the same order would be wrong.
 
-> **Try it.** A graph consists only of a straight segment from a filled
-> circle at (−1, 4) to an open circle at (5, −2). Find its domain and range.
+> **Try it.** Find the domain and range of the entire graph shown.
+>
+> {{figure:endpoint-try}}
+>
+> **Hint.** The right endpoint supplies the least output. Check whether
+> that point is included before choosing the inequality sign.
 >
 > **Answer.** Domain −1 ≤ x < 5; range −2 < y ≤ 4.
 >
@@ -180,19 +198,35 @@ A scatterplot point is an observation. A fitted line gives a prediction at
 the same input. Their vertical difference is the residual:
 observed − predicted. A positive residual means the model predicted too low.
 
-> **Example.** A model predicts 26 minutes for a trip of 8 kilometers, but
-> the observed trip took 31 minutes. The residual is 31 − 26 = 5 minutes.
-> The point lies above the model line. It does not mean the distance was
-> 5 kilometers greater, or that the model predicted too high.
+> **Example.** For the 6-kilometer trip, what does the model predict,
+> what was observed, and what is the residual?
+>
+> {{figure:model-read-example}}
+>
+> Start at 6 on the distance axis and move straight up. You meet the
+> dashed line at 40 minutes and the filled dot at 50 minutes. Read both
+> at the same input: the prediction is 40 and the observation is 50.
+>
+> Residual = observed − predicted = 50 − 40 = 10 minutes. The model
+> predicted too low. The distance remains 6 kilometers; the residual is
+> a vertical difference in minutes.
 
-> **Try it.** A model predicts 140 visitors to a pool on a day with a high
-> of 25°C, but 128 visitors came. What is the residual, and does the point
-> lie above or below the model line?
+> **Try it.** For the workshop that operated 10 hours, read the predicted
+> and observed numbers of parts, then find the residual. Did the model
+> predict too high or too low?
 >
-> **Answer.** −12 visitors; below the line.
+> {{figure:model-read-try}}
 >
-> Residual = observed − predicted = 128 − 140 = −12. A negative residual
-> means the model predicted too high, so the point lies below the line.
+> **Hint.** At x = 10 there is a filled dot below the dashed line. Read
+> each height separately; each vertical interval represents 20 parts.
+>
+> **Answer.** Predicted 100 parts; observed 90 parts; residual −10 parts.
+> The model predicted too high.
+>
+> At x = 10 the dashed line reaches y = 100. The dot is halfway between
+> 80 and 100, at 90. Subtract in the order observed − predicted:
+> 90 − 100 = −10. A negative residual means the prediction exceeded
+> the observation.
 
 Use the plotted line for a prediction and the plotted point for an
 observation. When a fitted line is supplied, find its slope from two readable

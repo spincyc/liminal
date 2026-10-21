@@ -61,6 +61,7 @@
     review: "Review",
     mix: "Whole-section mix",
     mixed: "Mixed set",
+    transfer: "Math transfer check",
     desmos: "Desmos drill",
     discarded: "Discarded",
   };
@@ -811,6 +812,7 @@
         plan.focus.appendChild(el("p", "muted", model.sections.some((section) => practice.usesTemplates(section.key))
           ? "No answers yet. Take the diagnostic above, and your next step appears here."
           : "Answer a few questions and your next step appears here."));
+        appendTransferFocus();
         return;
       }
       const words = ctx.stepWords(step);
@@ -828,6 +830,7 @@
         link.href = "#review";
         links.appendChild(link);
         plan.focus.appendChild(links);
+        appendTransferFocus();
         return;
       }
       const actions = el("div", "card-actions");
@@ -843,6 +846,49 @@
       actions.appendChild(go);
       plan.focus.appendChild(actions);
       if (step.kind === "skill") plan.focus.appendChild(studyLinks(step.row, step.level));
+      appendTransferFocus(step.kind === "skill" && step.sectionKey === "sat-math");
+    }
+
+    function appendTransferFocus(hasMathLesson) {
+      if (model.test !== "SAT") return;
+      const region = el("div", "transfer-focus");
+      region.appendChild(el("h4", null, "Learn, then check"));
+      region.appendChild(el("p", "muted", "Solve the lesson's Try it problems, then check your method on fresh Easy and Medium Math. " +
+        "Unpractised skills may appear to expose gaps; use the check's review to choose repair lessons."));
+      const actions = el("div", "card-actions");
+      if (!hasMathLesson) {
+        const step = model.guide.lessonStep("sat-math");
+        const row = step && step.row || { sectionKey: "sat-math", domain: "Geometry and Trigonometry", skill: "Lines, angles, and triangles" };
+        const lesson = el("a", "button secondary", step ? `Repair: ${step.skill}` : "Start with triangles and similarity");
+        lesson.href = practice.learnHref(row);
+        actions.appendChild(lesson);
+        const drill = el("a", "button secondary", "Practice that skill");
+        drill.href = practice.practiceHash("sat-math", row.skill);
+        actions.appendChild(drill);
+      }
+      const check = el("button", "button secondary", "Start a fresh 12-question check");
+      check.type = "button";
+      check.addEventListener("click", async () => {
+        check.disabled = true;
+        ctx.setStatus(plan.status, "Preparing your check…", "loading");
+        try {
+          const opened = await ctx.startTransfer("sat-math");
+          ctx.setStatus(plan.status, opened === 0 ? "No accessible Math questions are available for this check." : "", opened === 0 ? "error" : "");
+        } catch (error) {
+          ctx.setStatus(plan.status, `${error.message} Refresh the page and try again.`, "error");
+        } finally {
+          check.disabled = false;
+        }
+      });
+      actions.appendChild(check);
+      region.appendChild(actions);
+      const method = el("p", "note");
+      const guide = el("a", null, "Worked transfer practice");
+      guide.href = "learn.html#sat/general/math-transfer";
+      method.append(guide, ". For the check, write the requested quantity and first equation on paper; answers come at the end. " +
+        "The Geometry emphasis is a teaching mix. Finite question pools may repeat.");
+      region.appendChild(method);
+      plan.focus.appendChild(region);
     }
 
     async function startFocus(step, button) {
