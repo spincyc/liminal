@@ -1,0 +1,435 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "exam-format",
+  "kind": "strategy",
+  "title": "How the exam runs and how to pace it",
+  "author": "bc-strategy-author",
+  "summary": "How the AP® Calculus BC Exam is built in its May 2027 format, how to pace each timed part, multiple-choice and free-response tactics with the situations where each one fails, and how to spend the last weeks, the day before and the day of the exam.",
+  "minutes": 25,
+  "figures": [
+    {
+      "id": "bc-exam-format-g1",
+      "alt": "A horizontal bar for the exam's 190 working minutes, split into four boxes drawn to scale. Section I, multiple choice: Part A, 29 questions, no calculator, minutes 0 to 62, about 2.1 minutes each; Part B, 13 questions, calculator, minutes 62 to 100, about 2.9 minutes each. Section II, free response: Part A, 2 questions, calculator, minutes 100 to 130, 15 minutes each; Part B, 4 questions, no calculator, minutes 130 to 190, 15 minutes each. The two calculator parts are shaded.",
+      "caption": "The four timed parts in order, drawn to scale by working time. Shaded parts allow a graphing calculator."
+    }
+  ],
+  "sections": [
+    {
+      "id": "structure",
+      "title": "The exam's structure",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The AP® Calculus BC Exam, in the format that starts in May 2027, lasts 3 hours 10 minutes. It has two sections of equal weight, multiple choice and free response, and each section has two separately timed parts. Two of the four parts allow a graphing calculator; the other two allow no calculator at all."
+        },
+        {
+          "type": "table",
+          "caption": "The May 2027 format. Source: College Board's AP® Calculus BC exam pages, checked 2026-10-22.",
+          "head": [
+            "Part",
+            "Questions",
+            "Minutes",
+            "Calculator",
+            "Share of exam score"
+          ],
+          "rows": [
+            [
+              "Section I, Part A",
+              "29 multiple choice",
+              "62",
+              "None",
+              "35%"
+            ],
+            [
+              "Section I, Part B",
+              "13 multiple choice",
+              "38",
+              "Graphing calculator, needed for some questions",
+              "15%"
+            ],
+            [
+              "Section II, Part A",
+              "2 free response",
+              "30",
+              "Graphing calculator",
+              "16.7%"
+            ],
+            [
+              "Section II, Part B",
+              "4 free response",
+              "60",
+              "None",
+              "33.3%"
+            ],
+            [
+              "Whole exam",
+              "42 multiple choice, 6 free response",
+              "190 (3 h 10 min)",
+              "Allowed in 68 of the 190 minutes",
+              "100%"
+            ]
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "bc-exam-format-g1"
+        },
+        {
+          "type": "text",
+          "text": "Other facts about the May 2027 exam, from the same College Board pages and its calculator policy page, checked 2026-10-22:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Delivery is hybrid digital. You answer the multiple-choice questions and read the free-response questions in the Bluebook testing app, and you handwrite your free-response answers in a paper booklet.",
+            "In the two calculator parts, Bluebook has a built-in Desmos graphing calculator. You may also bring up to two approved handheld graphing calculators. In Section I Part A and Section II Part B, no calculator of any kind is allowed.",
+            "Section I Part B allows a graphing calculator, but only some of its questions need one. The multiple-choice tactics below say how to tell which.",
+            "At least two of the six free-response questions are set in real-world contexts, so expect to interpret a derivative or an integral in words, with units.",
+            "Liminal's practice exams are taken without a formula sheet. College Board's exam pages, checked 2026-10-22, do not mention one; check the current exam page. The guide What to know without a formula sheet covers what to carry from memory.",
+            "Score reports include an AB subscore, based on the part of the exam that covers Calculus AB content (College Board's AP® Calculus BC special score structure page, checked 2026-10-22). Liminal reports practice raw points only and does not estimate that subscore.",
+            "Liminal's practice materials score each free-response question out of 9 points. That is Liminal's practice scale, for comparing your own work from one form to the next."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Formats change: the May 2027 format has fewer multiple-choice questions and less time than the May 2026 exam had. Before you settle on a pacing plan, check College Board's current AP® Calculus BC exam page for the format of the exam you will take, and redo the arithmetic below if anything differs."
+        },
+        {
+          "type": "check",
+          "id": "bc-exam-format-c1",
+          "prompt": "In which two parts of the exam may you use a calculator? What share of the exam score comes from the two parts where no calculator is allowed, and what does that suggest about how you practice?",
+          "hint": "Add the shares of Section I Part A and Section II Part B from the table.",
+          "answer": "Section I Part B (13 multiple choice) and Section II Part A (2 free response). The no-calculator parts carry 35% + 33.3% = 68.3% of the score, about two-thirds, so most of your practice should be done without a calculator.",
+          "steps": [
+            "The calculator parts are Section I Part B (15%) and Section II Part A (16.7%): 31.7% of the score, in 68 of the 190 minutes.",
+            "The no-calculator parts are Section I Part A (35%) and Section II Part B (33.3%): 35% + 33.3% = 68.3% of the score, in 122 of the 190 minutes.",
+            "So about two-thirds of the exam rewards exact work by hand: limits, derivatives, antiderivatives, series. Learn the calculator for what it does, but solve most practice problems without it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pacing",
+      "title": "Pacing",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A part's average time per question is its minutes divided by its questions. Averages make good checkpoints but poor schedules: some questions take 40 seconds and some take 5 minutes."
+        },
+        {
+          "type": "table",
+          "caption": "Average pace for each part, with a checkpoint halfway through the part's time.",
+          "head": [
+            "Part",
+            "Average per question",
+            "Halfway checkpoint (minutes into the part)"
+          ],
+          "rows": [
+            [
+              "Section I, Part A",
+              "62 ÷ 29 ≈ 2.1 minutes (about 2 min 8 s)",
+              "About 14 questions done at minute 31"
+            ],
+            [
+              "Section I, Part B",
+              "38 ÷ 13 ≈ 2.9 minutes (about 2 min 55 s)",
+              "6 or 7 questions done at minute 19"
+            ],
+            [
+              "Section II, Part A",
+              "30 ÷ 2 = 15 minutes",
+              "Question 2 started by minute 15"
+            ],
+            [
+              "Section II, Part B",
+              "60 ÷ 4 = 15 minutes",
+              "Question 3 started by minute 30"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Work each multiple-choice part in two passes:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "First pass. Work the questions in order. When you can see the way through, finish the question. When you cannot see a first step within about 30 seconds, or the work runs past about twice the average (about 4 minutes in Part A, about 6 in Part B), choose your best answer so far, flag the question and move on.",
+            "Flag with a reason. Beside the question number, note a word such as \"setup\", \"algebra\" or \"check\", so that on the second pass you know which flagged questions are nearly done.",
+            "Second pass. Return to the flagged questions, nearly-done ones first, with the time the first pass saved.",
+            "Last two minutes. Make sure every question has an answer. On Liminal's practice exams a blank and a wrong choice both earn 0; check College Board's exam page for how the exam itself treats them."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Fighting one hard question for six or seven minutes in Part A. Every minute past the average comes out of questions you have not read yet, and some of those will be quick.",
+          "fix": "Use the cutoff of about twice the average. At the cutoff, choose your best answer, flag the question and move on; come back only with time the first pass saved."
+        },
+        {
+          "type": "check",
+          "id": "bc-exam-format-c2",
+          "prompt": "You reach question 20 of Section I Part A with 14 minutes left. At the average pace, are you ahead or behind, and by about how many minutes? What should you change for the rest of the part?",
+          "hint": "Find how long 19 questions take at 62 ÷ 29 minutes each, and compare that with the time you have used.",
+          "answer": "Behind by about 7 minutes: at the average pace 19 questions take about 40.6 minutes, and you have used 48. The last 10 questions now have 1.4 minutes each instead of about 2.1, so shorten the cutoff: estimate, eliminate, choose and flag any question without a quick first step, and keep moving.",
+          "steps": [
+            "Time used: 62 − 14 = 48 minutes for 19 questions, since question 20 is just starting.",
+            "At the average pace, 19 questions take 19 × 62/29 ≈ 40.6 minutes, so you are about 48 − 40.6 ≈ 7.4 minutes behind.",
+            "Another way to see it: 10 questions remain and would need about 10 × 62/29 ≈ 21.4 minutes at the average pace, but only 14 minutes are left, which is 1.4 minutes per question.",
+            "Seven minutes behind calls for skipping slow questions on the first pass, not for rushing every question. Move on from any question with no clear first step after about 30 seconds, return if time remains, and leave no question without an answer."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pacing advice fails in a few common ways:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Averages hide variety. A minute or two behind at a checkpoint is normal; five or more behind means start choosing and flagging sooner.",
+            "Two passes cost rereading time. If you rarely flag and usually finish early, one careful pass and a final look at the few flagged questions works better.",
+            "Flagging too much turns the second pass into a second exam. If you flag more than about a quarter of a part, commit to more answers on the first pass.",
+            "Free-response time is shared within a part, not fixed per question. A question you know well may take 10 minutes, and the 5 minutes saved belong to a harder one. Treat 15 minutes as a checkpoint, not a wall.",
+            "A plan you have never used under time is a guess. Rehearse it on full practice exams, then adjust the cutoffs to your own speed."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-exam-format-c3",
+          "prompt": "About how many Section I Part A questions carry the same share of the exam score as one Section II Part B question? Then compare the two parts' share of the score per minute. What does each comparison say about where your study time and effort should go?",
+          "hint": "Divide each part's share of the score by its number of questions, and then by its minutes.",
+          "answer": "About 7. One Section II Part B question carries 33.3% ÷ 4 ≈ 8.3% of the score and one Section I Part A question carries 35% ÷ 29 ≈ 1.2%. Per minute the two parts are almost equal, about 0.56% each. The parts are timed separately, so on the exam you cannot move time between them anyway; in practice, give multiple-choice and free-response work study time in proportion to their minutes. But free-response weight comes in large pieces, so a blank question or a string of blank parts gives away as much as several multiple-choice questions.",
+          "steps": [
+            "Per question: 33.3% ÷ 4 ≈ 8.33% for a Section II Part B question and 35% ÷ 29 ≈ 1.21% for a Section I Part A question. The ratio is 8.33 ÷ 1.21 ≈ 6.9, about 7.",
+            "Per minute: 35% ÷ 62 ≈ 0.565% for Section I Part A and 33.3% ÷ 60 ≈ 0.555% for Section II Part B. Three of the four parts carry about 0.56% per minute; Section I Part B, at 15% ÷ 38 ≈ 0.39% per minute, gets extra time for its calculator questions.",
+            "Each part is timed separately, so on the exam you cannot move time between them; the equal rates say multiple-choice and free-response practice deserve about equal study time. Inside Section II, though, leaving parts unattempted is expensive, which is why the free-response tactics below say to attempt every part."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multiple-choice",
+      "title": "Multiple-choice tactics",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Wrong choices on a well-made question come from real errors, so a choice that looks familiar is not evidence that it is right. Each tactic below earns its time only in some situations."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tactic",
+            "How",
+            "When it fails"
+          ],
+          "rows": [
+            [
+              "Estimate first",
+              "Before computing, decide the sign and rough size of the answer. Is the integral positive? Is the limit 0, finite or infinite? Is the rate about 1 or about 10? It takes seconds and catches sign slips and factor-of-2 errors.",
+              "When the choices share a sign and are close in size, an estimate cannot separate them; only the computation decides."
+            ],
+            [
+              "Eliminate",
+              "Cross out choices that break something you know: a negative area or volume, a negative radius of convergence, an interval containing a point where the function is undefined, units that cannot be right.",
+              "Elimination usually stops at two survivors. Then finish the work instead of guessing between them, unless time has run out."
+            ],
+            [
+              "Check sign, units and size",
+              "After computing, ask whether the answer makes sense: a volume is positive, a decreasing quantity has a negative rate, a calculator answer has the size the graph suggests.",
+              "Wrong choices are built to pass these checks. A sanity check catches gross errors, not a wrong method that produces a reasonable-looking number."
+            ],
+            [
+              "Use the choices to check",
+              "Test a choice against the conditions: differentiate a proposed antiderivative, substitute a proposed solution into the equation, test a proposed interval at a point inside it.",
+              "Testing all four choices can take four times as long as solving once, and it never shows why the others are wrong. Use it to confirm an answer or break a tie, not to replace the work."
+            ]
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-exam-format-c4",
+          "prompt": "A no-calculator question asks for ∫ from 0 to 2 of (4 − x^2) dx. The choices are −16/3, 8/3, 16/3 and 8. Without integrating, eliminate three choices using sign and size. Then integrate to confirm.",
+          "hint": "Compare the region with the 2-by-4 rectangle around it and with the triangle under the segment from (0, 4) to (2, 0).",
+          "answer": "16/3. The integrand is positive on [0, 2), which rules out −16/3. The region fits inside a 2-by-4 rectangle without filling it, which rules out 8. The graph is concave down, so it lies above the segment from (0, 4) to (2, 0) and the area is more than that triangle's area of 4, which rules out 8/3. Integrating gives 8 − 8/3 = 16/3.",
+          "steps": [
+            "Sign: 4 − x^2 > 0 for 0 ≤ x < 2, so the integral is positive. Eliminate −16/3.",
+            "Upper size: 0 ≤ 4 − x^2 ≤ 4 on [0, 2], with 4 reached only at x = 0, so the integral is less than 4 · 2 = 8. Eliminate 8.",
+            "Lower size: the second derivative of 4 − x^2 is −2, so the graph is concave down and lies above its chord from (0, 4) to (2, 0). The triangle under that chord has area (1/2)(2)(4) = 4, so the integral is more than 4. Eliminate 8/3 ≈ 2.67.",
+            "Confirm: an antiderivative is 4x − x^3/3, so the integral is (8 − 8/3) − 0 = 16/3 ≈ 5.33.",
+            "Where this fails: had the choices been 16/3 and 5, sign and size could not separate them, and only the integration would decide."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "In Section I Part B, reaching for the calculator on every question. Some calculator-part questions have a quick exact argument, such as the Fundamental Theorem of Calculus, symmetry or a known derivative, and typing a long expression is slower and invites entry errors.",
+          "fix": "Spend about ten seconds asking what the question is about before you touch the calculator. If an exact argument appears, use it, and save the calculator for what it alone does well: a definite integral with no elementary antiderivative, an intersection, a numerical derivative, or solving an equation. The advice fails in the other direction too: if no exact route appears in those ten seconds, stop looking and compute, since the part allows it."
+        },
+        {
+          "type": "example",
+          "prompt": "A calculator-part question: let F(x) = ∫ from 1 to x of √(1 + t^3) dt. Find F′(2).",
+          "answer": "F′(2) = √(1 + 2^3) = √9 = 3. No calculator is needed.",
+          "steps": [
+            "The integrand √(1 + t^3) is continuous for t ≥ −1, so by the Fundamental Theorem of Calculus, F′(x) = √(1 + x^3) for x ≥ −1.",
+            "Substitute: F′(2) = √(1 + 8) = √9 = 3.",
+            "The calculator route, a numerical derivative of a numerical integral, needs nested commands and returns about 3.000 after a minute of typing. Both routes agree; the exact one takes ten seconds."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "free-response",
+      "title": "Free-response tactics",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each free-response question has several lettered parts. Liminal's practice rubrics award points part by part, with separate points for setups, answers, justifications and units, so a question you cannot finish still has points in it."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Read every part first. Spend about a minute on what each part asks. Later parts can show what an earlier part is for, and a quick part (d) may sit behind a hard part (b).",
+            "Attempt every part. Do the parts that stand alone first if that helps, and write each answer in the space for its part, where a reader will look for it.",
+            "Carry earlier answers forward. If a later part needs an earlier result that you doubt or could not find, use your value, or a clearly stated assumed one, and say so. Liminal's rubrics credit later work that correctly uses an earlier wrong value wherever a rubric row accepts consistent use.",
+            "Set up before computing. Write the integral with its limits, integrand and differential, the derivative you will evaluate, or the equation you will solve, and only then compute. In a calculator part, write the setup in math notation, not calculator syntax, then give the result to three decimal places, the accuracy Liminal's keys use.",
+            "Answer what was asked, then stop. One or two precise sentences that name the function and the reason beat a paragraph, and in Liminal's rubrics a false extra statement can cost a point."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "A population is modeled by P(t) = 200e^(kt). Part (c) needs the constant k from part (b). You found k = 0.3 but doubt it.",
+          "text": "Using k = 0.3 from part (b), P(4) = 200e^(0.3 · 4) = 200e^(1.2)."
+        },
+        {
+          "type": "text",
+          "text": "These tactics fail too:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Reading ahead fails when it turns into planning every part in detail. Skim for what each part asks, not how you will do it.",
+            "Carrying forward fails when the earlier error makes a later part trivial or impossible, such as a negative time or a value outside the function's domain. Then go back to the earlier part, or state a reasonable assumed value and use it.",
+            "Setting up first fails when the setup is exactly what you do not know. Then write what you do know, such as the quantity, its units and the rate being accumulated, and move on to the next part.",
+            "Attempting every part backfires only when it pulls you into a long struggle. Give a stuck part a few minutes, write what you have, and come back if time remains."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Leaving part (c) blank because part (b) went wrong.",
+          "fix": "Do part (c) with your part (b) value, labeled as yours; if part (b) produced no value, state a reasonable assumed value, label it, and use that. Cross out abandoned work cleanly so that each part shows one answer."
+        },
+        {
+          "type": "check",
+          "id": "bc-exam-format-c5",
+          "prompt": "On a free-response question you are fairly sure your part (a) answer is wrong, you cannot find the error, and part (b) uses that answer. About 6 minutes remain for the question. What do you do, and in what order?",
+          "hint": "Ask which points are still available in part (b) and in any later parts.",
+          "answer": "Leave part (a) as it stands, do part (b) with your part (a) value and say that you are using it, then do any later parts. Return to part (a) only if time remains, and if you replace its answer, cross out the old work cleanly.",
+          "steps": [
+            "Part (b)'s setup and method do not depend on part (a) being right, and Liminal's rubrics credit later work that correctly uses an earlier wrong value wherever a rubric row accepts consistent use.",
+            "Write \"using my value from part (a)\" beside the number, so a reader can follow the work.",
+            "Hunting for the error first can use all 6 minutes and earn nothing new.",
+            "If you do fix part (a), cross out the wrong work completely: Liminal's rubrics credit one answer per part, and with two answers showing neither is credited."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "last-weeks",
+      "title": "The last weeks, the day before and the day of",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "In the last weeks, keep answering questions rather than rereading notes. Liminal's eight-week review plan places its four full practice exams about 8, 5 and 3 weeks before the exam, and again about 10 days before it, with none in the last four days, when short mixed sets and sleep do more good than another full exam."
+        },
+        {
+          "type": "rule",
+          "title": "Sleep",
+          "text": "Sleep 8–10 hours a night with a consistent bedtime through the last weeks, not just the night before. No all-nighters. When you review in the evening, go to sleep after it instead of pushing on.",
+          "conditions": [
+            "Sleep specialists recommend 8–10 hours a night for teenagers (Paruthi et al. 2016).",
+            "High-school students who gave up sleep to study more had more academic trouble the next day, not less (Gillen-O'Neel et al. 2013).",
+            "In a laboratory study, sleeping between a study session and a review session halved the practice needed to relearn and improved recall six months later (Mazza et al. 2016).",
+            "This evidence is correlational or from the laboratory. It supports the habit; it does not promise an effect on any one exam."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The rule bends: one restless night before the exam is common and no reason to panic. Rest in the dark without watching the clock; the weeks of steady sleep before it count for more."
+        },
+        {
+          "type": "text",
+          "text": "The day before:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Review lightly. Drill a few tables in the guide What to know without a formula sheet, redo two or three checks you once missed, and stop. Start no new topics and take no full practice exam.",
+            "Pack your materials (listed below) and set up what you need for Bluebook as your school directs.",
+            "Go to bed at your usual time."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "On the day, if your heart is racing as a part begins, that is your body getting ready. A faster pulse and quicker breathing bring more oxygen to your brain and muscles; they are signs of readiness, not of failure, and you do not need to calm them before you start. In two studies, students who read a short message like this before a math test (Jamieson et al. 2010) or the night before a college exam (Brady et al. 2018) did somewhat better than students who did not. The effects were modest and the students were in college, so treat this as worth trying, not as a cure for nerves."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Eat what you usually eat, and arrive early.",
+            "At the start of each part, note its time and your halfway checkpoint, then leave the clock alone until the checkpoint.",
+            "If a question rattles you, choose, flag and move on. The next question is a fresh start."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Materials:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Calculator: up to two handheld graphing calculators, if you use one, each on College Board's current list of approved models, charged or with fresh batteries, set to radian mode, and the same ones you practiced with. Bluebook's built-in Desmos is also there in the calculator parts.",
+            "For the free-response booklet: the writing tools your school's exam instructions call for.",
+            "Everything else: follow your school's instructions for the testing device and Bluebook, and check College Board's exam-day pages for what to bring and what to leave at home, since policies change from year to year."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Calculator skills for the calculator parts",
+              "ref": "guide:calculator-skills"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            },
+            {
+              "label": "What to know without a formula sheet",
+              "ref": "guide:memory-sheet"
+            },
+            {
+              "label": "Practice exam A, under exam timing",
+              "ref": "test:practice-exam"
+            },
+            {
+              "label": "Mixed set 1, at the exam's pace",
+              "ref": "test:mixed-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

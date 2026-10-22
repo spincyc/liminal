@@ -1,0 +1,825 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "free-response-writing",
+  "kind": "strategy",
+  "title": "Writing free-response answers",
+  "author": "bc-strategy-author",
+  "summary": "How to write Section II answers on the AP® Calculus BC Exam so that a reader can credit every step: setups beside results, equals signs that are true, justifications that name the function and the reason, series tests with every condition checked, units and interpretations in context, and later parts that stay consistent with earlier ones. It includes a justification phrasebank with enough and not-enough versions side by side, model sentences, common traps, and eight checks that ask you to choose or rewrite a justification.",
+  "minutes": 40,
+  "figures": [
+    {
+      "id": "bc-free-response-writing-g1",
+      "alt": "Graph of y = g′(x) for 0 ≤ x ≤ 7, made of three line segments joining the points (0, 1), (1, 2), (5, −2) and (7, 2). The graph rises from (0, 1) to (1, 2), falls through the x-axis at x = 3 to (5, −2), then rises through the x-axis at x = 6 to (7, 2).",
+      "caption": "The graph of g′, the derivative of g. Used in the first two checks."
+    }
+  ],
+  "sections": [
+    {
+      "id": "how-answers-are-read",
+      "title": "How a written answer is read",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Section II of the AP® Calculus BC Exam has six free-response questions. Part A has two questions in 30 minutes with a graphing calculator; Part B has four questions in 60 minutes with no calculator. You read the prompts in the Bluebook app and write your answers by hand in a paper booklet, and at least two questions are set in a real-world context. These format facts are from College Board's AP Central and AP Students exam pages, checked on 2026-10-22."
+        },
+        {
+          "type": "text",
+          "text": "A reader can credit only what is on the page. Your reasoning, your calculator screen and your scratch sign chart are invisible unless the page states what they showed. Liminal's practice rubrics score each question out of 9 points over three or four parts and award separate points for the kinds of work below, so a correct number on its own often collects only part of a part's points."
+        },
+        {
+          "type": "table",
+          "caption": "The kinds of points on Liminal's practice rubrics.",
+          "head": [
+            "Point",
+            "What earns it",
+            "How it is usually lost"
+          ],
+          "rows": [
+            [
+              "Setup",
+              "The integral, derivative, equation or sum that produces the answer, in math notation, with limits, integrand and differential",
+              "A bare number; calculator syntax; a missing limit, constant or factor"
+            ],
+            [
+              "Answer",
+              "The value or expression: exact in no-calculator work, correct to three decimal places in calculator work",
+              "Early rounding; a correct expression simplified into a wrong one"
+            ],
+            [
+              "Justification",
+              "A sentence that names the function, states the sign, sign change or theorem with its hypotheses, and says where",
+              "\"It is positive\"; a sign chart alone; \"f′(c) = 0\" as the whole reason"
+            ],
+            [
+              "Units and interpretation",
+              "The quantity, the time or interval, the direction and the units, in the question's context",
+              "Units of the wrong kind; no time named; symbols restated in words"
+            ],
+            [
+              "Consistency",
+              "Correct work that builds on your own earlier result, even when that result was wrong",
+              "A blank part because an earlier part failed"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Six questions in 90 minutes is 15 minutes a question. That is an average, not a limit: questions differ in length, and each part is timed on its own, so budget within each part's time. The goal is a complete answer in few words, not an essay: each habit in this guide costs seconds and protects a point."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Read one section at a time. Before you read each model, cover it and write your own version of the answer, then compare.",
+            "Answer the eight checks at the end before you open them. Each asks you to choose a justification or repair a weak answer.",
+            "After every workshop set or practice exam, pick one of your answers that lost a communication point and rewrite it until it earns every point on the rubric. A few days later, rewrite a different one from memory."
+          ],
+          "ordered": true
+        }
+      ]
+    },
+    {
+      "id": "show-the-work",
+      "title": "Show the work that earns the point",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "No bald answers",
+          "text": "When a question needs work, Liminal's rubrics give a final value with nothing behind it little or no credit, even when it is right. Write the expression that produces the number, then the number, so the setup and the result can each be credited. This relaxes only when the answer is read straight from given information, such as a value from a table: then one short line is enough."
+        },
+        {
+          "type": "model",
+          "prompt": "Calculator part. Water enters a tank at R(t) = 20 + 6 sin(t^2/4) liters per minute for 0 ≤ t ≤ 4, and the tank holds 100 liters at t = 0. How much water is in the tank at t = 4?",
+          "text": "100 + ∫ from 0 to 4 of R(t) dt = 189.657 liters"
+        },
+        {
+          "type": "trap",
+          "text": "Writing calculator syntax or keystrokes, such as fnInt(R(t), t, 0, 4), or writing only the result.",
+          "fix": "Write the mathematics: the integral sign, the limits, the integrand and dt, then the value. The calculator does the arithmetic; the page shows what it was asked to compute."
+        },
+        {
+          "type": "text",
+          "text": "Liminal's practice rubrics follow College Board's earlier calculator guidance, the page \"AP® Calculus: use of graphing calculators\", now withdrawn and read in its Wayback Machine copy of 2026-03-06 (see Calculator skills for the calculator parts). Under that convention a graphing calculator may do four things without shown steps: graph a function, solve an equation (zeros and intersections), find a derivative at a point, and evaluate a definite integral. Report what it found in math notation. Deciding which zero or which candidate answers the question is reasoning, so write that reasoning down; a calculator's maximum feature is not a justification."
+        },
+        {
+          "type": "rule",
+          "title": "Three decimal places, unrounded intermediates",
+          "text": "Liminal's practice convention, from the same archived guidance, is calculator answers correct to three decimal places. Store intermediate values at full precision and round only the final answer: a value rounded early can move the third decimal and, in Liminal's rubrics, lose the answer point. If a later part reuses an earlier decimal, use the stored value, not the rounded one."
+        },
+        {
+          "type": "rule",
+          "title": "Exact answers may stay unsimplified",
+          "text": "In no-calculator work, an exact expression such as 4 + 3·(5/2) − ln 2 is a finished answer unless the question asks for a simpler form. Each extra line of algebra is a chance to turn a correct answer into a wrong one, so stop once the value is clear. When the question names a form, such as y as a function of x, give that form."
+        },
+        {
+          "type": "table",
+          "caption": "Answer the form the question asks for.",
+          "head": [
+            "The question says",
+            "Give",
+            "Avoid"
+          ],
+          "rows": [
+            [
+              "Find, evaluate, what is",
+              "A value, with the expression that produces it",
+              "Stopping at a setup when a value was asked for"
+            ],
+            [
+              "Write an expression, set up, write but do not evaluate",
+              "The integral or equation itself, with its limits, integrand, constants such as π, and differential",
+              "Spending time on an evaluation nobody asked for; a wrong value adds a false statement"
+            ],
+            [
+              "Show that",
+              "Valid steps from the given facts that end at the stated result",
+              "Starting from the result, or writing it down and checking it"
+            ],
+            [
+              "Justify, explain, give a reason",
+              "A sentence naming the function, the property or theorem, and where it holds",
+              "A sign chart or a computation with no conclusion"
+            ],
+            [
+              "Interpret, explain the meaning in context",
+              "The quantity, the time or interval, and the units",
+              "Restating the symbols in words"
+            ],
+            [
+              "Is it …? Must there be …?",
+              "Yes or no first, then the reason",
+              "A reason with no stated answer"
+            ],
+            [
+              "Approximate or estimate by a named method",
+              "That method, each term or step shown, and ≈",
+              "A different method, or only the total"
+            ]
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Set up, but do not evaluate, an integral for the volume of the solid formed when the region under y = √x for 0 ≤ x ≤ 4 is revolved about the line y = −1.",
+          "text": "V = π ∫ from 0 to 4 of ((√x + 1)^2 − 1^2) dx"
+        },
+        {
+          "type": "model",
+          "prompt": "Show that dy/dx = (y − 2x)/(2y − x) for the curve x^2 − xy + y^2 = 7.",
+          "text": "Differentiate both sides with respect to x: 2x − y − x(dy/dx) + 2y(dy/dx) = 0. So (2y − x)(dy/dx) = y − 2x, and dy/dx = (y − 2x)/(2y − x)."
+        },
+        {
+          "type": "trap",
+          "text": "In a show-that part, substituting the target into the equation and checking that it works.",
+          "fix": "Start from what is given and work forward to the target, writing each step. Checking the target is useful scratch work but shows nothing. If you cannot reach it, still use it in the later parts: it is printed so that you can."
+        }
+      ]
+    },
+    {
+      "id": "notation",
+      "title": "Notation that keeps credit",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Every equals sign joins equal things",
+          "text": "Read each \"=\" as \"is equal to\". If the two sides are not equal, start a new line or use a word such as \"so\". A chain such as f′(x) = 3x^2 − 12 = 0 = ±2 claims that a function is zero everywhere and that 0 equals ±2."
+        },
+        {
+          "type": "model",
+          "prompt": "Critical points of f(x) = x^3 − 12x.",
+          "text": "f′(x) = 3x^2 − 12. f′(x) = 0 when x^2 = 4, so x = −2 or x = 2."
+        },
+        {
+          "type": "trap",
+          "text": "Carrying a running total along one line: 3·4 = 12 + 5 = 17·2 = 34.",
+          "fix": "One equals sign per true statement. Write 3·4 + 5 = 17 and then 17·2 = 34 on the next line, or write the whole computation at once: (3·4 + 5)·2 = 34."
+        },
+        {
+          "type": "rule",
+          "title": "≈ for approximations",
+          "text": "A Taylor polynomial, a Riemann or trapezoidal sum, an Euler step and a tangent-line value each estimate a quantity; they are not the quantity. Join them to it with ≈. Writing f(1.2) = P_3(1.2) or ∫ from 0 to 6 of g(x) dx = 19.5 for a trapezoidal sum states something false. A calculator's three-decimal value of an integral or a zero is different: it reports the exact value to the required accuracy, and Liminal's keys accept \"=\" there."
+        },
+        {
+          "type": "model",
+          "prompt": "Two steps of Euler's method for dy/dx = x + y with y(0) = 1 and Δx = 0.25.",
+          "text": "y(0.25) ≈ 1 + 0.25·(0 + 1) = 1.25. y(0.5) ≈ 1.25 + 0.25·(0.25 + 1.25) = 1.625."
+        },
+        {
+          "type": "rule",
+          "title": "Keep \"lim\" on every line",
+          "text": "Until the limit is taken, each line is a limit, so each line needs \"lim as x→c of\". Dropping it equates a limit with a function. Before you use L'Hôpital's rule, write the limits of the numerator and the denominator to show the form is 0/0 or ∞/∞, and check again before a second use."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluate lim as x→0 of (1 − cos(3x))/x^2.",
+          "text": "As x→0, 1 − cos(3x) → 0 and x^2 → 0, so by L'Hôpital's rule the limit is lim as x→0 of (3 sin(3x))/(2x). Again 3 sin(3x) → 0 and 2x → 0, so the limit is lim as x→0 of (9 cos(3x))/2 = 9/2."
+        },
+        {
+          "type": "rule",
+          "title": "Include the differential",
+          "text": "Write dx, dt or dθ in every integral. It names the variable of integration, and in a setup it shows which variable the limits belong to: ∫ from 0 to 2 of π(4 − y^2) dy is not the same setup without its dy."
+        },
+        {
+          "type": "rule",
+          "title": "Separation of variables, in order",
+          "text": "Separate, integrate, add the constant, use the initial condition, and solve for y when the question asks for y.",
+          "conditions": [
+            "Every y, including dy, on one side and every x, including dx, on the other, before any integration",
+            "One constant of integration, written on the line where you integrate",
+            "The initial condition substituted to find the constant",
+            "y isolated when the question asks for y = f(x) or for the particular solution",
+            "Signs, absolute values and square roots resolved with the initial condition, which tells you which branch passes through the given point"
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Find the particular solution y = f(x) to dy/dx = x y^2 with f(1) = −1.",
+          "answer": "y = −2/(x^2 + 1)",
+          "steps": [
+            "Separate: (1/y^2) dy = x dx. Dividing by y^2 is safe near the initial point, where y = −1 ≠ 0.",
+            "Integrate both sides and add the constant: −1/y = x^2/2 + C.",
+            "Use the initial condition: −1/(−1) = 1/2 + C, so C = 1/2.",
+            "Then −1/y = (x^2 + 1)/2, so y = −2/(x^2 + 1).",
+            "Check: f(1) = −2/2 = −1, and the solution is defined for every real x."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Integrating before separating, for example writing y = ∫ x y^2 dx.",
+          "fix": "y is not a constant, so it cannot come out of an x-integral. Move every y to the dy side first; the later points of the part depend on that step."
+        },
+        {
+          "type": "trap",
+          "text": "Adding + C after solving for y, or using the initial condition before integrating.",
+          "fix": "Write + C on the line where you integrate, and substitute the initial condition only after that. If you exponentiate later, e^C is a positive constant, not something you add."
+        },
+        {
+          "type": "rule",
+          "title": "Name the function",
+          "text": "Write \"f′(x) > 0 on (2, 5)\", not \"it is positive\". When f, f′ and g all appear in a question, \"the function\" and \"the graph\" are ambiguous. Say \"the graph of f′ is decreasing\" when that is what you read off the figure."
+        },
+        {
+          "type": "trap",
+          "text": "Using a sign chart or a number line as the justification.",
+          "fix": "Charts are scratch work. Use one to think, then write the sentence it supports, such as \"f′ changes from negative to positive at x = 2.\""
+        }
+      ]
+    },
+    {
+      "id": "justifications",
+      "title": "Justifications: a phrasebank",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "A justification names three things",
+          "text": "A complete reason is usually one sentence that says what is true of which function, and where.",
+          "conditions": [
+            "The function, by name: f, f′, f″, v, r, never \"it\"",
+            "The property: a sign, a sign change, or a theorem's hypotheses",
+            "The place: the input value or the interval"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Cover the middle column and try to write each justification before you read it. The right column holds answers that state something true without giving the reason the claim follows."
+        },
+        {
+          "type": "table",
+          "caption": "Justification phrasebank. \"Enough\" is the reason a reader needs; \"Not enough\" is true or tempting but does not prove the claim.",
+          "head": [
+            "Claim",
+            "Enough",
+            "Not enough"
+          ],
+          "rows": [
+            [
+              "f is increasing on an interval",
+              "f is continuous on [a, b] and f′(x) > 0 for a < x < b, so f is increasing on [a, b].",
+              "\"The graph goes up.\" \"f′ is increasing.\""
+            ],
+            [
+              "Relative maximum at x = c, by the first-derivative test",
+              "f′ changes from positive to negative at x = c, so f has a relative maximum at x = c.",
+              "\"f′(c) = 0.\" A sign chart with no sentence."
+            ],
+            [
+              "Relative minimum at x = c, by the second-derivative test",
+              "f′(c) = 0 and f″(c) > 0, so f has a relative minimum at x = c.",
+              "\"f″(c) > 0\" without f′(c) = 0. Using the test when f″(c) = 0."
+            ],
+            [
+              "Absolute extremum on [a, b]",
+              "f is continuous on [a, b]. List the candidates, f(a), f at each critical point, and f(b), with their values. The least is the absolute minimum; the greatest is the absolute maximum.",
+              "Calling a relative extremum absolute. Leaving out an endpoint."
+            ],
+            [
+              "Concave up on an interval",
+              "f″(x) > 0 on (a, b), or f′ is increasing on (a, b).",
+              "\"f′ > 0.\" \"The graph of f′ is above the axis.\""
+            ],
+            [
+              "Point of inflection at x = c",
+              "f″ changes sign at x = c, or f′ changes from increasing to decreasing (or the reverse) at x = c, and f is continuous at c.",
+              "\"f″(c) = 0\" or \"f″(c) does not exist\" alone."
+            ],
+            [
+              "A particle changes direction at t = k",
+              "v(t) changes sign at t = k.",
+              "\"v(k) = 0\" alone."
+            ],
+            [
+              "Speeding up at t = k",
+              "v(k) and a(k) have the same sign; give both values. Opposite signs mean slowing down.",
+              "\"a(k) > 0\" alone."
+            ],
+            [
+              "Moving toward or away from the origin, or the pole",
+              "Compare two signs. x(k) > 0 and v(k) < 0, so the particle moves toward the origin. For a polar curve, r > 0 and dr/dθ < 0, so the point on the curve moves toward the pole as θ increases.",
+              "One sign only: \"v(k) < 0, so toward the origin.\" \"dr/dθ < 0, so toward the pole.\""
+            ],
+            [
+              "Intermediate Value Theorem",
+              "f is continuous on [a, b] and k is strictly between f(a) and f(b), so f(c) = k for some c in (a, b).",
+              "Leaving out continuity, or not showing that k lies between f(a) and f(b). Claiming c in (a, b) when k equals f(a) or f(b)."
+            ],
+            [
+              "Mean Value Theorem",
+              "f is continuous on [a, b] and differentiable on (a, b), and (f(b) − f(a))/(b − a) = m, so f′(c) = m for some c in (a, b). \"f is differentiable on [a, b]\" covers both hypotheses.",
+              "The slope with no hypotheses. Naming the Intermediate Value Theorem."
+            ],
+            [
+              "Extreme Value Theorem",
+              "f is continuous on the closed interval [a, b], so f has an absolute maximum and an absolute minimum on [a, b].",
+              "Using it on an open interval, or without continuity."
+            ],
+            [
+              "L'Hôpital's rule applies",
+              "Write both limits: the numerator → 0 and the denominator → 0 (or both → ±∞), so the rule applies.",
+              "Differentiating without checking the form. Using the quotient rule on the fraction."
+            ],
+            [
+              "Over- or underestimate from a sum",
+              "f is increasing on [a, b], so each left rectangle lies under the graph and the left sum underestimates the integral. Right sums: the reverse. For a concave-up f, trapezoids overestimate and midpoint sums underestimate.",
+              "\"Because it is a left sum.\" A property the stem does not state."
+            ],
+            [
+              "Over- or underestimate from a tangent line",
+              "f″(x) < 0 between the point of tangency and the point estimated, so the graph is concave down and lies below the tangent line: the tangent-line value is an overestimate.",
+              "\"Because f is concave down,\" with no link to where the line lies."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Every test has a boundary. Know where each one stops working:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "The second-derivative test says nothing when f″(c) = 0 or f″(c) does not exist. Use the first-derivative test instead.",
+            "The candidates test needs a continuous function on a closed interval. On an open or unbounded interval, argue with signs instead: if f is continuous on the interval and f′ changes from negative to positive at its only critical point, that point gives the absolute minimum.",
+            "\"dr/dθ < 0, so toward the pole\" holds only when r > 0. When r < 0, a decreasing r means |r| is growing, so the point on the curve moves away from the pole as θ increases. Compare the signs of r and dr/dθ, just as you compare the signs of x(t) and v(t).",
+            "Monotonicity decides left and right sums only when f is increasing (or decreasing) on the whole interval. Concavity decides trapezoidal and midpoint sums only when the concavity does not change.",
+            "A point of inflection needs f defined and continuous at c. A sign change of f″ across a vertical asymptote or a hole is not an inflection point."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Relative maximum, from the graph of f′.",
+          "text": "f′ changes from positive to negative at x = 4, so f has a relative maximum at x = 4."
+        },
+        {
+          "type": "model",
+          "prompt": "Absolute maximum of a continuous function f on [0, 6] whose only critical points are x = 1 and x = 4, where f(0) = 3, f(1) = 7, f(4) = 2 and f(6) = 5.",
+          "text": "The candidates are x = 0, 1, 4 and 6. The greatest of f(0) = 3, f(1) = 7, f(4) = 2 and f(6) = 5 is 7, so the absolute maximum of f on [0, 6] is 7, at x = 1."
+        },
+        {
+          "type": "model",
+          "prompt": "Speeding up or slowing down at t = 3, when v(3) = −2 and a(3) = −5.",
+          "text": "v(3) = −2 < 0 and a(3) = −5 < 0 have the same sign, so the particle is speeding up at t = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "Toward or away from the origin at t = 1, when x(1) = 4 and v(1) = −3.",
+          "text": "x(1) = 4 > 0 and v(1) = −3 < 0: the particle is to the right of the origin and moving left, so it is moving toward the origin at t = 1."
+        },
+        {
+          "type": "model",
+          "prompt": "A continuous function f has f(2) = −1 and f(6) = 5. Explain why f(c) = 3 for some c in (2, 6).",
+          "text": "f is continuous on [2, 6], and f(2) = −1 < 3 < 5 = f(6). By the Intermediate Value Theorem, f(c) = 3 for some c in (2, 6)."
+        },
+        {
+          "type": "model",
+          "prompt": "Is the tangent-line estimate L(2.1) of g(2.1) too high or too low, if g″(x) < 0 for all x?",
+          "text": "Too high. g″(x) < 0, so the graph of g is concave down and lies below its tangent line at x = 2. So L(2.1) > g(2.1)."
+        },
+        {
+          "type": "trap",
+          "text": "Citing \"f′(c) = 0\" or \"f″(c) = 0\" as the reason for an extremum or a point of inflection.",
+          "fix": "A zero tells you where to look, not what happens there. The reason is the sign change around c, or, for the second-derivative test, f′(c) = 0 together with the sign of f″(c)."
+        },
+        {
+          "type": "trap",
+          "text": "Confusing f′ increasing with f increasing: \"f is increasing because the graph of f′ goes up.\"",
+          "fix": "f increases where f′ is positive, above the axis. f′ increasing, a rising graph of f′, tells you that f is concave up."
+        },
+        {
+          "type": "trap",
+          "text": "Writing \"by the Mean Value Theorem\" with the slope but no hypotheses.",
+          "fix": "Say why the function is differentiable on the open interval and continuous on the closed one, usually by quoting the stem: \"f is differentiable, so it is also continuous.\" If the stem does not give differentiability, the theorem may not apply."
+        },
+        {
+          "type": "trap",
+          "text": "Over-explaining: adding a second reason that is false, such as \"f′ changes from positive to negative at x = 4, and f″(4) > 0.\"",
+          "fix": "One correct reason is enough. Every extra claim must also be true, and in Liminal's rubrics a false one can cost a point that the short answer would have kept."
+        }
+      ]
+    },
+    {
+      "id": "series",
+      "title": "Series answers",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Series parts are mostly justification. A reader needs the name of the test, every condition it requires checked on the page, and the conclusion stated for the right series."
+        },
+        {
+          "type": "rule",
+          "title": "Name the test and check every condition",
+          "text": "Say which test you use, show that its conditions hold, then state what it concludes.",
+          "conditions": [
+            "Ratio test: write lim as n→∞ of |a_(n+1)/a_n| with the absolute value bars, simplify, and compare the limit with 1. A limit of 1 decides nothing, so the ratio test never settles an endpoint.",
+            "Alternating series test: the terms alternate in sign, |a_n| is decreasing, and |a_n| → 0. State all three.",
+            "p-series: state p and compare it with 1.",
+            "Direct or limit comparison: name the comparison series and its behavior, and give the inequality or the positive finite limit.",
+            "Integral test: the function is positive, continuous and decreasing.",
+            "nth-term test: it can only show divergence. Terms that approach 0 prove nothing."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Find the interval of convergence of Σ from n = 1 to infinity of (x − 2)^n/(n·3^n).",
+          "text": "lim as n→∞ of |((x − 2)^(n+1)/((n + 1)·3^(n+1)))·((n·3^n)/(x − 2)^n)| = lim as n→∞ of (n/(n + 1))·(|x − 2|/3) = |x − 2|/3. By the ratio test, the series converges when |x − 2|/3 < 1, that is, for −1 < x < 5. At x = 5 the series is Σ from n = 1 to infinity of 1/n, a p-series with p = 1, which diverges. At x = −1 it is Σ from n = 1 to infinity of (−1)^n/n: the terms alternate, 1/n decreases, and 1/n → 0, so it converges by the alternating series test. The interval of convergence is −1 ≤ x < 5."
+        },
+        {
+          "type": "rule",
+          "title": "Absolute or conditional: say both halves",
+          "text": "A series converges conditionally when it converges but the series of absolute values diverges. Show each half with its own named test. At x = −1 above, the convergence is conditional: the alternating series test gives convergence, and Σ 1/n diverges."
+        },
+        {
+          "type": "rule",
+          "title": "Alternating series error bound",
+          "text": "When the conditions of the alternating series test hold, the error after stopping at a partial sum is at most the absolute value of the first omitted term. Say that the conditions hold, and name the term."
+        },
+        {
+          "type": "model",
+          "prompt": "Bound the error when the sum of the first three terms approximates Σ from n = 1 to infinity of (−1)^(n+1)/n^2.",
+          "text": "The terms alternate, 1/n^2 is decreasing, and 1/n^2 → 0, so |S − S_3| ≤ 1/(4^2) = 1/16, the absolute value of the first omitted term."
+        },
+        {
+          "type": "rule",
+          "title": "Lagrange error bound",
+          "text": "|f(x) − P_n(x)| ≤ M·|x − a|^(n+1)/(n + 1)!, where M is at least the largest value of |f^(n+1)| between a and x. Say where M comes from: a bound given in the stem, or a maximum you found on that interval. If the question gives a tolerance, finish by comparing the bound with it."
+        },
+        {
+          "type": "model",
+          "prompt": "Bound the error when P_2(x) = 1 + x + x^2/2, the Taylor polynomial of degree 2 for e^x about x = 0, approximates e^0.5.",
+          "text": "With f(x) = e^x, f‴(x) = e^x, which is increasing, so |f‴(x)| ≤ e^0.5 < 2 for 0 ≤ x ≤ 0.5, because e < 4. By the Lagrange error bound, |e^0.5 − P_2(0.5)| ≤ 2·(0.5)^3/3! = 1/24."
+        },
+        {
+          "type": "rule",
+          "title": "Taylor bookkeeping",
+          "text": "Say \"the Taylor polynomial of degree n for f about x = a\", and join it to f with ≈ at a point, never with =. The coefficient of (x − a)^k is f^(k)(a)/k!. Keep the constant term. When you build a series from a known one by substitution, differentiation or integration, show the general term as well as the first few."
+        },
+        {
+          "type": "trap",
+          "text": "Using the ratio test at an endpoint, or writing the ratio without absolute value bars.",
+          "fix": "The ratio's limit is 1 at both endpoints, so the test is silent there. Substitute each endpoint into the series and use a different named test for each."
+        },
+        {
+          "type": "trap",
+          "text": "Bounding the error of P_n with the nth derivative.",
+          "fix": "The error of a degree-n polynomial is controlled by f^(n+1). For P_3, bound |f^(4)|."
+        },
+        {
+          "type": "trap",
+          "text": "Concluding that a series converges because its terms approach 0.",
+          "fix": "The nth-term test only detects divergence. Σ 1/n has terms that approach 0, and it diverges."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a series conditionally convergent after only the alternating series test.",
+          "fix": "Also show that the series of absolute values diverges, with its own named test. Without that half, the series might converge absolutely."
+        }
+      ]
+    },
+    {
+      "id": "context-and-units",
+      "title": "Units and interpretation",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A context question gives every quantity a meaning and a unit. In Liminal's rubrics, interpretation points go to a sentence that puts the meaning back: which quantity, at what time or over what interval, which direction, and in what units."
+        },
+        {
+          "type": "table",
+          "caption": "Templates for a battery whose charge is B(t) kilowatt-hours, t hours after noon, and whose charge changes at r(t) = B′(t) kilowatt-hours per hour.",
+          "head": [
+            "Expression",
+            "Write",
+            "Units"
+          ],
+          "rows": [
+            [
+              "B′(3) = −1.8",
+              "At t = 3 (3 p.m.), the charge in the battery is decreasing at a rate of 1.8 kilowatt-hours per hour.",
+              "kilowatt-hours per hour"
+            ],
+            [
+              "∫ from 1 to 4 of r(t) dt",
+              "The net change in the battery's charge from t = 1 to t = 4 (1 p.m. to 4 p.m.).",
+              "kilowatt-hours"
+            ],
+            [
+              "B(1) + ∫ from 1 to 4 of r(t) dt",
+              "The charge in the battery at t = 4.",
+              "kilowatt-hours"
+            ],
+            [
+              "(1/(4 − 0))·∫ from 0 to 4 of B(t) dt",
+              "The average charge in the battery over 0 ≤ t ≤ 4.",
+              "kilowatt-hours"
+            ],
+            [
+              "(B(4) − B(0))/(4 − 0)",
+              "The average rate of change of the charge over 0 ≤ t ≤ 4: on average, the charge changed by this many kilowatt-hours each hour.",
+              "kilowatt-hours per hour"
+            ],
+            [
+              "r′(3), which is B″(3)",
+              "The rate at which the charging rate is changing at t = 3.",
+              "kilowatt-hours per hour per hour"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Interpreting a derivative",
+          "text": "At [the input value, with its meaning], [the quantity] is [increasing or decreasing] at a rate of [the size of the derivative] [output units] per [input unit]. For a negative value, say \"decreasing\" and give the positive size."
+        },
+        {
+          "type": "rule",
+          "title": "Interpreting a definite integral",
+          "text": "The integral of a rate over [a, b] is the net change in the quantity from a to b, in the quantity's units. Added to the amount at a, it gives the amount at b."
+        },
+        {
+          "type": "rule",
+          "title": "Average value or average rate of change?",
+          "text": "(1/(b − a))·∫ from a to b of f(t) dt is the average value of f itself, in f's units. (f(b) − f(a))/(b − a) is the average rate of change of f, in f's units per input unit. Read which one the question names: an average amount, or an average rate."
+        },
+        {
+          "type": "text",
+          "text": "The two ideas meet in one place. The average value of a rate r = B′ is the average rate of change of B, because (1/(b − a))·∫ from a to b of B′(t) dt = (B(b) − B(a))/(b − a). So \"the average rate at which the battery charged\" can be found either way."
+        },
+        {
+          "type": "trap",
+          "text": "Giving the wrong kind of unit: a derivative in kilowatt-hours, or the integral of a rate in kilowatt-hours per hour.",
+          "fix": "A derivative divides by the input's unit; an integral multiplies by it."
+        },
+        {
+          "type": "trap",
+          "text": "Interpreting without the time: \"the battery is losing 1.8 kilowatt-hours per hour.\"",
+          "fix": "Rates change from moment to moment. Name the instant (\"at t = 3\") or the interval (\"from t = 1 to t = 4\")."
+        },
+        {
+          "type": "trap",
+          "text": "Restating the symbols in words: \"∫ from 1 to 4 of r(t) dt is the integral of the rate from 1 to 4.\"",
+          "fix": "Say what accumulates: the change in the battery's charge, in kilowatt-hours, from 1 p.m. to 4 p.m."
+        },
+        {
+          "type": "trap",
+          "text": "Calling ∫ from a to b of v(t) dt the total distance traveled.",
+          "fix": "That integral is the displacement, the net change in position. Total distance is ∫ from a to b of |v(t)| dt. The two agree only when v does not change sign on [a, b]."
+        }
+      ]
+    },
+    {
+      "id": "consistency",
+      "title": "Consistency, partial credit and presentation",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Carry your earlier answer forward",
+          "text": "Wherever a Liminal rubric row accepts consistent use, a later part that uses your earlier result correctly earns its points, even when that result was wrong. Name the value you are using: \"Using k = 0.3 from part (a), …\". This stops working when the wrong value makes the later part trivial or impossible, for example when an earlier error leaves no critical point to classify."
+        },
+        {
+          "type": "model",
+          "prompt": "Part (c) asks for the amount at t = 9, given ∫ from 6 to 9 of A′(t) dt = 7, and you found A(6) = 41.5 in part (b).",
+          "text": "Using A(6) = 41.5 from part (b), A(9) = A(6) + ∫ from 6 to 9 of A′(t) dt = 41.5 + 7 = 48.5."
+        },
+        {
+          "type": "rule",
+          "title": "Attempt every part",
+          "text": "Liminal's rubrics score parts separately, and a later part often needs only the stem: it may give a new fact or ask about a different function. If an earlier value is missing, state a reasonable value, say that you are assuming it (\"Assume f(2) = 5.\"), and continue, so that your method is on the page for a reader to credit."
+        },
+        {
+          "type": "rule",
+          "title": "Write the setup even when you cannot finish",
+          "text": "In Liminal's rubrics a setup point stands apart from the answer point. If the antiderivative or the arithmetic stalls, the integral with correct limits, integrand and differential is still on the page."
+        },
+        {
+          "type": "rule",
+          "title": "Short, not bare",
+          "text": "One or two precise sentences beat a paragraph, and they fit the 15-minute pace. Brevity never excuses a missing piece: the justification still names the function, the reason and the place."
+        },
+        {
+          "type": "rule",
+          "title": "Present one answer per part",
+          "text": "Cross out abandoned work with a single clear line. If two different answers remain on the page, a reader cannot choose the right one for you. Label each part's work with its letter so that it can be found."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving a later part blank because part (a) went wrong.",
+          "fix": "Carry forward what you have and say so. A blank earns nothing; in Liminal's rubrics, consistent work on a wrong value earns the points that depend only on method."
+        },
+        {
+          "type": "trap",
+          "text": "Erasing nothing and writing a second attempt beside the first.",
+          "fix": "Decide which attempt you stand by and cross out the other. Liminal's rubrics credit one answer per part."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Checks: choose and rewrite",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open it. For a rewrite, write the full corrected answer, not a note about what is missing. Then compare it with the model answer phrase by phrase."
+        },
+        {
+          "type": "figure",
+          "id": "bc-free-response-writing-g1"
+        },
+        {
+          "type": "check",
+          "id": "bc-free-response-writing-c1",
+          "prompt": "The graph of g′, the derivative of a differentiable function g, is shown for 0 ≤ x ≤ 7. It consists of line segments joining (0, 1), (1, 2), (5, −2) and (7, 2). Which statement justifies that g has a relative maximum at x = 3?\n\n(A) g′(3) = 0.\n(B) g′ changes from positive to negative at x = 3.\n(C) The graph of g′ crosses the x-axis at x = 3.\n(D) g″(3) < 0.",
+          "hint": "For each statement, ask whether it could also be true at a point that is not a relative maximum.",
+          "answer": "(B). g′ changes from positive to negative at x = 3, so g has a relative maximum at x = 3.",
+          "steps": [
+            "(B) is the first-derivative test: g′ > 0 just left of x = 3 and g′ < 0 just right of it, and g is continuous because it is differentiable.",
+            "(A) is true but not enough: g′ is also 0 at relative minima and at points that are neither. A zero of g′ only says where to look.",
+            "(C) is closer, but crossing the axis does not say in which direction. The graph of g′ also crosses at x = 6, where g has a relative minimum.",
+            "(D) is true, because the segment from (1, 2) to (5, −2) has slope −1, so g″(3) = −1. Alone it is not enough; together with (A) it is the second-derivative test, which would also be a complete justification."
+          ],
+          "figureIds": [
+            "bc-free-response-writing-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-free-response-writing-c2",
+          "prompt": "For the same function g, a student writes: \"g has a point of inflection at x = 5 because g″(5) = 0.\" Rewrite the answer so that it earns the justification point.",
+          "hint": "Find the slope of the graph of g′ just left and just right of x = 5.",
+          "answer": "The graph of g′ changes from decreasing to increasing at x = 5, so the graph of g changes from concave down to concave up there, and g has a point of inflection at x = 5.",
+          "steps": [
+            "The student's reason is false: g″(5) does not exist, because the graph of g′ has a corner at x = 5, with slope −1 on the left and 2 on the right.",
+            "Even at a point where g″ is 0, that alone is not a reason; the reason is a change in concavity.",
+            "g″ = −1 on (1, 5) and g″ = 2 on (5, 7), so \"g″ changes from negative to positive at x = 5\" is an equally good justification.",
+            "g is differentiable, so it is continuous at x = 5 and the point lies on its graph."
+          ],
+          "figureIds": [
+            "bc-free-response-writing-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-free-response-writing-c3",
+          "prompt": "A particle moves along a line with velocity v(t) = t^2 − 6t + 5 for t ≥ 0. Which statement correctly decides whether the particle is speeding up or slowing down at t = 2?\n\n(A) a(2) = −2 < 0, so the particle is slowing down.\n(B) v(2) = −3 < 0, so the particle is slowing down.\n(C) v(2) = −3 and a(2) = −2 have the same sign, so the particle is speeding up.\n(D) The speed is |v(2)| = 3 > 0, so the particle is speeding up.",
+          "hint": "Speed is |v(t)|. What makes |v| grow?",
+          "answer": "(C). v(2) and a(2) are both negative, so the particle is speeding up at t = 2.",
+          "steps": [
+            "a(t) = v′(t) = 2t − 6, so a(2) = −2, and v(2) = 4 − 12 + 5 = −3.",
+            "When v and a have the same sign, |v| is increasing. Here the particle moves left, faster and faster.",
+            "(A) uses one sign only. Negative acceleration slows a particle only while it moves right.",
+            "(B) gives the direction of motion, not whether the speed is changing.",
+            "(D) gives the size of the speed, which says nothing about whether it is growing."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-free-response-writing-c4",
+          "prompt": "A function f has f(1) = 2, f′(1) = −3 and f″(1) = 8. To approximate f(1.1), a student writes: \"f(x) = 2 − 3(x − 1) + 8(x − 1)^2 = f(1.1) = 2 − 0.3 + 0.08 = 1.78.\" Rewrite the work so that it uses the second-degree Taylor polynomial for f about x = 1 correctly.",
+          "hint": "Look for three errors: one coefficient and two equals signs.",
+          "answer": "P_2(x) = 2 − 3(x − 1) + (8/2!)(x − 1)^2 = 2 − 3(x − 1) + 4(x − 1)^2. Then f(1.1) ≈ P_2(1.1) = 2 − 0.3 + 0.04 = 1.74.",
+          "steps": [
+            "The coefficient of (x − 1)^2 is f″(1)/2! = 8/2 = 4, not 8.",
+            "f(x) is not equal to its Taylor polynomial, so name the polynomial P_2(x) instead of writing f(x) =.",
+            "P_2(x) is a function and f(1.1) is a number, so they cannot be joined by =. Evaluate on a new line, with ≈ between f(1.1) and P_2(1.1).",
+            "P_2(1.1) = 2 − 3(0.1) + 4(0.01) = 1.74."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-free-response-writing-c5",
+          "prompt": "A function h is differentiable on [1, 5], with h(1) = 4 and h(5) = −4. Asked whether h′(c) = −2 for some c in (1, 5), a student writes: \"Yes, by the IVT, because (−4 − 4)/(5 − 1) = −2.\" Rewrite the answer so that it earns the justification point.",
+          "hint": "Which theorem produces a value of the derivative, and what must you say about h to use it?",
+          "answer": "Yes. h is differentiable on [1, 5], so it is continuous on [1, 5] and differentiable on (1, 5). Since (h(5) − h(1))/(5 − 1) = (−4 − 4)/4 = −2, the Mean Value Theorem gives a c in (1, 5) with h′(c) = −2.",
+          "steps": [
+            "The Intermediate Value Theorem gives values of h, not of h′, so the student named the wrong theorem.",
+            "The Mean Value Theorem needs h continuous on [1, 5] and differentiable on (1, 5). Both follow from the stem's \"differentiable on [1, 5]\", and the answer should say so.",
+            "The computation was right. The justification point is for naming the correct theorem with its hypotheses."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-free-response-writing-c6",
+          "prompt": "Find the absolute minimum value of f(x) = x^3 − 6x^2 + 9x + 1 on [−1, 4]. A student writes: \"f′(x) = 3(x − 1)(x − 3) and f″(3) = 6 > 0, so the absolute minimum is f(3) = 1.\" Rewrite the answer so that it is correct and justified.",
+          "hint": "The second-derivative test finds relative extrema. What else is a candidate on a closed interval?",
+          "answer": "f′(x) = 3x^2 − 12x + 9 = 3(x − 1)(x − 3), so the critical points are x = 1 and x = 3. The candidates are f(−1) = −15, f(1) = 5, f(3) = 1 and f(4) = 5. The least is −15, so the absolute minimum value of f on [−1, 4] is −15, at x = −1.",
+          "steps": [
+            "f is a polynomial, so it is continuous on the closed interval [−1, 4], and its absolute minimum is the least of its values at the critical points and the endpoints.",
+            "The student is right that x = 3 gives a relative minimum, but a relative minimum need not be the lowest point on the interval.",
+            "f(−1) = −1 − 6 − 9 + 1 = −15, which is less than f(3) = 1, so the endpoint gives the absolute minimum."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-free-response-writing-c7",
+          "prompt": "The Taylor polynomial P_3 of degree 3 for f about x = 0 is used to approximate f(0.2), and |f^(4)(x)| ≤ 12 for 0 ≤ x ≤ 0.2. To show that the error is less than 0.001, a student writes: \"Error = 12(0.2)^4/4! = 0.0008 < 0.001.\" Rewrite the work so that it earns the error-bound point.",
+          "hint": "Is the error equal to the bound? Where does the 12 come from?",
+          "answer": "By the Lagrange error bound, with M = 12 bounding |f^(4)(x)| for 0 ≤ x ≤ 0.2, |f(0.2) − P_3(0.2)| ≤ 12·(0.2)^4/4! = 0.0008. Since 0.0008 < 0.001, the error is less than 0.001.",
+          "steps": [
+            "The bound is an upper limit on the error, not its value, so write ≤, not =, and write the error as |f(0.2) − P_3(0.2)|.",
+            "Name the bound and say where M comes from: here, the given bound on the fourth derivative between the center 0 and 0.2. For a degree-3 polynomial the fourth derivative is the right one.",
+            "12·0.0016/24 = 0.0008. Comparing the bound with the tolerance is the last step of the answer, not an afterthought."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-free-response-writing-c8",
+          "prompt": "W(t) is the volume of water, in liters, in a rain barrel t hours after a storm begins, for 0 ≤ t ≤ 6. Given (1/6)·∫ from 0 to 6 of W(t) dt = 48 and (W(6) − W(0))/6 = 2.5, a student writes: \"On average, the water increases by 48 liters per hour.\" Interpret each of the two values correctly, with units.",
+          "hint": "One value averages the amount of water; the other averages how fast the amount changes.",
+          "answer": "The average volume of water in the barrel over the first 6 hours, 0 ≤ t ≤ 6, is 48 liters. Over the same 6 hours, the volume of water increases at an average rate of 2.5 liters per hour.",
+          "steps": [
+            "(1/6)·∫ from 0 to 6 of W(t) dt is the average value of W itself, so its units are those of W: liters.",
+            "(W(6) − W(0))/6 is the average rate of change of W, in liters per hour. Equivalently, the volume rose by 6·2.5 = 15 liters over the 6 hours.",
+            "The student attached the rate's units to the average amount."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Score each workshop set with its rubric. For every justification or units point you missed, find the matching row of the phrasebank, then rewrite that part until it earns the point."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Workshop: reading the graph of a derivative",
+              "ref": "guide:fr-derivative-graph"
+            },
+            {
+              "label": "Workshop: motion along a line",
+              "ref": "guide:fr-linear-motion"
+            },
+            {
+              "label": "Workshop: rates and accumulation in context",
+              "ref": "guide:fr-accumulation"
+            },
+            {
+              "label": "Workshop: differential equations",
+              "ref": "guide:fr-differential-equations"
+            },
+            {
+              "label": "Workshop: Taylor polynomials and power series",
+              "ref": "guide:fr-series"
+            },
+            {
+              "label": "Calculator skills for the calculator parts",
+              "ref": "guide:calculator-skills"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            },
+            {
+              "label": "Practice exam A: answer key and rubrics",
+              "ref": "key:practice-exam"
+            },
+            {
+              "label": "Week 32: synthesis of BC extensions and timed written reasoning",
+              "ref": "week:32"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

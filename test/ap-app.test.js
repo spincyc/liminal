@@ -24,22 +24,23 @@ class Element {
   get textContent() { return [this.value, ...this.children.map(n => n.textContent)].join(" "); }
   set textContent(value) { this.value = value; this.children = []; }
 }
-function page(hash) {
+function page(hash, data) {
   const elements = Object.fromEntries(["apStatus", "apContent", "apCourses", "apBrowser", "main"].map(id => [id, new Element("div")]));
-  const listeners = {}, requests = [];
+  const listeners = {}, requests = [], guides = [];
   const el = (tag, text, className) => new Element(tag, text, className);
   const document = { body: new Element("body"), getElementById: id => elements[id] || null, createTextNode: text => el("text", text), querySelector: () => el("a") };
   const window = {
     LIMINAL_AP_PLAN: F.plan,
-    LIMINAL_AP: { assessments: [1, 2].map(n => ({ courseId: "calculus-ab", id: "unit-" + n, file: "unit-" + n })), references: [] },
+    LIMINAL_AP: data || { assessments: [1, 2].map(n => ({ courseId: "calculus-ab", id: "unit-" + n, file: "unit-" + n })), references: [] },
     LiminalAp: A, LiminalRender: {}, LiminalHighSchool: {},
     LiminalApRender: { el, link: (text, href) => Object.assign(el("a", text), { href }),
-      key: packet => el("article", "KEY SECRET " + packet.id), booklet: packet => el("article", "STUDENT " + packet.id) },
+      key: packet => el("article", "KEY SECRET " + packet.id), booklet: packet => el("article", "STUDENT " + packet.id),
+      guide: (doc, options) => { guides.push(options); return el("article", "GUIDE " + doc.id); } },
     location: { hash }, addEventListener: (event, fn) => { listeners[event] = fn; },
   };
   const fetch = file => new Promise((resolve, reject) => requests.push({ file, resolve: doc => resolve({ ok: true, json: async () => doc }), reject }));
   vm.runInNewContext(fs.readFileSync(path.join(__dirname, "../src/app/ap.js"), "utf8"), { window, document, fetch });
-  return { elements, requests, document, window, go(next) { window.location.hash = next; return listeners.hashchange(); } };
+  return { elements, requests, guides, document, window, go(next) { window.location.hash = next; return listeners.hashchange(); } };
 }
 const flush = () => new Promise(resolve => setImmediate(resolve));
 
@@ -114,4 +115,55 @@ test("printing waits for embedded fonts and a failed font load leaves the print 
   p.document.fonts.load = async () => [{}];
   await button.events.click();
   assert.equal(printed, 2);
+});
+
+// The BC exam-prep routes, with an index naming only some guides and sets.
+function prepPage(hash) {
+  return page(hash, {
+    assessments: [{ courseId: "calculus-bc", id: "practice-exam-b", kind: "practice-exam", title: "Form B", mc: 42, fr: 6, minutes: 190, file: "peb" },
+      { courseId: "calculus-bc", id: "fr-polar", kind: "fr-set", title: "Polar set", mc: 0, fr: 3, minutes: 45, file: "frp" }],
+    guides: ["review-u1", "fr-polar"].map(id => ({ courseId: "calculus-bc", id, kind: A.guideKind(F.plan.courses.find(c => c.id === "calculus-bc"), id), title: "Guide " + id, summary: "S", minutes: 30, checks: 4, file: "g-" + id })),
+    references: [],
+  });
+}
+const find = (node, test) => test(node) ? node : node.children.map(child => find(child, test)).find(Boolean);
+
+test("a guide loaded late cannot replace the current guide, and its links resolve only to built pages", async () => {
+  const p = prepPage("#calculus-bc/guide/review-u1");
+  p.go("#calculus-bc/guide/fr-polar");
+  assert.deepEqual(p.requests.map(r => r.file), ["g-review-u1", "g-fr-polar"]);
+  p.requests[1].resolve(F.guide("fr-polar"));
+  await flush();
+  assert.match(p.elements.apContent.textContent, /GUIDE fr-polar/);
+  p.requests[0].resolve(F.guide("review-u1"));
+  await flush();
+  assert.match(p.elements.apContent.textContent, /GUIDE fr-polar/);
+  assert.doesNotMatch(p.elements.apContent.textContent, /GUIDE review-u1/);
+  assert.match(p.document.title, /Course for AP® Calculus BC · Guide fr-polar — Liminal/);
+  const { href } = p.guides.at(-1);
+  assert.equal(href("test:fr-polar"), "#calculus-bc/test/fr-polar");
+  assert.equal(href("key:practice-exam-b"), "#calculus-bc/test/practice-exam-b/key");
+  assert.equal(href("test:unit-1"), "", "an assessment missing from the build is not linked");
+  assert.equal(href("guide:memory-sheet"), "", "a guide missing from the build is not linked");
+  assert.equal(href("guide:review-u1"), "#calculus-bc/guide/review-u1");
+  assert.equal(href("unit:u2"), "#calculus-bc/u2");
+  assert.equal(href("week:3"), "", "weekly links need the weekly index");
+});
+
+test("prep and prep assessments are titled by the plan and link back to exam preparation", async () => {
+  const p = prepPage("#calculus-bc/prep");
+  await flush();
+  assert.equal(p.document.title, "Course for AP® Calculus BC · Exam preparation — Liminal");
+  assert.match(p.elements.apContent.textContent, /Practice exam B/);
+  assert.match(p.elements.apContent.textContent, /takes 3 hours 10 minutes/, "timing comes from the exam block");
+  assert.match(p.elements.apContent.textContent, /15 questions from across the course/, "mixed-set text comes from the blueprint");
+  p.go("#calculus-bc/test/practice-exam-b/key");
+  p.requests[0].resolve(F.practiceExam("calculus-ab"));
+  await flush();
+  assert.equal(p.document.title, "Course for AP® Calculus BC · Practice exam B · Answer key — Liminal");
+  assert.ok(find(p.elements.apContent, node => node.value === "← Exam preparation" && node.href === "#calculus-bc/prep"));
+  p.go("#calculus-bc/test/mixed-4");
+  await flush();
+  assert.match(p.elements.apContent.textContent, /Mixed set 4/);
+  assert.match(p.elements.apContent.textContent, /being prepared/);
 });

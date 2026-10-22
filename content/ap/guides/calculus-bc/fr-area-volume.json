@@ -1,0 +1,386 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-area-volume",
+  "kind": "fr-archetype",
+  "title": "Area, volume and arc length",
+  "author": "bc-workshop-author",
+  "summary": "How to write a complete answer to a free-response question about regions and solids, an archetype that can appear on the AP® Calculus BC Exam: area between curves in x or in y, solids of revolution and solids with known cross sections, integrals you set up but do not evaluate, the rate at which a volume changes, and the BC extensions of arc length and unbounded regions. Every part of this question rewards the same habit, a slice drawn, measured and summed, so this guide shows what earns each kind of point, gives sentences you can reuse, lists the errors that cost points with their repairs, and works one original example in full. Then take the three-question practice set at 15 minutes a question and score it with its rubrics.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "bc-fr-area-volume-g1",
+      "alt": "The parabola y = 4 − x^2 and the line y = x + 2, crossing at x = −2 and x = 1, with the region between them shaded. A dashed horizontal line y = −1 lies below the region. A thick vertical slice crosses the region near x = 0.6, from the line up to the parabola. Beside the slice, two double-headed arrows rise from the dashed line: a longer one labeled R, ending level with the slice's upper end on the parabola, and a shorter one labeled r, ending level with its lower end on the line.",
+      "caption": "Washers about y = −1: both radii are measured up from the axis, not from the x-axis."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The stimulus is a region in the plane, given by two or three curves, by a graph, or by a real object such as a container, a beam or a mold. The parts then ask you to measure the region (area), to build solids from it (revolving it about a line, or stacking cross sections of a known shape on it), and sometimes to reason about how a volume changes. In BC, a part may ask for the length of a boundary or treat a region that runs off to infinity."
+        },
+        {
+          "type": "text",
+          "text": "It can appear in either part of Section II. With a graphing calculator, the intersections usually need the calculator and the integrals are evaluated numerically, so the points sit in the setups and the three-decimal answers. Without a calculator, the curves are chosen so the antiderivatives come out exact, and a BC version may make an integral improper. Expect it to combine with other archetypes: a volume written as a function of depth turns into a related-rates or accumulation part, and an improper area brings in limit notation."
+        },
+        {
+          "type": "rule",
+          "title": "One method for every part",
+          "text": "Draw one typical slice, write its size at a general position (length for area, cross-section area for volume, √(1 + (f′(x))^2) dx for length), then integrate across every position the slice takes.",
+          "conditions": [
+            "Slices for area and for known cross sections are perpendicular to the axis named in the question; for a solid of revolution they are perpendicular to the axis of rotation.",
+            "The variable of integration is the coordinate that labels the slices: vertical slices use dx, horizontal slices use dy.",
+            "If a boundary changes partway across, the integrand changes there too: split the integral at that position."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "A typical nine-point version uses three or four of these. Points are Liminal's practice weights.",
+          "head": [
+            "Part",
+            "Typical task",
+            "Usual points",
+            "Where the points sit"
+          ],
+          "rows": [
+            [
+              "Area",
+              "Integral of top minus bottom, or right minus left, between intersections",
+              "2",
+              "The integral with its limits; the value"
+            ],
+            [
+              "Solid of revolution",
+              "Discs or washers about an axis or a line y = k or x = k",
+              "2–3",
+              "Both radii measured from the axis; π and the difference of squares; the value"
+            ],
+            [
+              "Known cross sections",
+              "Squares, semicircles, triangles or rectangles standing on the region",
+              "2",
+              "The cross-section area written in terms of the slice length; the value"
+            ],
+            [
+              "Set up only",
+              "An integral expression, often in y or about a vertical line",
+              "2",
+              "Radii or integrand; limits, constant and variable"
+            ],
+            [
+              "Rate of change of a volume",
+              "dV/dt from a volume written as an integral up to a variable depth",
+              "2–3",
+              "dV/dh by the Fundamental Theorem of Calculus; the chain rule; the value with units"
+            ],
+            [
+              "Arc length or perimeter (BC)",
+              "∫ of √(1 + (f′(x))^2), plus any straight edges",
+              "2–3",
+              "The integral; the value; any explanation asked for"
+            ],
+            [
+              "Unbounded region (BC)",
+              "An improper area or volume, finite or not",
+              "2–3",
+              "The integral written as a limit; the antiderivative; the value or the divergence argument"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s rubrics give separate points for the pieces of work below. They are Liminal’s practice weights, not a description of how the exam is scored; the habits they reward are the ones any reader of a written solution needs."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points go to a complete integral: integrand, both limits, the variable, and every constant (π, 1/2, π/8). A correct integrand with wrong limits usually loses the setup point. Liminal's rubrics read mathematical notation only; calculator syntax such as fnInt(…) is not a setup.",
+            "Answer points go to the value, to three decimal places in calculator work and exact without a calculator. An answer point needs its setup on the page: a bare number earns nothing, even when it is right.",
+            "Justification points name the function, the theorem or the comparison. \"The integral converges because lim as b→∞ of (2 − 2/b) exists and equals 2\" earns a point; \"it converges because the graph goes to 0\" does not, because many functions that approach 0, such as 1/x, have divergent integrals.",
+            "Units points ask for units on the number the question asks about: square units for area, cubic units for volume, length per time for a rate of change of depth. A unit on a different quantity, or on an intermediate step only, earns nothing.",
+            "Consistency: a later part that reuses an earlier result, usually an intersection, is scored against your earlier value. Write the value you are using (\"with A ≈ 1.682 from part (a)\") so a reader can follow it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Discs and washers",
+          "text": "Volume = π ∫ from a to b of [(R(x))^2 − (r(x))^2] dx, where R is the distance from the axis to the far edge of the slice and r is the distance to the near edge (r = 0 for a disc). For a vertical axis, slice horizontally and write R and r in terms of y.",
+          "conditions": [
+            "The axis does not pass through the interior of the region.",
+            "The slices are perpendicular to the axis of rotation.",
+            "Each radius is a distance: (curve) − k for an axis y = k below the region, k − (curve) for an axis above it; for an axis x = k, write each curve as x in terms of y and use (curve) − k for an axis to the left of the region, k − (curve) for an axis to its right."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Known cross sections",
+          "text": "Volume = ∫ from a to b of A(x) dx, where A(x) is the area of the cross section whose base is the slice of length s(x). Squares have area s^2; semicircles on a diameter s have area (π/8)s^2; equilateral triangles have area (√3/4)s^2; rectangles of height k times the base have area ks^2.",
+          "conditions": [
+            "The cross sections are perpendicular to the axis that labels x (or y, with dy).",
+            "s is the length of the slice of the base region: top minus bottom for slices in x, right minus left for slices in y."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Arc length",
+          "text": "The length of y = f(x) from x = a to x = b is ∫ from a to b of √(1 + (f′(x))^2) dx.",
+          "conditions": [
+            "f′ is continuous on [a, b].",
+            "The curve is traced once, left to right; a perimeter adds every edge, including straight ones."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Improper integrals",
+          "text": "If f is continuous on [a, ∞), ∫ from a to ∞ of f(x) dx means lim as b→∞ of ∫ from a to b of f(x) dx. If f is continuous on (a, c] and unbounded near x = a, ∫ from a to c of f(x) dx means lim as t→a⁺ of ∫ from t to c of f(x) dx; if f is continuous on [a, c) and unbounded near x = c, it means lim as t→c⁻ of ∫ from a to t of f(x) dx. The integral converges when the limit exists as a finite number.",
+          "conditions": [
+            "Write the limit; do not substitute ∞ into an antiderivative.",
+            "An integral with finite limits can still be improper: check the integrand at each endpoint."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Rate of change of a volume",
+          "text": "If a container's horizontal cross section at height y has area A(y), the volume to depth h is V(h) = ∫ from 0 to h of A(y) dy, so dV/dh = A(h) and dV/dt = A(h) · dh/dt.",
+          "conditions": [
+            "A is continuous, so the Fundamental Theorem of Calculus applies.",
+            "For a solid of revolution about the y-axis, A(h) = π(r(h))^2, the area of the liquid's surface."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Intersections found with the calculator (region between y = e^(x/2), y = 4 − x and the y-axis).",
+          "text": "The curves meet where e^(x/2) = 4 − x, at x = A ≈ 1.682. On 0 < x < A, 4 − x > e^(x/2). Area = ∫ from 0 to A of (4 − x − e^(x/2)) dx = 2.676."
+        },
+        {
+          "type": "model",
+          "prompt": "Washers about a line above the same region, y = 5.",
+          "text": "The line y = 5 lies above the region, so the lower curve is farther from it: R(x) = 5 − e^(x/2) and r(x) = 5 − (4 − x) = 1 + x. Volume = π ∫ from 0 to A of [(5 − e^(x/2))^2 − (1 + x)^2] dx = 43.842."
+        },
+        {
+          "type": "model",
+          "prompt": "\"Set up but do not evaluate\" (the region between x = y^2/2 and x = 2 for 0 ≤ y ≤ 2, revolved about the line x = 3).",
+          "text": "The far edge of a horizontal slice is on the parabola and the near edge is on x = 2, so R(y) = 3 − y^2/2 and r(y) = 3 − 2 = 1. Volume = π ∫ from 0 to 2 of [(3 − y^2/2)^2 − 1^2] dy. Stop there: the expression, with its constant, limits and dy, is the answer. Simplifying or evaluating it is not required and can only introduce an error."
+        },
+        {
+          "type": "model",
+          "prompt": "Rate of change of a volume (a tank whose cross section at height y has area A(y) square meters; water enters at 0.6 cubic meters per minute; A(2) = 1.5).",
+          "text": "Since V(h) = ∫ from 0 to h of A(y) dy, dV/dt = A(h) · dh/dt. At h = 2, 0.6 = 1.5 · dh/dt, so the depth is increasing at 0.4 meters per minute."
+        },
+        {
+          "type": "model",
+          "prompt": "An improper area that is infinite.",
+          "text": "∫ from 1 to ∞ of 1/√x dx = lim as b→∞ of (2√b − 2). This limit does not exist, because 2√b grows without bound, so the integral diverges and the region has infinite area."
+        },
+        {
+          "type": "model",
+          "prompt": "Arc length on the calculator (y = sin x for 0 ≤ x ≤ π).",
+          "text": "dy/dx = cos x, so the length is ∫ from 0 to π of √(1 + cos^2 x) dx = 3.820."
+        },
+        {
+          "type": "model",
+          "prompt": "Why an integral with finite limits is improper.",
+          "text": "∫ from 0 to 4 of 1/√(4 − y) dy is improper because its integrand is unbounded as y→4⁻, even though both limits are finite. Its value is lim as t→4⁻ of (4 − 2√(4 − t)) = 4."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Writing π ∫ of (R − r)^2 for a washer. That is the volume of a disc whose radius is the washer's width, which is a different solid.",
+          "fix": "Square each radius separately: π ∫ of (R^2 − r^2). Check with one slice: at R = 3 and r = 1 the washer face has area 8π, not 4π."
+        },
+        {
+          "type": "trap",
+          "text": "Taking the top curve as the outer radius when the axis lies above the region. For an axis above, the bottom curve is the farther one.",
+          "fix": "Measure from the axis every time: R = distance to the far edge, r = distance to the near edge. The rule \"top curve is outer\" works only for an axis on or below the region, and \"far curve is outer\" fails if the curves cross between the limits; then split at the crossing."
+        },
+        {
+          "type": "trap",
+          "text": "Using f(x) as the radius for a rotation about y = k. A radius measured from the x-axis is right only when k = 0.",
+          "fix": "Radius = |f(x) − k|. About y = −1 the radius to y = f(x) is f(x) + 1; about y = 4, for a curve below it, it is 4 − f(x). If a slice does not reach the axis, the solid has a hole there: the inner radius is the distance from the axis to the near end of the slice, even when the region touches the x-axis."
+        },
+        {
+          "type": "trap",
+          "text": "Integrating in x for a rotation about a vertical line, or using one integral in y when the right or left boundary changes partway up.",
+          "fix": "For discs and washers about x = k, slice horizontally: solve each boundary for x and integrate in y. Sketch a horizontal slice near the bottom and one near the top; if they end on different curves, split the integral at the height where the boundary changes."
+        },
+        {
+          "type": "trap",
+          "text": "Rounding an intersection to two or three decimals and then integrating with the rounded value, which can move the third decimal of the answer.",
+          "fix": "Store intersections in the calculator and write \"A ≈ 1.682 (stored)\". Rounding a limit does least harm when the integrand is zero at that limit (area between two curves at their crossing) and the most when it is not (arc length, discs, a region that ends at a vertical line); storing protects you either way."
+        },
+        {
+          "type": "trap",
+          "text": "Using the wrong area formula for a cross section, most often (π/2)s^2 for a semicircle on a diameter s.",
+          "fix": "Write the shape's area in terms of its own dimension first, then substitute: a semicircle of radius s/2 has area (1/2)π(s/2)^2 = (π/8)s^2."
+        },
+        {
+          "type": "trap",
+          "text": "Substituting ∞ into an antiderivative, or deciding that a region with finite area must produce a solid of finite volume, or the reverse. Neither finiteness implies the other.",
+          "fix": "Write every improper integral as a limit and evaluate the limit. Decide each area and each volume with its own integral."
+        },
+        {
+          "type": "trap",
+          "text": "Treating a container as a cylinder, V = πr^2h, when its radius changes with height, or differentiating with r held fixed.",
+          "fix": "Write V(h) = π ∫ from 0 to h of (r(y))^2 dy. The Fundamental Theorem gives dV/dh = π(r(h))^2, and only then does the chain rule bring in dh/dt."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving units off, or giving cubic centimeters for a rate of change of depth.",
+          "fix": "Read the units from the question: area in square units, volume in cubic units, dV/dt in cubic units per time, dh/dt in length per time."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "figure",
+          "id": "bc-fr-area-volume-g1"
+        },
+        {
+          "type": "example",
+          "prompt": "Without a calculator: let S be the region enclosed by the parabola y = 4 − x^2 and the line y = x + 2. Find the area of S, and find the volume of the solid generated when S is revolved about the line y = −1.",
+          "answer": "Area 9/2; volume 153π/5.",
+          "steps": [
+            "Intersections: 4 − x^2 = x + 2 gives x^2 + x − 2 = 0, so x = −2 or x = 1. At x = 0 the parabola gives 4 and the line gives 2, so the parabola is on top.",
+            "Area = ∫ from −2 to 1 of (4 − x^2 − (x + 2)) dx = ∫ from −2 to 1 of (2 − x − x^2) dx = [2x − x^2/2 − x^3/3] from −2 to 1 = 7/6 − (−10/3) = 9/2.",
+            "Washers: the axis y = −1 lies below S, so every radius is (curve) − (−1). Outer radius R = (4 − x^2) + 1 = 5 − x^2; inner radius r = (x + 2) + 1 = x + 3.",
+            "R^2 − r^2 = (25 − 10x^2 + x^4) − (x^2 + 6x + 9) = 16 − 6x − 11x^2 + x^4.",
+            "Volume = π ∫ from −2 to 1 of (16 − 6x − 11x^2 + x^4) dx = π[16x − 3x^2 − 11x^3/3 + x^5/5] from −2 to 1 = π(143/15 + 316/15) = 153π/5.",
+            "Sense check: the solid sits inside a cylinder of radius 5 and length 3, of volume 75π, and 153π/5 = 30.6π is well under that."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "For the same region S, write, but do not evaluate, an expression for the volume of the solid generated when S is revolved about the line x = 2.",
+          "answer": "π ∫ from 0 to 3 of [(2 + √(4 − y))^2 − (4 − y)^2] dy + π ∫ from 3 to 4 of [(2 + √(4 − y))^2 − (2 − √(4 − y))^2] dy",
+          "steps": [
+            "The axis is vertical, so slice horizontally. Solve for x: the parabola gives x = ±√(4 − y) and the line gives x = y − 2. S runs from y = 0 (the point (−2, 0)) to y = 4 (the vertex).",
+            "A slice at height y always starts on the left half of the parabola, x = −√(4 − y). It ends on the line x = y − 2 for 0 ≤ y ≤ 3, but on the right half of the parabola, x = √(4 − y), for 3 ≤ y ≤ 4. The boundary changes at y = 3, the height of (1, 3), so the integral splits there.",
+            "The axis x = 2 is to the right of S. Outer radius: 2 − (−√(4 − y)) = 2 + √(4 − y). Inner radius: 2 − (y − 2) = 4 − y on the lower piece and 2 − √(4 − y) on the upper piece.",
+            "Write the two integrals with π, the differences of squares, their limits and dy, and stop. (Their total, not required, is 45π/2.)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its solution."
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-area-volume-c1",
+          "prompt": "Let R be the region under y = x^2 from x = 0 to x = 3. R is revolved about the vertical line x = 4. Write an integral for the volume of the solid, then evaluate it without a calculator.",
+          "hint": "The axis is vertical, so slice horizontally. Where does a horizontal slice at height y start and end, and does it reach the axis?",
+          "answer": "π ∫ from 0 to 9 of ((4 − √y)^2 − 1^2) dy = 63π/2",
+          "steps": [
+            "Solve y = x^2 for x: x = √y. A horizontal slice at height y, 0 ≤ y ≤ 9, runs from x = √y to x = 3.",
+            "The slice stops 1 unit short of the axis x = 4, so it sweeps a washer with outer radius 4 − √y and inner radius 4 − 3 = 1.",
+            "π ∫ from 0 to 9 of (15 − 8√y + y) dy = π(135 − 144 + 81/2) = 63π/2.",
+            "Check with shells: 2π ∫ from 0 to 3 of (4 − x)x^2 dx = 2π(36 − 81/4) = 63π/2."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-area-volume-c2",
+          "prompt": "Let T be the unbounded region below y = 3/x, above the x-axis, and to the right of x = 1. Is the area of T finite? Is the volume of the solid generated by revolving T about the x-axis finite? Find each one that is finite.",
+          "hint": "Write each quantity as a limit of integrals from 1 to b, and decide each one separately.",
+          "answer": "The area is infinite; the volume is finite and equals 9π.",
+          "steps": [
+            "Area: lim as b→∞ of ∫ from 1 to b of 3/x dx = lim as b→∞ of 3 ln b, which grows without bound, so the area is infinite.",
+            "Volume: discs of radius 3/x give lim as b→∞ of π ∫ from 1 to b of 9/x^2 dx = lim as b→∞ of π(9 − 9/b) = 9π.",
+            "Infinite area does not force infinite volume: squaring 3/x makes the integrand shrink fast enough to converge."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-area-volume-c3",
+          "prompt": "A bowl's inside is formed by revolving the curve x = √y, for 0 ≤ y ≤ 9, about the y-axis, with lengths in centimeters. Water is poured in at 2 cubic centimeters per second. How fast is the water level rising when the water is 4 centimeters deep?",
+          "hint": "Write the volume of water at depth h as an integral from 0 to h, then differentiate with respect to t.",
+          "answer": "1/(2π) centimeters per second, about 0.159 cm/s",
+          "steps": [
+            "V(h) = π ∫ from 0 to h of (√y)^2 dy = π ∫ from 0 to h of y dy, so dV/dh = πh.",
+            "By the chain rule, dV/dt = πh · dh/dt, so 2 = 4π · dh/dt.",
+            "dh/dt = 2/(4π) = 1/(2π) cm/s."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Take the set under time, 15 minutes a question, then score it with the rubrics before you read the solutions. For each lost point, write which kind it was: setup, answer, justification, units or consistency."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-area-volume"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-area-volume"
+            },
+            {
+              "label": "Unit 8 review: applications of integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Unit 6 review: integration, including improper integrals",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Week 19: average value, motion, accumulation and area",
+              "ref": "week:19"
+            },
+            {
+              "label": "Week 20: volumes by cross sections, discs and washers",
+              "ref": "week:20"
+            },
+            {
+              "label": "Week 21: arc length and geometric modeling",
+              "ref": "week:21"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

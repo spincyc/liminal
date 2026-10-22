@@ -1,0 +1,421 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-derivative-graph",
+  "kind": "fr-archetype",
+  "title": "Reading the graph of a derivative",
+  "author": "bc-workshop-author",
+  "summary": "How to answer a free-response question built on a graph of f′, or on a graph of f with g(x) = ∫ from a to x of f(t) dt, on the AP® Calculus BC Exam: read the height, the slope and the signed area of one picture, say which function each conclusion is about, and write justifications that name the function and the change that proves the claim. The guide covers the usual parts, what earns each kind of point in Liminal's rubrics, model sentences, the traps that cost strong students points, one fully worked model and three quick checks. Then take the three-question practice set at 15 minutes a question and score it with its rubric.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "bc-fr-derivative-graph-g1",
+      "alt": "Graph of f′ for −3 ≤ x ≤ 3 on a unit grid. A line segment falls from (−3, 2) to (−1, 0). A semicircle below the x-axis runs from (−1, 0) through its lowest point (1, −2) to (3, 0)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A derivative-graph question gives you a picture instead of a formula. Usually the picture is the graph of f′, or the graph of f together with a new function g(x) = ∫ from a to x of f(t) dt, so that g′ = f. Each part is answered by reading one of three features of that one picture: its height, its slope, or the signed area between it and the axis."
+        },
+        {
+          "type": "text",
+          "text": "On the AP® Calculus BC Exam this archetype usually sits in the no-calculator part of the free-response section, because every value comes from geometry: triangles, rectangles, trapezoids, semicircles and quarter circles. A context sometimes wraps it (the graph is a rate for water in a tank, energy in a battery, or people in a line), and single parts borrow from neighboring archetypes: a limit that needs L'Hôpital's Rule, a tangent-line approximation, the Mean Value Theorem, an average value, or the chain rule on a function such as g(x^2)."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Height of the graph shown: its sign says where the function one level up increases or decreases; a zero where the sign changes is a relative extremum of that function.",
+            "Slope of the graph shown: its sign gives the concavity of the function one level up; a place where the graph switches between rising and falling (a peak, a valley, or a corner where the slope changes sign) is a point of inflection of that function.",
+            "Signed area: area above the axis counts as positive, area below as negative, and an integral that runs right to left changes sign."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "First move: before reading anything off the graph, write the chain of derivatives at the top of your work, such as \"graph is f′; f′ = slope of f; f″ = slope of f′\" or \"g′ = f, g″ = f′\". It keeps every later sentence about the right function. The chain changes when the question builds a new function, such as h(x) = g(3x) or k(x) = x·g(x); then write the new chain with the chain rule or product rule before you read values."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Parts that appear in this archetype. A question uses three or four of them, and later parts often reuse values found earlier. Points are Liminal's practice weights.",
+          "head": [
+            "The part asks for",
+            "Read from the graph",
+            "Typical points"
+          ],
+          "rows": [
+            [
+              "A value such as g(b) or f(b), or a net change",
+              "Signed areas plus the given starting value; reverse the limits when x is left of the lower limit",
+              "1–2"
+            ],
+            [
+              "Intervals of increase or decrease; relative extrema",
+              "The sign of the graphed derivative and where it changes",
+              "2"
+            ],
+            [
+              "Concavity; points of inflection",
+              "Where the graphed derivative switches between increasing and decreasing",
+              "2"
+            ],
+            [
+              "An absolute extremum on a closed interval",
+              "Candidates (endpoints and sign changes) and their values from areas",
+              "3"
+            ],
+            [
+              "g′(c), g″(c), or a tangent line",
+              "The height and the slope of the graph at c",
+              "1–2"
+            ],
+            [
+              "A limit, often needing L'Hôpital's Rule",
+              "Function values from areas; derivative values from heights and slopes",
+              "1–2"
+            ],
+            [
+              "Differentiability, the Mean Value Theorem, or an average value",
+              "Corners and vertical tangents; secant slopes; signed area divided by width",
+              "1–2"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Expect at least one part that must be justified in words. Expect the absolute-extremum part to be the one where a correct answer without the comparison of candidates loses points."
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics pay for separate pieces of work. Know which piece each point is for, and make that piece visible."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup point: the integral or expression that produces a value, written before any arithmetic. For a value of g left of the lower limit, write g(−3) = −∫ from −3 to 1 of f(t) dt first, then the areas.",
+            "Answer point: the exact value, consistent with your setup. In a no-calculator part, 4 − 2π earns it; a decimal you estimated may not.",
+            "Justification point: one sentence that names the function, states what its graph does, and draws the conclusion. \"It changes sign\" earns nothing, because the reader cannot tell which function \"it\" is.",
+            "Units point: in context, a rate, an average value or an interpreted derivative carries units, and the interpretation names the time and the quantity.",
+            "Consistency: a later part that uses an earlier wrong value can still earn its points when the method is right. Write the earlier value into the later work so a reader can follow it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Derivative of an accumulation function",
+          "text": "If g(x) = ∫ from a to x of f(t) dt, then g′(x) = f(x). With a chain: if h(x) = ∫ from a to u(x) of f(t) dt, then h′(x) = f(u(x))·u′(x).",
+          "conditions": [
+            "f is continuous on an interval containing a and the values of x (or u(x)) in question.",
+            "u is differentiable."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "First derivative test",
+          "text": "If F is continuous at c and F′ changes from positive to negative at c, then F has a relative maximum at c; from negative to positive gives a relative minimum.",
+          "conditions": [
+            "A zero of F′ at which F′ has the same strict sign on both sides (as with −(x − 3)^2 at x = 3) is not an extremum.",
+            "A sign change at a point where F′ does not exist still counts, as long as F is continuous there."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Point of inflection",
+          "text": "The graph of F has a point of inflection at c when F is continuous at c and the concavity of F changes there. From a graph of F′: F′ changes from increasing to decreasing, or from decreasing to increasing, at c.",
+          "conditions": [
+            "F″(c) may be 0 or may not exist. Neither fact alone proves an inflection point; the change is what counts."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Candidates test for absolute extrema",
+          "text": "A function continuous on a closed interval [a, b] has an absolute maximum and an absolute minimum there, each at an endpoint or at a critical point. Evaluate the function at every candidate and compare.",
+          "conditions": [
+            "The interval is closed and the function is continuous on it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Mean Value Theorem",
+          "text": "Some c in (a, b) has F′(c) = (F(b) − F(a))/(b − a).",
+          "conditions": [
+            "F is continuous on [a, b].",
+            "F is differentiable on (a, b). One corner or vertical tangent inside the interval means the theorem does not apply: the conclusion is no longer guaranteed, though it may still happen to hold."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "L'Hôpital's Rule",
+          "text": "If lim as x→c of p(x) = 0 and lim as x→c of q(x) = 0 (or both are infinite), then lim as x→c of p(x)/q(x) = lim as x→c of p′(x)/q′(x), when the second limit exists.",
+          "conditions": [
+            "p and q are differentiable on an open interval containing c (except possibly at c), and q′(x) ≠ 0 there except possibly at c.",
+            "Show both limits before using the rule.",
+            "Differentiate the top and the bottom separately; this is not the quotient rule."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Average value",
+          "text": "The average value of F on [a, b] is (1/(b − a)) ∫ from a to b of F(x) dx. For a rate, it equals the average rate of change of the accumulated quantity over [a, b].",
+          "conditions": [
+            "F is integrable on [a, b]; on a graph, use signed area."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each sentence below earns its point as written. Notice that every one names the function, describes the graph, and concludes. Copy the pattern, not the numbers."
+        },
+        {
+          "type": "model",
+          "prompt": "Increasing interval, from a graph of f with g(x) = ∫ from a to x of f(t) dt.",
+          "text": "g is increasing on (1, 5) because g′(x) = f(x) > 0 on (1, 5)."
+        },
+        {
+          "type": "model",
+          "prompt": "Relative extremum, from a graph of f′.",
+          "text": "f has a relative minimum at x = 3 because f′ changes from negative to positive at x = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "Point of inflection, from a graph of f′.",
+          "text": "The graph of f has a point of inflection at x = 5 because f′ changes from decreasing to increasing at x = 5, so f″ changes from negative to positive there."
+        },
+        {
+          "type": "model",
+          "prompt": "Absolute extremum on a closed interval.",
+          "text": "The candidates are the endpoints x = 0 and x = 7 and the critical point x = 3. Their values are f(0) = 1, f(3) = −4 and f(7) = 2. The absolute minimum value of f on [0, 7] is −4, at x = 3, because it is the least of the candidate values."
+        },
+        {
+          "type": "model",
+          "prompt": "A second derivative at a corner of f, where g′ = f.",
+          "text": "g″(1) does not exist because the graph of f has a corner at x = 1: its slope is 2 to the left and −1/2 to the right, so f′(1) = g″(1) does not exist."
+        },
+        {
+          "type": "model",
+          "prompt": "Applying the Mean Value Theorem to an accumulated quantity A with A′ = r.",
+          "text": "A′(t) = r(t) exists for 0 ≤ t ≤ 6, so A is differentiable, and therefore continuous, on [0, 6]. By the Mean Value Theorem, there is a time c in (0, 6) with r(c) = (A(6) − A(0))/6."
+        },
+        {
+          "type": "model",
+          "prompt": "Starting L'Hôpital's Rule.",
+          "text": "Because lim as x→3 of (f(x) − 4) = 0 and lim as x→3 of (x^2 − 9) = 0, L'Hôpital's Rule gives lim as x→3 of (f(x) − 4)/(x^2 − 9) = lim as x→3 of f′(x)/(2x) = f′(3)/6, since f′ is continuous."
+        },
+        {
+          "type": "model",
+          "prompt": "Interpreting the derivative of a rate, with units (W is the rate, in liters per minute, at which water enters a tank).",
+          "text": "W′(3) = −2 liters per minute per minute: at t = 3 minutes, the rate at which water enters the tank is decreasing at 2 liters per minute per minute."
+        },
+        {
+          "type": "model",
+          "prompt": "Interpreting an average value, with units.",
+          "text": "The average value of W on [0, 6] is (1/6) ∫ from 0 to 6 of W(t) dt = 5 liters per minute: over the first 6 minutes, water entered the tank at an average rate of 5 liters per minute."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Reading the wrong layer: \"f is increasing on (−2, 1) because the graph rises there,\" when the graph shown is f′. A rising graph of f′ means f is concave up, not that f is increasing.",
+          "fix": "Write the chain first and name the function in every sentence: \"f′ > 0, so f increases\"; \"f′ is increasing, so f is concave up\"."
+        },
+        {
+          "type": "trap",
+          "text": "Losing the sign when x is left of the lower limit: computing g(−3) = ∫ from 1 to −3 of f(t) dt as the plain area from −3 to 1.",
+          "fix": "Write ∫ from 1 to −3 = −∫ from −3 to 1 first. Add signed areas from left to right, then negate the total."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a zero of f′ a point of inflection. Zeros of f′ with a sign change locate extrema of f.",
+          "fix": "For inflection points, look for peaks, valleys and corners of the graph of f′, wherever it switches between rising and falling."
+        },
+        {
+          "type": "trap",
+          "text": "Calling every horizontal tangent or corner of the graph of f′ an inflection point. These are where f″ is 0 or undefined, which only makes them candidates.",
+          "fix": "Check that f′ actually switches direction. If f′ decreases on both sides, as at a level spot on a falling curve, the concavity of f does not change."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving out endpoints when finding an absolute extremum, or stopping at the relative maximum. An endpoint can win, especially after a large region of the opposite sign.",
+          "fix": "List every candidate, endpoints included, find each value from areas, and write the comparison. When two values are close, as with 3π/2 and 5, compare them exactly (3π/2 < 5 because π < 10/3)."
+        },
+        {
+          "type": "trap",
+          "text": "Saying that g is not differentiable where the graph of f has a corner, when g′ = f. A continuous f makes g differentiable everywhere; only g″ fails at the corner.",
+          "fix": "Ask which derivative the corner belongs to. A corner in the graph of f breaks f′, which is g″, not g′."
+        },
+        {
+          "type": "trap",
+          "text": "Using the Mean Value Theorem on a graph with a corner or a vertical tangent inside the interval, or claiming the conclusion must hold anyway.",
+          "fix": "Check both hypotheses aloud. If one fails, say which and where, then answer the question directly from the slopes on the graph."
+        },
+        {
+          "type": "trap",
+          "text": "Applying L'Hôpital's Rule without showing an indeterminate form, or writing \"= 0/0\" as if it were a value.",
+          "fix": "Write the limit of the numerator and the limit of the denominator as two separate statements, each equal to 0, before differentiating."
+        },
+        {
+          "type": "trap",
+          "text": "Circle areas: using πr^2 for a semicircle, or reading the diameter as the radius.",
+          "fix": "For a semicircle resting on the axis, the radius is half its width; for a quarter circle, the radius equals its width (and its height). A semicircle is πr^2/2, a quarter circle πr^2/4; attach the sign by position above or below the axis."
+        },
+        {
+          "type": "trap",
+          "text": "Units of a derivative copied from the function: \"W′(3) = −2 liters per minute\".",
+          "fix": "Divide by the input's units once for each derivative. A rate in liters per minute has a derivative in liters per minute per minute."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Read the prompt, cover the steps, and write your own answers first. Then compare your sentences with the ones in the steps, which are written the way they earn points."
+        },
+        {
+          "type": "example",
+          "prompt": "The function f is differentiable on the closed interval −3 ≤ x ≤ 3, and f(−1) = 4. The graph of f′, shown in the figure, consists of a line segment from (−3, 2) to (−1, 0) and a semicircle below the x-axis with center (1, 0) and radius 2. (a) Find f(−3) and f(3). (b) Find the absolute minimum value of f on −3 ≤ x ≤ 3. Justify your answer. (c) Find each x in −3 < x < 3 at which the graph of f has a point of inflection. Justify your answer.",
+          "answer": "(a) f(−3) = 2 and f(3) = 4 − 2π. (b) The absolute minimum value is 4 − 2π, at x = 3. (c) x = 1 only.",
+          "steps": [
+            "Chain first: the graph is f′. Its height tells where f increases, its slope gives the concavity of f, and its signed area gives changes in f.",
+            "(a) f(−3) = f(−1) − ∫ from −3 to −1 of f′(x) dx = 4 − 2 = 2, using the triangle with base 2 and height 2 above the axis. f(3) = f(−1) + ∫ from −1 to 3 of f′(x) dx = 4 − 2π, because the semicircle of radius 2 has area (1/2)π(2)^2 = 2π and lies below the axis.",
+            "(b) f′ > 0 on (−3, −1) and f′ < 0 on (−1, 3), so the only critical point inside the interval is x = −1, where f has a relative maximum. The candidates are x = −3, −1 and 3, with values f(−3) = 2, f(−1) = 4 and f(3) = 4 − 2π.",
+            "Since π > 3, 4 − 2π < 4 − 6 = −2 < 2. Write: \"The absolute minimum value of f on [−3, 3] is 4 − 2π, at x = 3, because it is the least of the candidate values f(−3) = 2, f(−1) = 4 and f(3) = 4 − 2π.\"",
+            "(c) f′ decreases on (−3, 1) and increases on (1, 3). Write: \"The graph of f has a point of inflection at x = 1 because f′ changes from decreasing to increasing there.\"",
+            "At x = −1 the segment meets the semicircle, which starts with a vertical tangent, so f″(−1) does not exist. But f′ decreases on both sides of x = −1, so the concavity of f does not change there. A sharp point on the graph of f′ is a candidate, not a conclusion."
+          ],
+          "figureIds": [
+            "bc-fr-derivative-graph-g1"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Why the endpoint wins in (b): f gains 2 from x = −3 to x = −1 and then loses 2π, more than it gained, so f(3) < f(−3). The heuristic: a large region below the axis at the end makes the right endpoint a strong candidate for the absolute minimum; a large region below the axis at the start makes the left endpoint a strong candidate for the absolute maximum. It is only a place to look. It fails when the regions are close in size, so always finish with the exact comparison."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its answer."
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-derivative-graph-c1",
+          "prompt": "Let f(t) = √(9 − t^2) for 0 ≤ t ≤ 3, whose graph is a quarter circle, and let g(x) = ∫ from 3 to x of f(t) dt. Find g(0) and g′(0).",
+          "hint": "Which way does the integral run when x = 0?",
+          "answer": "g(0) = −9π/4 and g′(0) = 3.",
+          "steps": [
+            "g(0) = ∫ from 3 to 0 of f(t) dt = −∫ from 0 to 3 of f(t) dt.",
+            "The quarter of a disk of radius 3 has area (1/4)π(3)^2 = 9π/4, so g(0) = −9π/4.",
+            "By the Fundamental Theorem of Calculus, g′(0) = f(0) = √9 = 3. g(0) is negative even though f is positive, because the integral runs from right to left."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-derivative-graph-c2",
+          "prompt": "On the interval 1 < x < 4, the graph of f′ is the downward-opening parabola y = −(x − 3)^2, which touches the x-axis at x = 3. Does f have a relative extremum at x = 3? Does the graph of f have a point of inflection at x = 3? Justify each answer.",
+          "hint": "Look at the height of the graph of f′ for one question and its direction for the other.",
+          "answer": "No relative extremum at x = 3; yes, the graph of f has a point of inflection at x = 3.",
+          "steps": [
+            "f′(3) = 0, but f′ ≤ 0 on both sides of x = 3. Since f′ does not change sign, f has no relative extremum at x = 3; f is decreasing on (1, 4).",
+            "f′ increases on (1, 3) and decreases on (3, 4), because the parabola peaks at x = 3. So f″ changes from positive to negative, and the graph of f has a point of inflection at x = 3.",
+            "A zero of f′ at a peak of f′ gives an inflection point, not an extremum."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-derivative-graph-c3",
+          "prompt": "The function f has a continuous derivative, f(4) = 6, and the graph of f′ passes through (4, −1/2). Find lim as x→4 of (f(x) − 6)/(√x − 2).",
+          "hint": "Check the limits of the numerator and the denominator before differentiating anything.",
+          "answer": "−2",
+          "steps": [
+            "lim as x→4 of (f(x) − 6) = f(4) − 6 = 0 because f is continuous, and lim as x→4 of (√x − 2) = 0. The form is 0/0.",
+            "By L'Hôpital's Rule, the limit is lim as x→4 of f′(x)/(1/(2√x)) = lim as x→4 of 2√x·f′(x) = 2(2)(−1/2) = −2, using the continuity of f′.",
+            "Without the continuity of f′, the limit of f′(x) could not be found by substitution. Factor instead: (f(x) − 6)/(√x − 2) = [(f(x) − 6)/(x − 4)]·(√x + 2), which approaches f′(4)·4 = −2 using only the definition of the derivative."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "links",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Take the practice set at 15 minutes a question without a calculator, then score it with the rubric and rewrite one justification until every point is earned. The set's raw points are practice evidence, not AP® scores."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-derivative-graph"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-derivative-graph"
+            },
+            {
+              "label": "Unit 5 review: analytical applications of differentiation",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 6 review: integration and accumulation of change",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 4 review: L'Hôpital's Rule and linearization",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 8 review: average value and accumulation",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Week 10: Mean Value Theorem, extrema, and monotonicity",
+              "ref": "week:10"
+            },
+            {
+              "label": "Week 11: Concavity and connections among derivative graphs",
+              "ref": "week:11"
+            },
+            {
+              "label": "Week 14: Fundamental Theorem, antiderivatives, and substitution",
+              "ref": "week:14"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

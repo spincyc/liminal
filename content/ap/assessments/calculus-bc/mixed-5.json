@@ -1,0 +1,360 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "mixed-5",
+  "kind": "mixed-set",
+  "title": "Mixed set 5: all units at exam pace",
+  "author": "bc-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which idea or method applies. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians and calculator answers are rounded to three decimal places. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "bc-mixed-5-f1",
+      "alt": "Two graphs on axes labeled x and y for 0 ≤ x ≤ 4. The solid graph, labeled y = f(x), is made of segments joining (0, 4), (2, 0), and (4, 2). The dashed graph, labeled y = g(x), is made of segments joining (0, 1), (3, 4), and (4, 4). The graphs cross at (1, 2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "Which test, applied correctly, shows that Σ from n = 1 to infinity of (n!)^2/((2n)!) converges?",
+              "choices": [
+                "The ratio test",
+                "The nth-term test",
+                "The integral test",
+                "Direct comparison with Σ 1/n"
+              ],
+              "key": "A",
+              "rationale": "The ratio of consecutive terms is ((n + 1)!)^2(2n)!/((2n + 2)!(n!)^2) = (n + 1)^2/((2n + 1)(2n + 2)) = (n + 1)/(2(2n + 1)), which tends to 1/4 < 1. The series converges by the ratio test.",
+              "distractorNotes": {
+                "B": "The terms do tend to 0, but the nth-term test can only show divergence. It never proves convergence.",
+                "C": "The integral test needs a positive, continuous, decreasing function f with f(n) equal to the nth term. Factorials supply no such function in this course.",
+                "D": "The terms are smaller than 1/n, but being smaller than the terms of a divergent series proves nothing."
+              },
+              "topics": [
+                "BC.10.RATIO_TEST",
+                "BC.10.NTH_TERM_TEST",
+                "BC.10.DIRECT_COMPARISON"
+              ],
+              "id": "bc-mixed-5-mc01"
+            },
+            {
+              "prompt": "What is ∫ from 0 to ∞ of x e^(−x/2) dx?",
+              "choices": [
+                "1/4",
+                "2",
+                "4",
+                "The integral diverges."
+              ],
+              "key": "C",
+              "rationale": "By parts with u = x and dv = e^(−x/2) dx, ∫ from 0 to b of x e^(−x/2) dx = [−2x e^(−x/2)] from 0 to b + 2∫ from 0 to b of e^(−x/2) dx = −2b e^(−b/2) − 4e^(−b/2) + 4. As b → ∞, both exponential terms tend to 0 (L’Hôpital’s Rule handles b e^(−b/2)), so the integral equals 4.",
+              "distractorNotes": {
+                "A": "This uses −(1/2)e^(−x/2) as an antiderivative of e^(−x/2). The chain rule requires dividing by −1/2, which gives −2e^(−x/2).",
+                "B": "After integrating by parts, the remaining term is 2∫ from 0 to ∞ of e^(−x/2) dx = 2(2). This choice evaluates that integral as 1.",
+                "D": "The factor e^(−x/2) shrinks much faster than x grows, so x e^(−x/2) → 0 and the integral has a finite limit."
+              },
+              "topics": [
+                "BC.6.INFINITE_INTERVAL_INTEGRALS",
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.6.IMPROPER_CONVERGENCE"
+              ],
+              "id": "bc-mixed-5-mc02"
+            },
+            {
+              "prompt": "Which lines are horizontal asymptotes of the graph of f(x) = (2e^x + 3)/(e^x − 1)?",
+              "choices": [
+                "y = 2 and y = −3",
+                "y = 2 only",
+                "y = 2 and y = 3",
+                "y = 2 and x = 0"
+              ],
+              "key": "A",
+              "rationale": "As x → ∞, divide by e^x: f(x) = (2 + 3e^(−x))/(1 − e^(−x)) → 2. As x → −∞, e^x → 0, so f(x) → (0 + 3)/(0 − 1) = −3. The horizontal asymptotes are y = 2 and y = −3.",
+              "distractorNotes": {
+                "B": "This handles x → ∞ only. As x → −∞, e^x → 0, and f(x) → 3/(−1) = −3.",
+                "C": "As x → −∞ the denominator e^x − 1 tends to −1, not 1, so the limit is −3.",
+                "D": "x = 0 is a vertical asymptote, where the denominator is 0. The limit as x → −∞ gives a second horizontal asymptote."
+              },
+              "topics": [
+                "BC.1.LIMITS_AT_INFINITY"
+              ],
+              "id": "bc-mixed-5-mc03"
+            },
+            {
+              "prompt": "The graphs of f and g, each made of line segments, are shown. Let h(x) = f(x)/g(x). What is h′(1)?",
+              "choices": [
+                "−2",
+                "−3/2",
+                "−1/2",
+                "3/2"
+              ],
+              "key": "B",
+              "rationale": "From the graphs, f(1) = 2, f′(1) = −2, g(1) = 2, and g′(1) = 1. Then h′(1) = (f′(1)g(1) − f(1)g′(1))/(g(1))^2 = ((−2)(2) − (2)(1))/4 = −3/2.",
+              "distractorNotes": {
+                "A": "This divides the derivatives, f′(1)/g′(1). The quotient rule does not work that way.",
+                "C": "This adds the two products, (f′g + fg′)/g^2, as in the product rule.",
+                "D": "This subtracts in the wrong order, (fg′ − f′g)/g^2."
+              },
+              "topics": [
+                "BC.2.QUOTIENT_RULE",
+                "BC.2.DERIVATIVE_REPRESENTATIONS"
+              ],
+              "figureIds": [
+                "bc-mixed-5-f1"
+              ],
+              "id": "bc-mixed-5-mc04"
+            },
+            {
+              "prompt": "Near the point (1, 2), the equation x^2 y + y^3 = 10 defines y as a differentiable function of x. Using the line tangent to the curve at (1, 2), what is the approximate value of y when x = 1.13?",
+              "choices": [
+                "1.48",
+                "1.96",
+                "2.00",
+                "2.04"
+              ],
+              "key": "B",
+              "rationale": "Differentiate: 2xy + x^2(dy/dx) + 3y^2(dy/dx) = 0, so dy/dx = −2xy/(x^2 + 3y^2) = −4/13 at (1, 2). The tangent line gives y ≈ 2 − (4/13)(0.13) = 2 − 0.04 = 1.96.",
+              "distractorNotes": {
+                "A": "This treats y^3 as a constant, dropping 3y^2(dy/dx) and getting dy/dx = −4.",
+                "C": "This differentiates x^2 y as x^2(dy/dx) only, dropping 2xy from the product rule, so dy/dx = 0.",
+                "D": "This has the right size of slope, 4/13, but the wrong sign."
+              },
+              "topics": [
+                "BC.3.IMPLICIT_DIFFERENTIATION",
+                "BC.4.LINEARIZATION"
+              ],
+              "id": "bc-mixed-5-mc05"
+            },
+            {
+              "prompt": "A lamp sits on top of a 6-meter pole. A person 1.8 meters tall walks directly away from the pole at a constant 1.4 meters per second. How fast is the tip of the person’s shadow moving away from the pole?",
+              "choices": [
+                "0.6 m/s",
+                "1.4 m/s",
+                "1.82 m/s",
+                "2 m/s"
+              ],
+              "key": "D",
+              "rationale": "Let x be the person’s distance from the pole and s the shadow’s length. Similar triangles give 6/(x + s) = 1.8/s, so 4.2s = 1.8x and s = 3x/7. The tip is at distance x + s = 10x/7 from the pole, so it moves at (10/7)(1.4) = 2 m/s.",
+              "distractorNotes": {
+                "A": "This is the rate at which the shadow’s length grows. The tip moves at the person’s speed plus that rate.",
+                "B": "This is the person’s speed. The tip of the shadow moves faster than the person.",
+                "C": "This sets s/1.8 = x/6, pairing the pole’s height with the distance from the pole to the person instead of the distance from the pole to the tip of the shadow, x + s. That gives ds/dt = 0.42 and a tip speed of 1.4 + 0.42 = 1.82."
+              },
+              "topics": [
+                "BC.4.RELATED_RATE_SOLUTIONS",
+                "BC.4.RELATED_RATE_MODELS"
+              ],
+              "id": "bc-mixed-5-mc06"
+            },
+            {
+              "prompt": "A function f is differentiable on [0, 6]. Selected values of f are shown in the table. Which statement must be true?\n\n| x | 0 | 2 | 5 | 6 |\n| --- | --- | --- | --- | --- |\n| f(x) | 4 | −1 | −1 | 3 |",
+              "choices": [
+                "f′(c) = 0 for some c in (2, 5).",
+                "f(c) = 0 for some c in (2, 5).",
+                "f′(c) = −5 for some c in (0, 2).",
+                "f has a local maximum at some c in (2, 5)."
+              ],
+              "key": "A",
+              "rationale": "f is continuous on [2, 5] and differentiable on (2, 5), with f(2) = f(5) = −1. By Rolle’s theorem (the Mean Value Theorem with secant slope 0), f′(c) = 0 for some c in (2, 5).",
+              "distractorNotes": {
+                "B": "f(2) and f(5) are both −1, so the Intermediate Value Theorem gives no zero there. f could stay below 0 on [2, 5].",
+                "C": "The Mean Value Theorem gives f′(c) = (−1 − 4)/(2 − 0) = −5/2. This choice forgets to divide by the length of the interval.",
+                "D": "f could decrease and then increase on [2, 5], dipping below −1. Then it has a local minimum in (2, 5) but no local maximum."
+              },
+              "topics": [
+                "BC.5.MEAN_VALUE_THEOREM",
+                "BC.1.INTERMEDIATE_VALUE_THEOREM"
+              ],
+              "id": "bc-mixed-5-mc07"
+            },
+            {
+              "prompt": "Let R be the region bounded by the graph of y = x^3, the line y = 8, and the y-axis. A solid has base R, and its cross sections perpendicular to the y-axis are semicircles with diameters in R. Which expression gives the volume of the solid?",
+              "choices": [
+                "(π/2)∫ from 0 to 8 of y^(2/3) dy",
+                "(π/8)∫ from 0 to 2 of (8 − x^3)^2 dx",
+                "(π/8)∫ from 0 to 8 of y^(2/3) dy",
+                "π∫ from 0 to 8 of y^(2/3) dy"
+              ],
+              "key": "C",
+              "rationale": "At height y, the cross section runs from the y-axis to x = y^(1/3), so its diameter is d = y^(1/3), and its area is (1/2)π(d/2)^2 = (π/8)y^(2/3). Then V = (π/8)∫ from 0 to 8 of y^(2/3) dy = 12π/5.",
+              "distractorNotes": {
+                "A": "This uses the diameter y^(1/3) as the radius. A semicircle of diameter d has area (π/8)d^2.",
+                "B": "This slices perpendicular to the x-axis, where the diameter would be 8 − x^3. These cross sections are perpendicular to the y-axis.",
+                "D": "This is the volume of the solid formed by revolving R about the y-axis, with discs of radius y^(1/3)."
+              },
+              "topics": [
+                "BC.8.CROSS_SECTION_VOLUMES",
+                "BC.8.AREA_DY"
+              ],
+              "id": "bc-mixed-5-mc08"
+            },
+            {
+              "prompt": "Let y = f(x) be the solution of the differential equation dy/dx = y^2 e^x with f(0) = 1/2. What is f(ln 2)?",
+              "choices": [
+                "1/3",
+                "1/2 + (ln 2)/4",
+                "−1/2",
+                "1"
+              ],
+              "key": "D",
+              "rationale": "Separate the variables: y^(−2) dy = e^x dx, so −1/y = e^x + C. The condition f(0) = 1/2 gives −2 = 1 + C, so C = −3 and y = 1/(3 − e^x), which is defined for x < ln 3, an interval containing 0 and ln 2. Then f(ln 2) = 1/(3 − 2) = 1.",
+              "distractorNotes": {
+                "A": "Integrating y^(−2) as +1/y instead of −1/y gives 1/y = e^x + 1, so y = 1/(e^x + 1) and f(ln 2) = 1/3.",
+                "B": "This is the tangent-line estimate f(0) + f′(0)·ln 2 with f′(0) = (1/2)^2·e^0 = 1/4, not the value of the solution.",
+                "C": "Dropping the constant gives −1/y = e^x, which ignores f(0) = 1/2 and leads to y = −e^(−x) and −1/2."
+              },
+              "topics": [
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.INITIAL_VALUE_PROBLEMS"
+              ],
+              "id": "bc-mixed-5-mc09"
+            },
+            {
+              "prompt": "A function f has derivatives of all orders, and |f^(4)(x)| ≤ 6 for 0 ≤ x ≤ 0.5. The third-degree Taylor polynomial for f about x = 0 is used to approximate f(0.5). What is the Lagrange error bound for this approximation?",
+              "choices": [
+                "1/64",
+                "3/32",
+                "1/8",
+                "3/8"
+              ],
+              "key": "A",
+              "rationale": "For the third-degree Taylor polynomial, the Lagrange bound is max|f^(4)| · (0.5 − 0)^4/4! = 6(1/16)/24 = 1/64.",
+              "distractorNotes": {
+                "B": "This divides by 4 instead of 4! = 24.",
+                "C": "This uses the third power and 3!, as for a second-degree polynomial. A third-degree polynomial’s bound uses the fourth power and 4!.",
+                "D": "This omits the factorial: 6(0.5)^4 = 3/8."
+              },
+              "topics": [
+                "BC.10.LAGRANGE_REMAINDER",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS"
+              ],
+              "id": "bc-mixed-5-mc10"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "prompt": "The series S = Σ from n = 1 to infinity of (−1)^(n+1)/n^2 has sum π^2/12. Let S_N be the sum of its first N terms. What is the least N for which |S − S_N| < 0.001?",
+              "choices": [
+                "21",
+                "22",
+                "31",
+                "32"
+              ],
+              "key": "B",
+              "rationale": "With a calculator, compute partial sums and compare them with π^2/12 ≈ 0.822467: |S − S_21| ≈ 0.001080 and |S − S_22| ≈ 0.000986, and the error stays below 0.001 after that. The least N is 22. The alternating series bound 1/(N + 1)^2 would call for N = 31 because it overestimates the error.",
+              "distractorNotes": {
+                "A": "|S − S_21| ≈ 0.001080, which rounds to 0.001 but is not less than 0.001.",
+                "C": "This is the least N with 1/(N + 1)^2 < 0.001, from the alternating series error bound. The bound is larger than the actual error, so it ensures accuracy only at a larger N than needed.",
+                "D": "This is the least N with 1/N^2 < 0.001, which uses the last term included instead of the first term omitted. It is also a bound, not the actual error."
+              },
+              "topics": [
+                "BC.10.ALTERNATING_REMAINDER",
+                "BC.10.SERIES_AND_PARTIAL_SUMS",
+                "BC.10.ALTERNATING_SERIES"
+              ],
+              "id": "bc-mixed-5-mc11"
+            },
+            {
+              "prompt": "A point moves along the polar curve r = 2 + cos(3θ). At θ = 0.8, what is the rate of change of the point’s y-coordinate with respect to θ?",
+              "choices": [
+                "−2.318",
+                "−2.026",
+                "−0.574",
+                "0.248"
+              ],
+              "key": "C",
+              "rationale": "y = r sin θ, so dy/dθ = (dr/dθ)sin θ + r cos θ. At θ = 0.8, r = 2 + cos(2.4) = 1.262606 and dr/dθ = −3 sin(2.4) = −2.026390, so dy/dθ = −2.026390 sin(0.8) + 1.262606 cos(0.8) ≈ −0.574.",
+              "distractorNotes": {
+                "A": "This is dx/dθ = (dr/dθ)cos θ − r sin θ, the rate for the x-coordinate.",
+                "B": "This is dr/dθ, the rate of change of r, not of y.",
+                "D": "This is dy/dx, the slope of the curve, which divides dy/dθ by dx/dθ."
+              },
+              "topics": [
+                "BC.9.POLAR_DERIVATIVES"
+              ],
+              "id": "bc-mixed-5-mc12"
+            },
+            {
+              "prompt": "Let R be the region enclosed by the graphs of x = 4 − y^2 and x = e^y. What is the area of R?",
+              "choices": [
+                "1.957",
+                "6.428",
+                "9.168",
+                "11.909"
+              ],
+              "key": "B",
+              "rationale": "Slice horizontally. The curves meet where 4 − y^2 = e^y, at y = a ≈ −1.964636 and y = b ≈ 1.058006, and 4 − y^2 > e^y between them. The area is ∫ from a to b of (4 − y^2 − e^y) dy ≈ 6.428.",
+              "distractorNotes": {
+                "A": "This integrates only from y = 0 to the upper intersection and misses the part of R below the x-axis.",
+                "C": "This is ∫ (4 − y^2) dy between the intersections, the area between the parabola and the y-axis. The left boundary is x = e^y, not x = 0.",
+                "D": "This adds e^y instead of subtracting it. The width of a horizontal strip is the right curve minus the left curve."
+              },
+              "topics": [
+                "BC.8.AREA_DY"
+              ],
+              "id": "bc-mixed-5-mc13"
+            },
+            {
+              "prompt": "Let g(x) = ∫ from 0 to x of sin(t^2) dt for 0 ≤ x ≤ 3. At what value of x does g attain its absolute maximum on [0, 3]?",
+              "choices": [
+                "1.253",
+                "1.772",
+                "2.507",
+                "3"
+              ],
+              "key": "B",
+              "rationale": "g′(x) = sin(x^2) = 0 in (0, 3) at x = √π ≈ 1.772 and x = √(2π) ≈ 2.507. The candidates are g(0) = 0, g(√π) ≈ 0.894831, g(√(2π)) ≈ 0.430408, and g(3) ≈ 0.773563, so the absolute maximum occurs at x = √π ≈ 1.772.",
+              "distractorNotes": {
+                "A": "There g′(x) = sin(x^2) is greatest, which makes it an inflection point of g, not a maximum.",
+                "C": "g′ changes from negative to positive at x = √(2π), so g has a local minimum there.",
+                "D": "g increases on (√(2π), 3), but g(3) ≈ 0.774 is less than g(√π) ≈ 0.895."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION_FUNCTIONS",
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.5.EXTREME_VALUE_THEOREM"
+              ],
+              "id": "bc-mixed-5-mc14"
+            },
+            {
+              "prompt": "A function f is differentiable for all x, and f′(x) = x sin x − 1. At which values of x in the interval 0 < x < 7 does f have a relative maximum?",
+              "choices": [
+                "x = 1.114 and x = 6.439",
+                "x = 2.029 and x = 4.913",
+                "x = 1.114, x = 2.773, and x = 6.439",
+                "x = 2.773 only"
+              ],
+              "key": "D",
+              "rationale": "Graph f′ on (0, 7). Its zeros are x ≈ 1.114, 2.773, and 6.439. f′ changes from positive to negative only at x ≈ 2.773, so f has a relative maximum there and nowhere else in the interval.",
+              "distractorNotes": {
+                "A": "f′ changes from negative to positive at these zeros, so f has relative minima there.",
+                "B": "These are the zeros of f″(x) = sin x + x cos x, where f′ has its extrema. They are inflection points of f.",
+                "C": "These are all the zeros of f′. Only a change of f′ from positive to negative gives a relative maximum."
+              },
+              "topics": [
+                "BC.5.FIRST_DERIVATIVE_TEST",
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS"
+              ],
+              "id": "bc-mixed-5-mc15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

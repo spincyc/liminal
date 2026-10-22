@@ -1,0 +1,377 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-accumulation",
+  "kind": "fr-archetype",
+  "title": "Rates and accumulation in context",
+  "author": "bc-workshop-author",
+  "summary": "How to read, set up and justify a free-response question about rates that flow into and out of an amount: the amount from its rates, whether it is rising or falling at an instant, its greatest and least values by the candidates test, the average value of a rate, units in every interpretation, and an equation for a time. The guide gives the usual parts, what earns each kind of point, model sentences, traps with their repairs, one worked model and three checks, then links to a three-question practice set with rubrics.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "bc-fr-accumulation-g1",
+      "alt": "Graph of the arrival rate a(t), a downward-opening parabola starting at 20 when t = 0, rising to 32 at t = 2 and falling to 5 at t = 5, with a dashed horizontal line at 20 for the closing rate. The region between them is shaded lightly from t = 0 to t = 4, where the curve is above the line and is labeled N rises, and darkly from t = 4 to t = 5, where the curve is below the line and is labeled N falls. A dot marks the crossing at t = 4.",
+      "caption": "Rate in against rate out for the worked model. The amount rises while the curve is above the line."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The question gives one or two rates in a real context. Something flows in, something flows out, and you track the amount that is left: water in a tank, grain in a silo, energy in a battery, messages in a queue."
+        },
+        {
+          "type": "text",
+          "text": "On the AP® Calculus BC Exam this archetype usually appears in the calculator part of the free-response section. The rates are often built from functions with no elementary antiderivative, or their crossing times must be found numerically. A no-calculator version uses rates you can integrate by hand, a graph made of line segments, or a table."
+        },
+        {
+          "type": "text",
+          "text": "Every part rests on one relationship: the amount changes at (rate in) − (rate out). So the amount at a later time is the starting amount plus the integral of that net rate, and the amount is increasing exactly when the rate in is greater than the rate out."
+        },
+        {
+          "type": "list",
+          "items": [
+            "With a table of rate values, the question borrows from the tables archetype: estimate the integral with a Riemann or trapezoidal sum and say whether the estimate is an overestimate or an underestimate only when the question states that the rate is increasing, decreasing, concave up or concave down on the interval; increasing table values alone do not establish it.",
+            "Velocity is the rate of change of position, so the motion questions use the same reasoning: position is the initial position plus the integral of velocity.",
+            "When the rate depends on the amount itself, as in dA/dt = 0.1A, the question has become a differential equation. Integrating the rate with respect to t no longer works; separate the variables instead."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "A full question uses three or four of these parts for 9 points. Points are Liminal’s practice weights.",
+          "head": [
+            "The part asks",
+            "Write this",
+            "Usual points"
+          ],
+          "rows": [
+            [
+              "How much entered, or left, during [a, b]",
+              "∫ from a to b of that rate dt, then its value with units",
+              "1 setup or integral, 1 answer"
+            ],
+            [
+              "The amount at time b",
+              "A(b) = A(a) + ∫ from a to b of (in(t) − out(t)) dt, then its value",
+              "1 integrand, 1 initial amount, 1 answer"
+            ],
+            [
+              "Is the amount increasing or decreasing at t = c?",
+              "A′(c) = in(c) − out(c), its sign, and the conclusion",
+              "1 for A′(c), 1 for the reasoned conclusion"
+            ],
+            [
+              "When is the amount greatest, or least?",
+              "Solve in(t) = out(t); list endpoints, balance times and jump times; compare values or argue from signs",
+              "1 candidates, 1 answer, 1 justification"
+            ],
+            [
+              "The average rate over [a, b]",
+              "(1/(b − a))∫ from a to b of r(t) dt, with the rate’s units",
+              "1 setup, 1 answer with units"
+            ],
+            [
+              "The meaning of r′(c) or of an integral",
+              "One sentence with the time, the quantity, the direction or sign, and units",
+              "1 value, 1 interpretation"
+            ],
+            [
+              "The time when the amount reaches a level",
+              "A(a) + ∫ from a to T of (in(t) − out(t)) dt = level, solved for T in the stated interval",
+              "1 equation, 1 answer, sometimes 1 for why the time exists or is unique"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s workshop rubrics award five kinds of points. Know which kind each line of your answer is earning."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points go to the mathematics that produces a number: the integral with its limits and integrand, the equation you solve, the derivative you evaluate. On a calculator part the setup is the only evidence of your method, so write it in calculus notation, never as calculator syntax.",
+            "Answer points go to the value: three decimal places in calculator work, rounded only at the end, and exact values in no-calculator work. The keys accept a calculator value within 0.001.",
+            "Justification points go to a reason that names the function and what it does, such as “A′ = R − D changes from positive to negative at t ≈ 3.162”, not “the graph turns down”. For an absolute extremum, the reason is a comparison of every candidate or a sign argument that covers the whole interval.",
+            "Units points go to the units of the quantity asked about: an amount (liters, tons, kilowatt-hours), a rate (tons per hour), or the rate of change of a rate (tons per hour per hour).",
+            "Consistency points: when a later part uses an earlier answer, the keys award its answer point for correct work with the value you carried forward. A wrong earlier value then costs you once, provided your work shows where the value came from."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Amount from rates",
+          "text": "If an amount A changes at the rate A′(t) = in(t) − out(t), then A(b) = A(a) + ∫ from a to b of (in(t) − out(t)) dt.",
+          "conditions": [
+            "The rates are continuous on [a, b], or piecewise continuous; split the integral at each break.",
+            "The amount A(a) at one time is known.",
+            "Nothing else changes the amount."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Candidates test for an absolute extremum",
+          "text": "The absolute maximum and minimum of A on [a, b] occur among the endpoints a and b and the interior times where A′ is zero or does not exist. Evaluate A at every candidate. The largest value is the absolute maximum and the smallest is the absolute minimum.",
+          "conditions": [
+            "A is continuous on [a, b], which holds whenever A is a starting amount plus an integral of a rate.",
+            "Every interior zero of in − out is found, and every time at which a rate jumps is listed."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Average value of a rate",
+          "text": "The average value of r on [a, b] is (1/(b − a))∫ from a to b of r(t) dt. It has the units of r. When r = A′, it equals the average rate of change of the amount, (A(b) − A(a))/(b − a).",
+          "conditions": [
+            "r is continuous on [a, b], or piecewise continuous."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each sentence below is written to earn its point. The pattern is the same every time: name the time or interval, the quantity, the direction or sign, and the units."
+        },
+        {
+          "type": "model",
+          "prompt": "Meaning of an integral of a rate. R(t) is the rate, in liters per minute, at which water drains from a tank, and ∫ from 10 to 30 of R(t) dt ≈ 296.925.",
+          "text": "From t = 10 minutes to t = 30 minutes, a total of about 296.925 liters of water drains from the tank."
+        },
+        {
+          "type": "model",
+          "prompt": "Average value of a rate, with units, for the same tank.",
+          "text": "The average rate at which water drains from the tank over 0 ≤ t ≤ 30 is (1/30)∫ from 0 to 30 of R(t) dt ≈ 13.303 liters per minute."
+        },
+        {
+          "type": "model",
+          "prompt": "Meaning of the derivative of a rate. H(t) is the rate, in megabytes per second, at which a file downloads, and H′(12) = 0.8.",
+          "text": "At t = 12 seconds, the download rate is increasing at 0.8 megabytes per second per second."
+        },
+        {
+          "type": "text",
+          "text": "The next models share one situation: an amount A on 0 ≤ t ≤ 8 with A(0) = 120, rate in R(t) and rate out D(t), as a calculator part would give them."
+        },
+        {
+          "type": "model",
+          "prompt": "Increasing or decreasing at an instant.",
+          "text": "A′(2) = R(2) − D(2) ≈ 6.429 > 0, so the amount is increasing at t = 2, because the rate in is greater than the rate out."
+        },
+        {
+          "type": "model",
+          "prompt": "Absolute maximum by the candidates test on [0, 8].",
+          "text": "A′(t) = R(t) − D(t) = 0 only at t ≈ 3.162 in (0, 8). Candidates: A(0) = 120, A(3.162) ≈ 147.075, A(8) ≈ 113.307. The amount is greatest, about 147.075, at t ≈ 3.162."
+        },
+        {
+          "type": "model",
+          "prompt": "Absolute maximum by a sign argument, when A′ changes sign only once.",
+          "text": "A′ = R − D is positive on (0, 3.162) and negative on (3.162, 8], so A increases on [0, 3.162] and decreases on [3.162, 8]. Therefore A(3.162) is the absolute maximum of A on [0, 8]."
+        },
+        {
+          "type": "text",
+          "text": "This argument needs A′ to change sign only once. When A′ changes sign at two or more interior times, a local maximum need not be the absolute maximum. Then compare every candidate, or use the sign chart together with a comparison of the competing values, such as the local maximum against the left endpoint."
+        },
+        {
+          "type": "model",
+          "prompt": "An equation for the first time the amount reaches 140.",
+          "text": "T satisfies 120 + ∫ from 0 to T of (R(t) − D(t)) dt = 140. A increases on [0, 3.162] from 120 to about 147.075, so the first such time lies in (0, 3.162); solving there gives T ≈ 1.552."
+        },
+        {
+          "type": "model",
+          "prompt": "Exactly one time in (5, 8), by existence and uniqueness.",
+          "text": "A is continuous, and A(5) ≈ 140.519 > 130 > A(8) ≈ 113.307, so by the Intermediate Value Theorem A(t) = 130 for some t in (5, 8). Since A′ = R − D < 0 on [5, 8], A is strictly decreasing there, so A(t) = 130 for exactly one t in (5, 8). (A also equals 130 once in (0, 3.162), while it is rising.)"
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Maximizing the wrong function: setting R′(t) = 0 to find when the amount is greatest.",
+          "fix": "The amount is greatest where its own derivative, R − D, changes from positive to negative. R′ = 0 finds when the inflow is fastest, which answers a different question."
+        },
+        {
+          "type": "trap",
+          "text": "Deciding that the amount is falling because the rate in is falling.",
+          "fix": "The direction of the amount depends on the sign of in − out, not on whether the inflow is rising or falling. A shrinking inflow that still exceeds the outflow keeps the amount rising."
+        },
+        {
+          "type": "trap",
+          "text": "Stopping at the balance point: the rates balance at t = c, so the answer is t = c.",
+          "fix": "A balance point is a candidate, not an answer. The extreme can sit at an endpoint, as when an amount keeps falling long after its local maximum, so that its least value is at the right endpoint, or keeps rising long after its local minimum, so that its greatest value is there. Compare every candidate, or show the sign of in − out on the whole interval."
+        },
+        {
+          "type": "trap",
+          "text": "Missing a candidate where a rate jumps.",
+          "fix": "If a rate switches on, switches off or changes value at t = c, list c. The net rate can change sign there with no balance point at all. A′(c) does not exist, but A is still continuous, so A(c) can be the maximum or minimum."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving out the starting amount, or subtracting the outflow twice.",
+          "fix": "Write the whole template first, A(b) = A(a) + ∫ from a to b of (in(t) − out(t)) dt, and then evaluate. One integral of in − out keeps the signs straight."
+        },
+        {
+          "type": "trap",
+          "text": "Giving a rate of change of a rate the units of an amount: “the delivery rate decreases by 1.9 tons”.",
+          "fix": "The derivative of a rate in tons per hour has units of tons per hour per hour. Say that at that instant the rate is decreasing at 1.9 tons per hour per hour."
+        },
+        {
+          "type": "trap",
+          "text": "Averaging the endpoint rates, (r(0) + r(8))/2, or computing (r(8) − r(0))/8, for the average rate.",
+          "fix": "The average value of a rate is (1/(b − a)) times its integral. The endpoint average always agrees when r is linear, but for other rates it generally does not. The quotient (r(b) − r(a))/(b − a) is the average rate of change of the rate, a different quantity with different units."
+        },
+        {
+          "type": "trap",
+          "text": "Rounding early: storing 3.0 for a balance time and integrating up to it.",
+          "fix": "Store the solver’s full value and reuse it in later integrals. Round only the reported answer, to three decimal places. Early rounding can move the third decimal and cost the answer point."
+        },
+        {
+          "type": "trap",
+          "text": "Writing calculator syntax, or a bare number, as the setup.",
+          "fix": "Write the integral or equation in calculus notation, such as 120 + ∫ from 0 to 8 of (R(t) − D(t)) dt, then the value. A number with no setup earns no setup point and gives the reader no evidence for the answer."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A short no-calculator question, worked in full. A calculator version follows the same steps, with each setup written out and values given to three decimal places."
+        },
+        {
+          "type": "example",
+          "prompt": "A help desk receives support tickets at the rate a(t) = 20 + 12t − 3t^2 tickets per hour and closes tickets at a constant rate of 20 tickets per hour, for 0 ≤ t ≤ 5, where t is measured in hours. At t = 0 there are 10 open tickets. Let N(t) be the number of open tickets at time t. (a) Find the average rate at which tickets arrive over 0 ≤ t ≤ 5. (b) Find the greatest number of open tickets on [0, 5] and the time at which it occurs. Justify your answer. (c) Find the time at which there are 26 open tickets.",
+          "answer": "(a) 25 tickets per hour. (b) 42 open tickets, at t = 4. (c) t = 2 hours.",
+          "steps": [
+            "(a) The average rate is (1/5)∫ from 0 to 5 of (20 + 12t − 3t^2) dt = (1/5)[20t + 6t^2 − t^3] from 0 to 5 = (1/5)(100 + 150 − 125) = 25 tickets per hour.",
+            "(b) N′(t) = a(t) − 20 = 12t − 3t^2 = 3t(4 − t). N′ > 0 on (0, 4) and N′ < 0 on (4, 5], so the only interior candidate is t = 4, where the rates balance.",
+            "N(t) = 10 + ∫ from 0 to t of (12x − 3x^2) dx = 10 + 6t^2 − t^3. Candidates: N(0) = 10, N(4) = 10 + 96 − 64 = 42, N(5) = 10 + 150 − 125 = 35.",
+            "The greatest number is 42 open tickets, at t = 4. Justification: N is continuous on [0, 5], and 42 is the largest value among the endpoints and the only interior critical point. A sign argument also works here: N increases on [0, 4] and decreases on [4, 5].",
+            "(c) Solve 10 + 6t^2 − t^3 = 26, that is, t^3 − 6t^2 + 16 = 0. Trying small integers, t = 2 works, so t^3 − 6t^2 + 16 = (t − 2)(t^2 − 4t − 8).",
+            "The other roots are t = 2 ± 2√3, about 5.464 and −1.464, and neither lies in [0, 5]. So t = 2 hours is the only time with 26 open tickets. Check: N(2) = 10 + 24 − 8 = 26.",
+            "Sanity check on the model: a(t) stays positive on [0, 5], with smallest value a(5) = 5, so the help desk never receives a negative number of tickets."
+          ],
+          "figureIds": [
+            "bc-fr-accumulation-g1"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "What earned each point: in (a), the setup before the arithmetic and the units; in (b), the derivative N′ = a − 20, every candidate, and the comparison; in (c), the equation and the test of each root against the interval."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "check",
+          "id": "bc-fr-accumulation-c1",
+          "prompt": "B(t) is the rate, in loaves per hour, at which a bakery’s oven produces bread, t hours after 5 a.m., and B′(2) = −6. (a) Explain the meaning of B′(2), with units. (b) Does B′(2) < 0 tell you that the bakery’s stock of bread is shrinking at 7 a.m.?",
+          "hint": "Ask what quantity B′ is the rate of change of.",
+          "answer": "(a) At 7 a.m., the rate at which the oven produces bread is decreasing at 6 loaves per hour per hour. (b) No. The stock shrinks only when loaves leave faster than the oven produces them; the sign of B′(2) does not decide that.",
+          "steps": [
+            "B is a rate in loaves per hour, so B′ is in loaves per hour per hour, and t = 2 is 7 a.m.",
+            "The stock changes at (rate produced) − (rate sold or removed). At t = 2 the oven is still producing B(2) loaves per hour, which may be more or less than the rate at which loaves leave."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-accumulation-c2",
+          "prompt": "The number of pallets W(t) in a warehouse has W(0) = 50 and a continuous net rate W′(t) on [0, 10]. W′ is positive on (0, 3), negative on (3, 8), and positive on (8, 10). Also ∫ from 0 to 3 of W′(t) dt = 12, ∫ from 3 to 8 of W′(t) dt = −20, and ∫ from 8 to 10 of W′(t) dt = 5. At what times on [0, 10] is W least and greatest? Justify.",
+          "hint": "List the endpoints and every time the net rate changes sign, then find W at each.",
+          "answer": "W is least, 42 pallets, at t = 8, and greatest, 62 pallets, at t = 3.",
+          "steps": [
+            "The candidates are the endpoints t = 0 and t = 10 and the sign changes t = 3 and t = 8.",
+            "W(0) = 50, W(3) = 50 + 12 = 62, W(8) = 62 − 20 = 42, and W(10) = 42 + 5 = 47.",
+            "The largest value is 62 at t = 3 and the smallest is 42 at t = 8. Here the local extremes beat the endpoints; with other integrals either comparison could go the other way, which is why every candidate is evaluated."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-accumulation-c3",
+          "prompt": "Air enters a balloon at the rate p(t) liters per second for 0 ≤ t ≤ 4, and no air escapes. The balloon holds V(0) = 2 liters, and ∫ from 0 to 4 of p(t) dt = 18. Find the average value of p on [0, 4] and the average rate of change of V on [0, 4]. Why do they agree?",
+          "hint": "Find V(4) first.",
+          "answer": "Both are 4.5 liters per second. They agree because V′ = p, so the average rate of change of V equals the average value of p.",
+          "steps": [
+            "Average value of p: (1/4)∫ from 0 to 4 of p(t) dt = 18/4 = 4.5 liters per second.",
+            "V(4) = 2 + 18 = 20, so the average rate of change of V is (20 − 2)/4 = 4.5 liters per second.",
+            "By the Fundamental Theorem of Calculus, V(4) − V(0) = ∫ from 0 to 4 of p(t) dt, so the two averages are the same number."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set at the exam’s pace, 15 minutes per question, before you open its key. Score each part with the rubric, and redo any part that lost a setup or justification point before moving on."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-accumulation"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-accumulation"
+            },
+            {
+              "label": "Unit 6 review: integration and accumulation of change",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 8 review: applications of integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Unit 5 review: analytical applications of differentiation",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Week 13: accumulation, numerical sums, and definite integrals",
+              "ref": "week:13"
+            },
+            {
+              "label": "Week 19: average value, motion, accumulation, and area",
+              "ref": "week:19"
+            },
+            {
+              "label": "Week 10: Mean Value Theorem, extrema, and monotonicity",
+              "ref": "week:10"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

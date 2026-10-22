@@ -1,0 +1,386 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-parametric-vector",
+  "kind": "fr-archetype",
+  "title": "Parametric and vector motion",
+  "author": "bc-workshop-author",
+  "summary": "How the parametric and vector motion question on the AP® Calculus BC Exam is usually built, and how to earn each kind of point on it: velocity, speed and direction from the components, whether speed is increasing, position from a starting point plus an integral, total distance, the slope and concavity of the path, horizontal and vertical tangents, and tangent lines at a given time. It gives model sentences, the traps that cost strong students points, a worked model on a fresh particle, and three checks to try before the timed practice set.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "bc-fr-parametric-vector-g1",
+      "alt": "The worked-model path from (1, 0) at t = 0 to (17, 52/3) at t = 4 on equal-scale axes. It dips slightly below the x-axis, then rises steeply. At the point (13, 2/3), where t = 2, a dashed tangent line is drawn, with the velocity arrow v(2) pointing up and to the right along it and the acceleration arrow a(2) pointing up and to the left.",
+      "caption": "The worked model at t = 2: v(2) lies along the tangent line, and a(2) makes an angle of less than 90° with it, so the particle is speeding up."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The question describes motion in the plane. You are given the velocity components x′(t) and y′(t) with a starting point, or the position functions x(t) and y(t), or a mix: one coordinate as a formula and the other as a rate with an initial value. The parts then ask about the motion (velocity, speed, acceleration, direction, position, distance) and about the path as a curve (slope, concavity, tangent lines)."
+        },
+        {
+          "type": "text",
+          "text": "It is a BC-only question. It usually sits in the calculator part of the free-response section, often in a real-world context: the components are often built so that some integrals have no elementary antiderivative and some equations can be solved only numerically. The calculator does the evaluating; you write the setup. A no-calculator version uses polynomial or simple trigonometric components and asks for exact slopes, tangent points and second derivatives."
+        },
+        {
+          "type": "text",
+          "text": "Each coordinate is a straight-line motion problem on its own, so everything from the linear-motion workshop applies to x and to y separately. What is new is combining them: speed and distance use both components at once, and the slope of the path is a ratio of two rates. A part on the highest, lowest or farthest point is function analysis applied to one coordinate. Polar curves sometimes arrive the same way, through x = r cos θ and y = r sin θ."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Typical parts of a nine-point parametric or vector motion question (Liminal’s synthesis; any one question uses three or four of these).",
+          "head": [
+            "Part",
+            "What you do",
+            "Points usually at stake",
+            "What earns them"
+          ],
+          "rows": [
+            [
+              "Velocity and speed at a time",
+              "Evaluate ⟨x′(t), y′(t)⟩; speed is √((x′(t))^2 + (y′(t))^2)",
+              "1–2",
+              "The speed expression with both components, then its value"
+            ],
+            [
+              "Direction of motion",
+              "Read the sign of x′ (left or right) and of y′ (up or down)",
+              "1",
+              "Each direction tied to the sign of its own component"
+            ],
+            [
+              "Acceleration; speed increasing or decreasing",
+              "⟨x″(t), y″(t)⟩; the sign of x′x″ + y′y″",
+              "2–3",
+              "Both components, a computed sign, and a conclusion drawn from that sign"
+            ],
+            [
+              "Position at a time",
+              "Initial coordinate plus the integral of its rate, for each coordinate",
+              "2",
+              "Each coordinate written as start plus change, then its value"
+            ],
+            [
+              "Total distance",
+              "Integrate speed over the interval",
+              "2",
+              "The integral of √((x′)^2 + (y′)^2) with correct limits; its value"
+            ],
+            [
+              "Slope and tangent line",
+              "dy/dx = (dy/dt)/(dx/dt); the point and the slope at that time",
+              "2–3",
+              "The ratio, the point (often from an integral), then the line"
+            ],
+            [
+              "Horizontal or vertical tangents",
+              "Solve dy/dt = 0 or dx/dt = 0, then check the other derivative",
+              "2–3",
+              "The condition, the times, and the check that the other derivative is not zero"
+            ],
+            [
+              "Concavity of the path",
+              "d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt)",
+              "2",
+              "The setup with the division by dx/dt; the sign and the conclusion"
+            ],
+            [
+              "Highest, lowest or farthest point",
+              "Critical times of one coordinate, then compare with the endpoints",
+              "2–3",
+              "The candidates, their values, and a comparison that names the winner"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s rubrics give separate points for a setup, an answer, a justification, and units when units are asked. Know which kind of point each line of your work is meant to earn."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points: the integral with its limits and the initial value written beside it, √((x′)^2 + (y′)^2) inside the distance integral, the ratio (dy/dt)/(dx/dt) before its value. In a calculator part the setup is the only work a reader sees, so write it as mathematics, such as x(10) = 0 + ∫ from 0 to 10 of x′(t) dt, never as calculator syntax.",
+            "Answer points: three decimal places, computed from unrounded values. When a later part uses an earlier result, such as a point found by integration, use the stored value.",
+            "Justification points: name the quantity, give its value or sign, and state the conclusion it supports. “The speed is decreasing because x′x″ + y′y″ ≈ −0.97 < 0 at t = 7” earns the point; “the speed is decreasing” alone does not.",
+            "Units: speed in length per time, acceleration in length per time squared, position and distance in length. A units point is at stake only when the question asks for units, but write them in every context answer.",
+            "Consistency: a later part is read with your earlier value. A correct tangent line through a wrong point can still earn the line point, so write the earlier value into the later work where the reader can see it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Velocity, speed and acceleration",
+          "text": "For position (x(t), y(t)), the velocity is v(t) = ⟨x′(t), y′(t)⟩, the speed is |v(t)| = √((x′(t))^2 + (y′(t))^2), and the acceleration is a(t) = ⟨x″(t), y″(t)⟩.",
+          "conditions": [
+            "Speed is a number and is never negative; velocity is a vector.",
+            "The velocity vector points along the tangent to the path, in the direction of motion."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Is the speed increasing?",
+          "text": "The derivative of speed is (x′x″ + y′y″)/|v|, which is v · a divided by |v|. The speed is increasing when x′x″ + y′y″ > 0 and decreasing when x′x″ + y′y″ < 0.",
+          "conditions": [
+            "The speed is not zero at that time.",
+            "A shortcut: if |x′| and |y′| are both increasing, so is the speed, and if both are decreasing, so is the speed. When one is increasing and the other decreasing, the shortcut fails and only the sum decides."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Slope and concavity of the path",
+          "text": "dy/dx = (dy/dt)/(dx/dt), and d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt).",
+          "conditions": [
+            "dx/dt ≠ 0 at that time.",
+            "d^2y/dx^2 is not (d^2y/dt^2)/(d^2x/dt^2), and it is not d/dt of dy/dx alone: the last division by dx/dt reverses the sign whenever dx/dt < 0."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Horizontal and vertical tangents",
+          "text": "The tangent is horizontal where dy/dt = 0 and dx/dt ≠ 0, and vertical where dx/dt = 0 and dy/dt ≠ 0.",
+          "conditions": [
+            "Where both derivatives are 0, the test says nothing. The particle stops there, and the path may have a cusp, a corner or an ordinary tangent. If the limit of dy/dx as t approaches that time exists, it gives the slope of the tangent direction there (an infinite limit means vertical). The limit alone does not tell a cusp from a smooth point."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Position and distance",
+          "text": "x(b) = x(a) + ∫ from a to b of x′(t) dt, and the same for y. The distance traveled from t = a to t = b is ∫ from a to b of √((x′(t))^2 + (y′(t))^2) dt.",
+          "conditions": [
+            "Distance is at least the straight-line distance between the starting and ending points; they are equal only when the particle moves along a segment without turning back.",
+            "The distance integral equals the arc length of the path only when the particle traces each piece of the path once."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Direction of motion (given x′(3) = −2.4 and y′(3) = 0.9).",
+          "text": "At t = 3 the particle is moving to the left, because x′(3) = −2.4 < 0, and upward, because y′(3) = 0.9 > 0."
+        },
+        {
+          "type": "model",
+          "prompt": "Speed increasing or decreasing (given v(2) = ⟨1.5, −3⟩ and a(2) = ⟨−0.4, −1.1⟩).",
+          "text": "x′(2)x″(2) + y′(2)y″(2) = (1.5)(−0.4) + (−3)(−1.1) = 2.7 > 0, and the speed at t = 2 is not zero, so the speed is increasing at t = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "Position from a starting point (x(0) = 4 and x′(t) = √(t + 4), calculator part).",
+          "text": "x(5) = 4 + ∫ from 0 to 5 of √(t + 4) dt ≈ 16.667."
+        },
+        {
+          "type": "model",
+          "prompt": "Total distance (x′(t) = 3 − t and y′(t) = 2 for 0 ≤ t ≤ 4, calculator part).",
+          "text": "The distance traveled is ∫ from 0 to 4 of √((3 − t)^2 + 2^2) dt ≈ 9.878 units."
+        },
+        {
+          "type": "model",
+          "prompt": "Tangent line at a time (at t = 1, the point is (2, −0.5), x′(1) = −0.6 and y′(1) = 1.8).",
+          "text": "dy/dx = y′(1)/x′(1) = 1.8/(−0.6) = −3, so the tangent line at t = 1 is y = −0.5 − 3(x − 2)."
+        },
+        {
+          "type": "model",
+          "prompt": "Horizontal tangent (dy/dt = 0 at t = 1.2, and dx/dt = 0.8 there).",
+          "text": "At t = 1.2, dy/dt = 0 and dx/dt = 0.8 ≠ 0, so the path has a horizontal tangent at t = 1.2."
+        },
+        {
+          "type": "model",
+          "prompt": "Concavity of the path (at t = 4, d/dt of dy/dx = 1.5 and dx/dt = −2).",
+          "text": "d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt) = 1.5/(−2) = −0.75 < 0 at t = 4, so the path is concave down there."
+        },
+        {
+          "type": "model",
+          "prompt": "Highest point (y(0) = 3 and y′(t) = (2 − t)√(t + 1) for 0 ≤ t ≤ 5, calculator part).",
+          "text": "y′(t) = 0 in 0 < t < 5 only at t = 2, so the candidates are t = 0, 2 and 5. y(0) = 3, y(2) = 3 + ∫ from 0 to 2 of y′(t) dt ≈ 5.557, and y(5) = 3 + ∫ from 0 to 5 of y′(t) dt ≈ −4.479. The largest value is y(2), so the particle is highest at t = 2."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Writing the speed as x′(t) + y′(t), or as the larger component.",
+          "fix": "Speed is √((x′)^2 + (y′)^2). Components with opposite signs make the error plain: v = ⟨3, −3⟩ has speed √18 ≈ 4.243, not 0."
+        },
+        {
+          "type": "trap",
+          "text": "Computing d^2y/dx^2 as (d^2y/dt^2)/(d^2x/dt^2).",
+          "fix": "Differentiate dy/dx with respect to t, then divide by dx/dt. For x = t^2 and y = t^3 with t > 0, dy/dx = 3t/2 and d^2y/dx^2 = (3/2)/(2t) = 3/(4t), so 3/8 at t = 2. The ratio of second derivatives gives 6t/2 = 3t, which is 6 at t = 2."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting d/dt of dy/dx as d^2y/dx^2.",
+          "fix": "The second division by dx/dt is part of the formula, not a refinement. When dx/dt < 0 it reverses the sign, and with it the concavity."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving out the starting point: x(5) = ∫ from 0 to 5 of x′(t) dt.",
+          "fix": "Position is start plus change. Write the initial value first, then add the integral, for each coordinate separately."
+        },
+        {
+          "type": "trap",
+          "text": "Using displacement for distance, or adding ∫ |x′(t)| dt and ∫ |y′(t)| dt.",
+          "fix": "The sum of the component integrals measures a path made of horizontal and vertical steps. It is too large unless at every moment the particle moves only horizontally or only vertically. Integrate the speed."
+        },
+        {
+          "type": "trap",
+          "text": "Declaring a vertical tangent wherever dx/dt = 0.",
+          "fix": "Check dy/dt at the same time. If it is also 0, the test is silent: take the limit of dy/dx as t approaches that time. Only an infinite limit means a vertical tangent direction."
+        },
+        {
+          "type": "trap",
+          "text": "Reading the direction of motion from dy/dx.",
+          "fix": "dy/dx > 0 holds for motion up and to the right and also for motion down and to the left. Direction needs the sign of x′ and the sign of y′ separately."
+        },
+        {
+          "type": "trap",
+          "text": "Deciding whether speed is increasing from the signs of the acceleration components alone.",
+          "fix": "If x′ and x″ have opposite signs while y′ and y″ have the same sign, one component speeds up and the other slows down. Compute x′x″ + y′y″ and use its sign."
+        },
+        {
+          "type": "trap",
+          "text": "Finding the highest or farthest point from the critical times only.",
+          "fix": "A coordinate on a closed interval can be largest at an endpoint. List the endpoints with the critical times, find each value, and name the largest."
+        },
+        {
+          "type": "trap",
+          "text": "Rounding a point before using it, or working in degree mode.",
+          "fix": "Store unrounded values and round only what you report, to three decimal places. Set the calculator to radians before the section starts."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Try the whole prompt on paper before reading the steps. It is a no-calculator question, so every value comes out exact."
+        },
+        {
+          "type": "example",
+          "prompt": "A particle moves in the xy-plane for 0 ≤ t ≤ 4 with x′(t) = 8 − 2t and y′(t) = t^2 − 1, and (x(0), y(0)) = (1, 0). (a) Find the position of the particle at t = 2. (b) Write an equation for the line tangent to the path at t = 2. (c) Find d^2y/dx^2 at t = 2 and say whether the path is concave up or concave down there. (d) Find the speed at t = 2, the direction of motion, and whether the speed is increasing or decreasing.",
+          "answer": "(a) (13, 2/3). (b) y = 2/3 + (3/4)(x − 13). (c) d^2y/dx^2 = 11/32 > 0, concave up. (d) Speed 5; moving right and up; the speed is increasing.",
+          "steps": [
+            "(a) x(2) = 1 + ∫ from 0 to 2 of (8 − 2t) dt = 1 + (16 − 4) = 13. y(2) = 0 + ∫ from 0 to 2 of (t^2 − 1) dt = 8/3 − 2 = 2/3. The position is (13, 2/3).",
+            "(b) At t = 2, x′ = 4 and y′ = 3, so dy/dx = 3/4. The tangent line is y = 2/3 + (3/4)(x − 13).",
+            "(c) dy/dx = (t^2 − 1)/(8 − 2t). By the quotient rule, d/dt of dy/dx = [2t(8 − 2t) + 2(t^2 − 1)]/(8 − 2t)^2 = (−2t^2 + 16t − 2)/(8 − 2t)^2, which is 22/16 = 11/8 at t = 2.",
+            "Divide by dx/dt = 4: d^2y/dx^2 = (11/8)/4 = 11/32 > 0, so the path is concave up at t = 2.",
+            "(d) v(2) = ⟨4, 3⟩, so the speed is √(16 + 9) = 5. The particle moves to the right because x′(2) = 4 > 0, and up because y′(2) = 3 > 0.",
+            "a(t) = ⟨−2, 2t⟩, so a(2) = ⟨−2, 4⟩. Then x′x″ + y′y″ = (4)(−2) + (3)(4) = 4 > 0 and the speed is not zero, so the speed is increasing. Here the components disagree (x′ is shrinking, y′ is growing), so only the sum decides."
+          ],
+          "figureIds": [
+            "bc-fr-parametric-vector-g1"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Notice what each line would earn. The initial value and the integral appear before each coordinate in (a); the ratio appears before the slope in (b); the division by dx/dt is written out in (c); and in (d) each direction and the speed conclusion carry their reasons. A calculator version of the same question differs only in how the values are found, not in what is written."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "check",
+          "id": "bc-fr-parametric-vector-c1",
+          "prompt": "A curve is given by x = 2t^3 − 3t^2 and y = 3t^2 − 6t + 1 for −1 ≤ t ≤ 2. Find every point where the tangent line is horizontal and every point where it is vertical.",
+          "hint": "Factor dx/dt and dy/dt. What happens at a time when both are zero?",
+          "answer": "Vertical tangent at (0, 1), where t = 0. There is no horizontal tangent. At t = 1, the point (−1, −2), both derivatives are 0. The path has a cusp there, and its slope approaches 1 from both sides, so the tangent direction is neither horizontal nor vertical.",
+          "steps": [
+            "dx/dt = 6t^2 − 6t = 6t(t − 1) and dy/dt = 6t − 6 = 6(t − 1).",
+            "dy/dt = 0 only at t = 1, but dx/dt = 0 there too, so t = 1 gives no horizontal tangent by the test.",
+            "dx/dt = 0 at t = 0 and t = 1. At t = 0, dy/dt = −6 ≠ 0, so the tangent is vertical at (0, 1).",
+            "For t ≠ 1, dy/dx = 6(t − 1)/(6t(t − 1)) = 1/t, which approaches 1 as t → 1. The particle stops at (−1, −2) and turns back, so the path has a cusp there: both branches meet the point tangent to the line of slope 1."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-parametric-vector-c2",
+          "prompt": "A curve is given by x = √t and y = t^3 for t > 0. Find d^2y/dx^2 in terms of t. Then eliminate the parameter to check your answer.",
+          "hint": "Differentiate dy/dx with respect to t first, then divide by dx/dt.",
+          "answer": "d^2y/dx^2 = 30t^2.",
+          "steps": [
+            "dx/dt = 1/(2√t) and dy/dt = 3t^2, so dy/dx = 3t^2 · 2√t = 6t^(5/2).",
+            "d/dt of dy/dx = 15t^(3/2). Divide by dx/dt: d^2y/dx^2 = 15t^(3/2) · 2√t = 30t^2.",
+            "Check: t = x^2, so y = x^6 and d^2y/dx^2 = 30x^4 = 30t^2.",
+            "The ratio of second derivatives, 6t/(−1/(4t^(3/2))) = −24t^(5/2), even has the wrong sign: it would call a curve concave down that is concave up everywhere."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-parametric-vector-c3",
+          "prompt": "Calculator allowed. A particle is at (−1, 2) at t = 0 and has velocity v(t) = ⟨2 − t, 1.5√t⟩ for 0 ≤ t ≤ 3. Find its position at t = 3 and the total distance it travels from t = 0 to t = 3. Why is the distance larger than the straight-line distance from the start to the end?",
+          "hint": "Position is start plus change, one coordinate at a time. Distance integrates the speed.",
+          "answer": "Position (0.5, 7.196); distance about 6.215. The straight-line distance is about 5.408; the path curves, and the particle reverses its horizontal direction at t = 2.",
+          "steps": [
+            "x(3) = −1 + ∫ from 0 to 3 of (2 − t) dt = −1 + 1.5 = 0.5.",
+            "y(3) = 2 + ∫ from 0 to 3 of 1.5√t dt = 2 + 3^(3/2) ≈ 7.196152.",
+            "Distance = ∫ from 0 to 3 of √((2 − t)^2 + 2.25t) dt ≈ 6.215418.",
+            "The straight-line distance is √(1.5^2 + 5.196152^2) ≈ 5.408. The path is not a segment, and x′ changes sign at t = 2, so the particle moves right and then back left while it rises."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "links",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-parametric-vector"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-parametric-vector"
+            },
+            {
+              "label": "Unit 9 review: parametric, polar and vector-valued functions",
+              "ref": "guide:review-u9"
+            },
+            {
+              "label": "Unit 8 review: applications of integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Week 22: parametric curves, derivatives and tangents",
+              "ref": "week:22"
+            },
+            {
+              "label": "Week 23: parametric arc length and planar vector motion",
+              "ref": "week:23"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

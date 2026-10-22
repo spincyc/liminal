@@ -1,0 +1,365 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-function-analysis",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Analysis of a given function",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. No calculator is allowed. Show supporting work, justify requested conclusions, and give exact answers. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "bc-fr-function-analysis-f1",
+      "alt": "Graph of y = f(x) for −1 ≤ x ≤ 3. A cubic arc starts at the point (−1, −1), rises to a rounded peak on the y-axis, and falls to the point (1, 1). There a second, rising curve begins with a sharp corner and levels off as it approaches the endpoint at x = 3.",
+      "caption": "The function f from question 1, with its endpoint and critical-point candidates marked."
+    },
+    {
+      "id": "bc-fr-function-analysis-f2",
+      "alt": "Graph of y = √x ln x for 0 ≤ x ≤ 1.5. The curve starts at the origin, drops steeply with a vertical tangent, reaches a low point between x = 0 and x = 0.4, rises through the point (1, 0), and continues above the x-axis.",
+      "caption": "The function f from question 3, with the endpoints of [0, 1] and the critical point marked."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 45,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "Let f be the function defined on the closed interval [−1, 3] by f(x) = x^3 − 3x^2 + 3 for −1 ≤ x ≤ 1 and f(x) = 3 − 4/(x^2 + x) for 1 < x ≤ 3.",
+              "topics": [
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.1.CONTINUITY_AT_A_POINT",
+                "BC.2.DIFFERENTIABILITY",
+                "BC.5.CRITICAL_POINTS",
+                "BC.1.INTERMEDIATE_VALUE_THEOREM",
+                "BC.5.MEAN_VALUE_THEOREM",
+                "BC.8.AVERAGE_VALUE",
+                "BC.6.PARTIAL_FRACTIONS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Determine whether f is continuous at x = 1 and whether f is differentiable at x = 1. Justify each answer using limits.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Shows that lim as x→1− of f(x) = 1 and lim as x→1+ of f(x) = 1 both equal f(1) = 1, and concludes that f is continuous at x = 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the one-sided derivative values −3 and 3 (as limits of the derivative formulas, or of the difference quotient) and concludes that f is not differentiable at x = 1 because they differ. A conclusion stated without limits earns no point."
+                    }
+                  ],
+                  "answer": "f is continuous at x = 1 but not differentiable at x = 1.",
+                  "steps": [
+                    "lim as x→1− of f(x) = 1 − 3 + 3 = 1 and lim as x→1+ of f(x) = 3 − 4/2 = 1. Both one-sided limits equal f(1) = 1, so f is continuous at x = 1.",
+                    "For −1 < x < 1, f′(x) = 3x^2 − 6x, so lim as x→1− of f′(x) = −3. For 1 < x < 3, f′(x) = 4(2x + 1)/(x^2 + x)^2, so lim as x→1+ of f′(x) = 4(3)/2^2 = 3.",
+                    "f is continuous at x = 1, so these limits are the one-sided derivatives. They differ (−3 and 3), so f is not differentiable at x = 1: the graph has a corner there."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the absolute maximum value and the absolute minimum value of f on [−1, 3]. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the interior critical points x = 0 (where f′(x) = 0) and x = 1 (where f′ does not exist), with no others; in particular excludes x = 2, which lies outside the interval where 3x^2 − 6x is the derivative."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates f at the critical points and both endpoints: f(−1) = −1, f(0) = 3, f(1) = 1, f(3) = 8/3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States the absolute maximum value 3 and the absolute minimum value −1, justified by comparing candidates for the continuous function f on the closed interval, or by an equivalent increasing and decreasing argument that also compares endpoint values."
+                    }
+                  ],
+                  "answer": "The absolute maximum value is 3, at x = 0. The absolute minimum value is −1, at x = −1.",
+                  "steps": [
+                    "On (−1, 1), f′(x) = 3x^2 − 6x = 3x(x − 2), which is 0 only at x = 0 in that interval. The solution x = 2 does not count: this formula is not f′ there.",
+                    "On (1, 3), f′(x) = 4(2x + 1)/(x^2 + x)^2 > 0, so there are no critical points there. By part (a), f′(1) does not exist, so x = 1 is a critical point.",
+                    "Candidates: f(−1) = −1, f(0) = 3, f(1) = 1, and f(3) = 3 − 4/12 = 8/3.",
+                    "f is continuous on the closed interval [−1, 3], so the largest and smallest candidate values are the absolute extrema: the maximum is 3 at x = 0, and the minimum is −1 at x = −1."
+                  ],
+                  "answerFigureIds": [
+                    "bc-fr-function-analysis-f1"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Explain why there must be a value p in (−1, 0) with f(p) = 0, and why there must be a value c in (1, 3) with f′(c) = 5/6. For each, name the theorem you use and verify its hypotheses.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Intermediate Value Theorem: states that f is continuous on [−1, 0] and that f(−1) = −1 and f(0) = 3 lie on opposite sides of 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Mean Value Theorem: states that f is continuous on [1, 3], including at x = 1 (by part (a) or the one-sided limit), and differentiable on (1, 3), and computes (f(3) − f(1))/(3 − 1) = 5/6."
+                    }
+                  ],
+                  "answer": "The Intermediate Value Theorem on [−1, 0] gives p; the Mean Value Theorem on [1, 3] gives c.",
+                  "steps": [
+                    "On [−1, 0], f is a polynomial, so it is continuous there, and f(−1) = −1 < 0 < 3 = f(0). By the Intermediate Value Theorem, f(p) = 0 for some p in (−1, 0).",
+                    "f is continuous on [1, 3]: on (1, 3] it is a rational function whose denominator is not 0, and at x = 1, lim as x→1+ of f(x) = 1 = f(1). f is differentiable on (1, 3). By the Mean Value Theorem, some c in (1, 3) satisfies f′(c) = (f(3) − f(1))/(3 − 1) = (8/3 − 1)/2 = 5/6.",
+                    "The interval matters: the Mean Value Theorem cannot be applied on all of [−1, 3], because f is not differentiable at x = 1, which lies inside that interval."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the average value of f on [−1, 3]. Show the work that leads to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up (1/4) times the sum of the integrals of the two pieces over [−1, 1] and [1, 3], and decomposes 4/(x^2 + x) = 4/x − 4/(x + 1), or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 5/2 − ln(3/2), or an equivalent exact value such as (10 − 4 ln(3/2))/4."
+                    }
+                  ],
+                  "answer": "5/2 − ln(3/2)",
+                  "steps": [
+                    "Average value = (1/(3 − (−1)))[∫ from −1 to 1 of (x^3 − 3x^2 + 3) dx + ∫ from 1 to 3 of (3 − 4/(x^2 + x)) dx].",
+                    "∫ from −1 to 1 of (x^3 − 3x^2 + 3) dx = [x^4/4 − x^3 + 3x] from −1 to 1 = 9/4 − (−7/4) = 4.",
+                    "Since x^2 + x = x(x + 1), 4/(x(x + 1)) = 4/x − 4/(x + 1). So ∫ from 1 to 3 of (3 − 4/x + 4/(x + 1)) dx = [3x − 4 ln x + 4 ln(x + 1)] from 1 to 3 = (9 − 4 ln 3 + 4 ln 4) − (3 + 4 ln 2) = 6 − 4 ln(3/2).",
+                    "Average value = (1/4)(4 + 6 − 4 ln(3/2)) = 5/2 − ln(3/2)."
+                  ]
+                }
+              ],
+              "id": "bc-fr-function-analysis-fr1"
+            },
+            {
+              "prompt": "Rainwater from a building’s roof drains into an underground storage tank. For t ≥ 0 hours after the storm begins, water enters the tank at the rate r(t) cubic meters per hour, where r(t) = at^2 + bt + 2 for 0 ≤ t ≤ 2 and r(t) = 6(t − 1)e^(2 − t) for t > 2. The constants a and b are chosen so that r is differentiable at t = 2.",
+              "context": true,
+              "topics": [
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.2.DIFFERENTIABILITY",
+                "BC.5.FIRST_DERIVATIVE_TEST",
+                "BC.8.AVERAGE_VALUE",
+                "BC.6.INFINITE_INTERVAL_INTEGRALS",
+                "BC.4.LHOSPITAL_RULE"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the values of a and b.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes both conditions: continuity at t = 2, 4a + 2b + 2 = 6, and equal one-sided derivatives at t = 2, 4a + b = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains a = −1 and b = 4."
+                    }
+                  ],
+                  "answer": "a = −1 and b = 4",
+                  "steps": [
+                    "A function that is differentiable at t = 2 is continuous there. lim as t→2+ of 6(t − 1)e^(2 − t) = 6, so the left piece must give 4a + 2b + 2 = 6.",
+                    "For t > 2, r′(t) = 6e^(2 − t) − 6(t − 1)e^(2 − t) = 6(2 − t)e^(2 − t), which approaches 0 as t→2+. For t < 2, r′(t) = 2at + b, which approaches 4a + b as t→2−. Equal one-sided derivatives require 4a + b = 0.",
+                    "Subtracting 4a + b = 0 from 4a + 2b = 4 gives b = 4, and then a = −1."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "At what time t ≥ 0 is the rate at which water enters the tank greatest? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Gives the sign of r′ on each piece: r′(t) = −2t + 4 > 0 on (0, 2) and r′(t) = 6(2 − t)e^(2 − t) < 0 for t > 2, using the values from part (a) or values carried forward consistently."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes t = 2 with an argument that covers every t ≥ 0: r increases on [0, 2] and decreases on [2, ∞), or t = 2 is the only critical point of the continuous function r on [0, ∞) and r′ changes from positive to negative there. A sign change alone, presented as a local maximum, does not earn this point."
+                    }
+                  ],
+                  "answer": "At t = 2 hours, when water enters at 6 cubic meters per hour.",
+                  "steps": [
+                    "For 0 < t < 2, r′(t) = −2t + 4 > 0, so r is increasing on [0, 2].",
+                    "For t > 2, r′(t) = 6(2 − t)e^(2 − t) < 0, because 2 − t < 0 and e^(2 − t) > 0. So r is decreasing on [2, ∞).",
+                    "r is continuous at t = 2, so r(t) ≤ r(2) = 6 for every t ≥ 0. The rate is greatest at t = 2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the average rate at which water enters the tank over the interval 2 ≤ t ≤ 4. Indicate units of measure.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Setup: (1/(4 − 2)) ∫ from 2 to 4 of 6(t − 1)e^(2 − t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the antiderivative −6te^(2 − t), or an equivalent such as −6(t − 1)e^(2 − t) − 6e^(2 − t), by integration by parts or another valid method."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 6 − 12e^(−2) with units of cubic meters per hour."
+                    }
+                  ],
+                  "answer": "6 − 12e^(−2) cubic meters per hour",
+                  "steps": [
+                    "Average rate = (1/(4 − 2)) ∫ from 2 to 4 of 6(t − 1)e^(2 − t) dt.",
+                    "By parts with u = t − 1 and dv = e^(2 − t) dt, so du = dt and v = −e^(2 − t): ∫ 6(t − 1)e^(2 − t) dt = −6(t − 1)e^(2 − t) + ∫ 6e^(2 − t) dt = −6(t − 1)e^(2 − t) − 6e^(2 − t) + C = −6te^(2 − t) + C.",
+                    "∫ from 2 to 4 of 6(t − 1)e^(2 − t) dt = [−6te^(2 − t)] from 2 to 4 = −24e^(−2) + 12.",
+                    "Average rate = (12 − 24e^(−2))/2 = 6 − 12e^(−2) cubic meters per hour."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the total amount of water that enters the tank for t ≥ 0, or explain why the amount is not finite. Show the limit work that supports your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the integral from 2 to ∞ as a limit and shows that lim as M→∞ of 6Me^(2 − M) = 0 (by L’Hôpital’s Rule or an equivalent growth argument), obtaining 12."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains the total 64/3 cubic meters, including 28/3 from 0 ≤ t ≤ 2 (or the value that follows from a and b found in part (a))."
+                    }
+                  ],
+                  "answer": "64/3 cubic meters",
+                  "steps": [
+                    "Total = ∫ from 0 to 2 of (−t^2 + 4t + 2) dt + ∫ from 2 to ∞ of 6(t − 1)e^(2 − t) dt.",
+                    "∫ from 0 to 2 of (−t^2 + 4t + 2) dt = [−t^3/3 + 2t^2 + 2t] from 0 to 2 = −8/3 + 8 + 4 = 28/3.",
+                    "∫ from 2 to ∞ of 6(t − 1)e^(2 − t) dt = lim as M→∞ of [−6te^(2 − t)] from 2 to M = lim as M→∞ of (12 − 6M/e^(M − 2)).",
+                    "6M/e^(M − 2) has the form ∞/∞; by L’Hôpital’s Rule, lim as M→∞ of 6M/e^(M − 2) = lim as M→∞ of 6/e^(M − 2) = 0. So the improper integral converges to 12.",
+                    "Total = 28/3 + 12 = 64/3 cubic meters."
+                  ]
+                }
+              ],
+              "id": "bc-fr-function-analysis-fr2"
+            },
+            {
+              "prompt": "Let f be the function defined for x ≥ 0 by f(x) = √x ln x for x > 0 and f(0) = 0.",
+              "topics": [
+                "BC.4.LHOSPITAL_RULE",
+                "BC.1.CONTINUITY_AT_A_POINT",
+                "BC.2.DERIVATIVE_DEFINITION",
+                "BC.2.DIFFERENTIABILITY",
+                "BC.5.MEAN_VALUE_THEOREM",
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.5.CRITICAL_POINTS",
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.6.SINGULAR_INTEGRALS",
+                "BC.8.AVERAGE_VALUE"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Show that f is continuous at x = 0; that is, show that lim as x→0+ of f(x) = f(0).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Rewrites the 0 · ∞ product as a quotient with an indeterminate form, such as (ln x)/(x^(−1/2)), and applies L’Hôpital’s Rule correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains the limit 0 and concludes that f is continuous at x = 0 because the limit equals f(0) = 0."
+                    }
+                  ],
+                  "answer": "lim as x→0+ of √x ln x = 0 = f(0), so f is continuous at x = 0.",
+                  "steps": [
+                    "As x→0+, √x → 0 and ln x → −∞: the product has the form 0 · ∞, which L’Hôpital’s Rule cannot take directly. Rewrite √x ln x = (ln x)/(x^(−1/2)), which has the form −∞/∞.",
+                    "By L’Hôpital’s Rule, lim as x→0+ of (ln x)/(x^(−1/2)) = lim as x→0+ of (1/x)/(−(1/2)x^(−3/2)) = lim as x→0+ of (−2x^(1/2)) = 0.",
+                    "The limit equals f(0) = 0, so f is continuous at x = 0."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use the definition of the derivative to determine whether f is differentiable at x = 0. A student says that, because of your answer, the Mean Value Theorem cannot be applied to f on the interval [0, 1]. Is the student right? Explain.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up lim as h→0+ of (√h ln h − 0)/h = lim as h→0+ of (ln h)/√h, finds that it is −∞ (so the derivative does not exist), and concludes that f is not differentiable at x = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that the student is wrong because the Mean Value Theorem needs differentiability only on the open interval (0, 1), notes that f is differentiable at every x in (0, 1), and confirms continuity on [0, 1] using part (a)."
+                    }
+                  ],
+                  "answer": "f is not differentiable at x = 0, because the difference quotient tends to −∞. The student is wrong: the Mean Value Theorem does apply to f on [0, 1].",
+                  "steps": [
+                    "For h > 0, (f(h) − f(0))/h = (√h ln h)/h = (ln h)/√h.",
+                    "As h→0+, ln h → −∞ and 1/√h → ∞, so (ln h)/√h = (ln h)(1/√h) → −∞. This is not an indeterminate form, so L’Hôpital’s Rule does not apply (using it anyway gives 2/√h → ∞, the wrong sign). The derivative at 0 does not exist; the graph has a vertical tangent there.",
+                    "The Mean Value Theorem needs f continuous on [0, 1] and differentiable on (0, 1). f is continuous at 0 by part (a) and continuous for x > 0, and f is differentiable at every x > 0. Differentiability at the endpoint x = 0 is not required, so the theorem applies; it gives some c in (0, 1) with f′(c) = (f(1) − f(0))/(1 − 0) = 0."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Explain why f must attain an absolute minimum value on [0, 1], and find that value. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Invokes the Extreme Value Theorem, citing continuity of f on the closed interval [0, 1]."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds f′(x) = (ln x + 2)/(2√x), or an equivalent form, and the critical point x = e^(−2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains the minimum value −2/e by comparing with the endpoint values f(0) = 0 and f(1) = 0, or by a sign analysis of f′ on (0, 1)."
+                    }
+                  ],
+                  "answer": "The absolute minimum value is −2/e, at x = e^(−2).",
+                  "steps": [
+                    "f is continuous on the closed interval [0, 1] (part (a) at x = 0), so by the Extreme Value Theorem f attains an absolute minimum on [0, 1].",
+                    "For x > 0, f′(x) = (1/(2√x)) ln x + √x(1/x) = (ln x + 2)/(2√x). Then f′(x) = 0 when ln x = −2, that is, at x = e^(−2), and f′ exists at every x in (0, 1).",
+                    "Candidates: f(0) = 0, f(e^(−2)) = e^(−1)(−2) = −2/e, and f(1) = 0.",
+                    "The smallest is −2/e, so the absolute minimum value of f on [0, 1] is −2/e, at x = e^(−2). (Equivalently, f′ < 0 on (0, e^(−2)) and f′ > 0 on (e^(−2), 1).)"
+                  ],
+                  "answerFigureIds": [
+                    "bc-fr-function-analysis-f2"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the average value of f on [0, 1].",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the antiderivative (2/3)x^(3/2) ln x − (4/9)x^(3/2) by integration by parts, or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Handles the lower limit with a limit, showing that a^(3/2) ln a → 0 as a→0+, and obtains the average value −4/9."
+                    }
+                  ],
+                  "answer": "−4/9",
+                  "steps": [
+                    "Average value = (1/(1 − 0)) ∫ from 0 to 1 of f(x) dx. f is continuous on [0, 1], so this integral equals lim as a→0+ of ∫ from a to 1 of √x ln x dx; the limit is needed because the antiderivative found below is undefined at x = 0.",
+                    "By parts with u = ln x and dv = x^(1/2) dx, so du = (1/x) dx and v = (2/3)x^(3/2): ∫ √x ln x dx = (2/3)x^(3/2) ln x − ∫ (2/3)x^(1/2) dx = (2/3)x^(3/2) ln x − (4/9)x^(3/2) + C.",
+                    "∫ from a to 1 of √x ln x dx = (0 − 4/9) − ((2/3)a^(3/2) ln a − (4/9)a^(3/2)).",
+                    "As a→0+, a^(3/2) → 0, and a^(3/2) ln a = (ln a)/(a^(−3/2)) → 0 by L’Hôpital’s Rule: its derivative ratio is (1/a)/(−(3/2)a^(−5/2)) = −(2/3)a^(3/2) → 0. So the average value is −4/9."
+                  ]
+                }
+              ],
+              "id": "bc-fr-function-analysis-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

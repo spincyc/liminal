@@ -168,3 +168,62 @@ test("BC uses editorial unit objectives without inventing official granular topi
   assert.equal(A.resolve(plan, "#calculus-bc/test/unit-10/key").copy, "key");
   assert.equal(A.resolve(plan, "#calculus-bc/reference").invalid, true, "BC has no physics formula reference");
 });
+
+test("exam-prep kinds, ID segments, refs and routes resolve from the BC prep block", () => {
+  const bc = course("calculus-bc");
+  assert.deepEqual([A.segment("unit-3"), A.segment("practice-exam"), A.segment("practice-exam-b"), A.segment("mixed-2"), A.segment("fr-polar"), A.segment("nope")],
+    ["u3", "pe", "peb", "mixed-2", "fr-polar", ""]);
+  assert.deepEqual(A.examIds(bc), ["practice-exam", "practice-exam-b", "practice-exam-c", "practice-exam-d"]);
+  assert.equal(A.assessmentKind(bc, "unit-4"), "unit-test");
+  assert.equal(A.assessmentKind(bc, "practice-exam-c"), "practice-exam");
+  assert.equal(A.assessmentKind(bc, "mixed-6"), "mixed-set");
+  assert.equal(A.assessmentKind(bc, "fr-series"), "fr-set");
+  assert.equal(A.assessmentKind(bc, "practice-exam-z"), null, "only forms the plan lists");
+  assert.equal(A.assessmentKind(course("calculus-ab"), "mixed-1"), null, "AB has no prep block");
+  assert.equal(A.guideKind(bc, "review-u10"), "unit-review");
+  assert.equal(A.guideKind(bc, "fr-polar"), "fr-archetype");
+  assert.equal(A.guideKind(bc, "memory-sheet"), "strategy");
+  assert.equal(A.guideKind(bc, "unit-1"), null);
+  assert.deepEqual(A.guideIds(course("physics-1")), []);
+  assert.equal(A.refHref("calculus-bc", "week:14"), "weeks.html#ap/calculus-bc/14");
+  assert.equal(A.refHref("calculus-bc", "week:14"), "weeks.html" + require("../src/lib/weekly").route("ap", "calculus-bc", 14), "matches the weekly route");
+  assert.equal(A.refHref("calculus-bc", "key:practice-exam-b"), "#calculus-bc/test/practice-exam-b/key");
+  assert.equal(A.refHref("calculus-bc", "test:mixed-1"), "#calculus-bc/test/mixed-1");
+  assert.equal(A.refHref("calculus-bc", "guide:review-u1"), "#calculus-bc/guide/review-u1");
+  assert.equal(A.refHref("calculus-bc", "unit:u3"), "#calculus-bc/u3");
+  for (const bad of ["week:0", "week:37", "test:../x", "page:1", "", "guide:Bad"]) assert.equal(A.refHref("calculus-bc", bad), "", bad);
+  const at = hash => { const r = A.resolve(plan, hash); return [r.view, r.course && r.course.id, r.assessmentId, r.copy, r.guideId, r.invalid]; };
+  assert.deepEqual(at("#calculus-bc/prep"), ["prep", "calculus-bc", null, null, null, false]);
+  assert.deepEqual(at("#calculus-bc/guide/fr-polar"), ["guide", "calculus-bc", null, null, "fr-polar", false]);
+  assert.deepEqual(at("#calculus-bc/test/fr-polar/key"), ["assessment", "calculus-bc", "fr-polar", "key", null, false]);
+  assert.deepEqual(at("#calculus-bc/test/practice-exam-d"), ["assessment", "calculus-bc", "practice-exam-d", "student", null, false]);
+  assert.deepEqual(at("#calculus-bc/guide/unknown"), ["plan", "calculus-bc", null, null, null, true]);
+  assert.deepEqual(at("#calculus-ab/prep"), ["plan", "calculus-ab", null, null, null, true], "AB has no prep page");
+  assert.equal(A.route("calculus-bc", "prep"), "#calculus-bc/prep");
+  assert.equal(A.route("calculus-bc", "guide", "x/../y"), "");
+});
+
+test("mixed and free-response set blueprints hold the exam's pace and order", () => {
+  const bc = course("calculus-bc");
+  assert.deepEqual(A.blueprintProblems(F.mixedSet(1), bc), []);
+  assert.deepEqual(A.blueprintProblems(F.frSet("fr-polar"), bc), []);
+  const narrow = F.mixedSet(2);
+  A.entries(narrow).forEach(({ item }) => { item.topics = [F.topicsOf("calculus-bc", 6)[0]]; });
+  assert.match(A.blueprintProblems(narrow, bc).join("\n"), /draws on 1 units; mixed sets draw on at least 7/);
+  const slow = F.mixedSet(1); slow.sections[0].parts[1].minutes = 20;
+  assert.match(A.blueprintProblems(slow, bc).join("\n"), /part B is 20 minutes; the blueprint has 15/);
+  const reversed = F.frSet("fr-polar");
+  reversed.sections[0].parts.reverse(); reversed.sections[0].parts.forEach((p, i) => { p.id = "AB"[i]; });
+  assert.match(A.blueprintProblems(reversed, bc).join("\n"), /exam's order/);
+  const paced = F.frSet("fr-polar"); paced.sections[0].parts[0].minutes = 20;
+  assert.match(A.blueprintProblems(paced, bc).join("\n"), /2 questions take 30/);
+  const heavy = F.frSet("fr-polar"); heavy.sections[0].parts[1].items[0].parts[0].points = 4; heavy.sections[0].parts[1].items[0].parts[0].rubric.push({ points: 1, criterion: "Extra." });
+  assert.match(A.blueprintProblems(heavy, bc).join("\n"), /worth 10 points; free response is worth 9/);
+  assert.deepEqual(A.keyBalance(F.frSet("fr-polar")).problems, [], "sets without multiple choice have no key balance");
+});
+
+test("guide checks are numbered in reading order across sections", () => {
+  const doc = F.guide("review-u2");
+  assert.deepEqual(A.guideChecks(doc).map(c => [c.number, c.block.id]), [1, 2, 3, 4].map(n => [n, "bc-review-u2-c" + n]));
+  assert.deepEqual(A.guideChecks({}), []);
+});

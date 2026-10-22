@@ -1,0 +1,1338 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "memory-sheet",
+  "kind": "strategy",
+  "title": "What to know without a formula sheet",
+  "author": "bc-strategy-author",
+  "summary": "A recall drill for the AP® Calculus BC Exam: the limits and the definition of continuity, derivatives, antiderivatives, unit-circle values and identities, theorems with their hypotheses, Riemann and trapezoidal sums and other application formulas, parametric, vector and polar formulas, differential-equation facts, series tests and Maclaurin series to carry from memory, in tables you quiz yourself on, with ten mixed recall checks.",
+  "minutes": 40,
+  "sections": [
+    {
+      "id": "how-to-use",
+      "title": "How to use this sheet",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Every table below is a recall drill. The first column is the cue. Cover the column to its right (or every column to its right, when the caption says so), say or write the answer, then uncover it and check. Reading the tables through is the weakest way to use them: the remembering is what does the work."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Work one group at a time. Cover the answer column, answer every row out loud or on paper, then check.",
+            "Put a small mark beside each row you missed or hesitated on.",
+            "Go through the marked rows again, in a different order, until each one has come back right once.",
+            "Return to the group two or three days later and start with the marked rows. A row that comes back right on three separate days can rest until your next practice exam.",
+            "When a group is solid, do the mixed checks at the end of the sheet. They ask you to choose the formula as well as recall it."
+          ],
+          "ordered": true
+        },
+        {
+          "type": "text",
+          "text": "Why it matters: on the AP® Calculus BC Exam, Section I Part A (29 multiple-choice questions in 62 minutes) and Section II Part B (4 free-response questions in 60 minutes) allow no calculator, and together they carry 35% + 33.3% = 68.3% of the exam score (College Board’s exam pages, checked 2026-10-22). Liminal’s practice exams are taken without a formula sheet. Those College Board pages do not mention one; check the current exam page before you sit the exam. In the calculator parts, Bluebook’s built-in Desmos calculator (or an approved handheld) evaluates an integral, but you still write the setup, and in Liminal’s practice rubrics the setup earns its own point."
+        },
+        {
+          "type": "text",
+          "text": "When this method fails: recalling a formula is not the same as choosing it in a new problem. A row you can recite may still be the wrong tool for the question in front of you. Recall is the floor; the mixed sets and practice exams are where you learn to choose."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Limits",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Standard limits, with x in radians. Cover the right-hand column.",
+          "head": [
+            "Limit",
+            "Value"
+          ],
+          "rows": [
+            [
+              "lim as x→0 of (sin x)/x",
+              "1"
+            ],
+            [
+              "lim as x→0 of (1 − cos x)/x",
+              "0"
+            ],
+            [
+              "lim as x→0 of (1 − cos x)/(x^2)",
+              "1/2"
+            ],
+            [
+              "lim as x→0 of (e^x − 1)/x",
+              "1"
+            ],
+            [
+              "lim as x→0 of ln(1 + x)/x",
+              "1"
+            ],
+            [
+              "lim as x→∞ of (1 + a/x)^x, for a constant a",
+              "e^a; in particular lim as n→∞ of (1 + 1/n)^n = e"
+            ],
+            [
+              "lim as x→∞ of x^p/(e^x), for any constant p",
+              "0 (exponentials outgrow powers)"
+            ],
+            [
+              "lim as x→∞ of (ln x)/(x^p), for a constant p > 0",
+              "0 (powers outgrow logarithms)"
+            ],
+            [
+              "lim as x→0⁺ of x ln x",
+              "0"
+            ],
+            [
+              "lim as x→∞ of arctan x, and lim as x→−∞ of arctan x",
+              "π/2 and −π/2"
+            ],
+            [
+              "lim as x→∞ of p(x)/q(x), for polynomials p and q",
+              "0 if deg p < deg q; the ratio of the leading coefficients if deg p = deg q; no finite limit if deg p > deg q: the quotient → ∞ or −∞, with the sign of the ratio of the leading coefficients"
+            ],
+            [
+              "lim as h→0 of (f(a + h) − f(a))/h, and lim as x→a of (f(x) − f(a))/(x − a)",
+              "f′(a), when the limit exists. Read any limit of this shape as a derivative."
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "L’Hôpital’s rule",
+          "text": "When the conditions hold, lim as x→a of f(x)/g(x) = lim as x→a of f′(x)/g′(x). The rule also works for one-sided limits and for a = ∞ or a = −∞.",
+          "conditions": [
+            "The limit has the form 0/0 or ±∞/±∞. Substitute first and write the form down before you differentiate.",
+            "f and g are differentiable near a (a itself may be left out), and g′(x) ≠ 0 near a, except possibly at a.",
+            "lim as x→a of f′(x)/g′(x) exists or is ±∞. If it does not exist, the rule tells you nothing; try another method."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Other indeterminate forms. Cover the right-hand column.",
+          "head": [
+            "Form",
+            "First move"
+          ],
+          "rows": [
+            [
+              "0·∞, such as x ln x as x→0⁺",
+              "Rewrite the product as a quotient, f/(1/g), to reach 0/0 or ∞/∞"
+            ],
+            [
+              "∞ − ∞",
+              "Combine into a single fraction, or factor out the dominant term"
+            ],
+            [
+              "1^∞, 0^0 or ∞^0",
+              "Call the expression y, find the limit of ln y as a quotient, and then the limit of y is e raised to that value"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Using l’Hôpital’s rule on a limit that is not indeterminate. For lim as x→0 of (1 + cos x)/(x + 1), substitution gives 2/1 = 2, but differentiating the top and bottom gives (−sin 0)/1 = 0, which is wrong.",
+          "fix": "Substitute first. Use the rule only after writing 0/0 or ±∞/±∞, and differentiate the numerator and the denominator separately, never with the quotient rule."
+        }
+      ]
+    },
+    {
+      "id": "derivatives",
+      "title": "Derivatives",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Rules. Cover the right-hand column.",
+          "head": [
+            "Derivative of",
+            "Rule"
+          ],
+          "rows": [
+            [
+              "x^n, for a real constant n",
+              "n·x^(n−1), wherever x^(n−1) is defined"
+            ],
+            [
+              "c·f(x), and f(x) ± g(x)",
+              "c·f′(x), and f′(x) ± g′(x)"
+            ],
+            [
+              "f(x)·g(x) (product)",
+              "f′(x)g(x) + f(x)g′(x)"
+            ],
+            [
+              "f(x)/g(x) (quotient), where g(x) ≠ 0",
+              "(f′(x)g(x) − f(x)g′(x))/((g(x))^2)"
+            ],
+            [
+              "f(g(x)) (chain)",
+              "f′(g(x))·g′(x)"
+            ],
+            [
+              "f^(−1)(x), for a one-to-one differentiable f",
+              "1/(f′(f^(−1)(x))), wherever f′(f^(−1)(x)) ≠ 0"
+            ],
+            [
+              "y^n, where y is a function of x (implicit)",
+              "n·y^(n−1)·dy/dx"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Functions. Cover the right-hand column.",
+          "head": [
+            "Derivative of",
+            "Result"
+          ],
+          "rows": [
+            [
+              "sin x",
+              "cos x"
+            ],
+            [
+              "cos x",
+              "−sin x"
+            ],
+            [
+              "tan x",
+              "sec^2 x"
+            ],
+            [
+              "cot x",
+              "−csc^2 x"
+            ],
+            [
+              "sec x",
+              "sec x tan x"
+            ],
+            [
+              "csc x",
+              "−csc x cot x"
+            ],
+            [
+              "arcsin x",
+              "1/√(1 − x^2), for −1 < x < 1"
+            ],
+            [
+              "arccos x",
+              "−1/√(1 − x^2), for −1 < x < 1"
+            ],
+            [
+              "arctan x",
+              "1/(1 + x^2), for all x"
+            ],
+            [
+              "e^x",
+              "e^x"
+            ],
+            [
+              "a^x, for a constant a > 0",
+              "a^x·ln a"
+            ],
+            [
+              "ln x (for x > 0) and ln|x| (for x ≠ 0)",
+              "1/x"
+            ],
+            [
+              "log_a(x), the logarithm with base a > 0, a ≠ 1",
+              "1/(x ln a)"
+            ],
+            [
+              "e^(g(x))",
+              "e^(g(x))·g′(x)"
+            ],
+            [
+              "ln|g(x)|",
+              "g′(x)/g(x), where g(x) ≠ 0"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the inner derivative: writing d/dx of sin(3x^2) as cos(3x^2).",
+          "fix": "Name the inside function before you differentiate, then multiply by its derivative: cos(3x^2)·6x."
+        },
+        {
+          "type": "trap",
+          "text": "Writing (f^(−1))′(b) = 1/(f′(b)).",
+          "fix": "Evaluate f′ at the input a with f(a) = b: (f^(−1))′(b) = 1/(f′(a)). Find a from a table or by solving f(a) = b."
+        }
+      ]
+    },
+    {
+      "id": "integrals",
+      "title": "Antiderivatives and techniques",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each row reverses a derivative above, so you can test a row you doubt by differentiating its right-hand side. That test confirms the antiderivative but not its conditions, such as n ≠ −1 or a > 0, so learn those with the row."
+        },
+        {
+          "type": "table",
+          "caption": "Antiderivatives. Cover the right-hand column.",
+          "head": [
+            "Integral",
+            "Antiderivative"
+          ],
+          "rows": [
+            [
+              "∫ x^n dx, for n ≠ −1",
+              "x^(n+1)/(n + 1) + C"
+            ],
+            [
+              "∫ 1/x dx",
+              "ln|x| + C"
+            ],
+            [
+              "∫ e^x dx",
+              "e^x + C"
+            ],
+            [
+              "∫ e^(kx) dx, for a constant k ≠ 0",
+              "(1/k)e^(kx) + C"
+            ],
+            [
+              "∫ a^x dx, for a > 0, a ≠ 1",
+              "a^x/(ln a) + C"
+            ],
+            [
+              "∫ sin x dx",
+              "−cos x + C"
+            ],
+            [
+              "∫ cos x dx",
+              "sin x + C"
+            ],
+            [
+              "∫ sec^2 x dx",
+              "tan x + C"
+            ],
+            [
+              "∫ csc^2 x dx",
+              "−cot x + C"
+            ],
+            [
+              "∫ sec x tan x dx",
+              "sec x + C"
+            ],
+            [
+              "∫ csc x cot x dx",
+              "−csc x + C"
+            ],
+            [
+              "∫ 1/(1 + x^2) dx",
+              "arctan x + C"
+            ],
+            [
+              "∫ 1/(a^2 + x^2) dx, for a > 0",
+              "(1/a)arctan(x/a) + C"
+            ],
+            [
+              "∫ 1/√(1 − x^2) dx",
+              "arcsin x + C"
+            ],
+            [
+              "∫ 1/√(a^2 − x^2) dx, for a > 0",
+              "arcsin(x/a) + C"
+            ],
+            [
+              "∫ tan x dx",
+              "−ln|cos x| + C, which equals ln|sec x| + C"
+            ],
+            [
+              "∫ cot x dx",
+              "ln|sin x| + C"
+            ],
+            [
+              "∫ sec x dx",
+              "ln|sec x + tan x| + C"
+            ],
+            [
+              "∫ g′(x)/g(x) dx",
+              "ln|g(x)| + C"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Techniques. Cover the right-hand column.",
+          "head": [
+            "Technique",
+            "Setup"
+          ],
+          "rows": [
+            [
+              "Substitution",
+              "With u = g(x) and du = g′(x) dx, ∫ f(g(x))g′(x) dx = ∫ f(u) du. In a definite integral, change the limits to g(a) and g(b), or return to x before using the original limits."
+            ],
+            [
+              "Integration by parts",
+              "∫ u dv = uv − ∫ v du. Definite: ∫ from a to b of u dv = u(b)v(b) − u(a)v(a) − ∫ from a to b of v du."
+            ],
+            [
+              "Choosing u for parts",
+              "Choose the factor that gets simpler when differentiated (ln x, arctan x, a power of x) and let dv be a factor you can integrate. This fails when no factor integrates easily; then look for a substitution instead."
+            ],
+            [
+              "Partial fractions, distinct linear factors",
+              "When deg P < 2 and a ≠ b, P(x)/((x − a)(x − b)) = A/(x − a) + B/(x − b). Clear denominators, then set x = a and x = b to find A and B. Each piece integrates to a logarithm: ∫ A/(x − a) dx = A ln|x − a| + C."
+            ],
+            [
+              "Numerator degree ≥ denominator degree",
+              "Divide first (polynomial long division), then use partial fractions on the remainder."
+            ],
+            [
+              "Improper integral, infinite limit",
+              "∫ from a to ∞ of f(x) dx = lim as b→∞ of ∫ from a to b of f(x) dx. It converges when that limit is finite."
+            ],
+            [
+              "Improper integral, f unbounded at an endpoint b",
+              "∫ from a to b of f(x) dx = lim as c→b⁻ of ∫ from a to c of f(x) dx. An interior blow-up point is split there, and each piece must converge."
+            ],
+            [
+              "∫ from 1 to ∞ of 1/(x^p) dx",
+              "Converges, to 1/(p − 1), exactly when p > 1"
+            ],
+            [
+              "∫ from 0 to 1 of 1/(x^p) dx, for p > 0",
+              "Converges, to 1/(1 − p), exactly when p < 1"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Trying integration by parts on ∫ x e^(x^2) dx with u = x. It stalls, because dv = e^(x^2) dx has no elementary antiderivative.",
+          "fix": "Look first for a factor that is the derivative of an inside function. Here u = x^2 gives du = 2x dx, and the integral is (1/2)e^(x^2) + C."
+        },
+        {
+          "type": "trap",
+          "text": "Writing ∫ from −1 to 1 of 1/(x^2) dx = [−1/x] from −1 to 1 = −2. A positive integrand cannot have a negative integral.",
+          "fix": "Before using F(b) − F(a), check that the integrand is continuous on the whole closed interval. This one is unbounded at x = 0, so split there and take limits: ∫ from 0 to 1 of 1/(x^2) dx already diverges, so the whole integral diverges."
+        }
+      ]
+    },
+    {
+      "id": "trigonometry",
+      "title": "Trigonometry that calculus uses",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Unit-circle values. Cover every column after θ.",
+          "head": [
+            "θ",
+            "cos θ",
+            "sin θ",
+            "tan θ"
+          ],
+          "rows": [
+            [
+              "0",
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "π/6",
+              "√3/2",
+              "1/2",
+              "√3/3"
+            ],
+            [
+              "π/4",
+              "√2/2",
+              "√2/2",
+              "1"
+            ],
+            [
+              "π/3",
+              "1/2",
+              "√3/2",
+              "√3"
+            ],
+            [
+              "π/2",
+              "0",
+              "1",
+              "undefined"
+            ],
+            [
+              "2π/3",
+              "−1/2",
+              "√3/2",
+              "−√3"
+            ],
+            [
+              "3π/4",
+              "−√2/2",
+              "√2/2",
+              "−1"
+            ],
+            [
+              "5π/6",
+              "−√3/2",
+              "1/2",
+              "−√3/3"
+            ],
+            [
+              "π",
+              "−1",
+              "0",
+              "0"
+            ],
+            [
+              "3π/2",
+              "0",
+              "−1",
+              "undefined"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "For any other angle, find the reference angle and attach the sign of the quadrant: the point at angle θ on the unit circle is (cos θ, sin θ), so cos θ is its x-coordinate and sin θ its y-coordinate."
+        },
+        {
+          "type": "table",
+          "caption": "Inverse trigonometric outputs. Cover the right-hand column.",
+          "head": [
+            "Function",
+            "Outputs"
+          ],
+          "rows": [
+            [
+              "arcsin x, for −1 ≤ x ≤ 1",
+              "−π/2 ≤ arcsin x ≤ π/2"
+            ],
+            [
+              "arccos x, for −1 ≤ x ≤ 1",
+              "0 ≤ arccos x ≤ π"
+            ],
+            [
+              "arctan x, for all real x",
+              "−π/2 < arctan x < π/2"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Identities. Cover the right-hand column.",
+          "head": [
+            "Identity",
+            "Statement"
+          ],
+          "rows": [
+            [
+              "Pythagorean",
+              "sin^2 θ + cos^2 θ = 1"
+            ],
+            [
+              "Pythagorean, divided by cos^2 θ",
+              "1 + tan^2 θ = sec^2 θ"
+            ],
+            [
+              "Pythagorean, divided by sin^2 θ",
+              "1 + cot^2 θ = csc^2 θ"
+            ],
+            [
+              "Double angle, sine",
+              "sin(2θ) = 2 sin θ cos θ"
+            ],
+            [
+              "Double angle, cosine",
+              "cos(2θ) = cos^2 θ − sin^2 θ = 2cos^2 θ − 1 = 1 − 2sin^2 θ"
+            ],
+            [
+              "Power reduction, sine",
+              "sin^2 θ = (1 − cos(2θ))/2"
+            ],
+            [
+              "Power reduction, cosine",
+              "cos^2 θ = (1 + cos(2θ))/2"
+            ],
+            [
+              "Quotients and reciprocals",
+              "tan θ = (sin θ)/(cos θ), cot θ = (cos θ)/(sin θ), sec θ = 1/(cos θ), csc θ = 1/(sin θ)"
+            ],
+            [
+              "Symmetry and period",
+              "cos(−θ) = cos θ and sin(−θ) = −sin θ; both have period 2π, and tan has period π"
+            ],
+            [
+              "Using power reduction: ∫ sin^2 x dx and ∫ cos^2 x dx",
+              "x/2 − (sin(2x))/4 + C and x/2 + (sin(2x))/4 + C"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Answering arcsin(−1/2) = 7π/6 or 11π/6. Both angles have sine −1/2, but neither is an output of arcsin.",
+          "fix": "Pick the angle inside the function’s output range: arcsin(−1/2) = −π/6, while arccos(−1/2) = 2π/3."
+        }
+      ]
+    },
+    {
+      "id": "theorems",
+      "title": "Theorems and their hypotheses",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A theorem with a missing hypothesis is not a justification. Say the hypotheses first, about the function by name, and then the conclusion."
+        },
+        {
+          "type": "table",
+          "caption": "Cover both right-hand columns. The hypotheses are as much a part of the answer as the conclusion.",
+          "head": [
+            "Theorem",
+            "Hypotheses",
+            "Conclusion"
+          ],
+          "rows": [
+            [
+              "Continuity at x = a (definition)",
+              "f(a) is defined, and lim as x→a of f(x) exists",
+              "f is continuous at x = a exactly when the two are equal: lim as x→a of f(x) = f(a)"
+            ],
+            [
+              "Squeeze Theorem",
+              "g(x) ≤ f(x) ≤ h(x) for x near a (a itself may be left out), and lim as x→a of g(x) = lim as x→a of h(x) = L",
+              "lim as x→a of f(x) = L"
+            ],
+            [
+              "Intermediate Value Theorem",
+              "f is continuous on [a, b], and N is a number between f(a) and f(b)",
+              "f(c) = N for at least one c in [a, b]; c lies in (a, b) when N is strictly between f(a) and f(b)"
+            ],
+            [
+              "Extreme Value Theorem",
+              "f is continuous on the closed interval [a, b]",
+              "f has an absolute maximum value and an absolute minimum value on [a, b], each at a critical point in (a, b) or at an endpoint"
+            ],
+            [
+              "Mean Value Theorem",
+              "f is continuous on [a, b] and differentiable on (a, b)",
+              "f′(c) = (f(b) − f(a))/(b − a) for at least one c in (a, b)"
+            ],
+            [
+              "Rolle’s theorem",
+              "f is continuous on [a, b], differentiable on (a, b), and f(a) = f(b)",
+              "f′(c) = 0 for at least one c in (a, b)"
+            ],
+            [
+              "Differentiability and continuity",
+              "f is differentiable at x = a",
+              "f is continuous at x = a. The converse is false: |x| is continuous at 0 but not differentiable there."
+            ],
+            [
+              "Fundamental Theorem of Calculus, part 1",
+              "f is continuous on an interval I that contains a",
+              "A(x) = ∫ from a to x of f(t) dt is differentiable on I, and A′(x) = f(x) for every x in I"
+            ],
+            [
+              "Variable upper limit",
+              "f is continuous on an interval containing a and every value of g(x), and g is differentiable",
+              "d/dx of ∫ from a to g(x) of f(t) dt = f(g(x))·g′(x)"
+            ],
+            [
+              "Two variable limits",
+              "f is continuous on an interval containing every value of g(x) and h(x), and g and h are differentiable",
+              "d/dx of ∫ from h(x) to g(x) of f(t) dt = f(g(x))·g′(x) − f(h(x))·h′(x)"
+            ],
+            [
+              "Fundamental Theorem of Calculus, part 2",
+              "f is continuous on [a, b], and F′(x) = f(x) on [a, b]",
+              "∫ from a to b of f(x) dx = F(b) − F(a)"
+            ],
+            [
+              "Net change",
+              "f′ is continuous on [a, b]",
+              "f(b) = f(a) + ∫ from a to b of f′(t) dt"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Justifications to have ready. Cover the right-hand column.",
+          "head": [
+            "Claim",
+            "What justifies it"
+          ],
+          "rows": [
+            [
+              "f is increasing on an interval",
+              "f′(x) > 0 on that interval"
+            ],
+            [
+              "f has a relative maximum at x = c (first derivative test)",
+              "f is continuous at c, and f′ changes from positive to negative at x = c"
+            ],
+            [
+              "f has a relative minimum at x = c (second derivative test)",
+              "f′(c) = 0 and f″(c) > 0. If f″(c) = 0, this test gives no conclusion."
+            ],
+            [
+              "The graph of f has a point of inflection at x = c",
+              "f is continuous at c, and f″ changes sign at x = c (equivalently, f′ changes from increasing to decreasing, or the reverse)"
+            ],
+            [
+              "The absolute maximum of f on [a, b] (candidates test)",
+              "f is continuous on [a, b]. Evaluate f at every critical point in (a, b) and at both endpoints; the largest value is the absolute maximum and the smallest is the absolute minimum."
+            ],
+            [
+              "A particle moving on a line changes direction at t = c",
+              "v(t) changes sign at t = c"
+            ],
+            [
+              "The particle’s speed is increasing at t = c",
+              "v(c) and a(c) are nonzero and have the same sign"
+            ]
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "A justification that quotes its hypotheses, for a function g that is differentiable on [0, 6].",
+          "text": "Because g is differentiable on [0, 6], g is continuous on [0, 6] and differentiable on (0, 6). By the Mean Value Theorem, there is a value c in (0, 6) with g′(c) = (g(6) − g(0))/(6 − 0)."
+        },
+        {
+          "type": "trap",
+          "text": "Citing f′(c) = 0 as the reason for an extremum. The function f(x) = x^3 has f′(0) = 0 and no extremum at 0.",
+          "fix": "Give the sign change of f′ at c, or f′(c) = 0 together with the sign of f″(c), and name the function whose sign you mean."
+        },
+        {
+          "type": "trap",
+          "text": "Using the Mean Value Theorem or the Intermediate Value Theorem on a function given only by a table, without stating continuity.",
+          "fix": "Quote the property the problem gives, for example “f is differentiable, so f is continuous on [a, b] and differentiable on (a, b).” A table alone shows neither property, and without it neither theorem applies."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "title": "Applications of integrals",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Cover the right-hand column. In every row a < b (or c < d) and the integrand is continuous on the interval.",
+          "head": [
+            "Quantity",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "Left, right and midpoint Riemann sums for f on [a, b], with subintervals [x_(i−1), x_i] of widths Δx_i",
+              "Σ from i = 1 to n of f(c_i)·Δx_i, where c_i is the left endpoint x_(i−1), the right endpoint x_i or the midpoint of the ith subinterval; the widths Δx_i may differ"
+            ],
+            [
+              "Trapezoidal sum for f on [a, b]",
+              "Σ from i = 1 to n of (1/2)(f(x_(i−1)) + f(x_i))·Δx_i; with equal widths Δx = (b − a)/n, it is (Δx/2)(f(x_0) + 2f(x_1) + ⋯ + 2f(x_(n−1)) + f(x_n))"
+            ],
+            [
+              "Limit of a Riemann sum",
+              "With Δx = (b − a)/n, lim as n→∞ of Σ from i = 1 to n of f(a + iΔx)·Δx = ∫ from a to b of f(x) dx"
+            ],
+            [
+              "Average value of f on [a, b]",
+              "(1/(b − a))·∫ from a to b of f(x) dx"
+            ],
+            [
+              "Average rate of change of f on [a, b]",
+              "(f(b) − f(a))/(b − a), which is not an integral of f"
+            ],
+            [
+              "Net change in a quantity whose rate is r(t), from t = a to t = b",
+              "∫ from a to b of r(t) dt, in the quantity’s units"
+            ],
+            [
+              "Velocity and acceleration from position x(t) on a line",
+              "v(t) = x′(t) and a(t) = v′(t) = x″(t)"
+            ],
+            [
+              "Speed on a line",
+              "|v(t)|"
+            ],
+            [
+              "Position at time b",
+              "x(b) = x(a) + ∫ from a to b of v(t) dt"
+            ],
+            [
+              "Displacement from t = a to t = b",
+              "∫ from a to b of v(t) dt"
+            ],
+            [
+              "Total distance traveled from t = a to t = b",
+              "∫ from a to b of |v(t)| dt"
+            ],
+            [
+              "Area between y = f(x) and y = g(x), where f(x) ≥ g(x) on [a, b]",
+              "∫ from a to b of (f(x) − g(x)) dx, top minus bottom. If the curves cross, ∫ from a to b of |f(x) − g(x)| dx."
+            ],
+            [
+              "Area between x = f(y) and x = g(y), where f(y) ≥ g(y) on [c, d]",
+              "∫ from c to d of (f(y) − g(y)) dy, right minus left"
+            ],
+            [
+              "Disc method: the region under y = f(x) revolved about the x-axis",
+              "π∫ from a to b of (f(x))^2 dx"
+            ],
+            [
+              "Washer method about a horizontal line y = k",
+              "π∫ from a to b of ((R(x))^2 − (r(x))^2) dx, where R(x) and r(x) are the outer and inner distances from the line y = k to the region’s edges"
+            ],
+            [
+              "Revolving about a vertical line x = h",
+              "The same formulas in y: π∫ from c to d of ((R(y))^2 − (r(y))^2) dy, with the radii measured from x = h"
+            ],
+            [
+              "Cross sections perpendicular to the x-axis, with area A(x)",
+              "∫ from a to b of A(x) dx"
+            ],
+            [
+              "Cross-section area for a side or base of length s",
+              "Square: s^2. Semicircle with diameter s: (π/8)s^2. Equilateral triangle: (√3/4)s^2. Isosceles right triangle with leg s: s^2/2. Rectangle of height h: hs."
+            ],
+            [
+              "Arc length of y = f(x) on [a, b], with f′ continuous",
+              "∫ from a to b of √(1 + (f′(x))^2) dx"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Writing π∫ (R(x) − r(x))^2 dx for a washer.",
+          "fix": "Square each radius separately: π∫ ((R(x))^2 − (r(x))^2) dx. A quick test with R = 3 and r = 1 gives 9 − 1 = 8, not (3 − 1)^2 = 4."
+        },
+        {
+          "type": "trap",
+          "text": "Using ∫ from a to b of v(t) dt for total distance when v changes sign.",
+          "fix": "Integrate |v(t)|, or split the interval where v changes sign and add the absolute values of the pieces. The two integrals agree only when v keeps one sign."
+        }
+      ]
+    },
+    {
+      "id": "parametric-vector-polar",
+      "title": "Parametric, vector and polar formulas",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Parametric curves and motion in the plane, with x = x(t) and y = y(t). Cover the right-hand column.",
+          "head": [
+            "Quantity",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "Slope dy/dx",
+              "(dy/dt)/(dx/dt), where dx/dt ≠ 0"
+            ],
+            [
+              "Second derivative d^2y/dx^2",
+              "(d/dt of dy/dx)/(dx/dt), where dx/dt ≠ 0: differentiate dy/dx with respect to t, then divide by dx/dt"
+            ],
+            [
+              "Horizontal tangent",
+              "dy/dt = 0 and dx/dt ≠ 0"
+            ],
+            [
+              "Vertical tangent",
+              "dx/dt = 0 and dy/dt ≠ 0"
+            ],
+            [
+              "Velocity vector",
+              "⟨x′(t), y′(t)⟩"
+            ],
+            [
+              "Acceleration vector",
+              "⟨x″(t), y″(t)⟩"
+            ],
+            [
+              "Speed",
+              "√((x′(t))^2 + (y′(t))^2)"
+            ],
+            [
+              "Distance traveled from t = a to t = b (the arc length, when the curve is traced once)",
+              "∫ from a to b of √((x′(t))^2 + (y′(t))^2) dt"
+            ],
+            [
+              "Position at t = b",
+              "(x(a) + ∫ from a to b of x′(t) dt, y(a) + ∫ from a to b of y′(t) dt)"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Polar curves r = f(θ). Cover the right-hand column.",
+          "head": [
+            "Quantity",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "Rectangular coordinates of a polar point",
+              "x = r cos θ and y = r sin θ"
+            ],
+            [
+              "Polar from rectangular",
+              "r^2 = x^2 + y^2, and tan θ = y/x when x ≠ 0"
+            ],
+            [
+              "Slope dy/dx",
+              "(dy/dθ)/(dx/dθ) = (r′ sin θ + r cos θ)/(r′ cos θ − r sin θ), where r′ = dr/dθ and the denominator is not 0"
+            ],
+            [
+              "Area swept as θ runs from α to β",
+              "(1/2)∫ from α to β of r^2 dθ, when the curve sweeps the region exactly once"
+            ],
+            [
+              "Area between two polar curves, with R(θ) ≥ r(θ) ≥ 0 for α ≤ θ ≤ β",
+              "(1/2)∫ from α to β of ((R(θ))^2 − (r(θ))^2) dθ, when the region is swept exactly once as θ runs from α to β"
+            ],
+            [
+              "Moving away from or toward the origin as θ increases",
+              "The distance from the origin is |r|. It increases when r and dr/dθ have the same sign and decreases when their signs differ."
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Forgetting the last division: reporting d/dt of dy/dx as d^2y/dx^2.",
+          "fix": "After differentiating dy/dx with respect to t, divide by dx/dt. The units tell you why: d^2y/dx^2 is a rate per unit of x, not per unit of t."
+        },
+        {
+          "type": "trap",
+          "text": "Integrating over a θ-interval that traces part of the curve twice. The circle r = 2 cos θ is traced once for 0 ≤ θ ≤ π, so (1/2)∫ from 0 to 2π of r^2 dθ counts its area twice.",
+          "fix": "Before integrating, find where r = 0 and sketch which part of the curve each θ-interval traces."
+        }
+      ]
+    },
+    {
+      "id": "differential-equations",
+      "title": "Differential equations",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Cover the right-hand column.",
+          "head": [
+            "Topic",
+            "What to recall"
+          ],
+          "rows": [
+            [
+              "Separation of variables for dy/dx = g(x)h(y)",
+              "Write ∫ 1/(h(y)) dy = ∫ g(x) dx, add one constant C when you integrate, use the initial condition to find C, then solve for y if asked. Dividing by h(y) loses any constant solution y = c with h(c) = 0, so check those separately."
+            ],
+            [
+              "Exponential model dy/dt = ky",
+              "y = Ae^(kt), where A = y(0): growth when k > 0, decay when k < 0"
+            ],
+            [
+              "Doubling time (k > 0) or half-life (k < 0)",
+              "(ln 2)/|k|"
+            ],
+            [
+              "Logistic model dP/dt = kP(1 − P/L), with k > 0 and L > 0",
+              "Equilibrium solutions P = 0 and P = L; L is the carrying capacity"
+            ],
+            [
+              "Logistic long-run behavior",
+              "If P(0) > 0, then lim as t→∞ of P(t) = L. P increases toward L when 0 < P(0) < L and decreases toward L when P(0) > L."
+            ],
+            [
+              "Logistic fastest growth",
+              "dP/dt is greatest when P = L/2, where it equals kL/4. When 0 < P(0) < L/2, the graph of P has its point of inflection where P = L/2."
+            ],
+            [
+              "Logistic solution",
+              "P(t) = L/(1 + Ce^(−kt)), with C = (L − P(0))/P(0)"
+            ],
+            [
+              "Euler’s method for dy/dx = F(x, y), step Δx",
+              "x_(n+1) = x_n + Δx and y_(n+1) = y_n + Δx·F(x_n, y_n). Show each step’s slope and product."
+            ],
+            [
+              "Euler’s method: too high or too low?",
+              "If the solution curves are concave up throughout the region the steps pass through, the estimate is too low; if concave down, too high. Without known concavity, the method says nothing about the direction of its error."
+            ],
+            [
+              "Slope field",
+              "The segment at (x, y) has slope F(x, y). The line y = c is an equilibrium solution when F(x, c) = 0 for every x."
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Adding the constant at the end: solving dy/dx = 2xy as y = e^(x^2) + C.",
+          "fix": "Add C at the moment you integrate, then solve. ln|y| = x^2 + C gives |y| = e^C·e^(x^2), so y = Ae^(x^2), with A fixed by the initial condition."
+        }
+      ]
+    },
+    {
+      "id": "series",
+      "title": "Series",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "For each test, the conditions column is the part students leave out. A test whose conditions you have not checked has not been applied."
+        },
+        {
+          "type": "table",
+          "caption": "Convergence tests. Cover both right-hand columns.",
+          "head": [
+            "Test",
+            "Conditions",
+            "Conclusion"
+          ],
+          "rows": [
+            [
+              "nth-term test",
+              "Any series Σ a_n",
+              "If lim as n→∞ of a_n ≠ 0, or the limit does not exist, the series diverges. If the limit is 0, the test gives no conclusion."
+            ],
+            [
+              "Geometric series Σ from n = 0 to infinity of a·r^n",
+              "a ≠ 0",
+              "Converges exactly when |r| < 1, to a/(1 − r) (first term over 1 − r); diverges when |r| ≥ 1"
+            ],
+            [
+              "p-series Σ from n = 1 to infinity of 1/(n^p)",
+              "p a constant",
+              "Converges exactly when p > 1. The harmonic series (p = 1) diverges."
+            ],
+            [
+              "Integral test",
+              "f is positive, continuous and decreasing on [N, ∞), with f(n) = a_n",
+              "Σ a_n and ∫ from N to ∞ of f(x) dx both converge or both diverge. The sum and the integral are usually not equal."
+            ],
+            [
+              "Direct comparison test",
+              "0 ≤ a_n ≤ b_n for all n ≥ N",
+              "If Σ b_n converges, so does Σ a_n. If Σ a_n diverges, so does Σ b_n. Smaller than a divergent series, or larger than a convergent one, tells you nothing."
+            ],
+            [
+              "Limit comparison test",
+              "a_n > 0 and b_n > 0, and lim as n→∞ of a_n/b_n = c with 0 < c < ∞",
+              "Σ a_n and Σ b_n both converge or both diverge"
+            ],
+            [
+              "Alternating series test",
+              "The series is Σ (−1)^n b_n or Σ (−1)^(n+1) b_n with b_n > 0, b_(n+1) ≤ b_n for all n ≥ N, and lim as n→∞ of b_n = 0",
+              "The series converges"
+            ],
+            [
+              "Ratio test",
+              "a_n ≠ 0, and L = lim as n→∞ of |a_(n+1)/a_n| exists or is ∞",
+              "L < 1: converges absolutely. L > 1 or L = ∞: diverges. L = 1: no conclusion."
+            ],
+            [
+              "Absolute convergence",
+              "Σ |a_n| converges",
+              "Σ a_n converges, and it converges absolutely"
+            ],
+            [
+              "Conditional convergence",
+              "Σ a_n converges, but Σ |a_n| diverges",
+              "Σ a_n converges conditionally. State both halves."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Taylor polynomials and error bounds. Cover both right-hand columns.",
+          "head": [
+            "Tool",
+            "Conditions",
+            "Statement"
+          ],
+          "rows": [
+            [
+              "Taylor polynomial of degree n centered at x = a",
+              "f has n derivatives at a",
+              "P_n(x) = f(a) + f′(a)(x − a) + (f″(a)/2!)(x − a)^2 + ⋯ + (f^(n)(a)/n!)(x − a)^n. The coefficient of (x − a)^k is f^(k)(a)/k!."
+            ],
+            [
+              "Alternating series error bound",
+              "The series satisfies the conditions of the alternating series test, and the term sizes decrease from the first omitted term on",
+              "The error of a partial sum is at most the absolute value of the first term left out: for Σ from n = 1 to infinity of (−1)^(n+1) b_n with sum S, |S − S_n| ≤ b_(n+1)."
+            ],
+            [
+              "Lagrange error bound",
+              "f has n + 1 derivatives on an interval containing a and x, and |f^(n+1)(z)| ≤ M for every z between a and x",
+              "|f(x) − P_n(x)| ≤ M·|x − a|^(n+1)/(n + 1)!"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Maclaurin series. Cover both right-hand columns: the interval is part of the answer.",
+          "head": [
+            "Function",
+            "Series",
+            "Converges for"
+          ],
+          "rows": [
+            [
+              "e^x",
+              "1 + x + x^2/2! + x^3/3! + ⋯ = Σ from n = 0 to infinity of x^n/n!",
+              "all real x"
+            ],
+            [
+              "sin x",
+              "x − x^3/3! + x^5/5! − ⋯ = Σ from n = 0 to infinity of (−1)^n x^(2n+1)/(2n + 1)!",
+              "all real x"
+            ],
+            [
+              "cos x",
+              "1 − x^2/2! + x^4/4! − ⋯ = Σ from n = 0 to infinity of (−1)^n x^(2n)/(2n)!",
+              "all real x"
+            ],
+            [
+              "1/(1 − x)",
+              "1 + x + x^2 + x^3 + ⋯ = Σ from n = 0 to infinity of x^n",
+              "−1 < x < 1"
+            ],
+            [
+              "ln(1 + x)",
+              "x − x^2/2 + x^3/3 − ⋯ = Σ from n = 1 to infinity of (−1)^(n+1) x^n/n",
+              "−1 < x ≤ 1"
+            ],
+            [
+              "arctan x",
+              "x − x^3/3 + x^5/5 − ⋯ = Σ from n = 0 to infinity of (−1)^n x^(2n+1)/(2n + 1)",
+              "−1 ≤ x ≤ 1"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Power series. Cover the right-hand column.",
+          "head": [
+            "Fact",
+            "What to recall"
+          ],
+          "rows": [
+            [
+              "Where Σ from n = 0 to infinity of c_n(x − a)^n converges",
+              "Always at x = a. Otherwise on an interval centered at a with radius of convergence R, which may be 0, a positive number or ∞; each endpoint may or may not be included."
+            ],
+            [
+              "Finding the radius",
+              "Apply the ratio test to the nonzero terms c_n(x − a)^n and solve “limit < 1” for x."
+            ],
+            [
+              "Endpoints",
+              "Substitute each endpoint and test the resulting series by name. The ratio test cannot decide there."
+            ],
+            [
+              "Differentiating or integrating term by term",
+              "The radius stays the same. Convergence at an endpoint can change, so test the endpoints again."
+            ],
+            [
+              "Substituting into a known series",
+              "Replace x in both the series and its interval. For example, 1/(1 + x^2) = Σ from n = 0 to infinity of (−1)^n x^(2n), for −1 < x < 1."
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Writing f(1.2) = P_3(1.2), or quoting the ratio test at an endpoint.",
+          "fix": "A Taylor polynomial gives f(1.2) ≈ P_3(1.2). At an endpoint the ratio-test limit is 1, so switch to a named test such as the alternating series test or a p-series comparison."
+        },
+        {
+          "type": "trap",
+          "text": "Forgetting the factorials or the alternating signs when building a series from memory, such as writing cos x = 1 − x^2 + x^4 − ⋯.",
+          "fix": "Check the first terms against the derivatives at 0: cos″(0) = −1, so the x^2 coefficient is −1/2!, and cos^(4)(0) = 1, so the x^4 coefficient is 1/4!."
+        }
+      ]
+    },
+    {
+      "id": "mixed-checks",
+      "title": "Mixed recall checks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "These checks jump between groups on purpose, as the exam does. Answer each on paper before you open it. A miss points to a row above: find that row, cover it, and test yourself on it again on a later day, not right away."
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c1",
+          "prompt": "Evaluate lim as x→0 of (sin x − x cos x)/x^3. Name the form each time you use l’Hôpital’s rule.",
+          "hint": "Substitute x = 0 first and write down the form you get.",
+          "answer": "1/3",
+          "steps": [
+            "At x = 0 the numerator is 0 − 0 = 0 and the denominator is 0, so the form is 0/0. Both are differentiable, and the derivative of x^3, which is 3x^2, is nonzero near 0 except at 0.",
+            "First use: the derivative of the numerator is cos x − (cos x − x sin x) = x sin x, giving lim as x→0 of (x sin x)/(3x^2). At x = 0 this is 0/0 again.",
+            "Second use: lim as x→0 of (sin x + x cos x)/(6x). At x = 0 this is (0 + 0)/0, 0/0 a third time.",
+            "Third use: lim as x→0 of (2cos x − x sin x)/6 = 2/6 = 1/3. The form is no longer indeterminate, so stop differentiating.",
+            "A second route: sin x = x − x^3/6 + ⋯ and x cos x = x − x^3/2 + ⋯, so the numerator is x^3/3 + (terms of degree 5 and higher) and the quotient is 1/3 + (terms that → 0)."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c2",
+          "prompt": "From memory, write the derivatives of sec x, cot x, arccos x, log_3(x) and 2^x. Then let f(x) = x^3 + 2x + 1, which is increasing for all x, and find (f^(−1))′(4).",
+          "hint": "For the inverse, first find the input a with f(a) = 4.",
+          "answer": "sec x tan x; −csc^2 x; −1/√(1 − x^2); 1/(x ln 3); 2^x ln 2. (f^(−1))′(4) = 1/5.",
+          "steps": [
+            "The five derivatives come straight from the function table: sec x tan x, −csc^2 x, −1/√(1 − x^2), 1/(x ln 3) and 2^x·ln 2.",
+            "Solve f(a) = 4: a^3 + 2a + 1 = 4 gives a = 1, since 1 + 2 + 1 = 4.",
+            "f′(x) = 3x^2 + 2, so f′(1) = 5.",
+            "(f^(−1))′(4) = 1/(f′(f^(−1)(4))) = 1/(f′(1)) = 1/5. The tempting answer 1/(f′(4)) = 1/50 evaluates f′ at the wrong input."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c3",
+          "prompt": "Evaluate each integral exactly: (a) ∫ from 0 to √3 of 1/(1 + x^2) dx; (b) ∫ from 0 to π/3 of tan x dx; (c) ∫ from 0 to 1 of x e^x dx; (d) ∫ from 2 to 3 of 1/(x^2 − 1) dx.",
+          "hint": "For (c) and (d), decide what the integrand needs before you start.",
+          "answer": "(a) π/3; (b) ln 2; (c) 1; (d) (1/2)ln(3/2).",
+          "steps": [
+            "(a) arctan √3 − arctan 0 = π/3 − 0 = π/3.",
+            "(b) An antiderivative of tan x is −ln|cos x|, so the value is −ln(1/2) + ln 1 = ln 2.",
+            "(c) Parts with u = x and dv = e^x dx: ∫ x e^x dx = x e^x − e^x + C. From 0 to 1: (e − e) − (0 − 1) = 1.",
+            "(d) Partial fractions: 1/((x − 1)(x + 1)) = A/(x − 1) + B/(x + 1), so 1 = A(x + 1) + B(x − 1). Setting x = 1 gives A = 1/2, and setting x = −1 gives B = −1/2.",
+            "(d) continued: (1/2)(ln|x − 1| − ln|x + 1|) from 2 to 3 is (1/2)((ln 2 − ln 4) − (ln 1 − ln 3)) = (1/2)(ln 3 − ln 2) = (1/2)ln(3/2)."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c4",
+          "prompt": "Find the area of the region enclosed by the cardioid r = 2 − 2 cos θ.",
+          "hint": "First find a θ-interval on which the curve is traced exactly once.",
+          "answer": "6π",
+          "steps": [
+            "r = 2 − 2 cos θ is never negative and is 0 only at θ = 0 (and again at θ = 2π), so the curve is traced exactly once for 0 ≤ θ ≤ 2π.",
+            "Area = (1/2)∫ from 0 to 2π of (2 − 2 cos θ)^2 dθ = (1/2)∫ from 0 to 2π of (4 − 8 cos θ + 4 cos^2 θ) dθ.",
+            "Power reduction: 4 cos^2 θ = 2 + 2 cos(2θ), so the integrand is 6 − 8 cos θ + 2 cos(2θ). Over 0 ≤ θ ≤ 2π both cosine terms integrate to 0, so the area is (1/2)(6)(2π) = 6π.",
+            "Check by symmetry about the x-axis: 2·(1/2)∫ from 0 to π of (6 − 8 cos θ + 2 cos(2θ)) dθ = 6π − 0 + 0 = 6π. Integrating over 0 ≤ θ ≤ 4π would trace the curve twice and give 12π."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c5",
+          "prompt": "A function g is differentiable on [1, 5], with g(1) = 2 and g(5) = 10. For each claim, name the theorem that makes it certain and the hypothesis you use, or say that nothing given here makes it certain. (a) g(c) = 7 for some c in (1, 5). (b) g′(c) = 2 for some c in (1, 5). (c) g has an absolute maximum value on [1, 5]. (d) g′(c) = 0 for some c in (1, 5).",
+          "hint": "Start from what “differentiable on [1, 5]” gives you for free.",
+          "answer": "(a) Intermediate Value Theorem: g is continuous on [1, 5], and 7 is between 2 and 10. (b) Mean Value Theorem: g is continuous on [1, 5] and differentiable on (1, 5), and (10 − 2)/(5 − 1) = 2. (c) Extreme Value Theorem: g is continuous on the closed interval [1, 5]. (d) Not certain: Rolle’s theorem needs g(1) = g(5), and 2 ≠ 10.",
+          "steps": [
+            "A differentiable function is continuous, so g is continuous on [1, 5] and differentiable on (1, 5). That one sentence supplies the hypotheses for (a), (b) and (c).",
+            "(a) 2 < 7 < 10, so the Intermediate Value Theorem gives c in (1, 5) with g(c) = 7.",
+            "(b) The average rate of change is (g(5) − g(1))/(5 − 1) = 8/4 = 2, so the Mean Value Theorem gives c in (1, 5) with g′(c) = 2.",
+            "(c) The Extreme Value Theorem needs only continuity on a closed interval.",
+            "(d) g(x) = 2x satisfies every given fact and has g′(x) = 2 for all x, so g′ need not be 0 anywhere."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c6",
+          "prompt": "Let H(x) = ∫ from 1 to x^3 of cos(t^2) dt. Find H′(x) and H(1). What property of the integrand does your method need?",
+          "hint": "Treat x^3 as the inside function of a composition.",
+          "answer": "H′(x) = 3x^2 cos(x^6), and H(1) = 0. The method needs cos(t^2) to be continuous, which it is for every t.",
+          "steps": [
+            "By the Fundamental Theorem of Calculus with a variable upper limit g(x) = x^3: H′(x) = cos((x^3)^2)·3x^2 = 3x^2 cos(x^6).",
+            "Common slip: writing cos(x^3), which forgets that the integrand is cos(t^2) evaluated at t = x^3.",
+            "H(1) = ∫ from 1 to 1 of cos(t^2) dt = 0, since the limits are equal.",
+            "The theorem requires the integrand to be continuous; cos(t^2) is continuous everywhere, and g(x) = x^3 is differentiable everywhere."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c7",
+          "prompt": "For 0 ≤ x ≤ π/2, R lies between y = cos x and the x-axis. Find (a) the average value of cos x over that interval; (b) the volume swept out when R spins about the x-axis; (c) the volume of a solid built on R as its base, where every slice at right angles to the x-axis is a semicircle with its diameter across R.",
+          "hint": "In (b) and (c), write the area of one slice at position x first.",
+          "answer": "(a) 2/π; (b) π^2/4; (c) π^2/32.",
+          "steps": [
+            "(a) (1/(π/2 − 0))·∫ from 0 to π/2 of cos x dx = (2/π)(sin(π/2) − sin 0) = 2/π.",
+            "(b) Each disc has radius cos x, so its area is π cos^2 x. Volume = π∫ from 0 to π/2 of cos^2 x dx = π(x/2 + (sin(2x))/4) from 0 to π/2 = π(π/4) = π^2/4.",
+            "(c) Each semicircle has diameter s = cos x, so its area is (π/8)cos^2 x. Volume = (π/8)∫ from 0 to π/2 of cos^2 x dx = (π/8)(π/4) = π^2/32.",
+            "The semicircle volume is 1/8 of the disc volume, because a semicircle of diameter s has area (π/8)s^2 and a disc of radius s has area πs^2. Treating cos x as the semicircle’s radius, with area (π/2)s^2, is the usual slip and gives π^2/8."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c8",
+          "prompt": "A particle moves in the plane with x(t) = t^2 and y(t) = t^3 − 3t. At t = 2, find dy/dx, d^2y/dx^2 and the speed of the particle.",
+          "hint": "Write dy/dx as a function of t before you differentiate it again.",
+          "answer": "dy/dx = 9/4, d^2y/dx^2 = 15/32, and the speed is √97.",
+          "steps": [
+            "dx/dt = 2t and dy/dt = 3t^2 − 3. At t = 2 these are 4 and 9, so dy/dx = 9/4.",
+            "As a function of t, dy/dx = (3t^2 − 3)/(2t) = (3/2)t − 3/(2t). Its derivative with respect to t is 3/2 + 3/(2t^2), which is 3/2 + 3/8 = 15/8 at t = 2.",
+            "Divide by dx/dt: d^2y/dx^2 = (15/8)/4 = 15/32. Stopping at 15/8 is the usual error.",
+            "Speed = √((dx/dt)^2 + (dy/dt)^2) = √(4^2 + 9^2) = √97."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c9",
+          "prompt": "A fish population P, in fish, satisfies dP/dt = 0.4P(1 − P/600), where t is in years and P(0) = 100. Find lim as t→∞ of P(t), the population at which P grows fastest, and that fastest rate, with units.",
+          "hint": "Match the equation to the logistic form and read off k and L.",
+          "answer": "lim as t→∞ of P(t) = 600 fish. P grows fastest when P = 300 fish, at a rate of 60 fish per year.",
+          "steps": [
+            "This is logistic with k = 0.4 and L = 600. Since 0 < P(0) = 100 < 600, P increases toward 600, so the limit is 600 fish.",
+            "A logistic population grows fastest when P = L/2 = 300 fish.",
+            "At P = 300: dP/dt = 0.4·300·(1 − 300/600) = 0.4·300·(1/2) = 60 fish per year, which matches kL/4 = 0.4·600/4 = 60."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-memory-sheet-c10",
+          "prompt": "(a) Use a known series to write the first three nonzero terms and the general term of the Maclaurin series for ln(1 + x/2), and give its interval of convergence. (b) Use the first two nonzero terms to approximate ln(3/2), and bound the error of that approximation.",
+          "hint": "Start from the series for ln(1 + u) and its interval, with u = x/2.",
+          "answer": "(a) x/2 − x^2/8 + x^3/24 − ⋯, with general term (−1)^(n+1) x^n/(n·2^n) for n ≥ 1, converging for −2 < x ≤ 2. (b) ln(3/2) ≈ 1/2 − 1/8 = 3/8, with error at most 1/24.",
+          "steps": [
+            "Substitute u = x/2 into ln(1 + u) = u − u^2/2 + u^3/3 − ⋯: x/2 − x^2/8 + x^3/24 − ⋯, with general term (−1)^(n+1)(x/2)^n/n = (−1)^(n+1) x^n/(n·2^n).",
+            "The interval −1 < u ≤ 1 becomes −1 < x/2 ≤ 1, so −2 < x ≤ 2.",
+            "ln(3/2) is the value at x = 1: 1/2 − 1/8 = 3/8.",
+            "At x = 1 the series alternates, its terms 1/(n·2^n) decrease, and they approach 0, so the alternating series error bound applies: the error is at most the first omitted term, 1/(3·2^3) = 1/24."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "related",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Recall is the first step. The pages below ask you to use these facts under exam conditions and to write them into full justifications."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "How the exam runs and how to pace it",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Calculator skills for the calculator parts",
+              "ref": "guide:calculator-skills"
+            },
+            {
+              "label": "Unit 6 review: Integration and Accumulation of Change",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 10 review: Infinite Sequences and Series",
+              "ref": "guide:review-u10"
+            },
+            {
+              "label": "Workshop: Taylor polynomials and power series",
+              "ref": "guide:fr-series"
+            },
+            {
+              "label": "Mixed set 1, timed",
+              "ref": "test:mixed-1"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

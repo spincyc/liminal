@@ -517,8 +517,8 @@ if (!apContext.window.LIMINAL_AP_PLAN || JSON.stringify(apContext.window.LIMINAL
 const apCheck = require("./check-ap");
 const apSource = apCheck.loadAp();
 if (apSource.problems.length || JSON.stringify(apContext.window.LIMINAL_AP) !== JSON.stringify(require("./build-ap").bundle(apSource))) throw new Error("AP bundle differs from source");
-for (const entry of [...apContext.window.LIMINAL_AP.assessments, ...apContext.window.LIMINAL_AP.references]) {
-  if (!/^content\/ap\/(?:assessments\/(?:calculus-ab|calculus-bc|physics-1|physics-c-mechanics)\/(?:unit-(?:[1-9]|10)|practice-exam)|references\/(?:physics-1|physics-c-mechanics))\.json$/.test(entry.file) || !fs.existsSync(path.join(root, entry.file))) throw new Error("Unsafe or missing AP file: " + entry.file);
+for (const entry of [...apContext.window.LIMINAL_AP.assessments, ...(apContext.window.LIMINAL_AP.guides || []), ...apContext.window.LIMINAL_AP.references]) {
+  if (!/^content\/ap\/(?:assessments\/(?:calculus-ab|calculus-bc|physics-1|physics-c-mechanics)\/(?:unit-(?:[1-9]|10)|practice-exam(?:-[b-z])?|mixed-[1-9][0-9]?|fr-[a-z0-9]+(?:-[a-z0-9]+)*)|guides\/(?:calculus-ab|calculus-bc|physics-1|physics-c-mechanics)\/[a-z0-9]+(?:-[a-z0-9]+)*|references\/(?:physics-1|physics-c-mechanics))\.json$/.test(entry.file) || !fs.existsSync(path.join(root, entry.file))) throw new Error("Unsafe or missing AP file: " + entry.file);
 }
 // Every built page that shows the AP® marks carries the exact disclaimer.
 const apDisclaimer = apCheck.disclaimerProblems(root);

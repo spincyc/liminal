@@ -280,3 +280,61 @@ test("BC editorial objectives require schedule, weekly and assessment coverage",
   } });
   assert.ok(scheduled.problems.some(p => p.includes("no week covers " + omitted)), scheduled.problems.join("\n"));
 });
+
+test("exam-prep sets and guides validate, and malformed ones are reported", t => {
+  const good = [F.mixedSet(1), F.frSet("fr-polar"), F.guide("review-u1"), F.guide("exam-format"), F.guide("fr-polar")];
+  const result = check(t, good);
+  assert.deepEqual(result.problems, []);
+  assert.deepEqual(result.guides.map(g => g.id).sort(), ["exam-format", "fr-polar", "review-u1"]);
+  assert.equal(result.guides.find(g => g.id === "review-u1").figures[0].svg, F.FIGURE_SVG);
+  const cases = [
+    [[F.mixedSet(1)], doc => { doc.kind = "unit-test"; }, /calculus-bc\/mixed-1\.kind: must be mixed-set/],
+    [[F.mixedSet(1)], doc => { doc.sections[0].parts[0].items[0].id = "bc-mx1-mc01"; }, /ID must be bc-mixed-1-mc01/],
+    [[F.frSet("fr-polar")], doc => { doc.unitId = "u9"; }, /only unit tests have a unitId/],
+    [[F.guide("review-u1")], doc => { doc.sections[0].blocks.unshift({ type: "rule", title: "Early", text: "Too early." }); }, /opens with a section of checks/],
+    [[F.guide("review-u1")], doc => { doc.sections[0].blocks = doc.sections[0].blocks.slice(0, 3); }, /at least 4 self-checks/],
+    [[F.guide("review-u1")], doc => { doc.sections[0].blocks[2].id = "bc-review-u1-c9"; }, /expected bc-review-u1-c2/],
+    [[F.guide("exam-format")], doc => { doc.sections[1].blocks.push({ type: "trap", text: "x", fix: "y", answer: "leak" }); }, /trap blocks have no field answer/],
+    [[F.guide("exam-format")], doc => { doc.sections[1].blocks.push({ type: "video", url: "x" }); }, /unknown block type video/],
+    [[F.guide("exam-format")], doc => { doc.sections[1].blocks.push({ type: "links", items: [{ label: "Nowhere", ref: "guide:not-a-guide" }] }); }, /ref names nothing in the course plan: guide:not-a-guide/],
+    [[F.guide("exam-format")], doc => { doc.sections[1].blocks.push({ type: "links", items: [{ label: "Bad", ref: "https://example.com" }] }); }, /unresolved ref/],
+    [[F.guide("exam-format")], doc => { doc.figures[0].id = "bc-exam-format-f1"; doc.sections[1].blocks.forEach(b => { if (b.figureIds) b.figureIds = ["bc-exam-format-f1"]; if (b.type === "figure") b.id = "bc-exam-format-f1"; }); }, /figure IDs look like bc-exam-format-g1/],
+    [[F.guide("exam-format")], doc => { doc.sections[1].blocks.push({ type: "table", head: ["a", "b"], rows: [["only one"]] }); }, /one text cell per column/],
+    [[F.guide("exam-format")], doc => { doc.summary = "This guide will predict your score."; }, /banned claim \(predict-score\)/],
+    [[F.guide("exam-format")], doc => { doc.minutes = 2; }, /suggested minutes from 5 to 240/],
+    [[F.guide("exam-format"), F.unitTest("calculus-bc", 1)], doc => { if (doc.kind === "strategy") { const item = A.entries(F.unitTest("calculus-bc", 1))[0].item; doc.sections[1].blocks.push({ type: "check", id: "bc-exam-format-c5", prompt: item.prompt, answer: "x", steps: ["y"] }); } }, /repeats the prompt of calculus-bc\/unit-1\/bc-u1-mc01/],
+  ];
+  for (const [docs, mutate, pattern] of cases) {
+    const copies = docs.map(d => JSON.parse(JSON.stringify(d)));
+    copies.forEach(mutate);
+    const outcome = check(t, copies);
+    assert.ok(outcome.problems.some(p => pattern.test(p)), pattern + " not reported in:\n" + outcome.problems.join("\n"));
+  }
+  const unexpected = check(t, [], { mutate: dir => { fs.mkdirSync(path.join(dir, "ap/guides/calculus-bc"), { recursive: true }); fs.writeFileSync(path.join(dir, "ap/guides/calculus-bc/stray.json"), "{}"); } });
+  assert.match(unexpected.problems.join("\n"), /content\/ap\/guides\/calculus-bc: unexpected file stray\.json/);
+});
+
+test("the prep block is validated and --complete requires its documents", t => {
+  const edit = mutate => dir => { const file = path.join(dir, "ap.json"), plan = JSON.parse(fs.readFileSync(file, "utf8")); mutate(plan.courses.find(c => c.id === "calculus-bc")); fs.writeFileSync(file, JSON.stringify(plan)); };
+  const cases = [
+    [bc => { bc.prep.exams.reverse(); }, /form A is the course's own practice-exam and comes first/],
+    [bc => { bc.prep.exams[1].id = "practice-exam-2"; }, /practice-exam, practice-exam-b/],
+    [bc => { bc.prep.reviews.pop(); }, /one review guide per content unit/],
+    [bc => { bc.prep.mixed = ["mixed-2"]; }, /mixed-1, mixed-2, … in order/],
+    [bc => { bc.prep.strategy.push("review-extra"); }, /not starting review- or fr-/],
+    [bc => { bc.prep.workshop.push("polar"); }, /fr-<archetype>/],
+    [bc => { bc.prep.plans[0].sessions[0].tasks[0].ref = "guide:missing"; }, /ref names nothing in the course plan: guide:missing/],
+    [bc => { bc.prep.plans[0].sessions[0].tasks[0].ref = "week:40"; }, /unresolved ref week:40/],
+    [bc => { delete bc.blueprints.frSet; }, /a workshop needs blueprints.frSet/],
+    [bc => { bc.blueprints.mixedSet.minUnits = 1; }, /minUnits above 1/],
+    [bc => { bc.prep.summary = "Liminal prep guarantees a 5 on the exam."; }, /banned claim/],
+  ];
+  for (const [mutate, pattern] of cases) {
+    const result = check(t, [], { mutate: edit(mutate) });
+    assert.ok(result.problems.some(p => pattern.test(p)), pattern + " not reported in:\n" + result.problems.join("\n"));
+  }
+  const complete = check(t, [], { complete: true });
+  for (const id of ["calculus-bc/practice-exam-b", "calculus-bc/mixed-1", "calculus-bc/fr-polar", "calculus-bc/guide/review-u10", "calculus-bc/guide/memory-sheet"]) {
+    assert.ok(complete.problems.includes(id + ": missing (required by --complete)"), id);
+  }
+});

@@ -97,6 +97,47 @@ function practiceExam(courseId) {
     directions: "Fixture exam directions.", sections };
 }
 
+// A BC mixed set: ten no-calculator and five graphing-calculator questions
+// whose primary topics span every content unit.
+function mixedSet(n = 1) {
+  const id = "mixed-" + n;
+  const items = Array.from({ length: 15 }, (_, i) => mc("calculus-bc", id, i + 1, topicsOf("calculus-bc", (i % 10) + 1)[0]));
+  return { format: A.FORMAT, version: 1, courseId: "calculus-bc", id, kind: "mixed-set", title: "Mixed set " + n + " (fixture)", author: "test-fixture",
+    directions: "Fixture mixed-set directions.", sections: [{ id: "I", title: "Multiple choice", kind: "mc", parts: [
+      { id: "A", minutes: 21, calculator: "none", directions: "Fixture directions.", items: items.slice(0, 10) },
+      { id: "B", minutes: 15, calculator: "graphing", directions: "Fixture directions.", items: items.slice(10) }] }] };
+}
+// A BC free-response set: two graphing-calculator questions, then one without.
+function frSet(id = "fr-polar") {
+  const frs = [1, 2, 3].map(n => fr("calculus-bc", id, n, topicsOf("calculus-bc", 9)[n - 1], 9, n === 1 ? { context: true } : {}));
+  return { format: A.FORMAT, version: 1, courseId: "calculus-bc", id, kind: "fr-set", title: "Free-response set (fixture)", author: "test-fixture",
+    directions: "Fixture set directions.", sections: [{ id: "II", title: "Free response", kind: "fr", parts: [
+      { id: "A", minutes: 30, calculator: "graphing", directions: "Fixture directions.", items: frs.slice(0, 2) },
+      { id: "B", minutes: 15, calculator: "none", directions: "Fixture directions.", items: frs.slice(2) }] }] };
+}
+// A BC exam-prep guide of every block type. Unit reviews open with checks.
+function guide(id = "review-u1") {
+  const unit = /^review-u(\d+)$/.exec(id);
+  const prefix = "bc-" + id;
+  const check = n => ({ type: "check", id: prefix + "-c" + n, prompt: `Fixture check ${n} for ${id}: evaluate the placeholder 2 + ${n}.`, ...(n === 1 ? { hint: "Fixture hint." } : {}),
+    answer: String(2 + n), steps: ["Fixture step for check " + n + "."], see: "summary" });
+  return { format: A.GUIDE_FORMAT, version: 1, courseId: "calculus-bc", id, kind: A.guideKind(course("calculus-bc"), id), ...(unit ? { unitId: "u" + unit[1] } : {}),
+    title: "Guide (fixture) " + id, author: "test-fixture", summary: "Fixture summary for the guide.", minutes: 30,
+    figures: [{ id: prefix + "-g1", alt: "A placeholder line graph with four points." }],
+    sections: [
+      { id: "recall", title: "Recall first", blocks: [{ type: "text", text: "Answer before opening." }, check(1), check(2), check(3), check(4)] },
+      { id: "summary", title: "What to know", blocks: [
+        { type: "rule", title: "Fixture rule", text: "A placeholder statement.", conditions: ["Fixture condition."] },
+        { type: "table", caption: "Fixture table", head: ["Column one", "Column two"], rows: [["a", "b"], ["c", "d"]] },
+        { type: "list", items: ["Fixture point one.", "Fixture point two."], ordered: true },
+        { type: "trap", text: "Fixture trap.", fix: "Fixture fix." },
+        { type: "model", prompt: "Fixture situation.", text: "Fixture model sentence." },
+        { type: "example", prompt: `Fixture example for ${id}: evaluate 3 + 4.`, answer: "7", steps: ["Add."], figureIds: [prefix + "-g1"] },
+        { type: "figure", id: prefix + "-g1" },
+        { type: "links", items: [{ label: "Week 1", ref: "week:1" }, { label: "Unit 1 test", ref: "test:unit-1" }] }] },
+    ] };
+}
+
 function reference(courseId) {
   return { format: A.REFERENCE_FORMAT, version: 1, courseId, title: "Formula reference (fixture)",
     intro: "A placeholder arrangement of relations for testing.", notes: ["Fixture note: symbols are placeholders."],
@@ -108,7 +149,7 @@ function writeContent(directory, docs, references = []) {
   fs.mkdirSync(directory, { recursive: true });
   fs.copyFileSync(path.join(ROOT, "content/ap.json"), path.join(directory, "ap.json"));
   for (const doc of docs) {
-    const dir = path.join(directory, "ap", "assessments", doc.courseId);
+    const dir = path.join(directory, "ap", doc.format === A.GUIDE_FORMAT ? "guides" : "assessments", doc.courseId);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, doc.id + ".json"), JSON.stringify(doc, null, 2));
     for (const figure of doc.figures || []) {
@@ -124,4 +165,4 @@ function writeContent(directory, docs, references = []) {
   return directory;
 }
 
-module.exports = { plan, FIGURE_SVG, unitTest, practiceExam, reference, writeContent, topicsOf };
+module.exports = { plan, FIGURE_SVG, unitTest, practiceExam, mixedSet, frSet, guide, reference, writeContent, topicsOf };

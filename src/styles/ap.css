@@ -1,11 +1,11 @@
-/* ap.html: course plans (shared with high-school.css), unit tests, practice
-   exams and formula references. Colors come from tokens only, so dark mode
+/* ap.html: course plans (shared with high-school.css), assessments, exam
+   preparation and its guides, and formula references. Colors come from tokens only, so dark mode
    follows tokens.css and print is ink on white. The Liminal wordmark stays
    larger than any use of the AP® mark. */
 .ap-page .weekly-intro h1 { font-size: clamp(1.5rem, 4.4vw, 1.875rem); }
 .ap-page .high-school-course h2, .ap-doc h2, .ap-reference-sheet h2 { font: 400 clamp(1.4rem, 4vw, 1.75rem)/1.2 var(--font-serif); margin-block: 8px 12px; overflow-wrap: anywhere; }
 .ap-page [tabindex="-1"]:focus { outline: none; }
-.ap-page:is([data-view="assessment"], [data-view="reference"]) :is(.ap-courses, .weekly-intro p) { display: none; }
+.ap-page:is([data-view="assessment"], [data-view="reference"], [data-view="guide"]) :is(.ap-courses, .weekly-intro p) { display: none; }
 .ap-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .ap-lede { max-width: 70ch; color: var(--color-muted); }
 .ap-note { max-width: 75ch; margin-block: 14px; padding: 10px 14px; border-left: 3px solid var(--color-line-strong); background: var(--color-softer); font-size: .875rem; }
@@ -113,6 +113,59 @@
 .ap-reference-table thead th:last-child { width: 18%; }
 .ap-reference-notes { font-size: .875rem; padding-left: 18px; }
 
+/* Exam preparation */
+.ap-prep > header > p:not(.weekly-meta) { max-width: 75ch; }
+.ap-prep-section { padding-block: 18px; border-top: 1px solid var(--color-line); }
+.ap-prep-section > h3, .ap-guide-section > h3 { font: 400 1.35rem/1.25 var(--font-serif); margin-bottom: 10px; }
+.ap-prep-intro { max-width: 75ch; color: var(--color-muted); margin-bottom: 8px; }
+.ap-prep-steps, .ap-prep-list { max-width: 80ch; padding-left: 22px; }
+.ap-prep-steps li + li { margin-top: 6px; }
+.ap-prep-list li { padding-block: 4px; }
+.ap-prep-list a, .ap-tasks a, .ap-guide-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.ap-prep-label { color: var(--color-muted); }
+.ap-prep-summary { color: var(--color-muted); font-size: .9375rem; }
+.ap-plan { border-top: 1px solid var(--color-line); padding-block: 4px; }
+.ap-plan > summary { min-height: 44px; display: flex; align-items: center; font-weight: 650; cursor: pointer; list-style: none; }
+.ap-plan > summary::-webkit-details-marker { display: none; }
+.ap-plan > summary::after { content: "+"; margin-left: auto; padding-left: 12px; color: var(--color-muted); font-size: 1.25rem; font-weight: 400; }
+.ap-plan[open] > summary::after { content: "−"; }
+.ap-plan > p { max-width: 75ch; margin-block: 8px 12px; }
+.ap-sessions { list-style: none; padding: 0; display: grid; gap: 12px; }
+.ap-session { padding: 12px 14px; border: 1px solid var(--color-line); border-radius: var(--radius-sm); background: var(--color-surface); break-inside: avoid; }
+.ap-session h4 { font-size: 1rem; font-weight: 650; margin-bottom: 4px; }
+.ap-tasks { padding-left: 20px; font-size: .9375rem; }
+
+/* Guides */
+.ap-guide-summary { max-width: 75ch; margin-top: 8px; }
+.ap-guide-section { padding-block: 18px; border-bottom: 1px solid var(--color-line); }
+.ap-guide-section > * + * { margin-top: 12px; }
+.ap-guide-text, .ap-guide-list { max-width: 75ch; }
+.ap-guide-list { padding-left: 22px; }
+.ap-guide-list li + li { margin-top: 4px; }
+.ap-guide-table-wrap { overflow-x: auto; }
+/* Guide tables break only between words; a wide one scrolls in its region. */
+.ap-guide-table :is(th, td), .ap-guide-table :is(th, td) * { overflow-wrap: break-word; }
+.ap-guide-table-wrap:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.high-school-standards li { overflow-wrap: anywhere; }
+.weekly-about p > a[download], .ap-card h3 > a { display: inline-flex; align-items: center; min-height: 44px; }
+.ap-guide-table { margin-block: 4px; }
+.ap-guide-table caption { font-weight: 650; }
+.ap-block-label, .ap-check-label, .ap-conditions-label { font-size: .8125rem; font-weight: 650; letter-spacing: .03em; text-transform: uppercase; color: var(--color-muted); }
+.ap-rule, .ap-trap, .ap-model, .ap-example, .ap-check { max-width: 80ch; padding: 12px 16px; border-left: 3px solid var(--color-line-strong); background: var(--color-softer); break-inside: avoid; }
+.ap-rule > * + *, .ap-trap > * + *, .ap-model > * + *, .ap-example > * + *, .ap-check > * + *, .ap-guide-answer > * + * { margin-top: 6px; }
+.ap-rule-title { font-weight: 650; }
+.ap-trap { border-left-style: dashed; }
+.ap-trap-fix { padding-top: 6px; border-top: 1px solid var(--color-line); }
+.ap-model { border-left-color: var(--color-accent); background: var(--color-accent-soft); }
+.ap-model-text { font-family: var(--font-serif); }
+.ap-check { border: 1px solid var(--color-line-strong); border-left-width: 3px; background: var(--color-surface); }
+.ap-check-label { color: var(--color-ink); }
+.ap-check-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.ap-check-panel[hidden] { display: none; }
+.ap-study-note { font-size: .875rem; color: var(--color-muted); font-style: italic; }
+.ap-check-key { display: none; }
+.ap-guide-links { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0 18px; }
+
 @media (max-width: 900px) { .ap-cards { grid-template-columns: 1fr; } }
 @media screen and (max-width: 640px) {
   .ap-items { padding-left: 0; }
@@ -140,6 +193,11 @@
   .ap-doc { border: 0; padding: 0; }
   .ap-doc-head > .ap-rich, .ap-reference-head > .ap-rich { text-align: left; }
   .ap-doc-head .ap-parts { margin-inline: auto; }
+  /* The shared heading keeps with what follows; chained with the section and
+     part headings that also keep with their next block, Chromium moved a whole
+     booklet's opening to page 2 and left page 1 blank. A booklet may break
+     after its header. */
+  .ap-doc > .ap-doc-head { break-after: auto; }
   .ap-copy-label { font-size: 8pt; letter-spacing: .04em; }
   .ap-name { justify-content: center; margin-block: 8pt; font-size: 9pt; }
   .ap-section { padding: 10pt 0 0; border: 0; }
@@ -199,4 +257,22 @@
   .ap-reference-table td:last-child::before { content: "Units: "; }
   .ap-page a { color: #000; text-decoration: none; }
   .ap-card { break-inside: avoid; }
+  /* Guides print their checks without answers, then every answer at the end. */
+  .ap-page[data-view="guide"] .weekly-intro { display: none !important; }
+  .ap-guide-section { padding: 0 0 8pt; border: 0; }
+  .ap-guide-section > h3, .ap-check-key > h3, .ap-prep-section > h3 { font-size: 12pt; margin: 0 0 6pt; padding-bottom: 3pt; border-bottom: .5pt solid #777; break-after: avoid; }
+  .ap-guide-section > * + * { margin-top: 6pt; }
+  .ap-rule, .ap-trap, .ap-model, .ap-example, .ap-check { padding: 4pt 0 4pt 7pt; border-left: 1pt solid #777; background: #fff; }
+  .ap-check { border: 0; border-left: 1pt solid #000; }
+  .ap-block-label, .ap-check-label, .ap-conditions-label { font-size: 8pt; color: #000; }
+  .ap-check-actions, .ap-check-panel { display: none !important; }
+  .ap-check-key { display: block; break-before: page; }
+  .ap-check-key-list { padding-left: 0; list-style: none; }
+  .ap-check-key-list > li { break-inside: avoid; margin: 0 0 8pt; }
+  .ap-guide-table-wrap { overflow: visible; }
+  .ap-guide-links a, .ap-prep-list a, .ap-tasks a { min-height: 0; }
+  .ap-session { border: 0; padding: 0 0 6pt; }
+  .ap-plan > summary { min-height: 0; }
+  .ap-plan > summary::after { display: none; }
+  .ap-doc.ap-fr-only .ap-section-fr { break-before: auto; }
 }

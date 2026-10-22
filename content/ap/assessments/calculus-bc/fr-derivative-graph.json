@@ -1,0 +1,360 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-derivative-graph",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Reading the graph of a derivative",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. No calculator is allowed. Show supporting work, justify requested conclusions, and give exact answers. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "bc-fr-derivative-graph-f1",
+      "alt": "Graph of f for −4 ≤ x ≤ 6 on a unit grid. A semicircle below the x-axis runs from (−4, 0) through its lowest point (−2, −2) to (0, 0). A line segment rises from (0, 0) to (2, 3), and a second segment falls from (2, 3) through (4, 0) to (6, −3)."
+    },
+    {
+      "id": "bc-fr-derivative-graph-f2",
+      "alt": "Graph of R against t, in hours, for 0 ≤ t ≤ 10 on a unit grid. A line segment rises from (0, −2) to (2, 0). A quarter circle of radius 3 centered at (5, 0) rises from (2, 0) to (5, 3). A line segment falls from (5, 3) through (8, 0) to (10, −2)."
+    },
+    {
+      "id": "bc-fr-derivative-graph-f3",
+      "alt": "Smooth graph of f′ for 0 ≤ x ≤ 9, with marked points (0, 2), (1, 1), (4, −3), (8, 3) and (9, 9/4). The curve falls from (0, 2), flattens momentarily at (1, 1), crosses the x-axis at x = 2, reaches a low point at (4, −3), rises through x = 6 to a high point at (8, 3), and falls to (9, 9/4). The shaded regions between the curve and the x-axis are labeled with their areas: 2, 8 and 27/4."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 45,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "The continuous function f is defined on the closed interval −4 ≤ x ≤ 6. Its graph, shown in the figure, consists of a semicircle and two line segments. The semicircle lies below the x-axis and has center (−2, 0) and radius 2. One segment joins (0, 0) to (2, 3), and the other joins (2, 3) to (6, −3). Let g be the function defined by g(x) = ∫ from 2 to x of f(t) dt.",
+              "topics": [
+                "BC.6.ACCUMULATION_FUNCTIONS",
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.5.CONCAVITY",
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.2.DIFFERENTIABILITY"
+              ],
+              "figureIds": [
+                "bc-fr-derivative-graph-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find g(−4) and g(6).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains g(−4) = 2π − 3 by reversing the limits (g(−4) = −∫ from −4 to 2 of f(t) dt) and using the signed semicircle area −2π with the triangle area 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains g(6) = 0 from the signed triangle areas 3 and −3 on [2, 4] and [4, 6]."
+                    }
+                  ],
+                  "answer": "g(−4) = 2π − 3 and g(6) = 0.",
+                  "steps": [
+                    "On [−4, 0] the region is half of a disk of radius 2 below the axis, so ∫ from −4 to 0 of f(t) dt = −(1/2)π(2)^2 = −2π. On [0, 2] the region is a triangle with base 2 and height 3, so ∫ from 0 to 2 of f(t) dt = 3.",
+                    "g(−4) = ∫ from 2 to −4 of f(t) dt = −∫ from −4 to 2 of f(t) dt = −(−2π + 3) = 2π − 3.",
+                    "The segment from (2, 3) to (6, −3) crosses the axis at x = 4. The triangles on [2, 4] and [4, 6] each have base 2 and height 3, one above and one below, so g(6) = 3 − 3 = 0."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find g′(3) and g″(3). Then determine whether g″(2) exists. Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Gives g′(3) = 3/2 and g″(3) = −3/2 (both needed), using g′ = f and g″ = f′."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that g″(2) does not exist because f′(2) does not exist: the graph of f has a corner at x = 2, with slope 3/2 on the left and −3/2 on the right."
+                    }
+                  ],
+                  "answer": "g′(3) = 3/2 and g″(3) = −3/2. g″(2) does not exist.",
+                  "steps": [
+                    "By the Fundamental Theorem of Calculus, g′(x) = f(x) because f is continuous. So g′(3) = f(3) = 3/2, the height of the segment halfway between (2, 3) and (4, 0).",
+                    "Where f is differentiable, g″(x) = f′(x). On (2, 6) the graph of f is a line of slope (−3 − 3)/(6 − 2) = −3/2, so g″(3) = −3/2.",
+                    "g″(2) would be f′(2). The slope of f is 3/2 just left of x = 2 and −3/2 just right of it, so f is not differentiable at x = 2 and g″(2) does not exist.",
+                    "g itself is differentiable at x = 2, with g′(2) = f(2) = 3: the corner breaks the second derivative of g, not the first."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the x-coordinate of each point of inflection of the graph of g on the open interval −4 < x < 6. Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies x = −2 and x = 2, and no other values."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with g′ = f changing from decreasing to increasing at x = −2 and from increasing to decreasing at x = 2, or with g″ = f′ changing sign at each."
+                    }
+                  ],
+                  "answer": "x = −2 and x = 2",
+                  "steps": [
+                    "g″ = f′, so the graph of g changes concavity exactly where the graph of f changes from falling to rising or from rising to falling.",
+                    "f decreases on (−4, −2), increases on (−2, 2), and decreases on (2, 6). So g is concave down, then concave up, then concave down, with points of inflection at x = −2 and x = 2.",
+                    "At x = 0 the semicircle meets the segment with a vertical tangent, so f′(0) does not exist, but f increases on both sides of 0 and the concavity of g does not change there.",
+                    "x = 0 and x = 4 are where f = 0. They locate relative extrema of g, not points of inflection."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the absolute maximum value of g on the closed interval −4 ≤ x ≤ 6. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the candidates: the endpoints x = −4 and x = 6 and the critical points x = 0 and x = 4, where g′(x) = f(x) = 0; or uses the signs of g′ = f to reduce the comparison to x = −4 and x = 4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates g at the candidates: g(−4) = 2π − 3, g(0) = −3, g(4) = 3 and g(6) = 0 (only g(−4) and g(4) are needed with a sign argument); accepts a value of g(−4) carried consistently from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the absolute maximum value is 2π − 3, at x = −4, supported by the comparison 2π − 3 > 3 (because π > 3)."
+                    }
+                  ],
+                  "answer": "The absolute maximum value of g is 2π − 3, at x = −4.",
+                  "steps": [
+                    "g′(x) = f(x) is negative on (−4, 0), positive on (0, 4), and negative on (4, 6). The critical points are x = 0 and x = 4.",
+                    "g(0) = −∫ from 0 to 2 of f(t) dt = −3 and g(4) = ∫ from 2 to 4 of f(t) dt = 3. From part (a), g(−4) = 2π − 3 and g(6) = 0.",
+                    "Because π > 3, 2π − 3 > 6 − 3 = 3. The largest candidate value is g(−4) = 2π − 3.",
+                    "The relative maximum at x = 4 is not the absolute maximum: g falls from x = −4 to x = 0 by 2π − 3 − (−3) = 2π, more than the 6 it gains from x = 0 to x = 4."
+                  ]
+                }
+              ],
+              "id": "bc-fr-derivative-graph-fr1"
+            },
+            {
+              "context": true,
+              "prompt": "A home storage battery is charged by rooftop solar panels and powers the house. For 0 ≤ t ≤ 10, where t is measured in hours, the energy stored in the battery is E(t) kilowatt-hours (kWh), and the net rate at which the stored energy changes is E′(t) = R(t) kWh per hour. The graph of R, shown in the figure, consists of a line segment from (0, −2) to (2, 0), a quarter circle with center (5, 0) and radius 3 that rises from (2, 0) to (5, 3), and a line segment from (5, 3) to (10, −2). At time t = 0, the battery stores 14 kWh.",
+              "topics": [
+                "BC.6.ACCUMULATION",
+                "BC.8.AVERAGE_VALUE",
+                "BC.4.DERIVATIVE_UNITS",
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.5.MEAN_VALUE_THEOREM"
+              ],
+              "figureIds": [
+                "bc-fr-derivative-graph-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the average value of R(t) over the interval 0 ≤ t ≤ 8. Using correct units, explain what this value tells you about the energy stored in the battery.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes (1/8) ∫ from 0 to 8 of R(t) dt = 5/16 + 9π/32, or an equivalent exact value such as (10 + 9π)/32."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets the value as the average rate at which the stored energy changes (increases) over 0 ≤ t ≤ 8, with units of kWh per hour."
+                    }
+                  ],
+                  "answer": "The average value is 5/16 + 9π/32 kWh per hour. Over the first 8 hours, the stored energy increases at an average rate of 5/16 + 9π/32 kWh per hour.",
+                  "steps": [
+                    "Average value = (1/8) ∫ from 0 to 8 of R(t) dt.",
+                    "Signed areas: −2 on [0, 2] (a triangle below the axis with base 2 and height 2), 9π/4 on [2, 5] (a quarter of a disk of radius 3), and 9/2 on [5, 8] (a triangle with base 3 and height 3). The total is 5/2 + 9π/4.",
+                    "Average value = (1/8)(5/2 + 9π/4) = 5/16 + 9π/32 kWh per hour.",
+                    "Because R = E′, this average equals (E(8) − E(0))/8, the average rate of change of the stored energy over the first 8 hours."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find R′(7). Using correct units, explain the meaning of R′(7) in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Gives R′(7) = −1 from the slope of the segment from (5, 3) to (10, −2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that at t = 7 hours the rate at which the stored energy changes is decreasing at 1 kWh per hour per hour (accepts kWh/h^2)."
+                    }
+                  ],
+                  "answer": "R′(7) = −1 kWh per hour per hour. At t = 7 hours, the rate at which the battery's stored energy is changing is decreasing at 1 kWh per hour per hour.",
+                  "steps": [
+                    "On (5, 10) the graph of R is the segment from (5, 3) to (10, −2), with slope (−2 − 3)/(10 − 5) = −1. So R′(7) = −1.",
+                    "R′ = E″ is measured in kWh per hour per hour: the units of R divided by hours.",
+                    "At t = 7, R(7) = 1 > 0, so the battery is still gaining energy, but the rate of gain is falling by 1 kWh per hour each hour."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "At what time t in the interval 0 ≤ t ≤ 10 is the energy stored in the battery greatest? Find the greatest stored energy. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies t = 8 as the candidate where E′ = R changes from positive to negative (or uses R(t) = 0 together with the endpoints as candidates)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes E(8) = 14 + ∫ from 0 to 8 of R(t) dt = 33/2 + 9π/4 kWh; accepts consistent use of the integral found in part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies the absolute maximum by comparing E(0) = 14 and E(10) = E(8) − 2 with E(8), or by the signs of R together with E(0) < E(8)."
+                    }
+                  ],
+                  "answer": "The stored energy is greatest at t = 8 hours, when E(8) = 33/2 + 9π/4 kWh.",
+                  "steps": [
+                    "E′(t) = R(t) is negative on (0, 2), positive on (2, 8), and negative on (8, 10). So E has a relative minimum at t = 2 and a relative maximum at t = 8, and the candidates for the greatest value are t = 0, t = 8 and t = 10.",
+                    "E(8) = 14 + ∫ from 0 to 8 of R(t) dt = 14 + 5/2 + 9π/4 = 33/2 + 9π/4.",
+                    "E(0) = 14 < E(8), and E(10) = E(8) + ∫ from 8 to 10 of R(t) dt = E(8) − 2 < E(8).",
+                    "The greatest stored energy is 33/2 + 9π/4 kWh, at t = 8 hours."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Note that R(0) = R(10). Explain why the Mean Value Theorem does not apply to R on the interval 0 ≤ t ≤ 10. Is there a time c, with 0 < c < 10, at which R′(c) = 0? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the Mean Value Theorem does not apply because R is not differentiable on 0 < t < 10, naming t = 5 (a corner) or t = 2 (a vertical tangent)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers no, supported by the slopes of R on each piece: 1 on (0, 2), positive on (2, 5), and −1 on (5, 10)."
+                    }
+                  ],
+                  "answer": "The theorem does not apply because R is not differentiable at t = 2 or at t = 5. There is no such c: R′ is 1 on (0, 2), positive on (2, 5), and −1 on (5, 10), and R′ does not exist at t = 2 or t = 5.",
+                  "steps": [
+                    "The Mean Value Theorem needs R continuous on [0, 10] and differentiable on (0, 10). R is continuous, but at t = 2 the quarter circle starts with a vertical tangent, and at t = 5 the graph has a corner (slope 0 from the left, −1 from the right). So R′(2) and R′(5) do not exist, and the theorem does not apply.",
+                    "On (0, 2), R′ = 1. On (2, 5) the quarter circle rises, so R′ > 0; its slope approaches 0 only as t → 5, where R′ does not exist. On (5, 10), R′ = −1.",
+                    "So R′(c) = 0 for no c in (0, 10). The missing hypothesis matters here: the conclusion of the theorem is false for this R."
+                  ]
+                }
+              ],
+              "id": "bc-fr-derivative-graph-fr2"
+            },
+            {
+              "prompt": "The function f has a continuous second derivative on the closed interval 0 ≤ x ≤ 9, and f(0) = 5. The graph of its derivative f′, shown in the figure, passes through (0, 2), (1, 1), (4, −3), (8, 3) and (9, 9/4). It crosses the x-axis only at x = 2 and x = 6, and it has horizontal tangent lines at x = 1, x = 4 and x = 8, the only values in 0 < x < 9 where f″(x) = 0. The regions between the graph of f′ and the x-axis have areas 2 on 0 ≤ x ≤ 2, 8 on 2 ≤ x ≤ 6, and 27/4 on 6 ≤ x ≤ 9. The line tangent to the graph of f′ at x = 6 has slope 3.",
+              "topics": [
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+                "BC.5.FIRST_DERIVATIVE_TEST",
+                "BC.5.CONCAVITY",
+                "BC.4.LHOSPITAL_RULE",
+                "BC.4.LINEARIZATION"
+              ],
+              "figureIds": [
+                "bc-fr-derivative-graph-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find all values of x in the open interval 0 < x < 9 at which f has a relative minimum or a relative maximum. Justify your answers.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies a relative maximum at x = 2 and a relative minimum at x = 6, and no other relative extrema."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies each with the sign change of f′: from positive to negative at x = 2 and from negative to positive at x = 6."
+                    }
+                  ],
+                  "answer": "f has a relative maximum at x = 2 and a relative minimum at x = 6.",
+                  "steps": [
+                    "f′(x) = 0 only at x = 2 and x = 6.",
+                    "f′ changes from positive to negative at x = 2, so f has a relative maximum there. f′ changes from negative to positive at x = 6, so f has a relative minimum there.",
+                    "At x = 1 the graph of f′ has a horizontal tangent, but f′(1) = 1 ≠ 0, so x = 1 is not a critical point of f."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the x-coordinate of each point of inflection of the graph of f on the open interval 0 < x < 9. Justify your answer, and explain why the graph of f does not have a point of inflection at x = 1.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies x = 4 and x = 8, and no other values."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with f′ changing from decreasing to increasing at x = 4 and from increasing to decreasing at x = 8, or with f″ changing sign at each."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that f″(1) = 0 but f′ is decreasing on both sides of x = 1 (f″ does not change sign), so the concavity of f does not change there."
+                    }
+                  ],
+                  "answer": "x = 4 and x = 8. At x = 1, f″(1) = 0, but f″ does not change sign there.",
+                  "steps": [
+                    "The graph of f changes concavity where f″, the slope of the graph of f′, changes sign.",
+                    "f′ decreases on (0, 4), increases on (4, 8), and decreases on (8, 9). So f″ is negative, then positive, then negative, and the graph of f has points of inflection at x = 4 and x = 8.",
+                    "At x = 1 the graph of f′ levels off for an instant but keeps falling: f″ ≤ 0 on both sides of x = 1. The graph of f is concave down on both sides, so x = 1 is not a point of inflection, even though f″(1) = 0."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find lim as x→6 of (f(x) + 1)/(x − 6)^2. Show the work that leads to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds f(6) = −1, shows that the numerator and denominator both approach 0, and applies L'Hôpital's Rule to obtain the limit of f′(x)/(2(x − 6))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses f′(6) = 0 to show the new form is again 0/0, applies the rule a second time, and obtains f″(6)/2 = 3/2."
+                    }
+                  ],
+                  "answer": "3/2",
+                  "steps": [
+                    "f(6) = f(0) + ∫ from 0 to 6 of f′(x) dx = 5 + 2 − 8 = −1. So lim as x→6 of (f(x) + 1) = 0, because f is continuous, and lim as x→6 of (x − 6)^2 = 0.",
+                    "By L'Hôpital's Rule, the limit equals lim as x→6 of f′(x)/(2(x − 6)), provided that limit exists. Since f′(6) = 0 and f′ is continuous, the numerator and denominator again both approach 0.",
+                    "Applying the rule again gives lim as x→6 of f″(x)/2 = f″(6)/2, because f″ is continuous.",
+                    "f″(6) is the slope of the line tangent to the graph of f′ at x = 6, which is 3. The limit is 3/2."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use the line tangent to the graph of f at x = 9 to approximate f(8.8). Is this approximation an overestimate or an underestimate of f(8.8)? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses f(9) = 23/4 and f′(9) = 9/4 in the tangent line to obtain f(8.8) ≈ 53/10 (or 5.3); accepts consistent use of an earlier value of f(6)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States overestimate because f′ is decreasing on (8, 9), so f″ < 0 and the graph of f is concave down between 8.8 and 9 and lies below its tangent line."
+                    }
+                  ],
+                  "answer": "f(8.8) ≈ 53/10, an overestimate.",
+                  "steps": [
+                    "f(9) = f(6) + ∫ from 6 to 9 of f′(x) dx = −1 + 27/4 = 23/4, and f′(9) = 9/4 from the graph.",
+                    "The tangent line is y = 23/4 + (9/4)(x − 9). At x = 8.8, y = 23/4 + (9/4)(−0.2) = 23/4 − 9/20 = 53/10.",
+                    "f′ is decreasing on (8, 9), so f″ < 0 and the graph of f is concave down on that interval. A concave-down graph lies below its tangent lines, so 53/10 is an overestimate of f(8.8)."
+                  ]
+                }
+              ],
+              "id": "bc-fr-derivative-graph-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

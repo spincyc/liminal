@@ -1,0 +1,363 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "mixed-6",
+  "kind": "mixed-set",
+  "title": "Mixed set 6: all units at exam pace",
+  "author": "bc-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which idea or method applies. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians and calculator answers are rounded to three decimal places. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "bc-mixed-6-f1",
+      "alt": "Graph of f′ on axes labeled x and f′(x) for −2.5 ≤ x ≤ 3.5. The curve falls from about (−2.5, 6.7), crosses the x-axis at x = −2, reaches a low point near (−1.1, −3.3), rises to touch the x-axis at x = 1 without crossing it, dips to about (2.4, −1), and crosses the x-axis at x = 3, ending near (3.5, 3.4)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "What is ∫ from 0 to 1 of (2x + 3)/(x^2 + 1) dx?",
+              "choices": [
+                "ln 2 + π/4",
+                "4 ln 2",
+                "2 ln 2 + 3π/4",
+                "ln 2 + 3π/4"
+              ],
+              "key": "D",
+              "rationale": "Split the fraction: ∫ from 0 to 1 of 2x/(x^2 + 1) dx + 3∫ from 0 to 1 of 1/(x^2 + 1) dx = [ln(x^2 + 1)] from 0 to 1 + 3[arctan x] from 0 to 1 = ln 2 + 3π/4. The first piece is a substitution; the second is the arctangent form.",
+              "distractorNotes": {
+                "A": "This drops the coefficient 3 from 3 arctan x.",
+                "B": "3/(x^2 + 1) is not of the form u′/u. Its antiderivative is 3 arctan x, not 3 ln(x^2 + 1).",
+                "C": "With u = x^2 + 1, du = 2x dx already absorbs the factor 2x, so ∫ 2x/(x^2 + 1) dx = ln(x^2 + 1), not 2 ln(x^2 + 1)."
+              },
+              "topics": [
+                "BC.6.INTEGRATION_METHOD_SELECTION",
+                "BC.6.SUBSTITUTION",
+                "BC.6.ALGEBRAIC_INTEGRATION"
+              ],
+              "id": "bc-mixed-6-mc01"
+            },
+            {
+              "prompt": "Which describes the convergence of Σ from n = 1 to infinity of (−1)^n √n/(n + 1)?",
+              "choices": [
+                "It converges absolutely.",
+                "It diverges by the nth-term test.",
+                "It diverges, because Σ √n/(n + 1) diverges.",
+                "It converges conditionally."
+              ],
+              "key": "D",
+              "rationale": "Let b_n = √n/(n + 1). Then b_n → 0, and b_n decreases for n ≥ 1, since f(x) = √x/(x + 1) has f′(x) = (1 − x)/(2√x (x + 1)^2) ≤ 0 for x ≥ 1. The alternating series test gives convergence. Since b_n/(1/√n) = n/(n + 1) → 1, Σ b_n diverges by limit comparison with Σ 1/√n. The convergence is conditional.",
+              "distractorNotes": {
+                "A": "Σ √n/(n + 1) diverges by limit comparison with Σ 1/√n, a p-series with p = 1/2.",
+                "B": "√n/(n + 1) → 0, so the nth-term test gives no conclusion.",
+                "C": "Divergence of the series of absolute values rules out absolute convergence only. The alternating series can still converge."
+              },
+              "topics": [
+                "BC.10.ABSOLUTE_AND_CONDITIONAL_CONVERGENCE",
+                "BC.10.ALTERNATING_SERIES",
+                "BC.10.LIMIT_COMPARISON"
+              ],
+              "id": "bc-mixed-6-mc02"
+            },
+            {
+              "prompt": "The table gives the one-sided limits of functions f and g at x = 2. Which limit exists?\n\n| Function | Limit as x→2⁻ | Limit as x→2⁺ |\n| --- | --- | --- |\n| f(x) | 3 | −1 |\n| g(x) | −2 | 6 |",
+              "choices": [
+                "lim as x→2 of f(x)g(x)",
+                "lim as x→2 of (f(x) + g(x))",
+                "lim as x→2 of f(x)/g(x)",
+                "lim as x→2 of g(x)"
+              ],
+              "key": "A",
+              "rationale": "Limit laws apply to each one-sided limit separately. For the product, the left-hand limit is 3(−2) = −6 and the right-hand limit is (−1)(6) = −6. They agree, so the limit of f(x)g(x) as x→2 is −6, even though neither f nor g has a limit at 2.",
+              "distractorNotes": {
+                "B": "The one-sided limits of the sum are 3 + (−2) = 1 and −1 + 6 = 5, which differ.",
+                "C": "The one-sided limits of the quotient are 3/(−2) = −3/2 and −1/6, which differ.",
+                "D": "The one-sided limits of g are −2 and 6, which differ."
+              },
+              "topics": [
+                "BC.1.LIMIT_LAWS",
+                "BC.1.ONE_SIDED_LIMITS"
+              ],
+              "id": "bc-mixed-6-mc03"
+            },
+            {
+              "prompt": "Which is an equation of the line tangent to the graph of y = x cos x at x = π?",
+              "choices": [
+                "y = −x",
+                "y = x − 2π",
+                "y = −π",
+                "y = −x − π"
+              ],
+              "key": "A",
+              "rationale": "At x = π, y = π cos π = −π. By the product rule, dy/dx = cos x − x sin x, which equals −1 − 0 = −1 at π. The tangent line is y + π = −(x − π), that is, y = −x.",
+              "distractorNotes": {
+                "B": "This uses slope 1. The derivative is cos x − x sin x, and cos π = −1, so the slope is −1.",
+                "C": "This keeps only the term −x sin x of the product rule, which is 0 at π, and drops cos x.",
+                "D": "This uses the function value −π as the y-intercept. The line must pass through (π, −π), so y + π = −(x − π)."
+              },
+              "topics": [
+                "BC.2.PRODUCT_RULE",
+                "BC.2.TRIGONOMETRIC_DERIVATIVES"
+              ],
+              "id": "bc-mixed-6-mc04"
+            },
+            {
+              "prompt": "Let g(x) = (x^2 + 1)^x. What is g′(1)?",
+              "choices": [
+                "2 ln 2",
+                "2",
+                "1 + 2 ln 2",
+                "2 + 2 ln 2"
+              ],
+              "key": "D",
+              "rationale": "Both the base and the exponent vary, so use logarithmic differentiation: ln g(x) = x ln(x^2 + 1), so g′(x)/g(x) = ln(x^2 + 1) + 2x^2/(x^2 + 1). At x = 1, g′(1) = g(1)(ln 2 + 1) = 2(ln 2 + 1) = 2 + 2 ln 2.",
+              "distractorNotes": {
+                "A": "This uses the exponential rule, (x^2 + 1)^x ln(x^2 + 1), as if the base were constant.",
+                "B": "This uses the power rule, x(x^2 + 1)^(x − 1)(2x), as if the exponent were constant.",
+                "C": "This omits the chain-rule factor 2x in the derivative of ln(x^2 + 1), getting g′(1)/g(1) = ln 2 + 1/2."
+              },
+              "topics": [
+                "BC.3.DIFFERENTIATION_METHOD_SELECTION",
+                "BC.3.CHAIN_RULE"
+              ],
+              "id": "bc-mixed-6-mc05"
+            },
+            {
+              "prompt": "What is lim as x→0 of (1/(e^x − 1) − 1/x)?",
+              "choices": [
+                "−1/2",
+                "0",
+                "1/2",
+                "The limit does not exist."
+              ],
+              "key": "A",
+              "rationale": "Combine the fractions: 1/(e^x − 1) − 1/x = (x − e^x + 1)/(x(e^x − 1)), a 0/0 form. L’Hôpital’s Rule gives (1 − e^x)/(e^x − 1 + xe^x), still 0/0. Applying it again gives −e^x/(2e^x + xe^x), which tends to −1/2.",
+              "distractorNotes": {
+                "B": "Both terms grow without bound, so the expression has the form ∞ − ∞, which is indeterminate. It is not automatically 0.",
+                "C": "This reverses the sign. After combining, the numerator x − e^x + 1 is negative near 0, while the denominator x(e^x − 1) is positive.",
+                "D": "Combining into one fraction gives a 0/0 form, and L’Hôpital’s Rule evaluates its limit."
+              },
+              "topics": [
+                "BC.4.LHOSPITAL_RULE",
+                "BC.1.ALGEBRAIC_LIMITS"
+              ],
+              "id": "bc-mixed-6-mc06"
+            },
+            {
+              "prompt": "The function f is twice differentiable. The graph of its derivative f′ is shown for −2.5 ≤ x ≤ 3.5. On this interval f′(x) = 0 only at x = −2, x = 1, and x = 3, and f′(x) < 0 at every other x between −2 and 3. Which describes the graph of f at x = 1?",
+              "choices": [
+                "A local minimum",
+                "A point of inflection but no local extremum",
+                "A local maximum",
+                "Neither a local extremum nor a point of inflection"
+              ],
+              "key": "B",
+              "rationale": "f′ does not change sign at x = 1, so f has no extremum there. But f′ increases to 0 and then decreases, so f′ has a local maximum at x = 1 and f″ changes from positive to negative. The graph of f changes from concave up to concave down: a point of inflection.",
+              "distractorNotes": {
+                "A": "f′ is negative on both sides of x = 1, so f decreases through x = 1 and has no minimum there.",
+                "C": "f′ does not change from positive to negative at x = 1; it is negative on both sides.",
+                "D": "f′ has a local maximum at x = 1, so f″ = (f′)′ changes from positive to negative there. That is a point of inflection of f."
+              },
+              "topics": [
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+                "BC.5.CONCAVITY",
+                "BC.5.FIRST_DERIVATIVE_TEST"
+              ],
+              "figureIds": [
+                "bc-mixed-6-f1"
+              ],
+              "id": "bc-mixed-6-mc07"
+            },
+            {
+              "prompt": "A particle moves in the xy-plane with position (x(t), y(t)) = (t^2 − 2t, 2t^3 − 6t). Which statement about the particle at t = 1 is true?",
+              "choices": [
+                "Its path has a vertical tangent, because dx/dt = 0.",
+                "Its path has a horizontal tangent, because dy/dt = 0.",
+                "It is at rest, and dy/dx approaches 0 as t → 1.",
+                "It is at rest, and dy/dx approaches 6 as t → 1."
+              ],
+              "key": "D",
+              "rationale": "dx/dt = 2t − 2 and dy/dt = 6t^2 − 6 are both 0 at t = 1, so the velocity vector is ⟨0, 0⟩ and the particle is at rest. For t ≠ 1, dy/dx = (6t^2 − 6)/(2t − 2) = 3(t + 1), which approaches 6 as t → 1.",
+              "distractorNotes": {
+                "A": "dy/dt is also 0 at t = 1, so (dy/dt)/(dx/dt) has the form 0/0 there and the slope must be found as a limit.",
+                "B": "dx/dt is also 0 at t = 1, so dy/dt = 0 alone does not make the tangent horizontal.",
+                "C": "This treats 0/0 as 0. For t ≠ 1, dy/dx = (6t^2 − 6)/(2t − 2) = 3(t + 1), which tends to 6."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_TANGENTS",
+                "BC.9.PARAMETRIC_DERIVATIVES",
+                "BC.9.PLANAR_MOTION"
+              ],
+              "id": "bc-mixed-6-mc08"
+            },
+            {
+              "prompt": "What is ∫ from 0 to 3 of 1/(x − 1)^(2/3) dx?",
+              "choices": [
+                "3 + 3·2^(1/3)",
+                "3·2^(1/3) − 3",
+                "3·2^(1/3)",
+                "The integral diverges."
+              ],
+              "key": "A",
+              "rationale": "The integrand is unbounded at x = 1, so split the integral there. An antiderivative is 3(x − 1)^(1/3). From 0 to 1: lim as b→1⁻ of [3(b − 1)^(1/3) − 3(−1)^(1/3)] = 0 + 3 = 3. From 1 to 3: lim as a→1⁺ of [3·2^(1/3) − 3(a − 1)^(1/3)] = 3·2^(1/3). The total is 3 + 3·2^(1/3).",
+              "distractorNotes": {
+                "B": "This evaluates (0 − 1)^(1/3) as 1. The real cube root of −1 is −1.",
+                "C": "This keeps only the piece from 1 to 3 and ignores the piece from 0 to 1.",
+                "D": "The integrand is unbounded at x = 1, but the power 2/3 is less than 1, so both improper pieces converge."
+              },
+              "topics": [
+                "BC.6.SINGULAR_INTEGRALS",
+                "BC.6.IMPROPER_CONVERGENCE"
+              ],
+              "id": "bc-mixed-6-mc09"
+            },
+            {
+              "prompt": "What is the radius of convergence of the power series Σ from n = 1 to infinity of n! x^n/n^n?",
+              "choices": [
+                "1/e",
+                "1",
+                "e",
+                "∞"
+              ],
+              "key": "C",
+              "rationale": "Ratio test: the ratio of consecutive terms is (n + 1)! |x|^(n+1) n^n/((n + 1)^(n+1) n! |x|^n) = |x|(n/(n + 1))^n, which tends to |x|/e. The series converges when |x| < e, so the radius of convergence is e.",
+              "distractorNotes": {
+                "A": "This is the limit of the ratio when |x| = 1. The series converges when |x|/e < 1, so the radius is e.",
+                "B": "(n/(n + 1))^n tends to 1/e, not 1.",
+                "D": "The radius is infinite only if the ratio of consecutive terms tends to 0 for every x. Here it tends to |x|/e, because (n/(n + 1))^n → 1/e, so the series diverges when |x| > e."
+              },
+              "topics": [
+                "BC.10.RADIUS_AND_INTERVAL",
+                "BC.10.RATIO_TEST"
+              ],
+              "id": "bc-mixed-6-mc10"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "prompt": "The number of fish P(t) in a lake, where t is measured in years, satisfies dP/dt = 0.8P(1 − P/600), with P(0) = 50. What is P(3)?",
+              "choices": [
+                "160.000",
+                "234.358",
+                "300.316",
+                "551.159"
+              ],
+              "key": "C",
+              "rationale": "The logistic solution with carrying capacity 600 is P(t) = 600/(1 + Ce^(−0.8t)), and P(0) = 50 gives C = 11. Then P(3) = 600/(1 + 11e^(−2.4)) ≈ 300.316.",
+              "distractorNotes": {
+                "A": "This keeps the initial rate P′(0) = 110/3 fish per year constant for 3 years.",
+                "B": "This is Euler’s method with three steps of size 1, which falls well short of the solution here.",
+                "D": "This is 50e^(2.4), the solution of dP/dt = 0.8P, which ignores the carrying capacity of 600."
+              },
+              "topics": [
+                "BC.7.LOGISTIC_MODELS",
+                "BC.7.SEPARATION_OF_VARIABLES"
+              ],
+              "id": "bc-mixed-6-mc11"
+            },
+            {
+              "prompt": "A curve is defined by x = t + 2 cos t and y = t^2/2 for 0 ≤ t ≤ 2. What is the length of the curve?",
+              "choices": [
+                "2.166",
+                "2.493",
+                "2.958",
+                "3.759"
+              ],
+              "key": "B",
+              "rationale": "dx/dt = 1 − 2 sin t and dy/dt = t. The length is ∫ from 0 to 2 of √((1 − 2 sin t)^2 + t^2) dt ≈ 2.493.",
+              "distractorNotes": {
+                "A": "This is the straight-line distance between the endpoints, which is shorter than the curve.",
+                "C": "This is ∫ √(1 + (dy/dt)^2) dt, the length formula for a graph of y against t. Here the horizontal coordinate is x(t), not t.",
+                "D": "This omits the square root: ∫ ((dx/dt)^2 + (dy/dt)^2) dt."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_ARC_LENGTH"
+              ],
+              "id": "bc-mixed-6-mc12"
+            },
+            {
+              "prompt": "Let R be the region enclosed by the graphs of y = 3 − x^2 and y = e^(−x). R is revolved about the horizontal line y = 4. What is the volume of the resulting solid?",
+              "choices": [
+                "19.975",
+                "38.033",
+                "53.751",
+                "129.817"
+              ],
+              "key": "C",
+              "rationale": "The curves meet at x = a ≈ −0.834487 and x = b ≈ 1.677233, with 3 − x^2 above e^(−x) between them. The axis y = 4 lies above R, so the outer radius 4 − e^(−x) comes from the lower curve and the inner radius is 4 − (3 − x^2) = 1 + x^2. V = π∫ from a to b of [(4 − e^(−x))^2 − (1 + x^2)^2] dx ≈ 53.751.",
+              "distractorNotes": {
+                "A": "This is π∫ (3 − x^2 − e^(−x))^2 dx, which squares the distance between the curves instead of subtracting the squares of two radii.",
+                "B": "This revolves R about the x-axis, using radii 3 − x^2 and e^(−x).",
+                "D": "This adds 4 to each curve, as if the axis were y = −4. The distance from a point at height y to the line y = 4 is 4 − y."
+              },
+              "topics": [
+                "BC.8.SHIFTED_AXES",
+                "BC.8.WASHER_VOLUMES"
+              ],
+              "id": "bc-mixed-6-mc13"
+            },
+            {
+              "prompt": "Let F(x) = ∫ from 0 to x of e^(t^2/8) dt, and let G be the inverse function of F. What is G′(3)?",
+              "choices": [
+                "0.325",
+                "0.505",
+                "1.980",
+                "2.338"
+              ],
+              "key": "B",
+              "rationale": "F′(x) = e^(x^2/8) > 0, so F is increasing and has an inverse. Solve F(x) = 3 with a calculator: G(3) ≈ 2.337966. Then G′(3) = 1/F′(G(3)) = 1/e^((2.337966)^2/8) ≈ 0.505.",
+              "distractorNotes": {
+                "A": "This is 1/F′(3). The derivative of the inverse uses F′ at G(3), not at 3.",
+                "C": "This is F′(G(3)) itself. The derivative of the inverse is its reciprocal.",
+                "D": "This is G(3), the solution of F(x) = 3, before the derivative step."
+              },
+              "topics": [
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES",
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.6.ACCUMULATION_FUNCTIONS"
+              ],
+              "id": "bc-mixed-6-mc14"
+            },
+            {
+              "prompt": "Let S = Σ from n = 1 to infinity of 1/(n^2 + 1), and let S_5 be the sum of its first five terms. The integral test gives bounds on S − S_5. Which interval contains S, according to these bounds?",
+              "choices": [
+                "0.165 < S < 0.197",
+                "0.700 < S < 0.732",
+                "1.062 < S < 1.095",
+                "1.095 < S < 1.142"
+              ],
+              "key": "C",
+              "rationale": "f(x) = 1/(x^2 + 1) is positive, continuous, and decreasing for x ≥ 1, so ∫ from 6 to infinity of f(x) dx < S − S_5 < ∫ from 5 to infinity of f(x) dx. These integrals are π/2 − arctan 6 ≈ 0.165149 and π/2 − arctan 5 ≈ 0.197396. With S_5 = 1/2 + 1/5 + 1/10 + 1/17 + 1/26 ≈ 0.897285, the bounds give 1.062434 < S < 1.094681.",
+              "distractorNotes": {
+                "A": "These numbers bound the remainder S − S_5, not S itself. Add S_5 ≈ 0.897.",
+                "B": "This subtracts the remainder bounds from S_5. The terms are positive, so S is larger than every partial sum.",
+                "D": "This shifts the integrals by one. S − S_5 lies between the integrals from 6 to infinity and from 5 to infinity, not from 5 and from 4."
+              },
+              "topics": [
+                "BC.10.INTEGRAL_TEST",
+                "BC.10.SERIES_AND_PARTIAL_SUMS"
+              ],
+              "id": "bc-mixed-6-mc15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

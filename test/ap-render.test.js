@@ -12,6 +12,8 @@ class Element {
   constructor(tag) { this.tagName = tag; this.childNodes = []; this.attributes = {}; this.dataset = {}; this.className = "";
     this.classList = { add: name => { this.className = (this.className + " " + name).trim(); } }; }
   append(...nodes) { nodes.forEach(n => this.childNodes.push(typeof n === "string" ? new Text(n) : n)); }
+  addEventListener(type, listener) { (this.listeners ||= {})[type] = listener; }
+  getAttribute(name) { return this.attributes[name]; }
   setAttribute(name, value) { this.attributes[name] = String(value); }
   set textContent(value) { this.childNodes = [new Text(value)]; }
   get textContent() { return this.childNodes.map(n => n.textContent).join(" "); }
@@ -98,4 +100,33 @@ test("reference notes remain inside the final column flow with their complete re
   assert.equal(flow.find("ap-reference-table").length, ref.groups.length);
   assert.equal(flow.find("ap-reference-notes").length, 1);
   assert.equal(flow.find("ap-reference-note")[0].textContent, "Use this reference while learning.");
+});
+
+test("a guide shows checks with closed hint and answer panels and prints every answer at the end", () => {
+  const doc = F.guide("review-u1");
+  doc.figures[0].svg = F.FIGURE_SVG;
+  const node = R.guide(doc, { context: "Course for AP® Calculus BC", href: ref => ref === "week:1" ? "weeks.html#ap/calculus-bc/1" : "" });
+  assert.equal(node.dataset.copy, "guide");
+  assert.match(node.textContent, /Unit review/);
+  assert.match(node.textContent, /4 checks/);
+  const checks = node.find("ap-check");
+  assert.equal(checks.length, 4);
+  const panels = node.find("ap-check-panel");
+  assert.equal(panels.length, 5, "one hint and four answers");
+  assert.ok(panels.every(panel => panel.hidden === true), "panels start closed");
+  const buttons = node.find("ap-check-toggle");
+  assert.deepEqual(buttons.map(b => b.textContent), ["Show a hint", "Show answer", "Show answer", "Show answer", "Show answer"]);
+  buttons[1].listeners.click();
+  assert.equal(buttons[1].attributes["aria-expanded"], "true");
+  assert.equal(buttons[1].textContent, "Hide answer");
+  assert.equal(panels[1].hidden, false);
+  const key = node.find("ap-check-key");
+  assert.equal(key.length, 1);
+  assert.equal(key[0].find("ap-check-label").length, 4);
+  for (const shown of ["Know this", "Fixture rule", "Conditions", "Trap", "Fix", "Write it like this", "Fixture model sentence", "Example", "Fixture table"]) assert.ok(node.textContent.includes(shown), shown);
+  const links = node.find("ap-guide-links")[0];
+  assert.equal(links.childNodes[0].childNodes[0].tagName, "a", "a resolvable ref is a link");
+  assert.equal(links.childNodes[1].childNodes[0].tagName, "span", "an unavailable ref stays text");
+  assert.equal(node.find("lm-figure").length, 2, "figure block and example figure");
+  assert.equal(A.claimProblems(node.textContent).length, 0);
 });

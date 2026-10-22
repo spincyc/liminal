@@ -2,10 +2,11 @@
 "use strict";
 
 // Builds the AP® assessment data for ap.html after tools/check-ap.js admits it:
-//   dist/content/ap.js     window.LIMINAL_AP: an index of the assessments and
-//                          references that exist
+//   dist/content/ap.js     window.LIMINAL_AP: an index of the assessments,
+//                          exam-prep guides and references that exist
 //   dist/content/ap/assessments/<course>/<id>.json   one document each, with
 //                          figure SVG inlined (loaded on demand)
+//   dist/content/ap/guides/<course>/<id>.json        one guide each, likewise
 //   dist/content/ap/references/<course>.json
 // The plan itself (content/ap.json) is validated and bundled by
 // tools/build-weekly.js as the named track's plan: content/ap-plan.js
@@ -34,6 +35,8 @@ function bundle(result) {
         mc: counts.mc, fr: counts.fr, minutes: counts.minutes, points: counts.points,
         file: "content/ap/assessments/" + doc.courseId + "/" + doc.id + ".json" };
     }),
+    guides: result.guides.map(doc => ({ courseId: doc.courseId, id: doc.id, kind: doc.kind, ...(doc.unitId ? { unitId: doc.unitId } : {}), title: doc.title,
+      summary: doc.summary, minutes: doc.minutes, checks: A.guideChecks(doc).length, file: "content/ap/guides/" + doc.courseId + "/" + doc.id + ".json" })),
     references: result.references.map(ref => ({ courseId: ref.courseId, title: ref.title, file: "content/ap/references/" + ref.courseId + ".json" })),
   };
 }
@@ -52,13 +55,18 @@ function build({ output = path.join(ROOT, "dist"), contentDir, pagesDir } = {}) 
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, JSON.stringify(doc) + "\n");
   }
+  for (const doc of result.guides) {
+    const target = path.join(directory, "ap", "guides", doc.courseId, doc.id + ".json");
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    fs.writeFileSync(target, JSON.stringify(doc) + "\n");
+  }
   for (const ref of result.references) {
     const target = path.join(directory, "ap", "references", ref.courseId + ".json");
     fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, JSON.stringify(ref) + "\n");
   }
   fs.writeFileSync(path.join(directory, "ap.js"), script("LIMINAL_AP", data));
-  console.log(`Built AP data: ${result.plan.courses.length} course plans, ${result.assessments.length} assessments, ${result.references.length} references.`);
+  console.log(`Built AP data: ${result.plan.courses.length} course plans, ${result.assessments.length} assessments, ${result.guides.length} guides, ${result.references.length} references.`);
   return data;
 }
 

@@ -1,0 +1,1579 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "practice-exam-d",
+  "kind": "practice-exam",
+  "title": "Liminal practice exam D for AP® Calculus BC (May 2027 format)",
+  "author": "bc-practice-exam-d-authors",
+  "directions": "This original Liminal practice exam uses the May 2027 format: Section I Part A has 29 multiple-choice questions in 62 minutes without a calculator; Part B has 13 questions in 38 minutes with a graphing calculator. Section II Part A has two free-response questions in 30 minutes with a graphing calculator; Part B has four questions in 60 minutes without a calculator. Liminal scores each free-response question out of 9 points. Work without notes or a formula sheet. Unless stated otherwise, angles are in radians, exact answers are expected in no-calculator work, and numerical answers in calculator work are rounded to three decimal places. Show supporting work for free response, including mathematical setups for calculator computations, and retain unrounded intermediate values. Report raw practice points by section and by unit with the key's tally; these materials do not estimate an AP® score or an AB subscore.",
+  "figures": [
+    {
+      "id": "bc-ped-f1",
+      "alt": "Graph of y = f(x) for 0 ≤ x ≤ 6: an increasing, concave-down curve that starts at (0, 1) and passes through the marked point (2, 3). A dashed line touches the curve at (2, 3) and passes through the marked points (0, 2) and (4, 4)."
+    },
+    {
+      "id": "bc-ped-f2",
+      "alt": "Graph of y = f′(x) for 0 ≤ x ≤ 6. The curve starts at (0, −4), rises to cross the x-axis at x = 1, reaches a peak at (2, 1), falls to touch the x-axis at (4, 0) without crossing, and then rises steeply to (6, 5)."
+    },
+    {
+      "id": "bc-ped-f3",
+      "alt": "Graph of y = f(t) for 0 ≤ t ≤ 6 made of three line segments joining the points (0, 1), (2, 3), (4, −1), and (6, −1). The middle segment crosses the t-axis at t = 3.5."
+    },
+    {
+      "id": "bc-ped-f4",
+      "alt": "Slope field on −2 ≤ x ≤ 2 and −2 ≤ y ≤ 2 with segments every 0.5 unit. Segments are horizontal along the x-axis and along the y-axis. Away from the axes, segments rise to the right in the first and third quadrants and fall to the right in the second and fourth quadrants, and they grow steeper farther from the axes."
+    },
+    {
+      "id": "bc-ped-f5",
+      "alt": "A solid cardioid labeled r = 2 + 2cos θ, with its cusp at the origin and rightmost point (4, 0), and a dashed circle labeled r = 3 centered at the origin. They cross at two points in the first and fourth quadrants. The crescent inside the cardioid and outside the circle, on the right side, is shaded."
+    },
+    {
+      "id": "bc-ped-f21",
+      "alt": "Graph of y = f(x) on −3 ≤ x ≤ 6, drawn to scale on a unit grid. A line segment runs from the point (−3, 2) down to (−1, −2), a second segment rises from (−1, −2) to the origin, and the upper half of the circle of radius 3 centered at (3, 0) runs from the origin up to (3, 3) and back down to (6, 0)."
+    },
+    {
+      "id": "bc-ped-f22",
+      "alt": "Graph of the elevator's velocity v(t) in meters per second against time t in seconds for 0 ≤ t ≤ 20. Line segments join (0, 0), (3, 3), (7, 3), (9, 0), (12, 0), (14, −4), (18, −4), and (20, 0)."
+    },
+    {
+      "id": "bc-ped-f23",
+      "alt": "The polar curve r = 1 + √2 cos θ drawn on x- and y-axes. A large outer loop crosses the positive x-axis near x = 2.4 and passes through (0, 1) and (0, −1). A small shaded inner loop lies just to the right of the origin, between the origin and about x = 0.4, and both loops pass through the origin."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 62,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-ped-mc01",
+              "prompt": "What is lim as x→−∞ of (√(16x^2 + 3) − x)/(2x + 7)?",
+              "choices": [
+                "3/2",
+                "−5/2",
+                "5/2",
+                "−2"
+              ],
+              "key": "B",
+              "rationale": "For x < 0, √(16x^2 + 3) = |x|√(16 + 3/x^2) = −x√(16 + 3/x^2). Dividing the numerator and the denominator by −x, which is positive, gives (√(16 + 3/x^2) + 1)/(−2 − 7/x) → (4 + 1)/(−2) = −5/2.",
+              "distractorNotes": {
+                "A": "This treats √(x^2) as x, so the radical behaves like 4x and the limit becomes (4 − 1)/2. For x < 0, √(x^2) = |x| = −x, so √(16x^2 + 3) behaves like −4x. (3/2 is the limit as x→∞.)",
+                "C": "This handles the radical correctly, so the numerator over |x| tends to 4 + 1 = 5, but it treats (2x + 7)/|x| as tending to 2. For x < 0, 2x/|x| = −2, which makes the limit negative.",
+                "D": "This keeps only the radical in the numerator, as if the −x term were negligible next to √(16x^2 + 3). Both terms grow like |x|, so the numerator behaves like −4x − x = −5x, not −4x."
+              },
+              "topics": [
+                "BC.1.LIMITS_AT_INFINITY",
+                "BC.1.ALGEBRAIC_LIMITS"
+              ]
+            },
+            {
+              "id": "bc-ped-mc02",
+              "prompt": "What is lim as x→1/2 of (arcsin x − π/6)/(x − 1/2)?",
+              "choices": [
+                "√3/2",
+                "4/3",
+                "π/6",
+                "2√3/3"
+              ],
+              "key": "D",
+              "rationale": "Since arcsin(1/2) = π/6, the limit has the form lim as x→a of (f(x) − f(a))/(x − a) with f(x) = arcsin x and a = 1/2. It equals f′(1/2) = 1/√(1 − 1/4) = 1/(√3/2) = 2/√3 = 2√3/3.",
+              "distractorNotes": {
+                "A": "This uses √(1 − x^2) as the derivative of arcsin x. The derivative is its reciprocal, 1/√(1 − x^2).",
+                "B": "This drops the square root, using 1/(1 − x^2) as the derivative of arcsin x.",
+                "C": "This is arcsin(1/2), the value of the function, not its rate of change."
+              },
+              "topics": [
+                "BC.2.DERIVATIVE_DEFINITION",
+                "BC.3.INVERSE_TRIGONOMETRIC_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-ped-mc03",
+              "prompt": "The nth partial sum of the series Σ from n = 1 to infinity of a_n is S_n = (3n + 1)/(n + 2). Which statement is true?",
+              "choices": [
+                "The series converges to 3.",
+                "The series converges to 0.",
+                "The series converges to 4/3.",
+                "The series diverges because S_n increases."
+              ],
+              "key": "A",
+              "rationale": "A series converges to S exactly when its partial sums approach S. Here lim as n→∞ of (3n + 1)/(n + 2) = 3, so the series converges to 3.",
+              "distractorNotes": {
+                "B": "This is the limit of the terms a_n, not of the partial sums. The sum of a series is lim as n→∞ of S_n.",
+                "C": "This is S_1 = a_1, the first term, not the limit of the partial sums.",
+                "D": "Increasing partial sums can still converge when they are bounded. Here S_n = 3 − 5/(n + 2) increases toward 3."
+              },
+              "topics": [
+                "BC.10.SERIES_AND_PARTIAL_SUMS",
+                "BC.10.SEQUENCES"
+              ]
+            },
+            {
+              "id": "bc-ped-mc04",
+              "prompt": "A building uses electric power at a rate of P(t) kilowatts, where P is continuous and t is the number of hours after 6 a.m. Selected values are shown. Using a midpoint Riemann sum with three subintervals of equal length, what is the approximation of ∫ from 0 to 12 of P(t) dt, in kilowatt-hours?\n\n| t (hours) | 0 | 2 | 4 | 6 | 8 | 10 | 12 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| P(t) (kilowatts) | 14 | 20 | 23 | 21 | 17 | 12 | 9 |",
+              "choices": [
+                "216",
+                "209",
+                "212",
+                "196"
+              ],
+              "key": "C",
+              "rationale": "Three equal subintervals of [0, 12] have width 4: [0, 4], [4, 8], and [8, 12], with midpoints 2, 6, and 10. The midpoint sum is 4(P(2) + P(6) + P(10)) = 4(20 + 21 + 12) = 212 kilowatt-hours.",
+              "distractorNotes": {
+                "A": "This is the left Riemann sum 4(14 + 23 + 17), which samples the left end of each subinterval.",
+                "B": "This is the trapezoidal sum on the six table intervals. It is a reasonable estimate, but it is not the requested midpoint sum.",
+                "D": "This is the right Riemann sum 4(23 + 17 + 9), which samples the right end of each subinterval."
+              },
+              "topics": [
+                "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS",
+                "BC.8.NET_AND_TOTAL_CHANGE"
+              ]
+            },
+            {
+              "id": "bc-ped-mc05",
+              "prompt": "Differentiable functions f and g have the values shown, and f is positive. Let h(x) = √(f(g(x))). What is h′(1)?\n\n| x | 1 | 2 | 3 |\n| --- | --- | --- | --- |\n| f(x) | 3 | 9 | 4 |\n| f′(x) | 2 | 6 | −1 |\n| g(x) | 2 | 3 | 1 |\n| g′(x) | −3 | 1/2 | 2 |",
+              "choices": [
+                "−18",
+                "1",
+                "−1",
+                "−3"
+              ],
+              "key": "D",
+              "rationale": "With u = f(g(x)), h = √u and h′ = u′/(2√u), where u′ = f′(g(x))·g′(x). At x = 1, g(1) = 2, so u = f(2) = 9 and u′ = f′(2)·g′(1) = 6(−3) = −18. Thus h′(1) = −18/(2·3) = −3.",
+              "distractorNotes": {
+                "A": "This is f′(g(1))·g′(1), the derivative of f(g(x)). It drops the derivative of the square root, 1/(2√u).",
+                "B": "This omits the innermost factor g′(1) = −3.",
+                "C": "This evaluates f′ at x = 1 instead of at the inner value g(1) = 2."
+              },
+              "topics": [
+                "BC.3.CHAIN_RULE",
+                "BC.3.DIFFERENTIATION_METHOD_SELECTION"
+              ]
+            },
+            {
+              "id": "bc-ped-mc06",
+              "prompt": "The function f is continuous on the closed interval [0, 4] and has the values shown. What is the least number of solutions that the equation f(x) = 1 must have in [0, 4]?\n\n| x | 0 | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- | --- |\n| f(x) | 3 | 0 | 4 | 1 | −2 |",
+              "choices": [
+                "2",
+                "3",
+                "4",
+                "1"
+              ],
+              "key": "B",
+              "rationale": "Look at f(x) − 1 at the table values: 2, −1, 3, 0, −3. The Intermediate Value Theorem gives a solution in (0, 1) and another in (1, 2), because f is continuous and f − 1 changes sign. Also f(3) = 1 exactly. So at least 3 solutions must exist; nothing more is forced.",
+              "distractorNotes": {
+                "A": "This counts the sign changes of f(x) − 1 between table values but misses that f(3) = 1 is itself a solution.",
+                "C": "This also counts a solution strictly between 2 and 3. There f falls from 4 to 1, so it reaches 1 at x = 3 but need not reach 1 earlier.",
+                "D": "This applies the theorem only to the whole interval, from f(0) = 3 to f(4) = −2. The table gives more subintervals to use."
+              },
+              "topics": [
+                "BC.1.INTERMEDIATE_VALUE_THEOREM",
+                "BC.1.CONTINUITY_ON_INTERVALS"
+              ]
+            },
+            {
+              "id": "bc-ped-mc07",
+              "prompt": "A particle moves in the xy-plane with acceleration vector a(t) = ⟨6t, −2⟩. At time t = 0 its velocity vector is ⟨−3, 4⟩. What is the speed of the particle at t = 2?",
+              "choices": [
+                "9",
+                "4√10",
+                "2√37",
+                "21"
+              ],
+              "key": "A",
+              "rationale": "Integrate each component and use v(0): v(t) = ⟨−3 + 3t^2, 4 − 2t⟩. Then v(2) = ⟨9, 0⟩, and the speed is √(9^2 + 0^2) = 9.",
+              "distractorNotes": {
+                "B": "This integrates the acceleration but omits the initial velocity, giving ⟨12, −4⟩ at t = 2.",
+                "C": "This is the magnitude of the acceleration vector a(2) = ⟨12, −2⟩, not of the velocity.",
+                "D": "This antidifferentiates 6t as 6t^2 instead of 3t^2, giving a horizontal velocity of 21 at t = 2."
+              },
+              "topics": [
+                "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS",
+                "BC.9.PLANAR_MOTION"
+              ]
+            },
+            {
+              "id": "bc-ped-mc08",
+              "prompt": "The graph of the differentiable function f is shown with the line tangent to it at the point (2, 3). The tangent line passes through (0, 2) and (4, 4). Let g(x) = x^2/f(x). What is g′(2)?",
+              "choices": [
+                "8",
+                "10/9",
+                "−10/9",
+                "10/3"
+              ],
+              "key": "B",
+              "rationale": "From the graph, f(2) = 3, and the tangent line's slope is (4 − 2)/(4 − 0) = 1/2, so f′(2) = 1/2. By the quotient rule, g′(2) = (2·2·f(2) − 2^2·f′(2))/f(2)^2 = (12 − 2)/9 = 10/9.",
+              "distractorNotes": {
+                "A": "This divides the derivatives, 2x/f′(x) = 4/(1/2). The quotient rule is not the quotient of the derivatives.",
+                "C": "This reverses the order of the quotient rule numerator, computing x^2 f′(x) − 2x f(x).",
+                "D": "This divides by f(2) instead of by f(2)^2."
+              },
+              "topics": [
+                "BC.2.QUOTIENT_RULE",
+                "BC.2.DERIVATIVE_REPRESENTATIONS"
+              ],
+              "figureIds": [
+                "bc-ped-f1"
+              ]
+            },
+            {
+              "id": "bc-ped-mc09",
+              "prompt": "Which differential equation could have the slope field shown?",
+              "choices": [
+                "dy/dx = x + y",
+                "dy/dx = −xy/2",
+                "dy/dx = xy/2",
+                "dy/dx = x^2 y/2"
+              ],
+              "key": "C",
+              "rationale": "The segments are horizontal wherever x = 0 or y = 0, so the slope is 0 on both axes. Slopes are positive where x and y have the same sign and negative where they differ, and they steepen as |x| and |y| grow. The expression xy/2 has all of these features.",
+              "distractorNotes": {
+                "A": "This would have horizontal segments along the line y = −x, not along both axes.",
+                "B": "This has every sign reversed: it would give negative slopes in the first quadrant, where the field rises.",
+                "D": "This is zero on both axes, but its slopes would be positive in the second quadrant, where the field falls."
+              },
+              "topics": [
+                "BC.7.SLOPE_FIELDS",
+                "BC.7.DIFFERENTIAL_EQUATION_MODELS"
+              ],
+              "figureIds": [
+                "bc-ped-f4"
+              ]
+            },
+            {
+              "id": "bc-ped-mc10",
+              "prompt": "Which function satisfies the hypotheses of the Mean Value Theorem on the interval [−1, 2]?",
+              "choices": [
+                "f(x) = x^(2/3)",
+                "f(x) = tan x",
+                "f(x) = |2x − 1|",
+                "f(x) = √(x + 1)"
+              ],
+              "key": "D",
+              "rationale": "The theorem requires continuity on [−1, 2] and differentiability on the open interval (−1, 2). The function √(x + 1) is continuous on [−1, 2], and its derivative 1/(2√(x + 1)) exists for −1 < x < 2. It fails to be differentiable only at the endpoint x = −1, which the hypotheses do not require.",
+              "distractorNotes": {
+                "A": "This is continuous, but its derivative (2/3)x^(−1/3) does not exist at x = 0, inside the interval (a cusp).",
+                "B": "This is undefined at x = π/2 ≈ 1.57, which lies inside [−1, 2], so it is not continuous on the interval.",
+                "C": "This is continuous, but its graph has a corner at x = 1/2, inside the interval."
+              },
+              "topics": [
+                "BC.5.MEAN_VALUE_THEOREM",
+                "BC.2.DIFFERENTIABILITY"
+              ]
+            },
+            {
+              "id": "bc-ped-mc11",
+              "prompt": "What is ∫ from 0 to π of x sin(x/2) dx?",
+              "choices": [
+                "4",
+                "2",
+                "−4",
+                "1"
+              ],
+              "key": "A",
+              "rationale": "Let u = x and dv = sin(x/2) dx, so du = dx and v = −2cos(x/2). Then ∫ x sin(x/2) dx = −2x cos(x/2) + 2∫ cos(x/2) dx = −2x cos(x/2) + 4 sin(x/2). From 0 to π this is (0 + 4) − (0 + 0) = 4.",
+              "distractorNotes": {
+                "B": "This uses v = −cos(x/2), losing the factor 2 that the inner function x/2 produces, and then antidifferentiates cos(x/2) correctly: −x cos(x/2) + 2 sin(x/2) is 2 at π.",
+                "C": "This subtracts where parts adds: ∫ u dv = uv − ∫ v du, and here v du = −2cos(x/2) dx, so the second term is +2∫ cos(x/2) dx.",
+                "D": "This drops the factor 2 from both antiderivatives, using v = −cos(x/2) and ∫ cos(x/2) dx = sin(x/2). That gives −x cos(x/2) + sin(x/2), which is 1 at π."
+              },
+              "topics": [
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.6.SUBSTITUTION"
+              ]
+            },
+            {
+              "id": "bc-ped-mc12",
+              "prompt": "What is lim as x→0 of (ln(1 + 2x) − 2x)/x^2?",
+              "choices": [
+                "2",
+                "−1",
+                "−2",
+                "−1/2"
+              ],
+              "key": "C",
+              "rationale": "The form is 0/0. L'Hôpital's rule gives lim of (2/(1 + 2x) − 2)/(2x), still 0/0. Applying it again gives lim of (−4/(1 + 2x)^2)/2 = −4/2 = −2.",
+              "distractorNotes": {
+                "A": "This has a sign error. Near 0, ln(1 + 2x) lies below 2x, so the numerator is negative.",
+                "B": "This drops the chain-rule factor 2 when differentiating 2/(1 + 2x) the second time.",
+                "D": "This uses ln(1 + 2x) ≈ 2x − x^2/2. The quadratic term is (2x)^2/2 = 2x^2."
+              },
+              "topics": [
+                "BC.4.LHOSPITAL_RULE"
+              ]
+            },
+            {
+              "id": "bc-ped-mc13",
+              "prompt": "What is ∫ from 0 to 1 of (x^2 + 3)/(x + 1) dx?",
+              "choices": [
+                "−1/2",
+                "4 ln 2 − 1/2",
+                "ln 2",
+                "1/2 + 3 ln 2"
+              ],
+              "key": "B",
+              "rationale": "The numerator's degree is not less than the denominator's, so divide first: (x^2 + 3)/(x + 1) = x − 1 + 4/(x + 1). Then ∫ from 0 to 1 = [x^2/2 − x + 4 ln|x + 1|] from 0 to 1 = 1/2 − 1 + 4 ln 2 = 4 ln 2 − 1/2.",
+              "distractorNotes": {
+                "A": "This keeps the quotient x − 1 but drops the remainder 4. Long division gives x^2 + 3 = (x + 1)(x − 1) + 4.",
+                "C": "This treats the integrand as a derivative over its function, but x^2 + 3 is not a multiple of the derivative of x + 1.",
+                "D": "This splits the fraction and then cancels x^2/(x + 1) to x, which is not a valid simplification."
+              },
+              "topics": [
+                "BC.6.ALGEBRAIC_INTEGRATION",
+                "BC.6.INTEGRATION_METHOD_SELECTION"
+              ]
+            },
+            {
+              "id": "bc-ped-mc14",
+              "prompt": "Let f(x) = sin x/(x^2 − πx). Which statement about f is true?",
+              "choices": [
+                "f has removable discontinuities at both x = 0 and x = π.",
+                "f has vertical asymptotes at x = 0 and x = π.",
+                "f has a removable discontinuity at x = 0 and a vertical asymptote at x = π.",
+                "f is continuous at x = 0, because lim as x→0 of f(x) exists."
+              ],
+              "key": "A",
+              "rationale": "Write f(x) = (sin x/x)·1/(x − π). As x→0 this approaches 1·(1/(−π)) = −1/π. As x→π, write f(x) = (1/x)·sin x/(x − π); since sin x/(x − π) → cos π = −1, f(x) → −1/π. Both limits are finite but f is undefined at 0 and π, so both discontinuities are removable.",
+              "distractorNotes": {
+                "B": "A zero denominator gives an asymptote only when the numerator does not also approach 0. Here sin x is 0 at both points, and both limits are finite.",
+                "C": "Near π, sin x behaves like −(x − π), which cancels the factor x − π. The limit at π is −1/π.",
+                "D": "f(0) is undefined, since the denominator is 0. A limit alone does not make f continuous."
+              },
+              "topics": [
+                "BC.1.DISCONTINUITIES",
+                "BC.1.ALGEBRAIC_LIMITS"
+              ]
+            },
+            {
+              "id": "bc-ped-mc15",
+              "prompt": "A particle moves along the x-axis with position x(t) = t^3 − 12t^2 + 36t for 0 ≤ t ≤ 8. During which time intervals is the particle speeding up?",
+              "choices": [
+                "4 < t < 8",
+                "0 < t < 2 and 6 < t < 8",
+                "2 < t < 6",
+                "2 < t < 4 and 6 < t < 8"
+              ],
+              "key": "D",
+              "rationale": "v(t) = 3t^2 − 24t + 36 = 3(t − 2)(t − 6) and a(t) = 6t − 24. Velocity is negative on (2, 6) and positive elsewhere; acceleration is negative before 4 and positive after. They share a sign on 2 < t < 4 (both negative) and on 6 < t < 8 (both positive).",
+              "distractorNotes": {
+                "A": "These are the times when the acceleration is positive. Speeding up needs velocity and acceleration to have the same sign.",
+                "B": "These are the times when the velocity is positive, that is, when the particle moves right.",
+                "C": "These are the times when the velocity is negative, that is, when the particle moves left."
+              },
+              "topics": [
+                "BC.4.STRAIGHT_LINE_MOTION"
+              ]
+            },
+            {
+              "id": "bc-ped-mc16",
+              "prompt": "Which series converges?",
+              "choices": [
+                "Σ from n = 1 to infinity of n/(n^2 + 3)",
+                "Σ from n = 1 to infinity of √n/(n^2 + 1)",
+                "Σ from n = 1 to infinity of cos(1/n)",
+                "Σ from n = 1 to infinity of n!/10^n"
+              ],
+              "key": "B",
+              "rationale": "For large n, √n/(n^2 + 1) behaves like 1/n^(3/2). The limit of the ratio of the two terms is lim of n^2/(n^2 + 1) = 1, a positive finite number, and Σ 1/n^(3/2) is a convergent p-series (p = 3/2 > 1). By limit comparison, the series converges.",
+              "distractorNotes": {
+                "A": "Limit comparison with 1/n gives a limit of 1, and the harmonic series diverges, so this series diverges.",
+                "C": "The terms approach cos 0 = 1, not 0, so the series diverges by the nth term test.",
+                "D": "The ratio of consecutive terms is (n + 1)/10, which grows without bound, so the series diverges by the ratio test."
+              },
+              "topics": [
+                "BC.10.LIMIT_COMPARISON",
+                "BC.10.NTH_TERM_TEST",
+                "BC.10.RATIO_TEST"
+              ]
+            },
+            {
+              "id": "bc-ped-mc17",
+              "prompt": "The graph of f′, the derivative of a twice-differentiable function f, is shown for 0 ≤ x ≤ 6. The graph of f′ touches the x-axis at x = 4 without crossing it. Which statement about f is true?",
+              "choices": [
+                "f has a local minimum at x = 4.",
+                "f has a point of inflection at x = 4.",
+                "f has a local maximum at x = 1.",
+                "f is concave down on the interval 1 < x < 4."
+              ],
+              "key": "B",
+              "rationale": "f is concave down where f′ decreases and concave up where f′ increases. The graph of f′ decreases on 2 < x < 4 and increases on 4 < x < 6, so the concavity of f changes at x = 4, a point of inflection. (There f′(4) = 0 as well, so the tangent there is horizontal.)",
+              "distractorNotes": {
+                "A": "f′(4) = 0, but f′ is positive on both sides of 4, so f is increasing through x = 4 and has no extremum there.",
+                "C": "At x = 1, f′ changes from negative to positive, so f has a local minimum there.",
+                "D": "f′ increases from x = 1 to its peak at x = 2, so f is concave up on 1 < x < 2. f is concave down only on 2 < x < 4."
+              },
+              "topics": [
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+                "BC.5.CONCAVITY",
+                "BC.5.FIRST_DERIVATIVE_TEST"
+              ],
+              "figureIds": [
+                "bc-ped-f2"
+              ]
+            },
+            {
+              "id": "bc-ped-mc18",
+              "prompt": "A curve is defined by x = 3t^2 − t^3 and y = t^2 + 4t for all real t. At which points (x, y) does the curve have a vertical tangent line?",
+              "choices": [
+                "(20, −4) only",
+                "(4, 12) only",
+                "(0, 0) and (4, 12)",
+                "(0, 0), (4, 12), and (20, −4)"
+              ],
+              "key": "C",
+              "rationale": "A vertical tangent needs dx/dt = 0 with dy/dt ≠ 0. Here dx/dt = 6t − 3t^2 = 3t(2 − t) is 0 at t = 0 and t = 2, and dy/dt = 2t + 4 is 4 and 8 there. The points are (x(0), y(0)) = (0, 0) and (x(2), y(2)) = (4, 12).",
+              "distractorNotes": {
+                "A": "This is the point for t = −2, where dy/dt = 0. The tangent there is horizontal, not vertical.",
+                "B": "This divides dx/dt = 6t − 3t^2 by t and loses the solution t = 0.",
+                "D": "This includes every point where either derivative is 0. Only dx/dt = 0 with dy/dt ≠ 0 gives a vertical tangent."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_TANGENTS",
+                "BC.9.PARAMETRIC_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-ped-mc19",
+              "prompt": "The region in the first quadrant bounded by the graph of y = e^x, the y-axis, and the line y = 3 is revolved about the y-axis. Which integral gives the volume of the resulting solid?",
+              "choices": [
+                "π∫ from 1 to 3 of (ln y)^2 dy",
+                "π∫ from 0 to ln 3 of (9 − e^(2x)) dx",
+                "π∫ from 0 to 3 of (ln y)^2 dy",
+                "π∫ from 0 to ln 3 of (3 − e^x)^2 dx"
+              ],
+              "key": "A",
+              "rationale": "Slice perpendicular to the y-axis, the axis of revolution. For 1 ≤ y ≤ 3, the region runs from x = 0 to x = ln y, so each slice sweeps a disc of radius ln y. The volume is π∫ from 1 to 3 of (ln y)^2 dy.",
+              "distractorNotes": {
+                "B": "This is the washer integral for revolving the same region about the x-axis.",
+                "C": "The region starts at y = 1, where the curve meets the y-axis; below that there is no region, and ln y is undefined at 0.",
+                "D": "This revolves the region about the line y = 3, not the y-axis."
+              },
+              "topics": [
+                "BC.8.DISC_VOLUMES",
+                "BC.8.AREA_DY"
+              ]
+            },
+            {
+              "id": "bc-ped-mc20",
+              "prompt": "Let f(x) = sin(2x) + e^(−x). What is f^(15)(0), the 15th derivative of f at x = 0?",
+              "choices": [
+                "2^15 − 1",
+                "1 − 2^15",
+                "−3",
+                "−2^15 − 1"
+              ],
+              "key": "D",
+              "rationale": "The derivatives of sin(2x) cycle as 2cos(2x), −4 sin(2x), −8cos(2x), 16 sin(2x), …, so since 15 = 4·3 + 3, the 15th is −2^15 cos(2x), which is −2^15 at 0. The 15th derivative of e^(−x) is (−1)^15 e^(−x) = −e^(−x), which is −1 at 0. Thus f^(15)(0) = −2^15 − 1.",
+              "distractorNotes": {
+                "A": "This lands on the wrong sign in the four-step cycle for sin(2x). The 15th derivative is −2^15 cos(2x), which is negative at 0.",
+                "B": "This takes every derivative of e^(−x) to be e^(−x). Each differentiation brings a factor −1, so 15 of them give −e^(−x).",
+                "C": "This applies the chain-rule factor 2 only once. Each of the 15 differentiations of sin(2x) multiplies by 2."
+              },
+              "topics": [
+                "BC.3.HIGHER_DERIVATIVES",
+                "BC.3.CHAIN_RULE"
+              ]
+            },
+            {
+              "id": "bc-ped-mc21",
+              "prompt": "Let y = f(x) be the solution to the differential equation dy/dx = y − 2x with f(0) = 3. What is the approximation to f(1) found with Euler's method using two steps of equal size?",
+              "choices": [
+                "6.5",
+                "6",
+                "6.25",
+                "5.5"
+              ],
+              "key": "C",
+              "rationale": "Use steps of 0.5. At (0, 3) the slope is 3 − 0 = 3, so f(0.5) ≈ 3 + 0.5(3) = 4.5. At (0.5, 4.5) the slope is 4.5 − 1 = 3.5, so f(1) ≈ 4.5 + 0.5(3.5) = 6.25.",
+              "distractorNotes": {
+                "A": "This is the second-degree Taylor polynomial about x = 0, using f″(0) = f′(0) − 2 = 1. It is a different approximation from Euler's method.",
+                "B": "This takes one step of size 1, which is the tangent line approximation.",
+                "D": "This finds the second slope at (0.5, 3), using the old y-value instead of the updated value 4.5."
+              },
+              "topics": [
+                "BC.7.EULER_METHOD",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS"
+              ]
+            },
+            {
+              "id": "bc-ped-mc22",
+              "prompt": "The graph of the continuous function f, consisting of three line segments, is shown for 0 ≤ t ≤ 6. Let h(x) = ∫ from 2 to x^2 of f(t) dt. What is h′(2)?",
+              "choices": [
+                "−4",
+                "−1",
+                "2",
+                "12"
+              ],
+              "key": "A",
+              "rationale": "By the Fundamental Theorem and the chain rule, h′(x) = f(x^2)·2x. From the graph, f(4) = −1, so h′(2) = f(4)·4 = −4.",
+              "distractorNotes": {
+                "B": "This is f(4) alone. The upper limit is x^2, so the chain rule multiplies by its derivative 2x = 4.",
+                "C": "This is h(2) = ∫ from 2 to 4 of f(t) dt, the accumulated signed area, not the rate h′(2).",
+                "D": "This evaluates f at x = 2 instead of at the upper limit x^2 = 4, computing f(2)·4."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION_FUNCTIONS",
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.3.CHAIN_RULE"
+              ],
+              "figureIds": [
+                "bc-ped-f3"
+              ]
+            },
+            {
+              "id": "bc-ped-mc23",
+              "prompt": "At which points on the curve 2x^2 − 2xy + y^2 = 8 is the line tangent to the curve horizontal?",
+              "choices": [
+                "(2, 4) and (−2, −4)",
+                "(2√2, 2√2) and (−2√2, −2√2)",
+                "(2, 0) and (−2, 0)",
+                "(0, 2√2) and (0, −2√2)"
+              ],
+              "key": "A",
+              "rationale": "Differentiating gives 4x − 2y − 2x(dy/dx) + 2y(dy/dx) = 0, so dy/dx = (2x − y)/(x − y). The slope is 0 where y = 2x and x ≠ y. Substituting y = 2x gives 2x^2 − 4x^2 + 4x^2 = 2x^2 = 8, so x = ±2. The points are (2, 4) and (−2, −4).",
+              "distractorNotes": {
+                "B": "These are the points where y = x, which makes the denominator x − y of dy/dx equal to 0. The tangent lines there are vertical.",
+                "C": "These are the x-intercepts, found by setting y = 0. A horizontal tangent needs dy/dx = 0, not y = 0.",
+                "D": "These are the y-intercepts, found by setting x = 0. Neither has a horizontal tangent."
+              },
+              "topics": [
+                "BC.5.IMPLICIT_CURVE_ANALYSIS",
+                "BC.3.IMPLICIT_DIFFERENTIATION"
+              ]
+            },
+            {
+              "id": "bc-ped-mc24",
+              "prompt": "What is the interval of convergence of the power series Σ from n = 1 to infinity of (2x − 1)^n/n^2?",
+              "choices": [
+                "(0, 1)",
+                "[0, 1)",
+                "[0, 1]",
+                "[−1/2, 3/2]"
+              ],
+              "key": "C",
+              "rationale": "The ratio of consecutive terms has absolute value (n/(n + 1))^2·|2x − 1| → |2x − 1|, so the series converges for |2x − 1| < 1, that is, 0 < x < 1. At x = 1 the series is Σ 1/n^2, and at x = 0 it is Σ (−1)^n/n^2; both converge (the second absolutely). The interval is [0, 1].",
+              "distractorNotes": {
+                "A": "This stops at the ratio test, which says nothing at the endpoints. Both endpoint series converge.",
+                "B": "At x = 1 the series is Σ 1/n^2, a p-series with p = 2 > 1, which converges.",
+                "D": "This treats |2x − 1| < 1 as |x − 1/2| < 1, forgetting to divide by the coefficient 2."
+              },
+              "topics": [
+                "BC.10.RADIUS_AND_INTERVAL",
+                "BC.10.ENDPOINT_TESTS",
+                "BC.10.P_SERIES"
+              ]
+            },
+            {
+              "id": "bc-ped-mc25",
+              "prompt": "What is the value of ∫ from 1 to infinity of e^(−√x)/√x dx?",
+              "choices": [
+                "1/e",
+                "−2/e",
+                "The integral diverges.",
+                "2/e"
+              ],
+              "key": "D",
+              "rationale": "An antiderivative is −2e^(−√x) (check: its derivative is −2e^(−√x)·(−1/(2√x))). Then ∫ from 1 to b = 2e^(−1) − 2e^(−√b), which approaches 2/e as b→∞.",
+              "distractorNotes": {
+                "A": "This drops the factor 2 from the substitution u = √x, for which dx/√x = 2 du.",
+                "B": "This subtracts in the wrong order, computing the value at x = 1 minus the limit at infinity.",
+                "C": "This compares the integrand with 1/√x, whose integral diverges, but e^(−√x) shrinks fast enough to make the integral converge."
+              },
+              "topics": [
+                "BC.6.INFINITE_INTERVAL_INTEGRALS",
+                "BC.6.SUBSTITUTION",
+                "BC.6.IMPROPER_CONVERGENCE"
+              ]
+            },
+            {
+              "id": "bc-ped-mc26",
+              "prompt": "Two nonnegative numbers x and y have a sum of 10. What is the greatest possible value of x·y^2?",
+              "choices": [
+                "125",
+                "4000/27",
+                "2000/27",
+                "20/3"
+              ],
+              "key": "B",
+              "rationale": "Substitute x = 10 − y: P(y) = (10 − y)y^2 = 10y^2 − y^3 for 0 ≤ y ≤ 10. P′(y) = 20y − 3y^2 = y(20 − 3y) is 0 at y = 0 and y = 20/3. P(0) = P(10) = 0 and P(20/3) = (10/3)(400/9) = 4000/27, so the greatest value is 4000/27.",
+              "distractorNotes": {
+                "A": "This assumes the numbers should be equal, x = y = 5. The squared factor deserves the larger share.",
+                "C": "This finds the right numbers, x = 10/3 and y = 20/3, but evaluates x^2·y instead of x·y^2.",
+                "D": "This is the value of y at the maximum, not the maximum value of the product."
+              },
+              "topics": [
+                "BC.5.OPTIMIZATION"
+              ]
+            },
+            {
+              "id": "bc-ped-mc27",
+              "prompt": "A function f has derivatives of all orders, with the values at x = 2 shown. Let g(x) = ∫ from 2 to x of f(t) dt. What is the coefficient of (x − 2)^3 in the Taylor series for g about x = 2?\n\n| f(2) | f′(2) | f″(2) | f‴(2) |\n| --- | --- | --- | --- |\n| 3 | −1 | 4 | −12 |",
+              "choices": [
+                "−2",
+                "2",
+                "2/3",
+                "4"
+              ],
+              "key": "C",
+              "rationale": "By the Fundamental Theorem, g′ = f, so g‴ = f″ and g‴(2) = f″(2) = 4. The coefficient of (x − 2)^3 is g‴(2)/3! = 4/6 = 2/3.",
+              "distractorNotes": {
+                "A": "This is f‴(2)/3!, the coefficient for f rather than for g.",
+                "B": "This is f″(2)/2!. The coefficient of (x − 2)^3 divides g‴(2) by 3!, not 2!.",
+                "D": "This is g‴(2) itself, without dividing by 3!."
+              },
+              "topics": [
+                "BC.10.TAYLOR_COEFFICIENTS",
+                "BC.6.FUNDAMENTAL_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-ped-mc28",
+              "prompt": "The figure shows the cardioid r = 2 + 2cos θ and the circle r = 3. What is the area of the shaded region, which lies inside the cardioid and outside the circle?",
+              "choices": [
+                "π − 3√3/2",
+                "9√3 − 2π",
+                "9√3/4 − π/2",
+                "9√3/2 − π"
+              ],
+              "key": "D",
+              "rationale": "The curves meet where 2 + 2cos θ = 3, so cos θ = 1/2 and θ = ±π/3. By symmetry, the area is 2·(1/2)∫ from 0 to π/3 of [(2 + 2cos θ)^2 − 9] dθ = ∫ from 0 to π/3 of (−3 + 8cos θ + 2cos(2θ)) dθ = −π + 4√3 + √3/2 = 9√3/2 − π.",
+              "distractorNotes": {
+                "A": "This integrates (1/2)(r_outer − r_inner)^2. Polar area between curves uses (1/2)(r_outer^2 − r_inner^2).",
+                "B": "This omits the factor 1/2 in the polar area formula.",
+                "C": "This finds only the half of the region above the x-axis, for 0 ≤ θ ≤ π/3."
+              },
+              "topics": [
+                "BC.9.POLAR_AREA_TWO_CURVES",
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION"
+              ],
+              "figureIds": [
+                "bc-ped-f5"
+              ]
+            },
+            {
+              "id": "bc-ped-mc29",
+              "prompt": "What is the sum of the series Σ from n = 0 to infinity of (−1)^n/((2n + 1)3^n)?",
+              "choices": [
+                "π√3/6",
+                "π/6",
+                "π√3/18",
+                "arctan(1/3)"
+              ],
+              "key": "A",
+              "rationale": "For |x| ≤ 1, arctan x = Σ from n = 0 to infinity of (−1)^n x^(2n+1)/(2n + 1). With x = 1/√3, x^(2n+1) = (1/√3)/3^n, so arctan(1/√3) = (1/√3)·Σ (−1)^n/((2n + 1)3^n). Thus the sum is √3·arctan(1/√3) = √3·π/6 = π√3/6.",
+              "distractorNotes": {
+                "B": "This is arctan(1/√3) itself. The given series is that series divided by 1/√3, which multiplies by √3.",
+                "C": "This multiplies arctan(1/√3) by 1/√3 instead of dividing by it.",
+                "D": "This matches 3^n with x = 1/3. But the terms of arctan(1/3) are (−1)^n (1/3)^(2n+1)/(2n + 1), whose denominators grow like 9^n, not 3^n."
+              },
+              "topics": [
+                "BC.10.TAYLOR_SERIES",
+                "BC.10.KNOWN_SERIES_SUBSTITUTION"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 38,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "id": "bc-ped-mc30",
+              "prompt": "Let f(x) = x sin x. For 0 < x < π, at what value of x is the line tangent to the graph of f horizontal?",
+              "choices": [
+                "1.571",
+                "1.820",
+                "2.029",
+                "1.077"
+              ],
+              "key": "C",
+              "rationale": "f′(x) = sin x + x cos x. Solving sin x + x cos x = 0 on (0, π) with a calculator gives x ≈ 2.028758, so x ≈ 2.029.",
+              "distractorNotes": {
+                "A": "This solves cos x = 0, differentiating x sin x as x cos x or cos x without the product rule.",
+                "B": "This is the value of f at the point of horizontal tangency, not the x-value.",
+                "D": "This solves f″(x) = 2cos x − x sin x = 0, which locates a point of inflection, not a horizontal tangent."
+              },
+              "topics": [
+                "BC.2.PRODUCT_RULE",
+                "BC.2.TRIGONOMETRIC_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-ped-mc31",
+              "prompt": "A function h satisfies h(1) = 4 and h′(x) = √x cos(x/2) for x ≥ 0. What is h(5)?",
+              "choices": [
+                "7.035",
+                "3.685",
+                "4.316",
+                "−0.315"
+              ],
+              "key": "B",
+              "rationale": "By the Fundamental Theorem, h(5) = h(1) + ∫ from 1 to 5 of √x cos(x/2) dx = 4 + (−0.315127) ≈ 3.685.",
+              "distractorNotes": {
+                "A": "This adds ∫ from 1 to 5 of |h′(x)| dx, which counts decreases as increases. For x > π, h′ < 0 and h decreases, so the signed integral is needed.",
+                "C": "This integrates from 0 instead of from 1, where the initial value is known.",
+                "D": "This is ∫ from 1 to 5 of h′(x) dx, the change in h. The initial value h(1) = 4 must be added."
+              },
+              "topics": [
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.8.NET_AND_TOTAL_CHANGE"
+              ]
+            },
+            {
+              "id": "bc-ped-mc32",
+              "prompt": "A pot of soup is set on a counter in a kitchen kept at 20 °C. Its temperature T, in degrees Celsius, satisfies dT/dt = −k(T − 20), where k is a positive constant and t is in minutes. If T(0) = 90 and T(5) = 70, at what time t does the soup reach 40 °C?",
+              "choices": [
+                "16.134 minutes",
+                "8.316 minutes",
+                "12.500 minutes",
+                "18.616 minutes"
+              ],
+              "key": "D",
+              "rationale": "Separating variables gives T − 20 = 70e^(−kt). From T(5) = 70, 50 = 70e^(−5k), so k = ln(1.4)/5 ≈ 0.067294. Then 20 = 70e^(−kt) gives t = ln(3.5)/k ≈ 18.616 minutes.",
+              "distractorNotes": {
+                "A": "This models T itself as decaying exponentially, T = 90e^(−kt), ignoring the room temperature.",
+                "B": "This solves 70e^(−kt) = 40, forgetting to subtract the room temperature 20 from 40.",
+                "C": "This assumes the temperature falls at a constant 4 °C per minute. The rate of cooling slows as T approaches 20."
+              },
+              "topics": [
+                "BC.7.EXPONENTIAL_MODELS",
+                "BC.7.SEPARATION_OF_VARIABLES"
+              ]
+            },
+            {
+              "id": "bc-ped-mc33",
+              "prompt": "The curve y + e^(xy) = 3 passes through exactly one point with x = 0.5. What is the slope of the line tangent to the curve at that point?",
+              "choices": [
+                "−1.130",
+                "−2.153",
+                "−0.885",
+                "1.188"
+              ],
+              "key": "A",
+              "rationale": "At x = 0.5, solve y + e^(0.5y) = 3 with a calculator: y ≈ 1.188410. Differentiating implicitly, dy/dx + e^(xy)(y + x(dy/dx)) = 0, so dy/dx = −y e^(xy)/(1 + x e^(xy)) ≈ −1.130.",
+              "distractorNotes": {
+                "B": "This differentiates e^(xy) as e^(xy)·y, treating y as a constant in the product xy and losing the term x(dy/dx).",
+                "C": "This is dx/dy, the reciprocal of the slope.",
+                "D": "This is the y-coordinate of the point, found by solving y + e^(0.5y) = 3, not the slope."
+              },
+              "topics": [
+                "BC.3.IMPLICIT_DIFFERENTIATION",
+                "BC.3.CHAIN_RULE"
+              ]
+            },
+            {
+              "id": "bc-ped-mc34",
+              "prompt": "Let R be the region in the first quadrant enclosed by the graphs of y = 3 sin x and y = x. The region R is the base of a solid whose cross sections perpendicular to the x-axis are semicircles with diameters in R. What is the volume of the solid?",
+              "choices": [
+                "2.973",
+                "2.354",
+                "1.167",
+                "4.669"
+              ],
+              "key": "C",
+              "rationale": "The curves meet at x = 0 and where 3 sin x = x, at x = b ≈ 2.278863, and 3 sin x ≥ x between them. A semicircle with diameter s has area (π/8)s^2, so the volume is (π/8)∫ from 0 to b of (3 sin x − x)^2 dx ≈ 1.167.",
+              "distractorNotes": {
+                "A": "This uses squares, integrating (side)^2 without the semicircle factor π/8.",
+                "B": "This is the area of R. Volume integrates the area of each cross section.",
+                "D": "This uses the strip length as the radius instead of the diameter, so each area is (π/2)(side)^2."
+              },
+              "topics": [
+                "BC.8.CROSS_SECTION_VOLUMES"
+              ]
+            },
+            {
+              "id": "bc-ped-mc35",
+              "prompt": "Let f(x) = e^(0.5x) − 2 ln x. On the interval [1, 4], what value of c satisfies the conclusion of the Mean Value Theorem?",
+              "choices": [
+                "0.989",
+                "2.537",
+                "1.705",
+                "2.500"
+              ],
+              "key": "B",
+              "rationale": "f is continuous on [1, 4] and differentiable on (1, 4). The secant slope is (f(4) − f(1))/3 ≈ (4.616467 − 1.648721)/3 ≈ 0.989249. Solving f′(c) = 0.5e^(0.5c) − 2/c = 0.989249 gives c ≈ 2.537.",
+              "distractorNotes": {
+                "A": "This is the slope of the secant line, (f(4) − f(1))/3, not the point c where the tangent has that slope.",
+                "C": "This solves f′(c) = 0, as in Rolle's theorem. The Mean Value Theorem matches f′(c) to the secant slope, which is not 0 here.",
+                "D": "This is the midpoint of the interval. The Mean Value Theorem does not say where c lies inside the interval."
+              },
+              "topics": [
+                "BC.5.MEAN_VALUE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-ped-mc36",
+              "prompt": "A paper cup is a cone, vertex down, with rim radius 4 cm and height 10 cm. Water drains from it at 3 cubic centimeters per second. At the instant the cup holds 50 cubic centimeters of water, what is the rate of change of the water's depth, in centimeters per second?",
+              "choices": [
+                "−0.134",
+                "−0.060",
+                "−0.401",
+                "−0.039"
+              ],
+              "key": "A",
+              "rationale": "By similar triangles, r/h = 4/10, so V = (1/3)π(0.4h)^2 h = (0.16π/3)h^3. V = 50 gives h ≈ 6.682523 cm. Differentiating, dV/dt = 0.16πh^2 (dh/dt), so dh/dt = −3/(0.16πh^2) ≈ −0.134 cm per second.",
+              "distractorNotes": {
+                "B": "This treats the water's surface radius as fixed at 4 cm, as in a cylinder, so dV/dt = 16π dh/dt.",
+                "C": "This differentiates V = (0.16π/3)h^3 as (0.16π/3)h^2, dropping the factor 3 from the power rule.",
+                "D": "This inverts the similar-triangle ratio, using r = 2.5h instead of r = 0.4h."
+              },
+              "topics": [
+                "BC.4.RELATED_RATE_SOLUTIONS",
+                "BC.4.RELATED_RATE_MODELS"
+              ]
+            },
+            {
+              "id": "bc-ped-mc37",
+              "prompt": "A curve is defined by x = 3t − t^2/2 and y = 2 sin t for 0 ≤ t ≤ 4. What is the length of the curve?",
+              "choices": [
+                "4.277",
+                "10.514",
+                "10.093",
+                "8.175"
+              ],
+              "key": "D",
+              "rationale": "dx/dt = 3 − t and dy/dt = 2cos t. The length is ∫ from 0 to 4 of √((3 − t)^2 + 4cos^2 t) dt ≈ 8.175.",
+              "distractorNotes": {
+                "A": "This is the straight-line distance between the endpoints (0, 0) and (4, 2 sin 4), not the length along the curve.",
+                "B": "This adds ∫ |dx/dt| dt and ∫ |dy/dt| dt. Length combines the components inside one square root.",
+                "C": "This differentiates t^2/2 as t/2, using dx/dt = 3 − t/2 instead of 3 − t."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_ARC_LENGTH"
+              ]
+            },
+            {
+              "id": "bc-ped-mc38",
+              "prompt": "The third-degree Maclaurin polynomial for sin x is P_3(x) = x − x^3/6. What is the actual error |sin 2 − P_3(2)|?",
+              "choices": [
+                "0.267",
+                "0.243",
+                "1.333",
+                "1.091"
+              ],
+              "key": "B",
+              "rationale": "P_3(2) = 2 − 8/6 ≈ 0.666667, and sin 2 ≈ 0.909297. The actual error is about 0.242631 ≈ 0.243, within the alternating series bound 32/120 ≈ 0.267.",
+              "distractorNotes": {
+                "A": "This is the alternating series error bound 2^5/5! = 32/120. The actual error is smaller than this bound.",
+                "C": "This is the last term used, 2^3/6. The error comes from the terms left out, not the last term kept.",
+                "D": "This is the error of the first-degree polynomial, |sin 2 − 2|."
+              },
+              "topics": [
+                "BC.10.ALTERNATING_REMAINDER",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS"
+              ]
+            },
+            {
+              "id": "bc-ped-mc39",
+              "prompt": "After the gates of a stadium open, fans enter at a rate of R(t) = 8t e^(−0.4t) hundred people per hour, where t is the number of hours since the gates opened. At what time t, during the first 6 hours, does R(t) first equal its average value over 0 ≤ t ≤ 6?",
+              "choices": [
+                "4.676 hours",
+                "5.763 hours",
+                "1.134 hours",
+                "2.500 hours"
+              ],
+              "key": "C",
+              "rationale": "The average value is (1/6)∫ from 0 to 6 of 8t e^(−0.4t) dt ≈ 5.762991 hundred people per hour. Solving 8t e^(−0.4t) = 5.762991 gives t ≈ 1.134 and t ≈ 4.676; the first time is t ≈ 1.134 hours.",
+              "distractorNotes": {
+                "A": "This is the second time the rate equals its average value, as the rate falls.",
+                "B": "This is the average value itself, in hundreds of people per hour, not a time.",
+                "D": "This is when R(t) is greatest. The average value is reached earlier, while R is rising."
+              },
+              "topics": [
+                "BC.8.AVERAGE_VALUE"
+              ]
+            },
+            {
+              "id": "bc-ped-mc40",
+              "prompt": "Let F(x) = ∫ from 0 to x of cos(t^2/4) dt. At what value of x does F attain its absolute maximum on the interval [0, 5]?",
+              "choices": [
+                "2.507",
+                "4.342",
+                "5.000",
+                "1.955"
+              ],
+              "key": "A",
+              "rationale": "F′(x) = cos(x^2/4) is 0 where x^2/4 = π/2 or 3π/2, at x = √(2π) ≈ 2.507 and x = √(6π) ≈ 4.342. F′ changes from positive to negative at 2.507. Compare F(0) = 0, F(2.507) ≈ 1.955, F(4.342) ≈ 0.805, and F(5) ≈ 1.211. The absolute maximum occurs at x ≈ 2.507.",
+              "distractorNotes": {
+                "B": "Here F′ = cos(x^2/4) changes from negative to positive, so this is a local minimum of F.",
+                "C": "F increases from 4.342 to 5, but F(5) ≈ 1.211 is less than F(2.507) ≈ 1.955.",
+                "D": "This is the maximum value of F, not the x-value where it occurs."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION_FUNCTIONS",
+                "BC.5.EXTREME_VALUE_THEOREM"
+              ]
+            },
+            {
+              "id": "bc-ped-mc41",
+              "prompt": "What is the slope of the line tangent to the polar curve r = 3 − 2 sin(2θ) at the point where θ = 1.2?",
+              "choices": [
+                "2.950",
+                "−0.140",
+                "3.347",
+                "−7.148"
+              ],
+              "key": "D",
+              "rationale": "With x = r cos θ and y = r sin θ, dy/dθ = r′ sin θ + r cos θ and dx/dθ = r′ cos θ − r sin θ, where r′ = −4cos(2θ). At θ = 1.2, r ≈ 1.649074 and r′ ≈ 2.949575, so dy/dθ ≈ 3.346674 and dx/dθ ≈ −0.468200. The slope is dy/dx ≈ −7.148.",
+              "distractorNotes": {
+                "A": "This is dr/dθ = −4cos(2.4) at θ = 1.2, the rate of change of r, not the slope dy/dx.",
+                "B": "This is dx/dy, the reciprocal of the slope, from dividing dx/dθ by dy/dθ.",
+                "C": "This is dy/dθ alone, without dividing by dx/dθ."
+              },
+              "topics": [
+                "BC.9.POLAR_TANGENTS",
+                "BC.9.POLAR_DERIVATIVES"
+              ]
+            },
+            {
+              "id": "bc-ped-mc42",
+              "prompt": "The third-degree Maclaurin polynomial for arctan x is P_3(x) = x − x^3/3. The error |arctan x − P_3(x)| increases as x increases from 0 to 1. What is the largest x in [0, 1] for which |arctan x − P_3(x)| ≤ 0.02?",
+              "choices": [
+                "0.631",
+                "0.404",
+                "0.666",
+                "0.457"
+              ],
+              "key": "C",
+              "rationale": "Solve arctan x − (x − x^3/3) = 0.02 with a calculator: x ≈ 0.665924. The error is increasing because its derivative 1/(1 + x^2) − 1 + x^2 = x^4/(1 + x^2) is positive, so the largest x is about 0.666.",
+              "distractorNotes": {
+                "A": "This solves x^5/5 = 0.02 using the alternating series bound. The bound ensures accuracy there, but the actual error stays below 0.02 a little farther.",
+                "B": "This uses P_1(x) = x, solving x − arctan x = 0.02.",
+                "D": "This solves x^5 = 0.02, dropping the 1/5 in the first omitted term x^5/5."
+              },
+              "topics": [
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS",
+                "BC.10.ALTERNATING_REMAINDER"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "Show your work and justify requested conclusions. Write integrals, equations, or derivatives supporting numerical calculator results.",
+          "items": [
+            {
+              "id": "bc-ped-fr1",
+              "prompt": "A beekeeper keeps a hive on a scale. During a strong nectar flow, for 0 ≤ t ≤ 10, where t is measured in hours after 8 a.m., foraging bees bring nectar into the hive at the rate N(t) = 1.8t/(1 + 0.05t^3) kilograms per hour. At the same time the hive loses mass, as the bees eat and evaporate water from the nectar, at the rate L(t) = 0.5 + 0.06t kilograms per hour. At t = 0 the hive has a mass of 40 kilograms. Let M(t) be the mass of the hive, in kilograms, at time t. Nothing else changes the hive's mass.",
+              "context": true,
+              "topics": [
+                "BC.8.NET_AND_TOTAL_CHANGE",
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.8.AVERAGE_VALUE",
+                "BC.4.DERIVATIVE_UNITS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find M(10), the mass of the hive at 6 p.m.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes M(10) = 40 + ∫ from 0 to 10 of [N(t) − L(t)] dt, or adds 40 to ∫ from 0 to 10 of N(t) dt and subtracts ∫ from 0 to 10 of L(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains M(10) ≈ 44.455 kg (accepts 44.454)."
+                    }
+                  ],
+                  "answer": "M(10) ≈ 44.455 kilograms",
+                  "steps": [
+                    "The mass changes at the rate M′(t) = N(t) − L(t), so M(10) = M(0) + ∫ from 0 to 10 of [N(t) − L(t)] dt.",
+                    "With a calculator, ∫ from 0 to 10 of N(t) dt ≈ 12.454823 kg. By hand or calculator, ∫ from 0 to 10 of L(t) dt = 0.5(10) + 0.03(10)^2 = 8 kg.",
+                    "M(10) ≈ 40 + 12.454823 − 8 = 44.454823, so M(10) ≈ 44.455 kg."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "At what time t, for 0 ≤ t ≤ 10, is the mass of the hive greatest? Find the greatest mass, and justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets M′(t) = N(t) − L(t) = 0 and finds the critical points t ≈ 0.288 and t ≈ 6.174."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with the candidates test, evaluating M at both endpoints and both critical points; or with the sign of M′ on the whole interval together with a comparison of M(0) and M(6.174)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers that the greatest mass is about 46.094 kg, at t ≈ 6.174 hours (about 2:10 p.m.); accepts values consistent with part (a) for M(10)."
+                    }
+                  ],
+                  "answer": "The mass is greatest at t ≈ 6.174 hours (about 2:10 p.m.), when it is about 46.094 kilograms.",
+                  "steps": [
+                    "M′(t) = N(t) − L(t). Graphing N and L on [0, 10] shows exactly two intersections, t ≈ 0.287710 and t ≈ 6.174050. These are the only critical points, since M′ exists everywhere.",
+                    "Candidates test: M(0) = 40; M(0.287710) = 40 + ∫ from 0 to 0.287710 of [N(t) − L(t)] dt ≈ 39.928; M(6.174050) = 40 + ∫ from 0 to 6.174050 of [N(t) − L(t)] dt ≈ 46.094; M(10) ≈ 44.455 from part (a).",
+                    "The largest candidate is M(6.174050) ≈ 46.094 kg, so the absolute maximum on [0, 10] is about 46.094 kg at t ≈ 6.174 hours, about 2:10 p.m.",
+                    "Alternative: M′ < 0 on (0, 0.288), M′ > 0 on (0.288, 6.174), and M′ < 0 on (6.174, 10), so the greatest mass is M(0) or M(6.174). Since 46.094 > 40, it is M(6.174). A calculator's maximum command alone is not a justification."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the average rate at which nectar enters the hive over the interval 0 ≤ t ≤ 10. Indicate units of measure.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes (1/10)∫ from 0 to 10 of N(t) dt, or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains about 1.245 kilograms per hour, with units; accepts a value consistent with the integral of N found in part (a)."
+                    }
+                  ],
+                  "answer": "About 1.245 kilograms per hour",
+                  "steps": [
+                    "The average value of N on [0, 10] is (1/(10 − 0))∫ from 0 to 10 of N(t) dt.",
+                    "(1/10)(12.454823) ≈ 1.245482, so nectar enters at an average rate of about 1.245 kilograms per hour.",
+                    "This is not the average of N(0) and N(10): N is far from linear on the interval."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find N′(4). Using correct units, interpret the meaning of N′(4) in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains N′(4) ≈ −0.551 (exact value −27/49), by calculator or by the quotient rule."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets: at noon (t = 4), the rate at which nectar enters the hive is decreasing at about 0.551 kilograms per hour per hour. The interpretation must name the rate of nectar entering, not the mass, and give units kg/hr^2 or kilograms per hour per hour."
+                    }
+                  ],
+                  "answer": "N′(4) ≈ −0.551 kg/hr^2. At noon, the rate at which nectar enters the hive is decreasing at about 0.551 kilograms per hour per hour.",
+                  "steps": [
+                    "A calculator's numerical derivative gives N′(4) ≈ −0.551020. By the quotient rule, N′(t) = 1.8(1 − 0.1t^3)/(1 + 0.05t^3)^2, so N′(4) = 1.8(−5.4)/(4.2)^2 = −27/49.",
+                    "N is measured in kilograms per hour and t in hours, so N′ is measured in kilograms per hour per hour.",
+                    "The negative sign means the nectar rate N is falling at t = 4: at noon, the rate of nectar entering the hive is decreasing by about 0.551 kilograms per hour each hour. It says nothing by itself about whether the hive's mass is rising, which depends on N − L."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "bc-ped-fr2",
+              "prompt": "A stunt kite flies in a vertical plane. At time t seconds, for 0 ≤ t ≤ 5, the kite is at the point (x(t), y(t)), where x(t) is its horizontal distance from the person flying it and y(t) is its height above the ground, both measured in meters. The horizontal position is x(t) = 12 + t^2/2 − 6 sin t, and the vertical velocity is dy/dt = 7e^(−t^2/20) sin t. At t = 0 the kite is 20 meters above the ground.",
+              "context": true,
+              "topics": [
+                "BC.9.PLANAR_MOTION",
+                "BC.9.PARAMETRIC_DERIVATIVES",
+                "BC.9.PARAMETRIC_TANGENTS",
+                "BC.9.SPEED_AND_DISTANCE"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the slope of the kite's path at t = 2, and find the speed of the kite at t = 2.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds dy/dx = (dy/dt)/(dx/dt) ≈ 1.159 at t = 2, with dx/dt = t − 6 cos t."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the speed √((dx/dt)^2 + (dy/dt)^2) ≈ 6.883 meters per second at t = 2."
+                    }
+                  ],
+                  "answer": "Slope ≈ 1.159; speed ≈ 6.883 meters per second",
+                  "steps": [
+                    "dx/dt = t − 6 cos t, so at t = 2, dx/dt = 2 − 6 cos 2 ≈ 4.496881. Also dy/dt = 7e^(−0.2) sin 2 ≈ 5.211288.",
+                    "The slope of the path is dy/dx = (dy/dt)/(dx/dt) ≈ 5.211288/4.496881 ≈ 1.159.",
+                    "The speed is √((4.496881)^2 + (5.211288)^2) ≈ 6.883 meters per second."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the time t, for 0 < t < 5, at which the kite's path has a vertical tangent line. For what values of t in the interval 0 ≤ t ≤ 5 is the kite's horizontal distance from the person flying it decreasing? Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Solves dx/dt = t − 6 cos t = 0 to find t ≈ 1.345 and checks that dy/dt ≠ 0 there."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers 0 ≤ t < 1.345 (accepts open, half-open or closed endpoints, such as 0 ≤ t ≤ 1.345 or 0 < t < 1.345) with the reason that dx/dt < 0 there, so the horizontal distance x(t) from the person is decreasing."
+                    }
+                  ],
+                  "answer": "Vertical tangent at t ≈ 1.345 s. The horizontal distance x(t) decreases for 0 ≤ t < 1.345.",
+                  "steps": [
+                    "A vertical tangent needs dx/dt = 0 with dy/dt ≠ 0. Solving t − 6 cos t = 0 on a calculator gives t ≈ 1.344751, and there dy/dt ≈ 6.232 ≠ 0.",
+                    "This is the only zero: d^2x/dt^2 = 1 + 6 sin t > 0 on [0, π], so dx/dt increases there and crosses 0 once; for π ≤ t ≤ 5, cos t < 0.29, so dx/dt > π − 1.8 > 0.",
+                    "The kite's horizontal distance x(t) from the person decreases exactly when dx/dt < 0. Since dx/dt = −6 at t = 0 and dx/dt changes sign only at t ≈ 1.345, this happens for 0 ≤ t < 1.345. (x(t) stays positive; its least value is x(1.345) ≈ 7.057 m.) This is the horizontal distance only: the straight-line distance √(x^2 + y^2) starts to increase much sooner, near t ≈ 0.371, because the kite is also climbing."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the total distance traveled by the kite for 0 ≤ t ≤ 5.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes ∫ from 0 to 5 of √((t − 6 cos t)^2 + (7e^(−t^2/20) sin t)^2) dt, or the same integral with dx/dt and dy/dt named."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains about 35.388 meters."
+                    }
+                  ],
+                  "answer": "About 35.388 meters",
+                  "steps": [
+                    "Total distance is the integral of speed: ∫ from 0 to 5 of √((dx/dt)^2 + (dy/dt)^2) dt.",
+                    "With dx/dt = t − 6 cos t and dy/dt = 7e^(−t^2/20) sin t, a calculator gives about 35.388006, so the kite travels about 35.388 meters.",
+                    "Speed is never negative, so no splitting at turning points is needed."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find y(5). Then write an equation for the line tangent to the kite's path at the point where t = 5.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes y(5) = 20 + ∫ from 0 to 5 of 7e^(−t^2/20) sin t dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains y(5) ≈ 28.567 meters (accepts 28.566)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes a tangent line through (x(5), y(5)) ≈ (30.254, 28.567) with slope (dy/dt)/(dx/dt) at t = 5 ≈ −0.583, such as y = 28.567 − 0.583(x − 30.254); accepts a line consistent with the student's y(5)."
+                    }
+                  ],
+                  "answer": "y(5) ≈ 28.567 m; tangent line y = 28.567 − 0.583(x − 30.254)",
+                  "steps": [
+                    "y(5) = y(0) + ∫ from 0 to 5 of (dy/dt) dt = 20 + ∫ from 0 to 5 of 7e^(−t^2/20) sin t dt ≈ 20 + 8.566522 = 28.566522, so y(5) ≈ 28.567 m.",
+                    "x(5) = 12 + 25/2 − 6 sin 5 ≈ 30.253546.",
+                    "At t = 5, dx/dt = 5 − 6 cos 5 ≈ 3.298027 and dy/dt = 7e^(−1.25) sin 5 ≈ −1.923155, so the slope is −1.923155/3.298027 ≈ −0.583.",
+                    "Tangent line: y = 28.567 − 0.583(x − 30.254). Keep the unrounded values in the calculator until the final line is written."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 60,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "id": "bc-ped-fr3",
+              "prompt": "The continuous function f is defined on the closed interval [−3, 6]. Its graph, shown in the figure, consists of a line segment from (−3, 2) to (−1, −2), a line segment from (−1, −2) to (0, 0), and the upper half of the circle of radius 3 centered at (3, 0). Let g be the function defined by g(x) = ∫ from 0 to x of f(t) dt for −3 ≤ x ≤ 6.",
+              "topics": [
+                "BC.6.ACCUMULATION_FUNCTIONS",
+                "BC.5.FIRST_DERIVATIVE_TEST",
+                "BC.5.CONCAVITY",
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.4.LHOSPITAL_RULE"
+              ],
+              "figureIds": [
+                "bc-ped-f21"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find g(−3) and g(3).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains g(−3) = 1, using g(−3) = −∫ from −3 to 0 of f(t) dt and signed areas."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains g(3) = 9π/4 as the area of a quarter of the circle."
+                    }
+                  ],
+                  "answer": "g(−3) = 1 and g(3) = 9π/4",
+                  "steps": [
+                    "g(−3) = ∫ from 0 to −3 of f(t) dt = −∫ from −3 to 0 of f(t) dt.",
+                    "On [−3, 0] the graph bounds three triangles, each with base 1 and height 2, so each has area 1: one above the axis on [−3, −2] and two below it on [−2, 0]. So ∫ from −3 to 0 of f(t) dt = 1 − 1 − 1 = −1, and g(−3) = 1.",
+                    "On [0, 3] the graph is a quarter of a circle of radius 3 above the axis, so g(3) = (1/4)π(3)^2 = 9π/4."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the open interval −3 < x < 6, find the x-coordinate of each relative extremum of g, and classify each as a relative maximum or a relative minimum. Then find the x-coordinate of each point of inflection of the graph of g on −3 < x < 6. Justify your answers.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies a relative maximum at x = −2 and a relative minimum at x = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies both with g′(x) = f(x): g′ changes from positive to negative at x = −2 and from negative to positive at x = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies points of inflection at exactly x = −1 and x = 3, because g′ = f changes from decreasing to increasing at x = −1 and from increasing to decreasing at x = 3 (or because g″ = f′ changes sign there)."
+                    }
+                  ],
+                  "answer": "Relative maximum at x = −2 and relative minimum at x = 0; points of inflection at x = −1 and x = 3.",
+                  "steps": [
+                    "By the Fundamental Theorem of Calculus, g′(x) = f(x). On (−3, 6), f(x) = 0 only at x = −2 and x = 0.",
+                    "f > 0 on (−3, −2) and f < 0 on (−2, 0), so g′ changes from positive to negative at x = −2: g has a relative maximum there. f < 0 on (−2, 0) and f > 0 on (0, 6), so g′ changes from negative to positive at x = 0: g has a relative minimum there.",
+                    "The graph of g′ = f decreases on (−3, −1), increases on (−1, 3), and decreases on (3, 6). So g is concave down, then up, then down, and its graph has points of inflection at x = −1 and x = 3.",
+                    "At x = 0, f has a corner (the semicircle starts with a vertical tangent), but f increases on both sides, so the concavity of g does not change there."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the absolute maximum value of g on the closed interval [−3, 6]. Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Compares g at both endpoints and at the critical points: g(−3) = 1, g(−2) = 2, g(0) = 0, and g(6) = 9π/2; or argues from where g increases and decreases that only g(−2) and g(6) can be the maximum, and compares them."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the absolute maximum value is 9π/2, at x = 6, and not the relative maximum value g(−2) = 2; accepts a conclusion consistent with the student's values."
+                    }
+                  ],
+                  "answer": "The absolute maximum value of g on [−3, 6] is 9π/2, at x = 6.",
+                  "steps": [
+                    "g is continuous on [−3, 6], so it attains an absolute maximum, at an endpoint or at a critical point. Since g′ = f is defined everywhere, the critical points are x = −2 and x = 0.",
+                    "Candidates: g(−3) = 1 from part (a); g(−2) = −∫ from −2 to 0 of f(t) dt = −(−1 − 1) = 2; g(0) = 0; g(6) = (1/2)π(3)^2 = 9π/2.",
+                    "Since π > 3, 9π/2 > 13 > 2, so the absolute maximum value is g(6) = 9π/2. The relative maximum at x = −2 from part (b) is not the absolute maximum: a relative extremum need not be absolute on a closed interval."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find lim as x→−1 of (g(x) − 1)/sin(πx). Show the work that leads to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Shows that both the numerator and the denominator approach 0, using g(−1) = 1 (from the triangle on [−1, 0]) and continuity of g, and sin(−π) = 0, before applying L'Hôpital's rule."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies L'Hôpital's rule with g′ = f to obtain f(−1)/(π cos(−π)) = 2/π."
+                    }
+                  ],
+                  "answer": "2/π",
+                  "steps": [
+                    "g(−1) = −∫ from −1 to 0 of f(t) dt = −(−1) = 1, and g is continuous, so g(x) − 1 → 0 as x → −1. Also sin(πx) → sin(−π) = 0. The limit has the form 0/0.",
+                    "g is differentiable with g′ = f, so L'Hôpital's rule applies: lim as x→−1 of (g(x) − 1)/sin(πx) = lim as x→−1 of f(x)/(π cos(πx)).",
+                    "f is continuous with f(−1) = −2, and cos(−π) = −1, so the limit is (−2)/(−π) = 2/π."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "bc-ped-fr4",
+              "prompt": "An elevator moves vertically in a tall building. Its velocity v(t), in meters per second, is positive when the elevator moves up. The graph of v for 0 ≤ t ≤ 20, where t is measured in seconds, consists of line segments joining the points (0, 0), (3, 3), (7, 3), (9, 0), (12, 0), (14, −4), (18, −4), and (20, 0), as shown. At t = 0 the floor of the elevator is 30 meters above the ground. Let h(t) be the height of the elevator floor above the ground, in meters, at time t.",
+              "context": true,
+              "topics": [
+                "BC.8.MOTION_INTEGRALS",
+                "BC.4.STRAIGHT_LINE_MOTION",
+                "BC.2.DIFFERENTIABILITY"
+              ],
+              "figureIds": [
+                "bc-ped-f22"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the acceleration of the elevator at t = 8. Indicate units of measure. Explain why the acceleration of the elevator is not defined at t = 9.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains a(8) = v′(8) = −3/2 meters per second per second (accepts −1.5 m/s^2), with units."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the graph of v has a corner at t = 9: the slope is −3/2 just before t = 9 and 0 just after, so v′(9) does not exist."
+                    }
+                  ],
+                  "answer": "a(8) = −3/2 m/s^2. At t = 9 the one-sided slopes of the velocity graph are −3/2 and 0, so v′(9) does not exist.",
+                  "steps": [
+                    "Acceleration is a(t) = v′(t), the slope of the velocity graph. On 7 < t < 9 the graph runs from (7, 3) to (9, 0), so a(8) = (0 − 3)/(9 − 7) = −3/2 m/s^2.",
+                    "Just after t = 9 the graph is the horizontal segment from (9, 0) to (12, 0), with slope 0. The slopes from the left and from the right differ, so v is not differentiable at t = 9, and a(9) is not defined."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Is the elevator speeding up or slowing down at t = 13? Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds v(13) = −2 and a(13) = −2, or states both signs: v(13) < 0 and a(13) < 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the elevator is speeding up because velocity and acceleration have the same sign at t = 13."
+                    }
+                  ],
+                  "answer": "Speeding up: v(13) = −2 < 0 and a(13) = −2 < 0 have the same sign.",
+                  "steps": [
+                    "On 12 < t < 14 the graph runs from (12, 0) to (14, −4), so v(13) = −2 m/s and a(13) = −4/2 = −2 m/s^2.",
+                    "Velocity and acceleration are both negative, so the speed |v(t)| is increasing: the elevator is moving down faster and faster. A negative acceleration alone does not mean slowing down."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the displacement of the elevator and the total distance the elevator travels for 0 ≤ t ≤ 20. Explain why these two values are different.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains displacement ∫ from 0 to 20 of v(t) dt = 19.5 − 24 = −4.5 meters."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains total distance ∫ from 0 to 20 of |v(t)| dt = 19.5 + 24 = 43.5 meters."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the elevator changes direction (v > 0 on 0 < t < 9 and v < 0 on 12 < t < 20), so displacement subtracts the 24 meters moved down while total distance adds it."
+                    }
+                  ],
+                  "answer": "Displacement −4.5 m (4.5 m below the start); total distance 43.5 m.",
+                  "steps": [
+                    "On [0, 9] the region above the axis is a trapezoid with parallel sides 9 and 4 and height 3: area (9 + 4)(3)/2 = 19.5. On [12, 20] the region below the axis is a trapezoid with parallel sides 8 and 4 and height 4: area (8 + 4)(4)/2 = 24.",
+                    "Displacement = ∫ from 0 to 20 of v(t) dt = 19.5 − 24 = −4.5 m.",
+                    "Total distance = ∫ from 0 to 20 of |v(t)| dt = 19.5 + 24 = 43.5 m.",
+                    "The elevator rises 19.5 m, waits, and then descends 24 m. Displacement counts the descent as negative, so the two motions partly cancel; distance counts every meter traveled."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find h(16), the height of the elevator floor at t = 16 seconds.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes h(16) = 30 + ∫ from 0 to 16 of v(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains h(16) = 37.5 meters; accepts a value consistent with the student's area of 19.5 from part (c)."
+                    }
+                  ],
+                  "answer": "h(16) = 37.5 meters",
+                  "steps": [
+                    "h(16) = h(0) + ∫ from 0 to 16 of v(t) dt.",
+                    "∫ from 0 to 12 of v(t) dt = 19.5. On [12, 16] the region below the axis is a triangle of area (1/2)(2)(4) = 4 plus a rectangle of area 2(4) = 8, so ∫ from 12 to 16 of v(t) dt = −12.",
+                    "h(16) = 30 + 19.5 − 12 = 37.5 m."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "bc-ped-fr5",
+              "prompt": "The polar curve r = 1 + √2 cos θ, for 0 ≤ θ ≤ 2π, is shown in the figure. The curve has a large outer loop and a small inner loop, and the region enclosed by the inner loop is shaded.",
+              "topics": [
+                "BC.9.POLAR_AREA_ONE_CURVE",
+                "BC.9.POLAR_TANGENTS",
+                "BC.9.POLAR_DERIVATIVES",
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION"
+              ],
+              "figureIds": [
+                "bc-ped-f23"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the two values of θ in 0 ≤ θ ≤ 2π at which the curve passes through the origin. Then find the exact area of the shaded region enclosed by the inner loop.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Solves 1 + √2 cos θ = 0 to obtain θ = 3π/4 and θ = 5π/4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the area as (1/2)∫ from 3π/4 to 5π/4 of (1 + √2 cos θ)^2 dθ, or an equivalent setup by symmetry such as ∫ from 3π/4 to π of (1 + √2 cos θ)^2 dθ."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds a correct antiderivative, such as 2θ + 2√2 sin θ + (1/2)sin(2θ) for the expanded integrand 2 + 2√2 cos θ + cos(2θ)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the exact area (π − 3)/2."
+                    }
+                  ],
+                  "answer": "θ = 3π/4 and θ = 5π/4; the inner loop encloses area (π − 3)/2.",
+                  "steps": [
+                    "r = 0 when cos θ = −1/√2 = −√2/2, so θ = 3π/4 or θ = 5π/4.",
+                    "For 3π/4 < θ < 5π/4, cos θ < −√2/2, so r < 0: these values of θ trace the inner loop, which therefore lies on the opposite side of the origin, to the right of it. The rest of [0, 2π] traces the outer loop.",
+                    "Area = (1/2)∫ from 3π/4 to 5π/4 of (1 + √2 cos θ)^2 dθ. Expand: (1 + √2 cos θ)^2 = 1 + 2√2 cos θ + 2cos^2 θ = 2 + 2√2 cos θ + cos(2θ), using 2cos^2 θ = 1 + cos(2θ). (The loop is symmetric about the x-axis, so ∫ from 3π/4 to π of (1 + √2 cos θ)^2 dθ gives the same area.)",
+                    "An antiderivative is 2θ + 2√2 sin θ + (1/2)sin(2θ). At 5π/4 it equals 5π/2 − 2 + 1/2; at 3π/4 it equals 3π/2 + 2 − 1/2. The difference is π − 3.",
+                    "Area = (1/2)(π − 3) = (π − 3)/2. Check: π − 3 > 0, and the area is small (about 0.071), as the figure suggests."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the slope of the line tangent to the curve at the point where θ = π/4.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds dy/dθ = √2/2 at θ = π/4, from y = r sin θ."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds dx/dθ = −3√2/2 at θ = π/4, from x = r cos θ."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains dy/dx = (dy/dθ)/(dx/dθ) = −1/3."
+                    }
+                  ],
+                  "answer": "dy/dx = −1/3",
+                  "steps": [
+                    "x = r cos θ and y = r sin θ, with dr/dθ = −√2 sin θ. At θ = π/4: r = 1 + √2(√2/2) = 2 and dr/dθ = −√2(√2/2) = −1.",
+                    "dy/dθ = (dr/dθ)sin θ + r cos θ = (−1)(√2/2) + 2(√2/2) = √2/2.",
+                    "dx/dθ = (dr/dθ)cos θ − r sin θ = (−1)(√2/2) − 2(√2/2) = −3√2/2.",
+                    "dy/dx = (√2/2)/(−3√2/2) = −1/3."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the value of dr/dθ at θ = 5π/6. As θ increases through 5π/6, is the point on the curve moving toward the origin or away from the origin? Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains dr/dθ = −√2 sin(5π/6) = −√2/2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes away from the origin, because r(5π/6) = 1 − √6/2 < 0 and dr/dθ < 0, so r and dr/dθ have the same sign and |r| increases."
+                    }
+                  ],
+                  "answer": "dr/dθ = −√2/2. The point moves away from the origin, because r and dr/dθ are both negative there.",
+                  "steps": [
+                    "dr/dθ = −√2 sin θ, so at θ = 5π/6, dr/dθ = −√2(1/2) = −√2/2.",
+                    "r(5π/6) = 1 + √2(−√3/2) = 1 − √6/2, which is negative because √6 > 2.",
+                    "The distance from the origin is |r|. Here r < 0 and r is decreasing, so r becomes more negative and |r| increases: the point moves away from the origin. Reading only dr/dθ < 0 as \"toward the origin\" fails whenever r < 0."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "bc-ped-fr6",
+              "prompt": "The Maclaurin series for arctan x is x − x^3/3 + x^5/5 − x^7/7 + … + (−1)^n x^(2n+1)/(2n + 1) + …. Let f be the function defined by f(x) = x arctan(2x).",
+              "topics": [
+                "BC.10.KNOWN_SERIES_SUBSTITUTION",
+                "BC.10.RADIUS_AND_INTERVAL",
+                "BC.10.ENDPOINT_TESTS",
+                "BC.10.ALTERNATING_REMAINDER"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Write the first three nonzero terms and the general term of the Maclaurin series for f.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes 2x into the series for arctan x: 2x − (2x)^3/3 + (2x)^5/5 − …."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Multiplies by x to give the first three nonzero terms 2x^2 − (8/3)x^4 + (32/5)x^6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives the general term (−1)^n 2^(2n+1) x^(2n+2)/(2n + 1), or an equivalent form such as (−1)^n x(2x)^(2n+1)/(2n + 1) or a correctly shifted index."
+                    }
+                  ],
+                  "answer": "f(x) = 2x^2 − (8/3)x^4 + (32/5)x^6 − … + (−1)^n 2^(2n+1) x^(2n+2)/(2n + 1) + …",
+                  "steps": [
+                    "Replace x by 2x: arctan(2x) = 2x − (2x)^3/3 + (2x)^5/5 − … + (−1)^n (2x)^(2n+1)/(2n + 1) + … = 2x − (8/3)x^3 + (32/5)x^5 − ….",
+                    "Multiply every term by x: f(x) = 2x^2 − (8/3)x^4 + (32/5)x^6 − … + (−1)^n 2^(2n+1) x^(2n+2)/(2n + 1) + …."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the interval of convergence of the Maclaurin series for f. Show the analysis that leads to your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the ratio test, lim as n→∞ of |a_(n+1)/a_n| = 4x^2, to obtain radius 1/2; accepts the substitution argument |2x| < 1 when the arctan series' radius of 1 is cited."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the series at the endpoints: at x = 1/2 and at x = −1/2 the series is Σ from n = 0 to infinity of (−1)^n/(2(2n + 1))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies convergence at both endpoints with the alternating series test (alternating terms, magnitudes decreasing, limit 0) and states the interval −1/2 ≤ x ≤ 1/2."
+                    }
+                  ],
+                  "answer": "−1/2 ≤ x ≤ 1/2",
+                  "steps": [
+                    "With a_n = (−1)^n 2^(2n+1) x^(2n+2)/(2n + 1), |a_(n+1)/a_n| = 4x^2(2n + 1)/(2n + 3) → 4x^2 as n → ∞. The series converges when 4x^2 < 1, that is, |x| < 1/2, and diverges when |x| > 1/2.",
+                    "At x = 1/2: 2^(2n+1)(1/2)^(2n+2) = 1/2, so the series is Σ from n = 0 to infinity of (−1)^n/(2(2n + 1)). Its terms alternate in sign, their magnitudes 1/(2(2n + 1)) decrease, and they approach 0, so it converges by the alternating series test.",
+                    "At x = −1/2 the power 2n + 2 is even, so x^(2n+2) = (1/2)^(2n+2) and the series is the same one, which converges.",
+                    "The interval of convergence is −1/2 ≤ x ≤ 1/2. (Both endpoints converge only conditionally, since Σ 1/(2(2n + 1)) diverges by comparison with the harmonic series; this does not change the interval.)"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use the first two nonzero terms of the Maclaurin series for f to approximate f(1/4). Show that this approximation differs from f(1/4) by less than 1/500.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains the approximation 2(1/4)^2 − (8/3)(1/4)^4 = 1/8 − 1/96 = 11/96."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that at x = 1/4 the series alternates with terms whose magnitudes decrease to 0, so the alternating series error bound applies."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Bounds the error by the first omitted term, (32/5)(1/4)^6 = 1/640, and concludes 1/640 < 1/500."
+                    }
+                  ],
+                  "answer": "f(1/4) ≈ 11/96, with error at most 1/640, which is less than 1/500.",
+                  "steps": [
+                    "f(1/4) ≈ 2(1/4)^2 − (8/3)(1/4)^4 = 1/8 − 1/96 = 11/96.",
+                    "At x = 1/4 the series is 1/8 − 1/96 + 1/640 − … ; its n-th term is (−1)^n/(2^(2n+3)(2n + 1)). The terms alternate in sign, and their magnitudes decrease to 0.",
+                    "By the alternating series error bound, |f(1/4) − 11/96| is at most the magnitude of the first omitted term, (32/5)(1/4)^6 = 32/20480 = 1/640.",
+                    "Since 640 > 500, 1/640 < 1/500. The first omitted term is positive, so 11/96 is an underestimate of f(1/4)."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

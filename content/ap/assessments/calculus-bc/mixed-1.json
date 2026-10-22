@@ -1,0 +1,361 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "mixed-1",
+  "kind": "mixed-set",
+  "title": "Mixed set 1: all units at exam pace",
+  "author": "bc-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which idea or method applies. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians and calculator answers are rounded to three decimal places. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "bc-mixed-1-f1",
+      "alt": "Graph of f′ made of line segments joining (−4, 2), (−2, −2), (1, 1), (3, −1), and (5, 1), on axes labeled x and f′(x)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "For which integral is a partial-fraction decomposition the appropriate first step?",
+              "choices": [
+                "∫ (2x + 3)/(x^2 + 3x + 5) dx",
+                "∫ 1/(x^2 + 2x + 5) dx",
+                "∫ (x + 5)/(x^2 + x − 2) dx",
+                "∫ 1/(x^2 − 6x + 9) dx"
+              ],
+              "key": "C",
+              "rationale": "The denominator x^2 + x − 2 = (x + 2)(x − 1) has distinct linear factors, and the numerator is not a multiple of the denominator’s derivative. Cover-up at x = 1 and x = −2 gives (x + 5)/((x + 2)(x − 1)) = 2/(x − 1) − 1/(x + 2), so the antiderivative is 2 ln|x − 1| − ln|x + 2| plus a constant.",
+              "distractorNotes": {
+                "A": "The numerator 2x + 3 is exactly the derivative of the denominator, so u = x^2 + 3x + 5 gives ln(x^2 + 3x + 5) at once; this denominator has no real factors to decompose.",
+                "B": "x^2 + 2x + 5 = (x + 1)^2 + 4 has no real factors. Completing the square leads to the arctangent form, (1/2)arctan((x + 1)/2).",
+                "D": "x^2 − 6x + 9 = (x − 3)^2, so the integrand is (x − 3)^(−2) and the power rule gives −1/(x − 3). With a constant numerator over a single squared factor, the integrand is already a power of (x − 3), so there is nothing to decompose."
+              },
+              "topics": [
+                "BC.6.INTEGRATION_METHOD_SELECTION",
+                "BC.6.PARTIAL_FRACTIONS"
+              ],
+              "id": "bc-mixed-1-mc01"
+            },
+            {
+              "prompt": "Let f(x) = (x^2 − x − 6)/(x^2 − 9). Which statement describes the discontinuities of f?",
+              "choices": [
+                "Vertical asymptotes at x = 3 and at x = −3",
+                "A removable discontinuity at x = 3 and a vertical asymptote at x = −3",
+                "A removable discontinuity at x = −3 and a vertical asymptote at x = 3",
+                "Removable discontinuities at x = 3 and at x = −3"
+              ],
+              "key": "B",
+              "rationale": "f(x) = (x − 3)(x + 2)/((x − 3)(x + 3)), which equals (x + 2)/(x + 3) for x ≠ 3. So lim as x→3 of f(x) = 5/6 exists while f(3) is undefined: the discontinuity at 3 is removable. Near x = −3 the numerator tends to 6 and the denominator to 0, so f is unbounded: a vertical asymptote.",
+              "distractorNotes": {
+                "A": "A zero of the denominator gives an asymptote only when the numerator is not also zero there. At x = 3 the common factor x − 3 cancels and the limit is 5/6.",
+                "C": "This swaps the two points. The factor x − 3 cancels; the factor x + 3 does not.",
+                "D": "Nothing cancels at x = −3: the numerator is 6 there, so the quotient is unbounded near −3."
+              },
+              "topics": [
+                "BC.1.DISCONTINUITIES",
+                "BC.1.INFINITE_LIMITS"
+              ],
+              "id": "bc-mixed-1-mc02"
+            },
+            {
+              "prompt": "Which series diverges?",
+              "choices": [
+                "Σ from n = 1 to infinity of 3/(n^2 + n)",
+                "Σ from n = 1 to infinity of (−1)^n n/(n^2 + 1)",
+                "Σ from n = 1 to infinity of n/(2^n)",
+                "Σ from n = 1 to infinity of (2n + 1)/(n^2 + 5)"
+              ],
+              "key": "D",
+              "rationale": "Compare D with the harmonic series: [(2n + 1)/(n^2 + 5)]/(1/n) = (2n^2 + n)/(n^2 + 5) → 2, a positive finite limit. By the limit comparison test, D diverges along with Σ 1/n, even though its terms tend to 0.",
+              "distractorNotes": {
+                "A": "Its terms behave like 3/n^2, not like a harmonic term: 3/(n^2 + n) < 3/n^2, a convergent p-series. (It even telescopes, to 3.)",
+                "B": "The terms alternate in sign, decrease in size for n ≥ 1, and tend to 0, so the alternating series test gives convergence. Only the absolute values behave like 1/n.",
+                "C": "The ratio of consecutive terms is (n + 1)/(2n) → 1/2 < 1, so the ratio test gives convergence; the factor n cannot outgrow 2^n."
+              },
+              "topics": [
+                "BC.10.LIMIT_COMPARISON",
+                "BC.10.HARMONIC_SERIES"
+              ],
+              "id": "bc-mixed-1-mc03"
+            },
+            {
+              "prompt": "Let g(x) = |x − 1| on the closed interval [0, 3]. Which conclusion is valid because g satisfies all the hypotheses of the theorem named?",
+              "choices": [
+                "The Extreme Value Theorem gives absolute extreme values of g on [0, 3].",
+                "The Mean Value Theorem gives c in (0, 3) with g′(c) = 1/3.",
+                "Rolle’s Theorem gives c in (0, 3) with g′(c) = 0.",
+                "The Intermediate Value Theorem gives c in (0, 3) with g(c) = 5/2."
+              ],
+              "key": "A",
+              "rationale": "g is continuous on the closed interval [0, 3], so the Extreme Value Theorem applies: the maximum is g(3) = 2 and the minimum is g(1) = 0. g has a corner at x = 1, so it is not differentiable at every point of (0, 3), and the derivative theorems do not apply; in fact g′ takes only the values −1 and 1.",
+              "distractorNotes": {
+                "B": "The secant slope is (2 − 1)/3 = 1/3, but g is not differentiable at x = 1, so the Mean Value Theorem’s hypotheses fail, and g′ is never 1/3.",
+                "C": "Rolle’s Theorem needs g(0) = g(3) and differentiability on (0, 3). Here g(0) = 1, g(3) = 2, and g has a corner at 1.",
+                "D": "The Intermediate Value Theorem gives only values between g(0) = 1 and g(3) = 2. The value 5/2 is outside that range, and g never exceeds 2 on [0, 3]."
+              },
+              "topics": [
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.5.MEAN_VALUE_THEOREM",
+                "BC.2.DIFFERENTIABILITY"
+              ],
+              "id": "bc-mixed-1-mc04"
+            },
+            {
+              "prompt": "If f(x) = arcsin(√x) for 0 < x < 1, what is f′(3/4)?",
+              "choices": [
+                "2",
+                "√3/3",
+                "2√3/3",
+                "4√3/3"
+              ],
+              "key": "C",
+              "rationale": "By the chain rule, f′(x) = [1/√(1 − (√x)^2)] · 1/(2√x) = 1/(2√x · √(1 − x)). At x = 3/4, 2√(3/4) = √3 and √(1 − 3/4) = 1/2, so f′(3/4) = 1/(√3 · 1/2) = 2/√3 = 2√3/3.",
+              "distractorNotes": {
+                "A": "This is the outer derivative 1/√(1 − x) alone, which is 2 at x = 3/4. The chain rule also multiplies by the derivative of √x.",
+                "B": "This is the inner derivative 1/(2√x) alone, which is 1/√3 = √3/3 at x = 3/4; the outer factor 1/√(1 − 3/4) = 2 is missing.",
+                "D": "This uses 1/√x as the derivative of √x, dropping the factor 1/2: 2 · 2/√3 = 4√3/3."
+              },
+              "topics": [
+                "BC.3.INVERSE_TRIGONOMETRIC_DERIVATIVES",
+                "BC.3.CHAIN_RULE"
+              ],
+              "id": "bc-mixed-1-mc05"
+            },
+            {
+              "prompt": "What is ∫ from 0 to 1 of x^3 e^(x^2) dx?",
+              "choices": [
+                "1",
+                "1/2",
+                "(e − 1)/2",
+                "e − 1/2"
+              ],
+              "key": "B",
+              "rationale": "Let u = x^2, so du = 2x dx and x^3 dx = (1/2)u du; the limits stay 0 and 1. The integral becomes (1/2) ∫ from 0 to 1 of u e^u du. Integration by parts gives ∫ u e^u du = (u − 1)e^u, so the value is (1/2)[(1 − 1)e − (0 − 1)(1)] = 1/2.",
+              "distractorNotes": {
+                "A": "This drops the factor 1/2 that comes from du = 2x dx.",
+                "C": "After substituting, this integrates (1/2)e^u and loses the remaining factor u. The new integrand u e^u still needs integration by parts.",
+                "D": "This reverses the sign in integration by parts, getting (u + 1)e^u; then (1/2)(2e − 1) = e − 1/2."
+              },
+              "topics": [
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.6.SUBSTITUTION",
+                "BC.6.INTEGRATION_METHOD_SELECTION"
+              ],
+              "id": "bc-mixed-1-mc06"
+            },
+            {
+              "prompt": "A function f satisfies f(2) = 5 and f′(x) = √(x^2 + 5) for all x. The line tangent to the graph of f at x = 2 is used to approximate f(2.1). What is the approximation, and how does it compare with f(2.1)?",
+              "choices": [
+                "4.7, an overestimate",
+                "4.7, an underestimate",
+                "5.3, an overestimate",
+                "5.3, an underestimate"
+              ],
+              "key": "D",
+              "rationale": "f′(2) = √9 = 3, so the tangent line gives f(2.1) ≈ 5 + 3(0.1) = 5.3. Since f″(x) = x/√(x^2 + 5) > 0 for x > 0, the graph is concave up near x = 2 and lies above its tangent line, so 5.3 is an underestimate.",
+              "distractorNotes": {
+                "A": "This moves the wrong way along the tangent line (5 − 0.3) and also misreads the concavity.",
+                "B": "The step is +0.1, because 2.1 is to the right of 2; the estimate is 5 + 3(0.1), not 5 − 3(0.1).",
+                "C": "f″(x) = x/√(x^2 + 5) is positive near 2, so the graph is concave up and lies above the tangent line; the estimate is too small, not too large."
+              },
+              "topics": [
+                "BC.4.LINEARIZATION",
+                "BC.5.CONCAVITY"
+              ],
+              "id": "bc-mixed-1-mc07"
+            },
+            {
+              "prompt": "Let y = f(x) be the solution of the differential equation dy/dx = 2x − y with f(0) = 3. Using the second-degree Taylor polynomial for f about x = 0, what is the approximation to f(0.5)?",
+              "choices": [
+                "2.125",
+                "1.5",
+                "1.8125",
+                "2.75"
+              ],
+              "key": "A",
+              "rationale": "f′(0) = 2(0) − 3 = −3. Differentiating the equation, d^2y/dx^2 = 2 − dy/dx, so f″(0) = 2 − (−3) = 5. Then P_2(x) = 3 − 3x + (5/2)x^2, and P_2(0.5) = 3 − 1.5 + 0.625 = 2.125.",
+              "distractorNotes": {
+                "B": "This is the first-degree (tangent-line) estimate 3 − 3(0.5), which is also one Euler step of size 0.5; it omits the second-degree term.",
+                "C": "This is Euler’s method with two steps of size 0.25 (3 → 2.25 → 1.8125), not the Taylor polynomial.",
+                "D": "The second-degree coefficient is f″(0)/2!, not f″(0); using 5(0.5)^2 gives 2.75."
+              },
+              "topics": [
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS",
+                "BC.7.EULER_METHOD"
+              ],
+              "id": "bc-mixed-1-mc08"
+            },
+            {
+              "prompt": "The graph of f′, the derivative of a function f, consists of the line segments shown for −4 ≤ x ≤ 5. On which open intervals is f both decreasing and concave up?",
+              "choices": [
+                "(−3, −2) and (2, 3)",
+                "(−2, 0) and (3, 4)",
+                "(−2, 1) and (3, 5)",
+                "(−3, 0) and (2, 4)"
+              ],
+              "key": "B",
+              "rationale": "f is decreasing where f′ < 0, on (−3, 0) and (2, 4). f is concave up where f′ is increasing, on (−2, 1) and (3, 5). Both hold on (−2, 0) and (3, 4).",
+              "distractorNotes": {
+                "A": "On these intervals f′ is negative and decreasing: f is decreasing but concave down.",
+                "C": "f′ is increasing on these intervals, so f is concave up, but f′ is positive on (0, 1) and (4, 5), where f increases.",
+                "D": "These are the intervals where f′ < 0, so f decreases; on (−3, −2) and (2, 3), f′ is decreasing and f is concave down."
+              },
+              "topics": [
+                "BC.5.DERIVATIVE_GRAPH_CONNECTIONS",
+                "BC.5.CONCAVITY"
+              ],
+              "figureIds": [
+                "bc-mixed-1-f1"
+              ],
+              "id": "bc-mixed-1-mc09"
+            },
+            {
+              "prompt": "Let f(x) = kx^2 + 1 for x ≤ 1 and f(x) = 4x − k for x > 1, where k is a constant. For which value of k is f differentiable at x = 1?",
+              "choices": [
+                "k = 3/2",
+                "k = 2",
+                "k = 4",
+                "There is no such value of k."
+              ],
+              "key": "D",
+              "rationale": "Differentiability at 1 requires continuity there: k + 1 = 4 − k, so k = 3/2. It also requires equal one-sided derivatives: 2k(1) = 4, so k = 2. No single k satisfies both, so f is not differentiable at x = 1 for any k.",
+              "distractorNotes": {
+                "A": "k = 3/2 makes f continuous at 1, but then the one-sided derivatives are 3 and 4: the graph has a corner.",
+                "B": "k = 2 matches the one-sided slopes, but then the pieces approach 3 and 2, so f jumps at 1. A function is not differentiable where it is not continuous.",
+                "C": "This differentiates kx^2 as kx. The left-hand derivative at 1 is 2k, not k."
+              },
+              "topics": [
+                "BC.2.DIFFERENTIABILITY",
+                "BC.1.CONTINUITY_AT_A_POINT"
+              ],
+              "id": "bc-mixed-1-mc10"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "prompt": "What is the average value of f(x) = e^(sin x) on the interval [0, 3]?",
+              "choices": [
+                "0.051",
+                "1.076",
+                "2.019",
+                "6.057"
+              ],
+              "key": "C",
+              "rationale": "The average value is (1/3) ∫ from 0 to 3 of e^(sin x) dx. The integrand has no elementary antiderivative; a calculator gives the integral as 6.056670, so the average value is 2.018890 ≈ 2.019.",
+              "distractorNotes": {
+                "A": "This is the average rate of change, (f(3) − f(0))/3, which describes the slope of a secant, not the typical height of f.",
+                "B": "This averages only the two endpoint values, (f(0) + f(3))/2. The average value weighs every value of f on the interval.",
+                "D": "This is the integral itself; the average value divides it by the interval’s length, 3."
+              },
+              "topics": [
+                "BC.8.AVERAGE_VALUE"
+              ],
+              "id": "bc-mixed-1-mc11"
+            },
+            {
+              "prompt": "A particle moves along the polar curve r = 2 + cos θ. Its angle at time t is θ = t^2/2. At time t = 1.5, at what rate is the particle’s distance from the origin changing?",
+              "choices": [
+                "−1.353",
+                "−0.902",
+                "−3.874",
+                "0.351"
+              ],
+              "key": "A",
+              "rationale": "Because r = 2 + cos θ > 0, the particle’s distance from the origin is r. By the chain rule, dr/dt = (dr/dθ)(dθ/dt) = (−sin θ)(t). At t = 1.5, θ = 1.125, so dr/dt = −1.5 sin(1.125) = −1.353401 ≈ −1.353.",
+              "distractorNotes": {
+                "B": "This is dr/dθ = −sin(1.125), the rate per radian of angle. It still needs the factor dθ/dt = 1.5.",
+                "C": "This is dx/dt, the rate of change of the x-coordinate x = r cos θ, not of the distance from the origin.",
+                "D": "This is dy/dt, the rate of change of the y-coordinate y = r sin θ, not of the distance from the origin."
+              },
+              "topics": [
+                "BC.9.POLAR_DERIVATIVES",
+                "BC.3.CHAIN_RULE"
+              ],
+              "id": "bc-mixed-1-mc12"
+            },
+            {
+              "prompt": "Snow collects on a flat roof at a rate of a(t) = 3 + 2 sin(t/2) kilograms per hour and melts at a rate of m(t) = t^2/4 kilograms per hour, for 0 ≤ t ≤ 6, where t is measured in hours. At t = 0 there are 10 kilograms of snow on the roof. What is the greatest amount of snow on the roof during this period, in kilograms?",
+              "choices": [
+                "12.464",
+                "17.960",
+                "29.178",
+                "22.464"
+              ],
+              "key": "D",
+              "rationale": "The amount is S(t) = 10 + ∫ from 0 to t of (a(x) − m(x)) dx, so S′(t) = a(t) − m(t). This is positive until a(t) = m(t) at t = 4.318957 and negative afterward, so S is greatest there: S = 10 + ∫ from 0 to 4.318957 of (a(t) − m(t)) dt = 22.464334 ≈ 22.464. The endpoint values, S(0) = 10 and S(6) ≈ 17.960, are smaller.",
+              "distractorNotes": {
+                "A": "This is the net gain up to the maximum, 12.464 kg; it leaves out the 10 kg already on the roof.",
+                "B": "This is S(6), the amount at the end. The amount decreases after t ≈ 4.319, so the endpoint is not the maximum.",
+                "C": "This finds the correct time, t ≈ 4.319, but then integrates only the collection rate: 10 + ∫ from 0 to 4.319 of a(t) dt = 29.178. The snow that melted must be subtracted."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION",
+                "BC.8.NET_AND_TOTAL_CHANGE",
+                "BC.5.EXTREME_VALUE_THEOREM"
+              ],
+              "id": "bc-mixed-1-mc13"
+            },
+            {
+              "prompt": "A function f has f(0) = 2, f′(0) = −3, f″(0) = 4, and f‴(0) = −12. The third-degree Taylor polynomial for f about x = 0 has exactly one real zero. What is it?",
+              "choices": [
+                "0.611",
+                "0.759",
+                "0.500",
+                "0.667"
+              ],
+              "key": "B",
+              "rationale": "P_3(x) = 2 − 3x + (4/2!)x^2 + (−12/3!)x^3 = 2 − 3x + 2x^2 − 2x^3. Its derivative −6x^2 + 4x − 3 is always negative, so P_3 has one real zero; a calculator gives x = 0.759196 ≈ 0.759.",
+              "distractorNotes": {
+                "A": "This divides f‴(0) by 3 instead of 3! = 6, so the cubic coefficient becomes −4 instead of −2.",
+                "C": "This uses the derivative values as coefficients without dividing by factorials: 2 − 3x + 4x^2 − 12x^3.",
+                "D": "This is the zero of the tangent line 2 − 3x, the first-degree polynomial, not the third-degree one."
+              },
+              "topics": [
+                "BC.10.TAYLOR_COEFFICIENTS",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS"
+              ],
+              "id": "bc-mixed-1-mc14"
+            },
+            {
+              "prompt": "Let y = f(x) be the solution of the differential equation dy/dx = y cos(x^2) with f(0) = 2. What is f(1.5)?",
+              "choices": [
+                "5.000",
+                "2.899",
+                "4.915",
+                "3.458"
+              ],
+              "key": "C",
+              "rationale": "Separate variables: dy/y = cos(x^2) dx. Since y stays positive, ln y − ln 2 = ∫ from 0 to x of cos(t^2) dt, so f(x) = 2e^(∫ from 0 to x of cos(t^2) dt). A calculator gives ∫ from 0 to 1.5 of cos(t^2) dt = 0.899185, so f(1.5) = 2e^0.899185 = 4.915198 ≈ 4.915.",
+              "distractorNotes": {
+                "A": "This is one Euler step of size 1.5 from (0, 2): 2 + 1.5(2 cos 0) = 5. The slope changes a great deal over so long a step.",
+                "B": "This is 2 + ∫ from 0 to 1.5 of cos(t^2) dt: it integrates cos(x^2) alone and ignores the factor y on the right side.",
+                "D": "This adds the constant after exponentiating, y = e^(∫ from 0 to x of cos(t^2) dt) + 1. The constant from ln y multiplies instead: y = 2e^(∫ from 0 to x of cos(t^2) dt)."
+              },
+              "topics": [
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.INITIAL_VALUE_PROBLEMS"
+              ],
+              "id": "bc-mixed-1-mc15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

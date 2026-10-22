@@ -1,9 +1,11 @@
-/* ap.html: course plans, unit tests, practice exams and formula references
-   for the AP® course modules. Routes (LiminalAp.resolve): "#" all courses,
-   "#<course>[/u<n>]" a plan, "#<course>/test/<id>" a student copy,
-   "#<course>/test/<id>/key" its answer key, "#<course>/reference". Student
-   and key copies are separate routes, so a printout carries only one. Plan
-   pacing reuses LiminalHighSchool.pacedUnits; weekly links use LiminalWeekly. */
+/* ap.html: course plans, assessments, exam preparation and formula
+   references for the AP® course modules. Routes (LiminalAp.resolve): "#" all
+   courses, "#<course>[/u<n>]" a plan, "#<course>/test/<id>" a student copy,
+   "#<course>/test/<id>/key" its answer key, "#<course>/reference",
+   "#<course>/prep" the exam-prep page and "#<course>/guide/<id>" a guide.
+   Student and key copies are separate routes, so a printout carries only
+   one. Plan pacing reuses LiminalHighSchool.pacedUnits; weekly links use
+   LiminalWeekly. */
 (function () {
   "use strict";
   const plan = window.LIMINAL_AP_PLAN;
@@ -45,6 +47,27 @@
     return "weeks.html" + W.route("ap", course.id, week);
   }
   function available(course, id) { return (data.assessments || []).find(a => a.courseId === course.id && a.id === id) || null; }
+  function guideEntry(course, id) { return (data.guides || []).find(g => g.courseId === course.id && g.id === id) || null; }
+  // A ref's link, only when its page exists in this build.
+  function refLink(course, ref) {
+    const parsed = A.parseRef(ref);
+    if (!parsed) return "";
+    if (parsed.kind === "week") return weeklyHref(course, Number(parsed.id));
+    if (parsed.kind === "guide" && !guideEntry(course, parsed.id)) return "";
+    if ((parsed.kind === "test" || parsed.kind === "key") && !available(course, parsed.id)) return "";
+    return A.refHref(course.id, ref);
+  }
+  // What an assessment is called on the page: the prep block's label for a
+  // practice-exam form, the set's title, or "Unit n test".
+  function assessmentName(course, id) {
+    const prep = A.prepOf(course);
+    const form = prep && (prep.exams || []).find(e => e.id === id);
+    if (form) return form.label;
+    const entry = available(course, id);
+    if (A.assessmentKind(course, id) === "unit-test") return "Unit " + id.slice(5) + " test";
+    if (id === "practice-exam") return "Practice exam";
+    return entry ? entry.title : /^mixed-/.test(id) ? "Mixed set " + id.slice(6) : "Free-response set";
+  }
   function referenceEntry(course) { return course.reference ? (data.references || []).find(r => r.courseId === course.id) || null : null; }
   function assessmentLinks(course, id, label) {
     const node = el("p", undefined, "ap-test-links");
@@ -55,7 +78,7 @@
       el("span", " · " + entry.mc + " MC, " + entry.fr + " FR, " + entry.minutes + " min", "weekly-meta"));
     return node;
   }
-  function scoreNote() { return el("p", "Unit tests and the practice exam report raw points by section and unit. They are practice, not AP scores, and give no score conversion. For official practice, use College Board's Bluebook previews and released materials.", "ap-note"); }
+  function scoreNote() { return el("p", "Unit tests, sets and practice exams report raw points by section and unit. They are practice, not AP scores, and give no score conversion. For official practice, use College Board's Bluebook previews and released materials.", "ap-note"); }
 
   function renderHub() {
     const article = el("article", undefined, "ap-hub");
@@ -70,6 +93,7 @@
       const weekly = weeklyHref(course, 1);
       if (weekly) links.append(document.createTextNode(" · "), link("Weekly work", weekly));
       if (available(course, "practice-exam")) links.append(document.createTextNode(" · "), link("Practice exam", A.route(course.id, "student", "practice-exam")));
+      if (A.prepOf(course)) links.append(document.createTextNode(" · "), link("Exam prep", A.route(course.id, "prep")));
       if (referenceEntry(course)) links.append(document.createTextNode(" · "), link("Formula reference", A.route(course.id, "reference")));
       card.append(links); grid.append(card);
     });
@@ -131,6 +155,7 @@
     const weekly = weeklyHref(course, 1);
     if (weekly) tools.append(link("Open weekly work →", weekly)); else tools.append(el("span", "Weekly work is being prepared.", "weekly-meta"));
     if (available(course, "practice-exam")) tools.append(link("Practice exam", A.route(course.id, "student", "practice-exam")));
+    if (A.prepOf(course)) tools.append(link("Exam prep", A.route(course.id, "prep")));
     if (referenceEntry(course)) tools.append(link("Formula reference", A.route(course.id, "reference")));
     tools.append(button("Print plan", () => printReady()));
     header.append(tools);
@@ -173,7 +198,8 @@
 
   function assessmentTools(course, selected, entry) {
     const tools = el("div", undefined, "reader-actions ap-print-tools");
-    tools.append(link("← " + course.shortTitle + " plan", A.route(course.id, "unit", (course.units.find(u => u.test === selected.assessmentId) || {}).id)));
+    const unit = course.units.find(u => u.test === selected.assessmentId);
+    tools.append(unit ? link("← " + course.shortTitle + " plan", A.route(course.id, "unit", unit.id)) : link("← Exam preparation", A.route(course.id, "prep")));
     const copies = el("nav", undefined, "ap-copies"); copies.setAttribute("aria-label", "Copy");
     [["student", "Student copy"], ["key", "Answer key"]].forEach(([copy, label]) => {
       const a = link(label, A.route(course.id, copy, selected.assessmentId)); if (selected.copy === copy) a.setAttribute("aria-current", "page"); copies.append(a);
@@ -197,7 +223,7 @@
     const wrap = el("div", undefined, "ap-assessment");
     wrap.append(assessmentTools(course, selected, entry));
     if (!entry) {
-      const title = el("h2", (selected.assessmentId === "practice-exam" ? "Practice exam" : "Unit " + selected.assessmentId.slice(5) + " test")); title.id = "apHeading"; title.tabIndex = -1;
+      const title = el("h2", assessmentName(course, selected.assessmentId)); title.id = "apHeading"; title.tabIndex = -1;
       wrap.append(title, el("p", "This assessment is being prepared."));
       return wrap;
     }
@@ -230,6 +256,122 @@
     return wrap;
   }
 
+  // Exam preparation: how to use it, review plans, practice exams, mixed
+  // sets, the free-response workshop, unit reviews and strategy guides.
+  function section(title, intro) {
+    const node = el("section", undefined, "ap-prep-section");
+    node.append(el("h3", title));
+    if (intro) node.append(el("p", intro, "ap-prep-intro"));
+    return node;
+  }
+  function copyLinks(course, id) {
+    const node = el("span", undefined, "ap-prep-copies");
+    const entry = available(course, id);
+    if (!entry) { node.append(el("span", "in preparation", "weekly-meta")); return node; }
+    node.append(link("Student copy", A.route(course.id, "student", id)), document.createTextNode(" · "), link("Answer key", A.route(course.id, "key", id)));
+    node.append(el("span", " · " + [entry.mc ? entry.mc + " MC" : "", entry.fr ? entry.fr + " FR" : "", entry.minutes + " min"].filter(Boolean).join(", "), "weekly-meta"));
+    return node;
+  }
+  function guideLink(course, id, fallback) {
+    const entry = guideEntry(course, id);
+    return entry ? link(entry.title, A.route(course.id, "guide", id)) : el("span", fallback + " (in preparation)");
+  }
+  function duration(minutes) {
+    const hours = Math.floor(minutes / 60), rest = minutes % 60;
+    return [hours ? hours + (hours === 1 ? " hour" : " hours") : "", rest ? rest + " minutes" : ""].filter(Boolean).join(" ");
+  }
+  // Timing sentences come from the exam block and blueprints, never fixed text.
+  function prepIntros(course) {
+    const total = course.exam.sections.flatMap(s => s.parts).reduce((n, p) => n + p.minutes, 0);
+    const mixed = course.blueprints.mixedSet, set = course.blueprints.frSet;
+    const count = mixed ? mixed.parts.reduce((n, p) => n + p.questions, 0) : 0;
+    return {
+      exams: "Each form follows the " + course.exam.effective + " format and takes " + duration(total) + ". Take it in one sitting, or Section I and Section II on separate days, with the calculator only in the parts that allow it.",
+      mixed: mixed ? count + " questions from across the course at the exam's pace: " + mixed.parts.map(p => p.questions + " " + (p.calculator === "none" ? "without a calculator" : "with a graphing calculator") + " in " + p.minutes + " minutes").join(", then ") + ". Mixing makes you choose the method, which practising one topic at a time never asks." : "",
+      workshop: "One guide and one practice set for each kind of task the free-response section asks for. Read the guide, do the set at " + (set ? set.minutesPerQuestion : 15) + " minutes a question, then score it with the rubric.",
+    };
+  }
+  function renderPrep(course) {
+    const prep = A.prepOf(course);
+    const intros = prepIntros(course);
+    const article = el("article", undefined, "ap-prep");
+    const header = el("header");
+    const title = el("h2", prep.title + ": " + course.shortTitle); title.id = "apHeading"; title.tabIndex = -1;
+    header.append(el("p", course.title, "weekly-meta"), title, el("p", prep.summary));
+    const tools = el("div", undefined, "reader-actions ap-print-tools");
+    tools.append(link("← " + course.shortTitle + " plan", A.route(course.id)), button("Print this page", () => printReady()));
+    header.append(tools, scoreNote());
+    article.append(header);
+    const steps = section("How to use it");
+    const ordered = el("ol", undefined, "ap-prep-steps"); prep.steps.forEach(text => ordered.append(el("li", text)));
+    steps.append(ordered); article.append(steps);
+    const plans = section("Review plans", "Each plan spaces the work so every unit comes back more than once. Line up its last week with your exam date.");
+    prep.plans.forEach(entry => {
+      const node = disclosure(entry.title, "ap-plan");
+      node.append(el("p", entry.summary));
+      const list = el("ol", undefined, "ap-sessions");
+      entry.sessions.forEach(session => {
+        const li = el("li", undefined, "ap-session");
+        li.append(el("h4", session.label + ": " + session.title));
+        const tasks = el("ul", undefined, "ap-tasks");
+        session.tasks.forEach(task => {
+          const item = el("li");
+          const href = task.ref ? refLink(course, task.ref) : "";
+          item.append(href ? link(task.text, href) : el("span", task.text));
+          tasks.append(item);
+        });
+        li.append(tasks); list.append(li);
+      });
+      node.append(list); plans.append(node);
+    });
+    article.append(plans);
+    const exams = section("Full-length practice exams", intros.exams);
+    const examList = el("ul", undefined, "ap-prep-list");
+    prep.exams.forEach(entry => { const li = el("li"); li.append(el("strong", entry.label), el("span", ". " + entry.note + " "), copyLinks(course, entry.id)); examList.append(li); });
+    exams.append(examList); article.append(exams);
+    const mixed = section("Mixed sets", intros.mixed);
+    const mixedList = el("ul", undefined, "ap-prep-list");
+    prep.mixed.forEach(id => { const li = el("li"); li.append(el("strong", "Mixed set " + id.slice(6)), document.createTextNode(" "), copyLinks(course, id)); mixedList.append(li); });
+    mixed.append(mixedList); article.append(mixed);
+    const workshop = section("Free-response workshop", intros.workshop);
+    const workshopList = el("ul", undefined, "ap-prep-list");
+    prep.workshop.forEach(id => { const li = el("li"); li.append(guideLink(course, id, id), el("span", " · Practice set: ", "ap-prep-label"), copyLinks(course, id)); workshopList.append(li); });
+    workshop.append(workshopList); article.append(workshop);
+    const reviews = section("Unit reviews", "Each review starts with checks to answer before you look anything up, then summarizes what to know.");
+    const reviewList = el("ul", undefined, "ap-prep-list");
+    prep.reviews.forEach(id => {
+      const unit = course.units.find(u => "review-u" + u.unit === id);
+      const li = el("li"); li.append(guideLink(course, id, "Unit " + (unit ? unit.unit + ": " + unit.title : id)));
+      const entry = guideEntry(course, id);
+      if (entry) li.append(el("span", " · " + entry.checks + " checks · about " + entry.minutes + " min", "weekly-meta"));
+      if (unit && available(course, unit.test)) li.append(document.createTextNode(" · "), link("Unit " + unit.unit + " test", A.route(course.id, "student", unit.test)));
+      reviewList.append(li);
+    });
+    reviews.append(reviewList); article.append(reviews);
+    const strategy = section("Exam strategy");
+    const strategyList = el("ul", undefined, "ap-prep-list");
+    prep.strategy.forEach(id => { const li = el("li"); li.append(guideLink(course, id, id)); const entry = guideEntry(course, id); if (entry) li.append(el("span", " · " + entry.summary, "ap-prep-summary")); strategyList.append(li); });
+    strategy.append(strategyList); article.append(strategy);
+    article.append(examFormat(course));
+    return article;
+  }
+  async function renderGuide(course, selected, token) {
+    const entry = guideEntry(course, selected.guideId);
+    const wrap = el("div", undefined, "ap-assessment ap-guide-view");
+    const tools = el("div", undefined, "reader-actions ap-print-tools");
+    tools.append(link("← Exam preparation", A.route(course.id, "prep")), button("Print guide", () => printReady()));
+    wrap.append(tools);
+    if (!entry) {
+      const title = el("h2", "Exam-prep guide"); title.id = "apHeading"; title.tabIndex = -1;
+      wrap.append(title, el("p", "This guide is being prepared."));
+      return wrap;
+    }
+    const doc = await load(entry.file);
+    if (token !== request) return null;
+    wrap.append(R.guide(doc, { context: course.title, href: ref => refLink(course, ref) }));
+    return wrap;
+  }
+
   async function render(focus) {
     const token = ++request;
     const selected = A.resolve(plan, window.location.hash);
@@ -247,6 +389,8 @@
       if (selected.view === "hub") node = renderHub();
       else if (selected.view === "plan") node = renderPlan(selected.course);
       else if (selected.view === "reference") node = await renderReference(selected.course, token);
+      else if (selected.view === "prep") node = renderPrep(selected.course);
+      else if (selected.view === "guide") node = await renderGuide(selected.course, selected, token);
       else node = await renderAssessment(selected.course, selected, token);
     } catch (error) {
       if (token !== request) return;
@@ -255,7 +399,9 @@
     if (token !== request || !node) return;
     container.replaceChildren(node);
     container.setAttribute("aria-busy", "false");
-    const name = selected.course ? selected.course.title + (selected.view === "assessment" ? " · " + (selected.copy === "key" ? "Answer key" : "Student copy") : "") : plan.track.title;
+    const guide = selected.view === "guide" ? guideEntry(selected.course, selected.guideId) : null;
+    const name = !selected.course ? plan.track.title : selected.course.title + (selected.view === "assessment" ? " · " + assessmentName(selected.course, selected.assessmentId) + " · " + (selected.copy === "key" ? "Answer key" : "Student copy")
+      : selected.view === "prep" ? " · Exam preparation" : selected.view === "guide" ? " · " + (guide ? guide.title : "Exam-prep guide") : "");
     document.title = name + " — Liminal";
     status.classList.toggle("weekly-sr", !selected.invalid);
     status.textContent = (selected.invalid ? "That link was not recognized. Showing " : "Showing ") + name + ".";

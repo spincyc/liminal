@@ -1,8 +1,9 @@
-/* DOM rendering for AP® unit tests, practice exams and formula references.
-   Takes projections from lib/ap-assessment.js (a student booklet or an
-   answer key, never both) and builds elements with text nodes only; math
-   text goes through LiminalRender.renderText and figures through
-   LiminalRender.renderFigure, which rebuilds SVG from its allow-list. */
+/* DOM rendering for AP® assessments, exam-prep guides and formula
+   references. Takes projections from lib/ap-assessment.js (a student booklet
+   or an answer key, never both) and guide documents, and builds elements with
+   text nodes only; math text goes through LiminalRender.renderText and
+   figures through LiminalRender.renderFigure, which rebuilds SVG from its
+   allow-list. */
 (function (root, factory) {
   const api = factory();
   if (typeof module === "object" && module.exports) module.exports = api;
@@ -38,7 +39,7 @@
   function summaryLine(packet) {
     const count = kind => packet.sections.filter(s => s.kind === kind).reduce((n, s) => n + s.parts.reduce((m, p) => m + p.items.length, 0), 0);
     const minutes = packet.sections.reduce((n, s) => n + s.parts.reduce((m, p) => m + p.minutes, 0), 0);
-    return [A().kindLabel(packet.kind), count("mc") + " multiple choice", count("fr") + " free response", minutes + " minutes"].join(" · ");
+    return [A().kindLabel(packet.kind), count("mc") ? count("mc") + " multiple choice" : "", count("fr") ? count("fr") + " free response" : "", minutes + " minutes"].filter(Boolean).join(" · ");
   }
   function partsTable(packet) {
     const table = el("table", undefined, "ap-table ap-parts");
@@ -114,7 +115,10 @@
       });
       article.append(node);
     });
-    article.append(answerSheet(packet));
+    // A free-response-only set is answered in its workspaces: no bubble sheet,
+    // and its first question need not start a new printed page.
+    if (packet.answerSheet.mc.length) article.append(answerSheet(packet));
+    else article.classList.add("ap-fr-only");
     if (options.reference) article.append(referenceSheet(options.reference, { appended: true }));
     return article;
   }
@@ -256,5 +260,159 @@
     node.append(flow); return node;
   }
 
-  return { el, link, rich, booklet, answerSheet, key, tallySheet, referenceSheet, partsTable, summaryLine };
+  // Exam-prep guide: sections of typed blocks (LiminalAp.GUIDE_BLOCKS). A
+  // check shows its problem; its hint and its answer open in place from
+  // buttons, so it is tried before it is checked. Print drops the buttons and
+  // panels and prints every check's answer at the end, numbered to match,
+  // built from the document rather than from what the reader opened.
+  // options.href(ref) resolves a links block's refs ("" leaves plain text).
+  function guide(doc, options = {}) {
+    const article = el("article", undefined, "ap-doc ap-guide worksheet-document");
+    article.dataset.copy = "guide";
+    const checks = A().guideChecks(doc);
+    const header = el("header", undefined, "ap-doc-head worksheet-heading");
+    header.append(el("p", A().guideKindLabel(doc.kind), "ap-copy-label"));
+    const title = el("h2", doc.title, "worksheet-title"); title.id = "apHeading"; title.tabIndex = -1;
+    const meta = [options.context, "about " + doc.minutes + " minutes", checks.length ? plural(checks.length, "check") : ""].filter(Boolean).join(" · ");
+    header.append(title, el("p", meta, "weekly-meta"), rich(doc.summary, "ap-guide-summary"));
+    article.append(header);
+    const numbers = new Map(checks.map(entry => [entry.block, entry.number]));
+    const body = el("div", undefined, "ap-guide-body worksheet-columns");
+    doc.sections.forEach(section => {
+      const node = el("section", undefined, "ap-guide-section");
+      node.append(el("h3", section.title));
+      section.blocks.forEach(block => { const shown = guideBlock(doc, block, numbers, options); if (shown) node.append(shown); });
+      body.append(node);
+    });
+    article.append(body);
+    if (checks.length) article.append(checkKey(doc, checks));
+    return article;
+  }
+  function label(text) { return el("p", text, "ap-block-label"); }
+  function steps(list) { const node = el("ol", undefined, "weekly-steps"); list.forEach(step => { const li = el("li"); li.append(rich(step)); node.append(li); }); return node; }
+  function answerLine(text) { const node = el("div", undefined, "ap-guide-answer"); node.append(el("p", "Answer", "ap-key-answer"), rich(text)); return node; }
+  function toggle(panel, show, hide, labelId) {
+    const button = el("button", show, "ap-check-toggle");
+    button.type = "button";
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", panel.id);
+    button.setAttribute("aria-describedby", labelId);
+    panel.hidden = true;
+    button.addEventListener("click", () => {
+      const open = button.getAttribute("aria-expanded") !== "true";
+      button.setAttribute("aria-expanded", String(open));
+      button.textContent = open ? hide : show;
+      panel.hidden = !open;
+    });
+    return button;
+  }
+  function guideBlock(doc, block, numbers, options) {
+    const type = block.type;
+    if (type === "text") return rich(block.text, "ap-guide-text");
+    if (type === "list") {
+      const node = el(block.ordered ? "ol" : "ul", undefined, "ap-guide-list");
+      block.items.forEach(item => { const li = el("li"); li.append(rich(item)); node.append(li); });
+      return node;
+    }
+    if (type === "table") {
+      const table = el("table", undefined, "ap-table ap-guide-table");
+      if (block.caption) table.append(el("caption", block.caption));
+      const head = el("tr"); block.head.forEach(h => { const th = el("th"); th.scope = "col"; th.append(rich(h, "ap-inline")); head.append(th); });
+      const thead = el("thead"); thead.append(head); table.append(thead);
+      const tbody = el("tbody");
+      block.rows.forEach(row => { const tr = el("tr"); row.forEach(cell => { const td = el("td"); td.append(rich(cell, "ap-inline")); tr.append(td); }); tbody.append(tr); });
+      table.append(tbody);
+      const wrap = el("div", undefined, "ap-guide-table-wrap"); wrap.append(table);
+      // Focusable and named, so a keyboard can scroll a table wider than the screen.
+      wrap.tabIndex = 0; wrap.setAttribute("role", "region"); wrap.setAttribute("aria-label", block.caption || "Table");
+      return wrap;
+    }
+    if (type === "rule") {
+      const node = el("div", undefined, "ap-rule");
+      const name = el("p", undefined, "ap-rule-title"); name.append(rich(block.title, "ap-inline"));
+      node.append(label("Know this"), name, rich(block.text));
+      if (block.conditions) {
+        const list = el("ul", undefined, "ap-guide-list ap-conditions");
+        block.conditions.forEach(item => { const li = el("li"); li.append(rich(item)); list.append(li); });
+        node.append(el("p", "Conditions", "ap-conditions-label"), list);
+      }
+      return node;
+    }
+    if (type === "trap") {
+      const node = el("div", undefined, "ap-trap");
+      const fix = el("div", undefined, "ap-trap-fix"); fix.append(label("Fix"), rich(block.fix));
+      node.append(label("Trap"), rich(block.text), fix);
+      return node;
+    }
+    if (type === "model") {
+      const node = el("div", undefined, "ap-model");
+      node.append(label("Write it like this"));
+      if (block.prompt) node.append(rich(block.prompt, "ap-muted"));
+      node.append(rich(block.text, "ap-model-text"));
+      return node;
+    }
+    if (type === "example") {
+      const node = el("div", undefined, "ap-example");
+      node.append(label("Example"), rich(block.prompt), ...figureNodes(doc, block.figureIds));
+      const solution = el("div", undefined, "ap-answer");
+      solution.append(answerLine(block.answer), steps(block.steps));
+      node.append(solution);
+      return node;
+    }
+    if (type === "check") {
+      const number = numbers.get(block);
+      const node = el("div", undefined, "ap-check");
+      node.setAttribute("role", "group");
+      const heading = el("p", "Check " + number, "ap-check-label"); heading.id = "ap-check-" + number;
+      node.setAttribute("aria-labelledby", heading.id);
+      node.append(heading, rich(block.prompt), ...figureNodes(doc, block.figureIds));
+      const actions = el("div", undefined, "ap-check-actions");
+      const panels = [];
+      if (block.hint) {
+        const hint = el("div", undefined, "ap-check-panel ap-check-hint"); hint.id = "ap-check-" + number + "-hint";
+        hint.append(label("Hint"), rich(block.hint));
+        actions.append(toggle(hint, "Show a hint", "Hide the hint", heading.id)); panels.push(hint);
+      }
+      const answer = el("div", undefined, "ap-check-panel ap-answer"); answer.id = "ap-check-" + number + "-answer";
+      answer.append(answerLine(block.answer), steps(block.steps));
+      const see = studyNote(doc, block); if (see) answer.append(see);
+      actions.append(toggle(answer, "Show answer", "Hide answer", heading.id)); panels.push(answer);
+      node.append(actions, ...panels);
+      return node;
+    }
+    if (type === "figure") { const [figure] = figureNodes(doc, [block.id]); return figure || null; }
+    if (type === "links") {
+      const node = el("ul", undefined, "ap-guide-links");
+      block.items.forEach(item => {
+        const href = options.href ? options.href(item.ref) : "";
+        const li = el("li"); li.append(href ? link(item.label, href) : el("span", item.label)); node.append(li);
+      });
+      return node;
+    }
+    return null;
+  }
+  // Where a missed check sends the reader: a section of the same guide.
+  function studyNote(doc, block) {
+    const section = block.see && doc.sections.find(s => s.id === block.see);
+    return section ? el("p", "If you missed it, study “" + section.title + "”, then try this check again on another day.", "ap-study-note") : null;
+  }
+  // Printed answers to every check, after the guide.
+  function checkKey(doc, checks) {
+    const node = el("section", undefined, "ap-check-key");
+    node.setAttribute("aria-label", "Answers to the checks");
+    node.append(el("h3", "Answers to the checks"));
+    const list = el("ol", undefined, "ap-check-key-list worksheet-columns");
+    checks.forEach(({ block, number }) => {
+      const li = el("li"); li.setAttribute("value", String(number));
+      li.append(el("p", "Check " + number, "ap-check-label"));
+      if (block.hint) li.append(el("p", "Hint", "ap-block-label"), rich(block.hint));
+      li.append(answerLine(block.answer), steps(block.steps));
+      const see = studyNote(doc, block); if (see) li.append(see);
+      list.append(li);
+    });
+    node.append(list);
+    return node;
+  }
+
+  return { el, link, rich, booklet, answerSheet, key, tallySheet, referenceSheet, partsTable, summaryLine, guide };
 });

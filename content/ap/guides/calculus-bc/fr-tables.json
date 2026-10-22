@@ -1,0 +1,410 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-tables",
+  "kind": "fr-archetype",
+  "title": "Functions given by tables",
+  "author": "bc-workshop-author",
+  "summary": "Some free-response questions on the AP® Calculus BC Exam give a function only through a table of values. You estimate derivatives with difference quotients, approximate integrals with Riemann and trapezoidal sums whose widths differ, decide whether an estimate is too high or too low, apply the Intermediate and Mean Value Theorems to table values, and say what an integral means with units. This guide shows what earns each kind of point, gives sentences you can model, names the usual traps, and ends with a worked model, three self-checks and a practice set of three questions.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "bc-fr-tables-g1",
+      "alt": "Graph of an increasing, concave-down curve labeled y = h(x) for 0 ≤ x ≤ 8. Four shaded trapezoids sit on the unequal subintervals from 0 to 1, 1 to 4, 4 to 6, and 6 to 8. The slanted top of each trapezoid joins two points on the curve and lies below the curve between them.",
+      "caption": "Unequal widths: each trapezoid uses its own width. This graph is concave down, so every chord lies under the curve and the trapezoidal sum is too small."
+    },
+    {
+      "id": "bc-fr-tables-g2",
+      "alt": "A concave-up curve labeled y = f(x) with its tangent line at x = m, the midpoint of the interval from a to b. A shaded rectangle on that interval has height f(m). A dashed vertical segment at b rises from the rectangle to the tangent line. The curve lies above the tangent line except at m, where they touch.",
+      "caption": "The midpoint rectangle has the same area as the trapezoid under the tangent line at m: the triangle it loses on one side it gains on the other. A concave-up graph lies above that tangent line, so the midpoint sum is too small."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The stem gives a function, often a rate in a real context, only at a few input values, and the inputs are usually unevenly spaced. Every part asks you to reason from those few numbers plus the properties the stem states, such as \"differentiable\", \"increasing\" or \"concave up\". Nothing else about the function is known."
+        },
+        {
+          "type": "text",
+          "text": "The archetype can appear in either free-response part. In the no-calculator part, table values are chosen so that the sums come out cleanly, so practice the arithmetic by hand. When it appears in the calculator part, the table is usually paired with a model formula, and the calculator work is done on the model, not on the table."
+        },
+        {
+          "type": "text",
+          "text": "It combines readily with other archetypes. A table of a rate pairs with accumulation (amount at a time equals the starting amount plus an integral). A table of velocity pairs with motion. A BC question may add a table of f and f′ and ask for an integral by substitution or by parts, or give derivative values at one point for a Taylor polynomial."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Most questions draw three or four of these. The middle column is what you write; the right column is where Liminal's rubrics usually put the points.",
+          "head": [
+            "Part type",
+            "What you do",
+            "Points usually go to"
+          ],
+          "rows": [
+            [
+              "Estimate a derivative",
+              "A difference quotient from the two table values nearest the point, one on each side",
+              "The quotient with numbers shown; an interpretation with the input value, direction and units"
+            ],
+            [
+              "Approximate an integral",
+              "A left, right, midpoint or trapezoidal sum with each subinterval's own width",
+              "The sum written out term by term; its value"
+            ],
+            [
+              "Meaning of an integral",
+              "One sentence: what accumulates, over which interval, in which units",
+              "Quantity, interval and units together"
+            ],
+            [
+              "Over or under",
+              "Name the property from the stem (sign of the first or second derivative) and the geometric reason",
+              "The conclusion tied to the stated property; the geometric reason (chord or tangent line against the graph) when the question asks for it"
+            ],
+            [
+              "Must a value exist?",
+              "Check a theorem's hypotheses, compute the needed value, conclude",
+              "The computed value; the theorem named with its hypotheses"
+            ],
+            [
+              "Average value",
+              "(1/(b − a)) times an integral or its approximation",
+              "Division by the interval's length; units"
+            ],
+            [
+              "Exact integral from the table",
+              "Fundamental Theorem, substitution or parts, then table values",
+              "The antiderivative step; the boundary values; the final number"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-earns-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics award five kinds of points, and table questions use all five."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points: the sum or quotient written with the actual numbers, so a reader can check each width and each height. A bare total cannot earn a setup point, and an arithmetic slip after a correct setup usually costs only the answer point.",
+            "Answer points: the value, simplified. In the no-calculator part, fractions and short decimals are exact answers; leave 8/5 as 8/5. In the calculator part, report three decimal places and keep unrounded values in between.",
+            "Justification points: a sentence that names the function, the property or theorem, and the reason it applies. \"Because ρ′ < 0, ρ is decreasing\" earns credit; \"because the values go down\" does not.",
+            "Units and context points: an interpretation must say when or where, what happens to which quantity, and in what units.",
+            "Consistency points: later parts that use an earlier wrong value can still earn their points when the work is consistent with it, so always show what you used."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Trapezoidal sum with unequal widths",
+          "text": "Each subinterval [a, b] contributes (b − a)·(f(a) + f(b))/2. Add the contributions. For the same subintervals, the trapezoidal sum equals the average of the left and right Riemann sums.",
+          "conditions": [
+            "Use each subinterval's own width; there is no single Δx when the inputs are unevenly spaced.",
+            "A midpoint sum is possible only when the table gives the value at each subinterval's midpoint."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "bc-fr-tables-g1"
+        },
+        {
+          "type": "rule",
+          "title": "Intermediate Value Theorem",
+          "text": "If f is continuous on [a, b] and N is between f(a) and f(b), then f(c) = N for at least one c in [a, b] (in (a, b) when N differs from both endpoint values).",
+          "conditions": [
+            "f is continuous on the closed interval. Differentiable implies continuous, so \"f is differentiable\" in the stem is enough.",
+            "N lies strictly between the two table values you cite."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Mean Value Theorem",
+          "text": "If f is continuous on [a, b] and differentiable on (a, b), then f′(c) = (f(b) − f(a))/(b − a) for at least one c in (a, b).",
+          "conditions": [
+            "Continuity alone is not enough; the theorem needs differentiability on the open interval.",
+            "To reach a statement about f″, apply the theorem to f′, which needs f′ differentiable: \"f is twice differentiable\" supplies that."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Over or under: the property that decides each sum. Monotonicity decides left and right sums; concavity decides trapezoidal and midpoint sums.",
+          "head": [
+            "Stated property",
+            "Left sum",
+            "Right sum",
+            "Trapezoidal sum",
+            "Midpoint sum"
+          ],
+          "rows": [
+            [
+              "f′ > 0 (increasing)",
+              "under",
+              "over",
+              "not decided",
+              "not decided"
+            ],
+            [
+              "f′ < 0 (decreasing)",
+              "over",
+              "under",
+              "not decided",
+              "not decided"
+            ],
+            [
+              "f″ > 0 (concave up)",
+              "not decided",
+              "not decided",
+              "over",
+              "under"
+            ],
+            [
+              "f″ < 0 (concave down)",
+              "not decided",
+              "not decided",
+              "under",
+              "over"
+            ]
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "bc-fr-tables-g2"
+        },
+        {
+          "type": "text",
+          "text": "These directions compare each sum with the integral, whatever the sign of the function, and they need the property on the whole interval. If the stem states no property, the honest answer is that the table cannot decide; say so and say what extra information would."
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Trapezoidal sum from a table with W(0) = 40, W(3) = 46 and W(8) = 50, where W(t) is in liters per minute.",
+          "text": "∫ from 0 to 8 of W(t) dt ≈ 3·(W(0) + W(3))/2 + 5·(W(3) + W(8))/2 = 3·(40 + 46)/2 + 5·(46 + 50)/2 = 129 + 240 = 369 liters."
+        },
+        {
+          "type": "model",
+          "prompt": "Meaning of that integral in context.",
+          "text": "∫ from 0 to 8 of W(t) dt is the total volume of water, in liters, that enters the tank from t = 0 to t = 8 minutes."
+        },
+        {
+          "type": "model",
+          "prompt": "Derivative estimate and interpretation, where A(x) is a channel's cross-sectional area in square meters x meters downstream, with A(8) = 30.2 and A(12) = 31.6.",
+          "text": "A′(10) ≈ (A(12) − A(8))/(12 − 8) = (31.6 − 30.2)/4 = 0.35. Ten meters downstream, the cross-sectional area is increasing at about 0.35 square meter per meter downstream."
+        },
+        {
+          "type": "model",
+          "prompt": "Intermediate Value Theorem, for a differentiable function k with k(2) = 8 and k(7) = 18.",
+          "text": "Because k is differentiable, k is continuous on [2, 7]. Since k(2) = 8 < 12 < 18 = k(7), the Intermediate Value Theorem gives a value c in (2, 7) with k(c) = 12."
+        },
+        {
+          "type": "model",
+          "prompt": "Mean Value Theorem, for the same k.",
+          "text": "k is continuous on [2, 7] and differentiable on (2, 7), and (k(7) − k(2))/(7 − 2) = 10/5 = 2. By the Mean Value Theorem, there is a value c in (2, 7) with k′(c) = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "When the hypotheses fail: a table gives values of g, g is known only to be continuous on [0, 8], and the question asks whether g′(c) must equal (g(8) − g(0))/8 for some c in (0, 8).",
+          "text": "Not necessarily. g is not known to be differentiable on (0, 8), so the Mean Value Theorem does not apply. That alone does not settle it, so give a function that fits: straight segments through the table points, with corners at the table inputs (and an extra corner inside any segment that has the slope in question), match every value and never have that slope, so no such c is forced."
+        },
+        {
+          "type": "model",
+          "prompt": "Over or under from monotonicity, where V′(t) < 0 on [0, 12].",
+          "text": "Because V′(t) < 0, V is decreasing on [0, 12]. On each subinterval V is largest at the left endpoint, so each left rectangle lies on or above the graph, and the left Riemann sum overestimates ∫ from 0 to 12 of V(t) dt."
+        },
+        {
+          "type": "model",
+          "prompt": "Over or under from concavity, where Q″(t) < 0 on [0, 12].",
+          "text": "Because Q″(t) < 0, the graph of Q is concave down on [0, 12]. The top edge of each trapezoid is a chord, which lies below a concave-down graph, so the trapezoidal sum underestimates ∫ from 0 to 12 of Q(t) dt."
+        },
+        {
+          "type": "model",
+          "prompt": "Average value from a sum, where a trapezoidal sum gives ∫ from 0 to 12 of F(t) dt ≈ 96 for a temperature F(t) in degrees Celsius over 12 hours.",
+          "text": "The average temperature over 0 ≤ t ≤ 12 is (1/(12 − 0))·∫ from 0 to 12 of F(t) dt ≈ 96/12 = 8 degrees Celsius."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Using one Δx for every term, out of habit from equally spaced sums.",
+          "fix": "Write each width next to its term: 1·(…) + 2·(…) + 1·(…). Read the widths off the table before you start adding."
+        },
+        {
+          "type": "trap",
+          "text": "Giving a derivative estimate the units of an integral, or the reverse: calling F′ \"cubic meters\" or ∫ F dt \"cubic meters per hour\".",
+          "fix": "A derivative divides by the input's unit; an integral multiplies by it. A rate in cubic meters per hour has a derivative in cubic meters per hour per hour and an integral in cubic meters."
+        },
+        {
+          "type": "trap",
+          "text": "Estimating f′(5) from values that do not surround 5, such as f(6) and f(8).",
+          "fix": "Use the nearest table values on either side of the point, so the interval contains it. If the point is itself in the table, a quotient using the values on both sides is usually the better estimate; a one-sided quotient that uses the point is also a valid estimate unless the question names an interval."
+        },
+        {
+          "type": "trap",
+          "text": "Deciding over or under from the pattern of table values: \"the values decrease, so the left sum is too big\".",
+          "fix": "Five numbers say nothing about the function between them. Cite only a property the stem states, such as ρ′(x) < 0. If the stem states none, answer that the table cannot decide."
+        },
+        {
+          "type": "trap",
+          "text": "Mixing the two tests: judging a trapezoidal sum by whether the function increases, or a left sum by concavity.",
+          "fix": "Monotonicity decides left and right sums; concavity decides trapezoidal and midpoint sums. A function can be increasing with a trapezoidal sum that is too high or too low."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming a midpoint sum errs in the same direction as a trapezoidal sum.",
+          "fix": "They err in opposite directions. For a concave-up graph, chords lie above the graph (trapezoids too big) and tangent lines lie below it (midpoint rectangles too small)."
+        },
+        {
+          "type": "trap",
+          "text": "Writing \"by the Mean Value Theorem\" with no hypotheses, or citing only continuity.",
+          "fix": "Say why the function is differentiable on the open interval and continuous on the closed one; \"f is differentiable, so it is also continuous\" covers both. For a claim about f″, name f′ as the function."
+        },
+        {
+          "type": "trap",
+          "text": "Dividing a sum by the number of subintervals to get an average value.",
+          "fix": "Divide by the length of the interval, b − a. Averaging the table values is wrong when the widths differ, because it gives a short subinterval the same weight as a long one."
+        },
+        {
+          "type": "trap",
+          "text": "Writing an approximation as an equality, such as \"∫ from 0 to 8 of F(t) dt = 2105\".",
+          "fix": "Write ≈ between the integral and the sum. An equals sign in that place is a false statement, and a careful reader marks it."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Bread dough rises in a bowl. Its height is H(t) centimeters, t minutes after the dough is shaped. H is differentiable, and its graph is concave down for 0 ≤ t ≤ 60.\n\n| t (minutes) | 0 | 10 | 30 | 40 | 60 |\n| --- | --- | --- | --- | --- | --- |\n| H(t) (centimeters) | 5.0 | 5.8 | 7.0 | 7.4 | 8.0 |\n\n(a) Estimate H′(20) and interpret it with units. (b) Use a trapezoidal sum with the four subintervals in the table to estimate the average height of the dough over 0 ≤ t ≤ 60. (c) Is the estimate in (b) too high or too low? Explain. (d) Must there be a time t, with 0 < t < 60, at which H′(t) = 0.05 centimeter per minute? Justify.",
+          "answer": "(a) H′(20) ≈ 0.06 centimeter per minute: 20 minutes after shaping, the dough is rising at about 0.06 centimeter per minute. (b) About 6.8 centimeters. (c) Too low, because the graph is concave down. (d) Yes, by the Mean Value Theorem.",
+          "steps": [
+            "(a) The table values on either side of t = 20 are H(10) and H(30). H′(20) ≈ (7.0 − 5.8)/(30 − 10) = 1.2/20 = 0.06. Height is in centimeters and time in minutes, so the units are centimeters per minute. Twenty minutes after shaping, the height is increasing at about 0.06 centimeter per minute.",
+            "(b) Widths are 10, 20, 10 and 20 minutes. ∫ from 0 to 60 of H(t) dt ≈ 10·(5.0 + 5.8)/2 + 20·(5.8 + 7.0)/2 + 10·(7.0 + 7.4)/2 + 20·(7.4 + 8.0)/2 = 54 + 128 + 72 + 154 = 408. The average height is (1/(60 − 0))·∫ from 0 to 60 of H(t) dt ≈ 408/60 = 6.8 centimeters.",
+            "(c) The graph of H is concave down, so each trapezoid's top edge, a chord, lies below the graph. The sum in (b) underestimates the integral, so 6.8 centimeters underestimates the average height.",
+            "(d) H is differentiable, so it is continuous on [0, 60] and differentiable on (0, 60). (H(60) − H(0))/(60 − 0) = (8.0 − 5.0)/60 = 0.05. By the Mean Value Theorem, H′(c) = 0.05 centimeter per minute for some c in (0, 60).",
+            "Check the habits: every width is written out, the average divides by 60 and not by 4, the over-or-under answer cites the stated concavity, and the theorem names its hypotheses."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you reveal the answer."
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-tables-c1",
+          "prompt": "A continuous function g has the values below. Approximate ∫ from 0 to 6 of g(x) dx with a trapezoidal sum on the three subintervals in the table. Is your approximation too high or too low?\n\n| x | 0 | 1 | 4 | 6 |\n| --- | --- | --- | --- | --- |\n| g(x) | 5 | 3 | 2 | 6 |",
+          "hint": "The widths are 1, 3 and 2. Before you answer the second question, list what the stem says about g.",
+          "answer": "19.5. The table cannot decide whether it is too high or too low, because nothing is stated about the concavity of g.",
+          "steps": [
+            "1·(5 + 3)/2 + 3·(3 + 2)/2 + 2·(2 + 6)/2 = 4 + 7.5 + 8 = 19.5.",
+            "Whether a trapezoidal sum is too high or too low depends on concavity on the whole interval. The stem says only that g is continuous, and four values cannot show the shape between them, so no conclusion is possible."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-tables-c2",
+          "prompt": "A function r is positive, increasing and concave down on [0, 6]. L, R and T are the left, right and trapezoidal sums for ∫ from 0 to 6 of r(x) dx on the same unequal subintervals. Put L, R, T and the integral I in order from least to greatest.",
+          "hint": "Decide L and R against I from one property, T against I from the other, and then compare T with L and R directly.",
+          "answer": "L < T < I < R",
+          "steps": [
+            "r is increasing, so L < I < R.",
+            "r is concave down, so each chord lies below the graph and T < I.",
+            "On each subinterval the trapezoid's area is the average of the left and right rectangles, so T = (L + R)/2, and L < T because L < R.",
+            "Together: L < T < I < R."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-tables-c3",
+          "prompt": "A function g is continuous on [0, 8], but it is not known to be differentiable. The table gives g(0) = −1, g(3) = 5 and g(8) = 3. Must there be a c in (0, 3) with g(c) = 4? Must there be a c in (0, 8) with g′(c) = 1/2? Justify each answer.",
+          "answer": "Yes to the first, by the Intermediate Value Theorem. Not necessarily to the second, because the Mean Value Theorem needs differentiability.",
+          "steps": [
+            "g is continuous on [0, 3] and g(0) = −1 < 4 < 5 = g(3), so the Intermediate Value Theorem gives c in (0, 3) with g(c) = 4.",
+            "The average rate of change on [0, 8] is (3 − (−1))/8 = 1/2, but g need not be differentiable. A function made of straight pieces with corners at x = 3 has slopes 2 and −2/5 only, and never slope 1/2, so no such c is forced."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set at 15 minutes a question: one calculator question first, then two without a calculator. Score it with the rubrics and record raw points as practice. Then revisit the reviews and weeks below for any sub-skill that cost you a point."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-tables"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-tables"
+            },
+            {
+              "label": "Unit 6 review: integration and accumulation of change",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 5 review: analytical applications of differentiation",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 1 review: limits and continuity",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 8 review: applications of integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Week 13: accumulation, numerical sums, and definite integrals",
+              "ref": "week:13"
+            },
+            {
+              "label": "Week 10: Mean Value Theorem, extrema, and monotonicity",
+              "ref": "week:10"
+            },
+            {
+              "label": "Week 19: average value, motion, accumulation, and area",
+              "ref": "week:19"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

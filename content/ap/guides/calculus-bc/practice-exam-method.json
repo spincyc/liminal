@@ -1,0 +1,606 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "practice-exam-method",
+  "kind": "strategy",
+  "title": "Taking and learning from a practice exam",
+  "author": "bc-strategy-author",
+  "summary": "How to sit a Liminal practice exam under the conditions of the AP® Calculus BC Exam, mark your confidence as you go, and turn every lost point into a dated next task: a cold redo, an honest rubric score, an error log, and a comparison with your earlier forms.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "bc-practice-exam-method-g1",
+      "alt": "A day line from 0 to 8. Day 0 is marked \"take the form: timed; mark S, U, G; predict raw points\". A bracket over days 1 to 2 reads \"redo cold, then read the key, score free response, fill in the log\". A shaded band from day 2 to day 7 reads \"retry window: every missed item goes back on the calendar\".",
+      "caption": "One practice-exam cycle. Most of the value comes after day 0."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "The method at a glance",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A full practice exam costs more than three hours, and most of its value comes afterward, from what you change because of it. Taking form after form without that step mostly rehearses what you can already do. The cycle below sits the form on day 0, analyzes it within two days, and brings every missed item back within a week."
+        },
+        {
+          "type": "figure",
+          "id": "bc-practice-exam-method-g1"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Sit the form under exam conditions: timed, closed-book, calculator only where a part allows it.",
+            "Mark each multiple-choice answer S, U or G in the margin of the answer sheet as you go, and predict your raw points before you see the key.",
+            "Within one or two days, redo every miss and every item marked U or G cold, then read the key for the reasons, then score free response with the rubric.",
+            "Log every lost point with its cause, a next action and a retry date.",
+            "On the next form, compare raw points by section and unit, and compare your prediction with what you earned."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before",
+      "title": "Before you start",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Take the whole form in one sitting when you can: 3 hours 10 minutes of working time. Concentration and pacing in the last hour are part of what you are practicing. When one long block is impossible, take Section I (1 hour 40 minutes) and Section II (1 hour 30 minutes) as two sessions, a day or two apart, and never split a part. Two sessions still give honest raw points by part, but they cannot show how you work when tired, so take at least one form, ideally the last before the exam, in one sitting."
+        },
+        {
+          "type": "table",
+          "caption": "The May 2027 format, from College Board's AP® Calculus BC Exam pages, checked 2026-10-22. Liminal's practice exams use the same parts, counts and times.",
+          "head": [
+            "Part",
+            "Questions",
+            "Time",
+            "Calculator",
+            "Share of exam score"
+          ],
+          "rows": [
+            [
+              "Section I, Part A",
+              "29 multiple choice",
+              "62 minutes",
+              "None",
+              "35%"
+            ],
+            [
+              "Section I, Part B",
+              "13 multiple choice",
+              "38 minutes",
+              "Graphing calculator; some questions need it",
+              "15%"
+            ],
+            [
+              "Section II, Part A",
+              "2 free response",
+              "30 minutes",
+              "Graphing calculator",
+              "16.7%"
+            ],
+            [
+              "Section II, Part B",
+              "4 free response",
+              "60 minutes",
+              "None",
+              "33.3%"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "On the exam itself, delivery is hybrid digital: you answer multiple choice and read the free-response prompts in the Bluebook app, and you handwrite free-response answers in a paper booklet. Bluebook's built-in Desmos graphing calculator appears only in the two calculator parts, and you may also bring up to two approved handheld graphing calculators. At least two free-response questions use real-world contexts. (College Board's exam and calculator-policy pages, checked 2026-10-22.) The exam also reports an AB subscore, according to College Board's AP® Calculus BC special score structure page, checked the same day; Liminal does not estimate it."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Print the student copy. Answer multiple choice on its answer sheet, keeping its margin for the marks described below, and handwrite free response in the space under each part, as you will in the paper booklet.",
+            "Use a timer you cannot pause, and stop when a part's time ends. If you want to finish an item afterward, use a different color; that work does not count toward the raw points.",
+            "Use the calculator only in Section I Part B and Section II Part A, and keep it out of reach during the other two parts. Practice with the calculator you will use on the exam: Desmos if you plan to rely on Bluebook's, your handheld if you plan to bring one.",
+            "No notes, formula sheet, textbook or phone. Liminal's practice exams are taken without a formula sheet; College Board's exam pages, checked 2026-10-22, do not mention one. A form taken with notes open measures the notes.",
+            "Know Liminal's practice scoring before you begin. Each multiple-choice question is worth 1 raw point, and nothing is taken off for a wrong choice. Liminal scores each free-response question out of 9 points, so Section I holds 42 raw points and Section II holds 54."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Pausing the clock to look something up, or finishing a part with extra time, and then comparing those raw points with a form taken under the rules.",
+          "fix": "Keep one set of conditions for every form: timed, closed-book, calculator only where allowed. Then a change between forms means a change in you, not in the conditions."
+        }
+      ]
+    },
+    {
+      "id": "during",
+      "title": "During the exam",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "In the margin of the answer sheet, beside each multiple-choice answer, write one letter."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Mark",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "S (sure)",
+              "You would bet on it: you worked it and checked it, or you know the fact."
+            ],
+            [
+              "U (unsure)",
+              "You worked it but doubt a step, or you narrowed it to two choices."
+            ],
+            [
+              "G (guess)",
+              "You chose without a method that reached an answer."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Mark as you answer, not at the end. A mark written after you have seen later questions, or the key, records hindsight rather than confidence. The marks cost a second each and do two jobs later: they pick out the correct answers that still need a redo, and they show whether your sense of sure matches your results. In free response, write a small U beside any part where you doubt the method or the justification."
+        },
+        {
+          "type": "text",
+          "text": "Write the clock time when you finish each part in the margin beside its last question (on the answer sheet for multiple choice, in the booklet for free response), and circle the number of any item you skip to return to. Section I Part A allows about 2.1 minutes a question and Part B about 2.9; each free-response question gets 15 minutes. These notes are what let you tell a time error from a knowledge error afterward. The guide How the exam runs and how to pace it has the pacing plan."
+        },
+        {
+          "type": "text",
+          "text": "When the last part ends, and before you open the key, write your predicted raw points for each part: Section I Part A out of 29, Part B out of 13, Section II Part A out of 18 and Part B out of 36. Students tend to stay overconfident from exam to exam, partly because they do not use their own past results (Foster et al. 2017). A written prediction, later set beside the result, is what lets you correct that."
+        }
+      ]
+    },
+    {
+      "id": "after",
+      "title": "After: within one or two days",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Do the analysis within a day or two, while you still remember why you chose what you chose. Hold every solution back until step 3."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Mark multiple choice from the key's letters alone, without reading rationales. Circle every wrong answer.",
+            "Redo cold. On a fresh page, untimed and closed-book, rework every missed item and every item marked U or G, including the ones you got right. Start with the sure-but-wrong items. Add any free-response part you left unfinished or marked U. Use a calculator only where the original part allowed one.",
+            "Then open the key. For each redone item, read the rationale and the steps, and for a wrong choice read the note on the letter you picked, which names the error that produces it. Read for why each step is valid, not only for the answer.",
+            "Score free response with the rubric, point by point, as described below.",
+            "Fill in the error log, and give every row a next action and a retry date."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Why this order. Making an error and then getting corrective feedback helps you learn, and errors made with high confidence are among the easiest to correct once the right answer is shown (Metcalfe 2017). So the sure-but-wrong items come first; they are also the ones you would otherwise never look at again. Feedback that explains why an answer is right helps more on new questions than feedback that only gives the answer (Butler et al. 2013), so read the steps, not just the letter. The cold redo comes before the key because it sorts your errors: what you fix alone, untimed, points to time, reading or a slip; what you cannot fix points to a concept or a method."
+        },
+        {
+          "type": "trap",
+          "text": "Spending half an hour on a cold redo of an item you cannot start.",
+          "fix": "Cap a cold redo at about 5 minutes for a multiple-choice item and 10 minutes for a free-response part. If no method has started by then, write down how far you got and open the key. Being unable to start is itself the diagnosis: a concept or a method choice."
+        },
+        {
+          "type": "check",
+          "id": "bc-practice-exam-method-c1",
+          "prompt": "After a form you predicted 35 raw points for Section I. Your marks and results: 31 answers marked S, 27 of them right; 7 marked U, 3 of them right; 4 marked G, 1 of them right. (a) What are your Section I raw points, and how far off was the prediction? (b) How many items go into your cold redo, and which come first?",
+          "hint": "Every item marked U or G is redone, right or wrong.",
+          "answer": "(a) 31 of 42 raw points; the prediction was 4 points too high. (b) 15 items: the 11 missed items and the 4 correct U and G items. The 4 sure-but-wrong items come first.",
+          "steps": [
+            "Raw points: 27 + 3 + 1 = 31, out of 31 + 7 + 4 = 42.",
+            "Prediction gap: 35 − 31 = 4 points too high.",
+            "Missed items: 4 marked S, 4 marked U and 3 marked G were wrong, 11 in all.",
+            "Correct but not secure: 3 marked U and 1 marked G, 4 in all. They are redone because a lucky or shaky answer will not reliably repeat.",
+            "Redo list: 11 + 4 = 15 items, starting with the 4 sure-but-wrong ones, where confidence and result disagree most.",
+            "Sure answers were right 27 times out of 31, about 87%. That is a reason to check an answer before marking it S."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Score free response honestly. The rubric awards points for what is on the page, so score it the way a stranger would."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Score each rubric row on its own. A point you would have earned if you had written something is a point lost.",
+            "A setup point needs the setup in mathematical notation: the integral with its limits, integrand and differential, or the equation being solved. A calculator result alone earns at most what the rubric gives for the answer.",
+            "A justification point needs the reason, named: the function, its sign or sign change, or the theorem with its hypotheses checked.",
+            "Check every equals sign. An approximation written with =, or two different quantities chained together with =, is a false statement, and Liminal's rubrics can withhold a point for it even when the number is right.",
+            "Score one answer per part. If two answers to a part are left standing, credit neither. A false extra statement in a justification loses that justification point, even when a correct reason is also written.",
+            "Where the rubric credits later work that is consistent with an earlier wrong answer, apply it; where it does not, do not invent the credit.",
+            "When you cannot tell whether a row is earned, do not award it, and log why. If you can, trade one question with a classmate and score each other's; a second reader shows how generous you are with yourself."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-practice-exam-method-c2",
+          "prompt": "A calculator free-response part reads: \"A 3D printer uses filament at the rate r(t) = 5 + 2 sin(t^2/4) grams per hour, for 0 ≤ t ≤ 4 hours. At t = 0, 20 grams have already been used. How many grams have been used by t = 4?\" Its rubric: 1 point for a definite integral of r(t) from 0 to 4; 1 point for adding the initial 20 grams; 1 point for the answer, correct to three decimal places, with units. A student wrote: \"∫ r(t) dt ≈ 23.2, so 20 + 23.2 = 43.2 grams.\" Score it point by point, and name the cause of each lost point.",
+          "hint": "Check each rubric row against exactly what is written, then compute the integral yourself without rounding.",
+          "answer": "1 of 3 points. No setup point: the integral has no limits. The initial-amount point is earned. No answer point: the amount is about 43.219 grams, and 43.2 is not correct to three decimal places. Two log rows: communication or justification (a setup without limits) and calculator (an intermediate value rounded too early).",
+          "steps": [
+            "Setup: \"∫ r(t) dt\" names the integrand but not the interval, so the row \"a definite integral of r(t) from 0 to 4\" is not met by what is written. An indefinite integral is not a number, so the first statement is false as written.",
+            "Initial amount: 20 + … is written, so that point is earned.",
+            "Answer: ∫ from 0 to 4 of r(t) dt ≈ 23.219106, so the amount used is 20 + 23.219106 ≈ 43.219 grams. Rounding the integral to 23.2 first changed the second decimal place, so 43.2 does not earn the point.",
+            "Total: 0 + 1 + 0 = 1 of 3.",
+            "Next actions: rewrite the part as \"amount used at t = 4 = 20 + ∫ from 0 to 4 of r(t) dt ≈ 43.219 grams\" (communication), and practice storing full-precision results in the calculator skills guide (calculator)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "error-log",
+      "title": "The error log",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Give every lost point a row: one row per multiple-choice item or free-response part, and a second row when a part lost points for a second, separate reason. Log a correct answer you marked U or G too, with 0 points lost; it is knowledge you cannot count on yet."
+        },
+        {
+          "type": "table",
+          "caption": "Error log template. Copy the head row to start your own; the rows here are worked examples.",
+          "head": [
+            "Question",
+            "Unit",
+            "Archetype or topic",
+            "Points lost",
+            "Cause",
+            "Next action",
+            "Retry date"
+          ],
+          "rows": [
+            [
+              "I-A 14",
+              "6",
+              "Substitution in a definite integral",
+              "1",
+              "Procedure or algebra: kept the x-limits after substituting u",
+              "Three substitution retry checks, on different days",
+              "Day 3, day 5, day 7"
+            ],
+            [
+              "I-B 35",
+              "8",
+              "Volume with square cross sections",
+              "1",
+              "Method choice: used disks",
+              "Mixed set, naming the method before solving each item",
+              "Day 4"
+            ],
+            [
+              "II-A 1(c)",
+              "6",
+              "Accumulation in context",
+              "1",
+              "Communication or justification: no units",
+              "Rewrite the part until every rubric row is earned",
+              "Day 2"
+            ],
+            [
+              "II-B 6(b)",
+              "10",
+              "Lagrange error bound",
+              "2",
+              "Concept: bounded the wrong derivative",
+              "Unit 10 review: its worked example on error bounds, then its checks",
+              "Day 3, day 7"
+            ],
+            [
+              "I-A 22 (U, right)",
+              "5",
+              "Second derivative test",
+              "0",
+              "Concept: unsure which conditions the test needs",
+              "Unit 5 review checks",
+              "Day 5"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Seven causes. Choose the one whose fix would have saved the point.",
+          "head": [
+            "Cause",
+            "What it looks like",
+            "What the cold redo shows"
+          ],
+          "rows": [
+            [
+              "Concept",
+              "You did not know or misremembered an idea: what a theorem needs, what a test concludes, what a derivative or integral means.",
+              "You still cannot do it alone, and the key's reason is new to you."
+            ],
+            [
+              "Method choice",
+              "You know the methods but picked the wrong one: disks for square cross sections, substitution where parts is needed, a series test that cannot decide the series.",
+              "Once you know which method to use, you finish quickly."
+            ],
+            [
+              "Procedure or algebra",
+              "Right method, slip in carrying it out: a sign, a chain-rule factor, the limits after a substitution, arithmetic.",
+              "You get it right on the redo, or you find the slip by checking your own steps."
+            ],
+            [
+              "Reading the question",
+              "You answered a different question: f for f′, relative for absolute, an x-coordinate for a value, an interval for a single time.",
+              "You get it right as soon as you reread the last line of the prompt."
+            ],
+            [
+              "Communication or justification",
+              "The mathematics was right but the page did not earn the point: a missing setup, an unnamed reason, a false equality, missing units, calculator syntax.",
+              "Your answer matches the key, but a rubric row is not met by what you wrote."
+            ],
+            [
+              "Calculator",
+              "Degree mode, an intermediate value rounded too early, a mistyped function, or no calculator where one was needed.",
+              "A careful calculator redo gives the key's value."
+            ],
+            [
+              "Time",
+              "You did not reach the item, or rushed it; your clock notes show the part ran out.",
+              "You solve it untimed at a reasonable pace."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When two causes fit one point, log the earlier link in the chain: a concept gap that led to a slow, confused attempt is a concept error, not a time error. When a free-response part lost points for two separate reasons, give it two rows. The categories fail when you honestly cannot tell which applies. Then pick the one with the more useful next action, and let the retry confirm or correct it."
+        }
+      ]
+    },
+    {
+      "id": "routing",
+      "title": "From cause to next action",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A log changes nothing by itself. In one classroom study, filling in reflection forms after exams, with nothing following from them, did not improve students' later grades or their judgment of their own learning (Soicher & Gurung 2017). What helps is the task the reflection leads to, so every row gets a specific action and a date."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Cause",
+            "Next action",
+            "Where"
+          ],
+          "rows": [
+            [
+              "Method choice",
+              "A timed mixed set. Before solving each item, write the name of the method you will use, then check that choice against the key.",
+              "Mixed sets 1–6"
+            ],
+            [
+              "Concept",
+              "The unit's review: its rule and worked example for the idea, then its checks without looking. Then the missed item again, cold.",
+              "The unit review"
+            ],
+            [
+              "Procedure or algebra",
+              "Two or three retry checks on the same procedure, spread over different days rather than done in one sitting.",
+              "Unit review checks and the weekly coursework"
+            ],
+            [
+              "Reading the question",
+              "Redo the item after underlining what is asked: which function, which quantity, which interval, which units. On the next mixed set, reread the last line of every prompt before you choose.",
+              "The next mixed set"
+            ],
+            [
+              "Communication or justification",
+              "Read the matching part of the free-response writing guide, then rewrite one answer until every rubric row is earned.",
+              "Free-response writing guide"
+            ],
+            [
+              "Calculator",
+              "Practice the skill that failed, writing the setup first and storing full-precision values.",
+              "Calculator skills guide"
+            ],
+            [
+              "Time",
+              "Use the pacing plan on the next timed set: checkpoint times, and a rule for when to circle an item and move on.",
+              "How the exam runs and how to pace it"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Put every missed item back on the calendar 2 to 7 days later, and redo it cold again. A retry the next day mostly tests short-term memory; one left for weeks may not happen before the next form. On the retry, also do one fresh item of the same kind from a unit review or a mixed set, because a repeated item can turn into remembering its answer rather than solving it."
+        },
+        {
+          "type": "text",
+          "text": "Work first on the cause that cost the most points, but not only on that one. This rule fails when the biggest cause is time: running out of time often comes from slow procedures earlier in the part, so read your clock notes before you treat it as a pacing problem."
+        },
+        {
+          "type": "check",
+          "id": "bc-practice-exam-method-c3",
+          "prompt": "On Section I Part A you marked an item asking for ∫ x·e^(−x) dx as S, and your choice was wrong: you had tried to finish with the substitution u = −x alone. In the cold redo you tried the same substitution and got stuck. When the key's first step said to integrate by parts with u = x and dv = e^(−x) dx, you finished in two minutes. Name the cause, a next action and a retry window.",
+          "hint": "Ask what the key's first line gave you that you did not already have.",
+          "answer": "Method choice. Next action: a timed mixed set, writing the method's name before solving each item, and this item again, cold, between day 2 and day 7.",
+          "steps": [
+            "Once you were told the method, you carried it out correctly and quickly, so the procedure itself is sound.",
+            "You know integration by parts but did not choose it here, which is a method-choice error rather than a concept or procedure error.",
+            "Choosing a method is trained by mixed practice, where deciding what applies is part of every item; writing the method's name first makes the choice visible.",
+            "For reference: ∫ x·e^(−x) dx = −x·e^(−x) − e^(−x) + C.",
+            "It was sure but wrong, so it belonged at the front of the redo list."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-practice-exam-method-c4",
+          "prompt": "A free-response part gave a graph of f′ and asked whether f has a relative minimum at x = 2, where f′(2) = 0. You wrote \"f′(2) = 0, so f has a relative minimum at x = 2.\" The conclusion was right, but you earned 0 of the 1 justification point. In the cold redo, without the key, you wrote at once that f′ changes from negative to positive at x = 2. Classify the error, give a next action, and say what result of the redo would have changed the classification.",
+          "hint": "The cold redo is the test between two causes. What did it show you already knew?",
+          "answer": "Communication or justification: you knew the reason but did not write it. Next action: read the justification part of the free-response writing guide and rewrite this answer so the reason names f′ and its sign change. If the redo had again stopped at f′(2) = 0, believing a zero derivative proves a minimum, the cause would be concept, and the next action would be the first derivative test in the unit 5 review.",
+          "steps": [
+            "f′(2) = 0 shows only that x = 2 is a critical point; a zero derivative also occurs at relative maxima and at points that are neither.",
+            "The justification point needs the reason: f′ changes from negative to positive at x = 2.",
+            "You supplied that reason unaided in the cold redo, so the knowledge was there and the written answer was the problem.",
+            "Rewritten answer: f′(x) < 0 just to the left of x = 2 and f′(x) > 0 just to the right, so f′ changes from negative to positive at x = 2 and f has a relative minimum there."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparing-forms",
+      "title": "Comparing forms",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "From the second form on, set the new raw points beside the old ones by part, by section and by unit, and set each prediction beside its result. Liminal's practice exams give every unit the same number of multiple-choice questions on every form (3 each for units 1–4, 7 and 8; 5 each for units 5 and 9; 7 each for units 6 and 10), so those unit counts compare directly. Free-response points by unit vary from form to form."
+        },
+        {
+          "type": "table",
+          "caption": "An example comparison after two forms. Raw points are practice evidence, not AP® scores; no conversion exists here.",
+          "head": [
+            "Raw points",
+            "Form A",
+            "Form B"
+          ],
+          "rows": [
+            [
+              "Section I Part A (of 29)",
+              "19",
+              "22"
+            ],
+            [
+              "Section I Part B (of 13)",
+              "7",
+              "8"
+            ],
+            [
+              "Section I (of 42)",
+              "26",
+              "30"
+            ],
+            [
+              "Section I, predicted",
+              "31",
+              "32"
+            ],
+            [
+              "Sure answers that were right",
+              "21 of 27",
+              "24 of 27"
+            ],
+            [
+              "Section II (of 54)",
+              "27",
+              "31"
+            ],
+            [
+              "Section II, predicted",
+              "35",
+              "33"
+            ],
+            [
+              "Unit 1 multiple choice (of 3)",
+              "1",
+              "3"
+            ],
+            [
+              "Unit 10 multiple choice (of 7)",
+              "3",
+              "4"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Calibration. Subtract each result from its prediction. A gap that shrinks across forms suggests your judgment of your own work is improving, which matters on the exam itself when you decide which answers to check. Do the same with your S marks: if more than about 1 in 10 sure answers are wrong, check an answer before you mark it S. With only a handful of S marks that fraction jumps with a single item, so read it over two forms."
+        },
+        {
+          "type": "text",
+          "text": "Read the comparison for patterns, not single numbers. Forms differ in difficulty, and a unit with three multiple-choice questions can move two points on one lucky guess and one slip. Trust a change that appears on two forms and agrees with the causes in your log. Do not retake the same form to compare, since you will partly remember it."
+        },
+        {
+          "type": "text",
+          "text": "The shares of exam score in the format table describe the real exam. They are not a formula to apply to Liminal's raw points, which stay raw, by part, as practice evidence."
+        },
+        {
+          "type": "check",
+          "id": "bc-practice-exam-method-c5",
+          "prompt": "Use the example comparison above. (a) How did the gap between prediction and result change in each section from form A to form B? (b) Unit 1 multiple choice went from 1 of 3 to 3 of 3. How much should that change alone move unit 1 in your plan?",
+          "hint": "For (b), count how many questions the change rests on.",
+          "answer": "(a) Section I: 5 points too high on form A, 2 too high on form B. Section II: 8 too high, then 2 too high. Both predictions moved closer to the results while raw points rose by 4 in each section. (b) Very little on its own: the change rests on two questions. Keep unit 1 on its planned schedule, and let the retries of its logged items, not this one number, decide whether it needs more time.",
+          "steps": [
+            "Section I gaps: 31 − 26 = 5 and 32 − 30 = 2.",
+            "Section II gaps: 35 − 27 = 8 and 33 − 31 = 2.",
+            "Raw point changes: 30 − 26 = 4 in Section I and 31 − 27 = 4 in Section II.",
+            "Sure accuracy rose from 21 of 27, about 78%, to 24 of 27, about 89%.",
+            "Unit 1 has three multiple-choice questions per form, so going from 1 to 3 is two questions, which one guess and one slip could produce. Evidence that agrees across forms and with the log counts for more."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "Keep feedback about the task",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Write each log entry, and any comment on a classmate's work, about the mathematics, not about the person. Feedback that turns attention toward the self rather than the task often fails to help and sometimes hurts (Kluger & DeNisi 1996). A cause that names a step can be fixed; a verdict about a person cannot."
+        },
+        {
+          "type": "model",
+          "prompt": "The cause column for a missed error bound",
+          "text": "Concept: I bounded the third derivative. For a Taylor polynomial of degree 3, the Lagrange error bound uses a bound on f^(4) between the center and x."
+        },
+        {
+          "type": "trap",
+          "text": "Log entries such as \"bad at series\" or \"careless again\".",
+          "fix": "Name the step that failed and the correct step. \"Careless\" is not a cause: if it keeps happening, it is a procedure to retry or a check to add, and the log should say which."
+        }
+      ]
+    },
+    {
+      "id": "related",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice exam A: student copy",
+              "ref": "test:practice-exam"
+            },
+            {
+              "label": "Practice exam A: answer key",
+              "ref": "key:practice-exam"
+            },
+            {
+              "label": "Practice exam B: student copy",
+              "ref": "test:practice-exam-b"
+            },
+            {
+              "label": "How the exam runs and how to pace it",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Calculator skills for the calculator parts",
+              "ref": "guide:calculator-skills"
+            },
+            {
+              "label": "Mixed set 1",
+              "ref": "test:mixed-1"
+            },
+            {
+              "label": "Unit 1 review: Limits and Continuity",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Week 33: practice examination preparation and error analysis",
+              "ref": "week:33"
+            },
+            {
+              "label": "Week 34: targeted repair and fresh reassessment",
+              "ref": "week:34"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

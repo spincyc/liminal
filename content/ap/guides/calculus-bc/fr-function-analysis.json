@@ -1,0 +1,419 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-function-analysis",
+  "kind": "fr-archetype",
+  "title": "Analysis of a given function",
+  "author": "bc-workshop-author",
+  "summary": "How to work the free-response question that hands you a function, in two pieces or as one formula with a special point, and asks you to analyze it: continuity and differentiability at a join, extrema, existence claims from the Intermediate, Mean and Extreme Value Theorems, average value, and the BC techniques folded in (integration by parts, partial fractions, improper integrals, L’Hôpital’s Rule). The guide says what earns each kind of point in Liminal’s practice rubrics, gives sentences to copy, lists the traps that cost strong students points, works one original example, and ends with three self-checks and a three-question practice set.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "bc-fr-function-analysis-g1",
+      "alt": "Graph of the worked example’s function g for 0 ≤ x ≤ 1 + e. A parabola arc starts at the origin, dips to the point (1, −1), and rises to the point (2, 0). From there a logarithmic curve continues upward to the point (1 + e, 2). A dashed line of slope 2 touches both pieces at (2, 0).",
+      "caption": "The worked example with c = 0 and k = 2: the two pieces meet at x = 2 with one shared tangent line, so the join is smooth."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "On the AP® Calculus BC Exam, this kind of free-response question gives you a function by formula: often two pieces that meet at one point, sometimes a constant to choose, sometimes a value assigned at a point where the formula breaks down. It then asks what the function does at that point and on an interval: whether it is continuous and differentiable, where it is largest and smallest, what the existence theorems promise, and what its average value is."
+        },
+        {
+          "type": "text",
+          "text": "It usually sits in the no-calculator part, because every answer is meant to come out exact. Expect answers such as 5 − ln 2 or −3/e, and leave them in that form. When the function comes with a context (a flow rate, a temperature), the analysis is the same, and units become part of the answer."
+        },
+        {
+          "type": "text",
+          "text": "It combines with other archetypes. A BC version often folds in an integration technique (parts, partial fractions), an improper integral, or a limit that needs L’Hôpital’s Rule. A part may also come from another archetype: an accumulation function g(x) = ∫ from a to x of f(t) dt, or a Taylor polynomial for the same function. Answer each part on its own terms, but reuse what earlier parts established. A later part often depends on a continuity result or a constant you already found."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "A typical nine-point version uses three or four of these rows. Points are Liminal’s practice weights.",
+          "head": [
+            "Part",
+            "Typical task",
+            "Points",
+            "What the rubric looks for"
+          ],
+          "rows": [
+            [
+              "Join",
+              "Decide continuity and differentiability where the pieces meet, or find constants that make the function differentiable there",
+              "2–3",
+              "One-sided limits of f, then one-sided limits of f′ (or of the difference quotient), then a conclusion sentence"
+            ],
+            [
+              "Extrema",
+              "Find absolute or relative maximum and minimum values on an interval",
+              "2–3",
+              "Every critical point, including any point where f′ does not exist; both endpoints; a candidate comparison or a sign argument"
+            ],
+            [
+              "Existence",
+              "Decide whether there must be a c with f(c) = k or f′(c) = m, or an absolute maximum",
+              "1–2",
+              "The theorem named, each hypothesis checked on the stated interval, and the conclusion written for this function"
+            ],
+            [
+              "Average value",
+              "Find the average value of f, or an average rate in context",
+              "2–3",
+              "(1/(b − a)) times the integral, split at the join, with the technique shown"
+            ],
+            [
+              "Limits",
+              "Evaluate a limit with L’Hôpital’s Rule, or an integral over an unbounded interval or through a point where the formula fails",
+              "2",
+              "The indeterminate form stated; the improper integral written as a limit of a proper one"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The parts are linked. If part (a) finds the constants, every later part uses them, and Liminal’s rubrics score the later parts against your values. A continuity result from part (a) is a hypothesis you will cite again in the theorem parts."
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s practice rubrics award five kinds of point. Before you write, decide which kind each part is asking for."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points. An expression that would give the answer if evaluated correctly: the average-value integral with its factor 1/(b − a), split at the join, or the two equations that continuity and differentiability give. Write the setup before you simplify; it can earn a point even when the arithmetic later slips.",
+            "Answer points. The exact value, simplified enough to read: 5/2 − ln(3/2), not 2.09. A bare answer with no supporting work is weak evidence, and in a part that says justify it earns little or nothing.",
+            "Justification points. A sentence that names the function, the property and the reason: which derivative changes sign and from what to what, which theorem, and which hypotheses hold on which interval. “It changes sign” earns nothing; “f′ changes from negative to positive at x = 3” does.",
+            "Units points. In a context version, the units of each requested answer: cubic meters per hour for an average rate, cubic meters for a total. Put them in the final sentence.",
+            "Consistency points. If an earlier answer is wrong, a later part that uses your earlier value correctly can still earn its points. This works only when the reader can see the earlier value in the later setup, so write it in."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theorems",
+      "title": "The results you will cite",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Continuity at a point",
+          "text": "f is continuous at x = a when lim as x→a of f(x) exists and equals f(a). At a join, show that the left limit, the right limit and f(a) agree.",
+          "conditions": [
+            "f(a) is defined.",
+            "lim as x→a− of f(x) = lim as x→a+ of f(x).",
+            "That common limit equals f(a). At an endpoint of the domain, only the one-sided limit from inside is needed."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Differentiability at a join",
+          "text": "Differentiable at a implies continuous at a, so check continuity first. If f is continuous at a and each piece is differentiable near a, the one-sided derivatives at a equal lim as x→a− of f′(x) and lim as x→a+ of f′(x) whenever those limits exist. f is differentiable at a exactly when they are equal.",
+          "conditions": [
+            "If f is not continuous at a, stop: f is not differentiable at a.",
+            "If a one-sided limit of f′ does not exist, this shortcut says nothing; return to the definition, the one-sided limits of (f(a + h) − f(a))/h."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Intermediate Value Theorem",
+          "text": "If f is continuous on [a, b] and k is strictly between f(a) and f(b), then f(c) = k for some c in (a, b).",
+          "conditions": [
+            "f is continuous on the closed interval [a, b].",
+            "It promises that a value is reached, not where or how many times."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Mean Value Theorem",
+          "text": "If f is continuous on [a, b] and differentiable on (a, b), then f′(c) = (f(b) − f(a))/(b − a) for some c in (a, b).",
+          "conditions": [
+            "Continuity on the closed interval, endpoints included.",
+            "Differentiability on the open interval only. A corner or a vertical tangent at an endpoint does no harm; a corner inside the interval does."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Extreme Value Theorem and the Candidates Test",
+          "text": "If f is continuous on a closed, bounded interval [a, b], then f attains an absolute maximum and an absolute minimum on [a, b]. To find them, compare f at the endpoints and at every critical point inside: every point where f′ = 0 and every point where f′ does not exist.",
+          "conditions": [
+            "f is continuous on [a, b].",
+            "The interval is closed and bounded. On an open or unbounded interval the theorem promises nothing; argue from the sign of f′ instead."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "L’Hôpital’s Rule",
+          "text": "If lim as x→a of f(x)/g(x) has the form 0/0 or ±∞/±∞, and lim as x→a of f′(x)/g′(x) exists or is infinite, then the two limits are equal. The same holds for one-sided limits and for x→±∞.",
+          "conditions": [
+            "f and g are differentiable near a, and g′(x) ≠ 0 near a (except possibly at a itself).",
+            "State the form before you differentiate.",
+            "Rewrite a product 0 · ∞ or a difference ∞ − ∞ as a single quotient first.",
+            "Differentiate the numerator and the denominator separately; this is not the quotient rule."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "These sentences use small functions of their own, so the pattern is what transfers. Each one names the function, gives the evidence, and states the conclusion."
+        },
+        {
+          "type": "model",
+          "prompt": "Continuity at a join, for h(x) = x^2 + 1 when x ≤ 2 and h(x) = 4x − 3 when x > 2.",
+          "text": "lim as x→2− of h(x) = 5, lim as x→2+ of h(x) = 5, and h(2) = 5. Because both one-sided limits equal h(2), h is continuous at x = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "Differentiability at the same join.",
+          "text": "h is continuous at x = 2. lim as x→2− of h′(x) = lim as x→2− of 2x = 4, and lim as x→2+ of h′(x) = 4. The one-sided derivatives are equal, so h is differentiable at x = 2 and h′(2) = 4."
+        },
+        {
+          "type": "model",
+          "prompt": "A corner is a critical point.",
+          "text": "k is continuous at x = 3, and its one-sided derivatives there are 2 and −1. They differ, so k′(3) does not exist, and x = 3 is a critical point of k that must be checked as a candidate."
+        },
+        {
+          "type": "model",
+          "prompt": "Candidates Test on a closed interval.",
+          "text": "g is continuous on [0, 4]. The candidates are the endpoints and the critical points: g(0) = 2, g(1) = 5, g(3) = −1 and g(4) = 3. The absolute maximum value of g on [0, 4] is 5, at x = 1, and the absolute minimum value is −1, at x = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "Absolute maximum on an unbounded interval.",
+          "text": "w is continuous on [1, ∞), w′(x) > 0 for 1 < x < 4, and w′(x) < 0 for x > 4. So w increases on [1, 4] and decreases on [4, ∞), and w(4) is the absolute maximum value of w on [1, ∞)."
+        },
+        {
+          "type": "model",
+          "prompt": "Intermediate Value Theorem.",
+          "text": "p is continuous on [1, 2] because it is a polynomial, and p(1) = −2 < 0 < 1 = p(2). By the Intermediate Value Theorem, p(c) = 0 for some c in (1, 2)."
+        },
+        {
+          "type": "model",
+          "prompt": "Mean Value Theorem.",
+          "text": "q is continuous on [2, 5] and differentiable on (2, 5). By the Mean Value Theorem, there is a value c in (2, 5) with q′(c) = (q(5) − q(2))/(5 − 2) = (7 − 1)/3 = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "When a theorem does not apply.",
+          "text": "The Mean Value Theorem does not apply to m on [−1, 3], because m is not differentiable at x = 1, which is inside the interval. This does not show that no such c exists; it shows only that the theorem does not promise one."
+        },
+        {
+          "type": "model",
+          "prompt": "An improper integral.",
+          "text": "∫ from 1 to ∞ of 2/x^3 dx = lim as M→∞ of ∫ from 1 to M of 2/x^3 dx = lim as M→∞ of (1 − 1/M^2) = 1, so the integral converges to 1."
+        },
+        {
+          "type": "model",
+          "prompt": "L’Hôpital’s Rule, applied twice.",
+          "text": "As x→0, 1 − cos(3x) → 0 and x^2 → 0, so the limit has the form 0/0. By L’Hôpital’s Rule, lim as x→0 of (1 − cos(3x))/x^2 = lim as x→0 of 3 sin(3x)/(2x), which is again 0/0. Applying the rule again gives lim as x→0 of 9 cos(3x)/2 = 9/2."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Matching the derivative formulas without checking continuity. For s(x) = x^2 when x ≤ 1 and s(x) = 2x + 1 when x > 1, both derivative formulas give 2 at x = 1, yet s jumps from 1 to 3 there and is not differentiable.",
+          "fix": "Settle continuity first. Only a continuous function can be differentiable, and only then do equal one-sided derivative limits decide the question."
+        },
+        {
+          "type": "trap",
+          "text": "Using a piece’s formula outside its own interval. Solving the left piece’s f′(x) = 0 can produce a solution beyond the join, say x = 4 when that piece holds only for x ≤ 3. Its value from the wrong formula is not f(4).",
+          "fix": "After solving f′(x) = 0 on each piece, keep only solutions inside that piece’s interval, and evaluate every candidate with the formula that holds there."
+        },
+        {
+          "type": "trap",
+          "text": "Forgetting the join and the endpoints. Solving f′(x) = 0 finds only one kind of candidate, and the extreme value is often at a corner or an endpoint.",
+          "fix": "List three kinds of candidate every time: endpoints, points where f′ = 0, and points where f′ does not exist, which include a corner at the join."
+        },
+        {
+          "type": "trap",
+          "text": "Reading “the theorem does not apply” as “the conclusion is false”, or applying the Mean Value Theorem across a corner.",
+          "fix": "A theorem with a failed hypothesis promises nothing either way. To claim existence, choose an interval on which every hypothesis holds, often the part on one side of the join."
+        },
+        {
+          "type": "trap",
+          "text": "Refusing the Mean Value Theorem because f is not differentiable at an endpoint.",
+          "fix": "The theorem asks for differentiability only on the open interval. A corner or vertical tangent at an endpoint does no harm, provided f is continuous on the closed interval, including at that endpoint."
+        },
+        {
+          "type": "trap",
+          "text": "Applying L’Hôpital’s Rule when the form is not indeterminate. For lim as x→0+ of (cos x)/x, the form is 1/0+, so the limit is ∞; differentiating the top and the bottom gives lim of (−sin x)/1 = 0, which is wrong.",
+          "fix": "Write the form before you differentiate. Only 0/0 and ±∞/±∞ qualify. A nonzero number over something approaching 0, or −∞ times ∞, already tells you the answer."
+        },
+        {
+          "type": "trap",
+          "text": "Splitting a limit into ∞ − ∞. In lim as M→∞ of (ln M − ln(M + 2)), treating each term separately gives ∞ − ∞, which is not a value.",
+          "fix": "Combine first: ln M − ln(M + 2) = ln(M/(M + 2)), and M/(M + 2) → 1, so the limit is ln 1 = 0."
+        },
+        {
+          "type": "trap",
+          "text": "Writing a value where only a limit exists: f′(1) = −3 when only lim as x→1− of f′(x) = −3 is known, or e^(−∞) = 0 in the middle of an evaluation. The first claims a derivative that may not exist, and the second is not a valid statement because ∞ is not a number; a reader may withhold a point for either.",
+          "fix": "Write lim as x→1− of f′(x) = −3 for one-sided information (or the left-hand derivative, lim as h→0− of (f(1 + h) − f(1))/h = −3, if that is what you found), and write every improper integral as a limit of a proper integral before you evaluate."
+        },
+        {
+          "type": "trap",
+          "text": "Averaging without the factor 1/(b − a), or integrating one piece’s formula across the join.",
+          "fix": "Split the integral at the join, add the pieces, and multiply by 1/(b − a), where a and b are the ends of the whole interval."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let g(x) = x^2 − 2x + c for 0 ≤ x ≤ 2 and g(x) = k ln(x − 1) for 2 < x ≤ 1 + e, where c and k are constants. (a) Find c and k so that g is differentiable at x = 2. (b) With those values, find the absolute minimum and maximum values of g on [0, 1 + e]. Justify your answer. (c) Find the average value of g on [2, 1 + e].",
+          "answer": "(a) c = 0 and k = 2. (b) The absolute minimum value is −1, at x = 1; the absolute maximum value is 2, at x = 1 + e. (c) 2/(e − 1).",
+          "steps": [
+            "(a) Continuity first. lim as x→2− of g(x) = 4 − 4 + c = c, and lim as x→2+ of g(x) = k ln 1 = 0. Continuity at x = 2 requires c = 0, and then g(2) = 0.",
+            "(a) Then derivatives. For x < 2, g′(x) = 2x − 2, which approaches 2 as x→2−. For x > 2, g′(x) = k/(x − 1), which approaches k as x→2+. Since g is continuous at 2, differentiability requires k = 2.",
+            "(a) Conclusion sentence. With c = 0 and k = 2, g is continuous at x = 2 and both one-sided derivatives equal 2, so g is differentiable at x = 2 and g′(2) = 2.",
+            "(b) Critical points. On (0, 2), g′(x) = 2x − 2 = 0 at x = 1. On (2, 1 + e), g′(x) = 2/(x − 1) > 0, so it is never 0. By part (a), g′(2) exists and equals 2, so x = 2 is not a critical point.",
+            "(b) Candidates. g is continuous on the closed interval [0, 1 + e], so it attains both absolute extrema (Extreme Value Theorem). Compare g(0) = 0, g(1) = −1 and g(1 + e) = 2 ln e = 2.",
+            "(b) Conclusion. The absolute minimum value is −1, at x = 1, and the absolute maximum value is 2, at x = 1 + e.",
+            "(c) Setup. Average value = (1/((1 + e) − 2)) ∫ from 2 to 1 + e of 2 ln(x − 1) dx = (1/(e − 1)) ∫ from 2 to 1 + e of 2 ln(x − 1) dx.",
+            "(c) Technique. Substitute w = x − 1 to get ∫ from 1 to e of 2 ln w dw. By parts, differentiating ln w and integrating dw, ∫ ln w dw = w ln w − w + C. So the integral is 2[(e ln e − e) − (1 ln 1 − 1)] = 2[0 − (−1)] = 2.",
+            "(c) Answer. The average value of g on [2, 1 + e] is 2/(e − 1)."
+          ],
+          "figureIds": [
+            "bc-fr-function-analysis-g1"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Notice the order in part (a): continuity produced c, and only then did matching derivatives produce k. Here the derivative condition does not even involve c, so a student who skips continuity still finds k = 2, but cannot find c and has not shown differentiability. In part (b), the join was checked and set aside for a reason, not forgotten."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "check",
+          "id": "bc-fr-function-analysis-c1",
+          "prompt": "Let u(x) = 3 + ln x for 0 < x ≤ 1 and u(x) = x^2 − x + 2 for x > 1. A classmate writes: “u is differentiable at x = 1 because both derivative formulas equal 1 there.” Is the classmate right? Write the justification that would earn the point.",
+          "hint": "What must be true of u at x = 1 before a derivative question makes sense?",
+          "answer": "No. u is not continuous at x = 1, so it is not differentiable there.",
+          "steps": [
+            "u(1) = 3 + ln 1 = 3, but lim as x→1+ of u(x) = 1 − 1 + 2 = 2.",
+            "The one-sided limits of u at 1 differ (3 from the left, 2 from the right), so u is not continuous at x = 1.",
+            "Differentiability implies continuity, so u is not differentiable at x = 1, even though lim as x→1− of u′(x) = 1 and lim as x→1+ of u′(x) = 1. The right-hand difference quotient (u(1 + h) − 3)/h tends to −∞."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-function-analysis-c2",
+          "prompt": "Determine whether ∫ from 1 to ∞ of 6/(x^2 + 3x) dx converges. If it converges, find its value.",
+          "hint": "Factor the denominator first.",
+          "answer": "It converges to 4 ln 2.",
+          "steps": [
+            "6/(x(x + 3)) = A/x + B/(x + 3) gives 6 = A(x + 3) + Bx, so A = 2 (at x = 0) and B = −2 (at x = −3).",
+            "∫ from 1 to M of (2/x − 2/(x + 3)) dx = [2 ln(x/(x + 3))] from 1 to M = 2 ln(M/(M + 3)) − 2 ln(1/4).",
+            "As M→∞, M/(M + 3) → 1, so 2 ln(M/(M + 3)) → 0.",
+            "The integral converges to −2 ln(1/4) = 2 ln 4 = 4 ln 2."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-function-analysis-c3",
+          "prompt": "A function k is continuous on [0, 4] and differentiable on (0, 4) except at x = 2, with k(0) = 5 and k(4) = −3. For each statement, decide whether it must be true, and give the reason. (i) k(c) = 0 for some c in (0, 4). (ii) k′(c) = −2 for some c in (0, 4). (iii) k attains an absolute maximum value on [0, 4].",
+          "hint": "List each theorem’s hypotheses and test them against what you are told about k.",
+          "answer": "(i) Must be true, by the Intermediate Value Theorem. (ii) Need not be true, because the Mean Value Theorem does not apply. (iii) Must be true, by the Extreme Value Theorem.",
+          "steps": [
+            "(i) k is continuous on [0, 4], and 0 lies between k(0) = 5 and k(4) = −3, so the Intermediate Value Theorem gives a c in (0, 4) with k(c) = 0.",
+            "(ii) The average rate of change is (−3 − 5)/(4 − 0) = −2, but k is not differentiable at x = 2, inside (0, 4), so the Mean Value Theorem promises nothing. For example, k(x) = 5 − 4x for 0 ≤ x ≤ 2 and k(x) = −3 for 2 < x ≤ 4 meets every condition, yet k′(x) is only ever −4 or 0.",
+            "(iii) k is continuous on the closed interval [0, 4], so the Extreme Value Theorem guarantees that k attains an absolute maximum value there."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the three practice questions at 15 minutes each without a calculator, then score them with the rubrics and record raw points. Rewrite any justification that lost a point until it names the function, the property and the reason. If a check above went wrong, review its unit before the set."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-function-analysis"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-function-analysis"
+            },
+            {
+              "label": "Unit 1 review: limits and continuity",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 2 review: the derivative and differentiability",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 4 review: L’Hôpital’s Rule",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 5 review: existence theorems and extrema",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 6 review: integration techniques and improper integrals",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 8 review: average value",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Free-response writing guide",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Week 4: derivative definitions and differentiability",
+              "ref": "week:4"
+            },
+            {
+              "label": "Week 10: Mean Value Theorem and extrema",
+              "ref": "week:10"
+            },
+            {
+              "label": "Week 16: improper integrals",
+              "ref": "week:16"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

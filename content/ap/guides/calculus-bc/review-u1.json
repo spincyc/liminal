@@ -1,0 +1,579 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "review-u1",
+  "kind": "unit-review",
+  "unitId": "u1",
+  "title": "Unit 1 review: Limits and Continuity",
+  "author": "bc-review-author",
+  "summary": "A retrieval-first review of limits and continuity for the AP® Calculus BC Exam: recall checks, mixed exam-level problems, the results to know with their hypotheses, model justifications, common traps, and worked examples.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "bc-review-u1-g1",
+      "alt": "Graph of a function f on a grid from x = −3 to x = 4. A line segment rises from a filled dot at (−3, 1) to an open circle at (−1, 3). A second segment starts at a filled dot at (−1, −1) and rises along y = x to (2, 2), with an open circle at (1, 1) and a separate filled dot at (1, 3). From (2, 2) a curve rises steeply toward a dashed vertical line at x = 3. To the right of x = 3, a curve comes up from far below and ends at a filled dot at (4, −2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question on paper, from memory, before you open its answer. Write complete statements, hypotheses included. A blank or a wrong answer is useful: its answer names the section further down to reread."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c1",
+          "see": "what-to-know",
+          "prompt": "In words, what does lim as x→a of f(x) = L mean? What role does f(a) play, and how is the two-sided limit related to the one-sided limits?",
+          "answer": "f(x) can be made as close to L as you like by taking x close enough to a, with x ≠ a. The value f(a) plays no role. The two-sided limit equals L exactly when both one-sided limits exist and equal L.",
+          "steps": [
+            "The limit describes outputs for inputs near a, never at a: f(a) may equal L, differ from L, or be undefined.",
+            "lim as x→a⁻ of f(x) uses only inputs x < a; lim as x→a⁺ of f(x) uses only inputs x > a.",
+            "lim as x→a of f(x) = L if and only if lim as x→a⁻ of f(x) = L and lim as x→a⁺ of f(x) = L.",
+            "Writing lim = ∞ describes outputs that grow without bound. The limit still does not exist as a real number."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c2",
+          "see": "what-to-know",
+          "prompt": "State the three conditions for a function f to be continuous at x = a. What does continuity on a closed interval [a, b] require at the endpoints?",
+          "answer": "f(a) is defined; lim as x→a of f(x) exists; and lim as x→a of f(x) = f(a). On [a, b], f must be continuous at every point of (a, b), with lim as x→a⁺ of f(x) = f(a) and lim as x→b⁻ of f(x) = f(b).",
+          "steps": [
+            "All three conditions are needed. A hole fails the first or the third; a jump or an asymptote fails the second.",
+            "At an endpoint only one side is in the interval, so only the one-sided limit from inside is compared with the function value."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c3",
+          "see": "what-to-know",
+          "prompt": "State the squeeze theorem, including its hypotheses.",
+          "answer": "If g(x) ≤ f(x) ≤ h(x) for all x near a (except possibly at x = a), and lim as x→a of g(x) = lim as x→a of h(x) = L, then lim as x→a of f(x) = L.",
+          "steps": [
+            "Hypothesis 1: the inequality holds on an open interval around a, with x = a itself allowed to be excluded.",
+            "Hypothesis 2: the lower and upper bounds have the same limit L. Bounds with different limits prove nothing.",
+            "Conclusion: f has limit L at a. The same theorem works for one-sided limits and for x→∞ when the inequality holds for all large x."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c4",
+          "see": "what-to-know",
+          "prompt": "State the Intermediate Value Theorem, including its hypothesis. Name two things the theorem does not tell you.",
+          "answer": "If f is continuous on [a, b] and N is any number between f(a) and f(b), then f(c) = N for at least one c in [a, b], with c in (a, b) when N is strictly between f(a) and f(b). It does not tell you where c is, and it does not tell you how many such c there are.",
+          "steps": [
+            "Hypothesis: f is continuous on the whole closed interval [a, b]. One jump or asymptote inside the interval voids the theorem.",
+            "Conclusion: every value between the endpoint values is taken at least once.",
+            "It gives no location, no count, and no uniqueness. It says nothing about values outside the range from f(a) to f(b), and its converse is false: a discontinuous function can still take every such value."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c5",
+          "see": "what-to-know",
+          "prompt": "Name the three main types of discontinuity, and state the limit behavior that identifies each one at x = a.",
+          "answer": "Removable: lim as x→a of f(x) exists, but f(a) is undefined or differs from it. Jump: both one-sided limits exist as real numbers but are different. Infinite: at least one one-sided limit is ∞ or −∞.",
+          "steps": [
+            "Removable: the graph has a hole. Redefining f(a) as the limit repairs it.",
+            "Jump: the graph breaks between two heights. No value of f(a) repairs it.",
+            "Infinite: the graph has a vertical asymptote at x = a.",
+            "A fourth behavior, oscillation such as sin(1/x) near 0, has a one-sided limit that fails to exist without being infinite."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c6",
+          "see": "what-to-know",
+          "prompt": "Give lim as x→0 of sin(x)/x and lim as x→0 of (1 − cos x)/x. Then, for polynomials p and q, state how their degrees decide lim as x→∞ of p(x)/q(x).",
+          "answer": "1 and 0, with x in radians. Equal degrees: the ratio of the leading coefficients. Degree of q larger: 0. Degree of p larger: no finite limit; the quotient grows without bound (∞ or −∞, by the signs of the leading terms).",
+          "steps": [
+            "Both trigonometric limits assume radians; in degrees, sin(x)/x → π/180.",
+            "As x→∞ a polynomial behaves like its leading term, so p(x)/q(x) behaves like (ax^m)/(bx^n) = (a/b)·x^(m−n).",
+            "For x→−∞ the same degree rules hold, but when the degree of p is larger the sign of x^(m−n) can flip the infinite limit."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level, without a calculator. Decide on a method yourself before you read a hint."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c7",
+          "see": "what-to-know",
+          "prompt": "Find each limit.\n\n(a) lim as x→3 of (√(2x + 3) − 3)/(x^2 − 9)\n\n(b) lim as x→0 of (1 − cos(2x))/(x sin x)\n\n(c) lim as x→∞ of (2x + sin x)/(x + 1)",
+          "hint": "Substitute first, and write down the form you get in each part. Then ask what in the expression produces that form: a root, a trigonometric function, or a term that never settles down.",
+          "answer": "(a) 1/18 (b) 2 (c) 2",
+          "steps": [
+            "(a) Substitution gives 0/0. Multiply numerator and denominator by √(2x + 3) + 3. The numerator becomes (2x + 3) − 9 = 2(x − 3).",
+            "For x ≠ 3 near 3, the quotient equals 2(x − 3)/((x − 3)(x + 3)(√(2x + 3) + 3)) = 2/((x + 3)(√(2x + 3) + 3)).",
+            "This is continuous at 3, so substitute: 2/((6)(3 + 3)) = 2/36 = 1/18.",
+            "(b) Substitution gives 0/0. Use the identity 1 − cos(2x) = 2 sin^2(x). For x ≠ 0 near 0, the quotient equals 2 sin^2(x)/(x sin x) = 2·sin(x)/x.",
+            "Since lim as x→0 of sin(x)/x = 1, the limit is 2.",
+            "(c) Divide numerator and denominator by x: the quotient equals (2 + sin(x)/x)/(1 + 1/x) for x > 0.",
+            "For x > 0, −1/x ≤ sin(x)/x ≤ 1/x, and both bounds approach 0 as x→∞, so sin(x)/x → 0 by the squeeze theorem.",
+            "The limit is (2 + 0)/(1 + 0) = 2. Comparing leading terms alone is not a complete argument here: sin x has no limit as x→∞, so it has to be shown negligible."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c8",
+          "see": "what-to-know",
+          "prompt": "The graph of f is shown. Its domain is −3 ≤ x ≤ 4 with x ≠ 3, and the line x = 3 is a vertical asymptote.\n\n(a) Find lim as x→1 of f(x) and f(1).\n\n(b) Find every x in (−3, 4) at which f is not continuous, and classify each discontinuity.\n\n(c) Find lim as x→1 of f(f(x)).\n\n(d) Find lim as x→−1⁻ of f(f(x)).",
+          "hint": "For (c) and (d), describe the inner values f(x) first: what number do they approach, from which side, and do they ever equal it?",
+          "answer": "(a) 1, and f(1) = 3 (b) Jump at x = −1, removable at x = 1, infinite at x = 3 (c) 1 (d) ∞; f(f(x)) increases without bound, so the limit does not exist",
+          "steps": [
+            "(a) Near x = 1 the graph follows the line through the open circle at (1, 1), so lim as x→1 of f(x) = 1. The filled dot at (1, 3) gives f(1) = 3.",
+            "(b) At x = −1: lim as x→−1⁻ of f(x) = 3 and lim as x→−1⁺ of f(x) = −1. Both are finite and they differ, so f has a jump discontinuity.",
+            "At x = 1: the limit exists and equals 1, but f(1) = 3 ≠ 1. The discontinuity is removable.",
+            "At x = 3: lim as x→3⁻ of f(x) = ∞ and lim as x→3⁺ of f(x) = −∞, and f(3) is undefined. The discontinuity is infinite.",
+            "At x = 2 the line and the curve meet at (2, 2) with no gap, so f is continuous there. A corner is not a discontinuity.",
+            "(c) For x near 1 with x ≠ 1, the graph is the line y = x, so f(x) = x: the inner values approach 1 but never equal 1.",
+            "For such inputs u = f(x) is near 1 and u ≠ 1, so f(u) = u. Hence f(f(x)) = x for x near 1, x ≠ 1, and the limit is 1.",
+            "The shortcut f(f(1)) = f(3) fails twice: a limit ignores the value f(1), and f(3) is undefined anyway.",
+            "(d) As x→−1⁻, the left segment rises toward the open circle at (−1, 3), so u = f(x) → 3 through values less than 3.",
+            "As u→3⁻, f(u) → ∞ along the left branch of the asymptote. So f(f(x)) → ∞ as x→−1⁻: the outputs grow without bound and the limit does not exist as a real number."
+          ],
+          "figureIds": [
+            "bc-review-u1-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c9",
+          "see": "worked-examples",
+          "prompt": "The function g is continuous on [1, 7]. Selected values are shown.\n\n| x | 1 | 3 | 4 | 7 |\n| --- | --- | --- | --- | --- |\n| g(x) | 4 | 2 | 6 | 5 |\n\nWhat is the least possible number of solutions of the equation g(x) = x on [1, 7]? Justify your answer.",
+          "hint": "Move everything to one side of the equation, and add a row to the table for the new function.",
+          "answer": "3",
+          "steps": [
+            "Let h(x) = g(x) − x. A solution of g(x) = x is exactly a zero of h.",
+            "h is continuous on [1, 7], because g and x are continuous there.",
+            "From the table: h(1) = 4 − 1 = 3, h(3) = 2 − 3 = −1, h(4) = 6 − 4 = 2, and h(7) = 5 − 7 = −2.",
+            "h changes sign on [1, 3], on [3, 4] and on [4, 7]. Applying the Intermediate Value Theorem to h on each interval gives a zero in each of (1, 3), (3, 4) and (4, 7).",
+            "These open intervals do not overlap, so g(x) = x has at least 3 solutions.",
+            "Three is possible: if g is the function whose graph joins the table points with line segments, h is linear between table points and has exactly one zero on each interval. So the least number is 3."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c10",
+          "see": "what-to-know",
+          "prompt": "Let f(x) = (1 − cos(kx))/x^2 for x ≠ 0, and f(0) = 8, where k is a positive constant.\n\n(a) Find the value of k for which f is continuous at x = 0.\n\n(b) For that value of k, explain why there is a number c in (0, π/2) with f(c) = 1.",
+          "hint": "Rewrite 1 − cos(kx) so that the sine of half the angle appears.",
+          "answer": "(a) k = 4 (b) f is continuous on [0, π/2] with f(0) = 8 and f(π/2) = 0, and 0 < 1 < 8, so the Intermediate Value Theorem applies.",
+          "steps": [
+            "(a) For x ≠ 0, 1 − cos(kx) = 2 sin^2(kx/2), so f(x) = 2 sin^2(kx/2)/x^2 = (k^2/2)·(sin(kx/2)/(kx/2))^2.",
+            "As x→0, kx/2 → 0, so sin(kx/2)/(kx/2) → 1 and lim as x→0 of f(x) = k^2/2.",
+            "Continuity at 0 requires lim as x→0 of f(x) = f(0): k^2/2 = 8, so k^2 = 16 and k = 4, since k > 0.",
+            "(b) With k = 4, f is continuous at 0 by part (a). For 0 < x ≤ π/2, f is a quotient of continuous functions with x^2 ≠ 0. So f is continuous on [0, π/2].",
+            "f(0) = 8 and f(π/2) = (1 − cos(2π))/(π^2/4) = 0.",
+            "Since 0 < 1 < 8, the Intermediate Value Theorem gives a c in (0, π/2) with f(c) = 1.",
+            "With any other positive k, f would be discontinuous at 0, and the theorem's hypothesis would fail on [0, π/2]."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u1-c11",
+          "see": "what-to-know",
+          "prompt": "A function f satisfies 3x − (x − 1)^2 ≤ f(x) ≤ 3x + (x − 1)^2 for every real number x.\n\n(a) Find f(1) and lim as x→1 of f(x).\n\n(b) Find lim as x→1 of (f(x) − 3)/(x − 1). What does this limit tell you about f?",
+          "hint": "For (b), subtract 3 from every part of the inequality, then divide by x − 1, and keep track of what happens when x − 1 < 0.",
+          "answer": "(a) f(1) = 3, and lim as x→1 of f(x) = 3 (b) 3; f is differentiable at x = 1 with f′(1) = 3",
+          "steps": [
+            "(a) At x = 1 the inequality reads 3 ≤ f(1) ≤ 3, so f(1) = 3.",
+            "Both bounds are polynomials equal to 3 at x = 1, so both approach 3 as x→1. By the squeeze theorem, lim as x→1 of f(x) = 3, and f is continuous at 1.",
+            "(b) Subtract 3 throughout: 3(x − 1) − (x − 1)^2 ≤ f(x) − 3 ≤ 3(x − 1) + (x − 1)^2.",
+            "For x > 1, dividing by x − 1 > 0 gives 3 − (x − 1) ≤ (f(x) − 3)/(x − 1) ≤ 3 + (x − 1).",
+            "For x < 1, dividing by x − 1 < 0 reverses the inequalities: 3 + (x − 1) ≤ (f(x) − 3)/(x − 1) ≤ 3 − (x − 1). Either way, 3 − |x − 1| ≤ (f(x) − 3)/(x − 1) ≤ 3 + |x − 1| for x ≠ 1.",
+            "Both bounds approach 3 as x→1, so the limit is 3 by the squeeze theorem.",
+            "Because f(1) = 3, this is lim as x→1 of (f(x) − f(1))/(x − 1), the definition of f′(1) from Unit 2. So f is differentiable at 1 with f′(1) = 3, even though no formula for f is known."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Limits and one-sided limits",
+          "text": "lim as x→a of f(x) = L means f(x) can be made as close to L as you like by taking x close enough to a, with x ≠ a. The two-sided limit exists exactly when both one-sided limits exist and are equal.",
+          "conditions": [
+            "L is a real number. Writing lim = ∞ records unbounded growth; the limit does not exist.",
+            "At an endpoint of the domain, only the one-sided limit from inside the domain is meaningful.",
+            "A table or a graph suggests a limit; it does not prove one. Sampled values can miss oscillation or a sudden change near a."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Limit laws",
+          "text": "If lim as x→a of f(x) = L and lim as x→a of g(x) = M, then f + g, f − g, c·f, f·g and f/g have limits L + M, L − M, cL, LM and L/M, and f(x)^n has limit L^n for each positive integer n.",
+          "conditions": [
+            "Both limits must exist as real numbers. If either fails, the laws say nothing, and the combination must be examined directly: x·sin(1/x) → 0 even though sin(1/x) has no limit at 0.",
+            "The quotient law needs M ≠ 0. If M = 0 and L ≠ 0, the quotient is unbounded near a; check its sign on each side. If L = M = 0, the form 0/0 decides nothing until you rewrite.",
+            "For an even root, √(f(x)) → √L needs L > 0, or L = 0 with f(x) ≥ 0 near a."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Limits through a continuous function",
+          "text": "If lim as x→a of g(x) = b and f is continuous at b, then lim as x→a of f(g(x)) = f(b). The same holds for one-sided limits and as x→∞.",
+          "conditions": [
+            "f must be continuous at b. If it is not, find how g(x) approaches b (the side, and whether g(x) equals b near a) and use the matching limit of f.",
+            "If g(x) → ∞ or −∞, use the end behavior of f instead: arctan u → π/2 as u→∞, and e^(−u) → 0 as u→∞.",
+            "Example: as x→0⁺, 1/x → ∞ and arctan(1/x) → π/2; as x→0⁻, arctan(1/x) → −π/2, so arctan(1/x) has a jump discontinuity at 0."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Squeeze theorem",
+          "text": "If g(x) ≤ f(x) ≤ h(x) for all x near a, except possibly at a, and lim as x→a of g(x) = lim as x→a of h(x) = L, then lim as x→a of f(x) = L.",
+          "conditions": [
+            "The inequality must hold on an open interval around a (or for all large x, for a limit at infinity).",
+            "Both bounds must have the same limit.",
+            "Typical use: a bounded factor times a factor that tends to 0. Bound with absolute values, −|u| ≤ u·sin(…) ≤ |u|, so the inequality stays correct when u < 0."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Two trigonometric limits",
+          "text": "lim as x→0 of sin(x)/x = 1 and lim as x→0 of (1 − cos x)/x = 0. Rescaled for a constant k ≠ 0: sin(kx)/x → k, tan(kx)/x → k, and (1 − cos(kx))/x^2 → k^2/2.",
+          "conditions": [
+            "x is in radians. In degrees, sin(x)/x → π/180.",
+            "The argument of the sine must match the denominator: write sin(5x)/(2x) = (5/2)·sin(5x)/(5x) before using the limit."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Continuity at a point",
+          "text": "f is continuous at x = a when f(a) is defined, lim as x→a of f(x) exists, and lim as x→a of f(x) = f(a).",
+          "conditions": [
+            "A justification names all three conditions; one alone is not enough.",
+            "For a piecewise function at a boundary, find each one-sided limit from its own formula, then compare both with the value the definition assigns at the boundary."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Continuity on intervals",
+          "text": "f is continuous on an open interval when it is continuous at every point of the interval. On [a, b], f must also be continuous from the right at a and from the left at b. Polynomials, rational functions, roots, exponentials, logarithms, sine, cosine and arctangent are continuous at every point of their domains, and sums, products, quotients and compositions of continuous functions are continuous wherever they are defined.",
+          "conditions": [
+            "A quotient fails to be continuous where its denominator is 0, so find the domain first.",
+            "Continuous on its domain is not the same as continuous on an interval: 1/x is continuous at every point of its domain, but not on any interval that contains 0."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Intermediate Value Theorem",
+          "text": "If f is continuous on [a, b] and N is between f(a) and f(b), then f(c) = N for at least one c in [a, b]. If N is strictly between f(a) and f(b), then c is in (a, b).",
+          "conditions": [
+            "f must be continuous on the whole closed interval. A single jump, hole or asymptote in [a, b] voids the theorem.",
+            "The theorem establishes existence only: not where c is, not how many such c there are.",
+            "To show an equation such as g(x) = x has a solution, apply the theorem to h(x) = g(x) − x and look for a sign change.",
+            "The converse is false: a function that takes every value between f(a) and f(b) need not be continuous."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Asymptotes",
+          "text": "If lim as x→∞ of f(x) = L or lim as x→−∞ of f(x) = L, the line y = L is a horizontal asymptote. If f(x) → ∞ or −∞ as x→a from either side, the line x = a is a vertical asymptote.",
+          "conditions": [
+            "A zero of a denominator gives a vertical asymptote only when the numerator does not cancel it; check the simplified form.",
+            "Find x→∞ and x→−∞ separately when a root, an absolute value or an exponential appears: √(x^2) = |x|, which equals −x for x < 0, and e^x behaves differently in the two directions.",
+            "A graph may cross its horizontal asymptote, even infinitely often."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "When substitution gives 0/0 or an undefined expression, rewrite the expression as one that agrees with it for x ≠ a and substitute again, or bound it and squeeze.",
+          "head": [
+            "The expression contains",
+            "Rewrite by",
+            "Example"
+          ],
+          "rows": [
+            [
+              "A polynomial or rational quotient",
+              "Factoring and canceling the common factor x − a",
+              "(x^2 − 1)/(x − 1) = x + 1 for x ≠ 1, so the limit at 1 is 2"
+            ],
+            [
+              "A difference involving a square root",
+              "Multiplying numerator and denominator by the conjugate",
+              "(√(x + 1) − 1)/x = 1/(√(x + 1) + 1) for x ≠ 0, so the limit at 0 is 1/2"
+            ],
+            [
+              "A compound fraction",
+              "Combining over a common denominator",
+              "(1/x − 1/2)/(x − 2) = −1/(2x) for x ≠ 2, so the limit at 2 is −1/4"
+            ],
+            [
+              "Sine, cosine or tangent near 0",
+              "An identity, then a rescaled trigonometric limit",
+              "sin(3x)/sin(2x) = (3/2)·(sin(3x)/(3x))·((2x)/sin(2x)) → 3/2"
+            ],
+            [
+              "A bounded factor that oscillates",
+              "The squeeze theorem",
+              "−x^2 ≤ x^2 cos(1/x) ≤ x^2 for x ≠ 0, so the limit at 0 is 0"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "L'Hôpital's Rule (Unit 4) also resolves 0/0 and ∞/∞ forms. The methods in the table are often faster, they are the only option when a question rules the rule out, and they are needed for limits such as (2x + sin x)/(x + 1) as x→∞, where the rule's quotient of derivatives has no limit."
+        },
+        {
+          "type": "table",
+          "caption": "Types of discontinuity at x = a",
+          "head": [
+            "Type",
+            "One-sided limits at a",
+            "f(a)",
+            "On the graph"
+          ],
+          "rows": [
+            [
+              "Removable",
+              "Equal and finite, so the limit exists",
+              "Undefined, or not equal to the limit",
+              "A hole, possibly with a dot at another height"
+            ],
+            [
+              "Jump",
+              "Both finite, but different",
+              "Any value, or undefined",
+              "A break between two heights"
+            ],
+            [
+              "Infinite",
+              "At least one is ∞ or −∞",
+              "Any value, or undefined",
+              "A vertical asymptote"
+            ],
+            [
+              "Oscillating",
+              "At least one does not exist and is not infinite",
+              "Any value, or undefined",
+              "Ever faster oscillation, as sin(1/x) near 0"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Limits at infinity of p(x)/q(x), where p has leading term ax^m and q has leading term bx^n",
+          "head": [
+            "Degrees",
+            "Limit as x→∞",
+            "Horizontal asymptote"
+          ],
+          "rows": [
+            [
+              "m < n",
+              "0",
+              "y = 0"
+            ],
+            [
+              "m = n",
+              "a/b",
+              "y = a/b"
+            ],
+            [
+              "m > n",
+              "∞ or −∞, by the sign of a/b (as x→−∞, also by the sign of x^(m−n))",
+              "None"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A complete justification names the function, gives the values or limits that support the claim, and names the definition or theorem it relies on. Write it like these."
+        },
+        {
+          "type": "model",
+          "prompt": "Continuity at the boundary of p(x) = x^2 + 1 for x ≤ 2 and p(x) = 3x − 1 for x > 2.",
+          "text": "p(2) = 2^2 + 1 = 5. lim as x→2⁻ of p(x) = 2^2 + 1 = 5 and lim as x→2⁺ of p(x) = 3(2) − 1 = 5, so lim as x→2 of p(x) = 5. Since lim as x→2 of p(x) = p(2), p is continuous at x = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "A zero from a table, where w is continuous on [0, 6] with w(2) = 1.5 and w(5) = −0.8.",
+          "text": "w is continuous on [2, 5], and w(5) = −0.8 < 0 < 1.5 = w(2). By the Intermediate Value Theorem, there is a value c in (2, 5) with w(c) = 0."
+        },
+        {
+          "type": "model",
+          "prompt": "A two-sided limit that fails, where lim as x→4⁻ of s(x) = 2 and lim as x→4⁺ of s(x) = 5.",
+          "text": "lim as x→4 of s(x) does not exist, because the one-sided limits at x = 4 are different: 2 from the left and 5 from the right."
+        },
+        {
+          "type": "model",
+          "prompt": "A squeeze argument for lim as x→0 of x·cos(2/x).",
+          "text": "For x ≠ 0, −1 ≤ cos(2/x) ≤ 1, so −|x| ≤ x·cos(2/x) ≤ |x|. Since lim as x→0 of (−|x|) = 0 and lim as x→0 of |x| = 0, the squeeze theorem gives lim as x→0 of x·cos(2/x) = 0."
+        },
+        {
+          "type": "model",
+          "prompt": "A vertical asymptote of v(x) = (x + 1)/(x − 2).",
+          "text": "As x→2⁺, x + 1 → 3 and x − 2 → 0 through positive values, so v(x) → ∞. Therefore the line x = 2 is a vertical asymptote of the graph of v."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting f(a) as the limit, or deciding that the limit cannot exist because f(a) is undefined.",
+          "fix": "A limit uses inputs near a, never a itself. Read the approach from each side, and use f(a) only in the third continuity condition."
+        },
+        {
+          "type": "trap",
+          "text": "Treating 0/0 as an answer: writing that the limit is 0, 1, or undefined.",
+          "fix": "0/0 is a signal to rewrite. Factor, use a conjugate or an identity, and then substitute again."
+        },
+        {
+          "type": "trap",
+          "text": "Writing a false equality chain, such as (x^2 − 4)/(x − 2) = x + 2 = 4, or dropping the limit notation partway through.",
+          "fix": "Keep \"lim as x→2 of\" on every line until you substitute, and say \"for x ≠ 2\" when you cancel. A false equality can cost a point even when the final number is right."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming √(x^2) = x as x→−∞.",
+          "fix": "√(x^2) = |x| = −x for x < 0. For lim as x→−∞ of (2x + 3)/√(x^2 + 5), write √(x^2 + 5) = −x·√(1 + 5/x^2); the quotient becomes −(2 + 3/x)/√(1 + 5/x^2), and the limit is −2."
+        },
+        {
+          "type": "trap",
+          "text": "Calling every zero of a denominator a vertical asymptote.",
+          "fix": "Factor and cancel first. If the factor cancels completely and the simplified denominator is not 0 at a, the graph has a hole at x = a, not an asymptote."
+        },
+        {
+          "type": "trap",
+          "text": "Applying the Intermediate Value Theorem without stating continuity, or on an interval that contains a discontinuity.",
+          "fix": "Write \"f is continuous on [a, b]\" with a reason before giving the endpoint values. If a denominator is 0 somewhere in [a, b], the theorem does not apply on that interval."
+        },
+        {
+          "type": "trap",
+          "text": "Concluding from the Intermediate Value Theorem that there is exactly one solution, or that a value outside the range from f(a) to f(b) is never taken.",
+          "fix": "The theorem promises at least one c for each value between f(a) and f(b), and nothing more. Uniqueness needs another argument, such as f being strictly increasing (Unit 5)."
+        },
+        {
+          "type": "trap",
+          "text": "Splitting a product with a limit law when one factor has no limit: lim as x→0 of x·sin(1/x) = (lim x)·(lim sin(1/x)).",
+          "fix": "The limit laws need each limit to exist. Use the squeeze theorem on the whole product instead."
+        },
+        {
+          "type": "trap",
+          "text": "Using sin(kx)/x → 1 instead of k, or using the trigonometric limits with degrees.",
+          "fix": "Make the denominator match the argument, sin(kx)/x = k·sin(kx)/(kx) → k, and work in radians."
+        },
+        {
+          "type": "trap",
+          "text": "Evaluating a composite limit lim as x→a of f(g(x)) as f(g(a)).",
+          "fix": "Find how g(x) approaches its limit b: the value, the side, and whether g(x) equals b near a. Then use the matching limit of f at b, or f(b) only when f is continuous at b."
+        },
+        {
+          "type": "trap",
+          "text": "Trusting a table that samples only a few inputs.",
+          "fix": "Use inputs on both sides, closer than seems necessary, and confirm with algebra or a graph. The values of cos(2π/x) at x = 0.1, 0.01 and 0.001 are all 1, yet lim as x→0⁺ of cos(2π/x) does not exist."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let r(x) = (x^2 + kx + 6)/(x^2 − 4), where k is a constant.\n\n(a) Find the value of k for which r has a removable discontinuity at x = 2, and find lim as x→2 of r(x) for that k.\n\n(b) For that k, find lim as x→−2⁻ of r(x) and lim as x→−2⁺ of r(x).\n\n(c) Find every horizontal asymptote of the graph of r.",
+          "answer": "(a) k = −5, and lim as x→2 of r(x) = −1/4 (b) ∞ and −∞ (c) y = 1",
+          "steps": [
+            "(a) The denominator is 0 at x = 2. If the numerator were not 0 there, r would be unbounded near 2. A removable discontinuity needs the limit to exist, so the numerator must be 0 at x = 2: 4 + 2k + 6 = 0, and k = −5.",
+            "With k = −5, x^2 − 5x + 6 = (x − 2)(x − 3) and x^2 − 4 = (x − 2)(x + 2), so r(x) = (x − 3)/(x + 2) for x ≠ 2 and x ≠ −2.",
+            "lim as x→2 of r(x) = (2 − 3)/(2 + 2) = −1/4. The discontinuity is removable: defining r(2) = −1/4 would repair it.",
+            "(b) Near x = −2 the numerator x − 3 is close to −5. As x→−2⁻, x + 2 → 0 through negative values, so r(x) is a negative number divided by a small negative number: lim as x→−2⁻ of r(x) = ∞.",
+            "As x→−2⁺, x + 2 → 0 through positive values, so lim as x→−2⁺ of r(x) = −∞. The line x = −2 is a vertical asymptote.",
+            "(c) The numerator and denominator of r both have degree 2 and leading coefficient 1, so r(x) → 1 as x→∞ and as x→−∞. The only horizontal asymptote is y = 1."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Let F(x) = (x + 2)/(x − 1) − (x + 1).\n\n(a) Show that the equation (x + 2)/(x − 1) = x + 1 has a solution in (2, 3).\n\n(b) Compute F(0) and F(2). Does the Intermediate Value Theorem ensure a zero of F in (0, 2)? Does F have a zero there?",
+          "answer": "(a) F is continuous on [2, 3] with F(2) = 1 and F(3) = −3/2, so the theorem gives a solution in (2, 3). (b) F(0) = −3 and F(2) = 1, but F is not continuous at x = 1, so the theorem does not apply; F has no zero in (0, 2).",
+          "steps": [
+            "(a) The equation says F(x) = 0, so look for a sign change of F.",
+            "F is a rational function minus a polynomial, so it is continuous wherever x − 1 ≠ 0. In particular, F is continuous on [2, 3].",
+            "F(2) = 4/1 − 3 = 1 and F(3) = 5/2 − 4 = −3/2.",
+            "Since F(3) < 0 < F(2), the Intermediate Value Theorem gives a c in (2, 3) with F(c) = 0, that is, (c + 2)/(c − 1) = c + 1.",
+            "(b) F(0) = 2/(−1) − 1 = −3 and F(2) = 1, which have opposite signs.",
+            "But F is undefined at x = 1, which lies in [0, 2]. F is not continuous on [0, 2], so the theorem does not apply there.",
+            "In fact, for x ≠ 1, F(x) = 0 means x + 2 = (x + 1)(x − 1) = x^2 − 1, so x^2 − x − 3 = 0 and x = (1 + √13)/2 ≈ 2.303 or x = (1 − √13)/2 ≈ −1.303. Neither is in (0, 2). The sign change on [0, 2] comes from the vertical asymptote at x = 1, not from a zero."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Without L'Hôpital's Rule, find lim as x→0 of (1 − cos x)/(x tan x).",
+          "answer": "1/2",
+          "steps": [
+            "Substitution gives 0/0, so rewrite.",
+            "Multiply numerator and denominator by 1 + cos x. The numerator becomes 1 − cos^2(x) = sin^2(x).",
+            "Write tan x = sin(x)/cos(x). For x ≠ 0 near 0, the quotient becomes sin^2(x)·cos(x)/(x·sin(x)·(1 + cos x)) = (sin(x)/x)·(cos(x)/(1 + cos x)).",
+            "As x→0, sin(x)/x → 1, and cos(x)/(1 + cos x) → 1/2 because that quotient is continuous at 0.",
+            "By the product law, the limit is 1·(1/2) = 1/2.",
+            "The same conjugate step shows (1 − cos x)/x^2 = (sin(x)/x)^2·1/(1 + cos x) → 1/2, the fact behind (1 − cos(kx))/x^2 → k^2/2."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, then come back to it again in a few days. Take the unit test under timed conditions and score it with the key. Continuity and Intermediate Value Theorem arguments also appear inside longer free-response questions; the workshops below practise them there."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 1: Limits from graphs, tables, and algebra",
+              "ref": "week:1"
+            },
+            {
+              "label": "Week 2: Squeeze theorem and continuity",
+              "ref": "week:2"
+            },
+            {
+              "label": "Week 3: Infinite behavior and the Intermediate Value Theorem",
+              "ref": "week:3"
+            },
+            {
+              "label": "Unit 1 test",
+              "ref": "test:unit-1"
+            },
+            {
+              "label": "Unit 1 test key",
+              "ref": "key:unit-1"
+            },
+            {
+              "label": "Free-response workshop: Functions given by tables",
+              "ref": "guide:fr-tables"
+            },
+            {
+              "label": "Free-response workshop: Analysis of a given function",
+              "ref": "guide:fr-function-analysis"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

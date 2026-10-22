@@ -1,0 +1,379 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-implicit-rates",
+  "kind": "fr-archetype",
+  "title": "Implicit differentiation and related rates",
+  "author": "bc-workshop-author",
+  "summary": "Some free-response questions start from a relation between quantities instead of a formula for one of them: a curve given by an equation in x and y, or a geometric fact whose lengths, areas and angles all change in time. This workshop shows the parts these questions usually contain, what earns each kind of point, sentences that earn the justification points, the traps that cost points most often, and a worked model on a fresh setting. Three quick checks follow, and the practice set has three no-calculator questions to work at 15 minutes each.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "bc-fr-implicit-rates-g1",
+      "alt": "A triangle formed by a laptop's keyboard, labeled 24 cm, along the bottom and its screen, labeled 18 cm, rising from the hinge at the left. The angle θ between keyboard and screen is marked at the hinge. A dashed segment labeled c joins the front edge of the keyboard to the top edge of the screen.",
+      "caption": "A laptop opened to angle θ.",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The question gives you an equation that ties quantities together without solving for any one of them. Sometimes it is a curve in x and y. Sometimes it is a geometric fact, such as a volume formula, the Pythagorean theorem or the law of cosines, with every length changing in time. You differentiate the relation as it stands, then use what you get: a slope, a tangent line, a rate with units, a second derivative or an estimate."
+        },
+        {
+          "type": "text",
+          "text": "On the AP® Calculus BC Exam, expect this archetype most often in the no-calculator part of the free-response section. The equations are chosen so that the algebra comes out exact at the points asked about. A context version can sit in the calculator part when one value in it has to be found numerically. The reasoning is the same either way; only the arithmetic moves."
+        },
+        {
+          "type": "text",
+          "text": "It seldom stands alone. An implicit curve often comes with Unit 5 curve analysis: which points have horizontal tangents, and whether one of them is a local maximum. A dy/dx written in terms of x and y also opens many Unit 7 differential-equation questions, where the same moves give d^2y/dx^2 and a tangent-line estimate. Related rates are a Unit 4 context question at heart, so units, the sign of each rate and an interpretation sentence carry points."
+        },
+        {
+          "type": "text",
+          "text": "Keep the setting straight. For an implicit curve you differentiate with respect to x and treat y as an unknown function of x. For related rates every changing quantity is a function of t, including the ones the question never asks about. A parametric or polar curve is a different archetype: there you differentiate with respect to the parameter."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Parts this archetype draws on. A question uses three or four of them, usually in this order.",
+          "head": [
+            "Part",
+            "Typical task",
+            "What it tests"
+          ],
+          "rows": [
+            [
+              "Show that",
+              "Show that dy/dx equals a given expression.",
+              "Implicit differentiation with the chain and product rules, and clean algebra."
+            ],
+            [
+              "Tangent line",
+              "Write the tangent line at a given point, then use it to estimate a nearby y-value.",
+              "Evaluating dy/dx at a point, point-slope form and linear approximation."
+            ],
+            [
+              "Horizontal or vertical tangents",
+              "Find every such point, or decide whether one exists with a given coordinate.",
+              "Setting the numerator or the denominator of dy/dx to 0 and solving with the curve's equation."
+            ],
+            [
+              "Second derivative",
+              "Find d^2y/dx^2 at a point, then classify a horizontal-tangent point or judge an estimate.",
+              "Differentiating again and substituting the value of dy/dx."
+            ],
+            [
+              "Related rates",
+              "Find a rate at an instant with units, and say whether a quantity is increasing or decreasing.",
+              "Writing a relation that holds at all times, differentiating with respect to t, then substituting."
+            ],
+            [
+              "Estimate and justify",
+              "Estimate a quantity a short time later and say whether the estimate is too large or too small.",
+              "Linearization and the sign of the second derivative on the interval."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When a part says \"show that\", the expression it gives is yours to use in later parts even if you cannot derive it. Do not skip the later parts because the first one stalled."
+        }
+      ]
+    },
+    {
+      "id": "points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's workshop rubrics split each part into separate points, and each point rewards something you can see on the page. Knowing which kind of point a line of work earns tells you what to write."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup point: the differentiated equation, written before any number goes in. On a curve it is the line containing dy/dx; in related rates it is the equation containing every rate, such as 0 = 2πrh(dr/dt) + πr^2(dh/dt). A bare answer with no setup earns the answer point at most.",
+            "Answer point: the value, in a readable exact form. Without a calculator, −3/8 or 2√3/5 is finished; you need not convert to a decimal.",
+            "Justification point: a sentence that names the reason. For a horizontal tangent, the numerator of dy/dx is 0 and the denominator is not. For an over- or underestimate, the sign of the second derivative on the interval and what it says about the curve and its tangent line.",
+            "Units point: a rate carries the units of the quantity per unit of time, such as cm^2/s or rad/min. When the prompt says to indicate units, a missing or wrong unit costs a point even beside the right number. Some rubrics give units their own point and some attach them to the answer point; either way they are required.",
+            "Consistency: a later part that uses your own earlier value, correctly, earns its points even when the earlier value was wrong. Write the earlier value into the later work so a reader can follow it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Horizontal and vertical tangents",
+          "text": "Write dy/dx = N/D, where N and D are expressions in x and y. The tangent line is horizontal at a point of the curve where N = 0 and D ≠ 0, and vertical at a point of the curve where D = 0 and N ≠ 0.",
+          "conditions": [
+            "The point must satisfy the curve's equation. Solve N = 0 (or D = 0) together with that equation; one condition alone describes a line or curve of candidates, not points.",
+            "If N = 0 and D = 0 at the same point, the formula decides nothing there. Say so; such a point needs separate study.",
+            "Check every factor of D. A factor such as 1 + x may give no points at all once you substitute into the equation."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Tangent-line estimates: too large or too small",
+          "text": "If the second derivative is positive on the interval between the point of tangency and the input you estimate at, the graph is concave up there and lies above the tangent line, so the estimate is too small. If it is negative, the estimate is too large.",
+          "conditions": [
+            "The sign must hold on the whole interval, not only at the point of tangency. A question usually states this or lets you show it.",
+            "The same rule works for any function of t, such as a radius or a distance in a related-rates question: find its second derivative with respect to t.",
+            "Its hypothesis fails if an inflection point lies in the interval, where the second derivative changes sign, or if a vertical tangent lies in it, where the curve stops being the graph of a differentiable function. Then the sign at one point decides nothing."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Related rates in order",
+          "text": "Write one equation that holds at every instant, differentiate both sides with respect to t, and only then substitute the values at the instant.",
+          "conditions": [
+            "A quantity that is constant for all time, such as a fixed volume or a fixed length, may be substituted before differentiating. A value that holds only at the instant may not.",
+            "If a value you need at the instant is not given, get it from the original relation, for example a length from a fixed volume.",
+            "Every changing quantity gets its own rate, even one the question does not mention, until you eliminate it with a second relation."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each sentence below would earn the point it is written for. Most of them use the curve y^3 + 3y = x^2 − 2x + 5 and the laptop from the worked model, so you can compare them with the full solutions."
+        },
+        {
+          "type": "model",
+          "prompt": "Showing that dy/dx equals a given expression.",
+          "text": "Differentiating both sides with respect to x: 3y^2(dy/dx) + 3(dy/dx) = 2x − 2. So (3y^2 + 3)(dy/dx) = 2x − 2, and dy/dx = (2x − 2)/(3y^2 + 3)."
+        },
+        {
+          "type": "model",
+          "prompt": "Finding a point with a horizontal tangent.",
+          "text": "dy/dx = 0 requires 2x − 2 = 0, so x = 1. On the curve, x = 1 gives y^3 + 3y = 4, so y = 1. At (1, 1) the denominator 3y^2 + 3 = 6 is not 0, so the tangent line at (1, 1) is horizontal."
+        },
+        {
+          "type": "model",
+          "prompt": "Classifying that point.",
+          "text": "At (1, 1), dy/dx = 0 and d^2y/dx^2 = 1/3 > 0, so by the second derivative test the curve has a local minimum at (1, 1)."
+        },
+        {
+          "type": "model",
+          "prompt": "Judging a tangent-line estimate.",
+          "text": "Because d^2c/dt^2 < 0 throughout the half second after that instant, the graph of c is concave down on that interval and lies below its tangent line, so the estimate 31.44 cm is an overestimate."
+        },
+        {
+          "type": "model",
+          "prompt": "Reporting a rate with its sign and units.",
+          "text": "dh/dt = −0.25 m/min at that instant: the water level is falling at 0.25 meter per minute."
+        },
+        {
+          "type": "model",
+          "prompt": "Interpreting a rate of 0.",
+          "text": "dA/dt = 0 cm^2/s when θ = π/2: at that instant the area is neither increasing nor decreasing. It has reached its largest value, because sin θ is largest at θ = π/2."
+        },
+        {
+          "type": "model",
+          "prompt": "A point where the formula gives 0/0.",
+          "text": "At this point both the numerator and the denominator of dy/dx are 0, so the expression does not give a slope here, and I cannot conclude from it that the tangent is horizontal or vertical."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Treating y as a constant: writing d/dx(y^3) = 3y^2, or d/dx(xy) = y.",
+          "fix": "Every term containing y gets a factor dy/dx from the chain rule, and every product of x and y needs the product rule: d/dx(xy) = y + x(dy/dx)."
+        },
+        {
+          "type": "trap",
+          "text": "Substituting the instant's values too early. Putting h = 4 into V = πr^2h before differentiating freezes the height, so its rate drops out of the equation.",
+          "fix": "Differentiate the relation that holds at all times, then substitute. Only quantities that are constant for all time may go in first."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting a horizontal tangent from the numerator alone: solving 2x − 2 = 0 and answering x = 1.",
+          "fix": "A point has two coordinates and must lie on the curve. Solve the numerator condition with the curve's equation, give the point, and check that the denominator is not 0 there."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a 0/0 point a horizontal or vertical tangent.",
+          "fix": "When the numerator and denominator of dy/dx are both 0, the formula is silent. Say that the expression gives no slope there; do not classify the point on that evidence."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving dy/dx inside an answer for d^2y/dx^2 at a point.",
+          "fix": "Find dy/dx at the point as a number first, then substitute x, y and that number into the second-derivative expression. Switching to numbers as soon as the differentiation is done is shorter and less error-prone than simplifying a general formula."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the sign of a rate. \"The level changes at 0.25 m/min\" does not say whether it rises or falls.",
+          "fix": "Give the signed rate, dh/dt = −0.25 m/min, or say \"falling at 0.25 meter per minute\". When asked whether a quantity is increasing, name the rate and its sign in the sentence."
+        },
+        {
+          "type": "trap",
+          "text": "Wrong units: giving an area's rate in cm/s, or an angle's rate in degrees per second when the work used radians.",
+          "fix": "The units of dQ/dt are the units of Q divided by the units of t: cm^2/s for area, rad/s for an angle measured in radians."
+        },
+        {
+          "type": "trap",
+          "text": "Putting a changing length into the figure as a number. If a side is labeled 24 cm but is actually changing, its rate silently becomes 0.",
+          "fix": "Name every changing quantity with a letter. Keep numbers only for lengths that never change."
+        },
+        {
+          "type": "trap",
+          "text": "Trusting a tangent-line estimate near a vertical tangent. There the slope changes fast, the tangent line leaves the curve quickly, and the curve may not even reach the x-value used.",
+          "fix": "Use tangent-line estimates for short steps from a point where the slope is moderate. If a vertical tangent or an inflection point may lie in between, say that the estimate is unreliable rather than judging it with one second-derivative value."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Two short questions in the style of this archetype, each solved in full. Cover the solution, try every part, then compare your setup lines with the steps."
+        },
+        {
+          "type": "example",
+          "prompt": "A laptop's keyboard is 24 cm deep and its screen is 18 cm tall; they meet at the hinge, as shown in the figure. The laptop is being opened so that the angle θ between keyboard and screen increases at 0.2 radian per second. Let c be the distance from the front edge of the keyboard to the top edge of the screen. By the law of cosines, c^2 = 24^2 + 18^2 − 2(24)(18)cos θ.\n\n(a) Find dc/dt at the instant when θ = π/2. Indicate units of measure.\n\n(b) The triangle formed by keyboard, screen and the segment of length c has area A = (1/2)(24)(18)sin θ. Find dA/dt at the same instant and interpret it.\n\n(c) Use the line tangent to the graph of c as a function of t, at that instant, to estimate c half a second later. Is the estimate too large or too small? Justify.",
+          "answer": "(a) dc/dt = 2.88 cm/s. (b) dA/dt = 0 cm^2/s: at that instant the area is not changing, because it has reached its largest value. (c) c ≈ 31.44 cm, an overestimate, because d^2c/dt^2 < 0 on the half second, so the graph of c is concave down and lies below its tangent line.",
+          "steps": [
+            "(a) At θ = π/2, cos θ = 0, so c^2 = 576 + 324 = 900 and c = 30 cm. This value comes from the relation itself, not from the figure.",
+            "Differentiate with respect to t, treating c and θ as functions of t: 2c(dc/dt) = 2(24)(18)sin θ(dθ/dt) = 864 sin θ(dθ/dt).",
+            "Substitute: 60(dc/dt) = 864(1)(0.2) = 172.8, so dc/dt = 2.88 cm/s. The distance is increasing.",
+            "(b) dA/dt = 216 cos θ(dθ/dt) = 216(0)(0.2) = 0 cm^2/s. The area 216 sin θ is largest when sin θ = 1, at θ = π/2, so the zero rate marks the instant the area stops increasing and starts to decrease.",
+            "(c) Tangent-line estimate: c ≈ 30 + 2.88(0.5) = 31.44 cm.",
+            "For the sign of the second derivative, differentiate 2c(dc/dt) = 864 sin θ(dθ/dt) again; dθ/dt is constant, so 2(dc/dt)^2 + 2c(d^2c/dt^2) = 864 cos θ(dθ/dt)^2.",
+            "At the instant: 2(2.88)^2 + 60(d^2c/dt^2) = 0, so d^2c/dt^2 = −16.5888/60 = −0.27648 cm/s^2.",
+            "Over the next half second θ runs from π/2 to π/2 + 0.1, so cos θ ≤ 0, and sin θ > 0 keeps dc/dt > 0. Then 2c(d^2c/dt^2) = 864 cos θ(dθ/dt)^2 − 2(dc/dt)^2 < 0, and d^2c/dt^2 < 0 on the whole interval, not only at the start.",
+            "A graph that is concave down lies below its tangent line, so 31.44 cm is too large. (The actual value, √(900 + 864 sin 0.1), is about 31.405 cm.)"
+          ],
+          "figureIds": [
+            "bc-fr-implicit-rates-g1"
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Consider the curve y^3 + 3y = x^2 − 2x + 5.\n\n(a) Find dy/dx in terms of x and y.\n\n(b) Find every point on the curve at which the tangent line is horizontal. Does the curve have a local maximum, a local minimum, or neither at each such point? Justify.\n\n(c) Explain why the curve has no vertical tangent lines.",
+          "answer": "(a) dy/dx = (2x − 2)/(3y^2 + 3). (b) Only (1, 1). There dy/dx = 0 and d^2y/dx^2 = 1/3 > 0, so the curve has a local minimum at (1, 1). (c) The denominator 3y^2 + 3 is at least 3 for every y, so it is never 0.",
+          "steps": [
+            "(a) Differentiate with respect to x: 3y^2(dy/dx) + 3(dy/dx) = 2x − 2, so dy/dx = (2x − 2)/(3y^2 + 3).",
+            "(b) dy/dx = 0 requires 2x − 2 = 0, so x = 1. Then y^3 + 3y = 1 − 2 + 5 = 4.",
+            "y = 1 solves y^3 + 3y = 4, and it is the only solution, because y^3 + 3y is increasing (its derivative 3y^2 + 3 is positive). So the only point is (1, 1), and there the denominator is 6, not 0.",
+            "Differentiate (3y^2 + 3)(dy/dx) = 2x − 2 again: 6y(dy/dx)^2 + (3y^2 + 3)(d^2y/dx^2) = 2.",
+            "At (1, 1) with dy/dx = 0: 6(d^2y/dx^2) = 2, so d^2y/dx^2 = 1/3 > 0. By the second derivative test, the curve has a local minimum at (1, 1).",
+            "(c) A vertical tangent needs the denominator 3y^2 + 3 to be 0, but 3y^2 + 3 ≥ 3 for every y.",
+            "A check on (b): since y^3 + 3y is increasing in y, y is smallest exactly where x^2 − 2x + 5 is smallest, which is at x = 1. The minimum is in fact the lowest point of the whole curve."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its solution. A check you miss is worth redoing tomorrow without looking."
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-implicit-rates-c1",
+          "prompt": "Find every point on the curve x^2 − 2xy + 4y^2 = 12 at which the tangent line is vertical.",
+          "hint": "Find dy/dx, set its denominator equal to 0, and solve that condition together with the curve's equation.",
+          "answer": "(4, 1) and (−4, −1).",
+          "steps": [
+            "Differentiate: 2x − 2y − 2x(dy/dx) + 8y(dy/dx) = 0, so dy/dx = (2y − 2x)/(8y − 2x) = (y − x)/(4y − x).",
+            "Vertical needs 4y − x = 0, so x = 4y.",
+            "Substitute into the curve: 16y^2 − 8y^2 + 4y^2 = 12y^2 = 12, so y = 1 or y = −1, giving (4, 1) and (−4, −1).",
+            "The numerator y − x is −3 at (4, 1) and 3 at (−4, −1), not 0, so both tangents are vertical."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-implicit-rates-c2",
+          "prompt": "The curve x^3 + y^3 = 9 passes through the point (1, 2). Find d^2y/dx^2 at that point.",
+          "hint": "Get dy/dx at (1, 2) as a number before you differentiate a second time.",
+          "answer": "d^2y/dx^2 = −9/16.",
+          "steps": [
+            "3x^2 + 3y^2(dy/dx) = 0, so dy/dx = −x^2/y^2, which is −1/4 at (1, 2).",
+            "Differentiate x^2 + y^2(dy/dx) = 0 again: 2x + 2y(dy/dx)^2 + y^2(d^2y/dx^2) = 0.",
+            "At (1, 2): 2 + 4(1/16) + 4(d^2y/dx^2) = 0, so 4(d^2y/dx^2) = −9/4 and d^2y/dx^2 = −9/16.",
+            "The quotient rule on −x^2/y^2 gives the same value: −(2xy^2 − 2x^2y(dy/dx))/y^4 = −(8 + 1)/16."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-implicit-rates-c3",
+          "prompt": "Each side of an equilateral triangle grows at 0.5 centimeter per second. At the instant each side is 6 cm long, how fast is the area of the triangle increasing? Use that rate to estimate the area 0.2 second later, and say whether the estimate is too large or too small.",
+          "hint": "The area of an equilateral triangle with side s is (√3/4)s^2.",
+          "answer": "dA/dt = 3√3/2 cm^2/s. The estimate is 9√3 + 0.3√3 = 9.3√3 cm^2, which is too small.",
+          "steps": [
+            "A = (√3/4)s^2, so dA/dt = (√3/2)s(ds/dt).",
+            "At s = 6: dA/dt = (√3/2)(6)(0.5) = 3√3/2 cm^2/s.",
+            "A = (√3/4)(36) = 9√3 cm^2 at that instant, so 0.2 second later A ≈ 9√3 + (3√3/2)(0.2) = 9.3√3 cm^2.",
+            "The side grows at a constant rate, so d^2A/dt^2 = (√3/2)(ds/dt)^2 > 0. The area is concave up in t and lies above its tangent line, so the estimate is too small; the actual area is (√3/4)(6.1)^2 = 9.3025√3 cm^2."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set at 15 minutes a question, then mark it with the rubrics in the key. Rewrite any part that lost a setup, justification or units point until every point would be earned."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-implicit-rates"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-implicit-rates"
+            },
+            {
+              "label": "Unit 3 review: composite, implicit, and inverse functions",
+              "ref": "guide:review-u3"
+            },
+            {
+              "label": "Unit 4 review: contextual applications of differentiation",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 5 review: analytical applications of differentiation",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Week 6: chain rule and implicit differentiation",
+              "ref": "week:6"
+            },
+            {
+              "label": "Week 9: related rates, linearization, and indeterminate limits",
+              "ref": "week:9"
+            },
+            {
+              "label": "Week 12: optimization and implicit-curve analysis",
+              "ref": "week:12"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

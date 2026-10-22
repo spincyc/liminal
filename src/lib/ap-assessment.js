@@ -1,7 +1,9 @@
-/* Pure model for the AP® course pages: unit tests and practice exams
-   (`liminal-ap-assessment` v1), their student and key projections, raw-point
-   tallies, blueprint and answer-key checks, the claims lint, and ap.html
-   routing. No DOM access; loads in Node and the browser.
+/* Pure model for the AP® course pages: unit tests, practice exams, mixed
+   multiple-choice sets and free-response sets (`liminal-ap-assessment` v1), their student and key
+   projections, raw-point tallies, blueprint and answer-key checks; exam-prep
+   guides (`liminal-ap-guide` v1) and the course's optional `prep` block in
+   content/ap.json; the claims lint; and ap.html routing. No DOM access;
+   loads in Node and the browser.
 
    Document: { format, version, courseId, id, kind, unitId?, title, author,
    directions, figures?: [{ id, alt, caption?, notToScale?, svg? }],
@@ -14,7 +16,18 @@
    steps, figureIds?, answerFigureIds? }] }.
    Field names shared with weekly worksheet items (prompt, choices, key,
    points, rubric, answer, steps, figureIds, answerFigureIds) keep their
-   weekly meaning. Scores are raw points only: there is no conversion. */
+   weekly meaning. Scores are raw points only: there is no conversion.
+
+   A guide: { format, version, courseId, id, kind: "strategy" | "unit-review"
+   | "fr-archetype", unitId? (unit reviews), title, author, summary, minutes,
+   figures?, sections: [{ id, title, blocks }] }, where each block is one of
+   GUIDE_BLOCKS: text { text }, list { items, ordered? }, table { caption?,
+   head, rows }, rule { title, text, conditions? }, trap { text, fix }, model
+   { prompt?, text }, example { prompt, answer, steps, figureIds? }, check
+   { id, prompt, hint?, answer, steps, figureIds?, see? (the section to study
+   when it is missed) }, figure { id }, links
+   { items: [{ label, ref }] }. A ref names a page of the course: test:<id>,
+   key:<id>, guide:<id>, unit:u<n> or week:<1–36>. */
 (function (root, factory) {
   const node = typeof module === "object" && module.exports;
   const api = factory(node ? require("./assessment") : root.LiminalAssessment,
@@ -25,15 +38,27 @@
   "use strict";
   const FORMAT = "liminal-ap-assessment";
   const REFERENCE_FORMAT = "liminal-ap-reference";
+  const GUIDE_FORMAT = "liminal-ap-guide";
   const VERSION = 1;
   const DISCLAIMER = "AP® and Advanced Placement® are trademarks registered by the College Board, which is not affiliated with, and does not endorse, this website.";
   const COURSES = ["calculus-ab", "calculus-bc", "physics-1", "physics-c-mechanics"];
   const TOPIC_PREFIX = { "calculus-ab": "AB", "calculus-bc": "BC", "physics-1": "P1", "physics-c-mechanics": "CM" };
   const ITEM_PREFIX = { "calculus-ab": "ab", "calculus-bc": "bc", "physics-1": "p1", "physics-c-mechanics": "cm" };
   const LETTERS = ["A", "B", "C", "D"];
+  // The order calculator policies take within a section, as on the exams.
+  const COURSE_PART_ORDER = { "calculus-ab": ["graphing", "none"], "calculus-bc": ["graphing", "none"], "physics-1": ["any"], "physics-c-mechanics": ["any"] };
   const CALCULATOR = { none: "No calculator", graphing: "Graphing calculator", any: "Calculator allowed" };
   const FR_TYPES = { MR: "Mathematical Routines", TBR: "Translation Between Representations", EDA: "Experimental Design and Analysis", QQT: "Qualitative/Quantitative Translation" };
-  const KIND_LABEL = { "unit-test": "Unit test", "practice-exam": "Practice exam" };
+  const KIND_LABEL = { "unit-test": "Unit test", "practice-exam": "Practice exam", "mixed-set": "Mixed set", "fr-set": "Free-response set" };
+  const GUIDE_KINDS = { strategy: "Exam strategy", "unit-review": "Unit review", "fr-archetype": "Free-response workshop" };
+  const GUIDE_BLOCKS = ["text", "list", "table", "rule", "trap", "model", "example", "check", "figure", "links"];
+  const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  // Practice exams beyond the course's own (week 33) are forms b, c, …;
+  // mixed multiple-choice sets are mixed-<n>; free-response sets are
+  // fr-<archetype>.
+  const PRACTICE_EXAM_ID = /^practice-exam(?:-[b-z])?$/;
+  const MIXED_SET_ID = /^mixed-[1-9][0-9]?$/;
+  const FR_SET_ID = /^fr-[a-z0-9]+(?:-[a-z0-9]+)*$/;
   // Key balance: each letter keys 15–35% of a test's multiple choice, and the
   // key is the unique longest choice in at most 40% of items.
   const KEY_SHARE = [0.15, 0.35];
@@ -44,6 +69,7 @@
   function isCalculus(courseId) { return courseId === "calculus-ab" || courseId === "calculus-bc"; }
   function calculatorLabel(policy) { return own(CALCULATOR, policy) ? CALCULATOR[policy] : ""; }
   function kindLabel(kind) { return own(KIND_LABEL, kind) ? KIND_LABEL[kind] : ""; }
+  function guideKindLabel(kind) { return own(GUIDE_KINDS, kind) ? GUIDE_KINDS[kind] : ""; }
   function frTypeLabel(type) { return own(FR_TYPES, type) ? FR_TYPES[type] : ""; }
   // BC uses Liminal editorial objective slugs, not invented official topic
   // numbers. Review objectives and malformed references are not unit topics.
@@ -64,6 +90,70 @@
   // An item counts toward the unit of its first (primary) topic.
   function primaryUnit(item) { return item && Array.isArray(item.topics) ? topicUnit(item.topics[0]) : null; }
   function assessmentId(kind, unit) { return kind === "practice-exam" ? "practice-exam" : "unit-" + unit; }
+  // The ID segment an assessment's items and figures carry: unit-3 → u3,
+  // practice-exam → pe, practice-exam-b → peb, mixed-2 → mixed-2, fr-polar →
+  // fr-polar. A guide's checks and figures carry the guide ID itself.
+  function segment(id) {
+    const value = String(id || "");
+    const unit = /^unit-([1-9][0-9]?)$/.exec(value);
+    if (unit) return "u" + unit[1];
+    if (PRACTICE_EXAM_ID.test(value)) return "pe" + value.slice("practice-exam-".length);
+    return MIXED_SET_ID.test(value) || FR_SET_ID.test(value) ? value : "";
+  }
+
+  // The optional `prep` block of a course in content/ap.json names the extra
+  // practice-exam forms (`exams`, form A being the course's own), mixed
+  // multiple-choice sets (`mixed`), the strategy guides, one review guide per
+  // content unit (`reviews`: review-u<n>), and the free-response workshop
+  // (`workshop`: each fr-<archetype> ID is both a guide and its practice set),
+  // plus review plans of sessions and tasks.
+  function prepOf(course) { return course && course.prep && typeof course.prep === "object" ? course.prep : null; }
+  function ids(list, key) { return (Array.isArray(list) ? list : []).map(entry => key && entry && typeof entry === "object" ? entry[key] : entry).filter(id => typeof id === "string"); }
+  function examIds(course) {
+    const prep = prepOf(course);
+    const formA = (course && course.units || []).some(u => u.test === "practice-exam") ? ["practice-exam"] : [];
+    return [...new Set([...formA, ...ids(prep && prep.exams, "id")])];
+  }
+  function mixedIds(course) { const prep = prepOf(course); return ids(prep && prep.mixed); }
+  function setIds(course) { const prep = prepOf(course); return ids(prep && prep.workshop); }
+  function assessmentIds(course) {
+    return [...new Set([...(course && course.units || []).map(u => u.test).filter(Boolean), ...examIds(course), ...mixedIds(course), ...setIds(course)])];
+  }
+  // The kind an assessment ID has in its course: what the plan says it is.
+  function assessmentKind(course, id) {
+    if (!assessmentIds(course).includes(id)) return null;
+    if (/^unit-/.test(id)) return "unit-test";
+    if (PRACTICE_EXAM_ID.test(id)) return "practice-exam";
+    if (MIXED_SET_ID.test(id)) return "mixed-set";
+    return FR_SET_ID.test(id) ? "fr-set" : null;
+  }
+  function guideIds(course) {
+    const prep = prepOf(course);
+    return prep ? [...new Set([...ids(prep.strategy), ...ids(prep.reviews), ...ids(prep.workshop)])] : [];
+  }
+  function guideKind(course, id) {
+    const prep = prepOf(course);
+    if (!prep || !guideIds(course).includes(id)) return null;
+    if (ids(prep.workshop).includes(id)) return "fr-archetype";
+    if (ids(prep.reviews).includes(id)) return "unit-review";
+    return "strategy";
+  }
+  // Self-checks in reading order, numbered from 1 as printed.
+  function guideChecks(doc) {
+    const out = [];
+    (doc && Array.isArray(doc.sections) ? doc.sections : []).forEach(section => (Array.isArray(section && section.blocks) ? section.blocks : [])
+      .forEach(block => { if (block && block.type === "check") out.push({ section, block, number: out.length + 1 }); }));
+    return out;
+  }
+  // test:<assessment>, key:<assessment>, guide:<guide>, unit:u<n>, week:<n>.
+  const REF = /^(test|key|guide|unit|week):([a-z0-9-]+)$/;
+  function parseRef(ref) { const match = REF.exec(String(ref || "")); return match ? { kind: match[1], id: match[2] } : null; }
+  function refHref(courseId, ref) {
+    const parsed = parseRef(ref);
+    if (!parsed || !COURSES.includes(courseId)) return "";
+    if (parsed.kind === "week") return /^[1-9][0-9]?$/.test(parsed.id) && Number(parsed.id) <= 36 ? "weeks.html#ap/" + courseId + "/" + parsed.id : "";
+    return route(courseId, { test: "student", key: "key", guide: "guide", unit: "unit" }[parsed.kind], parsed.id);
+  }
   function itemPoints(item) {
     return item ? Assessment.maximum(Adapters.apItem(item).scoring) : 0;
   }
@@ -164,6 +254,8 @@
   function blueprintProblems(doc, course) {
     const problems = [];
     if (!course || !course.blueprints) return ["no course blueprint for " + (doc && doc.courseId)];
+    if (doc.kind === "fr-set") return frSetProblems(doc, course);
+    if (doc.kind === "mixed-set") return mixedSetProblems(doc, course);
     const exam = doc.kind === "practice-exam";
     const blueprint = exam ? course.blueprints.practiceExam : course.blueprints.unitTest;
     const shape = exam ? course.exam.sections.map(s => ({ id: s.id, kind: s.id === "I" ? "mc" : "fr", parts: s.parts })) : blueprint.sections;
@@ -219,6 +311,51 @@
     return problems;
   }
 
+  // A free-response set: one Section II whose parts keep the exam's order
+  // (graphing calculator before none), at the exam's pace per question, with
+  // every question worth the course's free-response points.
+  function frSetProblems(doc, course) {
+    const problems = [], label = doc.id + ": ", rule = course.blueprints.frSet;
+    if (!rule) return [label + "the course has no free-response set blueprint"];
+    const section = doc.sections[0];
+    if (doc.sections.length !== 1 || !section || section.id !== "II" || section.kind !== "fr") return [label + "a free-response set is one section II of kind fr"];
+    const order = COURSE_PART_ORDER[doc.courseId] || [];
+    const policies = section.parts.map(part => part.calculator);
+    if (section.parts.some((part, i) => part.id !== String.fromCharCode(65 + i))) problems.push(label + "parts are A, B, … in order");
+    if (new Set(policies).size !== policies.length || policies.some((p, i) => i && order.indexOf(p) <= order.indexOf(policies[i - 1]))) problems.push(label + "parts take one calculator policy each, in the exam's order (" + order.join(", then ") + ")");
+    section.parts.forEach(part => {
+      if (part.minutes !== rule.minutesPerQuestion * part.items.length) problems.push(label + `part ${part.id} is ${part.minutes} minutes; ${part.items.length} questions take ${rule.minutesPerQuestion * part.items.length}`);
+    });
+    const items = section.parts.flatMap(part => part.items);
+    if (items.length < rule.questions[0] || items.length > rule.questions[1]) problems.push(label + `has ${items.length} questions; sets hold ${rule.questions[0]}–${rule.questions[1]}`);
+    items.forEach(item => {
+      if (isMc(item)) problems.push(label + item.id + " is multiple choice; sets hold free response only");
+      else if (itemPoints(item) !== rule.frPoints) problems.push(label + `${item.id} is worth ${itemPoints(item)} points; free response is worth ${rule.frPoints}`);
+    });
+    return problems;
+  }
+
+  // A mixed set: one Section I with the blueprint's parts, drawing its
+  // questions' primary topics from at least `minUnits` different units.
+  function mixedSetProblems(doc, course) {
+    const problems = [], label = doc.id + ": ", rule = course.blueprints.mixedSet;
+    if (!rule) return [label + "the course has no mixed-set blueprint"];
+    const section = doc.sections[0];
+    if (doc.sections.length !== 1 || !section || section.id !== "I" || section.kind !== "mc") return [label + "a mixed set is one section I of kind mc"];
+    if (section.parts.length !== rule.parts.length) return [label + `needs ${rule.parts.length} parts`];
+    rule.parts.forEach((want, i) => {
+      const part = section.parts[i], where = label + "part " + want.id;
+      if (part.id !== want.id) problems.push(where + ` is labeled ${part.id}`);
+      if (part.items.length !== want.questions) problems.push(where + ` has ${part.items.length} questions; the blueprint has ${want.questions}`);
+      if (part.minutes !== want.minutes) problems.push(where + ` is ${part.minutes} minutes; the blueprint has ${want.minutes}`);
+      if (part.calculator !== want.calculator) problems.push(where + ` calculator is ${part.calculator}; the blueprint has ${want.calculator}`);
+      part.items.forEach(item => { if (!isMc(item)) problems.push(where + ` holds free response: ${item.id}`); });
+    });
+    const units = new Set(section.parts.flatMap(part => part.items.map(primaryUnit)).filter(Boolean));
+    if (units.size < rule.minUnits) problems.push(label + `draws on ${units.size} units; mixed sets draw on at least ${rule.minUnits}`);
+    return problems;
+  }
+
   // Claims lint. A sentence fails when it makes a promise, prediction or
   // endorsement claim; it passes when the claim is negated (the disclaimer,
   // "not an AP score", "does not predict"). College Board and Bluebook
@@ -269,14 +406,17 @@
   }
 
   // ap.html routes: "" (all courses), "<course>", "<course>/u<n>",
-  // "<course>/test/<id>", "<course>/test/<id>/key", "<course>/reference".
-  const ASSESSMENT_ID = /^(?:unit-[1-9][0-9]?|practice-exam)$/;
+  // "<course>/test/<id>", "<course>/test/<id>/key", "<course>/reference",
+  // "<course>/prep" (exam preparation) and "<course>/guide/<id>".
+  const ASSESSMENT_ID = /^(?:unit-[1-9][0-9]?|practice-exam(?:-[b-z])?|mixed-[1-9][0-9]?|fr-[a-z0-9]+(?:-[a-z0-9]+)*)$/;
   function route(courseId, view, id) {
     if (courseId === undefined || courseId === null || courseId === "") return "#";
     if (!COURSES.includes(courseId)) return "";
     if (!view) return "#" + courseId;
     if (view === "unit") return /^u[1-9][0-9]?$/.test(id || "") ? "#" + courseId + "/" + id : "";
     if (view === "reference") return "#" + courseId + "/reference";
+    if (view === "prep") return "#" + courseId + "/prep";
+    if (view === "guide") return SLUG.test(id || "") ? "#" + courseId + "/guide/" + id : "";
     if (view === "student" || view === "key") return ASSESSMENT_ID.test(id || "") ? "#" + courseId + "/test/" + id + (view === "key" ? "/key" : "") : "";
     return "";
   }
@@ -284,22 +424,26 @@
   function resolve(plan, hash) {
     const raw = String(hash || "").replace(/^#/, "");
     const parts = raw ? raw.split("/") : [];
-    const none = { view: "hub", course: null, unitId: null, assessmentId: null, copy: null, invalid: !!raw };
+    const none = { view: "hub", course: null, unitId: null, assessmentId: null, copy: null, guideId: null, invalid: !!raw };
     if (!parts.length) return { ...none, invalid: false };
     const course = planCourses(plan).find(c => c.id === parts[0]);
     if (!course) return none;
-    const plain = { view: "plan", course, unitId: null, assessmentId: null, copy: null, invalid: false };
+    const plain = { view: "plan", course, unitId: null, assessmentId: null, copy: null, guideId: null, invalid: false };
     if (parts.length === 1) return plain;
     if (parts.length === 2 && parts[1] === "reference" && course.reference) return { ...plain, view: "reference" };
+    if (parts.length === 2 && parts[1] === "prep" && prepOf(course)) return { ...plain, view: "prep" };
     if (parts.length === 2 && course.units.some(u => u.id === parts[1])) return { ...plain, unitId: parts[1] };
-    const expected = new Set(course.units.map(u => u.test).filter(Boolean));
+    if (parts.length === 3 && parts[1] === "guide" && guideIds(course).includes(parts[2])) return { ...plain, view: "guide", guideId: parts[2] };
+    const expected = new Set(assessmentIds(course));
     if (parts[1] === "test" && expected.has(parts[2]) && (parts.length === 3 || parts.length === 4 && parts[3] === "key")) {
       return { ...plain, view: "assessment", assessmentId: parts[2], copy: parts.length === 4 ? "key" : "student" };
     }
     return { ...plain, invalid: true };
   }
-  return { FORMAT, REFERENCE_FORMAT, VERSION, DISCLAIMER, COURSES, TOPIC_PREFIX, ITEM_PREFIX, LETTERS, CALCULATOR, FR_TYPES, KEY_SHARE, LONGEST_SHARE, CLAIMS,
-    isMc, isCalculus, isAssessmentTopic, topicsForUnit, calculatorLabel, kindLabel, frTypeLabel, topicUnit, primaryUnit, assessmentId, itemPoints, rubricPoints, entries, minutes, counts,
+  return { FORMAT, REFERENCE_FORMAT, GUIDE_FORMAT, VERSION, DISCLAIMER, COURSES, TOPIC_PREFIX, ITEM_PREFIX, LETTERS, CALCULATOR, FR_TYPES, KEY_SHARE, LONGEST_SHARE, CLAIMS,
+    GUIDE_KINDS, GUIDE_BLOCKS, SLUG, COURSE_PART_ORDER,
+    isMc, isCalculus, isAssessmentTopic, topicsForUnit, calculatorLabel, kindLabel, guideKindLabel, frTypeLabel, topicUnit, primaryUnit, assessmentId, segment, itemPoints, rubricPoints, entries, minutes, counts,
+    prepOf, examIds, mixedIds, setIds, assessmentIds, assessmentKind, guideIds, guideKind, guideChecks, parseRef, refHref,
     tally, rawPoints, studentCopy, keyCopy, answerSheet, keyBalance, blueprintProblems, claimProblems, strings, normalized, identity,
     route, resolve, planCourses };
 });

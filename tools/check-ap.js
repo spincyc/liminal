@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 "use strict";
 
-// Validates the AP® course modules: the plan metadata (content/ap.json), unit
-// tests and practice exams (content/ap/assessments/<course>/<id>.json, format
-// liminal-ap-assessment v1), formula references
-// (content/ap/references/<course>.json), their figures
+// Validates the AP® course modules: the plan metadata (content/ap.json, with
+// each course's optional exam-prep block), unit tests, practice exams and
+// free-response sets (content/ap/assessments/<course>/<id>.json, format
+// liminal-ap-assessment v1), exam-prep guides
+// (content/ap/guides/<course>/<id>.json, format liminal-ap-guide v1), formula
+// references (content/ap/references/<course>.json), their figures
 // (content/ap/figures/<course>/<figureId>.svg), duplicates against the AP
 // weekly courses, topic coverage, the claims lint, and the trademark
 // disclaimer on pages that use the marks.
@@ -22,6 +24,14 @@ const ROOT = path.resolve(__dirname, "..");
 const COURSE_CALCULATORS = { "calculus-ab": ["none", "graphing"], "calculus-bc": ["none", "graphing"], "physics-1": ["any"], "physics-c-mechanics": ["any"] };
 const PHYSICS = new Set(["physics-1", "physics-c-mechanics"]);
 const MAX_ASSESSMENT_BYTES = 1024 * 1024;
+// Fields each guide block may carry, beyond its type. Anything else fails, so
+// a new field cannot reach the page without a decision about how it shows.
+const BLOCK_FIELDS = {
+  text: ["text"], list: ["items", "ordered"], table: ["caption", "head", "rows"], rule: ["title", "text", "conditions"],
+  trap: ["text", "fix"], model: ["prompt", "text"], example: ["prompt", "answer", "steps", "figureIds"],
+  check: ["id", "prompt", "hint", "answer", "steps", "figureIds", "see"], figure: ["id"], links: ["items"],
+};
+const MIN_REVIEW_CHECKS = 4;
 
 // Authoring guard, mirroring tools/build-weekly.js: content is plain text
 // (the browser inserts text nodes), with no markup or LaTeX delimiters.
@@ -85,6 +95,14 @@ function planShape(plan, c) {
     if (blueprints.unitTest && c.records(blueprints.unitTest.sections, where + ".blueprints.unitTest.sections")) {
       blueprints.unitTest.sections.forEach((section, i) => c.records(section.parts, where + ".blueprints.unitTest.sections[" + i + "].parts"));
     }
+    const prep = course.prep;
+    if (prep === undefined) return;
+    if (!c.check(prep && typeof prep === "object" && !Array.isArray(prep), where + ".prep", "must be an object")) return;
+    c.records(prep.exams, where + ".prep.exams");
+    for (const key of ["mixed", "strategy", "reviews", "workshop"]) c.list(prep[key], 1, where + ".prep." + key);
+    if (c.records(prep.plans, where + ".prep.plans")) prep.plans.forEach((entry, i) => {
+      if (c.records(entry.sessions, where + ".prep.plans[" + i + "].sessions")) entry.sessions.forEach((session, j) => c.records(session.tasks, where + ".prep.plans[" + i + "].sessions[" + j + "].tasks"));
+    });
   });
   return c.problems.length === before;
 }
@@ -266,6 +284,68 @@ function validatePlan(plan, c) {
     }
   }
   plan.standards.forEach(s => c.check(covered.has(s.id), "reference " + s.id, "not mapped to any unit"));
+  plan.courses.forEach(course => { if (course.prep !== undefined) validatePrep(course, c); });
+}
+
+// A course's exam-prep block: practice-exam forms, guides by kind, the
+// free-response workshop and review plans whose tasks link to course pages.
+function validatePrep(course, c) {
+  const where = "ap." + course.id + ".prep", prep = course.prep;
+  for (const key of ["title", "summary"]) c.text(prep[key], where + "." + key);
+  c.list(prep.steps, 1, where + ".steps");
+  const exams = prep.exams.map(e => e.id);
+  c.unique(exams, where + ".exams");
+  c.check(exams[0] === "practice-exam", where + ".exams", "form A is the course's own practice-exam and comes first");
+  prep.exams.forEach((entry, i) => {
+    c.check(/^practice-exam(?:-[b-z])?$/.test(entry.id || ""), where + ".exams[" + i + "]", "IDs are practice-exam, practice-exam-b, practice-exam-c, …");
+    for (const key of ["label", "note"]) c.text(entry[key], where + ".exams[" + i + "]." + key);
+  });
+  const contentUnits = course.units.filter(u => u.unit !== null);
+  c.check(JSON.stringify(prep.reviews) === JSON.stringify(contentUnits.map(u => "review-u" + u.unit)), where + ".reviews", "names one review guide per content unit, review-u1 … in order");
+  prep.strategy.forEach(id => c.check(A.SLUG.test(id) && !/^(?:review|fr)-/.test(id), where + ".strategy", "strategy guide IDs are lowercase slugs not starting review- or fr-: " + id));
+  prep.workshop.forEach(id => c.check(/^fr-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id), where + ".workshop", "workshop IDs look like fr-<archetype>: " + id));
+  c.check(JSON.stringify(prep.mixed) === JSON.stringify(prep.mixed.map((_, i) => "mixed-" + (i + 1))), where + ".mixed", "mixed sets are mixed-1, mixed-2, … in order");
+  const mixed = course.blueprints.mixedSet;
+  if (c.check(mixed && typeof mixed === "object" && Array.isArray(mixed.parts) && mixed.parts.length > 0, where, "mixed sets need blueprints.mixedSet with parts")) {
+    mixed.parts.forEach((part, i) => {
+      const at = "ap." + course.id + ".blueprints.mixedSet.parts[" + i + "]";
+      c.check(part.id === String.fromCharCode(65 + i), at, "parts are A, B, … in order");
+      c.check(Number.isInteger(part.questions) && part.questions > 0 && Number.isInteger(part.minutes) && part.minutes > 0, at, "needs question and minute counts");
+      c.check(COURSE_CALCULATORS[course.id].includes(part.calculator), at, "calculator policy not allowed for the course");
+    });
+    c.check(Number.isInteger(mixed.minUnits) && mixed.minUnits > 1, "ap." + course.id + ".blueprints.mixedSet", "needs minUnits above 1");
+  }
+  c.unique([...prep.strategy, ...prep.reviews, ...prep.workshop], where + " guides");
+  const rule = course.blueprints.frSet;
+  if (c.check(rule && typeof rule === "object", where, "a workshop needs blueprints.frSet")) {
+    c.check(rule.frPoints === course.blueprints.practiceExam.frPoints, "ap." + course.id + ".blueprints.frSet", "frPoints match the practice exam's");
+    c.check(Number.isInteger(rule.minutesPerQuestion) && rule.minutesPerQuestion > 0, "ap." + course.id + ".blueprints.frSet", "needs whole minutes per question");
+    c.check(Array.isArray(rule.questions) && rule.questions.length === 2 && rule.questions.every(n => Number.isInteger(n) && n > 0) && rule.questions[0] <= rule.questions[1], "ap." + course.id + ".blueprints.frSet", "needs a [least, most] question range");
+  }
+  if (!c.check(prep.plans.length > 0, where + ".plans", "needs at least one review plan")) return;
+  c.unique(prep.plans.map(p => p.id), where + ".plans");
+  prep.plans.forEach(entry => {
+    const at = where + ".plans." + entry.id;
+    c.check(A.SLUG.test(entry.id || ""), at, "plan IDs are lowercase slugs");
+    for (const key of ["title", "summary"]) c.text(entry[key], at + "." + key);
+    c.check(entry.sessions.length > 0, at, "needs sessions");
+    entry.sessions.forEach((session, i) => {
+      for (const key of ["label", "title"]) c.text(session[key], at + ".sessions[" + i + "]." + key);
+      c.check(session.tasks.length > 0, at + ".sessions[" + i + "]", "needs tasks");
+      session.tasks.forEach((task, j) => {
+        c.text(task.text, at + ".sessions[" + i + "].tasks[" + j + "].text");
+        if (task.ref !== undefined) refProblem(course, task.ref, at + ".sessions[" + i + "].tasks[" + j + "]", c);
+      });
+    });
+  });
+}
+// A ref resolves to a page the course plan names.
+function refProblem(course, ref, where, c) {
+  const parsed = A.parseRef(ref);
+  if (!c.check(parsed && A.refHref(course.id, ref), where, "unresolved ref " + ref)) return;
+  const known = parsed.kind === "test" || parsed.kind === "key" ? A.assessmentIds(course)
+    : parsed.kind === "guide" ? A.guideIds(course) : parsed.kind === "unit" ? course.units.map(u => u.id) : null;
+  if (known) c.check(known.includes(parsed.id), where, "ref names nothing in the course plan: " + ref);
 }
 
 function figureReferences(item) {
@@ -310,28 +390,15 @@ function validateAssessment(doc, expected, ctx, c) {
   c.claims(doc, where);
   const course = ctx.plan.courses.find(entry => entry.id === expected.courseId);
   if (!c.check(doc.courseId === expected.courseId && doc.id === expected.id, where, "courseId and id must match the file path")) return;
-  const unit = course && course.units.find(u => u.test === doc.id);
-  if (!c.check(unit, where, "is not an assessment in the course plan")) return;
-  const exam = doc.id === "practice-exam";
-  c.check(doc.kind === (exam ? "practice-exam" : "unit-test"), where + ".kind", "must be " + (exam ? "practice-exam" : "unit-test"));
-  c.check(exam ? doc.unitId === undefined : doc.unitId === unit.id, where + ".unitId", exam ? "practice exams have no unitId" : "must be " + unit.id);
+  const kind = A.assessmentKind(course, doc.id);
+  if (!c.check(kind, where, "is not an assessment in the course plan")) return;
+  const unit = kind === "unit-test" ? course.units.find(u => u.test === doc.id) : null;
+  c.check(doc.kind === kind, where + ".kind", "must be " + kind);
+  c.check(unit ? doc.unitId === unit.id : doc.unitId === undefined, where + ".unitId", unit ? "must be " + unit.id : "only unit tests have a unitId");
   for (const key of ["title", "author", "directions"]) c.text(doc[key], where + "." + key);
-  const segment = exam ? "pe" : "u" + unit.unit;
-  const prefix = A.ITEM_PREFIX[doc.courseId] + "-" + segment;
+  const prefix = A.ITEM_PREFIX[doc.courseId] + "-" + A.segment(doc.id);
   // Figures: declared once, used, resolved to an admissible file.
-  const figures = Array.isArray(doc.figures) ? doc.figures : [];
-  c.check(doc.figures === undefined || Array.isArray(doc.figures), where + ".figures", "must be a list");
-  c.unique(figures.map(f => f.id), where + ".figures");
-  const svgs = ctx.figures.get(doc.courseId) || new Map();
-  figures.forEach(figure => {
-    const at = where + ".figures." + figure.id;
-    c.check(typeof figure.id === "string" && FIGURE_ID.test(figure.id) && new RegExp("^" + prefix + "-f[1-9][0-9]*$").test(figure.id), at, "figure IDs look like " + prefix + "-f1");
-    c.text(figure.alt, at + ".alt");
-    c.check(figure.svg === undefined, at, "SVG lives in content/ap/figures/" + doc.courseId + "/" + figure.id + ".svg, not inline");
-    c.check(figure.notToScale === undefined || figure.notToScale === true, at, "notToScale is true or absent");
-    if (c.check(svgs.has(figure.id), at, "missing file content/ap/figures/" + doc.courseId + "/" + figure.id + ".svg")) ctx.usedFigures.add(doc.courseId + "/" + figure.id);
-  });
-  const declared = new Set(figures.map(f => f.id));
+  const { figures, svgs, declared } = declareFigures(doc, prefix, where, ctx, c);
   const referenced = new Set();
   const givenFigures = new Set(), answerFigures = new Set();
   // Sections, parts and items.
@@ -364,7 +431,9 @@ function validateAssessment(doc, expected, ctx, c) {
       item.topics.forEach(ref => {
         const standard = ctx.plan.standards.find(s => s.id === ref);
         c.check(A.isAssessmentTopic(standard, doc.courseId), at + ".topics", (doc.courseId === "calculus-bc" ? "not a course objective of this course: " : "not a framework topic of this course: ") + ref);
-        ctx.testedTopics.add(ref);
+        // Coverage belongs to the course's own unit tests and practice exam;
+        // exam-prep sets and later forms are extra practice, not the record.
+        if (kind === "unit-test" || doc.id === "practice-exam") ctx.testedTopics.add(ref);
       });
     }
     const refs = figureReferences(item);
@@ -413,6 +482,7 @@ function validateAssessment(doc, expected, ctx, c) {
     const identity = A.identity(item, figures.map(f => ({ id: f.id, svg: svgs.get(f.id) })));
     if (ctx.identities.has(identity)) c.fail(at, "duplicates " + ctx.identities.get(identity));
     else ctx.identities.set(identity, at);
+    if (!ctx.prompts.has(A.normalized(item.prompt))) ctx.prompts.set(A.normalized(item.prompt), at);
   });
   c.unique(itemIds, where + " item IDs");
   for (const id of givenFigures) c.check(!answerFigures.has(id), where + ".figures." + id, "a figure cannot be both given and answer-only anywhere in the assessment");
@@ -421,6 +491,111 @@ function validateAssessment(doc, expected, ctx, c) {
   if (!shaped) return;
   A.blueprintProblems(doc, course).forEach(problem => c.fail(where, "blueprint: " + problem));
   A.keyBalance(doc).problems.forEach(problem => c.fail(where, "key balance: " + problem));
+}
+
+// Figures declared once, named for their document, present and admissible.
+function declareFigures(doc, prefix, where, ctx, c, letter = "f") {
+  const figures = Array.isArray(doc.figures) ? doc.figures : [];
+  c.check(doc.figures === undefined || Array.isArray(doc.figures), where + ".figures", "must be a list");
+  c.unique(figures.map(f => f.id), where + ".figures");
+  const svgs = ctx.figures.get(doc.courseId) || new Map();
+  figures.forEach(figure => {
+    const at = where + ".figures." + figure.id;
+    c.check(typeof figure.id === "string" && FIGURE_ID.test(figure.id) && new RegExp("^" + prefix + "-" + letter + "[1-9][0-9]*$").test(figure.id), at, "figure IDs look like " + prefix + "-" + letter + "1");
+    c.text(figure.alt, at + ".alt");
+    if (figure.caption !== undefined) c.text(figure.caption, at + ".caption");
+    c.check(figure.svg === undefined, at, "SVG lives in content/ap/figures/" + doc.courseId + "/" + figure.id + ".svg, not inline");
+    c.check(figure.notToScale === undefined || figure.notToScale === true, at, "notToScale is true or absent");
+    if (c.check(svgs.has(figure.id), at, "missing file content/ap/figures/" + doc.courseId + "/" + figure.id + ".svg")) ctx.usedFigures.add(doc.courseId + "/" + figure.id);
+  });
+  return { figures, svgs, declared: new Set(figures.map(f => f.id)) };
+}
+
+// One exam-prep guide: sections of typed blocks, self-checks numbered in
+// reading order, figures, and links that resolve to pages of the course.
+function validateGuide(doc, expected, ctx, c) {
+  const where = expected.courseId + "/guide/" + expected.id;
+  if (!c.check(doc && doc.format === A.GUIDE_FORMAT && doc.version === A.VERSION, where, "needs format " + A.GUIDE_FORMAT + " version 1")) return;
+  if (!c.check(doc.courseId === expected.courseId && doc.id === expected.id, where, "courseId and id must match the file path")) return;
+  if (!c.records(doc.sections, where + ".sections") || !c.check(doc.sections.every(s => c.records(s.blocks, where + ".sections." + s.id + ".blocks")), where, "every section needs a list of blocks")) return;
+  c.plain(doc, where);
+  c.claims(doc, where);
+  const course = ctx.plan.courses.find(entry => entry.id === expected.courseId);
+  const kind = A.guideKind(course, doc.id);
+  if (!c.check(kind, where, "is not a guide in the course's prep block")) return;
+  c.check(doc.kind === kind, where + ".kind", "must be " + kind);
+  const unit = kind === "unit-review" ? course.units.find(u => "review-u" + u.unit === doc.id) : null;
+  c.check(unit ? doc.unitId === unit.id : doc.unitId === undefined, where + ".unitId", unit ? "must be " + unit.id : "only unit reviews have a unitId");
+  for (const key of ["title", "author", "summary"]) c.text(doc[key], where + "." + key);
+  c.check(Number.isInteger(doc.minutes) && doc.minutes >= 5 && doc.minutes <= 240, where + ".minutes", "needs whole suggested minutes from 5 to 240");
+  const allowed = ["format", "version", "courseId", "id", "kind", "unitId", "title", "author", "summary", "minutes", "figures", "sections"];
+  Object.keys(doc).forEach(key => c.check(allowed.includes(key), where, "unknown field " + key));
+  const prefix = A.ITEM_PREFIX[doc.courseId] + "-" + doc.id;
+  // Guide figures are -g<n>, so an archetype's guide and set (one ID) never collide.
+  const { figures, svgs, declared } = declareFigures(doc, prefix, where, ctx, c, "g");
+  const referenced = new Set();
+  const figureList = (ids, at) => {
+    if (ids === undefined) return;
+    if (c.list(ids, 1, at + ".figureIds")) ids.forEach(id => { referenced.add(id); c.check(declared.has(id), at, "undeclared figure " + id); });
+  };
+  if (!c.check(doc.sections.length > 0, where, "needs sections")) return;
+  c.unique(doc.sections.map(s => s.id), where + ".sections");
+  let checks = 0;
+  doc.sections.forEach(section => {
+    const at = where + "." + section.id;
+    c.check(A.SLUG.test(section.id || ""), at, "section IDs are lowercase slugs");
+    c.text(section.title, at + ".title");
+    c.check(section.blocks.length > 0, at, "needs blocks");
+    section.blocks.forEach((block, i) => {
+      const bat = at + "[" + i + "]";
+      if (!c.check(A.GUIDE_BLOCKS.includes(block.type), bat, "unknown block type " + block.type)) return;
+      Object.keys(block).forEach(key => c.check(key === "type" || BLOCK_FIELDS[block.type].includes(key), bat, block.type + " blocks have no field " + key));
+      const t = block.type;
+      if (["text", "rule", "trap", "model"].includes(t)) c.text(block.text, bat + ".text");
+      if (t === "list") { c.list(block.items, 1, bat + ".items"); c.check(block.ordered === undefined || block.ordered === true, bat, "ordered is true or absent"); }
+      if (t === "table") {
+        if (block.caption !== undefined) c.text(block.caption, bat + ".caption");
+        if (c.list(block.head, 1, bat + ".head") && c.check(Array.isArray(block.rows) && block.rows.length > 0, bat + ".rows", "needs rows")) {
+          block.rows.forEach((row, r) => c.check(Array.isArray(row) && row.length === block.head.length && row.every(v => typeof v === "string" && v.trim()), bat + ".rows[" + r + "]", "needs one text cell per column"));
+        }
+      }
+      if (t === "rule") { c.text(block.title, bat + ".title"); if (block.conditions !== undefined) c.list(block.conditions, 1, bat + ".conditions"); }
+      if (t === "trap") c.text(block.fix, bat + ".fix");
+      if (t === "model" && block.prompt !== undefined) c.text(block.prompt, bat + ".prompt");
+      if (t === "example" || t === "check") {
+        for (const key of ["prompt", "answer"]) c.text(block[key], bat + "." + key);
+        c.list(block.steps, 1, bat + ".steps");
+        figureList(block.figureIds, bat);
+        const identity = A.identity(block, figures.map(f => ({ id: f.id, svg: svgs.get(f.id) })));
+        if (ctx.identities.has(identity)) c.fail(bat, "duplicates " + ctx.identities.get(identity));
+        else ctx.identities.set(identity, bat);
+        // A check has no choices, so a copied stem would escape the full
+        // identity: compare the prompt alone with every item and guide prompt.
+        const prompt = A.normalized(block.prompt);
+        if (ctx.prompts.has(prompt)) c.fail(bat, "repeats the prompt of " + ctx.prompts.get(prompt));
+        else ctx.prompts.set(prompt, bat);
+      }
+      if (t === "check") {
+        checks += 1;
+        c.check(block.id === prefix + "-c" + checks, bat, "check IDs run " + prefix + "-c1, -c2, … in reading order; expected " + prefix + "-c" + checks);
+        if (block.hint !== undefined) c.text(block.hint, bat + ".hint");
+        // see: the section of this guide to study when the check is missed.
+        if (block.see !== undefined) c.check(doc.sections.some(s => s.id === block.see && s !== section), bat + ".see", "names another section of this guide");
+        if (kind === "unit-review") c.check(block.see !== undefined, bat + ".see", "unit-review checks name the section to study when missed");
+      }
+      if (t === "figure" && c.text(block.id, bat + ".id")) { referenced.add(block.id); c.check(declared.has(block.id), bat, "undeclared figure " + block.id); }
+      if (t === "links" && c.records(block.items, bat + ".items") && c.check(block.items.length > 0, bat, "needs links")) {
+        block.items.forEach((entry, j) => { c.text(entry.label, bat + ".items[" + j + "].label"); refProblem(course, entry.ref, bat + ".items[" + j + "]", c); });
+      }
+    });
+  });
+  // Unit reviews are retrieval first: the opening section asks before it tells.
+  if (kind === "unit-review") {
+    c.check(checks >= MIN_REVIEW_CHECKS, where, `unit reviews need at least ${MIN_REVIEW_CHECKS} self-checks; found ${checks}`);
+    const opening = doc.sections[0].blocks;
+    c.check(opening.some(b => b.type === "check") && opening.every(b => b.type === "text" || b.type === "check"), where + "." + doc.sections[0].id, "a unit review opens with a section of checks (and text only), before any summary");
+  }
+  figures.forEach(f => c.check(referenced.has(f.id), where + ".figures." + f.id, "declared but never used"));
 }
 
 // Formula references: Liminal's own grouping of relations with meanings.
@@ -502,19 +677,21 @@ function loadSvgDirectory(directory, c, where) {
 function loadAp({ contentDir = path.join(ROOT, "content"), pagesDir = path.join(ROOT, "src"), complete = false } = {}) {
   const c = collector();
   const planFile = path.join(contentDir, "ap.json");
-  const result = { plan: null, assessments: [], references: [], pending: [], problems: c.problems, counts: {} };
+  const result = { plan: null, assessments: [], guides: [], references: [], pending: [], problems: c.problems, counts: {} };
   if (!fs.existsSync(planFile)) { c.fail("content/ap.json", "missing"); return result; }
   const plan = readJson(planFile, c);
   validatePlan(plan, c);
   if (c.problems.length) return result;
   result.plan = plan;
   const apDir = path.join(contentDir, "ap");
-  const ctx = { plan, figures: new Map(), usedFigures: new Set(), identities: new Map(), testedTopics: new Set() };
+  const ctx = { plan, figures: new Map(), usedFigures: new Set(), identities: new Map(), prompts: new Map(), testedTopics: new Set() };
   for (const entry of fs.existsSync(apDir) ? fs.readdirSync(apDir, { withFileTypes: true }) : []) {
-    c.check(entry.isDirectory() && ["assessments", "references", "figures"].includes(entry.name) || entry.name === ".gitkeep", "content/ap", "unexpected entry " + entry.name);
+    c.check(entry.isDirectory() && ["assessments", "guides", "references", "figures"].includes(entry.name) || entry.name === ".gitkeep", "content/ap", "unexpected entry " + entry.name);
   }
   for (const courseId of A.COURSES) ctx.figures.set(courseId, loadSvgDirectory(path.join(apDir, "figures", courseId), c, "content/ap/figures/" + courseId));
-  for (const name of fs.existsSync(path.join(apDir, "figures")) ? fs.readdirSync(path.join(apDir, "figures")) : []) c.check(A.COURSES.includes(name) || name === ".gitkeep", "content/ap/figures", "unexpected entry " + name);
+  for (const group of ["figures", "guides"]) {
+    for (const name of fs.existsSync(path.join(apDir, group)) ? fs.readdirSync(path.join(apDir, group)) : []) c.check(A.COURSES.includes(name) || name === ".gitkeep", "content/ap/" + group, "unexpected entry " + name);
+  }
   // Weekly items first, so a test item repeating a worksheet item is reported at the test.
   const weeklyDir = path.join(contentDir, "weekly", "ap");
   const weekly = new Map();
@@ -532,12 +709,13 @@ function loadAp({ contentDir = path.join(ROOT, "content"), pagesDir = path.join(
     weeklyItems(course).forEach(({ where, item }) => {
       const identity = A.identity(item, figureSvgs);
       if (!ctx.identities.has(identity)) ctx.identities.set(identity, courseId + " weekly " + where);
+      if (!ctx.prompts.has(A.normalized(item.prompt))) ctx.prompts.set(A.normalized(item.prompt), courseId + " weekly " + where);
     });
     c.claims(course, "weekly/ap/" + courseId);
   }
   for (const course of plan.courses) {
     const dir = path.join(apDir, "assessments", course.id);
-    const expected = course.units.map(u => u.test);
+    const expected = A.assessmentIds(course);
     for (const name of fs.existsSync(dir) ? fs.readdirSync(dir).filter(n => n !== ".gitkeep") : []) {
       if (!c.check(name.endsWith(".json") && expected.includes(name.slice(0, -5)), "content/ap/assessments/" + course.id, "unexpected file " + name)) continue;
       const file = path.join(dir, name);
@@ -553,6 +731,25 @@ function loadAp({ contentDir = path.join(ROOT, "content"), pagesDir = path.join(
     }
     const present = new Set(result.assessments.filter(d => d.courseId === course.id).map(d => d.id));
     expected.filter(id => !present.has(id)).forEach(id => result.pending.push(course.id + "/" + id));
+    // Exam-prep guides named by the course's prep block.
+    const guideDir = path.join(apDir, "guides", course.id);
+    const guideIds = A.guideIds(course);
+    const guides = new Set();
+    for (const name of fs.existsSync(guideDir) ? fs.readdirSync(guideDir).filter(n => n !== ".gitkeep") : []) {
+      if (!c.check(name.endsWith(".json") && guideIds.includes(name.slice(0, -5)), "content/ap/guides/" + course.id, "unexpected file " + name)) continue;
+      const file = path.join(guideDir, name);
+      c.check(fs.statSync(file).size <= MAX_ASSESSMENT_BYTES, "content/ap/guides/" + course.id + "/" + name, "exceeds 1 MB");
+      const doc = readJson(file, c);
+      if (!doc) continue;
+      const before = c.problems.length;
+      validateGuide(doc, { courseId: course.id, id: name.slice(0, -5) }, ctx, c);
+      if (c.problems.length === before) {
+        const svgs = ctx.figures.get(course.id);
+        guides.add(doc.id);
+        result.guides.push({ ...doc, ...(doc.figures ? { figures: doc.figures.map(f => ({ ...f, svg: svgs.get(f.id) })) } : {}) });
+      }
+    }
+    guideIds.filter(id => !guides.has(id)).forEach(id => result.pending.push(course.id + "/guide/" + id));
     if (course.reference) {
       const file = path.join(apDir, "references", course.reference + ".json");
       if (fs.existsSync(file)) {
@@ -581,12 +778,12 @@ function loadAp({ contentDir = path.join(ROOT, "content"), pagesDir = path.join(
       if (complete && short.length) c.fail(course.id, `unit tests need each free-response type at least ${rule} times; short: ${short.join(", ")}`);
     }
   }
-  if (complete) result.pending.filter(p => /\/(?:unit-\d+|practice-exam|reference)$/.test(p)).forEach(p => c.fail(p, "missing (required by --complete)"));
+  if (complete) result.pending.filter(p => /^[a-z0-9-]+\/(?:guide\/)?[a-z0-9-]+$/.test(p)).forEach(p => c.fail(p, "missing (required by --complete)"));
   // Figure files nobody uses.
   for (const [courseId, svgs] of ctx.figures) for (const id of svgs.keys()) c.check(ctx.usedFigures.has(courseId + "/" + id), "content/ap/figures/" + courseId + "/" + id + ".svg", "orphan figure");
   disclaimerProblems(pagesDir).forEach(p => c.fail("pages", p));
   pageClaimProblems(pagesDir).forEach(p => c.fail("pages", p));
-  result.counts = { assessments: result.assessments.length, references: result.references.length,
+  result.counts = { assessments: result.assessments.length, guides: result.guides.length, references: result.references.length,
     mc: result.assessments.reduce((s, d) => s + A.counts(d).mc, 0), fr: result.assessments.reduce((s, d) => s + A.counts(d).fr, 0) };
   return result;
 }
@@ -602,10 +799,10 @@ function main(argv = process.argv.slice(2)) {
     return 1;
   }
   const { counts } = result;
-  console.log(`AP check passed: plan for ${result.plan.courses.length} courses; ${counts.assessments} assessments (${counts.mc} MC, ${counts.fr} FR); ${counts.references} references.`);
+  console.log(`AP check passed: plan for ${result.plan.courses.length} courses; ${counts.assessments} assessments (${counts.mc} MC, ${counts.fr} FR); ${counts.guides} guides; ${counts.references} references.`);
   if (!complete && result.pending.length) console.log(`Pending (fails only with --complete): ${result.pending.length} — ${result.pending.slice(0, 6).join("; ")}${result.pending.length > 6 ? "; …" : ""}`);
   return 0;
 }
 
-module.exports = { loadAp, validatePlan, validateAssessment, validateReference, disclaimerProblems, pageClaimProblems, main };
+module.exports = { loadAp, validatePlan, validateAssessment, validateGuide, validateReference, disclaimerProblems, pageClaimProblems, main };
 if (require.main === module) process.exitCode = main();

@@ -1,0 +1,490 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "review-u7",
+  "kind": "unit-review",
+  "unitId": "u7",
+  "title": "Unit 7 review: Differential Equations",
+  "author": "bc-review-author",
+  "summary": "A retrieval-first review of differential equations for the AP® Calculus BC Exam: recall the definitions and models from memory, work mixed exam-level problems (slope fields, Euler’s method judged by concavity, separation with its lost constant solutions and domains, exponential and logistic models, and equilibria), then check yourself against exact statements of the results, model justifications, common traps, and three worked examples.",
+  "minutes": 50,
+  "figures": [
+    {
+      "id": "bc-review-u7-g1",
+      "alt": "A slope field drawn at the integer points of a grid with x from −3 to 3 and y from −4 to 4, except on the y-axis. Every segment in a horizontal row has the same slope. The segments in the rows y = 2 and y = −2 are horizontal. The rows y = 1, 0 and −1 slant downward to the right, gently. The rows y = 3, 4, −3 and −4 slant upward to the right, and the rows y = 4 and y = −4 are the steepest."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question from memory, out loud or on paper, before you open its answer. A wrong or partial answer now is useful: the check's answer names the section to study, and the part of it on the same idea is what to reread. Say every hypothesis, not only the formula."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c1",
+          "prompt": "What does it mean for y = f(x) to be a solution of a differential equation on an open interval I? What else must a particular solution of an initial-value problem satisfy?",
+          "answer": "f is differentiable on I, and substituting f and its derivatives into the equation makes it true for every x in I. A particular solution also satisfies the initial condition f(x0) = y0, and I contains x0.",
+          "steps": [
+            "To verify a proposed solution, compute f′ (and f″ if the equation uses it) from the formula, then compute the other side of the equation from f, and show the two expressions are equal for every x in I. Agreement at one point proves nothing.",
+            "For the initial-value problem dy/dx = F(x, y), y(x0) = y0, also check f(x0) = y0.",
+            "The interval is part of the answer: it is the largest open interval containing x0 on which the formula is defined and satisfies the equation."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c2",
+          "prompt": "State the method of separation of variables: which equations it applies to, what you integrate, and which solutions it can lose.",
+          "answer": "If dy/dx = g(x)h(y), then wherever h(y) ≠ 0, ∫ 1/(h(y)) dy = ∫ g(x) dx + C. Each root c of h(c) = 0 gives a constant solution y = c that the division by h(y) loses.",
+          "steps": [
+            "The right side must be a product of a function of x alone and a function of y alone. A sum such as x + y cannot be separated.",
+            "Dividing by h(y) is legal only where h(y) ≠ 0. If h(c) = 0, then y = c makes both sides of the equation 0, so it is a solution, but it never appears in the separated formula.",
+            "Add C when you integrate, find it from the initial condition, and only then solve for y; the initial value chooses any sign or root."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c3",
+          "prompt": "Write the update rule for Euler’s method with step size h for dy/dx = F(x, y), starting at (x0, y0). With h > 0, when is the Euler estimate certainly too small?",
+          "answer": "x_new = x_old + h and y_new = y_old + h·F(x_old, y_old). It is too small when the solution curves through the stretch covered are concave up (d^2y/dx^2 > 0 there).",
+          "steps": [
+            "Each step moves along the tangent line of the solution curve through the current point, using the slope from the equation at that point.",
+            "Where solution curves are concave up, they lie above their tangent lines, so each step lands below the curve it follows. Solution curves do not cross, so the error does not reverse.",
+            "The sign of d^2y/dx^2 must hold on the whole region containing the solution and every Euler point. If the concavity changes, this test decides nothing."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c4",
+          "prompt": "Give the solution of dy/dt = ky with y(0) = y0, the doubling time or half-life in terms of k, and the solution of dy/dt = k(y − M) with y(0) = y0.",
+          "answer": "y = y0e^(kt); doubling time or half-life (ln 2)/|k|; y = M + (y0 − M)e^(kt).",
+          "steps": [
+            "Separate: dy/y = k dt, so ln|y| = kt + C and y = Ae^(kt) with A = y0. (y = 0 is the constant solution and is included when y0 = 0.)",
+            "Doubling (k > 0) or halving (k < 0) requires e^(kT) = 2 or 1/2, so T = (ln 2)/|k|.",
+            "For dy/dt = k(y − M), the excess u = y − M satisfies du/dt = ku, so u = (y0 − M)e^(kt). For k < 0 every solution approaches M."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c5",
+          "prompt": "For the logistic equation dP/dt = kP(1 − P/L) with k > 0, L > 0 and P(0) = P0 > 0, give the constant solutions, lim as t→∞ of P(t), the population at which an increasing solution grows fastest, and the solution formula.",
+          "answer": "P = 0 and P = L; the limit is L; fastest growth at P = L/2 (for a solution that passes through it); P(t) = L/(1 + Ae^(−kt)) with A = (L − P0)/P0.",
+          "steps": [
+            "dP/dt = 0 when P = 0 or P = L. dP/dt > 0 for 0 < P < L and dP/dt < 0 for P > L, so every positive solution moves toward L.",
+            "As a function of P, dP/dt = kP − (k/L)P^2 is a downward-opening quadratic with vertex at P = L/2. A solution with 0 < P0 < L/2 passes through L/2, and that is where it grows fastest and has its inflection point.",
+            "Partial fractions give ln|P/(L − P)| = kt + C, which rearranges to P = L/(1 + Ae^(−kt)); at t = 0, P0 = L/(1 + A), so A = (L − P0)/P0."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c6",
+          "prompt": "For an autonomous equation dy/dt = g(y), how do you find the equilibrium (constant) solutions, and how does the sign of g tell you whether nearby solutions approach an equilibrium y = c as t increases?",
+          "answer": "Solve g(c) = 0. Nearby solutions approach y = c from both sides when g > 0 just below c and g < 0 just above c; on a side where the sign points away, they move away.",
+          "steps": [
+            "y = c is a solution exactly when g(c) = 0, because the constant function has derivative 0 everywhere.",
+            "Below c, g > 0 makes y increase toward c; above c, g < 0 makes y decrease toward c. If both hold, c attracts from both sides (stable). If g < 0 below and g > 0 above, solutions move away on both sides (unstable).",
+            "When g′ is continuous, solution curves cannot cross or touch y = c, so a solution between two consecutive equilibria stays between them and approaches the one it moves toward."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each problem fully before opening the answer, as you would on the exam: write the setup, then the result, then any justification. Checks 7 to 12 use no calculator."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c7",
+          "prompt": "The figure shows the slope field for one of these differential equations:\n\n(i) dy/dx = (4 − y^2)/4\n(ii) dy/dx = (y^2 − 4)/4\n(iii) dy/dx = x(y^2 − 4)/4\n(iv) dy/dx = (y − 2)^2/4\n\nIdentify the equation, and give a reason that rules out each of the others. Then find lim as x→∞ of y for the solution through (0, 1) and for the solution through (0, −3).",
+          "figureIds": [
+            "bc-review-u7-g1"
+          ],
+          "hint": "Compare the segments along one horizontal row, then find the rows where every segment is flat.",
+          "answer": "Equation (ii). Both limits are −2.",
+          "steps": [
+            "Along each horizontal row every segment has the same slope, so dy/dx does not depend on x. That rules out (iii), whose slopes change sign when x does.",
+            "Both rows y = 2 and y = −2 are flat. Equation (iv) is 0 only at y = 2 (its slope at y = −2 is 4), so it is ruled out.",
+            "Between the flat rows the segments slant down, so dy/dx < 0 for −2 < y < 2. Equation (i) gives dy/dx = 1 > 0 at y = 0, so it is ruled out; equation (ii) gives −1 there, matching the field.",
+            "Through (0, 1): −2 < 1 < 2, so dy/dx < 0 and y decreases. The constant solutions y = 2 and y = −2 cannot be crossed, so y stays between them, decreasing and bounded below; it approaches the constant solution below it. lim as x→∞ of y = −2.",
+            "Through (0, −3): dy/dx = (9 − 4)/4 = 5/4 > 0, and dy/dx > 0 for every y < −2, so y increases but stays below the constant solution y = −2. Being increasing and bounded, y has a limit, which must be a constant solution; the only one in [−3, −2] is y = −2, so lim as x→∞ of y = −2.",
+            "So y = −2 attracts solutions from both sides, and y = 2 repels them. The solution through (0, 3), for contrast, increases without bound."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c8",
+          "prompt": "Each equation below has the initial condition y(0) = 3.\n\n(a) dy/dx = xy + 3y − 2x − 6\n(b) dy/dx = x + y − 2\n\nFor each one, find y(1) exactly if the equation is separable. If it is not, approximate y(1) with Euler’s method using two steps of size 0.5, and decide whether that approximation is too large or too small.",
+          "hint": "Group the four terms of (a) in pairs and factor each pair.",
+          "answer": "(a) y(1) = 2 + e^(7/2). (b) y(1) ≈ 9/2, an underestimate.",
+          "steps": [
+            "(a) Factor by grouping: xy + 3y − 2x − 6 = y(x + 3) − 2(x + 3) = (x + 3)(y − 2). The variables separate.",
+            "y(0) = 3 > 2, so y − 2 > 0 near the start: dy/(y − 2) = (x + 3) dx gives ln(y − 2) = x^2/2 + 3x + C, and y(0) = 3 gives ln 1 = C, so C = 0.",
+            "y = 2 + e^(x^2/2 + 3x), so y(1) = 2 + e^(1/2 + 3) = 2 + e^(7/2). (The constant solution y = 2 is lost by the division, but it does not pass through (0, 3).)",
+            "(b) x + y − 2 is a sum that cannot be written as (a function of x) times (a function of y), so separation does not apply; approximate instead.",
+            "At (0, 3) the slope is 0 + 3 − 2 = 1, so y(0.5) ≈ 3 + 0.5(1) = 3.5. At (0.5, 3.5) the slope is 0.5 + 3.5 − 2 = 2, so y(1) ≈ 3.5 + 0.5(2) = 4.5 = 9/2.",
+            "d^2y/dx^2 = 1 + dy/dx = 1 + (x + y − 2) = x + y − 1. For x ≥ 0 and y ≥ 3 this is at least 2, so it is positive. In that region dy/dx ≥ 1, so the solution increases from 3 and stays there, and both Euler points lie there.",
+            "The solution curves are concave up throughout, so the Euler steps fall below them: 9/2 is an underestimate. (For reference, the exact solution is y = 1 − x + 2e^x, with y(1) = 2e ≈ 5.437.)"
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c9",
+          "prompt": "A positive function y = f(x) satisfies the differential equation dy/dx = g(x)·y with f(0) = 5, where g is a continuous function. Selected values of g are shown.\n\n| x | 0 | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- | --- |\n| g(x) | 0.2 | 0.5 | 0.4 | 0.1 | −0.2 |\n\n(a) Must there be a value c with 3 < c < 4 at which f′(c) = 0? Justify your answer.\n(b) Use a trapezoidal sum with the four subintervals shown to approximate ∫ from 0 to 4 of g(x) dx.\n(c) Use your answer to (b) to approximate f(4).",
+          "hint": "For (c), divide both sides of the equation by y before integrating from 0 to 4.",
+          "answer": "(a) Yes. (b) 1. (c) f(4) ≈ 5e.",
+          "steps": [
+            "(a) g is continuous on [3, 4] with g(3) = 0.1 > 0 and g(4) = −0.2 < 0, so by the Intermediate Value Theorem there is a c with 3 < c < 4 and g(c) = 0. Then f′(c) = g(c)f(c) = 0.",
+            "(b) Each subinterval has width 1: (1/2)(0.2 + 0.5) + (1/2)(0.5 + 0.4) + (1/2)(0.4 + 0.1) + (1/2)(0.1 + (−0.2)) = 0.35 + 0.45 + 0.25 − 0.05 = 1.",
+            "(c) Since y > 0, (1/y)(dy/dx) = g(x). Integrate from 0 to 4: ln f(4) − ln f(0) = ∫ from 0 to 4 of g(x) dx ≈ 1.",
+            "So ln f(4) ≈ ln 5 + 1 and f(4) ≈ 5e^1 = 5e.",
+            "The only approximation is the trapezoidal sum: given the exact integral, the step from ∫ from 0 to 4 of g(x) dx to f(4) would be exact."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c10",
+          "prompt": "The number N of people in a town who have heard a rumor satisfies dN/dt = kN(1 − N/600), where t is measured in hours and k is a positive constant. At an instant when N = 100, the rumor is spreading at 25 people per hour.\n\n(a) Find k.\n(b) Suppose N(0) = 100. Find lim as t→∞ of N(t), and find the greatest rate at which the rumor spreads for t ≥ 0. Include units.\n(c) For the solution in (b), for which values of N is the graph of N concave up, and for which is it concave down?",
+          "hint": "For (b), treat dN/dt as a function of N and find where it is largest.",
+          "answer": "(a) k = 0.3 per hour. (b) The limit is 600 people; the greatest rate is 45 people per hour, when N = 300. (c) Concave up for 100 < N < 300; concave down for 300 < N < 600.",
+          "steps": [
+            "(a) 25 = k(100)(1 − 100/600) = k(100)(5/6), so k = 25(6/500) = 0.3.",
+            "(b) The constant solutions are N = 0 and N = 600. dN/dt > 0 for 0 < N < 600, and N(0) = 100 is in that interval, so N increases and stays between 100 and 600. Being increasing and bounded, N(t) has a limit, which must be a constant solution; the only one in [100, 600] is N = 600, so lim as t→∞ of N(t) = 600 people.",
+            "As a function of N, dN/dt = 0.3N − 0.0005N^2 is a downward-opening quadratic with vertex at N = 300. N rises from 100 toward 600, so it passes through 300; the greatest rate is 0.3(300)(1 − 1/2) = 45 people per hour.",
+            "(c) By the chain rule, d^2N/dt^2 = 0.3(1 − 2N/600)(dN/dt) = 0.3(1 − N/300)(dN/dt). Since dN/dt > 0 for 0 < N < 600, the sign of d^2N/dt^2 is the sign of 1 − N/300.",
+            "So the graph is concave up while 100 < N < 300 and concave down while 300 < N < 600, with an inflection point at N = 300. (A solution with N > 600 would decrease and be concave up.)"
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c11",
+          "prompt": "Water drains from a tank so that the depth h of the water, in meters, t minutes after draining begins, satisfies dh/dt = −0.2√h, with h(0) = 9.\n\n(a) Find h(t).\n(b) When is the tank empty? For which values of t does your formula from (a) give the depth?\n(c) A classmate calls this an exponential decay model. Is that right? Explain.",
+          "hint": "√h is a function of h alone. What happens to √h when h = 0?",
+          "answer": "(a) h(t) = (3 − 0.1t)^2. (b) Empty at t = 30 minutes; the formula holds for 0 ≤ t ≤ 30, and h = 0 after that. (c) No.",
+          "steps": [
+            "(a) While h > 0, separate: h^(−1/2) dh = −0.2 dt, so 2√h = −0.2t + C. At t = 0, 2√9 = 6 = C.",
+            "So √h = 3 − 0.1t and h = (3 − 0.1t)^2. Check: dh/dt = 2(3 − 0.1t)(−0.1) = −0.2(3 − 0.1t) = −0.2√h, because 3 − 0.1t ≥ 0.",
+            "(b) h = 0 when 3 − 0.1t = 0, so t = 30 minutes. The step √h = 3 − 0.1t needs 3 − 0.1t ≥ 0, so the formula holds for 0 ≤ t ≤ 30.",
+            "For t > 30 the formula (3 − 0.1t)^2 would increase again, but dh/dt ≤ 0 always: the depth cannot rise. The tank stays empty, h = 0, which is the constant solution that dividing by √h set aside.",
+            "(c) No. In exponential decay the rate is proportional to h itself, so the amount never reaches 0 in finite time. Here the rate is proportional to √h, which is relatively larger when h is small, and the tank empties at t = 30."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u7-c12",
+          "prompt": "(a) Show that y = 3x − 2 + Ce^(−x) is a solution of dy/dx = 3x + 1 − y for every constant C.\n(b) Find the particular solution with y(0) = 4.\n(c) Exactly one solution has a graph that is a line. Which one? Describe every other solution as x→∞.",
+          "hint": "Compute dy/dx from the formula and 3x + 1 − y from the formula separately, then compare.",
+          "answer": "(b) y = 3x − 2 + 6e^(−x). (c) y = 3x − 2; every other solution approaches this line as x→∞.",
+          "steps": [
+            "(a) From the formula, dy/dx = 3 − Ce^(−x). Also 3x + 1 − y = 3x + 1 − (3x − 2 + Ce^(−x)) = 3 − Ce^(−x). The two agree for every x and every C, so each is a solution on (−∞, ∞).",
+            "This equation does not separate, so substitution is how you confirm a proposed solution.",
+            "(b) y(0) = −2 + C = 4, so C = 6 and y = 3x − 2 + 6e^(−x).",
+            "(c) The graph is a line only when C = 0, giving y = 3x − 2 (its slope 3 matches 3x + 1 − (3x − 2) = 3).",
+            "For C ≠ 0, y − (3x − 2) = Ce^(−x) → 0 as x→∞, so every solution approaches the line y = 3x − 2 from above (C > 0) or below (C < 0)."
+          ],
+          "see": "justifications-and-traps"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Solutions and verification",
+          "text": "y = f(x) is a solution of a differential equation on an open interval I when f is differentiable on I and substituting f, f′, … makes the equation true for every x in I. A particular solution also satisfies the initial condition y(x0) = y0, and I contains x0.",
+          "conditions": [
+            "Verify by computing each side from the formula separately and showing they agree as functions on I.",
+            "State I as the largest open interval containing x0 on which the formula is defined and satisfies the equation; it ends at an asymptote, a point where a logarithm or root fails, or a point where the equation is undefined."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Slope fields",
+          "text": "The segment at (x, y) has slope F(x, y) for the equation dy/dx = F(x, y). A solution curve is tangent to every segment it passes through.",
+          "conditions": [
+            "Segments the same along each horizontal row: F depends on y only. The same along each vertical column: F depends on x only.",
+            "A row y = c is a constant solution only if every segment on it is horizontal; a single flat segment is not enough.",
+            "Solution curves never cross or touch where F and its derivative with respect to y (x held fixed) are continuous."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Euler’s method",
+          "text": "For dy/dx = F(x, y), y(x0) = y0, and step h: x_new = x_old + h and y_new = y_old + h·F(x_old, y_old), repeated until x reaches the target.",
+          "conditions": [
+            "Each slope is evaluated at the point just computed.",
+            "With h > 0: if the solution curves through the stretch covered are concave up, the estimate is too small; if concave down, too large. If d^2y/dx^2 changes sign there, this test decides nothing.",
+            "When F depends on x only, the Euler estimate is y0 plus a left Riemann sum for ∫ from x0 to x of F(s) ds."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Separation of variables",
+          "text": "If dy/dx = g(x)h(y), then on any interval where h(y) ≠ 0, the solutions satisfy ∫ 1/(h(y)) dy = ∫ g(x) dx + C.",
+          "conditions": [
+            "The right side must factor as a function of x times a function of y.",
+            "Each c with h(c) = 0 gives a constant solution y = c that the division loses; if y0 = c and g and h′ are continuous, the particular solution is y = c. Without that, other solutions can exist: dy/dx = √y, y(0) = 0 is solved by y = 0 and by y = x^2/4 for x ≥ 0.",
+            "Write + C when you integrate, find C from the initial condition, then solve for y, letting the initial value choose any sign or root."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Exponential growth and decay",
+          "text": "dy/dt = ky has the solutions y = y0e^(kt). The relative rate (dy/dt)/y is the constant k: growth if k > 0, decay if k < 0. The doubling time or half-life is (ln 2)/|k|.",
+          "conditions": [
+            "It applies only when the rate is proportional to y itself.",
+            "For dy/dt = k(y − M), the difference y − M is exponential: y = M + (y0 − M)e^(kt).",
+            "From two measurements, k = (1/t1)ln(y(t1)/y0)."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Logistic growth",
+          "text": "For dP/dt = kP(1 − P/L) with k > 0 and L > 0: P(t) = L/(1 + Ae^(−kt)) with A = (L − P0)/P0; the constant solutions are P = 0 and P = L; every solution with P0 > 0 approaches L; dP/dt is greatest at P = L/2; and d^2P/dt^2 = k(1 − 2P/L)(dP/dt).",
+          "conditions": [
+            "Factor first: aP − bP^2 = aP(1 − P/(a/b)), so L = a/b and k = a.",
+            "Only a solution with 0 < P0 < L/2 passes through L/2, where it grows fastest and changes from concave up to concave down. One with L/2 ≤ P0 < L is concave down; one with P0 > L decreases and is concave up.",
+            "While P is small compared with L, growth is close to exponential with rate k."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Equilibrium solutions and stability",
+          "text": "For dy/dt = g(y), each root c of g gives the constant solution y = c. If g > 0 just below c and g < 0 just above c, nearby solutions approach c as t increases (stable); if g < 0 below and g > 0 above, they move away (unstable).",
+          "conditions": [
+            "When g′ is continuous, a solution starting strictly between two consecutive equilibria stays between them, is monotonic, and approaches the one it moves toward.",
+            "A solution beyond the outermost equilibrium may grow without bound, possibly reaching a vertical asymptote at a finite value of t.",
+            "If g has the same sign on both sides of c, solutions approach c on one side and leave on the other."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Models to recognize on sight (y0 and P0 are the values at t = 0).",
+          "head": [
+            "Equation",
+            "Solution",
+            "Long run as t→∞"
+          ],
+          "rows": [
+            [
+              "dy/dt = ky",
+              "y = y0e^(kt)",
+              "k < 0: approaches 0. k > 0: grows without bound in size (y0 ≠ 0)."
+            ],
+            [
+              "dy/dt = k(y − M)",
+              "y = M + (y0 − M)e^(kt)",
+              "k < 0: approaches M. k > 0: moves away from M."
+            ],
+            [
+              "dP/dt = kP(1 − P/L), k > 0",
+              "P = L/(1 + Ae^(−kt)), A = (L − P0)/P0",
+              "Approaches L for every P0 > 0."
+            ],
+            [
+              "dy/dt = g(t)",
+              "y = y0 + ∫ from 0 to t of g(s) ds",
+              "Decided by the integral of g, not by an equilibrium."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "What the question asks and what to do.",
+          "head": [
+            "The question asks for",
+            "Do this"
+          ],
+          "rows": [
+            [
+              "An exact solution or value",
+              "Separate, if the right side factors as (x part)(y part); recognize an exponential or logistic model; otherwise approximate it, or verify a solution family the question gives."
+            ],
+            [
+              "An approximation at one point",
+              "Euler’s method with the stated steps, a tangent line, or a Taylor polynomial built by differentiating the equation (Unit 10)."
+            ],
+            [
+              "Over or under",
+              "Find d^2y/dx^2 by differentiating the equation (chain rule on every y), substitute dy/dx, and check its sign on the whole stretch."
+            ],
+            [
+              "Long-run behavior",
+              "For dy/dt = g(y): find the constant solutions and the sign of g between them; no solving needed. Otherwise use a solution formula or a given family."
+            ],
+            [
+              "A check of a given function",
+              "Substitute it and its derivatives into both sides."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Verifying a solution (y = 5 + 2e^(−x/2) for dy/dx = (5 − y)/2).",
+          "text": "From the formula, dy/dx = −e^(−x/2). Also (5 − y)/2 = (5 − 5 − 2e^(−x/2))/2 = −e^(−x/2). The two expressions are equal for every x, so y = 5 + 2e^(−x/2) is a solution on (−∞, ∞)."
+        },
+        {
+          "type": "model",
+          "prompt": "A limit from the equation alone (dy/dt = (y − 1)(5 − y), y(0) = 2).",
+          "text": "The constant solutions are y = 1 and y = 5. For 1 < y < 5, dy/dt > 0, and y(0) = 2 is in that interval, so y increases. Solution curves cannot cross the constant solution y = 5, so 2 ≤ y(t) < 5 for all t ≥ 0. Being increasing and bounded, y(t) has a limit, and that limit must be a constant solution of the equation; the only one in [2, 5] is y = 5, so lim as t→∞ of y(t) = 5."
+        },
+        {
+          "type": "model",
+          "prompt": "Over or under from concavity (y = f(x) solves dy/dx = cos x − y with f(0) = 2; estimate f(0.2)).",
+          "text": "At (0, 2), dy/dx = cos 0 − 2 = −1, so the tangent line is y = 2 − x and f(0.2) ≈ 1.8. Differentiating, d^2y/dx^2 = −sin x − dy/dx = y − sin x − cos x, which must be positive on all of 0 ≤ x ≤ 0.2, not only at x = 0. On that stretch y never rises above 2 (wherever y = 2, the slope cos x − 2 is negative), so dy/dx = cos x − y > −2 and y > 2 − 2(0.2) = 1.6. Also sin x + cos x ≤ √2 < 1.5. So d^2y/dx^2 > 1.6 − 1.5 > 0 on 0 ≤ x ≤ 0.2: the graph of f is concave up there and lies above its tangent line, and 1.8 is an underestimate of f(0.2)."
+        },
+        {
+          "type": "model",
+          "prompt": "Interpreting a rate in context (the temperature T of a cup of coffee, in degrees Celsius, t minutes after it is poured, satisfies dT/dt = −0.05(T − 20); interpret dT/dt at T = 60).",
+          "text": "dT/dt = −0.05(40) = −2. When the coffee is at 60 °C, its temperature is decreasing at 2 °C per minute."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining a lost constant solution (dy/dx = x(y − 4)^2, y(0) = 4).",
+          "text": "Separating requires dividing by (y − 4)^2, which is allowed only where y ≠ 4. The constant function y = 4 makes both sides 0, so it is a solution, and it satisfies y(0) = 4. Since x(y − 4)^2 and its derivative with respect to y are continuous, no other solution passes through (0, 4), so the particular solution is y = 4; the separated family y = 4 − 1/(x^2/2 + C) never equals 4, so it cannot give this solution."
+        },
+        {
+          "type": "trap",
+          "text": "Treating dy/dt = k(y − M) as plain exponential and writing y = y0e^(kt).",
+          "fix": "Only the difference y − M is exponential: y = M + (y0 − M)e^(kt). Check at t = 0 and ask what y approaches; for k < 0 it must be M, not 0."
+        },
+        {
+          "type": "trap",
+          "text": "Splitting the constant into a sum: from ln|y| = 3x + C, writing y = e^(3x) + e^C.",
+          "fix": "e^(3x + C) = e^C·e^(3x), a product, so y = Ae^(3x). Better still, find C from the initial condition while the equation is still in logarithm form."
+        },
+        {
+          "type": "trap",
+          "text": "Reading the capacity from an unfactored logistic equation: for dP/dt = 0.6P − 0.003P^2, saying growth is fastest at P = 0.3.",
+          "fix": "Factor: 0.6P − 0.003P^2 = 0.6P(1 − P/200), so L = 200 and dP/dt is largest at P = 100, for a solution that passes through 100."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving h out of an Euler step: y_new = y_old + F(x_old, y_old).",
+          "fix": "The slope is a rate per unit of x; multiply it by the step: y_new = y_old + h·F(x_old, y_old). Write the point, the slope, and the step on separate lines."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a line a solution because one slope-field segment on it is flat: for dy/dx = x − y, the slope at (0, 0) is 0, so y = 0 is called a solution.",
+          "fix": "y = c is a solution only if dy/dx = 0 at every point of the line. For dy/dx = x − y the slope at (1, 0) is 1, so y = 0 is not a solution."
+        },
+        {
+          "type": "trap",
+          "text": "Judging over or under from the slope: \"the solution is increasing, so the tangent-line estimate is too small.\"",
+          "fix": "The sign of dy/dx says whether the curve rises, not which side of its tangent line it is on. Only the sign of d^2y/dx^2 on the whole stretch decides over or under."
+        },
+        {
+          "type": "trap",
+          "text": "Finding the decay constant from a half-life T as k = (ln 2)T or k = 1/T.",
+          "fix": "Solve e^(kT) = 1/2: k = −(ln 2)/T. Check by substituting t = T into e^(kt)."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let y = f(x) be the solution of dy/dx = e^y·cos x with f(0) = 0. Find f(x), and state the largest open interval containing x = 0 on which it is defined.",
+          "answer": "f(x) = −ln(1 − sin x), for −3π/2 < x < π/2.",
+          "steps": [
+            "Separate: e^(−y) dy = cos x dx. Since e^y is never 0, the division loses no constant solution.",
+            "Integrate and add the constant now: −e^(−y) = sin x + C.",
+            "Use f(0) = 0 at once: −1 = 0 + C, so C = −1 and e^(−y) = 1 − sin x.",
+            "e^(−y) is always positive, so this requires 1 − sin x > 0. Then −y = ln(1 − sin x) and f(x) = −ln(1 − sin x).",
+            "1 − sin x = 0 when sin x = 1; the nearest such x on either side of 0 are π/2 and −3π/2. So the interval is −3π/2 < x < π/2, and f(x) → ∞ at both ends.",
+            "Check: f′(x) = cos x/(1 − sin x), and e^(f(x))·cos x = cos x/(1 − sin x). They agree, and f(0) = −ln 1 = 0."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Let y = f(x) be the solution of dy/dx = 2y − x with f(0) = 1. Use Euler’s method with two steps of size 0.25 to approximate f(0.5), and decide whether the approximation is too large or too small.",
+          "answer": "f(0.5) ≈ 35/16, an underestimate.",
+          "steps": [
+            "At (0, 1): dy/dx = 2(1) − 0 = 2, so f(0.25) ≈ 1 + 0.25(2) = 1.5.",
+            "At (0.25, 1.5): dy/dx = 2(1.5) − 0.25 = 2.75, so f(0.5) ≈ 1.5 + 0.25(2.75) = 2.1875 = 35/16.",
+            "Differentiate the equation: d^2y/dx^2 = 2(dy/dx) − 1 = 2(2y − x) − 1 = 4y − 2x − 1.",
+            "For 0 ≤ x ≤ 0.5 and y ≥ 1, 4y − 2x − 1 ≥ 4 − 1 − 1 = 2 > 0. In that region dy/dx = 2y − x ≥ 1.5 > 0, so the solution rises from 1 and stays there, and both Euler points lie there too.",
+            "The solution curves are concave up on the whole stretch, so the Euler steps fall below them: 35/16 is an underestimate.",
+            "For reference, y = x/2 + 1/4 + (3/4)e^(2x) satisfies the equation (substitute to check) and f(0) = 1, so f(0.5) = 1/2 + (3/4)e ≈ 2.539."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A population satisfies dP/dt = 0.25P(1 − P/90), where t is in years, with P(0) = 10. Solve for P(t), and find the time at which the population grows fastest.",
+          "answer": "P(t) = 90/(1 + 8e^(−0.25t)); fastest growth at t = 12 ln 2 years.",
+          "steps": [
+            "Separate (for 0 < P < 90): 90/(P(90 − P)) dP = 0.25 dt, since 1/(P(1 − P/90)) = 90/(P(90 − P)).",
+            "Partial fractions: 90/(P(90 − P)) = 1/P + 1/(90 − P).",
+            "Integrate: ln P − ln(90 − P) = 0.25t + C, so ln(P/(90 − P)) = 0.25t + C. At t = 0: ln(10/80) = C, so P/(90 − P) = (1/8)e^(0.25t).",
+            "Solve: 8P = (90 − P)e^(0.25t), so P(8 + e^(0.25t)) = 90e^(0.25t) and P = 90/(1 + 8e^(−0.25t)).",
+            "Growth is fastest when P = 90/2 = 45, since 10 < 45 < 90: 1 + 8e^(−0.25t) = 2, so e^(−0.25t) = 1/8 and t = 4 ln 8 = 12 ln 2 ≈ 8.318 years.",
+            "At that moment dP/dt = 0.25(45)(1/2) = 5.625 individuals per year."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 17: Differential equations, slope fields, and Euler approximation",
+              "ref": "week:17"
+            },
+            {
+              "label": "Week 18: Separation, initial values, exponential and logistic models",
+              "ref": "week:18"
+            },
+            {
+              "label": "Unit 7 test",
+              "ref": "test:unit-7"
+            },
+            {
+              "label": "Unit 7 test key",
+              "ref": "key:unit-7"
+            },
+            {
+              "label": "Free-response workshop: Differential equations",
+              "ref": "guide:fr-differential-equations"
+            },
+            {
+              "label": "Free-response workshop: Tables",
+              "ref": "guide:fr-tables"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,563 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "review-u9",
+  "kind": "unit-review",
+  "unitId": "u9",
+  "title": "Unit 9 review: Parametric Equations, Polar Coordinates, and Vector-Valued Functions",
+  "author": "bc-review-author",
+  "summary": "A retrieval-first review of Unit 9 for the AP® Calculus BC Exam, for when weeks or months have passed since you learned it. Recall the formulas and the conditions they need, work five mixed problems on parametric tangents, planar motion, polar tangents and polar area, then check yourself against the rules, model justifications, common traps and worked examples that follow.",
+  "minutes": 50,
+  "figures": [
+    {
+      "id": "bc-review-u9-g1",
+      "alt": "Axes with x from −2.5 to 2.5 and y from −1 to 3.5. A solid circle passes through the origin and reaches up to y = 3, labeled r = 3 sin θ. A dashed cardioid with its cusp at the origin, a small dip below the x-axis on each side, and its top at y = 2 is labeled r = 1 + sin θ. The curves cross at two points, one on each side of the y-axis at height a little below 1. The crescent between them, inside the circle and above the cardioid, is shaded and labeled R.",
+      "caption": "Region R lies inside the circle and outside the cardioid."
+    },
+    {
+      "id": "bc-review-u9-g2",
+      "alt": "Axes with x and y from −2.25 to 2.25. A solid four-petal rose labeled r = 2 sin(2θ) has one petal in each quadrant, each petal tip 2 units from the origin. A dashed circle of radius 1 centered at the origin is labeled r = 1. In the first quadrant, the part of the petal outside the circle is shaded.",
+      "caption": "The shaded region is inside the first-quadrant petal and outside the circle."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question on paper before you open its answer, and write the conditions as well as the formula: a justification earns credit only when it says why the formula applies. Trying to recall and then checking, even when the attempt fails, does more for later recall than rereading. If you miss one, read its steps and the part of the section its answer names on the same idea, then try it again cold in a day or two."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c1",
+          "prompt": "A curve is given by x = x(t) and y = y(t), with both functions differentiable. Write dy/dx and d^2y/dx^2 in terms of derivatives with respect to t, and state the condition each formula needs.",
+          "hint": "Start from the chain rule: dy/dt = (dy/dx)(dx/dt).",
+          "answer": "dy/dx = (dy/dt)/(dx/dt) and d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt), each where dx/dt ≠ 0.",
+          "steps": [
+            "The chain rule gives dy/dt = (dy/dx)(dx/dt). Where dx/dt ≠ 0, divide: dy/dx = (dy/dt)/(dx/dt).",
+            "d^2y/dx^2 is the derivative of the slope with respect to x, not t. Apply the same step to the function dy/dx: d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt), again where dx/dt ≠ 0 (and the slope must be differentiable in t).",
+            "It is not (d^2y/dt^2)/(d^2x/dt^2). That quotient compares two accelerations and says nothing about concavity in the xy-plane."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c2",
+          "prompt": "State the conditions for a parametric curve to have a horizontal tangent at t = t0 and for it to have a vertical tangent there. What can you conclude when dx/dt and dy/dt are both 0 at t0?",
+          "answer": "Horizontal: dy/dt = 0 and dx/dt ≠ 0. Vertical: dx/dt = 0 and dy/dt ≠ 0. If both are 0, neither test applies; examine the limit of dy/dx as t → t0.",
+          "steps": [
+            "A horizontal tangent needs slope 0: dy/dx = (dy/dt)/(dx/dt) = 0, which requires dy/dt = 0 with dx/dt ≠ 0.",
+            "A vertical tangent needs the slope to grow without bound while the point keeps moving: dx/dt = 0 with dy/dt ≠ 0.",
+            "If dx/dt = dy/dt = 0, the quotient is 0/0 and decides nothing. Find the limit of dy/dx as t → t0, or eliminate t near t0. The tangent may be horizontal, vertical or of some other slope, and the curve may have a cusp there.",
+            "If the two one-sided limits of dy/dx are different finite numbers, the curve has a corner and no tangent line. For example, x = t^3 and y = |t|^3 trace y = |x|: dy/dx = −1 for t < 0 and 1 for t > 0."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c3",
+          "prompt": "A particle has position r(t) = (x(t), y(t)) for a ≤ t ≤ b. Write its velocity, acceleration and speed; its displacement and the distance it travels over [a, b]; and its position at t = b in terms of its position at t = a. Then state how v(t)·a(t) tells you whether the speed is increasing.",
+          "answer": "v = (x′, y′), a = (x″, y″), speed = √((x′)^2 + (y′)^2); displacement = ∫ from a to b of v(t) dt; distance = ∫ from a to b of √((x′(t))^2 + (y′(t))^2) dt; r(b) = r(a) + ∫ from a to b of v(t) dt. Speed increases when v·a > 0 and decreases when v·a < 0 (with v ≠ 0).",
+          "steps": [
+            "Velocity v(t) = r′(t) = (x′(t), y′(t)) and acceleration a(t) = v′(t) = (x″(t), y″(t)).",
+            "Speed is the length of velocity: |v(t)| = √((x′(t))^2 + (y′(t))^2).",
+            "Displacement is a vector: ∫ from a to b of v(t) dt = (∫ from a to b of x′(t) dt, ∫ from a to b of y′(t) dt). Distance traveled is a number: ∫ from a to b of |v(t)| dt.",
+            "By the Fundamental Theorem of Calculus in each component, x(b) = x(a) + ∫ from a to b of x′(t) dt and y(b) = y(a) + ∫ from a to b of y′(t) dt.",
+            "Differentiating |v| = √(v·v) gives d/dt |v(t)| = (v(t)·a(t))/|v(t)|, so wherever v ≠ 0 the speed changes with the sign of v·a."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c4",
+          "prompt": "Write the conversions between polar coordinates (r, θ) and Cartesian coordinates (x, y). Then write dy/dx for the polar curve r = f(θ) and state when the formula applies.",
+          "hint": "A polar curve is a parametric curve with parameter θ.",
+          "answer": "x = r cos θ, y = r sin θ, x^2 + y^2 = r^2, tan θ = y/x (x ≠ 0, with θ chosen for the point's quadrant). dy/dx = (f′(θ) sin θ + f(θ) cos θ)/(f′(θ) cos θ − f(θ) sin θ), where the denominator is not 0.",
+          "steps": [
+            "A point at signed distance r along the ray at angle θ has x = r cos θ and y = r sin θ, so x^2 + y^2 = r^2 and, when x ≠ 0, tan θ = y/x.",
+            "tan θ = y/x does not fix the quadrant: arctan(y/x) lies in (−π/2, π/2), so add π when x < 0 (or use a negative r).",
+            "On r = f(θ), x = f(θ) cos θ and y = f(θ) sin θ are functions of θ. The product rule gives dx/dθ = f′(θ) cos θ − f(θ) sin θ and dy/dθ = f′(θ) sin θ + f(θ) cos θ.",
+            "dy/dx = (dy/dθ)/(dx/dθ) wherever dx/dθ ≠ 0, the parametric rule with θ as the parameter."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c5",
+          "prompt": "State the formula for the area of the region bounded by the polar curve r = f(θ) and the rays θ = α and θ = β, and the formula for the area between an outer curve r = R(θ) and an inner curve r = q(θ). Include the conditions each needs.",
+          "answer": "A = (1/2) ∫ from α to β of (f(θ))^2 dθ, for f continuous with α < β ≤ α + 2π and the region swept exactly once. Between curves: A = (1/2) ∫ from α to β of ((R(θ))^2 − (q(θ))^2) dθ, when also 0 ≤ q(θ) ≤ R(θ) on [α, β].",
+          "steps": [
+            "A thin sector of radius r and angle Δθ has area (1/2)r^2 Δθ. Summing sectors from θ = α to θ = β gives (1/2) ∫ from α to β of (f(θ))^2 dθ.",
+            "The conditions: f is continuous on [α, β], α < β ≤ α + 2π, and each point of the region is swept once as θ runs from α to β. If an interval retraces part of the curve, the integral counts that part twice.",
+            "Between curves, each ray from θ = α to θ = β enters the region at r = q(θ) and leaves at r = R(θ), with 0 ≤ q(θ) ≤ R(θ). Subtract the two sector areas: (1/2) ∫ from α to β of ((R(θ))^2 − (q(θ))^2) dθ.",
+            "If the outer or inner curve changes partway (at an intersection), split the integral at that angle."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c6",
+          "prompt": "Write the arc-length integral for the parametric curve x = x(t), y = y(t), a ≤ t ≤ b, and state its conditions. When does it give the length of the curve, and when only the distance a point moving on it travels?",
+          "answer": "L = ∫ from a to b of √((dx/dt)^2 + (dy/dt)^2) dt, for dx/dt and dy/dt continuous on [a, b]. It always gives the distance traveled; it is the curve's length only when no part of the curve is traced more than once on [a, b].",
+          "steps": [
+            "Over a short time dt the point moves about √((dx)^2 + (dy)^2) = √((dx/dt)^2 + (dy/dt)^2) dt. Summing gives ∫ from a to b of √((dx/dt)^2 + (dy/dt)^2) dt.",
+            "The derivatives must be continuous on [a, b], so the integrand is continuous and the integral exists.",
+            "The integral adds up every pass. If the parameter interval retraces a piece of the curve, the integral exceeds the length of the curve as a set of points; it is still the distance traveled."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "These are mixed on purpose: part of each problem is deciding which tool applies. Work on paper, about 5 minutes each. If a procedure breaks down, study the section its answer names (for three of these, the worked examples near the end of this guide), then redo the problem without looking. Unless a problem says to use a graphing calculator, work without one and give exact answers; calculator answers are rounded to three decimal places."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c7",
+          "prompt": "The figure shows the circle r = 3 sin θ and the cardioid r = 1 + sin θ. Region R lies inside the circle and outside the cardioid. No calculator. Find the angles at which the boundaries of R meet, explain why your interval of integration covers R exactly once, and find the area of R.",
+          "hint": "Set the two radii equal. Then, on the rays between the solutions, decide which curve is farther from the pole.",
+          "answer": "θ = π/6 and θ = 5π/6; the area of R is π.",
+          "steps": [
+            "The boundaries meet where 3 sin θ = 1 + sin θ, so sin θ = 1/2: θ = π/6 and θ = 5π/6, each with r = 3/2. Both curves also pass through the pole (the circle at θ = 0, the cardioid at θ = 3π/2), but R does not reach the pole, so those points do not bound it.",
+            "For π/6 < θ < 5π/6, sin θ > 1/2, so 3 sin θ − (1 + sin θ) = 2 sin θ − 1 > 0, and 1 + sin θ > 0. Each ray in this range leaves the cardioid at r = 1 + sin θ and reaches the circle at r = 3 sin θ, crossing R in one segment. For 0 ≤ θ < π/6 and 5π/6 < θ ≤ π the circle lies inside the cardioid, and for π < θ < 2π the circle only retraces itself. So one pass from π/6 to 5π/6 covers R once.",
+            "A = (1/2) ∫ from π/6 to 5π/6 of ((3 sin θ)^2 − (1 + sin θ)^2) dθ = (1/2) ∫ from π/6 to 5π/6 of (8 sin^2 θ − 2 sin θ − 1) dθ.",
+            "With sin^2 θ = (1 − cos(2θ))/2, the integrand is 3 − 4 cos(2θ) − 2 sin θ, with antiderivative 3θ − 2 sin(2θ) + 2 cos θ.",
+            "From π/6 to 5π/6: 3(2π/3) − 2(sin(5π/3) − sin(π/3)) + 2(cos(5π/6) − cos(π/6)) = 2π − 2(−√3) + 2(−√3) = 2π.",
+            "A = (1/2)(2π) = π."
+          ],
+          "figureIds": [
+            "bc-review-u9-g1"
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c8",
+          "prompt": "A particle moves in the plane with velocity v(t) = (t^2 − 1, 2t), in meters per second, for 0 ≤ t ≤ 3. No calculator. Find the distance the particle travels and the straight-line distance between its starting and ending positions. Explain why the two answers differ.",
+          "hint": "First decide which of the two quantities depends on the path the particle takes and which depends only on where it starts and stops.",
+          "answer": "It travels 12 m; its starting and ending positions are 3√13 m apart.",
+          "steps": [
+            "Distance traveled depends on the route, so integrate speed: |v(t)| = √((t^2 − 1)^2 + (2t)^2) = √(t^4 + 2t^2 + 1) = √((t^2 + 1)^2) = t^2 + 1.",
+            "Distance = ∫ from 0 to 3 of (t^2 + 1) dt = [t^3/3 + t] from 0 to 3 = 9 + 3 = 12 m.",
+            "The separation depends only on the endpoints, so integrate each component and then take the length: Δx = ∫ from 0 to 3 of (t^2 − 1) dt = 9 − 3 = 6 and Δy = ∫ from 0 to 3 of 2t dt = 9.",
+            "Separation = √(6^2 + 9^2) = √117 = 3√13 m, about 10.8 m.",
+            "They differ because the path is not a straight segment: x′(t) < 0 for 0 < t < 1 and x′(t) > 0 for 1 < t < 3, so the particle moves left and then right while it rises. Any route other than a straight segment traced in one direction is longer than the distance between its ends."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c9",
+          "prompt": "A curve is given by x = sin t and y = sin(2t) for 0 ≤ t < 2π. No calculator. (i) Find every point at which the curve has a vertical tangent. (ii) The curve passes through the origin at two values of t. Find the tangent line for each pass. (iii) Is the curve concave up or concave down at t = π/6? Justify.",
+          "hint": "Compute dx/dt and dy/dt, and list the values of t in [0, 2π) at which each is 0.",
+          "answer": "(i) (1, 0) and (−1, 0). (ii) y = 2x at t = 0 and y = −2x at t = π. (iii) Concave down, since d^2y/dx^2 = −20√3/9 < 0 there.",
+          "steps": [
+            "dx/dt = cos t and dy/dt = 2 cos(2t).",
+            "dx/dt = 0 at t = π/2 and t = 3π/2. There dy/dt = 2 cos π = −2 and 2 cos(3π) = −2, both nonzero, so both tangents are vertical, at (sin(π/2), sin π) = (1, 0) and (sin(3π/2), sin(3π)) = (−1, 0).",
+            "x = 0 requires sin t = 0, so t = 0 or t = π, and then y = sin(2t) = 0 too. At t = 0, dy/dx = (2 cos 0)/(cos 0) = 2; at t = π, dy/dx = (2 cos(2π))/(cos π) = −2. The tangent lines are y = 2x and y = −2x: the curve crosses itself at the origin.",
+            "dy/dx = (2 cos(2t))/(cos t). By the quotient rule, d/dt of dy/dx = (−4 sin(2t) cos t + 2 cos(2t) sin t)/(cos^2 t).",
+            "At t = π/6: (−4(√3/2)(√3/2) + 2(1/2)(1/2))/(3/4) = (−3 + 1/2)/(3/4) = −10/3.",
+            "d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt) = (−10/3)/(√3/2) = −20/(3√3) = −20√3/9 < 0, so the curve is concave down at t = π/6."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c10",
+          "prompt": "Consider the polar curve r = 1 − 2 sin θ. No calculator. (i) The curve passes through the pole at θ = π/6. Find the Cartesian equation of the tangent line there. (ii) For π/6 < θ < π/2, is the point on the curve moving toward the pole or away from it as θ increases? Justify.",
+          "hint": "Find r and dr/dθ, and record the sign of each on the interval in (ii).",
+          "answer": "(i) y = (√3/3)x. (ii) Away from the pole: r < 0 and dr/dθ < 0 there, so |r| increases.",
+          "steps": [
+            "dr/dθ = −2 cos θ. At θ = π/6, r = 1 − 2(1/2) = 0 and dr/dθ = −2(√3/2) = −√3.",
+            "dx/dθ = (dr/dθ) cos θ − r sin θ = −√3(√3/2) − 0 = −3/2, and dy/dθ = (dr/dθ) sin θ + r cos θ = −√3(1/2) + 0 = −√3/2.",
+            "dy/dx = (−√3/2)/(−3/2) = √3/3, and the point is the pole (0, 0), so the tangent line is y = (√3/3)x. This is the ray direction θ = π/6, as it must be when r = 0 and dr/dθ ≠ 0.",
+            "For π/6 < θ < π/2, sin θ > 1/2, so r = 1 − 2 sin θ < 0; and cos θ > 0, so dr/dθ = −2 cos θ < 0.",
+            "The distance from the pole is |r| = −r here, and d(−r)/dθ = −dr/dθ > 0. The distance increases: the point moves away from the pole even though r itself decreases."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u9-c11",
+          "prompt": "A particle moves in the plane with velocity v(t) = (e^(t/2) − 2, 3/√(1 + t^4) − 1), in meters per second, for 0 ≤ t ≤ 3 seconds. At t = 0 it is at the point (1, 0). Use a graphing calculator. (i) Find the particle's position at t = 3. (ii) Find the total distance it travels for 0 ≤ t ≤ 3. (iii) Is its speed increasing or decreasing at t = 1? Justify.",
+          "hint": "Each coordinate at t = 3 is its value at t = 0 plus an integral of its velocity component.",
+          "answer": "(i) About (1.963, 1.563). (ii) About 4.071 m. (iii) Decreasing, because v(1)·a(1) ≈ −2.668 < 0.",
+          "steps": [
+            "x(3) = 1 + ∫ from 0 to 3 of (e^(t/2) − 2) dt = 2e^(1.5) − 7 ≈ 1.963. This component has an elementary antiderivative; the calculator value agrees.",
+            "y(3) = 0 + ∫ from 0 to 3 of (3/√(1 + t^4) − 1) dt ≈ 1.563, by calculator (there is no elementary antiderivative). The position is about (1.963, 1.563).",
+            "Distance = ∫ from 0 to 3 of √((e^(t/2) − 2)^2 + (3/√(1 + t^4) − 1)^2) dt ≈ 4.071 m.",
+            "v(1) = (e^(0.5) − 2, 3/√2 − 1) ≈ (−0.351279, 1.121320). Differentiating, a(t) = ((1/2)e^(t/2), −6t^3/(1 + t^4)^(3/2)), so a(1) ≈ (0.824361, −2.121320).",
+            "v(1)·a(1) ≈ (−0.351279)(0.824361) + (1.121320)(−2.121320) ≈ −2.668 < 0. The rate of change of speed is (v·a)/|v|, which has the sign of v·a, so the speed is decreasing at t = 1."
+          ],
+          "see": "worked-examples"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Parametric slope and concavity",
+          "text": "dy/dx = (dy/dt)/(dx/dt) and d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt).",
+          "conditions": [
+            "x and y differentiable at t (and dy/dx differentiable in t for the second derivative).",
+            "dx/dt ≠ 0 at that t.",
+            "Evaluate the point and the slope at the same t, then write y − y(t0) = m(x − x(t0))."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Horizontal and vertical tangents",
+          "text": "Horizontal where dy/dt = 0 and dx/dt ≠ 0; vertical where dx/dt = 0 and dy/dt ≠ 0. For a polar curve, use dy/dθ and dx/dθ in the same way.",
+          "conditions": [
+            "If both derivatives are 0 at t0, the test decides nothing: find the limit of dy/dx as t → t0, or eliminate t near t0. The curve may have an ordinary tangent, a vertical one, or a cusp; if the one-sided limits of dy/dx are different finite numbers, it has a corner and no tangent line.",
+            "A point reached at two values of t can have two tangent lines. Test each value of t separately."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Parametric arc length",
+          "text": "L = ∫ from a to b of √((dx/dt)^2 + (dy/dt)^2) dt.",
+          "conditions": [
+            "dx/dt and dy/dt continuous on [a, b].",
+            "It is the length of the curve only if no piece is traced twice on [a, b]; otherwise it is the distance traveled, which counts every pass."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Motion in the plane",
+          "text": "v(t) = (x′(t), y′(t)), a(t) = (x″(t), y″(t)), speed |v(t)| = √((x′(t))^2 + (y′(t))^2), and r(b) = r(a) + ∫ from a to b of v(t) dt, one component at a time.",
+          "conditions": [
+            "Displacement ∫ from a to b of v(t) dt is a vector; distance traveled ∫ from a to b of |v(t)| dt is a number. The length of the displacement equals the distance only for motion along a segment in one direction.",
+            "Each coordinate needs its own initial value."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Is the speed increasing?",
+          "text": "d/dt |v(t)| = (v(t)·a(t))/|v(t)|. Speed increases when v·a > 0 and decreases when v·a < 0.",
+          "conditions": [
+            "v(t) ≠ 0 at that time.",
+            "The sign of one component of a(t) is not enough: x′ and x″ describe only the horizontal motion.",
+            "On a line, v·a reduces to the familiar test: speed increases when v and a have the same sign."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Polar coordinates and slope",
+          "text": "x = r cos θ, y = r sin θ, x^2 + y^2 = r^2. On r = f(θ), dy/dx = (f′(θ) sin θ + f(θ) cos θ)/(f′(θ) cos θ − f(θ) sin θ).",
+          "conditions": [
+            "The slope formula needs dx/dθ = f′(θ) cos θ − f(θ) sin θ ≠ 0.",
+            "Choose θ from the quadrant of (x, y), not from arctan(y/x) alone. (r, θ) and (−r, θ + π) name the same point.",
+            "At the pole, if f(α) = 0 and f′(α) ≠ 0, the tangent line is the line through the pole at angle α: y = (tan α)x, or x = 0 when α = π/2."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Moving toward or away from the pole",
+          "text": "The distance from the pole is |r|. It increases when r and dr/dθ have the same sign and decreases when they have opposite signs.",
+          "conditions": [
+            "r ≠ 0 at that θ.",
+            "To decide whether x or y is increasing, use the signs of dx/dθ and dy/dθ instead; dr/dθ describes only the distance from the pole."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Polar area",
+          "text": "One curve: A = (1/2) ∫ from α to β of (f(θ))^2 dθ. Between an outer curve R and an inner curve q: A = (1/2) ∫ from α to β of ((R(θ))^2 − (q(θ))^2) dθ.",
+          "conditions": [
+            "The functions are continuous on [α, β], with α < β ≤ α + 2π, and the region is swept exactly once.",
+            "Between curves, 0 ≤ q(θ) ≤ R(θ) on [α, β]; if the outer or inner curve changes partway, split the integral there.",
+            "Limits come from where the boundary changes: intersections (set the radii equal, then check the pole and points reached with opposite signs of r separately) or angles where r = 0.",
+            "A loop traced with r < 0 is also counted by (1/2) ∫ r^2 dθ, so check which loop your interval sweeps."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Motion in the plane, with x and y in meters and t in seconds.",
+          "head": [
+            "Quantity",
+            "Formula",
+            "Kind",
+            "Units"
+          ],
+          "rows": [
+            [
+              "Position",
+              "r(t) = (x(t), y(t))",
+              "Vector",
+              "m"
+            ],
+            [
+              "Velocity",
+              "v(t) = (x′(t), y′(t))",
+              "Vector",
+              "m/s"
+            ],
+            [
+              "Speed",
+              "√((x′(t))^2 + (y′(t))^2)",
+              "Number, never negative",
+              "m/s"
+            ],
+            [
+              "Acceleration",
+              "a(t) = (x″(t), y″(t))",
+              "Vector",
+              "m/s^2"
+            ],
+            [
+              "Displacement on [a, b]",
+              "(∫ from a to b of x′(t) dt, ∫ from a to b of y′(t) dt)",
+              "Vector",
+              "m"
+            ],
+            [
+              "Distance on [a, b]",
+              "∫ from a to b of √((x′(t))^2 + (y′(t))^2) dt",
+              "Number, never negative",
+              "m"
+            ],
+            [
+              "Rate of change of speed",
+              "(v·a)/|v|",
+              "Number, any sign",
+              "m/s^2"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "The same questions in two representations. A polar curve r = f(θ) is the parametric curve x = f(θ) cos θ, y = f(θ) sin θ.",
+          "head": [
+            "Question",
+            "Parametric x(t), y(t)",
+            "Polar r = f(θ)"
+          ],
+          "rows": [
+            [
+              "Point",
+              "(x(t), y(t))",
+              "(f(θ) cos θ, f(θ) sin θ)"
+            ],
+            [
+              "Slope dy/dx",
+              "y′(t)/x′(t)",
+              "(dy/dθ)/(dx/dθ)"
+            ],
+            [
+              "Horizontal tangent",
+              "y′ = 0 and x′ ≠ 0",
+              "dy/dθ = 0 and dx/dθ ≠ 0"
+            ],
+            [
+              "Vertical tangent",
+              "x′ = 0 and y′ ≠ 0",
+              "dx/dθ = 0 and dy/dθ ≠ 0"
+            ],
+            [
+              "Rate along the curve",
+              "Speed √((x′)^2 + (y′)^2) per unit of t",
+              "√((dx/dθ)^2 + (dy/dθ)^2) = √((f(θ))^2 + (f′(θ))^2) per radian"
+            ],
+            [
+              "Rate of change of distance from the origin (the pole)",
+              "(x x′ + y y′)/√(x^2 + y^2)",
+              "dr/dθ when r > 0, −dr/dθ when r < 0"
+            ],
+            [
+              "Accumulated quantity",
+              "Distance ∫ |v| dt; displacement ∫ v dt",
+              "Area (1/2) ∫ r^2 dθ"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Justify a horizontal tangent.",
+          "text": "On x = sin t, y = sin(2t), at t = π/4: dy/dt = 2 cos(π/2) = 0 and dx/dt = cos(π/4) = √2/2 ≠ 0, so dy/dx = 0 and the curve has a horizontal tangent at (√2/2, 1)."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify that the speed is increasing or decreasing.",
+          "text": "At t = 4, v(4) = (2, −3) and a(4) = (1, 1), so v(4)·a(4) = 2 − 3 = −1 < 0. Because the speed changes at the rate (v·a)/|v|, the speed is decreasing at t = 4."
+        },
+        {
+          "type": "model",
+          "prompt": "Show the setup for a calculator result.",
+          "text": "x(5) = x(1) + ∫ from 1 to 5 of x′(t) dt = 4 + ∫ from 1 to 5 of ln(2 + cos t) dt ≈ 5.584. Write the integral with its limits and the initial value before the number; a bare decimal shows no method."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify the interval for a polar area.",
+          "text": "For π/12 ≤ θ ≤ 5π/12, 2 sin(2θ) ≥ 1 > 0, with equality only at the endpoints, where the curves meet. Each ray in this range crosses the region in one segment from r = 1 out to r = 2 sin(2θ), so the region is swept once and A = (1/2) ∫ from π/12 to 5π/12 of ((2 sin(2θ))^2 − 1^2) dθ."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify motion toward or away from the pole.",
+          "text": "At θ = 0.7 on r = 2 − 4 sin θ, r ≈ −0.577 < 0 and dr/dθ = −4 cos(0.7) ≈ −3.059 < 0. Since r and dr/dθ have the same sign, |r| is increasing, so the curve is moving away from the pole at θ = 0.7."
+        },
+        {
+          "type": "trap",
+          "text": "Computing d^2y/dx^2 as (d^2y/dt^2)/(d^2x/dt^2).",
+          "fix": "Differentiate the slope dy/dx with respect to t, then divide by dx/dt once more."
+        },
+        {
+          "type": "trap",
+          "text": "Declaring a vertical tangent from dx/dt = 0 alone.",
+          "fix": "Check that dy/dt ≠ 0 at the same t. If both are 0, find the limit of dy/dx as t → t0 before naming the tangent."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting the distance between the endpoints, or the length of ∫ v dt, as the distance traveled.",
+          "fix": "Distance traveled is ∫ |v(t)| dt = ∫ √((x′(t))^2 + (y′(t))^2) dt. The endpoint separation is never larger, and equals it only for a segment traced in one direction."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the initial position, or using one constant for both coordinates.",
+          "fix": "Write x(b) = x(a) + ∫ from a to b of x′(t) dt and y(b) = y(a) + ∫ from a to b of y′(t) dt as two separate statements."
+        },
+        {
+          "type": "trap",
+          "text": "Deciding that the speed increases because one component of the acceleration is positive.",
+          "fix": "Use the sign of v·a (with v ≠ 0), or differentiate the speed itself."
+        },
+        {
+          "type": "trap",
+          "text": "Applying the Mean Value Theorem to the position vector and claiming a time when the velocity equals the average velocity vector.",
+          "fix": "Apply it to one coordinate at a time. The time it gives for x and the time it gives for y are generally different."
+        },
+        {
+          "type": "trap",
+          "text": "Writing the area between polar curves as (1/2) ∫ (R(θ) − q(θ))^2 dθ.",
+          "fix": "Subtract the squares, (1/2) ∫ ((R(θ))^2 − (q(θ))^2) dθ: the region is a large sector minus a small one, and each sector area uses its own radius squared."
+        },
+        {
+          "type": "trap",
+          "text": "Integrating a circle r = c sin θ or r = c cos θ from 0 to 2π, which traces it twice and doubles the area.",
+          "fix": "Find an interval that sweeps the region once (length π for these circles) and check the result against the circle's area, πc^2/4."
+        },
+        {
+          "type": "trap",
+          "text": "Finding the intersections of two polar curves only by setting the radii equal.",
+          "fix": "Also test the pole: each curve can reach r = 0 at a different angle, so the equation misses that common point. A point can also lie on both curves with opposite signs of r, as (r, θ) on one and (−r, θ + π) on the other, so also solve f(θ) = −g(θ + π). For r = cos(2θ) and r = 1/2, cos(2θ) = 1/2 finds four of the eight crossings and cos(2θ) = −1/2 finds the other four. A sketch shows every crossing."
+        },
+        {
+          "type": "trap",
+          "text": "Reading dr/dθ < 0 as moving toward the pole when r < 0.",
+          "fix": "The distance is |r|. Compare the signs of r and dr/dθ: the same sign means away from the pole, opposite signs mean toward it."
+        },
+        {
+          "type": "trap",
+          "text": "Using dr/dθ as the slope of a polar curve.",
+          "fix": "dr/dθ is the rate of change of the radius. The slope is (dy/dθ)/(dx/dθ), with x = r cos θ and y = r sin θ."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A point moves on x = 2 sin t, y = cos(2t) for 0 ≤ t ≤ π. Describe the path and its direction, find dy/dx and d^2y/dx^2, write the tangent line at t = π/6, and decide what happens at t = π/2, where dx/dt and dy/dt are both 0.",
+          "answer": "The path is the arc y = 1 − x^2/2, 0 ≤ x ≤ 2, traced from (0, 1) to (2, −1) and back. dy/dx = −2 sin t and d^2y/dx^2 = −1 for t ≠ π/2. Tangent at t = π/6: y − 1/2 = −(x − 1). At t = π/2 the point stops and turns back at (2, −1), where the tangent has slope −2.",
+          "steps": [
+            "Eliminate t: cos(2t) = 1 − 2 sin^2 t = 1 − x^2/2. Keep the parameter's information: x = 2 sin t increases from 0 to 2 for 0 ≤ t ≤ π/2 and decreases back to 0 for π/2 ≤ t ≤ π.",
+            "So the point moves along the parabola arc from (0, 1) down to (2, −1), then back up to (0, 1). The Cartesian equation alone does not show the return trip.",
+            "dx/dt = 2 cos t and dy/dt = −2 sin(2t) = −4 sin t cos t. Where cos t ≠ 0, dy/dx = (−4 sin t cos t)/(2 cos t) = −2 sin t.",
+            "d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt) = (−2 cos t)/(2 cos t) = −1 for t ≠ π/2, which matches y = 1 − x^2/2.",
+            "At t = π/6 the point is (2 sin(π/6), cos(π/3)) = (1, 1/2) and the slope is −2 sin(π/6) = −1, so the tangent line is y − 1/2 = −(x − 1).",
+            "At t = π/2, dx/dt = dy/dt = 0, so the horizontal and vertical tests say nothing. The limit of dy/dx = −2 sin t as t → π/2 is −2, so the curve has an ordinary tangent of slope −2 at (2, −1). Zero velocity marks the turnaround, not a corner."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "The figure shows the rose r = 2 sin(2θ) and the circle r = 1. Find the area of the region in the first quadrant that lies inside the rose and outside the circle.",
+          "answer": "π/6 + √3/4",
+          "steps": [
+            "The first-quadrant petal is traced for 0 ≤ θ ≤ π/2, where 2 sin(2θ) ≥ 0. It meets the circle where 2 sin(2θ) = 1, so sin(2θ) = 1/2 and 2θ = π/6 or 5π/6: θ = π/12 and θ = 5π/12.",
+            "For π/12 < θ < 5π/12, π/6 < 2θ < 5π/6, so 2 sin(2θ) > 1 > 0. Each ray crosses the region once, from r = 1 out to the rose, so the region is swept once.",
+            "A = (1/2) ∫ from π/12 to 5π/12 of (4 sin^2(2θ) − 1) dθ. Since 4 sin^2(2θ) = 2 − 2 cos(4θ), the integrand is 1 − 2 cos(4θ).",
+            "An antiderivative is θ − (1/2) sin(4θ). From π/12 to 5π/12: (5π/12 − π/12) − (1/2)(sin(5π/3) − sin(π/3)) = π/3 − (1/2)(−√3) = π/3 + √3/2.",
+            "A = (1/2)(π/3 + √3/2) = π/6 + √3/4 ≈ 0.957. Check: the whole petal has area (1/2) ∫ from 0 to π/2 of 4 sin^2(2θ) dθ = π/2 ≈ 1.571, which is larger, as it must be."
+          ],
+          "figureIds": [
+            "bc-review-u9-g2"
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A particle has acceleration a(t) = (−4 sin(2t), 2) for t ≥ 0, with v(0) = (2, −1) and r(0) = (0, 0). Find v(t) and r(t), the position at t = π/4, and whether the speed is increasing or decreasing at t = π/4.",
+          "answer": "v(t) = (2 cos(2t), 2t − 1) and r(t) = (sin(2t), t^2 − t); r(π/4) = (1, π^2/16 − π/4); the speed is increasing, since v·a = π − 2 > 0.",
+          "steps": [
+            "Integrate each component: v(t) = (2 cos(2t) + C1, 2t + C2). Then v(0) = (2 + C1, C2) = (2, −1), so C1 = 0 and C2 = −1.",
+            "Integrate again: r(t) = (sin(2t) + D1, t^2 − t + D2), and r(0) = (0, 0) gives D1 = 0 and D2 = 0.",
+            "r(π/4) = (sin(π/2), π^2/16 − π/4) = (1, π^2/16 − π/4).",
+            "v(π/4) = (2 cos(π/2), π/2 − 1) = (0, π/2 − 1) and a(π/4) = (−4 sin(π/2), 2) = (−4, 2).",
+            "v·a = 0(−4) + (π/2 − 1)(2) = π − 2 > 0, and |v(π/4)| = π/2 − 1 ≠ 0, so the speed is increasing at t = π/4. The large horizontal acceleration only turns the particle at this instant, because the velocity has no horizontal component."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 22: Parametric curves, derivatives, and tangents",
+              "ref": "week:22"
+            },
+            {
+              "label": "Week 23: Parametric arc length and planar vector motion",
+              "ref": "week:23"
+            },
+            {
+              "label": "Week 24: Polar coordinates, tracing, and tangents",
+              "ref": "week:24"
+            },
+            {
+              "label": "Week 25: Polar areas and interval justification",
+              "ref": "week:25"
+            },
+            {
+              "label": "Unit 9 test",
+              "ref": "test:unit-9"
+            },
+            {
+              "label": "Unit 9 test key",
+              "ref": "key:unit-9"
+            },
+            {
+              "label": "Free-response workshop: parametric and vector motion",
+              "ref": "guide:fr-parametric-vector"
+            },
+            {
+              "label": "Free-response workshop: polar curves",
+              "ref": "guide:fr-polar"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

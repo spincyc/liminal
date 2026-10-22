@@ -1,0 +1,618 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "review-u5",
+  "kind": "unit-review",
+  "unitId": "u5",
+  "title": "Unit 5 review: Analytical Applications of Differentiation",
+  "author": "bc-review-author",
+  "summary": "A retrieval-first review of Unit 5 for the AP® Calculus BC Exam: the Mean Value and Extreme Value Theorems with their hypotheses, critical points, the first and second derivative tests, concavity and inflection, reading f from the graph of f′, optimization on a stated domain, and the analysis of implicitly defined curves. Answer the recall checks and the mixed problems before reading the summary, then use the rules, model sentences, traps and worked examples to repair what you missed.",
+  "minutes": 50,
+  "figures": [
+    {
+      "id": "bc-review-u5-g1",
+      "alt": "Graph of a smooth curve y = f′(x) for −2 ≤ x ≤ 5, with closed dots at both ends. It starts below the x-axis at about (−2, −3.1), rises to cross the x-axis at x = −1, reaches a low peak a little above y = 1 near x = 1/3, falls to touch the x-axis at x = 3 without crossing it, and then rises to the point (5, 3).",
+      "caption": "The graph of f′, the derivative of f, for check 8."
+    },
+    {
+      "id": "bc-review-u5-g2",
+      "alt": "First-quadrant axes. A line with negative slope passes through the marked point (2, 1) and meets the y-axis at a point labeled (0, b) and the x-axis at a point labeled (a, 0). The right triangle between the line and the two axes is shaded.",
+      "caption": "One of the many lines through (2, 1). The intercepts a and b change together as the line turns about (2, 1)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper, from memory, before you open its answer. A blank or a half-right statement is useful: it shows you what to reread. When you compare, look hardest at the hypotheses. The conclusions of this unit’s theorems are easy to remember; the conditions are what a justification has to state."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c1",
+          "see": "what-to-know",
+          "prompt": "State the Mean Value Theorem, including its hypotheses. Then give a function and an interval on which one hypothesis fails and the conclusion fails too.",
+          "hint": "There are two hypotheses, on two different kinds of interval.",
+          "answer": "If f is continuous on the closed interval [a, b] and differentiable on the open interval (a, b), then there is at least one number c in (a, b) with f′(c) = (f(b) − f(a))/(b − a). Example of failure: f(x) = |x| on [−1, 1].",
+          "steps": [
+            "Hypotheses: f is continuous on [a, b], and f is differentiable on (a, b). A function that is differentiable on [a, b] satisfies both, because differentiability implies continuity.",
+            "Conclusion: for at least one c strictly between a and b, the instantaneous rate of change f′(c) equals the average rate of change (f(b) − f(a))/(b − a). Geometrically, some tangent line is parallel to the secant line through the endpoints of the graph.",
+            "The theorem promises that such a c exists. It does not say where c is, and there may be more than one.",
+            "Failure: f(x) = |x| is continuous on [−1, 1] but not differentiable at x = 0. Its average rate of change on [−1, 1] is (1 − 1)/2 = 0, yet f′(x) is −1 or 1 wherever it exists, so no c gives f′(c) = 0.",
+            "Rolle’s Theorem is the special case f(a) = f(b): then f′(c) = 0 for some c in (a, b)."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c2",
+          "see": "what-to-know",
+          "prompt": "State the Extreme Value Theorem. Then list every kind of x-value at which a function that satisfies its hypotheses on [a, b] can attain its absolute maximum.",
+          "answer": "If f is continuous on the closed interval [a, b], then f attains an absolute maximum value and an absolute minimum value on [a, b]. Each occurs at an endpoint (a or b) or at a critical point in (a, b), where f′(x) = 0 or f′(x) does not exist.",
+          "steps": [
+            "Both hypotheses matter. On an interval that is not closed, f(x) = 1/x on (0, 1] is continuous but has no absolute maximum. With a discontinuity, a function on [0, 2] that equals x for x < 1 and 0 for x ≥ 1 has no absolute maximum either: its values approach 1 but never reach it.",
+            "Where the extremes can be: if the absolute maximum occurs at an interior point c and f′(c) exists, then f′(c) = 0 (Fermat’s Theorem). So an interior maximum sits at a zero of f′ or at a point where f′ does not exist.",
+            "That gives the candidates test: evaluate f at both endpoints and at every critical point in (a, b). The largest value is the absolute maximum value and the smallest is the absolute minimum value.",
+            "The theorem guarantees existence only. A function that fails the hypotheses may still have extreme values; the theorem just does not promise them."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c3",
+          "see": "what-to-know",
+          "prompt": "Define a critical point of f. Then state the first derivative test for a critical point c.",
+          "answer": "c is a critical point of f if c is in the domain of f and either f′(c) = 0 or f′(c) does not exist. First derivative test: if f is continuous at c and f′ changes from positive to negative at c, then f has a relative maximum at c; if f′ changes from negative to positive, a relative minimum; if f′ does not change sign at c, no relative extremum.",
+          "steps": [
+            "The definition has two kinds of point: zeros of f′, and points of the domain where f′ does not exist (for example a corner, a cusp, a vertical tangent, or a point where f is not continuous).",
+            "c must be in the domain of f. For f(x) = 1/x^2, f′(0) does not exist, but 0 is not in the domain, so it is not a critical point.",
+            "The test needs the sign of f′ on each side of c, close to c. For f(x) = x^3, f′(0) = 0 but f′ is positive on both sides, so there is no extremum at 0.",
+            "The test works where f′ does not exist: f(x) = |x| has f′ negative to the left of 0 and positive to the right, so f has a relative minimum at 0."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c4",
+          "see": "what-to-know",
+          "prompt": "State the second derivative test. What does it conclude when f′(c) = 0 and f″(c) = 0?",
+          "answer": "If f′(c) = 0 and f″(c) > 0, then f has a relative minimum at c; if f′(c) = 0 and f″(c) < 0, a relative maximum. If f″(c) = 0, or f″(c) does not exist, the test gives no conclusion.",
+          "steps": [
+            "The test needs f′(c) = 0 and the value of f″ at c. It does not apply at a critical point where f′(c) does not exist.",
+            "f″(c) > 0 means f′ is increasing through 0 at c, so f′ goes from negative to positive: a minimum. f″(c) < 0 is the mirror image: a maximum.",
+            "When f″(c) = 0 anything can happen: f(x) = x^4 has a minimum at 0, f(x) = −x^4 a maximum, and f(x) = x^3 neither, and all three have f′(0) = 0 and f″(0) = 0.",
+            "So “inconclusive” does not mean “neither”. Switch to the first derivative test."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c5",
+          "see": "what-to-know",
+          "prompt": "What does it mean for the graph of f to be concave up on an interval, and how does f″ decide it? Define a point of inflection, and say whether f″(c) = 0 is enough to make (c, f(c)) one.",
+          "answer": "Concave up on an interval means f′ is increasing on that interval; if f″(x) > 0 for every x in the interval, the graph is concave up there (f″(x) < 0: concave down). A point of inflection is a point of the graph where f is continuous and the concavity changes. f″(c) = 0 is not enough.",
+          "steps": [
+            "Concavity is about f′: concave up where f′ increases, concave down where f′ decreases. The sign of f′ itself says nothing about concavity.",
+            "A point of inflection needs a change of concavity, so f″ must change sign at c (equivalently, f′ changes from increasing to decreasing or the reverse).",
+            "Candidates are the x-values where f″ = 0 or f″ does not exist, with f continuous there. f(x) = x^(1/3) has an inflection point at 0, where f″ does not exist.",
+            "Counterexample to “f″(c) = 0 is enough”: f(x) = x^4 has f″(0) = 0, but f″(x) = 12x^2 > 0 on both sides of 0, so the graph is concave up throughout and has no inflection point."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c6",
+          "see": "what-to-know",
+          "prompt": "For a curve defined implicitly, suppose dy/dx = N/D, where N and D are expressions in x and y. Where on the curve is the tangent line horizontal, and where is it vertical? How can you decide whether a point with a horizontal tangent is a relative maximum or a relative minimum of the curve?",
+          "answer": "Horizontal at points of the curve where N = 0 and D ≠ 0; vertical at points of the curve where D = 0 and N ≠ 0. At a horizontal-tangent point, d^2y/dx^2 < 0 gives a relative maximum and d^2y/dx^2 > 0 a relative minimum; or show that dy/dx changes sign along the curve there.",
+          "steps": [
+            "A point needs two coordinates. Solve N = 0 together with the curve’s equation, then check that D is not 0 at each point you find.",
+            "If N = 0 and D = 0 at the same point, the expression gives no slope there, and you cannot call the tangent horizontal or vertical on that evidence.",
+            "To classify, differentiate dy/dx implicitly to get d^2y/dx^2, substitute the point and dy/dx = 0, and read the sign. This is the second derivative test for y as a function of x near the point.",
+            "If D keeps one sign along the curve, dy/dx changes sign exactly where N does (with the sign of N where D > 0 and the opposite sign where D < 0), so the first derivative test works directly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "These problems mix the unit on purpose, so deciding what each one needs is part of the work. Work without a calculator. Write full justifications, as you would on a free-response question, before you open the answer."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c7",
+          "see": "worked-examples",
+          "prompt": "Let h(x) = x + 9/(x + 1) for x > −1. Find the absolute minimum value of h, and decide whether h has an absolute maximum. Justify your answers.",
+          "hint": "Find h′(x) and where it is 0. Then look closely at the domain before you decide how to justify.",
+          "answer": "The absolute minimum value is 5, at x = 2. h has no absolute maximum.",
+          "steps": [
+            "h′(x) = 1 − 9/((x + 1)^2). Setting h′(x) = 0 gives (x + 1)^2 = 9, so x + 1 = 3 or x + 1 = −3. Only x + 1 = 3 is in the domain, so x = 2. h′ exists everywhere on the domain, so x = 2 is the only critical point.",
+            "The domain x > −1 is not a closed interval, so the Extreme Value Theorem does not apply and the candidates test proves nothing here: there is no endpoint value to compare with.",
+            "Use the sign of h′ on the whole domain instead. h′(x) = ((x + 1)^2 − 9)/((x + 1)^2) = (x − 2)(x + 4)/((x + 1)^2). For −1 < x < 2, x − 2 < 0 and x + 4 > 0, so h′(x) < 0; for x > 2, h′(x) > 0.",
+            "So h is decreasing on (−1, 2] and increasing on [2, ∞), and h(x) > h(2) for every other x in the domain. The absolute minimum value is h(2) = 2 + 9/3 = 5.",
+            "No absolute maximum: as x → −1 from the right, 9/(x + 1) → ∞, so h takes values larger than any number. (h(x) also grows without bound as x → ∞.)"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c8",
+          "see": "what-to-know",
+          "prompt": "The figure shows the graph of f′, the derivative of a twice-differentiable function f, for −2 ≤ x ≤ 5. The graph of f′ crosses the x-axis at x = −1, touches it at x = 3, and has horizontal tangent lines at x = 1/3 and x = 3.\n\n(a) At which x-values in −2 < x < 5 does f have a relative minimum or a relative maximum? Justify.\n\n(b) On which open intervals is the graph of f concave up? Find the x-coordinate of each point of inflection of the graph of f. Justify.\n\n(c) At which x-value does f attain its absolute minimum on [−2, 5]? Justify.",
+          "hint": "Mark two number lines: one for where f′ is negative or positive, and one for where f′ is rising or falling.",
+          "answer": "(a) A relative minimum at x = −1; no relative maximum. (b) Concave up on (−2, 1/3) and (3, 5); points of inflection at x = 1/3 and x = 3. (c) x = −1.",
+          "steps": [
+            "(a) From the graph, f′(x) < 0 on (−2, −1), and f′(x) > 0 on (−1, 3) and on (3, 5). f′ exists everywhere, so the critical points of f are the zeros of f′: x = −1 and x = 3.",
+            "f′ changes from negative to positive at x = −1, so f has a relative minimum at x = −1.",
+            "f′(3) = 0, but f′ is positive on both sides of x = 3. f′ does not change sign there, so f has no relative extremum at x = 3, and f has no relative maximum anywhere in (−2, 5).",
+            "(b) The graph of f is concave up where f′ is increasing: on (−2, 1/3) and on (3, 5). It is concave down on (1/3, 3), where f′ is decreasing.",
+            "f′ changes from increasing to decreasing at x = 1/3 and from decreasing to increasing at x = 3, so f″ changes sign at both. The graph of f has points of inflection at x = 1/3 and x = 3.",
+            "x = 3 is worth a second look: it is a point of inflection of f but not an extremum, because f′ touches 0 there without changing sign.",
+            "(c) f′ < 0 on (−2, −1), so f is decreasing on [−2, −1] and f(−2) > f(−1). f′ > 0 on (−1, 5) except at the single point x = 3, so f is increasing on [−1, 5] and f(x) > f(−1) for −1 < x ≤ 5. The absolute minimum on [−2, 5] is at x = −1.",
+            "The candidates are −2, −1, 3 and 5, but without values of f the candidates test cannot compare them; the sign of f′ can."
+          ],
+          "figureIds": [
+            "bc-review-u5-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c9",
+          "see": "justifications-and-traps",
+          "prompt": "A function g is differentiable for all x, and some of its values are shown in the table. Let h(x) = g(x^2).\n\n| x | 0 | 1 | 3 | 4 |\n| --- | --- | --- | --- | --- |\n| g(x) | 2 | 5 | −1 | 3 |\n\n(a) Must there be a value c, with 1 < c < 2, for which h′(c) = −2? Justify.\n\n(b) Must h have a critical point in the interval 0 < x < √3? Justify.",
+          "hint": "Before using any theorem, find h(0), h(1), h(√3) and h(2) from the table, and decide what you know about h’s continuity and differentiability.",
+          "answer": "(a) Yes. (b) Yes.",
+          "steps": [
+            "h is a composition of differentiable functions, so it is differentiable for all x, with h′(x) = 2x g′(x^2) by the chain rule. In particular h is continuous everywhere.",
+            "(a) h(1) = g(1) = 5 and h(2) = g(2^2) = g(4) = 3. (Using g(2) here is the common slip; g(2) is not in the table and is not needed.)",
+            "h is continuous on [1, 2] and differentiable on (1, 2), so by the Mean Value Theorem there is a c in (1, 2) with h′(c) = (h(2) − h(1))/(2 − 1) = (3 − 5)/1 = −2.",
+            "(b) h(0) = g(0) = 2, h(1) = g(1) = 5, and h(√3) = g(3) = −1.",
+            "h is continuous on [0, √3], so by the Extreme Value Theorem it attains an absolute maximum on [0, √3] at some x = c. Since h(1) = 5 is greater than both endpoint values h(0) = 2 and h(√3) = −1, the maximum is not at an endpoint, so 0 < c < √3.",
+            "An absolute maximum at an interior point is a relative maximum, and h is differentiable at c, so h′(c) = 0. Therefore c is a critical point of h in (0, √3).",
+            "The Mean Value Theorem on [0, √3] alone does not answer (b): h(0) ≠ h(√3), so it gives a nonzero slope. Applying it on [0, 1] and [1, √3] shows h′ takes a positive and a negative value, but getting h′ = 0 in between from the Intermediate Value Theorem would need h′ to be continuous, which is not given. The Extreme Value Theorem argument above avoids that."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c10",
+          "see": "worked-examples",
+          "prompt": "A rectangular garden with area 225 square meters is built against a straight wall, which forms one side. Fence is needed on the other three sides. Each of the two sides perpendicular to the wall costs 10 dollars per meter, and the side parallel to the wall costs 20 dollars per meter. A path requires that the garden extend at most 10 meters from the wall. Find the dimensions that minimize the cost of the fence, and the minimum cost. Justify that your answer gives the absolute minimum.",
+          "hint": "Let x be the length of each side perpendicular to the wall. Write the cost as a function of x alone, and write down the allowed values of x before you differentiate.",
+          "answer": "Each side perpendicular to the wall is 10 m and the side parallel to the wall is 22.5 m; the minimum cost is 650 dollars.",
+          "steps": [
+            "Let x be the length of each perpendicular side and y the length of the side parallel to the wall, in meters. The area gives xy = 225, so y = 225/x.",
+            "Cost in dollars: C(x) = 10(2x) + 20y = 20x + 4500/x, with domain 0 < x ≤ 10.",
+            "C′(x) = 20 − 4500/(x^2). C′(x) = 0 gives x^2 = 225, so x = 15, which is not in the domain. C has no critical point in the domain.",
+            "For 0 < x ≤ 10, x^2 ≤ 100, so 4500/(x^2) ≥ 45 and C′(x) ≤ 20 − 45 < 0. C is decreasing on (0, 10], so its least value on the domain is at the endpoint x = 10.",
+            "Then y = 225/10 = 22.5 m and C(10) = 200 + 450 = 650 dollars.",
+            "Without the 10-meter limit, the minimum would be at x = 15, with cost 600 dollars. Reporting x = 15 here is the trap: a critical point outside the domain is not a candidate."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u5-c11",
+          "see": "what-to-know",
+          "prompt": "Consider the curve e^y + y = x^4 − 2x^2 + 2. For each x there is exactly one y on the curve, so the curve is the graph of a function y(x).\n\n(a) Find dy/dx in terms of x and y.\n\n(b) Find the x-values at which y(x) has a relative maximum or a relative minimum, and classify each. Give the y-value at each relative minimum. Justify.\n\n(c) Explain why the curve has no vertical tangent lines.",
+          "hint": "Differentiate both sides with respect to x. Then ask what sign the factor multiplying dy/dx can have.",
+          "answer": "(a) dy/dx = (4x^3 − 4x)/(e^y + 1). (b) Relative minima at x = −1 and x = 1, each with y = 0; a relative maximum at x = 0. (c) The denominator e^y + 1 is never 0.",
+          "steps": [
+            "(a) Differentiating with respect to x: e^y(dy/dx) + dy/dx = 4x^3 − 4x, so (e^y + 1)(dy/dx) = 4x^3 − 4x and dy/dx = (4x^3 − 4x)/(e^y + 1).",
+            "(b) e^y + 1 > 0 for every y, so dy/dx has the same sign as 4x^3 − 4x = 4x(x − 1)(x + 1).",
+            "Sign of 4x(x − 1)(x + 1): negative for x < −1, positive for −1 < x < 0, negative for 0 < x < 1, positive for x > 1.",
+            "dy/dx changes from negative to positive at x = −1 and at x = 1, so y(x) has a relative minimum at each. dy/dx changes from positive to negative at x = 0, so y(x) has a relative maximum there.",
+            "At x = ±1 the right side is 1 − 2 + 2 = 1, so e^y + y = 1. y = 0 satisfies this, and it is the only solution because e^y + y is increasing (its derivative e^y + 1 is positive). The relative minima are at (−1, 0) and (1, 0).",
+            "At x = 0 the equation is e^y + y = 2, whose solution (about 0.443) needs a calculator; the question asks only for the location of the maximum.",
+            "(c) A vertical tangent needs the denominator e^y + 1 to be 0, and e^y + 1 > 1 for every y."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Mean Value Theorem",
+          "text": "If f is continuous on [a, b] and differentiable on (a, b), then f′(c) = (f(b) − f(a))/(b − a) for at least one c in (a, b).",
+          "conditions": [
+            "Both hypotheses are needed. A corner, a cusp, a vertical tangent or a break between a and b can make the conclusion fail.",
+            "For a table of values, the problem must tell you the function is differentiable. Then the average rate of change between any two table entries is a value of f′ somewhere between them.",
+            "Rolle’s Theorem is the case f(a) = f(b): then f′(c) = 0 for some c in (a, b).",
+            "It tells you that c exists, not where it is or how many such c there are. It gives no bound on f′: an average rate of 3 does not mean f′ ≤ 3 everywhere."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Extreme Value Theorem",
+          "text": "If f is continuous on the closed interval [a, b], then f attains an absolute maximum value and an absolute minimum value on [a, b].",
+          "conditions": [
+            "The interval must be closed and bounded, and f continuous on all of it.",
+            "Each extreme occurs at an endpoint or at a critical point in (a, b)."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Critical points and Fermat’s Theorem",
+          "text": "c is a critical point of f if c is in the domain of f and f′(c) = 0 or f′(c) does not exist. If f has a relative extremum at c and f′(c) exists, then f′(c) = 0.",
+          "conditions": [
+            "c must be an interior point of the domain for Fermat’s Theorem; at an endpoint, f′ need not be 0.",
+            "The converse is false: f(x) = x^3 has f′(0) = 0 and no extremum. A critical point is only a candidate."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Increasing and decreasing",
+          "text": "If f′(x) > 0 for every x in an interval, f is increasing on that interval; if f′(x) < 0, decreasing.",
+          "conditions": [
+            "The conclusion is about an interval, not a single point.",
+            "If f′ ≥ 0 and f′ = 0 only at isolated points, f is still increasing: f(x) = x^3 is increasing everywhere.",
+            "If f is continuous at an endpoint of the interval, the endpoint can be included."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "First derivative test",
+          "text": "Let c be a critical point of f, with f continuous at c. If f′ changes from positive to negative at c, f has a relative maximum at c; from negative to positive, a relative minimum; if f′ keeps one sign on both sides, no relative extremum.",
+          "conditions": [
+            "It works at critical points where f′(c) does not exist, such as corners and cusps.",
+            "It needs the sign of f′ on each side close to c, not the value at c."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Concavity and points of inflection",
+          "text": "The graph of f is concave up on an interval where f′ is increasing, which holds when f″ > 0 there, and concave down where f′ is decreasing (f″ < 0). A point of inflection is a point of the graph, where f is continuous, at which the concavity changes.",
+          "conditions": [
+            "Candidates are where f″ = 0 or f″ does not exist. Confirm that f″ changes sign; f(x) = x^4 has f″(0) = 0 and no inflection point.",
+            "From the graph of f′: inflection points of f are where f′ changes from increasing to decreasing or from decreasing to increasing; on the graph of f′ these show as turning points (a relative maximum or minimum of f′)."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Second derivative test",
+          "text": "If f′(c) = 0 and f″(c) > 0, f has a relative minimum at c. If f′(c) = 0 and f″(c) < 0, f has a relative maximum at c.",
+          "conditions": [
+            "If f″(c) = 0 or f″(c) does not exist, the test gives no conclusion; use the first derivative test.",
+            "It does not apply at a critical point where f′(c) does not exist.",
+            "It classifies relative extrema only. For an absolute extremum, add an argument about the whole domain."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Absolute extrema on an interval that is not closed",
+          "text": "If f is continuous on an interval (of any kind) and has exactly one critical point there, a relative extremum at that point is an absolute extremum on the interval. More generally, if f is continuous at c, f′ < 0 to the left of c and f′ > 0 to the right of c throughout the interval, then f(c) is the absolute minimum value on it.",
+          "conditions": [
+            "The rule needs exactly one critical point in the interval. With two or more, compare values or use the sign of f′ across the whole interval.",
+            "On an open or unbounded interval, an absolute extremum may not exist at all. Check what f does near the open ends."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Implicitly defined curves",
+          "text": "With dy/dx = N/D, the tangent line is horizontal at points of the curve where N = 0 and D ≠ 0, and vertical where D = 0 and N ≠ 0. At a horizontal-tangent point where d^2y/dx^2 ≠ 0, its sign classifies the point as a relative minimum (positive) or a relative maximum (negative) of the curve; if d^2y/dx^2 = 0 there, use the first derivative test.",
+          "conditions": [
+            "Every point you report must satisfy the curve’s equation.",
+            "Where N = 0 and D = 0 together, the expression gives no slope; the point needs separate study.",
+            "If D has one sign along the whole curve, dy/dx has the sign of N where D > 0 and the opposite sign where D < 0; apply the first derivative test to the sign of N/D itself."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Reading f from f′ and f″.",
+          "head": [
+            "What holds",
+            "What f does",
+            "What the graph of f′ does"
+          ],
+          "rows": [
+            [
+              "f′ > 0 on an interval",
+              "f is increasing",
+              "lies above the x-axis"
+            ],
+            [
+              "f′ < 0 on an interval",
+              "f is decreasing",
+              "lies below the x-axis"
+            ],
+            [
+              "f′ changes from + to − at c",
+              "relative maximum at c",
+              "crosses the x-axis going down"
+            ],
+            [
+              "f′ changes from − to + at c",
+              "relative minimum at c",
+              "crosses the x-axis going up"
+            ],
+            [
+              "f′(c) = 0, no sign change",
+              "no extremum at c",
+              "touches the x-axis at c"
+            ],
+            [
+              "f″ > 0 on an interval",
+              "graph concave up",
+              "is rising"
+            ],
+            [
+              "f″ < 0 on an interval",
+              "graph concave down",
+              "is falling"
+            ],
+            [
+              "f″ changes sign at c",
+              "point of inflection at c",
+              "has a relative maximum or minimum at c"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Which theorem proves which existence claim. All four promise that a c exists; none says where.",
+          "head": [
+            "Claim",
+            "Theorem",
+            "Hypotheses to state"
+          ],
+          "rows": [
+            [
+              "f(c) = k for some c in (a, b)",
+              "Intermediate Value Theorem (Unit 1)",
+              "f continuous on [a, b], and k strictly between f(a) and f(b)"
+            ],
+            [
+              "f′(c) = (f(b) − f(a))/(b − a) for some c in (a, b)",
+              "Mean Value Theorem",
+              "f continuous on [a, b] and differentiable on (a, b)"
+            ],
+            [
+              "f′(c) = 0 for some c in (a, b)",
+              "Rolle’s Theorem, or the Extreme Value Theorem with Fermat’s Theorem",
+              "Rolle: the MVT hypotheses and f(a) = f(b). Otherwise: f continuous on [a, b], an interior value above (or below) both endpoint values, and f differentiable in (a, b)"
+            ],
+            [
+              "f has an absolute maximum and minimum on [a, b]",
+              "Extreme Value Theorem",
+              "f continuous on the closed interval [a, b]"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing an extremum argument.",
+          "head": [
+            "Situation",
+            "Argument",
+            "Why"
+          ],
+          "rows": [
+            [
+              "Absolute extrema of a continuous f on a closed interval [a, b]",
+              "Candidates test: compare f at the endpoints and at every critical point",
+              "The Extreme Value Theorem guarantees both extremes, and they can only be at these points"
+            ],
+            [
+              "Absolute extrema on an open or unbounded interval",
+              "Sign of f′ across the whole interval, or the one-critical-point rule",
+              "There are no endpoint values to compare, and an extreme may not exist"
+            ],
+            [
+              "Relative extremum where f′(c) = 0 and f″(c) is easy to find and not 0",
+              "Second derivative test",
+              "One evaluation decides it"
+            ],
+            [
+              "f″(c) = 0, f″ is messy, or f′(c) does not exist",
+              "First derivative test",
+              "It works at every critical point where f is continuous"
+            ],
+            [
+              "Only a graph or table of f′ is given",
+              "Signs of f′ for extrema; rising or falling of f′ for concavity",
+              "Values of f are unknown, so the candidates test cannot compare them"
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Optimization: name the variables, with units, and draw the situation.",
+            "Write the quantity to optimize as a function of one variable, using the constraint to remove the others.",
+            "State the domain from the context, with any limit the problem imposes. Decide whether it is closed.",
+            "Differentiate and find the critical points in the domain. Discard any outside it.",
+            "Justify the absolute extremum: the candidates test on a closed domain, or the sign of the derivative (or the one-critical-point rule) on any domain.",
+            "Answer the question asked, which may be a dimension, the optimal value, or both, with units."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A justification names the function, the property and the reason. Write sentences like these. “It changes sign” or “the graph goes up and then down” does not justify anything, because it leaves open which function is meant."
+        },
+        {
+          "type": "model",
+          "prompt": "A relative extremum from the sign of f′.",
+          "text": "f′ changes from positive to negative at x = 2, so f has a relative maximum at x = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "A critical point that is not an extremum.",
+          "text": "f′(3) = 0, but f′ > 0 on both sides of x = 3. Since f′ does not change sign at x = 3, f has no relative extremum there."
+        },
+        {
+          "type": "model",
+          "prompt": "An absolute extremum on a closed interval.",
+          "text": "f is continuous on [0, 5], so it attains an absolute maximum there. The candidates are the endpoints and the critical point x = 3: f(0) = 1, f(3) = 7 and f(5) = 4. The absolute maximum value of f on [0, 5] is 7, at x = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "An absolute extremum on an interval that is not closed.",
+          "text": "u is continuous for x > 0, and u′(x) < 0 for 0 < x < 4 and u′(x) > 0 for x > 4, so u is decreasing on (0, 4] and increasing on [4, ∞). Therefore u(4) is the absolute minimum value of u for x > 0."
+        },
+        {
+          "type": "model",
+          "prompt": "The Mean Value Theorem with a table.",
+          "text": "Because p is differentiable, p is continuous on [1, 4] and differentiable on (1, 4). By the Mean Value Theorem, there is a c in (1, 4) with p′(c) = (p(4) − p(1))/(4 − 1) = (10 − 1)/3 = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "A critical point from the Extreme Value Theorem.",
+          "text": "q is continuous on [0, 2], so it attains an absolute maximum on [0, 2]. Since q(1) = 6 is greater than q(0) = 2 and q(2) = 4, the maximum occurs at some c with 0 < c < 2. q is differentiable at c, so q′(c) = 0."
+        },
+        {
+          "type": "model",
+          "prompt": "Concavity and inflection from the graph of f′.",
+          "text": "The graph of r is concave up on (−2, 1) because r′ is increasing there, and concave down on (1, 4) because r′ is decreasing there. Since r′ changes from increasing to decreasing at x = 1, the graph of r has a point of inflection at x = 1."
+        },
+        {
+          "type": "model",
+          "prompt": "An inconclusive second derivative test.",
+          "text": "f′(0) = 0 and f″(0) = 0, so the second derivative test gives no conclusion. By the first derivative test: f′ > 0 for −1 < x < 0 and f′ < 0 for 0 < x < 1, so f has a relative maximum at x = 0."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a zero of f′ an extremum: “f′(c) = 0, so f has a maximum or minimum at c.”",
+          "fix": "A zero of f′ is only a candidate. Show that f′ changes sign at c, or that f″(c) ≠ 0. f(x) = x^3 has f′(0) = 0 and no extremum."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a zero of f″ an inflection point: “f″(c) = 0, so (c, f(c)) is a point of inflection.”",
+          "fix": "Show that f″ changes sign at c, or that f′ changes from increasing to decreasing (or the reverse). f(x) = x^4 has f″(0) = 0 and is concave up on both sides of 0."
+        },
+        {
+          "type": "trap",
+          "text": "Reading an inconclusive second derivative test as “neither”.",
+          "fix": "f″(c) = 0 means the test is silent, not that there is no extremum. Switch to the first derivative test: f(x) = −x^4 has f′(0) = f″(0) = 0 and a relative maximum at 0."
+        },
+        {
+          "type": "trap",
+          "text": "Reading concavity from the sign of f′: “f is concave up on (1, 3) because f′ is positive there.”",
+          "fix": "Concavity depends on whether f′ is increasing or decreasing, which is the slope of the graph of f′, not its height above the axis."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving out candidates: skipping an endpoint, or a point where f′ does not exist, such as x = 0 for a function with an x^(1/3) or |x| term.",
+          "fix": "List the endpoints, the zeros of f′ in the interval, and the points of the domain where f′ does not exist, then evaluate f at every one."
+        },
+        {
+          "type": "trap",
+          "text": "Using the candidates test on an open or unbounded interval, or keeping a critical point that lies outside the domain.",
+          "fix": "Write the domain first. On an interval that is not closed, argue from the sign of f′ across the whole interval. A critical point outside the domain is not a candidate; on a closed domain, the extreme may then be at an endpoint."
+        },
+        {
+          "type": "trap",
+          "text": "Applying the Mean Value Theorem to a function known only to be continuous, or to one with a corner or a break in the interval.",
+          "fix": "State the hypotheses for this function on this interval, citing the problem’s words (“g is differentiable, so …”). If only continuity is given, the Mean Value Theorem is not available; the Intermediate Value Theorem may still be."
+        },
+        {
+          "type": "trap",
+          "text": "Classifying a relative extremum and stopping when the question asks for an absolute one.",
+          "fix": "A relative extremum is local. For an absolute extremum, compare all candidates on a closed interval, or show that f′ keeps the right sign across the whole domain."
+        },
+        {
+          "type": "trap",
+          "text": "On an implicit curve, solving N = 0 and reporting an x-value, or a point that is not on the curve.",
+          "fix": "Solve N = 0 together with the curve’s equation, give each point as (x, y), and check that D ≠ 0 there."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each example models a procedure that the problems test. If a problem that sends you here went wrong, work the matching example with its answer covered, then redo the problem."
+        },
+        {
+          "type": "example",
+          "prompt": "Let f(x) = x − 3x^(1/3) for −8 ≤ x ≤ 27, where x^(1/3) is the real cube root. (a) Find the critical points of f. (b) Find the absolute maximum and absolute minimum values of f on [−8, 27]. (c) Which critical point is not the location of a relative extremum? Explain.",
+          "answer": "(a) x = −1, x = 0 and x = 1. (b) The absolute maximum value is 18, at x = 27; the absolute minimum value is −2, at both x = −8 and x = 1. (c) x = 0: f′ is negative on both sides of it.",
+          "steps": [
+            "(a) f′(x) = 1 − x^(−2/3) = 1 − 1/(x^(2/3)). f′(x) = 0 when x^(2/3) = 1, that is, x = −1 or x = 1.",
+            "f′(0) does not exist, because 1/(x^(2/3)) is undefined there, but 0 is in the domain of f. So x = 0 is also a critical point. (The graph has a vertical tangent there.)",
+            "(b) f is continuous on the closed interval [−8, 27], so by the Extreme Value Theorem it has both absolute extremes, and they occur at endpoints or critical points.",
+            "Candidates: f(−8) = −8 − 3(−2) = −2; f(−1) = −1 − 3(−1) = 2; f(0) = 0; f(1) = 1 − 3 = −2; f(27) = 27 − 3(3) = 18.",
+            "The largest value is 18, at x = 27. The smallest is −2, reached at two places, x = −8 and x = 1. An absolute extreme value can occur at more than one x.",
+            "(c) For 0 < |x| < 1, x^(2/3) < 1, so f′(x) < 0; for |x| > 1, f′(x) > 0. f′ changes from positive to negative at x = −1 (a relative maximum) and from negative to positive at x = 1 (a relative minimum).",
+            "At x = 0, f′ is negative on both sides, so f is decreasing through x = 0 and has no relative extremum there, even though x = 0 is a critical point."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A line with negative slope passes through the point (2, 1) and, together with the positive x- and y-axes, bounds a right triangle in the first quadrant, as in the figure. Find the smallest possible area of the triangle and the line that produces it. Justify that the area is a minimum.",
+          "answer": "The smallest area is 4, produced by the line y = 2 − x/2, with intercepts (4, 0) and (0, 2).",
+          "steps": [
+            "Let the line meet the x-axis at (a, 0) and the y-axis at (0, b). A line with negative slope through (2, 1) meets the positive x-axis to the right of x = 2, so the domain is a > 2.",
+            "Slope from (a, 0) to (2, 1) is 1/(2 − a), so the line is y = (x − a)/(2 − a). At x = 0, b = a/(a − 2).",
+            "Area: A(a) = (1/2)ab = a^2/(2(a − 2)) for a > 2.",
+            "Quotient rule: A′(a) = (2a(a − 2) − a^2)/(2(a − 2)^2) = (a^2 − 4a)/(2(a − 2)^2) = a(a − 4)/(2(a − 2)^2).",
+            "On the domain, A′(a) = 0 only at a = 4. The domain is open, so instead of a candidates test, use the sign of A′: for 2 < a < 4, a − 4 < 0 and A′(a) < 0; for a > 4, A′(a) > 0.",
+            "A decreases on (2, 4] and increases on [4, ∞), so A(4) is the absolute minimum on the whole domain. A(4) = 16/(2(2)) = 4.",
+            "Then b = 4/(4 − 2) = 2, and the line through (4, 0) and (0, 2) is y = 2 − x/2. Check: at x = 2, y = 1.",
+            "Reasonableness: as a → 2 from the right, b → ∞, and as a → ∞, the triangle widens without bound, so a smallest area in between makes sense."
+          ],
+          "figureIds": [
+            "bc-review-u5-g2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 10: Mean Value Theorem, extrema, and monotonicity",
+              "ref": "week:10"
+            },
+            {
+              "label": "Week 11: Concavity and connections among derivative graphs",
+              "ref": "week:11"
+            },
+            {
+              "label": "Week 12: Optimization and implicit-curve analysis",
+              "ref": "week:12"
+            },
+            {
+              "label": "Unit 5 test",
+              "ref": "test:unit-5"
+            },
+            {
+              "label": "Unit 5 test key",
+              "ref": "key:unit-5"
+            },
+            {
+              "label": "Free-response workshop: Analysis of a given function",
+              "ref": "guide:fr-function-analysis"
+            },
+            {
+              "label": "Free-response workshop: Reading the graph of a derivative",
+              "ref": "guide:fr-derivative-graph"
+            },
+            {
+              "label": "Free-response workshop: Implicit differentiation and related rates",
+              "ref": "guide:fr-implicit-rates"
+            },
+            {
+              "label": "Free-response workshop: Functions given by tables",
+              "ref": "guide:fr-tables"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

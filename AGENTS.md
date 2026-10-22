@@ -107,7 +107,12 @@ For a coherent ACT bank batch:
   weekly engine; unit tests and practice exams are `liminal-ap-assessment`
   documents in `content/ap/assessments/<course>/`, validated by
   `node tools/check-ap.js` (`--complete` for release) and built by
-  `tools/build-ap.js`. `ap.html` loads `content/ap-plan.js`, `content/ap.js`,
+  `tools/build-ap.js`. Exam preparation (`ap.html#<course>/prep`, Calculus BC
+  only so far) is the course's `prep` block in `content/ap.json`: practice-exam
+  forms B–D, mixed sets and free-response sets are further assessment kinds,
+  and strategy guides, unit reviews and workshop guides are
+  `liminal-ap-guide` documents in `content/ap/guides/<course>/`; unit reviews
+  open with checks before any summary. `ap.html` loads `content/ap-plan.js`, `content/ap.js`,
   `content/weekly-index.js`, `lib/high-school.js`, `lib/weekly.js`,
   `lib/assessment.js`, `lib/assessment-adapters.js`, `lib/ap-assessment.js`,
   `app/render.js`, `app/ap-render.js`, `app/ap.js`;

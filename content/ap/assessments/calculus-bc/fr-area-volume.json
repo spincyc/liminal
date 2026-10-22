@@ -1,0 +1,372 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-area-volume",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Area, volume and arc length",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A questions permit a graphing calculator; Part B questions do not. Show supporting work and justify requested conclusions; write the setup for every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "bc-fr-area-volume-f1",
+      "alt": "The graphs of y = 3 ln(x + 1) and y = x for 0 ≤ x ≤ 7, on equal axes. Both pass through the origin; the logarithm curve lies above the line until they cross again at a point labeled P near x = 6. The region R between them, from the origin to P, is shaded."
+    },
+    {
+      "id": "bc-fr-area-volume-f2",
+      "alt": "Profile of the candle mold drawn on equal axes, x from −8 to 8 and y from 0 to 22 centimeters. The curve x = r(y) and its mirror image start 2 units from the y-axis at the bottom, bulge out to about 6 units in the lower half, and narrow to a little over 2 units at the top, y = 20. Wax fills the bottom of the mold up to a dashed level labeled h.",
+      "caption": "The inside of the mold, cut through its axis. The shaded part is wax at depth h."
+    },
+    {
+      "id": "bc-fr-area-volume-f3",
+      "alt": "The graph of y = 4/(x + 1)^2 for 0 ≤ x ≤ 8. It starts at (0, 4) on the y-axis and decreases toward the x-axis. The region R under the curve is shaded across the whole window, and an arrow points right along the x-axis.",
+      "caption": "Only 0 ≤ x ≤ 8 is shown; R continues to the right without bound."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "Show your work and justify requested conclusions. Write integrals, equations, or derivatives supporting numerical calculator results.",
+          "items": [
+            {
+              "prompt": "Let R be the region in the first quadrant enclosed by the graphs of y = 3 ln(x + 1) and y = x, shown in the figure. The graphs meet at the origin and at a point P whose coordinates are positive.",
+              "topics": [
+                "BC.8.AREA_DX",
+                "BC.8.CROSS_SECTION_VOLUMES",
+                "BC.8.WASHER_VOLUMES",
+                "BC.8.SHIFTED_AXES",
+                "BC.8.CARTESIAN_ARC_LENGTH",
+                "BC.8.GEOMETRIC_MODELS"
+              ],
+              "figureIds": [
+                "bc-fr-area-volume-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the area of R.",
+                  "points": 2,
+                  "answer": "4.887",
+                  "steps": [
+                    "Solve 3 ln(x + 1) = x with the calculator. Besides x = 0, the solution is x = a ≈ 5.711441, so P = (a, a). Store a unrounded.",
+                    "On 0 < x < a the logarithm curve is on top: at x = 1, 3 ln 2 ≈ 2.079 > 1.",
+                    "Area = ∫ from 0 to a of (3 ln(x + 1) − x) dx ≈ 4.887397, which rounds to 4.887."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes an integral with integrand 3 ln(x + 1) − x and limits 0 and a ≈ 5.711, where a comes from solving 3 ln(x + 1) = x."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 4.887. Accepts a value obtained with a rounded to 5.711, which gives the same three decimals. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Region R is the base of a solid. Each cross section of the solid perpendicular to the x-axis is a semicircle whose diameter lies in R. Find the volume of the solid.",
+                  "points": 2,
+                  "answer": "1.982",
+                  "steps": [
+                    "At x, the diameter is s = 3 ln(x + 1) − x, so the radius is s/2 and the semicircle has area (1/2)π(s/2)^2 = (π/8)s^2.",
+                    "Volume = (π/8) ∫ from 0 to a of (3 ln(x + 1) − x)^2 dx ≈ 1.981528, which rounds to 1.982."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes an integral of the cross-section area, (π/8)(3 ln(x + 1) − x)^2 or the equivalent (π/2)((3 ln(x + 1) − x)/2)^2, from 0 to the value of a used in part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 1.982. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Write, but do not evaluate, an integral expression in terms of y for the volume of the solid generated when R is revolved about the vertical line x = −1.",
+                  "points": 2,
+                  "answer": "π ∫ from 0 to 5.711 of [(y + 1)^2 − e^(2y/3)] dy, or equivalently π ∫ from 0 to a of [(y + 1)^2 − (e^(y/3))^2] dy with a ≈ 5.711.",
+                  "steps": [
+                    "Solve each boundary for x. The line y = x gives x = y. The curve y = 3 ln(x + 1) gives x = e^(y/3) − 1.",
+                    "A horizontal slice at height y runs from x = e^(y/3) − 1 on the left to x = y on the right. Check at y = 3: e − 1 ≈ 1.718 < 3.",
+                    "Distances to the line x = −1: the outer radius is y − (−1) = y + 1 and the inner radius is (e^(y/3) − 1) − (−1) = e^(y/3).",
+                    "The slices run from y = 0 to the height of P, which is a because P lies on y = x. Volume = π ∫ from 0 to a of [(y + 1)^2 − e^(2y/3)] dy. Its value, not required, is about 107.977."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Gives both radii measured from x = −1 as functions of y: outer y + 1 and inner e^(y/3) (accepts e^(y/3) − 1 + 1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the complete expression: π times an integral, in dy, of the outer radius squared minus the inner radius squared, with limits 0 and a ≈ 5.711. An expression that is also evaluated correctly loses nothing."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Let L be the length of the curved part of the boundary of R, from the origin to P. Write an integral that gives L, and use it to find the perimeter of R. Then, without using your value of L, explain why L must be greater than the length of the straight part of the boundary.",
+                  "points": 3,
+                  "answer": "L = ∫ from 0 to a of √(1 + (3/(x + 1))^2) dx ≈ 8.345, so the perimeter is about 8.345 + 8.077 = 16.422. The straight part is the segment from the origin to P, the shortest path between those points; the curved part joins the same two points without being straight, so it is longer.",
+                  "steps": [
+                    "dy/dx = 3/(x + 1) on the curved part, so L = ∫ from 0 to a of √(1 + 9/(x + 1)^2) dx ≈ 8.344555.",
+                    "The straight part is the segment from (0, 0) to (a, a), of length a√2 ≈ 8.077197.",
+                    "Perimeter = L + a√2 ≈ 16.421752, which rounds to 16.422.",
+                    "A segment is the shortest path between its endpoints, and the curve from the origin to P is not that segment, so L > a√2. Comparing integrands does not prove this: the curve's slope 3/(x + 1) is less than 1 for x > 2, so its arc-length integrand is smaller than √2 there."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes L = ∫ from 0 to a of √(1 + (3/(x + 1))^2) dx, or an equivalent arc-length integral."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the perimeter 16.422 by adding the segment length a√2 ≈ 8.077 to L. Accepts a perimeter consistent with the value of a used in part (a). Earned only with the arc-length integral of the previous row, or an equivalent, on the page."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the straight boundary is the segment joining the origin and P, that the curved boundary joins the same two endpoints but is not straight, and that a segment is the shortest path between its endpoints."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-area-volume-fr1"
+            },
+            {
+              "context": true,
+              "prompt": "A candle mold is 20 centimeters tall. Its inside surface is formed by revolving the curve x = r(y), for 0 ≤ y ≤ 20, about the y-axis, where r(y) = 2 + y e^(−y^2/100). Here x and y are measured in centimeters, and y is the height above the flat inside bottom of the mold. Liquid wax is poured into the empty mold at a constant rate of 30 cubic centimeters per second. Let h be the depth of the wax, in centimeters, at time t seconds after pouring begins.",
+              "topics": [
+                "BC.8.DISC_VOLUMES",
+                "BC.8.GEOMETRIC_MODELS",
+                "BC.6.ACCUMULATION_FUNCTIONS",
+                "BC.4.RELATED_RATE_SOLUTIONS",
+                "BC.5.FIRST_DERIVATIVE_TEST"
+              ],
+              "figureIds": [
+                "bc-fr-area-volume-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the volume of wax the mold holds when it is filled to the top.",
+                  "points": 2,
+                  "answer": "1359.755 cubic centimeters",
+                  "steps": [
+                    "A horizontal slice at height y is a disc of radius r(y) and thickness dy, so its volume is π(r(y))^2 dy.",
+                    "Volume = π ∫ from 0 to 20 of (2 + y e^(−y^2/100))^2 dy ≈ 1359.755079, which rounds to 1359.755 cm^3."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes π ∫ from 0 to 20 of (r(y))^2 dy with r(y) written out or named."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 1359.755. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "How fast is the depth of the wax increasing at the instant the depth is 5 centimeters? Indicate units of measure.",
+                  "points": 3,
+                  "answer": "About 0.275 centimeters per second",
+                  "steps": [
+                    "The volume of wax at depth h is V(h) = π ∫ from 0 to h of (r(y))^2 dy, so by the Fundamental Theorem of Calculus, dV/dh = π(r(h))^2.",
+                    "By the chain rule, dV/dt = π(r(h))^2 · dh/dt. Here dV/dt = 30.",
+                    "r(5) = 2 + 5e^(−1/4) ≈ 5.894004, so dh/dt = 30/(π(r(5))^2) ≈ 30/109.136673 ≈ 0.274885, which rounds to 0.275 cm/s."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses V(h) = π ∫ from 0 to h of (r(y))^2 dy to obtain dV/dh = π(r(h))^2, or states directly that the rate of change of volume with respect to depth is the area of the wax surface, π(r(h))^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes 30 = π(r(h))^2 · dh/dt, or an equivalent chain-rule relation, and substitutes h = 5."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 0.275 with units of centimeters per second. Earned only with the chain-rule relation of the previous row, or an equivalent, on the page."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the depth of the wax 30 seconds after pouring begins.",
+                  "points": 2,
+                  "answer": "About 10.136 centimeters",
+                  "steps": [
+                    "After 30 seconds the mold holds 30 · 30 = 900 cm^3 of wax.",
+                    "Solve π ∫ from 0 to h of (2 + y e^(−y^2/100))^2 dy = 900 for h with the calculator: h ≈ 10.136178, which rounds to 10.136 cm.",
+                    "The answer is reasonable: it is less than 20 and the full mold holds more than 900 cm^3."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the equation π ∫ from 0 to h of (r(y))^2 dy = 900, or an equivalent statement that the volume to depth h equals 30 · 30."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 10.136. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "While the mold is filling, at what depth h, for 0 < h < 20, is the wax level rising most slowly? Justify your answer.",
+                  "points": 2,
+                  "answer": "At h = √50 = 5√2 ≈ 7.071 centimeters, where the mold is widest.",
+                  "steps": [
+                    "From part (b), dh/dt = 30/(π(r(h))^2). Since r(h) > 0, dh/dt is least where r(h) is greatest.",
+                    "r′(h) = e^(−h^2/100) + h · e^(−h^2/100) · (−2h/100) = e^(−h^2/100)(1 − h^2/50), which is zero on (0, 20) only at h = √50 ≈ 7.071.",
+                    "r′(h) > 0 for 0 < h < √50 and r′(h) < 0 for √50 < h < 20, so r has its absolute maximum on (0, 20) at h = √50. There dh/dt has its least value, about 30/(π(6.288819)^2) ≈ 0.241 cm/s."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Connects the rate to the radius (dh/dt = 30/(π(r(h))^2) is least where r(h) is greatest) and locates the critical value h = √50 ≈ 7.071 from r′(h) = 0; accepts minimizing dh/dt directly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies: r′ changes from positive to negative at h = √50 and this is the only critical value on (0, 20), so r is greatest and dh/dt is least there. Accepts an equivalent sign analysis of the derivative of dh/dt."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-area-volume-fr2"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "Let f(x) = 4/(x + 1)^2. Let R be the unbounded region in the first quadrant that lies below the graph of f, above the x-axis, and to the right of the y-axis. Part of R is shown in the figure.",
+              "topics": [
+                "BC.8.WASHER_VOLUMES",
+                "BC.6.INFINITE_INTERVAL_INTEGRALS",
+                "BC.6.SINGULAR_INTEGRALS",
+                "BC.6.IMPROPER_CONVERGENCE",
+                "BC.8.AREA_DX",
+                "BC.8.AREA_DY",
+                "BC.8.SHIFTED_AXES",
+                "BC.8.DISC_VOLUMES"
+              ],
+              "figureIds": [
+                "bc-fr-area-volume-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Show that R has finite area, and find the area.",
+                  "points": 2,
+                  "answer": "4",
+                  "steps": [
+                    "Area = ∫ from 0 to ∞ of 4/(x + 1)^2 dx = lim as b→∞ of ∫ from 0 to b of 4/(x + 1)^2 dx.",
+                    "An antiderivative is −4/(x + 1), so the integral from 0 to b is −4/(b + 1) + 4.",
+                    "As b→∞, −4/(b + 1) → 0, so the limit exists and the area is 4."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the area as a limit of definite integrals, lim as b→∞ of ∫ from 0 to b of 4/(x + 1)^2 dx, with the antiderivative −4/(x + 1)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the limit correctly to get 4. Writing ∞ into the antiderivative as if it were a number does not earn this point."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the volume of the solid generated when R is revolved about the horizontal line y = −1.",
+                  "points": 3,
+                  "answer": "40π/3",
+                  "steps": [
+                    "A vertical slice at x becomes a washer. Measured from y = −1, the outer radius is f(x) + 1 and the inner radius is 0 − (−1) = 1.",
+                    "Volume = π ∫ from 0 to ∞ of [(f(x) + 1)^2 − 1^2] dx = π ∫ from 0 to ∞ of [16/(x + 1)^4 + 8/(x + 1)^2] dx.",
+                    "An antiderivative is −16/(3(x + 1)^3) − 8/(x + 1). From 0 to b it gives −16/(3(b + 1)^3) − 8/(b + 1) + 16/3 + 8, which approaches 16/3 + 8 = 40/3 as b→∞.",
+                    "Volume = 40π/3."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses washers with outer radius f(x) + 1 and inner radius 1, giving the integrand π[(4/(x + 1)^2 + 1)^2 − 1] or an expanded equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses limits 0 and ∞, handled as a limit, and a correct antiderivative of the expanded integrand."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 40π/3. Earned only with the setup of the previous two rows, or an equivalent, on the page."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "The area of R can also be written as an integral with respect to y. Write this integral, explain why it is improper, and evaluate it.",
+                  "points": 2,
+                  "answer": "∫ from 0 to 4 of (2/√y − 1) dy. It is improper because the integrand is unbounded as y→0⁺. Its value is 4, agreeing with part (a).",
+                  "steps": [
+                    "Solve y = 4/(x + 1)^2 for x ≥ 0: (x + 1)^2 = 4/y, so x = 2/√y − 1 for 0 < y ≤ 4. At height y, the horizontal strip runs from x = 0 to x = 2/√y − 1.",
+                    "Area = ∫ from 0 to 4 of (2/√y − 1) dy. The integrand grows without bound as y→0⁺, so the integral is improper at y = 0 even though its limits are finite.",
+                    "Area = lim as c→0⁺ of [4√y − y] from c to 4 = (8 − 4) − lim as c→0⁺ of (4√c − c) = 4."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes ∫ from 0 to 4 of (2/√y − 1) dy and states that it is improper because the integrand is unbounded near y = 0 (not because a limit of integration is infinite)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates it as a limit as c→0⁺ and gets 4."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The region R is revolved about the y-axis. Is the volume of the resulting solid finite? Justify your answer.",
+                  "points": 2,
+                  "answer": "No. The volume integral π ∫ from 0 to 4 of (2/√y − 1)^2 dy diverges to infinity.",
+                  "steps": [
+                    "Horizontal slices become discs of radius 2/√y − 1, so the volume is π ∫ from 0 to 4 of (2/√y − 1)^2 dy = π ∫ from 0 to 4 of (4/y − 4/√y + 1) dy.",
+                    "π ∫ from c to 4 of (4/y − 4/√y + 1) dy = π[4 ln y − 8√y + y] from c to 4 = π[(4 ln 4 − 12) − (4 ln c − 8√c + c)].",
+                    "As c→0⁺, 4 ln c → −∞ while 8√c and c → 0, so the expression grows without bound. The volume is infinite.",
+                    "Alternative: for 0 < y ≤ 1, 2/√y − 1 ≥ 1/√y, so the integrand is at least π/y, and ∫ from 0 to 1 of 1/y dy diverges.",
+                    "Shells give the same conclusion: 2π ∫ from 0 to b of 4x/(x + 1)^2 dx = 2π ∫ from 0 to b of (4/(x + 1) − 4/(x + 1)^2) dx = 8π ln(b + 1) + 8π/(b + 1) − 8π, which grows without bound as b→∞.",
+                    "Notice the contrast: R has finite area, and its revolution about the x-axis has finite volume (16π/3), yet about the y-axis the volume is infinite."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the disc integral π ∫ from 0 to 4 of (2/√y − 1)^2 dy, or an equivalent correct volume integral, such as the shell integral 2π ∫ from 0 to ∞ of x · 4/(x + 1)^2 dx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes the volume is not finite, justified by a limit that grows without bound (the 4 ln c term in the disc integral, or the 8π ln(b + 1) term in the shell integral 2π ∫ from 0 to b of 4x/(x + 1)^2 dx) or by a valid comparison (with ∫ from 0 to 1 of 1/y dy, or with ∫ from 1 to ∞ of 1/x dx using 4x/(x + 1)^2 ≥ 1/x for x ≥ 1). A conclusion without a justification earns no point."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-area-volume-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

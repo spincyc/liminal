@@ -1,0 +1,359 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-differential-equations",
+  "kind": "fr-archetype",
+  "title": "Differential equations",
+  "author": "bc-workshop-author",
+  "summary": "How the differential-equation question on the AP® Calculus BC Exam is usually built, and how to earn each kind of point on it: slope-field segments, a tangent-line estimate judged by the second derivative, separation of variables with the domain stated, constant solutions and limits, exponential and logistic models read from the equation alone, and Euler’s method. It gives model sentences, the traps that cost strong students points, a worked model on a fresh equation, and three checks to try before the timed practice set.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "bc-fr-differential-equations-g1",
+      "alt": "Graph of three solution curves of one logistic equation for t from 0 to 10, with dashed horizontal lines at P = 10 and P = 5. A curve starting at P = 1 rises in an S shape and crosses P = 5 at a marked point near t = 2.7. A curve starting at P = 7 rises and flattens toward P = 10. A curve starting at P = 15 falls and flattens toward P = 10.",
+      "caption": "Solutions of dP/dt = 0.8P(1 − P/10) from three starting values."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The question gives a differential equation, often with an initial condition, and asks you to work with it in several representations: as a slope field, as a formula for the slope at a point, as an equation to solve, and as a model whose long-run behavior you read off without solving. In a BC question, Euler’s method and logistic growth are frequent additions."
+        },
+        {
+          "type": "text",
+          "text": "It usually sits in the no-calculator part of the free-response section, because every step can be done exactly: evaluating a slope, differentiating the equation, separating and integrating, solving for y with logarithms or a tangent. When a calculator part uses a differential equation, it is usually inside a context question (a rate given as a formula, a solution evaluated numerically), not as the whole question."
+        },
+        {
+          "type": "text",
+          "text": "It combines with other archetypes. The second-derivative part is function analysis (concavity and its justification). An exponential or logistic context borrows units and interpretation from the rate-in-context questions. A BC question may also ask for a Taylor polynomial of the solution, built by differentiating the equation repeatedly; that part is scored like a series question."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Typical parts of a nine-point differential-equation question (Liminal’s synthesis; any one question uses three or four of these).",
+          "head": [
+            "Part",
+            "What you do",
+            "Points usually at stake",
+            "What earns them"
+          ],
+          "rows": [
+            [
+              "Slope field",
+              "Draw segments at marked points, or sketch a solution curve through a point",
+              "1–2",
+              "Zero slopes exactly horizontal; signs right; steeper where the slope is larger in size"
+            ],
+            [
+              "Tangent line and concavity",
+              "Write the tangent line at the initial point, approximate a nearby value, and say over or under",
+              "2–3",
+              "The line, the value, d^2y/dx^2 with dy/dx substituted, and a concavity sentence"
+            ],
+            [
+              "Separation of variables",
+              "Find the particular solution and, when asked, its domain",
+              "4–5",
+              "Separation, both antiderivatives, the constant from the initial condition, y solved, interval stated"
+            ],
+            [
+              "Constant solutions and limits",
+              "Find the equilibria and the long-run value of a solution",
+              "1–2",
+              "dy/dt = 0 solved; the limit with a reason from the sign of dy/dt"
+            ],
+            [
+              "Logistic behavior",
+              "Carrying capacity, the value where growth is fastest, concavity, a start above capacity",
+              "2–3",
+              "Values with a reason: a sign change, a vertex, the sign of d^2P/dt^2"
+            ],
+            [
+              "Euler’s method",
+              "One or two steps from the initial point, sometimes with over or under",
+              "2",
+              "Each step shown with its slope; the second slope taken at the approximated point"
+            ],
+            [
+              "Model in context",
+              "Interpret a limit, a rate or a constant, or choose a parameter",
+              "1–2",
+              "A sentence with units that names the quantity and the time"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s rubrics give separate points for a setup, an answer, a justification, and units when units are asked. Know which kind of point each line of your work is meant to earn."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points: the separated equation, the tangent line before the number, the Euler slope before the step. Write them as equations, not as a result that appears from nowhere.",
+            "Answer points: the explicit solution, the approximation, the limit. A correct answer with no supporting work earns little on a no-calculator question.",
+            "Justification points: name the function whose sign you use (d^2y/dx^2, dP/dt), give its sign, and say what the sign means for the graph or the estimate.",
+            "Units: a rate in context carries units of the quantity per unit of time, such as square meters per day.",
+            "Consistency: a later part that uses an earlier wrong answer correctly can still earn its points, so finish every part with whatever you have."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Separation of variables is the one place where an early point gates the rest. In Liminal’s rubrics, a wrong separation earns nothing for the integration, the constant, or the solution, even if each later step is done well. Spend ten seconds checking that every y is with dy and every x is with dx before you integrate."
+        },
+        {
+          "type": "rule",
+          "title": "Separation of variables",
+          "text": "If dy/dx = g(x)h(y), then on an interval where h(y) ≠ 0, the solutions satisfy ∫ 1/(h(y)) dy = ∫ g(x) dx. Add the constant at this step, find it from the initial condition, then solve for y.",
+          "conditions": [
+            "The right side must factor as a function of x times a function of y.",
+            "Each value y = c with h(c) = 0 is a constant solution that the division loses; if the initial value is such a c, h is differentiable and g is continuous (as in exam equations), the solution is that constant."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Tangent lines, Euler steps, and concavity",
+          "text": "Where solution curves are concave up (d^2y/dx^2 > 0), a tangent-line or Euler estimate is too small; where they are concave down, it is too large.",
+          "conditions": [
+            "The sign of d^2y/dx^2 must hold on the whole stretch the estimate covers. Its sign at the starting point settles this only near that point; when you can, show that the sign persists to the target, as in practice question 2(b).",
+            "For two or more Euler steps, it must hold for the solution curves through every Euler point used, over each step. That is true when the sign holds on a whole region, such as a band like A < 96, that contains the solution, every Euler point, and the solution curves through those points, because solution curves do not cross."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Exponential models",
+          "text": "dy/dt = ky has solution y = y(0)e^(kt). dy/dt = k(y − M) has solution y = M + (y(0) − M)e^(kt); for k < 0 every solution approaches the constant solution y = M.",
+          "conditions": [
+            "k and M are constants.",
+            "If the rate also depends on t, or on y in a nonlinear way, these formulas do not apply; separate and integrate instead."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Logistic models",
+          "text": "For dP/dt = kP(1 − P/M) with k > 0 and M > 0, the constant solutions are P = 0 and P = M. A solution with 0 < P(0) < M increases toward M; one with P(0) > M decreases toward M and is concave up. The rate dP/dt, a downward-opening quadratic in P, is greatest when P = M/2, which is where a solution with 0 < P(0) < M/2 has its inflection point.",
+          "conditions": [
+            "Write the equation in this factored form first: 0.3P − 0.002P^2 = 0.3P(1 − P/150), so M = 150.",
+            "The fastest-growth fact applies only to a solution that passes through M/2: a solution starting above M/2 never grows faster than it does at the start."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "bc-fr-differential-equations-g1"
+        },
+        {
+          "type": "text",
+          "text": "The figure shows the three behaviors of one logistic equation. The lowest curve passes through P = 5, half the capacity, and bends from concave up to concave down there. The middle curve starts above 5, so it is concave down from the start and its growth rate only falls. The top curve starts above 10 and falls toward it, concave up. No curve crosses the dashed line P = 10, a constant solution."
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Over or under from concavity (given dy/dx = 4 at (2, 5) and d^2y/dx^2 < 0 for every point of the solution with 2 ≤ x ≤ 2.1, for a solution y = g(x)).",
+          "text": "The tangent line at x = 2 is y = 5 + 4(x − 2), so g(2.1) ≈ 5.4. Because d^2y/dx^2 < 0 for 2 ≤ x ≤ 2.1, the graph of g is concave down on that interval and lies below its tangent line there, so 5.4 is an overestimate of g(2.1)."
+        },
+        {
+          "type": "model",
+          "prompt": "A limit read from the equation (dP/dt = 0.4P(1 − P/300), P(0) = 40).",
+          "text": "dP/dt > 0 for 0 < P < 300, and P(0) = 40 is in that interval, so P increases. P cannot cross the constant solution P = 300, so lim as t→∞ of P(t) = 300."
+        },
+        {
+          "type": "model",
+          "prompt": "Fastest growth (same equation).",
+          "text": "As a function of P, dP/dt = 0.4P − (0.4/300)P^2 is a quadratic that opens downward, with vertex at P = 150. Since P increases from 40 toward 300, it passes through 150, so the population is growing fastest when P = 150."
+        },
+        {
+          "type": "model",
+          "prompt": "Euler’s method, two steps of 0.5 (dy/dx = x^2 − y/2, y(0) = 2).",
+          "text": "Δx = 0.5. At (0, 2), dy/dx = −1, so y(0.5) ≈ 2 + (−1)(0.5) = 1.5. At (0.5, 1.5), dy/dx = 0.25 − 0.75 = −0.5, so y(1) ≈ 1.5 + (−0.5)(0.5) = 1.25."
+        },
+        {
+          "type": "model",
+          "prompt": "Stating the domain (dy/dx = y^2, y(0) = 1/2, solved to y = 1/(2 − x)).",
+          "text": "The particular solution is y = 1/(2 − x) for x < 2. The interval must contain the initial value x = 0 and cannot cross the vertical asymptote at x = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "Interpreting a limit in context (a salt amount S(t), in kilograms, with lim as t→∞ of S(t) = 40).",
+          "text": "Over a long time the amount of salt in the tank levels off at 40 kilograms, the amount at which salt leaves the tank as fast as it enters."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Adding the constant after solving: ln|y| = 2x, so y = e^(2x) + C.",
+          "fix": "Write + C the moment you integrate, and find it right away from the initial condition while the equation is still in logarithm form. Then solve for y. The correct family here is y = Ae^(2x), not e^(2x) + C."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the absolute value or the sign: from |y − 5| = 2e^(−x), writing y = 5 + 2e^(−x) for every initial condition.",
+          "fix": "Let the initial value decide. If y(0) = 3, then y − 5 < 0 near the start and y = 5 − 2e^(−x). The solution never reaches y = 5, so the sign never changes."
+        },
+        {
+          "type": "trap",
+          "text": "Differentiating the equation as if y were a constant: d/dx of x(1 + y^2) written as 1 + y^2.",
+          "fix": "Every y term needs the chain rule: d/dx of y^2 is 2y(dy/dx). Then substitute the equation for dy/dx, so the second derivative is in terms of x and y only."
+        },
+        {
+          "type": "trap",
+          "text": "Judging over or under from the second derivative at the starting point when it changes sign before the target.",
+          "fix": "Check the sign on the whole stretch. If d^2y/dx^2 is positive at the start but changes sign before the target, the concavity test says nothing, and the honest answer is that it cannot be decided this way."
+        },
+        {
+          "type": "trap",
+          "text": "In Euler’s method, reusing the first slope for the second step, or taking the second slope from the exact solution.",
+          "fix": "Each step uses the slope from the equation at the point you just computed. Write the point, then the slope, then the step, every time."
+        },
+        {
+          "type": "trap",
+          "text": "Quoting half the carrying capacity for a solution that starts above it, or for an equation in expanded form without finding the capacity.",
+          "fix": "Factor first to read M, then ask whether the solution actually passes through M/2. A solution starting above M only decreases."
+        },
+        {
+          "type": "trap",
+          "text": "Saying a solution reaches its limiting value at some time, such as \"the temperature reaches 20 after a long time.\"",
+          "fix": "A solution approaches a constant solution but never equals it at a finite time, since solution curves do not cross. Write \"approaches\" or \"levels off near.\""
+        },
+        {
+          "type": "trap",
+          "text": "Giving the solution formula with no interval, or with an interval that crosses an asymptote or a point where dy/dx is undefined.",
+          "fix": "State the largest open interval that contains the initial x-value on which the formula is defined and differentiable. Find it from the restriction that each step imposed: a root’s radicand, a logarithm’s argument, arctan’s range."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let y = h(x) be the solution of dy/dx = 3x^2/(2y) with h(1) = −2. Find h(x), and state the largest open interval containing x = 1 on which it is defined.",
+          "answer": "h(x) = −√(x^3 + 3), for x > −∛3.",
+          "steps": [
+            "Separate (the gating point): 2y dy = 3x^2 dx.",
+            "Integrate both sides and add the constant now: y^2 = x^3 + C.",
+            "Use h(1) = −2 at once: 4 = 1 + C, so C = 3 and y^2 = x^3 + 3.",
+            "Solve for y and choose the sign from the initial value: y(1) = −2 < 0, so y = −√(x^3 + 3). Taking the positive root would be a different solution.",
+            "Domain: the radicand must be positive, not just nonnegative, because y = 0 would make dy/dx = 3x^2/(2y) undefined. So x^3 + 3 > 0, which means x > −∛3.",
+            "Check: dy/dx = −3x^2/(2√(x^3 + 3)) = 3x^2/(2y), and h(1) = −√4 = −2."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Behavior from the equation alone: solutions of dP/dt = 0.8P(1 − P/10) start at P(0) = 1, 7 and 15. Without solving, describe each solution for t ≥ 0.",
+          "answer": "From 1: increasing toward 10, concave up until P = 5, then concave down. From 7: increasing toward 10, concave down throughout. From 15: decreasing toward 10, concave up throughout.",
+          "steps": [
+            "Constant solutions: P = 0 and P = 10. dP/dt > 0 for 0 < P < 10 and dP/dt < 0 for P > 10.",
+            "Differentiate: d^2P/dt^2 = 0.8(1 − P/5)(dP/dt). The factor 1 − P/5 is positive for P < 5 and negative for P > 5.",
+            "From 1: P rises toward 10. d^2P/dt^2 > 0 while P < 5 and < 0 once P > 5, so the curve has an inflection point at P = 5, where it grows fastest, at 0.8(5)(1/2) = 2 per unit time.",
+            "From 7: P rises toward 10. Now 1 − P/5 < 0 and dP/dt > 0, so d^2P/dt^2 < 0 and the curve is concave down throughout: it never passes through P = 5, and its growth rate only falls.",
+            "From 15: dP/dt < 0 and 1 − P/5 < 0, so d^2P/dt^2 > 0. P falls toward 10, concave up. Compare the figure in What earns the points."
+          ],
+          "figureIds": [
+            "bc-fr-differential-equations-g1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "check",
+          "id": "bc-fr-differential-equations-c1",
+          "prompt": "y is the solution of dy/dx = xy − 1 with y(1) = 2. Use Euler’s method with two steps of size 0.5 to approximate y(2).",
+          "hint": "The second slope is taken at the point your first step reaches.",
+          "answer": "y(2) ≈ 31/8",
+          "steps": [
+            "At (1, 2), dy/dx = 2 − 1 = 1, so y(1.5) ≈ 2 + 1(0.5) = 2.5.",
+            "At (1.5, 2.5), dy/dx = 3.75 − 1 = 2.75, so y(2) ≈ 2.5 + 2.75(0.5) = 3.875 = 31/8."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-differential-equations-c2",
+          "prompt": "A population satisfies dP/dt = P(200 − P)/400 with P(0) = 250. Find lim as t→∞ of P(t). Is there a time at which P(t) = 100, the value of P at which dP/dt is greatest? Explain.",
+          "hint": "Where does P start, compared with the constant solutions?",
+          "answer": "The limit is 200. No: P starts above 200 and decreases toward 200 without crossing it, so it never equals 100 (and it never grows at all).",
+          "steps": [
+            "Constant solutions: P = 0 and P = 200.",
+            "At P = 250, dP/dt = 250(−50)/400 = −125/4 < 0, and dP/dt < 0 for every P > 200, so P decreases.",
+            "P cannot cross the constant solution 200, so it decreases toward 200: the limit is 200, and P is never 100.",
+            "The fact \"fastest growth at half the capacity\" applies only to solutions that pass through 100, which start between 0 and 100."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-differential-equations-c3",
+          "prompt": "y is the solution of dy/dx = y^2 − x with y(0) = 1. Use the tangent line at x = 0 to approximate y(0.1), and decide whether the approximation is too large or too small.",
+          "hint": "Differentiate both sides of the equation with respect to x, then substitute.",
+          "answer": "y(0.1) ≈ 1.1, an underestimate.",
+          "steps": [
+            "At (0, 1), dy/dx = 1 − 0 = 1, so y(0.1) ≈ 1 + 1(0.1) = 1.1.",
+            "d^2y/dx^2 = 2y(dy/dx) − 1 = 2y(y^2 − x) − 1, which equals 2(1)(1) − 1 = 1 at (0, 1).",
+            "For 0 ≤ x ≤ 0.1, dy/dx = y^2 − x > 0 keeps y ≥ 1, so y^2 − x ≥ 0.9 and d^2y/dx^2 ≥ 2(1)(0.9) − 1 = 0.8 > 0. The solution curve is concave up on the whole stretch and lies above its tangent line: 1.1 is too small."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "links",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-differential-equations"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-differential-equations"
+            },
+            {
+              "label": "Unit 7 review: differential equations",
+              "ref": "guide:review-u7"
+            },
+            {
+              "label": "Week 17: slope fields and Euler’s method",
+              "ref": "week:17"
+            },
+            {
+              "label": "Week 18: separation, exponential and logistic models",
+              "ref": "week:18"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

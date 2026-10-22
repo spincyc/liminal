@@ -1,0 +1,372 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "mixed-4",
+  "kind": "mixed-set",
+  "title": "Mixed set 4: all units at exam pace",
+  "author": "bc-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which idea or method applies. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians and calculator answers are rounded to three decimal places. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "bc-mixed-4-f1",
+      "alt": "Graph of g on −3 ≤ t ≤ 3, on axes labeled t and g(t). A segment rises from (−3, 0.5) to an open circle at (0, 2). A second segment starts at an open circle at (0, −1) and rises to (3, 1). A filled dot marks the point (0, 3)."
+    },
+    {
+      "id": "bc-mixed-4-f2",
+      "alt": "Graph of f on 0 ≤ t ≤ 6, on axes labeled t and f(t), made of line segments joining (0, 1), (2, −1), (3, −1), and (6, 2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "Which integral is paired with a technique that evaluates it directly?",
+              "choices": [
+                "∫ x e^(−x) dx, by substituting u = −x",
+                "∫ 1/(x^2 + 4x + 5) dx, by partial fractions",
+                "∫ e^x sin x dx, by substituting u = e^x",
+                "∫ (ln x)^2/x dx, by substituting u = ln x"
+              ],
+              "key": "D",
+              "rationale": "With u = ln x, du = dx/x, so ∫ (ln x)^2/x dx = ∫ u^2 du = (ln x)^3/3 + C. Products such as x e^(−x) and e^x sin x call for integration by parts, and a quadratic denominator that does not factor calls for completing the square and the arctangent form.",
+              "distractorNotes": {
+                "A": "With u = −x the integral becomes ∫ u e^u du, which is no simpler. A product of x and an exponential calls for integration by parts.",
+                "B": "x^2 + 4x + 5 has discriminant −4, so it does not factor over the real numbers. Completing the square gives (x + 2)^2 + 1, an arctangent form.",
+                "C": "Then x = ln u and the integral becomes ∫ sin(ln u) du, which is no easier. This product needs integration by parts twice."
+              },
+              "topics": [
+                "BC.6.INTEGRATION_METHOD_SELECTION",
+                "BC.6.SUBSTITUTION",
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.6.PARTIAL_FRACTIONS"
+              ],
+              "id": "bc-mixed-4-mc01"
+            },
+            {
+              "prompt": "Which of these series diverges?",
+              "choices": [
+                "Σ from n = 1 to infinity of n/(n^3 + 1)",
+                "Σ from n = 1 to infinity of (−1)^n/√n",
+                "Σ from n = 1 to infinity of (n^2 + 10)/(3^n)",
+                "Σ from n = 1 to infinity of (−1)^n cos(1/n)"
+              ],
+              "key": "D",
+              "rationale": "cos(1/n) → cos 0 = 1, so the terms (−1)^n cos(1/n) do not tend to 0, and the nth-term test shows divergence. The alternating sign does not help: the alternating series test needs term sizes that decrease to 0.",
+              "distractorNotes": {
+                "A": "Compared with 1/n^2, the ratio of terms tends to 1, so this series converges by the limit comparison test.",
+                "B": "The terms 1/√n decrease to 0, so the alternating series test gives convergence (conditional, since Σ 1/√n diverges).",
+                "C": "The ratio of consecutive terms tends to 1/3 < 1, so the ratio test gives convergence."
+              },
+              "topics": [
+                "BC.10.NTH_TERM_TEST",
+                "BC.10.ALTERNATING_SERIES",
+                "BC.10.LIMIT_COMPARISON",
+                "BC.10.RATIO_TEST"
+              ],
+              "id": "bc-mixed-4-mc02"
+            },
+            {
+              "prompt": "The graph of g is shown. What is lim as x→0 of g(x^2)?",
+              "choices": [
+                "−1",
+                "2",
+                "3",
+                "The limit does not exist."
+              ],
+              "key": "A",
+              "rationale": "For x ≠ 0, x^2 > 0, and x^2 → 0 as x → 0. So g(x^2) follows the right-hand branch of g: lim as x→0 of g(x^2) = lim as t→0⁺ of g(t) = −1.",
+              "distractorNotes": {
+                "B": "This is the left-hand limit of g at 0. But x^2 is never negative, so g is evaluated only to the right of 0.",
+                "C": "This is g(0). The limit depends on g(x^2) for x near 0 with x ≠ 0, and there x^2 > 0.",
+                "D": "g itself has no limit at 0, but its input x^2 approaches 0 only from the right, whichever side x comes from."
+              },
+              "topics": [
+                "BC.1.ONE_SIDED_LIMITS",
+                "BC.1.LIMIT_MEANING"
+              ],
+              "figureIds": [
+                "bc-mixed-4-f1"
+              ],
+              "id": "bc-mixed-4-mc03"
+            },
+            {
+              "prompt": "Using real cube roots, which function is continuous at x = 0 but not differentiable at x = 0?",
+              "choices": [
+                "f(x) = x^(2/3)",
+                "f(x) = x|x|",
+                "f(x) = (sin x)/x for x ≠ 0, with f(0) = 1",
+                "f(x) = (x^2 + x)/x for x ≠ 0, with f(0) = 0"
+              ],
+              "key": "A",
+              "rationale": "x^(2/3) → 0 = f(0), so f is continuous at 0. Its difference quotient h^(2/3)/h = h^(−1/3) grows without bound as h → 0, with opposite signs on the two sides. The graph has a cusp, and f′(0) does not exist.",
+              "distractorNotes": {
+                "B": "The difference quotient is h|h|/h = |h|, which tends to 0. So f′(0) = 0 and f is differentiable at 0.",
+                "C": "This f is continuous at 0, and its difference quotient (sin h − h)/h^2 tends to 0, so f′(0) = 0 exists.",
+                "D": "For x ≠ 0 this equals x + 1, which tends to 1, not f(0) = 0. This f is not even continuous at 0."
+              },
+              "topics": [
+                "BC.2.DIFFERENTIABILITY",
+                "BC.1.CONTINUITY_AT_A_POINT"
+              ],
+              "id": "bc-mixed-4-mc04"
+            },
+            {
+              "prompt": "The equation x = y^3 + y defines y as a differentiable function of x. What is d^2y/dx^2 at the point (2, 1)?",
+              "choices": [
+                "−3/8",
+                "−3/32",
+                "1/6",
+                "1/4"
+              ],
+              "key": "B",
+              "rationale": "Differentiate with respect to x: 1 = (3y^2 + 1) dy/dx, so dy/dx = 1/(3y^2 + 1) = 1/4 at y = 1. Then d^2y/dx^2 = −6y(dy/dx)/(3y^2 + 1)^2 = −6(1)(1/4)/16 = −3/32.",
+              "distractorNotes": {
+                "A": "This differentiates 1/(3y^2 + 1) with respect to y and omits the chain-rule factor dy/dx = 1/4.",
+                "C": "This takes the reciprocal of d^2x/dy^2 = 6y. The reciprocal relationship holds for first derivatives only.",
+                "D": "This is dy/dx at the point, not the second derivative."
+              },
+              "topics": [
+                "BC.3.HIGHER_DERIVATIVES",
+                "BC.3.IMPLICIT_DIFFERENTIATION",
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES"
+              ],
+              "id": "bc-mixed-4-mc05"
+            },
+            {
+              "prompt": "A particle moves along a line with velocity v(t) = t^2 − 4t + 3 for 0 < t < 4. On which intervals is its speed increasing?",
+              "choices": [
+                "(2, 4)",
+                "(0, 1) and (3, 4)",
+                "(0, 1) and (2, 3)",
+                "(1, 2) and (3, 4)"
+              ],
+              "key": "D",
+              "rationale": "Speed increases where v and a = v′ have the same sign. v(t) = (t − 1)(t − 3) is negative on (1, 3) and positive on (0, 1) and (3, 4); a(t) = 2t − 4 is negative on (0, 2) and positive on (2, 4). Both are negative on (1, 2), and both are positive on (3, 4).",
+              "distractorNotes": {
+                "A": "a(t) = 2t − 4 > 0 there, so velocity increases. But on (2, 3) the velocity is negative and moving toward 0, so speed decreases.",
+                "B": "v(t) > 0 there. Moving right is not the same as speeding up: on (0, 1), a(t) < 0 and the particle slows.",
+                "C": "There v and a have opposite signs, which is where speed decreases."
+              },
+              "topics": [
+                "BC.4.STRAIGHT_LINE_MOTION"
+              ],
+              "id": "bc-mixed-4-mc06"
+            },
+            {
+              "prompt": "A function f has derivative f′(x) = (x − 2)^3 e^x. Which describes f at x = 2?",
+              "choices": [
+                "A local maximum",
+                "A local minimum",
+                "A point of inflection and no extremum",
+                "Nothing can be concluded, because f″(2) = 0"
+              ],
+              "key": "B",
+              "rationale": "f′(2) = 0. Since e^x > 0, f′(x) has the sign of (x − 2)^3: negative for x < 2 and positive for x > 2. By the first derivative test, f has a local minimum at x = 2. The second derivative test cannot decide this case, because f″(2) = 0.",
+              "distractorNotes": {
+                "A": "f′ changes from negative to positive at 2, not from positive to negative.",
+                "C": "f″(x) = (x − 2)^2(x + 1)e^x is 0 at 2 but does not change sign there, so there is no inflection. And f′ does change sign, so there is an extremum.",
+                "D": "When the second derivative test is inconclusive, the first derivative test is still available, and it settles the question."
+              },
+              "topics": [
+                "BC.5.FIRST_DERIVATIVE_TEST",
+                "BC.5.SECOND_DERIVATIVE_TEST",
+                "BC.5.CRITICAL_POINTS"
+              ],
+              "id": "bc-mixed-4-mc07"
+            },
+            {
+              "prompt": "Consider the polar curve r = 1 + 2 cos θ for 0 ≤ θ ≤ 2π. For which values of θ is the point on the curve moving closer to the origin as θ increases?",
+              "choices": [
+                "(0, 2π/3) and (π, 4π/3)",
+                "(0, π)",
+                "(0, 2π/3) only",
+                "(0, 2π/3) and (4π/3, 2π)"
+              ],
+              "key": "A",
+              "rationale": "The distance from the origin is |r|, which decreases when r and dr/dθ have opposite signs. dr/dθ = −2 sin θ is negative on (0, π) and positive on (π, 2π). r = 1 + 2 cos θ is positive on [0, 2π/3), negative on (2π/3, 4π/3), and positive on (4π/3, 2π]. The signs are opposite on (0, 2π/3) and on (π, 4π/3).",
+              "distractorNotes": {
+                "B": "dr/dθ = −2 sin θ < 0 on (0, π), but the distance from the origin is |r|. On (2π/3, π), r is negative and decreasing, so |r| increases.",
+                "C": "This misses (π, 4π/3), where r is negative and increasing toward 0, so |r| decreases.",
+                "D": "These are the intervals where r > 0. On (4π/3, 2π), r increases from 0 to 3, so the point moves away from the origin."
+              },
+              "topics": [
+                "BC.9.POLAR_TRACING",
+                "BC.9.POLAR_DERIVATIVES"
+              ],
+              "id": "bc-mixed-4-mc08"
+            },
+            {
+              "prompt": "The graph of f, made of line segments, is shown for 0 ≤ t ≤ 6. Let g(x) = ∫ from 1 to x of f(t) dt for 0 ≤ x ≤ 6. What is the minimum value of g on [0, 6]?",
+              "choices": [
+                "−2",
+                "−1",
+                "−1/2",
+                "4"
+              ],
+              "key": "A",
+              "rationale": "g′(x) = f(x) changes from negative to positive only at x = 4, and g(4) = ∫ from 1 to 4 of f(t) dt = −1/2 − 1 − 1/2 = −2. At the endpoints, g(0) = −∫ from 0 to 1 of f(t) dt = −1/2 and g(6) = −2 + 2 = 0. The minimum value is −2.",
+              "distractorNotes": {
+                "B": "This is the minimum value of f, not of g.",
+                "C": "This is g(0) = −∫ from 0 to 1 of f(t) dt, an endpoint value, but g is smaller at x = 4.",
+                "D": "This is where g is smallest, not its smallest value."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION_FUNCTIONS",
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.5.CRITICAL_POINTS"
+              ],
+              "figureIds": [
+                "bc-mixed-4-f2"
+              ],
+              "id": "bc-mixed-4-mc09"
+            },
+            {
+              "prompt": "A function f has the derivative values at x = 0 shown in the table. Let g(x) = ∫ from 0 to x of f(t) dt. What is the coefficient of x^3 in the Maclaurin series for g?\n\n| f(0) | f′(0) | f″(0) | f‴(0) |\n| --- | --- | --- | --- |\n| 1 | 4 | −6 | 18 |",
+              "choices": [
+                "−6",
+                "−2",
+                "−1",
+                "3"
+              ],
+              "key": "C",
+              "rationale": "The series for f begins 1 + 4x − 3x^2 + 3x^3 + ⋯. Integrating term by term from 0 gives g(x) = x + 2x^2 − x^3 + (3/4)x^4 + ⋯, so the coefficient of x^3 is −1. Equivalently, g‴(0) = f″(0) = −6, and −6/3! = −1.",
+              "distractorNotes": {
+                "A": "This is g‴(0) = f″(0). A Maclaurin coefficient divides the third derivative by 3! = 6.",
+                "B": "This divides f″(0) by 3 rather than by 3! = 6.",
+                "D": "This is the coefficient of x^3 in the series for f itself, 18/3!. Integrating raises each power by one."
+              },
+              "topics": [
+                "BC.10.TAYLOR_COEFFICIENTS",
+                "BC.10.SERIES_INTEGRATION"
+              ],
+              "id": "bc-mixed-4-mc10"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "prompt": "Let y = f(x) be the solution of the differential equation dy/dx = x + sin y with f(0) = 1. What is the approximation to f(0.5) given by Euler’s method with two steps of equal size?",
+              "choices": [
+                "1.421",
+                "1.444",
+                "1.507",
+                "1.603"
+              ],
+              "key": "C",
+              "rationale": "With step size 0.25: f(0.25) ≈ 1 + 0.25 sin 1 = 1.210368. The slope at (0.25, 1.210368) is 0.25 + sin(1.210368) = 1.185746, so f(0.5) ≈ 1.210368 + 0.25(1.185746) = 1.506804 ≈ 1.507.",
+              "distractorNotes": {
+                "A": "This is one step of size 0.5, which is the tangent-line approximation at x = 0.",
+                "B": "The second step uses the slope at (0, 1.210368) instead of (0.25, 1.210368). The x-value must advance with each step.",
+                "D": "This is the second-degree Taylor polynomial at x = 0, using f″(0) = 1 + cos(1)sin(1), a different approximation from Euler’s method."
+              },
+              "topics": [
+                "BC.7.EULER_METHOD",
+                "BC.4.LINEARIZATION",
+                "BC.10.TAYLOR_AND_MACLAURIN_POLYNOMIALS"
+              ],
+              "id": "bc-mixed-4-mc11"
+            },
+            {
+              "prompt": "A particle moves in the xy-plane with velocity vector v(t) = ⟨1 + sin(t^2/2), √t cos t⟩ for t ≥ 0. At time t = 0 the particle is at the point (3, −1). Where is the particle at time t = 2?",
+              "choices": [
+                "(2.998, 0.581)",
+                "(6.819, −2.177)",
+                "(5, −1)",
+                "(5.998, −0.419)"
+              ],
+              "key": "D",
+              "rationale": "x(2) = 3 + ∫ from 0 to 2 of (1 + sin(t^2/2)) dt = 3 + 2.997624 = 5.997624, and y(2) = −1 + ∫ from 0 to 2 of √t cos t dt = −1 + 0.580514 = −0.419486. The particle is at about (5.998, −0.419).",
+              "distractorNotes": {
+                "A": "This is the displacement ∫ from 0 to 2 of v(t) dt. The initial position (3, −1) must be added.",
+                "B": "This moves for 2 seconds at the constant velocity v(2) ≈ ⟨1.909, −0.589⟩, but the velocity changes during the interval.",
+                "C": "This moves for 2 seconds at the initial velocity v(0) = ⟨1, 0⟩, a single Euler step."
+              },
+              "topics": [
+                "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS",
+                "BC.9.PLANAR_MOTION"
+              ],
+              "id": "bc-mixed-4-mc12"
+            },
+            {
+              "prompt": "Let R be the region in the first quadrant enclosed by the graphs of y = 2 sin x and y = x^2/2. R is revolved about the x-axis. What is the volume of the resulting solid?",
+              "choices": [
+                "1.417",
+                "4.452",
+                "9.988",
+                "14.236"
+              ],
+              "key": "C",
+              "rationale": "The curves meet at x = 0 and at x = b ≈ 1.933754, the positive solution of 2 sin x = x^2/2. Washers have outer radius 2 sin x and inner radius x^2/2, so V = π∫ from 0 to b of (4sin^2 x − x^4/4) dx ≈ 9.988.",
+              "distractorNotes": {
+                "A": "This is ∫ from 0 to b of (2 sin x − x^2/2)^2 dx, the volume of a solid whose cross sections perpendicular to the x-axis are squares on R, not a solid of revolution.",
+                "B": "This is π∫ (2 sin x − x^2/2)^2 dx. A washer’s area is π(R^2 − r^2), not π(R − r)^2.",
+                "D": "This uses discs of radius 2 sin x and ignores the hole left by the part of the solid below y = x^2/2."
+              },
+              "topics": [
+                "BC.8.WASHER_VOLUMES",
+                "BC.8.DISC_VOLUMES"
+              ],
+              "id": "bc-mixed-4-mc13"
+            },
+            {
+              "prompt": "Let f(x) = ln(1 + e^x). What value of c in (0, 2) satisfies the conclusion of the Mean Value Theorem for f on the interval [0, 2]?",
+              "choices": [
+                "0.802",
+                "0.929",
+                "1.044",
+                "1.130"
+              ],
+              "key": "B",
+              "rationale": "f is continuous on [0, 2] and differentiable on (0, 2). The secant slope is (ln(1 + e^2) − ln 2)/2 = (2.126928 − 0.693147)/2 = 0.716890. Solve f′(c) = e^c/(1 + e^c) = 0.716890 to get c ≈ 0.929.",
+              "distractorNotes": {
+                "A": "This solves f′(c) = (f′(0) + f′(2))/2, averaging two slopes instead of using the slope of the secant line.",
+                "C": "This solves f(c) = (1/2)∫ from 0 to 2 of f(x) dx, the average value of f, which is the Mean Value Theorem for integrals.",
+                "D": "This solves f(c) = (f(0) + f(2))/2, an output halfway between the endpoint values."
+              },
+              "topics": [
+                "BC.5.MEAN_VALUE_THEOREM"
+              ],
+              "id": "bc-mixed-4-mc14"
+            },
+            {
+              "prompt": "Rain falls on a field at a rate of r(t) = 4 − 2 cos(t^2/3) millimeters per hour for 0 ≤ t ≤ 4, where t is measured in hours. At what time t has exactly half of the rain for this 4-hour period fallen?",
+              "choices": [
+                "2.000",
+                "2.033",
+                "2.589",
+                "3.070"
+              ],
+              "key": "C",
+              "rationale": "The total is ∫ from 0 to 4 of r(t) dt ≈ 14.463216 mm. Since r(t) ≥ 2 > 0, the accumulated rain increases, so exactly one T solves ∫ from 0 to T of r(t) dt = 7.231608. A calculator gives T ≈ 2.589.",
+              "distractorNotes": {
+                "A": "Half the time is not half the rain when the rate varies. The rate starts low (r(0) = 2) and peaks near t = 3.070, so only about 4.655 mm of the 14.463 mm has fallen by t = 2.",
+                "B": "This is the first time at which r(t) equals the average rate (1/4)∫ from 0 to 4 of r(t) dt. That locates a rate, not half of the accumulated rain.",
+                "D": "This is when the rate is greatest, where t^2/3 = π."
+              },
+              "topics": [
+                "BC.6.ACCUMULATION",
+                "BC.6.DEFINITE_INTEGRAL_NOTATION"
+              ],
+              "id": "bc-mixed-4-mc15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

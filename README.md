@@ -59,9 +59,23 @@ Calculus BC begins with precalculus prerequisites and teaches all ten units,
 including the shared AB content, integration techniques, parametric and polar
 calculus, and sequences and series. Its 36-week sequence includes cumulative
 review, a full practice exam, targeted remediation and original investigations.
-It supplies 130 worked examples, 707 exercises across 108 worksheets, ten unit
-tests, and separate worked keys. Align its week-33 exam with the school calendar;
-prior Calculus AB is not required.
+It supplies 165 worked examples, 707 exercises across 108 worksheets, 180
+figures, ten unit tests, and separate worked keys. Align its week-33 exam with
+the school calendar; prior Calculus AB is not required.
+
+**Calculus BC exam preparation** (`ap.html#calculus-bc/prep`) is for the weeks
+before the exam. It adds three more original full-length practice exams (B–D)
+in the May 2027 format and six mixed timed sets that interleave all ten units.
+A free-response workshop has a guide and a three-question set for each of
+eleven recurring kinds of question. There is a review for every unit that asks
+before it tells, and five strategy guides: exam format and pacing, calculator
+skills, writing free-response answers, a memory sheet for an exam with no
+formula sheet, and taking and learning from a practice exam. Eight-week,
+four-week and in-course plans space this work by the evidence on retrieval,
+spacing and interleaving. In all it holds 216 multiple-choice and 51
+free-response questions, 26 guides with 181 self-checks, and 84 figures. See the
+[exam-preparation contract](docs/ap-courses.md#exam-preparation) and the
+[review record](docs/reviews/2026-10-22-bc-exam-prep.md).
 
 SAT, ACT and all four AP courses share assessment ordering, timing metadata,
 student/key projections and typed scoring through a small
@@ -347,7 +361,7 @@ npm run check:families -- --reps 3000   # a deeper pass over every template
 npm run templates  # register new templates and re-version changed ones
 node tools/check-lesson-modules.js # validate grade expansions and worksheet generation
 node tools/build-weekly.js  # validate and build available weekly courses
-node tools/check-ap.js --complete # require all four AP courses' assessments and references
+node tools/check-ap.js --complete # require all four AP courses' assessments, exam-prep guides and references
 node tools/lesson-packet.js --track common-core-math --grade 8 --unit topic-1 --days 10 --count 20 --seed home-1 --out .scratch/print/home-1 --pdf
 node tools/lesson-packet.js --track common-core-math --grade 8 --unit topic-1 --days 3 --count 20 --worksheets B,C,A --combined --out .scratch/print/mixed --pdf
 ```

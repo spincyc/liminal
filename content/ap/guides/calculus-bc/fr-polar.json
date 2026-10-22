@@ -1,0 +1,372 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-polar",
+  "kind": "fr-archetype",
+  "title": "Polar curves",
+  "author": "bc-workshop-author",
+  "summary": "How to write a complete answer to a free-response question about polar curves on the AP® Calculus BC Exam: the area of a region swept by rays from the pole, the area between two curves with the angles where they meet, the derivatives of x = r cos θ and y = r sin θ, the slope of a tangent line, whether a point is moving toward or away from the origin, and the greatest distance from the origin. Watch three habits in particular: reading dr/dθ without checking the sign of r, choosing an interval that does not trace the region exactly once, and maximizing r when the question asks about distance. This guide shows what earns each kind of point, gives sentences you can reuse, lists the traps with their repairs, and works one original example in full. Then take the three-question practice set at 15 minutes a question and score it with its rubrics.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "bc-fr-polar-g1",
+      "alt": "On equal axes, a solid limaçon labeled r = 3 + 2 cos θ, with a slight dimple on the left near x = −1, and a dashed circle labeled r = 4 centered at the origin. The two curves cross at two points marked with dots and labeled θ = π/3 and θ = −π/3, joined to the origin by dashed rays. The crescent between the crossings, inside the limaçon and outside the circle, lies on the right side and is shaded and labeled A.",
+      "caption": "Region A of the worked model: on each ray between the crossings, it runs from the circle out to the limaçon."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The stimulus is one or two curves given as r = f(θ), almost always with a graph. Sometimes the curve describes something real: the reach of a sprinkler or a sensor in each direction, or the outline of a garden bed or a lens. The parts then ask you to measure a region (area), to find where two curves meet, to work with the point (x, y) = (r cos θ, r sin θ) as θ changes (its derivatives, the slope of the tangent line, whether it moves left or right), to decide whether a point is moving toward or away from the origin, and to find the greatest distance from the origin."
+        },
+        {
+          "type": "text",
+          "text": "It usually appears in the calculator part of Section II, because intersection angles and the integrals of squared expressions are found numerically there; the points then sit in the setups, the reasons, and the three-decimal answers. A no-calculator version uses curves whose zeros and intersections fall at standard angles and whose squares integrate with the identity cos^2 u = (1 + cos(2u))/2. Expect polar to combine with other archetypes: x(θ) and y(θ) form a parametric curve with parameter θ, a greatest-distance part is an extreme-value problem, and a curve in context brings in the meaning of a derivative with units."
+        },
+        {
+          "type": "rule",
+          "title": "Read every polar curve as a moving point",
+          "text": "As θ increases, the point at signed distance r = f(θ) along the ray at angle θ traces the curve. Its Cartesian coordinates are x = r cos θ and y = r sin θ, and its distance from the origin is |r|.",
+          "conditions": [
+            "If r > 0, the point is on the ray at angle θ.",
+            "If r < 0, the point is on the opposite ray, at angle θ + π, a distance |r| from the origin.",
+            "If r = 0, the point is at the origin; that is where loops begin and end."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "A typical nine-point version uses three or four of these. Points are Liminal's practice weights.",
+          "head": [
+            "Part",
+            "Typical task",
+            "Usual points",
+            "Where the points sit"
+          ],
+          "rows": [
+            [
+              "Area of one region",
+              "(1/2)∫ of r^2 dθ over an interval that sweeps the region once",
+              "2–3",
+              "The integral with 1/2, the square and angle limits; the limits found from r = 0 when a loop is involved; the value"
+            ],
+            [
+              "Intersections and area between curves",
+              "Solve f(θ) = g(θ); (1/2)∫ of (outer^2 − inner^2) dθ",
+              "3",
+              "The angles; the integrand and limits; the value"
+            ],
+            [
+              "Region inside both curves",
+              "The nearer curve changes at an intersection: split, or subtract",
+              "2–3",
+              "Noticing the change; the split or subtracted expression; the value"
+            ],
+            [
+              "Derivatives and slope",
+              "dx/dθ and dy/dθ from x = r cos θ, y = r sin θ; dy/dx as their quotient; a tangent line",
+              "2–3",
+              "Each derivative; the slope; the line or the horizontal or vertical claim"
+            ],
+            [
+              "Moving left, right, up or down",
+              "The sign of dx/dθ or dy/dθ at a given θ",
+              "1",
+              "The direction with the derivative that decides it"
+            ],
+            [
+              "Toward or away from the origin",
+              "The sign of dr/dθ together with the sign of r",
+              "1–2",
+              "dr/dθ; the direction with both signs named"
+            ],
+            [
+              "Meaning of dr/dθ in context",
+              "A rate of change of distance with respect to angle",
+              "1–2",
+              "The value with units such as meters per radian; what it measures and at which angle"
+            ],
+            [
+              "Greatest distance",
+              "Maximize |r|; for distance from the x-axis, maximize |y| = |r sin θ|",
+              "2–3",
+              "The critical angle; the candidates or sign change; the value"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s rubrics give separate points for the pieces of work below. They are Liminal’s practice weights, not a description of how the exam is scored; the habits they reward are the ones any reader of a written solution needs."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points go to a complete integral: the factor 1/2, the square of each radius, limits that are angles, and dθ. Limits must come from solving an equation in θ (f(θ) = g(θ), or r = 0 for a loop), not from reading x-values off the graph. Calculator syntax is not a setup; write the integral in mathematical notation and then its value.",
+            "Answer points go to three decimals in calculator work and exact values without a calculator. Store intersection angles unrounded and write them as \"θ = A ≈ 0.766 (stored)\". An answer point needs its setup on the page.",
+            "Justification points go to sentences that name the quantity and its sign. For toward or away, that means the sign of r and the sign of dr/dθ at the angle in question. For a greatest distance, it means the candidates you compared or the sign change of the derivative of the distance.",
+            "Units points ask for the units of the quantity you report: square units for an area, the length unit per radian for dr/dθ, the length unit for a distance. A unit on an intermediate step only earns nothing.",
+            "Consistency: a later part that uses your intersection angles or your earlier area is scored against your values. Write the value you are using so a reader can follow it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Polar area",
+          "text": "The region swept by the rays from the origin to r = f(θ), as θ runs from α to β, has area (1/2)∫ from α to β of (f(θ))^2 dθ. Between an outer curve r = R(θ) and an inner curve r = q(θ) on the same rays, the area is (1/2)∫ from α to β of ((R(θ))^2 − (q(θ))^2) dθ.",
+          "conditions": [
+            "The interval sweeps the region exactly once: no ray is counted twice. A curve can be traced twice on [0, 2π]; r = a cos θ, for example, is traced once on [0, π].",
+            "Each formula counts the region between the origin (or the inner curve) and the outer curve along each ray. If the nearer curve changes partway across, split the integral at that angle.",
+            "Squaring removes the sign of r inside the integral, but a negative r still moves the point to the opposite ray, so the interval must be chosen from the graph or from where r changes sign."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Slope of a tangent line",
+          "text": "With x = r cos θ and y = r sin θ, dx/dθ = (dr/dθ) cos θ − r sin θ and dy/dθ = (dr/dθ) sin θ + r cos θ. The slope is dy/dx = (dy/dθ)/(dx/dθ).",
+          "conditions": [
+            "dx/dθ ≠ 0 at the angle. If dy/dθ = 0 and dx/dθ ≠ 0, the tangent is horizontal; if dx/dθ = 0 and dy/dθ ≠ 0, it is vertical.",
+            "If both are 0, the formula decides nothing; that happens at the origin when dr/dθ = 0 too, and the tangent there must be found another way.",
+            "dr/dθ alone is not the slope of the polar curve; it is the slope of the graph of r against θ in the θr-plane."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Toward or away from the origin",
+          "text": "The distance from the origin is |r|. When r and dr/dθ have the same sign, |r| is increasing and the point moves away from the origin. When they have opposite signs, |r| is decreasing and the point moves toward the origin.",
+          "conditions": [
+            "This describes motion as θ increases. If time t is the parameter and θ changes with t, multiply by dθ/dt first.",
+            "At an angle where r = 0, the point is at the origin, and the rule does not apply there."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Greatest distance",
+          "text": "The greatest distance from the origin on an interval is the greatest value of |r(θ)|. Compare |r| at the endpoints and at the angles where dr/dθ = 0. For the greatest distance from the x-axis, maximize |y| = |r sin θ| instead, comparing its values at the endpoints and where dy/dθ = 0 (from a horizontal line y = k, the distance is |r sin θ − k|).",
+          "conditions": [
+            "When r takes negative values, check the most negative value of r as well as the largest; the largest r can be the nearest point.",
+            "The farthest point from the origin and the farthest point from the x-axis are usually different points: where |r| has an interior maximum, dr/dθ = 0, so dy/dθ = r cos θ, which is not 0 unless the point is on the y-axis."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Area between two curves on the calculator (inside r = g(θ), outside the circle r = 2).",
+          "text": "The curves intersect where g(θ) = 2, at θ = A and θ = B (stored). For A < θ < B, g(θ) > 2, so g is the outer curve. Area = (1/2)∫ from A to B of ((g(θ))^2 − 2^2) dθ, and then the value to three decimals."
+        },
+        {
+          "type": "model",
+          "prompt": "Justifying the interval for a loop.",
+          "text": "r = 0 at θ = π/4 and at θ = 3π/4, and r < 0 for π/4 < θ < 3π/4, so the loop is traced exactly once as θ runs from π/4 to 3π/4."
+        },
+        {
+          "type": "model",
+          "prompt": "Toward or away, with r positive.",
+          "text": "At θ = c, r > 0 and dr/dθ < 0, so the distance |r| is decreasing. The point is moving toward the origin."
+        },
+        {
+          "type": "model",
+          "prompt": "Toward or away, with r negative.",
+          "text": "At θ = c, r < 0 and dr/dθ < 0, so r is moving farther below 0 and |r| is increasing. The point is moving away from the origin."
+        },
+        {
+          "type": "model",
+          "prompt": "The meaning of dr/dθ in context (a sprinkler whose spray reaches W(θ) meters in direction θ, with W′(1) = −0.8).",
+          "text": "W′(1) = −0.8 means that, in the direction θ = 1 radian, the reach of the spray is decreasing at 0.8 meters per radian as the angle increases."
+        },
+        {
+          "type": "model",
+          "prompt": "A greatest distance from the origin.",
+          "text": "The distance from the origin is |r(θ)|. On the interval, dr/dθ = 0 only at θ = c. Comparing |r| at the two endpoints and at θ = c, the greatest value is |r(c)|, so the greatest distance is |r(c)|, at θ = c."
+        },
+        {
+          "type": "model",
+          "prompt": "Horizontal tangent and direction of motion.",
+          "text": "At θ = c, dy/dθ = 0 and dx/dθ ≠ 0, so the tangent line is horizontal. At θ = d, dx/dθ < 0, so x is decreasing as θ increases: the point moves to the left."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Writing ∫ of r dθ, or dropping the 1/2, for a polar area.",
+          "fix": "A thin wedge of angle Δθ and radius r has area (1/2)r^2 Δθ, so the area is (1/2)∫ of r^2 dθ. Check on a circle r = a over [0, 2π]: (1/2)(a^2)(2π) = πa^2."
+        },
+        {
+          "type": "trap",
+          "text": "Writing (1/2)∫ of (R − q)^2 dθ for the region between two curves.",
+          "fix": "Square each radius separately: (1/2)∫ of (R^2 − q^2) dθ. The region between two curves is a big wedge minus a small wedge, not a wedge whose radius is their difference."
+        },
+        {
+          "type": "trap",
+          "text": "Integrating over [0, 2π] by reflex. For many curves that counts part of the region twice, and for a loop it counts the wrong region entirely.",
+          "fix": "Find the interval that sweeps the region once: from the angles where the curves meet, or where r = 0 for a loop. Then check one angle inside it against the graph. The reflex is safe only for a closed curve on which r does not change sign (r ≥ 0 throughout, or r ≤ 0 throughout) and that is traced once on [0, 2π]."
+        },
+        {
+          "type": "trap",
+          "text": "Using one integral for the region inside both curves, with the same curve as the boundary all the way around.",
+          "fix": "On each ray, the region inside both ends at the nearer curve, and the nearer curve changes at each intersection. Split the integral there, or find the area inside one curve and subtract the piece that lies outside the other."
+        },
+        {
+          "type": "trap",
+          "text": "Reading dr/dθ < 0 as \"moving toward the origin\" without checking r.",
+          "fix": "Compare the signs of r and dr/dθ. The shortcut \"negative dr/dθ means closer\" holds only where r > 0; on a loop traced with r < 0 it gives the wrong direction every time."
+        },
+        {
+          "type": "trap",
+          "text": "Maximizing r when the question asks for the greatest distance from the origin.",
+          "fix": "Maximize |r|. If r is negative somewhere, its most negative value is a candidate. Maximizing r is safe when r ≥ 0 on the whole interval; otherwise compare the largest r with the absolute value of the most negative r."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the sign of r when converting to Cartesian coordinates, so that r = −3 at θ = π/6 is plotted at (3√3/2, 3/2).",
+          "fix": "Substitute the signed value: x = (−3)(√3/2) = −3√3/2 and y = (−3)(1/2) = −3/2. Then check that the point lands on the ray opposite θ = π/6, in the third quadrant."
+        },
+        {
+          "type": "trap",
+          "text": "Giving dr/dθ, or (dx/dθ)/(dy/dθ), as the slope of the tangent line.",
+          "fix": "The slope is dy/dx = (dy/dθ)/(dx/dθ), with y = r sin θ on top. Test the formula on the circle r = a at θ = 0: dy/dθ = a and dx/dθ = 0, so the tangent is vertical, as the picture says."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving the calculator in degree mode, or rounding an intersection angle before integrating.",
+          "fix": "Set radian mode before the section starts. Store each angle when you find it and integrate with the stored value; a limit rounded to three decimals can move the third decimal of an area."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "figure",
+          "id": "bc-fr-polar-g1"
+        },
+        {
+          "type": "example",
+          "prompt": "Without a calculator: let A be the region inside the limaçon r = 3 + 2 cos θ and outside the circle r = 4, shown in the figure. (i) Find the area of A. (ii) Find the slope of the line tangent to the limaçon at θ = π/3. (iii) As θ increases through 2π/3, is the point on the limaçon moving toward the origin or away from it? Give a reason.",
+          "answer": "(i) 13√3/2 − 5π/3. (ii) −√3/15. (iii) Toward the origin, because r = 2 > 0 and dr/dθ = −√3 < 0 at θ = 2π/3.",
+          "figureIds": [
+            "bc-fr-polar-g1"
+          ],
+          "steps": [
+            "Intersections: 3 + 2 cos θ = 4 gives cos θ = 1/2, so θ = −π/3 and θ = π/3 on −π ≤ θ ≤ π, the interval on which the limaçon (r always positive) is traced once.",
+            "Which curve is outer: at θ = 0 the limaçon gives 5 and the circle gives 4, so between −π/3 and π/3 the limaçon is outer. Area = (1/2)∫ from −π/3 to π/3 of ((3 + 2 cos θ)^2 − 4^2) dθ.",
+            "Expand: (3 + 2 cos θ)^2 − 16 = −7 + 12 cos θ + 4 cos^2 θ = −7 + 12 cos θ + 2 + 2 cos(2θ) = −5 + 12 cos θ + 2 cos(2θ).",
+            "(1/2)[−5θ + 12 sin θ + sin(2θ)] from −π/3 to π/3 = (1/2)(−10π/3 + 12√3 + √3) = 13√3/2 − 5π/3. A quick decimal check, 6.022, is positive, as an area must be.",
+            "Slope at θ = π/3: r = 4 and dr/dθ = −2 sin θ = −√3. dx/dθ = (dr/dθ) cos θ − r sin θ = −√3/2 − 2√3 = −5√3/2, and dy/dθ = (dr/dθ) sin θ + r cos θ = −3/2 + 2 = 1/2.",
+            "dy/dx = (1/2)/(−5√3/2) = −1/(5√3) = −√3/15.",
+            "At θ = 2π/3: r = 3 + 2(−1/2) = 2 > 0 and dr/dθ = −2 sin(2π/3) = −√3 < 0. The signs are opposite, so |r| is decreasing: the point is moving toward the origin. Written for credit: \"r(2π/3) = 2 > 0 and r′(2π/3) = −√3 < 0, so the distance from the origin is decreasing.\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each one on paper, with the sentence you would write for credit, before you open the answer."
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-polar-c1",
+          "prompt": "A point moves along the spiral r = θ − 2, for 0 ≤ θ ≤ 4, as θ increases. At θ = 1, is the point moving toward the origin or away from it? Give a reason that would earn the point.",
+          "hint": "Find the sign of r and the sign of dr/dθ at θ = 1.",
+          "answer": "Toward the origin: r(1) = −1 < 0 and dr/dθ = 1 > 0, so the distance |r| is decreasing.",
+          "steps": [
+            "r(1) = 1 − 2 = −1, and dr/dθ = 1 for every θ.",
+            "r is negative and increasing, so it is moving up toward 0, and |r| is decreasing.",
+            "\"Away, because dr/dθ > 0\" is the trap: it ignores the sign of r."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-polar-c2",
+          "prompt": "Find the greatest distance from the origin of any point on the curve r = 2 cos θ − 3, and give the Cartesian coordinates of that point.",
+          "hint": "The distance is |r|. Is r ever positive?",
+          "answer": "The greatest distance is 5, at the point (5, 0).",
+          "steps": [
+            "r runs from −5 (at θ = π) to −1 (at θ = 0), so r < 0 everywhere and the distance is |r| = 3 − 2 cos θ.",
+            "|r| is greatest when cos θ = −1, at θ = π, where |r| = 5.",
+            "x = r cos θ = (−5)(−1) = 5 and y = r sin θ = 0, so the point is (5, 0). The largest value of r, −1 at θ = 0, gives the nearest point, (−1, 0), not the farthest."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-polar-c3",
+          "prompt": "Write, but do not evaluate, an integral expression for the area of the region inside the cardioid r = 3 + 3 sin θ and outside the circle r = 4.",
+          "hint": "Find the angles where the curves meet, then decide which curve is outer between them.",
+          "answer": "(1/2)∫ from α to π − α of ((3 + 3 sin θ)^2 − 16) dθ, where α = arcsin(1/3).",
+          "steps": [
+            "3 + 3 sin θ = 4 gives sin θ = 1/3, so the curves meet at θ = α = arcsin(1/3) and θ = π − α.",
+            "Between them sin θ > 1/3, so the cardioid is outer: at θ = π/2 it gives 6 and the circle gives 4.",
+            "Area = (1/2)∫ from α to π − α of ((3 + 3 sin θ)^2 − 4^2) dθ. Its value, not required, is about 15.307."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Take the set under time, 15 minutes a question, with the calculator for the first two questions only. Score each part with its rubric, and for every lost point write which kind it was: setup, answer, justification, units or consistency. If the misses are in tracing or in toward-or-away reasoning, rework weeks 24 and 25 before the next set."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-polar"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-polar"
+            },
+            {
+              "label": "Unit 9 review: parametric equations, polar coordinates and vectors",
+              "ref": "guide:review-u9"
+            },
+            {
+              "label": "Free-response workshop: parametric and vector motion",
+              "ref": "guide:fr-parametric-vector"
+            },
+            {
+              "label": "Week 24: polar coordinates, tracing and tangents",
+              "ref": "week:24"
+            },
+            {
+              "label": "Week 25: polar areas and interval justification",
+              "ref": "week:25"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

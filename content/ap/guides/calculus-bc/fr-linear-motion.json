@@ -1,0 +1,466 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-linear-motion",
+  "kind": "fr-archetype",
+  "title": "Motion along a line",
+  "author": "bc-workshop-author",
+  "summary": "A motion question asks you to rebuild an object’s trip along a line from its velocity, or from its acceleration and a starting velocity: where it is, which way it moves, when it speeds up, how far it travels, and when it is farthest from where it began. This guide for the free-response section of the AP® Calculus BC Exam sets out each idea with its conditions, the usual parts, what earns setup, answer, justification and units points in Liminal’s rubrics, model sentences, traps with their repairs, one worked model and three quick checks. The practice set has two calculator questions and one no-calculator question built on a velocity graph.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "bc-fr-linear-motion-g1",
+      "alt": "Graph of v on 0 ≤ t ≤ 6, on axes labeled t and v(t), made of line segments joining (0, 2), (2, 2), (4, −2), and (6, −2)."
+    },
+    {
+      "id": "bc-fr-linear-motion-g2",
+      "alt": "Graph of the parabola v(t) = (t − 1)(t − 5) on 0 ≤ t ≤ 6, on axes labeled t and v(t). It crosses the t-axis at t = 1 and t = 5 and has its lowest point at (3, −4). The regions between the curve and the axis are shaded and marked + on 0 ≤ t ≤ 1 and 5 ≤ t ≤ 6 and − on 1 ≤ t ≤ 5.",
+      "caption": "The worked model’s velocity. Regions above the axis add to the position; the region below subtracts. Total distance adds all three."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "One object moves along a line. You are given its velocity, as a formula, a graph or a table, or its acceleration together with a starting velocity. From that you reconstruct the trip: where the object is at a given time, which way it moves, whether it is speeding up, how far it travels, and when it is farthest from its start."
+        },
+        {
+          "type": "text",
+          "text": "A motion question can sit in either part of Section II. When the velocity is a formula whose zeros or integrals have no exact form, it usually appears in the calculator part, and the work is writing setups and reporting three-decimal answers. When the velocity is a graph made of segments and circular arcs, or a formula with easy antiderivatives, it usually appears in the no-calculator part, and the work is exact areas and sign arguments."
+        },
+        {
+          "type": "text",
+          "text": "It often shares a question with another archetype: a table of velocities to sum with a Riemann or trapezoidal sum (see the tables workshop), an acceleration to antidifferentiate, or a second object to compare. Motion in the plane, with x(t) and y(t), is its own archetype. On a line, velocity is a signed number, speed is its absolute value, and every question below comes down to signs and integrals of v."
+        }
+      ]
+    },
+    {
+      "id": "ideas",
+      "title": "The ideas, with their conditions",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Position from velocity",
+          "text": "x(q) = x(p) + ∫ from p to q of v(t) dt.",
+          "conditions": [
+            "v is continuous on [p, q], or continuous except at finitely many jumps.",
+            "x(p) is the known starting position. Without it, the integral gives displacement, not position."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Velocity from acceleration",
+          "text": "v(q) = v(p) + ∫ from p to q of a(t) dt. With a formula for a, an antiderivative plus the initial velocity gives v(t).",
+          "conditions": [
+            "The constant of integration comes from the given starting velocity, not from the starting position."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Direction changes",
+          "text": "The object changes direction at t = c when v changes sign at c.",
+          "conditions": [
+            "v(c) = 0 is not enough: v(t) = (t − 2)^2 is zero at t = 2 and never changes sign.",
+            "The endpoints of the interval are never direction changes."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Speeding up and slowing down",
+          "text": "Speed is |v(t)|. It is increasing when v(t) and a(t) have the same sign and decreasing when they have opposite signs.",
+          "conditions": [
+            "v(t) ≠ 0. At an instant where v = 0 the speed is 0, and the sign test does not apply.",
+            "a(t) exists. At a corner of a velocity graph, or where an arc meets the axis vertically, state open intervals and use the slope on each piece."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Displacement and total distance",
+          "text": "Displacement on [p, q] = ∫ from p to q of v(t) dt. Total distance on [p, q] = ∫ from p to q of |v(t)| dt.",
+          "conditions": [
+            "Total distance equals |displacement| exactly when v does not change sign on (p, q); it equals the displacement itself only when v ≥ 0 there.",
+            "By hand, split the integral at each direction change and add the absolute values of the pieces."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Average velocity and average acceleration",
+          "text": "Average velocity on [p, q] = (x(q) − x(p))/(q − p) = (1/(q − p)) ∫ from p to q of v(t) dt. Average acceleration on [p, q] = (v(q) − v(p))/(q − p).",
+          "conditions": [
+            "Average velocity needs an integral, or two positions. Average acceleration needs only two velocities.",
+            "Neither is, in general, the mean of the two endpoint values; that shortcut is guaranteed only when the quantity changes linearly."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Farthest from the start",
+          "text": "On [p, q], the distance from the start, |x(t) − x(p)|, is greatest at t = q or at a time where v changes sign. Compare |∫ from p to t of v(s) ds| at every such candidate.",
+          "conditions": [
+            "v is continuous on [p, q]. Between candidates the object moves one way only, so no other time can win.",
+            "Farthest from the origin uses |x(t)| in place of |x(t) − x(p)|, with the same candidates plus t = p."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Part patterns in this workshop. Each practice question draws on three to five of them and totals 9 points; one part can combine two patterns, and the points shown are for a part built on one pattern alone.",
+          "head": [
+            "Part",
+            "Typical request",
+            "What you write",
+            "Points"
+          ],
+          "rows": [
+            [
+              "Acceleration and speed",
+              "Acceleration at t = c, with units; speeding up or slowing down at an instant or on intervals",
+              "a(c) = v′(c) with its unit; the signs of v and a and the conclusion",
+              "2"
+            ],
+            [
+              "Velocity from acceleration",
+              "An expression for v(t), or v at an instant, from a(t) and a starting velocity",
+              "v(t) = v(0) + ∫ from 0 to t of a(s) ds, or an antiderivative with C found from v(0)",
+              "2"
+            ],
+            [
+              "Direction",
+              "Times when the object changes direction, or intervals where it moves left",
+              "The zeros of v and the sign change of v at each one",
+              "2"
+            ],
+            [
+              "Position",
+              "Position at t = q",
+              "x(q) = x(p) + ∫ from p to q of v(t) dt, then its value",
+              "2"
+            ],
+            [
+              "Distance",
+              "Total distance on an interval, sometimes compared with displacement",
+              "∫ from p to q of |v(t)| dt, or the split integrals added as absolute values",
+              "2–3"
+            ],
+            [
+              "Averages",
+              "Average velocity or average acceleration on an interval",
+              "Displacement over elapsed time; change in velocity over elapsed time",
+              "1–3"
+            ],
+            [
+              "Extremes",
+              "When the object is farthest from its start, or farthest left or right",
+              "The candidates, the displacement at each, and a comparison",
+              "3–4"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Later parts lean on earlier ones. The direction changes from one part become the candidates for the farthest point and the split points for total distance in another, so find them once, store them at full precision, and reuse them."
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s rubrics award five kinds of point. Each one rewards something a reader can check on the page."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Point",
+            "What earns it",
+            "What loses it"
+          ],
+          "rows": [
+            [
+              "Setup",
+              "The integral or equation in mathematical notation, with integrand, limits and initial value, written before the number: x(4) = −3 + ∫ from 0 to 4 of v(t) dt.",
+              "A bare number; calculator keystrokes in place of mathematics; the initial position left out."
+            ],
+            [
+              "Answer",
+              "The value: exact in the no-calculator part, three decimal places in the calculator part, computed from unrounded intermediate values.",
+              "Rounding a root to two places and integrating from it; a decimal where an exact value is asked for."
+            ],
+            [
+              "Justification",
+              "One sentence that names the function, states its sign or sign change, and draws the conclusion.",
+              "“Because the graph goes down,” or “because a is negative” with no mention of v."
+            ],
+            [
+              "Units",
+              "The unit of the quantity asked for, such as meters per second per second for an acceleration when x is in meters and t in seconds.",
+              "m/s on an acceleration; a unit on the wrong number."
+            ],
+            [
+              "Consistency",
+              "A later part that uses an earlier answer correctly, even when that earlier answer was wrong. The rubrics say “accepts consistent use of …”.",
+              "Switching silently to a different value, or contradicting an earlier part."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A bare calculator number is the riskiest thing you can write. A reader cannot tell whether it came from the right integral, so in this workshop’s rubrics a number with no setup earns neither the setup point nor the answer point."
+        },
+        {
+          "type": "text",
+          "text": "Every equals sign must be true. Write x(5) = 2 + ∫ from 0 to 5 of v(t) dt ≈ 0.629, not ∫ from 0 to 5 of v(t) dt = −1.371 = 0.629. The second line asserts that −1.371 equals 0.629."
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Speeding up or slowing down at an instant, given v(2) = −1.4 and a(2) = −0.8.",
+          "text": "At t = 2, v(2) < 0 and a(2) < 0. Velocity and acceleration have the same sign, so the speed of the particle is increasing at t = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "A direction change found with a calculator.",
+          "text": "v(t) = 0 at t ≈ 1.736, and v changes from negative to positive there, so the particle changes direction at t ≈ 1.736."
+        },
+        {
+          "type": "model",
+          "prompt": "Position from a velocity formula in the calculator part, with x(0) = −3.",
+          "text": "x(4) = x(0) + ∫ from 0 to 4 of v(t) dt = −3 + ∫ from 0 to 4 of v(t) dt ≈ −0.418."
+        },
+        {
+          "type": "model",
+          "prompt": "Total distance when the velocity is a formula and a calculator is allowed.",
+          "text": "Total distance = ∫ from 0 to 5 of |v(t)| dt ≈ 7.316 meters."
+        },
+        {
+          "type": "model",
+          "prompt": "Total distance from a velocity graph, with a direction change at t = 4.",
+          "text": "The particle moves right on 0 < t < 4 and left on 4 < t < 6. Total distance = ∫ from 0 to 4 of v(t) dt + |∫ from 4 to 6 of v(t) dt| = 6 + 2 = 8."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining why total distance exceeds the size of the displacement.",
+          "text": "Because v(t) < 0 on 2 < t < 5, the motion in that interval subtracts from the displacement but adds to the total distance, so the total distance is greater than |x(7) − x(0)|."
+        },
+        {
+          "type": "model",
+          "prompt": "Farthest from the start, after the direction changes are known.",
+          "text": "The particle can be farthest from its start only at t = 6 or where v changes sign, at t = 1.5 and t = 4.7. Its displacement from t = 0 is 2.1 at t = 1.5, −3.4 at t = 4.7 and −1.2 at t = 6. The greatest distance from the start is 3.4, so the particle is farthest from its start at t = 4.7."
+        },
+        {
+          "type": "model",
+          "prompt": "Average velocity and average acceleration on the same interval.",
+          "text": "Average velocity on [0, 6] = (1/6) ∫ from 0 to 6 of v(t) dt = (x(6) − x(0))/6. Average acceleration on [0, 6] = (v(6) − v(0))/6."
+        },
+        {
+          "type": "model",
+          "prompt": "Units on an acceleration when x is in feet and t in seconds.",
+          "text": "a(2) = v′(2) ≈ 3.127 feet per second per second."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Reading a negative acceleration as slowing down.",
+          "fix": "Slowing down means the speed |v| is decreasing, which happens when v and a have opposite signs. An object moving left (v < 0) with a < 0 is speeding up. Name both signs in the sentence."
+        },
+        {
+          "type": "trap",
+          "text": "Calling every zero of v a direction change.",
+          "fix": "Check that v changes sign there: cite values on each side, the graph crossing the axis, or the multiplicity of a factor. v(t) = (t − 2)^2(t − 5) is zero at t = 2 but keeps its sign there; its only direction change is at t = 5."
+        },
+        {
+          "type": "trap",
+          "text": "Using ∫ v(t) dt for total distance.",
+          "fix": "Integrate |v(t)| with a calculator, or by hand split at each direction change and add absolute values. The two integrals agree only when v ≥ 0 on the whole interval; when v keeps one sign, total distance equals the absolute value of the displacement."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving out the starting position.",
+          "fix": "Position is the initial value plus the integral. Write it into the setup, x(q) = x(p) + ∫ from p to q of v(t) dt, so it cannot fall off at the end."
+        },
+        {
+          "type": "trap",
+          "text": "Answering “farthest from the start” with the greatest position.",
+          "fix": "Compare |x(t) − x(p)| at every candidate. When the object comes back past its start and keeps going, the low point can be farther away than the high point. Check the right endpoint too: the object may still be moving away when time runs out."
+        },
+        {
+          "type": "trap",
+          "text": "Averaging the endpoint values.",
+          "fix": "Average velocity is displacement over time, (1/(q − p)) ∫ from p to q of v(t) dt, not (v(p) + v(q))/2. Average acceleration is (v(q) − v(p))/(q − p), not the mean of the accelerations at the two ends. The shortcut is guaranteed only when the quantity changes linearly."
+        },
+        {
+          "type": "trap",
+          "text": "Rounding before the last step.",
+          "fix": "Store each root and integral at full precision and reuse the stored values; round only what you report, to three decimal places. A root rounded to two places can move a later integral by more than 0.001."
+        },
+        {
+          "type": "trap",
+          "text": "Taking a slope at a corner of a velocity graph.",
+          "fix": "At a corner of a piecewise-linear graph, or where a semicircle meets the axis with a vertical tangent, a(t) does not exist. Give speeding-up intervals as open intervals and read the slope on each piece."
+        },
+        {
+          "type": "trap",
+          "text": "Writing calculator keystrokes as the setup.",
+          "fix": "Write the mathematics, ∫ from 0 to 4 of |v(t)| dt, then the value. A keystroke sequence is not notation a reader can score."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "No calculator. Each step below is written the way it would earn its point."
+        },
+        {
+          "type": "figure",
+          "id": "bc-fr-linear-motion-g2"
+        },
+        {
+          "type": "example",
+          "prompt": "A particle moves along the x-axis with velocity v(t) = t^2 − 6t + 5 for 0 ≤ t ≤ 6, and x(0) = 3. When does the particle change direction? Is it speeding up or slowing down at t = 2? At t = 4?",
+          "answer": "It changes direction at t = 1 and t = 5. It is speeding up at t = 2 and slowing down at t = 4.",
+          "steps": [
+            "Factor: v(t) = (t − 1)(t − 5). Each factor is linear, so v changes sign at each zero: v > 0 on 0 ≤ t < 1, v < 0 on 1 < t < 5, and v > 0 on 5 < t ≤ 6.",
+            "Write: v changes from positive to negative at t = 1 and from negative to positive at t = 5, so the particle changes direction at both times.",
+            "a(t) = v′(t) = 2t − 6. At t = 2, v(2) = −3 and a(2) = −2. They have the same sign, so the speed is increasing.",
+            "At t = 4, v(4) = −3 and a(4) = 2. They have opposite signs, so the speed is decreasing. The particle moves left at both times; only the sign of a changed.",
+            "In the figure, on 1 < t < 3 the graph is below the axis and falling, away from 0, so the speed grows; on 3 < t < 5 it climbs back toward 0, so the speed shrinks."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "For the same particle, find x(6) and the total distance traveled on 0 ≤ t ≤ 6. When is the particle farthest from its starting point? Find its average velocity and its average acceleration on 0 ≤ t ≤ 4.",
+          "answer": "x(6) = −3 and the total distance is 46/3. The particle is farthest from its start at t = 5, at x = −16/3, which is 25/3 from x(0) = 3. On 0 ≤ t ≤ 4, the average velocity is −5/3 and the average acceleration is −2.",
+          "steps": [
+            "An antiderivative of v is F(t) = t^3/3 − 3t^2 + 5t, with F(0) = 0, so the displacement from t = 0 to time t is F(t).",
+            "x(6) = x(0) + ∫ from 0 to 6 of v(t) dt = 3 + F(6) = 3 + (72 − 108 + 30) = −3.",
+            "Split at the direction changes: ∫ from 0 to 1 of v(t) dt = F(1) = 7/3; ∫ from 1 to 5 of v(t) dt = F(5) − F(1) = −25/3 − 7/3 = −32/3; ∫ from 5 to 6 of v(t) dt = F(6) − F(5) = −6 + 25/3 = 7/3. Total distance = 7/3 + 32/3 + 7/3 = 46/3.",
+            "Candidates for farthest from the start: t = 0, 1, 5 and 6. The displacements there are 0, 7/3, −25/3 and −6. The largest distance from the start is 25/3, at t = 5, so the particle is farthest from its start at t = 5, at x = 3 − 25/3 = −16/3.",
+            "The greatest position, 3 + 7/3 = 16/3 at t = 1, is only 7/3 from the start: farthest from the start and farthest right are different questions.",
+            "Average velocity on [0, 4] = (1/4) ∫ from 0 to 4 of v(t) dt = F(4)/4 = (−20/3)/4 = −5/3. Average acceleration on [0, 4] = (v(4) − v(0))/4 = (−3 − 5)/4 = −2."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "In the calculator part the moves are the same. The zeros of v come from a solver or a graph, every integral is written before its value, and stored values replace exact fractions."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "check",
+          "id": "bc-fr-linear-motion-c1",
+          "prompt": "A particle moves along a line with velocity v(t) = 4t − t^2. At t = 5, which way is it moving, and is it speeding up or slowing down? Write the justification sentence.",
+          "hint": "Find v(5) and a(5), then compare their signs.",
+          "answer": "It is moving in the negative direction and speeding up: v(5) = −5 and a(5) = −6 are both negative.",
+          "steps": [
+            "v(5) = 20 − 25 = −5 < 0, so the particle moves in the negative direction.",
+            "a(t) = v′(t) = 4 − 2t, so a(5) = −6.",
+            "Velocity and acceleration have the same sign, so the speed is increasing. A negative acceleration alone does not mean slowing down."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-linear-motion-c2",
+          "prompt": "The figure shows the velocity v(t) of a particle for 0 ≤ t ≤ 6; the graph consists of line segments. Find the particle’s displacement and the total distance it travels on 0 ≤ t ≤ 6. If x(0) = 4, where is the particle at t = 6?",
+          "hint": "Split at the time where the graph crosses the t-axis. Each piece is a rectangle or a triangle.",
+          "answer": "The displacement is 0, the total distance is 10, and x(6) = 4.",
+          "steps": [
+            "On [0, 3]: a 2-by-2 rectangle and a triangle with base 1 and height 2, for area 4 + 1 = 5 above the axis.",
+            "On [3, 6]: a triangle of area 1 and a 2-by-2 rectangle, for area 5 below the axis.",
+            "Displacement = 5 − 5 = 0, so x(6) = 4 + 0 = 4. Total distance = 5 + 5 = 10.",
+            "The particle ends where it started after traveling 10 units: 5 to the right, then 5 back."
+          ],
+          "figureIds": [
+            "bc-fr-linear-motion-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-linear-motion-c3",
+          "prompt": "A particle’s velocity v is continuous on 0 ≤ t ≤ 8 and changes sign only at t = 2 and t = 6. Also, ∫ from 0 to 2 of v(t) dt = 5, ∫ from 2 to 6 of v(t) dt = −12, and ∫ from 6 to 8 of v(t) dt = 3. At what time is the particle’s position greatest? At what time is the particle farthest from its starting position?",
+          "hint": "List the candidate times, then find the displacement from t = 0 at each one.",
+          "answer": "The position is greatest at t = 2. The particle is farthest from its start at t = 6, 7 units in the negative direction from it.",
+          "steps": [
+            "Candidates: t = 0 and t = 8 (the endpoints) and t = 2 and t = 6 (the sign changes of v).",
+            "Displacements from t = 0: 0, then 5, then 5 − 12 = −7, then −7 + 3 = −4.",
+            "The greatest displacement, 5, is at t = 2, so the position is greatest there. The greatest distance from the start, |−7| = 7, is at t = 6.",
+            "The answers differ because the trip back, 12 units, is more than twice the first trip out, 5 units."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the set at 15 minutes a question. Score it with the rubric, then rewrite every answer that lost a setup or justification point until each sentence would earn it."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-linear-motion"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-linear-motion"
+            },
+            {
+              "label": "Unit 4 review: contextual applications of differentiation",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 8 review: applications of integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Week 8: rates in context and straight-line motion",
+              "ref": "week:8"
+            },
+            {
+              "label": "Week 19: motion, accumulation, and average value",
+              "ref": "week:19"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Workshop: parametric and vector motion",
+              "ref": "guide:fr-parametric-vector"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

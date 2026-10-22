@@ -1,0 +1,344 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-differential-equations",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Differential equations",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. No calculator is allowed. Show supporting work, justify requested conclusions, and give exact answers. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "bc-fr-differential-equations-f1",
+      "alt": "Coordinate grid with x from −2 to 2 and y from −2 to 2. Nine points are marked with dots: every point whose coordinates are each −1, 0, or 1. No segments are drawn.",
+      "caption": "Axes for the slope field in part (a)."
+    },
+    {
+      "id": "bc-fr-differential-equations-f2",
+      "alt": "The same nine points, each with a short line segment through it. The three segments on the y-axis are horizontal. The segments at x = 1 rise to the right, and the segments at x = −1 fall to the right, with the same steepness at y = 1 and y = −1 and less steepness at y = 0.",
+      "caption": "Slope field segments at the nine points."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 45,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "context": true,
+              "prompt": "Duckweed is spreading across the surface of a pond. The area of the pond covered by duckweed is F(t) square meters, t days after observation begins. The area satisfies the differential equation dF/dt = F(48 − F)/96, which can also be written dF/dt = (F/2)(1 − F/48), with F(0) = 6.",
+              "topics": [
+                "BC.7.LOGISTIC_MODELS",
+                "BC.7.EQUILIBRIUM_SOLUTIONS",
+                "BC.7.EXPONENTIAL_MODELS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the constant solutions of the differential equation. Then find lim as t→∞ of F(t), and use the differential equation to explain why the limit has that value.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds both constant solutions, F = 0 and F = 48, by setting dF/dt = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives the limit 48 with a reason from the equation: F(0) = 6 lies between the constant solutions, where dF/dt > 0, so F increases and cannot cross F = 48. Accepts an appeal to 48 as the carrying capacity of this logistic equation together with 0 < F(0) < 48."
+                    }
+                  ],
+                  "answer": "Constant solutions F = 0 and F = 48; lim as t→∞ of F(t) = 48.",
+                  "steps": [
+                    "dF/dt = 0 exactly when F(48 − F) = 0, so the constant solutions are F = 0 and F = 48.",
+                    "At F = 6, dF/dt = 6(42)/96 = 21/8 > 0, and dF/dt > 0 whenever 0 < F < 48, so F increases.",
+                    "A solution cannot cross the constant solution F = 48, so F stays below 48 and increases toward it: lim as t→∞ of F(t) = 48."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "For what value of F is the covered area increasing most rapidly? Justify your answer, and find that greatest rate of increase, with units.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Treats the rate as a function of F, R(F) = (48F − F^2)/96, and solves R′(F) = (48 − 2F)/96 = 0 (or d^2F/dt^2 = 0) to obtain F = 24."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies the maximum: R′(F) changes from positive to negative at F = 24 (or R is a downward-opening parabola with vertex at F = 24), and F passes through 24 because it increases from 6 toward 48. Stating \"half the carrying capacity\" with no reason does not earn this point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Greatest rate 6 square meters per day, with units."
+                    }
+                  ],
+                  "answer": "F = 24; the greatest rate is 6 square meters per day.",
+                  "steps": [
+                    "The rate of increase is R(F) = F(48 − F)/96 = (48F − F^2)/96, a quadratic in F.",
+                    "R′(F) = (48 − 2F)/96 is positive for F < 24, zero at F = 24, and negative for F > 24, so R is greatest at F = 24.",
+                    "By part (a), F increases from 6 toward 48, so it does reach 24.",
+                    "R(24) = 24(24)/96 = 6, so the area grows fastest, at 6 square meters per day, when F = 24."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "In a second pond, the covered area G(t) satisfies the same differential equation, but G(0) = 60. For t ≥ 0, is G increasing or decreasing, and is the graph of G concave up or concave down? Justify your answers using the differential equation.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Decreasing, because G > 48 makes dG/dt = G(48 − G)/96 negative, and G stays above the constant solution 48."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concave up, using d^2G/dt^2 = ((48 − 2G)/96)(dG/dt) or an equivalent expression, with both factors negative when G > 48."
+                    }
+                  ],
+                  "answer": "G is decreasing and its graph is concave up for t ≥ 0.",
+                  "steps": [
+                    "G starts at 60 > 48 and cannot cross the constant solution G = 48, so G > 48 for all t ≥ 0.",
+                    "For G > 48, G > 0 and 48 − G < 0, so dG/dt = G(48 − G)/96 < 0: G is decreasing.",
+                    "Differentiate the equation with the chain rule: d^2G/dt^2 = ((48 − 2G)/96)(dG/dt).",
+                    "For G > 48, 48 − 2G < 0 and dG/dt < 0, so d^2G/dt^2 > 0: the graph is concave up."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "While F is small, 1 − F/48 is close to 1, so early on the duckweed model is close to the exponential model dE/dt = E/2 with E(0) = 6. Find E(t). Is F(t) greater than or less than E(t) for t > 0? Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "E(t) = 6e^(t/2), found by separation or from the known solution of dE/dt = kE."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "F(t) < E(t) for t > 0, with a reason that holds for every t > 0: the relative growth rate (1/F)(dF/dt) = (1/2)(1 − F/48) is less than E’s constant relative rate 1/2 while both start at 6 (or an equivalent comparison of ln F and ln E). Accepts \"dF/dt = (F/2)(1 − F/48) < F/2, so F grows more slowly than an exponential with the same start.\" Also accepts solving the logistic equation, F(t) = 48/(1 + 7e^(−t/2)), and showing 48/(1 + 7e^(−t/2)) < 6e^(t/2), which reduces to e^(t/2) > 1 for t > 0. Noting only that F stays below 48 does not earn this point."
+                    }
+                  ],
+                  "answer": "E(t) = 6e^(t/2); F(t) < E(t) for every t > 0.",
+                  "steps": [
+                    "dE/dt = E/2 with E(0) = 6 gives E(t) = 6e^(t/2).",
+                    "For 0 < F < 48, (1/F)(dF/dt) = (1/2)(1 − F/48) < 1/2 = (1/E)(dE/dt).",
+                    "So d/dt of ln F(t) is less than d/dt of ln E(t) at every time, and ln F(0) = ln E(0) = ln 6.",
+                    "Integrating from 0 to t gives ln F(t) < ln E(t), so F(t) < E(t) for t > 0. The exponential model overestimates the covered area, and the gap grows as F nears 48."
+                  ]
+                }
+              ],
+              "id": "bc-fr-differential-equations-fr1"
+            },
+            {
+              "prompt": "Consider the differential equation dy/dx = x(1 + y^2). Let y = f(x) be the particular solution with f(1) = 0.",
+              "topics": [
+                "BC.7.SLOPE_FIELDS",
+                "BC.4.LINEARIZATION",
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.INITIAL_VALUE_PROBLEMS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On the axes provided, sketch the slope field for the differential equation at the nine points indicated.",
+                  "points": 2,
+                  "figureIds": [
+                    "bc-fr-differential-equations-f1"
+                  ],
+                  "answerFigureIds": [
+                    "bc-fr-differential-equations-f2"
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Horizontal segments at the three points on the y-axis."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Segments at the six points with x = ±1 have the correct signs (rising for x = 1, falling for x = −1) and relative steepness (slope magnitude 2 at y = ±1, steeper than magnitude 1 at y = 0)."
+                    }
+                  ],
+                  "answer": "Slopes: 0 at (0, −1), (0, 0), (0, 1); 1 at (1, 0); 2 at (1, ±1); −1 at (−1, 0); −2 at (−1, ±1). See the answer figure.",
+                  "steps": [
+                    "Evaluate x(1 + y^2) at each point. Every point with x = 0 has slope 0.",
+                    "At x = 1 the slope is 1 + y^2: 1 at y = 0 and 2 at y = ±1. At x = −1 the slopes are the negatives: −1 and −2.",
+                    "Draw a short segment with that slope through each point."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Write an equation for the line tangent to the graph of f at x = 1, and use it to approximate f(1.2). Find d^2y/dx^2 in terms of x and y. Is your approximation greater than or less than f(1.2)? Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Tangent line y = x − 1 (from slope 1(1 + 0^2) = 1 at (1, 0)) and approximation f(1.2) ≈ 0.2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "d^2y/dx^2 = (1 + y^2) + 2x^2·y(1 + y^2), or the factored form (1 + y^2)(1 + 2x^2·y), with dy/dx substituted (an expression still containing dy/dx earns the point only if it is evaluated correctly at (1, 0))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Less than f(1.2), because d^2y/dx^2 > 0 for 1 ≤ x ≤ 1.2, so the graph of f is concave up on that interval and lies above its tangent line. The reason must cover the interval: for example, dy/dx = x(1 + y^2) > 0 for x > 0, so f(x) ≥ f(1) = 0 there and (1 + y^2)(1 + 2x^2·y) ≥ 1 + y^2 > 0. A reason that cites only d^2y/dx^2 = 1 > 0 at (1, 0), with nothing on why the sign persists to x = 1.2, does not earn this point."
+                    }
+                  ],
+                  "answer": "y = x − 1; f(1.2) ≈ 0.2. d^2y/dx^2 = (1 + y^2)(1 + 2x^2·y). The approximation 0.2 is less than f(1.2).",
+                  "steps": [
+                    "At (1, 0), dy/dx = 1(1 + 0) = 1, so the tangent line is y = 0 + 1(x − 1) = x − 1, and f(1.2) ≈ 0.2.",
+                    "Differentiate with the product and chain rules: d^2y/dx^2 = (1 + y^2) + x·2y·(dy/dx).",
+                    "Substitute dy/dx = x(1 + y^2): d^2y/dx^2 = (1 + y^2) + 2x^2·y(1 + y^2) = (1 + y^2)(1 + 2x^2·y).",
+                    "At (1, 0), d^2y/dx^2 = 1 > 0, but that settles the concavity only near x = 1. For 1 ≤ x ≤ 1.2, dy/dx = x(1 + y^2) > 0, so f is increasing and f(x) ≥ f(1) = 0. Then 1 + 2x^2·y ≥ 1, and d^2y/dx^2 = (1 + y^2)(1 + 2x^2·y) > 0 on the whole interval.",
+                    "The graph is concave up there, so it lies above its tangent line: 0.2 is less than f(1.2)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find y = f(x), the particular solution with f(1) = 0. State the largest open interval containing x = 1 on which this solution is defined.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates variables: dy/(1 + y^2) = x dx. Without a correct separation, no later point in this part is earned."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Antiderivatives arctan(y) and x^2/2, with a constant of integration."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses f(1) = 0 to find the constant: arctan(y) = x^2/2 − 1/2 (or C = −1/2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves for y: f(x) = tan((x^2 − 1)/2), on −√(1 + π) < x < √(1 + π), obtained from requiring −π/2 < (x^2 − 1)/2 < π/2. Accepts the interval stated with equivalent exact endpoints."
+                    }
+                  ],
+                  "answer": "f(x) = tan((x^2 − 1)/2), defined for −√(1 + π) < x < √(1 + π).",
+                  "steps": [
+                    "Separate: dy/(1 + y^2) = x dx. (No solution is lost, because 1 + y^2 is never 0.)",
+                    "Integrate: arctan(y) = x^2/2 + C.",
+                    "f(1) = 0 gives arctan(0) = 1/2 + C, so C = −1/2 and arctan(y) = (x^2 − 1)/2.",
+                    "Values of arctan lie strictly between −π/2 and π/2, so the solution exists only where −π/2 < (x^2 − 1)/2 < π/2. The left inequality always holds because (x^2 − 1)/2 ≥ −1/2; the right one means x^2 < 1 + π.",
+                    "So f(x) = tan((x^2 − 1)/2) on −√(1 + π) < x < √(1 + π). As x approaches either endpoint, f(x) → ∞, so the solution cannot be extended."
+                  ]
+                }
+              ],
+              "id": "bc-fr-differential-equations-fr2"
+            },
+            {
+              "context": true,
+              "prompt": "A patient receives a medication through an IV line at a constant rate of 24 milligrams per hour, and the body removes the medication at a rate equal to one quarter of the amount present per hour. The amount of medication in the body, A(t) milligrams, t hours after the line is started, satisfies dA/dt = 24 − A/4. At time t = 0, 16 milligrams remain from an earlier dose, so A(0) = 16.",
+              "topics": [
+                "BC.7.EULER_METHOD",
+                "BC.7.EXPONENTIAL_MODELS",
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.EQUILIBRIUM_SOLUTIONS",
+                "BC.7.DIFFERENTIAL_EQUATION_MODELS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use Euler’s method, starting at t = 0 with two steps of equal size, to approximate A(2). Show the computations that lead to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "First step with Δt = 1: slope 24 − 16/4 = 20, so A(1) ≈ 16 + 20(1) = 36."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Second step uses the slope at the approximated point (1, 36): A(2) ≈ 36 + 15(1) = 51. Accepts consistent work from an incorrect first step."
+                    }
+                  ],
+                  "answer": "A(2) ≈ 51 milligrams.",
+                  "steps": [
+                    "Two equal steps from t = 0 to t = 2 have Δt = 1.",
+                    "At (0, 16): dA/dt = 24 − 4 = 20, so A(1) ≈ 16 + 20(1) = 36.",
+                    "At (1, 36): dA/dt = 24 − 9 = 15, so A(2) ≈ 36 + 15(1) = 51."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find d^2A/dt^2 in terms of A. Is the approximation in part (a) an overestimate or an underestimate of A(2)? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "d^2A/dt^2 = −(1/4)(dA/dt) = −(1/4)(24 − A/4), or A/16 − 6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Overestimate, because d^2A/dt^2 < 0 whenever A < 96, which holds for the solution, for every Euler point used, and for the solution curves through those points, since none can cross the constant solution A = 96; those curves are concave down and lie below the tangent segments Euler’s method follows."
+                    }
+                  ],
+                  "answer": "d^2A/dt^2 = A/16 − 6. The approximation 51 is an overestimate of A(2).",
+                  "steps": [
+                    "Differentiate the equation: d^2A/dt^2 = −(1/4)(dA/dt) = −(1/4)(24 − A/4) = A/16 − 6.",
+                    "d^2A/dt^2 < 0 exactly when A < 96. The solution starts at 16 and cannot cross the constant solution A = 96, the Euler values 16, 36 and 51 are also below 96, and the solution curves through (0, 16) and (1, 36) stay below 96 for the same reason.",
+                    "So every solution curve in the region the method uses is concave down. Each Euler step follows a tangent line, which lies above a concave-down curve, and solution curves do not cross, so the estimate lands above A(2).",
+                    "(For comparison, part (c) gives A(2) = 96 − 80e^(−1/2), about 47.5.)"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use separation of variables to find A(t), the particular solution with A(0) = 16.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates variables: dA/(96 − A) = dt/4, or dA/(24 − A/4) = dt, or an equivalent form. Without a correct separation, no later point in this part is earned."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Antiderivatives: −ln|96 − A| = t/4 + C, or an equivalent form such as −4 ln|24 − A/4| = t + C."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses A(0) = 16 and solves for A: A(t) = 96 − 80e^(−t/4)."
+                    }
+                  ],
+                  "answer": "A(t) = 96 − 80e^(−t/4)",
+                  "steps": [
+                    "Rewrite 24 − A/4 = (96 − A)/4 and separate: dA/(96 − A) = dt/4.",
+                    "Integrate: −ln|96 − A| = t/4 + C.",
+                    "This solution has A < 96, so |96 − A| = 96 − A. At t = 0, −ln 80 = C.",
+                    "Then ln(96 − A) = ln 80 − t/4, so 96 − A = 80e^(−t/4) and A(t) = 96 − 80e^(−t/4).",
+                    "Check: A(0) = 96 − 80 = 16, and dA/dt = 20e^(−t/4) = (96 − A)/4 = 24 − A/4."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find lim as t→∞ of A(t), and interpret this value in the context of the problem. The care team wants the long-run amount to be 120 milligrams instead. If the body removes the medication by the same rule and the infusion rate is changed to a constant r milligrams per hour, what value of r is needed? Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Limit 96 milligrams, interpreted: over a long time the amount levels off at 96 milligrams, where removal (96/4 = 24 mg per hour) balances the infusion."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "r = 30 milligrams per hour, from the constant solution of dA/dt = r − A/4, which is A = 4r and attracts solutions from either side; 4r = 120."
+                    }
+                  ],
+                  "answer": "lim as t→∞ of A(t) = 96 milligrams; r = 30 milligrams per hour.",
+                  "steps": [
+                    "e^(−t/4) → 0 as t → ∞, so A(t) → 96. Over many hours the amount in the body levels off near 96 milligrams, the amount at which the body removes 96/4 = 24 milligrams per hour, exactly the infusion rate.",
+                    "With infusion rate r, dA/dt = r − A/4. Its constant solution is A = 4r. Below it dA/dt > 0 and above it dA/dt < 0, so every solution approaches A = 4r.",
+                    "Setting 4r = 120 gives r = 30 milligrams per hour."
+                  ]
+                }
+              ],
+              "id": "bc-fr-differential-equations-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

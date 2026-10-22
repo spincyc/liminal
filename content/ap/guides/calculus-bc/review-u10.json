@@ -1,0 +1,642 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "review-u10",
+  "kind": "unit-review",
+  "unitId": "u10",
+  "title": "Unit 10 review: Infinite Sequences and Series",
+  "author": "bc-review-author",
+  "summary": "A retrieval-first review of Unit 10 for the AP® Calculus BC Exam: sequences and partial sums, the convergence tests and their hypotheses, absolute and conditional convergence, alternating and Lagrange error bounds, Taylor polynomials and series, and power series with their intervals of convergence and termwise operations. Answer six recall checks and five mixed problems before you read the summary of results, the model justifications and traps, and two worked examples.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "bc-review-u10-g1",
+      "alt": "Graph on a unit grid for 0 ≤ x ≤ 4.5 and 0 ≤ y ≤ 5. A solid curve labeled y = f(x) starts near (0, 3.2), rises slightly, passes through the marked point (2, 3), and then falls more and more steeply, reaching about (4, 0.8). A dashed straight line labeled tangent line touches the curve at (2, 3) and passes through the marked grid points (0, 4) and (4, 2). The curve lies below the dashed line on both sides of (2, 3).",
+      "caption": "The graph of f and the line tangent to it at x = 2."
+    },
+    {
+      "id": "bc-review-u10-g2",
+      "alt": "Plot of the partial sums S_n against n for n = 1 to 8, as dots joined by line segments, with a dashed horizontal line labeled S = ln 2 at a height of about 0.69. The dots alternate above and below the dashed line: S_1 = 1, S_2 = 0.5, S_3 ≈ 0.83, S_4 ≈ 0.58, S_5 ≈ 0.78, S_6 ≈ 0.62, S_7 ≈ 0.76, S_8 ≈ 0.63, closing in on the line from both sides.",
+      "caption": "Partial sums of the alternating harmonic series Σ (−1)^(n−1)/n. The sum lies between any two consecutive partial sums, so the error after N terms is at most the next term."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper, from memory, before you open its answer. A test without its hypotheses does not count as recalled, so write every condition. Mark each check right, partly right or wrong. The answer to each wrong one names the section to study; in it, read closely only the part on the same idea."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c1",
+          "prompt": "Define what it means for Σ from n = 1 to infinity of a_n to converge. Then state the nth-term test, and say exactly when a geometric series Σ from n = 0 to infinity of ar^n (a ≠ 0) and a p-series Σ from n = 1 to infinity of 1/n^p converge. Give the sum of the geometric series when it converges.",
+          "hint": "Two different sequences belong to every series: its terms and its partial sums.",
+          "answer": "The series converges to S when its partial sums S_N = a_1 + a_2 + ⋯ + a_N have lim as N→∞ of S_N = S, a finite number. nth-term test: if lim as n→∞ of a_n is not 0, or does not exist, the series diverges; a limit of 0 decides nothing. The geometric series converges exactly when |r| < 1, to a/(1 − r). The p-series converges exactly when p > 1.",
+          "steps": [
+            "Partial sums: S_N = a_1 + a_2 + ⋯ + a_N. The series converges to S exactly when lim as N→∞ of S_N = S, a finite number; otherwise it diverges. The terms a_n and the partial sums S_N are different sequences, and the sum of a series is a limit of partial sums, never a limit of terms.",
+            "nth-term test: if lim as n→∞ of a_n ≠ 0, or the limit does not exist, then Σ a_n diverges. If the limit is 0, the test is silent: the harmonic series Σ 1/n has terms that approach 0, and it diverges.",
+            "Geometric series: Σ from n = 0 to infinity of ar^n, with a ≠ 0, converges exactly when |r| < 1, and its sum is a/(1 − r), the first term divided by 1 minus the ratio. When |r| ≥ 1 the terms do not approach 0, so the series diverges.",
+            "p-series: Σ from n = 1 to infinity of 1/n^p converges exactly when p > 1. The harmonic series is the case p = 1, and it diverges."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c2",
+          "prompt": "State the integral test, the direct comparison test and the limit comparison test, each with every hypothesis. What do all three require of the terms?",
+          "answer": "All three need positive terms, at least from some index N on. Integral test: if f is positive, continuous and decreasing for x ≥ N and a_n = f(n), then Σ a_n and ∫ from N to infinity of f(x) dx both converge or both diverge. Direct comparison: if 0 ≤ a_n ≤ b_n for n ≥ N, then Σ b_n converging makes Σ a_n converge, and Σ a_n diverging makes Σ b_n diverge. Limit comparison: if a_n > 0 and b_n > 0 for n ≥ N and lim as n→∞ of a_n/b_n = L with 0 < L < ∞, then the two series both converge or both diverge.",
+          "steps": [
+            "Integral test. Hypotheses: a_n = f(n), where f is positive, continuous and decreasing for x ≥ N. Conclusion: Σ from n = N to infinity of a_n and ∫ from N to infinity of f(x) dx both converge or both diverge. The integral's value is not the sum; the test reports only convergence or divergence.",
+            "Direct comparison. Hypothesis: 0 ≤ a_n ≤ b_n for every n ≥ N. Conclusions: if the larger series Σ b_n converges, so does Σ a_n; if the smaller series Σ a_n diverges, so does Σ b_n. Smaller than a divergent series, or larger than a convergent one, proves nothing.",
+            "Limit comparison. Hypotheses: a_n > 0 and b_n > 0 for n ≥ N, and lim as n→∞ of a_n/b_n = L, a finite positive number. Conclusion: Σ a_n and Σ b_n both converge or both diverge. Choose b_n by keeping the dominant power of n in the numerator and denominator of a_n.",
+            "None of the three applies directly to a series with infinitely many negative terms. For such a series, apply them to Σ |a_n| to test for absolute convergence."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c3",
+          "prompt": "State the alternating series test and the alternating series error bound, with their hypotheses. Then define absolute convergence and conditional convergence.",
+          "hint": "Write the series as Σ (−1)^(n−1) b_n with b_n > 0, and list what b_n must do.",
+          "answer": "If b_n > 0, b_(n+1) ≤ b_n for every n, and lim as n→∞ of b_n = 0, then Σ from n = 1 to infinity of (−1)^(n−1) b_n converges. Under those hypotheses, |S − S_N| ≤ b_(N+1), and S − S_N has the sign of the first omitted term. Σ a_n converges absolutely when Σ |a_n| converges, and conditionally when Σ a_n converges but Σ |a_n| diverges.",
+          "steps": [
+            "Alternating series test: for Σ (−1)^(n−1) b_n (or Σ (−1)^n b_n), if b_n > 0, the b_n are nonincreasing, and lim as n→∞ of b_n = 0, the series converges. For convergence alone, the decrease may start at any index.",
+            "Error bound: under the same hypotheses, holding from term N + 1 on, the sum S satisfies |S − S_N| ≤ b_(N+1), the magnitude of the first omitted term. The sum lies between any two consecutive partial sums, so S − S_N has the same sign as the first omitted term.",
+            "Absolute convergence: Σ |a_n| converges. Absolute convergence implies convergence.",
+            "Conditional convergence: Σ a_n converges, but Σ |a_n| diverges. Example: Σ (−1)^(n−1)/n converges by the alternating series test, while Σ 1/n diverges."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c4",
+          "prompt": "State the ratio test, including the case it cannot decide. Then describe how to find the interval of convergence of a power series Σ from n = 0 to infinity of c_n(x − a)^n.",
+          "answer": "If lim as n→∞ of |a_(n+1)/a_n| = L, the series converges absolutely when L < 1 and diverges when L > 1 or the limit is infinite; L = 1 decides nothing. For a power series, apply the ratio test to the terms to get an open interval |x − a| < R, then test each endpoint x = a − R and x = a + R separately with another test.",
+          "steps": [
+            "Ratio test: compute L = lim as n→∞ of |a_(n+1)/a_n|. If L < 1, Σ a_n converges absolutely. If L > 1 or L = ∞, the terms do not approach 0 and the series diverges. If L = 1, there is no conclusion: Σ 1/n (divergent) and Σ 1/n^2 (convergent) both give L = 1.",
+            "Power series: the ratio limit is usually a multiple of |x − a|, such as |x − a|/R, or of a power of it, such as (x − 4)^2/9 when only even powers appear. Setting it below 1 gives absolute convergence for |x − a| < R and divergence for |x − a| > R. R is the radius of convergence; it may be 0 (convergence only at x = a) or infinite (every x).",
+            "At x = a ± R the ratio limit is 1, so substitute each endpoint into the series and test the resulting number series with a p-series, comparison or alternating series argument. The interval may be open, closed or half-open.",
+            "Every power series converges at its center x = a."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c5",
+          "prompt": "Write the Taylor polynomial of degree n for f about x = a, and the coefficient of (x − a)^k. Then state the Lagrange error bound, with its hypotheses.",
+          "answer": "P_n(x) = f(a) + f′(a)(x − a) + f″(a)(x − a)^2/2! + ⋯ + f^(n)(a)(x − a)^n/n!, and the coefficient of (x − a)^k is f^(k)(a)/k!. If f has n + 1 derivatives on an interval containing a and x, and |f^(n+1)(t)| ≤ M for every t between a and x, then |f(x) − P_n(x)| ≤ M|x − a|^(n+1)/(n + 1)!.",
+          "steps": [
+            "In sigma form, P_n(x) = Σ from k = 0 to n of f^(k)(a)(x − a)^k/k!. It is the only polynomial of degree at most n whose value and first n derivatives at a match those of f. A Maclaurin polynomial is the case a = 0.",
+            "Reading backward: if the coefficient of (x − a)^k is c_k, then f^(k)(a) = k!·c_k.",
+            "Lagrange error bound: if |f^(n+1)(t)| ≤ M for all t between a and x, then |f(x) − P_n(x)| ≤ M|x − a|^(n+1)/(n + 1)!. Every n + 1 matters: the (n + 1)st derivative, the power n + 1 and the factorial (n + 1)!.",
+            "M may be any upper bound, not necessarily the least one. A larger M gives a weaker but still valid bound.",
+            "Lagrange form of the remainder: when f^(n+1) is continuous, f(x) − P_n(x) = f^(n+1)(c)(x − a)^(n+1)/(n + 1)! for some c between a and x. When f^(n+1) keeps one sign between a and x, this tells you whether P_n(x) is too large or too small."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c6",
+          "prompt": "Write the Maclaurin series, with its general term, for e^x, sin x, cos x, 1/(1 − x), ln(1 + x) and arctan x. Give the interval on which each series converges to its function.",
+          "hint": "Two of the six come from integrating a geometric series.",
+          "answer": "e^x = Σ from n = 0 to infinity of x^n/n!, all x. sin x = Σ from n = 0 to infinity of (−1)^n x^(2n+1)/(2n + 1)!, all x. cos x = Σ from n = 0 to infinity of (−1)^n x^(2n)/(2n)!, all x. 1/(1 − x) = Σ from n = 0 to infinity of x^n, −1 < x < 1. ln(1 + x) = Σ from n = 1 to infinity of (−1)^(n+1) x^n/n, −1 < x ≤ 1. arctan x = Σ from n = 0 to infinity of (−1)^n x^(2n+1)/(2n + 1), −1 ≤ x ≤ 1.",
+          "steps": [
+            "e^x = 1 + x + x^2/2! + x^3/3! + ⋯, for every real x.",
+            "sin x = x − x^3/3! + x^5/5! − ⋯ (odd powers, odd factorials) and cos x = 1 − x^2/2! + x^4/4! − ⋯ (even powers, even factorials), for every real x.",
+            "1/(1 − x) = 1 + x + x^2 + x^3 + ⋯, a geometric series with ratio x, for −1 < x < 1 only.",
+            "ln(1 + x): replace x by −t in the geometric series to get 1/(1 + t) = 1 − t + t^2 − ⋯, then integrate from 0 to x: ln(1 + x) = x − x^2/2 + x^3/3 − ⋯, for −1 < x ≤ 1. At x = 1 it is the alternating harmonic series, which converges; at x = −1 it is the negative of the harmonic series, which diverges.",
+            "arctan x: integrate 1/(1 + t^2) = 1 − t^2 + t^4 − ⋯ from 0 to x: arctan x = x − x^3/3 + x^5/5 − ⋯, for −1 ≤ x ≤ 1. Both endpoints converge by the alternating series test."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "check",
+          "id": "bc-review-u10-c7",
+          "prompt": "Classify each series as absolutely convergent, conditionally convergent or divergent. Name the result you use and show the evidence it needs.\n\n(a) Σ from n = 2 to infinity of (−1)^n/(ln n)\n(b) Σ from n = 1 to infinity of 2^n·n!/n^n\n(c) Σ from n = 1 to infinity of n·sin(1/n)",
+          "hint": "Begin every series the same way: find the limit of the size of its terms. Then let the form of the term (a logarithm, a factorial, a power) suggest the next move.",
+          "answer": "(a) Converges conditionally. (b) Converges absolutely. (c) Diverges.",
+          "steps": [
+            "(a) The signs alternate, with b_n = 1/(ln n). For n ≥ 2, ln n is positive and increasing, so b_n > 0 and b_(n+1) < b_n; and lim as n→∞ of b_n = 0 because ln n → ∞. By the alternating series test, the series converges.",
+            "(a) Absolute values: Σ 1/(ln n). For n ≥ 2, 0 < ln n < n, so 1/(ln n) > 1/n > 0. The harmonic series Σ 1/n diverges, so Σ 1/(ln n) diverges by direct comparison. The series converges, but not absolutely: it converges conditionally.",
+            "(b) The terms are positive and contain a factorial and nth powers, which suits the ratio test. a_(n+1)/a_n = (2^(n+1)(n + 1)!/(n + 1)^(n+1))·(n^n/(2^n·n!)) = 2(n + 1)n^n/(n + 1)^(n+1) = 2(n/(n + 1))^n.",
+            "(b) (n/(n + 1))^n = 1/((1 + 1/n)^n), and (1 + 1/n)^n → e, so the ratio limit is L = 2/e. Since e > 2, L < 1, and the series converges absolutely. (Its terms are positive, so absolute convergence and convergence are the same here.)",
+            "(c) Let u = 1/n, so n·sin(1/n) = sin(u)/u. As n→∞, u→0⁺ and sin(u)/u → 1 (the Unit 1 limit). The terms approach 1, not 0, so the series diverges by the nth-term test. Checking the term limit first saves the work of any other test."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c8",
+          "prompt": "The figure shows the graph of a function f, which has derivatives of all orders, and the line tangent to the graph at x = 2.\n\n(a) Write the first-degree Taylor polynomial P_1(x) for f about x = 2.\n(b) Is P_1(2.4) greater than or less than f(2.4)? Give a reason.\n(c) Which of these could be the second-degree Taylor polynomial for f about x = 2? Explain why the other two cannot.\nI: 3 + (1/2)(x − 2) − (x − 2)^2\nII: 3 − (1/2)(x − 2) + (1/4)(x − 2)^2\nIII: 3 − (1/2)(x − 2) − (1/4)(x − 2)^2",
+          "hint": "Read f(2) from the point of tangency, and f′(2) from two grid points on the tangent line.",
+          "answer": "(a) P_1(x) = 3 − (1/2)(x − 2). (b) Greater. (c) III.",
+          "steps": [
+            "From the graph, f(2) = 3. The tangent line passes through (0, 4) and (4, 2), so f′(2) = (2 − 4)/(4 − 0) = −1/2.",
+            "(a) P_1(x) = f(2) + f′(2)(x − 2) = 3 − (1/2)(x − 2). The first-degree Taylor polynomial is the tangent line.",
+            "(b) On the interval shown, the graph of f bends downward and lies below its tangent line, so f is concave down there. A tangent line lies above a concave-down graph, so P_1(2.4) > f(2.4): the tangent-line approximation overestimates f(2.4).",
+            "(c) P_2(x) = f(2) + f′(2)(x − 2) + (f″(2)/2!)(x − 2)^2, so its constant term must be 3, its coefficient of (x − 2) must be −1/2, and its coefficient of (x − 2)^2, f″(2)/2, cannot be positive: if f″(2) > 0, then f(x) − P_1(x) ≈ (f″(2)/2)(x − 2)^2 > 0 near x = 2, and the graph would lie above its tangent line there, but it lies below.",
+            "I has coefficient +1/2 on (x − 2), the wrong slope. II has a positive coefficient on (x − 2)^2, which would require f″(2) > 0. Only III meets all three conditions. (The graph shows only that f″(2) ≤ 0, not its value, so III is possible, not proved.)"
+          ],
+          "figureIds": [
+            "bc-review-u10-g1"
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c9",
+          "prompt": "Let y = f(x) be the particular solution to the differential equation dy/dx = 2y − x^2 with f(1) = 1.\n\n(a) Write the third-degree Taylor polynomial for f about x = 1.\n(b) Use it to approximate f(1.2).\n(c) Does the graph of f have a point of inflection at x = 1? Justify your answer.",
+          "hint": "Differentiate both sides of the differential equation with respect to x, remembering that y depends on x. Then evaluate at x = 1, where y = 1.",
+          "answer": "(a) 1 + (x − 1) − (1/3)(x − 1)^3. (b) f(1.2) ≈ 449/375, about 1.1973. (c) Yes.",
+          "steps": [
+            "f′(1) = 2f(1) − 1^2 = 2 − 1 = 1.",
+            "Differentiate: d^2y/dx^2 = 2·dy/dx − 2x, so f″(1) = 2(1) − 2(1) = 0.",
+            "Differentiate again: d^3y/dx^3 = 2·d^2y/dx^2 − 2, so f‴(1) = 2(0) − 2 = −2.",
+            "(a) P_3(x) = f(1) + f′(1)(x − 1) + (f″(1)/2!)(x − 1)^2 + (f‴(1)/3!)(x − 1)^3 = 1 + (x − 1) + 0 − (2/6)(x − 1)^3 = 1 + (x − 1) − (1/3)(x − 1)^3.",
+            "(b) f(1.2) ≈ P_3(1.2) = 1 + 0.2 − (1/3)(0.008) = 1.2 − 1/375 = 449/375.",
+            "(c) f″(1) = 0 alone does not decide; an inflection point needs a change in the sign of f″. Here f‴(1) = lim as x→1 of (f″(x) − f″(1))/(x − 1) = lim as x→1 of f″(x)/(x − 1) = −2 < 0, so for x near 1, f″(x) has the sign opposite to x − 1: f″(x) > 0 just left of 1 and f″(x) < 0 just right of 1.",
+            "The graph of f changes from concave up to concave down at x = 1, so (1, 1) is a point of inflection."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c10",
+          "prompt": "Let f(x) = Σ from n = 1 to infinity of (x − 4)^(2n)/(n·9^n).\n\n(a) Find the interval of convergence of the series. Justify your conclusion at each endpoint.\n(b) Write f(x) in closed form on that interval, and find the exact value of f(5).",
+          "hint": "Let u = (x − 4)^2/9. Then the general term is u^n/n.",
+          "answer": "(a) 1 < x < 7. (b) f(x) = −ln(1 − (x − 4)^2/9) = ln(9/(9 − (x − 4)^2)); f(5) = ln(9/8).",
+          "steps": [
+            "(a) Ratio test on absolute values: |a_(n+1)/a_n| = ((x − 4)^(2n+2)/((n + 1)9^(n+1)))·(n·9^n/(x − 4)^(2n)) = ((x − 4)^2/9)·(n/(n + 1)), which approaches (x − 4)^2/9 as n→∞.",
+            "The series converges absolutely when (x − 4)^2/9 < 1, that is |x − 4| < 3, or 1 < x < 7, and diverges when |x − 4| > 3. The radius is 3.",
+            "At x = 7 and at x = 1, x − 4 = ±3 and the power 2n is even, so (x − 4)^(2n) = 9^n and the series becomes Σ from n = 1 to infinity of 1/n, the harmonic series, which diverges. Both endpoints are excluded: the interval of convergence is 1 < x < 7.",
+            "(b) Replacing x by −u in ln(1 + x) = Σ from n = 1 to infinity of (−1)^(n+1) x^n/n gives ln(1 − u) = −Σ from n = 1 to infinity of u^n/n for −1 ≤ u < 1. With u = (x − 4)^2/9, which lies in 0 ≤ u < 1 exactly when 1 < x < 7, f(x) = −ln(1 − (x − 4)^2/9) = ln(9/(9 − (x − 4)^2)).",
+            "At x = 5, u = 1/9, so f(5) = −ln(8/9) = ln(9/8). The closed form grows without bound as x→1⁺ and as x→7⁻, which agrees with divergence at both endpoints."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u10-c11",
+          "prompt": "Let g(t) = ln(1 + t^2)/t for t ≠ 0 and g(0) = 0. Use the Maclaurin series for ln(1 + x) to write the first three nonzero terms and the general term of the Maclaurin series for G(x) = ∫ from 0 to x of g(t) dt. Then use the first two nonzero terms to approximate G(1/2), show that the approximation differs from G(1/2) by less than 1/1000, and say whether it is too large or too small.",
+          "hint": "Replace x by t^2 in the series for ln(1 + x), and divide every term by t before you integrate.",
+          "answer": "G(x) = x^2/2 − x^4/8 + x^6/18 − ⋯ + (−1)^(n+1) x^(2n)/(2n^2) + ⋯. G(1/2) ≈ 15/128, with error less than 1/1152; the approximation is too small.",
+          "steps": [
+            "ln(1 + x) = x − x^2/2 + x^3/3 − ⋯ + (−1)^(n+1) x^n/n + ⋯ for −1 < x ≤ 1. With x = t^2: ln(1 + t^2) = t^2 − t^4/2 + t^6/3 − ⋯, valid for |t| ≤ 1.",
+            "Divide by t: g(t) = t − t^3/2 + t^5/3 − ⋯ + (−1)^(n+1) t^(2n−1)/n + ⋯. The series equals 0 at t = 0, which matches g(0) = 0.",
+            "Integrate term by term from 0 to x, which is valid inside the interval of convergence: G(x) = x^2/2 − x^4/8 + x^6/18 − ⋯ + (−1)^(n+1) x^(2n)/(2n^2) + ⋯.",
+            "At x = 1/2 the general term is (−1)^(n+1)/(2n^2·4^n), so G(1/2) = 1/8 − 1/128 + 1/1152 − ⋯. Two terms give 1/8 − 1/128 = 15/128.",
+            "The series alternates, and its term sizes 1/(2n^2·4^n) are positive, decrease and approach 0. By the alternating series error bound, |G(1/2) − 15/128| ≤ 1/1152 < 1/1000.",
+            "The first omitted term, +1/1152, is positive, so G(1/2) > 15/128: the approximation is too small. (A calculator gives G(1/2) ≈ 0.11795, while 15/128 = 0.1171875.)"
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "The sum of a series",
+          "text": "Σ from n = 1 to infinity of a_n = lim as N→∞ of S_N, where S_N = a_1 + a_2 + ⋯ + a_N, provided this limit exists as a finite number. Otherwise the series diverges.",
+          "conditions": [
+            "Two sequences are in play: the terms a_n and the partial sums S_N. lim a_n = 0 is a fact about the first; convergence of the series is a fact about the second.",
+            "Changing finitely many terms never changes whether a series converges, though it can change the sum."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The nth-term test",
+          "text": "If lim as n→∞ of a_n ≠ 0, or the limit does not exist, then Σ a_n diverges.",
+          "conditions": [
+            "It can prove only divergence. A term limit of 0 is necessary for convergence but not sufficient: the terms of Σ 1/n approach 0, and the series diverges."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Geometric series",
+          "text": "Σ from n = 0 to infinity of ar^n = a/(1 − r) when |r| < 1. When |r| ≥ 1 (and a ≠ 0), the series diverges.",
+          "conditions": [
+            "a is the first term, whatever the starting index: Σ from n = 2 to infinity of (1/3)^n = (1/9)/(1 − 1/3) = 1/6.",
+            "r is the ratio of each term to the one before it, and it must be the same for every pair."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "p-series and the harmonic series",
+          "text": "Σ from n = 1 to infinity of 1/n^p converges when p > 1 and diverges when p ≤ 1. The harmonic series Σ 1/n (p = 1) diverges.",
+          "conditions": [
+            "p is a constant exponent on n. Σ 1/2^n is geometric, not a p-series."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The integral test",
+          "text": "If f is positive, continuous and decreasing for x ≥ N and a_n = f(n), then Σ from n = N to infinity of a_n and ∫ from N to infinity of f(x) dx both converge or both diverge.",
+          "conditions": [
+            "Show the decrease, for example with f′(x) < 0 for x ≥ N.",
+            "The integral is not the sum. When both converge, ∫ from N to infinity of f(x) dx ≤ Σ from n = N to infinity of a_n ≤ a_N + ∫ from N to infinity of f(x) dx."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Direct comparison",
+          "text": "If 0 ≤ a_n ≤ b_n for every n ≥ N, then Σ b_n converging implies Σ a_n converges, and Σ a_n diverging implies Σ b_n diverges.",
+          "conditions": [
+            "The inequality must point the right way: below a convergent series, or above a divergent one. Any other comparison proves nothing."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Limit comparison",
+          "text": "If a_n > 0 and b_n > 0 for n ≥ N, and lim as n→∞ of a_n/b_n = L with 0 < L < ∞, then Σ a_n and Σ b_n both converge or both diverge.",
+          "conditions": [
+            "Build b_n from the dominant powers: for (2n + 5)/(n^3 − n + 1), use b_n = n/n^3 = 1/n^2.",
+            "A limit of 0 or ∞ does not give the two-way conclusion; choose a different b_n."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The alternating series test",
+          "text": "If b_n > 0, b_(n+1) ≤ b_n and lim as n→∞ of b_n = 0, then Σ (−1)^(n−1) b_n converges.",
+          "conditions": [
+            "All three hypotheses must be shown. Decrease may begin at some index N; show it with b_(n+1) ≤ b_n or with a derivative.",
+            "If lim b_n ≠ 0, the series diverges by the nth-term test instead."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The alternating series error bound",
+          "text": "If Σ (−1)^(n−1) b_n satisfies the alternating series test, with b_n decreasing from n = N + 1 on, then |S − S_N| ≤ b_(N+1), and S − S_N has the sign of the first omitted term.",
+          "conditions": [
+            "The sum lies between any two consecutive partial sums, as the figure shows.",
+            "It applies only to a series that alternates with decreasing term sizes. Otherwise use the Lagrange error bound (for a Taylor polynomial) or another argument."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "bc-review-u10-g2"
+        },
+        {
+          "type": "rule",
+          "title": "Absolute and conditional convergence",
+          "text": "If Σ |a_n| converges, then Σ a_n converges, and it converges absolutely. If Σ a_n converges but Σ |a_n| diverges, it converges conditionally.",
+          "conditions": [
+            "To classify a series with signs, test Σ |a_n| first. If that fails, test Σ a_n itself, usually with the alternating series test."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The ratio test",
+          "text": "Let L = lim as n→∞ of |a_(n+1)/a_n|. If L < 1, Σ a_n converges absolutely; if L > 1 or L = ∞, it diverges; if L = 1, the test gives no conclusion.",
+          "conditions": [
+            "It suits factorials and nth powers. It always gives L = 1 for a ratio of polynomials in n, so use comparison for those."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "First moves for choosing a convergence test. They are starting points, not rules: when a first move is inconclusive or its hypotheses fail, try another.",
+          "head": [
+            "When the term looks like",
+            "Try first",
+            "Watch for"
+          ],
+          "rows": [
+            [
+              "Anything",
+              "The limit of a_n",
+              "A limit of 0 proves nothing; a nonzero limit proves divergence"
+            ],
+            [
+              "A constant times r^n",
+              "Geometric series",
+              "|r| < 1; the sum is the first term over (1 − r)"
+            ],
+            [
+              "A ratio of powers of n, roots included",
+              "Limit comparison with 1/n^p, keeping dominant powers",
+              "Positive terms; 0 < L < ∞"
+            ],
+            [
+              "A simpler term plus a bounded wiggle, such as (2 + sin n)/n^2",
+              "Direct comparison",
+              "The inequality must point the right way"
+            ],
+            [
+              "Factorials, or nth powers such as 3^n and n^n",
+              "Ratio test",
+              "L = 1 decides nothing"
+            ],
+            [
+              "f(n) with f easy to integrate, such as 1/(n(ln n)^2)",
+              "Integral test",
+              "f positive, continuous and decreasing; the integral is not the sum"
+            ],
+            [
+              "Signs that alternate",
+              "Σ |a_n| first; if it diverges, the alternating series test",
+              "b_n must decrease to 0"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Taylor polynomials and Taylor series",
+          "text": "P_n(x) = Σ from k = 0 to n of f^(k)(a)(x − a)^k/k!. The Taylor series is Σ from k = 0 to infinity of f^(k)(a)(x − a)^k/k!; with a = 0 both are called Maclaurin.",
+          "conditions": [
+            "The coefficient of (x − a)^k is f^(k)(a)/k!, so f^(k)(a) = k!·(coefficient).",
+            "P_1 is the tangent line. The sign of f″(a) is the sign of the (x − a)^2 coefficient.",
+            "A Taylor series need not converge to f away from a; the series in the table below do, on the intervals listed."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The Lagrange error bound",
+          "text": "If |f^(n+1)(t)| ≤ M for every t between a and x, then |f(x) − P_n(x)| ≤ M|x − a|^(n+1)/(n + 1)!.",
+          "conditions": [
+            "f must have n + 1 derivatives on an interval containing a and x. M bounds the (n + 1)st derivative over that whole interval, not just at x or at a.",
+            "When f^(n+1) is continuous, f(x) − P_n(x) = f^(n+1)(c)(x − a)^(n+1)/(n + 1)! for some c between a and x. If f^(n+1) has one sign there, this gives the sign of the error."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Radius and interval of convergence",
+          "text": "A power series Σ c_n(x − a)^n converges absolutely for |x − a| < R and diverges for |x − a| > R, where R (0 ≤ R ≤ ∞) is its radius of convergence.",
+          "conditions": [
+            "Find R with the ratio test. At x = a − R and x = a + R the ratio limit is 1, so test each endpoint separately; each may converge absolutely, converge conditionally or diverge.",
+            "The interval of convergence is the open interval plus whichever endpoints converge."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Operating on power series",
+          "text": "If f(x) = Σ c_n(x − a)^n for |x − a| < R, then f′(x) = Σ n·c_n(x − a)^(n−1) and ∫ from a to x of f(t) dt = Σ c_n(x − a)^(n+1)/(n + 1), both with radius R.",
+          "conditions": [
+            "The radius stays the same, but endpoint behavior can change. Integration can gain an endpoint and differentiation can lose one, so test the endpoints again.",
+            "Substitution: replacing x with an expression u(x) in a series valid for |x| < R gives a series valid where |u(x)| < R. For example, 1/(1 + 2x) = Σ (−2x)^n needs |2x| < 1, that is |x| < 1/2.",
+            "Series may also be multiplied by a power of x, added, and divided by x when the constant term is 0."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Maclaurin series to know cold",
+          "head": [
+            "Function",
+            "Series",
+            "First terms",
+            "Equals the function for"
+          ],
+          "rows": [
+            [
+              "e^x",
+              "Σ from n = 0 to infinity of x^n/n!",
+              "1 + x + x^2/2! + x^3/3! + ⋯",
+              "All x"
+            ],
+            [
+              "sin x",
+              "Σ from n = 0 to infinity of (−1)^n x^(2n+1)/(2n + 1)!",
+              "x − x^3/3! + x^5/5! − ⋯",
+              "All x"
+            ],
+            [
+              "cos x",
+              "Σ from n = 0 to infinity of (−1)^n x^(2n)/(2n)!",
+              "1 − x^2/2! + x^4/4! − ⋯",
+              "All x"
+            ],
+            [
+              "1/(1 − x)",
+              "Σ from n = 0 to infinity of x^n",
+              "1 + x + x^2 + x^3 + ⋯",
+              "−1 < x < 1"
+            ],
+            [
+              "ln(1 + x)",
+              "Σ from n = 1 to infinity of (−1)^(n+1) x^n/n",
+              "x − x^2/2 + x^3/3 − ⋯",
+              "−1 < x ≤ 1"
+            ],
+            [
+              "arctan x",
+              "Σ from n = 0 to infinity of (−1)^n x^(2n+1)/(2n + 1)",
+              "x − x^3/3 + x^5/5 − ⋯",
+              "−1 ≤ x ≤ 1"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Two error bounds",
+          "head": [
+            "Bound",
+            "Use it when",
+            "Size of the error is at most",
+            "Sign of the error"
+          ],
+          "rows": [
+            [
+              "Alternating series",
+              "The series alternates, with term sizes decreasing to 0",
+              "The size of the first omitted term",
+              "The sign of the first omitted term"
+            ],
+            [
+              "Lagrange",
+              "|f^(n+1)(t)| ≤ M for every t between a and x",
+              "M|x − a|^(n+1)/(n + 1)!",
+              "The sign of f^(n+1)(c)(x − a)^(n+1), when f^(n+1) keeps one sign"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Divergence by the nth-term test, for Σ from n = 1 to infinity of (3n − 1)/(5n + 2).",
+          "text": "lim as n→∞ of (3n − 1)/(5n + 2) = 3/5 ≠ 0, so the series diverges by the nth-term test."
+        },
+        {
+          "type": "model",
+          "prompt": "Convergence by limit comparison, for Σ from n = 1 to infinity of √n/(n^2 + 4).",
+          "text": "Compare with Σ 1/n^(3/2), a p-series with p = 3/2 > 1, which converges. Both series have positive terms, and lim as n→∞ of (√n/(n^2 + 4))/(1/n^(3/2)) = lim as n→∞ of n^2/(n^2 + 4) = 1, which is finite and positive. By the limit comparison test, Σ √n/(n^2 + 4) converges."
+        },
+        {
+          "type": "model",
+          "prompt": "Conditional convergence, for Σ from n = 1 to infinity of (−1)^(n+1)/(3n − 1).",
+          "text": "The series alternates with b_n = 1/(3n − 1) > 0. Since b_(n+1) = 1/(3n + 2) < b_n and lim as n→∞ of b_n = 0, the series converges by the alternating series test. The series of absolute values, Σ 1/(3n − 1), diverges by limit comparison with the harmonic series, because lim as n→∞ of (1/(3n − 1))/(1/n) = 1/3 is finite and positive. So the series converges conditionally."
+        },
+        {
+          "type": "model",
+          "prompt": "The error after five terms, for S = Σ from n = 1 to infinity of (−1)^(n+1)/n^2.",
+          "text": "The series satisfies the alternating series test: 1/n^2 > 0, it decreases, and it approaches 0. So |S − S_5| ≤ 1/36, the size of the first omitted term. That term, −1/36, is negative, so S < S_5."
+        },
+        {
+          "type": "model",
+          "prompt": "A Lagrange bound, when |f^(4)(x)| ≤ 6 for 1 ≤ x ≤ 1.5 and P_3 is the third-degree Taylor polynomial for f about x = 1.",
+          "text": "By the Lagrange error bound, |f(1.5) − P_3(1.5)| ≤ 6|1.5 − 1|^4/4! = 6(0.0625)/24 = 1/64."
+        },
+        {
+          "type": "model",
+          "prompt": "An endpoint of the interval of convergence, x = −1, for Σ from n = 1 to infinity of x^n/√n.",
+          "text": "At x = −1 the series is Σ (−1)^n/√n. Since 1/√n > 0 decreases to 0, it converges by the alternating series test. The series of absolute values, Σ 1/√n, is a p-series with p = 1/2 ≤ 1 and diverges. So the series converges conditionally at x = −1, and x = −1 belongs to the interval of convergence."
+        },
+        {
+          "type": "trap",
+          "text": "Concluding that Σ a_n converges because lim as n→∞ of a_n = 0.",
+          "fix": "That limit only means the nth-term test is silent. Σ 1/n has terms that approach 0 and diverges; choose a convergence test and show its hypotheses."
+        },
+        {
+          "type": "trap",
+          "text": "Confusing the term limit with the sum: \"lim as n→∞ of 2n/(n + 1) = 2, so the series converges to 2.\"",
+          "fix": "A term limit of 2 ≠ 0 proves the series diverges. A sum is the limit of the partial sums S_N, never of the terms a_n."
+        },
+        {
+          "type": "trap",
+          "text": "Comparing in the wrong direction: \"1/(n + √n) < 1/√n, and Σ 1/√n diverges, so Σ 1/(n + √n) diverges.\"",
+          "fix": "Smaller than a divergent series proves nothing. Use limit comparison with 1/n: lim as n→∞ of (1/(n + √n))/(1/n) = lim as n→∞ of n/(n + √n) = 1, so the series diverges with the harmonic series."
+        },
+        {
+          "type": "trap",
+          "text": "Claiming convergence or divergence from a ratio limit of 1, often at an endpoint of a power series.",
+          "fix": "L = 1 means the ratio test is silent, and at x = a ± R it is always 1. Substitute the endpoint and use a p-series, comparison or alternating series argument."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting |x − a| < R as the interval of convergence without testing the endpoints.",
+          "fix": "Substitute each endpoint, test the resulting number series on its own, and state for each one whether it converges and why."
+        },
+        {
+          "type": "trap",
+          "text": "Treating the integral in the integral test as the sum: \"Σ from n = 1 to infinity of 1/n^3 = ∫ from 1 to infinity of 1/x^3 dx = 1/2.\"",
+          "fix": "The test says only that both converge or both diverge. The sum exceeds the integral: here 1/2 < Σ from n = 1 to infinity of 1/n^3 ≤ 1 + 1/2."
+        },
+        {
+          "type": "trap",
+          "text": "Using the coefficient instead of the first term in a geometric sum: \"Σ from n = 1 to infinity of 5(2/3)^n = 5/(1 − 2/3) = 15.\"",
+          "fix": "The first term is 5(2/3) = 10/3, so the sum is (10/3)/(1 − 2/3) = 10."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving the factorial out of a Taylor coefficient: writing f″(a)(x − a)^2 for the quadratic term.",
+          "fix": "The coefficient of (x − a)^k is f^(k)(a)/k!. Read it backward, too: if the coefficient of (x − 1)^3 is 5, then f‴(1) = 5·3! = 30."
+        },
+        {
+          "type": "trap",
+          "text": "In a Lagrange bound, using the nth derivative or the power n, or taking M as the derivative's value at x alone.",
+          "fix": "For P_n, use the (n + 1)st derivative, the power n + 1 and (n + 1)!. Take M as a bound on |f^(n+1)(t)| for every t between a and x; find where that size is largest, which need not be at x."
+        },
+        {
+          "type": "trap",
+          "text": "Using the alternating series error bound on a series that does not alternate, or whose term sizes do not decrease.",
+          "fix": "Check all three hypotheses before you use it. For a Taylor polynomial, the Lagrange error bound applies whether or not the series alternates."
+        },
+        {
+          "type": "trap",
+          "text": "Using a series outside its interval: writing 1/(1 + 2x) = 1 − 2x + 4x^2 − ⋯ and substituting x = 1.",
+          "fix": "A substitution changes where a series is valid: 1/(1 + 2x) = Σ (−2x)^n needs |2x| < 1, that is |x| < 1/2."
+        },
+        {
+          "type": "trap",
+          "text": "Writing an equals sign between a function and its Taylor polynomial: \"√(1 + x) = 1 + x/2 − x^2/8.\"",
+          "fix": "Write √(1 + x) ≈ 1 + x/2 − x^2/8 near x = 0, or P_2(x) = 1 + x/2 − x^2/8. A false equation can cost credit even when the numbers are right."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Find the interval of convergence of Σ from n = 1 to infinity of n(x − 3)^n/((n^2 + 1)·2^n). At each endpoint, say whether the series converges absolutely, converges conditionally or diverges.",
+          "answer": "1 ≤ x < 5. The series converges conditionally at x = 1 and diverges at x = 5.",
+          "steps": [
+            "Ratio test on absolute values: |a_(n+1)/a_n| = ((n + 1)/((n + 1)^2 + 1))·((n^2 + 1)/n)·(|x − 3|/2).",
+            "Each fraction built from n approaches 1 as n→∞ (in each, the dominant powers match), so the limit is |x − 3|/2.",
+            "The series converges absolutely when |x − 3|/2 < 1, that is 1 < x < 5, and diverges when |x − 3| > 2. The radius is 2. At x = 1 and x = 5 the limit is 1, so test those endpoints separately.",
+            "x = 5: (x − 3)^n/2^n = 1, and the series is Σ n/(n^2 + 1). Compare with Σ 1/n: lim as n→∞ of (n/(n^2 + 1))/(1/n) = lim as n→∞ of n^2/(n^2 + 1) = 1, finite and positive, and the harmonic series diverges. By limit comparison, the series diverges at x = 5.",
+            "x = 1: (x − 3)^n/2^n = (−1)^n, and the series is Σ (−1)^n·n/(n^2 + 1). Here b_n = n/(n^2 + 1) > 0 and lim as n→∞ of b_n = 0. For the decrease, let h(t) = t/(t^2 + 1); then h′(t) = (1 − t^2)/((t^2 + 1)^2) ≤ 0 for t ≥ 1, so b_(n+1) ≤ b_n. By the alternating series test, the series converges at x = 1.",
+            "At x = 1 the series of absolute values is Σ n/(n^2 + 1), which diverges (as at x = 5). So the convergence at x = 1 is conditional.",
+            "Interval of convergence: 1 ≤ x < 5."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Use the second-degree Taylor polynomial for f(x) = ln(1 + x) about x = 0 to approximate ln(1.1). Then use the Lagrange error bound to find an interval that must contain ln(1.1), and use the Lagrange form of the remainder to say whether 0.095 is too large or too small.",
+          "answer": "ln(1.1) ≈ 0.095. The Lagrange error bound gives 0.095 − 1/3000 ≤ ln(1.1) ≤ 0.095 + 1/3000 (about 0.09467 to 0.09533); the sign of the remainder narrows this to 0.095 < ln(1.1) < 0.095 + 1/3000, so 0.095 is too small.",
+          "steps": [
+            "f(0) = 0. f′(x) = 1/(1 + x), so f′(0) = 1. f″(x) = −1/((1 + x)^2), so f″(0) = −1. f‴(x) = 2/((1 + x)^3).",
+            "P_2(x) = 0 + x + (−1)x^2/2! = x − x^2/2, so P_2(0.1) = 0.1 − 0.005 = 0.095.",
+            "Bound the third derivative between 0 and 0.1: 2/((1 + t)^3) is positive and decreases as t increases, so its largest value on 0 ≤ t ≤ 0.1 is at t = 0. Take M = 2.",
+            "Lagrange error bound: |ln(1.1) − P_2(0.1)| ≤ M(0.1)^3/3! = 2(0.001)/6 = 1/3000. So 0.095 − 1/3000 ≤ ln(1.1) ≤ 0.095 + 1/3000, about 0.09467 to 0.09533. This interval is a complete answer to the first question.",
+            "Sign: ln(1.1) − P_2(0.1) = f‴(c)(0.1)^3/3! for some c with 0 < c < 0.1, and 0 < f‴(c) < 2. So the error is positive and less than 1/3000: 0.095 < ln(1.1) < 0.095 + 1/3000, which is about 0.09533. The approximation 0.095 is too small, and the sign halves the interval.",
+            "A cross-check: this series also alternates (0.1 − 0.005 + 0.000333… − ⋯), and its first omitted term gives the same bound here. The Lagrange bound is the one that still works when a series does not alternate."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 26: Sequences, geometric and harmonic series",
+              "ref": "week:26"
+            },
+            {
+              "label": "Week 27: Integral, p-series, and comparison tests",
+              "ref": "week:27"
+            },
+            {
+              "label": "Week 28: Alternation, absolute convergence, ratio, and remainders",
+              "ref": "week:28"
+            },
+            {
+              "label": "Week 29: Taylor and Maclaurin approximations with error bounds",
+              "ref": "week:29"
+            },
+            {
+              "label": "Week 30: Power series, endpoints, and series operations",
+              "ref": "week:30"
+            },
+            {
+              "label": "Unit 10 test",
+              "ref": "test:unit-10"
+            },
+            {
+              "label": "Unit 10 test key",
+              "ref": "key:unit-10"
+            },
+            {
+              "label": "Free-response workshop: Taylor polynomials and power series",
+              "ref": "guide:fr-series"
+            },
+            {
+              "label": "Free-response workshop: Differential equations",
+              "ref": "guide:fr-differential-equations"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

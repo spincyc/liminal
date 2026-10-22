@@ -459,3 +459,12 @@ test("render.js builds the DOM from elements and text nodes only", () => {
   const source = require("node:fs").readFileSync(require.resolve("../src/app/render"), "utf8");
   assert.equal(/innerHTML|outerHTML|insertAdjacentHTML|document\.write/.test(source), false);
 });
+
+test("a derivative order keeps its brackets and is read as an order, not a power", () => {
+  assert.equal(typeset("|A^(4)(t)| ≤ 3"), "|A^{(4)}(t)| ≤ 3");
+  assert.equal(typeset("f^(n)(1) = n!/2^n"), "f^{(n)}(1) = n!/2^{n}");
+  assert.equal(render.mathSpeech(render.mathTokens("f^(8)(0)")), "f derivative of order 8 (0)");
+  assert.equal(typeset("e^(2x)"), "e^{2x}", "a bracketed exponent is still a power");
+  assert.equal(typeset("f^(−1)(x)"), "f^{−1}(x)", "the inverse keeps its usual form");
+  assert.equal(typeset("2^(3)"), "2^{3}", "no argument follows, so it is a power");
+});

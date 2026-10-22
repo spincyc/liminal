@@ -1,0 +1,340 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-tables",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Functions given by tables",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A questions permit a graphing calculator; Part B questions do not. Show supporting work and justify requested conclusions; write the setup for every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points.",
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Show your work and justify requested conclusions. Write integrals, equations, or derivatives supporting numerical calculator results.",
+          "items": [
+            {
+              "context": true,
+              "prompt": "On a summer day, meltwater from a glacier flows past a gauge in a mountain stream. The rate at which water flows past the gauge is F(t) cubic meters per hour, where t is measured in hours after 9:00 a.m., for 0 ≤ t ≤ 8. The function F is differentiable. Selected values of F(t) are shown in the table.\n\n| t (hours) | 0 | 1 | 3 | 4 | 6 | 8 |\n| --- | --- | --- | --- | --- | --- | --- |\n| F(t) (cubic meters per hour) | 20 | 60 | 240 | 350 | 440 | 240 |\n\nFor parts (c) and (d), the rate is modeled by M(t) = 460e^(−(t − 5.5)^2/9) cubic meters per hour for 0 ≤ t ≤ 8.",
+              "topics": [
+                "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS",
+                "BC.4.DERIVATIVE_UNITS",
+                "BC.6.DEFINITE_INTEGRAL_NOTATION",
+                "BC.8.AVERAGE_VALUE",
+                "BC.6.ACCUMULATION_FUNCTIONS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the data in the table to estimate F′(2). Using correct units, interpret the meaning of your estimate in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Estimates F′(2) ≈ (F(3) − F(1))/(3 − 1) = 90, using the table values on either side of t = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets the estimate: at 11:00 a.m. (t = 2), the rate at which water flows past the gauge is increasing at about 90 cubic meters per hour per hour. The point requires the time, the direction (increasing) and the units; accepts m^3/h^2."
+                    }
+                  ],
+                  "answer": "F′(2) ≈ 90 cubic meters per hour per hour. At 11:00 a.m., the flow rate past the gauge is increasing at about 90 cubic meters per hour each hour.",
+                  "steps": [
+                    "The table values nearest t = 2 on either side are F(1) = 60 and F(3) = 240.",
+                    "F′(2) ≈ (F(3) − F(1))/(3 − 1) = (240 − 60)/2 = 90.",
+                    "F is measured in cubic meters per hour and t in hours, so F′ is measured in cubic meters per hour per hour (m^3/h^2). The estimate is positive, so the flow rate is increasing."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use a trapezoidal sum with the five subintervals indicated by the table to approximate ∫ from 0 to 8 of F(t) dt. Using correct units, explain the meaning of ∫ from 0 to 8 of F(t) dt in the context of the problem.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes a trapezoidal sum in which each subinterval has its own width: 1·(20 + 60)/2 + 2·(60 + 240)/2 + 1·(240 + 350)/2 + 2·(350 + 440)/2 + 2·(440 + 240)/2, or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 2105."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that ∫ from 0 to 8 of F(t) dt is the total volume of water, in cubic meters, that flows past the gauge from 9:00 a.m. to 5:00 p.m. (t = 0 to t = 8). Requires the units and the time interval."
+                    }
+                  ],
+                  "answer": "∫ from 0 to 8 of F(t) dt ≈ 2105. The integral is the total volume of water, in cubic meters, that flows past the gauge from 9:00 a.m. to 5:00 p.m.",
+                  "steps": [
+                    "The widths are 1, 2, 1, 2 and 2 hours, so each trapezoid gets its own width.",
+                    "1·(20 + 60)/2 + 2·(60 + 240)/2 + 1·(240 + 350)/2 + 2·(350 + 440)/2 + 2·(440 + 240)/2 = 40 + 300 + 295 + 790 + 680 = 2105.",
+                    "A rate in cubic meters per hour integrated over hours gives cubic meters: the integral accumulates the volume that passes the gauge during 0 ≤ t ≤ 8."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Using the model M, find the average rate at which water flows past the gauge over the interval 0 ≤ t ≤ 8.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up (1/8)·∫ from 0 to 8 of M(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 267.818 cubic meters per hour, or a value within 0.001."
+                    }
+                  ],
+                  "answer": "267.818 cubic meters per hour",
+                  "steps": [
+                    "The average value of M on [0, 8] is (1/(8 − 0))·∫ from 0 to 8 of M(t) dt.",
+                    "A calculator gives ∫ from 0 to 8 of M(t) dt ≈ 2142.543709, so the average is 2142.543709/8 ≈ 267.817964, which rounds to 267.818 cubic meters per hour."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "All the water that flows past the gauge goes into a settling pond that is empty at t = 0 and holds 1500 cubic meters. No water leaves the pond until it is full. Using the model M, find the time t at which the pond becomes full.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the equation ∫ from 0 to T of M(t) dt = 1500, or equivalent, where T is the time the pond becomes full."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains t = 6.137 hours (about 3:08 p.m.), or a value within 0.001."
+                    }
+                  ],
+                  "answer": "t = 6.137 hours, about 3:08 p.m.",
+                  "steps": [
+                    "The volume in the pond at time T is ∫ from 0 to T of M(t) dt, which increases because M(t) > 0.",
+                    "Solve ∫ from 0 to T of M(t) dt = 1500 with a calculator: T ≈ 6.136947.",
+                    "Rounded, t = 6.137 hours after 9:00 a.m., about 3:08 p.m. (The total over the whole interval is about 2142.5 cubic meters, so the pond does fill before t = 8.)"
+                  ]
+                }
+              ],
+              "id": "bc-fr-tables-fr1"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 30,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "Let f be a function that is twice differentiable for all real numbers, and f″ is continuous. The table gives selected values of f and its derivative f′.\n\n| x | −2 | 0 | 1 | 4 | 6 |\n| --- | --- | --- | --- | --- | --- |\n| f(x) | 7 | 2 | 1 | 4 | 9 |\n| f′(x) | −3 | −2 | 0 | 2 | 3 |",
+              "topics": [
+                "BC.5.MEAN_VALUE_THEOREM",
+                "BC.1.INTERMEDIATE_VALUE_THEOREM",
+                "BC.6.INTEGRATION_BY_PARTS",
+                "BC.6.FUNDAMENTAL_THEOREM"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "What is the fewest possible number of solutions of the equation f(x) = 3 on the interval −2 ≤ x ≤ 6? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies both crossings from the table: f(−2) = 7 > 3 > 2 = f(0) and f(1) = 1 < 3 < 4 = f(4)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers 2 and justifies with the Intermediate Value Theorem, stating that f is continuous because it is differentiable. The point requires the answer and the continuity of f."
+                    }
+                  ],
+                  "answer": "2. Because f is differentiable, it is continuous, so the Intermediate Value Theorem gives a solution in (−2, 0) and another in (1, 4).",
+                  "steps": [
+                    "f is differentiable, so f is continuous on [−2, 0] and on [1, 4].",
+                    "f(−2) = 7 and f(0) = 2, so 3 lies between them, and the Intermediate Value Theorem gives c in (−2, 0) with f(c) = 3.",
+                    "f(1) = 1 and f(4) = 4, so the theorem gives d in (1, 4) with f(d) = 3. These intervals do not overlap, so c ≠ d.",
+                    "On [0, 1] and [4, 6] the endpoint values are both below 3 or both above 3, so the table forces no further solution. A smooth function matching every table entry can meet y = 3 exactly twice, so 2 is the fewest possible."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Must there be a value c, with 1 < c < 6, for which f′(c) = 8/5? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes the average rate of change (f(6) − f(1))/(6 − 1) = (9 − 1)/5 = 8/5, or, for the alternative method, identifies f′(1) = 0 < 8/5 < 2 = f′(4) from the table."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers yes and cites the Mean Value Theorem with its hypotheses (f continuous on [1, 6] and differentiable on (1, 6)), or the Intermediate Value Theorem applied to f′ with the reason that f′ is continuous (f′ is differentiable because f is twice differentiable)."
+                    }
+                  ],
+                  "answer": "Yes. f is differentiable, so it is continuous on [1, 6] and differentiable on (1, 6), and (f(6) − f(1))/(6 − 1) = 8/5. By the Mean Value Theorem, f′(c) = 8/5 for some c in (1, 6).",
+                  "steps": [
+                    "(f(6) − f(1))/(6 − 1) = (9 − 1)/5 = 8/5.",
+                    "Twice differentiable implies differentiable, and differentiable implies continuous, so the hypotheses of the Mean Value Theorem hold on [1, 6].",
+                    "Alternative: f′ is differentiable, hence continuous, and f′(1) = 0 < 8/5 < 2 = f′(4), so the Intermediate Value Theorem gives c in (1, 4), which lies inside (1, 6)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Must there be a value c, with 0 < c < 4, for which f″(c) = 1? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes the average rate of change of f′: (f′(4) − f′(0))/(4 − 0) = (2 − (−2))/4 = 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers yes and applies the Mean Value Theorem to f′, stating that f′ is differentiable (because f is twice differentiable) and therefore continuous on [0, 4]. A response that names only f, not f′, as the function the theorem is applied to does not earn this point."
+                    }
+                  ],
+                  "answer": "Yes. f′ is differentiable on (0, 4) and continuous on [0, 4], and (f′(4) − f′(0))/(4 − 0) = 1, so by the Mean Value Theorem applied to f′, f″(c) = 1 for some c in (0, 4).",
+                  "steps": [
+                    "The question is about f″, the derivative of f′, so apply the Mean Value Theorem to the function f′.",
+                    "f is twice differentiable, so f′ is differentiable, and therefore continuous, on [0, 4].",
+                    "(f′(4) − f′(0))/(4 − 0) = (2 − (−2))/4 = 1, so some c in (0, 4) has f″(c) = 1."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the value of ∫ from 4 to 6 of x·f″(x) dx. Show the work that leads to your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses integration by parts with u = x and dv = f″(x) dx: x·f′(x) evaluated from 4 to 6, minus ∫ from 4 to 6 of f′(x) dx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the boundary term from the table: 6·f′(6) − 4·f′(4) = 18 − 8 = 10."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the Fundamental Theorem, ∫ from 4 to 6 of f′(x) dx = f(6) − f(4) = 5, and obtains 5."
+                    }
+                  ],
+                  "answer": "5",
+                  "steps": [
+                    "Let u = x and dv = f″(x) dx, so du = dx and v = f′(x).",
+                    "∫ from 4 to 6 of x·f″(x) dx = [x·f′(x)] from 4 to 6 − ∫ from 4 to 6 of f′(x) dx.",
+                    "[x·f′(x)] from 4 to 6 = 6·3 − 4·2 = 10.",
+                    "∫ from 4 to 6 of f′(x) dx = f(6) − f(4) = 9 − 4 = 5, so the value is 10 − 5 = 5."
+                  ]
+                }
+              ],
+              "id": "bc-fr-tables-fr2"
+            },
+            {
+              "context": true,
+              "prompt": "A tapered flagpole is 10 meters long. At a distance x meters from its base, the linear density of the pole is ρ(x) kilograms per meter, where ρ is positive and twice differentiable, with ρ′(x) < 0 and ρ″(x) > 0 for 0 ≤ x ≤ 10. The mass of the pole is ∫ from 0 to 10 of ρ(x) dx kilograms. Selected values of ρ(x) are shown in the table.\n\n| x (meters) | 0 | 2 | 4 | 5 | 6 | 8 | 10 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| ρ(x) (kilograms per meter) | 6.0 | 4.8 | 3.9 | 3.5 | 3.2 | 2.7 | 2.4 |",
+              "topics": [
+                "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS",
+                "BC.8.AVERAGE_VALUE",
+                "BC.4.DERIVATIVE_UNITS",
+                "BC.5.CONCAVITY"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the data in the table to estimate ρ′(5). Using correct units, interpret the meaning of your estimate in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Estimates ρ′(5) ≈ (ρ(6) − ρ(4))/(6 − 4) = −0.35. Accepts the one-sided estimates (ρ(5) − ρ(4))/(5 − 4) = −0.4 or (ρ(6) − ρ(5))/(6 − 5) = −0.3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets the estimate: 5 meters from the base, the linear density is decreasing at about 0.35 kilogram per meter for each meter farther up the pole (or uses the value from the first point). Requires the location, the direction and the units (kilograms per meter per meter)."
+                    }
+                  ],
+                  "answer": "ρ′(5) ≈ −0.35 kilogram per meter per meter. Five meters from the base, the linear density decreases by about 0.35 kilogram per meter for each additional meter up the pole.",
+                  "steps": [
+                    "The table values on either side of x = 5 that are equally spaced from it are ρ(4) = 3.9 and ρ(6) = 3.2.",
+                    "ρ′(5) ≈ (3.2 − 3.9)/(6 − 4) = −0.7/2 = −0.35.",
+                    "ρ is in kilograms per meter and x in meters, so ρ′ is in kilograms per meter per meter. The sign is negative, so the density is decreasing as x increases.",
+                    "Because ρ is concave up, ρ′ is increasing, so ρ′(5) lies between the slopes −0.4 on [4, 5] and −0.3 on [5, 6]; −0.35 is a sensible estimate."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Approximate the mass of the pole using a midpoint Riemann sum with the three subintervals [0, 4], [4, 6] and [6, 10]. Then use your approximation to estimate the average linear density of the pole over 0 ≤ x ≤ 10. Indicate units of measure.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the midpoint sum with the three unequal widths and the table values at the midpoints 2, 5 and 8: 4·ρ(2) + 2·ρ(5) + 4·ρ(8)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains a mass of 37 kilograms. Units are read once, in the third point: a response that omits all units loses only that point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Divides by the length of the interval, not the number of subintervals, to estimate the average linear density as 37/10 = 3.7 kilograms per meter. Accepts a value consistent with an incorrect sum. Requires units."
+                    }
+                  ],
+                  "answer": "Mass ≈ 4(4.8) + 2(3.5) + 4(2.7) = 37 kilograms; average linear density ≈ 37/10 = 3.7 kilograms per meter.",
+                  "steps": [
+                    "The midpoints of [0, 4], [4, 6] and [6, 10] are 2, 5 and 8, which are all in the table.",
+                    "Mass ≈ 4·ρ(2) + 2·ρ(5) + 4·ρ(8) = 4(4.8) + 2(3.5) + 4(2.7) = 19.2 + 7 + 10.8 = 37 kilograms.",
+                    "Average linear density = (1/(10 − 0))·∫ from 0 to 10 of ρ(x) dx ≈ 37/10 = 3.7 kilograms per meter."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the value of the left Riemann sum that uses the six subintervals indicated by the table. Explain why the mass of the pole must be less than this value.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains the left Riemann sum 2(6.0) + 2(4.8) + 1(3.9) + 1(3.5) + 2(3.2) + 2(2.7) = 40.8, with each subinterval's own width."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that ρ′(x) < 0, so ρ is decreasing: on each subinterval ρ(x) is less than its value at the left endpoint except at that endpoint, so each rectangle has more area than the region under the graph and the sum exceeds the mass."
+                    }
+                  ],
+                  "answer": "The left sum is 40.8. Because ρ′ < 0, ρ is decreasing, so each left-endpoint rectangle lies above the graph of ρ on its subinterval; the mass is less than 40.8 kilograms.",
+                  "steps": [
+                    "Widths 2, 2, 1, 1, 2, 2 with left-endpoint values 6.0, 4.8, 3.9, 3.5, 3.2, 2.7.",
+                    "2(6.0) + 2(4.8) + 1(3.9) + 1(3.5) + 2(3.2) + 2(2.7) = 12 + 9.6 + 3.9 + 3.5 + 6.4 + 5.4 = 40.8.",
+                    "ρ is decreasing because ρ′(x) < 0. On a subinterval [a, b], ρ(x) < ρ(a) for a < x ≤ b, so ∫ from a to b of ρ(x) dx < (b − a)·ρ(a). Adding the six inequalities gives mass < 40.8 kilograms."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Is the approximation in part (b) an overestimate or an underestimate of the mass of the pole? Give a reason for your answer that compares the graph of ρ with a tangent line at the midpoint of each subinterval.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Answers underestimate, connecting the answer to ρ″(x) > 0 (the graph of ρ is concave up). Stating the answer without a reason that uses concavity does not earn the point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains the mechanism: on each subinterval the graph of ρ lies above its tangent line at the midpoint, and the midpoint rectangle has the same area as the trapezoid under that tangent line, so each rectangle has less area than the region under the graph."
+                    }
+                  ],
+                  "answer": "Underestimate. Because ρ″ > 0, the graph of ρ lies above its tangent line at each midpoint; each midpoint rectangle has the same area as the region under that tangent line, so the midpoint sum is less than the mass.",
+                  "steps": [
+                    "On [a, b] with midpoint m, the tangent line at m is linear, so its average value on [a, b] is its value at m, which is ρ(m). The area under the tangent line on [a, b] is (b − a)·ρ(m), the area of the midpoint rectangle.",
+                    "ρ″ > 0, so the graph of ρ lies above each of its tangent lines, touching only at the point of tangency. The area under the graph on [a, b] is therefore greater than (b − a)·ρ(m).",
+                    "Adding over the three subintervals, 37 kilograms is an underestimate. With (c), the mass lies between 37 and 40.8 kilograms; a trapezoidal sum, which overestimates for a concave-up graph, would tighten the upper bound to 37.55 kilograms."
+                  ]
+                }
+              ],
+              "id": "bc-fr-tables-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

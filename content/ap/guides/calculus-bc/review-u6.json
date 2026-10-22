@@ -1,0 +1,725 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "review-u6",
+  "kind": "unit-review",
+  "unitId": "u6",
+  "title": "Unit 6 review: Integration and Accumulation of Change",
+  "author": "bc-review-author",
+  "summary": "A retrieval-first review of integration for the AP® Calculus BC Exam, for a student coming back to the unit weeks or months later. Recall the Fundamental Theorem, Riemann sums, integration by parts and the improper-integral definitions before reading anything. Then work seven mixed problems: choosing a technique, an improper integral, an accumulation function from a graph, a table of rates, substitution with an unknown function, a leak modeled over all time, and a calculator Riemann-sum limit. A summary of results with their hypotheses, model justifications, common traps and three worked examples follows, with links to the unit's weeks, the unit test and the related free-response workshops.",
+  "minutes": 65,
+  "figures": [
+    {
+      "id": "bc-review-u6-g1",
+      "alt": "Graph of y = f(t) for −3 ≤ t ≤ 5 on a grid of unit squares. A line segment rises from (−3, −2) through (−2, 0) to (−1, 2); a horizontal segment runs from (−1, 2) to (0, 2); a segment falls from (0, 2) to (1, 0); and a semicircle of radius 2 centered at (3, 0) lies below the t-axis from t = 1 to t = 5, with its lowest point at (3, −2).",
+      "caption": "The graph of f for the accumulation-function problem."
+    },
+    {
+      "id": "bc-review-u6-g2",
+      "alt": "Graph of y = f(t) for 0 ≤ t ≤ 6 on a grid of unit squares. A horizontal segment runs from (0, 2) to (1, 2); a segment falls from (1, 2) through (2, 0) to (3, −2); a horizontal segment runs from (3, −2) to (4, −2); and a segment rises from (4, −2) through (5, 0) to (6, 2).",
+      "caption": "The graph of f for the third worked example."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its answer. Write every statement in full, hypotheses included: a theorem recalled without its conditions is only half recalled. Mark each check you missed or hesitated on. Its answer names the section to study; reread only the part of that section on the same idea, and try the check again on a later day."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c1",
+          "prompt": "State both parts of the Fundamental Theorem of Calculus, including the hypothesis each part needs.",
+          "hint": "One part differentiates an integral whose upper limit is the variable; the other evaluates a definite integral with an antiderivative. Both ask the same thing of f.",
+          "answer": "If f is continuous on [a, b], then g(x) = ∫ from a to x of f(t) dt is differentiable on (a, b) with g′(x) = f(x). If f is continuous on [a, b] and F′ = f on [a, b], then ∫ from a to b of f(x) dx = F(b) − F(a).",
+          "steps": [
+            "Derivative form: if f is continuous on an interval containing a, then g(x) = ∫ from a to x of f(t) dt is differentiable on that interval and g′(x) = f(x). With an upper limit u(x), the chain rule adds a factor: d/dx ∫ from a to u(x) of f(t) dt = f(u(x))·u′(x).",
+            "Evaluation form: if f is continuous on [a, b] and F is any antiderivative of f on [a, b], then ∫ from a to b of f(x) dx = F(b) − F(a). Any antiderivative works, because an added constant cancels in the difference.",
+            "The hypothesis that matters most in practice is continuity on the whole closed interval. If f is undefined or unbounded anywhere in [a, b], the evaluation form does not apply, and the integral must be treated as an improper integral."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c2",
+          "prompt": "Write ∫ from a to b of f(x) dx as a limit of right Riemann sums with n subintervals of equal width. Say what Δx and the kth sample point are, and when the limit is guaranteed to exist.",
+          "hint": "Start with the width of one subinterval, then locate its right end.",
+          "answer": "∫ from a to b of f(x) dx = lim as n→∞ of Σ from k = 1 to n of f(a + kΔx)Δx, where Δx = (b − a)/n and the kth sample point is a + kΔx; the limit exists whenever f is continuous on [a, b].",
+          "steps": [
+            "Cut [a, b] into n pieces of width Δx = (b − a)/n.",
+            "The kth subinterval is [a + (k − 1)Δx, a + kΔx], so its right endpoint is a + kΔx for k = 1, 2, …, n. A left sum uses a + (k − 1)Δx instead.",
+            "Multiply each height by the width and add: Σ from k = 1 to n of f(a + kΔx)Δx. For f continuous on [a, b], these sums tend to ∫ from a to b of f(x) dx as n→∞, and left, right or midpoint choices all give the same limit.",
+            "To read a given limit backward, find Δx (the factor outside f); then n·Δx is the length b − a, and the expression inside f at k = 0 is the left end a."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c3",
+          "prompt": "A function f is increasing and concave up on [a, b]. For left, right, midpoint and trapezoidal sums on the same subintervals, which overestimate ∫ from a to b of f(x) dx and which underestimate it? What changes if f is instead decreasing and concave down?",
+          "hint": "Monotonicity settles two of the four sums and concavity settles the other two. Sketch one subinterval.",
+          "answer": "Increasing and concave up: left and midpoint sums underestimate; right and trapezoidal sums overestimate. Decreasing and concave down: left and midpoint sums overestimate; right and trapezoidal sums underestimate.",
+          "steps": [
+            "Left and right sums depend on monotonicity. For increasing f, each left height is the lowest value on its subinterval and each right height the highest, so the left sum is too small and the right sum too large. Decreasing f reverses both.",
+            "Trapezoidal and midpoint sums depend on concavity. For a concave-up graph, each chord lies above the graph, so trapezoids overestimate; the midpoint rectangle has the same area as the tangent-line trapezoid at the midpoint, which lies below the graph, so midpoint sums underestimate. Concave down reverses both.",
+            "So for decreasing and concave down: left over, right under, midpoint over, trapezoidal under.",
+            "Each conclusion needs the property on the whole interval. A table of values alone does not establish it; the problem must state it, or you must prove it from f′ or f″."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c4",
+          "prompt": "State the integration by parts formula for an indefinite integral and for a definite integral, the hypothesis it needs, and the derivative rule it comes from.",
+          "hint": "Write the product rule for (uv)′ and integrate both sides.",
+          "answer": "∫ u dv = uv − ∫ v du, and ∫ from a to b of u dv = [uv] from a to b − ∫ from a to b of v du, for u and v with continuous derivatives on [a, b]; it reverses the product rule.",
+          "steps": [
+            "The product rule gives (uv)′ = u′v + uv′. Integrating both sides gives uv = ∫ v du + ∫ u dv, which rearranges to ∫ u dv = uv − ∫ v du.",
+            "For a definite integral, evaluate the boundary product at both limits: ∫ from a to b of u dv = u(b)v(b) − u(a)v(a) − ∫ from a to b of v du.",
+            "The formula needs u and v to have continuous derivatives on the interval, so that both integrals exist.",
+            "It helps when u becomes simpler when differentiated (a polynomial, ln x, arctan x) and dv can be integrated. If ∫ v du is no simpler than the original, the choice was wrong; switch u and dv or try another method."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c5",
+          "prompt": "Write the limit definitions of ∫ from a to ∞ of f(x) dx, and of ∫ from a to b of f(x) dx when f is continuous on [a, b] except at one interior point c, where it is unbounded. What does it mean for an improper integral to converge?",
+          "hint": "Replace each troublesome limit of integration with a variable, integrate over the ordinary interval, and then let the variable move.",
+          "answer": "∫ from a to ∞ of f(x) dx = lim as R→∞ of ∫ from a to R of f(x) dx. With trouble at c, ∫ from a to b of f(x) dx = lim as s→c− of ∫ from a to s of f(x) dx + lim as s→c+ of ∫ from s to b of f(x) dx. It converges when every limit is a finite number; otherwise it diverges.",
+          "steps": [
+            "Infinite interval: integrate over [a, R], where f is an ordinary continuous function, and let R→∞.",
+            "Interior trouble point: split the integral at c. Approach c from the left in the piece on [a, c] and from the right in the piece on [c, b].",
+            "The integral converges only if each limit exists as a finite real number. A limit of ∞ or −∞, or one that does not exist, makes the integral diverge.",
+            "When there are two pieces, both must converge on their own. One piece diverging to ∞ and another to −∞ do not cancel."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c6",
+          "prompt": "Complete each statement, and give the value whenever the integral converges. ∫ from 1 to ∞ of 1/x^p dx converges exactly when ___. ∫ from 0 to 1 of 1/x^p dx converges exactly when ___.",
+          "hint": "Work out the case p ≠ 1 with the power rule, then treat p = 1 separately.",
+          "answer": "∫ from 1 to ∞ of 1/x^p dx converges exactly when p > 1, to 1/(p − 1). ∫ from 0 to 1 of 1/x^p dx converges exactly when p < 1, to 1/(1 − p). Both diverge when p = 1.",
+          "steps": [
+            "For p ≠ 1, an antiderivative of x^(−p) is x^(1−p)/(1 − p).",
+            "On [1, R]: (R^(1−p) − 1)/(1 − p). As R→∞, R^(1−p)→0 exactly when 1 − p < 0, that is p > 1, and then the limit is −1/(1 − p) = 1/(p − 1). For p < 1 it grows without bound.",
+            "On [s, 1]: (1 − s^(1−p))/(1 − p). As s→0+, s^(1−p)→0 exactly when 1 − p > 0, that is p < 1, and then the limit is 1/(1 − p). For p > 1 it grows without bound.",
+            "For p = 1, the antiderivative is ln x, and ln R→∞ while ln s→−∞, so both integrals diverge.",
+            "These benchmarks are for powers of x on these intervals. Other integrands need their own limit computation."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work these as you would on the exam: write the setup, then the result. Work without a calculator and give exact answers unless a problem says a calculator is allowed. Several problems reach back to earlier units on purpose."
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c7",
+          "prompt": "Evaluate each integral exactly. They look alike; the work is in deciding how each one starts. (a) ∫ from 0 to 2 of x/(x^2 + 4) dx (b) ∫ from 0 to 2 of 1/(x^2 + 4) dx (c) ∫ from 3 to 4 of 1/(x^2 − 4) dx (d) ∫ from 0 to 2 of x^3/(x^2 + 4) dx",
+          "hint": "For each integrand, compare the numerator with the derivative of the denominator, ask whether the denominator factors over the real numbers, and compare the degrees of the numerator and the denominator.",
+          "answer": "(a) (1/2)ln 2 (b) π/8 (c) (1/4)ln(5/3) (d) 2 − 2ln 2",
+          "steps": [
+            "(a) The numerator is half the derivative of x^2 + 4, so let u = x^2 + 4, du = 2x dx. When x = 0, u = 4; when x = 2, u = 8. The integral is (1/2)∫ from 4 to 8 of (1/u) du = (1/2)(ln 8 − ln 4) = (1/2)ln 2.",
+            "(b) There is no x in the numerator, and x^2 + 4 does not factor over the real numbers, so use ∫ dx/(x^2 + a^2) = (1/a)arctan(x/a) + C with a = 2. The integral is (1/2)[arctan(x/2)] from 0 to 2 = (1/2)(π/4 − 0) = π/8.",
+            "(c) This denominator factors: 1/((x − 2)(x + 2)) = A/(x − 2) + B/(x + 2), where 1 = A(x + 2) + B(x − 2). Setting x = 2 gives A = 1/4, and x = −2 gives B = −1/4.",
+            "The interval [3, 4] avoids ±2, so the integral is (1/4)[ln|x − 2| − ln|x + 2|] from 3 to 4 = (1/4)[(ln 2 − ln 6) − (ln 1 − ln 5)] = (1/4)ln(10/6) = (1/4)ln(5/3).",
+            "(d) The numerator has the higher degree, so divide first: x^3 = x(x^2 + 4) − 4x, so x^3/(x^2 + 4) = x − 4x/(x^2 + 4). The second term is the type in (a).",
+            "The integral is [x^2/2 − 2ln(x^2 + 4)] from 0 to 2 = (2 − 2ln 8) − (0 − 2ln 4) = 2 − 2ln 2. (The substitution u = x^2 + 4, with x^2 = u − 4, gives the same result.)",
+            "Check (c) by differentiating: d/dx of (1/4)(ln|x − 2| − ln|x + 2|) = (1/4)(1/(x − 2) − 1/(x + 2)) = (1/4)·4/(x^2 − 4) = 1/(x^2 − 4)."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c8",
+          "prompt": "Determine whether ∫ from 0 to 1 of (ln x)/√x dx converges. If it converges, find its value.",
+          "hint": "The trouble is at x = 0, where ln x→−∞ and √x→0. Write the integral as a limit with lower limit c first, then look for an antiderivative of (ln x)x^(−1/2) on [c, 1].",
+          "answer": "It converges, to −4.",
+          "steps": [
+            "The integrand is continuous on (0, 1] but unbounded as x→0+, so the integral is improper: ∫ from 0 to 1 of (ln x)/√x dx = lim as c→0+ of ∫ from c to 1 of (ln x)x^(−1/2) dx.",
+            "Substitution alone does not finish this integral (u = ln x leaves u·e^(u/2), which still needs parts), but ln x becomes simpler when differentiated and x^(−1/2) integrates easily, so integrate by parts with u = ln x and dv = x^(−1/2) dx: du = (1/x) dx and v = 2√x.",
+            "∫ from c to 1 of (ln x)x^(−1/2) dx = [2√x ln x] from c to 1 − ∫ from c to 1 of 2√x·(1/x) dx = (0 − 2√c ln c) − [4√x] from c to 1 = −2√c ln c − 4 + 4√c.",
+            "As c→0+, √c→0, but √c ln c is a 0·(−∞) form. Rewrite it as (ln c)/(c^(−1/2)), an ∞/∞ form, and apply L'Hôpital's Rule (Unit 4): (1/c)/(−(1/2)c^(−3/2)) = −2c^(1/2)→0.",
+            "So the limit is 0 − 4 + 0 = −4, a finite number: the integral converges to −4. The sign fits, since ln x < 0 on (0, 1)."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c9",
+          "prompt": "The graph of the continuous function f on [−3, 5] is shown. It consists of three line segments and a semicircle of radius 2 below the t-axis. Let g(x) = 3 + ∫ from 0 to x of f(t) dt. (a) Find g(−3) and g(5). (b) Find the absolute maximum value and the absolute minimum value of g on [−3, 5]. Justify your answer. (c) On what open intervals is the graph of g concave down? Give a reason.",
+          "hint": "Find the signed area of each piece of the graph first, then the value of g at every point where f changes sign.",
+          "answer": "(a) g(−3) = 1 and g(5) = 4 − 2π. (b) Absolute maximum 4, at x = 1; absolute minimum 4 − 2π, at x = 5. (c) (0, 3).",
+          "steps": [
+            "Signed areas: from −3 to −2, a triangle below the axis, −1; from −2 to −1, a triangle above, 1; from −1 to 0, a rectangle, 2; from 0 to 1, a triangle, 1; from 1 to 5, a half disk of radius 2 below the axis, −(1/2)π(2)^2 = −2π.",
+            "(a) g(−3) = 3 + ∫ from 0 to −3 of f(t) dt = 3 − ∫ from −3 to 0 of f(t) dt = 3 − (−1 + 1 + 2) = 1, and g(5) = 3 + 1 − 2π = 4 − 2π.",
+            "(b) By the Fundamental Theorem, g′(x) = f(x), so the critical points in (−3, 5) are the zeros of f: x = −2 and x = 1. The candidates are g(−3) = 1, g(−2) = 3 − (1 + 2) = 0, g(1) = 3 + 1 = 4 and g(5) = 4 − 2π ≈ −2.283.",
+            "g is continuous on [−3, 5], so its absolute extrema occur among the endpoints and critical points (the candidates test from Unit 5). The largest value is 4, at x = 1, and the smallest is 4 − 2π, at x = 5. The relative minimum at x = −2 is not the absolute minimum, because g keeps falling after x = 1 until the right endpoint.",
+            "(c) g′ = f, so the graph of g is concave down where f is decreasing: on (0, 1), along the falling segment, and on (1, 3), along the left half of the semicircle. So g is concave down on (0, 3). f′(1) does not exist (the semicircle has a vertical tangent there), but concave down means g′ is decreasing, and g′ = f decreases across x = 1, so the whole interval (0, 3) qualifies. Listing (0, 1) and (1, 3) is also correct. On (−1, 0), f is constant and the graph of g is a line."
+          ],
+          "figureIds": [
+            "bc-review-u6-g1"
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c10",
+          "prompt": "Snow melts off a sloped roof at a rate of m(t) kilograms per hour, where t is measured in hours after sunrise. The function m is twice differentiable and concave down on [0, 7]. Selected values are shown.\n\n| t (hours) | 0 | 1 | 3 | 4 | 7 |\n| --- | --- | --- | --- | --- | --- |\n| m(t) (kg/h) | 6 | 11 | 14 | 11 | 1 |\n\n(a) Use a trapezoidal sum with the four subintervals in the table to approximate ∫ from 0 to 7 of m(t) dt. Explain the meaning of this integral in context, with units. (b) Is your approximation in (a) an overestimate or an underestimate? Give a reason. (c) Must there be a time t in (0, 7) at which m′(t) = 0? Justify your answer.",
+          "hint": "Find the width of each subinterval from the table before you average any heights.",
+          "answer": "(a) 64 kg: about 64 kilograms of snow melt off the roof during the first 7 hours after sunrise. (b) An underestimate. (c) Yes, at some t in (1, 4).",
+          "steps": [
+            "(a) The widths are 1, 2, 1 and 3. The trapezoidal sum is (1)(6 + 11)/2 + (2)(11 + 14)/2 + (1)(14 + 11)/2 + (3)(11 + 1)/2 = 8.5 + 25 + 12.5 + 18 = 64.",
+            "The integral of a melt rate in kilograms per hour over a time in hours is a mass in kilograms: ∫ from 0 to 7 of m(t) dt is the mass of snow that melts off the roof from t = 0 to t = 7, about 64 kg.",
+            "(b) m is concave down on [0, 7], so on each subinterval the chord joining the two data points lies below the graph of m. Each trapezoid has less area than the region under the graph, so the trapezoidal sum underestimates the integral.",
+            "(c) m is differentiable on [1, 4], so it is also continuous there, and m(1) = m(4) = 11. By the Mean Value Theorem (Unit 5), there is a c in (1, 4) with m′(c) = (m(4) − m(1))/(4 − 1) = 0.",
+            "Consistency check: the secant slopes between successive data points are 5, 1.5, −3 and −10/3. They decrease, as a concave-down function requires."
+          ],
+          "see": "justifications-and-traps"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c11",
+          "prompt": "A function f is continuous on [0, 6], with ∫ from 0 to 6 of f(x) dx = 12 and ∫ from 0 to 2 of f(x) dx = 5. Find (a) ∫ from 1 to 3 of f(3x − 3) dx, (b) ∫ from 0 to √2 of x f(x^2) dx, and (c) ∫ from 6 to 2 of (f(x) + 1) dx.",
+          "hint": "In (a) and (b), name the expression inside f as u, and change both limits to u-values.",
+          "answer": "(a) 4 (b) 5/2 (c) −11",
+          "steps": [
+            "(a) Let u = 3x − 3, so du = 3 dx and dx = du/3. When x = 1, u = 0; when x = 3, u = 6. The integral is (1/3)∫ from 0 to 6 of f(u) du = (1/3)(12) = 4.",
+            "(b) Let u = x^2, so du = 2x dx and x dx = du/2. When x = 0, u = 0; when x = √2, u = 2. The integral is (1/2)∫ from 0 to 2 of f(u) du = (1/2)(5) = 5/2.",
+            "(c) Reversing the limits changes the sign: ∫ from 6 to 2 of (f(x) + 1) dx = −∫ from 2 to 6 of (f(x) + 1) dx.",
+            "By additivity, ∫ from 2 to 6 of f(x) dx = 12 − 5 = 7, and ∫ from 2 to 6 of 1 dx = 4. So the answer is −(7 + 4) = −11."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c12",
+          "prompt": "Fuel leaks from a damaged tank at a rate of r(t) = 60/((t + 1)(t + 3)) liters per hour, where t is measured in hours after the damage. The model never reaches a zero rate. (a) Find the total amount of fuel that leaks out over all time t ≥ 0, according to this model. (b) Find the exact time T at which half of that total has leaked out.",
+          "hint": "Write the total as lim as R→∞ of ∫ from 0 to R of r(t) dt. The denominator is already factored; use that before integrating.",
+          "answer": "(a) 30 ln 3 liters (about 32.958 L). (b) T = √3 hours.",
+          "steps": [
+            "Split r into partial fractions: 60/((t + 1)(t + 3)) = A/(t + 1) + B/(t + 3), where 60 = A(t + 3) + B(t + 1). Setting t = −1 gives A = 30, and t = −3 gives B = −30.",
+            "For t ≥ 0, both factors are positive, so ∫ from 0 to R of r(t) dt = 30[ln(t + 1) − ln(t + 3)] from 0 to R = 30 ln((R + 1)/(R + 3)) − 30 ln(1/3) = 30 ln((R + 1)/(R + 3)) + 30 ln 3.",
+            "(a) As R→∞, (R + 1)/(R + 3)→1, so 30 ln((R + 1)/(R + 3))→0. The improper integral converges, and the total is 30 ln 3 liters, about 32.958 L.",
+            "(b) Set the amount leaked by time T equal to half the total: 30 ln((T + 1)/(T + 3)) + 30 ln 3 = 15 ln 3. Then ln(3(T + 1)/(T + 3)) = (1/2)ln 3, so 3(T + 1)/(T + 3) = √3.",
+            "Solve: 3T + 3 = √3 T + 3√3, so T(3 − √3) = 3(√3 − 1). Since 3 − √3 = √3(√3 − 1), T = 3/√3 = √3 hours, about 1.732 hours.",
+            "Half the fuel is gone in under two hours while the other half takes forever. The total is still finite because r(t) shrinks like 60/t^2 for large t."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "bc-review-u6-c13",
+          "prompt": "A graphing calculator is allowed. For each positive integer n, let S(n) = Σ from k = 1 to n of (2/n)√(1 + (1 + 2k/n)^3). (a) Write lim as n→∞ of S(n) as a definite integral. (b) Find the value of that limit, to three decimal places. (c) Is S(n) greater than or less than the limit, for every n? Explain your reasoning.",
+          "hint": "Find the factor that plays the role of Δx, then decide what x is at k = 0 and at k = n.",
+          "answer": "(a) ∫ from 1 to 3 of √(1 + x^3) dx (or, equivalently, ∫ from 0 to 2 of √(1 + (1 + x)^3) dx). (b) 6.230 (c) Greater, for every n.",
+          "steps": [
+            "(a) The factor 2/n is Δx, so the interval has length 2. With x = 1 + 2k/n, the sample points are right endpoints; x would be 1 at k = 0 and is 3 at k = n. So the limit is ∫ from 1 to 3 of √(1 + x^3) dx.",
+            "(b) √(1 + x^3) has no elementary antiderivative, so use the calculator's numerical integration: ∫ from 1 to 3 of √(1 + x^3) dx ≈ 6.22996, which rounds to 6.230.",
+            "(c) The integrand's derivative is 3x^2/(2√(1 + x^3)), which is positive on [1, 3], so the integrand is increasing there. S(n) is a right Riemann sum, and each right endpoint gives the largest height on its subinterval, so S(n) is greater than the integral for every n. For example, S(10) ≈ 6.623."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Fundamental Theorem, derivative form",
+          "text": "d/dx ∫ from a to x of f(t) dt = f(x). With variable limits, d/dx ∫ from v(x) to u(x) of f(t) dt = f(u(x))·u′(x) − f(v(x))·v′(x).",
+          "conditions": [
+            "f is continuous on an open interval that contains a and every value the limits take.",
+            "u and v are differentiable."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Fundamental Theorem, evaluation form",
+          "text": "∫ from a to b of f(x) dx = F(b) − F(a) for any antiderivative F of f. In particular ∫ from a to b of F′(x) dx = F(b) − F(a): the integral of a rate of change is the net change.",
+          "conditions": [
+            "f is continuous on the closed interval [a, b], and F′(x) = f(x) for every x in [a, b].",
+            "If f is undefined or unbounded anywhere in [a, b], this form does not apply; treat the integral as improper."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Accumulation functions",
+          "text": "If g(x) = C + ∫ from a to x of f(t) dt, then g(a) = C, g′(x) = f(x), and g″(x) = f′(x) wherever f′ exists. So g increases where f > 0, has a relative maximum where f changes from positive to negative, and is concave up where f is increasing.",
+          "conditions": [
+            "f is continuous on an interval containing a and x.",
+            "A zero of f is only a candidate: g has an extremum there only if f changes sign."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Riemann sums and the definite integral",
+          "text": "∫ from a to b of f(x) dx = lim as n→∞ of Σ from k = 1 to n of f(a + kΔx)Δx, with Δx = (b − a)/n. A trapezoidal sum adds (width)·(left height + right height)/2 over the subintervals, which may have different widths.",
+          "conditions": [
+            "f is continuous on [a, b].",
+            "A sum from data is an estimate; whether it is too high or too low needs monotonicity or concavity on the whole interval."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "When a sum overestimates or underestimates ∫ from a to b of f(x) dx. Each row needs its property on all of [a, b], stated in the problem or proved from f′ or f″.",
+          "head": [
+            "If f is",
+            "Left sum",
+            "Right sum",
+            "Midpoint sum",
+            "Trapezoidal sum"
+          ],
+          "rows": [
+            [
+              "Increasing",
+              "Under",
+              "Over",
+              "No conclusion",
+              "No conclusion"
+            ],
+            [
+              "Decreasing",
+              "Over",
+              "Under",
+              "No conclusion",
+              "No conclusion"
+            ],
+            [
+              "Concave up",
+              "No conclusion",
+              "No conclusion",
+              "Under",
+              "Over"
+            ],
+            [
+              "Concave down",
+              "No conclusion",
+              "No conclusion",
+              "Over",
+              "Under"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Properties of definite integrals, for f and g continuous on the intervals involved. None of them needs a formula for f.",
+          "head": [
+            "Property",
+            "Statement"
+          ],
+          "rows": [
+            [
+              "Reversed limits",
+              "∫ from b to a of f(x) dx = −∫ from a to b of f(x) dx"
+            ],
+            [
+              "Zero width",
+              "∫ from a to a of f(x) dx = 0"
+            ],
+            [
+              "Additivity",
+              "∫ from a to b of f(x) dx + ∫ from b to c of f(x) dx = ∫ from a to c of f(x) dx, in any order of a, b and c"
+            ],
+            [
+              "Linearity",
+              "∫ from a to b of (kf(x) + g(x)) dx = k∫ from a to b of f(x) dx + ∫ from a to b of g(x) dx"
+            ],
+            [
+              "Comparison",
+              "If f(x) ≤ g(x) on [a, b] and a < b, then ∫ from a to b of f(x) dx ≤ ∫ from a to b of g(x) dx"
+            ],
+            [
+              "Symmetry",
+              "On [−a, a]: if f is odd, ∫ from −a to a of f(x) dx = 0; if f is even, it equals 2∫ from 0 to a of f(x) dx"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Antiderivatives to know. Add + C to each, and check any doubtful one by differentiating.",
+          "head": [
+            "Integrand",
+            "Antiderivative",
+            "Condition or source"
+          ],
+          "rows": [
+            [
+              "x^n",
+              "x^(n+1)/(n + 1)",
+              "n ≠ −1"
+            ],
+            [
+              "1/x",
+              "ln|x|",
+              "on an interval that avoids 0"
+            ],
+            [
+              "1/(ax + b)",
+              "(1/a)ln|ax + b|",
+              "a ≠ 0, on an interval that avoids −b/a"
+            ],
+            [
+              "e^(kx)",
+              "(1/k)e^(kx)",
+              "k ≠ 0"
+            ],
+            [
+              "a^x",
+              "a^x/(ln a)",
+              "a > 0, a ≠ 1"
+            ],
+            [
+              "sin x",
+              "−cos x",
+              "for all x"
+            ],
+            [
+              "cos x",
+              "sin x",
+              "for all x"
+            ],
+            [
+              "sec^2 x",
+              "tan x",
+              "where cos x ≠ 0"
+            ],
+            [
+              "csc^2 x",
+              "−cot x",
+              "where sin x ≠ 0"
+            ],
+            [
+              "sec x tan x",
+              "sec x",
+              "where cos x ≠ 0"
+            ],
+            [
+              "csc x cot x",
+              "−csc x",
+              "where sin x ≠ 0"
+            ],
+            [
+              "tan x",
+              "−ln|cos x|",
+              "where cos x ≠ 0; write sin x/cos x and let u = cos x"
+            ],
+            [
+              "1/(a^2 + x^2)",
+              "(1/a)arctan(x/a)",
+              "a > 0"
+            ],
+            [
+              "1/√(a^2 − x^2)",
+              "arcsin(x/a)",
+              "a > 0 and |x| < a"
+            ],
+            [
+              "ln x",
+              "x ln x − x",
+              "x > 0; by parts with u = ln x and dv = dx"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Substitution",
+          "text": "∫ f(g(x))g′(x) dx = F(g(x)) + C, where F′ = f. For a definite integral, ∫ from a to b of f(g(x))g′(x) dx = ∫ from g(a) to g(b) of f(u) du.",
+          "conditions": [
+            "g′ is continuous on [a, b], and f is continuous on the set of values of g.",
+            "Change the limits to u-values, or return to x before using the original limits; never mix the two.",
+            "A missing constant factor can be supplied and compensated. A missing or leftover variable factor cannot; either rewrite it in terms of u (solve u = g(x) for x) or choose another method."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Integration by parts",
+          "text": "∫ u dv = uv − ∫ v du, and ∫ from a to b of u dv = [uv] from a to b − ∫ from a to b of v du.",
+          "conditions": [
+            "u and v have continuous derivatives on the interval.",
+            "Choose u to be the factor that becomes simpler when differentiated (a polynomial, ln x, arctan x) and dv a factor you can integrate. If ∫ v du is no simpler than the original integral, change the choice."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Algebra before integrating",
+          "text": "If the degree of the numerator is at least the degree of the denominator, divide first and keep the remainder over the original denominator. A quadratic denominator that does not factor can be written by completing the square, x^2 + bx + c = (x + b/2)^2 + (c − b^2/4), which, once any multiple of the denominator's derivative has been split off the numerator (giving a logarithm), leads to an arctangent.",
+          "conditions": [
+            "Split a fraction over its numerator, never over its denominator: (a + b)/c = a/c + b/c, but 1/(a + b) ≠ 1/a + 1/b.",
+            "There is no product rule or quotient rule for antiderivatives."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Partial fractions with distinct linear factors",
+          "text": "If r ≠ s and the numerator P(x) has degree less than 2, then P(x)/((x − r)(x − s)) = A/(x − r) + B/(x − s), and its antiderivative is A ln|x − r| + B ln|x − s| + C. Find A and B by clearing denominators and substituting x = r and then x = s.",
+          "conditions": [
+            "The rational function is proper; otherwise divide first.",
+            "The denominator factors into distinct linear factors.",
+            "For a definite integral, the interval avoids r and s; otherwise the integral is improper."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "First moves for choosing a method. They are first moves, not guarantees: some integrands yield to two methods, and if a first move leaves an integral no simpler than the original, go back and try another.",
+          "head": [
+            "If the integrand shows",
+            "Start with",
+            "For example"
+          ],
+          "rows": [
+            [
+              "A function of an inner expression, times a constant multiple of the inner expression's derivative",
+              "Substitution, with u = the inner expression",
+              "∫ x^2 cos(x^3) dx, with u = x^3"
+            ],
+            [
+              "A product in which one factor simplifies when differentiated and the other integrates easily",
+              "Integration by parts, with u = the factor that simplifies",
+              "∫ x sin(3x) dx, with u = x"
+            ],
+            [
+              "A rational function whose numerator has degree at least that of the denominator",
+              "Long division",
+              "(x^2 + 3)/(x − 1) = x + 1 + 4/(x − 1)"
+            ],
+            [
+              "A proper rational function whose denominator factors into distinct linear factors",
+              "Partial fractions",
+              "1/(x^2 − x − 2) = 1/((x − 2)(x + 1))"
+            ],
+            [
+              "A quadratic denominator that does not factor",
+              "Split off any multiple of the denominator's derivative, then complete the square for an arctangent",
+              "1/(x^2 + 6x + 10) = 1/((x + 3)^2 + 1)"
+            ],
+            [
+              "An infinite limit of integration, or a point of the interval where the integrand is unbounded",
+              "The limit definition, written before any antiderivative is evaluated",
+              "∫ from 0 to 8 of x^(−1/3) dx"
+            ],
+            [
+              "No elementary antiderivative, in a calculator part",
+              "Numerical integration, with the integral written as the setup",
+              "∫ from 0 to 1 of sin(x^2) dx"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Improper integrals",
+          "text": "∫ from a to ∞ of f(x) dx = lim as R→∞ of ∫ from a to R of f(x) dx. If f is unbounded near b, ∫ from a to b of f(x) dx = lim as s→b− of ∫ from a to s of f(x) dx, and similarly at a left endpoint. The integral converges when the limit is a finite number and diverges otherwise.",
+          "conditions": [
+            "f is continuous on the interval except at the troublesome endpoint.",
+            "A trouble point inside the interval: split there; the integral converges only if every piece converges.",
+            "Over (−∞, ∞): split at any finite point; both halves must converge. A symmetric limit such as lim as R→∞ of ∫ from −R to R is a different quantity and can hide divergence."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "p-integrals",
+          "text": "∫ from 1 to ∞ of 1/x^p dx converges to 1/(p − 1) exactly when p > 1. ∫ from 0 to 1 of 1/x^p dx converges to 1/(1 − p) exactly when p < 1. Both diverge when p = 1.",
+          "conditions": [
+            "These benchmarks are for powers of x on these intervals. For other integrands, compute the limit."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Points for justification go to a reason that names the function, the property and where it holds. These sentences show the wording; change the names and numbers to fit the problem."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify a relative extremum of an accumulation function from a graph of f.",
+          "text": "g′(x) = f(x) by the Fundamental Theorem of Calculus. Since f changes from positive to negative at x = 4, g′ changes from positive to negative there, so g has a relative maximum at x = 4."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify an absolute extremum on a closed interval.",
+          "text": "h is continuous on [0, 8], so its absolute minimum occurs at an endpoint or a critical point. The only critical point in (0, 8) is x = 3, and h(0) = 2, h(3) = −1 and h(8) = 5. The absolute minimum value of h on [0, 8] is −1, at x = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "Say whether a trapezoidal estimate is too high or too low.",
+          "text": "R is concave up on [0, 10], so on each subinterval the chord joining the endpoints of the graph lies above the graph. Each trapezoid's area is greater than the area under R on its subinterval, so the trapezoidal sum overestimates ∫ from 0 to 10 of R(t) dt."
+        },
+        {
+          "type": "model",
+          "prompt": "Interpret a definite integral in context.",
+          "text": "W(t) is the rate, in gallons per hour, at which water enters a pond. ∫ from 2 to 5 of W(t) dt ≈ 41 means that about 41 gallons of water entered the pond from t = 2 to t = 5 hours."
+        },
+        {
+          "type": "model",
+          "prompt": "Show that an improper integral converges.",
+          "text": "∫ from 1 to ∞ of 4/x^3 dx = lim as R→∞ of ∫ from 1 to R of 4x^(−3) dx = lim as R→∞ of [−2/x^2] from 1 to R = lim as R→∞ of (2 − 2/R^2) = 2. The limit is finite, so the integral converges, and its value is 2."
+        },
+        {
+          "type": "model",
+          "prompt": "Use the Mean Value Theorem with data.",
+          "text": "W is differentiable on [2, 6], so it is continuous on [2, 6], and W(2) = W(6) = 9. By the Mean Value Theorem there is a c in (2, 6) with W′(c) = (W(6) − W(2))/(6 − 2) = 0."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the chain factor: writing d/dx ∫ from 0 to x^3 of cos t dt = cos(x^3).",
+          "fix": "The upper limit is x^3, so multiply by its derivative: cos(x^3)·3x^2. For a variable lower limit, subtract f(lower limit) times the derivative of the lower limit."
+        },
+        {
+          "type": "trap",
+          "text": "Mixing variables in a substitution: changing the integrand to u but keeping the x-limits, as in ∫ from 0 to 2 of x e^(x^2) dx = ∫ from 0 to 2 of (1/2)e^u du.",
+          "fix": "Convert the limits (x = 2 gives u = 4, so the integral is ∫ from 0 to 4 of (1/2)e^u du), or rewrite the antiderivative in x before evaluating at 0 and 2."
+        },
+        {
+          "type": "trap",
+          "text": "Evaluating F(b) − F(a) across a vertical asymptote: [−1/(x − 2)] from −1 to 3 = −4/3 for ∫ from −1 to 3 of 1/(x − 2)^2 dx, a negative answer for a positive integrand.",
+          "fix": "Check continuity on the whole interval first. Here x = 2 is inside it, so split at 2. With u = x − 2, the piece ∫ from 2 to 3 of 1/(x − 2)^2 dx becomes ∫ from 0 to 1 of 1/u^2 du, a p-integral with p = 2 ≥ 1, so that piece diverges, and so does the whole integral."
+        },
+        {
+          "type": "trap",
+          "text": "Cancelling infinities: claiming ∫ from −∞ to ∞ of x/(1 + x^2) dx = 0 because the integrand is odd.",
+          "fix": "Split at 0 and test each half: ∫ from 0 to R of x/(1 + x^2) dx = (1/2)ln(1 + R^2)→∞, so the integral diverges. Symmetry may be used only after each half converges."
+        },
+        {
+          "type": "trap",
+          "text": "Deciding over or under from a table alone, for example calling a trapezoidal estimate an overestimate because the data rise and then fall.",
+          "fix": "Name the property that decides it (monotonicity for left and right sums, concavity for trapezoidal and midpoint sums) and say where it comes from. If the problem gives neither and the data cannot prove it, say that the estimate cannot be classified."
+        },
+        {
+          "type": "trap",
+          "text": "Ignoring unequal widths: averaging the table's heights and multiplying by the whole interval, or using one Δx for every subinterval.",
+          "fix": "Find each width from the table and pair it with that subinterval's own heights."
+        },
+        {
+          "type": "trap",
+          "text": "Decomposing before dividing: writing (x^2 + 1)/((x − 1)(x + 2)) = A/(x − 1) + B/(x + 2).",
+          "fix": "The numerator's degree equals the denominator's, so divide first: (x^2 + 1)/(x^2 + x − 2) = 1 + (3 − x)/((x − 1)(x + 2)). Then decompose the proper part."
+        },
+        {
+          "type": "trap",
+          "text": "Guessing a 0·∞ boundary term in an improper integral, for example declaring lim as c→0+ of c ln c to be 0 or −∞ by inspection.",
+          "fix": "Rewrite it as (ln c)/(1/c), an ∞/∞ form, and apply L'Hôpital's Rule: (1/c)/(−1/c^2) = −c→0. Write the limit; do not just announce it."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the absolute value: ∫ dx/x = ln x + C, then evaluating at negative x.",
+          "fix": "Write ln|x| + C. On an interval of negative x, d/dx ln(−x) = (−1)/(−x) = 1/x, so ln|x| is the antiderivative there too."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each example models a procedure that the problems above test. If a problem's answer sent you here, study the example that uses the same procedure, then retry the problem cold on a later day."
+        },
+        {
+          "type": "example",
+          "prompt": "Evaluate ∫ from 2 to 3 of (x^2 + 1)/(x^2 − 1) dx exactly.",
+          "answer": "1 + ln(3/2)",
+          "steps": [
+            "Choose by structure. The numerator and denominator have the same degree, so divide first: x^2 + 1 = (x^2 − 1) + 2, so the integrand is 1 + 2/(x^2 − 1).",
+            "The denominator factors into distinct linear factors: 2/((x − 1)(x + 1)) = A/(x − 1) + B/(x + 1), where 2 = A(x + 1) + B(x − 1). Setting x = 1 gives A = 1, and x = −1 gives B = −1.",
+            "Check by recombining: 1/(x − 1) − 1/(x + 1) = ((x + 1) − (x − 1))/(x^2 − 1) = 2/(x^2 − 1).",
+            "The interval [2, 3] avoids ±1, so the evaluation form of the Fundamental Theorem applies: ∫ from 2 to 3 of (1 + 1/(x − 1) − 1/(x + 1)) dx = [x + ln|x − 1| − ln|x + 1|] from 2 to 3 = (3 + ln 2 − ln 4) − (2 + ln 1 − ln 3).",
+            "Simplify: 1 + ln 2 − ln 4 + ln 3 = 1 + ln(6/4) = 1 + ln(3/2), about 1.405."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Determine whether ∫ from e to ∞ of (ln x)/x^3 dx converges. If it does, find its value.",
+          "answer": "It converges, to 3/(4e^2).",
+          "steps": [
+            "Find the trouble first. The integrand is continuous on [e, ∞), so the only issue is the infinite limit: ∫ from e to ∞ of (ln x)/x^3 dx = lim as R→∞ of ∫ from e to R of (ln x)x^(−3) dx.",
+            "Choose the method. The integrand is a product of ln x, which simplifies when differentiated, and a power that integrates easily, so integrate by parts with u = ln x and dv = x^(−3) dx: du = (1/x) dx and v = −1/(2x^2).",
+            "∫ from e to R of (ln x)x^(−3) dx = [−(ln x)/(2x^2)] from e to R + ∫ from e to R of 1/(2x^3) dx = [−(ln x)/(2x^2) − 1/(4x^2)] from e to R.",
+            "At x = e the bracket is −1/(2e^2) − 1/(4e^2) = −3/(4e^2), so the finite integral equals −(ln R)/(2R^2) − 1/(4R^2) + 3/(4e^2).",
+            "As R→∞, (ln R)/R^2 is an ∞/∞ form. By L'Hôpital's Rule its limit equals the limit of (1/R)/(2R) = 1/(2R^2), which is 0. Also 1/(4R^2)→0.",
+            "The limit is 3/(4e^2), a finite number, so the integral converges to 3/(4e^2), about 0.102."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "The graph of f on [0, 6] is shown; it consists of four line segments. Let g(x) = ∫ from 0 to x of f(t) dt. Find the x-coordinates of the relative extrema of g on (0, 6), classify each with a reason, and find the absolute maximum and minimum values of g on [0, 6].",
+          "answer": "Relative maximum at x = 2 and relative minimum at x = 5. Absolute maximum value 3, at x = 2; absolute minimum value −1, at x = 5.",
+          "steps": [
+            "By the Fundamental Theorem, g′(x) = f(x). The function f is defined on all of [0, 6], so the critical points of g in (0, 6) are the zeros of f: x = 2 and x = 5.",
+            "At x = 2, f changes from positive to negative, so g′ does too and g has a relative maximum. At x = 5, f changes from negative to positive, so g has a relative minimum.",
+            "Values from signed areas: g(0) = 0; g(2) = 2 + 1 = 3 (a rectangle and a triangle above the axis); g(5) = 3 − (1 + 2 + 1) = −1 (two triangles and a rectangle below); g(6) = −1 + 1 = 0.",
+            "g is continuous on [0, 6], so its absolute extrema are among g(0) = 0, g(2) = 3, g(5) = −1 and g(6) = 0. The absolute maximum value is 3, at x = 2, and the absolute minimum value is −1, at x = 5.",
+            "Concavity comes from the slope of f, since g″ = f′ where f′ exists: g is concave down on (1, 3), where f decreases, is linear on (3, 4), where f is constant, and is concave up on (4, 6)."
+          ],
+          "figureIds": [
+            "bc-review-u6-g2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 13: Accumulation, numerical sums, and definite integrals",
+              "ref": "week:13"
+            },
+            {
+              "label": "Week 14: Fundamental Theorem, antiderivatives, and substitution",
+              "ref": "week:14"
+            },
+            {
+              "label": "Week 15: Algebraic preparation, parts, and partial fractions",
+              "ref": "week:15"
+            },
+            {
+              "label": "Week 16: Improper integrals and convergence",
+              "ref": "week:16"
+            },
+            {
+              "label": "Unit 6 test",
+              "ref": "test:unit-6"
+            },
+            {
+              "label": "Unit 6 test key",
+              "ref": "key:unit-6"
+            },
+            {
+              "label": "Free-response workshop: Rates and accumulation in context",
+              "ref": "guide:fr-accumulation"
+            },
+            {
+              "label": "Free-response workshop: Functions given by tables",
+              "ref": "guide:fr-tables"
+            },
+            {
+              "label": "Free-response workshop: Reading the graph of a derivative",
+              "ref": "guide:fr-derivative-graph"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

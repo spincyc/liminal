@@ -1,0 +1,353 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-polar",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Polar curves",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A questions permit a graphing calculator; Part B questions do not. Show supporting work and justify requested conclusions; write the setup for every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "bc-fr-polar-f1",
+      "alt": "Overhead view on equal axes, x from −3 to 3 and y from −1 to 5. The x-axis is drawn as a hatched wall, and a dot at the origin is labeled sensor. A closed curve labeled r = S(θ) leaves the wall at (2, 0), swings up and around through the upper half-plane, leaning slightly to the right, and returns to the wall at (−2, 0). The region between the curve and the wall is shaded. A dashed ray from the sensor to the curve makes an angle θ with the positive x-axis.",
+      "caption": "Distances in meters. The sensor detects motion everywhere in the shaded region."
+    },
+    {
+      "id": "bc-fr-polar-f2",
+      "alt": "On equal axes, x from −4 to 4 and y from −3.5 to 4.5, a solid egg-shaped closed curve labeled r = 1 + e^(sin θ) and a dashed circle labeled r = 3 centered at the origin. The egg shape is taller above the x-axis than below it; it crosses the circle at two points in the upper half-plane and pokes out above the circle between them. The small cap between the two crossings, inside the egg shape and outside the circle, is shaded and labeled R."
+    },
+    {
+      "id": "bc-fr-polar-f3",
+      "alt": "On equal axes, x from −7 to 7 and y from −3.5 to 3.5, the curve r = 2 + 4 cos(2θ). Two large loops lie to the left and right of the origin, crossing the x-axis at x = −6 and x = 6, and meeting at the origin. Two small, narrow loops sit along the y-axis, one just above the origin and one just below it, each passing through the origin."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "Show your work and justify requested conclusions. Write integrals, equations, or derivatives supporting numerical calculator results.",
+          "items": [
+            {
+              "context": true,
+              "prompt": "A motion sensor is mounted at the base of a long straight wall. In a coordinate system with the sensor at the origin and the wall along the x-axis, the sensor detects motion at every point of the region bounded by the wall and the polar curve r = S(θ) for 0 ≤ θ ≤ π, shown in the figure, where S(θ) = 2 + 4e^(−θ/3) sin θ. Distances are measured in meters and angles in radians.",
+              "topics": [
+                "BC.9.POLAR_AREA_ONE_CURVE",
+                "BC.9.POLAR_DERIVATIVES",
+                "BC.9.POLAR_COORDINATES",
+                "BC.4.DERIVATIVE_UNITS",
+                "BC.5.EXTREME_VALUE_THEOREM"
+              ],
+              "figureIds": [
+                "bc-fr-polar-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the area of the region in which the sensor detects motion.",
+                  "points": 2,
+                  "answer": "About 20.745 square meters.",
+                  "steps": [
+                    "Every ray from the sensor at an angle θ between 0 and π crosses the region from r = 0 out to r = S(θ), and S(θ) > 0 on [0, π], so the region is swept exactly once as θ runs from 0 to π. The wall is made of the rays θ = 0 and θ = π, so nothing has to be subtracted.",
+                    "Area = (1/2)∫ from 0 to π of (S(θ))^2 dθ = (1/2)∫ from 0 to π of (2 + 4e^(−θ/3) sin θ)^2 dθ ≈ 20.744826, which rounds to 20.745 square meters."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes (1/2)∫ from 0 to π of (S(θ))^2 dθ, with the factor 1/2, the square, and the limits 0 and π."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 20.745. Units are not required in this part."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find S′(2). Using correct units, explain the meaning of S′(2) in the context of the problem. As θ increases through 2, is the edge of the detection region in the direction θ getting closer to the sensor or farther from it? Give a reason for your answer.",
+                  "points": 3,
+                  "answer": "S′(2) ≈ −1.477. When the direction is 2 radians, the detection range is decreasing at about 1.477 meters per radian as the angle increases. The edge is getting closer to the sensor, because S(2) > 0 and S′(2) < 0, so the distance S(θ) is decreasing.",
+                  "steps": [
+                    "S′(θ) = 4e^(−θ/3)(cos θ − (1/3) sin θ), so S′(2) ≈ −1.477093. The calculator's numerical derivative of S at θ = 2 gives the same value.",
+                    "S(θ) is a distance in meters and θ is an angle in radians, so S′(2) is in meters per radian. It is the rate at which the detection range changes with direction at θ = 2.",
+                    "S(2) ≈ 3.867 > 0, so the edge point is at distance S(θ) from the sensor. That distance has a negative rate of change at θ = 2, so it is decreasing: the edge is getting closer to the sensor."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "S′(2) ≈ −1.477."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets S′(2) as the rate of change of the detection range (the distance from the sensor to the edge of the region) with respect to the angle, at θ = 2, decreasing at 1.477 meters per radian. The units meters per radian are required for this point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Closer to the sensor, with a reason that uses both signs: S(2) > 0 and S′(2) < 0. A reason that cites only S′(2) < 0, without either S(2) > 0 or an explicit statement that S(θ) is the (positive) distance from the sensor to the edge, does not earn this point."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the greatest distance from the sensor at which motion is detected. Justify your answer.",
+                  "points": 2,
+                  "answer": "About 4.502 meters, in the direction θ = arctan 3 ≈ 1.249.",
+                  "steps": [
+                    "Along each ray the region runs from the sensor out to the curve, so the farthest detected points lie on the curve, at distance S(θ). Maximize S on [0, π].",
+                    "S′(θ) = 4e^(−θ/3)(cos θ − (1/3) sin θ) = 0 when tan θ = 3. The only solution in (0, π) is θ = arctan 3 ≈ 1.249046; for π/2 ≤ θ < π, cos θ ≤ 0 < sin θ, so S′ < 0 there.",
+                    "Candidates: S(0) = 2, S(π) = 2, and S(arctan 3) ≈ 4.502438. The greatest is 4.502 meters. Equivalently, S′ changes from positive to negative at θ = arctan 3, its only critical angle in the interval, so S has its absolute maximum there."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets S′(θ) = 0 to find θ ≈ 1.249 (or arctan 3) and justifies the maximum: compares S at that angle with S(0) = S(π) = 2, or states that S′ changes from positive to negative there and that it is the only critical angle in (0, π)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 4.502 meters."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the greatest distance from the wall of any point at which the sensor detects motion.",
+                  "points": 2,
+                  "answer": "About 4.417 meters, at θ ≈ 1.453.",
+                  "steps": [
+                    "The distance from the wall is the y-coordinate, and the highest point of the region is on the curve, where y(θ) = S(θ) sin θ.",
+                    "dy/dθ = S′(θ) sin θ + S(θ) cos θ. The calculator finds its only zero in (0, π) at θ ≈ 1.453024, and y(0) = y(π) = 0.",
+                    "y(1.453024) ≈ 4.416533, which rounds to 4.417 meters.",
+                    "This is not the point found in part (c). The farthest point from the sensor, at θ ≈ 1.249, is only about 4.271 meters from the wall, because part of its distance runs parallel to the wall."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses y = S(θ) sin θ and sets dy/dθ = S′(θ) sin θ + S(θ) cos θ = 0, finding θ ≈ 1.453; or maximizes S(θ) sin θ on [0, π] with the calculator, with y(θ) written down."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 4.417 meters. An answer that maximizes S(θ) instead of S(θ) sin θ, such as 4.502, earns neither point."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-polar-fr1"
+            },
+            {
+              "prompt": "The figure shows the polar curves r = f(θ) and r = 3, where f(θ) = 1 + e^(sin θ) for 0 ≤ θ ≤ 2π. The curves intersect at two points. Let R be the region that is inside the graph of r = f(θ) and outside the circle r = 3, shaded in the figure.",
+              "topics": [
+                "BC.9.POLAR_AREA_TWO_CURVES",
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION",
+                "BC.9.POLAR_DERIVATIVES",
+                "BC.9.POLAR_TANGENTS",
+                "BC.9.POLAR_COORDINATES"
+              ],
+              "figureIds": [
+                "bc-fr-polar-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the two values of θ, for 0 ≤ θ ≤ 2π, at which the curves intersect. Then find the area of R.",
+                  "points": 3,
+                  "answer": "θ = α ≈ 0.766 and θ = β ≈ 2.376 (α = arcsin(ln 2) and β = π − α). The area of R is about 2.424.",
+                  "steps": [
+                    "Solve 1 + e^(sin θ) = 3: e^(sin θ) = 2, so sin θ = ln 2. Then α = arcsin(ln 2) ≈ 0.765846 and β = π − α ≈ 2.375746. Store both unrounded.",
+                    "For π < θ < 2π, sin θ < 0, so f(θ) < 2 < 3: there are no other intersections. For α < θ < β, sin θ > ln 2, so f(θ) > 3 and f is the outer curve on every ray through R.",
+                    "Area of R = (1/2)∫ from α to β of ((f(θ))^2 − 3^2) dθ = (1/2)∫ from α to β of ((1 + e^(sin θ))^2 − 9) dθ ≈ 2.423700, which rounds to 2.424."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Intersection angles θ ≈ 0.766 and θ ≈ 2.376 (accepts arcsin(ln 2) and π − arcsin(ln 2))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes (1/2)∫ from α to β of ((f(θ))^2 − 9) dθ with the angles from this part as limits. Accepts the difference of two polar area integrals over the same interval."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 2.424. Accepts a value consistent with the angles found, if those are incorrect."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the area of the region that is inside both curves.",
+                  "points": 3,
+                  "answer": "About 15.834.",
+                  "steps": [
+                    "On each ray from the origin, the region inside both curves ends at whichever curve is nearer. From part (a), the circle is nearer for α ≤ θ ≤ β, and f is nearer for the rest of the turn, β ≤ θ ≤ 2π + α.",
+                    "Area = (1/2)∫ from α to β of 3^2 dθ + (1/2)∫ from β to 2π + α of (f(θ))^2 dθ = (9/2)(β − α) + (1/2)∫ from β to 2π + α of (1 + e^(sin θ))^2 dθ ≈ 15.834348, which rounds to 15.834.",
+                    "A shorter route: the whole region inside r = f(θ) has area (1/2)∫ from 0 to 2π of (f(θ))^2 dθ ≈ 18.258048, and removing R leaves 18.258048 − 2.423700 = 15.834348."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Recognizes that the inner boundary changes at the intersection angles: r = 3 for α ≤ θ ≤ β and r = f(θ) elsewhere; or describes the region as the region inside r = f(θ) with R removed."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A correct expression: (1/2)∫ from 0 to 2π of (f(θ))^2 dθ minus the area of R, or (9/2)(β − α) + (1/2)∫ from β to 2π + α of (f(θ))^2 dθ (accepts that integral written as ∫ from β to 2π plus ∫ from 0 to α)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 15.834. Accepts a value consistent with the area of R and the angles from part (a)."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Let P be the point on the curve r = f(θ) at θ = 2. Find dx/dθ and dy/dθ at P, and find the slope of the line tangent to the curve at P. As θ increases through 2, is P moving to the left or to the right? Give a reason for your answer.",
+                  "points": 3,
+                  "answer": "dx/dθ ≈ −2.737 and dy/dθ ≈ −2.389; the slope is about 0.873. P is moving to the left, because dx/dθ < 0 at θ = 2.",
+                  "steps": [
+                    "On the curve, x = f(θ) cos θ and y = f(θ) sin θ, with f′(θ) = cos θ · e^(sin θ). At θ = 2, f(2) ≈ 3.482578 and f′(2) ≈ −1.033117.",
+                    "dx/dθ = f′(θ) cos θ − f(θ) sin θ ≈ −2.736771 and dy/dθ = f′(θ) sin θ + f(θ) cos θ ≈ −2.388674. Numerical derivatives of f(θ) cos θ and f(θ) sin θ at θ = 2 give the same values.",
+                    "Slope = (dy/dθ)/(dx/dθ) ≈ 0.872808, which rounds to 0.873.",
+                    "dx/dθ < 0 at θ = 2, so x is decreasing as θ increases through 2: P moves to the left."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "dx/dθ ≈ −2.737 and dy/dθ ≈ −2.389, from x = f(θ) cos θ and y = f(θ) sin θ (the calculator may differentiate these numerically)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Slope 0.873, as (dy/dθ)/(dx/dθ). Accepts a slope consistent with the derivatives found."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Left, with the reason that dx/dθ < 0 at θ = 2. A reason based on dr/dθ, on dy/dθ, or on the slope does not earn this point."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-polar-fr2"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "The figure shows the graph of the polar curve r = 2 + 4 cos(2θ) for 0 ≤ θ ≤ 2π. The curve passes through the origin four times and has two small inner loops, one above the x-axis and one below it. The inner loop below the x-axis is traced exactly once as θ runs over an interval a ≤ θ ≤ b, with 0 < a < b < π, on which r ≤ 0.",
+              "topics": [
+                "BC.9.POLAR_TRACING",
+                "BC.9.POLAR_AREA_ONE_CURVE",
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION",
+                "BC.9.POLAR_TANGENTS",
+                "BC.9.POLAR_DERIVATIVES",
+                "BC.9.POLAR_COORDINATES"
+              ],
+              "figureIds": [
+                "bc-fr-polar-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find a and b. Then find the area enclosed by the inner loop below the x-axis.",
+                  "points": 3,
+                  "answer": "a = π/3 and b = 2π/3. The area is 2π − 3√3.",
+                  "steps": [
+                    "r = 0 when cos(2θ) = −1/2. For 0 < θ < π, 0 < 2θ < 2π, so 2θ = 2π/3 or 4π/3, giving θ = π/3 or θ = 2π/3. Between them cos(2θ) < −1/2, so r < 0: a = π/3 and b = 2π/3.",
+                    "Area = (1/2)∫ from π/3 to 2π/3 of (2 + 4 cos(2θ))^2 dθ. Squaring makes the sign of r irrelevant inside the integral; the interval is what selects the loop.",
+                    "(2 + 4 cos(2θ))^2 = 4 + 16 cos(2θ) + 16 cos^2(2θ) = 12 + 16 cos(2θ) + 8 cos(4θ), using cos^2(2θ) = (1 + cos(4θ))/2. Half of it is 6 + 8 cos(2θ) + 4 cos(4θ).",
+                    "An antiderivative is 6θ + 4 sin(2θ) + sin(4θ). At 2π/3: 4π − 2√3 + √3/2. At π/3: 2π + 2√3 − √3/2. The difference is 2π − 3√3 (about 1.087, a positive area as it must be)."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "a = π/3 and b = 2π/3, from solving 2 + 4 cos(2θ) = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes (1/2)∫ from π/3 to 2π/3 of (2 + 4 cos(2θ))^2 dθ and finds an antiderivative of the expanded integrand, using a power-reducing identity for cos^2(2θ)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 2π − 3√3, or an equivalent exact value."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the slope of the line tangent to the curve at the point where θ = π/4.",
+                  "points": 2,
+                  "answer": "3/5",
+                  "steps": [
+                    "dr/dθ = −8 sin(2θ). At θ = π/4, r = 2 + 4 cos(π/2) = 2 and dr/dθ = −8 sin(π/2) = −8.",
+                    "With x = r cos θ and y = r sin θ: dx/dθ = (dr/dθ) cos θ − r sin θ = −8(√2/2) − 2(√2/2) = −5√2, and dy/dθ = (dr/dθ) sin θ + r cos θ = −8(√2/2) + 2(√2/2) = −3√2.",
+                    "Slope = dy/dx = (−3√2)/(−5√2) = 3/5."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "dx/dθ = −5√2 and dy/dθ = −3√2 at θ = π/4, from x = r cos θ and y = r sin θ with r = 2 and dr/dθ = −8 (or equivalent expressions)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Slope 3/5."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find dr/dθ at θ = 5π/12. As θ increases through 5π/12, is the point on the curve moving toward the origin or away from the origin? Give a reason for your answer.",
+                  "points": 2,
+                  "answer": "dr/dθ = −4. The point is moving away from the origin, because r < 0 and dr/dθ < 0 at θ = 5π/12, so |r| is increasing.",
+                  "steps": [
+                    "dr/dθ = −8 sin(2θ). At θ = 5π/12, 2θ = 5π/6, so dr/dθ = −8(1/2) = −4.",
+                    "r(5π/12) = 2 + 4 cos(5π/6) = 2 − 2√3, which is negative because 2√3 > 2.",
+                    "The distance from the origin is |r|. Here r is negative and decreasing, so it is moving farther below 0 and |r| is increasing: the point moves away from the origin."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "dr/dθ = −4 at θ = 5π/12."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Away from the origin, with a reason that uses both signs: r(5π/12) = 2 − 2√3 < 0 and dr/dθ < 0, so |r| is increasing. The answer \"toward, because dr/dθ < 0\" earns nothing here, and \"away\" without the sign of r does not earn this point."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the Cartesian coordinates (x, y) of the point on the inner loop below the x-axis that is farthest from the origin. Justify your answer.",
+                  "points": 2,
+                  "answer": "(0, −2), at θ = π/2.",
+                  "steps": [
+                    "On π/3 ≤ θ ≤ 2π/3, r ≤ 0, so the distance from the origin is |r| = −r = −2 − 4 cos(2θ).",
+                    "For θ in that interval, 2θ runs from 2π/3 to 4π/3, which contains π. The distance is greatest where cos(2θ) is least, cos(2θ) = −1 at θ = π/2, and there it equals 2. At both ends of the interval the distance is 0.",
+                    "At θ = π/2, r = −2. Then x = r cos θ = (−2)(0) = 0 and y = r sin θ = (−2)(1) = −2. The point is (0, −2), which is below the x-axis, as the loop is."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies θ = π/2 with a reason: on [π/3, 2π/3] the distance is |r| = −2 − 4 cos(2θ), greatest where cos(2θ) = −1; or a candidates test on |r| (0 at both ends and 2 at θ = π/2); or d|r|/dθ = 8 sin(2θ) changes sign from positive to negative at θ = π/2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "(0, −2), from x = r cos θ and y = r sin θ with r = −2. The point (0, 2), which ignores the sign of r, does not earn this point."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-polar-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

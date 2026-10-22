@@ -1,0 +1,336 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-accumulation",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Rates and accumulation in context",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A questions permit a graphing calculator; Part B questions do not. Show supporting work and justify requested conclusions; write the setup for every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "bc-fr-accumulation-f1",
+      "alt": "Graph of g(t) for 0 ≤ t ≤ 10 made of line segments joining (0, 2), (2, 10), (6, 10), (8, 2), and (10, 2), on axes labeled t (hours) and g(t).",
+      "caption": "The delivery rate g(t), in tons per hour."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "Show your work and justify requested conclusions. Write integrals, equations, or derivatives supporting numerical calculator results.",
+          "items": [
+            {
+              "prompt": "A mail server places outgoing messages in a queue. For 0 ≤ t ≤ 8, where t is measured in hours, messages join the queue at the rate A(t) = 48 + 20e^(−t/4)√t thousand messages per hour. The server sends queued messages at a constant rate of 58 thousand messages per hour. At time t = 0, the queue holds 15 thousand messages. Let Q(t) be the number of messages in the queue, in thousands, at time t.",
+              "context": true,
+              "topics": [
+                "BC.8.NET_AND_TOTAL_CHANGE",
+                "BC.8.AVERAGE_VALUE",
+                "BC.4.DERIVATIVE_UNITS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the average rate at which messages join the queue over the interval 0 ≤ t ≤ 8. Indicate units of measure.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up the average value (1/8)∫ from 0 to 8 of A(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 61.090, or a value within 0.001, with units of thousand messages per hour."
+                    }
+                  ],
+                  "answer": "About 61.090 thousand messages per hour.",
+                  "steps": [
+                    "The average rate is the average value of A on [0, 8]: (1/8)∫ from 0 to 8 of A(t) dt.",
+                    "The calculator gives ∫ from 0 to 8 of A(t) dt ≈ 488.721660, so the average is 488.721660/8 ≈ 61.090 thousand messages per hour."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find A′(5). Using correct units, explain the meaning of A′(5) in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains A′(5) ≈ −1.922, or a value within 0.001."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that at t = 5 hours the rate at which messages join the queue is decreasing at 1.922 thousand messages per hour per hour (or is changing at −1.922 thousand messages per hour per hour). The units must be thousand messages per hour per hour; a statement about the number of messages in the queue does not earn this point."
+                    }
+                  ],
+                  "answer": "A′(5) ≈ −1.922. At time t = 5 hours, the rate at which messages join the queue is decreasing at 1.922 thousand messages per hour per hour.",
+                  "steps": [
+                    "A calculator derivative gives A′(5) ≈ −1.921933. By hand, A′(t) = 20e^(−t/4)(1/(2√t) − √t/4), and A′(5) = 20e^(−5/4)(1/(2√5) − √5/4) ≈ −1.922.",
+                    "A′ measures how fast the arrival rate A changes, so its units are thousand messages per hour per hour, and the negative sign says the arrival rate is falling at t = 5."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Is the number of messages in the queue increasing or decreasing at time t = 5? Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses Q′(5) = A(5) − 58, or compares A(5) ≈ 60.813 with 58."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes increasing because Q′(5) ≈ 2.813 > 0, or because A(5) > 58. A conclusion drawn from the sign of A′(5) does not earn this point."
+                    }
+                  ],
+                  "answer": "Increasing, because Q′(5) = A(5) − 58 ≈ 2.813 > 0.",
+                  "steps": [
+                    "The queue changes at the rate in minus the rate out: Q′(t) = A(t) − 58.",
+                    "Q′(5) = A(5) − 58 ≈ 60.812884 − 58 ≈ 2.813 thousand messages per hour. This is positive, so the number of messages in the queue is increasing at t = 5.",
+                    "Part (b) does not decide this. The arrival rate is falling at t = 5, but it is still larger than the sending rate."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find Q(8), the number of messages in the queue at time t = 8 hours.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Integrates the net rate A(t) − 58 over [0, 8]."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Adds the initial amount: Q(8) = 15 + ∫ from 0 to 8 of (A(t) − 58) dt, or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 39.722 thousand messages, or a value within 0.001; accepts consistent use of the integral of A from part (a)."
+                    }
+                  ],
+                  "answer": "Q(8) ≈ 39.722 thousand messages.",
+                  "steps": [
+                    "Q(8) = Q(0) + ∫ from 0 to 8 of Q′(t) dt = 15 + ∫ from 0 to 8 of (A(t) − 58) dt.",
+                    "∫ from 0 to 8 of (A(t) − 58) dt ≈ 488.721660 − 464 = 24.721660.",
+                    "Q(8) ≈ 15 + 24.721660 ≈ 39.722 thousand messages."
+                  ]
+                }
+              ],
+              "id": "bc-fr-accumulation-fr1"
+            },
+            {
+              "prompt": "Rooftop solar panels charge a home's battery, and the home draws all of its power from the battery. For 0 ≤ t ≤ 12, where t is measured in hours after 6 a.m., the panels supply power to the battery at the rate S(t) = 5.4e^(−(t − 6)^2/10) kilowatts, and the home draws power from the battery at the rate D(t) = 1.6 + 0.2t kilowatts. At t = 0, the battery stores 4 kilowatt-hours of energy. Let E(t) be the energy, in kilowatt-hours, stored in the battery at time t. No energy enters or leaves the battery in any other way.",
+              "context": true,
+              "topics": [
+                "BC.6.ACCUMULATION",
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.5.CRITICAL_POINTS",
+                "BC.1.INTERMEDIATE_VALUE_THEOREM",
+                "BC.6.DEFINITE_INTEGRAL_NOTATION"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the value of ∫ from 0 to 12 of S(t) dt. Using correct units, explain the meaning of this integral in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 30.046, or a value within 0.001."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains the integral as the total energy, in kilowatt-hours, that the panels supply to the battery from t = 0 to t = 12 (6 a.m. to 6 p.m.). The explanation names the quantity, its units and the time interval."
+                    }
+                  ],
+                  "answer": "About 30.046. The panels supply a total of about 30.046 kilowatt-hours of energy to the battery from 6 a.m. to 6 p.m.",
+                  "steps": [
+                    "The calculator gives ∫ from 0 to 12 of S(t) dt ≈ 30.046296.",
+                    "S is a rate in kilowatts (kilowatt-hours per hour) and t is in hours, so the integral is an amount of energy in kilowatt-hours: the energy the panels deliver over the 12 hours."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the absolute maximum value and the absolute minimum value of E(t) on the interval 0 ≤ t ≤ 12, and the times at which they occur. Justify your answers.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets E′(t) = S(t) − D(t) = 0 and finds both interior candidates, t ≈ 3.004 and t ≈ 8.253."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Absolute maximum about 9.394 kilowatt-hours, or a value within 0.001, at t ≈ 8.253."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Absolute minimum about 0.446 kilowatt-hours, or a value within 0.001, at t = 12."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with a candidates test that evaluates E at both endpoints and both interior candidates; accepts a sign analysis of E′ together with the comparisons E(8.253) > E(0) and E(12) < E(3.004). A response that places the minimum at t ≈ 3.004 does not earn this point or the minimum point."
+                    }
+                  ],
+                  "answer": "The absolute maximum is about 9.394 kilowatt-hours, at t ≈ 8.253. The absolute minimum is about 0.446 kilowatt-hours, at t = 12.",
+                  "steps": [
+                    "E′(t) = S(t) − D(t). On [0, 12] the calculator finds exactly two zeros: t = a ≈ 3.004046 and t = b ≈ 8.252919. E′ < 0 on [0, a), E′ > 0 on (a, b), and E′ < 0 on (b, 12].",
+                    "Candidates: E(0) = 4; E(a) = 4 + ∫ from 0 to a of (S(t) − D(t)) dt ≈ 0.909; E(b) = 4 + ∫ from 0 to b of (S(t) − D(t)) dt ≈ 9.394; E(12) = 4 + ∫ from 0 to 12 of (S(t) − D(t)) dt ≈ 4 + 30.046296 − 33.6 ≈ 0.446.",
+                    "The largest candidate value is E(b) ≈ 9.394, at t ≈ 8.253; the smallest is E(12) ≈ 0.446, at t = 12.",
+                    "The balance time t ≈ 3.004 is only a local minimum. The home keeps drawing more than the panels supply after t ≈ 8.253, and by 6 p.m. the battery, about 0.446 kilowatt-hours, is lower than its morning low of about 0.909 kilowatt-hours at t ≈ 3.004."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "A low-battery alert sounds at the time T, with 9 ≤ T ≤ 12, when the stored energy falls to 2 kilowatt-hours. Explain why there is exactly one time in the interval 9 ≤ t ≤ 12 at which E(t) = 2. Then write an equation involving an integral expression whose solution is T, and find T.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Explains existence and uniqueness: E is continuous with E(9) ≈ 8.937 > 2 > E(12) ≈ 0.446, so E(t) = 2 somewhere in (9, 12) by the Intermediate Value Theorem; and E′(t) = S(t) − D(t) < 0 on [9, 12], so E is strictly decreasing there and takes the value 2 only once."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes 4 + ∫ from 0 to T of (S(t) − D(t)) dt = 2, or an equivalent equation such as E(9) + ∫ from 9 to T of (S(t) − D(t)) dt = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains T ≈ 11.588, or a value within 0.001."
+                    }
+                  ],
+                  "answer": "Exactly one time, because E is continuous, decreasing on [9, 12], and falls from about 8.937 to about 0.446 there. T satisfies 4 + ∫ from 0 to T of (S(t) − D(t)) dt = 2, and T ≈ 11.588 hours (about 5:35 p.m.).",
+                  "steps": [
+                    "E(9) = 4 + ∫ from 0 to 9 of (S(t) − D(t)) dt ≈ 8.937, and E(12) ≈ 0.446 from part (b). E is continuous because it is an integral of a continuous rate, so by the Intermediate Value Theorem E takes the value 2 at some time in (9, 12).",
+                    "Since 9 > b ≈ 8.253, part (b) gives E′(t) = S(t) − D(t) < 0 on [9, 12]. E is strictly decreasing there, so it equals 2 only once.",
+                    "T solves 4 + ∫ from 0 to T of (S(t) − D(t)) dt = 2. A calculator solver started in [9, 12] gives T ≈ 11.587779, so T ≈ 11.588 hours.",
+                    "The same equation is also true at t ≈ 1.444 and t ≈ 4.345, when the battery passes 2 kilowatt-hours in the morning. The interval 9 ≤ t ≤ 12 picks out the time of the afternoon alert, which is why the solver must be started there. The alert does not change E, so the model holds on all of [0, 12]."
+                  ]
+                }
+              ],
+              "id": "bc-fr-accumulation-fr2"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "Trucks deliver grain to a storage silo. For 0 ≤ t ≤ 10, where t is measured in hours, grain is delivered at the rate g(t) tons per hour, where g is the continuous piecewise-linear function shown. Its graph joins the points (0, 2), (2, 10), (6, 10), (8, 2), and (10, 2) with line segments. Conveyor 1 removes grain from the silo at a constant rate of 6 tons per hour for 0 ≤ t ≤ 10. Beginning at t = 4, conveyor 2 also removes grain, at a constant rate of 5 tons per hour, for 4 < t ≤ 10. At t = 0, the silo holds 30 tons of grain. Let S(t) be the amount of grain, in tons, in the silo at time t.",
+              "context": true,
+              "figureIds": [
+                "bc-fr-accumulation-f1"
+              ],
+              "topics": [
+                "BC.6.ACCUMULATION_FUNCTIONS",
+                "BC.8.AVERAGE_VALUE",
+                "BC.5.CRITICAL_POINTS",
+                "BC.5.FIRST_DERIVATIVE_TEST",
+                "BC.6.DEFINITE_INTEGRAL_NOTATION"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the average rate at which grain is delivered to the silo over the interval 0 ≤ t ≤ 10. Indicate units of measure.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up (1/10)∫ from 0 to 10 of g(t) dt and evaluates the integral as 68 from areas under the graph."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 6.8 tons per hour, with units."
+                    }
+                  ],
+                  "answer": "6.8 tons per hour.",
+                  "steps": [
+                    "The average rate is (1/10)∫ from 0 to 10 of g(t) dt.",
+                    "Areas under the graph: the trapezoid on [0, 2] gives (2 + 10)/2 · 2 = 12; the rectangle on [2, 6] gives 40; the trapezoid on [6, 8] gives 12; the rectangle on [8, 10] gives 4. The total is 68 tons.",
+                    "The average rate is 68/10 = 6.8 tons per hour."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find S(6), the amount of grain in the silo at time t = 6 hours.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes S(6) as 30 + ∫ from 0 to 6 of g(t) dt minus the grain removed, counting conveyor 2 only for 4 < t ≤ 6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 36 tons."
+                    }
+                  ],
+                  "answer": "S(6) = 36 tons.",
+                  "steps": [
+                    "S(6) = 30 + ∫ from 0 to 6 of g(t) dt − (grain removed from t = 0 to t = 6).",
+                    "∫ from 0 to 6 of g(t) dt = 12 + 40 = 52. Conveyor 1 removes 6 · 6 = 36 tons, and conveyor 2 removes 5 · 2 = 10 tons.",
+                    "S(6) = 30 + 52 − 46 = 36 tons."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "At what time t, for 0 ≤ t ≤ 10, does the silo hold the most grain? Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States the net rate on each side of t = 4: S′(t) = g(t) − 6 for 0 < t < 4 and S′(t) = g(t) − 11 for 4 < t < 10, or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers t = 4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with a candidates test, S(0) = 30, S(1) = 28, S(4) = 38, S(10) = 8, or with a sign argument: S increases on [1, 4], decreases on [4, 10], and S(4) > S(0). Accepts either method."
+                    }
+                  ],
+                  "answer": "At t = 4 hours, when the silo holds 38 tons.",
+                  "steps": [
+                    "For 0 < t < 4, S′(t) = g(t) − 6; for 4 < t < 10, S′(t) = g(t) − 11. S′ does not exist at t = 4, where the removal rate jumps.",
+                    "g(1) = 6. On (0, 1), g(t) < 6, so S′ < 0. On (1, 4), g(t) > 6, so S′ > 0. On (4, 10), g(t) ≤ 10 < 11, so S′ < 0.",
+                    "Candidates are the endpoints, t = 1 (where S′ = 0) and t = 4 (where S′ does not exist). S(0) = 30; S(1) = 30 − 2 = 28; S(4) = 30 + (12 + 20) − 24 = 38; S(10) = 38 + 36 − 66 = 8.",
+                    "The greatest value is S(4) = 38 tons. The rates never balance at t = 4. The net rate changes sign there because the removal rate jumps from 6 to 11 tons per hour."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the time t at which the silo holds 20 tons of grain. Show the work that leads to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes an equation for the time after locating it in (8, 10], such as 26 + ∫ from 8 to t of (2 − 11) dx = 20, or 30 + ∫ from 0 to t of g(x) dx − 6t − 5(t − 4) = 20 with the integral evaluated on that interval; accepts consistent use of S(6) from part (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains t = 26/3 hours."
+                    }
+                  ],
+                  "answer": "t = 26/3 hours (8 hours 40 minutes).",
+                  "steps": [
+                    "S(t) ≥ 28 on [0, 4], and S decreases on [4, 10] from 38 to 8, so S equals 20 exactly once, after t = 4.",
+                    "S(6) = 36 from part (b), and S(8) = 36 + 12 − 2 · 11 = 26. So the time lies in (8, 10], where g(t) = 2 and S′(t) = 2 − 11 = −9.",
+                    "Solve 26 − 9(t − 8) = 20: t − 8 = 2/3, so t = 26/3 hours."
+                  ]
+                }
+              ],
+              "id": "bc-fr-accumulation-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,29 @@
 # Roadmap
 
+## Calculus BC exam preparation — 2026-10-22
+
+The Course for AP® Calculus BC gains an exam-preparation layer at
+`ap.html#calculus-bc/prep`:
+
+- three more full practice exams in the May 2027 format;
+- six interleaved mixed sets;
+- a free-response workshop of eleven archetypes, each with a guide and a
+  three-question set;
+- retrieval-first unit reviews;
+- five strategy guides;
+- review plans spaced by the evidence on retrieval, spacing and interleaving.
+
+The 36-week coursework was blind-solved in full, and its teaching gaps were
+repaired: 35 new worked examples and 132 new figures. The
+[review record](reviews/2026-10-22-bc-exam-prep.md) gives the verification
+and its limits.
+
+Next:
+
+- Mirror the week 1–2 teaching fixes into Calculus AB, which shares that text.
+- Decide whether the other AP courses should get a `prep` block.
+- Calibrate timing and difficulty against consented student results.
+
 ## SAT Math learning loop — 2026-10-16
 
 A student's retake after the September repairs still placed SAT Math in the

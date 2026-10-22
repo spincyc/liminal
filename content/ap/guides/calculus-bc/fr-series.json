@@ -1,0 +1,473 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-series",
+  "kind": "fr-archetype",
+  "title": "Taylor polynomials and power series",
+  "author": "bc-workshop-author",
+  "summary": "How the series question on the AP® Calculus BC Exam is usually built, and how to earn each kind of point on it: Taylor polynomials from derivative values or from known series, the general term, reading derivatives from coefficients, the interval of convergence with both endpoints tested, absolute and conditional convergence, the Lagrange and alternating-series error bounds, and series used for a limit or an integral. It gives the rules with their hypotheses, model sentences that earn justification points, the traps that cost strong students points, two worked models on fresh series, and three checks to try before the timed practice set.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "bc-fr-series-g1",
+      "alt": "Graph of the partial sums S_n of an alternating series for n from 1 to 8, plotted as dots joined by a dashed zigzag, with a dashed horizontal line at the sum S. The dots alternate above and below the line and close in on it. At n = 4 a short bracket marks the vertical gap between S_4 and S, labeled gap ≤ a_5.",
+      "caption": "Partial sums of Σ from n = 1 to infinity of (−1)^(n−1)/n^2 alternate around the sum S, and each gap is at most the next term."
+    },
+    {
+      "id": "bc-fr-series-g2",
+      "alt": "Number line from −2 to 1 in steps of 1/2. A thick segment runs from −1 to 0 with open circles at both ends, each marked with a question mark. A filled dot at −1/2 is labeled center.",
+      "caption": "What the ratio test decides in the worked model: the open interval centered at −1/2 with radius 1/2. Each endpoint needs its own test."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The series question appears only on the BC exam, like the parametric, vector and polar questions, and it is the one built entirely on Unit 10. It is almost always in the no-calculator part, and Liminal's practice exams put it last in Section II. That placement matters: you meet it tired and short of time, so the routines below need to be automatic."
+        },
+        {
+          "type": "text",
+          "text": "The question gives a function in one of a few forms: a table of derivative values at a point, a formula for the nth derivative, a power series written with Σ, or a function built from a known series (substituted, multiplied, differentiated or integrated). It then asks you to build a Taylor polynomial or series, find where a series converges, bound an error, or use the series to answer a calculus question such as a limit, an integral, or a derivative at the center."
+        },
+        {
+          "type": "text",
+          "text": "It combines with other archetypes. A Taylor polynomial may approximate the solution of a differential equation, with the derivatives found by differentiating the equation. A function may be defined by an integral, so the Fundamental Theorem gives its derivative. A function may be given by a graph or a table in context, so units and interpretation enter. In every version, Liminal’s rubrics reward the same things: correct coefficients, a named test with its conditions checked, and a bound connected to the conclusion it supports."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Typical parts of a nine-point series question (Liminal's synthesis; any one question uses three or four of these). Points are Liminal’s practice weights.",
+          "head": [
+            "Part",
+            "What you do",
+            "Points usually at stake",
+            "What earns them"
+          ],
+          "rows": [
+            [
+              "Taylor polynomial from values",
+              "Write P_n(x) from f(a), f′(a), f″(a), … or from a formula for f^(n)(a)",
+              "1–2",
+              "Each coefficient f^(k)(a)/k!, powers of (x − a), the right number of terms"
+            ],
+            [
+              "Series from a known series",
+              "Substitute, multiply, differentiate or integrate a series you know",
+              "1–2",
+              "The first few nonzero terms and a general term that matches them"
+            ],
+            [
+              "Derivative at the center",
+              "Read f^(k)(a) from a coefficient",
+              "1",
+              "f^(k)(a) = k!·c_k, with the right k found from the general term"
+            ],
+            [
+              "Interval of convergence",
+              "Ratio test for the radius, then each endpoint",
+              "3–5",
+              "The ratio limit, the open interval, a named test at each endpoint, the final interval"
+            ],
+            [
+              "Absolute or conditional",
+              "Classify a series or an endpoint",
+              "1–2",
+              "Convergence of the series itself and of its absolute values, each with a test"
+            ],
+            [
+              "Lagrange error bound",
+              "Bound |f(x) − P_n(x)|, often to show a value is impossible or a sign is certain",
+              "1–3",
+              "The maximum of |f^(n+1)| on the interval, the power n + 1, n + 1 factorial, and the conclusion"
+            ],
+            [
+              "Alternating-series error bound",
+              "Bound the error of a partial sum, or say over or under",
+              "1–2",
+              "The three hypotheses, the first omitted term, and its sign for over or under"
+            ],
+            [
+              "Series for a limit or an integral",
+              "Substitute the series and simplify, or integrate term by term",
+              "1–2",
+              "The series written out far enough to show the surviving term"
+            ],
+            [
+              "Term-by-term derivative or integral",
+              "New series and its interval",
+              "1–3",
+              "Same radius stated with a reason; endpoints tested again"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics give separate points for setup, answer and justification. On a series question the justification points are the largest share, and they go to work you can see: a named test, its conditions checked for this series, and a sentence that connects the result to the question."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points: the ratio |a_(n+1)/a_n| written out, the Lagrange expression with its maximum and factorial, the series substituted into a limit. Write the setup even when the answer is obvious to you.",
+            "Answer points: the polynomial, the interval, the value of a derivative, the limit. On a no-calculator question an answer with no supporting work earns little.",
+            "Justification points: name the test and check each of its conditions for this series. \"Converges by the alternating series test\" with no check of decreasing terms and limit 0 usually earns nothing.",
+            "Consistency: a later part that correctly uses your earlier wrong series can still earn its points. Finish every part with whatever you have.",
+            "Units appear only when the question has a context: a Taylor approximation of a rate carries the rate's units."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Taylor coefficients",
+          "text": "The Taylor series of f about x = a is Σ from n = 0 to infinity of c_n(x − a)^n with c_n = f^(n)(a)/n!. Read in reverse, f^(n)(a) = n!·c_n. The degree-n Taylor polynomial P_n(x) is the sum of the terms through (x − a)^n.",
+          "conditions": [
+            "The series must be centered at the same a as the derivative you want.",
+            "Any power series that equals f near a is its Taylor series, so a series built from a known one gives the derivatives too.",
+            "\"Degree n\" counts powers, not nonzero terms. If a coefficient is 0, the polynomial of degree n may have fewer than n + 1 terms."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Series to know, with where they converge.",
+          "head": [
+            "Function",
+            "Series",
+            "General term",
+            "Converges for"
+          ],
+          "rows": [
+            [
+              "1/(1 − x)",
+              "1 + x + x^2 + x^3 + ⋯",
+              "x^n",
+              "−1 < x < 1"
+            ],
+            [
+              "e^x",
+              "1 + x + x^2/2! + x^3/3! + ⋯",
+              "x^n/n!",
+              "all x"
+            ],
+            [
+              "sin x",
+              "x − x^3/3! + x^5/5! − ⋯",
+              "(−1)^n x^(2n+1)/(2n + 1)!",
+              "all x"
+            ],
+            [
+              "cos x",
+              "1 − x^2/2! + x^4/4! − ⋯",
+              "(−1)^n x^(2n)/(2n)!",
+              "all x"
+            ],
+            [
+              "ln(1 + x)",
+              "x − x^2/2 + x^3/3 − ⋯",
+              "(−1)^(n+1) x^n/n, n ≥ 1",
+              "−1 < x ≤ 1"
+            ],
+            [
+              "arctan x",
+              "x − x^3/3 + x^5/5 − ⋯",
+              "(−1)^n x^(2n+1)/(2n + 1)",
+              "−1 ≤ x ≤ 1"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Ratio test and the radius of convergence",
+          "text": "If lim as n→∞ of |a_(n+1)/a_n| = L, the series Σ a_n converges absolutely when L < 1 and diverges when L > 1. For a power series, L depends on x; solving L < 1 gives the open interval of convergence, and its half-width is the radius.",
+          "conditions": [
+            "When L = 1 the test decides nothing. That always happens at the endpoints of a power series, so each endpoint needs another test.",
+            "Write the ratio with absolute values and simplify before taking the limit.",
+            "The test fails for series whose ratio has no limit; on this exam that is rare."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Endpoint tests",
+          "text": "At an endpoint the series has no x left. Choose the test from its shape: the nth term test when the terms do not approach 0; a p-series Σ 1/n^p (converges exactly when p > 1); direct or limit comparison with a p-series or a geometric series; the alternating series test for alternating terms.",
+          "conditions": [
+            "The nth term test can only show divergence. Terms that approach 0 prove nothing by themselves.",
+            "Direct comparison needs the inequality in the useful direction: bigger than a divergent series, or smaller than a convergent one, with nonnegative terms.",
+            "Limit comparison needs positive terms and a finite, positive limit."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Alternating series test and its error bound",
+          "text": "If the terms alternate in sign, their absolute values decrease, and the absolute values approach 0, the series converges. The sum then lies between any two consecutive partial sums, so the error after stopping is at most the absolute value of the first omitted term and has that term's sign.",
+          "conditions": [
+            "All three conditions must be stated for the particular series.",
+            "Decreasing from some index on is enough for convergence; for the error bound, the terms must decrease from the omitted term on.",
+            "The bound does not apply to a series that is not alternating, such as the series for e^x at a positive x. Use the Lagrange bound there."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "bc-fr-series-g1"
+        },
+        {
+          "type": "rule",
+          "title": "Lagrange error bound",
+          "text": "If |f^(n+1)(t)| ≤ M for every t between a and x, then |f(x) − P_n(x)| ≤ M|x − a|^(n+1)/(n + 1)!.",
+          "conditions": [
+            "M bounds the next derivative, the (n + 1)st, on the whole interval from a to x, not only at a.",
+            "The bound gives an interval P_n(x) − bound ≤ f(x) ≤ P_n(x) + bound. Most questions want you to use one side of it.",
+            "P_n′, the derivative of P_n, is the degree-(n − 1) Taylor polynomial for f′. Its bound uses the nth derivative of f′, which is f^(n+1): if |f^(n+1)(t)| ≤ M between a and x, then |f′(x) − P_n′(x)| ≤ M|x − a|^n/n!. Count carefully."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Absolute and conditional convergence",
+          "text": "Σ a_n converges absolutely when Σ |a_n| converges, and then Σ a_n converges too. It converges conditionally when Σ a_n converges but Σ |a_n| diverges.",
+          "conditions": [
+            "Conditional convergence needs two facts: a test for the series itself (usually the alternating series test) and a test showing the absolute series diverges.",
+            "If the absolute series converges, you do not need the alternating series test at all."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Term-by-term differentiation and integration",
+          "text": "Inside its interval of convergence, a power series can be differentiated or integrated term by term. The new series has the same radius of convergence.",
+          "conditions": [
+            "The endpoints can change: differentiating can lose an endpoint and integrating can gain one, so test them again.",
+            "Integrating term by term from a to x gives a series with no constant term at x = a; an indefinite integral needs its constant from a known value."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Finding the open interval with the ratio test",
+          "text": "By the ratio test, the series converges absolutely when |x − 1|/4 < 1, that is, for −3 < x < 5, and diverges when |x − 1| > 4. At x = −3 and x = 5 the ratio limit is 1, so I test those endpoints separately."
+        },
+        {
+          "type": "model",
+          "prompt": "Divergence at an endpoint by comparison",
+          "text": "At x = 5 the series is Σ from n = 1 to infinity of 1/(2n + 1). For n ≥ 1, 1/(2n + 1) ≥ 1/(3n), and Σ 1/(3n) is one third of the divergent harmonic series. So the series diverges at x = 5 by the direct comparison test."
+        },
+        {
+          "type": "model",
+          "prompt": "Convergence by the alternating series test",
+          "text": "At x = −3 the series is Σ from n = 1 to infinity of (−1)^n/(2n + 1). The terms alternate in sign, 1/(2n + 1) decreases, and lim as n→∞ of 1/(2n + 1) = 0. So the series converges at x = −3 by the alternating series test."
+        },
+        {
+          "type": "model",
+          "prompt": "Classifying the convergence as conditional",
+          "text": "The series converges at x = −3 by the alternating series test, but the series of absolute values, Σ 1/(2n + 1), is the series that diverges at x = 5. So the series converges conditionally at x = −3."
+        },
+        {
+          "type": "model",
+          "prompt": "A Lagrange bound used for a conclusion",
+          "text": "P_3 is centered at x = 1. Since |f^(4)(x)| ≤ 5 for 1 ≤ x ≤ 1.2, |f(1.2) − P_3(1.2)| ≤ 5(0.2)^4/4! = 1/3000. Since 1/3000 < 0.001, P_3(1.2) approximates f(1.2) with error less than 0.001."
+        },
+        {
+          "type": "model",
+          "prompt": "An alternating-series bound with over or under",
+          "text": "The series for sin(0.4) alternates, its terms decrease in absolute value, and they approach 0. So the error in 0.4 − (0.4)^3/3! + (0.4)^5/5! is at most the first omitted term, (0.4)^7/7! < 0.000001. That omitted term is negative, so the three-term approximation is greater than sin(0.4)."
+        },
+        {
+          "type": "model",
+          "prompt": "A derivative at the center from a coefficient",
+          "text": "The coefficient of (x − 3)^4 in the Taylor series for h about x = 3 is h^(4)(3)/4!, which equals −5/8. So h^(4)(3) = 4!·(−5/8) = −15."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Leaving out the factorials: writing f″(a)(x − a)^2 instead of (f″(a)/2!)(x − a)^2.",
+          "fix": "Write every coefficient as f^(k)(a)/k! before simplifying. The first two terms hide the error because 0! = 1! = 1; the mistake shows from the quadratic term on."
+        },
+        {
+          "type": "trap",
+          "text": "Reading the radius from a series in (2x + 1)^n or (3x − 6)^n as if the coefficient of x were 1.",
+          "fix": "Solve the ratio condition for x. |2x + 1| < 1 means |x + 1/2| < 1/2, so the radius is 1/2 and the center is −1/2."
+        },
+        {
+          "type": "trap",
+          "text": "Stopping at the ratio test, or saying \"the ratio test fails, so the series diverges\" at an endpoint.",
+          "fix": "A ratio limit of 1 decides nothing. Plug each endpoint into the series, write the resulting numerical series, and test it with a named test."
+        },
+        {
+          "type": "trap",
+          "text": "Concluding convergence because the terms approach 0.",
+          "fix": "The nth term test only proves divergence. Σ 1/n has terms approaching 0 and diverges. Use a p-series, comparison or alternating series test to prove convergence."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a series conditionally convergent because it alternates, without testing the absolute series.",
+          "fix": "Conditional means the series converges and the absolute series diverges. Show both, each with a test; if the absolute series converges, the answer is absolute."
+        },
+        {
+          "type": "trap",
+          "text": "Using the value of f^(n+1) at the center, or the wrong power, in the Lagrange bound.",
+          "fix": "Use the largest |f^(n+1)| on the whole interval from a to x, the power n + 1, and (n + 1)!. For a degree-3 polynomial that is the fourth derivative, the fourth power and 4!."
+        },
+        {
+          "type": "trap",
+          "text": "Using the alternating-series bound for a series that does not alternate, such as a Taylor polynomial built from derivative values of mixed sign.",
+          "fix": "Use the alternating-series bound only when you know the general term of the whole series and can check that every term from the first omitted one on alternates in sign, decreases in absolute value, and approaches 0. A Taylor polynomial built from a few derivative values says nothing about the later terms, so use the Lagrange bound there."
+        },
+        {
+          "type": "trap",
+          "text": "Reading f^(k)(a) as the coefficient, or matching the wrong index: in Σ (−1)^n x^(3n+2)/(3n + 2), the x^8 term is not the n = 8 term.",
+          "fix": "Find the n that gives the power you want (3n + 2 = 8, so n = 2), take that coefficient, and multiply by k!. If no n gives the power, the coefficient and the derivative are 0."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming a differentiated or integrated series converges at the same endpoints.",
+          "fix": "State that the radius is unchanged, then test both endpoints again. Differentiating multiplies the terms by n, which can turn a conditionally convergent endpoint into a divergent one."
+        },
+        {
+          "type": "trap",
+          "text": "False equalities such as \"f(1.2) = P_3(1.2)\" or \"sin x = x − x^3/6\".",
+          "fix": "Use ≈ for an approximation and = only for an identity or the full series. A false equality can cost an otherwise correct answer point."
+        },
+        {
+          "type": "trap",
+          "text": "A general term that does not match the terms written before it.",
+          "fix": "Substitute the first index or two into your general term and compare. Starting at n = 0 or n = 1 changes the exponents and the sign."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked models",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Find the radius and the interval of convergence of Σ from n = 1 to infinity of (2x + 1)^n/(n^2 + 1). At each endpoint, say whether the series converges absolutely, converges conditionally, or diverges.",
+          "answer": "Radius 1/2. The interval of convergence is −1 ≤ x ≤ 0, and the series converges absolutely at both endpoints.",
+          "steps": [
+            "Setup (a point on its own): |a_(n+1)/a_n| = |2x + 1|^(n+1)/((n + 1)^2 + 1)·(n^2 + 1)/|2x + 1|^n = ((n^2 + 1)/((n + 1)^2 + 1))·|2x + 1|.",
+            "The fraction approaches 1, so the limit is |2x + 1|. The series converges absolutely when |2x + 1| < 1, that is, −1 < 2x + 1 < 1, or −1 < x < 0. It diverges when |2x + 1| > 1.",
+            "Radius: the interval has length 1 and center −1/2, so the radius is 1/2, not 1.",
+            "x = 0: 2x + 1 = 1, so the series is Σ 1/(n^2 + 1). Since 0 < 1/(n^2 + 1) < 1/n^2 and Σ 1/n^2 is a convergent p-series (p = 2 > 1), the series converges by direct comparison. Its terms are positive, so the convergence is absolute.",
+            "x = −1: 2x + 1 = −1, so the series is Σ (−1)^n/(n^2 + 1). Its absolute values form the series at x = 0, which converges, so it converges absolutely. No alternating series test is needed.",
+            "Interval: −1 ≤ x ≤ 0, both endpoints included."
+          ],
+          "figureIds": [
+            "bc-fr-series-g2"
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "The Taylor series for a function h about x = 2 is Σ from n = 0 to infinity of (−1)^n (n + 1)(x − 2)^n/3^n, and it converges to h(x) for |x − 2| < 3. Find h″(2) and h^(5)(2). Is the graph of h increasing or decreasing at x = 2, and is it concave up or concave down there? Then find h(x) in closed form by differentiating a geometric series.",
+          "answer": "h″(2) = 2/3 and h^(5)(2) = −80/27. The graph is decreasing and concave up at x = 2. h(x) = 9/(x + 1)^2 for −1 < x < 5.",
+          "steps": [
+            "The coefficients are c_n = (−1)^n (n + 1)/3^n: c_0 = 1, c_1 = −2/3, c_2 = 3/9 = 1/3, c_5 = −6/243 = −2/81.",
+            "Derivatives at the center: h′(2) = 1!·c_1 = −2/3, h″(2) = 2!·c_2 = 2/3, and h^(5)(2) = 5!·c_5 = 120(−2/81) = −80/27.",
+            "h′(2) = −2/3 < 0, so h is decreasing at x = 2. h″(2) = 2/3 > 0, so the graph of h is concave up at x = 2.",
+            "Closed form: for |u| < 1, 1/(1 − u) = Σ u^n. Differentiating gives 1/(1 − u)^2 = Σ from n = 0 to infinity of (n + 1)u^n, with the same radius.",
+            "Substitute u = −(x − 2)/3, which satisfies |u| < 1 exactly when |x − 2| < 3: h(x) = 1/(1 + (x − 2)/3)^2 = 9/(x + 1)^2.",
+            "Check: 9/(x + 1)^2 at x = 2 is 9/9 = 1 = c_0, and its derivative −18/(x + 1)^3 at x = 2 is −18/27 = −2/3 = c_1."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "check",
+          "id": "bc-fr-series-c1",
+          "prompt": "Does Σ from n = 1 to infinity of (−1)^(n+1) n/(n^2 + 4) converge absolutely, converge conditionally, or diverge? Justify your answer.",
+          "hint": "Write out the first three terms in absolute value before you claim they decrease.",
+          "answer": "It converges conditionally.",
+          "steps": [
+            "Absolute values: n/(n^2 + 4) gives 1/5, 2/8, 3/13, 4/20, …. These rise from n = 1 to n = 2, then fall.",
+            "For t ≥ 2, the function t/(t^2 + 4) has derivative (4 − t^2)/(t^2 + 4)^2 ≤ 0, so the terms decrease from n = 2 on. They approach 0. The series alternates, so it converges by the alternating series test applied from n = 2; dropping the first term does not change convergence.",
+            "Absolute series: (n/(n^2 + 4))/(1/n) = n^2/(n^2 + 4) → 1, a finite positive limit. Σ 1/n diverges, so Σ n/(n^2 + 4) diverges by limit comparison.",
+            "The series converges but not absolutely, so it converges conditionally."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-series-c2",
+          "prompt": "A function g has derivatives of all orders, and |g^(5)(x)| ≤ 12 for 1 ≤ x ≤ 1.5. P_4 is the fourth-degree Taylor polynomial for g about x = 1. Could g(1.5) equal P_4(1.5) + 0.004? Justify your answer.",
+          "hint": "Which derivative, which power and which factorial does a degree-4 polynomial's bound use?",
+          "answer": "No. |g(1.5) − P_4(1.5)| ≤ 1/320 = 0.003125, which is less than 0.004.",
+          "steps": [
+            "Lagrange: |g(1.5) − P_4(1.5)| ≤ (max of |g^(5)(x)| on [1, 1.5])·(0.5)^5/5! ≤ 12(1/32)/120 = 1/320.",
+            "1/320 = 0.003125 < 0.004, so g(1.5) cannot differ from P_4(1.5) by 0.004."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-fr-series-c3",
+          "prompt": "Use a series to find lim as x→0 of (1 − cos(2x) − 2x^2)/x^4.",
+          "hint": "Substitute 2x into the series for cos x and keep terms through x^4.",
+          "answer": "−2/3",
+          "steps": [
+            "cos(2x) = 1 − (2x)^2/2! + (2x)^4/4! − (2x)^6/6! + ⋯ = 1 − 2x^2 + (2/3)x^4 − (4/45)x^6 + ⋯.",
+            "1 − cos(2x) − 2x^2 = −(2/3)x^4 + (4/45)x^6 − ⋯.",
+            "Divide by x^4: −2/3 + (4/45)x^2 − ⋯, which approaches −2/3 as x→0."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "links",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-series"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-series"
+            },
+            {
+              "label": "Unit 10 review: infinite sequences and series",
+              "ref": "guide:review-u10"
+            },
+            {
+              "label": "Week 28: alternating series, absolute convergence, ratio test",
+              "ref": "week:28"
+            },
+            {
+              "label": "Week 29: Taylor polynomials and error bounds",
+              "ref": "week:29"
+            },
+            {
+              "label": "Week 30: power series, endpoints, and series operations",
+              "ref": "week:30"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-parametric-vector",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Parametric and vector motion",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A questions permit a graphing calculator; Part B questions do not. Show supporting work and justify requested conclusions; write the setup for every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "bc-fr-parametric-vector-f1",
+      "alt": "A path in the xy-plane drawn for 0 ≤ t ≤ 4 on axes with x from −1 to 4 and y from 0 to 2.5. It starts at the point (3, 1), labeled t = 0, loops up and to the left in a wide arc, swings around close to the y-axis, and then runs back to the right to an endpoint labeled t = 4 near (2, 1.5). Arrowheads along the path show the direction of motion."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "Show your work and justify requested conclusions. Write integrals, equations, or derivatives supporting numerical calculator results.",
+          "items": [
+            {
+              "context": true,
+              "prompt": "A kestrel hunting over a field leaves its perch on top of a 12-meter pole at time t = 0 and flies in a vertical plane for 0 ≤ t ≤ 10, where t is measured in seconds. Its position is (x(t), y(t)), where x(t) is its horizontal distance from the pole and y(t) is its height above the ground, both in meters. The components of its velocity, in meters per second, are x′(t) = 14e^(−0.02t^2) − 4 and y′(t) = 1.2 − 0.05t^2, and (x(0), y(0)) = (0, 12).",
+              "topics": [
+                "BC.9.PLANAR_MOTION",
+                "BC.9.SPEED_AND_DISTANCE",
+                "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the speed of the kestrel at time t = 7. At that time, is the kestrel moving toward the pole or away from it, and is it rising or descending? Give a reason for each answer.",
+                  "points": 2,
+                  "answer": "The speed is about 1.771 m/s. The kestrel is moving away from the pole, because x′(7) ≈ 1.254 > 0, and it is descending, because y′(7) = −1.25 < 0.",
+                  "steps": [
+                    "x′(7) = 14e^(−0.98) − 4 ≈ 1.254355384 and y′(7) = 1.2 − 0.05(49) = −1.25.",
+                    "Speed = √((x′(7))^2 + (y′(7))^2) ≈ √(1.573407 + 1.5625) ≈ 1.770849 m/s.",
+                    "x(t) is a distance, so x′(7) > 0 means the distance from the pole is increasing: the kestrel is moving away from the pole.",
+                    "y′(7) < 0 means its height is decreasing: it is descending."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes speed as √((x′(7))^2 + (y′(7))^2), or an equivalent expression, and obtains 1.771 m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes away from the pole and descending, each tied to the sign of its own component: x′(7) > 0 and y′(7) < 0. Both directions with both reasons are needed for the point."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the acceleration vector of the kestrel at time t = 7. Is the speed of the kestrel increasing or decreasing at t = 7? Give a reason for your answer.",
+                  "points": 3,
+                  "answer": "a(7) ≈ ⟨−1.471, −0.700⟩ m/s^2. The speed is decreasing at t = 7, because v(7) · a(7) = x′(7)x″(7) + y′(7)y″(7) ≈ −0.970 < 0.",
+                  "steps": [
+                    "x″(t) = −0.56te^(−0.02t^2), so x″(7) ≈ −1.471219507 (or by the calculator's numerical derivative of x′ at t = 7).",
+                    "y″(t) = −0.1t, so y″(7) = −0.7.",
+                    "v(7) · a(7) = (1.254355)(−1.471220) + (−1.25)(−0.7) ≈ −1.845432 + 0.875 = −0.970432.",
+                    "The derivative of speed is (v · a)/|v| ≈ −0.970432/1.770849 ≈ −0.548 < 0, and the speed is not zero, so the speed is decreasing.",
+                    "Comparing components alone does not decide it here: |x′| is decreasing (x′ > 0, x″ < 0) while |y′| is increasing (y′ < 0, y″ < 0)."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Gives both acceleration components at t = 7: ⟨−1.471, −0.700⟩."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes x′(7)x″(7) + y′(7)y″(7) ≈ −0.970 or the derivative of speed at t = 7 ≈ −0.548 (accepts a calculator derivative of the speed function)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the speed is decreasing because that quantity is negative. A conclusion from the signs of the components alone does not earn this point."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the position of the kestrel at time t = 10.",
+                  "points": 2,
+                  "answer": "(x(10), y(10)) ≈ (43.740, 7.333), in meters.",
+                  "steps": [
+                    "x(10) = 0 + ∫ from 0 to 10 of (14e^(−0.02t^2) − 4) dt ≈ 43.740160933.",
+                    "y(10) = 12 + ∫ from 0 to 10 of (1.2 − 0.05t^2) dt = 12 + 12 − 50/3 = 22/3 ≈ 7.333."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes x(10) as the initial value plus the integral of x′ from 0 to 10 and obtains 43.740."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes y(10) as 12 plus the integral of y′ from 0 to 10 and obtains 7.333 (or 22/3)."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the total distance the kestrel travels from t = 0 to t = 10.",
+                  "points": 2,
+                  "answer": "About 54.031 meters.",
+                  "steps": [
+                    "Distance = ∫ from 0 to 10 of √((x′(t))^2 + (y′(t))^2) dt.",
+                    "The calculator gives 54.030646100, so the kestrel travels about 54.031 m.",
+                    "This is more than the straight-line distance from (0, 12) to (43.740, 7.333), about 43.988 m, because the kestrel climbs, comes back down and turns back toward the pole after t ≈ 7.914."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up the integral of √((x′(t))^2 + (y′(t))^2) from 0 to 10."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 54.031 m."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-parametric-vector-fr1"
+            },
+            {
+              "prompt": "A particle moves in the xy-plane for 0 ≤ t ≤ 4. Its x-coordinate is x(t) = t + 3 cos t, and its y-coordinate satisfies dy/dt = sin(2t)/√(t + 1), with y(0) = 1. The figure shows the path of the particle, with arrowheads in the direction of motion.",
+              "figureIds": [
+                "bc-fr-parametric-vector-f1"
+              ],
+              "topics": [
+                "BC.9.PARAMETRIC_TANGENTS",
+                "BC.9.PARAMETRIC_DERIVATIVES",
+                "BC.9.VECTOR_DERIVATIVES_AND_INTEGRALS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Write an equation for the line tangent to the path at the point where t = 2.",
+                  "points": 2,
+                  "answer": "y = 1.657 + 0.253(x − 0.752)",
+                  "steps": [
+                    "x(2) = 2 + 3 cos 2 ≈ 0.751559.",
+                    "y(2) = 1 + ∫ from 0 to 2 of sin(2t)/√(t + 1) dt ≈ 1.656776.",
+                    "dx/dt = 1 − 3 sin t, so at t = 2, dx/dt ≈ −1.727892 and dy/dt = sin 4/√3 ≈ −0.436940.",
+                    "dy/dx = (dy/dt)/(dx/dt) ≈ (−0.436940)/(−1.727892) ≈ 0.252875.",
+                    "The tangent line is y = 1.657 + 0.253(x − 0.752)."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the point: y(2) = 1 + ∫ from 0 to 2 of dy/dt dt ≈ 1.657, with x(2) ≈ 0.752."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the slope (dy/dt)/(dx/dt) ≈ 0.253 at t = 2 and writes the line through the point found. Accepts the line with the student's own point from the first row."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find all times t in the interval 0 < t < 4 at which the path has a vertical tangent line. Justify your answer.",
+                  "points": 2,
+                  "answer": "t ≈ 0.340 and t ≈ 2.802",
+                  "steps": [
+                    "A vertical tangent needs dx/dt = 0 and dy/dt ≠ 0.",
+                    "dx/dt = 1 − 3 sin t = 0 when sin t = 1/3, so t = arcsin(1/3) ≈ 0.339837 or t = π − arcsin(1/3) ≈ 2.801756. The next solutions exceed 2π, which is outside the interval.",
+                    "dy/dt ≈ 0.543 at t ≈ 0.340 and dy/dt ≈ −0.322 at t ≈ 2.802. Both are nonzero, so both times give vertical tangents."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets dx/dt = 0 and finds exactly the two times 0.340 and 2.802."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies by showing dy/dt ≠ 0 at each of those times."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the value of d^2y/dx^2 at t = 2. Is the path concave up or concave down at that point? Give a reason for your answer.",
+                  "points": 2,
+                  "answer": "d^2y/dx^2 ≈ −0.334 at t = 2, so the path is concave down there.",
+                  "steps": [
+                    "d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt), where dy/dx = (sin(2t)/√(t + 1))/(1 − 3 sin t).",
+                    "The calculator's numerical derivative of dy/dx at t = 2 is about 0.577373.",
+                    "Divide by dx/dt at t = 2: 0.577373/(−1.727892) ≈ −0.334149.",
+                    "d^2y/dx^2 < 0 at t = 2, so the path is concave down at that point. The division by a negative dx/dt reverses the sign of d/dt of dy/dx."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt), with d/dt of dy/dx ≈ 0.577 at t = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains −0.334 and concludes concave down because d^2y/dx^2 < 0. Accepts a conclusion consistent with the student's own value."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the coordinates of the highest point on the path for 0 ≤ t ≤ 4. Justify your answer.",
+                  "points": 3,
+                  "answer": "(π/2, 1.759) ≈ (1.571, 1.759), reached at t = π/2.",
+                  "steps": [
+                    "dy/dt = 0 where sin(2t) = 0: in 0 < t < 4 that is t = π/2 and t = π.",
+                    "Candidates are the endpoints and these times. y(0) = 1, y(π/2) = 1 + ∫ from 0 to π/2 of sin(2t)/√(t + 1) dt ≈ 1.759348, y(π) ≈ 1.211334, and y(4) ≈ 1.476213.",
+                    "The largest is y(π/2), so the highest point is at t = π/2, where x(π/2) = π/2 + 3 cos(π/2) = π/2 ≈ 1.571.",
+                    "Alternatively, dy/dt > 0 on 0 < t < π/2, dy/dt < 0 on π/2 < t < π, and dy/dt > 0 on π < t < 4. So y has a relative maximum at t = π/2, and y(4) ≈ 1.476 < y(π/2) shows the later rise does not reach it."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the times t = π/2 and t = π where dy/dt = 0 (accepts 1.571 and 3.142)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes y at the candidate times and the endpoints, each as 1 plus an integral of dy/dt (or uses the sign of dy/dt and compares y(π/2) with y(4))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives the highest point (1.571, 1.759) with the comparison that justifies it."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-parametric-vector-fr2"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "A particle moves in the xy-plane so that its position at time t is (x(t), y(t)) = (t^2 − 2t, t^3 − 12t) for 0 ≤ t ≤ 3.",
+              "topics": [
+                "BC.9.PARAMETRIC_DERIVATIVES",
+                "BC.9.PARAMETRIC_TANGENTS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find dy/dx in terms of t, and write an equation for the line tangent to the path at the point where t = 3.",
+                  "points": 2,
+                  "answer": "dy/dx = (3t^2 − 12)/(2t − 2); the tangent line is y = −9 + (15/4)(x − 3).",
+                  "steps": [
+                    "dx/dt = 2t − 2 and dy/dt = 3t^2 − 12, so dy/dx = (3t^2 − 12)/(2t − 2) for t ≠ 1.",
+                    "At t = 3, (x, y) = (9 − 6, 27 − 36) = (3, −9) and dy/dx = (27 − 12)/(6 − 2) = 15/4.",
+                    "The tangent line is y = −9 + (15/4)(x − 3)."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "dy/dx = (3t^2 − 12)/(2t − 2), or an equivalent form."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Tangent line through (3, −9) with slope 15/4."
+                    }
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the coordinates of each point on the path at which the tangent line is horizontal, and of each point at which the tangent line is vertical. Justify your answers.",
+                  "points": 3,
+                  "answer": "Horizontal tangent at (0, −16), where t = 2. Vertical tangent at (−1, −11), where t = 1.",
+                  "steps": [
+                    "Horizontal: dy/dt = 3(t − 2)(t + 2) = 0 gives t = 2 in the interval (t = −2 is outside it). At t = 2, dx/dt = 2 ≠ 0, so the tangent is horizontal at (4 − 4, 8 − 24) = (0, −16).",
+                    "Vertical: dx/dt = 2(t − 1) = 0 gives t = 1. At t = 1, dy/dt = 3 − 12 = −9 ≠ 0, so the tangent is vertical at (1 − 2, 1 − 12) = (−1, −11)."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses both conditions, each with the other derivative checked: dy/dt = 0 with dx/dt ≠ 0 at t = 2, and dx/dt = 0 with dy/dt ≠ 0 at t = 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Horizontal tangent at (0, −16), with t = −2 rejected or not reported."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Vertical tangent at (−1, −11)."
+                    }
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Show that d^2y/dx^2 = 3(t^2 − 2t + 4)/(4(t − 1)^3) for t ≠ 1.",
+                  "points": 2,
+                  "answer": "Shown: d/dt of dy/dx = 3(t^2 − 2t + 4)/(2(t − 1)^2), and dividing by dx/dt = 2(t − 1) gives 3(t^2 − 2t + 4)/(4(t − 1)^3).",
+                  "steps": [
+                    "By the quotient rule, d/dt of (3t^2 − 12)/(2t − 2) = [6t(2t − 2) − (3t^2 − 12)(2)]/(2t − 2)^2.",
+                    "The numerator is 12t^2 − 12t − 6t^2 + 24 = 6t^2 − 12t + 24 = 6(t^2 − 2t + 4), and (2t − 2)^2 = 4(t − 1)^2, so d/dt of dy/dx = 3(t^2 − 2t + 4)/(2(t − 1)^2).",
+                    "d^2y/dx^2 = (d/dt of dy/dx)/(dx/dt) = [3(t^2 − 2t + 4)/(2(t − 1)^2)]/(2(t − 1)) = 3(t^2 − 2t + 4)/(4(t − 1)^3)."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates dy/dx with respect to t correctly (quotient rule or equivalent), reaching 3(t^2 − 2t + 4)/(2(t − 1)^2) or an unsimplified equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Divides by dx/dt = 2t − 2 and arrives at the given expression with no false equalities along the way."
+                    }
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "For which values of t in the interval 0 < t < 3 is the path concave up? Justify your answer.",
+                  "points": 2,
+                  "answer": "Concave up for 1 < t < 3.",
+                  "steps": [
+                    "t^2 − 2t + 4 = (t − 1)^2 + 3 ≥ 3 > 0 for every t, so the numerator 3(t^2 − 2t + 4) is always positive.",
+                    "So d^2y/dx^2 has the sign of (t − 1)^3, which is positive exactly when t > 1.",
+                    "The path is concave up for 1 < t < 3 and concave down for 0 < t < 1. The change happens at t = 1, the vertical tangent from part (b)."
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Shows t^2 − 2t + 4 > 0 for all t (completing the square, or a negative discriminant with a positive leading coefficient)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes concave up for 1 < t < 3 from the sign of (t − 1)^3."
+                    }
+                  ]
+                }
+              ],
+              "id": "bc-fr-parametric-vector-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

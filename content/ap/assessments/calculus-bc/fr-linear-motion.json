@@ -1,0 +1,331 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "fr-linear-motion",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Motion along a line",
+  "author": "bc-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A questions permit a graphing calculator; Part B questions do not. Show supporting work and justify requested conclusions; write the setup for every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "bc-fr-linear-motion-f1",
+      "alt": "Graph of v on 0 ≤ t ≤ 10, on axes labeled t and v(t). Line segments join (0, 0), (1, 2), and (3, 0). A semicircle below the t-axis joins (3, 0) and (7, 0), with lowest point (5, −2). Line segments join (7, 0), (9, 2), and (10, 2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "Show your work and justify requested conclusions. Write integrals, equations, or derivatives supporting numerical calculator results.",
+          "items": [
+            {
+              "prompt": "A camera rides along a straight horizontal cable stretched between a west tower and an east tower above a playing field. At time t seconds, the camera is x(t) meters from the west tower, and its velocity is v(t) = 3 cos(0.7t) + 0.3t meters per second for 0 ≤ t ≤ 8. Positive velocity means motion toward the east tower. At t = 0, the camera is 10 meters from the west tower.",
+              "context": true,
+              "topics": [
+                "BC.4.STRAIGHT_LINE_MOTION",
+                "BC.4.DERIVATIVE_UNITS",
+                "BC.8.MOTION_INTEGRALS",
+                "BC.8.NET_AND_TOTAL_CHANGE"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the acceleration of the camera at t = 3, with units. Is the camera speeding up or slowing down at t = 3? Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "a(3) = v′(3) ≈ −1.513 m/s^2, within 0.001, with units of meters per second per second (accepts the exact derivative −2.1 sin(2.1) + 0.3 or a calculator’s numerical derivative)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Speeding up, because v(3) and a(3) are both negative. The reason must name the signs of both velocity and acceleration; “a(3) < 0” alone does not earn this point."
+                    }
+                  ],
+                  "answer": "a(3) ≈ −1.513 m/s^2. The camera is speeding up at t = 3, because v(3) ≈ −0.615 m/s and a(3) are both negative.",
+                  "steps": [
+                    "a(t) = v′(t) = −2.1 sin(0.7t) + 0.3, so a(3) = −2.1 sin(2.1) + 0.3 ≈ −1.512739670 m/s^2, which rounds to −1.513 m/s^2.",
+                    "v(3) = 3 cos(2.1) + 0.9 ≈ −0.614538314 m/s, so the camera is moving toward the west tower.",
+                    "Velocity and acceleration have the same sign, so the speed |v(t)| is increasing: the camera is speeding up as it moves west."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find all times t in 0 < t < 8 at which the camera changes direction. Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets v(t) = 0 and finds t ≈ 2.623 and t ≈ 5.841 seconds, and no other times."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with the sign change of v at each time: from positive to negative at t ≈ 2.623 and from negative to positive at t ≈ 5.841. A zero of v with no sign change stated does not earn this point."
+                    }
+                  ],
+                  "answer": "The camera changes direction at t ≈ 2.623 s and t ≈ 5.841 s.",
+                  "steps": [
+                    "Solve 3 cos(0.7t) + 0.3t = 0 on 0 < t < 8 with a calculator: t ≈ 2.623169716 and t ≈ 5.840900601. A graph of v on the interval shows no other zeros.",
+                    "v changes from positive to negative at t ≈ 2.623 and from negative to positive at t ≈ 5.841 (for example, v(2.6) > 0, v(3) < 0, v(5.8) < 0 and v(6) > 0), so the camera reverses direction at both times."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the camera’s distance from the west tower at t = 8.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the initial position with the velocity integral: x(8) = 10 + ∫ from 0 to 8 of v(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "x(8) ≈ 16.895 meters, within 0.001, with the setup shown."
+                    }
+                  ],
+                  "answer": "x(8) ≈ 16.895 m",
+                  "steps": [
+                    "x(8) = x(0) + ∫ from 0 to 8 of v(t) dt = 10 + ∫ from 0 to 8 of [3 cos(0.7t) + 0.3t] dt.",
+                    "The integral is ≈ 6.894571552 (exactly (30/7) sin(5.6) + 9.6), so x(8) ≈ 16.894571552 m, which rounds to 16.895 m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the total distance the camera travels during 0 ≤ t ≤ 8. Explain why this total distance is greater than |x(8) − x(0)|.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up ∫ from 0 to 8 of |v(t)| dt, or the sum of the absolute values of the integrals of v between consecutive direction changes."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Total distance ≈ 13.953 meters, within 0.001, with the setup from the first point shown."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that v(t) < 0 on the interval between the direction changes, so the westward travel subtracts from x(8) − x(0) but adds to the total distance. Accepts consistent use of the times from part (b)."
+                    }
+                  ],
+                  "answer": "The total distance is about 13.953 m. The camera moves west while 2.623 < t < 5.841; that travel counts negatively in x(8) − x(0) ≈ 6.895 m but positively in the total distance.",
+                  "steps": [
+                    "Total distance = ∫ from 0 to 8 of |v(t)| dt ≈ 13.952646746 m, which rounds to 13.953 m.",
+                    "Equivalently, with the times from part (b): the camera moves about 5.168 m east, then 3.529 m west, then 5.256 m east, and 5.168 + 3.529 + 5.256 ≈ 13.953.",
+                    "The displacement x(8) − x(0) ≈ 6.895 m counts the 3.529 m westward stretch with a negative sign, so the total distance exceeds |x(8) − x(0)| by twice that stretch: 6.895 + 2(3.529) ≈ 13.953."
+                  ]
+                }
+              ],
+              "id": "bc-fr-linear-motion-fr1"
+            },
+            {
+              "prompt": "A particle moves along the x-axis for 0 ≤ t ≤ 7. Its acceleration is a(t) = 0.6 − 6e^(−t). At t = 0, the particle’s velocity is 3 and its position is x(0) = 2.",
+              "topics": [
+                "BC.8.MOTION_INTEGRALS",
+                "BC.6.ANTIDERIVATIVES",
+                "BC.8.AVERAGE_VALUE",
+                "BC.4.STRAIGHT_LINE_MOTION",
+                "BC.5.CRITICAL_POINTS"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find an expression for the particle’s velocity v(t).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds an antiderivative of a: 0.6t + 6e^(−t) + C."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses v(0) = 3 to obtain v(t) = 0.6t + 6e^(−t) − 3. Accepts v(t) = 3 + ∫ from 0 to t of a(s) ds for both points."
+                    }
+                  ],
+                  "answer": "v(t) = 0.6t + 6e^(−t) − 3",
+                  "steps": [
+                    "v(t) = ∫ a(t) dt = 0.6t + 6e^(−t) + C.",
+                    "v(0) = 0 + 6 + C = 3, so C = −3 and v(t) = 0.6t + 6e^(−t) − 3."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the average acceleration and the average velocity of the particle over 0 ≤ t ≤ 7. The particle is moving to the right at both t = 0 and t = 7. Explain how its average velocity over 0 ≤ t ≤ 7 can be negative.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Average acceleration = (v(7) − v(0))/7 ≈ −0.256, with the difference quotient (or (1/7) ∫ from 0 to 7 of a(t) dt) shown. Accepts consistent use of v from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Average velocity = (1/7) ∫ from 0 to 7 of v(t) dt ≈ −0.044, with the integral shown."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that average velocity is net displacement divided by elapsed time: the particle moves left for part of the interval (where v < 0), farther than it moves right in all, so x(7) < x(0) even though v(0) > 0 and v(7) > 0."
+                    }
+                  ],
+                  "answer": "Average acceleration ≈ −0.256; average velocity ≈ −0.044. Average velocity is displacement over time, and the particle’s leftward travel while v < 0 is longer than its rightward travel, so x(7) − x(0) < 0.",
+                  "steps": [
+                    "Average acceleration = (v(7) − v(0))/(7 − 0) = ((4.2 + 6e^(−7) − 3) − 3)/7 = (6e^(−7) − 1.8)/7 ≈ −0.256361244.",
+                    "Average velocity = (1/7) ∫ from 0 to 7 of v(t) dt. The integral is 6(1 − e^(−7)) − 21 + 14.7 = −0.3 − 6e^(−7) ≈ −0.305471292, so the average velocity ≈ −0.043638756, which rounds to −0.044.",
+                    "Average velocity depends only on where the particle ends up relative to where it began. Between its two direction changes (part (c)) the particle moves left, about 2.646 units, while it moves right only about 1.104 + 1.236 = 2.340 units in all, so x(7) < x(0)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "At what time t in 0 ≤ t ≤ 7 is the particle farthest from its starting position? Find its position at that time, and justify your answer.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the direction changes t ≈ 0.889 and t ≈ 4.928 from v(t) = 0, consistent with part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Expresses position or displacement as an integral of v from 0, for example x(t) = 2 + ∫ from 0 to t of v(s) ds, or uses the exact antiderivative."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the displacement at both direction changes and at t = 7: about 1.104, −1.542 and −0.305 (or positions 3.104, 0.458 and 1.695)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes t ≈ 4.928 with x ≈ 0.458, by comparing distances from the start at every candidate, endpoints included. Choosing the greatest position, at t ≈ 0.889, does not earn this point."
+                    }
+                  ],
+                  "answer": "The particle is farthest from its start at t ≈ 4.928, where x ≈ 0.458, about 1.542 units to the left of x(0) = 2.",
+                  "steps": [
+                    "Distance from the start is |x(t) − 2| = |∫ from 0 to t of v(s) ds|. Between consecutive direction changes the particle moves one way only, so this distance can be greatest only at an endpoint or where v changes sign.",
+                    "Solve 0.6t + 6e^(−t) − 3 = 0 with a calculator: t ≈ 0.888892680 and t ≈ 4.927558302. Since v′(t) = a(t) is negative for t < ln 10 and positive for t > ln 10, v has no other zeros, and it changes sign at both.",
+                    "Displacement from t = 0 is 6(1 − e^(−t)) − 3t + 0.3t^2 (or a calculator integral of v): ≈ 1.103696627 at t ≈ 0.889, ≈ −1.541890679 at t ≈ 4.928, and ≈ −0.305471292 at t = 7; it is 0 at t = 0.",
+                    "The largest distance from the start is 1.542, at t ≈ 4.928, where x ≈ 2 − 1.541890679 = 0.458109321, which rounds to 0.458. The greatest position, x ≈ 3.104 at t ≈ 0.889, is only 1.104 from the start."
+                  ]
+                }
+              ],
+              "id": "bc-fr-linear-motion-fr2"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "Show supporting work and justify requested conclusions. Give exact answers. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "A particle moves along the x-axis for 0 ≤ t ≤ 10. Its velocity v is continuous, and the graph of v, shown in the figure, consists of four line segments and a semicircle. At t = 0, the particle is at x(0) = 1.",
+              "topics": [
+                "BC.8.MOTION_INTEGRALS",
+                "BC.4.STRAIGHT_LINE_MOTION",
+                "BC.8.NET_AND_TOTAL_CHANGE",
+                "BC.8.AVERAGE_VALUE"
+              ],
+              "figureIds": [
+                "bc-fr-linear-motion-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find x(10). Find the total distance the particle travels over 0 ≤ t ≤ 10.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "x(10) = 1 + ∫ from 0 to 10 of v(t) dt = 8 − 2π, counting the area of the semicircle as negative."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Total distance = 3 + 2π + 4 = 7 + 2π, counting every area as positive."
+                    }
+                  ],
+                  "answer": "x(10) = 8 − 2π; the total distance is 7 + 2π.",
+                  "steps": [
+                    "Areas between the graph and the t-axis: 3 on [0, 3] (a triangle with base 3 and height 2); 2π on [3, 7] (half of a disk of radius 2, below the axis); 4 on [7, 10] (a triangle of area 2 and a 1-by-2 rectangle).",
+                    "x(10) = x(0) + ∫ from 0 to 10 of v(t) dt = 1 + 3 − 2π + 4 = 8 − 2π.",
+                    "Total distance = ∫ from 0 to 10 of |v(t)| dt = 3 + 2π + 4 = 7 + 2π."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On which open intervals in 0 < t < 10 is the speed of the particle increasing? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies 0 < t < 1, 3 < t < 5 and 7 < t < 9, and no other intervals."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with the signs of v and a on each interval, reading a as the slope of the graph: for example, on 3 < t < 5, v < 0 and a < 0 because the graph is below the axis and decreasing."
+                    }
+                  ],
+                  "answer": "The speed increases on 0 < t < 1, 3 < t < 5 and 7 < t < 9, where v and a have the same sign.",
+                  "steps": [
+                    "Acceleration is the slope of the velocity graph. Speed |v(t)| increases where v(t) and a(t) have the same sign.",
+                    "On 0 < t < 1, v > 0 and a = 2 > 0. On 3 < t < 5, v < 0 and the graph falls, so a < 0. On 7 < t < 9, v > 0 and a = 1 > 0.",
+                    "On 1 < t < 3 and 5 < t < 7 the signs differ, so the speed decreases. On 9 < t < 10, a = 0 and the speed stays 2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "At what time t in 0 ≤ t ≤ 10 is the particle farthest from its starting position? Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the candidates: the endpoints and the sign changes of v at t = 3 and t = 7."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the displacements 3, 3 − 2π and 7 − 2π at t = 3, 7 and 10 (or the positions 4, 4 − 2π and 8 − 2π)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes t = 7 by comparing distances from the start, using π > 3 (or equivalent) to show that 2π − 3 > 3 and that 7 − 2π is smaller."
+                    }
+                  ],
+                  "answer": "At t = 7, where the particle is 2π − 3 units to the left of its start (at x = 4 − 2π).",
+                  "steps": [
+                    "Between sign changes of v the particle moves one way only, so it can be farthest from x(0) only at t = 0, at t = 3 or t = 7 (where v changes sign), or at t = 10.",
+                    "Displacements: at t = 3, ∫ from 0 to 3 of v(t) dt = 3; at t = 7, 3 − 2π; at t = 10, 7 − 2π.",
+                    "Distances from the start: 3, 2π − 3 and 7 − 2π. Since π > 3, 2π − 3 > 3, and since π > 3, 7 − 2π < 1. The largest is 2π − 3, at t = 7."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the average acceleration and the average velocity of the particle over 1 ≤ t ≤ 9.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Average acceleration = (v(9) − v(1))/(9 − 1) = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Average velocity = (1/8) ∫ from 1 to 9 of v(t) dt = (2 − π)/4, or equivalent such as (4 − 2π)/8."
+                    }
+                  ],
+                  "answer": "Average acceleration = 0; average velocity = (2 − π)/4.",
+                  "steps": [
+                    "Average acceleration = (v(9) − v(1))/(9 − 1) = (2 − 2)/8 = 0.",
+                    "Average velocity = (1/8) ∫ from 1 to 9 of v(t) dt = (1/8)(2 − 2π + 2) = (2 − π)/4.",
+                    "The two averages answer different questions: the velocity returns to its starting value, but the particle ends the interval to the left of where it was at t = 1."
+                  ]
+                }
+              ],
+              "id": "bc-fr-linear-motion-fr3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

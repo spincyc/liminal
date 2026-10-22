@@ -1,0 +1,359 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "mixed-2",
+  "kind": "mixed-set",
+  "title": "Mixed set 2: all units at exam pace",
+  "author": "bc-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which idea or method applies. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians and calculator answers are rounded to three decimal places. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "bc-mixed-2-f1",
+      "alt": "The region R under the curve y = √x and above the x-axis from x = 0 to x = 4, shaded, with its right side on the vertical line x = 4."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "Let R be the region bounded by y = √x, the x-axis, and the line x = 4, shown in the figure. A solid has base R, and its cross sections perpendicular to the x-axis are semicircles whose diameters lie in R. What is the volume of the solid?",
+              "choices": [
+                "π",
+                "2π",
+                "4π",
+                "8π"
+              ],
+              "key": "A",
+              "rationale": "At position x the diameter is √x, so the radius is √x/2 and each semicircle has area (1/2)π(√x/2)^2 = πx/8. The volume is ∫ from 0 to 4 of πx/8 dx = (π/16)(16) = π.",
+              "distractorNotes": {
+                "B": "This uses the area of a whole circle with diameter √x, πx/4; the cross sections are half-disks.",
+                "C": "This treats √x as the radius of the semicircle instead of its diameter: (1/2)π(√x)^2 = πx/2.",
+                "D": "This is the volume of revolution about the x-axis, π ∫ from 0 to 4 of x dx, whose cross sections are full disks of radius √x."
+              },
+              "topics": [
+                "BC.8.CROSS_SECTION_VOLUMES",
+                "BC.8.DISC_VOLUMES"
+              ],
+              "figureIds": [
+                "bc-mixed-2-f1"
+              ],
+              "id": "bc-mixed-2-mc01"
+            },
+            {
+              "prompt": "The curve y^3 + xy = 12 passes through the point (2, 2). What is dy/dx at this point?",
+              "choices": [
+                "−1/6",
+                "−7",
+                "−1/7",
+                "0"
+              ],
+              "key": "C",
+              "rationale": "Differentiate implicitly, using the product rule on xy: 3y^2(dy/dx) + y + x(dy/dx) = 0. So dy/dx = −y/(3y^2 + x), which at (2, 2) is −2/(12 + 2) = −1/7.",
+              "distractorNotes": {
+                "A": "This leaves out the term x(dy/dx) from the product rule, giving −y/(3y^2) = −1/6.",
+                "B": "This inverts the quotient: dy/dx = −y/(3y^2 + x), not −(3y^2 + x)/y.",
+                "D": "This differentiates xy as x(dy/dx) alone, losing the term y. Then (3y^2 + x)(dy/dx) = 0 wrongly forces dy/dx = 0."
+              },
+              "topics": [
+                "BC.3.IMPLICIT_DIFFERENTIATION"
+              ],
+              "id": "bc-mixed-2-mc02"
+            },
+            {
+              "prompt": "Which statement about the series Σ from n = 1 to infinity of (−1)^n n/(n + 1) is true?",
+              "choices": [
+                "It converges by the alternating series test.",
+                "It diverges because its terms do not approach 0.",
+                "It converges conditionally, since Σ n/(n + 1) diverges.",
+                "The ratio test shows that it converges absolutely."
+              ],
+              "key": "B",
+              "rationale": "The sizes of the terms are n/(n + 1) → 1, so the terms (−1)^n n/(n + 1) keep landing near 1 and −1 and do not approach 0. By the nth-term test the series diverges.",
+              "distractorNotes": {
+                "A": "The alternating series test requires the sizes of the terms to decrease to 0; here they increase toward 1, so the test does not apply.",
+                "C": "Conditional convergence requires the series itself to converge. Divergence of the series of absolute values decides nothing by itself, and this series fails the nth-term test.",
+                "D": "The ratio of consecutive term sizes tends to 1, so the ratio test is inconclusive; it proves nothing here."
+              },
+              "topics": [
+                "BC.10.NTH_TERM_TEST",
+                "BC.10.ALTERNATING_SERIES"
+              ],
+              "id": "bc-mixed-2-mc03"
+            },
+            {
+              "prompt": "What is ∫ from 0 to 1 of x/√(1 − x^2) dx?",
+              "choices": [
+                "π/2",
+                "−1",
+                "The integral diverges.",
+                "1"
+              ],
+              "key": "D",
+              "rationale": "The integrand is unbounded as x→1⁻, so the integral means lim as b→1⁻ of ∫ from 0 to b of x/√(1 − x^2) dx. The substitution u = 1 − x^2 gives the antiderivative −√(1 − x^2), so the limit is lim as b→1⁻ of (1 − √(1 − b^2)) = 1.",
+              "distractorNotes": {
+                "A": "π/2 is ∫ from 0 to 1 of 1/√(1 − x^2) dx, the arcsine form. The factor x in the numerator makes this a substitution integral instead.",
+                "B": "This subtracts in the wrong order, F(0) − F(1), with F(x) = −√(1 − x^2).",
+                "C": "An unbounded integrand does not force divergence: the limit of the integrals from 0 to b exists and equals 1."
+              },
+              "topics": [
+                "BC.6.SINGULAR_INTEGRALS",
+                "BC.6.SUBSTITUTION",
+                "BC.6.INTEGRATION_METHOD_SELECTION"
+              ],
+              "id": "bc-mixed-2-mc04"
+            },
+            {
+              "prompt": "What is lim as x→∞ of (3x − √(9x^2 + 6x))?",
+              "choices": [
+                "0",
+                "1",
+                "−1",
+                "−∞"
+              ],
+              "key": "C",
+              "rationale": "Multiply by the conjugate: (9x^2 − (9x^2 + 6x))/(3x + √(9x^2 + 6x)) = −6x/(3x + √(9x^2 + 6x)). Dividing the numerator and denominator by x (for x > 0) gives −6/(3 + √(9 + 6/x)) → −6/6 = −1.",
+              "distractorNotes": {
+                "A": "Both terms grow without bound, and ∞ − ∞ is indeterminate, not 0; the difference must be rewritten before taking the limit.",
+                "B": "This loses the sign: after rationalizing, the numerator is 9x^2 − (9x^2 + 6x) = −6x.",
+                "D": "√(9x^2 + 6x) is larger than 3x, but only by about 1 for large x, so the difference stays bounded."
+              },
+              "topics": [
+                "BC.1.LIMITS_AT_INFINITY",
+                "BC.1.ALGEBRAIC_LIMITS"
+              ],
+              "id": "bc-mixed-2-mc05"
+            },
+            {
+              "prompt": "For t ≥ 0, a particle moves in the plane with position (x(t), y(t)) = (t^2 − 4t, t^3 − 3t). At what time t > 0 does the particle’s path have a vertical tangent line?",
+              "choices": [
+                "t = 2",
+                "t = 1",
+                "t = √3",
+                "t = 4"
+              ],
+              "key": "A",
+              "rationale": "A vertical tangent needs dx/dt = 0 with dy/dt ≠ 0. Here dx/dt = 2t − 4 = 0 at t = 2, and dy/dt = 3t^2 − 3 = 9 there, so the tangent at t = 2 is vertical.",
+              "distractorNotes": {
+                "B": "At t = 1, dy/dt = 0 while dx/dt = −2, so the tangent there is horizontal, not vertical.",
+                "C": "At t = √3 the particle is on the x-axis (y = 0); that is a condition on position, not on the direction of motion.",
+                "D": "At t = 4 the particle is on the y-axis (x = 0); the tangent there has slope (dy/dt)/(dx/dt) = 45/4."
+              },
+              "topics": [
+                "BC.9.PARAMETRIC_TANGENTS",
+                "BC.9.PLANAR_MOTION"
+              ],
+              "id": "bc-mixed-2-mc06"
+            },
+            {
+              "prompt": "A function f is twice differentiable for all real x. The table gives values of f′ and f″ at three points. Which conclusion follows?\n\n| x | 1 | 3 | 5 |\n| --- | --- | --- | --- |\n| f′(x) | 0 | 0 | 2 |\n| f″(x) | −3 | 0 | 0 |",
+              "choices": [
+                "f has a point of inflection at x = 3.",
+                "f has a relative maximum at x = 1.",
+                "f has a relative minimum at x = 3.",
+                "f has a critical point at x = 5."
+              ],
+              "key": "B",
+              "rationale": "At x = 1, f′(1) = 0 and f″(1) = −3 < 0, so the second derivative test gives a relative maximum. At x = 3 both derivatives are 0, and the test gives no conclusion; f″(3) = 0 alone does not show that concavity changes.",
+              "distractorNotes": {
+                "A": "f″(3) = 0 does not show a change of concavity. For example, f(x) = (x − 3)^4 has f′(3) = f″(3) = 0 and no inflection point at 3.",
+                "C": "When f′(3) = 0 and f″(3) = 0, the second derivative test is inconclusive: f could have a maximum, a minimum, or neither at 3.",
+                "D": "A critical point needs f′ = 0 or f′ undefined, but f′(5) = 2."
+              },
+              "topics": [
+                "BC.5.SECOND_DERIVATIVE_TEST",
+                "BC.5.CONCAVITY"
+              ],
+              "id": "bc-mixed-2-mc07"
+            },
+            {
+              "prompt": "Let y = f(x) be the solution of the differential equation dy/dx = 2x(1 + y^2) with f(0) = 1. Which expression gives f(x) for x near 0?",
+              "choices": [
+                "tan(x^2) + 1",
+                "e^(x^2)",
+                "tan(x^2 + 1)",
+                "tan(x^2 + π/4)"
+              ],
+              "key": "D",
+              "rationale": "Separate variables: dy/(1 + y^2) = 2x dx, so arctan y = x^2 + C. The condition f(0) = 1 gives C = arctan 1 = π/4. Therefore y = tan(x^2 + π/4), valid while x^2 + π/4 < π/2.",
+              "distractorNotes": {
+                "A": "The constant belongs inside the arctangent, before solving for y. This function has derivative 2x sec^2(x^2) = 2x(1 + (y − 1)^2), which does not match 2x(1 + y^2).",
+                "B": "This solves dy/dx = 2xy. Here ∫ dy/(1 + y^2) is arctan y, not ln y.",
+                "C": "This sets C = 1 because f(0) = 1, but the condition reads arctan(1) = 0 + C, so C = π/4."
+              },
+              "topics": [
+                "BC.7.INITIAL_VALUE_PROBLEMS",
+                "BC.7.SEPARATION_OF_VARIABLES"
+              ],
+              "id": "bc-mixed-2-mc08"
+            },
+            {
+              "prompt": "What is lim as x→0⁺ of (1 + 2x)^(1/x)?",
+              "choices": [
+                "e^2",
+                "1",
+                "e^(1/2)",
+                "∞"
+              ],
+              "key": "A",
+              "rationale": "The form is 1^∞, which is indeterminate. Its logarithm is ln(1 + 2x)/x, a 0/0 form, and L’Hôpital’s Rule gives lim as x→0⁺ of [2/(1 + 2x)]/1 = 2. Since the logarithm tends to 2, the expression tends to e^2.",
+              "distractorNotes": {
+                "B": "1^∞ is indeterminate: the base approaches 1 while the exponent grows, so the rule that 1 to any power is 1 does not apply.",
+                "C": "This inverts the limit of the logarithm, using x/ln(1 + 2x) → 1/2 instead of ln(1 + 2x)/x → 2.",
+                "D": "A growing exponent does not force an infinite limit; the logarithm of the expression tends to the finite value 2."
+              },
+              "topics": [
+                "BC.4.LHOSPITAL_RULE"
+              ],
+              "id": "bc-mixed-2-mc09"
+            },
+            {
+              "prompt": "What is lim as h→0 of (cos(π/6 + h) − √3/2)/h?",
+              "choices": [
+                "1/2",
+                "0",
+                "−1/2",
+                "−√3/2"
+              ],
+              "key": "C",
+              "rationale": "Since cos(π/6) = √3/2, the limit is the definition of the derivative of cos x at x = π/6. That derivative is −sin(π/6) = −1/2.",
+              "distractorNotes": {
+                "A": "The derivative of cos x is −sin x; this loses the minus sign.",
+                "B": "Substituting h = 0 gives 0/0, which is indeterminate, not 0.",
+                "D": "This evaluates −cos(π/6); the derivative of cos x is −sin x, not −cos x."
+              },
+              "topics": [
+                "BC.2.DERIVATIVE_DEFINITION",
+                "BC.2.TRIGONOMETRIC_DERIVATIVES"
+              ],
+              "id": "bc-mixed-2-mc10"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "prompt": "A differentiable function g satisfies g(2) = 5 and g′(x) = √(1 + x^4) for all x. What is g(0)?",
+              "choices": [
+                "8.653",
+                "1.347",
+                "3.653",
+                "−3.246"
+              ],
+              "key": "B",
+              "rationale": "By the Fundamental Theorem of Calculus, g(2) − g(0) = ∫ from 0 to 2 of √(1 + x^4) dx = 3.653484 (calculator). So g(0) = 5 − 3.653484 = 1.346516 ≈ 1.347.",
+              "distractorNotes": {
+                "A": "This adds the integral to g(2). Moving from x = 2 back to x = 0 undoes the change accumulated on [0, 2], so subtract it.",
+                "C": "This is the integral itself, the change g(2) − g(0), not the value g(0).",
+                "D": "This is the tangent-line estimate 5 − 2√17 from x = 2. It uses only the slope at x = 2, which is far from the slope on most of [0, 2]."
+              },
+              "topics": [
+                "BC.6.FUNDAMENTAL_THEOREM",
+                "BC.8.NET_AND_TOTAL_CHANGE"
+              ],
+              "id": "bc-mixed-2-mc11"
+            },
+            {
+              "prompt": "Let R be the region inside the polar curve r = 4 cos θ and outside the polar curve r = 1 + cos θ. What is the area of R?",
+              "choices": [
+                "2.528",
+                "16.945",
+                "4.236",
+                "8.473"
+              ],
+              "key": "D",
+              "rationale": "The curves meet where 4 cos θ = 1 + cos θ, so cos θ = 1/3 and θ = ±1.230959. Between those angles 4 cos θ ≥ 1 + cos θ, so the area is (1/2) ∫ from −1.230959 to 1.230959 of [(4 cos θ)^2 − (1 + cos θ)^2] dθ = 8.472641 ≈ 8.473.",
+              "distractorNotes": {
+                "A": "This squares the difference of the radii, (1/2) ∫ (3 cos θ − 1)^2 dθ. The area between polar curves uses the difference of the squares of the radii.",
+                "B": "This omits the factor 1/2 in the polar area formula (1/2) ∫ r^2 dθ.",
+                "C": "This integrates only from 0 to 1.230959, the half of R above the x-axis."
+              },
+              "topics": [
+                "BC.9.POLAR_AREA_TWO_CURVES",
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION"
+              ],
+              "id": "bc-mixed-2-mc12"
+            },
+            {
+              "prompt": "What is the shortest distance from the point (3, 0) to the graph of y = ln x?",
+              "choices": [
+                "1.035",
+                "2.632",
+                "1.072",
+                "1.099"
+              ],
+              "key": "A",
+              "rationale": "The squared distance from (x, ln x) to (3, 0) is S(x) = (x − 3)^2 + (ln x)^2, which has the same minimizer as the distance. A calculator solves S′(x) = 2(x − 3) + 2(ln x)/x = 0 at x = 2.632315. S′ changes from negative to positive there, and it is the only zero of S′ for x > 0, so it gives the absolute minimum. The distance is √(S(2.632315)) = 1.035351 ≈ 1.035.",
+              "distractorNotes": {
+                "B": "This is the x-coordinate of the closest point, not the distance.",
+                "C": "This is the minimum of the squared distance; take its square root.",
+                "D": "This is ln 3, the vertical distance from (3, 0) to the curve. The closest point is not directly above (3, 0) because the curve is not horizontal there."
+              },
+              "topics": [
+                "BC.5.OPTIMIZATION",
+                "BC.5.CRITICAL_POINTS"
+              ],
+              "id": "bc-mixed-2-mc13"
+            },
+            {
+              "prompt": "Let R be the region enclosed by the graphs of y = cos x and y = x^2 − 1. What is the volume of the solid generated when R is revolved about the horizontal line y = −1?",
+              "choices": [
+                "15.602",
+                "10.486",
+                "20.972",
+                "1.407"
+              ],
+              "key": "C",
+              "rationale": "The graphs meet where cos x = x^2 − 1, at x = ±1.176502 (calculator), with cos x above. Measured from y = −1, the outer radius is cos x + 1 and the inner radius is (x^2 − 1) + 1 = x^2. The volume is π ∫ from −1.176502 to 1.176502 of [(cos x + 1)^2 − (x^2)^2] dx = 20.972134 ≈ 20.972.",
+              "distractorNotes": {
+                "A": "This squares the difference of the radii, π ∫ (cos x − x^2 + 1)^2 dx. A washer’s area is π(R^2 − r^2), not π(R − r)^2.",
+                "B": "This integrates only from 0 to 1.176502, half of the region.",
+                "D": "This measures the radii from the x-axis instead of from y = −1: π ∫ [(cos x)^2 − (x^2 − 1)^2] dx."
+              },
+              "topics": [
+                "BC.8.SHIFTED_AXES",
+                "BC.8.WASHER_VOLUMES"
+              ],
+              "id": "bc-mixed-2-mc14"
+            },
+            {
+              "prompt": "Use the first three nonzero terms of the Maclaurin series for e^(−x^2) to approximate ∫ from 0 to 0.8 of e^(−x^2) dx. By how much does this approximation differ from the value of the integral?",
+              "choices": [
+                "0.028",
+                "0.004",
+                "0.037",
+                "0.005"
+              ],
+              "key": "B",
+              "rationale": "Substituting −x^2 for u in e^u = 1 + u + u^2/2! + ⋯ gives e^(−x^2) ≈ 1 − x^2 + x^4/2. Integrating term by term, ∫ from 0 to 0.8 of (1 − x^2 + x^4/2) dx = 0.8 − (0.8)^3/3 + (0.8)^5/10 = 0.8 − 0.170667 + 0.032768 = 0.662101. A calculator gives ∫ from 0 to 0.8 of e^(−x^2) dx ≈ 0.657670, so the approximation exceeds the integral by 0.662101 − 0.657670 = 0.004431 ≈ 0.004.",
+              "distractorNotes": {
+                "A": "This uses only the first two nonzero terms, 0.8 − (0.8)^3/3 = 0.629333, which falls short of the integral by about 0.028.",
+                "C": "This drops the 2! from the third term, integrating 1 − x^2 + x^4 to get 0.694869, which exceeds the integral by about 0.037.",
+                "D": "This is (0.8)^7/42 ≈ 0.004993, the first omitted term of the alternating series. It bounds the error but is not the error itself; comparing 0.662101 with the integral’s value 0.657670 gives 0.004431."
+              },
+              "topics": [
+                "BC.10.SERIES_INTEGRATION",
+                "BC.10.KNOWN_SERIES_SUBSTITUTION",
+                "BC.10.ALTERNATING_REMAINDER"
+              ],
+              "id": "bc-mixed-2-mc15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

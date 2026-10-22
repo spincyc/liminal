@@ -326,7 +326,10 @@
   }
 
   // x^2, x^k, (2/3)^−2, 2^(x + 1). The exponent reaches one number, one
-  // letter, or one bracket group, the usual precedence of ^.
+  // letter, or one bracket group, the usual precedence of ^. A one-letter
+  // function with a bracketed single number or letter and then its argument,
+  // f^(4)(x) or A^(n)(t), is a derivative order: it keeps its brackets, f⁽⁴⁾(x),
+  // and is read as an order, never as a power.
   function applyPowers(items, context) {
     const out = [];
     for (let index = 0; index < items.length; index += 1) {
@@ -346,7 +349,12 @@
         used = 2;
       }
       let node = null;
-      if (next && next.kind === "group" && !sign) {
+      const inner = next && next.kind === "group" && next.open === "(" && next.items.length === 1 ? next.items[0] : null;
+      const after = items[index + used + 1];
+      if (!sign && inner && (inner.kind === "num" || (inner.kind === "word" && Array.from(inner.text).length === 1)) &&
+          base && base.kind === "word" && Array.from(base.text).length === 1 && after && after.kind === "group" && after.open === "(") {
+        node = { type: "sup", children: [{ type: "text", text: "(" + inner.text + ")" }], simple: false, order: inner.text };
+      } else if (next && next.kind === "group" && !sign) {
         node = { type: "sup", children: convert(next.items, { inSup: true }), simple: false };
       } else if (next && next.kind === "num") {
         node = { type: "sup", children: [{ type: "text", text: sign + next.text }], simple: true };
@@ -590,6 +598,7 @@
         : ` the fraction, ${num}, over ${den}, end fraction `;
     }
     if (node.type === "sup") {
+      if (node.order) return ` derivative of order ${node.order} `;
       const power = mathSpeech(node.children);
       if (node.simple && power === "2") return " squared ";
       if (node.simple && power === "3") return " cubed ";

@@ -1,0 +1,360 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "mixed-3",
+  "kind": "mixed-set",
+  "title": "Mixed set 3: all units at exam pace",
+  "author": "bc-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which idea or method applies. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians and calculator answers are rounded to three decimal places. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "bc-mixed-3-f1",
+      "alt": "Graph of f made of three line segments joining (0, 1), (2, 5), (4, 3), and (6, 3), on axes labeled x and y."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "prompt": "Which test, applied directly, settles whether Σ from n = 2 to infinity of 1/(n√(ln n)) converges, and what does it show?",
+              "choices": [
+                "The integral test; the series diverges.",
+                "The ratio test; the series converges.",
+                "Direct comparison with Σ 1/n; the series diverges.",
+                "The nth-term test; the series converges."
+              ],
+              "key": "A",
+              "rationale": "f(x) = 1/(x√(ln x)) is positive, continuous and decreasing for x ≥ 2. With u = ln x, ∫ from 2 to b of f(x) dx = 2√(ln b) − 2√(ln 2), which grows without bound as b → ∞. By the integral test the series diverges.",
+              "distractorNotes": {
+                "B": "The ratio of consecutive terms tends to 1, so the ratio test is inconclusive here.",
+                "C": "For n ≥ 3, ln n > 1, so the terms are smaller than 1/n, and being smaller than the terms of a divergent series proves nothing. To show divergence by direct comparison, the terms must be larger.",
+                "D": "The terms do tend to 0, but the nth-term test can only show divergence; it never proves convergence."
+              },
+              "topics": [
+                "BC.10.INTEGRAL_TEST",
+                "BC.10.DIRECT_COMPARISON"
+              ],
+              "id": "bc-mixed-3-mc01"
+            },
+            {
+              "prompt": "The graph of f consists of three line segments, as shown. Let k(x) = x f(x). What is k′(3)?",
+              "choices": [
+                "−1",
+                "−3",
+                "10",
+                "1"
+              ],
+              "key": "D",
+              "rationale": "By the product rule, k′(x) = f(x) + x f′(x). From the graph, f(3) = 4, and on the segment from (2, 5) to (4, 3) the slope is f′(3) = −1. So k′(3) = 4 + 3(−1) = 1.",
+              "distractorNotes": {
+                "A": "This multiplies the two derivatives, (1)f′(3) = −1. The derivative of a product is not the product of the derivatives.",
+                "B": "This keeps only the term x f′(x) = 3(−1) and drops f(3) = 4.",
+                "C": "This uses the slope 2 of the segment on [0, 2] instead of the slope −1 of the segment containing x = 3: 4 + 3(2) = 10."
+              },
+              "topics": [
+                "BC.2.PRODUCT_RULE",
+                "BC.2.DERIVATIVE_REPRESENTATIONS"
+              ],
+              "figureIds": [
+                "bc-mixed-3-f1"
+              ],
+              "id": "bc-mixed-3-mc02"
+            },
+            {
+              "prompt": "A particle moves along the curve y = x^2. When the particle is at (2, 4), dx/dt = 3. At that instant, at what rate is the particle’s distance from the origin changing?",
+              "choices": [
+                "12",
+                "27√5/5",
+                "3√17",
+                "108"
+              ],
+              "key": "B",
+              "rationale": "The distance is D = √(x^2 + y^2) = √(x^2 + x^4). Then dD/dt = [(2x + 4x^3)/(2D)](dx/dt). At x = 2, D = √20 = 2√5, so dD/dt = (36/(4√5))(3) = 27/√5 = 27√5/5.",
+              "distractorNotes": {
+                "A": "This is dy/dt = 2x(dx/dt), the rate of change of the y-coordinate, not of the distance from the origin.",
+                "C": "This is the speed, √((dx/dt)^2 + (dy/dt)^2) = √(9 + 144). Speed measures motion along the path, not change in distance from the origin.",
+                "D": "This is d(D^2)/dt = (2x + 4x^3)(dx/dt), the rate of change of the squared distance; it still has to be divided by 2D."
+              },
+              "topics": [
+                "BC.4.RELATED_RATE_SOLUTIONS",
+                "BC.4.RELATED_RATE_MODELS"
+              ],
+              "id": "bc-mixed-3-mc03"
+            },
+            {
+              "prompt": "What is ∫ from 1 to ∞ of 1/(x(x + 1)) dx?",
+              "choices": [
+                "−ln 2",
+                "1",
+                "ln 2",
+                "The integral diverges."
+              ],
+              "key": "C",
+              "rationale": "Partial fractions give 1/(x(x + 1)) = 1/x − 1/(x + 1), so ∫ from 1 to b of 1/(x(x + 1)) dx = ln(b/(b + 1)) − ln(1/2). As b → ∞, ln(b/(b + 1)) → ln 1 = 0, so the integral converges to ln 2.",
+              "distractorNotes": {
+                "A": "This evaluates the antiderivative ln(x/(x + 1)) in the wrong order, ln(1/2) − 0.",
+                "B": "1 is ∫ from 1 to ∞ of 1/x^2 dx. Comparison with 1/x^2 shows that the integral converges, but it does not give its value.",
+                "D": "Splitting into ∫ 1/x dx − ∫ 1/(x + 1) dx produces two divergent integrals, but the combined antiderivative ln(x/(x + 1)) has a finite limit. Keep the pieces together before taking the limit."
+              },
+              "topics": [
+                "BC.6.INFINITE_INTERVAL_INTEGRALS",
+                "BC.6.PARTIAL_FRACTIONS",
+                "BC.6.IMPROPER_CONVERGENCE"
+              ],
+              "id": "bc-mixed-3-mc04"
+            },
+            {
+              "prompt": "A function f is continuous on [0, 5]. The table gives selected values of f. Which statement must be true?\n\n| x | 0 | 1 | 2 | 4 | 5 |\n| --- | --- | --- | --- | --- | --- |\n| f(x) | 2 | −1 | −3 | 1 | 3 |",
+              "choices": [
+                "f′(c) = 1/5 for some c in (0, 5), by the Mean Value Theorem.",
+                "The minimum value of f on [0, 5] is −3.",
+                "f(c) = 0 for exactly two values of c in (0, 5).",
+                "f(c) = 0 for at least two values of c in (0, 5)."
+              ],
+              "key": "D",
+              "rationale": "f is continuous with f(0) = 2 > 0 > f(1) = −1 and f(2) = −3 < 0 < f(4) = 1. The Intermediate Value Theorem gives a zero in (0, 1) and another in (2, 4). These intervals do not overlap, so f has at least two zeros in (0, 5).",
+              "distractorNotes": {
+                "A": "The Mean Value Theorem also needs f to be differentiable on (0, 5), which is not given; f could have corners or no derivative at all.",
+                "B": "The Extreme Value Theorem guarantees that a minimum exists, but the table shows only five values; f could dip below −3 between them.",
+                "C": "The table rules out fewer than two zeros, but f could cross zero more times between the listed points."
+              },
+              "topics": [
+                "BC.1.INTERMEDIATE_VALUE_THEOREM",
+                "BC.1.CONTINUITY_ON_INTERVALS"
+              ],
+              "id": "bc-mixed-3-mc05"
+            },
+            {
+              "prompt": "Which series is the Maclaurin series for 1/(1 + x)^2?",
+              "choices": [
+                "1 − 2x + 3x^2 − 4x^3 + ⋯",
+                "1 − x^2 + x^4 − x^6 + ⋯",
+                "1 + 2x + 3x^2 + 4x^3 + ⋯",
+                "x − x^2/2 + x^3/3 − x^4/4 + ⋯"
+              ],
+              "key": "A",
+              "rationale": "Start from 1/(1 + x) = 1 − x + x^2 − x^3 + ⋯ for |x| < 1. Differentiating term by term gives −1/(1 + x)^2 = −1 + 2x − 3x^2 + 4x^3 − ⋯, so 1/(1 + x)^2 = 1 − 2x + 3x^2 − 4x^3 + ⋯.",
+              "distractorNotes": {
+                "B": "This is the series for 1/(1 + x^2), from substituting x^2 into 1/(1 + x). Squaring the denominator is not the same as squaring x.",
+                "C": "This is the series for 1/(1 − x)^2. The signs must alternate, because the starting series for 1/(1 + x) alternates.",
+                "D": "This integrates the series for 1/(1 + x), which gives ln(1 + x). Since the derivative of 1/(1 + x) is −1/(1 + x)^2, differentiate instead."
+              },
+              "topics": [
+                "BC.10.SERIES_DIFFERENTIATION",
+                "BC.10.KNOWN_SERIES_SUBSTITUTION"
+              ],
+              "id": "bc-mixed-3-mc06"
+            },
+            {
+              "prompt": "What is the absolute maximum value of g(x) = x^2 e^(−x) on the closed interval [−1, 3]?",
+              "choices": [
+                "4/e^2",
+                "e",
+                "9/e^3",
+                "2"
+              ],
+              "key": "B",
+              "rationale": "g′(x) = e^(−x)(2x − x^2) = x(2 − x)e^(−x), which is 0 at x = 0 and x = 2. Compare the candidates: g(−1) = e, g(0) = 0, g(2) = 4/e^2, and g(3) = 9/e^3. Since e > 1 while 4/e^2 < 1 and 9/e^3 < 1, the absolute maximum is e, at the endpoint x = −1.",
+              "distractorNotes": {
+                "A": "This is the relative maximum at x = 2. The candidates test must also check the endpoints, and g(−1) = e is larger.",
+                "C": "This is g(3), the value at the right endpoint; it is smaller than both 4/e^2 and g(−1) = e.",
+                "D": "This is the x-value of the relative maximum, not a value of g."
+              },
+              "topics": [
+                "BC.5.EXTREME_VALUE_THEOREM",
+                "BC.5.CRITICAL_POINTS"
+              ],
+              "id": "bc-mixed-3-mc07"
+            },
+            {
+              "prompt": "A continuous function f satisfies ∫ from 1 to 4 of f(x) dx = 6. What is ∫ from 1 to 2 of x f(x^2) dx?",
+              "choices": [
+                "6",
+                "12",
+                "3",
+                "It cannot be determined from the information given."
+              ],
+              "key": "C",
+              "rationale": "Let u = x^2, so du = 2x dx; u runs from 1 to 4 as x runs from 1 to 2. Then ∫ from 1 to 2 of x f(x^2) dx = (1/2) ∫ from 1 to 4 of f(u) du = (1/2)(6) = 3.",
+              "distractorNotes": {
+                "A": "This changes the limits correctly but drops the factor 1/2 from du = 2x dx.",
+                "B": "This multiplies by 2 instead of dividing: x dx = (1/2) du.",
+                "D": "The substitution u = x^2 turns the integral into an integral of f over [1, 4], which is given."
+              },
+              "topics": [
+                "BC.6.SUBSTITUTION",
+                "BC.6.INTEGRAL_PROPERTIES"
+              ],
+              "id": "bc-mixed-3-mc08"
+            },
+            {
+              "prompt": "Let f(x) = x^5 + 3x − 2, and let g be the inverse function of f. What is g′(2)?",
+              "choices": [
+                "1/83",
+                "8",
+                "1/36",
+                "1/8"
+              ],
+              "key": "D",
+              "rationale": "f(1) = 1 + 3 − 2 = 2, so g(2) = 1. Since f′(x) = 5x^4 + 3, g′(2) = 1/f′(g(2)) = 1/f′(1) = 1/8.",
+              "distractorNotes": {
+                "A": "This computes 1/f′(2) = 1/83. The inverse’s derivative at 2 uses f′ at the input where f equals 2, which is x = 1.",
+                "B": "This is f′(1); the derivative of the inverse is its reciprocal.",
+                "C": "This is 1/f(2) = 1/36, the reciprocal of f, which is not the inverse function."
+              },
+              "topics": [
+                "BC.3.INVERSE_FUNCTION_DERIVATIVES"
+              ],
+              "id": "bc-mixed-3-mc09"
+            },
+            {
+              "prompt": "The function f is defined by f(x) = Σ from n = 0 to infinity of (−1)^n x^n/(2n + 1) for |x| < 1. The sum of the first three terms is used to approximate f(1/2). What upper bound does the alternating series error bound give for the error of this approximation?",
+              "choices": [
+                "1/56",
+                "1/20",
+                "1/8",
+                "1/144"
+              ],
+              "key": "A",
+              "rationale": "At x = 1/2 the terms are (−1)^n (1/2)^n/(2n + 1): 1, −1/6, 1/20, −1/56, 1/144, …. They alternate in sign and decrease in size to 0, so the error after three terms is at most the size of the first omitted term, (1/2)^3/7 = 1/56.",
+              "distractorNotes": {
+                "B": "1/20 is the last term used; the bound is the first term left out.",
+                "C": "This uses (1/2)^3 but forgets the denominator 2n + 1 = 7.",
+                "D": "1/144 is the fifth term, (1/2)^4/9; it skips the first omitted term."
+              },
+              "topics": [
+                "BC.10.ALTERNATING_REMAINDER",
+                "BC.10.ALTERNATING_SERIES"
+              ],
+              "id": "bc-mixed-3-mc10"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "prompt": "A particle moves in the xy-plane with velocity vector v(t) = ⟨3 cos(t^2/2), ln(1 + t^2)⟩ for t ≥ 0. At time t = 1, at what rate is the particle’s speed changing?",
+              "choices": [
+                "1.752",
+                "−1.136",
+                "2.722",
+                "−0.438"
+              ],
+              "key": "B",
+              "rationale": "Speed is |v(t)| = √((3 cos(t^2/2))^2 + (ln(1 + t^2))^2). Its derivative at t = 1, from the calculator’s numerical derivative or from (v · a)/|v| with a = v′, is −1.136276 ≈ −1.136. The speed is decreasing at t = 1.",
+              "distractorNotes": {
+                "A": "This is the magnitude of the acceleration, |a(1)|. The rate of change of speed is only the part of a along v, (v · a)/|v|.",
+                "C": "This is the speed at t = 1, not its rate of change.",
+                "D": "This adds the components of the acceleration, x″(1) + y″(1); the rate of change of speed is not a sum of components."
+              },
+              "topics": [
+                "BC.9.PLANAR_MOTION",
+                "BC.9.SPEED_AND_DISTANCE"
+              ],
+              "id": "bc-mixed-3-mc11"
+            },
+            {
+              "prompt": "Let f(x) = √(1 + x^3). What is the trapezoidal sum approximation to ∫ from 0 to 2 of f(x) dx using four subintervals of equal length?",
+              "choices": [
+                "2.783",
+                "3.783",
+                "3.283",
+                "3.220"
+              ],
+              "key": "C",
+              "rationale": "Δx = 0.5, so T = (0.5/2)[f(0) + 2f(0.5) + 2f(1) + 2f(1.5) + f(2)] = 0.25[1 + 2(1.060660) + 2(1.414214) + 2(2.091650) + 3] = 3.283262 ≈ 3.283.",
+              "distractorNotes": {
+                "A": "This is the left Riemann sum, 0.5[f(0) + f(0.5) + f(1) + f(1.5)].",
+                "B": "This is the right Riemann sum, 0.5[f(0.5) + f(1) + f(1.5) + f(2)].",
+                "D": "This is the midpoint sum, which samples f at 0.25, 0.75, 1.25, and 1.75."
+              },
+              "topics": [
+                "BC.6.RIEMANN_AND_TRAPEZOIDAL_SUMS"
+              ],
+              "id": "bc-mixed-3-mc12"
+            },
+            {
+              "prompt": "A tank is filled with a salt solution. The concentration C(t) of salt in the tank, in grams per liter, satisfies dC/dt = 0.15(40 − C), where t is measured in minutes, and C(0) = 5. At what time t does the concentration reach 30 grams per liter?",
+              "choices": [
+                "11.945",
+                "9.242",
+                "4.762",
+                "8.352"
+              ],
+              "key": "D",
+              "rationale": "Separate variables: dC/(40 − C) = 0.15 dt, so −ln(40 − C) = 0.15t + K, and C(0) = 5 gives 40 − C = 35e^(−0.15t). Then C = 30 when e^(−0.15t) = 10/35, so t = ln(3.5)/0.15 = 8.351753 ≈ 8.352 minutes.",
+              "distractorNotes": {
+                "A": "This models unlimited growth, C = 5e^(0.15t), and solves 5e^(0.15t) = 30. The rate depends on the gap 40 − C, so it is the gap that decays exponentially.",
+                "B": "This uses C = 40(1 − e^(−0.15t)), which starts at C(0) = 0 instead of 5.",
+                "C": "This follows the tangent line at t = 0: the initial rate is 0.15(35) = 5.25, and 25/5.25 ≈ 4.762. The rate falls as C rises, so the true time is later."
+              },
+              "topics": [
+                "BC.7.EXPONENTIAL_MODELS",
+                "BC.7.SEPARATION_OF_VARIABLES",
+                "BC.7.EQUILIBRIUM_SOLUTIONS"
+              ],
+              "id": "bc-mixed-3-mc13"
+            },
+            {
+              "prompt": "The polar curve r = 1 + 3 sin θ, for 0 ≤ θ ≤ 2π, has an inner loop, traced where r < 0. What is the area of the region inside the outer loop and outside the inner loop?",
+              "choices": [
+                "12.223",
+                "17.279",
+                "14.751",
+                "2.528"
+              ],
+              "key": "A",
+              "rationale": "r = 0 when sin θ = −1/3, at θ = 3.481430 and θ = 5.943348; the inner loop is traced between these angles. Inner loop: (1/2) ∫ from 3.481430 to 5.943348 of (1 + 3 sin θ)^2 dθ = 2.527636. The outer loop is traced on the rest of [0, 2π], and (1/2) ∫ of r^2 over those angles is 14.751123. The region between the loops has area 14.751123 − 2.527636 = 12.223487 ≈ 12.223.",
+              "distractorNotes": {
+                "B": "This integrates (1/2)r^2 over all of [0, 2π], which adds the inner loop’s area to the outer loop’s instead of removing it.",
+                "C": "This is the area enclosed by the outer loop, which still includes the inner loop’s region.",
+                "D": "This is the area of the inner loop alone."
+              },
+              "topics": [
+                "BC.9.POLAR_AREA_ONE_CURVE",
+                "BC.9.POLAR_INTERVAL_JUSTIFICATION",
+                "BC.9.POLAR_TRACING"
+              ],
+              "id": "bc-mixed-3-mc14"
+            },
+            {
+              "prompt": "A particle moves along the x-axis with velocity v(t) = √t cos t for 0 ≤ t ≤ 5. What is the total distance the particle travels over this interval?",
+              "choices": [
+                "−2.728",
+                "4.318",
+                "0.704",
+                "4.136"
+              ],
+              "key": "B",
+              "rationale": "Total distance is ∫ from 0 to 5 of |v(t)| dt. The velocity changes sign at t = π/2 and t = 3π/2, and the calculator gives ∫ from 0 to 5 of |√t cos t| dt = 4.318184 ≈ 4.318.",
+              "distractorNotes": {
+                "A": "This is the displacement, ∫ from 0 to 5 of v(t) dt. Motion in the negative direction cancels motion in the positive direction, so it is not a distance.",
+                "C": "This is the distance for 0 ≤ t ≤ π/2 only, before the velocity first changes sign.",
+                "D": "This treats v as changing sign only at π/2, computing |∫ from 0 to π/2 of v(t) dt| + |∫ from π/2 to 5 of v(t) dt|. The velocity changes sign again at 3π/2."
+              },
+              "topics": [
+                "BC.8.MOTION_INTEGRALS",
+                "BC.4.STRAIGHT_LINE_MOTION"
+              ],
+              "id": "bc-mixed-3-mc15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

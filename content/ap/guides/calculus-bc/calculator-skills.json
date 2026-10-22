@@ -1,0 +1,507 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-bc",
+  "id": "calculator-skills",
+  "kind": "strategy",
+  "title": "Calculator skills for the calculator parts",
+  "author": "bc-strategy-author",
+  "summary": "What a graphing calculator is for on the AP® Calculus BC Exam, whether you use Bluebook's built-in Desmos or an approved handheld: the four capabilities that Liminal's practice convention, drawn from College Board's earlier (archived) guidance, lets stand without shown steps, how to write a calculator result so the reader sees the mathematics, three-decimal accuracy without early rounding, radian mode, windows that show every intersection, the usual calculator tasks, and when the calculator is the wrong tool. Eight calculator checks with worked answers.",
+  "minutes": 40,
+  "figures": [
+    {
+      "id": "bc-calculator-skills-g1",
+      "alt": "The curves y = e^x (solid) and y = x^3 (dashed) for 0 ≤ x ≤ 5 and 0 ≤ y ≤ 120. Dots mark two crossings: one low, near x = 2, and one high on the right, near the top of the picture. The region between the crossings, where the dashed curve is above the solid one, is shaded. A dashed horizontal line at y = 10 marks the top of a small window; only the first crossing lies below it.",
+      "caption": "A window that stops at y = 10 shows one crossing. The second one is real and far above it."
+    },
+    {
+      "id": "bc-calculator-skills-g2",
+      "alt": "Graph of v(t) = 2cos(t^2/6) for 0 ≤ t ≤ 6. The curve starts at 2, falls through the t-axis a little after t = 3, reaches about −2 near t = 4.3, and rises back through the axis a little after t = 5 to almost 2 at t = 6. The region between the curve and the axis is shaded, lightly where v is positive and darker where v is negative.",
+      "caption": "Velocity for check 5. Distance counts every shaded region as positive."
+    }
+  ],
+  "sections": [
+    {
+      "id": "four-capabilities",
+      "title": "What the calculator is for",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A graphing calculator is used in two parts of the exam: Section I Part B, 13 multiple-choice questions in 38 minutes, 15% of the exam score, where a calculator is needed for some questions; and Section II Part A, 2 free-response questions in 30 minutes, 16.7% of the exam score. Section I Part A and Section II Part B allow no calculator. Bluebook's built-in Desmos graphing calculator is available only in the calculator parts, and you may also bring up to two approved handheld graphing calculators. Multiple choice is answered in Bluebook; free-response prompts are read there, and your answers are handwritten in a paper booklet. (College Board's exam and calculator-policy pages, checked 2026-10-22.)"
+        },
+        {
+          "type": "text",
+          "text": "College Board's earlier web page \"AP® Calculus: use of graphing calculators\" has been withdrawn; Liminal read it in the Wayback Machine copy of 2026-03-06. That page described four calculator capabilities and a three-decimal rule. Liminal uses them as its practice conventions, and every practice key and rubric on this site follows them. They are not a statement of the current exam's rules; for those, read College Board's live exam and calculator-policy pages."
+        },
+        {
+          "type": "table",
+          "caption": "The four capabilities. Each one has a written form.",
+          "head": [
+            "Capability",
+            "Use it to",
+            "On paper, write"
+          ],
+          "rows": [
+            [
+              "Graph a function in a window you choose",
+              "See the shape, count zeros, find where one curve is above another",
+              "Nothing by itself: a graph is evidence for you, not for the reader"
+            ],
+            [
+              "Solve an equation numerically (zeros and intersections)",
+              "Find limits of integration, times when two rates are equal, a time when an amount reaches a level",
+              "The equation, then its solutions: 4 − x^2 = e^x at x ≈ −1.965 and x ≈ 1.058"
+            ],
+            [
+              "Find a derivative at a point numerically",
+              "Get a rate at an instant, a slope, the sign of f′(c) or of a(c)",
+              "The derivative in notation, then its value: M′(4) ≈ −1.054"
+            ],
+            [
+              "Find a definite integral numerically",
+              "Get an area, a volume, a net change, a distance, an arc length",
+              "The integral with limits, integrand and differential, then its value"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "What a calculator result can stand for",
+          "text": "Under Liminal's convention, a result from one of the four capabilities counts as work once the setup is written: you may evaluate a definite integral with no antiderivative, and solve an equation with no algebra. Any other feature, such as a built-in maximum or minimum finder, a table of values, tracing along a graph, or a regression, gives a number you may use to check yourself, but the written answer still needs the calculus.",
+          "conditions": [
+            "The setup is written in mathematical notation beside the value.",
+            "For an extreme value, the calculus is the derivative, the candidates and a comparison or a sign argument. Solving f′(x) = 0 numerically is one of the four capabilities, so that step may use the calculator.",
+            "A justification is a mathematical reason. \"The calculator shows it\" is not one."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Asked for the absolute maximum of A on [0, 8], you run the maximum finder on the graph of A and write down the value it reports.",
+          "fix": "Write A′(t), solve A′(t) = 0 numerically, list those times with the endpoints, evaluate A at every candidate, and name the largest. The maximum finder may confirm the result; it cannot replace it. It reports a turning point between the bounds you give it, so it can miss a larger value at an endpoint, or a point outside the window."
+        },
+        {
+          "type": "text",
+          "text": "Before the exam, rehearse each capability on the device you will actually use, with a timer running, until no step needs looking up. If you plan to carry a handheld as well as using Bluebook's Desmos, practice the same four tasks on both."
+        }
+      ]
+    },
+    {
+      "id": "writing-results",
+      "title": "Writing a calculator result",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "On a calculator part, the setup is the only evidence of your method. Write the mathematics you asked the calculator to do, in standard notation, then the value. In Liminal's practice rubrics, the setup usually earns its own point beside the answer point, so a correct setup with a slip in the keystrokes still earns something, and a bare number with no setup can earn nothing."
+        },
+        {
+          "type": "list",
+          "items": [
+            "An integral: the integrand, both limits and the differential, as in ∫ from 0 to 6 of |v(t)| dt.",
+            "An equation: the equation you solved and the solution or solutions you are using, as in R(t) = D(t) at t ≈ 4.864.",
+            "A derivative: the function, the point and prime or Leibniz notation, as in v′(4) ≈ 1.837 or dV/dt at t = 2.",
+            "A stored value: give it a name in your written work (let A ≈ −1.965 be the left intersection) and then use the name, so the reader can follow the value from line to line.",
+            "Use ≈ between a setup and its rounded value, and start a new line for each new quantity. A chain such as R(4) = 62.732 = 62.732 − 42 = 20.732 joins things that are not equal; write R(4) − D(4) ≈ 62.732 − 42 = 20.732 instead."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Find the area of the region bounded by the graphs of y = 4 − x^2 and y = e^x.",
+          "text": "4 − x^2 = e^x at x = A ≈ −1.965 and x = B ≈ 1.058, and 4 − x^2 ≥ e^x for A ≤ x ≤ B. Area = ∫ from A to B of (4 − x^2 − e^x) dx ≈ 6.428."
+        },
+        {
+          "type": "model",
+          "prompt": "The amount of a medicine in a patient's blood is M(t) = 12t e^(−t/3) milligrams, t hours after a dose. Is the amount increasing or decreasing at t = 4? Give a reason.",
+          "text": "M′(4) ≈ −1.054. Since M′(4) < 0, the amount of medicine is decreasing at t = 4 hours, at about 1.054 milligrams per hour."
+        },
+        {
+          "type": "trap",
+          "text": "Writing calculator syntax or keystrokes as the setup, such as fnInt(4−X^2−e^(X),X,−1.965,1.058) or a copy of an app's input line.",
+          "fix": "Translate it into the notation of the course: ∫ from A to B of (4 − x^2 − e^x) dx. A reader who has never seen your device must be able to check it."
+        },
+        {
+          "type": "trap",
+          "text": "Writing only the number, such as \"6.428\", because the calculator did all the work.",
+          "fix": "The setup is the work. Write the integral, equation or derivative first; it takes ten seconds and it is the part a rubric can credit when the number is wrong."
+        }
+      ]
+    },
+    {
+      "id": "accuracy",
+      "title": "Three decimal places, and storing values",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Liminal's accuracy convention for calculator answers",
+          "text": "Report a decimal answer correct to three decimal places unless the question asks for something else; the rule comes from College Board's archived calculator guidance. Rounding at the third decimal is standard; Liminal's keys also accept a value truncated at the third decimal. More correct decimals are fine. Fewer are not: 6.43 for 6.428 loses the answer point in Liminal's rubrics.",
+          "conditions": [
+            "The question does not state its own accuracy or form (for example \"to the nearest whole number\" or \"exact value\").",
+            "Every intermediate value was kept at full precision, so the third decimal of the final answer is right."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Store each intermediate result in a named value (a handheld's store command, or a named value in a graphing app) and use the name in later calculations.",
+            "If you must retype a value, carry at least six decimal places. This is enough for almost every exam computation. It fails when the value is multiplied by something large or sits in an exponent, so store it in those cases.",
+            "A value you report in one part, such as an intersection rounded for part (a), is still used at full precision in part (b). The rounded copy is for the reader.",
+            "Tracing along a graph or reading a point off the screen gives two or three digits at best. Use the solver or intersection tool instead."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "The region bounded by y = 4 − x^2 and y = e^x is revolved about the x-axis. A student finds the intersections A ≈ −1.965 and B ≈ 1.058, computes ∫ from A to B of ((4 − x^2)^2 − e^(2x)) dx, rounds it to 26.962, and then multiplies by π. Compare the student's volume with the correctly computed volume.",
+          "answer": "The volume is π∫ from A to B of ((4 − x^2)^2 − e^(2x)) dx ≈ 84.705. The student's π(26.962) = 84.70362… rounds to 84.704, not the correctly rounded 84.705. It matches the truncated value 84.704 only by luck: truncating the student's own number gives 84.703.",
+          "steps": [
+            "Washers: on [A, B] the outer radius is 4 − x^2 and the inner radius is e^x, so V = π∫ from A to B of ((4 − x^2)^2 − e^(2x)) dx.",
+            "With A and B stored at full precision, the integral is 26.96235… and π times it is 84.70473…, so V ≈ 84.705.",
+            "Rounding first: π(26.962) = 84.70362…, which rounds to 84.704. Multiplying by π also multiplied the rounding error of about 0.00035 by more than 3. The error, about 0.0011, has already reached the third decimal; it agrees with one accepted form here only by accident.",
+            "For comparison, using the limits rounded to −1.965 and 1.058 still gives 84.70473… here, because the integrand is 0 at both intersections, so small changes in the limits barely change the integral. Do not count on that: store the limits anyway, because an integrand that is not 0 at a limit is far more sensitive.",
+            "The safe habit: one unbroken calculation from stored values, and one rounding at the end."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-calculator-skills-c1",
+          "prompt": "Water enters a tank at the rate √(1 + t^3) liters per minute and leaves at the rate 3e^(sin t) + 1 liters per minute, for 0 ≤ t ≤ 4. At t = 0 the tank holds 60 liters. (a) How much water is in the tank at t = 4? (b) A student rounds each integral to three decimal places before combining them. What does the student get?",
+          "hint": "Write the amount at t = 4 as one expression: the starting amount plus water in minus water out.",
+          "answer": "(a) About 49.593 liters. (b) 49.594, wrong in the third decimal.",
+          "steps": [
+            "(a) W(4) = 60 + ∫ from 0 to 4 of √(1 + t^3) dt − ∫ from 0 to 4 of (3e^(sin t) + 1) dt.",
+            "The integrals are 13.98289… and 24.38941…, so W(4) = 60 + 13.98289… − 24.38941… = 49.59347…, about 49.593 liters.",
+            "(b) The student's values 13.983 and 24.389 each carry a rounding error, one up by about 0.0001 and the other down by about 0.0004, and the subtraction adds them: 60 + 13.983 − 24.389 = 49.594.",
+            "Either store both integrals, or compute ∫ from 0 to 4 of (√(1 + t^3) − 3e^(sin t) − 1) dt in one step and add 60."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "radian-mode",
+      "title": "Radian mode",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Every calculus fact about trigonometric functions, such as d/dx of sin x = cos x, assumes angles in radians, and so do Liminal's practice questions unless they say otherwise. A calculator in degree mode gives no error message: it quietly returns wrong values for every sine, cosine and tangent, and for every integral or derivative that contains one."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Check the angle setting at the start of every calculator part, on every device you will use.",
+            "Test it: sin(π/6) should return 0.5. In degree mode it returns about 0.009.",
+            "If a question ever gives an angle in degrees, convert it to radians before doing any calculus with it."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-calculator-skills-c2",
+          "prompt": "A student evaluates ∫ from 0 to 2 of sin(x^2) dx on a calculator and gets about 0.047. Find the correct value, and explain the student's result.",
+          "hint": "Ask what the student's calculator took x^2 to mean.",
+          "answer": "∫ from 0 to 2 of sin(x^2) dx ≈ 0.805. The student's calculator was in degree mode, so it integrated the sine of x^2 degrees.",
+          "steps": [
+            "In radian mode, ∫ from 0 to 2 of sin(x^2) dx ≈ 0.805. The integrand has no elementary antiderivative, so this is a genuine calculator integral.",
+            "In degree mode the calculator computes ∫ from 0 to 2 of sin(πx^2/180) dx ≈ 0.047. The angles are tiny, so sin(πx^2/180) ≈ πx^2/180 and the integral is close to (π/180)(8/3) ≈ 0.0465.",
+            "A plausibility check would have caught it: sin(x^2) is about 0.84 at x = 1 and stays positive until x = √π ≈ 1.772, so an integral near 0.05 is far too small."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "windows-intersections",
+      "title": "Choosing a window and finding every intersection",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A window is a question you ask the calculator: what happens for these x-values and these y-values? A standard window answers the wrong question for most exam functions. Set it from the problem instead."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Set x (or t, or θ) to exactly the interval the question states. If none is stated, start wide and narrow down.",
+            "Set y from values, not guesses: evaluate the function at both ends and at two or three points between, and let the window cover them with some room.",
+            "To find every solution of f(x) = g(x), graph the one function h(x) = f(x) − g(x) and look for its zeros. One curve against the axis is easier to read than two curves against each other, and the window only has to fit h.",
+            "Back up the count with a reason: values of h with opposite signs on either side of each zero, and, if you can, the sign of h′ to show there are no others."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Step 3 fails in two ways. A zero where h touches the axis without crossing (a tangency) shows no sign change, so look for a minimum or maximum of h that sits at height 0. Two zeros closer together than a pixel look like one: zoom in on any place where h comes near the axis."
+        },
+        {
+          "type": "figure",
+          "id": "bc-calculator-skills-g1"
+        },
+        {
+          "type": "example",
+          "prompt": "Find the area of the region enclosed by the graphs of y = e^x and y = x^3 for x > 0.",
+          "answer": "The curves cross at x = a ≈ 1.857 and x = b ≈ 4.536, and the area is ∫ from a to b of (x^3 − e^x) dx ≈ 15.950.",
+          "steps": [
+            "In a window with y ≤ 10 the curves cross once, near x = 1.857, and then both leave the top of the screen. It is tempting to stop there.",
+            "A reason to look further: at x = 2, x^3 = 8 is above e^2 ≈ 7.389, but e^x eventually grows faster than any power of x, so the curves must cross again.",
+            "Graph h(x) = e^x − x^3 for 0 < x ≤ 6 and −20 ≤ y ≤ 40. It has zeros at x = a ≈ 1.857 and x = b ≈ 4.536. At b the curves are at height about 93.354, far outside the small window.",
+            "There are no others for x > 0: e^x = x^3 exactly when x = 3 ln x, and x − 3 ln x decreases on (0, 3) and increases on (3, ∞), so it has at most two zeros.",
+            "Between a and b, x^3 ≥ e^x, so the area is ∫ from a to b of (x^3 − e^x) dx ≈ 15.950, with a and b stored at full precision."
+          ],
+          "figureIds": [
+            "bc-calculator-skills-g1"
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Stopping at the first intersection the screen shows, or taking the window's edge as the end of the region.",
+          "fix": "Before integrating, ask whether the curves could meet again inside the stated interval. Check the values of f − g at the far end; if they could still change sign, widen the window."
+        },
+        {
+          "type": "check",
+          "id": "bc-calculator-skills-c3",
+          "prompt": "Find every solution of 8 ln(x + 1) = x with 0 < x ≤ 40, and explain how you know you have them all.",
+          "hint": "Evaluate 8 ln(x + 1) − x at both ends of the interval before choosing a window.",
+          "answer": "There is exactly one solution, x ≈ 26.519.",
+          "steps": [
+            "In a window with 0 ≤ x ≤ 10, the graph of y = 8 ln(x + 1) stays above y = x, so it seems there is no solution.",
+            "Let h(x) = 8 ln(x + 1) − x. Then h(10) ≈ 9.183 > 0 and h(40) ≈ −10.291 < 0, so h changes sign between them. Solving h(x) = 0 on [10, 40] gives x ≈ 26.519.",
+            "There are no others: h′(x) = 8/(x + 1) − 1 is positive for x < 7 and negative for x > 7. Since h(0) = 0 and h increases on [0, 7], h > 0 on (0, 7]; on [7, 40] h decreases, so it has at most one zero there."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typical-tasks",
+      "title": "Typical calculator tasks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Calculator parts lean on a short list of tasks. In each, the calculator does a step you could write down but could not finish by hand, and you write that step."
+        },
+        {
+          "type": "table",
+          "caption": "What to write for each task. The calculator does the step in the last column.",
+          "head": [
+            "Task",
+            "Write",
+            "Calculator does"
+          ],
+          "rows": [
+            [
+              "Area or volume between curves that cross at non-exact points",
+              "f(x) = g(x) at x = A ≈ … and x = B ≈ …, then the integral from A to B",
+              "Solve, then integrate"
+            ],
+            [
+              "When an amount is greatest or least",
+              "A′(t) = R(t) − D(t); R(t) = D(t) at t ≈ …; A at every candidate",
+              "Solve, then integrate"
+            ],
+            [
+              "The time when an amount reaches a level",
+              "A(0) + ∫ from 0 to T of A′(t) dt = level, solved for T",
+              "Solve an equation that contains an integral"
+            ],
+            [
+              "Total distance traveled on a line",
+              "∫ from a to b of |v(t)| dt",
+              "Integrate"
+            ],
+            [
+              "Increasing or decreasing, speeding up or slowing down, at an instant",
+              "f′(c) ≈ …, or v(c) ≈ … and a(c) = v′(c) ≈ …, with their signs",
+              "A derivative at a point"
+            ],
+            [
+              "Position from velocity",
+              "x(b) = x(a) + ∫ from a to b of v(t) dt",
+              "Integrate"
+            ],
+            [
+              "Parametric speed and distance",
+              "Speed √((x′(t))^2 + (y′(t))^2); distance ∫ from a to b of √((x′(t))^2 + (y′(t))^2) dt",
+              "Arithmetic, then integrate"
+            ],
+            [
+              "Polar area",
+              "(1/2)∫ from α to β of (r(θ))^2 dθ, with the intersection angles",
+              "Solve, then integrate"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Water flows into a reservoir at the rate R(t) = 40 + 25 sin(t^2/8) liters per minute and is drawn out at the rate D(t) = 30 + 3t liters per minute, for 0 ≤ t ≤ 8 minutes. At t = 0 the reservoir holds 200 liters. Find the greatest amount of water in the reservoir on [0, 8], and justify your answer.",
+          "answer": "About 276.082 liters, at t ≈ 4.864 minutes.",
+          "steps": [
+            "Let W(t) = 200 + ∫ from 0 to t of (R(x) − D(x)) dx. Then W′(t) = R(t) − D(t).",
+            "Graph R − D on [0, 8]. R(t) = D(t) at t = P ≈ 4.864 and t = Q ≈ 7.370; store both.",
+            "Candidates: the endpoints and the two balance times. W(0) = 200, W(P) = 200 + ∫ from 0 to P of (R(t) − D(t)) dt ≈ 276.082, W(Q) ≈ 224.384, and W(8) ≈ 229.376.",
+            "The greatest amount is about 276.082 liters, at t ≈ 4.864 minutes. Justification: W is continuous on [0, 8], and 276.082 is the largest of the values at the endpoints and at every time where W′ = 0.",
+            "The endpoint matters here: R − D changes from negative to positive at t = Q, so W rises again on [Q, 8]. A sign argument alone would not settle whether W(8) beats W(P); the comparison does."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-calculator-skills-c4",
+          "prompt": "R is the region bounded by the graphs of y = 2cos x and y = x^2. Find the volume of the solid generated when R is revolved about the line y = −1.",
+          "hint": "Find where the curves meet, then measure each radius from the line y = −1.",
+          "answer": "About 34.005.",
+          "steps": [
+            "2cos x = x^2 at x = A ≈ −1.022 and x = B ≈ 1.022, by symmetry; store both. Between them 2cos x ≥ x^2 (at x = 0, 2 > 0).",
+            "Measured from y = −1, the outer radius is 2cos x + 1 and the inner radius is x^2 + 1.",
+            "V = π∫ from A to B of ((2cos x + 1)^2 − (x^2 + 1)^2) dx ≈ 34.005.",
+            "Using the radii 2cos x and x^2, as if the axis were y = 0, gives about 17.034: a different solid."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "bc-calculator-skills-g2"
+        },
+        {
+          "type": "check",
+          "id": "bc-calculator-skills-c5",
+          "prompt": "A particle moves along the x-axis with velocity v(t) = 2cos(t^2/6) for 0 ≤ t ≤ 6. Find (a) the displacement of the particle and (b) the total distance it travels on [0, 6].",
+          "hint": "Displacement counts motion to the left as negative. Distance does not.",
+          "answer": "(a) About 2.722. (b) About 8.356.",
+          "steps": [
+            "(a) Displacement = ∫ from 0 to 6 of v(t) dt ≈ 2.722.",
+            "(b) Distance = ∫ from 0 to 6 of |v(t)| dt ≈ 8.356.",
+            "Check by pieces: v changes sign at t = √(3π) ≈ 3.070 and t = √(9π) ≈ 5.317. The three integrals between those times are about 4.789, −2.817 and 0.750, and 4.789 + 2.817 + 0.750 = 8.356.",
+            "Integrating |v| in one step avoids storing the turning times, but write the absolute value bars: ∫ from 0 to 6 of v(t) dt is the displacement, not the distance."
+          ],
+          "figureIds": [
+            "bc-calculator-skills-g2"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-calculator-skills-c6",
+          "prompt": "A particle moves along a line with velocity v(t) = ln(1 + t^2)·cos t. Is the particle speeding up or slowing down at t = 4? Give a reason.",
+          "hint": "You need two signs at t = 4.",
+          "answer": "Slowing down: v(4) ≈ −1.852 < 0 and a(4) = v′(4) ≈ 1.837 > 0, so the velocity and acceleration have opposite signs.",
+          "steps": [
+            "v(4) = ln(17)·cos 4 ≈ −1.852, so the particle is moving in the negative direction.",
+            "a(4) = v′(4) ≈ 1.837, a derivative at a point from the calculator. By hand it is (8/17)cos 4 − ln(17)·sin 4, the same value.",
+            "The signs differ, so the speed |v| is decreasing at t = 4: the particle is slowing down.",
+            "A positive acceleration alone does not mean speeding up; here it is pushing against motion in the negative direction."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-calculator-skills-c7",
+          "prompt": "A particle moving in the plane is at (1, 1) at time t = 0, and dx/dt = ln(1 + t^2) and dy/dt = 3cos(t^2/2). Find (a) the speed at t = 2, (b) the total distance traveled for 0 ≤ t ≤ 3, and (c) the position at t = 3.",
+          "hint": "Position comes from the starting point plus the integral of each rate.",
+          "answer": "(a) About 2.037. (b) About 7.938. (c) About (4.406, 2.729).",
+          "steps": [
+            "(a) Speed = √((x′(2))^2 + (y′(2))^2) = √((ln 5)^2 + (3cos 2)^2) ≈ 2.037.",
+            "(b) Distance = ∫ from 0 to 3 of √((ln(1 + t^2))^2 + (3cos(t^2/2))^2) dt ≈ 7.938.",
+            "(c) x(3) = 1 + ∫ from 0 to 3 of ln(1 + t^2) dt ≈ 4.406, and y(3) = 1 + ∫ from 0 to 3 of 3cos(t^2/2) dt ≈ 2.729.",
+            "Distance is the integral of speed, so it is never smaller than the straight-line distance between the start and end points, here about 3.820. A distance smaller than that signals a setup error."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "bc-calculator-skills-c8",
+          "prompt": "Find the area of the region that lies inside the polar curve r = e^(sin θ) and outside the circle r = 2.",
+          "hint": "Find the angles where the curves meet, and decide which curve is farther from the pole between them.",
+          "answer": "About 1.685.",
+          "steps": [
+            "e^(sin θ) = 2 when sin θ = ln 2, so θ = α = arcsin(ln 2) ≈ 0.766 and θ = π − α ≈ 2.376. The curve is outside the circle exactly when sin θ > ln 2, between those angles.",
+            "Area = (1/2)∫ from α to π − α of ((e^(sin θ))^2 − 2^2) dθ = (1/2)∫ from α to π − α of (e^(2 sin θ) − 4) dθ ≈ 1.685.",
+            "The intersection angles are exact here, but the integral has no elementary antiderivative, so the calculator is still needed. Subtract the squares of the radii, not the square of their difference."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "when-not",
+      "title": "When not to use the calculator",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The calculator finds numbers. It does not supply reasons, exact values or proofs, and in the no-calculator parts it is not there at all. Put it down when the question asks for any of these:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "An exact value, or a result to \"show\": write the algebra or the antiderivative, and leave answers such as 3 − ln 2 or π/4 in exact form. A decimal such as 1.414 in place of √2 is not exact.",
+            "A justification by sign: \"increasing\", \"relative maximum\", \"changes direction\", \"speeding up\" and \"concave up\" each need a stated sign of a named function. The calculator may find the zero or the values; the sentence must state the signs and what they mean.",
+            "A theorem's conclusion (the Intermediate Value Theorem, the Mean Value Theorem, the Extreme Value Theorem): state the hypotheses and the values that meet them. A graph that seems to cross a line does not show continuity.",
+            "Convergence of a series: partial sums from a calculator can look settled for a series that diverges, such as the harmonic series. Use a named test.",
+            "A quick value you can do by hand, such as D(4) = 30 + 3(4) = 42: the calculator is allowed, but write the expression first so the reader sees what you evaluated."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "For the particle in check 5, with v(t) = 2cos(t^2/6), justify that the particle changes direction at t = √(3π).",
+          "text": "v(t) = 0 only when t^2/6 = π/2 + kπ, and for 3 ≤ t ≤ 3.2 the only such time is t = √(3π) ≈ 3.070. Since v(3) ≈ 0.141 > 0 and v(3.2) ≈ −0.271 < 0, v changes from positive to negative at t = √(3π), so the particle changes direction there."
+        },
+        {
+          "type": "trap",
+          "text": "\"The graph on my calculator shows f is increasing on (1, 3).\"",
+          "fix": "Name the function and the sign: \"f′(x) > 0 for 1 < x < 3, so f is increasing on that interval.\" If f′ is a calculator function, say how you know its sign, for example that its only zeros are outside the interval and f′(2) > 0."
+        },
+        {
+          "type": "trap",
+          "text": "Trusting a calculator value where the calculus does not apply. A numerical derivative of |x − 3| at x = 3 returns 0, though the function has a corner there and no derivative. A numerical integral of 1/x^2 from −1 to 1 may return a number or an error, though the integral diverges.",
+          "fix": "Before using a numerical derivative, check that the function is differentiable at the point. Before using a numerical integral, check that the integrand is continuous on the closed interval; if it is not, the integral is improper and needs a limit."
+        },
+        {
+          "type": "text",
+          "text": "A calculator part can include steps that need no calculator, and a no-calculator part never needs one. If you find yourself wishing for a calculator in Section II Part B, look for an exact route: a geometric area, a substitution, the Fundamental Theorem of Calculus, or an answer left unsimplified."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Calculator skill shows up in timed work. Take the calculator part of a mixed set at exam pace, then score it and look for calculator errors: degree mode, a missed intersection, an early rounding, a missing setup."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "How the exam runs and how to pace it",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Mixed set 1: student copy",
+              "ref": "test:mixed-1"
+            },
+            {
+              "label": "Workshop: rates and accumulation in context",
+              "ref": "guide:fr-accumulation"
+            },
+            {
+              "label": "Workshop: area, volume and arc length",
+              "ref": "guide:fr-area-volume"
+            },
+            {
+              "label": "Workshop: motion along a line",
+              "ref": "guide:fr-linear-motion"
+            },
+            {
+              "label": "Workshop: parametric and vector motion",
+              "ref": "guide:fr-parametric-vector"
+            },
+            {
+              "label": "Workshop: polar curves",
+              "ref": "guide:fr-polar"
+            },
+            {
+              "label": "Unit 8 review: Applications of Integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
