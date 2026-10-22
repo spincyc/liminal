@@ -1,0 +1,1463 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "practice-exam-c",
+  "kind": "practice-exam",
+  "title": "Liminal practice exam C for AP® Physics 1 (May 2027 format)",
+  "author": "p1-pec-authors",
+  "directions": "This original Liminal practice exam follows the May 2027 format of the AP® Physics 1 exam. Section I has 42 multiple-choice questions in 85 minutes. Section II has 4 free-response questions in 95 minutes, one of each type: Mathematical Routines, Translation Between Representations, Experimental Design and Analysis, and Qualitative/Quantitative Translation; Liminal scores them out of 10, 12, 10 and 8 points. A four-function, scientific or graphing calculator is allowed in both sections. Liminal's formula reference is appended to the booklet; before the real exam, also practice with College Board's own equation sheet. Use SI units and g = 9.8 m/s^2, neglect air resistance unless a question says otherwise, and state a positive direction whenever you work with vectors. In free response, show your reasoning and give every numerical answer with a unit. The experimental design question uses invented data on paper; it does not replace the hands-on lab work the AP® physics courses require. Score the exam with the answer key and record raw points by section and unit. Raw points are a practice tally only: they are not AP® scores, and Liminal does not convert them to the 1–5 scale. For official practice in the digital format, use College Board's Bluebook practice tests.",
+  "figures": [
+    {
+      "id": "p1-pec-f1",
+      "alt": "Position–time graph of a forklift, with x in meters from 0 to 14 and t in seconds from 0 to 10. Straight segments join (0, 2), (4, 12), (6, 12) and (10, 4)."
+    },
+    {
+      "id": "p1-pec-f2",
+      "alt": "Graph of force F in kilonewtons against position x in meters from 0 to 1.0. The force rises in a straight line from 0 at x = 0 to 6 kN at x = 0.4 m, then stays at 6 kN to x = 1.0 m."
+    },
+    {
+      "id": "p1-pec-f3",
+      "alt": "Graph of force F in kilonewtons against time t in seconds from 0 to 0.14. The force rises in a straight line from 0 at t = 0 to 30 kN at t = 0.04 s, then falls in a straight line to 0 at t = 0.12 s."
+    },
+    {
+      "id": "p1-pec-f4",
+      "alt": "Side view of a tower crane. A horizontal jib rests on top of a vertical tower. The jib extends 8.0 m to the left of the tower, where a counterweight hangs from its end, and 32 m to the right of the tower. A load hangs from the jib a distance d to the right of the tower.",
+      "caption": "Tower crane jib",
+      "notToScale": true
+    },
+    {
+      "id": "p1-pec-f5",
+      "alt": "Graph of force F in newtons from 0 to 1200 against compression x in meters from 0 to 0.08. Two straight lines start at the origin: line X reaches 1200 N at 0.08 m and passes through 600 N at 0.04 m; line Y reaches 800 N at 0.08 m and passes through 600 N at 0.06 m."
+    },
+    {
+      "id": "p1-pec-f6",
+      "alt": "Graph of the drum's angular velocity ω in rad/s from 0 to 2.5 against time t in seconds from 0 to 14. Straight segments join (0, 0), (4, 2.0), (10, 2.0) and (14, 0)."
+    },
+    {
+      "id": "p1-pec-f7",
+      "alt": "A horizontal pipe whose wide section, labeled 8.0 cm, tapers to a narrow section, labeled 4.0 cm. An arrow in the wide section points toward the narrow end and is labeled 1.5 m/s.",
+      "caption": "Inner diameters of the pipe",
+      "notToScale": true
+    },
+    {
+      "id": "p1-pec-f8",
+      "alt": "Graph of vertical position y in millimeters from −3 to 3 against time t in seconds from 0 to 0.05. A smooth sine curve starts at y = 0 at t = 0, rises to 2.5 mm at t = 0.005 s, falls to −2.5 mm at t = 0.015 s, returns to 0 at t = 0.02 s, and repeats."
+    },
+    {
+      "id": "p1-pec-f20",
+      "alt": "Side view of an inclined conveyor belt running on two rollers from a delivery truck at the lower left up to a platform at the upper right, at 12° to the horizontal. A bag rests on the belt partway up, and an arrow shows the belt moving up the slope.",
+      "caption": "Inclined conveyor at a building site",
+      "notToScale": true
+    },
+    {
+      "id": "p1-pec-f21",
+      "alt": "Key: free-body diagram of the bag as a dot with three arrows: weight mg straight down, normal force F_N perpendicular to the belt and nearly as long as mg, and a short static friction arrow f_s pointing up the slope along the belt. Dashed lines mark axes along and perpendicular to the belt.",
+      "caption": "Key: forces on the bag"
+    },
+    {
+      "id": "p1-pec-f22",
+      "alt": "Top view of a revolving door: four wings meet at a central vertical axis inside a dashed circular housing. A force F pushes on one wing, perpendicular to it, at a distance r from the axis, and a curved arrow shows the direction of rotation.",
+      "caption": "Revolving door, top view",
+      "notToScale": true
+    },
+    {
+      "id": "p1-pec-f23",
+      "alt": "Graph of the push force F in newtons, from 0 to 50, against the door's angle θ in radians, from 0 to 2.0. F is constant at 40 N from θ = 0 to θ = 0.50 rad, then decreases in a straight line to 0 at θ = 1.50 rad."
+    },
+    {
+      "id": "p1-pec-f24",
+      "alt": "Blank grid for sketching: the door's angle θ in radians from 0 to 2.0 on the horizontal axis, marked every 0.25 rad, and rotational kinetic energy K in joules from 0 to 30 on the vertical axis, marked every 5 J."
+    },
+    {
+      "id": "p1-pec-f25",
+      "alt": "Key: graph of K against θ. A straight line rises from the origin to 14 J at θ = 0.50 rad. A curve with decreasing slope continues to a maximum of about 26.3 J near θ = 1.38 rad and reaches 26 J at θ = 1.50 rad. A dashed line beyond 1.50 rad falls with slope −4.0 J/rad.",
+      "caption": "Key: rotational kinetic energy against angle"
+    },
+    {
+      "id": "p1-pec-f26",
+      "alt": "Side view of a level floor. At the left a model vehicle moves to the right at steady speed v_0 toward a dashed vertical trigger line. Farther right the same vehicle is shown stopped. The distance D is marked from the trigger line to the front of the stopped vehicle, with the words delay, then braking written between them.",
+      "caption": "Braking test",
+      "notToScale": true
+    },
+    {
+      "id": "p1-pec-f27",
+      "alt": "Blank grid of 12 by 10 squares for plotting, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-pec-f28",
+      "alt": "Key: graph of D/v_0 in seconds against v_0 in meters per second. Five points lie close to a straight best-fit line that meets the vertical axis at about 0.15 s and has a slope of about 0.21 s^2/m.",
+      "caption": "Key: D/v_0 against v_0"
+    },
+    {
+      "id": "p1-pec-f29",
+      "alt": "A vertical mast with a large pulley at its top. A cable over the pulley holds a cab labeled M on the left and a smaller counterweight labeled m_c on the right. Arrows labeled v show the cab moving up and the counterweight moving down.",
+      "caption": "Construction hoist with counterweight",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 85,
+          "calculator": "any",
+          "directions": "Choose the best answer for each of the 42 questions and mark it on the answer sheet. Each question is worth 1 point, and a wrong answer costs nothing, so answer every question. Use g = 9.8 m/s^2.",
+          "items": [
+            {
+              "id": "p1-pec-mc01",
+              "prompt": "The graph shows the position x of a forklift moving along a straight warehouse aisle. What is the forklift's average speed from t = 0 to t = 10 s?",
+              "figureIds": [
+                "p1-pec-f1"
+              ],
+              "choices": [
+                "0.20 m/s",
+                "1.5 m/s",
+                "1.8 m/s",
+                "2.3 m/s"
+              ],
+              "key": "C",
+              "rationale": "Average speed is total distance over total time. The forklift moves 10 m from 0 to 4 s, stays at x = 12 m from 4 s to 6 s, and moves 8 m back from 6 s to 10 s: 18 m in all. Average speed = 18 m / 10 s = 1.8 m/s.",
+              "distractorNotes": {
+                "A": "Divides the net displacement, 4 m − 2 m = 2 m, by the time; that is the size of the average velocity, not the average speed.",
+                "B": "Averages the speeds of the three segments (2.5, 0 and 2.0 m/s) without weighting them by how long each lasts.",
+                "D": "Divides the 18 m by only the 8 s of motion, leaving out the 2 s the forklift is at rest."
+              },
+              "topics": [
+                "P1.1.3",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc02",
+              "prompt": "A loaded dump truck speeds up from rest to 10 m/s. Later it speeds up from 10 m/s to 20 m/s. What is the ratio of the kinetic energy it gains during the second speed-up to the kinetic energy it gains during the first?",
+              "choices": [
+                "1",
+                "2",
+                "4",
+                "3"
+              ],
+              "key": "D",
+              "rationale": "K = (1/2)mv^2. The first speed-up raises K from 0 to (1/2)m(10 m/s)^2 = (50 m^2/s^2)m; the second raises it from (50 m^2/s^2)m to (1/2)m(20 m/s)^2 = (200 m^2/s^2)m, a gain of (150 m^2/s^2)m. The ratio of the gains is 150/50 = 3.",
+              "distractorNotes": {
+                "A": "Assumes equal changes in speed give equal gains in kinetic energy, as if K were proportional to v.",
+                "B": "Uses the ratio of the final speeds, 20/10, without squaring it and without subtracting the kinetic energy the truck already had.",
+                "C": "Compares the kinetic energies at the ends of the two speed-ups, (20/10)^2, instead of the energies gained."
+              },
+              "topics": [
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc03",
+              "prompt": "A 1000 kg car and an 8000 kg truck collide head-on. Which statement correctly compares the forces the two vehicles exert on each other during the collision and the resulting accelerations?",
+              "choices": [
+                "The truck exerts the larger force, because it has more mass, so the car has the larger acceleration",
+                "The forces have equal magnitudes, and the car's acceleration is 8 times as large as the truck's",
+                "The forces have equal magnitudes, and the two accelerations have equal magnitudes",
+                "The car exerts the larger force, because its velocity changes more"
+              ],
+              "key": "B",
+              "rationale": "The two forces are a Newton's third-law pair: equal in magnitude and opposite in direction at every instant. The collision forces are much larger than any other horizontal forces, so a = F/m gives the car 8000/1000 = 8 times the truck's acceleration.",
+              "distractorNotes": {
+                "A": "Mass does not make one vehicle's force on the other larger; the interaction forces form a third-law pair.",
+                "C": "Equal forces on unequal masses give unequal accelerations.",
+                "D": "The car's larger change in velocity comes from the same size of force acting on a smaller mass, not from a larger force."
+              },
+              "topics": [
+                "P1.2.3",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-pec-mc04",
+              "prompt": "The boom of an excavator is driven by a hydraulic cylinder whose circular piston has a diameter of 0.12 m. Oil pushes on one face of the piston at a gauge pressure of 2.0 × 10^7 Pa, and the other face is open to the atmosphere. What is the net force the oil and the air exert on the piston?",
+              "choices": [
+                "7.2 × 10^4 N",
+                "2.3 × 10^5 N",
+                "2.9 × 10^5 N",
+                "9.0 × 10^5 N"
+              ],
+              "key": "B",
+              "rationale": "The atmosphere pushes on both faces, so the net force comes from the gauge pressure: F = PA = (2.0 × 10^7 Pa)π(0.060 m)^2 ≈ 2.3 × 10^5 N.",
+              "distractorNotes": {
+                "A": "Squares the radius but leaves out π: (2.0 × 10^7 Pa)(0.060 m)^2.",
+                "C": "Takes the area as the diameter squared, (0.12 m)^2, leaving out π/4.",
+                "D": "Uses the diameter in place of the radius in A = πr^2."
+              },
+              "topics": [
+                "P1.8.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc05",
+              "prompt": "A 2400 kg pickup truck tows a 600 kg trailer along a straight, level road. The road exerts a forward force of 4500 N on the truck's drive wheels, and other resistive forces are negligible. What is the magnitude of the force the hitch exerts on the trailer?",
+              "choices": [
+                "9.0 × 10^2 N",
+                "1.1 × 10^3 N",
+                "3.6 × 10^3 N",
+                "4.5 × 10^3 N"
+              ],
+              "key": "A",
+              "rationale": "For the truck–trailer system, a = (4500 N)/(3000 kg) = 1.5 m/s^2. The hitch force is the only horizontal force on the trailer, so F = (600 kg)(1.5 m/s^2) = 9.0 × 10^2 N.",
+              "distractorNotes": {
+                "B": "Multiplies 4500 N by 600/2400, the ratio of the trailer's mass to the truck's mass alone, instead of to the total mass.",
+                "C": "This is the net force on the truck, (2400 kg)(1.5 m/s^2), not the force on the trailer.",
+                "D": "The 4500 N accelerates both vehicles; the hitch supplies only the part the trailer needs."
+              },
+              "topics": [
+                "P1.2.5",
+                "P1.2.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc06",
+              "prompt": "On a straight highway, a car travels north at a constant 28 m/s, and a truck ahead of it travels north at a constant 22 m/s. When the car is 45 m behind the truck, how far does the car travel relative to the ground before it draws level with the truck?",
+              "choices": [
+                "25 m",
+                "45 m",
+                "165 m",
+                "210 m"
+              ],
+              "key": "D",
+              "rationale": "Relative to the truck, the car moves north at 28 m/s − 22 m/s = 6.0 m/s, so it closes the 45 m gap in 7.5 s. In that time it travels (28 m/s)(7.5 s) = 210 m relative to the ground.",
+              "distractorNotes": {
+                "A": "Adds the speeds, as if the vehicles approached head-on: 45 m / 50 m/s = 0.90 s, and (28 m/s)(0.90 s) ≈ 25 m.",
+                "B": "This is the car's displacement relative to the truck, not relative to the ground.",
+                "C": "This is how far the truck travels in the 7.5 s."
+              },
+              "topics": [
+                "P1.1.4",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc07",
+              "prompt": "A hydraulic ram pushes a steel post straight down into hard ground. The graph shows the force the ram exerts on the post, in the direction of the post's motion, as a function of how far the post has moved. How much work does the ram do on the post as the post moves from x = 0 to x = 1.0 m?",
+              "figureIds": [
+                "p1-pec-f2"
+              ],
+              "choices": [
+                "3.0 × 10^3 J",
+                "3.6 × 10^3 J",
+                "4.8 × 10^3 J",
+                "6.0 × 10^3 J"
+              ],
+              "key": "C",
+              "rationale": "Work is the area under the force–position graph: a triangle, (1/2)(0.40 m)(6.0 × 10^3 N) = 1.2 × 10^3 J, plus a rectangle, (0.60 m)(6.0 × 10^3 N) = 3.6 × 10^3 J, for 4.8 × 10^3 J in all.",
+              "distractorNotes": {
+                "A": "Averages the first and last forces, (0 + 6.0 kN)/2, over the whole 1.0 m, as if the force rose steadily the whole way.",
+                "B": "Counts only the constant-force part from 0.40 m to 1.0 m.",
+                "D": "Uses the largest force for the whole 1.0 m."
+              },
+              "topics": [
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc08",
+              "prompt": "In a low-speed crash test, a 1200 kg car moving in the +x direction hits a barrier and comes to rest without rebounding. The graph shows the magnitude of the force the barrier exerts on the car during the impact. Neglecting other horizontal forces during the impact, what was the car's speed just before it hit the barrier?",
+              "figureIds": [
+                "p1-pec-f3"
+              ],
+              "choices": [
+                "0.50 m/s",
+                "1.5 m/s",
+                "3.0 m/s",
+                "25 m/s"
+              ],
+              "key": "B",
+              "rationale": "The impulse is the area under the force–time graph, (1/2)(0.12 s)(3.0 × 10^4 N) = 1.8 × 10^3 N·s, directed in −x. It equals the change in momentum: 0 − (1200 kg)v = −1.8 × 10^3 N·s, so v = 1.5 m/s.",
+              "distractorNotes": {
+                "A": "Uses only the area up to the peak at t = 0.04 s.",
+                "C": "Multiplies the peak force by the whole duration, leaving out the 1/2 for a triangle.",
+                "D": "Divides the peak force by the mass, which gives the peak acceleration in m/s^2, not a speed."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.4.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc09",
+              "prompt": "A hand winch on a boat trailer is turned by a crank. Worker 1 pushes on a crank arm 0.30 m long, at its end and perpendicular to the arm. Worker 2 fits a longer arm, 0.45 m long, and pushes at its end but at 30° to the arm. Both push with forces of the same magnitude. What is the ratio of the torque about the axle from worker 2 to the torque from worker 1?",
+              "choices": [
+                "0.67",
+                "0.75",
+                "1.3",
+                "1.5"
+              ],
+              "key": "B",
+              "rationale": "τ = rF sin θ, where θ is the angle between the arm and the force. τ_2/τ_1 = (0.45 m)(sin 30°)/[(0.30 m)(sin 90°)] = 0.225/0.30 = 0.75.",
+              "distractorNotes": {
+                "A": "Inverts the ratio of the arm lengths and ignores the angle.",
+                "C": "Uses cos 30° instead of sin 30°; with the angle measured from the arm, the perpendicular component of the force is F sin 30°.",
+                "D": "Ignores the angle and compares only the arm lengths."
+              },
+              "topics": [
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-pec-mc10",
+              "prompt": "A road grader works along a straight east–west road, with east as the positive direction. It starts at x = +40 m, drives to x = −25 m, and then drives to x = +10 m. Which gives its displacement and the distance it travels?",
+              "choices": [
+                "Displacement 30 m west; distance 100 m",
+                "Displacement 30 m east; distance 100 m",
+                "Displacement 30 m west; distance 30 m",
+                "Displacement 10 m east; distance 75 m"
+              ],
+              "key": "A",
+              "rationale": "Displacement is final position minus initial position: 10 m − 40 m = −30 m, which is 30 m west. Distance adds the lengths of the two legs: 65 m + 35 m = 100 m.",
+              "distractorNotes": {
+                "B": "Subtracts in the wrong order (initial minus final), which reverses the direction.",
+                "C": "Treats the distance as the size of the displacement, but the grader doubles back.",
+                "D": "Uses the final position as the displacement and adds the sizes of the three positions as the distance."
+              },
+              "topics": [
+                "P1.1.1",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc11",
+              "prompt": "A carpenter holds a 3.0 kg sheet of plywood against a vertical wall by pushing straight into its face with a horizontal force. Between the plywood and the wall, μ_s = 0.60 and μ_k = 0.45; assume only the wall exerts friction on the sheet. What is the smallest push that keeps the sheet from sliding down the wall?",
+              "choices": [
+                "18 N",
+                "49 N",
+                "29 N",
+                "65 N"
+              ],
+              "key": "B",
+              "rationale": "Horizontally, the wall's normal force balances the push, so F_N = F. Vertically, static friction must balance the weight, mg = (3.0 kg)(9.8 m/s^2) = 29.4 N, and it can be at most μ_s F_N. So μ_s F ≥ mg, and the smallest push is F = mg/μ_s = (29.4 N)/0.60 ≈ 49 N.",
+              "distractorNotes": {
+                "A": "Multiplies the weight by μ_s, treating the weight as the normal force; here the normal force is the horizontal push.",
+                "C": "Sets the push equal to the weight; the push is horizontal, and friction, at most μ_s times the push, must hold the sheet up.",
+                "D": "Uses μ_k; the sheet is at rest against the wall, so static friction applies."
+              },
+              "topics": [
+                "P1.2.7",
+                "P1.2.4"
+              ]
+            },
+            {
+              "id": "p1-pec-mc12",
+              "prompt": "A wrecking ball hangs from a crane cable and swings with small amplitude as a simple pendulum with a period of 5.0 s. The operator replaces the ball with one of twice the mass and changes the cable length so that the period becomes 6.0 s. By what factor did the length from the pivot to the ball's center change?",
+              "choices": [
+                "0.72",
+                "1.20",
+                "1.44",
+                "2.88"
+              ],
+              "key": "C",
+              "rationale": "T = 2π√(L/g) does not depend on the mass, and L is proportional to T^2: L_new/L_old = (6.0 s / 5.0 s)^2 = 1.44.",
+              "distractorNotes": {
+                "A": "Divides 1.44 by the mass ratio, as if a heavier ball needed a shorter cable; a pendulum's period does not depend on its mass.",
+                "B": "Treats the period as proportional to the length instead of to its square root.",
+                "D": "Multiplies 1.44 by the mass ratio; a pendulum's period does not depend on its mass."
+              },
+              "topics": [
+                "P1.7.2",
+                "P1.7.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc13",
+              "prompt": "While a bench grinder sharpens a chisel, its motor exerts a constant torque of 1.2 N·m on the grinding wheel, which turns at a steady 3600 revolutions per minute. At what rate does the motor do work on the wheel?",
+              "choices": [
+                "72 W",
+                "4.5 × 10^2 W",
+                "4.3 × 10^3 W",
+                "2.7 × 10^4 W"
+              ],
+              "key": "B",
+              "rationale": "ω = (3600 rev/min)(2π rad/rev)/(60 s/min) ≈ 377 rad/s, and P = τω = (1.2 N·m)(377 rad/s) ≈ 4.5 × 10^2 W.",
+              "distractorNotes": {
+                "A": "Uses 60 rev/s as the angular speed; P = τω needs ω in rad/s.",
+                "C": "Multiplies the torque by 3600 rev/min without converting to rad/s.",
+                "D": "Converts revolutions to radians but not minutes to seconds."
+              },
+              "topics": [
+                "P1.3.5",
+                "P1.6.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc14",
+              "prompt": "A flat-bottomed, box-shaped barge is 12 m long and 5.0 m wide, and its mass is 2.0 × 10^4 kg. It floats in fresh water carrying 3.0 × 10^4 kg of gravel. How far below the water surface is the bottom of the barge?",
+              "choices": [
+                "0.33 m",
+                "0.50 m",
+                "0.83 m",
+                "8.2 m"
+              ],
+              "key": "C",
+              "rationale": "A floating object's buoyant force equals its weight: ρ_water(Ad)g = (m_barge + m_gravel)g, so d = (5.0 × 10^4 kg)/[(1000 kg/m^3)(60 m^2)] ≈ 0.83 m.",
+              "distractorNotes": {
+                "A": "Uses only the empty barge's mass.",
+                "B": "Uses only the gravel's mass; that is how much deeper the barge sits after loading.",
+                "D": "Uses the weight in newtons in place of the mass on one side, so g does not cancel."
+              },
+              "topics": [
+                "P1.8.3",
+                "P1.8.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc15",
+              "prompt": "A mechanic turns the pedals of a bicycle on a repair stand so that its rear wheel spins at a steady 5.0 revolutions per second about its horizontal axle. A 0.025 kg reflector is clipped to a spoke 0.20 m from the axle. What is the magnitude of the force the spoke exerts on the reflector as the reflector passes the lowest point of its circle?",
+              "choices": [
+                "5.2 N",
+                "1.0 N",
+                "0.37 N",
+                "0.25 N"
+              ],
+              "key": "A",
+              "rationale": "The angular speed is ω = 2π(5.0 rev/s) ≈ 31.4 rad/s. At the lowest point the net force on the reflector points up, toward the axle, and supplies the centripetal acceleration ω^2r. Taking up as positive, F − mg = mω^2r, so F = m(ω^2r + g) = (0.025 kg)[(31.4 rad/s)^2(0.20 m) + 9.8 m/s^2] ≈ (0.025 kg)(207 m/s^2) ≈ 5.2 N.",
+              "distractorNotes": {
+                "B": "Uses mv/r, leaving the speed unsquared: (0.025 kg)(6.3 m/s)/(0.20 m) + mg ≈ 1.0 N. The centripetal term is mv^2/r = mω^2r.",
+                "C": "Uses 5.0 rev/s as the angular velocity in m(ω^2r + g); ω must be in rad/s, 2π(5.0) ≈ 31 rad/s.",
+                "D": "This is the reflector's weight. At the lowest point the spoke must also supply the upward net force mω^2r that keeps the reflector on its circle."
+              },
+              "topics": [
+                "P1.2.9",
+                "P1.5.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc16",
+              "prompt": "At a building site, a 4000 kg flatcar rolls at 2.0 m/s along a straight, level track with negligible friction. A crane lowers a 1000 kg bundle of steel beams straight down onto the moving flatcar; the bundle has no horizontal velocity, and it comes to rest on the car. What is the flatcar's speed afterward, and why?",
+              "choices": [
+                "2.0 m/s, because the bundle had no horizontal momentum to exchange with the car",
+                "1.8 m/s, because the kinetic energy of the car and bundle together is unchanged",
+                "1.6 m/s only if the bundle is lowered gently; a faster drop slows the car more",
+                "1.6 m/s, because the horizontal momentum of the car and bundle together is unchanged"
+              ],
+              "key": "D",
+              "rationale": "No external horizontal force acts on the car–bundle system, so its horizontal momentum is conserved: (4000 kg)(2.0 m/s) = (5000 kg)v, so v = 1.6 m/s. The bundle's vertical motion is stopped by vertical forces, which do not change the horizontal momentum.",
+              "distractorNotes": {
+                "A": "The car's friction must speed the bundle up horizontally, and by Newton's third law the bundle's friction slows the car.",
+                "B": "Kinetic energy is not conserved: friction while the bundle comes to rest on the car turns some into internal energy.",
+                "C": "The bundle's vertical velocity is removed by vertical forces, which do not change the horizontal momentum, so the result does not depend on how fast it is lowered."
+              },
+              "topics": [
+                "P1.4.3",
+                "P1.4.4"
+              ]
+            },
+            {
+              "id": "p1-pec-mc17",
+              "prompt": "A 600 kg mine cart starts from rest and rolls down a track that is 25 m long and drops 4.0 m vertically. At the bottom its speed is 7.0 m/s. Treating the cart as a single object (ignore the rotational energy of its wheels), what is the average resistive force on the cart along the track?",
+              "choices": [
+                "3.5 × 10^2 N",
+                "5.9 × 10^2 N",
+                "9.4 × 10^2 N",
+                "2.2 × 10^3 N"
+              ],
+              "key": "A",
+              "rationale": "The cart–Earth system loses mgh − (1/2)mv^2 = 2.35 × 10^4 J − 1.47 × 10^4 J ≈ 8.8 × 10^3 J of mechanical energy. That is the work done against the resistive force over the 25 m path: f = (8.8 × 10^3 J)/(25 m) ≈ 3.5 × 10^2 N.",
+              "distractorNotes": {
+                "B": "Divides the final kinetic energy by the track length, leaving out the gravitational potential energy.",
+                "C": "Divides the decrease in gravitational potential energy by the track length, ignoring the kinetic energy the cart gains.",
+                "D": "Divides the lost energy by the 4.0 m drop, but the resistive force acts along the whole 25 m path."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc18",
+              "prompt": "A tower crane's horizontal jib is a uniform beam 40 m long with a mass of 2.0 × 10^3 kg. It rests on the top of the tower at a point 8.0 m from its left end, as shown, and a 6.0 × 10^3 kg counterweight hangs from its left end. How far to the right of the tower must a 1.6 × 10^3 kg load hang for the jib to be in rotational equilibrium?",
+              "figureIds": [
+                "p1-pec-f4"
+              ],
+              "choices": [
+                "5.0 m",
+                "15 m",
+                "30 m",
+                "45 m"
+              ],
+              "key": "B",
+              "rationale": "Take torques about the top of the tower. The jib's center of mass is 20 m from its left end, which is 12 m right of the tower. Counterclockwise: (6.0 × 10^3 kg)g(8.0 m). Clockwise: (2.0 × 10^3 kg)g(12 m) + (1.6 × 10^3 kg)g d. Setting them equal: 48,000 = 24,000 + 1600d, so d = 15 m.",
+              "distractorNotes": {
+                "A": "Places the jib's weight 20 m from the tower, at half the jib's length, instead of at its center 12 m right of the tower.",
+                "C": "Ignores the jib's own weight.",
+                "D": "Puts the jib's torque on the counterweight's side, but the jib's center of mass is to the right of the tower."
+              },
+              "topics": [
+                "P1.5.5",
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-pec-mc19",
+              "prompt": "The graph shows the force needed to compress each of two springs, X and Y, used in a suspension test rig. Spring X stands upright on the floor, a light rigid plate rests on top of it, spring Y stands upright on that plate, and a second light plate rests on top of spring Y. When a 600 N load is placed on the top plate, how far does the top plate move down?",
+              "figureIds": [
+                "p1-pec-f5"
+              ],
+              "choices": [
+                "0.10 m",
+                "0.024 m",
+                "0.060 m",
+                "0.050 m"
+              ],
+              "key": "A",
+              "rationale": "Each light plate is in equilibrium, so each spring pushes up with the full 600 N. From the graph, 600 N compresses spring Y by 0.060 m and spring X by 0.040 m. The top plate moves down by both compressions: 0.040 m + 0.060 m = 0.10 m.",
+              "distractorNotes": {
+                "B": "Treats the springs as side by side, sharing the load at a common compression: (600 N)/(2.5 × 10^4 N/m).",
+                "C": "Counts only spring Y's compression; the top plate also moves down as spring X compresses beneath it.",
+                "D": "Gives each spring half of the load; in a stack, each spring carries the whole 600 N."
+              },
+              "topics": [
+                "P1.2.8",
+                "P1.2.4"
+              ]
+            },
+            {
+              "id": "p1-pec-mc20",
+              "prompt": "In a staple gun, a compressed spring launches a striker that drives the staple. When the spring is compressed 2.0 cm, the striker leaves the spring at speed v. Assuming all of the spring's stored energy becomes the striker's kinetic energy, what is the striker's speed when the spring is compressed 3.0 cm?",
+              "choices": [
+                "1.2v",
+                "2.3v",
+                "3.4v",
+                "1.5v"
+              ],
+              "key": "D",
+              "rationale": "(1/2)kx^2 = (1/2)mv^2 gives v = x√(k/m), so the speed is proportional to the compression: v_new = (3.0 cm / 2.0 cm)v = 1.5v.",
+              "distractorNotes": {
+                "A": "Takes the square root of the compression ratio, as if the speed were proportional to √x.",
+                "B": "Squares the compression ratio; 2.25 is the ratio of the stored energies, not the speeds.",
+                "C": "Cubes the compression ratio, multiplying the energy ratio by the compression ratio again."
+              },
+              "topics": [
+                "P1.3.3",
+                "P1.3.4"
+              ]
+            },
+            {
+              "id": "p1-pec-mc21",
+              "prompt": "In a test of rear-end collisions, a 1500 kg car moving east hits a 2500 kg truck that is also moving east. The table gives each vehicle's velocity just before and just after the collision, with east positive.\n| Vehicle | Before (m/s) | After (m/s) |\n| --- | --- | --- |\n| Car, 1500 kg | +20 | +14 |\n| Truck, 2500 kg | +12 | +15.6 |\nWhich statement about the collision is correct?",
+              "choices": [
+                "It is inelastic: total momentum is unchanged, but total kinetic energy decreases",
+                "It is elastic, because total momentum is unchanged",
+                "It is perfectly inelastic, because both vehicles keep moving east",
+                "It is impossible, because the truck gains more momentum than the car loses"
+              ],
+              "key": "A",
+              "rationale": "Momentum before: (1500)(20) + (2500)(12) = 6.0 × 10^4 kg·m/s; after: (1500)(14) + (2500)(15.6) = 6.0 × 10^4 kg·m/s, unchanged. Kinetic energy before: 3.0 × 10^5 J + 1.8 × 10^5 J = 4.8 × 10^5 J; after: 1.47 × 10^5 J + 3.04 × 10^5 J ≈ 4.5 × 10^5 J. Kinetic energy decreases and the vehicles separate, so the collision is inelastic but not perfectly inelastic.",
+              "distractorNotes": {
+                "B": "Momentum is conserved in any collision of an isolated system; an elastic collision also keeps the total kinetic energy, which decreases here.",
+                "C": "Perfectly inelastic means the vehicles move together afterward; here their final velocities differ.",
+                "D": "The car loses (1500 kg)(6.0 m/s) = 9.0 × 10^3 kg·m/s, and the truck gains (2500 kg)(3.6 m/s) = 9.0 × 10^3 kg·m/s: the changes are equal."
+              },
+              "topics": [
+                "P1.4.4",
+                "P1.4.3"
+              ]
+            },
+            {
+              "id": "p1-pec-mc22",
+              "prompt": "The graph shows the angular velocity of a concrete mixer's drum as it starts, turns steadily and then stops. Through about how many revolutions does the drum turn from t = 0 to t = 14 s?",
+              "figureIds": [
+                "p1-pec-f6"
+              ],
+              "choices": [
+                "3.2 rev",
+                "4.5 rev",
+                "20 rev",
+                "1.3 × 10^2 rev"
+              ],
+              "key": "A",
+              "rationale": "The angular displacement is the area under the ω–t graph: (1/2)(4.0 s)(2.0 rad/s) + (6.0 s)(2.0 rad/s) + (1/2)(4.0 s)(2.0 rad/s) = 20 rad. Dividing by 2π rad per revolution gives about 3.2 rev.",
+              "distractorNotes": {
+                "B": "Multiplies 2.0 rad/s by the whole 14 s, ignoring the starting and stopping intervals.",
+                "C": "This is the angle in radians, not revolutions.",
+                "D": "Multiplies the angle in radians by 2π instead of dividing by it."
+              },
+              "topics": [
+                "P1.5.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc23",
+              "prompt": "A hybrid city bus stores braking energy in a flywheel whose rotational inertia about its axle is 12 kg·m^2. At what angular speed would the flywheel's rotational kinetic energy equal the kinetic energy of the 9000 kg bus moving at 10 m/s?",
+              "choices": [
+                "1.9 × 10^2 rad/s",
+                "3.9 × 10^2 rad/s",
+                "7.5 × 10^3 rad/s",
+                "2.7 × 10^2 rad/s"
+              ],
+              "key": "D",
+              "rationale": "Set (1/2)Iω^2 = (1/2)mv^2, so ω = v√(m/I) = (10 m/s)√((9000 kg)/(12 kg·m^2)) ≈ (10 m/s)(27.4 m^−1) ≈ 2.7 × 10^2 rad/s.",
+              "distractorNotes": {
+                "A": "Writes the flywheel's kinetic energy as Iω^2, leaving out its 1/2: Iω^2 = (1/2)mv^2.",
+                "B": "Leaves the 1/2 out of the bus's kinetic energy only: (1/2)Iω^2 = mv^2.",
+                "C": "Sets the flywheel's angular momentum Iω equal to the bus's momentum mv; the question compares energies."
+              },
+              "topics": [
+                "P1.6.1",
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc24",
+              "prompt": "Two 2.0 × 10^4 kg precast concrete blocks stand on a factory floor with their centers 3.0 m apart. Treating each block as a point mass at its center, what is the magnitude of the gravitational force each block exerts on the other?",
+              "choices": [
+                "8.9 × 10^−3 N",
+                "1.5 × 10^−7 N",
+                "3.0 × 10^−3 N",
+                "2.0 × 10^5 N"
+              ],
+              "key": "C",
+              "rationale": "F = Gm_1m_2/r^2 = (6.67 × 10^−11 N·m^2/kg^2)(2.0 × 10^4 kg)(2.0 × 10^4 kg)/(3.0 m)^2 ≈ 3.0 × 10^−3 N. Each block exerts a force of this size on the other, a Newton's third-law pair.",
+              "distractorNotes": {
+                "A": "Divides by the distance instead of its square.",
+                "B": "Uses only one block's mass in Gm_1m_2/r^2.",
+                "D": "This is one block's weight, the gravitational force Earth exerts on it; Earth's mass is enormously larger than a block's."
+              },
+              "topics": [
+                "P1.2.6"
+              ]
+            },
+            {
+              "id": "p1-pec-mc25",
+              "prompt": "A bulldozer pushes a load of soil up a slope at constant speed. Taking the soil as the system, which statement about the work done on the soil is correct?",
+              "choices": [
+                "The total work is zero: the bulldozer's positive work equals the negative work done by gravity and friction together",
+                "The bulldozer does no work on the soil, because the soil's speed does not change",
+                "Gravity does positive work, because the soil's gravitational potential energy increases",
+                "The normal force from the slope does negative work, because it acts against the soil's motion"
+              ],
+              "key": "A",
+              "rationale": "The soil's kinetic energy is constant, so by the work–energy theorem the total work on it is zero. The bulldozer pushes along the displacement and does positive work; gravity (whose component along the slope points downhill) and kinetic friction do negative work, which cancels the bulldozer's work.",
+              "distractorNotes": {
+                "B": "The bulldozer pushes along the displacement, so its work is positive; it is the total work that is zero.",
+                "C": "Gravity has a component opposite the uphill displacement, so it does negative work; the increase in potential energy belongs to the soil–Earth system.",
+                "D": "The normal force is perpendicular to the slope and to the displacement, so it does no work."
+              },
+              "topics": [
+                "P1.3.2",
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc26",
+              "prompt": "Cooling water flows steadily through a horizontal pipe in a machine shop. The pipe narrows from an inner diameter of 8.0 cm to 4.0 cm, as shown, and the water moves at 1.5 m/s in the wide section. How does the pressure in the narrow section compare with the pressure in the wide section?",
+              "figureIds": [
+                "p1-pec-f7"
+              ],
+              "choices": [
+                "1.7 × 10^4 Pa higher",
+                "3.4 × 10^3 Pa lower",
+                "3.4 × 10^4 Pa lower",
+                "1.7 × 10^4 Pa lower"
+              ],
+              "key": "D",
+              "rationale": "Continuity: A_1v_1 = A_2v_2, and halving the diameter quarters the area, so v_2 = 6.0 m/s. Bernoulli's equation at equal heights: P_1 − P_2 = (1/2)ρ(v_2^2 − v_1^2) = (1/2)(1000 kg/m^3)(36 − 2.25) m^2/s^2 ≈ 1.7 × 10^4 Pa, so the pressure in the narrow section is lower by that amount.",
+              "distractorNotes": {
+                "A": "Gets the size right but the direction wrong: where the water moves faster at the same height, its pressure is lower.",
+                "B": "Uses the diameter ratio instead of the area ratio, giving 3.0 m/s in the narrow section.",
+                "C": "Leaves out the 1/2 in (1/2)ρv^2."
+              },
+              "topics": [
+                "P1.8.4"
+              ]
+            },
+            {
+              "id": "p1-pec-mc27",
+              "prompt": "An airport tug pulling a train of baggage carts speeds up uniformly from 1.5 m/s to 4.5 m/s while it travels 12 m along a straight, level apron. What is the magnitude of its acceleration?",
+              "choices": [
+                "0.25 m/s^2",
+                "0.84 m/s^2",
+                "0.75 m/s^2",
+                "1.5 m/s^2"
+              ],
+              "key": "C",
+              "rationale": "With constant acceleration and no time given, use v^2 = v_0^2 + 2aΔx: a = (v^2 − v_0^2)/(2Δx) = [(4.5 m/s)^2 − (1.5 m/s)^2]/(2 × 12 m) = (18 m^2/s^2)/(24 m) = 0.75 m/s^2.",
+              "distractorNotes": {
+                "A": "Divides the change in speed by the distance; Δv/Δx is not an acceleration.",
+                "B": "Uses v^2 = 2aΔx as if the tug started from rest, leaving out its initial speed.",
+                "D": "Leaves the 2 out of v^2 = v_0^2 + 2aΔx."
+              },
+              "topics": [
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc28",
+              "prompt": "A forklift has a mass of 2600 kg, and its center of mass is 1.0 m behind its front axle. It lifts a 900 kg pallet whose center of mass is 0.60 m in front of the front axle. Where is the center of mass of the forklift–pallet system?",
+              "choices": [
+                "0.19 m in front of the front axle",
+                "0.20 m behind the front axle",
+                "0.90 m behind the front axle",
+                "0.59 m behind the front axle"
+              ],
+              "key": "D",
+              "rationale": "With forward positive and the origin at the front axle, x_cm = [(2600 kg)(−1.0 m) + (900 kg)(0.60 m)]/(3500 kg) ≈ −0.59 m, which is 0.59 m behind the front axle.",
+              "distractorNotes": {
+                "A": "Swaps the masses, giving the pallet the forklift's mass.",
+                "B": "Averages the two positions without weighting them by mass.",
+                "C": "Treats both positions as positive, ignoring that they lie on opposite sides of the axle."
+              },
+              "topics": [
+                "P1.2.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc29",
+              "prompt": "A 1200 kg delivery van drives north at 15 m/s, turns a corner, and then drives east at 15 m/s. What is the magnitude of the change in the van's momentum?",
+              "choices": [
+                "2.5 × 10^4 kg·m/s",
+                "0 kg·m/s",
+                "1.8 × 10^4 kg·m/s",
+                "3.6 × 10^4 kg·m/s"
+              ],
+              "key": "A",
+              "rationale": "The van's momentum has magnitude (1200 kg)(15 m/s) = 1.8 × 10^4 kg·m/s before and after, first north and then east. Δp = p_f − p_i is 1.8 × 10^4 kg·m/s east plus 1.8 × 10^4 kg·m/s south, so its magnitude is √2(1.8 × 10^4 kg·m/s) ≈ 2.5 × 10^4 kg·m/s, directed southeast.",
+              "distractorNotes": {
+                "B": "Equal speeds do not mean equal momenta: momentum is a vector, and its direction changed.",
+                "C": "Gives the size of either momentum, as if the van had stopped instead of turning.",
+                "D": "Adds the two magnitudes, as if the van had reversed from north to south."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.4.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc30",
+              "prompt": "A plate compactor's base plate vibrates up and down in simple harmonic motion. The graph shows the plate's vertical position y as a function of time. What is the plate's greatest speed?",
+              "figureIds": [
+                "p1-pec-f8"
+              ],
+              "choices": [
+                "0.13 m/s",
+                "0.50 m/s",
+                "0.79 m/s",
+                "1.6 m/s"
+              ],
+              "key": "C",
+              "rationale": "From the graph, the amplitude is A = 2.5 mm and the period is T = 0.020 s. The greatest speed is v_max = Aω = (2.5 × 10^−3 m)(2π / 0.020 s) ≈ 0.79 m/s.",
+              "distractorNotes": {
+                "A": "Divides the amplitude by the period; the plate covers 4A per period and moves fastest at the center.",
+                "B": "Computes 4A/T, the average speed over a cycle, not the greatest speed.",
+                "D": "Uses the peak-to-peak distance, 5.0 mm, as the amplitude."
+              },
+              "topics": [
+                "P1.7.3",
+                "P1.7.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc31",
+              "prompt": "A 12 kg bucket of mortar hangs from a rope wrapped around a drum of radius 0.15 m. The drum turns on a frictionless axle, and its rotational inertia is 0.54 kg·m^2. The bucket is released from rest, and the rope does not slip on the drum. What is the magnitude of the bucket's acceleration?",
+              "choices": [
+                "3.3 m/s^2",
+                "4.9 m/s^2",
+                "7.5 m/s^2",
+                "9.8 m/s^2"
+              ],
+              "key": "A",
+              "rationale": "Bucket, downward positive: mg − T = ma. Drum: Tr = Iα with α = a/r, so T = Ia/r^2 = (24 kg)a. Then (12 kg)(9.8 m/s^2) = (12 kg + 24 kg)a, and a ≈ 3.3 m/s^2.",
+              "distractorNotes": {
+                "B": "Leaves the bucket's own mass out of what is accelerated: a = mg/(I/r^2).",
+                "C": "Uses I/r instead of I/r^2 for the drum's share of the inertia.",
+                "D": "Ignores the drum's rotational inertia, so the bucket falls freely."
+              },
+              "topics": [
+                "P1.5.6",
+                "P1.5.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc32",
+              "prompt": "A loaded truck rolls down a long, straight hill at constant speed while the driver uses the brakes. For the system of the truck and Earth, which statement about energy is correct?",
+              "choices": [
+                "The mechanical energy is constant, because the truck's speed is constant",
+                "The gravitational potential energy decreases, and that energy becomes mostly internal energy of the brakes and their surroundings",
+                "The kinetic energy increases, because gravity does positive work on the truck",
+                "The total energy decreases, because the brakes destroy energy"
+              ],
+              "key": "B",
+              "rationale": "The kinetic energy is constant while the gravitational potential energy decreases as the truck descends, so the mechanical energy decreases. Friction in the brakes (and with the road and air) transforms that energy into internal energy, which spreads to the surroundings; energy is conserved overall.",
+              "distractorNotes": {
+                "A": "Constant speed fixes only the kinetic energy; the potential energy decreases as the truck descends.",
+                "C": "Gravity does positive work, but the friction forces do an equal amount of negative work, so the kinetic energy stays the same.",
+                "D": "Energy is not destroyed; it is transformed into internal energy, some of which leaves the system as heat."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.3"
+              ]
+            },
+            {
+              "id": "p1-pec-mc33",
+              "prompt": "A sealed, hollow steel float used to support a work platform has a mass of 12 kg and an outer volume of 0.020 m^3. When it floats in fresh water, what fraction of its outer volume is below the waterline?",
+              "choices": [
+                "0.012",
+                "0.40",
+                "1.0 (it sinks)",
+                "0.60"
+              ],
+              "key": "D",
+              "rationale": "The float's average density is (12 kg)/(0.020 m^3) = 600 kg/m^3, less than water's, so it floats. Then ρ_water V_sub g = mg gives V_sub = (12 kg)/(1000 kg/m^3) = 0.012 m^3, which is 0.012/0.020 = 0.60 of its volume.",
+              "distractorNotes": {
+                "A": "This is the submerged volume in cubic meters, not a fraction of the float's volume.",
+                "B": "This is the fraction above the waterline.",
+                "C": "Compares steel's density with water's (or uses the weight in newtons in place of the mass); the float's air space makes its average density less than water's."
+              },
+              "topics": [
+                "P1.8.1",
+                "P1.8.3"
+              ]
+            },
+            {
+              "id": "p1-pec-mc34",
+              "prompt": "A crane lowers a steel beam at constant speed on a single vertical cable. Neglecting air resistance, how does the tension in the cable compare with the beam's weight?",
+              "choices": [
+                "Less than the weight, because the beam is moving downward",
+                "Equal to the weight, because the beam's velocity is constant",
+                "Greater than the weight, because the cable must keep the beam from speeding up",
+                "Equal to the weight only when the beam is at rest"
+              ],
+              "key": "B",
+              "rationale": "Constant velocity means zero acceleration, so by Newton's first law the net force on the beam is zero: T = mg, whichever way the beam moves.",
+              "distractorNotes": {
+                "A": "The direction of motion does not decide the net force; with zero acceleration the forces balance.",
+                "C": "Keeping the beam from speeding up needs only T = mg; a tension larger than the weight would slow the beam down.",
+                "D": "Balanced forces go with any constant velocity, not only with rest."
+              },
+              "topics": [
+                "P1.2.4",
+                "P1.2.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc35",
+              "prompt": "A thin-walled steel pipe, with essentially all of its mass at the same distance from its axis, starts from rest and rolls without slipping down a ramp, descending 1.2 m vertically. What is its speed at the bottom of the ramp?",
+              "choices": [
+                "2.4 m/s",
+                "3.4 m/s",
+                "4.0 m/s",
+                "4.8 m/s"
+              ],
+              "key": "B",
+              "rationale": "For a thin-walled pipe I = MR^2, and rolling without slipping gives ω = v/R, so K = (1/2)Mv^2 + (1/2)(MR^2)(v/R)^2 = Mv^2. Energy conservation gives Mgh = Mv^2, so v = √(gh) = √((9.8 m/s^2)(1.2 m)) ≈ 3.4 m/s.",
+              "distractorNotes": {
+                "A": "Counts the rotational kinetic energy twice, giving v = √(gh/2).",
+                "C": "Uses I = (1/2)MR^2, for a solid cylinder, giving v = √(4gh/3).",
+                "D": "Ignores the rotational kinetic energy, giving v = √(2gh)."
+              },
+              "topics": [
+                "P1.6.5",
+                "P1.6.1",
+                "P1.3.4"
+              ]
+            },
+            {
+              "id": "p1-pec-mc36",
+              "prompt": "A space tug, a small vehicle that moves satellites between orbits, transfers from a circular orbit of radius r around Earth to a higher circular orbit of radius 4r. Its period in the first orbit is T. What is its period in the higher orbit?",
+              "choices": [
+                "2T",
+                "4T",
+                "8T",
+                "16T"
+              ],
+              "key": "C",
+              "rationale": "For a circular orbit, GMm/r^2 = m(2πr/T)^2/r, so T^2 is proportional to r^3 and T to r^(3/2). Multiplying r by 4 multiplies T by 4^(3/2) = 8.",
+              "distractorNotes": {
+                "A": "Uses T proportional to √r.",
+                "B": "Treats the period as proportional to the radius; the orbital speed is also smaller in the higher orbit.",
+                "D": "Uses T proportional to r^2."
+              },
+              "topics": [
+                "P1.6.6",
+                "P1.2.9"
+              ]
+            },
+            {
+              "id": "p1-pec-mc37",
+              "prompt": "A 30 kg seat-testing sled slides on a horizontal, frictionless rail, attached to a spring with spring constant 3.0 × 10^3 N/m. It oscillates with an amplitude of 4.0 cm. A technician then sets it oscillating with an amplitude of 8.0 cm. Compared with the first motion, how do the period and the sled's greatest speed change?",
+              "choices": [
+                "The period doubles, and the greatest speed is unchanged",
+                "The period is unchanged, and the greatest speed is 4 times as large",
+                "The period doubles, and the greatest speed doubles",
+                "The period is unchanged, and the greatest speed doubles"
+              ],
+              "key": "D",
+              "rationale": "The period T = 2π√(m/k) ≈ 0.63 s depends on the mass and the spring constant, not on the amplitude. The energy (1/2)kA^2 becomes (1/2)mv_max^2 at equilibrium, so v_max = A√(k/m) = (10 s^−1)A: 0.40 m/s at 4.0 cm and 0.80 m/s at 8.0 cm. The energy is 4 times as large, but the greatest speed only doubles.",
+              "distractorNotes": {
+                "A": "Assumes the sled covers the longer path at the same speeds, so the period grows; the period of a spring oscillator does not depend on the amplitude.",
+                "B": "Scales the speed like the energy; the energy is 4 times as large, but the speed grows only as its square root.",
+                "C": "Gets the speed right but assumes the period grows with the amplitude."
+              },
+              "topics": [
+                "P1.7.4",
+                "P1.7.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc38",
+              "prompt": "A pile driver's 500 kg hammer moving downward at 8.0 m/s strikes the top of a pile and rebounds upward at 1.5 m/s. The contact lasts 0.020 s. Taking upward as positive and treating the pile's force as the only significant force during contact, what is the average force of the pile on the hammer?",
+              "choices": [
+                "+4.8 × 10^3 N",
+                "+1.6 × 10^5 N",
+                "+2.0 × 10^5 N",
+                "+2.4 × 10^5 N"
+              ],
+              "key": "D",
+              "rationale": "Δp = m(v_f − v_i) = (500 kg)[(+1.5 m/s) − (−8.0 m/s)] = +4750 kg·m/s, and F_avg = Δp/Δt = (4750 kg·m/s)/(0.020 s) ≈ +2.4 × 10^5 N.",
+              "distractorNotes": {
+                "A": "This is the impulse in N·s; it still has to be divided by the contact time.",
+                "B": "Subtracts the speeds, ignoring that the velocity reverses: (500 kg)(8.0 − 1.5 m/s)/(0.020 s).",
+                "C": "Ignores the rebound and uses only the change from 8.0 m/s to rest."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.4.1"
+              ]
+            },
+            {
+              "id": "p1-pec-mc39",
+              "prompt": "A farm compares four tractors, each pulling a plow at constant speed in a straight line across a level field. The table gives the horizontal force each tractor exerts on its plow, along the direction of motion, the distance pulled and the time taken.\n| Tractor | Force (kN) | Distance (m) | Time (s) |\n| --- | --- | --- | --- |\n| W | 16 | 40 | 25 |\n| X | 10 | 90 | 40 |\n| Y | 5.0 | 80 | 20 |\n| Z | 12 | 60 | 24 |\nWhich tractor does work on its plow at the greatest average rate?",
+              "choices": [
+                "Tractor W",
+                "Tractor X",
+                "Tractor Y",
+                "Tractor Z"
+              ],
+              "key": "D",
+              "rationale": "Average power is P = W/t = Fd/t: W, (16 kN)(40 m)/(25 s) = 25.6 kW; X, 22.5 kW; Y, 20 kW; Z, (12 kN)(60 m)/(24 s) = 30 kW. Tractor Z has the greatest power.",
+              "distractorNotes": {
+                "A": "W pulls with the largest force, but it moves its plow at only 1.6 m/s.",
+                "B": "X does the most work, 9.0 × 10^5 J, but takes the longest time.",
+                "C": "Y moves its plow fastest, at 4.0 m/s, but pulls with the smallest force."
+              },
+              "topics": [
+                "P1.3.5",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-pec-mc40",
+              "prompt": "A machine's eccentric cam is a uniform disk of mass 1.2 kg and radius 0.10 m. It turns about an axle perpendicular to the disk and 0.040 m from the disk's center. What is the cam's rotational inertia about the axle?",
+              "choices": [
+                "7.9 × 10^−3 kg·m^2",
+                "6.0 × 10^−3 kg·m^2",
+                "1.4 × 10^−2 kg·m^2",
+                "5.4 × 10^−2 kg·m^2"
+              ],
+              "key": "A",
+              "rationale": "Parallel-axis theorem: I = I_cm + Md^2 = (1/2)(1.2 kg)(0.10 m)^2 + (1.2 kg)(0.040 m)^2 = 6.0 × 10^−3 kg·m^2 + 1.9 × 10^−3 kg·m^2 ≈ 7.9 × 10^−3 kg·m^2.",
+              "distractorNotes": {
+                "B": "This is the rotational inertia about the disk's center; the axle is off center, so Md^2 must be added.",
+                "C": "Uses MR^2 for the disk about its center; a uniform disk has I = (1/2)MR^2.",
+                "D": "Uses Md instead of Md^2 in the parallel-axis term."
+              },
+              "topics": [
+                "P1.5.4"
+              ]
+            },
+            {
+              "id": "p1-pec-mc41",
+              "prompt": "From the edge of a roof, a roofer tosses a bundle of old shingles into a dumpster, releasing it at 4.0 m/s and 30° above the horizontal. The bundle lands in the dumpster at a level 3.0 m below the point of release. Neglecting air resistance, how far horizontally from the point of release does the bundle land?",
+              "choices": [
+                "2.0 m",
+                "2.7 m",
+                "3.5 m",
+                "4.1 m"
+              ],
+              "key": "C",
+              "rationale": "v_x = (4.0 m/s)cos 30° ≈ 3.46 m/s, and v_y = (4.0 m/s)sin 30° = 2.0 m/s upward. With up positive, −3.0 m = (2.0 m/s)t − (4.9 m/s^2)t^2 gives t ≈ 1.01 s, so the horizontal distance is (3.46 m/s)(1.01 s) ≈ 3.5 m.",
+              "distractorNotes": {
+                "A": "Uses the vertical component, 2.0 m/s, as the horizontal velocity.",
+                "B": "Finds the time as if the bundle left horizontally, ignoring its upward velocity component.",
+                "D": "Uses the full 4.0 m/s as the horizontal velocity."
+              },
+              "topics": [
+                "P1.1.5"
+              ]
+            },
+            {
+              "id": "p1-pec-mc42",
+              "prompt": "To build a bridge pier, workers dig inside a caisson: a large chamber, open at the bottom, sunk into a river. Its bottom edge is 12 m below the river's surface. To keep the river water from rising into the chamber, the air inside must be at the same pressure as the water at the bottom edge. The air above the river is at 1.01 × 10^5 Pa. What absolute air pressure is needed in the chamber?",
+              "choices": [
+                "2.2 × 10^5 Pa",
+                "1.2 × 10^5 Pa",
+                "1.1 × 10^5 Pa",
+                "1.0 × 10^5 Pa"
+              ],
+              "key": "A",
+              "rationale": "The absolute pressure at depth h is P = P_atm + ρgh = 1.01 × 10^5 Pa + (1000 kg/m^3)(9.8 m/s^2)(12 m) ≈ 1.01 × 10^5 Pa + 1.18 × 10^5 Pa ≈ 2.2 × 10^5 Pa.",
+              "distractorNotes": {
+                "B": "This is the gauge pressure, ρgh; the air must also match the atmosphere's push on the river's surface.",
+                "C": "Leaves g out of ρgh, adding only (1000)(12) Pa to the atmospheric pressure.",
+                "D": "This is atmospheric pressure alone; it ignores the water above the chamber's edge."
+              },
+              "topics": [
+                "P1.8.2",
+                "P1.8.3"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 95,
+          "calculator": "any",
+          "directions": "Answer all four questions in the space provided. Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Give numerical answers with units, use g = 9.8 m/s^2, and state a positive direction wherever you use signs. Suggested times: question 1, 20–25 minutes; question 2, 25–30 minutes; question 3, 25–30 minutes; question 4, 15–20 minutes. Question 3 uses supplied data that are invented for practice; it is a paper exercise and does not replace the hands-on lab work that AP® physics courses require.",
+          "items": [
+            {
+              "id": "p1-pec-fr1",
+              "prompt": "At a building site, an inclined conveyor belt carries bags of cement from a delivery truck up to a second-floor platform, as shown. The belt makes an angle θ = 12° with the horizontal. Each bag has a mass of 25 kg. The coefficients of friction between a bag and the belt are μ_s = 0.55 and μ_k = 0.45. Take the direction up the slope, along the belt, as positive, and use g = 9.8 m/s^2.",
+              "type": "MR",
+              "topics": [
+                "P1.2.7",
+                "P1.2.5",
+                "P1.2.2"
+              ],
+              "figureIds": [
+                "p1-pec-f20"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "The belt moves up the slope at a constant speed, and a bag rides on it without slipping. Draw a free-body diagram for the bag. Draw each force as an arrow starting on the dot, with lengths that show how the forces compare.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Exactly three forces: the weight mg straight down, the normal force F_N perpendicular to the belt and away from it, and static friction up the slope along the belt (no separate force for the belt's motion)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Relative lengths: F_N slightly shorter than mg (F_N = mg cos 12° ≈ 0.98mg) and friction much shorter than both (mg sin 12° ≈ 0.21mg)."
+                    }
+                  ],
+                  "answer": "Three forces: mg downward, F_N perpendicular to the belt and away from it, and static friction f_s up the slope. F_N is nearly as long as mg, and f_s is about one-fifth as long as mg.",
+                  "steps": [
+                    "At constant velocity the net force on the bag is zero, so friction must balance the component of the weight down the slope, mg sin 12°.",
+                    "Perpendicular to the belt, F_N balances mg cos 12°, which is 0.98mg."
+                  ],
+                  "answerFigureIds": [
+                    "p1-pec-f21"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "The belt's motor is adjusted so that the belt speeds up as it carries a bag up the slope. Derive an expression for the greatest acceleration a_max that the belt can have, up the slope, without the bag slipping, in terms of μ_s, θ and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Perpendicular to the belt there is no acceleration, so F_N = mg cos θ."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Newton's second law along the belt with static friction up the slope at its largest value, μ_s F_N: μ_s mg cos θ − mg sin θ = ma_max."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "a_max = g(μ_s cos θ − sin θ), with the mass canceled, or an equivalent expression."
+                    }
+                  ],
+                  "answer": "a_max = g(μ_s cos θ − sin θ)",
+                  "steps": [
+                    "The bag accelerates with the belt only if static friction can supply the net force up the slope; the largest it can be is μ_s F_N = μ_s mg cos θ.",
+                    "Along the belt: μ_s mg cos θ − mg sin θ = ma_max, so a_max = g(μ_s cos θ − sin θ), the same for every bag's mass."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate a_max. Then calculate the magnitude of the friction force on a bag when the belt moves at constant speed.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "a_max ≈ 3.2 m/s^2 (3.23 m/s^2; accept 3.1–3.3 m/s^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "At constant speed f_s = mg sin 12° ≈ 51 N (accept 50–52 N), with the reasoning that static friction is only as large as needed rather than μ_s F_N ≈ 132 N."
+                    }
+                  ],
+                  "answer": "a_max ≈ 3.2 m/s^2 (3.23 m/s^2); at constant speed the friction force is about 51 N.",
+                  "steps": [
+                    "a_max = 9.8(0.55 cos 12° − sin 12°) = 9.8(0.538 − 0.208) ≈ 3.23 m/s^2.",
+                    "At constant speed the forces along the belt balance: f_s = mg sin θ = (25)(9.8)(0.208) ≈ 50.9 N. The value μ_s F_N = 0.55(25)(9.8)(0.978) ≈ 132 N is only the upper limit of static friction."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "With the belt at rest, a bag is set on it. The belt is then started: it speeds up uniformly from rest to 1.5 m/s in 0.30 s and then keeps moving at 1.5 m/s. Determine whether the bag slips on the belt. If it does, calculate the time after the belt starts at which the bag first moves along with the belt.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the belt's acceleration, 1.5/0.30 = 5.0 m/s^2, and concludes that the bag slips because 5.0 m/s^2 is greater than a_max ≈ 3.2 m/s^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "While slipping, the bag slides down the slope relative to the belt, so kinetic friction acts up the slope: a = g(μ_k cos θ − sin θ) ≈ 2.3 m/s^2 (2.28 m/s^2), from Newton's second law."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The bag reaches the belt's speed of 1.5 m/s at t = 1.5/2.28 ≈ 0.66 s (accept 0.64–0.68 s), which is after the belt has stopped speeding up; or equivalent reasoning with consistent values."
+                    }
+                  ],
+                  "answer": "Yes, the bag slips, because the belt's acceleration of 5.0 m/s^2 exceeds 3.2 m/s^2. Kinetic friction gives the bag an acceleration of about 2.3 m/s^2 up the slope, so the bag reaches 1.5 m/s, and moves with the belt, about 0.66 s after the belt starts.",
+                  "steps": [
+                    "Belt: a = Δv/Δt = (1.5 m/s)/(0.30 s) = 5.0 m/s^2, larger than a_max, so static friction cannot hold the bag.",
+                    "Sliding bag: μ_k mg cos θ − mg sin θ = ma, so a = 9.8(0.45 × 0.978 − 0.208) ≈ 2.28 m/s^2. It is positive, so the bag still speeds up the slope, more slowly than the belt.",
+                    "At 0.30 s the bag moves at only 0.68 m/s while the belt moves at 1.5 m/s. The bag keeps accelerating at 2.28 m/s^2 until v = 1.5 m/s at t = 1.5/2.28 ≈ 0.66 s; after that static friction of 51 N, well under the 132 N limit, keeps it moving with the belt."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-pec-fr2",
+              "prompt": "A revolving door at the entrance of an office building turns about a vertical axis through its center; the first figure shows a top view. The door's rotational inertia about the axis is 50 kg·m^2. A speed-control brake exerts a constant frictional torque of 4.0 N·m that opposes the door's rotation whenever it turns; neglect all other friction. The door is at rest at θ = 0. A person then pushes horizontally on one wing, always perpendicular to the wing and 0.80 m from the axis, and lets go when the door has turned through θ = 1.50 rad. The graph shows the magnitude F of the push as a function of the angle θ through which the door has turned.",
+              "type": "TBR",
+              "topics": [
+                "P1.6.2",
+                "P1.6.1",
+                "P1.5.3"
+              ],
+              "figureIds": [
+                "p1-pec-f22",
+                "p1-pec-f23"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Calculate the work done on the door by the person's push from θ = 0 to θ = 1.50 rad, and the door's angular speed at θ = 1.50 rad.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Work by the push from the graph: the torque is rF, so W_p = r × (area under the F–θ graph) = (0.80 m)(20 N·rad + 20 N·rad) = 32 J, or the equivalent area under a torque–angle graph."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Includes the brake's negative work, −(4.0 N·m)(1.50 rad) = −6.0 J, so the door's kinetic energy is 32 J − 6.0 J = 26 J."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "ω = √(2K/I) = √(2 × 26/50) ≈ 1.0 rad/s (1.02 rad/s; accept 1.0–1.03 rad/s)."
+                    }
+                  ],
+                  "answer": "W_p = 32 J; the door then has K = 26 J and ω ≈ 1.0 rad/s (1.02 rad/s).",
+                  "steps": [
+                    "Area under the F–θ graph: 40 N × 0.50 rad + (1/2)(40 N)(1.00 rad) = 40 N·rad; multiplying by the 0.80 m lever arm gives the torque's work, 32 J.",
+                    "Rotational work–energy theorem: W_p − τ_bθ = K − 0, so K = 32 J − (4.0 N·m)(1.50 rad) = 26 J.",
+                    "K = (1/2)Iω^2 gives ω = √(2(26 J)/(50 kg·m^2)) ≈ 1.02 rad/s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the grid provided, sketch the door's rotational kinetic energy K as a function of θ from θ = 0 to θ = 1.50 rad. Label the values of K at θ = 0.50 rad and θ = 1.50 rad. Explain how the slope of your graph at any angle is related to the torques exerted on the door.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A straight line from the origin to 14 J at θ = 0.50 rad, where the net torque is a constant (0.80)(40) − 4.0 = 28 N·m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "From 0.50 rad to 1.50 rad, a curve whose slope steadily decreases to about zero near θ = 1.4 rad and ends at 26 J at θ = 1.50 rad, consistent with part (a); the slight maximum, about 26.3 J near 1.38 rad, may be shown but is not required."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the slope ΔK/Δθ equals the net torque on the door, the push's torque minus the brake's torque, because the work done by a torque through a small angle is τΔθ."
+                    }
+                  ],
+                  "answer": "K rises in a straight line to 14 J at 0.50 rad. It then keeps rising with a decreasing slope to a maximum of about 26.3 J near 1.38 rad, where the push's torque has fallen to 4.0 N·m, and is 26 J at 1.50 rad. The slope of the graph at any angle is the net torque on the door.",
+                  "steps": [
+                    "From θ = 0 to 0.50 rad the net torque is 32 N·m − 4.0 N·m = 28 N·m, so K = (28 N·m)θ, reaching 14 J.",
+                    "After 0.50 rad the push's torque falls linearly from 32 N·m to 0, so the slope of K falls; it is zero where 32(1.50 − θ) = 4.0, at θ ≈ 1.38 rad, and slightly negative just before 1.50 rad.",
+                    "W = τΔθ for a small rotation, so ΔK/Δθ = τ_net: the K–θ graph's slope is the net torque."
+                  ],
+                  "figureIds": [
+                    "p1-pec-f24"
+                  ],
+                  "answerFigureIds": [
+                    "p1-pec-f25"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "After the person lets go, the door coasts until the brake stops it. Starting from the rotational form of the work–energy theorem, derive an expression for the total angle θ_stop through which the door turns from θ = 0 until it stops, in terms of the work W_p done by the push and the brake torque τ_b. Calculate θ_stop, and show that it agrees with the slope the K–θ graph has after θ = 1.50 rad, once the push has ended.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies the work–energy theorem from start to stop: W_p − τ_bθ_stop = ΔK = 0, because the door starts and ends at rest."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "θ_stop = W_p/τ_b = (32 J)/(4.0 N·m) = 8.0 rad (about 1.3 revolutions)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Consistency: after the push ends the graph's slope is the net torque, −4.0 N·m = −4.0 J/rad, so K falls from 26 J to zero in 26/4.0 = 6.5 rad, reaching zero at 1.50 + 6.5 = 8.0 rad."
+                    }
+                  ],
+                  "answer": "θ_stop = W_p/τ_b = 32 J / 4.0 N·m = 8.0 rad. After 1.50 rad the K–θ graph is a straight line of slope −4.0 J/rad, which falls from 26 J to zero after 6.5 rad more, at 8.0 rad, in agreement.",
+                  "steps": [
+                    "Only the push and the brake do work on the door, and K is zero at both ends of the motion: W_p + (−τ_bθ_stop) = 0.",
+                    "θ_stop = W_p/τ_b = 8.0 rad.",
+                    "With no push, τ_net = −τ_b is constant, so the graph is a straight line of slope −4.0 J/rad from (1.50 rad, 26 J), reaching K = 0 at 8.0 rad."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A second person pushes the same door from rest with a force that follows the same graph of F against θ, but pushes 0.40 m from the axis. A student claims, \"The door will turn just as far before it stops, because the person pushes with the same force through the same angle.\" Use your expression from part (c) to evaluate the claim.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "The push's torque rF is halved at every angle, so the work it does, r × (area under the F–θ graph), is halved to 16 J."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "θ_stop = W_p/τ_b = 16 J / 4.0 N·m = 4.0 rad, half as far, so the claim is incorrect."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that work depends on the distance through which the force acts: at 0.40 m the hand moves along an arc half as long (s = rθ) for the same rotation, while the brake still removes 4.0 J per radian."
+                    }
+                  ],
+                  "answer": "The claim is incorrect. The push's torque, and so its work, is halved to 16 J, so θ_stop = 16 J / 4.0 N·m = 4.0 rad, half as far as before. The same force through the same angle does less work at a smaller radius, because the hand moves a shorter distance, rθ.",
+                  "steps": [
+                    "W_p = ∫τ dθ = r × (area under F–θ) = (0.40 m)(40 N·rad) = 16 J.",
+                    "The brake torque is unchanged, so θ_stop = W_p/τ_b = 4.0 rad.",
+                    "The door still starts, because the push's torque, (0.40 m)(40 N) = 16 N·m, exceeds the 4.0 N·m brake torque."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-pec-fr3",
+              "prompt": "Engineers test an automatic emergency-braking system on a 1:10-scale model of a delivery vehicle. The model drives in a straight line across a level floor at a steady speed v_0. When its front bumper crosses a trigger line on the floor, a sensor signals the brakes. After a fixed processing delay t_d, during which the model keeps moving at v_0, the brakes apply and the model slows with a constant acceleration of magnitude a until it stops, as shown. The stopping distance D is measured from the trigger line to the front bumper of the stopped model. The engineers want to determine t_d and a. Each value of D is the average of three trials. The data are invented for practice, and this paper exercise does not replace the hands-on lab work that AP® physics courses require.\n| v_0 (m/s) | D (m) |\n| --- | --- |\n| 0.80 | 0.26 |\n| 1.20 | 0.47 |\n| 1.60 | 0.78 |\n| 2.00 | 1.12 |\n| 2.40 | 1.57 |",
+              "type": "EDA",
+              "topics": [
+                "P1.1.2",
+                "P1.1.3"
+              ],
+              "figureIds": [
+                "p1-pec-f26"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the engineers could measure v_0 and D in each trial. Include one step that would reduce the uncertainty in the results.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Measures v_0 after the model has reached a steady speed, by timing it over a measured distance just before the trigger line (for example with two photogates, or with video beside a meter stick) and dividing distance by time; measures D with a tape measure from the trigger line to the front bumper of the stopped model."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives a specific step that reduces uncertainty, such as repeating each speed and averaging, timing over a longer distance, using photogates rather than a hand-held stopwatch, or reading video frame by frame against a scale viewed straight on."
+                    }
+                  ],
+                  "answer": "Let the model reach a steady speed, then time it between two photogates a measured distance apart just before the trigger line; v_0 is that distance divided by the time. After the model stops, measure D with a tape from the trigger line to the front bumper. Repeat each speed several times and average, and time over as long a distance as the floor allows.",
+                  "steps": [
+                    "The speed must be measured where it is steady and just before the line, because the model is assumed to cross the line at v_0.",
+                    "D must be measured to the same point of the model, the front bumper, that defines the trigger crossing."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Starting from kinematic equations for constant velocity and for constant acceleration, show that D = v_0t_d + v_0^2/(2a). State what quantities the engineers should graph to obtain a straight line, and what the slope and the vertical intercept of that line represent.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "During the delay the model moves at constant velocity, covering d_1 = v_0t_d."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "While braking, v^2 = v_0^2 − 2ad_2 with final speed v = 0 gives d_2 = v_0^2/(2a), so D = d_1 + d_2 = v_0t_d + v_0^2/(2a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Divides by v_0: D/v_0 = t_d + v_0/(2a), so a graph of D/v_0 against v_0 is a straight line with slope 1/(2a) and vertical intercept t_d; or an equivalent linearization (such as D/v_0^2 against 1/v_0, slope t_d and intercept 1/(2a)) with slope and intercept correctly interpreted."
+                    }
+                  ],
+                  "answer": "Delay: d_1 = v_0t_d. Braking from v_0 to rest: d_2 = v_0^2/(2a). So D = v_0t_d + v_0^2/(2a). Dividing by v_0 gives D/v_0 = t_d + (1/(2a))v_0, so a graph of D/v_0 against v_0 is a straight line with slope 1/(2a) and vertical intercept t_d.",
+                  "steps": [
+                    "Constant velocity: Δx = v_0t, so the model covers v_0t_d before the brakes act.",
+                    "Constant acceleration of magnitude a opposite the motion: 0 = v_0^2 − 2ad_2.",
+                    "D itself is not linear in v_0 or in v_0^2 when both terms matter, so dividing by v_0 is what produces a straight line."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate D/v_0 for each trial. On the grid provided, plot D/v_0 against v_0, and draw a best-fit line.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Axes labeled with quantities and units, with uniform scales that use most of the grid and reach v_0 = 0 so the vertical intercept can be read (or the intercept is found from the line's equation)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Values of about 0.33, 0.39, 0.49, 0.56 and 0.65 s plotted correctly, with one straight best-fit line extended to the vertical axis."
+                    }
+                  ],
+                  "answer": "D/v_0 (s): 0.33, 0.39, 0.49, 0.56, 0.65. The points lie close to a straight line that meets the vertical axis at about 0.15 s.",
+                  "steps": [
+                    "For example, 0.26 m / 0.80 m/s ≈ 0.325 s and 1.57 m / 2.40 m/s ≈ 0.654 s.",
+                    "Put v_0 (m/s) on the horizontal axis from 0 and D/v_0 (s) on the vertical axis from 0, then draw one straight line with the points scattered evenly about it."
+                  ],
+                  "figureIds": [
+                    "p1-pec-f27"
+                  ],
+                  "answerFigureIds": [
+                    "p1-pec-f28"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line to determine the processing delay t_d and the magnitude a of the braking acceleration.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "t_d from the vertical intercept, about 0.15 s (accept 0.12–0.18 s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Slope from two points far apart on the line, about 0.21 s^2/m (accept 0.19–0.23 s^2/m), and a = 1/(2 × slope) ≈ 2.4 m/s^2 (accept 2.2–2.6 m/s^2), with units."
+                    }
+                  ],
+                  "answer": "t_d ≈ 0.15 s; slope ≈ 0.21 s^2/m, so a = 1/(2 × 0.21 s^2/m) ≈ 2.4 m/s^2.",
+                  "steps": [
+                    "Two points on the line, for example (0.80 m/s, 0.318 s) and (2.40 m/s, 0.649 s), give a slope of 0.331 s / 1.60 m/s ≈ 0.207 s^2/m.",
+                    "The intercept is about 0.318 s − (0.207 s^2/m)(0.80 m/s) ≈ 0.15 s, which is t_d.",
+                    "slope = 1/(2a), so a = 1/(2 × 0.207 s^2/m) ≈ 2.4 m/s^2."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "An engineer claims, \"Doubling the model's speed makes its stopping distance four times as large.\" Use the data to evaluate the claim, and explain physically why the result differs from a factor of four.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the data, for example 1.20 m/s to 2.40 m/s raises D from 0.47 m to 1.57 m, a factor of about 3.3 (or 0.80 to 1.60 m/s, a factor of 3.0), so the claim is incorrect; explains that only the braking distance grows as v_0^2, while the distance covered during the delay grows only in proportion to v_0."
+                    }
+                  ],
+                  "answer": "The claim is incorrect. Doubling v_0 from 1.20 m/s to 2.40 m/s raises D from 0.47 m to 1.57 m, about 3.3 times. The braking distance, v_0^2/(2a), does quadruple, but the delay distance, v_0t_d, only doubles, so the total grows by less than a factor of four.",
+                  "steps": [
+                    "1.57 m / 0.47 m ≈ 3.3, and 0.78 m / 0.26 m = 3.0.",
+                    "D = v_0t_d + v_0^2/(2a): the first term doubles and the second quadruples when v_0 doubles."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-pec-fr4",
+              "prompt": "A construction hoist lifts a cab up the side of a building under construction. A cable attached to the top of the cab runs up over a pulley at the top of the hoist's mast and down to a counterweight of mass m_c, as shown. The cab and its load have a total mass M, where M is greater than m_c. A motor turns the pulley, and the cable does not slip on it. Treat the cable as light and the pulley as massless, and neglect friction and air resistance. The motor raises the cab at a constant speed v through a height h.",
+              "type": "QQT",
+              "topics": [
+                "P1.3.2",
+                "P1.3.5",
+                "P1.3.3",
+                "P1.3.4"
+              ],
+              "figureIds": [
+                "p1-pec-f29"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "A worker claims, \"The counterweight does not reduce the energy the motor must supply to raise the cab through the height h, because the cab gains the same gravitational potential energy either way.\" Without deriving or using equations, explain whether the claim is correct. Identify the system you use and the energy transfers into or within it.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Chooses a system, for example the cab, counterweight, cable and Earth, and identifies the motor's work as the energy transferred into it from outside."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Notes that the speed is constant, so the system's kinetic energy does not change and the motor's work goes only into changing the system's gravitational potential energy."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reasons that the counterweight moves down as the cab moves up, so the system's gravitational potential energy increases by less than the cab's gain; the motor supplies less energy and the claim is incorrect. Equivalent force reasoning (the counterweight's side of the cable helps turn the pulley, so the motor exerts a smaller force through the same distance) also earns this point."
+                    }
+                  ],
+                  "answer": "The claim is incorrect. Take the cab, counterweight, cable and Earth as the system; the motor does work on it from outside. The speed is constant, so the kinetic energy does not change, and the motor's work equals the increase in the system's gravitational potential energy. As the cab rises, the counterweight descends the same distance, so the system's potential energy rises by less than the cab's own gain, and the motor supplies correspondingly less energy.",
+                  "steps": [
+                    "The cab does gain the same gravitational potential energy, but the claim leaves out the counterweight, which loses some at the same time.",
+                    "Only the net change in the system's energy has to come from the motor."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive expressions for the work W done by the motor while the cab rises through the height h, and for the motor's power output P, in terms of M, m_c, g, h and v as appropriate.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Starts from a fundamental relation: W = ΔU_g of the system with ΔK = 0, or forces at constant speed (cable tension Mg on the cab's side and m_cg on the counterweight's side)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "W = Mgh − m_cgh = (M − m_c)gh."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "P = W/Δt with Δt = h/v, so P = (M − m_c)gv, or P = Fv with F = (M − m_c)g at the rim of the pulley."
+                    }
+                  ],
+                  "answer": "W = (M − m_c)gh and P = (M − m_c)gv",
+                  "steps": [
+                    "ΔU_g of the system = Mgh (cab up h) − m_cgh (counterweight down h), and ΔK = 0, so W = (M − m_c)gh.",
+                    "Force view: at constant speed the cable tension is Mg on the cab's side and m_cg on the other, so the motor must supply the difference, (M − m_c)g, at the pulley's rim, which moves at speed v.",
+                    "The rise takes Δt = h/v, so P = W/Δt = (M − m_c)gv."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "(i) Show that your expression for W agrees with your reasoning in part (a). (ii) At the end of the day the load is removed, so that the empty cab has a mass less than m_c. Use your expression for P to predict what the motor must do to raise the empty cab at the same constant speed, and explain physically why the prediction is consistent with your reasoning in part (a).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "(i) W = (M − m_c)gh is less than Mgh whenever m_c is greater than zero, and equals Mgh only with no counterweight, as argued in part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "(ii) With M less than m_c, P = (M − m_c)gv is negative: the motor must hold back and act as a brake (do negative work), because the descending counterweight loses more gravitational potential energy than the rising cab gains, so the system's potential energy decreases."
+                    }
+                  ],
+                  "answer": "(i) (M − m_c)gh is smaller than Mgh for any counterweight, which matches the reasoning that the descending counterweight supplies part of the energy. (ii) P becomes negative: the motor must restrain the pulley and take energy out of the system, because the counterweight now loses more gravitational potential energy than the empty cab gains.",
+                  "steps": [
+                    "Setting m_c = 0 recovers W = Mgh, the case with no counterweight.",
+                    "A negative power output means the motor does negative work on the system; without that braking, the heavier counterweight would accelerate the empty cab upward."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

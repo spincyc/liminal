@@ -1,0 +1,497 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "review-u4",
+  "kind": "unit-review",
+  "unitId": "u4",
+  "title": "Unit 4 review: Linear Momentum",
+  "author": "p1-review-author",
+  "summary": "A retrieval-first review of linear momentum for the AP® Physics 1 Exam: recall checks, mixed exam-level problems, the relations to know with their conditions, model explanations, common traps, and worked examples.",
+  "minutes": 50,
+  "figures": [
+    {
+      "id": "p1-review-u4-g1",
+      "alt": "Graph of force F in newtons against time t in seconds, with t from 0 to 0.5 and F from 0 to 5. F rises along a straight line from 0 at t = 0 to 4 N at t = 0.1 s, stays at 4 N until t = 0.3 s, falls along a straight line to 0 at t = 0.4 s, and stays at 0 until t = 0.5 s."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question on paper, from memory, before you open its answer. State each relation with the conditions it needs, and give every momentum and impulse a sign or a direction. A blank or a wrong answer is useful: its answer names the section further down to reread."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c1",
+          "see": "what-to-know",
+          "prompt": "Write the momentum of an object and of a system of objects. How is a system's momentum related to the velocity of its center of mass? Can two objects have equal momenta but different kinetic energies?",
+          "answer": "p = mv, a vector in the direction of the velocity, measured in kg·m/s. A system's momentum is the vector sum of the momenta of its parts, p_sys = Σm_iv_i, and it equals the total mass times the velocity of the center of mass, p_sys = Mv_cm. Yes: K = p^2/(2m), so of two objects with equal momenta, the one with the smaller mass has the greater kinetic energy.",
+          "steps": [
+            "In one dimension, choose a positive direction and give every velocity, and so every momentum, a sign.",
+            "Two carts moving toward each other with equal and opposite momenta have zero total momentum but nonzero total kinetic energy: momentum and kinetic energy measure different things.",
+            "K = (1/2)mv^2 = (mv)^2/(2m) = p^2/(2m). With p fixed, K is inversely proportional to m."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c2",
+          "see": "what-to-know",
+          "prompt": "State the impulse–momentum theorem. How do you find the impulse of a force that changes with time, and how is the average force during a collision found from it? What does the slope of a graph of momentum against time represent?",
+          "answer": "The net impulse on an object equals its change in momentum: J_net = F_avgΔt = Δp = mv_f − mv_i. The impulse of a force that changes with time is the signed area under its force–time graph, and the average force is that impulse divided by the contact time. The slope of a p–t graph is the net force on the object.",
+          "steps": [
+            "Impulse is a vector, measured in N·s, the same unit as kg·m/s.",
+            "F_net = Δp/Δt is the general form of Newton's second law; for constant mass it reduces to F_net = ma.",
+            "For a given change in momentum, a longer contact time means a smaller average force; the impulse itself does not change.",
+            "Impulse is force times time; work is force times displacement. The same change in momentum can come from pushes that do different amounts of work on objects of different masses."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c3",
+          "see": "what-to-know",
+          "prompt": "When is the total momentum of a system constant? Why do the forces between objects inside the system not change it? When can momentum be treated as conserved during a collision even though external forces such as friction act?",
+          "answer": "A system's total momentum is constant when the net external force on it is zero, or more precisely when the net external impulse is zero. Internal forces come in third-law pairs, equal in size, opposite in direction and acting for the same time, so their impulses cancel. During a brief collision, external forces such as friction are much smaller than the collision forces and act only for a short time, so the momentum just before equals the momentum just after, to a good approximation.",
+          "steps": [
+            "Choose the system so that the interaction you do not know in detail, such as the collision force, is internal.",
+            "Conservation holds component by component: if the only unbalanced external forces are vertical, horizontal momentum is still conserved.",
+            "For a ball bouncing off a floor, the floor's push is external to the ball, so the ball's momentum alone is not conserved.",
+            "When the net external force is zero, the system's center of mass moves at constant velocity, whatever happens inside it."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c4",
+          "see": "what-to-know",
+          "prompt": "Define elastic, inelastic and perfectly inelastic collisions. Which quantities are conserved in each, for a system isolated from external forces? Can the total kinetic energy increase in a collision?",
+          "answer": "In every collision of an isolated system, total momentum is conserved. Elastic: the total kinetic energy after equals the total before. Inelastic: some kinetic energy is converted to internal energy, sound or permanent deformation. Perfectly inelastic: the objects stick together and move with one velocity, and the loss of kinetic energy is the largest that momentum conservation allows. The total kinetic energy can increase only if stored energy, such as that of a compressed spring or an explosive, is released.",
+          "steps": [
+            "Classify a collision by computing the total kinetic energy before and after. Whether the objects bounce apart does not decide it: objects can separate and still lose kinetic energy.",
+            "Total energy is always conserved; only the kinetic energy may decrease.",
+            "For objects that stick together: m_Av_A,i + m_Bv_B,i = (m_A + m_B)v_f."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c5",
+          "see": "what-to-know",
+          "prompt": "For a head-on elastic collision in one dimension, what is true about the relative velocity of the two objects before and after? What happens when (a) equal masses collide elastically head-on and one is at rest, and (b) a light object strikes a much heavier object at rest?",
+          "answer": "The relative velocity reverses: v_B,f − v_A,f = −(v_B,i − v_A,i). (a) The objects exchange velocities: the moving object stops, and the target moves off with the original velocity. (b) The light object rebounds with nearly its original speed, and the heavy object moves off slowly.",
+          "steps": [
+            "The relative-velocity rule follows from conserving both momentum and kinetic energy. It holds only for elastic collisions along one line.",
+            "Used with the momentum equation, it gives two linear equations instead of one equation with squared speeds.",
+            "Check (a): m(v) + m(0) = m(0) + m(v) conserves momentum, and the total kinetic energy (1/2)mv^2 is unchanged."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level. A calculator is allowed. Use g = 9.8 m/s^2, neglect air resistance, and state a positive direction for every vector quantity. Decide which principle each stage needs before you read a hint."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c6",
+          "see": "worked-examples",
+          "prompt": "A 0.80 kg block is released from rest at the top of a frictionless curved ramp, 0.45 m above a level floor. At the bottom of the ramp it collides with a 1.6 kg block at rest, and the two stick together. The pair then slides across the floor, where the coefficient of kinetic friction is 0.25.\n\n(a) Find the speed of the pair just after the collision.\n\n(b) How far does the pair slide before stopping?\n\n(c) A student skips the collision and writes (0.80 kg)g(0.45 m) = (0.25)(2.4 kg)g d. Explain the error, and give the distance this equation predicts.",
+          "hint": "Split the motion into stages at the moments where the interactions change. For each stage, ask which quantity stays the same and which does not.",
+          "answer": "(a) About 0.99 m/s (b) About 0.20 m (c) The equation assumes that mechanical energy survives the collision, but in a sticking collision kinetic energy is converted to internal energy. It predicts 0.60 m, three times too far.",
+          "steps": [
+            "Stage 1, down the ramp: the ramp is frictionless and its normal force does no work, so the block–Earth system conserves mechanical energy: v = √(2gh) = √(2(9.8 m/s^2)(0.45 m)) ≈ 2.97 m/s.",
+            "Stage 2, the collision: the blocks stick, so kinetic energy is not conserved, but during the brief collision the external horizontal forces are negligible and momentum is conserved. With the direction of motion positive: (0.80 kg)(2.97 m/s) = (2.4 kg)V, so V ≈ 0.99 m/s.",
+            "Stage 3, the slide: friction does negative work on the pair, so μ_k(2.4 kg)g d = (1/2)(2.4 kg)V^2 and d = V^2/(2μ_kg) = (0.99 m/s)^2/(2(0.25)(9.8 m/s^2)) ≈ 0.20 m.",
+            "(c) The collision keeps only m_A/(m_A + m_B) = 1/3 of the block's 3.53 J of kinetic energy; the other 2/3, about 2.35 J, becomes internal energy. The student's equation gives d = (0.80 kg)(0.45 m)/((0.25)(2.4 kg)) = 0.60 m, three times the correct distance."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c7",
+          "see": "what-to-know",
+          "prompt": "Two identical 0.80 kg gliders rest on a level, frictionless air track. Glider 1 is pushed by a constant 6.0 N horizontal force for 0.40 s. Glider 2 is pushed by a constant 1.5 N horizontal force for 1.6 s.\n\n(a) Compare the gliders' momenta and kinetic energies after the pushes.\n\n(b) Which glider moves farther while it is being pushed, and by what factor?\n\n(c) Explain how the pushes can do equal work on the gliders when one force is four times the other.",
+          "hint": "For each push, multiply the force by the time it acts, and ask what that product changes.",
+          "answer": "(a) They are equal: each glider has 2.4 kg·m/s and 3.6 J (speed 3.0 m/s). (b) Glider 2 moves 2.4 m and glider 1 moves 0.60 m, so glider 2 moves 4 times as far. (c) Work is force times displacement: (6.0 N)(0.60 m) = (1.5 N)(2.4 m) = 3.6 J. The weaker force acts for longer, and the glider covers more distance while it acts.",
+          "steps": [
+            "(a) Impulses: J_1 = (6.0 N)(0.40 s) = 2.4 N·s and J_2 = (1.5 N)(1.6 s) = 2.4 N·s. Each glider starts at rest, so each ends with p = 2.4 kg·m/s in the direction of its push.",
+            "Equal masses with equal momenta have equal speeds, v = (2.4 kg·m/s)/(0.80 kg) = 3.0 m/s, and equal kinetic energies, K = p^2/(2m) = (2.4)^2/(1.6) = 3.6 J.",
+            "(b) Each glider's acceleration is constant during its push, so its average velocity is (0 + 3.0 m/s)/2 = 1.5 m/s. Glider 1 moves (1.5 m/s)(0.40 s) = 0.60 m; glider 2 moves (1.5 m/s)(1.6 s) = 2.4 m.",
+            "(c) W_1 = (6.0 N)(0.60 m) = 3.6 J and W_2 = (1.5 N)(2.4 m) = 3.6 J. Both equal ΔK = 3.6 J, as the work–energy theorem requires.",
+            "Equal impulses gave equal momenta, and equal momenta of equal masses give equal kinetic energies, so the work had to be equal too. On gliders of unequal mass, equal impulses would give unequal kinetic energies."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c8",
+          "see": "justifications-and-traps",
+          "prompt": "An astronaut floats at rest relative to a space station; she and her suit have a combined mass of 120 kg. A crewmate pushes a 6.0 kg supply bag toward her at 2.0 m/s relative to the station. Take the bag's original direction as positive, and measure every velocity relative to the station.\n\n(a) The astronaut catches the bag. Find her velocity afterward.\n\n(b) Instead, she bats the bag so that it moves straight back toward the crewmate at 1.0 m/s. Find her velocity afterward.\n\n(c) Explain, in terms of impulse, why she moves faster in (b) even though she does not keep the bag.",
+          "hint": "Choose a system whose momentum you can follow, and write every velocity with its sign.",
+          "answer": "(a) About +0.095 m/s (b) +0.15 m/s (c) The bag's change in momentum is larger when it reverses, −18 kg·m/s instead of about −11 kg·m/s. By the third law, the bag exerts on the astronaut an impulse equal in size and opposite in direction to the impulse she exerts on it, so she gains more momentum in (b).",
+          "steps": [
+            "(a) System: the astronaut and the bag. No external force acts on them in the direction of motion, so the system's momentum is conserved: (6.0 kg)(2.0 m/s) = (126 kg)v, so v ≈ +0.095 m/s.",
+            "(b) Same system: (6.0 kg)(2.0 m/s) = (6.0 kg)(−1.0 m/s) + (120 kg)v, so (120 kg)v = 12 kg·m/s + 6.0 kg·m/s = 18 kg·m/s and v = +0.15 m/s.",
+            "(c) The bag's change in momentum: in (a), (6.0 kg)(0.095 m/s − 2.0 m/s) ≈ −11 kg·m/s; in (b), (6.0 kg)(−1.0 m/s − 2.0 m/s) = −18 kg·m/s.",
+            "The astronaut and the bag exert equal and opposite forces on each other for the same time, so the impulse on her is about +11 N·s in (a) and +18 N·s in (b). The larger impulse gives the larger change in her momentum.",
+            "Writing the returning bag's velocity as +1.0 m/s would give (120 kg)v = 12 kg·m/s − 6.0 kg·m/s and a much smaller speed, 0.050 m/s. Check (b) against energy: the kinetic energy falls from 12 J to (1/2)(6.0)(1.0)^2 + (1/2)(120)(0.15)^2 ≈ 4.4 J, so the outcome is possible without stored energy."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c9",
+          "see": "what-to-know",
+          "prompt": "Cart A (1.0 kg) moves at +4.0 m/s along a level, frictionless track toward cart B (3.0 kg), which is at rest. Neither cart carries a spring or any other stored energy that could be released. Six students report the velocities after the collision:\n\n| Report | v_A after (m/s) | v_B after (m/s) |\n| --- | --- | --- |\n| 1 | −2.0 | +2.0 |\n| 2 | +1.0 | +1.0 |\n| 3 | −2.6 | +2.2 |\n| 4 | +2.5 | +0.50 |\n| 5 | +0.40 | +1.2 |\n| 6 | +1.0 | +2.0 |\n\nFor each report, decide whether the outcome is possible. Classify each possible collision as elastic, inelastic or perfectly inelastic, and give the reason each impossible report fails.",
+          "hint": "An outcome must pass three separate tests. One of them uses no momentum or energy at all, only the order of the carts on the track.",
+          "answer": "1: possible, elastic. 2: possible, perfectly inelastic. 3: impossible, because the kinetic energy would increase. 4: impossible, because cart A would pass through cart B. 5: possible, inelastic. 6: impossible, because momentum is not conserved.",
+          "steps": [
+            "Before: p = (1.0 kg)(4.0 m/s) = 4.0 kg·m/s and K = (1/2)(1.0 kg)(4.0 m/s)^2 = 8.0 J. Test each report for momentum (it must stay 4.0 kg·m/s), kinetic energy (it cannot exceed 8.0 J) and order (cart A starts behind cart B, so afterward v_A cannot exceed v_B).",
+            "Report 1: p = −2.0 + 6.0 = 4.0 kg·m/s and K = 2.0 J + 6.0 J = 8.0 J. Possible and elastic.",
+            "Report 2: p = 1.0 + 3.0 = 4.0 kg·m/s, and the carts move together, so they stuck. K = 0.5 J + 1.5 J = 2.0 J. Possible and perfectly inelastic.",
+            "Report 3: p = −2.6 + 6.6 = 4.0 kg·m/s, but K = 3.38 J + 7.26 J ≈ 10.6 J, more than 8.0 J. With no stored energy to release, impossible.",
+            "Report 4: p = 2.5 + 1.5 = 4.0 kg·m/s and K = 3.1 J + 0.4 J = 3.5 J are both acceptable, but cart A would move faster than cart B, which is in front of it. Impossible.",
+            "Report 5: p = 0.4 + 3.6 = 4.0 kg·m/s, K = 0.08 J + 2.16 J ≈ 2.2 J, between the perfectly inelastic 2.0 J and 8.0 J, and v_A < v_B. Possible and inelastic.",
+            "Report 6: p = 1.0 + 6.0 = 7.0 kg·m/s, not 4.0 kg·m/s. No external force acts, so this is impossible."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u4-c10",
+          "see": "what-to-know",
+          "prompt": "On a level air table, puck A (0.50 kg) moves east at 6.0 m/s and strikes puck B (1.5 kg), which is at rest. After the collision, puck A moves north at 3.0 m/s.\n\n(a) Find the speed and direction of puck B after the collision.\n\n(b) Is the collision elastic? Support your answer with a calculation.",
+          "hint": "Set up axes with east and north positive, and keep the two directions separate.",
+          "answer": "(a) About 2.2 m/s, directed about 27° south of east (b) No: the total kinetic energy decreases from 9.0 J to 6.0 J, so the collision is inelastic.",
+          "steps": [
+            "Take east as +x and north as +y. The air table removes friction and the vertical forces balance, so momentum is conserved in each direction separately.",
+            "x: (0.50 kg)(6.0 m/s) = (0.50 kg)(0) + (1.5 kg)v_Bx, so v_Bx = 2.0 m/s.",
+            "y: 0 = (0.50 kg)(3.0 m/s) + (1.5 kg)v_By, so v_By = −1.0 m/s, which points south.",
+            "Speed: √((2.0 m/s)^2 + (1.0 m/s)^2) ≈ 2.2 m/s. Direction: tan φ = (1.0 m/s)/(2.0 m/s), so φ ≈ 27° south of east.",
+            "(b) Before: K = (1/2)(0.50 kg)(6.0 m/s)^2 = 9.0 J. After: (1/2)(0.50 kg)(3.0 m/s)^2 + (1/2)(1.5 kg)(2.24 m/s)^2 ≈ 2.25 J + 3.75 J = 6.0 J.",
+            "3.0 J of kinetic energy was converted to other forms, so the collision is inelastic. Puck B must move partly south so that the total north–south momentum stays zero."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Momentum",
+          "text": "p = mv: a vector in the direction of the velocity, in kg·m/s. A system's momentum is the vector sum of its parts' momenta, p_sys = Σm_iv_i = Mv_cm.",
+          "conditions": [
+            "In one dimension, choose a positive direction and give each velocity a sign; in two dimensions, work with x and y components.",
+            "Momentum and kinetic energy are different quantities, related by K = p^2/(2m): a system can have zero momentum and plenty of kinetic energy."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Impulse–momentum theorem",
+          "text": "J_net = F_avgΔt = Δp = mv_f − mv_i. Impulse is measured in N·s = kg·m/s.",
+          "conditions": [
+            "Δp uses velocities with signs: an object that reverses direction has a larger change in momentum than one that stops.",
+            "J_net is the impulse of the net force. When the contact is long or the collision force is small, include other forces, such as gravity, in the net force.",
+            "For a fixed Δp, a longer contact time gives a smaller average force; the impulse is the same."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Impulse from a force–time graph",
+          "text": "The impulse of a force is the signed area under its F–t graph; the average force is that area divided by the time interval.",
+          "conditions": [
+            "Area below the time axis is negative impulse.",
+            "On a graph of momentum against time, the slope is the net force: F_net = Δp/Δt."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Conservation of momentum",
+          "text": "If the net external impulse on a system is zero, its total momentum is constant: Σp_before = Σp_after.",
+          "conditions": [
+            "Internal forces cancel in third-law pairs, however complicated they are, so conservation needs no details of the collision force.",
+            "During a brief collision or explosion, ordinary external forces such as friction give negligible impulse, so momentum just before equals momentum just after.",
+            "Conservation holds separately for each direction in which the net external force is zero.",
+            "For a single object pushed by something outside it, such as a ball bouncing off a floor, momentum is not conserved; use the impulse–momentum theorem instead."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Center of mass of a system",
+          "text": "v_cm = Σp/Σm. If the net external force on a system is zero, its center of mass moves at constant velocity.",
+          "conditions": [
+            "Collisions, explosions and pushes between parts of the system do not change v_cm.",
+            "With an external force, Ma_cm = F_net,ext: after a projectile explodes in the air, the center of mass of the fragments keeps following the original path until a fragment lands."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Types of collision",
+          "text": "Elastic: total kinetic energy is unchanged. Inelastic: total kinetic energy decreases. Perfectly inelastic: the objects stick together, and the decrease in kinetic energy is as large as momentum conservation allows.",
+          "conditions": [
+            "Momentum is conserved in all three when the system is isolated; kinetic energy decides the type.",
+            "Kinetic energy can increase only when stored energy is released, as in an explosion or a released spring.",
+            "For a sticking collision with the target at rest, the fraction of kinetic energy kept is m_A/(m_A + m_B)."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Elastic collisions in one dimension",
+          "text": "For a head-on elastic collision, the relative velocity reverses: v_B,f − v_A,f = −(v_B,i − v_A,i).",
+          "conditions": [
+            "Use it only for elastic collisions along one line, together with the momentum equation.",
+            "Equal masses, target at rest: the objects exchange velocities.",
+            "A light object hitting a much heavier one at rest rebounds with nearly its original speed."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Collisions in two dimensions",
+          "text": "Momentum is conserved separately in the x and y directions: Σp_x and Σp_y are each constant.",
+          "conditions": [
+            "Write one equation per component, then combine components with the Pythagorean theorem and an angle.",
+            "Never add speeds or momentum magnitudes that point in different directions.",
+            "Kinetic energy is a scalar: to classify the collision, add each object's (1/2)mv^2 using its full speed."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Multistage problems: split the motion where the interaction changes, and use what each stage conserves.",
+          "head": [
+            "Stage",
+            "Use",
+            "Not"
+          ],
+          "rows": [
+            [
+              "Sliding or swinging with no friction, before or after a collision",
+              "Conservation of mechanical energy",
+              "Momentum of the object alone: gravity and normal forces are external to it"
+            ],
+            [
+              "A brief collision or explosion",
+              "Conservation of momentum; kinetic energy too only if the collision is elastic",
+              "Conservation of mechanical energy across a sticking collision"
+            ],
+            [
+              "Sliding to a stop on a rough surface",
+              "Work–energy: f_k d = ΔK lost, or Newton's second law and kinematics",
+              "Momentum conservation: friction is a large external force over this stage"
+            ],
+            [
+              "Flight after leaving a table or ledge",
+              "Projectile kinematics, or energy for a speed",
+              "Momentum conservation for the object alone: gravity acts"
+            ],
+            [
+              "A long push, such as a hand on a cart",
+              "The impulse–momentum theorem with the area under the F–t graph",
+              "Momentum conservation for the cart alone"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Momentum and kinetic energy compared",
+          "head": [
+            "Property",
+            "Momentum p = mv",
+            "Kinetic energy K = (1/2)mv^2"
+          ],
+          "rows": [
+            [
+              "Kind of quantity",
+              "Vector: direction matters, signs in one dimension",
+              "Scalar: never negative"
+            ],
+            [
+              "Changed by",
+              "Impulse: force times time",
+              "Work: force times displacement"
+            ],
+            [
+              "Constant for an isolated system",
+              "Always",
+              "Only in elastic collisions"
+            ],
+            [
+              "Unit",
+              "kg·m/s = N·s",
+              "J = kg·m^2/s^2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A complete explanation names the system, says whether a net external force or impulse acts on it, and supports any classification with numbers. Write it like these."
+        },
+        {
+          "type": "model",
+          "prompt": "Justifying momentum conservation for two carts that collide on a level, low-friction track.",
+          "text": "The system is the two carts. On a level track, the gravitational and normal forces on each cart balance, and friction is negligible during the brief collision, so the net external force on the system is zero. The forces the carts exert on each other are internal and cancel in third-law pairs, so the total momentum of the two-cart system is the same before and after the collision."
+        },
+        {
+          "type": "model",
+          "prompt": "Classifying a collision in which two carts bounce apart, with a total kinetic energy of 1.2 J before and 0.70 J after.",
+          "text": "The total kinetic energy decreased from 1.2 J to 0.70 J, so 0.50 J was converted to internal energy and sound, and the collision is inelastic. Because the carts separated, it is not perfectly inelastic."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining why an airbag reduces the force on a driver in a crash.",
+          "text": "The driver's change in momentum is fixed by the speed before the crash and zero speed after it, so the impulse on the driver is the same with or without the airbag. The airbag makes the stopping time longer, and since F_avg = Δp/Δt, the average force on the driver is smaller."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining why energy conservation cannot be applied from before a sticking collision to after it.",
+          "text": "The objects stick, so the collision is perfectly inelastic, and part of the kinetic energy is converted to internal energy during it. Mechanical energy may be conserved in the stages before and after the collision, but not across it. Momentum conservation links the two stages."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluating the claim \"A falling ball's momentum is not conserved, so momentum conservation has failed.\"",
+          "text": "The claim confuses the system. For the ball alone, Earth's gravitational force is external, so the ball's momentum changes, as the impulse–momentum theorem predicts. For the ball–Earth system, gravity is internal and the total momentum is constant: Earth gains an equal and opposite momentum, with a velocity far too small to notice."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the sign of a velocity, so that a rebound looks like a smaller change in momentum than a stop.",
+          "fix": "Choose a positive direction and keep signs: a 0.20 kg ball arriving at +5.0 m/s and leaving at −3.0 m/s has Δp = (0.20 kg)(−3.0 m/s − 5.0 m/s) = −1.6 kg·m/s, not −0.40 kg·m/s."
+        },
+        {
+          "type": "trap",
+          "text": "Conserving kinetic energy in a collision that is not stated to be elastic, or using energy conservation across a sticking collision.",
+          "fix": "Use momentum through every collision. Use kinetic energy only when the collision is elastic, and use mechanical energy only within stages that contain no collision."
+        },
+        {
+          "type": "trap",
+          "text": "Thinking that \"elastic\" means the objects bounce apart.",
+          "fix": "Objects that bounce apart can still lose kinetic energy. Compute the total kinetic energy before and after to classify."
+        },
+        {
+          "type": "trap",
+          "text": "Forgetting the combined mass when objects stick together.",
+          "fix": "After sticking, the momentum is (m_A + m_B)v_f, one velocity for the combined mass."
+        },
+        {
+          "type": "trap",
+          "text": "Applying momentum conservation to a single object pushed by something outside it, or over a long stage in which friction acts.",
+          "fix": "Momentum is conserved only for a system with no net external impulse. Choose a system that includes both interacting objects, and restrict conservation to the brief collision."
+        },
+        {
+          "type": "trap",
+          "text": "Saying that a softer landing or a longer contact reduces the impulse.",
+          "fix": "The impulse equals Δp, which is set by the velocities before and after. A longer contact time reduces the average force, not the impulse."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming that the object with more momentum must have more kinetic energy.",
+          "fix": "K = p^2/(2m): for equal momenta, the lighter object has more kinetic energy."
+        },
+        {
+          "type": "trap",
+          "text": "Adding speeds, or momentum magnitudes, in a two-dimensional collision.",
+          "fix": "Conserve the x and y components separately, then combine them into a magnitude and a direction."
+        },
+        {
+          "type": "trap",
+          "text": "Accepting an outcome that conserves momentum without checking the rest.",
+          "fix": "A possible outcome also cannot increase the total kinetic energy without a source of stored energy, and it cannot leave the rear object moving faster than the one in front of it."
+        },
+        {
+          "type": "trap",
+          "text": "Ignoring gravity when finding the average force of a floor on a bouncing ball from its change in momentum.",
+          "fix": "The floor's force and gravity together give the impulse: F_floor − mg = Δp/Δt with up positive, so F_floor = Δp/Δt + mg."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A 0.40 kg cart rolls along a level, low-friction track at 0.50 m/s toward a student's hand. The hand pushes the cart in the opposite direction with the horizontal force shown in the graph. Take the direction of the push as positive.\n\n(a) Find the impulse the hand delivers.\n\n(b) Find the cart's velocity at t = 0.40 s.\n\n(c) At what time is the cart momentarily at rest?\n\n(d) Find the average force of the hand from t = 0 to t = 0.40 s.",
+          "figureIds": [
+            "p1-review-u4-g1"
+          ],
+          "answer": "(a) +1.2 N·s (b) +2.5 m/s (c) t = 0.10 s (d) +3.0 N",
+          "steps": [
+            "(a) The impulse is the area under the F–t graph: two triangles and a rectangle. (1/2)(0.10 s)(4.0 N) + (0.20 s)(4.0 N) + (1/2)(0.10 s)(4.0 N) = 0.20 N·s + 0.80 N·s + 0.20 N·s = 1.2 N·s.",
+            "(b) The cart starts at v_i = −0.50 m/s, because it moves opposite the push. Impulse–momentum: mv_f = mv_i + J = (0.40 kg)(−0.50 m/s) + 1.2 N·s = −0.20 kg·m/s + 1.2 N·s = 1.0 kg·m/s, so v_f = +2.5 m/s.",
+            "Ignoring the starting velocity would give 3.0 m/s, and ignoring its sign would give 3.5 m/s.",
+            "(c) The cart stops when the impulse so far has cancelled its starting momentum of −0.20 kg·m/s, that is, when the area reaches 0.20 N·s. The first triangle has exactly that area, so the cart is at rest at t = 0.10 s.",
+            "(d) F_avg = J/Δt = (1.2 N·s)/(0.40 s) = 3.0 N, less than the 4.0 N peak because the force is smaller while it rises and falls.",
+            "Units check: N × s = N·s = kg·m/s, as a change in momentum must be."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A 0.020 kg dart moving horizontally strikes and sticks in a 0.38 kg block resting at the very edge of a table 1.25 m high, so the block and dart leave the table at once with the velocity they have just after the impact. They land on the floor 0.80 m from the base of the table. Find the dart's speed before the impact, and the fraction of its kinetic energy that remains as kinetic energy just after the impact.",
+          "answer": "About 32 m/s; about 0.050 (5%) of the kinetic energy remains.",
+          "steps": [
+            "Work backward through the stages: first the fall, then the collision.",
+            "The fall is a horizontal launch. The vertical motion starts from rest, so the time to fall 1.25 m is t = √(2h/g) = √(2(1.25 m)/(9.8 m/s^2)) ≈ 0.505 s.",
+            "The horizontal velocity is constant during the fall, so the block and dart leave the table at V = (0.80 m)/(0.505 s) ≈ 1.58 m/s.",
+            "The collision is brief and the two stick. Friction from the table is negligible during the impact and the vertical forces balance, so horizontal momentum is conserved: (0.020 kg)u = (0.40 kg)(1.58 m/s), so u ≈ 32 m/s.",
+            "Kinetic energy before: (1/2)(0.020 kg)(31.7 m/s)^2 ≈ 10.0 J. After: (1/2)(0.40 kg)(1.58 m/s)^2 ≈ 0.50 J. The fraction kept is about 0.050, which equals m/(m + M) = (0.020 kg)/(0.40 kg) for a sticking collision with the target at rest.",
+            "Energy conservation could not have been used across the impact: about 95% of the dart's kinetic energy becomes internal energy of the dart and block."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, then answer it again a few days later without rereading. Take the unit test under timed conditions and score it with the key. Momentum questions often ask you to compare cases or evaluate a claim; the workshops below practise that writing and the calculations behind it."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 14: Momentum and impulse",
+              "ref": "week:14"
+            },
+            {
+              "label": "Week 15: Conservation of linear momentum",
+              "ref": "week:15"
+            },
+            {
+              "label": "Week 16: Elastic and inelastic collisions",
+              "ref": "week:16"
+            },
+            {
+              "label": "Unit 4 plan",
+              "ref": "unit:u4"
+            },
+            {
+              "label": "Unit 4 test",
+              "ref": "test:unit-4"
+            },
+            {
+              "label": "Unit 4 test key",
+              "ref": "key:unit-4"
+            },
+            {
+              "label": "Free-response workshop: Qualitative/Quantitative Translation",
+              "ref": "guide:fr-qualitative-quantitative"
+            },
+            {
+              "label": "Free-response workshop: Mathematical Routines",
+              "ref": "guide:fr-mathematical-routines"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

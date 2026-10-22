@@ -1,0 +1,350 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "fr-qualitative-quantitative",
+  "kind": "fr-archetype",
+  "title": "Qualitative/Quantitative Translation",
+  "author": "p1-fr-qualitative-quantitative-author",
+  "summary": "One of the four free-response questions on the AP® Physics 1 Exam is a Qualitative/Quantitative Translation question. In Liminal's practice it describes a situation, usually in symbols rather than numbers, and asks you to reason about it twice: once in words, without equations, and once with a derivation from fundamental principles. Then it asks you to connect the two, by evaluating a claim, checking a special case, or saying whether your equation supports your words. This guide shows how the parts usually run, what earns each kind of point in Liminal's rubrics, sentences you can model, the usual traps, a short worked model, four self-checks and a practice set of four questions.",
+  "minutes": 30,
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A Qualitative/Quantitative Translation question gives a physical situation, often with only symbols such as m, M, θ and h, and asks you to move between two ways of knowing about it. In words, you predict or explain what happens and why. In equations, you derive an expression that says exactly how much. The question then asks you to translate one into the other: to use your expression to judge a claim, to show that it agrees with (or corrects) your earlier reasoning, or to see what it says in a special case."
+        },
+        {
+          "type": "text",
+          "text": "College Board's exam pages (checked 2026-10-22) state that Section II of the AP® Physics 1 Exam has four free-response questions in 95 minutes, one of each of four types, with Qualitative/Quantitative Translation among them, and that a calculator is allowed and an equation sheet is supplied. The point values and pace here are Liminal practice conventions, not College Board facts: Liminal scores this type out of 8 points, the fewest of the four types, and paces it at 18 minutes of the 95, inside the 15–20 minutes Liminal's practice exams suggest for it."
+        },
+        {
+          "type": "text",
+          "text": "Any unit can supply the situation. The practice set draws its four questions from connected objects (Unit 2), momentum (Unit 4), rotational dynamics (Unit 5) and oscillation (Unit 7); the same habits apply to energy, fluids and kinematics. Because answers are expressions rather than numbers, the calculator matters little here; the work is in setting up and interpreting."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "How the parts usually run",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Most questions use three or four of these, often in this order. The middle column is what you do; the right column is where Liminal's rubrics usually put the points.",
+          "head": [
+            "Part type",
+            "What you do",
+            "Points usually go to"
+          ],
+          "rows": [
+            [
+              "Predict or explain without equations",
+              "State a definite outcome (greater, less or the same; this way or that) and give the physical cause in words",
+              "The outcome tied to the right principle and system; a cause stated as forces, energy, momentum or torque, not a formula read aloud"
+            ],
+            [
+              "Derive an expression",
+              "Start from Newton's second law (translational or rotational) or a conservation law for a named object or system, substitute the specific terms, and solve in the symbols the question lists",
+              "Each starting equation with the correct terms; the final expression"
+            ],
+            [
+              "Evaluate a claim",
+              "Say whether the claim is correct, using what your expression contains and how it changes",
+              "The verdict supported by the expression; the physical reason the claim's reasoning succeeds or fails"
+            ],
+            [
+              "Connect the parts",
+              "Point to a feature of your expression (a ratio, a symbol that is absent, a sign) and say how it matches or corrects your earlier words",
+              "A specific link between the parts, not a bare \"this agrees\""
+            ],
+            [
+              "Special or limiting case",
+              "Substitute an extreme or equal value and compare with what must happen physically",
+              "The substitution and the physical expectation it matches"
+            ],
+            [
+              "Change one quantity",
+              "Write the ratio new/old from your expression and cancel everything that stays fixed",
+              "The factor, with what was held constant"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-earns-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics for this type award five kinds of points. Most questions use at least four of them."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Starting-point points: a fundamental relation written for a named object or system with a stated positive direction, containing the right forces, torques, energies or momenta. A memorized result for some other situation, such as a = g sin θ or F_T = mg, earns none of these points even when it happens to fit.",
+            "Answer points: the requested quantity, solved for, in the symbols the question lists plus physical constants such as g. An expression that still contains an unlisted quantity, such as an acceleration or a tension you introduced, is not finished.",
+            "Reasoning points: a sentence that names the system, names the principle, and states the physical cause. \"The block–cart system has no external horizontal force, so its horizontal momentum stays zero\" earns credit; \"because momentum is conserved\" alone usually does not.",
+            "Consistency points: a specific connection between your words and your expression, or between one part and another. A later part that correctly uses an earlier wrong expression can still earn its points, so always show what you used.",
+            "Checking points: a special case, a limit, or a ratio that shows the expression behaves as the physics requires. When no row asks for it, a quick units check still catches algebra slips before they cost an answer point."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "A derivation that earns its points",
+          "text": "Start from a relation that holds generally: Newton's second law, ΣF = ma or Στ = Iα; conservation of energy; conservation of momentum or angular momentum; or a definition such as impulse = change in momentum. Write it for a named object or system with a positive direction, substitute the specific forces, torques or energies, then solve for the requested quantity.",
+          "conditions": [
+            "Every substitution is visible, so a reader can see where each term came from.",
+            "Each symbol is defined once and means one thing: if T is a period, call the tension F_T.",
+            "The final line is the requested quantity alone on one side, in the listed symbols only."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Reasoning in words that earns its points",
+          "text": "A complete qualitative argument names the object or system, names the principle or law, gives the physical cause, and ends in a definite conclusion. The cause is a force, an energy transfer, a momentum exchange or a torque, never \"because the formula says so\".",
+          "conditions": [
+            "When a part says not to write equations, comparisons in words (twice as large, proportional to, shared equally) are fine; symbols and equations are not.",
+            "Say what stays the same as well as what changes; many claims fail because they hold the wrong thing fixed."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Checking an expression before you argue with it",
+          "text": "Check three things: the units of the result; the direction of each dependence (does the result grow when physics says it should?); and one special or limiting case you can predict without the expression, such as equal masses, a zero angle, or one object much heavier than another.",
+          "conditions": [
+            "If a check fails, find the algebra or sign error before using the expression in later parts.",
+            "A recurring pattern: when every force on an object is proportional to its mass, its mass cancels from its acceleration. Look for that before deciding that mass matters."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Start a derivation (a crate dragged across a level floor by a horizontal rope with tension F_T, coefficient of kinetic friction μ_k).",
+          "text": "Newton's second law for the crate, with the direction of the pull positive: F_T − μ_kF_N = ma. The floor is level and the pull is horizontal, so F_N = mg, and F_T − μ_kmg = ma."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain without equations (does a stone thrown horizontally from a bridge hit the river at a greater speed than one dropped from the same point?).",
+          "text": "Yes. For the stone–Earth system, with air resistance negligible, mechanical energy is conserved. Both stones fall the same height, so the same gravitational potential energy becomes kinetic energy for each, but the thrown stone starts with kinetic energy and the dropped stone does not. The thrown stone therefore has more kinetic energy, and more speed, when it reaches the water."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluate a claim with an expression (a car's braking distance on a level road is d = v_0^2/(2μ_kg); claim: \"twice the speed needs twice the distance\").",
+          "text": "The claim is incorrect. In d = v_0^2/(2μ_kg) the distance is proportional to the square of the initial speed, so doubling v_0 makes d four times as large. Physically, the car has four times the kinetic energy, and the same friction force must do four times as much negative work to remove it, so it must act over four times the distance."
+        },
+        {
+          "type": "model",
+          "prompt": "Connect a derivation to an earlier prediction (part (a) said a satellite in a larger circular orbit moves more slowly; part (b) derived v = √(GM/r)).",
+          "text": "My expression agrees with part (a): v is proportional to 1/√r, so a larger orbital radius gives a smaller speed. It also says how much smaller: an orbit of four times the radius has half the speed."
+        },
+        {
+          "type": "model",
+          "prompt": "Check an expression in special cases (an Atwood machine with a light pulley, a = (m_2 − m_1)g/(m_1 + m_2)).",
+          "text": "If m_1 = m_2, the expression gives a = 0, as it must for balanced masses. If m_1 is much smaller than m_2, a approaches g, as it must for a block that falls almost freely. Both cases agree with what I expect without the expression."
+        },
+        {
+          "type": "model",
+          "prompt": "When the expression contradicts your prediction (part (a) said a larger amplitude gives a longer period for a block on a spring; part (b) showed T = 2π√(m/k)).",
+          "text": "My expression does not support part (a): amplitude does not appear in T = 2π√(m/k), so the period is the same for any amplitude. My reasoning in part (a) was incomplete. A larger amplitude does mean a longer path, but at each corresponding point of that path (the same fraction of the amplitude) the spring's force is proportionally larger, so the block moves proportionally faster and covers the longer path in the same time."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Writing equations in a part that says not to, or reading a formula aloud: \"it goes faster because v = √(2gh)\".",
+          "fix": "Name the cause the formula stands for: which force acts, which energy changes form, which object takes momentum from which. Save the formula for the derivation part."
+        },
+        {
+          "type": "trap",
+          "text": "Starting a derivation from a result for a different situation, such as F_T = mg for a hanging block that is accelerating, or a = g sin θ for a block that is also pulled by a string.",
+          "fix": "Begin with ΣF = ma, Στ = Iα or a conservation law written for this object or system, and let the specific result come out at the end."
+        },
+        {
+          "type": "trap",
+          "text": "Holding something fixed that actually changes: assuming a string's tension stays the same when the motion changes, or that a normal force always equals mg.",
+          "fix": "Tensions and normal forces adjust to the motion. Before arguing from one change, ask what else changes with it, and get those forces from Newton's second law."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving the answer in symbols the question did not list, or using one letter for two things, such as T for both a tension and a period.",
+          "fix": "Eliminate each intermediate quantity you introduced, then compare the final expression with the list in the question. Give each quantity its own symbol from the start."
+        },
+        {
+          "type": "trap",
+          "text": "Proportional-reasoning slips: assuming that doubling an input doubles the result, or forgetting a square or a square root.",
+          "fix": "Write the ratio new/old using your expression. Everything that stays fixed cancels, and the factor that is left is the answer."
+        },
+        {
+          "type": "trap",
+          "text": "Concluding that a result does not depend on a quantity because its symbol is absent, when another symbol in the expression depends on it.",
+          "fix": "List what stays fixed in the new situation. If a symbol in your expression changes with the quantity being varied, rewrite the expression or substitute before you conclude anything."
+        },
+        {
+          "type": "trap",
+          "text": "Quietly editing a correct derivation so that it agrees with an earlier wrong prediction, or writing \"this is consistent with part (a)\" without saying how.",
+          "fix": "Trust a derivation you have checked. Name the feature of the expression that decides the question, say plainly whether it agrees with part (a), and if it does not, say which step of the earlier reasoning left something out."
+        },
+        {
+          "type": "trap",
+          "text": "Answering \"evaluate the claim\" with only a verdict, or arguing only from the claim's own wording.",
+          "fix": "Give three things: the verdict, the evidence from your expression, and the physical reason the claim's reasoning works or fails."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A ball is launched from level ground with speed v_0 at an angle θ above the horizontal. Air resistance is negligible; take upward as positive.\n\n(a) Without writing equations, explain why a ball launched with the same speed at a steeper angle rises higher. (b) Derive an expression for the greatest height H the ball reaches, in terms of v_0, θ and g. (c) A student claims, \"Changing the launch angle from 30° to 60° at the same speed doubles the greatest height, because the angle doubles.\" Use your expression to evaluate the claim, and check your expression at θ = 0 and θ = 90°.",
+          "answer": "(a) Only the vertical part of the launch velocity carries the ball upward, and a steeper launch puts more of the same speed into that part. (b) H = (v_0 sin θ)^2/(2g). (c) The claim is incorrect: the greatest height triples. At θ = 0 the expression gives H = 0, and at θ = 90° it gives v_0^2/(2g), the height for a ball thrown straight up.",
+          "steps": [
+            "(a) Gravity acts only vertically, so it removes the ball's upward velocity at a steady rate and does nothing to its horizontal velocity. The ball rises until its upward velocity is gone. A steeper launch starts it with more upward velocity from the same speed, so it rises for longer and climbs higher.",
+            "(b) Start from constant-acceleration kinematics in the vertical direction, with acceleration −g: v_y^2 = (v_0 sin θ)^2 + 2(−g)Δy. At the greatest height v_y = 0 and Δy = H, so 0 = (v_0 sin θ)^2 − 2gH and H = (v_0 sin θ)^2/(2g). Units: (m/s)^2/(m/s^2) = m.",
+            "(c) Ratio: H(60°)/H(30°) = (sin 60°)^2/(sin 30°)^2 = 0.75/0.25 = 3. The height depends on the square of sin θ, not on θ itself, and sin θ is not proportional to θ, so doubling the angle does not double the height.",
+            "Checks: at θ = 0, sin θ = 0 and H = 0, a launch along the ground. At θ = 90°, H = v_0^2/(2g), which energy conservation for the ball–Earth system also gives: (1/2)mv_0^2 = mgH.",
+            "Habits shown: (a) names a cause and reaches a conclusion without a formula; (b) starts from a general relation with a stated positive direction and ends in the listed symbols; (c) answers with a ratio, gives a verdict, explains why the claim's reasoning fails, and checks two special cases."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you reveal the answer."
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-qualitative-quantitative-c1",
+          "prompt": "A derivation gives the greatest compression of a cart's bumper spring when the cart runs into a wall: x_max = v√(m/k), where m is the cart's mass, v its speed and k the spring constant. A student says, \"Doubling both the cart's mass and its speed doubles the greatest compression.\" By what factor does x_max actually change?",
+          "hint": "Write x_new/x_old from the expression and cancel what stays the same.",
+          "answer": "By a factor of 2√2 ≈ 2.8, so the claim is incorrect.",
+          "steps": [
+            "x_new/x_old = [2v√(2m/k)]/[v√(m/k)] = 2√2 ≈ 2.83.",
+            "The speed's factor of 2 and the mass's factor of √2 multiply. A result does not double just because each input doubles."
+          ],
+          "see": "traps"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-qualitative-quantitative-c2",
+          "prompt": "A box of mass m is pulled across a level floor by a rope at angle θ above the horizontal, with tension F_T. The coefficient of kinetic friction is μ_k. A student derives a = (F_T cos θ − μ_k(mg + F_T sin θ))/m. Without rederiving it, find a special case that shows the expression is wrong, and then correct it.",
+          "hint": "What should the friction force be if the rope's upward pull just equals the box's weight?",
+          "answer": "If F_T sin θ = mg, the floor should push up with zero normal force, so friction should be zero, but the expression gives a friction force of 2μ_kmg. The rope's upward component reduces the normal force: a = (F_T cos θ − μ_k(mg − F_T sin θ))/m.",
+          "steps": [
+            "Vertical: F_N + F_T sin θ − mg = 0, so F_N = mg − F_T sin θ.",
+            "Horizontal, with the direction of the pull positive: F_T cos θ − μ_kF_N = ma, so a = (F_T cos θ − μ_k(mg − F_T sin θ))/m.",
+            "Check the corrected expression in the same case: with F_T sin θ = mg, a = F_T cos θ/m, the frictionless result, as it should be."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-qualitative-quantitative-c3",
+          "prompt": "In part (a) of a question, a student wrote, \"The heavier of two blocks released together on the same frictionless ramp reaches the bottom first, because a larger gravitational force acts on it.\" In part (b) the student correctly derived a = g sin θ for either block. Part (c) asks whether the derivation supports the reasoning in part (a). Write a good answer to part (c).",
+          "hint": "Do not change part (b). Find what the part (a) reasoning left out.",
+          "answer": "The derivation does not support part (a). The expression a = g sin θ contains no mass, so both blocks have the same acceleration and reach the bottom together. The reasoning in part (a) was incomplete: the heavier block does have a larger gravitational force along the ramp, but it also has proportionally more mass to accelerate, so the two effects cancel.",
+          "steps": [
+            "Name the feature of the expression that decides the question: m does not appear in a = g sin θ.",
+            "Say plainly that it contradicts the prediction; consistency points reward an honest, explained comparison, not agreement.",
+            "Explain the missing idea: the force along the ramp, mg sin θ, and the mass being accelerated are both proportional to m, so m cancels from ma = mg sin θ."
+          ],
+          "see": "model-wording"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-qualitative-quantitative-c4",
+          "prompt": "A block hangs at rest from a vertical spring, stretching it a distance d. A student shows that the period of the block's vertical oscillation is T = 2π√(d/g) and claims, \"Since m does not appear, a block of twice the mass on the same spring would oscillate with the same period.\" Evaluate the claim.",
+          "hint": "On the same spring, does d stay the same when the mass doubles?",
+          "answer": "The claim is incorrect. On the same spring the stretch d = mg/k doubles when m doubles, so T = 2π√(d/g) grows by a factor of √2, in agreement with T = 2π√(m/k).",
+          "steps": [
+            "At equilibrium kd = mg, so d/g = m/k, and 2π√(d/g) and 2π√(m/k) are the same expression.",
+            "Doubling m on the same spring doubles d, so the period becomes 2π√(2d/g) = √2·T.",
+            "An absent symbol settles nothing until you check that the symbols present stay fixed in the new situation."
+          ],
+          "see": "traps"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set at 18 minutes a question, Liminal's practice pace, two questions at a sitting: questions 1 and 2 together, then questions 3 and 4 on another day. Score each part with the rubric, record raw points as practice, and rewrite one answer until it would earn every point. Then use the reviews and weeks below for any idea that cost you a point."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-qualitative-quantitative"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-qualitative-quantitative"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Unit 2 review: force and translational dynamics",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 4 review: linear momentum",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 5 review: torque and rotational dynamics",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 7 review: oscillations",
+              "ref": "guide:review-u7"
+            },
+            {
+              "label": "Week 6: Newton's second law: connected objects and inclines",
+              "ref": "week:6"
+            },
+            {
+              "label": "Week 15: conservation of linear momentum",
+              "ref": "week:15"
+            },
+            {
+              "label": "Week 20: Newton's second law in rotational form",
+              "ref": "week:20"
+            },
+            {
+              "label": "Week 25: representing SHM and the energy of oscillators",
+              "ref": "week:25"
+            },
+            {
+              "label": "Week 32: review: experimental design and written reasoning",
+              "ref": "week:32"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

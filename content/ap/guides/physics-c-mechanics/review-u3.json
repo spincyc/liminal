@@ -1,0 +1,549 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "review-u3",
+  "kind": "unit-review",
+  "unitId": "u3",
+  "title": "Unit 3 review: Work, Energy, and Power",
+  "author": "cm-review-3-4-author",
+  "summary": "A retrieval-first review of work, energy and power for the AP® Physics C: Mechanics Exam. Recall the definitions of work and power, the work–energy theorem, the link between a conservative force and its potential energy, and the energy accounting for a system before reading anything. Then work five mixed problems: work from force data, a potential energy graph, choosing how to find a speed, a winch at constant power, and a fall from far above Earth. A summary of results with their conditions, model explanations, common traps and three worked examples follows, with links to the unit's weeks, the unit plan and the unit test.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "cm-review-u3-g1",
+      "alt": "Graph of potential energy U in joules against position x in meters for 0 ≤ x ≤ 9 m, on a grid with U from 0 to 7 J. A smooth curve starts at a marked point (0, 6 J) and falls to a marked low point at (3 m, 1 J), rises to a marked high point at (6 m, 4 J), and falls more gently to a marked point at (9 m, 2 J)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper, from memory, before you open its answer. Write every definition and law in full, with the conditions it needs: a formula without its conditions counts as a miss. Mark your misses; each answer names the section further down to study, and the checks are worth retrying a few days later."
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c1",
+          "see": "what-to-know",
+          "prompt": "Write the work done on an object by a force (a) when the force is constant and the displacement is a straight line, and (b) when the force F_x(x) changes with position as the object moves along the x-axis from x_1 to x_2. When is the work positive, negative or zero?",
+          "answer": "(a) W = F · d = Fd cos θ = F_x d_x + F_y d_y, where θ is the angle between the force and the displacement. (b) W = ∫ from x_1 to x_2 of F_x dx, the signed area between the F–x graph and the x-axis. The work is positive when the force has a component along the displacement, negative when the component is opposite the displacement, and zero when the force is perpendicular to the displacement or its point of application does not move.",
+          "steps": [
+            "Only the component of the force along the displacement does work, which is what the dot product picks out.",
+            "For a changing force, split the path into steps dx so short that the force is nearly constant on each, and add F_x dx: that sum becomes the integral.",
+            "On an F–x graph, area below the x-axis counts as negative work. With data instead of a formula, add trapezoids.",
+            "Work is a scalar in joules (1 J = 1 N·m), and its sign means energy transferred to (+) or from (−) the object."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c2",
+          "see": "what-to-know",
+          "prompt": "State the work–energy theorem. Which forces' work goes into it, and what must be true of the object for it to hold? Where does it come from?",
+          "answer": "W_net = ΔK = ½mv_f^2 − ½mv_i^2: the total work done by all the forces on an object equals its change in kinetic energy. It holds for an object that moves as a particle, every part with the same displacement and no change in internal energy. It follows from Newton's second law, F_net = m dv/dt = mv dv/dx, integrated over x.",
+          "steps": [
+            "W_net is the sum of the signed works of every force, or equivalently the work of the net force. Leaving out friction or gravity gives the wrong ΔK.",
+            "K = ½mv^2 is a scalar that is never negative; it depends on speed, not direction.",
+            "Derivation: a = dv/dt = (dv/dx)(dx/dt) = v dv/dx = d(½v^2)/dx, so F_net = m d(½v^2)/dx, and integrating from x_i to x_f gives ∫ F_net dx = ½mv_f^2 − ½mv_i^2.",
+            "For a system whose parts move differently or that converts energy internally (a person pushing off a wall, a block with friction treated as a system with the floor), use the system energy accounting instead."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c3",
+          "see": "what-to-know",
+          "prompt": "For a conservative force F_x(x) acting along the x-axis: (a) write the change in potential energy from the force, and the force from the potential energy; (b) state the condition for an equilibrium position and how U(x) tells you whether it is stable or unstable; (c) say what a turning point is and how to find one from a U–x graph.",
+          "answer": "(a) ΔU = U(x_2) − U(x_1) = −∫ from x_1 to x_2 of F_x dx, and F_x = −dU/dx. (b) Equilibrium where dU/dx = 0; stable at a minimum of U (d^2U/dx^2 > 0), unstable at a maximum (d^2U/dx^2 < 0), neutral where U is flat over an interval. (c) A turning point is where the object momentarily stops and reverses: where the horizontal line at the total mechanical energy E meets the U curve, so K = E − U = 0.",
+          "steps": [
+            "Potential energy exists only for conservative forces: forces whose work between two points does not depend on the path (zero work around any closed path). Friction has none.",
+            "Only changes in U matter, so the zero of U is a choice you state.",
+            "F = −dU/dx means the force points downhill on the U–x graph, toward lower U, with a size equal to the steepness.",
+            "Near a minimum, a small displacement either way produces a force back toward the minimum; near a maximum, the force pushes the object farther away.",
+            "Motion is allowed only where U ≤ E, because K = E − U cannot be negative."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c4",
+          "see": "what-to-know",
+          "prompt": "Write the energy accounting for a chosen system. Under what conditions is the system's mechanical energy K + U constant? How does kinetic friction enter the accounting?",
+          "answer": "ΔK + ΔU + ΔE_internal = W_ext. K + U is constant when no external force does work on the system (W_ext = 0) and no nonconservative force inside the system, such as friction, converts mechanical energy to internal energy. Kinetic friction of constant size f_k over a sliding distance d increases the internal energy by f_k d, so K_f + U_f = K_i + U_i − f_k d.",
+          "steps": [
+            "Choose the system first. A conservative force between objects inside the system is counted as potential energy; a force from outside the system is counted as external work. Never count one force both ways.",
+            "Gravity appears as U = mgy only when Earth is in the system; a spring's energy ½kx^2 appears only when the spring is in the system.",
+            "Forces that do no work, such as a normal force perpendicular to the motion or the tension in a pendulum string, do not break conservation.",
+            "Friction's f_k d uses the sliding distance, not the displacement, and the energy goes to the internal energy of both surfaces."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c5",
+          "see": "what-to-know",
+          "prompt": "Give the potential energy function, and where it is zero, for (a) an ideal spring, (b) an object near Earth's surface, and (c) two masses M and m a distance r apart. When may you use (b) in place of (c)? What is the escape speed from the surface of a planet of mass M and radius R?",
+          "answer": "(a) U_s = ½kx^2, where x is the stretch or compression from the relaxed length; zero at the relaxed length. (b) U_g = mgy, with y measured upward; zero at the level you choose as y = 0. (c) U_G = −GMm/r, zero at infinite separation. Use mgy only when the change in height is small compared with the planet's radius, so g is nearly constant. Escape speed v = √(2GM/R).",
+          "steps": [
+            "Each comes from ΔU = −∫F dx: F = −kx gives ½kx^2; F = −mg (y up) gives mgy; F_r = −GMm/r^2 gives −GMm/r when U is zero far away.",
+            "U_G is negative at every finite r; that is a consequence of the chosen zero, not an error.",
+            "Escape: the object just escapes when its total energy ½mv^2 − GMm/R is zero, so v = √(2GM/R), independent of its mass and launch direction (ignoring air)."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c6",
+          "see": "what-to-know",
+          "prompt": "Define average power and instantaneous power. Write the power delivered by a force F acting on an object moving with velocity v. How do you find the energy transferred from a power function P(t), or from a P–t graph?",
+          "answer": "Average power P_avg = W/Δt (or ΔE/Δt); instantaneous power P = dW/dt = dE/dt. The power delivered by a force is P = F · v = Fv cos θ. The energy transferred from t_1 to t_2 is ΔE = ∫ from t_1 to t_2 of P dt, the area under the P–t graph.",
+          "steps": [
+            "The watt is 1 J/s; a kilowatt-hour is (1000 W)(3600 s) = 3.6 × 10^6 J, an amount of energy.",
+            "P = F · v uses the component of the force along the velocity: a force perpendicular to the motion delivers zero power.",
+            "The power of the net force is dK/dt, so the object speeds up only when the net force delivers positive power.",
+            "Power is the slope of an energy–time graph, and energy is the area under a power–time graph."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level. Use g = 9.8 m/s^2 and SI units, state your positive direction and your system where they matter, and give answers to 2–3 significant figures with units. Decide what each problem needs before you start, and write the principle you use beside your first equation."
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c7",
+          "see": "worked-examples",
+          "prompt": "An archer draws a bowstring back slowly while a force gauge records the horizontal force F needed to hold the string at each draw distance x.\n\n| x (m) | 0 | 0.10 | 0.20 | 0.30 | 0.40 | 0.50 |\n| --- | --- | --- | --- | --- | --- | --- |\n| F (N) | 0 | 62 | 108 | 140 | 162 | 178 |\n\n(a) Estimate the work the archer does drawing the string from x = 0 to x = 0.50 m, using trapezoids on the five intervals.\n(b) The force increases by less on each successive interval. Is your estimate in (a) more or less than the actual work? Explain.\n(c) When the string is released from x = 0.50 m, the bow gives 75% of the work in (a) to a 0.028 kg arrow as kinetic energy. Find the arrow's launch speed.",
+          "hint": "The work is the area under the F–x graph between x = 0 and x = 0.50 m; sketch the six points before you add anything.",
+          "answer": "(a) About 56 J (56.1 J). (b) Less: the force curve bends downward between readings, so each trapezoid lies under the curve. (c) About 55 m/s.",
+          "steps": [
+            "(a) W = ∫ from 0 to 0.50 of F dx. Each interval has width 0.10 m: W ≈ 0.10 × [(0 + 62)/2 + (62 + 108)/2 + (108 + 140)/2 + (140 + 162)/2 + (162 + 178)/2] = 0.10 × (31 + 85 + 124 + 151 + 170) = 0.10 × 561 = 56.1 J.",
+            "(b) The increases are 62, 46, 32, 22 and 16 N per 0.10 m, so the slope of the F–x graph decreases: the graph is concave down. A chord of a concave-down curve lies below the curve, so each trapezoid misses a sliver of area and the estimate is less than the actual work.",
+            "(c) K = 0.75 × 56.1 J = 42.1 J. From K = ½mv^2, v = √(2K/m) = √(2 × 42.1 J / 0.028 kg) = √(3006 m^2/s^2) ≈ 54.8 m/s, about 55 m/s.",
+            "Check: a stronger bow or a longer draw adds area under the curve and so more energy; the remaining 25% goes into the moving limbs and string, sound and internal energy."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c8",
+          "see": "what-to-know",
+          "prompt": "A 0.40 kg particle moves along the x-axis under a single conservative force. The graph shows its potential energy U(x) for 0 ≤ x ≤ 9.0 m; U(0) = 6.0 J, U has a low point of 1.0 J at x = 3.0 m and a high point of 4.0 J at x = 6.0 m, and U(9.0 m) = 2.0 J.\n\n(a) Identify each equilibrium position in 0 < x < 9.0 m and say whether it is stable or unstable. Justify from the graph.\n(b) The particle is released from rest at x = 0. In which direction does it start to move? Find its greatest speed in 0 ≤ x ≤ 9.0 m and where it occurs.\n(c) Find the particle's speed as it passes x = 6.0 m after the release in (b).\n(d) In a different trial the particle passes x = 3.0 m moving in the +x direction. What speed must it have there to reach x = 9.0 m?",
+          "figureIds": [
+            "cm-review-u3-g1"
+          ],
+          "hint": "Draw a horizontal line on the graph at the particle's total energy. The gap between that line and the curve is the kinetic energy.",
+          "answer": "(a) x = 3.0 m is stable; x = 6.0 m is unstable. (b) In the +x direction; greatest speed 5.0 m/s at x = 3.0 m. (c) About 3.2 m/s. (d) More than √15 ≈ 3.9 m/s.",
+          "steps": [
+            "(a) F = −dU/dx is zero where the graph has a horizontal tangent: x = 3.0 m and x = 6.0 m. At x = 3.0 m, U is a minimum: on either side U rises, so the force points back toward 3.0 m, and the equilibrium is stable. At x = 6.0 m, U is a maximum: on either side U falls, so the force points away from 6.0 m, and the equilibrium is unstable.",
+            "(b) Near x = 0, U decreases as x increases, so dU/dx < 0 and F = −dU/dx > 0: the particle starts in the +x direction. Its total energy is E = K + U = 0 + 6.0 J = 6.0 J.",
+            "K = E − U is greatest where U is least. U ≥ 1.0 J on the whole interval, so K_max = 6.0 J − 1.0 J = 5.0 J at x = 3.0 m, and v = √(2K/m) = √(2 × 5.0 J / 0.40 kg) = 5.0 m/s. (At x = 9.0 m, K = 4.0 J only.)",
+            "(c) E = 6.0 J > 4.0 J, so the particle passes over the high point. There K = 6.0 J − 4.0 J = 2.0 J and v = √(2 × 2.0 J / 0.40 kg) = √10 m/s ≈ 3.2 m/s.",
+            "(d) To get from 3.0 m to 9.0 m it must get past x = 6.0 m, where U = 4.0 J, so it needs E > 4.0 J. At x = 3.0 m, U = 1.0 J, so K > 3.0 J and v > √(2 × 3.0 J / 0.40 kg) = √15 m/s ≈ 3.9 m/s.",
+            "With exactly 3.0 J of kinetic energy at x = 3.0 m, the particle would slow toward zero speed as it approached x = 6.0 m, an unstable equilibrium, and would not get past it. Any greater speed carries it over the top, and beyond x = 6.0 m U only falls, so it reaches x = 9.0 m."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c9",
+          "see": "what-to-know",
+          "prompt": "A 2.0 kg block starts from rest at x = 0 on a level, frictionless surface and is pulled in the +x direction. Find the block's speed in each case.\n\n(a) A horizontal force F = 4.5√x acts, with F in newtons and x in meters; find the speed at x = 4.0 m.\n(b) A motor's cable pulls horizontally and delivers a power P = 4.5t to the block, with P in watts and t in seconds; find the speed 4.0 s after the start.\n(c) A rope pulls with a constant 10 N at 37° above the horizontal; find the speed after the block has moved 4.0 m.",
+          "hint": "Before writing an equation, decide what each pull is given in terms of: position, time, or neither. That decides which quantity you can compute first.",
+          "answer": "(a) About 4.9 m/s. (b) 6.0 m/s. (c) About 5.7 m/s.",
+          "steps": [
+            "(a) The force depends on position, so the acceleration is not constant and constant-acceleration equations fail. Use the work integral and the work–energy theorem. W = ∫ from 0 to 4.0 of 4.5x^(1/2) dx = 4.5 × (2/3)x^(3/2) from 0 to 4.0 = 3.0 × 8.0 = 24 J.",
+            "Gravity and the normal force are perpendicular to the motion and do no work, so W_net = 24 J = ½(2.0 kg)v^2, and v = √24 m/s ≈ 4.9 m/s.",
+            "(b) The power is given as a function of time, so the energy delivered is its integral over time: ΔK = ∫ from 0 to 4.0 of 4.5t dt = 2.25t^2 from 0 to 4.0 = 36 J = ½(2.0 kg)v^2, so v = 6.0 m/s.",
+            "Check: ½(2.0 kg)v^2 = 2.25t^2 gives v = 1.5t, so the force F = P/v = 4.5t/(1.5t) = 3.0 N is constant here, and a = 1.5 m/s^2 gives v = 6.0 m/s at 4.0 s as well. You could not know that before integrating the power.",
+            "(c) The force is constant, so W = Fd cos θ = (10 N)(4.0 m)(cos 37°) = 31.9 J. The vertical component, (10 N)(sin 37°) = 6.0 N, is less than the weight of 19.6 N, so the block stays on the surface and the normal force, still perpendicular to the motion, does no work.",
+            "½(2.0 kg)v^2 = 31.9 J gives v = √31.9 m/s ≈ 5.7 m/s. (Here Newton's second law with a = (8.0 N)/(2.0 kg) and v^2 = 2ad gives the same result.)"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c10",
+          "see": "worked-examples",
+          "prompt": "A winch with a constant output power of 1.2 kW pulls a 150 kg crate up a ramp inclined at 20° to the horizontal, with the cable parallel to the ramp. The coefficient of kinetic friction between the crate and the ramp is 0.25.\n\n(a) Find the constant speed at which the winch can pull the crate up the ramp.\n(b) The crate moves 10 m along the ramp at that speed. How much work does the winch do on the crate, how much does the gravitational potential energy of the crate–Earth system increase, and how much mechanical energy becomes internal energy?",
+          "hint": "At constant speed the crate's acceleration is zero. Start with a free-body diagram and find the size of the cable's pull.",
+          "answer": "(a) About 1.4 m/s. (b) Winch about 8.5 × 10^3 J; ΔU_g about 5.0 × 10^3 J; internal energy about 3.5 × 10^3 J.",
+          "steps": [
+            "(a) Take up the ramp as positive. Forces along the ramp: the cable's pull T up the ramp, the gravity component mg sin 20° = (150 kg)(9.8 m/s^2)(0.342) = 503 N down the ramp, and kinetic friction down the ramp.",
+            "Perpendicular to the ramp, n = mg cos 20° = 1381 N, so f_k = μ_k n = 0.25 × 1381 N = 345 N.",
+            "At constant speed the net force is zero: T = 503 N + 345 N = 848 N.",
+            "The winch's power is P = Tv, so v = P/T = 1200 W / 848 N ≈ 1.4 m/s.",
+            "(b) W_winch = Td = (848 N)(10 m) ≈ 8.5 × 10^3 J. (Or: the trip takes 10 m / 1.41 m/s = 7.07 s, and (1200 W)(7.07 s) gives the same.)",
+            "ΔU_g = mg Δy = (150 kg)(9.8 m/s^2)(10 m × sin 20°) ≈ 5.0 × 10^3 J. Internal energy: f_k d = (345 N)(10 m) ≈ 3.5 × 10^3 J.",
+            "Check the accounting for the crate–ramp–Earth system: the speed is constant, so ΔK = 0, and W_ext = ΔU_g + ΔE_internal: 5.0 × 10^3 J + 3.5 × 10^3 J = 8.5 × 10^3 J."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u3-c11",
+          "see": "worked-examples",
+          "prompt": "A meteoroid is at rest relative to Earth at a distance 2R_E from Earth's center, where R_E = 6.37 × 10^6 m is Earth's radius, and then falls straight toward Earth. Earth's mass is 5.97 × 10^24 kg and G = 6.67 × 10^−11 N·m^2/kg^2. Ignore air resistance, Earth's rotation and every other body.\n\n(a) Find the meteoroid's speed just before it reaches Earth's surface.\n(b) A student uses mgh with g = 9.8 m/s^2 and h = R_E, and gets a different speed. Find the student's speed, and explain which answer is larger and why.",
+          "hint": "Ask whether the gravitational force on the meteoroid stays the same size during the fall.",
+          "answer": "(a) About 7.9 × 10^3 m/s (7.91 km/s). (b) About 1.1 × 10^4 m/s; the student's speed is too large because the gravitational force is weaker than mg over most of the fall.",
+          "steps": [
+            "(a) System: meteoroid and Earth, with U_G = −GMm/r. No external work is done, so K + U_G is constant.",
+            "0 − GMm/(2R_E) = ½mv^2 − GMm/R_E, so ½v^2 = GM/(2R_E) and v = √(GM/R_E).",
+            "v = √((6.67 × 10^−11)(5.97 × 10^24)/(6.37 × 10^6)) m/s = √(6.25 × 10^7) m/s ≈ 7.91 × 10^3 m/s. The mass m cancels.",
+            "(b) The student's version: ½mv^2 = mgR_E gives v = √(2gR_E) = √(2 × 9.8 × 6.37 × 10^6) m/s ≈ 1.12 × 10^4 m/s.",
+            "The force GMm/r^2 equals mg only at the surface; at r = 2R_E it is mg/4. The true work done by gravity, the area under the force–distance graph, is therefore less than mgR_E (exactly half of it when g = GM/R_E^2), so the true speed is smaller. mgh is a good approximation only when h is much smaller than R_E."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Kinetic energy",
+          "text": "K = ½mv^2, a scalar in joules. The kinetic energy of a system is the sum of its parts' kinetic energies.",
+          "conditions": [
+            "Depends on speed only: K ≥ 0 whatever the direction of motion.",
+            "Doubling the speed multiplies K by four; for the same momentum p, K = p^2/(2m)."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Work by a constant force",
+          "text": "W = F · d = Fd cos θ = F_x d_x + F_y d_y.",
+          "conditions": [
+            "The force is constant in size and direction and the displacement d is straight.",
+            "θ is the angle between F and d; perpendicular forces do no work.",
+            "With friction on an incline or an angled pull, find the normal force from the free-body diagram before writing f_k = μ_k n."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Work by a position-dependent force",
+          "text": "W = ∫ from x_1 to x_2 of F_x dx, the signed area under the F–x graph; along a path, W = ∫ F · dr.",
+          "conditions": [
+            "Use it whenever the force changes along the path; W = Fd then fails.",
+            "From data, add trapezoids. If the F–x graph is concave down between readings the trapezoids underestimate the area; if concave up, they overestimate.",
+            "Area below the x-axis, or motion in the −x direction with a positive force, gives negative work: keep the limits in the order of the motion."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Work–energy theorem",
+          "text": "W_net = ΔK: the sum of the works done by all the forces on an object equals its change in kinetic energy.",
+          "conditions": [
+            "Applies to an object that moves as a particle (no internal energy changes).",
+            "Every force counts, with its sign. Equivalent to Newton's second law integrated over x with a = v dv/dx."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Conservative forces and potential energy",
+          "text": "For a conservative force, ΔU = −W = −∫ from x_1 to x_2 of F_x dx, and F_x = −dU/dx.",
+          "conditions": [
+            "Conservative: the work between two points is path-independent, equivalently zero around any closed path (gravity, ideal springs). Kinetic friction is not conservative and has no potential energy.",
+            "Only ΔU is physical; state where U = 0.",
+            "The force points toward lower U (downhill on the U–x graph), with size equal to the slope's steepness."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Equilibrium and turning points",
+          "text": "Equilibrium where dU/dx = 0. Stable at a minimum of U, unstable at a maximum, neutral where U is constant over an interval. Turning points are where U(x) = E.",
+          "conditions": [
+            "Second-derivative test: d^2U/dx^2 > 0 stable, < 0 unstable; if it is 0, look at the graph.",
+            "Motion is confined to the region where U(x) ≤ E, since K = E − U ≥ 0.",
+            "An object whose energy exactly equals a maximum of U approaches that point ever more slowly and does not pass it; to pass a maximum, E must exceed it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Three potential energy functions",
+          "text": "Spring: U_s = ½kx^2. Uniform gravity: U_g = mgy. Gravity between two masses: U_G = −GMm/r.",
+          "conditions": [
+            "x is the spring's deformation from its relaxed length; U_s = 0 at the relaxed length.",
+            "mgy needs y measured upward and a height change small compared with the planet's radius; the zero is your choice.",
+            "U_G = 0 at infinite separation, so it is negative at every finite r. Escape speed from radius R: v = √(2GM/R)."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Energy accounting for a system",
+          "text": "ΔK + ΔU + ΔE_internal = W_ext. When W_ext = 0 and nothing in the system converts mechanical energy to internal energy, K + U is constant.",
+          "conditions": [
+            "Choose the system first: forces from inside it appear as potential energy, forces from outside as external work.",
+            "Kinetic friction over a sliding distance d adds f_k d to the internal energy of the surfaces.",
+            "The equation compares two states and ignores the path between them; use it when the path is curved or the force changes."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Power",
+          "text": "P_avg = W/Δt; P = dE/dt = F · v = Fv cos θ; ΔE = ∫ from t_1 to t_2 of P dt.",
+          "conditions": [
+            "F · v uses the component of the force along the velocity.",
+            "At constant speed the net force delivers zero power, but a single force (an engine, a winch) can deliver power that friction, drag or a potential energy increase takes away.",
+            "Starting from rest with constant power P and no losses: ½mv^2 = Pt, so v = √(2Pt/m); the force P/v falls as the speed rises.",
+            "Efficiency = useful power out / power in, never more than 1."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Reading energy graphs",
+          "head": [
+            "Graph",
+            "Slope means",
+            "Area under it means"
+          ],
+          "rows": [
+            [
+              "F against x",
+              "how fast the force changes with position",
+              "work done by that force"
+            ],
+            [
+              "U against x",
+              "−F: the force is minus the slope",
+              "no standard meaning"
+            ],
+            [
+              "K against x",
+              "the net force",
+              "no standard meaning"
+            ],
+            [
+              "P against t",
+              "how fast the power changes",
+              "energy transferred"
+            ],
+            [
+              "E (or W) against t",
+              "power",
+              "no standard meaning"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing a tool for a speed or a distance",
+          "head": [
+            "What you are given",
+            "Start with",
+            "Why"
+          ],
+          "rows": [
+            [
+              "A force as a function of position, or F–x data",
+              "W = ∫ F dx and W_net = ΔK",
+              "the acceleration is not constant"
+            ],
+            [
+              "Constant forces and a distance",
+              "Fd cos θ and W_net = ΔK, or Newton's second law",
+              "both work; energy skips the time"
+            ],
+            [
+              "A curved path with only gravity and springs doing work",
+              "K + U constant",
+              "the path does not matter"
+            ],
+            [
+              "Friction over a known sliding distance",
+              "ΔK + ΔU + f_k d = 0 (no external work)",
+              "friction's energy goes to internal energy"
+            ],
+            [
+              "A power, or a power function of time",
+              "ΔE = ∫ P dt, or P = Fv",
+              "power is a rate of energy transfer"
+            ],
+            [
+              "Large changes in distance from a planet",
+              "U_G = −GMm/r",
+              "g is not constant"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanations-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A complete explanation names the system or the object, the law it uses, and the physical reason the law applies or fails. Write it like these."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify using conservation of mechanical energy for a block that slides down a frictionless curved track into a spring.",
+          "text": "Take the system to be the block, the spring and Earth. The track is frictionless, and its normal force is perpendicular to the block's motion at every point, so it does no work. No other external force acts, and nothing in the system converts mechanical energy to internal energy, so K + U_g + U_s is the same at the top and at the greatest compression."
+        },
+        {
+          "type": "model",
+          "prompt": "Classify an equilibrium from a potential energy graph with a minimum at x = a.",
+          "text": "At x = a the slope of U is zero, so F = −dU/dx = 0 and x = a is an equilibrium position. For x slightly greater than a, U increases with x, so F is negative and points back toward a; for x slightly less than a, U decreases with x, so F is positive and again points toward a. The force restores the particle toward a, so the equilibrium is stable."
+        },
+        {
+          "type": "model",
+          "prompt": "Say why there is no potential energy for kinetic friction.",
+          "text": "For an object sliding over a fixed surface, kinetic friction always opposes the motion, so it does negative work on every part of a path, including both legs of a round trip. Its work around a closed path is not zero and depends on the path's length, so friction is not conservative and no function U(x) can describe it."
+        },
+        {
+          "type": "model",
+          "prompt": "Say whether a trapezoidal estimate of work from force data is too high or too low.",
+          "text": "The force increases by less on each successive interval, so the F–x graph is concave down. The straight top of each trapezoid lies below the curve, so the trapezoids leave out area, and the estimate is less than the actual work."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain why the tension in a swinging pendulum string does no work.",
+          "text": "The tension points along the string toward the pivot, and the bob moves along a circle centered on the pivot, so the bob's velocity is always perpendicular to the string. The tension's power, F · v, is zero at every instant, so it does no work, and only gravity changes the bob's kinetic energy."
+        },
+        {
+          "type": "trap",
+          "text": "Using W = Fd for a force that changes along the path, for example using the final force of a stiffening spring times the whole compression.",
+          "fix": "When the force depends on position, integrate F dx, or find the area under the F–x graph (trapezoids for data)."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the minus sign in F = −dU/dx, so the force points uphill on the U–x graph and a minimum of U comes out unstable.",
+          "fix": "Check with a ball in a valley: the force must push it toward the bottom, toward lower U."
+        },
+        {
+          "type": "trap",
+          "text": "Counting gravity twice: including mgy in the energy equation and also adding −mgΔy as the work done by gravity.",
+          "fix": "Decide whether Earth is in the system. If it is, use U_g and no work by gravity; if it is not, use the work by gravity and no U_g."
+        },
+        {
+          "type": "trap",
+          "text": "Using mgh for a change in height comparable with a planet's radius.",
+          "fix": "Use U_G = −GMm/r with the distances from the planet's center; mgh assumes g is constant along the whole path."
+        },
+        {
+          "type": "trap",
+          "text": "Taking the x in ½kx^2 to be a position or a height instead of the spring's stretch or compression.",
+          "fix": "Measure x from the spring's relaxed length. For a vertical spring, write the gravity term and the spring term separately."
+        },
+        {
+          "type": "trap",
+          "text": "Writing friction's work as −μ_k mg d when the normal force is not mg, such as on an incline or with an angled pull.",
+          "fix": "Find n from the forces perpendicular to the surface first: on an incline n = mg cos θ, and an upward pull component reduces n."
+        },
+        {
+          "type": "trap",
+          "text": "Mixing up power and energy: treating 1.2 kW as an amount of energy, or a kilowatt-hour as a power.",
+          "fix": "Power is a rate in watts (J/s). Multiply by a time, or integrate P dt, to get energy in joules; 1 kWh = 3.6 × 10^6 J."
+        },
+        {
+          "type": "trap",
+          "text": "Concluding that an engine does no work because the car moves at constant speed.",
+          "fix": "Constant speed means the net work is zero, not each force's work. The engine's positive work equals the energy taken by drag, friction and any rise in height."
+        },
+        {
+          "type": "trap",
+          "text": "Reading a U–x graph as the shape of the path, as if the particle rolls over the hills.",
+          "fix": "The particle moves along the x-axis. The graph shows energy against position: the particle speeds up where U falls and slows where U rises."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each example models a procedure that the problems above test. If a problem sent you here, study the example, then rework the problem without looking."
+        },
+        {
+          "type": "example",
+          "prompt": "A 4.0 kg cart starts from rest at x = 0 on a level track. A student pushes it in the +x direction with a horizontal force that a hand-held sensor records at several positions. A constant 3.0 N friction force opposes the motion.\n\n| x (m) | 0 | 0.30 | 0.60 | 0.90 | 1.20 |\n| --- | --- | --- | --- | --- | --- |\n| F (N) | 30 | 26 | 20 | 12 | 6 |\n\nEstimate the cart's speed at x = 1.20 m.",
+          "answer": "About 3.1 m/s",
+          "steps": [
+            "The push changes with position, so use the work–energy theorem with the push's work found as the area under the F–x data.",
+            "Trapezoids of width 0.30 m: W_push ≈ 0.30 × [(30 + 26)/2 + (26 + 20)/2 + (20 + 12)/2 + (12 + 6)/2] = 0.30 × (28 + 23 + 16 + 9) = 0.30 × 76 = 22.8 J.",
+            "Friction opposes the motion: W_f = −(3.0 N)(1.20 m) = −3.6 J. Gravity and the normal force are perpendicular to the motion and do no work.",
+            "W_net = 22.8 J − 3.6 J = 19.2 J = ½(4.0 kg)v^2 − 0, so v = √(2 × 19.2 J / 4.0 kg) = √9.6 m/s ≈ 3.1 m/s.",
+            "Say it is an estimate: the sensor gives only five readings, and the trapezoids assume the force changes linearly between them."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A probe is launched straight up from the surface of Mars (mass 6.42 × 10^23 kg, radius 3.39 × 10^6 m) and rises to a greatest height of 1.0 × 10^6 m above the surface. Ignore the atmosphere and the planet's rotation. Find the launch speed, and compare it with the speed an mgh calculation would give, using the surface value of g on Mars. G = 6.67 × 10^−11 N·m^2/kg^2.",
+          "answer": "About 2.4 × 10^3 m/s; mgh would give about 2.7 × 10^3 m/s, which is too large.",
+          "steps": [
+            "System: probe and Mars. No external work, so K + U_G is constant, with U_G = −GMm/r and r measured from the planet's center.",
+            "Launch at r_1 = R = 3.39 × 10^6 m; greatest height at r_2 = R + h = 4.39 × 10^6 m, where K = 0.",
+            "½mv^2 − GMm/r_1 = 0 − GMm/r_2, so v^2 = 2GM(1/r_1 − 1/r_2).",
+            "GM = (6.67 × 10^−11)(6.42 × 10^23) = 4.28 × 10^13 m^3/s^2, and 1/r_1 − 1/r_2 = 2.950 × 10^−7 − 2.278 × 10^−7 = 6.72 × 10^−8 m^−1.",
+            "v^2 = 2(4.28 × 10^13)(6.72 × 10^−8) = 5.76 × 10^6 m^2/s^2, so v ≈ 2.40 × 10^3 m/s.",
+            "Comparison: g at the surface is GM/R^2 = 3.73 m/s^2, and v = √(2gh) = √(2 × 3.73 × 1.0 × 10^6) ≈ 2.73 × 10^3 m/s. The mgh method treats the pull as staying at its surface value all the way up, so it overstates the energy needed; the height here is about 30% of the radius, far too large for that approximation."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A rope tow pulls a 70 kg skier up a slope inclined at 15° at a constant 2.5 m/s, with the rope parallel to the slope. The coefficient of kinetic friction between the skis and the snow is 0.10. Find the power the rope delivers to the skier, and how the energy it delivers in one minute divides between gravitational potential energy and internal energy.",
+          "answer": "About 610 W; in one minute about 3.7 × 10^4 J, of which about 2.7 × 10^4 J goes to gravitational potential energy and about 9.9 × 10^3 J to internal energy.",
+          "steps": [
+            "Take up the slope as positive. At constant velocity the net force is zero, so the rope's pull T balances the gravity component down the slope and friction.",
+            "mg sin 15° = (70 kg)(9.8 m/s^2)(0.259) = 178 N. The normal force is n = mg cos 15° = 663 N, so f_k = 0.10 × 663 N = 66 N.",
+            "T = 178 N + 66 N = 244 N, along the velocity, so P = Tv = (244 N)(2.5 m/s) ≈ 610 W.",
+            "In 60 s the skier moves (2.5 m/s)(60 s) = 150 m along the slope. The rope delivers (610 W)(60 s) ≈ 3.7 × 10^4 J.",
+            "ΔU_g = mg × (150 m)(sin 15°) ≈ 2.7 × 10^4 J; internal energy f_k d = (66 N)(150 m) ≈ 9.9 × 10^3 J. Their sum matches the rope's work, as it must when ΔK = 0."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, then come back to it a few days later without notes. Week 14 includes a paper investigation of a stiffening spring; paper practice does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 12: Kinetic energy and work as an integral",
+              "ref": "week:12"
+            },
+            {
+              "label": "Week 13: Potential energy functions and equilibrium",
+              "ref": "week:13"
+            },
+            {
+              "label": "Week 14: Conservation of energy",
+              "ref": "week:14"
+            },
+            {
+              "label": "Week 15: Power",
+              "ref": "week:15"
+            },
+            {
+              "label": "Unit 3 plan",
+              "ref": "unit:u3"
+            },
+            {
+              "label": "Unit 3 test",
+              "ref": "test:unit-3"
+            },
+            {
+              "label": "Unit 3 test key",
+              "ref": "key:unit-3"
+            },
+            {
+              "label": "Free-response workshop: Mathematical Routines",
+              "ref": "guide:fr-mathematical-routines"
+            },
+            {
+              "label": "Free-response workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

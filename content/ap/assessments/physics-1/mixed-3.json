@@ -1,0 +1,346 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "mixed-3",
+  "kind": "mixed-set",
+  "title": "Mixed set 3: all units at exam pace",
+  "author": "p1-mixed-3-4-author",
+  "directions": "This original Liminal mixed set draws 15 multiple-choice questions from across the course at the exam's pace: 30 minutes, with a four-function, scientific or graphing calculator allowed. The questions are mixed on purpose, so part of each one is deciding which idea or method applies; this set leans on choices that are easy to confuse: translational or rotational inertia, impulse or work, what does and does not depend on mass, and pressure or buoyant force. Expect it to feel slower than practising one topic at a time. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise; Liminal's formula reference is appended to the booklet. Record raw points; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet. Any calculator is allowed.",
+          "items": [
+            {
+              "id": "p1-mixed-3-mc01",
+              "prompt": "Two parcels slide off the end of a horizontal conveyor belt and fall to the floor. A 0.50 kg parcel leaves the belt at 1.2 m/s and lands 0.48 m beyond the end of the belt, measured horizontally. Later, a 2.0 kg parcel leaves the same end of the belt at 2.4 m/s. Neglecting air resistance, how far beyond the end of the belt does the 2.0 kg parcel land?",
+              "choices": [
+                "0.48 m",
+                "0.96 m",
+                "1.9 m",
+                "3.8 m"
+              ],
+              "key": "B",
+              "rationale": "The fall time depends only on the drop height, which is the same for both parcels: t = 0.48 m / 1.2 m/s = 0.40 s. Mass does not change free-fall motion, so the 2.0 kg parcel also falls for 0.40 s and travels (2.4 m/s)(0.40 s) = 0.96 m horizontally.",
+              "distractorNotes": {
+                "A": "Keeps the landing distance fixed by the height alone; the height fixes the fall time, but the horizontal distance is the launch speed times that time.",
+                "C": "Scales the distance with the square of the speed, as if the range came from the kinetic energy; with a fixed fall time, the distance is proportional to the speed.",
+                "D": "Scales the distance with the parcel's momentum, which is 8 times as large; mass plays no part in projectile motion without air resistance."
+              },
+              "topics": [
+                "P1.1.5",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc02",
+              "prompt": "On Mars, where the gravitational field strength is 3.7 N/kg, a rover's sampling arm lowers a 2.0 kg rock sample straight down, speeding it up at 1.5 m/s^2. What is the magnitude of the force the arm exerts on the sample?",
+              "choices": [
+                "3.0 N",
+                "4.4 N",
+                "10 N",
+                "17 N"
+              ],
+              "key": "B",
+              "rationale": "Take down as positive. The sample's weight on Mars is mg = (2.0 kg)(3.7 N/kg) = 7.4 N downward, and the arm pushes up with force F. Newton's second law gives mg − F = ma, so F = m(g − a) = (2.0 kg)(3.7 m/s^2 − 1.5 m/s^2) = 4.4 N. The mass is the same as on Earth; only the weight depends on the local gravitational field.",
+              "distractorNotes": {
+                "A": "Uses F = ma = (2.0 kg)(1.5 m/s^2), treating the arm's force as the net force; gravity also acts on the sample, so the net force is mg − F.",
+                "C": "Adds ma to the weight, m(g + a), as if the sample were speeding up while moving upward; speeding up downward means the net force points down, so the arm pushes up with less than the weight.",
+                "D": "Uses Earth's 9.8 N/kg, m(9.8 − 1.5); the sample's mass is unchanged on Mars, but its weight there is only (2.0 kg)(3.7 N/kg) = 7.4 N."
+              },
+              "topics": [
+                "P1.2.5",
+                "P1.2.6"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc03",
+              "prompt": "A mechanic tosses a 0.60 kg wrench to a coworker, and the wrench spins rapidly as it flies. Neglecting air resistance, what is the net force on the wrench when its center of mass is at the highest point of its path?",
+              "choices": [
+                "Zero, because the center of mass is momentarily not rising",
+                "More than 5.9 N, because an extra force is needed to keep the wrench spinning",
+                "5.9 N downward plus a horizontal force that keeps the wrench moving forward",
+                "5.9 N downward, the same as for a wrench that is not spinning"
+              ],
+              "key": "D",
+              "rationale": "Once the wrench is released, the only force on it is gravity, mg = (0.60 kg)(9.8 m/s^2) ≈ 5.9 N downward, at every point of the flight. The spin is rotation about the center of mass and needs no net external force; the center of mass follows the same parabola as a thrown point mass.",
+              "distractorNotes": {
+                "A": "At the top only the vertical velocity is zero; the acceleration is still g downward, so the net force is not zero.",
+                "B": "The forces that keep parts of the wrench moving in circles about its center of mass are internal; they add nothing to the net external force.",
+                "C": "No horizontal force is needed to keep the wrench moving; its center of mass keeps a constant horizontal velocity because no horizontal force acts."
+              },
+              "topics": [
+                "P1.2.1",
+                "P1.2.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc04",
+              "prompt": "A 20 kg crate and a 60 kg crate slide across the same level warehouse floor, and each slides until it stops. Both start at 3.0 m/s, and the coefficient of kinetic friction is the same for both. Compared with the 20 kg crate, the 60 kg crate",
+              "choices": [
+                "slides one-third as far, because the friction force on it is 3 times as large",
+                "slides 3 times as far, because it starts with 3 times the kinetic energy",
+                "slides the same distance but takes 3 times as long to stop",
+                "slides the same distance and takes the same time to stop"
+              ],
+              "key": "D",
+              "rationale": "Friction is μ_k mg, so the friction force and the kinetic energy are both 3 times as large for the 60 kg crate. Work–energy gives μ_k mg d = (1/2)mv^2, so d = v^2/(2μ_k g), independent of mass; impulse–momentum gives μ_k mg t = mv, so t = v/(μ_k g), also independent of mass. Both crates have the same deceleration, μ_k g.",
+              "distractorNotes": {
+                "A": "Triples the friction force but forgets that the kinetic energy to be removed is also 3 times as large.",
+                "B": "Triples the kinetic energy but keeps the lighter crate's friction force; friction is proportional to the normal force, so it triples too.",
+                "C": "Uses the heavier crate's 3 times larger momentum with the lighter crate's friction force; both triple, so the stopping time is unchanged."
+              },
+              "topics": [
+                "P1.3.2",
+                "P1.2.7",
+                "P1.4.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc05",
+              "prompt": "A uniform solid ball (I = (2/5)MR^2) rolls without slipping across a level floor at 3.5 m/s. It then moves onto a ramp that curves smoothly up from the floor and whose surface is frictionless. Neglecting air resistance, how much higher than its height on the floor does the ball's center rise?",
+              "choices": [
+                "0.25 m",
+                "0.63 m",
+                "0.88 m",
+                "1.3 m"
+              ],
+              "key": "B",
+              "rationale": "On the frictionless ramp the normal force and gravity both act through the ball's center, so there is no torque about the center and the ball keeps spinning at the same rate. Only the translational kinetic energy becomes potential energy: (1/2)Mv^2 = Mgh gives h = v^2/(2g) = (3.5 m/s)^2/(2 × 9.8 m/s^2) ≈ 0.63 m. The rotational kinetic energy stays with the spinning ball.",
+              "distractorNotes": {
+                "A": "Converts only the rotational kinetic energy, (1/5)Mv^2, into height; it is the translational energy that converts, while the spin is unchanged.",
+                "C": "Converts the total rolling kinetic energy, (7/10)Mv^2, as on a ramp with enough friction to keep the ball rolling; without friction nothing slows the spin.",
+                "D": "Uses Mv^2 = Mgh, dropping the 1/2 from the kinetic energy."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.6.5",
+                "P1.6.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc06",
+              "prompt": "On a level air table with negligible friction, a 0.20 kg puck and a 0.60 kg puck start from rest. Each is pushed by a constant 1.2 N horizontal net force for 0.50 s. Just after its push, what are the momentum and the kinetic energy of the 0.60 kg puck?",
+              "choices": [
+                "0.60 kg·m/s and 0.30 J",
+                "0.60 kg·m/s and 0.90 J",
+                "1.0 kg·m/s and 0.90 J",
+                "1.8 kg·m/s and 2.7 J"
+              ],
+              "key": "A",
+              "rationale": "Equal forces for equal times give equal impulses: Δp = FΔt = (1.2 N)(0.50 s) = 0.60 kg·m/s for each puck. The 0.60 kg puck then moves at 1.0 m/s, so K = p^2/(2m) = (0.60)^2/(2 × 0.60) = 0.30 J, one-third of the light puck's 0.90 J. Equal impulses are not equal work: the heavier puck moves a shorter distance during its push.",
+              "distractorNotes": {
+                "B": "Gives the heavier puck the light puck's kinetic energy; equal impulses are not equal amounts of work.",
+                "C": "This is the result of equal forces acting over equal distances (equal work): p = √(2mK) = √(2 × 0.60 × 0.90) ≈ 1.0 kg·m/s. Here the pushes last equal times, not equal distances.",
+                "D": "Gives the heavier puck the light puck's speed of 3.0 m/s; the same force gives the larger mass a smaller acceleration."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.3.1",
+                "P1.4.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc07",
+              "prompt": "A 0.50 kg cart starts from rest on a level, frictionless track. A constant 4.0 N horizontal net force acts on it while it moves 2.5 m. What is the magnitude of the impulse this force delivers to the cart?",
+              "choices": [
+                "1.6 N·s",
+                "2.2 N·s",
+                "3.2 N·s",
+                "10 N·s"
+              ],
+              "key": "C",
+              "rationale": "The force is given over a distance, so use work first: W = Fd = (4.0 N)(2.5 m) = 10 J = (1/2)mv^2, so v = √(2 × 10 J / 0.50 kg) ≈ 6.3 m/s. The impulse equals the change in momentum: J = mv = (0.50 kg)(6.3 m/s) ≈ 3.2 N·s. (Equivalently, a = 8.0 m/s^2, t = √(2d/a) ≈ 0.79 s and J = Ft ≈ 3.2 N·s.)",
+              "distractorNotes": {
+                "A": "Finds the time as distance ÷ final speed, as if the cart moved at its final speed throughout; starting from rest, its average speed is half its final speed.",
+                "B": "Drops the 1/2 from the kinetic energy, so Fd = mv^2 gives v ≈ 4.5 m/s.",
+                "D": "Multiplies force by distance, which gives the work in joules, not the impulse; impulse is force times time."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc08",
+              "prompt": "The same constant torque is applied, starting from rest, to each object in the table about the axis described. Which object has the smallest angular acceleration?\n| Object | Mass | Size | Axis | Rotational inertia |\n| --- | --- | --- | --- | --- |\n| Thin hoop | 2.0 kg | radius 0.15 m | through the center, perpendicular to the hoop | MR^2 |\n| Solid disk | 6.0 kg | radius 0.10 m | through the center, perpendicular to the disk | (1/2)MR^2 |\n| Solid sphere | 8.0 kg | radius 0.10 m | through the center | (2/5)MR^2 |\n| Thin rod | 3.0 kg | length 0.40 m | through the center, perpendicular to the rod | (1/12)ML^2 |",
+              "choices": [
+                "The thin hoop",
+                "The solid disk",
+                "The solid sphere",
+                "The thin rod"
+              ],
+              "key": "A",
+              "rationale": "With the same torque, α = τ/I, so the smallest angular acceleration belongs to the largest rotational inertia. I_hoop = (2.0)(0.15)^2 = 0.045 kg·m^2, I_disk = (1/2)(6.0)(0.10)^2 = 0.030 kg·m^2, I_sphere = (2/5)(8.0)(0.10)^2 = 0.032 kg·m^2 and I_rod = (1/12)(3.0)(0.40)^2 = 0.040 kg·m^2. The lightest object has the largest rotational inertia because all of its mass is far from the axis.",
+              "distractorNotes": {
+                "B": "The disk has the smallest rotational inertia, 0.030 kg·m^2, so it has the largest angular acceleration, not the smallest.",
+                "C": "Picks the largest mass, which measures translational inertia; rotational inertia also depends on how far the mass lies from the axis (0.032 kg·m^2 here).",
+                "D": "Uses mass × (size)^2 without the shape factors, which makes the rod's 0.48 kg·m^2 look largest; with (1/12)ML^2 it is 0.040 kg·m^2."
+              },
+              "topics": [
+                "P1.5.4",
+                "P1.5.6"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc09",
+              "prompt": "A car's speedometer computes the car's speed from how fast its wheels turn, assuming tires 0.64 m in diameter. The owner fits larger tires, 0.70 m in diameter, which roll without slipping. When the speedometer reads 24 m/s, what is the car's actual speed?",
+              "choices": [
+                "22 m/s",
+                "24 m/s",
+                "26 m/s",
+                "29 m/s"
+              ],
+              "key": "C",
+              "rationale": "The speedometer measures the wheels' angular velocity ω and reports v = ωr with r = 0.32 m, so ω = (24 m/s)/(0.32 m) = 75 rad/s. Rolling without slipping, the actual speed is ωr with r = 0.35 m: v = (75 rad/s)(0.35 m) ≈ 26 m/s. The speed scales with the radius, by 0.70/0.64.",
+              "distractorNotes": {
+                "A": "Inverts the ratio; at the same rotation rate a larger tire covers more ground per turn, so the car goes faster than the reading.",
+                "B": "Assumes the reading is still correct; the speedometer senses the rotation rate, not the ground speed.",
+                "D": "Scales the speed by the square of the radius ratio; v = ωr is linear in r."
+              },
+              "topics": [
+                "P1.5.2",
+                "P1.5.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc10",
+              "prompt": "Two identical uniform rods, each of mass M and length L, with rotational inertia (1/12)ML^2 about the center, lie at rest on frictionless ice. Each receives the same brief horizontal impulse J perpendicular to the rod: rod 1 at its center and rod 2 at one end. Just afterward, how do the rods' center-of-mass speeds and total kinetic energies compare?",
+              "choices": [
+                "Same center-of-mass speed; rod 2 has 4 times the kinetic energy",
+                "Same center-of-mass speed and the same kinetic energy",
+                "Rod 2's center of mass is slower, and the kinetic energies are equal",
+                "Rod 2's center of mass is slower, and rod 2 has less kinetic energy"
+              ],
+              "key": "A",
+              "rationale": "The impulse on each rod equals its change in momentum, J = Mv_cm, wherever the rod is struck, so both centers of mass move at J/M. Rod 2 also receives an angular impulse about its center: J(L/2) = (1/12)ML^2 ω, so ω = 6J/(ML), and its rotational kinetic energy is (1/2)(1/12)ML^2 ω^2 = 3J^2/(2M), three times its translational J^2/(2M). Rod 2's total kinetic energy is 4 times rod 1's.",
+              "distractorNotes": {
+                "B": "Equal impulses do give equal center-of-mass speeds, but rod 2 also rotates, so it has extra kinetic energy.",
+                "C": "Assumes the impulse fixes the kinetic energy, so that rod 2 can spin only by giving up some center-of-mass speed; the linear impulse always equals the change in the center of mass's momentum, so both centers move at J/M.",
+                "D": "Splits the impulse between translation and rotation; in fact rod 2's center moves just as fast and the rod spins as well, so it has more kinetic energy."
+              },
+              "topics": [
+                "P1.6.3",
+                "P1.4.2",
+                "P1.6.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc11",
+              "prompt": "A light rope is wrapped around a 4.0 kg uniform solid cylinder (I = (1/2)MR^2) that rests on a level floor. The rope leaves the top of the cylinder horizontally, and a student pulls its free end with a constant 12 N horizontal force. The cylinder rolls without slipping. What is the magnitude of the acceleration of the cylinder's center?",
+              "choices": [
+                "2.0 m/s^2",
+                "3.0 m/s^2",
+                "4.0 m/s^2",
+                "6.0 m/s^2"
+              ],
+              "key": "C",
+              "rationale": "Let static friction f from the floor act forward at the bottom of the cylinder (its sign will come out of the equations). Translation: F + f = Ma. Rotation about the center, with the rope's force at the top and friction at the bottom on opposite sides: FR − fR = (1/2)MR^2(a/R), so F − f = (1/2)Ma. Adding the two equations gives 2F = (3/2)Ma, so a = 4F/(3M) = 4(12 N)/(3 × 4.0 kg) = 4.0 m/s^2. Then f = Ma − F = 4.0 N, positive, so static friction does point forward, and the center accelerates faster than F/M.",
+              "distractorNotes": {
+                "A": "Treats the pull as if it acted at the axle, where it has no torque about the center, giving a = 2F/(3M); a pull at the top also turns the cylinder, and static friction then pushes forward.",
+                "B": "Uses a = F/M, as for a block sliding on a frictionless floor; static friction from the floor is not zero here, and it points forward.",
+                "D": "Uses only the rotation about the center, FR = (1/2)MR^2(a/R), so a = 2F/M; this leaves out the friction force, whose torque opposes the rope's."
+              },
+              "topics": [
+                "P1.6.5",
+                "P1.5.6",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc12",
+              "prompt": "A 0.40 kg cart attached to a horizontal spring oscillates on a level, frictionless track with a period of 1.2 s. How much mass must be fastened to the cart so that, on the same spring, the period becomes 2.4 s?",
+              "choices": [
+                "None: added mass does not change the period of an oscillator",
+                "0.40 kg",
+                "1.2 kg",
+                "1.6 kg"
+              ],
+              "key": "C",
+              "rationale": "For a mass–spring oscillator, T = 2π√(m/k), so doubling T requires 4 times the mass. The total must be 4 × 0.40 kg = 1.6 kg, so 1.6 kg − 0.40 kg = 1.2 kg must be added.",
+              "distractorNotes": {
+                "A": "A pendulum's period does not depend on the bob's mass, but a mass–spring period grows as √m.",
+                "B": "Doubles the mass, as if T were proportional to m; that raises the period only by a factor of √2, to about 1.7 s.",
+                "D": "1.6 kg is the required total mass; the cart already supplies 0.40 kg of it."
+              },
+              "topics": [
+                "P1.7.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc13",
+              "prompt": "A glider on a level air track oscillates in simple harmonic motion with a period of 2.0 s. Its greatest speed is 0.60 m/s. What is the amplitude of its motion?",
+              "choices": [
+                "0.15 m",
+                "0.19 m",
+                "0.30 m",
+                "0.38 m"
+              ],
+              "key": "B",
+              "rationale": "In simple harmonic motion, v_max = Aω = 2πA/T, so A = v_max T/(2π) = (0.60 m/s)(2.0 s)/(2π) ≈ 0.19 m.",
+              "distractorNotes": {
+                "A": "Treats each quarter cycle as constant acceleration from rest to v_max, so the average speed is v_max/2 for T/4; in simple harmonic motion the acceleration changes with position.",
+                "C": "Assumes the glider moves at v_max for a whole quarter period; it moves more slowly everywhere except at equilibrium.",
+                "D": "This is 2A, the distance between the turning points, not the amplitude measured from equilibrium."
+              },
+              "topics": [
+                "P1.7.3",
+                "P1.7.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc14",
+              "prompt": "A 2.0 kg wooden block, 0.20 m by 0.20 m across and 0.10 m tall, floats in a large tank of fresh water with its bottom 0.050 m below the waterline. The block is moved to a container whose square inner base is only 0.21 m on a side and which holds just 0.50 kg of fresh water. What happens to the block?",
+              "choices": [
+                "It rests on the bottom, because 0.50 kg of water can supply at most 4.9 N of buoyant force",
+                "It floats with its bottom deeper than 0.050 m, because the thin layer of water gives less support",
+                "It floats with its bottom less than 0.050 m deep, because the water squeezed into the gap is at higher pressure",
+                "It floats with its bottom 0.050 m below the waterline, as in the large tank"
+              ],
+              "key": "D",
+              "rationale": "The upward push on the block comes from the water pressure on its bottom face, and that pressure depends only on depth: p = ρgh. Supporting 19.6 N on a 0.040 m^2 face needs a gauge pressure of 490 Pa, which needs h = 0.050 m, the same as in the large tank. The 0.50 kg of water (5.0 × 10^−4 m^3) is enough: it fills the 0.0041 m^2 gap around the block to a depth of 0.050 m (about 2.1 × 10^−4 m^3) and leaves a layer about 7 mm thick under the block, so the block floats clear of the bottom.",
+              "distractorNotes": {
+                "A": "The buoyant force equals the weight of water that would fill the submerged volume (2.0 × 10^−3 m^3 here), not the weight of the water actually present; a thin layer at the right depth exerts the needed pressure.",
+                "B": "Pressure at a given depth does not depend on how much water surrounds the block, so the same depth gives the same support.",
+                "C": "Pressure in still water depends only on depth below the surface, not on the width of the gap."
+              },
+              "topics": [
+                "P1.8.3",
+                "P1.8.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-3-mc15",
+              "prompt": "A cylindrical container with an inner base area of 0.015 m^2 holds fresh water. A 0.30 kg wooden toy with a density of 500 kg/m^3 is placed in the water and floats; no water spills. By how much does the gauge pressure at the bottom of the container increase?",
+              "choices": [
+                "0 Pa",
+                "98 Pa",
+                "2.0 × 10^2 Pa",
+                "3.9 × 10^2 Pa"
+              ],
+              "key": "C",
+              "rationale": "The floating toy displaces its own weight of water, 0.30 kg, a volume of 3.0 × 10^−4 m^3, which raises the water level by (3.0 × 10^−4 m^3)/(0.015 m^2) = 0.020 m. The pressure at the bottom rises by ρgΔh = (1000 kg/m^3)(9.8 m/s^2)(0.020 m) ≈ 2.0 × 10^2 Pa. Equivalently, the bottom now also supports the toy's weight: mg/A = (2.94 N)/(0.015 m^2) ≈ 196 Pa.",
+              "distractorNotes": {
+                "A": "The buoyant force holds the toy up, but by Newton's third law the toy pushes down on the water just as hard, so the water level and the bottom pressure rise.",
+                "B": "Uses the toy's density in ρgΔh; the added pressure comes from the taller water column, so the water's density belongs there.",
+                "D": "Takes the displaced volume as the toy's whole volume, 6.0 × 10^−4 m^3; a floating toy displaces only its own weight of water, half its volume here."
+              },
+              "topics": [
+                "P1.8.2",
+                "P1.8.3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

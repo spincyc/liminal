@@ -1,0 +1,405 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "fr-mathematical-routines",
+  "kind": "fr-archetype",
+  "title": "Mathematical Routines",
+  "author": "p1-workshop-mr-author",
+  "summary": "Mathematical Routines is one of the four free-response question types on the AP® Physics 1 Exam. A question of this type sets up a physical situation and asks you to derive relations from fundamental principles, calculate values with units, and use the mathematics to predict, compare and check. This guide sets out the usual parts, what earns each kind of point in Liminal's rubrics, model sentences, common traps, a worked model and four self-checks, and links to a practice set of four questions from Units 1, 2, 6 and 7.",
+  "minutes": 35,
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "College Board's exam pages (checked 2026-10-22) name Mathematical Routines as one of the four free-response question types. The free-response section has one question of each type in 95 minutes, any calculator is allowed, and an equation sheet is supplied. Liminal's practice forms put the Mathematical Routines question first and score it out of 10 points; those are Liminal practice conventions, because College Board's pages do not state point values."
+        },
+        {
+          "type": "text",
+          "text": "The stem describes a physical situation with given quantities, sometimes as symbols only, sometimes with numbers, often both. The parts then ask you to treat the situation mathematically: write a relation from a fundamental principle, solve it in symbols, put numbers in, and use what you found to answer a physical question. The mathematics is algebra, trigonometry and proportional reasoning; the physics can come from any unit, and many questions join two units, such as forces with energy or translation with rotation."
+        },
+        {
+          "type": "text",
+          "text": "What separates this type from the others is that the derivation is the product. In Liminal's rubrics, a correct number with no visible starting relation earns little, and a clean derivation with an arithmetic slip earns most of the points."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Most questions use three or four of these, often in this order. The middle column is what you write; the right column is where Liminal's rubrics usually put the points.",
+          "head": [
+            "Part type",
+            "What you do",
+            "Points usually go to"
+          ],
+          "rows": [
+            [
+              "Diagram",
+              "A free-body or extended force diagram for one object, each force drawn where it acts",
+              "The right forces, no invented ones, directions and relative lengths"
+            ],
+            [
+              "Derive",
+              "Start from a named fundamental relation and solve for the requested quantity in the given symbols",
+              "The starting relation; each physically required term; the final expression"
+            ],
+            [
+              "Calculate",
+              "Substitute the given values into your expression",
+              "The value with units and 2–3 significant figures, consistent with the expression"
+            ],
+            [
+              "Check",
+              "Get the same result a second way: energy against forces and kinematics, a second frame, a graph",
+              "The second method set up correctly and an explicit statement that the results agree or do not"
+            ],
+            [
+              "Change a quantity",
+              "Say how a result changes when one quantity changes, using the expression",
+              "Naming the variable and its power in the expression; the factor; the physical reason"
+            ],
+            [
+              "Evaluate a claim",
+              "Decide whether a stated prediction is right, citing your expression",
+              "The comparison drawn from the mathematics; a clear verdict; the physical explanation"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-earns-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics for this type award five kinds of points."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Starting points: a fundamental relation written for a named object or system, such as Newton's second law for the block along the ramp, or conservation of energy for the ball–Earth system. Starting from a special-case formula that already contains the answer earns nothing for the derivation.",
+            "Symbol points: every term that the physics requires, in the symbols the question gives, with defined subscripts. If the question gives m, R and r, an answer in those symbols is complete; an answer with a number in it is not a derivation.",
+            "Answer points: the calculated value with its unit and 2–3 significant figures, matching your expression. Liminal's keys accept ±1 in the last digit.",
+            "Reasoning points: a sentence that names the principle and the system and says why it applies, such as why no work is done by a force or why static friction is the only horizontal force.",
+            "Consistency points: later parts that use your earlier result earn their points when the work follows from it, even if the earlier result was wrong. A check part earns its point only when you state whether the two results agree."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "What \"derive\" asks for",
+          "text": "Begin with a fundamental relation, apply it to a named object or system with a stated positive direction, add only the conditions the situation supplies (no slipping, string taut, starts from rest), and solve for the requested quantity in the given symbols.",
+          "conditions": [
+            "Fundamental relations include Newton's second law in translational and rotational form, conservation of energy, momentum and angular momentum, the work–energy theorem, and the constant-acceleration relations.",
+            "Use only the symbols the prompt lists plus physical constants such as g. Numbers belong in the next part.",
+            "Simplify enough that the dependence on each quantity is visible, because a later part usually asks about it."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing the starting relation. The first column is what the part asks for; when two rows apply, either is valid, and the other makes a good check.",
+          "head": [
+            "Asked for",
+            "Start from"
+          ],
+          "rows": [
+            [
+              "An acceleration, a force, a tension, or a condition for not slipping",
+              "Newton's second law with a free-body diagram; for a turning object add τ = Iα and the no-slip link a = αr"
+            ],
+            [
+              "A speed after a displacement, or a height or distance reached",
+              "Conservation of energy for a named system, or the work–energy theorem for one object"
+            ],
+            [
+              "Velocities just after a collision, push-off or sticking",
+              "Conservation of momentum for the colliding objects"
+            ],
+            [
+              "An angular speed after a change of shape or a collision with a pivot",
+              "Conservation of angular momentum about the pivot"
+            ],
+            [
+              "A time or a position",
+              "The constant-acceleration relations, with a stated origin and positive direction"
+            ],
+            [
+              "A period or a frequency",
+              "T = 2π√(m/k) or T = 2π√(L/g), with the oscillating mass identified"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Liminal's formula reference, appended to every practice set, lists these relations. Knowing where each one lives saves time, but a reference does not tell you which relation fits; the table above does."
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Naming the system and the principle before a derivation.",
+          "text": "Take the cart and Earth as the system. The track is frictionless and the normal force is perpendicular to the motion, so it does no work, and the system's mechanical energy is conserved: K_i + U_i = K_f + U_f."
+        },
+        {
+          "type": "model",
+          "prompt": "Starting a force derivation.",
+          "text": "Taking up the ramp as positive, Newton's second law for the block along the ramp is T − mg sin θ − μ_k mg cos θ = ma."
+        },
+        {
+          "type": "model",
+          "prompt": "Substituting at the end, with units.",
+          "text": "a = (m_2 − μ_k m_1)g/(m_1 + m_2) = (2.5 kg − 0.30 × 3.0 kg)(9.8 m/s^2)/(5.5 kg) ≈ 2.9 m/s^2."
+        },
+        {
+          "type": "model",
+          "prompt": "How a result depends on one quantity.",
+          "text": "Because T = 2π√(m/k), the period is proportional to √m. Four times the mass doubles the period, from 0.70 s to 1.4 s."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluating a claim from an expression.",
+          "text": "The claim is incorrect. My expression, a = g sin θ/(1 + I/(mR^2)), depends on the mass only through the ratio I/(mR^2), which is 2/5 for every uniform solid ball. A heavier solid ball has a larger gravitational force and a proportionally larger inertia, so its acceleration is the same."
+        },
+        {
+          "type": "model",
+          "prompt": "Checking a result with a second method.",
+          "text": "Check: from part (b), a = 1.2 m/s^2, so v^2 = 2ad = 2(1.2 m/s^2)(2.0 m) = 4.8 m^2/s^2 and v ≈ 2.2 m/s, which agrees with the energy result in part (c)."
+        },
+        {
+          "type": "model",
+          "prompt": "A limiting case.",
+          "text": "If μ_k = 0, the expression reduces to a = g sin θ, the acceleration on a frictionless incline, as it should."
+        },
+        {
+          "type": "model",
+          "prompt": "A result that cannot be physical.",
+          "text": "The quantity under the square root is negative for these values, so there is no real solution: the object never reaches that height. The greatest height it reaches is (v_0 sin θ)^2/(2g), which is below the target."
+        },
+        {
+          "type": "model",
+          "prompt": "When two parts disagree and time is short.",
+          "text": "These two results disagree, so at least one is wrong. I trust part (b), because the energy equation in part (c) leaves out the work done by friction, which would make that speed too large."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Starting a derivation from a remembered special case, such as v = √(2gh) for an object that also rolls, or a = g sin θ when friction acts.",
+          "fix": "Write the general relation first, for example mgh = (1/2)mv^2 + (1/2)Iω^2, and let the situation remove terms. Every term you drop needs a reason."
+        },
+        {
+          "type": "trap",
+          "text": "Putting numbers into a part that says \"derive an expression\".",
+          "fix": "Keep to the listed symbols until the expression is finished. Substitute in the calculate part, where the same expression earns the answer point."
+        },
+        {
+          "type": "trap",
+          "text": "Using one symbol for two things: m for both masses, R for both the wheel and its axle, v for a speed before and after.",
+          "fix": "Give each quantity its own symbol or subscript, and use exactly the symbols the question defines."
+        },
+        {
+          "type": "trap",
+          "text": "Losing signs because no positive direction was chosen, then reporting a backward acceleration as positive.",
+          "fix": "State the positive direction in the first line and keep the sign of every vector component, as in a_b = −μ_k g."
+        },
+        {
+          "type": "trap",
+          "text": "Setting static friction equal to μ_s F_N in every problem.",
+          "fix": "μ_s F_N is only the largest static friction can be. Static friction is whatever Newton's second law requires, up to that limit; set them equal only to find the condition for slipping."
+        },
+        {
+          "type": "trap",
+          "text": "Using the wrong radius in a no-slip condition, such as ω = v/R for a string that unwinds from an axle of radius r.",
+          "fix": "The no-slip link uses the radius where the contact is: the string's radius on the axle, or the wheel's radius on the ground."
+        },
+        {
+          "type": "trap",
+          "text": "Taking the wrong root of a quadratic, or keeping a negative time.",
+          "fix": "Find both roots and say which event each one describes, such as passing a height on the way up or on the way down."
+        },
+        {
+          "type": "trap",
+          "text": "Answering a change-a-quantity or claim part from intuition, such as \"a heavier object falls faster\".",
+          "fix": "Point to the expression: which variable changes, what power it has, and what the factor is. Then give the physical reason."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving a check part without a verdict, or letting two parts disagree silently.",
+          "fix": "Write \"these agree\" or \"these disagree\". If they disagree, say which one you trust and why; a stated inconsistency can still earn reasoning points."
+        },
+        {
+          "type": "trap",
+          "text": "Final answers with no unit, or with seven significant figures copied from the calculator.",
+          "fix": "Give 2–3 significant figures, matching the givens, and a unit on every numerical answer."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A child starts from rest at the top of a straight playground slide of length L = 3.2 m inclined at θ = 35° above the horizontal. The coefficient of kinetic friction between the child and the slide is μ_k = 0.30. Take the direction down the slide as positive and treat the child as a particle. (a) Derive an expression for the child's speed v at the bottom in terms of g, L, θ and μ_k. (b) Calculate v. (c) Check your expression against two limiting cases. (d) A parent says that an adult would reach the bottom of the same slide faster, \"because more weight pulls harder down the slope\". Evaluate the claim using your expression.",
+          "answer": "(a) v = √(2gL(sin θ − μ_k cos θ)). (b) v ≈ 4.5 m/s. (c) With μ_k = 0 it gives √(2gL sin θ), the frictionless speed; with μ_k = tan θ it gives 0, the condition for constant velocity. (d) The claim is incorrect in this model: the mass cancels, so an adult with the same μ_k reaches the same speed.",
+          "steps": [
+            "(a) Starting point: the work–energy theorem for the child, W_net = ΔK. Forces: gravity, the normal force and kinetic friction. The normal force does no work. Perpendicular to the slide, F_N = mg cos θ, so friction is μ_k mg cos θ, opposite the motion.",
+            "(a, continued) Over the length L: mgL sin θ − μ_k mg cos θ · L = (1/2)mv^2 − 0, so v = √(2gL(sin θ − μ_k cos θ)). The mass cancels.",
+            "(b) sin 35° = 0.574 and cos 35° = 0.819, so sin θ − μ_k cos θ = 0.574 − 0.246 = 0.328. v = √(2(9.8 m/s^2)(3.2 m)(0.328)) = √(20.6 m^2/s^2) ≈ 4.5 m/s.",
+            "(c) With μ_k = 0 the expression becomes √(2gL sin θ) = 6.0 m/s, the speed after falling the height L sin θ with no friction. With μ_k = tan θ = 0.70, sin θ − μ_k cos θ = 0, so v = 0: friction balances the component of gravity along the slide, and a child starting from rest stays at rest. Both cases make physical sense, which supports the expression.",
+            "(d) The expression contains g, L, θ and μ_k but not m. A larger mass increases the gravitational force along the slope and the friction force in the same proportion, and the inertia too, so the speed at the bottom is unchanged. The claim is incorrect within this model, which ignores air resistance.",
+            "Check the habits: a named starting relation, every force accounted for, symbols only in (a), a unit and two significant figures in (b), a stated verdict in (c) and (d)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you reveal the answer."
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-mathematical-routines-c1",
+          "prompt": "A student derives the distance d that a curling stone slides on level ice before stopping, after being released at speed v_0 with a coefficient of kinetic friction μ_k. The derivation ends with d = μ_k g/(2v_0^2). Without redoing the derivation, use units and one limiting case to show that the result is wrong. Then give the correct expression and the relation it starts from.",
+          "hint": "Find the unit of μ_k g/(2v_0^2). Then ask what should happen to d as v_0 grows.",
+          "answer": "The expression has units of 1/m, not m, and it makes a faster stone slide a shorter distance (and a frictionless stone slide no distance). The correct result is d = v_0^2/(2μ_k g), from the work–energy theorem: −μ_k mg d = 0 − (1/2)mv_0^2.",
+          "steps": [
+            "Units: (m/s^2)/(m^2/s^2) = 1/m, so the expression cannot be a distance.",
+            "Limiting cases: a larger v_0 should give a larger d, and μ_k → 0 should make d grow without limit. The student's expression does the opposite in both cases.",
+            "Work–energy: friction μ_k mg acts against the motion over d, so −μ_k mg d = 0 − (1/2)mv_0^2 and d = v_0^2/(2μ_k g), which has units of m^2/s^2 divided by m/s^2, meters."
+          ],
+          "see": "worked-model"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-mathematical-routines-c2",
+          "prompt": "In one part of a question, a student finds that a 2.0 kg box pulled from rest across a level floor accelerates at 2.4 m/s^2. In a later part, she uses energy and finds the box's speed after 3.0 m to be 4.5 m/s. Are the two results consistent? What should she write?",
+          "hint": "Use the acceleration to predict the speed after 3.0 m.",
+          "answer": "No. With a = 2.4 m/s^2, v^2 = 2ad = 14.4 m^2/s^2 gives v ≈ 3.8 m/s, not 4.5 m/s. She should state that the results disagree, recheck both (starting with whether the energy equation includes the work done by friction), and say which result she trusts.",
+          "steps": [
+            "From rest with constant acceleration: v^2 = 2ad = 2(2.4 m/s^2)(3.0 m) = 14.4 m^2/s^2, so v ≈ 3.8 m/s.",
+            "4.5 m/s is about 20% higher, which is not a rounding difference, so at least one part is wrong.",
+            "A speed that is too large from energy often means a missing negative work term, such as friction. Writing the disagreement down, with the result she trusts, keeps the reasoning visible to the scorer."
+          ],
+          "see": "model-wording"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-mathematical-routines-c3",
+          "prompt": "A block on a horizontal spring oscillates on a frictionless surface, and its maximum speed is v_max = A√(k/m). The block is replaced by one with four times the mass, the same spring is used, and the new block is released from twice the original amplitude. By what factor does v_max change? By what factor does the total mechanical energy change? Show that the two answers are consistent.",
+          "hint": "Change each quantity in the expression and multiply the factors. For the energy, use the spring at the turning point.",
+          "answer": "v_max is unchanged (factor 1). The energy is 4 times as large. Consistent: (1/2)(4m)v_max^2 is 4 times (1/2)mv_max^2 when v_max is unchanged.",
+          "steps": [
+            "v_max = A√(k/m): doubling A multiplies it by 2, and four times m multiplies it by 1/√4 = 1/2. The net factor is 1.",
+            "E = (1/2)kA^2 with the same k: doubling A gives 4 times the energy.",
+            "At equilibrium all the energy is kinetic, (1/2)mv_max^2. With 4m and the same v_max that is 4 times as large, matching the spring calculation."
+          ],
+          "see": "model-wording"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-mathematical-routines-c4",
+          "prompt": "A student begins a part about a block that slides from rest down a rough ramp of length d and angle θ with \"Energy is conserved, so mgh = (1/2)mv^2.\" Rewrite the opening so that it names a system and accounts for every energy transfer, in the symbols m, g, d, θ, μ_k and v.",
+          "hint": "Decide whether friction is a force doing work on your system or a source of thermal energy inside it.",
+          "answer": "For the block–Earth system, friction from the ramp is an external force that does negative work: mg d sin θ − μ_k mg cos θ · d = (1/2)mv^2. (Equivalently, for the block, ramp and Earth, mg d sin θ = (1/2)mv^2 + ΔE_th with ΔE_th = μ_k mg cos θ · d.)",
+          "steps": [
+            "The original line names no system and leaves out friction, so it treats the ramp as frictionless.",
+            "The height fallen is h = d sin θ, and the friction force is μ_k F_N = μ_k mg cos θ, acting over the distance d.",
+            "Name the system first; then friction appears either as external work or as thermal energy, never both and never neither."
+          ],
+          "see": "what-earns-points"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set in two sittings at 22 minutes a question, Liminal's practice pace for this type (inside the 20–25 minutes practice exam A suggests for its Mathematical Routines question): questions 1 and 2 (Units 1 and 2) in 44 minutes, then questions 3 and 4 (Units 6 and 7) in 44 minutes, with Liminal's formula reference beside you. Score each part with the rubric and record raw points out of 10 per question as practice. For each lost point, name its kind (starting relation, symbols, answer and units, reasoning or consistency), then revisit the section of this guide or the review and week below that it points to."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-mathematical-routines"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-mathematical-routines"
+            },
+            {
+              "label": "Unit 1 review: kinematics",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 2 review: force and translational dynamics",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 6 review: energy and momentum of rotating systems",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 7 review: oscillations",
+              "ref": "guide:review-u7"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Using the formula reference",
+              "ref": "guide:formula-reference-skills"
+            },
+            {
+              "label": "Week 3: motion in two dimensions",
+              "ref": "week:3"
+            },
+            {
+              "label": "Week 7: gravitational, friction, and spring forces",
+              "ref": "week:7"
+            },
+            {
+              "label": "Week 20: Newton's second law in rotational form",
+              "ref": "week:20"
+            },
+            {
+              "label": "Week 21: rotational kinetic energy and work by torque",
+              "ref": "week:21"
+            },
+            {
+              "label": "Week 24: simple harmonic motion: restoring forces, frequency and period",
+              "ref": "week:24"
+            },
+            {
+              "label": "Week 25: representing SHM and the energy of oscillators",
+              "ref": "week:25"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

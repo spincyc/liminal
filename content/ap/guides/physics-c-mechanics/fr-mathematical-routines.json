@@ -1,0 +1,478 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "fr-mathematical-routines",
+  "kind": "fr-archetype",
+  "title": "Mathematical Routines",
+  "author": "cm-workshop-author",
+  "summary": "A Mathematical Routines question gives one physical situation and asks you to turn it into mathematics: derive a symbolic result from a fundamental relation, use calculus where a quantity varies, calculate values with units, and use or check the result in a new condition. This guide for the free-response section of the AP® Physics C: Mechanics Exam sets out the calculus moves the type leans on, the usual parts, what earns derivation, calculation, reasoning, units and consistency points in Liminal's rubrics, model sentences, traps with their repairs, a short worked model and four quick checks. The practice set has four questions, from units 1, 3, 5 and 7, to be done two at a sitting.",
+  "minutes": 35,
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "College Board's exam pages (checked 2026-10-22) say that Section II of the AP® Physics C: Mechanics Exam has four free-response questions in 95 minutes, one of each type: Mathematical Routines, Translation Between Representations, Experimental Design and Analysis, and Qualitative/Quantitative Translation. Any calculator is allowed, and an equation sheet is supplied. Liminal's practice scores a Mathematical Routines question out of 10 points and paces it at 22 minutes, inside the 20–25 minutes that Liminal's practice exams suggest for it; both are Liminal conventions, not College Board facts."
+        },
+        {
+          "type": "text",
+          "text": "The question describes one situation, from any unit, and asks for mathematics about it in a sequence of parts. Most parts ask you to derive (produce a symbolic expression from a fundamental relation, in the symbols the question names) or to calculate (produce a number with a unit). Because this is a calculus-based course, the routine usually includes at least one step where a quantity varies: a force that depends on position or velocity, an acceleration that depends on time, a density that depends on distance, or a restoring force that leads to a differential equation."
+        },
+        {
+          "type": "text",
+          "text": "Later parts often reuse an earlier result: an expression derived in one part is evaluated in the next, differentiated to find an extreme, or applied to a changed condition. Liminal's rubrics score each part separately and credit consistent use of an earlier answer, so a slip early on need not cost the whole question."
+        }
+      ]
+    },
+    {
+      "id": "moves",
+      "title": "The calculus moves, with their conditions",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Rates and accumulations",
+          "text": "v = dx/dt and a = dv/dt. Going back: v(t) = v(t_0) + ∫ from t_0 to t of a dt, and x(t) = x(t_0) + ∫ from t_0 to t of v dt.",
+          "conditions": [
+            "Each integral needs its own initial value from the question; leaving it out gives a change, not a value.",
+            "When a depends on position, or the question asks about distance rather than time, use a = v dv/dx and integrate with respect to x."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Separating variables",
+          "text": "When the net force depends on velocity, write m dv/dt = F(v), move every v to one side and every t to the other, and integrate both sides between matching limits.",
+          "conditions": [
+            "The limits must match: v from v_0 to v on one side, t from 0 to t on the other.",
+            "Check the result at t = 0 and as t grows large, where it should give the starting speed and the terminal behavior."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Work, power and impulse",
+          "text": "W = ∫ from x_1 to x_2 of F_x dx. P = F·v = dW/dt. J = ∫ from t_1 to t_2 of F dt = Δp.",
+          "conditions": [
+            "W = Fd and J = FΔt hold only for a constant force; a varying force needs the integral.",
+            "P = F·v is the rate at which one force does work; it is negative when the force opposes the velocity. The net force's power equals dK/dt."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Rotational inertia by integration",
+          "text": "I = ∫ r^2 dm. For a thin rod along x, dm = λ(x) dx; for a flat disk or ring about its center, dm = σ(r)·2πr dr; then integrate over the body.",
+          "conditions": [
+            "Choose elements whose points are all the same distance r from the axis.",
+            "When the density is given with an unknown constant, find that constant from the total mass first, then express I in terms of M."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Simple harmonic motion from a force law",
+          "text": "If Newton's second law reduces to d^2x/dt^2 = −ω^2x, the motion is x(t) = A cos(ωt + φ), with ω read from the equation and A and φ found from x(0) and v(0): A = √(x_0^2 + (v_0/ω)^2), x_0 = A cos φ, v_0 = −Aω sin φ.",
+          "conditions": [
+            "The net force must be proportional to the displacement and opposite to it. Approximations such as sin θ ≈ θ, or a constant tension, must be stated with the condition that makes them valid.",
+            "The period does not depend on the amplitude; the amplitude and phase depend on how the motion starts."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Greatest and least values",
+          "text": "To find where a quantity Q(x) or Q(t) is largest, set its derivative to zero and compare the critical value with the values at the ends of the allowed interval.",
+          "conditions": [
+            "A zero derivative alone is not a justification: state a sign change of the derivative, or compare with the endpoint values.",
+            "For a size such as |P|, it is often easier to maximize P^2, which has the same maximum point."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Part patterns in this workshop. Each practice question uses four of them and totals 10 points; the points are typical, not fixed.",
+          "head": [
+            "Part",
+            "Typical request",
+            "What you write",
+            "Points"
+          ],
+          "rows": [
+            [
+              "Derive",
+              "An expression for a quantity in the named symbols",
+              "The fundamental relation for a named system, each algebra or calculus step, and the result in the requested symbols only",
+              "2–3"
+            ],
+            [
+              "Integrate a varying quantity",
+              "Work by a position-dependent force, velocity from a time-dependent acceleration, a rotational inertia from a density",
+              "The integral with its integrand, variable and limits, the initial value, then the result",
+              "2–3"
+            ],
+            [
+              "Calculate",
+              "A number from an earlier expression",
+              "The expression, the substitution with units, the value with a unit and sensible significant figures",
+              "1–2"
+            ],
+            [
+              "Extreme or special instant",
+              "When or where a quantity is greatest, when two objects are level, when something stops",
+              "The condition as an equation (derivative zero, positions equal, v = 0), its solution, and a justification",
+              "2–3"
+            ],
+            [
+              "New condition",
+              "The same situation with one quantity changed",
+              "Which results change and which do not, recomputed from the general expression",
+              "2"
+            ],
+            [
+              "Check",
+              "A second method, a limiting case, or a sign or unit argument",
+              "The second calculation or the limit, and one sentence on what agreement shows",
+              "1–2"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Plan the question before you write. Read every part, note which later parts need an earlier expression, and derive that expression in general symbols even if the first part asks only for a number. A clean general result makes the later parts a substitution."
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics for this type award six kinds of point. Each one rewards something a reader can see on the page."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Point",
+            "What earns it",
+            "What loses it"
+          ],
+          "rows": [
+            [
+              "Starting relation",
+              "A derivation that begins from a fundamental relation applied to a named system: Newton's second law for the block, I = ∫ r^2 dm for the wheel, W = ∫ F dx for the cart.",
+              "Starting from a special-case formula (I = ½MR^2 for a disk that is not uniform, W = Fd for a varying force), or from the answer worked backward."
+            ],
+            [
+              "Steps and symbols",
+              "Each step follows from the one before, uses the question's symbols consistently, and ends in the symbols the part asks for.",
+              "New symbols that are never defined, one letter for two quantities (T for tension and for period), or a final expression that still contains a quantity the part said to eliminate."
+            ],
+            [
+              "Calculus",
+              "The integral or derivative written in notation, with integrand, variable, limits and initial value, before its value.",
+              "A bare result with no integral shown, or a constant of integration that silently disappears."
+            ],
+            [
+              "Answer and units",
+              "A number with its unit, at the precision of the givens (2–3 significant figures), computed from unrounded intermediate values.",
+              "A missing or wrong unit, or a value rounded early so that a later part drifts."
+            ],
+            [
+              "Reasoning",
+              "A sentence that names the principle and the system and draws the conclusion: why a value is a maximum, why a sign is negative, why an approximation holds.",
+              "A conclusion with no reason, or a reason that names no principle (“because it is slowing down”)."
+            ],
+            [
+              "Consistency",
+              "A later part that uses an earlier result correctly, even when that result was wrong; a check that two methods or two representations agree.",
+              "Switching silently to a different value, or a result that contradicts an earlier part without comment."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Every equals sign must be true. Write a = (F − f)/m = (12 N − 4.5 N)/(3.0 kg) = 2.5 m/s^2, not 12 − 4.5 = 7.5 ÷ 3.0 = 2.5 m/s^2, which claims that 7.5 equals 2.5. Keep units on the substitution line whenever they help a reader follow the calculation."
+        },
+        {
+          "type": "text",
+          "text": "Derive means symbols. When a part asks for an expression in terms of named quantities, a numerical answer does not earn the derivation point, even when the number is right. When a part asks you to calculate, the number needs the expression it came from."
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Starting a derivation by naming the system and the principle.",
+          "text": "Applying Newton's second law to the cart, with +x in the direction of motion: m dv/dt = −bv, where the drag is the only horizontal force."
+        },
+        {
+          "type": "model",
+          "prompt": "Stating an approximation and the condition that makes it valid.",
+          "text": "Because the angle is small (θ much less than 1 rad), sin θ ≈ θ, so the restoring torque is approximately −mgdθ."
+        },
+        {
+          "type": "model",
+          "prompt": "Setting up work done by a varying force.",
+          "text": "The force depends on position, so W = ∫ from 0 to 0.40 m of F(x) dx; it cannot be found as force times distance."
+        },
+        {
+          "type": "model",
+          "prompt": "A calculation with its substitution and unit.",
+          "text": "a = mg/(m + I/R^2) = (2.0 kg)(9.8 m/s^2)/(2.0 kg + 1.2 kg) = 6.1 m/s^2, directed downward."
+        },
+        {
+          "type": "model",
+          "prompt": "Justifying a maximum found with a derivative.",
+          "text": "dK/dx = 0 at x = 0.84 m; dK/dx is positive before that point and negative after it, so the kinetic energy, and with it the speed, is greatest at x = 0.84 m."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining the sign of a work or power.",
+          "text": "The friction force points opposite the velocity, so its power F·v is negative: friction takes kinetic energy from the block at 12 J each second."
+        },
+        {
+          "type": "model",
+          "prompt": "Using an earlier result that may be wrong.",
+          "text": "Using v(2.0 s) = 7.5 m/s from part (b), the momentum at t = 2.0 s is p = mv = (0.60 kg)(7.5 m/s) = 4.5 kg·m/s."
+        },
+        {
+          "type": "model",
+          "prompt": "A consistency check between two methods.",
+          "text": "Check: the work–energy theorem gives W = ΔK = 18 J, and the integral of the power over the same interval also gives 18 J, so the two results agree."
+        },
+        {
+          "type": "model",
+          "prompt": "A limiting-case check on a derived expression.",
+          "text": "If the wheel's rotational inertia I goes to zero, a = mg/(m + I/R^2) becomes g, the free-fall acceleration, as it should when the wheel needs no torque to turn and the string goes slack."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Multiplying a varying force by a distance or a time.",
+          "fix": "W = Fd and J = FΔt hold only for a constant force. Write W = ∫ F dx or J = ∫ F dt with the variable and limits, then evaluate."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the initial value after integrating.",
+          "fix": "Write the initial value into the first line: v(t) = v(0) + ∫ from 0 to t of a dt. A segment that starts partway through the motion (after a motor stops, say) starts from the velocity at that instant, not from zero."
+        },
+        {
+          "type": "trap",
+          "text": "Using a formula for a uniform body on a body that is not uniform.",
+          "fix": "When a density varies, start from I = ∫ r^2 dm (or x_cm = (1/M)∫ x dm). Find the density's constant from the total mass, then express the result in M and the body's size."
+        },
+        {
+          "type": "trap",
+          "text": "Treating dv/dx as an acceleration.",
+          "fix": "Acceleration is dv/dt = v dv/dx. A quick unit check catches the error: dv/dx has units of 1/s, not m/s^2."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a zero of the derivative a maximum with no reason.",
+          "fix": "State the sign change of the derivative, or compare the critical value with the values at both ends of the allowed interval. Name the quantity whose derivative it is."
+        },
+        {
+          "type": "trap",
+          "text": "Losing signs.",
+          "fix": "State the positive direction (and the positive sense of rotation) before the first equation, and keep it for the whole question. Friction's work and the power of a retarding force are negative; say what the sign means."
+        },
+        {
+          "type": "trap",
+          "text": "Choosing the phase constant from one initial condition only.",
+          "fix": "A cos φ = x_0 has two solutions for φ. Use v_0 = −Aω sin φ to pick the one with the right sign, then check both conditions at t = 0."
+        },
+        {
+          "type": "trap",
+          "text": "Rounding before the last step.",
+          "fix": "Keep three or more significant figures in intermediate values (or store them in the calculator) and round only the reported answer, to the precision of the givens."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving the answer in the wrong symbols.",
+          "fix": "Read the list in the prompt (“in terms of m, M and g”) again before you box the answer, and eliminate anything else, such as a tension or a constant from a density."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A short question in the type's pattern: derive, calculate, then check one result two ways. Each step is written the way it would earn its point."
+        },
+        {
+          "type": "example",
+          "prompt": "A 2.0 kg cart is at rest on a level track with negligible friction. For 0 ≤ t ≤ 4.0 s a motor pushes it along +x with the force F(t) = 6.0√t, with F in newtons and t in seconds. Starting from Newton's second law, derive the cart's velocity v(t). Then calculate the impulse the force delivers over the 4.0 s and the average force.",
+          "answer": "v(t) = 2.0t^(3/2) m/s, so v(4.0 s) = 16 m/s. The impulse is 32 N·s along +x, and the average force is 8.0 N.",
+          "steps": [
+            "System: the cart. Newton's second law along +x: m dv/dt = F(t) = 6.0√t, because the only horizontal force is the push.",
+            "Integrate with v(0) = 0: v(t) = (1/m)∫ from 0 to t of 6.0√s ds = (1/2.0)(4.0t^(3/2)) = 2.0t^(3/2), in m/s.",
+            "Impulse: J = ∫ from 0 to 4.0 of 6.0√t dt = 4.0t^(3/2) evaluated from 0 to 4.0 = 4.0(8.0) = 32 N·s.",
+            "Consistency: J = Δp = m v(4.0) − 0 = (2.0)(16) = 32 N·s, matching the integral.",
+            "Average force = J/Δt = 32/4.0 = 8.0 N. It is neither the mean of the end values, (0 + 12)/2 = 6.0 N, nor the force at the middle instant, 6.0√2.0 = 8.5 N, because F does not change linearly."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "For the same cart, calculate the work done by the motor's force over the 4.0 s in two ways: from the work–energy theorem, and by integrating the force's power. What does their agreement show?",
+          "answer": "Both ways give 256 J ≈ 2.6 × 10^2 J. The agreement checks the derived v(t), because the power integral uses v(t) at every instant while the work–energy theorem uses only its final value.",
+          "steps": [
+            "Work–energy theorem: the push is the only force that does work, so W = ΔK = ½(2.0)(16)^2 − 0 = 256 J.",
+            "Power: P(t) = F·v = (6.0√t)(2.0t^(3/2)) = 12t^2, in watts.",
+            "W = ∫ from 0 to 4.0 of 12t^2 dt = 4.0t^3 evaluated from 0 to 4.0 = 256 J.",
+            "The two results agree. An error in v(t), such as a dropped factor from the integration, would make the power integral and ΔK disagree, so the check is worth its line."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The set's questions follow the same pattern with other units' relations: kinematics integrals, a work integral with a power, a rotational inertia feeding Newton's second law in both forms, and a force law that becomes the equation of simple harmonic motion."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "check",
+          "id": "cm-fr-mathematical-routines-c1",
+          "prompt": "A cart's velocity depends on its position as v(x) = 3.0√x, with v in m/s and x in meters. Find its acceleration when x = 4.0 m.",
+          "hint": "The acceleration is a rate with respect to time, and you know v as a function of x.",
+          "answer": "a = 4.5 m/s^2 (the acceleration is the same at every x).",
+          "steps": [
+            "a = dv/dt = (dv/dx)(dx/dt) = v dv/dx.",
+            "dv/dx = 1.5/√x, so a = 3.0√x × 1.5/√x = 4.5 m/s^2 at every position, including x = 4.0 m.",
+            "dv/dx alone, 0.75 s^−1 at x = 4.0 m, has the wrong unit for an acceleration."
+          ],
+          "see": "moves"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-mathematical-routines-c2",
+          "prompt": "A block slides onto a rough patch with a constant coefficient of kinetic friction μ. A student derives its speed after sliding a distance x on the patch as v = √(v_0^2 − 2μgx^2). Use units to show that the expression cannot be right, and give the correct expression.",
+          "hint": "Compare the units of v_0^2 with the units of the term subtracted from it.",
+          "answer": "μgx^2 has units of m^3/s^2, but v_0^2 has units of m^2/s^2, so the two cannot be subtracted. The correct result is v = √(v_0^2 − 2μgx).",
+          "steps": [
+            "μ has no unit, so μgx^2 has units (m/s^2)(m^2) = m^3/s^2.",
+            "A quantity in m^3/s^2 cannot be subtracted from v_0^2, in m^2/s^2: the expression is wrong whatever the numbers.",
+            "With μ constant the friction force μmg is constant, so W = −μmgx and ½mv^2 = ½mv_0^2 − μmgx, giving v = √(v_0^2 − 2μgx).",
+            "A term in x^2 would need a coefficient with the unit m^−1, which a constant μ does not have."
+          ],
+          "see": "traps"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-mathematical-routines-c3",
+          "prompt": "A 0.40 kg glider moves along a straight track with velocity v(t) = 2.0 + 0.60t^2, with v in m/s and t in seconds. Calculate the power delivered by the net force at t = 1.0 s in two ways: as F·v, and as the rate of change of kinetic energy.",
+          "hint": "Find the net force from the acceleration first; for the second way, write K(t) and differentiate it.",
+          "answer": "P = 1.2 W (1.25 W) both ways.",
+          "steps": [
+            "a = dv/dt = 1.2t, so at t = 1.0 s, a = 1.2 m/s^2 and the net force is ma = 0.48 N; v(1.0) = 2.6 m/s.",
+            "P = Fv = (0.48 N)(2.6 m/s) = 1.25 W.",
+            "K(t) = ½(0.40)(2.0 + 0.60t^2)^2, so dK/dt = (0.40)(2.0 + 0.60t^2)(1.2t) = (0.40)(2.6)(1.2) = 1.25 W at t = 1.0 s.",
+            "They agree because the net force's power is the rate at which the kinetic energy changes."
+          ],
+          "see": "worked-model"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-mathematical-routines-c4",
+          "prompt": "A block on a spring oscillates with angular frequency 5.0 rad/s on a level surface with negligible friction. At t = 0 it passes its equilibrium position x = 0 moving in the −x direction at 0.30 m/s. Write x(t).",
+          "hint": "Write x = A cos(ωt + φ) and use both starting conditions, x(0) and v(0).",
+          "answer": "x(t) = −0.060 sin(5.0t), equivalently 0.060 cos(5.0t + π/2), with x in meters and t in seconds.",
+          "steps": [
+            "A = √(x_0^2 + (v_0/ω)^2) = √(0 + (0.30/5.0)^2) = 0.060 m.",
+            "x(0) = A cos φ = 0, so φ = π/2 or −π/2.",
+            "v(0) = −Aω sin φ = −0.30 m/s needs sin φ = +1, so φ = π/2, and x = 0.060 cos(5.0t + π/2) = −0.060 sin(5.0t).",
+            "Check: just after t = 0, x is negative, as it must be for a block moving in −x."
+          ],
+          "see": "moves"
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the set at 22 minutes a question, Liminal's practice pace for this type (inside the 20–25 minutes the practice exams suggest), with questions 1 and 2 at one sitting and questions 3 and 4 at another, 44 minutes each. Score each answer with the rubric, then rewrite every part that lost a derivation, reasoning or units point until each line would earn it."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-mathematical-routines"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-mathematical-routines"
+            },
+            {
+              "label": "The calculus moves mechanics asks for",
+              "ref": "guide:calculus-methods"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Unit 1 review: kinematics",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 3 review: work, energy and power",
+              "ref": "guide:review-u3"
+            },
+            {
+              "label": "Unit 5 review: torque and rotational dynamics",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 7 review: oscillations",
+              "ref": "guide:review-u7"
+            },
+            {
+              "label": "Week 1: calculus toolkit for motion",
+              "ref": "week:1"
+            },
+            {
+              "label": "Week 12: kinetic energy and work as an integral",
+              "ref": "week:12"
+            },
+            {
+              "label": "Week 15: power",
+              "ref": "week:15"
+            },
+            {
+              "label": "Week 21: rotational inertia by integration; parallel axes",
+              "ref": "week:21"
+            },
+            {
+              "label": "Week 23: Newton's second law in rotational form",
+              "ref": "week:23"
+            },
+            {
+              "label": "Week 28: simple harmonic motion: definition, frequency and period",
+              "ref": "week:28"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

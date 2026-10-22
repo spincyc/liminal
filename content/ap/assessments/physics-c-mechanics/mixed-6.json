@@ -1,0 +1,339 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "mixed-6",
+  "kind": "mixed-set",
+  "title": "Mixed set 6: all units at exam pace",
+  "author": "cm-mixed-5-6-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: 15 multiple-choice questions in 30 minutes, with a four-function, scientific or graphing calculator and the course's formula reference. The questions are mixed on purpose, so part of each one is deciding which principle or method applies: rotational inertia by integration or by the parallel-axis theorem, rolling with or without slipping, angular momentum or energy, a force or torque equation or an energy equation for oscillations. Expect it to feel slower than practising one topic at a time. Use g = 9.8 m/s^2 and SI units; take counterclockwise as the positive sense of rotation unless a question says otherwise, with angular quantities in radians and geometric angles in degrees. Record raw points; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "15 questions, 30 minutes. Choose the best answer for each question. Each question is worth 1 point, and there is no penalty for a wrong answer.",
+          "items": [
+            {
+              "id": "cm-mixed-6-mc01",
+              "prompt": "A baton is modeled as a thin uniform rod of mass 0.60 kg and length 0.90 m. It spins about an axis through its center that makes a 30° angle with the rod. What is its rotational inertia about that axis?",
+              "choices": [
+                "4.1 × 10^−2 kg·m^2",
+                "2.0 × 10^−2 kg·m^2",
+                "3.0 × 10^−2 kg·m^2",
+                "1.0 × 10^−2 kg·m^2"
+              ],
+              "key": "D",
+              "rationale": "A piece of the rod a distance s from the center along the rod is s sin 30° from the axis. With λ = M/L, I = ∫ from −L/2 to L/2 of λ(s sin θ)^2 ds = (1/12)ML^2 sin^2 θ = (1/12)(0.60)(0.90)^2(0.25) = 1.0 × 10^−2 kg·m^2.",
+              "distractorNotes": {
+                "A": "This is (1/12)ML^2, the inertia about an axis perpendicular to the rod. Here each piece is only s sin 30° from the axis.",
+                "B": "This multiplies (1/12)ML^2 by sin 30° instead of sin^2 30°. The distance s sin θ is squared in r^2 dm.",
+                "C": "This takes each piece's distance from the axis as s cos 30°. That is the distance measured along the axis, not perpendicular to it."
+              },
+              "topics": [
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc02",
+              "prompt": "A drone rises straight up from rest. Its upward velocity is v(t) = 1.5t^2, in m/s with t in seconds, for 0 ≤ t ≤ 4.0 s. What is its average velocity over those 4.0 s?",
+              "choices": [
+                "6.0 m/s upward",
+                "8.0 m/s upward",
+                "12 m/s upward",
+                "24 m/s upward"
+              ],
+              "key": "B",
+              "rationale": "Average velocity is displacement over time. Δy = ∫ from 0 to 4.0 of 1.5t^2 dt = 0.50(4.0)^3 = 32 m, so v_avg = 32/4.0 = 8.0 m/s upward.",
+              "distractorNotes": {
+                "A": "This is the velocity at the middle time, t = 2.0 s. That equals the average only for constant acceleration.",
+                "C": "This averages the starting and ending velocities, which gives the average velocity only when the acceleration is constant.",
+                "D": "This is the velocity at t = 4.0 s, not an average over the interval."
+              },
+              "topics": [
+                "CM.1.2",
+                "CM.1.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc03",
+              "prompt": "A uniform solid cylinder is released from rest on a ramp inclined at 30°. The coefficients of friction between cylinder and ramp are μ_s = 0.15 and μ_k = 0.10. What is the acceleration of the cylinder's center?",
+              "choices": [
+                "3.3 m/s^2",
+                "3.6 m/s^2",
+                "4.1 m/s^2",
+                "4.9 m/s^2"
+              ],
+              "key": "C",
+              "rationale": "Check rolling first: it needs f = (1/3)mg sin θ ≤ μ_smg cos θ, that is μ_s ≥ (1/3)tan 30° = 0.19. Since 0.15 < 0.19, the cylinder slips, and kinetic friction acts: a = g(sin 30° − μ_k cos 30°) = 9.8(0.500 − 0.087) = 4.1 m/s^2.",
+              "distractorNotes": {
+                "A": "This is (2/3)g sin θ, which assumes rolling without slipping. Rolling needs static friction (1/3)mg sin θ, which here would exceed μ_sN.",
+                "B": "This uses μ_s for the friction while the cylinder slips. Sliding surfaces exert kinetic friction, μ_kN.",
+                "D": "This is g sin θ, which leaves friction out entirely."
+              },
+              "topics": [
+                "CM.6.5",
+                "CM.2.7"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc04",
+              "prompt": "A 1000 kg car rounds an icy curve banked at 35° at exactly the speed for which no friction is needed. What is the magnitude of the normal force from the road on the car?",
+              "choices": [
+                "6.9 × 10^3 N",
+                "8.0 × 10^3 N",
+                "9.8 × 10^3 N",
+                "1.2 × 10^4 N"
+              ],
+              "key": "D",
+              "rationale": "The acceleration is horizontal, toward the center of the curve, so the vertical forces balance: N cos θ = mg. N = (1000)(9.8)/cos 35° = 1.2 × 10^4 N.",
+              "distractorNotes": {
+                "A": "This is mg tan θ, the horizontal net force that keeps the car on the curve, not the normal force.",
+                "B": "This is mg cos θ, the normal force on a car at rest on an incline. On the curve the car accelerates horizontally, so the normal force's vertical component, not its component perpendicular to the road, balances gravity.",
+                "C": "This is the car's weight. The normal force is tilted, so it must be larger than the weight for its vertical part to balance gravity."
+              },
+              "topics": [
+                "CM.2.10",
+                "CM.2.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc05",
+              "prompt": "A block on a horizontal spring oscillates with period 1.2 s and amplitude 0.080 m. Starting at x = +0.080 m, how long does it take to reach x = +0.040 m for the first time?",
+              "choices": [
+                "0.10 s",
+                "0.15 s",
+                "0.20 s",
+                "0.30 s"
+              ],
+              "key": "C",
+              "rationale": "Starting from x = +A at t = 0, x = A cos(ωt) with ω = 2π/T. The block reaches x = A/2 when cos(ωt) = ½, so ωt = π/3 and t = T/6 = 1.2/6 = 0.20 s.",
+              "distractorNotes": {
+                "A": "This is T/12, the time to go from equilibrium to x = A/2, where x = A sin(ωt). The block starts at the turning point, where it moves slowly.",
+                "B": "This takes half of the quarter period, T/8, as if the block moved at constant speed from x = A to x = 0. It starts at rest and speeds up, so it takes longer to cover the first half of the distance.",
+                "D": "This is the quarter period, T/4, the time to reach equilibrium, x = 0, not x = A/2."
+              },
+              "topics": [
+                "CM.7.3",
+                "CM.7.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc06",
+              "prompt": "A 0.20 kg ball hangs from a light string 0.80 m long tied to a fixed point P. A thin horizontal peg is 0.50 m directly below P. The ball is pulled aside until the string is taut and horizontal, then released from rest. When the string reaches the vertical, it catches on the peg, and the ball swings around the peg in a smaller circle. Ignoring air resistance, what is the ball's speed at the top of that smaller circle?",
+              "choices": [
+                "1.7 m/s",
+                "2.0 m/s",
+                "3.1 m/s",
+                "4.0 m/s"
+              ],
+              "key": "B",
+              "rationale": "The string does no work, so mechanical energy is conserved. The smaller circle has radius 0.80 − 0.50 = 0.30 m, so its top is 0.50 − 0.30 = 0.20 m below P, the starting height. v = √(2g(0.20)) = √3.92 = 2.0 m/s. Check: v^2 = 3.92 m^2/s^2 exceeds gr = 2.94 m^2/s^2, so the string stays taut at the top.",
+              "distractorNotes": {
+                "A": "This is √(gr), the least speed at the top for the string to stay taut. The ball's actual speed there comes from energy and is larger.",
+                "C": "This uses a drop of 0.50 m, the peg's depth below P. The top of the smaller circle is 0.30 m above the peg.",
+                "D": "This is the speed at the lowest point, after a drop of 0.80 m. The ball climbs 0.60 m above that point to reach the top of the smaller circle."
+              },
+              "topics": [
+                "CM.3.4",
+                "CM.2.10"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc07",
+              "prompt": "A merry-go-round with rotational inertia 200 kg·m^2 and radius 1.5 m turns freely at 1.2 rad/s with a 40 kg child standing at its rim. The child steps off the rim so that, at the instant she leaves, her velocity is the same as that of the rim beside her. What is the merry-go-round's angular speed just afterward?",
+              "choices": [
+                "0.83 rad/s",
+                "1.2 rad/s",
+                "1.4 rad/s",
+                "1.7 rad/s"
+              ],
+              "key": "B",
+              "rationale": "Use angular momentum about the axle for the child–platform system. Before: (200 + 40(1.5)^2)(1.2) = 348 kg·m^2/s. Afterward the child carries 40(1.5)(1.8) = 108 kg·m^2/s, because her tangential speed is still 1.8 m/s. So the platform has 240 kg·m^2/s, and ω = 240/200 = 1.2 rad/s: unchanged, because stepping off exerts no tangential force on the rim.",
+              "distractorNotes": {
+                "A": "This divides the platform's own angular momentum, (200)(1.2), by the combined inertia, 290 kg·m^2, as if the child were stepping onto a turning platform rather than off it.",
+                "C": "This conserves kinetic energy and gives the child's kinetic energy to the platform. The child's kinetic energy leaves with her.",
+                "D": "This assumes the child leaves with no angular momentum. She carries off her share, (40)(1.5)^2(1.2), so the platform keeps its own."
+              },
+              "topics": [
+                "CM.6.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc08",
+              "prompt": "A 0.20 kg puck moving at 5.0 m/s hits a 0.50 kg puck that is at rest on a level, frictionless air table. The collision is head-on, and afterward the 0.20 kg puck moves straight back at 1.0 m/s. What is the speed of the 0.50 kg puck afterward?",
+              "choices": [
+                "1.6 m/s",
+                "2.0 m/s",
+                "2.4 m/s",
+                "3.1 m/s"
+              ],
+              "key": "C",
+              "rationale": "Take the first puck's initial direction as positive. Momentum: (0.20)(5.0) = (0.20)(−1.0) + (0.50)v, so v = 1.2/0.50 = 2.4 m/s.",
+              "distractorNotes": {
+                "A": "This takes the rebound velocity as +1.0 m/s, losing the sign of the reversed direction.",
+                "B": "This ignores the first puck's rebound, as if it stopped.",
+                "D": "This assumes kinetic energy is conserved. Only momentum is conserved in every collision; here the kinetic energy falls from 2.5 J to 1.5 J."
+              },
+              "topics": [
+                "CM.4.3",
+                "CM.4.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc09",
+              "prompt": "A uniform board 1.2 m long turns on a horizontal pin through a point 0.40 m from one end, with the pin perpendicular to the board. The board is held horizontal and released from rest. What is its angular acceleration just after release?",
+              "choices": [
+                "4.1 rad/s^2",
+                "12 rad/s^2",
+                "16 rad/s^2",
+                "49 rad/s^2"
+              ],
+              "key": "B",
+              "rationale": "The center of mass is d = 0.20 m from the pin. I = (1/12)ML^2 + Md^2 = M(0.12 + 0.040) = 0.16M. The torque of gravity at release is Mgd, so α = Mgd/I = (9.8)(0.20)/0.16 = 12 rad/s^2.",
+              "distractorNotes": {
+                "A": "This uses (1/3)ML^2, the inertia about an end. The pin is not at the end.",
+                "C": "This uses (1/12)ML^2, the inertia about the center, and forgets the parallel-axis term Md^2.",
+                "D": "This uses only Md^2, treating the board as a particle at its center of mass."
+              },
+              "topics": [
+                "CM.5.6",
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc10",
+              "prompt": "A small uniform solid ball rolls without slipping back and forth near the bottom of a curved track. The ball's center moves along a circular arc of radius 0.40 m. What is the period of its small oscillations?",
+              "choices": [
+                "1.1 s",
+                "1.3 s",
+                "1.5 s",
+                "1.8 s"
+              ],
+              "key": "C",
+              "rationale": "Rolling ties the ball's spin to its speed, ω_spin = v/r, so E = ½mv^2 + ½(2/5)mr^2(v/r)^2 + mgR(1 − cos φ). For small angles, with arc length s = Rφ, E ≈ ½(7m/5)v^2 + ½(mg/R)s^2. Setting dE/dt = 0 gives (7/5)d^2s/dt^2 = −(g/R)s, so ω^2 = 5g/(7R) and T = 2π√(7R/(5g)) = 2π√((7)(0.40)/((5)(9.8))) = 1.5 s.",
+              "distractorNotes": {
+                "A": "This inverts the rolling factor, using 5/7 where 7/5 belongs.",
+                "B": "This is 2π√(R/g), for a particle sliding without friction. Rolling stores some energy in spin, which slows the motion.",
+                "D": "This uses the rolling factor for a hoop, I = mr^2, instead of a solid sphere."
+              },
+              "topics": [
+                "CM.7.1",
+                "CM.6.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc11",
+              "prompt": "Two identical uniform lead spheres touch each other. They are replaced by two spheres of the same material with twice the radius, which also touch. By what factor does the gravitational force between the spheres change?",
+              "choices": [
+                "16",
+                "1/4",
+                "64",
+                "2"
+              ],
+              "key": "A",
+              "rationale": "Each mass grows as r^3, by a factor of 8, and the center-to-center distance, 2r, doubles. F = Gm^2/(2r)^2 changes by (8)(8)/2^2 = 16.",
+              "distractorNotes": {
+                "B": "This keeps the masses fixed and applies only the doubled separation. The larger spheres of the same material have 8 times the mass.",
+                "C": "This multiplies the two mass factors, 8 × 8, but forgets that the centers are now twice as far apart.",
+                "D": "This counts the factor of 8 for only one sphere, 8/4. Both spheres' masses grow."
+              },
+              "topics": [
+                "CM.2.6"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc12",
+              "prompt": "A 2.0 kg object moves along a straight line with velocity v(t) = 3.0t^2, in m/s with t in seconds. At what rate is the net force doing work on it at t = 1.0 s?",
+              "choices": [
+                "9.0 W",
+                "12 W",
+                "18 W",
+                "36 W"
+              ],
+              "key": "D",
+              "rationale": "Instantaneous power is P = Fv. At t = 1.0 s, a = dv/dt = 6.0t = 6.0 m/s^2, F = ma = 12 N and v = 3.0 m/s, so P = (12)(3.0) = 36 W. Check: K = 9.0t^4, and dK/dt = 36t^3 = 36 W at t = 1.0 s.",
+              "distractorNotes": {
+                "A": "This is the average power over the first second, ΔK/Δt = 9.0 J/1.0 s, not the power at t = 1.0 s.",
+                "B": "This multiplies the force at t = 1.0 s by the average velocity over the first second, 1.0 m/s.",
+                "C": "This finds the force from the average acceleration, v/t = 3.0 m/s^2, instead of a = dv/dt."
+              },
+              "topics": [
+                "CM.3.5",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc13",
+              "prompt": "A wheel of radius 0.30 m starts from rest and turns with a constant angular acceleration of 2.0 rad/s^2. At what time does the acceleration of a point on its rim make a 45° angle with that point's velocity?",
+              "choices": [
+                "0.21 s",
+                "0.71 s",
+                "0.89 s",
+                "1.0 s"
+              ],
+              "key": "B",
+              "rationale": "The tangential part of the acceleration, rα, lies along the velocity, and the centripetal part, rω^2, is perpendicular to it. The angle is 45° when they are equal: ω^2 = α. With ω = αt, α^2t^2 = α, so t = 1/√α = 1/√2.0 = 0.71 s.",
+              "distractorNotes": {
+                "A": "This writes the rim speed as v = αt, leaving out the radius in v = rαt, before setting v^2/r equal to rα.",
+                "C": "This sets the angle the wheel has turned, ½αt^2, equal to 45° (π/4 rad). The 45° is between the acceleration and velocity vectors, not an angle of rotation.",
+                "D": "This sets ω equal to α, dropping the square in the centripetal acceleration ω^2r."
+              },
+              "topics": [
+                "CM.5.2",
+                "CM.2.10"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc14",
+              "prompt": "A satellite of mass m moves in a circular orbit of radius r around a planet of mass M. Its engines move it to a circular orbit of radius 3r. What is the least total work the engines must do?",
+              "choices": [
+                "GMm/(3r)",
+                "2GMm/(3r)",
+                "GMm/r",
+                "2GMm/r"
+              ],
+              "key": "A",
+              "rationale": "On a circular orbit E = −GMm/(2r). The work equals the change in total energy: −GMm/(6r) − (−GMm/(2r)) = GMm/(3r). (ΔU = +2GMm/(3r) and ΔK = −GMm/(3r).)",
+              "distractorNotes": {
+                "B": "This is the change in gravitational potential energy alone. The satellite moves more slowly in the larger orbit, so its kinetic energy falls.",
+                "C": "This adds the size of the kinetic-energy change to the potential-energy change, as if the satellite sped up.",
+                "D": "This uses mgΔh with g = GM/r^2 held constant over the 2r rise; the field weakens with distance."
+              },
+              "topics": [
+                "CM.6.6",
+                "CM.3.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-6-mc15",
+              "prompt": "In a vibration test rig, a 0.25 kg sensor housing slides on a level, frictionless rail between two springs. One spring, with k = 30 N/m, connects it to the left wall, and the other, with k = 70 N/m, connects it to the right wall. What is the period of the housing's oscillations along the rail?",
+              "choices": [
+                "0.31 s",
+                "0.50 s",
+                "0.57 s",
+                "0.69 s"
+              ],
+              "key": "A",
+              "rationale": "A displacement x stretches one spring and compresses the other by x, and both push the housing back toward equilibrium: F = −(k_1 + k_2)x = −(100 N/m)x. T = 2π√(m/(k_1 + k_2)) = 2π√(0.25/100) = 0.31 s.",
+              "distractorNotes": {
+                "B": "This uses k_2 − k_1 = 40 N/m, as if the springs opposed each other. On a displacement, both springs' forces point back toward equilibrium.",
+                "C": "This uses only the 30 N/m spring, leaving out the other spring's restoring force.",
+                "D": "This combines the springs in series. Springs on opposite sides of the mass both act on it directly, so they add like springs in parallel."
+              },
+              "topics": [
+                "CM.7.2",
+                "CM.2.8"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

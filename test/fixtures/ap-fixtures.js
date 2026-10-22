@@ -115,6 +115,14 @@ function frSet(id = "fr-polar") {
       { id: "A", minutes: 30, calculator: "graphing", directions: "Fixture directions.", items: frs.slice(0, 2) },
       { id: "B", minutes: 15, calculator: "none", directions: "Fixture directions.", items: frs.slice(2) }] }] };
 }
+// A physics free-response set: four questions of one type at that type's pace.
+function physicsFrSet(courseId = "physics-1", id = "fr-experimental-design", type = "EDA") {
+  const rule = course(courseId).blueprints.frSet;
+  const frs = [1, 2, 3, 4].map(n => fr(courseId, id, n, topicsOf(courseId, n)[0], PHYSICS_POINTS[type], { type }));
+  return { format: A.FORMAT, version: 1, courseId, id, kind: "fr-set", title: "Free-response set (fixture)", author: "test-fixture",
+    directions: "Fixture set directions.", sections: [{ id: "II", title: "Free response", kind: "fr", parts: [
+      { id: "A", minutes: 4 * rule.minutesByType[type], calculator: "any", directions: "Fixture directions.", items: frs }] }] };
+}
 // A BC exam-prep guide of every block type. Unit reviews open with checks.
 function guide(id = "review-u1") {
   const unit = /^review-u(\d+)$/.exec(id);
@@ -165,4 +173,4 @@ function writeContent(directory, docs, references = []) {
   return directory;
 }
 
-module.exports = { plan, FIGURE_SVG, unitTest, practiceExam, mixedSet, frSet, guide, reference, writeContent, topicsOf };
+module.exports = { plan, FIGURE_SVG, unitTest, practiceExam, mixedSet, frSet, physicsFrSet, guide, reference, writeContent, topicsOf };

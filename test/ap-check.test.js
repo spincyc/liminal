@@ -282,7 +282,7 @@ test("BC editorial objectives require schedule, weekly and assessment coverage",
 });
 
 test("exam-prep sets and guides validate, and malformed ones are reported", t => {
-  const good = [F.mixedSet(1), F.frSet("fr-polar"), F.guide("review-u1"), F.guide("exam-format"), F.guide("fr-polar")];
+  const good = [F.mixedSet(1), F.frSet("fr-polar"), F.physicsFrSet(), F.guide("review-u1"), F.guide("exam-format"), F.guide("fr-polar")];
   const result = check(t, good);
   assert.deepEqual(result.problems, []);
   assert.deepEqual(result.guides.map(g => g.id).sort(), ["exam-format", "fr-polar", "review-u1"]);
@@ -331,6 +331,15 @@ test("the prep block is validated and --complete requires its documents", t => {
   ];
   for (const [mutate, pattern] of cases) {
     const result = check(t, [], { mutate: edit(mutate) });
+    assert.ok(result.problems.some(p => pattern.test(p)), pattern + " not reported in:\n" + result.problems.join("\n"));
+  }
+  // Physics workshops pace each question type and keep the exam's points.
+  const physics = mutate => dir => { const file = path.join(dir, "ap.json"), plan = JSON.parse(fs.readFileSync(file, "utf8")); mutate(plan.courses.find(c => c.id === "physics-1")); fs.writeFileSync(file, JSON.stringify(plan)); };
+  for (const [mutate, pattern] of [
+    [p1 => { delete p1.blueprints.frSet.minutesByType.QQT; }, /needs whole minutes for every free-response type/],
+    [p1 => { p1.blueprints.frSet.frTypes.QQT = 10; }, /frTypes match the practice exam's/],
+  ]) {
+    const result = check(t, [], { mutate: physics(mutate) });
     assert.ok(result.problems.some(p => pattern.test(p)), pattern + " not reported in:\n" + result.problems.join("\n"));
   }
   const complete = check(t, [], { complete: true });

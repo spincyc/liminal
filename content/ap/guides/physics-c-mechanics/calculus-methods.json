@@ -1,0 +1,604 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "calculus-methods",
+  "kind": "strategy",
+  "title": "The calculus moves mechanics asks for",
+  "author": "cm-strategy-author",
+  "summary": "The calculus that AP® Physics C: Mechanics asks for, move by move, each with the setup to write: differentiating and integrating kinematic quantities, F = −dU/dx and U = −∫F dx, work and impulse of changing forces, velocity-dependent forces and their differential equations, rotational inertia and center of mass by integration, and simple harmonic motion from its differential equation. Seven worked examples, twelve checks, and for each move the situations where it is the wrong tool.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "cm-calculus-methods-g1",
+      "alt": "A graph of potential energy U in joules, from 0 to 9, against position x in meters, from 0 to 6. The graph is three straight segments: from (0, 8) down to (2, 2), level at 2 J from x = 2 to x = 3, and up from (3, 2) to (6, 8).",
+      "caption": "Potential energy of the glider in check 4."
+    },
+    {
+      "id": "cm-calculus-methods-g2",
+      "alt": "A cart on a level track, with a cord tied to its front. The cord rises at an angle to a small pulley on a post, passes over the pulley and hangs down on the far side, where it is pulled down with tension T. An arrow labeled T along the cord at the cart points toward the pulley. A vertical dimension h runs from the cord's attachment height up to the top of the pulley, and a horizontal dimension x runs from the attachment point to the post below the pulley.",
+      "caption": "The cart and cord of the work example. As x shrinks, the cord pulls at a steeper angle.",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Which move, and when",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Physics C: Mechanics uses a short list of calculus moves. Each one starts from a relation on the formula reference and turns into a setup: an integral with its variable, limits and starting value, or the derivative of a named function. In free response the setup is where much of the credit sits, so write it before any number appears. Try each check on paper before you open its answer."
+        },
+        {
+          "type": "table",
+          "caption": "The moves of this guide. Find the row that matches what the question gives and what it asks for.",
+          "head": [
+            "You are given",
+            "You want",
+            "Move",
+            "Setup to write"
+          ],
+          "rows": [
+            [
+              "x(t)",
+              "v or a at an instant",
+              "Differentiate",
+              "v = dx/dt and a = dv/dt, then substitute t"
+            ],
+            [
+              "a(t) or v(t), with a starting value",
+              "v or x later",
+              "Integrate in time",
+              "v(t) = v_0 + ∫ from 0 to t of a dt′ and x(t) = x_0 + ∫ from 0 to t of v dt′"
+            ],
+            [
+              "a as a function of position",
+              "v at a new position",
+              "Chain rule, then integrate in x",
+              "a = v dv/dx, so ½v^2 − ½v_0^2 = ∫ from x_0 to x of a dx"
+            ],
+            [
+              "U(x)",
+              "Force, equilibrium, stability",
+              "Differentiate",
+              "F_x = −dU/dx; equilibrium where dU/dx = 0"
+            ],
+            [
+              "F(x) of a conservative force",
+              "U(x)",
+              "Integrate from a reference point",
+              "U(x) = U(x_ref) − ∫ from x_ref to x of F_x dx"
+            ],
+            [
+              "F as a function of position",
+              "Work, or a speed change",
+              "Integrate in x",
+              "W = ∫ F·dr = ΔK"
+            ],
+            [
+              "F as a function of time",
+              "Momentum or velocity change",
+              "Integrate in t",
+              "J = ∫ F dt = Δp"
+            ],
+            [
+              "A force that depends on v",
+              "v(t), or a terminal speed",
+              "Solve a differential equation",
+              "m dv/dt = ΣF(v); separate the variables; terminal speed where dv/dt = 0"
+            ],
+            [
+              "A body's shape and density",
+              "Rotational inertia or center of mass",
+              "Slice and integrate",
+              "I = ∫ r^2 dm and x_cm = (1/M)∫ x dm, with dm written in one variable"
+            ],
+            [
+              "ΣF or Στ for a displacement from equilibrium",
+              "Period of oscillation",
+              "Match the SHM equation",
+              "d^2x/dt^2 = −ω^2x, so T = 2π/ω"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Differentiate or integrate?",
+          "text": "Going down the chain, from position to velocity to acceleration or from potential energy to force, is differentiation. Going up the chain, or accumulating a force over time or distance, is integration, and an integral also needs a starting value or a reference point, so look for one in the question.",
+          "conditions": [
+            "Integrate in the variable the given function depends on: a(t) in dt, F(x) in dx. A function of one variable cannot be integrated in another without a change of variable such as a = v dv/dx.",
+            "When the given quantity is constant, the integral is a product, and the constant-acceleration relations on the formula reference are the fast route."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this method fails: the table matches a move to a formula, but many questions give a graph or a data table instead. Then the derivative is a slope and the integral is a signed area, and geometry or a trapezoidal sum is faster than any antiderivative. Other questions need two moves in sequence, such as an impulse integral for a collision followed by an energy relation for what happens next."
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c1",
+          "prompt": "For each situation, name the calculus move and write the setup you would start from, without solving. (a) A force sensor reports the force on a 0.50 kg glider as a function of time, and you need the glider's change in velocity. (b) A bead's potential energy is given as a function of position, and you need the force on it at x = 0.20 m. (c) The net force on a crate depends on its position, and you need its speed after it has moved 3.0 m. (d) A falling object feels a drag force proportional to its speed, and you need its speed as a function of time. (e) A rod's linear density increases along its length, and you need its rotational inertia about one end.",
+          "hint": "For each one, ask what the given quantity depends on and which quantity you want.",
+          "answer": "(a) Integrate in time: Δv = (1/0.50 kg)∫ F dt. (b) Differentiate: F_x = −dU/dx, evaluated at x = 0.20 m. (c) Integrate in position: ∫ F dx over the 3.0 m equals ΔK. (d) Write m dv/dt = mg − bv (down positive) and separate the variables. (e) Slice and integrate: I = ∫ x^2 λ(x) dx from the end at the axis to the far end.",
+          "steps": [
+            "(a) A function of time accumulates over time: the impulse ∫ F dt is the change in momentum, and dividing by the mass gives the change in velocity.",
+            "(b) The force is the negative slope of U(x), so differentiate and then substitute x = 0.20 m.",
+            "(c) A force that depends on position does work ∫ F dx, and the work–energy theorem turns that work into a speed. F = ma with the constant-acceleration relations fails, because a changes with x.",
+            "(d) The force depends on velocity, so Newton's second law is a differential equation in v, which separation of variables solves.",
+            "(e) Each slice of the rod lies at a single distance x from the axis, so dI = x^2 dm, and the density turns dm into λ(x) dx."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kinematics",
+      "title": "Differentiating and integrating kinematic quantities",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Position, velocity and acceleration",
+          "text": "v = dx/dt and a = dv/dt. Going the other way, v(t) = v_0 + ∫ from 0 to t of a dt′ and x(t) = x_0 + ∫ from 0 to t of v dt′. When a is given as a function of position, use a = v dv/dx, which gives ½v^2 − ½v_0^2 = ∫ from x_0 to x of a dx.",
+          "conditions": [
+            "One dimension, or one component at a time in two or three dimensions.",
+            "Every integral needs its starting value: v_0 for velocity, x_0 for position.",
+            "The constant-acceleration relations are the special case of constant a, and only that case."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "An airport shuttle train moving at 8.0 m/s begins to brake at t = 0. Its controller increases the braking steadily, so its acceleration is a(t) = −0.25t, with a in m/s^2 and t in seconds, taking the direction of motion as positive. When does the train stop, and how far does it travel while braking?",
+          "answer": "It stops at t = 8.0 s, after traveling 128/3 m ≈ 43 m.",
+          "steps": [
+            "Integrate a(t) from the starting velocity: v(t) = 8.0 + ∫ from 0 to t of (−0.25t′) dt′ = 8.0 − 0.125t^2, in m/s.",
+            "The train stops when v = 0: 0.125t^2 = 8.0, so t^2 = 64 and t = 8.0 s. The negative root is before the braking began.",
+            "v stays positive for 0 ≤ t ≤ 8.0 s, so the distance equals the displacement: Δx = ∫ from 0 to 8.0 of (8.0 − 0.125t^2) dt = 8.0(8.0) − 0.125(8.0)^3/3 = 64 − 21.3 ≈ 43 m.",
+            "Compare a wrong shortcut: v^2 = v_0^2 + 2aΔx with the final acceleration, −2.0 m/s^2, gives 16 m. That relation assumes constant acceleration. Here the braking is gentle at first, so the true distance is much longer."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Using a constant-acceleration relation when the acceleration changes, for example putting the acceleration at one instant into x = x_0 + v_0t + ½at^2.",
+          "fix": "Check whether the given acceleration depends on t, x or v. If it does, integrate: a(t) in dt, and a(x) through a = v dv/dx. Use the constant-acceleration relations only on intervals where a is constant."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting the integral of v as the distance traveled when v changes sign.",
+          "fix": "Find where v = 0, integrate on each piece, and add the sizes of the pieces' displacements. Keep displacement (the signed integral) and distance (the integral of |v|) separate."
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c2",
+          "prompt": "A toy boat is shoved upstream on a river. Relative to the bank, its velocity is v(t) = 8.0e^(−0.50t) − 2.0, with v in m/s, t in seconds and upstream positive. Find its displacement and the total distance it travels from t = 0 to t = 6.0 s.",
+          "hint": "Find when v = 0 first, then integrate each piece separately for the distance.",
+          "answer": "Displacement ≈ 3.2 m upstream; distance ≈ 9.7 m.",
+          "steps": [
+            "v = 0 when e^(−0.50t) = 0.25, so t = 2 ln 4 ≈ 2.77 s. Before then the boat moves upstream; after it, downstream.",
+            "An antiderivative of v is −16e^(−0.50t) − 2.0t.",
+            "Displacement from 0 to 6.0 s: 16(1 − e^(−3.0)) − 2.0(6.0) ≈ 15.20 − 12 = 3.2 m, upstream.",
+            "From 0 to 2.77 s: 16(1 − 0.25) − 2.0(2.77) ≈ 12 − 5.55 = 6.45 m upstream. From 2.77 s to 6.0 s: 3.20 − 6.45 = −3.25 m, that is, 3.25 m downstream.",
+            "Distance = 6.45 + 3.25 ≈ 9.7 m. The signed integral alone, 3.2 m, undercounts the path because the downstream drift cancels part of the upstream trip."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c3",
+          "prompt": "A test sled on a straight maglev track is programmed so that its acceleration depends on its position: a(x) = 0.12x^2, with a in m/s^2 and x in meters, directed along +x. The sled passes x = 1.0 m moving at 1.5 m/s in the +x direction. Find its speed at x = 4.0 m.",
+          "hint": "The acceleration is a function of x, so write it as v dv/dx.",
+          "answer": "2.7 m/s.",
+          "steps": [
+            "With a = v dv/dx: v dv = 0.12x^2 dx.",
+            "Integrate from x = 1.0 m, where v = 1.5 m/s, to x = 4.0 m: ½v^2 − ½(1.5)^2 = 0.04(4.0^3 − 1.0^3) = 0.04(63) = 2.52 m^2/s^2.",
+            "v^2 = 2.25 + 5.04 = 7.29 m^2/s^2, so v = 2.7 m/s.",
+            "A constant-acceleration shortcut with a(4.0 m) = 1.92 m/s^2 gives v^2 = 2.25 + 2(1.92)(3.0) and v ≈ 3.7 m/s, too high, because the acceleration was smaller over most of the trip."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When these moves fail: a velocity–time graph made of straight segments is faster by the areas of triangles and rectangles than by integrals, and data in a table call for a trapezoidal sum or the slope of a secant line, not an antiderivative."
+        }
+      ]
+    },
+    {
+      "id": "potential-energy",
+      "title": "F = −dU/dx and U = −∫F dx",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Force from potential energy, and back",
+          "text": "For a conservative force along x, F_x = −dU/dx: the force points downhill on the U(x) graph, and its size is the steepness. Going back, U(x) = U(x_ref) − ∫ from x_ref to x of F_x dx, where x_ref is a reference position you choose. Equilibrium is where dU/dx = 0: stable at a minimum of U, where d^2U/dx^2 > 0, and unstable at a maximum.",
+          "conditions": [
+            "Only conservative forces, such as gravity, an ideal spring and model forces stated to be conservative, have a potential energy. Friction and drag do not.",
+            "Only differences in U matter. The reference point fixes the constant, so state it.",
+            "Turning points are where U = E, the total mechanical energy, because K = E − U cannot be negative."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A small steel cart on a level air track passes over a magnet fixed under the track at x = 0. The interaction is modeled by the potential energy U(x) = −U_0e^(−x^2/a^2), with U_0 = 0.090 J and a = 0.20 m. (a) Find the force on the cart as a function of x, and its value at x = 0.10 m. (b) Where is the size of the force greatest? (c) The 0.50 kg cart approaches from far away at 0.40 m/s. How fast is it moving at x = 0?",
+          "answer": "(a) F_x = −(2U_0x/a^2)e^(−x^2/a^2); at x = 0.10 m, F_x ≈ −0.35 N, toward the magnet. (b) At x = ±a/√2 ≈ ±0.14 m, where its size is about 0.39 N. (c) About 0.72 m/s.",
+          "steps": [
+            "(a) By the chain rule, dU/dx = −U_0e^(−x^2/a^2) · (−2x/a^2) = (2U_0x/a^2)e^(−x^2/a^2), so F_x = −dU/dx = −(2U_0x/a^2)e^(−x^2/a^2).",
+            "At x = 0.10 m: 2U_0x/a^2 = 2(0.090)(0.10)/(0.040) = 0.45 N and e^(−0.25) ≈ 0.779, so F_x ≈ −0.35 N. The negative sign at positive x means the force points back toward x = 0: the magnet attracts the cart.",
+            "(b) The x-dependence of the force is x e^(−x^2/a^2), whose derivative is e^(−x^2/a^2)(1 − 2x^2/a^2). That is zero where x^2 = a^2/2, so x = ±a/√2 ≈ ±0.14 m, and there |F| = (2U_0/a^2)(a/√2)e^(−1/2) ≈ 0.39 N.",
+            "(c) Far away U is 0, so E = ½(0.50)(0.40)^2 = 0.040 J. At x = 0, U = −0.090 J, so K = 0.040 + 0.090 = 0.130 J and v = √(2(0.130)/0.50) ≈ 0.72 m/s.",
+            "Sense check: the cart speeds up as it moves into the energy well, and at the bottom of the well (x = 0) the force is zero and the speed is greatest."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the minus sign in F = −dU/dx. Every force direction reverses, and stable and unstable equilibria swap.",
+          "fix": "After differentiating, test one point: where U rises toward +x, the force must point toward −x."
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c4",
+          "prompt": "The graph shows the potential energy U(x) of a 0.50 kg glider that moves along the x-axis; U belongs to the only force that does work on the glider. The glider passes x = 2.5 m moving in the +x direction at 4.0 m/s. (a) Find the force on the glider at x = 1.0 m and at x = 4.0 m, with directions. (b) Where does the glider first turn around? (c) Describe its motion from then on.",
+          "figureIds": [
+            "cm-calculus-methods-g1"
+          ],
+          "hint": "Find the total energy at x = 2.5 m. The force on each straight segment is the negative of its slope.",
+          "answer": "(a) 3.0 N in the +x direction at x = 1.0 m; 2.0 N in the −x direction at x = 4.0 m. (b) At x = 5.0 m, where U = 6.0 J. (c) It comes back, crosses the level region from x = 3 m to x = 2 m at a steady 4.0 m/s, turns around again at x ≈ 0.67 m, and keeps moving back and forth between x ≈ 0.67 m and x = 5.0 m.",
+          "steps": [
+            "Total energy: E = U + K = 2.0 J + ½(0.50)(4.0)^2 = 2.0 + 4.0 = 6.0 J.",
+            "From x = 0 to 2 m, U falls from 8 J to 2 J, a slope of −3.0 J/m, so F_x = −dU/dx = +3.0 N. From x = 3 m to 6 m, U rises from 2 J to 8 J, a slope of +2.0 J/m, so F_x = −2.0 N. Between 2 m and 3 m the slope is zero and so is the force.",
+            "Moving right, the glider turns around where U = E: 2.0 + 2.0(x − 3.0) = 6.0 gives x = 5.0 m.",
+            "There the force points along −x, so the glider comes back, crosses the level region with K = 4.0 J (4.0 m/s), and climbs the left slope until 8.0 − 3.0x = 6.0, at x ≈ 0.67 m.",
+            "With no friction, E stays 6.0 J and the glider shuttles between the two turning points. The motion repeats, but it is not simple harmonic: the force is constant on each slope instead of proportional to the displacement."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this move fails: with friction or drag acting, mechanical energy is not constant, so U(x) alone does not fix the turning points; add the work done by the nonconservative force. And a graph with a corner has no single slope at the corner, so give the force on each side of it instead."
+        }
+      ]
+    },
+    {
+      "id": "work-impulse",
+      "title": "Work and impulse of a changing force",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Accumulating a force over distance or over time",
+          "text": "Work is force accumulated over distance: W = ∫ F·dr, which along a straight line is ∫ F_x dx, the signed area under F against x. Impulse is force accumulated over time: J = ∫ F dt, the area under F against t. The net work equals ΔK, and the net impulse equals Δp.",
+          "conditions": [
+            "Only the component of the force along the displacement does work. If the angle between them changes, the cosine goes inside the integral.",
+            "For Δp, use the net force, including gravity and normal forces unless they cancel.",
+            "W = Fd cos θ and J = FΔt are the constant-force cases."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "In the figure, a 2.0 kg cart on a level, frictionless track is tied to a cord that runs up to a small pulley a height h = 1.5 m above the cord's attachment point. The far end of the cord is pulled with a constant tension T = 20 N. The cart starts from rest when the horizontal distance x from the attachment point to the point directly below the pulley is 3.6 m, and the cord is pulled until x = 2.0 m. How much work does the cord do on the cart, and how fast is the cart then moving?",
+          "figureIds": [
+            "cm-calculus-methods-g2"
+          ],
+          "answer": "28 J; about 5.3 m/s.",
+          "steps": [
+            "The cord pulls along its own direction, so its angle with the track changes as the cart moves. The tension's horizontal component is T cos θ = Tx/√(x^2 + h^2), directed toward the pulley, that is, toward smaller x.",
+            "The cart moves from x = 3.6 m to x = 2.0 m, so W = ∫ from 3.6 to 2.0 of (−Tx/√(x^2 + h^2)) dx. The vertical component does no work, because the cart moves only horizontally. (Its largest value, 20(1.5/2.5) = 12 N, is less than the cart's 19.6 N weight, so the cart stays on the track.)",
+            "An antiderivative of x/√(x^2 + h^2) is √(x^2 + h^2), so W = T[√(3.6^2 + 1.5^2) − √(2.0^2 + 1.5^2)] = 20(3.9 − 2.5) = 28 J.",
+            "The bracket is the 1.4 m of cord pulled over the pulley, so the work is the tension times the length of cord pulled in, as it should be for a light cord over a frictionless pulley.",
+            "Work–energy theorem: ½(2.0)v^2 = 28 J, so v ≈ 5.3 m/s.",
+            "Using a single angle for the whole trip gives about 29.5 J with the starting angle and 25.6 J with the final one; neither is the work."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Multiplying a changing force by the distance, using its value at one end or the average of its two end values.",
+          "fix": "If the force or its angle changes along the path, integrate. The average of the end values is right only when the force changes linearly with position."
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c5",
+          "prompt": "A 60 kg student crouches motionless on a force plate and then jumps straight up. Take up as positive. During the push, from t = 0 until she leaves the plate at t = 0.40 s, the plate's upward force on her is modeled as N(t) = 588(1 − 2.5t) + 2.0 × 10^4 t(0.40 − t), with N in newtons and t in seconds. Find her velocity as she leaves the plate.",
+          "hint": "The plate's force is not the net force on her.",
+          "answer": "About 1.6 m/s upward.",
+          "steps": [
+            "The net force is N − mg, with mg = 60(9.8) = 588 N, so the net impulse is ∫ from 0 to 0.40 of (N − 588) dt.",
+            "N − 588 = −1470t + 2.0 × 10^4 t(0.40 − t). The first term integrates to −1470(0.40)^2/2 = −117.6 N·s, and the second to 2.0 × 10^4 (0.40)^3/6 ≈ 213.3 N·s.",
+            "Net impulse ≈ 213.3 − 117.6 ≈ 95.7 N·s upward. She starts at rest, so v = 95.7/60 ≈ 1.6 m/s upward.",
+            "Integrating N alone gives about 331 N·s and 5.5 m/s: that leaves out gravity's impulse, −588(0.40) ≈ −235 N·s.",
+            "Sense check: 1.6 m/s carries her v^2/(2g) ≈ 0.13 m higher after she leaves the plate, a reasonable standing jump."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this move fails: if the force is given as a function of time and the question asks for work, ∫ F dt is an impulse, not a work. Find the velocity from the impulse first and then use ΔK, or integrate the power F·v over time."
+        }
+      ]
+    },
+    {
+      "id": "velocity-dependent",
+      "title": "Velocity-dependent forces and their differential equations",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Newton's second law as a differential equation",
+          "text": "When a force depends on velocity, ΣF = m dv/dt is a differential equation for v. With linear drag and gravity, for example, m dv/dt = mg − bv with down positive. Separate the variables so that every v is on one side, integrate both sides between the starting and final values, and solve for v. The terminal speed is where dv/dt = 0, which needs no integration at all.",
+          "conditions": [
+            "Separation works when the net force depends on v alone, or on x alone through a = v dv/dx. If it depends on both v and t, look for a terminal speed or a qualitative answer instead.",
+            "Drag opposes the velocity. Linear drag −bv reverses with v by itself; quadratic drag of size cv^2 needs its direction put in by hand.",
+            "Linear drag has the time constant τ = m/b: each time constant shrinks the gap between v and its terminal value by a factor of e."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A 6.0 g foam dart is fired straight up at 15 m/s. Model the air's drag on it as linear, −bv, with b = 4.9 × 10^−3 kg/s, and take up as positive. How long does the dart take to reach its highest point, and how does that compare with the time it would take with no drag?",
+          "answer": "About 0.99 s, compared with about 1.5 s with no drag.",
+          "steps": [
+            "On the way up, gravity and drag both point down: m dv/dt = −mg − bv. With v_T = mg/b = (0.0060)(9.8)/(4.9 × 10^−3) = 12 m/s and τ = m/b ≈ 1.22 s, this is dv/dt = −(v + v_T)/τ.",
+            "Separate: dv/(v + v_T) = −dt/τ. Integrate from v = 15 m/s at t = 0 to v = 0 at the top: ln(v_T/(15 + v_T)) = −t_top/τ.",
+            "So t_top = τ ln(1 + v_0/v_T) = 1.22 ln(1 + 15/12) = 1.22 ln 2.25 ≈ 0.99 s.",
+            "With no drag, t_top = v_0/g = 15/9.8 ≈ 1.53 s. Drag adds to gravity on the way up, so the dart stops sooner.",
+            "Check a limit: for very small b, v_T is huge, ln(1 + v_0/v_T) ≈ v_0/v_T, and t_top ≈ τv_0/v_T = v_0/g, the no-drag answer."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c6",
+          "prompt": "A 5.0 g shuttlecock is hit straight up. The air's drag on it has size cv^2, with c = 1.0 × 10^−3 kg/m. A student takes up as positive and writes m dv/dt = −mg − cv^2 for the whole flight. (a) Is the equation right while the shuttlecock rises? While it falls? (b) Write one equation that works for the whole flight. (c) Find the terminal speed the shuttlecock approaches on the way down.",
+          "hint": "Check the sign of the drag term when v is negative.",
+          "answer": "(a) Right on the way up; wrong on the way down, where it makes the drag point down. (b) m dv/dt = −mg − cv|v|. (c) 7.0 m/s.",
+          "steps": [
+            "Rising, v > 0 and drag points down, so −cv^2 is correct.",
+            "Falling, v is negative and the drag must point up, but −cv^2 is still negative because v^2 is positive. The equation would have the drag helping gravity.",
+            "Writing the drag as −cv|v| fixes it: for v < 0, −cv|v| = +cv^2. (Two equations, one for each direction of motion, work as well.)",
+            "On the way down, the terminal speed is where the net force is zero: mg = cv_T^2, so v_T = √(mg/c) = √((0.0050)(9.8)/(1.0 × 10^−3)) = √49 = 7.0 m/s.",
+            "Linear drag, −bv, needs no such fix, because the sign of v already carries the direction."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c7",
+          "prompt": "For the foam dart in the worked example (6.0 g, fired straight up at 15 m/s, linear drag with b = 4.9 × 10^−3 kg/s), find the greatest height the dart reaches.",
+          "hint": "Write the equation of motion with a = v dv/dy, separate, and rewrite v/(v + v_T) as 1 − v_T/(v + v_T) before integrating.",
+          "answer": "About 6.5 m, compared with about 11.5 m with no drag.",
+          "steps": [
+            "With a = v dv/dy: v dv/dy = −(v + v_T)/τ, so dy = −τ v dv/(v + v_T), with v_T = 12 m/s and τ ≈ 1.22 s.",
+            "Since v/(v + v_T) = 1 − v_T/(v + v_T), integrating from v = 15 m/s to v = 0 gives H = τ[v_0 − v_T ln(1 + v_0/v_T)].",
+            "H ≈ 1.22[15 − 12 ln 2.25] = 1.22[15 − 9.73] ≈ 6.5 m.",
+            "With no drag, H = v_0^2/(2g) = 15^2/19.6 ≈ 11.5 m. Drag acts for the whole climb, so it costs a lot of height.",
+            "Another route gives the same height: integrate the v(t) found from the example's differential equation from t = 0 to t_top."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this move fails: an object with a thrust that changes with time and a drag that depends on speed has a net force that depends on both t and v, and separation of variables does not apply. Answer what the question allows: the terminal speed from ΣF = 0, the starting acceleration from the forces at t = 0, or the shape of the v–t graph."
+        }
+      ]
+    },
+    {
+      "id": "rotational-inertia",
+      "title": "Rotational inertia by integration",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Slicing a body for I = ∫ r^2 dm",
+          "text": "r is each piece's distance from the axis. Choose slices whose points all lie at one distance from the axis, or whose own rotational inertia you know; write dm in one variable with the density (λ dx, σ dA or ρ dV); and integrate over the whole body.",
+          "conditions": [
+            "r is the distance from the axis, not from the origin or from the center of mass.",
+            "Useful slices: strips parallel to the axis and thin rings or cylindrical shells around it, each of which contributes r^2 dm; and thin disks centered on the axis and perpendicular to it, each of which contributes ½r^2 dm.",
+            "If the axis is parallel to one through the center of mass and that I is known, I = I_cm + Md^2 is faster than integrating."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Show by integration that a uniform solid sphere of mass M and radius R has rotational inertia (2/5)MR^2 about a diameter.",
+          "answer": "Slicing the sphere into thin disks perpendicular to the axis gives I = (8/15)πρR^5, and with ρ = 3M/(4πR^3) that is (2/5)MR^2.",
+          "steps": [
+            "Put the axis along z through the center. The disk at height z has radius r with r^2 = R^2 − z^2, thickness dz and mass dm = ρπ(R^2 − z^2) dz.",
+            "Each disk turns about its own central axis, so dI = ½r^2 dm = ½ρπ(R^2 − z^2)^2 dz.",
+            "I = ½ρπ ∫ from −R to R of (R^4 − 2R^2z^2 + z^4) dz = ½ρπ(2R^5 − 4R^5/3 + 2R^5/5) = ½ρπ(16R^5/15) = (8/15)πρR^5.",
+            "The mass is M = (4/3)πR^3ρ, so ρ = 3M/(4πR^3) and I = (8/15)π · 3M/(4πR^3) · R^5 = (2/5)MR^2.",
+            "The formula reference lists this result. The method is what you need for shapes and axes it does not list."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c8",
+          "prompt": "A thin uniform rectangular plate has mass M, width a and height b. By integration, find its rotational inertia about an axis perpendicular to the plate through its center.",
+          "hint": "Slice the plate into thin strips of length a. Each strip is a thin rod whose center is a distance |y| from the axis.",
+          "answer": "I = M(a^2 + b^2)/12.",
+          "steps": [
+            "A strip at height y above the center, of thickness dy, has mass dm = (M/b) dy.",
+            "About a perpendicular axis through its own center, the strip is a thin rod with (1/12)a^2 dm. The plate's axis is parallel to that axis and a distance |y| from it, so by the parallel-axis theorem dI = (1/12)a^2 dm + y^2 dm.",
+            "I = ∫ from −b/2 to b/2 of (M/b)(a^2/12 + y^2) dy = (M/b)(a^2b/12 + b^3/12) = M(a^2 + b^2)/12.",
+            "Checks: a square of side s gives Ms^2/6, and letting b shrink to 0 leaves Ma^2/12, a thin rod about its center."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Measuring r from the wrong point, for example from one end of a body when the axis passes through its middle.",
+          "fix": "Mark the axis on a sketch first, write r for a typical slice as its distance from that axis, and set the limits so the integral covers the body on both sides of the axis."
+        },
+        {
+          "type": "text",
+          "text": "When this move fails: integration is the slow route for a shape listed on the formula reference, or for one related to a listed shape by a parallel axis. And a slice works only if all its points share one distance from the axis, or if you know its rotational inertia about an axis parallel to the body's axis."
+        }
+      ]
+    },
+    {
+      "id": "center-of-mass",
+      "title": "Center of mass by integration",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "x_cm = (1/M)∫ x dm",
+          "text": "The same holds for y and z. Use symmetry first: a body symmetric about a line or plane has its center of mass on it, which often leaves one integral. Then slice perpendicular to the remaining direction, so that every point of a slice has the same coordinate.",
+          "conditions": [
+            "dm = λ dx, σ dA or ρ dV, written in the variable of integration.",
+            "M = ∫ dm, with the same slices and limits.",
+            "The center of mass need not lie in the material: a ring's is at its empty center."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Find the center of mass of a uniform solid hemisphere of radius R.",
+          "answer": "On the symmetry axis, 3R/8 from the flat face.",
+          "steps": [
+            "By symmetry the center of mass is on the axis through the center of the flat face. Put z along that axis, with z = 0 at the flat face.",
+            "Slice into thin disks parallel to the flat face: the disk at height z has radius √(R^2 − z^2) and mass dm = ρπ(R^2 − z^2) dz.",
+            "∫ z dm = ρπ ∫ from 0 to R of (R^2z − z^3) dz = ρπ(R^4/2 − R^4/4) = ρπR^4/4.",
+            "M = (2/3)πR^3ρ, so z_cm = (ρπR^4/4)/((2/3)πR^3ρ) = 3R/8.",
+            "Sense check: 3R/8 is less than R/2, because more of the hemisphere's mass is near its wide flat face."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c9",
+          "prompt": "A thin metal bowl is a uniform hemispherical shell of radius R. Find its center of mass. (The band of the shell between heights z and z + dz above the plane of its rim has area 2πR dz.)",
+          "hint": "Write dm for one band using the given area, then integrate z dm from the plane of the rim to the top.",
+          "answer": "On the symmetry axis, R/2 from the plane of the rim.",
+          "steps": [
+            "By symmetry the center of mass is on the axis. With surface density σ, a band has mass dm = σ(2πR dz).",
+            "∫ z dm = 2πσR ∫ from 0 to R of z dz = πσR^3.",
+            "M = σ(2πR^2), the area of a hemisphere times σ, so z_cm = πσR^3/(2πσR^2) = R/2.",
+            "The shell's center of mass is farther from the rim's plane than the solid hemisphere's (3R/8): equal-height bands of the shell have equal mass, while the solid has more of its mass near its flat face.",
+            "The center of mass is in the empty space inside the bowl, not on the metal."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this move fails: a body built from simple pieces needs no integral. Use x_cm = Σm_ix_i/Σm_i with each piece's own center of mass, and treat a hole as a piece of negative mass."
+        }
+      ]
+    },
+    {
+      "id": "shm",
+      "title": "Simple harmonic motion from its differential equation",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Reading ω from the equation of motion",
+          "text": "Displace the system by x (or θ) from equilibrium, write ΣF = m d^2x/dt^2 (or Στ = I d^2θ/dt^2), and simplify. If the result has the form d^2x/dt^2 = −ω^2x, the motion is simple harmonic with angular frequency ω and period T = 2π/ω, and x = A cos(ωt + φ), with A and φ fixed by the starting position and velocity.",
+          "conditions": [
+            "The restoring force or torque must be proportional to the displacement. For pendulums that requires small angles, where sin θ ≈ θ in radians.",
+            "Measure the displacement from equilibrium. For a vertical spring, gravity only shifts the equilibrium and drops out of the equation.",
+            "For a potential energy U(x) with a minimum at x_0, small oscillations have ω^2 = (d^2U/dx^2 at x_0)/m."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A uniform solid cylinder of mass 2.0 kg rolls without slipping on a level floor. A horizontal spring with k = 30 N/m is attached to a frictionless bearing on the cylinder's axle, and its other end is fixed to a wall on the left. Find the period of small oscillations about equilibrium, and compare it with the period of a 2.0 kg block sliding without friction on the same spring.",
+          "answer": "T = 2π√(3M/(2k)) ≈ 2.0 s for the cylinder, compared with 2π√(M/k) ≈ 1.6 s for the block.",
+          "steps": [
+            "Let x be the axle's displacement from equilibrium, with +x to the right, away from the wall, and let the static friction force f at the contact point be positive toward +x. For the center of mass: M d^2x/dt^2 = −kx + f.",
+            "Take clockwise as the positive sense of rotation, so that rolling toward +x gives d^2x/dt^2 = Rα. Friction toward +x at the bottom of the cylinder gives a counterclockwise torque fR about the center, so −fR = (½MR^2)α = ½MR d^2x/dt^2, and f = −½M d^2x/dt^2.",
+            "Substitute: M d^2x/dt^2 = −kx − ½M d^2x/dt^2, so (3/2)M d^2x/dt^2 = −kx and d^2x/dt^2 = −(2k/(3M))x.",
+            "So ω = √(2k/(3M)) = √(2(30)/(3(2.0))) = √10 ≈ 3.2 rad/s and T = 2π/ω ≈ 2.0 s. The block has ω = √(k/M) = √15 ≈ 3.9 rad/s and T ≈ 1.6 s.",
+            "An energy route agrees: E = ½Mv^2 + ½(½MR^2)(v/R)^2 + ½kx^2 = ½(3M/2)v^2 + ½kx^2, so the rolling cylinder behaves like a mass of 3M/2 on the spring. Rolling adds inertia, which slows the oscillation."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c10",
+          "prompt": "A thin uniform square tile of side 0.30 m hangs from a nail through a small hole at one corner and swings with small amplitude in its own plane. Find its period. (Check 8 gives the rotational inertia of a rectangular plate about its center.)",
+          "hint": "Write Στ = I d^2θ/dt^2 about the nail, with I about the corner from the parallel-axis theorem.",
+          "answer": "About 1.07 s.",
+          "steps": [
+            "About its center, perpendicular to the tile, I_cm = M(s^2 + s^2)/12 = Ms^2/6. The corner is d = s/√2 from the center, so about the nail I = Ms^2/6 + Ms^2/2 = (2/3)Ms^2.",
+            "Gravity acts at the center of mass. At a small angle θ from the hanging position the torque about the nail is −Mgd sin θ ≈ −Mgdθ, so I d^2θ/dt^2 = −Mgdθ and ω^2 = Mgd/I.",
+            "ω^2 = g(s/√2)/((2/3)s^2) = 3g/(2√2 s) = 3(9.8)/(2√2(0.30)) ≈ 34.6 s^−2, so ω ≈ 5.89 rad/s.",
+            "T = 2π/ω ≈ 1.07 s.",
+            "Treating the tile as a simple pendulum of length d ≈ 0.21 m gives about 0.92 s, too short, because it leaves out the tile's rotational inertia about its own center."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c11",
+          "prompt": "For the cart over the magnet in the potential-energy example (mass 0.50 kg, U(x) = −U_0e^(−x^2/a^2) with U_0 = 0.090 J and a = 0.20 m), find the period of small oscillations of the cart about x = 0.",
+          "hint": "Find the force for small x, or find d^2U/dx^2 at x = 0.",
+          "answer": "About 2.1 s.",
+          "steps": [
+            "For small x, e^(−x^2/a^2) ≈ 1, so F_x ≈ −(2U_0/a^2)x: a restoring force proportional to the displacement, with effective spring constant k = 2U_0/a^2 = 2(0.090)/(0.20)^2 = 4.5 N/m.",
+            "Equivalently, d^2U/dx^2 at x = 0 is 2U_0/a^2 = 4.5 J/m^2.",
+            "ω = √(k/m) = √(4.5/0.50) = 3.0 rad/s, so T = 2π/3.0 ≈ 2.1 s.",
+            "At larger amplitudes the force grows more slowly than in proportion to x, and it peaks near x = 0.14 m, so the motion is no longer simple harmonic and the period grows."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-calculus-methods-c12",
+          "prompt": "A glider on a spring obeys d^2x/dt^2 = −64x, with x in meters and t in seconds. At t = 0 it is at x = 0.030 m, moving at −0.32 m/s. Find the amplitude, the period, and the first time after t = 0 at which the glider passes through equilibrium.",
+          "hint": "Write x = A cos(ωt + φ) and v = −Aω sin(ωt + φ), and use the values at t = 0.",
+          "answer": "A = 0.050 m, T ≈ 0.79 s, and the glider first passes through equilibrium at t ≈ 0.080 s.",
+          "steps": [
+            "Matching d^2x/dt^2 = −ω^2x gives ω^2 = 64 s^−2, so ω = 8.0 rad/s and T = 2π/8.0 ≈ 0.79 s.",
+            "At t = 0: A cos φ = 0.030 m and −Aω sin φ = −0.32 m/s, so A sin φ = 0.32/8.0 = 0.040 m.",
+            "A = √(0.030^2 + 0.040^2) = 0.050 m, and since cos φ and sin φ are both positive, φ = arctan(0.040/0.030) ≈ 0.927 rad.",
+            "x = 0 when 8.0t + 0.927 = π/2, so t = (1.571 − 0.927)/8.0 ≈ 0.080 s.",
+            "Sense check: the glider starts on the positive side moving toward equilibrium, so it should get there in less than a quarter period, about 0.20 s."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this move fails: if the equation of motion does not have the form d^2x/dt^2 = −ω^2x, as for a pendulum at a large angle or for the magnet's force beyond small x, the motion may repeat but is not simple harmonic, and T = 2π/ω does not apply. Energy conservation still gives speeds and turning points."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer the checks again a few days from now without rereading; the eight-week plan schedules that retry in its week 7. Then use the moves under time in the Mathematical Routines set, where most questions call for at least one of them."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Workshop guide: Mathematical Routines questions",
+              "ref": "guide:fr-mathematical-routines"
+            },
+            {
+              "label": "Mathematical Routines set",
+              "ref": "test:fr-mathematical-routines"
+            },
+            {
+              "label": "Using the formula reference",
+              "ref": "guide:formula-reference-skills"
+            },
+            {
+              "label": "Unit 1 review: kinematics",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 2 review: force and translational dynamics",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 3 review: work, energy and power",
+              "ref": "guide:review-u3"
+            },
+            {
+              "label": "Unit 5 review: torque and rotational dynamics",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 7 review: oscillations",
+              "ref": "guide:review-u7"
+            },
+            {
+              "label": "Week 1: calculus toolkit for motion",
+              "ref": "week:1"
+            },
+            {
+              "label": "Week 10: resistive forces and terminal speed",
+              "ref": "week:10"
+            },
+            {
+              "label": "Week 21: rotational inertia by integration; parallel axes",
+              "ref": "week:21"
+            },
+            {
+              "label": "Mixed set 1, at the exam's pace",
+              "ref": "test:mixed-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

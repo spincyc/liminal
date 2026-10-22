@@ -1,0 +1,351 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "mixed-3",
+  "kind": "mixed-set",
+  "title": "Mixed set 3: all units at exam pace",
+  "author": "cm-mixed-3-4-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Section I has 15 multiple-choice questions in 30 minutes, and a four-function, scientific or graphing calculator is allowed. The questions are mixed on purpose, so part of each one is deciding which principle or method applies: whether a force that depends on speed calls for a terminal speed or a differential equation, whether a force given against time or against position calls for impulse or work, and how a system's center of mass moves when only some of the forces are external. Expect it to feel slower than practising one topic at a time. Use g = 9.8 m/s^2 and SI units, take each question's stated positive direction, and measure angular quantities in radians; you may use the course's formula reference. Score the set with its answer key and record raw points; they are practice evidence, not AP® scores, and are not converted to any other scale.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "15 questions, 30 minutes. Choose the best answer for each question and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question. Neglect air resistance unless a question describes a drag force.",
+          "items": [
+            {
+              "id": "cm-mixed-3-mc01",
+              "prompt": "A 1000 kg test car moves at 18 m/s along a straight, level track. At t = 0 an automatic brake engages, and its braking force grows in proportion to the time since it engaged, F = 1500t, in newtons with t in seconds, until the car stops. Ignore all other horizontal forces. How far does the car travel after the brake engages?",
+              "choices": [
+                "44 m",
+                "22 m",
+                "59 m",
+                "15 m"
+              ],
+              "key": "C",
+              "rationale": "The force depends on time, so start with the impulse. The car stops at time T when ∫ from 0 to T of 1500t dt = 750T^2 equals its momentum, (1000)(18) = 1.8 × 10^4 kg·m/s, so T = √24 = 4.90 s. Taking the direction of motion as positive, a = −1.5t, so v = 18 − 0.75t^2 and x = 18t − 0.25t^3. At T, x = 88.2 − 29.4 = 59 m.",
+              "distractorNotes": {
+                "A": "This is the average of the initial and final speeds times the stopping time, (18/2)(4.90 s), which holds only for constant deceleration. Here the force starts at zero, so the car slows gently at first and covers more ground.",
+                "B": "This applies the largest braking force, 7.3 kN at the moment of stopping, over the whole distance through ½mv^2 = Fd. The force is that large only at the end.",
+                "D": "This integrates the force over distance, as if F = 1500x, and sets 750x^2 equal to the initial kinetic energy. The force is given as a function of time, so the integral that can be evaluated directly is the impulse, ∫F dt."
+              },
+              "topics": [
+                "CM.1.2",
+                "CM.4.2",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc02",
+              "prompt": "At t = 0 a student throws a 0.20 kg ball P straight up at 8.0 m/s. At the same instant, a friend on a balcony releases a 0.30 kg ball Q from rest 6.0 m above P's launch point, a little to one side so that the balls do not collide. Ignore air resistance and take upward as positive. What is the velocity of the center of mass of the two-ball system at t = 0.50 s?",
+              "choices": [
+                "+3.2 m/s",
+                "−1.7 m/s",
+                "−0.90 m/s",
+                "−4.9 m/s"
+              ],
+              "key": "B",
+              "rationale": "The only external forces are the two weights, so the center of mass accelerates at g downward, whatever the balls do individually. Its initial velocity is (0.20 × 8.0 + 0.30 × 0)/0.50 = +3.2 m/s, so at 0.50 s it is 3.2 − (9.8)(0.50) = −1.7 m/s, that is, 1.7 m/s downward.",
+              "distractorNotes": {
+                "A": "This is the center of mass's initial velocity, (0.20)(8.0)/0.50, kept constant as if the system's momentum were conserved. Gravity is an external force on both balls, so the system's momentum changes at the rate (0.50 kg)g.",
+                "C": "This averages the balls' velocities at 0.50 s, +3.1 m/s and −4.9 m/s, without weighting them by mass. The center of mass velocity weights each ball by its share of the total mass.",
+                "D": "This gives the center of mass the change −g(0.50 s) but starts it from rest. P was thrown upward, so the system starts with momentum 1.6 kg·m/s upward."
+              },
+              "topics": [
+                "CM.2.1",
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc03",
+              "prompt": "A 6.0 kg sled starts from rest on level, frictionless ice. A rope from a motorized reel pulls it horizontally with a force that grows as the motor warms up: F(t) = 2.0√t, in newtons with t in seconds, for 0 ≤ t ≤ 9.0 s, after which the rope goes slack. How much work does the rope do on the sled?",
+              "choices": [
+                "1.1 × 10^2 J",
+                "36 J",
+                "86 J",
+                "1.3 × 10^2 J"
+              ],
+              "key": "A",
+              "rationale": "The force is a function of time, so find the impulse first: ∫ from 0 to 9.0 of 2.0√t dt = (4/3)t^(3/2) = 36 N·s. The sled's speed is then (36 N·s)/(6.0 kg) = 6.0 m/s, and by the work–energy theorem the rope's work equals the sled's kinetic energy, ½(6.0)(6.0)^2 = 108 J ≈ 1.1 × 10^2 J.",
+              "distractorNotes": {
+                "B": "This is ∫F dt = 36 N·s, the impulse, reported as work. Integrating a force over time gives the change in momentum, not energy.",
+                "C": "This multiplies the time-averaged force, (36 N·s)/(9.0 s) = 4.0 N, by the distance the sled travels, 21.6 m. Work needs the force averaged over distance; the pull is largest late in the motion, when the sled is moving fastest and covering the most distance, so that average is larger.",
+                "D": "This multiplies the final force, 6.0 N, by the whole distance, 21.6 m, as if the pull had been that large from the start."
+              },
+              "topics": [
+                "CM.3.1",
+                "CM.4.2",
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc04",
+              "prompt": "A thin, flat paddle 0.50 m long turns about a vertical axle at one end as it stirs a thick slurry at a steady 20 rad/s. On each short piece of the paddle, the slurry exerts a drag force that opposes the piece's motion and is proportional to the piece's speed: the force per unit length is kv, with k = 0.60 N·s/m^2. What is the magnitude of the slurry's torque on the paddle about the axle?",
+              "choices": [
+                "0.38 N·m",
+                "0.75 N·m",
+                "1.5 N·m",
+                "0.50 N·m"
+              ],
+              "key": "D",
+              "rationale": "A piece of length dr at distance r moves at ωr, so it feels a force kωr dr with lever arm r. The torque is ∫ from 0 to L of kωr^2 dr = kωL^3/3 = (0.60)(20)(0.50)^3/3 = 0.50 N·m.",
+              "distractorNotes": {
+                "A": "This finds the total drag force correctly, ∫ kωr dr = kωL^2/2 = 1.5 N, but places it at the paddle's midpoint. The force per unit length grows with r, so the force is concentrated toward the outer end and its torque must be integrated.",
+                "B": "This uses the tip speed, ωL = 10 m/s, for every piece of the paddle, giving a uniform 6.0 N/m and a total of 3.0 N at the midpoint. Pieces nearer the axle move more slowly.",
+                "C": "This uses the tip speed for every piece and then puts the whole 3.0 N force at the tip. Both steps overstate the torque."
+              },
+              "topics": [
+                "CM.5.3",
+                "CM.2.9"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc05",
+              "prompt": "Carts A (1.5 kg) and B (3.0 kg) rest on a level, frictionless track, joined by a light spring. Starting at t = 0, a hand pushes cart A along the track toward B. The push rises steadily from 0 to 18 N at t = 0.50 s and then falls steadily to 0 at t = 1.5 s. Meanwhile the spring compresses and stretches, and the carts oscillate relative to each other. After the push ends, what is the speed of the two-cart system's center of mass?",
+              "choices": [
+                "3.0 m/s",
+                "9.0 m/s",
+                "6.0 m/s",
+                "It cannot be found without the spring constant."
+              ],
+              "key": "A",
+              "rationale": "The only external horizontal force on the two-cart system is the push. Its impulse is the area of the triangular force–time graph, ½(18 N)(1.5 s) = 13.5 N·s, which equals the system's change in momentum, (4.5 kg)v_cm. So v_cm = 13.5/4.5 = 3.0 m/s, however the spring makes the carts oscillate.",
+              "distractorNotes": {
+                "B": "This divides the impulse by cart A's mass alone. The spring passes part of the push to cart B, so the impulse changes the momentum of the whole two-cart system.",
+                "C": "This uses the peak force for the whole 1.5 s, (18 N)(1.5 s) = 27 N·s. The impulse is the area under the force–time graph, a triangle with half that area.",
+                "D": "The spring forces are internal: they move momentum between the carts but do not change the system's total momentum, so the spring constant is not needed."
+              },
+              "topics": [
+                "CM.4.2",
+                "CM.2.1",
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc06",
+              "prompt": "A 2.0 kg water-sampling bottle is dropped from a boat and enters a lake moving straight down at 5.0 m/s. In the water, its weight minus the buoyant force is a constant 6.0 N downward, and the water exerts a drag force of size bv, with b = 4.0 kg/s, opposite its velocity. Take downward as positive. How far below the surface is the bottle 1.0 s after it enters the water?",
+              "choices": [
+                "1.5 m",
+                "3.5 m",
+                "3.0 m",
+                "6.5 m"
+              ],
+              "key": "C",
+              "rationale": "Newton's second law gives m dv/dt = 6.0 − 4.0v, with terminal speed v_T = 1.5 m/s and time constant m/b = 0.50 s. Solving with v(0) = 5.0 m/s gives v = 1.5 + 3.5e^(−2.0t), and integrating, x = 1.5t + 1.75(1 − e^(−2.0t)). At t = 1.0 s, x = 1.5 + 1.75(0.865) = 3.0 m.",
+              "distractorNotes": {
+                "A": "This is the terminal speed, 6.0/4.0 = 1.5 m/s, times 1.0 s. The bottle enters faster than its terminal speed and is still moving faster than 1.5 m/s throughout the first second.",
+                "B": "This averages the speeds at t = 0 and t = 1.0 s, 5.0 m/s and 2.0 m/s, which assumes a constant deceleration. The drag, and so the deceleration, is largest at first, so the bottle loses speed early and travels less far.",
+                "D": "This ignores the drag and uses only the 6.0 N net downward force, so a = 3.0 m/s^2 and x = 5.0 + 1.5 = 6.5 m. Drag is the dominant force at entry."
+              },
+              "topics": [
+                "CM.2.9",
+                "CM.2.5",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc07",
+              "prompt": "A wound spiral spring drives a toy's flywheel from rest. The flywheel's rotational inertia is 2.0 × 10^−4 kg·m^2. As the flywheel turns through an angle θ, the spring's torque on it is τ = 0.040 − 0.0020θ, in N·m with θ in radians, until the spring is fully unwound at θ = 20 rad. Ignoring friction, what is the flywheel's angular speed when the spring is fully unwound?",
+              "choices": [
+                "2.0 × 10^3 rad/s",
+                "63 rad/s",
+                "89 rad/s",
+                "45 rad/s"
+              ],
+              "key": "B",
+              "rationale": "The torque is given as a function of angle, so find the work: W = ∫ from 0 to 20 of (0.040 − 0.0020θ) dθ = 0.80 − 0.40 = 0.40 J. Then ½Iω^2 = 0.40 J gives ω = √(2(0.40)/(2.0 × 10^−4)) = √4000 = 63 rad/s.",
+              "distractorNotes": {
+                "A": "This treats ∫τ dθ = 0.40 J as an angular impulse and divides by I. Integrating torque over angle gives work, which changes rotational kinetic energy; angular impulse is ∫τ dt.",
+                "C": "This uses the initial torque, 0.040 N·m, over the whole 20 rad, which doubles the work. The torque falls to zero as the spring unwinds.",
+                "D": "This sets the work equal to Iω^2, dropping the ½ in rotational kinetic energy."
+              },
+              "topics": [
+                "CM.6.2",
+                "CM.6.1",
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc08",
+              "prompt": "Two identical 2.0 kg carts start from rest on a level, frictionless track. Cart 1 is pushed by a constant 20 N force for 0.50 s. Cart 2 is pushed by a constant 20 N force through a distance of 0.50 m. Which statement about their speeds when the pushes end is correct?",
+              "choices": [
+                "Both carts move at 5.0 m/s.",
+                "Cart 1 moves at 3.2 m/s and cart 2 at 5.0 m/s.",
+                "Both carts move at 3.2 m/s.",
+                "Cart 1 moves at 5.0 m/s and cart 2 at 3.2 m/s."
+              ],
+              "key": "D",
+              "rationale": "Cart 1: the impulse is (20 N)(0.50 s) = 10 N·s = (2.0 kg)v, so v = 5.0 m/s. Cart 2: the work is (20 N)(0.50 m) = 10 J = ½(2.0 kg)v^2, so v = 3.2 m/s. Cart 1 is faster because in its 0.50 s it travels 1.25 m, farther than cart 2's 0.50 m, so its push does more work.",
+              "distractorNotes": {
+                "A": "This treats both pushes as impulses, 10 N·s each. Cart 2's push is specified by distance, so (20 N)(0.50 m) = 10 J is work, not impulse.",
+                "B": "This swaps the two theorems: it treats F·Δt as work for cart 1 and F·Δx as impulse for cart 2.",
+                "C": "This treats both pushes as work, 10 J each. Cart 1's push is specified by time, so (20 N)(0.50 s) = 10 N·s is impulse."
+              },
+              "topics": [
+                "CM.4.2",
+                "CM.3.2",
+                "CM.3.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc09",
+              "prompt": "A toy parachutist is dropped from rest with its parachute already open. A motion sensor records its downward speed:\n| t (s) | 0 | 0.25 | 0.50 | 0.75 | 1.00 |\n| --- | --- | --- | --- | --- | --- |\n| v (m/s) | 0 | 1.9 | 3.1 | 3.8 | 4.2 |\nWhich is the best estimate of how far it falls during the first 1.00 s?",
+              "choices": [
+                "2.1 m",
+                "2.7 m",
+                "4.2 m",
+                "4.9 m"
+              ],
+              "key": "B",
+              "rationale": "The distance fallen is the area under the velocity–time graph. With trapezoids 0.25 s wide: 0.25[(0 + 1.9)/2 + (1.9 + 3.1)/2 + (3.1 + 3.8)/2 + (3.8 + 4.2)/2] = 0.25(10.9) = 2.7 m. The constant-acceleration and free-fall formulas do not apply, because the drag makes the acceleration fall from g toward zero.",
+              "distractorNotes": {
+                "A": "This averages the first and last speeds, (0 + 4.2)/2, and multiplies by 1.00 s, which is correct only for constant acceleration. The speed rises quickly at first and then levels off, so the average speed is more than half the final speed.",
+                "C": "This multiplies the final speed by the whole time, as if the parachutist had fallen at 4.2 m/s from the start.",
+                "D": "This is ½gt^2, the free-fall distance. The data show the drag of the parachute holding the speed far below gt."
+              },
+              "topics": [
+                "CM.1.3",
+                "CM.2.9"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc10",
+              "prompt": "A 0.80 kg block on a horizontal spring with k = 20 N/m slides on a frictionless surface. It is pulled 0.12 m from equilibrium and released from rest at t = 0. When does the block first reach the point 0.060 m from equilibrium on the other side?",
+              "choices": [
+                "0.42 s",
+                "0.21 s",
+                "0.47 s",
+                "0.31 s"
+              ],
+              "key": "A",
+              "rationale": "ω = √(k/m) = √(20/0.80) = 5.0 rad/s, and with release from rest at x = 0.12 m, x(t) = 0.12 cos(5.0t). Setting x = −0.060 m gives cos(5.0t) = −½, whose first solution is 5.0t = 2π/3, so t = 0.42 s.",
+              "distractorNotes": {
+                "B": "This solves cos(ωt) = +½, the time to reach 0.060 m on the release side. On the other side the position is −0.060 m, so cos(ωt) = −½.",
+                "C": "This assumes a constant speed: the block covers 0.18 m of the 0.24 m it travels in half a period (0.63 s). In simple harmonic motion it moves fastest near equilibrium and slowest near the turning points.",
+                "D": "This is a quarter period, when the block reaches equilibrium. It needs more time to go 0.060 m beyond equilibrium."
+              },
+              "topics": [
+                "CM.7.3",
+                "CM.7.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc11",
+              "prompt": "A 2.0 kg cart starts from rest at x = 0 on a level, frictionless track. The only horizontal force on it is F(x) = 9.0 − x^2, in newtons with x in meters, directed along +x. At what rate is this force doing work on the cart when the cart reaches x = 2.0 m?",
+              "choices": [
+                "16 W",
+                "38 W",
+                "20 W",
+                "30 W"
+              ],
+              "key": "C",
+              "rationale": "Instantaneous power is P = Fv. The force at x = 2.0 m is 9.0 − 4.0 = 5.0 N. The speed comes from the work done so far: ∫ from 0 to 2.0 of (9.0 − x^2) dx = 18 − 2.67 = 15.3 J = ½(2.0)v^2, so v = 3.9 m/s. Then P = (5.0 N)(3.9 m/s) = 20 W.",
+              "distractorNotes": {
+                "A": "This uses the correct force at x = 2.0 m, 5.0 N, but finds the speed as if that force had acted all the way from x = 0 with constant acceleration. The force was larger earlier, so the cart is moving faster.",
+                "B": "This treats the force as its initial value, 9.0 N, for both the speed and the power. The force has fallen to 5.0 N at x = 2.0 m.",
+                "D": "This multiplies the speed by the average force over the 2.0 m, 7.7 N. Power at an instant is the force at that instant times the velocity."
+              },
+              "topics": [
+                "CM.3.5",
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc12",
+              "prompt": "A uniform rod 0.90 m long hangs at rest from a frictionless pivot at its top end. A ball strikes the rod with a brief blow that is horizontal and perpendicular to the rod. How far below the pivot must the blow land for the pivot to exert no horizontal force on the rod during the blow?",
+              "choices": [
+                "0.45 m",
+                "0.90 m",
+                "0.30 m",
+                "0.60 m"
+              ],
+              "key": "D",
+              "rationale": "If the pivot exerts no horizontal force, the blow's force F alone accelerates the center of mass: F = Ma_cm = Mα(L/2). About the pivot, the same force gives Fd = Iα = (1/3)ML^2α. Dividing the second equation by the first, d = (1/3)L^2/(L/2) = 2L/3 = 0.60 m.",
+              "distractorNotes": {
+                "A": "This is the center of mass. A blow there would make a free rod move without turning, but this rod must turn about the pivot, so its center of mass needs less acceleration than a blow at the center would give it, and the pivot would have to pull back.",
+                "B": "A blow at the bottom end gives the most torque, but it turns the rod so fast that its center of mass would need more acceleration than the blow alone provides, so the pivot would have to push forward.",
+                "C": "This writes the rod's linear acceleration with its end, a = αL, instead of its center of mass, a_cm = α(L/2). Newton's second law for a system uses the acceleration of its center of mass."
+              },
+              "topics": [
+                "CM.5.6",
+                "CM.2.5",
+                "CM.2.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc13",
+              "prompt": "Sandbags of 5.0 kg and 3.0 kg hang from the two ends of a light rope that passes over a light, frictionless pulley. They are released from rest. While they move, what is the acceleration of the center of mass of the two-sandbag system?",
+              "choices": [
+                "0, because the bags have equal and opposite accelerations",
+                "0.61 m/s^2, downward",
+                "2.5 m/s^2, downward",
+                "9.8 m/s^2, downward"
+              ],
+              "key": "B",
+              "rationale": "Each bag accelerates at (5.0 − 3.0)(9.8)/8.0 = 2.45 m/s^2, the heavier one down and the lighter one up, so a_cm = (5.0 × 2.45 − 3.0 × 2.45)/8.0 = 0.61 m/s^2 downward. Check with external forces: the tension is T = 2(5.0)(3.0)(9.8)/8.0 = 36.75 N, so the rope pulls up on the two bags with 2T = 73.5 N in all, against 78.4 N of weight, a net 4.9 N downward on 8.0 kg.",
+              "distractorNotes": {
+                "A": "The accelerations are equal and opposite, but the masses are not: the heavier bag's downward acceleration counts for more, so the center of mass accelerates downward.",
+                "C": "This is the acceleration of each bag, (5.0 − 3.0)g/8.0. The center of mass weights the bags' accelerations by mass, and one of them is upward.",
+                "D": "This counts only gravity as an external force. The rope also pulls up on each bag with the tension T, 2T = 74 N in all, so the net external force on the two bags is much less than their total weight."
+              },
+              "topics": [
+                "CM.2.1",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc14",
+              "prompt": "A drum major tosses a baton, which can be modeled as a uniform rod of mass 0.40 kg and length 0.60 m. At one instant its center of mass moves at 5.0 m/s while the baton spins at 12 rad/s about its center of mass. What is the baton's total kinetic energy at that instant?",
+              "choices": [
+                "5.9 J",
+                "5.0 J",
+                "8.5 J",
+                "15 J"
+              ],
+              "key": "A",
+              "rationale": "K = ½Mv_cm^2 + ½I_cmω^2. With I_cm = (1/12)(0.40)(0.60)^2 = 0.012 kg·m^2, K = 5.0 J + ½(0.012)(12)^2 = 5.0 + 0.86 = 5.9 J.",
+              "distractorNotes": {
+                "B": "This is only the translational kinetic energy of the center of mass, ½(0.40)(5.0)^2. The spin about the center of mass adds rotational kinetic energy.",
+                "C": "This uses the rotational inertia about an end, (1/3)ML^2. The baton spins about its center of mass, so the rotational term uses (1/12)ML^2.",
+                "D": "This gives the whole baton the speed of its faster end, 5.0 + (12)(0.30) = 8.6 m/s. Different points move at different speeds; the energy splits into motion of the center of mass plus rotation about it."
+              },
+              "topics": [
+                "CM.6.1",
+                "CM.2.1",
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-3-mc15",
+              "prompt": "A tugboat tows a barge 2.0 km along a straight canal at a constant 1.5 m/s, then tows it back the same 2.0 km at a constant 3.0 m/s. The water's drag on the barge is proportional to the square of the barge's speed, and the towline stays horizontal. What is the ratio of the work the towline does on the barge on the return trip to the work it does on the outbound trip?",
+              "choices": [
+                "1",
+                "2",
+                "4",
+                "8"
+              ],
+              "key": "C",
+              "rationale": "At constant speed the towline's pull equals the drag, cv^2, so the work over a distance d is cv^2 d. Doubling the speed over the same distance multiplies the work by 2^2 = 4.",
+              "distractorNotes": {
+                "A": "This assumes equal distances mean equal work, which is true only for a force that does not depend on speed. The pull must match the drag, which grows with speed.",
+                "B": "This treats the drag as proportional to the speed rather than to its square.",
+                "D": "This is the ratio of the towline's power, Fv ∝ v^3. The return trip takes half as long, so the work, power times time, grows only as v^2."
+              },
+              "topics": [
+                "CM.3.2",
+                "CM.2.9",
+                "CM.3.5"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

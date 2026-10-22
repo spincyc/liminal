@@ -1,0 +1,487 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "formula-reference-skills",
+  "kind": "strategy",
+  "title": "Using the formula reference",
+  "author": "cm-strategy-author",
+  "summary": "How to use Liminal's formula reference for AP® Physics C: Mechanics as a stand-in for the equation sheet the exam supplies: where each group of relations sits, what each relation assumes (constant acceleration, a fixed axis, small angles, a circular orbit and more), what is not on it and must be known or derived, and eight checks that ask which relation applies. The exam uses College Board's own sheet, so look at it on College Board's exam page before the exam.",
+  "minutes": 35,
+  "sections": [
+    {
+      "id": "what-it-is",
+      "title": "Liminal's reference and the exam's sheet",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's formula reference is Liminal's own collection of the relations this course uses, grouped by the question each one answers, with a plain-language meaning and SI units for each. It is printed at the end of the student copy of every Liminal practice exam, so you can use it the way you will use a sheet on the exam."
+        },
+        {
+          "type": "text",
+          "text": "The exam supplies its own equation sheet. College Board's exam pages, checked 2026-10-22, say that its reference materials are printed for the exam room and are also available in Bluebook. That sheet is College Board's, not Liminal's: it selects, names and arranges relations in its own way, and Liminal has not reproduced it. Before the exam, open the current sheet on College Board's AP® Physics C: Mechanics exam page, and practise with it (see the last section of this guide)."
+        },
+        {
+          "type": "text",
+          "text": "During a question, use any sheet in this order:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Name the principle first, from what the question gives and asks: kinematics, forces, energy, momentum, rotation, gravitation or oscillation. Then go to that group.",
+            "Check the relation's conditions before you write it: constant acceleration only, a fixed axis, small angles, a circular orbit, a conservative force.",
+            "Write the general relation first, then substitute. A reader sees the physics in the relation, not in the numbers.",
+            "Use the units column to check the units of your answer."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this method fails: a sheet tells you what a relation says, never which relation a situation needs. Searching it for a relation that contains the given symbols often turns up one whose conditions do not hold. If you cannot name the principle within about half a minute, the gap is in the physics rather than the sheet, and the unit review for that topic is the place to repair it."
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "title": "Where each group is",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "The groups of Liminal's reference, in printed order.",
+          "head": [
+            "Group",
+            "Answers the question",
+            "Look here for"
+          ],
+          "rows": [
+            [
+              "Calculus the course uses",
+              "How do I differentiate or integrate this?",
+              "Power, exponential and sinusoid rules; chain and product rules; the definite integral; separation of variables"
+            ],
+            [
+              "Vectors, angles and shapes",
+              "How do I combine or measure quantities?",
+              "Components, dot and cross products, arc length, radian conversion, circle, sphere and cylinder formulas"
+            ],
+            [
+              "How things move",
+              "Where is it, and how fast?",
+              "v = dx/dt and a = dv/dt and their integral forms, the constant-acceleration relations, relative velocity, centripetal and tangential acceleration"
+            ],
+            [
+              "Why things move: forces",
+              "What makes it accelerate?",
+              "Newton's laws, center of mass, friction, springs, gravity, drag, the net force for circular motion"
+            ],
+            [
+              "Energy, work and power",
+              "How much energy moves, and where?",
+              "Kinetic energy, work as an integral, the work–energy theorem, F_x = −dU/dx, gravitational and spring potential energy, energy accounting, power"
+            ],
+            [
+              "Momentum and collisions",
+              "What happens in a collision, explosion or push?",
+              "Momentum, impulse, the condition for conservation, elastic and perfectly inelastic collisions"
+            ],
+            [
+              "Rotation",
+              "How does it turn?",
+              "Angular kinematics, torque, rotational inertia (the integral, parallel axes, uniform shapes), Στ = Iα, equilibrium, rotational energy and power, angular momentum, rolling"
+            ],
+            [
+              "Gravitation and orbits",
+              "How do planets and satellites move?",
+              "Field strength, circular-orbit speed and period, orbital energy, escape speed, speeds at the nearest and farthest points"
+            ],
+            [
+              "Oscillations",
+              "How does it vibrate?",
+              "The SHM equation and its solution, period and frequency, spring and pendulum periods, oscillator energy"
+            ],
+            [
+              "Constants and values",
+              "Which number?",
+              "g, G, Earth's mass and radius, SI prefixes"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The notes above the groups matter as much as the rows: state a positive direction before any vector equation, use radians for angular quantities, and read \"constant only\" as a condition you must check, not as a description."
+        }
+      ]
+    },
+    {
+      "id": "assumptions",
+      "title": "What each relation assumes",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Most points lost with a sheet in hand come from a relation used outside its conditions. The table lists the relations whose conditions are easiest to forget, with what to use when a condition fails."
+        },
+        {
+          "type": "table",
+          "caption": "Conditions to check before writing a relation. The group is in parentheses.",
+          "head": [
+            "Relation",
+            "Holds when",
+            "When it fails, use"
+          ],
+          "rows": [
+            [
+              "v = v_0 + at and the other constant-acceleration relations (how things move)",
+              "The acceleration is constant over the whole interval",
+              "v = v_0 + ∫ a dt and x = x_0 + ∫ v dt, or a = v dv/dx; for piecewise-constant acceleration, one interval at a time"
+            ],
+            [
+              "ω = ω_0 + αt and the other constant-α relations (rotation)",
+              "The angular acceleration is constant",
+              "ω = ω_0 + ∫ α dt, with α from Στ/I at each instant"
+            ],
+            [
+              "W = Fd cos θ (energy)",
+              "The force is constant in size and direction along a straight path",
+              "W = ∫ F·dr"
+            ],
+            [
+              "F_x = −dU/dx and ΔU = −∫ F_x dx (energy)",
+              "The force is conservative",
+              "For friction and drag, the work integral and ΔE_internal; they have no potential energy"
+            ],
+            [
+              "U_g = mgy (energy)",
+              "Height changes are small compared with Earth's radius, so g is constant",
+              "U_G = −Gm_1m_2/r"
+            ],
+            [
+              "Σp_after = Σp_before (momentum)",
+              "The net external impulse on the system over the interval is zero, or small enough to neglect",
+              "J = ∫ ΣF_ext dt = Δp for the system"
+            ],
+            [
+              "v_2′ − v_1′ = −(v_2 − v_1) (momentum)",
+              "A one-dimensional collision in which kinetic energy is conserved",
+              "Momentum conservation with the stated kinetic-energy change, or component equations in two dimensions"
+            ],
+            [
+              "The uniform-shape rotational inertias (rotation)",
+              "A uniform body turning about the stated axis",
+              "I = ∫ r^2 dm, or I = I_cm + Md^2 for an axis parallel to one through the center of mass"
+            ],
+            [
+              "I = I_cm + Md^2 (rotation)",
+              "One of the two parallel axes passes through the center of mass",
+              "Go through the center of mass: subtract Md_1^2, then add Md_2^2"
+            ],
+            [
+              "Στ = Iα (rotation)",
+              "A fixed axis, or an axis through the center of mass",
+              "For rolling, Στ = I_cmα about the center of mass together with ΣF = Ma_cm"
+            ],
+            [
+              "v_cm = Rω and the rolling kinetic energy (rotation)",
+              "Rolling without slipping",
+              "While a body slips, kinetic friction acts, and v_cm and Rω must be found separately"
+            ],
+            [
+              "v = √(GM/r), T^2 = (4π^2/GM)r^3 and E = −GMm/(2r) (gravitation)",
+              "A circular orbit",
+              "Energy conservation with E = ½mv^2 − GMm/r, and angular momentum about the planet"
+            ],
+            [
+              "r_1v_1 = r_2v_2 (gravitation)",
+              "The nearest and farthest points of an orbit, where the velocity is perpendicular to the radius",
+              "|L| = mvr sin θ at other points"
+            ],
+            [
+              "T = 2π√(L/g) (oscillations)",
+              "A simple pendulum, a small bob on a light string, at small angles",
+              "T = 2π√(I/(mgd)) for a swinging body; energy conservation for speeds at any angle"
+            ],
+            [
+              "T = 2π√(m/k) (oscillations)",
+              "One mass on an ideal spring, at any amplitude",
+              "For any other system, derive ω from its equation of motion"
+            ],
+            [
+              "v_T = mg/b and the time constant m/b (forces)",
+              "Linear drag",
+              "For quadratic drag, set mg = cv_T^2"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Using T = 2π√(L/g) for anything that swings, such as a rod, a sign or a tile hanging from a pivot.",
+          "fix": "Ask whether the mass is all at one distance from the pivot. If it is not, use T = 2π√(I/(mgd)), with I about the pivot and d from the pivot to the center of mass."
+        },
+        {
+          "type": "trap",
+          "text": "Using ½MR^2 for anything round.",
+          "fix": "Match both the shape and the axis: thin hoop or thin-walled pipe MR^2 and solid disk or cylinder ½MR^2, each about its central axis; solid sphere (2/5)MR^2 and thin spherical shell (2/3)MR^2, each about a diameter."
+        }
+      ]
+    },
+    {
+      "id": "not-on-it",
+      "title": "What is not on the reference",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The results below come up often but are not rows on Liminal's reference. Each is quick to derive from rows that are, and the derivation is the reasoning a free-response reader looks for. College Board's sheet makes its own selection, so make the same list against it before the exam."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Result",
+            "Derive it from",
+            "Watch for"
+          ],
+          "rows": [
+            [
+              "v(t) = v_T(1 − e^(−t/τ)) for a fall from rest with linear drag; v(t) = v_0e^(−t/τ) for coasting against linear drag",
+              "m dv/dt = mg − bv or m dv/dt = −bv, separated and integrated",
+              "Down positive for the fall; τ = m/b in both"
+            ],
+            [
+              "Terminal speed with quadratic drag, v_T = √(mg/c)",
+              "ΣF = 0: mg = cv_T^2",
+              "Only the linear-drag terminal speed is a row"
+            ],
+            [
+              "Rolling down an incline: a = g sin θ/(1 + I_cm/(MR^2))",
+              "ΣF = Ma along the slope and Στ = I_cmα about the center, with a = Rα; or energy",
+              "Static friction does no work on a body that rolls without slipping"
+            ],
+            [
+              "Projectile range and greatest height",
+              "x and y components separately, with a_x = 0 and a_y = −g",
+              "A memorized range formula holds only for equal launch and landing heights; components work for any heights"
+            ],
+            [
+              "Least speed at the top of a vertical circle on a string or the inside of a track, √(gr)",
+              "Net force toward the center = mv^2/r with the tension or normal force equal to zero",
+              "A rod or a track that can push from either side changes the condition"
+            ],
+            [
+              "Banked curves and conical pendulums",
+              "Components of ΣF: horizontal ones give mv^2/r toward the center, vertical ones sum to zero",
+              "On a banked curve taken at speed, the normal force is not mg cos θ"
+            ],
+            [
+              "Springs combined: k = k_1 + k_2 side by side; 1/k = 1/k_1 + 1/k_2 end to end",
+              "Equal stretches (side by side) or equal forces (end to end)",
+              "Each spring still obeys F = −kΔx with its own stretch"
+            ],
+            [
+              "The small-angle approximation, sin θ ≈ θ",
+              "Radian measure; within about 1% up to about 14° (0.24 rad)",
+              "At large amplitude a pendulum's period is longer than 2π√(L/g)"
+            ],
+            [
+              "Amplitude from a starting position and velocity, A = √(x_0^2 + (v_0/ω)^2)",
+              "x = A cos(ωt + φ) and v = −Aω sin(ωt + φ) at t = 0",
+              "φ in radians, in the quadrant set by the signs of x_0 and v_0"
+            ],
+            [
+              "Stability of an equilibrium, and the small-oscillation frequency about it",
+              "The sign of d^2U/dx^2: positive is stable; then ω^2 = (d^2U/dx^2)/m",
+              "Evaluate the second derivative at the equilibrium position"
+            ],
+            [
+              "Rotational inertias of other shapes and axes, and centers of mass of continuous bodies",
+              "I = ∫ r^2 dm and x_cm = (1/M)∫ x dm",
+              "Slices whose points share one distance from the axis, or one coordinate"
+            ],
+            [
+              "Two-stage results, such as a collision followed by a swing, a slide or a compression",
+              "Momentum for the brief collision, then energy or forces for the stage after it",
+              "Kinetic energy is not conserved in an inelastic collision, so the stages cannot be merged into one energy equation"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Hunting for one relation that answers a question with several stages.",
+          "fix": "Split the motion wherever the physics changes, at a collision, a release or a loss of contact, and choose one relation per stage, with its conditions checked."
+        }
+      ]
+    },
+    {
+      "id": "which-relation",
+      "title": "Checks: which relation applies?",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each check describes a situation in which some relation on the reference is tempting. Decide which relation applies, and why, before you calculate. Have the reference open, as you will on Liminal's practice exams."
+        },
+        {
+          "type": "check",
+          "id": "cm-formula-reference-skills-c1",
+          "prompt": "A rocket sled starts from rest, and its acceleration grows as its fuel burns: a(t) = 1.2t, with a in m/s^2 and t in seconds. A student finds its displacement at t = 3.0 s from x = ½at^2 with a = a(3.0 s) = 3.6 m/s^2, and gets 16.2 m. Which relation applies, and what is the displacement?",
+          "hint": "Read the condition printed beside x = x_0 + v_0t + ½at^2.",
+          "answer": "Integrate twice: v = 0.60t^2 and x = 0.20t^3, so the displacement at 3.0 s is 5.4 m.",
+          "steps": [
+            "The constant-acceleration relations are marked \"constant only\", and a(t) = 1.2t changes with time.",
+            "From rest: v(t) = ∫ from 0 to t of 1.2t′ dt′ = 0.60t^2, in m/s.",
+            "From x = 0: x(t) = ∫ from 0 to t of 0.60t′^2 dt′ = 0.20t^3, so x(3.0 s) = 0.20(27) = 5.4 m.",
+            "The student's 16.2 m treats the final, largest acceleration as if it had acted all along, which here triples the answer."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-formula-reference-skills-c2",
+          "prompt": "A 0.20 kg block is pressed against a horizontal spring (k = 80 N/m) on a frictionless table and released from rest. It leaves the spring when the spring reaches its relaxed length. How long is the block in contact with the spring after its release? Which relations on the reference apply, and which do not?",
+          "hint": "While the block touches the spring, what kind of motion does it have?",
+          "answer": "About 0.079 s: a quarter of the period of the block on the spring, (π/2)√(m/k). The constant-acceleration relations do not apply; the spring–mass period does.",
+          "steps": [
+            "The spring's force −kx changes as the block moves, so the constant-acceleration relations do not apply.",
+            "In contact, the block is a mass on a spring: d^2x/dt^2 = −(k/m)x, with T = 2π√(m/k).",
+            "Released from rest at its greatest compression, it reaches the relaxed length, the equilibrium position, a quarter period later: t = (π/2)√(0.20/80) = (π/2)(0.050 s) ≈ 0.079 s.",
+            "The compression is not needed, because the spring–mass period does not depend on the amplitude. Energy, ½kx^2 = ½mv^2, would give the launch speed, but not the time."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-formula-reference-skills-c3",
+          "prompt": "A probe is launched straight up from Earth's surface and must just reach an altitude of 1.0 × 10^6 m. Ignore air resistance and Earth's rotation. Which expression for gravitational potential energy applies, and what launch speed is needed?",
+          "hint": "Compare the altitude with Earth's radius in the constants group.",
+          "answer": "U_G = −GMm/r, because the altitude is about 16% of Earth's radius; the launch speed is about 4.1 × 10^3 m/s.",
+          "steps": [
+            "U_g = mgy assumes a constant g, which holds only for heights small compared with Earth's radius, 6.37 × 10^6 m. This altitude is about 16% of it.",
+            "Energy conservation with U_G = −GMm/r: ½v_0^2 − GM/R = −GM/(R + h), so v_0^2 = 2GM(1/R − 1/(R + h)).",
+            "GM = (6.67 × 10^−11)(5.97 × 10^24) ≈ 3.98 × 10^14 m^3/s^2, R = 6.37 × 10^6 m and R + h = 7.37 × 10^6 m, so v_0^2 ≈ 2(3.98 × 10^14)(2.13 × 10^−8) ≈ 1.70 × 10^7 m^2/s^2 and v_0 ≈ 4.1 × 10^3 m/s.",
+            "With mgy instead, √(2gh) ≈ 4.4 × 10^3 m/s, too high, because g is weaker at altitude."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-formula-reference-skills-c4",
+          "prompt": "A simple pendulum 1.5 m long is pulled back to 60° from the vertical and released. A student plans to use T = 2π√(L/g) for the time it takes to swing to the bottom, and v = Aω with A = Lθ_0 for its speed there. Which of these relations apply? Find the speed at the bottom.",
+          "hint": "Check the condition on the pendulum row, then look for a relation that holds at any angle.",
+          "answer": "Neither applies at 60°, because both rest on the small-angle approximation. Energy conservation holds at any angle: v = √(2gL(1 − cos 60°)) = √(gL) ≈ 3.8 m/s.",
+          "steps": [
+            "T = 2π√(L/g) and the SHM result v_max = Aω assume small angles, where sin θ ≈ θ. 60° is about 1.05 rad, far outside that range.",
+            "Energy: the bob drops L(1 − cos 60°) = 0.75 m, so ½mv^2 = mg(0.75 m) and v = √(2(9.8)(0.75)) ≈ 3.8 m/s.",
+            "The small-angle shortcut would give v = Lθ_0√(g/L) = 1.5(1.047)(2.56) ≈ 4.0 m/s. The true time to the bottom is also longer than a quarter of 2π√(L/g), because the period grows with amplitude."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-formula-reference-skills-c5",
+          "prompt": "A uniform rod of mass M and length L has I = (1/3)ML^2 about a perpendicular axis through one end. A student finds I about a parallel axis through the other end as (1/3)ML^2 + ML^2 = (4/3)ML^2. What is wrong, and what is the correct value?",
+          "hint": "Read the condition on the parallel-axis row.",
+          "answer": "The parallel-axis theorem needs one of the two axes to pass through the center of mass, and neither end does. The correct value is (1/3)ML^2, by symmetry or by going through the center.",
+          "steps": [
+            "I = I_cm + Md^2 relates an axis through the center of mass to a parallel axis a distance d from it. Neither end is the center of mass, so the theorem cannot jump straight from one end to the other.",
+            "Go through the center: I_cm = (1/3)ML^2 − M(L/2)^2 = (1/12)ML^2, and then I about the other end = (1/12)ML^2 + M(L/2)^2 = (1/3)ML^2.",
+            "Symmetry gives the same answer at once: the rod looks the same from either end."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-formula-reference-skills-c6",
+          "prompt": "Two carts collide on a rough floor. Just before the collision their total momentum is 4.0 kg·m/s along +x. The collision lasts 0.050 s, and kinetic friction on the pair totals 2.0 N along −x. Can you use momentum conservation for the collision? Afterward the carts move off together and slide until they stop. Can you use it for that stage?",
+          "hint": "Compare the impulse of friction during each stage with the momentum.",
+          "answer": "For the collision, yes, to a good approximation: friction's impulse, 0.10 N·s, is 2.5% of the momentum. For the slide afterward, no: friction removes all of the momentum, so use J = Δp or forces and kinematics.",
+          "steps": [
+            "The momentum row's condition is zero or negligible net external impulse over the interval; a brief interaction alone is not enough.",
+            "During the collision, J_ext = (−2.0 N)(0.050 s) = −0.10 N·s, a 2.5% change in 4.0 kg·m/s. Treating momentum as conserved is a good approximation at two significant figures.",
+            "During the slide, the same friction acts until the carts stop, so its impulse is the whole −4.0 kg·m/s, and momentum is not conserved. From J = Δp, the slide lasts 4.0/2.0 = 2.0 s.",
+            "Had the friction been 40 N, the collision itself would change the momentum by 2.0 N·s, half of it, and conservation would fail even for the brief collision."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-formula-reference-skills-c7",
+          "prompt": "Which row of the formula reference, if any, gives the rotational inertia in each case? (a) A thin-walled steel pipe of mass M and radius R turning about its long central axis. (b) A uniform solid ball of mass M and radius R turning about an axis tangent to its surface. (c) A uniform disk of mass M and radius R spinning about one of its diameters.",
+          "hint": "For each, ask where the mass is relative to the axis, and whether the axis is the one the row names.",
+          "answer": "(a) The thin-hoop row: MR^2. (b) The solid-sphere row with the parallel-axis theorem: (2/5)MR^2 + MR^2 = (7/5)MR^2. (c) No row: the disk row is for the axis perpendicular to the face, not a diameter. Integrating gives ¼MR^2.",
+          "steps": [
+            "(a) Every part of a thin-walled pipe is a distance R from its axis, as for a hoop, and the pipe's length does not change that: I = MR^2.",
+            "(b) The tangent axis is parallel to a diameter and a distance R from it, and a diameter passes through the center of mass, so I = (2/5)MR^2 + MR^2 = (7/5)MR^2.",
+            "(c) The disk row's axis is perpendicular to the face. About a diameter, slice the disk into strips parallel to that axis and integrate y^2 dm over the disk; the result, ¼MR^2, is half the value about the perpendicular axis.",
+            "Using ½MR^2 for (c) would double the true value."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-formula-reference-skills-c8",
+          "prompt": "A 5.0 g hailstone falls through air that exerts a drag force of size cv^2, with c = 1.2 × 10^−4 kg/m. A student uses v_T = mg/b from the reference, with c in place of b. What is wrong, and what is the terminal speed?",
+          "hint": "Check the units of mg/c, then write the condition for terminal speed.",
+          "answer": "The row v_T = mg/b is for linear drag only, and mg/c has the units of a speed squared. Setting mg = cv_T^2 gives v_T = √(mg/c) ≈ 20 m/s.",
+          "steps": [
+            "At terminal speed the net force is zero. For quadratic drag that means mg = cv_T^2, not mg = bv_T.",
+            "v_T = √(mg/c) = √((0.0050)(9.8)/(1.2 × 10^−4)) = √408 ≈ 20 m/s.",
+            "Units expose the error: mg/c has units of N/(kg/m) = m^2/s^2, a speed squared rather than a speed.",
+            "This is a result to derive, not to look up: setting ΣF = 0 takes one line."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "last-weeks",
+      "title": "Before the exam: College Board's sheet",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Find the current equation sheet on College Board's AP® Physics C: Mechanics exam page, and read it once from top to bottom, noting how it groups relations.",
+            "Take your last full Liminal practice exam with College Board's sheet in place of the reference printed at the end of the student copy.",
+            "On a copy of Liminal's reference, mark each row you used that you could not find on College Board's sheet, and practise recalling or deriving each one.",
+            "Note any symbol that differs between the two, so that a different letter for the same quantity does not slow you down on the day."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this advice fails: rehearsing with a sheet helps you find relations faster, but it does not teach you which one a situation needs. If your practice-exam log shows points lost to choosing the wrong principle, more time with any sheet will not fix that; mixed sets and the unit reviews will."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "The calculus moves mechanics asks for",
+              "ref": "guide:calculus-methods"
+            },
+            {
+              "label": "How the exam runs and how to pace it",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Methods for multiple choice",
+              "ref": "guide:multiple-choice-methods"
+            },
+            {
+              "label": "Unit 5 review: torque and rotational dynamics",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 6 review: energy and momentum of rotating systems",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 7 review: oscillations",
+              "ref": "guide:review-u7"
+            },
+            {
+              "label": "Practice exam A, with the formula reference at the end",
+              "ref": "test:practice-exam"
+            },
+            {
+              "label": "Mixed set 2, at the exam's pace",
+              "ref": "test:mixed-2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

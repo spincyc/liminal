@@ -1,0 +1,430 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "fr-experimental-design",
+  "kind": "fr-archetype",
+  "title": "Experimental Design and Analysis",
+  "author": "p1-fr-eda-author",
+  "summary": "The Experimental Design and Analysis question on the AP® Physics 1 Exam sets a goal for an investigation and asks you to plan the measurements, connect a physics model to a straight-line graph, analyze data, and judge the result. This guide shows how the parts usually run, what earns each kind of point in Liminal's rubrics, model sentences, the usual traps, one worked model and four self-checks, and ends with a practice set of four questions from four units. All data here are invented for practice, and paper practice does not replace the hands-on lab work the AP physics courses require.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "p1-fr-experimental-design-g1",
+      "alt": "Graph of lift time t in seconds against load mass m in kilograms. Five points lie close to a straight line through the origin. Two open circles on the line, at m = 0.05 kg and m = 0.55 kg, are joined by a dashed horizontal run labeled 0.50 kg and a dashed vertical rise labeled 4.79 s.",
+      "caption": "The slope comes from two points on the line, far apart, not from two rows of the table."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "College Board's exam pages (checked 2026-10-22) name Experimental Design and Analysis as one of the four free-response question types on the AP Physics 1 Exam; the free-response section gives 95 minutes for its four questions, one of each type. Liminal scores this type out of 10 points and paces it at 27 minutes, inside the 25–30 minutes that Liminal's practice exams suggest for it. Both numbers are Liminal practice conventions, not values stated by College Board."
+        },
+        {
+          "type": "text",
+          "text": "The stem sets a goal for an investigation: find a quantity such as a spring constant, a coefficient of friction, a mass or a density, or test how one quantity depends on another. It describes the equipment and often gives a table of measurements. Somewhere in the question is a physics model that links what was measured to what is wanted, and the wanted quantity usually hides in the slope or intercept of a straight-line graph."
+        },
+        {
+          "type": "text",
+          "text": "Any unit can supply the physics: energy and friction, momentum, torque, fluids, oscillations. The habits that earn points are the same whatever the topic: say exactly what is measured and how, start the analysis from a fundamental relation for a named system, rearrange so the graph is a straight line, read the line rather than the data, and judge results with numbers."
+        },
+        {
+          "type": "text",
+          "text": "All data in this guide and its practice set are invented for practice. Paper practice builds the reasoning the question rewards, but it does not replace the hands-on lab work the AP physics courses require."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Most questions use four or five of these, roughly in this order. The right column is where Liminal's rubrics usually put the points.",
+          "head": [
+            "Part type",
+            "What you do",
+            "Points usually go to"
+          ],
+          "rows": [
+            [
+              "Design or describe a procedure",
+              "Name each quantity measured and its instrument, what you vary, what you hold fixed, and how one trial runs",
+              "A complete, repeatable method; one specific step that reduces uncertainty"
+            ],
+            [
+              "Derive the model",
+              "Start from Newton's second law, rotational equilibrium, or conservation of energy or momentum for a named system, and solve for the measured quantity",
+              "The starting equation with every term; the solved relation"
+            ],
+            [
+              "Choose a linearization",
+              "Rearrange so two plotted quantities make a straight line, and say what the slope and intercept equal",
+              "The quantities plotted; the meaning of the slope"
+            ],
+            [
+              "Plot and fit",
+              "Label axes with quantity and unit, choose scales that spread the data, plot every point, draw one straight best-fit line",
+              "Axes and points; the line"
+            ],
+            [
+              "Use the line",
+              "Take the slope from two points on the line far apart, with units, and solve for the wanted quantity",
+              "The slope with units; the final value with units"
+            ],
+            [
+              "Evaluate",
+              "Compare with a second method, explain a discrepancy, predict the effect of a change, or judge a claim",
+              "A conclusion tied to a calculation or to the derived relation"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A procedure part may come before you see any data, asking you to design the experiment from a goal and a list of equipment. Later parts build on earlier ones: a wrong slope carried correctly into the next part still earns the points for using it correctly, so always show the numbers you used."
+        }
+      ]
+    },
+    {
+      "id": "what-earns-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics for this type award six kinds of points."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Procedure points: what is measured, with which instrument, how the independent variable is changed, what is held constant, and how one trial runs. \"Measure the speed\" earns nothing; \"read the cart's speed from the motion sensor just after the push ends\" does.",
+            "Uncertainty points: one specific step tied to this experiment, such as repeating trials and averaging, timing many cycles, widening the range of the independent variable, reading a scale at eye level, or zeroing a sensor. \"Be more careful\" is not a step.",
+            "Derivation points: begin from a fundamental relation and name the system and the principle. Write every term, use the stem's own symbols consistently, and solve for the quantity you will plot.",
+            "Graph points: axes labeled with quantity and unit, uniform scales that use most of the grid, every point placed correctly, and one straight best-fit line with points on both sides of it.",
+            "Analysis points: a slope taken from two points on the line, with units, and the wanted quantity solved from it with units and sensible precision.",
+            "Consistency points: later answers that agree with your own earlier values, and an evaluation that uses your numbers rather than general remarks."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Linearize before you plot",
+          "text": "Rearrange the model into y = (slope)·x + (intercept), where y and x are measured quantities or quantities calculated from measurements, and the slope and intercept contain the constants you want.",
+          "conditions": [
+            "Only the plotted quantities may change from trial to trial; everything inside the slope and intercept must be held fixed.",
+            "When the model predicts a zero intercept, a small intercept in the data is ordinary scatter; a large one points to an effect the model leaves out or to a systematic error, such as a sensor that was not zeroed."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Common linearizations. k, a and b stand for constants that contain the quantity you want.",
+          "head": [
+            "Model",
+            "Plot",
+            "Slope",
+            "Intercept"
+          ],
+          "rows": [
+            [
+              "y = kx",
+              "y against x",
+              "k",
+              "0"
+            ],
+            [
+              "y = kx^2",
+              "y against x^2",
+              "k",
+              "0"
+            ],
+            [
+              "y = k/x",
+              "y against 1/x",
+              "k",
+              "0"
+            ],
+            [
+              "y = k√x",
+              "y against √x",
+              "k",
+              "0"
+            ],
+            [
+              "y^2 = kx",
+              "y^2 against x",
+              "k",
+              "0"
+            ],
+            [
+              "y = ax + b",
+              "y against x",
+              "a",
+              "b"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Read the slope from the line",
+          "text": "Choose two points on your best-fit line far apart, ideally where the line crosses grid lines, and divide the rise by the run, keeping the units of each axis. Use a data point only if it lies on the line.",
+          "conditions": [
+            "If an axis is in cm, g or cm^3, convert the slope to SI units before using it.",
+            "The slope's units must match what the model says it equals; checking them catches setup errors."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Name the system and the principle",
+          "text": "Before writing an equation, say which objects are in the system and which law you apply: Newton's second law, rotational equilibrium about a chosen axis, conservation of energy, or conservation of momentum. The choice decides which forces are internal and which energy terms appear.",
+          "conditions": [
+            "Momentum of a system is conserved only when the net external force on it is negligible during the interaction.",
+            "Kinetic friction converts mechanical energy to internal energy: μ_k times the normal force times the sliding distance, for each surface."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "A procedure for timing a glider over a measured distance.",
+          "text": "Mark a start line and a finish line 1.50 m apart along the air track with tape, measured with a meter stick. Release the glider from rest at the start line and film it beside a stopwatch display; read the time to the finish line frame by frame. Change only the hanging mass, keep the release point and the track's tilt the same, and repeat each mass five times and average the times."
+        },
+        {
+          "type": "model",
+          "prompt": "A step that reduces uncertainty.",
+          "text": "Time 20 oscillations and divide by 20, so the reaction-time error in starting and stopping the timer, about 0.2 s, is shared over 20 periods instead of falling on one."
+        },
+        {
+          "type": "model",
+          "prompt": "Starting a derivation.",
+          "text": "Take the glider and the hanging mass as the system. Along the string's path the only external force is the weight of the hanging mass, because the track is level and frictionless and the tension is internal. Newton's second law gives mg = (M + m)a."
+        },
+        {
+          "type": "model",
+          "prompt": "Choosing a graph.",
+          "text": "The model gives T^2 = (4π^2/k)m. A graph of T^2 against m should therefore be a straight line through the origin with slope 4π^2/k, so k = 4π^2/slope."
+        },
+        {
+          "type": "model",
+          "prompt": "Reporting a slope.",
+          "text": "Two points on the best-fit line, (0.10 m, 0.62 N) and (0.50 m, 3.02 N), give slope = (3.02 N − 0.62 N)/(0.50 m − 0.10 m) = 6.0 N/m."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining a discrepancy.",
+          "text": "The measured power, 1.40 W, is about 12% below the 1.60 W the motor's electrical input supplies. Friction in the axle converts part of the motor's output to internal energy, so less work is done on the load each second; that effect makes the measured power smaller, which matches the direction of the difference."
+        },
+        {
+          "type": "model",
+          "prompt": "Judging a claim that heavier carts speed up faster down the same frictionless incline.",
+          "text": "The data do not support the claim. The model's acceleration, g sin θ, does not contain the mass, and the three masses gave accelerations within 2% of one another, which is less than the 3% spread between repeated trials of a single mass."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "A vague procedure: \"measure the speed of the cart and the height of the ramp\".",
+          "fix": "Name the instrument and where and when it measures: \"read the speed from the motion sensor just after the push ends\", \"measure h vertically from the floor with an upright meter stick\"."
+        },
+        {
+          "type": "trap",
+          "text": "Changing two things at once, such as a heavier cart and a harder push in the same trial.",
+          "fix": "Vary one independent variable, hold every other quantity fixed, and say how you hold it fixed."
+        },
+        {
+          "type": "trap",
+          "text": "An uncertainty step of \"avoid human error\" or \"be more careful\".",
+          "fix": "Name a concrete action and why it helps: repeat and average, time many cycles, widen the range, zero the sensor, read the scale at eye level."
+        },
+        {
+          "type": "trap",
+          "text": "Plotting the raw variables when the model is not linear in them, then drawing a straight line through a curve.",
+          "fix": "Rearrange first. If the model contains 1/d, x^2 or √h, plot that quantity, and say what the slope then equals."
+        },
+        {
+          "type": "trap",
+          "text": "Taking the slope from the first and last rows of the table.",
+          "fix": "Use two well-separated points on your drawn line. The line averages the scatter; two data points keep all of their error."
+        },
+        {
+          "type": "trap",
+          "text": "Forcing the line through the origin, or through as many points as possible.",
+          "fix": "Draw the single straight line that best follows the trend, with points on both sides. Let the data place it, then compare its intercept with the model's."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the slope's units, or mixing centimeters and meters.",
+          "fix": "Write the slope with the units of the axes and then convert: 1 N/cm = 100 N/m, so a slope of 0.45 N/cm is 45 N/m, and 1 N/cm^3 = 10^6 N/m^3."
+        },
+        {
+          "type": "trap",
+          "text": "Losing a sign: using a speed where the model needs a velocity, so a rebound counts as forward motion.",
+          "fix": "State the positive direction and keep the sign of every velocity in the data. A cart that bounces back has a negative velocity, and v_0 − v_A is then larger than v_0."
+        },
+        {
+          "type": "trap",
+          "text": "Starting the derivation from a remembered result instead of a fundamental relation.",
+          "fix": "Begin from Newton's second law, rotational equilibrium, or a conservation law for a named system, write every term, and then solve."
+        },
+        {
+          "type": "trap",
+          "text": "Blaming \"friction\" or \"human error\" for any discrepancy, whatever its direction.",
+          "fix": "Say which way the effect pushes the result and check that it matches the data: an effect that makes a value larger cannot explain a value that came out smaller."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "This short question uses invented data. Try each part before reading the steps, then compare your wording with the model."
+        },
+        {
+          "type": "example",
+          "prompt": "A student wants to test whether a small electric motor delivers the same useful power P to every load it lifts. The motor winds a string onto its axle and lifts a load of mass m at constant speed through a vertical height h = 0.80 m. For each load the student records the lift time t, the average of three lifts:\n\n| m (kg) | 0.10 | 0.20 | 0.30 | 0.40 | 0.50 |\n| --- | --- | --- | --- | --- | --- |\n| t (s) | 0.95 | 1.94 | 2.83 | 3.86 | 4.78 |\n\n(a) Describe how the student could measure t and check that the load moves at constant speed, with one step that reduces uncertainty. (b) Assuming P is the same for every load, derive an expression for t in terms of m, g, h and P, and state what graph should be a straight line. (c) Use the graph to determine P. (d) Do the data support the claim that P is the same for every load? Explain.",
+          "answer": "(a) Film the lift beside a vertical meter stick and time the load between two marks 0.80 m apart, starting the motor below the lower mark; equal distances in equal frame counts show constant speed; repeat and average. (b) t = (gh/P)m, so t against m is a straight line through the origin with slope gh/P. (c) P ≈ 0.82 W. (d) Yes: the points lie close to a straight line through the origin, as constant power predicts.",
+          "steps": [
+            "(a) Mark two lines 0.80 m apart on a vertical meter stick beside the load. Start the motor with the load below the lower mark, so it is already moving steadily when it passes that mark, and film the lift. t is the time between passing the two marks, read frame by frame; equal distances in equal numbers of frames show that the speed is constant. Repeat each load three times and average.",
+            "(b) At constant speed the net force on the load is zero, so the string pulls up with a force mg, and the work done on the load over the height h is mgh. If the useful power is constant, P = mgh/t, so t = (gh/P)·m. A graph of t against m is a straight line through the origin with slope gh/P.",
+            "(c) Two points on the best-fit line, (0.05 kg, 0.48 s) and (0.55 kg, 5.27 s), give slope = 4.79 s/0.50 kg ≈ 9.6 s/kg. Then P = gh/slope = (9.8 m/s^2)(0.80 m)/(9.6 s/kg) ≈ 0.82 W. The units check: (m/s^2)(m)/(s/kg) = kg·m^2/s^3 = J/s = W.",
+            "(d) The points lie close to a straight line through the origin, as the constant-power model predicts. If the power fell as the load grew, t would grow faster than in proportion to m and the points would bend upward. Over this range of loads, the data support the claim.",
+            "Check the habits: a stated measurement with a constant-speed check, a derivation from work and power for a named object, a slope read from the line with units, and a conclusion that cites the shape of the graph."
+          ],
+          "figureIds": [
+            "p1-fr-experimental-design-g1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you reveal the answer."
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-experimental-design-c1",
+          "prompt": "A student launches a puck across a level floor at several speeds v and measures the distance d it slides before stopping. A model gives d = v^2/(2μ_k g). What should the student plot to get a straight line, and how is μ_k found from that line?",
+          "hint": "Which measured quantity appears squared in the model?",
+          "answer": "Plot d against v^2. The slope is 1/(2μ_k g), so μ_k = 1/(2g × slope).",
+          "steps": [
+            "The model has the form d = (constant)·v^2, so d against v^2 is a straight line through the origin.",
+            "slope = 1/(2μ_k g), so μ_k = 1/(2g × slope).",
+            "Plotting d against v would give a curve, and a straight line drawn through it would have no physical meaning."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-experimental-design-c2",
+          "prompt": "On a graph of the force F (in N) needed to stretch a spring against the stretch x (in cm), the best-fit line passes through (2.0 cm, 0.90 N) and (14.0 cm, 6.30 N). One data point, (8.0 cm, 3.90 N), lies just above the line. Find the spring constant in N/m.",
+          "hint": "Use the two points that lie on the line, then convert the unit.",
+          "answer": "45 N/m",
+          "steps": [
+            "slope = (6.30 N − 0.90 N)/(14.0 cm − 2.0 cm) = 5.40 N/12.0 cm = 0.450 N/cm.",
+            "1 cm = 0.01 m, so 0.450 N/cm = 45.0 N/m, and k = 45 N/m.",
+            "The point (8.0 cm, 3.90 N) is a data point off the line (the line gives 3.60 N there), so it is not used for the slope."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-experimental-design-c3",
+          "prompt": "To find how the distance a cart rolls across a carpet depends on its starting speed, a student runs one trial with an empty cart pushed gently and a second with a loaded cart pushed hard, and finds the second distance larger. What is wrong with the design, and how should it be fixed?",
+          "hint": "List everything that differs between the two trials.",
+          "answer": "Two quantities changed at once, the mass and the speed, so the larger distance cannot be credited to the speed. Keep the cart's mass fixed, vary only the starting speed, measure that speed in each trial (for example with a motion sensor just after the push ends), and test several speeds with repeated trials.",
+          "steps": [
+            "An experiment that changes two variables together cannot separate their effects.",
+            "Holding the mass fixed and measuring, not guessing, the starting speed turns the comparison into data that can be graphed."
+          ],
+          "see": "traps"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-experimental-design-c4",
+          "prompt": "A force sensor that was not zeroed reads 0.20 N too high on every reading. A student plots the sensor reading F against a spring's stretch x and finds the spring constant from the slope. How does the error affect the slope, the intercept and the spring constant?",
+          "hint": "Picture every point moving the same distance up.",
+          "answer": "The slope and the spring constant are unchanged; the intercept is 0.20 N too high.",
+          "steps": [
+            "Adding 0.20 N to every reading shifts the whole line up by 0.20 N without changing its steepness.",
+            "The spring constant comes from the slope, so it is unaffected. A value found from a single reading, k = F/x, would be too large: one reason to analyze a slope rather than one data point."
+          ],
+          "see": "what-earns-points"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set two questions at a sitting, at 27 minutes a question (Liminal's practice pace, inside the times its practice exams suggest): questions 1 and 2 (a block on a ramp, colliding carts), then questions 3 and 4 (a hinged rod, a foam block under water). Score each with its rubric and record raw points as practice. Then revisit the reviews and weeks below for any skill that cost you a point. The set's data are invented, and the set does not replace hands-on lab work."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-experimental-design"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-experimental-design"
+            },
+            {
+              "label": "Unit 3 review: work, energy, and power",
+              "ref": "guide:review-u3"
+            },
+            {
+              "label": "Unit 4 review: linear momentum",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 5 review: torque and rotational dynamics",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 8 review: fluids",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Week 12: nonconservative work and multistep systems",
+              "ref": "week:12"
+            },
+            {
+              "label": "Week 16: elastic and inelastic collisions",
+              "ref": "week:16"
+            },
+            {
+              "label": "Week 19: rotational equilibrium",
+              "ref": "week:19"
+            },
+            {
+              "label": "Week 27: buoyancy and Newton's laws in fluids",
+              "ref": "week:27"
+            },
+            {
+              "label": "Week 32: review: experimental design and written reasoning",
+              "ref": "week:32"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -167,3 +167,15 @@ test("prep and prep assessments are titled by the plan and link back to exam pre
   assert.match(p.elements.apContent.textContent, /Mixed set 4/);
   assert.match(p.elements.apContent.textContent, /being prepared/);
 });
+
+test("a physics prep page takes its calculator and pacing words from the physics blueprints", async () => {
+  const p = page("#physics-1/prep", { assessments: [], guides: [], references: [] });
+  await flush();
+  const text = p.elements.apContent.textContent;
+  assert.equal(p.document.title, "Course for AP® Physics 1 · Exam preparation — Liminal");
+  assert.match(text, /takes 3 hours\. Take it in one sitting, or Section I and Section II on separate days, with a calculator throughout/);
+  assert.match(text, /15 questions from across the course at the exam's pace: 15 with a calculator in 30 minutes/);
+  assert.match(text, /28 minutes a Translation Between Representations question/);
+  assert.doesNotMatch(text, /with a graphing calculator|calculator only in the parts/);
+  assert.match(text, /Experimental Design and Analysis set, questions 1 and 2/);
+});

@@ -1,0 +1,340 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "mixed-5",
+  "kind": "mixed-set",
+  "title": "Mixed set 5: all units at exam pace",
+  "author": "cm-mixed-5-6-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: 15 multiple-choice questions in 30 minutes, with a four-function, scientific or graphing calculator and the course's formula reference. The questions are mixed on purpose, so part of each one is deciding which principle or method applies: rotational inertia by integration or by the parallel-axis theorem, rolling with or without slipping, angular momentum or energy, a force or torque equation or an energy equation for oscillations. Expect it to feel slower than practising one topic at a time. Use g = 9.8 m/s^2 and SI units; take counterclockwise as the positive sense of rotation unless a question says otherwise, with angular quantities in radians and geometric angles in degrees. Record raw points; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "15 questions, 30 minutes. Choose the best answer for each question. Each question is worth 1 point, and there is no penalty for a wrong answer.",
+          "items": [
+            {
+              "id": "cm-mixed-5-mc01",
+              "prompt": "A small drone starts from rest at the origin of a horizontal x–y coordinate grid. Its acceleration is a(t) = (6.0t) i − (4.0) j, in m/s^2 with t in seconds. How far is the drone from the origin at t = 2.0 s?",
+              "choices": [
+                "8.0 m",
+                "11 m",
+                "14 m",
+                "25 m"
+              ],
+              "key": "B",
+              "rationale": "Integrate each component twice from rest at the origin. x: v_x = 3.0t^2 and x = 1.0t^3, so x(2.0) = 8.0 m. y: v_y = −4.0t and y = −2.0t^2, so y(2.0) = −8.0 m. The distance is √(8.0^2 + 8.0^2) = 11 m.",
+              "distractorNotes": {
+                "A": "This is only the x-coordinate. The constant y-acceleration also moves the drone 8.0 m in the −y direction.",
+                "C": "This uses the average x-acceleration, 6.0 m/s^2, in x = ½at^2. That formula needs a constant acceleration; with a linearly growing one, x = t^3 = 8.0 m, not 12 m.",
+                "D": "This uses x = ½at^2 with the x-acceleration at the end, 12 m/s^2, as if it had been constant; the x-acceleration grows from zero, so it must be integrated."
+              },
+              "topics": [
+                "CM.1.5",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc02",
+              "prompt": "A uniform rope 3.0 m long, of mass 1.5 kg, lies straight on level, frictionless ice. A skater grabs one end and pulls it along the line of the rope with a constant 12 N force. What is the tension in the rope at a point 1.0 m from the end the skater holds?",
+              "choices": [
+                "4.0 N",
+                "6.0 N",
+                "8.0 N",
+                "12 N"
+              ],
+              "key": "C",
+              "rationale": "The whole rope accelerates together: a = F/m = 12/1.5 = 8.0 m/s^2. Take as the system the 2.0 m of rope beyond the point, of mass (2.0/3.0)(1.5) = 1.0 kg. The only horizontal force on it is the tension T at the point, so T = (1.0)(8.0) = 8.0 N.",
+              "distractorNotes": {
+                "A": "This is the force needed to accelerate the 1.0 m of rope between the skater's hand and the point. The tension at the point pulls the part beyond it, not the part behind it.",
+                "B": "This averages the tensions at the two ends, 12 N and 0. That gives the tension at the rope's midpoint, not at a point 1.0 m from the pulled end.",
+                "D": "This treats the rope as massless, with the same tension everywhere. A rope with mass needs a net force on every piece to accelerate it, so the tension falls toward the free end."
+              },
+              "topics": [
+                "CM.2.5",
+                "CM.2.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc03",
+              "prompt": "A wind-turbine blade is modeled as a thin uniform rod of mass 12 kg and length 2.0 m. It lies along a radial line, with its inner end 0.50 m from the rotation axis and its tip 2.5 m from the axis; the axis is perpendicular to the blade. What is the blade's rotational inertia about the axis?",
+              "choices": [
+                "19 kg·m^2",
+                "25 kg·m^2",
+                "27 kg·m^2",
+                "31 kg·m^2"
+              ],
+              "key": "D",
+              "rationale": "The center of mass is 1.5 m from the axis, so I = (1/12)ML^2 + Md^2 = (1/12)(12)(2.0)^2 + (12)(1.5)^2 = 4.0 + 27 = 31 kg·m^2. Integrating gives the same: I = ∫ from 0.50 to 2.5 of (6.0 kg/m)r^2 dr = (2.0)(2.5^3 − 0.50^3) = 31 kg·m^2.",
+              "distractorNotes": {
+                "A": "This takes the rod's inertia about its inner end, (1/3)ML^2 = 16 kg·m^2, and adds M(0.50 m)^2 for the gap. The parallel-axis theorem shifts from the center of mass, so it must start from (1/12)ML^2 and use d = 1.5 m.",
+                "B": "This uses (1/3)M(2.5 m)^2, as if the rod reached all the way to the axis; the 0.50 m gap holds no blade.",
+                "C": "This treats the blade as a particle at its center of mass, Md^2, leaving out the blade's own (1/12)ML^2."
+              },
+              "topics": [
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc04",
+              "prompt": "A uniform solid ball of radius 0.028 m rests on a level table. A cue gives it a brief horizontal blow, aimed in the vertical plane that contains the ball's center. Friction from the table during the blow is negligible. At what height above the table must the blow be struck so that the ball rolls without slipping from the start?",
+              "choices": [
+                "0.028 m",
+                "0.056 m",
+                "0.011 m",
+                "0.039 m"
+              ],
+              "key": "D",
+              "rationale": "Let the impulse be J, struck a height h above the table. Linear impulse: J = mv. Angular impulse about the center: J(h − R) = (2/5)mR^2ω. Rolling without slipping needs v = Rω, so mv(h − R) = (2/5)mR^2(v/R), which gives h − R = (2/5)R and h = (7/5)R = (1.4)(0.028) = 0.039 m.",
+              "distractorNotes": {
+                "A": "This strikes through the center. The blow then has no angular impulse about the center, so the ball slides without spinning at first.",
+                "B": "This uses the hoop's rotational inertia, mR^2, which gives h − R = R. A solid ball has (2/5)mR^2.",
+                "C": "This is the offset above the center, (2/5)R, reported as the height above the table. The height above the table is R + (2/5)R."
+              },
+              "topics": [
+                "CM.6.5",
+                "CM.6.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc05",
+              "prompt": "A fan at one end of a level track blows on the sail of a cart. The push weakens as the cart moves away: F = 20e^(−0.50x), in newtons with x in meters, directed along +x. How much work does this force do on the cart as it moves from x = 0 to x = 3.0 m?",
+              "choices": [
+                "13 J",
+                "31 J",
+                "37 J",
+                "60 J"
+              ],
+              "key": "B",
+              "rationale": "The force depends on position, so integrate: W = ∫ from 0 to 3.0 of 20e^(−0.50x) dx = 40(1 − e^(−1.5)) = 40(0.777) = 31 J.",
+              "distractorNotes": {
+                "A": "This multiplies the force at x = 3.0 m, 4.5 N, by the distance, as if the push had been that weak throughout.",
+                "C": "This averages the end forces, 20 N and 4.5 N, and multiplies by the distance. That trapezoid is exact only for a force that changes linearly with x.",
+                "D": "This multiplies the force at x = 0, 20 N, by the distance, as if the push had stayed at its starting value."
+              },
+              "topics": [
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc06",
+              "prompt": "A 1.0 kg block hangs from a light string that passes over a pulley, a uniform disk of mass 4.0 kg and radius 0.12 m on a frictionless axle. The other end of the string is tied to a vertical spring, with k = 50 N/m, whose lower end is fixed to the floor. The string does not slip on the pulley. The block is pulled down a little and released. What is the period of its oscillations?",
+              "choices": [
+                "0.89 s",
+                "1.3 s",
+                "1.5 s",
+                "2.0 s"
+              ],
+              "key": "C",
+              "rationale": "The pulley's rim moves with the block, so ω = v/R and the pulley's kinetic energy is ½(½MR^2)(v/R)^2 = ½(M/2)v^2. Measured from equilibrium, gravity only shifts the equilibrium, so E = ½(m + M/2)v^2 + ½kx^2. This has the spring–mass form with effective mass m + M/2 = 3.0 kg, so T = 2π√(3.0/50) = 1.5 s.",
+              "distractorNotes": {
+                "A": "This uses the block's mass alone, T = 2π√(m/k), and leaves out the pulley's rotational kinetic energy.",
+                "B": "This uses only the pulley's share, M/2 = 2.0 kg, and leaves out the block's own kinetic energy.",
+                "D": "This adds the pulley's whole mass, as if it were a hoop with I = MR^2. A uniform disk contributes M/2."
+              },
+              "topics": [
+                "CM.7.4",
+                "CM.6.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc07",
+              "prompt": "Block A, of mass 2.0 kg, is released from rest 0.45 m up a frictionless curved ramp. It slides onto a level frictionless floor and strikes block B, of mass 1.0 kg, which is at rest. The blocks stick together and slide up an identical frictionless ramp ahead. How high above the floor do they rise?",
+              "choices": [
+                "0.45 m",
+                "0.15 m",
+                "0.30 m",
+                "0.20 m"
+              ],
+              "key": "D",
+              "rationale": "Use energy, then momentum, then energy, each where it applies. Down the ramp: v = √(2gh) = 2.97 m/s. Sticking collision (momentum only): v′ = (2.0)(2.97)/3.0 = 1.98 m/s. Up the ramp: h′ = v′^2/(2g) = 0.20 m, which is (2/3)^2 of 0.45 m.",
+              "distractorNotes": {
+                "A": "This conserves mechanical energy through the whole motion. The blocks stick, so the collision converts kinetic energy into internal energy.",
+                "B": "This keeps one third of the kinetic energy instead of two thirds, mixing up the fraction lost in the collision, m_B/(m_A + m_B), with the fraction kept.",
+                "C": "This scales the height by m_A/(m_A + m_B), as the speed scales. Height goes with the square of the speed, so the factor is (2/3)^2."
+              },
+              "topics": [
+                "CM.4.4",
+                "CM.3.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc08",
+              "prompt": "A spool has a rim of radius 0.10 m and a central hub of radius 0.050 m. It rolls without slipping on its rim along a level floor. A string wound around the hub leaves the top of the hub horizontally, and a hand pulls the string's free end forward, in the direction the spool rolls, at a steady 0.60 m/s. What is the speed of the spool's center?",
+              "choices": [
+                "0.30 m/s",
+                "0.40 m/s",
+                "0.60 m/s",
+                "1.2 m/s"
+              ],
+              "key": "B",
+              "rationale": "Rolling without slipping on the rim makes the floor contact point the instantaneous axis, with ω = v/R. The top of the hub is R + r = 0.15 m from that point, so it moves at ω(R + r) = v(1 + r/R) = 1.5v. The string moves with that point: 1.5v = 0.60 m/s, so v = 0.40 m/s.",
+              "distractorNotes": {
+                "A": "This scales the string's speed by r/R, as for meshed gears, instead of adding the hub's rotational speed to the center's speed.",
+                "C": "This sets the spool's center speed equal to the string's speed, ignoring that the string also unwinds or winds as the spool turns.",
+                "D": "This is the answer for a string leaving the bottom of the hub, where the hub's point moves at v(1 − r/R)."
+              },
+              "topics": [
+                "CM.5.2",
+                "CM.6.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc09",
+              "prompt": "A cart on a level track coasts at 6.0 m/s into a long magnetic braking zone. In the zone, its acceleration is a = −(2.0 s^−1)v, where v is its velocity along the track, and no other horizontal force acts. How far into the zone can the cart travel?",
+              "choices": [
+                "3.0 m",
+                "1.5 m",
+                "9.0 m",
+                "There is no limit, because the cart's speed never reaches zero"
+              ],
+              "key": "A",
+              "rationale": "The acceleration depends on velocity and the question asks about distance, so write a = v dv/dx: v dv/dx = −2.0v, so dv/dx = −2.0 s^−1 and v = 6.0 − 2.0x. The speed reaches zero only as x approaches 3.0 m (after infinitely long), so the cart travels at most 3.0 m.",
+              "distractorNotes": {
+                "B": "This treats the initial deceleration, 12 m/s^2, as constant in v^2 = v_0^2 + 2aΔx. The deceleration shrinks as the cart slows.",
+                "C": "This puts 2.0 into v^2 = v_0^2 + 2aΔx as if it were a constant acceleration in m/s^2; it is a rate per second that multiplies v.",
+                "D": "The speed decays as 6.0e^(−2.0t) and never reaches zero, but the distance x(t) = 3.0(1 − e^(−2.0t)) approaches 3.0 m."
+              },
+              "topics": [
+                "CM.1.2",
+                "CM.2.9"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc10",
+              "prompt": "A uniform rod of mass 0.60 kg and length 0.80 m spins freely in a horizontal plane at 4.0 rad/s about a vertical axle through its center. Two small 0.15 kg beads, threaded on the rod, are held at the axle. They are released, slide outward along the rod, and stop against small caps at the rod's two ends. What is the rod's angular speed then?",
+              "choices": [
+                "1.6 rad/s",
+                "2.5 rad/s",
+                "0.57 rad/s",
+                "2.9 rad/s"
+              ],
+              "key": "A",
+              "rationale": "No external torque acts about the axle, so angular momentum about it is conserved. I_rod = (1/12)(0.60)(0.80)^2 = 0.032 kg·m^2, and the beads at 0.40 m add 2(0.15)(0.40)^2 = 0.048 kg·m^2. ω = (0.032)(4.0)/(0.032 + 0.048) = 1.6 rad/s.",
+              "distractorNotes": {
+                "B": "This conserves kinetic energy. The beads hit the end caps and stop sliding, an inelastic process, so kinetic energy is not conserved.",
+                "C": "This puts the beads 0.80 m from the axle. The axle is at the rod's center, so each end is 0.40 m away.",
+                "D": "This uses (1/3)ML^2, the rod's inertia about an end, though the axle passes through the center."
+              },
+              "topics": [
+                "CM.6.4",
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc11",
+              "prompt": "A thin, uniform square plate 0.30 m on a side hangs from a horizontal pin through a small hole at the midpoint of one edge, so that it can swing in its own plane. Its rotational inertia about an axis through its center, perpendicular to the plate, is Ma^2/6, where M is its mass and a its side length. What is the period of its small oscillations?",
+              "choices": [
+                "0.63 s",
+                "0.78 s",
+                "1.0 s",
+                "1.2 s"
+              ],
+              "key": "C",
+              "rationale": "The center of mass is d = a/2 = 0.15 m below the pin. Parallel axis: I = Ma^2/6 + M(a/2)^2 = (5/12)Ma^2. T = 2π√(I/(Mgd)) = 2π√((5/12)a^2/(g a/2)) = 2π√(5a/(6g)) = 2π√((5)(0.30)/((6)(9.8))) = 1.0 s.",
+              "distractorNotes": {
+                "A": "This uses Ma^2/6, the inertia about the center, as the inertia about the pin and leaves out the parallel-axis term M(a/2)^2.",
+                "B": "This treats the plate as a simple pendulum of length 0.15 m, the distance from the pin to the center of mass, which leaves out the plate's rotational inertia about its center.",
+                "D": "This takes the pin-to-center distance as the full side, 0.30 m, in both the parallel-axis term and the torque. The center is half a side below the pin."
+              },
+              "topics": [
+                "CM.7.5",
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc12",
+              "prompt": "A small block slides without friction around the inside of a vertical circular loop of radius 0.80 m. What is the least speed it can have at the bottom of the loop if it is to stay in contact with the track all the way around?",
+              "choices": [
+                "2.8 m/s",
+                "5.6 m/s",
+                "6.3 m/s",
+                "6.9 m/s"
+              ],
+              "key": "C",
+              "rationale": "Combine Newton's second law at the top with energy conservation. At the top the least speed makes the normal force zero: mg = mv_top^2/R, so v_top^2 = gR. Energy from bottom to top: v_bottom^2 = v_top^2 + 4gR = 5gR, so v_bottom = √((5)(9.8)(0.80)) = 6.3 m/s.",
+              "distractorNotes": {
+                "A": "This is the least speed at the top, √(gR). The block slows as it climbs, so it needs more speed at the bottom.",
+                "B": "This uses energy alone and lets the block reach the top with zero speed. It would leave the track before the top.",
+                "D": "This requires the track to push down at the top with a force equal to the weight, so v_top^2 = 2gR. Contact only needs the normal force to reach zero there."
+              },
+              "topics": [
+                "CM.2.10",
+                "CM.3.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc13",
+              "prompt": "A uniform 2.0 kg disk of radius 0.25 m can turn in a vertical plane about a horizontal, frictionless axle through a point on its rim. It is held with its center level with the axle and released from rest. Just after release, what is the magnitude of the acceleration of its center?",
+              "choices": [
+                "4.9 m/s^2",
+                "6.5 m/s^2",
+                "9.8 m/s^2",
+                "20 m/s^2"
+              ],
+              "key": "B",
+              "rationale": "About the axle, I = ½MR^2 + MR^2 = (3/2)MR^2, and gravity's torque is MgR because the center is level with the axle. α = MgR/((3/2)MR^2) = 2g/(3R). The center is R from the axle and the disk is not yet turning, so its acceleration is a = αR = 2g/3 = 6.5 m/s^2.",
+              "distractorNotes": {
+                "A": "This uses I_cm = MR^2, the hoop's value, which gives I = 2MR^2 about the axle and a = g/2.",
+                "C": "This treats the center as falling freely. The axle pushes up on the disk, so the center's acceleration is less than g.",
+                "D": "This uses I_cm = ½MR^2 about the axle and forgets the parallel-axis term MR^2, which gives a = 2g, more than free fall."
+              },
+              "topics": [
+                "CM.5.6",
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc14",
+              "prompt": "A 2.0 kg cart starts from rest on a level, frictionless track. A horizontal force F = 8.0x, in newtons with x in meters, pushes it in the +x direction from x = 0 to x = 1.5 m, and is then removed. What is the magnitude of the cart's momentum afterward?",
+              "choices": [
+                "4.2 kg·m/s",
+                "6.0 kg·m/s",
+                "8.5 kg·m/s",
+                "9.0 kg·m/s"
+              ],
+              "key": "B",
+              "rationale": "The force depends on position, so use work: W = ∫ from 0 to 1.5 of 8.0x dx = 4.0(1.5)^2 = 9.0 J = K. Then p = √(2mK) = √((2)(2.0)(9.0)) = 6.0 kg·m/s.",
+              "distractorNotes": {
+                "A": "This uses p = √(mK) and drops the 2 in p = √(2mK).",
+                "C": "This takes the work as the final force times the distance, (12 N)(1.5 m) = 18 J, as if the force had been 12 N throughout.",
+                "D": "This treats ∫F dx, the work in joules, as the impulse. Impulse is ∫F dt; with the force given as a function of position, find the energy first."
+              },
+              "topics": [
+                "CM.4.1",
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-5-mc15",
+              "prompt": "A probe coasts away from a planet of mass 6.0 × 10^24 kg with its engines off. At 1.0 × 10^7 m from the planet's center, it moves at 7.0 × 10^3 m/s in a direction 30° from the line pointing directly away from the planet. What is its speed when it is 2.0 × 10^7 m from the center? Use G = 6.67 × 10^−11 N·m^2/kg^2.",
+              "choices": [
+                "3.0 × 10^3 m/s",
+                "3.5 × 10^3 m/s",
+                "4.5 × 10^3 m/s",
+                "5.4 × 10^3 m/s"
+              ],
+              "key": "A",
+              "rationale": "The direction of the velocity at the second point is unknown, so use energy rather than angular momentum: ½v_2^2 − GM/r_2 = ½v_1^2 − GM/r_1. With GM = 4.0 × 10^14 m^3/s^2, v_2^2 = 4.9 × 10^7 − 2(4.0 × 10^14)(1.0 × 10^−7 − 5.0 × 10^−8) = 9.0 × 10^6 m^2/s^2, so v_2 = 3.0 × 10^3 m/s.",
+              "distractorNotes": {
+                "B": "This uses r_1v_1 = r_2v_2, which holds only where the velocity is perpendicular to the radius. Here the probe is not at its nearest or farthest point.",
+                "C": "This is the speed of a circular orbit at 2.0 × 10^7 m, √(GM/r). The probe is not in a circular orbit.",
+                "D": "This drops the factor of 2 in v_2^2 = v_1^2 − 2GM(1/r_1 − 1/r_2)."
+              },
+              "topics": [
+                "CM.6.6",
+                "CM.3.4"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "fr-experimental-design",
+  "kind": "fr-archetype",
+  "title": "Experimental Design and Analysis",
+  "author": "cm-fr-experimental-design-author",
+  "summary": "Experimental Design and Analysis is one of the four free-response question types on the AP® Physics C: Mechanics Exam. In Liminal's practice it is a 10-point question built around an investigation: you plan or improve a procedure, derive the relation a model gives, turn invented data into a straight-line graph, extract physical quantities from the slope and intercept, and judge the effect of an error. This guide shows what earns each kind of point, gives sentences you can model, names the usual traps, and ends with a worked model, four self-checks and a practice set of four questions. Paper practice does not replace the hands-on lab work the AP® physics courses require.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "cm-fr-experimental-design-g1",
+      "alt": "A graph of Y against X with six data points scattered close to a straight best-fit line. Two open circles mark points on the line itself, one near each end, and dashed segments from them form a large right triangle labeled run along the bottom and rise up the right side. Some data points lie above the line and some below, and none sits at a corner of the triangle.",
+      "caption": "Take the slope from two points on your line, far apart, not from two data points. The line averages the scatter; any two data points carry their own errors."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "College Board's exam pages (checked 2026-10-22) say that Section II of the AP® Physics C: Mechanics Exam has four free-response questions in 95 minutes, one of each type, and that Experimental Design and Analysis is one of the four types. Any calculator is allowed. Liminal's practice scores this type out of 10 points; that point value is a Liminal convention, not a College Board fact."
+        },
+        {
+          "type": "text",
+          "text": "Every Liminal question of this type describes an investigation of a mechanics model: a cart on a track, a block on a board, a launcher, a rigid body that balances or turns. Some parts ask you to design: name what to vary, what to measure, what to keep the same, and how. Most ask you to analyze: derive the relation the model gives, choose quantities that make it a straight line, compute and plot them, and read physical quantities from the slope and intercept. The last part usually asks what an error, a change to the apparatus or a second measurement would do to the result."
+        },
+        {
+          "type": "text",
+          "text": "The physics is whatever unit the investigation comes from, so a question can test kinematics, forces, energy, momentum, rotation or oscillation. What stays the same is the method. The data in Liminal's questions are invented for practice, and paper practice does not replace the hands-on lab work the AP® physics courses require: designing a procedure on paper is not the same skill as making it work with real equipment."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Most questions use four or five of these. The middle column is what you write; the right column is where Liminal's rubrics usually put the points.",
+          "head": [
+            "Part type",
+            "What you do",
+            "Points usually go to"
+          ],
+          "rows": [
+            [
+              "Procedure",
+              "Say what you vary, what you measure and with what, what you keep the same, and how you reduce uncertainty",
+              "A measurement method that would actually give the quantity; a named control; repeated trials or a longer interval"
+            ],
+            [
+              "Derive the relation",
+              "Start from a fundamental relation (Newton's second law, energy conservation, a kinematic equation), name the system, and rearrange",
+              "The starting relation applied to a named system; the rearranged form"
+            ],
+            [
+              "Choose a linear graph",
+              "Rearrange the model into y = (slope)x + (intercept) with measured quantities as x and y",
+              "The pair of quantities; what the slope and intercept equal in symbols"
+            ],
+            [
+              "Compute and plot",
+              "Compute the new quantities, scale the axes, plot, and draw one best-fit line",
+              "Computed values; labeled, scaled axes; points placed correctly; a single straight line"
+            ],
+            [
+              "Analyze the line",
+              "Slope from two far-apart points on the line, intercept, then solve for the physical quantity",
+              "Slope and intercept with units; the quantity, inside the rubric's range"
+            ],
+            [
+              "Error or change",
+              "Trace an error or change through the model to the slope, the intercept or the result",
+              "Direction of the effect (too large or too small); the reason through the equation; often a size"
+            ],
+            [
+              "Second method or comparison",
+              "Compare with an independent value and say whether they agree",
+              "Both values; a judgment against the size of the uncertainty"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-earns-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics for this type award five kinds of points."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Derivation points: the derivation starts from a fundamental relation, applied to a named system, with the forces or energies listed, and keeps the question's symbols. Writing the target equation and calling it done earns nothing; a derivation that starts from F_net = ma or from conservation of energy and reaches it earns the setup point even after an algebra slip.",
+            "Graph points: axes labeled with quantity and unit, linear scales that use most of the grid, points placed correctly, and one straight best-fit line with points on both sides. A dot-to-dot line or a line forced through the first and last points loses the line point.",
+            "Analysis points: a slope taken from the line, with units, then the physical quantity it gives. The rubric gives a range, so a careful hand-drawn line earns the point; you never need least squares.",
+            "Reasoning points: a sentence that names the principle and says how the error or change moves the slope or intercept through the equation. \"The track would affect the result\" earns nothing; \"a track that is not level adds the same force component in every trial, which shifts every acceleration by the same amount and changes the intercept, not the slope\" does.",
+            "Consistency points: a later part that uses your own earlier slope or derived equation earns its points when the work is consistent with it. Write what you used."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Linearizing a model",
+          "text": "Rearrange the model so that one measured quantity, or a combination of measured quantities, is y, another is x, and every constant is gathered into the slope and the intercept: y = (slope)x + (intercept). Then say what the slope and intercept equal in symbols before you compute anything.",
+          "conditions": [
+            "Only the quantity you vary may appear in x; everything in the slope and intercept must be the same in every trial.",
+            "If the model has a nonzero starting value or a second unknown, expect a nonzero intercept and use it: it is often the second quantity the question wants.",
+            "Squaring, inverting or dividing measured values is allowed; taking the reciprocal of both sides or dividing through by a measured variable often removes an unknown."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "cm-fr-experimental-design-g1"
+        },
+        {
+          "type": "rule",
+          "title": "Systematic and random error",
+          "text": "Random error scatters points on both sides of the line; more trials and averaging reduce it. Systematic error moves every point the same way. A constant offset in x or in y shifts the line and changes only the intercept; a proportional error in y, or an error in a constant used to convert the slope, changes the slope or the quantity found from it.",
+          "conditions": [
+            "Trace the error through the equation: write what the slope equals, then see which factor the error changes.",
+            "When a quantity comes from a combination of slope and intercept, write that combination in symbols: any factor the slope and intercept share cancels from their ratio, so an error in that factor does not reach the quantity."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "A procedure for measuring how far a cart rolls up a ramp after leaving a launcher, for different launch compressions.",
+          "text": "Vary the compression x by setting the latch at 0.020, 0.030, 0.040, 0.050 and 0.060 m, measured with a ruler fixed to the launcher. For each setting, mark the highest point the cart reaches on a meter stick along the ramp, or read it from a video frame by frame. Keep the ramp angle, the cart and its load the same in every trial. Repeat each setting three times and average the distance."
+        },
+        {
+          "type": "model",
+          "prompt": "Starting a derivation from a fundamental relation and a named system.",
+          "text": "Take the ball and Earth as the system. Air resistance is negligible and nothing outside the system does work, so the system's mechanical energy is conserved between release and the photogate: mgh = ½mv^2, so v^2 = 2gh."
+        },
+        {
+          "type": "model",
+          "prompt": "Choosing the linear graph.",
+          "text": "For constant acceleration the model reads v^2 = 2ad + v_0^2. I will graph v^2 on the vertical axis against d on the horizontal axis. The slope should equal 2a and the vertical intercept v_0^2."
+        },
+        {
+          "type": "model",
+          "prompt": "Reading a slope.",
+          "text": "Using the points (0.10 m, 0.62 m^2/s^2) and (0.90 m, 2.38 m^2/s^2) on my best-fit line, the slope is (2.38 − 0.62)/(0.90 − 0.10) = 2.2 m/s^2. Because the slope equals 2a, a = 1.1 m/s^2."
+        },
+        {
+          "type": "model",
+          "prompt": "Tracing an error to the result.",
+          "text": "If the force sensor reads 5% high, every force on the graph of F against a is 5% too large, so every point moves up in proportion to its height. The line still passes through the origin, but its slope, and the mass found from it, are 5% too large."
+        },
+        {
+          "type": "model",
+          "prompt": "Comparing two values.",
+          "text": "The slope gives g = 9.6 m/s^2, 2% below 9.8 m/s^2. The points scatter about the line by about 3%, so the two values agree within the uncertainty of this experiment, and the data support the model."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Reading the slope from two data points, often the first and the last.",
+          "fix": "Draw the line first, then pick two points on it near its ends, marked so a reader can see them. The slope belongs to the line, not to the data."
+        },
+        {
+          "type": "trap",
+          "text": "Forgetting that the slope is a combination: reporting the slope of h against t^2 as g, or the slope of v^2 against d as a.",
+          "fix": "Before you compute, write \"slope = …\" in symbols from your linearized equation, then solve that equation for the quantity asked."
+        },
+        {
+          "type": "trap",
+          "text": "Forcing the line through the origin when the model has an intercept.",
+          "fix": "Let the data decide. A nonzero intercept is information: an initial speed, a constant offset in a sensor, a force present in every trial."
+        },
+        {
+          "type": "trap",
+          "text": "A procedure that names equipment but not the measurement: \"use a stopwatch and a ruler\".",
+          "fix": "Say what is timed or measured between which events, how the result becomes the quantity in the model, what is held fixed, and how many trials are averaged."
+        },
+        {
+          "type": "trap",
+          "text": "Saying \"human error\" or \"friction\" as an error source without its effect.",
+          "fix": "Name a specific cause and trace it: which quantity it changes, in which direction, and so whether the slope, intercept or result is too large or too small."
+        },
+        {
+          "type": "trap",
+          "text": "Axes with no units, uneven scales, or a scale that crowds the data into a corner of the grid.",
+          "fix": "Label each axis with quantity and unit, use equal steps, and choose a scale that spreads the points over at least half the grid in each direction, including zero when the intercept matters."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping units from a slope, or giving the slope the units of the result.",
+          "fix": "The slope's unit is the y unit divided by the x unit. Check the final quantity's unit by carrying units through the formula you used."
+        },
+        {
+          "type": "trap",
+          "text": "Deriving the relation by working backward from the equation the question gives.",
+          "fix": "Start from Newton's second law, conservation of energy or a kinematic equation, name the system, and move forward; the rubric's first point is for the starting relation applied correctly."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Invented data for practice. A student places a coin on a flat turntable at a distance r from its axis. She slowly increases the turntable's rate and records, with a rotation sensor, the angular speed ω_s at which the coin begins to slide. She models static friction as the only horizontal force on the coin, with the same coefficient μ_s at every r.\n\n| r (m) | 0.050 | 0.080 | 0.110 | 0.140 |\n| --- | --- | --- | --- | --- |\n| ω_s (rad/s) | 9.10 | 7.10 | 6.15 | 5.40 |\n\n(a) Show what graph of these data should be a straight line through the origin if the model is right. (b) Compute the values and find the slope of the best-fit line. (c) Find μ_s. (d) Why must the student increase the turntable's rate slowly?",
+          "answer": "(a) ω_s^2 against 1/r, slope μ_sg. (b) 1/r = 20.0, 12.5, 9.09 and 7.14 m^-1; ω_s^2 = 82.8, 50.4, 37.8 and 29.2 rad^2/s^2; slope about 4.1 m/s^2. (c) μ_s ≈ 0.42. (d) So that the coin needs friction only for its centripetal acceleration, and ω_s is read at the moment of slipping.",
+          "steps": [
+            "(a) Take the coin as the system. Just before it slides, static friction has its maximum size μ_sN = μ_smg and supplies the centripetal force: μ_smg = mω_s^2r, so ω_s^2 = μ_sg(1/r). A graph of ω_s^2 against 1/r is a straight line through the origin with slope μ_sg.",
+            "(b) 1/r: 1/0.050 = 20.0 m^-1, and so on; ω_s^2: 9.10^2 = 82.8 rad^2/s^2, and so on. A best-fit line passes near (0, −0.5 rad^2/s^2) and (20.0 m^-1, 82.5 rad^2/s^2), so its slope is about 83.0/20.0 ≈ 4.1 m/s^2 (radians carry no unit).",
+            "(c) slope = μ_sg, so μ_s = slope/g = (4.1 m/s^2)/(9.8 m/s^2) ≈ 0.42, with no unit, as a coefficient of friction should have.",
+            "(d) Speeding the turntable up also needs a tangential friction force, which adds to the friction the coin needs, so a quick spin-up makes it slide early; a slow increase also lets the sensor read the rate at the moment of slipping.",
+            "Check the habits: the derivation names the system and starts from Newton's second law, the slope is written in symbols before it is used, the slope comes from the line, and the units are carried through."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you reveal the answer."
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-experimental-design-c1",
+          "prompt": "A student launches a puck across level ice at different speeds v_0 and measures how far it slides, s, before stopping. The model says kinetic friction is the only horizontal force and μ_k does not depend on speed. What should the student graph to get a straight line through the origin, and how is μ_k found from its slope?",
+          "hint": "Start from the work–energy theorem for the puck, or from a kinematic equation with the friction deceleration.",
+          "answer": "Graph s against v_0^2. The slope is 1/(2μ_kg), so μ_k = 1/(2g × slope).",
+          "steps": [
+            "Work–energy for the puck: −μ_kmgs = 0 − ½mv_0^2, so s = v_0^2/(2μ_kg).",
+            "s is proportional to v_0^2, with slope 1/(2μ_kg); solve for μ_k."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-experimental-design-c2",
+          "prompt": "A student graphs the net force F on a cart (vertical axis, in N) against its acceleration a (horizontal axis, in m/s^2). Her best-fit line passes through (0.20 m/s^2, 0.25 N) and (2.20 m/s^2, 1.45 N). Her first and last data points are (0.30 m/s^2, 0.28 N) and (2.00 m/s^2, 1.38 N). What slope should she report, and what does it represent?",
+          "answer": "0.60 kg, the cart's mass.",
+          "steps": [
+            "Use the line: (1.45 N − 0.25 N)/(2.20 m/s^2 − 0.20 m/s^2) = 0.60 N/(m/s^2) = 0.60 kg.",
+            "The two data points would give 1.10/1.70 = 0.65 kg, which carries those points' own errors.",
+            "F = ma, so the slope of F against a is the mass."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-experimental-design-c3",
+          "prompt": "To find g, a student times a simple pendulum for several lengths L and graphs T^2 against L. She measures every L from the pivot to the top of the bob instead of to its center, and the bob's radius is 0.015 m. How does this affect the graph and the value of g found from its slope?",
+          "hint": "Write the model with the true length, then substitute the length she recorded.",
+          "answer": "Every recorded L is 0.015 m too short, so the line shifts toward smaller L and has a positive vertical intercept, (4π^2/g)(0.015 m). The slope, 4π^2/g, is unchanged, so g is unaffected.",
+          "steps": [
+            "T^2 = (4π^2/g)L_true, with L_true = L + 0.015 m.",
+            "So T^2 = (4π^2/g)L + (4π^2/g)(0.015 m): the same slope with a positive intercept."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-experimental-design-c4",
+          "prompt": "A ball is dropped from rest, and photogates record the time t for it to fall each of several distances h. A graph of h against t^2 has a best-fit slope of 4.86 m/s^2. A classmate reports g = 4.86 m/s^2. What is wrong, and what value of g do the data give?",
+          "answer": "The slope is g/2, not g; the data give g = 9.72 m/s^2.",
+          "steps": [
+            "From rest, h = ½gt^2, so the slope of h against t^2 is g/2.",
+            "g = 2 × 4.86 m/s^2 = 9.72 m/s^2."
+          ],
+          "see": "traps"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set at about 27 minutes a question, two questions at a sitting (54 minutes each), with any calculator and the formula reference. That is Liminal's practice pace, inside the 25–30 minutes practice exam A suggests for this question type. Draw every graph by hand on the grids provided. Score each question with its rubric, record raw points as practice, and rewrite one answer until every point is earned. Then revisit the reviews and weeks below for any idea that cost you a point. Remember that the data are invented, and that paper practice does not replace hands-on lab work."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-experimental-design"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-experimental-design"
+            },
+            {
+              "label": "Unit 1 review: kinematics",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 2 review: force and translational dynamics",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 3 review: work, energy and power",
+              "ref": "guide:review-u3"
+            },
+            {
+              "label": "Unit 5 review: torque and rotational dynamics",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Week 3: representing motion with slopes and areas",
+              "ref": "week:3"
+            },
+            {
+              "label": "Week 9: gravitational, friction and spring forces",
+              "ref": "week:9"
+            },
+            {
+              "label": "Week 14: conservation of energy",
+              "ref": "week:14"
+            },
+            {
+              "label": "Week 22: rotational equilibrium",
+              "ref": "week:22"
+            },
+            {
+              "label": "Week 32: review of rotation, oscillation and experimental design",
+              "ref": "week:32"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

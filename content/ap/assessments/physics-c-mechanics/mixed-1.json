@@ -1,0 +1,333 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "mixed-1",
+  "kind": "mixed-set",
+  "title": "Mixed set 1: all units at exam pace",
+  "author": "cm-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from every unit of the course at the exam's pace: Part A has 15 multiple-choice questions in 30 minutes, and a four-function, scientific or graphing calculator is allowed. The questions are mixed on purpose and are built around choices that are easy to confuse: whether to differentiate or integrate, which conservation law applies, and whether the constant-acceleration equations hold or a varying force calls for calculus. Part of each question is deciding which idea or method applies, so expect it to feel slower than practising one topic at a time. You may use the course's formula reference. Use g = 9.8 m/s^2 and SI units; angles inside functions of time are in radians. Record raw points; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "15 questions, 30 minutes. Choose the best answer for each question and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question.",
+          "items": [
+            {
+              "id": "cm-mixed-1-mc01",
+              "prompt": "A test capsule starts from rest in a straight, level vacuum tube. Its acceleration along the tube is a(t) = 0.90√t, with a in m/s^2 and t in seconds, for 0 ≤ t ≤ 4.0 s. How far does the capsule travel in those 4.0 s?",
+              "choices": [
+                "14 m",
+                "9.6 m",
+                "7.7 m",
+                "19 m"
+              ],
+              "key": "C",
+              "rationale": "The acceleration varies, so integrate twice. v(t) = ∫ from 0 to t of 0.90√t dt = 0.60t^1.5, and x(t) = ∫ from 0 to t of 0.60t^1.5 dt = 0.24t^2.5. At t = 4.0 s, x = 0.24(32) = 7.7 m (and v = 4.8 m/s).",
+              "distractorNotes": {
+                "A": "This puts the final acceleration, a(4.0 s) = 1.8 m/s^2, into x = ½at^2 as if it had acted the whole time; the acceleration grows, so the constant-acceleration equations do not apply.",
+                "B": "This uses the average acceleration, v/t = 1.2 m/s^2, in x = ½at^2, which is the same as taking the average velocity to be half the final velocity. That holds only when v grows linearly with t; here v grows as t^1.5.",
+                "D": "This is the final speed, 4.8 m/s, times 4.0 s, as if the capsule had moved at its final speed the whole time."
+              },
+              "topics": [
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc02",
+              "prompt": "A 2.0 × 10^4 kg rail car rolling at 1.5 m/s couples to a 3.0 × 10^4 kg rail car at rest, and the two then roll together into a spring bumper at the end of the level track. Ignoring friction, what is the greatest elastic potential energy stored in the bumper?",
+              "choices": [
+                "9.0 × 10^3 J",
+                "2.3 × 10^4 J",
+                "1.4 × 10^4 J",
+                "5.4 × 10^3 J"
+              ],
+              "key": "A",
+              "rationale": "Two stages need two different laws. The coupling conserves momentum but not kinetic energy: (2.0 × 10^4)(1.5) = (5.0 × 10^4)v gives v = 0.60 m/s. During the compression no energy is dissipated, so the bumper's greatest stored energy equals the cars' kinetic energy then: ½(5.0 × 10^4)(0.60)^2 = 9.0 × 10^3 J.",
+              "distractorNotes": {
+                "B": "This is the first car's kinetic energy before coupling, ½(2.0 × 10^4)(1.5)^2 = 2.25 × 10^4 J. Coupling is a perfectly inelastic collision, so kinetic energy is not conserved through it.",
+                "C": "This is the kinetic energy lost in the coupling, 2.25 × 10^4 J − 9.0 × 10^3 J, not the energy the coupled cars carry into the bumper.",
+                "D": "This uses the correct common speed, 0.60 m/s, but only the second car's mass, ½(3.0 × 10^4)(0.60)^2. Both cars move together and both are stopped by the bumper."
+              },
+              "topics": [
+                "CM.4.4",
+                "CM.3.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc03",
+              "prompt": "A 5.0 kg box rests on a ramp inclined at 15° above the horizontal. The coefficients of friction between the box and the ramp are μ_s = 0.60 and μ_k = 0.45. What is the magnitude of the friction force on the box?",
+              "choices": [
+                "28 N",
+                "21 N",
+                "0",
+                "13 N"
+              ],
+              "key": "D",
+              "rationale": "The box stays at rest because tan 15° = 0.27 is less than μ_s = 0.60, so friction is static and takes whatever value keeps the net force zero: f = mg sin 15° = (5.0)(9.8)(0.259) = 13 N, directed up the ramp. μ_s n = 28 N is only the upper limit.",
+              "distractorNotes": {
+                "A": "This is μ_s n = 0.60(5.0)(9.8)cos 15°, the greatest friction force the surfaces can supply, not the force actually needed to hold the box.",
+                "B": "This is μ_k n, the kinetic friction force; the box is not sliding, so kinetic friction does not apply.",
+                "C": "A box at rest on a ramp still needs friction to balance the component of gravity along the ramp; without it the box would slide."
+              },
+              "topics": [
+                "CM.2.7",
+                "CM.2.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc04",
+              "prompt": "The pad of a floor polisher is a flat disk of radius R that spins against the floor about its central axis. The pad presses on the floor with a total normal force N spread evenly over its face, and the coefficient of kinetic friction between the pad and the floor is μ. What is the magnitude of the torque that friction from the floor exerts on the spinning pad about its axis?",
+              "choices": [
+                "μNR",
+                "(2/3)μNR",
+                "(1/2)μNR",
+                "0"
+              ],
+              "key": "B",
+              "rationale": "The friction is spread over the face, so integrate. A ring of radius r and width dr carries normal force dN = N(2πr dr)/(πR^2), and the friction on it, μ dN, acts tangentially with lever arm r. τ = ∫ from 0 to R of r μ(2Nr/R^2) dr = (2μN/R^2)(R^3/3) = (2/3)μNR.",
+              "distractorNotes": {
+                "A": "This puts all of the friction at the rim. Friction near the center has a shorter lever arm, so the torque is less.",
+                "C": "This puts all of the friction at the average radius R/2. More of the pad's area lies far from the center, so the torque-weighted average radius is 2R/3, not R/2.",
+                "D": "The friction forces on opposite sides of the axis point in opposite directions, so their vector sum is zero, but they all turn the pad the same way, so their torques add."
+              },
+              "topics": [
+                "CM.5.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc05",
+              "prompt": "A particle moving along the x-axis is acted on by a single conservative force F(x) = −8.0x + 2.0x^2, with F in newtons and x in meters. Taking U = 0 at x = 0, what is the potential energy at x = 2.0 m?",
+              "choices": [
+                "−11 J",
+                "16 J",
+                "11 J",
+                "0"
+              ],
+              "key": "C",
+              "rationale": "U(x) = −∫ from 0 to x of F dx = −(−4.0x^2 + 0.667x^3) = 4.0x^2 − 0.667x^3. At x = 2.0 m, U = 16 − 5.3 = 11 J. Check: −dU/dx = −8.0x + 2.0x^2 = F.",
+              "distractorNotes": {
+                "A": "This sets U equal to +∫F dx. The potential energy is the negative of the work done by the force: U(x) = −∫ from 0 to x of F dx.",
+                "B": "This takes U = −F(2.0 m)·x = −(−8.0 N)(2.0 m) = 16 J, as if the force had its x = 2.0 m value all the way. The force varies, so it must be integrated.",
+                "D": "This differentiates F instead of integrating it: dF/dx = −8.0 + 4.0x happens to be zero at x = 2.0 m, but a derivative of the force is not a potential energy."
+              },
+              "topics": [
+                "CM.3.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc06",
+              "prompt": "A uniform disk with rotational inertia 0.030 kg·m^2 spins at 20 rad/s on a frictionless vertical axle. A second disk, with rotational inertia 0.010 kg·m^2 and not rotating, is dropped onto it along the same axle, and friction between the disks soon makes them turn together. What is their common angular speed?",
+              "choices": [
+                "15 rad/s",
+                "17 rad/s",
+                "20 rad/s",
+                "10 rad/s"
+              ],
+              "key": "A",
+              "rationale": "The axle is frictionless and the disks exert torques only on each other, so the angular momentum of the two-disk system is conserved: (0.030)(20) = (0.030 + 0.010)ω, so ω = 15 rad/s. Kinetic energy falls from 6.0 J to 4.5 J.",
+              "distractorNotes": {
+                "B": "This conserves kinetic energy: ½(0.030)(20)^2 = ½(0.040)ω^2 gives 17 rad/s. Friction between the disks while they slip converts kinetic energy to internal energy.",
+                "C": "No external torque acts, but that conserves the angular momentum, not the angular speed; the rotational inertia increases.",
+                "D": "This averages the two disks' angular speeds, 20 rad/s and 0, without weighting them by their rotational inertias."
+              },
+              "topics": [
+                "CM.6.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc07",
+              "prompt": "A small rubber ball is dropped from rest 1.2 m above a hard floor and bounces elastically, rising back to the same height after every bounce. Ignoring air resistance and the brief contact time, what is the period of its up-and-down motion?",
+              "choices": [
+                "2.2 s",
+                "0.99 s",
+                "0.49 s",
+                "2.0 s"
+              ],
+              "key": "B",
+              "rationale": "Between bounces the only force is gravity, so the constant-acceleration equations apply. The fall takes t = √(2h/g) = √(2(1.2)/9.8) = 0.49 s, and the rise takes the same time, so T = 2(0.49 s) = 0.99 s.",
+              "distractorNotes": {
+                "A": "This is 2π√(h/g), a simple-harmonic formula. The ball's motion repeats, but the force on it is a constant weight, not a restoring force proportional to displacement, so it is not simple harmonic motion.",
+                "C": "This is only the time to fall from 1.2 m. A full cycle also includes the rise back to the top.",
+                "D": "This treats the fall as a quarter of a cycle, as in simple harmonic motion. The fall and the rise are each half of this cycle."
+              },
+              "topics": [
+                "CM.7.1",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc08",
+              "prompt": "For which of these motions do the constant-acceleration equations, such as v = v_0 + at, correctly describe the object over the whole stated interval?",
+              "choices": [
+                "A block on a horizontal spring, from its release until it first passes equilibrium",
+                "A steel ball sinking from rest through oil, from release until it nears terminal speed",
+                "A crate sliding up a rough ramp after a shove, from the moment it leaves the hand until it stops",
+                "A car driven from rest at constant engine power, during its first 10 s"
+              ],
+              "key": "C",
+              "rationale": "While the crate slides up the ramp, gravity, the normal force and kinetic friction (μ_k n) are all constant, so the net force and the acceleration are constant and the constant-acceleration equations hold until it stops. In the other cases the force depends on position, velocity or speed, so the acceleration varies and calculus is needed.",
+              "distractorNotes": {
+                "A": "The spring force −kx changes as the block moves, so the acceleration changes.",
+                "B": "The drag force grows with speed, so the acceleration falls from g toward zero.",
+                "D": "At constant power the driving force P/v falls as the car speeds up, so the acceleration falls."
+              },
+              "topics": [
+                "CM.2.5",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc09",
+              "prompt": "A spring launcher pushes a 0.30 kg puck, initially at rest, along a level, frictionless table. While they are in contact, the launcher's force on the puck is F(t) = F_0(1 − t/T)^2, with F_0 = 90 N and T = 0.040 s; at t = T the puck leaves the launcher. What is the puck's speed as it leaves?",
+              "choices": [
+                "12 m/s",
+                "6.0 m/s",
+                "2.8 m/s",
+                "4.0 m/s"
+              ],
+              "key": "D",
+              "rationale": "The force is given as a function of time, so integrate it over time to get the impulse: J = ∫ from 0 to T of F_0(1 − t/T)^2 dt = F_0 T/3 = (90)(0.040)/3 = 1.2 N·s. The puck starts at rest, so v = J/m = 1.2/0.30 = 4.0 m/s.",
+              "distractorNotes": {
+                "A": "This uses F_0 T = 3.6 N·s, treating the peak force as if it lasted the whole contact time.",
+                "B": "This uses F_0 T/2, the area of a triangle. The force falls along a curve, (1 − t/T)^2, not a straight line, so the area is F_0 T/3.",
+                "C": "This sets the impulse, 1.2 N·s, equal to the kinetic energy ½mv^2. Force integrated over time gives the change in momentum, not the change in kinetic energy."
+              },
+              "topics": [
+                "CM.4.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc10",
+              "prompt": "A 1.2 kg cart starts from rest at x = 0 on a level, frictionless track. A horizontal push along the track depends on the cart's position as listed, and changes linearly between the listed positions.\n| x (m) | 0 | 1.0 | 2.0 | 3.0 |\n| --- | --- | --- | --- | --- |\n| F (N) | 4.0 | 6.0 | 6.0 | 2.0 |\nWhat is the cart's speed at x = 3.0 m?",
+              "choices": [
+                "5.0 m/s",
+                "13 m/s",
+                "3.9 m/s",
+                "3.2 m/s"
+              ],
+              "key": "A",
+              "rationale": "The force is given against position, so the work is the area under the F–x graph: 5.0 J + 6.0 J + 4.0 J = 15 J (three trapezoids). By the work–energy theorem, ½(1.2)v^2 = 15 J, so v = 5.0 m/s.",
+              "distractorNotes": {
+                "B": "This treats the 15 N·m area under the F–x graph as an impulse and divides by the mass. The area under a force–position graph is work, which changes kinetic energy; impulse is the area under a force–time graph.",
+                "C": "This averages only the first and last forces, (4.0 + 2.0)/2 = 3.0 N, which ignores the larger forces in between. Averaging endpoints works only for a force that changes linearly over the whole interval.",
+                "D": "This multiplies the final force, 2.0 N, by the 3.0 m distance, as if the force had been constant at that value."
+              },
+              "topics": [
+                "CM.3.2",
+                "CM.3.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc11",
+              "prompt": "A rotor is a light horizontal arm that turns about a vertical axle through its center. At each end of the arm, a uniform 0.50 kg disk of radius 0.20 m is bolted flat, so that it lies horizontally with its center 0.30 m from the axle. What is the rotor's rotational inertia about the axle?",
+              "choices": [
+                "0.090 kg·m^2",
+                "0.020 kg·m^2",
+                "0.25 kg·m^2",
+                "0.11 kg·m^2"
+              ],
+              "key": "D",
+              "rationale": "Use the parallel-axis theorem for each disk: I = ½MR^2 + Md^2 = ½(0.50)(0.20)^2 + (0.50)(0.30)^2 = 0.010 + 0.045 = 0.055 kg·m^2. The two disks give 0.11 kg·m^2; the arm is light.",
+              "distractorNotes": {
+                "A": "This treats each disk as a particle at its center, 2(0.50)(0.30)^2. The disks have size, so each one also contributes ½MR^2 about its own center.",
+                "B": "This adds only each disk's rotational inertia about its own center, 2(½)(0.50)(0.20)^2, leaving out the M d^2 term for the 0.30 m offset from the axle.",
+                "C": "This places all of each disk's mass at its outer edge, 0.50 m from the axle, which overstates the rotational inertia."
+              },
+              "topics": [
+                "CM.5.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc12",
+              "prompt": "A remote-controlled boat starts at a dock, which is the origin, on a still pond, with i pointing east and j pointing north. Its velocity is v(t) = (0.90t^2) i + (2.5) j, with v in m/s and t in seconds. Where is the boat at t = 2.0 s?",
+              "choices": [
+                "(7.2 i + 5.0 j) m",
+                "(2.4 i + 5.0 j) m",
+                "(3.6 i + 5.0 j) m",
+                "(3.6 i + 2.5 j) m"
+              ],
+              "key": "B",
+              "rationale": "Integrate each component from the starting position, the origin: x(t) = ∫ from 0 to t of 0.90t^2 dt = 0.30t^3 and y(t) = 2.5t. At t = 2.0 s, x = 0.30(8.0) = 2.4 m and y = 5.0 m.",
+              "distractorNotes": {
+                "A": "This multiplies the velocity at t = 2.0 s by 2.0 s, as if the boat had moved at its final velocity the whole time. The x-component of velocity grows, so it must be integrated.",
+                "C": "This averages the starting and final x-velocities, 0 and 3.6 m/s, and multiplies by 2.0 s. That shortcut works only when the acceleration is constant; here a_x = 1.8t grows.",
+                "D": "This is the boat's velocity at t = 2.0 s, in m/s, not its position."
+              },
+              "topics": [
+                "CM.1.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc13",
+              "prompt": "A 0.20 kg ball is launched horizontally at 5.0 m/s from a point O at the edge of a high cliff. Ignoring air resistance, what is the magnitude of the ball's angular momentum about O 1.0 s after launch?",
+              "choices": [
+                "0",
+                "9.8 kg·m^2/s",
+                "4.9 kg·m^2/s",
+                "15 kg·m^2/s"
+              ],
+              "key": "C",
+              "rationale": "Gravity's torque about O is τ = mgx = mg(v_0 t), which grows with time, so L = ∫ from 0 to t of mgv_0 t dt = ½mgv_0 t^2 = ½(0.20)(9.8)(5.0)(1.0)^2 = 4.9 kg·m^2/s. Check with L = m(xv_y − yv_x): x = 5.0 m, y = −4.9 m, v_x = 5.0 m/s, v_y = −9.8 m/s, so L = 0.20(−49 + 24.5) = −4.9 kg·m^2/s (clockwise in this view).",
+              "distractorNotes": {
+                "A": "At launch the ball's momentum points along the line from O, so its angular momentum about O starts at zero. It does not stay zero: gravity exerts a torque about O once the ball has moved out from the cliff.",
+                "B": "This multiplies the torque at t = 1.0 s, mg(5.0 m) = 9.8 N·m, by 1.0 s. The torque grows from zero as the ball moves out, so it must be integrated.",
+                "D": "This multiplies the magnitudes |r| = 7.0 m and |p| = 2.2 kg·m/s without the sine of the angle between them. Only the component of p perpendicular to r contributes."
+              },
+              "topics": [
+                "CM.6.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc14",
+              "prompt": "A lantern hangs from a hook by a light cord and swings back and forth. At the end of one swing, where it is momentarily at rest, the cord makes 35° with the vertical. Ignoring air resistance, what is the magnitude of the lantern's acceleration at that instant?",
+              "choices": [
+                "5.6 m/s^2",
+                "0",
+                "9.8 m/s^2",
+                "8.0 m/s^2"
+              ],
+              "key": "A",
+              "rationale": "With v = 0, the radial acceleration v^2/L is zero, so the tension balances the radial part of the weight, T = mg cos 35°. The unbalanced force is the tangential part, mg sin 35°, so a = g sin 35° = 9.8(0.574) = 5.6 m/s^2.",
+              "distractorNotes": {
+                "B": "The lantern's velocity is zero at that instant, which makes the centripetal acceleration v^2/L zero, but its velocity is changing, so the tangential acceleration is not zero.",
+                "C": "This ignores the cord. The tension is not zero, and it cancels the part of the weight along the cord.",
+                "D": "This is g cos 35°, the component of gravity along the cord. That component is balanced by the tension; the acceleration comes from the component perpendicular to the cord."
+              },
+              "topics": [
+                "CM.2.10",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-1-mc15",
+              "prompt": "In which situation can the object's final speed be found from conservation of the mechanical energy of the object–Earth system alone, with no work term added?",
+              "choices": [
+                "A crate dragged up a ramp by a rope, speeding up as it goes",
+                "A ball on a string swinging from its highest point to its lowest point, with negligible air resistance",
+                "A sled coasting down a snowy hill on which friction is not negligible",
+                "An elevator car lifted from rest to full speed by its cable"
+              ],
+              "key": "B",
+              "rationale": "The string's tension is always perpendicular to the ball's velocity, so it does no work, and with negligible air resistance only gravity, an internal conservative force of the ball–Earth system, does work. Then K + U is constant: ½mv^2 = mgh between the highest and lowest points. In each other case an external force or friction does work.",
+              "distractorNotes": {
+                "A": "The rope is outside the object–Earth system and does positive work on the crate, so that work must be added.",
+                "C": "Kinetic friction converts mechanical energy to internal energy, so the energy equation needs a friction work term.",
+                "D": "The cable is outside the system and does work on the car, so mechanical energy of the car–Earth system increases."
+              },
+              "topics": [
+                "CM.3.4"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

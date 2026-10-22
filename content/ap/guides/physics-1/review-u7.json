@@ -1,0 +1,457 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "review-u7",
+  "kind": "unit-review",
+  "unitId": "u7",
+  "title": "Unit 7 review: Oscillations",
+  "author": "p1-review-author",
+  "summary": "A retrieval-first review of oscillations for the AP® Physics 1 Exam: recall the condition for simple harmonic motion and the period, graph and energy relations from memory, work mixed exam-level problems (reading an acceleration graph, energy at a given position, choosing between period and energy reasoning, a repeating motion that is not simple harmonic, a vertical spring's energy, and a period test against measurement scatter), then check yourself against the relations with their conditions, model explanations, common traps, and three worked examples.",
+  "minutes": 50,
+  "figures": [
+    {
+      "id": "p1-review-u7-g1",
+      "alt": "Graph of acceleration a in m/s^2 against time t in seconds, for t from 0 to 2 s and a from −2.5 to 2.5 m/s^2. A smooth wave starts at its highest value, a = 2.0 m/s^2, at t = 0, falls through zero at t = 0.25 s to its lowest value, −2.0 m/s^2, at t = 0.5 s, rises through zero at t = 0.75 s back to 2.0 m/s^2 at t = 1.0 s, and repeats the same shape from t = 1.0 s to t = 2.0 s."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question from memory, on paper, before you open its answer. Say the conditions as well as the formula: an exam explanation earns its points from them. A wrong or partial answer now is useful, because the check's answer names the section to study."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c1",
+          "prompt": "What condition on the net force makes a motion simple harmonic? Write it as an equation, say what each symbol means, and say where in the motion the acceleration is greatest in size and where it is zero.",
+          "answer": "The net force must be a restoring force proportional to the displacement from equilibrium: F_net = −kx, where x is the displacement from the equilibrium position and k is a positive constant. The acceleration a = −(k/m)x is greatest in size at the turning points (x = ±A) and zero at equilibrium.",
+          "steps": [
+            "Equilibrium is the position where the net force is zero. Measure x from there, not from the end of the spring or from the floor.",
+            "The minus sign says the force always points back toward equilibrium. A force that points back but has a constant size, or one that is not proportional to x, is a restoring force that does not give simple harmonic motion (SHM).",
+            "By Newton's second law a = F_net/m = −(k/m)x, so the size of the acceleration is proportional to the distance from equilibrium: greatest at the turning points, where the object is momentarily at rest, and zero as it passes equilibrium, where its speed is greatest."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c2",
+          "prompt": "Give the period of a block on an ideal spring and of a simple pendulum. For each, name the quantities the period depends on, two quantities it does not depend on, and the conditions under which the formula holds.",
+          "answer": "Block on a spring: T = 2π√(m/k). It depends on the mass m and the spring constant k, but not on the amplitude or on g; it is the same for a horizontal or a vertical spring. Simple pendulum: T = 2π√(L/g). It depends on the length L and the gravitational field g, but not on the bob's mass or (for small swings) the amplitude. It holds for a small bob on a light string swinging through a small angle, below about 15°.",
+          "steps": [
+            "Spring: the spring's own mass is neglected, the spring obeys F = −kx over the whole motion, and there is no friction. A vertical spring has the same period because gravity only shifts the equilibrium position down by mg/k.",
+            "Pendulum: the restoring force is mg sin θ along the arc, which is close to proportional to the displacement only for small angles. The formula is an approximation that gets worse as the amplitude grows; a wide swing has a longer period.",
+            "In both, f = 1/T. Check each direction: a heavier block or a longer string gives a longer period; a stiffer spring or stronger gravity gives a shorter one."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c3",
+          "prompt": "An oscillator has amplitude A and period T. Write its position as a function of time if it is released from rest at x = +A at t = 0, and if instead it passes through x = 0 moving in the +x direction at t = 0. Give its maximum speed and the size of its maximum acceleration in terms of A and T.",
+          "answer": "Released from x = +A: x = A cos(2πt/T). Passing x = 0 in the +x direction: x = A sin(2πt/T). The maximum speed is v_max = 2πA/T = 2πfA, and the maximum acceleration is a_max = (2π/T)^2A; for a block on a spring this equals kA/m.",
+          "steps": [
+            "The argument 2πt/T is an angle in radians: evaluate it in radian mode, or use 360°(t/T) in degree mode.",
+            "Velocity is the slope of the position graph: zero at the peaks and troughs, greatest in size where the graph crosses x = 0.",
+            "The acceleration is −(2π/T)^2x, so the acceleration graph is the position graph turned upside down and rescaled. For a spring, (2π/T)^2 = k/m."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c4",
+          "prompt": "For a block on a horizontal spring with no friction, write the total mechanical energy in terms of k and A, and in terms of m and v_max. How is it shared at displacement x? For a given spring and amplitude, does it depend on the block's mass?",
+          "answer": "E = (1/2)kA^2 = (1/2)mv_max^2. At displacement x, U_s = (1/2)kx^2 and K = (1/2)mv^2 = (1/2)k(A^2 − x^2). For a given k and A, E does not depend on the mass; a heavier block has the same energy and a smaller maximum speed.",
+          "steps": [
+            "At a turning point the block is at rest, so all the energy is spring potential energy, (1/2)kA^2.",
+            "At equilibrium the spring is at its natural length, so all the energy is kinetic, (1/2)mv_max^2.",
+            "The block–spring system's energy is constant only when no friction or outside force does work on it; then K + U_s is the same at every point.",
+            "U_s grows as x^2, so at x = A/2 the potential energy is E/4 and the kinetic energy 3E/4, not half and half."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c5",
+          "prompt": "For an object in simple harmonic motion, which of these quantities have their greatest magnitude at the turning points, and which at equilibrium: displacement, speed, acceleration, net force, kinetic energy, potential energy (measured from equilibrium)? Which are zero at each place?",
+          "answer": "At the turning points, displacement, acceleration, net force and potential energy are greatest, and speed and kinetic energy are zero. At equilibrium, speed and kinetic energy are greatest, and displacement, acceleration, net force and potential energy are zero.",
+          "steps": [
+            "Net force and acceleration follow the displacement (F = −kx), so they peak where the displacement does.",
+            "Kinetic and potential energy add to a fixed total, so the kinetic energy and the speed are greatest where the potential energy is least.",
+            "A common slip is to put the greatest acceleration at equilibrium because the speed is greatest there. Acceleration is the rate at which the velocity changes, and at equilibrium the velocity is momentarily not changing."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each problem fully before opening the answer, as you would on the exam: write the relation you start from, substitute with units, and give any justification in words. Any calculator is allowed. Use g = 9.8 m/s^2 and neglect friction and air resistance unless a problem says otherwise. Check 11 uses supplied measurements; paper practice like it does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c6",
+          "prompt": "A 0.50 kg glider is attached to a spring on a level, frictionless air track, and +x points to the right of its equilibrium position. The figure shows the glider's acceleration a as a function of time t.\n\n(a) Find the period and the spring constant.\n(b) Find the amplitude of the motion.\n(c) Where is the glider at t = 0, and what is its velocity then?\n(d) Find the glider's maximum speed and the first time after t = 0 at which it has that speed. In which direction is it moving then?",
+          "hint": "At every instant, the glider's acceleration and its displacement are linked by the spring force. Write that link before you read the graph.",
+          "figureIds": [
+            "p1-review-u7-g1"
+          ],
+          "answer": "(a) T = 1.0 s; k ≈ 20 N/m. (b) A ≈ 0.051 m. (c) At x ≈ −0.051 m, the left turning point, at rest. (d) v_max ≈ 0.32 m/s, first at t = 0.25 s, moving in the +x direction.",
+          "steps": [
+            "(a) The graph repeats every 1.0 s (from the peak at t = 0 to the next peak at t = 1.0 s), so T = 1.0 s and f = 1.0 Hz. From T = 2π√(m/k), k = 4π^2m/T^2 = 4π^2(0.50 kg)/(1.0 s)^2 ≈ 19.7 N/m ≈ 20 N/m.",
+            "(b) The greatest acceleration, 2.0 m/s^2, occurs at a turning point, where the spring force has its greatest size: kA = ma_max. So A = ma_max/k = (0.50 kg)(2.0 m/s^2)/(19.7 N/m) ≈ 0.051 m. (Equivalently, A = a_max(T/2π)^2.)",
+            "(c) a = −(k/m)x, so the acceleration is most positive where x is most negative. At t = 0, a = +2.0 m/s^2, so x = −A ≈ −0.051 m. The acceleration is greatest in size only at a turning point, where the glider is momentarily at rest: v = 0.",
+            "(d) v_max = 2πA/T = 2π(0.051 m)/(1.0 s) ≈ 0.32 m/s. The speed is greatest at equilibrium, where a = 0; the first such time is t = 0.25 s.",
+            "From t = 0 to t = 0.25 s the acceleration is positive, so the glider, starting from rest at x = −A, speeds up in the +x direction. At t = 0.25 s it passes equilibrium moving in the +x direction."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c7",
+          "prompt": "A 0.25 kg block on a horizontal spring with spring constant 100 N/m slides on a frictionless surface. The equilibrium position is x = 0, and +x points away from the wall that holds the spring. At one instant the block is at x = +0.030 m, moving in the +x direction at 0.80 m/s.\n\n(a) Find the amplitude and the block's maximum speed.\n(b) What fraction of the system's energy is kinetic at that instant?\n(c) A student says, \"The block will reach its turning point a quarter of a period after this instant.\" Evaluate the claim, and find the actual time.",
+          "hint": "Find the total energy of the block–spring system at the given instant first.",
+          "answer": "(a) A = 0.050 m; v_max = 1.0 m/s. (b) 0.64. (c) The claim is incorrect: a quarter period, about 0.079 s, is the time from equilibrium to a turning point. The block is already 0.030 m from equilibrium, so it takes less time, about 0.046 s.",
+          "steps": [
+            "(a) Total energy at the given instant: E = (1/2)kx^2 + (1/2)mv^2 = (1/2)(100 N/m)(0.030 m)^2 + (1/2)(0.25 kg)(0.80 m/s)^2 = 0.045 J + 0.080 J = 0.125 J.",
+            "At a turning point E = (1/2)kA^2, so A = √(2E/k) = √(2(0.125 J)/(100 N/m)) = 0.050 m. At equilibrium E = (1/2)mv_max^2, so v_max = √(2E/m) = √(2(0.125 J)/(0.25 kg)) = 1.0 m/s.",
+            "(b) K/E = 0.080 J/0.125 J = 0.64. (Check: x/A = 0.6, so U_s/E = 0.6^2 = 0.36, and 0.36 + 0.64 = 1.)",
+            "(c) T = 2π√(m/k) = 2π√((0.25 kg)/(100 N/m)) ≈ 0.314 s, so T/4 ≈ 0.079 s. That is the time from x = 0 to x = A, but the block starts at x = 0.6A.",
+            "Measure time t from the moment the block is at x = +A, so x = A cos(2πt/T). The block is at 0.6A when cos(2πt/T) = 0.6, that is 2πt/T ≈ 0.927 rad, so t ≈ (0.927/2π)(0.314 s) ≈ 0.046 s. By symmetry, going outward from 0.6A to A takes the same time as coming back.",
+            "So the block reaches its turning point about 0.046 s after the instant described: less than a quarter period, because it covers only the slow outer part of the swing."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c8",
+          "prompt": "A playground swing hangs from chains 2.4 m long. A child sits on the seat and is pulled back until the seat is 0.060 m higher than its lowest position, then released from rest. Treat the child and seat as a simple pendulum of length 2.4 m, and neglect air resistance.\n\n(a) How long after release does the seat first pass its lowest position?\n(b) How fast is the child moving there?\n(c) A heavier child is pulled back to the same height and released. How do your answers to (a) and (b) change? Explain.",
+          "hint": "Part (a) asks for a time and part (b) for a speed. Before writing any equation, decide whether the acceleration stays constant during the swing.",
+          "answer": "(a) About 0.78 s. (b) About 1.1 m/s. (c) Neither changes.",
+          "steps": [
+            "The acceleration along the arc changes throughout the swing (it is g sin θ: largest at release, zero at the bottom), so the constant-acceleration equations do not apply. The period gives the time, and energy gives the speed.",
+            "Check the small-angle condition: cos θ = 1 − h/L = 1 − 0.060/2.4 = 0.975, so θ ≈ 13°, below about 15°. T = 2π√(L/g) is a good model.",
+            "(a) T = 2π√((2.4 m)/(9.8 m/s^2)) ≈ 3.11 s. From release at a turning point to the lowest position is a quarter of a cycle: t = T/4 ≈ 0.78 s.",
+            "(b) For the child–seat–Earth system with no air resistance, mgh = (1/2)mv^2, so v = √(2gh) = √(2(9.8 m/s^2)(0.060 m)) ≈ 1.1 m/s. The chains do no work, because they pull perpendicular to the motion.",
+            "(c) The period of a simple pendulum does not depend on the mass, so the time is still about 0.78 s. In mgh = (1/2)mv^2 the mass cancels, so the speed is still about 1.1 m/s. A heavier child feels a larger restoring force, but has proportionally more mass to accelerate."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c9",
+          "prompt": "A small block slides without friction on a track made of two straight ramps, each inclined at 10° to the horizontal, that meet at a short rounded bottom of negligible length. The block is released from rest 0.40 m up one ramp, measured along the ramp, and slides back and forth.\n\n(a) Describe how the net force along the track depends on the block's position, and explain whether the motion is simple harmonic.\n(b) Find the period of the motion.\n(c) The block is released from rest 0.10 m up the ramp instead. Find the new period, and compare how this period depends on the release distance with how the period of simple harmonic motion depends on the amplitude.",
+          "hint": "Pick two different points on one ramp and compare the force along the track at each.",
+          "answer": "(a) On each ramp the net force along the track has the constant size mg sin 10° and points down that ramp, toward the bottom; it does not grow with the distance from the bottom, so the motion repeats but is not simple harmonic. (b) About 2.7 s. (c) About 1.4 s. Quartering the release distance halves the period, whereas the period of simple harmonic motion would not change with the amplitude.",
+          "steps": [
+            "(a) Along either ramp, the only force with a component along the track is gravity, mg sin 10° (the normal force is perpendicular to the track). Its size is the same 0.40 m up the ramp as 0.01 m up; only its direction flips as the block passes the bottom. SHM needs F = −kx, a force proportional to the displacement, so this periodic motion is not SHM.",
+            "(b) Because the force on each ramp is constant, the constant-acceleration equations apply there: a = g sin 10° ≈ 1.70 m/s^2. From rest, d = (1/2)at^2 gives t = √(2d/a) = √(2(0.40 m)/(1.70 m/s^2)) ≈ 0.686 s to reach the bottom.",
+            "With no friction, the block rises 0.40 m up the other ramp in the same time, by symmetry, and the trip back takes the same again. One full cycle is four such stretches: T = 4(0.686 s) ≈ 2.7 s.",
+            "(c) t = √(2(0.10 m)/(1.70 m/s^2)) ≈ 0.343 s, so T = 4t ≈ 1.4 s. Here T is proportional to √d: a quarter of the distance gives half the period.",
+            "For a block on a spring, a larger amplitude brings a proportionally larger restoring force, so the period stays the same. The ramps give no such compensation, so the period grows with the release distance."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c10",
+          "prompt": "A 0.20 kg block hangs at rest from a vertical spring with spring constant 20 N/m. The block is pulled 0.050 m below this equilibrium position and released from rest; take +y upward and neglect air resistance.\n\n(a) Find the period and the block's maximum speed.\n(b) At the highest point of the motion, is the spring stretched, compressed or at its natural length? By how much?\n(c) For the block–spring–Earth system, find the kinetic energy K, the spring potential energy U_s and the gravitational potential energy U_g at the lowest point, at the equilibrium position and at the highest point. Take U_g = 0 at the lowest point, and show that the total is the same at all three.",
+          "hint": "Start by finding how far the spring is stretched while the block hangs at rest.",
+          "answer": "(a) T ≈ 0.63 s; v_max = 0.50 m/s. (b) Still stretched, by 0.048 m. (c) Lowest point: K = 0, U_s ≈ 0.219 J, U_g = 0. Equilibrium: K = 0.025 J, U_s ≈ 0.096 J, U_g = 0.098 J. Highest point: K = 0, U_s ≈ 0.023 J, U_g = 0.196 J. Each total is about 0.219 J.",
+          "steps": [
+            "At equilibrium the spring force balances the weight: kd = mg, so the spring is stretched d = (0.20 kg)(9.8 m/s^2)/(20 N/m) = 0.098 m.",
+            "(a) Measured from the new equilibrium, the net force is still −ky, so the motion is SHM with T = 2π√((0.20 kg)/(20 N/m)) ≈ 0.63 s. The amplitude is 0.050 m, so v_max = 2πA/T = 2π(0.050 m)/(0.628 s) ≈ 0.50 m/s.",
+            "(b) The block rises 0.050 m above equilibrium, where the stretch is 0.098 m, so at the top the stretch is 0.098 m − 0.050 m = 0.048 m: the spring is still stretched.",
+            "(c) Lowest point: the stretch is 0.148 m, so U_s = (1/2)(20 N/m)(0.148 m)^2 ≈ 0.219 J; the block is at rest, so K = 0; and U_g = 0. Total ≈ 0.219 J.",
+            "Equilibrium, 0.050 m up: U_s = (1/2)(20 N/m)(0.098 m)^2 ≈ 0.096 J; U_g = (0.20 kg)(9.8 m/s^2)(0.050 m) = 0.098 J; K = (1/2)(0.20 kg)(0.50 m/s)^2 = 0.025 J. Total ≈ 0.219 J.",
+            "Highest point, 0.100 m up: U_s = (1/2)(20 N/m)(0.048 m)^2 ≈ 0.023 J; U_g = (0.20 kg)(9.8 m/s^2)(0.100 m) = 0.196 J; K = 0. Total ≈ 0.219 J.",
+            "U_s at the lowest point is not (1/2)kA^2 = 0.025 J: the spring's energy depends on its stretch from its natural length, and gravity's energy changes too. Only the total stays fixed."
+          ],
+          "see": "explanations-and-traps"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u7-c11",
+          "prompt": "A student hangs a 0.40 kg mass from a light spring. At rest, the spring is stretched 0.080 m beyond its natural length. She then pulls the mass down a little, releases it, and times 20 oscillations three times: 11.3 s, 11.5 s and 11.4 s.\n\n(a) Show that the model predicts a period T = 2π√(d/g), where d is the stretch at rest, and calculate it.\n(b) Estimate the measured period and its uncertainty, using the mean of the timings and half their range.\n(c) Do the two measurements agree? Justify your answer, and name one effect the model neglects that could make them differ.",
+          "hint": "The stretch at rest tells you something about the spring. What?",
+          "answer": "(a) T = 2π√((0.080 m)/(9.8 m/s^2)) ≈ 0.568 s. (b) T = 0.570 ± 0.005 s. (c) Yes: the prediction, 0.568 s, lies inside the interval 0.565 s to 0.575 s, so this method shows no difference. The model neglects the spring's own mass (and any friction or air drag); the moving spring would make the measured period a little longer.",
+          "steps": [
+            "(a) At rest, kd = mg, so k = mg/d. Substituting into T = 2π√(m/k) gives T = 2π√(md/(mg)) = 2π√(d/g): the mass cancels.",
+            "T = 2π√((0.080 m)/(9.8 m/s^2)) ≈ 0.568 s. (Equivalently, k = (0.40 kg)(9.8 m/s^2)/(0.080 m) = 49 N/m and T = 2π√((0.40 kg)/(49 N/m)) ≈ 0.568 s.)",
+            "(b) The mean timing is (11.3 s + 11.5 s + 11.4 s)/3 = 11.4 s for 20 cycles, so T = 11.4 s/20 = 0.570 s. Half the range is (11.5 s − 11.3 s)/2 = 0.10 s for 20 cycles, so u = 0.10 s/20 = 0.005 s. T = 0.570 ± 0.005 s.",
+            "(c) The comparison interval runs from 0.565 s to 0.575 s, and the prediction 0.568 s lies inside it, so the two measurements agree within this estimate of the scatter. That does not prove the model exact; it means this method cannot resolve a difference.",
+            "Neglected effects: part of the spring moves with the mass, which lengthens the real period slightly; friction or air drag; a misread stretch. Timing 20 cycles reduces the effect of reaction time, but not of these."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Simple harmonic motion",
+          "text": "A motion is simple harmonic when the net force on the object is a restoring force proportional to its displacement from equilibrium: F_net = −kx. Then a = −(k/m)x, the position is a sinusoidal function of time, and the period does not depend on the amplitude.",
+          "conditions": [
+            "x is measured from the equilibrium position, where the net force is zero.",
+            "A restoring force of constant size (a block on two ramps, a ball bouncing on a floor) gives a repeating motion that is not SHM; its period changes with the amplitude.",
+            "For a pendulum, mg sin θ is close to proportional to the displacement only for small angles, below about 15°."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Period and frequency",
+          "text": "The period T is the time for one full cycle, and the frequency f = 1/T is the number of cycles per second, in Hz. Block on an ideal spring: T = 2π√(m/k). Simple pendulum: T = 2π√(L/g).",
+          "conditions": [
+            "The spring formula neglects the spring's mass, and holds for horizontal and vertical springs alike; a vertical spring's equilibrium is a stretch mg/k below its natural length.",
+            "The pendulum formula assumes a small bob on a light string and a small amplitude, and does not depend on the bob's mass.",
+            "To predict a change, write a ratio: T_new/T_old = √(m_new/m_old) at fixed k, or √(L_new/L_old) at fixed g."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Representing simple harmonic motion",
+          "text": "Released from rest at x = +A at t = 0: x = A cos(2πt/T) = A cos(2πft). Passing x = 0 in the +x direction at t = 0: x = A sin(2πt/T). The maximum speed is v_max = 2πA/T, and the maximum acceleration is a_max = (2π/T)^2A.",
+          "conditions": [
+            "Velocity is the slope of the position graph: zero at the turning points and greatest at equilibrium.",
+            "Acceleration is proportional to −x, so its graph is the position graph turned upside down: most positive where x is most negative.",
+            "For a block on a spring, (2π/T)^2 = k/m, so a_max = kA/m. The angle 2πt/T is in radians."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Energy of an oscillator",
+          "text": "With no friction, the energy of a block–spring system is constant: E = (1/2)mv^2 + (1/2)kx^2 = (1/2)kA^2 = (1/2)mv_max^2. A pendulum exchanges kinetic energy with gravitational potential energy mgh, where h = L(1 − cos θ) is the height above the lowest point.",
+          "conditions": [
+            "At any position, (1/2)mv^2 = (1/2)k(A^2 − x^2).",
+            "For a given spring and amplitude, E does not depend on the mass; doubling the amplitude quadruples E.",
+            "The kinetic and potential energies each swing between 0 and E twice in every period of the motion."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Where each quantity is greatest in size and where it is zero.",
+          "head": [
+            "Quantity",
+            "At a turning point (x = ±A)",
+            "At equilibrium (x = 0)"
+          ],
+          "rows": [
+            [
+              "Displacement",
+              "Greatest, A",
+              "Zero"
+            ],
+            [
+              "Speed",
+              "Zero",
+              "Greatest, v_max"
+            ],
+            [
+              "Acceleration and net force",
+              "Greatest, directed toward equilibrium",
+              "Zero"
+            ],
+            [
+              "Kinetic energy",
+              "Zero",
+              "Greatest, E"
+            ],
+            [
+              "Potential energy (measured from equilibrium)",
+              "Greatest, E",
+              "Zero"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "What the question asks and where to start.",
+          "head": [
+            "The question asks for",
+            "Start from"
+          ],
+          "rows": [
+            [
+              "A period, a frequency, or a time such as \"how long to reach equilibrium\"",
+              "T = 2π√(m/k) or T = 2π√(L/g), then a fraction of T: a quarter cycle from a turning point to equilibrium; x = A cos(2πt/T) for other positions."
+            ],
+            [
+              "A speed at a given position",
+              "Energy: (1/2)mv^2 + (1/2)kx^2 = (1/2)kA^2 for a spring, mgh = (1/2)mv^2 for a pendulum."
+            ],
+            [
+              "An acceleration or a force at a given position",
+              "F = −kx and a = F/m for a spring; the component mg sin θ along the arc for a pendulum."
+            ],
+            [
+              "How a change affects the motion",
+              "A ratio from the period or energy relation, saying which quantities stay fixed."
+            ],
+            [
+              "Whether a motion is simple harmonic",
+              "How the net force depends on the displacement: SHM only if it is proportional and opposite."
+            ],
+            [
+              "The motion under a force that is constant along each part of the path",
+              "Not SHM: the constant-acceleration equations, one part at a time."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanations-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Showing that a motion is simple harmonic (a glider between two springs; a force sensor reads −0.45 N at x = +0.015 m and +0.90 N at x = −0.030 m).",
+          "text": "At both positions the net force points back toward x = 0, opposite the displacement, and doubling the distance from equilibrium doubles the size of the force (0.45 N at 0.015 m, 0.90 N at 0.030 m). The data are consistent with F = −kx with k = 30 N/m. A restoring force proportional to the displacement is the condition for simple harmonic motion, so the glider's period should not depend on its amplitude."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining why the period of a block on a spring does not depend on the amplitude.",
+          "text": "Doubling the amplitude doubles the distance the block travels in each cycle. But the spring force is proportional to the displacement, so at every corresponding point of the larger swing the force, the acceleration and the speed are doubled too. Twice the distance at twice the speed takes the same time, so the period is unchanged."
+        },
+        {
+          "type": "model",
+          "prompt": "Using energy to explain a speed (why a block halfway to its turning point moves faster than half its maximum speed).",
+          "text": "The spring's potential energy is proportional to x^2, so at x = A/2 it is (1/2)k(A/2)^2 = E/4. The remaining 3E/4 is kinetic energy. Kinetic energy is proportional to v^2, so v = v_max√(3/4) ≈ 0.87v_max, which is more than half of v_max."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluating a claim (\"Doubling the length of a pendulum doubles its period.\").",
+          "text": "The claim is incorrect. For small swings T = 2π√(L/g), so the period is proportional to the square root of the length. Doubling L multiplies T by √2 ≈ 1.41, not by 2; to double the period, the length must be made 4 times as long."
+        },
+        {
+          "type": "trap",
+          "text": "Calling the distance between the two turning points the amplitude.",
+          "fix": "The amplitude runs from equilibrium to one turning point: half the distance between the turning points, or the height of a peak above the axis on a position graph."
+        },
+        {
+          "type": "trap",
+          "text": "Writing T = 2π√(k/m) or T = 2π√(g/L).",
+          "fix": "Check the direction: a heavier block and a longer pendulum must give longer periods, so m and L go in the numerator."
+        },
+        {
+          "type": "trap",
+          "text": "Using the constant-acceleration equations, such as v^2 = v_0^2 + 2aΔx, for a block on a spring or a pendulum.",
+          "fix": "In SHM the acceleration changes with position. Use energy for speeds, and the period or x = A cos(2πt/T) for times."
+        },
+        {
+          "type": "trap",
+          "text": "Expecting half the displacement to mean half the potential energy, or half the maximum speed.",
+          "fix": "U_s = (1/2)kx^2, so at x = A/2 the potential energy is E/4 and the speed is (√3/2)v_max ≈ 0.87v_max."
+        },
+        {
+          "type": "trap",
+          "text": "Placing the greatest acceleration at equilibrium, where the speed is greatest.",
+          "fix": "a = −(k/m)x: the acceleration is zero at equilibrium and greatest at the turning points, where the object is momentarily at rest."
+        },
+        {
+          "type": "trap",
+          "text": "For a block on a vertical spring, taking the spring potential energy at the lowest point to be (1/2)kA^2.",
+          "fix": "The spring's energy depends on its stretch from its natural length: the equilibrium stretch mg/k plus or minus the displacement. Include both U_s and U_g with stretches measured from the natural length, or use only the period and the maximum speed, which match the horizontal case."
+        },
+        {
+          "type": "trap",
+          "text": "Evaluating cos(2πt/T) with a calculator in degree mode.",
+          "fix": "2πt/T is in radians. Set radian mode, or use cos(360° × t/T) in degree mode."
+        },
+        {
+          "type": "trap",
+          "text": "Using T = 2π√(L/g) for a wide swing, such as 40°.",
+          "fix": "The formula is a small-angle model. At large amplitude the restoring force is less than proportional to the displacement, and the real period is longer."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A 0.40 kg block on a horizontal spring moves with x = 0.060 cos(2.5πt), with x in meters, t in seconds and +x to the right. Find the period, the spring constant, the maximum speed, and the block's position and direction of motion at t = 0.50 s.",
+          "answer": "T = 0.80 s; k ≈ 25 N/m; v_max ≈ 0.47 m/s; at t = 0.50 s, x ≈ −0.042 m and the block moves in the +x direction, at about 0.33 m/s.",
+          "steps": [
+            "Match x = A cos(2πft): A = 0.060 m and 2πf = 2.5π s^−1, so f = 1.25 Hz and T = 1/f = 0.80 s.",
+            "From T = 2π√(m/k): k = 4π^2m/T^2 = 4π^2(0.40 kg)/(0.80 s)^2 ≈ 24.7 N/m ≈ 25 N/m.",
+            "v_max = 2πA/T = 2π(0.060 m)/(0.80 s) ≈ 0.47 m/s.",
+            "At t = 0.50 s the angle is 2.5π(0.50) = 1.25π rad, so x = (0.060 m)cos(1.25π) ≈ −0.042 m (radian mode).",
+            "Direction: 0.50 s is 0.625 of a period. The block is at x = −A at t = T/2 = 0.40 s and back at x = 0 at t = 3T/4 = 0.60 s, so at 0.50 s it is moving from −A toward equilibrium, in the +x direction.",
+            "Speed there, from energy: (1/2)mv^2 = (1/2)k(A^2 − x^2), so v = √(k/m)√(A^2 − x^2) = (2π/T)√(A^2 − x^2) = (7.85 s^−1)√((0.060 m)^2 − (0.042 m)^2) ≈ 0.33 m/s."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A 1.2 kg cart on a level, frictionless track is attached to a horizontal spring with spring constant 300 N/m. It passes through equilibrium at 0.75 m/s. Find the total energy, the amplitude, the cart's speed when it is halfway from equilibrium to a turning point, and the kinetic and spring potential energies when it is 0.030 m from equilibrium.",
+          "answer": "E ≈ 0.34 J; A ≈ 0.047 m; v ≈ 0.65 m/s halfway out; at 0.030 m, U_s = 0.135 J and K ≈ 0.20 J.",
+          "steps": [
+            "At equilibrium all the energy is kinetic: E = (1/2)(1.2 kg)(0.75 m/s)^2 ≈ 0.338 J.",
+            "At a turning point it is all spring energy: (1/2)kA^2 = E, so A = √(2E/k) = √(2(0.338 J)/(300 N/m)) ≈ 0.047 m.",
+            "Halfway out, x = A/2, U_s = E/4, so K = 3E/4 and v = v_max√(3/4) = (0.75 m/s)(0.866) ≈ 0.65 m/s.",
+            "At x = 0.030 m: U_s = (1/2)(300 N/m)(0.030 m)^2 = 0.135 J, and K = E − U_s ≈ 0.338 J − 0.135 J ≈ 0.20 J.",
+            "Check: 0.030 m is less than A ≈ 0.047 m, so the cart does reach this position, and K comes out positive."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A block on a spring oscillates with a period of 0.60 s, and a pendulum swings through small angles with a period of 1.6 s. Find the new period after each change: (a) the block's mass is increased by 50%; (b) the block's mass is doubled and the spring is replaced by one 3 times as stiff; (c) the block's amplitude is halved; (d) the pendulum's length is reduced by 36%.",
+          "answer": "(a) About 0.73 s. (b) About 0.49 s. (c) 0.60 s, unchanged. (d) About 1.3 s.",
+          "steps": [
+            "Write each change as a ratio of the period formula, so the constants cancel.",
+            "(a) T is proportional to √m at fixed k: T = (0.60 s)√1.5 ≈ 0.73 s.",
+            "(b) T is proportional to √(m/k): T = (0.60 s)√(2/3) ≈ 0.49 s.",
+            "(c) The period of SHM does not depend on the amplitude: still 0.60 s.",
+            "(d) The new length is 0.64L, and T is proportional to √L at fixed g: T = (1.6 s)√0.64 = (1.6 s)(0.80) ≈ 1.3 s."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 24: Simple harmonic motion: restoring forces, frequency and period",
+              "ref": "week:24"
+            },
+            {
+              "label": "Week 25: Representing SHM and the energy of oscillators",
+              "ref": "week:25"
+            },
+            {
+              "label": "Unit 7 plan: Oscillations",
+              "ref": "unit:u7"
+            },
+            {
+              "label": "Unit 7 test",
+              "ref": "test:unit-7"
+            },
+            {
+              "label": "Unit 7 test key",
+              "ref": "key:unit-7"
+            },
+            {
+              "label": "Free-response workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

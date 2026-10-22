@@ -86,6 +86,20 @@ four-week and in-course plans. It holds 216 multiple-choice and 42
 free-response questions, 21 guides with 148 self-checks, and 54 figures. See
 the [review record](docs/reviews/2026-10-22-ab-exam-prep.md).
 
+**Physics exam preparation** (`ap.html#physics-1/prep` and
+`ap.html#physics-c-mechanics/prep`) completes the set. Each physics course
+gets practice exams B–D, six mixed timed sets, a free-response workshop with
+a guide and a four-question set for each of the four question types
+(Mathematical Routines, Translation Between Representations, Experimental
+Design and Analysis, Qualitative/Quantitative Translation), a review for
+every unit, strategy guides (Physics C adds calculus methods for mechanics)
+and spaced plans. Together they hold 432 multiple-choice and 56
+free-response questions, 34 guides with 279 self-checks, and 206 figures.
+Workshop sets are paced per question type inside the suggested times the
+practice exams print. Paper practice does not replace the hands-on lab work
+the AP® physics courses require. See the
+[review record](docs/reviews/2026-10-22-physics-exam-prep.md).
+
 SAT, ACT and all four AP courses share assessment ordering, timing metadata,
 student/key projections and typed scoring through a small
 [assessment platform](docs/assessment-platform.md). SAT template generation

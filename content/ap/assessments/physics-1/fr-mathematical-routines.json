@@ -1,0 +1,492 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "fr-mathematical-routines",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Mathematical Routines",
+  "author": "p1-workshop-mr-author",
+  "directions": "This set practises the Mathematical Routines question type of the AP® Physics 1 Exam with four original questions, from Units 1, 2, 6 and 7. Work them in two sittings, questions 1 and 2 and then questions 3 and 4, at 22 minutes a question. That is Liminal's practice pace for this type, inside the 20–25 minutes practice exam A suggests for its Mathematical Routines question; College Board's exam pages, checked 2026-10-22, give only 95 minutes for the exam's four free-response questions. Any calculator is allowed, and Liminal's formula reference is appended. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise. Show derivations from fundamental relations, state your positive direction, and give numerical answers with units and 2–3 significant figures. Then score your work with the answer key's rubrics and record raw points out of 10 for each question. Raw points are a practice tally only: they are not AP® scores, and Liminal does not convert them to the 1–5 scale.",
+  "figures": [
+    {
+      "id": "p1-fr-mathematical-routines-f1",
+      "alt": "Side view of a pickup truck facing right on a level road, with an arrow pointing right labeled forward (+). A toolbox sits on the flat bed, and a double-headed arrow labeled 1.5 m spans the gap from the front face of the toolbox to the front wall of the bed, next to the cab. The tailgate is at the left end of the bed.",
+      "caption": "Toolbox on the truck bed",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-mathematical-routines-f2",
+      "alt": "Key: free-body diagram of the toolbox, a square with three arrows: F_N pointing up, mg pointing down with the same length, and a shorter arrow f_s pointing left, backward. An arrow beside the diagram points right and is labeled forward (+).",
+      "caption": "Key: forces on the toolbox during gentle braking"
+    },
+    {
+      "id": "p1-fr-mathematical-routines-f3",
+      "alt": "Two views of a flywheel hanging from a fixed support. Edge view: a thin disk on a horizontal axle, with a vertical string from the support down to each end of the axle. Face view: a disk of radius R with a small central axle of radius r; a string leaves the side of the axle and runs straight up.",
+      "caption": "Flywheel on two strings",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-mathematical-routines-f4",
+      "alt": "A spring labeled k runs horizontally from a wall on the left to a glider labeled M on a level air track marked frictionless. A smaller block labeled m sits on top of the glider. Below, an x axis points right, with x = 0 marked under the glider's equilibrium position.",
+      "caption": "Glider and block on a spring",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 88,
+          "calculator": "any",
+          "directions": "Answer each question in the space provided. Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Start each derivation from a fundamental relation, keep to the symbols the question gives, and give numerical answers with units. Suggested time: 22 minutes a question, with questions 1 and 2 as one sitting and questions 3 and 4 as another.",
+          "items": [
+            {
+              "id": "p1-fr-mathematical-routines-fr1",
+              "prompt": "At a school science fair, a spring launcher on the floor fires a beanbag at speed v_0 = 6.0 m/s at θ = 60° above the horizontal. The goal is to drop the beanbag into an open bin whose rim is h = 1.2 m above the floor. The beanbag must fall into the bin from above, so it must be moving downward when it reaches the height of the rim. Treat the beanbag as a particle launched from floor level, neglect air resistance, take upward as positive for vertical quantities, and measure horizontal distances from the launcher.",
+              "type": "MR",
+              "topics": [
+                "P1.1.5",
+                "P1.1.2",
+                "P1.1.3",
+                "P1.3.4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Starting from a relation for vertical motion with constant acceleration, derive an expression for the time t_b after launch at which the beanbag, moving downward, is at the height of the rim. Express your answer in terms of v_0, θ, h and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Starts from y = y_0 + v_{0y}t + (1/2)a_y t^2 with y_0 = 0, v_{0y} = v_0 sin θ and a_y = −g (signs consistent with upward positive), and sets y = h."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves the quadratic for t correctly (quadratic formula or an equivalent method)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Chooses the root with the plus sign, t_b = (v_0 sin θ + √(v_0^2 sin^2 θ − 2gh))/g, and explains that it is the later crossing, when the beanbag is moving downward; the other root is the crossing on the way up."
+                    }
+                  ],
+                  "answer": "t_b = (v_0 sin θ + √(v_0^2 sin^2 θ − 2gh))/g",
+                  "steps": [
+                    "With upward positive and the origin at the launcher, the vertical position is y = (v_0 sin θ)t − (1/2)gt^2.",
+                    "Setting y = h gives (1/2)gt^2 − (v_0 sin θ)t + h = 0, so t = (v_0 sin θ ± √(v_0^2 sin^2 θ − 2gh))/g.",
+                    "The smaller root is the moment the beanbag passes the rim's height on the way up. The larger root, with the plus sign, is the moment it comes back down through that height, so t_b takes the plus sign."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Calculate t_b and the horizontal distance from the launcher at which the center of the bin's opening should be placed.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "t_b ≈ 0.72 s (accept 0.71–0.73 s), consistent with the expression from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the constant horizontal velocity, x = (v_0 cos θ)t_b, to get x ≈ 2.2 m (accept 2.1–2.2 m), with units."
+                    }
+                  ],
+                  "answer": "t_b ≈ 0.72 s; the center of the bin's opening should be about 2.2 m (2.16 m) from the launcher.",
+                  "steps": [
+                    "v_0 sin θ = (6.0 m/s)(sin 60°) = 5.20 m/s and v_0 cos θ = (6.0 m/s)(cos 60°) = 3.0 m/s.",
+                    "v_0^2 sin^2 θ − 2gh = 27.0 − 2(9.8)(1.2) = 27.0 − 23.5 = 3.48 m^2/s^2, whose square root is 1.87 m/s.",
+                    "t_b = (5.20 + 1.87)/9.8 ≈ 0.72 s.",
+                    "No horizontal force acts, so the horizontal velocity stays 3.0 m/s: x = (3.0 m/s)(0.721 s) ≈ 2.2 m."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the beanbag's speed as it reaches the height of the rim on the way down, and the angle its velocity makes with the horizontal at that moment. Then show that the speed agrees with conservation of energy for the beanbag–Earth system.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Speed ≈ 3.5 m/s from the velocity components (accept 3.5–3.6 m/s), directed about 32° below the horizontal (accept 31°–33°)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Energy for the beanbag–Earth system, (1/2)mv_0^2 = (1/2)mv^2 + mgh, gives v^2 = v_0^2 − 2gh ≈ 12.5 m^2/s^2, and the student states that the two methods agree."
+                    }
+                  ],
+                  "answer": "About 3.5 m/s, directed about 32° below the horizontal. Energy gives v^2 = v_0^2 − 2gh ≈ 12.5 m^2/s^2, the same speed.",
+                  "steps": [
+                    "v_y = v_0 sin θ − g t_b = 5.20 − 9.8(0.721) = −1.87 m/s (downward), and v_x = 3.0 m/s.",
+                    "Speed = √(3.0^2 + 1.87^2) = √12.5 ≈ 3.5 m/s. The angle below the horizontal is arctan(1.87/3.0) ≈ 32°.",
+                    "Energy: (1/2)mv_0^2 = (1/2)mv^2 + mgh, so v^2 = v_0^2 − 2gh = 36 − 23.5 = 12.5 m^2/s^2 and v ≈ 3.5 m/s, matching the kinematic result. The mass cancels, so it need not be known."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A classmate says, \"On level ground, launch angles of 60° and 30° at the same speed give the same range. So if we change the angle to 30° and keep the speed at 6.0 m/s, the beanbag will still land in the bin where it is.\" Use your expression from part (a) to evaluate the classmate's claim.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes θ = 30° into the expression from part (a), or computes the greatest height, and finds v_0^2 sin^2 θ − 2gh < 0 (9.0 − 23.5 m^2/s^2), or a greatest height of about 0.46 m, less than 1.2 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets the result physically: there is no real time t_b, so the beanbag never reaches the height of the rim."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the claim is incorrect and explains that the equal-range rule holds only when the beanbag lands at its launch height."
+                    }
+                  ],
+                  "answer": "The claim is incorrect. At 30°, v_0^2 sin^2 θ − 2gh = 9.0 − 23.5 < 0, so the expression for t_b has no real value: the beanbag rises only about 0.46 m and never reaches the 1.2 m rim. Equal ranges for 30° and 60° hold only when the landing point is at launch height.",
+                  "steps": [
+                    "At 30°, v_0 sin θ = 3.0 m/s, so v_0^2 sin^2 θ − 2gh = 9.0 − 23.5 = −14.5 m^2/s^2. The square root in t_b is not a real number, so no time exists at which the beanbag is at height h.",
+                    "Physically, the greatest height is (v_0 sin θ)^2/(2g) = 9.0/19.6 ≈ 0.46 m, below the 1.2 m rim.",
+                    "The equal-range rule for complementary angles comes from setting y = 0 at landing. It does not apply to a target above the launch height."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-mathematical-routines-fr2",
+              "prompt": "A 40 kg toolbox sits on the flat, level bed of a pickup truck, 1.5 m behind the front wall of the bed, as shown. The coefficients of friction between the toolbox and the bed are μ_s = 0.35 and μ_k = 0.25. The truck travels forward on a straight, level road. Take forward as the positive direction, measure positions and accelerations relative to the road unless a part says otherwise, and treat the toolbox as a particle.",
+              "type": "MR",
+              "topics": [
+                "P1.2.7",
+                "P1.2.5",
+                "P1.2.2",
+                "P1.1.4"
+              ],
+              "figureIds": [
+                "p1-fr-mathematical-routines-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "The driver brakes gently, and the toolbox stays at rest relative to the bed. Draw a free-body diagram for the toolbox. Then, starting from Newton's second law, derive an expression for the greatest magnitude of the truck's acceleration for which the toolbox does not slide, in terms of μ_s and g, and calculate it.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Free-body diagram with exactly three forces: weight down and normal force up (equal lengths) and static friction backward; no forward force on the toolbox."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law horizontally with static friction as the only horizontal force, f_s = ma, and uses f_s ≤ μ_s F_N with F_N = mg from the vertical direction."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "a_max = μ_s g ≈ 3.4 m/s^2."
+                    }
+                  ],
+                  "answer": "Free-body diagram: weight mg down, normal force F_N up, static friction f_s backward. a_max = μ_s g ≈ 3.4 m/s^2.",
+                  "steps": [
+                    "While the truck slows, the toolbox slows with it, so its acceleration points backward. The only horizontal force on it is static friction from the bed, so that friction points backward.",
+                    "Vertical: F_N − mg = 0, so F_N = mg. Horizontal: f_s = ma, and static friction can be at most μ_s F_N.",
+                    "ma ≤ μ_s mg gives a ≤ μ_s g, so a_max = μ_s g = 0.35(9.8 m/s^2) ≈ 3.4 m/s^2. The mass cancels."
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-mathematical-routines-f2"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Later, while the truck moves forward at 15 m/s, the driver brakes hard: the truck slows with a constant acceleration of magnitude 5.0 m/s^2 until it stops, and the toolbox slides along the bed. Calculate the toolbox's acceleration and the time from the start of braking until the toolbox strikes the front wall, and show that the truck is still moving at that moment.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Recognizes that the toolbox slides, so kinetic friction acts on it backward: a_b = −μ_k g ≈ −2.45 m/s^2 (sign or direction stated)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Relates the two motions: the toolbox's acceleration relative to the truck is a_b − a_t = +2.55 m/s^2 and the gap closes when (1/2)(2.55 m/s^2)t^2 = 1.5 m, or equivalent position equations for the toolbox and the truck."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "t ≈ 1.1 s (accept 1.08–1.1 s), with a check that the truck is still moving at that time (it stops at 3.0 s)."
+                    }
+                  ],
+                  "answer": "The toolbox's acceleration is −2.45 m/s^2 (about 2.5 m/s^2 backward). It strikes the front wall about 1.1 s (1.08 s) after braking begins.",
+                  "steps": [
+                    "5.0 m/s^2 is more than μ_s g = 3.4 m/s^2, so the toolbox slides. Kinetic friction acts on it opposite its motion relative to the bed, which is backward: a_b = −μ_k g = −0.25(9.8) = −2.45 m/s^2.",
+                    "The truck's acceleration is a_t = −5.0 m/s^2. Relative to the truck, the toolbox starts at rest and accelerates forward at a_b − a_t = −2.45 − (−5.0) = +2.55 m/s^2.",
+                    "The gap closes when (1/2)(2.55 m/s^2)t^2 = 1.5 m, so t = √(2(1.5)/2.55) ≈ 1.08 s.",
+                    "The truck stops at (15 m/s)/(5.0 m/s^2) = 3.0 s, later than 1.08 s, so both accelerations stay constant until the impact."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate how far the toolbox moves relative to the road from the start of braking until it strikes the front wall. Use this result and the truck's motion to check your time from part (b).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "x_b ≈ 14.8 m (accept 14.7–14.9 m) from constant-acceleration kinematics with an initial velocity of 15 m/s and a = −2.45 m/s^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes the truck's displacement for the same time (about 13.3 m) and shows that the difference is 1.5 m, the gap, confirming part (b)."
+                    }
+                  ],
+                  "answer": "About 14.8 m. The truck moves about 13.3 m in the same 1.08 s, and the difference, 1.5 m, equals the original gap, which confirms the time.",
+                  "steps": [
+                    "Toolbox: x_b = (15 m/s)(1.085 s) + (1/2)(−2.45 m/s^2)(1.085 s)^2 = 16.27 − 1.44 ≈ 14.8 m.",
+                    "Truck: x_t = (15 m/s)(1.085 s) + (1/2)(−5.0 m/s^2)(1.085 s)^2 = 16.27 − 2.94 ≈ 13.3 m.",
+                    "x_b − x_t = 1.5 m, the distance from the toolbox to the front wall, so the toolbox reaches the wall at that time."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The driver says, \"If the toolbox had been 3.0 m from the front wall instead of 1.5 m, it would have hit the wall twice as hard, at twice the speed relative to the truck.\" Derive an expression for the toolbox's speed relative to the truck when it reaches the wall, in terms of the gap D, the magnitude a_t of the truck's acceleration, μ_k and g. Use it to evaluate the driver's claim.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Derives v_rel = √(2(a_t − μ_k g)D), or an equivalent expression, from constant-acceleration kinematics relative to the truck or from the two motions relative to the road."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the dependence on √D to conclude that doubling the gap multiplies the relative speed by √2 (about 2.8 m/s to 3.9 m/s), so the claim is incorrect."
+                    }
+                  ],
+                  "answer": "v_rel = √(2(a_t − μ_k g)D). Doubling D multiplies v_rel by √2, not 2: about 2.8 m/s becomes about 3.9 m/s, so the claim is incorrect.",
+                  "steps": [
+                    "Relative to the truck, the toolbox starts at rest and has constant acceleration a_t − μ_k g toward the wall over a distance D, so v_rel^2 = 2(a_t − μ_k g)D and v_rel = √(2(a_t − μ_k g)D).",
+                    "v_rel is proportional to √D. For D = 1.5 m, v_rel = √(2(2.55)(1.5)) ≈ 2.8 m/s; for D = 3.0 m, v_rel ≈ 3.9 m/s, a factor of √2 ≈ 1.4.",
+                    "With D = 3.0 m the impact comes at t = √(2(3.0)/2.55) ≈ 1.5 s, still before the truck stops at 3.0 s, so the same expression applies."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-mathematical-routines-fr3",
+              "prompt": "A toy flywheel hangs from two light strings wound around its thin axle, as shown; the upper ends of the strings are tied to a fixed support. Model the flywheel and axle together as a uniform solid disk of mass m = 0.40 kg and radius R = 0.060 m, with rotational inertia (1/2)mR^2 about the axle. Each string unwinds from the axle at radius r = 0.0060 m without slipping, and the strings stay vertical. The flywheel is released from rest and descends. Neglect air resistance and friction, and take downward as positive.",
+              "type": "MR",
+              "topics": [
+                "P1.6.1",
+                "P1.5.6",
+                "P1.5.2",
+                "P1.5.4",
+                "P1.3.4"
+              ],
+              "figureIds": [
+                "p1-fr-mathematical-routines-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Derive an expression for the flywheel's speed v after it has descended a distance h from rest, in terms of h, g, R and r. Name the system and the principle you start from.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Starts from conservation of energy for the flywheel–Earth system (or the work–energy theorem with the string forces doing no work), mgh = K_trans + K_rot, and names the system."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes both kinetic energy terms with I = (1/2)mR^2 and the no-slip condition ω = v/r, using the axle radius r rather than R."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v = √(2gh/(1 + R^2/(2r^2))) or an algebraically equivalent expression."
+                    }
+                  ],
+                  "answer": "v = √(2gh/(1 + R^2/(2r^2))), equivalently v = √(4ghr^2/(2r^2 + R^2))",
+                  "steps": [
+                    "System: the flywheel and Earth. The strings pull on the flywheel where they leave the axle, and those points are momentarily at rest because the strings do not slip, so the string forces do no work. The system's mechanical energy is conserved.",
+                    "mgh = (1/2)mv^2 + (1/2)Iω^2, with I = (1/2)mR^2 and ω = v/r.",
+                    "mgh = (1/2)mv^2 + (1/4)mR^2(v/r)^2 = (1/2)mv^2(1 + R^2/(2r^2)), so v = √(2gh/(1 + R^2/(2r^2)))."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Calculate v after the flywheel has descended 0.50 m, and calculate the fraction of its kinetic energy that is rotational at that moment.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "v ≈ 0.44 m/s (accept 0.43–0.44 m/s), consistent with part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Rotational fraction ≈ 0.98 (accept 50/51 or 98%), from the ratio of the two terms or from the two energies."
+                    }
+                  ],
+                  "answer": "v ≈ 0.44 m/s; about 0.98 (98%) of the kinetic energy is rotational.",
+                  "steps": [
+                    "R^2/(2r^2) = (0.060)^2/(2(0.0060)^2) = 50.",
+                    "v = √(2(9.8)(0.50)/51) = √0.192 ≈ 0.44 m/s.",
+                    "K_rot/K = (R^2/(2r^2))/(1 + R^2/(2r^2)) = 50/51 ≈ 0.98. Of the 1.96 J released, about 1.92 J is rotational and 0.038 J translational."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Using Newton's second law in translational and rotational form, calculate the acceleration of the flywheel and the tension in each string. Show that this acceleration is consistent with your speed from part (b).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes mg − 2T = ma and (2T)r = (1/2)mR^2(a/r) and solves them to get a ≈ 0.19 m/s^2 and T ≈ 1.9 N in each string (accept a total of 3.8 N when the student says the two strings share it)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses v^2 = 2ah with the acceleration found to get about 0.44 m/s and states that it agrees with part (b)."
+                    }
+                  ],
+                  "answer": "a ≈ 0.19 m/s^2 downward; the tension is about 1.9 N in each string. v^2 = 2ah = 2(0.192)(0.50) ≈ 0.192 m^2/s^2 gives v ≈ 0.44 m/s, as in part (b).",
+                  "steps": [
+                    "Translation, with downward positive and a tension T in each string: mg − 2T = ma.",
+                    "Rotation about the axle: the strings' torque is (2T)r = Iα = (1/2)mR^2(a/r), so 2T = (1/2)m(R^2/r^2)a = 50ma.",
+                    "Substituting: mg = ma(1 + 50), so a = 9.8/51 ≈ 0.192 m/s^2.",
+                    "2T = m(g − a) = 0.40(9.8 − 0.19) ≈ 3.84 N, so T ≈ 1.9 N in each string.",
+                    "From rest, v^2 = 2ah = 2(0.192)(0.50) ≈ 0.192 m^2/s^2 and v ≈ 0.44 m/s, matching part (b)."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A second flywheel has the same mass, outer radius and axle, but nearly all of its mass is in a thin outer rim, so its rotational inertia about the axle is close to mR^2. Modifying your work from part (a) as needed, determine the ratio of the time the second flywheel takes to descend 0.50 m from rest to the time the first one takes. Explain physically why the times differ.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Replaces (1/2)mR^2 with mR^2 in the derivation, giving v^2 = 2gh/(1 + R^2/r^2) or a = g/(1 + R^2/r^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses t = √(2h/a), or an equivalent argument, to get t_2/t_1 = √(101/51) ≈ 1.4 (times of about 2.3 s and 3.2 s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the same released energy, mgh, is shared with a larger rotational part, so the translational speed is smaller at every height and the descent takes longer."
+                    }
+                  ],
+                  "answer": "t_2/t_1 = √((1 + R^2/r^2)/(1 + R^2/(2r^2))) = √(101/51) ≈ 1.4 (about 3.2 s compared with 2.3 s). The rim flywheel takes longer because more of the released energy goes into rotation, leaving it less translational speed at every height.",
+                  "steps": [
+                    "For a rotational inertia I, energy gives v^2 = 2gh/(1 + I/(mr^2)). Since v^2 is proportional to h, the acceleration is constant: a = g/(1 + I/(mr^2)).",
+                    "First flywheel: I/(mr^2) = R^2/(2r^2) = 50, so a_1 = 9.8/51 ≈ 0.192 m/s^2. Second: I/(mr^2) = R^2/r^2 = 100, so a_2 = 9.8/101 ≈ 0.097 m/s^2.",
+                    "From rest, t = √(2h/a), so t_2/t_1 = √(a_1/a_2) = √(101/51) ≈ 1.41. Numerically, t_1 ≈ 2.3 s and t_2 ≈ 3.2 s.",
+                    "Both flywheels convert the same mgh into kinetic energy, and the ratio of rotational to translational kinetic energy is I/(mr^2). The rim flywheel puts a larger share into rotation, so it moves down more slowly at every height and takes longer."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-mathematical-routines-fr4",
+              "prompt": "A glider of mass M = 1.2 kg on a level, frictionless air track is attached to a horizontal spring of spring constant k = 75 N/m whose other end is fixed to a wall, as shown. A small brass block of mass m = 0.30 kg rests on top of the glider. The coefficient of static friction between the block and the glider is μ_s = 0.40. Take +x to the right, with x = 0 at the equilibrium position, and neglect air resistance.",
+              "type": "MR",
+              "topics": [
+                "P1.7.4",
+                "P1.7.2",
+                "P1.7.1",
+                "P1.2.7",
+                "P1.2.5"
+              ],
+              "figureIds": [
+                "p1-fr-mathematical-routines-f4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "The glider is set oscillating, and the block rides on it without slipping. Calculate the period of the oscillation.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses T = 2π√(m_total/k) with the combined mass M + m, because the block moves with the glider."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "T ≈ 0.89 s (accept 0.88–0.90 s)."
+                    }
+                  ],
+                  "answer": "T ≈ 0.89 s",
+                  "steps": [
+                    "The block and the glider move together, so the oscillating mass is M + m = 1.5 kg.",
+                    "T = 2π√((M + m)/k) = 2π√(1.5/75) ≈ 0.89 s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the largest amplitude A_max for which the block does not slip on the glider, in terms of M, m, k, μ_s and g. Then calculate A_max.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies static friction from the glider as the only horizontal force on the block, so the block's acceleration a satisfies ma ≤ μ_s mg (normal force mg)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law to the block–glider system, a = −kx/(M + m), and identifies the turning points, where the acceleration has its greatest magnitude, kA/(M + m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A_max = μ_s(M + m)g/k ≈ 0.078 m (accept 0.078–0.079 m)."
+                    }
+                  ],
+                  "answer": "A_max = μ_s(M + m)g/k ≈ 0.078 m",
+                  "steps": [
+                    "The only horizontal force on the block is static friction from the glider, so f_s = ma for the block, and f_s ≤ μ_s mg.",
+                    "For the block and glider together, the net horizontal force is the spring force −kx, so a = −kx/(M + m). Its magnitude is greatest at the turning points: kA/(M + m).",
+                    "No slipping at the turning points requires m·kA/(M + m) ≤ μ_s mg, so A ≤ μ_s(M + m)g/k.",
+                    "A_max = 0.40(1.5)(9.8)/75 ≈ 0.078 m."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "The glider and block are pulled to x = +0.060 m and released from rest. Calculate the total mechanical energy of the block–glider–spring system and the maximum speed of the glider.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "E = (1/2)kA^2 = 0.135 J (accept 0.13–0.14 J), from the spring's potential energy at the release point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v_max ≈ 0.42 m/s from (1/2)(M + m)v_max^2 = E with the combined mass, which moves together because 0.060 m is less than A_max (accept 0.42–0.43 m/s; the comparison with A_max need not be written)."
+                    }
+                  ],
+                  "answer": "E = 0.135 J (about 0.14 J); v_max ≈ 0.42 m/s. The amplitude, 0.060 m, is less than A_max, so the block does not slip.",
+                  "steps": [
+                    "0.060 m is less than 0.078 m, so the block rides without slipping and the two move together.",
+                    "At release all the energy is spring potential energy: E = (1/2)kA^2 = (1/2)(75)(0.060)^2 = 0.135 J.",
+                    "At x = 0 it is all kinetic: (1/2)(M + m)v_max^2 = 0.135 J, so v_max = √(2(0.135)/1.5) ≈ 0.42 m/s."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "During this motion, the glider passes x = +0.030 m moving in the −x direction. Calculate its speed at that instant and the magnitude and direction of the friction force that the glider exerts on the block. Then explain how the block's kinetic energy can change during the motion even though the block never slides on the glider.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "v ≈ 0.37 m/s from energy conservation, or an equivalent method, with the combined mass (accept 0.36–0.38 m/s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Friction on the block = m·k|x|/(M + m) = 0.45 N, directed in the −x direction, toward equilibrium."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that static friction, the only horizontal force on the block, does work on it because the block moves relative to the track (positive work toward equilibrium, negative work away from it), and that with no sliding the friction pair dissipates no energy."
+                    }
+                  ],
+                  "answer": "v ≈ 0.37 m/s; the friction force on the block is 0.45 N in the −x direction. Static friction is the only horizontal force on the block, and the block moves relative to the track, so friction does work on it: positive while the block speeds up toward x = 0 and negative while it slows down. Nothing slides, so this work transfers energy between glider and block without dissipating any.",
+                  "steps": [
+                    "Energy: (1/2)kA^2 = (1/2)kx^2 + (1/2)(M + m)v^2, so v = √((k/(M + m))(A^2 − x^2)) = √(50(0.0036 − 0.0009)) ≈ 0.37 m/s.",
+                    "Acceleration at x = +0.030 m: a = −kx/(M + m) = −75(0.030)/1.5 = −1.5 m/s^2.",
+                    "Block: f_s = ma = 0.30(−1.5) = −0.45 N, so 0.45 N in the −x direction, toward equilibrium. This is less than μ_s mg ≈ 1.2 N, as it must be.",
+                    "Work is done by a force whose point of application moves in the chosen frame, here the track. The block moves with the glider, so static friction does work on it. At this instant friction and the block's motion both point in −x, so the work is positive and the block speeds up. The glider feels an equal and opposite friction force through the same displacement, so the total work by the friction pair is zero and no energy is dissipated."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

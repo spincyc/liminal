@@ -1,0 +1,342 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "fr-qualitative-quantitative",
+  "kind": "fr-archetype",
+  "title": "Qualitative/Quantitative Translation",
+  "author": "cm-fr-qqt-author",
+  "summary": "The Qualitative/Quantitative Translation question on the AP® Physics C: Mechanics Exam asks you to reason about a physical situation in words, derive the same result with equations, calculate it, and then show whether the words and the equations agree. This guide describes how the question usually runs in Liminal's practice, what earns each kind of point, sentences you can model and the usual traps, and ends with a worked model, three self-checks and a practice set of four questions.",
+  "minutes": 35,
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Section II of the exam has four free-response questions, one of each type. College Board's exam pages (checked 2026-10-22) name Qualitative/Quantitative Translation as one of the four and allow a calculator throughout the exam. Liminal's practice scores this type out of 8 points and paces it at 18 minutes, inside the 15–20 minutes its practice exams suggest for this question; both numbers are Liminal practice conventions, not stated College Board facts."
+        },
+        {
+          "type": "text",
+          "text": "The stem describes a physical situation with a comparison built in: two setups that differ in one feature, two trials at different speeds, a changed parameter, or a claim made by a student. The question then asks for the same physics twice, once in words and once in symbols, and asks you to connect the two. What it tests is translation: can you say why something happens, show it with a derivation, and see whether the two agree?"
+        },
+        {
+          "type": "text",
+          "text": "Any unit can supply the situation. The derivation usually starts from Newton's second law in linear or rotational form, a conservation law for a stated system, the work–energy theorem, or a definition such as v = dx/dt or W = ∫ F dx, and in this course it often needs an integral or a differential equation."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "How the parts usually run",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Liminal's QQT questions usually run in this order and are scored 2, 3, 1 and 2. Some put the calculation first, give a student's claim to evaluate, or end with a prediction for a changed situation; the four jobs stay the same.",
+          "head": [
+            "Part",
+            "What you do",
+            "Points usually go to (of 8)"
+          ],
+          "rows": [
+            [
+              "Claim and reasoning, without equations",
+              "Make a definite claim (greater, less, the same; which one) and explain it in words with physical principles",
+              "2: one for the claim, one for reasoning that names the principle and the feature of the situation that decides it"
+            ],
+            [
+              "Derivation",
+              "Start from a fundamental relation, apply it to this situation, and reach an expression in the symbols the part names",
+              "3: usually one for the starting relation applied correctly, one for a key step (an integral, a lever arm, two equations combined), one for the result"
+            ],
+            [
+              "Calculation",
+              "Substitute the given values into your expression",
+              "1: the values, each with a unit and the givens' precision"
+            ],
+            [
+              "Connection",
+              "Say whether the expression supports the claim and why; then a limiting case, a changed parameter or a new prediction",
+              "2: one for an accurate comparison that cites the feature of the expression, one for the extension"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pace: 18 minutes for 8 points. A workable split is about 4 minutes for the claim, 7 for the derivation, 2 for the calculation and 4 for the connection, with a minute left to check units and directions. The split fails when a derivation runs long; then shorten the claim's write-up rather than skip the connection, which needs only your claim and whatever expression you reached."
+        },
+        {
+          "type": "text",
+          "text": "If a derivation stalls, write the starting relation applied to the situation and say what you would do next, then go on. Later parts that use an earlier wrong or unfinished result can still earn their points when the work is consistent with it."
+        }
+      ]
+    },
+    {
+      "id": "what-earns-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's QQT rubrics award five kinds of points."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Claim points: a definite answer to the comparison. \"It depends\" earns nothing unless the question invites it and you say on what.",
+            "Reasoning points: an explanation in words that names the physical principle (Newton's second law, conservation of momentum for a stated system, the work–energy theorem, a torque balance about a stated point) and the feature of this situation that decides the comparison. Restating the claim is not reasoning.",
+            "Derivation points: a derivation that starts from a fundamental relation, applies it to this situation, and lets each step follow from the last. Starting from a formula for a special case, such as constant acceleration when the force varies, usually loses the starting point.",
+            "Symbol and unit points: an expression in the symbols the part names, with any new symbol defined and a positive direction stated; numerical answers with units and the givens' precision.",
+            "Consistency points: a comparison between your claim and your expression or numbers that cites what in the expression decides it, such as a factor, an exponent or a symbol that cancels. Liminal awards this point for an accurate comparison even when it shows that your claim was wrong."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Fundamental starting points",
+          "text": "Begin a derivation from one of these, applied to a system you name: ΣF = ma (or m d^2x/dt^2 = ΣF); Στ = Iα about a stated axis, or ΣF = 0 and Στ = 0 for equilibrium; conservation of momentum, energy or angular momentum for a stated system; the work–energy theorem W = ΔK with W = ∫ F dx; definitions such as v = dx/dt and a = dv/dt.",
+          "conditions": [
+            "Momentum is conserved only when the net external force on the system you name is zero, in the direction you use.",
+            "Mechanical energy is conserved only when no nonconservative force does work; otherwise use W_nc = ΔK + ΔU.",
+            "Constant-acceleration equations apply only when the net force is constant."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Words that do the work of an equation",
+          "text": "A part that says \"without writing or deriving equations\" still wants physics. Proportional statements in words count as reasoning: \"kinetic energy grows with the square of speed\", \"a torque is the force times its lever arm\", \"the gravitational force and the inertia are both proportional to mass\".",
+          "conditions": [
+            "Name the principle and apply it to this situation; a principle with no link to the comparison decides nothing.",
+            "Keep algebra out of this part: a line of symbols may not be read as reasoning."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Checks that connect the two",
+          "text": "To test whether an expression supports a claim, look at how the deciding quantity enters it: in a numerator or a denominator, with which exponent, or not at all. Then try a limiting case, a value of a parameter (zero, very large, equal to another) for which you already know the answer.",
+          "conditions": [
+            "Check units first: an expression whose terms have different units is wrong before any comparison.",
+            "A limiting case can show that an expression is wrong; agreeing with one limit does not show that it is right."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "A claim and its reasoning, without equations: does a heavier bob change the period of a simple pendulum of fixed length?",
+          "text": "The period stays the same. Gravity's pull on the bob is proportional to its mass, and so is the bob's inertia, its resistance to a change in motion. A heavier bob is pulled back harder by exactly the factor that makes it harder to accelerate, so it moves along the same arc in the same time."
+        },
+        {
+          "type": "model",
+          "prompt": "Naming the system and the principle before a momentum derivation, for a puck that strikes a stick lying on frictionless ice.",
+          "text": "System: the puck and the stick. The ice exerts no horizontal force and the vertical forces balance, so the net external force on the system is zero and its momentum is conserved. Taking the puck's initial direction as positive: m_p v_0 = m_p v_p + m_s v_s."
+        },
+        {
+          "type": "model",
+          "prompt": "Starting a derivation for a force that varies with position, for a cart stopped by a bumper whose force depends on how far it is compressed.",
+          "text": "System: the cart, with +x in its direction of motion and x measured from where it first touches the bumper. The bumper's force F(x) points in −x, and it does work W = ∫ from 0 to s of F(x) dx on the cart as it moves in to its stopping point s. By the work–energy theorem, W = ΔK = 0 − ½mv_0^2."
+        },
+        {
+          "type": "model",
+          "prompt": "Stating that an expression supports a claim, for a block of mass m = 1.0 kg hanging from a string wound around a uniform disk pulley of mass M, with a = mg/(m + M/2).",
+          "text": "My expression supports my claim in part (a). The pulley's mass M appears only in the denominator, so the heavier pulley gives the smaller acceleration, as I claimed; the values in part (c), 3.9 m/s^2 for the 3.0 kg pulley against 5.8 m/s^2 for the 1.4 kg pulley, agree."
+        },
+        {
+          "type": "model",
+          "prompt": "When the expression contradicts the claim, for blocks sliding from rest down two frictionless ramps of the same height but different lengths.",
+          "text": "My expression does not support my claim in part (a). I claimed that the longer ramp gives the larger speed at the bottom, but v = √(2gh) contains only the height, so the speeds are equal. My reasoning counted the longer distance over which gravity acts along the ramp, but not the smaller component of gravity along it."
+        },
+        {
+          "type": "model",
+          "prompt": "A limiting case, for the same pulley expression a = mg/(m + M/2).",
+          "text": "As M approaches zero, a approaches g, which is what a block on a string over a massless pulley must do with nothing else attached, so the expression passes this check. As M grows very large, a approaches zero: a very heavy pulley barely turns."
+        },
+        {
+          "type": "model",
+          "prompt": "Proportional reasoning from an expression, for the period of a block on a spring when the block's mass is made four times as large.",
+          "text": "T = 2π√(m/k) is proportional to √m, so four times the mass gives √4 = 2 times the period, not four times."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Giving the claim as its own reason: \"Method B is faster because it takes less time.\"",
+          "fix": "Name the principle and the feature of the situation that decides it: which force, which lever arm, which system, which quantity is conserved, and how it differs between the cases."
+        },
+        {
+          "type": "trap",
+          "text": "Writing equations in a part that says not to, and offering them as the reasoning.",
+          "fix": "Translate the relation into words, such as \"kinetic energy grows with the square of speed\". Save the algebra for the derivation."
+        },
+        {
+          "type": "trap",
+          "text": "Bending a derivation until it agrees with the claim in part (a).",
+          "fix": "Trust a derivation that passes a units check and a limiting case. If it disagrees with the claim, revise the claim and its reasoning, or say in the connection part where the reasoning went wrong; an honest comparison still earns the consistency point."
+        },
+        {
+          "type": "trap",
+          "text": "Starting a derivation from a special-case formula: constant-acceleration equations when the force changes with position, T = 2π√(m/k) for a system that is not a single mass on a fixed spring, or v = √(2gh) when friction acts.",
+          "fix": "Start from Newton's second law, a torque balance, a conservation law for a named system, or the work–energy theorem, and let a special case appear only if the situation produces it."
+        },
+        {
+          "type": "trap",
+          "text": "Substituting numbers in a part that asks for an expression, or answering in symbols the part did not name.",
+          "fix": "Keep symbols until the calculation part. Express the result in exactly the symbols listed and physical constants, and define any symbol you introduce, with its positive direction."
+        },
+        {
+          "type": "trap",
+          "text": "Writing \"this supports my answer\" with no evidence.",
+          "fix": "Quote the feature of the expression that decides the comparison, such as a factor, an exponent or a symbol that cancels, and set the calculated values side by side."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming that doubling an input doubles the output.",
+          "fix": "Read the exponent. An output proportional to √x grows by a factor of 1.41 when x doubles, one proportional to x^2 by 4, and one that does not contain x not at all."
+        },
+        {
+          "type": "trap",
+          "text": "Invoking conservation of momentum or energy without saying for which system, or for a system on which a net external force or a nonconservative force acts.",
+          "fix": "Name the system first, then say why the law applies: no net external force in the direction used, or no work by nonconservative forces."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving units off the calculation, or reporting six digits.",
+          "fix": "Give a unit with every number, and match the givens' precision, usually two or three significant figures."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Hailstones are spheres of ice of density ρ = 920 kg/m^3. The air exerts a drag force of size cv^2 on a falling hailstone, where v is its speed and c = Kr^2 depends on its radius r, with K = 0.94 kg/m^3. Ignore buoyancy. (a) Without writing or deriving equations, determine whether a hailstone of radius 10 mm has a terminal speed greater than, less than or equal to that of a hailstone of radius 5.0 mm. Explain your reasoning. (b) Starting from Newton's second law, derive an expression for the terminal speed v_T of a hailstone of radius r in terms of r, ρ, K and g. (c) Calculate the terminal speeds of the two hailstones. (d) Does your expression support your claim in part (a)? Justify your answer, and state by what factor the terminal speed changes when the radius doubles.",
+          "answer": "(a) Greater. (b) v_T = √(4πρgr/(3K)). (c) 14 m/s for the 5.0 mm hailstone and 20 m/s for the 10 mm hailstone. (d) Yes: v_T is proportional to √r, so doubling the radius multiplies the terminal speed by √2 = 1.41, not by 2.",
+          "steps": [
+            "(a) Greater. At terminal speed the drag balances the weight. The weight grows with the hailstone's volume, the cube of its radius, but the drag at a given speed grows only with its cross-section, the square of its radius. Doubling the radius makes the weight 8 times as large but the drag at the same speed only 4 times as large, so the larger hailstone must fall faster before the drag balances its weight.",
+            "(b) Take the hailstone as the system and down as positive. Newton's second law: m dv/dt = mg − Kr^2v^2. At terminal speed dv/dt = 0, so mg = Kr^2v_T^2. With m = ρ(4/3)πr^3, v_T^2 = (4/3)πρr^3g/(Kr^2) = 4πρgr/(3K), so v_T = √(4πρgr/(3K)).",
+            "(c) For r = 5.0 × 10^−3 m: v_T = √(4π(920 kg/m^3)(9.8 m/s^2)(5.0 × 10^−3 m)/(3(0.94 kg/m^3))) = √(201 m^2/s^2) = 14 m/s. For r = 1.0 × 10^−2 m: v_T = √(402 m^2/s^2) = 20 m/s.",
+            "(d) In v_T = √(4πρgr/(3K)), r sits in the numerator under a square root, so a larger radius gives a larger terminal speed, which supports part (a). Doubling r multiplies v_T by √2 = 1.41: (14 m/s)(1.41) = 20 m/s, matching part (c). The reasoning in (a) gave the direction of the change; the expression gives its size, and a guess of \"twice as fast\" would be wrong.",
+            "Check the habits: the claim is definite and its reason names the balance at terminal speed and how each force grows with size; the derivation starts from Newton's second law with a stated system and positive direction; the answers carry units and two significant figures; the connection cites how r enters the expression."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you reveal the answer."
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-qualitative-quantitative-c1",
+          "prompt": "A block slides from rest down a straight ramp whose top is a height h above its bottom and whose horizontal length is d. The coefficient of kinetic friction between the block and the ramp is μ. A student's derivation ends with v = √(2gh(1 − μd)) for the block's speed at the bottom. Without redoing the derivation, show that this expression cannot be right. Then derive the correct expression.",
+          "hint": "Look at the units of each term inside the parentheses. For the derivation, a ramp at angle θ is d/cos θ long.",
+          "answer": "μ has no units, so μd is a length and cannot be subtracted from the pure number 1. The correct speed is v = √(2g(h − μd)).",
+          "steps": [
+            "Inside the parentheses, 1 has no units and μd is in meters, so the expression subtracts unlike quantities; it fails before any physics is checked.",
+            "On a ramp at angle θ the normal force is mg cos θ and the ramp is d/cos θ long, so friction does work −μmg cos θ(d/cos θ) = −μmgd.",
+            "Work–energy theorem from rest: mgh − μmgd = ½mv^2, so v = √(2g(h − μd)).",
+            "Limiting checks: μ = 0 gives √(2gh), and the speed is zero when μd = h, where friction removes all the energy gravity supplies."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-qualitative-quantitative-c2",
+          "prompt": "In part (a) of a question, a student claims that a satellite in a circular orbit of twice the radius around the same planet takes twice as long to complete one orbit. In part (b) she derives v = √(GM/r) for the orbital speed. Does her expression support her claim? Justify your answer and state the correct factor.",
+          "hint": "The period is the distance around the orbit divided by the speed. Write the period in terms of r before you compare.",
+          "answer": "No. T = 2πr/v = 2πr^(3/2)/√(GM), so doubling r multiplies the period by 2^(3/2) = 2.83, not 2.",
+          "steps": [
+            "T = 2πr/v = 2πr/√(GM/r) = 2πr^(3/2)/√(GM).",
+            "Doubling r multiplies T by 2^(3/2) = 2√2 = 2.83: the path is twice as long, and the satellite also moves more slowly, by a factor of 1/√2.",
+            "A connection sentence: \"My expression does not support the claim. T is proportional to r^(3/2), so the larger orbit takes 2.83 times as long, because the path doubles and the speed falls.\""
+          ],
+          "see": "model-wording"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-qualitative-quantitative-c3",
+          "prompt": "Two identical balls are dropped from the same height. Ball P lands on a hard floor and bounces back up with almost the same speed; ball Q lands in soft clay and stops. A student's part (a) answer reads: \"The floor gives P the bigger impulse because of momentum.\" Explain why this would not earn a reasoning point, and rewrite it so that it would.",
+          "hint": "Which system? Which quantity changes, and by about how much in each case?",
+          "answer": "It names momentum but not the system, the principle that links momentum to impulse, or the difference between the two cases. A version that earns the point: \"Take each ball as the system. The impulse on a ball equals its change in momentum. Q's momentum changes from downward to zero, but P's changes from downward to almost as large upward, about twice as large a change, so the floor gives P the larger impulse.\"",
+          "steps": [
+            "The original names a quantity, but no principle connecting it to the claim and no feature of the situation that decides it.",
+            "The rewrite names the system, the impulse–momentum theorem, and the deciding feature: reversing direction changes the momentum about twice as much as stopping."
+          ],
+          "see": "traps"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set two questions at a sitting at Liminal's practice pace of 18 minutes a question: questions 1 and 2 (relative motion, then work) in 36 minutes, and questions 3 and 4 (momentum, then torque and equilibrium) in another 36 minutes. Score each with the rubric and record raw points as practice. For every point lost, decide whether it was the claim, the reasoning, the derivation, the calculation or the connection, then revisit the matching section above, or the review and week below for the physics."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-qualitative-quantitative"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-qualitative-quantitative"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Unit 1 review: kinematics",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 3 review: work, energy and power",
+              "ref": "guide:review-u3"
+            },
+            {
+              "label": "Unit 4 review: linear momentum",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 5 review: torque and rotational dynamics",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Week 4: reference frames and relative motion",
+              "ref": "week:4"
+            },
+            {
+              "label": "Week 12: kinetic energy and work as an integral",
+              "ref": "week:12"
+            },
+            {
+              "label": "Week 17: momentum conservation and center-of-mass motion",
+              "ref": "week:17"
+            },
+            {
+              "label": "Week 22: rotational equilibrium",
+              "ref": "week:22"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

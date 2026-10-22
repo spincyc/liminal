@@ -1,0 +1,516 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "exam-format",
+  "kind": "strategy",
+  "title": "How the exam runs and how to pace it",
+  "author": "p1-strategy-author",
+  "summary": "How the AP® Physics 1 Exam is built in its May 2027 format, how to pace its 42 multiple-choice and four free-response questions, tactics for each section with the situations where each one fails, the calculator and the equation sheet, and what to do in the last weeks, the day before and the day of the exam.",
+  "minutes": 25,
+  "sections": [
+    {
+      "id": "structure",
+      "title": "The exam's structure",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The AP® Physics 1 Exam, in the format that starts in May 2027, lasts 3 hours. It has two sections of equal weight: multiple choice first, then free response. Each section is timed on its own, and a calculator is allowed in both."
+        },
+        {
+          "type": "table",
+          "caption": "The May 2027 format. Source: College Board's AP® Physics 1 exam pages, checked 2026-10-22.",
+          "head": [
+            "Section",
+            "Questions",
+            "Minutes",
+            "Calculator",
+            "Share of exam score"
+          ],
+          "rows": [
+            [
+              "Section I, multiple choice",
+              "42",
+              "85",
+              "Four-function, scientific or graphing",
+              "50%"
+            ],
+            [
+              "Section II, free response",
+              "4: one Mathematical Routines, one Translation Between Representations, one Experimental Design and Analysis and one Qualitative/Quantitative Translation question",
+              "95",
+              "Four-function, scientific or graphing",
+              "50%"
+            ],
+            [
+              "Whole exam",
+              "42 multiple choice, 4 free response",
+              "180 (3 hours)",
+              "Allowed in all 180 minutes",
+              "100%"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Other facts about the May 2027 exam, from the same College Board pages and College Board's calculator policy page, checked 2026-10-22:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Delivery is hybrid digital. You answer the multiple-choice questions and read the free-response questions in the Bluebook testing app, and you handwrite your free-response answers in a paper booklet. Any diagram, graph or sketch you are asked for is drawn by hand in that booklet.",
+            "Bluebook has a built-in Desmos scientific or graphing calculator, and you may also use up to two approved handheld calculators.",
+            "An equation sheet is supplied. College Board's pages say its reference materials are printed for the exam room and also available in Bluebook. Liminal's practice exams append Liminal's own formula reference instead; the guide on using the formula reference says how to prepare with both.",
+            "Section II has exactly one question of each of the four types named in the table.",
+            "Liminal's practice materials score the four types out of 10 (Mathematical Routines), 12 (Translation Between Representations), 10 (Experimental Design and Analysis) and 8 (Qualitative/Quantitative Translation) raw points, and each multiple-choice question out of 1. College Board's exam pages, checked 2026-10-22, do not state point values, so these numbers are Liminal's practice scale, for comparing your own work from one form to the next."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Formats change. Before you settle on a pacing plan, check College Board's current AP® Physics 1 exam page for the format of the exam you will take, and redo the arithmetic below if anything differs."
+        },
+        {
+          "type": "text",
+          "text": "Weight per question: spread over its questions, Section I's half of the score is 50% ÷ 42 ≈ 1.2% a question, while Section II averages 50% ÷ 4 = 12.5% a question, about ten times as much. College Board's pages do not say how Section II's half is split among the four questions, so treat 12.5% as an average. What it means for practice: a free-response question left half done gives away as much as several multiple-choice questions, so practice finishing every part."
+        },
+        {
+          "type": "check",
+          "id": "p1-exam-format-c1",
+          "prompt": "Using the table and the list above, say whether each statement about the May 2027 exam is true or false, and correct each false one. (a) A calculator is allowed only in Section II. (b) You type your free-response answers in Bluebook. (c) An equation sheet is supplied, so you do not bring your own. (d) Each free-response question is worth 10 points on the exam. (e) The two sections carry equal shares of the exam score.",
+          "hint": "Check (b) and (d) against the list, not the table.",
+          "answer": "(a) False: a four-function, scientific or graphing calculator is allowed in both sections. (b) False: you read the free-response questions in Bluebook but handwrite your answers in a paper booklet. (c) True: College Board's pages say the reference materials are printed for the exam room and also available in Bluebook. (d) False: College Board's exam pages, checked 2026-10-22, state no point values; 10, 12, 10 and 8 are Liminal's practice scale. (e) True: 50% each.",
+          "steps": [
+            "(a) The table's calculator column is the same for both sections.",
+            "(b) Only the multiple-choice answers go into Bluebook. Free-response work, including any graph or diagram, is handwritten.",
+            "(c) The equation sheet is supplied. Practice with College Board's sheet as well as Liminal's reference before the exam, since the two differ.",
+            "(d) Liminal's practice scale gives the four types 10, 12, 10 and 8 points. It is a tool for comparing your own forms, not a fact about the exam.",
+            "(e) Each section is 50% of the exam score."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pacing",
+      "title": "Pacing",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A section's average time per question is its minutes divided by its questions. Averages make good checkpoints but poor schedules: some questions take 40 seconds and some take 4 minutes."
+        },
+        {
+          "type": "table",
+          "caption": "Average pace for Section I, with checkpoints.",
+          "head": [
+            "Section",
+            "Average per question",
+            "Checkpoints (minutes into the section)"
+          ],
+          "rows": [
+            [
+              "Section I, multiple choice",
+              "85 ÷ 42 ≈ 2.0 minutes (about 2 min 1 s)",
+              "About 21 questions done at minute 43; about 32 done at minute 65"
+            ],
+            [
+              "Section II, free response",
+              "95 ÷ 4 ≈ 24 minutes on average",
+              "See Liminal's plan by question type below"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Liminal's practice pace for Section II. It sits inside the suggested times Liminal's practice exams print (20–25, 25–30, 25–30 and 15–20 minutes) and sums to the section's 95 minutes, with a little more room for Experimental Design and Analysis, whose hand-drawn graph can run long. It is a Liminal practice convention, not a College Board figure, and the order shown is the order of Liminal's practice exams.",
+          "head": [
+            "Question and type",
+            "Liminal practice points",
+            "Minutes",
+            "Start it by minute"
+          ],
+          "rows": [
+            [
+              "1, Mathematical Routines",
+              "10",
+              "22",
+              "0"
+            ],
+            [
+              "2, Translation Between Representations",
+              "12",
+              "28",
+              "22"
+            ],
+            [
+              "3, Experimental Design and Analysis",
+              "10",
+              "27",
+              "50"
+            ],
+            [
+              "4, Qualitative/Quantitative Translation",
+              "8",
+              "18",
+              "77"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The free-response workshop sets use the same pace: two Mathematical Routines questions in 44 minutes, two Translation Between Representations questions in 56, two Experimental Design and Analysis questions in 54, and two Qualitative/Quantitative Translation questions in 36. Timing yourself on those sets is how this plan becomes habit."
+        },
+        {
+          "type": "text",
+          "text": "Work Section I in two passes:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "First pass. Work the questions in order. When you can see the way through, finish the question. When you cannot see a first step within about 30 seconds, or the work runs past about twice the average (about 4 minutes), choose your best answer so far, flag the question and move on.",
+            "Flag with a reason. Note a word such as “setup”, “graph” or “check” beside the question number on your scratch paper, so that on the second pass you know which flagged questions are nearly done.",
+            "Second pass. Return to the flagged questions, nearly-done ones first, with the time the first pass saved.",
+            "Last two minutes. Make sure every question has an answer. On Liminal's practice exams a blank and a wrong choice both earn 0; check College Board's exam page for how the exam itself treats them."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Spending six or seven minutes on one multiple-choice question about a hard rotation or fluids situation. Every minute past the average comes out of questions you have not read yet, and some of those will be quick.",
+          "fix": "Use the cutoff of about twice the average. At the cutoff, choose your best answer, flag the question and move on; come back only with time the first pass saved."
+        },
+        {
+          "type": "check",
+          "id": "p1-exam-format-c2",
+          "prompt": "You are about to start question 25 of Section I, and 30 minutes of the section remain. At the average pace, are you ahead or behind, and by about how many minutes? How much time does each remaining question now have, and what should you change?",
+          "hint": "Find how long 24 questions take at 85 ÷ 42 minutes each, and compare that with the time you have used.",
+          "answer": "Behind by about 6 minutes: you have used 55 minutes for 24 questions, and at the average pace 24 questions take about 48.6 minutes. The 18 remaining questions have 30 ÷ 18 ≈ 1.7 minutes each instead of about 2.0. Shorten the cutoff: choose and flag any question with no clear first step, and keep moving rather than rushing every question.",
+          "steps": [
+            "Time used: 85 − 30 = 55 minutes, for questions 1 to 24.",
+            "At the average pace, 24 questions take 24 × 85/42 ≈ 48.6 minutes, so you are about 55 − 48.6 ≈ 6.4 minutes behind.",
+            "Questions left: 42 − 24 = 18, with 30 minutes, so 30 ÷ 18 ≈ 1.67 minutes each.",
+            "Six minutes behind calls for skipping slow questions on the first pass, not for rushing every question. Move on from any question with no first step after about 30 seconds, return if time remains, and leave no question without an answer."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Pacing advice fails in a few common ways:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Averages hide variety. A minute or two behind at a checkpoint is normal; five or more behind means choose and flag sooner.",
+            "Two passes cost rereading time. If you rarely flag and usually finish early, one careful pass and a final look at the few flagged questions works better.",
+            "Flagging too much turns the second pass into a second exam. If you flag more than about a quarter of the section, commit to more answers on the first pass.",
+            "The Section II plan is a checkpoint, not a wall. The 95 minutes are shared by all four questions: a question on your strongest unit may take 15 minutes, and the time saved belongs to a harder one.",
+            "An Experimental Design and Analysis question often asks you to read a procedure or a data table and draw a graph by hand, which can run long. If you are past its time with parts left, write the procedure or the analysis in short sentences, and leave the neat graph for the end.",
+            "A plan you have never used under time is a guess. Rehearse it on full practice exams, then adjust the cutoffs to your own speed."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-exam-format-c3",
+          "prompt": "In Section II you finish question 2 at minute 60, ten minutes past Liminal's checkpoint. Questions 3 (Experimental Design and Analysis) and 4 (Qualitative/Quantitative Translation) remain, and the plan gave them 27 and 18 minutes. How would you divide the 35 minutes left, and what do you do first in each question?",
+          "hint": "Scale the planned times so they fit the time left, keeping their proportion.",
+          "answer": "About 21 minutes for question 3 and about 14 for question 4: 35 minutes in the planned ratio 27 : 18. In each question, read every part first, then answer every part briefly before polishing any of them.",
+          "steps": [
+            "Time left: 95 − 60 = 35 minutes, against the 27 + 18 = 45 the plan gave these two questions.",
+            "Keep the proportion: 35 × 27/45 = 21 minutes and 35 × 18/45 = 14 minutes. Splitting by Liminal's points, 10 : 8, would give about 19 and 16 minutes; either is a reasonable plan, but the planned ratio keeps the extra room for the Experimental Design and Analysis graph.",
+            "Note the new checkpoint: start question 4 by about minute 81.",
+            "Read every part first, since a short, quick part often sits at the end. Write each answer in its own space, keep explanations to the claim and the reason, and return to anything left rough only if time remains."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multiple-choice",
+      "title": "Multiple-choice tactics",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Wrong choices on a well-made question come from real errors, so a choice that looks familiar is not evidence that it is right. Each tactic below earns its time only in some situations. The guide Methods for multiple choice works through them in depth."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tactic",
+            "How",
+            "When it fails"
+          ],
+          "rows": [
+            [
+              "Check units",
+              "Find the units of each choice. An expression for a time must come out in seconds, a speed in m/s, an energy in joules.",
+              "When the choices differ only by a number such as 2, √2 or 1/2, every choice has the right units, and only the physics decides."
+            ],
+            [
+              "Try a limiting case",
+              "Let one quantity go to zero or become very large: an incline angle of 0° or 90°, one mass much larger than the other, no friction. The right expression must give the result you know for that case.",
+              "When every choice behaves well in the limit, or when the limit leaves the situation the question describes, such as an angle at which a resting block would start to slide."
+            ],
+            [
+              "Reason with ratios",
+              "For “what happens if the mass doubles” questions, write the relation as a proportion and change only what changes.",
+              "When the change also changes something you treated as fixed: doubling a cart's mass on a rough track also doubles the friction force on it."
+            ],
+            [
+              "Estimate and eliminate",
+              "Decide the sign and rough size first. Is a person's running speed about 5 m/s or 50 m/s? Is the force larger or smaller than the weight? Cross out choices that cannot be right.",
+              "Elimination usually stops at two survivors. Then finish the work instead of guessing between them, unless time has run out."
+            ]
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-exam-format-c4",
+          "prompt": "A small puck slides back and forth without friction near the bottom of a smooth spherical bowl of radius R, making small oscillations. Which expression could be its period: (A) 2π√(R/g), (B) 2π√(g/R), (C) 2πR/g or (D) 2π√(gR)? Decide using units alone, then describe a set of choices that would defeat this method.",
+          "hint": "R is in meters and g in m/s^2. Which combination comes out in seconds?",
+          "answer": "(A) 2π√(R/g), the only choice whose units are seconds. A choice set such as 2π√(R/g), 2π√(2R/g), π√(R/g) and 4π√(R/g) would defeat the method, since every one of them has units of seconds.",
+          "steps": [
+            "(A) R/g has units m ÷ (m/s^2) = s^2, so √(R/g) is in seconds. A period is a time, so (A) survives.",
+            "(B) g/R has units 1/s^2, so √(g/R) is in 1/s, a frequency, not a time.",
+            "(C) R/g is in s^2, not s.",
+            "(D) gR has units m^2/s^2, so √(gR) is a speed in m/s.",
+            "The physics agrees: the normal force on the puck points toward the bowl's center, as a string's tension does for a pendulum of length R, so the period is 2π√(R/g) for small oscillations.",
+            "Units cannot separate choices that differ only by a pure number. Then you need the physics, such as the pendulum comparison above."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "free-response",
+      "title": "Free-response tactics",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each free-response question has several lettered parts. Liminal's practice rubrics award points part by part, with separate points for diagrams, setups, answers, justifications and units, so a question you cannot finish still has points in it. Liminal's workshop guides describe each type in Liminal's own terms:"
+        },
+        {
+          "type": "table",
+          "head": [
+            "Type",
+            "What Liminal's practice asks of it",
+            "Liminal practice points and minutes"
+          ],
+          "rows": [
+            [
+              "Mathematical Routines",
+              "Set up and carry out a calculation or a derivation in symbols and numbers, and interpret the result.",
+              "10 points, 22 minutes"
+            ],
+            [
+              "Translation Between Representations",
+              "Move between a diagram, a graph, an equation and words, keeping them consistent with one another.",
+              "12 points, 28 minutes"
+            ],
+            [
+              "Experimental Design and Analysis",
+              "Plan a procedure, or analyze given data, often by choosing what to graph so a relation becomes a straight line and using its slope.",
+              "10 points, 27 minutes"
+            ],
+            [
+              "Qualitative/Quantitative Translation",
+              "Reason about a change in words, then derive an equation and check that the two agree.",
+              "8 points, 18 minutes"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Experimental Design and Analysis practice on paper builds the reasoning, but paper practice does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Read every part first. Spend about a minute on what each part asks. A later part can show what an earlier one is for, and a quick part (d) may sit behind a hard part (b).",
+            "Attempt every part, and write each answer in the space for its part in the booklet, where a reader will look for it.",
+            "Draw what is asked, by hand and cleanly: force arrows that start on the object and carry labels, graph axes with quantities and units, and a stated positive direction.",
+            "Write the relation in symbols before you substitute numbers, and give every numerical answer a unit.",
+            "Justify with a principle and its link to this situation: name the law, say why its conditions hold here, and say what it implies.",
+            "Carry earlier answers forward. If a later part needs an earlier result you doubt, use your value and say so. Liminal's rubrics credit later work that correctly uses an earlier wrong value wherever a rubric row accepts consistent use.",
+            "Answer what was asked, then stop. If a part asks whether a quantity increases, decreases or stays the same, choose one and give the reason; in Liminal's rubrics a false extra statement can cost a point."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Part (b) asks for the tension in the string above a 3.0 kg hanging block. Part (a) gave a downward acceleration of 2.4 m/s^2, which you doubt.",
+          "text": "Taking down as positive for the block and using a = 2.4 m/s^2 from part (a): mg − T = ma, so T = m(g − a) = (3.0 kg)(9.8 m/s^2 − 2.4 m/s^2) ≈ 22 N."
+        },
+        {
+          "type": "text",
+          "text": "These tactics fail too:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Reading ahead fails when it turns into planning every part in detail. Skim for what each part asks, not how you will do it.",
+            "Carrying forward fails when the earlier error makes a later result impossible, such as an acceleration larger than g for a block pulled down only by its weight, or a negative time. Then go back to the earlier part, or state a reasonable value, label it as assumed, and use it.",
+            "Writing symbols first fails when the relation is exactly what you do not know. Then write what you do know, such as the system, the forces or the conserved quantity, and move on.",
+            "Attempting every part backfires only when it pulls you into a long struggle. Give a stuck part a few minutes, write what you have, and come back if time remains."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Leaving part (c) blank because part (b) went wrong.",
+          "fix": "Do part (c) with your part (b) value, labeled as yours; if part (b) produced no value, state a reasonable assumed value, label it, and use it. Cross out abandoned work cleanly so that each part shows one answer."
+        },
+        {
+          "type": "check",
+          "id": "p1-exam-format-c5",
+          "prompt": "In a Mathematical Routines question, part (a) asks for the acceleration of a cart on a level track pulled by a string to a hanging block, part (b) asks for the string's tension, and part (c) asks how long the cart takes to travel 0.50 m from rest. You found a = 6.1 m/s^2, which looks too large, and you cannot find the error. About 8 minutes remain for the question. What do you do, and in what order?",
+          "hint": "First ask whether 6.1 m/s^2 is impossible or only suspicious.",
+          "answer": "6.1 m/s^2 is suspicious but not impossible, since it is less than g. Leave part (a) as it stands, do parts (b) and (c) with a = 6.1 m/s^2 and say that you are using your part (a) value, then return to part (a) only if time remains. For part (c): t = √(2(0.50 m)/(6.1 m/s^2)) ≈ 0.40 s, using the value from part (a).",
+          "steps": [
+            "Plausibility first: the hanging block's weight pulls the whole system, so the acceleration must be less than g = 9.8 m/s^2. A value of 6.1 m/s^2 passes that test; a value above 9.8 m/s^2 would not, and would send you back to part (a).",
+            "Part (b): write the hanging block's equation in symbols, such as m_h g − T = m_h a with down positive for the block, and substitute your a. The method earns credit whatever a turns out to be.",
+            "Part (c): from rest with constant acceleration, x = (1/2)at^2, so t = √(2x/a) = √(2(0.50)/6.1) ≈ 0.40 s, labeled as using a from part (a).",
+            "Hunting for the error first can use all 8 minutes and earn nothing new. If you do fix part (a), cross out the old work completely so that the part shows one answer."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "The calculator and the equation sheet",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A four-function, scientific or graphing calculator is allowed in both sections. Bluebook has a built-in Desmos scientific or graphing calculator, and you may also use up to two approved handheld calculators (College Board's calculator policy page, checked 2026-10-22). Use the one you will use on exam day for your full practice exams, and try Bluebook's built-in calculator in College Board's Bluebook practice before the day if you plan to rely on it."
+        },
+        {
+          "type": "trap",
+          "text": "A calculator left in radian mode while you work with angles given in degrees, such as an incline at 30° or a force at 40° above the horizontal.",
+          "fix": "Check the mode at the start of each section with a value you know: sin 30° = 0.5. Switch to radian mode, or convert, only for angles that are already in radians, such as the 2πft in x = A cos(2πft)."
+        },
+        {
+          "type": "check",
+          "id": "p1-exam-format-c6",
+          "prompt": "In a free-response part you need the component of a 20 N weight along a 30° incline. Your calculator gives sin 30 = −0.988, so mg sin θ comes out negative. What went wrong, what is the component, and how do you guard against the error on exam day?",
+          "hint": "What is sin 30° without a calculator?",
+          "answer": "The calculator is in radian mode, so it found the sine of 30 radians. In degree mode sin 30° = 0.5, and the component is (20 N)(0.5) = 10 N down the incline. Check the mode with sin 30° = 0.5 at the start of each section.",
+          "steps": [
+            "sin 30° = 0.5 exactly, and the sine of any angle between 0° and 90° is positive, so −0.988 cannot be right.",
+            "sin(30 rad) ≈ −0.988, which shows the calculator is in radian mode.",
+            "In degree mode: mg sin θ = (20 N)(0.5) = 10 N, directed down the incline.",
+            "A one-second test with a value you know catches the error before it spreads through a whole question."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The exam supplies College Board's equation sheet. Liminal does not reproduce it: Liminal's practice exams append Liminal's own formula reference, whose selection, symbols and layout differ. Before the exam, open College Board's sheet from the AP® Physics 1 exam page on College Board's website and use it for at least one full practice exam, so you know where each relation sits on it. The guide on using the formula reference covers what each relation assumes and what no sheet tells you."
+        }
+      ]
+    },
+    {
+      "id": "last-weeks",
+      "title": "The last weeks, the day before and the day of",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "In the last weeks, keep answering questions rather than rereading notes. Liminal's eight-week review plan places its four full practice exams about 8, 5 and 3 weeks before the exam and again about 10 days before it, with none in the last four days, when short mixed sets and sleep do more good than another full exam."
+        },
+        {
+          "type": "rule",
+          "title": "Sleep",
+          "text": "Sleep 8–10 hours a night with a consistent bedtime through the last weeks, not just the night before. No all-nighters.",
+          "conditions": [
+            "Sleep specialists recommend 8–10 hours a night for teenagers (Paruthi et al. 2016).",
+            "High-school students who gave up sleep to study more had more academic trouble the next day, not less (Gillen-O'Neel et al. 2013).",
+            "This evidence is correlational or from surveys. It supports the habit; it does not promise an effect on any one exam."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The rule bends: one restless night before the exam is common and no reason to panic. The weeks of steady sleep before it count for more."
+        },
+        {
+          "type": "text",
+          "text": "The day before:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Review lightly. Look over the formula reference once, saying what each relation needs before it applies, redo two or three checks you once missed, and stop. Start no new topics and take no full practice exam.",
+            "Pack your materials (listed below) and set up what you need for Bluebook as your school directs.",
+            "Go to bed at your usual time."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "On the day, a racing heart as a section begins is your body getting ready, not a sign that something is wrong; you do not need to calm it before you start. Then use the plan you rehearsed:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Eat what you usually eat, and arrive early.",
+            "At the start of each section, note its end time and your checkpoints, then leave the clock alone until the first checkpoint.",
+            "If a question rattles you, choose, flag and move on. The next question is a fresh start."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Materials:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Calculator: up to two handheld calculators, if you use one, each allowed under College Board's current calculator policy, charged or with fresh batteries, in degree mode, and the same ones you practiced with. Bluebook's built-in Desmos calculator is also there.",
+            "For the free-response booklet: the writing tools your school's exam instructions call for. Diagrams and graphs are drawn by hand, so practice drawing them neatly with those tools.",
+            "No equation sheet: one is supplied.",
+            "Everything else: follow your school's instructions for the testing device and Bluebook, and check College Board's exam-day pages for what to bring and what to leave at home, since policies change from year to year."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Using the formula reference",
+              "ref": "guide:formula-reference-skills"
+            },
+            {
+              "label": "Methods for multiple choice",
+              "ref": "guide:multiple-choice-methods"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            },
+            {
+              "label": "Practice exam A, under exam timing",
+              "ref": "test:practice-exam"
+            },
+            {
+              "label": "Mixed set 1, at the exam's pace",
+              "ref": "test:mixed-1"
+            },
+            {
+              "label": "Workshop: Mathematical Routines",
+              "ref": "guide:fr-mathematical-routines"
+            },
+            {
+              "label": "Workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            },
+            {
+              "label": "Workshop: Experimental Design and Analysis",
+              "ref": "guide:fr-experimental-design"
+            },
+            {
+              "label": "Workshop: Qualitative/Quantitative Translation",
+              "ref": "guide:fr-qualitative-quantitative"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

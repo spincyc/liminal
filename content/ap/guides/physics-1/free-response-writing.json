@@ -1,0 +1,674 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "free-response-writing",
+  "kind": "strategy",
+  "title": "Writing free-response answers",
+  "author": "p1-strategy-author",
+  "summary": "How to write Section II answers on the AP® Physics 1 Exam so that a reader can credit every step: answer the command word, start from a named principle and show the setup, draw representations that agree with your equations, justify with the principle and the reason its conditions hold, keep every equals sign true, give units and directions, and stay consistent with earlier parts. It includes a justification phrasebank with enough and not-enough versions side by side, model sentences, common traps, and eight checks that ask you to choose or rewrite an answer.",
+  "minutes": 40,
+  "sections": [
+    {
+      "id": "how-answers-are-read",
+      "title": "How a written answer is read",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Section II of the AP® Physics 1 Exam has four free-response questions in 95 minutes, one of each type: Mathematical Routines, Translation Between Representations, Experimental Design and Analysis, and Qualitative/Quantitative Translation. You read the prompts in the Bluebook app and handwrite your answers in a paper booklet; a calculator is allowed, and an equation sheet is supplied. These facts are from College Board's exam and calculator-policy pages, checked 2026-10-22. College Board's pages do not state point values. Liminal's practice scores the four types out of 10, 12, 10 and 8 points."
+        },
+        {
+          "type": "text",
+          "text": "A reader can credit only what is on the page. The principle you had in mind, the diagram you pictured and the check you did on your calculator earn nothing unless the page shows them. Liminal's practice rubrics award separate points for the kinds of work below, so a correct final number alone usually collects only part of a part's points."
+        },
+        {
+          "type": "table",
+          "caption": "The kinds of points on Liminal's practice rubrics.",
+          "head": [
+            "Point",
+            "What earns it",
+            "How it is usually lost"
+          ],
+          "rows": [
+            [
+              "Starting principle",
+              "The law or relation the work starts from, written for this situation: ΣF = ma along a stated direction, an energy equation for a named system, a momentum or torque equation",
+              "A bare number; a special-case formula with no source; a relation used where its conditions fail"
+            ],
+            [
+              "Derivation",
+              "Algebra from the starting relation to the requested expression, in the symbols the question gives",
+              "Numbers substituted into a Derive part; new symbols never defined; skipped steps"
+            ],
+            [
+              "Answer",
+              "The value with units and two or three significant figures, and a direction for a vector",
+              "No units; a negative sign with no stated positive direction"
+            ],
+            [
+              "Representation",
+              "A force diagram, sketch, graph or bar chart with the features the question asks for, labeled",
+              "Unlabeled or extra forces; a graph whose shape contradicts your equations"
+            ],
+            [
+              "Reasoning",
+              "The claim, the principle, why it applies here, and the link to the quantity asked about",
+              "Naming a law without saying why it applies; true statements that do not reach the claim"
+            ],
+            [
+              "Consistency",
+              "Later work that uses earlier results correctly, even when an earlier result was wrong; a qualitative argument that agrees with your derived expression",
+              "Blank later parts; an argument that contradicts your own expression"
+            ],
+            [
+              "Procedure and analysis",
+              "What is varied, what is measured and with what, what is kept the same, repeated trials, what to graph and how its slope gives the quantity",
+              "\"Measure the time\" with no instrument or method; a graph that would not be straight"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Liminal's practice pace gives about 22 minutes to Mathematical Routines, 28 to Translation Between Representations, 27 to Experimental Design and Analysis and 18 to Qualitative/Quantitative Translation, which add up to 95 and sit inside the suggested times Liminal's practice exams print. These are checkpoints for your practice, not College Board figures or rules of the exam. They fail when one question is much easier for you than another; then move the saved minutes to the harder one."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Read one section at a time. Before reading each model, cover it and write your own version, then compare.",
+            "Answer the eight checks at the end before opening them. Each asks you to choose a justification or repair a weak answer.",
+            "After every workshop set or practice exam, pick one answer that lost a communication point and rewrite it until it earns every rubric row. A few days later, rewrite a different one from memory."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "command-words",
+      "title": "Answer the command word",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The verb at the start of each part tells you what kind of answer earns its points. Underline it before you start. These meanings are Liminal's working descriptions for its practice rubrics."
+        },
+        {
+          "type": "table",
+          "caption": "What each command asks for.",
+          "head": [
+            "The part says",
+            "Give",
+            "Avoid"
+          ],
+          "rows": [
+            [
+              "Calculate",
+              "A number with units, with the relation you used and the values you substituted written out",
+              "A number alone; a result without units"
+            ],
+            [
+              "Derive",
+              "Algebra that starts from a fundamental principle and ends with the requested quantity in terms of the given symbols and physical constants",
+              "Plugging in numbers; starting from a special-case result you did not derive"
+            ],
+            [
+              "Determine",
+              "An answer, by calculation or by reasoning, with enough work shown that a reader can follow how you got it",
+              "A bare result"
+            ],
+            [
+              "Justify, explain",
+              "The physics principle, why it applies here, and how it leads to the claim",
+              "Restating the claim in other words"
+            ],
+            [
+              "Draw, sketch, plot",
+              "The representation with the features asked for: labeled forces, axes with quantities and units, plotted points, intercepts and shapes",
+              "Decoration; missing labels; a smooth curve through data that needs a best-fit line"
+            ],
+            [
+              "Evaluate the claim, is the student correct",
+              "Agree or disagree first, in words, then the physics that decides it",
+              "A reason with no stated verdict"
+            ],
+            [
+              "Compare",
+              "Both quantities and the relation between them: greater, less or equal, and by what factor when you know it",
+              "Describing one quantity only"
+            ],
+            [
+              "Describe a procedure",
+              "Steps someone else could follow: what to vary, what to measure and with what, what to keep the same, how many trials",
+              "\"Do the experiment and record the data\""
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "\"In terms of\" fixes the symbols",
+          "text": "When a part says \"in terms of m, L and g\", the final expression may contain only those symbols and physical constants such as G or numbers like 2π. Eliminate every other quantity before you stop."
+        },
+        {
+          "type": "trap",
+          "text": "Answering \"Derive\" with a numerical calculation, or with a formula pulled from the equation sheet in its final form.",
+          "fix": "Start from a fundamental relation (Newton's second law, conservation of energy or momentum, the rotational second law) written for this situation, and show the algebra to the requested expression."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. Command words guide the form of the answer, not its content. A \"Calculate\" part on a situation you misread still loses its points; and a \"Justify\" part that names the right verb's form but the wrong principle earns nothing. Read the whole part, not only its first word."
+        }
+      ]
+    },
+    {
+      "id": "setups",
+      "title": "Start from a principle and show the setup",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Name the principle, the system and the direction",
+          "text": "Begin each calculation with the relation you are using, written for this situation, before any numbers.",
+          "conditions": [
+            "Newton's second law: name the object and the axis, with a positive direction.",
+            "Energy: name the system and the two moments compared, and say whether any external or nonconservative work enters.",
+            "Momentum: name the system and the interval, usually just before and just after a brief interaction.",
+            "Torque: name the axis about which torques are taken."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Calculate the acceleration of a 2.0 kg block pulled across a level floor by a horizontal 15 N force, when the coefficient of kinetic friction is 0.40.",
+          "text": "Take the direction of the pull as positive. The vertical forces balance, so F_N = mg. Newton's second law for the block along the floor: F − μ_k mg = ma, so a = (15 N − (0.40)(2.0 kg)(9.8 m/s^2))/(2.0 kg) ≈ 3.6 m/s^2, in the direction of the pull."
+        },
+        {
+          "type": "model",
+          "prompt": "Derive an expression for the speed v of a uniform solid ball, of mass M and radius R, at the bottom of a ramp of height H, if it starts from rest and rolls without slipping. Its rotational inertia is (2/5)MR^2.",
+          "text": "System: ball and Earth. Static friction does no work on a ball that rolls without slipping, so mechanical energy is conserved: MgH = (1/2)Mv^2 + (1/2)((2/5)MR^2)ω^2. Rolling without slipping gives ω = v/R, so MgH = (1/2)Mv^2 + (1/5)Mv^2 = (7/10)Mv^2, and v = √(10gH/7)."
+        },
+        {
+          "type": "trap",
+          "text": "Writing v = √(2gH) for an object that rolls, or a = g sin θ for a block that has friction.",
+          "fix": "Those results hold only in the special cases that produced them. Start from the general relation, and let the situation's conditions decide which terms stay."
+        },
+        {
+          "type": "rule",
+          "title": "Show what you substituted",
+          "text": "In a Calculate part, write the relation, then the relation with the numbers in place, then the result. A reader who sees the substitution can credit the method even if the arithmetic slips."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. A long derivation is not always wanted. In a Calculate part, a relation from the equation sheet used where its conditions clearly hold is a fine starting point; you do not need to rebuild it from Newton's laws. The rule is to show where the number came from, not to derive everything."
+        }
+      ]
+    },
+    {
+      "id": "representations",
+      "title": "Diagrams, graphs and bar charts",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Force diagrams",
+          "text": "Draw the object as a dot or a simple shape, and draw only the forces exerted on it by other objects.",
+          "conditions": [
+            "Each force is an arrow starting on the object, pointing in the force's direction, and labeled with a distinct name: F_g or mg, F_N, f_k or f_s, T, F_s.",
+            "When a question is about rotation, start each arrow where the force acts on the object.",
+            "No arrow for ma, for \"centripetal force\" or for \"the force of motion\": those are results of the forces, not forces.",
+            "Draw components, if you need them, beside the diagram or dashed, not as extra forces.",
+            "When the question asks for relative sizes, make the arrows' lengths agree with your equations."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Graphs and sketches",
+          "text": "Label the axes with quantities and units. Show the features the question names: where the graph crosses zero, where it is greatest, whether it is straight or curved, which way it curves, and its values at labeled times. A sketch must agree with your equations and your other parts."
+        },
+        {
+          "type": "rule",
+          "title": "Energy and momentum bar charts",
+          "text": "Name the system. Use one scale for every chart you are asked to compare, draw a bar of zero height as a clear zero, and make the total agree with the conservation statement you are using: equal totals when nothing external acts, totals that differ by the work done when something does."
+        },
+        {
+          "type": "trap",
+          "text": "A force diagram for an object on a ramp with the normal force drawn straight up, or with the gravitational force drawn perpendicular to the ramp.",
+          "fix": "The normal force is perpendicular to the surface; the gravitational force is straight down. Resolve into components along and across the ramp beside the diagram."
+        },
+        {
+          "type": "trap",
+          "text": "A velocity–time sketch that starts at zero when the position–time graph you were given starts with a nonzero slope.",
+          "fix": "Read the slope of the given graph at each labeled time, and make your sketch's values agree. Before finishing, check one value of your sketch against your own calculation."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. Representation rules describe what a reader looks for, but each question says which features matter. A question that asks only for the direction of the net force does not need relative arrow lengths; one that asks for relative lengths needs nothing else so much. Answer what is asked."
+        }
+      ]
+    },
+    {
+      "id": "justifications",
+      "title": "Justifications: a phrasebank",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "A justification names the principle and checks its conditions",
+          "text": "A complete reason is usually one or two sentences.",
+          "conditions": [
+            "The claim, stated plainly.",
+            "The principle or law it rests on, by name.",
+            "Why its conditions hold in this situation: the system, and which external forces, torques or work are absent or negligible.",
+            "The link from the principle to the quantity the question asks about."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Cover the middle column and try to write each justification before you read it. The right column holds answers that are true or tempting but do not prove the claim."
+        },
+        {
+          "type": "table",
+          "caption": "Justification phrasebank. \"Enough\" is the reason a reader needs; \"Not enough\" does not establish the claim.",
+          "head": [
+            "Claim",
+            "Enough",
+            "Not enough"
+          ],
+          "rows": [
+            [
+              "The two-cart system's momentum is the same just before and just after a collision",
+              "The track is level and friction is negligible during the brief collision, and the vertical forces balance, so the net external force on the two-cart system is zero and its momentum is conserved.",
+              "\"Momentum is always conserved.\" \"The collision is elastic.\""
+            ],
+            [
+              "The mechanical energy of a block–spring–Earth system is constant",
+              "The surface is frictionless and air resistance is negligible, so only gravity and the spring force, both internal and conservative, do work, and no energy is transferred out of the system or converted to internal energy.",
+              "\"Energy is conserved.\" (Total energy always is; mechanical energy needs the conditions.)"
+            ],
+            [
+              "The carts exert forces of equal magnitude on each other",
+              "The two forces are an interaction pair, so by Newton's third law they are equal in magnitude and opposite in direction at every instant, whatever the carts' masses or speeds.",
+              "\"The collision is balanced.\" \"They have the same momentum.\""
+            ],
+            [
+              "The net force on a car moving around a circular curve at constant speed points toward the center",
+              "The car's velocity changes direction, so it accelerates toward the center with a = v^2/r, and by Newton's second law the net force points the same way.",
+              "\"The centripetal force pushes it.\" \"The speed is constant, so the net force is zero.\""
+            ],
+            [
+              "A spinning skater speeds up when she pulls in her arms",
+              "The ice exerts negligible torque about her vertical axis, so her angular momentum L = Iω is constant. Pulling her arms in decreases I, so ω increases.",
+              "\"She spins faster because she is smaller.\" \"Energy is conserved.\""
+            ],
+            [
+              "A beam is in equilibrium",
+              "The beam stays at rest, so the net force on it is zero and the net torque on it about any axis is zero. Taking torques about the hinge removes the unknown hinge force.",
+              "\"The forces balance.\" (That ignores torques.)"
+            ],
+            [
+              "The buoyant force on a floating block equals its weight",
+              "The block floats at rest, so the net force on it is zero, and the only forces on it are the upward buoyant force and the downward gravitational force.",
+              "\"F_b = ρVg with V the block's whole volume.\" (Only the submerged volume counts.)"
+            ],
+            [
+              "Water speeds up where a pipe narrows",
+              "The water is incompressible and the flow is steady, so the volume flow rate Av is the same at every cross section. A smaller area A means a larger speed v.",
+              "\"The pressure pushes it faster.\" \"Less room, so it squeezes through.\""
+            ],
+            [
+              "A mass on a spring has the same period at a larger amplitude",
+              "For an ideal spring the restoring force is proportional to the displacement, so the motion is simple harmonic with T = 2π√(m/k), which does not contain the amplitude.",
+              "\"It goes farther but faster.\" (True, but not a reason the times match.)"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Every principle has a boundary. Know where each stops working:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Linear momentum is not conserved for a system on which a pivot, axle or wall pushes during the collision. Angular momentum about the pivot may be, because the pivot's force has no torque about it.",
+            "Mechanical energy is not conserved when friction acts, in a collision in which objects stick, or when a person or motor does work. Energy is still conserved; it goes into internal energy or comes from a store you have to name.",
+            "The buoyant force equals the weight only for an object floating at rest. For an object held under, or sinking, compare the two forces instead.",
+            "Av = constant needs an incompressible fluid in steady flow; Bernoulli's equation also needs negligible viscosity, along one streamline.",
+            "T = 2π√(L/g) for a pendulum holds only for small angles. The spring formula holds at any amplitude within the spring's linear range."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Naming the law with no reason it applies: \"by conservation of momentum, v = 1.5 m/s.\"",
+          "fix": "Add the condition: \"The net external force on the two-cart system is negligible during the collision, so its momentum is conserved.\" The condition is what earns the reasoning point."
+        },
+        {
+          "type": "trap",
+          "text": "Adding a second reason that is false: \"momentum is conserved because the collision is elastic and there is no friction.\"",
+          "fix": "One correct reason is enough. Every extra claim must also be true, and in Liminal's rubrics a false one can cost a point that the shorter answer would have kept."
+        }
+      ]
+    },
+    {
+      "id": "arguments",
+      "title": "Arguments in words and symbols",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Qualitative/Quantitative Translation questions, and many parts of the other types, ask for an argument that links words to equations: explain a result in words, derive an expression, then show that the two agree, or use the expression to judge a claim. Liminal's rubrics credit the verdict, the expression and the link between them separately."
+        },
+        {
+          "type": "rule",
+          "title": "Evaluating a claim",
+          "text": "Say whether the claim is correct before you give any reason. Then use the physics, usually an expression you derived, to show why, and point to the feature of the expression that decides it.",
+          "conditions": [
+            "Verdict first: \"The claim is incorrect.\"",
+            "The relation: the expression or principle that decides it.",
+            "The link: which variable appears where, and what that does to the quantity in the claim.",
+            "A physical reason in words, when the question asks for one."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Two blocks of different masses are released from rest at the same height on the same frictionless ramp. A student claims, \"The heavier block reaches the bottom first, because gravity pulls on it harder.\" Evaluate the claim.",
+          "text": "The claim is incorrect. Along the ramp, Newton's second law gives mg sin θ = ma, so a = g sin θ, which does not depend on the mass. The heavier block does feel a larger gravitational force, but it has proportionally more inertia, so both blocks have the same acceleration and reach the bottom together."
+        },
+        {
+          "type": "rule",
+          "title": "A paragraph argument is a chain",
+          "text": "When a part asks for a paragraph, each sentence should follow from the one before, from the situation to the conclusion. Leave out true physics that does not lead to the claim: it takes time, and if any of it is wrong it can cost a point."
+        },
+        {
+          "type": "trap",
+          "text": "An argument in words that contradicts your own derived expression: deriving a = F/(m_1 + m_2) for two carts pushed together, then writing that adding mass to the second cart makes them accelerate faster.",
+          "fix": "Before you finish, read your expression and ask what it says happens when the quantity in the claim changes. If your words and your symbols disagree, one of them is wrong, and a reader will notice."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. A verdict can be right for the wrong reason, and then the reasoning point is lost anyway; a confident \"incorrect\" is not an argument. And some claims are partly right: say which part holds and which does not, rather than forcing a yes or no."
+        }
+      ]
+    },
+    {
+      "id": "notation",
+      "title": "Equals signs, units, directions and figures",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Every equals sign joins equal things",
+          "text": "Read \"=\" as \"is equal to\". If the two sides are not equal, start a new line or use a word such as \"so\". A chain such as F = ma = 12 = 3.0a = 4.0 claims that a force equals a pure number and that 12 equals 4.0."
+        },
+        {
+          "type": "model",
+          "prompt": "A 0.50 kg ball is dropped from rest 2.0 m above the floor. Find its speed just before it lands.",
+          "text": "System: ball and Earth, with air resistance negligible, so mechanical energy is conserved: mgh = (1/2)mv^2. Then v = √(2gh) = √(2(9.8 m/s^2)(2.0 m)) ≈ 6.3 m/s. (Not: mgh = (1/2)mv^2 = 9.8 × 2.0 = 19.6 = v, which equates an energy, a number and a speed.)"
+        },
+        {
+          "type": "rule",
+          "title": "Units on every numerical answer",
+          "text": "Write the unit with the answer, and with intermediate values where it helps. A slope has the units of the vertical axis divided by those of the horizontal axis; an area under a graph has their product. A number with the wrong kind of unit, such as an impulse in newtons, is a wrong answer."
+        },
+        {
+          "type": "rule",
+          "title": "State a positive direction",
+          "text": "For any vector quantity, say which way is positive before you use signs: \"Take east as positive.\" Then a negative result has a meaning: \"v = −2.0 m/s, so the cart moves west at 2.0 m/s.\" Give a magnitude and a direction in words when the question asks for a vector."
+        },
+        {
+          "type": "rule",
+          "title": "Two or three significant figures",
+          "text": "Liminal's practice gives data to two or three significant figures and accepts answers to the same precision, within one in the last digit. Keep full precision in your calculator between steps and round only the final answer."
+        },
+        {
+          "type": "rule",
+          "title": "Define new symbols",
+          "text": "Use the symbols the question gives. If you need a new one, say what it means: \"Let d be the distance the block slides on the rough patch.\""
+        },
+        {
+          "type": "trap",
+          "text": "Rounding an intermediate value to one significant figure and carrying it on: a = 3.58 m/s^2 written as 4 m/s^2, then used to find a distance.",
+          "fix": "Store the unrounded value, use it in the next step, and round once at the end to two or three significant figures."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. Significant-figure rules are a convention for reporting, not physics: an answer of 3.6 m/s^2 and one of 3.58 m/s^2 both earn the point when the data have two or three figures. Do not spend time agonizing over the last digit; spend it on the units and the direction, which are far more often what loses the point."
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "title": "Experimental design answers",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Experimental Design and Analysis questions ask you to plan a measurement and to analyze data, usually by making a graph straight. Paper practice teaches the writing; it does not replace the hands-on lab work the AP® physics courses require, where you learn what really goes wrong with equipment."
+        },
+        {
+          "type": "rule",
+          "title": "A procedure someone else could follow",
+          "text": "Write numbered steps, specific enough that a classmate could carry them out and get comparable data.",
+          "conditions": [
+            "The quantity you vary (the independent variable), over what range and in how many steps.",
+            "The quantity you measure (the dependent variable), with the instrument and how you read it.",
+            "What you keep the same, by name.",
+            "Repeated trials, averaged, and any step that reduces uncertainty: timing many oscillations, measuring a long distance, reading video frame by frame.",
+            "What you will graph, why the model makes it a straight line, and how the slope or intercept gives the quantity asked for."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Determine how the greatest height a ball reaches depends on how far a vertical spring launcher is compressed.",
+          "text": "1. Mount the launcher vertically beside a fixed vertical meter stick. 2. Compress the spring by x = 1.0, 2.0, 3.0, 4.0 and 5.0 cm, measuring each compression with a ruler from the spring's natural length. 3. For each compression, launch the same ball three times, filming with the meter stick in view, and read the highest position of the ball's bottom frame by frame; measure the height h from the ball's position at full compression. 4. Average the three heights. 5. If all the spring's energy becomes gravitational energy, (1/2)kx^2 = mgh, so plot h against x^2: a straight line through the origin, with slope k/(2mg)."
+        },
+        {
+          "type": "trap",
+          "text": "\"Measure how high it goes and repeat a few times.\"",
+          "fix": "Name the instrument (meter stick and video), the reference point (from the position at full compression to the highest point), the number of trials, and what is averaged."
+        },
+        {
+          "type": "trap",
+          "text": "Plotting the raw variables when the model says they are not proportional, then calling the curve \"a relationship\".",
+          "fix": "Use the model to choose what to plot: if h ∝ x^2, plot h against x^2. A straight line tests the model, and its slope gives the constant."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. A procedure checklist cannot make a bad plan good: if the measured quantity cannot be read with the stated instrument, as a 0.2 s time with a hand-held stopwatch, repeating it does not help. Choose a method that makes the quantity large enough to measure, or a different instrument."
+        }
+      ]
+    },
+    {
+      "id": "consistency",
+      "title": "Consistency, partial credit and presentation",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Carry your earlier answer forward",
+          "text": "Where a Liminal rubric row accepts consistent use, a later part that uses your earlier result correctly earns its points even when that result was wrong. Say which value you are using: \"Using a = 2.4 m/s^2 from part (a), …\". This stops working when the wrong value makes the later part meaningless, such as a negative mass or a speed larger than the system's energy allows."
+        },
+        {
+          "type": "rule",
+          "title": "Attempt every part",
+          "text": "Later parts often need only the stem. If an earlier value is missing, state a reasonable value, say that you are assuming it, and continue, so that your method is on the page."
+        },
+        {
+          "type": "rule",
+          "title": "Check agreement between parts",
+          "text": "When two routes to the same quantity are open, such as the tension from either of two connected objects, a quick second route tells you whether an earlier part is wrong. Use it if time allows; if the routes disagree, look for the error before moving on."
+        },
+        {
+          "type": "rule",
+          "title": "One answer per part",
+          "text": "Cross out abandoned work with a single line. If two different answers remain, a reader cannot choose for you. Label each part's work with its letter."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving part (c) blank because part (b) went wrong.",
+          "fix": "Carry forward what you have and say so. A blank earns nothing; consistent work on a wrong value earns the points that depend on method."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Checks: choose and rewrite",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open it. For a rewrite, write the full corrected answer, not a note about what is missing, and compare it with the model answer phrase by phrase."
+        },
+        {
+          "type": "check",
+          "id": "p1-free-response-writing-c1",
+          "prompt": "Two gliders collide on a level air track. Which statement best justifies using conservation of momentum for the two-glider system during the collision?\n\n(A) Momentum is always conserved.\n(B) The collision is elastic, so momentum is conserved.\n(C) Friction from the air track is negligible and the vertical forces on each glider balance, so the net external force on the two-glider system is zero during the collision.\n(D) The gliders exert equal and opposite forces on each other, so each glider's momentum stays constant.",
+          "hint": "A justification names the condition that makes the principle apply to this system.",
+          "answer": "(C). The net external force on the two-glider system is zero during the collision, so the system's momentum is conserved.",
+          "steps": [
+            "Momentum of a system is conserved when the net external force on that system is zero, or negligible during a brief interaction. (C) states that condition for this system.",
+            "(A) is false as stated: a single glider's momentum changes in the collision, and a system's momentum changes when a net external force acts.",
+            "(B) gives the wrong reason: momentum is conserved in inelastic collisions too. Elastic describes kinetic energy.",
+            "(D) starts from a true fact, Newton's third law, but draws a false conclusion: each glider's momentum changes; only the total stays constant."
+          ],
+          "see": "justifications"
+        },
+        {
+          "type": "check",
+          "id": "p1-free-response-writing-c2",
+          "prompt": "A net force of 15 N acts on a 2.5 kg crate for 1.2 s, starting from rest. A student writes: \"F = ma = 15 = 2.5a = 6 × 1.2 = 7.2 m/s\". Rewrite the work so that every equals sign is true and each step can be credited.",
+          "hint": "Give the acceleration its own line, with units, then use it on the next line.",
+          "answer": "Newton's second law: a = ΣF/m = (15 N)/(2.5 kg) = 6.0 m/s^2. Starting from rest with constant acceleration, v = at = (6.0 m/s^2)(1.2 s) = 7.2 m/s.",
+          "steps": [
+            "Read as a chain, the student's line sets a force equal to the bare number 15, then says 2.5a = 6 × 1.2, that is 15 = 7.2, and ends by setting a force equal to a speed, 7.2 m/s. Only F = ma is a true statement as written.",
+            "Write one true statement per line: first the acceleration, 15/2.5 = 6.0 m/s^2, with its units.",
+            "Then the kinematics relation that uses it, v = v_0 + at with v_0 = 0, and the result 7.2 m/s with units.",
+            "Name the force as the net force: F = ma uses ΣF."
+          ],
+          "see": "notation"
+        },
+        {
+          "type": "check",
+          "id": "p1-free-response-writing-c3",
+          "prompt": "A block of mass m is released from rest and slides a distance d down a ramp inclined at angle θ. The coefficient of kinetic friction between the block and the ramp is μ. Asked to derive the block's speed after sliding the distance d, a student writes: \"v = √(2gh) = √(2gd sin θ).\" Rewrite the answer so that it starts from a principle and accounts for every force.",
+          "hint": "Which forces do work on the block as it slides? Write the normal force first.",
+          "answer": "Energy for the block–Earth system, with friction doing negative work: mgd sin θ − μ(mg cos θ)d = (1/2)mv^2, so v = √(2gd(sin θ − μ cos θ)).",
+          "steps": [
+            "The student used a special-case result for a frictionless slide and did not show where it came from.",
+            "Perpendicular to the ramp the forces balance, so F_N = mg cos θ, and kinetic friction is μmg cos θ, directed up the ramp.",
+            "The block drops a height d sin θ, so the gravitational energy decreases by mgd sin θ. Friction does work −μmg cos θ·d on the block, which becomes internal energy.",
+            "Energy: mgd sin θ − μmgd cos θ = (1/2)mv^2. The mass cancels, giving v = √(2gd(sin θ − μ cos θ)).",
+            "Check: μ = 0 gives √(2gd sin θ), the student's answer, as it should. Newton's second law with a = g(sin θ − μ cos θ) and v^2 = 2ad gives the same result."
+          ],
+          "see": "setups"
+        },
+        {
+          "type": "check",
+          "id": "p1-free-response-writing-c4",
+          "prompt": "A traveler pushes a suitcase of mass m at constant speed across a level floor by pushing on its handle with a force of magnitude F directed at an angle θ below the horizontal. A student lists the forces on the suitcase: \"weight mg down; normal force F_N = mg up; the push F; friction backward; and the force of motion forward, which is larger than friction because the suitcase is moving.\" Rewrite the list so that it describes a correct force diagram, and give the correct relations among the forces.",
+          "hint": "For each force, name the object that exerts it. Then use the fact that the speed is constant.",
+          "answer": "Four forces: the gravitational force mg down, exerted by Earth; the normal force F_N up, exerted by the floor; the push F along the handle, at θ below the horizontal, exerted by the traveler; and kinetic friction f_k backward, exerted by the floor. The speed is constant, so the net force is zero: F cos θ = f_k and F_N = mg + F sin θ, which is greater than mg.",
+          "steps": [
+            "\"The force of motion\" has no object exerting it, so it is not a force. Moving at constant velocity needs no net force.",
+            "With constant velocity, Newton's first law gives zero net force. Horizontally, the push's component F cos θ balances friction.",
+            "Vertically, the push has a downward component F sin θ, so the floor must push up with F_N = mg + F sin θ. The student's F_N = mg ignores that component.",
+            "On the diagram, draw the push along the handle's direction, not split into components; show components separately if you need them."
+          ],
+          "see": "representations"
+        },
+        {
+          "type": "check",
+          "id": "p1-free-response-writing-c5",
+          "prompt": "A wide, open tank of water has a small hole in its side a depth D below the water's surface. A student claims, \"If the hole were twice as deep, the water would leave it twice as fast.\" Evaluate the claim, using an expression for the speed of the water leaving the hole.",
+          "hint": "Compare a point on the surface with a point just outside the hole. What is the pressure at each, and how fast does the surface move?",
+          "answer": "The claim is incorrect. Bernoulli's equation from the surface to the hole, with atmospheric pressure at both and a surface speed close to zero, gives ρgD = (1/2)ρv^2, so v = √(2gD). Doubling D multiplies v by √2, about 1.4, not by 2.",
+          "steps": [
+            "Verdict first: the claim is incorrect.",
+            "Both the surface and the stream just outside the hole are open to the air, so the pressures are equal. The tank is wide, so by continuity the surface moves very slowly compared with the stream.",
+            "Bernoulli: P_atm + ρgD = P_atm + (1/2)ρv^2, so v = √(2gD).",
+            "The speed is proportional to √D, so twice the depth gives √2 ≈ 1.4 times the speed.",
+            "In words: the energy per unit volume available grows in proportion to depth, but kinetic energy grows with the square of speed, so the speed grows more slowly than the depth."
+          ],
+          "see": "arguments"
+        },
+        {
+          "type": "check",
+          "id": "p1-free-response-writing-c6",
+          "prompt": "To find the mass of a small puck, a student sets it moving in a circle of radius 0.60 m on a level air table, held by a string attached to a force sensor at the circle's center, and measures the string's tension F at several speeds v. The student plots F (in newtons) against v^2 (in m^2/s^2) and finds a best-fit line through the origin with slope 0.080. The student writes: \"slope = 0.080 = m.\" Rewrite the analysis so that it earns the points for the slope's meaning and for the answer.",
+          "hint": "Write the model, then say what the slope stands for and what its units are.",
+          "answer": "The string supplies the centripetal force, so F = mv^2/r. A graph of F against v^2 has slope m/r, with units N/(m^2/s^2) = kg/m. So m = slope × r = (0.080 kg/m)(0.60 m) ≈ 0.048 kg.",
+          "steps": [
+            "Model: on the level, nearly frictionless table the tension is the net force, pointing inward, so F = mv^2/r, a straight line through the origin when F is plotted against v^2.",
+            "Slope: m/r. Its units are N divided by m^2/s^2, which is (kg·m/s^2)/(m^2/s^2) = kg/m, consistent with m/r.",
+            "So m = (slope)(r) = (0.080 kg/m)(0.60 m) = 0.048 kg.",
+            "The student's version had no units and a false equality: the slope is m/r, not m."
+          ],
+          "see": "experiments"
+        },
+        {
+          "type": "check",
+          "id": "p1-free-response-writing-c7",
+          "prompt": "Part (a) of a question asked for the acceleration of a 5.0 kg block on a frictionless table, pulled by a light string that passes over a light, frictionless pulley to a hanging 1.2 kg block. You found a = 2.4 m/s^2. Part (b) asks for the tension in the string. Write an answer to part (b) that earns its points even if part (a) was wrong, and then use a second route to test part (a).",
+          "hint": "Apply Newton's second law to the block on the table, naming the value you carry forward. Then do the same for the hanging block.",
+          "answer": "Using a = 2.4 m/s^2 from part (a), Newton's second law for the block on the table gives T = (5.0 kg)(2.4 m/s^2) = 12 N. The hanging block gives T = m_h(g − a) = (1.2 kg)(9.8 − 2.4 m/s^2) ≈ 8.9 N. The two routes disagree, so part (a) is wrong: the correct acceleration is (1.2)(9.8)/(6.2) ≈ 1.9 m/s^2 and the tension is about 9.5 N.",
+          "steps": [
+            "Block on the table: the string is the only horizontal force, so T = m_1a. Naming the value from part (a) makes the work consistent and creditable.",
+            "Hanging block, down positive: m_hg − T = m_ha, so T = m_h(g − a).",
+            "With a = 2.4 m/s^2 the routes give 12 N and 8.9 N. A correct a makes them agree.",
+            "Whole system: a = m_hg/(m_1 + m_h) = (1.2)(9.8)/6.2 ≈ 1.9 m/s^2, and then T = (5.0)(1.9) ≈ 9.5 N = (1.2)(9.8 − 1.9).",
+            "On the exam, write the consistent answer first; fix part (a) only if time allows."
+          ],
+          "see": "consistency"
+        },
+        {
+          "type": "check",
+          "id": "p1-free-response-writing-c8",
+          "prompt": "Asked to describe a procedure to find how the period of a pendulum depends on the mass of its bob, a student writes: \"Use different masses and time the pendulum. Do it a few times and see if it changes.\" Rewrite the procedure so that someone else could follow it.",
+          "hint": "Name what is varied and its values, what is measured and how, what is kept the same, and how the timing uncertainty is reduced.",
+          "answer": "1. Hang a bob from a string so that the length from the pivot to the bob's center is 0.80 m, measured with a meter stick. 2. Use bobs of the same size and shape with masses 0.050, 0.10, 0.15, 0.20 and 0.25 kg, measured on a balance. 3. For each bob, pull it aside to the same small angle, about 10°, and release it from rest. 4. With a stopwatch, time 20 complete swings, starting the count as the bob passes the lowest point; divide by 20 for the period. 5. Repeat three times for each mass and average. 6. Keep the string length, release angle and pivot the same throughout. 7. Plot period against mass; a horizontal line would show that the period does not depend on the mass.",
+          "steps": [
+            "Independent variable: the bob's mass, five values over a wide range, measured on a balance.",
+            "Dependent variable: the period, found by timing many swings to reduce the effect of reaction time, and averaging repeated trials.",
+            "Controlled variables: length to the bob's center, release angle (small, so the pendulum model holds), and the bob's size and shape, so that air resistance is similar.",
+            "Analysis: a graph whose expected shape is stated in advance. Paper practice like this does not replace the hands-on lab work the AP® physics courses require."
+          ],
+          "see": "experiments"
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Score each workshop set with its rubric. For every reasoning, representation or units point you missed, find the matching row in this guide, then rewrite that part until it earns the point."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Workshop: Mathematical Routines",
+              "ref": "guide:fr-mathematical-routines"
+            },
+            {
+              "label": "Workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            },
+            {
+              "label": "Workshop: Experimental Design and Analysis",
+              "ref": "guide:fr-experimental-design"
+            },
+            {
+              "label": "Workshop: Qualitative/Quantitative Translation",
+              "ref": "guide:fr-qualitative-quantitative"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            },
+            {
+              "label": "Methods for physics multiple choice",
+              "ref": "guide:multiple-choice-methods"
+            },
+            {
+              "label": "Practice exam A: answer key and rubrics",
+              "ref": "key:practice-exam"
+            },
+            {
+              "label": "Week 32: experimental design and written reasoning",
+              "ref": "week:32"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

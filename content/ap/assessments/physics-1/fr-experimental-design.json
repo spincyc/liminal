@@ -1,0 +1,580 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "fr-experimental-design",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Experimental Design and Analysis",
+  "author": "p1-fr-eda-author",
+  "directions": "This set has four Experimental Design and Analysis questions in the style of the AP® Physics 1 Exam, each from a different unit and each worth 10 points. Work them two at a sitting, questions 1 and 2 and then questions 3 and 4, at 27 minutes a question. That is Liminal's practice pace for this type, inside the 25–30 minutes that Liminal's practice exams suggest for the Experimental Design and Analysis question. Any calculator is allowed. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise. Every question uses invented data and is a paper exercise: it does not replace the hands-on lab work that the AP® physics courses require. Score your work with the answer key's rubrics and record raw points; they are a practice tally, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-fr-experimental-design-f1",
+      "alt": "A ramp rises to the right at angle θ above a level strip of the same board. A block sits near the top of the ramp, labeled released from rest; a vertical dimension h runs from the strip up to the block's lower front edge. On the strip to the left, a second drawing of the block is labeled stops here, and a dimension D runs along the strip from the bottom of the ramp to the block's front edge.",
+      "caption": "Block on a ramp and a level strip",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-experimental-design-f2",
+      "alt": "Blank grid of 12 by 10 squares for plotting, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-fr-experimental-design-f3",
+      "alt": "Key: graph of D in meters against h in meters with five points close to a straight line through the origin; the best-fit line has slope about 1.60.",
+      "caption": "Key: sliding distance against release height"
+    },
+    {
+      "id": "p1-fr-experimental-design-f4",
+      "alt": "A level track with a motion sensor at each end. Cart A, on the left, has a spring bumper on its right side and moves to the right with velocity v_0. Cart B, on the right, is at rest. An arrow below the track marks the positive direction as to the right.",
+      "caption": "Two carts on a level track",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-experimental-design-f5",
+      "alt": "Blank grid of 10 by 12 squares for plotting, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-fr-experimental-design-f6",
+      "alt": "Key: graph of m_A(v_0 − v_A) in kilogram meters per second against v_B in meters per second, with five points close to a straight line through the origin; the best-fit line has slope about 0.75 kg.",
+      "caption": "Key: momentum lost by cart A against the velocity of cart B"
+    },
+    {
+      "id": "p1-fr-experimental-design-f7",
+      "alt": "A horizontal uniform rod is hinged at its left end to a wall. A block labeled m hangs by a string from the rod's right end. A spring scale hooked to the rod pulls straight up at a distance d from the hinge. A dimension L runs from the hinge to the right end of the rod.",
+      "caption": "Hinged rod held level by a spring scale",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-experimental-design-f8",
+      "alt": "Blank grid of 14 by 10 squares for plotting, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-fr-experimental-design-f9",
+      "alt": "Key: graph of F in newtons against 1/d in inverse meters, with six points close to a straight line that passes very near the origin; the best-fit line has slope about 4.85 N·m.",
+      "caption": "Key: scale reading against 1/d"
+    },
+    {
+      "id": "p1-fr-experimental-design-f10",
+      "alt": "A tank of water. A foam block is held completely under the surface by a string tied to the middle of its bottom face. The string runs straight down to a small pulley fixed to the bottom of the tank, around it, and straight up beside the block and out of the water to a force sensor clamped above the tank.",
+      "caption": "Foam block held under water",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-experimental-design-f11",
+      "alt": "Blank grid of 12 by 11 squares for plotting, with heavier lines along the left and bottom edges."
+    },
+    {
+      "id": "p1-fr-experimental-design-f12",
+      "alt": "Key: graph of T in newtons against V in cubic centimeters, with five points close to a straight line through the origin; the best-fit line has slope about 8.6 × 10^−3 N/cm^3.",
+      "caption": "Key: string tension against block volume"
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 108,
+          "calculator": "any",
+          "directions": "Answer each question in the space provided. Show your work and explain your reasoning; points are awarded for procedures, derivations, graphs and reasoning as well as for answers. Give numerical answers with units. Suggested time: 27 minutes per question.",
+          "items": [
+            {
+              "id": "p1-fr-experimental-design-fr1",
+              "prompt": "This question is a paper investigation with invented data for practice; it does not replace the hands-on lab work that the AP® physics courses require. A student wants to determine the coefficient of kinetic friction μ_k between a small wooden block and a wooden board. One length of the board is fixed as a ramp at θ = 30.0° above the horizontal, and a level strip of the same board continues from the bottom of the ramp, joined to it by a short, smooth curve, as shown. For each trial the student releases the block from rest on the ramp with its front edge at a height h above the level strip. The block slides down the ramp and along the strip until it stops, and the student records the distance D from the bottom of the ramp to the front edge of the stopped block. Each value of D is the average of three trials:\n| h (m) | D (m) |\n| --- | --- |\n| 0.080 | 0.125 |\n| 0.120 | 0.196 |\n| 0.160 | 0.252 |\n| 0.200 | 0.326 |\n| 0.240 | 0.381 |",
+              "type": "EDA",
+              "topics": [
+                "P1.3.4",
+                "P1.3.2",
+                "P1.2.7",
+                "P1.3.3"
+              ],
+              "figureIds": [
+                "p1-fr-experimental-design-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the student could measure h and D in one trial, including the equipment used. Include one step that would reduce the experimental uncertainty in D.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A valid measurement of both quantities: h measured vertically (for example with a meter stick held upright, checked with a level or plumb line) from the level strip to the block's front edge at a marked release point, the block released from rest without a push, and D measured along the strip with a meter stick or tape measure from the bottom of the ramp to the front edge of the stopped block."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A specific step that reduces uncertainty in D, for example repeating each height several times and averaging, marking the release point so h is the same in every trial, sliding the block along the same cleaned track each time, or reading the tape with the eye directly above the block's edge."
+                    }
+                  ],
+                  "answer": "Mark a release line on the ramp and measure its height h vertically above the strip with an upright meter stick, checked with a level. Hold the block with its front edge on the line, let go without pushing, and measure D along the strip with a tape measure from the bottom of the ramp to the block's front edge. Repeat each height several times on the same clean path and average D.",
+                  "steps": [
+                    "h must be vertical: the energy the block starts with depends on its height above the strip, not on the distance along the ramp.",
+                    "Any push at release adds kinetic energy that the analysis does not include, so the block must start from rest."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Treat the curve at the bottom of the ramp as negligibly short. Starting from conservation of energy, derive an expression for D in terms of h, θ and μ_k. State what graph of the data should be a straight line, and explain how μ_k can be found from its slope.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Energy for the block–Earth system with the work of kinetic friction on both surfaces: mgh = μ_k mg cos θ (h/sin θ) + μ_k mgD, using a normal force of mg cos θ on the ramp, mg on the strip, and a distance h/sin θ along the ramp (or an equivalent statement that the gravitational energy lost equals the energy converted to internal energy by friction)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves to D = h(1/μ_k − 1/tan θ), or an equivalent form."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "D against h should be a straight line through the origin with slope 1/μ_k − 1/tan θ, so μ_k = 1/(slope + 1/tan θ)."
+                    }
+                  ],
+                  "answer": "mgh = μ_k mg cos θ (h/sin θ) + μ_k mgD, so D = h(1/μ_k − 1/tan θ). A graph of D against h should be a straight line through the origin with slope 1/μ_k − 1/tan θ, so μ_k = 1/(slope + 1/tan θ).",
+                  "steps": [
+                    "The block starts and ends at rest, so its kinetic energy is zero at both ends. The gravitational potential energy lost, mgh, is all converted to internal energy by kinetic friction.",
+                    "On the ramp the normal force is mg cos θ and the block slides h/sin θ, so friction converts μ_k mg cos θ (h/sin θ) = μ_k mgh/tan θ. On the strip the normal force is mg and the block slides D, so friction converts μ_k mgD.",
+                    "mgh = μ_k mgh/tan θ + μ_k mgD. Dividing by μ_k mg gives D = h/μ_k − h/tan θ = h(1/μ_k − 1/tan θ)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the grid, plot D against h and draw a best-fit line.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Axes labeled with quantities and units, D (m) and h (m), with uniform scales that use most of the grid, and all five points plotted correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "One straight best-fit line with the points scattered about it, passing close to the origin."
+                    }
+                  ],
+                  "answer": "The five points lie close to a straight line that passes very near the origin, with slope about 1.60.",
+                  "steps": [
+                    "Put h (m) on the horizontal axis and D (m) on the vertical axis, with scales running to at least 0.24 m and 0.38 m.",
+                    "Draw one straight line through the trend; it passes very close to the origin, as the model predicts."
+                  ],
+                  "figureIds": [
+                    "p1-fr-experimental-design-f2"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-experimental-design-f3"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line to determine μ_k.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope from two points far apart on the best-fit line, about 1.60 (accept 1.50–1.70); the slope has no unit because both axes are in meters."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "μ_k = 1/(slope + 1/tan 30.0°) ≈ 0.30 (accept 0.29–0.31), or an answer consistent with the student's slope."
+                    }
+                  ],
+                  "answer": "Slope ≈ 1.60, so μ_k = 1/(1.60 + 1.73) ≈ 0.30.",
+                  "steps": [
+                    "Two points on the line, for example (0.050 m, 0.080 m) and (0.250 m, 0.400 m), give slope = 0.320 m/0.200 m = 1.60.",
+                    "1/tan 30.0° = 1.73, so μ_k = 1/(1.60 + 1.73) = 1/3.33 ≈ 0.30.",
+                    "Using 1/slope alone (≈ 0.63) would ignore the friction on the ramp and nearly double the result."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "A classmate says that a heavier block made of the same wood, released from the same height, would slide farther along the strip because it starts with more gravitational potential energy. Use your expression from part (b) to evaluate the claim.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Rejects the claim using the derived relation: the mass cancels, so D = h(1/μ_k − 1/tan θ) does not depend on m. The heavier block has more energy to lose, but the friction forces on it are larger in the same proportion, so it stops at the same D (for the same μ_k)."
+                    }
+                  ],
+                  "answer": "The claim is wrong. The mass cancels in the derivation, so D = h(1/μ_k − 1/tan θ) is the same for any mass. A heavier block starts with more energy, mgh, but the normal forces and so the friction forces on it are larger in the same proportion, so it stops at the same distance.",
+                  "steps": [
+                    "Both sides of mgh = μ_k mgh/tan θ + μ_k mgD are proportional to m.",
+                    "Doubling m doubles the energy to be converted and doubles the friction force doing the converting, so D does not change."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-experimental-design-fr2",
+              "prompt": "This question is a paper investigation with invented data for practice; it does not replace the hands-on lab work that the AP® physics courses require. A student wants to find the mass m_B of cart B and to test whether kinetic energy is conserved when two carts collide. Cart A has a mass m_A = 0.500 kg and a light spring bumper on its front. Both carts are on a level, low-friction track with a motion sensor at each end, as shown, and cart B starts at rest. The student pushes cart A toward cart B. The sensors record the velocity v_0 of cart A just before the collision and the velocities v_A of cart A and v_B of cart B just after it. The positive direction is from cart A toward cart B.\n| Trial | v_0 (m/s) | v_A (m/s) | v_B (m/s) |\n| --- | --- | --- | --- |\n| 1 | 0.40 | −0.07 | 0.31 |\n| 2 | 0.55 | −0.09 | 0.43 |\n| 3 | 0.70 | −0.12 | 0.55 |\n| 4 | 0.85 | −0.15 | 0.66 |\n| 5 | 1.00 | −0.17 | 0.78 |",
+              "type": "EDA",
+              "topics": [
+                "P1.4.3",
+                "P1.4.4",
+                "P1.4.1"
+              ],
+              "figureIds": [
+                "p1-fr-experimental-design-f4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the student should set up the track and take the velocity readings so that the total momentum of the two carts is the same just before and just after the collision. Include one step that would reduce the experimental uncertainty.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Levels the track (a cart left at rest does not drift) so gravity has no component along it, lets the push end before cart A reaches cart B, and takes each velocity from the sensor data immediately before and immediately after the collision, so that external forces such as friction act only briefly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A specific step that reduces uncertainty, for example repeating each trial and averaging, reading each velocity as the average over a short, steady stretch of the sensor's velocity–time graph, aiming each sensor straight along the track at its cart, or using a range of speeds."
+                    }
+                  ],
+                  "answer": "Level the track until a cart at rest does not drift. Give cart A a push that ends well before it reaches cart B, and read v_0 from sensor 1 over the steady stretch just before contact and v_A and v_B from the two sensors over the steady stretches just after the carts separate. Repeat each push several times and average.",
+                  "steps": [
+                    "Momentum of the two-cart system is conserved only if the net external force along the track is negligible during the interaction; a tilted track or a push still acting during the collision would add impulse.",
+                    "Readings taken right next to the collision leave friction little time to change the velocities."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use conservation of momentum to show that m_A(v_0 − v_A) = m_B v_B. State what graph of the data should be a straight line and what its slope represents.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Momentum of the two-cart system before equals after, with signed velocities: m_A v_0 + 0 = m_A v_A + m_B v_B, rearranged to m_A(v_0 − v_A) = m_B v_B."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A graph of m_A(v_0 − v_A) against v_B should be a straight line through the origin with slope m_B (or v_B against m_A(v_0 − v_A), with slope 1/m_B)."
+                    }
+                  ],
+                  "answer": "m_A v_0 = m_A v_A + m_B v_B, so m_A(v_0 − v_A) = m_B v_B. A graph of m_A(v_0 − v_A) against v_B should be a straight line through the origin whose slope is m_B.",
+                  "steps": [
+                    "Cart B starts at rest, so the system's momentum before the collision is m_A v_0.",
+                    "Subtracting m_A v_A from both sides shows that the momentum cart A loses equals the momentum cart B gains."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate m_A(v_0 − v_A) for each trial. On the grid, plot m_A(v_0 − v_A) against v_B and draw a best-fit line.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Calculates 0.235, 0.320, 0.410, 0.500 and 0.585 kg·m/s, keeping the negative sign of v_A so that v_0 − v_A is larger than v_0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Axes labeled with quantities and units, with uniform scales that use most of the grid, and all five points plotted correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "One straight best-fit line with the points scattered about it, passing close to the origin."
+                    }
+                  ],
+                  "answer": "m_A(v_0 − v_A) = 0.235, 0.320, 0.410, 0.500 and 0.585 kg·m/s. The points lie close to a straight line through the origin with slope about 0.75 kg.",
+                  "steps": [
+                    "Trial 1: (0.500 kg)(0.40 m/s − (−0.07 m/s)) = (0.500 kg)(0.47 m/s) = 0.235 kg·m/s; the other trials follow the same way.",
+                    "Dropping the sign of v_A would give (0.500)(0.40 − 0.07) = 0.165 kg·m/s and a slope near 0.53 kg, which is wrong."
+                  ],
+                  "figureIds": [
+                    "p1-fr-experimental-design-f5"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-experimental-design-f6"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line to determine m_B.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope from two points far apart on the best-fit line, m_B ≈ 0.75 kg (accept 0.72–0.78 kg), with units: (kg·m/s)/(m/s) = kg."
+                    }
+                  ],
+                  "answer": "m_B = slope ≈ 0.75 kg.",
+                  "steps": [
+                    "Two points on the line, for example (0.10 m/s, 0.075 kg·m/s) and (0.80 m/s, 0.601 kg·m/s), give slope = 0.526 kg·m/s ÷ 0.70 m/s ≈ 0.75 kg."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Using your value of m_B, calculate the total kinetic energy of the two carts just before and just after the collision in trial 5. Is kinetic energy conserved in these collisions? Justify your answer using the data.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "K before = (1/2)(0.500 kg)(1.00 m/s)^2 = 0.250 J and K after = (1/2)(0.500 kg)(0.17 m/s)^2 + (1/2)m_B(0.78 m/s)^2 ≈ 0.007 J + 0.228 J ≈ 0.235 J (consistent with the student's m_B)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that kinetic energy is not quite conserved: about 6% (a few percent) is converted, for example to internal energy and sound in the spring bumper. Justifies with the data, for example that the momentum before and after agrees within about 1.5% in every trial while the kinetic energy falls by roughly 4–7% in every trial, so the loss is larger than the measurement scatter, or that the carts separate at about 95% of their approach speed in every trial. The conclusion must agree with the student's own numbers."
+                    }
+                  ],
+                  "answer": "K before = 0.250 J and K after ≈ 0.007 J + 0.228 J ≈ 0.235 J, about 6% less. Kinetic energy is not quite conserved: the collision is slightly inelastic, with a little energy converted to internal energy and sound in the bumper. The decrease is real rather than scatter, because the same data conserve momentum to within about 1.5% in every trial while the kinetic energy falls by 4–7% in every trial.",
+                  "steps": [
+                    "K before = (1/2)(0.500)(1.00)^2 = 0.250 J. K after = (1/2)(0.500)(0.17)^2 + (1/2)(0.75)(0.78)^2 = 0.0072 + 0.2282 ≈ 0.235 J.",
+                    "With m_B = 0.75 kg the momentum after is m_A v_A + m_B v_B = −0.085 + 0.585 = 0.500 kg·m/s, equal to the 0.500 kg·m/s before, and the other trials agree within about 1.5%.",
+                    "The kinetic energy after is 93–96% of the kinetic energy before in every trial. A loss that appears in every trial and is several times the momentum scatter is a real effect: the collision is nearly, but not perfectly, elastic.",
+                    "A check that does not depend on m_B: in an elastic collision the carts separate as fast as they approached, so v_B − v_A would equal v_0. In trial 5, v_B − v_A = 0.78 − (−0.17) = 0.95 m/s, less than v_0 = 1.00 m/s, and the ratio is 0.95 ± 0.01 in every trial, so every collision loses a little kinetic energy."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-experimental-design-fr3",
+              "prompt": "This question is a paper investigation with invented data for practice; it does not replace the hands-on lab work that the AP® physics courses require. A student wants to determine the mass M of a uniform rod of length L = 1.00 m. The rod's left end is attached to a wall by a hinge, and a block of mass m = 0.200 kg hangs from its right end, as shown. A spring scale hooked to the rod at a distance d from the hinge pulls straight up and holds the rod horizontal. The student moves the scale to different distances d, levels the rod each time, and records the scale reading F:\n| d (m) | 0.30 | 0.40 | 0.50 | 0.60 | 0.75 | 0.90 |\n| --- | --- | --- | --- | --- | --- | --- |\n| F (N) | 16.2 | 12.3 | 9.8 | 8.2 | 6.6 | 5.4 |",
+              "type": "EDA",
+              "topics": [
+                "P1.5.5",
+                "P1.5.3",
+                "P1.2.1"
+              ],
+              "figureIds": [
+                "p1-fr-experimental-design-f7"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Apply the condition for rotational equilibrium to the rod to derive an expression for F in terms of d, L, M, m and g. Explain why taking torques about the hinge is a useful choice.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Net torque about the hinge is zero, with each lever arm correct: Fd − Mg(L/2) − mgL = 0, the rod's weight acting at its center, a distance L/2 from the hinge."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves to F = gL(M/2 + m)/d (or an equivalent form) and explains that the unknown force from the hinge acts at the axis, so it has zero lever arm and no torque about the hinge."
+                    }
+                  ],
+                  "answer": "Taking counterclockwise as positive, the net torque about the hinge is Fd − Mg(L/2) − mgL = 0, so F = gL(M/2 + m)/d. The hinge force acts at the axis, so it exerts no torque about the hinge and drops out of the equation.",
+                  "steps": [
+                    "The rod is uniform, so its weight Mg acts at its center, L/2 from the hinge. The block's weight, transmitted by the string, acts at L.",
+                    "The scale's upward pull produces a counterclockwise torque Fd; the two weights produce clockwise torques Mg(L/2) and mgL."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "A graph of F against d is not a straight line. State what quantities the student could plot to obtain a straight line. Calculate the values you need, plot them on the grid and draw a best-fit line.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A valid linearization: F against 1/d, a straight line through the origin with slope gL(M/2 + m) (or 1/F against d, or d against 1/F, with the matching slope)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Correct calculated values (1/d = 3.33, 2.50, 2.00, 1.67, 1.33 and 1.11 m^−1), axes labeled with quantities and units, uniform scales that use most of the grid, and all six points plotted correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "One straight best-fit line with the points scattered about it, passing close to the origin."
+                    }
+                  ],
+                  "answer": "Plot F against 1/d. The values of 1/d are 3.33, 2.50, 2.00, 1.67, 1.33 and 1.11 m^−1, and the six points lie close to a straight line through the origin with slope about 4.85 N·m.",
+                  "steps": [
+                    "F = [gL(M/2 + m)]·(1/d) has the form y = (constant)·x with x = 1/d, so F against 1/d is a straight line through the origin.",
+                    "Put 1/d (m^−1) on the horizontal axis and F (N) on the vertical axis, and draw one straight line through the trend."
+                  ],
+                  "figureIds": [
+                    "p1-fr-experimental-design-f8"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-experimental-design-f9"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use your best-fit line to determine M.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope from two points far apart on the best-fit line, about 4.85 N·m (accept 4.70–5.00 N·m), with units."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves slope = gL(M/2 + m) for M = 2(slope/(gL) − m) ≈ 0.59 kg (accept 0.56–0.62 kg), or an answer consistent with the student's slope."
+                    }
+                  ],
+                  "answer": "Slope ≈ 4.85 N·m, so M/2 + m = 4.85/(9.8 × 1.00) = 0.495 kg and M = 2(0.495 − 0.200) ≈ 0.59 kg.",
+                  "steps": [
+                    "Two points on the line, for example (1.00 m^−1, 4.95 N) and (3.40 m^−1, 16.59 N), give slope = 11.64 N/2.40 m^−1 ≈ 4.85 N·m.",
+                    "slope/(gL) = 4.85 N·m/(9.8 m/s^2 × 1.00 m) = 0.495 kg. Then M/2 = 0.495 − 0.200 = 0.295 kg, so M ≈ 0.59 kg.",
+                    "Forgetting that the rod's weight acts at L/2 (using MgL instead of Mg(L/2)) would give M ≈ 0.30 kg, half the correct value."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "For the trial with d = 0.30 m, determine the magnitude and direction of the vertical force that the hinge exerts on the rod.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies the condition that the net vertical force on the rod is zero, with up positive: F + F_H − Mg − mg = 0, where F_H is the hinge force."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "F_H = (M + m)g − F = (0.59 kg + 0.200 kg)(9.8 m/s^2) − 16.2 N ≈ −8.5 N, so the hinge pulls the rod down with about 8.5 N (accept 8.1–8.8 N downward, consistent with the student's M)."
+                    }
+                  ],
+                  "answer": "F_H = (M + m)g − F ≈ (0.79 kg)(9.8 m/s^2) − 16.2 N ≈ −8.5 N: the hinge exerts a downward force of about 8.5 N on the rod.",
+                  "steps": [
+                    "Up positive: F + F_H − Mg − mg = 0, so F_H = (M + m)g − F.",
+                    "(0.79)(9.8) = 7.7 N, and 7.7 N − 16.2 N ≈ −8.5 N. The negative sign means the hinge force points down.",
+                    "With the scale close to the hinge, its pull is larger than the total weight, so the hinge must hold the rod's end down to keep the net force zero."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "In one trial the student accidentally held the spring scale tilted a few degrees from vertical while the rod was horizontal and the scale was still hooked at the same d. Would the reading be larger than, smaller than, or the same as the reading with the scale vertical? Explain.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Larger, with a reason based on torque: only the component of the scale's pull perpendicular to the rod, F cos φ for a tilt φ, produces torque about the hinge, and the torque needed to balance the weights is unchanged, so F must be larger."
+                    }
+                  ],
+                  "answer": "Larger. Only the component of the pull perpendicular to the rod, F cos φ, produces torque about the hinge. The torque needed to balance the two weights is the same, so F cos φ must equal the vertical reading, and F is larger than that reading.",
+                  "steps": [
+                    "F cos φ · d = gL(M/2 + m), so F = gL(M/2 + m)/(d cos φ), which is larger than the vertical reading because cos φ < 1.",
+                    "A reading that is too large would put that point above the line and, if it happened in many trials, would make the slope and the value of M too large."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-experimental-design-fr4",
+              "prompt": "This question is a paper investigation with invented data for practice; it does not replace the hands-on lab work that the AP® physics courses require. A student wants to determine the density ρ_f of a stiff, closed-cell plastic foam. She cuts five rectangular blocks of different sizes from one slab of the foam and finds the volume V of each from its measured dimensions. Each block in turn is tied to a light string that runs down from the block, under a small, light pulley fixed to the bottom of a tank of fresh water, and up to a force sensor clamped above the tank, as shown. With the block held completely under water and at rest, the sensor reads the tension T in the string. The density of the water is ρ_w = 1000 kg/m^3.\n| V (cm^3) | 120 | 240 | 360 | 480 | 600 |\n| --- | --- | --- | --- | --- | --- |\n| T (N) | 1.02 | 2.09 | 3.08 | 4.16 | 5.15 |",
+              "type": "EDA",
+              "topics": [
+                "P1.8.3",
+                "P1.8.1",
+                "P1.2.4"
+              ],
+              "figureIds": [
+                "p1-fr-experimental-design-f10"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the student should find the volume of each block and take each reading of T so that the measurements match what the analysis assumes. Include one step that would reduce the experimental uncertainty.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A valid volume measurement: measures the length, width and thickness of each block with a ruler or calipers (at several places, averaged) and multiplies them, or finds the volume of water displaced when the block is pushed fully under in an overflow container."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A valid reading: zeroes the sensor before attaching the block's string (or with the string slack), then waits until the block is fully submerged, at rest, clear of the tank's sides, bottom and surface, with no air bubbles clinging to it and the string vertical, before reading T."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A specific step that reduces uncertainty, for example repeating each reading and averaging, measuring each dimension in several places, using calipers rather than a ruler, or using blocks spread over a wide range of volumes."
+                    }
+                  ],
+                  "answer": "Measure each block's length, width and thickness with calipers in several places, average each dimension and multiply. Zero the sensor, tie on the block, and raise the sensor until the block is completely under water, clear of the sides, bottom and surface, with the string vertical; brush off any clinging bubbles, wait for the block to stop moving, and read T. Repeat each reading three times and average.",
+                  "steps": [
+                    "The analysis assumes the whole block is submerged, so the buoyant force is ρ_w V g, and that the block is at rest, so the forces on it balance.",
+                    "A bubble stuck to the block adds buoyant force that is not part of V; contact with the tank adds a force the analysis leaves out."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Apply Newton's second law to the block to derive an expression for T in terms of V, ρ_f, ρ_w and g. State what graph of the data should be a straight line, and explain how ρ_f can be found from its slope.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Forces on the block at rest balance: the buoyant force up equals the weight plus the string's downward pull, ρ_w Vg = ρ_f Vg + T, giving T = (ρ_w − ρ_f)gV."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "T against V should be a straight line through the origin with slope (ρ_w − ρ_f)g, so ρ_f = ρ_w − slope/g."
+                    }
+                  ],
+                  "answer": "With up positive, ρ_w Vg − ρ_f Vg − T = 0, so T = (ρ_w − ρ_f)gV. A graph of T against V should be a straight line through the origin with slope (ρ_w − ρ_f)g, so ρ_f = ρ_w − slope/g.",
+                  "steps": [
+                    "The block is at rest, so the net force on it is zero (Newton's second law with a = 0).",
+                    "The buoyant force on the fully submerged block is ρ_w Vg upward; its weight is ρ_f Vg downward; the string pulls it downward with T. The light, frictionless pulley makes the sensor reading equal to T."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the grid, plot T against V and draw a best-fit line.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Axes labeled with quantities and units, T (N) and V (cm^3 or m^3), with uniform scales that use most of the grid, and all five points plotted correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "One straight best-fit line with the points scattered about it, passing close to the origin."
+                    }
+                  ],
+                  "answer": "The five points lie close to a straight line through the origin with slope about 8.6 × 10^−3 N/cm^3.",
+                  "steps": [
+                    "Put V on the horizontal axis and T (N) on the vertical axis; V may stay in cm^3 on the graph as long as the unit is converted when the slope is used.",
+                    "Draw one straight line through the trend; it passes very close to the origin."
+                  ],
+                  "figureIds": [
+                    "p1-fr-experimental-design-f11"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-experimental-design-f12"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line to determine ρ_f.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Slope from two points far apart on the line, converted to SI units: about 8.6 × 10^−3 N/cm^3 = 8.6 × 10^3 N/m^3 (accept 8.4 × 10^3 to 8.8 × 10^3 N/m^3), using 1 cm^3 = 10^−6 m^3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "ρ_f = ρ_w − slope/g ≈ 1000 − 878 ≈ 1.2 × 10^2 kg/m^3 (accept 100–145 kg/m^3), or an answer consistent with the student's slope."
+                    }
+                  ],
+                  "answer": "Slope ≈ 8.6 × 10^3 N/m^3, so ρ_f = 1000 kg/m^3 − (8.6 × 10^3 N/m^3)/(9.8 m/s^2) ≈ 1.2 × 10^2 kg/m^3.",
+                  "steps": [
+                    "Two points on the line, for example (100 cm^3, 0.86 N) and (600 cm^3, 5.17 N), give slope = 4.31 N/500 cm^3 ≈ 8.6 × 10^−3 N/cm^3. Since 1 cm^3 = 10^−6 m^3, the slope is 8.6 × 10^3 N/m^3.",
+                    "slope/g = 8.6 × 10^3/9.8 ≈ 878 kg/m^3, so ρ_f ≈ 1000 − 878 ≈ 122 kg/m^3, about 1.2 × 10^2 kg/m^3.",
+                    "Because ρ_f is a small difference of two larger numbers, a 2% change in the slope changes ρ_f by about 15%: a reason to spread the blocks over a wide range of volumes."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "The student repeats the measurements with the same blocks in salt water of density 1100 kg/m^3. Predict the slope of the new graph of T against V, and explain your prediction.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Predicts a steeper line with slope (1100 kg/m^3 − ρ_f)g ≈ 9.6 × 10^3 N/m^3 (accept 9.4 × 10^3 to 9.8 × 10^3 N/m^3, consistent with the student's ρ_f), explaining that the buoyant force on each block increases while its weight does not, so the string must pull harder; equivalently, the slope increases by (100 kg/m^3)g ≈ 980 N/m^3."
+                    }
+                  ],
+                  "answer": "About 9.6 × 10^3 N/m^3, steeper than before. The slope is now (1100 − 122) kg/m^3 × 9.8 m/s^2 ≈ 9.6 × 10^3 N/m^3: each block's buoyant force is larger in the denser liquid while its weight is unchanged, so the string must pull down harder.",
+                  "steps": [
+                    "T = (ρ_liquid − ρ_f)gV, so the slope is (ρ_liquid − ρ_f)g.",
+                    "Raising ρ_liquid by 100 kg/m^3 raises the slope by (100)(9.8) ≈ 980 N/m^3, from about 8.6 × 10^3 to about 9.6 × 10^3 N/m^3."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

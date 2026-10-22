@@ -1,0 +1,551 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "fr-experimental-design",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Experimental Design and Analysis",
+  "author": "cm-fr-experimental-design-author",
+  "directions": "This set holds four Experimental Design and Analysis questions for AP® Physics C: Mechanics practice, each worth 10 points and each from a different unit. Work them two at a sitting: questions 1 and 2 (motion and forces) in one 54-minute sitting and questions 3 and 4 (energy and rotational equilibrium) in another, about 27 minutes a question. That is Liminal's practice pace for this question type, inside the 25–30 minutes practice exam A suggests for it. Every question uses invented data; paper practice does not replace the hands-on lab work the AP® physics courses require. Any calculator is allowed, and you may use the course's formula reference. Use g = 9.8 m/s^2 and SI units, and give answers to the precision of the data, with units. Draw graphs on the grids provided, with labeled, scaled axes and one best-fit line, and take slopes from points on your line. Score your work with the answer key's rubrics and record raw points as a practice tally; they are not AP scores.",
+  "figures": [
+    {
+      "id": "cm-fr-experimental-design-f1",
+      "alt": "Blank grid for plotting, 10 columns by 8 rows, with unlabeled axes."
+    },
+    {
+      "id": "cm-fr-experimental-design-f2",
+      "alt": "Key graph of d/t in m/s against t in s, from 0 to 1.4 s: five points from (0.362, 0.552) to (1.227, 0.815) lying close to a straight best-fit line that meets the vertical axis near 0.45 m/s and has slope about 0.30 m/s^2."
+    },
+    {
+      "id": "cm-fr-experimental-design-f3",
+      "alt": "A block on a board inclined at angle θ above the horizontal. A motion sensor sits at the top of the board, facing down the slope toward the block, and an arrow marked plus points down the slope.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-fr-experimental-design-f4",
+      "alt": "Blank grid for plotting, 10 columns by 8 rows, with a vertical axis for a/cos θ in m/s^2 and a horizontal axis for tan θ."
+    },
+    {
+      "id": "cm-fr-experimental-design-f5",
+      "alt": "Key graph of a/cos θ in m/s^2 against tan θ, with the vertical axis from −4 to 8: five points from (0.466, 1.46) to (1.000, 6.69) lying close to a straight best-fit line of slope about 9.8 m/s^2, which extended to tan θ = 0 meets the vertical axis near −3.1 m/s^2."
+    },
+    {
+      "id": "cm-fr-experimental-design-f6",
+      "alt": "Blank grid for plotting, 10 columns by 8 rows, with a vertical axis for 1/v^2 in s^2/m^2 and a horizontal axis for m in kg."
+    },
+    {
+      "id": "cm-fr-experimental-design-f7",
+      "alt": "Key graph of 1/v^2 in s^2/m^2 against m in kg, with the horizontal axis from −0.1 to 0.6 kg: five points from (0.100, 0.236) to (0.500, 0.769) lying close to a straight best-fit line of slope about 1.33 s^2/(m^2·kg) that meets the vertical axis near 0.10 s^2/m^2 and the horizontal axis near −0.08 kg."
+    },
+    {
+      "id": "cm-fr-experimental-design-f8",
+      "alt": "Side view of a tapered plank resting horizontally on a knife edge on a stand. The thick end of the plank, labeled A, is at the left, and a block labeled m hangs from a string at end A. A dimension labeled p runs along the top of the plank from end A to the point above the knife edge. The plank narrows toward its right end.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-fr-experimental-design-f9",
+      "alt": "Blank grid for plotting, 10 columns by 8 rows, with a vertical axis for mp in kg·m and a horizontal axis for p in m."
+    },
+    {
+      "id": "cm-fr-experimental-design-f10",
+      "alt": "Key graph of mp in kg·m against p in m, from 0 to 0.7 m: five points from (0.300, 0.272) to (0.500, 0.100) lying close to a straight best-fit line of slope about −0.86 kg that meets the vertical axis near 0.53 kg·m and the horizontal axis near 0.62 m."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 108,
+          "calculator": "any",
+          "directions": "4 questions, 108 minutes in two sittings of 54 minutes (questions 1–2, then 3–4). Each question is worth 10 points. Show your reasoning with equations, substitutions and units; points are awarded for procedures, derivations, graphs and explanations as well as for answers.",
+          "items": [
+            {
+              "id": "cm-fr-experimental-design-fr1",
+              "type": "EDA",
+              "topics": [
+                "CM.1.3",
+                "CM.1.2"
+              ],
+              "prompt": "The data in this question are invented for practice. Paper practice does not replace the hands-on lab work the AP® physics courses require, and it does not count toward the AP Course Audit or college lab credit. A fan cart is a cart driven along a long, level, low-friction track by a battery-powered fan mounted on it, which pushes on the air. Photogate 1 is fixed partway along the track. In every trial the student switches on the fan and releases the cart from rest at a mark a short distance behind photogate 1, so the cart is already moving when it passes photogate 1. Photogate 2 is placed a distance d farther along the track. A timer starts when the cart passes photogate 1 and stops when it passes photogate 2, giving the time t between the gates. Take the direction of the cart's motion as positive. The student wants to test the claim that the fan gives the cart a constant acceleration a.\n| d (m) | 0.20 | 0.40 | 0.60 | 0.80 | 1.00 |\n| --- | --- | --- | --- | --- | --- |\n| t (s) | 0.362 | 0.624 | 0.853 | 1.043 | 1.227 |",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Let v_1 be the cart's speed as it passes photogate 1. Starting from a kinematic relation for constant acceleration, write an equation relating d, t, v_1 and a. Use it to choose quantities to graph so that the data fall on a straight line if the acceleration is constant, and state what the slope and the vertical intercept of that line represent.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes d = v_1t + ½at^2 (displacement for constant acceleration, measured from photogate 1, with t = 0 there)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Divides by t to get d/t = v_1 + (a/2)t and chooses d/t against t, with slope a/2 and vertical intercept v_1 (or an equivalent valid linearization with its slope and intercept correctly identified)."
+                    }
+                  ],
+                  "answer": "d = v_1t + ½at^2, so d/t = v_1 + (a/2)t. Graph d/t (the average velocity between the gates) against t: a straight line with slope a/2 and vertical intercept v_1.",
+                  "steps": [
+                    "With constant acceleration and t = 0 at photogate 1, the displacement is d = v_1t + ½at^2.",
+                    "d against t is a parabola and d against t^2 is not a straight line either, because v_1 ≠ 0. Dividing by t gives d/t = v_1 + (a/2)t, which is linear in t."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Calculate the values you need, plot the quantities you chose in part (a) on the grid provided, label and scale both axes, and draw a best-fit line.",
+                  "figureIds": [
+                    "cm-fr-experimental-design-f1"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-experimental-design-f2"
+                  ],
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes d/t = 0.552, 0.641, 0.703, 0.767 and 0.815 m/s (or the values for an equivalent linearization)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Labels both axes with quantities and units, uses linear scales that spread the data over most of the grid, and plots all five points correctly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Draws one straight best-fit line with points on both sides of it, not a line joining the first and last points."
+                    }
+                  ],
+                  "answer": "d/t = 0.552, 0.641, 0.703, 0.767 and 0.815 m/s at t = 0.362, 0.624, 0.853, 1.043 and 1.227 s; the points lie close to a straight line that meets the vertical axis near 0.45 m/s (key graph).",
+                  "steps": [
+                    "For example, 0.20 m/0.362 s = 0.552 m/s and 1.00 m/1.227 s = 0.815 m/s.",
+                    "On the 10-by-8 grid, 0.15 s per column (0 to 1.5 s) and 0.125 m/s per row (0 to 1.0 m/s) keep t = 0, the intercept and all five points on the grid."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use your best-fit line to determine the cart's acceleration a and its speed v_1 at photogate 1.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the slope from two points on the line that are far apart, about 0.30 m/s^2 (accept 0.28–0.33 m/s^2), and a = 2 × slope ≈ 0.61 m/s^2 (accept 0.56–0.66 m/s^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reads the vertical intercept as v_1 ≈ 0.45 m/s (accept 0.42–0.48 m/s), with units."
+                    }
+                  ],
+                  "answer": "Slope ≈ 0.30 m/s^2, so a ≈ 0.61 m/s^2; v_1 ≈ 0.45 m/s.",
+                  "steps": [
+                    "A least-squares fit gives slope 0.304 m/s^2 and intercept 0.446 m/s; a hand-drawn line through, for example, (0, 0.446 m/s) and (1.40 s, 0.871 m/s) gives the same.",
+                    "Slope = a/2, so a = 2(0.304 m/s^2) = 0.61 m/s^2. The intercept is d/t at t = 0, which is v_1."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A card 0.025 m wide, mounted on the cart, blocks photogate 2 for 0.0212 s when d = 1.00 m. Use this to find the cart's speed at photogate 2, explain why the method gives the instantaneous speed closely, and compare the result with the speed the constant-acceleration model gives there using your values from part (c).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes v = 0.025 m/0.0212 s ≈ 1.18 m/s and explains that this is the average speed while the card passes, which is close to the instantaneous speed because the speed changes by only about aΔt ≈ 0.013 m/s (about 1%) in 0.0212 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Computes the model's speed v_1 + at ≈ 0.45 + (0.61)(1.227) ≈ 1.19 m/s (or uses v^2 = v_1^2 + 2ad, or 2d/t − v_1, consistent with part (c)) and states that the two agree to within about 1%, which supports the constant-acceleration model."
+                    }
+                  ],
+                  "answer": "Card method: 0.025 m/0.0212 s = 1.18 m/s. Model: v = v_1 + at = 0.446 m/s + (0.607 m/s^2)(1.227 s) = 1.19 m/s. They agree to about 1%. The card gives an average over 0.0212 s, during which the speed changes by only about 0.013 m/s, so it is very close to the instantaneous speed.",
+                  "steps": [
+                    "v ≈ w/Δt = 0.025 m/0.0212 s = 1.179 m/s.",
+                    "Model: v = v_1 + at = 0.446 + 0.607 × 1.227 = 1.191 m/s; or v = √(v_1^2 + 2ad) = √(0.199 + 1.214) = 1.19 m/s.",
+                    "The difference, about 0.01 m/s, is within what a small measurement error explains."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Explain why the student must release the cart from the same mark in every trial.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Explains that v_1 must be the same in every trial because it is a single constant (the intercept) in the linear model; releasing from different marks would change v_1 from trial to trial, so the points would not lie on one line."
+                    }
+                  ],
+                  "answer": "The model d/t = v_1 + (a/2)t treats v_1 as one constant shared by all trials. Releasing from the same mark gives the same v_1 each time; a different release point would change v_1, scattering the points off a single line and making the intercept meaningless.",
+                  "steps": [
+                    "Each trial measures a different d, but the line needs every trial to start with the same speed at photogate 1."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-experimental-design-fr2",
+              "type": "EDA",
+              "topics": [
+                "CM.2.7",
+                "CM.2.5",
+                "CM.2.2"
+              ],
+              "prompt": "The data in this question are invented for practice. Paper practice does not replace the hands-on lab work the AP® physics courses require, and it does not count toward the AP Course Audit or college lab credit. A student wants to measure the coefficient of kinetic friction μ_k between a wooden block and a painted board. The board is clamped at an angle θ above the horizontal, as shown. At each angle the block is released from rest near the top of the board and slides down on its own, and a motion sensor at the top of the board records its motion. From the slope of each velocity–time graph the student finds the block's acceleration a. Take down the board as positive, and use g = 9.8 m/s^2.\n| θ (degrees) | 25.0 | 30.0 | 35.0 | 40.0 | 45.0 |\n| --- | --- | --- | --- | --- | --- |\n| a (m/s^2) | 1.32 | 2.16 | 3.07 | 3.88 | 4.73 |",
+              "figureIds": [
+                "cm-fr-experimental-design-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw a free-body diagram of the block as it slides down the board, with each force drawn as an arrow starting on the block and labeled. Then, starting from Newton's second law, show that a/cos θ = g tan θ − μ_kg, and state what the slope and the vertical intercept of a graph of a/cos θ against tan θ represent.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Free-body diagram with exactly three forces: the weight mg straight down, the normal force perpendicular to the board and away from it, and kinetic friction parallel to the board, pointing up the board."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law along the board, mg sin θ − f = ma, and perpendicular to it, N − mg cos θ = 0, with f = μ_kN = μ_kmg cos θ."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Divides by m cos θ to reach a/cos θ = g tan θ − μ_kg and states that the slope is g and the vertical intercept is −μ_kg."
+                    }
+                  ],
+                  "answer": "Forces: weight mg down, normal force N perpendicular to the board, friction f up the board. Along the board (down positive): mg sin θ − μ_kN = ma. Perpendicular: N = mg cos θ, since the block does not accelerate off the board. So a = g sin θ − μ_kg cos θ, and dividing by cos θ gives a/cos θ = g tan θ − μ_kg. On a graph of a/cos θ against tan θ, the slope is g and the vertical intercept is −μ_kg.",
+                  "steps": [
+                    "The block's acceleration is along the board, so the perpendicular components balance: N = mg cos θ.",
+                    "Kinetic friction opposes the sliding, so it points up the board, and its size is μ_kN.",
+                    "a = g(sin θ − μ_k cos θ); divide both sides by cos θ."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Calculate tan θ and a/cos θ for each trial. On the grid provided, plot a/cos θ against tan θ, scale both axes, and draw a best-fit line.",
+                  "figureIds": [
+                    "cm-fr-experimental-design-f4"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-experimental-design-f5"
+                  ],
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes tan θ = 0.466, 0.577, 0.700, 0.839 and 1.000 and a/cos θ = 1.46, 2.49, 3.75, 5.07 and 6.69 m/s^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Plots the five points on scaled axes and draws one straight best-fit line through them."
+                    }
+                  ],
+                  "answer": "tan θ = 0.466, 0.577, 0.700, 0.839, 1.000; a/cos θ = 1.46, 2.49, 3.75, 5.07, 6.69 m/s^2. The points lie close to a straight line (key graph).",
+                  "steps": [
+                    "For example, at 25.0°: tan 25.0° = 0.466 and 1.32/cos 25.0° = 1.32/0.906 = 1.46 m/s^2.",
+                    "Starting the horizontal axis at zero and letting the vertical axis run below zero lets the line be extended to the vertical axis."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use your best-fit line to determine μ_k. Explain how the slope of your line tests the model.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the vertical intercept, about −3.1 m/s^2 (accept −3.4 to −2.9 m/s^2), by extending the line or from the slope and a point on it, and μ_k = −intercept/g ≈ 0.32 (accept 0.29–0.35)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds a slope of about 9.8 m/s^2 (accept 9.3–10.3 m/s^2) and explains that a slope equal to g, within uncertainty, supports the model, because the model says the slope is g."
+                    }
+                  ],
+                  "answer": "Slope ≈ 9.8 m/s^2, intercept ≈ −3.1 m/s^2, so μ_k = 3.1/9.8 ≈ 0.32. The model says the slope must equal g; a measured slope of 9.8 m/s^2 agrees, which supports the model, including the assumption that μ_k is the same at every angle.",
+                  "steps": [
+                    "Least squares gives slope 9.81 m/s^2 and intercept −3.14 m/s^2.",
+                    "μ_k = −(−3.14 m/s^2)/(9.8 m/s^2) = 0.32. Using the measured slope in place of g gives the same value."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The model assumes that μ_k does not depend on the block's speed. Describe how the student could use the same apparatus to test this assumption, and state what result would show that μ_k does depend on speed.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Describes a procedure that keeps the angle and surfaces fixed and compares accelerations at different speeds, for example by examining the slope of one velocity–time graph over the whole slide, or by giving the block different starting speeds down the board and measuring a each time."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States the test: a constant acceleration (a straight velocity–time graph, or the same a for every starting speed) means μ_k does not depend on speed; an acceleration that changes as the speed grows means it does (a decreasing a means friction grows with speed)."
+                    }
+                  ],
+                  "answer": "Sample: fix the board at 35.0° and let the block slide the full length several times, recording velocity against time. If μ_k does not depend on speed, the net force is constant and the velocity–time graph is a straight line. If the graph curves, with its slope (the acceleration) shrinking as the block speeds up, friction grows with speed, so μ_k depends on speed. Giving the block different starting speeds and comparing the accelerations is an equally good test.",
+                  "steps": [
+                    "At a fixed angle, a changes only if the friction force changes.",
+                    "The block speeds up during each slide, so one run already covers a range of speeds."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "The student repeats the experiment with a 0.50 kg steel bar fastened on top of the block, so the same wooden face slides on the board. According to the model, how would the new graph compare with the first one? Explain.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the line would be the same (same slope and intercept) because the mass cancels from a/cos θ = g tan θ − μ_kg: friction and the weight's component along the board both grow in proportion to the mass."
+                    }
+                  ],
+                  "answer": "The same line: the model a/cos θ = g tan θ − μ_kg contains no mass, because both the weight's component along the board and the friction force are proportional to m.",
+                  "steps": [
+                    "Doubling m doubles mg sin θ and μ_kmg cos θ, so the acceleration does not change."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-experimental-design-fr3",
+              "type": "EDA",
+              "topics": [
+                "CM.3.3",
+                "CM.3.4",
+                "CM.3.1"
+              ],
+              "prompt": "The data in this question are invented for practice. Paper practice does not replace the hands-on lab work the AP® physics courses require, and it does not count toward the AP Course Audit or college lab credit. A spring launcher is fixed at one end of a level, low-friction track. A latch holds its spring compressed by x = 0.040 m, as marked on the launcher. When the latch is released, the spring pushes a plunger of unknown mass m_p, and the plunger pushes a cart of mass m. When the spring reaches its natural length, a stop on the launcher halts the plunger, and the cart separates from it and rolls on alone. A photogate just beyond that point measures the cart's speed v. The student loads the cart with steel bars to change m. Take the direction of launch as positive, and treat the spring itself as massless.\n| m (kg) | 0.100 | 0.200 | 0.300 | 0.400 | 0.500 |\n| --- | --- | --- | --- | --- | --- |\n| v (m/s) | 2.06 | 1.64 | 1.42 | 1.26 | 1.14 |",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the photogate can be used to measure v, where it should be placed and why, and one way to reduce random uncertainty in v.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Measures the time Δt for which a card of known width w on the cart blocks the gate and computes v = w/Δt, with the gate placed just past the point where the cart leaves the plunger (after the spring stops pushing, before friction has slowed the cart noticeably)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reduces random uncertainty by repeating each mass several times (with the same latch setting) and averaging v."
+                    }
+                  ],
+                  "answer": "Fix a card of measured width w (for example 0.025 m) on the cart. The gate times how long the card blocks it, Δt, and v = w/Δt. Put the gate a few centimeters past the point where the plunger stops, so the spring has finished pushing but friction has had almost no distance to act. Launch each mass three to five times from the same latch and average v.",
+                  "steps": [
+                    "Placing the gate inside the launch region would measure the cart while it is still speeding up.",
+                    "Placing it far down the track would let friction reduce v."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Using conservation of energy, show that 1/v^2 = m/(kx^2) + m_p/(kx^2), where k is the spring constant. Name the system you use. State what the slope and the vertical intercept of a graph of 1/v^2 against m represent.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Takes the spring, plunger and cart as the system with no work by friction: the spring's potential energy ½kx^2 becomes the kinetic energy ½(m + m_p)v^2 of the plunger and cart, which move together at v when the spring reaches its natural length."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Rearranges to 1/v^2 = (m + m_p)/(kx^2) and identifies the slope as 1/(kx^2) and the vertical intercept as m_p/(kx^2)."
+                    }
+                  ],
+                  "answer": "System: spring, plunger and cart, on a level track with negligible friction. ½kx^2 = ½(m + m_p)v^2, so v^2 = kx^2/(m + m_p) and 1/v^2 = m/(kx^2) + m_p/(kx^2). On a graph of 1/v^2 against m the slope is 1/(kx^2) and the vertical intercept is m_p/(kx^2).",
+                  "steps": [
+                    "The cart and plunger leave contact when the spring stops pushing, at its natural length, where its potential energy is zero.",
+                    "The track is level, so gravitational potential energy does not change."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate 1/v^2 for each trial. On the grid provided, plot 1/v^2 against m, scale both axes, and draw a best-fit line.",
+                  "figureIds": [
+                    "cm-fr-experimental-design-f6"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-experimental-design-f7"
+                  ],
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes 1/v^2 = 0.236, 0.372, 0.496, 0.630 and 0.769 s^2/m^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Plots the five points on scaled axes and draws one straight best-fit line through them."
+                    }
+                  ],
+                  "answer": "1/v^2 = 0.236, 0.372, 0.496, 0.630, 0.769 s^2/m^2; the points lie close to a straight line that crosses the vertical axis above zero (key graph).",
+                  "steps": [
+                    "For example, 1/(2.06 m/s)^2 = 1/(4.24 m^2/s^2) = 0.236 s^2/m^2.",
+                    "Start the vertical axis at zero so the intercept can be read."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line and x = 0.040 m to determine the spring constant k and the plunger's mass m_p.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds a slope of about 1.33 s^2/(m^2·kg) (accept 1.25–1.40) and k = 1/(slope × x^2) ≈ 470 N/m (accept 445–500 N/m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds an intercept of about 0.10 s^2/m^2 (accept 0.08–0.13) and m_p = intercept/slope ≈ 0.078 kg (accept 0.06–0.10 kg), or reads m_p as the magnitude of the horizontal-axis intercept."
+                    }
+                  ],
+                  "answer": "Slope ≈ 1.33 s^2/(m^2·kg), so k = 1/[(1.33)(0.040 m)^2] ≈ 470 N/m. Intercept ≈ 0.103 s^2/m^2, so m_p = 0.103/1.33 ≈ 0.078 kg.",
+                  "steps": [
+                    "Least squares gives slope 1.326 s^2/(m^2·kg) and intercept 0.103 s^2/m^2.",
+                    "k = 1/(1.326 × 0.0016) = 471 N/m. Units: 1/[(s^2/(m^2·kg))(m^2)] = kg/s^2 = N/m.",
+                    "m_p = intercept/slope = 0.103/1.326 = 0.078 kg; the line reaches 1/v^2 = 0 at m = −m_p."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "In a separate static test, hanging known masses from the spring gives k = 500 N/m. The student then finds that the latch holds the spring compressed by only 0.039 m, not 0.040 m. Does this account for the difference between the two values of k? Does it change the value of m_p found in part (d)? Explain.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Yes: k = 1/(slope × x^2) depends on x^2, so a 2.5% overestimate of x gives a k about 5% too small; recomputing with x = 0.039 m gives k ≈ 1/(1.33 × 0.039^2) ≈ 495 N/m (accept 470–525 N/m, consistent with part (d)), which agrees with 500 N/m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "m_p is unchanged, because m_p = intercept/slope and x appears equally in the slope and the intercept, so it cancels."
+                    }
+                  ],
+                  "answer": "Yes. With x = 0.039 m, k = 1/[(1.326)(0.039 m)^2] ≈ 496 N/m, within 1% of the static 500 N/m; using 0.040 m made k too small by the factor (0.039/0.040)^2 ≈ 0.95. The plunger mass does not change: m_p = intercept/slope = [m_p/(kx^2)]/[1/(kx^2)], in which kx^2 cancels.",
+                  "steps": [
+                    "The data fix the product kx^2 = 1/slope ≈ 0.754 N·m; a smaller x requires a larger k.",
+                    "The ratio of intercept to slope does not involve x or k."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-experimental-design-fr4",
+              "type": "EDA",
+              "topics": [
+                "CM.5.5",
+                "CM.5.3",
+                "CM.2.1"
+              ],
+              "prompt": "The data in this question are invented for practice. Paper practice does not replace the hands-on lab work the AP® physics courses require, and it does not count toward the AP Course Audit or college lab credit. A student wants to find the mass M of a tapered wooden plank 1.40 m long and the distance x_cm of its center of mass from its thick end, A, without a scale large enough to weigh it. She rests the plank on a knife edge at a distance p from end A, as shown, and hangs slotted masses of total mass m from a light string looped around the plank at end A. For each position of the knife edge she adjusts m until the plank rests in balance with its length horizontal. All distances are measured along the plank from end A, and the knife edge is always between end A and the center of mass. Take counterclockwise in the figure as positive.\n| p (m) | 0.300 | 0.350 | 0.400 | 0.450 | 0.500 |\n| --- | --- | --- | --- | --- | --- |\n| m (kg) | 0.905 | 0.660 | 0.465 | 0.325 | 0.200 |",
+              "figureIds": [
+                "cm-fr-experimental-design-f8"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe how the student should measure p and decide that the plank is balanced, what she must keep the same in every trial, and one way to reduce the uncertainty in the balancing mass m.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Measures p with a meter stick from end A to the knife edge's line of contact, hangs the masses from the same point at end A in every trial, and judges balance by the plank resting horizontal (checked with a level or against a horizontal mark) without tipping either way."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gives a valid way to reduce uncertainty in m, for example bracketing (the smallest m that tips end A down and the largest that lets it rise, then the average), adding small slotted masses near balance, or repeating each balance and averaging."
+                    }
+                  ],
+                  "answer": "Sample: mark p on the plank with a meter stick, measured from end A to where the knife edge touches, and set the knife edge on that mark. Keep the string loop at the very end A in every trial. Add slotted masses until the plank rests horizontal, checked with a small level, and does not tip either way. Near balance, find the smallest total mass that tips end A down and the largest that lets it rise, and take m as their average; repeat each position two or three times.",
+                  "steps": [
+                    "The model puts the hanging weight at a lever arm p, so the string must hang from end A, the point from which p is measured, every time.",
+                    "Balance is a range of masses rather than one value because the knife edge has friction and width; bracketing and averaging reduce that uncertainty."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Using the condition for rotational equilibrium of the plank, show that mp = Mx_cm − Mp. State what the student should graph to obtain a straight line, and what its slope, its vertical intercept and its horizontal intercept represent.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Takes torques about the knife edge, where the support force has no torque: the string's pull mg (the hanging masses are at rest) at lever arm p gives +mgp, and the plank's weight Mg at lever arm x_cm − p on the other side gives −Mg(x_cm − p); the net torque is zero, so mgp = Mg(x_cm − p)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Rearranges to mp = Mx_cm − Mp and chooses mp against p, with slope −M, vertical intercept Mx_cm and horizontal intercept x_cm (or an equivalent linearization, such as m against 1/p with slope Mx_cm and vertical intercept −M, with what each represents)."
+                    }
+                  ],
+                  "answer": "The plank is at rest, so the net torque on it about the knife edge is zero. The support force acts at the knife edge and has no torque about it. The string pulls down at end A with force mg, lever arm p (counterclockwise); the plank's weight Mg acts at its center of mass, lever arm x_cm − p on the other side (clockwise). So mgp − Mg(x_cm − p) = 0, and mp = Mx_cm − Mp. A graph of mp against p is a straight line with slope −M, vertical intercept Mx_cm and horizontal intercept x_cm.",
+                  "steps": [
+                    "Taking torques about the knife edge removes the unknown support force from the equation.",
+                    "g cancels, so the relation needs only masses and distances.",
+                    "Setting mp = 0 gives p = x_cm: if the knife edge were under the center of mass, no hanging mass would be needed."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate mp for each trial. On the grid provided, plot mp against p, label and scale both axes, and draw a best-fit line.",
+                  "figureIds": [
+                    "cm-fr-experimental-design-f9"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-experimental-design-f10"
+                  ],
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes mp = 0.272, 0.231, 0.186, 0.146 and 0.100 kg·m (or the values for an equivalent linearization)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Plots the five points on labeled, linearly scaled axes and draws one straight best-fit line through them, extended to meet the horizontal axis (or to the vertical axis if it is used)."
+                    }
+                  ],
+                  "answer": "mp = 0.272, 0.231, 0.186, 0.146 and 0.100 kg·m at p = 0.300 to 0.500 m. The points lie close to a straight line that falls as p grows and meets the horizontal axis near p = 0.62 m (key graph).",
+                  "steps": [
+                    "For example, (0.905 kg)(0.300 m) = 0.272 kg·m and (0.200 kg)(0.500 m) = 0.100 kg·m.",
+                    "A horizontal scale of 0.07 m per column (0 to 0.70 m) and a vertical scale of 0.075 kg·m per row (0 to 0.60 kg·m) keep both intercepts on the grid; a horizontal axis from 0.20 m also works if only the horizontal intercept is used."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line to determine M and x_cm.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the slope from two far-apart points on the line, about −0.86 kg (accept −0.80 to −0.91 kg), and M = −slope ≈ 0.86 kg (accept 0.80–0.91 kg)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds x_cm ≈ 0.62 m (accept 0.60–0.64 m), either as the horizontal intercept or as the vertical intercept (about 0.53 kg·m) divided by M."
+                    }
+                  ],
+                  "answer": "Slope ≈ −0.86 kg, so M ≈ 0.86 kg. The line meets the horizontal axis at p ≈ 0.62 m, so x_cm ≈ 0.62 m from end A (the vertical intercept, about 0.53 kg·m, divided by M gives the same).",
+                  "steps": [
+                    "Least squares gives slope −0.856 kg, vertical intercept 0.529 kg·m and horizontal intercept 0.619 m.",
+                    "A hand-drawn line through, for example, (0.250 m, 0.315 kg·m) and (0.600 m, 0.016 kg·m) gives slope (0.016 − 0.315)/(0.600 − 0.250) = −0.85 kg.",
+                    "x_cm = 0.529 kg·m/0.856 kg = 0.62 m, which agrees with the horizontal intercept. Graphing m against 1/p instead gives slope Mx_cm ≈ 0.53 kg·m and intercept −M ≈ −0.85 kg, the same results."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "The student later finds that the slotted masses hung from a 0.020 kg hook on the string, and that she left the hook out of m. Explain how the values of M and x_cm found in part (d) are affected (too large, too small or unaffected), and estimate the corrected values.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "The true hanging mass is m + 0.020 kg, so (m + 0.020 kg)p = M(x_cm − p) and the recorded data follow mp = Mx_cm − (M + 0.020 kg)p: the slope's magnitude is M + 0.020 kg, so M from part (d) is 0.020 kg too large; corrected M ≈ 0.84 kg (accept 0.78–0.89 kg, consistent with part (d))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "x_cm from part (d) is too small: the recorded m reaches zero where the hook alone balances the plank, a little short of the center of mass (or: the vertical intercept is still Mx_cm, and dividing it by the smaller corrected M gives a larger x_cm); corrected x_cm ≈ 0.63 m (accept 0.61–0.66 m, consistent with part (d))."
+                    }
+                  ],
+                  "answer": "Both values are off. With the hook, the torque balance is (m + 0.020)p = M(x_cm − p), so the recorded data follow mp = Mx_cm − (M + 0.020 kg)p. The slope of the line is −(M + 0.020 kg), so M from part (d) is 0.020 kg too large: M ≈ 0.86 − 0.02 = 0.84 kg. The vertical intercept is still Mx_cm = 0.529 kg·m, so x_cm = 0.529/0.836 ≈ 0.63 m: the horizontal intercept, 0.62 m, was about 0.015 m too small, because the recorded m reaches zero where the hook alone balances the plank, short of the center of mass.",
+                  "steps": [
+                    "Every recorded mp is smaller than the true hanging mass times p by (0.020 kg)p, which grows with p, so the line is steeper than it should be by 0.020 kg.",
+                    "Corrected: M = 0.856 − 0.020 = 0.836 kg and x_cm = 0.529/0.836 = 0.633 m."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

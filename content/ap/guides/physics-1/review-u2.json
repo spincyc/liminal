@@ -1,0 +1,547 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "review-u2",
+  "kind": "unit-review",
+  "unitId": "u2",
+  "title": "Unit 2 review: Force and Translational Dynamics",
+  "author": "p1-review-author",
+  "summary": "A retrieval-first review of Unit 2 for the AP® Physics 1 Exam: systems and center of mass, forces and free-body diagrams, Newton's three laws, gravitation, static and kinetic friction, spring forces and circular motion. Answer six recall checks and five mixed problems before you read the summary of results with their conditions, the model explanations and traps, and two worked examples.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "p1-review-u2-g1",
+      "alt": "Diagram of a window washer sitting on a flat seat. A rope tied to the seat runs straight up, over a pulley hung from the roof, and straight back down to the washer's hands.",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper, from memory, before you open its answer. Write each law or force relation together with the conditions under which it holds, and name the object that exerts every force you mention: a relation without its conditions does not count as recalled. Mark each check right, partly right or wrong; the wrong ones point you to the section below to reread. Use g = 9.8 m/s^2."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c1",
+          "see": "what-to-know",
+          "prompt": "Write the center-of-mass position of a set of point masses on a line. Which forces can change the velocity of a system's center of mass? When may you model a whole system as a single object?",
+          "hint": "Sort the forces into those that one part of the system exerts on another and those exerted from outside it.",
+          "answer": "x_cm = (m_1x_1 + m_2x_2 + …)/(m_1 + m_2 + …). Only external forces change the velocity of the center of mass: ΣF_ext = Ma_cm, with M the total mass. You may model the system as one object of mass M located at its center of mass when only the motion of the system as a whole is asked, not its internal forces or rotation.",
+          "steps": [
+            "x_cm is the mass-weighted average position; it lies closer to the larger masses, and the same formula with y gives y_cm.",
+            "Forces between parts of the system come in third-law pairs within the system, so they cancel when the forces on the whole system are added.",
+            "So the net external force alone sets the acceleration of the center of mass: ΣF_ext = (total mass)a_cm.",
+            "The single-object model answers questions about the system's overall motion. To find an internal force, such as the tension between two connected objects, choose a smaller system on which that force acts from outside."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c2",
+          "see": "explanations-and-traps",
+          "prompt": "State Newton's third law and a test for whether two forces form a third-law pair. A lamp hangs at rest from a cord attached to the ceiling. Name the third-law partner of the gravitational force on the lamp and of the cord's pull on the lamp. Why are those two forces on the lamp equal in size here?",
+          "answer": "If A exerts a force on B, then B exerts on A a force of equal magnitude, opposite direction and the same type. Partner of Earth's gravitational pull on the lamp: the lamp's gravitational pull up on Earth. Partner of the cord's pull up on the lamp: the lamp's pull down on the cord. The weight and the cord's pull are equal because the lamp is in equilibrium (Newton's first law), not because of the third law.",
+          "steps": [
+            "Name each force as \"the force of X on Y\"; its partner is \"the force of Y on X\". A pair acts on two different objects, and both forces have the same type (both gravitational, or both contact).",
+            "Earth on lamp (gravitational, down) pairs with lamp on Earth (gravitational, up).",
+            "Cord on lamp (tension, up) pairs with lamp on cord (a pull, down).",
+            "The weight and the cord's pull both act on the lamp, so they cannot be a pair. They are equal because the lamp's acceleration is zero, so the net force on it is zero.",
+            "If the lamp hung in an elevator accelerating upward, the cord's pull would exceed the weight, while each third-law pair would still have equal magnitudes."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c3",
+          "see": "what-to-know",
+          "prompt": "State Newton's first and second laws, including the kind of reference frame in which they hold. Then say what is wrong with drawing a force labeled ma, or a force \"of motion\", on a free-body diagram.",
+          "answer": "First law: an object's velocity stays constant (including at rest) unless the net external force on it is not zero. Second law: a = ΣF/m, in the direction of the net force, component by component (ΣF_x = ma_x and ΣF_y = ma_y). Both hold in inertial (non-accelerating) frames. ma is the result of the forces, not a force, and a moving object needs no force to keep moving, so neither belongs on the diagram.",
+          "steps": [
+            "First law: zero net force means constant velocity, which includes rest; a nonzero net force changes the velocity.",
+            "Second law: ΣF = ma along each axis, with m the mass of the object or system whose forces you added.",
+            "Inertial frame: a frame that is not accelerating. Inside a braking bus a loose bag seems to slide forward with no force pushing it; in the ground's frame it simply keeps its velocity while the bus slows.",
+            "Every force on a free-body diagram is exerted by an identifiable object: Earth, a surface, a rope, a spring. ma and \"the force of motion\" have no object exerting them, so they are not forces.",
+            "The net force sets the acceleration, not the velocity: an object can move left while the net force on it points right; it is then slowing down."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c4",
+          "see": "what-to-know",
+          "prompt": "Write Newton's law of gravitation and the gravitational field strength at the surface of a planet of mass M and radius R. If the distance between two objects' centers triples, what happens to the force between them? How do an astronaut's mass and weight change on a planet where g is larger?",
+          "answer": "F_g = Gm_1m_2/r^2, with r the center-to-center distance, and g = GM/R^2. Tripling r makes the force 1/9 as large. The mass is unchanged; the weight mg increases in proportion to g.",
+          "steps": [
+            "F_g = Gm_1m_2/r^2 with G = 6.67 × 10^−11 N·m^2/kg^2; each object pulls on the other with the same magnitude (a third-law pair).",
+            "At a planet's surface, mg = GMm/R^2, so g = GM/R^2, in N/kg (equivalent to m/s^2).",
+            "F ∝ 1/r^2: multiplying r by 3 multiplies F by 1/9.",
+            "Mass measures inertia and is the same everywhere; weight is the gravitational force mg, so it scales with the local g.",
+            "Measure r from the planet's center: at height h above the surface, r = R + h."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c5",
+          "see": "what-to-know",
+          "prompt": "Write the relations for kinetic friction, static friction and the force exerted by an ideal spring, and say which way each force points. Which of the three relations is an inequality, and what does that mean when you solve a problem?",
+          "answer": "f_k = μ_kF_N, opposite the sliding. f_s ≤ μ_sF_N, in whatever direction keeps the surfaces from sliding. F_s = k|Δx|, toward the spring's natural length. Static friction is the inequality: it takes whatever value the other forces require, up to μ_sF_N, so find it from Newton's laws and use μ_sF_N only as the limit at the point of slipping.",
+          "steps": [
+            "Kinetic friction: the surfaces slide; f_k = μ_kF_N, opposite the motion of one surface relative to the other, nearly independent of speed and contact area.",
+            "Static friction: no sliding; f_s ≤ μ_sF_N. Its size and direction are whatever keeps the surfaces from slipping.",
+            "Spring: F_s = k|Δx|, where Δx is the stretch or compression from the natural length, not the total length; the force points back toward the natural length. k, in N/m, is the slope of a graph of force against stretch.",
+            "Method for static friction: assume no slipping, solve for the friction needed, then compare it with μ_sF_N. If the needed value is larger, the surfaces slip and kinetic friction applies instead."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c6",
+          "see": "what-to-know",
+          "prompt": "An object moves at constant speed v in a circle of radius r. Give the magnitude and direction of its acceleration, its speed in terms of the period T, and the equation you write along the radial direction. What supplies the net force?",
+          "answer": "a_c = v^2/r, toward the center; v = 2πr/T; ΣF_toward center = mv^2/r. Real forces (tension, friction, gravity, a normal force, or their components) supply the net force; it is not a separate force.",
+          "steps": [
+            "The velocity is tangent to the circle and keeps changing direction, so the object accelerates even at constant speed; the acceleration points to the center with magnitude v^2/r.",
+            "One revolution covers 2πr in one period, so v = 2πr/T.",
+            "Take toward the center as positive and write ΣF_toward center = mv^2/r, using only the real forces on the free-body diagram.",
+            "No outward \"centrifugal\" force acts in an inertial frame. A rider feels pressed outward because the seat or the door must push her inward to change the direction of her velocity."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Now mix the ideas. The problems do not say which object or system to analyze or which law to start from; decide before you write an equation, and draw a free-body diagram for each object you use."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c7",
+          "see": "worked-examples",
+          "prompt": "Blocks A (2.0 kg) and B (1.0 kg) sit in contact on a ramp inclined at 15°, with B farther up the ramp. A 30 N force parallel to the ramp pushes on A, and A pushes B, so both slide up the ramp together. The coefficient of kinetic friction between each block and the ramp is 0.20.\n\n(a) Find the acceleration of the blocks.\n(b) Find the force that A exerts on B and the force that B exerts on A.\n(c) A student predicts that on a steeper ramp, with the same push and both blocks still sliding up together, the force between the blocks would be larger. Evaluate the prediction.",
+          "hint": "The blocks share one acceleration. Which forces would you need to find it, and which force can you find only by looking at one block by itself?",
+          "answer": "(a) 5.6 m/s^2 up the ramp. (b) A on B: 10 N up the ramp; B on A: 10 N down the ramp. (c) The prediction is incorrect: the force between the blocks stays 10 N.",
+          "steps": [
+            "Up the ramp is positive. For each block F_N = mg cos 15°, so kinetic friction μ_kmg cos 15° points down the ramp, and gravity's component along the ramp, mg sin 15°, also points down the ramp.",
+            "(a) A and B together (the contact forces are internal): 30 − (3.0)(9.8)(sin 15° + 0.20 cos 15°) = (3.0)a. The bracket is 0.259 + 0.193 = 0.452, so 30 − 13.3 = 3.0a and a = 5.57 m/s^2, about 5.6 m/s^2 up the ramp.",
+            "(b) Block B alone: F_AB − (1.0)(9.8)(0.452) = (1.0)(5.57), so F_AB = 4.43 + 5.57 = 10.0 N, up the ramp.",
+            "By Newton's third law, B pushes on A with 10 N, down the ramp.",
+            "(c) In symbols, a = F/(m_A + m_B) − g(sin θ + μ_k cos θ), and for B, F_AB = m_B(a + g(sin θ + μ_k cos θ)) = m_BF/(m_A + m_B). The angle and μ_k cancel, so the contact force stays (1.0/3.0)(30 N) = 10 N on any ramp where the blocks slide up together; a steeper ramp lowers the acceleration instead.",
+            "Why: gravity's component and friction are both proportional to each block's mass, so they slow both blocks at the same rate; A's push only has to give B its share, m_B/(m_A + m_B), of the applied force."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c8",
+          "see": "what-to-know",
+          "prompt": "A 1.2 kg block rests on a level floor, attached to one end of a horizontal spring (k = 80 N/m) whose other end is fixed to a wall. Between the block and the floor, μ_s = 0.50 and μ_k = 0.40. The block is moved away from the wall until the spring is stretched 5.0 cm and then released from rest.\n\n(a) Does the block stay at rest? Find the magnitude and direction of the friction force on it.\n(b) What is the greatest stretch from which the block, released from rest, stays at rest?\n(c) The block is instead released from rest with the spring stretched 10 cm. Find its acceleration just after release.",
+          "hint": "Find how large the friction force would have to be to hold the block, and compare it with the largest friction this floor can supply.",
+          "answer": "(a) Yes; the friction force is 4.0 N, directed away from the wall. (b) About 7.4 cm. (c) About 2.7 m/s^2 toward the wall.",
+          "steps": [
+            "F_N = mg = (1.2)(9.8) = 11.8 N, so the largest static friction is μ_sF_N = (0.50)(11.8) = 5.9 N, and kinetic friction is μ_kF_N = (0.40)(11.8) = 4.7 N.",
+            "(a) The spring pulls toward the wall with k|Δx| = (80)(0.050) = 4.0 N. Holding the block takes 4.0 N of friction, less than 5.9 N, so the block stays at rest. Static friction is 4.0 N directed away from the wall; it is not 5.9 N.",
+            "(b) The block stays at rest while k|Δx| ≤ μ_smg: |Δx| ≤ 5.88/80 = 0.074 m, about 7.4 cm.",
+            "(c) At 10 cm the spring force is (80)(0.10) = 8.0 N, more than 5.9 N, so the block slides toward the wall and kinetic friction, 4.7 N, points away from the wall.",
+            "Net force: 8.0 − 4.7 = 3.3 N toward the wall, so a = 3.3/1.2 = 2.7 m/s^2 toward the wall."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c9",
+          "see": "explanations-and-traps",
+          "prompt": "A 55 kg window washer sits on a 15 kg seat. A light rope tied to the seat runs up over a light, frictionless pulley fixed to the roof and back down to the washer, who pulls down on its free end, as shown.\n\n(a) How hard must she pull for the washer and seat to rise at constant speed?\n(b) How hard must she pull for them to rise with an acceleration of 0.50 m/s^2?\n(c) In case (b), find the force the seat exerts on her.",
+          "figureIds": [
+            "p1-review-u2-g1"
+          ],
+          "hint": "Mark every place where the rope touches the washer or the seat, and decide which way the rope pulls at each.",
+          "answer": "(a) 343 N (about 340 N). (b) 361 N (about 360 N). (c) 206 N (about 210 N), upward.",
+          "steps": [
+            "Up is positive. The rope is light and the pulley frictionless, so the tension T is the same throughout the rope; by the third law, her pull down on the rope equals T.",
+            "Take the washer and the seat together as the system (total mass 70 kg). The rope pulls up on it twice, once at the seat and once at her hands; the push between her and the seat is internal.",
+            "(a) Constant speed means zero net force: 2T − (70)(9.8) = 0, so T = 343 N.",
+            "(b) 2T − (70)(9.8) = (70)(0.50), so 2T = 686 + 35 = 721 N and T = 360.5 N, about 361 N.",
+            "(c) The washer alone: the rope pulls up on her hands with T, the seat pushes up with F_N, and gravity pulls down with (55)(9.8) = 539 N. F_N + 360.5 − 539 = (55)(0.50), so F_N = 206 N, upward.",
+            "Check with the seat alone: T − F_N − (15)(9.8) = 360.5 − 206 − 147 = 7.5 N = (15)(0.50). Choosing the combined system shows the second upward pull at once; counting one strand only (T = 686 N in (a)) misses it."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c10",
+          "see": "what-to-know",
+          "prompt": "Two identical pucks, each of mass m, move in circles on a level, frictionless air table. Puck 1 is tied to a fixed pin by a light string of length L, and puck 2 is tied to puck 1 by a second light string of length L. The pin and both pucks stay in a straight line, and both pucks go around once in each time interval P.\n\n(a) Derive expressions for the tension T_1 in the inner string and the tension T_2 in the outer string, in terms of m, L and P.\n(b) A student says that because the pucks are identical, the two strings must have the same tension. Evaluate the claim.",
+          "hint": "Find each puck's radius and speed first. Then list the horizontal forces on each puck and say whether each points toward the pin or away from it.",
+          "answer": "(a) T_2 = 8π^2mL/P^2 and T_1 = 12π^2mL/P^2. (b) The claim is incorrect: T_1 = (3/2)T_2.",
+          "steps": [
+            "Puck 1 moves on a circle of radius L and puck 2 on a circle of radius 2L, with the same period P, so v_1 = 2πL/P and v_2 = 4πL/P = 2v_1.",
+            "Puck 2: the only horizontal force is the outer string, pulling toward the pin. T_2 = mv_2^2/(2L) = m(16π^2L^2/P^2)/(2L) = 8π^2mL/P^2.",
+            "Puck 1: the inner string pulls it toward the pin with T_1, and the outer string pulls it away from the pin with T_2. Toward the center: T_1 − T_2 = mv_1^2/L = 4π^2mL/P^2.",
+            "So T_1 = 8π^2mL/P^2 + 4π^2mL/P^2 = 12π^2mL/P^2.",
+            "(b) The inner string must both supply puck 1's inward net force and balance the outer string's outward pull on puck 1, so T_1 is larger: T_1/T_2 = 12/8 = 3/2. Equal masses do not mean equal forces, because the pucks move on different radii at different speeds.",
+            "Units check: mL/P^2 is kg·m/s^2, which is newtons."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u2-c11",
+          "see": "what-to-know",
+          "prompt": "Planet K has 3.0 times Earth's radius, and the gravitational field strength at its surface is 1.5 times Earth's. Earth's radius is 6.37 × 10^6 m, and g = 9.8 N/kg at Earth's surface.\n\n(a) How many times Earth's mass is the mass of planet K?\n(b) A rover has a mass of 180 kg on Earth. Find its mass and its weight at the surface of planet K.\n(c) At what height above the surface of planet K is the gravitational field strength 9.8 N/kg?",
+          "hint": "Write the field-strength relation once for each planet and divide one equation by the other.",
+          "answer": "(a) 13.5 times. (b) Mass 180 kg; weight about 2.6 × 10^3 N (2650 N). (c) About 4.3 × 10^6 m.",
+          "steps": [
+            "(a) g = GM/R^2, so M = gR^2/G and M_K/M_E = (g_K/g_E)(R_K/R_E)^2 = (1.5)(3.0)^2 = 13.5.",
+            "(b) Mass does not depend on location: 180 kg. g_K = 1.5(9.8) = 14.7 N/kg, so the weight is (180)(14.7) = 2646 N, about 2.6 × 10^3 N.",
+            "(c) The field falls as 1/r^2, with r measured from the center. To drop from 14.7 N/kg to 9.8 N/kg, a factor of 1.5, r must grow by a factor of √1.5 = 1.22, so r = 1.22R_K.",
+            "R_K = 3.0(6.37 × 10^6 m) = 1.91 × 10^7 m, so h = r − R_K = 0.22(1.91 × 10^7 m) = 4.3 × 10^6 m.",
+            "A common slip is to set r equal to the height; the height above the surface is r − R_K."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Systems and center of mass",
+          "text": "x_cm = (m_1x_1 + m_2x_2 + …)/(m_1 + m_2 + …), and ΣF_ext = Ma_cm, where M is the system's total mass.",
+          "conditions": [
+            "Internal forces cancel in pairs; only external forces change the velocity of the center of mass.",
+            "Treat objects as one system when they share an acceleration and the forces between them are not asked; to find an internal force, choose a system on which it acts from outside."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Free-body diagrams",
+          "text": "Draw the object as a dot or box with one arrow for each force on it, starting at the object, each labeled with its type and, where useful, the object exerting it, as in F_{rope on crate}.",
+          "conditions": [
+            "Only forces exerted on the object, each by an identifiable other object: no ma, no \"force of motion\", no centrifugal force.",
+            "Choose axes along the acceleration (along a ramp, toward the center of a circle) so that the fewest forces need components."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Newton's third law",
+          "text": "The force of A on B and the force of B on A have equal magnitudes, opposite directions and the same type, at every instant.",
+          "conditions": [
+            "The two forces act on different objects, so they never appear on the same free-body diagram and never cancel each other.",
+            "It holds whatever the masses, speeds or accelerations: when a light cart and a heavy cart push apart, each pushes on the other equally hard."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Newton's first law",
+          "text": "An object's velocity is constant, including zero, exactly when the net external force on it is zero: ΣF_x = 0 and ΣF_y = 0.",
+          "conditions": [
+            "It holds in inertial (non-accelerating) frames.",
+            "Constant velocity needs no forward force; at constant velocity the forward forces balance the backward ones."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Newton's second law",
+          "text": "a = ΣF/m, in the direction of the net force; in components, ΣF_x = ma_x and ΣF_y = ma_y.",
+          "conditions": [
+            "m is the mass of whatever object or system you added the forces on.",
+            "Objects tied by a taut string or pushed in contact share one acceleration magnitude; choose a positive direction that follows the motion around a pulley so that they share one sign."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Gravitation",
+          "text": "F_g = Gm_1m_2/r^2, and at a planet's surface g = GM/R^2; weight is mg.",
+          "conditions": [
+            "r is measured center to center (r = R + h at height h); a spherical body acts as if its mass were at its center.",
+            "g = 9.8 N/kg holds only near Earth's surface; mass is the same everywhere."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Friction",
+          "text": "Kinetic: f_k = μ_kF_N, opposite the sliding. Static: f_s ≤ μ_sF_N, with whatever size and direction keep the surfaces from slipping.",
+          "conditions": [
+            "Use μ_sF_N only at the point of slipping; otherwise find static friction from Newton's laws.",
+            "Find F_N from the forces perpendicular to the surface; it equals mg only on a level surface with no other vertical forces and no vertical acceleration.",
+            "Usually μ_k < μ_s, so starting an object sliding takes more force than keeping it sliding."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Ideal spring",
+          "text": "F_s = k|Δx|, directed back toward the natural length.",
+          "conditions": [
+            "Δx is the change from the natural length, not the total length.",
+            "It holds for a light spring within the range where force is proportional to stretch; k is the slope of a graph of force against stretch."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Uniform circular motion",
+          "text": "a_c = v^2/r toward the center, v = 2πr/T, and ΣF_toward center = mv^2/r.",
+          "conditions": [
+            "The speed is constant; at the top or bottom of a vertical circle the same radial equation holds at that instant even if the speed is changing.",
+            "The net inward force comes from real forces; it is never drawn as a force of its own.",
+            "Objects that turn together share the period, not the speed: an object farther out moves faster."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "The normal force on an object of mass m in common situations",
+          "head": [
+            "Situation",
+            "Normal force",
+            "Reason"
+          ],
+          "rows": [
+            [
+              "Level surface, no other vertical forces, no vertical acceleration",
+              "F_N = mg",
+              "ΣF_y = 0"
+            ],
+            [
+              "Level surface, rope pulling with tension T at angle θ above the horizontal",
+              "F_N = mg − T sin θ",
+              "The rope carries part of the weight"
+            ],
+            [
+              "Level surface, push of size F at angle θ below the horizontal",
+              "F_N = mg + F sin θ",
+              "The push adds to the load"
+            ],
+            [
+              "Incline at angle θ, no other forces perpendicular to it",
+              "F_N = mg cos θ",
+              "Only the perpendicular component of the weight is balanced"
+            ],
+            [
+              "Floor of an elevator accelerating upward at a",
+              "F_N = m(g + a)",
+              "The net force must point up"
+            ],
+            [
+              "Top of a hill of radius r, at speed v",
+              "F_N = mg − mv^2/r",
+              "The net force must point down, toward the center"
+            ],
+            [
+              "Bottom of a dip of radius r, at speed v",
+              "F_N = mg + mv^2/r",
+              "The net force must point up, toward the center"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Where to start",
+          "head": [
+            "The question asks for",
+            "Start with"
+          ],
+          "rows": [
+            [
+              "The common acceleration of objects moving together",
+              "The whole system: ΣF_ext = (total mass)a"
+            ],
+            [
+              "A force between two objects (a tension, a contact force)",
+              "One object on which that force is external"
+            ],
+            [
+              "Whether an object at rest starts to slide",
+              "The static friction needed, compared with μ_sF_N"
+            ],
+            [
+              "The force that keeps an object on a circle",
+              "ΣF_toward center = mv^2/r at that instant"
+            ],
+            [
+              "How g or a gravitational force changes with distance",
+              "A ratio of g = GM/r^2, with r from the center"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanations-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Unit 2 answers almost always rest on a free-body diagram. Name the law you use, apply it along a stated axis, and say in words how the forces on the diagram support the claim."
+        },
+        {
+          "type": "model",
+          "prompt": "Identify a third-law pair: a tugboat pushes a barge forward, and the barge speeds up.",
+          "text": "The force of the tugboat on the barge and the force of the barge on the tugboat are a third-law pair: two objects exert them on each other, so they have equal magnitudes and opposite directions. The barge speeds up because the tugboat's push on it is larger than the water's drag on it. The barge's push back acts on the tugboat, not on the barge, so it cannot cancel the push."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain why the friction on a crate pushed across a level floor at constant velocity equals the push.",
+          "text": "The crate's velocity is constant, so by Newton's first law the net force on it is zero. The only horizontal forces are the push and kinetic friction, so they have equal magnitudes and opposite directions."
+        },
+        {
+          "type": "model",
+          "prompt": "Find the static friction on a box at rest when a 12 N horizontal push is applied and μ_sF_N = 20 N.",
+          "text": "The box stays at rest, so the net force on it is zero and static friction balances the push: f_s = 12 N, opposite the push. The value μ_sF_N = 20 N is only the largest static friction the surfaces can supply; it would be reached only if the push grew to 20 N."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain why the normal force on a rider at the bottom of a dip is greater than her weight.",
+          "text": "At the bottom of the dip the rider moves on a circle whose center is above her, so her acceleration points up. By Newton's second law the net force must point up, so the upward normal force must be larger than the downward gravitational force: F_N − mg = mv^2/r."
+        },
+        {
+          "type": "model",
+          "prompt": "Use a derived expression to evaluate a claim: a cart of mass m_1 on a level, frictionless track is pulled by a hanging mass m_2, so a = m_2g/(m_1 + m_2). The claim is that doubling m_2 doubles a.",
+          "text": "Doubling m_2 doubles the numerator but also increases the denominator, from m_1 + m_2 to m_1 + 2m_2. So a grows by the factor 2(m_1 + m_2)/(m_1 + 2m_2), which is less than 2. The claim is incorrect; the factor approaches 2 only when m_2 is negligible compared with m_1."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify treating two connected blocks as one system.",
+          "text": "The blocks are joined by a taut string, so they move with the same magnitude of acceleration. Treating them as one system makes the tension internal, so the net external force divided by the total mass gives the common acceleration. I then apply Newton's second law to one block alone to find the tension."
+        },
+        {
+          "type": "trap",
+          "text": "Setting F_N = mg on a ramp, with an angled rope or push, in an accelerating elevator, or at the top or bottom of a vertical circle.",
+          "fix": "Find F_N from the forces perpendicular to the surface and the acceleration in that direction; see the normal-force table."
+        },
+        {
+          "type": "trap",
+          "text": "Calling the weight and the normal force on a resting object a third-law pair.",
+          "fix": "They act on the same object and are different types of force. Their partners are the object's pull on Earth and the object's push on the surface; when weight and normal force are equal, that comes from the first law."
+        },
+        {
+          "type": "trap",
+          "text": "Using μ_sF_N as the static friction force whenever an object is at rest.",
+          "fix": "Static friction is whatever the other forces require, up to μ_sF_N. Solve for the friction needed, then check it against the limit."
+        },
+        {
+          "type": "trap",
+          "text": "Drawing ma, a \"force of motion\" or an outward centrifugal force on a free-body diagram.",
+          "fix": "Every arrow needs an object that exerts it. Write ma on the other side of the equation, and in circular motion take toward the center as positive."
+        },
+        {
+          "type": "trap",
+          "text": "Using the total mass with the forces on one object, or one object's mass with the forces on the whole system.",
+          "fix": "Write which system each equation is about. The mass and the forces in ΣF = ma must belong to the same system."
+        },
+        {
+          "type": "trap",
+          "text": "Giving two blocks tied by a string accelerations of opposite sign because one moves sideways and the other moves down.",
+          "fix": "Choose a positive direction that follows the string around the pulley, so every block has the same signed acceleration."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming one strand supports the whole load when a rope passes over a pulley and comes back to the same system.",
+          "fix": "Count every place the rope pulls on the system you chose. Two strands pulling up give 2T."
+        },
+        {
+          "type": "trap",
+          "text": "Measuring r in the law of gravitation from the planet's surface.",
+          "fix": "r runs between centers: r = R + h."
+        },
+        {
+          "type": "trap",
+          "text": "Using a spring's total length instead of its change in length in F_s = k|Δx|.",
+          "fix": "Subtract the natural length first."
+        },
+        {
+          "type": "trap",
+          "text": "Expecting an object released from circular motion to fly straight outward.",
+          "fix": "Without the inward force it keeps the velocity it had at that instant, which is tangent to the circle."
+        },
+        {
+          "type": "trap",
+          "text": "Pointing kinetic friction opposite the rope or the push instead of opposite the sliding, for example when a crate is lowered down a ramp at constant speed.",
+          "fix": "Kinetic friction opposes the sliding of the surfaces. A crate lowered down a ramp feels friction up the ramp, the same way as the rope's pull."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A 0.50 kg block is held against the vertical front face of a 4.5 kg cart by friction alone, with its bottom clear of the floor. A horizontal force F pushes the cart from behind, so the cart and block speed up together across a level floor with negligible friction. Between the block and the cart's face, μ_s = 0.60 and μ_k = 0.45.\n\n(a) Find the smallest F for which the block does not slide down the face.\n(b) F = 120 N. Find the magnitude and direction of the friction force on the block.\n(c) F = 60 N. Find the block's acceleration along the face.",
+          "answer": "(a) About 82 N (81.7 N). (b) 4.9 N, upward (not μ_sF_N = 7.2 N). (c) The block slides down the face with an acceleration of about 4.4 m/s^2.",
+          "steps": [
+            "Take the direction of F as +x and up as +y. Forces on the block: gravity mg = 4.9 N down, the face's normal force F_N forward (+x), and friction from the face along the face, up while the block is held or sliding down.",
+            "The block moves horizontally with the cart, so the system of cart and block (5.0 kg) has a = F/(5.0 kg); the forces between the block and the face are internal to it.",
+            "Block alone, horizontally: F_N is the only horizontal force on it, so F_N = ma. A harder push gives a larger normal force and so a larger limit on static friction.",
+            "(a) The block is held when the friction needed, mg, is no more than μ_sF_N: mg ≤ μ_s m a, so a ≥ g/μ_s = 9.8/0.60 = 16.3 m/s^2. Then F = (5.0 kg)(16.3 m/s^2) = 81.7 N ≈ 82 N.",
+            "(b) a = 120/5.0 = 24 m/s^2, so F_N = (0.50)(24) = 12 N and μ_sF_N = 7.2 N. The block is held, and with no vertical acceleration the friction equals the weight: 4.9 N, upward. Using 7.2 N would treat the limit as the actual force.",
+            "(c) a = 60/5.0 = 12 m/s^2, so F_N = 6.0 N and μ_sF_N = 3.6 N, less than 4.9 N: the block slips. Kinetic friction μ_kF_N = (0.45)(6.0) = 2.7 N acts upward, and 4.9 − 2.7 = (0.50)a_y, so the block accelerates down the face at 4.4 m/s^2 while it keeps moving forward with the cart."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A 12 kg crate is pulled up a ramp inclined at 20° at constant velocity by a rope parallel to the ramp. The coefficient of kinetic friction is 0.25. Find the normal force and the rope's tension. Then find the tension when the same rope lowers the crate down the ramp at constant velocity.",
+          "answer": "F_N ≈ 111 N; tension while pulling up ≈ 68 N; tension while lowering ≈ 13 N.",
+          "steps": [
+            "Axes: x up along the ramp, y perpendicular to it. Gravity: mg = 118 N, with components mg sin 20° = 40.2 N down the ramp and mg cos 20° = 110.5 N into the ramp.",
+            "Perpendicular: no acceleration, so F_N = mg cos 20° = 110.5 N ≈ 111 N.",
+            "Kinetic friction: f_k = μ_kF_N = (0.25)(110.5) = 27.6 N.",
+            "Pulled up at constant velocity (first law), friction points down the ramp: T − 40.2 − 27.6 = 0, so T = 67.8 N ≈ 68 N.",
+            "Lowered at constant velocity, the crate slides down, so friction points up the ramp, the same way as the rope: T + 27.6 − 40.2 = 0, so T = 12.6 N ≈ 13 N.",
+            "Friction reversed with the direction of sliding, which changed the tension by 2f_k = 55 N."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 4: Systems, center of mass and free-body diagrams",
+              "ref": "week:4"
+            },
+            {
+              "label": "Week 5: Newton's third law and equilibrium",
+              "ref": "week:5"
+            },
+            {
+              "label": "Week 6: Newton's second law: connected objects and inclines",
+              "ref": "week:6"
+            },
+            {
+              "label": "Week 7: Gravitational, friction and spring forces",
+              "ref": "week:7"
+            },
+            {
+              "label": "Week 8: Circular motion",
+              "ref": "week:8"
+            },
+            {
+              "label": "Unit 2 plan: Force and Translational Dynamics",
+              "ref": "unit:u2"
+            },
+            {
+              "label": "Unit 2 test",
+              "ref": "test:unit-2"
+            },
+            {
+              "label": "Unit 2 test key",
+              "ref": "key:unit-2"
+            },
+            {
+              "label": "Free-response workshop: Mathematical Routines",
+              "ref": "guide:fr-mathematical-routines"
+            },
+            {
+              "label": "Free-response workshop: Qualitative/Quantitative Translation",
+              "ref": "guide:fr-qualitative-quantitative"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

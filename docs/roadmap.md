@@ -1,5 +1,14 @@
 # Roadmap
 
+## Physics exam preparation — 2026-10-22
+
+The Courses for AP® Physics 1 and AP® Physics C: Mechanics gain the
+exam-preparation layer at `ap.html#physics-1/prep` and
+`ap.html#physics-c-mechanics/prep`, so all four AP courses now have one. The
+free-response workshop is organized by the four question types, with sets
+paced per type. The [review record](reviews/2026-10-22-physics-exam-prep.md)
+gives the verification and its limits.
+
 ## Calculus AB exam preparation — 2026-10-22
 
 The Course for AP® Calculus AB gains the exam-preparation layer BC has, at
@@ -30,7 +39,6 @@ and its limits.
 Next:
 
 - Mirror the week 1–2 teaching fixes into Calculus AB, which shares that text.
-- Give the physics courses their `prep` blocks (Calculus AB has one now).
 - Calibrate timing and difficulty against consented student results.
 
 ## SAT Math learning loop — 2026-10-16

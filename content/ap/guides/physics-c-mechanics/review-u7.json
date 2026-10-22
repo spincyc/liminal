@@ -1,0 +1,531 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "review-u7",
+  "kind": "unit-review",
+  "unitId": "u7",
+  "title": "Unit 7 review: Oscillations",
+  "author": "cm-review-7-author",
+  "summary": "A retrieval-first review of oscillations for the AP® Physics C: Mechanics Exam, for a student coming back to the unit weeks or months later. Recall the condition for simple harmonic motion, the periods of springs and pendulums with their conditions, the motion functions and the energy relations before reading anything. Then work six mixed problems: choosing the right relation for each part of a glider's motion, small oscillations in a potential well, a kinetic-energy graph, a square tile swung from two pivots, the energy stored in a vertical spring, and a pendulum whose bob is not a point. A summary of results with their conditions, model explanations, common traps and three worked examples follows, with links to the unit's weeks, the unit plan and the unit test.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "cm-review-u7-g1",
+      "alt": "Graph of kinetic energy K, in joules, against time t, in seconds, from t = 0 to t = 0.80 s. The smooth curve starts at its maximum of 0.16 J at t = 0, falls to zero at t = 0.20 s, rises back to 0.16 J at t = 0.40 s, falls to zero at t = 0.60 s and rises to 0.16 J again at t = 0.80 s. It never goes below zero.",
+      "caption": "The glider's kinetic energy against time."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its answer. Write every result in full, conditions included: a period formula recalled without the conditions it needs is only half recalled. Mark each check you missed or hesitated on. Its answer names the section to study; reread only the part of that section on the same idea, and try the check again on a later day."
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c1",
+          "prompt": "State the condition on the net force that makes an object's motion simple harmonic. Write the differential equation that follows and its general solution, and say which constants in the solution are set by the system and which by how the motion starts.",
+          "hint": "Write Newton's second law for a block on a spring, with x measured from the equilibrium position, and divide by the mass.",
+          "answer": "The motion is simple harmonic when the net force is proportional to the displacement from a stable equilibrium position and directed back toward it, F = −kx. Then d^2x/dt^2 = −ω^2x with ω = √(k/m), and the general solution is x(t) = A cos(ωt + φ). The system sets ω (through k and m); the starting position and velocity set the amplitude A and the phase constant φ.",
+          "steps": [
+            "Measure x from the equilibrium position. If the net force is F = −kx, Newton's second law gives m d^2x/dt^2 = −kx, so d^2x/dt^2 = −(k/m)x = −ω^2x. The test is this form: acceleration proportional to the negative of displacement.",
+            "The general solution is x(t) = A cos(ωt + φ); a sine with its own phase constant describes the same family. Substituting confirms it: dx/dt = −Aω sin(ωt + φ) and d^2x/dt^2 = −Aω^2 cos(ωt + φ) = −ω^2x.",
+            "ω = √(k/m) depends only on the system. At t = 0, x_0 = A cos φ and v_0 = −Aω sin φ, so A = √(x_0^2 + (v_0/ω)^2) and φ depend on the start.",
+            "Repeating is not enough. A ball bouncing on a floor repeats its motion, but the force on it is not proportional to its displacement, so it is not simple harmonic. For a swinging body the same test applies to the torque and the angle."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c2",
+          "prompt": "Write the period of (a) a block on an ideal spring, (b) a simple pendulum and (c) a physical pendulum. For each, state the conditions under which the formula holds and name a quantity it does not depend on.",
+          "hint": "Each period is 2π/ω. Write the restoring force or torque for a small displacement, and read ω^2 off the equation of motion.",
+          "answer": "(a) T = 2π√(m/k), for a light spring that obeys F = −kx and no friction; it does not depend on the amplitude or on g. (b) T = 2π√(L/g), for a point-like bob on a light string swinging through small angles (sin θ ≈ θ, in radians); it does not depend on the bob's mass. (c) T = 2π√(I/(mgd)), for small angles, with I the rotational inertia about the pivot and d the distance from the pivot to the center of mass; for small swings it does not depend on the amplitude.",
+          "steps": [
+            "(a) m d^2x/dt^2 = −kx gives ω^2 = k/m. A block hanging from a vertical spring has the same period: gravity lowers the equilibrium position by mg/k but does not change the stiffness.",
+            "(b) The torque of gravity about the pivot is −mgL sin θ and I = mL^2, so d^2θ/dt^2 = −(g/L) sin θ ≈ −(g/L)θ when sin θ ≈ θ. Then ω^2 = g/L, and the mass has cancelled.",
+            "(c) The torque is −mgd sin θ, so I d^2θ/dt^2 ≈ −mgdθ and ω^2 = mgd/I. A simple pendulum is the special case I = mL^2 and d = L.",
+            "Outside these conditions the formulas fail: a pendulum's period grows with its amplitude once sin θ ≈ θ is poor (about 1.7% longer at 30°), and a spring stretched beyond its linear range no longer gives F = −kx."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c3",
+          "prompt": "For x(t) = A cos(ωt + φ), write v(t) and a(t). Give the greatest speed and the greatest magnitude of acceleration, and say where in the motion each occurs. On graphs against time, how is the velocity curve placed relative to the position curve, and the acceleration curve relative to the position curve?",
+          "hint": "Differentiate twice with the chain rule, keeping ωt + φ inside every sine and cosine.",
+          "answer": "v(t) = −Aω sin(ωt + φ) and a(t) = −Aω^2 cos(ωt + φ) = −ω^2x. The greatest speed, Aω, occurs at the equilibrium position; the greatest acceleration magnitude, Aω^2, occurs at the turning points x = ±A. The velocity curve reaches each peak a quarter period before the position curve does, and the acceleration curve is the position curve turned upside down and scaled by ω^2.",
+          "steps": [
+            "v = dx/dt = −Aω sin(ωt + φ), and a = dv/dt = −Aω^2 cos(ωt + φ) = −ω^2x. All three have the same period, T = 2π/ω.",
+            "|v| is greatest when |sin(ωt + φ)| = 1, which is when cos(ωt + φ) = 0, at x = 0. There the speed is Aω and the acceleration is zero.",
+            "|a| = ω^2|x| is greatest at x = ±A, where it is Aω^2 and the object is momentarily at rest.",
+            "−sin(u) = cos(u + π/2), so v leads x by π/2, a quarter period. a = −ω^2x, so a is x inverted and scaled: a is most negative when x is most positive."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c4",
+          "prompt": "A block of mass m on a horizontal spring of constant k oscillates with amplitude A on a frictionless surface. Write the total mechanical energy, the kinetic energy and the speed at position x, and the positions where the kinetic and potential energies are equal. With what period does each energy vary? State the conditions under which these results hold.",
+          "hint": "Start at a turning point, where the block is momentarily at rest, and then share that energy between the two forms at any other position.",
+          "answer": "E = ½kA^2; K = ½k(A^2 − x^2), so v = ω√(A^2 − x^2) with ω = √(k/m); K = U at x = ±A/√2. K and U each vary with period T/2. These hold when no friction or drag removes energy and x is measured from equilibrium; for a vertical spring, ½ky^2 with y measured from the hanging equilibrium stands for spring and gravitational energy together, up to a constant.",
+          "steps": [
+            "At x = ±A the block is at rest, so E = U = ½kA^2. With no friction, E stays the same: ½mv^2 + ½kx^2 = ½kA^2.",
+            "So K = ½k(A^2 − x^2), and v = √((k/m)(A^2 − x^2)) = ω√(A^2 − x^2). At x = 0 this is the greatest speed, Aω.",
+            "K = U means ½kx^2 = ½kA^2/2, so x = ±A/√2 ≈ ±0.71A.",
+            "U = E cos^2(ωt + φ) and K = E sin^2(ωt + φ). Each repeats when ωt grows by π, so each has period T/2, and each averages E/2 over a cycle.",
+            "Vertical spring: measured from the hanging equilibrium, the spring and gravitational potential energies together equal ½ky^2 plus a constant, so the same formulas hold for y."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c5",
+          "prompt": "A particle of mass m moves along x with potential energy U(x). State the conditions for x_0 to be a stable equilibrium, the effective spring constant for small oscillations about it, and the period. When is the oscillation periodic but not simple harmonic?",
+          "hint": "The force is F = −dU/dx. Write the first terms of F for x close to x_0.",
+          "answer": "x_0 is an equilibrium where dU/dx = 0, and it is stable where d^2U/dx^2 > 0 (a minimum of U). Near x_0, F ≈ −k_eff(x − x_0) with k_eff = d^2U/dx^2 at x_0, so T = 2π√(m/k_eff). The result needs small displacements: once the amplitude is large enough that U is no longer close to a parabola over the motion, the force is not proportional to the displacement, and the motion is periodic but not simple harmonic.",
+          "steps": [
+            "F(x) = −dU/dx, so the force is zero where dU/dx = 0.",
+            "Near x_0, dU/dx ≈ (dU/dx at x_0) + (d^2U/dx^2 at x_0)(x − x_0) = (d^2U/dx^2 at x_0)(x − x_0). So F ≈ −(d^2U/dx^2 at x_0)(x − x_0).",
+            "If d^2U/dx^2 > 0 at x_0, this is a restoring force with k_eff = d^2U/dx^2, and ω = √(k_eff/m). If d^2U/dx^2 < 0, the force pushes the particle away: the equilibrium is unstable and there is no oscillation.",
+            "For a spring, U = ½kx^2 and d^2U/dx^2 = k, so the rule reproduces T = 2π√(m/k)."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work these as you would on the exam: state your positive direction, write the relation you start from, then substitute with units. A calculator is allowed throughout. Use g = 9.8 m/s^2, SI units and radians for every phase and angle. Several problems reach back to earlier units on purpose."
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c6",
+          "prompt": "A 0.60 kg glider on a level air track is attached to a spring with k = 15 N/m; friction is negligible. Take x as the glider's position from equilibrium, positive to the right. The glider is pulled to x = +0.12 m and released from rest at t = 0. (a) At what time does the glider first reach x = −0.060 m? (b) What is its velocity there? (c) What is its acceleration there? (d) How much work does the spring do on the glider between the release and that moment?",
+          "hint": "For each part, first decide which pair of quantities is linked: a time and a position, a speed and a position, or an acceleration and a position. Then write the one relation that links exactly that pair.",
+          "answer": "(a) t = 0.42 s (2π/15 s). (b) v = −0.52 m/s, that is, 0.52 m/s to the left. (c) a = +1.5 m/s^2, to the right. (d) W = +0.081 J.",
+          "steps": [
+            "ω = √(k/m) = √(15/0.60) = 5.0 rad/s. Released from rest at +0.12 m, the glider moves as x(t) = 0.12 cos(5.0t), with x in meters and t in seconds.",
+            "(a) A time needs the position function: 0.12 cos(5.0t) = −0.060 gives cos(5.0t) = −0.50. The first positive solution is 5.0t = 2π/3, so t = 2π/15 s ≈ 0.42 s, a third of the period T = 1.26 s.",
+            "(b) A speed at a position follows from energy: ½mv^2 = ½k(A^2 − x^2), so |v| = ω√(A^2 − x^2) = 5.0√(0.12^2 − 0.060^2) = 0.52 m/s. The glider is still on its first trip to the left, so v = −0.52 m/s. Differentiating x(t) agrees: v = −(0.12)(5.0) sin(2π/3) = −0.52 m/s.",
+            "(c) An acceleration at a position follows from the force law: a = −(k/m)x = −ω^2x = −(25 s^−2)(−0.060 m) = +1.5 m/s^2, toward equilibrium.",
+            "(d) By the work–energy theorem, the spring's work equals the change in the glider's kinetic energy: W = ½(0.60)(0.52)^2 − 0 = 0.081 J. Equivalently, W = −ΔU = ½(15)(0.12^2 − 0.060^2) = 0.081 J.",
+            "Constant-acceleration equations do not apply, because the acceleration changes from −3.0 m/s^2 at the release to +1.5 m/s^2 here. Using 3.0 m/s^2 over the whole 0.18 m would give a speed of 1.04 m/s, twice the true value."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c7",
+          "prompt": "A 0.20 kg particle moves along the x-axis, for x > 0, with potential energy U(x) = 0.90/x^2 − 3.6/x, with U in joules and x in meters. No other forces act. (a) Find the equilibrium position and show that it is stable. (b) Find the period of small oscillations about it. (c) The particle passes the equilibrium position at 0.40 m/s. Estimate the amplitude of its oscillation. (d) What is the least speed at the equilibrium position with which the particle would move off toward large x and never return?",
+          "hint": "Find where the force −dU/dx is zero, then ask how quickly the force changes as the particle moves away from that point.",
+          "answer": "(a) x_0 = 0.50 m; d^2U/dx^2 = 28.8 N/m > 0 there, so the equilibrium is stable. (b) T = 0.52 s (π/6 s). (c) About 0.033 m. (d) 6.0 m/s.",
+          "steps": [
+            "(a) dU/dx = −1.8/x^3 + 3.6/x^2. Setting it to zero gives 3.6x = 1.8, so x_0 = 0.50 m. Then d^2U/dx^2 = 5.4/x^4 − 7.2/x^3 = 5.4/0.0625 − 7.2/0.125 = 86.4 − 57.6 = 28.8 N/m at x_0. It is positive, so U has a minimum there: displaced either way, the particle is pushed back.",
+            "(b) k_eff = 28.8 N/m, so ω = √(28.8/0.20) = 12 rad/s and T = 2π/12 = π/6 s ≈ 0.52 s.",
+            "(c) In the small-oscillation model, ½mv_max^2 = ½k_eff A^2, so A = v_max/ω = 0.40/12 ≈ 0.033 m. This is an estimate: the well is not exactly a parabola, and the particle actually swings about 0.031 m to the left of x_0 and 0.036 m to the right.",
+            "(d) U(0.50) = 3.6 − 7.2 = −3.6 J. U is negative for every x > 0.25 m and rises toward 0 as x grows without bound. To reach large x and never return, the total energy must be at least 0, so ½(0.20)v^2 ≥ 3.6 J, which gives v ≥ 6.0 m/s.",
+            "At that energy the motion is far outside the small-oscillation range: the force is not proportional to the displacement, and the motion is not simple harmonic."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c8",
+          "prompt": "A 0.50 kg glider oscillates on a spring on a level air track with negligible friction. The graph shows its kinetic energy K against time t. At t = 0 the glider is moving in the +x direction, where x is its position measured from equilibrium. (a) Find the period of the glider's oscillation and the spring constant. (b) Find the amplitude. (c) Write x(t). (d) Find the first time after t = 0 at which the spring's potential energy equals K, and the glider's position then.",
+          "hint": "Ask how many times in one cycle the glider passes through equilibrium, where K is greatest.",
+          "answer": "(a) T = 0.80 s; k = 31 N/m (30.8 N/m). (b) A = 0.10 m. (c) x(t) = 0.10 sin(7.85t), with x in meters and t in seconds. (d) t = 0.10 s, at x = +0.072 m (A/√2).",
+          "steps": [
+            "(a) K is greatest at every pass through equilibrium, which happens twice per cycle, so K repeats every half period. The graph repeats every 0.40 s, so T = 0.80 s and ω = 2π/0.80 = 7.85 rad/s. Then k = mω^2 = (0.50)(7.85)^2 = 30.8 N/m.",
+            "(b) The greatest K is 0.16 J, so v_max = √(2K_max/m) = √(2(0.16)/0.50) = 0.80 m/s and A = v_max/ω = 0.80/7.85 = 0.10 m. Check: ½kA^2 = ½(30.8)(0.102)^2 = 0.16 J, the total energy, all kinetic at equilibrium.",
+            "(c) At t = 0, K is greatest, so the glider is at equilibrium, moving in the +x direction: x(t) = 0.10 sin(7.85t).",
+            "(d) U = K when each is half of E, that is, when K = 0.080 J. With K = E cos^2(ωt), this first happens at ωt = π/4, so t = 0.10 s, which matches the graph. Then x = A sin(π/4) = A/√2 = 0.072 m.",
+            "Reading the 0.40 s repeat as the period would give k = 123 N/m and A = 0.051 m, wrong by factors of 4 and 2."
+          ],
+          "figureIds": [
+            "cm-review-u7-g1"
+          ],
+          "see": "explanations-and-traps"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c9",
+          "prompt": "A thin uniform square tile of side s = 0.30 m and mass M hangs from a nail through a small hole at one corner and swings in its own vertical plane with negligible friction. Its rotational inertia about an axis through its center, perpendicular to the tile, is Ms^2/6. (a) Find the period of small oscillations. (b) Find the length of a simple pendulum with the same period. (c) The tile is rehung from a hole at the midpoint of one edge, so its center of mass is now closer to the pivot. Determine whether the period of small oscillations increases, decreases or stays the same, and calculate it.",
+          "hint": "Find the distance from each pivot to the center of the tile first, then the rotational inertia about that pivot.",
+          "answer": "(a) T = 1.07 s. (b) 0.283 m. (c) It decreases, to T = 1.00 s.",
+          "steps": [
+            "(a) The center of mass is at the center of the tile, d = s/√2 = 0.212 m from the corner. By the parallel-axis theorem, I = Ms^2/6 + Md^2 = Ms^2/6 + Ms^2/2 = (2/3)Ms^2 = (0.0600 m^2)M.",
+            "T = 2π√(I/(Mgd)) = 2π√(0.0600/((9.8)(0.212))) = 1.07 s. The mass M cancels.",
+            "(b) A simple pendulum with the same period has length I/(Md) = 0.0600/0.212 = 0.283 m.",
+            "(c) From the midpoint of an edge, d = s/2 = 0.15 m and I = Ms^2/6 + Ms^2/4 = (5/12)Ms^2 = (0.0375 m^2)M. The equivalent length is I/(Md) = 0.0375/0.15 = 0.25 m, shorter than 0.283 m, so the period decreases: T = 2π√(0.25/9.8) = 1.00 s.",
+            "A smaller d does not settle the question by itself, because it lowers both the gravitational torque and the rotational inertia. The equivalent length, I/(Md) = d + I_cm/(Md), decides it; here it falls from 0.283 m to 0.25 m."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c10",
+          "prompt": "A 0.30 kg mass hangs at rest from a vertical spring with k = 75 N/m. It is pulled down and released, and it oscillates vertically with an amplitude of 0.060 m; air resistance is negligible. (a) Find the period and the mass's greatest speed. (b) Find the greatest elastic potential energy stored in the spring during the motion. (c) A student says: \"The oscillation energy is ½kA^2 = 0.135 J, and at the lowest point the mass is at rest, so the spring stores 0.135 J there.\" Explain what is wrong with the claim, and show that energy is conserved between the equilibrium position and the lowest point.",
+          "hint": "Find how far the spring is stretched while the mass hangs at rest, before you think about the oscillation.",
+          "answer": "(a) T = 0.40 s; v_max = 0.95 m/s. (b) 0.37 J, at the lowest point, where the spring is stretched 0.099 m. (c) Measured from the hanging equilibrium, ½kA^2 is the spring and gravitational potential energy together, not the spring's own energy measured from its unstretched length. From equilibrium to the lowest point, the spring's energy rises by 0.311 J and the gravitational energy falls by 0.176 J: a net rise of 0.135 J, equal to the kinetic energy the mass had at equilibrium.",
+          "steps": [
+            "(a) ω = √(k/m) = √(75/0.30) = 15.8 rad/s, so T = 2π/ω = 0.40 s, the same as on a level frictionless track. v_max = Aω = (0.060)(15.8) = 0.95 m/s, at the equilibrium position.",
+            "(b) At equilibrium the spring is already stretched by y_e = mg/k = (0.30)(9.8)/75 = 0.0392 m. The stretch is greatest at the lowest point, y_e + A = 0.0992 m, where the spring stores ½(75)(0.0992)^2 = 0.37 J.",
+            "(c) The student treats ½kA^2 as the spring's own energy. With y measured from the hanging equilibrium, ½ky^2 is the change in spring plus gravitational potential energy, so it is not the spring's energy at the bottom.",
+            "From equilibrium to the lowest point, the spring's energy rises from ½(75)(0.0392)^2 = 0.058 J to 0.369 J, an increase of 0.311 J, and the gravitational energy changes by −mgA = −(0.30)(9.8)(0.060) = −0.176 J. The net potential-energy increase is 0.135 J = ½kA^2, equal to the kinetic energy at equilibrium, ½(0.30)(0.949)^2 = 0.135 J. Energy is conserved.",
+            "At the highest point the spring is compressed by A − y_e = 0.021 m and pushes the mass down; neither the period nor ½kA^2 is affected."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u7-c11",
+          "prompt": "A pendulum is made from a solid sphere of radius R = 0.10 m fixed to the end of a light rigid rod; the sphere's center is L = 0.50 m from the frictionless pivot. A solid sphere's rotational inertia about its center is (2/5)mR^2, and a thin hollow sphere's is (2/3)mR^2. (a) Derive an expression for the period of small oscillations in terms of L, R and g. (b) Calculate the period, and the percentage by which T = 2π√(L/g) underestimates it. (c) The solid sphere is replaced by a thin hollow sphere of the same mass and radius, with its center at the same point. Without calculating, state whether the period increases, decreases or stays the same, and explain. Then check with a calculation.",
+          "hint": "Ask what the rigidly fixed sphere does about its own center while the rod swings, and what that adds to the rotational inertia about the pivot.",
+          "answer": "(a) T = 2π√((L^2 + (2/5)R^2)/(gL)). (b) T = 1.43 s; 2π√(L/g) = 1.42 s underestimates it by about 0.8%. (c) It increases: the hollow sphere has more of its mass far from its center, so it has a larger rotational inertia about the pivot with the same gravitational torque; T = 1.44 s.",
+          "steps": [
+            "The sphere is fixed to the rod, so it turns with the rod: the pendulum is a physical pendulum, not a point bob. By the parallel-axis theorem, I = (2/5)mR^2 + mL^2 about the pivot, and the center of mass is d = L from the pivot.",
+            "(a) The torque of gravity about the pivot is −mgL sin θ ≈ −mgLθ for small θ, so I d^2θ/dt^2 = −mgLθ and T = 2π√(I/(mgL)) = 2π√((L^2 + (2/5)R^2)/(gL)).",
+            "(b) T = 2π√((0.25 + 0.0040)/((9.8)(0.50))) = 2π√(0.0518) = 1.43 s. The simple-pendulum value is 2π√(0.50/9.8) = 1.42 s, about 0.8% lower, because it leaves out the sphere's turning about its own center.",
+            "(c) The gravitational torque at each angle is unchanged (same mass, same d), but the hollow sphere's I_cm = (2/3)mR^2 is larger than (2/5)mR^2, so the angular acceleration at each angle is smaller and the period is longer: T = 2π√((0.25 + 0.0067)/4.9) = 1.44 s."
+          ],
+          "see": "worked-examples"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Simple harmonic motion",
+          "text": "An object moves in simple harmonic motion when the net force on it is F = −kx, with x measured from a stable equilibrium position. Newton's second law then gives d^2x/dt^2 = −ω^2x, with ω = √(k/m), whose solution is x(t) = A cos(ωt + φ).",
+          "conditions": [
+            "The force is proportional to the displacement and opposite to it. A motion that merely repeats is not simple harmonic.",
+            "x is measured from the equilibrium position, not from a spring's unstretched length.",
+            "ωt + φ is in radians."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Amplitude and phase from the start",
+          "text": "At t = 0, x_0 = A cos φ and v_0 = −Aω sin φ, so A = √(x_0^2 + (v_0/ω)^2). Released from rest at x_0: x = x_0 cos(ωt). Started from equilibrium with v_0 > 0: x = (v_0/ω) sin(ωt).",
+          "conditions": [
+            "Choose φ so that both cos φ = x_0/A and sin φ = −v_0/(Aω) have the right signs. The inverse cosine alone gives the wrong sign of φ whenever v_0 > 0."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Period and frequency of a spring and block",
+          "text": "T = 2π/ω and f = 1/T = ω/(2π), in hertz. For a block on a spring, ω = √(k/m), so T = 2π√(m/k).",
+          "conditions": [
+            "A light spring that obeys F = −kx, and no friction.",
+            "The period does not depend on the amplitude, or on g."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Springs in combination, and vertical springs",
+          "text": "Springs side by side (in parallel) act as one spring of constant k_1 + k_2; springs end to end (in series) act as one of k_1k_2/(k_1 + k_2). A mass hanging from a spring has its equilibrium lowered by mg/k, but measured from that equilibrium the net force is still −ky, so the period is the same as on a level track.",
+          "conditions": [
+            "Light springs; each obeys F = −kx over the motion.",
+            "Cutting a spring into n equal pieces makes each piece n times as stiff."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Small oscillations in a potential well",
+          "text": "At a stable equilibrium x_0, dU/dx = 0 and d^2U/dx^2 > 0. For small displacements, F ≈ −k_eff(x − x_0) with k_eff = d^2U/dx^2 at x_0, so ω = √(k_eff/m) and T = 2π√(m/k_eff).",
+          "conditions": [
+            "The amplitude is small enough that U stays close to a parabola over the motion; otherwise the motion is periodic but not simple harmonic.",
+            "If d^2U/dx^2 < 0 at x_0, the equilibrium is unstable and there is no oscillation."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Motion and energy in simple harmonic motion, for x = A cos(ωt + φ) and E = ½kA^2. Every row repeats with period T = 2π/ω except the energies, which repeat every T/2.",
+          "head": [
+            "Quantity",
+            "As a function of time",
+            "Greatest magnitude",
+            "Greatest at",
+            "Zero at"
+          ],
+          "rows": [
+            [
+              "Position x",
+              "A cos(ωt + φ)",
+              "A",
+              "The turning points",
+              "Equilibrium"
+            ],
+            [
+              "Velocity v",
+              "−Aω sin(ωt + φ)",
+              "Aω",
+              "Equilibrium",
+              "The turning points"
+            ],
+            [
+              "Acceleration a",
+              "−Aω^2 cos(ωt + φ) = −ω^2x",
+              "Aω^2",
+              "The turning points",
+              "Equilibrium"
+            ],
+            [
+              "Kinetic energy K",
+              "E sin^2(ωt + φ)",
+              "E",
+              "Equilibrium",
+              "The turning points"
+            ],
+            [
+              "Potential energy U",
+              "E cos^2(ωt + φ)",
+              "E",
+              "The turning points",
+              "Equilibrium"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Reading graphs of SHM",
+          "text": "The velocity at any time is the slope of the x–t graph, and the acceleration is the slope of the v–t graph. The v–t curve reaches each peak a quarter period before the x–t curve; the a–t curve is the x–t curve turned upside down and scaled by ω^2. Read A from the peaks, T from one full cycle, and φ from the value and slope at t = 0.",
+          "conditions": [
+            "K–t and U–t graphs never go below zero and repeat every half period; double their repeat time to get T."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Energy of a spring oscillator",
+          "text": "E = ½mv^2 + ½kx^2 = ½kA^2 = ½mv_max^2, so v = ω√(A^2 − x^2) at any position. K = U at x = ±A/√2, and doubling the amplitude quadruples the energy.",
+          "conditions": [
+            "No friction or drag removes energy.",
+            "For a vertical spring, measure y from the hanging equilibrium. Then ½ky^2 stands for spring and gravitational energy together, up to a constant; the spring's own energy uses its actual stretch.",
+            "When a lump lands on a moving oscillator and sticks, momentum along the motion is conserved during the landing, not kinetic energy. Energy is conserved only in the oscillation before and after."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Simple pendulum",
+          "text": "For a bob of mass m on a light string of length L, the torque about the pivot gives d^2θ/dt^2 = −(g/L) sin θ ≈ −(g/L)θ, so ω = √(g/L) and T = 2π√(L/g).",
+          "conditions": [
+            "Small angles, in radians: at 10° the true period is about 0.2% longer than 2π√(L/g), and at 30° about 1.7% longer.",
+            "A point-like bob; L is measured from the pivot to the bob's center.",
+            "The period does not depend on the bob's mass."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Physical pendulum",
+          "text": "For a rigid body swinging about a fixed pivot, T = 2π√(I/(mgd)), with I the rotational inertia about the pivot and d the distance from the pivot to the center of mass. It swings like a simple pendulum of length I/(md) = d + I_cm/(md).",
+          "conditions": [
+            "Small angles, in radians.",
+            "Find I about the pivot with the parallel-axis theorem, I = I_cm + md^2.",
+            "A uniform rod of length L pivoted at one end has I = mL^2/3 and d = L/2, so T = 2π√(2L/(3g))."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Angular frequency is not angular velocity",
+          "text": "For a pendulum, θ(t) = θ_max cos(ωt + φ). The angular frequency ω = √(g/L) (or √(mgd/I)) is a constant of the motion. The angular velocity of the string, dθ/dt = −θ_maxω sin(ωt + φ), changes throughout the swing, and the bob's speed is L|dθ/dt|."
+        }
+      ]
+    },
+    {
+      "id": "explanations-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Points for an explanation go to a reason that names the force, torque or energy involved and says how it behaves. These sentences show the wording; change the names and numbers to fit the problem."
+        },
+        {
+          "type": "model",
+          "prompt": "Show that a block on a spring on a frictionless incline moves in simple harmonic motion.",
+          "text": "Measured from the equilibrium position on the incline, where the spring force balances mg sin θ, a displacement x along the incline changes the spring force by −kx while the gravitational component stays the same. The net force is therefore −kx: proportional to the displacement and directed opposite to it. Newton's second law gives d^2x/dt^2 = −(k/m)x, which has the form d^2x/dt^2 = −ω^2x, so the block moves in simple harmonic motion with ω = √(k/m)."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain why the period does not depend on the amplitude.",
+          "text": "With a larger amplitude, the restoring force at each corresponding point of the cycle is larger in proportion, because the force is proportional to the displacement, so the block moves faster over its longer path. The two effects cancel exactly, and each cycle takes T = 2π√(m/k), which contains no amplitude."
+        },
+        {
+          "type": "model",
+          "prompt": "Describe the energy transfers during one cycle.",
+          "text": "As the block moves from the turning point x = +A toward equilibrium, the spring does positive work on it: the spring's potential energy decreases and the block's kinetic energy increases by the same amount, until at equilibrium the energy is all kinetic. Past equilibrium the spring does negative work, and the transfer reverses until the block stops at x = −A with the energy all potential. With no friction, the total stays ½kA^2."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify using the small-angle approximation.",
+          "text": "The amplitude is 0.087 rad (5°). At that angle sin θ differs from θ by about 0.13%, so the restoring torque −mgL sin θ is very nearly proportional to θ, and the motion is very nearly simple harmonic with T = 2π√(L/g)."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain how moving the pivot changes a physical pendulum's period.",
+          "text": "The period depends on the length of the equivalent simple pendulum, I/(md) = d + I_cm/(md). Moving the pivot toward the center of mass shrinks d, the first term, but enlarges I_cm/(md), the second, so the period can rise or fall. For example, if the equivalent length rises from 0.40 m to 0.45 m, the period increases by a factor of √(0.45/0.40) = 1.06."
+        },
+        {
+          "type": "model",
+          "prompt": "Verify a proposed solution by substitution.",
+          "text": "With x = 0.080 cos(6.0t + 0.50), dx/dt = −0.48 sin(6.0t + 0.50) and d^2x/dt^2 = −2.88 cos(6.0t + 0.50) = −36x. For a 0.25 kg block, m d^2x/dt^2 = −9.0x, which is Newton's second law with F = −kx for k = 9.0 N/m, so the function describes this block on a 9.0 N/m spring."
+        },
+        {
+          "type": "trap",
+          "text": "Evaluating cos(ωt + φ) with the calculator in degree mode, or writing a phase constant in degrees.",
+          "fix": "ω is in rad/s, so ωt is in radians. Set radian mode before evaluating x(t), v(t) or θ(t), and give φ in radians."
+        },
+        {
+          "type": "trap",
+          "text": "Mixing up ω, f and T: putting f = 2.0 Hz in place of ω in x = A cos(ωt).",
+          "fix": "ω = 2πf = 2π/T. Check the units: ω in rad/s, f in Hz (cycles per second), T in s."
+        },
+        {
+          "type": "trap",
+          "text": "Expecting a larger amplitude to give a longer period.",
+          "fix": "For SHM the period is set by m and k (or L and g, or I and mgd). A larger amplitude raises the speeds in proportion, so the time per cycle is unchanged. Only a pendulum's large-angle swings take measurably longer."
+        },
+        {
+          "type": "trap",
+          "text": "Using constant-acceleration equations, such as v^2 = v_0^2 + 2aΔx, between two points of an oscillation.",
+          "fix": "The acceleration changes with position. Use x(t) for times, energy for speeds at positions, and a = −ω^2x for accelerations."
+        },
+        {
+          "type": "trap",
+          "text": "Measuring a vertical spring's displacement from its unstretched length, then using ½ky^2 alone as the potential energy or −ky as the net force.",
+          "fix": "Measure y from the hanging equilibrium, where the spring is already stretched by mg/k. From there the net force is −ky and ½ky^2 covers spring and gravity together. For the spring's own energy, use its actual stretch."
+        },
+        {
+          "type": "trap",
+          "text": "Giving K and U the same period as x, or reading the repeat time of a K–t graph as the period of the motion.",
+          "fix": "K is greatest at every pass through equilibrium, twice per cycle, so K and U repeat every T/2. Double the repeat time of an energy graph to get T."
+        },
+        {
+          "type": "trap",
+          "text": "Using I about the center of mass, or the distance to the end of the body, in T = 2π√(I/(mgd)).",
+          "fix": "I is about the pivot (use the parallel-axis theorem), and d runs from the pivot to the center of mass. For a pendulum bob, L runs to the bob's center."
+        },
+        {
+          "type": "trap",
+          "text": "Treating a bob of finite size that is rigidly fixed to its rod as a point mass.",
+          "fix": "A fixed bob turns with the rod, so add its I_cm through the parallel-axis theorem. The correction is small when the bob is small compared with L, but say that you are neglecting it."
+        },
+        {
+          "type": "trap",
+          "text": "Conserving kinetic energy when a lump lands on a moving oscillator and sticks.",
+          "fix": "During the brief landing, conserve momentum along the motion. Then use energy, with the new mass and speed, for the oscillation that follows; the period changes because the mass changes."
+        },
+        {
+          "type": "trap",
+          "text": "Taking φ from the inverse cosine of x_0/A without checking the velocity.",
+          "fix": "Check the sign of sin φ = −v_0/(Aω). If the angle from the calculator gives the wrong sign of v_0, use −φ instead."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each example models a procedure that the problems above test. If a problem's answer sent you here, study the example that uses the same procedure, then retry the problem cold on a later day."
+        },
+        {
+          "type": "example",
+          "prompt": "A 0.20 kg block on a spring with k = 20 N/m slides on a frictionless horizontal surface; x is measured from equilibrium, positive to the right. At t = 0 the block is at x = −0.030 m, moving right at 0.40 m/s. Write x(t), verify by substitution that it satisfies Newton's second law, and find the first time at which the block reaches its right turning point.",
+          "answer": "x(t) = 0.050 cos(10t − 2.21), with x in meters, t in seconds and the phase in radians. It satisfies m d^2x/dt^2 = −kx. The block first reaches x = +0.050 m at t = 0.22 s.",
+          "steps": [
+            "The system sets ω: ω = √(k/m) = √(20/0.20) = 10 rad/s, so T = 2π/10 = 0.63 s.",
+            "The start sets A: A = √(x_0^2 + (v_0/ω)^2) = √(0.030^2 + 0.040^2) = 0.050 m.",
+            "The start also sets φ: cos φ = x_0/A = −0.60 and sin φ = −v_0/(Aω) = −0.40/0.50 = −0.80. Both are negative, so φ lies in the third quadrant: φ = −2.21 rad (or, equally, 4.07 rad). The inverse cosine of −0.60 alone gives +2.21 rad, which has sin φ > 0 and would start the block moving left.",
+            "Check: x(0) = 0.050 cos(−2.21) = −0.030 m and v(0) = −(0.050)(10) sin(−2.21) = +0.40 m/s.",
+            "Substitute: d^2x/dt^2 = −(0.050)(10)^2 cos(10t − 2.21) = −100x, so m d^2x/dt^2 = (0.20)(−100x) = −20x = −kx.",
+            "The right turning point is where 10t − 2.21 = 0, the first time the cosine equals 1 after t = 0: t = 0.221 s ≈ 0.22 s. On the way the block passes equilibrium at 10t − 2.21 = −π/2, t = 0.064 s, at its greatest speed Aω = 0.50 m/s."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A clock pendulum is a uniform rod of mass 0.20 kg and length 0.80 m, pivoted at its top end, with a uniform disk of mass 0.50 kg and radius 0.10 m whose center is fixed to the rod's lower end. The disk swings in its own plane with the rod. Find the period of small oscillations, and compare it with that of a simple pendulum 0.80 m long.",
+          "answer": "T = 1.75 s, about 2.5% shorter than the 1.80 s of a simple pendulum 0.80 m long.",
+          "steps": [
+            "Rotational inertia about the pivot, piece by piece. Rod about its end: (1/3)(0.20)(0.80)^2 = 0.0427 kg·m^2. Disk, by the parallel-axis theorem: (1/2)(0.50)(0.10)^2 + (0.50)(0.80)^2 = 0.0025 + 0.320 = 0.3225 kg·m^2. Total I = 0.365 kg·m^2.",
+            "Center of mass, measured down from the pivot: d = ((0.20)(0.40) + (0.50)(0.80))/0.70 = 0.686 m. The total mass is m = 0.70 kg.",
+            "T = 2π√(I/(mgd)) = 2π√(0.365/((0.70)(9.8)(0.686))) = 2π√(0.0776) = 1.75 s.",
+            "The equivalent simple pendulum is I/(md) = 0.365/((0.70)(0.686)) = 0.761 m long, shorter than 0.80 m because the rod's mass is spread up toward the pivot. A simple pendulum 0.80 m long has T = 2π√(0.80/9.8) = 1.80 s.",
+            "Treating the disk as a point mass would drop 0.0025 kg·m^2 and give 1.74 s: a small error here, but one to state if you make it."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "At one instant, a 0.50 kg glider oscillating on a spring on a frictionless level track is at x = +0.040 m, measured from equilibrium, moving at 0.30 m/s, with acceleration −3.2 m/s^2. Find the angular frequency, the spring constant, the amplitude, the greatest speed and the total energy.",
+          "answer": "ω = 8.9 rad/s; k = 40 N/m; A = 0.052 m; v_max = 0.47 m/s; E = 0.055 J.",
+          "steps": [
+            "Choose the relation that links each unknown to the givens. The acceleration at a known position gives ω: a = −ω^2x, so ω^2 = 3.2/0.040 = 80 s^−2 and ω = 8.9 rad/s.",
+            "The spring constant follows from ω: k = mω^2 = (0.50)(80) = 40 N/m.",
+            "A speed at a known position gives the amplitude through energy: A = √(x^2 + (v/ω)^2) = √(0.040^2 + 0.30^2/80) = √(0.002725) = 0.052 m.",
+            "v_max = Aω = (0.0522)(8.94) = 0.47 m/s, and E = ½kA^2 = ½(40)(0.002725) = 0.0545 J ≈ 0.055 J.",
+            "Check E at the given instant: ½mv^2 + ½kx^2 = ½(0.50)(0.30)^2 + ½(40)(0.040)^2 = 0.0225 + 0.032 = 0.0545 J."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, then come back to it again in a few days. Take the unit test under timed conditions and score it with the key. Week 30 includes a paper investigation with a pendulum; paper practice does not replace the hands-on lab work the AP® physics courses require. Oscillation questions also appear inside the free-response types; the workshops below practise them there."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 28: Simple harmonic motion: definition, frequency, and period",
+              "ref": "week:28"
+            },
+            {
+              "label": "Week 29: Representing SHM and oscillator energy",
+              "ref": "week:29"
+            },
+            {
+              "label": "Week 30: Simple and physical pendulums",
+              "ref": "week:30"
+            },
+            {
+              "label": "Unit 7 plan: Oscillations",
+              "ref": "unit:u7"
+            },
+            {
+              "label": "Unit 7 test",
+              "ref": "test:unit-7"
+            },
+            {
+              "label": "Unit 7 test key",
+              "ref": "key:unit-7"
+            },
+            {
+              "label": "Free-response workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            },
+            {
+              "label": "Free-response workshop: Qualitative/Quantitative Translation",
+              "ref": "guide:fr-qualitative-quantitative"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

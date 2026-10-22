@@ -235,8 +235,9 @@ Answer keys ship to the browser in the assessment files, as weekly keys do; sepa
 ## Exam preparation
 
 A course may carry an exam-preparation layer for the weeks before the exam,
-after its units are taught. Calculus BC and Calculus AB have one; the physics
-courses do not yet. It lives on `ap.html#<course>/prep` and is built from three
+after its units are taught. All four courses have one: Calculus BC since
+2026-10-22, and Calculus AB, Physics 1 and Physics C: Mechanics since a later
+pass the same day. It lives on `ap.html#<course>/prep` and is built from three
 things the AP page already knows how to show, plus one new document type:
 
 | Piece | Kind | Where |
@@ -267,8 +268,11 @@ mathematics exam, as summarized for this work on 2026-10-22:
   at a delay (Rohrer, Dedrick & Stershic 2015; Rohrer et al. 2020). Mixed
   sets mix units and are built around easily confused choices (which
   integration technique, which series test, which volume method, parametric
-  or polar or vector motion). Workshop sets are blocked by archetype, for
-  learning the archetype; plans pair them with mixed work.
+  or polar or vector motion; in physics, which conservation law applies,
+  force or torque, energy or momentum, differentiate or integrate). Workshop
+  sets are blocked by archetype, for learning the archetype; plans pair them
+  with mixed work. The physics evidence base is thinner than the
+  mathematics one, so these physics choices are applied by analogy.
 - **Error analysis that leads to action.** A reflection form alone changes
   nothing (Soicher & Gurung 2017). The practice-exam method guide has the
   student mark confidence, predict a raw total before scoring, redo misses
@@ -299,12 +303,19 @@ copy), `key:<assessment>`, `guide:<guide>`, `unit:u<n>` (plan with the unit
 open) or `week:<1–36>` (weekly coursework). `LiminalAp.refHref` turns it
 into a link; the validator requires it to name something the plan lists.
 The course's `blueprints` gain `mixedSet` (`parts` of `{ id, questions,
-minutes, calculator }` and `minUnits`) and `frSet` (`frPoints`,
-`minutesPerQuestion`, `questions: [least, most]`). Calculus mixed sets are 10
-no-calculator questions in 21 minutes and 5 graphing-calculator questions
-in 15 minutes, the exam's per-question pace, drawing primary topics from at
-least 7 units (BC) or 6 (AB). Calculus free-response sets hold 3–4 nine-point
-questions at 15 minutes each, in parts ordered graphing calculator then none.
+minutes, calculator }` and `minUnits`) and `frSet`. A calculus `frSet` has
+`frPoints`, `minutesPerQuestion` and `questions: [least, most]`; a physics
+`frSet` has `frTypes` (equal to the practice exam's), `minutesByType` and
+`questions`, and each physics set practises one question type.
+
+| Course | Mixed set | Free-response set |
+| --- | --- | --- |
+| Calculus AB, BC | 10 no-calculator questions in 21 minutes, then 5 graphing-calculator questions in 15 minutes (the exam's per-question pace); primary topics from at least 6 (AB) or 7 (BC) units | 3–4 nine-point questions at 15 minutes each, in parts ordered graphing calculator then none |
+| Physics 1, Physics C: Mechanics | 15 questions in 30 minutes with a calculator (the exam's 85 minutes for 42); primary topics from at least 6 (Physics 1) or 5 (C: Mechanics) units | 3–4 questions of one type, paced MR 22, TBR 28, EDA 27 and QQT 18 minutes: inside the suggested times the practice exams print, and summing to the exam's 95 |
+
+The physics pacing and point values are Liminal practice conventions:
+College Board's exam pages, checked 2026-10-22, give only the section's 95
+minutes and name the four types.
 
 ### Assessment kinds and IDs
 
@@ -367,14 +378,19 @@ with a section of checks (with text only) before any summary.
   point in Liminal's own rubric language (setup, answer, justification,
   units, consistency with earlier parts), model sentences, traps, and a
   short worked model. They describe the archetype generically; they never
-  describe or imitate a released question.
+  describe or imitate a released question. Calculus archetypes are recurring
+  kinds of task (accumulation, tables, motion, …); the physics archetypes are
+  the four question types, each guide paired with a four-question set whose
+  questions come from four different units, done two at a sitting.
 - **Sets and exams.** The weekly and assessment standards above apply: four
   distinct choices with explained distractors, nine-point free response
   with original rubrics that credit reasoning and accept valid alternative
   methods, calculator items that genuinely need the calculator, exact
   values in no-calculator work, three-decimal answers in calculator work.
   Across practice exams A–D every archetype appears at least once; in BC the
-  last free-response question of each form is on series.
+  last free-response question of each form is on series. Physics forms keep
+  one question of each type in the order MR, TBR, EDA, QQT, and B–D place
+  each type on different units from form A and from each other.
 - **Strategy guides.** Facts about the exam cite College Board's HTML pages
   with the date checked and are kept to format and policy. Pacing and
   method advice states when it fails. No score prediction, conversion or
@@ -384,7 +400,9 @@ with a section of checks (with text only) before any summary.
 
 `check-ap` validates the `prep` block (form A first; review guides exactly
 one per content unit; distinct guide IDs; mixed sets numbered in order;
-blueprints present; every plan task's `ref` resolving), every assessment
+blueprints present, with a physics `frSet`'s types and points equal to the
+practice exam's and whole minutes for every type; every plan task's `ref`
+resolving), every assessment
 the block names against its kind's blueprint, and every guide against the
 contract above, with figures, duplicates, plain text and the claims lint.
 With `--complete`, every assessment and guide the block names must exist.

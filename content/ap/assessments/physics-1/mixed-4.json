@@ -1,0 +1,344 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "mixed-4",
+  "kind": "mixed-set",
+  "title": "Mixed set 4: all units at exam pace",
+  "author": "p1-mixed-3-4-author",
+  "directions": "This original Liminal mixed set draws 15 multiple-choice questions from across the course at the exam's pace: 30 minutes, with a four-function, scientific or graphing calculator allowed. The questions are mixed on purpose, so part of each one is deciding which idea or method applies; this set leans on choices that are easy to confuse: translational or rotational inertia, impulse or work, what does and does not depend on mass, and pressure or buoyant force. Expect it to feel slower than practising one topic at a time. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise; Liminal's formula reference is appended to the booklet. Record raw points; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "Choose the best answer for each question and mark it on the answer sheet. Any calculator is allowed.",
+          "items": [
+            {
+              "id": "p1-mixed-4-mc01",
+              "prompt": "A worker rides on an open railway wagon that moves east at a constant 8.0 m/s along a level track. She tosses a small bag horizontally toward the west, at 8.0 m/s relative to the wagon, from 1.6 m above the ground. Neglecting air resistance, where does the bag land relative to the point on the ground directly below where she released it?",
+              "choices": [
+                "9.1 m west of that point",
+                "4.6 m west of that point",
+                "At that point",
+                "4.6 m east of that point"
+              ],
+              "key": "C",
+              "rationale": "The bag's velocity relative to the ground is its velocity relative to the wagon plus the wagon's velocity relative to the ground: 8.0 m/s west + 8.0 m/s east = 0. With no horizontal velocity relative to the ground, it falls straight down and lands at the point below the release. (It falls for √(2 × 1.6 m / 9.8 m/s^2) ≈ 0.57 s, during which the wagon and the worker move about 4.6 m east, so relative to the wagon the bag lands about 4.6 m west of her.)",
+              "distractorNotes": {
+                "A": "Adds the two speeds, as if the bag moved west at 16 m/s relative to the ground; the wagon's eastward velocity cancels the toss's westward velocity relative to the wagon.",
+                "B": "Uses the bag's 8.0 m/s relative to the wagon as its velocity relative to the ground; relative to the ground it also has the wagon's 8.0 m/s eastward. 4.6 m west is where it lands relative to the moving wagon.",
+                "D": "Uses only the wagon's velocity, as if the bag had been dropped; the toss gives it 8.0 m/s westward relative to the wagon."
+              },
+              "topics": [
+                "P1.1.4",
+                "P1.1.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc02",
+              "prompt": "A 4.0 kg medicine ball and a 1.0 kg sandbag are thrown from level ground at the same angle above the horizontal, each with the same kinetic energy. Neglecting air resistance, what is the ratio of the medicine ball's horizontal range to the sandbag's?",
+              "choices": [
+                "1/16",
+                "1/4",
+                "1/2",
+                "1"
+              ],
+              "key": "B",
+              "rationale": "For a launch from level ground at a fixed angle, the range is proportional to v^2 (R = v^2 sin 2θ / g). Equal kinetic energies mean equal values of mv^2, so the medicine ball's v^2 is 1/4 of the sandbag's, and its range is 1/4 as large.",
+              "distractorNotes": {
+                "A": "Treats equal kinetic energies as equal momenta, which would give the medicine ball 1/4 the speed and 1/16 the range.",
+                "C": "Uses the speed ratio, 1/2, as the range ratio; at a fixed angle the range grows as the square of the speed.",
+                "D": "Assumes the range does not depend on mass; that holds for equal launch speeds, but equal kinetic energies give the heavier object a smaller speed."
+              },
+              "topics": [
+                "P1.1.5",
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc03",
+              "prompt": "Blocks of 3.0 kg and 2.0 kg hang from the ends of a light string that passes over a light, frictionless pulley. Released from rest, they accelerate at 2.0 m/s^2, and the string tension is 24 N. Both blocks are then replaced by blocks with twice the mass, 6.0 kg and 4.0 kg. What are the new acceleration and tension?",
+              "choices": [
+                "2.0 m/s^2 and 47 N",
+                "2.0 m/s^2 and 24 N",
+                "3.9 m/s^2 and 47 N",
+                "0.98 m/s^2 and 24 N"
+              ],
+              "key": "A",
+              "rationale": "For the whole system, a = (m_1 − m_2)g/(m_1 + m_2) = (2.0 kg)(9.8 m/s^2)/(10 kg) ≈ 2.0 m/s^2, unchanged because the unbalanced weight and the total mass both double. For the 4.0 kg block, T − m_2 g = m_2 a gives T = (4.0 kg)(9.8 m/s^2 + 1.96 m/s^2) ≈ 47 N, twice the original tension.",
+              "distractorNotes": {
+                "B": "Keeps the acceleration correctly but also keeps the tension; each block's weight has doubled, so the string must pull twice as hard to give it the same acceleration.",
+                "C": "Doubles the unbalanced weight without doubling the total mass it must accelerate.",
+                "D": "Doubles the total mass but keeps the original 9.8 N unbalanced weight; that weight difference doubles too."
+              },
+              "topics": [
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc04",
+              "prompt": "A 2.0 kg box slides down a plank at constant velocity when the plank is tilted 20° above the horizontal. A 3.0 kg book is set on top of the box, so that book and box slide together, and the box is started down the plank at the same speed as before. What happens to the box's motion?",
+              "choices": [
+                "It speeds up, because the component of the weight along the plank is now larger",
+                "It slows down and stops, because the friction force on it is now larger",
+                "It slows down, because a heavier object needs a larger force to keep it moving",
+                "It moves at constant velocity, because friction and the pull along the plank both grow in proportion to the weight"
+              ],
+              "key": "D",
+              "rationale": "Constant velocity at 20° means μ_k mg cos 20° = mg sin 20°, so μ_k = tan 20°, which does not involve the mass. With the book, the normal force and the kinetic friction force grow by the same factor (5.0 kg / 2.0 kg) as the weight's component along the plank, so the net force is still zero and the velocity stays constant.",
+              "distractorNotes": {
+                "A": "The weight's component along the plank does grow, but the friction force grows by the same factor because the normal force does.",
+                "B": "Friction does grow, but so does the weight's component along the plank; they stay balanced.",
+                "C": "No net force is needed to keep an object moving at constant velocity, whatever its mass."
+              },
+              "topics": [
+                "P1.2.7",
+                "P1.2.4"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc05",
+              "prompt": "A 6000 kg truck and a 1500 kg car move along a straight, level road with equal momenta. Each driver brakes, and the braking forces on the two vehicles are equal and constant. Compared with the car, the truck stops in",
+              "choices": [
+                "the same time and one-fourth the distance",
+                "the same time and the same distance",
+                "a longer time and a longer distance",
+                "a longer time and the same distance"
+              ],
+              "key": "A",
+              "rationale": "Impulse: Ft = p, and both vehicles have the same p and the same F, so the stopping times are equal. Work: Fd = K = p^2/(2m), so with equal momenta the truck, with 4 times the mass, has 1/4 of the car's kinetic energy and stops in 1/4 of the distance. (Its speed is 1/4 of the car's, so in the same time it covers 1/4 of the distance.)",
+              "distractorNotes": {
+                "B": "Equal impulses give equal stopping times, but the distance is set by the work the force must do, and the kinetic energies differ.",
+                "C": "Equal momenta and equal forces mean equal stopping times; the truck is 4 times as massive but moves at 1/4 of the car's speed.",
+                "D": "This would be true for equal kinetic energies, not equal momenta; with the same momentum the truck has less kinetic energy."
+              },
+              "topics": [
+                "P1.3.2",
+                "P1.4.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc06",
+              "prompt": "A 50 kg crate rides on the flat bed of a truck that speeds up from rest to 12 m/s along a straight, level road. The crate does not slide on the bed. In the frame of the ground, how much work does the friction force from the bed do on the crate?",
+              "choices": [
+                "−3.6 × 10^3 J",
+                "0 J",
+                "+6.0 × 10^2 J",
+                "+3.6 × 10^3 J"
+              ],
+              "key": "D",
+              "rationale": "Static friction is the only horizontal force on the crate, and it points forward, the direction in which the crate moves relative to the ground. By the work–energy theorem, its work equals the crate's change in kinetic energy: (1/2)(50 kg)(12 m/s)^2 = 3.6 × 10^3 J.",
+              "distractorNotes": {
+                "A": "Assumes friction always opposes motion; here static friction points forward, along the crate's displacement relative to the ground.",
+                "B": "Static friction does no work relative to the bed, but relative to the ground the crate moves forward while the force acts on it.",
+                "C": "This is the impulse, mv = 600 N·s, which is force times time; work is force times distance and equals the change in kinetic energy."
+              },
+              "topics": [
+                "P1.3.2",
+                "P1.2.7",
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc07",
+              "prompt": "A 0.50 kg block hangs from the lower end of a vertical spring with spring constant 49 N/m. A student holds the block where the spring is at its natural length, then supports it by hand and lowers it slowly until it hangs at rest at its equilibrium position, with the spring stretched 0.10 m. How much work does the student's hand do on the block?",
+              "choices": [
+                "−0.49 J",
+                "−0.25 J",
+                "0 J",
+                "+0.25 J"
+              ],
+              "key": "B",
+              "rationale": "The block starts and ends at rest, so the total work on it is zero: W_hand + W_gravity + W_spring = 0. Gravity does mgd = (0.50 kg)(9.8 m/s^2)(0.10 m) = 0.49 J, and the spring does −(1/2)kx^2 = −(1/2)(49 N/m)(0.10 m)^2 ≈ −0.25 J. So W_hand = −0.49 J + 0.25 J ≈ −0.25 J. (The hand's upward force falls from mg to zero as the spring takes over, averaging mg/2.)",
+              "distractorNotes": {
+                "A": "Takes the hand's force as the full weight mg over the whole 0.10 m; the hand's force decreases as the spring stretches.",
+                "C": "Zero is the total work on the block, which starts and ends at rest, not the work done by the hand alone.",
+                "D": "This is the energy stored in the spring, taken as positive work; the hand pushes up while the block moves down, so its work is negative."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.3",
+                "P1.2.8"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc08",
+              "prompt": "A 0.20 kg ball tied to a string moves in a horizontal circle of radius 0.50 m at a constant speed of 3.0 m/s on a level, frictionless table. Over half a revolution, what are the magnitude of the impulse the string exerts on the ball and the work the string does on the ball?",
+              "choices": [
+                "0 N·s and 0 J",
+                "1.2 N·s and 0 J",
+                "1.2 N·s and 5.7 J",
+                "1.9 N·s and 0 J"
+              ],
+              "key": "B",
+              "rationale": "After half a revolution the velocity has reversed, so the change in momentum has magnitude 2mv = 2(0.20 kg)(3.0 m/s) = 1.2 N·s; the string is the only horizontal force, so this is its impulse. The string's force is always perpendicular to the velocity, so it does no work, and the speed and kinetic energy stay constant.",
+              "distractorNotes": {
+                "A": "The speed is unchanged, but momentum is a vector, and its direction has reversed.",
+                "C": "Multiplies the 3.6 N tension by the 1.57 m arc length; the force is perpendicular to the motion at every instant, so its work is zero.",
+                "D": "Multiplies the magnitude of the 3.6 N tension by the 0.52 s time; the force keeps changing direction, so its impulse must be added as vectors."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.2.9",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc09",
+              "prompt": "A 0.050 kg lump of clay and a 0.050 kg rubber ball are each thrown at 8.0 m/s straight at a closed door. The clay sticks to the door, and the rubber ball bounces straight back at 6.0 m/s. Treat the door as not moving during either impact. Which object delivers the larger impulse to the door, and which loses more kinetic energy?",
+              "choices": [
+                "The clay delivers the larger impulse and loses more kinetic energy",
+                "The impulses are equal, and the clay loses more kinetic energy",
+                "The rubber ball delivers the larger impulse, and the clay loses more kinetic energy",
+                "The rubber ball delivers the larger impulse and loses more kinetic energy"
+              ],
+              "key": "C",
+              "rationale": "The impulse on the door equals the magnitude of each object's change in momentum. Clay: (0.050 kg)(8.0 m/s) = 0.40 N·s. Rubber ball: (0.050 kg)(8.0 m/s + 6.0 m/s) = 0.70 N·s, larger because its momentum reverses. Kinetic energy lost: the clay loses all of its 1.6 J; the ball loses 1.6 J − 0.90 J = 0.70 J. The larger push goes with the smaller energy loss.",
+              "distractorNotes": {
+                "A": "Equates absorbing energy with pushing harder; the clay only stops, while the ball's momentum reverses.",
+                "B": "Both arrive with the same momentum, but the ball's momentum changes by more because it leaves in the opposite direction.",
+                "D": "The ball does deliver the larger impulse, but it keeps 0.90 J of its 1.6 J, so it loses less kinetic energy than the clay."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.4.4"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc10",
+              "prompt": "A playground roundabout spinning at 1.5 rad/s is slowed uniformly to rest by friction in 20 s. Through how many revolutions does it turn while it slows?",
+              "choices": [
+                "2.4 revolutions",
+                "4.8 revolutions",
+                "15 revolutions",
+                "94 revolutions"
+              ],
+              "key": "A",
+              "rationale": "With uniform angular acceleration, the average angular velocity is (1.5 rad/s + 0)/2 = 0.75 rad/s, so the angle turned is Δθ = (0.75 rad/s)(20 s) = 15 rad. One revolution is 2π rad, so Δθ = 15/(2π) ≈ 2.4 revolutions.",
+              "distractorNotes": {
+                "B": "Uses ω_0 t = 30 rad, as if the roundabout kept turning at 1.5 rad/s; while it slows uniformly its average angular velocity is half its initial value.",
+                "C": "Gives the 15 rad angle as revolutions; one revolution is 2π rad.",
+                "D": "Multiplies the 15 rad angle by 2π instead of dividing; there are fewer revolutions than radians."
+              },
+              "topics": [
+                "P1.5.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc11",
+              "prompt": "Workers move a heavy stone block across level ground by resting it on several identical cylindrical logs. Each log rolls without slipping on both the ground and the flat underside of the block. When the block has moved 1.2 m forward relative to the ground, how far forward have the centers of the logs moved relative to the ground?",
+              "choices": [
+                "0 m",
+                "0.60 m",
+                "1.2 m",
+                "2.4 m"
+              ],
+              "key": "B",
+              "rationale": "A log rolling without slipping on the ground has its contact point with the ground momentarily at rest, so its center moves at v = ωR and its top moves at 2ωR = 2v. The block does not slip on the logs, so it moves with the tops of the logs, at twice the speed of their centers. In the same time, the centers move half as far as the block: (1.2 m)/2 = 0.60 m.",
+              "distractorNotes": {
+                "A": "Assumes the logs turn in place while the block slides over them; a log that rolls without slipping on the ground must move its center as it turns.",
+                "C": "Assumes the logs move along with the block, as if they did not turn; the top of each log moves twice as fast as its center.",
+                "D": "Inverts the factor of 2: the block rides on the tops of the logs, which move twice as fast as the centers, so the centers move half as far as the block."
+              },
+              "topics": [
+                "P1.6.5",
+                "P1.5.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc12",
+              "prompt": "Moon A, of mass m, orbits planet X, of mass M, in a circular orbit of radius r with period T. Moon B, of mass 2m, orbits planet Y, of mass 2M, in a circular orbit that also has radius r. What is moon B's orbital period?",
+              "choices": [
+                "T/2",
+                "T/√2",
+                "T",
+                "√2 T"
+              ],
+              "key": "B",
+              "rationale": "Gravity provides the centripetal force: GMm/r^2 = m(2π/T)^2 r, so T = 2π√(r^3/(GM)). The moon's own mass cancels, so only the planet's mass matters, and doubling it at the same radius divides the period by √2.",
+              "distractorNotes": {
+                "A": "Takes T inversely proportional to M; T is proportional to 1/√M.",
+                "C": "Assumes the doubled moon mass and doubled planet mass cancel; the moon's mass drops out entirely, so only the planet's doubling counts.",
+                "D": "Has the dependence on the planet's mass upside down: a more massive planet pulls harder, so the moon must move faster and its period is shorter."
+              },
+              "topics": [
+                "P1.6.6",
+                "P1.2.6",
+                "P1.2.9"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc13",
+              "prompt": "A simple pendulum and a block on a horizontal spring each oscillate on Earth. The pendulum's bob and the block are each replaced by an object with twice the mass, and each oscillator is started again with the same amplitude as before (the same angle for the pendulum, the same stretch for the spring). How do the maximum speeds change?",
+              "choices": [
+                "Both maximum speeds stay the same",
+                "Both maximum speeds decrease by a factor of √2",
+                "The pendulum's stays the same; the block's decreases by a factor of √2",
+                "The pendulum's decreases by a factor of √2; the block's stays the same"
+              ],
+              "key": "C",
+              "rationale": "For the pendulum, energy gives mgh = (1/2)mv_max^2, with h fixed by the length and the angle, so v_max = √(2gh) does not depend on mass. For the spring, (1/2)kA^2 = (1/2)mv_max^2 with the same k and A, so v_max = A√(k/m) falls by a factor of √2 when m doubles. The pendulum's restoring force (gravity) grows with its mass; the spring's does not.",
+              "distractorNotes": {
+                "A": "Treats the block like the pendulum; the spring's force does not grow with the block's mass, so the same stored energy gives a heavier block less speed.",
+                "B": "Applies the spring result to the pendulum; doubling the bob's mass doubles both its weight and its kinetic energy at each height, so its speed is unchanged.",
+                "D": "Swaps the two: gravity's pull grows with the bob's mass, but the spring's force depends only on its stretch."
+              },
+              "topics": [
+                "P1.7.4",
+                "P1.7.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc14",
+              "prompt": "A rectangular wooden block floats flat, first in fresh water and then in oil of density 800 kg/m^3. It floats in both liquids, deeper in the oil. How do the buoyant force on the block and the gauge pressure on its bottom face in the oil compare with those in the water?",
+              "choices": [
+                "The buoyant force is smaller in the oil, which is less dense, and so is the bottom pressure",
+                "The buoyant force is the same, but the bottom pressure is greater in the oil, where the block floats deeper",
+                "The buoyant force is the same, but the bottom pressure is smaller in the oil, which is less dense",
+                "Both are the same in the two liquids"
+              ],
+              "key": "D",
+              "rationale": "A floating block is in equilibrium, so the buoyant force equals its weight in either liquid. That buoyant force is the liquid's net upward push, here the gauge pressure on the bottom face times the face's area (the sides are pushed horizontally and the top is in air), so the bottom pressure is the weight divided by the area in both liquids. In the oil, ρ is smaller and the depth is larger by the same factor, so ρgh is unchanged.",
+              "distractorNotes": {
+                "A": "A floating object's buoyant force always equals its weight; the less dense liquid supports it by covering more of its volume.",
+                "B": "The block is deeper in the oil, but the oil is less dense by the same factor, so ρgh is unchanged.",
+                "C": "The oil is less dense, but the block's bottom is deeper by the same factor, so ρgh is unchanged."
+              },
+              "topics": [
+                "P1.8.2",
+                "P1.8.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-4-mc15",
+              "prompt": "Two large open tanks stand side by side. One holds water, and the other holds oil of density 800 kg/m^3. Each tank has a small hole in its side 0.80 m below the liquid's surface. With what speeds do the liquids leave the holes?",
+              "choices": [
+                "Water: 2.8 m/s; oil: 2.8 m/s",
+                "Water: 4.0 m/s; oil: 3.5 m/s",
+                "Water: 4.0 m/s; oil: 4.0 m/s",
+                "Water: 4.0 m/s; oil: 4.4 m/s"
+              ],
+              "key": "C",
+              "rationale": "Bernoulli's equation from the surface (open to the air, nearly at rest) to the hole (also open to the air) gives ρgh = (1/2)ρv^2, so v = √(2gh) = √(2 × 9.8 m/s^2 × 0.80 m) ≈ 4.0 m/s for both. The density cancels: the oil's smaller pressure at that depth accelerates its smaller mass per volume just as much.",
+              "distractorNotes": {
+                "A": "Uses v = √(gh), dropping the factor 2 from (1/2)ρv^2 = ρgh.",
+                "B": "Uses the oil's gauge pressure, ρ_oil gh, with the water's density in the kinetic-energy term; the same density appears on both sides and cancels.",
+                "D": "Uses the water's gauge pressure, ρ_water gh, with the oil's density in the kinetic-energy term; the oil's own pressure at that depth is smaller."
+              },
+              "topics": [
+                "P1.8.4",
+                "P1.8.2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

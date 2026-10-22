@@ -1,0 +1,352 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "mixed-1",
+  "kind": "mixed-set",
+  "title": "Mixed set 1: all units at exam pace",
+  "author": "p1-mixed-author",
+  "directions": "This original Liminal mixed set draws 15 multiple-choice questions from all eight units of the course at the exam's pace: 30 minutes, with a four-function, scientific or graphing calculator allowed. The questions are mixed on purpose, so part of each one is deciding which principle applies: which conservation law holds, whether a force balance or a torque balance answers the question, and whether kinematics or energy gives the speed or time asked for. Expect it to feel slower than practising one unit at a time. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise. Liminal's formula reference is appended; before the real exam, also practice with College Board's own equation sheet. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-mixed-1-f1",
+      "alt": "Acceleration–time graph with a in m/s^2 from −3 to 3 and t in s from 0 to 8. Straight segments join the points (0, 2), (3, 2), (5, −2) and (7, −2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "Choose the best answer for each of the 15 questions and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question.",
+          "items": [
+            {
+              "id": "p1-mixed-1-mc01",
+              "prompt": "A soccer player kicks a ball from level ground at 18 m/s, 50° above the horizontal. Taking up as positive and neglecting air resistance, how long after the kick is the ball's velocity directed 25° below the horizontal?",
+              "choices": [
+                "0.86 s",
+                "1.4 s",
+                "2.0 s",
+                "2.8 s"
+              ],
+              "key": "C",
+              "rationale": "The horizontal component of the velocity stays v_x = (18)(cos 50°) = 11.6 m/s, while the vertical component changes at −9.8 m/s^2 from (18)(sin 50°) = 13.8 m/s. The velocity points 25° below the horizontal when v_y = −v_x tan 25° = −(11.6)(0.466) = −5.4 m/s. Then 13.8 − 9.8t = −5.4, so t = (13.8 + 5.4)/9.8 ≈ 2.0 s. The ball is still in the air: it returns to the ground at 2(13.8)/9.8 = 2.8 s.",
+              "distractorNotes": {
+                "A": "Sets v_y = +v_x tan 25° = +5.4 m/s, the moment on the way up when the velocity points 25° above the horizontal. Below the horizontal means v_y is negative.",
+                "B": "This is the time to the highest point, 13.8/9.8 = 1.4 s, where the velocity is horizontal. The ball must keep falling until v_y reaches −5.4 m/s.",
+                "D": "This is the time to return to the ground, 2(13.8)/9.8 = 2.8 s, when the velocity points 50° below the horizontal, not 25°."
+              },
+              "topics": [
+                "P1.1.5",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc02",
+              "prompt": "A cart starts from rest at t = 0 on a straight, level track, with its direction of motion at the start taken as positive. The graph shows the cart's acceleration a as a function of time. What is the cart's velocity at t = 7.0 s?",
+              "choices": [
+                "12 m/s",
+                "2.0 m/s",
+                "−2.0 m/s",
+                "−14 m/s"
+              ],
+              "key": "B",
+              "rationale": "The change in velocity is the signed area between the a–t graph and the time axis. From 0 to 3.0 s the area is (2.0)(3.0) = +6.0 m/s; from 3.0 to 5.0 s the triangles above and below the axis cancel; from 5.0 to 7.0 s the area is (−2.0)(2.0) = −4.0 m/s. Starting from rest, v = 0 + 6.0 + 0 − 4.0 = 2.0 m/s.",
+              "distractorNotes": {
+                "A": "Adds the magnitudes of all the areas (6.0 + 1.0 + 1.0 + 4.0). Area below the time axis is a negative change in velocity.",
+                "C": "Reads the graph's value at t = 7.0 s as the velocity. The graph shows acceleration; the velocity comes from the area under it.",
+                "D": "Multiplies the acceleration at t = 7.0 s by 7.0 s, as if the acceleration had been −2.0 m/s^2 the whole time. The acceleration changes, so add the areas piece by piece."
+              },
+              "topics": [
+                "P1.1.3",
+                "P1.1.2"
+              ],
+              "figureIds": [
+                "p1-mixed-1-f1"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc03",
+              "prompt": "A 2.0 kg block rests on a frictionless ramp inclined at 35° above the horizontal. It is held in place by a light spring, with spring constant 150 N/m, that lies parallel to the ramp and is attached to a post at the top of the ramp. How far is the spring stretched from its natural length while the block is at rest?",
+              "choices": [
+                "0.075 m",
+                "0.11 m",
+                "0.13 m",
+                "0.15 m"
+              ],
+              "key": "A",
+              "rationale": "The block is in equilibrium, so balance the forces along the ramp: the spring force kx balances the component of gravity down the slope, mg sin 35°. So x = (2.0)(9.8)(sin 35°)/150 = (11.2 N)/(150 N/m) ≈ 0.075 m. The normal force is perpendicular to the ramp and has no component along it.",
+              "distractorNotes": {
+                "B": "Uses mg cos 35°, the component of gravity perpendicular to the ramp, which the normal force balances. The spring balances the component along the ramp.",
+                "C": "Balances the spring force against the whole weight, x = mg/k, as if the spring hung vertically.",
+                "D": "Sets (1/2)kx^2 = mgx sin 35°, an energy equation. That locates the lowest point of the oscillation the block would make if released from the unstretched position, twice the equilibrium stretch; a block at rest calls for a force balance."
+              },
+              "topics": [
+                "P1.2.8",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc04",
+              "prompt": "A curling stone leaves the thrower's hand at 2.4 m/s and slides in a straight line across level ice, where the coefficient of kinetic friction is 0.015. How long does the stone take to come to rest?",
+              "choices": [
+                "0.24 s",
+                "8.2 s",
+                "16 s",
+                "160 s"
+              ],
+              "key": "C",
+              "rationale": "The only horizontal force is kinetic friction, μ_k mg, so the deceleration is a = μ_k g = (0.015)(9.8) = 0.147 m/s^2, whatever the stone's mass. With constant deceleration, t = v_0/a = 2.4/0.147 ≈ 16 s. Energy gives the stopping distance (about 20 m) but not the time unless it is combined with kinematics.",
+              "distractorNotes": {
+                "A": "Uses g itself as the deceleration, t = v_0/g. Only friction, μ_k mg, acts along the ice, so the deceleration is μ_k g.",
+                "B": "Finds the stopping distance by energy (19.6 m) and divides it by the initial speed, as if the stone kept moving at 2.4 m/s. With uniform deceleration the average speed is half of that, so the time is twice as long.",
+                "D": "Divides the speed by μ_k alone, leaving out g. The deceleration is μ_k g, in m/s^2; 2.4/0.015 is not even a time."
+              },
+              "topics": [
+                "P1.2.7",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc05",
+              "prompt": "In which situation is the mechanical energy of the system made up of the named object and Earth constant? Neglect air resistance.",
+              "choices": [
+                "A rope pulls a crate up a frictionless ramp at constant speed.",
+                "A hockey puck slides across rough ice and slows down.",
+                "A cable lowers an elevator car at constant speed.",
+                "A ball on a string swings back and forth as a pendulum."
+              ],
+              "key": "D",
+              "rationale": "The mechanical energy of an object–Earth system stays constant only when no force from outside the system does work on it and no nonconservative force does work inside it. The string's tension on the pendulum bob is always perpendicular to the bob's velocity, so it does no work; only gravity, which is internal to the system, does work, so K + U_g stays constant.",
+              "distractorNotes": {
+                "A": "The rope is outside the system and does positive work on the crate, so the gravitational potential energy rises while the kinetic energy stays the same.",
+                "B": "Kinetic friction from the ice does negative work on the puck, converting its kinetic energy to internal energy.",
+                "C": "The cable is outside the system and does negative work on the descending car: the gravitational potential energy decreases while the kinetic energy stays the same."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc06",
+              "prompt": "A pendulum bob hangs from a light string 1.0 m long. It is pulled aside until the string makes 60° with the vertical and released from rest. What is the bob's speed when the string makes 30° with the vertical?",
+              "choices": [
+                "1.6 m/s",
+                "2.7 m/s",
+                "3.0 m/s",
+                "4.1 m/s"
+              ],
+              "key": "B",
+              "rationale": "The tension does no work, so the mechanical energy of the bob–Earth system is conserved. The bob's height above its lowest point is L(1 − cos θ), so between the two positions it falls L(cos 30° − cos 60°) = 0.366 m. Then (1/2)v^2 = g(0.366 m) gives v = √(2(9.8)(0.366)) ≈ 2.7 m/s. Constant-acceleration kinematics does not apply, because the bob's acceleration changes in size and direction along the arc.",
+              "distractorNotes": {
+                "A": "Assumes the speed grows in proportion to the angle swung through and takes half of the speed at the bottom (3.1 m/s). The height lost, not the angle, sets the speed.",
+                "C": "Treats the tangential acceleration as constant at its starting value, g sin 60°, along the 0.52 m arc. The tangential acceleration shrinks as the string nears the vertical, so constant-acceleration kinematics overestimates the speed.",
+                "D": "Uses L cos 30° = 0.87 m, the bob's depth below the pivot, as the height fallen. Only the change in height between the two positions counts."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc07",
+              "prompt": "A 1.2 kg toy truck rolls across a level floor and runs into a 0.60 kg toy trailer at rest. A latch locks them together, and the pair then coasts up a ramp, rising 0.20 m above the floor before stopping momentarily. Treating the floor and ramp as frictionless and ignoring the rotation of the wheels, how fast was the truck moving just before it hit the trailer?",
+              "choices": [
+                "2.0 m/s",
+                "2.4 m/s",
+                "3.0 m/s",
+                "5.9 m/s"
+              ],
+              "key": "C",
+              "rationale": "Split the motion at the collision. On the ramp, mechanical energy is conserved, so just after the latch closes the pair moves at V = √(2gh) = √(2(9.8)(0.20)) = 1.98 m/s. During the collision momentum is conserved but kinetic energy is not, because the carts lock together: (1.2)v = (1.8)(1.98), so v ≈ 3.0 m/s.",
+              "distractorNotes": {
+                "A": "This is the pair's speed just after the collision, from the ramp stage alone. The truck had to be moving faster to give the 1.8 kg pair that speed.",
+                "B": "Applies energy conservation from before the collision to the top of the ramp. Kinetic energy is lost when the latch locks the toys together, so energy is conserved only after the collision.",
+                "D": "Uses the trailer's mass instead of the truck's in the momentum equation, (0.60)v = (1.8)(1.98)."
+              },
+              "topics": [
+                "P1.4.4",
+                "P1.3.4"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc08",
+              "prompt": "A 2.0 kg fireworks shell is momentarily at rest at the top of its vertical flight when it bursts into two pieces, of 0.50 kg and 1.5 kg, which fly apart horizontally in opposite directions. The burst gives the pieces a total of 300 J of kinetic energy. What is the speed of the 0.50 kg piece just after the burst?",
+              "choices": [
+                "35 m/s",
+                "30 m/s",
+                "24 m/s",
+                "17 m/s"
+              ],
+              "key": "B",
+              "rationale": "Momentum is conserved during the brief burst (gravity's impulse over that short time is negligible), and the shell starts at rest, so (0.50)v_1 = (1.5)v_2 and v_2 = v_1/3. Energy then fixes the size: (1/2)(0.50)v_1^2 + (1/2)(1.5)(v_1/3)^2 = 300 J, so (1/3)v_1^2 = 300 J/kg and v_1 = 30 m/s (the 1.5 kg piece moves at 10 m/s). Both conservation laws are needed: momentum fixes the ratio of the speeds, and energy fixes their size.",
+              "distractorNotes": {
+                "A": "Gives all 300 J to the light piece. Momentum conservation requires the heavy piece to move too, and it carries a quarter of the energy.",
+                "C": "Splits the energy equally, 150 J each. Equal and opposite momenta give the lighter piece the larger share of the kinetic energy, in the inverse ratio of the masses (3 : 1).",
+                "D": "Treats the whole 2.0 kg shell as one object with 300 J of kinetic energy. The pieces move in opposite directions and must be treated separately."
+              },
+              "topics": [
+                "P1.4.3",
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc09",
+              "prompt": "A uniform rod lies at rest on a level, frictionless air table. At the same instant, two horizontal forces of equal magnitude are applied perpendicular to the rod, one at each end, pointing in opposite directions. Just after the forces are applied, which describes the rod's motion?",
+              "choices": [
+                "It stays at rest, because the net force on it is zero.",
+                "Its center of mass accelerates, and it begins to rotate.",
+                "It begins to rotate about one of its ends.",
+                "Its center of mass stays at rest, and it begins to rotate about its center."
+              ],
+              "key": "D",
+              "rationale": "The forces are equal and opposite, so the net force is zero and the center of mass, which starts at rest, stays at rest. The forces do not act along the same line, though: about the center each exerts a torque F(L/2) in the same sense, so the net torque is FL and the rod gains angular velocity. With no fixed axis, it turns about its center of mass. Equilibrium needs both zero net force and zero net torque.",
+              "distractorNotes": {
+                "A": "Checks only the force balance. Zero net force means the center of mass does not accelerate, but the two forces exert torques in the same sense, so the rod rotates.",
+                "B": "With equal and opposite forces the net force is zero, so the center of mass cannot accelerate.",
+                "C": "Nothing holds either end fixed. A free object with a net torque and no net force on it rotates about its center of mass."
+              },
+              "topics": [
+                "P1.5.6",
+                "P1.2.1",
+                "P1.5.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc10",
+              "prompt": "A uniform 4.0 kg rod 2.0 m long is attached to a wall by a hinge at its left end and held horizontal by a vertical string tied to its right end. A 6.0 kg load hangs from the rod 1.5 m from the hinge. What is the magnitude of the force the hinge exerts on the rod?",
+              "choices": [
+                "34 N",
+                "39 N",
+                "49 N",
+                "64 N"
+              ],
+              "key": "A",
+              "rationale": "Taking torques about the hinge removes the unknown hinge force: T(2.0 m) = (4.0)(9.8)(1.0 m) + (6.0)(9.8)(1.5 m), so T = 63.7 N. The vertical force balance then gives the hinge force: F = (10.0)(9.8) − 63.7 = 34.3 N ≈ 34 N, upward. All the forces are vertical, so the hinge exerts no horizontal force.",
+              "distractorNotes": {
+                "B": "Assigns the rod's weight to the hinge and the load's weight to the string. How the 98 N is shared depends on where each weight acts, which takes a torque balance.",
+                "C": "Splits the total weight equally between the hinge and the string, which is true only when the combined center of mass is at the rod's midpoint.",
+                "D": "This is the string's tension from the torque balance; the hinge supplies the rest of the 98 N."
+              },
+              "topics": [
+                "P1.5.5",
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc11",
+              "prompt": "A door with a rotational inertia of 1.5 kg·m^2 about its hinges is at rest. A 0.20 kg lump of putty moving horizontally at 5.0 m/s, perpendicular to the door, hits it 0.75 m from the hinge line and sticks. What is the door's angular speed just afterward?",
+              "choices": [
+                "0.47 rad/s",
+                "0.62 rad/s",
+                "1.8 rad/s",
+                "6.7 rad/s"
+              ],
+              "key": "A",
+              "rationale": "The hinges push on the door during the impact, so linear momentum is not conserved, and the putty sticks, so kinetic energy is not conserved. The hinge force exerts no torque about the hinge line, so angular momentum about that line is conserved: mvr = (I + mr^2)ω. (0.20)(5.0)(0.75) = (1.5 + (0.20)(0.75)^2)ω, so ω = 0.75/1.6125 ≈ 0.47 rad/s.",
+              "distractorNotes": {
+                "B": "Writes the putty's angular momentum as mv, leaving out the lever arm r = 0.75 m. Angular momentum about the hinge line is mvr.",
+                "C": "Conserves kinetic energy, (1/2)mv^2 = (1/2)(I + mr^2)ω^2. When colliding objects stick together, kinetic energy decreases.",
+                "D": "Sets ω = v/r, as if the door's edge picked up the putty's full speed. The door has far more rotational inertia, so it turns much more slowly."
+              },
+              "topics": [
+                "P1.6.4",
+                "P1.6.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc12",
+              "prompt": "A small engine is started by pulling a cord wound around a pulley of radius 0.040 m on the engine's flywheel. The flywheel and pulley, starting from rest, have a combined rotational inertia of 0.020 kg·m^2 and turn without friction. The cord is pulled with a constant 60 N force, tangent to the pulley, until 0.80 m of cord has unwound. What is the flywheel's angular speed then?",
+              "choices": [
+                "14 rad/s",
+                "28 rad/s",
+                "49 rad/s",
+                "69 rad/s"
+              ],
+              "key": "D",
+              "rationale": "The work done by the torque equals the change in rotational kinetic energy. The work is τθ = (Fr)(d/r) = Fd = (60)(0.80) = 48 J, so (1/2)(0.020)ω^2 = 48 J and ω = √4800 ≈ 69 rad/s. No time is given, so the work–energy route is the direct one.",
+              "distractorNotes": {
+                "A": "Uses the 0.80 m of cord as the angle in radians, so the work is (60)(0.040)(0.80) = 1.9 J. The angle turned is d/r = 20 rad.",
+                "B": "Converts the cord length to revolutions, d/(2πr) = 3.2 rev, and multiplies the torque by that number. In W = τθ the angle must be in radians.",
+                "C": "Sets the work equal to Iω^2, leaving out the 1/2 in rotational kinetic energy."
+              },
+              "topics": [
+                "P1.6.2",
+                "P1.6.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc13",
+              "prompt": "A 0.25 kg block is attached to the lower end of a light vertical spring with spring constant 70 N/m. The block is held so that the spring is at its natural length and then released from rest. How far does the block fall before it first comes momentarily to rest?",
+              "choices": [
+                "0.018 m",
+                "0.035 m",
+                "0.070 m",
+                "0.26 m"
+              ],
+              "key": "C",
+              "rationale": "At the lowest point the block is momentarily at rest, as it was at release, so the gravitational potential energy lost equals the elastic energy stored: mgd = (1/2)kd^2, and d = 2mg/k = 2(0.25)(9.8)/70 = 0.070 m. The block oscillates about the equilibrium position mg/k = 0.035 m with an amplitude of 0.035 m, so its lowest point is twice the equilibrium stretch.",
+              "distractorNotes": {
+                "A": "Puts the factor 1/2 on the gravitational side, (1/2)mgd = kd^2. The elastic energy is (1/2)kd^2 and the gravitational energy lost is mgd.",
+                "B": "This is the equilibrium stretch, where the spring force balances the weight. The block passes through it at its greatest speed and keeps going; a force balance finds where the block could stay at rest, not where it turns around.",
+                "D": "Sets mg = (1/2)kd^2, dropping the distance d from the gravitational energy. The gravitational potential energy lost is mgd."
+              },
+              "topics": [
+                "P1.7.4",
+                "P1.3.3",
+                "P1.2.8"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc14",
+              "prompt": "A 0.90 kg wooden block floats at rest in fresh water with 40% of its volume above the surface. What is the magnitude of the buoyant force on the block?",
+              "choices": [
+                "15 N",
+                "8.8 N",
+                "5.3 N",
+                "3.5 N"
+              ],
+              "key": "B",
+              "rationale": "The block floats at rest, so the forces on it balance: the buoyant force equals its weight, mg = (0.90)(9.8) ≈ 8.8 N. The 40% figure is not needed for the force; it gives the block's density, 600 kg/m^3.",
+              "distractorNotes": {
+                "A": "Computes ρ_water gV for the whole block (V = 1.5 × 10^−3 m^3). Only the submerged 60% displaces water, and the weight of that water equals the block's weight.",
+                "C": "Multiplies the weight by the submerged fraction. The buoyant force is the weight of the displaced water, which for a floating block equals the block's whole weight.",
+                "D": "Multiplies the weight by the fraction above the surface; the part above the water displaces none."
+              },
+              "topics": [
+                "P1.8.3",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-1-mc15",
+              "prompt": "A closed vertical cylinder is completely filled with water and sealed at its top by a light, movable piston of area 0.020 m^2. The air above the piston is at atmospheric pressure, and a hand pushes down on the piston with a 300 N force. By how much does the water pressure at a point 0.50 m below the piston exceed atmospheric pressure?",
+              "choices": [
+                "2.0 × 10^4 Pa",
+                "1.5 × 10^4 Pa",
+                "1.0 × 10^4 Pa",
+                "4.9 × 10^3 Pa"
+              ],
+              "key": "A",
+              "rationale": "Just under the piston the pressure is P_atm + F/A = P_atm + 300/0.020 = P_atm + 1.5 × 10^4 Pa. A pressure applied to an enclosed fluid is transmitted to every point in it, and depth adds ρgh = (1000)(9.8)(0.50) = 4.9 × 10^3 Pa. So the pressure exceeds atmospheric by 1.5 × 10^4 + 4.9 × 10^3 ≈ 2.0 × 10^4 Pa.",
+              "distractorNotes": {
+                "B": "Counts only the piston's pressure, F/A. The water 0.50 m down also supports the weight of the water above it.",
+                "C": "Subtracts ρgh from F/A, as if pressure decreased with depth; it increases.",
+                "D": "Counts only the depth term ρgh. The extra pressure from the piston is transmitted undiminished throughout the enclosed water."
+              },
+              "topics": [
+                "P1.8.2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

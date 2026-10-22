@@ -1,0 +1,551 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "review-u5",
+  "kind": "unit-review",
+  "unitId": "u5",
+  "title": "Unit 5 review: Torque and Rotational Dynamics",
+  "author": "p1-review-5-6-author",
+  "summary": "A retrieval-first review of Unit 5 for the AP® Physics 1 Exam: rotational kinematics and its link to the motion of points, torque and lever arms, rotational inertia and the parallel-axis theorem, rotational equilibrium, and Newton's second law in rotational form for wheels, pulleys and connected blocks. Answer six recall checks and five mixed problems before you read the summary of results with their conditions, then use the model explanations, traps and three worked examples to repair what you missed.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "p1-review-u5-g1",
+      "alt": "A uniform boom leans away from a vertical wall. Its lower end is attached by a hinge to the ground at the foot of the wall, and it makes a 50° angle with the ground. A horizontal cable runs from the boom's upper end to the wall. A crate hangs by a string from the boom's upper end. A dimension line beside the boom shows that it is 3.0 m long."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question on paper, from memory, before you open its answer. State each relation with the conditions under which it holds. A blank or a wrong answer is useful: its answer names the section further down to reread."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c1",
+          "see": "what-to-know",
+          "prompt": "Write the four relations for rotation with constant angular acceleration. What condition must hold for them to apply, and what do the slope of and the area under a graph of ω against t tell you?",
+          "answer": "ω = ω_0 + αt, Δθ = ω_0t + (1/2)αt^2, ω^2 = ω_0^2 + 2αΔθ and Δθ = (1/2)(ω_0 + ω)t. They hold only while α is constant, with every angular quantity measured about the same fixed axis and signed by one stated positive sense. On a graph of ω against t, the slope is α and the signed area between the graph and the time axis is Δθ.",
+          "steps": [
+            "These are the constant-acceleration motion relations with θ, ω and α in place of x, v and a.",
+            "If α changes, split the motion into stages of constant α, or work from the graph: its area gives Δθ whether or not α is constant.",
+            "Angles must be in radians whenever they feed into s = rθ or v = rω. Inside the kinematics relations alone, revolutions also work, provided every angle and rate uses them.",
+            "The object speeds up when ω and α have the same sign and slows down when their signs differ; a negative α alone does not mean slowing down."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c2",
+          "see": "what-to-know",
+          "prompt": "A rigid wheel turns about a fixed axle. For a point a distance r from the axle, write the relations that give its arc length, speed, tangential acceleration and centripetal acceleration from the wheel's angular quantities. Which quantities do all points of the wheel share, and what do two wheels joined by a belt that does not slip share?",
+          "answer": "s = rΔθ, v = rω, a_t = rα and a_c = ω^2r = v^2/r, with angles in radians. Every point of the wheel has the same Δθ, ω and α. Two wheels joined by a belt that does not slip share the belt's speed, so their rim speeds are equal: r_1ω_1 = r_2ω_2.",
+          "steps": [
+            "The relations need radians, because an angle in radians is an arc length divided by a radius.",
+            "Points farther from the axle move faster and have larger tangential and centripetal accelerations, but the same ω and α.",
+            "a_c is present whenever the point moves, even at constant ω; a_t is present only while ω changes.",
+            "A string unwinding from a drum without slipping moves at the drum's rim speed, so a block hanging from it has acceleration a = rα."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c3",
+          "see": "what-to-know",
+          "prompt": "Write the torque of a force about an axis in two equivalent forms, and say what each distance and angle means. Name two ways in which a nonzero force can exert zero torque about the axis.",
+          "answer": "τ = r⊥F, where the lever arm r⊥ is the perpendicular distance from the axis to the force's line of action; equivalently τ = rF sin θ, where r is the distance from the axis to the point where the force acts and θ is the angle between the line from the axis to that point and the force. The torque is zero when the force acts at the axis (r = 0) or along the line through the axis (θ = 0° or 180°): in both cases the line of action passes through the axis.",
+          "steps": [
+            "r⊥ = r sin θ, so the two forms always agree.",
+            "The sign of a torque is the sense in which that force alone would turn the object: counterclockwise is positive in this course unless a question says otherwise.",
+            "The size of the force alone does not decide the torque: a smaller force with a longer lever arm can exert more.",
+            "The net torque about one axis is the signed sum of the individual torques about that same axis."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c4",
+          "see": "what-to-know",
+          "prompt": "Write the rotational inertia of a set of point masses about an axis. Give the rotational inertia of a thin hoop and of a solid disk about their central axes, and of a uniform rod about a perpendicular axis through its center and through one end. State the parallel-axis theorem with its conditions.",
+          "answer": "I = Σmr^2, with each r measured from the axis. Hoop: MR^2. Solid disk or cylinder: (1/2)MR^2. Uniform rod: (1/12)ML^2 about its center and (1/3)ML^2 about one end. Parallel-axis theorem: I = I_cm + Md^2, where I_cm is about an axis through the center of mass and d is the distance from that axis to a parallel axis.",
+          "steps": [
+            "Rotational inertia belongs to an object and an axis together: the same rod has (1/12)ML^2 about its center and (1/3)ML^2 about an end.",
+            "Each piece of mass counts with the square of its distance from the axis, so moving mass outward raises I quickly.",
+            "The theorem always starts from the center-of-mass axis. Check: (1/12)ML^2 + M(L/2)^2 = (1/3)ML^2.",
+            "Of all parallel axes, the one through the center of mass gives the smallest I. A uniform solid sphere about a diameter has (2/5)MR^2."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c5",
+          "see": "what-to-know",
+          "prompt": "State the two conditions for an extended object to be in equilibrium. What does the second condition say about an object that is already turning? Once the first condition holds, why may you take torques about any point you choose?",
+          "answer": "The net force on the object is zero, and the net torque on it is zero. With zero net torque the angular velocity does not change: an object at rest stays at rest, and a turning object keeps turning at constant ω (Newton's first law in rotational form). When the net force is zero, the net torque has the same value about every point, so a zero net torque about one point means a zero net torque about all of them.",
+          "steps": [
+            "Both conditions are needed: a couple, two equal and opposite forces along different lines, has zero net force but a nonzero net torque.",
+            "Choose the point where an unknown force acts, so that force drops out of the torque equation.",
+            "Steady rotation counts: a wheel turning at constant ω has zero net torque, even while a motor pushes on it.",
+            "Check an answer by summing torques about a second point."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c6",
+          "see": "what-to-know",
+          "prompt": "State Newton's second law in rotational form with its conditions. For a string that passes over a pulley with rotational inertia without slipping, how do the tensions on the two sides compare while the pulley's angular velocity is changing, and how is the string's acceleration linked to the pulley?",
+          "answer": "τ_net = Iα, with τ_net and I both taken about the same axis (a fixed axis, or one through the center of mass) and α in rad/s^2; α has the sense of the net torque. The tensions on the two sides differ, (T_1 − T_2)R = Iα, so the side that pulls in the sense of α has the larger tension. The string's acceleration equals the rim's tangential acceleration, a = Rα.",
+          "steps": [
+            "Write F_net = ma for each block, from a free-body diagram, and τ_net = Iα for each wheel, from an extended force diagram; link them with a = Rα.",
+            "Choose the positive sense of rotation to match each block's positive direction of motion, so that the signs agree.",
+            "The tensions are equal only for a pulley with negligible rotational inertia, or one turning at constant ω.",
+            "For a uniform disk pulley, I/R^2 = M/2, so the pulley acts like an extra mass M/2 in the system's acceleration."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level. Use g = 9.8 m/s^2 and take counterclockwise as positive unless a problem says otherwise. Decide which principle applies before you read a hint."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c7",
+          "see": "worked-examples",
+          "prompt": "A block hangs from a light string wound around a pulley of radius 0.050 m that turns on a fixed horizontal axle. The block is released from rest, and the string does not slip on the pulley. A paint mark on the pulley's rim shows that the pulley turns through 6.0 revolutions in the first 2.5 s, with constant angular acceleration.\n\n(a) Find the pulley's angular acceleration and the block's acceleration.\n\n(b) Find the block's speed and the distance it has fallen at t = 2.5 s.\n\n(c) At t = 2.5 s, find the tangential and centripetal accelerations of the paint mark, and describe the direction of its total acceleration.",
+          "hint": "Put the angle in radians first. The pulley starts from rest, so one relation connects the angle, the time and α directly.",
+          "answer": "(a) α ≈ 12 rad/s^2 (12.1 rad/s^2); a ≈ 0.60 m/s^2 (b) 1.5 m/s; 1.9 m (c) a_t ≈ 0.60 m/s^2 along the mark's velocity and a_c ≈ 45 m/s^2 toward the axle, so the total acceleration points almost straight at the axle, tilted less than 1° forward.",
+          "steps": [
+            "(a) Δθ = (6.0 rev)(2π rad/rev) = 37.7 rad. From rest, Δθ = (1/2)αt^2, so α = 2Δθ/t^2 = 2(37.7 rad)/(2.5 s)^2 = 12.1 rad/s^2.",
+            "The string moves with the rim, so a = rα = (0.050 m)(12.1 rad/s^2) = 0.60 m/s^2.",
+            "(b) ω = αt = (12.1 rad/s^2)(2.5 s) = 30.2 rad/s, so v = rω = (0.050 m)(30.2 rad/s) = 1.5 m/s.",
+            "The block falls the length of string unwound: d = rΔθ = (0.050 m)(37.7 rad) = 1.9 m. Check: (1/2)at^2 = (1/2)(0.603 m/s^2)(2.5 s)^2 = 1.9 m.",
+            "(c) a_t = rα = 0.60 m/s^2, tangent to the rim in the direction of motion, because the pulley is speeding up.",
+            "a_c = ω^2r = (30.2 rad/s)^2(0.050 m) = 45 m/s^2, toward the axle.",
+            "a_c is about 75 times a_t, so the total acceleration, about 45 m/s^2, points almost directly at the axle, tilted forward by tan^−1(0.60/45) ≈ 0.8°."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c8",
+          "see": "worked-examples",
+          "figureIds": [
+            "p1-review-u5-g1"
+          ],
+          "prompt": "The figure shows a uniform boom 3.0 m long with a mass of 30 kg. Its lower end is attached by a hinge to the ground at the foot of a vertical wall, and the boom leans away from the wall at 50° above the horizontal. A horizontal cable runs from the boom's upper end to the wall. A 20 kg crate hangs from the boom's upper end. Everything is at rest.\n\n(a) Find the tension in the cable.\n\n(b) Find the horizontal and vertical components of the force that the hinge exerts on the boom, with their directions.\n\n(c) A student says, \"The hinge force must point along the boom, because the boom is attached to the ground there.\" Use your results to evaluate the claim.",
+          "hint": "Draw an extended force diagram first, with every force at the point where it acts. Then look for a point about which the unknowns you do not want yet have no torque.",
+          "answer": "(a) T ≈ 290 N (288 N) (b) Horizontal: about 290 N (288 N), away from the wall; vertical: 490 N, upward (c) The claim is wrong: the hinge force points about 60° above the horizontal, steeper than the boom's 50°, because the boom's own weight acts at its middle.",
+          "steps": [
+            "Forces on the boom: the hinge force, with unknown components, at the lower end; the boom's weight, (30 kg)(9.8 m/s^2) = 294 N, down at its center, 1.5 m along the boom; the cable tension T, horizontal and toward the wall, at the upper end; and the pull of the crate's string, equal to the crate's weight, (20 kg)(9.8 m/s^2) = 196 N, down at the upper end.",
+            "(a) Take torques about the hinge, where both unknown hinge components act and so have zero torque. The weights act along vertical lines, so their lever arms are horizontal distances from the hinge: (1.5 m)cos 50° = 0.964 m for the boom's weight and (3.0 m)cos 50° = 1.93 m for the crate. The cable is horizontal, so its lever arm is the height of the upper end, (3.0 m)sin 50° = 2.30 m.",
+            "With the wall on the left and counterclockwise positive: Στ = T(2.30 m) − (294 N)(0.964 m) − (196 N)(1.93 m) = 0, so T = (283 N·m + 378 N·m)/(2.30 m) = 288 N ≈ 290 N.",
+            "(b) Horizontal: the cable pulls the boom toward the wall with 288 N, so the hinge pushes the boom away from the wall with 288 N.",
+            "Vertical: the cable has no vertical component, so H_y − 294 N − 196 N = 0 and H_y = 490 N: the hinge pushes the boom up with 490 N.",
+            "Check with torques about the upper end, where the cable and the crate act: the hinge's 490 N upward push, 1.93 m to the left, gives −945 N·m; its 288 N push away from the wall, 2.30 m below, gives +662 N·m; and the boom's weight, 0.964 m to the left, gives +283 N·m. The sum is zero.",
+            "(c) The hinge force points tan^−1(490/288) ≈ 60° above the horizontal, away from the wall, while the boom is at 50°, so the force does not point along the boom. The boom's own weight acts at its middle, away from both ends, and this is what tips the hinge force off the boom's line.",
+            "Check: if the boom were light, only the cable and the crate would act at the top, T would be 196 N/tan 50° = 164 N, and the hinge force would point tan^−1(196/164) = 50° above the horizontal, along the boom. Being attached at a hinge does not by itself fix the force's direction."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c9",
+          "see": "what-to-know",
+          "prompt": "A revolving door turns about a vertical axle. A shopper pushes on it with a horizontal 30 N force, perpendicular to a door panel and 1.2 m from the axle, and the door turns at a steady 0.90 rad/s. When she lets go, the door slows uniformly and stops 6.0 s later. The friction torque at the axle has the same size whether or not she pushes.\n\n(a) Find the friction torque on the door.\n\n(b) Find the door's rotational inertia about its axle.\n\n(c) Through how many revolutions does the door turn after she lets go?",
+          "hint": "For each stage, ask first whether the door's angular velocity is changing.",
+          "answer": "(a) 36 N·m, opposing the rotation (b) 240 kg·m^2 (c) 2.7 rad, about 0.43 revolution",
+          "steps": [
+            "(a) While she pushes, ω is constant, so α = 0 and the net torque on the door is zero (Newton's first law in rotational form). Take the door's sense of rotation as positive.",
+            "Her torque is r⊥F = (1.2 m)(30 N) = +36 N·m. Στ = 36 N·m + τ_f = 0, so τ_f = −36 N·m: 36 N·m opposing the rotation.",
+            "(b) After she lets go, friction is the only torque and ω changes, so now τ_net = Iα applies.",
+            "α = (0 − 0.90 rad/s)/(6.0 s) = −0.15 rad/s^2.",
+            "I = τ_net/α = (−36 N·m)/(−0.15 rad/s^2) = 240 kg·m^2.",
+            "(c) Δθ = (1/2)(ω_0 + ω)t = (1/2)(0.90 rad/s + 0)(6.0 s) = 2.7 rad, and 2.7 rad/(2π rad/rev) ≈ 0.43 revolution.",
+            "A common error is to set her 36 N·m equal to Iα while she pushes. The door is not speeding up then, so the net torque is zero, not her torque."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c10",
+          "see": "what-to-know",
+          "prompt": "A wheel made of two drums fixed together turns on a frictionless horizontal axle; its rotational inertia is 0.12 kg·m^2. A string wound around the outer drum, of radius 0.20 m, hangs from the left side of the wheel and holds a 4.0 kg block. A second string, wound in the opposite sense around the inner drum, of radius 0.10 m, hangs from the right side and holds a 6.0 kg block. The strings do not slip, and the system is released from rest.\n\n(a) Without calculating any acceleration, determine which block moves down. Justify your answer.\n\n(b) Find the wheel's angular acceleration and the acceleration of each block.\n\n(c) Find the tension in each string.",
+          "hint": "Suppose for a moment that the wheel did not turn. What would each tension be, and what net torque would act?",
+          "answer": "(a) The 4.0 kg block moves down. (b) α ≈ 5.8 rad/s^2, counterclockwise; the 4.0 kg block accelerates down at 1.2 m/s^2 and the 6.0 kg block up at 0.58 m/s^2 (c) About 35 N in the 4.0 kg block's string and 62 N in the 6.0 kg block's string",
+          "steps": [
+            "(a) If the wheel stayed at rest, each tension would equal its block's weight. The left string would then exert a counterclockwise torque of (4.0 kg)(9.8 m/s^2)(0.20 m) = 7.84 N·m and the right string a clockwise torque of (6.0 kg)(9.8 m/s^2)(0.10 m) = 5.88 N·m.",
+            "That net torque, +1.96 N·m, is not zero, so the wheel cannot stay at rest; it starts turning counterclockwise, which lowers the 4.0 kg block on the left and raises the 6.0 kg block. The lighter block wins because its string has twice the lever arm.",
+            "(b) Take counterclockwise as positive for the wheel, down as positive for the 4.0 kg block and up as positive for the 6.0 kg block. The strings give a_1 = (0.20 m)α and a_2 = (0.10 m)α.",
+            "4.0 kg block: m_1g − T_1 = m_1a_1. 6.0 kg block: T_2 − m_2g = m_2a_2. Wheel: T_1(0.20 m) − T_2(0.10 m) = Iα.",
+            "Substituting the tensions into the wheel's equation: m_1gR − m_2gr = (I + m_1R^2 + m_2r^2)α, so α = (7.84 − 5.88) N·m/((0.12 + 0.16 + 0.06) kg·m^2) = 1.96/0.34 = 5.8 rad/s^2.",
+            "a_1 = (0.20 m)(5.76 rad/s^2) = 1.2 m/s^2 downward; a_2 = (0.10 m)(5.76 rad/s^2) = 0.58 m/s^2 upward.",
+            "(c) T_1 = m_1(g − a_1) = (4.0 kg)(9.8 − 1.15) m/s^2 = 35 N. T_2 = m_2(g + a_2) = (6.0 kg)(9.8 + 0.58) m/s^2 = 62 N.",
+            "Check: T_1R − T_2r = (34.6 N)(0.20 m) − (62.3 N)(0.10 m) = 0.69 N·m, and Iα = (0.12 kg·m^2)(5.76 rad/s^2) = 0.69 N·m."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u5-c11",
+          "see": "what-to-know",
+          "prompt": "A uniform rod 0.60 m long with a mass of 0.40 kg turns in a horizontal plane about a vertical axle through its center. Two small 0.50 kg collars, one on each side of the axle, can be clamped at any distance along the rod. A motor applies the same constant 0.30 N·m torque in two trials that start from rest: in trial 1 both collars are 0.10 m from the axle, and in trial 2 both are 0.30 m from it. Ignore friction.\n\n(a) A student predicts, \"The collars are three times as far out, so the angular acceleration in trial 2 is one ninth of that in trial 1.\" Calculate both angular accelerations and evaluate the prediction.\n\n(b) In which trial does the rod take longer to reach 3.0 rad/s, and how many times as long?",
+          "answer": "(a) Trial 1: I = 0.022 kg·m^2 and α ≈ 14 rad/s^2; trial 2: I = 0.102 kg·m^2 and α ≈ 2.9 rad/s^2. The ratio is about 0.22, not 1/9: the rod's own rotational inertia does not change when the collars move. (b) Trial 2, about 4.6 times as long (1.0 s against 0.22 s)",
+          "steps": [
+            "Rod about its center: (1/12)ML^2 = (1/12)(0.40 kg)(0.60 m)^2 = 0.012 kg·m^2.",
+            "Trial 1: I_1 = 0.012 + 2(0.50 kg)(0.10 m)^2 = 0.012 + 0.010 = 0.022 kg·m^2, so α_1 = τ/I_1 = (0.30 N·m)/(0.022 kg·m^2) = 13.6 rad/s^2.",
+            "Trial 2: I_2 = 0.012 + 2(0.50 kg)(0.30 m)^2 = 0.012 + 0.090 = 0.102 kg·m^2, so α_2 = (0.30 N·m)/(0.102 kg·m^2) = 2.94 rad/s^2.",
+            "α_2/α_1 = I_1/I_2 = 0.022/0.102 ≈ 0.22, not 1/9 ≈ 0.11. The collars' share of I grows by a factor of 9, because I depends on r^2, but the rod's 0.012 kg·m^2 stays the same, so the total grows by a factor of only about 4.6.",
+            "The prediction would hold only if the collars made up all of the rotational inertia.",
+            "(b) From rest, t = ω/α: trial 1, (3.0 rad/s)/(13.6 rad/s^2) = 0.22 s; trial 2, (3.0 rad/s)/(2.94 rad/s^2) = 1.02 s. Trial 2 takes about 4.6 times as long."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Angular quantities",
+          "text": "Angular position θ, angular displacement Δθ = θ_f − θ_i, angular velocity ω = Δθ/Δt and angular acceleration α = Δω/Δt describe the rotation of a whole rigid object about a fixed axis. One revolution is 2π rad.",
+          "conditions": [
+            "State a positive sense of rotation (counterclockwise as seen from a stated side, unless a question says otherwise) and give every angular quantity its sign.",
+            "Convert a rate in rpm to rad/s by multiplying by 2π rad per revolution and dividing by 60 s per minute.",
+            "On a graph of ω against t, the slope is α and the signed area is Δθ, whether or not α is constant."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Constant angular acceleration",
+          "text": "ω = ω_0 + αt, Δθ = ω_0t + (1/2)αt^2, ω^2 = ω_0^2 + 2αΔθ and Δθ = (1/2)(ω_0 + ω)t.",
+          "conditions": [
+            "α must be constant over the whole interval. When it changes, split the motion into stages and carry ω from the end of one stage into the next.",
+            "Choose the relation that leaves out the one quantity you neither know nor want.",
+            "A torque that changes as the object turns, such as the weight of a swinging rod, gives a changing α; then these relations do not apply."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Linking rotation to the motion of points",
+          "text": "A point a distance r from the axis moves s = rΔθ along its circle, with speed v = rω, tangential acceleration a_t = rα and centripetal acceleration a_c = ω^2r = v^2/r toward the axis.",
+          "conditions": [
+            "Angles in radians, angular velocities in rad/s and angular accelerations in rad/s^2.",
+            "A rope, string or belt that does not slip moves with the rim it touches: a = rα for a block on a string wound on a drum, and r_1ω_1 = r_2ω_2 for wheels joined by a belt.",
+            "a_c is nonzero whenever the point moves; a_t is nonzero only while ω changes. The total acceleration of the point combines both."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Torque",
+          "text": "τ = r⊥F = rF sin θ about a chosen axis. The sign of each torque is the sense in which that force alone would turn the object, and the net torque is the signed sum.",
+          "conditions": [
+            "r runs from the axis to the point where the force acts, and θ is the angle between that line and the force; r⊥ is the perpendicular distance from the axis to the force's line of action.",
+            "A force whose line of action passes through the axis exerts no torque about it.",
+            "The weight of an object acts at its center of mass, which is the geometric center of a uniform object.",
+            "Draw an extended force diagram, with each force at its point of application; a dot free-body diagram cannot show torques."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Rotational inertia",
+          "text": "I = Σmr^2 for point masses, with r measured from the axis. Uniform shapes: thin hoop MR^2 and solid disk or cylinder (1/2)MR^2 about the central axis; solid sphere (2/5)MR^2 about a diameter; rod (1/12)ML^2 about a perpendicular axis through its center and (1/3)ML^2 about one through an end. For a composite object, add the parts' rotational inertias about the same axis.",
+          "conditions": [
+            "I depends on the axis as well as on the object.",
+            "Mass far from the axis counts much more than mass near it, because of the r^2.",
+            "Unit: kg·m^2."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Parallel-axis theorem",
+          "text": "I = I_cm + Md^2, where I_cm is the rotational inertia about an axis through the center of mass and d is the distance from that axis to a parallel axis.",
+          "conditions": [
+            "The starting axis must pass through the center of mass, and the two axes must be parallel.",
+            "To move from one off-center axis to another, go back to the center-of-mass axis first.",
+            "The axis through the center of mass gives the smallest I of all axes parallel to it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Equilibrium of an extended object",
+          "text": "ΣF = 0 and Στ = 0. With zero net torque, ω stays constant: an object at rest stays at rest and a turning object keeps turning at the same rate (Newton's first law in rotational form).",
+          "conditions": [
+            "Both conditions are needed. A couple has ΣF = 0 but Στ ≠ 0.",
+            "When ΣF = 0, a zero net torque about one point means a zero net torque about every point, so take torques about the point where an unknown force acts.",
+            "A simple support can only push. If a calculation gives it a pull, the object cannot be in equilibrium in that arrangement: it tips."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Newton's second law in rotational form",
+          "text": "τ_net = Iα, with τ_net and I about the same axis; α has the sense of the net torque.",
+          "conditions": [
+            "The axis is fixed, or passes through the center of mass.",
+            "For connected objects, write F_net = ma for each one that translates and τ_net = Iα for each one that rotates, linked by a = rα wherever a string does not slip, with positive directions that agree.",
+            "A pulley with rotational inertia has different tensions on its two sides whenever α ≠ 0: (T_1 − T_2)R = Iα.",
+            "The relation holds at each instant, so it gives α even when the torque is changing; the constant-α relations do not."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Translation and rotation side by side",
+          "head": [
+            "Translation",
+            "Rotation about a fixed axis",
+            "Link for a point at radius r"
+          ],
+          "rows": [
+            [
+              "Position x (m)",
+              "Angle θ (rad)",
+              "s = rθ"
+            ],
+            [
+              "Velocity v (m/s)",
+              "Angular velocity ω (rad/s)",
+              "v = rω"
+            ],
+            [
+              "Acceleration a (m/s^2)",
+              "Angular acceleration α (rad/s^2)",
+              "a_t = rα"
+            ],
+            [
+              "Mass m (kg)",
+              "Rotational inertia I (kg·m^2)",
+              "I = Σmr^2"
+            ],
+            [
+              "Force F (N)",
+              "Torque τ (N·m)",
+              "τ = r⊥F"
+            ],
+            [
+              "ΣF = ma",
+              "Στ = Iα",
+              "a = rα for a string that does not slip"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing where to start in Unit 5",
+          "head": [
+            "The question gives or asks for",
+            "Start with"
+          ],
+          "rows": [
+            [
+              "Angles, angular velocities and times, with constant α",
+              "The constant-α relations, or the slope and area of the ω–t graph"
+            ],
+            [
+              "Speeds or accelerations of points, belts or strings",
+              "s = rθ, v = rω, a_t = rα and a_c = ω^2r"
+            ],
+            [
+              "An object at rest, or turning at constant ω",
+              "ΣF = 0 and Στ = 0, with torques about the point where an unknown force acts"
+            ],
+            [
+              "An object whose ω is changing, with forces or torques",
+              "τ_net = Iα, plus F_net = ma for any connected blocks"
+            ],
+            [
+              "A torque that changes as the object turns",
+              "τ_net = Iα at the instant asked about only"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A complete explanation names the object and the axis, gives the forces or torques with their senses, and names the law it relies on. Write it like these."
+        },
+        {
+          "type": "model",
+          "prompt": "Why a wheel turning at a steady rate has zero net torque, even though a motor pushes on it.",
+          "text": "The wheel's angular velocity is constant, so its angular acceleration is zero. By τ_net = Iα, the net torque on it is zero: the motor's torque in the sense of rotation is balanced by an equal friction torque opposing the rotation."
+        },
+        {
+          "type": "model",
+          "prompt": "Why the tensions on the two sides of a pulley with mass differ when the blocks accelerate.",
+          "text": "The pulley has rotational inertia and its angular velocity is changing, so a net torque must act on it: (T_1 − T_2)R = Iα, which is not zero. The tension on the side that pulls in the sense of the angular acceleration must therefore be larger than the tension on the other side."
+        },
+        {
+          "type": "model",
+          "prompt": "Choosing the axis in an equilibrium problem with a hinge and a cable.",
+          "text": "Take torques about the hinge. The hinge force acts at that point, so it has zero lever arm and no torque, and the torque equation contains only the cable tension and the known weights."
+        },
+        {
+          "type": "model",
+          "prompt": "Comparing the angular accelerations of a thin hoop and a solid disk of the same mass and radius under equal torques.",
+          "text": "The hoop's mass is all at the rim, while much of the disk's mass is close to the axis. Since I = Σmr^2 weights each piece of mass by the square of its distance from the axis, the hoop has the larger rotational inertia, so by α = τ_net/I it has the smaller angular acceleration."
+        },
+        {
+          "type": "model",
+          "prompt": "A torque sum with its sign convention stated.",
+          "text": "Take counterclockwise as positive. The 40 N force, perpendicular to the bar 0.50 m from the pivot, tends to turn the bar counterclockwise: +20 N·m. The bar's 29.4 N weight acts 0.80 m from the pivot on the other side and tends to turn it clockwise: −23.5 N·m. The net torque is −3.5 N·m, so the bar starts to turn clockwise."
+        },
+        {
+          "type": "trap",
+          "text": "Using revolutions or degrees in s = rθ, v = rω or a_t = rα.",
+          "fix": "Convert to radians first: 1 rev = 2π rad. Revolutions may stay inside the kinematics relations only if every angle and rate uses them."
+        },
+        {
+          "type": "trap",
+          "text": "Saying that a point near the rim has a larger angular velocity than a point near the axis.",
+          "fix": "All points of a rigid object share ω and α. A point near the rim has a larger speed, v = rω, and larger accelerations."
+        },
+        {
+          "type": "trap",
+          "text": "Multiplying a force by the distance along the object when the force is not perpendicular to it.",
+          "fix": "Use the lever arm r⊥, or rF sin θ with θ the angle between r and F. Draw the line of action and measure the perpendicular distance from the axis to it."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving the object's own weight out of an equilibrium or torque equation.",
+          "fix": "Draw the weight at the center of mass on the extended force diagram before writing any equation."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming that a hinge force points along the beam or boom it holds.",
+          "fix": "Give the hinge force two unknown components and solve for both. A component that comes out negative simply points the other way."
+        },
+        {
+          "type": "trap",
+          "text": "Setting the string tension equal to the hanging block's weight while the block accelerates.",
+          "fix": "Write F_net = ma for the block: T = m(g − a) for a block accelerating downward, and T = m(g + a) for one accelerating upward."
+        },
+        {
+          "type": "trap",
+          "text": "Giving a pulley with mass the same tension on both sides.",
+          "fix": "Write τ_net = Iα for the pulley: (T_1 − T_2)R = Iα. Equal tensions need a pulley of negligible rotational inertia or a constant ω."
+        },
+        {
+          "type": "trap",
+          "text": "Using I about one axis with torques about another, or applying I = I_cm + Md^2 from an axis that does not pass through the center of mass.",
+          "fix": "Fix one axis for the whole problem. The parallel-axis theorem always starts from the center-of-mass axis."
+        },
+        {
+          "type": "trap",
+          "text": "Setting a driving torque equal to Iα while the object turns at constant ω.",
+          "fix": "Constant ω means α = 0, so the net torque is zero. The driving torque is balanced by friction; it is not Iα."
+        },
+        {
+          "type": "trap",
+          "text": "Using the constant-α relations for a rod that swings down from a horizontal position.",
+          "fix": "The lever arm of the weight shrinks as the rod swings, so α changes. Use τ_net = Iα only at the instant asked about; energy (Unit 6) gives speeds later in the swing."
+        },
+        {
+          "type": "trap",
+          "text": "Treating zero net force as equilibrium.",
+          "fix": "Check the torques too. Equal and opposite forces along different lines form a couple, which starts the object turning."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A crane lowers a load on a cable that unwinds from a drum of radius 0.30 m without slipping. Starting from rest, the load speeds up uniformly at 0.60 m/s^2 until it moves at 1.8 m/s. It then moves at that speed for 4.0 s, and finally slows uniformly to rest while the drum turns through 2.5 revolutions. Take the drum's sense of rotation while it lowers the load as positive.\n\n(a) Find the drum's angular acceleration in the first and last stages.\n\n(b) Find the total angle the drum turns through, in radians and in revolutions, and the total distance the load descends.",
+          "answer": "(a) +2.0 rad/s^2 while speeding up; about −1.1 rad/s^2 (−1.15 rad/s^2) while slowing (b) 48.7 rad, about 7.8 revolutions; the load descends about 15 m (14.6 m)",
+          "steps": [
+            "Translate the load's motion into the drum's: the cable moves with the rim, so ω = v/r and α = a/r. The top speed corresponds to ω = (1.8 m/s)/(0.30 m) = 6.0 rad/s.",
+            "(a) Stage 1: α_1 = (0.60 m/s^2)/(0.30 m) = 2.0 rad/s^2. It lasts t_1 = ω/α_1 = 3.0 s, so Δθ_1 = (1/2)(0 + 6.0 rad/s)(3.0 s) = 9.0 rad.",
+            "Stage 3: Δθ_3 = (2.5 rev)(2π rad/rev) = 15.7 rad, and ω falls from 6.0 rad/s to 0 with no time given, so use ω^2 = ω_0^2 + 2αΔθ: α_3 = (0 − 36 rad^2/s^2)/(2 × 15.7 rad) = −1.15 rad/s^2. It is negative because the drum slows while turning in the positive sense.",
+            "(b) Stage 2: ω is constant, so Δθ_2 = (6.0 rad/s)(4.0 s) = 24 rad.",
+            "Total: Δθ = 9.0 + 24 + 15.7 = 48.7 rad, and 48.7 rad/(2π rad/rev) = 7.8 revolutions.",
+            "The load descends rΔθ = (0.30 m)(48.7 rad) = 14.6 m, about 15 m. Check stage by stage in linear terms: 2.7 m + 7.2 m + 4.7 m = 14.6 m."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Two workers carry a uniform ladder 4.0 m long with a mass of 18 kg, holding it horizontal. Worker A holds the front end; worker B holds it 1.0 m from the back end. A 6.0 kg bag of tools hangs from the ladder 0.50 m from the front end.\n\n(a) Find the upward force each worker exerts.\n\n(b) Where should the bag hang so that the two workers exert equal forces?",
+          "answer": "(a) A: 108 N; B: 127 N (b) At the front end, directly at worker A's hands",
+          "steps": [
+            "Draw the extended force diagram, with x measured from the front end toward the back: F_A up at x = 0; the bag's weight, (6.0 kg)(9.8 m/s^2) = 58.8 N, down at x = 0.50 m; the ladder's weight, (18 kg)(9.8 m/s^2) = 176.4 N, down at its center, x = 2.0 m; and F_B up at x = 3.0 m.",
+            "(a) Take torques about A's hands, so F_A drops out. With the back of the ladder drawn on the right and counterclockwise positive: F_B(3.0 m) − (58.8 N)(0.50 m) − (176.4 N)(2.0 m) = 0, so F_B = (382.2 N·m)/(3.0 m) = 127 N.",
+            "Vertical forces: F_A + F_B = 58.8 N + 176.4 N = 235.2 N, so F_A = 235.2 N − 127.4 N = 108 N.",
+            "Check with torques about B's hands: F_A(3.0 m) = (176.4 N)(1.0 m) + (58.8 N)(2.5 m) = 323.4 N·m, so F_A = 107.8 N, which agrees.",
+            "(b) Equal forces means each worker exerts 235.2 N/2 = 117.6 N. Torques about A, with the bag at x: (117.6 N)(3.0 m) − (176.4 N)(2.0 m) − (58.8 N)x = 0, so 352.8 − 352.8 − 58.8x = 0 and x = 0.",
+            "Without the bag, B already carries 117.6 N and A only 58.8 N, because the ladder's center is closer to B. The bag's 58.8 N must all go to A, so it hangs at A's hands, where it has no torque about A."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A uniform rod 2.0 m long with a mass of 3.0 kg turns on a frictionless horizontal pin 0.50 m from its left end. A small 2.0 kg block is fixed to the left end. The rod is held horizontal and released from rest.\n\n(a) Find the rotational inertia of the rod and block about the pin.\n\n(b) Find the angular acceleration just after release and the acceleration of the rod's right end at that instant.\n\n(c) Explain why the result of (b) cannot be used with the constant-α relations to find the angular velocity when the rod is vertical.",
+          "answer": "(a) 2.25 kg·m^2 (b) About 2.2 rad/s^2 clockwise, so the right end starts down, with acceleration 3.3 m/s^2 (c) The net torque, and so α, changes as the rod turns.",
+          "steps": [
+            "(a) The rod's center of mass is at its middle, 1.0 m from the left end, so d = 0.50 m from the pin. I_cm = (1/12)(3.0 kg)(2.0 m)^2 = 1.0 kg·m^2, and the parallel-axis theorem gives I_rod = 1.0 kg·m^2 + (3.0 kg)(0.50 m)^2 = 1.75 kg·m^2.",
+            "The block is a point mass 0.50 m from the pin: (2.0 kg)(0.50 m)^2 = 0.50 kg·m^2. Total: I = 2.25 kg·m^2 about the pin.",
+            "(b) Counterclockwise positive. The rod's weight, 29.4 N, acts 0.50 m to the right of the pin: −14.7 N·m. The block's weight, 19.6 N, acts 0.50 m to the left of the pin: +9.8 N·m. The pin force acts at the axis and has no torque. τ_net = −4.9 N·m.",
+            "α = τ_net/I = (−4.9 N·m)/(2.25 kg·m^2) = −2.18 rad/s^2: about 2.2 rad/s^2 clockwise, so the right end starts down.",
+            "The right end is 1.5 m from the pin: a_t = rα = (1.5 m)(2.18 rad/s^2) = 3.3 m/s^2, downward. The rod starts from rest, so there is no centripetal acceleration yet.",
+            "(c) As the rod turns, the horizontal distances from the pin to both weights shrink, in proportion to the cosine of the rod's angle below the horizontal, so τ_net and α fall to zero when the rod is vertical. The constant-α relations would overstate the angular velocity; energy conservation (Unit 6) gives it correctly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, then come back to it again in a few days. Take the unit test under timed conditions and score it with the key. Torque, rotational inertia and connected-object problems also appear inside longer free-response questions; the workshops practise them there. Week 20 includes a paper investigation with supplied data; it does not replace the hands-on lab work that the AP® Physics 1 course requires."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 17: Rotational kinematics and its link to linear motion",
+              "ref": "week:17"
+            },
+            {
+              "label": "Week 18: Torque and rotational inertia",
+              "ref": "week:18"
+            },
+            {
+              "label": "Week 19: Rotational equilibrium",
+              "ref": "week:19"
+            },
+            {
+              "label": "Week 20: Newton's second law in rotational form",
+              "ref": "week:20"
+            },
+            {
+              "label": "Unit 5 plan",
+              "ref": "unit:u5"
+            },
+            {
+              "label": "Unit 5 test",
+              "ref": "test:unit-5"
+            },
+            {
+              "label": "Unit 5 test key",
+              "ref": "key:unit-5"
+            },
+            {
+              "label": "Free-response workshop: Mathematical Routines",
+              "ref": "guide:fr-mathematical-routines"
+            },
+            {
+              "label": "Free-response workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

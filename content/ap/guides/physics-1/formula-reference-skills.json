@@ -1,0 +1,761 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "formula-reference-skills",
+  "kind": "strategy",
+  "title": "Using the formula reference: what each relation needs",
+  "author": "p1-strategy-author",
+  "summary": "How to use Liminal's Physics 1 formula reference, printed at the end of every practice exam, as a stand-in for the equation sheet the AP® Physics 1 Exam supplies: where each group of relations is, what each relation assumes (constant acceleration, an ideal spring, a rigid object, an ideal fluid and more), what is not on it and must be known or derived, symbols that mean more than one thing, which graphs turn a relation into a straight line, and nine checks that ask which relation applies.",
+  "minutes": 35,
+  "sections": [
+    {
+      "id": "sheet-and-exam",
+      "title": "The reference and the exam's equation sheet",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The AP® Physics 1 Exam supplies an equation sheet: College Board's exam pages, checked 2026-10-22, say its reference materials are printed for the exam room and also available in Bluebook. Liminal does not reproduce that sheet. Liminal's physics practice exams and unit tests print Liminal's own formula reference at the end of the student copy instead, and this guide teaches you to use it well."
+        },
+        {
+          "type": "text",
+          "text": "Before the exam:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Open College Board's equation sheet from the AP® Physics 1 exam page on College Board's website, well before exam day, and use it for at least one full practice exam.",
+            "For each group in the map below, find where the same relations sit on College Board's sheet. Its selection, symbols and layout differ from Liminal's, so note any relation you use that it writes differently or leaves out, and learn that one by heart.",
+            "Learn the conditions in this guide. No sheet lists when a relation applies."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Why the conditions matter: a sheet shows that a relation exists, not that it fits the situation in front of you. Most questions are really about choosing, both the principle (forces, energy, momentum, rotation) and the relation whose conditions the situation meets. That choice is what the rest of this guide drills."
+        },
+        {
+          "type": "text",
+          "text": "When this approach fails: the reference is a check, not a guide to the physics. If you open it to find any relation with the right letters, you will find one, and it may assume something your situation breaks. Decide the principle first, then look up the form."
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "title": "Where things are",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's reference arranges its relations by the question each one answers, in nine groups, in this order."
+        },
+        {
+          "type": "table",
+          "caption": "The groups of Liminal's Physics 1 formula reference. Cover the right-hand column and say when you would open each group.",
+          "head": [
+            "Group",
+            "Holds",
+            "Open it when"
+          ],
+          "rows": [
+            [
+              "Values used throughout the course",
+              "g = 9.8 m/s^2, G, air pressure at sea level, the density of water, and revolutions, radians and degrees",
+              "You need a constant. Use g = 10 m/s^2 only when a question says so."
+            ],
+            [
+              "How is it moving? (describing motion)",
+              "Average velocity and acceleration, slopes and areas of motion graphs, the three constant-acceleration relations, velocity components and relative velocity",
+              "A question gives or asks for positions, velocities, accelerations or times."
+            ],
+            [
+              "Why does the motion change? (forces)",
+              "Newton's second and third laws, center of mass, gravitational force and field, static and kinetic friction, the ideal spring force, centripetal acceleration and the speed in uniform circular motion",
+              "You draw a free-body diagram or ask what makes an object speed up, slow down or turn."
+            ],
+            [
+              "Where does the energy go? (work, energy and power)",
+              "Kinetic energy, work, the work–energy theorem, gravitational energy near the surface and between two masses, spring energy, energy accounting with internal energy, and power",
+              "Speeds are linked to heights, stretches or distances, and time is not needed."
+            ],
+            [
+              "What happens in collisions? (momentum)",
+              "Momentum, impulse, conservation of momentum, the velocity of the center of mass, and elastic collisions",
+              "Objects collide or push apart, or a force acts for a measured time."
+            ],
+            [
+              "How does it turn? (rotation)",
+              "Angular velocity and acceleration, v = rω and a_t = rα, torque, rotational inertia with common shapes, the parallel-axis relation, Στ = Iα, rotational kinetic energy, work by a torque, angular momentum and angular impulse",
+              "An object turns, balances, rolls, or spins faster or slower."
+            ],
+            [
+              "What repeats? (oscillations)",
+              "Period and frequency, the periods of a mass on a spring and of a pendulum, position in simple harmonic motion, and an oscillator's energy",
+              "A motion repeats."
+            ],
+            [
+              "How do fluids push and flow? (fluids)",
+              "Density, pressure, pressure at a depth, buoyant force, continuity, Bernoulli's equation and the outflow speed from an open tank",
+              "A fluid is at rest or in steady flow, or an object floats or sinks."
+            ],
+            [
+              "Tools from geometry and trigonometry",
+              "Right-triangle ratios, the magnitude from perpendicular components, and circle, sphere and cylinder formulas",
+              "You resolve a vector, or need an area or a volume."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Practice: after each practice exam, list the relations you used, and say from memory which group holds each one. On exam day the lookup should take seconds, because you already know the principle and only need the form."
+        }
+      ]
+    },
+    {
+      "id": "conditions",
+      "title": "What each relation assumes",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Every relation holds under conditions, and the reference states only some of them. Learn each row below as a pair: the relation and what it needs. The third column says what to do when the condition fails."
+        },
+        {
+          "type": "table",
+          "caption": "Motion and forces. Cover the two right-hand columns.",
+          "head": [
+            "Relation",
+            "Assumes",
+            "If that fails"
+          ],
+          "rows": [
+            [
+              "v = v_0 + at; x = x_0 + v_0t + (1/2)at^2; v^2 = v_0^2 + 2a(x − x_0)",
+              "Constant acceleration along one axis, during one stage of the motion",
+              "Use the slope and area of a motion graph, or energy. Split a motion into stages (speeding up, then braking) and treat each stage separately."
+            ],
+            [
+              "Projectile: v_x constant, a_y = −g",
+              "No air resistance, near Earth's surface, up taken as positive",
+              "With air resistance v_x decreases and the relations are only approximate."
+            ],
+            [
+              "ΣF = ma",
+              "The sum of the external forces on the system you chose, and that system's mass; one axis at a time",
+              "If a force you need is internal to the system, choose a smaller system that it acts on from outside."
+            ],
+            [
+              "f_s ≤ μ_sF_N",
+              "Static friction takes whatever value keeps the surfaces from slipping, up to a maximum",
+              "It equals μ_sF_N only at the point of slipping. Otherwise find f_s from ΣF = ma."
+            ],
+            [
+              "f_k = μ_kF_N",
+              "The surfaces slide over each other; F_N comes from the forces perpendicular to the surface",
+              "F_N is not always mg: an incline, a push or pull at an angle, or a vertical acceleration changes it."
+            ],
+            [
+              "F_s = −kx",
+              "An ideal spring of negligible mass, with x measured from its natural length",
+              "Stretched past its elastic range, a real spring stops following the relation."
+            ],
+            [
+              "F_g = Gm_1m_2/r^2 and g = GM/r^2",
+              "Point masses or spherical bodies, with r measured between their centers",
+              "Near the surface use F_g = mg. The height above the surface is never r."
+            ],
+            [
+              "a_c = v^2/r",
+              "Motion along a circle of radius r at the moment considered",
+              "a_c is the net inward acceleration that real forces must supply. It is not an extra force to draw on the free-body diagram."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Energy and momentum. Cover the two right-hand columns.",
+          "head": [
+            "Relation",
+            "Assumes",
+            "If that fails"
+          ],
+          "rows": [
+            [
+              "W = Fd cos θ",
+              "A constant force, with d the displacement of the point where it acts",
+              "For a force that varies, such as a spring's, use the area under the F–x graph."
+            ],
+            [
+              "ΔU_g = mgΔy",
+              "The object–Earth system near Earth's surface, where g is constant",
+              "Far from the surface use U_G = −Gm_1m_2/r."
+            ],
+            [
+              "U_s = (1/2)kx^2",
+              "An ideal spring, with x measured from its natural length",
+              "Measuring x from some other position, such as a hanging spring's equilibrium, gives the wrong stored energy."
+            ],
+            [
+              "K + U constant, the special case of W_ext = ΔK + ΔU + ΔE_int",
+              "No work by forces from outside the system, and no friction or other conversion to internal energy inside it",
+              "Keep the full accounting W_ext = ΔK + ΔU + ΔE_int; kinetic friction inside the system gives ΔE_int = f_kd."
+            ],
+            [
+              "Σp_before = Σp_after",
+              "Negligible net external impulse: a brief collision or explosion, or no net external force",
+              "Over longer times friction or gravity changes the momentum; use J = Δp."
+            ],
+            [
+              "ΣK_before = ΣK_after",
+              "Elastic collisions only",
+              "In inelastic collisions some kinetic energy becomes internal energy; objects that stick together lose the most."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Rotation. Cover the two right-hand columns.",
+          "head": [
+            "Relation",
+            "Assumes",
+            "If that fails"
+          ],
+          "rows": [
+            [
+              "Constant-acceleration relations with θ, ω and α",
+              "Constant angular acceleration",
+              "Use the slope and area of an angular-velocity graph."
+            ],
+            [
+              "v = rω, a_t = rα",
+              "A point on a rigid object at distance r from the axis, with angles in radians",
+              "For rolling, v_cm = ωR holds only without slipping; when an object slips, v_cm and ωR differ."
+            ],
+            [
+              "τ = rF sin θ",
+              "r measured from the chosen axis to the point where the force acts",
+              "All torques in one equation must be about the same axis."
+            ],
+            [
+              "I for common shapes, and I = I_cm + Md^2",
+              "A uniform object, about the axis named; the parallel-axis relation starts from an axis through the center of mass",
+              "For an axis other than the one named, apply I = I_cm + Md^2 from the center-of-mass axis, never from another off-center axis."
+            ],
+            [
+              "Στ = Iα",
+              "A rigid object, with torques and I about the same axis: a fixed axle or the center of mass",
+              "If the object changes shape, use angular momentum instead."
+            ],
+            [
+              "K_rot = (1/2)Iω^2",
+              "Rotation of a rigid object about the axis for I",
+              "A rolling object has both (1/2)mv^2 and (1/2)Iω^2; leaving one out gives the wrong speed."
+            ],
+            [
+              "L = Iω constant",
+              "Zero net external torque about the chosen axis",
+              "Angular momentum can stay constant while rotational kinetic energy changes, as when a spinning skater pulls in her arms."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Oscillations and fluids. Cover the two right-hand columns.",
+          "head": [
+            "Relation",
+            "Assumes",
+            "If that fails"
+          ],
+          "rows": [
+            [
+              "T = 2π√(m/k)",
+              "An ideal spring of negligible mass and no friction",
+              "The period does not depend on the amplitude or on g, so it is the same for horizontal and vertical springs; a heavy spring makes the true period longer."
+            ],
+            [
+              "T = 2π√(L/g)",
+              "Small angles; a small bob on a light string, with L measured to the bob's center",
+              "At large amplitudes the true period is longer than this."
+            ],
+            [
+              "x = A cos(2πft)",
+              "Simple harmonic motion starting at x = A when t = 0, with 2πft in radians",
+              "Starting at x = 0 and moving in the +x direction, use sine."
+            ],
+            [
+              "P = P_0 + ρgh",
+              "A fluid at rest with uniform density; h measured down from the level where the pressure is P_0",
+              "In a moving fluid, use Bernoulli's equation."
+            ],
+            [
+              "F_b = ρ_fluid V_disp g",
+              "ρ is the fluid's density and V_disp the submerged volume, not the object's",
+              "For a floating object, F_b = mg; use that to find the submerged volume."
+            ],
+            [
+              "A_1v_1 = A_2v_2",
+              "Steady flow of an incompressible fluid, with no leaks or branches",
+              "With a branch, the flow rates of the branches add up to the flow rate before it."
+            ],
+            [
+              "P + (1/2)ρv^2 + ρgy = constant, and v = √(2gh)",
+              "An ideal fluid: incompressible, without viscosity, in steady flow along a streamline. The outflow speed also needs an open, wide tank whose surface barely moves",
+              "A viscous fluid loses pressure along a pipe beyond what the relation predicts."
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Taking static friction to be μ_sF_N whenever an object is at rest.",
+          "fix": "Static friction takes whatever value ΣF = ma requires, up to μ_sF_N. Use μ_sF_N only to find the largest push, slope or acceleration before slipping begins."
+        },
+        {
+          "type": "trap",
+          "text": "Using the constant-acceleration relations for a motion whose acceleration changes: along a curved track, on a spring, or in a motion graph that curves.",
+          "fix": "Ask first whether a is constant. If it is not, use energy for speeds and positions, or the slope and area of the graph."
+        },
+        {
+          "type": "trap",
+          "text": "Conserving kinetic energy in a collision because momentum is conserved.",
+          "fix": "Momentum is conserved in every collision with negligible external impulse; kinetic energy only in elastic ones. Use momentum first, then check the kinetic energy if the question asks."
+        }
+      ]
+    },
+    {
+      "id": "derive",
+      "title": "What is not on it",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "No reference lists every result. These come up often in Physics 1 and are built from rows that are there. Know how to derive each one, since a free-response part may ask for the derivation itself."
+        },
+        {
+          "type": "table",
+          "caption": "Results to know or derive. Cover the two right-hand columns.",
+          "head": [
+            "You need",
+            "Build it from",
+            "Conditions"
+          ],
+          "rows": [
+            [
+              "Normal force on an incline, F_N = mg cos θ",
+              "ΣF = 0 perpendicular to the surface, with the weight resolved into components",
+              "No other force has a component perpendicular to the surface"
+            ],
+            [
+              "Component of the weight along an incline, mg sin θ",
+              "Right-triangle ratios",
+              "θ is the incline's angle above the horizontal"
+            ],
+            [
+              "Scale reading in an elevator, F_N = m(g + a), with up positive",
+              "ΣF = ma along the vertical",
+              "a is the elevator's acceleration, with its sign"
+            ],
+            [
+              "A projectile's time of flight and range",
+              "The constant-acceleration relations, one component at a time",
+              "The range shortcut holds only for landing at the launch height; otherwise solve the vertical equation for t"
+            ],
+            [
+              "Speed in a circular orbit, v = √(GM/r)",
+              "F_g = GMm/r^2 as the only, and so the net, inward force, with a_c = v^2/r",
+              "Circular orbit, gravity the only force, M much larger than m"
+            ],
+            [
+              "Common velocity of two objects that stick, v_f = (m_1v_1 + m_2v_2)/(m_1 + m_2)",
+              "Conservation of momentum",
+              "Negligible external impulse during the collision"
+            ],
+            [
+              "Greatest speed of an oscillator, v_max = A√(k/m)",
+              "(1/2)kA^2 = (1/2)mv_max^2",
+              "Ideal spring, no friction"
+            ],
+            [
+              "Speed after rolling down a height h",
+              "Energy with both kinetic energies, and v = ωR (worked below)",
+              "Rolling without slipping"
+            ],
+            [
+              "Fraction of a floating object below the surface, ρ_object/ρ_fluid",
+              "F_b = mg for a floating object, with ρ = m/V",
+              "A uniform object floating at rest in one fluid"
+            ],
+            [
+              "Hydraulic lift, F_1/A_1 = F_2/A_2",
+              "Equal pressure at equal depth in a fluid at rest, with P = F/A",
+              "Pistons at the same height; fluid at rest"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Also on no sheet: your choice of system and positive direction, what a slope or an area on a graph means, and the units of the answer. Every question needs them."
+        },
+        {
+          "type": "example",
+          "prompt": "Liminal's reference has no relation for the speed of an object that rolls without slipping down a slope. An object of mass M and radius R, whose rotational inertia about its center is I = βMR^2 (β = 1 for a hoop, 1/2 for a solid cylinder, 2/5 for a solid sphere), starts from rest and rolls without slipping down a ramp of height h. Derive its speed at the bottom, and state the conditions the derivation uses.",
+          "answer": "v = √(2gh/(1 + β)). It uses rolling without slipping, so that v = ωR and static friction does no work, and a rigid object of uniform shape. The speed does not depend on M or R; a hoop reaches √(gh) and a solid sphere √(10gh/7).",
+          "steps": [
+            "System: the object and Earth. Without slipping, the contact point is momentarily at rest, so static friction does no work and no energy becomes internal energy. No outside force does work, so K + U is constant.",
+            "Energy: Mgh = (1/2)Mv^2 + (1/2)Iω^2 = (1/2)Mv^2 + (1/2)(βMR^2)ω^2.",
+            "Rolling without slipping: v = ωR, so (1/2)(βMR^2)ω^2 = (1/2)βMv^2.",
+            "Then Mgh = (1/2)Mv^2(1 + β), so v = √(2gh/(1 + β)). M and R cancel.",
+            "Check a limit: β = 0 describes an object with no rotational energy, such as a block sliding without friction, and gives √(2gh), the row on the reference. Every rolling object is slower, because some of the energy goes into rotation."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Memorizing a derived result without its conditions, such as using v = √(2gh) for a rolling ball, or the range shortcut for a ball that lands below its launch height.",
+          "fix": "Learn each derived result with the rows it comes from. When the conditions do not hold, derive again from those rows; it takes a minute and earns the setup."
+        }
+      ]
+    },
+    {
+      "id": "symbols",
+      "title": "Symbols and units",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Sheets differ in their letters, and one letter can stand for several quantities. Recognize a relation by what it relates and by its units, not by its letters."
+        },
+        {
+          "type": "table",
+          "caption": "Symbols that mean more than one thing.",
+          "head": [
+            "Symbol",
+            "Can mean",
+            "How to tell"
+          ],
+          "rows": [
+            [
+              "T",
+              "Period (s) or tension (N)",
+              "The units, and whether something repeats"
+            ],
+            [
+              "P and p",
+              "Pressure (Pa) or power (W); lowercase p is momentum (kg·m/s)",
+              "The units; power is a rate, pressure a force per area"
+            ],
+            [
+              "I and J",
+              "I is rotational inertia (kg·m^2); Liminal writes impulse as J (N·s)",
+              "Rotation or a collision"
+            ],
+            [
+              "x",
+              "A position measured from an origin, or a spring's stretch measured from its natural length",
+              "Where it is measured from"
+            ],
+            [
+              "h and y",
+              "Height above a reference level, or depth below a fluid's surface",
+              "Which way it is measured"
+            ],
+            [
+              "r and R",
+              "Distance from an axis or a center, or an object's radius",
+              "In gravity, r runs center to center"
+            ],
+            [
+              "f",
+              "Frequency (Hz), or a friction force as f_s or f_k (N)",
+              "The subscript and the units"
+            ],
+            [
+              "g and G",
+              "g is the field strength near a surface (9.8 N/kg = 9.8 m/s^2); G is the universal constant",
+              "The size of the number and its units"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Every term in a relation has the same units",
+          "text": "Check the units of each term before you substitute, and the units of the answer after. A relation whose terms disagree is misremembered or misapplied.",
+          "conditions": [
+            "P, ρgh and (1/2)ρv^2 are all pressures: kg/m^3 × m^2/s^2 = N/m^2 = Pa.",
+            "mgh, (1/2)mv^2, (1/2)kx^2 and (1/2)Iω^2 are all energies, in joules.",
+            "Fv and W/Δt are powers, in watts; Fd is work, in joules."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Angles",
+          "text": "s = rθ, v = rω, a_t = rα and the angle 2πft in x = A cos(2πft) need radians. Components such as mg sin θ use the angle in whatever unit it is given, with the calculator in the matching mode.",
+          "conditions": [
+            "Check the calculator's mode with a value you know: sin 30° = 0.5."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Writing a_y = +9.8 m/s^2 for a projectile after choosing up as positive.",
+          "fix": "State the positive direction first, then give each vector its sign: with up positive, a_y = −g = −9.8 m/s^2."
+        }
+      ]
+    },
+    {
+      "id": "graphs",
+      "title": "Relations as straight-line graphs",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Experimental Design and Analysis questions in Liminal's practice often ask which quantities to graph so that a relation becomes a straight line, and what its slope and intercept mean. Paper practice like this builds the reasoning, but it does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "table",
+          "caption": "Linearizing a relation: put the measured quantity that the relation squares, roots or inverts on an axis in that form.",
+          "head": [
+            "Relation",
+            "Graph (vertical against horizontal)",
+            "Slope",
+            "Intercept"
+          ],
+          "rows": [
+            [
+              "T = 2π√(m/k)",
+              "T^2 against m",
+              "4π^2/k, so k = 4π^2 ÷ slope",
+              "Zero in the ideal model; a nonzero intercept suggests the spring's own mass matters"
+            ],
+            [
+              "T = 2π√(L/g)",
+              "T^2 against L",
+              "4π^2/g",
+              "Zero in the ideal model; a nonzero intercept suggests every length was measured to the wrong point of the bob"
+            ],
+            [
+              "P = P_0 + ρgh",
+              "P against h",
+              "ρg, so ρ = slope ÷ g",
+              "P_0, the pressure at the surface"
+            ],
+            [
+              "v^2 = v_0^2 + 2a(x − x_0)",
+              "v^2 against x − x_0",
+              "2a",
+              "v_0^2"
+            ],
+            [
+              "F_s = kx",
+              "Force against stretch",
+              "k",
+              "Zero, if the stretch is measured from the natural length"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Check the slope's units: they must be the units of the quantity the slope gives. A slope of T^2 against m has units s^2/kg, and 4π^2 divided by it has units kg/s^2 = N/m, the units of k."
+        }
+      ]
+    },
+    {
+      "id": "on-the-exam",
+      "title": "Using it under time",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Decide the principle first (forces, energy, momentum, rotation, oscillation, fluids), then look up the form in that group.",
+            "Say the conditions to yourself: constant acceleration? Negligible external impulse? Rolling without slipping? Fluid at rest?",
+            "Write the relation in symbols, then substitute numbers with units. In Liminal's practice rubrics the setup often earns its own point, even when the arithmetic slips.",
+            "Check the answer's units and size against the units column and against what you expect."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "A free-response part asks for the speed of two carts just after they collide and stick on a level, frictionless track.",
+          "text": "The track is frictionless, so no net external horizontal force acts on the two-cart system during the collision, and its horizontal momentum is conserved: m_Av_A + m_Bv_B = (m_A + m_B)v_f."
+        },
+        {
+          "type": "trap",
+          "text": "Hunting through the sheet for a relation that contains the letters in the question.",
+          "fix": "If you have searched for more than about a minute during multiple choice, the problem is choosing the principle, not finding a formula. Choose your best answer, flag the question and move on; on the second pass, start from the principle."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Checks: which relation applies?",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check before opening its answer. Name the relation, and say why its conditions hold, before computing anything. Each check names the section to reread if you miss it."
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c1",
+          "prompt": "Without looking at the map, name the group of Liminal's formula reference you would open first for each task, and the relation you expect to find there: (a) how long a mass on a spring takes to complete one cycle; (b) the pressure 3.0 m below the surface of a swimming pool; (c) the lever arm a wrench needs to supply a given torque; (d) the energy that becomes internal energy when a box slides to a stop; (e) the speed of a point on the rim of a spinning wheel.",
+          "hint": "Ask what question each task answers: what repeats, how fluids push, how it turns, where the energy goes.",
+          "answer": "(a) What repeats? T = 2π√(m/k). (b) How do fluids push and flow? P = P_0 + ρgh. (c) How does it turn? τ = r_⊥F. (d) Where does the energy go? W_ext = ΔK + ΔU + ΔE_int, with ΔE_int = f_kd. (e) How does it turn? v = rω.",
+          "steps": [
+            "(a) A cycle is a repeating motion, so the oscillations group, where the spring's period is.",
+            "(b) A fluid at rest, so the fluids group: absolute pressure at depth h.",
+            "(c) Torque is in the rotation group; the lever arm is r_⊥ in τ = r_⊥F.",
+            "(d) Friction's conversion to internal energy is in the energy-accounting row of the energy group.",
+            "(e) The link between linear and angular speed is in the rotation group, not the motion group."
+          ],
+          "see": "map"
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c2",
+          "prompt": "A cyclist speeds up from 2.0 m/s to 8.0 m/s in 6.0 s. Her velocity–time graph is a curve that rises steeply at first and then levels off (concave down). A classmate finds her displacement with x − x_0 = v_0t + (1/2)at^2, using a = (8.0 − 2.0)/6.0 m/s^2. Is that result correct, too large or too small? Which relation should be used instead?",
+          "hint": "What does a curved velocity–time graph say about the acceleration? Then compare the areas under the curve and under a straight line.",
+          "answer": "Too small. The relation assumes constant acceleration, but a curved velocity–time graph means the acceleration changes. The displacement is the area under the velocity–time graph. The classmate's 30 m is the area under the straight line from (0, 2.0 m/s) to (6.0 s, 8.0 m/s), and the concave-down curve lies above that line, so the displacement is more than 30 m.",
+          "steps": [
+            "The classmate's value: a = 1.0 m/s^2, so x − x_0 = (2.0)(6.0) + (1/2)(1.0)(6.0)^2 = 12 + 18 = 30 m.",
+            "That is the displacement for constant acceleration, whose velocity graph is the straight line joining the two given points.",
+            "A concave-down curve between the same two points lies above that line, so the area under it, the true displacement, is more than 30 m.",
+            "The relation to use is Δx = area under the v–t graph, which needs the graph itself to give a number."
+          ],
+          "see": "conditions"
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c3",
+          "prompt": "A 10 kg crate rests on a ramp inclined at 25° above the horizontal. A rope parallel to the ramp pulls up the slope on the crate with a force of 30 N, and the crate stays at rest. The coefficient of static friction between the crate and the ramp is 0.50. Find the magnitude and direction of the friction force on the crate, and the greatest rope force, still parallel to the ramp, for which the crate stays at rest.",
+          "hint": "Along the ramp, which forces must balance? Decide which way friction must point before you use μ_s.",
+          "answer": "About 11 N, up the slope; and about 86 N. Along the ramp the net force is zero, so f_s = mg sin 25° − 30 N ≈ 41.4 N − 30 N ≈ 11 N, up the slope. The value μ_sF_N ≈ 44 N is only the maximum: the crate starts to slide up the slope when the rope force exceeds mg sin 25° + μ_smg cos 25° ≈ 86 N.",
+          "steps": [
+            "Take up the slope as positive. The crate is at rest, so the net force along the ramp is zero. Gravity's component down the slope is mg sin 25° = (10 kg)(9.8 m/s^2)(0.423) ≈ 41.4 N, more than the rope's 30 N.",
+            "So static friction supplies the rest, up the slope: 30 N + f_s − 41.4 N = 0, so f_s ≈ 11 N.",
+            "Perpendicular to the ramp nothing accelerates, so F_N = mg cos 25° ≈ 88.8 N, and the maximum is μ_sF_N = (0.50)(88.8 N) ≈ 44 N. Since 11 N is less than 44 N, the crate stays at rest, as stated.",
+            "As the rope force grows, the friction needed shrinks to zero at 41.4 N and then points down the slope. At the point of slipping up the slope, T_max = mg sin 25° + μ_sF_N ≈ 41.4 N + 44.4 N ≈ 86 N.",
+            "Common errors: answering 44 N, which treats f_s ≤ μ_sF_N as an equation, and fixing friction's direction before asking which way the other forces would move the crate."
+          ],
+          "see": "conditions"
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c4",
+          "prompt": "For each event, name the relation or conservation law that answers the question, and one relation from the reference that does not apply, with the reason. (a) The speed of a child at the bottom of a curved, frictionless water slide, from the height she starts at. (b) The recoil speed of a toy cannon on a level, frictionless track when it fires a ball horizontally. (c) The new spin rate of a gymnast in midair who pulls into a tight tuck. (d) The time a sled takes to slide from rest down a straight, uniform, icy slope.",
+          "hint": "For each, ask whether the acceleration is constant, whether an external force or torque acts, and whether energy changes form.",
+          "answer": "(a) Conservation of energy for the child–Earth system, (1/2)mv^2 = mgΔy; the constant-acceleration relations do not apply, because the slide's slope, and so the acceleration, changes. (b) Conservation of momentum for the cannon–ball system along the track; kinetic energy is not conserved, because it grows from zero, supplied by stored energy. (c) Conservation of angular momentum, Iω constant; rotational kinetic energy is not conserved, because it increases as the gymnast does work pulling in. (d) ΣF = ma along the slope gives a constant acceleration, then x = (1/2)at^2 gives the time; energy alone does not, because the energy relations contain no time.",
+          "steps": [
+            "(a) Only gravity does work (the normal force is perpendicular to the motion), so K + U_g is constant. The acceleration changes along the curve, which rules out v = v_0 + at and its partners.",
+            "(b) No external horizontal force acts during the firing, so horizontal momentum is conserved: m_cv_c + m_bv_b = 0. The kinetic energy after is positive and before is zero, so kinetic energy is not conserved.",
+            "(c) In midair, gravity exerts no torque about the gymnast's center of mass, so L = Iω is constant; a smaller I means a larger ω. (1/2)Iω^2 = L^2/(2I) grows as I shrinks, so the energy relation for rotation does not stay constant.",
+            "(d) On a straight, uniform slope the forces are constant, so the acceleration is constant: a = g sin θ if the ice is frictionless, and t = √(2L/a) for a slope of length L. Energy gives the speed at the bottom, and from it the time only by assuming constant acceleration again."
+          ],
+          "see": "conditions"
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c5",
+          "prompt": "A block on a vertical spring and a simple pendulum each have a period of 1.0 s on Earth. Find each one's period after each change, made alone: (a) the block, or the bob, is replaced by one of the same size with 4 times the mass; (b) the amplitude is doubled, while staying small; (c) the system is taken to a planet where g is 4 times Earth's value. Which relations do you use, and what do they assume?",
+          "hint": "Look at which quantities appear in T = 2π√(m/k) and in T = 2π√(L/g), and which do not.",
+          "answer": "(a) Spring 2.0 s, pendulum 1.0 s. (b) Both 1.0 s. (c) Spring 1.0 s, pendulum 0.50 s. The relations are T = 2π√(m/k), which assumes an ideal spring of negligible mass, and T = 2π√(L/g), which assumes small angles and a small bob on a light string.",
+          "steps": [
+            "Spring: T = 2π√(m/k) contains m but neither amplitude nor g. Four times the mass multiplies T by √4 = 2, giving 2.0 s; the amplitude and g leave it at 1.0 s. On the stronger planet the block hangs lower at equilibrium, but it oscillates about that point with the same period.",
+            "Pendulum: T = 2π√(L/g) contains neither mass nor amplitude, so (a) and (b) leave it at 1.0 s. Four times g divides T by √4 = 2, giving 0.50 s.",
+            "Same-size bob: the length to the bob's center is unchanged, so L is unchanged.",
+            "If the amplitude grew past small angles, the pendulum relation would no longer hold, and the true period would be longer than 1.0 s."
+          ],
+          "see": "conditions"
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c6",
+          "prompt": "Name the relation for each task, and evaluate where numbers are given: (a) the absolute pressure on a diver 12 m below the surface of a freshwater lake; (b) whether a solid 0.80 kg block with a volume of 1.0 × 10^−3 m^3 floats in fresh water and, if it does, what fraction of it is below the surface; (c) the speed of water in the narrow part of a level pipe, when you know its speed in the wide part and both cross-sectional areas.",
+          "hint": "For (b), compare densities first. For (c), ask which relation needs no pressures.",
+          "answer": "(a) P = P_0 + ρgh ≈ 2.2 × 10^5 Pa. (b) Its density is 800 kg/m^3, less than water's 1000 kg/m^3, so it floats, with 0.80 of its volume below the surface. (c) Continuity, A_1v_1 = A_2v_2, so v_2 = v_1A_1/A_2; Bernoulli's equation is needed only for the pressure difference.",
+          "steps": [
+            "(a) Water at rest with uniform density: P = 1.01 × 10^5 Pa + (1000 kg/m^3)(9.8 m/s^2)(12 m) = 1.01 × 10^5 + 1.18 × 10^5 ≈ 2.2 × 10^5 Pa.",
+            "(b) ρ = m/V = 0.80 kg ÷ 1.0 × 10^−3 m^3 = 800 kg/m^3, less than 1000 kg/m^3, so the block floats.",
+            "(b) continued: floating means F_b = mg, so ρ_water V_sub g = ρ_block V g and V_sub/V = 800/1000 = 0.80.",
+            "(c) For steady flow of an incompressible fluid the volume flow rate Av is the same in both parts, which gives the speed directly. Bernoulli's equation would then give how much lower the pressure is in the narrow part."
+          ],
+          "see": "derive"
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c7",
+          "prompt": "For each experiment, which two quantities should be graphed to give a straight line, what does the slope equal, and what does the relation assume? (a) Pucks launched at different speeds v_0 slide to a stop on a level, rough surface, and each stopping distance d is measured. (b) A cart on a level, low-friction track is pulled by a string over a pulley to a hanging mass m. Masses are moved from the cart to the hanger, so the total mass M of the cart and all the masses stays fixed, and the acceleration a is measured. (c) A wheel on an axle is turned by several known torques τ from a string, and each angular acceleration α is measured.",
+          "hint": "Write each relation in the form (measured quantity) = (constant) × (something you control) + (constant).",
+          "answer": "(a) d against v_0^2, slope 1/(2μ_kg); it assumes a constant friction force μ_kmg on a level surface. (b) a against m, slope g/M; it assumes a frictionless track and a light string and pulley. (c) τ against α, slope I, the wheel's rotational inertia (or α against τ, slope 1/I); the intercept on the τ axis is the friction torque at the axle, assumed constant.",
+          "steps": [
+            "(a) Work–energy: friction does work −μ_kmgd, which removes the kinetic energy (1/2)mv_0^2, so d = v_0^2/(2μ_kg). Plot d against v_0^2: a line through the origin with slope 1/(2μ_kg).",
+            "(b) For the whole system of cart, string and masses, the hanging weight mg is the net external force along the string, so mg = Ma and a = (g/M)m. Keeping M fixed is what makes this a straight line.",
+            "(c) Στ = Iα with a constant friction torque τ_f opposing the turning: τ − τ_f = Iα, so τ = Iα + τ_f. Plot τ against α: the slope is I and the intercept is τ_f.",
+            "Paper practice like this does not replace the hands-on lab work the AP® physics courses require."
+          ],
+          "see": "graphs"
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c8",
+          "prompt": "None of these results is on Liminal's reference. For each, name the rows you combine to derive it, and the condition it needs: (a) the common velocity of two carts that collide and stick; (b) the greatest speed of a block oscillating on a spring with amplitude A; (c) the speed of a satellite in a circular orbit of radius r around a planet of mass M.",
+          "hint": "Each one combines a conservation law, or a force law, with one more row.",
+          "answer": "(a) Conservation of momentum with p = mv: v_f = (m_1v_1 + m_2v_2)/(m_1 + m_2), when the external impulse during the collision is negligible. (b) Oscillator energy, (1/2)kA^2 = (1/2)mv_max^2, so v_max = A√(k/m), for an ideal spring without friction. (c) Newton's law of gravitation as the net force with ΣF = ma and a_c = v^2/r: GMm/r^2 = mv^2/r, so v = √(GM/r), when gravity is the only force and M is much larger than m.",
+          "steps": [
+            "(a) Before: m_1v_1 + m_2v_2. After: the carts move together, (m_1 + m_2)v_f. Setting them equal gives v_f.",
+            "(b) At the turning point all the energy is in the spring, (1/2)kA^2; at equilibrium all of it is kinetic, (1/2)mv_max^2.",
+            "(c) Gravity supplies the whole centripetal force, so ΣF = ma_c gives GMm/r^2 = mv^2/r; m cancels, so the speed does not depend on the satellite's mass."
+          ],
+          "see": "derive"
+        },
+        {
+          "type": "check",
+          "id": "p1-formula-reference-skills-c9",
+          "prompt": "Each line comes from a student's free-response work. Say what the symbol on the left stands for, and whether the units on the right fit it: (a) T = 2π√(0.50 kg ÷ 20 N/m) = 0.99 s; (b) T = (2.0 kg)(9.8 m/s^2) = 20 N; (c) P = (1/2)(1000 kg/m^3)(3.0 m/s)^2 = 4.5 × 10^3 Pa; (d) P = (6.0 N)(3.0 m) = 18 W.",
+          "hint": "Work out the units of each right-hand side before deciding what the symbol means.",
+          "answer": "(a) T is a period; kg ÷ (N/m) = s^2, so the root is in seconds, which fits. (b) T is a tension (equal to a weight here); kg·m/s^2 = N, which fits. (c) P is a pressure, the (1/2)ρv^2 term of Bernoulli's equation; kg/m^3 × m^2/s^2 = N/m^2 = Pa, which fits. (d) The units do not fit: N·m is joules, so (6.0 N)(3.0 m) = 18 J of work, not a power. A power needs a speed or a time, such as P = Fv = (6.0 N)(3.0 m/s) = 18 W.",
+          "steps": [
+            "(a) N/m = kg/s^2, so kg ÷ (kg/s^2) = s^2, and √(s^2) = s. 2π√(0.025) ≈ 0.99 s.",
+            "(b) (2.0)(9.8) = 19.6 ≈ 20 N, in kg·m/s^2 = N.",
+            "(c) (1/2)(1000)(9.0) = 4500 Pa, in kg/(m·s^2) = N/m^2.",
+            "(d) Force times distance is work. Power is work per time, so its units are J/s = W; force times speed gives that."
+          ],
+          "see": "symbols"
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Use the reference on every timed practice: on each practice exam, where it is printed at the end of the student copy, and alongside the mixed sets and workshop sets."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "How the exam runs and how to pace it",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Practice exam A, with the formula reference at the end",
+              "ref": "test:practice-exam"
+            },
+            {
+              "label": "Methods for multiple choice",
+              "ref": "guide:multiple-choice-methods"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Workshop: Experimental Design and Analysis",
+              "ref": "guide:fr-experimental-design"
+            },
+            {
+              "label": "Workshop: Qualitative/Quantitative Translation",
+              "ref": "guide:fr-qualitative-quantitative"
+            },
+            {
+              "label": "Mixed set 1, timed",
+              "ref": "test:mixed-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -282,13 +282,19 @@
   }
   // Timing sentences come from the exam block and blueprints, never fixed text.
   function prepIntros(course) {
-    const total = course.exam.sections.flatMap(s => s.parts).reduce((n, p) => n + p.minutes, 0);
+    const parts = course.exam.sections.flatMap(s => s.parts);
+    const total = parts.reduce((n, p) => n + p.minutes, 0);
     const mixed = course.blueprints.mixedSet, set = course.blueprints.frSet;
     const count = mixed ? mixed.parts.reduce((n, p) => n + p.questions, 0) : 0;
+    const calculator = policy => policy === "none" ? "without a calculator" : policy === "graphing" ? "with a graphing calculator" : "with a calculator";
+    const pace = !set ? "15 minutes a question"
+      : set.minutesByType ? "its printed time (" + Object.keys(set.minutesByType).map(type => set.minutesByType[type] + " minutes a " + A.frTypeLabel(type) + " question").join(", ") + ", inside the suggested times printed on the practice exams)"
+      : set.minutesPerQuestion + " minutes a question";
     return {
-      exams: "Each form follows the " + course.exam.effective + " format and takes " + duration(total) + ". Take it in one sitting, or Section I and Section II on separate days, with the calculator only in the parts that allow it.",
-      mixed: mixed ? count + " questions from across the course at the exam's pace: " + mixed.parts.map(p => p.questions + " " + (p.calculator === "none" ? "without a calculator" : "with a graphing calculator") + " in " + p.minutes + " minutes").join(", then ") + ". Mixing makes you choose the method, which practising one topic at a time never asks." : "",
-      workshop: "One guide and one practice set for each kind of task the free-response section asks for. Read the guide, do the set at " + (set ? set.minutesPerQuestion : 15) + " minutes a question, then score it with the rubric.",
+      exams: "Each form follows the " + course.exam.effective + " format and takes " + duration(total) + ". Take it in one sitting, or Section I and Section II on separate days, "
+        + (parts.every(p => p.calculator === "any") ? "with a calculator throughout" + (course.reference ? " and the formula reference printed at the end of the student copy." : ".") : "with the calculator only in the parts that allow it."),
+      mixed: mixed ? count + " questions from across the course at the exam's pace: " + mixed.parts.map(p => p.questions + " " + calculator(p.calculator) + " in " + p.minutes + " minutes").join(", then ") + ". Mixing makes you choose the method, which practising one topic at a time never asks." : "",
+      workshop: "One guide and one practice set for each kind of task the free-response section asks for. Read the guide, do the set at " + pace + ", then score it with the rubric.",
     };
   }
   function renderPrep(course) {

@@ -1,0 +1,642 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "multiple-choice-methods",
+  "kind": "strategy",
+  "title": "Methods for physics multiple choice",
+  "author": "p1-strategy-author",
+  "summary": "Methods for Section I of the AP® Physics 1 Exam: name the system and the principle before you calculate, then test the choices with limiting and special cases, units, ratios and the slope, area and intercepts of graphs; eliminate choices for a stated reason, and pace 42 questions in 85 minutes. Each method comes with the situations where it fails, and eight checks to practise it.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "p1-multiple-choice-methods-g1",
+      "alt": "Graph of force F in newtons against time t in seconds, from 0 to 0.6 s. The force rises in a straight line from 0 at t = 0 to 8 N at t = 0.1 s, stays at 8 N until t = 0.3 s, falls in a straight line to 0 at t = 0.5 s, and stays at 0 until t = 0.6 s.",
+      "caption": "The net horizontal force on a cart. Used in the graph check."
+    }
+  ],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "What Section I asks of you",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Section I of the AP® Physics 1 Exam has 42 multiple-choice questions in 85 minutes, and a four-function, scientific or graphing calculator is allowed throughout. An equation sheet is supplied. (College Board's exam and calculator-policy pages, checked 2026-10-22.) That is about 2 minutes a question, so the questions reward choosing the right physics quickly more than long calculation."
+        },
+        {
+          "type": "text",
+          "text": "Most questions can be answered in two moves. First decide what the question is about: which object or system, which stretch of time, and which principle governs it. Then get to a choice: by a short calculation, or by testing the choices with the methods in this guide. The methods are checks, not substitutes for physics. Each one below ends with the situations where it fails, because a method used outside its range picks a wrong answer with confidence."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Name the system and the principle first.",
+            "Test symbolic choices with limiting and special cases.",
+            "Check units, and know what units cannot see.",
+            "Use ratios when a quantity changes by a factor.",
+            "Read graphs for their slope, area and intercepts.",
+            "Eliminate choices for a stated reason, including choices with a \"because\".",
+            "Pace the section so every question gets a look."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Work each section with a pencil. Answer each check on paper before you open it; several are written as multiple-choice questions so that you can practise the elimination itself."
+        }
+      ]
+    },
+    {
+      "id": "system-and-principle",
+      "title": "Name the system and the principle first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A physics question is rarely hard because of its algebra. It is hard when it is not obvious which law applies, or to what. Before you touch a number, say three things to yourself: the system (which objects), the interval (from which moment to which), and the principle that connects them."
+        },
+        {
+          "type": "rule",
+          "title": "Three questions before you calculate",
+          "text": "Answer these before writing an equation. If you cannot answer the third, reread the question; it usually tells you which quantities are given and which is wanted, and that pair points to the principle.",
+          "conditions": [
+            "System: which object or objects are inside it? Forces between objects inside the system are internal and cancel in pairs.",
+            "Interval: is the question about one instant (forces, accelerations, torques) or about a change between two moments (energy, momentum, impulse, angular momentum)?",
+            "Principle: which law links what is given to what is asked, and do its conditions hold for this system over this interval?"
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Where the question points. Use the right column before you commit to the middle one.",
+          "head": [
+            "The question gives or asks for",
+            "Try first",
+            "Check before using"
+          ],
+          "rows": [
+            [
+              "An acceleration, a force or a tension at one instant",
+              "Newton's second law, ΣF = ma, with a force diagram for each object",
+              "Every force has an object exerting it; no \"ma\" or \"centripetal\" force on the diagram"
+            ],
+            [
+              "A speed after a change in height, a spring's compression or a distance with friction",
+              "Energy: work–energy or conservation of energy for a named system",
+              "Is any nonconservative force doing work? Then include it, or energy is not conserved for that system"
+            ],
+            [
+              "Velocities just before and after a collision, explosion or catch",
+              "Conservation of momentum during the brief interaction",
+              "Net external force on the system is zero, or negligible over the short time"
+            ],
+            [
+              "A force acting for a time, or a force–time graph",
+              "Impulse: J = F_avgΔt = Δp",
+              "Use the net force, and directions with a stated positive sense"
+            ],
+            [
+              "Whether something starts to turn, or its angular acceleration",
+              "Torque: Στ = Iα about a stated axis",
+              "Lever arm measured perpendicular to the line of the force"
+            ],
+            [
+              "A spin rate that changes as mass moves in or out",
+              "Conservation of angular momentum, L = Iω",
+              "Net external torque about the axis is zero"
+            ],
+            [
+              "A period or frequency of something that repeats",
+              "Simple harmonic motion: T = 2π√(m/k) or T = 2π√(L/g)",
+              "Pendulum formula only for small angles; a spring's period has no g in it"
+            ],
+            [
+              "Pressure at a depth, floating or sinking, flow in a narrowing pipe",
+              "P = P_0 + ρgh, buoyancy, continuity and Bernoulli's equation",
+              "Displaced volume, not the object's volume; continuity needs incompressible, steady flow"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Stages need their own principles",
+          "text": "Many questions chain two processes: a collision then a swing, a push then a slide, a fall then a bounce. Split the motion at each change, name the principle for each stage, and pass the result of one stage to the next. Momentum is the usual tool for the brief collision; energy is the usual tool for the motion before or after it."
+        },
+        {
+          "type": "trap",
+          "text": "Using conservation of mechanical energy straight through a collision in which objects stick together.",
+          "fix": "A sticking collision converts kinetic energy into internal energy. Use momentum for the collision itself, then energy for the motion after it, starting from the speed the collision produced."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. Some questions are written so that two principles both apply, and either gives the answer; then use the shorter one. Others have a condition that fails quietly: a pivot or an axle pushes on the system during a collision, so linear momentum is not conserved, but angular momentum about the pivot is, because the pivot's force has no torque about it. If the principle you named leads nowhere after a minute, check its conditions before you check your algebra."
+        },
+        {
+          "type": "check",
+          "id": "p1-multiple-choice-methods-c1",
+          "prompt": "A skater and her skateboard, 54 kg together, stand at rest at the foot of a ramp. A friend throws her a 6.0 kg bag horizontally at 9.0 m/s, along the direction in which she can roll. She catches it, rolls on, and coasts up the ramp. Neglecting friction and air resistance, name the principle for each stage and find how high the skater–bag system rises above its starting level.",
+          "hint": "Split the motion into the catch and the roll up the ramp. What is lost during a catch?",
+          "answer": "Momentum for the catch, then conservation of mechanical energy for the roll up the ramp. The system rises about 0.041 m (4.1 cm).",
+          "steps": [
+            "Catch: during the brief catch the net horizontal external force on the skater–board–bag system is negligible, so its momentum is conserved: (6.0 kg)(9.0 m/s) = (60 kg)v, so v = 0.90 m/s.",
+            "The catch is a sticking collision, so kinetic energy is not conserved through it: (1/2)(6.0)(9.0)^2 = 243 J before, (1/2)(60)(0.90)^2 = 24.3 J after.",
+            "Ramp: with no friction, the system–Earth mechanical energy is conserved: (1/2)(60)(0.90)^2 = (60)(9.8)h, so h = (0.90)^2/(2 × 9.8) ≈ 0.041 m.",
+            "Using energy straight through from the throw gives 243 J = (60)(9.8)h, h ≈ 0.41 m, ten times too high. That is the error the two-stage split prevents."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "limiting-cases",
+      "title": "Limiting and special cases",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "When the choices are expressions in symbols, you often do not need to derive the answer. Substitute a value for which you already know the physics, and see which choices give it. The most useful cases are an angle of 0° or 90°, a mass that goes to zero or becomes very large, two equal masses, no friction, and a spring or string that is very stiff."
+        },
+        {
+          "type": "rule",
+          "title": "Test a choice against a case you can do in your head",
+          "text": "Pick a value for one variable that turns the situation into one you understand, and predict the answer before you substitute. A choice that gives a different value, a negative length, or an infinite time where a finite one belongs is wrong.",
+          "conditions": [
+            "The case must stay inside the situation the question describes: a block that must slide cannot have μ so large that it sticks.",
+            "Change one variable at a time, and keep the rest general.",
+            "Predict first, then substitute; a prediction made after seeing what a choice gives is not a test."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A worker pushes horizontally with a constant force F on crate 1, of mass m_1, which pushes crate 2, of mass m_2, ahead of it across a frictionless floor. Which expression could be the magnitude of the force crate 1 exerts on crate 2? (A) F (B) Fm_1/(m_1 + m_2) (C) Fm_2/(m_1 + m_2) (D) Fm_2/m_1",
+          "answer": "(C) Fm_2/(m_1 + m_2)",
+          "steps": [
+            "Case m_2 → 0: there is almost nothing to push, so the force on crate 2 should go to 0. (A) gives F and (B) gives F, so both are out. (C) and (D) both give 0.",
+            "Case m_1 → 0: crate 1 is massless, so it passes the whole push along, and the force on crate 2 should be F. (C) gives F. (D) grows without limit, so it is out.",
+            "Only (C) survives. A derivation agrees: both crates share a = F/(m_1 + m_2), and crate 2's only horizontal force is the push from crate 1, so that push is m_2a = Fm_2/(m_1 + m_2).",
+            "Choice (B) is m_1a, the net force on crate 1, not the push on crate 2. The limiting cases caught it without any algebra."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When it fails. A limiting case can only reject; it cannot confirm. Two choices that differ by a factor that equals 1 at the case you tested, such as sin θ at 90° or a mass ratio of equal masses, both pass. Then try a second case that separates them, such as an angle of 30°, where sin θ = 1/2, or do the derivation. A case outside the model also misleads: at θ = 0 a block on a \"ramp\" with friction does not slide at all, so an expression for its sliding acceleration need not make sense there."
+        },
+        {
+          "type": "check",
+          "id": "p1-multiple-choice-methods-c2",
+          "prompt": "A block is released from rest at the top of a frictionless incline that makes an angle θ with the horizontal; the top is a height h above the bottom. Which expressions for the time t the block takes to reach the bottom can you reject with limiting cases, and how do you decide among the rest?\n\n(A) t = (1/sin θ)√(2h/g)\n(B) t = sin θ·√(2h/g)\n(C) t = (1/cos θ)√(2h/g)\n(D) t = √(2h/(g sin θ))",
+          "hint": "What happens at θ = 90°, and as θ shrinks toward 0 with h fixed? If two choices survive, try θ = 30°.",
+          "answer": "Reject (B) and (C). (A) and (D) pass both limits; the case θ = 30° separates them and leaves (A).",
+          "steps": [
+            "θ = 90°: the incline is vertical, so the block falls freely and t = √(2h/g). (A), (B) and (D) give this; (C) has 1/cos 90°, which is infinite, so (C) is out.",
+            "θ → 0 with h fixed: the incline becomes very long and nearly flat, so t should grow without limit. (B) goes to 0, so it is out. (A) and (D) both grow without limit.",
+            "θ = 30°: the incline is h/sin 30° = 2h long and a = g sin 30° = g/2, so 2h = (1/2)(g/2)t^2 and t = √(8h/g) = 2√(2h/g). (A) gives 2√(2h/g); (D) gives √(2)·√(2h/g). So (A) is right.",
+            "In general: length h/sin θ, a = g sin θ, and h/sin θ = (1/2)(g sin θ)t^2, so t = (1/sin θ)√(2h/g). Choice (D) comes from using the incline's length with a = g instead of g sin θ.",
+            "The limits removed two choices quickly; the last step needed a case chosen to separate the survivors."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "units",
+      "title": "Dimensional analysis",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Units must agree",
+          "text": "Every term in a sum or on either side of an equation has the same units, and the argument of a sine, cosine or square root of a ratio must make sense. Write each choice's units in base units (kg, m, s) and compare them with the units of the quantity asked for.",
+          "conditions": [
+            "N = kg·m/s^2, J = N·m = kg·m^2/s^2, W = J/s, Pa = N/m^2.",
+            "A spring constant k is in N/m = kg/s^2, so √(k/m) is in 1/s and √(m/k) is in s.",
+            "μ, angles, sin θ, cos θ, 2π and numerical factors such as 1/2 have no units."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "What units does √(L/g) have?",
+          "text": "√(m/(m/s^2)) = √(s^2) = s, a time, as a period must be."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. Units cannot see anything without units. A factor of 2, a factor of 2π, a coefficient of friction or a sin θ in the wrong place leaves the units unchanged. Units also cannot tell a quantity from a different quantity with the same units: work and torque are both N·m, and a speed and a velocity component are both m/s. So use units to reject choices, then a limiting case or a short derivation to choose among those left."
+        },
+        {
+          "type": "check",
+          "id": "p1-multiple-choice-methods-c3",
+          "prompt": "An object slides to rest on a level surface. Its initial speed is v and the coefficient of kinetic friction is μ. Which expression could give the distance it slides? Use units first, then one limiting case.\n\n(A) v^2/(2μg)\n(B) μv^2/(2g)\n(C) v/(2μg)\n(D) v^2/(2μ)",
+          "hint": "μ has no units. After the unit test, ask what should happen to the distance as μ goes to 0.",
+          "answer": "(A). Units reject (C) and (D); the case μ → 0 rejects (B).",
+          "steps": [
+            "(A): (m/s)^2/(m/s^2) = m. A length, as needed.",
+            "(B): also m, because μ has no units.",
+            "(C): (m/s)/(m/s^2) = s, a time. Rejected.",
+            "(D): (m/s)^2 = m^2/s^2. Rejected.",
+            "Limiting case μ → 0: with no friction the object never stops, so the distance should grow without limit. (A) does; (B) goes to 0. So (A).",
+            "Derivation, for confirmation: friction μmg does work −μmgd, which removes the kinetic energy (1/2)mv^2, so d = v^2/(2μg)."
+          ],
+          "see": "limiting-cases"
+        }
+      ]
+    },
+    {
+      "id": "ratios",
+      "title": "Ratios when a quantity changes by a factor",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Many questions change one quantity by a factor (doubles, triples, a quarter of) and ask how another responds. Do not recompute the whole answer. Write the relation, decide what stays fixed, and take the ratio new/old: everything that stays fixed cancels."
+        },
+        {
+          "type": "rule",
+          "title": "The ratio method",
+          "text": "If y ∝ x^n and everything else stays fixed, multiplying x by a factor k multiplies y by k^n. With several changes, multiply their effects.",
+          "conditions": [
+            "Write a relation that contains both quantities.",
+            "Decide, from the wording, what is held fixed: same speed, same energy, same height, same force?",
+            "If a quantity you treated as fixed actually depends on the one that changed, write it in terms of that quantity first."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Proportions that recur in this course.",
+          "head": [
+            "Relation",
+            "Change",
+            "Effect"
+          ],
+          "rows": [
+            [
+              "K = (1/2)mv^2",
+              "Speed doubles",
+              "Kinetic energy × 4"
+            ],
+            [
+              "a_c = v^2/r",
+              "Same speed, radius halved",
+              "Centripetal acceleration × 2"
+            ],
+            [
+              "F_g = Gm_1m_2/r^2",
+              "Distance between centers tripled",
+              "Force × 1/9"
+            ],
+            [
+              "T = 2π√(m/k)",
+              "Mass × 4",
+              "Period × 2"
+            ],
+            [
+              "T = 2π√(L/g)",
+              "Length × 4",
+              "Period × 2"
+            ],
+            [
+              "I = Σmr^2",
+              "Each mass moved twice as far from the axis",
+              "Rotational inertia × 4"
+            ],
+            [
+              "A_1v_1 = A_2v_2",
+              "Pipe diameter halved",
+              "Area × 1/4, so speed × 4"
+            ],
+            [
+              "P − P_0 = ρgh",
+              "Depth doubled",
+              "Gauge pressure × 2 (absolute pressure by less)"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A solid concrete pillar in the shape of a cylinder stands upright on level ground. A second pillar, made of the same concrete and just as tall, has twice the diameter. By what factor is the pressure the second pillar exerts on the ground larger than the pressure the first one exerts?",
+          "answer": "A factor of 1: the pressure is the same. It depends on the concrete's density and the pillar's height, not on its width.",
+          "steps": [
+            "Relation: P = F/A, with F the pillar's weight mg. It is tempting to hold the weight fixed, which would give area × 4 and pressure × 1/4, or to hold the area fixed, which would give weight × 4 and pressure × 4.",
+            "But neither is fixed. With the same concrete and the same height, m = ρV = ρAh, so the weight grows in proportion to the area.",
+            "Write P in terms of what stays fixed: P = ρAhg/A = ρgh. Density and height are unchanged, so the pressure is unchanged.",
+            "Twice the diameter gives 4 times the area and 4 times the weight, and the two factors cancel. A pillar of the same concrete twice as tall, by contrast, would exert twice the pressure."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Treating a quantity as fixed when the question fixes something else: \"same energy\" is not \"same speed\", and \"same amplitude\" is not \"same maximum speed\".",
+          "fix": "Before taking the ratio, write down in words what the question holds constant, and express everything else in terms of it."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. The method needs a proportion, and not every relation is one. Absolute pressure P_0 + ρgh does not double when depth doubles, because P_0 does not change; v^2 = v_0^2 + 2aΔx does not quadruple when Δx does, unless v_0 = 0. If the relation has a sum, an intercept or a starting value, compute the new value instead of scaling the old one."
+        },
+        {
+          "type": "check",
+          "id": "p1-multiple-choice-methods-c4",
+          "prompt": "A satellite moves in a circular orbit around a planet. It is moved to a new circular orbit whose radius, measured from the planet's center, is 4 times as large. By what factor does its orbital speed change, and by what factor does its period change?",
+          "hint": "Write the speed in terms of r first, using gravity as the centripetal force. Then use T = 2πr/v.",
+          "answer": "Speed × 1/2; period × 8.",
+          "steps": [
+            "Gravity supplies the centripetal force: GMm/r^2 = mv^2/r, so v = √(GM/r) and v ∝ 1/√r. Radius × 4 gives speed × 1/√4 = 1/2.",
+            "T = 2πr/v. The radius is × 4 and the speed is × 1/2, so the period is × 4/(1/2) = 8.",
+            "Scaling T with r alone (× 4) is the common error: it holds v fixed although v depends on r. Equivalently, T^2 ∝ r^3, and 4^3 = 64 = 8^2."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-multiple-choice-methods-c5",
+          "prompt": "A block on a vertical spring oscillates with a period of 1.2 s near Earth's surface. The same spring is taken to a moon where the gravitational field is one-sixth of Earth's, and the block is replaced by one with twice the mass. What is the new period?",
+          "hint": "Which variables appear in the period of a mass on a spring?",
+          "answer": "About 1.7 s: the period depends on m and k only, so it is multiplied by √2.",
+          "steps": [
+            "T = 2π√(m/k). The field strength g does not appear, so the move to the moon changes nothing about the period; it only changes where the block hangs at equilibrium.",
+            "Mass × 2 gives period × √2: 1.2 s × √2 ≈ 1.7 s.",
+            "Treating the spring like a pendulum, T ∝ √(1/g), would give 1.2 s × √6 ≈ 2.9 s. That uses a relation whose conditions do not hold here."
+          ],
+          "see": "system-and-principle"
+        }
+      ]
+    },
+    {
+      "id": "graphs",
+      "title": "Reading graphs: slope, area and intercepts",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A graph question usually asks for one of four things: a value read off the graph, a slope, an area between the graph and the time or position axis, or an intercept. Decide which one the question wants before you read anything. The units do it for you: the slope has the units of the vertical axis divided by those of the horizontal axis, and the area has their product."
+        },
+        {
+          "type": "table",
+          "caption": "What the slope and the area mean on the graphs this course uses.",
+          "head": [
+            "Graph",
+            "Slope",
+            "Area under the graph"
+          ],
+          "rows": [
+            [
+              "Position against time",
+              "Velocity",
+              "No standard meaning"
+            ],
+            [
+              "Velocity against time",
+              "Acceleration",
+              "Displacement (negative below the axis)"
+            ],
+            [
+              "Acceleration against time",
+              "No standard meaning",
+              "Change in velocity"
+            ],
+            [
+              "Net force against time",
+              "No standard meaning",
+              "Impulse, the change in momentum"
+            ],
+            [
+              "Force against position",
+              "For a spring, its size is the spring constant",
+              "Work done by that force"
+            ],
+            [
+              "Power against time",
+              "No standard meaning",
+              "Energy transferred"
+            ],
+            [
+              "Angular velocity against time",
+              "Angular acceleration",
+              "Angular displacement"
+            ],
+            [
+              "Torque against time",
+              "No standard meaning",
+              "Angular impulse, the change in angular momentum"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Intercepts tell you a starting value or a hidden offset",
+          "text": "On a motion graph the vertical intercept is the starting position or velocity. On a graph of experimental data that a model says should pass through the origin, a clear intercept usually means a systematic error, such as a ruler read from the wrong zero, or a quantity the model left out."
+        },
+        {
+          "type": "trap",
+          "text": "Reading the height of the graph when the question asks for the slope: taking the value of x at t = 3 s from a position–time graph as the velocity at 3 s.",
+          "fix": "Ask \"which one: value, slope or area?\" first. For a velocity from a position–time graph, find the slope of the line, or of the tangent if the graph curves."
+        },
+        {
+          "type": "trap",
+          "text": "Adding areas below the time axis as positive when the question asks for a displacement or a change in momentum.",
+          "fix": "Area below the axis counts as negative for displacement, impulse and work. For a total distance, add the sizes instead."
+        },
+        {
+          "type": "trap",
+          "text": "Computing the slope of a set of data from two data points.",
+          "fix": "Draw one best-fit line through the scatter and use two points on the line far apart. Data points that lie off the line would give the wrong slope."
+        },
+        {
+          "type": "text",
+          "text": "Graphs of experimental data appear in multiple choice as well as in Experimental Design and Analysis questions. Reading them on paper is good practice, but paper practice does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. Slope and area mean something only when the quotient or product of the axes is a quantity you know: the area under a position–time graph has no standard meaning, so a choice built on it is a trap. A slope read from a curved graph is the slope of the tangent at one point, not of the chord between two points, unless the question asks for an average. And a graph of one object's motion says nothing about another object unless the question links them."
+        },
+        {
+          "type": "figure",
+          "id": "p1-multiple-choice-methods-g1"
+        },
+        {
+          "type": "check",
+          "id": "p1-multiple-choice-methods-c6",
+          "prompt": "A 0.70 kg cart moves in the +x direction at 1.0 m/s on a level track with negligible friction. Starting at t = 0, a horizontal force in the +x direction acts on it, and the graph shows that force against time. What is the cart's velocity at t = 0.50 s?\n\n(A) 4.0 m/s\n(B) 5.0 m/s\n(C) 3.3 m/s\n(D) 6.7 m/s",
+          "hint": "Which part of the graph is the change in momentum: a value, a slope or an area? Then remember the cart was already moving.",
+          "answer": "(B) 5.0 m/s in the +x direction.",
+          "steps": [
+            "The force is the net force, and the area under a net force–time graph is the impulse, the change in momentum.",
+            "Area from 0 to 0.50 s: (1/2)(0.10 s)(8 N) + (0.20 s)(8 N) + (1/2)(0.20 s)(8 N) = 0.4 + 1.6 + 0.8 = 2.8 N·s.",
+            "Δv = 2.8 N·s/0.70 kg = 4.0 m/s, so v = 1.0 m/s + 4.0 m/s = 5.0 m/s in the +x direction.",
+            "(A) is Δv alone, with the starting velocity left out. (C) uses only the flat part, 1.6 N·s. (D) uses the peak force for the whole time, 8 N × 0.50 s = 4.0 N·s."
+          ],
+          "figureIds": [
+            "p1-multiple-choice-methods-g1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elimination",
+      "title": "Eliminating choices",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Every choice you can reject for a stated reason raises the odds of the one you pick, and a reason you can say aloud is a better guide than a feeling that a choice \"looks wrong\". Run through these tests in roughly this order, because the first ones are fastest."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Units: reject a choice with the wrong units (see Dimensional analysis).",
+            "Direction and sign: reject a choice whose direction contradicts the force diagram or the stated positive direction.",
+            "Size: estimate the answer to within a factor of 3 before computing. A 60 kg person does not reach 40 m/s on a playground slide, and a hand-held ball does not need 500 J to rise 2 m.",
+            "Limits and conservation: no speed after a collision can give the system more kinetic energy than it had, unless stored energy was released; no period can depend on a variable the relation does not contain.",
+            "Symmetry: if two objects play identical roles, a choice that treats them differently needs a reason in the question."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Choices with \"because\"",
+          "text": "Many choices state a claim and a reason. Accept one only if the claim is true, the reason is true, and the reason actually leads to the claim.",
+          "conditions": [
+            "A true claim with a false reason is wrong.",
+            "A true claim with a true reason that does not explain it is wrong.",
+            "When two choices make the same claim, the question is testing the reason."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Picking a choice because it states something true, when it does not answer the question asked.",
+          "fix": "Reread the last sentence of the question and ask whether the choice answers that question, about that object, at that moment."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. Elimination works when the wrong choices come from errors you can detect without solving: wrong units, wrong limits, wrong directions. Questions whose choices are four numbers with the same units, all of plausible size, usually leave no shortcut; they need the calculation. If two choices remain after a minute of testing, choose the better one, mark it, and move on."
+        },
+        {
+          "type": "check",
+          "id": "p1-multiple-choice-methods-c7",
+          "prompt": "On a level track, a 1.0 kg cart moving east collides head-on with a 3.0 kg cart moving west. Which statement about the collision is correct?\n\n(A) The 1.0 kg cart's velocity changes by more, because the carts exert forces of equal magnitude on each other for the same time and it has less mass.\n(B) The 1.0 kg cart experiences the larger force, because its velocity changes by more.\n(C) The carts exert forces of equal magnitude on each other, because their kinetic energies change by equal amounts.\n(D) The 3.0 kg cart has the larger change in momentum, because it has more mass.",
+          "hint": "Test each claim, then test each reason separately.",
+          "answer": "(A).",
+          "steps": [
+            "Newton's third law: the two forces are an interaction pair, equal in magnitude at every instant and acting for the same time. So the impulses, and the changes in momentum, are equal in size.",
+            "Equal changes in momentum with different masses mean Δv = Δp/m is larger for the smaller mass. (A) has a true claim and a reason that leads to it.",
+            "(B) has a false claim: the forces are equal. A larger change in velocity comes from the smaller mass, not a larger force.",
+            "(C) has a true claim with a false reason: the changes in kinetic energy are generally not equal, and the third law does not rest on energy at all.",
+            "(D) is false: the changes in momentum are equal in size and opposite in direction."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pacing",
+      "title": "Pacing Section I",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "85 minutes for 42 questions is 85 ÷ 42 ≈ 2.0 minutes a question. Use that as a checkpoint, not a schedule: a question that only needs a principle named takes 30 seconds, and a two-stage calculation can take 4 minutes."
+        },
+        {
+          "type": "table",
+          "caption": "Checkpoints for Section I at the average pace.",
+          "head": [
+            "Minutes into the section",
+            "Questions finished"
+          ],
+          "rows": [
+            [
+              "About 28",
+              "14"
+            ],
+            [
+              "About 57",
+              "28"
+            ],
+            [
+              "85",
+              "42"
+            ]
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "First pass: answer every question you can see through. When a question has no clear first step after about 30 seconds, or runs past about 4 minutes, choose your best remaining choice, mark it, and move on.",
+            "Mark with a reason, such as \"two left\" or \"long calc\", so the second pass starts with the questions nearest to done.",
+            "Second pass: return to marked questions with the time the first pass saved.",
+            "In the last two minutes, make sure every question has an answer. In Liminal's practice scoring a wrong choice costs nothing more than a blank, so leave no blank."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "On paper practice, circle the question number to mark it. On the exam, multiple-choice answers go into Bluebook, so try College Board's Bluebook practice beforehand to see how the app lets you move between questions."
+        },
+        {
+          "type": "rule",
+          "title": "Calculator: estimate first",
+          "text": "A calculator is allowed for every question. Use it for arithmetic you would otherwise do slowly, but estimate the answer first, so a mistyped value or a calculator in radian mode for an angle in degrees shows up as a mismatch. Ratio questions with symbols need no calculator at all."
+        },
+        {
+          "type": "trap",
+          "text": "Spending six minutes early in the section on one question you are sure you can finish.",
+          "fix": "Each minute past the average comes out of later questions, some of them quick. At about 4 minutes, choose, mark and move on; come back only with saved time."
+        },
+        {
+          "type": "text",
+          "text": "When it fails. Two passes cost rereading time; if you rarely mark questions and usually finish early, one careful pass with a final look at the few marked questions is better. Marking more than about a quarter of the section turns the second pass into a second exam, so commit to more answers the first time. And checkpoints are averages: being a minute or two behind is normal; five or more behind means start moving on sooner."
+        },
+        {
+          "type": "check",
+          "id": "p1-multiple-choice-methods-c8",
+          "prompt": "You start Section I of a practice exam at 1:00 and finish question 15 at 1:40. At the average pace, how many questions should you have finished by now, how many minutes per question do you have left, and what should you change?",
+          "hint": "Divide the time used by 85/42 minutes, then divide the time left by the questions left.",
+          "answer": "About 20 questions, so you are about 5 questions behind. The remaining 27 questions have 45 minutes, about 1.7 minutes each. Move on sooner: choose, mark and skip any question without a clear first step, and keep the cutoff near 3 minutes instead of 4.",
+          "steps": [
+            "Average pace: 85/42 ≈ 2.02 minutes a question. In 40 minutes that is 40/2.02 ≈ 19.8, about 20 questions.",
+            "You have finished 15, so you are about 5 questions, or about 10 minutes, behind.",
+            "Time left: 85 − 40 = 45 minutes for 42 − 15 = 27 questions, about 1.67 minutes each.",
+            "Five questions behind calls for skipping slow questions on the first pass, not for rushing every question. Read your clock notes afterward to see whether the time went to a few long questions or to slow work throughout."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Practise the methods where choosing the principle is part of every question: the mixed sets put the units side by side as the exam does. Before solving each item, write the name of the principle you will use, then compare that choice with the key."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Mixed set 1",
+              "ref": "test:mixed-1"
+            },
+            {
+              "label": "Mixed set 2",
+              "ref": "test:mixed-2"
+            },
+            {
+              "label": "Exam format and pacing",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Using the formula reference",
+              "ref": "guide:formula-reference-skills"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Practice exam A: student copy",
+              "ref": "test:practice-exam"
+            },
+            {
+              "label": "Unit 2 review: Force and Translational Dynamics",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 4 review: Linear Momentum",
+              "ref": "guide:review-u4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

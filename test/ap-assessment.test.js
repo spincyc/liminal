@@ -180,12 +180,14 @@ test("exam-prep kinds, ID segments, refs and routes resolve from the BC prep blo
   assert.equal(A.assessmentKind(bc, "fr-series"), "fr-set");
   assert.equal(A.assessmentKind(bc, "practice-exam-z"), null, "only forms the plan lists");
   assert.equal(A.assessmentKind(course("calculus-ab"), "mixed-1"), "mixed-set", "AB has its own prep block");
+  assert.equal(A.assessmentKind(course("physics-1"), "fr-experimental-design"), "fr-set");
   assert.equal(A.assessmentKind(course("calculus-ab"), "fr-polar"), null, "only the archetypes a course's plan lists");
   assert.equal(A.guideKind(bc, "review-u10"), "unit-review");
   assert.equal(A.guideKind(bc, "fr-polar"), "fr-archetype");
   assert.equal(A.guideKind(bc, "memory-sheet"), "strategy");
   assert.equal(A.guideKind(bc, "unit-1"), null);
-  assert.deepEqual(A.guideIds(course("physics-1")), []);
+  assert.equal(A.guideKind(course("physics-c-mechanics"), "calculus-methods"), "strategy");
+  assert.equal(A.guideKind(course("physics-1"), "calculus-methods"), null);
   assert.equal(A.refHref("calculus-bc", "week:14"), "weeks.html#ap/calculus-bc/14");
   assert.equal(A.refHref("calculus-bc", "week:14"), "weeks.html" + require("../src/lib/weekly").route("ap", "calculus-bc", 14), "matches the weekly route");
   assert.equal(A.refHref("calculus-bc", "key:practice-exam-b"), "#calculus-bc/test/practice-exam-b/key");
@@ -199,8 +201,8 @@ test("exam-prep kinds, ID segments, refs and routes resolve from the BC prep blo
   assert.deepEqual(at("#calculus-bc/test/fr-polar/key"), ["assessment", "calculus-bc", "fr-polar", "key", null, false]);
   assert.deepEqual(at("#calculus-bc/test/practice-exam-d"), ["assessment", "calculus-bc", "practice-exam-d", "student", null, false]);
   assert.deepEqual(at("#calculus-bc/guide/unknown"), ["plan", "calculus-bc", null, null, null, true]);
-  assert.deepEqual(at("#calculus-ab/prep"), ["prep", "calculus-ab", null, null, null, false]);
-  assert.deepEqual(at("#physics-1/prep"), ["plan", "physics-1", null, null, null, true], "Physics 1 has no prep page yet");
+  assert.deepEqual(at("#physics-1/prep"), ["prep", "physics-1", null, null, null, false]);
+  assert.deepEqual(at("#physics-1/guide/fr-polar"), ["plan", "physics-1", null, null, null, true], "a guide another course lists");
   assert.equal(A.route("calculus-bc", "prep"), "#calculus-bc/prep");
   assert.equal(A.route("calculus-bc", "guide", "x/../y"), "");
 });
@@ -222,6 +224,20 @@ test("mixed and free-response set blueprints hold the exam's pace and order", ()
   const heavy = F.frSet("fr-polar"); heavy.sections[0].parts[1].items[0].parts[0].points = 4; heavy.sections[0].parts[1].items[0].parts[0].rubric.push({ points: 1, criterion: "Extra." });
   assert.match(A.blueprintProblems(heavy, bc).join("\n"), /worth 10 points; free response is worth 9/);
   assert.deepEqual(A.keyBalance(F.frSet("fr-polar")).problems, [], "sets without multiple choice have no key balance");
+});
+
+test("physics free-response sets practise one type at that type's pace and points", () => {
+  const p1 = course("physics-1");
+  assert.deepEqual(A.blueprintProblems(F.physicsFrSet(), p1), []);
+  assert.deepEqual(A.blueprintProblems(F.physicsFrSet("physics-c-mechanics", "fr-qualitative-quantitative", "QQT"), course("physics-c-mechanics")), []);
+  const slow = F.physicsFrSet(); slow.sections[0].parts[0].minutes = 100;
+  assert.match(A.blueprintProblems(slow, p1).join("\n"), /part A is 100 minutes; 4 questions take 108/);
+  const mixedTypes = F.physicsFrSet(); mixedTypes.sections[0].parts[0].items[3] = F.physicsFrSet("physics-1", "fr-experimental-design", "MR").sections[0].parts[0].items[3];
+  assert.match(A.blueprintProblems(mixedTypes, p1).join("\n"), /practises one question type/);
+  const heavy = F.physicsFrSet(); heavy.sections[0].parts[0].items[0].parts[0].points = 5; heavy.sections[0].parts[0].items[0].parts[0].rubric.push({ points: 1, criterion: "Extra." });
+  assert.match(A.blueprintProblems(heavy, p1).join("\n"), /\(EDA\) is worth 11 points; that type is worth 10/);
+  const untyped = F.physicsFrSet(); delete untyped.sections[0].parts[0].items[1].type;
+  assert.match(A.blueprintProblems(untyped, p1).join("\n"), /needs a free-response type/);
 });
 
 test("guide checks are numbered in reading order across sections", () => {

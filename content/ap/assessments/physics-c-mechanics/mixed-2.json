@@ -1,0 +1,334 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "mixed-2",
+  "kind": "mixed-set",
+  "title": "Mixed set 2: all units at exam pace",
+  "author": "cm-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from every unit of the course at the exam's pace: Part A has 15 multiple-choice questions in 30 minutes, and a four-function, scientific or graphing calculator is allowed. The questions are mixed on purpose and are built around choices that are easy to confuse: whether to differentiate or integrate, which conservation law applies, and whether the constant-acceleration equations hold or a varying force calls for calculus. Part of each question is deciding which idea or method applies, so expect it to feel slower than practising one topic at a time. You may use the course's formula reference. Use g = 9.8 m/s^2 and SI units; angles inside functions of time are in radians. Record raw points; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "15 questions, 30 minutes. Choose the best answer for each question and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question.",
+          "items": [
+            {
+              "id": "cm-mixed-2-mc01",
+              "prompt": "A small glider's position is r(t) = (4.0t) i + (3.0t^2 − 0.50t^3) j for 0 ≤ t ≤ 6.0 s, with r in meters, t in seconds, i horizontal and j pointing up. What is the glider's speed at the instant it is highest?",
+              "choices": [
+                "0",
+                "5.7 m/s",
+                "6.0 m/s",
+                "4.0 m/s"
+              ],
+              "key": "D",
+              "rationale": "Differentiate: v(t) = (4.0) i + (6.0t − 1.5t^2) j. The glider is highest when v_y = 0, at t = 4.0 s, and then v = (4.0) i m/s, so its speed is 4.0 m/s.",
+              "distractorNotes": {
+                "A": "At the highest point only the vertical velocity is zero. The glider still moves horizontally at 4.0 m/s.",
+                "B": "This is the magnitude of the average velocity from t = 0 to 4.0 s, |r(4.0)|/4.0 = 22.6 m/4.0 s, not the instantaneous velocity, which needs a derivative.",
+                "C": "This is the magnitude of the acceleration at t = 4.0 s, from differentiating twice; the speed needs only the first derivative."
+              },
+              "topics": [
+                "CM.1.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc02",
+              "prompt": "A 0.010 kg bullet moving horizontally at 600 m/s passes straight through a 2.0 kg wooden block at rest on frictionless ice and leaves it moving at 200 m/s in the same direction. What is the block's speed just afterward?",
+              "choices": [
+                "40 m/s",
+                "2.0 m/s",
+                "3.0 m/s",
+                "1.0 m/s"
+              ],
+              "key": "B",
+              "rationale": "No net horizontal external force acts on the bullet–block system, so its momentum is conserved: (0.010)(600) = (0.010)(200) + (2.0)v, so v = 4.0/2.0 = 2.0 m/s. Kinetic energy is not conserved: the bullet loses 1600 J while the block gains only 4.0 J.",
+              "distractorNotes": {
+                "A": "This gives the block all of the kinetic energy the bullet lost, 1600 J. Most of that energy becomes internal energy as the bullet tears through the wood, so kinetic energy is not conserved.",
+                "C": "This gives the block all of the bullet's initial momentum, as if the bullet stopped in it; the bullet leaves with 2.0 kg·m/s of momentum.",
+                "D": "This uses the bullet's momentum after it leaves, 2.0 kg·m/s, instead of the momentum it lost, 4.0 kg·m/s."
+              },
+              "topics": [
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc03",
+              "prompt": "An elevator's velocity is v(t) = 1.2t − 0.20t^2, with v in m/s, up positive, and t in seconds, for 0 ≤ t ≤ 6.0 s. A 70 kg passenger stands on a scale in the elevator. What does the scale read at t = 5.0 s?",
+              "choices": [
+                "630 N",
+                "760 N",
+                "690 N",
+                "740 N"
+              ],
+              "key": "A",
+              "rationale": "Differentiate: a(t) = 1.2 − 0.40t, so a(5.0 s) = −0.80 m/s^2 (downward). Newton's second law for the passenger, up positive: N − mg = ma, so N = m(g + a) = 70(9.8 − 0.80) = 630 N.",
+              "distractorNotes": {
+                "B": "This uses the velocity at t = 5.0 s, 1.0 m/s, as if it were the acceleration. The acceleration is the derivative of v(t).",
+                "C": "This is the passenger's weight, as if the elevator's acceleration were zero because it is still moving upward. The scale reading depends on the acceleration, not the direction of motion.",
+                "D": "This uses the size of the acceleration, 0.80 m/s^2, but with the wrong sign: at t = 5.0 s the elevator is slowing while moving up, so its acceleration points down."
+              },
+              "topics": [
+                "CM.2.5",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc04",
+              "prompt": "A potter's wheel starts from rest, and its angular velocity is ω(t) = 12(1 − e^(−t/3.0)), with ω in rad/s and t in seconds. Through what angle does the wheel turn in the first 3.0 s?",
+              "choices": [
+                "11 rad",
+                "23 rad",
+                "13 rad",
+                "36 rad"
+              ],
+              "key": "C",
+              "rationale": "The angular displacement is the integral of ω: θ = ∫ from 0 to 3.0 of 12(1 − e^(−t/3.0)) dt = 12[t + 3.0e^(−t/3.0)] from 0 to 3.0 = 12(3.0 + 3.0e^(−1) − 3.0) = 36e^(−1) = 13 rad.",
+              "distractorNotes": {
+                "A": "This averages the starting and final angular velocities, 0 and 7.6 rad/s, and multiplies by 3.0 s. That works only for constant angular acceleration; here the angular acceleration decreases with time.",
+                "B": "This multiplies the angular velocity at t = 3.0 s, 7.6 rad/s, by 3.0 s, as if the wheel had turned at that rate the whole time.",
+                "D": "This multiplies the limiting angular velocity, 12 rad/s, by 3.0 s; the wheel has not yet reached that rate."
+              },
+              "topics": [
+                "CM.5.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc05",
+              "prompt": "A puck moves in a straight line on a horizontal table from the origin to the point (2.0 m, 1.0 m). One of the forces on it is F = (2.0y) i, with F in newtons and y in meters. How much work does this force do on the puck during the move?",
+              "choices": [
+                "4.0 J",
+                "2.0 J",
+                "0",
+                "4.5 J"
+              ],
+              "key": "B",
+              "rationale": "The force varies along the path, so W = ∫F·dr = ∫F_x dx. On the straight path, y = x/2, so F_x = 2.0(x/2) = x and W = ∫ from 0 to 2.0 of x dx = 2.0 J. The y-component of F is zero, so motion in y adds no work.",
+              "distractorNotes": {
+                "A": "This uses the force at the end point, (2.0 i) N, as if it were constant along the path. The force grows from zero as y increases, so it must be integrated.",
+                "C": "This uses the force at the starting point, where y = 0 and F = 0, as if it stayed zero along the path.",
+                "D": "This multiplies the magnitude of the final force, 2.0 N, by the length of the path, 2.2 m, ignoring both the angle between them and the change in the force."
+              },
+              "topics": [
+                "CM.3.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc06",
+              "prompt": "A diver leaves the board rotating at 2.0 rad/s with a rotational inertia of 12 kg·m^2 about her center of mass. In the air she pulls into a tuck, which reduces her rotational inertia to 4.0 kg·m^2. How does her rotational kinetic energy change?",
+              "choices": [
+                "It does not change.",
+                "It decreases by 16 J.",
+                "It increases by 192 J.",
+                "It increases by 48 J."
+              ],
+              "key": "D",
+              "rationale": "Gravity acts at her center of mass, so it exerts no torque about it, and her angular momentum about the center of mass is conserved: (12)(2.0) = (4.0)ω, so ω = 6.0 rad/s. Her rotational kinetic energy goes from ½(12)(2.0)^2 = 24 J to ½(4.0)(6.0)^2 = 72 J, an increase of 48 J supplied by the work her muscles do.",
+              "distractorNotes": {
+                "A": "This assumes kinetic energy is conserved. Angular momentum is conserved because gravity exerts no torque about her center of mass; her muscles do positive work pulling her body inward.",
+                "B": "This keeps the angular speed at 2.0 rad/s while the rotational inertia falls. With no external torque about her center of mass, the angular momentum Iω stays constant, so ω must rise.",
+                "C": "This triples the angular speed but keeps the original rotational inertia of 12 kg·m^2 in ½Iω^2."
+              },
+              "topics": [
+                "CM.6.4",
+                "CM.6.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc07",
+              "prompt": "An oscillating cart passes its equilibrium position, x = 0, at t = 0. Its velocity is v(t) = 0.60 cos(4.0t), with v in m/s, t in seconds and the angle in radians. Where is the cart at t = 0.50 s?",
+              "choices": [
+                "x = 0.14 m",
+                "x = 2.2 m",
+                "x = −0.12 m",
+                "x = 0.30 m"
+              ],
+              "key": "A",
+              "rationale": "Integrate the velocity from x(0) = 0: x(t) = ∫ from 0 to t of 0.60 cos(4.0t) dt = (0.60/4.0) sin(4.0t) = 0.15 sin(4.0t). At t = 0.50 s, x = 0.15 sin(2.0) = 0.15(0.909) = 0.14 m.",
+              "distractorNotes": {
+                "B": "This multiplies by the angular frequency instead of dividing by it when integrating: the antiderivative of cos(4.0t) is sin(4.0t)/4.0, not 4.0 sin(4.0t).",
+                "C": "This multiplies the velocity at t = 0.50 s, −0.25 m/s, by 0.50 s, as if the cart had moved at that velocity the whole time.",
+                "D": "This multiplies the greatest speed, 0.60 m/s, by 0.50 s. The speed changes, so the velocity must be integrated."
+              },
+              "topics": [
+                "CM.7.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc08",
+              "prompt": "A planet has 49 times the mass of its moon, and their centers are 4.0 × 10^8 m apart. How far from the planet's center, on the line joining the centers, is the point where the net gravitational force on a spacecraft is zero?",
+              "choices": [
+                "3.9 × 10^8 m",
+                "2.0 × 10^8 m",
+                "3.5 × 10^8 m",
+                "5.0 × 10^7 m"
+              ],
+              "key": "C",
+              "rationale": "Set the two inverse-square forces equal: GMm_s/d^2 = G(M/49)m_s/(D − d)^2, so (D − d)/d = 1/7 and d = 7D/8 = 7(4.0 × 10^8)/8 = 3.5 × 10^8 m from the planet's center.",
+              "distractorNotes": {
+                "A": "This balances the masses against the distances themselves, M/d = m/(D − d), as if gravity fell off as 1/r instead of 1/r^2.",
+                "B": "This is the midpoint, which would be the balance point only if the two masses were equal.",
+                "D": "This is the correct point's distance from the moon's center, not from the planet's."
+              },
+              "topics": [
+                "CM.2.6"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc09",
+              "prompt": "Cart A, of mass 1.0 kg, and cart B, of mass 4.0 kg, move with momenta of the same magnitude. Each is brought to rest by the same constant braking force. How do their stopping times and stopping distances compare?",
+              "choices": [
+                "The times are equal, and the distances are equal.",
+                "The times are equal, and A travels 4 times as far as B.",
+                "The times are equal, and B travels 4 times as far as A.",
+                "B takes 4 times as long as A, and the distances are equal."
+              ],
+              "key": "B",
+              "rationale": "Time comes from impulse: FΔt = p for each cart, so equal momenta and equal forces give equal stopping times. Distance comes from work: Fd = K = p^2/2m, so d is inversely proportional to m, and cart A, with ¼ the mass, travels 4 times as far.",
+              "distractorNotes": {
+                "A": "Equal momenta do not mean equal kinetic energies: K = p^2/2m, so the lighter cart has 4 times the kinetic energy and needs 4 times the work to stop.",
+                "C": "This inverts K = p^2/2m. For equal momenta, the smaller mass has the larger kinetic energy.",
+                "D": "The impulse needed is the momentum, which is the same for both, so with equal forces the times are equal; the mass does not enter."
+              },
+              "topics": [
+                "CM.3.2",
+                "CM.4.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc10",
+              "prompt": "A uniform 4.0 kg disk of radius 0.25 m lies flat on frictionless ice. Two horizontal forces, each of magnitude 3.0 N, act tangentially at opposite ends of a diameter and in opposite directions, so that both turn the disk the same way. What are the magnitude of the acceleration of the disk's center and the disk's angular acceleration?",
+              "choices": [
+                "0 and 12 rad/s^2",
+                "1.5 m/s^2 and 12 rad/s^2",
+                "0 and 0",
+                "0 and 6.0 rad/s^2"
+              ],
+              "key": "A",
+              "rationale": "Translation and rotation need separate laws. The forces are equal and opposite, so F_net = 0 and the center's acceleration is zero. Their torques about the center add: τ = 2(3.0)(0.25) = 1.5 N·m, and I = ½MR^2 = ½(4.0)(0.25)^2 = 0.125 kg·m^2, so α = τ/I = 12 rad/s^2.",
+              "distractorNotes": {
+                "B": "This adds the magnitudes of the two forces, 6.0 N, to find the acceleration of the center. The forces point in opposite directions, so the net force is zero.",
+                "C": "The net force is zero, so the center does not accelerate, but the net torque is not zero: both forces turn the disk the same way.",
+                "D": "This counts the torque of only one force. Both forces turn the disk the same way, so their torques add to 1.5 N·m."
+              },
+              "topics": [
+                "CM.5.6",
+                "CM.5.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc11",
+              "prompt": "A 30 kg child stands on a 60 kg sled at rest on level, frictionless ice. The child jumps off the back of the sled with a velocity of 4.0 m/s relative to the ice, directed 30° above the horizontal. What is the sled's speed just afterward?",
+              "choices": [
+                "2.0 m/s",
+                "2.8 m/s",
+                "1.0 m/s",
+                "1.7 m/s"
+              ],
+              "key": "D",
+              "rationale": "During the jump the ice exerts an extra upward normal force, so vertical momentum is not conserved, but no horizontal external force acts, so horizontal momentum is: 0 = (30)(4.0 cos 30°) − (60)v, so v = 104/60 = 1.7 m/s, toward the front.",
+              "distractorNotes": {
+                "A": "This uses the child's full 4.0 m/s as horizontal; only the horizontal component, 4.0 cos 30° = 3.5 m/s, enters the horizontal momentum.",
+                "B": "This sets the sled's kinetic energy equal to the child's. Kinetic energy is not conserved in a jump: the child's muscles supply it, so energy cannot fix the split between child and sled.",
+                "C": "This uses the vertical component, 4.0 sin 30°. The vertical momentum is not conserved, because the ice pushes up harder than gravity pulls during the jump."
+              },
+              "topics": [
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc12",
+              "prompt": "A particle moving along the x-axis has potential energy U(x) = U_0 e^(−x/a), where U_0 and a are positive constants. Which expression gives the force on the particle?",
+              "choices": [
+                "−(U_0/a)e^(−x/a)",
+                "U_0 a e^(−x/a)",
+                "(U_0/a)e^(−x/a)",
+                "−U_0 a e^(−x/a)"
+              ],
+              "key": "C",
+              "rationale": "F = −dU/dx = −U_0(−1/a)e^(−x/a) = (U_0/a)e^(−x/a). It is positive, pointing toward larger x, down the slope of U, as a force from a decreasing potential energy should.",
+              "distractorNotes": {
+                "A": "This is dU/dx. The force is the negative of the slope of U, F = −dU/dx, and U decreases with x, so the force points in +x.",
+                "B": "This is −∫U dx: it integrates the potential energy instead of differentiating it.",
+                "D": "This is ∫U dx. A force comes from the derivative of U, not from its integral."
+              },
+              "topics": [
+                "CM.3.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc13",
+              "prompt": "A bus moves forward along a straight, level road while braking with a constant acceleration of 2.0 m/s^2 directed backward. A passenger releases a set of keys from rest relative to the bus, 1.1 m above the floor, and the bus is still moving forward when they land. Ignoring air resistance, where do the keys land relative to the point on the floor directly below the release point?",
+              "choices": [
+                "0.22 m toward the front of the bus",
+                "Directly below the release point",
+                "0.45 m toward the front of the bus",
+                "0.22 m toward the back of the bus"
+              ],
+              "key": "A",
+              "rationale": "The fall takes t = √(2(1.1)/9.8) = 0.47 s. Relative to the bus, the keys start at rest and, because the bus accelerates backward at 2.0 m/s^2 while the keys have no horizontal acceleration, they accelerate forward at 2.0 m/s^2 relative to the bus. Their displacement relative to the bus is ½(2.0)(0.47)^2 = 0.22 m toward the front.",
+              "distractorNotes": {
+                "B": "This holds when the bus moves at constant velocity. Here the bus slows while the keys keep the forward velocity they had at release, so they move ahead relative to the bus.",
+                "C": "This uses at^2 for the relative displacement instead of ½at^2.",
+                "D": "This gets the direction backward. The bus slows down under the keys, so they land ahead of the point below the release."
+              },
+              "topics": [
+                "CM.1.4",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc14",
+              "prompt": "A motor turns a flywheel of known rotational inertia I, starting from rest. The motor's torque on the flywheel is recorded as a function of the angle θ through which the flywheel has turned, and friction is negligible. Which procedure gives the flywheel's final angular speed?",
+              "choices": [
+                "Find the area under the τ–θ graph, set it equal to Iω, and solve for ω.",
+                "Find the area under the τ–θ graph, set it equal to ½Iω^2, and solve for ω.",
+                "Divide the final torque by I to get α, then use ω^2 = 2αθ for the whole angle.",
+                "Average the first and last torques, divide by I, and use ω^2 = 2αθ."
+              ],
+              "key": "B",
+              "rationale": "Torque recorded against angle gives work: W = ∫τ dθ, the area under the τ–θ graph. By the work–energy theorem for rotation, W = ½Iω^2 − 0, so ω = √(2W/I). This holds for any torque–angle curve.",
+              "distractorNotes": {
+                "A": "The area under a torque–angle graph is work, which equals the change in rotational kinetic energy. Angular momentum Iω changes by the area under a torque–time graph.",
+                "C": "This treats the angular acceleration as constant at its final value; the torque varies with angle, so the constant-acceleration equations do not apply.",
+                "D": "This averages only the end values of the torque. That matches the work only when the torque varies linearly with angle; in general the area under the whole graph is needed."
+              },
+              "topics": [
+                "CM.6.2",
+                "CM.6.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-2-mc15",
+              "prompt": "A particle of mass m moves along the x-axis with potential energy U(x), which has a minimum at x = x_0, where x_0 is not zero. Which expression gives the period of the particle's small oscillations about x_0?",
+              "choices": [
+                "2π√(m/k), with k = dU/dx at x = x_0",
+                "2π√(m/k), with k = 2U(x_0)/x_0^2",
+                "2π√(m/k), with k = d^2U/dx^2 at x = x_0",
+                "2π√(k/m), with k = d^2U/dx^2 at x = x_0"
+              ],
+              "key": "C",
+              "rationale": "Near the minimum, F = −dU/dx ≈ −k(x − x_0) with k = d^2U/dx^2 at x_0, a restoring force proportional to the displacement from x_0. That is simple harmonic motion with this effective spring constant, so T = 2π√(m/k).",
+              "distractorNotes": {
+                "A": "The first derivative of U is zero at a minimum, so it cannot serve as a spring constant. The restoring force near x_0 is F ≈ −k(x − x_0) with k = d^2U/dx^2 at x_0.",
+                "B": "This treats U(x_0) as ½kx_0^2, the energy of a spring stretched from x = 0. The oscillation is about x_0, and the stiffness depends on the curvature of U there, not on its value.",
+                "D": "This uses the right k but inverts the ratio: the period grows with mass, so T = 2π√(m/k)."
+              },
+              "topics": [
+                "CM.7.2",
+                "CM.3.3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

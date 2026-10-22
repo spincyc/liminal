@@ -1,0 +1,548 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "review-u6",
+  "kind": "unit-review",
+  "unitId": "u6",
+  "title": "Unit 6 review: Energy and Momentum of Rotating Systems",
+  "author": "cm-review-author",
+  "summary": "A retrieval-first review of Unit 6 for the AP® Physics C: Mechanics Exam: rotational kinetic energy, work and power delivered by torques, angular momentum and angular impulse, conservation of angular momentum in collisions and changes of shape, rolling with and without slipping, and the energy and angular momentum of orbiting satellites. Answer the recall checks and the mixed problems before reading the summary, then use the rules, model sentences, traps and worked examples to repair what you missed.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "cm-review-u6-g1",
+      "alt": "Side view of a spool resting on a level table: a large outer circle of radius R with a smaller concentric hub of radius r. A string leaves the bottom of the hub and runs horizontally to the right, where an arrow labeled F points to the right."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question on paper, from memory, before you open its answer. State every result with the conditions under which it holds. Use g = 9.8 m/s^2, SI units and radians, and take counterclockwise as the positive sense of rotation unless a question says otherwise. A blank or a wrong answer is useful: its answer names the section further down to reread."
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c1",
+          "see": "what-to-know",
+          "prompt": "Give the kinetic energy of a rigid body turning about a fixed axis, the work done by a torque that varies with angle, and the power a torque delivers. Then state the rotational work–energy theorem.",
+          "answer": "K = ½Iω^2, with I about the axis of rotation. W = ∫ τ dθ from θ_1 to θ_2, with θ in radians. P = τω. The net work done by the torques on a rigid body equals its change in rotational kinetic energy: W_net = ½Iω_2^2 − ½Iω_1^2.",
+          "steps": [
+            "½Iω^2 is the sum of ½m_iv_i^2 over the particles, with v_i = r_iω; it is ordinary kinetic energy, collected for a turning body.",
+            "W = ∫ τ dθ is the signed area under a τ–θ graph; for a constant torque, W = τΔθ.",
+            "Joules come out only with θ in radians and ω in rad/s.",
+            "A rigid body's gravitational potential energy is Mg times the height of its center of mass."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c2",
+          "see": "what-to-know",
+          "prompt": "Give the angular momentum of a particle about a point O, and of a rigid body turning about a fixed axis. How is a change in angular momentum related to torque, at an instant and over a time interval?",
+          "answer": "Particle: L = r × p, with magnitude mvr_⊥, where r_⊥ is the perpendicular distance from O to the line along which the particle moves. Rigid body about a fixed axis: L = Iω. At an instant, τ_net = dL/dt, with the torque and L about the same point. Over an interval, the angular impulse equals the change: ∫ τ dt = ΔL, the signed area under a τ–t graph.",
+          "steps": [
+            "A particle moving in a straight line at constant velocity has constant angular momentum about any point, because r_⊥ does not change.",
+            "Only external torques change a system's total angular momentum.",
+            "Use ∫ τ dt = ΔL when a torque acts for a known time, and ∫ τ dθ = ΔK when it acts through a known angle."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c3",
+          "see": "what-to-know",
+          "prompt": "When is the angular momentum of a system conserved, and about which point? In a collision between a moving object and a body on a fixed pivot, which momentum is conserved, which is not, and why? Must kinetic energy be conserved as well?",
+          "answer": "Angular momentum about a point is conserved when the net external torque about that point is zero. In a collision with a pivoted body, angular momentum about the pivot is conserved: the pivot's force acts at the pivot, so it has no torque about it, and gravity's angular impulse during the brief collision is negligible. Linear momentum is not conserved, because the pivot exerts an external force. Kinetic energy need not be conserved.",
+          "steps": [
+            "For a body that changes shape, I_1ω_1 = I_2ω_2. Since K = L^2/(2I), a smaller I at the same L means more kinetic energy, supplied by whatever pulls the mass inward.",
+            "For objects free to move, with no pivot, linear momentum and angular momentum about any fixed point are both conserved.",
+            "Sticking collisions convert kinetic energy to internal energy; only an elastic collision conserves it.",
+            "Give angular momenta signs, counterclockwise positive, before adding them."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c4",
+          "see": "what-to-know",
+          "prompt": "State the condition for rolling without slipping, the kinetic energy of a rolling object, and the acceleration of an object with shape factor β = I_cm/(MR^2) rolling without slipping down a slope of angle θ. What does static friction do in rolling without slipping?",
+          "answer": "Rolling without slipping: v_cm = Rω and a_cm = Rα, so the contact point is momentarily at rest. K = ½Mv_cm^2 + ½I_cmω^2 = ½M(1 + β)v_cm^2. Down a slope, a = g sin θ/(1 + β). Static friction supplies the torque that keeps the rolling condition; it does no work, because the contact point does not move, so mechanical energy is conserved.",
+          "steps": [
+            "β is 2/5 for a solid sphere, 1/2 for a solid cylinder, 2/3 for a thin spherical shell and 1 for a hoop.",
+            "From energy, the speed after descending a height h is v = √(2gh/(1 + β)), independent of mass and radius.",
+            "Static friction is whatever the motion needs, up to μ_sN: rolling on the slope needs μ_s ≥ β tan θ/(1 + β). Its direction depends on the situation.",
+            "If the object slips, kinetic friction μ_kN acts, v_cm ≠ Rω, and mechanical energy is not conserved."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c5",
+          "see": "what-to-know",
+          "prompt": "For a satellite of mass m in a circular orbit of radius r around a planet of mass M, give its speed, the relation between its period and r, and the kinetic, potential and total energies. For an elliptical orbit, which quantities are conserved, and where does r_1v_1 = r_2v_2 hold?",
+          "answer": "v = √(GM/r); T^2 = (4π^2/(GM))r^3; K = GMm/(2r), U = −GMm/r and E = −GMm/(2r) = −K, with r measured from the planet's center. On an ellipse, the system's mechanical energy and the satellite's angular momentum about the planet's center are conserved. r_1v_1 = r_2v_2 holds only at the closest and farthest points, where the velocity is perpendicular to the radius; elsewhere L = mvr sin φ.",
+          "steps": [
+            "Gravity points at the planet's center, so its torque about the center is zero: L is conserved, but linear momentum is not.",
+            "A larger circular orbit has a slower speed, a longer period and a larger (less negative) total energy.",
+            "The satellite escapes if E ≥ 0; at distance r this needs v ≥ √(2GM/r)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level, with any calculator. Use G = 6.67 × 10^−11 N·m^2/kg^2 and Earth's mass 5.97 × 10^24 kg where needed. Decide on a principle yourself before you read a hint, and give every numerical answer with a unit."
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c6",
+          "see": "what-to-know",
+          "prompt": "A small motor drives a flywheel (I = 0.020 kg·m^2) on frictionless bearings. The motor's torque falls as the flywheel speeds up: τ = τ_0(1 − ω/ω_max), with τ_0 = 0.80 N·m and ω_max = 300 rad/s. The flywheel starts from rest.\n\n(a) Write the power the motor delivers as a function of ω. Find the greatest power and the angular speed at which it occurs.\n\n(b) Find the work the motor does in bringing the flywheel from rest to 150 rad/s.\n\n(c) Find the time the flywheel takes to reach 150 rad/s.",
+          "hint": "For (b), ask whether you need to know how the torque changed, or only how fast the flywheel turns at the start and the end. For (c), write the rotational form of Newton's second law with this torque.",
+          "answer": "(a) P = τ_0ω(1 − ω/ω_max); greatest power 60 W, at 150 rad/s (b) 2.3 × 10^2 J (225 J) (c) 5.2 s",
+          "steps": [
+            "(a) P = τω = τ_0ω(1 − ω/ω_max). Setting dP/dω = τ_0(1 − 2ω/ω_max) = 0 gives ω = ω_max/2 = 150 rad/s.",
+            "P_max = τ_0(ω_max/2)(1/2) = τ_0ω_max/4 = (0.80)(300)/4 = 60 W. The power is zero at rest and at 300 rad/s, where the torque vanishes.",
+            "(b) The motor's torque is the only torque, so by the rotational work–energy theorem W = ΔK = ½(0.020)(150)^2 − 0 = 225 J. How the torque varied along the way does not matter for the work.",
+            "(c) Στ = Iα: I dω/dt = τ_0(1 − ω/ω_max). Separate the variables: dω/(1 − ω/ω_max) = (τ_0/I) dt.",
+            "Integrate from 0: −ω_max ln(1 − ω/ω_max) = (τ_0/I)t, so ω(t) = ω_max(1 − e^(−t/T)) with T = Iω_max/τ_0 = (0.020)(300)/0.80 = 7.5 s.",
+            "ω = ω_max/2 when e^(−t/T) = 1/2: t = T ln 2 = (7.5)(0.693) = 5.2 s. The average power over that time is 225 J/5.2 s ≈ 43 W, less than the 60 W the motor reaches only at the end."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c7",
+          "see": "what-to-know",
+          "prompt": "A wheel (I = 0.050 kg·m^2) on a frictionless axle spins clockwise at 12 rad/s. Take counterclockwise as positive. Starting at t = 0, a counterclockwise torque τ(t) = 0.90 sin(πt/2.0), in N·m with t in seconds, acts on the wheel for 2.0 s and then stops.\n\n(a) Find the angular impulse delivered and the wheel's angular velocity at t = 2.0 s.\n\n(b) At what time is the wheel momentarily at rest?\n\n(c) Find the net work done on the wheel from t = 0 to t = 2.0 s. Explain how a torque that is never negative can do negative net work.",
+          "hint": "Start from the wheel's angular momentum at t = 0, with its sign, and write the angular momentum as a function of time.",
+          "answer": "(a) 1.1 N·m·s (3.6/π); +11 rad/s, that is, 11 rad/s counterclockwise (b) t = 1.0 s (1.03 s) (c) −0.62 J; the torque opposes the rotation while the wheel still turns clockwise, and does less positive work once the wheel has reversed.",
+          "steps": [
+            "(a) Angular impulse = ∫ from 0 to 2.0 of 0.90 sin(πt/2.0) dt = 0.90(2.0/π)[−cos(πt/2.0)] from 0 to 2.0 = 0.90(2.0/π)(2) = 3.6/π ≈ 1.15 N·m·s.",
+            "L_0 = Iω_0 = (0.050)(−12) = −0.60 kg·m^2/s, so L = −0.60 + 1.15 = 0.546 kg·m^2/s and ω = 0.546/0.050 = +10.9 rad/s ≈ 11 rad/s, counterclockwise.",
+            "(b) L(t) = −0.60 + 0.90(2.0/π)(1 − cos(πt/2.0)). Setting L = 0: 1 − cos(πt/2.0) = 0.60π/1.8 = 1.047, so cos(πt/2.0) = −0.047, πt/2.0 = 1.618 rad and t = 1.03 s.",
+            "(c) W_net = ΔK = ½(0.050)(10.9)^2 − ½(0.050)(12)^2 = 2.98 − 3.60 = −0.62 J.",
+            "From 0 to 1.03 s the wheel turns clockwise (dθ < 0) while τ > 0, so τ dθ < 0: the torque does negative work and slows the wheel. After 1.03 s, τ and dθ are both positive and the work is positive, but the torque is weaker by then, so the total is negative.",
+            "Angular impulse depends only on the torque and the time; work depends on the angle turned. The same torque history can add angular momentum in its own sense while removing kinetic energy."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c8",
+          "see": "worked-examples",
+          "prompt": "A uniform 2.0 kg board 1.6 m long turns freely on a frictionless horizontal axle through its center. It is at rest, horizontal. A 0.50 kg lump of clay is dropped from rest 1.25 m above one end of the board, lands on that end and sticks. Treat the clay as a particle.\n\n(a) Find the board's angular speed just after the clay sticks.\n\n(b) How much kinetic energy is converted to other forms when the clay sticks?\n\n(c) Find the board's angular speed when it has turned through 90°, so that it is vertical with the clay at the bottom.",
+          "hint": "Break the story into stages. In each stage, list the external forces and ask whether each one exerts a torque about the axle, and whether each one does work.",
+          "answer": "(a) 2.7 rad/s (b) 3.5 J (c) 4.2 rad/s",
+          "steps": [
+            "The fall: only gravity does work on the clay, so energy conservation gives its speed on arrival: v = √(2gh) = √(2(9.8)(1.25)) = 4.95 m/s.",
+            "The collision: the axle pushes on the board, so linear momentum is not conserved. But the axle's force acts at the axle and has no torque about it, and gravity's angular impulse during the brief impact is negligible, so angular momentum about the axle is conserved.",
+            "Before: only the clay has angular momentum, L = mvr_⊥ = (0.50)(4.95)(0.80) = 1.98 kg·m^2/s. After: I = ML^2/12 + mr^2 = (2.0)(1.6)^2/12 + (0.50)(0.80)^2 = 0.427 + 0.320 = 0.747 kg·m^2.",
+            "(a) ω = 1.98/0.747 = 2.65 rad/s ≈ 2.7 rad/s.",
+            "(b) Before: K = ½(0.50)(4.95)^2 = 6.13 J. After: K = ½(0.747)(2.65)^2 = 2.63 J. So 3.5 J, 57% of it, becomes internal energy as the clay deforms.",
+            "The swing: the axle's force does no work and gravity is counted as potential energy, so mechanical energy is conserved. The board's center does not move and the clay drops 0.80 m, so K = 2.63 + (0.50)(9.8)(0.80) = 2.63 + 3.92 = 6.55 J.",
+            "(c) ω = √(2K/I) = √(2(6.55)/0.747) = 4.19 rad/s ≈ 4.2 rad/s. Conserving kinetic energy through the collision would give 4.05 rad/s in (a), and conserving angular momentum through the swing would leave ω unchanged; both are wrong, because each law holds only in its own stage."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c9",
+          "see": "what-to-know",
+          "prompt": "A uniform 3.0 kg solid cylinder rolls without slipping along level ground at 4.0 m/s, then rolls up a ramp inclined at 15°, still without slipping.\n\n(a) How far along the ramp does it travel before it stops?\n\n(b) How long does it take to stop?\n\n(c) Find the magnitude and direction of the friction force on the cylinder while it rolls up the ramp, and explain why that direction makes sense.",
+          "hint": "List every kind of kinetic energy the cylinder has at the foot of the ramp. For (c), ask which force can change how fast the cylinder spins.",
+          "answer": "(a) 4.7 m (b) 2.4 s (c) 2.5 N, up the ramp",
+          "steps": [
+            "(a) At the foot of the ramp, K = ½Mv^2 + ½I_cmω^2 = ½M(1 + β)v^2, with β = ½ for a solid cylinder. Static friction does no work, so all of it becomes potential energy: Mgh = ½M(1.5)v^2 and h = 1.5(4.0)^2/(2(9.8)) = 1.22 m.",
+            "Distance along the ramp: d = h/sin 15° = 1.22/0.259 = 4.7 m. Leaving out the rotational energy would give only 3.2 m.",
+            "(b) With down the ramp positive, a = g sin θ/(1 + β) = (9.8)(0.259)/1.5 = 1.69 m/s^2, whether the cylinder rolls up or down. The speed falls at that constant rate, so t = 4.0/1.69 = 2.4 s. Check: d = ½(4.0)(2.37) = 4.7 m.",
+            "(c) Along the slope, down positive: Mg sin θ − f = Ma, so f = M(g sin θ − a) = Mg sin θ·β/(1 + β) = (3.0)(9.8)(0.259)(1/3) = 2.5 N. f is positive, so it points up the ramp.",
+            "Why up: as the cylinder slows, its spin must slow at the matching rate α = a/R. Gravity and the normal force act through the center and exert no torque about it, so only friction can slow the spin. Friction pointing up the ramp at the contact point exerts a torque that opposes the spin. So friction points up the ramp whether the cylinder rolls up or down."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c10",
+          "see": "worked-examples",
+          "prompt": "A 600 kg satellite is 1.50 × 10^7 m from Earth's center, moving at 5.00 × 10^3 m/s in a direction 70.0° from the line that runs outward from Earth's center through the satellite.\n\n(a) Find the total energy of the satellite–Earth system, and decide whether the satellite is bound to Earth.\n\n(b) Find the satellite's angular momentum about Earth's center.\n\n(c) Later, at its closest point to Earth, the satellite is 9.26 × 10^6 m from Earth's center. Find its speed there, and confirm it with a second conservation law.",
+          "hint": "List what stays the same all the way around an orbit, and find the points of the orbit where the velocity is perpendicular to the radius.",
+          "answer": "(a) −8.43 × 10^9 J; bound, because the total energy is negative (b) 4.23 × 10^13 kg·m^2/s (c) 7.61 × 10^3 m/s",
+          "steps": [
+            "(a) K = ½mv^2 = ½(600)(5.00 × 10^3)^2 = 7.50 × 10^9 J. U = −GMm/r = −(6.67 × 10^−11)(5.97 × 10^24)(600)/(1.50 × 10^7) = −1.59 × 10^10 J.",
+            "E = K + U = −8.43 × 10^9 J. Since E < 0, the satellite is bound. Equivalently, its speed is less than the escape speed √(2GM/r) = 7.29 × 10^3 m/s at that distance.",
+            "(b) L = mvr sin φ = (600)(5.00 × 10^3)(1.50 × 10^7) sin 70.0° = 4.23 × 10^13 kg·m^2/s. Only the velocity's component perpendicular to the radius counts.",
+            "(c) Gravity exerts no torque about Earth's center, so L is conserved. At the closest point the velocity is perpendicular to the radius, so L = mv_pr_p and v_p = 4.23 × 10^13/((600)(9.26 × 10^6)) = 7.61 × 10^3 m/s.",
+            "Energy check: ½v_p^2 = E/m + GM/r_p = −1.405 × 10^7 + 4.300 × 10^7 = 2.895 × 10^7 J/kg, so v_p = 7.61 × 10^3 m/s. The two laws agree.",
+            "Writing (1.50 × 10^7)(5.00 × 10^3) = (9.26 × 10^6)v_p would give 8.10 × 10^3 m/s, which is wrong: r_1v_1 = r_2v_2 needs both velocities perpendicular to the radius."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u6-c11",
+          "see": "what-to-know",
+          "prompt": "A spool of mass 0.80 kg has rims of radius R = 0.10 m and a hub of radius r = 0.040 m; its rotational inertia about its axis is 0.0030 kg·m^2. It rests on a level table. A string wound around the hub leaves the bottom of the hub horizontally, as shown, and is pulled to the right with a constant 2.0 N force. The spool rolls without slipping.\n\n(a) Without calculating, determine whether the spool rolls to the right or to the left. Explain.\n\n(b) Find the acceleration of the spool's center.\n\n(c) Find the magnitude and direction of the friction force from the table, and the least coefficient of static friction that allows the spool to roll without slipping.",
+          "hint": "Look for a point about which neither friction nor the normal force exerts a torque, and find the torque of the pull about it.",
+          "answer": "(a) To the right (b) 1.1 m/s^2, to the right (c) 1.1 N, to the left; μ_s ≥ 0.14",
+          "steps": [
+            "(a) Take torques about the contact point P, where friction and the normal force act, so neither has a torque about P. Gravity acts at the center, directly above P, so it has none either. The string's force acts along a line R − r = 0.060 m above P, and a rightward force above P turns the spool clockwise about P, which means rolling to the right.",
+            "(b) While it rolls without slipping, the spool turns about P at this instant, with I_P = I_cm + MR^2 = 0.0030 + (0.80)(0.10)^2 = 0.011 kg·m^2 by the parallel-axis theorem.",
+            "α = F(R − r)/I_P = (2.0)(0.060)/0.011 = 10.9 rad/s^2, clockwise, so a_cm = Rα = (0.10)(10.9) = 1.09 m/s^2 ≈ 1.1 m/s^2 to the right.",
+            "Check with forces, and torques about the center, taking right and clockwise as positive: F + f = Ma and −Fr − fR = I_cm(a/R). Eliminating f gives a = F(1 − r/R)/(M + I_cm/R^2) = (2.0)(0.60)/(0.80 + 0.30) = 1.09 m/s^2.",
+            "(c) f = Ma − F = (0.80)(1.09) − 2.0 = −1.13 N: about 1.1 N to the left. The string alone would spin the spool counterclockwise about its center; friction to the left supplies the clockwise torque that rolling to the right requires.",
+            "The normal force is Mg = 7.84 N, because the pull is horizontal. Rolling requires |f| ≤ μ_sN, so μ_s ≥ 1.13/7.84 = 0.14."
+          ],
+          "figureIds": [
+            "cm-review-u6-g1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Rotational kinetic energy",
+          "text": "K = ½Iω^2 for a rigid body turning about a fixed axis, with I about that axis. A body that moves and turns at once has K = ½Mv_cm^2 + ½I_cmω^2.",
+          "conditions": [
+            "I must be about the axis of rotation: ML^2/3 for a rod turning about its end, not ML^2/12.",
+            "ω in rad/s.",
+            "A system's kinetic energy includes every moving part: blocks, pulleys and wheels."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Work and power by a torque",
+          "text": "W = ∫ τ dθ, the signed area under a graph of τ against θ, and W = τΔθ for a constant torque. P = dW/dt = τω. The net work by all the torques on a rigid body equals its change in rotational kinetic energy.",
+          "conditions": [
+            "θ in radians.",
+            "A torque does negative work when it opposes the rotation: τ and dθ have opposite signs.",
+            "A torque that depends on angle must be integrated over θ; one given as a function of time pairs naturally with angular impulse instead.",
+            "Where the net torque changes sign, the angular velocity has an extreme value."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Angular momentum and angular impulse",
+          "text": "Particle: L = r × p, with magnitude mvr_⊥ = mvr sin φ. Rigid body turning about a fixed axis: L = Iω. The net external torque about a point equals the rate of change of the angular momentum about that point, τ_net = dL/dt, and the angular impulse equals the change: ∫ τ dt = ΔL.",
+          "conditions": [
+            "Torques and angular momenta about the same point.",
+            "Signs: counterclockwise positive, or the right-hand rule in three dimensions.",
+            "∫ τ dt is the signed area under a graph of τ against t."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Conservation of angular momentum",
+          "text": "If the net external torque on a system about a point is zero, the system's total angular momentum about that point is constant.",
+          "conditions": [
+            "Choose the point so that unknown external forces pass through it: the pivot in a collision with a pivoted body, the planet's center for an orbit, a point on the floor along the path of a skidding ball.",
+            "During a brief collision, ordinary forces such as gravity give a negligible angular impulse.",
+            "Kinetic energy is conserved only in elastic interactions; K = L^2/(2I) changes whenever I changes at constant L.",
+            "Linear momentum is conserved only when the net external force is zero; a pivot's force usually is not."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Rolling without slipping",
+          "text": "v_cm = Rω and a_cm = Rα: the contact point is momentarily at rest and the top moves at 2v_cm. K = ½M(1 + β)v_cm^2 with β = I_cm/(MR^2). Down a slope, a = g sin θ/(1 + β), and after a drop of height h from rest, v = √(2gh/(1 + β)).",
+          "conditions": [
+            "Static friction does no work on an object rolling without slipping, so mechanical energy is conserved.",
+            "Static friction is whatever the motion needs, up to μ_sN; rolling on a slope needs μ_s ≥ β tan θ/(1 + β).",
+            "For a round object, with its center of mass at its center, rolling without slipping, Στ = I_Pα about the contact point P, with I_P = I_cm + MR^2, gives the same result as forces plus torques about the center.",
+            "While the object slips, v_cm ≠ Rω, kinetic friction μ_kN acts, and mechanical energy is lost."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Circular orbits",
+          "text": "Gravity supplies the centripetal force, GMm/r^2 = mv^2/r, so v = √(GM/r) and T^2 = (4π^2/(GM))r^3. K = GMm/(2r), U = −GMm/r and E = −GMm/(2r).",
+          "conditions": [
+            "r is measured from the planet's center, not from its surface.",
+            "The satellite's own mass cancels from v and T.",
+            "A larger circular orbit has a larger (less negative) E but a smaller v and K."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Elliptical orbits and escape",
+          "text": "The satellite's angular momentum about the planet's center, L = mvr sin φ, and the system's mechanical energy, ½mv^2 − GMm/r, are both conserved. At the closest and farthest points, r_pv_p = r_av_a. The satellite escapes if E ≥ 0, which at distance r needs v ≥ √(2GM/r).",
+          "conditions": [
+            "Linear momentum is not conserved: gravity is an external force on the satellite.",
+            "r_1v_1 = r_2v_2 only where the velocity is perpendicular to the radius.",
+            "Equal areas in equal times: the line from the planet's center sweeps area at the constant rate L/(2m)."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Shape factor β = I_cm/(MR^2) and rolling without slipping",
+          "head": [
+            "Object",
+            "β",
+            "Rotational share of K, β/(1 + β)",
+            "Speed after rolling down a height h from rest"
+          ],
+          "rows": [
+            [
+              "Solid sphere",
+              "2/5",
+              "2/7",
+              "√(10gh/7)"
+            ],
+            [
+              "Solid cylinder or disk",
+              "1/2",
+              "1/3",
+              "√(4gh/3)"
+            ],
+            [
+              "Thin spherical shell",
+              "2/3",
+              "2/5",
+              "√(6gh/5)"
+            ],
+            [
+              "Hoop or thin-walled pipe",
+              "1",
+              "1/2",
+              "√(gh)"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Which law applies in which stage",
+          "head": [
+            "Situation",
+            "Use",
+            "Not conserved, or not usable"
+          ],
+          "rows": [
+            [
+              "An object strikes and sticks to a body on a fixed pivot",
+              "Angular momentum about the pivot",
+              "Linear momentum (the pivot pushes); kinetic energy"
+            ],
+            [
+              "A body changes shape with no external torque",
+              "Angular momentum: I_1ω_1 = I_2ω_2",
+              "Kinetic energy (internal forces do work)"
+            ],
+            [
+              "A body swings or rolls without slipping, with no kinetic friction",
+              "Mechanical energy",
+              "Angular momentum (gravity exerts a torque)"
+            ],
+            [
+              "A torque acts for a known time",
+              "Angular impulse: ∫ τ dt = ΔL",
+              "Work–energy, unless the angle turned is known"
+            ],
+            [
+              "A torque acts through a known angle",
+              "Work–energy: ∫ τ dθ = ΔK",
+              "Angular impulse, unless the time is known"
+            ],
+            [
+              "A satellite moves along any orbit",
+              "Angular momentum about the planet's center; mechanical energy",
+              "Linear momentum"
+            ],
+            [
+              "A ball skids before it rolls",
+              "Angular momentum about a point on the floor along its path",
+              "Mechanical energy (kinetic friction does work)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A complete justification names the system and the point, says which external forces exert a torque about that point or do work, and names the conservation law or theorem that follows. Write it like these."
+        },
+        {
+          "type": "model",
+          "prompt": "Why angular momentum, but not linear momentum, is conserved when a ball sticks to a pivoted rod.",
+          "text": "During the collision, the external forces on the ball–rod system are gravity and the force from the pivot. The pivot's force acts at the pivot, so it exerts no torque about the pivot, and gravity's angular impulse over the short collision is negligible. So the system's angular momentum about the pivot is conserved. The pivot's force is external and not zero, so linear momentum is not conserved."
+        },
+        {
+          "type": "model",
+          "prompt": "Why mechanical energy is conserved for a ball rolling without slipping down a ramp.",
+          "text": "The normal force is perpendicular to the motion, and static friction acts at the contact point, which is momentarily at rest, so neither force does work. Only gravity does work, and it is counted as potential energy, so the ball's mechanical energy, including its rotational kinetic energy, is conserved."
+        },
+        {
+          "type": "model",
+          "prompt": "Why a satellite moves fastest at its closest point.",
+          "text": "Gravity on the satellite points toward the planet's center, so it exerts no torque about that point, and the satellite's angular momentum about the center is conserved. At the closest and farthest points the velocity is perpendicular to the radius, so mvr is the same at both, and a smaller r requires a larger v. Energy conservation agrees and covers every point of the orbit: K = E + GMm/r, which is greatest where r is smallest."
+        },
+        {
+          "type": "model",
+          "prompt": "Why a spinning skater's kinetic energy increases when she pulls her arms in.",
+          "text": "With negligible friction from the ice, the external torque about her spin axis is zero, so L = Iω stays constant. Pulling her arms in lowers I, so ω rises, and K = L^2/(2I) increases. The extra energy comes from the work her muscles do pulling her arms inward."
+        },
+        {
+          "type": "model",
+          "prompt": "Why a torque can add angular momentum to a wheel while removing kinetic energy.",
+          "text": "Angular impulse, ∫ τ dt, depends only on the torque and the time, while work, ∫ τ dθ, depends on the angle turned. While the wheel turns opposite to the torque, τ and dθ have opposite signs, so the torque does negative work even as it adds angular momentum in its own sense."
+        },
+        {
+          "type": "trap",
+          "text": "Conserving linear momentum in a collision with a pivoted body.",
+          "fix": "The pivot exerts an external force. Conserve angular momentum about the pivot instead."
+        },
+        {
+          "type": "trap",
+          "text": "Conserving kinetic energy whenever angular momentum is conserved.",
+          "fix": "Check whether objects stick, surfaces slip or a body changes shape. Compute K before and after instead of assuming it is constant."
+        },
+        {
+          "type": "trap",
+          "text": "Using the distance r instead of the moment arm r_⊥ for a particle's angular momentum, or forgetting the incoming particle's angular momentum.",
+          "fix": "L = mvr_⊥, where r_⊥ is the perpendicular distance from the point to the particle's line of motion. Include every moving part, before and after."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving out the rotational kinetic energy of a rolling object, or writing ½I_cmω^2 without ½Mv_cm^2.",
+          "fix": "A rolling object has both: K = ½M(1 + β)v_cm^2. About the contact point, ½I_Pω^2 gives the same total."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming the friction on a rolling object always points against its motion, or setting it equal to μ_sN.",
+          "fix": "Find static friction from the equations of motion. It points up the slope for an object rolling up or down a ramp, and forward on a driven wheel that speeds up; μ_sN is only its largest possible value."
+        },
+        {
+          "type": "trap",
+          "text": "Using v_cm = Rω while the object is still skidding.",
+          "fix": "The rolling condition holds only once slipping stops. While it slips, find v_cm and ω separately from the forces and torques."
+        },
+        {
+          "type": "trap",
+          "text": "Using the altitude instead of the distance from the planet's center.",
+          "fix": "Add the planet's radius: r = R_planet + altitude in GMm/r^2, v = √(GM/r) and U = −GMm/r."
+        },
+        {
+          "type": "trap",
+          "text": "Writing r_1v_1 = r_2v_2 at points where the velocity is not perpendicular to the radius.",
+          "fix": "Use L = mvr sin φ there, or use energy conservation, which holds at every point of the orbit."
+        },
+        {
+          "type": "trap",
+          "text": "Using degrees or revolutions in W = τΔθ, K = ½Iω^2 or P = τω.",
+          "fix": "Convert to radians and rad/s before multiplying."
+        },
+        {
+          "type": "trap",
+          "text": "Treating a torque that depends on angle as constant.",
+          "fix": "Integrate τ(θ) over θ; use τΔθ only for a constant torque."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each example models a procedure the checks test: a collision with a pivoted body followed by a swing, energy for a rolling object, and the two conservation laws of an orbit. Try each one before reading its steps."
+        },
+        {
+          "type": "example",
+          "prompt": "A thin 0.40 kg hoop of radius 0.50 m hangs at rest from a frictionless horizontal peg that passes through its rim, so it can swing in its own plane. A 0.050 kg dart moving horizontally at 12 m/s, in the plane of the hoop, strikes the hoop's lowest point and sticks. Treat the dart as a particle.\n\n(a) Find the hoop's angular speed just after the collision.\n\n(b) Find the kinetic energy converted to other forms in the collision.\n\n(c) Find the greatest angle from the vertical through which the hoop swings.",
+          "answer": "(a) 2.4 rad/s (b) 2.9 J (c) 45°",
+          "steps": [
+            "The collision: the peg pushes on the hoop, so linear momentum is not conserved. The peg's force has no torque about the peg, and gravity's angular impulse during the impact is negligible, so angular momentum about the peg is conserved.",
+            "The lowest point is 2R = 1.0 m below the peg. Before: L = mvr_⊥ = (0.050)(12)(1.0) = 0.60 kg·m^2/s.",
+            "After: by the parallel-axis theorem the hoop's rotational inertia about the peg is MR^2 + MR^2 = 2(0.40)(0.50)^2 = 0.20 kg·m^2, and the dart adds m(2R)^2 = (0.050)(1.0)^2 = 0.050 kg·m^2, so I = 0.25 kg·m^2.",
+            "(a) ω = L/I = 0.60/0.25 = 2.4 rad/s.",
+            "(b) Before: K = ½(0.050)(12)^2 = 3.6 J. After: K = ½(0.25)(2.4)^2 = 0.72 J. So 2.9 J, 80% of it, is converted, mostly to internal energy.",
+            "(c) During the swing, the peg's force does no work, so mechanical energy is conserved. At angle θ from the vertical, the hoop's center has risen R(1 − cos θ) and the dart 2R(1 − cos θ): 0.72 = [(0.40)(0.50) + (0.050)(1.0)](9.8)(1 − cos θ) = 2.45(1 − cos θ).",
+            "1 − cos θ = 0.294, so cos θ = 0.706 and θ = 45°."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A small solid ball rolls without slipping along a track that ends in a vertical loop of radius 0.40 m. The ball's own radius is much smaller than the loop's.\n\n(a) From what least height above the bottom of the loop must the ball start from rest to stay on the track at the top of the loop?\n\n(b) For that starting height, find the normal force on a 0.10 kg ball at the bottom of the loop, and compare it with the ball's weight.",
+          "answer": "(a) 1.08 m, which is 2.7 times the loop's radius (b) 4.8 N, about 4.9 times the ball's weight",
+          "steps": [
+            "(a) At the top, the least speed is the one for which gravity alone supplies the centripetal force: mg = mv^2/R, so v_top^2 = gR.",
+            "The ball rolls without slipping, so static friction does no work and mechanical energy is conserved, with K = ½m(1 + β)v^2 and β = 2/5: mgh = mg(2R) + ½m(1.4)(gR).",
+            "h = 2R + 0.7R = 2.7R = 2.7(0.40) = 1.08 m. A block sliding without friction would need only 2.5R = 1.0 m; the ball needs more because part of its energy goes into spinning.",
+            "(b) At the bottom: mgh = ½m(1.4)v^2, so v^2 = 2gh/1.4 = 2(9.8)(1.08)/1.4 = 15.1 m^2/s^2.",
+            "Toward the center, which is up: N − mg = mv^2/R, so N = m(g + v^2/R) = (0.10)(9.8 + 37.8) = 4.8 N, which is (9.8 + 37.8)/9.8 = 4.9 times the weight."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A 500 kg satellite moves from a circular orbit of radius 7.0 × 10^6 m around Earth to a circular orbit of radius 2.8 × 10^7 m. It fires its engine briefly twice: first to enter an elliptical orbit whose closest and farthest points are at the two radii, then at the farthest point to make the orbit circular.\n\n(a) Find the change in the total energy of the satellite–Earth system between the two circular orbits.\n\n(b) Find the satellite's speed just after the first firing and just before the second.\n\n(c) Find the satellite's speed in each circular orbit, and the change in speed each firing produces.",
+          "answer": "(a) +1.1 × 10^10 J (b) 9.5 × 10^3 m/s and 2.4 × 10^3 m/s (c) 7.5 × 10^3 m/s and 3.8 × 10^3 m/s; the firings add about 2.0 × 10^3 m/s and 1.4 × 10^3 m/s",
+          "steps": [
+            "(a) In a circular orbit E = −GMm/(2r), so ΔE = (GMm/2)(1/r_1 − 1/r_2) = ((6.67 × 10^−11)(5.97 × 10^24)(500)/2)(1/(7.0 × 10^6) − 1/(2.8 × 10^7)) = 1.07 × 10^10 J. The total energy rises even though the satellite ends up slower.",
+            "(b) On the ellipse, gravity exerts no torque about Earth's center, so angular momentum is conserved. At the closest and farthest points the velocity is perpendicular to the radius, so r_1v_p = r_2v_a and v_a = v_p/4.",
+            "Mechanical energy is conserved too: ½v_p^2 − GM/r_1 = ½v_a^2 − GM/r_2. Substituting v_a = v_p/4 and solving gives v_p^2 = 2GMr_2/(r_1(r_1 + r_2)) = 2(3.98 × 10^14)(2.8 × 10^7)/((7.0 × 10^6)(3.5 × 10^7)), so v_p = 9.54 × 10^3 m/s.",
+            "Then v_a = (9.54 × 10^3)/4 = 2.39 × 10^3 m/s.",
+            "(c) Circular speeds from v = √(GM/r): 7.54 × 10^3 m/s at 7.0 × 10^6 m and 3.77 × 10^3 m/s at 2.8 × 10^7 m.",
+            "The first firing raises the speed from 7.54 × 10^3 to 9.54 × 10^3 m/s, about 2.0 × 10^3 m/s; the second from 2.39 × 10^3 to 3.77 × 10^3 m/s, about 1.4 × 10^3 m/s. Both firings speed the satellite up, yet the final orbit is slower than the first: on the way out, gravity takes back more kinetic energy than the engine adds."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, then come back to it again in a few days. Take the unit test under timed conditions and score it with the key. Week 26 also holds a paper investigation with invented data; it does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 24: Rotational kinetic energy and work by torque",
+              "ref": "week:24"
+            },
+            {
+              "label": "Week 25: Angular momentum and its conservation",
+              "ref": "week:25"
+            },
+            {
+              "label": "Week 26: Rolling",
+              "ref": "week:26"
+            },
+            {
+              "label": "Week 27: Orbiting satellites",
+              "ref": "week:27"
+            },
+            {
+              "label": "Unit 6 plan: goals, weeks and topics",
+              "ref": "unit:u6"
+            },
+            {
+              "label": "Unit 6 test",
+              "ref": "test:unit-6"
+            },
+            {
+              "label": "Unit 6 test key",
+              "ref": "key:unit-6"
+            },
+            {
+              "label": "Free-response workshop: Mathematical Routines",
+              "ref": "guide:fr-mathematical-routines"
+            },
+            {
+              "label": "Free-response workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

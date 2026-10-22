@@ -1,0 +1,438 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "review-u8",
+  "kind": "unit-review",
+  "unitId": "u8",
+  "title": "Unit 8 review: Fluids",
+  "author": "p1-review-author",
+  "summary": "A retrieval-first review of fluids for the AP® Physics 1 Exam: recall density, pressure, buoyancy, continuity and Bernoulli's equation with their conditions from memory, work mixed exam-level problems (pressure–depth data, a submerged block between two scales, a flow meter, a pressurized tank, drinking through a straw, and a block sealed against the bottom of a pond), then check yourself against the relations with their conditions, model explanations, common traps, and three worked examples.",
+  "minutes": 55,
+  "figures": [
+    {
+      "id": "p1-review-u8-g1",
+      "alt": "A block hangs by a string from a spring scale attached to the ceiling. The block is completely below the surface of the water in a beaker and does not touch the beaker's sides or bottom. The beaker stands on a platform scale resting on the floor."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question from memory, on paper, before you open its answer. Say when each relation applies as well as what it says: most fluid errors come from using a relation where its conditions fail. A wrong or partial answer now is useful, because the check's answer names the section to study."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c1",
+          "prompt": "What makes a substance a fluid, and what does the ideal-fluid model assume? How do you find the density of a uniform material, and the average density of an object made of several materials or containing hollow spaces?",
+          "answer": "A fluid (a liquid or a gas) flows: its particles are not locked in place, so it takes the shape of its container and, at rest, cannot resist a sideways (shear) force. The ideal-fluid model treats it as incompressible and without viscosity (internal friction), in steady flow. Density is ρ = m/V; an object's average density is its total mass divided by its total volume, hollow spaces included.",
+          "steps": [
+            "Liquids are nearly incompressible because their particles are already in contact; gases compress easily, but over small heights and gentle flows they can be treated the same way.",
+            "Density belongs to the material: cutting a uniform block in half halves both m and V, and ρ is unchanged.",
+            "For a composite or hollow object, ρ_avg = (m_1 + m_2 + …)/(V_1 + V_2 + …). The average density, not the material's density, decides whether the object floats."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c2",
+          "prompt": "Define pressure. Write the pressure at depth h in a liquid at rest, and say what absolute and gauge pressure are. When do two points in a liquid have the same pressure? State Pascal's principle.",
+          "answer": "P = F/A, the perpendicular force per unit area, in pascals (1 Pa = 1 N/m^2). At depth h below a surface at pressure P_0, the absolute pressure is P = P_0 + ρgh, and the gauge pressure is P − P_0 = ρgh. Points at the same depth in one connected liquid of uniform density at rest have the same pressure, whatever the container's shape. Pascal's principle: a change in pressure applied to an enclosed fluid is transmitted undiminished to every part of the fluid.",
+          "steps": [
+            "Pressure is a scalar: at a point in a fluid at rest it is the same in every direction, and the force it exerts on a surface is perpendicular to that surface.",
+            "h is the depth below the free surface, not the height of the container or the height above the bottom.",
+            "P = P_0 + ρgh comes from the equilibrium of a column of liquid: PA = P_0A + ρAhg. It needs a fluid at rest of uniform density; with layers, add ρgh for each layer."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c3",
+          "prompt": "State Archimedes' principle, and explain where the buoyant force comes from. For an object floating at rest, how large is the buoyant force, and what fraction of the object's volume is submerged?",
+          "answer": "The buoyant force on an object in a fluid is upward and equal to the weight of the fluid that would fill the submerged volume: F_b = ρ_f V_sub g. It is the net force of the fluid's pressure on the object, because deeper surfaces are pushed harder. Floating at rest, F_b = mg, and V_sub/V = ρ_obj/ρ_f.",
+          "steps": [
+            "For a block of face area A with its top and bottom at depths h_1 and h_2, the net upward pressure force is ρ_f g(h_2 − h_1)A = ρ_f V g; the forces on the sides cancel.",
+            "ρ_f is the fluid's density and V_sub is the part of the object's volume below the surface; the object's own mass and density do not appear.",
+            "Floating: ρ_f V_sub g = ρ_obj V g, so V_sub/V = ρ_obj/ρ_f. An object whose average density exceeds the fluid's sinks, because even fully submerged its F_b is less than mg."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c4",
+          "prompt": "State the continuity equation and Bernoulli's equation, with the conditions each needs. What speed does Bernoulli's equation give for liquid leaving a small hole a depth h below the surface of a large open tank?",
+          "answer": "Continuity: A_1v_1 = A_2v_2, so the volume flow rate Q = Av is the same at every cross-section, for steady flow of an incompressible fluid. Bernoulli: P_1 + ρgy_1 + (1/2)ρv_1^2 = P_2 + ρgy_2 + (1/2)ρv_2^2, along a streamline of steady, incompressible flow without viscosity, with no pump or turbine between the points. From the hole, v = √(2gh).",
+          "steps": [
+            "Continuity is conservation of mass: an incompressible fluid cannot pile up, so the same volume crosses every section each second.",
+            "Bernoulli's equation is conservation of energy per unit volume: (1/2)ρv^2 is kinetic energy, ρgy is gravitational potential energy, and P is the work per unit volume done by the surrounding fluid.",
+            "For the hole, the surface and the jet are both at atmospheric pressure, and the surface of a large tank barely moves, so ρgh = (1/2)ρv^2 and v = √(2gh).",
+            "With every speed zero, Bernoulli's equation reduces to P = P_0 + ρgh."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each problem fully before opening the answer: decide whether the fluid is at rest or flowing, write the relation you start from, then substitute with units. Any calculator is allowed. Use g = 9.8 m/s^2, 1000 kg/m^3 for the density of water and P_0 = 1.01 × 10^5 Pa for atmospheric pressure, treat liquids as ideal fluids, and neglect air resistance unless a problem says otherwise. Check 5 uses supplied measurements; paper practice like it does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c5",
+          "prompt": "A pressure sensor is lowered into a liquid in a large open tank, and it records the absolute pressure P at several depths h below the surface.\n\n| h (m) | 0 | 0.20 | 0.40 | 0.60 | 0.80 |\n| --- | --- | --- | --- | --- | --- |\n| P (kPa) | 101.0 | 103.5 | 106.1 | 108.6 | 111.0 |\n\n(a) Use the data to determine the density of the liquid. Say what the slope and the vertical intercept of a graph of P against h represent.\n(b) Predict the absolute pressure 1.20 m below the surface.\n(c) A student says, \"In a wider tank holding the same liquid to the same depth, the sensor would read more at 0.40 m, because more liquid is pressing down.\" Evaluate the claim.",
+          "hint": "Write the relation between P and h in the form y = mx + b.",
+          "answer": "(a) About 1.28 × 10^3 kg/m^3 (accept 1.25 × 10^3 to 1.31 × 10^3 kg/m^3). The slope is ρg; the intercept, about 101 kPa, is the atmospheric pressure on the surface. (b) About 116 kPa. (c) Incorrect: the pressure depends on the depth, not on the amount of liquid, so the reading at 0.40 m is the same, about 106 kPa.",
+          "steps": [
+            "(a) P = P_0 + ρgh is a straight line in h with slope ρg and intercept P_0. The pressure rises about 2.5 kPa for every 0.20 m, so a best-fit slope is about 12.5 kPa/m = 1.25 × 10^4 Pa/m.",
+            "ρ = slope/g = (1.25 × 10^4 Pa/m)/(9.8 m/s^2) ≈ 1.28 × 10^3 kg/m^3. The intercept, about 101.0 kPa, is the pressure at h = 0: the atmosphere pushing on the surface.",
+            "(b) P = 101.0 kPa + (12.5 kPa/m)(1.20 m) ≈ 116 kPa. This extends the line beyond the data, which is reasonable because the model is linear for a liquid of uniform density.",
+            "(c) Think of the column of liquid directly above the sensor: the pressure at its bottom must hold up its weight plus the atmosphere's push on its top, and neither depends on the width of the tank. The extra liquid in a wider tank is held up by the wider bottom, not by the sensor. The claim is incorrect."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c6",
+          "prompt": "A 0.90 kg aluminum block (density 2700 kg/m^3) hangs from a spring scale, as shown, completely under water and not touching the beaker. The beaker and water together weigh 15.0 N and rest on a platform scale. Take +y upward.\n\n(a) Draw a free-body diagram of the block, and find the reading of the spring scale.\n(b) Find the reading of the platform scale, and explain why it is not 15.0 N.\n(c) The string is cut, and the block comes to rest on the bottom of the beaker. Find the new readings of both scales.",
+          "hint": "Find the block's volume first. Then list every force on the block and the object that exerts each one.",
+          "figureIds": [
+            "p1-review-u8-g1"
+          ],
+          "answer": "(a) Forces on the block: the string's tension T up, the buoyant force F_b ≈ 3.27 N up, and the weight 8.82 N down; the spring scale reads about 5.55 N. (b) About 18.3 N: the block pushes down on the water with a force equal to the buoyant force. (c) Spring scale 0; platform scale about 23.8 N.",
+          "steps": [
+            "V = m/ρ = (0.90 kg)/(2700 kg/m^3) ≈ 3.33 × 10^−4 m^3, all of it submerged. F_b = ρ_water V g = (1000 kg/m^3)(3.33 × 10^−4 m^3)(9.8 m/s^2) ≈ 3.27 N, upward.",
+            "(a) The block is at rest, so T + F_b − mg = 0 and T = (0.90 kg)(9.8 m/s^2) − 3.27 N = 8.82 N − 3.27 N ≈ 5.55 N. The spring scale reads the tension, about 5.55 N.",
+            "(b) The buoyant force is the water pushing up on the block. By Newton's third law the block pushes down on the water with 3.27 N, and the water passes that push on to the beaker and the scale: 15.0 N + 3.27 N ≈ 18.3 N.",
+            "Check with the whole system of beaker, water and block: the two scales together hold up its total weight, 15.0 N + 8.82 N ≈ 23.8 N, and 5.55 N + 18.3 N ≈ 23.8 N.",
+            "(c) With the string cut, the spring scale reads 0, and the platform scale supports the whole system: about 23.8 N. On the block, the bottom now pushes up with a normal force mg − F_b ≈ 5.55 N, and the water still supplies F_b."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c7",
+          "prompt": "To measure the speed of air in a duct, a horizontal section of the duct narrows smoothly from a diameter of 8.0 cm to a throat of diameter 4.0 cm and then widens again. A U-tube holding water connects a hole in the wall of the wide section to a hole in the wall of the throat. With air (density 1.2 kg/m^3) flowing, the water levels in the two arms of the U-tube differ by 2.5 cm.\n\n(a) Which arm of the U-tube has the higher water level? Explain.\n(b) Find the difference between the air pressures in the wide section and in the throat.\n(c) Find the speed of the air in the wide section, and the volume flow rate.",
+          "hint": "Compare the air's speeds in the two places before you compare pressures.",
+          "answer": "(a) The arm connected to the throat. (b) About 245 Pa. (c) About 5.2 m/s; about 0.026 m^3/s.",
+          "steps": [
+            "(a) The throat has half the diameter, so a quarter of the area, and by continuity the air there moves 4 times as fast. At the same height, faster flow means lower pressure, so the throat's pressure is lower. The greater pressure on the wide section's arm pushes the water down there and up in the throat's arm.",
+            "(b) The water in the U-tube is at rest, so the pressure difference is set by the height difference: ΔP = ρ_water gΔh = (1000 kg/m^3)(9.8 m/s^2)(0.025 m) = 245 Pa. (The weight of the air in the tubes is negligible.)",
+            "(c) Continuity: A_1v_1 = A_2v_2 with A_1/A_2 = (8.0/4.0)^2 = 4, so v_2 = 4v_1.",
+            "Bernoulli's equation at one height: P_1 − P_2 = (1/2)ρ_air(v_2^2 − v_1^2) = (1/2)ρ_air(16 − 1)v_1^2 = 7.5ρ_air v_1^2. So v_1 = √((245 Pa)/(7.5 × 1.2 kg/m^3)) = √(27.2 m^2/s^2) ≈ 5.2 m/s.",
+            "Q = A_1v_1 = π(0.040 m)^2(5.2 m/s) ≈ 0.026 m^3/s. (In the throat the air moves at about 21 m/s.)",
+            "Two densities appear: the air's in Bernoulli's equation for the flow, and the water's in the U-tube that measures the pressure difference."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c8",
+          "prompt": "A closed tank holds water 2.0 m deep, and the air trapped above the water is at an absolute pressure of 1.50 × 10^5 Pa. A small valve at the bottom of the tank is opened, and water jets out into the open air. The tank is wide compared with the valve.\n\n(a) Find the speed of the water leaving the valve.\n(b) Compare it with the speed if the top of the tank were open to the atmosphere, and explain the difference.\n(c) As water leaves, the trapped air expands and its pressure falls. Describe how the speed of the jet changes, and find the air pressure at which the flow stops if the water is then 1.0 m deep.",
+          "hint": "Choose two points along the flow where you know the pressure, and list what you know at each.",
+          "answer": "(a) About 12 m/s (11.7 m/s). (b) An open tank gives about 6.3 m/s; the extra pressure of the trapped air pushes the water out faster. (c) The jet slows as both the depth and the air pressure fall; at 1.0 m depth the flow stops when the air pressure has fallen to about 9.1 × 10^4 Pa.",
+          "steps": [
+            "Apply Bernoulli's equation from the water surface (point 1: P_1 = 1.50 × 10^5 Pa, y_1 = 2.0 m, v_1 ≈ 0 because the tank is wide) to the jet just outside the valve (point 2: P_2 = P_0 = 1.01 × 10^5 Pa, y_2 = 0).",
+            "(a) P_1 + ρgy_1 = P_0 + (1/2)ρv_2^2, so v_2 = √(2(P_1 − P_0)/ρ + 2gy_1) = √(2(4.9 × 10^4 Pa)/(1000 kg/m^3) + 2(9.8 m/s^2)(2.0 m)) = √(98 + 39.2) m/s ≈ 11.7 m/s.",
+            "(b) Open tank: P_1 = P_0, so v = √(2gh) = √(2(9.8 m/s^2)(2.0 m)) ≈ 6.3 m/s. The trapped air's excess pressure, 4.9 × 10^4 Pa, does extra work on each unit volume of water, as much as 5.0 m of extra depth would.",
+            "(c) Both terms that drive the flow shrink: the depth decreases, and the air expands to a lower pressure. So the jet slows.",
+            "The flow stops when (1/2)ρv^2 = 0, that is when P_air + ρgh = P_0. At h = 1.0 m: P_air = 1.01 × 10^5 Pa − (1000 kg/m^3)(9.8 m/s^2)(1.0 m) ≈ 9.1 × 10^4 Pa, below atmospheric pressure; the outside air then holds the remaining water in."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c9",
+          "prompt": "A student drinks juice (density 1050 kg/m^3) through a vertical straw of inner diameter 6.0 mm. The top of the straw, in her mouth, is 0.20 m above the juice surface in the glass, and the atmosphere presses on that surface. Treat the juice as an ideal fluid.\n\n(a) By how much must the pressure in her mouth be below atmospheric pressure just to hold juice level with the top of the straw, without flow?\n(b) By how much must it be below atmospheric pressure for juice to arrive at the top of the straw at 0.50 m/s?\n(c) At that speed, how long does she take to drink 0.30 L?",
+          "hint": "For each part, first decide whether the juice is moving, and what quantity is asked for.",
+          "answer": "(a) About 2.1 × 10^3 Pa. (b) About 2.2 × 10^3 Pa. (c) About 21 s.",
+          "steps": [
+            "(a) The juice is at rest, so the pressure changes only with height: P_0 = P_mouth + ρgh, and P_0 − P_mouth = (1050 kg/m^3)(9.8 m/s^2)(0.20 m) ≈ 2.06 × 10^3 Pa.",
+            "(b) Now the juice moves, so use Bernoulli's equation from the juice surface in the glass (P_0, y = 0, v ≈ 0) to the top of the straw (P_mouth, y = 0.20 m, v = 0.50 m/s): P_0 = P_mouth + ρgh + (1/2)ρv^2.",
+            "P_0 − P_mouth = 2058 Pa + (1/2)(1050 kg/m^3)(0.50 m/s)^2 = 2058 Pa + 131 Pa ≈ 2.2 × 10^3 Pa. Only about 6% more suction makes the juice flow.",
+            "(c) The question asks how much volume passes each second: Q = Av = π(0.0030 m)^2(0.50 m/s) ≈ 1.41 × 10^−5 m^3/s. Since 0.30 L = 3.0 × 10^−4 m^3, t = V/Q ≈ 21 s.",
+            "Real juice in a narrow straw has noticeable viscosity, so a real drinker needs somewhat more suction than (b) predicts for this speed."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u8-c10",
+          "prompt": "A solid concrete cube 0.10 m on each side (density 2400 kg/m^3) lies on the bottom of a pond 1.5 m deep.\n\n(a) The cube rests on small ridges, so water reaches every face. Use the pressures on its top and bottom faces to find the buoyant force, then find the force needed to lift the cube slowly at constant speed.\n(b) In another pond of the same depth, the cube's bottom face is pressed flat against smooth clay, so no water reaches it. Model the clay as able to push up on the cube but not to pull it down. Find the force needed to start lifting the cube, and explain why it is so much larger.",
+          "hint": "Find the depth of each face first.",
+          "answer": "(a) F_b = 9.8 N; the lifting force is about 13.7 N. (b) About 1.17 × 10^3 N. With no water under the cube, nothing pushes up on its bottom face, so the whole pressure force on the top face, from the water and the atmosphere above it, must be overcome along with the weight.",
+          "steps": [
+            "(a) The top face is 1.4 m deep and the bottom face 1.5 m deep; each has area (0.10 m)^2 = 0.010 m^2.",
+            "Top: P = 1.01 × 10^5 Pa + (1000 kg/m^3)(9.8 m/s^2)(1.4 m) ≈ 1.147 × 10^5 Pa, a downward force of about 1147 N. Bottom: P = 1.01 × 10^5 Pa + (1000 kg/m^3)(9.8 m/s^2)(1.5 m) ≈ 1.157 × 10^5 Pa, an upward force of about 1157 N. The forces on the sides cancel.",
+            "Net upward force = 1157 N − 1147 N = 9.8 N, which equals ρ_water V g = (1000 kg/m^3)(1.0 × 10^−3 m^3)(9.8 m/s^2): the buoyant force, as Archimedes' principle predicts.",
+            "Weight: mg = (2400 kg/m^3)(1.0 × 10^−3 m^3)(9.8 m/s^2) ≈ 23.5 N. At constant speed the net force is zero: F + F_b − mg = 0, so F ≈ 23.5 N − 9.8 N ≈ 13.7 N.",
+            "(b) With no water under the bottom face, the upward forces are only the clay's push, which falls to zero as lifting starts, and the lifting force. Downward: the weight, 23.5 N, and the pressure force on the top face, about 1147 N. So F ≈ 1.17 × 10^3 N to start lifting.",
+            "The buoyant force is not an extra force that is always there: it is the difference between the pressure forces on the object's faces. When no fluid reaches the bottom face, there is no upward pressure force to offset the push on the top. Once water seeps underneath, the force needed falls back to about 13.7 N."
+          ],
+          "see": "explanations-and-traps"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Fluids and density",
+          "text": "A fluid flows and, at rest, cannot resist a sideways (shear) force. Density ρ = m/V is mass per unit volume, in kg/m^3: water is about 1000 kg/m^3 and air about 1.2 kg/m^3.",
+          "conditions": [
+            "The ideal-fluid model: incompressible, no viscosity, steady flow.",
+            "Density belongs to the material. An object's average density is its total mass over its total volume, hollow spaces included.",
+            "An object floats in a fluid if its average density is less than the fluid's, and sinks if it is greater."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Pressure and depth",
+          "text": "Pressure is the perpendicular force per unit area, P = F/A, in Pa = N/m^2. In a liquid at rest, P = P_0 + ρgh at depth h below a surface at pressure P_0; ρgh alone is the gauge pressure.",
+          "conditions": [
+            "The fluid is at rest and of uniform density; with layers, add ρgh for each layer.",
+            "h is the depth below the free surface, and the container's shape does not matter: points at the same depth in one connected liquid have the same pressure.",
+            "The force on a flat surface is PA; the net force on a wall, lid or window uses the difference between the pressures on its two sides.",
+            "Pascal's principle: a pressure change on an enclosed fluid reaches every part of it, so in a hydraulic lift F_1/A_1 = F_2/A_2."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Buoyancy (Archimedes' principle)",
+          "text": "A fluid exerts an upward buoyant force F_b = ρ_f V_sub g on an object, equal to the weight of the fluid that would fill the submerged volume.",
+          "conditions": [
+            "It is the net force of the fluid's pressure on the object's surfaces, so it needs fluid in contact with the underside.",
+            "ρ_f is the fluid's density and V_sub the submerged volume. For an object fully submerged in a liquid, F_b does not change with depth.",
+            "Draw F_b as one force on the free-body diagram and apply ΣF = ma: hanging from a scale, T = mg − F_b; tied down under the surface, T = F_b − mg.",
+            "By Newton's third law, the object pushes down on the fluid with a force equal to F_b."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Floating",
+          "text": "An object floating at rest has F_b = mg, so ρ_f V_sub = ρ_obj V and V_sub/V = ρ_obj/ρ_f.",
+          "conditions": [
+            "It applies only to an object at rest and floating freely, with no strings or supports.",
+            "Use the average density of the whole object, including any load it carries."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Continuity",
+          "text": "In steady flow of an incompressible fluid, the volume flow rate Q = Av, in m^3/s, is the same at every cross-section: A_1v_1 = A_2v_2.",
+          "conditions": [
+            "Use areas, not diameters: halving the diameter quarters the area and quadruples the speed.",
+            "With several outlets, the total flow rate out equals the flow rate in."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Bernoulli's equation",
+          "text": "Along a streamline of ideal flow, P + ρgy + (1/2)ρv^2 has the same value at every point.",
+          "conditions": [
+            "The flow is steady, incompressible and without viscosity, with no pump, fan or turbine between the two points.",
+            "At one height, faster flow means lower pressure; at one speed, a higher point has lower pressure.",
+            "Use absolute pressures throughout or gauge pressures throughout. Open surfaces and free jets are at atmospheric pressure.",
+            "From a small hole a depth h below the surface of a large open tank, v = √(2gh). With all speeds zero, the equation reduces to P = P_0 + ρgh."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Which model to start from.",
+          "head": [
+            "The situation",
+            "Start from"
+          ],
+          "rows": [
+            [
+              "Fluid at rest: the pressure at a depth, or the force on a surface",
+              "P = P_0 + ρgh, then F = PA, using the pressure difference across the surface."
+            ],
+            [
+              "An object in a fluid: scale readings, tensions, floating depth, acceleration",
+              "A free-body diagram with F_b = ρ_f V_sub g, and ΣF = ma."
+            ],
+            [
+              "Pistons on an enclosed fluid",
+              "Pascal's principle: the same pressure change everywhere, F_1/A_1 = F_2/A_2."
+            ],
+            [
+              "How the speed changes along a pipe, or a flow rate",
+              "Continuity: A_1v_1 = A_2v_2 and Q = Av."
+            ],
+            [
+              "Pressure, height and speed of a moving fluid",
+              "Bernoulli's equation between two points where you know most of the terms, usually with continuity."
+            ],
+            [
+              "Fluid leaving a tank",
+              "Bernoulli's equation from the surface to the jet; v = √(2gh) if the tank is large and open."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanations-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Explaining the buoyant force with pressure (why a submerged object is pushed up, and why the push does not grow with depth).",
+          "text": "The pressure in a liquid increases with depth, so the liquid pushes up on the bottom of the object harder than it pushes down on its top, while the pushes on opposite sides cancel. The result is an upward force, the buoyant force, equal to ρ_f g times the submerged volume. Lowering a fully submerged object raises the pressure on its top and bottom by the same amount, so the difference, and with it the buoyant force, stays the same."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining why the pressure is lower where a fluid moves faster (a horizontal pipe that narrows).",
+          "text": "By continuity the fluid must speed up as it enters the narrow section, because the same volume passes each cross-section every second. A parcel of fluid speeds up only if the net force on it points forward, so the pressure behind it must be greater than the pressure ahead of it. The pressure in the narrow, fast section is therefore lower than in the wide section. The fluid is not squeezed to a higher pressure; the lower pressure ahead is what lets it speed up."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining why a steel ship floats while a steel bolt sinks.",
+          "text": "A solid steel bolt has the density of steel, about 7800 kg/m^3, so even fully submerged it displaces water that weighs less than it does, and it sinks. A ship's hull encloses a large volume of air, so the ship's average density, its total mass over its total volume, is less than that of water. It settles until the water it displaces weighs as much as the whole ship, and floats."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluating a claim (\"A hydraulic lift lets a small force do more work.\").",
+          "text": "The claim is incorrect. The lift multiplies force, because the same pressure acts on a larger area: F_2 = F_1(A_2/A_1). But the fluid is incompressible, so the volume pushed out by the small piston equals the volume pushed in under the large one, and the small piston moves A_2/A_1 times as far. The work F_1d_1 equals the work F_2d_2 (neglecting friction): force is multiplied, energy is not."
+        },
+        {
+          "type": "trap",
+          "text": "Using the object's density in Archimedes' principle: F_b = ρ_obj V g.",
+          "fix": "F_b uses the fluid's density and the submerged volume: ρ_f V_sub g. The object's density belongs only in its weight."
+        },
+        {
+          "type": "trap",
+          "text": "Using the whole volume of a floating object as the displaced volume.",
+          "fix": "Only the part below the surface displaces fluid. For a floating object, find V_sub from F_b = mg."
+        },
+        {
+          "type": "trap",
+          "text": "Putting diameters into A_1v_1 = A_2v_2 or F_1/A_1 = F_2/A_2.",
+          "fix": "Area goes as the square of the diameter: a pipe of half the diameter has a quarter of the area. Square the diameter ratio."
+        },
+        {
+          "type": "trap",
+          "text": "Mixing gauge and absolute pressure: adding P_0 when a gauge pressure is asked, or using P_0 on one side of Bernoulli's equation and a gauge pressure on the other.",
+          "fix": "Decide at the start which you are using, and say so. An open surface or a free jet has absolute pressure P_0 and gauge pressure 0."
+        },
+        {
+          "type": "trap",
+          "text": "Thinking the pressure is higher where the fluid moves faster, because the fluid is squeezed there.",
+          "fix": "In a horizontal pipe, the fast section has the lower pressure: the fluid speeds up because it moves from high pressure toward low pressure."
+        },
+        {
+          "type": "trap",
+          "text": "Converting cm^2 to m^2 by dividing by 100.",
+          "fix": "1 m = 100 cm, so 1 m^2 = 10^4 cm^2: divide by 10 000, or convert lengths to meters before multiplying."
+        },
+        {
+          "type": "trap",
+          "text": "Drawing a buoyant force and also separate arrows for the water's push on the top and bottom of an object.",
+          "fix": "The buoyant force is the net pressure force. Draw either the single buoyant force or the separate pressure forces, never both."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the ρgy terms in Bernoulli's equation when the pipe changes height.",
+          "fix": "Keep every term, and choose y = 0 at one of the two points. Cancel ρgy only when both points are at the same height."
+        },
+        {
+          "type": "trap",
+          "text": "Applying Bernoulli's equation across a pump, or to a thick, slow, viscous flow.",
+          "fix": "Bernoulli's equation holds only between points with no energy added or removed in between and negligible viscosity."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A 2.0 kg block with a density of 4000 kg/m^3 is pulled straight up through water by a rope, completely submerged, with an upward acceleration of 0.50 m/s^2. Ignoring drag, find the tension in the rope. Take +y upward.",
+          "answer": "About 15.7 N.",
+          "steps": [
+            "Volume: V = m/ρ = (2.0 kg)/(4000 kg/m^3) = 5.0 × 10^−4 m^3. Buoyant force: F_b = ρ_water V g = (1000 kg/m^3)(5.0 × 10^−4 m^3)(9.8 m/s^2) = 4.9 N, upward.",
+            "Free-body diagram of the block: tension T up, buoyant force F_b up, weight mg = 19.6 N down.",
+            "Newton's second law along +y: T + F_b − mg = ma, so T = m(g + a) − F_b = (2.0 kg)(9.8 m/s^2 + 0.50 m/s^2) − 4.9 N = 20.6 N − 4.9 N ≈ 15.7 N.",
+            "Check: in air, with the same acceleration, the tension would be 20.6 N; the water carries 4.9 N of the load."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Water flows downhill through a pipe. At point A the inner diameter is 4.0 cm, the speed is 1.5 m/s and the gauge pressure is 5.0 × 10^4 Pa. Point B is 3.0 m lower, where the inner diameter is 2.5 cm. Find the speed and the gauge pressure at B.",
+          "answer": "v_B ≈ 3.8 m/s; gauge pressure ≈ 7.3 × 10^4 Pa.",
+          "steps": [
+            "Continuity: v_B = v_A(A_A/A_B) = v_A(d_A/d_B)^2 = (1.5 m/s)(4.0/2.5)^2 = (1.5 m/s)(2.56) ≈ 3.84 m/s.",
+            "Bernoulli's equation with gauge pressures throughout and y = 0 at B: P_A + ρgy_A + (1/2)ρv_A^2 = P_B + (1/2)ρv_B^2, with y_A = 3.0 m.",
+            "P_B = P_A + ρgy_A + (1/2)ρ(v_A^2 − v_B^2) = 5.0 × 10^4 Pa + (1000 kg/m^3)(9.8 m/s^2)(3.0 m) + (1/2)(1000 kg/m^3)((1.5 m/s)^2 − (3.84 m/s)^2).",
+            "P_B = 5.0 × 10^4 Pa + 2.94 × 10^4 Pa − 6.25 × 10^3 Pa ≈ 7.3 × 10^4 Pa.",
+            "Reasonableness: dropping 3.0 m raises the pressure and speeding up lowers it; here the drop matters more."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A sealed barrel is completely full of water. A thin vertical tube with an inner cross-sectional area of 1.0 cm^2 is fitted into the barrel's lid, whose area is 0.25 m^2, and water is poured into the tube until it stands 4.0 m above the lid. Find the mass of the water in the tube, the gauge pressure just under the lid, and the net force of the water and the outside air on the lid.",
+          "answer": "Mass 0.40 kg; gauge pressure ≈ 3.9 × 10^4 Pa; net force ≈ 9.8 × 10^3 N, upward on the lid.",
+          "steps": [
+            "Water in the tube: V = (1.0 × 10^−4 m^2)(4.0 m) = 4.0 × 10^−4 m^3, so m = ρV = 0.40 kg.",
+            "The water is at rest and connected, and just under the lid it is 4.0 m below the free surface in the tube: gauge pressure = ρgh = (1000 kg/m^3)(9.8 m/s^2)(4.0 m) = 3.92 × 10^4 Pa.",
+            "The atmosphere pushes on the outside of the lid and, through the open tube, on the water inside, so it cancels; the net force uses the gauge pressure: F = (3.92 × 10^4 Pa)(0.25 m^2) ≈ 9.8 × 10^3 N, upward.",
+            "Only 0.40 kg of water, weighing about 3.9 N, produces a force of nearly 10 000 N on the lid, because the pressure depends on the depth, not on the amount of liquid above."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 26: Density and pressure",
+              "ref": "week:26"
+            },
+            {
+              "label": "Week 27: Buoyancy and Newton's laws in fluids",
+              "ref": "week:27"
+            },
+            {
+              "label": "Week 28: Continuity and Bernoulli's equation",
+              "ref": "week:28"
+            },
+            {
+              "label": "Week 29: Fluids synthesis",
+              "ref": "week:29"
+            },
+            {
+              "label": "Unit 8 plan: Fluids",
+              "ref": "unit:u8"
+            },
+            {
+              "label": "Unit 8 test",
+              "ref": "test:unit-8"
+            },
+            {
+              "label": "Unit 8 test key",
+              "ref": "key:unit-8"
+            },
+            {
+              "label": "Free-response workshop: Qualitative/Quantitative Translation",
+              "ref": "guide:fr-qualitative-quantitative"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

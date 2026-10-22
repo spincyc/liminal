@@ -1,0 +1,673 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "fr-translation-between-representations",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Translation Between Representations",
+  "author": "cm-workshop-tbr-author",
+  "directions": "This set practises the Translation Between Representations question type of the AP® Physics C: Mechanics Exam with four original questions, from units 2, 4, 6 and 7. Work them in two sittings, questions 1 and 2 and then questions 3 and 4, at 28 minutes a question: Liminal's practice pace for this type, inside the 25–30 minutes Liminal's practice exams suggest for it. (College Board's exam pages, checked 2026-10-22, give 95 minutes for the exam's four free-response questions.) Any calculator is allowed, and Liminal's formula reference is appended. Use g = 9.8 m/s^2 and SI units; each question states its positive direction. Draw diagrams and sketches on the figures provided, start every derivation from a fundamental relation, and give numerical answers with units and 2–3 significant figures. Then score your work with the answer key's rubrics and record raw points out of 12 for each question. Raw points are a practice tally only: they are not AP® scores, and Liminal does not convert them to the 1–5 scale.",
+  "figures": [
+    {
+      "id": "cm-fr-translation-between-representations-f1",
+      "alt": "Graph of the robot's velocity v in m/s against time t in seconds from 0 to 3 s. A solid curve starts at 0 at t = 0, rises steeply and then more and more slowly, and levels off toward 0.60 m/s. A dashed straight line, labeled as the tangent to the curve at t = 0, starts at the origin and passes through 0.60 m/s at t = 0.50 s. A dashed horizontal line marks v = 0.60 m/s."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f2",
+      "alt": "Blank axes for a sketch: acceleration a in m/s^2 from 0 to 1.4 on the vertical axis and time t in seconds from 0 to 3 on the horizontal axis, with grid lines."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f3",
+      "alt": "Key free-body diagram of the robot drawn as a small box. A long arrow F_g points down from its bottom. From its top, a shorter arrow F_B points up and, beside it, a short arrow F_D = bv points up; the two upward arrows together are shorter than F_g. An arrow at the side marks downward as positive.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f4",
+      "alt": "Key graph of acceleration a against t from 0 to 3 s: a curve starting at 1.2 m/s^2 at t = 0, falling steeply and then more slowly, concave up, through about 0.44 m/s^2 at t = 0.50 s and nearly reaching zero by t = 2 s without crossing it. The points at t = 0 and t = 0.50 s are marked and labeled."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f5",
+      "alt": "Graph of the force F in newtons between the skaters against time t in seconds from 0 to 0.5 s. F rises in a straight line from 0 at t = 0 to 240 N at t = 0.10 s, stays at 240 N until t = 0.30 s, falls in a straight line to 0 at t = 0.40 s, and stays at 0 until t = 0.50 s."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f6",
+      "alt": "Two dots for free-body diagrams, labeled A on the left and B on the right, with an arrow below them pointing right, labeled as the positive direction."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f7",
+      "alt": "Blank axes for a sketch: velocity v in m/s from 0 to 4 on the vertical axis and time t in seconds from 0 to 0.5 on the horizontal axis, with grid lines every 0.25 m/s and every 0.05 s."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f8",
+      "alt": "Key free-body diagrams. Skater A (60 kg): an upward arrow F_N and a downward arrow F_g of equal length, and a shorter arrow pointing left, labeled as the force of B on A. Skater B (40 kg): an upward arrow F_N and a downward arrow F_g of equal length, both shorter than A's, and an arrow pointing right, labeled as the force of A on B, the same length as the force of B on A."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f9",
+      "alt": "Key graph of velocity against time from 0 to 0.5 s. Both skaters start at 2.0 m/s. B's curve bends upward to 2.3 m/s at t = 0.10 s, rises in a straight line to 3.5 m/s at t = 0.30 s, bends over and levels off at 3.8 m/s from t = 0.40 s. A's curve bends downward to 1.8 m/s at t = 0.10 s, falls in a straight line to 1.0 m/s at t = 0.30 s, and levels off at 0.80 m/s from t = 0.40 s. A dashed horizontal line at 2.0 m/s is labeled center of mass."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f10",
+      "alt": "Side view: a ball rolls to the right on level ground with velocity v_0 toward the foot of a straight ramp that rises to the right at 15° to the horizontal. A dashed circle shows the ball partway up the ramp, and an arrow parallel to the ramp pointing up it is labeled as the positive direction.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f11",
+      "alt": "Three blank energy bar charts side by side, titled Position 1, Position 2 and Position 3, each with empty columns labeled K_tr, K_rot and U_g, on a shared vertical scale marked 0, 1, 2, 3 and 4 J with grid lines."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f12",
+      "alt": "Blank axes for a sketch: velocity v in m/s from −3.5 to 3.5 on the vertical axis and time t in seconds from 0 to 4.5 on the horizontal axis, with grid lines every 0.5 m/s and every 0.5 s."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f13",
+      "alt": "Key force diagram of the ball on the ramp, drawn as a circle resting on a surface that rises to the right, with up the ramp marked positive. An arrow F_g points straight down from the center. From the contact point, an arrow F_N points away from the surface, perpendicular to it, toward the center. From the contact point, a shorter arrow f_s points along the surface, up the ramp.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f14",
+      "alt": "Key energy bar charts. Position 1: K_tr about 2.0 J, K_rot about 1.35 J, U_g empty. Position 2: K_tr about 1.0 J, K_rot about 0.68 J, U_g about 1.7 J. Position 3: K_tr and K_rot empty, U_g about 3.4 J."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f15",
+      "alt": "Key graph of velocity against time: a single straight line falling from 3.0 m/s at t = 0 through zero at t = 1.97 s to −3.0 m/s at t = 3.94 s, with those three points marked and the two times labeled."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f16",
+      "alt": "Side view of the sign: a horizontal bracket sticks out from a wall, and a flat board hangs from a hinge at the bracket's outer end. The board is drawn swung a little toward the street side, at angle θ from a dashed vertical line through the hinge, with a small phone taped to it and its height labeled L. A curved arrow below the board, pointing toward the street side, is labeled as the positive sense.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f17",
+      "alt": "Graph of angular velocity ω in rad/s against time t in seconds from 0 to 2.8 s. ω is zero at t = 0, rises to a peak of 0.54 rad/s at t = 0.35 s, returns to zero at t = 0.70 s, reaches −0.54 rad/s at t = 1.05 s, returns to zero at t = 1.40 s, and repeats once more. A dashed horizontal line marks 0.54 rad/s."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f18",
+      "alt": "Two blank sets of axes stacked vertically with the same time axis from 0 to 2.8 s, labeled every 0.35 s: the angle θ in rad from −0.15 to 0.15 above, and the angular acceleration α in rad/s^2 from −3 to 3 below, each with grid lines."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f19",
+      "alt": "Three blank energy bar charts side by side, titled t = 0, t = 0.175 s and t = 0.35 s, each with empty columns labeled K and U, on a shared vertical scale marked 0, E/4, E/2, 3E/4 and E."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f20",
+      "alt": "Key graphs against time from 0 to 2.8 s. Upper, θ: a cosine-shaped curve that starts at its lowest value, −0.12 rad, at t = 0, crosses zero at 0.35 s, peaks at +0.12 rad at 0.70 s and repeats with period 1.40 s; the peak is labeled 0.12 rad. Lower, α: a cosine-shaped curve that starts at its highest value, about 2.4 rad/s^2, at t = 0, crosses zero at 0.35 s, reaches its lowest value at 0.70 s and repeats with period 1.40 s; the starting value is labeled 2.4 rad/s^2."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-f21",
+      "alt": "Key energy bar charts. At t = 0, K is empty and U reaches E. At t = 0.175 s, K and U each reach E/2. At t = 0.35 s, K reaches E and U is empty."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 112,
+          "calculator": "any",
+          "directions": "Answer each question in the space provided. Show your work and explain your reasoning; points are awarded for correct physics reasoning as well as for answers. Draw diagrams and sketches on the figures given, start each derivation from a fundamental relation, keep to the question's symbols, and give numerical answers with units. Suggested time: 28 minutes a question, with questions 1 and 2 as one sitting and questions 3 and 4 as another.",
+          "items": [
+            {
+              "id": "cm-fr-translation-between-representations-fr1",
+              "type": "TBR",
+              "topics": [
+                "CM.2.9",
+                "CM.2.2",
+                "CM.2.5",
+                "CM.1.3"
+              ],
+              "prompt": "A 4.0 kg underwater survey robot is held at rest just below the surface of a lake by a cable. At t = 0 the cable is released, and the robot sinks straight down with its thrusters off. The water exerts a constant upward buoyant force F_B on the robot and a drag force of magnitude bv opposite its velocity, where v is the robot's speed and b is a constant. The robot's sensors give its velocity, shown in the graph, which also shows the tangent line to the curve at t = 0 and the dashed line v = 0.60 m/s that the curve approaches. Take downward as positive.",
+              "figureIds": [
+                "cm-fr-translation-between-representations-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw and label a free-body diagram of the robot at the instant its speed is 0.30 m/s. Represent the robot as a dot or a small box, and draw each force as an arrow starting on it. Make the relative lengths of the arrows consistent with the robot's motion at that instant.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Draws exactly three labeled forces: the gravitational force F_g downward, the buoyant force F_B upward and the drag force upward, opposite the downward velocity; no \"force of motion\" and no net-force arrow."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Draws the gravitational force longer than the two upward forces together, because the robot is still speeding up (the v–t curve still rises at v = 0.30 m/s), with the drag arrow the shortest."
+                    }
+                  ],
+                  "answer": "Gravity F_g = mg = 39 N down; the buoyant force F_B (34 N) and drag bv (2.4 N at this speed) up, with F_g longer than F_B and the drag together (key figure).",
+                  "steps": [
+                    "Only the Earth (gravity) and the water (buoyant force and drag) exert forces on the robot.",
+                    "At v = 0.30 m/s the graph still slopes upward, so the acceleration and the net force point down: F_g > F_B + bv. The values found in parts (b) and (c) confirm it: 39.2 N > 34.4 N + 2.4 N."
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f3"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use the graph to determine the buoyant force F_B and the drag constant b.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Takes the robot's acceleration at t = 0 as the slope of the tangent line, a_0 = (0.60 m/s)/(0.50 s) = 1.2 m/s^2 (accept 1.1–1.3 m/s^2), and notes that the drag is zero at that instant because v = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law at t = 0, mg − F_B = ma_0, to get F_B = (4.0 kg)(9.8 − 1.2) m/s^2 = 34 N (accept 34–35 N, or a value consistent with the student's a_0)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the terminal speed read from the graph, v_T = 0.60 m/s, where the net force is zero: mg − F_B − bv_T = 0, so b = (39.2 N − 34.4 N)/(0.60 m/s) = 8.0 kg/s (accept 7–9 kg/s, or a value consistent with the student's F_B)."
+                    }
+                  ],
+                  "answer": "F_B = 34 N (34.4 N); b = 8.0 kg/s (8.0 N·s/m).",
+                  "steps": [
+                    "Slope of the tangent at t = 0: it rises 0.60 m/s in 0.50 s, so a_0 = 1.2 m/s^2. With v = 0 there is no drag yet, so only F_g and F_B act: (4.0)(9.8) − F_B = (4.0)(1.2), F_B = 39.2 − 4.8 = 34.4 N.",
+                    "At the terminal speed the curve is flat, so a = 0: 39.2 − 34.4 − b(0.60) = 0, b = 4.8/0.60 = 8.0 kg/s.",
+                    "Ignoring the buoyant force would give b = mg/v_T = 65 kg/s, which contradicts the initial slope: a robot with no buoyant force would start with a = g, not 1.2 m/s^2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Starting from Newton's second law, write a differential equation for the robot's velocity v while it sinks. Show that v(t) = v_T(1 − e^(−t/τ)) is a solution, and express v_T and τ in terms of m, g, F_B and b. Calculate τ, and check your value against the graph.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes m dv/dt = mg − F_B − bv, with signs consistent with downward positive."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes v(t) and dv/dt = (v_T/τ)e^(−t/τ) (or separates variables and integrates with v(0) = 0) and shows that the equation holds for all t when v_T = (mg − F_B)/b and τ = m/b."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Calculates τ = (4.0 kg)/(8.0 kg/s) = 0.50 s (or a value consistent with part (b)) and checks it against the graph: the tangent line at t = 0 reaches v_T at t = τ = 0.50 s, or the curve passes 0.63v_T ≈ 0.38 m/s at t = 0.50 s."
+                    }
+                  ],
+                  "answer": "m dv/dt = mg − F_B − bv. The given v(t) satisfies it with v_T = (mg − F_B)/b and τ = m/b = 0.50 s, which matches the graph: the tangent at t = 0 reaches 0.60 m/s at 0.50 s, and v(0.50 s) ≈ 0.38 m/s.",
+                  "steps": [
+                    "Left side: m dv/dt = m(v_T/τ)e^(−t/τ). Right side: mg − F_B − bv_T + bv_T e^(−t/τ).",
+                    "The constant terms match when mg − F_B − bv_T = 0, so v_T = (mg − F_B)/b = 4.8/8.0 = 0.60 m/s, the graph's terminal speed. The exponential terms match when mv_T/τ = bv_T, so τ = m/b = 0.50 s. Also v(0) = 0, as the graph shows.",
+                    "Check: the initial slope of v(t) is v_T/τ = 0.60/0.50 = 1.2 m/s^2, the tangent line's slope, and v(0.50 s) = 0.60(1 − e^(−1)) = 0.38 m/s, which the curve shows."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "On the axes provided, sketch the robot's acceleration a as a function of time from t = 0 to t = 3.0 s. Label the values of a at t = 0 and at t = 0.50 s.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sketches a curve that starts at 1.2 m/s^2 at t = 0 and decreases, concave up, approaching zero without crossing it (a = (1.2 m/s^2)e^(−t/0.50 s), the slope of the v–t graph)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Labels a(0) = 1.2 m/s^2 and a(0.50 s) ≈ 0.44 m/s^2 (accept 0.40–0.48 m/s^2, or values consistent with the student's a_0 and τ)."
+                    }
+                  ],
+                  "answer": "a(t) = 1.2e^(−t/0.50) m/s^2: 1.2 m/s^2 at t = 0, 0.44 m/s^2 at t = 0.50 s, nearly zero after about 2 s (key graph).",
+                  "steps": [
+                    "a = dv/dt = (v_T/τ)e^(−t/τ) = 1.2e^(−2.0t) m/s^2 (t in seconds).",
+                    "a(0.50 s) = 1.2e^(−1) = 0.44 m/s^2; a(3.0 s) = 0.003 m/s^2. On the v–t graph the slope gets smaller as the curve flattens, which is this decay."
+                  ],
+                  "figureIds": [
+                    "cm-fr-translation-between-representations-f2"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f4"
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "The operator estimates that the robot is 2.0 m below its starting point at t = (2.0 m)/(0.60 m/s) = 3.3 s. Use the graph to explain whether the robot actually reaches that depth before or after t = 3.3 s, and estimate the time at which it does.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that it gets there later, because the displacement is the area under the v–t graph and the curve lies below 0.60 m/s at every time, so by t = 3.3 s the area is less than (0.60 m/s)(3.3 s) = 2.0 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Estimates the shortfall as the area between the line v = 0.60 m/s and the curve, v_Tτ = (0.60 m/s)(0.50 s) = 0.30 m, which takes about 0.50 s more at 0.60 m/s, so the robot reaches 2.0 m at about 3.8 s (accept 3.7–3.9 s; integrating x(t) = v_T t − v_Tτ(1 − e^(−t/τ)) is equally valid)."
+                    }
+                  ],
+                  "answer": "After: the robot has sunk only about 1.7 m at 3.3 s, and it reaches 2.0 m at about 3.8 s.",
+                  "steps": [
+                    "Area between the line v = v_T and the curve, from 0 onward: ∫ from 0 to ∞ of v_T e^(−t/τ) dt = v_Tτ = 0.30 m. On the graph it is the area between the curve and the dashed line, which can also be estimated by counting grid squares.",
+                    "By about t = 2.5 s nearly all of that shortfall has built up, so x(t) ≈ v_T(t − τ) = 0.60(t − 0.50). Setting this equal to 2.0 m gives t ≈ 3.8 s. The exact equation, 0.60t − 0.30(1 − e^(−2t)) = 2.0, gives t = 3.83 s."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-translation-between-representations-fr2",
+              "type": "TBR",
+              "topics": [
+                "CM.4.2",
+                "CM.4.3",
+                "CM.2.3",
+                "CM.2.1",
+                "CM.3.2"
+              ],
+              "prompt": "Two pair skaters glide together across level ice at 2.0 m/s, skater A (mass 60 kg) directly behind skater B (mass 40 kg), with A's hands on B's back. Starting at t = 0, A pushes B forward. A thin force pad between A's hands and B's back records the magnitude F of the force each skater exerts on the other, shown in the graph. The ice exerts negligible horizontal force on either skater, and air resistance is negligible. Take the direction in which the skaters glide as positive.",
+              "figureIds": [
+                "cm-fr-translation-between-representations-f5"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "The dots represent skater A and skater B while A pushes. On each dot, draw and label the forces (not components) exerted on that skater, each as an arrow starting on the dot. Then identify a Newton's third-law pair in your diagrams.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A: the gravitational force down and the ice's normal force up, of equal length, and the push from B in the negative direction. B: the gravitational force down and the normal force up, of equal length, and the push from A in the positive direction. No horizontal force from the ice and no other forces."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the force of A on B and the force of B on A as a third-law pair: equal in magnitude (both are the pad reading F), opposite in direction and exerted on different skaters. A skater's weight and normal force are not a third-law pair."
+                    }
+                  ],
+                  "answer": "A: F_g and F_N (equal) and the push from B, backward. B: F_g and F_N (equal, smaller than A's) and the push from A, forward. Third-law pair: the force of A on B and the force of B on A (key figure).",
+                  "steps": [
+                    "Only the Earth, the ice and the other skater exert forces on each skater; the ice exerts no horizontal force.",
+                    "The pad measures one interaction, so both push forces have magnitude F at every instant."
+                  ],
+                  "figureIds": [
+                    "cm-fr-translation-between-representations-f6"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f8"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use the graph to determine the impulse that A exerts on B during the push. Then calculate the velocity of each skater after the push.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the impulse as the area under the F–t graph: ½(0.10 s)(240 N) + (0.20 s)(240 N) + ½(0.10 s)(240 N) = 72 N·s, in the positive direction on B."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies the impulse–momentum theorem to B: (40 kg)(v_B − 2.0 m/s) = 72 N·s, so v_B = 3.8 m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies it to A with the opposite impulse, −72 N·s (Newton's third law): (60 kg)(v_A − 2.0 m/s) = −72 N·s, so v_A = +0.80 m/s, still forward but slower. Momentum conservation for the pair, (100 kg)(2.0 m/s) = (60 kg)v_A + (40 kg)v_B, may replace either calculation."
+                    }
+                  ],
+                  "answer": "J on B = +72 N·s; v_B = +3.8 m/s and v_A = +0.80 m/s.",
+                  "steps": [
+                    "Area of the trapezoid: (½(0.10) + 0.20 + ½(0.10))(240) = (0.30 s)(240 N) = 72 N·s.",
+                    "Δv_B = 72/40 = +1.8 m/s; Δv_A = −72/60 = −1.2 m/s.",
+                    "Check: 60(0.80) + 40(3.8) = 48 + 152 = 200 kg·m/s = 100(2.0)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the axes provided, sketch the velocity of each skater from t = 0 to t = 0.50 s. Label each skater's graph, and label its values at t = 0.10 s, t = 0.30 s and t = 0.50 s.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "B's graph starts at 2.0 m/s with zero slope, curves upward to 2.3 m/s at t = 0.10 s, rises in a straight line to 3.5 m/s at t = 0.30 s, then bends over smoothly to a constant 3.8 m/s from t = 0.40 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A's graph is B's change turned upside down and scaled by 40/60: 1.8 m/s at t = 0.10 s, a straight line down to 1.0 m/s at t = 0.30 s, and a constant 0.80 m/s from t = 0.40 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The shapes follow the force graph: each slope is the skater's acceleration, ±F/m, so both graphs are straight while F is constant, B's slope (6.0 m/s^2) is 1.5 times as steep as A's (−4.0 m/s^2), neither graph jumps, and both are flat once F = 0."
+                    }
+                  ],
+                  "answer": "B: 2.3 m/s at 0.10 s, 3.5 m/s at 0.30 s, 3.8 m/s at 0.50 s. A: 1.8 m/s, 1.0 m/s and 0.80 m/s at the same times (key graph).",
+                  "steps": [
+                    "The change in velocity up to time t is the area under the F–t graph up to t, divided by the mass: 12 N·s by t = 0.10 s, 60 N·s by t = 0.30 s and 72 N·s from t = 0.40 s.",
+                    "B: 2.0 + 12/40 = 2.3, 2.0 + 60/40 = 3.5, 2.0 + 72/40 = 3.8 m/s. A: 2.0 − 12/60 = 1.8, 2.0 − 60/60 = 1.0, 2.0 − 72/60 = 0.80 m/s.",
+                    "While F rises from zero, the slopes grow from zero, so the curves bend away from 2.0 m/s; while F falls to zero, the slopes shrink to zero, so the curves level off."
+                  ],
+                  "figureIds": [
+                    "cm-fr-translation-between-representations-f7"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f9"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use values from your graphs to show that the velocity of the center of mass of the two-skater system is the same at t = 0.30 s as at t = 0. Explain why it must be.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes v_cm at t = 0.30 s: ((60 kg)(1.0 m/s) + (40 kg)(3.5 m/s))/(100 kg) = 2.0 m/s, equal to its value at t = 0 (or shows that the momentum changes, (60)(−1.0) and (40)(+1.5) kg·m/s, add to zero)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the push forces are internal to the two-skater system (a third-law pair), the vertical external forces balance and the ice exerts no horizontal force, so the net external force on the system is zero and the velocity of its center of mass stays constant."
+                    }
+                  ],
+                  "answer": "v_cm(0.30 s) = (60(1.0) + 40(3.5))/100 = 2.0 m/s, the same as at t = 0, because the net external force on the system is zero.",
+                  "steps": [
+                    "Σ F_ext = M a_cm; the only horizontal forces are the pad forces, which act inside the system and cancel.",
+                    "On the key graph, the dashed line at 2.0 m/s lies between the two curves at every time, two-fifths of the way from A's curve to B's (weighted by mass)."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "A student argues: \"The skaters exert equal and opposite forces on each other, so the forces do equal and opposite amounts of work, and the total kinetic energy of the pair cannot change during the push.\" Use your results to evaluate this argument.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Calculates the kinetic energy before, ½(100 kg)(2.0 m/s)^2 = 200 J, and after, ½(60 kg)(0.80 m/s)^2 + ½(40 kg)(3.8 m/s)^2 = 19 J + 289 J = 308 J, and concludes that the argument is wrong: the total rises by 108 J."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains why the energy can change although the forces are equal and opposite: B's center of mass moves farther than A's during the push (B's v–t graph lies above A's, so the area under it is larger), so B gains more kinetic energy than A loses, and the extra energy comes from A's internal (chemical) energy as A's arms straighten. Also accept: the contact forces do equal and opposite work where the hands meet the back, but A is not rigid, and A's muscles convert internal energy into kinetic energy. Numbers are not required for this point: B moves about 1.16 m and A about 0.56 m, and ΔK_B = +209 J, ΔK_A = −101 J."
+                    }
+                  ],
+                  "answer": "The argument is wrong. The kinetic energy rises from 200 J to 308 J. The equal and opposite forces give equal and opposite impulses, but not equal and opposite changes in kinetic energy, because B's center of mass moves farther than A's while the force acts (A's arms straighten); the extra energy comes from A's muscles.",
+                  "steps": [
+                    "Impulse is ∫F dt over the same time interval for both skaters, so the impulses cancel and momentum is conserved. Each skater's change in kinetic energy is ∫F dx_cm along that skater's center-of-mass path, and those displacements differ.",
+                    "Center-of-mass displacements during the push are the areas under the v–t graphs from 0 to 0.40 s: about 1.16 m for B and 0.56 m for A. ΔK_B = ½(40)(3.8^2 − 2.0^2) = 209 J; ΔK_A = ½(60)(0.80^2 − 2.0^2) = −101 J.",
+                    "A's hands and B's back move together, so the contact forces themselves do equal and opposite work at the contact; the 108 J comes from A's internal (chemical) energy, which A's muscles convert as A's arms straighten. A is not a rigid particle, so the student's conclusion does not follow."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-translation-between-representations-fr3",
+              "type": "TBR",
+              "topics": [
+                "CM.6.5",
+                "CM.6.1",
+                "CM.3.4",
+                "CM.5.3",
+                "CM.2.7"
+              ],
+              "prompt": "A soccer ball, modeled as a thin spherical shell of mass m = 0.45 kg and radius R = 0.11 m (rotational inertia (2/3)mR^2 about its center), rolls without slipping across level ground at v_0 = 3.0 m/s and then up a straight ramp inclined at 15° to the horizontal, as shown. The ball rolls without slipping the whole time, and air resistance and rolling resistance are negligible. Position 1 is on the level ground at the foot of the ramp; position 2 is where the ball's center has risen half of its greatest height above position 1; position 3 is the ball's highest point on the ramp. Take the gravitational potential energy of the ball–Earth system as zero at position 1, and take up the ramp as positive.",
+              "figureIds": [
+                "cm-fr-translation-between-representations-f10"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw the ball as a circle on a line representing the ramp's surface. Draw and label the forces exerted on the ball while it rolls up the ramp, each as an arrow starting at the point where the force is exerted. Explain the direction you chose for any friction force.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Draws the gravitational force at the center, pointing straight down, and the normal force at the contact point, perpendicular to the surface; no other forces besides friction (no \"force of motion\")."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Draws static friction at the contact point pointing up the ramp, with a reason: as the ball slows, its forward spin must slow too (v = ωR), and friction is the only force with a torque about the center, so it must point up the ramp; this also gives a deceleration smaller than g sin 15°."
+                    }
+                  ],
+                  "answer": "Gravity at the center, straight down; the normal force at the contact point, perpendicular to the ramp; static friction at the contact point, up the ramp (key figure).",
+                  "steps": [
+                    "Gravity acts at the center and the normal force acts along a line through the center, so neither has a torque about the center. Only friction can change ω.",
+                    "Rolling up, the ball slows, so ω must decrease; the torque of up-ramp friction at the bottom of the ball opposes the forward spin. Friction is static because the contact point is momentarily at rest, and its magnitude here is (2/3)m|a| = 0.46 N."
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f13"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the bar charts provided, show the ball's translational kinetic energy K_tr, its rotational kinetic energy K_rot and the gravitational potential energy U_g of the ball–Earth system at positions 1, 2 and 3. Give the value of each nonzero bar in joules.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Position 1: K_tr = ½(0.45 kg)(3.0 m/s)^2 = 2.0 J and K_rot = ½((2/3)mR^2)(v_0/R)^2 = (1/3)mv_0^2 = 1.35 J (accept 1.3–1.4 J), using ω = v/R for rolling without slipping; U_g = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Position 3: K_tr = K_rot = 0 and U_g = 3.4 J, equal to the total at position 1."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Position 2: U_g = 1.7 J, half the total, and the remaining 1.7 J split in the same 3 : 2 ratio, K_tr = 1.0 J and K_rot = 0.68 J. The total is the same at all three positions because static friction does no work on a ball that rolls without slipping."
+                    }
+                  ],
+                  "answer": "Position 1: K_tr = 2.0 J, K_rot = 1.35 J, U_g = 0. Position 2: K_tr = 1.0 J, K_rot = 0.68 J, U_g = 1.7 J. Position 3: U_g = 3.4 J (3.375 J), K_tr = K_rot = 0 (key figure).",
+                  "steps": [
+                    "K_rot/K_tr = (½·(2/3)mR^2·v^2/R^2)/(½mv^2) = 2/3 at every instant while the ball rolls without slipping.",
+                    "Total E = 2.025 + 1.35 = 3.375 J, constant: gravity is conservative, the normal force is perpendicular to the motion of the contact point, and friction acts at a point that is momentarily at rest.",
+                    "Position 2 has U_g = E/2 by its definition, and the kinetic energy left, E/2, divides 3 : 2."
+                  ],
+                  "figureIds": [
+                    "cm-fr-translation-between-representations-f11"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f14"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Starting from conservation of energy, derive an expression for the greatest height H that the ball's center rises above position 1, in terms of v_0, g and physical constants as appropriate. Calculate H and the distance the ball rolls along the ramp.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes ½mv_0^2 + ½Iω_0^2 = mgH for the ball–Earth system, with no work done by friction, and uses ω_0 = v_0/R."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes I = (2/3)mR^2 to get (5/6)mv_0^2 = mgH, so H = 5v_0^2/(6g)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Calculates H = 0.77 m (accept 0.76–0.77 m) and the distance along the ramp H/sin 15° = 3.0 m (accept 2.9–3.0 m)."
+                    }
+                  ],
+                  "answer": "H = 5v_0^2/(6g) = 0.77 m; the ball rolls 3.0 m (2.96 m) along the ramp.",
+                  "steps": [
+                    "½mv_0^2 + ½(2/3)mR^2(v_0/R)^2 = ½mv_0^2 + (1/3)mv_0^2 = (5/6)mv_0^2 = mgH.",
+                    "H = 5(3.0)^2/(6 × 9.8) = 45/58.8 = 0.765 m. Distance along the ramp: 0.765/sin 15° = 0.765/0.259 = 2.96 m.",
+                    "Consistency with part (b): mgH = (0.45)(9.8)(0.765) = 3.375 J, the U_g bar at position 3."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "On the axes provided, sketch the ball's velocity v from the moment it passes position 1 (t = 0) until it returns to position 1. Label the time at which it stops and the time at which it returns.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Draws one straight line from 3.0 m/s with slope a = −(3/5)g sin 15° = −1.5 m/s^2 (found from v_0^2 = 2|a|d with part (c), or from Newton's laws for translation and rotation), crossing v = 0 at t = 2.0 s (accept 1.9–2.1 s), with no change of slope at the top."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Continues the same line to −3.0 m/s at t = 3.9 s (accept 3.8–4.0 s): rolling back down, the ball has the same acceleration (friction still points up the ramp) and returns to position 1 with its original speed."
+                    }
+                  ],
+                  "answer": "A straight line from +3.0 m/s at t = 0 through zero at 1.97 s to −3.0 m/s at 3.94 s (key graph).",
+                  "steps": [
+                    "From part (c): |a| = v_0^2/(2d) = 9.0/(2 × 2.96) = 1.52 m/s^2. Or: mg sin θ − f = m|a| and fR = Iα = (2/3)mR^2(|a|/R) give |a| = (3/5)g sin θ = 1.52 m/s^2.",
+                    "Time to stop: 3.0/1.52 = 1.97 s; time to return: twice that, 3.94 s. The forces are the same on the way down, so the slope does not change."
+                  ],
+                  "figureIds": [
+                    "cm-fr-translation-between-representations-f12"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f15"
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "Suppose instead that the ramp were coated with ice, so that friction between the ball and the ramp were negligible, while the ball still arrived at position 1 rolling without slipping at 3.0 m/s. Determine how high the ball's center would rise, and give K_tr, K_rot and U_g at its highest point. Explain why the result differs from part (c).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Explains that with no friction, no force on the ball has a torque about its center (gravity and the normal force both act along lines through the center), so ω stays 27 rad/s and K_rot stays 1.35 J; only the translational kinetic energy turns into U_g."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds H = v_0^2/(2g) = 0.46 m, with K_tr = 0, K_rot = 1.35 J and U_g = 2.0 J at the highest point, lower than the 0.77 m of part (c)."
+                    }
+                  ],
+                  "answer": "H = 0.46 m. At the top, K_tr = 0, K_rot = 1.35 J (the ball still spins) and U_g = 2.0 J. On the rough ramp, friction's torque lets the rotational energy turn into U_g as well, so the ball rises higher.",
+                  "steps": [
+                    "½mv_0^2 = mgH gives H = (3.0)^2/(2 × 9.8) = 0.459 m.",
+                    "Total energy is still 3.375 J = 2.025 J (U_g) + 1.35 J (K_rot)."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-translation-between-representations-fr4",
+              "type": "TBR",
+              "topics": [
+                "CM.7.3",
+                "CM.7.5",
+                "CM.7.4",
+                "CM.7.2",
+                "CM.7.1"
+              ],
+              "prompt": "A shop sign is a uniform flat board of mass m = 2.4 kg and height L. It hangs from a horizontal hinge along its top edge, so that it can swing toward and away from the street, as shown in the side view. Its rotational inertia about the hinge is (1/3)mL^2. Friction in the hinge and air resistance are negligible. Let θ be the angle between the board and the vertical, positive when the bottom edge is toward the street, and ω = dθ/dt. After a gust of wind passes, the board swings freely with a small amplitude. A phone of negligible mass taped to the board records ω, shown in the graph, starting at an instant t = 0 when ω = 0.",
+              "figureIds": [
+                "cm-fr-translation-between-representations-f16",
+                "cm-fr-translation-between-representations-f17"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the graph to determine the period of the motion and the angular amplitude θ_max of the board.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "T = 1.40 s, the time for one full cycle of the ω–t graph (for example from t = 0 to t = 1.40 s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "θ_max = ω_max/(2π/T) = (0.54 rad/s)/(4.49 rad/s) = 0.12 rad (accept 0.11–0.13 rad), or half the area under one positive loop of the ω–t graph, since that area, 0.24 rad, is the angle swept from one extreme to the other."
+                    }
+                  ],
+                  "answer": "T = 1.40 s; θ_max = 0.12 rad (about 7°).",
+                  "steps": [
+                    "The angular frequency of the oscillation is 2π/T = 2π/1.40 = 4.49 rad/s. Do not confuse it with ω, the board's angular velocity.",
+                    "For SHM, ω_max = (2π/T)θ_max, so θ_max = 0.54/4.49 = 0.120 rad. The area check: one loop has area (0.54)(0.70)(2/π) = 0.24 rad = 2θ_max."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Starting from Newton's second law in rotational form, derive an equation of motion for θ, and show that for small angles the period is T = 2π√(2L/(3g)). Use your period from part (a) to calculate L.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the torque about the hinge as τ = −mg(L/2)sin θ (gravity acts at the center of mass, L/2 from the hinge; the hinge's force has no torque about the hinge) and sets it equal to Iα with I = (1/3)mL^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses sin θ ≈ θ for small angles to get d^2θ/dt^2 = −(3g/(2L))θ, identifies the angular frequency as √(3g/(2L)), and so obtains T = 2π√(2L/(3g))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Calculates L = 3gT^2/(8π^2) = 0.73 m (accept 0.72–0.74 m, or a value consistent with the student's period)."
+                    }
+                  ],
+                  "answer": "(1/3)mL^2 d^2θ/dt^2 = −mg(L/2)sin θ ≈ −mg(L/2)θ, so d^2θ/dt^2 = −(3g/(2L))θ and T = 2π√(2L/(3g)); L = 0.73 m.",
+                  "steps": [
+                    "The restoring torque is negative when θ is positive: gravity pulls the center of mass back under the hinge.",
+                    "Comparing with d^2θ/dt^2 = −(2π/T)^2 θ: (2π/T)^2 = 3g/(2L).",
+                    "L = 3(9.8)(1.40)^2/(8π^2) = 57.6/79.0 = 0.730 m."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the axes provided, sketch θ and the angular acceleration α against time from t = 0 to t = 2.8 s. Label the greatest value on each graph.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "θ starts at −0.12 rad at t = 0 (ω is zero and about to become positive, so the board is at its extreme away from the street), crosses zero at t = 0.35 s, where ω is greatest, and reaches +0.12 rad at t = 0.70 s: a negative cosine with period 1.40 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "α, the slope of the ω–t graph, is a positive cosine: greatest at t = 0, zero at t = 0.35 s and most negative at t = 0.70 s, always opposite in sign to θ (α = −(2π/T)^2 θ)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Labels θ_max = 0.12 rad and α_max = (2π/T)^2 θ_max = (4.49)^2(0.12) = 2.4 rad/s^2 (accept 2.3–2.5 rad/s^2, or values consistent with part (a))."
+                    }
+                  ],
+                  "answer": "θ(t) = −0.12 cos(4.49t) rad and α(t) = 2.4 cos(4.49t) rad/s^2, with t in seconds (key graphs).",
+                  "steps": [
+                    "θ is the running area under the ω–t graph plus its starting value. Between t = 0 and 0.70 s, ω > 0, so θ increases from its lowest value to its highest; θ = 0 halfway, at 0.35 s, where ω peaks.",
+                    "α = dω/dt: the ω–t graph is steepest upward at t = 0, flat at its peak at 0.35 s and steepest downward at 0.70 s. α_max = ω_max(2π/T) = (0.54)(4.49) = 2.4 rad/s^2."
+                  ],
+                  "figureIds": [
+                    "cm-fr-translation-between-representations-f18"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f20"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "On the bar charts provided, show the board's rotational kinetic energy K and the gravitational potential energy U of the board–Earth system (zero when the board hangs straight down) at t = 0, t = 0.175 s and t = 0.35 s, as fractions of the total mechanical energy E. Then calculate E.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "At t = 0, U = E and K = 0 (ω = 0, extreme position); at t = 0.35 s, K = E and U = 0 (ω greatest, θ = 0); and E = ½Iω_max^2 = ½(0.43 kg·m^2)(0.54 rad/s)^2 = 0.062 J (accept 0.060–0.064 J), with I = (1/3)(2.4)(0.73)^2 = 0.43 kg·m^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "At t = 0.175 s, ω = 0.54 sin(π/4) = 0.38 rad/s, so K = E(0.38/0.54)^2 = E/2 and U = E/2 (equivalently, θ = θ_max/√2 there)."
+                    }
+                  ],
+                  "answer": "t = 0: K = 0, U = E. t = 0.175 s: K = U = E/2. t = 0.35 s: K = E, U = 0. E = 0.062 J (key figure).",
+                  "steps": [
+                    "K = ½Iω^2, so the K bar follows the square of the ω–t graph; the total is constant because no friction acts and the hinge's force does no work.",
+                    "E = ½(0.426)(0.54)^2 = 0.062 J. Check: mg(L/2)(1 − cos θ_max) = (2.4)(9.8)(0.365)(1 − cos 0.12) = 0.062 J."
+                  ],
+                  "figureIds": [
+                    "cm-fr-translation-between-representations-f19"
+                  ],
+                  "answerFigureIds": [
+                    "cm-fr-translation-between-representations-f21"
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "The shop owner bolts a small 0.80 kg lamp to the center of the board's face, at the board's own center of mass; treat the lamp as a particle a distance L/2 from the hinge. A student predicts that the new ω–t graph will repeat at the same times as before, because \"the period of a pendulum does not depend on its mass, and the lamp sits at the center of mass anyway.\" Do you agree? Support your answer with a calculation of the new period.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Disagrees: the sign is a physical pendulum, with T = 2π√(I/(Mgd)), where M is the total mass and d the distance from the hinge to the center of mass; the lamp raises I from (0.80 kg)L^2 to (1.00 kg)L^2, a factor of 1.25, but raises Md from (1.2 kg)L to (1.6 kg)L, a factor of 1.33, so the period changes (or an equivalent comparison, such as the lamp acting as a simple pendulum of length L/2, shorter than the board's equivalent length 2L/3)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Calculates T_new = (1.40 s)√(1.25 ÷ (4/3)) = (1.40 s)√0.9375 = 1.36 s (accept 1.35–1.37 s, or a value consistent with the student's period and L), so the peaks of the ω–t graph would be slightly closer together."
+                    }
+                  ],
+                  "answer": "No. The period shrinks to about 1.36 s, because the lamp increases the gravitational torque by a larger fraction than it increases the rotational inertia.",
+                  "steps": [
+                    "Before: I = (1/3)(2.4)L^2 = 0.80L^2 (kg), Md = 2.4(L/2) = 1.2L (kg). After: I = 0.80L^2 + 0.80(L/2)^2 = 1.00L^2, Md = (2.4 + 0.80)(L/2) = 1.6L.",
+                    "T = 2π√(I/(Mgd)), so T ∝ √(I/(Md)): the ratio is √((1.00/0.80)/(1.6/1.2)) = √0.9375 = 0.968, so T_new = (1.40 s)(0.968) = 1.36 s. A particle at L/2 behaves like a simple pendulum of length L/2, which swings faster than the board alone (equivalent length 2L/3), so adding it pulls the period down even though it sits at the center of mass."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

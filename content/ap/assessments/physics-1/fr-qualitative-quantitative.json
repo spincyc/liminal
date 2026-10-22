@@ -1,0 +1,396 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "fr-qualitative-quantitative",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Qualitative/Quantitative Translation",
+  "author": "p1-fr-qualitative-quantitative-author",
+  "directions": "Four Qualitative/Quantitative Translation questions in the style of the AP® Physics 1 Exam, one each from Units 2, 4, 5 and 7. Work each question in 18 minutes, Liminal's practice pace for this type and inside the 15–20 minutes its practice exams suggest for it, two questions at a sitting: questions 1 and 2 in 36 minutes, then questions 3 and 4 in 36 minutes. Any calculator is allowed, and Liminal's formula reference is printed at the end. Express answers in terms of the quantities given and physical constants such as g. When a part says not to write equations, answer in words. Then score your work with the answer key's rubric and record raw points as practice; they are not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-fr-qualitative-quantitative-f1",
+      "alt": "Side view of a triangular wedge resting on a table. Its left face rises at the smaller angle θ_1 from the table and its right face falls at the larger angle θ_2. A small pulley sits at the top corner. Block m_1 rests on the left face and block m_2 on the right face, and a string runs from each block parallel to its face and over the pulley.",
+      "caption": "Two blocks on a fixed wedge",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-qualitative-quantitative-f2",
+      "alt": "Side view of a wheeled cart of mass M on a level floor. A curved track on the cart drops from a vertical start at the left down a height h and flattens out at the right, where its end is horizontal. A small block m sits at the top of the track.",
+      "caption": "Block on a curved track on a cart",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-qualitative-quantitative-f3",
+      "alt": "A step pulley hangs from a support: two concentric drums, the inner one of radius r and the outer one of radius 2r, on one axle. A string comes off the right side of the small drum and hangs straight down to a block m.",
+      "caption": "Step pulley with the string on the small drum",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-qualitative-quantitative-f4",
+      "alt": "A block m on a frictionless floor is attached to a wall on its left by a horizontal spring labeled k. A hammer-tap arrow labeled with impulse J points left at the block's right face, toward the wall. An arrow at the top marks the positive direction, to the left.",
+      "caption": "Block on a spring, tapped toward the wall",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 72,
+          "calculator": "any",
+          "directions": "Answer all four questions in the space provided. Show your work and explain your reasoning; points are awarded for correct physics reasoning, for derivations that start from fundamental relations, and for consistency between your words and your equations, as well as for answers. Suggested time: 18 minutes per question, Liminal's practice pace.",
+          "items": [
+            {
+              "id": "p1-fr-qualitative-quantitative-fr1",
+              "prompt": "A wedge is fixed to a table. Its left face is inclined at angle θ_1 above the horizontal and its right face at a steeper angle θ_2, as shown. Block 1, of mass m_1, sits on the left face, and block 2, of mass m_2, sits on the right face. A light string joins the blocks and passes over a light, frictionless pulley at the top of the wedge, so that each part of the string is parallel to its face. Friction between the blocks and the wedge is negligible. The blocks are released from rest.",
+              "type": "QQT",
+              "topics": [
+                "P1.2.5",
+                "P1.2.2",
+                "P1.2.1"
+              ],
+              "figureIds": [
+                "p1-fr-qualitative-quantitative-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "A student predicts, \"Whichever block has more mass will slide down its face and pull the other block up.\" Without writing or deriving any equations, explain why this prediction can be wrong, and state what does decide which way the blocks move.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Explains that along each face only the component of that block's weight parallel to the face drives the motion (the normal force is perpendicular to the face, and the string pulls back on both blocks with the same tension), so mass alone does not decide the direction."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that the parallel component is larger on a steeper face for the same mass, so a lighter block on the steep face can outpull a heavier block on the gentle face: the block whose weight has the larger component along its face (larger m sin θ) moves down."
+                    }
+                  ],
+                  "answer": "The prediction ignores the angles. Only the part of each block's weight that points along its face pulls on the string, and that part is a larger share of the weight on a steeper face. A lighter block on the steep face can therefore pull harder along the string than a heavier block on the gentle face. The block whose weight has the larger component along its own face (the larger of m_1 sin θ_1 and m_2 sin θ_2) slides down; if the two are equal, the blocks stay at rest.",
+                  "steps": [
+                    "Choose the two blocks and the string as the system. The string's forces are internal; the normal forces are perpendicular to the faces and do nothing along them.",
+                    "Along the string's path, the only external forces that drive the motion are the weight components m_1g sin θ_1 (pulling toward the left bottom) and m_2g sin θ_2 (pulling toward the right bottom).",
+                    "For example, a block twice as heavy on a face inclined at 20° pulls less along its face than the lighter block on a face inclined at 70°, because 2 sin 20° ≈ 0.68 is less than sin 70° ≈ 0.94."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Take the direction in which block 2 moves down its face, and block 1 moves up its face, as positive. Derive an expression for the acceleration a of the blocks in terms of m_1, m_2, θ_1, θ_2 and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Newton's second law along the right face for block 2: m_2g sin θ_2 − F_T = m_2a, or an equivalent equation for the two-block system."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Newton's second law along the left face for block 1: F_T − m_1g sin θ_1 = m_1a, using the same tension F_T on both sides (light, frictionless pulley) and the same magnitude of acceleration for both blocks (taut string)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves to a = g(m_2 sin θ_2 − m_1 sin θ_1)/(m_1 + m_2), or equivalent, with the algebra shown."
+                    }
+                  ],
+                  "answer": "a = g(m_2 sin θ_2 − m_1 sin θ_1)/(m_1 + m_2)",
+                  "steps": [
+                    "Block 2, positive down its face: m_2g sin θ_2 − F_T = m_2a.",
+                    "Block 1, positive up its face: F_T − m_1g sin θ_1 = m_1a.",
+                    "Adding the two equations eliminates F_T: m_2g sin θ_2 − m_1g sin θ_1 = (m_1 + m_2)a, so a = g(m_2 sin θ_2 − m_1 sin θ_1)/(m_1 + m_2). A negative value means the blocks move the other way.",
+                    "Or equivalent: treat both blocks as one system along the string, with net external force m_2g sin θ_2 − m_1g sin θ_1 and mass m_1 + m_2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "A second student claims, \"Whichever way the blocks move, the tension in the string is greater than m_1g sin θ_1 or m_2g sin θ_2, whichever is smaller, and less than the other one.\" Use your result from part (b) to derive an expression for the tension, and use Newton's second law for each block to evaluate the claim. Then use your expression from part (b) to describe the motion when m_1 sin θ_1 = m_2 sin θ_2.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Derives F_T = m_1m_2g(sin θ_1 + sin θ_2)/(m_1 + m_2), or equivalent, by substituting a from part (b) into one block's equation."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Argues from each block's equation: the block that moves down its face has a net force down its face, so the tension is less than its weight component; the block that moves up has a net force up its face, so the tension is more than its weight component. Concludes that the claim is correct for either direction of motion."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "When m_1 sin θ_1 = m_2 sin θ_2, the expression from part (b) gives a = 0, so the blocks released from rest stay at rest, and the tension equals each block's weight component (the expression for F_T then gives m_1g sin θ_1)."
+                    }
+                  ],
+                  "answer": "F_T = m_1m_2g(sin θ_1 + sin θ_2)/(m_1 + m_2). The claim is correct. If block 2 moves down (a > 0), then m_2g sin θ_2 − F_T = m_2a > 0 and F_T − m_1g sin θ_1 = m_1a > 0, so m_1g sin θ_1 < F_T < m_2g sin θ_2; if the blocks move the other way, both inequalities reverse. When m_1 sin θ_1 = m_2 sin θ_2, a = 0: the blocks stay at rest and F_T = m_1g sin θ_1 = m_2g sin θ_2.",
+                  "steps": [
+                    "From block 1: F_T = m_1(a + g sin θ_1) = m_1g[(m_2 sin θ_2 − m_1 sin θ_1) + (m_1 + m_2) sin θ_1]/(m_1 + m_2) = m_1m_2g(sin θ_1 + sin θ_2)/(m_1 + m_2).",
+                    "The block moving down its face accelerates down it, so its weight component must exceed the tension; the block moving up accelerates up, so the tension must exceed its weight component. The tension therefore lies between the two weight components.",
+                    "If m_1 sin θ_1 = m_2 sin θ_2 = S, then a = 0, and F_T = m_1m_2g(sin θ_1 + sin θ_2)/(m_1 + m_2) = g(m_2S + m_1S)/(m_1 + m_2) = gS, equal to each weight component, as balance requires."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-qualitative-quantitative-fr2",
+              "prompt": "A smooth, curved track is built on top of a cart of mass M, which includes the track. The cart stands on a level floor and can roll freely on light wheels; friction and air resistance are negligible. The track drops a height h, and its lower end is horizontal, as shown. A small block of mass m is released from rest at the top of the track while the cart is at rest. The block slides down the track and leaves its lower end moving horizontally. Take the direction in which the block leaves the track as positive.",
+              "type": "QQT",
+              "topics": [
+                "P1.4.3",
+                "P1.3.4",
+                "P1.4.1"
+              ],
+              "figureIds": [
+                "p1-fr-qualitative-quantitative-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without writing or deriving any equations, explain whether the block leaves the track with a speed greater than, less than or equal to the speed it would have if the cart were bolted to the floor. In your explanation, identify the system you consider and the conservation laws you use.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the block–cart system: no external horizontal force acts on it, so its horizontal momentum stays zero; as the block gains horizontal momentum in the positive direction, the cart must gain an equal amount in the negative direction, so the cart moves backward."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses energy for the block–cart–Earth system: the same gravitational potential energy (the block's drop of h) is converted to kinetic energy, but now it is shared with the moving cart, so the block gets less kinetic energy and leaves more slowly than with the cart bolted down."
+                    }
+                  ],
+                  "answer": "Less. For the block–cart system no external horizontal force acts, so its horizontal momentum stays zero: while the track pushes the block forward, the block pushes the track backward, and the cart rolls backward. For the block–cart–Earth system mechanical energy is conserved (no friction), so the same gravitational potential energy is released as with a bolted cart, but part of it becomes the cart's kinetic energy. The block's kinetic energy, and so its speed, is smaller.",
+                  "steps": [
+                    "Bolted down, the floor would supply the horizontal force that keeps the cart still, and all of the released energy would go to the block.",
+                    "Free to roll, the cart takes some of the released energy as kinetic energy, so less is left for the block."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the speed v_b of the block just as it leaves the track, in terms of m, M, h and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Conservation of horizontal momentum for the block–cart system, which starts at rest: mv_b + Mv_c = 0, so the cart's velocity is v_c = −mv_b/M."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Conservation of mechanical energy for the block–cart–Earth system: mgh = (1/2)mv_b^2 + (1/2)Mv_c^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Combines them to v_b = √(2ghM/(M + m)), or equivalent, with the substitution shown."
+                    }
+                  ],
+                  "answer": "v_b = √(2ghM/(M + m)); the cart moves backward at speed mv_b/M.",
+                  "steps": [
+                    "Momentum (positive in the block's direction): 0 = mv_b + Mv_c, so v_c = −(m/M)v_b.",
+                    "Energy: mgh = (1/2)mv_b^2 + (1/2)M(m/M)^2v_b^2 = (1/2)mv_b^2(1 + m/M) = (1/2)mv_b^2(M + m)/M.",
+                    "So v_b^2 = 2ghM/(M + m) and v_b = √(2ghM/(M + m))."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "(i) Show that your expression from part (b) agrees with your answer to part (a), including the case of a cart much more massive than the block. (ii) A student claims, \"If the cart's mass were equal to the block's mass, the energy would be shared equally, so the block would leave the track with half the speed it has when the cart is bolted down.\" Use your expression to evaluate the claim.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Notes that M/(M + m) < 1, so v_b < √(2gh), the bolted-down speed, as predicted in part (a); and that as M becomes much larger than m, M/(M + m) approaches 1 and v_b approaches √(2gh), as for a cart that cannot move."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "With M = m, finds v_b = √(gh) = √(2gh)/√2 ≈ 0.71√(2gh)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes the claim is incorrect: the energy is indeed shared equally (equal masses get equal speeds, so each gets mgh/2), but speed is proportional to the square root of kinetic energy, so half the energy gives 1/√2 of the speed, not half."
+                    }
+                  ],
+                  "answer": "(i) Because M/(M + m) is less than 1, v_b is less than √(2gh), the speed with a bolted cart, as part (a) predicted; for M much greater than m the factor approaches 1 and v_b approaches √(2gh). (ii) The claim is incorrect. With M = m, v_b = √(gh), which is 1/√2 ≈ 0.71 of √(2gh). The energy is shared equally, but kinetic energy depends on the square of speed, so half the kinetic energy means 1/√2 of the speed.",
+                  "steps": [
+                    "Bolted-down speed: mgh = (1/2)mv^2 gives v = √(2gh). The free-cart result is √(2gh) multiplied by √(M/(M + m)).",
+                    "M = m: √(M/(M + m)) = √(1/2) ≈ 0.71.",
+                    "Check the sharing: with M = m, v_c = −v_b, so each object has (1/2)mv_b^2 = (1/2)m(gh) = mgh/2, half of the energy released."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-qualitative-quantitative-fr3",
+              "prompt": "A step pulley is made of two drums, of radii r and 2r, fixed together on a common horizontal axle that turns without friction. The rotational inertia of the step pulley about its axle is I. A light string is wound around one of the drums, and a block of mass m hangs from its free end, as shown with the string on the small drum. The block is released from rest, and the string unwinds without slipping. Take downward as positive for the block, and the direction in which the pulley then turns as positive for its rotation.",
+              "type": "QQT",
+              "topics": [
+                "P1.5.6",
+                "P1.5.3",
+                "P1.5.2",
+                "P1.5.4"
+              ],
+              "figureIds": [
+                "p1-fr-qualitative-quantitative-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "With the string wound on the small drum, of radius r, derive an expression for the angular acceleration α_1 of the step pulley in terms of m, r, I and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Newton's second law for the block: mg − F_T = ma."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Newton's second law in rotational form for the step pulley: F_Tr = Iα_1 (the string is the only force with a torque about the axle), together with the no-slip link a = α_1r."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Combines them to α_1 = mgr/(I + mr^2), or equivalent, with the algebra shown."
+                    }
+                  ],
+                  "answer": "α_1 = mgr/(I + mr^2)",
+                  "steps": [
+                    "Block: mg − F_T = ma, with a = α_1r because the string unwinds without slipping.",
+                    "Pulley: the axle's force and the pulley's weight act at the axle and exert no torque about it, so F_Tr = Iα_1 and F_T = Iα_1/r.",
+                    "Substitute: mg − Iα_1/r = mα_1r, so α_1(I/r + mr) = mg and α_1 = mgr/(I + mr^2)."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "A student claims, \"If the string were wound on the large drum instead, its pull would have twice the lever arm, so the angular acceleration of the pulley would double.\" Use your result from part (a) to evaluate the claim, and explain physically why the result differs from the student's reasoning.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Replaces r with 2r: α_2 = 2mgr/(I + 4mr^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Shows α_2/α_1 = 2(I + mr^2)/(I + 4mr^2), which is less than 2 because 4mr^2 > mr^2, and concludes that the claim is incorrect: the angular acceleration less than doubles (and may even decrease)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains physically: on the large drum the block's acceleration (2rα_2) is larger, so the tension mg − ma is smaller and the torque is less than twice as large; or, equivalently, the block's contribution to the inertia of the whole system grows from mr^2 to m(2r)^2, four times as much."
+                    }
+                  ],
+                  "answer": "The claim is incorrect. α_2 = 2mgr/(I + 4mr^2), so α_2/α_1 = 2(I + mr^2)/(I + 4mr^2), which is always less than 2. The lever arm doubles, but the tension does not stay the same: the block now accelerates faster, so the string pulls with less force and the torque less than doubles. In other terms, the block's share of the system's inertia, mr^2 on the small drum, becomes m(2r)^2 = 4mr^2 on the large one.",
+                  "steps": [
+                    "Substitute 2r for r in α = mgr/(I + mr^2): α_2 = mg(2r)/(I + m(2r)^2) = 2mgr/(I + 4mr^2).",
+                    "α_2/α_1 = [2mgr/(I + 4mr^2)]·[(I + mr^2)/(mgr)] = 2(I + mr^2)/(I + 4mr^2) < 2.",
+                    "Tension check: F_T = m(g − a), and the block's acceleration is larger on the large drum, so F_T is smaller there."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "For some step pulleys, moving the string to the large drum makes the angular acceleration smaller. Use your expressions to find the condition on I for which this happens, and explain physically why it happens in that case.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets α_2 < α_1: 2(I + mr^2) < I + 4mr^2, which gives I < 2mr^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains physically: for the pulley–block system, moving the string doubles the torque of the block's weight about the axle but quadruples the block's contribution to the system's inertia (mr^2 to 4mr^2), so when that contribution dominates (I < 2mr^2) the total inertia more than doubles and α falls; or, for a pulley whose rotational inertia is small compared with mr^2, the block falls with nearly free-fall acceleration on either drum, so α ≈ g/(radius), which is smaller for the larger radius."
+                    }
+                  ],
+                  "answer": "α_2 < α_1 when I < 2mr^2. For the pulley–block system, moving the string doubles the torque of the block's weight about the axle, from mgr to 2mgr, but quadruples the block's contribution to the system's rotational inertia, from mr^2 to 4mr^2; when I < 2mr^2 that contribution is large enough that the total inertia, I + 4mr^2 against I + mr^2, more than doubles, so α falls. In the limit, a pulley with small rotational inertia barely holds the block back, so the block falls with nearly the acceleration g whichever drum it hangs from; the pulley's angular acceleration is then about g divided by the drum's radius, which is smaller for the large drum.",
+                  "steps": [
+                    "2mgr/(I + 4mr^2) < mgr/(I + mr^2) ⇔ 2(I + mr^2) < I + 4mr^2 ⇔ I < 2mr^2.",
+                    "Limit check: with I approaching 0, α_1 approaches g/r and α_2 approaches g/(2r), half as large; with I very large, α_2/α_1 approaches 2, the student's doubling."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-qualitative-quantitative-fr4",
+              "prompt": "A block of mass m rests at equilibrium on a horizontal, frictionless floor, attached to a wall by a light horizontal spring of spring constant k. A hammer taps the block toward the wall, as shown, giving it an impulse of magnitude J. The tap lasts so short a time that the block does not move appreciably during it. The block then oscillates in simple harmonic motion. Take the direction toward the wall as positive.",
+              "type": "QQT",
+              "topics": [
+                "P1.7.4",
+                "P1.7.2",
+                "P1.4.2",
+                "P1.7.3"
+              ],
+              "figureIds": [
+                "p1-fr-qualitative-quantitative-f4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "A student claims, \"A block of greater mass given the same impulse would compress the spring farther, because it would carry more momentum after the tap.\" Without writing or deriving any equations, evaluate the claim.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the same impulse gives both blocks the same momentum (impulse equals change in momentum, and each starts at rest), so the heavier block does not carry more momentum; it moves off more slowly."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reasons that the heavier block therefore has less kinetic energy (its speed is smaller by the same factor as its mass is larger, and kinetic energy depends on the square of speed), and since all of that kinetic energy is stored in the spring at the greatest compression, it compresses the spring less. Concludes the claim is incorrect."
+                    }
+                  ],
+                  "answer": "The claim is incorrect. The impulse equals each block's change in momentum, so both blocks leave with the same momentum; the heavier one simply moves more slowly. Its kinetic energy is smaller, because the slower speed counts twice (squared) while the larger mass counts once. At the greatest compression all of the block's kinetic energy is stored in the spring, so the heavier block compresses the spring less, not more.",
+                  "steps": [
+                    "Same impulse, same momentum: J = (change in momentum) for each block.",
+                    "Double the mass at the same momentum: half the speed, so the kinetic energy is 2 × (1/2)^2 = 1/2 as large."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the amplitude A of the oscillation in terms of J, m and k.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Impulse–momentum theorem for the block during the tap, with the spring force negligible because the block has not moved: J = mv_0 − 0, so v_0 = J/m at the equilibrium position."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Conservation of energy for the block–spring system from equilibrium to the turning point: (1/2)mv_0^2 = (1/2)kA^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Combines them to A = J/√(mk), or equivalent, with the substitution shown."
+                    }
+                  ],
+                  "answer": "A = J/√(mk)",
+                  "steps": [
+                    "During the tap: J = mv_0, so the block leaves equilibrium with speed v_0 = J/m.",
+                    "Energy: (1/2)m(J/m)^2 = (1/2)kA^2, so J^2/m = kA^2.",
+                    "A = √(J^2/(mk)) = J/√(mk). Units: (kg·m/s)/√(kg·N/m) = (kg·m/s)/(kg/s) = m."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "The time from the tap until the block first comes momentarily to rest is t_1. For two blocks of different mass given the same impulse on this spring, as in part (a), determine whether t_1 for the heavier block is greater than, less than or equal to t_1 for the lighter block. Then use your expression from part (b) and the block's speed just after the tap to show that your answer is consistent with the heavier block both moving more slowly and traveling a shorter distance.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies t_1 as a quarter of the period, from equilibrium to a turning point: t_1 = T/4 = (π/2)√(m/k)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that t_1 is greater for the heavier block, because T is proportional to √m (and is independent of the amplitude)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Consistency by scaling: the distance A = J/√(mk) is proportional to 1/√m, while the starting speed J/m is proportional to 1/m, so the time, which scales as distance divided by speed, is proportional to √m; for example, with 4m the block goes half as far at a quarter of the speed and takes twice as long."
+                    }
+                  ],
+                  "answer": "Greater. t_1 is a quarter period, (π/2)√(m/k), which grows as √m. This fits the two effects: the heavier block's travel A = J/√(mk) shrinks only as 1/√m, but its speed J/m shrinks as 1/m, faster, so the time to cover the distance grows as √m. With mass 4m, the block travels half as far at a quarter of the speed and takes twice as long, and √4 = 2.",
+                  "steps": [
+                    "From equilibrium to the first turning point is one quarter of a cycle: t_1 = T/4 = (1/4)·2π√(m/k).",
+                    "In SHM the time for any fraction of a cycle scales with the period, so t_1 is proportional to (distance)/(speed at equilibrium) = [J/√(mk)]/(J/m) = √(m/k), the same √m dependence as T/4."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

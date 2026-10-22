@@ -1,0 +1,1447 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "practice-exam-d",
+  "kind": "practice-exam",
+  "title": "Liminal practice exam D for AP® Physics 1 (May 2027 format)",
+  "author": "p1-ped-authors",
+  "directions": "This original Liminal practice exam follows the May 2027 format of the AP® Physics 1 exam. Section I has 42 multiple-choice questions in 85 minutes; Section II has 4 free-response questions in 95 minutes, one of each type: Mathematical Routines, Translation Between Representations, Experimental Design and Analysis, and Qualitative/Quantitative Translation. A four-function, scientific or graphing calculator is allowed in both sections. Liminal's formula reference is appended to the booklet; before the real exam, also practice with College Board's own equation sheet. Use SI units and g = 9.8 m/s^2, neglect air resistance unless a question says otherwise, and state a positive direction whenever you work with vectors. In Section II, show your setups, reasoning and units; Liminal scores the four questions out of 10, 12, 10 and 8 points as a practice convention. Questions about experiments are paper practice and do not replace the hands-on lab work the AP® physics courses require. Score the exam with the answer key and record raw points by section and unit. Raw points are a practice tally only: they are not AP® scores, and Liminal does not convert them to the 1–5 scale. For official practice in the digital format, use College Board's Bluebook practice tests.",
+  "figures": [
+    {
+      "id": "p1-ped-f1",
+      "alt": "Position–time graph of an otter, with x in meters from −6 to 10 and t in seconds from 0 to 10. Straight segments join (0, 1), (3, 7), (5, 7), (9, −3) and (10, −3)."
+    },
+    {
+      "id": "p1-ped-f2",
+      "alt": "Graph of the force-sensor reading F in newtons, from 0 to 10, against time t in seconds from 0 to 4. The reading rises in a straight line from 0 at t = 0 to 8 N at t = 1.5 s, drops quickly to 6 N at about t = 1.7 s, and then stays at 6 N until t = 4 s."
+    },
+    {
+      "id": "p1-ped-f3",
+      "alt": "Graph of the force F in newtons, from 0 to 100, against position x in meters from 0 to 0.5. Straight segments join (0, 0), (0.1, 80), (0.4, 0) and (0.5, 0)."
+    },
+    {
+      "id": "p1-ped-f4",
+      "alt": "Graph of angular velocity ω in rad/s, from 0 to 350, against time t in seconds from 0 to 44. Straight segments join (0, 0), (12, 300), (32, 300) and (40, 0)."
+    },
+    {
+      "id": "p1-ped-f5",
+      "alt": "Graph of force F in newtons, from 0 to 140, against time t in milliseconds from 0 to 5. The force rises in a straight line from 0 at t = 0 to 120 N at t = 1 ms, falls in a straight line to 0 at t = 4 ms, and stays at 0 until t = 5 ms."
+    },
+    {
+      "id": "p1-ped-f6",
+      "alt": "Graph of potential energy U in joules, from 0 to 5, against position x in meters from 0 to 1. Straight segments join (0, 4), (0.2, 1.5), (0.4, 0.5), (0.6, 1.5), (0.8, 2.5) and (1.0, 2.5)."
+    },
+    {
+      "id": "p1-ped-f7",
+      "alt": "Graph of displacement y in millimeters, from −3 to 3, against time t in milliseconds from 0 to 8. A smooth sine curve starts at y = 0 when t = 0, rises to 2 mm at 1 ms, comes back to 0 at 2 ms, reaches −2 mm at 3 ms, comes back to 0 at 4 ms, and then repeats the same cycle."
+    },
+    {
+      "id": "p1-ped-f8",
+      "alt": "Side view of a grand-piano lid drawn as a straight bar hinged at its left end to the top of the piano case and raised 30° above the horizontal. A vertical prop stands on the case and touches the lid 1.2 m from the hinge, measured along the lid. A dot on the lid between the hinge and the prop marks the lid's center of mass.",
+      "caption": "Piano lid on a vertical prop",
+      "notToScale": true
+    },
+    {
+      "id": "p1-ped-f20",
+      "alt": "An archerfish just below the water surface with its mouth at the surface. A dashed vertical line marks the jet rising from the mouth to an insect on a leaf, and a double-headed arrow marks the height of 0.60 m from the water surface up to the insect.",
+      "caption": "Archerfish and its target",
+      "notToScale": true
+    },
+    {
+      "id": "p1-ped-f21",
+      "alt": "A box labeled probe, with a spring bumper on its right side, moves to the right toward a larger box labeled module. An arrow above the probe is labeled v_0, and an arrow at the lower right marks the +x direction, to the right.",
+      "caption": "Probe approaching the module",
+      "notToScale": true
+    },
+    {
+      "id": "p1-ped-f22",
+      "alt": "Graph of the force F in newtons, from 0 to 100, against time t in seconds, from 0 to 2.5. Straight segments join (0, 0), (1.0, 90) and (2.0, 0), and the force stays at 0 from 2.0 s to 2.5 s.",
+      "caption": "Force of the bumper on the module"
+    },
+    {
+      "id": "p1-ped-f23",
+      "alt": "Three blank momentum bar charts side by side, labeled t = 0, t = 1.0 s and t = 2.0 s. Each has columns for p_P, p_M and p_sys and a zero line partway up its vertical axis, leaving room for bars above and below the line, with no scale."
+    },
+    {
+      "id": "p1-ped-f24",
+      "alt": "Key: three momentum bar charts with values in kg·m/s. At t = 0, p_P is 60, p_M is 0 and p_sys is 60. At t = 1.0 s, p_P is 15, p_M is 45 and p_sys is 60. At t = 2.0 s, p_P is −30, drawn below the zero line, p_M is 90 and p_sys is 60.",
+      "caption": "Key: momentum bar charts"
+    },
+    {
+      "id": "p1-ped-f25",
+      "alt": "Left, a side view: a straight table surface of length D along the slope rests on the bench at its left end, and its right end is raised on a support to a height h above the bench. Right, a view looking straight down onto the table surface: a puck tied by a string of length L to a pin is pulled to one side of the downhill direction, which an arrow marks.",
+      "caption": "Tilted air table",
+      "notToScale": true
+    },
+    {
+      "id": "p1-ped-f26",
+      "alt": "An empty plotting grid, 12 squares wide and 10 squares high, with heavier lines along its left and bottom edges and no labels."
+    },
+    {
+      "id": "p1-ped-f27",
+      "alt": "Key: graph of T^2 in s^2 against 1/h in m^−1, with five points lying close to a straight line through the origin; the best-fit line has a slope of about 1.46 s^2·m.",
+      "caption": "Key: T^2 against 1/h"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 85,
+          "calculator": "any",
+          "directions": "Choose the best answer for each of the 42 questions and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise.",
+          "items": [
+            {
+              "id": "p1-ped-mc01",
+              "prompt": "An otter swims back and forth along a straight riverbank. The graph shows its position x, with east as the positive direction. What is the otter's velocity at t = 7.0 s?",
+              "figureIds": [
+                "p1-ped-f1"
+              ],
+              "choices": [
+                "2.5 m/s west",
+                "0.29 m/s east",
+                "2.0 m/s east",
+                "1.4 m/s west"
+              ],
+              "key": "A",
+              "rationale": "At t = 7.0 s the otter is on the segment from (5 s, 7 m) to (9 s, −3 m). Its slope is (−3 − 7) m / (9 − 5) s = −2.5 m/s, so the velocity is 2.5 m/s west.",
+              "distractorNotes": {
+                "B": "Divides the position at 7.0 s (2.0 m) by 7.0 s instead of finding the slope of the graph at that time.",
+                "C": "Reads the slope of the first segment, from 0 to 3 s, instead of the segment that contains t = 7.0 s.",
+                "D": "Divides the segment's 10 m westward displacement by the clock reading, 7.0 s, instead of by the segment's 4.0 s duration."
+              },
+              "topics": [
+                "P1.1.3",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-ped-mc02",
+              "prompt": "For the otter in the graph, what is its average speed from t = 0 to t = 10 s?",
+              "figureIds": [
+                "p1-ped-f1"
+              ],
+              "choices": [
+                "0.40 m/s",
+                "2.3 m/s",
+                "1.6 m/s",
+                "1.0 m/s"
+              ],
+              "key": "C",
+              "rationale": "Distance = 6 m east (0 to 3 s) + 0 (3 to 5 s) + 10 m west (5 to 9 s) + 0 (9 to 10 s) = 16 m. Average speed = 16 m / 10 s = 1.6 m/s.",
+              "distractorNotes": {
+                "A": "This is the magnitude of the average velocity, |−3 m − 1 m| / 10 s; average speed uses the total distance traveled.",
+                "B": "Divides the 16 m distance by only the 7 s the otter is moving; the average is taken over the whole 10 s, rests included.",
+                "D": "Counts only the 10 m westward leg and leaves out the 6 m eastward leg."
+              },
+              "topics": [
+                "P1.1.2",
+                "P1.1.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc03",
+              "prompt": "A 45 kg pronghorn runs at three times the speed of a 135 kg elk. What is the ratio of the pronghorn's kinetic energy to the elk's kinetic energy?",
+              "choices": [
+                "1",
+                "3",
+                "9",
+                "1/3"
+              ],
+              "key": "B",
+              "rationale": "K = (1/2)mv^2, so K_pronghorn/K_elk = (45/135)(3)^2 = (1/3)(9) = 3.",
+              "distractorNotes": {
+                "A": "Compares momenta (mass times speed), which happen to be equal here; kinetic energy depends on the square of the speed.",
+                "C": "Squares the speed ratio but ignores that the pronghorn has one-third of the elk's mass.",
+                "D": "Uses only the mass ratio and ignores the speeds."
+              },
+              "topics": [
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc04",
+              "prompt": "An acoustic guitar is modeled as a 1.6 kg body whose center of mass is 0.20 m from the bottom end of the guitar and a 0.40 kg neck whose center of mass is 0.76 m from the bottom end, both on the guitar's long axis. How far from the bottom end is the center of mass of the whole guitar?",
+              "choices": [
+                "0.48 m",
+                "0.65 m",
+                "0.62 m",
+                "0.31 m"
+              ],
+              "key": "D",
+              "rationale": "x_cm = (m_1x_1 + m_2x_2)/(m_1 + m_2) = ((1.6)(0.20) + (0.40)(0.76))/2.0 = (0.32 + 0.304)/2.0 ≈ 0.31 m from the bottom end.",
+              "distractorNotes": {
+                "A": "Averages the two positions without weighting them by mass.",
+                "B": "Swaps the masses, giving the neck's position the body's larger weighting.",
+                "C": "Adds the mass-weighted positions (0.624 kg·m) but does not divide by the total mass, 2.0 kg."
+              },
+              "topics": [
+                "P1.2.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc05",
+              "prompt": "Two spherical asteroids are each made of uniform material. Asteroid B has twice the diameter and four times the mass of asteroid A. What is the ratio of B's density to A's density?",
+              "choices": [
+                "1/2",
+                "2",
+                "1",
+                "4"
+              ],
+              "key": "A",
+              "rationale": "Volume is proportional to d^3, so B's volume is 2^3 = 8 times A's. With ρ = m/V, ρ_B/ρ_A = 4/8 = 1/2.",
+              "distractorNotes": {
+                "B": "Treats volume as proportional to the diameter, so B's volume only doubles.",
+                "C": "Treats volume as proportional to the square of the diameter, as surface area is, so B's volume is only 4 times A's.",
+                "D": "Uses the mass ratio and ignores B's larger volume."
+              },
+              "topics": [
+                "P1.8.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc06",
+              "prompt": "The rosined wheel of a hurdy-gurdy, 14 cm in diameter, turns at 8.0 revolutions per second and rubs the strings with its rim. What is the speed of a point on the rim?",
+              "choices": [
+                "7.0 m/s",
+                "0.56 m/s",
+                "3.5 m/s",
+                "1.8 × 10^2 m/s"
+              ],
+              "key": "C",
+              "rationale": "ω = 2π(8.0 rev/s) ≈ 50.3 rad/s and r = 0.070 m, so v = ωr ≈ (50.3)(0.070) ≈ 3.5 m/s.",
+              "distractorNotes": {
+                "A": "Uses the 14 cm diameter as the radius.",
+                "B": "Treats 8.0 rev/s as 8.0 rad/s, leaving out the factor 2π.",
+                "D": "Computes ω^2r ≈ 177, which is the rim's centripetal acceleration in m/s^2, not its speed."
+              },
+              "topics": [
+                "P1.5.2",
+                "P1.5.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc07",
+              "prompt": "A lunar lander rests on the Moon's level surface with a rover parked on its deck. Taking the lander alone as the system, which describes all the forces on the lander and how they compare?",
+              "choices": [
+                "The Moon's gravitational force on the lander and the surface's upward normal force, equal in magnitude",
+                "The Moon's gravitational force on the lander, the rover's downward push on the deck, and the surface's upward normal force, which equals the sum of the other two",
+                "The Moon's gravitational force on the lander, the Moon's gravitational force on the rover, and the surface's upward normal force",
+                "The Moon's gravitational force on the lander, the rover's downward push on the deck, the Moon's gravitational force on the rover, and the surface's upward normal force"
+              ],
+              "key": "B",
+              "rationale": "Each force on the lander comes from an object that interacts with it: the Moon (gravity), the rover (a downward normal force on the deck) and the surface (an upward normal force). The lander is at rest, so the upward force balances the two downward forces.",
+              "distractorNotes": {
+                "A": "Leaves out the rover's contact force on the deck; the surface supports the rover through the lander, so the normal force exceeds the lander's weight.",
+                "C": "The Moon's pull on the rover acts on the rover, not on the lander; the rover affects the lander only through its push on the deck.",
+                "D": "Counts the rover twice: its weight acts on the rover, and it reaches the lander only as the rover's push on the deck."
+              },
+              "topics": [
+                "P1.2.2",
+                "P1.2.4"
+              ]
+            },
+            {
+              "id": "p1-ped-mc08",
+              "prompt": "A student pulls a 2.0 kg wooden block along a level lab bench with a force sensor held horizontally. She slowly increases her pull until the block starts to slide, then pulls so that it slides at constant velocity. The graph shows the sensor reading. What is the coefficient of kinetic friction between the block and the bench?",
+              "figureIds": [
+                "p1-ped-f2"
+              ],
+              "choices": [
+                "0.41",
+                "3.0",
+                "0.75",
+                "0.31"
+              ],
+              "key": "D",
+              "rationale": "While the block slides at constant velocity, the pull balances kinetic friction, so f_k = 6.0 N. The normal force is mg = (2.0)(9.8) = 19.6 N, so μ_k = 6.0/19.6 ≈ 0.31.",
+              "distractorNotes": {
+                "A": "Uses the 8.0 N peak, which is the maximum static friction force, so this is the coefficient of static friction.",
+                "B": "Divides 6.0 N by the mass, 2.0 kg, instead of by the normal force, 19.6 N.",
+                "C": "Divides kinetic friction by maximum static friction; μ_k compares the friction force with the normal force."
+              },
+              "topics": [
+                "P1.2.7",
+                "P1.2.4"
+              ]
+            },
+            {
+              "id": "p1-ped-mc09",
+              "prompt": "Two bighorn rams charge toward each other along a straight line on level ground. At one instant, an 80 kg ram runs east at 6.0 m/s and a 120 kg ram runs west at 2.0 m/s. What is the velocity of the center of mass of the two-ram system at that instant?",
+              "choices": [
+                "2.0 m/s east",
+                "3.6 m/s east",
+                "1.2 m/s east",
+                "2.4 m/s east"
+              ],
+              "key": "C",
+              "rationale": "Take east as positive. v_cm = (m_1v_1 + m_2v_2)/(m_1 + m_2) = ((80)(6.0) + (120)(−2.0))/200 = (480 − 240)/200 = +1.2 m/s, so 1.2 m/s east.",
+              "distractorNotes": {
+                "A": "Averages the two velocities, (6.0 − 2.0)/2, without weighting them by mass.",
+                "B": "Adds the magnitudes of the momenta, (480 + 240)/200, ignoring that the 120 kg ram runs west.",
+                "D": "Divides only the 80 kg ram's momentum by the total mass, leaving out the other ram's momentum."
+              },
+              "topics": [
+                "P1.4.1",
+                "P1.2.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc10",
+              "prompt": "A hockey player sweeps a 0.16 kg puck from rest across smooth, level ice with her stick. The graph shows the horizontal force of the stick on the puck as a function of the puck's position. Treating the ice as frictionless, what is the puck's speed when it leaves the stick at x = 0.40 m?",
+              "figureIds": [
+                "p1-ped-f3"
+              ],
+              "choices": [
+                "14 m/s",
+                "20 m/s",
+                "10 m/s",
+                "2.0 × 10^2 m/s"
+              ],
+              "key": "A",
+              "rationale": "The stick's force is the only horizontal force, so the net work is the area under the graph: (1/2)(0.40 m)(80 N) = 16 J. By the work–energy theorem (1/2)(0.16 kg)v^2 = 16 J, so v = √200 ≈ 14 m/s.",
+              "distractorNotes": {
+                "B": "Treats the force as its 80 N peak over the whole 0.40 m (32 J), ignoring that it rises and falls.",
+                "C": "Uses W = mv^2, dropping the factor 1/2 from the kinetic energy.",
+                "D": "Finds v^2 = 2W/m = 200 m^2/s^2 but does not take the square root."
+              },
+              "topics": [
+                "P1.3.2",
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc11",
+              "prompt": "A small spider hangs from a stretchy strand of silk and bobs up and down with a period of 0.40 s. A second spider with four times the mass hangs from an identical strand. Treat each strand as a light spring with the same spring constant and the bobbing as simple harmonic motion. What is the second spider's period?",
+              "choices": [
+                "1.6 s",
+                "0.20 s",
+                "0.40 s",
+                "0.80 s"
+              ],
+              "key": "D",
+              "rationale": "For a mass on a spring, T = 2π√(m/k). With the same k and four times the mass, T doubles: 2 × 0.40 s = 0.80 s.",
+              "distractorNotes": {
+                "A": "Treats the period as proportional to the mass; it is proportional to √m.",
+                "B": "Inverts the dependence: a heavier load on the same spring oscillates more slowly, not faster.",
+                "C": "Applies the pendulum result, a period independent of mass, to a mass on a spring, where T = 2π√(m/k)."
+              },
+              "topics": [
+                "P1.7.2",
+                "P1.7.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc12",
+              "prompt": "A heron flies due north at 8.0 m/s relative to the air into a steady wind that blows due south at 3.5 m/s relative to the ground. How long does the heron take to fly 360 m north relative to the ground?",
+              "choices": [
+                "31 s",
+                "80 s",
+                "45 s",
+                "1.0 × 10^2 s"
+              ],
+              "key": "B",
+              "rationale": "Take north as positive. Relative to the ground the heron moves at 8.0 − 3.5 = 4.5 m/s north, so t = 360 m / 4.5 m/s = 80 s.",
+              "distractorNotes": {
+                "A": "Adds the two speeds (11.5 m/s), as if the wind helped the heron north.",
+                "C": "Uses the heron's speed relative to the air and ignores the wind.",
+                "D": "Uses the wind's speed, 3.5 m/s, as the heron's speed relative to the ground."
+              },
+              "topics": [
+                "P1.1.4"
+              ]
+            },
+            {
+              "id": "p1-ped-mc13",
+              "prompt": "A woodpecker hammers its beak into a tree trunk. During the brief impact, how does the force of the beak on the trunk compare with the force of the trunk on the beak?",
+              "choices": [
+                "The trunk's force on the beak is larger, because the beak stops while the trunk barely moves",
+                "They have equal magnitudes, and the beak's much larger change in velocity comes from the woodpecker's much smaller mass",
+                "The beak's force on the trunk is larger, because the woodpecker is the one doing the striking",
+                "They have equal magnitudes, so the beak and the tree have equal changes in velocity"
+              ],
+              "key": "B",
+              "rationale": "The two forces are a Newton's third-law pair: equal in magnitude and opposite in direction at every instant. Because a = F/m, the same force gives the light woodpecker a large acceleration and the massive tree an imperceptible one.",
+              "distractorNotes": {
+                "A": "Third-law forces are equal in magnitude whatever the motions; the beak stops because the same-size force acts on a much smaller mass.",
+                "C": "Which object starts the interaction does not matter; the two forces form an interaction pair of equal magnitude.",
+                "D": "Equal forces on very different masses give very different accelerations, so the tree's change in velocity is tiny."
+              },
+              "topics": [
+                "P1.2.3",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-ped-mc14",
+              "prompt": "A gibbon swings from rest on a vine 6.0 m long, starting with the vine at 50° from the vertical. Treat the gibbon as a point mass at the end of a light vine and neglect air resistance. What is the gibbon's speed at the lowest point of the swing?",
+              "choices": [
+                "9.5 m/s",
+                "11 m/s",
+                "6.5 m/s",
+                "4.6 m/s"
+              ],
+              "key": "C",
+              "rationale": "The drop is h = L(1 − cos 50°) = 6.0(1 − 0.643) ≈ 2.14 m. The vine's tension is perpendicular to the motion and does no work, so mgh = (1/2)mv^2 gives v = √(2gh) = √(2(9.8)(2.14)) ≈ 6.5 m/s.",
+              "distractorNotes": {
+                "A": "Uses L sin 50° ≈ 4.6 m as the drop in height; the drop is L − L cos 50°.",
+                "B": "Uses the full 6.0 m length of the vine as the drop in height.",
+                "D": "Uses v = √(gh), dropping the factor 2 that comes from mgh = (1/2)mv^2."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc15",
+              "prompt": "A satellite's reaction wheel spins up from rest, runs at a constant rate, and is then braked to a stop. The graph shows its angular velocity. What is the magnitude of the wheel's angular acceleration while it is being braked?",
+              "figureIds": [
+                "p1-ped-f4"
+              ],
+              "choices": [
+                "38 rad/s^2",
+                "25 rad/s^2",
+                "7.5 rad/s^2",
+                "9.4 rad/s^2"
+              ],
+              "key": "A",
+              "rationale": "Angular acceleration is the slope of the ω–t graph. During braking, from t = 32 s to t = 40 s, ω falls from 300 rad/s to 0, so |α| = (300 rad/s)/(8 s) ≈ 38 rad/s^2.",
+              "distractorNotes": {
+                "B": "Reads the slope of the spin-up segment, from 0 to 12 s, instead of the braking segment.",
+                "C": "Divides 300 rad/s by the whole 40 s, which is not the duration of the braking.",
+                "D": "Divides 300 rad/s by 32 s, the clock reading when braking starts, instead of by the 8 s the braking lasts."
+              },
+              "topics": [
+                "P1.5.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc16",
+              "prompt": "A circular hatch 0.90 m in diameter seals a spacecraft cabin that holds air at 1.0 × 10^5 Pa, with vacuum outside. Eight latches around the rim hold the hatch shut and share the load equally. What force must each latch exert to hold the hatch against the air?",
+              "choices": [
+                "3.2 × 10^4 N",
+                "6.4 × 10^4 N",
+                "1.0 × 10^4 N",
+                "8.0 × 10^3 N"
+              ],
+              "key": "D",
+              "rationale": "A = π(0.45 m)^2 ≈ 0.636 m^2. With vacuum outside, the air pushes outward with F = PA = (1.0 × 10^5 Pa)(0.636 m^2) ≈ 6.4 × 10^4 N. Shared by eight latches, each must pull inward with about 8.0 × 10^3 N.",
+              "distractorNotes": {
+                "A": "Uses the 0.90 m diameter as the radius in A = πr^2.",
+                "B": "This is the air's total force on the hatch; the eight latches share it.",
+                "C": "Treats the hatch as a square 0.90 m on a side, with area 0.81 m^2."
+              },
+              "topics": [
+                "P1.8.2"
+              ]
+            },
+            {
+              "id": "p1-ped-mc17",
+              "prompt": "A player strikes a xylophone bar with a loosely held mallet whose 0.080 kg head moves straight down at 2.0 m/s. The graph shows the upward force of the bar on the mallet head during the contact. Take up as positive, and ignore gravity and the player's hand during the brief contact. What is the mallet head's velocity just after the contact?",
+              "figureIds": [
+                "p1-ped-f5"
+              ],
+              "choices": [
+                "3.0 m/s upward",
+                "5.0 m/s upward",
+                "1.0 m/s upward",
+                "4.0 m/s upward"
+              ],
+              "key": "C",
+              "rationale": "Impulse = area under the graph = (1/2)(4.0 × 10^−3 s)(120 N) = 0.24 N·s upward. Δv = J/m = 0.24/0.080 = +3.0 m/s, so v = −2.0 + 3.0 = +1.0 m/s, upward.",
+              "distractorNotes": {
+                "A": "Reports the change in velocity, J/m, as the final velocity, forgetting the initial 2.0 m/s downward.",
+                "B": "Adds 2.0 m/s to the 3.0 m/s change instead of combining them with signs.",
+                "D": "Takes the impulse as 120 N × 4.0 ms = 0.48 N·s, a rectangle, instead of the triangular area 0.24 N·s."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.4.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc18",
+              "prompt": "A probe measures the gravitational field strength g of an airless planet at several distances r from the planet's center.\n| r (10^7 m) | 1.0 | 2.0 | 4.0 |\n| --- | --- | --- | --- |\n| g (N/kg) | 3.6 | 0.90 | 0.23 |\nUsing G = 6.67 × 10^−11 N·m^2/kg^2, what is the planet's mass?",
+              "choices": [
+                "5.4 × 10^24 kg",
+                "5.4 × 10^17 kg",
+                "5.4 × 10^10 kg",
+                "2.4 × 10^4 kg"
+              ],
+              "key": "A",
+              "rationale": "g = GM/r^2, so M = gr^2/G. From the first column, M = (3.6 N/kg)(1.0 × 10^7 m)^2/(6.67 × 10^−11 N·m^2/kg^2) ≈ 5.4 × 10^24 kg. The other columns give nearly the same mass, as the inverse-square law requires.",
+              "distractorNotes": {
+                "B": "Uses M = gr/G, with r instead of r^2.",
+                "C": "Uses r = 1.0 m, dropping the factor 10^7 from the table's heading.",
+                "D": "Multiplies gr^2 by G instead of dividing by it."
+              },
+              "topics": [
+                "P1.2.6"
+              ]
+            },
+            {
+              "id": "p1-ped-mc19",
+              "prompt": "Suppose the ice sheets near Earth's poles melted and the water spread over the oceans, moving mass farther from Earth's rotation axis. Ignore external torques, such as those from the Moon and the Sun. How would the length of a day change?",
+              "choices": [
+                "It would stay the same, because Earth's total mass would not change",
+                "It would get slightly shorter, because water moved away from the axis travels faster",
+                "It would get slightly shorter, because Earth's angular momentum would increase to carry the extra moving water",
+                "It would get slightly longer, because Earth's angular momentum would stay the same while its rotational inertia increased"
+              ],
+              "key": "D",
+              "rationale": "With no external torque, Earth's angular momentum L = Iω stays constant. Moving mass farther from the axis increases the rotational inertia I, so the angular speed ω decreases and the day, 2π/ω, gets slightly longer.",
+              "distractorNotes": {
+                "A": "Rotational inertia depends on how the mass is distributed about the axis, not only on the total mass; moving mass outward increases it.",
+                "B": "At a given angular speed, points farther from the axis move faster, but with constant angular momentum and larger rotational inertia the angular speed itself decreases.",
+                "C": "Angular momentum changes only when a net external torque acts; melting and spreading are internal, so it stays constant."
+              },
+              "topics": [
+                "P1.6.4",
+                "P1.5.4"
+              ]
+            },
+            {
+              "id": "p1-ped-mc20",
+              "prompt": "A 0.50 kg glider moves along a level air track past fixed magnets. The graph shows the potential energy U of the glider–magnet system as a function of the glider's position. The system's total mechanical energy is 3.0 J. What is the glider's greatest speed on the section of track shown?",
+              "figureIds": [
+                "p1-ped-f6"
+              ],
+              "choices": [
+                "3.5 m/s",
+                "3.2 m/s",
+                "2.2 m/s",
+                "1.4 m/s"
+              ],
+              "key": "B",
+              "rationale": "The speed is greatest where U is least: U = 0.5 J at x = 0.4 m. There K = 3.0 J − 0.5 J = 2.5 J, so v = √(2K/m) = √(2(2.5)/0.50) = √10 ≈ 3.2 m/s.",
+              "distractorNotes": {
+                "A": "Sets all 3.0 J equal to kinetic energy, ignoring the 0.5 J of potential energy at the minimum.",
+                "C": "Uses K = mv^2, dropping the factor 1/2.",
+                "D": "Uses the minimum potential energy, 0.5 J, as the kinetic energy."
+              },
+              "topics": [
+                "P1.3.3",
+                "P1.3.4"
+              ]
+            },
+            {
+              "id": "p1-ped-mc21",
+              "prompt": "A dolphin leaps from the sea at 9.0 m/s, 40° above the horizontal, and reenters the water at the same level. Neglecting air resistance, how long is the dolphin in the air?",
+              "choices": [
+                "1.4 s",
+                "0.59 s",
+                "1.2 s",
+                "1.8 s"
+              ],
+              "key": "C",
+              "rationale": "v_0y = (9.0 m/s) sin 40° ≈ 5.79 m/s. The dolphin is back at its launch height when t = 2v_0y/g = 2(5.79)/9.8 ≈ 1.2 s.",
+              "distractorNotes": {
+                "A": "Uses the horizontal component, (9.0 m/s) cos 40°, as the vertical launch speed.",
+                "B": "This is the time to reach the top, half of the flight.",
+                "D": "Uses the full launch speed, 9.0 m/s, as the vertical component."
+              },
+              "topics": [
+                "P1.1.5"
+              ]
+            },
+            {
+              "id": "p1-ped-mc22",
+              "prompt": "A spring scale lies on a level, frictionless lab bench. A string tied to each end of the scale runs horizontally over a light, frictionless pulley at that end of the bench, and a 1.5 kg mass hangs from each string. Everything is at rest. What does the scale read?",
+              "choices": [
+                "15 N",
+                "29 N",
+                "0 N",
+                "7.4 N"
+              ],
+              "key": "A",
+              "rationale": "Each hanging mass is at rest, so each string's tension equals its weight, (1.5 kg)(9.8 m/s^2) ≈ 15 N. The scale is pulled with 15 N at each end, exactly as if one end were tied to a wall and the other pulled with 15 N, so its spring stretches to read 15 N.",
+              "distractorNotes": {
+                "B": "Adds the pulls on the two ends; a scale reads the tension pulling its hook, which equals the pull on either end.",
+                "C": "The two pulls do cancel, which is why the scale stays at rest, but each still stretches the spring.",
+                "D": "Splits one hanging weight between the two ends of the scale."
+              },
+              "topics": [
+                "P1.2.8",
+                "P1.2.4"
+              ]
+            },
+            {
+              "id": "p1-ped-mc23",
+              "prompt": "A piano technician turns a tuning pin with a lever-shaped tuning hammer. She pushes on the handle 0.25 m from the pin's axis with a 40 N force directed at 60° to the handle, in the plane of rotation. What is the magnitude of the torque she exerts about the pin's axis?",
+              "choices": [
+                "5.0 N·m",
+                "10 N·m",
+                "1.6 × 10^2 N·m",
+                "8.7 N·m"
+              ],
+              "key": "D",
+              "rationale": "τ = rF sin θ = (0.25 m)(40 N)(sin 60°) ≈ 8.7 N·m.",
+              "distractorNotes": {
+                "A": "Uses cos 60°, which goes with the component along the handle; that component exerts no torque.",
+                "B": "Multiplies force by distance as if the force were perpendicular to the handle.",
+                "C": "Divides the force by the distance instead of multiplying."
+              },
+              "topics": [
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc24",
+              "prompt": "A fish's body tissue (everything except the gas in its swim bladder) has a mass of 0.80 kg and an average density of 1080 kg/m^3. The gas has negligible mass. What volume of gas must the swim bladder hold for the fish to stay suspended, neither rising nor sinking, in fresh water of density 1000 kg/m^3?",
+              "choices": [
+                "8.0 × 10^−4 m^3",
+                "5.9 × 10^−5 m^3",
+                "7.4 × 10^−4 m^3",
+                "6.4 × 10^−5 m^3"
+              ],
+              "key": "B",
+              "rationale": "To be suspended, the fish's average density must equal the water's, so its whole volume is V = m/ρ_water = 0.80/1000 = 8.0 × 10^−4 m^3. The tissue fills 0.80/1080 ≈ 7.41 × 10^−4 m^3, so the gas must fill 8.0 × 10^−4 − 7.41 × 10^−4 ≈ 5.9 × 10^−5 m^3.",
+              "distractorNotes": {
+                "A": "This is the fish's whole volume when it is suspended; the tissue already supplies most of it.",
+                "C": "This is the volume of the tissue itself, 0.80/1080.",
+                "D": "Multiplies the whole volume, 8.0 × 10^−4 m^3, by the 8% density excess; the excess should multiply the tissue's volume."
+              },
+              "topics": [
+                "P1.8.3",
+                "P1.8.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc25",
+              "prompt": "A 10 kg dog rides a 2.0 kg skateboard that rolls east at 1.5 m/s on level ground. The dog jumps off the back, and just afterward its horizontal velocity is 1.0 m/s east. Neglecting friction on the wheels, what is the skateboard's speed just after the jump?",
+              "choices": [
+                "0.67 m/s",
+                "4.0 m/s",
+                "14 m/s",
+                "9.0 m/s"
+              ],
+              "key": "B",
+              "rationale": "Take east as positive. No horizontal external force acts, so horizontal momentum is conserved: (12 kg)(1.5 m/s) = (10 kg)(1.0 m/s) + (2.0 kg)v, so v = (18 − 10)/2.0 = 4.0 m/s, east.",
+              "distractorNotes": {
+                "A": "Divides the remaining 8.0 kg·m/s by the original 12 kg instead of by the skateboard's 2.0 kg.",
+                "C": "Treats the dog as moving west, so its momentum is added instead of subtracted.",
+                "D": "Leaves out the dog's momentum after the jump."
+              },
+              "topics": [
+                "P1.4.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc26",
+              "prompt": "An ion thruster pushes a space probe with a constant 0.25 N force directed along the probe's velocity. At an instant when the probe moves at 8.0 km/s, at what rate is the thruster doing work on the probe?",
+              "choices": [
+                "2.0 × 10^3 W",
+                "2.0 W",
+                "3.1 × 10^−5 W",
+                "1.0 × 10^3 W"
+              ],
+              "key": "A",
+              "rationale": "P = Fv cos 0° = (0.25 N)(8.0 × 10^3 m/s) = 2.0 × 10^3 W.",
+              "distractorNotes": {
+                "B": "Uses 8.0 for the speed without converting kilometers per second to meters per second.",
+                "C": "Divides the force by the speed instead of multiplying.",
+                "D": "Includes a factor 1/2 borrowed from the kinetic-energy formula; the instantaneous power is P = Fv."
+              },
+              "topics": [
+                "P1.3.5",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-ped-mc27",
+              "prompt": "The graph shows the displacement y of the tip of a vibrating kalimba tine as a function of time, with up as positive. At which time is the tip's velocity largest in the negative (downward) direction?",
+              "figureIds": [
+                "p1-ped-f7"
+              ],
+              "choices": [
+                "t = 1.0 ms",
+                "t = 3.0 ms",
+                "t = 2.0 ms",
+                "t = 4.0 ms"
+              ],
+              "key": "C",
+              "rationale": "Velocity is the slope of the y–t graph. The slope is most negative where the curve crosses equilibrium on its way down, at t = 2.0 ms (and again at 6.0 ms).",
+              "distractorNotes": {
+                "A": "The displacement is greatest there, but the tip is momentarily at rest at a turning point.",
+                "B": "The displacement is most negative there, but the tip is again momentarily at rest.",
+                "D": "The tip passes equilibrium there moving up, so its velocity is largest in the positive direction."
+              },
+              "topics": [
+                "P1.7.3",
+                "P1.7.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc28",
+              "prompt": "A 1.5 kg osprey lifts a 0.50 kg fish straight up out of a lake, giving the fish an upward acceleration of 1.6 m/s^2. Neglecting air resistance, what is the magnitude of the total force of the osprey's talons on the fish?",
+              "choices": [
+                "4.9 N",
+                "0.80 N",
+                "23 N",
+                "5.7 N"
+              ],
+              "key": "D",
+              "rationale": "Take up as positive. For the fish, F − mg = ma, so F = m(g + a) = (0.50 kg)(9.8 + 1.6) m/s^2 = 5.7 N.",
+              "distractorNotes": {
+                "A": "Gives only the fish's weight, which would hold the fish at constant velocity rather than accelerate it upward.",
+                "B": "Gives only ma, leaving out the force needed to balance the fish's weight.",
+                "C": "Uses the combined mass of osprey and fish; the system here is the fish alone."
+              },
+              "topics": [
+                "P1.2.5",
+                "P1.2.2"
+              ]
+            },
+            {
+              "id": "p1-ped-mc29",
+              "prompt": "A tambourine frame, modeled as a thin hoop (I = MR^2), and a solid rubber ball (I = (2/5)MR^2) are released from rest side by side at the top of the same ramp and roll down without slipping. What is the ratio v_ball/v_hoop of their speeds at the bottom?",
+              "choices": [
+                "1.2",
+                "1.4",
+                "1",
+                "0.84"
+              ],
+              "key": "A",
+              "rationale": "Energy conservation with v = ωR gives Mgh = (1/2)Mv^2(1 + I/(MR^2)), so v = √(2gh/(1 + I/(MR^2))). Then v_ball/v_hoop = √((1 + 1)/(1 + 2/5)) = √(10/7) ≈ 1.2, whatever the masses and radii.",
+              "distractorNotes": {
+                "B": "Finds the ratio of the squared speeds, 10/7, and does not take the square root.",
+                "C": "Assumes every object reaches the same speed, as objects sliding down a frictionless ramp would; rolling objects share their energy with rotation in different proportions.",
+                "D": "Inverts the ratio: the hoop puts a larger share of its energy into rotation, so it is the slower one."
+              },
+              "topics": [
+                "P1.6.5",
+                "P1.6.1"
+              ]
+            },
+            {
+              "id": "p1-ped-mc30",
+              "prompt": "A 0.40 kg pine cone falls from rest from a branch 12 m above the ground and hits the ground at 13 m/s. How much mechanical energy of the cone–Earth system did air resistance convert to internal energy of the cone and the air?",
+              "choices": [
+                "34 J",
+                "13 J",
+                "47 J",
+                "81 J"
+              ],
+              "key": "B",
+              "rationale": "The potential energy decreases by mgh = (0.40)(9.8)(12) ≈ 47.0 J, and the kinetic energy at the ground is (1/2)(0.40)(13)^2 = 33.8 J. The difference, 47.0 − 33.8 ≈ 13 J, was converted by air resistance.",
+              "distractorNotes": {
+                "A": "This is the cone's kinetic energy at the ground, not the energy converted.",
+                "C": "This is the decrease in gravitational potential energy, all of which would have become kinetic energy without air resistance.",
+                "D": "Adds the kinetic energy to the potential-energy decrease instead of subtracting it."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.2"
+              ]
+            },
+            {
+              "id": "p1-ped-mc31",
+              "prompt": "A uniform grand-piano lid of mass 18 kg is hinged along one edge and held open 30° above the horizontal by a vertical prop, as shown. The prop touches the lid 1.2 m from the hinge, measured along the lid, and the lid's center of mass is 0.75 m from the hinge, measured along the lid. What is the magnitude of the force the prop exerts on the lid?",
+              "figureIds": [
+                "p1-ped-f8"
+              ],
+              "choices": [
+                "1.8 × 10^2 N",
+                "88 N",
+                "1.1 × 10^2 N",
+                "1.3 × 10^2 N"
+              ],
+              "key": "C",
+              "rationale": "Take torques about the hinge. Both forces are vertical, so each lever arm is the distance along the lid times cos 30°: F(1.2 cos 30°) = (18)(9.8)(0.75 cos 30°). The cosines cancel, so F = (176.4)(0.75)/1.2 ≈ 1.1 × 10^2 N, upward.",
+              "distractorNotes": {
+                "A": "Has the prop hold the lid's entire weight; the hinge supports part of it.",
+                "B": "Assumes the hinge and the prop share the weight equally; torques about the hinge decide the split.",
+                "D": "Uses the full 0.75 m as the weight's lever arm but the horizontal distance 1.2 cos 30° as the prop's; both lever arms carry the factor cos 30°."
+              },
+              "topics": [
+                "P1.5.5",
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc32",
+              "prompt": "In a pipe organ, air flows steadily at 3.0 m/s through a wind duct of cross-sectional area 0.040 m^2 and is shared equally among 12 sounding pipes, each fed through an opening of area 2.0 × 10^−4 m^2. Treating the air as an incompressible fluid, with what speed does air pass through each pipe's opening?",
+              "choices": [
+                "6.0 × 10^2 m/s",
+                "0.18 m/s",
+                "4.2 m/s",
+                "50 m/s"
+              ],
+              "key": "D",
+              "rationale": "The volume flow rate in the duct is (0.040 m^2)(3.0 m/s) = 0.12 m^3/s, shared by 12 openings: 0.010 m^3/s each. Then v = (0.010 m^3/s)/(2.0 × 10^−4 m^2) = 50 m/s.",
+              "distractorNotes": {
+                "A": "Sends the duct's whole flow through a single opening, forgetting that 12 openings share it.",
+                "B": "Inverts the area ratio, so the air slows down in the small openings.",
+                "C": "Divides by 12 a second time, as if each pipe received one-twelfth of the speed as well as one-twelfth of the flow."
+              },
+              "topics": [
+                "P1.8.4"
+              ]
+            },
+            {
+              "id": "p1-ped-mc33",
+              "prompt": "A 2.0 g micrometeoroid traveling at 7.5 km/s relative to a spacecraft strikes the spacecraft's shield and stops inside it in 1.5 μs. What is the magnitude of the average force between the micrometeoroid and the shield?",
+              "choices": [
+                "1.0 × 10^7 N",
+                "2.0 × 10^7 N",
+                "1.0 × 10^4 N",
+                "1.0 × 10^10 N"
+              ],
+              "key": "A",
+              "rationale": "Δp = mΔv = (0.0020 kg)(7.5 × 10^3 m/s) = 15 kg·m/s. F_avg = Δp/Δt = (15 kg·m/s)/(1.5 × 10^−6 s) = 1.0 × 10^7 N.",
+              "distractorNotes": {
+                "B": "Treats the micrometeoroid as bouncing straight back at the same speed, which doubles the momentum change.",
+                "C": "Uses 1.5 × 10^−3 s, treating microseconds as milliseconds.",
+                "D": "Uses 2.0 kg for the mass instead of 2.0 g = 0.0020 kg."
+              },
+              "topics": [
+                "P1.4.2"
+              ]
+            },
+            {
+              "id": "p1-ped-mc34",
+              "prompt": "A squirrel runs along a straight fence rail, with east as the positive direction. At one instant its velocity is −1.2 m/s and its acceleration is +0.50 m/s^2. Which describes its motion at that instant?",
+              "choices": [
+                "It is moving west and speeding up",
+                "It is moving west and slowing down",
+                "It is moving east and slowing down",
+                "It is moving east and speeding up"
+              ],
+              "key": "B",
+              "rationale": "The negative velocity means the squirrel moves west. The acceleration points east, opposite the velocity, so its speed is decreasing.",
+              "distractorNotes": {
+                "A": "Speed increases only when velocity and acceleration have the same sign; here the signs are opposite.",
+                "C": "The negative velocity means the squirrel is moving west; it is the acceleration that points east.",
+                "D": "Reads the direction of motion from the acceleration instead of from the velocity."
+              },
+              "topics": [
+                "P1.1.1",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-ped-mc35",
+              "prompt": "Water flows over a waterfall 25 m high at a rate of 1200 kg each second. At what rate does the gravitational potential energy of the water–Earth system decrease as the water falls?",
+              "choices": [
+                "3.0 × 10^4 W",
+                "1.2 × 10^4 W",
+                "4.7 × 10^2 W",
+                "2.9 × 10^5 W"
+              ],
+              "key": "D",
+              "rationale": "Each second 1200 kg of water drops 25 m, so ΔU/Δt = (Δm/Δt)gh = (1200 kg/s)(9.8 m/s^2)(25 m) ≈ 2.9 × 10^5 J/s = 2.9 × 10^5 W.",
+              "distractorNotes": {
+                "A": "Multiplies the mass flow rate by the height but leaves out g.",
+                "B": "Finds the weight of the water that falls each second but leaves out the height.",
+                "C": "Divides by the height instead of multiplying."
+              },
+              "topics": [
+                "P1.3.5",
+                "P1.3.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc36",
+              "prompt": "A ring-shaped space station 240 m in diameter rotates about its central axis so that the centripetal acceleration of its outer rim is 9.8 m/s^2, which gives astronauts standing there the sensation of normal weight. What is the speed of the rim?",
+              "choices": [
+                "48 m/s",
+                "1.2 × 10^3 m/s",
+                "34 m/s",
+                "0.29 m/s"
+              ],
+              "key": "C",
+              "rationale": "a = v^2/r with r = 120 m, so v = √((9.8 m/s^2)(120 m)) ≈ 34 m/s.",
+              "distractorNotes": {
+                "A": "Uses the 240 m diameter as the radius.",
+                "B": "Finds v^2 = ar but does not take the square root.",
+                "D": "Computes √(a/r), which is the angular velocity in rad/s, not the rim speed."
+              },
+              "topics": [
+                "P1.2.9"
+              ]
+            },
+            {
+              "id": "p1-ped-mc37",
+              "prompt": "A satellite spins counterclockwise, as seen from above, about a fixed axis. Its thrusters then exert a constant net torque that is clockwise about the same axis. Which describes the satellite's rotation while the thrusters keep firing?",
+              "choices": [
+                "It slows down, stops for an instant, and then spins faster and faster clockwise",
+                "It immediately starts spinning clockwise, because rotation follows the direction of the net torque",
+                "It keeps spinning counterclockwise at the same rate, because its angular momentum is conserved",
+                "It slows to a stop and then stays at rest, because the torque can only remove rotation"
+              ],
+              "key": "A",
+              "rationale": "The clockwise torque gives a constant clockwise angular acceleration, α = τ/I. Opposite the counterclockwise angular velocity, it first reduces the spin to zero; the same angular acceleration then makes the clockwise spin grow steadily.",
+              "distractorNotes": {
+                "B": "Net torque sets the angular acceleration, not the angular velocity; the satellite must first slow down.",
+                "C": "Angular momentum is conserved only when the net external torque is zero; here the thrusters supply one.",
+                "D": "A constant clockwise torque keeps giving clockwise angular acceleration after the satellite stops, so it starts turning clockwise."
+              },
+              "topics": [
+                "P1.5.6",
+                "P1.6.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc38",
+              "prompt": "Astronauts measure the mass of samples in orbit with a holder that oscillates along a track on a spring of spring constant 25 N/m. A sample is pulled 0.12 m from equilibrium and released from rest. Slight friction acts in the track, and after several oscillations the sample's turning points are 0.090 m from equilibrium. By then, how much of the mechanical energy of the sample–spring system has friction transformed into internal energy?",
+              "choices": [
+                "0.011 J",
+                "0.079 J",
+                "0.045 J",
+                "0.16 J"
+              ],
+              "key": "B",
+              "rationale": "At a turning point the sample is momentarily at rest, so all the mechanical energy is spring potential energy, (1/2)kA^2. It falls from (1/2)(25 N/m)(0.12 m)^2 = 0.18 J to (1/2)(25 N/m)(0.090 m)^2 ≈ 0.101 J, so friction has transformed 0.18 J − 0.101 J ≈ 0.079 J into internal energy. The sample's mass is not needed.",
+              "distractorNotes": {
+                "A": "Uses (1/2)k(0.12 m − 0.090 m)^2, the spring energy for the change in amplitude. The energy lost is the change in (1/2)kA^2, which is (1/2)k(A_1^2 − A_2^2), not (1/2)k(A_1 − A_2)^2.",
+                "C": "Assumes the energy is proportional to the amplitude, so that a 25% drop in amplitude removes 25% of the 0.18 J. The energy is proportional to the square of the amplitude.",
+                "D": "Leaves out the 1/2 in the spring potential energy, using k(A_1^2 − A_2^2)."
+              },
+              "topics": [
+                "P1.7.4",
+                "P1.7.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc39",
+              "prompt": "At a rail yard, a 3.0 × 10^4 kg boxcar rolling at 0.60 m/s strikes a 2.0 × 10^4 kg tank car at rest on the same level track. After they bump, the boxcar moves at 0.12 m/s and the tank car moves at 0.72 m/s, both in the boxcar's original direction. Which statement about this collision is correct?",
+              "choices": [
+                "It is inelastic, because the boxcar loses kinetic energy",
+                "It is perfectly inelastic, because both cars move in the same direction afterward",
+                "It cannot happen, because the cars' speeds afterward add up to more than the boxcar's speed before",
+                "It is elastic, because the total kinetic energy is the same before and after"
+              ],
+              "key": "D",
+              "rationale": "Momentum before is (3.0 × 10^4)(0.60) = 1.8 × 10^4 kg·m/s; after, (3.0 × 10^4)(0.12) + (2.0 × 10^4)(0.72) = 3.6 × 10^3 + 1.44 × 10^4 = 1.8 × 10^4 kg·m/s. Kinetic energy before is (1/2)(3.0 × 10^4)(0.60)^2 = 5.4 × 10^3 J; after, (1/2)(3.0 × 10^4)(0.12)^2 + (1/2)(2.0 × 10^4)(0.72)^2 = 216 + 5184 = 5.4 × 10^3 J. The total kinetic energy is unchanged, so the collision is elastic.",
+              "distractorNotes": {
+                "A": "One object losing kinetic energy happens in any collision; the test is the system's total kinetic energy, which is unchanged here.",
+                "B": "Perfectly inelastic means the objects move off together with one velocity; these cars separate.",
+                "C": "Speeds are not conserved; momentum is, and (3.0 × 10^4)(0.12) + (2.0 × 10^4)(0.72) = 1.8 × 10^4 kg·m/s = (3.0 × 10^4)(0.60)."
+              },
+              "topics": [
+                "P1.4.4",
+                "P1.4.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc40",
+              "prompt": "A 40 kg child steps off a platform, falls 1.2 m onto a trampoline, and sinks 0.30 m below the trampoline's resting level before stopping momentarily. Model the trampoline as a light spring, and neglect air resistance and energy losses. What is the trampoline's effective spring constant?",
+              "choices": [
+                "1.0 × 10^4 N/m",
+                "1.3 × 10^3 N/m",
+                "1.3 × 10^4 N/m",
+                "6.5 × 10^3 N/m"
+              ],
+              "key": "C",
+              "rationale": "The child starts and ends at rest, so for the child–Earth–trampoline system mg(1.2 m + 0.30 m) = (1/2)k(0.30 m)^2, giving k = 2(40)(9.8)(1.5)/(0.090) ≈ 1.3 × 10^4 N/m.",
+              "distractorNotes": {
+                "A": "Uses only the 1.2 m fall, leaving out the further 0.30 m the child drops while the trampoline stretches.",
+                "B": "Sets kx = mg, as if the child were at rest in equilibrium at the lowest point; there the upward spring force exceeds the weight.",
+                "D": "Uses kx^2 for the spring energy, dropping the factor 1/2."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.3.3"
+              ]
+            },
+            {
+              "id": "p1-ped-mc41",
+              "prompt": "Astronauts inside a space station in a circular orbit a few hundred kilometers above Earth float freely relative to the station. Which statement best explains why?",
+              "choices": [
+                "Earth's gravitational force on them is nearly zero at the station's altitude",
+                "They and the station are in free fall around Earth with the same acceleration, so the floor does not need to push on them",
+                "An outward centrifugal force on them balances Earth's gravitational force",
+                "There is no air in orbit, and air pressure is what presses objects onto a floor"
+              ],
+              "key": "B",
+              "rationale": "Gravity is the only significant force on the astronauts and on the station, and it gives both the same centripetal acceleration toward Earth. Since they accelerate together, the floor exerts no normal force, and the astronauts float relative to the station.",
+              "distractorNotes": {
+                "A": "A few hundred kilometers up, Earth's gravitational field is still roughly 90% of its surface value.",
+                "C": "In an inertial frame no outward force acts; the net force is gravity, which supplies the centripetal acceleration of the orbit.",
+                "D": "Air pressure acts on all sides of an object and does not cause weight; gravity does."
+              },
+              "topics": [
+                "P1.6.6",
+                "P1.2.6"
+              ]
+            },
+            {
+              "id": "p1-ped-mc42",
+              "prompt": "In a perfume atomizer, squeezing a bulb blows a horizontal stream of air at 25 m/s across the open top of a thin vertical tube. The tube's lower end dips into perfume of density 900 kg/m^3 in a bottle, where the air above the perfume is still and at atmospheric pressure. Treat the air as an ideal fluid of density 1.2 kg/m^3 that is at atmospheric pressure where it is at rest. How high above the perfume's surface can the perfume rise in the tube?",
+              "choices": [
+                "0.085 m",
+                "32 m",
+                "1.7 × 10^−3 m",
+                "0.043 m"
+              ],
+              "key": "D",
+              "rationale": "Bernoulli's equation for the air, from still air at atmospheric pressure to the moving stream at the same height, gives a pressure drop ΔP = (1/2)ρ_air v^2 = (1/2)(1.2)(25)^2 = 375 Pa at the top of the tube. The perfume rises until the weight of its column balances this difference: ρ_perfume gh = ΔP, so h = 375/((900)(9.8)) ≈ 0.043 m.",
+              "distractorNotes": {
+                "A": "Uses ΔP = ρ_air v^2, dropping the factor 1/2 from Bernoulli's equation.",
+                "B": "Uses the air's density instead of the perfume's in ρgh; the column that rises is perfume.",
+                "C": "Uses v instead of v^2 in (1/2)ρv^2."
+              },
+              "topics": [
+                "P1.8.4",
+                "P1.8.2"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 95,
+          "calculator": "any",
+          "directions": "Answer all four questions in the space provided. Show your work and explain your reasoning; points are awarded for setups, reasoning and justifications as well as for answers. Give numerical answers with units, and state a positive direction whenever you use signed quantities. Suggested times: question 1, 20–25 minutes; question 2, 25–30 minutes; question 3, 25–30 minutes; question 4, 15–20 minutes. Question 3 uses data invented for practice; it is a paper exercise and does not replace the hands-on lab work that the AP® Physics 1 course requires.",
+          "items": [
+            {
+              "id": "p1-ped-fr1",
+              "prompt": "An archerfish knocks insects off leaves by spitting a thin jet of water straight up. Model the fish's mouth as a chamber, level with the opening, in which the water is nearly at rest and is held at a constant gauge pressure P_g while the fish spits. The water leaves through an opening of cross-sectional area 1.2 × 10^−6 m^2 at the water surface. An insect sits on a leaf 0.60 m directly above the opening, as shown. Treat the water as an ideal fluid of density 1000 kg/m^3, neglect air resistance, and assume the jet stays a single steady stream. Use g = 9.8 m/s^2.",
+              "type": "MR",
+              "topics": [
+                "P1.8.4",
+                "P1.8.2",
+                "P1.3.4",
+                "P1.1.2"
+              ],
+              "figureIds": [
+                "p1-ped-f20"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Calculate the smallest speed with which the water must leave the opening to reach the insect.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up energy conservation for a small parcel of water, (1/2)mv_0^2 = mgh, or the kinematics relation v^2 = v_0^2 − 2gh with v = 0 at the insect's height (or equivalent)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v_0 ≈ 3.4 m/s (3.43 m/s; accept 3.4–3.5 m/s), with units."
+                    }
+                  ],
+                  "answer": "v_0 = √(2gh) = √(2 × 9.8 m/s^2 × 0.60 m) ≈ 3.4 m/s (3.43 m/s).",
+                  "steps": [
+                    "The smallest launch speed brings the water just to rest at the insect, 0.60 m up.",
+                    "(1/2)mv_0^2 = mgh, so v_0^2 = 2(9.8)(0.60) = 11.76 m^2/s^2 and v_0 ≈ 3.43 m/s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Calculate the smallest gauge pressure P_g in the mouth that produces this speed. Name the principle you use and the two points you apply it between.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies Bernoulli's equation (conservation of energy for the flowing water) between the water at rest in the mouth chamber and the water in the jet at the opening, at the same height (or equivalent)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Takes the pressure in the jet at the opening as atmospheric, so P_atm + P_g = P_atm + (1/2)ρv_0^2 and P_g = (1/2)ρv_0^2 (equivalently ρgh)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "P_g ≈ 5.9 × 10^3 Pa (5880 Pa; accept 5.8–6.0 × 10^3 Pa), with units."
+                    }
+                  ],
+                  "answer": "Bernoulli's equation from the chamber (speed about 0) to the opening (speed v_0, open to the air, same height): P_g = (1/2)ρv_0^2 = (1/2)(1000)(3.43)^2 ≈ 5.9 × 10^3 Pa. This equals ρgh, as energy conservation requires.",
+                  "steps": [
+                    "In the chamber: pressure P_atm + P_g, speed about 0. In the jet just outside the opening: pressure P_atm, speed v_0. The heights are equal.",
+                    "P_atm + P_g + 0 = P_atm + (1/2)ρv_0^2, so P_g = (1/2)ρv_0^2.",
+                    "(1/2)(1000 kg/m^3)(11.76 m^2/s^2) = 5880 Pa ≈ 5.9 × 10^3 Pa; the same value is ρgh = (1000)(9.8)(0.60)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the volume flow rate of the jet as it leaves the opening, and the mass of water the fish spits in a 0.15 s spit at this speed.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Volume flow rate Q = Av_0 = (1.2 × 10^−6 m^2)(3.43 m/s) ≈ 4.1 × 10^−6 m^3/s (accept a value consistent with the speed from part (a))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Mass m = ρQΔt ≈ 6.2 × 10^−4 kg (0.62 g; accept 6.1–6.3 × 10^−4 kg or a consistent value), with units."
+                    }
+                  ],
+                  "answer": "Q = Av_0 ≈ 4.1 × 10^−6 m^3/s; mass = ρQΔt = (1000)(4.12 × 10^−6)(0.15) ≈ 6.2 × 10^−4 kg.",
+                  "steps": [
+                    "Each second, a column of water v_0 long with cross-section A leaves the opening: Q = Av_0 = 4.12 × 10^−6 m^3/s.",
+                    "Volume in 0.15 s: 6.2 × 10^−7 m^3 (about 0.6 mL); mass = ρV ≈ 6.2 × 10^−4 kg."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The jet slows as it rises. Calculate the speed of the water and the cross-sectional area of the jet 0.45 m above the opening, and explain why the jet is wider there than at the opening.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Speed at 0.45 m from energy (or Bernoulli with atmospheric pressure throughout the jet): v^2 = v_0^2 − 2g(0.45 m), so v ≈ 1.7 m/s (1.71 m/s; half of v_0)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses continuity for the steady jet: the same volume of water passes every height each second, so A_0v_0 = Av."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A ≈ 2.4 × 10^−6 m^2 (twice the opening's area; accept a value consistent with the speeds found), with the explanation that slower water must fill a larger cross-section to carry the same flow rate."
+                    }
+                  ],
+                  "answer": "v = √(11.76 − 2(9.8)(0.45)) = √2.94 ≈ 1.7 m/s. Continuity gives A = A_0v_0/v = (1.2 × 10^−6)(3.43)/(1.71) ≈ 2.4 × 10^−6 m^2. The flow rate is the same at every height, so where the water moves more slowly the stream must be wider.",
+                  "steps": [
+                    "The jet is open to the air, so its pressure stays atmospheric and Bernoulli's equation reduces to energy conservation: v^2 = v_0^2 − 2gy.",
+                    "v^2 = 11.76 − 8.82 = 2.94 m^2/s^2, so v ≈ 1.71 m/s, exactly half of v_0.",
+                    "A_0v_0 = Av gives A = 2A_0 = 2.4 × 10^−6 m^2."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-ped-fr2",
+              "prompt": "Far from any planet, a robotic service probe of mass m_P = 150 kg drifts at v_0 = 0.40 m/s toward a cargo module of mass m_M = 450 kg, which is at rest, as shown. A spring bumper on the front of the probe touches the module at t = 0, is compressed, and loses contact at t = 2.0 s. The graph shows the force F that the bumper exerts on the module as a function of time; this force points in the +x direction, the probe's initial direction of motion. Treat the probe and module as an isolated system and the bumper's mass as negligible.",
+              "type": "TBR",
+              "topics": [
+                "P1.4.2",
+                "P1.4.3",
+                "P1.4.1",
+                "P1.2.3"
+              ],
+              "figureIds": [
+                "p1-ped-f21",
+                "p1-ped-f22"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the graph to calculate the velocity of the module at t = 2.0 s. Then calculate the velocity of the probe at t = 2.0 s.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Impulse on the module from the area under the graph: J = (1/2)(2.0 s)(90 N) = 90 N·s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Module: v_M = J/m_M = (90 N·s)/(450 kg) = +0.20 m/s (0.20 m/s in the +x direction)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Probe: by Newton's third law it receives an impulse of −90 N·s (or by momentum conservation), so v_P = (60 − 90)/150 = −0.20 m/s, that is, 0.20 m/s in the −x direction."
+                    }
+                  ],
+                  "answer": "J = 90 N·s, so the module moves at +0.20 m/s and the probe at −0.20 m/s (0.20 m/s back the way it came).",
+                  "steps": [
+                    "Area of the triangle: (1/2)(2.0 s)(90 N) = 90 N·s, in the +x direction, on the module.",
+                    "Module starts at rest: m_Mv_M = 90 kg·m/s, so v_M = 0.20 m/s.",
+                    "The module pushes back on the bumper with an equal and opposite force for the same time, so the probe's momentum changes by −90 kg·m/s: from +60 to −30 kg·m/s, v_P = −0.20 m/s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the bar charts provided, draw bars for the momentum of the probe p_P, the momentum of the module p_M and the total momentum of the system p_sys at t = 0, t = 1.0 s and t = 2.0 s. Use the same scale for all three charts and label each bar with its value.",
+                  "points": 3,
+                  "figureIds": [
+                    "p1-ped-f23"
+                  ],
+                  "answerFigureIds": [
+                    "p1-ped-f24"
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "t = 0: p_P = +60 kg·m/s, p_M = 0 and p_sys = +60 kg·m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "t = 1.0 s: the area under the graph up to 1.0 s is 45 N·s, so p_M = +45 kg·m/s and p_P = +15 kg·m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "t = 2.0 s: p_P = −30 kg·m/s drawn below the zero line and p_M = +90 kg·m/s; p_sys = +60 kg·m/s in all three charts, on one consistent scale."
+                    }
+                  ],
+                  "answer": "In kg·m/s: t = 0, p_P = 60, p_M = 0, p_sys = 60; t = 1.0 s, p_P = 15, p_M = 45, p_sys = 60; t = 2.0 s, p_P = −30, p_M = 90, p_sys = 60.",
+                  "steps": [
+                    "Before contact only the probe moves: p_P = (150)(0.40) = 60 kg·m/s.",
+                    "The area from 0 to 1.0 s is (1/2)(1.0 s)(90 N) = 45 N·s: the module has gained 45 kg·m/s and the probe has lost 45 kg·m/s.",
+                    "By 2.0 s the module has gained 90 kg·m/s, and the probe has 60 − 90 = −30 kg·m/s. The total stays 60 kg·m/s."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Starting from Newton's second and third laws, derive equations for the velocity of the probe v_P(t) and the velocity of the module v_M(t) at any time t during the contact, in terms of v_0, m_P, m_M and J(t), the area under the graph from 0 to t. Use them to show that the total momentum of the system does not change during the contact.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Newton's third law: at every instant the module exerts on the probe a force equal in magnitude and opposite in direction to F, so up to time t the probe receives an impulse of −J(t) while the module receives +J(t)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Newton's second law as impulse–momentum: m_Mv_M(t) = J(t) and m_Pv_P(t) = m_Pv_0 − J(t), so v_M = J(t)/m_M and v_P = v_0 − J(t)/m_P."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Adds the momenta: m_Pv_P + m_Mv_M = m_Pv_0 − J + J = m_Pv_0 at every t, so the total momentum is constant (consistent with equal p_sys bars)."
+                    }
+                  ],
+                  "answer": "v_M(t) = J(t)/m_M and v_P(t) = v_0 − J(t)/m_P. Then m_Pv_P + m_Mv_M = m_Pv_0 at every instant, so the system's momentum stays 60 kg·m/s.",
+                  "steps": [
+                    "Second law: F_net = Δp/Δt, so the area under a force–time graph is the change in momentum.",
+                    "Third law: the forces on the two objects are equal and opposite at each instant and act for the same time, so their impulses are equal and opposite at every t.",
+                    "Adding the two momentum equations cancels J(t)."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A student claims, \"The bumper is squeezed the most at t = 1.0 s, when the force is greatest, and at that instant the probe and the module move with the same velocity.\" Use your equations from part (c) and the graph to check whether the two velocities are equal at t = 1.0 s. Explain why the bumper's compression, and so its force, should be greatest when the velocities are equal, and state whether your bar chart for t = 1.0 s agrees.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses J(1.0 s) = 45 N·s: v_P = 0.40 − 45/150 = 0.10 m/s and v_M = 45/450 = 0.10 m/s, so the velocities are equal at t = 1.0 s, as claimed."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that before 1.0 s the probe moves faster than the module, so the gap closes and the compression (and the spring force) grows; after 1.0 s the module is faster, so the bumper extends and the force falls; the compression is therefore greatest when the velocities are equal."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Checks the bar chart: at t = 1.0 s, p_P/m_P = 15/150 = 0.10 m/s and p_M/m_M = 45/450 = 0.10 m/s, so the bars (in the ratio 1:3, the mass ratio) agree with the graph and the equations."
+                    }
+                  ],
+                  "answer": "The claim is consistent: at t = 1.0 s both objects move at +0.10 m/s. The bumper is compressed while the probe is faster and extends once the module is faster, so its compression and force peak when the velocities are equal, which matches the graph's peak at 1.0 s. The t = 1.0 s bars, 15 and 45 kg·m/s, give the same 0.10 m/s for each object.",
+                  "steps": [
+                    "v_P(1.0 s) = 0.40 m/s − (45 N·s)/(150 kg) = 0.10 m/s; v_M(1.0 s) = (45 N·s)/(450 kg) = 0.10 m/s.",
+                    "The rate at which the gap between the objects shrinks is v_P − v_M; it is positive before 1.0 s and negative after, so the bumper's length is smallest at 1.0 s.",
+                    "A spring's force grows with its compression, so the force is greatest when the compression is greatest. The common velocity, 60/600 = 0.10 m/s, is the center-of-mass velocity."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-ped-fr3",
+              "prompt": "A student wants to simulate a pendulum in weaker gravity on a tilted air table. A puck on the nearly frictionless table surface is tied to a light string whose other end is fixed to a pin on the surface; the length from the pin to the puck's center is L = 0.300 m. The table surface is D = 1.20 m long along the slope, and raising one end by a height h tilts it, as shown. When the puck is pulled a little to one side and released, it swings back and forth along the table about the point directly downhill of the pin. For each height h, the student records the period T of small oscillations. These data are invented for practice:\n| h (m) | 0.12 | 0.18 | 0.24 | 0.36 | 0.54 |\n| --- | --- | --- | --- | --- | --- |\n| T (s) | 3.49 | 2.82 | 2.47 | 2.00 | 1.65 |",
+              "type": "EDA",
+              "topics": [
+                "P1.7.2",
+                "P1.7.1",
+                "P1.2.2"
+              ],
+              "figureIds": [
+                "p1-ped-f25"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Describe a procedure the student could use to collect these data: how to measure h and T in each trial, what to keep the same in every trial, and one technique that reduces the uncertainty in T.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Measures h as the vertical height of the raised end of the table surface above the bench, with a meter stick held vertically, while the length D of the surface along the slope stays fixed."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Keeps the string length L, the puck and a small release angle (for example under about 10°) the same in every trial, with the air supply on."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Measures T by timing many complete oscillations (for example 10) with a stopwatch or video and dividing, starting the timing as the puck passes its lowest point, or repeats each trial and averages."
+                    }
+                  ],
+                  "answer": "For each height, raise one end and measure the vertical height h of its surface above the bench with a vertical meter stick. With the air on, pull the puck about 10° to one side and release it; time 10 complete oscillations from a moment when the puck passes its lowest point and divide by 10. Keep L, the puck and the small release angle the same, and repeat each timing and average.",
+                  "steps": [
+                    "The model needs the tilt, which the vertical height h and the fixed length D give through sin θ = h/D.",
+                    "Timing many oscillations divides the reaction-time error by their number, and the lowest point, where the puck moves fastest, is the easiest moment to judge."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Along the tilted table the puck behaves like a pendulum in a gravitational field of strength g sin θ, where θ is the table's angle of tilt. Show that T^2 should be directly proportional to 1/h. State what quantities to graph to get a straight line and what its slope represents.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses sin θ = h/D, so the effective field is gh/D and T = 2π√(L/(gh/D)) = 2π√(LD/(gh))."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Squares: T^2 = (4π^2LD/g)(1/h). A graph of T^2 against 1/h is a straight line through the origin with slope 4π^2LD/g (or an equivalent linearization with its slope correctly interpreted)."
+                    }
+                  ],
+                  "answer": "sin θ = h/D, so T = 2π√(LD/(gh)) and T^2 = (4π^2LD/g)(1/h). Graph T^2 against 1/h: a straight line through the origin whose slope is 4π^2LD/g.",
+                  "steps": [
+                    "The component of gravity along the table, g sin θ, plays the role of g in T = 2π√(L/g).",
+                    "With x = 1/h and y = T^2, y = (4π^2LD/g)x, a direct proportion."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the grid, plot the quantities you chose in part (b) and draw a best-fit line.",
+                  "points": 2,
+                  "figureIds": [
+                    "p1-ped-f26"
+                  ],
+                  "answerFigureIds": [
+                    "p1-ped-f27"
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes 1/h (8.33, 5.56, 4.17, 2.78, 1.85 m^−1) and T^2 (12.2, 7.95, 6.10, 4.00, 2.72 s^2), and labels both axes with quantities and units, using uniform scales that spread the data over most of the grid."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Plots all five points correctly and draws one straight best-fit line that passes close to the origin."
+                    }
+                  ],
+                  "answer": "The points (8.33, 12.2), (5.56, 7.95), (4.17, 6.10), (2.78, 4.00) and (1.85, 2.72), with 1/h in m^−1 and T^2 in s^2, lie close to a straight line through the origin with a slope of about 1.46 s^2·m.",
+                  "steps": [
+                    "Put 1/h on the horizontal axis and T^2 on the vertical axis.",
+                    "Draw one line with the points scattered evenly about it; it passes very close to the origin, as the model predicts."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your best-fit line to calculate an experimental value of g.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the slope from two points far apart on the line (not from data points unless they lie on it): about 1.46 s^2·m (accept 1.40–1.50 s^2·m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "g = 4π^2LD/slope ≈ 9.7 m/s^2 (accept 9.5–10.2 m/s^2, consistent with the slope), with units."
+                    }
+                  ],
+                  "answer": "Slope ≈ 1.46 s^2·m, so g = 4π^2LD/slope = 4π^2(0.300 m)(1.20 m)/(1.46 s^2·m) ≈ 9.7 m/s^2, close to 9.8 m/s^2.",
+                  "steps": [
+                    "Two points on the line, for example (1.5 m^−1, 2.17 s^2) and (8.5 m^−1, 12.37 s^2), give (12.37 − 2.17)/(8.5 − 1.5) ≈ 1.46 s^2·m.",
+                    "4π^2(0.300)(1.20) = 14.2 m^2, and 14.2/1.46 ≈ 9.7 m/s^2; the units are m^2/(s^2·m) = m/s^2."
+                  ]
+                },
+                {
+                  "label": "e",
+                  "prompt": "The gravitational field at the surface of Mars is 3.7 N/kg. Calculate the height h at which this tilted pendulum simulates a pendulum of the same length on Mars, and use your best-fit line to predict its period at that height.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets g(h/D) = 3.7 N/kg, so h = (1.20 m)(3.7/9.8) ≈ 0.45 m (1/h ≈ 2.2 m^−1), and reads or computes T^2 ≈ 3.2 s^2 from the line, so T ≈ 1.8 s (accept 1.75–1.85 s)."
+                    }
+                  ],
+                  "answer": "h = D(3.7/9.8) ≈ 0.45 m, so 1/h ≈ 2.2 m^−1; the line gives T^2 ≈ 1.46 × 2.21 ≈ 3.2 s^2 and T ≈ 1.8 s, matching 2π√(0.300/3.7) ≈ 1.8 s.",
+                  "steps": [
+                    "The table's effective field is gh/D; setting it equal to 3.7 N/kg gives h = 0.453 m.",
+                    "T^2 = (1.46 s^2·m)(2.21 m^−1) ≈ 3.22 s^2, so T ≈ 1.79 s."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-ped-fr4",
+              "prompt": "A DJ holds a vinyl record at rest on a felt slipmat while the turntable's platter, with the mat on it, turns beneath the record at a constant angular speed ω_0. The DJ then lets go. The mat exerts a friction torque of constant magnitude τ on the record, and the record speeds up until it turns with the platter. The turntable's motor keeps the platter turning at ω_0 the whole time. The record has rotational inertia I about the axle. Ignore air resistance and friction in the platter's bearing.",
+              "type": "QQT",
+              "topics": [
+                "P1.6.2",
+                "P1.6.1",
+                "P1.6.3",
+                "P1.5.1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "A student claims, \"The motor keeps the platter's speed constant, so all the work the motor does while the record slips ends up as the record's kinetic energy.\" Without deriving equations, explain whether the work done by the motor while the record slips is greater than, less than or equal to the record's gain in kinetic energy. Write your reasoning as a short paragraph.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the interactions: the mat's friction torque on the record and the record's friction torque on the mat and platter are equal in size and opposite (Newton's third law), and because the platter's angular speed is constant, the motor's torque on the platter balances the record's torque on it (or equivalent: the motor does work on the platter and mat, and the mat's friction does work on the record)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reasons that while the record slips, the platter always turns faster than the record, so in the same time it turns through a larger angle; with torques of equal size, the motor does more work on the platter than the mat does on the record (or reasons that kinetic friction between surfaces sliding past each other converts some of the energy the motor supplies into thermal energy, or equivalent)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the motor's work is greater than the record's gain in kinetic energy, so the claim is incorrect, and that the difference becomes internal (thermal) energy where the record slides on the mat."
+                    }
+                  ],
+                  "answer": "The motor does more work than the record gains. The record and the mat push on each other with friction torques of equal size, and since the platter's speed does not change, the motor's torque matches the friction torque on the platter. Work by a constant torque is the torque times the angle turned. While the record slips it always turns more slowly than the platter, so in the same time the platter, which the motor drives, turns through a larger angle than the record does. The motor therefore does more work than friction does on the record, and the extra energy becomes thermal energy in the record and the mat where they rub.",
+                  "steps": [
+                    "Equal and opposite torques act for the same time, but on objects that turn through different angles.",
+                    "Sliding friction between surfaces that move relative to each other converts energy to internal energy; that is where the difference goes."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive expressions, in terms of I and ω_0, for the record's kinetic energy when it stops slipping and for the work done by the motor while the record slips.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Angular impulse on the record (or the rotational form of Newton's second law with α = τ/I): τΔt = Iω_0, so the record slips for Δt = Iω_0/τ."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "In that time the record, speeding up uniformly from rest, turns through ω_0Δt/2, while the platter turns through ω_0Δt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "K_record = (1/2)Iω_0^2 and W_motor = τ(ω_0Δt) = Iω_0^2 (or equivalent work–energy reasoning)."
+                    }
+                  ],
+                  "answer": "Δt = Iω_0/τ. The record's kinetic energy is K = (1/2)Iω_0^2 (equal to the work τ(ω_0Δt/2) done on it). The motor does W = τω_0Δt = Iω_0^2.",
+                  "steps": [
+                    "Record: angular impulse τΔt equals its change in angular momentum, Iω_0 − 0.",
+                    "Record angle: average angular speed ω_0/2 times Δt; platter angle: ω_0Δt.",
+                    "Work by the friction torque on the record: τ(ω_0Δt/2) = (1/2)Iω_0^2, its kinetic energy. Motor: τ(ω_0Δt) = Iω_0^2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Use your results from part (b) to find the thermal energy produced while the record slips, and explain whether your results support your reasoning in part (a). Then state whether a mat that exerts twice the friction torque would change the motor's work, and why.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Thermal energy = W_motor − K = (1/2)Iω_0^2, so the motor does twice the record's gain, which supports part (a): the platter turns through twice the record's angle while the torques are equal."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "With twice the torque, the slipping time and both angles are halved while the torque is doubled, so W_motor = Iω_0^2 and the thermal energy are unchanged (τ cancels); only the slipping time changes."
+                    }
+                  ],
+                  "answer": "Thermal energy = Iω_0^2 − (1/2)Iω_0^2 = (1/2)Iω_0^2, the same as the record's kinetic energy, so the motor does twice what the record gains, as part (a) predicted. A mat with twice the friction torque halves the slipping time and the angles turned, so the motor's work, Iω_0^2, and the thermal energy do not change.",
+                  "steps": [
+                    "The motor's work goes into the record's kinetic energy and thermal energy; the platter's own kinetic energy does not change.",
+                    "W_motor = Iω_0^2 does not contain τ, so changing the mat changes only how long the record slips."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

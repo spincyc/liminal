@@ -1,0 +1,377 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "mixed-6",
+  "kind": "mixed-set",
+  "title": "Mixed set 6: all units at exam pace",
+  "author": "p1-mixed-5-6-author",
+  "directions": "This original Liminal mixed set draws 15 multiple-choice questions from across the course at the exam's pace: 30 minutes, with a four-function, scientific or graphing calculator allowed. The questions are mixed on purpose, so part of each one is deciding which principle or method applies: momentum or energy, angular momentum or rotational energy, which forces are external to the system you chose, what supplies a centripetal acceleration, and whether a graph's slope or its area gives the quantity asked for. Expect it to feel slower than practising one topic at a time. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise; Liminal's formula reference may be used. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-mixed-6-f1",
+      "alt": "Velocity–time graphs for two cyclists, with v in m/s against t in seconds from 0 to 10 s. Cyclist A's graph, a solid line labeled A, is horizontal at 6 m/s. Cyclist B's graph, a dashed line labeled B, rises in a straight line from 0 at t = 0 to 8 m/s at t = 4 s and then stays at 8 m/s.",
+      "caption": "Velocities of cyclists A and B"
+    },
+    {
+      "id": "p1-mixed-6-f2",
+      "alt": "Graph of kinetic energy K, in units of 10^5 J, against time t in seconds: a straight line from 0.6 at t = 0 to 2.4 at t = 6 s, where the graph ends.",
+      "caption": "Kinetic energy of the car"
+    },
+    {
+      "id": "p1-mixed-6-f3",
+      "alt": "Graph of net force F in newtons against position x in meters from −0.2 m to 0.2 m: a straight line through the origin from (−0.15, 6) to (0.15, −6).",
+      "caption": "Net force on the glider"
+    },
+    {
+      "id": "p1-mixed-6-f4",
+      "alt": "Position–time graphs for two carts, with x in meters against t in seconds from 0 to 10 s. Cart A's graph, a solid line labeled A, runs straight from (0, 0) to (10, 10). Cart B's graph, a dashed curve labeled B, starts flat at the origin and bends upward through (4, 2) and (8, 8), where it crosses A's line, and leaves the top of the grid near t = 9 s.",
+      "caption": "Positions of carts A and B"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "Choose the best answer for each of the 15 questions and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question.",
+          "items": [
+            {
+              "id": "p1-mixed-6-mc01",
+              "prompt": "Cyclists A and B ride in the same direction, taken as positive, along a straight path and are side by side at t = 0. The graph shows their velocities v as functions of time t. At what time does cyclist B catch up with cyclist A?",
+              "figureIds": [
+                "p1-mixed-6-f1"
+              ],
+              "choices": [
+                "t = 3.0 s",
+                "t = 4.0 s",
+                "t = 6.0 s",
+                "t = 8.0 s"
+              ],
+              "key": "D",
+              "rationale": "Each cyclist's displacement is the area under its velocity graph. A has gone 6.0t. B has gone (1/2)(4.0 s)(8.0 m/s) = 16 m by t = 4.0 s and then adds 8.0 m/s. Setting 6.0t = 16 + 8.0(t − 4.0) gives t = 8.0 s, when each has gone 48 m.",
+              "distractorNotes": {
+                "A": "The graphs cross at 3.0 s, so the cyclists have equal velocities then. That is when A's lead is greatest, not when B catches up.",
+                "B": "B reaches top speed at 4.0 s, but by then B has covered 16 m and A has covered 24 m.",
+                "C": "Assumes B keeps accelerating at 2.0 m/s^2 after t = 4.0 s. The graph shows B's velocity staying at 8.0 m/s."
+              },
+              "topics": [
+                "P1.1.3",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc02",
+              "prompt": "A 0.30 kg ball on a light string 0.50 m long swings in a vertical circle about a fixed point. At the instant the string is horizontal, the ball is moving straight up at 3.0 m/s. What is the magnitude of the net force on the ball at that instant?",
+              "choices": [
+                "6.1 N",
+                "5.4 N",
+                "8.3 N",
+                "2.9 N"
+              ],
+              "key": "A",
+              "rationale": "Toward the center only the tension acts, since gravity is vertical, along the path: T = mv^2/r = (0.30)(3.0)^2/0.50 = 5.4 N. Along the path, gravity gives mg = 2.94 N downward. The net force is √(5.4^2 + 2.94^2) ≈ 6.1 N. The net force points straight at the center only when the speed is not changing.",
+              "distractorNotes": {
+                "B": "This is the string's tension, which here equals the centripetal part, mv^2/r. The net force also includes gravity's 2.9 N along the path, which is slowing the ball.",
+                "C": "Adds the two perpendicular parts, 5.4 N and 2.9 N, as numbers instead of as vectors.",
+                "D": "Treats the tension as balanced by a centripetal force, leaving only gravity. Centripetal force is not a separate force; the tension is what supplies the acceleration toward the center."
+              },
+              "topics": [
+                "P1.2.9",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc03",
+              "prompt": "A 0.50 kg toy car sits on a circular track of radius 0.40 m fixed to a platform that can turn, with negligible friction, about a vertical axle through the track's center. The platform and track have a rotational inertia of 0.12 kg·m^2 about the axle, and everything starts at rest. The car is switched on and drives around the track. At one instant it moves at 0.60 m/s relative to the ground. What is the platform's angular speed at that instant?",
+              "choices": [
+                "1.2 rad/s",
+                "0.60 rad/s",
+                "1.0 rad/s",
+                "1.5 rad/s"
+              ],
+              "key": "C",
+              "rationale": "No external torque acts about the axle, so the total angular momentum about it stays zero. The car's angular momentum is mvr = (0.50 kg)(0.60 m/s)(0.40 m) = 0.12 kg·m^2/s, so the platform needs 0.12 kg·m^2/s in the opposite sense: ω = 0.12/0.12 = 1.0 rad/s.",
+              "distractorNotes": {
+                "A": "Sets the platform's rotational kinetic energy equal to the car's kinetic energy. Kinetic energy is not conserved: the car's motor converts stored energy, so the total kinetic energy grows from zero.",
+                "B": "Adds the car's rotational inertia to the platform's as if they turned together. They turn in opposite senses at different rates.",
+                "D": "Assumes the platform turns at the car's angular speed, v/r. Equal and opposite angular momenta do not mean equal angular speeds."
+              },
+              "topics": [
+                "P1.6.4",
+                "P1.6.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc04",
+              "prompt": "A 60 kg student sits on a 20 kg cart on a level track with negligible friction. A light horizontal rope is tied to a post ahead of the cart, and the student pulls on it hand over hand with a steady 40 N force. What is the acceleration of the student and cart?",
+              "choices": [
+                "Zero, because the student's pull is an internal force",
+                "0.50 m/s^2 toward the post",
+                "0.67 m/s^2 toward the post",
+                "1.0 m/s^2 toward the post"
+              ],
+              "key": "B",
+              "rationale": "Take the student and cart as the system. The only external horizontal force is the rope's 40 N pull on the student's hands; her pull on the rope acts on the rope, and the forces between her and the cart are internal. So a = 40 N/80 kg = 0.50 m/s^2 toward the post.",
+              "distractorNotes": {
+                "A": "The student pulls on the rope, which is tied to the post, not to the cart. The rope pulls back on her with 40 N, an external force on the student–cart system.",
+                "C": "Divides by the student's mass alone. She and the cart move together, so the system's mass is 80 kg.",
+                "D": "Counts both members of a third-law pair: the student's pull on the rope and the rope's pull on her. Only the rope's pull on her acts on the system."
+              },
+              "topics": [
+                "P1.2.1",
+                "P1.2.3",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc05",
+              "prompt": "On a bicycle, the pedals turn the front sprocket, of radius 0.10 m, at 9.0 rad/s. The chain runs to a rear sprocket of radius 0.040 m that is fixed to the rear wheel, of radius 0.34 m. The wheel rolls without slipping. What is the bicycle's speed?",
+              "choices": [
+                "3.1 m/s",
+                "0.90 m/s",
+                "7.7 m/s",
+                "1.2 m/s"
+              ],
+              "key": "C",
+              "rationale": "The chain moves at v = ωr = (9.0 rad/s)(0.10 m) = 0.90 m/s, the rim speed of both sprockets. The rear sprocket turns at 0.90/0.040 = 22.5 rad/s, and so does the wheel, so the bicycle moves at (22.5 rad/s)(0.34 m) ≈ 7.7 m/s.",
+              "distractorNotes": {
+                "A": "Gives the rear sprocket the front sprocket's angular velocity. The chain makes the sprockets' rim speeds equal, not their angular speeds.",
+                "B": "This is the chain's speed, not the speed of the rear wheel's rim.",
+                "D": "Inverts the radius ratio. The smaller rear sprocket must turn faster than the front one, not slower."
+              },
+              "topics": [
+                "P1.5.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc06",
+              "prompt": "A 25 kg child stands on a 75 kg cart at rest on a level track with negligible friction. The child jumps off the front of the cart, leaving it at 4.0 m/s, relative to the ground, directed 40° above the horizontal. What is the cart's speed just afterward?",
+              "choices": [
+                "1.0 m/s",
+                "1.3 m/s",
+                "0.86 m/s",
+                "2.3 m/s"
+              ],
+              "key": "A",
+              "rationale": "Take the child and cart as the system. The external forces on it, gravity and the track's normal force, are vertical, so its horizontal momentum stays zero: (25 kg)(4.0 m/s)(cos 40°) = (75 kg)v, so v ≈ 1.0 m/s, backward.",
+              "distractorNotes": {
+                "B": "Uses the child's whole 4.0 m/s. Only horizontal momentum is conserved: during the jump the track pushes up on the cart with more than the weights, an external vertical force.",
+                "C": "Uses the vertical component, (4.0 m/s) sin 40°, instead of the horizontal component.",
+                "D": "Gives the cart the child's kinetic energy. The child's muscles supply the energy, so energy alone cannot fix the speeds; momentum does."
+              },
+              "topics": [
+                "P1.4.3",
+                "P1.1.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc07",
+              "prompt": "An electric car speeds up along a level test track. The graph shows its kinetic energy K as a function of time t. Neglecting friction and air resistance, at what rate is net work being done on the car at t = 3.0 s?",
+              "figureIds": [
+                "p1-mixed-6-f2"
+              ],
+              "choices": [
+                "5.0 × 10^4 W",
+                "1.5 × 10^5 W",
+                "3.2 × 10^5 W",
+                "3.0 × 10^4 W"
+              ],
+              "key": "D",
+              "rationale": "The net power is the rate of change of kinetic energy, the slope of the K–t graph: (2.4 − 0.60) × 10^5 J/6.0 s = 3.0 × 10^4 W. The graph is a straight line, so the slope at t = 3.0 s is the same.",
+              "distractorNotes": {
+                "A": "Divides the kinetic energy at 3.0 s by 3.0 s. The car already had 0.60 × 10^5 J at t = 0, so K/t is not ΔK/Δt; the rate is the slope.",
+                "B": "Reads the graph's value at 3.0 s, which is the kinetic energy in joules, not a rate.",
+                "C": "Takes the area under the K–t graph from 0 to 3.0 s. That area has units of J·s and is not a power."
+              },
+              "topics": [
+                "P1.3.5",
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc08",
+              "prompt": "A 0.50 kg glider on a level, frictionless air track is attached to a spring. The graph shows the net force F on the glider as a function of its position x. The glider oscillates with an amplitude of 0.12 m. What is its maximum speed?",
+              "figureIds": [
+                "p1-mixed-6-f3"
+              ],
+              "choices": [
+                "1.5 m/s",
+                "1.1 m/s",
+                "3.1 m/s",
+                "0.76 m/s"
+              ],
+              "key": "B",
+              "rationale": "The slope of the graph gives k = (6.0 N)/(0.15 m) = 40 N/m. The energy stored at maximum displacement is the area under the F–x graph between 0 and A: (1/2)kA^2 = (1/2)(40)(0.12)^2 = 0.288 J. All of it is kinetic at equilibrium, so v = √(2(0.288 J)/0.50 kg) ≈ 1.1 m/s, or equivalently v = A√(k/m).",
+              "distractorNotes": {
+                "A": "Multiplies the force at x = 0.12 m by 0.12 m, the area of a rectangle. The force grows from zero, so the stored energy is the triangle under the graph, (1/2)kA^2.",
+                "C": "Uses (1/2)kA for the energy without squaring A, so the result is not even in joules.",
+                "D": "Writes the kinetic energy as mv^2, dropping the 1/2."
+              },
+              "topics": [
+                "P1.7.4",
+                "P1.7.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc09",
+              "prompt": "An aquarium's side wall has a rectangular window 1.0 m wide and 1.0 m tall. Its top edge is 0.50 m and its bottom edge 1.5 m below the surface of the fresh water inside; outside is air at atmospheric pressure. What is the magnitude of the net force of the water and the air on the window?",
+              "choices": [
+                "9.8 × 10^3 N",
+                "1.5 × 10^4 N",
+                "7.4 × 10^3 N",
+                "1.1 × 10^5 N"
+              ],
+              "key": "A",
+              "rationale": "The gauge pressure grows linearly with depth, so its average over the window is its value at the middle depth, 1.0 m: ρgh = (1000 kg/m^3)(9.8 m/s^2)(1.0 m) = 9.8 × 10^3 Pa. Atmospheric pressure acts on both sides. F = (9.8 × 10^3 Pa)(1.0 m^2) = 9.8 × 10^3 N.",
+              "distractorNotes": {
+                "B": "Uses the pressure at the bottom edge over the whole window. The pressure grows with depth, so its average over the window is at the middle depth.",
+                "C": "Uses half the bottom edge's depth as the average depth. That works only for a window that reaches up to the surface; here the average depth is 1.0 m.",
+                "D": "Includes atmospheric pressure, which acts on both faces of the window and cancels."
+              },
+              "topics": [
+                "P1.8.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc10",
+              "prompt": "Carts A and B move along parallel straight tracks in the +x direction. The graph shows their positions x as functions of time t: A moves at constant velocity, and B starts from rest at t = 0 and speeds up with constant acceleration. At what time do the carts have the same velocity?",
+              "figureIds": [
+                "p1-mixed-6-f4"
+              ],
+              "choices": [
+                "t = 0",
+                "t = 4.0 s",
+                "t = 8.0 s",
+                "At no time, because B speeds up and A does not"
+              ],
+              "key": "B",
+              "rationale": "Velocity is the slope of a position graph. A's slope is (10 m)/(10 s) = 1.0 m/s. B starts from rest with constant acceleration and reaches 8.0 m at 8.0 s, so its average velocity over those 8.0 s is 1.0 m/s, and with constant acceleration the average velocity equals the instantaneous velocity at the midpoint time, t = 4.0 s. There the tangent to B's curve is parallel to A's line.",
+              "distractorNotes": {
+                "A": "Both carts start at x = 0, but at t = 0 B's graph is flat (B is at rest) while A's has a slope of 1.0 m/s.",
+                "C": "The graphs cross at 8.0 s, so the carts are at the same position then. Equal velocities mean equal slopes, not equal positions.",
+                "D": "B's velocity rises steadily from zero past 1.0 m/s, so at one instant it equals A's velocity."
+              },
+              "topics": [
+                "P1.1.2",
+                "P1.1.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc11",
+              "prompt": "A satellite spins freely about its axis at 2.0 rad/s, and its rotational inertia about that axis is 800 kg·m^2. It then extends two long booms, which raises its rotational inertia to 2000 kg·m^2. No external torque acts. What is the satellite's rotational kinetic energy once the booms are fully extended?",
+              "choices": [
+                "1600 J",
+                "4000 J",
+                "256 J",
+                "640 J"
+              ],
+              "key": "D",
+              "rationale": "Angular momentum is conserved: (800 kg·m^2)(2.0 rad/s) = (2000 kg·m^2)ω, so ω = 0.80 rad/s. Then K = (1/2)(2000)(0.80)^2 = 640 J, down from (1/2)(800)(2.0)^2 = 1600 J; the mechanism that lets the booms out and stops them absorbs the difference.",
+              "distractorNotes": {
+                "A": "Keeps the rotational kinetic energy constant. Angular momentum is what is conserved, and extending the booms lowers the spin rate enough that the kinetic energy falls.",
+                "B": "Keeps the angular velocity at 2.0 rad/s. With no external torque the angular momentum, not the angular velocity, stays constant.",
+                "C": "Finds the new angular velocity, 0.80 rad/s, but uses the original rotational inertia in (1/2)Iω^2."
+              },
+              "topics": [
+                "P1.6.1",
+                "P1.6.4"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc12",
+              "prompt": "An open tank holds water 0.50 m deep on the floor of an elevator. The elevator is moving upward and speeding up at 2.0 m/s^2. What is the gauge pressure at the bottom of the tank?",
+              "choices": [
+                "4.9 × 10^3 Pa",
+                "3.9 × 10^3 Pa",
+                "5.9 × 10^3 Pa",
+                "1.0 × 10^3 Pa"
+              ],
+              "key": "C",
+              "rationale": "Take as the system the column of water of cross-sectional area A above a patch of the bottom. With up positive, Newton's second law gives P_gauge A − ρAhg = ρAha, since the atmosphere pushes on the top and contributes equally to the bottom's absolute pressure. So P_gauge = ρ(g + a)h = (1000 kg/m^3)(11.8 m/s^2)(0.50 m) = 5.9 × 10^3 Pa.",
+              "distractorNotes": {
+                "A": "Uses ρgh, which holds only when the water is not accelerating. The tank's bottom must push up on the water hard enough to accelerate it as well as support it.",
+                "B": "Subtracts the acceleration. The water accelerates upward, so the upward push from below must exceed the water's weight.",
+                "D": "Uses only the net force needed for the acceleration, ρah, and leaves out the water's weight."
+              },
+              "topics": [
+                "P1.8.3",
+                "P1.8.2",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc13",
+              "prompt": "A uniform pole 2.0 m long with a mass of 6.0 kg lies at rest on level, frictionless ice. Two horizontal forces, both perpendicular to the pole, begin to act on its ends: 10 N in the +y direction on one end and 4.0 N in the −y direction on the other end. The pole's rotational inertia about its center is (1/12)ML^2. Just after the forces begin to act, what are the magnitudes of the acceleration of the pole's center of mass and of its angular acceleration?",
+              "choices": [
+                "a_cm = 1.0 m/s^2 and α = 7.0 rad/s^2",
+                "a_cm = 2.3 m/s^2 and α = 7.0 rad/s^2",
+                "a_cm = 1.0 m/s^2 and α = 3.0 rad/s^2",
+                "a_cm = 0 and α = 7.0 rad/s^2"
+              ],
+              "key": "A",
+              "rationale": "The net force is 10 N − 4.0 N = 6.0 N in +y, so a_cm = 6.0 N/6.0 kg = 1.0 m/s^2. About the center, each force has a 1.0 m lever arm and both turn the pole the same way: τ = (10 N)(1.0 m) + (4.0 N)(1.0 m) = 14 N·m. With I = (1/12)(6.0 kg)(2.0 m)^2 = 2.0 kg·m^2, α = 14/2.0 = 7.0 rad/s^2. The translation comes from the net force and the rotation from the net torque, separately.",
+              "distractorNotes": {
+                "B": "Adds the sizes of the forces for the center of mass's motion. The forces point in opposite directions, so the net force is 6.0 N.",
+                "C": "Subtracts the torques as if they opposed each other. Opposite forces on opposite sides of the center turn the pole the same way.",
+                "D": "Assumes that forces at the ends only rotate the pole. Every external force contributes to the center of mass's acceleration, wherever it acts."
+              },
+              "topics": [
+                "P1.5.6",
+                "P1.2.1",
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc14",
+              "prompt": "A 1.0 kg block slides at 4.0 m/s onto the rough top of a 3.0 kg cart that is at rest on a level track with negligible friction. The block slides along the cart's top until the two move together. How much thermal energy is produced?",
+              "choices": [
+                "8.0 J",
+                "0 J",
+                "6.0 J",
+                "2.0 J"
+              ],
+              "key": "C",
+              "rationale": "For the block–cart system, the friction forces are internal and the external forces are vertical, so momentum is conserved: (1.0 kg)(4.0 m/s) = (4.0 kg)v, so v = 1.0 m/s. The kinetic energy falls from (1/2)(1.0)(4.0)^2 = 8.0 J to (1/2)(4.0)(1.0)^2 = 2.0 J, so 6.0 J becomes thermal energy.",
+              "distractorNotes": {
+                "A": "Assumes the block stops, so all its kinetic energy becomes thermal energy. Momentum is conserved, so the pair keeps moving at 1.0 m/s.",
+                "B": "Conserves kinetic energy. Kinetic friction between the block and the cart turns kinetic energy into thermal energy.",
+                "D": "This is the pair's final kinetic energy, not the energy converted."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.4.3",
+                "P1.4.4"
+              ]
+            },
+            {
+              "id": "p1-mixed-6-mc15",
+              "prompt": "Two carts on a level track with negligible friction are latched together, with repelling magnets mounted face to face between them. Cart P has a mass of 2.0 kg, and cart Q, in front of it, has a mass of 1.0 kg. The pair rolls forward at 2.0 m/s. The latch is then released, and the magnets push the carts apart. Once the carts have separated, cart P is at rest. What is cart Q's velocity then?",
+              "choices": [
+                "3.5 m/s forward",
+                "2.0 m/s forward",
+                "4.0 m/s forward",
+                "6.0 m/s forward"
+              ],
+              "key": "D",
+              "rationale": "Take both carts as the system. The magnets' forces are internal, and the external forces (gravity and the track's normal force) are vertical, so horizontal momentum is conserved: (3.0 kg)(2.0 m/s) = (2.0 kg)(0) + (1.0 kg)v, so v = 6.0 m/s forward.",
+              "distractorNotes": {
+                "A": "Gives cart Q all of the pair's original 6.0 J of kinetic energy. The magnets release stored energy as they push the carts apart, so kinetic energy is not conserved; momentum is, because the magnet forces are internal.",
+                "B": "Assumes each cart keeps the pair's velocity, which contradicts cart P ending at rest.",
+                "C": "Multiplies 2.0 m/s by the mass ratio 2.0 kg/1.0 kg instead of conserving the total momentum, 6.0 kg·m/s."
+              },
+              "topics": [
+                "P1.4.3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

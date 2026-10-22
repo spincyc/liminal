@@ -1,0 +1,430 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "fr-translation-between-representations",
+  "kind": "fr-archetype",
+  "title": "Translation Between Representations",
+  "author": "p1-fr-translation-between-representations-author",
+  "summary": "One free-response question on the AP® Physics 1 Exam asks you to describe a single situation in several ways: a diagram, an equation you derive, a graph you sketch, and words that tie them together. This guide shows how such a question usually runs, what earns each kind of point in Liminal's rubrics, model sentences, the usual traps and their fixes, and a worked model, then five self-checks and a practice set of four questions from four different units.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "p1-fr-translation-between-representations-g1",
+      "alt": "A free-body diagram drawn as a dot with three arrows starting on it: a long arrow straight down labeled F sub g, an arrow up and to the left, perpendicular to a 30 degree slope, labeled F sub N, and a short arrow pointing up the slope labeled f sub k. A caption reads: block on a 30° ramp, sliding down.",
+      "caption": "A model free-body diagram: one dot, one arrow for each force, every arrow starting on the dot. The block slides down the ramp, so kinetic friction points up the slope, and the normal force is perpendicular to the surface.",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-translation-between-representations-g2",
+      "alt": "An energy bar chart in three groups. Initial: no bar for K sub i and a positive bar for U sub g,i. Work: a negative bar for W sub f of the same size as the U sub g,i bar. Final: no bars for K sub f and U sub g,f.",
+      "caption": "Worked model, part (a): the block–Earth system's gravitational energy is removed by the negative work of friction."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "College Board's exam pages (checked 2026-10-22) name Translation Between Representations as one of the four free-response question types: Section II has one question of each type in 95 minutes, with a calculator allowed. The pages do not describe how the question is built or scored, so this guide is Liminal's own description of the type, and its 12-point value is a Liminal practice convention."
+        },
+        {
+          "type": "text",
+          "text": "The stem describes one physical situation. The parts then ask you to show it in different ways: as a diagram (a free-body diagram, an energy or momentum bar chart, the forces on a piece of fluid), as an equation you derive in symbols, as a graph you sketch on given axes, and in words. The last part usually asks whether the representations agree, uses them to judge a student's claim, or asks what changes when one quantity changes."
+        },
+        {
+          "type": "text",
+          "text": "The physics is seldom the hard part. The question tests whether each representation is right by its own conventions and whether they all tell the same story: the arrows in your diagram become the terms of your equation, and your equation predicts the shape, slope and intercepts of your graph. The situation can come from any unit."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Most questions use three or four of these, roughly in this order. The middle column is what you do; the right column is where Liminal's rubrics usually put the points.",
+          "head": [
+            "Part type",
+            "What you do",
+            "Points usually go to"
+          ],
+          "rows": [
+            [
+              "Draw a diagram",
+              "A free-body diagram, an energy or momentum bar chart, or a force sketch for a named object or system",
+              "Every force present and none extra; correct directions; labels that show which object exerts each force; relative lengths when they matter"
+            ],
+            [
+              "Derive an equation",
+              "Start from a fundamental relation, apply it to your diagram, solve in the symbols given",
+              "The starting relation; terms that match the diagram with consistent signs; the final expression in the requested symbols"
+            ],
+            [
+              "Sketch or complete a graph",
+              "Draw the shape on the given axes and label the values asked for",
+              "Shape (straight, curved, level, where it bends or jumps); labeled key values; agreement with your equation or earlier graph"
+            ],
+            [
+              "Connect the representations",
+              "Explain a feature, judge a claim, or predict a change",
+              "A specific feature of a representation used as evidence; the principle named; a clear conclusion"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The parts build on each other. A force missing from the diagram becomes a term missing from the derivation and a wrong slope on the graph, so check each representation before you move to the next one."
+        }
+      ]
+    },
+    {
+      "id": "what-earns-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics for this type award five kinds of points."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Diagram points: each force is an arrow that starts on the dot and points the way the force acts, labeled so a reader can tell which object exerts it (F_N from the floor, f_BA from block B on block A). The net force, \"ma\" and components are not forces and do not belong on a free-body diagram.",
+            "Derivation points: the work starts from a fundamental relation in symbols (ΣF = ma, ΣF = 0, J = Δp, conservation of energy, a constant-acceleration relation) and applies it to the forces or energies in your diagram. Starting from a formula for the final answer, or putting numbers into the first line, does not earn the starting point.",
+            "Symbol points: use the symbols the question gives, keep one sign convention throughout, and solve for the quantity named. An answer that contains a quantity the question did not allow, such as a numerical mass when the answer should be in terms of m, loses the final point.",
+            "Graph points: shape, values and labels. A straight line, a curve that bends the right way, a level section, a jump and an axis crossing each mean something. Label every value the question asks for; an unlabeled sketch rarely earns a value point.",
+            "Reasoning and consistency points: an explanation names the principle and the object or system it is applied to, and points to a specific feature of a representation (\"the slope of my velocity graph at t = 12 s is −1.0 m/s^2\"). Later parts that build correctly on an earlier mistake can still earn their points, so show what you used."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Free-body diagram conventions",
+          "text": "Represent the object as a dot. Draw one arrow for each force that another object exerts on it, starting on the dot and pointing in the direction of the force, and label each one so it is clear which object exerts it.",
+          "conditions": [
+            "Only forces exerted on the chosen object or system; forces it exerts on other objects go on their diagrams, as third-law partners.",
+            "Make lengths show relative sizes when the question asks or the motion tells you: balanced forces equal, a net force in the direction of the acceleration.",
+            "State the positive direction, and choose axes along the motion when that helps, for example along a ramp."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "p1-fr-translation-between-representations-g1"
+        },
+        {
+          "type": "rule",
+          "title": "Derivations start from a fundamental relation",
+          "text": "Write the general law first, apply it term by term to your diagram, and only then solve: ΣF_x = m a_x for block B becomes F − f = m_B a, rather than a formula remembered for this exact setup.",
+          "conditions": [
+            "Name the system and the positive direction before the first equation.",
+            "Every term should match an arrow or bar in your diagram, with the sign the diagram gives it.",
+            "Check the result: units, a limiting case (a mass, angle or coefficient going to zero), and agreement with any graph in the question."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "What graph features mean. To turn an equation into a graph, ask which variable is on each axis, whether the relation is linear in the horizontal variable, and what the slope and intercept are.",
+          "head": [
+            "Graph",
+            "Slope means",
+            "Area under it means",
+            "Other features"
+          ],
+          "rows": [
+            [
+              "Position against time",
+              "Velocity",
+              "Not used",
+              "A flat point means v = 0 there, not that a = 0; a curve bending upward means a positive acceleration"
+            ],
+            [
+              "Velocity against time",
+              "Acceleration",
+              "Displacement (signed)",
+              "Crossing the time axis means the object reverses direction"
+            ],
+            [
+              "Force against time",
+              "Not used",
+              "Impulse, equal to the change in momentum",
+              "A tall narrow shape and a low wide one can have the same area"
+            ],
+            [
+              "Momentum against time",
+              "Net force",
+              "Not used",
+              "A level section means zero net force"
+            ],
+            [
+              "Kinetic energy against position",
+              "Net force along the motion",
+              "Not used",
+              "A straight section means a constant net force"
+            ],
+            [
+              "Pressure against depth in a liquid at rest",
+              "ρg for the liquid at that depth",
+              "Not used",
+              "The vertical intercept is the pressure on the surface; a bend marks a change of liquid"
+            ],
+            [
+              "Spring force against stretch",
+              "Spring constant k",
+              "Elastic potential energy stored",
+              "A straight line through the origin means the spring obeys Hooke's law"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Describing a free-body diagram in words, for a crate lifted by a cable while it speeds up.",
+          "text": "Two forces act on the crate: the upward tension force F_T exerted by the cable and the downward gravitational force F_g exerted by Earth. The crate accelerates upward, so the F_T arrow is drawn longer than the F_g arrow."
+        },
+        {
+          "type": "model",
+          "prompt": "Starting the derivation for the same crate, of mass m with upward acceleration a.",
+          "text": "Take up as positive and apply Newton's second law to the crate: ΣF_y = ma, so F_T − mg = ma and F_T = m(g + a)."
+        },
+        {
+          "type": "model",
+          "prompt": "Connecting that equation to a graph.",
+          "text": "F_T = m(g + a) is linear in a, so a graph of F_T against a is a straight line with slope m. Its vertical intercept, mg, is the tension when the crate moves at constant velocity, and the line reaches F_T = 0 at a = −g, which is free fall."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluating a claim with a representation.",
+          "text": "The claim is incorrect. My velocity–time graph crosses zero at t = 3.0 s with a slope of −2.0 m/s^2, so at that instant the velocity is zero but the acceleration is −2.0 m/s^2. The object stops for an instant and reverses; it does not stay at rest."
+        },
+        {
+          "type": "model",
+          "prompt": "Checking two representations against each other.",
+          "text": "The area under my force–time graph is 4.5 N·s, and my momentum–time graph rises from 1.5 kg·m/s to 6.0 kg·m/s, a change of 4.5 kg·m/s. The two agree, as the impulse–momentum theorem requires."
+        },
+        {
+          "type": "model",
+          "prompt": "Predicting a change from a derived expression.",
+          "text": "My expression for the period, T = 2π√(m/k), contains m under a square root, so a block four times as massive has twice the period. If it is released from the same displacement, the new position–time curve has the same amplitude but completes one cycle in twice the time."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Drawing the net force, \"ma\" or force components as extra arrows on a free-body diagram.",
+          "fix": "Draw only forces that other objects exert. Put components on a separate sketch, dashed, and write the net force in the equation, not in the diagram."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming friction always points opposite the object's motion over the ground.",
+          "fix": "Friction opposes sliding, or the tendency to slide, between the two surfaces in contact. A crate riding on the bed of a truck that speeds up is pushed forward by friction."
+        },
+        {
+          "type": "trap",
+          "text": "Reading the value of a quantity as the value of its rate: v = 0, so a = 0; or p = 0, so F = 0.",
+          "fix": "A rate is a slope. At the peak of a position graph the slope is zero but the curve still bends; where a momentum graph crosses zero, the force is whatever the slope is there."
+        },
+        {
+          "type": "trap",
+          "text": "A graph with the right general shape but no labeled values.",
+          "fix": "Label every value the question asks for, at the right place on the axes: starting values, values where the graph changes shape, and axis crossings. Use the grid; a point off by a whole square can cost the value point."
+        },
+        {
+          "type": "trap",
+          "text": "A graph that contradicts your own equation: a line through the origin when the equation has a constant term, or a straight line when the equation has a square.",
+          "fix": "Before you draw, read the graph from the equation: which variable is on each axis, whether the relation is linear in the horizontal variable, and what the slope and intercept are. Then draw."
+        },
+        {
+          "type": "trap",
+          "text": "Starting a derivation from a special-case formula, such as P = P_0 + ρgh in a tank holding two liquids, or a constant-acceleration equation while the force changes.",
+          "fix": "Start from the general law, such as Newton's second law applied to a column of fluid or impulse equal to the change in momentum, and use a special case only when its conditions hold."
+        },
+        {
+          "type": "trap",
+          "text": "Answering a consistency question by saying the representations \"match\", or by restating the claim.",
+          "fix": "Name the feature in each representation (a slope, an intercept, an area, a bend), say what it shows, and then say yes or no."
+        },
+        {
+          "type": "trap",
+          "text": "Changing symbols or the positive direction between parts.",
+          "fix": "State the positive direction once, near the first diagram, and use the question's symbols in every part. If you introduce a new symbol, say what it stands for."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A 0.50 kg block is released from rest at the top of a frictionless curved ramp, h = 0.60 m above a level floor. At the bottom it slides onto the floor, where the coefficient of kinetic friction is μ_k = 0.40, and it stops a distance d from the bottom of the ramp. (a) Draw an energy bar chart for the block–Earth system from release until the block stops. (b) Starting from conservation of energy, derive an expression for d in terms of h and μ_k, and calculate d. (c) Sketch d as a function of h for 0 ≤ h ≤ 1.0 m. (d) A student claims that a 1.0 kg block released from the same height would slide farther, because it starts with more energy. Use your representations to evaluate the claim.",
+          "answer": "(a) Initially only gravitational potential energy; a negative work bar of the same size for friction; no energy in either store at the end. (b) d = h/μ_k = 1.5 m. (c) A straight line through the origin with slope 1/μ_k = 2.5. (d) Incorrect: the mass cancels, so d is the same.",
+          "steps": [
+            "(a) The system is the block and Earth; the floor is outside it, so friction does negative work on the system. Initially K = 0 and U_g = mgh = (0.50 kg)(9.8 m/s^2)(0.60 m) = 2.94 J. At the end K = 0 and U_g = 0, taking the floor as zero. The work bar is −2.94 J, the same size as the initial U_g bar.",
+            "(b) Energy conservation for the system: K_i + U_gi + W = K_f + U_gf, so 0 + mgh − μ_k mg d = 0. On the level floor the normal force is mg, so friction is μ_k mg and its work is −μ_k mg d. Solving, d = h/μ_k = 0.60 m / 0.40 = 1.5 m.",
+            "(c) d = h/μ_k is linear in h with no constant term, so the graph is a straight line through the origin with slope 1/μ_k = 2.5. It passes through (0.60 m, 1.5 m) and reaches 2.5 m at h = 1.0 m.",
+            "(d) The mass cancels in part (b). The heavier block does start with twice the energy, but its normal force, and so the friction force, is also twice as large, so it loses energy twice as fast per meter. The graph of d against h is the same line for every mass, so the claim is incorrect.",
+            "Check the habits: the bar chart names its system, the derivation starts from energy conservation in symbols, the graph's slope and intercept come from the equation, and the claim is judged with features of the representations."
+          ],
+          "figureIds": [
+            "p1-fr-translation-between-representations-g2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you reveal the answer."
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-translation-between-representations-c1",
+          "prompt": "An object's velocity–time graph is a straight line from +3.0 m/s at t = 0 to −3.0 m/s at t = 4.0 s. Describe the object's position–time graph at t = 2.0 s, and give the object's acceleration at t = 2.0 s.",
+          "hint": "Velocity is the slope of one graph; acceleration is the slope of another.",
+          "answer": "At t = 2.0 s the position graph has a horizontal tangent at its highest point, and it is concave down throughout. The acceleration is −1.5 m/s^2.",
+          "steps": [
+            "The velocity graph crosses zero at t = 2.0 s, so the slope of the position graph is zero there.",
+            "Velocity changes from positive to negative, so the position rises and then falls: t = 2.0 s is a maximum, and the constant negative acceleration makes the position graph concave down everywhere.",
+            "The acceleration is the slope of the velocity graph: (−3.0 − 3.0)/4.0 = −1.5 m/s^2 at every instant, including t = 2.0 s."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-translation-between-representations-c2",
+          "prompt": "A student draws a free-body diagram for a book that a hand pushes across a level table at constant velocity. It shows the gravitational force down, the normal force up, the hand's push forward, kinetic friction backward, and a fifth arrow labeled \"net force\" pointing forward. What is wrong, and how should the arrows' lengths compare?",
+          "hint": "For each arrow, name the object that exerts it.",
+          "answer": "The \"net force\" arrow does not belong: no object exerts it, and at constant velocity the net force is zero anyway. The push and friction arrows should be equal in length, and so should the normal force and gravitational force arrows.",
+          "steps": [
+            "Every arrow on a free-body diagram is a force exerted by some object. The net force is the sum of those forces, not another force.",
+            "Constant velocity means zero acceleration, so by Newton's second law the forces balance: push equals friction, and the normal force equals the weight."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-translation-between-representations-c3",
+          "prompt": "A student uses energy conservation to derive v^2 = v_0^2 + 2gh for the speed v of a ball thrown straight down with speed v_0 from a height h above the ground, as it reaches the ground. The student then sketches v against h as a straight line starting at v_0 when h = 0. Which feature of the sketch is inconsistent with the equation, and what graph would be a straight line?",
+          "hint": "Which quantity in the equation is linear in h?",
+          "answer": "The equation is linear in v^2, not in v, so v against h should be a curve whose slope decreases as h grows (v = √(v_0^2 + 2gh)); its starting value v_0 is right. A graph of v^2 against h is a straight line with slope 2g and vertical intercept v_0^2.",
+          "steps": [
+            "Solving for v gives v = √(v_0^2 + 2gh), a square-root curve: it starts at v_0 and rises more and more slowly.",
+            "v^2 = 2g·h + v_0^2 has the form y = mx + b with y = v^2 and x = h, so plotting v^2 against h gives a line of slope 2g and intercept v_0^2."
+          ],
+          "see": "traps"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-translation-between-representations-c4",
+          "prompt": "Two identical 0.50 kg pucks start at rest on frictionless ice. Puck 1 is pushed with a constant 4.0 N for 0.50 s. Puck 2 is pushed with a force that rises steadily from 0 to 8.0 N and falls steadily back to 0, over a total of 0.50 s. Compare the pucks' final speeds.",
+          "hint": "Compare the areas under the two force–time graphs.",
+          "answer": "They are equal: both pucks end at 4.0 m/s.",
+          "steps": [
+            "Puck 1: the impulse is the rectangle's area, (4.0 N)(0.50 s) = 2.0 N·s.",
+            "Puck 2: the impulse is the triangle's area, (1/2)(0.50 s)(8.0 N) = 2.0 N·s.",
+            "Equal impulses give equal changes in momentum: v = J/m = 2.0 N·s / 0.50 kg = 4.0 m/s for each."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "p1-fr-translation-between-representations-c5",
+          "prompt": "A graph of absolute pressure against depth in a liquid at rest is a straight line from 1.01 × 10^5 Pa at the surface to 1.17 × 10^5 Pa at a depth of 2.0 m. Find the liquid's density, and say what the graph's vertical intercept tells you.",
+          "hint": "Write the pressure-depth relation in the form y = mx + b.",
+          "answer": "About 820 kg/m^3 (816 kg/m^3). The intercept is the pressure on the liquid's surface, here 1.01 × 10^5 Pa, atmospheric pressure, as for a liquid open to the air.",
+          "steps": [
+            "P = P_0 + ρgy is linear in y with slope ρg and intercept P_0.",
+            "Slope = (1.17 × 10^5 − 1.01 × 10^5) Pa / 2.0 m = 8.0 × 10^3 Pa/m, so ρ = (8.0 × 10^3 Pa/m)/(9.8 m/s^2) ≈ 816 kg/m^3.",
+            "At y = 0 the pressure is 1.01 × 10^5 Pa, atmospheric pressure, the pressure the air exerts on the surface."
+          ],
+          "see": "what-earns-points"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set at Liminal's practice pace of 28 minutes a question, inside the 25–30 minutes Liminal's practice exams suggest for this type, two at a sitting: questions 1 and 2 (motion and forces), then questions 3 and 4 (impulse and fluids). Draw every diagram and graph on the axes provided, score each part with the rubric, and record raw points as practice. Then revisit the reviews and weeks below for any representation that cost you a point."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-translation-between-representations"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-translation-between-representations"
+            },
+            {
+              "label": "Unit 1 review: kinematics",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 2 review: force and translational dynamics",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 3 review: work, energy and power",
+              "ref": "guide:review-u3"
+            },
+            {
+              "label": "Unit 4 review: linear momentum",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 8 review: fluids",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Week 2: motion graphs and relative velocity",
+              "ref": "week:2"
+            },
+            {
+              "label": "Week 4: systems, center of mass and free-body diagrams",
+              "ref": "week:4"
+            },
+            {
+              "label": "Week 7: gravitational, friction and spring forces",
+              "ref": "week:7"
+            },
+            {
+              "label": "Week 11: conservation of energy and energy bar charts",
+              "ref": "week:11"
+            },
+            {
+              "label": "Week 14: momentum and impulse",
+              "ref": "week:14"
+            },
+            {
+              "label": "Week 26: density and pressure",
+              "ref": "week:26"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

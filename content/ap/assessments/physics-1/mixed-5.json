@@ -1,0 +1,375 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "mixed-5",
+  "kind": "mixed-set",
+  "title": "Mixed set 5: all units at exam pace",
+  "author": "p1-mixed-5-6-author",
+  "directions": "This original Liminal mixed set draws 15 multiple-choice questions from across the course at the exam's pace: 30 minutes, with a four-function, scientific or graphing calculator allowed. The questions are mixed on purpose, so part of each one is deciding which principle or method applies: momentum or energy, angular momentum or rotational energy, which forces are external to the system you chose, what supplies a centripetal acceleration, and whether a graph's slope or its area gives the quantity asked for. Expect it to feel slower than practising one topic at a time. Use g = 9.8 m/s^2 and neglect air resistance unless a question says otherwise; Liminal's formula reference may be used. Record raw points; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "p1-mixed-5-f1",
+      "alt": "Graph of acceleration a in m/s^2 against time t in seconds from 0 to 9 s. The acceleration is 2 m/s^2 from t = 0 to 3 s, zero from 3 s to 5 s, and −1 m/s^2 from 5 s to 8 s, where the graph ends.",
+      "caption": "The robot's acceleration"
+    },
+    {
+      "id": "p1-mixed-5-f2",
+      "alt": "Graph of net force F in newtons against time t in seconds. F rises in a straight line from 0 at t = 0 to 6 N at t = 2 s, then stays at 6 N until the graph ends at t = 4 s.",
+      "caption": "Net force on the cart"
+    },
+    {
+      "id": "p1-mixed-5-f3",
+      "alt": "Graph of velocity v in m/s against time t in seconds from 0 to about 2.25 s: a smooth sine-shaped curve that starts at zero, rises to 0.4 m/s at the point labeled P (t = 0.5 s), falls through zero at the point labeled Q (t = 1.0 s), reaches −0.4 m/s at the point labeled R (t = 1.5 s) and rises through zero at the point labeled S (t = 2.0 s).",
+      "caption": "Velocity of the oscillating block"
+    },
+    {
+      "id": "p1-mixed-5-f4",
+      "alt": "Graph of angular momentum L in kg·m^2/s against time t in seconds from 0 to 10 s. Straight segments join (0, 0), (2, 6), (5, 6) and (9, −4).",
+      "caption": "Angular momentum of the wheel"
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "Choose the best answer for each of the 15 questions and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question.",
+          "items": [
+            {
+              "id": "p1-mixed-5-mc01",
+              "prompt": "A delivery robot starts from rest and moves along a straight hallway; its initial direction of motion is positive. The graph shows its acceleration a as a function of time t. What is the robot's velocity at t = 8.0 s?",
+              "figureIds": [
+                "p1-mixed-5-f1"
+              ],
+              "choices": [
+                "9.0 m/s",
+                "3.0 m/s",
+                "−1.0 m/s",
+                "−8.0 m/s"
+              ],
+              "key": "B",
+              "rationale": "The change in velocity is the signed area under the a–t graph: (2.0 m/s^2)(3.0 s) + 0 + (−1.0 m/s^2)(3.0 s) = 6.0 − 3.0 = 3.0 m/s. Starting from rest, the robot's velocity at t = 8.0 s is +3.0 m/s.",
+              "distractorNotes": {
+                "A": "Adds the sizes of the two areas, 6.0 + 3.0. The area from 5 s to 8 s lies below the axis because the acceleration is negative there, so it subtracts.",
+                "C": "Reads the graph's value at t = 8.0 s, which is the acceleration in m/s^2, as if the graph showed velocity. On an acceleration graph the change in velocity is the area.",
+                "D": "Uses v = at with the final acceleration over the whole 8.0 s. That relation needs a constant acceleration from rest, and here the acceleration changes twice."
+              },
+              "topics": [
+                "P1.1.3",
+                "P1.1.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc02",
+              "prompt": "Two pucks slide on level, frictionless ice. Puck 1 (0.50 kg) is west of puck 2 (1.5 kg), and a stretched rubber band joining them pulls each puck toward the other with a 6.0 N force. At one instant a student pushes puck 1 east with a 4.0 N horizontal force while a string pulls puck 2 west with a 1.0 N horizontal force. Taking east as positive, what is the acceleration of the center of mass of the two-puck system at that instant?",
+              "choices": [
+                "2.5 m/s^2 east",
+                "4.5 m/s^2 east",
+                "7.7 m/s^2 east",
+                "1.5 m/s^2 east"
+              ],
+              "key": "D",
+              "rationale": "Take both pucks as the system. The band's forces are internal and cancel, so only the push and the string's pull change the motion of the center of mass: a_cm = (4.0 N − 1.0 N)/(0.50 kg + 1.5 kg) = 1.5 m/s^2 east. Check: puck 1 has a = (4.0 + 6.0)/0.50 = 20 m/s^2 east and puck 2 has a = (6.0 + 1.0)/1.5 ≈ 4.7 m/s^2 west, and [(0.50)(20) − (1.5)(4.67)]/2.0 = 1.5 m/s^2.",
+              "distractorNotes": {
+                "A": "Adds the sizes of the two external forces, 4.0 N + 1.0 N. They point in opposite directions, so the net external force is 3.0 N.",
+                "B": "Counts the band's 6.0 N pull on puck 1 as an external force. The band is inside the system: its pulls on the two pucks are equal and opposite and cancel.",
+                "C": "Averages the pucks' accelerations, 20 m/s^2 east and 4.7 m/s^2 west, without weighting by mass. The center of mass's acceleration is the mass-weighted average, which equals F_net,ext/M."
+              },
+              "topics": [
+                "P1.2.1",
+                "P1.2.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc03",
+              "prompt": "A 0.20 kg puck is tied to a peg fixed in level, frictionless ice by a light string 0.50 m long that does not stretch. The puck is pushed so that it slides at 3.0 m/s along a straight line whose closest distance to the peg is 0.40 m; it starts at that closest point, with the string slack, and moves away from the peg. When the string becomes taut, it jerks the puck, which from then on moves in a circle around the peg. What is the puck's speed just after the string becomes taut?",
+              "choices": [
+                "2.4 m/s",
+                "1.8 m/s",
+                "3.0 m/s",
+                "3.8 m/s"
+              ],
+              "key": "A",
+              "rationale": "The string's pull on the puck points at the peg, so it exerts no torque about the peg, and gravity and the normal force cancel. The puck's angular momentum about the peg, mvr⊥, is therefore conserved through the jerk, although its linear momentum (the string's pull is an external force on the puck) and its kinetic energy are not. Before the jerk r⊥ = 0.40 m; afterward the puck moves perpendicular to the 0.50 m string: (0.20 kg)(3.0 m/s)(0.40 m) = (0.20 kg)v(0.50 m), so v = 2.4 m/s. Equivalently, the jerk removes the velocity component along the string and leaves the perpendicular component, (3.0 m/s)(0.40/0.50).",
+              "distractorNotes": {
+                "B": "Keeps the velocity component along the string, (3.0 m/s)(0.30/0.50). The jerk removes that component; the component perpendicular to the string, which carries the angular momentum about the peg, is the one that remains.",
+                "C": "Assumes the puck's speed, and so its kinetic energy, is unchanged. The sudden jerk stops the puck's motion along the string, and that part of its kinetic energy becomes internal energy; angular momentum about the peg is the conserved quantity.",
+                "D": "Inverts the ratio of the distances, (3.0 m/s)(0.50/0.40). With mvr⊥ constant, the speed falls as the lever arm grows from 0.40 m to 0.50 m."
+              },
+              "topics": [
+                "P1.6.4",
+                "P1.6.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc04",
+              "prompt": "A 2.0 kg cart starts from rest on a level track with negligible friction. The graph shows the net horizontal force F on the cart as a function of time t. How much work does the net force do on the cart from t = 0 to t = 4.0 s?",
+              "figureIds": [
+                "p1-mixed-5-f2"
+              ],
+              "choices": [
+                "18 J",
+                "162 J",
+                "81 J",
+                "108 J"
+              ],
+              "key": "C",
+              "rationale": "The area under the F–t graph is the impulse: (1/2)(2.0 s)(6.0 N) + (2.0 s)(6.0 N) = 18 N·s. The cart starts from rest, so its momentum becomes 18 kg·m/s and v = 18/2.0 = 9.0 m/s. By the work–energy theorem, W_net = ΔK = (1/2)(2.0 kg)(9.0 m/s)^2 = 81 J.",
+              "distractorNotes": {
+                "A": "The area under a force–time graph is the impulse, 18 N·s, not the work. Work is the area under a force–position graph.",
+                "B": "Finds the momentum correctly but uses K = p^2/m, dropping the 1/2 in K = p^2/(2m).",
+                "D": "Treats the graph's area, 18, as a displacement in meters and multiplies it by the final 6.0 N force. The area under F–t is an impulse, and the force was not constant."
+              },
+              "topics": [
+                "P1.3.2",
+                "P1.4.2",
+                "P1.3.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc05",
+              "prompt": "A 1.5 kg ball is fixed to one end of a light, rigid rod 0.60 m long. A motor at the rod's other end turns it so that the ball moves in a vertical circle at a constant speed of 2.0 m/s. When the ball is at the top of the circle, what force does the rod exert on the ball?",
+              "choices": [
+                "10 N, downward",
+                "4.7 N, upward",
+                "25 N, downward",
+                "15 N, upward"
+              ],
+              "key": "B",
+              "rationale": "At the top the center is below the ball, so the net force must be mv^2/r = (1.5)(2.0)^2/0.60 = 10 N downward. Gravity alone gives mg = 14.7 N downward, more than is needed, so the rod must push up: 14.7 N − F_rod = 10 N gives F_rod ≈ 4.7 N upward. Centripetal force is the net force toward the center, not an extra force.",
+              "distractorNotes": {
+                "A": "This is the net force the ball needs, mv^2/r, toward the center. Gravity supplies part of it, so the rod's force is not the whole centripetal force.",
+                "C": "Uses the bottom-of-the-circle relation F = mg + mv^2/r. At the top, gravity points toward the center, so it helps supply the centripetal acceleration instead of adding to what the rod must do.",
+                "D": "Treats the ball as if it were in equilibrium, with the rod simply holding up its weight. A ball moving in a circle accelerates toward the center, so the net force on it is not zero."
+              },
+              "topics": [
+                "P1.2.9",
+                "P1.2.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc06",
+              "prompt": "A uniform plank 4.0 m long with a mass of 30 kg is attached to a dock by a hinge at its left end. A vertical rope tied to the plank's midpoint holds the plank horizontal. A 20 kg child stands at the plank's right end. What force does the hinge exert on the plank?",
+              "choices": [
+                "2.0 × 10^2 N, upward",
+                "2.5 × 10^2 N, upward",
+                "6.9 × 10^2 N, upward",
+                "2.0 × 10^2 N, downward"
+              ],
+              "key": "D",
+              "rationale": "Torques about the hinge: T(2.0 m) = (30 kg)(9.8 m/s^2)(2.0 m) + (20 kg)(9.8 m/s^2)(4.0 m), so T = 686 N. Vertical forces, up positive: H + 686 N − (50 kg)(9.8 m/s^2) = 0, so H = −196 N, about 2.0 × 10^2 N downward. Torques about the rope's attachment point give the same result directly: H(2.0 m) = (196 N)(2.0 m).",
+              "distractorNotes": {
+                "A": "Gets the size from the force balance but assumes a hinge must push up. With the rope at the midpoint, the child's torque about the rope's attachment point has to be balanced by a downward hinge force.",
+                "B": "Shares the total weight equally between the rope and the hinge using the force condition alone. The rope's tension follows from the torque condition, which must hold too.",
+                "C": "This is the rope's tension, found from torques about the hinge. The hinge force then follows from the vertical force balance."
+              },
+              "topics": [
+                "P1.5.5",
+                "P1.5.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc07",
+              "prompt": "An open 20 kg cart rolls at 3.0 m/s along a level track with negligible friction. Rain falls vertically into it until 5.0 kg of water has collected in the cart and moves with it. What is the cart's speed then?",
+              "choices": [
+                "2.4 m/s",
+                "3.0 m/s",
+                "2.7 m/s",
+                "3.8 m/s"
+              ],
+              "key": "A",
+              "rationale": "Take the cart and the water that lands in it as the system. The external forces on it (gravity and the track's normal force) are vertical, so its horizontal momentum is conserved: (20 kg)(3.0 m/s) = (25 kg)v, so v = 2.4 m/s.",
+              "distractorNotes": {
+                "B": "The rain brings no horizontal momentum, but the cart must share its momentum with the water, which has to be brought up to the cart's speed. The cart pushes the water forward, and the water pushes the cart back.",
+                "C": "Conserves kinetic energy. The water ends up moving with the cart, a perfectly inelastic interaction, so kinetic energy is lost; horizontal momentum is the conserved quantity.",
+                "D": "Inverts the mass ratio, which would make the cart speed up as it gains mass."
+              },
+              "topics": [
+                "P1.4.3",
+                "P1.4.4"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc08",
+              "prompt": "A block on a horizontal spring moves in simple harmonic motion on a frictionless surface; the positive direction is to the right. The graph shows the block's velocity v as a function of time t, with four instants labeled P, Q, R and S. At which labeled instant is the block farthest to the right of its equilibrium position?",
+              "figureIds": [
+                "p1-mixed-5-f3"
+              ],
+              "choices": [
+                "P",
+                "Q",
+                "R",
+                "S"
+              ],
+              "key": "B",
+              "rationale": "The block is at an extreme where v = 0, at Q or S. The acceleration is the slope of the velocity graph, and in simple harmonic motion a = −(k/m)x, so the block is farthest right where the slope is most negative. At Q the slope is negative (v goes from positive to negative); at S it is positive. Equivalently, the area under the graph from P to Q is positive: the block keeps moving right until Q.",
+              "distractorNotes": {
+                "A": "At P the speed is greatest, which happens as the block passes equilibrium (x = 0), not at an extreme.",
+                "C": "At R the velocity is most negative: the block is passing equilibrium while moving left.",
+                "D": "At S the velocity is zero, so the block is at an extreme, but the slope of the v–t graph (the acceleration) is positive there, so the block is at its leftmost point."
+              },
+              "topics": [
+                "P1.7.3",
+                "P1.7.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc09",
+              "prompt": "A container of water with a floating wooden block in it sits on a scale that reads 30.0 N. The block has a mass of 0.60 kg and a volume of 1.0 × 10^−3 m^3. A student uses a thin rod to push the block down until it is just completely under water, and holds it there without touching the container. Ignoring the rod's own volume under water, what does the scale read now?",
+              "choices": [
+                "30.0 N",
+                "39.8 N",
+                "33.9 N",
+                "26.1 N"
+              ],
+              "key": "C",
+              "rationale": "Fully submerged, the block feels a buoyant force ρVg = (1000 kg/m^3)(1.0 × 10^−3 m^3)(9.8 m/s^2) = 9.8 N, and its weight is 5.88 N, so holding it at rest takes a downward push of 9.8 − 5.88 ≈ 3.9 N. For the system of container, water and block, the external forces are gravity, the rod's 3.9 N push and the scale's upward force, so the scale reads 30.0 + 3.9 ≈ 33.9 N.",
+              "distractorNotes": {
+                "A": "Treats the rod's push as internal to the container system. The rod is held by the student, outside the system of container, water and block, so its downward push is an extra external force that the scale must balance.",
+                "B": "Adds the whole 9.8 N buoyant force on the submerged block. The 30.0 N reading already includes the block's 5.9 N weight, which the water was carrying as a buoyant force.",
+                "D": "Subtracts the rod's push. The rod pushes the block down, and the water passes that extra force on to the container and the scale."
+              },
+              "topics": [
+                "P1.8.3",
+                "P1.2.1"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc10",
+              "prompt": "A cart moves along a straight, level track at 2.0 m/s and is speeding up at a constant 1.5 m/s^2. At that instant a launcher on the cart fires a ball straight up, relative to the cart, at 4.9 m/s. When the ball comes back down to its launch height, where is it relative to the launcher?",
+              "choices": [
+                "0.75 m behind the launcher",
+                "In the launcher",
+                "2.8 m behind the launcher",
+                "1.5 m behind the launcher"
+              ],
+              "key": "A",
+              "rationale": "The ball is in the air for 2(4.9 m/s)/(9.8 m/s^2) = 1.0 s. In the ground frame it moves horizontally at a constant 2.0 m/s and covers 2.0 m, while the cart covers (2.0)(1.0) + (1/2)(1.5)(1.0)^2 = 2.75 m. So the ball lands 0.75 m behind the launcher. In the cart's accelerating frame, the ball falls behind by (1/2)at^2.",
+              "distractorNotes": {
+                "B": "That would be true only if the cart moved at constant velocity. The ball keeps the 2.0 m/s horizontal velocity it had at launch, but the cart keeps speeding up.",
+                "C": "Gives the ball no horizontal velocity. In the ground frame the ball leaves with the cart's 2.0 m/s horizontal velocity.",
+                "D": "Uses Δx = at^2 for the cart's extra distance, dropping the 1/2 in Δx = (1/2)at^2."
+              },
+              "topics": [
+                "P1.1.4",
+                "P1.1.5"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc11",
+              "prompt": "The graph shows the angular momentum L of a wheel about its fixed axle as a function of time t, with counterclockwise taken as positive. What is the net torque on the wheel at t = 7.0 s?",
+              "figureIds": [
+                "p1-mixed-5-f4"
+              ],
+              "choices": [
+                "1.0 N·m",
+                "0.14 N·m",
+                "−10 N·m",
+                "−2.5 N·m"
+              ],
+              "key": "D",
+              "rationale": "Net torque is the rate of change of angular momentum, the slope of the L–t graph. From t = 5.0 s to 9.0 s the line falls from 6.0 to −4.0 kg·m^2/s, so τ = (−10 kg·m^2/s)/(4.0 s) = −2.5 N·m, that is, 2.5 N·m clockwise.",
+              "distractorNotes": {
+                "A": "Reads the graph's value at t = 7.0 s, which is the angular momentum in kg·m^2/s, not the torque.",
+                "B": "Divides L at t = 7.0 s by 7.0 s. The torque is the instantaneous rate of change of L, the slope of the graph at 7.0 s, not L/t.",
+                "C": "Uses the change in L from 5.0 s to 9.0 s without dividing by the 4.0 s interval; that change is the angular impulse, in N·m·s."
+              },
+              "topics": [
+                "P1.6.3"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc12",
+              "prompt": "A ceiling fan is speeding up. At one instant its angular velocity is 2.0 rad/s and its angular acceleration is 3.0 rad/s^2. What is the magnitude of the acceleration of a point on a blade 0.50 m from the axis at that instant?",
+              "choices": [
+                "2.0 m/s^2",
+                "1.5 m/s^2",
+                "2.5 m/s^2",
+                "3.5 m/s^2"
+              ],
+              "key": "C",
+              "rationale": "The centripetal part is a_c = ω^2r = (2.0 rad/s)^2(0.50 m) = 2.0 m/s^2 toward the axis, and the tangential part is a_t = αr = (3.0 rad/s^2)(0.50 m) = 1.5 m/s^2 along the path. They are perpendicular, so a = √(2.0^2 + 1.5^2) = 2.5 m/s^2.",
+              "distractorNotes": {
+                "A": "This is only the centripetal part, ω^2r. Because the fan is speeding up, the point also has a tangential acceleration.",
+                "B": "This is only the tangential part, αr. The point moves in a circle, so it also accelerates toward the center.",
+                "D": "Adds the two parts as numbers. One points toward the axis and the other along the path, so they are perpendicular and combine as vectors."
+              },
+              "topics": [
+                "P1.5.2",
+                "P1.2.9"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc13",
+              "prompt": "A standing person's blood pressure is measured at her upper arm, level with her heart, where the gauge pressure is 1.6 × 10^4 Pa. An artery in her ankle is 1.3 m below her heart. Treating the blood, of density 1060 kg/m^3, as a fluid at rest in connected vessels, what is the gauge pressure in the ankle artery?",
+              "choices": [
+                "3.0 × 10^4 Pa",
+                "1.6 × 10^4 Pa",
+                "2.5 × 10^3 Pa",
+                "1.3 × 10^5 Pa"
+              ],
+              "key": "A",
+              "rationale": "In a connected fluid at rest, the pressure increases by ρgh with depth below any reference point, whatever the pressure at that point is. The ankle is 1.3 m below the heart: P = 1.6 × 10^4 Pa + (1060 kg/m^3)(9.8 m/s^2)(1.3 m) = 1.6 × 10^4 Pa + 1.35 × 10^4 Pa ≈ 3.0 × 10^4 Pa (gauge).",
+              "distractorNotes": {
+                "B": "Assumes the pressure is the same everywhere in the connected vessels. Pascal's principle says a change in pressure is transmitted throughout the fluid, but the pressure still grows with depth by ρgh.",
+                "C": "Subtracts ρgh, as if the ankle were 1.3 m above the heart. Pressure increases with depth, and the ankle is below the heart.",
+                "D": "Adds atmospheric pressure, which gives the absolute pressure rather than the gauge pressure."
+              },
+              "topics": [
+                "P1.8.2"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc14",
+              "prompt": "In a safety test, an empty elevator car of mass 1.0 × 10^3 kg is moving straight down at 2.8 m/s, with no cable or brake force acting on it, when it reaches the top of a buffer spring at the bottom of the shaft. The spring, with spring constant 2.7 × 10^4 N/m, brings the car momentarily to rest. Neglecting friction and the spring's mass, what is the car's acceleration at its lowest point?",
+              "choices": [
+                "Zero, because the car is momentarily at rest",
+                "18 m/s^2, upward",
+                "9.8 m/s^2, downward",
+                "27 m/s^2, upward"
+              ],
+              "key": "B",
+              "rationale": "Use energy for the car–spring–Earth system from first contact to the lowest point, a compression x below first contact, where v = 0: (1/2)mv^2 + mgx = (1/2)kx^2, that is 1.35 × 10^4 x^2 − 9800x − 3920 = 0, so x ≈ 1.01 m. There the spring pushes up with kx ≈ 2.73 × 10^4 N and gravity pulls down with 9.8 × 10^3 N, so a = (2.73 × 10^4 N − 9.8 × 10^3 N)/(1.0 × 10^3 kg) ≈ 18 m/s^2 upward. Energy locates the lowest point; Newton's second law gives the acceleration there.",
+              "distractorNotes": {
+                "A": "Zero velocity does not mean zero net force. At the lowest point the spring is compressed well past the point where its force would balance the car's weight.",
+                "C": "Treats the car as if only gravity acted. At the lowest point the spring pushes up with a force nearly three times the car's weight.",
+                "D": "Uses the spring force alone, kx/m, and leaves out the car's weight."
+              },
+              "topics": [
+                "P1.3.4",
+                "P1.2.8"
+              ]
+            },
+            {
+              "id": "p1-mixed-5-mc15",
+              "prompt": "Carts A and B start from rest on a level track with negligible friction. Cart A has a mass of 0.40 kg and cart B a mass of 1.2 kg. The same constant 12 N horizontal force acts on each cart for 0.50 s. How does the work done on cart B compare with the work done on cart A?",
+              "choices": [
+                "It is the same, because the forces and times are equal.",
+                "It is three times as much.",
+                "It is one-third as much.",
+                "It is one-ninth as much."
+              ],
+              "key": "C",
+              "rationale": "Each cart receives the same impulse, (12 N)(0.50 s) = 6.0 N·s, so each ends with a momentum of 6.0 kg·m/s. The work done equals the kinetic energy gained, K = p^2/(2m): 45 J for A and 15 J for B, so B receives one-third as much work. Equal impulse means equal momentum, not equal energy.",
+              "distractorNotes": {
+                "A": "Equal forces for equal times give equal impulses, so equal momenta. Work depends on distance, and the heavier cart moves a shorter distance in 0.50 s.",
+                "B": "Assumes the work grows with mass. With equal momenta, K = p^2/(2m) is smaller for the larger mass.",
+                "D": "Squares B's one-third speed but leaves out B's three-times mass: K_B/K_A = 3 × (1/3)^2 = 1/3."
+              },
+              "topics": [
+                "P1.4.2",
+                "P1.3.2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

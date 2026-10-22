@@ -318,9 +318,17 @@ function validatePrep(course, c) {
   c.unique([...prep.strategy, ...prep.reviews, ...prep.workshop], where + " guides");
   const rule = course.blueprints.frSet;
   if (c.check(rule && typeof rule === "object", where, "a workshop needs blueprints.frSet")) {
-    c.check(rule.frPoints === course.blueprints.practiceExam.frPoints, "ap." + course.id + ".blueprints.frSet", "frPoints match the practice exam's");
-    c.check(Number.isInteger(rule.minutesPerQuestion) && rule.minutesPerQuestion > 0, "ap." + course.id + ".blueprints.frSet", "needs whole minutes per question");
-    c.check(Array.isArray(rule.questions) && rule.questions.length === 2 && rule.questions.every(n => Number.isInteger(n) && n > 0) && rule.questions[0] <= rule.questions[1], "ap." + course.id + ".blueprints.frSet", "needs a [least, most] question range");
+    const at = "ap." + course.id + ".blueprints.frSet";
+    if (PHYSICS.has(course.id)) {
+      // Physics sets are paced per question type; the types and their points are the exam's.
+      c.check(JSON.stringify(rule.frTypes) === JSON.stringify(course.blueprints.practiceExam.frTypes), at, "frTypes match the practice exam's");
+      c.check(rule.minutesByType && typeof rule.minutesByType === "object" && JSON.stringify(Object.keys(rule.minutesByType).sort()) === JSON.stringify(Object.keys(A.FR_TYPES).sort())
+        && Object.values(rule.minutesByType).every(n => Number.isInteger(n) && n > 0), at, "needs whole minutes for every free-response type");
+    } else {
+      c.check(rule.frPoints === course.blueprints.practiceExam.frPoints, at, "frPoints match the practice exam's");
+      c.check(Number.isInteger(rule.minutesPerQuestion) && rule.minutesPerQuestion > 0, at, "needs whole minutes per question");
+    }
+    c.check(Array.isArray(rule.questions) && rule.questions.length === 2 && rule.questions.every(n => Number.isInteger(n) && n > 0) && rule.questions[0] <= rule.questions[1], at, "needs a [least, most] question range");
   }
   if (!c.check(prep.plans.length > 0, where + ".plans", "needs at least one review plan")) return;
   c.unique(prep.plans.map(p => p.id), where + ".plans");

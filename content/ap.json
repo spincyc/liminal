@@ -60,8 +60,8 @@
       "url": "https://apcentral.collegeboard.org/courses/ap-physics-1/exam",
       "publisher": "College Board",
       "edition": "Exam format effective May 2027",
-      "accessed": "2026-10-08",
-      "note": "Source of the practice-exam format: section counts, timing, calculator policy, and the four free-response question types and their points. Recheck each fall."
+      "accessed": "2026-10-22",
+      "note": "Source of the practice-exam format: section counts, timing, calculator policy, and the four free-response question types. Point values per type are Liminal practice conventions. Recheck each fall."
     },
     {
       "id": "ced-physics-c-mechanics",
@@ -87,8 +87,8 @@
       "url": "https://apcentral.collegeboard.org/courses/ap-physics-c-mechanics/exam",
       "publisher": "College Board",
       "edition": "Exam format effective May 2027",
-      "accessed": "2026-10-08",
-      "note": "Source of the practice-exam format: section counts, timing, calculator policy, and the four free-response question types and their points. Recheck each fall."
+      "accessed": "2026-10-22",
+      "note": "Source of the practice-exam format: section counts, timing, calculator policy, and the four free-response question types. Point values per type are Liminal practice conventions. Recheck each fall."
     },
     {
       "id": "course-calculus-bc",
@@ -161,6 +161,33 @@
       "title": "AP® Calculus AB exam overview for students",
       "url": "https://apstudents.collegeboard.org/courses/ap-calculus-ab/assessment",
       "edition": "HTML page checked for May 2027"
+    },
+    {
+      "publisher": "College Board",
+      "accessed": "2026-10-22",
+      "note": "Exam-format and policy facts only. No official questions, scoring materials, or CED PDFs were used.",
+      "id": "assessment-physics-1",
+      "title": "AP® Physics 1 exam overview for students",
+      "url": "https://apstudents.collegeboard.org/courses/ap-physics-1/assessment",
+      "edition": "HTML page checked for May 2027"
+    },
+    {
+      "publisher": "College Board",
+      "accessed": "2026-10-22",
+      "note": "Exam-format and policy facts only. No official questions, scoring materials, or CED PDFs were used.",
+      "id": "assessment-physics-c-mechanics",
+      "title": "AP® Physics C: Mechanics exam overview for students",
+      "url": "https://apstudents.collegeboard.org/courses/ap-physics-c-mechanics/assessment",
+      "edition": "HTML page checked for May 2027"
+    },
+    {
+      "publisher": "College Board",
+      "accessed": "2026-10-22",
+      "note": "Exam-format and policy facts only. No official questions, scoring materials, or CED PDFs were used.",
+      "id": "reference-information",
+      "title": "AP® exam reference information",
+      "url": "https://apcentral.collegeboard.org/exam-administration-ordering-scores/administering-exams/subject-specific/reference-information",
+      "edition": "HTML page checked for 2026–27"
     }
   ],
   "standards": [
@@ -6107,10 +6134,10 @@
         "name": "AP® Physics 1 Exam",
         "effective": "May 2027",
         "sourceId": "exam-physics-1",
-        "checked": "2026-10-08",
-        "delivery": "Hybrid digital: multiple choice in the Bluebook app and free response handwritten in a paper booklet. Liminal practice exams are printed.",
-        "calculator": "A four-function, scientific, or graphing calculator is allowed in both sections.",
-        "reference": "An equation sheet is supplied.",
+        "checked": "2026-10-22",
+        "delivery": "Hybrid digital: multiple-choice responses and free-response prompts in Bluebook, with handwritten free-response answers in a paper booklet. Liminal practice examinations are printed.",
+        "calculator": "A four-function, scientific, or graphing calculator is allowed in both sections. Bluebook provides a built-in Desmos scientific or graphing calculator, and up to two approved handheld calculators may also be used (College Board's calculator policy page).",
+        "reference": "An equation sheet is supplied: College Board's pages say its reference materials are printed for the exam room and also available in Bluebook. Liminal's practice exams append Liminal's own formula reference instead.",
         "sections": [
           {
             "id": "I",
@@ -6140,7 +6167,9 @@
           }
         ],
         "notes": [
-          "Free response has one question of each type: Mathematical Routines (10 points), Translation Between Representations (12 points), Experimental Design and Analysis (10 points), and Qualitative/Quantitative Translation (8 points)."
+          "The exam lasts 3 hours.",
+          "Free response has one question of each type: Mathematical Routines, Translation Between Representations, Experimental Design and Analysis, and Qualitative/Quantitative Translation.",
+          "Liminal practice scores those types out of 10, 12, 10 and 8 points. College Board's exam pages, checked 2026-10-22, do not state point values."
         ]
       },
       "blueprints": {
@@ -6200,7 +6229,670 @@
             "QQT": 8
           },
           "oneOfEachFrType": true
+        },
+        "mixedSet": {
+          "parts": [
+            {
+              "id": "A",
+              "questions": 15,
+              "minutes": 30,
+              "calculator": "any"
+            }
+          ],
+          "minUnits": 6
+        },
+        "frSet": {
+          "frTypes": {
+            "MR": 10,
+            "TBR": 12,
+            "EDA": 10,
+            "QQT": 8
+          },
+          "minutesByType": {
+            "MR": 22,
+            "TBR": 28,
+            "EDA": 27,
+            "QQT": 18
+          },
+          "questions": [
+            3,
+            4
+          ]
         }
+      },
+      "prep": {
+        "title": "Exam preparation",
+        "summary": "Preparation for the AP® Physics 1 Exam once the units are taught: four original full-length practice exams, six mixed timed sets, a free-response workshop with a guide and a four-question set for each of the four question types, a review sheet for every unit, strategy guides, and plans that space this work over the weeks before the exam. Paper practice does not replace the hands-on lab work the AP® physics courses require.",
+        "steps": [
+          "Choose a plan by the weeks left before your exam and put its practice-exam days on a calendar first.",
+          "Take practice exam A under exam timing, with a calculator and the formula reference printed at the end of the student copy. Score it with its key and log every lost point by unit and by cause.",
+          "Work each unit review by answering its checks before you open the answers. Reread only what a missed check sends you to, then try that check again on a later day.",
+          "Read each free-response guide, then do its set at the printed pace, two questions at a sitting. Score them with the rubrics and rewrite one answer until every point is earned.",
+          "On days without a full exam, take a mixed set: it mixes the units as the exam does, so you practise recognizing which principle applies as well as using it.",
+          "Take later forms under the same conditions and compare raw points by section and by unit with your first form. Raw points are practice evidence, not AP scores."
+        ],
+        "exams": [
+          {
+            "id": "practice-exam",
+            "label": "Practice exam A",
+            "note": "The course's week-33 exam. Take it first, under exam timing, to find a starting point."
+          },
+          {
+            "id": "practice-exam-b",
+            "label": "Practice exam B",
+            "note": "A second form for the middle of a review plan."
+          },
+          {
+            "id": "practice-exam-c",
+            "label": "Practice exam C",
+            "note": "A third form for a late rehearsal: about three weeks before the exam in the eight-week plan, or about ten days before it in the four-week plan."
+          },
+          {
+            "id": "practice-exam-d",
+            "label": "Practice exam D",
+            "note": "A fourth form: the eight-week plan's last full rehearsal, about ten days before the exam."
+          }
+        ],
+        "mixed": [
+          "mixed-1",
+          "mixed-2",
+          "mixed-3",
+          "mixed-4",
+          "mixed-5",
+          "mixed-6"
+        ],
+        "strategy": [
+          "exam-format",
+          "multiple-choice-methods",
+          "free-response-writing",
+          "formula-reference-skills",
+          "practice-exam-method"
+        ],
+        "reviews": [
+          "review-u1",
+          "review-u2",
+          "review-u3",
+          "review-u4",
+          "review-u5",
+          "review-u6",
+          "review-u7",
+          "review-u8"
+        ],
+        "workshop": [
+          "fr-mathematical-routines",
+          "fr-translation-between-representations",
+          "fr-experimental-design",
+          "fr-qualitative-quantitative"
+        ],
+        "plans": [
+          {
+            "id": "eight-week",
+            "title": "Eight-week review",
+            "summary": "For a student who has finished, or nearly finished, the units. Plan about five sessions a week of 60 to 90 minutes, plus a 3-hour exam sitting in weeks 1, 4, 6 and 7, with the next session for scoring and logging it. The four practice exams fall about 8, 5 and 3 weeks before the exam and again about 10 days before it, so each has time to change what you study next. Every unit comes back at least three times: its review, a later retry of its checks, and the mixed sets and exams. Each free-response set is split across two sittings weeks apart. None of the last four days holds a full exam.",
+            "sessions": [
+              {
+                "label": "Week 1",
+                "title": "Find a starting point",
+                "tasks": [
+                  {
+                    "text": "Read how the exam runs and how to pace it.",
+                    "ref": "guide:exam-format"
+                  },
+                  {
+                    "text": "Learn the method for taking, scoring and logging a practice exam.",
+                    "ref": "guide:practice-exam-method"
+                  },
+                  {
+                    "text": "Take practice exam A in one sitting, with a calculator and the formula reference.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key, then log each lost point by unit and cause.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "Learn where things are on the formula reference and what it leaves out.",
+                    "ref": "guide:formula-reference-skills"
+                  }
+                ]
+              },
+              {
+                "label": "Week 2",
+                "title": "Motion and forces",
+                "tasks": [
+                  {
+                    "text": "Unit 1 review: answer every check before opening it.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Workshop guide: Mathematical Routines questions.",
+                    "ref": "guide:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mathematical Routines set, questions 1 and 2, timed at 44 minutes; score them with the rubric.",
+                    "ref": "test:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 3",
+                "title": "Energy and momentum",
+                "tasks": [
+                  {
+                    "text": "Unit 3 review.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Unit 4 review.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Workshop guide: Translation Between Representations questions.",
+                    "ref": "guide:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Translation Between Representations set, questions 1 and 2, timed at 56 minutes; score them with the rubric.",
+                    "ref": "test:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 1 review again.",
+                    "ref": "guide:review-u1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 4",
+                "title": "Second form and rotation",
+                "tasks": [
+                  {
+                    "text": "Take practice exam B under exam timing.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Score it and compare raw points by section and unit with exam A.",
+                    "ref": "key:practice-exam-b"
+                  },
+                  {
+                    "text": "Unit 5 review.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Workshop guide: Experimental Design and Analysis questions.",
+                    "ref": "guide:fr-experimental-design"
+                  },
+                  {
+                    "text": "Experimental Design and Analysis set, questions 1 and 2, timed at 54 minutes; score them with the rubric.",
+                    "ref": "test:fr-experimental-design"
+                  },
+                  {
+                    "text": "Methods for multiple choice: limiting cases, units and ratios.",
+                    "ref": "guide:multiple-choice-methods"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 2 review again.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 3 review again.",
+                    "ref": "guide:review-u3"
+                  }
+                ]
+              },
+              {
+                "label": "Week 5",
+                "title": "Rotating systems, oscillations and fluids",
+                "tasks": [
+                  {
+                    "text": "Unit 6 review.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Unit 7 review.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Unit 8 review.",
+                    "ref": "guide:review-u8"
+                  },
+                  {
+                    "text": "Workshop guide: Qualitative/Quantitative Translation questions.",
+                    "ref": "guide:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Qualitative/Quantitative Translation set, questions 1 and 2, timed at 36 minutes; score them with the rubric.",
+                    "ref": "test:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Mixed set 3, timed.",
+                    "ref": "test:mixed-3"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 4 review again.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 5 review again.",
+                    "ref": "guide:review-u5"
+                  }
+                ]
+              },
+              {
+                "label": "Week 6",
+                "title": "A third form",
+                "tasks": [
+                  {
+                    "text": "Take practice exam C under exam timing, about three weeks before the exam.",
+                    "ref": "test:practice-exam-c"
+                  },
+                  {
+                    "text": "Score it and update the error log.",
+                    "ref": "key:practice-exam-c"
+                  },
+                  {
+                    "text": "Writing free-response answers that show every step a reader looks for.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "Mathematical Routines set, questions 3 and 4, timed at 44 minutes; score them with the rubric.",
+                    "ref": "test:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Translation Between Representations set, questions 3 and 4, timed at 56 minutes; score them with the rubric.",
+                    "ref": "test:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 6 review again.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 7 review again.",
+                    "ref": "guide:review-u7"
+                  }
+                ]
+              },
+              {
+                "label": "Week 7",
+                "title": "Final rehearsal and repair",
+                "tasks": [
+                  {
+                    "text": "Take practice exam D about ten days before the exam.",
+                    "ref": "test:practice-exam-d"
+                  },
+                  {
+                    "text": "Score it, then pick the two units with the most lost points across your four exams.",
+                    "ref": "key:practice-exam-d"
+                  },
+                  {
+                    "text": "Experimental Design and Analysis set, questions 3 and 4, timed at 54 minutes; score them with the rubric.",
+                    "ref": "test:fr-experimental-design"
+                  },
+                  {
+                    "text": "Qualitative/Quantitative Translation set, questions 3 and 4, timed at 36 minutes; score them with the rubric.",
+                    "ref": "test:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Mixed set 4, timed.",
+                    "ref": "test:mixed-4"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 8 review again.",
+                    "ref": "guide:review-u8"
+                  }
+                ]
+              },
+              {
+                "label": "Week 8",
+                "title": "Short sets and rest",
+                "tasks": [
+                  {
+                    "text": "Redo the review checks of your two weakest units, then retake one of their unit tests."
+                  },
+                  {
+                    "text": "Mixed set 5, timed.",
+                    "ref": "test:mixed-5"
+                  },
+                  {
+                    "text": "Mixed set 6, timed, on another day.",
+                    "ref": "test:mixed-6"
+                  },
+                  {
+                    "text": "Look over the formula reference once more, saying what each relation needs before it applies.",
+                    "ref": "guide:formula-reference-skills"
+                  },
+                  {
+                    "text": "Take no full practice exam in the last four days. Stop new work the day before the exam and sleep normally."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "four-week",
+            "title": "Four-week review",
+            "summary": "A compressed plan for the last month. Plan about six sessions a week of 60 to 90 minutes, plus a 3-hour exam sitting in each of weeks 1 to 3. The three practice exams fall at the start, after about ten days, and about ten days before the exam. Unit reviews are worked from their checks, and every week mixes earlier units with new ones.",
+            "sessions": [
+              {
+                "label": "Week 1",
+                "title": "Starting point, motion, forces and energy",
+                "tasks": [
+                  {
+                    "text": "Read how the exam runs and how to pace it.",
+                    "ref": "guide:exam-format"
+                  },
+                  {
+                    "text": "Take practice exam A under exam timing.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key and log each lost point by unit and cause.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "Learn the method for scoring and logging a practice exam.",
+                    "ref": "guide:practice-exam-method"
+                  },
+                  {
+                    "text": "Unit 1 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Unit 3 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Unit 4 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Workshop guide: Mathematical Routines questions.",
+                    "ref": "guide:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mathematical Routines set, questions 1 and 2, timed at 44 minutes; score them with the rubric.",
+                    "ref": "test:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 2",
+                "title": "Rotation, oscillations, fluids and a second form",
+                "tasks": [
+                  {
+                    "text": "Unit 5 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Unit 6 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Unit 7 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Unit 8 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u8"
+                  },
+                  {
+                    "text": "Workshop guide: Translation Between Representations questions.",
+                    "ref": "guide:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Translation Between Representations set, questions 1 and 2, timed at 56 minutes; score them with the rubric.",
+                    "ref": "test:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Workshop guide: Experimental Design and Analysis questions.",
+                    "ref": "guide:fr-experimental-design"
+                  },
+                  {
+                    "text": "Experimental Design and Analysis set, questions 1 and 2, timed at 54 minutes; score them with the rubric.",
+                    "ref": "test:fr-experimental-design"
+                  },
+                  {
+                    "text": "Take practice exam B midweek and score it.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  },
+                  {
+                    "text": "Answer again the unit 1 to unit 4 checks you missed in week 1, without rereading."
+                  }
+                ]
+              },
+              {
+                "label": "Week 3",
+                "title": "Written reasoning and a third form",
+                "tasks": [
+                  {
+                    "text": "Workshop guide: Qualitative/Quantitative Translation questions.",
+                    "ref": "guide:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Qualitative/Quantitative Translation set, questions 1 and 2, timed at 36 minutes; score them with the rubric.",
+                    "ref": "test:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Writing free-response answers.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "Take practice exam C about ten days before the exam and score it.",
+                    "ref": "test:practice-exam-c"
+                  },
+                  {
+                    "text": "Mixed set 3, timed.",
+                    "ref": "test:mixed-3"
+                  },
+                  {
+                    "text": "Answer again the unit 5 to unit 8 checks you missed in week 2, without rereading."
+                  }
+                ]
+              },
+              {
+                "label": "Week 4",
+                "title": "Repair, short sets, rest",
+                "tasks": [
+                  {
+                    "text": "Repair the two units with the most lost points: their review checks, then their unit tests."
+                  },
+                  {
+                    "text": "Questions 3 and 4 of the free-response set for the question type where your log shows the most lost points."
+                  },
+                  {
+                    "text": "Mixed set 4, timed.",
+                    "ref": "test:mixed-4"
+                  },
+                  {
+                    "text": "Mixed set 5, timed, on another day.",
+                    "ref": "test:mixed-5"
+                  },
+                  {
+                    "text": "Methods for multiple choice.",
+                    "ref": "guide:multiple-choice-methods"
+                  },
+                  {
+                    "text": "Take no full practice exam in the last four days. Stop new work the day before the exam and sleep normally."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "in-course",
+            "title": "Inside the 36-week course",
+            "summary": "For students following Liminal's course week by week: the course's review weeks 30 to 34 use these materials, and later forms follow close to the exam date.",
+            "sessions": [
+              {
+                "label": "Course week 30",
+                "title": "Review: kinematics and dynamics",
+                "tasks": [
+                  {
+                    "text": "Week 30 coursework.",
+                    "ref": "week:30"
+                  },
+                  {
+                    "text": "Unit 1 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Workshop guide: Mathematical Routines questions.",
+                    "ref": "guide:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mathematical Routines set, questions 1 and 2, timed at 44 minutes; score them with the rubric.",
+                    "ref": "test:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 31",
+                "title": "Review: energy, momentum and rotation",
+                "tasks": [
+                  {
+                    "text": "Week 31 coursework.",
+                    "ref": "week:31"
+                  },
+                  {
+                    "text": "Unit 3 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Unit 4 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Unit 5 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Unit 6 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Workshop guide: Translation Between Representations questions.",
+                    "ref": "guide:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Translation Between Representations set, questions 1 and 2, timed at 56 minutes; score them with the rubric.",
+                    "ref": "test:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 32",
+                "title": "Review: experimental design and written reasoning",
+                "tasks": [
+                  {
+                    "text": "Week 32 coursework.",
+                    "ref": "week:32"
+                  },
+                  {
+                    "text": "Unit 7 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Unit 8 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u8"
+                  },
+                  {
+                    "text": "Workshop guide: Experimental Design and Analysis questions.",
+                    "ref": "guide:fr-experimental-design"
+                  },
+                  {
+                    "text": "Workshop guide: Qualitative/Quantitative Translation questions.",
+                    "ref": "guide:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Writing free-response answers.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "Mixed set 3, timed.",
+                    "ref": "test:mixed-3"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 33",
+                "title": "Practice exam A",
+                "tasks": [
+                  {
+                    "text": "Week 33 coursework.",
+                    "ref": "week:33"
+                  },
+                  {
+                    "text": "Take practice exam A under exam timing.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "Log every lost point by unit and cause.",
+                    "ref": "guide:practice-exam-method"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 34",
+                "title": "Repair from evidence",
+                "tasks": [
+                  {
+                    "text": "Week 34 coursework.",
+                    "ref": "week:34"
+                  },
+                  {
+                    "text": "Work the free-response sets for the question types where the log shows the most lost points."
+                  },
+                  {
+                    "text": "Take practice exam B within the last few weeks before the exam.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Take practice exam C about ten days before the exam.",
+                    "ref": "test:practice-exam-c"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -6802,10 +7494,10 @@
         "name": "AP® Physics C: Mechanics Exam",
         "effective": "May 2027",
         "sourceId": "exam-physics-c-mechanics",
-        "checked": "2026-10-08",
-        "delivery": "Hybrid digital: multiple choice in the Bluebook app and free response handwritten in a paper booklet. Liminal practice exams are printed.",
-        "calculator": "A four-function, scientific, or graphing calculator is allowed in both sections.",
-        "reference": "An equation sheet is supplied.",
+        "checked": "2026-10-22",
+        "delivery": "Hybrid digital: multiple-choice responses and free-response prompts in Bluebook, with handwritten free-response answers in a paper booklet. Liminal practice examinations are printed.",
+        "calculator": "A four-function, scientific, or graphing calculator is allowed in both sections. Bluebook provides a built-in Desmos scientific or graphing calculator, and up to two approved handheld calculators may also be used (College Board's calculator policy page).",
+        "reference": "An equation sheet is supplied: College Board's pages say its reference materials are printed for the exam room and also available in Bluebook. Liminal's practice exams append Liminal's own formula reference instead.",
         "sections": [
           {
             "id": "I",
@@ -6835,7 +7527,9 @@
           }
         ],
         "notes": [
-          "Free response has one question of each type: Mathematical Routines (10 points), Translation Between Representations (12 points), Experimental Design and Analysis (10 points), and Qualitative/Quantitative Translation (8 points)."
+          "The exam lasts 3 hours.",
+          "Free response has one question of each type: Mathematical Routines, Translation Between Representations, Experimental Design and Analysis, and Qualitative/Quantitative Translation.",
+          "Liminal practice scores those types out of 10, 12, 10 and 8 points. College Board's exam pages, checked 2026-10-22, do not state point values."
         ]
       },
       "blueprints": {
@@ -6894,7 +7588,648 @@
             "QQT": 8
           },
           "oneOfEachFrType": true
+        },
+        "mixedSet": {
+          "parts": [
+            {
+              "id": "A",
+              "questions": 15,
+              "minutes": 30,
+              "calculator": "any"
+            }
+          ],
+          "minUnits": 5
+        },
+        "frSet": {
+          "frTypes": {
+            "MR": 10,
+            "TBR": 12,
+            "EDA": 10,
+            "QQT": 8
+          },
+          "minutesByType": {
+            "MR": 22,
+            "TBR": 28,
+            "EDA": 27,
+            "QQT": 18
+          },
+          "questions": [
+            3,
+            4
+          ]
         }
+      },
+      "prep": {
+        "title": "Exam preparation",
+        "summary": "Preparation for the AP® Physics C: Mechanics Exam once the units are taught: four original full-length practice exams, six mixed timed sets, a free-response workshop with a guide and a four-question set for each of the four question types, a review sheet for every unit, strategy guides, and plans that space this work over the weeks before the exam. Paper practice does not replace the hands-on lab work the AP® physics courses require.",
+        "steps": [
+          "Choose a plan by the weeks left before your exam and put its practice-exam days on a calendar first.",
+          "Take practice exam A under exam timing, with a calculator and the formula reference printed at the end of the student copy. Score it with its key and log every lost point by unit and by cause.",
+          "Work each unit review by answering its checks before you open the answers. Reread only what a missed check sends you to, then try that check again on a later day.",
+          "Read each free-response guide, then do its set at the printed pace, two questions at a sitting. Score them with the rubrics and rewrite one answer until every point is earned.",
+          "On days without a full exam, take a mixed set: it mixes the units as the exam does, so you practise recognizing which principle applies as well as using it.",
+          "Take later forms under the same conditions and compare raw points by section and by unit with your first form. Raw points are practice evidence, not AP scores."
+        ],
+        "exams": [
+          {
+            "id": "practice-exam",
+            "label": "Practice exam A",
+            "note": "The course's week-33 exam. Take it first, under exam timing, to find a starting point."
+          },
+          {
+            "id": "practice-exam-b",
+            "label": "Practice exam B",
+            "note": "A second form for the middle of a review plan."
+          },
+          {
+            "id": "practice-exam-c",
+            "label": "Practice exam C",
+            "note": "A third form for a late rehearsal: about three weeks before the exam in the eight-week plan, or about ten days before it in the four-week plan."
+          },
+          {
+            "id": "practice-exam-d",
+            "label": "Practice exam D",
+            "note": "A fourth form: the eight-week plan's last full rehearsal, about ten days before the exam."
+          }
+        ],
+        "mixed": [
+          "mixed-1",
+          "mixed-2",
+          "mixed-3",
+          "mixed-4",
+          "mixed-5",
+          "mixed-6"
+        ],
+        "strategy": [
+          "exam-format",
+          "multiple-choice-methods",
+          "free-response-writing",
+          "calculus-methods",
+          "formula-reference-skills",
+          "practice-exam-method"
+        ],
+        "reviews": [
+          "review-u1",
+          "review-u2",
+          "review-u3",
+          "review-u4",
+          "review-u5",
+          "review-u6",
+          "review-u7"
+        ],
+        "workshop": [
+          "fr-mathematical-routines",
+          "fr-translation-between-representations",
+          "fr-experimental-design",
+          "fr-qualitative-quantitative"
+        ],
+        "plans": [
+          {
+            "id": "eight-week",
+            "title": "Eight-week review",
+            "summary": "For a student who has finished, or nearly finished, the units. Plan about five sessions a week of 60 to 90 minutes, plus a 3-hour exam sitting in weeks 1, 4, 6 and 7, with the next session for scoring and logging it. The four practice exams fall about 8, 5 and 3 weeks before the exam and again about 10 days before it, so each has time to change what you study next. Every unit comes back at least three times: its review, a later retry of its checks, and the mixed sets and exams. Each free-response set is split across two sittings weeks apart. None of the last four days holds a full exam.",
+            "sessions": [
+              {
+                "label": "Week 1",
+                "title": "Find a starting point",
+                "tasks": [
+                  {
+                    "text": "Read how the exam runs and how to pace it.",
+                    "ref": "guide:exam-format"
+                  },
+                  {
+                    "text": "Learn the method for taking, scoring and logging a practice exam.",
+                    "ref": "guide:practice-exam-method"
+                  },
+                  {
+                    "text": "Take practice exam A in one sitting, with a calculator and the formula reference.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key, then log each lost point by unit and cause.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "The calculus moves mechanics asks for, and how to set each one up.",
+                    "ref": "guide:calculus-methods"
+                  }
+                ]
+              },
+              {
+                "label": "Week 2",
+                "title": "Motion and forces",
+                "tasks": [
+                  {
+                    "text": "Unit 1 review: answer every check before opening it.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Workshop guide: Mathematical Routines questions.",
+                    "ref": "guide:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mathematical Routines set, questions 1 and 2, timed at 44 minutes; score them with the rubric.",
+                    "ref": "test:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 3",
+                "title": "Energy and momentum",
+                "tasks": [
+                  {
+                    "text": "Unit 3 review.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Unit 4 review.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Workshop guide: Translation Between Representations questions.",
+                    "ref": "guide:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Translation Between Representations set, questions 1 and 2, timed at 56 minutes; score them with the rubric.",
+                    "ref": "test:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 1 review again.",
+                    "ref": "guide:review-u1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 4",
+                "title": "Second form and rotation",
+                "tasks": [
+                  {
+                    "text": "Take practice exam B under exam timing.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Score it and compare raw points by section and unit with exam A.",
+                    "ref": "key:practice-exam-b"
+                  },
+                  {
+                    "text": "Unit 5 review.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Workshop guide: Experimental Design and Analysis questions.",
+                    "ref": "guide:fr-experimental-design"
+                  },
+                  {
+                    "text": "Experimental Design and Analysis set, questions 1 and 2, timed at 54 minutes; score them with the rubric.",
+                    "ref": "test:fr-experimental-design"
+                  },
+                  {
+                    "text": "Methods for multiple choice: limiting cases, units and ratios.",
+                    "ref": "guide:multiple-choice-methods"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 2 review again.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 3 review again.",
+                    "ref": "guide:review-u3"
+                  }
+                ]
+              },
+              {
+                "label": "Week 5",
+                "title": "Rotating systems and oscillations",
+                "tasks": [
+                  {
+                    "text": "Unit 6 review.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Unit 7 review.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Workshop guide: Qualitative/Quantitative Translation questions.",
+                    "ref": "guide:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Qualitative/Quantitative Translation set, questions 1 and 2, timed at 36 minutes; score them with the rubric.",
+                    "ref": "test:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Learn where things are on the formula reference and what it leaves out.",
+                    "ref": "guide:formula-reference-skills"
+                  },
+                  {
+                    "text": "Mixed set 3, timed.",
+                    "ref": "test:mixed-3"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 4 review again.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 5 review again.",
+                    "ref": "guide:review-u5"
+                  }
+                ]
+              },
+              {
+                "label": "Week 6",
+                "title": "A third form",
+                "tasks": [
+                  {
+                    "text": "Take practice exam C under exam timing, about three weeks before the exam.",
+                    "ref": "test:practice-exam-c"
+                  },
+                  {
+                    "text": "Score it and update the error log.",
+                    "ref": "key:practice-exam-c"
+                  },
+                  {
+                    "text": "Writing free-response answers that show every step a reader looks for.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "Mathematical Routines set, questions 3 and 4, timed at 44 minutes; score them with the rubric.",
+                    "ref": "test:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Translation Between Representations set, questions 3 and 4, timed at 56 minutes; score them with the rubric.",
+                    "ref": "test:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 6 review again.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 7 review again.",
+                    "ref": "guide:review-u7"
+                  }
+                ]
+              },
+              {
+                "label": "Week 7",
+                "title": "Final rehearsal and repair",
+                "tasks": [
+                  {
+                    "text": "Take practice exam D about ten days before the exam.",
+                    "ref": "test:practice-exam-d"
+                  },
+                  {
+                    "text": "Score it, then pick the two units with the most lost points across your four exams.",
+                    "ref": "key:practice-exam-d"
+                  },
+                  {
+                    "text": "Experimental Design and Analysis set, questions 3 and 4, timed at 54 minutes; score them with the rubric.",
+                    "ref": "test:fr-experimental-design"
+                  },
+                  {
+                    "text": "Qualitative/Quantitative Translation set, questions 3 and 4, timed at 36 minutes; score them with the rubric.",
+                    "ref": "test:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Mixed set 4, timed.",
+                    "ref": "test:mixed-4"
+                  },
+                  {
+                    "text": "Without rereading, answer the calculus-methods checks again.",
+                    "ref": "guide:calculus-methods"
+                  }
+                ]
+              },
+              {
+                "label": "Week 8",
+                "title": "Short sets and rest",
+                "tasks": [
+                  {
+                    "text": "Redo the review checks of your two weakest units, then retake one of their unit tests."
+                  },
+                  {
+                    "text": "Mixed set 5, timed.",
+                    "ref": "test:mixed-5"
+                  },
+                  {
+                    "text": "Mixed set 6, timed, on another day.",
+                    "ref": "test:mixed-6"
+                  },
+                  {
+                    "text": "Look over the formula reference once more, saying what each relation needs before it applies.",
+                    "ref": "guide:formula-reference-skills"
+                  },
+                  {
+                    "text": "Take no full practice exam in the last four days. Stop new work the day before the exam and sleep normally."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "four-week",
+            "title": "Four-week review",
+            "summary": "A compressed plan for the last month. Plan about six sessions a week of 60 to 90 minutes, plus a 3-hour exam sitting in each of weeks 1 to 3. The three practice exams fall at the start, after about ten days, and about ten days before the exam. Unit reviews are worked from their checks, and every week mixes earlier units with new ones.",
+            "sessions": [
+              {
+                "label": "Week 1",
+                "title": "Starting point, motion, forces and energy",
+                "tasks": [
+                  {
+                    "text": "Read how the exam runs and how to pace it.",
+                    "ref": "guide:exam-format"
+                  },
+                  {
+                    "text": "Take practice exam A under exam timing.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key and log each lost point by unit and cause.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "Learn the method for scoring and logging a practice exam.",
+                    "ref": "guide:practice-exam-method"
+                  },
+                  {
+                    "text": "Unit 1 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Unit 3 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Workshop guide: Mathematical Routines questions.",
+                    "ref": "guide:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mathematical Routines set, questions 1 and 2, timed at 44 minutes; score them with the rubric.",
+                    "ref": "test:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 2",
+                "title": "Momentum, rotation, oscillations and a second form",
+                "tasks": [
+                  {
+                    "text": "Unit 4 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Unit 5 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Unit 6 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Unit 7 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Workshop guide: Translation Between Representations questions.",
+                    "ref": "guide:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Translation Between Representations set, questions 1 and 2, timed at 56 minutes; score them with the rubric.",
+                    "ref": "test:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Workshop guide: Experimental Design and Analysis questions.",
+                    "ref": "guide:fr-experimental-design"
+                  },
+                  {
+                    "text": "Experimental Design and Analysis set, questions 1 and 2, timed at 54 minutes; score them with the rubric.",
+                    "ref": "test:fr-experimental-design"
+                  },
+                  {
+                    "text": "Take practice exam B midweek and score it.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  },
+                  {
+                    "text": "Answer again the unit 1 to unit 3 checks you missed in week 1, without rereading."
+                  }
+                ]
+              },
+              {
+                "label": "Week 3",
+                "title": "Written reasoning and a third form",
+                "tasks": [
+                  {
+                    "text": "Workshop guide: Qualitative/Quantitative Translation questions.",
+                    "ref": "guide:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Qualitative/Quantitative Translation set, questions 1 and 2, timed at 36 minutes; score them with the rubric.",
+                    "ref": "test:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Writing free-response answers.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "The calculus moves mechanics asks for.",
+                    "ref": "guide:calculus-methods"
+                  },
+                  {
+                    "text": "Take practice exam C about ten days before the exam and score it.",
+                    "ref": "test:practice-exam-c"
+                  },
+                  {
+                    "text": "Mixed set 3, timed.",
+                    "ref": "test:mixed-3"
+                  },
+                  {
+                    "text": "Answer again the unit 4 to unit 7 checks you missed in week 2, without rereading."
+                  }
+                ]
+              },
+              {
+                "label": "Week 4",
+                "title": "Repair, short sets, rest",
+                "tasks": [
+                  {
+                    "text": "Repair the two units with the most lost points: their review checks, then their unit tests."
+                  },
+                  {
+                    "text": "Questions 3 and 4 of the free-response set for the question type where your log shows the most lost points."
+                  },
+                  {
+                    "text": "Mixed set 4, timed.",
+                    "ref": "test:mixed-4"
+                  },
+                  {
+                    "text": "Mixed set 5, timed, on another day.",
+                    "ref": "test:mixed-5"
+                  },
+                  {
+                    "text": "Methods for multiple choice.",
+                    "ref": "guide:multiple-choice-methods"
+                  },
+                  {
+                    "text": "Take no full practice exam in the last four days. Stop new work the day before the exam and sleep normally."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "in-course",
+            "title": "Inside the 36-week course",
+            "summary": "For students following Liminal's course week by week: the course's review weeks 31 to 34 use these materials, and later forms follow close to the exam date.",
+            "sessions": [
+              {
+                "label": "Course week 31",
+                "title": "Review: translational mechanics with calculus",
+                "tasks": [
+                  {
+                    "text": "Week 31 coursework.",
+                    "ref": "week:31"
+                  },
+                  {
+                    "text": "Unit 1 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Unit 3 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Unit 4 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "The calculus moves mechanics asks for.",
+                    "ref": "guide:calculus-methods"
+                  },
+                  {
+                    "text": "Workshop guide: Mathematical Routines questions.",
+                    "ref": "guide:fr-mathematical-routines"
+                  },
+                  {
+                    "text": "Workshop guide: Translation Between Representations questions.",
+                    "ref": "guide:fr-translation-between-representations"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 32",
+                "title": "Review: rotation, oscillation and experimental design",
+                "tasks": [
+                  {
+                    "text": "Week 32 coursework.",
+                    "ref": "week:32"
+                  },
+                  {
+                    "text": "Unit 5 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Unit 6 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Unit 7 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Workshop guide: Experimental Design and Analysis questions.",
+                    "ref": "guide:fr-experimental-design"
+                  },
+                  {
+                    "text": "Workshop guide: Qualitative/Quantitative Translation questions.",
+                    "ref": "guide:fr-qualitative-quantitative"
+                  },
+                  {
+                    "text": "Writing free-response answers.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 33",
+                "title": "Practice exam A",
+                "tasks": [
+                  {
+                    "text": "Week 33 coursework.",
+                    "ref": "week:33"
+                  },
+                  {
+                    "text": "Take practice exam A under exam timing.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "Log every lost point by unit and cause.",
+                    "ref": "guide:practice-exam-method"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 34",
+                "title": "Repair from evidence",
+                "tasks": [
+                  {
+                    "text": "Week 34 coursework.",
+                    "ref": "week:34"
+                  },
+                  {
+                    "text": "Work the free-response sets for the question types where the log shows the most lost points."
+                  },
+                  {
+                    "text": "Take practice exam B within the last few weeks before the exam.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Take practice exam C about ten days before the exam.",
+                    "ref": "test:practice-exam-c"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     }
   ]

@@ -1,0 +1,660 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "practice-exam-method",
+  "kind": "strategy",
+  "title": "Taking and learning from a practice exam",
+  "author": "p1-strategy-author",
+  "summary": "How to sit a Liminal practice exam under the conditions of the AP® Physics 1 Exam, mark your confidence as you go, write down the raw points you expect before opening the key, and turn every lost point into a dated next task: a cold redo, an honest rubric check, an error log by unit and cause, a task on this course's exam-preparation page, and a comparison with your earlier forms. Raw points only.",
+  "minutes": 30,
+  "sections": [
+    {
+      "id": "overview",
+      "title": "The method at a glance",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A full practice exam costs three hours, and most of its value comes afterward, from what you change because of it. Taking form after form without that step mostly rehearses what you can already do. The cycle below sits the form on day 0, analyzes it within two days, and brings every missed item back within a week."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Day 0: sit the form under exam conditions, timed, closed-book, with a calculator and the formula reference at the end of the student copy.",
+            "Day 0, as you go: mark each multiple-choice answer S, U or G, and note the clock time at the end of each question in Section II.",
+            "Day 0, before opening the key: write the raw points you expect for Section I and for each free-response question.",
+            "Days 1 to 2: redo every miss and every U or G item cold, then read the key, then mark free response against the rubric, row by row.",
+            "Days 1 to 2: log every lost point by unit and cause, and give each row a next task on the exam-preparation page and a retry date.",
+            "Days 2 to 7: do those tasks, and redo each missed item cold once more.",
+            "Next form: compare raw points by section, question type and unit, and compare what you expected with what you earned."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before",
+      "title": "Before you start",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Take the whole form in one sitting when you can: 85 minutes for Section I and 95 minutes for Section II, 3 hours of working time, as long as the exam itself. Concentration in the last hour is part of what you are practising. When one long block is impossible, take Section I and Section II as two sittings a day or two apart, and never split a section. Two sittings still give honest raw points, but they cannot show how you work when tired, so take at least one form, ideally the last one before the exam, in one sitting."
+        },
+        {
+          "type": "table",
+          "caption": "The May 2027 format, from College Board's AP® Physics 1 Exam pages, checked 2026-10-22. Liminal's practice exams use the same sections, counts and times.",
+          "head": [
+            "Section",
+            "Questions",
+            "Time",
+            "Calculator",
+            "Share of exam score"
+          ],
+          "rows": [
+            [
+              "I: Multiple choice",
+              "42",
+              "85 minutes",
+              "Four-function, scientific or graphing",
+              "50%"
+            ],
+            [
+              "II: Free response",
+              "4, one of each type: Mathematical Routines, Translation Between Representations, Experimental Design and Analysis, Qualitative/Quantitative Translation",
+              "95 minutes",
+              "Four-function, scientific or graphing",
+              "50%"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "On the exam itself, delivery is hybrid digital: you answer multiple choice and read the free-response prompts in the Bluebook app, and you handwrite free-response answers in a paper booklet. Bluebook has a built-in Desmos scientific or graphing calculator, and you may also use up to two approved handheld calculators. An equation sheet is supplied, printed in the exam room and also available in Bluebook. (College Board's exam and calculator-policy pages, checked 2026-10-22.)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Print the student copy. Answer multiple choice on its answer sheet, keeping the margin for the marks described below, and handwrite free response in the space under each part, as you will in the paper booklet.",
+            "Use a timer you cannot pause, and stop when a section's time ends. If you want to finish an item afterward, use a different color; that work does not count toward the raw points.",
+            "Use the calculator you will use on the exam: Bluebook's Desmos if you plan to rely on it, your handheld if you plan to bring one.",
+            "Use only the formula reference printed at the end of the student copy. It is Liminal's own; the exam supplies College Board's equation sheet instead, so look at that sheet on College Board's exam page and practise with it before the exam. No notes, textbook or phone: a form taken with notes open measures the notes.",
+            "Know Liminal's practice scoring before you begin. Each multiple-choice question is worth 1 raw point, and nothing is taken off for a wrong choice. Liminal scores the free-response types out of 10, 12, 10 and 8 points, so Section I holds 42 raw points and Section II holds 40. College Board's exam pages do not state free-response point values; these are Liminal's practice scale."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Pausing the clock to look up a relation, or finishing a section with extra time, and then comparing those raw points with a form taken under the rules.",
+          "fix": "Keep one set of conditions for every form: timed, closed-book, the reference only. Then a change between forms means a change in you, not in the conditions."
+        }
+      ]
+    },
+    {
+      "id": "during",
+      "title": "During the exam",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "In the margin of the answer sheet, beside each multiple-choice answer, write one letter."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Mark",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "S (sure)",
+              "You would bet on it: you named the principle, worked it and checked it."
+            ],
+            [
+              "U (unsure)",
+              "You worked it but doubt a step or the principle, or you narrowed it to two choices."
+            ],
+            [
+              "G (guess)",
+              "You chose without a method that reached an answer."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Mark as you answer, not at the end. A mark written after you have seen later questions, or the key, records hindsight rather than confidence. The marks cost a second each and do two jobs later: they pick out the correct answers that still need a redo, and they show whether your sense of sure matches your results. In free response, write a small U beside any part where you doubt the principle, the diagram or the reasoning."
+        },
+        {
+          "type": "text",
+          "text": "Write the clock time in the margin when you reach questions 15 and 29 of Section I and when you finish each free-response question, and circle the number of any question you skip to return to. At the average pace, question 15 starts about 28 minutes in and question 29 about 57 minutes in. In Section II, Liminal's practice pace is about 22, 28, 27 and 18 minutes for the four questions in their printed order, inside the suggested times the practice exams print, which puts the ends of the questions near minutes 22, 50, 77 and 95. These notes are what let you tell a time error from a knowledge error afterward; the exam-format guide has the full pacing plan."
+        },
+        {
+          "type": "text",
+          "text": "When Section II ends, and before you open the key, write down the raw points you expect: Section I out of 42, and each free-response question out of 10, 12, 10 and 8. Students tend to stay overconfident from exam to exam, partly because they do not use their own past results (Foster et al. 2017). A written expectation, later set beside the result, is what lets you correct that."
+        }
+      ]
+    },
+    {
+      "id": "after",
+      "title": "After: within one or two days",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Do the analysis within a day or two, while you still remember why you chose what you chose. Hold every solution back until step 3."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Mark multiple choice from the key's letters alone, without reading rationales. Circle every wrong answer.",
+            "Redo cold. On a fresh page, untimed and closed-book except for the formula reference, rework every missed item and every item marked U or G, including the ones you got right. Start with the sure-but-wrong items. Add any free-response part you left unfinished or marked U.",
+            "Then open the key. For each redone item, read the rationale, and for a wrong choice read the note on the letter you picked, which names the error that produces it. Read for why each step is valid, not only for the answer.",
+            "Mark free response against the rubric, row by row, as described below.",
+            "Fill in the error log, and give every row a next task and a retry date."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Why this order. Making an error and then getting corrective feedback helps you learn, and errors made with high confidence are among the easiest to correct once the right answer is shown (Metcalfe 2017). So the sure-but-wrong items come first; they are also the ones you would otherwise never look at again. Feedback that explains why an answer is right helps more on new questions than feedback that only gives the answer (Butler et al. 2013), so read the reasoning, not just the letter. The cold redo comes before the key because it sorts your errors: what you fix alone, untimed, points to time, reading or a slip; what you cannot fix points to a concept or a choice of principle."
+        },
+        {
+          "type": "trap",
+          "text": "Spending half an hour on a cold redo of an item you cannot start.",
+          "fix": "Cap a cold redo at about 5 minutes for a multiple-choice item and 10 minutes for a free-response part. If no principle has led anywhere by then, write down how far you got and open the key. Being unable to start is itself the diagnosis: a concept or a choice of principle."
+        },
+        {
+          "type": "check",
+          "id": "p1-practice-exam-method-c1",
+          "prompt": "Eight of your Section I answers, with their marks and results: question 3, S, right; question 7, S, wrong; question 12, U, right; question 15, U, wrong; question 21, G, right; question 26, S, right; question 33, G, wrong; question 40, U, wrong. Which of these go into your cold redo, in what order, and which do not?",
+          "hint": "Every miss is redone, and so is every U or G answer, right or wrong. Which kind of miss comes first?",
+          "answer": "Six go in: question 7 first, then questions 15, 33 and 40, then questions 12 and 21. Questions 3 and 26 do not.",
+          "steps": [
+            "Question 7 was marked S and is wrong: confidence and result disagree most, so it comes first.",
+            "Questions 15, 33 and 40 are the other misses.",
+            "Questions 12 and 21 are right but marked U and G. They are redone because a shaky or lucky answer will not reliably repeat.",
+            "Questions 3 and 26 were sure and right; they need no redo.",
+            "One sure answer in three was wrong in this sample. Across a whole section, if more than about 1 in 10 sure answers are wrong, check an answer before marking it S."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Mark free response honestly. The rubric awards points for what is on the page, so read your answer the way a stranger would."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mark each rubric row on its own. A point you would have earned if you had written something is a point lost.",
+            "A starting-principle point needs the principle on the page, written for this situation: the energy equation with its terms, Newton's second law along a named direction, the torque equation about a named axis.",
+            "A Derive part needs symbols from start to finish. Numbers substituted part way through do not meet a derivation row.",
+            "A reasoning point needs the principle named and its conditions checked: why momentum is conserved for this system, why mechanical energy is or is not.",
+            "A representation point needs the features the row names: each force labeled and drawn from the object, axes with quantities and units, bars on one scale.",
+            "Check every numerical answer for units and, for a vector, a direction. Check every equals sign; a chain that equates different quantities is a false statement, and Liminal's rubrics can withhold a point for it.",
+            "Mark one answer per part. If two answers to a part are left standing, credit neither.",
+            "Where a rubric credits later work that is consistent with an earlier wrong answer, apply it; where it does not, do not invent the credit.",
+            "When you cannot tell whether a row is earned, do not award it, and log why. If you can, trade one question with a classmate and mark each other's; a second reader shows how generous you are with yourself."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-practice-exam-method-c2",
+          "prompt": "A Mathematical Routines part reads: \"A 0.25 kg puck rests against a horizontal spring of spring constant 400 N/m that is compressed 0.050 m. The spring is released and launches the puck across frictionless ice. Calculate the puck's speed after it leaves the spring.\" Its rubric: 1 point for an energy equation that sets the spring's stored energy equal to the puck's kinetic energy; 1 point for substituting values consistent with that equation; 1 point for the answer with units. A student wrote: \"(1/2)kx^2 = (1/2)mv^2, so v = √(kx^2/m) = √(400 × 0.050/0.25) = 8.9 m/s.\" Mark it row by row, give the correct answer, and name the cause of the lost points.",
+          "hint": "Compare the substitution with the equation the student wrote. Then compute the speed yourself.",
+          "answer": "1 of 3 points. The energy row is earned. The substitution row is not: x was not squared. The answer row is not: the speed is 2.0 m/s. One log row: procedure or algebra, a substitution slip.",
+          "steps": [
+            "Energy: (1/2)kx^2 = (1/2)mv^2 is the right starting equation for this system, so the first row is earned.",
+            "Substitution: the expression is √(kx^2/m), but the student substituted 0.050 for x^2 instead of 0.050^2. That does not match the equation, so the row is not earned.",
+            "Correct value: v = x√(k/m) = (0.050 m)√(400/0.25) = (0.050)(40) = 2.0 m/s.",
+            "The principle was right and the slip was in carrying it out, so the cause is procedure or algebra. An estimate would have caught it: the spring stores only (1/2)(400)(0.050)^2 = 0.50 J, while 8.9 m/s would need (1/2)(0.25)(8.9)^2 ≈ 9.9 J.",
+            "Next task: two or three retry checks with spring energy from the unit 3 review, on different days, writing each substitution with its units."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "error-log",
+      "title": "The error log",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Give every lost point a row: one row per multiple-choice item or free-response part, and a second row when a part lost points for a second, separate reason. Log a correct answer you marked U or G too, with 0 points lost; it is knowledge you cannot count on yet. The unit column comes from the key's topics, whose first topic names the unit; the question type column is for free response."
+        },
+        {
+          "type": "table",
+          "caption": "Error log template. Copy the head row to start your own; the rows here are worked examples.",
+          "head": [
+            "Question",
+            "Unit or type",
+            "Topic",
+            "Points lost",
+            "Cause",
+            "Next task",
+            "Retry date"
+          ],
+          "rows": [
+            [
+              "I 9",
+              "Unit 2",
+              "Two connected blocks",
+              "1",
+              "Procedure or algebra: left the hanging block's mass out of the total",
+              "Three connected-object retry checks from the unit 2 review, on different days",
+              "Days 3, 5 and 7"
+            ],
+            [
+              "I 31",
+              "Unit 4",
+              "A collision followed by a spring compression",
+              "1",
+              "Principle choice: used energy through a sticking collision",
+              "Mixed set, writing the principle before solving each item",
+              "Day 4"
+            ],
+            [
+              "II 2(b)",
+              "TBR, unit 7",
+              "Velocity sketch from a position graph",
+              "2",
+              "Representation: put the velocity's zeros where the position is zero",
+              "Translation Between Representations workshop guide, then redraw the sketch",
+              "Day 2"
+            ],
+            [
+              "II 3(a)",
+              "EDA, unit 3",
+              "Procedure for an energy measurement",
+              "1",
+              "Communication or justification: no instrument or reference point named",
+              "Experimental design section of the free-response writing guide; rewrite the procedure",
+              "Day 2"
+            ],
+            [
+              "II 4(b)",
+              "QQT, unit 5",
+              "Claim about the friction on a leaning ladder",
+              "2",
+              "Concept: measured a lever arm along the ladder instead of perpendicular to the force",
+              "Unit 5 review: its torque section and checks",
+              "Days 3 and 7"
+            ],
+            [
+              "I 18 (U, right)",
+              "Unit 8",
+              "Buoyant force on a submerged object",
+              "0",
+              "Concept: unsure whether depth changes the buoyant force",
+              "Unit 8 review checks",
+              "Day 5"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Seven causes. Choose the one whose fix would have saved the point.",
+          "head": [
+            "Cause",
+            "What it looks like",
+            "What the cold redo shows"
+          ],
+          "rows": [
+            [
+              "Concept",
+              "You did not know or misremembered an idea: what a law needs, what a quantity means, how a force behaves.",
+              "You still cannot do it alone, and the key's reason is new to you."
+            ],
+            [
+              "Principle choice",
+              "You know the laws but chose the wrong one, or the wrong system: energy through a sticking collision, linear momentum with a pivot pushing, the pendulum relation for a spring.",
+              "Once you know which principle to use, you finish quickly."
+            ],
+            [
+              "Procedure or algebra",
+              "Right principle, a slip in carrying it out: a sign, sin for cos, a unit conversion, a calculator in radian mode, arithmetic.",
+              "You get it right on the redo, or you find the slip by checking your own steps."
+            ],
+            [
+              "Representation",
+              "You misread or misdrew a graph, diagram or chart: a value for a slope, an area's sign, a missing or invented force, bar charts on different scales.",
+              "You get it right once you ask \"value, slope or area?\" or list the forces by the object exerting each."
+            ],
+            [
+              "Reading the question",
+              "You answered a different question: the wrong object or interval, a magnitude when a direction was asked, a number when \"in terms of\" symbols were asked.",
+              "You get it right as soon as you reread the last line of the prompt."
+            ],
+            [
+              "Communication or justification",
+              "The physics was right but the page did not earn the point: no principle named, conditions unchecked, no verdict, a false equality, missing units or direction, a vague procedure.",
+              "Your answer matches the key, but a rubric row is not met by what you wrote."
+            ],
+            [
+              "Time",
+              "You did not reach the item, or rushed it; your clock notes show the section ran out.",
+              "You solve it untimed at a reasonable pace."
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When two causes fit one point, log the earlier link in the chain: a concept gap that led to a slow, confused attempt is a concept error, not a time error. When a free-response part lost points for two separate reasons, give it two rows. The categories fail when you honestly cannot tell which applies. Then pick the one with the more useful next task, and let the retry confirm or correct it."
+        }
+      ]
+    },
+    {
+      "id": "routing",
+      "title": "From cause to next task",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A log changes nothing by itself. In one classroom study, filling in reflection forms after exams, with nothing following from them, did not improve students' later grades or their judgment of their own learning (Soicher & Gurung 2017). What helps is the task the reflection leads to, so every row gets a specific task on this course's exam-preparation page and a date."
+        },
+        {
+          "type": "table",
+          "caption": "Where each cause goes.",
+          "head": [
+            "Cause",
+            "Next task",
+            "Where"
+          ],
+          "rows": [
+            [
+              "Concept",
+              "The unit's review: the rule or worked example for the idea, then its checks without looking. Then the missed item again, cold.",
+              "Unit 1 to Unit 8 reviews"
+            ],
+            [
+              "Principle choice",
+              "A timed mixed set. Before solving each item, write the system and the principle you will use, then check that choice against the key.",
+              "Mixed sets 1 to 6, and the first section of the multiple-choice methods guide"
+            ],
+            [
+              "Procedure or algebra",
+              "Two or three retry checks on the same procedure, spread over different days rather than done in one sitting.",
+              "Unit review checks and the weekly coursework for the unit"
+            ],
+            [
+              "Representation",
+              "For free response, the Translation Between Representations workshop guide and the next two questions of its set. For multiple choice, the graph section of the multiple-choice methods guide.",
+              "Workshop guide and set; multiple-choice methods guide"
+            ],
+            [
+              "Reading the question",
+              "Redo the item after underlining the object, the quantity, the interval and any \"in terms of\" symbols. On the next mixed set, reread the last line of every prompt before you choose.",
+              "The next mixed set"
+            ],
+            [
+              "Communication or justification",
+              "The matching section of the free-response writing guide, then rewrite the answer until every rubric row is earned. Then the workshop guide for that question type.",
+              "Free-response writing guide and the workshop guides"
+            ],
+            [
+              "Time",
+              "Read your clock notes first. Then use the pacing plan on the next timed set: checkpoints, and the rule for when to choose, mark and move on.",
+              "Exam format and pacing guide, then a mixed set at its 30 minutes"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Lost free-response points by question type. Each workshop set has four questions; do the two you have not yet done, at the set's pace.",
+          "head": [
+            "Most points lost on",
+            "Read",
+            "Then do"
+          ],
+          "rows": [
+            [
+              "Mathematical Routines",
+              "Workshop guide: Mathematical Routines",
+              "Two questions of its set in 44 minutes"
+            ],
+            [
+              "Translation Between Representations",
+              "Workshop guide: Translation Between Representations",
+              "Two questions of its set in 56 minutes"
+            ],
+            [
+              "Experimental Design and Analysis",
+              "Workshop guide: Experimental Design and Analysis",
+              "Two questions of its set in 54 minutes"
+            ],
+            [
+              "Qualitative/Quantitative Translation",
+              "Workshop guide: Qualitative/Quantitative Translation",
+              "Two questions of its set in 36 minutes"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Experimental Design and Analysis practice on paper teaches the planning and the analysis; it does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "text",
+          "text": "Put every missed item back on the calendar 2 to 7 days later, and redo it cold again. A retry the next day mostly tests short-term memory; one left for weeks may not happen before the next form. On the retry, also do one fresh item of the same kind from a unit review or a mixed set, because a repeated item can turn into remembering its answer rather than solving it."
+        },
+        {
+          "type": "text",
+          "text": "Work first on the cause that cost the most points, but not only on that one. This rule fails when the biggest cause is time: running out of time often comes from a few slow questions earlier in the section, so read your clock notes before you treat it as a pacing problem."
+        },
+        {
+          "type": "check",
+          "id": "p1-practice-exam-method-c3",
+          "prompt": "A Section I question showed a ball striking a door near its outer edge; the door is free to turn on its hinges. You marked your answer S and used conservation of linear momentum for the ball–door system, and it was wrong. In the cold redo you used linear momentum again and got the same answer. When the key's first line said that the hinges push on the door during the impact, so only angular momentum about the hinge axis is conserved, you finished in three minutes using L = mvr_⊥ for the ball and L = Iω for the door. Name the cause, a next task and a retry window.",
+          "hint": "Ask what the key's first line gave you that you did not already have.",
+          "answer": "Principle choice. Next task: a timed mixed set, writing the system and the principle before solving each item, and this item again, cold, between day 2 and day 7.",
+          "steps": [
+            "Once told which principle applied, you used it correctly and quickly, so the procedure and the concepts of angular momentum were sound.",
+            "You know angular momentum but did not choose it, because you did not check whether an external force acted on the system during the impact. That is a principle-choice error.",
+            "Choosing a principle is trained by mixed practice, where deciding what applies is part of every item; writing the system and the principle first makes the choice visible. The first section of the multiple-choice methods guide lists the conditions to check.",
+            "It was sure but wrong, so it belonged at the front of the redo list.",
+            "If the redo had stalled even after the key named angular momentum, because L = mvr_⊥ for a moving ball was new to you, the cause would be concept, and the task would be the unit 6 review."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-practice-exam-method-c4",
+          "prompt": "A free-response part asked you to explain why the buoyant force on a stone sinking through water does not change as it goes deeper. You wrote, \"because the water is the same,\" and earned 0 of 1 point. In the cold redo, without the key, you wrote: \"F_b = ρ_water V g. Neither the water's density nor the stone's volume changes with depth, so the buoyant force is constant.\" Classify the error, give a next task, and say what redo would have changed the classification.",
+          "hint": "The cold redo decides between two causes. What did it show you already knew?",
+          "answer": "Communication or justification: you knew the reason but did not write it. Next task: the justification section of the free-response writing guide, then rewrite this answer naming the relation and why each factor stays fixed. If the redo had said that the buoyant force grows with depth because the pressure grows, the cause would be concept, and the task would be the unit 8 review.",
+          "steps": [
+            "\"The water is the same\" names no principle and no quantity, so it cannot earn a reasoning point.",
+            "Your redo gave the relation and checked each factor, unaided, so the physics was there and the written answer was the problem.",
+            "A redo that reached for pressure at depth would show a real misconception: the pressure on every face grows with depth, but the difference between the bottom and the top, which makes the buoyant force, does not.",
+            "Either way, retry the item between day 2 and day 7."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-practice-exam-method-c5",
+          "prompt": "After practice exam B, your log shows: (1) unit 5 multiple choice, 3 of 5 points lost, two of them concept (lever arm measured along the rod rather than perpendicular to the force) and one procedure; (2) the Translation Between Representations question, 7 of 12 points lost, four of them representation (a velocity sketch that disagreed with the given position graph, and bar charts on different scales) and three communication; (3) the last four Section I questions not reached, with clock notes showing about 9 minutes spent on two unit 2 questions near the start. Name a next task for each, with where to find it.",
+          "hint": "Use the routing table. For the time row, read what the clock notes say before choosing a task.",
+          "answer": "(1) The unit 5 review: its torque section, then its checks without looking, and the two missed items cold on about day 3 and day 7. (2) The Translation Between Representations workshop guide, then the two questions of its set you have not done, in 56 minutes, and a rewrite of the form B question until every rubric row is earned. (3) The time went to two slow questions, so the task is the cutoff rule from the pacing plan in the exam-format guide, practised on the next timed mixed set: choose, mark and move on at about 4 minutes.",
+          "steps": [
+            "Unit 5: the concept errors are the larger share, so the unit review comes before procedure retries. A lever arm is the perpendicular distance from the axis to the line of the force.",
+            "Translation Between Representations: representation is the larger cause; the workshop guide covers consistency between graphs and charts, and the set gives fresh practice. The communication points get a rewrite.",
+            "Time: the clock notes show that the section did not run out evenly; two questions took about 9 minutes, more than twice the average of about 2 minutes. That is a cutoff problem, not a reason to rush every question.",
+            "The two slow unit 2 questions also go into the log with their own causes, once the redo shows why they were slow."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparing-forms",
+      "title": "Comparing forms",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "From the second form on, set the new raw points beside the old ones by section, by free-response question type and by unit, and set each expectation beside its result. Liminal's practice exams give every unit the same number of multiple-choice questions on every form (5 each for units 1, 4, 5 and 8; 8 each for units 2 and 3; 3 each for units 6 and 7), and every form has one free-response question of each type worth the same points, so those numbers compare directly. Free-response points by unit vary from form to form."
+        },
+        {
+          "type": "table",
+          "caption": "An example comparison after two forms. Raw points are practice evidence, not AP® scores; no conversion exists here.",
+          "head": [
+            "Raw points",
+            "Form A",
+            "Form B"
+          ],
+          "rows": [
+            [
+              "Section I (of 42)",
+              "24",
+              "29"
+            ],
+            [
+              "Section I, expected",
+              "30",
+              "31"
+            ],
+            [
+              "Sure answers that were right",
+              "18 of 22",
+              "23 of 25"
+            ],
+            [
+              "Section II (of 40)",
+              "19",
+              "22"
+            ],
+            [
+              "Section II, expected",
+              "27",
+              "25"
+            ],
+            [
+              "Mathematical Routines (of 10)",
+              "5",
+              "6"
+            ],
+            [
+              "Translation Between Representations (of 12)",
+              "6",
+              "8"
+            ],
+            [
+              "Experimental Design and Analysis (of 10)",
+              "4",
+              "4"
+            ],
+            [
+              "Qualitative/Quantitative Translation (of 8)",
+              "4",
+              "4"
+            ],
+            [
+              "Unit 2 multiple choice (of 8)",
+              "4",
+              "6"
+            ],
+            [
+              "Unit 7 multiple choice (of 3)",
+              "1",
+              "3"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Calibration. Subtract each result from what you expected. A gap that shrinks across forms suggests your judgment of your own work is improving, which matters on the exam when you decide which answers to check. Do the same with your S marks: if more than about 1 in 10 sure answers are wrong, check an answer before you mark it S. With only a handful of S marks that fraction jumps with a single item, so read it over two forms."
+        },
+        {
+          "type": "text",
+          "text": "Read the comparison for patterns, not single numbers. Forms differ in difficulty, and a unit with three multiple-choice questions can move two points on one lucky guess and one slip. Trust a change that appears on two forms and agrees with the causes in your log. Do not retake the same form to compare, since you will partly remember it."
+        },
+        {
+          "type": "text",
+          "text": "The shares of exam score in the format table describe the real exam. They are not a formula to apply to Liminal's raw points, which stay raw, by section, as practice evidence."
+        },
+        {
+          "type": "check",
+          "id": "p1-practice-exam-method-c6",
+          "prompt": "Use the example comparison above. (a) How did the gap between expected and earned raw points change in each section from form A to form B? (b) Which row is the strongest evidence for a specific next task, and which change should move your plan least?",
+          "hint": "For (b), ask which rows rest on many points over two forms, and which rest on two questions.",
+          "answer": "(a) Section I: 6 points too high on form A, 2 too high on form B. Section II: 8 too high, then 3 too high. Both expectations moved closer to the results while raw points rose. (b) Experimental Design and Analysis, 4 of 10 on both forms, is the strongest evidence: work its workshop guide and the unused questions of its set. The unit 7 change, 1 of 3 to 3 of 3, rests on two questions and should move the plan least.",
+          "steps": [
+            "Section I gaps: 30 − 24 = 6 and 31 − 29 = 2. Section II gaps: 27 − 19 = 8 and 25 − 22 = 3.",
+            "Raw point changes: 29 − 24 = 5 in Section I and 22 − 19 = 3 in Section II.",
+            "Sure accuracy rose from 18 of 22, about 82%, to 23 of 25, 92%.",
+            "Experimental Design and Analysis stayed at 4 of 10 on two different questions while other types improved, so the weakness is consistent and specific. Check the log's causes for those 12 lost points before choosing between the workshop and the writing guide's experimental design section.",
+            "Unit 7 has three multiple-choice questions per form; going from 1 to 3 is two questions, which one guess and one slip could produce. Keep unit 7 on its planned schedule and let its retries decide."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "Keep feedback about the task",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Write each log entry, and any comment on a classmate's work, about the physics, not about the person. Feedback that turns attention toward the self rather than the task often fails to help and sometimes hurts (Kluger & DeNisi 1996). A cause that names a step can be fixed; a verdict about a person cannot."
+        },
+        {
+          "type": "model",
+          "prompt": "The cause column for a missed torque question",
+          "text": "Concept: I used the length of the wrench as the lever arm. The lever arm is the perpendicular distance from the axis to the line of the force, which is shorter when the force is not perpendicular to the wrench."
+        },
+        {
+          "type": "trap",
+          "text": "Log entries such as \"bad at rotation\" or \"careless again\".",
+          "fix": "Name the step that failed and the correct step. \"Careless\" is not a cause: if it keeps happening, it is a procedure to retry or a check to add, such as an estimate before every calculation, and the log should say which."
+        }
+      ]
+    },
+    {
+      "id": "related",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice exam A: student copy",
+              "ref": "test:practice-exam"
+            },
+            {
+              "label": "Practice exam A: answer key",
+              "ref": "key:practice-exam"
+            },
+            {
+              "label": "Practice exam B: student copy",
+              "ref": "test:practice-exam-b"
+            },
+            {
+              "label": "Exam format and pacing",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Methods for physics multiple choice",
+              "ref": "guide:multiple-choice-methods"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Using the formula reference",
+              "ref": "guide:formula-reference-skills"
+            },
+            {
+              "label": "Mixed set 1",
+              "ref": "test:mixed-1"
+            },
+            {
+              "label": "Workshop: Experimental Design and Analysis",
+              "ref": "guide:fr-experimental-design"
+            },
+            {
+              "label": "Unit 1 review: Kinematics",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Week 33: practice exam, self-scoring and error analysis",
+              "ref": "week:33"
+            },
+            {
+              "label": "Week 34: targeted review from practice-exam results",
+              "ref": "week:34"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "fr-qualitative-quantitative",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Qualitative/Quantitative Translation",
+  "author": "cm-fr-qqt-author",
+  "directions": "This set practises the Qualitative/Quantitative Translation question type of the AP® Physics C: Mechanics Exam: four questions worth 8 points each, drawn from units 1, 3, 4 and 5. Work each question in 18 minutes, Liminal's practice pace for this type, which sits inside the 15–20 minutes the practice exams suggest for it, and take questions 1 and 2 at one sitting and questions 3 and 4 at another, 36 minutes each. A four-function, scientific or graphing calculator is allowed, and you may use the course's formula reference. Use g = 9.8 m/s^2 and SI units, state a positive direction for any vector quantity you introduce, and give every numerical answer with a unit. Score your work with the answer key's rubrics and record raw points; they are a practice tally, not an AP score, and are not converted to any other scale.",
+  "figures": [
+    {
+      "id": "cm-fr-qualitative-quantitative-f1",
+      "alt": "Top view of a straight river between a north bank at the top and a south bank at the bottom, with its width labeled D. A small boat sits at the south bank with an arrow pointing due north labeled v_b (relative to water). Along a line across the river, five arrows point east to show the current: they are shortest near the banks and longest midstream, where the arrow is labeled u_0, and a dashed curve joins their tips. A compass shows north up and east to the right.",
+      "notToScale": true
+    },
+    {
+      "id": "cm-fr-qualitative-quantitative-f2",
+      "alt": "Two side-by-side drawings of the same cable reel resting on a level floor against a step of height h, with the reel's outer radius R marked and its rim touching the step's top edge. Method 1: a horizontal arrow labeled F_1, pointing toward the step, ends at the reel's axle. Method 2: a rope leaves the top of the reel's rim horizontally toward the step, and an arrow labeled F_2 on the rope points toward the step."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 72,
+          "calculator": "any",
+          "directions": "4 questions, 72 minutes, 8 points each. Where a part says not to write or derive equations, answer in words. Where a part asks you to derive, begin from a fundamental relation, show each step, and answer in the symbols the part names. Where a part asks you to calculate, show the substitution and give units.",
+          "items": [
+            {
+              "id": "cm-fr-qualitative-quantitative-fr1",
+              "type": "QQT",
+              "topics": [
+                "CM.1.4",
+                "CM.1.5",
+                "CM.1.2"
+              ],
+              "prompt": "A river 60 m wide has straight, parallel banks that run east–west, as shown. Its water flows east, fastest midstream and not at all at the banks: at a distance y north of the south bank, the current's speed is u(y) = 4u_0(y/D)(1 − y/D), where D = 60 m is the river's width and u_0 = 1.5 m/s. A small motorboat leaves the south bank pointed due north and stays pointed due north, moving at a constant v_b = 2.5 m/s relative to the water. An identical boat crosses a straight canal of the same width in the same way; the canal's water flows east at 1.5 m/s everywhere. Take east as +x and north as +y, with the origin at each boat's starting point.",
+              "figureIds": [
+                "cm-fr-qualitative-quantitative-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without writing or deriving equations, compare the times the two boats take to cross, and compare how far east of its starting point each boat reaches the far bank. Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the crossing times are equal, because the current flows east, perpendicular to the boats' northward heading, so each boat moves north relative to the ground at v_b and both cross the same width."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that the river's boat lands less far east, because the river's current is never faster than the canal's and is slower everywhere except midstream, while the boat is carried east for the same time."
+                    }
+                  ],
+                  "answer": "The crossing times are equal: the current is perpendicular to the boats' heading, so it does not change how fast either boat moves north, and both cross 60 m at v_b. The river's boat lands less far east: it is carried east for the same time, but by a current that is slower than the canal's everywhere except midstream.",
+                  "steps": [
+                    "The northward component of each boat's velocity relative to the ground is its velocity relative to the water, v_b; the current adds only an eastward component.",
+                    "The eastward drift is the eastward speed accumulated over the crossing time. Equal times and a slower current give a smaller drift."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the distance x_L east of its starting point at which the river's boat reaches the north bank, in terms of u_0, D and v_b. Begin with the components of the boat's velocity relative to the ground.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the components of the boat's velocity relative to the ground as dx/dt = u(y) and dy/dt = v_b, so y = v_b t and the crossing takes D/v_b."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Sets up the drift as an integral: x_L = ∫ from 0 to D/v_b of u(v_b t) dt, or equivalently x_L = ∫ from 0 to D of (u(y)/v_b) dy."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the integral to obtain x_L = 2u_0D/(3v_b)."
+                    }
+                  ],
+                  "answer": "x_L = 2u_0D/(3v_b)",
+                  "steps": [
+                    "Relative to the ground, the boat's velocity is its velocity relative to the water plus the water's velocity: dx/dt = u(y) and dy/dt = v_b.",
+                    "With v_b constant, y = v_b t, so dt = dy/v_b and dx = (u(y)/v_b) dy.",
+                    "x_L = ∫ from 0 to D of (4u_0/v_b)(y/D − y^2/D^2) dy = (4u_0/v_b)(D/2 − D/3) = 2u_0D/(3v_b)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the crossing time and the distance east of the starting point at which each boat reaches the far bank.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds a crossing time of 24 s for both boats, and landing points 24 m east of the start for the river's boat and 36 m east for the canal's boat."
+                    }
+                  ],
+                  "answer": "Both crossings take 24 s. The river's boat lands 24 m east of its starting point; the canal's boat lands 36 m east of its starting point.",
+                  "steps": [
+                    "t = D/v_b = (60 m)/(2.5 m/s) = 24 s for both boats.",
+                    "River: x_L = 2(1.5 m/s)(60 m)/(3(2.5 m/s)) = 24 m.",
+                    "Canal: x = (1.5 m/s)(24 s) = 36 m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Does your expression from part (b) support your comparison in part (a)? Justify your answer. Then describe the shape of the river boat's path from bank to bank: its direction where it leaves the south bank and where it reaches the north bank, and where it points farthest east of due north. Justify the description using your work in part (b).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that it supports part (a): the crossing time D/v_b does not involve the current, and the river's drift 2u_0D/(3v_b) is 2/3 of the canal's u_0D/v_b (24 m against 36 m), the factor 2/3 being the current's average across the river."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Describes the path as heading due north (perpendicular to the banks) where it leaves and where it reaches the banks and pointing farthest east of north midstream, justified by the path's slope dx/dy = u(y)/v_b, which is zero at y = 0 and y = D and greatest, 0.60 (about 31° east of north), at y = D/2."
+                    }
+                  ],
+                  "answer": "Yes. The crossing time D/v_b contains no current, so the times are equal, and the river's drift, 2u_0D/(3v_b), is 2/3 of the canal's, u_0D/v_b: 24 m against 36 m. The factor 2/3 is the current's average across the width. The path leaves the south bank heading due north, curves east, points farthest east of north midstream, where dx/dy = u_0/v_b = 0.60 (about 31° east of north), and straightens to reach the north bank heading due north again, because dx/dy = u(y)/v_b is zero at both banks.",
+                  "steps": [
+                    "Canal: x = u_0(D/v_b), so x_L/x = 2/3 whatever the values of u_0, D and v_b.",
+                    "The current's average across the river is (1/D)∫ from 0 to D of u(y) dy = 2u_0/3, so the river's boat drifts as if carried by a uniform current of 2u_0/3.",
+                    "The path's slope is dx/dy = (dx/dt)/(dy/dt) = u(y)/v_b. It is zero at the banks, greatest at y = D/2, and takes the same value at equal distances from either bank, so the path is symmetric about its midpoint."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-qualitative-quantitative-fr2",
+              "type": "QQT",
+              "topics": [
+                "CM.3.2",
+                "CM.2.4"
+              ],
+              "prompt": "A worker on the flat roof of a tall building hauls up a uniform rope that hangs straight down from the roof's edge, with its lower end well above the ground. The rope has length L = 30.0 m and mass m = 2.40 kg. She pulls it in over the edge hand over hand, slowly and at a steady speed, so that the rope's kinetic energy stays negligible, and piles it on the roof. Ignore friction where the rope passes over the edge and air resistance, and take upward as positive.",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without writing or deriving equations, determine whether the work she does in hauling in the first 15.0 m of rope is greater than, less than or equal to the work she does in hauling in the last 15.0 m. Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that she does more work hauling in the first 15.0 m than the last 15.0 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that at a steady speed her pull balances the weight of the rope still hanging, which shrinks as she hauls, so over the first 15.0 m her pull is always larger than over the last 15.0 m while her hands move the same distance, and work is force times distance accumulated over the motion. (Accept an equivalent correct energy argument, such as: the first 15.0 m raises the whole rope, the last 15.0 m only its lower half.)"
+                    }
+                  ],
+                  "answer": "Greater. At a steady speed her pull balances the weight of the rope still hanging below the edge. During the first 15.0 m that hanging length falls from 30.0 m to 15.0 m, so she always supports the weight of at least 15.0 m of rope; during the last 15.0 m it falls from 15.0 m to zero, so she supports at most that weight. Her hands move 15.0 m in each stage, so the larger pull over the same distance does more work.",
+                  "steps": [
+                    "The hanging rope moves at constant velocity, so by Newton's first law the net force on it is zero: the rope at the edge pulls up on it with a force equal to its weight, and with no friction at the edge her pull is the same size.",
+                    "Work is the force along the motion accumulated over the distance moved. Equal distances with a larger force at every point give more work.",
+                    "An equivalent energy view: hauling in the first 15.0 m lifts every part of the rope, while hauling in the last 15.0 m lifts only the lower half, which is all that is still hanging."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Starting from the definition of work as an integral of force over displacement, derive an expression for the work W(s) she does in hauling in the first length s of rope, in terms of m, L, s and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies her pull when a length y has been hauled in as the weight of the hanging rope, F(y) = (m/L)(L − y)g, because the hanging rope moves at a steady speed (net force zero) and the edge is frictionless."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the work as an integral of that force over the distance her hands move: W(s) = ∫ from 0 to s of (mg/L)(L − y) dy (or an equivalent integral)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates the integral to obtain W(s) = mg(s − s^2/(2L)), or an equivalent form such as mgs(1 − s/(2L))."
+                    }
+                  ],
+                  "answer": "W(s) = mg(s − s^2/(2L)) = mgs(1 − s/(2L))",
+                  "steps": [
+                    "Let y be the length already hauled in. The hanging length is L − y, with mass (m/L)(L − y), since the rope is uniform.",
+                    "The hanging rope moves up at a steady speed, so the net force on it is zero and the rope at the edge pulls up on it with F(y) = (m/L)(L − y)g. With a frictionless edge her pull has the same size, and her hands move a distance dy along her pull while dy of rope comes in.",
+                    "W(s) = ∫ from 0 to s of (mg/L)(L − y) dy = (mg/L)(Ls − s^2/2) = mg(s − s^2/(2L)).",
+                    "Check: the whole rope, s = L, takes mgL/2, which is mg times the rise L/2 of the rope's center of mass from the middle of the hanging rope to the roof."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the work she does in hauling in the first 15.0 m of rope and in hauling in the last 15.0 m.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds about 265 J for the first 15.0 m and about 88.2 J for the last 15.0 m, with units."
+                    }
+                  ],
+                  "answer": "First 15.0 m: 265 J. Last 15.0 m: 88.2 J.",
+                  "steps": [
+                    "mg = (2.40 kg)(9.8 m/s^2) = 23.52 N.",
+                    "First 15.0 m: W(15.0 m) = (23.52 N)(15.0 m − (15.0 m)^2/(2(30.0 m))) = (23.52 N)(11.25 m) = 265 J.",
+                    "Whole rope: W(30.0 m) = (23.52 N)(30.0 m)/2 = 353 J, so the last 15.0 m takes 352.8 J − 264.6 J = 88.2 J."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Does your expression from part (b) support your answer to part (a)? Justify your answer. Then suppose a 6.00 kg bucket of tools is tied to the rope's lower end and she hauls in rope and bucket in the same way. Predict whether the fraction of the total work that she does in the first 15.0 m is greater than, less than or the same as without the bucket, and explain the prediction in terms of the forces she exerts.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that it supports part (a), citing the expression: W(L/2) = 3mgL/8 while the whole rope takes mgL/2, so the last half takes mgL/8, a third as much (265 J against 88.2 J); or the work per meter, dW/ds = mg(1 − s/L), falls as s grows."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Predicts a smaller fraction (closer to one half; 0.54 against 0.75 here, values not required), because the bucket's weight adds the same force at every point, so it adds equal work to each 15.0 m and makes the two stages' shares closer to equal."
+                    }
+                  ],
+                  "answer": "Yes. W(L/2) = mg(L/2 − L/8) = 3mgL/8, and the whole rope takes W(L) = mgL/2, so the last half takes mgL/8: the first half takes three times as much, 265 J against 88.2 J. The term −s^2/(2L) shows why: the work per meter, dW/ds = mg(1 − s/L), is the weight still hanging and falls as she hauls. With the bucket, the first 15.0 m takes a smaller fraction of the total. The bucket's weight is the same at every point of the haul, so it adds the same work, (6.00 kg)(9.8 m/s^2)(15.0 m) = 882 J, to each 15.0 m; only the rope's part of her pull shrinks, so the shares move toward one half: 1147 J of 2117 J, about 0.54, against 0.75 without the bucket.",
+                  "steps": [
+                    "Without the bucket the fraction in the first half is (3mgL/8)/(mgL/2) = 3/4, whatever m and L are.",
+                    "With a bucket of mass M her pull is (m/L)(L − y)g + Mg, and the bucket's term adds MgL/2 to each half of the haul.",
+                    "Fraction with the bucket: (3mgL/8 + MgL/2)/(mgL/2 + MgL) = (3m/8 + M/2)/(m/2 + M) = (0.900 + 3.00)/(1.20 + 6.00) = 0.54, less than 3/4 and approaching 1/2 as M grows."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-qualitative-quantitative-fr3",
+              "type": "QQT",
+              "topics": [
+                "CM.4.3",
+                "CM.4.1",
+                "CM.4.2"
+              ],
+              "prompt": "An astronaut floats at rest inside a large space station, far from its walls. She and her suit have a total mass M = 60.0 kg, and she holds two identical cargo bags, each of mass m = 10.0 kg. She throws the bags along one line, and each bag leaves her hands moving at u = 6.00 m/s relative to her, measured just after it is released. In trial 1 she throws both bags at once. In trial 2 she throws one bag and then, after it has left her hands, throws the other bag in the same direction. Treat the station as an inertial frame, ignore the air in the station, and take the direction in which she recoils as positive.",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "A student claims that the astronaut ends with the same recoil speed in both trials, because the same two bags leave at the same speed relative to her and momentum is conserved either way. Without writing or deriving equations, determine whether her final speed is greater in trial 1, greater in trial 2, or the same in both. Explain your reasoning, including what the student's argument overlooks.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that her final speed is greater in trial 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the first throw of trial 2 launches half the bag mass from the same system as trial 1 and so gives half of trial 1's recoil, while the second throw launches the same bag at the same relative speed from a lighter system, since the first bag is gone, and so adds more than the first throw did; and notes that the student overlooks that the bags' speeds are measured relative to an astronaut who is moving at different speeds in the two trials, so equal relative speeds do not mean equal momenta. (Accept an equivalent correct argument.)"
+                    }
+                  ],
+                  "answer": "Greater in trial 2. The first throw of trial 2 is half of trial 1's throw: half the bag mass leaves the same 80 kg system at the same relative speed, so she gains half of trial 1's recoil. The second throw launches the same bag at the same relative speed, but from a lighter system, because the first bag is already gone, so it adds more speed than the first throw did, and together they give more than trial 1. The student overlooks that the speeds are relative to the astronaut, who moves at different speeds in the two trials, so the bags' momenta relative to the station differ between the trials; conservation fixes the total, zero, but not how it is shared.",
+                  "steps": [
+                    "Momentum conservation fixes the system's total momentum at zero; how much each part carries depends on the bags' velocities relative to the station.",
+                    "Each throw gives the same bag mass the same relative speed. The lighter the system left behind, the larger the change in its speed."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive expressions for her final velocity v_1 in trial 1 and v_2 in trial 2, in terms of M, m and u.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Trial 1: writes conservation of momentum for the astronaut and both bags, with each bag's velocity v_1 − u relative to the station: 0 = Mv_1 + 2m(v_1 − u), so v_1 = 2mu/(M + 2m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Trial 2, first throw: 0 = (M + m)v_a + m(v_a − u), so her velocity after it is v_a = mu/(M + 2m)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Trial 2, second throw: (M + m)v_a = Mv_2 + m(v_2 − u), so v_2 = v_a + mu/(M + m) = mu/(M + 2m) + mu/(M + m)."
+                    }
+                  ],
+                  "answer": "v_1 = 2mu/(M + 2m); v_2 = mu/(M + 2m) + mu/(M + m)",
+                  "steps": [
+                    "System: the astronaut and every bag. No external force acts, so the system's momentum stays zero.",
+                    "A bag that leaves at u relative to an astronaut moving at v has velocity v − u relative to the station; the bags move in the negative direction.",
+                    "Trial 1: 0 = Mv_1 + 2m(v_1 − u), so (M + 2m)v_1 = 2mu.",
+                    "Trial 2: the first throw gives (M + 2m)v_a = mu. For the second throw, the astronaut and the second bag start with momentum (M + m)v_a, the first bag keeps its own momentum, and (M + m)v_a = Mv_2 + m(v_2 − u), so (M + m)v_2 = (M + m)v_a + mu."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate v_1 and v_2.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds v_1 = 1.50 m/s and v_2 = 1.61 m/s."
+                    }
+                  ],
+                  "answer": "v_1 = 1.50 m/s; v_2 = 1.61 m/s.",
+                  "steps": [
+                    "v_1 = 2(10.0 kg)(6.00 m/s)/(80.0 kg) = 1.50 m/s.",
+                    "v_a = (10.0 kg)(6.00 m/s)/(80.0 kg) = 0.750 m/s, and v_2 = 0.750 m/s + (10.0 kg)(6.00 m/s)/(70.0 kg) = 0.750 m/s + 0.857 m/s = 1.61 m/s."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your expressions from part (b) to show whether they support your answer to part (a). Then use them to predict what happens to the difference between v_2 and v_1 when each bag's mass is very small compared with M, and explain physically why.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Shows support: v_2 − v_1 = mu/(M + m) − mu/(M + 2m) = m^2u/((M + m)(M + 2m)), which is positive because M + m is less than M + 2m (1.61 m/s against 1.50 m/s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Predicts that the difference becomes negligible, because both expressions approach 2mu/M and their difference, proportional to m^2, shrinks faster than either speed; physically, a light bag barely changes the mass she pushes off, so it hardly matters whether the second bag is still aboard."
+                    }
+                  ],
+                  "answer": "They support it: v_2 − v_1 = mu/(M + m) − mu/(M + 2m) = m^2u/((M + m)(M + 2m)), which is positive because the second throw of trial 2 pushes off the smaller mass M + m; the values, 1.61 m/s against 1.50 m/s, agree. When m is much smaller than M, v_1 and v_2 both approach 2mu/M, and their difference, proportional to m^2, becomes negligible compared with either speed: a light bag barely changes the mass she pushes off, so the order of the throws hardly matters.",
+                  "steps": [
+                    "The relative difference is (v_2 − v_1)/v_1 = m/(2(M + m)), which tends to zero as m/M tends to zero.",
+                    "Check with the numbers: m/(2(M + m)) = 10.0/140 = 0.071, and (1.607 − 1.50)/1.50 = 0.071."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-qualitative-quantitative-fr4",
+              "type": "QQT",
+              "topics": [
+                "CM.5.5",
+                "CM.5.3",
+                "CM.2.2"
+              ],
+              "prompt": "A cable reel of mass M = 40.0 kg has outer radius R = 0.300 m, and its center of mass is at its axle. It rests on a level floor against a step of height h = 0.120 m, onto which it must be rolled; its rim touches the step's edge. The edge is rough enough that the reel does not slip on it. In each of two methods, a horizontal force directed toward the step is increased slowly from zero until the reel just begins to lift off the floor. In method 1, the force F_1 is a push on the axle. In method 2, the force F_2 is a pull on a rope wrapped around the reel's rim, which leaves the rim horizontally at its top. Both methods are shown.",
+              "figureIds": [
+                "cm-fr-qualitative-quantitative-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Without writing or deriving equations, determine which method needs the smaller force to lift the reel off the floor, or whether the forces are equal. Explain your reasoning in terms of torques.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that method 2 needs the smaller force."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains with torques about the step's edge, the point the reel pivots about as it lifts: the weight's torque about the edge is the same in both methods, but the rope's line of action at the top of the rim is farther from the edge than the push's line through the axle, so its longer lever arm needs a smaller force for the same torque."
+                    }
+                  ],
+                  "answer": "Method 2. As the reel starts to lift, it pivots about the step's edge. Its weight exerts the same torque about the edge in both methods, tending to keep the reel on the floor. A horizontal force's lever arm about the edge is the height of its line of action above the edge: the top of the rim is higher above the edge than the axle is, so the rope has the longer lever arm and needs the smaller force to balance the weight's torque.",
+                  "steps": [
+                    "At the moment of lifting, the floor no longer pushes on the reel, so the only torques about the edge come from the weight and the applied force.",
+                    "Torque is force times lever arm, so a longer lever arm needs a smaller force for the same torque."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive expressions for the least forces F_1 and F_2 that lift the reel off the floor, in terms of M, R, h and g. Begin by identifying the forces exerted on the reel at the instant it begins to lift.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies that at that instant the floor exerts no force, so the forces are the weight, the applied force and the force from the step's edge, and takes torques about the edge, where the edge's force has no torque."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the lever arms about the edge: √(R^2 − (R − h)^2) = √(2Rh − h^2) for the weight, R − h for the push at the axle and 2R − h for the rope at the top of the rim."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Balances the torques to obtain F_1 = Mg√(2Rh − h^2)/(R − h) and F_2 = Mg√(2Rh − h^2)/(2R − h)."
+                    }
+                  ],
+                  "answer": "F_1 = Mg√(2Rh − h^2)/(R − h); F_2 = Mg√(2Rh − h^2)/(2R − h)",
+                  "steps": [
+                    "Forces on the reel as it begins to lift: its weight Mg, acting down at the axle; the applied horizontal force; and the contact force from the edge. The floor's normal force has just become zero, so the reel is in equilibrium under these three, and the net torque about the edge is zero.",
+                    "The edge is h above the floor and the axle is R above it, so the axle is R − h above the edge. The edge is a distance R from the axle, so it is √(R^2 − (R − h)^2) = √(2Rh − h^2) horizontally from the axle: the weight's lever arm.",
+                    "Method 1: the push's line of action passes through the axle, R − h above the edge, so F_1(R − h) = Mg√(2Rh − h^2).",
+                    "Method 2: the rope's line of action is at the top of the rim, 2R − h above the edge, so F_2(2R − h) = Mg√(2Rh − h^2)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate F_1 and F_2.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds F_1 = 523 N and F_2 = 196 N."
+                    }
+                  ],
+                  "answer": "F_1 = 523 N; F_2 = 196 N.",
+                  "steps": [
+                    "√(2Rh − h^2) = √(2(0.300 m)(0.120 m) − (0.120 m)^2) = √(0.0576 m^2) = 0.240 m, and Mg = (40.0 kg)(9.8 m/s^2) = 392 N.",
+                    "F_1 = (392 N)(0.240 m)/(0.180 m) = 523 N and F_2 = (392 N)(0.240 m)/(0.480 m) = 196 N."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Explain whether your expressions from part (b) support your answer to part (a). Then use them to predict what happens to F_1 and to F_2 as the step's height approaches the reel's radius, and explain physically the result for method 1.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that they support part (a): F_1/F_2 = (2R − h)/(R − h), which is greater than 1 for every step lower than the axle (2.67 here, 523 N against 196 N), because the rope's lever arm is longer by R."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Predicts that as h approaches R, F_1 increases without limit while F_2 approaches Mg (392 N), and explains that a push at the axle then acts along a line through the edge, so it has no lever arm about the edge and cannot balance the weight's torque."
+                    }
+                  ],
+                  "answer": "They support it: F_1/F_2 = (2R − h)/(R − h) = 2.67 here (523 N against 196 N), and the ratio is greater than 1 for any step lower than the axle, because the rope's lever arm is longer by R. As h approaches R, R − h approaches zero, so F_1 grows without limit, while F_2 approaches Mg√(R^2)/R = Mg = 392 N. Physically, when the step is as high as the axle, a horizontal push at the axle acts along a line through the edge, so it has no torque about the edge, and no push, however large, can lift the reel.",
+                  "steps": [
+                    "(2R − h)/(R − h) = (0.480 m)/(0.180 m) = 2.67.",
+                    "At h = R: √(2R^2 − R^2) = R and 2R − h = R, so F_2 = Mg."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "mixed-4",
+  "kind": "mixed-set",
+  "title": "Mixed set 4: all units at exam pace",
+  "author": "cm-mixed-3-4-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Section I has 15 multiple-choice questions in 30 minutes, and a four-function, scientific or graphing calculator is allowed. The questions are mixed on purpose, so part of each one is deciding which principle or method applies: whether a velocity-dependent force calls for a terminal speed or a differential equation, whether a change calls for the work–energy theorem or the impulse–momentum theorem, and which forces are internal and which external when a system's center of mass moves. Expect it to feel slower than practising one topic at a time. Use g = 9.8 m/s^2 and SI units, take each question's stated positive direction, and measure angular quantities in radians; you may use the course's formula reference. Score the set with its answer key and record raw points; they are practice evidence, not AP® scores, and are not converted to any other scale.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "any",
+          "directions": "15 questions, 30 minutes. Choose the best answer for each question and mark it on the answer sheet. Each question is worth 1 point, and there is no penalty for a wrong answer, so answer every question. Neglect air resistance unless a question describes a drag force.",
+          "items": [
+            {
+              "id": "cm-mixed-4-mc01",
+              "prompt": "A 0.12 kg hollow plastic ball is dropped from rest from a tall tower. At t = 3.0 s it is falling at 9.0 m/s. What is the impulse of the air's drag force on the ball during those 3.0 s?",
+              "choices": [
+                "1.1 N·s, downward",
+                "2.4 N·s, upward",
+                "3.5 N·s, upward",
+                "It cannot be found without knowing how drag depends on speed"
+              ],
+              "key": "B",
+              "rationale": "Take downward as positive. The net impulse equals the change in momentum, (0.12)(9.0) − 0 = +1.08 N·s. Gravity's impulse is mgt = (0.12)(9.8)(3.0) = +3.53 N·s. So the drag's impulse is 1.08 − 3.53 = −2.4 N·s, that is, 2.4 N·s upward.",
+              "distractorNotes": {
+                "A": "This is the ball's change in momentum, (0.12)(9.0) = 1.08 kg·m/s downward, which is the impulse of the net force: gravity and drag together.",
+                "C": "This is the size of gravity's impulse, mgt = 3.5 N·s, which points downward. Drag's impulse is what remains after the net impulse is accounted for.",
+                "D": "The drag law would be needed to integrate the drag force directly, but the impulse–momentum theorem gives the total impulse from the momentum change, and gravity's impulse is known."
+              },
+              "topics": [
+                "CM.4.2",
+                "CM.2.9"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc02",
+              "prompt": "A 0.10 kg foam ball is launched straight up at 15 m/s. The air exerts a drag force of size bv on it, with b = 0.050 kg/s, opposite its velocity. Take upward as positive. How long does the ball take to reach its highest point?",
+              "choices": [
+                "1.5 s",
+                "0.87 s",
+                "1.1 s",
+                "6.5 s"
+              ],
+              "key": "C",
+              "rationale": "Newton's second law gives dv/dt = −g − (b/m)v = −(v + v_T)/τ, with τ = m/b = 2.0 s and v_T = gτ = 19.6 m/s. Separating variables, ∫ dv/(v + v_T) from 15 to 0 = −t/τ, so t = τ ln(1 + v_0/v_T) = 2.0 ln(1 + 15/19.6) = 2.0 ln(1.77) = 1.1 s.",
+              "distractorNotes": {
+                "A": "This is v_0/g, the time with no drag. Drag adds to gravity on the way up, so the ball stops sooner.",
+                "B": "This keeps the deceleration at its launch value, g + bv_0/m = 17.3 m/s^2, for the whole rise. The drag shrinks as the ball slows, so the deceleration falls toward g and the rise takes longer.",
+                "D": "This subtracts the drag from gravity, 15/(9.8 − 7.5). While the ball rises, drag points down, in the same direction as gravity."
+              },
+              "topics": [
+                "CM.2.9",
+                "CM.2.5",
+                "CM.1.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc03",
+              "prompt": "A 2.0 kg cart moves at +4.0 m/s along a level, frictionless track. A brief push then gives it an impulse of −6.0 N·s along the track. What is the change in the cart's kinetic energy?",
+              "choices": [
+                "−15 J",
+                "−9.0 J",
+                "+9.0 J",
+                "−6.0 J"
+              ],
+              "key": "A",
+              "rationale": "The impulse changes the momentum: (2.0)v_f = (2.0)(4.0) − 6.0 = 2.0 kg·m/s, so v_f = +1.0 m/s. Then ΔK = ½(2.0)(1.0^2 − 4.0^2) = −15 J.",
+              "distractorNotes": {
+                "B": "This uses J^2/(2m) = 9.0 J with a minus sign for a slowing push. That expression gives the kinetic energy only for an object that starts from rest; here the cart was already moving.",
+                "C": "This is J^2/(2m), the kinetic energy the impulse would give a cart at rest. The cart was moving at +4.0 m/s, and the impulse slows it.",
+                "D": "This treats the impulse, in N·s, as work. Impulse changes momentum; the change in kinetic energy depends also on the initial velocity."
+              },
+              "topics": [
+                "CM.3.1",
+                "CM.4.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc04",
+              "prompt": "On a level air track, a 2.0 kg glider moves at +3.0 m/s toward a 1.0 kg glider that moves at −3.0 m/s. Before they collide, what is the velocity of the 1.0 kg glider relative to the center of mass of the two-glider system?",
+              "choices": [
+                "−3.0 m/s",
+                "−6.0 m/s",
+                "−2.0 m/s",
+                "−4.0 m/s"
+              ],
+              "key": "D",
+              "rationale": "v_cm = (2.0 × 3.0 + 1.0 × (−3.0))/3.0 = +1.0 m/s. Relative to the center of mass, the 1.0 kg glider moves at −3.0 − (+1.0) = −4.0 m/s. (The 2.0 kg glider moves at +2.0 m/s in that frame, so the total momentum there is zero.)",
+              "distractorNotes": {
+                "A": "This takes the center of mass to be at rest because the gliders have equal speeds. Their momenta are not equal, so the center of mass moves at +1.0 m/s.",
+                "B": "This is the 1.0 kg glider's velocity relative to the 2.0 kg glider, not relative to the center of mass.",
+                "C": "This adds the center of mass velocity instead of subtracting it: the relative velocity is v − v_cm = −3.0 − (+1.0)."
+              },
+              "topics": [
+                "CM.1.4",
+                "CM.2.1",
+                "CM.4.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc05",
+              "prompt": "When a laboratory centrifuge is switched off, its rotor, of rotational inertia 0.050 kg·m^2, is spinning at 80 rad/s. From then on, air drag exerts a torque of size bω on the rotor, with b = 0.010 N·m·s, and no other torque acts. Through how many revolutions does the rotor turn after it is switched off?",
+              "choices": [
+                "32",
+                "40",
+                "64",
+                "Infinitely many, because ω never reaches zero"
+              ],
+              "key": "C",
+              "rationale": "Iω dω/dθ = −bω gives dω/dθ = −b/I, so ω falls linearly with angle and reaches zero after θ = Iω_0/b = (0.050)(80)/0.010 = 400 rad. Equivalently, ω = ω_0e^(−t/τ) with τ = I/b = 5.0 s, and θ = ∫ from 0 to ∞ of ω dt = ω_0τ = 400 rad. That is 400/(2π) = 64 revolutions.",
+              "distractorNotes": {
+                "A": "This keeps the angular deceleration at its initial value, bω_0/I = 16 rad/s^2, and uses ω_0^2/(2α). The drag torque weakens as the rotor slows, so it keeps turning longer.",
+                "B": "This assumes the rotor stops after one time constant, I/b = 5.0 s, and integrates ω only that far. At t = 5.0 s it is still turning at e^(−1) of its initial rate.",
+                "D": "ω = ω_0e^(−t/τ) does approach zero only gradually, but the angle is the area under that curve, which is finite: ω_0τ."
+              },
+              "topics": [
+                "CM.5.6",
+                "CM.5.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc06",
+              "prompt": "A 0.50 kg particle moves along the x-axis with potential energy U(x) = 2.0x^4, with U in joules and x in meters. It is released from rest at x = 0.50 m and oscillates about x = 0. What is its speed as it passes x = 0?",
+              "choices": [
+                "0.71 m/s",
+                "1.7 m/s",
+                "1.0 m/s",
+                "0.50 m/s"
+              ],
+              "key": "A",
+              "rationale": "The oscillation is periodic but not simple harmonic, so use energy conservation. U(0.50 m) = 2.0(0.50)^4 = 0.125 J and U(0) = 0, so ½(0.50)v^2 = 0.125 J and v = 0.71 m/s.",
+              "distractorNotes": {
+                "B": "This treats the motion as simple harmonic with k = d^2U/dx^2 at x = 0.50 m, 6.0 N/m, and uses v_max = ωA. The restoring force, −8.0x^3, is not proportional to x, so the motion is not simple harmonic and v_max = ωA does not apply.",
+                "C": "This finds an effective spring constant from the force at release, |F|/x = 1.0/0.50 = 2.0 N/m, and uses v_max = ωA. The force is not proportional to x, so no single k describes it.",
+                "D": "This drops the ½ in kinetic energy: it sets mv^2 equal to the potential energy released."
+              },
+              "topics": [
+                "CM.7.1",
+                "CM.3.3",
+                "CM.3.4"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc07",
+              "prompt": "A 3.0 kg block rests on a 5.0 kg board that lies on frictionless ice. A horizontal 24 N pull on the block makes it slide along the board, and the coefficient of kinetic friction between the block and the board is 0.20. What is the acceleration of the center of mass of the block–board system?",
+              "choices": [
+                "6.0 m/s^2",
+                "3.0 m/s^2",
+                "1.2 m/s^2",
+                "2.3 m/s^2"
+              ],
+              "key": "B",
+              "rationale": "The only external horizontal force on the block–board system is the 24 N pull; the friction forces between block and board form a third-law pair inside the system. So a_cm = 24/(3.0 + 5.0) = 3.0 m/s^2. Check: the block accelerates at (24 − 5.88)/3.0 = 6.04 m/s^2 and the board at 5.88/5.0 = 1.18 m/s^2, and (3.0 × 6.04 + 5.0 × 1.18)/8.0 = 3.0 m/s^2.",
+              "distractorNotes": {
+                "A": "This is the block's acceleration, (24 − 5.9)/3.0. The board is part of the system, and it accelerates much less.",
+                "C": "This is the board's acceleration, 5.9/5.0, produced by the friction force alone.",
+                "D": "This subtracts the 5.9 N friction force from the pull. Friction between the block and the board is internal to the system: its two forces cancel in the system's net force."
+              },
+              "topics": [
+                "CM.2.1",
+                "CM.2.7",
+                "CM.2.3"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc08",
+              "prompt": "A lapidary polishing wheel, with rotational inertia 0.80 kg·m^2, starts from rest. Its drive motor's torque on it fades as τ(t) = 6.0/(1.0 + t), in N·m with t in seconds, for 0 ≤ t ≤ 3.0 s, and friction is negligible. What is the wheel's rotational kinetic energy at t = 3.0 s?",
+              "choices": [
+                "8.3 J",
+                "2.0 × 10^2 J",
+                "53 J",
+                "43 J"
+              ],
+              "key": "D",
+              "rationale": "The torque is a function of time, so find the angular impulse: ∫ from 0 to 3.0 of 6.0/(1.0 + t) dt = 6.0 ln 4.0 = 8.32 kg·m^2/s. Then ω = 8.32/0.80 = 10.4 rad/s, and K = ½(0.80)(10.4)^2 = 43 J.",
+              "distractorNotes": {
+                "A": "This is ∫τ dt = 8.3 N·m·s, the angular impulse, reported as work. Integrating torque over time gives the change in angular momentum.",
+                "B": "This keeps the torque at its initial 6.0 N·m for the whole 3.0 s, giving ω = 22.5 rad/s. The torque falls to 1.5 N·m by t = 3.0 s.",
+                "C": "This multiplies the time-averaged torque, (8.3 N·m·s)/(3.0 s) = 2.8 N·m, by the angle turned, 19.1 rad. Work needs the torque averaged over angle; the wheel turns fastest late, when the torque is small, so that average is less than 2.8 N·m."
+              },
+              "topics": [
+                "CM.6.3",
+                "CM.6.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc09",
+              "prompt": "A 0.15 kg ball is thrown straight up at 20 m/s and is caught at the same height on its way down, moving at 15 m/s. How much work did air drag do on the ball during the whole flight?",
+              "choices": [
+                "0",
+                "−5.3 J",
+                "−13 J",
+                "+13 J"
+              ],
+              "key": "C",
+              "rationale": "Gravity does no net work over a round trip, so the work–energy theorem gives W_drag = ΔK = ½(0.15)(15^2 − 20^2) = −13 J.",
+              "distractorNotes": {
+                "A": "The ball returns to its starting height, so gravity's total work is zero, but drag is not conservative. It opposes the motion on the way up and on the way down, so its work is negative on both legs.",
+                "B": "This is the change in the ball's momentum, (0.15)(−15 − 20) = −5.25 kg·m/s, which is the net impulse, not work.",
+                "D": "This is the kinetic energy the ball lost, which drag converted to thermal energy. The work drag does on the ball is negative because drag opposes the ball's motion."
+              },
+              "topics": [
+                "CM.3.4",
+                "CM.3.2",
+                "CM.2.9"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc10",
+              "prompt": "An electromagnetic launcher pushes a cart from rest at x = 0 along a level track. The push weakens with distance, giving the cart an acceleration a(x) = 6.0e^(−0.50x), in m/s^2 with x in meters. How fast is the cart moving when it reaches x = 4.0 m?",
+              "choices": [
+                "10 m/s",
+                "4.6 m/s",
+                "6.9 m/s",
+                "3.2 m/s"
+              ],
+              "key": "B",
+              "rationale": "The acceleration is given as a function of position, so use a = v dv/dx: ½v^2 = ∫ from 0 to 4.0 of 6.0e^(−0.50x) dx = 12(1 − e^(−2.0)) = 10.4 m^2/s^2. So v = √20.8 = 4.6 m/s.",
+              "distractorNotes": {
+                "A": "This integrates the acceleration over x and calls the result the change in velocity. Integrating a over time gives Δv; integrating over position gives Δ(½v^2).",
+                "C": "This uses the initial acceleration, 6.0 m/s^2, as if it were constant, in v^2 = 2ax. The acceleration falls with distance.",
+                "D": "This sets v^2 equal to ∫a dx, dropping the factor 2 from v dv = a dx."
+              },
+              "topics": [
+                "CM.1.2",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc11",
+              "prompt": "A 2000 kg hopper car carrying 1000 kg of sand coasts at 3.0 m/s along a level, frictionless track. Sand drains through a hole in the car's floor, falling straight down relative to the car, until 500 kg of sand has left. What is the car's speed then?",
+              "choices": [
+                "3.0 m/s",
+                "3.6 m/s",
+                "3.3 m/s",
+                "2.5 m/s"
+              ],
+              "key": "A",
+              "rationale": "Each bit of sand leaves with the car's horizontal velocity, because it falls straight down relative to the car, so no horizontal force acts between the sand and the car as it leaves. With no horizontal force on it, the car keeps moving at 3.0 m/s. Momentum is conserved for the car and all of its sand, including the sand that has drained out.",
+              "distractorNotes": {
+                "B": "This gives the remaining 2500 kg the whole system's original momentum, 9000 kg·m/s. The sand that drained out still moves forward at 3.0 m/s and carries its share of that momentum with it.",
+                "C": "This keeps the car's kinetic energy constant as its mass falls. The draining sand carries its own kinetic energy away with it, so the car's kinetic energy is not conserved; momentum conservation for the car and all of its sand decides the speed.",
+                "D": "This is what happens when 500 kg of sand at rest is dropped into a car of 2500 kg moving at 3.0 m/s: then the car must speed the sand up. Draining sand leaves with the car's own velocity."
+              },
+              "topics": [
+                "CM.4.3",
+                "CM.4.1"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc12",
+              "prompt": "A 5.0 kg bucket hangs from a rope wound around a drum of radius 0.080 m that turns on a horizontal axle. The drum's rotational inertia is 0.030 kg·m^2, and a fluid damper on the axle exerts a resistive torque of size bω on the drum, with b = 0.20 N·m·s, where ω is the drum's angular speed. The bucket is released from rest, and the light rope does not slip. What steady speed does the bucket approach?",
+              "choices": [
+                "20 m/s",
+                "0.81 m/s",
+                "3.0 m/s",
+                "1.6 m/s"
+              ],
+              "key": "D",
+              "rationale": "At the steady speed the bucket and drum have no acceleration. For the bucket, the rope's tension equals its weight, mg. For the drum, the rope's torque balances the damper: mgR = bω. With ω = v/R, v = mgR^2/b = (5.0)(9.8)(0.080)^2/0.20 = 1.6 m/s. The drum's rotational inertia affects only how fast that speed is approached.",
+              "distractorNotes": {
+                "A": "This is the drum's steady angular speed, mgR/b = 19.6 rad/s, reported as the bucket's speed. The bucket's speed is ωR.",
+                "B": "This multiplies the steady speed by m/(m + I/R^2), a factor that belongs in the bucket's acceleration while it speeds up. At the steady speed nothing accelerates, so the rotational inertia plays no part.",
+                "C": "This adds the drum's equivalent mass, I/R^2, to the bucket's mass in the weight. The drum's rotational inertia has no weight; it only slows the approach to the steady speed."
+              },
+              "topics": [
+                "CM.5.5",
+                "CM.2.9",
+                "CM.5.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc13",
+              "prompt": "A 450 kg jet ski with its rider starts from rest on a calm lake. Its engine provides a constant forward thrust of 900 N, and the water exerts a drag force of size bv, with b = 150 kg/s, opposite its velocity. Take the direction of motion as positive. How long after starting does the jet ski reach 90% of its top speed?",
+              "choices": [
+                "2.7 s",
+                "3.0 s",
+                "6.9 s",
+                "4.9 s"
+              ],
+              "key": "C",
+              "rationale": "The top speed is F/b = 900/150 = 6.0 m/s, and m dv/dt = F − bv gives v = 6.0(1 − e^(−t/τ)) with τ = m/b = 3.0 s. Setting v = 0.90(6.0) gives e^(−t/τ) = 0.10, so t = τ ln 10 = 3.0(2.30) = 6.9 s.",
+              "distractorNotes": {
+                "A": "This keeps the acceleration at its starting value, F/m = 2.0 m/s^2, until the speed reaches 5.4 m/s. The drag grows as the jet ski speeds up, so the acceleration falls.",
+                "B": "This is the time constant m/b, when the speed has reached 1 − e^(−1), about 63%, of the top speed, not 90%.",
+                "D": "This uses the average of the starting and final accelerations, 2.0 and 0.20 m/s^2, as if the acceleration fell linearly in time. It falls exponentially, quickly at first, so the true time is longer."
+              },
+              "topics": [
+                "CM.2.9",
+                "CM.2.5"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc14",
+              "prompt": "A 0.40 kg glider attached to a horizontal spring with k = 160 N/m rests at its equilibrium position on a level air track. A quick tap gives the glider an impulse of 0.60 N·s along the track. Ignoring friction, what is the amplitude of the oscillation that follows?",
+              "choices": [
+                "0.087 m",
+                "0.075 m",
+                "0.0038 m",
+                "0.12 m"
+              ],
+              "key": "B",
+              "rationale": "The tap is brief, so the glider leaves equilibrium with v_0 = J/m = 0.60/0.40 = 1.5 m/s. At equilibrium all the energy is kinetic, so ½kA^2 = ½mv_0^2 and A = v_0√(m/k) = 1.5√(0.40/160) = 0.075 m.",
+              "distractorNotes": {
+                "A": "This sets the impulse, 0.60 N·s, equal to the oscillator's energy, ½kA^2. The impulse gives the glider momentum; its kinetic energy is (mv)^2/(2m) = 0.45 J.",
+                "C": "This divides the impulse by the spring constant, treating it as a force that stretches the spring: kA = J. The units do not even work out to meters.",
+                "D": "This multiplies the initial speed, 1.5 m/s, by a quarter period, as if the glider kept that speed until it stopped. It slows steadily as the spring stretches."
+              },
+              "topics": [
+                "CM.7.4",
+                "CM.4.2",
+                "CM.7.2"
+              ]
+            },
+            {
+              "id": "cm-mixed-4-mc15",
+              "prompt": "A solar-powered car's motor delivers a constant 1.6 kW to its wheels. On a level road the only resistive force on the car is air drag of size cv^2, with c = 0.20 kg/m. What is the car's top speed on that road?",
+              "choices": [
+                "20 m/s",
+                "89 m/s",
+                "16 m/s",
+                "There is no top speed, because the motor keeps supplying energy"
+              ],
+              "key": "A",
+              "rationale": "At top speed the car's kinetic energy is constant, so all of the motor's power goes to drag: P = (cv^2)v = cv^3. Then v = (1600/0.20)^(1/3) = 8000^(1/3) = 20 m/s.",
+              "distractorNotes": {
+                "B": "This sets the power equal to the drag force, P = cv^2. At the top speed the drive force equals the drag, so the power is the drag force times the speed, cv^3.",
+                "C": "This assumes half the motor's power still goes into kinetic energy at top speed. At top speed the kinetic energy is constant, so all of the power goes to overcoming drag.",
+                "D": "Without drag that would be true, though the speed would grow ever more slowly. Drag's power, cv^3, rises with speed until it uses all 1.6 kW."
+              },
+              "topics": [
+                "CM.3.5",
+                "CM.2.9"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

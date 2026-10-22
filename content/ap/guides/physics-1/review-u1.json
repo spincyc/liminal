@@ -1,0 +1,500 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "review-u1",
+  "kind": "unit-review",
+  "unitId": "u1",
+  "title": "Unit 1 review: Kinematics",
+  "author": "p1-review-author",
+  "summary": "A retrieval-first review of Unit 1 for the AP® Physics 1 Exam: scalars and vectors, displacement, velocity and acceleration, the constant-acceleration relations, motion graphs, reference frames and relative velocity, and vectors and projectile motion. Answer five recall checks and five mixed problems before you read the summary of results with their conditions, the model explanations and traps, and three worked examples.",
+  "minutes": 50,
+  "figures": [
+    {
+      "id": "p1-review-u1-g1",
+      "alt": "Velocity–time graph of a cart from t = 0 to t = 6 s, with v in m/s from −3 to 5. The velocity starts at 4 m/s, falls in a straight line to −2 m/s at t = 3 s, stays at −2 m/s until t = 5 s, then rises in a straight line to 0 at t = 6 s."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper, from memory, before you open its answer. Write each relation together with the conditions under which it holds, and state a positive direction whenever signs matter: a formula without its conditions does not count as recalled. Mark each check right, partly right or wrong; the wrong ones point you to the section below to reread. Use g = 9.8 m/s^2 and neglect air resistance throughout."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c1",
+          "see": "what-to-know",
+          "prompt": "Sort these quantities into scalars and vectors: time, distance, displacement, speed, velocity, acceleration. Then: a cyclist rides 300 m east along a straight road, turns back, and stops 100 m east of her start, taking 50 s in all. With east as positive, find her average speed and her average velocity. When are the average speed and the magnitude of the average velocity equal?",
+          "hint": "Displacement depends only on where the trip starts and ends; distance counts every leg.",
+          "answer": "Scalars: time, distance, speed. Vectors: displacement, velocity, acceleration. Average speed = 500 m/50 s = 10 m/s; average velocity = +100 m/50 s = +2.0 m/s (2.0 m/s east). They are equal only when the object moves along a straight line without reversing direction.",
+          "steps": [
+            "A scalar has only a size; a vector has a size and a direction. Along one axis the direction is carried by the sign.",
+            "Distance: 300 m out plus 200 m back = 500 m. Average speed = distance/Δt = 500 m/50 s = 10 m/s.",
+            "Displacement: Δx = x_f − x_i = +100 m − 0 = +100 m. Average velocity = Δx/Δt = +100 m/50 s = +2.0 m/s, that is, 2.0 m/s east.",
+            "The distance equals the magnitude of the displacement only when the path never turns back, so the two averages agree only for motion in one direction along a straight line."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c2",
+          "see": "what-to-know",
+          "prompt": "Write the four constant-acceleration relations that connect v_0, v, a, t and Δx, and name the quantity each one leaves out. What condition must hold for them to apply, and what do you do when that condition holds only in stages?",
+          "answer": "v = v_0 + at (no Δx); Δx = v_0t + (1/2)at^2 (no v); v^2 = v_0^2 + 2aΔx (no t); Δx = (1/2)(v_0 + v)t (no a). They hold only while the acceleration is constant. If it changes, split the motion into stages of constant acceleration and carry the final velocity and position of one stage forward as the initial values of the next.",
+          "steps": [
+            "v = v_0 + at leaves out the displacement Δx.",
+            "Δx = v_0t + (1/2)at^2 leaves out the final velocity v.",
+            "v^2 = v_0^2 + 2aΔx leaves out the time t.",
+            "Δx = (1/2)(v_0 + v)t leaves out the acceleration a.",
+            "Choose the relation that omits the quantity you neither know nor want.",
+            "Condition: a is constant over the whole interval the relation spans. Free fall near Earth with air resistance neglected qualifies: a = −9.8 m/s^2 with up positive, whether the object is rising or falling.",
+            "When the acceleration changes (an engine stops, brakes engage), work one stage at a time; adjacent stages share the velocity and position at the instant they meet."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c3",
+          "see": "what-to-know",
+          "prompt": "What do the slope and the area under the graph give on a position–time graph, a velocity–time graph and an acceleration–time graph? How does a reversal of direction show on the first two? And from the signs of v and a, how can you tell whether an object is speeding up or slowing down?",
+          "answer": "Position–time: the slope is the velocity (the area is not used). Velocity–time: the slope is the acceleration and the signed area is the displacement. Acceleration–time: the area is the change in velocity. A reversal is a turning point on a position–time graph (the slope passes through zero and changes sign) and a crossing of the time axis on a velocity–time graph. The object speeds up when v and a have the same sign and slows down when their signs are opposite.",
+          "steps": [
+            "Position–time: the slope at an instant is the velocity; a steeper graph means a greater speed, and a downward slope means motion in the negative direction.",
+            "Velocity–time: the slope is the acceleration, and the area between the graph and the time axis is the displacement, counted positive above the axis and negative below. The distance is the total area without signs.",
+            "Acceleration–time: the area is Δv, not v; you also need a starting velocity to find v.",
+            "Reversal: on a position–time graph the slope passes through zero and changes sign (a highest or lowest point); on a velocity–time graph the graph crosses the time axis. The acceleration need not be zero there.",
+            "Speeding up or slowing down depends on whether v and a point the same way, not on the sign of a alone: v = −3 m/s with a = −2 m/s^2 is speeding up."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c4",
+          "see": "what-to-know",
+          "prompt": "Write the relation for combining relative velocities, using subscripts. Then explain what two observers measure differently, and what they measure the same, when their reference frames move at constant velocity relative to each other.",
+          "hint": "Write v_AB for the velocity of A relative to B, and chain the subscripts.",
+          "answer": "v_AC = v_AB + v_BC, added as vectors (as signed numbers in one dimension). The two observers measure velocities that differ by their relative velocity, but the same acceleration, as long as that relative velocity is constant.",
+          "steps": [
+            "The velocity of A relative to C equals the velocity of A relative to B plus the velocity of B relative to C: the inner subscripts match and drop out.",
+            "Reversing the subscripts flips the sign: v_BA = −v_AB.",
+            "Perpendicular velocities combine by components or by the Pythagorean theorem, never by adding their magnitudes.",
+            "If frame B moves at constant velocity v_BC relative to frame C, then over any time interval Δv_AC = Δv_AB, because v_BC does not change. So both observers measure the same acceleration, while their velocities differ by v_BC."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c5",
+          "see": "what-to-know",
+          "prompt": "State the model for projectile motion near Earth's surface: the horizontal and vertical accelerations, what stays constant, what the two directions share, and the velocity at the highest point. Under what conditions does the model hold, and when is the path symmetric?",
+          "answer": "With up positive, a_x = 0 and a_y = −9.8 m/s^2, so v_x stays constant while the vertical motion is free fall; both directions share the same time. At the top v_y = 0 and the velocity is v_x, horizontal, not zero. The model needs negligible air resistance and heights small compared with Earth's radius. The path is symmetric (time up equals time down, landing speed equals launch speed) only when the projectile lands at its launch height.",
+          "steps": [
+            "After launch the only force is gravity, which is vertical. So the horizontal acceleration is zero and the horizontal velocity v_x = v_0 cos θ stays constant.",
+            "Vertically the projectile is in free fall: a_y = −9.8 m/s^2 with up positive, starting from v_0y = v_0 sin θ.",
+            "The horizontal and vertical motions are independent but last the same time t; that shared time links the two lists of givens.",
+            "At the highest point v_y = 0 but v_x is unchanged, so the speed there is v_x, its smallest value.",
+            "Conditions: air resistance negligible and g constant (heights small compared with Earth's radius). The time up equals the time down, and the landing speed equals the launch speed, only when the landing point is at the launch height."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Now mix the ideas. The problems do not say which relation or which frame to use; decide that before you write an equation, and state your positive direction."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c6",
+          "see": "what-to-know",
+          "prompt": "The graph shows the velocity of a cart on a straight track, with east as positive. The cart is at x = 0 at t = 0.\n\n(a) At what time does the cart reverse direction, and what is its acceleration at that instant?\n(b) Find the cart's position at t = 6.0 s and the total distance it travels from t = 0 to t = 6.0 s.\n(c) At what time is the cart back at x = 0?",
+          "figureIds": [
+            "p1-review-u1-g1"
+          ],
+          "hint": "Mark where the graph crosses the time axis, then split the area into triangles and rectangles, each with a sign.",
+          "answer": "(a) t = 2.0 s; the acceleration is −2.0 m/s^2, not zero. (b) x = −2.0 m (2.0 m west of the start); distance 10 m. (c) t = 4.5 s.",
+          "steps": [
+            "(a) The velocity changes sign at t = 2.0 s, where the graph crosses the time axis, so the cart turns around there. The first segment's slope is (−2 − 4)/(3 − 0) = −2.0 m/s^2, and the graph is one straight line through t = 2.0 s, so the acceleration there is −2.0 m/s^2 even though v = 0.",
+            "(b) Signed areas: 0 to 2 s, (1/2)(2)(4) = +4.0 m; 2 to 3 s, (1/2)(1)(−2) = −1.0 m; 3 to 5 s, (2)(−2) = −4.0 m; 5 to 6 s, (1/2)(1)(−2) = −1.0 m.",
+            "Position at 6.0 s: 0 + 4.0 − 1.0 − 4.0 − 1.0 = −2.0 m. Distance: 4.0 + 1.0 + 4.0 + 1.0 = 10 m.",
+            "(c) At t = 3.0 s the cart is at 4.0 − 1.0 = +3.0 m and moves at a constant −2.0 m/s. It covers the remaining 3.0 m in 3.0 m/(2.0 m/s) = 1.5 s, so it is back at x = 0 at t = 4.5 s.",
+            "Check: the cart is farthest east at t = 2.0 s (x = +4.0 m), where the velocity changes from positive to negative, not where the velocity graph is highest."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c7",
+          "see": "what-to-know",
+          "prompt": "A drone lifts off from level ground and rises straight up from rest with a constant acceleration of 2.5 m/s^2. After 4.0 s its motors stop, and from then on it moves under gravity alone. Take up as positive.\n\n(a) Find the greatest height the drone reaches.\n(b) Find the total time from liftoff until the drone reaches the ground.",
+          "hint": "Find the drone's velocity and height at the instant the motors stop.",
+          "answer": "(a) About 25 m (25.1 m). (b) About 7.3 s.",
+          "steps": [
+            "Motors on (a = +2.5 m/s^2 for 4.0 s from rest): v = 0 + (2.5)(4.0) = +10 m/s and Δy = (1/2)(2.5)(4.0)^2 = 20 m.",
+            "Motors off (a = −9.8 m/s^2): the drone keeps rising until v = 0. From v^2 = v_0^2 + 2aΔy, Δy = (0 − 10^2)/(2(−9.8)) = 5.1 m.",
+            "(a) Greatest height: 20 m + 5.1 m = 25.1 m, about 25 m. The upward velocity at the cutoff carries the drone higher; it does not start falling the instant the motors stop.",
+            "(b) From the cutoff to the ground: Δy = −20 m, v_0 = +10 m/s, a = −9.8 m/s^2. Then −20 = 10t − 4.9t^2, or 4.9t^2 − 10t − 20 = 0.",
+            "t = (10 + √(10^2 + 4(4.9)(20)))/(2(4.9)) = (10 + √492)/9.8 = 3.28 s; the negative root lies before the cutoff and is rejected.",
+            "Total time: 4.0 s + 3.28 s = 7.28 s, about 7.3 s."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c8",
+          "see": "explanations-and-traps",
+          "prompt": "A handball moving at 14 m/s strikes a flat vertical wall, approaching at 30° to the wall's surface. It leaves the wall at 14 m/s, again at 30° to the surface, like a reflection in a mirror. The ball is in contact with the wall for 0.040 s. Find the magnitude and direction of the ball's average acceleration during the contact.",
+          "hint": "Resolve each velocity into a component along the wall and a component perpendicular to it before you subtract.",
+          "answer": "350 m/s^2, directed perpendicular to the wall and away from it.",
+          "steps": [
+            "Take x along the wall, in the direction the ball moves along it, and y perpendicular to the wall, pointing away from it.",
+            "Before: v_x = 14 cos 30° = 12.1 m/s and v_y = −14 sin 30° = −7.0 m/s. After: v_x = 12.1 m/s and v_y = +7.0 m/s.",
+            "Δv_x = 0 and Δv_y = 7.0 − (−7.0) = 14 m/s, so Δv is 14 m/s directed away from the wall.",
+            "a_avg = Δv/Δt = (14 m/s)/(0.040 s) = 350 m/s^2, perpendicular to the wall and away from it.",
+            "The speed did not change, but the velocity did, so the acceleration is not zero. Subtracting the speeds (14 − 14 = 0) or reversing the whole velocity (28 m/s ÷ 0.040 s = 700 m/s^2) both mishandle direction."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c9",
+          "see": "what-to-know",
+          "prompt": "An elevator rises at a constant 3.0 m/s. A passenger holds a key 1.2 m above the elevator floor and lets go of it.\n\n(a) How long does the key take to reach the floor?\n(b) During that time, how far does the key move relative to the building, and in which direction?",
+          "hint": "Write the key's velocity and acceleration relative to the elevator floor at the instant it is released.",
+          "answer": "(a) About 0.49 s. (b) About 0.28 m upward.",
+          "steps": [
+            "Relative to the elevator, which moves at constant velocity relative to the building, the key starts from rest (it was moving with the passenger's hand) and accelerates at 9.8 m/s^2 downward: the acceleration is the same in both frames.",
+            "(a) Relative to the floor the key falls 1.2 m from rest: 1.2 = (1/2)(9.8)t^2, so t = √(2(1.2)/9.8) = 0.495 s, about 0.49 s.",
+            "(b) Relative to the building, with up positive, the key starts at +3.0 m/s with a = −9.8 m/s^2: Δy = (3.0)(0.495) − (1/2)(9.8)(0.495)^2 = 1.48 − 1.20 = +0.28 m.",
+            "So the key rises about 0.28 m relative to the building while it falls 1.2 m relative to the elevator, because the floor rises 1.48 m to meet it.",
+            "The choice: in the elevator's frame the problem is a drop from rest; in the building's frame it is a launch at 3.0 m/s toward a moving floor. Both give t = 0.495 s, but the first takes one line."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u1-c10",
+          "see": "worked-examples",
+          "prompt": "From a balcony 12 m above a level courtyard, a ball is thrown at 14 m/s at 35° above the horizontal. It lands on the courtyard.\n\n(a) How long is the ball in the air?\n(b) How far from the point on the courtyard directly below the launch point does it land?\n(c) Find the speed and direction of its velocity just before it lands.",
+          "hint": "Decide which direction alone fixes the time, and write that direction's position as a function of t with your positive direction stated. A quadratic has two roots; which one fits the question?",
+          "answer": "(a) About 2.6 s (b) About 30 m (c) About 21 m/s, directed about 56° below the horizontal",
+          "steps": [
+            "Components: v_0x = 14 cos 35° = 11.5 m/s and v_0y = 14 sin 35° = 8.03 m/s. Take the launch point as the origin with up positive, so a_y = −9.8 m/s^2, a_x = 0, and the courtyard is at y = −12 m.",
+            "Only the vertical motion fixes the time: −12 = 8.03t − 4.9t^2, or 4.9t^2 − 8.03t − 12 = 0. Then t = (8.03 ± √(8.03^2 + 4(4.9)(12)))/9.8 = (8.03 ± 17.3)/9.8, so t = 2.59 s or t = −0.95 s.",
+            "The negative root is a time before the throw, so (a) t = 2.59 s, about 2.6 s. Writing the courtyard as y = +12 m gives an equation with no real root, a sign that the sign is wrong; the level-ground time 2v_0y/g = 1.64 s ignores the 12 m drop.",
+            "(b) Horizontal: x = v_0x t = (11.5 m/s)(2.59 s) = 29.7 m, about 30 m.",
+            "(c) v_x = 11.5 m/s is unchanged, and v_y = 8.03 − (9.8)(2.59) = −17.3 m/s. The speed is √(11.5^2 + 17.3^2) = 20.8 m/s, about 21 m/s. Direction: tan φ = 17.3/11.5, so φ = 56° below the horizontal.",
+            "Check with energy: v^2 = v_0^2 + 2g(12 m) = 196 + 235 = 431 m^2/s^2, so v = 20.8 m/s. The ball lands faster than it was thrown because it ends 12 m lower."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Scalars and vectors",
+          "text": "A scalar has only a size (time, distance, speed, mass). A vector has a size and a direction (displacement, velocity, acceleration, force). Along one axis the direction is a sign relative to a positive direction you choose.",
+          "conditions": [
+            "State the positive direction (and the origin) at the start and keep it for the whole problem, through every stage.",
+            "A negative value means the negative direction; it does not by itself mean slowing down or less than nothing."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Displacement, velocity and acceleration",
+          "text": "Δx = x_f − x_i; v_avg = Δx/Δt; a_avg = Δv/Δt. Speed is the magnitude of velocity, and average speed is distance/Δt.",
+          "conditions": [
+            "Displacement ignores the path; distance counts every leg. They have the same size only for motion in one direction along a straight line.",
+            "An object speeds up when v and a have the same sign and slows down when their signs are opposite.",
+            "In two dimensions Δv is found component by component: an object whose speed stays constant still accelerates if its direction changes."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Constant-acceleration relations",
+          "text": "v = v_0 + at; Δx = v_0t + (1/2)at^2; v^2 = v_0^2 + 2aΔx; Δx = (1/2)(v_0 + v)t.",
+          "conditions": [
+            "The acceleration is constant over the interval. When it changes, use stages, carrying the velocity and position across each boundary.",
+            "Every vector symbol carries a sign from the stated positive direction.",
+            "A quadratic in t can have two roots; keep the one that fits the situation (after the start, on the stage described, moving the right way)."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing a constant-acceleration relation",
+          "head": [
+            "Relation",
+            "Leaves out",
+            "Use it when"
+          ],
+          "rows": [
+            [
+              "v = v_0 + at",
+              "Δx",
+              "No displacement is given or asked"
+            ],
+            [
+              "Δx = v_0t + (1/2)at^2",
+              "v",
+              "The final velocity is neither given nor asked"
+            ],
+            [
+              "v^2 = v_0^2 + 2aΔx",
+              "t",
+              "No time is given or asked"
+            ],
+            [
+              "Δx = (1/2)(v_0 + v)t",
+              "a",
+              "The acceleration is neither given nor asked"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Free fall",
+          "text": "Near Earth's surface, with air resistance negligible, every object in flight has an acceleration of 9.8 m/s^2 downward: a = −9.8 m/s^2 with up positive.",
+          "conditions": [
+            "It holds on the way up, at the top and on the way down; only the velocity is zero at the top.",
+            "It holds only between release and landing. While a hand, a motor or a rope still pushes or pulls, the acceleration is different."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Reading motion graphs",
+          "head": [
+            "Graph",
+            "Slope gives",
+            "Area under it gives",
+            "Direction reverses where"
+          ],
+          "rows": [
+            [
+              "Position–time",
+              "Velocity",
+              "Not used",
+              "The slope passes through zero and changes sign (a turning point)"
+            ],
+            [
+              "Velocity–time",
+              "Acceleration",
+              "Displacement, with sign; the distance is the total area without signs",
+              "The graph crosses the time axis"
+            ],
+            [
+              "Acceleration–time",
+              "Not used in this course",
+              "Change in velocity, Δv",
+              "Cannot be read without a starting velocity"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Relative velocity",
+          "text": "v_AC = v_AB + v_BC, where v_AB is the velocity of A relative to B; v_BA = −v_AB.",
+          "conditions": [
+            "Combine as vectors: signed numbers in one dimension, components (or the Pythagorean theorem) in two.",
+            "Observers whose frames move at constant velocity relative to each other measure different velocities but the same acceleration.",
+            "Work in the frame where the motion is simplest, then convert to the frame the question asks about."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Vector components and addition",
+          "text": "For a vector of magnitude A at angle θ above the +x axis, A_x = A cos θ and A_y = A sin θ. A resultant has R_x = ΣA_x and R_y = ΣA_y, magnitude √(R_x^2 + R_y^2) and direction tan θ = R_y/R_x.",
+          "conditions": [
+            "Measure θ from the axis you use, and give each component the sign of its direction.",
+            "Check the quadrant from the signs of R_x and R_y: the inverse tangent alone cannot tell (−3, −4) from (3, 4)."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Projectile motion",
+          "text": "a_x = 0 and a_y = −9.8 m/s^2 (up positive); x = v_0x t and y = v_0y t − (1/2)gt^2, with one shared time t.",
+          "conditions": [
+            "Air resistance negligible; the object is in flight, after release.",
+            "At the top v_y = 0, but the velocity is v_x, not zero.",
+            "Only when the landing point is at the launch height is the flight symmetric (time up equals time down, landing speed equals launch speed). Otherwise use the vertical equation with the actual height change."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanations-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Written answers earn credit for the reasoning as well as the result. Name the relation or principle, point to the evidence (a graph feature, a sign, a calculation) and connect it to the claim in a full sentence."
+        },
+        {
+          "type": "model",
+          "prompt": "Decide from a velocity–time graph whether an object is speeding up at t = 4 s, where v = −3 m/s and the graph slopes downward.",
+          "text": "At t = 4 s the velocity is negative, and the slope of the velocity–time graph, which is the acceleration, is also negative. Because the velocity and the acceleration point in the same direction, the object is speeding up while it moves in the negative direction."
+        },
+        {
+          "type": "model",
+          "prompt": "Justify the choice of a kinematic relation: a sled's initial speed, final speed and the length of a uniform slope are given, and its acceleration is asked.",
+          "text": "The acceleration is constant along the slope, and no time is given or asked, so I use v^2 = v_0^2 + 2aΔx, the relation that leaves out t, with down the slope as positive."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain why an observer on a train moving at constant velocity and an observer on the platform measure the same acceleration for a dropped ball.",
+          "text": "The ball's velocity relative to the platform is its velocity relative to the train plus the train's velocity relative to the platform. The train's velocity is constant, so any change in the ball's velocity is the same in both frames. Acceleration is that change per unit time, so both observers measure 9.8 m/s^2 downward, even though they see different velocities and paths."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain why a projectile's horizontal velocity stays constant.",
+          "text": "Once the ball is released, and with air resistance negligible, the only force on it is gravity, which is vertical. With no horizontal force there is no horizontal acceleration, so the horizontal component of the velocity keeps its launch value for the whole flight."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain why an object moving at constant speed can still be accelerating.",
+          "text": "Acceleration is the rate of change of velocity, and velocity includes direction. While the object turns, its direction changes, so Δv is not zero even though the speed is unchanged, and the object accelerates."
+        },
+        {
+          "type": "model",
+          "prompt": "Report a displacement found from signed areas.",
+          "text": "With east as positive, Δx = −2.0 m: the cart ends 2.0 m west of its starting point."
+        },
+        {
+          "type": "trap",
+          "text": "Setting the acceleration to zero at a turning point, such as the top of a vertical throw or the instant a velocity–time graph crosses the time axis.",
+          "fix": "Only the velocity is zero there. Read the acceleration from the slope of the velocity–time graph, or from the forces: in free fall it is 9.8 m/s^2 downward the whole time."
+        },
+        {
+          "type": "trap",
+          "text": "Writing a = +9.8 m/s^2 after choosing up as positive, or switching the positive direction partway through.",
+          "fix": "Write the positive direction at the top of your work and give every vector its sign from it: with up positive, a = −9.8 m/s^2 rising and falling."
+        },
+        {
+          "type": "trap",
+          "text": "Using one constant-acceleration relation across stages with different accelerations, such as a powered climb followed by a coast under gravity.",
+          "fix": "Split the motion where the acceleration changes. The final velocity and position of one stage are the initial values of the next."
+        },
+        {
+          "type": "trap",
+          "text": "Reading a velocity–time graph as a picture of the path: taking its highest point as the farthest position, or a downward slope as motion downward.",
+          "fix": "Height on a velocity–time graph is velocity. Position comes from the signed area; the farthest point is where the velocity changes sign."
+        },
+        {
+          "type": "trap",
+          "text": "Counting every area on a velocity–time graph as positive when the displacement is asked, or keeping the signs when the distance is asked.",
+          "fix": "Displacement: areas below the axis count as negative. Distance: add the sizes of all the areas."
+        },
+        {
+          "type": "trap",
+          "text": "Finding a change of velocity by subtracting speeds, so that a ball that rebounds at its incoming speed seems to have zero acceleration.",
+          "fix": "Subtract velocities as vectors, component by component. A component that reverses changes by twice its size; a component that is unchanged contributes nothing."
+        },
+        {
+          "type": "trap",
+          "text": "Adding perpendicular velocities by their magnitudes: 2.0 m/s north plus 1.5 m/s east as 3.5 m/s.",
+          "fix": "Combine components: the result is √(2.0^2 + 1.5^2) = 2.5 m/s, with its direction from the inverse tangent."
+        },
+        {
+          "type": "trap",
+          "text": "Using the launch speed as the horizontal velocity, or setting the whole velocity to zero at the top of a projectile's path.",
+          "fix": "Resolve first: v_0x = v_0 cos θ and v_0y = v_0 sin θ. At the top only v_y is zero; the speed there is v_x."
+        },
+        {
+          "type": "trap",
+          "text": "Keeping the wrong root of a quadratic for time: a negative time, or the moment a ball reaches a ledge's height on the way up when it lands on the way down.",
+          "fix": "Find both roots, then keep the one that matches the situation; check the sign of v_y at that time."
+        },
+        {
+          "type": "trap",
+          "text": "Mixing up the subscripts of relative velocity, writing v_AC = v_BA + v_BC.",
+          "fix": "The inner subscripts match: v_AC = v_AB + v_BC. Then check the result against what each observer would actually see."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "On a straight track, cart A is at x = 0 and moving at +2.0 m/s, speeding up at a constant 0.50 m/s^2. At the same instant cart B is at x = +24 m, moving at a constant −3.0 m/s. When and where do the carts meet, and how fast is cart A moving then?",
+          "answer": "They meet at t = 4.0 s at x = +12 m; cart A is then moving at +4.0 m/s.",
+          "steps": [
+            "Positive direction: +x. Write each cart's position as a function of time from a constant-acceleration relation.",
+            "Cart A: x_A = 0 + 2.0t + (1/2)(0.50)t^2 = 2.0t + 0.25t^2.",
+            "Cart B: x_B = 24 − 3.0t (constant velocity, a = 0).",
+            "They meet when x_A = x_B: 2.0t + 0.25t^2 = 24 − 3.0t, so 0.25t^2 + 5.0t − 24 = 0, or t^2 + 20t − 96 = 0.",
+            "t = (−20 + √(400 + 384))/2 = (−20 + 28)/2 = 4.0 s. The other root, −24 s, is before the motion starts.",
+            "Position: x_B = 24 − 3.0(4.0) = 12 m. Check: x_A = 2.0(4.0) + 0.25(4.0)^2 = 12 m.",
+            "Cart A's velocity: v = 2.0 + 0.50(4.0) = +4.0 m/s."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A kayaker paddles so that her velocity relative to the water is 2.0 m/s directed 30° west of north. The river's current flows due east at 1.5 m/s relative to the shore. Find the kayak's velocity relative to the shore.",
+          "answer": "About 1.8 m/s, directed 16° east of north.",
+          "steps": [
+            "Axes: x east, y north. Relation: v_KS = v_KW + v_WS (kayak relative to shore = kayak relative to water + water relative to shore).",
+            "v_KW: x = −2.0 sin 30° = −1.0 m/s and y = 2.0 cos 30° = 1.73 m/s. West of north makes the x component negative.",
+            "v_WS: x = +1.5 m/s, y = 0.",
+            "Sum: x = −1.0 + 1.5 = +0.5 m/s and y = 1.73 m/s.",
+            "Magnitude: √(0.5^2 + 1.73^2) = 1.80 m/s. Direction: tan φ = 0.5/1.73, so φ = 16° east of north.",
+            "The current more than cancels her westward paddling, so she drifts east even though she points west of north. Adding the magnitudes (3.5 m/s) would ignore direction."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A ball is kicked from level ground with a horizontal velocity component of 16 m/s and a vertical component of 12 m/s. A fence 2.5 m high stands 24 m away. Does the ball clear the fence? If so, by how much, and is the ball rising or falling as it crosses?",
+          "answer": "Yes. It crosses the fence about 7.0 m above the ground, clearing it by about 4.5 m, on its way down.",
+          "steps": [
+            "Up is positive; a_x = 0 and a_y = −9.8 m/s^2. The two directions share the time.",
+            "The horizontal direction has enough information for the time: t = x/v_0x = 24 m/(16 m/s) = 1.5 s.",
+            "Vertical position at that time: y = 12(1.5) − (1/2)(9.8)(1.5)^2 = 18 − 11.0 = 7.0 m (6.98 m).",
+            "Clearance: 7.0 m − 2.5 m = 4.5 m.",
+            "v_y = 12 − 9.8(1.5) = −2.7 m/s, which is negative, so the ball is falling. Check: it reaches its highest point at t = 12/9.8 = 1.22 s, before it gets to the fence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 1: Signed quantities and constant-acceleration motion in one dimension",
+              "ref": "week:1"
+            },
+            {
+              "label": "Week 2: Motion graphs and relative velocity",
+              "ref": "week:2"
+            },
+            {
+              "label": "Week 3: Vectors and projectile motion in two dimensions",
+              "ref": "week:3"
+            },
+            {
+              "label": "Unit 1 plan: Kinematics",
+              "ref": "unit:u1"
+            },
+            {
+              "label": "Unit 1 test",
+              "ref": "test:unit-1"
+            },
+            {
+              "label": "Unit 1 test key",
+              "ref": "key:unit-1"
+            },
+            {
+              "label": "Free-response workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

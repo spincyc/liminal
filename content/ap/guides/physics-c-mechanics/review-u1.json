@@ -1,0 +1,563 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "review-u1",
+  "kind": "unit-review",
+  "unitId": "u1",
+  "title": "Unit 1 review: Kinematics (with a calculus toolkit)",
+  "author": "cm-review-author",
+  "summary": "A retrieval-first review of Unit 1 for the AP® Physics C: Mechanics Exam: rates as derivatives and accumulation as integrals, vectors and components, position, velocity and acceleration in one dimension, motion graphs, relative motion and reference frames, and motion in two or three dimensions, including projectiles. Answer six recall checks and five mixed problems before you read the summary of rules, the model explanations and traps, and three worked examples.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "cm-review-u1-g1",
+      "alt": "Velocity–time graph, v in m/s from −4 to 4 against t in seconds from 0 to 10. A straight line falls from v = 3 m/s at t = 0, crossing zero at t = 2 s, to −3 m/s at t = 4 s. The graph stays at −3 m/s until t = 6 s, then a straight line rises, crossing zero at t = 8 s, to 3 m/s at t = 10 s."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question on paper, from memory, before you open its answer. Write complete statements, with the conditions each result needs. A blank or a wrong answer is useful: its answer names the section further down to reread."
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c1",
+          "see": "what-to-know",
+          "prompt": "A quantity Q, measured in some unit U, changes with time t, measured in seconds.\n\n(a) What does dQ/dt measure, how does it appear on a graph of Q against t, and what are its units?\n\n(b) The rate r(t) = dQ/dt is known for a ≤ t ≤ b. What does ∫ from a to b of r(t) dt give, how does it appear on a graph of r against t, and what are its units?\n\n(c) What else must you know to find the value Q(b) itself?",
+          "answer": "(a) The instantaneous rate of change of Q: the slope of the tangent line to the Q–t graph, in U/s. (b) The net change Q(b) − Q(a): the signed area between the graph of r and the t-axis from a to b, with area above the axis positive and area below negative, in (U/s)(s) = U. (c) A starting value such as Q(a), since Q(b) = Q(a) + ∫ from a to b of r(t) dt.",
+          "steps": [
+            "The derivative is what the average rate ΔQ/Δt, the slope of a secant line, approaches as Δt shrinks toward zero.",
+            "For polynomials in t: d/dt (t^n) = n t^(n − 1), a constant factor stays, and a sum is differentiated term by term. An antiderivative of t^n is t^(n + 1)/(n + 1).",
+            "Fundamental theorem: if R is any antiderivative of r, then ∫ from a to b of r(t) dt = R(b) − R(a).",
+            "An area gives only a change. The constant of integration, fixed by a starting value, gives the quantity itself."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c2",
+          "see": "what-to-know",
+          "prompt": "(a) What distinguishes a vector from a scalar? Sort these quantities: distance, displacement, speed, velocity, acceleration, mass.\n\n(b) A vector A has magnitude A and points at angle θ measured counterclockwise from +x. Write its components. Going the other way, how do you find A and θ from A_x and A_y, and what must you check before you report θ?\n\n(c) How do you add or subtract two vectors written in unit-vector form?",
+          "answer": "(a) A vector has a direction as well as a size; a scalar has only a size. Vectors: displacement, velocity, acceleration. Scalars: distance, speed, mass. (b) A_x = A cos θ and A_y = A sin θ. Then A = √(A_x^2 + A_y^2) and tan θ = A_y/A_x, but read the quadrant from the signs of A_x and A_y, because the calculator's inverse tangent returns only angles between −90° and 90°. (c) Add (or subtract) the i-components, the j-components and the k-components separately.",
+          "steps": [
+            "Speed is the magnitude of velocity. Distance is the length of the path, which is not in general the magnitude of the displacement.",
+            "Quadrant check: for A = (−3.0 i + 3.0 j) m, tan θ = −1 and the calculator returns −45°, but A points up and to the left, so θ = 135°.",
+            "A − B = A + (−B): reverse B, then add components."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c3",
+          "see": "what-to-know",
+          "prompt": "(a) How do you obtain velocity and acceleration from a position function x(t)? How do you recover v(t) from a(t), and x(t) from v(t), and what must you be given to do so?\n\n(b) Using only the signs of v and a, state when an object moving along a line is speeding up, when it is slowing down, and when it turns around.\n\n(c) Write the three constant-acceleration relations and the one condition they require.",
+          "answer": "(a) v = dx/dt and a = dv/dt = d^2x/dt^2. Going back, v(t) = v_0 + ∫ from 0 to t of a(s) ds and x(t) = x_0 + ∫ from 0 to t of v(s) ds, so you need the initial velocity v_0 and the initial position x_0. (b) Speeding up when v and a have the same sign; slowing down when they have opposite signs; turning around where v changes sign. (c) v = v_0 + at, x = x_0 + v_0t + ½at^2 and v^2 = v_0^2 + 2a(x − x_0). They hold only while the acceleration is constant.",
+          "steps": [
+            "In the integrals, t is the upper limit and s is a dummy variable that runs over the earlier times.",
+            "v = 0 at an instant is not enough for a turnaround: v must change sign there.",
+            "Free fall near Earth's surface, with air resistance neglected and up positive, is constant acceleration with a = −g = −9.8 m/s^2, whether the object is rising, at the top or falling."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c4",
+          "see": "what-to-know",
+          "prompt": "Complete each statement.\n\n(a) The slope of a position–time graph at an instant is the ___; where the position–time graph is concave down, the acceleration is ___.\n\n(b) The slope of a velocity–time graph is the ___, and the signed area between it and the t-axis from t_1 to t_2 is the ___.\n\n(c) The signed area between an acceleration–time graph and the t-axis from t_1 to t_2 is the ___.\n\n(d) To find the total distance traveled from a velocity–time graph, you ___.",
+          "answer": "(a) velocity at that instant; negative (b) acceleration; displacement from t_1 to t_2 (c) change in velocity from t_1 to t_2 (d) add the magnitudes of the areas, counting the area below the axis as positive",
+          "steps": [
+            "Concave down means the slope of x, which is v, is decreasing, so a = dv/dt < 0.",
+            "Areas give changes only: to find x or v itself, add the area to a starting value.",
+            "For distance, split the time interval where v changes sign, find each piece's area, and add their sizes."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c5",
+          "see": "what-to-know",
+          "prompt": "(a) Object P is observed from frames A and B. Write the equation that relates v_PA, v_PB and v_BA, and give v_AB in terms of v_BA.\n\n(b) Frame B moves relative to frame A. Under what condition do observers in A and in B measure the same acceleration for every object, and what follows about the forces they infer?",
+          "answer": "(a) v_PA = v_PB + v_BA, added as vectors, and v_AB = −v_BA. (b) When B moves at constant velocity relative to A, so that a_BA = 0. Then a_PA = a_PB for every object P. If A is an inertial frame, so is B, and both observers explain the motion with the same forces.",
+          "steps": [
+            "Read the subscripts as a chain: the inner letters match (P to B, then B to A) and leave P relative to A.",
+            "Differentiate r_PA = r_PB + r_BA once to get the velocity relation and again to get a_PA = a_PB + a_BA.",
+            "If B accelerates, as a braking car does, the two observers' accelerations for an object differ by a_BA."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c6",
+          "see": "what-to-know",
+          "prompt": "(a) A particle's position is r(t) = x(t) i + y(t) j + z(t) k. How do you find its velocity, its speed and its acceleration?\n\n(b) What does the sign of a · v tell you about the particle's speed?\n\n(c) For a projectile near Earth's surface with air resistance neglected and up as +y, give a_x and a_y, and describe v_x and v_y at the highest point.\n\n(d) When can the range R = v_0^2 sin 2θ/g be used?",
+          "answer": "(a) Differentiate each component: v = (dx/dt) i + (dy/dt) j + (dz/dt) k and a = dv/dt; the speed is √(v_x^2 + v_y^2 + v_z^2). (b) Positive: speeding up. Negative: slowing down. Zero: the speed is momentarily not changing. (c) a_x = 0 and a_y = −g = −9.8 m/s^2. At the highest point v_y = 0, while v_x keeps its launch value v_0 cos θ, so the velocity there is horizontal, not zero. (d) Only when the projectile lands at the same height from which it was launched, with air resistance neglected.",
+          "steps": [
+            "The unit vectors i, j and k do not change, so each component is differentiated or integrated on its own.",
+            "a · v = a_x v_x + a_y v_y + a_z v_z picks out the part of a along v, which changes the speed; the part of a perpendicular to v turns the path.",
+            "The horizontal and vertical motions of a projectile share one clock: find t from one direction and use it in the other."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level, with a calculator. Use g = 9.8 m/s^2, state a positive direction for every vector quantity, and give answers with units to two or three significant figures. Decide on a method yourself before you read a hint."
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c7",
+          "see": "worked-examples",
+          "prompt": "Each part describes motion along a straight line, with the direction of motion as positive.\n\n(a) A rocket sled starts from rest at t = 0. Its acceleration is a(t) = 1.8t − 0.30t^2, in m/s^2 with t in seconds, for 0 ≤ t ≤ 6.0 s. Find its speed at t = 6.0 s and the distance it has covered by then.\n\n(b) A skier speeds up uniformly from 3.0 m/s to 15 m/s while sliding 72 m down a straight slope. Find her acceleration and the time this takes.",
+          "hint": "Before you write any equation, decide for each part whether the acceleration stays the same from start to finish, and list which of t, Δx, v_0, v and a the part gives and which it asks for.",
+          "answer": "(a) 11 m/s (10.8 m/s) and 32 m (b) 1.5 m/s^2 and 8.0 s",
+          "steps": [
+            "(a) The acceleration changes with time, so the constant-acceleration relations do not apply. Integrate with v(0) = 0: v(t) = ∫ from 0 to t of (1.8s − 0.30s^2) ds = 0.90t^2 − 0.10t^3.",
+            "v(6.0 s) = 0.90(36) − 0.10(216) = 32.4 − 21.6 = 10.8 m/s ≈ 11 m/s.",
+            "Integrate again with x(0) = 0: x(t) = 0.30t^3 − 0.025t^4, so x(6.0 s) = 64.8 − 32.4 = 32.4 m ≈ 32 m.",
+            "v(t) = t^2(0.90 − 0.10t) is never negative for 0 ≤ t ≤ 6.0 s, so the sled does not turn around and the distance equals the displacement, 32 m.",
+            "Warning: a(6.0 s) = 10.8 − 10.8 = 0, so v = at with the final acceleration would give 0 m/s.",
+            "(b) Speeding up uniformly means constant acceleration, and no time is given, so use v^2 = v_0^2 + 2aΔx: 15^2 = 3.0^2 + 2a(72), so a = (225 − 9.0)/144 = 1.5 m/s^2.",
+            "Then t = (v − v_0)/a = (15 − 3.0)/1.5 = 8.0 s. Check: the average velocity, (3.0 + 15)/2 = 9.0 m/s, times 8.0 s is 72 m."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c8",
+          "see": "what-to-know",
+          "prompt": "The graph shows the velocity v of a cart moving along a straight track, with +x positive, for 0 ≤ t ≤ 10 s. The cart is at x = 2.0 m at t = 0.\n\n(a) Find the cart's acceleration during each straight segment of the graph.\n\n(b) During which time intervals is the cart speeding up?\n\n(c) At what time after t = 0 is the cart back at x = 2.0 m?\n\n(d) Find the cart's least position, its farthest point in the −x direction, and the time it is there.\n\n(e) Find the cart's average velocity and its average speed from t = 0 to t = 10 s.",
+          "hint": "Mark the times where the graph crosses the t-axis, then find the signed area of each piece between marked times.",
+          "answer": "(a) −1.5 m/s^2 for 0 < t < 4.0 s; 0 for 4.0 s < t < 6.0 s; +1.5 m/s^2 for 6.0 s < t < 10 s (b) 2.0 s < t < 4.0 s and 8.0 s < t < 10 s (c) t = 4.0 s (d) x = −7.0 m at t = 8.0 s (e) −0.60 m/s and 1.8 m/s",
+          "steps": [
+            "(a) Slopes: (−3.0 − 3.0)/(4.0 − 0) = −1.5 m/s^2; the flat segment has slope 0; (3.0 − (−3.0))/(10 − 6.0) = +1.5 m/s^2.",
+            "(b) Speeding up needs v and a with the same sign. From 2.0 s to 4.0 s, v < 0 and a < 0; from 8.0 s to 10 s, v > 0 and a > 0. From 0 to 2.0 s and from 6.0 s to 8.0 s the signs are opposite, so the cart slows; from 4.0 s to 6.0 s its speed is constant.",
+            "(c) Signed areas: +3.0 m from 0 to 2.0 s and −3.0 m from 2.0 s to 4.0 s. The net displacement from 0 to 4.0 s is zero, so the cart is back at x = 2.0 m at t = 4.0 s.",
+            "(d) v changes from negative to positive only at t = 8.0 s, so x is least there. The areas −6.0 m (4.0 s to 6.0 s) and −3.0 m (6.0 s to 8.0 s) give x(8.0 s) = 2.0 + 0 − 6.0 − 3.0 = −7.0 m.",
+            "From 8.0 s to 10 s the area is +3.0 m, so x(10 s) = −4.0 m. After t = 4.0 s the cart stays below x = 2.0 m, so t = 4.0 s is the only return.",
+            "(e) Displacement = −4.0 − 2.0 = −6.0 m, so the average velocity is −6.0 m/10 s = −0.60 m/s. Distance = 3.0 + 3.0 + 6.0 + 3.0 + 3.0 = 18 m, so the average speed is 18 m/10 s = 1.8 m/s."
+          ],
+          "figureIds": [
+            "cm-review-u1-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c9",
+          "see": "worked-examples",
+          "prompt": "In a warehouse, take x east, y north and z up. An overhead crane's bridge rolls north along rails at 0.40 m/s relative to the floor. A trolley runs east along the bridge at 0.30 m/s relative to the bridge, and the hook hanging from the trolley is lowered at 0.12 m/s relative to the trolley.\n\n(a) Find the hook's velocity relative to the floor in unit-vector form, and its speed.\n\n(b) Later the hook is neither raised nor lowered, and the bridge again rolls north at 0.40 m/s. The operator wants the hook to move in a straight line to a point 9.0 m east and 6.0 m north of its starting point. What speed must the trolley have relative to the bridge, and how long does the move take?\n\n(c) Near the end of the move the bridge slows down with an acceleration of 0.20 m/s^2 directed south, while the trolley keeps a constant velocity relative to the bridge. What acceleration of the trolley does a worker standing on the floor measure? What does a worker riding on the bridge measure?",
+          "hint": "Give each object and frame a letter, then write one velocity equation whose subscripts link the hook to the floor.",
+          "answer": "(a) v_HF = (0.30 i + 0.40 j − 0.12 k) m/s; speed 0.51 m/s (b) 0.60 m/s; 15 s (c) Floor: 0.20 m/s^2 toward the south, that is, −0.20 j m/s^2. Bridge: zero.",
+          "steps": [
+            "Letters: H hook, T trolley, B bridge, F floor. v_HF = v_HT + v_TB + v_BF: the inner letters match and leave H relative to F.",
+            "v_HT = −0.12 k m/s, v_TB = 0.30 i m/s and v_BF = 0.40 j m/s, so v_HF = (0.30 i + 0.40 j − 0.12 k) m/s.",
+            "Speed = √(0.30^2 + 0.40^2 + 0.12^2) = √0.2644 = 0.514 m/s ≈ 0.51 m/s.",
+            "(b) The hook's velocity relative to the floor must point along the displacement (9.0 i + 6.0 j) m, so v_x/v_y = 9.0/6.0 = 1.5. With v_y = 0.40 m/s from the bridge, v_x = 0.60 m/s, and v_x is the trolley's velocity relative to the bridge.",
+            "Time: 6.0 m ÷ 0.40 m/s = 15 s; check east: 9.0 m ÷ 0.60 m/s = 15 s.",
+            "(c) Differentiate the velocity relation: a_TF = a_TB + a_BF = 0 + (−0.20 j m/s^2). The floor observer measures 0.20 m/s^2 toward the south.",
+            "The rider measures a_TB = 0. The bridge is accelerating, so it is not an inertial frame, and the two observers disagree; frames agree on accelerations only when one moves at constant velocity relative to the other."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c10",
+          "see": "worked-examples",
+          "prompt": "A student on level ground kicks a ball from ground level at 50° above the horizontal toward a building with a flat roof 4.0 m above the ground. The ball lands exactly on the near edge of the roof, 12 m horizontally from the launch point. Neglect air resistance and take up as +y.\n\n(a) Find the launch speed.\n\n(b) Is the ball rising or falling when it reaches the roof? Justify your answer.\n\n(c) Find the ball's speed just before it lands.",
+          "hint": "Write x(t) and y(t) for the ball, and use the one moment at which you know both coordinates.",
+          "answer": "(a) 13 m/s (12.9 m/s) (b) Falling: v_y ≈ −4.3 m/s when it reaches the roof (c) 9.3 m/s",
+          "steps": [
+            "Horizontal: x = (v_0 cos 50°)t, so the ball reaches x = 12 m at t = 12/(v_0 cos 50°).",
+            "Vertical: y = (v_0 sin 50°)t − ½gt^2. Substituting that time gives the path y = x tan 50° − gx^2/(2v_0^2 cos^2 50°).",
+            "At x = 12 m, y = 4.0 m: 4.0 = 12(1.192) − 9.8(144)/(2v_0^2 cos^2 50°). With cos^2 50° = 0.4132 this is 4.0 = 14.30 − 1708/v_0^2, so v_0^2 = 1708/10.30 = 165.8 m^2/s^2 and v_0 = 12.9 m/s ≈ 13 m/s.",
+            "(b) t = 12/(12.9 cos 50°) = 12/8.28 = 1.45 s, and v_y = 12.9 sin 50° − 9.8(1.45) = 9.86 − 14.2 = −4.3 m/s. Since v_y < 0, the ball is falling; it passed its highest point at t = v_0 sin 50°/g = 1.01 s.",
+            "(c) v_x = 8.28 m/s, unchanged throughout the flight. Speed = √(8.28^2 + 4.35^2) = 9.35 m/s ≈ 9.3 m/s.",
+            "The range formula does not apply: it assumes the landing height equals the launch height, and it would give v_0 ≈ 10.9 m/s for a 12 m range."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "cm-review-u1-c11",
+          "see": "what-to-know",
+          "prompt": "A puck glides on a horizontal air table, with x east and y north. Its position is r(t) = (6.0t − 1.5t^2) i + (0.25t^3) j, with r in meters and t in seconds, for 0 ≤ t ≤ 4.0 s.\n\n(a) Find v(t) and a(t).\n\n(b) At t = 1.0 s, is the puck speeding up, slowing down, or neither? Justify your answer.\n\n(c) At what time is the puck moving due north, and where is it then?\n\n(d) Find the puck's average velocity from t = 0 to t = 4.0 s.",
+          "hint": "Treat the i and j parts as two one-dimensional motions that share a clock.",
+          "answer": "(a) v(t) = (6.0 − 3.0t) i + (0.75t^2) j, in m/s; a(t) = −3.0 i + (1.5t) j, in m/s^2 (b) Slowing down, because a · v = −7.9 m^2/s^3 < 0 (c) t = 2.0 s, at r = (6.0 i + 2.0 j) m (d) 4.0 j m/s, that is, 4.0 m/s due north",
+          "steps": [
+            "(a) Differentiate each component: v_x = 6.0 − 3.0t and v_y = 0.75t^2; a_x = −3.0 and a_y = 1.5t.",
+            "(b) At t = 1.0 s, v = (3.0 i + 0.75 j) m/s and a = (−3.0 i + 1.5 j) m/s^2, so a · v = (3.0)(−3.0) + (0.75)(1.5) = −9.0 + 1.1 = −7.9 m^2/s^3.",
+            "The dot product is negative, so the part of a along v points against v and the speed is decreasing. (At t = 2.0 s, a · v = +9.0 m^2/s^3, so the speed passes through a minimum in between.)",
+            "(c) Due north means v_x = 0 with v_y > 0: 6.0 − 3.0t = 0 gives t = 2.0 s, where v_y = 0.75(4.0) = 3.0 m/s > 0.",
+            "r(2.0 s) = (12 − 6.0) i + 0.25(8.0) j = (6.0 i + 2.0 j) m.",
+            "(d) r(0) = 0 and r(4.0 s) = (24 − 24) i + 0.25(64) j = 16 j m, so the average velocity is Δr/Δt = (16 j m)/(4.0 s) = 4.0 j m/s."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Rates and accumulation",
+          "text": "The derivative dQ/dt is the instantaneous rate of change of Q, the slope of the tangent to the Q–t graph, in units of Q per second. For a rate r = dQ/dt, the definite integral ∫ from a to b of r(t) dt is the net change Q(b) − Q(a), the signed area between the graph of r and the t-axis, in units of r times seconds.",
+          "conditions": [
+            "From data, estimate a derivative with the symmetric difference [Q(t + h) − Q(t − h)]/(2h), using the nearest readings on both sides of the instant.",
+            "From a table, estimate an integral with rectangles or trapezoids. For an increasing rate, left-endpoint rectangles underestimate and right-endpoint rectangles overestimate.",
+            "An integral gives a change; a starting value is needed to find Q itself."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Polynomial calculus",
+          "text": "d/dt (t^n) = n t^(n − 1); a constant factor stays; a sum is differentiated term by term; the derivative of a constant is zero. An antiderivative of t^n is t^(n + 1)/(n + 1) + C, and ∫ from a to b of r(t) dt = R(b) − R(a) for any antiderivative R of r.",
+          "conditions": [
+            "The antiderivative rule needs n ≠ −1.",
+            "C is fixed by an initial value, such as x(0) or v(0).",
+            "Units check: a derivative divides by seconds and an integral over time multiplies by seconds."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Scalars, vectors and components",
+          "text": "A vector has a size and a direction; a scalar has only a size. A vector of magnitude A at angle θ counterclockwise from +x has A_x = A cos θ and A_y = A sin θ, and A = A_x i + A_y j. Conversely A = √(A_x^2 + A_y^2) and tan θ = A_y/A_x. Vectors add and subtract component by component.",
+          "conditions": [
+            "Read the quadrant of θ from the signs of the components; the inverse tangent alone returns angles between −90° and 90° only.",
+            "Magnitudes do not add: |A + B| equals |A| + |B| only when A and B point the same way."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Position, velocity and acceleration",
+          "text": "With an origin and a positive direction chosen, displacement is Δx = x(t_2) − x(t_1), velocity is v = dx/dt and acceleration is a = dv/dt = d^2x/dt^2. Going back, v(t) = v_0 + ∫ from 0 to t of a(s) ds and x(t) = x_0 + ∫ from 0 to t of v(s) ds.",
+          "conditions": [
+            "The object speeds up when v and a have the same sign and slows down when they have opposite signs.",
+            "It turns around where v changes sign. A quantity is greatest or least on an interval where its derivative changes sign or at an end of the interval.",
+            "Distance is the sum of the sizes of the displacements between turnarounds."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Constant acceleration",
+          "text": "If a is constant: v = v_0 + at, x = x_0 + v_0t + ½at^2 and v^2 = v_0^2 + 2a(x − x_0).",
+          "conditions": [
+            "The acceleration must be constant over the whole interval used. If a depends on t, integrate instead.",
+            "Free fall near Earth's surface, with air resistance neglected and up positive: a = −g = −9.8 m/s^2 throughout, including at the top.",
+            "Choose the relation that omits the quantity you neither know nor want: v^2 = v_0^2 + 2a(x − x_0) has no t."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Representing motion",
+          "text": "The slope of an x–t graph is v and the slope of a v–t graph is a. The signed area under a v–t graph is the displacement, and the signed area under an a–t graph is the change in velocity. Concave up on an x–t graph means a > 0; concave down means a < 0.",
+          "conditions": [
+            "Areas give changes, so a starting value is needed to find x or v.",
+            "An x–t graph is not a picture of the path: a graph that rises and falls describes motion back and forth along one line.",
+            "Keep time axes aligned when sketching one graph from another, so that features line up vertically."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Relative motion",
+          "text": "For object P and frames A and B: r_PA = r_PB + r_BA, v_PA = v_PB + v_BA and a_PA = a_PB + a_BA, all as vectors. Reversing a pair of subscripts reverses the vector: v_AB = −v_BA.",
+          "conditions": [
+            "Write subscripts as object relative to frame, and chain them so that the inner letters match.",
+            "For a boat or an aircraft, the heading is the direction of its velocity relative to the water or air, not relative to the ground."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Inertial frames",
+          "text": "A frame that is not accelerating is inertial, and Newton's laws hold in it. A frame moving at constant velocity relative to an inertial frame is also inertial, and observers in the two frames measure the same acceleration for every object.",
+          "conditions": [
+            "Velocities and paths still differ between the two frames; only accelerations agree.",
+            "If one frame accelerates relative to the other, measured accelerations differ by that frame's acceleration."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Motion in two or three dimensions",
+          "text": "With r(t) = x(t) i + y(t) j + z(t) k, the velocity v = dr/dt and the acceleration a = dv/dt are found component by component, and integration works the same way with an initial value for each component. The velocity is tangent to the path and its magnitude is the speed. The sign of a · v tells whether the speed is increasing (positive) or decreasing (negative).",
+          "conditions": [
+            "Do not differentiate the distance |r| to find the velocity vector.",
+            "The component of a perpendicular to v changes the direction of motion, not the speed."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Projectile motion",
+          "text": "With air resistance neglected and up positive, a_x = 0 and a_y = −g. So v_x = v_0 cos θ stays constant, v_y = v_0 sin θ − gt, x = (v_0 cos θ)t and y = y_0 + (v_0 sin θ)t − ½gt^2. Eliminating t gives the parabolic path.",
+          "conditions": [
+            "The flight time 2v_0 sin θ/g and the range v_0^2 sin 2θ/g hold only when the launch and landing heights are equal.",
+            "At the highest point v_y = 0 and v = v_x, not zero.",
+            "The two directions share one clock: a time found from one direction is used in the other."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Reading the three motion graphs",
+          "head": [
+            "Graph",
+            "Its slope is",
+            "Its signed area is",
+            "Look for"
+          ],
+          "rows": [
+            [
+              "x against t",
+              "the velocity v",
+              "not used",
+              "Flat points (v = 0), the steepest points (greatest |v|), concavity (the sign of a)"
+            ],
+            [
+              "v against t",
+              "the acceleration a",
+              "the displacement",
+              "Crossings of the t-axis (turnarounds); the sign of v and of the slope together (speeding up or slowing down)"
+            ],
+            [
+              "a against t",
+              "the rate of change of a (rarely needed)",
+              "the change in velocity",
+              "Where a changes sign (an extreme of v); the initial velocity needed to find v itself"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing a tool for straight-line motion",
+          "head": [
+            "You are given",
+            "You want",
+            "Use"
+          ],
+          "rows": [
+            [
+              "x(t)",
+              "v or a",
+              "Differentiate once or twice"
+            ],
+            [
+              "a(t) that changes with time, with v_0 and x_0",
+              "v(t) or x(t)",
+              "Integrate, adding the initial value each time"
+            ],
+            [
+              "Constant a, with no time given or wanted",
+              "v, a or a distance",
+              "v^2 = v_0^2 + 2a(x − x_0)"
+            ],
+            [
+              "Constant a, with a time",
+              "v or x",
+              "v = v_0 + at and x = x_0 + v_0t + ½at^2"
+            ],
+            [
+              "A table of x or v",
+              "v or a at an instant",
+              "A symmetric difference with the nearest readings on both sides"
+            ],
+            [
+              "v(t) or a v–t graph",
+              "Distance traveled",
+              "Split where v changes sign and add the sizes of the pieces"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "explanations-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A complete physics explanation names the quantities involved with their signs or values, states the rule it relies on, and connects them to the conclusion. Write it like these."
+        },
+        {
+          "type": "model",
+          "prompt": "Speeding up or slowing down, for an object that at t = 3.0 s has v = −2.0 m/s and a = +1.5 m/s^2.",
+          "text": "At t = 3.0 s the velocity is negative and the acceleration is positive. Because v and a have opposite signs, the acceleration points opposite the motion, so the object is slowing down."
+        },
+        {
+          "type": "model",
+          "prompt": "Why the constant-acceleration relations cannot be used when a(t) = 4.0 − 0.50t.",
+          "text": "The acceleration a(t) = 4.0 − 0.50t changes with time, and v = v_0 + at and x = x_0 + v_0t + ½at^2 hold only for constant acceleration. So I integrate a(t) with the initial velocity to find v(t), then integrate v(t) with the initial position to find x(t)."
+        },
+        {
+          "type": "model",
+          "prompt": "Where an object is farthest in the +x direction, when v(t) on 0 ≤ t ≤ 8.0 s is positive before t = 5.0 s and negative after it.",
+          "text": "x increases while v > 0 and decreases while v < 0. Since v changes from positive to negative at t = 5.0 s and at no other time in the interval, x increases up to t = 5.0 s and decreases after it, so x is greatest at t = 5.0 s."
+        },
+        {
+          "type": "model",
+          "prompt": "Two observers, one in a train moving at constant velocity and one on the ground, watch the same dropped ball.",
+          "text": "The train moves at constant velocity relative to the ground, so a_TG = 0 and a_BG = a_BT + a_TG = a_BT. Both observers measure the same acceleration for the ball, 9.8 m/s^2 downward, even though they measure different velocities and see different paths."
+        },
+        {
+          "type": "model",
+          "prompt": "The velocity of a projectile at the highest point of its path.",
+          "text": "At the highest point v_y = 0, because v_y changes from positive to negative there. Since a_x = 0, the horizontal velocity keeps its launch value throughout the flight, so the velocity at the top is v_0 cos θ, horizontal, and not zero."
+        },
+        {
+          "type": "trap",
+          "text": "Reading the height of a graph when the question asks for its slope, or treating a position–time graph as a picture of the path.",
+          "fix": "Ask first whether the question needs a value, a slope or an area. A velocity graph that is high but flat means a large velocity and zero acceleration."
+        },
+        {
+          "type": "trap",
+          "text": "Using v = v_0 + at or v^2 = v_0^2 + 2aΔx when the acceleration depends on time.",
+          "fix": "Check whether a is constant before choosing a relation. If a = a(t), integrate with the initial values."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the constant of integration, or forgetting the initial position or velocity.",
+          "fix": "Write v(t) = v_0 + ∫ from 0 to t of a(s) ds in full, so that the starting value is on the page before you integrate."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting the displacement when the distance is asked for.",
+          "fix": "Find the times where v changes sign, compute the displacement on each piece, and add their sizes."
+        },
+        {
+          "type": "trap",
+          "text": "Calling any negative acceleration slowing down.",
+          "fix": "Compare the signs of v and a. A negative acceleration with a negative velocity means speeding up in the −x direction."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming the object is at the origin, or turning around, whenever v = 0.",
+          "fix": "v = 0 says nothing about where the object is. It turns around only if v changes sign there."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting the calculator's inverse tangent as a direction without checking the quadrant.",
+          "fix": "Sketch the components first. If A_x < 0, add 180° to the calculator's angle."
+        },
+        {
+          "type": "trap",
+          "text": "Adding speeds instead of velocity vectors, or reversing a pair of subscripts without changing the sign.",
+          "fix": "Write the subscript chain, choose axes, and add components. v_AB = −v_BA."
+        },
+        {
+          "type": "trap",
+          "text": "Treating a boat's heading as its direction of travel over the ground.",
+          "fix": "The heading is the direction of the boat's velocity relative to the water. Add the water's velocity relative to the ground to find the ground velocity."
+        },
+        {
+          "type": "trap",
+          "text": "Giving the horizontal motion of a projectile an acceleration, or setting the whole velocity to zero at the top.",
+          "fix": "With air resistance neglected, a_x = 0 throughout and only v_y is zero at the top."
+        },
+        {
+          "type": "trap",
+          "text": "Using the range formula when the launch and landing heights differ.",
+          "fix": "Write x(t) and y(t), set y equal to the landing height, and solve for t; reject a negative root."
+        },
+        {
+          "type": "trap",
+          "text": "Switching sign conventions partway through a problem, or never stating one.",
+          "fix": "Write the positive direction once, at the start, and keep it for every vector quantity, g included."
+        },
+        {
+          "type": "trap",
+          "text": "Differentiating the distance |r| when the velocity vector is wanted.",
+          "fix": "Differentiate each component of r, then find the speed from the components."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A slider moves along a straight rail, with +x to the right. Its acceleration is a(t) = 3.0t, in m/s^2 with t in seconds. At t = 0 it is at x = 4.0 m and moving left at 6.0 m/s.\n\n(a) Find v(t) and x(t).\n\n(b) When does the slider turn around, and where is it then?\n\n(c) Find its displacement and the total distance it travels from t = 0 to t = 4.0 s.",
+          "answer": "(a) v(t) = 1.5t^2 − 6.0, in m/s; x(t) = 4.0 − 6.0t + 0.50t^3, in m (b) At t = 2.0 s, at x = −4.0 m (c) Displacement +8.0 m; distance 24 m",
+          "steps": [
+            "Choose the method: a depends on t, so integrate rather than use the constant-acceleration relations. Moving left means v_0 = −6.0 m/s.",
+            "v(t) = v_0 + ∫ from 0 to t of 3.0s ds = −6.0 + 1.5t^2. Units: (m/s^3)(s^2) = m/s.",
+            "x(t) = x_0 + ∫ from 0 to t of (1.5s^2 − 6.0) ds = 4.0 − 6.0t + 0.50t^3.",
+            "(b) v = 0 when 1.5t^2 = 6.0, so t = 2.0 s. v < 0 before and v > 0 after, so the slider does turn around. x(2.0 s) = 4.0 − 12 + 4.0 = −4.0 m.",
+            "(c) x(4.0 s) = 4.0 − 24 + 32 = 12 m, so the displacement is 12 − 4.0 = +8.0 m.",
+            "Distance: from 0 to 2.0 s the slider moves |−4.0 − 4.0| = 8.0 m, and from 2.0 s to 4.0 s it moves |12 − (−4.0)| = 16 m, a total of 24 m.",
+            "Compare the wrong method: v = v_0 + at with a(4.0 s) = 12 m/s^2 would give 42 m/s at t = 4.0 s, but v(4.0 s) = 1.5(16) − 6.0 = 18 m/s."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A volleyball is served from 2.1 m above the floor at 12 m/s and 25° above the horizontal. The net is 9.0 m away horizontally, and its top is 2.4 m above the floor. Neglect air resistance, and take up as +y with the origin on the floor below the serve.\n\n(a) Does the ball clear the net, and by how much?\n\n(b) How far from the server, horizontally, does it land?",
+          "answer": "(a) Yes: it is 2.9 m above the floor at the net, about 0.54 m above the top. (b) 15 m (14.7 m)",
+          "steps": [
+            "Components: v_x = 12 cos 25° = 10.88 m/s, constant; v_0y = 12 sin 25° = 5.07 m/s, with a_y = −9.8 m/s^2.",
+            "(a) The horizontal motion gives the time at the net: t = 9.0/10.88 = 0.828 s.",
+            "The vertical motion at that time: y = 2.1 + 5.07(0.828) − 4.9(0.828)^2 = 2.1 + 4.20 − 3.36 = 2.94 m, about 0.54 m above the 2.4 m net.",
+            "(b) Landing means y = 0: 0 = 2.1 + 5.07t − 4.9t^2. The quadratic formula gives t = [5.07 + √(5.07^2 + 4(4.9)(2.1))]/(2 × 4.9) = (5.07 + 8.18)/9.8 = 1.35 s; the other root is negative and is rejected.",
+            "x = 10.88 × 1.35 = 14.7 m ≈ 15 m.",
+            "The range formula, v_0^2 sin 2θ/g = 11.3 m, does not apply, because the ball lands 2.1 m below its launch height."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A ship sails due east at 6.0 m/s relative to the water, while a current carries the water due south at 0.80 m/s relative to the shore. A passenger walks straight across the deck toward the north side at 1.5 m/s relative to the ship. With x east and y north, find the passenger's velocity relative to the water and relative to the shore, each as a speed and a direction.",
+          "answer": "Relative to the water: (6.0 i + 1.5 j) m/s, 6.2 m/s at 14° north of east. Relative to the shore: (6.0 i + 0.70 j) m/s, 6.0 m/s at 6.7° north of east.",
+          "steps": [
+            "Letters: P passenger, S ship, W water, G shore. Given: v_PS = 1.5 j m/s, v_SW = 6.0 i m/s and v_WG = −0.80 j m/s.",
+            "Relative to the water: v_PW = v_PS + v_SW = (6.0 i + 1.5 j) m/s. Speed √(6.0^2 + 1.5^2) = 6.18 m/s ≈ 6.2 m/s; tan θ = 1.5/6.0 gives θ = 14° north of east.",
+            "Relative to the shore: v_PG = v_PS + v_SW + v_WG = (6.0 i + 0.70 j) m/s. Speed √(6.0^2 + 0.70^2) = 6.04 m/s ≈ 6.0 m/s; tan θ = 0.70/6.0 gives θ = 6.7° north of east.",
+            "Check the chain: each added velocity starts with the letter the previous one ended with, and the chain runs from P to the frame you want.",
+            "Both components are positive, so the calculator's angle is already in the right quadrant."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, then come back to it a few days later. Take the Unit 1 test under timed conditions and score it with the key, as raw practice points. Week 5 includes a paper investigation with supplied, invented data; it does not replace the hands-on lab work the AP® physics courses require."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 1: Calculus toolkit for motion",
+              "ref": "week:1"
+            },
+            {
+              "label": "Week 2: Vectors, displacement, velocity, and acceleration",
+              "ref": "week:2"
+            },
+            {
+              "label": "Week 3: Representing motion with slopes and areas",
+              "ref": "week:3"
+            },
+            {
+              "label": "Week 4: Reference frames and relative motion",
+              "ref": "week:4"
+            },
+            {
+              "label": "Week 5: Motion in two or three dimensions",
+              "ref": "week:5"
+            },
+            {
+              "label": "Unit 1 plan",
+              "ref": "unit:u1"
+            },
+            {
+              "label": "Unit 1 test",
+              "ref": "test:unit-1"
+            },
+            {
+              "label": "Unit 1 test key",
+              "ref": "key:unit-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

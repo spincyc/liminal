@@ -1,0 +1,558 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "review-u3",
+  "kind": "unit-review",
+  "unitId": "u3",
+  "title": "Unit 3 review: Work, Energy, and Power",
+  "author": "p1-review-author",
+  "summary": "A retrieval-first review of work, energy and power for the AP® Physics 1 Exam: recall checks, mixed exam-level problems, the relations to know with their conditions, model explanations, common traps, and worked examples.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "p1-review-u3-g1",
+      "alt": "Graph of force F in newtons against position x in meters, with x from 0 to 8 and F from −4 to 4. F is constant at 3 N from x = 0 to x = 2 m, then decreases along a straight line to −3 N at x = 4 m, and stays constant at −3 N from x = 4 m to x = 7 m."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question on paper, from memory, before you open its answer. State each relation with the conditions it needs and the units of every quantity. A blank or a wrong answer is useful: its answer names the section further down to reread."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c1",
+          "see": "what-to-know",
+          "prompt": "Write the translational kinetic energy of an object of mass m moving at speed v. By what factor does it change when the speed doubles, and when the mass doubles? Then state the work–energy theorem, saying whose work it adds up.",
+          "answer": "K = (1/2)mv^2, a scalar that is never negative. Doubling the speed multiplies K by 4; doubling the mass multiplies K by 2. Work–energy theorem: the net work done on an object by all the forces acting on it equals its change in kinetic energy, W_net = ΔK = (1/2)mv_f^2 − (1/2)mv_i^2.",
+          "steps": [
+            "K depends on speed, not on direction: identical carts moving in opposite directions at the same speed have the same kinetic energy.",
+            "K ∝ v^2, so speed 2v gives 4 times the kinetic energy. K ∝ m, so mass 2m gives twice the kinetic energy.",
+            "W_net is the sum of the work done by every force on the object, which equals the work done by the net force. Gravity's work is included, because Earth is outside the object.",
+            "The theorem treats the object as a particle: it describes the motion of the object as a whole, with no change in internal or rotational energy."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c2",
+          "see": "what-to-know",
+          "prompt": "Write the work done by a constant force F on an object whose displacement has size d, and say which angle appears in it. When is the work positive, negative or zero? How do you find the work done by a force that changes with position?",
+          "answer": "W = Fd cos θ, where θ is the angle between the force and the displacement. The work is positive when the force has a component along the displacement (θ < 90°), negative when that component points against it (θ > 90°), and zero when the force is perpendicular to the displacement or the object does not move. For a force that changes with position, the work is the signed area between the graph of F (its component along the motion) and the position axis.",
+          "steps": [
+            "Equivalently, W = F_∥d, using only the component of the force along the displacement.",
+            "θ is measured between the force and the displacement, not from whichever axis is convenient.",
+            "Zero-work examples: the normal force on a block sliding along a fixed floor, and the string's tension on a swinging pendulum bob, which is always perpendicular to the bob's motion.",
+            "On an F–x graph, area above the axis is positive work and area below it is negative work. Work is a scalar in joules, 1 J = 1 N·m."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c3",
+          "see": "what-to-know",
+          "prompt": "What is potential energy, and what does it belong to? Write the change in gravitational potential energy near Earth's surface and the energy stored in an ideal spring, saying what each symbol measures. How is the work done by a conservative force related to the change in potential energy?",
+          "answer": "Potential energy is energy stored in the configuration of a system of objects that exert conservative forces on each other, so it belongs to a system, such as an object–Earth or block–spring system, not to one object. Near Earth's surface, ΔU_g = mgΔy, where Δy is the change in height. An ideal spring stores U_s = (1/2)kx^2, where x is its stretch or compression from its natural length. For a conservative force, W_c = −ΔU.",
+          "steps": [
+            "A force is conservative when the work it does between two points does not depend on the path. Gravity and ideal spring forces are conservative; kinetic friction is not, so it has no potential energy.",
+            "mgΔy assumes g is constant, which holds for height changes small compared with Earth's radius. In general, U_G = −Gm_1m_2/r, taken as zero at infinite separation.",
+            "The zero level of U_g can be placed anywhere, because only changes matter. The spring's x is measured from its natural length and is squared, so equal stretch and compression store equal energy.",
+            "W_c = −ΔU: when gravity does positive work on a falling object, the gravitational potential energy of the object–Earth system decreases by the same amount."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c4",
+          "see": "what-to-know",
+          "prompt": "Write the energy statement for a chosen system on which outside forces may do work and inside which friction may act. Under what conditions is the system's mechanical energy, K + U, constant? How does the choice of system change the way gravity appears?",
+          "answer": "W_ext = ΔK + ΔU + ΔE_int, where W_ext is the work done on the system by forces from outside it and ΔE_int is the change in its internal energy, f_k d for kinetic friction between two surfaces that are both in the system. K + U is constant when no external force does work on the system and no friction or other nonconservative force converts energy inside it. With Earth outside the system, gravity is an external force and appears as work; with Earth inside, it appears as gravitational potential energy. Never use both.",
+          "steps": [
+            "ΔU includes every potential energy in the system: ΔU_g, ΔU_s, or both.",
+            "An energy bar chart is the same accounting drawn as bars: initial energies plus external work equal final energies, with an internal-energy bar when friction acts.",
+            "For a falling ball: with the ball alone as the system, W_g = ΔK. With the ball and Earth, ΔK + ΔU_g = 0. Writing W_g and ΔU_g together counts gravity twice.",
+            "If one of the rubbing surfaces is left outside the system, friction is counted through the work it does on the system instead of as ΔE_int."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c5",
+          "see": "what-to-know",
+          "prompt": "Define power and give its SI unit. Write the instantaneous power delivered by a constant force F to an object moving with velocity v. What does the area under a power–time graph represent?",
+          "answer": "Power is the rate at which energy is transferred or converted: P = ΔE/Δt, or P = W/Δt for a transfer by work. Its unit is the watt, 1 W = 1 J/s. The instantaneous power delivered by a force is P = Fv cos θ, where θ is the angle between the force and the velocity. The area under a P–t graph is the energy transferred.",
+          "steps": [
+            "Power is a scalar. Two motors that do the same work in different times have different powers.",
+            "P = Fv cos θ follows from W = Fd cos θ with d = vΔt over a short time. It is negative when the force opposes the motion.",
+            "Average power over an interval is the total energy transferred divided by the elapsed time. It equals the average of the starting and ending powers only when the power changes linearly with time.",
+            "The kilowatt-hour is a unit of energy, not of power: 1 kWh = 3.6 × 10^6 J."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level. A calculator is allowed. Use g = 9.8 m/s^2 and neglect air resistance unless a problem says otherwise. Decide which principle each part needs before you read a hint."
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c6",
+          "see": "what-to-know",
+          "prompt": "A 900 kg car coasts down a straight road that slopes at 4.0° below the horizontal, with its engine disengaged. At the top of the slope it moves at 5.0 m/s. Rolling resistance and air drag together exert a constant 300 N force opposite the car's motion.\n\n(a) Find the car's speed after it has traveled 150 m along the road.\n\n(b) Find the time the car takes to travel those 150 m.",
+          "hint": "Before you write an equation, list the givens and the unknown for each part, and notice which part involves a time.",
+          "answer": "(a) About 11 m/s (11.4 m/s) (b) About 18 s",
+          "steps": [
+            "(a) This part links speeds to a distance and asks for no time, so an energy statement is efficient. Take the car and Earth as the system; the 300 N resistive force removes energy over the whole 150 m.",
+            "The car drops (150 m) sin 4.0° ≈ 10.5 m, so ΔU_g = mgΔy = (900 kg)(9.8 m/s^2)(−10.46 m) ≈ −9.23 × 10^4 J.",
+            "Energy removed by the resistive force: (300 N)(150 m) = 4.50 × 10^4 J.",
+            "K_f = K_i − ΔU_g − 4.50 × 10^4 J = (1/2)(900 kg)(5.0 m/s)^2 + 9.23 × 10^4 J − 4.50 × 10^4 J ≈ 1.13 × 10^4 J + 4.73 × 10^4 J ≈ 5.85 × 10^4 J.",
+            "v_f = √(2K_f/m) = √(2(5.85 × 10^4 J)/(900 kg)) ≈ 11.4 m/s.",
+            "(b) An energy statement contains no time, so use forces. Along the slope, with down the slope positive, a = (mg sin 4.0° − 300 N)/m = (615 N − 300 N)/(900 kg) ≈ 0.350 m/s^2, constant because both forces are constant.",
+            "With constant acceleration, Δx = ((v_i + v_f)/2)t, so t = 2(150 m)/(5.0 m/s + 11.4 m/s) ≈ 18 s. Equivalently, t = (v_f − v_i)/a = (6.4 m/s)/(0.350 m/s^2) ≈ 18 s.",
+            "Check: without the resistive force the car would reach √(v_i^2 + 2g(10.46 m)) ≈ 15 m/s, so the 300 N force matters."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c7",
+          "see": "worked-examples",
+          "prompt": "A 70 kg climber falls from rest. Her rope becomes taut after she has fallen 4.0 m, and from then on it stretches like an ideal spring until she comes to rest momentarily 5.5 m below her starting point. Neglect air resistance and the mass of the rope.\n\n(a) Find the effective spring constant of the rope.\n\n(b) At what point in the fall is the climber's speed greatest? Find that speed.\n\n(c) Find the largest force the rope exerts on her, as a multiple of her weight.",
+          "hint": "For (b), before you calculate anything, ask what the net force on the climber is at the instant her speed stops increasing.",
+          "answer": "(a) About 3.4 × 10^3 N/m (b) Where the rope's upward force equals her weight: at about 0.20 m of stretch, 4.2 m below the start; about 8.97 m/s (c) About 5.0 × 10^3 N, about 7.3 times her weight",
+          "steps": [
+            "(a) Take the climber, the rope and Earth as the system. She is at rest at the start and at the lowest point, so ΔK = 0, and the gravitational energy released is stored in the rope: mg(5.5 m) = (1/2)k(1.5 m)^2.",
+            "The rope stretches 5.5 m − 4.0 m = 1.5 m, not 5.5 m. So k = 2(70 kg)(9.8 m/s^2)(5.5 m)/(1.5 m)^2 ≈ 3.35 × 10^3 N/m.",
+            "(b) Her speed increases while the net force on her points down and decreases once it points up, so it is greatest where the net force is zero: kx = mg, x = (686 N)/(3.35 × 10^3 N/m) ≈ 0.20 m of stretch, 4.2 m below the start.",
+            "Energy from the start to that point: (1/2)mv^2 = mg(4.0 m + 0.205 m) − (1/2)kx^2 ≈ (686 N)(4.205 m) − (1/2)(3.35 × 10^3 N/m)(0.205 m)^2 ≈ 2884 J − 70 J ≈ 2814 J.",
+            "v = √(2(2814 J)/(70 kg)) ≈ 8.97 m/s. This is slightly more than the 8.85 m/s she has when the rope first becomes taut: she keeps speeding up until the rope's force equals her weight.",
+            "(c) The rope's force is greatest at the largest stretch: kx = (3.35 × 10^3 N/m)(1.5 m) ≈ 5.0 × 10^3 N, about 7.3 times her weight of 686 N."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c8",
+          "see": "what-to-know",
+          "prompt": "The graph shows the net horizontal force F on a 0.50 kg puck that slides along the x-axis on level, frictionless ice; positive F points in the +x direction. The puck passes x = 0 moving in the +x direction at 2.0 m/s.\n\n(a) At what position between x = 0 and x = 7.0 m is the puck's speed greatest? Explain.\n\n(b) Find that greatest speed.\n\n(c) Does the puck reach x = 7.0 m? If not, find where it stops.",
+          "hint": "Keep a running total of the work done on the puck from x = 0 to each corner of the graph.",
+          "answer": "(a) x = 3.0 m (b) About 5.8 m/s (c) No; it stops momentarily at about x = 6.3 m and then slides back.",
+          "steps": [
+            "(a) While F > 0 (x < 3.0 m), the net force points along the motion and does positive work, so the speed increases. Beyond x = 3.0 m, F < 0 and the speed decreases. The speed is greatest where F changes sign, at x = 3.0 m.",
+            "(b) Initial kinetic energy: (1/2)(0.50 kg)(2.0 m/s)^2 = 1.0 J.",
+            "Work from 0 to 2.0 m: (3.0 N)(2.0 m) = 6.0 J. Work from 2.0 m to 3.0 m: the triangle (1/2)(1.0 m)(3.0 N) = 1.5 J.",
+            "Work–energy theorem: K at 3.0 m = 1.0 J + 6.0 J + 1.5 J = 8.5 J, so v = √(2(8.5 J)/(0.50 kg)) ≈ 5.8 m/s.",
+            "(c) From 3.0 m to 4.0 m the work is −1.5 J, leaving K = 7.0 J at x = 4.0 m. Beyond 4.0 m the constant −3.0 N force removes 3.0 J per meter.",
+            "The kinetic energy reaches zero after (7.0 J)/(3.0 N) ≈ 2.3 m more, at x ≈ 6.3 m, short of 7.0 m. The force there still points in the −x direction, so the puck slides back."
+          ],
+          "figureIds": [
+            "p1-review-u3-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c9",
+          "see": "worked-examples",
+          "prompt": "A 60 kg rider leaves the upper platform of a zip line moving at 1.0 m/s. The cable carries her 110 m to a point 15 m lower, where she is moving at 12 m/s. A brake then stops her over the last 4.0 m of nearly level cable.\n\n(a) Taking the rider, the cable, the air and Earth as the system, find the energy converted to internal energy during the 110 m ride.\n\n(b) Find the average resistive force on the rider during the ride.\n\n(c) Ignoring other resistive forces during braking, find the average force the brake exerts on her.",
+          "hint": "Sketch an energy bar chart for the 110 m ride first, with a bar for internal energy, and decide which bars are zero.",
+          "answer": "(a) About 4.5 × 10^3 J (b) About 41 N (c) About 1.1 × 10^3 N",
+          "steps": [
+            "(a) No force from outside this system does work on it, so 0 = ΔK + ΔU_g + ΔE_int, and ΔE_int = −ΔK − ΔU_g.",
+            "ΔU_g = mgΔy = (60 kg)(9.8 m/s^2)(−15 m) = −8820 J.",
+            "ΔK = (1/2)(60 kg)(12 m/s)^2 − (1/2)(60 kg)(1.0 m/s)^2 = 4320 J − 30 J = 4290 J.",
+            "ΔE_int = −4290 J + 8820 J = 4530 J ≈ 4.5 × 10^3 J. Without resistance she would arrive at √((1.0 m/s)^2 + 2g(15 m)) ≈ 17 m/s.",
+            "(b) The resistive forces act along the whole 110 m path: f = ΔE_int/d = (4530 J)/(110 m) ≈ 41 N.",
+            "(c) On the level stretch, the brake's work removes all of her kinetic energy: −F(4.0 m) = 0 − 4320 J, so F ≈ 1.1 × 10^3 N, almost twice her weight."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c10",
+          "see": "what-to-know",
+          "prompt": "An electric scooter and its rider have a combined mass of 90 kg. They climb a straight hill inclined at 6.0° at a constant 5.0 m/s, while rolling resistance and air drag together exert a 30 N force opposing the motion.\n\n(a) Find the power the motor delivers to the wheels.\n\n(b) What fraction of that power goes into increasing the gravitational potential energy of the scooter–rider–Earth system? Where does the rest go?",
+          "hint": "The velocity is constant. Start with the forces along the slope: what must the driving force balance?",
+          "answer": "(a) About 610 W (b) About 0.75; the rest, about 150 W, is converted to internal energy of the scooter, the road and the air by the resistive forces.",
+          "steps": [
+            "(a) At constant velocity the net force is zero, so the driving force along the slope balances gravity's component down the slope and the resistive force: F = mg sin 6.0° + 30 N.",
+            "mg sin 6.0° = (90 kg)(9.8 m/s^2)(0.105) ≈ 92 N, so F ≈ 92 N + 30 N = 122 N.",
+            "The driving force points along the velocity, so P = Fv = (122 N)(5.0 m/s) ≈ 610 W.",
+            "(b) Rate of increase of U_g: (mg sin 6.0°)v ≈ (92 N)(5.0 m/s) ≈ 461 W. This equals mg times the vertical speed, v sin 6.0°.",
+            "Fraction: (461 W)/(611 W) ≈ 0.75. The remaining (30 N)(5.0 m/s) = 150 W is converted to internal energy by the resistive forces. The kinetic energy does not change, because the speed is constant."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "p1-review-u3-c11",
+          "see": "what-to-know",
+          "prompt": "A go-kart and its driver have a combined mass of 300 kg. On a straight, level track the engine delivers a constant 4.5 kW to the wheels, and rolling resistance and air drag together exert a force opposing the motion that you may treat as a constant 300 N.\n\n(a) Find the kart's greatest possible speed on this track.\n\n(b) Find the kart's acceleration at the instants it moves at 5.0 m/s and at 10 m/s.\n\n(c) A student claims, \"Because the engine's power is constant, the kart's speed increases at a constant rate until it reaches top speed.\" Evaluate the claim, using your answers to (a) and (b).",
+          "hint": "At any instant, how is the driving force related to the power and the speed?",
+          "answer": "(a) 15 m/s (b) 2.0 m/s^2 at 5.0 m/s and 0.50 m/s^2 at 10 m/s, both forward (c) The claim is incorrect: at constant power the driving force P/v decreases as the speed increases, so the acceleration decreases, from 2.0 m/s^2 at 5.0 m/s to 0.50 m/s^2 at 10 m/s, and approaches zero near 15 m/s.",
+          "steps": [
+            "The engine's power is delivered by the driving force on the wheels, P = Fv, so at any instant the driving force is F = P/v.",
+            "(a) At the greatest speed the kart no longer speeds up, so the net force is zero: P/v = 300 N, and v = (4500 W)/(300 N) = 15 m/s.",
+            "(b) At 5.0 m/s: F = (4500 W)/(5.0 m/s) = 900 N, so a = (900 N − 300 N)/(300 kg) = 2.0 m/s^2.",
+            "At 10 m/s: F = (4500 W)/(10 m/s) = 450 N, so a = (450 N − 300 N)/(300 kg) = 0.50 m/s^2.",
+            "(c) A constant rate of increase would need a constant acceleration. Instead the driving force falls in proportion to 1/v while the resistive force stays the same, so the net force and the acceleration shrink as the kart speeds up: 2.0 m/s^2 at 5.0 m/s, 0.50 m/s^2 at 10 m/s, and zero at 15 m/s. The speed rises more and more slowly toward 15 m/s.",
+            "At top speed all 4.5 kW is converted to internal energy by the resistive forces: (300 N)(15 m/s) = 4500 W."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Translational kinetic energy",
+          "text": "K = (1/2)mv^2: a scalar, never negative, measured in joules (1 J = 1 kg·m^2/s^2).",
+          "conditions": [
+            "K depends on the speed only, not on the direction of motion.",
+            "K ∝ v^2 and K ∝ m: doubling the speed quadruples K, while doubling the mass doubles it.",
+            "To find a speed, v = √(2K/m). A negative K in a calculation means the object stopped before reaching that point."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Work by a constant force",
+          "text": "W = Fd cos θ = F_∥d, where θ is the angle between the force and the displacement.",
+          "conditions": [
+            "The force must be constant in size and direction over the displacement; otherwise split the path or use the area under an F–x graph.",
+            "Positive for θ < 90°, zero at θ = 90°, negative for θ > 90°.",
+            "Forces perpendicular to the motion do no work: the normal force on an object sliding along a fixed surface, the tension in a pendulum string, the inward force in uniform circular motion.",
+            "A force does no work on an object that does not move, however large the force."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Work from a force–position graph",
+          "text": "The work done by a force as an object moves along x is the signed area between the force's F–x graph and the x-axis; area below the axis is negative work.",
+          "conditions": [
+            "F is the force's component along the direction of motion.",
+            "On a graph of kinetic energy against position, the slope is the net force."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Work–energy theorem",
+          "text": "W_net = ΔK: the total work done on an object by all the forces acting on it equals the change in its kinetic energy.",
+          "conditions": [
+            "The object is treated as a particle, with no change in internal or rotational energy.",
+            "W_net is the sum of each force's work, or the work done by the net force.",
+            "Gravity's work is included because Earth is outside the object; do not also add a potential-energy change."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Conservative forces and potential energy",
+          "text": "A conservative force does work between two points that does not depend on the path, and W_c = −ΔU. Potential energy belongs to a system of interacting objects.",
+          "conditions": [
+            "Gravity and ideal spring forces are conservative. Kinetic friction and drag are not, and they have no potential energy.",
+            "Only changes in potential energy are physical; choose the zero level once per problem and keep it.",
+            "On a graph of U against x, the conservative force is the negative of the slope: it points toward lower potential energy."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Gravitational potential energy",
+          "text": "Near Earth's surface, ΔU_g = mgΔy for an object–Earth system. In general, U_G = −Gm_1m_2/r, taken as zero at infinite separation.",
+          "conditions": [
+            "mgΔy needs a constant g, so the height change must be small compared with Earth's radius.",
+            "Δy is the vertical change in height, not a distance along a slope: on a slope at angle θ, Δy = d sin θ.",
+            "U_G is negative at every finite r and rises toward zero as r increases."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Spring potential energy",
+          "text": "An ideal spring stretched or compressed by x from its natural length stores U_s = (1/2)kx^2.",
+          "conditions": [
+            "Ideal spring: force of magnitude kx, negligible mass, no energy loss.",
+            "x is measured from the natural length, so equal stretch and compression store equal energy.",
+            "U_s ∝ x^2: doubling the deformation stores four times the energy."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Energy of a system",
+          "text": "W_ext = ΔK + ΔU_g + ΔU_s + ΔE_int: work done by forces from outside the chosen system changes its kinetic, potential and internal energies.",
+          "conditions": [
+            "When kinetic friction acts between two surfaces inside the system, ΔE_int = f_k d, where d is the length of the sliding path, not the displacement.",
+            "Count each interaction once: as external work or as a potential-energy change, depending on the system.",
+            "An energy bar chart is the same statement drawn to scale: initial bars plus external work equal final bars plus the internal-energy bar."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Conservation of mechanical energy",
+          "text": "If no external force does work on a system and no nonconservative force acts inside it, K_i + U_i = K_f + U_f.",
+          "conditions": [
+            "Check both conditions: a person, motor or rope outside the system can do work, and friction or drag inside it converts energy to internal energy.",
+            "Conserved does not mean unchanged: K and U trade while their sum stays fixed.",
+            "On a frictionless track, the speed depends only on the starting speed and the change in height, not on the track's shape or the object's mass; the travel time does depend on the shape."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Power",
+          "text": "P = ΔE/Δt, or P = W/Δt; for a force on a moving object, P = Fv cos θ. Unit: 1 W = 1 J/s.",
+          "conditions": [
+            "Average power uses the total energy transferred and the total time.",
+            "P = Fv gives the instantaneous power; when the force or speed changes, use the values at that instant.",
+            "At constant speed against resistive forces, the driving power equals the resistive force times the speed, and the energy becomes internal energy, not kinetic energy.",
+            "The area under a P–t graph is energy; the slope of an E–t graph is power."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing a principle. Read what the question asks for before you choose.",
+          "head": [
+            "The question asks for",
+            "Start with",
+            "Why"
+          ],
+          "rows": [
+            [
+              "A speed, height, compression or distance, with no time",
+              "An energy statement for a chosen system",
+              "Energy links positions and speeds without the details of the path or the time taken"
+            ],
+            [
+              "A time or an acceleration",
+              "Newton's second law, then kinematics",
+              "An energy statement contains no time; forces give the acceleration, and kinematics turns it into a time"
+            ],
+            [
+              "A force at one point, such as a normal force or a tension",
+              "Newton's second law at that point, with energy to find the speed if needed",
+              "Energy gives speeds; a force at a point needs the acceleration there, such as v^2/r on a curve"
+            ],
+            [
+              "Where a speed is greatest or least",
+              "Forces: find where the net force along the motion is zero",
+              "The speed stops increasing where the net force along the motion changes sign"
+            ],
+            [
+              "A rate of energy transfer",
+              "P = ΔE/Δt, or P = Fv for a force on a moving object",
+              "Power is energy per time; P = Fv avoids finding a distance"
+            ],
+            [
+              "The result of a collision",
+              "Momentum (Unit 4), then energy for the stages before and after it",
+              "Kinetic energy is usually not conserved through a collision"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "One interaction, two descriptions: a ball falls from rest through a height h",
+          "head": [
+            "System",
+            "Gravity is",
+            "Energy statement"
+          ],
+          "rows": [
+            [
+              "The ball alone",
+              "An external force that does work W_g = mgh",
+              "W_g = ΔK"
+            ],
+            [
+              "The ball and Earth",
+              "An internal interaction, stored as gravitational potential energy",
+              "ΔK + ΔU_g = 0, with ΔU_g = −mgh"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Explanations and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A complete explanation names the system, says which forces do work on it and which energies change, and connects them with a relation or a bar chart. Write it like these."
+        },
+        {
+          "type": "model",
+          "prompt": "Why the tension in a pendulum string does no work on the bob.",
+          "text": "The string pulls the bob along the string, toward the pivot. The bob moves along a circle centered on the pivot, so its velocity is always perpendicular to the string. With θ = 90° at every instant, W = Fd cos 90° = 0 over every small step, so the tension does no work during the swing, even though its size changes."
+        },
+        {
+          "type": "model",
+          "prompt": "Choosing a system for a ball thrown straight up.",
+          "text": "With the ball and Earth as the system, gravity is internal and no external force does work after the release, so K + U_g is constant: the kinetic energy decreases by exactly as much as the gravitational potential energy increases. With the ball alone as the system, there is no potential energy; gravity is an external force that does negative work equal to the ball's loss of kinetic energy."
+        },
+        {
+          "type": "model",
+          "prompt": "Where the energy goes when a box slides to a stop on a rough floor.",
+          "text": "The system is the box, the floor and Earth. No external force does work, and the height does not change. Kinetic friction between the box and the floor converts the box's kinetic energy into internal energy of the box and floor, so the mechanical energy decreases while the total energy stays the same: ΔK + ΔE_int = 0, with ΔE_int = f_k d."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluating the claim \"The motor that lifts a load faster does more work on it.\"",
+          "text": "The claim is incorrect. Lifting the same load through the same height at constant speed, both motors do the same work on it, mgh, because work depends on the force and the displacement, not on the time. The faster motor delivers greater power, because P = W/Δt and its Δt is smaller."
+        },
+        {
+          "type": "model",
+          "prompt": "Reading an energy bar chart for a sled that starts down a rough hill with some speed and reaches the bottom.",
+          "text": "Before: K = 2 units and U_g = 6 units, with the bottom of the hill as the zero level; no external work. After: K = 5 units, U_g = 0, and the internal-energy bar is 3 units. The bars balance, 2 + 6 + 0 = 5 + 0 + 3, which is the equation K_i + U_gi + W_ext = K_f + U_gf + ΔE_int."
+        },
+        {
+          "type": "trap",
+          "text": "Using the angle from the vertical, or from the horizontal by habit, in W = Fd cos θ.",
+          "fix": "θ is the angle between the force and the displacement. For a pull at 30° above a level floor, θ = 30°; for gravity on an object sliding down a 30° slope, θ = 60°, and W = mgd sin 30°."
+        },
+        {
+          "type": "trap",
+          "text": "Saying that the normal force, a pendulum string's tension or the inward force in circular motion does work.",
+          "fix": "Check the angle: a force perpendicular to the motion at every instant does no work."
+        },
+        {
+          "type": "trap",
+          "text": "Counting gravity twice by writing both W_g and ΔU_g in one energy statement.",
+          "fix": "Decide whether Earth is in the system first. Outside: gravity does work. Inside: gravity appears as ΔU_g. Never both."
+        },
+        {
+          "type": "trap",
+          "text": "Using a distance along a slope in mgΔy.",
+          "fix": "Δy is the change in height. On a slope at angle θ to the horizontal, a distance d along the slope gives Δy = d sin θ."
+        },
+        {
+          "type": "trap",
+          "text": "Measuring a spring's x as its total length, or from where the object started, or forgetting to square it.",
+          "fix": "x is the change from the spring's natural length, and U_s = (1/2)kx^2. A rope or cord that acts as a spring stores energy only from the moment it becomes taut."
+        },
+        {
+          "type": "trap",
+          "text": "Writing (1/2)m(v_f − v_i)^2 for the change in kinetic energy.",
+          "fix": "ΔK = (1/2)m(v_f^2 − v_i^2). Square each speed first, then subtract."
+        },
+        {
+          "type": "trap",
+          "text": "Using f_k = μ_k mg on an incline, or the straight-line displacement in f_k d.",
+          "fix": "On an incline the normal force is mg cos θ when no other force pushes into the surface. Friction converts energy along the whole sliding path, so d is the path length."
+        },
+        {
+          "type": "trap",
+          "text": "Assuming that an object falling onto a spring or a rope moves fastest at the moment the spring or rope begins to push.",
+          "fix": "The object keeps speeding up until the upward force equals its weight. Find that point with kx = mg, then use energy to find the speed there."
+        },
+        {
+          "type": "trap",
+          "text": "Treating mechanical energy as conserved because a problem does not mention friction, even though a person, motor or rope does work.",
+          "fix": "List the forces from outside the system. If any of them does work, include W_ext."
+        },
+        {
+          "type": "trap",
+          "text": "Averaging the starting and ending powers, or calling the kilowatt-hour a unit of power.",
+          "fix": "Average power is total energy divided by total time. A kilowatt-hour is energy: 1 kWh = 3.6 × 10^6 J."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A climber at the top of a 6.0 m vertical rock face hauls up her 15 kg pack with a rope. The pack starts at rest at the bottom, does not rub against the rock, and arrives at the top 8.0 s later moving at 1.2 m/s.\n\n(a) Find the work done on the pack by the rope.\n\n(b) Find the average power the rope delivers.\n\n(c) Show that choosing the pack alone as the system gives the same answer to (a).",
+          "answer": "(a) About 8.9 × 10^2 J (893 J) (b) About 1.1 × 10^2 W (112 W) (c) See the steps: W_rope + W_g = ΔK gives the same 893 J.",
+          "steps": [
+            "(a) Choose the pack and Earth as the system. The rope is outside the system, so its work is external; gravity is internal and appears as U_g. Nothing rubs, so ΔE_int = 0.",
+            "W_rope = ΔK + ΔU_g = (1/2)(15 kg)(1.2 m/s)^2 + (15 kg)(9.8 m/s^2)(6.0 m) = 10.8 J + 882 J ≈ 893 J.",
+            "Bar chart check: the initial bars are zero, the external-work bar is 893 J, and the final bars are K ≈ 11 J and U_g = 882 J. Nearly all of the rope's work becomes gravitational potential energy.",
+            "(b) P_avg = W/Δt = (893 J)/(8.0 s) ≈ 112 W.",
+            "(c) With the pack alone as the system, gravity is external and does W_g = −mg(6.0 m) = −882 J. The work–energy theorem gives W_rope + W_g = ΔK, so W_rope = 10.8 J + 882 J ≈ 893 J, the same answer.",
+            "The rope's average force over the 6.0 m is (893 J)/(6.0 m) ≈ 149 N, a little more than the pack's 147 N weight, as it must be to speed the pack up from rest."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A 1.5 kg block is released from rest on a ramp inclined at 30°, 2.0 m up the slope from the free end of a spring (k = 500 N/m) that lies along the ramp. The coefficient of kinetic friction between the block and the ramp is 0.20. Find the block's speed just before it touches the spring and the spring's maximum compression.",
+          "answer": "About 3.6 m/s; about 0.21 m",
+          "steps": [
+            "Take the block, the ramp, the spring and Earth as the system. No external force does work, so 0 = ΔK + ΔU_g + ΔU_s + ΔE_int.",
+            "Along the slope, gravity's component is mg sin 30° = (1.5 kg)(9.8 m/s^2)(0.50) = 7.35 N, and friction is μ_k mg cos 30° = (0.20)(1.5 kg)(9.8 m/s^2)(0.866) ≈ 2.55 N. Use the normal force mg cos 30°, not mg.",
+            "Stage 1, the 2.0 m slide to the spring (a 1.0 m drop): (1/2)mv^2 = (7.35 N)(2.0 m) − (2.55 N)(2.0 m) ≈ 14.7 J − 5.09 J ≈ 9.61 J, so v = √(2(9.61 J)/(1.5 kg)) ≈ 3.6 m/s.",
+            "Stage 2, from the release to maximum compression x: the block slides 2.0 m + x and is at rest at both ends, so (7.35 N − 2.55 N)(2.0 m + x) = (1/2)(500 N/m)x^2.",
+            "In SI units, 250x^2 − 4.80x − 9.61 = 0. The positive root is x = (4.80 + √(4.80^2 + 4(250)(9.61)))/500 ≈ 0.21 m.",
+            "Check: over the 2.21 m slide (a 1.10 m drop), gravity releases about 16.2 J; the spring stores (1/2)(500 N/m)(0.206 m)^2 ≈ 10.6 J and friction converts (2.55 N)(2.21 m) ≈ 5.6 J. Without friction the compression would be about 0.26 m."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A 60 kg skier starts from rest at a point 4.0 m higher than the top of a rounded mound. Near its top, the mound's surface is a circular arc of radius 12 m. Treat the snow as frictionless and neglect air resistance.\n\n(a) Find the skier's speed at the top of the mound.\n\n(b) Find the normal force on the skier there.\n\n(c) From what greatest height above the top of the mound could the skier start from rest and still stay in contact with the snow at the top?",
+          "answer": "(a) About 8.9 m/s (b) About 2.0 × 10^2 N, upward (c) 6.0 m",
+          "steps": [
+            "(a) Take the skier and Earth as the system. The normal force is perpendicular to the motion and does no work, and there is no friction, so (1/2)mv^2 = mgh: v = √(2gh) = √(2(9.8 m/s^2)(4.0 m)) ≈ 8.85 m/s.",
+            "(b) A speed alone does not give a force, so apply Newton's second law at the top, with toward the center of the arc (downward) as positive: mg − F_N = mv^2/r.",
+            "F_N = m(g − v^2/r) = (60 kg)(9.8 m/s^2 − (78.4 m^2/s^2)/(12 m)) = (60 kg)(9.8 m/s^2 − 6.53 m/s^2) ≈ 196 N, upward: about a third of her 588 N weight.",
+            "(c) Staying in contact needs F_N ≥ 0, so v^2 ≤ gr at the top. Energy gives v^2 = 2gh, so 2gh ≤ gr and h ≤ r/2 = 6.0 m.",
+            "The mass cancels in (a) and (c); it matters only for the force in (b)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, then answer it again a few days later without rereading. Take the unit test under timed conditions and score it with the key. Energy reasoning can appear in any free-response question type; the workshops below practise it in calculations and in bar charts and graphs."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 9: Kinetic energy and work",
+              "ref": "week:9"
+            },
+            {
+              "label": "Week 10: Potential energy",
+              "ref": "week:10"
+            },
+            {
+              "label": "Week 11: Conservation of energy and energy bar charts",
+              "ref": "week:11"
+            },
+            {
+              "label": "Week 12: Nonconservative work and multistep systems",
+              "ref": "week:12"
+            },
+            {
+              "label": "Week 13: Power and Unit 3 synthesis",
+              "ref": "week:13"
+            },
+            {
+              "label": "Unit 3 plan",
+              "ref": "unit:u3"
+            },
+            {
+              "label": "Unit 3 test",
+              "ref": "test:unit-3"
+            },
+            {
+              "label": "Unit 3 test key",
+              "ref": "key:unit-3"
+            },
+            {
+              "label": "Free-response workshop: Mathematical Routines",
+              "ref": "guide:fr-mathematical-routines"
+            },
+            {
+              "label": "Free-response workshop: Translation Between Representations",
+              "ref": "guide:fr-translation-between-representations"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

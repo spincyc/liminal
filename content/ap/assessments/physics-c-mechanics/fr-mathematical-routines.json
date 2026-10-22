@@ -1,0 +1,473 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "fr-mathematical-routines",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Mathematical Routines",
+  "author": "cm-workshop-author",
+  "directions": "Four Mathematical Routines questions in the style of the free-response section of the AP® Physics C: Mechanics Exam, each from a different unit and each worth 10 practice points. Allow 88 minutes in two sittings: questions 1 and 2 in 44 minutes, then questions 3 and 4 in 44 minutes. That is 22 minutes a question, Liminal's practice pace for this type, inside the 20–25 minutes that Liminal's practice exams suggest for it. A four-function, scientific or graphing calculator is allowed, and you may use the course's formula reference. Use g = 9.8 m/s^2 and SI units, and state your positive direction and your system whenever signs matter. Score each sitting with the answer key's rubrics and record raw points; they are a practice tally, not an AP score, and are not converted to any other scale.",
+  "figures": [
+    {
+      "id": "cm-fr-mathematical-routines-f1",
+      "alt": "Front view: a wheel labeled M, with radius R marked, turns on an axle held by a bracket fixed to a wall. A string leaves the right edge of the wheel and hangs straight down to a block labeled m. Edge view: the wheel's cross-section through the axle, thickest at the axle and thinning along smooth curves to half that thickness at the rim."
+    },
+    {
+      "id": "cm-fr-mathematical-routines-f2",
+      "alt": "Top view of a level air table: two posts lie on a dashed horizontal line, each a distance D from the midpoint between them. A puck labeled m sits a distance y above the midpoint, perpendicular to the line, with a straight cord from the puck to each post. An arrow at the side marks the +y direction.",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 88,
+          "calculator": "any",
+          "directions": "4 questions, 88 minutes: about 22 minutes for each, questions 1 and 2 in one sitting and questions 3 and 4 in another. Where a part says derive, start from a fundamental relation and show each step; where it says calculate, show the equation, the substitution and the units. Points are awarded for reasoning as well as answers.",
+          "items": [
+            {
+              "id": "cm-fr-mathematical-routines-fr1",
+              "type": "MR",
+              "topics": [
+                "CM.1.2",
+                "CM.1.4",
+                "CM.1.3"
+              ],
+              "prompt": "A maglev test vehicle runs on a straight, level guideway. It starts from rest at x = 0 at time t = 0, and for 0 ≤ t ≤ 6.0 s its propulsion controller ramps up the thrust so that the vehicle's acceleration is a(t) = 0.50t^2, with a in m/s^2 and t in seconds. A camera car on a road beside the guideway moves in the same direction at a constant 9.0 m/s and passes x = 0 at t = 0. Take the direction of motion as positive, and treat the vehicle and the car as particles.",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Starting from the definitions of acceleration and velocity, derive expressions for the vehicle's velocity v(t) and position x(t) for 0 ≤ t ≤ 6.0 s.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Integrates a(t) with the initial condition v(0) = 0 to obtain v(t) = t^3/6 (0.17t^3), in m/s, or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates v(t) with x(0) = 0 to obtain x(t) = t^4/24, in meters, or equivalent. Accepts consistent use of an incorrect v(t)."
+                    }
+                  ],
+                  "answer": "v(t) = t^3/6 (m/s); x(t) = t^4/24 (m)",
+                  "steps": [
+                    "a = dv/dt, so v(t) = v(0) + ∫ from 0 to t of 0.50s^2 ds = 0 + 0.50t^3/3 = t^3/6.",
+                    "v = dx/dt, so x(t) = x(0) + ∫ from 0 to t of (s^3/6) ds = 0 + t^4/24.",
+                    "Check by differentiating: dx/dt = 4t^3/24 = t^3/6 = v(t), and dv/dt = 3t^2/6 = 0.50t^2 = a(t)."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Write the vehicle's velocity relative to the camera car as a function of time. At what time is the vehicle farthest behind the car? Justify your answer, and calculate that greatest separation.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the relative velocity as v_rel(t) = v(t) − 9.0 = t^3/6 − 9.0, in m/s. Accepts consistent use of v(t) from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds t = 3.8 s (the cube root of 54 s^3) and justifies it: v_rel changes from negative to positive there (or v_rel = 0 there and is increasing because a > 0 for t > 0), so the gap grows before that instant and shrinks after it."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Calculates the separation 9.0t − x(t) at t = 3.78 s: 34.0 − 8.5 = 26 m (25.5 m); accept 25–26 m, or a consistent value from part (a)."
+                    }
+                  ],
+                  "answer": "v_rel(t) = t^3/6 − 9.0 (m/s). The vehicle is farthest behind at t = 3.8 s (3.78 s), where v_rel changes from negative to positive; the separation then is 26 m (25.5 m).",
+                  "steps": [
+                    "Relative velocity of the vehicle with respect to the car: v_rel = v_vehicle − v_car = t^3/6 − 9.0.",
+                    "v_rel = 0 when t^3 = 54, so t = 54^(1/3) = 3.78 s. dv_rel/dt = a(t) = 0.50t^2 > 0 for t > 0, so v_rel is increasing: negative before t = 3.78 s (the car pulls ahead) and positive after (the vehicle closes the gap).",
+                    "The gap is greatest when it stops growing, at t = 3.78 s: the car is at 9.0(3.78) = 34.0 m and the vehicle at x = (3.78)^4/24 = 8.5 m, so the vehicle is 25.5 m ≈ 26 m behind."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Show that the vehicle draws level with the car at t = 6.0 s. Then explain, in terms of the vehicle's average velocity, why the two are level at that instant even though the vehicle was slower than the car for more than half of the interval.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Shows x(6.0) = 1296/24 = 54 m and the car's position 9.0(6.0) = 54 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that the vehicle's average velocity over 0 to 6.0 s is 54 m/6.0 s = 9.0 m/s, equal to the car's constant velocity, so from the same starting point the two have equal displacements in the same time; the vehicle's speed above 9.0 m/s late in the interval makes up exactly what it lost before."
+                    }
+                  ],
+                  "answer": "x(6.0) = 54 m = 9.0 m/s × 6.0 s. The vehicle's average velocity over the 6.0 s is 54/6.0 = 9.0 m/s, the car's velocity, so equal displacements put them level.",
+                  "steps": [
+                    "x(6.0) = (6.0)^4/24 = 1296/24 = 54 m; the car is at 9.0 × 6.0 = 54 m.",
+                    "Average velocity = displacement/time = 54/6.0 = 9.0 m/s. Both start at x = 0 at t = 0, so equal average velocities over the same interval mean equal positions at its end.",
+                    "In terms of areas: the region where the vehicle's v(t) graph lies below 9.0 m/s (0 < t < 3.78 s) has the same area as the region where it lies above (3.78 s < t < 6.0 s), where the vehicle reaches 36 m/s."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "At t = 6.0 s the thrust is switched off and eddy-current brakes give the vehicle the acceleration a(t) = −3.0(t − 6.0), with a in m/s^2 and t in seconds, until the vehicle stops. Calculate the time at which the vehicle stops and its position then.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Integrates the braking acceleration with v(6.0) = 36 m/s as the initial condition: v(t) = 36 − 1.5(t − 6.0)^2. Accepts consistent use of v(6.0) from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Sets v = 0: (t − 6.0)^2 = 24, so the vehicle stops at t = 11 s (10.9 s)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the position as 54 m + ∫ from 6.0 to 10.9 of v(t) dt = 54 + 118 = 1.7 × 10^2 m (172 m); accept 171–173 m, or a consistent value."
+                    }
+                  ],
+                  "answer": "The vehicle stops at t = 11 s (10.9 s), at x = 1.7 × 10^2 m (172 m).",
+                  "steps": [
+                    "v(6.0) = (6.0)^3/6 = 36 m/s.",
+                    "For t ≥ 6.0 s: v(t) = 36 + ∫ from 6.0 to t of −3.0(s − 6.0) ds = 36 − 1.5(t − 6.0)^2.",
+                    "v = 0 when (t − 6.0)^2 = 24, so t − 6.0 = √24 = 4.90 s and t = 10.9 s.",
+                    "Braking distance = ∫ from 0 to √24 of (36 − 1.5u^2) du = 36√24 − 0.5(√24)^3 = 24√24 = 117.6 m, with u = t − 6.0.",
+                    "Final position = 54 + 117.6 = 171.6 m ≈ 1.7 × 10^2 m."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-mathematical-routines-fr2",
+              "type": "MR",
+              "topics": [
+                "CM.3.2",
+                "CM.3.5",
+                "CM.3.1"
+              ],
+              "prompt": "A pneumatic launcher starts a 2.0 kg cart along a straight, level track with negligible friction. The cart starts from rest at x = 0. As the compressed air behind the launcher's piston expands, the horizontal force the piston exerts on the cart weakens: F(x) = F_0L/(L + x) in the +x direction, where F_0 = 80 N, L = 0.20 m and x is the cart's position. The piston stops at x = D = 0.60 m, and the cart leaves it there. Air resistance is negligible. Take the cart's direction of motion as positive, and take the cart as the system.",
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Starting from the definition of work, derive an expression for the work done by the piston on the cart as the cart moves from x = 0 to a position x, where 0 ≤ x ≤ D. Express your answer in terms of F_0, L and x.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up W = ∫ from 0 to x of F(x′) dx′ = ∫ from 0 to x of F_0L/(L + x′) dx′ (a varying force needs an integral, not force times distance)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates W = F_0L ln((L + x)/L), or equivalently F_0L ln(1 + x/L)."
+                    }
+                  ],
+                  "answer": "W = F_0L ln(1 + x/L)",
+                  "steps": [
+                    "The piston's force on the cart points along +x, the direction of the displacement, with x-component F_0L/(L + x).",
+                    "W = ∫ from 0 to x of F_0L/(L + x′) dx′ = F_0L[ln(L + x′)] from 0 to x = F_0L ln((L + x)/L) = F_0L ln(1 + x/L).",
+                    "Check units: F_0L is in N·m = J, and the logarithm has no unit."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the cart's speed v as a function of x for 0 ≤ x ≤ D, in terms of F_0, L, m and x, where m is the cart's mass. Calculate the speed with which the cart leaves the launcher.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies the work–energy theorem to the cart, the piston's force being the only force doing work: ½mv^2 − 0 = F_0L ln(1 + x/L), so v = √(2F_0L ln(1 + x/L)/m). Accepts consistent use of the expression from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Calculates v(D) = √(2(80)(0.20) ln 4.0/2.0) = 4.7 m/s (4.71 m/s)."
+                    }
+                  ],
+                  "answer": "v(x) = √(2F_0L ln(1 + x/L)/m); the cart leaves at 4.7 m/s (4.71 m/s).",
+                  "steps": [
+                    "Gravity and the normal force are perpendicular to the motion and do no work, and friction is negligible, so W_net = W_piston = ΔK.",
+                    "½mv^2 − 0 = F_0L ln(1 + x/L), so v = √(2F_0L ln(1 + x/L)/m).",
+                    "At x = D = 0.60 m: 1 + D/L = 4.0, so v = √(2(80)(0.20)(ln 4.0)/2.0) = √(16 × 1.386) = √22.2 = 4.71 m/s ≈ 4.7 m/s."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Derive an expression for the power delivered to the cart by the piston as a function of x, and calculate it at x = 0.20 m. Explain why this power is zero at x = 0, even though the piston's force on the cart is greatest there.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses P = F·v with the speed from part (b) to write P(x) = [F_0L/(L + x)]√(2F_0L ln(1 + x/L)/m). Accepts consistent use of parts (a) and (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Calculates P(0.20 m) = (40 N)(3.33 m/s) = 1.3 × 10^2 W (133 W); accept 132–134 W, or a consistent value."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that power is the rate of doing work, F·v, and at x = 0 the cart is at rest, so the force, however large, is not yet doing work on it."
+                    }
+                  ],
+                  "answer": "P(x) = [F_0L/(L + x)]√(2F_0L ln(1 + x/L)/m); P(0.20 m) = 1.3 × 10^2 W (133 W). At x = 0 the cart's speed is zero, so P = Fv = 0.",
+                  "steps": [
+                    "The force and the velocity both point along +x, so P = F·v = Fv = [F_0L/(L + x)]√(2F_0L ln(1 + x/L)/m).",
+                    "At x = 0.20 m: F = (80)(0.20)/(0.40) = 40 N and v = √(2(80)(0.20)(ln 2.0)/2.0) = √(16 × 0.693) = 3.33 m/s.",
+                    "P = (40 N)(3.33 m/s) = 133 W ≈ 1.3 × 10^2 W, positive because the force points along the velocity: the piston is adding kinetic energy to the cart.",
+                    "At x = 0, F = F_0 = 80 N but v = 0, so P = Fv = 0: the work done in a short time dt is F v dt, and a force on an object at rest has not yet moved it through any distance."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "At what position is the piston delivering energy to the cart at the greatest rate? Justify your answer using calculus, and calculate that greatest power.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets the derivative of P (or of P^2, or of ln P) with respect to x equal to zero, and justifies the maximum with a sign change of the derivative or by comparing with the endpoint values P(0) = 0 and P(D) = 94 W."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves 1 − 2 ln(1 + x/L) = 0 to find x = L(√e − 1) = 0.13 m (0.130 m). Accepts consistent use of P(x) from part (c)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Calculates the greatest power as 1.4 × 10^2 W (137 W); accept 136–138 W, for example (48.5 N)(2.83 m/s), or F_0√(F_0L/(me))."
+                    }
+                  ],
+                  "answer": "At x = L(√e − 1) = 0.13 m (0.130 m), where the piston delivers energy at 1.4 × 10^2 W (137 W).",
+                  "steps": [
+                    "Let u = 1 + x/L. Then P^2 = (F_0/u)^2(2F_0L ln u/m) = (2F_0^3L/m)(ln u)/u^2, and P is largest where P^2 is.",
+                    "d/du[(ln u)/u^2] = (1 − 2 ln u)/u^3, which is zero when ln u = ½, that is u = √e = 1.649, so x = L(√e − 1) = 0.20(0.649) = 0.130 m.",
+                    "The derivative is positive for u < √e and negative for u > √e, so P rises to a maximum there and then falls; the endpoint values P(0) = 0 and P(D) = (20 N)(4.71 m/s) = 94 W are both smaller.",
+                    "There F = F_0/√e = 48.5 N and v = √(2F_0L(½)/m) = √(F_0L/m) = √8.0 = 2.83 m/s.",
+                    "P_max = (48.5 N)(2.83 m/s) = 137 W ≈ 1.4 × 10^2 W, which matches F_0√(F_0L/(me)) = 80√(16/(2.0 × 2.718)) = 137 W."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-mathematical-routines-fr3",
+              "type": "MR",
+              "topics": [
+                "CM.5.4",
+                "CM.5.6",
+                "CM.5.2",
+                "CM.5.3",
+                "CM.5.1"
+              ],
+              "prompt": "A wheel of mass M = 4.0 kg and radius R = 0.25 m turns on a fixed, frictionless horizontal axle through its center. The wheel is a disk that is thickest at the axle and thins toward the rim, where it is half as thick as at the center: its mass per unit area is σ(r) = σ_0(1 − r^2/(2R^2)), where r is the distance from the axle and σ_0 is a constant. A light string wound around the rim supports a block of mass m = 1.5 kg, as shown. The block is released from rest, and the string does not slip on the wheel. Take downward as positive for the block, and take the wheel's matching sense of rotation as positive.",
+              "figureIds": [
+                "cm-fr-mathematical-routines-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Starting from I = ∫ r^2 dm, derive the wheel's rotational inertia about its axle in terms of M and R.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Divides the wheel into thin rings of radius r and width dr, with dm = σ(r)·2πr dr."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates the mass: M = ∫ from 0 to R of σ_0(1 − r^2/(2R^2))2πr dr = (3/4)πσ_0R^2, so σ_0 = 4M/(3πR^2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Integrates I = ∫ from 0 to R of r^2σ_0(1 − r^2/(2R^2))2πr dr = (1/3)πσ_0R^4 and eliminates σ_0 to get I = (4/9)MR^2 (0.11 kg·m^2)."
+                    }
+                  ],
+                  "answer": "I = (4/9)MR^2 = 0.44MR^2 = 0.11 kg·m^2 (0.111 kg·m^2)",
+                  "steps": [
+                    "Every point of a thin ring of radius r and width dr is the same distance r from the axle, and the ring's area is 2πr dr, so dm = σ_0(1 − r^2/(2R^2))2πr dr.",
+                    "M = 2πσ_0 ∫ from 0 to R of (r − r^3/(2R^2)) dr = 2πσ_0(R^2/2 − R^2/8) = (3/4)πσ_0R^2.",
+                    "I = 2πσ_0 ∫ from 0 to R of (r^3 − r^5/(2R^2)) dr = 2πσ_0(R^4/4 − R^4/12) = (1/3)πσ_0R^4.",
+                    "Substitute σ_0 = 4M/(3πR^2): I = (1/3)(4/3)MR^2 = (4/9)MR^2 = 0.444(4.0)(0.25)^2 = 0.111 kg·m^2.",
+                    "Sense check: 0.44MR^2 is less than a uniform disk's 0.50MR^2, as it should be, because the mass is concentrated toward the axle."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Derive an expression for the block's acceleration in terms of m, M and g, and calculate it.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law to the block: mg − F_T = ma."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law in rotational form to the wheel, F_TR = Iα, with the no-slip condition a = αR."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Combines them to get a = mg/(m + 4M/9) and calculates a = 4.5 m/s^2 (4.48 m/s^2). Accepts consistent use of I from part (a)."
+                    }
+                  ],
+                  "answer": "a = mg/(m + 4M/9) = 4.5 m/s^2 (4.48 m/s^2), downward",
+                  "steps": [
+                    "Block (system: the block): weight mg down and tension F_T up, so mg − F_T = ma.",
+                    "Wheel (system: the wheel): only the tension has a torque about the axle (the axle force and the weight act at the axle), so F_TR = Iα, and the string does not slip, so a = αR.",
+                    "Then F_T = Ia/R^2 = (4/9)Ma, and mg − (4/9)Ma = ma gives a = mg/(m + 4M/9). R cancels.",
+                    "a = (1.5)(9.8)/(1.5 + 1.78) = 14.7/3.28 = 4.48 m/s^2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the tension in the string, and explain why it is less than the block's weight.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Calculates F_T = m(g − a) = 8.0 N (accept 7.9–8.1 N), or (4/9)Ma. Accepts consistent use of a from part (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains with Newton's second law for the block: the block accelerates downward, so the net force on it must point down, which requires the upward tension to be smaller than mg."
+                    }
+                  ],
+                  "answer": "F_T = 8.0 N (7.97 N), less than mg = 14.7 N because the block accelerates downward, so the net force on it is downward.",
+                  "steps": [
+                    "F_T = m(g − a) = 1.5(9.8 − 4.48) = 7.97 N ≈ 8.0 N.",
+                    "Consistency check with the wheel: F_T = Ia/R^2 = (0.111)(4.48)/(0.0625) = 7.97 N.",
+                    "If the tension equaled the weight, the net force on the block would be zero and it would not accelerate; a downward acceleration needs mg > F_T."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Calculate the wheel's angular speed when the block has fallen 1.2 m.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the block's speed after falling 1.2 m with constant-acceleration kinematics, v^2 = 2ah (v = 3.3 m/s), or with energy conservation including the wheel's rotational kinetic energy."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses ω = v/R to get ω = 13 rad/s (13.1 rad/s). Accepts consistent use of a from part (b)."
+                    }
+                  ],
+                  "answer": "ω = 13 rad/s (13.1 rad/s)",
+                  "steps": [
+                    "The forces are constant, so a is constant: v = √(2ah) = √(2 × 4.48 × 1.2) = √10.8 = 3.28 m/s.",
+                    "No slip: ω = v/R = 3.28/0.25 = 13.1 rad/s.",
+                    "Energy check: mgh = 1.5(9.8)(1.2) = 17.6 J, and ½mv^2 + ½Iω^2 = 8.1 J + 9.6 J = 17.6 J."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "cm-fr-mathematical-routines-fr4",
+              "type": "MR",
+              "topics": [
+                "CM.7.1",
+                "CM.7.2",
+                "CM.7.3",
+                "CM.2.5"
+              ],
+              "prompt": "A puck of mass m = 0.20 kg sits on a level air table with negligible friction. Two light elastic cords, each under tension F_T = 12 N, run from the puck to two fixed posts. The posts and the puck's equilibrium position lie on one line, and each post is a distance D = 0.30 m from the equilibrium position. The puck is moved sideways, perpendicular to that line, as shown in the top view, where y is its displacement. Assume that |y| stays much smaller than D and that the tension in each cord stays F_T. Take +y as shown.",
+              "figureIds": [
+                "cm-fr-mathematical-routines-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Starting from Newton's second law, derive the differential equation for y(t). Show that the puck undergoes simple harmonic motion, and derive its angular frequency in terms of F_T, m and D.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Resolves each cord's pull: its y-component is −F_T sin θ ≈ −F_Ty/D for small displacements, so the net force is −2F_Ty/D (the components along the line cancel)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes m d^2y/dt^2 = −(2F_T/D)y, or d^2y/dt^2 = −(2F_T/(mD))y, and identifies it as the SHM form d^2y/dt^2 = −ω^2y: the acceleration is proportional to the displacement and opposite to it."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Derives ω = √(2F_T/(mD)) = 20 rad/s."
+                    }
+                  ],
+                  "answer": "m d^2y/dt^2 = −(2F_T/D)y, which has the form d^2y/dt^2 = −ω^2y, so the motion is simple harmonic with ω = √(2F_T/(mD)) = 20 rad/s.",
+                  "steps": [
+                    "Each cord makes a small angle θ with the line of the posts, with sin θ ≈ tan θ = y/D when |y| is much smaller than D.",
+                    "Each cord pulls toward its post with force F_T; its y-component is −F_T sin θ ≈ −F_Ty/D. The two components along the line are equal and opposite and cancel.",
+                    "Newton's second law along y: m d^2y/dt^2 = −2F_Ty/D. The net force is a restoring force proportional to y, the defining property of simple harmonic motion.",
+                    "Comparing with d^2y/dt^2 = −ω^2y: ω = √(2F_T/(mD)) = √(2 × 12/(0.20 × 0.30)) = √400 = 20 rad/s, so the period is 2π/20 = 0.31 s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "At t = 0 the puck is at y = +0.015 m and moving with velocity +0.40 m/s. Write y(t) for the motion, giving numerical values for the amplitude, angular frequency and phase constant.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes y(t) = A cos(ωt + φ), or an equivalent sinusoid, with ω = 20 rad/s. Accepts consistent use of ω from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds A = √(y_0^2 + (v_0/ω)^2) = 0.025 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the phase constant consistent with both initial conditions, φ = −0.93 rad (cos φ = 0.60, sin φ = −0.80), or equivalent forms such as y = 0.015 cos(20t) + 0.020 sin(20t) or y = 0.025 sin(20t + 0.64)."
+                    }
+                  ],
+                  "answer": "y(t) = (0.025 m) cos((20 rad/s)t − 0.93 rad), equivalently y = 0.015 cos(20t) + 0.020 sin(20t), with y in meters and t in seconds.",
+                  "steps": [
+                    "y = A cos(ωt + φ) gives y(0) = A cos φ = 0.015 m and v(0) = −Aω sin φ = 0.40 m/s.",
+                    "A cos φ = 0.015 and A sin φ = −0.40/20 = −0.020, so A = √(0.015^2 + 0.020^2) = 0.025 m.",
+                    "cos φ = 0.60 and sin φ = −0.80, so φ = −0.927 rad. The sign matters: φ = +0.927 rad would start the puck moving in −y.",
+                    "Check: y(0) = 0.025 cos(−0.927) = 0.015 m and v(0) = −(0.025)(20) sin(−0.927) = +0.40 m/s."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Calculate the puck's maximum speed and the first time after t = 0 at which it passes through y = 0.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "v_max = Aω = (0.025)(20) = 0.50 m/s. Accepts consistent values from parts (a) and (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves 20t − 0.927 = π/2 to get t = 0.12 s (0.125 s), recognizing that the puck first moves out to y = A before returning through y = 0."
+                    }
+                  ],
+                  "answer": "v_max = 0.50 m/s; the puck first passes y = 0 at t = 0.12 s (0.125 s).",
+                  "steps": [
+                    "v(t) = −Aω sin(ωt + φ), whose largest size is Aω = 0.025 × 20 = 0.50 m/s.",
+                    "y = 0 when ωt + φ = π/2 (the first such angle after the starting angle −0.927 rad): 20t = 1.571 + 0.927 = 2.498, so t = 0.125 s.",
+                    "This is later than a quarter period (0.079 s) because the puck starts moving away from equilibrium, reaches y = 0.025 m, and only then turns back."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The cords are tightened so that each has tension 4F_T, and the puck is started again from y = +0.015 m with velocity +0.40 m/s. Calculate the new period and the new amplitude.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses ω ∝ √F_T to get ω′ = 40 rad/s and a period of 2π/40 = 0.16 s (0.157 s), half the original."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Recomputes the amplitude from the initial conditions with the new ω: A′ = √(0.015^2 + (0.40/40)^2) = 0.018 m. Halving A or keeping 0.025 m does not earn this point."
+                    }
+                  ],
+                  "answer": "Period 0.16 s (0.157 s); amplitude 0.018 m",
+                  "steps": [
+                    "ω′ = √(2(4F_T)/(mD)) = 2ω = 40 rad/s, so T′ = 2π/40 = 0.157 s.",
+                    "The amplitude depends on how the motion starts as well as on ω: A′ = √(y_0^2 + (v_0/ω′)^2) = √(0.015^2 + 0.010^2) = 0.0180 m.",
+                    "Energy view: the stiffer cords store more energy for each displacement, so the same starting energy is used up at a smaller greatest displacement."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

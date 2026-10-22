@@ -1,0 +1,452 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "physics-c-mechanics",
+  "id": "fr-translation-between-representations",
+  "kind": "fr-archetype",
+  "title": "Translation Between Representations",
+  "author": "cm-workshop-tbr-author",
+  "summary": "Translation Between Representations is one of the four free-response question types on the AP® Physics C: Mechanics Exam. A question of this type describes one physical situation in several ways at once: diagrams, graphs, equations derived from fundamental relations, bar charts and sentences. You build one representation from another and show that they agree. This guide sets out the usual parts, what earns each kind of point in Liminal's rubrics, model sentences, common traps, a worked model and four self-checks, and links to a practice set of four questions from units 2, 4, 6 and 7.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "cm-fr-translation-between-representations-g1",
+      "alt": "Graph of a crate's velocity v in m/s against time t in seconds from 0 to 5 s: a straight line rising from 0 at t = 0 to 1.2 m/s at t = 2 s, then a horizontal line at 1.2 m/s until t = 5 s."
+    },
+    {
+      "id": "cm-fr-translation-between-representations-g2",
+      "alt": "Graph of the rope's tension F in newtons against time t in seconds from 0 to 5 s: a horizontal line at 88.5 N from t = 0 to t = 2 s, ending in an open circle, then a horizontal line at 73.5 N from t = 2 s, starting with a filled dot, to t = 5 s.",
+      "caption": "The tension drops suddenly at t = 2.0 s, where the velocity graph has a corner: the slope changes at once, so the net force does too."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A Translation Between Representations question gives one physical situation and asks you to describe it several ways: a diagram (a free-body diagram, a force diagram on an extended object, an energy or momentum bar chart), a graph (one you read, or one you sketch on given axes), an equation derived from a fundamental relation, and a few sentences. Most parts ask you to build one representation from another. At least one part usually asks you to show that two of them agree, or to use one of them to evaluate a claim."
+        },
+        {
+          "type": "text",
+          "text": "College Board's exam pages (checked 2026-10-22) name it as one of the four free-response question types and give 95 minutes for the free-response section. In Liminal's practice exams it is question 2, scored out of 12 practice points; that point value and Liminal's practice pace of 28 minutes a question, inside the 25–30 minutes Liminal's practice exams suggest for question 2, are Liminal practice conventions, not College Board facts. A calculator is allowed throughout, and Liminal's practice appends its own formula reference."
+        },
+        {
+          "type": "text",
+          "text": "Any unit can supply the situation. Common pairings are forces with motion graphs, impulse with force–time graphs, energy with bar charts and potential-energy curves, rotation with angular graphs and force diagrams drawn on the extended object, and oscillations with position, velocity and energy graphs."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Most questions draw four to six of these, often in this order. The middle column is what you do; the right column is where Liminal's rubrics usually put the points.",
+          "head": [
+            "Part type",
+            "What you do",
+            "Points usually go to"
+          ],
+          "rows": [
+            [
+              "Draw a diagram",
+              "A free-body diagram on a dot, or forces drawn at their points of application on an extended object",
+              "Every force present and labeled, no extra forces; relative lengths or points of application that match the motion"
+            ],
+            [
+              "Read a graph",
+              "A slope, an area, an intercept or an asymptote, with the reading shown",
+              "Naming what the feature means (\"the slope of v–t is a\"); the value with its unit"
+            ],
+            [
+              "Derive an equation",
+              "Start from a fundamental relation in symbols, then solve",
+              "The starting relation; the expression in the requested symbols; a value when asked"
+            ],
+            [
+              "Sketch a graph",
+              "Draw on the given axes from an equation or from another graph",
+              "The starting value, the shape (slope and curvature) and the labeled values"
+            ],
+            [
+              "Bar charts",
+              "Energy or momentum bars at two or three instants for a named system",
+              "The bars at each instant; totals that stay the same when they should"
+            ],
+            [
+              "Connect or evaluate",
+              "Show that two representations agree, or use one to support or refute a claim",
+              "A specific link (\"the area under my sketch equals…\"); a conclusion with its reason"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-earns-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics for this type award five kinds of points. Every part earns at least one of them, and the last kind is what makes the type distinctive."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Starting-relation points: a derivation that begins from a fundamental relation (Newton's second law in linear or rotational form, the impulse–momentum theorem, the work–energy theorem, or conservation of energy, momentum or angular momentum), written in symbols before numbers.",
+            "Symbol points: the question's own symbols, used consistently, with any new symbol defined, so a reader can follow every step.",
+            "Answer-and-unit points: a value with its unit and 2–3 significant figures, or an expression in the requested symbols. Keys accept ±1 in the last digit and values consistent with your own earlier results.",
+            "Reasoning points: a sentence that names the principle and the system and says why the principle applies: \"no external torque acts on the skater–arms system about the spin axis, so its angular momentum is constant\".",
+            "Consistency points: a sketch, diagram or equation that agrees with the other representations of the same motion, and an explicit check that they agree. A later part that uses an earlier wrong result still earns its points when the work is consistent with it, so always show the value you used."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "The links you use most to move between graphs. A slope comes from the steepness at an instant; an area is the signed area between the graph and the time (or position) axis.",
+          "head": [
+            "Graph",
+            "Its slope gives",
+            "The area under it gives"
+          ],
+          "rows": [
+            [
+              "x against t",
+              "velocity v",
+              "not usually asked"
+            ],
+            [
+              "v against t",
+              "acceleration a",
+              "displacement Δx"
+            ],
+            [
+              "a against t",
+              "rarely asked",
+              "change in velocity Δv"
+            ],
+            [
+              "p against t",
+              "net force ΣF",
+              "not usually asked"
+            ],
+            [
+              "F against t",
+              "rarely asked",
+              "impulse J = Δp"
+            ],
+            [
+              "F against x",
+              "rarely asked",
+              "work W"
+            ],
+            [
+              "K against x",
+              "net force",
+              "not usually asked"
+            ],
+            [
+              "U against x",
+              "−F, the negative of the conservative force",
+              "not usually asked"
+            ],
+            [
+              "θ against t",
+              "angular velocity ω",
+              "not usually asked"
+            ],
+            [
+              "ω against t",
+              "angular acceleration α",
+              "angular displacement Δθ"
+            ],
+            [
+              "τ against t",
+              "rarely asked",
+              "angular impulse ΔL"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Diagrams of forces",
+          "text": "Draw each force as an arrow that starts on the object (on a dot, or at its point of application on an extended object), and label it with a symbol that names it. Draw no components and no net-force arrow unless the question asks for them.",
+          "conditions": [
+            "Relative lengths come from the motion: arrows that balance are equal, and the side toward which the object accelerates is longer.",
+            "On an extended object, gravity acts at the center of mass and each contact force acts at its contact point; the points matter because they decide the torques."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Sketches on given axes",
+          "text": "A sketch earns points for features, not artistry: the starting value, the sign and steepness of the slope, the curvature, where the graph is zero or flat, any asymptote, and the values the question asks you to label.",
+          "conditions": [
+            "Every feature must agree with the equation you derived or the graph you were given.",
+            "Use the given axes and their scale; a value off the scale cannot be read as labeled."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Bar charts",
+          "text": "Name the system, give every nonzero bar a value or a fraction of the total, and leave a bar empty when that energy (or momentum) is zero.",
+          "conditions": [
+            "The total of the charted energies stays the same when no external force does work on the system and no energy inside it is dissipated or converted to or from a form the chart leaves out, such as thermal or chemical energy.",
+            "Momentum bars carry signs: a bar below the axis is momentum in the negative direction.",
+            "For an object that rolls without slipping, ω = v/R ties the translational and rotational kinetic-energy bars together: write both in terms of v before you draw them."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Justifying the relative lengths in a free-body diagram, for an elevator car rising at constant speed.",
+          "text": "The car moves at constant velocity, so its acceleration is zero and the net force on it is zero. The cable's upward tension balances the downward gravitational force, so I drew the two arrows with equal lengths."
+        },
+        {
+          "type": "model",
+          "prompt": "Reading an acceleration from a velocity graph.",
+          "text": "The acceleration at t = 2.0 s is the slope of the v–t graph there. Using the tangent line through (0, 1.0 m/s) and (4.0 s, 3.0 m/s), a = (3.0 m/s − 1.0 m/s)/(4.0 s) = 0.50 m/s^2 in the positive direction."
+        },
+        {
+          "type": "model",
+          "prompt": "Reading an impulse from a force graph.",
+          "text": "The impulse on the cart from t = 0 to t = 0.20 s is the area under the F–t graph, a triangle: J = ½(0.20 s)(150 N) = 15 N·s in the positive direction."
+        },
+        {
+          "type": "model",
+          "prompt": "Starting a derivation from a fundamental relation, for a block pushed up a rough incline by a force F along the incline.",
+          "text": "Newton's second law for the block, with up the incline positive: ΣF = ma, so F − mg sin θ − μ_k mg cos θ = ma, and a = F/m − g(sin θ + μ_k cos θ)."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining a feature of a force sketch made from a potential-energy graph.",
+          "text": "The force is zero at x = 0.30 m because the U–x graph is flat there. It is negative for x > 0.30 m, where U rises, because F = −dU/dx, and it is largest in size where the U–x graph is steepest."
+        },
+        {
+          "type": "model",
+          "prompt": "Explaining why bar-chart totals stay the same, for a cart that rolls down a frictionless track and compresses a spring.",
+          "text": "For the cart–spring–Earth system, the total energy is the same at every instant: gravity and the spring force are internal to the system, the track's normal force is perpendicular to the cart's motion, and there is no friction, so no external force does work and nothing is dissipated."
+        },
+        {
+          "type": "model",
+          "prompt": "Checking that an equation and a graph agree.",
+          "text": "From the graph, the cart's speed at t = 3.0 s is 2.4 m/s. My expression gives v(3.0 s) = (0.80 m/s^2)(3.0 s) = 2.4 m/s, so the equation and the graph agree."
+        },
+        {
+          "type": "model",
+          "prompt": "Evaluating a claim with a graph.",
+          "text": "I disagree. Impulse is the area under each F–t graph: the short spike gives ½(0.010 s)(800 N) = 4.0 N·s and the long, low push gives (0.10 s)(60 N) = 6.0 N·s, so the long push changes the ball's momentum more even though its greatest force is smaller."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Adding a \"force of motion\", an \"applied force\" with no source, or a net-force arrow to a free-body diagram.",
+          "fix": "Name the object that exerts each force: the Earth, the floor, the rope, the water. The net force is what the diagram adds up to, not one of its arrows."
+        },
+        {
+          "type": "trap",
+          "text": "Drawing all arrows the same length, or making arrows unequal that the motion says must balance.",
+          "fix": "Decide from the motion first: constant velocity means the arrows balance; speeding up in the positive direction means the positive arrows are longer. Then draw, and say why in one sentence when asked."
+        },
+        {
+          "type": "trap",
+          "text": "Pointing friction on a rolling object opposite its velocity by habit.",
+          "fix": "For an object that rolls without slipping, find friction's direction from what the rotation must do: when friction is the only force with a torque about the center, it must point whichever way changes ω in step with v = ωR. Write Στ = Iα about the center alongside ΣF = ma, and let the two equations decide the direction rather than the direction of motion."
+        },
+        {
+          "type": "trap",
+          "text": "Sketching the shape of the given graph instead of its slope or its area: drawing a rising a–t line because the v–t graph rises.",
+          "fix": "Say which operation links the two graphs before you draw: a from v is a slope; v from a is an area. Then check one feature: where the slope graph is zero, the other graph is flat."
+        },
+        {
+          "type": "trap",
+          "text": "Sketches with no values marked, or curves that cross a value they can only approach.",
+          "fix": "Mark the starting value, the values the question names and any asymptote. A velocity that approaches a terminal speed never reaches or crosses it in a sketch."
+        },
+        {
+          "type": "trap",
+          "text": "Jumps or corners in a graph where nothing in the situation jumps.",
+          "fix": "Velocity cannot jump while finite forces act, and position cannot jump at all. A corner in a v–t graph needs a sudden change in force, and you should be able to name its cause."
+        },
+        {
+          "type": "trap",
+          "text": "Bar charts whose totals change with no work done on the system, or charts with no system named.",
+          "fix": "Name the system above the chart. If no external force does work and no energy is dissipated or converted to or from a form the chart leaves out (thermal, chemical), the bars must add to the same total at every instant; add them up before moving on."
+        },
+        {
+          "type": "trap",
+          "text": "Starting a derivation from a memorized result, such as F_N = mg, or substituting numbers in the first line.",
+          "fix": "Begin with the fundamental relation in symbols (ΣF = ma, Στ = Iα, J = Δp, conservation of energy), keep the question's symbols, solve, and substitute last. A remembered result skips the starting-relation point and may not fit the situation: F_N = mg is wrong on an incline or in an accelerating elevator."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving a disagreement between parts unexamined.",
+          "fix": "If your equation and your graph disagree, say so and look for the slip. Substituting one value read from the graph into your equation usually exposes a sign error or a missing factor."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A worker drags a 25 kg crate across a level warehouse floor with a rope that pulls horizontally. The coefficient of kinetic friction between the crate and the floor is 0.30. The graph shows the crate's velocity, with the direction of the pull positive. (a) Draw a free-body diagram of the crate at t = 1.0 s, with the relative lengths of the arrows consistent with its motion. (b) Starting from Newton's second law, determine the tension in the rope from t = 0 to 2.0 s and from 2.0 s to 5.0 s. (c) Sketch the tension against time from t = 0 to 5.0 s. (d) Show that the net work done on the crate from t = 0 to 5.0 s agrees with the graph.",
+          "answer": "(a) Four forces: F_g = 245 N down and F_N = 245 N up, of equal length; the tension F_T forward, longer than the kinetic friction f_k backward. (b) 88.5 N, then 73.5 N. (c) A horizontal line at 88.5 N that drops at t = 2.0 s to a horizontal line at 73.5 N. (d) The net work, 18 J, equals the change in kinetic energy, 18 J.",
+          "steps": [
+            "(a) From t = 0 to 2.0 s the slope of the graph is (1.2 m/s)/(2.0 s) = 0.60 m/s^2, positive, so the net force points forward and the tension arrow is longer than the friction arrow. Nothing accelerates vertically, so F_N = mg = (25 kg)(9.8 m/s^2) = 245 N, and those two arrows are equal.",
+            "(b) Newton's second law along the floor: F_T − μ_k F_N = ma. From 0 to 2.0 s: F_T = (25 kg)(0.60 m/s^2) + (0.30)(245 N) = 15 N + 73.5 N = 88.5 N. From 2.0 s to 5.0 s the slope is zero, so F_T = μ_k F_N = 73.5 N.",
+            "(c) Translate slope into force: each straight piece of the v–t graph has a constant slope, so the tension is constant on each piece. The slope changes at once at t = 2.0 s, so the tension drops at once by ma = 15 N.",
+            "(d) The distances are areas under the v–t graph: ½(2.0 s)(1.2 m/s) = 1.2 m, then (3.0 s)(1.2 m/s) = 3.6 m. Net work = (88.5 N − 73.5 N)(1.2 m) + (73.5 N − 73.5 N)(3.6 m) = 18 J. Change in kinetic energy = ½(25 kg)(1.2 m/s)^2 − 0 = 18 J. They agree.",
+            "Check the habits: the arrow lengths follow from the sign of the slope, the derivation starts from ΣF = ma in symbols, the sketch's sudden drop has a named cause, and an energy check ties the graph back to the forces."
+          ],
+          "figureIds": [
+            "cm-fr-translation-between-representations-g1",
+            "cm-fr-translation-between-representations-g2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you reveal the answer."
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-translation-between-representations-c1",
+          "prompt": "A cart's momentum along a straight track falls steadily, in a straight line, from +6.0 kg·m/s at t = 0 to −2.0 kg·m/s at t = 4.0 s. Describe the graph of the net force on the cart over the same interval, and find the net impulse on the cart.",
+          "hint": "Which feature of the momentum graph is the net force?",
+          "answer": "A horizontal line at −2.0 N from t = 0 to 4.0 s, below the time axis. The net impulse is −8.0 N·s.",
+          "steps": [
+            "The net force is the slope of the p–t graph: (−2.0 − 6.0)/4.0 = −2.0 N, the same at every instant because the graph is straight.",
+            "The impulse is the area under the F–t graph, (−2.0 N)(4.0 s) = −8.0 N·s, which equals Δp = −2.0 − 6.0 = −8.0 kg·m/s, as it must."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-translation-between-representations-c2",
+          "prompt": "A uniform solid cylinder (rotational inertia ½MR^2 about its axis) rolls without slipping on level ground with 6.0 J of kinetic energy. A student's bar chart shows 3.0 J of translational and 3.0 J of rotational kinetic energy. Is the chart consistent with the physics? If not, correct it.",
+          "hint": "Write both kinetic energies in terms of M and v, using ω = v/R.",
+          "answer": "No. The translational kinetic energy is 4.0 J and the rotational kinetic energy is 2.0 J.",
+          "steps": [
+            "K_rot = ½(½MR^2)(v/R)^2 = ¼Mv^2 and K_tr = ½Mv^2, so K_rot is half of K_tr at every instant.",
+            "K_tr + ½K_tr = 6.0 J gives K_tr = 4.0 J and K_rot = 2.0 J. Equal bars would fit a thin hoop, whose rotational inertia is MR^2."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-translation-between-representations-c3",
+          "prompt": "A block on a spring has velocity v(t) = 0.30 cos(5.0t), with v in m/s and t in seconds, and is at x = 0 at t = 0. Write x(t) and a(t), give the amplitude, and find a at t = 0.10 s. When x is greatest, which of the graphs of v and a is at zero?",
+          "hint": "x is the antiderivative of v that is zero at t = 0; a is the derivative of v.",
+          "answer": "x(t) = 0.060 sin(5.0t) m, amplitude 0.060 m; a(t) = −1.5 sin(5.0t) m/s^2, so a(0.10 s) = −0.72 m/s^2. When x is greatest, v is zero (and a is most negative).",
+          "steps": [
+            "x(t) = ∫ from 0 to t of 0.30 cos(5.0s) ds = (0.30/5.0) sin(5.0t) = 0.060 sin(5.0t) m.",
+            "a(t) = dv/dt = −(0.30)(5.0) sin(5.0t) = −1.5 sin(5.0t); at t = 0.10 s, sin(0.50) = 0.479, so a = −0.72 m/s^2.",
+            "x is greatest where sin(5.0t) = 1, where cos(5.0t) = 0: the v graph crosses zero there, and a = −1.5 m/s^2 is at its most negative, opposite x."
+          ],
+          "see": "what-earns-points"
+        },
+        {
+          "type": "check",
+          "id": "cm-fr-translation-between-representations-c4",
+          "prompt": "A cart's velocity graph is a straight line from 0 at t = 0 to 4.0 m/s at t = 2.0 s, then a horizontal line at 4.0 m/s until t = 5.0 s. A student sketches the acceleration as a line rising from 0 to 2.0 m/s^2 over the first 2.0 s and then level. What went wrong, and what is the correct sketch?",
+          "hint": "Compare the student's sketch with the shape of the velocity graph.",
+          "answer": "The student copied the shape of the velocity graph. The acceleration is a constant 2.0 m/s^2 from t = 0 to 2.0 s, then drops at once to zero until t = 5.0 s.",
+          "steps": [
+            "Acceleration is the slope of the v–t graph, not its height: the slope is (4.0 m/s)/(2.0 s) = 2.0 m/s^2 on the first piece and 0 on the second.",
+            "The corner at t = 2.0 s means the slope changes at once, so the acceleration jumps from 2.0 m/s^2 to zero there."
+          ],
+          "see": "traps"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set in two sittings at Liminal's practice pace of 28 minutes a question: questions 1 and 2 (units 2 and 4) in 56 minutes, then questions 3 and 4 (units 6 and 7) in 56 minutes, with Liminal's formula reference beside you. Score each part with the rubric and record raw points out of 12 per question as practice. For each lost point, name its kind (diagram, graph reading, starting relation, sketch, bar chart or consistency), then revisit the section of this guide, or the review and week below, that it points to."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-translation-between-representations"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-translation-between-representations"
+            },
+            {
+              "label": "Unit 2 review: force and translational dynamics",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 4 review: linear momentum",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Unit 6 review: energy and momentum of rotating systems",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 7 review: oscillations",
+              "ref": "guide:review-u7"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Week 7: free-body diagrams and Newton's third and first laws",
+              "ref": "week:7"
+            },
+            {
+              "label": "Week 10: resistive forces and terminal speed",
+              "ref": "week:10"
+            },
+            {
+              "label": "Week 16: momentum and impulse as an integral",
+              "ref": "week:16"
+            },
+            {
+              "label": "Week 17: momentum conservation and center-of-mass motion",
+              "ref": "week:17"
+            },
+            {
+              "label": "Week 26: rolling",
+              "ref": "week:26"
+            },
+            {
+              "label": "Week 29: representing SHM and oscillator energy",
+              "ref": "week:29"
+            },
+            {
+              "label": "Week 30: simple and physical pendulums",
+              "ref": "week:30"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

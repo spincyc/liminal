@@ -313,7 +313,9 @@
 
   // A free-response set: one Section II whose parts keep the exam's order
   // (graphing calculator before none), at the exam's pace per question, with
-  // every question worth the course's free-response points.
+  // every question worth the course's free-response points. Physics sets
+  // (`frTypes`) practise one question type, each question worth that type's
+  // points and paced by `minutesByType`.
   function frSetProblems(doc, course) {
     const problems = [], label = doc.id + ": ", rule = course.blueprints.frSet;
     if (!rule) return [label + "the course has no free-response set blueprint"];
@@ -323,15 +325,21 @@
     const policies = section.parts.map(part => part.calculator);
     if (section.parts.some((part, i) => part.id !== String.fromCharCode(65 + i))) problems.push(label + "parts are A, B, … in order");
     if (new Set(policies).size !== policies.length || policies.some((p, i) => i && order.indexOf(p) <= order.indexOf(policies[i - 1]))) problems.push(label + "parts take one calculator policy each, in the exam's order (" + order.join(", then ") + ")");
+    const pace = item => rule.frTypes ? (own(rule.minutesByType, item.type) ? rule.minutesByType[item.type] : 0) : rule.minutesPerQuestion;
     section.parts.forEach(part => {
-      if (part.minutes !== rule.minutesPerQuestion * part.items.length) problems.push(label + `part ${part.id} is ${part.minutes} minutes; ${part.items.length} questions take ${rule.minutesPerQuestion * part.items.length}`);
+      const want = part.items.reduce((sum, item) => sum + pace(item), 0);
+      if (part.minutes !== want) problems.push(label + `part ${part.id} is ${part.minutes} minutes; ${part.items.length} questions take ${want}`);
     });
     const items = section.parts.flatMap(part => part.items);
     if (items.length < rule.questions[0] || items.length > rule.questions[1]) problems.push(label + `has ${items.length} questions; sets hold ${rule.questions[0]}–${rule.questions[1]}`);
     items.forEach(item => {
       if (isMc(item)) problems.push(label + item.id + " is multiple choice; sets hold free response only");
-      else if (itemPoints(item) !== rule.frPoints) problems.push(label + `${item.id} is worth ${itemPoints(item)} points; free response is worth ${rule.frPoints}`);
+      else if (rule.frTypes) {
+        if (!own(rule.frTypes, item.type)) problems.push(label + `${item.id} needs a free-response type (${Object.keys(rule.frTypes).join(", ")})`);
+        else if (itemPoints(item) !== rule.frTypes[item.type]) problems.push(label + `${item.id} (${item.type}) is worth ${itemPoints(item)} points; that type is worth ${rule.frTypes[item.type]}`);
+      } else if (itemPoints(item) !== rule.frPoints) problems.push(label + `${item.id} is worth ${itemPoints(item)} points; free response is worth ${rule.frPoints}`);
     });
+    if (rule.frTypes && new Set(items.filter(item => !isMc(item)).map(item => item.type)).size > 1) problems.push(label + "a physics free-response set practises one question type");
     return problems;
   }
 

@@ -1,0 +1,611 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "physics-1",
+  "id": "fr-translation-between-representations",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Translation Between Representations",
+  "author": "p1-fr-translation-between-representations-author",
+  "directions": "Four Translation Between Representations questions in the style of the AP® Physics 1 Exam, each worth 12 points in Liminal's practice scoring and each from a different unit. Work them at Liminal's practice pace of 28 minutes a question, inside the 25–30 minutes Liminal's practice exams suggest for this type, two at a sitting: questions 1 and 2 (motion and forces), then questions 3 and 4 (impulse and fluids). Any calculator is allowed, and Liminal's formula reference is appended. Use g = 9.8 m/s^2 and the positive directions each question states. Draw diagrams and graphs on the axes provided, start derivations from fundamental relations, and give numerical answers with units. Then score your work with the answer key's rubrics and record raw points as practice; they are not AP® scores. Paper practice does not replace the hands-on lab work the AP® physics courses require.",
+  "figures": [
+    {
+      "id": "p1-fr-translation-between-representations-f1",
+      "alt": "Graph of the cart's position x in meters, from 0 to 20, against time t in seconds, from 0 to 16, on a grid. A curve starts flat at the origin and bends upward to a marked point at (4, 4). A straight line runs from there to a marked point at (10, 16). A smooth curve rises to a marked peak at (12, 18) and falls symmetrically to a marked point at (14, 16). A straight line then falls to a marked point at (16, 12)."
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f2",
+      "alt": "Blank axes for sketching: velocity v in m/s from −3 to 3 against time t in seconds from 0 to 16, on a grid with lines every 0.5 m/s and every 1 s."
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f3",
+      "alt": "Blank axes for sketching: acceleration a in m/s^2 from −1.5 to 1 against time t in seconds from 0 to 16, on a grid with lines every 0.25 m/s^2 and every 1 s."
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f4",
+      "alt": "Key: velocity–time graph. A straight line rises from 0 at t = 0 to 2.0 m/s at t = 4 s, stays level at 2.0 m/s until t = 10 s, falls in a straight line through zero at t = 12.0 s to −2.0 m/s at t = 14 s, and stays at −2.0 m/s until t = 16 s.",
+      "caption": "Key: velocity of the cart"
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f5",
+      "alt": "Key: acceleration–time graph made of horizontal segments: 0.50 m/s^2 from 0 to 4 s, zero from 4 to 10 s, −1.0 m/s^2 from 10 to 14 s, and zero from 14 to 16 s.",
+      "caption": "Key: acceleration of the cart"
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f6",
+      "alt": "A small block labeled A sits on top of a wider block labeled B, which rests on a hatched floor labeled frictionless floor. A rope attached to the right side of B pulls to the right with a force labeled F. An arrow at the upper left labeled +x points to the right.",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f7",
+      "alt": "Key: two free-body diagrams drawn as dots with force arrows. Block A: a downward arrow F sub g,A, an upward arrow F sub N,BA of the same length, and a short arrow to the right labeled f sub BA. Block B: a long upward arrow F sub N,floor, two downward arrows side by side, F sub g,B and a shorter F sub N,AB, whose lengths together equal the upward arrow, a short arrow to the left labeled f sub AB, and a longer arrow to the right labeled F.",
+      "caption": "Key: free-body diagrams while the blocks move together (drawn for F = 24 N; vertical and horizontal arrows use different scales)",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f8",
+      "alt": "Blank axes for sketching: acceleration a in m/s^2 from 0 to 14 against force F in newtons from 0 to 60, on a grid with lines every 1 m/s^2 and every 5 N."
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f9",
+      "alt": "Key: graph of acceleration against F. A single straight line labeled A and B together rises from the origin to 4.9 m/s^2 at F = 29.4 N, marked by a dashed vertical line. Beyond it, a solid line labeled B starts higher, at about 5.4 m/s^2, and rises more steeply to about 13 m/s^2 at 60 N, and a dashed horizontal line labeled A stays at about 3.9 m/s^2.",
+      "caption": "Key: accelerations of the two blocks"
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f10",
+      "alt": "Graph of the student's force F in newtons, from 0 to 14, against time t in seconds, from 0 to 3.5, on a grid. The force rises in a straight line from 0 at t = 0 to 12 N at t = 0.5 s, stays at 12 N until t = 1.5 s, falls in a straight line to 0 at t = 2 s, and stays at 0 until t = 3.5 s."
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f11",
+      "alt": "Blank axes for sketching: momentum p in kg·m/s from −8 to 14 against time t in seconds from 0 to 2.5, on a grid with lines every 1 kg·m/s and every 0.25 s."
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f12",
+      "alt": "Key: momentum–time graph. It starts at −6.0 kg·m/s with a flat slope and curves upward through a marked point at (0.5 s, −3); a straight section crosses zero at a marked point labeled 0.75 s and reaches a marked point at (1.5 s, 9); the graph then curves over to a marked point at (2 s, 12), labeled 12, and stays level at 12 until 2.5 s.",
+      "caption": "Key: momentum of the cart"
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f13",
+      "alt": "Key: the given force–time graph, labeled first push, with a dashed rectangle added: a constant force of 6.0 N from t = 0 to t = 3.0 s, labeled 6.0 N for 3.0 s.",
+      "caption": "Key: a 6.0 N push with the same impulse"
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f14",
+      "alt": "A closed rectangular tank on the ground. Air fills the top region, a lightly shaded layer labeled oil lies below it, and a darker layer labeled salt solution fills the bottom. Dimension lines give the oil layer as 0.40 m thick and the solution layer as 0.80 m thick. A dashed line marks y = 0 at the top surface of the oil, and an arrow labeled y points downward from it."
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f15",
+      "alt": "Key: a tall rectangle representing the cylinder of liquid, with its top marked as at y = 0 and its bottom at depth y. An arrow labeled P sub air A pushes down on the top, a shorter arrow labeled mg points down from a dot at the center, and a longer arrow labeled PA pushes up on the bottom.",
+      "caption": "Key: forces on the cylinder of liquid (not to scale: the upward arrow is drawn as long as the two downward arrows together)",
+      "notToScale": true
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f16",
+      "alt": "Blank axes for sketching: absolute pressure P in units of 10^5 Pa from 1.00 to 1.25 against depth y in meters from 0 to 1.2, on a grid with lines every 0.01 × 10^5 Pa and every 0.1 m."
+    },
+    {
+      "id": "p1-fr-translation-between-representations-f17",
+      "alt": "Key: pressure against depth. A solid straight line rises from a point labeled 1.10 at y = 0 to a point labeled 1.13 at y = 0.40 m, then a steeper straight line rises to a point labeled 1.22 at y = 1.20 m. A dashed copy of the same two-segment line, labeled valve open, lies 0.09 × 10^5 Pa lower at every depth.",
+      "caption": "Key: pressure against depth, before and after the valve is opened"
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 112,
+          "calculator": "any",
+          "directions": "Answer each question in the space provided. Show your work and explain your reasoning; points are awarded for correct diagrams, derivations, graphs and reasoning as well as for answers. Give numerical answers with units. Liminal's practice pace: 28 minutes a question, inside the 25–30 minutes the practice exams suggest for this type.",
+          "items": [
+            {
+              "id": "p1-fr-translation-between-representations-fr1",
+              "prompt": "A warehouse cart moves along a straight rail. Take the direction of increasing x as positive. The cart starts from rest at x = 0 at t = 0. Its acceleration is constant during each of the intervals 0 to 4.0 s, 4.0 s to 10.0 s, 10.0 s to 14.0 s and 14.0 s to 16.0 s, and its velocity never changes suddenly. The graph shows the cart's position x as a function of time t. The marked points are at (4.0 s, 4.0 m), (10.0 s, 16.0 m), (12.0 s, 18.0 m), (14.0 s, 16.0 m) and (16.0 s, 12.0 m).",
+              "type": "TBR",
+              "topics": [
+                "P1.1.3",
+                "P1.1.2"
+              ],
+              "figureIds": [
+                "p1-fr-translation-between-representations-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On the axes provided, sketch the cart's velocity v as a function of time from t = 0 to t = 16.0 s. Label the velocity at t = 4.0 s and at t = 14.0 s, and the time at which the velocity is zero.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A straight line rising from v = 0 at t = 0 to +2.0 m/s at t = 4.0 s, then a horizontal line at +2.0 m/s until t = 10.0 s (2.0 m/s is the slope of the straight section of the position graph)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A straight line from +2.0 m/s at t = 10.0 s through v = 0 at t = 12.0 s, where the position graph peaks, to −2.0 m/s at t = 14.0 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A horizontal line at −2.0 m/s from t = 14.0 s to 16.0 s (the slope of the last straight section of the position graph), with no jumps anywhere and the requested values labeled."
+                    }
+                  ],
+                  "answer": "v rises linearly from 0 to 2.0 m/s over 0–4.0 s, stays at 2.0 m/s until 10.0 s, falls linearly through zero at t = 12.0 s to −2.0 m/s at 14.0 s, and stays at −2.0 m/s until 16.0 s.",
+                  "steps": [
+                    "Velocity is the slope of the position graph. The straight section from (4.0 s, 4.0 m) to (10.0 s, 16.0 m) has slope 12.0 m / 6.0 s = 2.0 m/s, and the straight section from (14.0 s, 16.0 m) to (16.0 s, 12.0 m) has slope −4.0 m / 2.0 s = −2.0 m/s.",
+                    "With constant acceleration on each interval, v changes linearly, and because v never jumps the pieces join: 0 to 2.0 m/s over 0–4.0 s, and 2.0 m/s to −2.0 m/s over 10.0–14.0 s.",
+                    "The position graph is flat at its peak, t = 12.0 s, so v = 0 there; the line from 2.0 m/s at 10.0 s to −2.0 m/s at 14.0 s crosses zero at 12.0 s, which agrees."
+                  ],
+                  "figureIds": [
+                    "p1-fr-translation-between-representations-f2"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-translation-between-representations-f4"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the axes provided, sketch the cart's acceleration a as a function of time from t = 0 to t = 16.0 s. Label each nonzero value.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "a = +0.50 m/s^2 from 0 to 4.0 s and a = −1.0 m/s^2 from 10.0 s to 14.0 s, each the slope of the velocity graph in part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "a = 0 from 4.0 s to 10.0 s and from 14.0 s to 16.0 s, drawn as horizontal segments with jumps at 4.0 s, 10.0 s and 14.0 s."
+                    }
+                  ],
+                  "answer": "a = +0.50 m/s^2 for 0–4.0 s, 0 for 4.0–10.0 s, −1.0 m/s^2 for 10.0–14.0 s, and 0 for 14.0–16.0 s.",
+                  "steps": [
+                    "Acceleration is the slope of the velocity graph: (2.0 − 0)/4.0 = 0.50 m/s^2, then 0, then (−2.0 − 2.0)/4.0 = −1.0 m/s^2, then 0.",
+                    "Check against the position graph: starting from rest, x = (1/2)(0.50 m/s^2)(4.0 s)^2 = 4.0 m at t = 4.0 s, as marked."
+                  ],
+                  "figureIds": [
+                    "p1-fr-translation-between-representations-f3"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-translation-between-representations-f5"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Starting from a constant-acceleration relation, derive an expression for the cart's greatest position x_max in terms of x_1 and v_1, the cart's position and velocity at t = 10.0 s, and a, the magnitude of its acceleration between t = 10.0 s and t = 14.0 s. Then use values from your graphs in parts (a) and (b) to show that your expression agrees with the position graph.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Starts from v^2 = v_1^2 + 2a_x(x − x_1) with a_x = −a (or from x = x_1 + v_1t − (1/2)at^2 together with v = v_1 − at), with the sign of the acceleration consistent with +x as positive."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses v = 0 at the greatest position and solves: x_max = x_1 + v_1^2/(2a), or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes x_1 = 16.0 m, v_1 = 2.0 m/s and a = 1.0 m/s^2, taken from the graphs."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Gets x_max = 18.0 m and states that it matches the peak of the position graph at t = 12.0 s (or the 2.0 m area under the velocity graph from 10.0 s to 12.0 s added to 16.0 m)."
+                    }
+                  ],
+                  "answer": "x_max = x_1 + v_1^2/(2a) = 16.0 m + (2.0 m/s)^2/(2 × 1.0 m/s^2) = 18.0 m, the peak of the position graph.",
+                  "steps": [
+                    "With +x positive, the acceleration from 10.0 s to 14.0 s is −a, so v^2 = v_1^2 − 2a(x − x_1).",
+                    "At its greatest position the cart is momentarily at rest, v = 0: 0 = v_1^2 − 2a(x_max − x_1), so x_max = x_1 + v_1^2/(2a).",
+                    "From the graphs, x_1 = 16.0 m, v_1 = 2.0 m/s and a = 1.0 m/s^2, so x_max = 16.0 m + (4.0 m^2/s^2)/(2.0 m/s^2) = 18.0 m.",
+                    "The position graph peaks at 18.0 m, and the triangle under the velocity graph from 10.0 s to 12.0 s has area (1/2)(2.0 s)(2.0 m/s) = 2.0 m, so all three representations agree."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A student claims, \"At t = 12.0 s the cart's velocity and acceleration are both zero, because the position–time graph is flat there.\" Use your graphs to evaluate the claim.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the velocity is zero at t = 12.0 s, because the slope of the position graph is zero there (or because the velocity graph crosses zero there)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States that the acceleration at t = 12.0 s is −1.0 m/s^2, citing the nonzero slope of the velocity graph where it crosses zero, or the acceleration graph."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the claim is incorrect (only its velocity part holds), with a reason from the representations: the position graph is curved (concave down) at its peak, and with zero velocity but nonzero acceleration the cart reverses, reaching 16.0 m at 14.0 s instead of staying at 18.0 m."
+                    }
+                  ],
+                  "answer": "Incorrect. Only the velocity part holds. The velocity is zero at t = 12.0 s, but the acceleration is −1.0 m/s^2: the cart is turning around, not stopping.",
+                  "steps": [
+                    "Velocity is the slope of the position graph, which is zero at the peak, so v = 0 at t = 12.0 s.",
+                    "Acceleration is the slope of the velocity graph. At t = 12.0 s the velocity graph is crossing zero with slope −1.0 m/s^2, so a = −1.0 m/s^2.",
+                    "If the acceleration were also zero, the velocity would stay zero and the cart would remain at 18.0 m. Instead the position graph curves down on both sides of the peak and the cart moves back to 16.0 m by t = 14.0 s, so the acceleration part of the claim is wrong."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-translation-between-representations-fr2",
+              "prompt": "Block A, of mass 2.0 kg, rests on top of block B, of mass 4.0 kg, which sits on a level, frictionless floor, as shown. Between A and B the coefficient of static friction is 0.50 and the coefficient of kinetic friction is 0.40. A horizontal rope pulls block B with a constant force F in the +x direction. Both blocks start from rest. Consider each value of F separately.",
+              "type": "TBR",
+              "topics": [
+                "P1.2.2",
+                "P1.2.7",
+                "P1.2.3",
+                "P1.2.5"
+              ],
+              "figureIds": [
+                "p1-fr-translation-between-representations-f6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Draw free-body diagrams for block A and for block B for a value of F at which the two blocks move together. Represent each block as a dot, draw each force as an arrow that starts on the dot and points in the direction of the force, and label each force so that it is clear which object exerts it. Within each diagram, draw arrows with lengths that show the relative sizes of the vertical forces.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Block A: exactly three forces, the gravitational force downward, the normal force from B upward (drawn the same length) and a static friction force from B in the +x direction."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Block B: the gravitational force downward, the normal force from the floor upward, the normal force from A downward, a friction force from A in the −x direction and the rope's force F in the +x direction, with no friction from the floor and no other forces (no \"net force\" or \"ma\" arrow)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Third-law consistency: the friction forces on A and on B point in opposite directions, the normal force between the blocks pushes A up and B down, and B's upward normal force from the floor is drawn as long as B's weight and A's downward push together."
+                    }
+                  ],
+                  "answer": "A: weight down, normal force from B up (equal), static friction from B in +x. B: weight down, normal force from A down, normal force from the floor up (equal to the two downward forces together), friction from A in −x, and F in +x.",
+                  "steps": [
+                    "A accelerates in +x along with B, and the only object touching A is B. The only horizontal force on A that can supply this acceleration is static friction from B, so it points in +x.",
+                    "By Newton's third law, A exerts a friction force on B of the same size in −x and pushes down on B with a normal force equal to the normal force B exerts up on A, which equals A's weight of 19.6 N.",
+                    "Vertically, B does not accelerate, so the floor's normal force equals B's weight plus A's push: 39.2 N + 19.6 N = 58.8 N. The floor is frictionless, so the floor exerts no horizontal force."
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-translation-between-representations-f7"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Starting from Newton's second law, derive an expression for the largest force F_max for which the blocks move together, in terms of m_A, m_B, the coefficient of static friction μ_s and g. Then calculate F_max.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law to block A: static friction is the only horizontal force on A, so f = m_Aa, and f ≤ μ_s m_A g gives a ≤ μ_s g."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies Newton's second law to the system of both blocks (or to block B with the friction force from A included): F = (m_A + m_B)a."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "F_max = μ_s(m_A + m_B)g = (0.50)(6.0 kg)(9.8 m/s^2) ≈ 29 N (29.4 N)."
+                    }
+                  ],
+                  "answer": "F_max = μ_s(m_A + m_B)g ≈ 29 N (29.4 N)",
+                  "steps": [
+                    "Block A: ΣF_x = m_A a, and the only horizontal force is static friction f, so f = m_A a. The normal force on A is m_A g, so f ≤ μ_s m_A g, which limits the shared acceleration to a ≤ μ_s g.",
+                    "System of A and B: the friction forces between the blocks are internal and cancel, so F = (m_A + m_B)a.",
+                    "At the limit a = μ_s g: F_max = (m_A + m_B)μ_s g = (6.0 kg)(0.50)(9.8 m/s^2) = 29.4 N."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the axes provided, sketch the acceleration of block A and the acceleration of block B as functions of F from F = 0 to F = 60 N. Label which graph is which, and label each block's acceleration at F = 60 N.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "One straight line through the origin, shared by both blocks, with slope 1/(m_A + m_B), up to F ≈ 29 N and a ≈ 4.9 m/s^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Above F ≈ 29 N, block A's graph is horizontal at μ_k g ≈ 3.9 m/s^2, below the end of the shared line, and labeled about 3.9 m/s^2 at 60 N."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Above F ≈ 29 N, block B's graph is a straight line steeper than the shared line (slope 1/m_B), from a_B = (F − μ_k m_A g)/m_B ≈ 5.4 m/s^2 at 29.4 N to about 13 m/s^2 at 60 N, labeled."
+                    }
+                  ],
+                  "answer": "Both blocks follow a = F/(6.0 kg) up to 29.4 N (4.9 m/s^2). Beyond it, a_A = μ_k g ≈ 3.9 m/s^2 (constant) and a_B = (F − 7.8 N)/(4.0 kg), rising from about 5.4 m/s^2 to about 13 m/s^2 at 60 N.",
+                  "steps": [
+                    "Together: a = F/(m_A + m_B) = F/(6.0 kg), a straight line through the origin reaching 29.4 N / 6.0 kg = 4.9 m/s^2 at F_max.",
+                    "Above F_max, A slides on B, so the friction is kinetic: μ_k m_A g = (0.40)(2.0 kg)(9.8 m/s^2) = 7.84 N. It is the only horizontal force on A, so a_A = 7.84 N / 2.0 kg = 3.92 m/s^2, the same for every F.",
+                    "Block B feels F in +x and 7.84 N from A in −x: a_B = (F − 7.84 N)/(4.0 kg), which is 5.39 m/s^2 at 29.4 N and 13.0 m/s^2 at 60 N.",
+                    "The kinetic coefficient is smaller than the static one, so A's acceleration drops from 4.9 m/s^2 to 3.9 m/s^2 when it starts to slide, and B's jumps up, because less friction holds B back."
+                  ],
+                  "figureIds": [
+                    "p1-fr-translation-between-representations-f8"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-translation-between-representations-f9"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "For F = 50 N, a student claims, \"Block A slides backward on block B, so the friction force that B exerts on A points in the −x direction.\" Use your free-body diagrams and graphs to evaluate the claim.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the friction force on A points in the +x direction, because kinetic friction opposes A's sliding relative to B, and A slides in −x relative to B."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses Newton's second law and the graph: this friction is the only horizontal force on A, and A's graph in part (c) shows a positive acceleration, μ_k g ≈ 3.9 m/s^2; a friction force in −x would give A a negative acceleration from rest."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the claim is incorrect, distinguishing motion relative to B from motion relative to the floor: A moves forward relative to the floor, only more slowly than B (a_B ≈ 10.5 m/s^2 at 50 N); the friction force on B from A is the one that points in −x."
+                    }
+                  ],
+                  "answer": "Incorrect. A slides backward relative to B, so friction on A points in +x; it is the only horizontal force on A and gives A its forward acceleration of about 3.9 m/s^2. The −x friction force acts on B.",
+                  "steps": [
+                    "At 50 N, B's acceleration is (50 N − 7.84 N)/4.0 kg ≈ 10.5 m/s^2 and A's is 3.92 m/s^2, so A falls behind B: relative to B it slides in −x.",
+                    "Kinetic friction opposes the relative sliding of the surfaces, so the friction force from B on A points in +x.",
+                    "A starts from rest and speeds up in +x, as its positive graph in part (c) shows, so A moves forward relative to the floor. By Newton's third law, the friction force on B from A points in −x."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-translation-between-representations-fr3",
+              "prompt": "A 3.0 kg cart rolls on a level track with negligible friction. Take +x to the right. At t = 0 the cart is moving to the left at 2.0 m/s, and a student starts to push it to the right with a horizontal force F that varies with time as shown in the graph. The push ends at t = 2.0 s.",
+              "type": "TBR",
+              "topics": [
+                "P1.4.2",
+                "P1.4.1"
+              ],
+              "figureIds": [
+                "p1-fr-translation-between-representations-f10"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Calculate the impulse that the student exerts on the cart and the cart's velocity at t = 2.0 s.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Impulse as the area under the force–time graph: (1/2)(0.50 s)(12 N) + (1.0 s)(12 N) + (1/2)(0.50 s)(12 N) = 18 N·s, in the +x direction."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses impulse = change in momentum with a negative initial momentum: p_f = (3.0 kg)(−2.0 m/s) + 18 N·s = +12 kg·m/s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "v = +4.0 m/s (4.0 m/s to the right), with units and direction."
+                    }
+                  ],
+                  "answer": "J = 18 N·s in +x; v = +4.0 m/s (4.0 m/s to the right)",
+                  "steps": [
+                    "J = area under F against t = 3.0 N·s + 12 N·s + 3.0 N·s = 18 N·s, in +x.",
+                    "p_i = mv_i = (3.0 kg)(−2.0 m/s) = −6.0 kg·m/s; p_f = p_i + J = +12 kg·m/s.",
+                    "v_f = p_f/m = 12 kg·m/s / 3.0 kg = +4.0 m/s."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On the axes provided, sketch the cart's momentum p as a function of time from t = 0 to t = 2.5 s. Label the momentum at t = 0 and at t = 2.0 s, and the time at which the momentum is zero.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Starts at −6.0 kg·m/s with a horizontal tangent and curves upward with increasing slope to −3.0 kg·m/s at t = 0.50 s (the slope equals the force, which grows from zero)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A straight line of slope 12 N from −3.0 kg·m/s at 0.50 s to +9.0 kg·m/s at 1.50 s, crossing zero at t = 0.75 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Curves with decreasing slope to +12 kg·m/s at t = 2.0 s, where it becomes horizontal, then stays at +12 kg·m/s to 2.5 s."
+                    }
+                  ],
+                  "answer": "p rises from −6.0 kg·m/s (flat at first) to −3.0 at 0.50 s, then linearly through zero at 0.75 s to +9.0 at 1.50 s, then curves over to +12 kg·m/s at 2.0 s and stays there.",
+                  "steps": [
+                    "The slope of a momentum–time graph is the net force, here F. The momentum at any time is p_i plus the area under the force graph so far.",
+                    "0 to 0.50 s: area (1/2)(0.50 s)(12 N) = 3.0 N·s, so p reaches −3.0 kg·m/s; F starts at zero and grows, so the curve starts flat and steepens.",
+                    "0.50 s to 1.50 s: constant 12 N, a straight line rising 12 kg·m/s per second. It reaches zero after another 3.0 N·s, at t = 0.75 s, and +9.0 kg·m/s at 1.50 s.",
+                    "1.50 s to 2.0 s: another 3.0 N·s with F shrinking to zero, so the curve flattens and reaches +12 kg·m/s; with no force after 2.0 s, p stays constant."
+                  ],
+                  "figureIds": [
+                    "p1-fr-translation-between-representations-f11"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-translation-between-representations-f12"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Starting from Newton's second law, derive an expression for the average force F_avg that the student exerts on the cart during the push, in terms of the cart's mass m, its initial and final velocities v_i and v_f, and the duration Δt of the push. Calculate F_avg, and describe how it can be represented on the force–time graph.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Starts from ΣF = ma with the average acceleration (v_f − v_i)/Δt, the push being the only horizontal force: F_avg = m(v_f − v_i)/Δt, or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "F_avg = (3.0 kg)(4.0 m/s − (−2.0 m/s))/(2.0 s) = 9.0 N, in the +x direction."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Describes a rectangle of height 9.0 N from t = 0 to t = 2.0 s whose area equals the area under the given graph (18 N·s)."
+                    }
+                  ],
+                  "answer": "F_avg = m(v_f − v_i)/Δt = 9.0 N in +x: a constant 9.0 N for 2.0 s has the same area, 18 N·s, as the student's push.",
+                  "steps": [
+                    "Newton's second law for the cart, using the average acceleration over the push: F_avg = m a_avg = m(v_f − v_i)/Δt.",
+                    "F_avg = (3.0 kg)(6.0 m/s)/(2.0 s) = 9.0 N.",
+                    "F_avg Δt = m(v_f − v_i) is the impulse, so a rectangle 9.0 N high and 2.0 s wide encloses the same 18 N·s as the trapezoid under the graph."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Another student claims, \"A push that never exceeds 6.0 N cannot give this cart the same final velocity from the same initial velocity, because the first push reached 12 N.\" Evaluate the claim. On the force–time graph, sketch a constant 6.0 N push that would give the cart the same final velocity, and state how long it must last.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Same initial and final velocities mean the same change in momentum, so the same impulse, 18 N·s, is needed."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Draws a constant 6.0 N from t = 0 to t = 3.0 s, with Δt = 18 N·s / 6.0 N = 3.0 s."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the claim is incorrect: the change in velocity depends on the impulse, the area under the force–time graph, not on the largest force, so a smaller force acting longer gives the same result."
+                    }
+                  ],
+                  "answer": "Incorrect. A constant 6.0 N push lasting 3.0 s gives the same 18 N·s impulse, so the cart again ends at +4.0 m/s.",
+                  "steps": [
+                    "The cart must again go from −6.0 kg·m/s to +12 kg·m/s, a change of 18 kg·m/s, so the push must deliver 18 N·s.",
+                    "With a constant 6.0 N, Δt = J/F = 18 N·s / 6.0 N = 3.0 s: a rectangle 6.0 N high from 0 to 3.0 s, with the same area as the first push.",
+                    "Final velocity depends on the area under the force–time graph, not its height, so the claim is incorrect."
+                  ],
+                  "figureIds": [
+                    "p1-fr-translation-between-representations-f10"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-translation-between-representations-f13"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "p1-fr-translation-between-representations-fr4",
+              "prompt": "A closed tank stands on level ground. It holds a 0.40 m layer of oil of density 750 kg/m^3 floating on a 0.80 m layer of salt solution of density 1200 kg/m^3, as shown; the liquids do not mix and are at rest. Air trapped above the oil is held at an absolute pressure P_air = 1.10 × 10^5 Pa. Atmospheric pressure outside the tank is 1.01 × 10^5 Pa. Depth y is measured downward from the top surface of the oil.",
+              "type": "TBR",
+              "topics": [
+                "P1.8.2",
+                "P1.8.3",
+                "P1.8.1"
+              ],
+              "figureIds": [
+                "p1-fr-translation-between-representations-f14"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Consider a vertical cylinder of liquid, of cross-sectional area A, that extends from the top surface of the oil (y = 0) down to a depth y in the salt solution. Draw a free-body diagram showing the vertical forces on this cylinder. Label each force with an expression in terms of P_air, A, the absolute pressure P at depth y, and the cylinder's mass m. (The horizontal forces on its sides cancel and need not be drawn.)",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A downward force P_air A exerted on the top of the cylinder by the air."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A downward gravitational force mg exerted by Earth on the cylinder (the oil and solution inside it)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "An upward force PA exerted on the bottom by the liquid below, shown as the largest force (it balances both downward forces); no other vertical forces."
+                    }
+                  ],
+                  "answer": "Downward: P_air A from the air on the top and mg from Earth. Upward: PA from the solution below, equal to the two downward forces together.",
+                  "steps": [
+                    "Pressure forces act perpendicular to each surface: the air pushes down on the top face, and the liquid below pushes up on the bottom face.",
+                    "The cylinder is at rest, so the upward force PA must balance P_air A + mg."
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-translation-between-representations-f15"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Starting from your free-body diagram and Newton's second law, derive an expression for the absolute pressure P at a depth y in the salt solution (0.40 m ≤ y ≤ 1.20 m) in terms of P_air, the oil's density ρ_o and thickness d, the solution's density ρ_s, y and g.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "The cylinder is at rest, so ΣF_y = 0 with up positive: PA − P_air A − mg = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the mass from densities and volumes: m = ρ_o A d + ρ_s A(y − d)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Divides by A: P = P_air + ρ_o g d + ρ_s g(y − d), or equivalent."
+                    }
+                  ],
+                  "answer": "P = P_air + ρ_o g d + ρ_s g(y − d)",
+                  "steps": [
+                    "Newton's second law with a = 0 and up positive: PA − P_air A − mg = 0.",
+                    "The cylinder holds oil of volume Ad and solution of volume A(y − d), so m = ρ_o A d + ρ_s A(y − d).",
+                    "PA = P_air A + ρ_o A d g + ρ_s A(y − d)g; dividing by A gives P = P_air + ρ_o g d + ρ_s g(y − d). The area cancels, so the result holds for any cylinder."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "On the axes provided, sketch the absolute pressure P as a function of depth y from y = 0 to y = 1.20 m. Label the values of P at y = 0, y = 0.40 m and y = 1.20 m, and explain how the slopes of your graph are consistent with your expression from part (b).",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "A straight line from 1.10 × 10^5 Pa at y = 0 to about 1.13 × 10^5 Pa at y = 0.40 m (1.129 × 10^5 Pa)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "A steeper straight line from there to about 1.22 × 10^5 Pa at y = 1.20 m (1.223 × 10^5 Pa), joined at the boundary with no jump."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that each slope is ρg for the liquid at that depth, about 7.4 × 10^3 Pa/m in the oil and 1.18 × 10^4 Pa/m in the solution, so the denser solution gives the steeper line, as the ρ_s g y term of part (b) predicts."
+                    }
+                  ],
+                  "answer": "Two straight segments: 1.10 × 10^5 Pa at y = 0 to 1.13 × 10^5 Pa at 0.40 m (slope ρ_o g ≈ 7.4 × 10^3 Pa/m), then a steeper line to 1.22 × 10^5 Pa at 1.20 m (slope ρ_s g ≈ 1.18 × 10^4 Pa/m).",
+                  "steps": [
+                    "In the oil the same reasoning gives P = P_air + ρ_o g y: 1.10 × 10^5 Pa + (750)(9.8)(0.40) Pa = 1.10 × 10^5 + 2.94 × 10^3 ≈ 1.129 × 10^5 Pa at y = 0.40 m.",
+                    "In the solution, part (b) gives P = 1.129 × 10^5 Pa + (1200)(9.8)(y − 0.40): at y = 1.20 m, 1.129 × 10^5 + 9.41 × 10^3 ≈ 1.223 × 10^5 Pa.",
+                    "Each expression is linear in y with slope ρg, so each layer gives a straight line; 1200 kg/m^3 > 750 kg/m^3, so the lower line is steeper. Both expressions give the same pressure at y = 0.40 m, so the graph does not jump."
+                  ],
+                  "figureIds": [
+                    "p1-fr-translation-between-representations-f16"
+                  ],
+                  "answerFigureIds": [
+                    "p1-fr-translation-between-representations-f17"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "A valve is opened, and the air above the oil comes to atmospheric pressure; the liquid levels do not change. A student claims, \"A gauge at the bottom of the tank, which measures pressure relative to the outside air, will read the same as before, because the pressure in a liquid depends only on the depth and the liquid's density.\" Use your expression and your graph to evaluate the claim, and describe how your graph changes.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses part (b): every pressure in the liquids includes the P_air term, so lowering P_air by 9.0 × 10^3 Pa (from 1.10 × 10^5 Pa to 1.01 × 10^5 Pa) lowers the pressure at every depth by 9.0 × 10^3 Pa."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The graph shifts down by 9.0 × 10^3 Pa (starting at 1.01 × 10^5 Pa) with the same slopes and the bend still at y = 0.40 m."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the claim is incorrect: the bottom gauge reading drops from about 2.13 × 10^4 Pa to about 1.23 × 10^4 Pa. Depth and density set how much the pressure increases below the surface, not the pressure at the surface."
+                    }
+                  ],
+                  "answer": "Incorrect. The surface pressure falls by 9.0 × 10^3 Pa, so the pressure at every depth, including the bottom, falls by 9.0 × 10^3 Pa; the gauge reading drops from about 2.13 × 10^4 Pa to about 1.23 × 10^4 Pa. The graph moves down by that amount with unchanged slopes.",
+                  "steps": [
+                    "Before: P_bottom ≈ 1.223 × 10^5 Pa, so the gauge reads 1.223 × 10^5 − 1.01 × 10^5 ≈ 2.13 × 10^4 Pa.",
+                    "After: P_air = 1.01 × 10^5 Pa, so P_bottom ≈ 1.133 × 10^5 Pa and the gauge reads ρ_o g d + ρ_s g(1.20 m − d) ≈ 1.23 × 10^4 Pa.",
+                    "In P = P_air + ρ_o g d + ρ_s g(y − d) only the constant term changes, so the graph keeps its slopes and bend and shifts down by 9.0 × 10^3 Pa.",
+                    "The student's rule describes only the increase with depth. The pressure at a depth also includes whatever pressure acts on the surface."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
