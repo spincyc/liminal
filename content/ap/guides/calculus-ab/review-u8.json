@@ -1,0 +1,599 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "review-u8",
+  "kind": "unit-review",
+  "unitId": "u8",
+  "title": "Unit 8 review: Applications of Integration",
+  "author": "ab-review-author",
+  "summary": "A retrieval-first review of applications of integration for the AP® Calculus AB Exam: average value, motion and accumulation in context, area with vertical or horizontal slices and between curves that cross more than twice, and volumes by cross sections, discs and washers about the axes and about other lines. Recall checks come first, then mixed exam-level problems with and without a calculator, the results to know, model justifications, common traps and three worked examples.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "ab-review-u8-g1",
+      "alt": "The shaded region R enclosed by the parabola y = (x − 1)^2 and the line y = 3 − x, which meet at the points (−1, 4) and (2, 1). The line lies above the parabola between them, and the parabola touches the x-axis at (1, 0). A dashed horizontal line marks y = 5, above R, and a dashed vertical line marks x = 3, to the right of R.",
+      "caption": "The region R and the lines y = 5 and x = 3."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question on paper before you open its answer, and write each formula with its conditions: a formula without its conditions counts as a miss. Then compare, mark what you missed, and in the section the check's answer names, reread only the part on the same idea."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c1",
+          "prompt": "A function f is continuous on [a, b]. (i) Write its average value on [a, b], and say what that number means on the graph of f. (ii) What does the continuity of f ensure about that average? (iii) A classmate computes (f(b) − f(a))/(b − a) and calls it the average value of f. What has the classmate actually found?",
+          "answer": "(i) (1/(b − a)) ∫ from a to b of f(x) dx: the height of the rectangle on [a, b] whose area equals the signed area between the graph of f and the x-axis. (ii) By the Mean Value Theorem for Integrals, f(c) equals the average value for at least one c in [a, b]. (iii) The average rate of change of f, which is the average value of f′, not of f.",
+          "steps": [
+            "(b − a) times the average value equals ∫ from a to b of f(x) dx, which is the rectangle picture: a rectangle of that height on [a, b] has the same signed area as the region under f.",
+            "Continuity is the hypothesis of the Mean Value Theorem for Integrals. To find such a c, solve f(c) = average value and keep only solutions in [a, b].",
+            "When f′ is continuous, (f(b) − f(a))/(b − a) = (1/(b − a)) ∫ from a to b of f′(x) dx by the Fundamental Theorem: it averages f′. For f(x) = x^2 on [0, 2], the average value is (1/2)(8/3) = 4/3, while the average rate of change is (4 − 0)/2 = 2."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c2",
+          "prompt": "A runner moves back and forth along a straight track. Her velocity v(t) is continuous for a ≤ t ≤ b, and you know her position x(a) at t = a. Using integrals of v, write where she is at t = b, her change in position from t = a to t = b, the total distance she runs, and her average speed. Then say what must happen at an instant t = c for her to turn around, and how you can tell, at any instant, whether she is speeding up.",
+          "answer": "Position x(b) = x(a) + ∫ from a to b of v(t) dt; change in position (displacement) ∫ from a to b of v(t) dt; total distance ∫ from a to b of |v(t)| dt; average speed (1/(b − a)) ∫ from a to b of |v(t)| dt. She turns around at t = c when v changes sign at c. She is speeding up when v and the acceleration a = v′ have the same sign.",
+          "steps": [
+            "Her position is an antiderivative of her velocity, so x(b) − x(a) = ∫ from a to b of v(t) dt, the displacement. The initial position must be added to get a position.",
+            "Distance counts every leg as positive, so it integrates the speed |v(t)|. Without a calculator, split at each time where v changes sign and add the absolute values of the pieces.",
+            "v(c) = 0 is not enough: if v(t) = (t − 3)^2, she stops for an instant at t = 3 but keeps running the same way.",
+            "Speed is |v|. If v and a have the same sign, |v| grows; if their signs differ, |v| shrinks. A negative acceleration alone does not mean slowing down."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c3",
+          "prompt": "People enter a stadium at the rate E(t) people per minute and leave at the rate L(t) people per minute, where E and L are continuous on [0, T] and N0 people are inside at t = 0. Write the number of people inside at time t. What are the meaning and the units of ∫ from 10 to 30 of L(t) dt? How do you find the time in [0, T] at which the number inside is greatest?",
+          "answer": "N(t) = N0 + ∫ from 0 to t of (E(s) − L(s)) ds. ∫ from 10 to 30 of L(t) dt is the number of people who leave the stadium from t = 10 to t = 30 minutes, measured in people. For the greatest number, compare N at t = 0, at t = T, and at each time where E − L changes from positive to negative; the Extreme Value Theorem, applied to the continuous function N, says the greatest value is among these candidates.",
+          "steps": [
+            "N′(t) = E(t) − L(t) by the Fundamental Theorem, because E − L is continuous. The letter s inside the integral is only a placeholder; t is the upper limit.",
+            "The units of an integral are the integrand's units times the variable's units: people per minute times minutes gives people. An integral of a rate is an amount, never a rate.",
+            "N is continuous on [0, T], so it has a greatest value there, at an endpoint or where N′(t) = 0, that is, where E(t) = L(t). Where E − L changes from positive to negative, N has a local maximum; where E = L without a sign change, N has no extreme value."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c4",
+          "prompt": "A region is cut into thin strips to find its area. (i) For vertical strips, what integral gives the area, what does its integrand measure, and where do its limits come from? (ii) Answer the same three questions for horizontal strips. (iii) The graphs of f and g cross three times for a ≤ x ≤ b. How do you find the total area of the regions between them on [a, b]?",
+          "answer": "(i) ∫ from a to b of (top − bottom) dx: the integrand is the length of a vertical strip, and the limits are the least and greatest x in the region, often x-coordinates of intersection points. (ii) ∫ from c to d of (right − left) dy, with each boundary written as x in terms of y: the integrand is the length of a horizontal strip, and the limits are the least and greatest y in the region. (iii) Find all three crossings, check which graph is on top on each piece of [a, b], and add the integrals of (upper − lower) over the pieces; or integrate |f(x) − g(x)| from a to b.",
+          "steps": [
+            "A vertical slice at x has length top(x) − bottom(x) and width dx; adding the slices across the region gives the area.",
+            "A horizontal slice at height y has length right(y) − left(y) and width dy, so both boundaries must be solved for x, and the limits are y-values.",
+            "Within one integral every slice must end on the same two curves. If a boundary changes partway across the region, split the integral there, or slice the other way.",
+            "If the curves cross, ∫ (f − g) lets the pieces where g is on top cancel the pieces where f is on top. Area is never negative, so each piece needs (larger − smaller)."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c5",
+          "prompt": "A solid has as its base a region in the xy-plane, and its cross sections perpendicular to the x-axis all have one given shape. Write the volume as an integral. Then give the area of a cross section in terms of s, the length of the slice of the base, when it is: a square; a rectangle of height h; an equilateral triangle; an isosceles right triangle with a leg in the base; a semicircle with its diameter in the base.",
+          "answer": "V = ∫ from a to b of A(x) dx, where A(x) is the area of the cross section at x and s(x) = top − bottom. Square s^2; rectangle sh; equilateral triangle (√3/4)s^2; isosceles right triangle with a leg in the base s^2/2; semicircle (π/8)s^2.",
+          "steps": [
+            "A slab of thickness dx has volume about A(x) dx, and adding the slabs gives ∫ A(x) dx. For cross sections perpendicular to the y-axis, use s(y) = right − left and ∫ A(y) dy.",
+            "An equilateral triangle of side s has height (√3/2)s, so its area is (1/2)s(√3/2)s = (√3/4)s^2.",
+            "An isosceles right triangle with both legs s has area s^2/2. (With the hypotenuse s in the base, the area is s^2/4.)",
+            "A semicircle with diameter s has radius s/2, so its area is (1/2)π(s/2)^2 = (π/8)s^2."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c6",
+          "prompt": "The region between y = f(x) and y = g(x), with f(x) ≥ g(x) ≥ 0 on [a, b], is revolved about a horizontal line. Write the volume when (i) the axis is the x-axis and g(x) = 0, (ii) the axis is the x-axis and g(x) > 0, and (iii) the axis is the line y = k with k ≤ g(x). What happens in (iii) when g(x) = k? What changes when the axis is a vertical line x = h?",
+          "answer": "(i) A disc: π ∫ from a to b of (f(x))^2 dx. (ii) A washer: π ∫ from a to b of [(f(x))^2 − (g(x))^2] dx. (iii) π ∫ from a to b of [(f(x) − k)^2 − (g(x) − k)^2] dx; when g(x) = k the inner radius is 0, and the volume is the disc π ∫ from a to b of (f(x) − k)^2 dx. For a vertical axis, slice horizontally: write each boundary as x in terms of y, use y-limits, and measure each radius as a horizontal distance from x = h.",
+          "steps": [
+            "Each slice perpendicular to the axis sweeps out a disc or a washer whose face has area π((outer radius)^2 − (inner radius)^2).",
+            "Every radius is a distance from the axis: the outer radius reaches the far edge of the slice and the inner radius the near edge. About y = k below the region, these are f(x) − k and g(x) − k.",
+            "The slices must be perpendicular to the axis, so a vertical axis means horizontal slices and dy; an axis to the right of the region gives radii h − x."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level. Checks 7 and 8 use no calculator; checks 9 and 10 need a graphing calculator. Deciding which integral to write is part of each problem. If one goes wrong, study the section its answer names, then redo the problem from a blank page on a later day."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c7",
+          "prompt": "A particle moves along the x-axis. For 0 ≤ t ≤ 5, where t is measured in seconds, its acceleration is a(t) = 6t − 18 meters per second per second. At t = 0 its velocity is 24 meters per second and its position is x(0) = −5 meters.\n\n(a) Find v(t), and find the times in (0, 5) at which the particle changes direction.\n(b) Find x(5).\n(c) Find the total distance the particle travels for 0 ≤ t ≤ 5.\n(d) Is the particle speeding up or slowing down at t = 3.5? Give a reason.\n(e) Find the average velocity and the average speed of the particle for 0 ≤ t ≤ 5.",
+          "hint": "Build v(t) from the starting velocity and the acceleration, and factor it before you do anything else.",
+          "answer": "(a) v(t) = 3t^2 − 18t + 24; t = 2 and t = 4. (b) x(5) = 15 meters. (c) 28 meters. (d) Slowing down. (e) Average velocity 4 meters per second; average speed 28/5 = 5.6 meters per second.",
+          "steps": [
+            "(a) v(t) = 24 + ∫ from 0 to t of (6s − 18) ds = 3t^2 − 18t + 24 = 3(t − 2)(t − 4). v > 0 on (0, 2), v < 0 on (2, 4) and v > 0 on (4, 5), so v changes sign, and the particle changes direction, at t = 2 and t = 4.",
+            "(b) x(5) = −5 + ∫ from 0 to 5 of v(t) dt = −5 + [t^3 − 9t^2 + 24t] from 0 to 5 = −5 + (125 − 225 + 120) = 15 meters.",
+            "(c) With x(t) = t^3 − 9t^2 + 24t − 5: x(0) = −5, x(2) = 15, x(4) = 11 and x(5) = 15. The particle moves 20 meters right, then 4 meters left, then 4 meters right, so the total distance is ∫ from 0 to 5 of |v(t)| dt = 20 + 4 + 4 = 28 meters.",
+            "(d) v(3.5) = 3(1.5)(−0.5) = −2.25 and a(3.5) = 21 − 18 = 3. The velocity and acceleration have opposite signs, so the particle is slowing down.",
+            "(e) Average velocity = (1/5) ∫ from 0 to 5 of v(t) dt = (15 − (−5))/5 = 4 meters per second. Average speed = (1/5) ∫ from 0 to 5 of |v(t)| dt = 28/5 = 5.6 meters per second. They differ because the leftward motion on (2, 4) cancels part of the displacement but adds to the distance."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c8",
+          "prompt": "Let R be the region enclosed by the graphs of y = (x − 1)^2 and y = 3 − x, shown in the figure with the lines y = 5 and x = 3.\n\n(a) Find the area of R.\n(b) Find the volume of the solid formed when R is revolved about the line y = 5.\n(c) Write, but do not evaluate, an integral expression for the volume of the solid formed when R is revolved about the line x = 3.",
+          "figureIds": [
+            "ab-review-u8-g1"
+          ],
+          "hint": "For each part, draw one slice perpendicular to the axis you will integrate along. Does every such slice end on the same two curves?",
+          "answer": "(a) 9/2. (b) 153π/5. (c) π ∫ from 0 to 1 of [(2 + √y)^2 − (2 − √y)^2] dy + π ∫ from 1 to 4 of [(2 + √y)^2 − y^2] dy.",
+          "steps": [
+            "The curves meet where (x − 1)^2 = 3 − x, so x^2 − x − 2 = 0 and x = −1 or x = 2: the points (−1, 4) and (2, 1). At x = 0 the line gives 3 and the parabola 1, so the line is on top.",
+            "(a) Every vertical slice runs from the parabola up to the line, so one integral works: ∫ from −1 to 2 of [(3 − x) − (x − 1)^2] dx = ∫ from −1 to 2 of (2 + x − x^2) dx = [2x + x^2/2 − x^3/3] from −1 to 2 = 10/3 − (−7/6) = 9/2.",
+            "(b) The axis y = 5 is horizontal and lies above R, so slice vertically. The far edge of a slice is on the parabola, so the outer radius is 5 − (x − 1)^2; the near edge is on the line, so the inner radius is 5 − (3 − x) = 2 + x.",
+            "V = π ∫ from −1 to 2 of [(5 − (x − 1)^2)^2 − (2 + x)^2] dx. With u = x − 1, running from −2 to 1, the integrand is (5 − u^2)^2 − (3 + u)^2 = 16 − 6u − 11u^2 + u^4, and [16u − 3u^2 − 11u^3/3 + u^5/5] from −2 to 1 = 143/15 − (−316/15) = 153/5. So V = 153π/5.",
+            "(c) The axis x = 3 is vertical and lies to the right of R, so slice horizontally and write each boundary as x in terms of y: the parabola is x = 1 − √y on its left half and x = 1 + √y on its right half, and the line is x = 3 − y.",
+            "For 0 ≤ y ≤ 1 a horizontal slice runs between the two halves of the parabola, but for 1 ≤ y ≤ 4 it runs from the left half of the parabola to the line. The right edge changes at y = 1, so the integral splits there.",
+            "Radii are distances from x = 3. The outer radius, to the left edge, is 3 − (1 − √y) = 2 + √y throughout. The inner radius, to the right edge, is 3 − (1 + √y) = 2 − √y for 0 ≤ y ≤ 1 and 3 − (3 − y) = y for 1 ≤ y ≤ 4.",
+            "So V = π ∫ from 0 to 1 of [(2 + √y)^2 − (2 − √y)^2] dy + π ∫ from 1 to 4 of [(2 + √y)^2 − y^2] dy. (Its value, 45π/2, is a check on your setup, not part of the answer.)"
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c9",
+          "prompt": "Graphing calculator. At t = 0, 20 packages are waiting to be sorted at a delivery depot. For 0 ≤ t ≤ 60, where t is measured in minutes, packages arrive at the rate A(t) = 18sin(πt/60) packages per minute, and packages are sorted, leaving the waiting pile, at the rate S(t) = 4 + 0.15t packages per minute.\n\n(a) Find ∫ from 0 to 60 of A(t) dt, and explain its meaning in the context of the problem.\n(b) Is the number of packages waiting increasing or decreasing at t = 45? Give a reason.\n(c) At what time t in [0, 60] are the most packages waiting? How many packages are waiting then? Justify your answer.",
+          "hint": "Write the number of packages waiting at time t as 20 plus an integral, and find its derivative before you compute anything.",
+          "answer": "(a) About 687.549: about 688 packages arrive during the hour. (b) Increasing. (c) At t ≈ 47.313 minutes, when about 277.306 packages (about 277) are waiting.",
+          "steps": [
+            "(a) ∫ from 0 to 60 of A(t) dt = 2160/π ≈ 687.549. It is the number of packages that arrive at the depot from t = 0 to t = 60 minutes, about 688 packages. (Packages per minute times minutes gives packages.)",
+            "Let W(t) = 20 + ∫ from 0 to t of (A(s) − S(s)) ds be the number waiting at time t, so W′(t) = A(t) − S(t).",
+            "(b) W′(45) = A(45) − S(45) ≈ 12.728 − 10.75 = 1.978 > 0, so the number of packages waiting is increasing at t = 45.",
+            "(c) W′(t) = 0 where A(t) = S(t); the calculator gives t = p ≈ 5.120 and t = q ≈ 47.313 in (0, 60). W′ < 0 on (0, p), W′ > 0 on (p, q) and W′ < 0 on (q, 60), so W has a local minimum at p and a local maximum at q.",
+            "Compare the candidates, with p and q stored unrounded: W(0) = 20, W(p) ≈ 9.833, W(q) ≈ 277.306 and W(60) ≈ 197.549.",
+            "The most packages are waiting at t ≈ 47.313 minutes: about 277.306, that is, about 277 packages."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u8-c10",
+          "prompt": "Graphing calculator. The graphs of y = 2^x and y = 1 + 3sin x intersect at three points for −4 ≤ x ≤ 4 and enclose two regions there.\n\n(a) Find the x-coordinates of the three points of intersection.\n(b) Find the total area of the two regions.\n(c) Let R be the region enclosed by the graphs for x ≥ 0. R is the base of a solid whose cross sections perpendicular to the x-axis are semicircles with diameters in R. Find the volume of the solid.\n(d) Find the volume of the solid formed when R is revolved about the line y = −1.",
+          "hint": "Graph both functions in one window first, and decide which one is on top in each region.",
+          "answer": "(a) x ≈ −2.850, x = 0 and x ≈ 1.929. (b) About 6.196. (c) About 0.921. (d) About 44.962.",
+          "steps": [
+            "(a) Graph both and use the intersect feature, or solve 2^x − 1 − 3sin x = 0. Store the outer crossings as A ≈ −2.850 and B ≈ 1.929; the middle one is exactly x = 0, since 2^0 = 1 = 1 + 3sin 0.",
+            "(b) Test one point in each region: at x = −1, 2^(−1) = 0.5 is above 1 + 3sin(−1) ≈ −1.524; at x = 1, 1 + 3sin 1 ≈ 3.524 is above 2^1 = 2. Area = ∫ from A to 0 of (2^x − 1 − 3sin x) dx + ∫ from 0 to B of (1 + 3sin x − 2^x) dx ≈ 4.266 + 1.930 = 6.196, or in one step, ∫ from A to B of |2^x − 1 − 3sin x| dx ≈ 6.196.",
+            "(c) On [0, B] a vertical slice of R has length s(x) = 1 + 3sin x − 2^x, and a semicircle with that diameter has area (π/8)s^2. V = (π/8) ∫ from 0 to B of (1 + 3sin x − 2^x)^2 dx ≈ 0.921.",
+            "(d) The axis y = −1 lies below R. The outer radius reaches the upper curve: 1 + 3sin x − (−1) = 2 + 3sin x. The inner radius reaches the lower curve: 2^x − (−1) = 2^x + 1. V = π ∫ from 0 to B of [(2 + 3sin x)^2 − (2^x + 1)^2] dx ≈ 44.962."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Average value",
+          "text": "The average value of f on [a, b] is (1/(b − a)) ∫ from a to b of f(x) dx. If f is continuous on [a, b], there is at least one c in [a, b] with f(c) equal to this average (Mean Value Theorem for Integrals).",
+          "conditions": [
+            "Divide by the length b − a of the interval, not by b and not by the number of data points.",
+            "The average rate of change (f(b) − f(a))/(b − a) is the average value of f′, not of f."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Position, velocity and acceleration",
+          "text": "x(b) = x(a) + ∫ from a to b of v(t) dt and v(b) = v(a) + ∫ from a to b of a(t) dt. The displacement on [a, b] is ∫ from a to b of v(t) dt, and the total distance is ∫ from a to b of |v(t)| dt.",
+          "conditions": [
+            "v (or a) is continuous on [a, b], so the Fundamental Theorem applies.",
+            "Without a calculator, split the distance integral wherever v changes sign; with one, integrate |v(t)| directly.",
+            "The particle changes direction where v changes sign. Average velocity is displacement divided by b − a; average speed is distance divided by b − a."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Accumulation in context",
+          "text": "If an amount Q changes at the rate r(t), then Q(t) = Q(a) + ∫ from a to t of r(s) ds, and ∫ from a to b of r(t) dt is the net change in Q from t = a to t = b, in Q's units. With a rate in E and a rate out L, r = E − L.",
+          "conditions": [
+            "r is continuous on the interval.",
+            "For the greatest or least amount on [a, b], compare Q at the endpoints and at every time where r changes sign.",
+            "An interpretation names the amount, its units and the time interval."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Area with vertical slices",
+          "text": "If f(x) ≥ g(x) on [a, b], the area between the graphs is ∫ from a to b of (f(x) − g(x)) dx: top minus bottom.",
+          "conditions": [
+            "a and b are usually the x-coordinates where the curves meet, found by solving f(x) = g(x).",
+            "Test one x between the limits to confirm which curve is on top."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Area with horizontal slices",
+          "text": "If the region runs from x = p(y) on the left to x = q(y) on the right for c ≤ y ≤ d, its area is ∫ from c to d of (q(y) − p(y)) dy: right minus left.",
+          "conditions": [
+            "Solve each boundary for x first, and use y-values as limits.",
+            "Choose horizontal slices when vertical slices would end on different curves in different parts of the region, and the reverse."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Curves that cross more than twice",
+          "text": "The area between the graphs of f and g on [a, b] is ∫ from a to b of |f(x) − g(x)| dx. By hand, find every crossing, decide which curve is on top on each piece, and add the integrals of (upper − lower).",
+          "conditions": [
+            "A point where the curves touch without crossing does not change which is on top and needs no split.",
+            "With a calculator, store each crossing unrounded and either integrate each piece or integrate the absolute value across all of them."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Volumes with known cross sections",
+          "text": "V = ∫ from a to b of A(x) dx for cross sections perpendicular to the x-axis, and V = ∫ from c to d of A(y) dy for cross sections perpendicular to the y-axis, where A is the area of one cross section.",
+          "conditions": [
+            "The side or diameter s is the length of the slice of the base: top − bottom for slices perpendicular to the x-axis, right − left for slices perpendicular to the y-axis.",
+            "π appears only when the cross sections are circular (semicircles, for example); squares, rectangles and triangles have no π."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Discs",
+          "text": "Revolving the region between y = f(x) and the axis y = k, for a ≤ x ≤ b, about y = k gives V = π ∫ from a to b of (f(x) − k)^2 dx; with k = 0 this is π ∫ from a to b of (f(x))^2 dx. About a vertical line x = h, with the region between x = p(y) and the axis, V = π ∫ from c to d of (p(y) − h)^2 dy.",
+          "conditions": [
+            "The region runs from the curve all the way to the axis, so each slice is a solid disc with no hole.",
+            "The radius is a distance from the axis, so it is f(x) − k when the region is above y = k and k − f(x) when it is below; squaring makes the order irrelevant for a disc, but not for a washer."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Washers",
+          "text": "V = π ∫ (R^2 − r^2), where R is the distance from the axis to the far edge of a slice and r the distance to the near edge, integrated in x for a horizontal axis and in y for a vertical axis.",
+          "conditions": [
+            "The slices are perpendicular to the axis of rotation.",
+            "The axis does not pass through the interior of the region, so R ≥ r ≥ 0 on every slice.",
+            "If the far or near edge changes curve partway across, split the integral there."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Which integral answers which question.",
+          "head": [
+            "Question",
+            "Integral",
+            "Units"
+          ],
+          "rows": [
+            [
+              "Position at time b",
+              "x(a) + ∫ from a to b of v(t) dt",
+              "length"
+            ],
+            [
+              "Total distance on [a, b]",
+              "∫ from a to b of |v(t)| dt",
+              "length"
+            ],
+            [
+              "Average velocity on [a, b]",
+              "(1/(b − a)) ∫ from a to b of v(t) dt",
+              "length per time"
+            ],
+            [
+              "Amount at time t",
+              "Q(0) + ∫ from 0 to t of (E(s) − L(s)) ds",
+              "the amount's units"
+            ],
+            [
+              "Average value of f on [a, b]",
+              "(1/(b − a)) ∫ from a to b of f(x) dx",
+              "f's units"
+            ],
+            [
+              "Area of a region",
+              "∫ (top − bottom) dx or ∫ (right − left) dy",
+              "square units"
+            ],
+            [
+              "Volume with known cross sections",
+              "∫ A(x) dx or ∫ A(y) dy",
+              "cubic units"
+            ],
+            [
+              "Volume of revolution",
+              "π ∫ (R^2 − r^2) dx or π ∫ (R^2 − r^2) dy",
+              "cubic units"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Cross-section areas, where s is the length of the slice of the base.",
+          "head": [
+            "Cross section",
+            "Area"
+          ],
+          "rows": [
+            [
+              "Square with side s",
+              "s^2"
+            ],
+            [
+              "Rectangle with base s and height h",
+              "sh (for h = 2s, 2s^2)"
+            ],
+            [
+              "Equilateral triangle with side s",
+              "(√3/4)s^2"
+            ],
+            [
+              "Isosceles right triangle with a leg s",
+              "s^2/2"
+            ],
+            [
+              "Isosceles right triangle with hypotenuse s",
+              "s^2/4"
+            ],
+            [
+              "Semicircle with diameter s",
+              "(π/8)s^2"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Washer radii for a region between an upper curve y = f(x) and a lower curve y = g(x), or between a right curve x = q(y) and a left curve x = p(y). When the region touches the axis along a whole edge, the inner radius is 0 and the washer is a disc.",
+          "head": [
+            "Axis",
+            "Outer radius R",
+            "Inner radius r"
+          ],
+          "rows": [
+            [
+              "y = k, at or below the region",
+              "f(x) − k",
+              "g(x) − k"
+            ],
+            [
+              "y = k, at or above the region",
+              "k − g(x)",
+              "k − f(x)"
+            ],
+            [
+              "x = h, at or left of the region",
+              "q(y) − h",
+              "p(y) − h"
+            ],
+            [
+              "x = h, at or right of the region",
+              "h − p(y)",
+              "h − q(y)"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing the slice. Each cue is a first move; the last column says when it fails.",
+          "head": [
+            "You see",
+            "Reach for",
+            "Fails when"
+          ],
+          "rows": [
+            [
+              "Revolution about a horizontal line",
+              "Vertical slices and dx",
+              "The far or near edge changes curve partway across; then split the integral there."
+            ],
+            [
+              "Revolution about a vertical line",
+              "Horizontal slices, with each boundary solved for x",
+              "A boundary cannot be solved for x; look for another description of the region in y, such as an inverse function you know, because discs and washers need slices perpendicular to the axis."
+            ],
+            [
+              "A region whose top or bottom changes curve",
+              "Horizontal slices, if each one ends on the same two curves",
+              "The left or right edge also changes; then split at each change."
+            ],
+            [
+              "Distance traveled when v changes sign",
+              "∫ |v(t)| dt, split at each sign change",
+              "A sign change is missed; with a calculator, integrate |v(t)| directly."
+            ],
+            [
+              "Rates in and out and a question about the most or least",
+              "Set E(t) = L(t), then compare the candidates",
+              "E = L without a sign change of E − L gives no extreme, and an endpoint can win."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Direction changes (velocity v(t) = (t − 1)(t − 6) for 0 ≤ t ≤ 8).",
+          "text": "The particle changes direction at t = 1 and at t = 6, because v(t) changes sign at each of those times: v(t) > 0 on (0, 1), v(t) < 0 on (1, 6) and v(t) > 0 on (6, 8)."
+        },
+        {
+          "type": "model",
+          "prompt": "The most of an amount, when the rate in E and the rate out L cross once in [0, 12], at t = T, with E > L before T and E < L after.",
+          "text": "Q′(t) = E(t) − L(t), which is positive for 0 ≤ t < T and negative for T < t ≤ 12. So Q increases on [0, T] and decreases on [T, 12], and the greatest amount is Q(T) = Q(0) + ∫ from 0 to T of (E(t) − L(t)) dt."
+        },
+        {
+          "type": "model",
+          "prompt": "The meaning of an integral of a rate (R(t) is the rate, in gallons per hour, at which fuel is pumped into a tank, with t in hours).",
+          "text": "∫ from 1 to 4 of R(t) dt is the total amount of fuel, in gallons, pumped into the tank from t = 1 to t = 4 hours. (1/3) ∫ from 1 to 4 of R(t) dt is the average rate, in gallons per hour, at which fuel is pumped in over that interval."
+        },
+        {
+          "type": "model",
+          "prompt": "A value that must be reached (g is continuous on [2, 6] and ∫ from 2 to 6 of g(x) dx = 10).",
+          "text": "Because g is continuous on [2, 6], the Mean Value Theorem for Integrals gives a number c in [2, 6] with g(c) = (1/4) ∫ from 2 to 6 of g(x) dx = 5/2."
+        },
+        {
+          "type": "model",
+          "prompt": "A calculator setup (the region in the first quadrant bounded by y = 2 − x^2, y = e^(−x) and the y-axis).",
+          "text": "For x ≥ 0 the curves meet once, at x = M, where M ≈ 1.316 (stored). On [0, M], 2 − x^2 ≥ e^(−x). Area = ∫ from 0 to M of (2 − x^2 − e^(−x)) dx ≈ 1.140."
+        },
+        {
+          "type": "trap",
+          "text": "Using ∫ from a to b of v(t) dt for total distance when v changes sign. That integral is the displacement, and backward motion cancels forward motion in it.",
+          "fix": "Distance integrates speed: ∫ from a to b of |v(t)| dt. Without a calculator, find the zeros of v, split there, and add the absolute values of the pieces."
+        },
+        {
+          "type": "trap",
+          "text": "Writing π ∫ (R − r)^2 dx for a washer, which is a disc whose radius is the washer's width.",
+          "fix": "Square each radius separately: π ∫ (R^2 − r^2) dx. Check one slice: with R = 4 and r = 2, the face has area 12π, not 4π."
+        },
+        {
+          "type": "trap",
+          "text": "Measuring a radius from the x-axis when the axis is y = k: about y = −2, using f(x) as the radius.",
+          "fix": "A radius is a distance from the axis. About y = −2, for a curve above that line, the radius is f(x) + 2; about y = 5, for a curve below it, the radius is 5 − f(x)."
+        },
+        {
+          "type": "trap",
+          "text": "Taking the upper curve as the outer radius when the axis lies above the region.",
+          "fix": "Measure from the axis every time: the outer radius reaches the far edge. For an axis above the region, the far edge is the lower curve."
+        },
+        {
+          "type": "trap",
+          "text": "Mixing variables in a dy integral: x-values as limits, or a boundary still written as y = f(x).",
+          "fix": "Solve each boundary for x and read the limits as y-values from the intersection points. Check one height: the integrand should give that slice's length or radius."
+        },
+        {
+          "type": "trap",
+          "text": "Integrating f − g across a crossing for an area. The pieces cancel, and the result can be small or even 0.",
+          "fix": "Find every crossing and integrate (larger − smaller) on each piece, or integrate |f(x) − g(x)| on a calculator."
+        },
+        {
+          "type": "trap",
+          "text": "Using (π/2)s^2 for a semicircle whose diameter is s, or including π for square or triangular cross sections.",
+          "fix": "Write the shape's area from its own dimensions: a semicircle of radius s/2 has area (1/2)π(s/2)^2 = (π/8)s^2. Only circular shapes bring π."
+        },
+        {
+          "type": "trap",
+          "text": "Rounding an intersection to three decimals before using it as a limit, which can change the third decimal of the answer.",
+          "fix": "Store each intersection in the calculator, name it (\"B ≈ 1.929, stored\"), and round only the final answer."
+        },
+        {
+          "type": "trap",
+          "text": "Giving the meaning of ∫ of a rate in the rate's units, such as \"packages per minute\" for the number of packages that arrive.",
+          "fix": "An integral of a rate is an amount: packages per minute times minutes gives packages. Dividing by the length of the interval brings back the rate's units."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let S be the region in the first quadrant enclosed by the graphs of y = ∛x and y = x/4. Find the volume of the solid formed when S is revolved about the line x = 8.",
+          "answer": "832π/21",
+          "steps": [
+            "The curves meet where ∛x = x/4. Cubing, x = x^3/64, so x = 0 or x^2 = 64; in the first quadrant, x = 8. The points are (0, 0) and (8, 2).",
+            "The axis x = 8 is vertical, so slice horizontally and integrate in y from 0 to 2. Solve each boundary for x: y = ∛x gives x = y^3, and y = x/4 gives x = 4y. At y = 1 the slice runs from x = 1 to x = 4, so the cubic is the left edge and the line is the right edge, for every y in (0, 2).",
+            "The axis is at the right of S, touching it only at (8, 2). The far edge is the cubic, so the outer radius is 8 − y^3; the near edge is the line, so the inner radius is 8 − 4y.",
+            "V = π ∫ from 0 to 2 of [(8 − y^3)^2 − (8 − 4y)^2] dy = π ∫ from 0 to 2 of (64y − 16y^2 − 16y^3 + y^6) dy.",
+            "An antiderivative is 32y^2 − 16y^3/3 − 4y^4 + y^7/7. At y = 2 it equals 128 − 128/3 − 64 + 128/7 = (1344 − 896 + 384)/21 = 832/21, and at y = 0 it equals 0.",
+            "V = 832π/21. As a check on the radii, at y = 1 the outer radius 7 exceeds the inner radius 4."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Let Q be the region enclosed by the graphs of y = 2x − x^2 and y = x^2. (a) Q is the base of a solid whose cross sections perpendicular to the x-axis are squares. Find the volume of the solid. (b) Find the volume of the solid formed when Q is revolved about the x-axis.",
+          "answer": "(a) 2/15 (b) π/3",
+          "steps": [
+            "The curves meet where 2x − x^2 = x^2, so 2x(1 − x) = 0 and x = 0 or x = 1. At x = 1/2, 2x − x^2 = 3/4 and x^2 = 1/4, so y = 2x − x^2 is on top.",
+            "(a) A vertical slice has length s(x) = (2x − x^2) − x^2 = 2x − 2x^2, and the square on it has area s^2 = 4x^2(1 − x)^2 = 4(x^2 − 2x^3 + x^4).",
+            "V = ∫ from 0 to 1 of 4(x^2 − 2x^3 + x^4) dx = 4(1/3 − 1/2 + 1/5) = 4(1/30) = 2/15.",
+            "(b) The x-axis lies below Q and touches it only at the origin, so each slice sweeps out a washer: outer radius 2x − x^2 (the far, upper curve) and inner radius x^2.",
+            "V = π ∫ from 0 to 1 of [(2x − x^2)^2 − (x^2)^2] dx = π ∫ from 0 to 1 of (4x^2 − 4x^3) dx = π(4/3 − 1) = π/3.",
+            "The two solids differ: the squares are built on the slice's length, s^2, while the washer uses each radius squared separately, R^2 − r^2, which is not (R − r)^2."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "At 7 a.m. (t = 0), 50 hikers are on a mountain trail. For 0 ≤ t ≤ 9, where t is measured in hours, hikers start the trail at the rate E(t) = 90 + 12t hikers per hour and finish it at the rate L(t) = 18 + 4t^2 hikers per hour. Find the greatest number of hikers on the trail for 0 ≤ t ≤ 9, and justify your answer.",
+          "answer": "410 hikers, at t = 6 (1 p.m.)",
+          "steps": [
+            "H(t) = 50 + ∫ from 0 to t of (E(s) − L(s)) ds, so H′(t) = E(t) − L(t) = 72 + 12t − 4t^2 = −4(t − 6)(t + 3).",
+            "On [0, 9], H′(t) = 0 only at t = 6. H′ > 0 for 0 ≤ t < 6 and H′ < 0 for 6 < t ≤ 9, so H increases and then decreases, and t = 6 gives the greatest value.",
+            "H(6) = 50 + [72t + 6t^2 − 4t^3/3] from 0 to 6 = 50 + 432 + 216 − 288 = 410.",
+            "The candidates agree: H(0) = 50, H(6) = 410 and H(9) = 50 + 648 + 486 − 972 = 212.",
+            "The greatest number of hikers on the trail is 410, at t = 6, which is 1 p.m."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 25: Average value and motion with integrals",
+              "ref": "week:25"
+            },
+            {
+              "label": "Week 26: Accumulation in context; area between curves",
+              "ref": "week:26"
+            },
+            {
+              "label": "Week 27: Area with respect to y and several intersections",
+              "ref": "week:27"
+            },
+            {
+              "label": "Week 28: Volumes by cross sections and discs",
+              "ref": "week:28"
+            },
+            {
+              "label": "Week 29: Discs about other lines and washers",
+              "ref": "week:29"
+            },
+            {
+              "label": "Unit 8 plan",
+              "ref": "unit:u8"
+            },
+            {
+              "label": "Unit 8 test",
+              "ref": "test:unit-8"
+            },
+            {
+              "label": "Unit 8 test key",
+              "ref": "key:unit-8"
+            },
+            {
+              "label": "Free-response workshop: Area and volume",
+              "ref": "guide:fr-area-volume"
+            },
+            {
+              "label": "Free-response workshop: Rates and accumulation in context",
+              "ref": "guide:fr-accumulation"
+            },
+            {
+              "label": "Free-response workshop: Motion along a line",
+              "ref": "guide:fr-linear-motion"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

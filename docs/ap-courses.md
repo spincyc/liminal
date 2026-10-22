@@ -235,9 +235,9 @@ Answer keys ship to the browser in the assessment files, as weekly keys do; sepa
 ## Exam preparation
 
 A course may carry an exam-preparation layer for the weeks before the exam,
-after its units are taught. Calculus BC has one; the other courses do not
-yet. It lives on `ap.html#<course>/prep` and is built from three things the
-AP page already knows how to show, plus one new document type:
+after its units are taught. Calculus BC and Calculus AB have one; the physics
+courses do not yet. It lives on `ap.html#<course>/prep` and is built from three
+things the AP page already knows how to show, plus one new document type:
 
 | Piece | Kind | Where |
 | --- | --- | --- |
@@ -300,11 +300,11 @@ open) or `week:<1–36>` (weekly coursework). `LiminalAp.refHref` turns it
 into a link; the validator requires it to name something the plan lists.
 The course's `blueprints` gain `mixedSet` (`parts` of `{ id, questions,
 minutes, calculator }` and `minUnits`) and `frSet` (`frPoints`,
-`minutesPerQuestion`, `questions: [least, most]`). BC mixed sets are 10
+`minutesPerQuestion`, `questions: [least, most]`). Calculus mixed sets are 10
 no-calculator questions in 21 minutes and 5 graphing-calculator questions
 in 15 minutes, the exam's per-question pace, drawing primary topics from at
-least 7 units. BC free-response sets hold 3–4 nine-point questions at 15
-minutes each, in parts ordered graphing calculator then none.
+least 7 units (BC) or 6 (AB). Calculus free-response sets hold 3–4 nine-point
+questions at 15 minutes each, in parts ordered graphing calculator then none.
 
 ### Assessment kinds and IDs
 
@@ -373,8 +373,8 @@ with a section of checks (with text only) before any summary.
   with original rubrics that credit reasoning and accept valid alternative
   methods, calculator items that genuinely need the calculator, exact
   values in no-calculator work, three-decimal answers in calculator work.
-  Across practice exams A–D every archetype appears at least once; the last
-  free-response question of each form is on series.
+  Across practice exams A–D every archetype appears at least once; in BC the
+  last free-response question of each form is on series.
 - **Strategy guides.** Facts about the exam cite College Board's HTML pages
   with the date checked and are kept to format and policy. Pacing and
   method advice states when it fails. No score prediction, conversion or

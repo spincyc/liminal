@@ -1,0 +1,646 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "review-u6",
+  "kind": "unit-review",
+  "unitId": "u6",
+  "title": "Unit 6 review: Integration and Accumulation of Change",
+  "author": "ab-review-5-6-author",
+  "summary": "A retrieval-first review of Unit 6 for the AP® Calculus AB Exam: accumulation as the area under a rate, Riemann and trapezoidal sums and when they overestimate or underestimate, definite-integral notation and properties, both forms of the Fundamental Theorem of Calculus, accumulation functions defined by graphs, and antiderivatives by the basic rules, substitution, long division and completing the square. Recall the results first, then work five mixed problems, one of them with a graphing calculator. Rules with their conditions, model sentences, traps and three worked examples follow, with links to the unit's weeks, the unit plan and the unit test.",
+  "minutes": 60,
+  "figures": [
+    {
+      "id": "ab-review-u6-g1",
+      "alt": "Graph of y = f(t) for −3 ≤ t ≤ 6 on a grid of unit squares. A quarter of a circle of radius 2 centered at (−1, 0) rises from a closed dot at (−3, 0), where it meets the axis vertically, to (−1, 2), where it is level; a line segment falls from (−1, 2) through (1, 0) to (2, −1); a segment rises from (2, −1) through (3, 0) to (4, 1); and a horizontal segment runs from (4, 1) to a closed dot at (6, 1).",
+      "caption": "The graph of f for the accumulation-function problem."
+    },
+    {
+      "id": "ab-review-u6-g2",
+      "alt": "Graph of y = f(t) for 0 ≤ t ≤ 8 on a grid of unit squares. A semicircle of radius 2 centered at (2, 0) lies above the t-axis from (0, 0) to (4, 0), with its highest point at (2, 2); a line segment falls from (4, 0) to (6, −2); and a horizontal segment runs from (6, −2) to a closed dot at (8, −2).",
+      "caption": "The graph of f for the first worked example."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its answer, and write every statement in full, hypotheses included: a theorem recalled without its conditions is only half recalled. Mark each check you missed or hesitated on. Its answer names the section to study; reread only the part of that section on the same idea, and try the check again on a later day."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c1",
+          "see": "what-to-know",
+          "prompt": "State the Fundamental Theorem of Calculus in both of its forms, with the hypothesis each form needs: one form differentiates ∫ from a to x of f(t) dt, and the other evaluates ∫ from a to b of f(x) dx. Then find d/dx of ∫ from 1 to √x of sin(t^2) dt, for x > 0.",
+          "hint": "For the last part, the upper limit is not plain x. Call it u first, and differentiate with respect to u.",
+          "answer": "If f is continuous on an interval containing a, then d/dx ∫ from a to x of f(t) dt = f(x) on that interval. If f is continuous on [a, b] and F′(x) = f(x) there, then ∫ from a to b of f(x) dx = F(b) − F(a). d/dx ∫ from 1 to √x of sin(t^2) dt = sin(x)/(2√x).",
+          "steps": [
+            "Derivative form: the accumulation function g(x) = ∫ from a to x of f(t) dt grows at the rate f(x), the height of the graph at the moving edge. With an upper limit u(x), the chain rule adds a factor: d/dx ∫ from a to u(x) of f(t) dt = f(u(x))·u′(x).",
+            "Evaluation form: any antiderivative F of f works, because an added constant cancels in F(b) − F(a).",
+            "Both forms need f continuous on the interval involved. A jump, or a point where f is undefined, inside [a, b] breaks them.",
+            "Last part: let G(u) = ∫ from 1 to u of sin(t^2) dt, so G′(u) = sin(u^2). Then d/dx G(√x) = sin((√x)^2)·(1/(2√x)) = sin(x)/(2√x)."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c2",
+          "see": "what-to-know",
+          "prompt": "Which property of f on [a, b] decides whether a left Riemann sum overestimates ∫ from a to b of f(x) dx, and which property decides it for a trapezoidal sum? Explain each in terms of one subinterval. Then say whether the left, right, midpoint and trapezoidal sums each overestimate or underestimate the integral when f is increasing and concave down on [a, b].",
+          "hint": "Sketch one subinterval of an increasing, concave-down graph, and draw the left rectangle and the trapezoid on it.",
+          "answer": "Whether f is increasing or decreasing decides left and right sums; concavity decides trapezoidal and midpoint sums. For f increasing and concave down, the left and trapezoidal sums underestimate, and the right and midpoint sums overestimate.",
+          "steps": [
+            "Left and right sums use the height at one end of each subinterval. If f is increasing, the left height is the smallest value on the subinterval, so each left rectangle lies under the graph (an underestimate) and each right rectangle reaches above it (an overestimate). A decreasing f reverses both.",
+            "A trapezoid's top is the chord joining the graph's endpoints on the subinterval. If f is concave down, the chord lies below the graph, so the trapezoidal sum underestimates; concave up reverses this.",
+            "A midpoint rectangle has the same area as the trapezoid under the tangent line at the midpoint. A concave-down graph lies below its tangent lines, so that trapezoid, and therefore the midpoint rectangle, overestimates.",
+            "Each conclusion needs its property on the whole interval, stated in the problem or proved from f′ or f″. A table of values alone does not establish it."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c3",
+          "see": "what-to-know",
+          "prompt": "(a) Fill in the blanks for a right Riemann sum with n subintervals of equal width: ∫ from a to b of f(x) dx = lim as n→∞ of Σ from k = 1 to n of f(___)·___, where each subinterval has width ___. What property of f on [a, b] guarantees that this limit exists? (b) Write lim as n→∞ of Σ from k = 1 to n of (π/(4n))sec^2(πk/(4n)) as a definite integral, and evaluate it.",
+          "hint": "In (b), find the factor that plays the part of Δx first. Then ask what the input to the function is at k = 0 and at k = n.",
+          "answer": "(a) ∫ from a to b of f(x) dx = lim as n→∞ of Σ from k = 1 to n of f(a + kΔx)·Δx, where Δx = (b − a)/n; the kth sample point a + kΔx is the right endpoint of the kth subinterval. Continuity of f on [a, b] guarantees the limit exists. (b) ∫ from 0 to π/4 of sec^2 x dx = 1.",
+          "steps": [
+            "Δx = (b − a)/n is the width of each subinterval. The kth subinterval is [a + (k − 1)Δx, a + kΔx], so its right endpoint is a + kΔx.",
+            "For f continuous on [a, b], the sums approach one number as n → ∞, whichever sample points are used. That number is the definite integral.",
+            "(b) Δx = π/(4n), so b − a = π/4. The input πk/(4n) is 0 + kΔx, so a = 0 and b = π/4, and the function applied to it is sec^2.",
+            "∫ from 0 to π/4 of sec^2 x dx = [tan x] from 0 to π/4 = 1 − 0 = 1."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c4",
+          "see": "what-to-know",
+          "prompt": "Let f be continuous, and let g(x) = ∫ from 2 to x of f(t) dt. Complete each statement. (a) g(2) = ___. (b) g′(x) = ___ and, where f is differentiable, g″(x) = ___. (c) In terms of values of g, ∫ from 3 to 5 of f(t) dt = ___ and ∫ from 5 to 2 of f(t) dt = ___. (d) g has a relative maximum at x = c when ___, and the graph of g is concave up on an interval where ___.",
+          "answer": "(a) 0. (b) f(x); f′(x). (c) g(5) − g(3); −g(5). (d) f changes from positive to negative at c; f is increasing.",
+          "steps": [
+            "(a) ∫ from 2 to 2 of f(t) dt = 0: an interval of zero width carries no area.",
+            "(b) By the Fundamental Theorem, g′ = f, so g″ = f′ wherever f′ exists.",
+            "(c) By additivity, ∫ from 2 to 5 = ∫ from 2 to 3 + ∫ from 3 to 5, so ∫ from 3 to 5 of f(t) dt = g(5) − g(3). Reversing the limits changes the sign: ∫ from 5 to 2 of f(t) dt = −∫ from 2 to 5 of f(t) dt = −g(5).",
+            "(d) g′ = f, so the extrema of g come from sign changes of f, and the concavity of g from whether f is increasing or decreasing. A zero of f where f keeps its sign is not an extremum of g."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c5",
+          "see": "what-to-know",
+          "prompt": "Write the general antiderivative of each function, and check one of your answers by differentiating: (a) 2/√x (b) 5/x (c) e^(−3x) (d) 4cos(2x) (e) sec x tan x (f) 6/(1 + x^2) (g) 1/√(1 − x^2). Then explain why adding one constant C gives every antiderivative on an interval.",
+          "hint": "Rewrite (a) as a power of x. For (c) and (d), guess, differentiate your guess, and fix the constant factor.",
+          "answer": "(a) 4√x + C (b) 5 ln|x| + C (c) −(1/3)e^(−3x) + C (d) 2sin(2x) + C (e) sec x + C (f) 6 arctan x + C (g) arcsin x + C. Two antiderivatives of one function on an interval have a difference whose derivative is 0, so the difference is a constant.",
+          "steps": [
+            "(a) 2x^(−1/2) has antiderivative 2x^(1/2)/(1/2) = 4x^(1/2) = 4√x.",
+            "(b) The power rule fails for x^(−1); ∫ (1/x) dx = ln|x| + C.",
+            "(c) d/dx e^(−3x) = −3e^(−3x), so divide by −3. (d) d/dx sin(2x) = 2cos(2x), so 4cos(2x) has antiderivative 2sin(2x).",
+            "(e), (f) and (g) read derivative rules backward: (sec x)′ = sec x tan x, (arctan x)′ = 1/(1 + x^2) and (arcsin x)′ = 1/√(1 − x^2).",
+            "Check (d): d/dx (2sin(2x) + C) = 2cos(2x)·2 = 4cos(2x).",
+            "Why one C: if F′ = G′ on an interval, then (F − G)′ = 0 there, and by the Mean Value Theorem F − G is constant. On a domain made of two intervals, such as x ≠ 0 for 5/x, the constant may differ on each piece."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work these as exam questions: write the setup, then the result. Work without a calculator and give exact answers, except in the problem marked for a graphing calculator, where answers are given to three decimal places. The problems mix the unit, and some reach back to Unit 5 on purpose."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c6",
+          "see": "worked-examples",
+          "prompt": "The figure shows the graph of a continuous function f for −3 ≤ t ≤ 6: a quarter of a circle of radius 2 centered at (−1, 0), followed by three line segments. Define g by g(x) = ∫ from 1 to x of f(t) dt. (a) Evaluate g(−3) and g(6), and write an equation of the line tangent to the graph of g at x = 0. (b) Locate and classify every relative extremum of g for −3 < x < 6. Then give the greatest and the least value that g takes for −3 ≤ x ≤ 6, with a justification. (c) Where, for −3 < x < 6, is the graph of g concave up? Is (−1, g(−1)) a point of inflection of the graph of g? Explain.",
+          "hint": "Label the signed area of each piece of the graph first. Then remember where g starts: at x = 1, not at the left end.",
+          "answer": "(a) g(−3) = −π − 2 and g(6) = 3/2; the tangent line is y = x − 1/2. (b) A relative maximum at x = 1 and a relative minimum at x = 3. The greatest value (absolute maximum) is 3/2, at x = 6; the least value (absolute minimum) is −π − 2, at x = −3. (c) Concave up on (−3, −1) and (2, 4); yes, x = −1 is a point of inflection.",
+          "steps": [
+            "Signed areas: on [−3, −1] a quarter disk of radius 2 above the axis, (1/4)π(2)^2 = π; on [−1, 1] a triangle above, 2; on [1, 2] a triangle below, −1/2; on [2, 3] a triangle below, −1/2; on [3, 4] a triangle above, 1/2; on [4, 6] a rectangle of height 1, 2.",
+            "(a) g(−3) = ∫ from 1 to −3 of f(t) dt = −∫ from −3 to 1 of f(t) dt = −(π + 2) = −π − 2. g(6) = −1/2 − 1/2 + 1/2 + 2 = 3/2.",
+            "On [−1, 2] the segment through (−1, 2) and (1, 0) is f(t) = 1 − t, so g(0) = −∫ from 0 to 1 of (1 − t) dt = −1/2, a triangle of area 1/2 counted backward. By the Fundamental Theorem, g′(0) = f(0) = 1, so the tangent line is y = −1/2 + 1(x − 0), that is, y = x − 1/2.",
+            "(b) g′(x) = f(x), so the critical points of g in (−3, 6) are the zeros of f there: x = 1 and x = 3. f changes from positive to negative at x = 1, so g has a relative maximum there; f changes from negative to positive at x = 3, so g has a relative minimum there.",
+            "g is continuous on [−3, 6], so its absolute extrema are among g(−3) = −π − 2 ≈ −5.142, g(1) = 0, g(3) = −1 and g(6) = 3/2. The absolute maximum value is 3/2, at x = 6, and the absolute minimum value is −π − 2, at x = −3. Neither relative extremum is an absolute one: g keeps rising after x = 3, and g is far lower at the left endpoint than at x = 3.",
+            "(c) g″ = f′ where f′ exists, so the graph of g is concave up where f is increasing: on (−3, −1), along the rising quarter circle, and on (2, 4), along the rising segment. On (−1, 2), f is decreasing and the graph of g is concave down; on (4, 6), f is constant and the graph of g is a line segment.",
+            "At x = −1, g′ = f changes from increasing to decreasing, so the graph of g changes from concave up to concave down. g is continuous there, so x = −1 is a point of inflection, even though f has a corner at x = −1, so f′(−1), and with it g″(−1), does not exist."
+          ],
+          "figureIds": [
+            "ab-review-u6-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c7",
+          "see": "justifications-and-traps",
+          "prompt": "An electric car is charging. Its battery holds 9 kilowatt-hours (kWh) of energy at time t = 0, and for 0 ≤ t ≤ 6 hours energy flows into it at a rate of P(t) kilowatts, that is, kWh per hour. P is decreasing on [0, 6], and selected values are shown.\n\n| t (hours) | 0 | 0.5 | 2 | 3.5 | 6 |\n| --- | --- | --- | --- | --- | --- |\n| P(t) (kW) | 22 | 21 | 16 | 10 | 4 |\n\n(a) Use a right Riemann sum with the four subintervals in the table to approximate ∫ from 0 to 6 of P(t) dt. Explain the meaning of the integral in context, with units, and use your result to estimate the energy in the battery at t = 6. (b) Is your approximation in (a) an overestimate or an underestimate of the integral? Give a reason. (c) A left Riemann sum with the same subintervals gives 91.5. What do the two sums together tell you about the energy that flows into the battery during the 6 hours?",
+          "hint": "Write down the width of each subinterval before you choose any heights.",
+          "answer": "(a) 59.5 kWh, so about 68.5 kWh in the battery at t = 6. (b) An underestimate. (c) Between 59.5 kWh and 91.5 kWh flow in.",
+          "steps": [
+            "(a) The widths are 0.5, 1.5, 1.5 and 2.5 hours. A right sum uses the height at the right end of each subinterval: 0.5(21) + 1.5(16) + 1.5(10) + 2.5(4) = 10.5 + 24 + 15 + 10 = 59.5.",
+            "∫ from 0 to 6 of P(t) dt is the total energy, in kilowatt-hours, that flows into the battery from t = 0 to t = 6 hours: kilowatts times hours gives kilowatt-hours.",
+            "Energy at t = 6 = 9 + ∫ from 0 to 6 of P(t) dt ≈ 9 + 59.5 = 68.5 kWh.",
+            "(b) P is decreasing on [0, 6], so on each subinterval the right endpoint gives the smallest value of P. Each right rectangle lies under the graph of P, so the right sum underestimates the integral.",
+            "(c) For the same reason, the left sum 0.5(22) + 1.5(21) + 1.5(16) + 2.5(10) = 91.5 overestimates it. So 59.5 < ∫ from 0 to 6 of P(t) dt < 91.5: the energy that flows in is between 59.5 and 91.5 kWh.",
+            "The problem says nothing about concavity, so a trapezoidal sum (here 75.5) could not be classified as too high or too low."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c8",
+          "see": "worked-examples",
+          "prompt": "Evaluate each integral exactly. All four contain x^2 − 2x + 10, and deciding how to begin is the point. (a) ∫ from 1 to 4 of (x − 1)/(x^2 − 2x + 10) dx (b) ∫ from 1 to 4 of 1/(x^2 − 2x + 10) dx (c) ∫ from 1 to 2 of (x^2 − 2x + 10)/x dx (d) ∫ from 1 to 4 of (x + 2)/(x^2 − 2x + 10) dx",
+          "hint": "Ask three questions of each integrand: is the numerator a constant multiple of the denominator's derivative? Is the numerator's degree at least the denominator's? Can the denominator be written as (something)^2 plus a positive constant?",
+          "answer": "(a) (1/2)ln 2 (b) π/12 (c) 10 ln 2 − 1/2 (d) (1/2)ln 2 + π/4",
+          "steps": [
+            "(a) The denominator's derivative is 2x − 2, and the numerator is half of it, so let u = x^2 − 2x + 10, du = (2x − 2) dx. The limits become u = 9 and u = 18: (1/2)∫ from 9 to 18 of (1/u) du = (1/2)(ln 18 − ln 9) = (1/2)ln 2.",
+            "(b) The numerator is a constant, so no logarithm. x^2 − 2x + 10 has no real zeros ((−2)^2 − 4(10) < 0), so complete the square: x^2 − 2x + 10 = (x − 1)^2 + 9.",
+            "With u = x − 1 and ∫ du/(u^2 + a^2) = (1/a)arctan(u/a) + C, a = 3: (1/3)[arctan((x − 1)/3)] from 1 to 4 = (1/3)(arctan 1 − arctan 0) = π/12.",
+            "(c) Here the quadratic is the numerator, over a one-term denominator, so divide each term: (x^2 − 2x + 10)/x = x − 2 + 10/x.",
+            "∫ from 1 to 2 of (x − 2 + 10/x) dx = [x^2/2 − 2x + 10 ln x] from 1 to 2 = (2 − 4 + 10 ln 2) − (1/2 − 2) = 10 ln 2 − 1/2.",
+            "(d) The numerator is neither a multiple of 2x − 2 nor a constant, so split it: x + 2 = (1/2)(2x − 2) + 3. The integral is the integral in (a) plus 3 times the integral in (b): (1/2)ln 2 + 3(π/12) = (1/2)ln 2 + π/4.",
+            "Writing ln(x^2 − 2x + 10) for (b), or an arctangent for (a), is the usual slip. Differentiate your antiderivative to catch it."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c9",
+          "see": "what-to-know",
+          "prompt": "A function f has a continuous derivative for all x, with f(0) = −1, f(4) = 7, ∫ from 0 to 4 of f(x) dx = 6 and ∫ from 2 to 4 of f(x) dx = 9. Find (a) ∫ from 0 to 2 of (3f(x) − 2x) dx, (b) ∫ from 1 to 2 of f(6 − 2x) dx, (c) ∫ from 0 to 2 of x f′(x^2) dx, and (d) the value of d/dx ∫ from 0 to x^2 of f(t) dt at x = 2.",
+          "hint": "In (b) and (c), call the expression inside f or f′ u, and change both limits to u-values.",
+          "answer": "(a) −13 (b) 9/2 (c) 4 (d) 28",
+          "steps": [
+            "(a) By additivity, ∫ from 0 to 2 of f(x) dx = 6 − 9 = −3. By linearity, ∫ from 0 to 2 of (3f(x) − 2x) dx = 3(−3) − [x^2] from 0 to 2 = −9 − 4 = −13.",
+            "(b) Let u = 6 − 2x, so du = −2 dx and dx = −du/2. When x = 1, u = 4; when x = 2, u = 2. The integral is −(1/2)∫ from 4 to 2 of f(u) du = (1/2)∫ from 2 to 4 of f(u) du = (1/2)(9) = 9/2. The negative factor and the reversed limits cancel.",
+            "(c) Let u = x^2, so du = 2x dx and x dx = du/2. When x = 0, u = 0; when x = 2, u = 4. The integral is (1/2)∫ from 0 to 4 of f′(u) du = (1/2)(f(4) − f(0)) = (1/2)(7 − (−1)) = 4, by the evaluation form of the Fundamental Theorem.",
+            "(d) By the Fundamental Theorem and the chain rule, d/dx ∫ from 0 to x^2 of f(t) dt = f(x^2)·2x. At x = 2 this is f(4)·4 = 28.",
+            "In (c), the integral of a derivative is the net change of the function, f(4) − f(0); the given integrals of f are not needed there."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u6-c10",
+          "see": "what-to-know",
+          "prompt": "A graphing calculator is allowed. A parking garage holds 120 cars at 7 a.m. (t = 0). For 0 ≤ t ≤ 8 hours, cars enter at a rate of E(t) = 60e^(−(t − 2)^2/4) cars per hour and leave at a rate of L(t) = 8t cars per hour. Treat the number of cars as a continuous quantity. (a) How many cars are in the garage at t = 8? (b) At what time t, for 0 ≤ t ≤ 8, is the number of cars in the garage greatest? Justify your answer, and give that number of cars.",
+          "hint": "Write the number of cars at time x as 120 plus an integral, and decide what its derivative is.",
+          "answer": "(a) About 59.964 cars. (b) At t ≈ 3.686 hours, with about 236.821 cars.",
+          "steps": [
+            "Let N(x) = 120 + ∫ from 0 to x of (E(t) − L(t)) dt, the number of cars x hours after 7 a.m.",
+            "(a) N(8) = 120 + ∫ from 0 to 8 of (E(t) − L(t)) dt ≈ 120 + 195.964 − 256 = 59.964. E has no elementary antiderivative, so this step is the calculator's numerical integration; keep full precision until the final answer.",
+            "(b) By the Fundamental Theorem, N′(x) = E(x) − L(x). Solving E(t) = L(t) on the calculator gives one solution in (0, 8): t ≈ 3.686.",
+            "N is continuous on [0, 8], so its absolute maximum is at an endpoint or a critical point. Candidates: N(0) = 120, N(3.686) ≈ 236.821 and N(8) ≈ 59.964. The number of cars is greatest, about 236.821, at t ≈ 3.686 hours, a little after 10:41 a.m.",
+            "The sign of N′ agrees: before t ≈ 3.686 cars enter faster than they leave (for example E(1) ≈ 46.728 > L(1) = 8), and after it they leave faster."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Accumulation of change",
+          "text": "If Q′(t) is the rate of change of a quantity Q, then ∫ from a to b of Q′(t) dt is the net change Q(b) − Q(a), so Q(b) = Q(a) + ∫ from a to b of Q′(t) dt. The units of the integral are the rate's units times the input's units.",
+          "conditions": [
+            "Q′ is continuous on [a, b].",
+            "Area below the axis is negative change. For a velocity, the integral is the displacement; the distance traveled is the integral of |v(t)|.",
+            "With an inflow and an outflow, the net rate is the inflow rate minus the outflow rate."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Riemann and trapezoidal sums",
+          "text": "Split [a, b] into subintervals and add width × height. The height is f at the left endpoint, the right endpoint or the midpoint of each subinterval. A trapezoidal sum adds width × (left height + right height)/2, and equals the average of the left and right sums on the same subintervals.",
+          "conditions": [
+            "With a table, the subintervals are whatever the data give; find each width separately.",
+            "Count subintervals, not data points: five table values make four subintervals."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "When a sum is too small or too large compared with ∫ from a to b of f(x) dx. Each conclusion needs its property on all of [a, b].",
+          "head": [
+            "Sum",
+            "Too small when f is",
+            "Too large when f is",
+            "Property that decides it"
+          ],
+          "rows": [
+            [
+              "Left",
+              "increasing",
+              "decreasing",
+              "increasing or decreasing"
+            ],
+            [
+              "Right",
+              "decreasing",
+              "increasing",
+              "increasing or decreasing"
+            ],
+            [
+              "Midpoint",
+              "concave up",
+              "concave down",
+              "concavity"
+            ],
+            [
+              "Trapezoidal",
+              "concave down",
+              "concave up",
+              "concavity"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The definite integral as a limit of sums",
+          "text": "∫ from a to b of f(x) dx = lim as n→∞ of Σ from k = 1 to n of f(a + kΔx)Δx, with Δx = (b − a)/n. To read a given limit, find Δx (it gives b − a), the sample point at k = 0 (it gives a) and the function applied to the sample point.",
+          "conditions": [
+            "f is continuous on [a, b].",
+            "A definite integral is a signed area: regions below the axis count as negative. When the graph is made of segments and circular arcs, evaluate it by geometry."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Fundamental Theorem, derivative form",
+          "text": "d/dx ∫ from a to x of f(t) dt = f(x). With variable limits, d/dx ∫ from v(x) to u(x) of f(t) dt = f(u(x))·u′(x) − f(v(x))·v′(x).",
+          "conditions": [
+            "f is continuous on an open interval containing a and every value the limits take.",
+            "u and v are differentiable."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Fundamental Theorem, evaluation form",
+          "text": "∫ from a to b of f(x) dx = F(b) − F(a), where F is any antiderivative of f.",
+          "conditions": [
+            "f is continuous on [a, b], and F′(x) = f(x) for every x in [a, b].",
+            "Subtract the whole antiderivative at a, every term of it, from its value at b."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Accumulation functions",
+          "text": "If g(x) = C + ∫ from a to x of f(t) dt, then g(a) = C, g′(x) = f(x) and g″(x) = f′(x) wherever f′ exists. So g increases where f > 0, has a relative maximum where f changes from positive to negative, and is concave up where f is increasing.",
+          "conditions": [
+            "f is continuous on an interval containing a and x.",
+            "Values of g are signed areas measured from a; for x < a, g(x) = C − ∫ from x to a of f(t) dt.",
+            "Absolute extrema of g on a closed interval: the candidates test, with the zeros of f where f changes sign as the critical points to check."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Properties of definite integrals, for f and g continuous on the intervals involved. None of them needs a formula for f.",
+          "head": [
+            "Property",
+            "Statement"
+          ],
+          "rows": [
+            [
+              "Zero width",
+              "∫ from a to a of f(x) dx = 0"
+            ],
+            [
+              "Reversed limits",
+              "∫ from b to a of f(x) dx = −∫ from a to b of f(x) dx"
+            ],
+            [
+              "Additivity",
+              "∫ from a to b of f(x) dx + ∫ from b to c of f(x) dx = ∫ from a to c of f(x) dx, for any order of a, b and c"
+            ],
+            [
+              "Linearity",
+              "∫ from a to b of (kf(x) ± g(x)) dx = k∫ from a to b of f(x) dx ± ∫ from a to b of g(x) dx"
+            ],
+            [
+              "Comparison",
+              "If f(x) ≤ g(x) on [a, b] and a < b, then ∫ from a to b of f(x) dx ≤ ∫ from a to b of g(x) dx"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Antiderivatives to know. Add + C to each, and check a doubtful one by differentiating.",
+          "head": [
+            "Integrand",
+            "Antiderivative",
+            "Condition"
+          ],
+          "rows": [
+            [
+              "x^n",
+              "x^(n+1)/(n + 1)",
+              "n ≠ −1"
+            ],
+            [
+              "1/x",
+              "ln|x|",
+              "on an interval that avoids 0"
+            ],
+            [
+              "e^(kx)",
+              "(1/k)e^(kx)",
+              "k ≠ 0"
+            ],
+            [
+              "a^x",
+              "a^x/ln a",
+              "a > 0, a ≠ 1"
+            ],
+            [
+              "sin(kx)",
+              "−(1/k)cos(kx)",
+              "k ≠ 0"
+            ],
+            [
+              "cos(kx)",
+              "(1/k)sin(kx)",
+              "k ≠ 0"
+            ],
+            [
+              "sec^2 x",
+              "tan x",
+              "where cos x ≠ 0"
+            ],
+            [
+              "sec x tan x",
+              "sec x",
+              "where cos x ≠ 0"
+            ],
+            [
+              "1/(a^2 + x^2)",
+              "(1/a)arctan(x/a)",
+              "a > 0"
+            ],
+            [
+              "1/√(a^2 − x^2)",
+              "arcsin(x/a)",
+              "a > 0 and |x| < a"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Substitution",
+          "text": "∫ f(g(x))g′(x) dx = F(g(x)) + C, where F′ = f. For a definite integral, ∫ from a to b of f(g(x))g′(x) dx = ∫ from g(a) to g(b) of f(u) du.",
+          "conditions": [
+            "g′ is continuous on [a, b], and f is continuous on the values g takes.",
+            "Change the limits to u-values, or return to x before using the original limits; never mix the two.",
+            "A missing constant factor can be supplied and compensated. A leftover variable factor cannot; rewrite it in terms of u by solving u = g(x) for x, or choose another method."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Algebra before integrating",
+          "text": "If the numerator's degree is at least the denominator's, divide first and keep the remainder over the original denominator. A quadratic denominator with no real zeros can be written as (x + b/2)^2 + (c − b^2/4) by completing the square; after any multiple of the denominator's derivative is split off the numerator (giving a logarithm), what remains leads to an arctangent.",
+          "conditions": [
+            "Split a fraction over its numerator, never over its denominator: (a + b)/c = a/c + b/c, but 1/(a + b) ≠ 1/a + 1/b.",
+            "There is no quotient rule for antiderivatives: the antiderivative of a quotient is not the quotient of the antiderivatives."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "First moves for choosing a technique. If a first move leaves an integral no simpler than the original, go back and try another.",
+          "head": [
+            "If the integrand shows",
+            "Start with",
+            "For example"
+          ],
+          "rows": [
+            [
+              "A sum of powers, exponentials or basic trigonometric terms",
+              "The basic rules, term by term, after rewriting roots and quotients as powers",
+              "(x^2 − 3)/√x = x^(3/2) − 3x^(−1/2)"
+            ],
+            [
+              "A function of an inner expression times a constant multiple of the inner expression's derivative",
+              "Substitution, with u = the inner expression",
+              "x^2 e^(x^3), with u = x^3"
+            ],
+            [
+              "An inner expression, but a leftover factor of x",
+              "Substitution, then rewrite the leftover x in terms of u",
+              "x√(x + 1), with u = x + 1 and x = u − 1"
+            ],
+            [
+              "A rational function whose numerator has degree at least the denominator's",
+              "Long division, or dividing each term by a one-term denominator",
+              "(x^2 + 1)/(x − 1) = x + 1 + 2/(x − 1)"
+            ],
+            [
+              "A quadratic denominator with no real zeros",
+              "Split off any multiple of the denominator's derivative, then complete the square for an arctangent",
+              "1/(x^2 − 4x + 13) = 1/((x − 2)^2 + 9)"
+            ],
+            [
+              "No elementary antiderivative, in a calculator part",
+              "Numerical integration, with the integral written as the setup",
+              "∫ from 0 to 2 of e^(−t^2) dt"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A justification names the function, the property and where it holds. These sentences show the wording; change the names and numbers to fit the problem."
+        },
+        {
+          "type": "model",
+          "prompt": "A relative extremum of an accumulation function, from the graph of f.",
+          "text": "g′(x) = f(x) by the Fundamental Theorem of Calculus. Since f changes from negative to positive at x = −2, g′ changes from negative to positive there, so g has a relative minimum at x = −2."
+        },
+        {
+          "type": "model",
+          "prompt": "An absolute extremum of an accumulation function.",
+          "text": "g is continuous on [0, 6], so its absolute maximum occurs at an endpoint or a critical point. The only critical point in (0, 6) is x = 4, and g(0) = 0, g(4) = 5 and g(6) = 3. The absolute maximum value of g on [0, 6] is 5, at x = 4."
+        },
+        {
+          "type": "model",
+          "prompt": "Concavity of an accumulation function.",
+          "text": "The graph of g is concave down on (1, 3) because g′ = f is decreasing there."
+        },
+        {
+          "type": "model",
+          "prompt": "The meaning of a definite integral in context.",
+          "text": "R(t) is the rate, in liters per minute, at which a pump fills a pool. ∫ from 10 to 30 of R(t) dt ≈ 850 means that about 850 liters of water entered the pool from t = 10 to t = 30 minutes."
+        },
+        {
+          "type": "model",
+          "prompt": "An amount from a starting value and a rate.",
+          "text": "The amount at t = 6 is A(6) = A(0) + ∫ from 0 to 6 of A′(t) dt = 40 + ∫ from 0 to 6 of A′(t) dt."
+        },
+        {
+          "type": "model",
+          "prompt": "Whether a sum is too high or too low.",
+          "text": "P is decreasing on [0, 6], so on each subinterval the right endpoint gives the least value of P. Each right rectangle lies below the graph of P, so the right Riemann sum is less than ∫ from 0 to 6 of P(t) dt."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the chain factor: d/dx ∫ from 0 to x^3 of cos t dt = cos(x^3).",
+          "fix": "The upper limit is x^3, so multiply by its derivative: cos(x^3)·3x^2. For a variable lower limit, subtract f(lower limit) times the lower limit's derivative."
+        },
+        {
+          "type": "trap",
+          "text": "Mixing variables in a substitution: changing the integrand to u but keeping the x-limits, as in ∫ from 0 to 1 of 2x(x^2 + 1)^3 dx = ∫ from 0 to 1 of u^3 du.",
+          "fix": "Convert the limits (x = 0 gives u = 1 and x = 1 gives u = 2, so the integral is ∫ from 1 to 2 of u^3 du), or rewrite the antiderivative in x before evaluating at 0 and 1."
+        },
+        {
+          "type": "trap",
+          "text": "Evaluating F(b) − F(a) in the wrong order, or subtracting only the first term of F(a).",
+          "fix": "Write [F(x)] from a to b = F(b) − F(a) with brackets around each whole value: (F at the top) − (F at the bottom)."
+        },
+        {
+          "type": "trap",
+          "text": "Giving every subinterval the same width when the table's spacing is uneven, or counting table values instead of subintervals.",
+          "fix": "Find each width from the table and pair it with that subinterval's own heights."
+        },
+        {
+          "type": "trap",
+          "text": "Deciding over or under from the numbers alone, for example calling a right sum an underestimate because the data happen to fall.",
+          "fix": "Name the property that decides it (increasing or decreasing for left and right sums, concavity for midpoint and trapezoidal sums) and say where it comes from: the problem statement, or f′ or f″. If neither is given, the estimate cannot be classified."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting a signed integral as an area when part of the graph lies below the axis.",
+          "fix": "For area, split at the zeros and add absolute values (or integrate |f|). The integral itself counts area below the axis as negative."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a zero of f an extremum of g(x) = ∫ from a to x of f(t) dt even though f does not change sign there.",
+          "fix": "g has a relative extremum only where g′ = f changes sign. Check both sides of each zero."
+        },
+        {
+          "type": "trap",
+          "text": "Matching the wrong form: writing ln(x^2 + 9) for ∫ dx/(x^2 + 9), or arctan for ∫ x dx/(x^2 + 9).",
+          "fix": "A logarithm needs the numerator to be a constant multiple of the denominator's derivative; a constant numerator over (u^2 + a^2) gives (1/a)arctan(u/a). Differentiate your answer to check."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the remainder after long division, or completing the square incorrectly (x^2 + 6x + 12 is (x + 3)^2 + 3, not (x + 3)^2 + 12).",
+          "fix": "Check a division by multiplying back: quotient × divisor + remainder must equal the numerator. Check a completed square by expanding it."
+        },
+        {
+          "type": "trap",
+          "text": "Forgetting + C, or using the power rule on x^(−1).",
+          "fix": "Every indefinite integral ends with + C. ∫ x^(−1) dx = ln|x| + C; the power rule would divide by 0."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each example models a procedure the problems test. If a problem sent you here, study the example that uses the same procedure, then retry the problem cold on a later day."
+        },
+        {
+          "type": "example",
+          "prompt": "The graph of f on [0, 8] consists of a semicircle of radius 2 above the t-axis from t = 0 to t = 4, a line segment from (4, 0) to (6, −2), and a horizontal segment from (6, −2) to (8, −2). Let g(x) = ∫ from 0 to x of f(t) dt. (a) Find g(4), g(6) and g(8). (b) Find the absolute maximum and absolute minimum values of g on [0, 8]. (c) Find where the graph of g is concave up and concave down, and its point of inflection. (d) Find the value of x in (4, 8) at which g(x) = 2π − 4.",
+          "answer": "(a) g(4) = 2π, g(6) = 2π − 2 and g(8) = 2π − 6. (b) The absolute maximum value is 2π, at x = 4; the absolute minimum value is 0, at x = 0. (c) Concave up on (0, 2), concave down on (2, 6), a line on (6, 8); point of inflection at x = 2. (d) x = 7.",
+          "steps": [
+            "Areas: the semicircle above the axis has area (1/2)π(2)^2 = 2π; the triangle from 4 to 6 lies below the axis, −2; the rectangle from 6 to 8 lies below, −4.",
+            "(a) g(4) = 2π, g(6) = 2π − 2 and g(8) = 2π − 2 − 4 = 2π − 6.",
+            "(b) g′ = f. In (0, 8), f = 0 only at x = 4, where f changes from positive to negative, so g has a relative maximum at x = 4 and no other critical point.",
+            "g is continuous on [0, 8], so compare the candidates g(0) = 0, g(4) = 2π ≈ 6.283 and g(8) = 2π − 6 ≈ 0.283. The absolute maximum value is 2π, at x = 4; the absolute minimum value is 0, at x = 0. g(8) is close to 0 but larger, because the area below the axis, 6, is less than 2π.",
+            "(c) g″ = f′: f is increasing on (0, 2) and decreasing on (2, 6), so the graph of g is concave up on (0, 2) and concave down on (2, 6). f is constant on (6, 8), so the graph of g is a line there.",
+            "f changes from increasing to decreasing at x = 2, so the graph of g has a point of inflection at x = 2.",
+            "(d) For 6 ≤ x ≤ 8, g(x) = g(6) + ∫ from 6 to x of (−2) dt = 2π − 2 − 2(x − 6). Setting this equal to 2π − 4 gives x − 6 = 1, so x = 7. On (4, 6], g only falls from 2π to 2π − 2, so there is no other solution."
+          ],
+          "figureIds": [
+            "ab-review-u6-g2"
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Evaluate exactly: (a) ∫ from 0 to 1 of (x + 1)√(x^2 + 2x + 3) dx and (b) ∫ from 0 to 3 of x√(x + 1) dx.",
+          "answer": "(a) 2√6 − √3 (b) 116/15",
+          "steps": [
+            "(a) The expression under the root is the natural u: u = x^2 + 2x + 3, du = (2x + 2) dx = 2(x + 1) dx, so (x + 1) dx = du/2. The leftover factor is a constant multiple of du, so the substitution works directly.",
+            "Limits: x = 0 gives u = 3, and x = 1 gives u = 6. The integral is (1/2)∫ from 3 to 6 of u^(1/2) du = (1/2)(2/3)[u^(3/2)] from 3 to 6 = (1/3)(6√6 − 3√3) = 2√6 − √3.",
+            "(b) With u = x + 1, du = dx, but a factor x is left over. Solve u = x + 1 for it: x = u − 1. Limits: x = 0 gives u = 1, and x = 3 gives u = 4.",
+            "∫ from 1 to 4 of (u − 1)u^(1/2) du = ∫ from 1 to 4 of (u^(3/2) − u^(1/2)) du = [(2/5)u^(5/2) − (2/3)u^(3/2)] from 1 to 4 = (64/5 − 16/3) − (2/5 − 2/3) = 62/5 − 14/3 = 116/15.",
+            "Reasonableness: on [0, 3] the integrand rises from 0 to 3·2 = 6, so the integral lies between 0 and 3·6 = 18; 116/15 ≈ 7.733 fits."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Evaluate ∫ from −2 to −1 of (3x + 4)/(x^2 + 4x + 5) dx exactly.",
+          "answer": "(3/2)ln 2 − π/2",
+          "steps": [
+            "Choose by structure. The numerator's degree is less than the denominator's, so there is nothing to divide. The denominator's derivative is 2x + 4, and 3x + 4 is not a multiple of it, so split: 3x + 4 = (3/2)(2x + 4) − 2.",
+            "The integrand becomes (3/2)(2x + 4)/(x^2 + 4x + 5) − 2/(x^2 + 4x + 5).",
+            "First piece: with u = x^2 + 4x + 5, it integrates to (3/2)ln(x^2 + 4x + 5). No absolute value is needed, because x^2 + 4x + 5 = (x + 2)^2 + 1 > 0.",
+            "Second piece: complete the square, x^2 + 4x + 5 = (x + 2)^2 + 1, so ∫ 2/((x + 2)^2 + 1) dx = 2arctan(x + 2) + C.",
+            "[(3/2)ln(x^2 + 4x + 5) − 2arctan(x + 2)] from −2 to −1 = ((3/2)ln 2 − 2(π/4)) − ((3/2)ln 1 − 2arctan 0) = (3/2)ln 2 − π/2.",
+            "Check the sign: (3/2)ln 2 − π/2 ≈ −0.531. On [−2, −1] the numerator 3x + 4 is negative for x < −4/3, two thirds of the interval, and the denominator is positive, so a negative value is reasonable."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 18: Accumulation of change and Riemann sums",
+              "ref": "week:18"
+            },
+            {
+              "label": "Week 19: Definite-integral notation and the Fundamental Theorem",
+              "ref": "week:19"
+            },
+            {
+              "label": "Week 20: Accumulation functions, integral properties, and the Fundamental Theorem",
+              "ref": "week:20"
+            },
+            {
+              "label": "Week 21: Antiderivatives and substitution",
+              "ref": "week:21"
+            },
+            {
+              "label": "Week 22: Long division, completing the square, and choosing a technique",
+              "ref": "week:22"
+            },
+            {
+              "label": "Unit 6 plan",
+              "ref": "unit:u6"
+            },
+            {
+              "label": "Unit 6 test",
+              "ref": "test:unit-6"
+            },
+            {
+              "label": "Unit 6 test key",
+              "ref": "key:unit-6"
+            },
+            {
+              "label": "Free-response workshop: rates and accumulation in context",
+              "ref": "guide:fr-accumulation"
+            },
+            {
+              "label": "Free-response workshop: functions given by tables",
+              "ref": "guide:fr-tables"
+            },
+            {
+              "label": "Free-response workshop: reading the graph of a derivative",
+              "ref": "guide:fr-derivative-graph"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

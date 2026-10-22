@@ -1,0 +1,349 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "mixed-5",
+  "kind": "mixed-set",
+  "title": "Mixed set 5: all units at exam pace",
+  "author": "ab-mixed-5-6-author",
+  "directions": "This original Liminal mixed set draws questions from across the AP® Calculus AB course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which method or principle applies: discs, washers or cross sections; slicing in x or in y; position or distance; a related-rates question or an optimization question; a slope field or the solutions it describes. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians, answers without a calculator are exact, and calculator answers are rounded to three decimal places. Record raw points, 1 per question and 15 in all; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "ab-mixed-5-mc01",
+              "prompt": "What is lim as x→3 of (x^2 − 9)/(x^2 − 6x + 9)?",
+              "choices": [
+                "1",
+                "∞",
+                "−∞",
+                "The limit does not exist; the one-sided limits are −∞ and ∞."
+              ],
+              "key": "D",
+              "rationale": "Substitution gives 0/0, so simplify first: (x − 3)(x + 3)/(x − 3)^2 = (x + 3)/(x − 3) for x ≠ 3. Now the numerator tends to 6 while the denominator tends to 0 and changes sign at 3, so the quotient tends to −∞ as x→3⁻ and to ∞ as x→3⁺. The one-sided limits differ, so the limit does not exist; the graph has a vertical asymptote at x = 3.",
+              "distractorNotes": {
+                "A": "This applies L’Hospital’s Rule twice, to 2x/(2x − 6) and then to 2/2. After the first application the form is 6/0, which is not indeterminate, so the rule no longer applies.",
+                "B": "This is only the right-hand limit. For x slightly less than 3, the simplified quotient (x + 3)/(x − 3) has a negative denominator, so it decreases without bound from the left.",
+                "C": "This is only the left-hand limit. For x slightly greater than 3 the quotient (x + 3)/(x − 3) is positive and increases without bound."
+              },
+              "topics": [
+                "AB.1.7",
+                "AB.1.14"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc02",
+              "prompt": "Let R be the region bounded by the graph of y = 2√x, the line y = x − 3, and the x-axis. What is the area of R?",
+              "choices": [
+                "18",
+                "45/2",
+                "36",
+                "27/4"
+              ],
+              "key": "A",
+              "rationale": "The curve and the line meet where 2√x = x − 3, at (9, 6). In x the lower boundary changes at x = 3 (from the x-axis to the line), so horizontal slices are simpler: R runs from x = y^2/4 on the left to x = y + 3 on the right for 0 ≤ y ≤ 6. Area = ∫ from 0 to 6 of (y + 3 − y^2/4) dy = 18 + 18 − 18 = 18. In x it takes two pieces: ∫ from 0 to 9 of 2√x dx − ∫ from 3 to 9 of (x − 3) dx = 36 − 18 = 18.",
+              "distractorNotes": {
+                "B": "This is ∫ from 0 to 9 of (2√x − (x − 3)) dx, which uses the line as the lower boundary from x = 0. For 0 < x < 3 the line lies below the x-axis, so the triangle between the x-axis and the line, of area 9/2, is wrongly included.",
+                "C": "This is the area under y = 2√x from x = 0 to x = 9. The triangle under the line from x = 3 to x = 9, of area 18, is not part of R and must be removed.",
+                "D": "This uses the correct integrand in y, (y + 3) − y^2/4, but the x-limits 0 to 9. In y the region runs from y = 0 to y = 6."
+              },
+              "topics": [
+                "AB.8.5",
+                "AB.8.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc03",
+              "prompt": "The curve y^2 = x^3 + 1 passes through the point (2, 3), and near this point y is a differentiable function of x. What is the value of d^2y/dx^2 at (2, 3)?",
+              "choices": [
+                "2",
+                "4/3",
+                "2/3",
+                "10/3"
+              ],
+              "key": "C",
+              "rationale": "Differentiate implicitly: 2y·(dy/dx) = 3x^2, so dy/dx = 3x^2/(2y) = 12/6 = 2 at (2, 3). Differentiate dy/dx = 3x^2/(2y) again, remembering that y depends on x: d^2y/dx^2 = (6x·2y − 3x^2·2(dy/dx))/(2y)^2 = (72 − 48)/36 = 2/3.",
+              "distractorNotes": {
+                "A": "This treats y as a constant when differentiating dy/dx = 3x^2/(2y), giving 6x/(2y) = 2. Because y changes with x, the quotient rule adds a term containing dy/dx.",
+                "B": "This differentiates 2y·(dy/dx) as 2(dy/dx) + 2y·(d^2y/dx^2), so the first term is 4 instead of 2(dy/dx)^2 = 8. Differentiating y gives dy/dx, which multiplies the dy/dx already there.",
+                "D": "This adds the two terms in the numerator of the quotient rule, (72 + 48)/36. The numerator is (bottom)(derivative of top) minus (top)(derivative of bottom)."
+              },
+              "topics": [
+                "AB.3.2",
+                "AB.3.6"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc04",
+              "prompt": "Let F(x) = ∫ from 2 to x of √(t^3 + 1) dt. Which is an equation of the line tangent to the graph of F at x = 2?",
+              "choices": [
+                "y − 3 = 3(x − 2)",
+                "y = 3(x − 2)",
+                "y = 2(x − 2)",
+                "y − 3 = 2(x − 2)"
+              ],
+              "key": "B",
+              "rationale": "F(2) = ∫ from 2 to 2 of √(t^3 + 1) dt = 0, so the point of tangency is (2, 0). By the Fundamental Theorem of Calculus, F′(x) = √(x^3 + 1), so F′(2) = √9 = 3. The tangent line is y = 3(x − 2).",
+              "distractorNotes": {
+                "A": "This uses the integrand’s value √9 = 3 as F(2). F(2) is an integral over an interval of length zero, so F(2) = 0.",
+                "C": "The slope 2 is the derivative of the integrand, 3t^2/(2√(t^3 + 1)), at t = 2. By the Fundamental Theorem of Calculus F′(x) is the integrand itself; differentiating the integrand gives F″.",
+                "D": "This treats F as if it were the integrand: 3 and 2 are the value and the derivative of √(x^3 + 1) at x = 2, not of F."
+              },
+              "topics": [
+                "AB.6.4",
+                "AB.2.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc05",
+              "prompt": "A point P moves along the part of the graph of y = 4 − x^2 that lies in the first quadrant, so that its x-coordinate increases at a constant rate of 3 units per second. A rectangle has vertices at the origin, (x, 0), P, and (0, y), where (x, y) are the coordinates of P. At the instant when the area of the rectangle is greatest, at what rate, in units per second, is the perimeter of the rectangle changing?",
+              "choices": [
+                "6 − 8√3",
+                "0",
+                "2 − (8√3)/3",
+                "3 − 4√3"
+              ],
+              "key": "A",
+              "rationale": "An optimization step fixes the instant and a related-rates step is taken at that instant. The area is A = x(4 − x^2) = 4x − x^3, and A′(x) = 4 − 3x^2 = 0 at x = 2/√3, where A′ changes from positive to negative, so the area is greatest there. The perimeter is P = 2x + 2(4 − x^2), so dP/dt = (2 − 4x)(dx/dt) = (2 − 8/√3)(3) = 6 − 24/√3 = 6 − 8√3, about −7.86 units per second.",
+              "distractorNotes": {
+                "B": "At the instant of greatest area dA/dt = 0, but the perimeter is a different quantity, and its rate of change is not zero then.",
+                "C": "This is dP/dx = 2 − 4x at x = 2/√3. By the chain rule dP/dt = (dP/dx)(dx/dt), so it must still be multiplied by 3.",
+                "D": "This differentiates x + y, which is half the perimeter: (1 − 2x)(3) at x = 2/√3. The perimeter is 2x + 2y."
+              },
+              "topics": [
+                "AB.4.5",
+                "AB.5.11"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc06",
+              "prompt": "Each function below is continuous at x = 0. Which one is differentiable at x = 0?",
+              "choices": [
+                "f(x) = |x|·e^x",
+                "f(x) = ∛(sin x)",
+                "f(x) = x^2 + x for x ≤ 0, and f(x) = sin x for x > 0",
+                "f(x) = e^x − 1 for x ≤ 0, and f(x) = 2x + x^2 for x > 0"
+              ],
+              "key": "C",
+              "rationale": "Continuity alone does not settle differentiability, so compare the one-sided difference quotients at 0. For the piecewise function in (C), both pieces give f(0) = 0. From the left, (f(h) − f(0))/h = (h^2 + h)/h = h + 1, which tends to 1; from the right, (sin h)/h tends to 1. The one-sided limits agree, so f′(0) = 1. Each other function has one-sided difference quotients that disagree or are unbounded.",
+              "distractorNotes": {
+                "A": "The difference quotient |h|·e^h/h tends to 1 from the right and to −1 from the left, so the graph has a corner at 0.",
+                "B": "sin x is differentiable, but the cube root has a vertical tangent at 0: ∛(sin h)/h = ∛(sin h/h)/h^(2/3), which grows without bound as h→0, so the chain rule cannot be applied there.",
+                "D": "The pieces meet at f(0) = 0, so f is continuous, but the slopes from the two sides differ: e^0 = 1 from the left and 2 + 2(0) = 2 from the right. Matching values do not make matching slopes."
+              },
+              "topics": [
+                "AB.2.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc07",
+              "prompt": "Let R be the region enclosed by the graphs of y = √x and y = x/2, which intersect at x = 0 and x = 4. Which integral gives the volume of the solid generated when R is revolved about the vertical line x = −1?",
+              "choices": [
+                "π ∫ from 0 to 2 of ((2y)^2 − (y^2)^2) dy",
+                "π ∫ from 0 to 4 of ((√x + 1)^2 − (x/2 + 1)^2) dx",
+                "π ∫ from 0 to 2 of ((2y − 1)^2 − (y^2 − 1)^2) dy",
+                "π ∫ from 0 to 2 of ((2y + 1)^2 − (y^2 + 1)^2) dy"
+              ],
+              "key": "D",
+              "rationale": "The axis x = −1 is vertical, so slice perpendicular to the y-axis and write the boundaries as functions of y: y = √x is x = y^2 and y = x/2 is x = 2y. For 0 < y < 2, y^2 < 2y, so R runs from x = y^2 on the left to x = 2y on the right, and R does not reach the axis, so each slice is a washer. Measured from x = −1, the outer radius is 2y + 1 and the inner radius is y^2 + 1, so V = π ∫ from 0 to 2 of ((2y + 1)^2 − (y^2 + 1)^2) dy (which equals 104π/15).",
+              "distractorNotes": {
+                "A": "These radii are measured from the y-axis, x = 0, so this is the volume when R is revolved about the y-axis. About x = −1 each radius is 1 unit longer.",
+                "B": "This slices perpendicular to the x-axis and adds 1 to each y-value, which measures distances from the horizontal line y = −1. It is the volume when R is revolved about y = −1, not about x = −1.",
+                "C": "These radii are distances to the line x = 1. The distance from a point at x to the line x = −1 is x + 1."
+              },
+              "topics": [
+                "AB.8.12",
+                "AB.8.5"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc08",
+              "prompt": "Let f(x) = x − 6∛x, where ∛x is the real cube root of x. What is the absolute minimum value of f on the closed interval [−27, 8]?",
+              "choices": [
+                "−4√2",
+                "−9",
+                "0",
+                "4√2"
+              ],
+              "key": "B",
+              "rationale": "f′(x) = 1 − 2x^(−2/3) = (x^(2/3) − 2)/x^(2/3). f′(x) = 0 when x^(2/3) = 2, that is, |x| = 2^(3/2) = 2√2, so x = 2√2 and x = −2√2; and f′ is undefined at x = 0. Since ∛(2√2) = √2, the candidates are f(−27) = −27 + 18 = −9, f(−2√2) = −2√2 + 6√2 = 4√2, f(0) = 0, f(2√2) = 2√2 − 6√2 = −4√2 (about −5.66), and f(8) = 8 − 12 = −4. The least value is −9, at the left endpoint.",
+              "distractorNotes": {
+                "A": "This is the relative minimum at x = 2√2, where f′(x) = 0. On a closed interval the endpoints are candidates too, and f(−27) = −9 is smaller.",
+                "C": "x = 0 is a critical number because f′ is undefined there, but f′ is negative on both sides of 0, so f(0) = 0 is not an extreme value, and it is not the least value.",
+                "D": "This is the absolute maximum, f(−2√2) = 4√2. It comes from the negative solution of x^(2/3) = 2."
+              },
+              "topics": [
+                "AB.5.5",
+                "AB.5.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc09",
+              "prompt": "For which differential equation are all the segments of its slope field along any horizontal line parallel to one another, so that shifting any solution curve left or right gives another solution curve?",
+              "choices": [
+                "dy/dx = x^2 − 4",
+                "dy/dx = y^2 − 4",
+                "dy/dx = x − y^2",
+                "dy/dx = y·e^x"
+              ],
+              "key": "B",
+              "rationale": "Segments along a horizontal line y = c are parallel exactly when the slope does not depend on x, that is, when dy/dx is a function of y alone. For dy/dx = y^2 − 4, if y = f(x) is a solution then so is y = f(x − k), because its derivative f′(x − k) equals f(x − k)^2 − 4. So left or right shifts of solution curves are solution curves.",
+              "distractorNotes": {
+                "A": "Here the slope depends only on x, so the segments along each vertical line are parallel. Shifting a solution curve up or down gives another solution, but shifting it left or right does not.",
+                "C": "The slope x − y^2 changes as x changes along a horizontal line, so the segments there are not parallel.",
+                "D": "The slope y·e^x changes with x along every horizontal line except y = 0, so the segments there are not parallel."
+              },
+              "topics": [
+                "AB.7.4",
+                "AB.7.3"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc10",
+              "prompt": "The derivative of a function f is f′(x) = x^4 − 4x^3. At which values of x does the graph of f have a point of inflection?",
+              "choices": [
+                "x = 3 only",
+                "x = 0 and x = 3",
+                "x = 0 and x = 4",
+                "x = 4 only"
+              ],
+              "key": "A",
+              "rationale": "Points of inflection are where f″ changes sign. f″(x) = 4x^3 − 12x^2 = 4x^2(x − 3). The factor 4x^2 is positive except at 0, so f″ has the sign of x − 3: negative for x < 0 and for 0 < x < 3, and positive for x > 3. The only point of inflection is at x = 3.",
+              "distractorNotes": {
+                "B": "f″(0) = 0 too, but f″ = 4x^2(x − 3) is negative on both sides of 0, so the concavity does not change there. A zero of f″ is only a candidate.",
+                "C": "These are the zeros of f′(x) = x^3(x − 4), the candidates for relative extrema of f. Points of inflection come from sign changes of f″.",
+                "D": "f′ changes from negative to positive at x = 4, which makes x = 4 a relative minimum of f, not a point of inflection."
+              },
+              "topics": [
+                "AB.5.6",
+                "AB.5.9"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "id": "ab-mixed-5-mc11",
+              "prompt": "Let R be the region enclosed by the graphs of y = 4/(1 + x^2) and y = x^2. R is the base of a solid whose cross sections perpendicular to the x-axis are squares. What is the volume of the solid?",
+              "choices": [
+                "65.725",
+                "55.604",
+                "17.699",
+                "6.951"
+              ],
+              "key": "C",
+              "rationale": "The graphs intersect where 4/(1 + x^2) = x^2, at x = −A and x = A with A ≈ 1.249621 (store the calculator’s value). A square’s side is the vertical extent of R, 4/(1 + x^2) − x^2, so V = ∫ from −A to A of (4/(1 + x^2) − x^2)^2 dx ≈ 17.699.",
+              "distractorNotes": {
+                "A": "This is π ∫ ((4/(1 + x^2))^2 − x^4) dx between the intersections, the volume when R is revolved about the x-axis. This solid is built on R with square cross sections; nothing is revolved.",
+                "B": "This is π ∫ (4/(1 + x^2) − x^2)^2 dx, which treats each square as a disc whose radius is the side length.",
+                "D": "This is (π/8) ∫ (4/(1 + x^2) − x^2)^2 dx, the volume when the cross sections are semicircles."
+              },
+              "topics": [
+                "AB.8.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc12",
+              "prompt": "A drop of ink spreads on a sheet of blotting paper, and the blot stays a circle. Its area increases at a rate of R(t) = 1.5 + t·e^(−t/2) square centimeters per second, where t is measured in seconds, and the area is 0 at t = 0. At time t = 4, at what rate, in centimeters per second, is the radius of the blot increasing?",
+              "choices": [
+                "0.816",
+                "0.353",
+                "0.244",
+                "0.199"
+              ],
+              "key": "D",
+              "rationale": "With A = πr^2, dA/dt = 2πr(dr/dt). The radius at t = 4 comes from the area: A(4) = ∫ from 0 to 4 of R(t) dt ≈ 8.375977, so r = √(A(4)/π) ≈ 1.632837 centimeters. Then dr/dt = R(4)/(2πr) ≈ 2.041341/10.259 ≈ 0.199 centimeter per second.",
+              "distractorNotes": {
+                "A": "This divides the area, A(4) ≈ 8.376 square centimeters, by 2πr. The related-rates equation needs the rate dA/dt = R(4) ≈ 2.041 instead.",
+                "B": "This drops π from the area formula, taking A = r^2: then r = √8.376 ≈ 2.894 and dr/dt = R(4)/(2r). The area of a circle is πr^2.",
+                "C": "This finds the radius from A(4) = 2πr, the circumference formula, getting r ≈ 1.333. The radius must come from the area formula A = πr^2."
+              },
+              "topics": [
+                "AB.4.5",
+                "AB.8.3"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc13",
+              "prompt": "A particle moves along the x-axis with velocity v(t) = 2ln(t + 1)·cos t meters per second for 0 ≤ t ≤ 5, where t is measured in seconds. At time t = 0 the particle is at x = 3. What is the position of the particle at time t = 5?",
+              "choices": [
+                "9.620",
+                "−1.636",
+                "−4.636",
+                "7.636"
+              ],
+              "key": "B",
+              "rationale": "Position comes from the net change: x(5) = x(0) + ∫ from 0 to 5 of v(t) dt = 3 + (−4.635873) ≈ −1.636 meters. The integral is signed, so the leftward motion, while v(t) < 0, offsets the rightward motion.",
+              "distractorNotes": {
+                "A": "This adds the total distance traveled, ∫ from 0 to 5 of |v(t)| dt ≈ 6.620, to 3. Position uses the signed integral, so the motion to the left while v(t) < 0 (for π/2 < t < 3π/2) must count as negative.",
+                "C": "This is the displacement, ∫ from 0 to 5 of v(t) dt, alone; the starting position x(0) = 3 must be added to it.",
+                "D": "This adds the size of the displacement, |−4.636|, to 3, as if the net motion were to the right."
+              },
+              "topics": [
+                "AB.8.2",
+                "AB.4.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc14",
+              "prompt": "Visitors enter a county fair at a rate of E(t) = 180t·e^(−t/3) people per hour and leave at a rate of L(t) = 20t + 4t^2 people per hour, where t is the number of hours after the gates open, for 0 ≤ t ≤ 9. At what time t is the number of people at the fair increasing most rapidly?",
+              "choices": [
+                "1.897",
+                "4.626",
+                "3.000",
+                "9.000"
+              ],
+              "key": "A",
+              "rationale": "The number of people N(t) changes at the rate N′(t) = E(t) − L(t). The question asks for the absolute maximum of N′ on [0, 9], so the candidates are the times where N″(t) = E′(t) − L′(t) = 0 and the endpoints. A calculator gives E′(t) = L′(t) at t ≈ 1.897, where N′ ≈ 129.1 people per hour, while N′(0) = 0 and N′(9) ≈ −423.3. The number of people increases most rapidly at t ≈ 1.897.",
+              "distractorNotes": {
+                "B": "This solves E(t) = L(t), where the net rate changes from positive to negative. That is when the number of people is greatest, not when it is increasing fastest.",
+                "C": "This is where E′(t) = 0, the time when people enter fastest. The rate at which people leave is also increasing, so the net rate peaks earlier.",
+                "D": "At t = 9 the net rate E(9) − L(9) ≈ −423 is its least value: this is when the number of people is decreasing most rapidly."
+              },
+              "topics": [
+                "AB.5.5",
+                "AB.8.3",
+                "AB.4.3"
+              ]
+            },
+            {
+              "id": "ab-mixed-5-mc15",
+              "prompt": "The amount of caffeine in a person’s bloodstream decreases at a rate proportional to the amount present. At 8 a.m. the amount is 200 milligrams, and at noon it is 140 milligrams. How many hours after 8 a.m. will the amount be 50 milligrams?",
+              "choices": [
+                "10.000",
+                "11.547",
+                "15.547",
+                "18.484"
+              ],
+              "key": "C",
+              "rationale": "dA/dt = kA gives A(t) = 200e^(kt), with t in hours after 8 a.m. From A(4) = 140, e^(4k) = 0.7 and k = ln(0.7)/4 ≈ −0.089169. Solving 200e^(kt) = 50 gives t = ln(0.25)/k = 4ln(0.25)/ln(0.7) ≈ 15.547 hours.",
+              "distractorNotes": {
+                "A": "This assumes a constant rate of decrease, 60 milligrams in 4 hours, or 15 milligrams per hour. A rate proportional to the amount slows as the amount falls.",
+                "B": "This is the number of hours after noon, not after 8 a.m.",
+                "D": "This uses k = −0.3/4 = −0.075, the fraction lost in 4 hours divided by 4, as the rate constant. The constant must come from solving e^(4k) = 0.7."
+              },
+              "topics": [
+                "AB.7.8",
+                "AB.7.1"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

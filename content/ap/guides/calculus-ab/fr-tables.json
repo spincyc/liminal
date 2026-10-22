@@ -1,0 +1,448 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-tables",
+  "kind": "fr-archetype",
+  "title": "Functions given by tables",
+  "author": "ab-workshop-author",
+  "summary": "Some free-response questions on the AP® Calculus AB Exam give a function only through a table of values. You estimate derivatives with difference quotients, approximate integrals with Riemann and trapezoidal sums on unequal subintervals, decide whether an estimate is too high or too low from a stated property, apply the Intermediate and Mean Value Theorems to table values, and combine tables of f, g and their derivatives with the chain rule, inverse functions and substitution. This guide shows what earns each kind of point, gives model sentences and traps, works one model question, and ends with three checks and a three-question practice set.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "ab-fr-tables-g1",
+      "alt": "Graph of a decreasing curve labeled r(t) through the points (0, 12), (1, 10), (3, 7), (4, 6) and (7, 4), on axes labeled t (hours) and r(t). Four shaded rectangles stand on the unequal subintervals from 0 to 1, 1 to 3, 3 to 4 and 4 to 7. Each rectangle's height is the curve's value at the right end of its subinterval, so each top edge lies below the curve except at its right corner.",
+      "caption": "A right Riemann sum on unequal widths for a decreasing function: every rectangle fits under the curve, so the sum is too small."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The stem gives a function, often a rate in a real context, at a handful of inputs, and the inputs are usually unevenly spaced. It may also state properties: differentiable, increasing, concave up. Every part has to be answered from those few numbers and the stated properties. Nothing else about the function is known."
+        },
+        {
+          "type": "text",
+          "text": "Table questions turn up in both free-response parts. In the no-calculator part the values are chosen so that sums come out cleanly by hand. In the calculator part a table is often paired with a model formula, and the calculator work is done on the model, not on the table."
+        },
+        {
+          "type": "text",
+          "text": "A second kind of table gives values of two functions and their derivatives, f, f′, g and g′, at a few inputs. Then the parts ask for derivatives of combinations (chain, product and quotient rules), the derivative of an inverse, an integral by substitution, or the derivative of an integral whose upper limit is g(x). Each one is a rule applied at the right table entry."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "A question draws three or four of these for its 9 points. The right column is where Liminal's rubrics usually put the points.",
+          "head": [
+            "Part type",
+            "What you write",
+            "Points usually go to"
+          ],
+          "rows": [
+            [
+              "Estimate a derivative",
+              "A difference quotient from the nearest table values on either side of the point",
+              "The quotient with numbers; an interpretation with the input, direction and units"
+            ],
+            [
+              "Approximate an integral",
+              "A left, right, midpoint or trapezoidal sum, each term with its own width",
+              "The sum written term by term; its value"
+            ],
+            [
+              "Meaning of an integral",
+              "One sentence: what accumulates, over which interval, in which units",
+              "Quantity, interval and units together"
+            ],
+            [
+              "Over or under",
+              "The stated property (sign of f′ or f″) and the geometric reason",
+              "The conclusion tied to the property"
+            ],
+            [
+              "Must a value exist?",
+              "The theorem's hypotheses, the computed value, the conclusion",
+              "The value; the theorem with its hypotheses"
+            ],
+            [
+              "Average value",
+              "(1/(b − a)) times an integral or its approximation",
+              "Division by the length of the interval; units"
+            ],
+            [
+              "Derivative of a combination",
+              "The rule written with function names, then the table entries",
+              "The rule; the value read at the right input"
+            ],
+            [
+              "Derivative of an inverse",
+              "The matching input from the table, then 1 over the derivative there",
+              "The point; the slope"
+            ],
+            [
+              "Integral by substitution or the Fundamental Theorem",
+              "The antiderivative, then table values at the new limits",
+              "The antiderivative or new limits; the value"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal's rubrics give five kinds of points, and table questions use all of them."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points: the sum or quotient written with the actual numbers, so a reader can check each width and each height. A total with no sum behind it cannot earn a setup point; an arithmetic slip after a correct setup usually costs only the answer point.",
+            "Answer points: the value, simplified. In the no-calculator part, fractions and short decimals are exact; leave 29/4 as 29/4. In the calculator part, give three decimal places.",
+            "Justification points: a sentence naming the function, the property or theorem, and why it applies. \"Because r″ > 0, the graph of r is concave up\" earns credit; \"because the numbers go up faster\" does not.",
+            "Units and context points: an interpretation says when or where, what happens to which quantity, and in what units.",
+            "Consistency points: a later part that uses an earlier wrong value can still earn its points when the work shows that value and is consistent with it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Sums on unequal subintervals",
+          "text": "A subinterval [a, b] contributes (b − a)·f(a) to a left sum, (b − a)·f(b) to a right sum, and (b − a)·(f(a) + f(b))/2 to a trapezoidal sum. Add the contributions.",
+          "conditions": [
+            "There is no single Δx when the inputs are unevenly spaced; read every width off the table.",
+            "A midpoint sum needs the value at each subinterval's midpoint, so it is possible only when the table gives those values."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Over or under: monotonicity decides left and right sums; concavity decides trapezoidal and midpoint sums. Each needs the property on the whole interval.",
+          "head": [
+            "Stated property",
+            "Left sum",
+            "Right sum",
+            "Trapezoidal sum",
+            "Midpoint sum"
+          ],
+          "rows": [
+            [
+              "f′ > 0, f increasing",
+              "too small",
+              "too large",
+              "not decided",
+              "not decided"
+            ],
+            [
+              "f′ < 0, f decreasing",
+              "too large",
+              "too small",
+              "not decided",
+              "not decided"
+            ],
+            [
+              "f″ > 0, concave up",
+              "not decided",
+              "not decided",
+              "too large",
+              "too small"
+            ],
+            [
+              "f″ < 0, concave down",
+              "not decided",
+              "not decided",
+              "too small",
+              "too large"
+            ]
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "ab-fr-tables-g1"
+        },
+        {
+          "type": "rule",
+          "title": "Intermediate Value Theorem",
+          "text": "If f is continuous on [a, b] and N lies strictly between f(a) and f(b), then f(c) = N for at least one c in (a, b).",
+          "conditions": [
+            "f is continuous on the closed interval. A differentiable function is continuous, so \"f is differentiable\" in the stem is enough."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Mean Value Theorem",
+          "text": "If f is continuous on [a, b] and differentiable on (a, b), then f′(c) = (f(b) − f(a))/(b − a) for at least one c in (a, b).",
+          "conditions": [
+            "Continuity alone is not enough; the theorem needs differentiability on the open interval.",
+            "Sums, products and compositions of differentiable functions are differentiable, so the theorem applies to h(x) = f(g(x)) when f and g are differentiable."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Derivatives read from a table",
+          "text": "Chain rule: if h(x) = f(g(x)), then h′(a) = f′(g(a))·g′(a). Inverse: if g(a) = b and g′(a) ≠ 0, then (g^(−1))′(b) = 1/g′(a). Fundamental Theorem with the chain rule: if w(x) = ∫ from c to g(x) of f(t) dt, then w′(x) = f(g(x))·g′(x).",
+          "conditions": [
+            "Find the inner value g(a) first, then read the outer function's entry at that value.",
+            "For an inverse, g must be one-to-one (for example, strictly increasing) and differentiable at a.",
+            "For an inverse, locate b in the output row of g; the input a in that column is where g′ is read.",
+            "The Fundamental Theorem form needs f continuous."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Derivative estimate and interpretation. D(x) is the depth of a river, in meters, x meters from the west bank, with D(12) = 2.6 and D(20) = 3.4.",
+          "text": "D′(16) ≈ (D(20) − D(12))/(20 − 12) = (3.4 − 2.6)/8 = 0.1. Sixteen meters from the west bank, the depth of the river is increasing at about 0.1 meter per meter of distance toward the east bank."
+        },
+        {
+          "type": "model",
+          "prompt": "A left Riemann sum, where Q(t) is the rate, in gallons per hour, at which a well is pumped, with Q(0) = 14, Q(3) = 17, Q(5) = 15 and Q(9) = 16.",
+          "text": "∫ from 0 to 9 of Q(t) dt ≈ 3·Q(0) + 2·Q(3) + 4·Q(5) = 3(14) + 2(17) + 4(15) = 42 + 34 + 60 = 136 gallons."
+        },
+        {
+          "type": "model",
+          "prompt": "Meaning of that integral, and the average rate it gives.",
+          "text": "∫ from 0 to 9 of Q(t) dt is the total volume of water, in gallons, pumped from the well from t = 0 to t = 9 hours. The average pumping rate is (1/(9 − 0))∫ from 0 to 9 of Q(t) dt ≈ 136/9 gallons per hour."
+        },
+        {
+          "type": "model",
+          "prompt": "Over or under from monotonicity, for a function K with K′(t) < 0 on [0, 9].",
+          "text": "Because K′(t) < 0, K is decreasing on [0, 9]. On each subinterval K is largest at the left endpoint, so each left rectangle reaches above the graph, and the left Riemann sum overestimates ∫ from 0 to 9 of K(t) dt."
+        },
+        {
+          "type": "model",
+          "prompt": "Over or under from concavity, for a function H with H″(t) < 0 on [0, 9].",
+          "text": "Because H″(t) < 0, the graph of H is concave down on [0, 9]. Each trapezoid's top edge is a chord, which lies below a concave-down graph, so the trapezoidal sum underestimates ∫ from 0 to 9 of H(t) dt."
+        },
+        {
+          "type": "model",
+          "prompt": "Intermediate Value Theorem, for a differentiable function k with k(2) = 11 and k(6) = 3.",
+          "text": "k is differentiable, so it is continuous on [2, 6]. Since k(6) = 3 < 7 < 11 = k(2), the Intermediate Value Theorem gives a value c in (2, 6) with k(c) = 7."
+        },
+        {
+          "type": "model",
+          "prompt": "Mean Value Theorem, for the same k.",
+          "text": "k is continuous on [2, 6] and differentiable on (2, 6), and (k(6) − k(2))/(6 − 2) = (3 − 11)/4 = −2. By the Mean Value Theorem, k′(c) = −2 for some c in (2, 6)."
+        },
+        {
+          "type": "model",
+          "prompt": "Chain rule from a table, with h(x) = f(g(x)), g(3) = 5, g′(3) = 4 and f′(5) = −2.",
+          "text": "h′(3) = f′(g(3))·g′(3) = f′(5)·4 = (−2)(4) = −8."
+        },
+        {
+          "type": "model",
+          "prompt": "Derivative of an inverse from a table, with f(1) = 6 and f′(1) = 4.",
+          "text": "f(1) = 6, so f^(−1)(6) = 1 and (f^(−1))′(6) = 1/f′(1) = 1/4."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Using one Δx for every term out of habit from equal subintervals.",
+          "fix": "Write each width beside its term, 3·(…) + 2·(…) + 4·(…), reading the widths off the table before adding anything."
+        },
+        {
+          "type": "trap",
+          "text": "Estimating f′(7) from table values that do not surround 7, such as f(8) and f(10).",
+          "fix": "Use the nearest table values on each side of the point, so the interval contains it."
+        },
+        {
+          "type": "trap",
+          "text": "Deciding over or under from the pattern of the numbers: \"the values go down, so the left sum is too big.\"",
+          "fix": "A few values say nothing about the function between them. Cite a property the stem states, such as K′ < 0. If the stem states none, say that the table cannot decide."
+        },
+        {
+          "type": "trap",
+          "text": "Judging a trapezoidal sum by whether the function is increasing, or a left sum by concavity.",
+          "fix": "Monotonicity decides left and right sums; concavity decides trapezoidal and midpoint sums."
+        },
+        {
+          "type": "trap",
+          "text": "Stopping after \"the integral is overestimated\" when the question asks about something computed from the integral.",
+          "fix": "Follow the error through: if an amount left is a starting amount minus the integral, an overestimated integral makes the amount left an underestimate."
+        },
+        {
+          "type": "trap",
+          "text": "Reading the chain rule at the wrong input: h′(3) = f′(3)·g′(3) for h(x) = f(g(x)).",
+          "fix": "Find g(3) first and read f′ at that value: h′(3) = f′(g(3))·g′(3)."
+        },
+        {
+          "type": "trap",
+          "text": "Taking (f^(−1))′(6) = 1/f′(6), or f′ at 6 with no reciprocal.",
+          "fix": "Find the input where f equals 6, say f(1) = 6, and use (f^(−1))′(6) = 1/f′(1)."
+        },
+        {
+          "type": "trap",
+          "text": "Dividing a sum by the number of subintervals, or averaging the table values, to get an average value.",
+          "fix": "Divide the integral's estimate by the length of the interval, b − a. Unequal widths make a plain average of the table values wrong."
+        },
+        {
+          "type": "trap",
+          "text": "Citing a theorem with no hypotheses: \"by the Mean Value Theorem, yes.\"",
+          "fix": "Say why the function is continuous on the closed interval and differentiable on the open one; \"P is differentiable, so it is continuous\" covers both."
+        },
+        {
+          "type": "trap",
+          "text": "Writing an estimate as an equality, such as \"∫ from 0 to 9 of Q(t) dt = 136\".",
+          "fix": "Write ≈ between an integral and its estimate. An equals sign there is a false statement."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Fire crews run a controlled burn in a grassland. The fire burns new ground at the rate r(t) hectares per hour, where t is measured in hours after ignition. The function r is differentiable, and r′(t) < 0 for 0 ≤ t ≤ 7.\n\n| t (hours) | 0 | 1 | 3 | 4 | 7 |\n| --- | --- | --- | --- | --- | --- |\n| r(t) (hectares per hour) | 12 | 10 | 7 | 6 | 4 |\n\n(a) Estimate r′(2) and interpret it with units. (b) Use a right Riemann sum with the four subintervals in the table to approximate ∫ from 0 to 7 of r(t) dt. Is this an overestimate or an underestimate? Explain. (c) Use part (b) to estimate the average rate at which the fire burns new ground over 0 ≤ t ≤ 7. (d) Must there be a time t, 0 < t < 7, at which r(t) = 8? Justify.",
+          "answer": "(a) r′(2) ≈ −1.5 hectares per hour per hour: 2 hours after ignition, the burning rate is decreasing at about 1.5 hectares per hour each hour. (b) 42 hectares, an underestimate because r is decreasing. (c) About 6 hectares per hour. (d) Yes, by the Intermediate Value Theorem.",
+          "steps": [
+            "(a) The table values on either side of t = 2 are r(1) = 10 and r(3) = 7. r′(2) ≈ (7 − 10)/(3 − 1) = −1.5. The rate is in hectares per hour and time in hours, so r′ is in hectares per hour per hour; the negative sign means the burning rate is falling.",
+            "(b) Widths 1, 2, 1 and 3 hours, with right-endpoint values 10, 7, 6 and 4: 1(10) + 2(7) + 1(6) + 3(4) = 10 + 14 + 6 + 12 = 42. So ∫ from 0 to 7 of r(t) dt ≈ 42 hectares.",
+            "Because r′ < 0, r is decreasing, so on each subinterval r is smallest at the right endpoint. Each right rectangle fits under the graph, and 42 underestimates the area burned.",
+            "(c) The average rate is (1/(7 − 0))∫ from 0 to 7 of r(t) dt ≈ 42/7 = 6 hectares per hour. Dividing by 4, the number of subintervals, would be wrong.",
+            "(d) r is differentiable, so it is continuous on [1, 3]. Since r(3) = 7 < 8 < 10 = r(1), the Intermediate Value Theorem gives a time t in (1, 3) with r(t) = 8.",
+            "Check the habits: every width is written, the over-or-under answer cites r′ < 0, the average divides by 7, and the theorem names its hypothesis."
+          ],
+          "figureIds": [
+            "ab-fr-tables-g1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work each one on paper before you open the answer."
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-tables-c1",
+          "prompt": "A function q is positive, decreasing and concave up on [0, 12]. A table gives q at several inputs, including the midpoints of the subintervals used. For ∫ from 0 to 12 of q(x) dx on the same subintervals, which of the left, right, trapezoidal and midpoint sums must be overestimates, and which must be underestimates?",
+          "hint": "Use one property for the left and right sums and the other for the trapezoidal and midpoint sums.",
+          "answer": "Overestimates: the left sum and the trapezoidal sum. Underestimates: the right sum and the midpoint sum.",
+          "steps": [
+            "q is decreasing, so each left rectangle reaches above the graph (left sum too large) and each right rectangle fits under it (right sum too small).",
+            "q is concave up, so each chord lies above the graph (trapezoidal sum too large) and each tangent line at a midpoint lies below it, which makes each midpoint rectangle too small (midpoint sum too small)."
+          ],
+          "see": "earning-points"
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-tables-c2",
+          "prompt": "Use a trapezoidal sum with the three subintervals in the table to approximate the average value of m on [0, 6].\n\n| x | 0 | 2 | 3 | 6 |\n| --- | --- | --- | --- | --- |\n| m(x) | 4 | 8 | 6 | 10 |",
+          "hint": "Approximate the integral first; then divide by the length of the interval.",
+          "answer": "43/6",
+          "steps": [
+            "∫ from 0 to 6 of m(x) dx ≈ 2(4 + 8)/2 + 1(8 + 6)/2 + 3(6 + 10)/2 = 12 + 7 + 24 = 43.",
+            "Average value ≈ (1/(6 − 0))·43 = 43/6. Dividing by 3 (the number of subintervals) or averaging the four table values (7) are both wrong here."
+          ],
+          "see": "traps"
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-tables-c3",
+          "prompt": "Differentiable functions f and g have f(1) = 4, f′(1) = −2, g(1) = 6, g′(1) = 1/2, g(4) = 7 and g′(4) = 3. Let h(x) = g(f(x)) and k(x) = f(x)·g(x). Find h′(1) and k′(1).",
+          "hint": "For h, find f(1) first.",
+          "answer": "h′(1) = −6 and k′(1) = −10.",
+          "steps": [
+            "h′(1) = g′(f(1))·f′(1) = g′(4)·(−2) = 3(−2) = −6.",
+            "k′(1) = f′(1)·g(1) + f(1)·g′(1) = (−2)(6) + 4(1/2) = −12 + 2 = −10."
+          ],
+          "see": "model-wording"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set at 15 minutes a question: one calculator question first, then two without a calculator. Score each part with the rubric and record raw points as practice. Then use the reviews and weeks below for any skill that cost you a point."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-tables"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-tables"
+            },
+            {
+              "label": "Unit 6 review: integration and accumulation of change",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 5 review: analytical applications of differentiation",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 3 review: Differentiation: Composite, Implicit, and Inverse Functions",
+              "ref": "guide:review-u3"
+            },
+            {
+              "label": "Unit 2 review: Differentiation: Definition and Fundamental Properties",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 1 review: limits and continuity",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Week 18: accumulation of change and Riemann sums",
+              "ref": "week:18"
+            },
+            {
+              "label": "Week 6: rates of change and the derivative",
+              "ref": "week:6"
+            },
+            {
+              "label": "Week 14: Mean Value Theorem, extrema and increasing intervals",
+              "ref": "week:14"
+            },
+            {
+              "label": "Week 5: Intermediate Value Theorem and Unit 1 synthesis",
+              "ref": "week:5"
+            },
+            {
+              "label": "Week 9: chain rule, implicit differentiation and inverse functions",
+              "ref": "week:9"
+            },
+            {
+              "label": "Week 21: antiderivatives and substitution",
+              "ref": "week:21"
+            },
+            {
+              "label": "Week 32: Review: accumulation, applications, and calculator work",
+              "ref": "week:32"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

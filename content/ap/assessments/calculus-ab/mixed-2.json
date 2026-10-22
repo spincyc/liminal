@@ -1,0 +1,357 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "mixed-2",
+  "kind": "mixed-set",
+  "title": "Mixed set 2: all units at exam pace",
+  "author": "ab-mixed-1-2-author",
+  "directions": "This original Liminal mixed set draws questions from across the AP® Calculus AB course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which idea or method applies: which limit procedure or derivative rule fits, whether a theorem's hypotheses hold, and whether an extreme value is local or absolute. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians, answers without a calculator are exact, and calculator answers are rounded to three decimal places. Record raw points, 1 per question and 15 in all; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "ab-mixed-2-mc01",
+              "prompt": "What is lim as x→∞ of (2x + sin x)/(x + 1)?",
+              "choices": [
+                "2",
+                "3",
+                "The limit does not exist.",
+                "The limit is infinite."
+              ],
+              "key": "A",
+              "rationale": "Divide numerator and denominator by x: (2 + (sin x)/x)/(1 + 1/x). Since −1/x ≤ (sin x)/x ≤ 1/x for x > 0, the squeeze theorem gives (sin x)/x → 0 as x→∞. The limit is (2 + 0)/(1 + 0) = 2.",
+              "distractorNotes": {
+                "B": "This uses lim of (sin x)/x = 1, which holds as x→0, not as x→∞.",
+                "C": "L'Hospital's rule turns the quotient into (2 + cos x)/1, which oscillates. When the limit of the derivatives' quotient fails to exist, the rule gives no conclusion; it does not show that the original limit fails to exist.",
+                "D": "An ∞/∞ form is indeterminate: numerator and denominator both grow, but their ratio approaches 2."
+              },
+              "topics": [
+                "AB.1.15",
+                "AB.1.8",
+                "AB.4.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc02",
+              "prompt": "Which function has a jump discontinuity at x = 0?",
+              "choices": [
+                "f(x) = (1 − cos x)/x",
+                "f(x) = (sin x)/|x|",
+                "f(x) = (x + 1)/x^2",
+                "f(x) = sin(1/x)"
+              ],
+              "key": "B",
+              "rationale": "A jump needs both one-sided limits to exist and differ. For x > 0, (sin x)/|x| = (sin x)/x → 1; for x < 0, (sin x)/|x| = −(sin x)/x → −1. The one-sided limits are 1 and −1, so the discontinuity at 0 is a jump.",
+              "distractorNotes": {
+                "A": "(1 − cos x)/x → 0 from both sides, so this discontinuity is removable, not a jump.",
+                "C": "(x + 1)/x^2 → ∞ from both sides: an infinite discontinuity with a vertical asymptote x = 0.",
+                "D": "sin(1/x) oscillates between −1 and 1 near 0, so neither one-sided limit exists. A jump requires two finite one-sided limits."
+              },
+              "topics": [
+                "AB.1.10",
+                "AB.1.9"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc03",
+              "prompt": "If f(x) = (3x^2 + √x)/x, what is f′(4)?",
+              "choices": [
+                "49/16",
+                "−47/16",
+                "47/16",
+                "97/4"
+              ],
+              "key": "C",
+              "rationale": "Rewrite before differentiating: f(x) = 3x + x^(−1/2) for x > 0. Then f′(x) = 3 − (1/2)x^(−3/2), and f′(4) = 3 − 1/(2·8) = 47/16. The quotient rule gives the same result with more work.",
+              "distractorNotes": {
+                "A": "This drops the minus sign of the factor −1/2 that the power rule brings down from x^(−1/2), giving f′(x) = 3 + (1/2)x^(−3/2) and f′(4) = 3 + 1/16.",
+                "B": "This uses the quotient rule with the numerator's terms in the wrong order, (uv′ − u′v)/v^2, which reverses the sign.",
+                "D": "This divides the numerator's derivative by the denominator's derivative, (6x + 1/(2√x))/1 = 24 + 1/4. The derivative of a quotient is not the quotient of the derivatives."
+              },
+              "topics": [
+                "AB.2.5",
+                "AB.2.9",
+                "AB.2.6"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc04",
+              "prompt": "If f(x) = sin^2(3x), what is f′(π/12)?",
+              "choices": [
+                "−3",
+                "1",
+                "3√2",
+                "3"
+              ],
+              "key": "D",
+              "rationale": "f is a composition of three layers: the square, the sine, and 3x. The chain rule gives f′(x) = 2sin(3x)·cos(3x)·3 = 3sin(6x). At x = π/12, f′(π/12) = 3sin(π/2) = 3.",
+              "distractorNotes": {
+                "A": "This differentiates sin u as −cos u, giving 2sin(3x)(−cos(3x))·3 = −3.",
+                "B": "This omits the innermost factor 3 from 3x: 2sin(3x)cos(3x) = sin(π/2) = 1.",
+                "C": "This skips the power layer, differentiating sin^2(3x) as 2cos(3x)·3 = 6cos(π/4) = 3√2. The square contributes the factor 2sin(3x), not just 2."
+              },
+              "topics": [
+                "AB.3.1",
+                "AB.3.5"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc05",
+              "prompt": "The derivative of a function f is f′(x) = x^2 e^(3x − 3). What is the slope of the line tangent to the graph of f′ at x = 1?",
+              "choices": [
+                "5",
+                "1",
+                "3",
+                "6"
+              ],
+              "key": "A",
+              "rationale": "The slope of the line tangent to the graph of f′ is the derivative of f′, which is f″. By the product and chain rules, f″(x) = 2x e^(3x − 3) + x^2·3e^(3x − 3) = (3x^2 + 2x)e^(3x − 3). At x = 1, e^0 = 1, so f″(1) = 3 + 2 = 5.",
+              "distractorNotes": {
+                "B": "This is f′(1) = 1·e^0 = 1, the slope of the line tangent to the graph of f, not to the graph of f′.",
+                "C": "This drops the chain-rule factor 3 when differentiating e^(3x − 3): 2x e^(3x − 3) + x^2 e^(3x − 3) = 2 + 1 = 3 at x = 1.",
+                "D": "This multiplies the derivatives of the two factors, 2x·3e^(3x − 3) = 6 at x = 1. The derivative of a product is not the product of the derivatives."
+              },
+              "topics": [
+                "AB.3.6",
+                "AB.2.8",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc06",
+              "prompt": "The functions f and g have continuous derivatives for all x. Selected values are shown.\n\n| x | f(x) | f′(x) | g(x) | g′(x) |\n| --- | --- | --- | --- | --- |\n| 2 | 5 | 3 | 2 | 6 |\n\nWhat is lim as x→2 of (f(x) − 5)/(g(x) − x)?",
+              "choices": [
+                "1/2",
+                "3/5",
+                "5/3",
+                "The limit does not exist."
+              ],
+              "key": "B",
+              "rationale": "Check the form first: f(2) − 5 = 0 and g(2) − 2 = 0, so the limit has the form 0/0 and L'Hospital's rule applies. The limit equals lim of f′(x)/(g′(x) − 1) = 3/(6 − 1) = 3/5, using the continuity of f′ and g′ at 2.",
+              "distractorNotes": {
+                "A": "This differentiates the denominator as g′(x) and drops the derivative of −x, giving 3/6.",
+                "C": "This inverts the quotient, dividing the denominator's derivative by the numerator's.",
+                "D": "The form 0/0 is indeterminate; it does not mean the limit fails to exist."
+              },
+              "topics": [
+                "AB.4.7",
+                "AB.1.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc07",
+              "prompt": "To which function, on the interval given, does the Extreme Value Theorem apply?",
+              "choices": [
+                "f(x) = x^2 + 1 on (−1, 2)",
+                "f(x) = 1/(4 − x^2) on [0, 3]",
+                "f(x) = |sin x| on [−2, 2]",
+                "f(x) = (x^2 − 1)/(x − 1) on [0, 2]"
+              ],
+              "key": "C",
+              "rationale": "The Extreme Value Theorem needs a function continuous on a closed interval. |sin x| is continuous everywhere, and [−2, 2] is closed. Its corner at x = 0 does not matter: the theorem does not require differentiability.",
+              "distractorNotes": {
+                "A": "The interval is open. Here f has no maximum on (−1, 2), because f(x) approaches 5 as x→2 but never reaches it.",
+                "B": "f has a vertical asymptote at x = 2, inside [0, 3], so f is not continuous on the interval.",
+                "D": "f is undefined at x = 1, so it is not continuous on [0, 2]. It happens to attain a maximum and minimum there, but that comes from this example, not from the theorem."
+              },
+              "topics": [
+                "AB.5.2",
+                "AB.1.12"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc08",
+              "prompt": "Which function is an antiderivative of f(x) = (2x + 1)e^(2x)?",
+              "choices": [
+                "(x^2 + x)e^(2x)",
+                "(2x + 1)e^(2x)/2",
+                "(x^2 + x)e^(2x)/2",
+                "x e^(2x)"
+              ],
+              "key": "D",
+              "rationale": "Check each choice by differentiating. By the product and chain rules, d/dx[x e^(2x)] = e^(2x) + 2x e^(2x) = (2x + 1)e^(2x), which is f(x).",
+              "distractorNotes": {
+                "A": "This antidifferentiates only the polynomial factor. Its derivative is (2x + 1)e^(2x) + 2(x^2 + x)e^(2x), which has an extra term.",
+                "B": "This antidifferentiates e^(2x) and treats 2x + 1 as a constant. Its derivative is e^(2x) + (2x + 1)e^(2x) = (2x + 2)e^(2x).",
+                "C": "This multiplies separate antiderivatives of the two factors. The antiderivative of a product is not the product of antiderivatives; this function's derivative is (x^2 + 2x + 1/2)e^(2x)."
+              },
+              "topics": [
+                "AB.6.8",
+                "AB.2.8",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc09",
+              "prompt": "A population of fruit flies in a laboratory grows at a rate proportional to its size, so dP/dt = kP for a constant k, where t is measured in days. There are 50 flies at t = 0, and the population triples every 4 days. How many flies does the model predict at t = 6?",
+              "choices": [
+                "200",
+                "225",
+                "50·3^(2/3)",
+                "150√3"
+              ],
+              "key": "D",
+              "rationale": "The solution of dP/dt = kP with P(0) = 50 is P(t) = 50e^(kt). Tripling every 4 days gives e^(4k) = 3, so P(t) = 50·(e^(4k))^(t/4) = 50·3^(t/4). Then P(6) = 50·3^(3/2) = 50·3√3 = 150√3, about 260 flies.",
+              "distractorNotes": {
+                "A": "This treats the growth as linear, adding 100 flies every 4 days (25 per day), so P(6) = 50 + 25·6 = 200; a rate proportional to size gives exponential growth.",
+                "B": "This evaluates 3^(6/4) as 3·(6/4) = 4.5, multiplying instead of raising 3 to the power 3/2.",
+                "C": "This inverts the exponent, using 3^(4/6) instead of 3^(6/4); the exponent is the elapsed time divided by the tripling time."
+              },
+              "topics": [
+                "AB.7.8",
+                "AB.7.6"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc10",
+              "prompt": "A function f is continuous on [1, 5], and ∫ from 1 to 5 of f(x) dx = 12. Which statement must be true?",
+              "choices": [
+                "f(c) = 3 for some c in [1, 5].",
+                "f′(c) = 3 for some c in (1, 5).",
+                "f(5) − f(1) = 12",
+                "f(c) = 12 for some c in [1, 5]."
+              ],
+              "key": "A",
+              "rationale": "The average value of f on [1, 5] is 12/(5 − 1) = 3. A continuous function on a closed interval attains its average value: by the Extreme Value Theorem, m ≤ f ≤ M on [1, 5], so 4m ≤ 12 ≤ 4M and m ≤ 3 ≤ M, and the Intermediate Value Theorem gives c with f(c) = 3.",
+              "distractorNotes": {
+                "B": "This applies the Mean Value Theorem for derivatives, which needs f to be differentiable; here only continuity is given, and the integral gives the average of f, not of f′.",
+                "C": "The Fundamental Theorem of Calculus says the integral equals F(5) − F(1) for an antiderivative F of f, not f(5) − f(1).",
+                "D": "This forgets to divide by the interval's length. If f(x) = 3 for every x, the integral is 12 but f never equals 12."
+              },
+              "topics": [
+                "AB.8.1",
+                "AB.6.6",
+                "AB.1.16"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "id": "ab-mixed-2-mc11",
+              "prompt": "Let f(x) = x e^(−x/3). What value of c in the interval (0, 4) satisfies the conclusion of the Mean Value Theorem for f on [0, 4]?",
+              "choices": [
+                "0.264",
+                "1.636",
+                "1.365",
+                "2.000"
+              ],
+              "key": "B",
+              "rationale": "f is differentiable everywhere, so the theorem applies. The secant slope is (f(4) − f(0))/4 = e^(−4/3) = 0.263597. With f′(x) = e^(−x/3)(1 − x/3) by the product and chain rules, solving f′(c) = 0.263597 on (0, 4) gives c = 1.635821 ≈ 1.636.",
+              "distractorNotes": {
+                "A": "This is the secant slope, the value f′(c) must equal, not the value of c.",
+                "C": "This solves f(c) = (1/4)∫ from 0 to 4 of f(x) dx, the average value of f. That is the mean value theorem for integrals, not the Mean Value Theorem for derivatives.",
+                "D": "This is the midpoint of the interval. f′(2) = e^(−2/3)/3 = 0.171, which is not the secant slope."
+              },
+              "topics": [
+                "AB.5.1",
+                "AB.2.8"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc12",
+              "prompt": "A particle moves along the curve x e^y + y = 8. At the instant when x = 2, dx/dt = 3. What is dy/dt at that instant?",
+              "choices": [
+                "−1.307",
+                "−0.436",
+                "−10.169",
+                "−16.948"
+              ],
+              "key": "A",
+              "rationale": "First find y: 2e^y + y = 8 gives y = 1.220723 on the calculator (the left side increases with y, so there is one solution). Differentiate with respect to t, using the product and chain rules: e^y(dx/dt) + x e^y(dy/dt) + dy/dt = 0. So dy/dt = −e^y(dx/dt)/(x e^y + 1) = −3e^y/(2e^y + 1) = −1.307180 ≈ −1.307.",
+              "distractorNotes": {
+                "B": "This is dy/dx = −e^y/(x e^y + 1), the slope of the curve. It must be multiplied by dx/dt = 3 to give dy/dt.",
+                "C": "This differentiates x e^y as e^y(dx/dt) only, dropping the x e^y(dy/dt) term of the product rule: dy/dt = −3e^y.",
+                "D": "This differentiates e^y as e^y without the factor dy/dt: 3e^y + 2e^y + dy/dt = 0 gives dy/dt = −5e^y."
+              },
+              "topics": [
+                "AB.4.5",
+                "AB.3.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc13",
+              "prompt": "Water flows into a tank at the rate R(t) = 30e^(−0.1t)(1 + 0.5sin t) liters per minute and drains out at a constant 15 liters per minute, where t is measured in minutes and 0 ≤ t ≤ 10. The tank holds 300 liters at t = 0. At what time t is the amount of water in the tank greatest?",
+              "choices": [
+                "1.271",
+                "3.723",
+                "8.959",
+                "10.000"
+              ],
+              "key": "C",
+              "rationale": "The amount is A(t) = 300 + ∫ from 0 to t of (R(s) − 15) ds, so A′(t) = R(t) − 15. On the calculator, R(t) − 15 changes from positive to negative at t = 3.722726 and t = 8.958630 and from negative to positive at t = 6.128193. Compare the candidates: A(0) = 300, A(3.722726) = 361.378, A(8.958630) = 363.139, and A(10) = 359.369. The greatest amount is at t ≈ 8.959.",
+              "distractorNotes": {
+                "A": "This is where the net rate R(t) − 15 is greatest, the time the amount is rising fastest, not when the amount is greatest.",
+                "B": "This is the first relative maximum of A. The amount at t = 8.959 is about 1.762 liters greater, so a later relative maximum is the absolute one.",
+                "D": "This is the endpoint. A is decreasing from t = 8.959 to t = 10, so A(10) = 359.369 is less than the maximum."
+              },
+              "topics": [
+                "AB.8.3",
+                "AB.5.5",
+                "AB.6.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc14",
+              "prompt": "A particle moves along a line with velocity v(t) = √(t + 1)·cos t for 0 ≤ t ≤ 6. What is the greatest speed of the particle on this interval?",
+              "choices": [
+                "1.091",
+                "2.050",
+                "2.540",
+                "6.000"
+              ],
+              "key": "C",
+              "rationale": "Speed is |v(t)|, so its greatest value is at a critical point of v or at an endpoint. v′(t) = cos t/(2√(t + 1)) − √(t + 1)sin t = 0 on the calculator at t = 0.353793 and t = 3.258471. The candidates give |v(0)| = 1, |v(0.353793)| = 1.091, |v(3.258471)| = 2.050, and |v(6)| = 2.540. The greatest speed is 2.540, at the endpoint t = 6.",
+              "distractorNotes": {
+                "A": "This is the relative maximum of v, at t ≈ 0.354. A relative maximum of the velocity is neither the greatest speed nor, here, even the greatest velocity.",
+                "B": "This is the largest speed among the interior critical points, |v(3.259)|. It leaves out the endpoint t = 6, where the speed is greater.",
+                "D": "This is the time at which the greatest speed occurs, not the speed."
+              },
+              "topics": [
+                "AB.4.2",
+                "AB.5.5",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-2-mc15",
+              "prompt": "The curve x^2 − 3xy + y^4 = 10 has exactly one point with y > 0 at which the tangent line is vertical. What is the y-coordinate of that point?",
+              "choices": [
+                "0.909",
+                "1.597",
+                "1.778",
+                "2.117"
+              ],
+              "key": "B",
+              "rationale": "Implicit differentiation gives 2x − 3y − 3x(dy/dx) + 4y^3(dy/dx) = 0, so dy/dx = (3y − 2x)/(4y^3 − 3x). The tangent is vertical where the denominator is 0 and the numerator is not: x = 4y^3/3. Substituting into the curve, 16y^6/9 − 4y^4 + y^4 = 10, and the calculator gives y = 1.597348 (with x = 5.434, where 3y − 2x ≠ 0). So y ≈ 1.597.",
+              "distractorNotes": {
+                "A": "This differentiates 3xy as 3(dy/dx), multiplying derivatives instead of using the product rule. The denominator becomes 4y^3 − 3, which is 0 at y = (3/4)^(1/3) = 0.909.",
+                "C": "This differentiates y^4 as 4y^3 without the factor dy/dx. Then dy/dx = (2x − 3y + 4y^3)/(3x), which is undefined where x = 0, giving y = 10^(1/4) = 1.778.",
+                "D": "This sets the numerator 3y − 2x equal to 0, which gives a horizontal tangent, not a vertical one."
+              },
+              "topics": [
+                "AB.5.12",
+                "AB.3.2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

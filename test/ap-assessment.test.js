@@ -179,7 +179,8 @@ test("exam-prep kinds, ID segments, refs and routes resolve from the BC prep blo
   assert.equal(A.assessmentKind(bc, "mixed-6"), "mixed-set");
   assert.equal(A.assessmentKind(bc, "fr-series"), "fr-set");
   assert.equal(A.assessmentKind(bc, "practice-exam-z"), null, "only forms the plan lists");
-  assert.equal(A.assessmentKind(course("calculus-ab"), "mixed-1"), null, "AB has no prep block");
+  assert.equal(A.assessmentKind(course("calculus-ab"), "mixed-1"), "mixed-set", "AB has its own prep block");
+  assert.equal(A.assessmentKind(course("calculus-ab"), "fr-polar"), null, "only the archetypes a course's plan lists");
   assert.equal(A.guideKind(bc, "review-u10"), "unit-review");
   assert.equal(A.guideKind(bc, "fr-polar"), "fr-archetype");
   assert.equal(A.guideKind(bc, "memory-sheet"), "strategy");
@@ -198,7 +199,8 @@ test("exam-prep kinds, ID segments, refs and routes resolve from the BC prep blo
   assert.deepEqual(at("#calculus-bc/test/fr-polar/key"), ["assessment", "calculus-bc", "fr-polar", "key", null, false]);
   assert.deepEqual(at("#calculus-bc/test/practice-exam-d"), ["assessment", "calculus-bc", "practice-exam-d", "student", null, false]);
   assert.deepEqual(at("#calculus-bc/guide/unknown"), ["plan", "calculus-bc", null, null, null, true]);
-  assert.deepEqual(at("#calculus-ab/prep"), ["plan", "calculus-ab", null, null, null, true], "AB has no prep page");
+  assert.deepEqual(at("#calculus-ab/prep"), ["prep", "calculus-ab", null, null, null, false]);
+  assert.deepEqual(at("#physics-1/prep"), ["plan", "physics-1", null, null, null, true], "Physics 1 has no prep page yet");
   assert.equal(A.route("calculus-bc", "prep"), "#calculus-bc/prep");
   assert.equal(A.route("calculus-bc", "guide", "x/../y"), "");
 });

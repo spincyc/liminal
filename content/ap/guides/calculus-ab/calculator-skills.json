@@ -1,0 +1,481 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "calculator-skills",
+  "kind": "strategy",
+  "title": "Calculator skills for the calculator parts",
+  "author": "ab-strategy-author",
+  "summary": "What a graphing calculator is for in the calculator parts of the AP® Calculus AB Exam, whether you use Bluebook's built-in Desmos or an approved handheld: the four capabilities Liminal's practice keys let stand without shown steps, writing the setup before the result, three-decimal answers without early rounding, radian mode, windows that show every solution, the calculator tasks AB questions lean on, and when the calculator is the wrong tool. Eight checks with worked answers.",
+  "minutes": 45,
+  "figures": [
+    {
+      "id": "ab-calculator-skills-g1",
+      "alt": "Two graphs side by side for 0 ≤ x ≤ 8. Left, titled two curves, y ≤ 10: the solid curve y = e^(x/2) and the dashed line y = 3x. They cross once near the bottom left, marked with a dot near x = 0.4; both then leave the top of the window, the line first. Right, titled one function, −8 ≤ y ≤ 32: the single curve h(x) = e^(x/2) − 3x, which starts just above the x-axis, crosses it near x = 0.4, dips to a low point of about −5 near x = 3.6, crosses back up near x = 5.7 and rises steeply to about 30 at x = 8. Both crossings are marked with dots.",
+      "caption": "The left window shows one crossing. Graphing the difference shows both."
+    },
+    {
+      "id": "ab-calculator-skills-g2",
+      "alt": "Graph of v(t) = 1 − t·sin(t/2) for 0 ≤ t ≤ 5 and −3 ≤ v ≤ 1.5. The curve starts at 1, falls through the t-axis a little before t = 1.5, keeps falling to a low of about −2.6 near t = 4.1, and rises slightly to about −2 at t = 5. The small region above the axis is lightly shaded; the large region below the axis is shaded darker.",
+      "caption": "Velocity for check 5. Distance counts both shaded regions as positive."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-is-for",
+      "title": "What the calculator is for",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Two of the exam's four timed parts require a graphing calculator: Section I Part B, 13 multiple-choice questions in 38 minutes, and Section II Part A, 2 free-response questions in 30 minutes. Section I Part A and Section II Part B allow no calculator. In the calculator parts Bluebook provides a built-in Desmos graphing calculator, and you may also use up to two approved handheld calculators. (College Board's exam and calculator-policy pages, checked 2026-10-22.)"
+        },
+        {
+          "type": "text",
+          "text": "Liminal's practice keys and rubrics assume four calculator capabilities and a three-decimal accuracy rule. These are Liminal's practice conventions, drawn from College Board's earlier calculus calculator guidance, which is no longer posted. They are not a statement of the current exam's rules; for those, read College Board's current exam and calculator-policy pages."
+        },
+        {
+          "type": "table",
+          "caption": "The four capabilities and what each one looks like on paper.",
+          "head": [
+            "Capability",
+            "Use it to",
+            "On paper, write"
+          ],
+          "rows": [
+            [
+              "Graph a function in a window you choose",
+              "See a shape, count zeros, see which curve is on top",
+              "Nothing by itself: a graph is evidence for you, not for the reader"
+            ],
+            [
+              "Solve an equation numerically",
+              "Find limits of integration, a time when two rates are equal, a time when an amount reaches a level",
+              "The equation, then the solutions you use: 3cos(x/2) = (x − 1)^2 at x ≈ −0.682 and x ≈ 2.179"
+            ],
+            [
+              "Find a derivative at a point numerically",
+              "Get a rate at an instant, or the sign of f′(c) or of v′(c)",
+              "The derivative in notation, then its value: S′(4) ≈ −0.969"
+            ],
+            [
+              "Find a definite integral numerically",
+              "Get a net change, an amount, an area, a volume, a distance, an average value",
+              "The integral with its limits, integrand and differential, then its value"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "What a calculator result can stand for",
+          "text": "Under Liminal's convention, a result from one of the four capabilities counts as work once its setup is written: an integral may be evaluated with no antiderivative, an equation solved with no algebra, a derivative at a point found with no differentiation. Any other feature, such as a built-in maximum or minimum finder, a table of values, tracing along a curve or a regression, gives a number for checking yourself; the written answer still needs the calculus.",
+          "conditions": [
+            "The setup is written in mathematical notation next to the value.",
+            "For an extreme value, the calculus is the derivative, the candidates and a comparison or sign argument. Solving f′(x) = 0 numerically is one of the four capabilities, so that step may use the calculator.",
+            "A justification is a mathematical reason. \"The calculator shows it\" is not one."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Asked where f has a relative minimum, you run the graph's minimum finder and copy down the x-value it reports.",
+          "fix": "Write f′, solve f′(x) = 0 numerically, and state that f′ changes from negative to positive there. The minimum finder may confirm your answer, but it searches only between the bounds you give it and reports no reason, so it cannot replace the sign argument."
+        },
+        {
+          "type": "text",
+          "text": "Rehearse each capability on the device you will actually use, with a timer running, until no step needs looking up. If you plan to carry a handheld and also use Bluebook's Desmos, practise the same tasks on both."
+        }
+      ]
+    },
+    {
+      "id": "writing-results",
+      "title": "Writing the setup before the result",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "In a calculator part, your setup is the only evidence of your method. Write the mathematics you asked the calculator to do, in standard notation, and then the value. In Liminal's practice rubrics the setup usually earns its own point next to the answer point, so a correct setup with a keystroke slip still earns something, while a bare number earns nothing if it is wrong."
+        },
+        {
+          "type": "list",
+          "items": [
+            "An integral: the integrand, both limits and the differential, as in 30 + ∫ from 0 to 4 of (R(t) − D(t)) dt.",
+            "An equation: the equation and the solutions you will use, as in R(t) = D(t) at t ≈ 2.841.",
+            "A derivative: the function, the point and the notation, as in W′(3) ≈ 4.207.",
+            "A stored value: give it a name in your written work (let P ≈ 2.841 be the time when R = D) and use the name afterward, so the reader can follow it from line to line.",
+            "Use ≈ between a setup and its rounded value, and start a new line for each new quantity. Writing ∫ from 0 to 4 of r(t) dt = 21.583 + 30 = 51.583 joins things that are not equal; write 30 + ∫ from 0 to 4 of r(t) dt ≈ 30 + 21.583 = 51.583 instead."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Find the area of the region bounded by the graphs of y = 3cos(x/2) and y = (x − 1)^2.",
+          "text": "3cos(x/2) = (x − 1)^2 at x = A ≈ −0.682 and x = B ≈ 2.179, and 3cos(x/2) ≥ (x − 1)^2 for A ≤ x ≤ B. Area = ∫ from A to B of (3cos(x/2) − (x − 1)^2) dx ≈ 5.192."
+        },
+        {
+          "type": "model",
+          "prompt": "The depth of snow on a roof is S(t) = 8t·e^(−0.4t) + 2 centimeters, t hours after a storm begins. Is the depth increasing or decreasing at t = 4 hours? Give a reason.",
+          "text": "S′(4) ≈ −0.969. Since S′(4) < 0, the depth of snow is decreasing at t = 4 hours, at about 0.969 centimeters per hour."
+        },
+        {
+          "type": "trap",
+          "text": "Writing calculator input as the setup, such as a copy of the Desmos line or fnInt(3cos(X/2)−(X−1)^2,X,−0.682,2.179).",
+          "fix": "Translate it into the course's notation: ∫ from A to B of (3cos(x/2) − (x − 1)^2) dx. A reader who has never seen your device must be able to check it."
+        },
+        {
+          "type": "trap",
+          "text": "Writing only \"5.192\" because the calculator did all the work.",
+          "fix": "The setup is the work. Write the integral, equation or derivative first; it takes seconds, and it is what a rubric can credit when the number is wrong."
+        }
+      ]
+    },
+    {
+      "id": "accuracy",
+      "title": "Three decimal places, and storing values",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Liminal's accuracy convention for calculator answers",
+          "text": "Give a decimal answer correct to three decimal places unless the question asks for something else. Rounding at the third decimal is standard, and Liminal's keys also accept a value truncated at the third decimal. More correct decimals are fine. Fewer are not: 5.19 for 5.192 loses the answer point in Liminal's rubrics.",
+          "conditions": [
+            "The question does not set its own accuracy or form, such as \"to the nearest whole number\" or \"exact value\".",
+            "Every intermediate value was kept at full precision, so the third decimal of the final answer is right."
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Store each intermediate result under a name (the store command on a handheld, or a named value in Desmos) and use the name in later steps.",
+            "If you must retype a value, carry at least six decimal places. That is usually enough, but not when the value is multiplied by something large or sits in an exponent; store it then.",
+            "A value you report in one part, such as a time rounded for part (a), is still used at full precision in part (b). The rounded copy is for the reader.",
+            "Tracing along a graph or reading a point off the screen gives two or three digits at best. Use the solver or the intersection tool instead."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-calculator-skills-c1",
+          "prompt": "Water flows into a tank at the rate F(t) = 6 + 5arctan(t) liters per hour and drains out at a constant 9 liters per hour, for 0 ≤ t ≤ 8 hours. At t = 0 the tank holds 50 liters. (a) At what time T has a total of 40 liters flowed in? (b) How much water is in the tank at time T? (c) A student rounds T to three decimal places before doing part (b). What does the student get?",
+          "hint": "Part (a) is an equation with an integral in it. In part (b), the water that has drained out by time T is 9T liters.",
+          "answer": "(a) T ≈ 3.727 hours. (b) About 56.455 liters. (c) 56.457, wrong in the third decimal place.",
+          "steps": [
+            "(a) Solve ∫ from 0 to T of (6 + 5arctan(t)) dt = 40. The integral is about 30.979 at T = 3 and 43.433 at T = 4, so T lies between them; the solver gives T ≈ 3.727237. Store it.",
+            "(b) Amount = 50 + ∫ from 0 to T of F(t) dt − 9T = 50 + 40 − 9T ≈ 90 − 33.545130 = 56.454870, about 56.455 liters.",
+            "(c) With T = 3.727, the student gets 90 − 9(3.727) = 90 − 33.543 = 56.457. The rounding error in T, about 0.00024, is multiplied by 9 and reaches the third decimal place. Neither 56.455 nor the truncated 56.454 matches it.",
+            "The fix is to use the stored T in part (b), and round only the final answer."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "radian-mode",
+      "title": "Radian mode",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Every calculus fact about the trigonometric functions, such as the derivative of sin x being cos x, assumes angles in radians, and so do Liminal's practice questions unless a question says otherwise. A calculator in degree mode shows no warning: it quietly returns wrong values for every sine, cosine and tangent, and for every integral or derivative that contains one."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Check the angle setting at the start of every calculator part, on every device you will use.",
+            "Test it: cos(π/3) should return 0.5. In degree mode it returns about 0.9998.",
+            "If a question ever gives an angle in degrees, convert it to radians before doing any calculus with it."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-calculator-skills-c2",
+          "prompt": "In a calculator part, a student solves cos x = x^2 − 2 for 0 ≤ x ≤ 3 and reports x ≈ 1.732. Test the student's answer by substituting it into both sides, find the correct solution, and explain the student's result.",
+          "hint": "Substitute 1.732 into both sides in radian mode. Then ask which simpler equation 1.732 solves.",
+          "answer": "x ≈ 1.455. The student's value fails the equation: cos(1.732) ≈ −0.161, while 1.732^2 − 2 ≈ 1.000. The calculator was in degree mode, so it solved cos(x°) = x^2 − 2; the cosine of an angle under 3 degrees is almost 1, so it effectively solved x^2 − 2 = 1, giving √3 ≈ 1.732.",
+          "steps": [
+            "Substitute in radian mode: cos(1.732) ≈ −0.161 and 1.732^2 − 2 ≈ 1.000. The two sides differ by more than 1, so 1.732 is not a solution.",
+            "Let g(x) = cos x − x^2 + 2. Then g(0) = 3 > 0, g(3) = cos 3 − 7 < 0, and g′(x) = −sin x − 2x < 0 for 0 < x ≤ 3, so g has exactly one zero in [0, 3].",
+            "Solving g(x) = 0 in radian mode gives x ≈ 1.455. Check: cos(1.455) ≈ 0.116 and 1.455^2 − 2 ≈ 0.117, equal to the accuracy of the rounded input.",
+            "In degree mode the calculator reads x as an angle of x degrees, and for 0 ≤ x ≤ 3 that cosine is within 0.002 of 1. So it solved, almost exactly, 1 = x^2 − 2, whose solution is √3 ≈ 1.732.",
+            "A result that matches what you get by replacing a sine or cosine with 0 or 1 is the signature of degree mode. Substituting an answer back into the original equation catches it in seconds."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "windows",
+      "title": "Choosing a window and finding every solution",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A window is a question you put to the calculator: what happens for these x-values and these y-values? A standard window answers the wrong question for many exam functions. Set it from the problem."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Set the x-range to exactly the interval the question states. If none is stated, start wide and narrow down.",
+            "Set the y-range from values, not guesses: evaluate the function at both ends and at two or three points between, and cover them with some room.",
+            "To find every solution of f(x) = g(x), graph h(x) = f(x) − g(x) and look for its zeros. Zeros of one function always sit on the x-axis, while two curves can meet far above the window.",
+            "Back up the count with a reason: values of h with opposite signs on either side of each zero, and, where you can, the sign of h′ or h″ to show there are no others."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Step 3 fails in two ways. A zero where h touches the axis without crossing shows no sign change, so look for a low or high point of h at height 0. Two zeros closer together than a pixel look like one, so zoom in wherever h comes close to the axis."
+        },
+        {
+          "type": "figure",
+          "id": "ab-calculator-skills-g1"
+        },
+        {
+          "type": "example",
+          "prompt": "The derivative of a function f is f′(x) = e^(x/2) − 3x. Find every x in the interval 0 < x < 8 at which f has a relative extremum, and classify each one.",
+          "answer": "A relative maximum at x ≈ 0.409 and a relative minimum at x ≈ 5.666.",
+          "steps": [
+            "Graphing y = e^(x/2) and y = 3x with y ≤ 10 shows one crossing, near x = 0.4, before both leave the top of the window. It is tempting to stop there.",
+            "A reason to look further: f′(2) = e − 6 < 0 but f′(8) = e^4 − 24 ≈ 30.598 > 0, so f′ changes sign again between 2 and 8. The second crossing happens at a height of about 17, above the window.",
+            "Graph f′ itself for 0 < x < 8 and −8 ≤ y ≤ 32. Its zeros are x = a ≈ 0.409 and x = b ≈ 5.666.",
+            "There are no others: f″(x) = e^(x/2)/2 − 3 and the next derivative e^(x/2)/4 is positive, so the graph of f′ is concave up and crosses any horizontal line at most twice.",
+            "Signs: f′(0) = 1 > 0, f′(2) < 0 and f′(8) > 0. So f′ changes from positive to negative at a, giving a relative maximum, and from negative to positive at b, giving a relative minimum."
+          ],
+          "figureIds": [
+            "ab-calculator-skills-g1"
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Stopping at the first intersection the screen shows, or treating the edge of the window as the end of the story.",
+          "fix": "Before using an intersection, ask whether the curves could meet again inside the stated interval. Check f − g at the far end; if its sign could still change, widen the window."
+        },
+        {
+          "type": "check",
+          "id": "ab-calculator-skills-c3",
+          "prompt": "Let f(x) = x^3 − 4.5x^2 + 6x. Find every x in the interval [0, 3] at which f(x) = 2.49, and explain how you know you have them all.",
+          "hint": "Find where f increases and decreases first. Then compare 2.49 with f at the turning points.",
+          "answer": "Three solutions: x ≈ 0.920, x ≈ 1.084 and x ≈ 2.496.",
+          "steps": [
+            "f′(x) = 3x^2 − 9x + 6 = 3(x − 1)(x − 2), so f increases on [0, 1], decreases on [1, 2] and increases on [2, 3]. The values are f(0) = 0, f(1) = 2.5, f(2) = 2 and f(3) = 4.5.",
+            "Since 2.49 lies between f(0) and f(1), between f(2) and f(1), and between f(2) and f(3), and f is continuous and one-to-one on each piece, there is exactly one solution on each of [0, 1], [1, 2] and [2, 3].",
+            "Let h(x) = f(x) − 2.49. Solving h(x) = 0 on each piece gives x ≈ 0.920, x ≈ 1.084 and x ≈ 2.496.",
+            "Why a window misleads here: h rises only to h(1) = 0.01 between the first two zeros, so in a window with y from −1 to 3 the graph seems to touch the axis once near x = 1. Zoom in near x = 1, or let the turning-point values decide the count."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "typical-tasks",
+      "title": "Typical calculator tasks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Calculator parts lean on a short list of tasks. In each, the calculator finishes a step you can write down but could not complete by hand, and you write that step."
+        },
+        {
+          "type": "table",
+          "caption": "What to write for each task. The calculator does the step in the last column.",
+          "head": [
+            "Task",
+            "Write",
+            "Calculator does"
+          ],
+          "rows": [
+            [
+              "Amount at a time, from a rate",
+              "A(T) = A(0) + ∫ from 0 to T of A′(t) dt",
+              "Integrate"
+            ],
+            [
+              "When an amount is greatest or least",
+              "A′(t) = (rate in) − (rate out); the times where A′ = 0; A at every candidate and endpoint",
+              "Solve, then integrate"
+            ],
+            [
+              "When an amount reaches a level",
+              "A(0) + ∫ from 0 to T of A′(t) dt = level, solved for T",
+              "Solve an equation that contains an integral"
+            ],
+            [
+              "Area or volume with intersections that are not exact",
+              "f(x) = g(x) at x = A ≈ … and x = B ≈ …, then the integral from A to B",
+              "Solve, then integrate"
+            ],
+            [
+              "Total distance traveled",
+              "∫ from a to b of |v(t)| dt",
+              "Integrate"
+            ],
+            [
+              "Speeding up or slowing down at an instant",
+              "v(c) ≈ … and a(c) = v′(c) ≈ …, with their signs",
+              "A derivative at a point"
+            ],
+            [
+              "Average value, and when it is reached",
+              "(1/(b − a))∫ from a to b of f(x) dx, then f(c) = that value",
+              "Integrate, then solve"
+            ]
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Visitors enter a museum at the rate E(t) = 90ln(1 + t)·e^(−t/6) people per hour and leave at the rate L(t) = 10t people per hour, for 0 ≤ t ≤ 8 hours after opening. At opening there are 30 people inside. Find the greatest number of people in the museum during these 8 hours, and justify your answer.",
+          "answer": "About 234.338 people, at t ≈ 6.276 hours; in whole people, 234.",
+          "steps": [
+            "Let N(t) = 30 + ∫ from 0 to t of (E(s) − L(s)) ds. Then N′(t) = E(t) − L(t).",
+            "Graph E − L on (0, 8]: it is positive at first and has one zero, E(t) = L(t) at t = P ≈ 6.276, where it changes from positive to negative. Store P.",
+            "Candidates: N(0) = 30, N(P) = 30 + ∫ from 0 to P of (E(t) − L(t)) dt ≈ 234.338, and N(8) ≈ 210.287.",
+            "Justification: N is continuous on [0, 8], and N(P) is the largest of its values at the endpoints and at the only time where N′ changes sign. So the greatest number is about 234.338, at t ≈ 6.276 hours.",
+            "Here one sign change from positive to negative would also settle it. With two or more sign changes, only the comparison of candidates decides, so the candidates test is the safer habit."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-calculator-skills-c4",
+          "prompt": "R is the region in the first quadrant bounded by the graphs of y = 2e^(−x) and y = x and the y-axis. Find the volume of the solid generated when R is revolved about the horizontal line y = 3.",
+          "hint": "Both curves lie below y = 3. Which boundary of R is farther from the line?",
+          "answer": "About 10.284.",
+          "steps": [
+            "2e^(−x) = x at x = a ≈ 0.853; store it. On [0, a], 2e^(−x) ≥ x (at x = 0, 2 > 0).",
+            "Both boundaries lie below y = 3, so the lower curve y = x is farther from the axis. Outer radius 3 − x; inner radius 3 − 2e^(−x).",
+            "V = π∫ from 0 to a of ((3 − x)^2 − (3 − 2e^(−x))^2) dx ≈ 10.284.",
+            "Measuring the radii from the x-axis instead, π∫ from 0 to a of (4e^(−2x) − x^2) dx ≈ 4.492, describes rotation about y = 0: a different solid."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "ab-calculator-skills-g2"
+        },
+        {
+          "type": "check",
+          "id": "ab-calculator-skills-c5",
+          "prompt": "A cart moves along a straight track with velocity v(t) = 1 − t·sin(t/2) meters per second for 0 ≤ t ≤ 5 seconds, with the positive direction to the right. Find (a) the cart's displacement and (b) the total distance it travels over this interval.",
+          "hint": "Displacement counts motion to the left as negative. Distance does not.",
+          "answer": "(a) About −5.405 meters. (b) About 7.343 meters.",
+          "steps": [
+            "(a) Displacement = ∫ from 0 to 5 of v(t) dt ≈ −5.405 meters: the cart ends about 5.405 meters left of where it started.",
+            "(b) Distance = ∫ from 0 to 5 of |v(t)| dt ≈ 7.343 meters.",
+            "Check by pieces: v(t) = 0 at t ≈ 1.482. The integral of v is about 0.969 before that time and about −6.374 after it, and 0.969 + 6.374 = 7.343.",
+            "Write the absolute value bars when you integrate in one step: without them the integral is the displacement, not the distance."
+          ],
+          "figureIds": [
+            "ab-calculator-skills-g2"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-calculator-skills-c6",
+          "prompt": "A particle moves along a line with velocity v(t) = e^(0.3t)·sin(t) − 1. Is the speed of the particle increasing or decreasing at t = 2.5? Give a reason.",
+          "hint": "You need two signs at t = 2.5.",
+          "answer": "Decreasing: v(2.5) ≈ 0.267 > 0 and a(2.5) = v′(2.5) ≈ −1.316 < 0, so velocity and acceleration have opposite signs.",
+          "steps": [
+            "v(2.5) = e^(0.75)·sin(2.5) − 1 ≈ 0.267, so the particle is moving in the positive direction.",
+            "a(2.5) = v′(2.5) ≈ −1.316, a derivative at a point from the calculator. By hand, v′(t) = e^(0.3t)(0.3sin(t) + cos(t)), which gives the same value.",
+            "The signs are opposite, so the speed |v| is decreasing at t = 2.5: the particle is slowing down.",
+            "A negative acceleration alone does not mean slowing down; it does here because the particle is moving in the positive direction."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-calculator-skills-c7",
+          "prompt": "Oil leaks from a tank at the rate L(t) = 3√(t + 1)·e^(−0.3t) liters per hour, t hours after a seal fails. At what time have 10 liters leaked out?",
+          "hint": "Write the amount leaked by time T as an integral, and set it equal to 10.",
+          "answer": "At T ≈ 3.516 hours.",
+          "steps": [
+            "The amount leaked by time T is ∫ from 0 to T of L(t) dt, so solve ∫ from 0 to T of 3√(t + 1)·e^(−0.3t) dt = 10.",
+            "The integral is about 8.798 at T = 3 and about 11.025 at T = 4, so T lies between 3 and 4.",
+            "Solving with the calculator, for example by graphing y = ∫ from 0 to x of L(t) dt − 10 and finding its zero, gives T ≈ 3.516 hours.",
+            "Write the equation with the integral in it; the solver result alone shows no method."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "when-not",
+      "title": "When not to use the calculator",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The calculator finds numbers. It does not supply reasons, exact values or proofs, and in the no-calculator parts it is not there at all. Put it down when a question asks for any of these:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "An exact value, or a result to \"show\": write the algebra or the antiderivative, and leave answers such as 2 − ln 3 or π/6 in exact form. A decimal such as 1.732 in place of √3 is not exact.",
+            "A justification by sign: \"increasing\", \"relative minimum\", \"changes direction\", \"slowing down\" and \"concave down\" each need a stated sign of a named function. The calculator may find the zero or the values; the sentence must state the signs and what they mean.",
+            "A theorem's conclusion (the Intermediate Value Theorem, the Mean Value Theorem, the Extreme Value Theorem): state the hypotheses and the values that meet them. A graph that seems unbroken does not show continuity.",
+            "A derivative of an accumulation function: the Fundamental Theorem of Calculus gives d/dx of ∫ from a to x of f(t) dt = f(x) at once.",
+            "A quick value you can do by hand, such as L(4) = 10(4) = 40: the calculator is allowed, but write the expression first so the reader sees what you evaluated."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "For the cart in check 5, with v(t) = 1 − t·sin(t/2), justify that the cart changes direction at t ≈ 1.482.",
+          "text": "v′(t) = −sin(t/2) − (t/2)cos(t/2) < 0 for 0 < t < π, so v is decreasing there and has at most one zero in that interval. Since v(1.4) ≈ 0.098 > 0 and v(1.6) ≈ −0.148 < 0, v changes from positive to negative at its zero t ≈ 1.482, so the cart changes direction there."
+        },
+        {
+          "type": "trap",
+          "text": "\"The calculator graph shows that g is decreasing on (2, 5).\"",
+          "fix": "Name the function and the sign: \"g′(x) < 0 for 2 < x < 5, so g is decreasing on that interval.\" If g′ is a calculator function, say how you know its sign, for example that its only zeros lie outside the interval and g′(3) < 0."
+        },
+        {
+          "type": "check",
+          "id": "ab-calculator-skills-c8",
+          "prompt": "Let f(x) = x^2 + 1 for x ≤ 1 and f(x) = 4x − 2 for x > 1. A calculator's numerical derivative of f at x = 1 returns about 3. Is f′(1) = 3? Explain.",
+          "hint": "Compute the slope from the left and the slope from the right separately.",
+          "answer": "No. f is continuous at x = 1, but its slope from the left is 2 and from the right is 4, so f is not differentiable at x = 1. The calculator's 3 is the average of the two one-sided slopes.",
+          "steps": [
+            "Continuity: both pieces give 2 at x = 1, so f(1) = 2 and the limit is 2.",
+            "One-sided derivatives: the left piece has derivative 2x, which is 2 at x = 1; the right piece has derivative 4. They differ, so f′(1) does not exist: the graph has a corner.",
+            "A numerical derivative uses a symmetric difference quotient: (f(1 + h) − f(1 − h))/(2h) = ((2 + 4h) − (2 − 2h + h^2))/(2h) = 3 − h/2, which is close to 3 for small h.",
+            "Before trusting a numerical derivative, check that the function is differentiable at the point. Pieces, absolute values and cusps are where the calculator gives a confident wrong answer."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A calculator part can include steps that need no calculator, and a no-calculator part never needs one. If you find yourself wishing for a calculator in Section II Part B, look for an exact route: a geometric area, a substitution, the Fundamental Theorem of Calculus, or an answer left in exact form."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Calculator skill shows up in timed work. Take the calculator part of a mixed set at the exam's pace, score it, and look for calculator errors: degree mode, a missed intersection, early rounding, a missing setup."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "How the exam runs and how to pace it",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Mixed set 1, at the exam's pace",
+              "ref": "test:mixed-1"
+            },
+            {
+              "label": "Workshop: rates and accumulation in context",
+              "ref": "guide:fr-accumulation"
+            },
+            {
+              "label": "Workshop: motion along a line",
+              "ref": "guide:fr-linear-motion"
+            },
+            {
+              "label": "Workshop: area and volume",
+              "ref": "guide:fr-area-volume"
+            },
+            {
+              "label": "Unit 8 review: applications of integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

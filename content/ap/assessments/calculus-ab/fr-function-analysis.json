@@ -1,0 +1,370 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-function-analysis",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Analysis of a given function",
+  "author": "ab-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A requires a graphing calculator; Part B allows none. Show supporting work and justify requested conclusions; write the equation or expression behind every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "ab-fr-function-analysis-f1",
+      "alt": "Graph of y = f(x) for −2 ≤ x ≤ 6 with a dashed vertical line at x = 2. To the left of the line the curve starts just below the x-axis at x = −2, crosses it near x = −1.7 and rises slowly to a rounded peak at the marked point (1, 2), then plunges downward along the dashed line. To the right of the line the curve comes down from the top of the window, bottoms out at the marked point (3, 6), and rises steadily to the right.",
+      "caption": "The function f from question 3, with its two turning points and its vertical asymptote."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator required",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show your work: write the derivative, equation or expression you use before its value. Calculator answers are to three decimal places. Justify answers when a question asks you to.",
+          "items": [
+            {
+              "id": "ab-fr-function-analysis-fr1",
+              "prompt": "On a summer day, the concentration of ozone in the air at a city monitoring station is modeled by C(t) = 30 + 0.6t + 22 sin(π(t − 8)/12) parts per billion (ppb), where t is the number of hours after midnight, for 0 ≤ t ≤ 24.",
+              "context": true,
+              "topics": [
+                "AB.5.5",
+                "AB.4.1",
+                "AB.5.2",
+                "AB.5.3",
+                "AB.5.9",
+                "AB.5.11"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find C′(16). Using correct units, interpret the meaning of C′(16) in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "C′(16) = −2.280 (or −2.279), from a calculator derivative or from C′(t) = 0.6 + (11π/6)cos(π(t − 8)/12)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets with units: at 4 p.m. (t = 16) the ozone concentration is decreasing at 2.280 ppb per hour. The interpretation must name the time, say decreasing (or give the negative rate), and give the units ppb per hour."
+                    }
+                  ],
+                  "answer": "C′(16) = −2.280. At t = 16 hours (4 p.m.), the ozone concentration is decreasing at a rate of 2.280 parts per billion per hour.",
+                  "steps": [
+                    "C′(t) = 0.6 + 22(π/12)cos(π(t − 8)/12) = 0.6 + (11π/6)cos(π(t − 8)/12).",
+                    "C′(16) = 0.6 + (11π/6)cos(2π/3) = 0.6 − 11π/12 ≈ −2.280 (a calculator derivative at t = 16 gives the same value).",
+                    "C′(16) is the rate of change of the concentration at 4 p.m. It is negative, so the concentration is falling there, at 2.280 ppb per hour."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the absolute maximum concentration and the absolute minimum concentration of ozone for 0 ≤ t ≤ 24. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets C′(t) = 0 and finds both interior critical points, t = 1.601 and t = 14.399 (or 14.398)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates C at both critical points and both endpoints: C(0) = 10.947, C(1.601) = 9.081, C(14.399) = 60.519, C(24) = 25.347."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "States the absolute maximum 60.519 ppb at t = 14.399 and the absolute minimum 9.081 ppb at t = 1.601, with a candidates-test justification (C is continuous on the closed interval [0, 24]). Comparing only the two critical values, or omitting an endpoint, does not earn this point."
+                    }
+                  ],
+                  "answer": "The absolute maximum concentration is 60.519 ppb, at t = 14.399. The absolute minimum concentration is 9.081 ppb, at t = 1.601.",
+                  "steps": [
+                    "C′(t) = 0.6 + (11π/6)cos(π(t − 8)/12). Solving C′(t) = 0 with the calculator on 0 < t < 24 gives t = 1.601 and t = 14.399.",
+                    "C is continuous on the closed interval [0, 24], so its absolute extrema occur at critical points or endpoints.",
+                    "Candidates: C(0) = 10.947, C(1.601) = 9.081, C(14.399) = 60.519 and C(24) = 25.347.",
+                    "The largest is 60.519 ppb, at t = 14.399 (about 2:24 p.m.); the smallest is 9.081 ppb, at t = 1.601. The minimum is not at the endpoint t = 0: the concentration keeps falling for about 1.6 hours after midnight."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "An air-quality alert is in effect whenever the ozone concentration is greater than 50 ppb. For how many hours during the day, 0 ≤ t ≤ 24, is the alert in effect? Show the work that leads to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets C(t) = 50 and finds both solutions, t = 10.560 and t = 18.397, or states that C(t) > 50 exactly for 10.560 < t < 18.397."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 18.397 − 10.560 = 7.838 hours (7.837 accepted). A response that subtracts its own two correct-looking solutions earns this point for the matching difference."
+                    }
+                  ],
+                  "answer": "7.838 hours: the alert is in effect for 10.560 < t < 18.397.",
+                  "steps": [
+                    "Solve C(t) = 50 on the calculator: t = 10.560 and t = 18.397 are the only solutions in [0, 24].",
+                    "C(14.399) = 60.519 > 50 lies between them, while C(0), C(24) and the other values outside are below 50, so C(t) > 50 exactly on 10.560 < t < 18.397.",
+                    "Length: from the unrounded solutions, 18.3975 − 10.5598 = 7.8377, so 7.838 hours. (Subtracting the rounded values gives 7.837, which is also accepted.)"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "At what time t, for 0 ≤ t ≤ 24, is the ozone concentration increasing most rapidly? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the candidates for the greatest value of C′: the zeros of C″, t = 8 and t = 20, together with the endpoints t = 0 and t = 24 (or analyzes the sign of C″ on each interval)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes t = 8, justified by comparing C′(0) = −2.280, C′(8) = 6.360, C′(20) = −5.160 and C′(24) = −2.280, or by showing C′ increases on [0, 8], decreases on [8, 20], and C′(24) < C′(8)."
+                    }
+                  ],
+                  "answer": "At t = 8 (8 a.m.), when C′(8) = 0.6 + 11π/6 ≈ 6.360 ppb per hour.",
+                  "steps": [
+                    "The rate of increase is C′(t); its greatest value on [0, 24] occurs where C″(t) = 0 or at an endpoint.",
+                    "C″(t) = −(11π^2/72)sin(π(t − 8)/12), which is 0 on [0, 24] at t = 8 and t = 20 (a calculator graph of C″ shows the same zeros).",
+                    "C′(0) = −2.280, C′(8) = 6.360, C′(20) = −5.160 and C′(24) = −2.280.",
+                    "The largest is C′(8), so the concentration increases most rapidly at t = 8.",
+                    "Note the difference from part (b): the concentration is greatest at t = 14.399, where C′ = 0, but it is rising fastest earlier, at t = 8."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 30,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show supporting work, justify requested conclusions, and give exact answers.",
+          "items": [
+            {
+              "id": "ab-fr-function-analysis-fr2",
+              "prompt": "Let f be the function defined by f(x) = 2 sin x + sin(2x) for 0 ≤ x ≤ 2π.",
+              "context": false,
+              "topics": [
+                "AB.5.4",
+                "AB.2.7",
+                "AB.3.1",
+                "AB.5.2",
+                "AB.5.6",
+                "AB.5.5",
+                "AB.5.9"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find f′(x). Find the x-coordinate of each critical point of f in the open interval 0 < x < 2π.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "f′(x) = 2cos x + 2cos(2x), with the chain-rule factor 2 on the second term."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds x = π/3, x = π and x = 5π/3, for example by writing f′(x) = 2(2cos x − 1)(cos x + 1). A list that omits x = π does not earn this point."
+                    }
+                  ],
+                  "answer": "f′(x) = 2cos x + 2cos(2x) = 2(2cos x − 1)(cos x + 1). The critical points are x = π/3, x = π and x = 5π/3.",
+                  "steps": [
+                    "f′(x) = 2cos x + cos(2x)·2 = 2cos x + 2cos(2x).",
+                    "Use cos(2x) = 2cos^2 x − 1: f′(x) = 4cos^2 x + 2cos x − 2 = 2(2cos^2 x + cos x − 1) = 2(2cos x − 1)(cos x + 1).",
+                    "f′ exists everywhere, so the critical points are the zeros of f′: cos x = 1/2 gives x = π/3 and 5π/3; cos x = −1 gives x = π."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "For each critical point found in part (a), determine whether f has a relative minimum, a relative maximum, or neither at that point. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sign analysis of f′: because cos x + 1 ≥ 0, f′ has the sign of 2cos x − 1, so f′ > 0 on (0, π/3), f′ < 0 on (π/3, π) and on (π, 5π/3), and f′ > 0 on (5π/3, 2π)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Relative maximum at x = π/3 and relative minimum at x = 5π/3, each with the change of sign of f′ stated (positive to negative; negative to positive)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Neither at x = π, because f′ does not change sign there (negative on both sides). A response that calls x = π an extremum earns at most 2 points for this part."
+                    }
+                  ],
+                  "answer": "Relative maximum at x = π/3; relative minimum at x = 5π/3; neither at x = π.",
+                  "steps": [
+                    "cos x + 1 ≥ 0 for all x, and it is 0 only at x = π. So, away from x = π, f′(x) has the same sign as 2cos x − 1.",
+                    "2cos x − 1 > 0 when cos x > 1/2, that is on (0, π/3) and (5π/3, 2π); it is negative on (π/3, 5π/3).",
+                    "At x = π/3, f′ changes from positive to negative, so f has a relative maximum there.",
+                    "At x = 5π/3, f′ changes from negative to positive, so f has a relative minimum there.",
+                    "At x = π, f′(π) = 0 but f′ < 0 on both sides, so f has neither a relative maximum nor a relative minimum at x = π."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "It can be shown that f″(x) = −2 sin x(1 + 4cos x). Find the x-coordinate of each point of inflection of the graph of f on the open interval 0 < x < 2π. Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the zeros of f″ in (0, 2π): x = π from sin x = 0, and x = arccos(−1/4) and x = 2π − arccos(−1/4) from cos x = −1/4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies that f″ changes sign at each of the three values (for example with a sign chart of −2 sin x and 1 + 4cos x) and concludes that all three are points of inflection."
+                    }
+                  ],
+                  "answer": "x = arccos(−1/4), x = π and x = 2π − arccos(−1/4), because f″ changes sign at each.",
+                  "steps": [
+                    "f″(x) = 0 when sin x = 0 or cos x = −1/4. In (0, 2π): x = π, x = a = arccos(−1/4) (between π/2 and π), and x = 2π − a (between π and 3π/2).",
+                    "Signs: on (0, a), sin x > 0 and 1 + 4cos x > 0, so f″ < 0. On (a, π), sin x > 0 and 1 + 4cos x < 0, so f″ > 0.",
+                    "On (π, 2π − a), sin x < 0 and 1 + 4cos x < 0, so f″ < 0. On (2π − a, 2π), sin x < 0 and 1 + 4cos x > 0, so f″ > 0.",
+                    "f″ changes sign at a, at π and at 2π − a, and f is twice differentiable there, so the graph of f has a point of inflection at each of the three x-values. The point x = π, which was neither a maximum nor a minimum in part (b), is a point of inflection with a horizontal tangent."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the absolute maximum value and the absolute minimum value of f on the closed interval [0, 2π]. Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates f at the endpoints and the critical points: f(0) = 0, f(π/3) = 3√3/2, f(π) = 0, f(5π/3) = −3√3/2, f(2π) = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes absolute maximum value 3√3/2 and absolute minimum value −3√3/2, citing the comparison of candidates for the continuous function f on a closed interval (or an equivalent increasing and decreasing argument that also checks the endpoints)."
+                    }
+                  ],
+                  "answer": "The absolute maximum value is 3√3/2, at x = π/3. The absolute minimum value is −3√3/2, at x = 5π/3.",
+                  "steps": [
+                    "f is continuous on the closed interval [0, 2π], so its absolute extrema occur at endpoints or critical points.",
+                    "f(0) = 0 and f(2π) = 0.",
+                    "f(π/3) = 2(√3/2) + sin(2π/3) = √3 + √3/2 = 3√3/2.",
+                    "f(π) = 0 + sin(2π) = 0, and f(5π/3) = 2(−√3/2) + sin(10π/3) = −√3 − √3/2 = −3√3/2.",
+                    "The largest candidate is 3√3/2 and the smallest is −3√3/2."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-fr-function-analysis-fr3",
+              "prompt": "Let f be the function defined by f(x) = (x^2 − 3)/(x − 2) for all x ≠ 2.",
+              "context": false,
+              "topics": [
+                "AB.5.4",
+                "AB.2.9",
+                "AB.5.3",
+                "AB.5.6",
+                "AB.1.16",
+                "AB.1.14",
+                "AB.5.2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Show that f′(x) = (x − 1)(x − 3)/(x − 2)^2. Find the x-coordinate of each relative extremum of f, and classify each as a relative maximum or a relative minimum. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Applies the quotient rule, f′(x) = (2x(x − 2) − (x^2 − 3))/(x − 2)^2, and simplifies the numerator to x^2 − 4x + 3 = (x − 1)(x − 3). A response that starts from the given answer earns no credit for this point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Sign analysis: (x − 2)^2 > 0 for x ≠ 2, so f′ > 0 for x < 1, f′ < 0 on (1, 2) and (2, 3), and f′ > 0 for x > 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Relative maximum at x = 1 (f′ changes from positive to negative) and relative minimum at x = 3 (f′ changes from negative to positive)."
+                    }
+                  ],
+                  "answer": "f′(x) = (x^2 − 4x + 3)/(x − 2)^2 = (x − 1)(x − 3)/(x − 2)^2. f has a relative maximum at x = 1 and a relative minimum at x = 3.",
+                  "steps": [
+                    "Quotient rule: f′(x) = [2x(x − 2) − (x^2 − 3)(1)]/(x − 2)^2 = (2x^2 − 4x − x^2 + 3)/(x − 2)^2 = (x^2 − 4x + 3)/(x − 2)^2 = (x − 1)(x − 3)/(x − 2)^2.",
+                    "f′(x) = 0 at x = 1 and x = 3. f′ is undefined only at x = 2, which is not in the domain of f, so x = 2 is not a critical point.",
+                    "The denominator (x − 2)^2 is positive for x ≠ 2, so f′ has the sign of (x − 1)(x − 3): positive for x < 1, negative for 1 < x < 3 (x ≠ 2), positive for x > 3.",
+                    "At x = 1, f′ changes from positive to negative: relative maximum, f(1) = (1 − 3)/(1 − 2) = 2.",
+                    "At x = 3, f′ changes from negative to positive: relative minimum, f(3) = (9 − 3)/(3 − 2) = 6."
+                  ],
+                  "answerFigureIds": [
+                    "ab-fr-function-analysis-f1"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "It can be shown that f″(x) = 2/(x − 2)^3. Find the open intervals on which the graph of f is concave up and on which it is concave down. The concavity changes at x = 2. Does the graph of f have a point of inflection at x = 2? Explain.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Concave down on (−∞, 2) because f″ < 0 there, and concave up on (2, ∞) because f″ > 0 there."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "No point of inflection at x = 2, because f(2) is not defined: there is no point of the graph at x = 2 (the graph has a vertical asymptote there)."
+                    }
+                  ],
+                  "answer": "Concave down on (−∞, 2) and concave up on (2, ∞). There is no point of inflection at x = 2, because f is not defined at x = 2, so the graph has no point there.",
+                  "steps": [
+                    "(x − 2)^3 < 0 for x < 2 and > 0 for x > 2, so f″(x) = 2/(x − 2)^3 is negative on (−∞, 2) and positive on (2, ∞).",
+                    "So the graph is concave down on (−∞, 2) and concave up on (2, ∞).",
+                    "A point of inflection is a point on the graph where the concavity changes. f(2) does not exist, so there is no point (2, f(2)), and the graph has no point of inflection; the change in concavity happens across the vertical asymptote x = 2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Note that f(1) = 2 and f(3) = 6. A student says that, by the Intermediate Value Theorem, there must be a value c with 1 < c < 3 and f(c) = 4. Explain why the Intermediate Value Theorem does not support the student's claim, and determine whether any such value c exists.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the theorem needs f continuous on [1, 3], and that f is not continuous on [1, 3] because it is undefined at x = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Shows that no such c exists: f(x) = 4 leads to x^2 − 4x + 5 = 0, whose discriminant 16 − 20 = −4 is negative, so f(x) = 4 has no real solution."
+                    }
+                  ],
+                  "answer": "The Intermediate Value Theorem does not apply, because f is not continuous on [1, 3] (it is undefined at x = 2). In fact no such c exists: f(x) = 4 has no real solutions.",
+                  "steps": [
+                    "The Intermediate Value Theorem requires f to be continuous on the closed interval [1, 3]. f is undefined at x = 2, which lies in [1, 3], so the theorem promises nothing here.",
+                    "Solve f(x) = 4: x^2 − 3 = 4(x − 2), so x^2 − 4x + 5 = 0.",
+                    "The discriminant is (−4)^2 − 4(1)(5) = −4 < 0, so there is no real solution, and no c in (1, 3), or anywhere, has f(c) = 4.",
+                    "This matches part (a): f ≤ 2 for x < 2 (its largest value there is the relative maximum 2) and f ≥ 6 for x > 2, so f skips every value between 2 and 6."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find lim as x→2⁻ of f(x) and lim as x→2⁺ of f(x). Does f have an absolute minimum value on the interval x > 2? If so, find it; if not, explain why not.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "lim as x→2⁻ of f(x) = −∞ and lim as x→2⁺ of f(x) = ∞, with the reason that the numerator approaches 1 while x − 2 approaches 0 through negative or positive values."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Yes: the absolute minimum value on x > 2 is 6, at x = 3, justified because f is decreasing on (2, 3] and increasing on [3, ∞) (or f′ < 0 on (2, 3) and f′ > 0 for x > 3, with x = 3 the only critical point on the interval). Citing the Extreme Value Theorem, which does not apply on this interval, does not earn this point."
+                    }
+                  ],
+                  "answer": "lim as x→2⁻ of f(x) = −∞ and lim as x→2⁺ of f(x) = ∞. Yes: on x > 2 the absolute minimum value of f is 6, at x = 3.",
+                  "steps": [
+                    "As x→2, the numerator x^2 − 3 → 1 > 0. As x→2⁻, x − 2 → 0 through negative values, so f(x) → −∞. As x→2⁺, x − 2 → 0 through positive values, so f(x) → ∞.",
+                    "On the interval x > 2, which is neither closed nor bounded, the Extreme Value Theorem does not apply, so argue from the sign of f′.",
+                    "By part (a), f′ < 0 on (2, 3) and f′ > 0 for x > 3, so f decreases on (2, 3] and increases on [3, ∞).",
+                    "Therefore f(x) ≥ f(3) = 6 for every x > 2, and the absolute minimum value on x > 2 is 6, at x = 3. (There is no absolute maximum on this interval, since f(x) → ∞ as x→2⁺.)"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-function-analysis",
+  "kind": "fr-archetype",
+  "title": "Analysis of a given function",
+  "author": "ab-workshop-author",
+  "summary": "How to work the free-response question that hands you a function by its formula and asks you to analyze it: critical points, increasing and decreasing behavior, relative and absolute extrema, concavity and points of inflection, behavior at a join or an asymptote, and what the Intermediate, Mean and Extreme Value Theorems promise. The guide says what earns each kind of point in Liminal’s practice rubrics, gives sentences to copy, lists the traps that cost strong students points, works one original example, and ends with four self-checks and a three-question practice set.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "ab-fr-function-analysis-g1",
+      "alt": "Graph of the worked example’s function f for −1 ≤ x ≤ 4. A cubic arc starts at the point (−1, −3), falls through about (0, −8) to a low point near x = 1.4, y = −13.7, and rises to the point (2, −12). From there a second curve continues to rise, flattening as it reaches the point (4, −6). A dashed line through (2, −12) touches both pieces there.",
+      "caption": "The worked example with c = −8 and k = −24: the two pieces meet at x = 2 with one shared tangent line of slope 6."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "On the AP® Calculus AB Exam, this kind of free-response question gives you a function by its formula, not by a graph or a table. Sometimes it is one formula on an interval; sometimes it is two pieces that meet at a point, with a constant or two to choose. The parts then ask what the function does: where it increases and decreases, where its relative and absolute extreme values are, where its graph is concave up or down, what happens near a point where the formula breaks down, and what the existence theorems promise."
+        },
+        {
+          "type": "text",
+          "text": "Section II has a graphing-calculator Part A (two questions in 30 minutes) and a no-calculator Part B (four questions in 60 minutes), according to College Board’s exam pages (checked 2026-10-22). This archetype can sit in either part. In the no-calculator part the formula is chosen so that the critical points and extreme values come out exact, such as x = 3π/4 or a value of 1 + √2, and those exact forms are the answers. In the calculator part the formula is usually a model in context, a temperature or a concentration, and the critical points come from solving f′(x) = 0 on the calculator, reported to three decimal places."
+        },
+        {
+          "type": "text",
+          "text": "If the question gives the graph of f′ instead of a formula for f, it belongs to the derivative-graph workshop; if it defines g(x) as an integral of a given f, it belongs to the accumulation workshop. The reasoning in this guide still applies to their extremum and concavity parts."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "A typical nine-point version uses three or four of these rows. Points are Liminal’s practice weights.",
+          "head": [
+            "Part",
+            "Typical task",
+            "Points",
+            "What the rubric looks for"
+          ],
+          "rows": [
+            [
+              "Derivative",
+              "Find f′(x), or show that f′(x) equals a given expression",
+              "1–2",
+              "A correct rule applied (chain, product or quotient), then algebra that reaches a factored form you can read signs from"
+            ],
+            [
+              "Relative extrema",
+              "Find and classify each critical point",
+              "2–3",
+              "Every critical point, including any where f′ does not exist; the sign of f′ on each side; a sentence naming the change of sign; neither when f′ does not change sign"
+            ],
+            [
+              "Absolute extrema",
+              "Find the greatest and least values on an interval",
+              "2–3",
+              "Endpoints and every interior critical point evaluated and compared; on an open or unbounded interval, an increasing and decreasing argument instead"
+            ],
+            [
+              "Concavity",
+              "Find intervals of concavity or the points of inflection",
+              "2",
+              "The zeros of f″ and the points where f″ does not exist, then a sign change of f″ at a point where f is defined"
+            ],
+            [
+              "Existence",
+              "Must f(c) = k, or f′(c) = m, for some c in an interval?",
+              "1–2",
+              "The theorem named, each hypothesis checked on that interval, and the conclusion for this function"
+            ],
+            [
+              "Join or asymptote",
+              "Choose constants so f is continuous or differentiable at a join; find one-sided limits at a break",
+              "2",
+              "One-sided limits of f, then of f′, with a conclusion sentence; the sign of a denominator approaching 0"
+            ],
+            [
+              "Context",
+              "Interpret f′ at a value; find the time a quantity is greatest, or rising fastest",
+              "1–2",
+              "Units and the time in the sentence; for rising fastest, the maximum of f′, not of f"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The parts are linked. The derivative from part (a) is the one you use for every later sign argument, and Liminal’s rubrics score later parts against your own earlier result when you carry it forward correctly. Write the earlier value or expression into the later part, so a reader can follow it."
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s practice rubrics award five kinds of point. Before you write, decide which kind each part is asking for."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points. The derivative written out, the equation f′(x) = 0 or f″(x) = 0, or the list of candidates. Write the setup before any number: in the calculator part, “T′(t) = 0 gives t = 2.718 and t = 9.405” earns the point that a bare 2.718 may not.",
+            "Answer points. The value in a readable form: 5√2/2, not 3.536, without a calculator; three decimal places with one. Say which quantity it is: the x-value where the extremum occurs, or the extreme value itself. Many questions ask for one and not the other.",
+            "Justification points. A sentence that names the function, what it does and where: “f′ changes from positive to negative at x = 3π/4”. “It changes sign” earns nothing; so does a sign chart with no sentence. For absolute extrema, the comparison of every candidate is the justification.",
+            "Units points. In a context version, the units of each requested value and the time it refers to: degrees Celsius per hour for a rate, degrees Celsius for a level.",
+            "Consistency points. If part (a) went wrong, a later part that uses your part (a) result correctly can still earn its points. This works only when the reader can see the earlier result in the later work."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "title": "The results you will cite",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Critical points",
+          "text": "A critical point of f is a value c in the domain of f, inside the interval, where f′(c) = 0 or f′(c) does not exist. Relative extrema inside an interval can occur only at critical points.",
+          "conditions": [
+            "c must be in the domain of f. A value where f is undefined, such as a vertical asymptote, is never a critical point.",
+            "A critical point need not be an extremum: f′ may keep its sign on both sides."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "First Derivative Test",
+          "text": "Let f be continuous at a critical point c. If f′ changes from positive to negative at c, f has a relative maximum at c; from negative to positive, a relative minimum; if f′ does not change sign, neither.",
+          "conditions": [
+            "f is continuous at c. Without continuity the sign change proves nothing.",
+            "The sign of f′ is checked on each side of c, between c and the next critical point or break."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Second Derivative Test",
+          "text": "If f′(c) = 0 and f″(c) < 0, f has a relative maximum at c; if f′(c) = 0 and f″(c) > 0, a relative minimum.",
+          "conditions": [
+            "It needs f′(c) = 0, so it says nothing at a point where f′ does not exist.",
+            "If f″(c) = 0, the test decides nothing; return to the First Derivative Test."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Concavity and points of inflection",
+          "text": "The graph of f is concave up where f″ > 0 (f′ increasing) and concave down where f″ < 0 (f′ decreasing). A point of inflection is a point of the graph where the concavity changes.",
+          "conditions": [
+            "Candidates are the x-values where f″ = 0 or f″ does not exist.",
+            "f″ must change sign there; f″(c) = 0 alone is not enough.",
+            "f must be defined, and continuous, at c: concavity that changes across an asymptote gives no point of inflection."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Extreme Value Theorem and the Candidates Test",
+          "text": "If f is continuous on a closed, bounded interval [a, b], f attains an absolute maximum and an absolute minimum there. Find them by comparing f at the endpoints and at every critical point in (a, b).",
+          "conditions": [
+            "f is continuous on [a, b], endpoints included.",
+            "On an open or unbounded interval the theorem promises nothing. Use the sign of f′ instead: if f decreases up to c and increases after it on the whole interval, f(c) is the absolute minimum there."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Intermediate Value Theorem",
+          "text": "If f is continuous on [a, b] and k is strictly between f(a) and f(b), then f(c) = k for some c in (a, b).",
+          "conditions": [
+            "Continuity on the whole closed interval. One missing point, such as an asymptote, breaks it.",
+            "It says a value is reached, not where or how many times."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Mean Value Theorem",
+          "text": "If f is continuous on [a, b] and differentiable on (a, b), then f′(c) = (f(b) − f(a))/(b − a) for some c in (a, b).",
+          "conditions": [
+            "Continuity on the closed interval and differentiability on the open interval.",
+            "A corner, cusp or vertical tangent inside the interval breaks the hypothesis; one at an endpoint does not."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Differentiability at a join",
+          "text": "Differentiable at a point implies continuous there, so check continuity first: the one-sided limits of f and the value f(a) agree. Then, if each piece is differentiable near a, f is differentiable at a when lim as x→a⁻ of f′(x) and lim as x→a⁺ of f′(x) exist and are equal.",
+          "conditions": [
+            "If f is not continuous at a, stop: f is not differentiable at a.",
+            "Matching constants usually takes two equations: one from continuity, one from equal one-sided derivatives."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "These sentences use small functions of their own, so the pattern is what transfers. Each names the function, gives the evidence and states the conclusion."
+        },
+        {
+          "type": "model",
+          "prompt": "A relative maximum from the sign of f′.",
+          "text": "g′(x) changes from positive to negative at x = 2, so g has a relative maximum at x = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "A critical point that is not an extremum.",
+          "text": "h′(0) = 0, but h′(x) > 0 for x < 0 and for 0 < x < 1, so h′ does not change sign at x = 0, and h has neither a relative maximum nor a relative minimum there."
+        },
+        {
+          "type": "model",
+          "prompt": "The Second Derivative Test.",
+          "text": "p′(3) = 0 and p″(3) = −4 < 0, so by the Second Derivative Test p has a relative maximum at x = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "A point of inflection.",
+          "text": "q″(x) changes from negative to positive at x = 1, and q is continuous at x = 1, so the graph of q has a point of inflection at x = 1."
+        },
+        {
+          "type": "model",
+          "prompt": "Candidates Test on a closed interval.",
+          "text": "k is continuous on [0, 5]. Comparing the endpoints and the critical points, k(0) = 4, k(1) = 6, k(3) = −2 and k(5) = 9, the absolute maximum value of k on [0, 5] is 9, at x = 5, and the absolute minimum value is −2, at x = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "An absolute minimum on an unbounded interval.",
+          "text": "w′(x) < 0 for 0 < x < 4 and w′(x) > 0 for x > 4, so w decreases on (0, 4] and increases on [4, ∞). Therefore w(x) ≥ w(4) for every x > 0, and w(4) is the absolute minimum value of w on x > 0."
+        },
+        {
+          "type": "model",
+          "prompt": "When a theorem does not apply.",
+          "text": "The Intermediate Value Theorem does not apply to m on [0, 4], because m is not continuous at x = 1, which is in that interval. This shows only that the theorem promises nothing here; whether m reaches the value has to be checked directly."
+        },
+        {
+          "type": "model",
+          "prompt": "A rate in context.",
+          "text": "T′(9) = 1.25, so at 9 a.m. the temperature is increasing at 1.25 degrees Celsius per hour."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Calling every critical point an extremum. A factor that is squared, such as (x + 3)^2 in f′, makes f′ zero without changing its sign.",
+          "fix": "Check the sign of f′ on both sides of each critical point and say “neither” when it does not change. A sign chart built from the factored derivative makes this quick."
+        },
+        {
+          "type": "trap",
+          "text": "Forgetting points where f′ does not exist, or listing points where f does not exist.",
+          "fix": "Critical points are in the domain of f: include a corner or a vertical tangent (f′ undefined, f defined), and leave out an asymptote or a hole (f undefined). Note an asymptote anyway, because f′ can change sign across it."
+        },
+        {
+          "type": "trap",
+          "text": "Treating f″(c) = 0 as a point of inflection.",
+          "fix": "A point of inflection needs a change in the sign of f″ at a point of the graph. If f″ = (x + 1)^2(x − 3), x = −1 is not one: f″ is negative on both sides."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving out the endpoints in an absolute-extremum question, or comparing only the relative extrema.",
+          "fix": "On a closed interval, list the endpoints and every critical point, evaluate f at each, and compare. A relative maximum is often smaller than an endpoint value."
+        },
+        {
+          "type": "trap",
+          "text": "Answering the wrong question: giving the x-value when the question asks for the value of f, or the time of the largest value when it asks when the quantity is rising fastest.",
+          "fix": "Underline what is asked. “Greatest value” wants f(c); “where” wants c. “Increasing most rapidly” asks for the maximum of f′, found from f″ = 0 and the endpoints."
+        },
+        {
+          "type": "trap",
+          "text": "Using the Extreme Value Theorem on an open or unbounded interval, or the Intermediate Value Theorem across an asymptote.",
+          "fix": "Check the hypotheses against the stated interval before you name a theorem. When they fail, argue from the sign of f′ or solve directly."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the chain-rule factor in trigonometric and exponential terms: d/dx sin(2x) = cos(2x).",
+          "fix": "Differentiate the inside every time: d/dx sin(2x) = 2cos(2x). One missing factor changes every critical point after it."
+        },
+        {
+          "type": "trap",
+          "text": "In the calculator part, writing only the calculator’s numbers.",
+          "fix": "Write the equation you solved, such as C′(t) = 0, and the candidate values, then the conclusion. The setup is part of the evidence, and three decimal places are the standard."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let f(x) = x^3 − 6x + c for −1 ≤ x ≤ 2 and f(x) = k/x for 2 < x ≤ 4, where c and k are constants. (a) Find c and k so that f is differentiable at x = 2. (b) With those values, find the absolute maximum and minimum values of f on [−1, 4]. Justify your answer. (c) Explain why there is a value p in (2, 4) with f′(p) = 3, and find p.",
+          "answer": "(a) c = −8 and k = −24. (b) The absolute maximum value is −3, at x = −1; the absolute minimum value is −8 − 4√2, at x = √2. (c) The Mean Value Theorem on [2, 4] gives p; p = 2√2.",
+          "steps": [
+            "(a) Derivatives first, because here they decide k. For x < 2, f′(x) = 3x^2 − 6, which approaches 6 as x→2⁻. For x > 2, f′(x) = −k/x^2, which approaches −k/4 as x→2⁺. Equal one-sided derivatives require −k/4 = 6, so k = −24.",
+            "(a) Continuity, which differentiability also requires. lim as x→2⁻ of f(x) = 8 − 12 + c = c − 4 = f(2), and lim as x→2⁺ of f(x) = k/2 = −12. So c − 4 = −12 and c = −8.",
+            "(a) Conclusion. With c = −8 and k = −24, f is continuous at x = 2 and both one-sided derivatives equal 6, so f is differentiable at x = 2 and f′(2) = 6.",
+            "(b) Critical points. On (−1, 2), 3x^2 − 6 = 0 at x = ±√2; only x = √2 is in the interval. On (2, 4), f′(x) = 24/x^2 > 0, never 0. f′(2) = 6, so x = 2 is not a critical point.",
+            "(b) Candidates. f is continuous on the closed interval [−1, 4]. f(−1) = −1 + 6 − 8 = −3, f(√2) = 2√2 − 6√2 − 8 = −8 − 4√2, and f(4) = −24/4 = −6.",
+            "(b) Conclusion. −8 − 4√2 < −8 < −6 < −3, so the absolute maximum value is −3, at x = −1, and the absolute minimum value is −8 − 4√2, at x = √2.",
+            "(c) f is continuous on [2, 4] (at x = 2 by part (a)) and differentiable on (2, 4). By the Mean Value Theorem, some p in (2, 4) has f′(p) = (f(4) − f(2))/(4 − 2) = (−6 − (−12))/2 = 3.",
+            "(c) To find it: 24/p^2 = 3 gives p^2 = 8, so p = 2√2, which lies in (2, 4)."
+          ],
+          "figureIds": [
+            "ab-fr-function-analysis-g1"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Notice three habits. Part (a) ended with a conclusion sentence that names both conditions. Part (b) checked the join and gave a reason to set it aside, rather than forgetting it, and it compared all three candidates, not only the critical point. Part (c) checked continuity on the closed interval, including the endpoint x = 2, before naming the theorem."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its solution. A check you miss names the section to reread."
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-function-analysis-c1",
+          "prompt": "Let p(x) = (x − 2)^3(x + 1). Find the x-coordinate of each critical point of p, and determine whether p has a relative maximum, a relative minimum, or neither at each. Justify your answer.",
+          "hint": "Factor p′(x) completely before you build a sign chart.",
+          "answer": "Critical points x = −1/4 and x = 2. Relative minimum at x = −1/4; neither at x = 2.",
+          "steps": [
+            "Product rule: p′(x) = 3(x − 2)^2(x + 1) + (x − 2)^3 = (x − 2)^2(3x + 3 + x − 2) = (x − 2)^2(4x + 1).",
+            "p′(x) = 0 at x = 2 and x = −1/4; p′ exists everywhere.",
+            "(x − 2)^2 ≥ 0, so p′ has the sign of 4x + 1: negative for x < −1/4 and positive for x > −1/4 (except p′(2) = 0).",
+            "At x = −1/4, p′ changes from negative to positive: relative minimum. At x = 2, p′ is positive on both sides: neither."
+          ],
+          "see": "traps"
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-function-analysis-c2",
+          "prompt": "A function q is twice differentiable for all x, and q″(x) = (x − 2)^2(x + 1). Find the x-coordinate of each point of inflection of the graph of q. Justify your answer.",
+          "hint": "Find where q″ = 0, then test the sign of q″ on each side of each zero.",
+          "answer": "Only x = −1.",
+          "steps": [
+            "q″(x) = 0 at x = 2 and x = −1.",
+            "q″ < 0 for x < −1 and q″ > 0 for −1 < x < 2, so q″ changes sign at x = −1: a point of inflection.",
+            "q″ > 0 on both sides of x = 2, because (x − 2)^2 ≥ 0 and x + 1 > 0 there. No sign change, so x = 2 is not a point of inflection."
+          ],
+          "see": "results"
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-function-analysis-c3",
+          "prompt": "Find the absolute maximum value and the absolute minimum value of r(x) = 2x^3 + 3x^2 − 12x + 1 on the closed interval [−4, 3]. Justify your answer.",
+          "hint": "The relative extrema are only some of the candidates.",
+          "answer": "The absolute maximum value is 46, at x = 3; the absolute minimum value is −31, at x = −4.",
+          "steps": [
+            "r′(x) = 6x^2 + 6x − 12 = 6(x + 2)(x − 1), so the critical points are x = −2 and x = 1.",
+            "r is continuous on [−4, 3]. Candidates: r(−4) = −128 + 48 + 48 + 1 = −31, r(−2) = −16 + 12 + 24 + 1 = 21, r(1) = 2 + 3 − 12 + 1 = −6, r(3) = 54 + 27 − 36 + 1 = 46.",
+            "The absolute maximum value is 46, at the endpoint x = 3, and the absolute minimum value is −31, at the endpoint x = −4. The relative maximum value 21 and relative minimum value −6 are neither."
+          ],
+          "see": "worked-model"
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-function-analysis-c4",
+          "prompt": "A function g is differentiable for all real numbers, with g(1) = 4, g(3) = −2 and g(6) = 4. For each statement, decide whether it must be true, and give the reason. (i) g(c) = 0 for at least two values of c in (1, 6). (ii) g′(c) = −3 for some c in (1, 3). (iii) g′(c) = 0 for some c in (1, 6). (iv) g has a relative minimum at x = 3.",
+          "hint": "Differentiable everywhere means continuous everywhere. Match each statement to the theorem whose conclusion it resembles.",
+          "answer": "(i), (ii) and (iii) must be true; (iv) need not be true.",
+          "steps": [
+            "(i) g is continuous on [1, 3] and on [3, 6], and 0 lies between 4 and −2 and between −2 and 4. The Intermediate Value Theorem gives a zero in (1, 3) and another in (3, 6).",
+            "(ii) g is continuous on [1, 3] and differentiable on (1, 3), so the Mean Value Theorem gives c with g′(c) = (−2 − 4)/(3 − 1) = −3.",
+            "(iii) The Mean Value Theorem on [1, 6] gives c with g′(c) = (4 − 4)/(6 − 1) = 0.",
+            "(iv) Nothing forces a turn at x = 3: g could keep decreasing past x = 3 to a lower value, say at x = 4, before rising to g(6) = 4. Three values do not locate an extremum."
+          ],
+          "see": "results"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work the practice set: the Part A question at 15 minutes with a graphing calculator, then the two Part B questions at 15 minutes each without one. Score them with the rubrics and record raw points. Rewrite any justification that lost a point until it names the function, the property and the reason. If a check above went wrong, review its unit before the set."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-function-analysis"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-function-analysis"
+            },
+            {
+              "label": "Unit 1 review: Limits and Continuity",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 2 review: Differentiation: Definition and Fundamental Properties",
+              "ref": "guide:review-u2"
+            },
+            {
+              "label": "Unit 5 review: analytical applications of differentiation",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Calculator skills for the calculator parts",
+              "ref": "guide:calculator-skills"
+            },
+            {
+              "label": "Week 7: differentiability and the first derivative rules",
+              "ref": "week:7"
+            },
+            {
+              "label": "Week 14: Mean Value Theorem, extrema, and increasing intervals",
+              "ref": "week:14"
+            },
+            {
+              "label": "Week 15: Derivative tests, absolute extrema, and concavity",
+              "ref": "week:15"
+            },
+            {
+              "label": "Week 16: Connecting f, f′, and f″; optimization",
+              "ref": "week:16"
+            },
+            {
+              "label": "Week 31: Review: analysis and written justification",
+              "ref": "week:31"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "mixed-3",
+  "kind": "mixed-set",
+  "title": "Mixed set 3: all units at exam pace",
+  "author": "ab-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which method or principle applies: which integration technique, whether a question asks for a rate or an accumulated amount, an average value or an average rate of change, and whether an estimate is too large or too small. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians, exact answers are expected without a calculator, and calculator answers are rounded to three decimal places. Record raw points; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "ab-mixed-3-mc01",
+              "prompt": "What is ∫ from 0 to 3 of x^2/(x^2 + 9) dx?",
+              "choices": [
+                "ln 2",
+                "3 − 3π/4",
+                "3 + 3π/4",
+                "3 − 9π/4"
+              ],
+              "key": "B",
+              "rationale": "The numerator's degree equals the denominator's, so divide first: x^2/(x^2 + 9) = 1 − 9/(x^2 + 9). An antiderivative of 9/(x^2 + 9) is 9·(1/3) arctan(x/3) = 3 arctan(x/3). The integral is [x − 3 arctan(x/3)] from 0 to 3 = 3 − 3(π/4) = 3 − 3π/4.",
+              "distractorNotes": {
+                "A": "This writes ln(x^2 + 9), as if the numerator were the derivative of the denominator: ln 18 − ln 9 = ln 2. The numerator is x^2, not 2x, so division must come first.",
+                "C": "This divides with the wrong sign, writing x^2/(x^2 + 9) = 1 + 9/(x^2 + 9). Since x^2 = (x^2 + 9) − 9, the remainder term is subtracted.",
+                "D": "This antidifferentiates 1/(x^2 + 9) as arctan(x/3), leaving out the factor 1/3: 3 − 9(π/4). The antiderivative of 1/(x^2 + a^2) is (1/a) arctan(x/a)."
+              },
+              "topics": [
+                "AB.6.14",
+                "AB.6.10"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc02",
+              "prompt": "What is lim as x→2 of (x − 2)/(√(x + 7) − 3)?",
+              "choices": [
+                "0",
+                "1/6",
+                "6",
+                "The limit does not exist."
+              ],
+              "key": "C",
+              "rationale": "Direct substitution gives 0/0, which calls for algebra rather than a verdict. Multiply by the conjugate: (x − 2)(√(x + 7) + 3)/((x + 7) − 9) = √(x + 7) + 3 for x ≠ 2. As x→2 this tends to √9 + 3 = 6.",
+              "distractorNotes": {
+                "A": "A numerator tending to 0 forces the limit to 0 only when the denominator does not also tend to 0. Here both do, so 0/0 decides nothing yet.",
+                "B": "This is the reciprocal limit, lim as x→2 of (√(x + 7) − 3)/(x − 2) = 1/6, which is the derivative of √(x + 7) at x = 2. The given quotient is that one turned upside down.",
+                "D": "The form 0/0 is indeterminate, not proof that the limit fails to exist. After simplifying, both one-sided limits equal 6."
+              },
+              "topics": [
+                "AB.1.7",
+                "AB.1.6"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc03",
+              "prompt": "What is the average rate of change of f(x) = x^3 + x on the interval [1, 3]?",
+              "choices": [
+                "14",
+                "13",
+                "12",
+                "28"
+              ],
+              "key": "A",
+              "rationale": "The average rate of change is the slope of the secant line, which uses only the endpoint values: (f(3) − f(1))/(3 − 1) = (30 − 2)/2 = 14.",
+              "distractorNotes": {
+                "B": "This is f′(2) = 3(2)^2 + 1 = 13, the instantaneous rate of change at the midpoint. For a cubic it need not equal the secant slope.",
+                "C": "This is the average value of f, (1/2)∫ from 1 to 3 of (x^3 + x) dx = (1/2)(20 + 4) = 12. It averages the outputs of f, not their rate of change.",
+                "D": "This is the change f(3) − f(1) = 28, not yet divided by the length of the interval, 2."
+              },
+              "topics": [
+                "AB.2.1",
+                "AB.8.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc04",
+              "prompt": "A function f is twice differentiable, with f(3) = 4, f′(3) = −2, and f″(x) > 0 for all x. The line tangent to the graph of f at x = 3 is used to approximate f(2.9). Which statement is true?",
+              "choices": [
+                "The approximation is 3.8, and it is an underestimate.",
+                "The approximation is 4.2, and it is an overestimate.",
+                "The approximation is 4.2, but the information given does not show whether it is too large or too small.",
+                "The approximation is 4.2, and it is an underestimate."
+              ],
+              "key": "D",
+              "rationale": "The tangent line is y = 4 − 2(x − 3), so the approximation is 4 − 2(2.9 − 3) = 4 + 0.2 = 4.2. Because f″(x) > 0 for all x, the graph of f is concave up and lies above its tangent line on both sides of x = 3. So 4.2 is less than f(2.9): an underestimate.",
+              "distractorNotes": {
+                "A": "This steps the wrong way from x = 3. The step to 2.9 is −0.1, so the tangent line changes by (−2)(−0.1) = +0.2, not −0.2.",
+                "B": "This reverses the concavity rule. A concave-up graph lies above its tangent lines, so tangent-line values are too small.",
+                "C": "The sign of f″ for all x is enough. A concave-up graph lies above its tangent line to the left of x = 3 as well as to the right, so no further information is needed."
+              },
+              "topics": [
+                "AB.4.6",
+                "AB.5.6"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc05",
+              "prompt": "The derivative of a function f is f′(x) = x(x − 3)^2. Which statement about f is true?",
+              "choices": [
+                "f has a relative minimum at x = 0 and no relative extremum at x = 3.",
+                "f has a relative minimum at x = 0 and a relative maximum at x = 3.",
+                "f has a relative maximum at x = 1 and a relative minimum at x = 3.",
+                "f has a relative minimum at x = 0 and another at x = 3."
+              ],
+              "key": "A",
+              "rationale": "Because (x − 3)^2 ≥ 0, the sign of f′ is the sign of x except at x = 3. So f′ < 0 for x < 0 and f′ > 0 on 0 < x < 3 and on x > 3. f′ changes from negative to positive at x = 0, a relative minimum; f′ does not change sign at x = 3, where f keeps increasing, so there is no extremum there.",
+              "distractorNotes": {
+                "B": "This assumes f′ changes sign at every zero. The squared factor (x − 3)^2 does not change sign, so f′ is positive on both sides of x = 3.",
+                "C": "These are the extrema of f′ itself: f″(x) = 3(x − 1)(x − 3) changes sign at 1 and 3. Extrema of f come from sign changes of f′, not of f″.",
+                "D": "A relative minimum needs f′ to change from negative to positive. Near x = 3, f′ is positive on both sides, so f is increasing through x = 3."
+              },
+              "topics": [
+                "AB.5.4",
+                "AB.5.9"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc06",
+              "prompt": "A function f is twice differentiable on [1, 5], with f′(x) > 0 and f″(x) < 0 there. Using four subintervals of equal width, L, R, M, and T are the left, right, midpoint, and trapezoidal sums for ∫ from 1 to 5 of f(x) dx. Which of these sums are greater than the value of the integral?",
+              "choices": [
+                "L and M only",
+                "R and T only",
+                "R and M only",
+                "R only"
+              ],
+              "key": "C",
+              "rationale": "Because f is increasing, each right endpoint gives the largest value of f on its subinterval, so R overestimates and L underestimates. Because f is concave down, each chord lies below the curve, so T underestimates; each midpoint rectangle has the same area as the trapezoid under the tangent line at the midpoint, which lies above the curve, so M overestimates. The sums greater than the integral are R and M.",
+              "distractorNotes": {
+                "A": "This reverses the rule for increasing functions. For an increasing f the left endpoint gives the smallest value on each subinterval, so L is too small.",
+                "B": "This reverses the concavity rules. On a concave-down graph the chords lie below the curve, so T is too small, and the tangent lines lie above it, so M is too large.",
+                "D": "This applies only the rule for increasing functions. Concavity decides M and T, and for a concave-down graph M is too large as well."
+              },
+              "topics": [
+                "AB.6.2",
+                "AB.5.6"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc07",
+              "prompt": "Let G(x) = ∫ from x^2 to 5 of √(t + 5) dt. What is G′(2)?",
+              "choices": [
+                "12",
+                "−12",
+                "−3",
+                "−4√7"
+              ],
+              "key": "B",
+              "rationale": "Reverse the limits so the variable is on top: G(x) = −∫ from 5 to x^2 of √(t + 5) dt. By the Fundamental Theorem and the chain rule, G′(x) = −√(x^2 + 5)·2x. At x = 2, G′(2) = −√9·4 = −12.",
+              "distractorNotes": {
+                "A": "This ignores that x^2 is the lower limit. Reversing the limits to put x^2 on top brings in a minus sign.",
+                "C": "This evaluates the integrand at the limit, −√(4 + 5) = −3, but omits the chain-rule factor d/dx(x^2) = 2x, which is 4 at x = 2.",
+                "D": "This evaluates the integrand at t = x = 2 instead of at the limit t = x^2 = 4, giving −√7·4."
+              },
+              "topics": [
+                "AB.6.4",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc08",
+              "prompt": "Let y = f(t) be the solution of the differential equation dy/dt = sin y with the initial condition f(0) = 2. What is lim as t→∞ of f(t)?",
+              "choices": [
+                "0",
+                "π/2",
+                "The limit is infinite.",
+                "π"
+              ],
+              "key": "D",
+              "rationale": "The constant solutions are the values where sin y = 0: y = 0, π, 2π, …. Since 0 < 2 < π, sin 2 > 0, so f starts out increasing, and dy/dt = sin y stays positive while 0 < y < π. A solution curve cannot cross the constant solution y = π, so f is increasing and bounded above by π for t ≥ 0. It therefore has a limit, and that limit must be a value where dy/dt = 0; the only such value in [2, π] is π.",
+              "distractorNotes": {
+                "A": "This sends f toward the constant solution y = 0 below it, as if dy/dt were negative at y = 2; in fact sin 2 > 0, so f increases.",
+                "B": "y = π/2 is where dy/dt = sin y is largest, not where f levels off; f starts at 2, which is already above π/2, and it keeps increasing.",
+                "C": "This lets f increase without bound, ignoring that the constant solution y = π is a barrier the solution curve cannot cross."
+              },
+              "topics": [
+                "AB.7.4",
+                "AB.7.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc09",
+              "prompt": "Let R be the region in the first quadrant bounded by the graph of y = 1 − √x and the two coordinate axes. R is revolved about the y-axis. What is the volume of the resulting solid?",
+              "choices": [
+                "π/5",
+                "π/6",
+                "π/3",
+                "8π/15"
+              ],
+              "key": "A",
+              "rationale": "R spans 0 ≤ x ≤ 1 and 0 ≤ y ≤ 1. Slice perpendicular to the axis of revolution, the y-axis. Solving y = 1 − √x for x gives x = (1 − y)^2, so each slice runs from the y-axis out to the curve and sweeps a disk of radius (1 − y)^2. Volume = π∫ from 0 to 1 of (1 − y)^4 dy = π[−(1 − y)^5/5] from 0 to 1 = π/5.",
+              "distractorNotes": {
+                "B": "This uses vertical slices with radius 1 − √x, π∫ from 0 to 1 of (1 − √x)^2 dx = π/6, which revolves R about the x-axis, not the y-axis.",
+                "C": "This uses the radius (1 − y)^2 without squaring it: π∫ from 0 to 1 of (1 − y)^2 dy = π/3. A disk's area is π times the square of its radius.",
+                "D": "This solves for x incorrectly, writing x = 1 − y^2 instead of x = (1 − y)^2: π∫ from 0 to 1 of (1 − y^2)^2 dy = 8π/15."
+              },
+              "topics": [
+                "AB.8.9"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc10",
+              "prompt": "The curve y^3 + 2xy = 12 passes through the point (1, 2). What is dy/dx at (1, 2)?",
+              "choices": [
+                "−1/3",
+                "−8",
+                "−2/7",
+                "2/7"
+              ],
+              "key": "C",
+              "rationale": "Differentiate implicitly, using the product rule on 2xy: 3y^2(dy/dx) + 2y + 2x(dy/dx) = 0, so dy/dx = −2y/(3y^2 + 2x). At (1, 2): dy/dx = −4/(12 + 2) = −2/7.",
+              "distractorNotes": {
+                "A": "This differentiates 2xy as 2y, treating y as a constant and losing the term 2x(dy/dx): −4/12 = −1/3.",
+                "B": "This differentiates y^3 as 3y^2 without the factor dy/dx. Then 12 + 4 + 2(dy/dx) = 0 gives −8.",
+                "D": "This has the right size but loses the minus sign when 2y is moved to the other side of the equation."
+              },
+              "topics": [
+                "AB.3.2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question. If the exact value is not a choice, choose the closest approximation.",
+          "items": [
+            {
+              "id": "ab-mixed-3-mc11",
+              "prompt": "A tank holds 120 liters of water at time t = 0. For 0 ≤ t ≤ 6 minutes, water flows in at the rate E(t) = 15 + 4cos(0.8t) liters per minute and drains out at the rate D(t) = 3te^(−0.2t) liters per minute. How many liters of water are in the tank at t = 6?",
+              "choices": [
+                "59.716",
+                "179.716",
+                "129.929",
+                "205.019"
+              ],
+              "key": "B",
+              "rationale": "The amount at t = 6 is the starting amount plus the net accumulated change: 120 + ∫ from 0 to 6 of (E(t) − D(t)) dt. A calculator gives the integral as 59.716, so the tank holds 179.716 liters.",
+              "distractorNotes": {
+                "A": "This is only the net change, ∫ from 0 to 6 of (E(t) − D(t)) dt. The 120 liters already in the tank at t = 0 must be added.",
+                "C": "This adds the net rate at one instant, E(6) − D(6) = 9.929 liters per minute, to the starting amount. A rate is not an accumulated amount; the rates must be integrated.",
+                "D": "This accumulates the inflow and ignores the drain: 120 + ∫ from 0 to 6 of E(t) dt."
+              },
+              "topics": [
+                "AB.8.3",
+                "AB.6.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc12",
+              "prompt": "A particle moves along the x-axis with velocity v(t) = (t^2 − 3)e^(−0.4t) for 0 ≤ t ≤ 4. What is the total distance the particle travels from t = 0 to t = 4?",
+              "choices": [
+                "0.784",
+                "3.493",
+                "2.625",
+                "6.202"
+              ],
+              "key": "D",
+              "rationale": "Total distance is ∫ from 0 to 4 of |v(t)| dt. The velocity is negative for t < √3 and positive after, so the particle reverses direction once. A calculator gives ∫ from 0 to 4 of |v(t)| dt = 6.202 (2.709 traveled backward, then 3.493 forward).",
+              "distractorNotes": {
+                "A": "This is the displacement, ∫ from 0 to 4 of v(t) dt, in which the backward motion before t = √3 cancels part of the forward motion.",
+                "B": "This counts only the motion while v(t) > 0, from t = √3 to t = 4, and leaves out the 2.709 units traveled backward.",
+                "C": "This is the speed |v(4)|, a rate at one instant, not a distance."
+              },
+              "topics": [
+                "AB.8.2",
+                "AB.4.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc13",
+              "prompt": "Let f(x) = cos x + x^2/4. What value of c in the open interval (0, 3) satisfies the conclusion of the Mean Value Theorem for f on the closed interval [0, 3]?",
+              "choices": [
+                "0.980",
+                "1.500",
+                "1.996",
+                "2.609"
+              ],
+              "key": "C",
+              "rationale": "f is continuous and differentiable everywhere, so the Mean Value Theorem applies. The average rate of change is (f(3) − f(0))/3 = 0.086669. Solving f′(c) = −sin c + c/2 = 0.086669 on (0, 3) with a calculator gives c = 1.996, the only solution in the interval.",
+              "distractorNotes": {
+                "A": "This solves f(c) = (1/3)∫ from 0 to 3 of f(x) dx = 0.797, a point where f equals its average value. The Mean Value Theorem matches the derivative to the average rate of change.",
+                "B": "This is the midpoint of the interval. The theorem gives some c in (0, 3), not the midpoint; here f′(1.5) = −0.247, which is not the secant slope.",
+                "D": "This solves f′(c) = 0.797, setting the derivative equal to the average value of f. The derivative must equal the secant slope, (f(3) − f(0))/3 = 0.087."
+              },
+              "topics": [
+                "AB.5.1",
+                "AB.2.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc14",
+              "prompt": "A chilled bottle of water is placed in a room. Its temperature W(t), in degrees Celsius, satisfies dW/dt = 0.09(24 − W), where t is measured in minutes, and W(0) = 5. What is the average temperature of the water over the first 20 minutes?",
+              "choices": [
+                "15.189",
+                "0.793",
+                "12.930",
+                "16.275"
+              ],
+              "key": "A",
+              "rationale": "Separating variables gives 24 − W = 19e^(−0.09t), so W(t) = 24 − 19e^(−0.09t). The average value is (1/20)∫ from 0 to 20 of W(t) dt; a calculator gives 15.189 degrees Celsius.",
+              "distractorNotes": {
+                "B": "This is the average rate of change, (W(20) − W(0))/20, in degrees per minute. It describes how fast the temperature rose, not its typical value.",
+                "C": "This averages only the endpoint temperatures, (W(0) + W(20))/2. The average value weighs every moment of the interval.",
+                "D": "This is W(10), the temperature at the middle time. W is concave down, so the middle value is larger than the average value."
+              },
+              "topics": [
+                "AB.7.7",
+                "AB.8.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-3-mc15",
+              "prompt": "A phone is plugged into a charger at t = 0, when its battery is at 30 percent. For 0 ≤ t ≤ 6 hours, the charger adds charge at the rate C(t) = 25e^(−0.4t) percent per hour while apps use charge at the rate D(t) = 6 + 5sin(1.5t) percent per hour. At what time t is the battery's charge greatest?",
+              "choices": [
+                "2.848",
+                "4.048",
+                "6.000",
+                "1.047"
+              ],
+              "key": "B",
+              "rationale": "The charge is B(t) = 30 + ∫ from 0 to t of (C(x) − D(x)) dx, so B′(t) = C(t) − D(t). A calculator shows C(t) − D(t) = 0 only at t = 4.048 on the interval, where it changes from positive to negative. Candidates: B(0) = 30, B(4.048) = 55.759, B(6) = 44.460. The charge is greatest at t = 4.048.",
+              "distractorNotes": {
+                "A": "At t = 2.848 the net rate C − D has a relative maximum, so the charge is rising fastest there compared with nearby times; it is not yet at its greatest. The charge keeps rising until C − D reaches 0.",
+                "C": "This assumes the charge rises for the whole time. After t = 4.048 apps use charge faster than the charger adds it, and B(6) = 44.460 is less than B(4.048).",
+                "D": "This is t = π/3, when apps use charge fastest. The charger still adds more than the apps use at that moment, so the charge is still rising."
+              },
+              "topics": [
+                "AB.5.5",
+                "AB.8.3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

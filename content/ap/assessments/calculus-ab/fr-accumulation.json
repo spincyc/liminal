@@ -1,0 +1,352 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-accumulation",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Rates and accumulation in context",
+  "author": "ab-workshop-author",
+  "directions": "Three free-response questions at the exam's pace of 15 minutes each: Part A (two questions, 30 minutes) requires a graphing calculator and Part B (one question, 15 minutes) allows none. Write answers in the space under each part. Show the integral, derivative or equation behind every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Angles are in radians. Justify a conclusion whenever a part asks for a reason. Afterward, score each part with the answer key's rubric and record raw points as practice.",
+  "figures": [
+    {
+      "id": "ab-fr-accumulation-f1",
+      "alt": "Graph of s(t) for 0 ≤ t ≤ 12 made of line segments joining the points (0, 4), (2, 4), (6, 0), (8, 0), (10, 6) and (12, 6), on axes labeled t (days) and s(t), with a grid of 1-unit squares.",
+      "caption": "The rate s(t), in kilograms per day, at which scraps are added to the bin."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Write the integral, derivative or equation you use before its value, and give answers to three decimal places. Justify conclusions when a part asks you to.",
+          "items": [
+            {
+              "id": "ab-fr-accumulation-fr1",
+              "prompt": "At a sugarhouse, maple sap flows into the pan of an evaporator, and a wood fire boils water out of the liquid in the pan. For 0 ≤ t ≤ 6, where t is measured in hours after the fire is lit, sap flows into the pan at the rate S(t) = 32 + 6cos(t^2/5) liters per hour. As the pan heats up, water boils off at the rate B(t) = 42(1 − e^(−0.8t)) liters per hour. At t = 0 the pan holds 60 liters of liquid. Liquid enters the pan only as sap and leaves only by boiling. Let V(t) be the volume of liquid, in liters, in the pan at time t.",
+              "context": true,
+              "topics": [
+                "AB.8.3",
+                "AB.6.7",
+                "AB.5.5",
+                "AB.5.9",
+                "AB.4.3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the value of ∫ from 0 to 2 of B(t) dt. Using correct units, explain the meaning of this integral in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 42.100, or a value within 0.001."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that 42.100 liters of water boil out of the pan during the first 2 hours after the fire is lit (t = 0 to t = 2). The explanation needs the quantity, the units (liters) and the time interval; liters per hour does not earn the point."
+                    }
+                  ],
+                  "answer": "∫ from 0 to 2 of B(t) dt ≈ 42.100. About 42.100 liters of water boil out of the pan during the first 2 hours after the fire is lit.",
+                  "steps": [
+                    "The calculator gives ∫ from 0 to 2 of 42(1 − e^(−0.8t)) dt ≈ 42.099567, so the value is 42.100. (By hand it is 84 − 52.5(1 − e^(−1.6)).)",
+                    "B is a rate in liters per hour and t is in hours, so the integral is a volume in liters: the water that boils off from t = 0 to t = 2."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Is the volume of liquid in the pan increasing or decreasing at time t = 5? Is the rate at which the volume is changing increasing or decreasing at time t = 5? Give a reason for each answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Decreasing, because V′(5) = S(5) − B(5) ≈ −7.529 < 0 (or because S(5) ≈ 33.702 < B(5) ≈ 41.231)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The rate of change is increasing, because V″(5) = S′(5) − B′(5) ≈ 10.892 > 0. A response that uses the sign of S′(5) alone, or of V′(5), for the second question does not earn this point."
+                    }
+                  ],
+                  "answer": "Decreasing, because V′(5) = S(5) − B(5) ≈ −7.529 < 0. The rate of change of the volume is increasing, because V″(5) = S′(5) − B′(5) ≈ 10.892 > 0: the volume is falling, but more slowly.",
+                  "steps": [
+                    "V′(t) = S(t) − B(t). At t = 5, S(5) ≈ 33.701973 and B(5) ≈ 41.230743, so V′(5) ≈ −7.529 liters per hour. The volume is decreasing.",
+                    "V″(t) = S′(t) − B′(t). A calculator derivative gives S′(5) ≈ 11.507091 (by hand, S′(t) = −(12t/5)sin(t^2/5), so S′(5) = −12sin 5), and B′(5) = 33.6e^(−4) ≈ 0.615405.",
+                    "V″(5) ≈ 10.891686 > 0, so V′ is increasing at t = 5. The two answers do not conflict: V′(5) is negative and moving toward zero."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the greatest volume of liquid in the pan for 0 ≤ t ≤ 6. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets V′(t) = S(t) − B(t) = 0 and finds the only interior solution, t ≈ 2.262."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains V(2.262) = 60 + ∫ from 0 to 2.262 of (S(t) − B(t)) dt ≈ 93.503 liters, or a value within 0.001. The integral and the initial 60 liters must both appear."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies the absolute maximum: V′ > 0 on (0, 2.262) and V′ < 0 on (2.262, 6], so V increases and then decreases; or compares the candidates V(0) = 60, V(2.262) ≈ 93.503 and V(6) ≈ 62.335. Either method earns the point."
+                    }
+                  ],
+                  "answer": "About 93.503 liters, at t ≈ 2.262 hours.",
+                  "steps": [
+                    "V′(t) = S(t) − B(t). The calculator finds one zero in (0, 6): t = c ≈ 2.261939. V′ > 0 on (0, c) (the cold pan boils off little) and V′ < 0 on (c, 6].",
+                    "V(c) = 60 + ∫ from 0 to c of (S(t) − B(t)) dt ≈ 60 + 33.502722 ≈ 93.503 liters.",
+                    "Candidates test: V(0) = 60, V(c) ≈ 93.503 and V(6) = 60 + ∫ from 0 to 6 of (S(t) − B(t)) dt ≈ 62.335. The largest is V(c) ≈ 93.503 liters.",
+                    "Equivalently, V′ changes sign only once, from positive to negative, at t = c, so V(c) is the absolute maximum on [0, 6]."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "After the volume reaches its greatest value, there is a time T, with T ≤ 6, at which the pan holds 70 liters. Write an equation involving an integral expression whose solution is T, and find T.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes 60 + ∫ from 0 to T of (S(t) − B(t)) dt = 70, or an equivalent equation such as V(c) + ∫ from c to T of (S(t) − B(t)) dt = 70 with c ≈ 2.262."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains T ≈ 4.683, or a value within 0.001. The earlier solution t ≈ 0.300, while the volume is rising, does not earn this point."
+                    }
+                  ],
+                  "answer": "T satisfies 60 + ∫ from 0 to T of (S(t) − B(t)) dt = 70, and T ≈ 4.683 hours.",
+                  "steps": [
+                    "V(T) = 60 + ∫ from 0 to T of (S(t) − B(t)) dt, so T solves 60 + ∫ from 0 to T of (S(t) − B(t)) dt = 70.",
+                    "The equation has two solutions in [0, 6]: t ≈ 0.300, while V rises from 60 toward its maximum, and t ≈ 4.683, while V falls. V decreases on [2.262, 6] from about 93.503 to about 62.335, so it equals 70 exactly once there.",
+                    "A solver started in (2.262, 6) gives T ≈ 4.682668, so T ≈ 4.683 hours."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-fr-accumulation-fr2",
+              "prompt": "A sandbar lies across the mouth of a small harbor. For 0 ≤ t ≤ 10, where t is measured in days, waves deposit sand on the sandbar at the rate D(t) = 40 + 28sin(t^2/16) cubic meters per day, and tidal currents carry sand away from it at the rate R(t) = 34 + 3t cubic meters per day. At time t = 0 the sandbar contains 500 cubic meters of sand. Sand reaches or leaves the sandbar in no other way. Let A(t) be the volume of sand, in cubic meters, in the sandbar at time t.",
+              "context": true,
+              "topics": [
+                "AB.8.3",
+                "AB.8.1",
+                "AB.4.1",
+                "AB.5.5",
+                "AB.6.4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find D′(7). Using correct units, explain the meaning of D′(7) in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains D′(7) ≈ −24.423, or a value within 0.001."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that at t = 7 days the rate at which waves deposit sand is decreasing at 24.423 cubic meters per day per day (or is changing at −24.423 cubic meters per day per day). A statement about the volume of the sandbar, or units of cubic meters per day, does not earn this point."
+                    }
+                  ],
+                  "answer": "D′(7) ≈ −24.423. At t = 7 days, the rate at which waves deposit sand on the sandbar is decreasing at about 24.423 cubic meters per day per day.",
+                  "steps": [
+                    "A calculator derivative gives D′(7) ≈ −24.423408. By hand, D′(t) = 28cos(t^2/16)·(t/8), so D′(7) = 24.5cos(49/16) ≈ −24.423.",
+                    "D is a rate in cubic meters per day, so its derivative is in cubic meters per day per day. The negative sign means the deposit rate is falling at t = 7."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the average rate at which waves deposit sand on the sandbar over the interval 0 ≤ t ≤ 10. Indicate units of measure.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes (1/10)∫ from 0 to 10 of D(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 44.822 cubic meters per day, or a value within 0.001, with units."
+                    }
+                  ],
+                  "answer": "About 44.822 cubic meters per day.",
+                  "steps": [
+                    "The average rate is the average value of D on [0, 10]: (1/(10 − 0))∫ from 0 to 10 of D(t) dt.",
+                    "The calculator gives ∫ from 0 to 10 of D(t) dt ≈ 448.217987, so the average is about 44.822 cubic meters per day."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the absolute minimum value of A(t) for 0 ≤ t ≤ 10. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets A′(t) = D(t) − R(t) = 0 and finds the only interior solution, t ≈ 6.498, as a candidate."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains A(10) = 500 + ∫ from 0 to 10 of (D(t) − R(t)) dt ≈ 458.218, or a value within 0.001."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the minimum is about 458.218 cubic meters, at t = 10, comparing A(0) = 500, A(6.498) ≈ 571.738 and A(10) ≈ 458.218, or arguing that A increases on [0, 6.498] and decreases on [6.498, 10] and A(10) < A(0). A response that gives t ≈ 6.498 as the time of the minimum does not earn this point."
+                    }
+                  ],
+                  "answer": "The absolute minimum is about 458.218 cubic meters, at t = 10 days.",
+                  "steps": [
+                    "A′(t) = D(t) − R(t). The calculator finds one zero in (0, 10): t = c ≈ 6.497720. A′ > 0 on [0, c) and A′ < 0 on (c, 10], so c is where the sandbar is largest, not smallest.",
+                    "Candidates: A(0) = 500; A(c) = 500 + ∫ from 0 to c of (D(t) − R(t)) dt ≈ 571.738; A(10) = 500 + ∫ from 0 to 10 of (D(t) − R(t)) dt ≈ 500 + 448.217987 − 490 ≈ 458.218.",
+                    "The smallest value is A(10) ≈ 458.218 cubic meters. The minimum is at an endpoint: after t ≈ 6.498 the currents remove sand faster than the waves bring it, long enough to take the sandbar below its starting volume."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Boats cannot use the harbor while the sandbar contains more than 550 cubic meters of sand. For how many days during 0 ≤ t ≤ 10 is the harbor closed to boats? Show the work that leads to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Solves 500 + ∫ from 0 to t of (D(x) − R(x)) dx = 550 and finds both solutions, t ≈ 4.810 and t ≈ 7.786. Accepts a response that uses the maximum from part (c) to explain why there are exactly two."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains about 2.976 days, or a value within 0.001, as the difference of the two times."
+                    }
+                  ],
+                  "answer": "About 2.976 days, from t ≈ 4.810 to t ≈ 7.786.",
+                  "steps": [
+                    "A(t) = 500 + ∫ from 0 to t of (D(x) − R(x)) dx. A rises from 500 to about 571.738 at t ≈ 6.498 and then falls to about 458.218, so A(t) = 550 exactly twice, once on each side of t ≈ 6.498.",
+                    "The solver gives t1 ≈ 4.810076 and t2 ≈ 7.786157, and A(t) > 550 exactly for t1 < t < t2.",
+                    "The harbor is closed for t2 − t1 ≈ 2.976081, about 2.976 days. Subtract the stored values, not rounded ones."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show your work and give exact answers. Justify conclusions when a part asks you to; answers without supporting work may not earn credit.",
+          "items": [
+            {
+              "id": "ab-fr-accumulation-fr3",
+              "prompt": "Kitchen scraps are added to a compost bin at the rate s(t) kilograms per day, where t is measured in days, for 0 ≤ t ≤ 12. The graph of s, shown in the figure, consists of line segments joining the points (0, 4), (2, 4), (6, 0), (8, 0), (10, 6) and (12, 6). Microbes break down the compost, which reduces its mass at a constant rate of 2 kilograms per day. At time t = 0 the bin holds 20 kilograms of compost. Let M(t) be the mass of compost, in kilograms, in the bin at time t.",
+              "context": true,
+              "figureIds": [
+                "ab-fr-accumulation-f1"
+              ],
+              "topics": [
+                "AB.8.3",
+                "AB.6.5",
+                "AB.5.3",
+                "AB.5.5",
+                "AB.6.4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find M(6), the mass of compost in the bin at time t = 6 days.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes M(6) = 20 + ∫ from 0 to 6 of s(t) dt − 2·6, or 20 + ∫ from 0 to 6 of (s(t) − 2) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 24 kilograms, with ∫ from 0 to 6 of s(t) dt = 16 from areas under the graph."
+                    }
+                  ],
+                  "answer": "M(6) = 24 kilograms.",
+                  "steps": [
+                    "M(6) = 20 + ∫ from 0 to 6 of (s(t) − 2) dt.",
+                    "Areas under the graph: the rectangle on [0, 2] gives 8 and the triangle on [2, 6] gives (1/2)(4)(4) = 8, so ∫ from 0 to 6 of s(t) dt = 16.",
+                    "M(6) = 20 + 16 − 12 = 24 kilograms."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "On what open interval is the mass of compost in the bin decreasing? Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Gives the interval 4 < t < 26/3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Reason: M′(t) = s(t) − 2 < 0 exactly when s(t) < 2, which holds on (4, 26/3), with s(t) = 6 − t on [2, 6] and s(t) = 3(t − 8) on [8, 10]."
+                    }
+                  ],
+                  "answer": "On 4 < t < 26/3, because M′(t) = s(t) − 2 < 0 there.",
+                  "steps": [
+                    "M′(t) = s(t) − 2, so M decreases where the graph of s lies below the horizontal line y = 2.",
+                    "On [2, 6], s(t) = 6 − t, which equals 2 at t = 4. On [8, 10], s(t) = 3(t − 8), which equals 2 at t = 26/3.",
+                    "s(t) < 2 for 4 < t < 6, on [6, 8] where s = 0, and for 8 ≤ t < 26/3. Elsewhere s(t) ≥ 2. So M is decreasing on (4, 26/3)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the absolute minimum value of M(t) for 0 ≤ t ≤ 12. Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the candidates t = 0, t = 4, t = 26/3 and t = 12 (or uses the sign of M′ to reduce the comparison to t = 0 and t = 26/3)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains M(26/3) = 58/3 kilograms, with ∫ from 0 to 26/3 of s(t) dt = 50/3. Accepts consistent use of an interval from part (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that the minimum is 58/3 kilograms, at t = 26/3, by comparison with M(0) = 20 (and M(4) = 26, M(12) = 30). A response that does not compare with M(0) does not earn this point."
+                    }
+                  ],
+                  "answer": "The absolute minimum is 58/3 kilograms, at t = 26/3 days.",
+                  "steps": [
+                    "M′ = s − 2 changes sign at t = 4 (positive to negative) and at t = 26/3 (negative to positive). The candidates are the endpoints and these two times.",
+                    "M(4) = 20 + (8 + 6) − 8 = 26, using ∫ from 2 to 4 of (6 − t) dt = 6.",
+                    "∫ from 0 to 26/3 of s(t) dt = 8 + 8 + 0 + (1/2)(2/3)(2) = 50/3, so M(26/3) = 20 + 50/3 − 52/3 = 58/3.",
+                    "∫ from 0 to 12 of s(t) dt = 8 + 8 + 0 + 6 + 12 = 34, so M(12) = 20 + 34 − 24 = 30.",
+                    "Comparing 20, 26, 58/3 ≈ 19.3 and 30, the least value is M(26/3) = 58/3 kilograms. It is only a little below M(0) = 20, which is why the comparison is needed."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "There is a time T, with 26/3 < T < 12, at which the bin again holds 20 kilograms of compost. Write an equation involving an integral expression whose solution is T, and find T.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes 20 + ∫ from 0 to T of (s(t) − 2) dt = 20, that is, ∫ from 0 to T of s(t) dt = 2T, or an equivalent equation such as 58/3 + ∫ from 26/3 to T of (s(t) − 2) dt = 20."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains T = 28/3 days, with work that evaluates the integral on [8, T] as (3/2)(T − 8)^2."
+                    }
+                  ],
+                  "answer": "T satisfies ∫ from 0 to T of s(t) dt = 2T, and T = 28/3 days.",
+                  "steps": [
+                    "M(T) = 20 + ∫ from 0 to T of (s(t) − 2) dt = 20 means ∫ from 0 to T of s(t) dt = 2T: the scraps added equal the mass broken down.",
+                    "M(10) = 30 − 4·2 = 22 > 20, since M increases at 4 kilograms per day on [10, 12]. So T lies in (26/3, 10), where s(t) = 3(t − 8).",
+                    "For 8 ≤ T ≤ 10, ∫ from 0 to T of s(t) dt = 16 + (3/2)(T − 8)^2. Solve 16 + (3/2)(T − 8)^2 = 2T. With u = T − 8: 16 + (3/2)u^2 = 2u + 16, so u((3/2)u − 2) = 0. The root u = 0 gives T = 8, when M passes 20 on its way down, which is not in (26/3, 12); so u = 4/3.",
+                    "T = 8 + 4/3 = 28/3 days. Check: ∫ from 0 to 28/3 of s(t) dt = 16 + (3/2)(16/9) = 56/3 = 2(28/3)."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

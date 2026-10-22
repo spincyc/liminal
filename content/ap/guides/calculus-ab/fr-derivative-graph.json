@@ -1,0 +1,407 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-derivative-graph",
+  "kind": "fr-archetype",
+  "title": "Reading the graph of a derivative",
+  "author": "ab-workshop-author",
+  "summary": "A derivative-graph question on the AP® Calculus AB Exam's free-response section hands you a picture of a rate, usually f′ or the integrand of g(x) = ∫ from a to x of f(t) dt, and asks about the function one level up: where it rises and falls, where it bends, how large it gets, and what one of its values is. This guide sets out the usual parts, what earns setup, answer, justification and units points in Liminal's rubrics, model sentences, traps with their repairs, one worked model and four checks. Then take the three-question practice set at 15 minutes a question and score it with its rubric.",
+  "minutes": 30,
+  "figures": [
+    {
+      "id": "ab-fr-derivative-graph-g1",
+      "alt": "Graph of y = f(t) for 0 ≤ t ≤ 6 on a unit grid. A line segment falls from (0, 2) through (2, 0) to (3, −1). A second segment rises from (3, −1) through (4, 0) to (6, 2)."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The question shows you one graph and asks about a different function. Most often the graph is f′ and the questions are about f. In the other common form the graph is f and the questions are about g(x) = ∫ from a to x of f(t) dt, so that g′ = f. In context, the graph is a rate, such as the rate at which a temperature or a volume changes, and the questions are about the quantity itself. In every form the graph you see is the derivative of the function you are asked about."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "The sign of the graph (above or below the axis) tells where the function one level up increases or decreases; a sign change is a relative extremum of that function.",
+            "The direction of the graph (rising or falling) tells the concavity of the function one level up; a change of direction is a point of inflection.",
+            "The signed area between the graph and the axis is a change in the function one level up; add it to a known value to get a value."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Section II of the exam has a calculator part (Part A, graphing calculator required) and a no-calculator part (Part B), as College Board's exam pages (checked 2026-10-22) describe. In Liminal's practice, a graph made of segments and circle pieces belongs in the no-calculator part, because every area is a triangle, rectangle or circle piece with an exact value. When f′ is a formula whose zeros or integrals have no exact form, the same reading moves to the calculator part, with the graph drawn for orientation and the zeros and integrals found with the calculator. This workshop's set has one of each kind and one question in context."
+        },
+        {
+          "type": "text",
+          "text": "Before you read anything off the graph, write the chain at the top of your work: \"graph is f′; f increases where f′ > 0; f is concave up where f′ increases\", or \"g′ = f, g″ = f′\". Every later sentence then names the right function."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Parts that appear in this archetype. A question uses three to five of them for 9 points, and later parts reuse values found earlier. Points are Liminal's practice weights.",
+          "head": [
+            "The part asks for",
+            "What you read and write",
+            "Typical points"
+          ],
+          "rows": [
+            [
+              "A value such as f(b) or g(b)",
+              "Known value plus signed area; reverse the sign when b is left of the known point",
+              "1–2"
+            ],
+            [
+              "Relative extrema; intervals of increase or decrease",
+              "The sign of the graph and where it changes",
+              "2"
+            ],
+            [
+              "Points of inflection; intervals of concavity",
+              "Where the graph changes between rising and falling",
+              "1–2"
+            ],
+            [
+              "An absolute extremum on a closed interval",
+              "Every candidate, its value from areas, and the comparison",
+              "3"
+            ],
+            [
+              "A derivative of a new function, such as x·f(x) or f(2x), or a tangent line",
+              "Heights of the graph for f′ values, areas for f values, then the product or chain rule",
+              "1–2"
+            ],
+            [
+              "The meaning of a value in context, or an interval where the quantity increases at a decreasing rate",
+              "Units divided by the input unit once per derivative; the sign and the direction of the rate together",
+              "1–2"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Expect at least two parts that must be justified in words, and expect the absolute-extremum part to be the one where an answer without the list of candidates and the comparison loses points."
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Setup point: the expression that produces a value, written before the arithmetic, such as f(−3) = f(0) − ∫ from −3 to 0 of f′(x) dx. In the calculator part the setup is the integral or equation you hand to the calculator.",
+            "Answer point: the value, exact in the no-calculator part (π − 4, not −0.86) and to three decimal places in the calculator part, computed from stored values.",
+            "Justification point: one sentence that names the function, says what its derivative's graph does, and draws the conclusion. \"Because it changes sign\" earns nothing; the reader cannot tell which function \"it\" is.",
+            "Units point: in context, a value of the rate's derivative carries the rate's units divided by the time unit, and an interpretation names the time and the quantity.",
+            "Consistency: a later part that uses a wrong earlier value correctly can still earn its points. Write the earlier value into the later work so a reader can follow it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Accumulation functions",
+          "text": "If g(x) = ∫ from a to x of f(t) dt, then g′(x) = f(x), and g″(x) = f′(x) wherever f is differentiable. Values come from f(b) = f(a) + ∫ from a to b of f′(x) dx.",
+          "conditions": [
+            "f is continuous on the interval.",
+            "A corner in the graph of f makes g″ fail to exist there; g′ still exists.",
+            "For values, f′ is continuous on [a, b], as it is when its graph is drawn without breaks."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "First derivative test",
+          "text": "If f is continuous at c and f′ changes from positive to negative at c, f has a relative maximum at c; from negative to positive, a relative minimum.",
+          "conditions": [
+            "A zero of f′ where the graph of f′ touches the axis and stays on one side is not an extremum."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Point of inflection",
+          "text": "The graph of f has a point of inflection at c when f is continuous at c and its concavity changes there; on a graph of f′, that is where f′ changes from increasing to decreasing or the reverse.",
+          "conditions": [
+            "f″(c) may be zero or may not exist; neither fact alone proves an inflection point."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Candidates test",
+          "text": "A function continuous on a closed interval [a, b] has an absolute maximum and an absolute minimum there, each at an endpoint or at a critical point. Evaluate the function at every candidate and compare.",
+          "conditions": [
+            "The interval is closed and the function is continuous on it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Derivatives of new functions",
+          "text": "For h(x) = x·f(x), h′(x) = f(x) + x·f′(x). For k(x) = f(u(x)), k′(x) = f′(u(x))·u′(x).",
+          "conditions": [
+            "Read f′ at the inside value u(x), not at x.",
+            "f values come from areas; f′ values come from heights of the graph of f′."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each sentence names the function, describes the graph, and concludes. Copy the pattern, not the numbers."
+        },
+        {
+          "type": "model",
+          "prompt": "A decreasing interval, from a graph of f with g(x) = ∫ from 1 to x of f(t) dt.",
+          "text": "g is decreasing on (3, 7) because g′(x) = f(x) < 0 for 3 < x < 7."
+        },
+        {
+          "type": "model",
+          "prompt": "A relative maximum, from a graph of f′.",
+          "text": "f has a relative maximum at x = −1 because f′ changes from positive to negative at x = −1."
+        },
+        {
+          "type": "model",
+          "prompt": "A zero of f′ that is not an extremum.",
+          "text": "f has no relative extremum at x = 2: although f′(2) = 0, f′ < 0 on both sides of x = 2, so f is decreasing on both sides."
+        },
+        {
+          "type": "model",
+          "prompt": "A point of inflection, from a graph of f′.",
+          "text": "The graph of f has a point of inflection at x = 4 because f′ changes from increasing to decreasing at x = 4."
+        },
+        {
+          "type": "model",
+          "prompt": "An absolute maximum on a closed interval.",
+          "text": "The candidates are x = −4, x = 1 and x = 6, with f(−4) = 3, f(1) = 7 and f(6) = 2 + π. The absolute maximum value of f on [−4, 6] is 7, at x = 1, because it is the greatest candidate value."
+        },
+        {
+          "type": "model",
+          "prompt": "A value to the left of the known point.",
+          "text": "f(−2) = f(1) − ∫ from −2 to 1 of f′(x) dx = 5 − 3 = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "The derivative of a rate in context, with units (r is the rate of change of a temperature, in °C per hour).",
+          "text": "r′(5) = −3 °C per hour per hour: at t = 5 hours, the rate at which the temperature changes is decreasing by 3 °C per hour each hour."
+        },
+        {
+          "type": "model",
+          "prompt": "Increasing at a decreasing rate (W is a volume and W′ = R).",
+          "text": "The volume is increasing at a decreasing rate on 2 < t < 4, because W′(t) = R(t) > 0 and R is decreasing there."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Reading the wrong layer: \"f is increasing on (0, 2) because the graph goes up,\" when the graph shown is f′ and lies below the axis there.",
+          "fix": "Write the chain first. Rising f′ means f is concave up; f′ above the axis means f increases. Name the function in every sentence."
+        },
+        {
+          "type": "trap",
+          "text": "Calling a zero of f′ an extremum without checking the sign on both sides.",
+          "fix": "Look at the graph just left and just right of the zero. If it touches the axis and turns back, the function keeps increasing or keeps decreasing, and there is no extremum (though there may be an inflection point)."
+        },
+        {
+          "type": "trap",
+          "text": "Calling the zeros of f′ the points of inflection.",
+          "fix": "Zeros of f′ with a sign change are extrema of f. Inflection points of f sit at the peaks, valleys and direction-changing corners of the graph of f′."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the sign when the value you want lies left of the known point: writing f(−3) = f(0) + ∫ from −3 to 0 of f′(x) dx.",
+          "fix": "Write f(−3) = f(0) − ∫ from −3 to 0 of f′(x) dx before any area. Moving left undoes the change that the area records."
+        },
+        {
+          "type": "trap",
+          "text": "Using the quarter-disk area for the region between a quarter circle and the axis when the circle's center is off the axis.",
+          "fix": "Draw the region. If it lies between the arc and the axis rather than between the arc and the circle's center, it is a square or rectangle minus the quarter disk, such as 4 − π for radius 2."
+        },
+        {
+          "type": "trap",
+          "text": "Stopping at the relative extremum when the question asks for an absolute one.",
+          "fix": "List every candidate, endpoints included, find each value from areas, and write the comparison. A long stretch below the axis at the end of the interval often makes the right endpoint the absolute minimum."
+        },
+        {
+          "type": "trap",
+          "text": "Reading f′ at the wrong point in a chain rule: for k(x) = f(x^2), writing k′(2) = f′(2)·4.",
+          "fix": "The inside value is x^2 = 4, so k′(2) = f′(4)·2(2). Write the inside value before reading the graph."
+        },
+        {
+          "type": "trap",
+          "text": "\"The temperature is decreasing by 2 °C per hour\" as the meaning of r′(8) = −2.",
+          "fix": "r′ describes the rate, not the temperature: \"the rate at which the temperature changes is decreasing by 2 °C per hour per hour\". One more \"per hour\" for each derivative."
+        },
+        {
+          "type": "trap",
+          "text": "In the calculator part, rounding a zero of f′ and then integrating from the rounded value.",
+          "fix": "Store each zero at full precision and use the stored value as the limit of integration. Round only the reported answers."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "No calculator. Cover the steps, write your own answers, then compare your sentences with the ones in the steps."
+        },
+        {
+          "type": "example",
+          "prompt": "The graph of the continuous function f, shown in the figure, consists of a line segment from (0, 2) to (3, −1) and a line segment from (3, −1) to (6, 2). Let g(x) = ∫ from 4 to x of f(t) dt for 0 ≤ x ≤ 6. (a) Find g(0) and g(6). (b) Write an equation for the line tangent to the graph of g at x = 5. (c) Find the x-coordinates of the relative extrema and of the points of inflection of the graph of g on 0 < x < 6, and justify each. (d) Find the absolute maximum value of g on 0 ≤ x ≤ 6, and justify your answer.",
+          "answer": "(a) g(0) = −1 and g(6) = 2. (b) y = 1/2 + (x − 5). (c) Relative maximum at x = 2, relative minimum at x = 4, point of inflection at x = 3. (d) The absolute maximum value is 2, at x = 6.",
+          "steps": [
+            "Chain first: g′ = f, so the sign of f gives where g increases, and the direction of f gives the concavity of g.",
+            "(a) g(0) = ∫ from 4 to 0 of f(t) dt = −∫ from 0 to 4 of f(t) dt = −(2 − 1/2 − 1/2) = −1, using the triangle of area 2 above the axis on [0, 2] and the triangles of area 1/2 below it on [2, 3] and [3, 4]. g(6) = ∫ from 4 to 6 of f(t) dt = 2, the triangle with base 2 and height 2 above the axis.",
+            "(b) g(5) = ∫ from 4 to 5 of f(t) dt = 1/2, the triangle with base 1 and height 1, and g′(5) = f(5) = 1, the height of the second segment at x = 5. The tangent line is y = 1/2 + 1·(x − 5).",
+            "(c) Write: \"g has a relative maximum at x = 2 because g′ = f changes from positive to negative there, and a relative minimum at x = 4 because g′ = f changes from negative to positive there.\" Then: \"The graph of g has a point of inflection at x = 3 because g′ = f changes from decreasing to increasing there.\"",
+            "(d) The candidates are x = 0, x = 2, x = 4 and x = 6, with g(0) = −1, g(2) = −∫ from 2 to 4 of f(t) dt = 1, g(4) = 0 and g(6) = 2. Write: \"The absolute maximum value of g on [0, 6] is 2, at x = 6, because it is the greatest of the candidate values.\" The relative maximum at x = 2 is not the absolute maximum: the area gained on [4, 6] outweighs the area lost on [2, 4]."
+          ],
+          "figureIds": [
+            "ab-fr-derivative-graph-g1"
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The same moves work in the calculator part: solve f′(x) = 0 for the critical points, find the maximum or minimum of the graph of f′ for the inflection points, and write each value as a known value plus an integral before reporting it to three decimal places."
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its answer."
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-derivative-graph-c1",
+          "prompt": "On 0 < x < 6 the graph of f′ lies above the x-axis. It falls from (0, 5) to its lowest point (2, 1) and then rises to (6, 4). Does f have a relative extremum on 0 < x < 6? Does the graph of f have a point of inflection there? Justify each answer.",
+          "hint": "Ask one question of the sign of f′ and the other of its direction.",
+          "answer": "No relative extremum; a point of inflection at x = 2.",
+          "steps": [
+            "f′ > 0 on the whole interval, so f is increasing there and has no relative extremum.",
+            "f′ decreases on (0, 2) and increases on (2, 6), so the graph of f changes from concave down to concave up at x = 2: a point of inflection.",
+            "The lowest point of f′ is not a minimum of f; it is where f is increasing most slowly."
+          ],
+          "see": "earning-points"
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-derivative-graph-c2",
+          "prompt": "The graph of f on 0 ≤ t ≤ 4 is the line segment from (0, 4) to (4, 0). Let g(x) = ∫ from 4 to x of f(t) dt. Find g(0), g′(1) and g″(1).",
+          "hint": "Which way does the integral run when x = 0?",
+          "answer": "g(0) = −8, g′(1) = 3 and g″(1) = −1.",
+          "steps": [
+            "g(0) = ∫ from 4 to 0 of f(t) dt = −∫ from 0 to 4 of f(t) dt = −(1/2)(4)(4) = −8.",
+            "g′(1) = f(1) = 3, the height of the segment at t = 1.",
+            "g″(1) = f′(1) = −1, the slope of the segment."
+          ],
+          "see": "worked-model"
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-derivative-graph-c3",
+          "prompt": "A graph of f′ shows f′(3) = 1 and f′(9) = −2. Let h(x) = f(x^2). Find h′(3). Is h increasing or decreasing at x = 3?",
+          "hint": "What is the inside value when x = 3?",
+          "answer": "h′(3) = −12, so h is decreasing at x = 3.",
+          "steps": [
+            "By the chain rule, h′(x) = f′(x^2)·2x.",
+            "h′(3) = f′(9)·6 = (−2)(6) = −12.",
+            "h′(3) < 0, so h is decreasing at x = 3. Using f′(3) = 1 instead gives 6 and the wrong direction."
+          ],
+          "see": "traps"
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-derivative-graph-c4",
+          "prompt": "Water flows into a tank at a rate of R(t) liters per minute, and no water leaves. A graph of R shows R(6) = 4 and that R is decreasing near t = 6, with R′(6) = −1.5. Is the amount of water in the tank increasing at an increasing rate or at a decreasing rate at t = 6? What are the units of R′(6)?",
+          "hint": "Which function gives the direction of the amount, and which gives the direction of the rate?",
+          "answer": "Increasing at a decreasing rate. R′(6) is in liters per minute per minute.",
+          "steps": [
+            "The amount of water A has A′ = R, and R(6) = 4 > 0, so the amount is increasing at t = 6.",
+            "R′(6) = −1.5 < 0, so the rate is decreasing: the amount increases at a decreasing rate.",
+            "R′ has the units of R divided by minutes: liters per minute per minute."
+          ],
+          "see": "model-wording"
+        }
+      ]
+    },
+    {
+      "id": "links",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Take the practice set at 15 minutes a question, with the calculator only in Part A. Score it with the rubric, then rewrite one justification until every point is earned. The set's raw points are practice evidence, not AP® scores."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-derivative-graph"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-derivative-graph"
+            },
+            {
+              "label": "Unit 5 review: analytical applications of differentiation",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 6 review: integration and accumulation of change",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 4 review: Contextual Applications of Differentiation",
+              "ref": "guide:review-u4"
+            },
+            {
+              "label": "Week 14: Mean Value Theorem, extrema, and increasing intervals",
+              "ref": "week:14"
+            },
+            {
+              "label": "Week 15: Derivative tests, absolute extrema, and concavity",
+              "ref": "week:15"
+            },
+            {
+              "label": "Week 16: Connecting f, f′, and f″; optimization",
+              "ref": "week:16"
+            },
+            {
+              "label": "Week 20: Accumulation functions, integral properties, and the Fundamental Theorem",
+              "ref": "week:20"
+            },
+            {
+              "label": "Week 31: Review: analysis and written justification",
+              "ref": "week:31"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

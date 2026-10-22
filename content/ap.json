@@ -33,8 +33,8 @@
       "url": "https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam",
       "publisher": "College Board",
       "edition": "Exam format effective May 2027",
-      "accessed": "2026-10-08",
-      "note": "Source of the practice-exam format: section and part counts, timing, calculator policy, and free-response points. Recheck each fall."
+      "accessed": "2026-10-22",
+      "note": "Source of the practice-exam format: section and part counts, timing and calculator policy. Nine points per free-response question is a Liminal practice convention. Recheck each fall."
     },
     {
       "id": "ced-physics-1",
@@ -152,6 +152,15 @@
       "edition": "Withdrawn page; Wayback Machine copy of 2026-03-06",
       "accessed": "2026-10-22",
       "note": "Historical guidance, used only as Liminal's practice convention for the four calculator capabilities and three-decimal answers."
+    },
+    {
+      "publisher": "College Board",
+      "accessed": "2026-10-22",
+      "note": "Exam-format and policy facts only. No official questions, scoring materials, or CED PDFs were used.",
+      "id": "assessment-calculus-ab",
+      "title": "AP® Calculus AB exam overview for students",
+      "url": "https://apstudents.collegeboard.org/courses/ap-calculus-ab/assessment",
+      "edition": "HTML page checked for May 2027"
     }
   ],
   "standards": [
@@ -2464,7 +2473,7 @@
       ],
       "nextStep": "Continue with further single-variable calculus, multivariable calculus, statistics, or calculus-based physics. Check the receiving course's actual prerequisites.",
       "reference": null,
-      "referenceNote": "The AB exam supplies no formula sheet. The review weeks list what to know.",
+      "referenceNote": "Liminal's AB practice uses no formula sheet; College Board's exam pages (checked 2026-10-22) do not mention one.",
       "calculatorNote": "Each test part is marked No calculator or Graphing calculator, matching the exam's split.",
       "levelLabel": "Flexible placement",
       "units": [
@@ -3130,10 +3139,10 @@
         "name": "AP® Calculus AB Exam",
         "effective": "May 2027",
         "sourceId": "exam-calculus-ab",
-        "checked": "2026-10-08",
-        "delivery": "Hybrid digital: multiple choice in the Bluebook app and free response handwritten in a paper booklet. Liminal practice exams are printed.",
-        "calculator": "Only where a part says so: Section I Part B and Section II Part A require a graphing calculator.",
-        "reference": "No formula sheet is supplied.",
+        "checked": "2026-10-22",
+        "delivery": "Hybrid digital: multiple-choice responses and free-response prompts in Bluebook, with handwritten free-response answers in a paper booklet. Liminal practice examinations are printed.",
+        "calculator": "Only where a part says so. Section I Part B and Section II Part A require a graphing calculator; Section I Part A and Section II Part B allow none. Bluebook provides a built-in Desmos graphing calculator in the calculator parts only, and up to two approved handheld calculators may also be used (College Board's calculator policy page).",
+        "reference": "Liminal's practice exams are taken without a formula sheet. College Board's exam pages, checked 2026-10-22, do not mention one; check the current exam page.",
         "sections": [
           {
             "id": "I",
@@ -3175,7 +3184,8 @@
           }
         ],
         "notes": [
-          "Each free-response question is worth 9 points.",
+          "The exam lasts 3 hours 10 minutes. College Board's student page weights Section I Part A at 35% of the exam score, Part B at 15%, Section II Part A at 16.7% and Part B at 33.3%.",
+          "Liminal practice scores each free-response question out of 9 points.",
           "At least two free-response questions use real-world contexts."
         ]
       },
@@ -3234,7 +3244,650 @@
           },
           "frPoints": 9,
           "minContextFr": 2
+        },
+        "mixedSet": {
+          "parts": [
+            {
+              "id": "A",
+              "questions": 10,
+              "minutes": 21,
+              "calculator": "none"
+            },
+            {
+              "id": "B",
+              "questions": 5,
+              "minutes": 15,
+              "calculator": "graphing"
+            }
+          ],
+          "minUnits": 6
+        },
+        "frSet": {
+          "frPoints": 9,
+          "minutesPerQuestion": 15,
+          "questions": [
+            3,
+            4
+          ]
         }
+      },
+      "prep": {
+        "title": "Exam preparation",
+        "summary": "Preparation for the AP® Calculus AB Exam once the units are taught: four original full-length practice exams, six mixed timed sets, a free-response workshop organized by the kinds of task Section II asks for, a review sheet for every unit, strategy guides, and plans that space this work over the weeks before the exam.",
+        "steps": [
+          "Choose a plan by the weeks left before your exam and put its practice-exam days on a calendar first.",
+          "Take practice exam A under exam timing to find a starting point. Score it with its key and log every lost point by unit and by cause.",
+          "Work each unit review by answering its checks before you open the answers. Reread only what a missed check sends you to, then try that check again on a later day.",
+          "Do workshop sets at the exam's pace of 15 minutes a question, score them with their rubrics, and rewrite one answer until every point is earned.",
+          "On days without a full exam, take a mixed set: it mixes the units as the exam does, so you practise choosing a method as well as using it.",
+          "Take later forms under the same conditions and compare raw points by section and by unit with your first form. Raw points are practice evidence, not AP scores."
+        ],
+        "exams": [
+          {
+            "id": "practice-exam",
+            "label": "Practice exam A",
+            "note": "The course's week-33 exam. Take it first, under exam timing, to find a starting point."
+          },
+          {
+            "id": "practice-exam-b",
+            "label": "Practice exam B",
+            "note": "A second form for the middle of a review plan."
+          },
+          {
+            "id": "practice-exam-c",
+            "label": "Practice exam C",
+            "note": "A third form for a late rehearsal: about three weeks before the exam in the eight-week plan, or about ten days before it in the four-week plan."
+          },
+          {
+            "id": "practice-exam-d",
+            "label": "Practice exam D",
+            "note": "A fourth form: the eight-week plan's last full rehearsal, about ten days before the exam."
+          }
+        ],
+        "mixed": [
+          "mixed-1",
+          "mixed-2",
+          "mixed-3",
+          "mixed-4",
+          "mixed-5",
+          "mixed-6"
+        ],
+        "strategy": [
+          "exam-format",
+          "calculator-skills",
+          "free-response-writing",
+          "memory-sheet",
+          "practice-exam-method"
+        ],
+        "reviews": [
+          "review-u1",
+          "review-u2",
+          "review-u3",
+          "review-u4",
+          "review-u5",
+          "review-u6",
+          "review-u7",
+          "review-u8"
+        ],
+        "workshop": [
+          "fr-accumulation",
+          "fr-tables",
+          "fr-derivative-graph",
+          "fr-linear-motion",
+          "fr-function-analysis",
+          "fr-implicit-rates",
+          "fr-differential-equations",
+          "fr-area-volume"
+        ],
+        "plans": [
+          {
+            "id": "eight-week",
+            "title": "Eight-week review",
+            "summary": "For a student who has finished, or nearly finished, the units. Plan about five sessions a week of 60 to 90 minutes, plus a 3-hour-10-minute exam sitting in weeks 1, 4, 6 and 7, with the next session for scoring and logging it. The four practice exams fall about 8, 5 and 3 weeks before the exam and again about 10 days before it, so each has time to change what you study next. Every unit comes back at least three times: its review, a later retry of its checks, and the mixed sets and exams. None of the last four days holds a full exam.",
+            "sessions": [
+              {
+                "label": "Week 1",
+                "title": "Find a starting point",
+                "tasks": [
+                  {
+                    "text": "Read how the exam runs and how to pace it.",
+                    "ref": "guide:exam-format"
+                  },
+                  {
+                    "text": "Learn the method for taking, scoring and logging a practice exam.",
+                    "ref": "guide:practice-exam-method"
+                  },
+                  {
+                    "text": "Take practice exam A in one sitting, with the calculator only in Section I Part B and Section II Part A.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key, then log each lost point by unit and cause.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "Quiz yourself on the memory sheet, covering each answer column.",
+                    "ref": "guide:memory-sheet"
+                  }
+                ]
+              },
+              {
+                "label": "Week 2",
+                "title": "Limits and derivatives",
+                "tasks": [
+                  {
+                    "text": "Unit 1 review: answer every check before opening it.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Unit 3 review.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Workshop: implicit differentiation and related rates.",
+                    "ref": "guide:fr-implicit-rates"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 3",
+                "title": "Using derivatives",
+                "tasks": [
+                  {
+                    "text": "Unit 4 review.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Unit 5 review.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Workshop: reading the graph of a derivative.",
+                    "ref": "guide:fr-derivative-graph"
+                  },
+                  {
+                    "text": "Workshop: motion along a line.",
+                    "ref": "guide:fr-linear-motion"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 1 review again.",
+                    "ref": "guide:review-u1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 4",
+                "title": "Second form and accumulation",
+                "tasks": [
+                  {
+                    "text": "Take practice exam B under exam timing.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Score it and compare raw points by section and unit with exam A.",
+                    "ref": "key:practice-exam-b"
+                  },
+                  {
+                    "text": "Unit 6 review.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Workshop: rates and accumulation in context.",
+                    "ref": "guide:fr-accumulation"
+                  },
+                  {
+                    "text": "Workshop: functions given by tables.",
+                    "ref": "guide:fr-tables"
+                  },
+                  {
+                    "text": "Calculator skills for the calculator parts.",
+                    "ref": "guide:calculator-skills"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 2 review again.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 3 review again.",
+                    "ref": "guide:review-u3"
+                  }
+                ]
+              },
+              {
+                "label": "Week 5",
+                "title": "Equations and applications",
+                "tasks": [
+                  {
+                    "text": "Unit 7 review.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Unit 8 review.",
+                    "ref": "guide:review-u8"
+                  },
+                  {
+                    "text": "Workshop: differential equations.",
+                    "ref": "guide:fr-differential-equations"
+                  },
+                  {
+                    "text": "Workshop: area and volume.",
+                    "ref": "guide:fr-area-volume"
+                  },
+                  {
+                    "text": "Mixed set 3, timed.",
+                    "ref": "test:mixed-3"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 4 review again.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 5 review again.",
+                    "ref": "guide:review-u5"
+                  }
+                ]
+              },
+              {
+                "label": "Week 6",
+                "title": "A third form",
+                "tasks": [
+                  {
+                    "text": "Take practice exam C under exam timing, about three weeks before the exam.",
+                    "ref": "test:practice-exam-c"
+                  },
+                  {
+                    "text": "Score it and update the error log.",
+                    "ref": "key:practice-exam-c"
+                  },
+                  {
+                    "text": "Workshop: analysis of a given function.",
+                    "ref": "guide:fr-function-analysis"
+                  },
+                  {
+                    "text": "Writing free-response answers that show every step a reader looks for.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 6 review again.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 7 review again.",
+                    "ref": "guide:review-u7"
+                  }
+                ]
+              },
+              {
+                "label": "Week 7",
+                "title": "Final rehearsal and repair",
+                "tasks": [
+                  {
+                    "text": "Take practice exam D about ten days before the exam.",
+                    "ref": "test:practice-exam-d"
+                  },
+                  {
+                    "text": "Score it, then pick the two units with the most lost points across your four exams.",
+                    "ref": "key:practice-exam-d"
+                  },
+                  {
+                    "text": "Redo the workshop set for the archetype where your log shows the most lost points."
+                  },
+                  {
+                    "text": "Mixed set 4, timed.",
+                    "ref": "test:mixed-4"
+                  },
+                  {
+                    "text": "Without rereading, answer the checks of the unit 8 review again.",
+                    "ref": "guide:review-u8"
+                  }
+                ]
+              },
+              {
+                "label": "Week 8",
+                "title": "Short sets and rest",
+                "tasks": [
+                  {
+                    "text": "Redo the review checks of your two weakest units, then retake one of their unit tests."
+                  },
+                  {
+                    "text": "Mixed set 5, timed.",
+                    "ref": "test:mixed-5"
+                  },
+                  {
+                    "text": "Mixed set 6, timed, on another day.",
+                    "ref": "test:mixed-6"
+                  },
+                  {
+                    "text": "Quiz yourself on the memory sheet once more.",
+                    "ref": "guide:memory-sheet"
+                  },
+                  {
+                    "text": "Take no full practice exam in the last four days. Stop new work the day before the exam and sleep normally."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "four-week",
+            "title": "Four-week review",
+            "summary": "A compressed plan for the last month. Plan about six sessions a week of 60 to 90 minutes, plus a 3-hour-10-minute exam sitting in each of weeks 1 to 3. The three practice exams fall at the start, after about ten days, and about ten days before the exam. Unit reviews are worked from their checks, and every week mixes earlier units with new ones.",
+            "sessions": [
+              {
+                "label": "Week 1",
+                "title": "Starting point and derivatives",
+                "tasks": [
+                  {
+                    "text": "Read how the exam runs and how to pace it.",
+                    "ref": "guide:exam-format"
+                  },
+                  {
+                    "text": "Take practice exam A under exam timing.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key and log each lost point by unit and cause.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "Learn the method for scoring and logging a practice exam.",
+                    "ref": "guide:practice-exam-method"
+                  },
+                  {
+                    "text": "Unit 1 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Unit 3 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Unit 4 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Workshop: reading the graph of a derivative.",
+                    "ref": "guide:fr-derivative-graph"
+                  },
+                  {
+                    "text": "Workshop: implicit differentiation and related rates.",
+                    "ref": "guide:fr-implicit-rates"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Week 2",
+                "title": "Analysis, integrals and a second form",
+                "tasks": [
+                  {
+                    "text": "Unit 5 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Unit 6 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Unit 7 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Unit 8 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u8"
+                  },
+                  {
+                    "text": "Workshop: rates and accumulation in context.",
+                    "ref": "guide:fr-accumulation"
+                  },
+                  {
+                    "text": "Workshop: differential equations.",
+                    "ref": "guide:fr-differential-equations"
+                  },
+                  {
+                    "text": "Take practice exam B midweek and score it.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  },
+                  {
+                    "text": "Answer again the unit 1 to unit 4 checks you missed in week 1, without rereading."
+                  }
+                ]
+              },
+              {
+                "label": "Week 3",
+                "title": "Applications and a third form",
+                "tasks": [
+                  {
+                    "text": "Workshop: area and volume.",
+                    "ref": "guide:fr-area-volume"
+                  },
+                  {
+                    "text": "Workshop: functions given by tables.",
+                    "ref": "guide:fr-tables"
+                  },
+                  {
+                    "text": "Take practice exam C about ten days before the exam and score it.",
+                    "ref": "test:practice-exam-c"
+                  },
+                  {
+                    "text": "Writing free-response answers.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "Mixed set 3, timed.",
+                    "ref": "test:mixed-3"
+                  },
+                  {
+                    "text": "Answer again the unit 5 to unit 8 checks you missed in week 2, without rereading."
+                  }
+                ]
+              },
+              {
+                "label": "Week 4",
+                "title": "Repair, short sets, rest",
+                "tasks": [
+                  {
+                    "text": "Repair the two units with the most lost points: their review checks, then their unit tests."
+                  },
+                  {
+                    "text": "Workshop: analysis of a given function, or another archetype where your log shows lost points.",
+                    "ref": "guide:fr-function-analysis"
+                  },
+                  {
+                    "text": "Mixed set 4, timed.",
+                    "ref": "test:mixed-4"
+                  },
+                  {
+                    "text": "Mixed set 5, timed, on another day.",
+                    "ref": "test:mixed-5"
+                  },
+                  {
+                    "text": "Quiz yourself on the memory sheet.",
+                    "ref": "guide:memory-sheet"
+                  },
+                  {
+                    "text": "Take no full practice exam in the last four days. Stop new work the day before the exam and sleep normally."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "in-course",
+            "title": "Inside the 36-week course",
+            "summary": "For students following Liminal's course week by week: the course's review weeks 30 to 34 use these materials, and later forms follow close to the exam date.",
+            "sessions": [
+              {
+                "label": "Course week 30",
+                "title": "Review: limits and derivatives",
+                "tasks": [
+                  {
+                    "text": "Week 30 coursework.",
+                    "ref": "week:30"
+                  },
+                  {
+                    "text": "Unit 1 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u1"
+                  },
+                  {
+                    "text": "Unit 2 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u2"
+                  },
+                  {
+                    "text": "Unit 3 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u3"
+                  },
+                  {
+                    "text": "Workshop: implicit differentiation and related rates.",
+                    "ref": "guide:fr-implicit-rates"
+                  },
+                  {
+                    "text": "Mixed set 1, timed.",
+                    "ref": "test:mixed-1"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 31",
+                "title": "Review: analysis and written justification",
+                "tasks": [
+                  {
+                    "text": "Week 31 coursework.",
+                    "ref": "week:31"
+                  },
+                  {
+                    "text": "Unit 4 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u4"
+                  },
+                  {
+                    "text": "Unit 5 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u5"
+                  },
+                  {
+                    "text": "Workshop: reading the graph of a derivative.",
+                    "ref": "guide:fr-derivative-graph"
+                  },
+                  {
+                    "text": "Workshop: analysis of a given function.",
+                    "ref": "guide:fr-function-analysis"
+                  },
+                  {
+                    "text": "Writing free-response answers.",
+                    "ref": "guide:free-response-writing"
+                  },
+                  {
+                    "text": "Mixed set 2, timed.",
+                    "ref": "test:mixed-2"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 32",
+                "title": "Review: accumulation, applications and calculator work",
+                "tasks": [
+                  {
+                    "text": "Week 32 coursework.",
+                    "ref": "week:32"
+                  },
+                  {
+                    "text": "Unit 6 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u6"
+                  },
+                  {
+                    "text": "Unit 7 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u7"
+                  },
+                  {
+                    "text": "Unit 8 review checks; study only the sections behind the checks you miss.",
+                    "ref": "guide:review-u8"
+                  },
+                  {
+                    "text": "Workshop: rates and accumulation in context.",
+                    "ref": "guide:fr-accumulation"
+                  },
+                  {
+                    "text": "Workshop: area and volume.",
+                    "ref": "guide:fr-area-volume"
+                  },
+                  {
+                    "text": "Calculator skills for the calculator parts.",
+                    "ref": "guide:calculator-skills"
+                  },
+                  {
+                    "text": "Mixed set 3, timed.",
+                    "ref": "test:mixed-3"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 33",
+                "title": "Practice exam A",
+                "tasks": [
+                  {
+                    "text": "Week 33 coursework.",
+                    "ref": "week:33"
+                  },
+                  {
+                    "text": "Take practice exam A under exam timing.",
+                    "ref": "test:practice-exam"
+                  },
+                  {
+                    "text": "Score it with the key.",
+                    "ref": "key:practice-exam"
+                  },
+                  {
+                    "text": "Log every lost point by unit and cause.",
+                    "ref": "guide:practice-exam-method"
+                  }
+                ]
+              },
+              {
+                "label": "Course week 34",
+                "title": "Repair from evidence",
+                "tasks": [
+                  {
+                    "text": "Week 34 coursework.",
+                    "ref": "week:34"
+                  },
+                  {
+                    "text": "Work the workshop sets for the kinds of question where the log shows the most lost points."
+                  },
+                  {
+                    "text": "Take practice exam B within the last few weeks before the exam.",
+                    "ref": "test:practice-exam-b"
+                  },
+                  {
+                    "text": "Take practice exam C about ten days before the exam.",
+                    "ref": "test:practice-exam-c"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {

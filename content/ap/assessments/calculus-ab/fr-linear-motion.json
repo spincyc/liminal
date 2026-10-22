@@ -1,0 +1,336 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-linear-motion",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Motion along a line",
+  "author": "ab-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A questions require a graphing calculator; the Part B question allows no calculator. Show supporting work and justify requested conclusions; write the setup for every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points. Raw points are practice evidence for AP® Calculus AB, not AP® scores.",
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show your work: write the integral, derivative, or equation you use before its value. Calculator answers are to three decimal places. Justify answers when a question asks you to.",
+          "items": [
+            {
+              "id": "ab-fr-linear-motion-fr1",
+              "context": true,
+              "prompt": "A robot moves back and forth along a straight track in a warehouse. At time t seconds, its velocity is v(t) = 3 ln(t + 1) − 1.2t meters per second, for 0 ≤ t ≤ 8. Positive velocity means motion toward the loading dock at one end of the track.",
+              "topics": [
+                "AB.4.2",
+                "AB.8.2",
+                "AB.4.1",
+                "AB.8.3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the acceleration of the robot at t = 5 seconds, with units. Is the robot speeding up or slowing down at t = 5? Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "a(5) = v′(5) = −0.7 meters per second per second, with units (accepts a calculator's numerical derivative)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Speeding up, because v(5) ≈ −0.625 and a(5) are both negative. The reason must name the signs of both velocity and acceleration; \"a(5) < 0\" alone does not earn this point."
+                    }
+                  ],
+                  "answer": "a(5) = −0.7 m/s^2. The robot is speeding up at t = 5, because v(5) ≈ −0.625 m/s and a(5) are both negative.",
+                  "steps": [
+                    "a(t) = v′(t) = 3/(t + 1) − 1.2, so a(5) = 3/6 − 1.2 = −0.7 m/s^2.",
+                    "v(5) = 3 ln 6 − 6 ≈ −0.624721592 m/s, so the robot is moving away from the loading dock.",
+                    "Velocity and acceleration have the same sign, so the speed |v(t)| is increasing: the robot is speeding up."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find all times t in the open interval 0 < t < 8 at which the robot changes direction. Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets v(t) = 0 and finds t ≈ 4.047 seconds, and no other time in 0 < t < 8."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with the sign change of v: from positive to negative at t ≈ 4.047. A zero of v with no sign change stated does not earn this point."
+                    }
+                  ],
+                  "answer": "The robot changes direction only at t ≈ 4.047 seconds.",
+                  "steps": [
+                    "Solve 3 ln(t + 1) − 1.2t = 0 on 0 < t < 8 with the calculator: t ≈ 4.046970313. A graph of v shows no other zero in the open interval; v(0) = 0 is at an endpoint, where no change of direction can occur.",
+                    "v(4) ≈ 0.028 > 0 and v(5) ≈ −0.625 < 0, and the graph shows v > 0 on (0, 4.047) and v < 0 on (4.047, 8). v changes from positive to negative at t ≈ 4.047, so the robot reverses direction there."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the total distance the robot travels during 0 ≤ t ≤ 8.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up ∫ from 0 to 8 of |v(t)| dt, or the sum of |∫ v(t) dt| over [0, 4.047] and [4.047, 8]."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Total distance ≈ 8.159 meters, with the setup shown. A bare number earns neither point."
+                    }
+                  ],
+                  "answer": "About 8.159 meters.",
+                  "steps": [
+                    "Total distance = ∫ from 0 to 8 of |v(t)| dt ≈ 8.159405743 m, which rounds to 8.159 m.",
+                    "Equivalently, with the time from part (b): the robot moves about 2.542 m toward the dock, then about 5.617 m away from it, and 2.542 + 5.617 ≈ 8.159."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "At what time t in 0 ≤ t ≤ 8 is the robot farthest from its starting point? How far from its starting point is it at that time? Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the candidates t = 4.047 (the direction change) and t = 8 (with t = 0 as the start), explaining that between them the robot moves one way only."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the displacements from the start: ∫ from 0 to 4.047 of v(t) dt ≈ 2.542 and ∫ from 0 to 8 of v(t) dt ≈ −3.075, with integrals shown; accepts consistent use of the time from part (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes t = 8, about 3.075 meters from the start (on the side away from the dock), by comparing |−3.075| with 2.542. Choosing t ≈ 4.047, where the robot is nearest the dock, does not earn this point."
+                    }
+                  ],
+                  "answer": "At t = 8 seconds, when the robot is about 3.075 meters from its starting point, on the side away from the loading dock.",
+                  "steps": [
+                    "The distance from the start at time t is |∫ from 0 to t of v(s) ds|. Between t = 0 and t ≈ 4.047, and between t ≈ 4.047 and t = 8, the robot moves one way only, so this distance is greatest at t ≈ 4.047 or at t = 8.",
+                    "∫ from 0 to 4.047 of v(t) dt ≈ 2.542234666: the robot is about 2.542 m from its start, toward the dock.",
+                    "∫ from 0 to 8 of v(t) dt ≈ −3.074936412: at t = 8 the robot is about 3.075 m from its start, on the far side from the dock.",
+                    "Since 3.075 > 2.542, the robot is farthest from its starting point at t = 8. It passed back through its start and was still moving away when time ran out."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-fr-linear-motion-fr2",
+              "prompt": "Particles P and Q move along the x-axis for 0 ≤ t ≤ 4, and both are at the origin at time t = 0. The velocity of particle P is v(t) = √(t^3 + 4) − 3, and its position is x(t). The position of particle Q is w(t) = 3 sin(πt/4).",
+              "topics": [
+                "AB.8.2",
+                "AB.4.2",
+                "AB.6.4",
+                "AB.3.1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the velocity of particle Q at time t = 3. Is the speed of particle Q increasing or decreasing at t = 3? Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "w′(3) = (3π/4) cos(3π/4) ≈ −1.666 (exactly −3π√2/8)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Speed of Q is increasing because w′(3) < 0 and w″(3) ≈ −1.309 < 0 have the same sign; the value or sign of w″(3) must be shown."
+                    }
+                  ],
+                  "answer": "The velocity of Q at t = 3 is about −1.666. Its speed is increasing, because w′(3) and w″(3) ≈ −1.309 are both negative.",
+                  "steps": [
+                    "w′(t) = (3π/4) cos(πt/4), so w′(3) = (3π/4)(−√2/2) = −3π√2/8 ≈ −1.666081.",
+                    "w″(t) = −(3π^2/16) sin(πt/4), so w″(3) = −3π^2√2/32 ≈ −1.308537.",
+                    "Velocity and acceleration of Q have the same sign at t = 3, so the speed of Q is increasing."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "For 0 < t < 4, find the open intervals on which particles P and Q are moving in opposite directions. Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds where each velocity changes sign: v(t) = 0 at t ≈ 1.710 (exactly ∛5), with v < 0 before and v > 0 after; w′(t) = 0 at t = 2, with w′ > 0 before and w′ < 0 after."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes 0 < t < 1.710 and 2 < t < 4, where v and w′ have opposite signs; accepts consistent use of a sign analysis with a slightly different zero."
+                    }
+                  ],
+                  "answer": "0 < t < 1.710 and 2 < t < 4.",
+                  "steps": [
+                    "v(t) = √(t^3 + 4) − 3 = 0 when t^3 + 4 = 9, so t = ∛5 ≈ 1.710 (a calculator solve gives the same). Since √(t^3 + 4) increases for t > 0, v < 0 on (0, 1.710) and v > 0 on (1.710, 4).",
+                    "w′(t) = (3π/4) cos(πt/4) is positive on (0, 2) and negative on (2, 4).",
+                    "The velocities have opposite signs on (0, 1.710), where P moves left and Q moves right, and on (2, 4), where P moves right and Q moves left. On (1.710, 2) both move right."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the total distance traveled by particle P over the interval 0 ≤ t ≤ 4.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up ∫ from 0 to 4 of |v(t)| dt, or the absolute values of the integrals of v over [0, 1.710] and [1.710, 4] added."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Total distance ≈ 6.635, with the setup shown."
+                    }
+                  ],
+                  "answer": "About 6.635.",
+                  "steps": [
+                    "Total distance = ∫ from 0 to 4 of |√(t^3 + 4) − 3| dt ≈ 6.634869.",
+                    "Check: P moves about 1.244 to the left on [0, 1.710] and about 5.391 to the right on [1.710, 4]; 1.244 + 5.391 = 6.635."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "At what time t in the open interval 0 < t < 4 are particles P and Q at the same position? Show the work that leads to your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Expresses the position of P with an integral and its initial value: x(t) = 0 + ∫ from 0 to t of (√(s^3 + 4) − 3) ds."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the equation ∫ from 0 to t of (√(s^3 + 4) − 3) ds = 3 sin(πt/4), or an equivalent equation x(t) = w(t)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "t ≈ 3.374, the only solution in 0 < t < 4."
+                    }
+                  ],
+                  "answer": "t ≈ 3.374",
+                  "steps": [
+                    "x(t) = x(0) + ∫ from 0 to t of v(s) ds = ∫ from 0 to t of (√(s^3 + 4) − 3) ds.",
+                    "Set x(t) = w(t) and graph x(t) − w(t) on 0 < t < 4, or solve with the calculator: t ≈ 3.374337.",
+                    "There is no other solution: just after t = 0, P moves left while Q moves right, so they separate, and the graph of x(t) − w(t) crosses zero only once in 0 < t < 4. At t ≈ 3.374 both are at x ≈ 1.416.",
+                    "The integrand has no elementary antiderivative, so the position of P must be written as an integral and the equation solved with the calculator."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show your work and give exact answers. Justify answers when a question asks you to; answers without supporting work may not earn credit.",
+          "items": [
+            {
+              "id": "ab-fr-linear-motion-fr3",
+              "prompt": "A particle moves along the x-axis so that its position at time t is x(t) = t^2·e^(−t), for 0 ≤ t ≤ 4.",
+              "topics": [
+                "AB.4.2",
+                "AB.2.8",
+                "AB.8.2",
+                "AB.5.1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the velocity v(t) of the particle. At what time t in the open interval 0 < t < 4 does the particle change direction? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "v(t) = 2t·e^(−t) − t^2·e^(−t) = t(2 − t)e^(−t), by the product rule."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "t = 2, because v changes from positive to negative there (t > 0 and e^(−t) > 0, so the sign of v is the sign of 2 − t)."
+                    }
+                  ],
+                  "answer": "v(t) = t(2 − t)e^(−t). The particle changes direction at t = 2.",
+                  "steps": [
+                    "v(t) = x′(t) = 2t·e^(−t) + t^2·(−e^(−t)) = t(2 − t)e^(−t).",
+                    "For 0 < t < 4, t > 0 and e^(−t) > 0, so v has the sign of 2 − t: positive on (0, 2) and negative on (2, 4).",
+                    "v changes from positive to negative at t = 2, so the particle changes direction there."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the acceleration a(t) of the particle. On what open intervals in 0 < t < 4 is the speed of the particle increasing? Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "a(t) = (t^2 − 4t + 2)e^(−t), or an equivalent form; accepts consistent differentiation of v from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Identifies 0 < t < 2 − √2 and 2 < t < 2 + √2, and no other intervals."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Justifies with the signs of v and a: both positive on (0, 2 − √2), both negative on (2, 2 + √2); opposite signs on the other intervals."
+                    }
+                  ],
+                  "answer": "a(t) = (t^2 − 4t + 2)e^(−t). The speed increases on 0 < t < 2 − √2 and on 2 < t < 2 + √2.",
+                  "steps": [
+                    "a(t) = v′(t) = (2 − 2t)e^(−t) − (2t − t^2)e^(−t) = (t^2 − 4t + 2)e^(−t).",
+                    "a(t) = 0 when t^2 − 4t + 2 = 0, that is, at t = 2 ± √2. On (0, 4), a > 0 on (0, 2 − √2), a < 0 on (2 − √2, 2 + √2), and a > 0 on (2 + √2, 4).",
+                    "With v > 0 on (0, 2) and v < 0 on (2, 4): on (0, 2 − √2), v > 0 and a > 0; on (2 − √2, 2), v > 0 and a < 0; on (2, 2 + √2), v < 0 and a < 0; on (2 + √2, 4), v < 0 and a > 0.",
+                    "The speed increases where v and a have the same sign: 0 < t < 2 − √2 and 2 < t < 2 + √2."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the total distance the particle travels over the interval 0 ≤ t ≤ 4.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Splits the motion at the direction change t = 2: |x(2) − x(0)| + |x(4) − x(2)|, or ∫ from 0 to 2 of v(t) dt − ∫ from 2 to 4 of v(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Total distance = 8/e^2 − 16/e^4, or an equivalent exact value such as (8e^2 − 16)/e^4."
+                    }
+                  ],
+                  "answer": "8/e^2 − 16/e^4",
+                  "steps": [
+                    "x(0) = 0, x(2) = 4e^(−2) and x(4) = 16e^(−4).",
+                    "The particle moves right on [0, 2] and left on [2, 4], so the total distance is (x(2) − x(0)) + (x(2) − x(4)) = 4/e^2 + 4/e^2 − 16/e^4 = 8/e^2 − 16/e^4.",
+                    "x(4) − x(2) is negative because 16/e^4 < 4/e^2 (that is, 4 < e^2), so the second stretch is 4/e^2 − 16/e^4 to the left."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the average velocity of the particle over the interval 0 ≤ t ≤ 4. Explain why there must be a time c, with 0 < c < 4, at which the velocity of the particle equals this average velocity.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Average velocity = (x(4) − x(0))/(4 − 0) = 4/e^4, or an equivalent exact value."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Applies the Mean Value Theorem with its hypotheses: x is differentiable (so continuous) on [0, 4] because it is a product of differentiable functions, so some c in (0, 4) has x′(c) = v(c) = 4/e^4."
+                    }
+                  ],
+                  "answer": "The average velocity is 4/e^4. By the Mean Value Theorem, since x is continuous on [0, 4] and differentiable on (0, 4), some c in (0, 4) has v(c) = 4/e^4.",
+                  "steps": [
+                    "Average velocity = (x(4) − x(0))/(4 − 0) = (16e^(−4) − 0)/4 = 4/e^4.",
+                    "x(t) = t^2·e^(−t) is a product of differentiable functions, so it is differentiable, and therefore continuous, on [0, 4].",
+                    "By the Mean Value Theorem, some c in (0, 4) has x′(c) = (x(4) − x(0))/4, that is, v(c) = 4/e^4."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

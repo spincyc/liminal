@@ -1,0 +1,468 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "review-u3",
+  "kind": "unit-review",
+  "unitId": "u3",
+  "title": "Unit 3 review: Differentiation: Composite, Implicit, and Inverse Functions",
+  "author": "ab-review-3-4-author",
+  "summary": "A retrieval-first review of the chain rule, implicit differentiation, derivatives of inverse and inverse trigonometric functions, choosing a route through a derivative, and higher-order derivatives for the AP® Calculus AB Exam. Answer five recall checks and five mixed problems before you read the results to know, the model justifications and traps, and three worked examples.",
+  "minutes": 50,
+  "sections": [
+    {
+      "id": "recall",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its answer. Write the whole statement, conditions included: a result you could recognize but not write out in full counts as a miss. Mark every miss, then study the section the check names and try the check again on a later day."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c1",
+          "see": "know",
+          "prompt": "Let h(x) = f(g(x)). State what must be true of f and g for the chain rule to give h′(a), and write h′(a). Then write the derivative of a three-layer composite f(g(k(x))).",
+          "answer": "If g is differentiable at a and f is differentiable at g(a), then h is differentiable at a and h′(a) = f′(g(a))·g′(a). For three layers: d/dx f(g(k(x))) = f′(g(k(x)))·g′(k(x))·k′(x).",
+          "steps": [
+            "The outer derivative is evaluated at the inner output g(a), and then multiplied by the inner derivative g′(a).",
+            "The condition on f is at the point g(a), because that is where f′ is used. Differentiability of f at a itself is irrelevant.",
+            "Each extra layer adds one factor, and each factor is evaluated at the output of the layer inside it."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c2",
+          "see": "know",
+          "prompt": "The function f is differentiable and one-to-one, with f(2) = 9. Let g be the inverse function of f. Give the formula for g′(9), state the condition it needs, and describe the graph of g at (9, 2) when that condition fails.",
+          "answer": "g′(9) = 1/f′(2), provided f′(2) ≠ 0. If f′(2) = 0, the graph of f has a horizontal tangent at (2, 9), so the graph of g has a vertical tangent at (9, 2), and g′(9) does not exist.",
+          "steps": [
+            "Differentiate the identity f(g(x)) = x with the chain rule: f′(g(x))·g′(x) = 1, so g′(x) = 1/f′(g(x)) wherever f′(g(x)) ≠ 0.",
+            "At x = 9, the inner output is g(9) = 2, so the formula uses f′(2), not f′(9).",
+            "The graph of g is the reflection of the graph of f across y = x. Reflection swaps rise and run, so slopes at matching points are reciprocals, and a horizontal tangent becomes a vertical one."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c3",
+          "see": "know",
+          "prompt": "For a differentiable inner function u = u(x), write d/dx arcsin(u), d/dx arccos(u) and d/dx arctan(u). For which values of u does each formula hold?",
+          "answer": "d/dx arcsin(u) = u′/√(1 − u^2) and d/dx arccos(u) = −u′/√(1 − u^2), both for −1 < u < 1; d/dx arctan(u) = u′/(1 + u^2), for every real u.",
+          "steps": [
+            "For y = arcsin x: sin y = x with −π/2 ≤ y ≤ π/2. Implicitly, cos y·(dy/dx) = 1. On that interval cos y ≥ 0, so cos y = √(1 − x^2) and dy/dx = 1/√(1 − x^2) for −1 < x < 1.",
+            "arccos x = π/2 − arcsin x, so its derivative is the negative of the arcsin derivative.",
+            "For y = arctan x: tan y = x, so sec^2 y·(dy/dx) = 1 and sec^2 y = 1 + x^2, giving 1/(1 + x^2) for every x.",
+            "The chain rule then multiplies each formula by u′."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c4",
+          "see": "know",
+          "prompt": "Let y be a differentiable function of x. Differentiate each expression with respect to x.\n\n(a) x^2·y^3\n(b) tan y\n(c) √y, for y > 0\n(d) e^(xy)",
+          "answer": "(a) 2xy^3 + 3x^2y^2·(dy/dx) (b) sec^2 y·(dy/dx) (c) (dy/dx)/(2√y) (d) e^(xy)·(y + x·(dy/dx))",
+          "steps": [
+            "Every factor that contains y is a composite with inner function y(x), so its derivative carries a factor dy/dx.",
+            "(a) Product rule: (2x)·y^3 + x^2·(3y^2·(dy/dx)).",
+            "(b) and (c) are single layers around y: sec^2 y·(dy/dx) and (1/(2√y))·(dy/dx).",
+            "(d) The chain rule around the exponent, then the product rule inside it: e^(xy)·d/dx(xy) = e^(xy)·(y + x·(dy/dx))."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c5",
+          "see": "know",
+          "prompt": "(a) Write the nth derivative of f(x) = e^(−2x), and of g(x) = ln x for x > 0.\n(b) When you find d^2y/dx^2 on a curve given implicitly, why does the result usually contain dy/dx, and what do you do with it at a point?",
+          "answer": "(a) f^(n)(x) = (−2)^n·e^(−2x) and g^(n)(x) = (−1)^(n−1)·(n − 1)!/x^n. (b) Differentiating an expression that contains y brings in dy/dx by the chain rule; at a point, substitute the coordinates and the value of dy/dx found first.",
+          "steps": [
+            "(a) Each derivative of e^(−2x) multiplies by −2. For ln x: 1/x, −1/x^2, 2/x^3, −6/x^4, …; at n = 4 the formula gives (−1)^3·3!/x^4 = −6/x^4, as it should.",
+            "A pattern read from a few derivatives should be checked at the next one before it is trusted.",
+            "(b) dy/dx on an implicit curve is usually an expression in x and y. Its derivative needs the chain rule on every y, which produces dy/dx again. Replace that dy/dx by its value (or its expression) before simplifying."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Work these without a calculator and give exact answers. They mix the unit's methods on purpose, so part of each problem is deciding what to do. If one goes wrong, study the section its answer names, then redo the problem from a blank page on another day."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c6",
+          "see": "know",
+          "prompt": "Find each value exactly.\n\n(a) dy/dx at x = 1, where y = 6/(x^2 + 2)^3\n(b) f′(1), where f(x) = (4x^3 − x)/(2x^2)\n(c) g′(π/6), where g(x) = sin x·cos x",
+          "hint": "Count the rules each expression needs as written. Then ask whether an equal expression would need fewer.",
+          "answer": "(a) −4/9 (b) 5/2 (c) 1/2",
+          "steps": [
+            "(a) The numerator is a constant, so write y = 6(x^2 + 2)^(−3). Then dy/dx = −18(x^2 + 2)^(−4)·2x = −36x/(x^2 + 2)^4, and at x = 1 this is −36/81 = −4/9.",
+            "(b) Divide first: for x ≠ 0, f(x) = 2x − 1/(2x) = 2x − (1/2)x^(−1). Then f′(x) = 2 + 1/(2x^2) and f′(1) = 5/2.",
+            "(c) sin x·cos x = (1/2)sin(2x), so g′(x) = cos(2x) and g′(π/6) = cos(π/3) = 1/2. The product rule gives the same value: cos^2(π/6) − sin^2(π/6) = 3/4 − 1/4 = 1/2.",
+            "The quotient and product rules give the same answers. Rewriting first leaves fewer places to drop a sign or a factor, which is why it is worth looking before differentiating."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c7",
+          "see": "examples",
+          "prompt": "Consider the curve x·e^y + y = 3.\n\n(a) Show that dy/dx = −e^y/(x·e^y + 1).\n(b) Write an equation for the line tangent to the curve at the point where y = 0.\n(c) Find d^2y/dx^2 at that point. Is the curve concave up or concave down there?",
+          "hint": "For (b), find the x-coordinate of the point first. For (c), keep dy/dx as a symbol while you differentiate again.",
+          "answer": "(a) See the steps. (b) y = −(1/4)(x − 3) (c) d^2y/dx^2 = 5/64 > 0, so the curve is concave up there.",
+          "steps": [
+            "(a) Differentiate with respect to x, with the product rule on x·e^y: e^y + x·e^y·(dy/dx) + dy/dx = 0. So (x·e^y + 1)(dy/dx) = −e^y and dy/dx = −e^y/(x·e^y + 1).",
+            "(b) With y = 0 the equation gives x·1 + 0 = 3, so the point is (3, 0). There dy/dx = −1/(3 + 1) = −1/4, and the tangent line is y = −(1/4)(x − 3).",
+            "(c) Quotient rule on N/D with N = −e^y and D = x·e^y + 1, remembering that y depends on x: N′ = −e^y·(dy/dx) and D′ = e^y + x·e^y·(dy/dx).",
+            "At (3, 0) with dy/dx = −1/4: N = −1, D = 4, N′ = 1/4 and D′ = 1 − 3/4 = 1/4.",
+            "d^2y/dx^2 = (N′D − ND′)/D^2 = ((1/4)(4) − (−1)(1/4))/16 = (5/4)/16 = 5/64.",
+            "Because d^2y/dx^2 > 0 at (3, 0), the curve is concave up there."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c8",
+          "see": "justify",
+          "prompt": "The function f is twice differentiable and increasing, with the values shown. Let g be the inverse function of f.\n\n| x | 0 | 1 | 2 | 3 |\n| --- | --- | --- | --- | --- |\n| f(x) | 1 | 3 | 6 | 10 |\n| f′(x) | 3 | 2 | 4 | 5 |\n| f″(x) | −2 | 1 | 2 | 1 |\n\n(a) Write an equation for the line tangent to the graph of g at x = 6.\n(b) Let r(x) = arcsin(f(x)/5). Find r′(1).\n(c) Let s(x) = e^(f(x)). Find s″(0).",
+          "hint": "For each part, write the derivative with every inner input showing before you read anything from the table.",
+          "answer": "(a) y = 2 + (1/4)(x − 6) (b) r′(1) = 1/2 (c) s″(0) = 7e",
+          "steps": [
+            "(a) f(2) = 6, so g(6) = 2 and the point on the graph of g is (6, 2). Since f′(2) = 4 ≠ 0, g′(6) = 1/f′(g(6)) = 1/f′(2) = 1/4. The tangent line is y = 2 + (1/4)(x − 6).",
+            "f′ is evaluated at the output of g, which is 2. Reading the column under 3 or looking for f′(6) are the usual slips.",
+            "(b) r′(x) = (f′(x)/5)/√(1 − (f(x)/5)^2). At x = 1, f(1)/5 = 3/5 lies between −1 and 1, and r′(1) = (2/5)/√(1 − 9/25) = (2/5)/(4/5) = 1/2.",
+            "(c) s′(x) = e^(f(x))·f′(x). The product rule and the chain rule again give s″(x) = e^(f(x))·(f′(x))^2 + e^(f(x))·f″(x).",
+            "At x = 0: s″(0) = e^1·(3^2 + (−2)) = 7e."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c9",
+          "see": "know",
+          "prompt": "Let f(x) = arccos(1/x) for x > 1. Write an equation for the line tangent to the graph of f at x = 2.",
+          "hint": "Find f(2) as an angle first. Then write the derivative with the inner function 1/x left in place before you simplify.",
+          "answer": "y = π/3 + (√3/6)(x − 2)",
+          "steps": [
+            "f(2) = arccos(1/2) = π/3, so the point is (2, π/3).",
+            "With u = 1/x and u′ = −1/x^2: f′(x) = −u′/√(1 − u^2) = (1/x^2)/√(1 − 1/x^2).",
+            "At x = 2: f′(2) = (1/4)/√(3/4) = (1/4)·(2/√3) = 1/(2√3) = √3/6.",
+            "For x > 1 the derivative simplifies to 1/(x√(x^2 − 1)), which also gives 1/(2√3) at x = 2.",
+            "Sense check: as x increases, 1/x decreases, and arccos is a decreasing function, so f increases and f′(2) should be positive. It is."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u3-c10",
+          "see": "know",
+          "prompt": "Let y = e^(−x)·cos(2x). Find the constant k for which y″ + 2y′ + ky = 0 for all x.",
+          "hint": "Find y′ and y″, factor out e^(−x), and compare what multiplies cos(2x) and sin(2x).",
+          "answer": "k = 5",
+          "steps": [
+            "Product rule: y′ = −e^(−x)cos(2x) − 2e^(−x)sin(2x) = −e^(−x)(cos(2x) + 2sin(2x)).",
+            "Again: y″ = e^(−x)(cos(2x) + 2sin(2x)) − e^(−x)(−2sin(2x) + 4cos(2x)) = e^(−x)(−3cos(2x) + 4sin(2x)).",
+            "y″ + 2y′ = e^(−x)(−3cos(2x) + 4sin(2x) − 2cos(2x) − 4sin(2x)) = −5e^(−x)cos(2x) = −5y.",
+            "So y″ + 2y′ + 5y = 0 for every x, and k = 5. No other constant works, because y is not zero for every x."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Chain rule",
+          "text": "If h(x) = f(g(x)), then h′(x) = f′(g(x))·g′(x). In Leibniz form, with y = f(u) and u = g(x), dy/dx = (dy/du)·(du/dx). For more layers, multiply one derivative per layer, each evaluated at the output of the layer inside it.",
+          "conditions": [
+            "g is differentiable at x and f is differentiable at g(x).",
+            "Every input must be visible when you evaluate: h′(a) uses f′ at g(a), never f′ at a."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Implicit differentiation",
+          "text": "Differentiate both sides of the equation with respect to x, treating y as a function of x, so each term containing y picks up a factor dy/dx. Collect the dy/dx terms, factor, and solve. The slope at a point usually needs both coordinates.",
+          "conditions": [
+            "Near the point, the curve is the graph of a differentiable function y(x), and the coefficient of dy/dx is not zero there.",
+            "A point you use must satisfy the equation of the curve; check it first."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Derivative of an inverse function",
+          "text": "If g is the inverse of f and f(a) = b, then g′(b) = 1/f′(a) = 1/f′(g(b)). Slopes at (a, b) on the graph of f and at (b, a) on the graph of g are reciprocals.",
+          "conditions": [
+            "f is one-to-one and differentiable on an open interval containing a, and f′(a) ≠ 0.",
+            "A derivative of one sign on an interval (for example f′(x) > 0 throughout) shows that f is one-to-one there.",
+            "If f′(a) = 0, the graph of g has a vertical tangent at (b, a) and g′(b) does not exist."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Inverse trigonometric derivatives",
+          "text": "d/dx arcsin(u) = u′/√(1 − u^2), d/dx arccos(u) = −u′/√(1 − u^2) and d/dx arctan(u) = u′/(1 + u^2), for a differentiable inner function u.",
+          "conditions": [
+            "The arcsin and arccos formulas hold for −1 < u < 1; at u = ±1 their graphs have vertical tangents. The arctan formula holds for every u.",
+            "They come from differentiating sin y = x, cos y = x or tan y = x implicitly on the restricted ranges, which you can redo when unsure of a sign."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Higher-order derivatives",
+          "text": "f″ is the derivative of f′, f‴ the derivative of f″, and f^(n) the nth derivative; in Leibniz notation d^2y/dx^2 = d/dx(dy/dx). On an implicit curve, differentiate the equation (or the expression for dy/dx) again, then substitute the point and the value of dy/dx.",
+          "conditions": [
+            "Each lower derivative must be differentiable at the point.",
+            "For a composite, h″ needs the product rule as well as the chain rule: if h(x) = f(g(x)), then h″(x) = f″(g(x))·(g′(x))^2 + f′(g(x))·g″(x)."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Chain-rule forms, for a differentiable inner function u = u(x).",
+          "head": [
+            "Function",
+            "Derivative",
+            "Where it holds"
+          ],
+          "rows": [
+            [
+              "u^n",
+              "n·u^(n−1)·u′",
+              "wherever u^n is differentiable"
+            ],
+            [
+              "e^u",
+              "e^u·u′",
+              "all u"
+            ],
+            [
+              "a^u (a > 0, a ≠ 1)",
+              "a^u·(ln a)·u′",
+              "all u"
+            ],
+            [
+              "ln|u|",
+              "u′/u",
+              "u ≠ 0"
+            ],
+            [
+              "sin u, cos u",
+              "cos u·u′, −sin u·u′",
+              "all u"
+            ],
+            [
+              "tan u",
+              "sec^2 u·u′",
+              "cos u ≠ 0"
+            ],
+            [
+              "arcsin u, arccos u",
+              "u′/√(1 − u^2), −u′/√(1 − u^2)",
+              "−1 < u < 1"
+            ],
+            [
+              "arctan u",
+              "u′/(1 + u^2)",
+              "all u"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Choosing a route. A cue is a starting point; it fails when the expression has a structure the cue hides, so name the last operation first.",
+          "head": [
+            "You see",
+            "Reach for",
+            "Watch for"
+          ],
+          "rows": [
+            [
+              "The last operation is a function applied to an inside expression",
+              "Chain rule, one factor per layer",
+              "Each outer derivative is evaluated at its inner output"
+            ],
+            [
+              "The last operation is a product or a quotient",
+              "Product or quotient rule, then the chain rule inside each piece",
+              "A quotient with a constant numerator is shorter as a negative power"
+            ],
+            [
+              "A quotient whose denominator is a single power of x",
+              "Divide term by term first",
+              "The simplified form holds only where the original is defined"
+            ],
+            [
+              "x and y mixed in one equation",
+              "Implicit differentiation",
+              "Every y-term gets dy/dx; the slope needs the point"
+            ],
+            [
+              "The derivative of g, where g undoes f",
+              "g′(b) = 1/f′(g(b))",
+              "Solve f(a) = b first; the formula fails where f′(a) = 0"
+            ],
+            [
+              "A product of sine and cosine of the same angle",
+              "An identity such as sin x·cos x = (1/2)sin(2x)",
+              "Either route is correct; the identity is shorter"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justify",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Show that an inverse exists and find its derivative at a point (f(x) = 5x + arctan x; find the derivative of the inverse at 0).",
+          "text": "f′(x) = 5 + 1/(1 + x^2) > 0 for all x, so f is increasing and therefore one-to-one, and its inverse g exists. Since f(0) = 0, g(0) = 0. Because f′(0) = 6 ≠ 0, g′(0) = 1/f′(g(0)) = 1/f′(0) = 1/6."
+        },
+        {
+          "type": "model",
+          "prompt": "Use the chain rule with values from a table (h(x) = f(g(x)), with g(4) = −1, g′(4) = 3 and f′(−1) = 2 from the table).",
+          "text": "By the chain rule, h′(4) = f′(g(4))·g′(4). Since g(4) = −1, h′(4) = f′(−1)·g′(4) = (2)(3) = 6."
+        },
+        {
+          "type": "model",
+          "prompt": "Find and state a tangent line on an implicit curve (y^3 + 2x^2 = 3xy at (1, 1)).",
+          "text": "The point is on the curve, since 1 + 2 = 3. Differentiating with respect to x, with y a function of x: 3y^2(dy/dx) + 4x = 3y + 3x(dy/dx), so dy/dx = (3y − 4x)/(3y^2 − 3x). At (1, 1) the denominator is 0 and the numerator is −1, so dy/dx does not exist; the tangent line at (1, 1) is vertical, x = 1."
+        },
+        {
+          "type": "model",
+          "prompt": "Explain why an inverse is not differentiable where f′(a) = 0.",
+          "text": "Since f′(a) = 0, the graph of f has a horizontal tangent at (a, b). The graph of g is the reflection of the graph of f across the line y = x, so the graph of g has a vertical tangent at (b, a), and g′(b) does not exist."
+        },
+        {
+          "type": "model",
+          "prompt": "State a concavity conclusion from d^2y/dx^2 at a point.",
+          "text": "At (3, 0), d^2y/dx^2 = 5/64. Because d^2y/dx^2 > 0 at that point, the curve is concave up there."
+        },
+        {
+          "type": "trap",
+          "text": "Evaluating the outer derivative at x instead of at the inner output: h′(4) = f′(4)·g′(4) for h(x) = f(g(x)).",
+          "fix": "Write h′(x) = f′(g(x))·g′(x) with every input showing, find g(4) first, and evaluate f′ there."
+        },
+        {
+          "type": "trap",
+          "text": "Using g′(b) = 1/f′(b) for the inverse g of f.",
+          "fix": "Pair the points: solve f(a) = b, then use g′(b) = 1/f′(a). The input of f′ is an output of g."
+        },
+        {
+          "type": "trap",
+          "text": "Reading f^(−1)(x) or sin^(−1)(x) as a reciprocal.",
+          "fix": "f^(−1) is the inverse function, while 1/f(x) is the reciprocal. sin^(−1)(x) means arcsin x."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping dy/dx from a y-term, or the product rule from a mixed term: d/dx[y^2] = 2y, or d/dx[x·e^y] = x·e^y·(dy/dx).",
+          "fix": "Every term containing y gets a dy/dx, and a term with both x and y is a product: d/dx[x·e^y] = e^y + x·e^y·(dy/dx)."
+        },
+        {
+          "type": "trap",
+          "text": "Treating dy/dx as a constant when finding d^2y/dx^2 on an implicit curve, or substituting the point before the second differentiation.",
+          "fix": "Differentiate the whole expression first, with dy/dx as a function of x, then substitute the point and the value of dy/dx."
+        },
+        {
+          "type": "trap",
+          "text": "Losing an inner factor: d/dx[cos^2(5x)] = −2cos(5x)sin(5x).",
+          "fix": "List the layers (the square, the cosine, then 5x) and write one factor for each: 2cos(5x)·(−sin(5x))·5 = −10cos(5x)sin(5x)."
+        },
+        {
+          "type": "trap",
+          "text": "Using an inverse trigonometric derivative where it does not hold, such as evaluating 3/√(1 − 9x^2), the derivative of arcsin(3x), at x = 1/3.",
+          "fix": "Check the inner value first. At x = 1/3 the inner value is 1, so arcsin(3x) has a vertical tangent there and no derivative."
+        },
+        {
+          "type": "trap",
+          "text": "Simplifying a quotient and forgetting where the original is undefined: writing f(x) = (x^3 − x)/x = x^2 − 1 and then reporting f′(0) = 0.",
+          "fix": "A rewrite is valid only where the original expression is defined; keep its restrictions, here x ≠ 0. f(0) is undefined, so f′(0) does not exist."
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let f(x) = (x^2 + 1)^3·e^(−2x). Find f′(x) in factored form, evaluate f′(0), and find every x where f′(x) = 0.",
+          "answer": "f′(x) = −2e^(−2x)(x^2 + 1)^2(x^2 − 3x + 1); f′(0) = −2; f′(x) = 0 at x = (3 − √5)/2 and x = (3 + √5)/2.",
+          "steps": [
+            "Name the last operation: f is a product of (x^2 + 1)^3 and e^(−2x). So the plan is the product rule, with the chain rule inside each factor.",
+            "d/dx(x^2 + 1)^3 = 3(x^2 + 1)^2·2x = 6x(x^2 + 1)^2, and d/dx e^(−2x) = −2e^(−2x).",
+            "f′(x) = 6x(x^2 + 1)^2·e^(−2x) + (x^2 + 1)^3·(−2e^(−2x)).",
+            "Factor out the common pieces 2e^(−2x)(x^2 + 1)^2: f′(x) = 2e^(−2x)(x^2 + 1)^2(3x − (x^2 + 1)) = −2e^(−2x)(x^2 + 1)^2(x^2 − 3x + 1).",
+            "f′(0) = −2·1·1·1 = −2.",
+            "e^(−2x) and (x^2 + 1)^2 are never zero, so f′(x) = 0 only where x^2 − 3x + 1 = 0, that is x = (3 ± √5)/2. Factoring is what makes this step possible."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "The curve 4x^2 + x·y^2 = 8 passes through (1, 2). Find dy/dx and d^2y/dx^2 at (1, 2), and say whether the curve is concave up or concave down there.",
+          "answer": "dy/dx = −3 and d^2y/dx^2 = −1/2 at (1, 2), so the curve is concave down there.",
+          "steps": [
+            "Check the point: 4(1) + 1(4) = 8.",
+            "Differentiate with respect to x, using the product rule on x·y^2: 8x + y^2 + 2xy(dy/dx) = 0.",
+            "At (1, 2): 8 + 4 + 4(dy/dx) = 0, so dy/dx = −3.",
+            "Differentiate 8x + y^2 + 2xy(dy/dx) = 0 again, treating y and dy/dx as functions of x. The term 2xy(dy/dx) is a product of three factors: 8 + 2y(dy/dx) + [2y(dy/dx) + 2x(dy/dx)^2 + 2xy(d^2y/dx^2)] = 0.",
+            "Substitute x = 1, y = 2 and dy/dx = −3: 8 − 12 − 12 + 18 + 4(d^2y/dx^2) = 0, so 2 + 4(d^2y/dx^2) = 0 and d^2y/dx^2 = −1/2.",
+            "Since d^2y/dx^2 < 0 at (1, 2), the curve is concave down there."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Let f(x) = e^x + 3x for all real x, and let g be the inverse function of f. Explain why g exists, then write an equation for the line tangent to the graph of g at x = 1.",
+          "answer": "f′(x) = e^x + 3 > 0 for every x, so f is one-to-one and g exists. The tangent line is y = (1/4)(x − 1).",
+          "steps": [
+            "f′(x) = e^x + 3 > 0 for every real x, so f is increasing, hence one-to-one, and it has an inverse g.",
+            "Find the matching input by inspection: f(0) = e^0 + 0 = 1, so g(1) = 0 and the point on the graph of g is (1, 0).",
+            "f′(0) = e^0 + 3 = 4 ≠ 0, so g′(1) = 1/f′(g(1)) = 1/f′(0) = 1/4.",
+            "The tangent line is y = 0 + (1/4)(x − 1), that is, y = (1/4)(x − 1).",
+            "Using 1/f′(1) = 1/(e + 3) is the usual slip: f′ is evaluated at g(1) = 0, not at 1."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 9: Chain rule, implicit differentiation, and inverse functions",
+              "ref": "week:9"
+            },
+            {
+              "label": "Week 10: Inverse trigonometric functions, choosing rules, and higher-order derivatives",
+              "ref": "week:10"
+            },
+            {
+              "label": "Unit 3 plan",
+              "ref": "unit:u3"
+            },
+            {
+              "label": "Unit 3 test",
+              "ref": "test:unit-3"
+            },
+            {
+              "label": "Unit 3 test key",
+              "ref": "key:unit-3"
+            },
+            {
+              "label": "Free-response workshop: Implicit differentiation and related rates",
+              "ref": "guide:fr-implicit-rates"
+            },
+            {
+              "label": "Free-response workshop: Functions given by tables",
+              "ref": "guide:fr-tables"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -77,6 +77,15 @@ free-response questions, 26 guides with 181 self-checks, and 84 figures. See the
 [exam-preparation contract](docs/ap-courses.md#exam-preparation) and the
 [review record](docs/reviews/2026-10-22-bc-exam-prep.md).
 
+**Calculus AB exam preparation** (`ap.html#calculus-ab/prep`) gives AB the
+same layer: practice exams B–D in the May 2027 format, six mixed timed sets
+across all eight units, a free-response workshop with a guide and a
+three-question set for each of eight recurring kinds of question, a
+retrieval-first review for every unit, five strategy guides, and eight-week,
+four-week and in-course plans. It holds 216 multiple-choice and 42
+free-response questions, 21 guides with 148 self-checks, and 54 figures. See
+the [review record](docs/reviews/2026-10-22-ab-exam-prep.md).
+
 SAT, ACT and all four AP courses share assessment ordering, timing metadata,
 student/key projections and typed scoring through a small
 [assessment platform](docs/assessment-platform.md). SAT template generation

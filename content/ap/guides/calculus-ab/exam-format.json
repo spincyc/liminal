@@ -1,0 +1,444 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "exam-format",
+  "kind": "strategy",
+  "title": "How the exam runs and how to pace it",
+  "author": "ab-strategy-author",
+  "summary": "How the AP® Calculus AB Exam runs in its May 2027 format: the two sections and four timed parts, the calculator policy, Bluebook delivery with handwritten free response, and what Liminal's practice exams assume. Then a pace for every part with checkpoints, multiple-choice and free-response tactics with the situations where each one fails, and what to do in the last weeks, the day before and the day of the exam, including what to bring.",
+  "minutes": 25,
+  "figures": [
+    {
+      "id": "ab-exam-format-g1",
+      "alt": "Four horizontal bars, one for each timed part, all drawn at the same scale of minutes. Section I Part A, 29 multiple choice with no calculator: a 62-minute bar with ticks at 15.5, 31 and 46.5 minutes marked about 7, about 14 and about 22 questions done, and 29 at 62 minutes. Section I Part B, 13 multiple choice with a graphing calculator, shaded: a 38-minute bar with ticks at 9.5, 19 and 28.5 minutes marked about 3, 6 or 7, and about 10 questions done, and 13 at 38 minutes. Section II Part A, 2 free response with a graphing calculator, shaded: a 30-minute bar with 1 question done at 15 minutes and 2 at 30. Section II Part B, 4 free response with no calculator: a 60-minute bar with 1, 2, 3 and 4 questions done at 15, 30, 45 and 60 minutes.",
+      "caption": "Checkpoints at each quarter of every part, at the part's average pace. Shaded parts require a graphing calculator."
+    }
+  ],
+  "sections": [
+    {
+      "id": "structure",
+      "title": "How the exam is built",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The AP® Calculus AB Exam, in the format that takes effect in May 2027, lasts 3 hours 10 minutes. It has two sections, multiple choice and free response, and each section is split into two separately timed parts: one where no calculator is allowed and one where a graphing calculator is required."
+        },
+        {
+          "type": "table",
+          "caption": "The May 2027 format, from College Board's exam pages (checked 2026-10-22).",
+          "head": [
+            "Part",
+            "Questions",
+            "Minutes",
+            "Calculator",
+            "Share of exam score"
+          ],
+          "rows": [
+            [
+              "Section I, Part A",
+              "29 multiple choice",
+              "62",
+              "None",
+              "35%"
+            ],
+            [
+              "Section I, Part B",
+              "13 multiple choice",
+              "38",
+              "Graphing calculator required",
+              "15%"
+            ],
+            [
+              "Section II, Part A",
+              "2 free response",
+              "30",
+              "Graphing calculator required",
+              "16.7%"
+            ],
+            [
+              "Section II, Part B",
+              "4 free response",
+              "60",
+              "None",
+              "33.3%"
+            ],
+            [
+              "Both sections",
+              "42 multiple choice and 6 free response",
+              "190",
+              "In 68 of the 190 minutes",
+              "100%"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "More about how the exam runs, from College Board's exam pages and calculator policy page, checked 2026-10-22:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Delivery is hybrid digital. You answer the multiple-choice questions and read the free-response questions in the Bluebook testing app, and you write your free-response answers by hand in a paper booklet.",
+            "In the two calculator parts, Bluebook has a built-in Desmos graphing calculator, and you may also use up to two approved handheld calculators. In Section I Part A and Section II Part B no calculator is allowed.",
+            "At least two of the six free-response questions are set in real-world contexts, so expect to explain what a derivative or an integral means in words, with units."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "What Liminal's practice assumes, which is a practice convention rather than a College Board fact:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Liminal's practice exams are printed, so you answer every part on paper, and they are taken without a formula sheet. College Board's exam pages, checked 2026-10-22, do not mention one; check the current exam page. Plan to carry the formulas yourself; the memory-sheet guide lists them.",
+            "Liminal scores each free-response question out of 9 points, a scale for comparing your own forms with one another. Raw points on Liminal forms are practice evidence, not AP® scores, and there is no conversion between them."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Formats change from year to year. Before you settle on a pacing plan, check College Board's current exam page for the exam you will take, and redo the arithmetic below if anything is different."
+        },
+        {
+          "type": "figure",
+          "id": "ab-exam-format-g1"
+        },
+        {
+          "type": "check",
+          "id": "ab-exam-format-c1",
+          "prompt": "Name the section and part of the exam for each situation, or explain why it cannot happen. (a) You choose multiple-choice answers in Bluebook, and Desmos is available. (b) You write an answer by hand, and a calculator is allowed. (c) You choose multiple-choice answers in Bluebook, and no calculator of any kind is allowed. (d) You are 40 minutes into a free-response part and using a graphing calculator.",
+          "hint": "Use the format table: which parts are multiple choice, which allow a calculator, and how long each part lasts.",
+          "answer": "(a) Section I Part B. (b) Section II Part A. (c) Section I Part A. (d) It cannot happen: the only free-response part with a calculator is Section II Part A, which lasts 30 minutes.",
+          "steps": [
+            "Multiple choice is Section I, answered in Bluebook. Its calculator part is Part B (13 questions, 38 minutes) and its no-calculator part is Part A (29 questions, 62 minutes). That settles (a) and (c).",
+            "Free response is Section II, written by hand in the paper booklet. Its calculator part is Part A (2 questions, 30 minutes), so (b) is Section II Part A.",
+            "For (d), Section II Part A ends 30 minutes after it starts. Forty minutes into a free-response part you must be in Part B, where no calculator is allowed. Plan calculator work for the first 30 minutes of Section II and nothing after."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pacing",
+      "title": "Pacing each part",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A part's average time per question is its minutes divided by its questions. Use the average to set checkpoints, not to time every question: an easy derivative may take 40 seconds and an area question with a careful setup may take 5 minutes."
+        },
+        {
+          "type": "table",
+          "caption": "Average pace and checkpoints for each part. Minutes are counted from the start of the part.",
+          "head": [
+            "Part",
+            "Average per question",
+            "Checkpoints"
+          ],
+          "rows": [
+            [
+              "Section I, Part A",
+              "62 ÷ 29 ≈ 2.1 minutes (about 2 min 8 s)",
+              "About 7 done at minute 15.5, 14 at minute 31, 22 at minute 46.5"
+            ],
+            [
+              "Section I, Part B",
+              "38 ÷ 13 ≈ 2.9 minutes (about 2 min 55 s)",
+              "About 3 done at minute 9.5, 6 or 7 at minute 19, 10 at minute 28.5"
+            ],
+            [
+              "Section II, Part A",
+              "30 ÷ 2 = 15 minutes",
+              "The second question started by minute 15"
+            ],
+            [
+              "Section II, Part B",
+              "60 ÷ 4 = 15 minutes",
+              "One question done by minute 15, two by 30, three by 45"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "A two-pass plan for each multiple-choice part:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "First pass. Go in order. Finish every question whose first step you can see. If you cannot see a first step within about 30 seconds, or a question runs past about twice the part's average (about 4 minutes in Part A, about 6 in Part B), choose your best answer so far, flag it and move on.",
+            "Note why you flagged it: a word such as \"limits\", \"sign\" or \"setup\" tells you on the second pass which questions are nearly done.",
+            "Second pass. Spend the time the first pass saved on the flagged questions, nearly-done ones first.",
+            "Final two minutes. Make sure every question has an answer. On Liminal's practice exams a blank and a wrong choice both earn 0; check College Board's exam page for how the exam itself treats them."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Checking the clock after every question. Each glance costs a few seconds and some concentration, and a single slow question makes the clock look worse than your pace is.",
+          "fix": "Look at the clock only at the checkpoints. If you are within a couple of minutes of a checkpoint, carry on as before; if you are further behind, tighten the cutoff for the rest of the part."
+        },
+        {
+          "type": "check",
+          "id": "ab-exam-format-c2",
+          "prompt": "Twenty minutes into Section I Part B you have finished 5 of the 13 questions. At the part's average pace, how far behind are you, and how much time does each remaining question now have? What should you change?",
+          "hint": "Find how long 5 questions take at 38 ÷ 13 minutes each.",
+          "answer": "About 5.4 minutes behind: 5 questions take about 14.6 minutes at the average pace, and you have used 20. The other 8 questions have 18 minutes, about 2.25 minutes each instead of about 2.9. Shorten the cutoff: if a question shows no first step quickly, choose, flag and move on, and look for questions that need no calculator at all.",
+          "steps": [
+            "The average is 38/13 ≈ 2.923 minutes a question, so 5 questions take about 5 × 2.923 ≈ 14.6 minutes.",
+            "You have used 20 minutes, so you are about 20 − 14.6 = 5.4 minutes behind. Equivalently, at the average pace you would have finished about 20 ÷ 2.923 ≈ 6.8 questions.",
+            "Time left: 38 − 20 = 18 minutes for 13 − 5 = 8 questions, which is 18 ÷ 8 = 2.25 minutes each.",
+            "Being behind calls for skipping slow questions on the first pass, not for rushing every one. Some Part B questions yield to an exact argument faster than to the calculator; the multiple-choice tactics below show one."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-exam-format-c3",
+          "prompt": "On a Liminal practice exam, Section II Part B holds free-response questions 3 to 6. At minute 41 of the part you have finished questions 3 and 4, and questions 5 and 6 are untouched. How should you split the time that is left?",
+          "hint": "Compare an even split of the remaining minutes with spending them all on one question.",
+          "answer": "Give each remaining question about 9 or 10 minutes (19 minutes in all). Spend the first minute reading the parts of both, then work each one, skipping a stuck part rather than finishing one question and leaving the other blank.",
+          "steps": [
+            "Time left: 60 − 41 = 19 minutes for two questions, about 9.5 minutes each instead of 15.",
+            "Liminal's rubrics award points part by part, for setups and reasons as well as answers, so the first few minutes on a question usually earn the most. Ten minutes on each question earns more than 19 minutes on one and none on the other.",
+            "Read the lettered parts of both questions first. Part (a) of a question is often a quick value or a setup; collect those early.",
+            "Set a mid-point: at about minute 50, move to question 6 even if question 5 is unfinished, and come back to it if time remains."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "When this pacing advice fails:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Averages hide variety. Being a minute or two behind at a checkpoint is normal; five or more behind means start choosing and flagging sooner.",
+            "Two passes cost rereading time. If you rarely flag and usually finish early, one careful pass with a quick final look at the flagged questions works better.",
+            "Flagging too many questions turns the second pass into a second exam. If you flag more than about a quarter of a part, commit to more answers on the first pass.",
+            "In Section II, 15 minutes a question is a checkpoint, not a wall. Time saved on a question you know well belongs to a harder one in the same part.",
+            "A plan you have not tried under time is a guess. Rehearse it on full practice exams and adjust the cutoffs to your own speed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multiple-choice",
+      "title": "Multiple-choice tactics",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Wrong choices in a well-made question come from real errors: a dropped constant, a sign slip, a reversed limit. A choice that matches your first attempt is not evidence that it is right. Each tactic below earns its time only in some situations."
+        },
+        {
+          "type": "table",
+          "head": [
+            "Tactic",
+            "How",
+            "When it fails"
+          ],
+          "rows": [
+            [
+              "Estimate first",
+              "Before computing, decide the sign and rough size of the answer. Is the integral positive? Is the limit 0, finite or infinite? Is the slope about 1 or about 10? It takes seconds and catches sign slips and factor-of-2 errors.",
+              "When the choices share a sign and are close in size, an estimate cannot separate them; only the computation decides."
+            ],
+            [
+              "Eliminate",
+              "Cross out choices that contradict something you know: a negative area or volume, a limit that cannot exist, an interval that includes a point outside the domain.",
+              "Elimination often stops at two survivors. Then do the work instead of guessing, unless time has run out."
+            ],
+            [
+              "Work backward from a choice",
+              "Test a choice against the conditions: differentiate a proposed antiderivative, substitute a proposed value, check a proposed interval at a point inside it.",
+              "Testing all four choices can take four times as long as solving once. Use it to confirm an answer or break a tie, not to replace the work."
+            ],
+            [
+              "Look for an exact route in a calculator part",
+              "Before you type, take a few seconds to ask what the question is about. The Fundamental Theorem of Calculus, a derivative rule or a known value can be faster than the calculator.",
+              "If no exact route appears within those seconds, stop looking and compute: the part allows it, and searching costs time."
+            ]
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-exam-format-c4",
+          "prompt": "A no-calculator question asks for ∫ from 0 to 2 of x/(x^2 + 1) dx. The choices are −(1/2)ln 5, (1/2)ln 5, ln 5 and 2 ln 5. Eliminate three choices using sign and size alone, then confirm by integrating.",
+          "hint": "Find the largest value x/(x^2 + 1) can take. Expanding (x − 1)^2 ≥ 0 helps.",
+          "answer": "(1/2)ln 5. The integrand is positive on (0, 2], which rules out −(1/2)ln 5. Since x^2 + 1 ≥ 2x, the integrand is at most 1/2, so the integral is less than (1/2)(2) = 1, which rules out ln 5 ≈ 1.61 and 2 ln 5 ≈ 3.22. The substitution u = x^2 + 1 gives (1/2)ln 5 ≈ 0.80.",
+          "steps": [
+            "Sign: for 0 < x ≤ 2, both x and x^2 + 1 are positive, so the integral is positive. Eliminate −(1/2)ln 5.",
+            "Size: (x − 1)^2 ≥ 0 gives x^2 + 1 ≥ 2x, so x/(x^2 + 1) ≤ 1/2, with equality only at x = 1. Over an interval of length 2 the integral is less than 1.",
+            "ln 5 ≈ 1.609 and 2 ln 5 ≈ 3.219 both exceed 1. Eliminate them.",
+            "Confirm: with u = x^2 + 1, du = 2x dx, the integral is (1/2)∫ from 1 to 5 of (1/u) du = (1/2)ln 5 ≈ 0.805.",
+            "Where this fails: had the choices been (1/2)ln 5 and ln 2 ≈ 0.69, both positive and both below 1, only the integration would decide."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A calculator-part question: let h(x) = ∫ from 1 to 3x of √(t^2 + 7) dt. Find h′(1).",
+          "answer": "h′(1) = 3√(9 + 7) = 3 · 4 = 12. No calculator is needed.",
+          "steps": [
+            "The integrand √(t^2 + 7) is continuous for every t, so by the Fundamental Theorem of Calculus and the chain rule, h′(x) = √((3x)^2 + 7) · 3.",
+            "At x = 1: h′(1) = 3√16 = 12.",
+            "The calculator route, a numerical derivative of a numerical integral with a variable limit, is slow to type and easy to mistype, and it returns about 12.000. Both routes agree; the exact one takes seconds."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "free-response",
+      "title": "Free-response tactics",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each free-response question has several lettered parts. Liminal's practice rubrics give separate points for setups, answers, justifications and units, so a question you cannot finish still has points in it."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Read every part before you start. About a minute is enough. A later part can show what an earlier one is for, and a quick part (d) may sit behind a hard part (b).",
+            "Attempt every part, writing each answer in the space for its part, where a reader will look for it.",
+            "Carry earlier answers forward. If a later part needs a value you doubt or could not find, use your value or a clearly labeled assumed one. Liminal's rubrics credit later work that correctly uses an earlier wrong value wherever a rubric row accepts consistent use.",
+            "Write the setup before the arithmetic: the integral with its limits and differential, the derivative you will evaluate, the equation you will solve. In a calculator part, write the setup in mathematical notation, then the value to three decimal places.",
+            "In a context question, give units and say what the number means: which quantity, over which interval or at which time.",
+            "Answer what was asked and stop. In Liminal's rubrics a false extra statement can cost a point that a correct answer earned."
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "Water flows into a pond at r(t) cubic meters per hour. Part (b) asks what ∫ from 2 to 5 of r(t) dt means.",
+          "text": "∫ from 2 to 5 of r(t) dt is the total volume of water, in cubic meters, that flows into the pond from t = 2 to t = 5 hours."
+        },
+        {
+          "type": "text",
+          "text": "When these tactics fail:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Reading ahead fails when it turns into solving every part in your head. Skim for what each part asks, not how you will do it.",
+            "Carrying forward fails when the earlier error makes a later part impossible or trivial, such as a negative time or a value outside the domain. Go back to the earlier part, or state a reasonable assumed value and use it.",
+            "Setting up first fails when the setup is exactly what you do not know. Write what you do know, such as the quantity, its units and the rate being accumulated, and move on.",
+            "Attempting every part backfires when it pulls you into a long struggle. Give a stuck part a few minutes, write what you have, and return if time remains."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Crossing out nothing and leaving two different answers to one part, because you are not sure which is right.",
+          "fix": "Decide, then cross out the abandoned work with a single clean line. Liminal's rubrics credit one answer per part; with two conflicting answers showing, neither earns the answer point."
+        },
+        {
+          "type": "check",
+          "id": "ab-exam-format-c5",
+          "prompt": "You are 11 minutes into a four-part free-response question with about 4 minutes left for it. Parts (a) and (b) are done. Part (c) asks you to justify whether a function has a relative minimum at a point, and you have found the derivative but not yet its signs. Part (d) asks for a tangent-line approximation using values given in the question. What do you do, and in what order?",
+          "hint": "Ask which part is quickest to finish and which points in part (c) are already within reach.",
+          "answer": "Do part (d) first: a tangent-line approximation from given values takes a minute or two. Then return to part (c), write the derivative you found, test its sign on each side of the point, and state the conclusion with that reason. If time runs out in part (c), what you have written can still earn its rubric rows.",
+          "steps": [
+            "Part (d) stands alone and is short: write y − y0 = m(x − x0) from the given values and evaluate it. That is about a minute of work for points that are otherwise lost.",
+            "Part (c) is partly done. The derivative is already on the page; the sign of the derivative on each side of the point and a sentence naming the sign change finish it.",
+            "Doing (c) first risks spending all 4 minutes on it and never reaching (d).",
+            "Where this fails: if (d) needed the result of (c), you would do (c) first. Read what each part depends on before choosing the order."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "last-weeks",
+      "title": "The last weeks, the day before and the day of",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "In the last weeks, keep answering questions instead of rereading notes. Liminal's eight-week plan places its four practice exams about 8, 5 and 3 weeks before the exam and about 10 days before it, with none in the last four days, when short mixed sets do more good than another full sitting."
+        },
+        {
+          "type": "rule",
+          "title": "Sleep",
+          "text": "Through the last weeks, not only the night before, aim for 8 to 10 hours of sleep a night with a regular bedtime. Do not trade sleep for extra study, and after an evening review session, go to bed rather than pushing on.",
+          "conditions": [
+            "Sleep specialists recommend 8 to 10 hours a night for teenagers (Paruthi et al. 2016).",
+            "High-school students who gave up sleep to study more reported more academic trouble the next day, not less (Gillen-O'Neel et al. 2013).",
+            "This evidence is correlational. It supports the habit; it does not show an effect on any one exam."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "The rule bends: a restless night before the exam is common and no reason to panic. Rest without watching the clock; the weeks of steady sleep count for more than one night."
+        },
+        {
+          "type": "text",
+          "text": "The day before:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Review lightly: quiz yourself on the memory sheet, redo two or three checks you once missed, and stop. Start no new topics and take no full practice exam.",
+            "Pack what you will bring (listed below), and set up Bluebook and your testing device as your school directs.",
+            "Go to bed at your usual time."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "On the day:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Eat what you usually eat and arrive early.",
+            "At the start of each part, note its length and your first checkpoint, then leave the clock alone until you reach it.",
+            "A racing heart at the start of a part is your body getting ready, not a sign that something is wrong; you do not need to calm it before you begin. If a question rattles you, choose, flag and move on; the next question is a fresh start.",
+            "When Section II moves from its calculator part to its no-calculator part, switch habits too: with no calculator, leave results such as ln 3 or π/4 in exact form rather than converting them to decimals."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "What to bring:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Calculator: up to two approved handheld calculators, if you use one, each on College Board's current list of approved models. Bring the ones you practiced with, charged or with fresh batteries and set to radian mode. Bluebook's built-in Desmos is also available in the calculator parts, so practise on it too if you may rely on it.",
+            "For the free-response booklet: the writing tools your school's exam instructions name.",
+            "Everything else, including the testing device and what you may not bring: follow your school's instructions and College Board's current exam-day pages, since policies change from year to year."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Planning to use a new handheld calculator, or Desmos for the first time, on exam day.",
+          "fix": "Use the same tool on every practice exam from now on, so each keystroke is familiar under time. The calculator-skills guide lists what to rehearse."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Calculator skills for the calculator parts",
+              "ref": "guide:calculator-skills"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "What to know without a formula sheet",
+              "ref": "guide:memory-sheet"
+            },
+            {
+              "label": "Practice exam A, under exam timing",
+              "ref": "test:practice-exam"
+            },
+            {
+              "label": "Mixed set 1, at the exam's pace",
+              "ref": "test:mixed-1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

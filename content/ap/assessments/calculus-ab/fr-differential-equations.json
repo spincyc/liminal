@@ -1,0 +1,349 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-differential-equations",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Differential equations",
+  "author": "ab-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. The Part A question permits a graphing calculator; Part B questions do not. Show supporting work and justify requested conclusions; write the equation or integral behind every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points for practice.",
+  "figures": [
+    {
+      "id": "ab-fr-differential-equations-f1",
+      "alt": "Coordinate grid with x from −2 to 2 and y from −2 to 2. Nine points are marked with dots: every point whose coordinates are each −1, 0, or 1. No segments are drawn.",
+      "caption": "Axes for the slope field in part (a)."
+    },
+    {
+      "id": "ab-fr-differential-equations-f2",
+      "alt": "The same nine points, each with a short line segment through it. The three segments on the x-axis are horizontal. At x = 1 the segments rise to the right; at x = 0 they fall to the right; at x = −1 they fall to the right more steeply. Segments at y = 1 and y = −1 with the same x have the same slope.",
+      "caption": "Slope field segments at the nine points."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show the setup for every calculator result, and give answers to three decimal places with units where they apply.",
+          "items": [
+            {
+              "id": "ab-fr-differential-equations-fr1",
+              "context": true,
+              "prompt": "A rooftop solar heater warms the water in a storage tank during the day. The temperature of the water is W(t) degrees Celsius (°C), t hours after 7 a.m., for 0 ≤ t ≤ 10. The temperature satisfies the differential equation dW/dt = (70 − W)(0.03 + 0.15 sin(πt/10)), where the second factor models the strength of the sunlight. At 7 a.m. the water is at 15 °C, so W(0) = 15.",
+              "topics": [
+                "AB.7.7",
+                "AB.7.6",
+                "AB.7.4",
+                "AB.8.1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the rate at which the water temperature is changing at t = 0. Indicate units of measure. Then use the differential equation to explain why W is increasing for 0 ≤ t ≤ 10.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "dW/dt at t = 0 is (70 − 15)(0.03 + 0) = 1.65 degrees Celsius per hour, with units."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that both factors are positive: 0.03 + 0.15 sin(πt/10) ≥ 0.03 > 0 because sin(πt/10) ≥ 0 for 0 ≤ t ≤ 10, and 70 − W > 0 because W starts at 15 < 70 and cannot cross the constant solution W = 70 (or because the solution from part (b) is 70 minus a positive quantity). So dW/dt > 0. A reason that checks only t = 0 does not earn this point."
+                    }
+                  ],
+                  "answer": "dW/dt = 1.65 °C per hour at t = 0. Both factors of dW/dt stay positive on 0 ≤ t ≤ 10, so W is increasing.",
+                  "steps": [
+                    "At t = 0, W = 15 and sin 0 = 0, so dW/dt = (70 − 15)(0.03) = 1.65 °C per hour.",
+                    "For 0 ≤ t ≤ 10, πt/10 runs from 0 to π, where sine is nonnegative, so 0.03 + 0.15 sin(πt/10) ≥ 0.03 > 0.",
+                    "W = 70 is a constant solution of the equation. The solution starts below it at W(0) = 15 and cannot cross it, so 70 − W > 0 for every t.",
+                    "A product of two positive factors is positive, so dW/dt > 0 and W is increasing on 0 ≤ t ≤ 10."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use separation of variables to find W(t), the particular solution with W(0) = 15.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates variables: dW/(70 − W) = (0.03 + 0.15 sin(πt/10)) dt, or an equivalent form. Without a correct separation, no later point in this part is earned."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Antiderivatives −ln|70 − W| and 0.03t − (1.5/π)cos(πt/10), with a constant of integration."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses W(0) = 15 to find the constant: −ln 55 = −1.5/π + C, so C = 1.5/π − ln 55, or an equivalent value for the form used."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves for W: W(t) = 70 − 55e^(−0.03t − (1.5/π)(1 − cos(πt/10))), or an equivalent expression."
+                    }
+                  ],
+                  "answer": "W(t) = 70 − 55e^(−0.03t − (1.5/π)(1 − cos(πt/10)))",
+                  "steps": [
+                    "Separate: dW/(70 − W) = (0.03 + 0.15 sin(πt/10)) dt.",
+                    "Integrate both sides: −ln|70 − W| = 0.03t − 0.15(10/π)cos(πt/10) + C = 0.03t − (1.5/π)cos(πt/10) + C.",
+                    "By part (a), W < 70, so |70 − W| = 70 − W. At t = 0: −ln 55 = −1.5/π + C, so C = 1.5/π − ln 55.",
+                    "Then ln(70 − W) = ln 55 − 0.03t − (1.5/π)(1 − cos(πt/10)), so 70 − W = 55e^(−0.03t − (1.5/π)(1 − cos(πt/10))).",
+                    "W(t) = 70 − 55e^(−0.03t − (1.5/π)(1 − cos(πt/10))). Check: W(0) = 70 − 55e^0 = 15."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "At what time t, for 0 ≤ t ≤ 10, does the water reach 45 °C?",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the equation W(t) = 45 using the solution from part (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer t = 5.905 hours. Accepts an answer consistent with a solution from part (b) that satisfies W(0) = 15. Earned only with the equation of the previous row on the page."
+                    }
+                  ],
+                  "answer": "t ≈ 5.905 hours (a little before 1 p.m.)",
+                  "steps": [
+                    "Solve 70 − 55e^(−0.03t − (1.5/π)(1 − cos(πt/10))) = 45 with the calculator.",
+                    "Since W is increasing, there is one solution: t ≈ 5.904506, which rounds to 5.905 hours after 7 a.m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the average temperature of the water over the interval 0 ≤ t ≤ 10.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes (1/10)∫ from 0 to 10 of W(t) dt with W from part (b) and gets 37.935 °C (or a value consistent with part (b))."
+                    }
+                  ],
+                  "answer": "About 37.935 °C",
+                  "steps": [
+                    "Average value = (1/(10 − 0)) ∫ from 0 to 10 of W(t) dt.",
+                    "With the calculator, ∫ from 0 to 10 of W(t) dt ≈ 379.351299, so the average is about 37.935 °C."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 30,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show your work, justify requested conclusions, and give exact answers.",
+          "items": [
+            {
+              "id": "ab-fr-differential-equations-fr2",
+              "prompt": "Consider the differential equation dy/dx = (2x − 1)y^2. Let y = f(x) be the particular solution with f(1) = 1/2.",
+              "topics": [
+                "AB.7.3",
+                "AB.7.4",
+                "AB.5.4",
+                "AB.7.6",
+                "AB.7.7"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "On the axes provided, sketch a slope field for the differential equation at the nine points indicated.",
+                  "points": 2,
+                  "figureIds": [
+                    "ab-fr-differential-equations-f1"
+                  ],
+                  "answerFigureIds": [
+                    "ab-fr-differential-equations-f2"
+                  ],
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Horizontal segments at the three points with y = 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "The six points with y = ±1 have the correct signs and relative steepness: rising (slope 1) at x = 1, falling (slope −1) at x = 0, and falling more steeply (slope −3) at x = −1."
+                    }
+                  ],
+                  "answer": "Slopes: 0 at (−1, 0), (0, 0), (1, 0); 1 at (1, ±1); −1 at (0, ±1); −3 at (−1, ±1). See the answer figure.",
+                  "steps": [
+                    "Every point with y = 0 has slope (2x − 1)(0) = 0.",
+                    "With y = ±1, y^2 = 1, so the slope is 2x − 1: 1 at x = 1, −1 at x = 0 and −3 at x = −1.",
+                    "Draw a short segment with that slope through each point."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "The graph of f has a horizontal tangent line at x = 1/2. Does f have a relative minimum, a relative maximum, or neither at x = 1/2? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Shows that the sign of f′(x) is the sign of 2x − 1, because f(x)^2 > 0: f(1) = 1/2 ≠ 0 and the solution cannot reach the constant solution y = 0 (or f(x) = 1/(2 + x − x^2) is never 0). Accepts instead the second derivative d^2y/dx^2 = 2y^2 + 2(2x − 1)y(dy/dx), which equals 2f(1/2)^2 > 0 at x = 1/2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Relative minimum, because f′ changes from negative to positive at x = 1/2 (or because f′(1/2) = 0 and f″(1/2) > 0)."
+                    }
+                  ],
+                  "answer": "A relative minimum.",
+                  "steps": [
+                    "y = 0 is a constant solution, and f(1) = 1/2 > 0, so f(x) never equals 0 and f(x)^2 > 0 on its domain.",
+                    "Then f′(x) = (2x − 1)f(x)^2 has the sign of 2x − 1: negative for x < 1/2 and positive for x > 1/2.",
+                    "f′ changes from negative to positive at x = 1/2, so f has a relative minimum there by the First Derivative Test.",
+                    "(Part (c) confirms it: f(1/2) = 4/9, and f is smallest there.)"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find y = f(x), the particular solution to the differential equation with the initial condition f(1) = 1/2.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates variables: dy/y^2 = (2x − 1) dx. Without a correct separation, no later point in this part is earned."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Antiderivatives −1/y and x^2 − x, with a constant of integration."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses f(1) = 1/2 to find the constant: −2 = 0 + C, so C = −2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves for y: f(x) = 1/(2 + x − x^2), or an equivalent form such as −1/(x^2 − x − 2)."
+                    }
+                  ],
+                  "answer": "f(x) = 1/(2 + x − x^2)",
+                  "steps": [
+                    "Separate: dy/y^2 = (2x − 1) dx. (Dividing by y^2 loses only the constant solution y = 0, which is not this solution.)",
+                    "Integrate: −1/y = x^2 − x + C.",
+                    "f(1) = 1/2 gives −2 = 1 − 1 + C, so C = −2.",
+                    "−1/y = x^2 − x − 2, so y = −1/(x^2 − x − 2) = 1/(2 + x − x^2).",
+                    "Check: f(1) = 1/2, and f′(x) = −(1 − 2x)/(2 + x − x^2)^2 = (2x − 1)y^2."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "State the largest open interval containing x = 1 on which the particular solution f is defined.",
+                  "points": 1,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "−1 < x < 2, because 2 + x − x^2 = (2 − x)(1 + x) is zero at x = −1 and x = 2, and the interval must contain x = 1. Accepts an answer consistent with an incorrect formula from part (c) that has vertical asymptotes."
+                    }
+                  ],
+                  "answer": "−1 < x < 2",
+                  "steps": [
+                    "2 + x − x^2 = (2 − x)(1 + x), which is zero at x = −1 and x = 2, where f has vertical asymptotes.",
+                    "The solution must be differentiable on an interval containing the initial value x = 1 and cannot cross an asymptote, so the interval is −1 < x < 2."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-fr-differential-equations-fr3",
+              "context": true,
+              "prompt": "On a cold, still night, ice forms on the surface of a pond. The ice insulates the water beneath it, so the ice grows more slowly as it thickens. The thickness of the ice is L(t) centimeters, t hours after midnight, and it satisfies the differential equation dL/dt = 1.2/L. At midnight the ice is 2 centimeters thick, so L(0) = 2.",
+              "topics": [
+                "AB.7.7",
+                "AB.7.6",
+                "AB.4.6",
+                "AB.5.6",
+                "AB.7.4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Write an equation for the line tangent to the graph of L at t = 0, and use it to approximate L(1). Find d^2L/dt^2 in terms of L. Is your approximation greater than or less than L(1)? Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Tangent line L = 2 + 0.6t (slope 1.2/2 = 0.6) and approximation L(1) ≈ 2.6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "d^2L/dt^2 = −(1.2/L^2)(dL/dt) = −1.44/L^3, with dL/dt substituted (an expression still containing dL/dt earns the point only if its sign is then used correctly)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Greater than L(1), because d^2L/dt^2 = −1.44/L^3 < 0 whenever L > 0, and L > 0 for 0 ≤ t ≤ 1 (L starts at 2 and dL/dt = 1.2/L > 0, so L increases). The graph of L is concave down on that interval and lies below its tangent line. A reason that uses only the sign at t = 0 does not earn this point."
+                    }
+                  ],
+                  "answer": "L = 2 + 0.6t; L(1) ≈ 2.6. d^2L/dt^2 = −1.44/L^3. The approximation 2.6 is greater than L(1).",
+                  "steps": [
+                    "At t = 0, dL/dt = 1.2/2 = 0.6 cm per hour, so the tangent line is L = 2 + 0.6t and L(1) ≈ 2.6 cm.",
+                    "Differentiate with the chain rule: d^2L/dt^2 = −(1.2/L^2)(dL/dt) = −(1.2/L^2)(1.2/L) = −1.44/L^3.",
+                    "L(0) = 2 and dL/dt = 1.2/L > 0 while L > 0, so L increases and stays at least 2 for t ≥ 0. Then −1.44/L^3 < 0 on all of 0 ≤ t ≤ 1.",
+                    "The graph of L is concave down there, so it lies below its tangent line: 2.6 is greater than L(1)."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use separation of variables to find L(t), the particular solution with L(0) = 2.",
+                  "points": 4,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Separates variables: L dL = 1.2 dt. Without a correct separation, no later point in this part is earned."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Antiderivatives L^2/2 and 1.2t, with a constant of integration."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses L(0) = 2 to find the constant: 2 = 0 + C, so C = 2 (or L^2 = 2.4t + 4)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Solves for L, choosing the positive root because L(0) = 2 > 0: L(t) = √(2.4t + 4)."
+                    }
+                  ],
+                  "answer": "L(t) = √(2.4t + 4)",
+                  "steps": [
+                    "Separate: L dL = 1.2 dt.",
+                    "Integrate: L^2/2 = 1.2t + C.",
+                    "L(0) = 2 gives 2 = C, so L^2 = 2.4t + 4.",
+                    "The thickness is positive, and L(0) = 2 > 0, so L(t) = √(2.4t + 4). Check: L(1) = √6.4 ≈ 2.53, below the estimate 2.6 from part (a)."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "How many hours after midnight is the ice 5 centimeters thick? According to the model, dL/dt approaches 0 as t increases. Does the thickness of the ice approach a limiting value as t increases? Explain your reasoning.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "t = 35/4 = 8.75 hours, from √(2.4t + 4) = 5 (or 2.4t + 4 = 25)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "No: L(t) = √(2.4t + 4) increases without bound as t → ∞, because 2.4t + 4 does. Explains that a rate approaching 0 does not by itself make the quantity level off. Accepts the argument from the equation: if L stayed below some value B, then dL/dt ≥ 1.2/B for all t, and L would eventually exceed B."
+                    }
+                  ],
+                  "answer": "35/4 = 8.75 hours after midnight. No: the thickness grows without bound, though more and more slowly.",
+                  "steps": [
+                    "√(2.4t + 4) = 5 gives 2.4t + 4 = 25, so t = 21/2.4 = 35/4 = 8.75 hours.",
+                    "As t → ∞, 2.4t + 4 → ∞, so L(t) = √(2.4t + 4) → ∞. The thickness has no limiting value.",
+                    "dL/dt = 1.2/L does approach 0, but slowly enough that the thickness keeps growing: a rate that tends to 0 does not force a limit."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

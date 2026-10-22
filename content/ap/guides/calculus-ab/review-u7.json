@@ -1,0 +1,416 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "review-u7",
+  "kind": "unit-review",
+  "unitId": "u7",
+  "title": "Unit 7 review: Differential Equations",
+  "author": "ab-review-author",
+  "summary": "A retrieval-first review of differential equations for the AP® Calculus AB Exam: recall what a solution is, how slope fields and separation of variables work and what an exponential model looks like, then work mixed exam-level problems (writing models from sentences, matching and reading a slope field, judging a tangent-line estimate and an extremum from the equation alone, deciding whether an equation separates, and a bounded-growth model in context). Finish by checking yourself against exact statements of the results, model justifications, common traps and two worked examples.",
+  "minutes": 45,
+  "figures": [
+    {
+      "id": "ab-review-u7-g1",
+      "alt": "A slope field drawn at the integer points of a grid with x from −3 to 3 and y from −3 to 3. Every segment on the x-axis is horizontal. Above the x-axis the segments rise to the right, and below it they fall to the right. Within each row the segments are steepest on the y-axis and flatten as they move left or right away from it, the same way on both sides. Rows farther from the x-axis are steeper: on the y-axis the slopes are about 1, 2 and 3 at heights 1, 2 and 3.",
+      "caption": "The slope field for check 7."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each question from memory, on paper, before you open its answer. State every condition, not only the formula: a rule written without its conditions counts as a miss. Each answer names the section to study if you missed it; reread only the part on the same idea."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c1",
+          "prompt": "How do you show that a given function y = f(x) is a solution of a differential equation, and why is checking a single point not enough? When is a horizontal line y = c a solution of dy/dx = F(x, y)?",
+          "answer": "Compute the derivatives the equation needs from the formula, compute the other side of the equation from the formula, and show the two expressions are equal for every x in an open interval. One point is not enough because a solution must satisfy the equation at every point of the interval. The line y = c is a solution exactly when F(x, c) = 0 for every x in the interval.",
+          "steps": [
+            "A differential equation is a statement about a whole function, so the check is an identity in x. For example, if y = 4 − e^(−2x), then dy/dx = 2e^(−2x), and 2(4 − y) = 2e^(−2x) as well, for every x; so y = 4 − e^(−2x) solves dy/dx = 2(4 − y) on (−∞, ∞).",
+            "If the equation involves y″, compute y″ from the formula too, then substitute every derivative into the equation.",
+            "A constant function has derivative 0, so y = c works only if the right side is 0 at every point of the line. In a slope field that means every segment on the row y = c is horizontal; one flat segment is not enough."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c2",
+          "prompt": "List the steps for solving dy/dx = g(x)h(y) with y(x0) = y0 by separation of variables. When should you use the initial condition, and what must you state besides the formula?",
+          "answer": "Divide by h(y) and multiply by dx, so that ∫ (1/h(y)) dy = ∫ g(x) dx; integrate both sides with one constant C; substitute (x0, y0) to find C as soon as it appears; solve for y, letting y0 choose any sign or branch; and state the largest open interval containing x0 on which the solution is defined and satisfies the equation.",
+          "steps": [
+            "The right side must factor as a function of x times a function of y. A sum such as x + y does not separate.",
+            "One constant is enough, because the constants from the two sides combine into one. Write it when you integrate, before you exponentiate, so that it becomes a factor (y = Ae^(…)) and not an added term.",
+            "Dividing by h(y) is allowed only where h(y) ≠ 0. Each root c of h gives a constant solution y = c that the separated formula can miss; it is the answer when y0 = c.",
+            "After solving, find where the formula breaks down (a zero denominator, the logarithm of a nonpositive number, a square root that would have to be negative) and give the open interval around x0 that avoids those points."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c3",
+          "prompt": "Translate \"y changes at a rate proportional to y\" into a differential equation, and give its solution with y(0) = y0. How do you find k from a half-life T? Then give the solution of dy/dt = k(M − y), with k > 0 and y(0) = y0, and say what happens to y in the long run.",
+          "answer": "dy/dt = ky, with solution y = y0e^(kt). From a half-life T, e^(kT) = 1/2, so k = −(ln 2)/T. The solution of dy/dt = k(M − y) is y = M − (M − y0)e^(−kt), and y approaches M as t → ∞.",
+          "steps": [
+            "\"Proportional to\" means \"equal to a constant times\": rate = k·(quantity). The constant k has units of 1/time, and its sign says growth (k > 0) or decay (k < 0).",
+            "Separating, dy/y = k dt gives ln|y| = kt + C, so y = Ae^(kt), and t = 0 gives A = y0.",
+            "For dy/dt = k(M − y), the gap M − y satisfies d(M − y)/dt = −k(M − y), so the gap decays exponentially: M − y = (M − y0)e^(−kt). Only the gap is exponential, not y itself."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c4",
+          "prompt": "In the slope field for dy/dx = F(x, y), what does the segment at the point (x, y) show? How can you tell from the field alone that F depends only on x, or only on y? How do you decide whether the solution curve through a point is concave up there?",
+          "answer": "The segment has slope F(x, y): it is a short piece of the line tangent to the solution curve through (x, y). If F depends only on x, the segments in each vertical column are parallel; if F depends only on y, the segments in each horizontal row are parallel. For concavity, differentiate the equation with respect to x to get d^2y/dx^2, substitute dy/dx = F(x, y), and check the sign at the point.",
+          "steps": [
+            "A solution curve is tangent to every segment it passes through, so you sketch one by following the field, never cutting across the segments.",
+            "Equal slopes down a column mean the slope does not change when only y changes, so y is absent from F. Equal slopes along a row mean x is absent.",
+            "When you differentiate F(x, y) with respect to x, every y is a function of x, so each term containing y brings a factor dy/dx by the chain rule. Then replace dy/dx by F(x, y), so that d^2y/dx^2 is in terms of x and y only."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Exam-level problems, mixed on purpose: part of each one is deciding what to do. Work them on paper without a calculator, except for the one decimal that check 9 asks for, and write the setup, the result and any justification before you open the answer. If one goes wrong, study the section its answer names, then redo the problem from a blank page on a later day."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c5",
+          "prompt": "Write a differential equation for each situation, and state the sign of any constant you introduce.\n\n(a) A lake is stocked with 300 trout per year, and trout die at a rate proportional to the number N of trout in the lake, where t is measured in years.\n(b) The height h of a sunflower, in centimeters, increases at a rate proportional to the difference between 300 centimeters and its height.\n(c) The concentration C of a chemical in a reaction decreases at a rate proportional to the square of the concentration.\n(d) In (a), suppose the constant of proportionality is 0.2 per year. Find the constant solution, and explain what it means in context. If N = 2000 at some time, is N increasing or decreasing then?",
+          "hint": "Write each sentence as \"rate of change = …\", and decide whether each piece adds to the quantity or takes away from it.",
+          "answer": "(a) dN/dt = 300 − kN with k > 0. (b) dh/dt = k(300 − h) with k > 0. (c) dC/dt = −kC^2 with k > 0. (d) N = 1500: a lake that holds 1500 trout keeps 1500, because the stocking exactly replaces the deaths. At N = 2000, dN/dt = −100 < 0, so N is decreasing.",
+          "steps": [
+            "(a) Stocking adds 300 trout per year whatever N is, and deaths remove kN trout per year, so dN/dt = 300 − kN. The constant k is positive, in units of 1/year, because deaths reduce N.",
+            "(b) The rate is a positive constant times the gap 300 − h: dh/dt = k(300 − h) with k > 0. The sunflower grows while h < 300, and grows more slowly as it nears 300.",
+            "(c) \"Decreases\" puts a minus sign in front: dC/dt = −kC^2 with k > 0. Writing dC/dt = kC^2 and stating k < 0 is equivalent.",
+            "(d) dN/dt = 300 − 0.2N = 0 when N = 1500. The constant function N = 1500 has derivative 0, so it solves the equation: with 1500 trout, the 300 stocked each year exactly replace the 0.2(1500) = 300 that die.",
+            "At N = 2000, dN/dt = 300 − 400 = −100 trout per year, so the number of trout is decreasing."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c6",
+          "prompt": "Let y = f(x) be the particular solution of the differential equation dy/dx = xy − 2 with f(1) = 2.\n\n(a) Find d^2y/dx^2 in terms of x and y.\n(b) Does f have a relative minimum, a relative maximum, or neither at x = 1? Justify your answer.\n(c) Let y = g(x) be the particular solution of the same equation with g(0) = 1. Write an equation for the line tangent to the graph of g at x = 0, and use it to approximate g(0.2).\n(d) Is your approximation in (c) greater than or less than g(0.2)? Explain your reasoning.",
+          "hint": "In (a), y is a function of x, so the derivative of xy needs the product rule and a factor dy/dx.",
+          "answer": "(a) d^2y/dx^2 = y + x(xy − 2) = x^2y − 2x + y. (b) A relative minimum. (c) y = 1 − 2x, so g(0.2) ≈ 0.6. (d) Less than g(0.2): the approximation is an underestimate.",
+          "steps": [
+            "(a) d^2y/dx^2 = d/dx(xy − 2) = y + x(dy/dx) = y + x(xy − 2).",
+            "(b) At (1, 2), dy/dx = 1(2) − 2 = 0, so f′(1) = 0, and d^2y/dx^2 = 2 + 1(0) = 2 > 0. Since f′(1) = 0 and f″(1) > 0, f has a relative minimum at x = 1 by the Second Derivative Test.",
+            "(c) At (0, 1), dy/dx = 0(1) − 2 = −2, so the tangent line is y = 1 − 2x, and g(0.2) ≈ 1 − 0.4 = 0.6.",
+            "(d) At (0, 1), d^2y/dx^2 = 1 + 0 = 1 > 0. It stays positive on 0 ≤ x ≤ 0.2: there the slope xy − 2 lies between −2 and 0.2 − 2 < 0 while 0 < y ≤ 1, so g decreases from 1 but stays at least 1 − 2(0.2) = 0.6. Then d^2y/dx^2 = y(1 + x^2) − 2x ≥ 0.6 − 0.4 > 0.",
+            "So the graph of g is concave up on [0, 0.2] and lies above its tangent line there: 0.6 is less than g(0.2)."
+          ],
+          "see": "justifications-and-traps"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c7",
+          "prompt": "The figure shows the slope field for one of these differential equations:\n\n(i) dy/dx = y/(1 + x^2)\n(ii) dy/dx = −y/(1 + x^2)\n(iii) dy/dx = y(1 + x^2)/4\n(iv) dy/dx = x/(1 + y^2)\n\n(a) Identify the equation, and give a reason that rules out each of the others.\n(b) Let y = f(x) be the solution whose graph passes through (0, 2). Find f(x).\n(c) Find lim as x→∞ of f(x) and lim as x→−∞ of f(x). Is f bounded?\n(d) For which values of x is the graph of f concave up?",
+          "figureIds": [
+            "ab-review-u7-g1"
+          ],
+          "hint": "Look first at where the segments are flat, then follow the row y = 2 away from the y-axis.",
+          "answer": "(a) Equation (i). (b) f(x) = 2e^(arctan x). (c) The limits are 2e^(π/2) and 2e^(−π/2); f is bounded, with 2e^(−π/2) < f(x) < 2e^(π/2). (d) For x < 1/2.",
+          "steps": [
+            "(a) Every segment on the x-axis is horizontal. Equation (iv) is 0 along the y-axis instead, and at (1, 0) its slope is 1, so it is ruled out.",
+            "Above the x-axis the segments rise to the right. Equation (ii) gives −2 at (0, 2), so it is ruled out.",
+            "Along a row, the field's segments are steepest at x = 0 and flatten as |x| grows. Equation (iii) does the opposite: in the row y = 2 its slope is 1/2 at x = 0 and 5 at x = 3. Equation (i) gives 2 at (0, 2) and 2/10 = 0.2 at (3, 2), which matches.",
+            "(b) For y > 0, separate: dy/y = dx/(1 + x^2), so ln y = arctan x + C. At (0, 2), ln 2 = 0 + C, so f(x) = e^(arctan x + ln 2) = 2e^(arctan x), defined for every x.",
+            "(c) arctan x → π/2 as x → ∞ and arctan x → −π/2 as x → −∞, so f(x) → 2e^(π/2) ≈ 9.621 and f(x) → 2e^(−π/2) ≈ 0.416. Since −π/2 < arctan x < π/2 for every x, f stays strictly between these values: the solution is increasing but levels off in both directions instead of growing without bound.",
+            "(d) Differentiating with the quotient rule and substituting dy/dx = y/(1 + x^2): d^2y/dx^2 = (dy/dx)/(1 + x^2) − 2xy/(1 + x^2)^2 = y(1 − 2x)/(1 + x^2)^2. With y = f(x) > 0, this is positive exactly when x < 1/2."
+          ],
+          "see": "what-to-know"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c8",
+          "prompt": "Each equation below has the initial condition y(0) = 1.\n\n(a) dy/dx = xy + x\n(b) dy/dx = e^x + y\n(c) dy/dx = 3x^2√y\n\nFor each equation, find the particular solution exactly if the variables can be separated; for (c), also give the largest open interval on which your solution is valid. If the variables cannot be separated, use the line tangent to the solution curve at x = 0 to approximate y(0.1) instead.",
+          "hint": "Factor each right side as far as it goes, then look at what each factor depends on.",
+          "answer": "(a) y = 2e^(x^2/2) − 1. (b) The variables cannot be separated; y(0.1) ≈ 1.2. (c) y = (x^3/2 + 1)^2, valid for x > −∛2.",
+          "steps": [
+            "(a) xy + x = x(y + 1), a function of x times a function of y. Near (0, 1), y + 1 > 0, so dy/(y + 1) = x dx gives ln(y + 1) = x^2/2 + C, and y(0) = 1 gives C = ln 2.",
+            "Then y + 1 = 2e^(x^2/2), so y = 2e^(x^2/2) − 1, valid for every x. Check: dy/dx = 2xe^(x^2/2) = x(y + 1).",
+            "(b) e^x + y is a sum that cannot be written as a function of x times a function of y, so the variables do not separate. At (0, 1) the slope is e^0 + 1 = 2, so the tangent line is y = 1 + 2x and y(0.1) ≈ 1.2.",
+            "(c) For y > 0, separate: y^(−1/2) dy = 3x^2 dx, so 2√y = x^3 + C, and y(0) = 1 gives C = 2. So √y = x^3/2 + 1 and y = (x^3/2 + 1)^2.",
+            "The step √y = x^3/2 + 1 needs x^3/2 + 1 > 0, that is, x > −∛2. Left of −∛2 the formula's derivative, 3x^2(x^3/2 + 1), is negative while 3x^2√y is positive, so the formula no longer solves the equation there. The interval is −∛2 < x < ∞."
+          ],
+          "see": "worked-examples"
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u7-c9",
+          "prompt": "A new employee's typing speed S, in words per minute, t weeks after training begins, satisfies dS/dt = k(80 − S), where k is a positive constant, and S(0) = 30. At t = 0, the typing speed is increasing at 12 words per minute per week.\n\n(a) Find k.\n(b) Solve the differential equation to find S(t).\n(c) Find the time at which the typing speed reaches 70 words per minute. Give the exact value and its value to three decimal places.\n(d) A coworker says the typing speed grows exponentially. Is that right? Explain, using the sign of d^2S/dt^2.",
+          "hint": "For (a), the rate is known at one instant, and so is S at that instant.",
+          "answer": "(a) k = 0.24 per week. (b) S(t) = 80 − 50e^(−0.24t). (c) t = (ln 5)/0.24 ≈ 6.706 weeks. (d) No: S increases toward 80 and its graph is concave down; only the gap 80 − S changes exponentially, and it decays.",
+          "steps": [
+            "(a) At t = 0, 12 = k(80 − 30) = 50k, so k = 0.24 per week.",
+            "(b) While S < 80, separate: dS/(80 − S) = 0.24 dt, so −ln(80 − S) = 0.24t + C. At t = 0, −ln 50 = C, so ln(80 − S) = ln 50 − 0.24t and 80 − S = 50e^(−0.24t).",
+            "So S(t) = 80 − 50e^(−0.24t). Check: S(0) = 30, and dS/dt = 12e^(−0.24t) = 0.24(50e^(−0.24t)) = 0.24(80 − S).",
+            "(c) 70 = 80 − 50e^(−0.24t) gives e^(−0.24t) = 1/5, so t = (ln 5)/0.24 ≈ 6.706 weeks.",
+            "(d) d^2S/dt^2 = −0.24(dS/dt) = −(0.24)^2(80 − S) < 0 while S < 80. So S increases at a decreasing rate and approaches 80 from below. An exponentially growing quantity is concave up and grows without bound, so the coworker is wrong; what changes exponentially is the gap 80 − S = 50e^(−0.24t), and it decays."
+          ],
+          "see": "what-to-know"
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Differential equations as models",
+          "text": "A sentence about a rate becomes an equation: \"the rate of change of y\" is dy/dt, \"proportional to Q\" is k·Q for a constant k, and amounts added or removed at fixed rates are added or subtracted terms.",
+          "conditions": [
+            "Record the direction of change: write the sign into the equation (dC/dt = −kC^2 with k > 0) or state the sign of k.",
+            "The units of k make both sides agree: in dy/dt = ky with t in years, k is per year.",
+            "\"Proportional to the difference between M and y\" is k(M − y), not kM − y."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Solutions and constant solutions",
+          "text": "y = f(x) is a solution of a differential equation on an open interval I when substituting f and its derivatives makes the equation true for every x in I. A formula with a constant, such as y = Ce^(3x) + 2, gives a family of solutions, and an initial condition picks one member.",
+          "conditions": [
+            "Verify by computing each side from the formula separately and showing they agree as functions; agreement at one point proves nothing.",
+            "y = c is a constant (equilibrium) solution of dy/dx = F(x, y) exactly when F(x, c) = 0 for every x.",
+            "For an equation with y″, compute y″ from the formula as well."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Slope fields",
+          "text": "The segment at (x, y) has slope F(x, y) for the equation dy/dx = F(x, y). A solution curve is tangent to every segment it passes through, so a sketch through a given point follows the field and never cuts across it.",
+          "conditions": [
+            "Parallel segments along every row: F depends on y only. Parallel segments down every column: F depends on x only.",
+            "Segments are horizontal where F(x, y) = 0. A whole row of horizontal segments, y = c, is a constant solution.",
+            "To sketch a field by hand, compute F at each grid point and draw a short segment with that slope centered at (x, y), not at (y, x).",
+            "Where F and its derivative with respect to y (x held fixed) are continuous, solution curves never cross, so a solution that starts between two constant solutions stays between them."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Reasoning from the equation without solving it",
+          "text": "At a point (x0, y0) on a solution curve, the tangent line is y = y0 + F(x0, y0)(x − x0). The second derivative comes from differentiating the equation with respect to x and substituting dy/dx = F(x, y). If dy/dx = 0 and d^2y/dx^2 > 0 at the point, the solution has a relative minimum there; if dy/dx = 0 and d^2y/dx^2 < 0, a relative maximum.",
+          "conditions": [
+            "Every y is a function of x: d/dx of y^2 is 2y(dy/dx), and d/dx of xy is y + x(dy/dx).",
+            "A tangent-line estimate is too small if the solution curve is concave up on the whole stretch from x0 to the target, and too large if it is concave down there. The sign at x0 alone settles it only for targets close to x0; for a definite stretch, show that the sign holds on all of it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Separation of variables",
+          "text": "If dy/dx = g(x)h(y), then wherever h(y) ≠ 0 the solutions satisfy ∫ (1/h(y)) dy = ∫ g(x) dx + C.",
+          "conditions": [
+            "The right side must factor as a function of x times a function of y; factor first, and a sum may turn into a product (xy + x = x(y + 1)).",
+            "Write one constant when you integrate, before exponentiating: e^(u + C) = e^C·e^u, a factor.",
+            "Each c with h(c) = 0 gives a constant solution y = c that dividing by h(y) sets aside."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Particular solutions",
+          "text": "Substitute the initial condition (x0, y0) as soon as the constant appears, then solve for y. The particular solution holds on the largest open interval containing x0 on which the formula is defined, differentiable and satisfies the equation.",
+          "conditions": [
+            "When solving introduces ± or a square root, the sign of y0 chooses the branch.",
+            "The interval ends at a zero of a denominator, where the argument of a logarithm reaches 0, or where a square root's argument would turn negative."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Exponential models",
+          "text": "dy/dt = ky has the solutions y = y0e^(kt): growth if k > 0 and decay if k < 0, with doubling time or half-life (ln 2)/|k|. From two values, k = ln(y(t2)/y(t1))/(t2 − t1).",
+          "conditions": [
+            "It applies only when the rate is proportional to the amount itself.",
+            "For dy/dt = k(M − y) with k > 0, the gap M − y decays exponentially: y = M − (M − y0)e^(−kt), and y approaches M from the side it starts on.",
+            "The relative rate (dy/dt)/y is the constant k; the rate dy/dt itself changes as y changes."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "What the question asks and what to do.",
+          "head": [
+            "The question asks",
+            "Do this"
+          ],
+          "rows": [
+            [
+              "Is this function a solution?",
+              "Substitute it and its derivatives into both sides, and show they agree for every x on an interval."
+            ],
+            [
+              "Find the constant solutions.",
+              "Solve F(x, c) = 0 for the values c that work for every x."
+            ],
+            [
+              "Which equation matches the field?",
+              "Look at the flat segments first, then whether rows or columns repeat, then the sign or size of one slope."
+            ],
+            [
+              "Approximate y near the initial point.",
+              "Use the tangent line at the initial point."
+            ],
+            [
+              "Over or under, maximum or minimum.",
+              "Find d^2y/dx^2 from the equation (chain rule on every y), then check its sign."
+            ],
+            [
+              "Find the solution exactly.",
+              "Separate if the right side factors as (x part)(y part); recognize dy/dt = ky or dy/dt = k(M − y); otherwise verify a family the question supplies or approximate."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Verifying a solution (y = 1 + 3e^(x^2) for dy/dx = 2x(y − 1)).",
+          "text": "From the formula, dy/dx = 6xe^(x^2). Also 2x(y − 1) = 2x(3e^(x^2)) = 6xe^(x^2). The two expressions are equal for every x, so y = 1 + 3e^(x^2) is a solution on (−∞, ∞)."
+        },
+        {
+          "type": "model",
+          "prompt": "A relative extremum from the equation (y = f(x) solves dy/dx = 3x − y + 1, with f(2) = 7).",
+          "text": "At (2, 7), dy/dx = 6 − 7 + 1 = 0, so f′(2) = 0. Differentiating the equation, d^2y/dx^2 = 3 − dy/dx, which is 3 − 0 = 3 > 0 at (2, 7). Since f′(2) = 0 and f″(2) > 0, f has a relative minimum at x = 2 by the Second Derivative Test."
+        },
+        {
+          "type": "model",
+          "prompt": "Over or under from concavity (y = f(x) solves dy/dx = y + x^2 with f(0) = 2; estimate f(0.1)).",
+          "text": "At (0, 2), dy/dx = 2, so the tangent line is y = 2 + 2x and f(0.1) ≈ 2.2. Differentiating, d^2y/dx^2 = dy/dx + 2x = y + x^2 + 2x. On 0 ≤ x ≤ 0.1, dy/dx = y + x^2 > 0 while y > 0, so y stays at least 2, and d^2y/dx^2 ≥ 2 > 0. The graph of f is concave up on [0, 0.1], so it lies above its tangent line there, and 2.2 is an underestimate of f(0.1)."
+        },
+        {
+          "type": "model",
+          "prompt": "Interpreting a rate in context (the volume V of water in a tank, in liters, t minutes after a valve opens, satisfies dV/dt = −0.3√V; interpret dV/dt when V = 400).",
+          "text": "dV/dt = −0.3√400 = −6. When the tank holds 400 liters, the volume of water is decreasing at 6 liters per minute."
+        },
+        {
+          "type": "model",
+          "prompt": "Choosing the branch and the interval (dy/dx = (x + 1)/y with y(0) = −2).",
+          "text": "Separating, y dy = (x + 1) dx, so y^2/2 = x^2/2 + x + C, and y(0) = −2 gives C = 2, so y^2 = x^2 + 2x + 4. Because y(0) = −2 < 0, the solution is the negative branch, y = −√(x^2 + 2x + 4). Since x^2 + 2x + 4 = (x + 1)^2 + 3 > 0 for every x, y is never 0, and the solution is valid on (−∞, ∞)."
+        },
+        {
+          "type": "trap",
+          "text": "Adding the constant after exponentiating: from ln|y| = x^2 + C, writing y = e^(x^2) + C.",
+          "fix": "Exponentiate the whole side: |y| = e^C·e^(x^2), so y = Ae^(x^2). Better still, find C from the initial condition while the equation is still in logarithm form."
+        },
+        {
+          "type": "trap",
+          "text": "Separating a sum: from dy/dx = x + y, writing dy/y = x dx.",
+          "fix": "Separation needs a product g(x)h(y). For a sum, use the tools that need no formula: the slope field, the tangent line, and d^2y/dx^2 found from the equation."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the chain rule in the second derivative: for dy/dx = x − y^2, writing d^2y/dx^2 = 1 − 2y.",
+          "fix": "y depends on x, so d/dx(y^2) = 2y(dy/dx). Then d^2y/dx^2 = 1 − 2y(dy/dx) = 1 − 2y(x − y^2)."
+        },
+        {
+          "type": "trap",
+          "text": "Treating dy/dt = k(M − y) as plain growth or decay and writing y = y0e^(kt).",
+          "fix": "Only the gap M − y is exponential: y = M − (M − y0)e^(−kt). Check t = 0 and the long run: y must start at y0 and approach M."
+        },
+        {
+          "type": "trap",
+          "text": "Finding the decay constant from a half-life T as k = (ln 2)T or k = 1/T.",
+          "fix": "Solve e^(kT) = 1/2: k = −(ln 2)/T. Substitute t = T to check that the amount halves."
+        },
+        {
+          "type": "trap",
+          "text": "Calling y = c a solution because one segment on that row is flat: for dy/dx = y − 2x, the segment at (1, 2) is horizontal, so y = 2 is called a solution.",
+          "fix": "Check the whole row: y = c is a solution only if F(x, c) = 0 for every x. For dy/dx = y − 2x the slope at (0, 2) is 2, so y = 2 is not a solution."
+        },
+        {
+          "type": "trap",
+          "text": "Losing the sign when solving: from y^2 = 4 − 2x with y(0) = −2, writing y = √(4 − 2x).",
+          "fix": "The initial value chooses the branch: y(0) = −2 < 0, so y = −√(4 − 2x), valid for x < 2."
+        },
+        {
+          "type": "trap",
+          "text": "Giving a particular solution with no interval, or with an interval that runs through a point where the formula breaks down.",
+          "fix": "Find where the formula is undefined or stops satisfying the equation, and keep only the open interval that contains the initial x."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let y = f(x) be the solution of dy/dx = (4 − 2x)y^2 with f(0) = 1/2. Find f(x), and give the largest open interval containing x = 0 on which it is a solution.",
+          "answer": "f(x) = 1/(x^2 − 4x + 2), for −∞ < x < 2 − √2.",
+          "steps": [
+            "The right side is a function of x times a function of y, so separate (for y ≠ 0): y^(−2) dy = (4 − 2x) dx.",
+            "Integrate, with one constant: −1/y = 4x − x^2 + C.",
+            "Use f(0) = 1/2 at once: −2 = 0 + C, so C = −2 and −1/y = 4x − x^2 − 2.",
+            "Solve for y: 1/y = x^2 − 4x + 2, so f(x) = 1/(x^2 − 4x + 2).",
+            "The denominator is 0 at x = 2 ± √2 (about 0.586 and 3.414). The open interval containing 0 that avoids both is −∞ < x < 2 − √2, and f(x) → ∞ as x approaches 2 − √2 from the left.",
+            "Check: f′(x) = −(2x − 4)/(x^2 − 4x + 2)^2 = (4 − 2x)(f(x))^2, and f(0) = 1/2. The constant solution y = 0, set aside by the division, does not pass through (0, 1/2)."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Atmospheric pressure P, in kilopascals, decreases with altitude h, in kilometers, at a rate proportional to P. The pressure is 101 kilopascals at h = 0 and 80 kilopascals at h = 2. Write and solve a differential equation for P, and find the altitude at which the pressure is half its value at h = 0.",
+          "answer": "dP/dh = kP, so P = 101e^(kh) with k = (1/2)ln(80/101) ≈ −0.117 per kilometer; the pressure is half its value at h = 0 when h = 2 ln 2/ln(101/80) ≈ 5.947 kilometers.",
+          "steps": [
+            "\"Proportional to P\" gives dP/dh = kP, with k < 0 because the pressure decreases.",
+            "Separate: dP/P = k dh, so ln P = kh + C (P > 0). At h = 0, C = ln 101, so P = 101e^(kh).",
+            "At h = 2: 80 = 101e^(2k), so e^(2k) = 80/101 and k = (1/2)ln(80/101) ≈ −0.117 per kilometer.",
+            "Half of 101 is 50.5, so e^(kh) = 1/2 and h = −(ln 2)/k = 2 ln 2/ln(101/80) ≈ 5.947 kilometers, with k kept unrounded.",
+            "This is a half-life measured in altitude: the pressure halves again over each further 5.947 kilometers.",
+            "Check: k is negative, P(2) = 101e^(2k) = 101(80/101) = 80, and P > 0 at every altitude, as a pressure must be."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 23: Differential equations and slope fields",
+              "ref": "week:23"
+            },
+            {
+              "label": "Week 24: Separation of variables and exponential models",
+              "ref": "week:24"
+            },
+            {
+              "label": "Unit 7 plan",
+              "ref": "unit:u7"
+            },
+            {
+              "label": "Unit 7 test",
+              "ref": "test:unit-7"
+            },
+            {
+              "label": "Unit 7 test key",
+              "ref": "key:unit-7"
+            },
+            {
+              "label": "Free-response workshop: Differential equations",
+              "ref": "guide:fr-differential-equations"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

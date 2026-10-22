@@ -1,0 +1,348 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "mixed-4",
+  "kind": "mixed-set",
+  "title": "Mixed set 4: all units at exam pace",
+  "author": "ab-mixed-author",
+  "directions": "This original Liminal mixed set draws questions from across the course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which method or principle applies: which integration technique, whether a question asks for a rate or an accumulated amount, an average value or an average rate of change, and whether an estimate is too large or too small. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians, exact answers are expected without a calculator, and calculator answers are rounded to three decimal places. Record raw points; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "ab-mixed-4-mc01",
+              "prompt": "What is ∫ from 0 to 1 of (x^2 + 5)/(x + 2) dx?",
+              "choices": [
+                "ln(3/2)",
+                "ln(3/2) − 3/2",
+                "9 ln(3/2) − 3/2",
+                "9 ln 3 − 3/2"
+              ],
+              "key": "C",
+              "rationale": "The numerator's degree is not less than the denominator's, so divide first: x^2 + 5 = (x + 2)(x − 2) + 9, and the integrand is x − 2 + 9/(x + 2). Then the integral is [x^2/2 − 2x + 9 ln(x + 2)] from 0 to 1 = (1/2 − 2 + 9 ln 3) − 9 ln 2 = 9 ln(3/2) − 3/2.",
+              "distractorNotes": {
+                "A": "This writes ln(x + 2), as if the numerator were the derivative of the denominator. It is not, so long division must come first.",
+                "B": "This has the right quotient, x − 2, but the wrong remainder: x^2 + 5 − (x^2 − 4) = 9, not 1.",
+                "D": "This treats 9 ln(x + 2) as 0 at the lower limit. At x = 0 it equals 9 ln 2, which must be subtracted."
+              },
+              "topics": [
+                "AB.6.10",
+                "AB.6.14"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc02",
+              "prompt": "The functions f and g are continuous on [1, 4], with f(1) = 2, f(4) = 7, g(1) = 6, and g(4) = 3. Which statement must be true?",
+              "choices": [
+                "f(c) = 0 for some c in (1, 4).",
+                "f(c) = g(c) for some c in (1, 4).",
+                "f(c) = g(c) for exactly one c in (1, 4).",
+                "f′(c) = 5/3 for some c in (1, 4)."
+              ],
+              "key": "B",
+              "rationale": "Let h(x) = f(x) − g(x). As a difference of continuous functions, h is continuous on [1, 4], and h(1) = 2 − 6 = −4 < 0 < 4 = 7 − 3 = h(4). By the Intermediate Value Theorem, h(c) = 0 for some c in (1, 4), so f(c) = g(c) there.",
+              "distractorNotes": {
+                "A": "Both f(1) = 2 and f(4) = 7 are positive, so 0 is not between them and the theorem promises nothing; f could stay positive on the whole interval.",
+                "C": "The Intermediate Value Theorem gives at least one such c, not exactly one. The graphs of f and g could cross several times.",
+                "D": "This applies the Mean Value Theorem, which needs f to be differentiable on (1, 4). Only continuity is given, so f′ may not exist."
+              },
+              "topics": [
+                "AB.1.16",
+                "AB.1.12"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc03",
+              "prompt": "What is lim as h→0 of (1/h)∫ from 2 to 2 + h of √(t^2 + 5) dt?",
+              "choices": [
+                "3",
+                "2/3",
+                "0",
+                "The limit does not exist."
+              ],
+              "key": "A",
+              "rationale": "Let F(x) = ∫ from 2 to x of √(t^2 + 5) dt, so F(2) = 0. The expression is (F(2 + h) − F(2))/h, the difference quotient whose limit is F′(2). By the Fundamental Theorem, F′(2) = √(2^2 + 5) = 3.",
+              "distractorNotes": {
+                "B": "This is the derivative of the integrand at 2, 2/√9 = 2/3. The limit is the derivative of the accumulation function F, which is the integrand itself.",
+                "C": "The integral does tend to 0, but so does h. Their quotient is a difference quotient, and its limit is a derivative, not 0.",
+                "D": "The form 0/0 is indeterminate. Read as a difference quotient, the expression has the limit 3."
+              },
+              "topics": [
+                "AB.2.2",
+                "AB.6.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc04",
+              "prompt": "The functions f and g are differentiable, and selected values are shown.\n\n| x | 2 | 4 |\n| --- | --- | --- |\n| f(x) | 6 | −1 |\n| f′(x) | 1 | 3 |\n| g(x) | 2 | 7 |\n| g′(x) | 5 | −2 |\n\nLet h(x) = f(x^2)·g(x). What is h′(2)?",
+              "choices": [
+                "1",
+                "38",
+                "60",
+                "19"
+              ],
+              "key": "D",
+              "rationale": "By the product rule and the chain rule, h′(x) = f′(x^2)·2x·g(x) + f(x^2)·g′(x). At x = 2, x^2 = 4, so h′(2) = f′(4)·4·g(2) + f(4)·g′(2) = 3·4·2 + (−1)·5 = 24 − 5 = 19.",
+              "distractorNotes": {
+                "A": "This omits the chain-rule factor 2x = 4 from the derivative of f(x^2): 3·2 + (−1)·5 = 1.",
+                "B": "This evaluates f and f′ at 2 instead of at x^2 = 4: 1·4·2 + 6·5 = 38.",
+                "C": "This multiplies the derivatives: f′(4)·4·g′(2) = 60. The derivative of a product is not the product of the derivatives."
+              },
+              "topics": [
+                "AB.3.1",
+                "AB.2.8"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc05",
+              "prompt": "The length of a rectangle is increasing at 3 centimeters per second, and its width is decreasing at 2 centimeters per second. At the instant when the length is 8 centimeters and the width is 6 centimeters, at what rate is the length of the rectangle's diagonal changing?",
+              "choices": [
+                "1 cm/s",
+                "6/5 cm/s",
+                "18/5 cm/s",
+                "12 cm/s"
+              ],
+              "key": "B",
+              "rationale": "The diagonal D satisfies D^2 = L^2 + W^2, so 2D(dD/dt) = 2L(dL/dt) + 2W(dW/dt). At this instant D = √(64 + 36) = 10, dL/dt = 3, and dW/dt = −2, so 10(dD/dt) = 8(3) + 6(−2) = 12 and dD/dt = 6/5 cm/s: the diagonal is getting longer.",
+              "distractorNotes": {
+                "A": "This adds the rates of the sides, 3 + (−2), as if the diagonal were L + W. The diagonal is related to the sides by the Pythagorean theorem.",
+                "C": "This uses dW/dt = +2. The width is decreasing, so dW/dt = −2.",
+                "D": "This stops at D(dD/dt) = 12 without dividing by the diagonal's length, D = 10."
+              },
+              "topics": [
+                "AB.4.5",
+                "AB.4.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc06",
+              "prompt": "What is the absolute maximum value of f(x) = 3x^4 − 8x^3 + 6 on the closed interval [−1, 3]?",
+              "choices": [
+                "33",
+                "6",
+                "−10",
+                "3"
+              ],
+              "key": "A",
+              "rationale": "f′(x) = 12x^3 − 24x^2 = 12x^2(x − 2), so the critical points are x = 0 and x = 2. Candidates: f(−1) = 17, f(0) = 6, f(2) = −10, f(3) = 33. The absolute maximum value is 33, at the endpoint x = 3.",
+              "distractorNotes": {
+                "B": "This is f(0). The tangent line is horizontal there, but f′ does not change sign at x = 0, and the candidates test must also include the endpoints.",
+                "C": "This is f(2), the absolute minimum value: f′ changes from negative to positive at x = 2.",
+                "D": "This is where the maximum occurs, not the maximum value; the question asks for f(3)."
+              },
+              "topics": [
+                "AB.5.5",
+                "AB.5.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc07",
+              "prompt": "What is ∫ from 0 to 1 of x^2 √(x^3 + 3) dx?",
+              "choices": [
+                "2/9",
+                "16/9",
+                "(2/9)(8 − 3√3)",
+                "(2/3)(8 − 3√3)"
+              ],
+              "key": "C",
+              "rationale": "Let u = x^3 + 3, so du = 3x^2 dx and x^2 dx = (1/3) du. The limits change too: x = 0 gives u = 3, and x = 1 gives u = 4. The integral is (1/3)∫ from 3 to 4 of u^(1/2) du = (2/9)[u^(3/2)] from 3 to 4 = (2/9)(8 − 3√3).",
+              "distractorNotes": {
+                "A": "This substitutes but keeps the x-limits 0 and 1 for u: (2/9)(1^(3/2) − 0). After substituting, the limits must be u-values.",
+                "B": "This converts the upper limit to u = 4 but keeps the lower limit 0: (2/9)(4^(3/2) − 0). Both limits must be converted.",
+                "D": "This drops the factor 1/3 from x^2 dx = (1/3) du."
+              },
+              "topics": [
+                "AB.6.9",
+                "AB.6.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc08",
+              "prompt": "A differential equation has these three properties. Every solution curve has a horizontal tangent line where it crosses the y-axis. The constant function y = 3 is a solution. At every point in the first quadrant below the line y = 3, the slope dy/dx is positive. Which of the following could be the differential equation?",
+              "choices": [
+                "dy/dx = x(y − 3)",
+                "dy/dx = y(3 − x)",
+                "dy/dx = x + y − 3",
+                "dy/dx = x(3 − y)"
+              ],
+              "key": "D",
+              "rationale": "Check each property for dy/dx = x(3 − y). On the y-axis x = 0, so every slope there is 0. If y = 3, then dy/dx = 0 = x(3 − 3), so the constant function y = 3 is a solution. In the first quadrant below y = 3, x > 0 and 3 − y > 0, so the slope is positive. All three properties hold.",
+              "distractorNotes": {
+                "A": "This has the first two properties, but in the first quadrant below y = 3, x > 0 and y − 3 < 0, so the slopes there are negative: the sign is reversed.",
+                "B": "This puts the factors on the wrong variables. Its slopes are 0 along the vertical line x = 3 and the line y = 0, so at (0, 1) the slope is 3, not 0, and y = 3 gives dy/dx = 3(3 − x), not 0.",
+                "C": "This adds the conditions instead of multiplying them. Its slopes are 0 only along the line x + y = 3: at (0, 1) the slope is −2, and on y = 3 the slope is x, so y = 3 is not a solution."
+              },
+              "topics": [
+                "AB.7.4",
+                "AB.7.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc09",
+              "prompt": "Let f(x) = x^3 and g(x) = x^2 + 2x. Their graphs intersect at x = −1, x = 0, and x = 2. Which expression gives the total area of the regions enclosed by the two graphs?",
+              "choices": [
+                "∫ from −1 to 2 of (x^3 − x^2 − 2x) dx",
+                "∫ from −1 to 0 of (x^3 − x^2 − 2x) dx + ∫ from 0 to 2 of (x^2 + 2x − x^3) dx",
+                "∫ from −1 to 0 of (x^2 + 2x − x^3) dx + ∫ from 0 to 2 of (x^3 − x^2 − 2x) dx",
+                "∫ from 0 to 2 of (x^2 + 2x − x^3) dx"
+              ],
+              "key": "B",
+              "rationale": "f(x) − g(x) = x^3 − x^2 − 2x = x(x + 1)(x − 2). At x = −1/2 it equals 5/8 > 0, so the graph of f is on top on (−1, 0); at x = 1 it equals −2 < 0, so the graph of g is on top on (0, 2). Each region's integrand must be top minus bottom, which gives B.",
+              "distractorNotes": {
+                "A": "One integral of f − g over [−1, 2] lets the two regions cancel: it equals 5/12 − 8/3 = −9/4, which is not an area.",
+                "C": "This reverses top and bottom on both intervals, so each integral is negative.",
+                "D": "This leaves out the region between x = −1 and x = 0, where the graph of f is above the graph of g."
+              },
+              "topics": [
+                "AB.8.6",
+                "AB.8.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc10",
+              "prompt": "The base of a solid is the region bounded by the graph of y = 3x − x^2 and the x-axis. Cross sections of the solid perpendicular to the x-axis are semicircles whose diameters lie in the base. What is the volume of the solid?",
+              "choices": [
+                "81π/80",
+                "81/10",
+                "81π/20",
+                "81π/10"
+              ],
+              "key": "A",
+              "rationale": "For 0 ≤ x ≤ 3 each diameter has length s = 3x − x^2, so each semicircle has radius s/2 and area (1/2)π(s/2)^2 = πs^2/8. Volume = (π/8)∫ from 0 to 3 of (3x − x^2)^2 dx = (π/8)(81/10) = 81π/80.",
+              "distractorNotes": {
+                "B": "This is the volume with square cross sections, ∫ from 0 to 3 of s^2 dx = 81/10. A semicircle with diameter s has area πs^2/8.",
+                "C": "This uses s as the radius instead of the diameter: (π/2)∫ from 0 to 3 of s^2 dx = 81π/20.",
+                "D": "This is the volume of the solid formed by revolving the base about the x-axis, π∫ from 0 to 3 of s^2 dx, not the solid with semicircular cross sections."
+              },
+              "topics": [
+                "AB.8.8"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question. If the exact value is not a choice, choose the closest approximation.",
+          "items": [
+            {
+              "id": "ab-mixed-4-mc11",
+              "prompt": "Fuel flows into a tank at the rate r(t) = 16 + 7√t·e^(−0.4t) liters per minute for 0 ≤ t ≤ 5 minutes. What is the average rate, in liters per minute, at which fuel flows into the tank over this interval?",
+              "choices": [
+                "0.424",
+                "17.059",
+                "98.110",
+                "19.622"
+              ],
+              "key": "D",
+              "rationale": "The average rate of flow is the average value of r: (1/5)∫ from 0 to 5 of r(t) dt. A calculator gives the integral as 98.110 liters, so the average is 19.622 liters per minute.",
+              "distractorNotes": {
+                "A": "This is the average rate of change of r, (r(5) − r(0))/5, in liters per minute per minute. It describes how the flow rate itself changed, not the typical flow rate.",
+                "B": "This averages only the endpoint rates, (r(0) + r(5))/2. The average value weighs every rate on the interval.",
+                "C": "This is the total amount of fuel, 98.110 liters, not yet divided by the 5 minutes."
+              },
+              "topics": [
+                "AB.8.1",
+                "AB.6.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc12",
+              "prompt": "A function f is differentiable, with f(2) = 7 and f′(x) = 3cos(x^2/8). What is f(5)?",
+              "choices": [
+                "14.898",
+                "−0.187",
+                "6.813",
+                "4.000"
+              ],
+              "key": "C",
+              "rationale": "By the Fundamental Theorem, f(5) = f(2) + ∫ from 2 to 5 of f′(x) dx. A calculator gives the integral as −0.187, so f(5) = 7 − 0.187 = 6.813.",
+              "distractorNotes": {
+                "A": "This is the tangent-line estimate f(2) + f′(2)(5 − 2). A tangent line uses one slope for the whole interval, but f′ changes from positive to negative between 2 and 5.",
+                "B": "This is only the net change, ∫ from 2 to 5 of f′(x) dx. The starting value f(2) = 7 must be added.",
+                "D": "This adds the rate f′(5) = −3.000 to f(2). A value of the derivative is a rate, not an accumulated change."
+              },
+              "topics": [
+                "AB.6.7",
+                "AB.6.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc13",
+              "prompt": "The derivative of a function f is f′(x) = √x·cos x + 0.5 for x > 0. At what value of x in the interval 0 < x < 6 does f have a relative maximum?",
+              "choices": [
+                "0.653",
+                "1.938",
+                "3.292",
+                "4.474"
+              ],
+              "key": "B",
+              "rationale": "Graph f′ on 0 < x < 6. It has two zeros, x = 1.938 and x = 4.474. At x = 1.938, f′ changes from positive to negative, so f has a relative maximum there; at x = 4.474, f′ changes from negative to positive, which gives a relative minimum.",
+              "distractorNotes": {
+                "A": "Here f′ reaches its own maximum (f″ = 0), so the graph of f changes concavity. f′ is positive on both sides, so f is still increasing.",
+                "C": "Here f′ reaches its minimum, which marks a point of inflection of f, not an extremum; f′ is negative on both sides.",
+                "D": "At x = 4.474, f′ changes from negative to positive, which makes f(4.474) a relative minimum."
+              },
+              "topics": [
+                "AB.5.4",
+                "AB.5.9"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc14",
+              "prompt": "Let f(x) = √(16 − x^3). A right Riemann sum with four subintervals of equal width is used to approximate ∫ from 0 to 2 of f(x) dx. Which statement is true?",
+              "choices": [
+                "The right sum underestimates the integral by 0.336.",
+                "The right sum overestimates the integral by 0.336.",
+                "The right sum overestimates the integral by 0.249.",
+                "The right sum underestimates the integral by 0.044."
+              ],
+              "key": "A",
+              "rationale": "f′(x) = −3x^2/(2√(16 − x^3)) ≤ 0, so f is decreasing on [0, 2], and each right endpoint gives the smallest value of f on its subinterval: the right sum underestimates. With width 0.5, R = 0.5[f(0.5) + f(1) + f(1.5) + f(2)] = 7.119461, and a calculator gives the integral as 7.455899. The right sum is too small by 0.336438, about 0.336.",
+              "distractorNotes": {
+                "B": "The size is right but the direction is not. Right sums overestimate increasing functions, and this f is decreasing.",
+                "C": "This is the left sum, 7.705, which overestimates by 0.249. The question asks about right endpoints.",
+                "D": "This is the error of the trapezoidal sum, 7.412, which averages the left and right sums."
+              },
+              "topics": [
+                "AB.6.2",
+                "AB.6.3"
+              ]
+            },
+            {
+              "id": "ab-mixed-4-mc15",
+              "prompt": "The curve y^5 + y = x^3 − 1 has exactly one point with x = 2. What is the slope of the line tangent to the curve at that point?",
+              "choices": [
+                "1.734",
+                "−7.808",
+                "1.411",
+                "0.577"
+              ],
+              "key": "D",
+              "rationale": "Differentiate implicitly: 5y^4(dy/dx) + dy/dx = 3x^2, so dy/dx = 3x^2/(5y^4 + 1). At x = 2 the curve gives y^5 + y = 7; the left side is increasing in y, so there is one solution, and a calculator gives y = 1.41081. Then dy/dx = 12/(5(1.41081)^4 + 1) = 0.577.",
+              "distractorNotes": {
+                "A": "This is the reciprocal, dx/dy = (5y^4 + 1)/(3x^2). The slope of the tangent line is dy/dx.",
+                "B": "This differentiates y^5 as 5y^4 without the factor dy/dx: 5y^4 + dy/dx = 12 gives dy/dx = 12 − 5y^4 = −7.808.",
+                "C": "This is the y-coordinate of the point, the solution of y^5 + y = 7, not the slope there."
+              },
+              "topics": [
+                "AB.3.2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

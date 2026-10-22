@@ -1,0 +1,585 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "review-u2",
+  "kind": "unit-review",
+  "unitId": "u2",
+  "title": "Unit 2 review: Differentiation: Definition and Fundamental Properties",
+  "author": "ab-review-1-2-author",
+  "summary": "A retrieval-first review of Unit 2 for the AP® Calculus AB Exam: average and instantaneous rates, the limit definition of the derivative, estimates from tables and graphs, differentiability and its failures, and the power, sum, product, quotient, exponential, logarithm and trigonometric rules. Answer six recall checks and six mixed problems before you read the summary of results, the model justifications and traps, and three worked examples.",
+  "minutes": 50,
+  "figures": [
+    {
+      "id": "ab-review-u2-g1",
+      "alt": "Graph of a function f on a unit grid for x from −4 to 3, made of three line segments. The first rises from a filled dot at (−4, 1) to the point (−2, 3). The second falls from (−2, 3) through (0, 1) to a filled dot at (1, 0). The third starts at an open circle at (1, 2) and rises to a filled dot at (3, 3).",
+      "caption": "The graph of f consists of three line segments."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall-first",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer every check on paper, from memory, before you open its answer. State each rule with the conditions under which it applies. A blank or a wrong answer is useful: its answer names the section further down to study."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c1",
+          "see": "what-to-know",
+          "prompt": "Write f′(a) as a limit in two equivalent forms. What does the quotient inside each limit measure on the graph of f, and what does taking the limit turn it into?",
+          "answer": "f′(a) = lim as h→0 of (f(a + h) − f(a))/h = lim as x→a of (f(x) − f(a))/(x − a), when the limit exists. Each quotient is the slope of a secant line through (a, f(a)), an average rate of change. The limit is the slope of the tangent line at (a, f(a)), the instantaneous rate of change of f at a.",
+          "steps": [
+            "In the first form the second point is a distance h from a; in the second it is a nearby input x. Setting x = a + h turns one into the other.",
+            "The derivative at a is a number; the derivative function f′(x) gives that number for every x where the limit exists. Other notations: dy/dx, and d/dx f(x).",
+            "The units of f′ are the units of f per unit of the input."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c2",
+          "see": "what-to-know",
+          "prompt": "State the theorem that connects differentiability and continuity. Is its converse true? Then name four ways a function can fail to be differentiable at x = a.",
+          "answer": "If f is differentiable at a, then f is continuous at a. The converse is false: |x − 2| is continuous at 2 but not differentiable there. f fails to be differentiable at a discontinuity, a corner, a cusp, or a vertical tangent.",
+          "steps": [
+            "Equivalent form: if f is not continuous at a, then f is not differentiable at a.",
+            "Corner: the one-sided limits of the difference quotient are finite but different. Cusp: they are infinite with opposite signs. Vertical tangent: the quotient grows without bound with one sign.",
+            "Continuity is necessary for differentiability but not enough on its own."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c3",
+          "see": "what-to-know",
+          "prompt": "State the power rule, the constant rule, and the sum, difference and constant multiple rules. Then give the derivatives of sin x, cos x, e^x and ln x, and the angle unit the trigonometric formulas assume.",
+          "answer": "d/dx x^n = n·x^(n − 1) for every real n (on an interval where x^n is defined); d/dx c = 0; (f ± g)′ = f′ ± g′; (c·f)′ = c·f′. d/dx sin x = cos x, d/dx cos x = −sin x, d/dx e^x = e^x, and d/dx ln x = 1/x for x > 0. Angles are in radians.",
+          "steps": [
+            "Rewrite roots and reciprocals as powers first: √x = x^(1/2) and 1/x^3 = x^(−3).",
+            "A constant such as e^2, π^2 or ln 5 has derivative 0.",
+            "The trigonometric formulas rest on lim as h→0 of sin(h)/h = 1, which holds only in radians."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c4",
+          "see": "what-to-know",
+          "prompt": "State the product rule and the quotient rule, including what must be true at x = a for each to give the derivative there.",
+          "answer": "If f and g are differentiable at a, then (fg)′(a) = f′(a)g(a) + f(a)g′(a). If, in addition, g(a) ≠ 0, then (f/g)′(a) = (f′(a)g(a) − f(a)g′(a))/g(a)^2.",
+          "steps": [
+            "Both factors must be differentiable at a. If one is not, the rule gives no information, and the product may or may not be differentiable there.",
+            "The order of the quotient rule's numerator matters: derivative of the top times the bottom comes first.",
+            "Neither rule is the product or quotient of the derivatives."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c5",
+          "see": "what-to-know",
+          "prompt": "Give the derivatives of tan x, cot x, sec x and csc x. Then show how the quotient rule produces the derivative of sec x.",
+          "answer": "d/dx tan x = sec^2 x, d/dx cot x = −csc^2 x, d/dx sec x = sec x tan x, and d/dx csc x = −csc x cot x. Since sec x = 1/cos x, the quotient rule gives (0·cos x − 1·(−sin x))/cos^2 x = sin x/cos^2 x = sec x tan x.",
+          "steps": [
+            "The co-functions cot x and csc x carry the minus signs.",
+            "Each formula holds where the function is defined: tan x and sec x need cos x ≠ 0; cot x and csc x need sin x ≠ 0."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c6",
+          "see": "what-to-know",
+          "prompt": "How do you estimate f′(a) (a) from a table of values of f that has inputs on both sides of a, (b) from a graph of f, and (c) from a formula on a graphing calculator? If f(t) is measured in liters and t in minutes, what are the units of the estimate?",
+          "answer": "(a) Use the difference quotient over the two closest table inputs on either side of a. (b) Use the slope of the tangent line at a, which on a straight piece of the graph is that piece's slope. (c) Use the calculator's numerical derivative at a. The units are liters per minute.",
+          "steps": [
+            "(a) A difference quotient is an approximation; write ≈ and give units.",
+            "(b) At a corner or a jump there is no tangent line, and f′(a) does not exist.",
+            "(c) A numerical derivative can report a number at a corner, where f′ does not exist, so check differentiability before trusting it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Mixed problems at exam level, without a calculator. Decide on a method yourself before you open a hint."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c7",
+          "see": "what-to-know",
+          "prompt": "Write each limit in terms of a derivative, and find its value.\n\n(a) lim as h→0 of (e^(2 + h) − e^2)/h\n\n(b) lim as x→π/6 of (2sin x − 1)/(x − π/6)\n\n(c) lim as h→0 of (g(2 + 3h) − g(2))/h, where g(x) = x^3 − x",
+          "hint": "In each quotient, find the term that plays the role of f(a). In (c), compare the change in the input with the denominator.",
+          "answer": "(a) f′(2) for f(x) = e^x: e^2 (b) f′(π/6) for f(x) = 2sin x: √3 (c) 3g′(2) = 33",
+          "steps": [
+            "(a) With f(x) = e^x and a = 2, e^2 = f(2), so the limit is f′(2). Since d/dx e^x = e^x, the value is e^2.",
+            "(b) With f(x) = 2sin x and a = π/6, f(π/6) = 2·(1/2) = 1, so the quotient is (f(x) − f(π/6))/(x − π/6), and its limit is f′(π/6).",
+            "f′(x) = 2cos x, so f′(π/6) = 2·(√3/2) = √3.",
+            "(c) The input changes by 3h, but the denominator is h. Write the quotient as 3·(g(2 + 3h) − g(2))/(3h). As h→0, 3h→0, so the limit is 3g′(2).",
+            "g′(x) = 3x^2 − 1, so g′(2) = 11 and the value is 33."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c8",
+          "see": "what-to-know",
+          "prompt": "The graph of f on −4 ≤ x ≤ 3 consists of three line segments, as shown.\n\n(a) Let p(x) = e^x·f(x). Find p′(0).\n\n(b) Let q(x) = f(x)/(x^2 + 1). Find q′(2).\n\n(c) Find every x in (−4, 3) at which f is not differentiable, and give a reason for each.\n\n(d) Let r(x) = (x + 2)·f(x). Is r differentiable at x = −2? If so, find r′(−2).",
+          "hint": "Read each f(a) from the height of the graph and each f′(a) from the slope of the segment through it. In (d), check whether every ingredient of the rule you want to use exists at x = −2.",
+          "answer": "(a) 0 (b) −3/10 (c) x = −2, a corner; x = 1, a jump discontinuity (d) Yes; r′(−2) = 3",
+          "steps": [
+            "From the graph: f(x) = x + 5 on [−4, −2] (slope 1), f(x) = 1 − x on [−2, 1] (slope −1), and f(x) = (x + 3)/2 for 1 < x ≤ 3 (slope 1/2).",
+            "(a) p′(x) = e^x·f(x) + e^x·f′(x). With f(0) = 1 and f′(0) = −1, p′(0) = 1·1 + 1·(−1) = 0.",
+            "(b) q′(x) = (f′(x)(x^2 + 1) − f(x)·2x)/(x^2 + 1)^2. With f(2) = 5/2 and f′(2) = 1/2, q′(2) = ((1/2)(5) − (5/2)(4))/25 = (5/2 − 10)/25 = −3/10.",
+            "(c) At x = −2, f is continuous, but the slope is 1 on the left and −1 on the right: a corner, so f′(−2) does not exist.",
+            "At x = 1, lim as x→1⁻ of f(x) = 0 and lim as x→1⁺ of f(x) = 2, so f is not continuous at 1 and therefore not differentiable there. Everywhere else in (−4, 3), f is linear near the point and differentiable.",
+            "(d) The product rule needs f′(−2), which does not exist, so the rule cannot decide. Use the definition instead: r(−2) = 0·f(−2) = 0.",
+            "For x ≠ −2, (r(x) − r(−2))/(x − (−2)) = (x + 2)f(x)/(x + 2) = f(x).",
+            "f is continuous at −2, so lim as x→−2 of f(x) = f(−2) = 3. The limit exists, so r is differentiable at −2 with r′(−2) = 3."
+          ],
+          "figureIds": [
+            "ab-review-u2-g1"
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c9",
+          "see": "what-to-know",
+          "prompt": "Find each derivative. Choose the shortest correct route before you start.\n\n(a) y = (x^2 − 3)^2/x; find dy/dx at x = 1.\n\n(b) g(x) = e^x·(sin x − cos x); find g′(x) in simplest form.\n\n(c) k(x) = sec x/(1 + tan x); find k′(0).",
+          "hint": "Before you differentiate, spend a few seconds on each function's algebra. Is there a rewrite that leaves fewer rules to apply?",
+          "answer": "(a) −12 (b) g′(x) = 2e^x sin x (c) −1",
+          "steps": [
+            "(a) Expand and divide term by term: for x ≠ 0, y = (x^4 − 6x^2 + 9)/x = x^3 − 6x + 9x^(−1).",
+            "dy/dx = 3x^2 − 6 − 9x^(−2), so at x = 1, dy/dx = 3 − 6 − 9 = −12. The quotient rule also works, but it needs the derivative of (x^2 − 3)^2, which again means expanding first in this unit.",
+            "(b) Product rule: g′(x) = e^x(sin x − cos x) + e^x(cos x + sin x) = 2e^x sin x.",
+            "(c) Rewrite with sine and cosine: sec x/(1 + tan x) = (1/cos x)/((cos x + sin x)/cos x) = 1/(cos x + sin x), wherever cos x ≠ 0.",
+            "Then k′(x) = −(cos x + sin x)′/(cos x + sin x)^2 = (sin x − cos x)/(cos x + sin x)^2, so k′(0) = (0 − 1)/1 = −1.",
+            "Check with the quotient rule on the original: k′(0) = (sec 0·tan 0·(1 + tan 0) − sec 0·sec^2 0)/(1 + tan 0)^2 = (0 − 1)/1 = −1."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c10",
+          "see": "worked-examples",
+          "prompt": "Find the constants a and b for which the line y = 4x − 3 is tangent to the graph of f(x) = ax^2 + b·ln x at x = 1.",
+          "hint": "At a point of tangency, the line and the curve agree in two ways. Write one equation for each.",
+          "answer": "a = 1 and b = 2",
+          "steps": [
+            "The curve and the line share a point: at x = 1 the line has y = 4(1) − 3 = 1, so f(1) = a·1 + b·ln 1 = a must equal 1.",
+            "They share a slope: f′(x) = 2ax + b/x, so f′(1) = 2a + b must equal 4. With a = 1, b = 2.",
+            "Check: f(x) = x^2 + 2ln x has f(1) = 1 and f′(1) = 2 + 2 = 4, and the tangent line is y = 1 + 4(x − 1) = 4x − 3."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c11",
+          "see": "what-to-know",
+          "prompt": "Decide whether each function is differentiable at x = 3. Justify each answer.\n\n(a) g(x) = x·|x − 3|\n\n(b) h(x) = (x − 3)·|x − 3|\n\n(c) k(x) = (3x^2 − 8x − 3)/(x − 3) for x ≠ 3, and k(3) = 9",
+          "hint": "Before you look at slopes, check the one condition that every differentiable function must meet at x = 3.",
+          "answer": "(a) Not differentiable: the one-sided limits of the difference quotient are −3 and 3. (b) Differentiable, with h′(3) = 0. (c) Not differentiable, because k is not continuous at 3.",
+          "steps": [
+            "(a) g is continuous at 3, with g(3) = 0. For x ≠ 3, (g(x) − g(3))/(x − 3) = x·|x − 3|/(x − 3).",
+            "For x > 3 this equals x, which approaches 3; for x < 3 it equals −x, which approaches −3. The one-sided limits differ, so g′(3) does not exist: the graph has a corner.",
+            "(b) h(3) = 0, and for x ≠ 3, (h(x) − h(3))/(x − 3) = |x − 3|, which approaches 0 from both sides. So h′(3) = 0.",
+            "(c) For x ≠ 3, k(x) = (3x + 1)(x − 3)/(x − 3) = 3x + 1, so lim as x→3 of k(x) = 10 ≠ 9 = k(3). k is not continuous at 3, so it is not differentiable there.",
+            "Indeed (k(x) − k(3))/(x − 3) = (3x + 1 − 9)/(x − 3) = (3x − 8)/(x − 3) is unbounded near 3. The formula 3x + 1 has slope 3 on both sides, but matching slopes cannot repair a gap."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u2-c12",
+          "see": "justifications-and-traps",
+          "prompt": "A loaf of bread is taken out of an oven. Its temperature, in degrees Celsius, t minutes later is B(t), where B is differentiable. Selected values are shown.\n\n| t (min) | 0 | 4 | 10 | 15 | 20 |\n| --- | --- | --- | --- | --- | --- |\n| B(t) (°C) | 180 | 150 | 116 | 98 | 85 |\n\n(a) Find the average rate of change of B over 0 ≤ t ≤ 20. Include units.\n\n(b) Use the data to estimate B′(12). Interpret your estimate in context, with units.\n\n(c) Suppose B′(15) = −3.2. Write an equation of the line tangent to the graph of B at t = 15, and use it to approximate the temperature at t = 17.",
+          "hint": "For (b), which two table times give the narrowest interval that contains t = 12?",
+          "answer": "(a) −4.75 degrees Celsius per minute (b) B′(12) ≈ −3.6 degrees Celsius per minute: about 12 minutes after leaving the oven, the bread's temperature is decreasing at about 3.6 degrees Celsius per minute. (c) y = 98 − 3.2(t − 15); B(17) ≈ 91.6 degrees Celsius",
+          "steps": [
+            "(a) (B(20) − B(0))/(20 − 0) = (85 − 180)/20 = −95/20 = −4.75 degrees Celsius per minute.",
+            "(b) The closest table times on either side of 12 are 10 and 15: B′(12) ≈ (B(15) − B(10))/(15 − 10) = (98 − 116)/5 = −3.6 degrees Celsius per minute.",
+            "A negative derivative means a decreasing temperature. State the time, the quantity, the direction, the rate and the units.",
+            "(c) The tangent line passes through (15, B(15)) = (15, 98) with slope −3.2: y = 98 − 3.2(t − 15).",
+            "At t = 17: y = 98 − 3.2(2) = 91.6, so B(17) ≈ 91.6 degrees Celsius. The value is an approximation, so write ≈."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what-to-know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "Average and instantaneous rates of change",
+          "text": "The average rate of change of f on [a, b] is (f(b) − f(a))/(b − a), the slope of the secant line through (a, f(a)) and (b, f(b)). The instantaneous rate of change at a is the limit of the average rates over [a, a + h] as h→0, which is f′(a).",
+          "conditions": [
+            "Both carry units of output per unit of input, such as degrees Celsius per minute.",
+            "An average rate over an interval is not the rate at any particular instant in it, unless more is known about the function."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The derivative at a point",
+          "text": "f′(a) = lim as h→0 of (f(a + h) − f(a))/h = lim as x→a of (f(x) − f(a))/(x − a), when this limit exists as a real number. The derivative function f′ assigns that limit to each x where it exists; dy/dx and d/dx f(x) are other names for it.",
+          "conditions": [
+            "The limit must exist from both sides. If the one-sided limits differ or are infinite, f′(a) does not exist.",
+            "A limit of a quotient can be a derivative in disguise: identify f and a by matching the term subtracted in the numerator with f(a).",
+            "If the input changes by kh while the denominator is h, the limit is k·f′(a)."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "The tangent line",
+          "text": "The line tangent to y = f(x) at x = a is y = f(a) + f′(a)(x − a). Near a it approximates f: f(x) ≈ f(a) + f′(a)(x − a).",
+          "conditions": [
+            "The slope is the number f′(a), not the expression f′(x).",
+            "A tangent problem with unknown constants usually needs two equations: the curve and the line share a point, and they share a slope."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Estimating f′(a) from each representation",
+          "head": [
+            "Given",
+            "Estimate f′(a) by",
+            "Write"
+          ],
+          "rows": [
+            [
+              "A table",
+              "The difference quotient over the closest inputs on either side of a",
+              "f′(a) ≈ (f(b) − f(c))/(b − c), with units"
+            ],
+            [
+              "A graph",
+              "The slope of the tangent line at a; on a straight piece, that piece's slope",
+              "Two points on the tangent line and their slope"
+            ],
+            [
+              "A formula on a calculator",
+              "The calculator's numerical derivative at a",
+              "The value to three decimal places, after checking that f is differentiable at a"
+            ],
+            [
+              "A context",
+              "The rate in the units of the quantity per unit of time or input",
+              "The time, the quantity, increasing or decreasing, the rate and the units"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Differentiability implies continuity",
+          "text": "If f is differentiable at a, then f is continuous at a. The converse is false.",
+          "conditions": [
+            "So a discontinuity always rules out a derivative, whatever the slopes of the pieces look like.",
+            "A continuous function can still fail to be differentiable: see the table below."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "How differentiability fails at x = a, measured by the difference quotient (f(a + h) − f(a))/h",
+          "head": [
+            "Failure",
+            "As h→0⁻ and h→0⁺",
+            "Example at a = 0"
+          ],
+          "rows": [
+            [
+              "Discontinuity",
+              "f is not continuous at a, so the quotient cannot have a finite limit",
+              "f(x) = 1 for x < 0 and f(x) = 2 for x ≥ 0"
+            ],
+            [
+              "Corner",
+              "Finite one-sided limits that differ",
+              "f(x) = |x|, with −1 from the left and 1 from the right"
+            ],
+            [
+              "Cusp",
+              "Infinite one-sided limits of opposite signs",
+              "f(x) = x^(2/3)"
+            ],
+            [
+              "Vertical tangent",
+              "The quotient grows without bound, with the same sign on both sides",
+              "f(x) = x^(1/3)"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Differentiability at a junction of a piecewise function",
+          "text": "A piecewise function is differentiable at a junction x = a when it is continuous at a and the one-sided limits of (f(x) − f(a))/(x − a) are equal. When both pieces are differentiable formulas, the one-sided limits are the pieces' derivatives at a.",
+          "conditions": [
+            "Check continuity first. If the pieces do not meet at a, f is not differentiable there, even if their slopes match.",
+            "Two unknown constants need two equations: one from continuity and one from equal one-sided derivatives."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Power, constant, sum and constant multiple rules",
+          "text": "d/dx x^n = n·x^(n − 1) for any real number n; d/dx c = 0; (f + g)′ = f′ + g′; (f − g)′ = f′ − g′; (c·f)′ = c·f′.",
+          "conditions": [
+            "Rewrite first: 5/x^2 = 5x^(−2), √x = x^(1/2), and a quotient with a single-term denominator can be divided term by term.",
+            "The power rule needs a variable base and a constant exponent. A power of a function, such as (x^2 − 3)^2, needs expanding here or the chain rule in Unit 3."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Product and quotient rules",
+          "text": "If f and g are differentiable at x, then (fg)′ = f′g + fg′, and where g(x) ≠ 0, (f/g)′ = (f′g − fg′)/g^2.",
+          "conditions": [
+            "Both factors must be differentiable at the point. If one is not, use the definition of the derivative instead.",
+            "Simplify first when you can: a constant numerator or a rewrite in sine and cosine often makes a quotient shorter."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Derivatives to know cold (angles in radians)",
+          "head": [
+            "f(x)",
+            "f′(x)",
+            "Where it holds"
+          ],
+          "rows": [
+            [
+              "sin x",
+              "cos x",
+              "All x"
+            ],
+            [
+              "cos x",
+              "−sin x",
+              "All x"
+            ],
+            [
+              "tan x",
+              "sec^2 x",
+              "cos x ≠ 0"
+            ],
+            [
+              "cot x",
+              "−csc^2 x",
+              "sin x ≠ 0"
+            ],
+            [
+              "sec x",
+              "sec x tan x",
+              "cos x ≠ 0"
+            ],
+            [
+              "csc x",
+              "−csc x cot x",
+              "sin x ≠ 0"
+            ],
+            [
+              "e^x",
+              "e^x",
+              "All x"
+            ],
+            [
+              "ln x",
+              "1/x",
+              "x > 0"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Where the formulas come from: the derivatives of sin x and cos x follow from the definition with lim as h→0 of sin(h)/h = 1 and lim as h→0 of (cos h − 1)/h = 0, the Unit 1 limits; the four other trigonometric derivatives follow from the quotient rule; and e is the base for which lim as h→0 of (e^h − 1)/h = 1."
+        }
+      ]
+    },
+    {
+      "id": "justifications-and-traps",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A derivative answer earns full credit when it shows the rule or definition used, the values substituted, and, in context, the meaning with units. Write it like these."
+        },
+        {
+          "type": "model",
+          "prompt": "Interpret W′(5) = −1.8, where W(t) is the volume of water in a tank, in liters, t minutes after a valve opens.",
+          "text": "At t = 5 minutes, the volume of water in the tank is decreasing at a rate of 1.8 liters per minute."
+        },
+        {
+          "type": "model",
+          "prompt": "Estimate R′(7) from R(5) = 40 and R(9) = 52, where R(t) is a distance in meters at time t seconds.",
+          "text": "R′(7) ≈ (R(9) − R(5))/(9 − 5) = (52 − 40)/4 = 3 meters per second."
+        },
+        {
+          "type": "model",
+          "prompt": "Recognize lim as h→0 of (∛(8 + h) − 2)/h.",
+          "text": "With f(x) = ∛x = x^(1/3), f(8) = 2, so the limit is lim as h→0 of (f(8 + h) − f(8))/h = f′(8). Since f′(x) = (1/3)x^(−2/3), the limit is (1/3)(1/4) = 1/12."
+        },
+        {
+          "type": "model",
+          "prompt": "Differentiability at x = 2, given lim as x→2⁻ of f(x) = 4 and lim as x→2⁺ of f(x) = 1.",
+          "text": "The one-sided limits of f at x = 2 are different, so f is not continuous at x = 2. A function that is differentiable at a point is continuous there, so f is not differentiable at x = 2."
+        },
+        {
+          "type": "model",
+          "prompt": "Differentiability of v(x) = |2x − 6| at x = 3.",
+          "text": "v is continuous at x = 3, but (v(x) − v(3))/(x − 3) equals −2 for x < 3 and 2 for x > 3. The one-sided limits −2 and 2 are different, so v′(3) does not exist."
+        },
+        {
+          "type": "model",
+          "prompt": "Find h′(4) for h(x) = f(x)g(x), given f(4) = 2, f′(4) = −3, g(4) = 6 and g′(4) = 1/2.",
+          "text": "h′(4) = f′(4)g(4) + f(4)g′(4) = (−3)(6) + (2)(1/2) = −17."
+        },
+        {
+          "type": "trap",
+          "text": "Differentiating a product or a quotient factor by factor: (fg)′ = f′g′ or (f/g)′ = f′/g′.",
+          "fix": "Write the rule first, (fg)′ = f′g + fg′ or (f/g)′ = (f′g − fg′)/g^2, then substitute."
+        },
+        {
+          "type": "trap",
+          "text": "Reversing the quotient rule's numerator to fg′ − f′g, which flips the sign of the answer.",
+          "fix": "The derivative of the top comes first: f′g − fg′. Check the sign on an easy case, such as 1/x, whose derivative is negative."
+        },
+        {
+          "type": "trap",
+          "text": "Concluding that a function is differentiable because it is continuous, or because its graph has no gaps.",
+          "fix": "Continuity is necessary, not sufficient. Compare the one-sided limits of the difference quotient, or name the corner, cusp or vertical tangent."
+        },
+        {
+          "type": "trap",
+          "text": "Matching the slopes of two pieces and concluding that a piecewise function is differentiable at the junction.",
+          "fix": "Check continuity first. Pieces with equal slopes that do not meet still leave f without a derivative there."
+        },
+        {
+          "type": "trap",
+          "text": "Concluding that f·g is not differentiable at a point because one factor is not differentiable there.",
+          "fix": "The product rule simply does not apply. Go back to the definition: (x + 2)·f(x) can be differentiable at a corner of f at x = −2."
+        },
+        {
+          "type": "trap",
+          "text": "Giving a constant a nonzero derivative, such as d/dx e^2 = e^2 or d/dx ln 5 = 1/5.",
+          "fix": "e^2, π^2 and ln 5 are numbers, so their derivatives are 0."
+        },
+        {
+          "type": "trap",
+          "text": "Applying the power rule to a power of an expression: d/dx (x^2 − 3)^2 = 2(x^2 − 3).",
+          "fix": "The power rule is for x^n. Expand first in this unit; in Unit 3 the chain rule adds the missing factor 2x."
+        },
+        {
+          "type": "trap",
+          "text": "Rewriting 1/x^3 as having derivative 1/(3x^2).",
+          "fix": "Write 1/x^3 = x^(−3) first; the derivative is −3x^(−4) = −3/x^4."
+        },
+        {
+          "type": "trap",
+          "text": "Working in degrees, or with a calculator set to degrees, when a formula such as d/dx sin x = cos x is used.",
+          "fix": "Every derivative formula for a trigonometric function assumes radians."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the limit in definition work: writing (f(3 + h) − f(3))/h = 6 + h = 6.",
+          "fix": "Keep \"lim as h→0 of\" on every line until the substitution h = 0, and cancel h only with \"for h ≠ 0\"."
+        },
+        {
+          "type": "trap",
+          "text": "Writing the tangent line with f′(x) as its slope, such as y = f(1) + (2x + 2)(x − 1).",
+          "fix": "Evaluate the derivative at the point first. The slope of a line is a number."
+        },
+        {
+          "type": "trap",
+          "text": "Reporting a table estimate as exact or without units, or using table inputs that do not bracket the point.",
+          "fix": "Write ≈, give units, and use the closest inputs on either side of the point."
+        }
+      ]
+    },
+    {
+      "id": "worked-examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Use the definition of the derivative to find f′(4) for f(x) = 1/√x. Check the result with the power rule, and write an equation of the line tangent to the graph of f at x = 4.",
+          "answer": "f′(4) = −1/16; the tangent line is y = 1/2 − (1/16)(x − 4).",
+          "steps": [
+            "f′(4) = lim as h→0 of (1/√(4 + h) − 1/2)/h. Substitution gives 0/0, so rewrite.",
+            "Combine the fractions in the numerator: 1/√(4 + h) − 1/2 = (2 − √(4 + h))/(2√(4 + h)). So the quotient is (2 − √(4 + h))/(2h√(4 + h)).",
+            "Multiply numerator and denominator by 2 + √(4 + h): the numerator becomes 4 − (4 + h) = −h.",
+            "For h ≠ 0, the quotient equals −1/(2√(4 + h)(2 + √(4 + h))).",
+            "This is continuous at h = 0, so the limit is −1/(2·2·4) = −1/16.",
+            "Check: f(x) = x^(−1/2), so f′(x) = −(1/2)x^(−3/2) and f′(4) = −(1/2)(1/8) = −1/16.",
+            "f(4) = 1/2, so the tangent line is y = 1/2 − (1/16)(x − 4)."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Let f(x) = 2ln x + 3 for 0 < x ≤ 1 and f(x) = ax^2 + bx for x > 1, where a and b are constants. Find the values of a and b for which f is differentiable at x = 1, and confirm with one-sided difference quotients.",
+          "answer": "a = −1 and b = 4, with f′(1) = 2",
+          "steps": [
+            "Continuity first: f(1) = 2ln 1 + 3 = 3, and lim as x→1⁺ of f(x) = a + b. So a + b = 3.",
+            "Equal one-sided derivatives: the left piece has derivative 2/x, which is 2 at x = 1; the right piece has derivative 2ax + b, which is 2a + b at x = 1. So 2a + b = 2.",
+            "Subtracting the equations gives a = −1, and then b = 4.",
+            "Confirm from the left: for 0 < x < 1, (f(x) − f(1))/(x − 1) = 2ln x/(x − 1) = 2·(ln x − ln 1)/(x − 1). The quotient (ln x − ln 1)/(x − 1) approaches the derivative of ln x at 1, which is 1/1 = 1, so the left-hand limit is 2.",
+            "Confirm from the right: for x > 1, (f(x) − 3)/(x − 1) = (−x^2 + 4x − 3)/(x − 1) = −(x − 1)(x − 3)/(x − 1) = 3 − x, which approaches 2.",
+            "The one-sided limits agree, so f is differentiable at x = 1 and f′(1) = 2."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Write an equation of the line tangent to the graph of y = e^x/(sin x + 2) at x = 0.",
+          "answer": "y = 1/2 + x/4",
+          "steps": [
+            "At x = 0, y = e^0/(0 + 2) = 1/2.",
+            "Quotient rule: dy/dx = (e^x(sin x + 2) − e^x cos x)/(sin x + 2)^2.",
+            "At x = 0: dy/dx = (1·2 − 1·1)/2^2 = 1/4.",
+            "The tangent line is y = 1/2 + (1/4)(x − 0), that is, y = 1/2 + x/4."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practise-more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Rework any check you missed after studying the section its answer names, and come back to it again a few days later. Then take the unit test under timed conditions and score it with the key. Derivative estimates from tables and tangent-line approximations reappear in many free-response questions; the workshops below practise them there."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 6: Rates of change and the derivative",
+              "ref": "week:6"
+            },
+            {
+              "label": "Week 7: Differentiability and the first derivative rules",
+              "ref": "week:7"
+            },
+            {
+              "label": "Week 8: Product and quotient rules; trigonometric derivatives",
+              "ref": "week:8"
+            },
+            {
+              "label": "Unit 2 plan",
+              "ref": "unit:u2"
+            },
+            {
+              "label": "Unit 2 test",
+              "ref": "test:unit-2"
+            },
+            {
+              "label": "Unit 2 test key",
+              "ref": "key:unit-2"
+            },
+            {
+              "label": "Free-response workshop: Functions given by tables",
+              "ref": "guide:fr-tables"
+            },
+            {
+              "label": "Free-response workshop: Analysis of a given function",
+              "ref": "guide:fr-function-analysis"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

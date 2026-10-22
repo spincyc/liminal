@@ -1,0 +1,353 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-differential-equations",
+  "kind": "fr-archetype",
+  "title": "Differential equations",
+  "author": "ab-workshop-author",
+  "summary": "How a differential-equation free-response question for the AP® Calculus AB Exam is typically built, and how to earn each kind of point on it: slope-field segments, a solution's behavior read from the equation alone, a tangent-line estimate judged by the second derivative, separation of variables with the domain stated, and exponential models built from a sentence. It gives model sentences, the traps that cost strong students points, two worked models on fresh equations, and three checks to try before the timed practice set.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "ab-fr-differential-equations-g1",
+      "alt": "Slope field for dy/dx = e^x − y on a grid with x from −1 to 2 and y from 0 to 3. A solid solution curve passes through the marked point (0, 2), falls to a low point a little above y = 1.7 near x = 0.5, and then rises. A dashed line touches the curve at (0, 2) and falls to the right, staying below the curve on both sides.",
+      "caption": "The solution of dy/dx = e^x − y through (0, 2) and its tangent line there."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The question gives a differential equation, usually with an initial condition, or describes a rate in words and asks you to write the equation. It then asks you to work with it in several representations: as a slope field, as a formula for the slope at a point, as an equation to solve, and as a model whose behavior you read off without solving."
+        },
+        {
+          "type": "text",
+          "text": "It usually sits in the no-calculator part of the free-response section, because every step can be done exactly: evaluating a slope, differentiating the equation, separating and integrating, solving for y with logarithms or roots. A calculator version is set in a context: you still solve the equation by hand, then use the calculator to evaluate the solution, solve an equation such as W(t) = 45, or average the solution over an interval. The practice set has one of each kind."
+        },
+        {
+          "type": "text",
+          "text": "It combines with other archetypes. A tangent-line estimate judged over or under is linearization and concavity; a horizontal tangent of a solution is a function-analysis question answered with the sign of dy/dx; a rate in context needs units. Euler’s method and logistic models are BC topics and are not part of this course."
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Typical parts of a nine-point differential-equation question (Liminal’s synthesis; any one question uses three or four of these).",
+          "head": [
+            "Part",
+            "What you do",
+            "Points usually at stake",
+            "What earns them"
+          ],
+          "rows": [
+            [
+              "Slope field",
+              "Draw segments at marked points, or sketch a solution curve through a point",
+              "1–2",
+              "Zero slopes exactly horizontal; signs right; steeper where the slope is larger in size"
+            ],
+            [
+              "Behavior from the equation",
+              "Increasing or decreasing, a relative extremum, constant solutions, a long-run value",
+              "1–2",
+              "The sign of dy/dx with a reason for each factor; solutions do not cross a constant solution"
+            ],
+            [
+              "Tangent line and concavity",
+              "Write the tangent line at the initial point, approximate a nearby value, and say over or under",
+              "2–3",
+              "The line, the value, d^2y/dx^2 with dy/dx substituted, and a concavity sentence that covers the interval"
+            ],
+            [
+              "Separation of variables",
+              "Find the particular solution",
+              "3–5",
+              "Separation, both antiderivatives with + C, the constant from the initial condition, y solved"
+            ],
+            [
+              "Domain",
+              "State the largest open interval containing the initial x on which the solution is defined",
+              "1",
+              "The interval and the restriction it comes from"
+            ],
+            [
+              "Model in context",
+              "Write the equation from a sentence, find a constant, interpret a value, or use the solution with a calculator",
+              "1–3",
+              "An equation, a value with units, a sentence that names the quantity and the time"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s rubrics give separate points for a setup, an answer, a justification, and units when units are asked. They are Liminal’s practice weights, not a description of how the exam is scored. Know which kind of point each line of your work is meant to earn."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points: the separated equation, the tangent line before the number, the equation W(t) = 45 before its calculator solution. Write them as equations, not as results that appear from nowhere.",
+            "Answer points: the explicit solution, the approximation, the time or average. A correct answer with no supporting work earns little.",
+            "Justification points: name the function whose sign you use (dy/dx, d^2y/dx^2), give its sign on the whole interval that matters, and say what the sign means for the graph or the estimate.",
+            "Units: a rate in context carries units of the quantity per unit of time, such as degrees Celsius per hour.",
+            "Consistency: a later part that uses an earlier wrong answer correctly can still earn its points, so finish every part with whatever you have."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Separation of variables is the one place where an early point gates the rest. In Liminal’s rubrics, a wrong separation earns nothing for the integration, the constant, or the solution, even if each later step is done well. Spend ten seconds checking that every y is with dy and every x is with dx before you integrate."
+        },
+        {
+          "type": "rule",
+          "title": "Separation of variables",
+          "text": "If dy/dx = g(x)h(y), then on an interval where h(y) ≠ 0, the solutions satisfy ∫ 1/(h(y)) dy = ∫ g(x) dx. Add the constant at this step, find it from the initial condition, then solve for y.",
+          "conditions": [
+            "The right side must factor as a function of x times a function of y; a sum such as x + y does not separate.",
+            "Each value y = c with h(c) = 0 is a constant solution that the division loses. When h has a continuous derivative, as it does for every equation in this guide and its practice set, no other solution curve can cross or touch a constant solution, so a solution that starts above it stays above it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Tangent lines and concavity",
+          "text": "Where a solution curve is concave up (d^2y/dx^2 > 0), a tangent-line estimate is too small; where it is concave down, the estimate is too large.",
+          "conditions": [
+            "Find d^2y/dx^2 by differentiating the equation with the chain rule on every y, then substitute dy/dx from the equation.",
+            "The sign of d^2y/dx^2 must hold on the whole stretch from the point of tangency to the target. Its sign at the starting point settles this only near that point; show why the sign persists, usually from whether y increases or decreases."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Exponential models",
+          "text": "\"The rate of change of y is proportional to y\" means dy/dt = ky, with solution y = y(0)e^(kt). \"The rate is proportional to the difference between M and y\" means dy/dt = k(M − y), with solution y = M + (y(0) − M)e^(−kt); for k > 0 every solution approaches the constant solution y = M.",
+          "conditions": [
+            "k and M are constants. Find k from a given rate (divide the rate by the amount) or from two measurements (divide them to cancel y(0)).",
+            "If the rate also depends on t, as in dW/dt = (70 − W)(0.03 + 0.15 sin(πt/10)), these formulas do not apply as written; separate and integrate."
+          ]
+        },
+        {
+          "type": "figure",
+          "id": "ab-fr-differential-equations-g1"
+        },
+        {
+          "type": "text",
+          "text": "The figure shows why the concavity sentence matters. At (0, 2) the solution of dy/dx = e^x − y has slope −1, and its tangent line falls to the right. The curve bends upward away from the line, so for any x near 0 the line gives a value below the curve: a tangent-line estimate here is an underestimate. Worked model 2 proves it."
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Over or under from concavity (y = g(x) solves dy/dx = 3 − y with g(0) = 1; the tangent line gives g(0.2) ≈ 1.4).",
+          "text": "d^2y/dx^2 = −dy/dx = y − 3. Since g(0) = 1 < 3 and the solution cannot cross the constant solution y = 3, g(x) < 3, so d^2y/dx^2 < 0 for 0 ≤ x ≤ 0.2. The graph of g is concave down there and lies below its tangent line, so 1.4 is an overestimate of g(0.2)."
+        },
+        {
+          "type": "model",
+          "prompt": "A relative extremum from the equation (y = h(x) solves dy/dx = (x − 3)(1 + y^2)).",
+          "text": "1 + y^2 > 0 for every y, so dy/dx has the sign of x − 3. dy/dx changes from negative to positive at x = 3, so h has a relative minimum at x = 3."
+        },
+        {
+          "type": "model",
+          "prompt": "Stating the domain (dy/dx = 3x^2y^2, y(0) = 1/8, solved to y = 1/(8 − x^3)).",
+          "text": "The particular solution is y = 1/(8 − x^3) for x < 2. The interval must contain the initial value x = 0 and cannot cross the vertical asymptote at x = 2, where 8 − x^3 = 0."
+        },
+        {
+          "type": "model",
+          "prompt": "Writing the equation from a sentence (the rate at which a quantity Q decreases is proportional to the square of Q).",
+          "text": "dQ/dt = −kQ^2 for some constant k > 0. The minus sign records that Q decreases; k carries the proportionality."
+        },
+        {
+          "type": "model",
+          "prompt": "Long-run behavior in context (dT/dt = −0.2(T − 18), T(0) = 75, temperature in degrees Celsius).",
+          "text": "dT/dt < 0 whenever T > 18, and T starts at 75, so T decreases. It cannot cross the constant solution T = 18, so over a long time the temperature approaches 18 °C without reaching it."
+        },
+        {
+          "type": "model",
+          "prompt": "A calculator part that uses your solution (an amount A(t) = 50 − 40e^(−0.1t), solved in an earlier part).",
+          "text": "Setting 50 − 40e^(−0.1t) = 30 and solving with the calculator gives t = 6.931. The equation, written before the value, is the setup; the three-decimal value is the answer."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Adding the constant after solving: ln|y| = 3x, so y = e^(3x) + C.",
+          "fix": "Write + C the moment you integrate, and find it right away from the initial condition while the equation is still in logarithm form. Then solve for y. The correct family here is y = Ae^(3x), not e^(3x) + C."
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the absolute value or the sign: from |y − 4| = 3e^(−2x), writing y = 4 + 3e^(−2x) for every initial condition.",
+          "fix": "Let the initial value decide. If y(0) = 1, then y − 4 < 0 and y = 4 − 3e^(−2x). The same goes for square roots: from y^2 = x + 9 with y(0) = −3, the solution is y = −√(x + 9)."
+        },
+        {
+          "type": "trap",
+          "text": "Differentiating the equation as if y were a constant: d/dx of x·y^3 written as y^3.",
+          "fix": "Every y term needs the chain rule: d/dx of y^3 is 3y^2(dy/dx). Then substitute the equation for dy/dx, so the second derivative is in terms of x and y only."
+        },
+        {
+          "type": "trap",
+          "text": "Judging over or under from the second derivative at the starting point only.",
+          "fix": "Show that the sign holds on the whole stretch to the target. Usually one sentence does it: say whether y increases or decreases and why that keeps the sign of d^2y/dx^2 fixed."
+        },
+        {
+          "type": "trap",
+          "text": "Trying to separate a sum, such as dy/dx = x + y, by writing dy/y = x dx.",
+          "fix": "Only a product g(x)h(y) separates, so first check whether the right side factors: xy + x = x(y + 1) does. If it does not, you cannot solve it by separation; use the equation directly for slopes, concavity and tangent-line estimates."
+        },
+        {
+          "type": "trap",
+          "text": "Saying a solution reaches its limiting value, such as \"the tank reaches 70 degrees in the afternoon,\" or that a rate approaching 0 means the quantity levels off.",
+          "fix": "A solution approaches a constant solution but never equals it at a finite time. A rate that tends to 0 may still let the quantity grow without bound, as √(t + 1) does; decide from the solution or from a bound, not from the rate alone."
+        },
+        {
+          "type": "trap",
+          "text": "Giving the solution formula with no interval, or with an interval that crosses an asymptote or a point where dy/dx is undefined.",
+          "fix": "State the largest open interval that contains the initial x-value on which the formula is defined and differentiable. Find it from the restriction each step imposed: a zero denominator, a root’s radicand, a logarithm’s argument, arcsine’s inputs."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving units off a rate in context, or giving the units of the quantity instead of the rate.",
+          "fix": "A rate carries the quantity’s units per unit of time: °C per hour, not °C."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "Let y = k(x) be the solution of dy/dx = e^x(y + 1)^2 with k(0) = 0. Find k(x), and state the largest open interval containing x = 0 on which it is defined.",
+          "answer": "k(x) = 1/(2 − e^x) − 1, for x < ln 2.",
+          "steps": [
+            "Separate (the gating point): dy/(y + 1)^2 = e^x dx. The constant solution y = −1 is lost, but k(0) = 0 is not on it.",
+            "Integrate both sides and add the constant now: −1/(y + 1) = e^x + C.",
+            "Use k(0) = 0 at once: −1 = 1 + C, so C = −2 and −1/(y + 1) = e^x − 2.",
+            "Solve for y: y + 1 = 1/(2 − e^x), so k(x) = 1/(2 − e^x) − 1.",
+            "Domain: the formula fails where e^x = 2, that is x = ln 2, a vertical asymptote. The interval containing 0 is x < ln 2.",
+            "Check: k(0) = 1/1 − 1 = 0, and k′(x) = e^x/(2 − e^x)^2 = e^x(y + 1)^2."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Let y = h(x) be the solution of dy/dx = e^x − y with h(0) = 2. Use the tangent line at x = 0 to approximate h(0.4), and decide whether the approximation is too large or too small.",
+          "answer": "h(0.4) ≈ 1.6, an underestimate.",
+          "steps": [
+            "At (0, 2), dy/dx = e^0 − 2 = −1, so the tangent line is y = 2 − x and h(0.4) ≈ 1.6.",
+            "Differentiate: d^2y/dx^2 = e^x − dy/dx = e^x − (e^x − y) = y.",
+            "So the concavity has the sign of y. The solution starts at y = 2 > 0, and it can never fall through 0: at any point with y = 0, dy/dx = e^x > 0, so y would be increasing there. Hence h(x) > 0 and d^2y/dx^2 > 0 on all of 0 ≤ x ≤ 0.4.",
+            "The graph of h is concave up there and lies above its tangent line, so 1.6 is less than h(0.4). Compare the figure in What earns the points. (The exact value, not required, is about 1.751.)"
+          ],
+          "figureIds": [
+            "ab-fr-differential-equations-g1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its solution."
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-differential-equations-c1",
+          "prompt": "Solutions of dy/dt = (4 − y)(y + 1)^2 start at y(0) = 1 and at y(0) = 6. Without solving, say whether each solution increases or decreases for t ≥ 0, and find lim as t→∞ of y(t) for each.",
+          "hint": "Find the constant solutions first, then the sign of dy/dt between and beyond them.",
+          "answer": "From 1: increasing, with limit 4. From 6: decreasing, with limit 4.",
+          "steps": [
+            "Constant solutions: y = 4 and y = −1, where dy/dt = 0.",
+            "For −1 < y < 4, 4 − y > 0 and (y + 1)^2 > 0, so dy/dt > 0: the solution from 1 increases. It cannot cross the constant solution y = 4, so it is increasing and bounded above by 4.",
+            "For y > 4, 4 − y < 0 and (y + 1)^2 > 0, so dy/dt < 0: the solution from 6 decreases and stays above 4.",
+            "A monotone, bounded solution approaches a limit, and the limit must be a value where dy/dt = 0. The only such value in reach of either solution is 4, so both limits are 4: from below for the solution from 1, from above for the solution from 6."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-differential-equations-c2",
+          "prompt": "Find the particular solution of dy/dx = 2x/cos y with y(0) = 0, and state the largest open interval containing x = 0 on which it is defined.",
+          "hint": "After separating, the left side integrates to a sine.",
+          "answer": "y = arcsin(x^2), for −1 < x < 1.",
+          "steps": [
+            "Separate: cos y dy = 2x dx. Integrate: sin y = x^2 + C.",
+            "y(0) = 0 gives sin 0 = 0 + C, so C = 0 and sin y = x^2.",
+            "Near the initial point y is between −π/2 and π/2, so y = arcsin(x^2).",
+            "arcsin needs x^2 ≤ 1, and at x = ±1, y = π/2 and cos y = 0, so dy/dx = 2x/cos y is undefined there. The interval is −1 < x < 1."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-differential-equations-c3",
+          "prompt": "The mass of a yeast culture, M grams, grows at a rate proportional to the mass, with t in hours. At t = 0 the mass is 5 grams and it is increasing at 0.4 gram per hour. Write and solve a differential equation for M, and find when the mass is 20 grams.",
+          "hint": "Use the given rate and mass at t = 0 to find the constant of proportionality.",
+          "answer": "dM/dt = 0.08M, M(t) = 5e^(0.08t); the mass is 20 grams at t = 25 ln 2 hours, about 17.3 hours.",
+          "steps": [
+            "Proportional to the mass: dM/dt = kM. At t = 0, 0.4 = 5k, so k = 0.08.",
+            "Separating or using the known solution: M(t) = 5e^(0.08t).",
+            "5e^(0.08t) = 20 gives e^(0.08t) = 4, so t = (ln 4)/0.08 = 12.5 ln 4 = 25 ln 2, about 17.3 hours."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "links",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Take the set under time, 15 minutes a question, then score it with the rubrics before you read the solutions. For each lost point, write which kind it was: setup, answer, justification, units or consistency."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-differential-equations"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-differential-equations"
+            },
+            {
+              "label": "Unit 7 review: differential equations",
+              "ref": "guide:review-u7"
+            },
+            {
+              "label": "Week 23: differential equations and slope fields",
+              "ref": "week:23"
+            },
+            {
+              "label": "Week 24: separation of variables and exponential models",
+              "ref": "week:24"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

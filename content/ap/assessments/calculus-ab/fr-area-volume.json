@@ -1,0 +1,362 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-area-volume",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Area and volume",
+  "author": "ab-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A questions permit a graphing calculator; Part B questions do not. Show supporting work and justify requested conclusions; write the setup for every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Then score your work with the answer key's rubric and record raw points for practice.",
+  "figures": [
+    {
+      "id": "ab-fr-area-volume-f1",
+      "alt": "Graphs of y = f(x), solid, and y = g(x), dashed, for x and y from −3 to 3 on equal axes. Both pass through the origin. In the first quadrant the solid curve rises to a peak of 2 near x = 2 and then slowly falls, while the dashed curve rises slowly and then steeply, crossing the solid curve near x = 2.5. The region between them from the origin to that crossing is shaded and labeled R. A matching region in the third quadrant, the mirror image through the origin, is lightly shaded.",
+      "caption": "R is the first-quadrant region; the graphs also enclose a second region in the third quadrant."
+    },
+    {
+      "id": "ab-fr-area-volume-f2",
+      "alt": "Top view of the berm on equal axes, x from 0 to 12 and y from −2 to 2. The upper edge y = N(x) rises from the origin to a height of 1.5 at x = 6 and falls back to the x-axis at x = 12. The lower edge y = S(x) dips from the origin to a little below −1 near x = 4 and returns to the x-axis at x = 12. The region between the edges is shaded.",
+      "caption": "The ground covered by the berm, seen from above. Lengths are in meters."
+    },
+    {
+      "id": "ab-fr-area-volume-f3",
+      "alt": "Graphs of the parabola x = 4y − y^2, opening to the left with vertex (4, 2), and the line x = y, on equal axes with x from 0 to 6 and y from 0 to 4. The two graphs meet at the origin and at (3, 3). The region R between them, to the right of the line and to the left of the parabola, is shaded."
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 30,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show your work and justify requested conclusions. Write the integral, equation or derivative that supports each calculator result, and give answers to three decimal places.",
+          "items": [
+            {
+              "id": "ab-fr-area-volume-fr1",
+              "prompt": "Let f(x) = 8x/(x^2 + 4) and g(x) = x^3/8. The graphs of f and g, shown in the figure, intersect at three points and enclose two regions. Let R be the region in the first quadrant enclosed by the two graphs.",
+              "topics": [
+                "AB.8.6",
+                "AB.8.4",
+                "AB.8.8",
+                "AB.8.12"
+              ],
+              "figureIds": [
+                "ab-fr-area-volume-f1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the total area of the two regions enclosed by the graphs of f and g.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the total area as integrals that give each region a positive area: ∫ from −c to c of |f(x) − g(x)| dx, or ∫ from −c to 0 of (g(x) − f(x)) dx + ∫ from 0 to c of (f(x) − g(x)) dx, or 2∫ from 0 to c of (f(x) − g(x)) dx with a reason for the doubling (both functions are odd), where c ≈ 2.499 solves f(x) = g(x). The single integral ∫ from −c to c of (f(x) − g(x)) dx, which equals 0, does not earn this point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 5.086. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ],
+                  "answer": "5.086",
+                  "steps": [
+                    "Solve 8x/(x^2 + 4) = x^3/8 with the calculator: x = 0 and x = ±c, with c ≈ 2.499242. Store c unrounded.",
+                    "On 0 < x < c, f(x) > g(x) (at x = 1, 1.6 > 0.125). On −c < x < 0 the order reverses, because both functions are odd.",
+                    "Total area = ∫ from −c to 0 of (g(x) − f(x)) dx + ∫ from 0 to c of (f(x) − g(x)) dx = 2(2.543231) ≈ 5.086462, which rounds to 5.086.",
+                    "Warning: ∫ from −c to c of (f(x) − g(x)) dx = 0, because the two pieces cancel. That is a net value, not an area."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Region R is the base of a solid. Each cross section of the solid perpendicular to the x-axis is an equilateral triangle. Find the volume of the solid.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes (√3/4) ∫ from 0 to c of (f(x) − g(x))^2 dx, with the side of each triangle equal to f(x) − g(x) and c the value used in part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 1.360. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ],
+                  "answer": "1.360",
+                  "steps": [
+                    "At x, the triangle's side is s = f(x) − g(x), and an equilateral triangle of side s has area (√3/4)s^2.",
+                    "Volume = (√3/4) ∫ from 0 to c of (f(x) − g(x))^2 dx ≈ 1.360027, which rounds to 1.360."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the volume of the solid generated when R is revolved about the horizontal line y = 3.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Radii measured from y = 3, which lies above R: outer radius 3 − g(x) and inner radius 3 − f(x)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes π ∫ from 0 to c of [(3 − g(x))^2 − (3 − f(x))^2] dx, with π, both limits and the difference of squares."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 31.698. Earned only with the integral of the previous row, or an equivalent, on the page."
+                    }
+                  ],
+                  "answer": "31.698",
+                  "steps": [
+                    "The line y = 3 lies above R (f has maximum value 2), so the curve farther from the axis is the lower one, y = g(x).",
+                    "A vertical slice sweeps a washer with outer radius 3 − g(x) and inner radius 3 − f(x).",
+                    "Volume = π ∫ from 0 to c of [(3 − g(x))^2 − (3 − f(x))^2] dx ≈ 31.697937, which rounds to 31.698."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The vertical line x = k, where 0 < k < c and c is the positive x-coordinate where the graphs intersect, divides the solid in part (c) into two pieces of equal volume. Write an equation involving an integral that k satisfies, and find k.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes π ∫ from 0 to k of [(3 − g(x))^2 − (3 − f(x))^2] dx = (1/2)(31.698), or an equivalent equation such as equal integrals from 0 to k and from k to c."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer k = 1.142 (k ≈ 1.141503, so the truncated value 1.141 is also accepted). Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ],
+                  "answer": "k ≈ 1.142",
+                  "steps": [
+                    "The piece from x = 0 to x = k has volume π ∫ from 0 to k of [(3 − g(x))^2 − (3 − f(x))^2] dx.",
+                    "Set it equal to half the volume from part (c), about 15.849, and solve with the calculator: k ≈ 1.141503, which rounds to 1.142.",
+                    "Check: with k ≈ 1.141503, the integrals from 0 to k and from k to c each give about 15.849. The halfway point is left of the middle of 0 ≤ x ≤ 2.499 because the washers near the right end, where R narrows to the point of intersection, are thin."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-fr-area-volume-fr2",
+              "context": true,
+              "prompt": "A landscaper builds a garden berm, a long mound of soil, on level ground. Seen from above, the berm covers the region between the curves y = N(x) and y = S(x) for 0 ≤ x ≤ 12, shown in the figure, where N(x) = 1.5 sin(πx/12) and S(x) = −x(12 − x)^2/216. Here x and y are measured in meters. Each cross section of the berm perpendicular to the x-axis is a semicircle whose diameter is the segment from y = S(x) to y = N(x).",
+              "topics": [
+                "AB.8.8",
+                "AB.8.4",
+                "AB.5.5",
+                "AB.6.4",
+                "AB.4.5"
+              ],
+              "figureIds": [
+                "ab-fr-area-volume-f2"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the area of the ground covered by the berm.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes ∫ from 0 to 12 of (N(x) − S(x)) dx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 19.459 square meters. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ],
+                  "answer": "About 19.459 square meters",
+                  "steps": [
+                    "N(x) ≥ 0 ≥ S(x) on 0 ≤ x ≤ 12, so the width of the berm at x is w(x) = N(x) − S(x).",
+                    "Area = ∫ from 0 to 12 of (1.5 sin(πx/12) + x(12 − x)^2/216) dx ≈ 19.459156, which rounds to 19.459 m^2."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the volume of soil in the berm.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes (π/8) ∫ from 0 to 12 of (N(x) − S(x))^2 dx, or the equivalent (π/2) ∫ from 0 to 12 of ((N(x) − S(x))/2)^2 dx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 15.469 cubic meters. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ],
+                  "answer": "About 15.469 cubic meters",
+                  "steps": [
+                    "A semicircle on a diameter of length w has radius w/2 and area (1/2)π(w/2)^2 = (π/8)w^2.",
+                    "Volume = (π/8) ∫ from 0 to 12 of (N(x) − S(x))^2 dx ≈ 15.468876, which rounds to 15.469 m^3."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the greatest height of the berm above the ground. Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Identifies the height at x as the radius of the semicircle, h(x) = (N(x) − S(x))/2, and solves h′(x) = 0 (or N′(x) − S′(x) = 0) to get x ≈ 5.024."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 1.292 meters, justified: x ≈ 5.024 is the only critical point in 0 < x < 12, and h(0) = h(12) = 0 are smaller (Candidates Test), or h′ changes from positive to negative there. Earned only with the height function and its critical point from the previous row on the page."
+                    }
+                  ],
+                  "answer": "About 1.292 meters, at x ≈ 5.024",
+                  "steps": [
+                    "The highest point of a semicircular cross section is its radius above the ground, so the height at x is h(x) = (N(x) − S(x))/2.",
+                    "Solve h′(x) = 0 with the calculator: the only solution in 0 < x < 12 is x ≈ 5.024211. A graph of h′ shows it changes from positive to negative there.",
+                    "Candidates: h(0) = 0, h(5.024211) ≈ 1.291601, h(12) = 0. The greatest height is about 1.292 m."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "The landscaper builds the berm starting at x = 0 and working in the direction of increasing x. When the finished part of the berm runs from x = 0 to x = s, it contains V(s) cubic meters of soil. Write an expression for V(s) that involves an integral. The landscaper places soil at a constant rate of 2 cubic meters per hour. How fast is s increasing at the instant s = 3? Indicate units of measure.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "V(s) = (π/8) ∫ from 0 to s of (N(x) − S(x))^2 dx."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the Fundamental Theorem of Calculus and the chain rule: dV/dt = (π/8)(N(s) − S(s))^2 · ds/dt, with dV/dt = 2 and s = 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 1.066 meters per hour, with units. Earned only with the relation of the previous row, or an equivalent, on the page."
+                    }
+                  ],
+                  "answer": "V(s) = (π/8) ∫ from 0 to s of (N(x) − S(x))^2 dx; ds/dt ≈ 1.066 meters per hour.",
+                  "steps": [
+                    "The finished part is the solid of part (b) cut off at x = s: V(s) = (π/8) ∫ from 0 to s of (N(x) − S(x))^2 dx.",
+                    "By the Fundamental Theorem of Calculus, dV/ds = (π/8)(N(s) − S(s))^2, the area of the cross section at s. By the chain rule, dV/dt = (π/8)(N(s) − S(s))^2 · ds/dt.",
+                    "At s = 3: N(3) − S(3) = 1.5 sin(π/4) + 81/72 ≈ 2.185660, so the cross section has area (π/8)(2.185660)^2 ≈ 1.875967 m^2.",
+                    "2 = 1.875967 · ds/dt gives ds/dt ≈ 1.066117, which rounds to 1.066 m per hour."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show your work, justify requested conclusions, and give exact answers.",
+          "items": [
+            {
+              "id": "ab-fr-area-volume-fr3",
+              "prompt": "Let R be the region enclosed by the graphs of x = 4y − y^2 and x = y, shown in the figure.",
+              "topics": [
+                "AB.8.5",
+                "AB.8.7",
+                "AB.8.11",
+                "AB.8.12"
+              ],
+              "figureIds": [
+                "ab-fr-area-volume-f3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the area of R.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes ∫ from 0 to 3 of ((4y − y^2) − y) dy, with the intersections y = 0 and y = 3 found from 4y − y^2 = y. Accepts a correct setup with vertical slices, split at x = 3."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 9/2. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ],
+                  "answer": "9/2",
+                  "steps": [
+                    "The graphs meet where 4y − y^2 = y, so y^2 − 3y = 0 and y = 0 or y = 3.",
+                    "For 0 < y < 3 the parabola is to the right: at y = 1, 4 − 1 = 3 > 1.",
+                    "Area = ∫ from 0 to 3 of (3y − y^2) dy = [3y^2/2 − y^3/3] from 0 to 3 = 27/2 − 9 = 9/2."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Region R is the base of a solid. Each cross section of the solid perpendicular to the y-axis is a square. Find the volume of the solid.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes ∫ from 0 to 3 of (3y − y^2)^2 dy, with the side of each square equal to the horizontal width of R."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 81/10. Earned only with a supporting setup on the page (the integral or equation of the previous row, or an equivalent)."
+                    }
+                  ],
+                  "answer": "81/10",
+                  "steps": [
+                    "At height y, the square's side is the width (4y − y^2) − y = 3y − y^2.",
+                    "Volume = ∫ from 0 to 3 of (3y − y^2)^2 dy = ∫ from 0 to 3 of (9y^2 − 6y^3 + y^4) dy = [3y^3 − 3y^4/2 + y^5/5] from 0 to 3.",
+                    "= 81 − 243/2 + 243/5 = (810 − 1215 + 486)/10 = 81/10."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the volume of the solid generated when R is revolved about the y-axis.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Washers with horizontal slices: outer radius 4y − y^2 and inner radius y."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes π ∫ from 0 to 3 of [(4y − y^2)^2 − y^2] dy, with π, the limits and dy."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answer 108π/5. Earned only with the integral of the previous row, or an equivalent, on the page."
+                    }
+                  ],
+                  "answer": "108π/5",
+                  "steps": [
+                    "The axis is vertical, so slice horizontally. A slice at height y runs from x = y to x = 4y − y^2 and does not reach the y-axis (except at y = 0), so it sweeps a washer.",
+                    "Outer radius 4y − y^2, inner radius y: Volume = π ∫ from 0 to 3 of [(4y − y^2)^2 − y^2] dy = π ∫ from 0 to 3 of (15y^2 − 8y^3 + y^4) dy.",
+                    "= π[5y^3 − 2y^4 + y^5/5] from 0 to 3 = π(135 − 162 + 243/5) = 108π/5."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Write, but do not evaluate, an expression involving one or more integrals with respect to x for the volume of the solid generated when R is revolved about the horizontal line y = 3.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the lower boundary as y = 2 − √(4 − x) and measures the radii from y = 3: outer radius 1 + √(4 − x) throughout, inner radius 3 − x for 0 ≤ x ≤ 3 and 1 − √(4 − x) for 3 ≤ x ≤ 4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes the complete expression, split at x = 3: π ∫ from 0 to 3 of [(1 + √(4 − x))^2 − (3 − x)^2] dx + π ∫ from 3 to 4 of [(1 + √(4 − x))^2 − (1 − √(4 − x))^2] dx, or an equivalent expression in x (for example with the second integrand simplified to 4√(4 − x)). An expression that is also evaluated correctly loses nothing."
+                    }
+                  ],
+                  "answer": "π ∫ from 0 to 3 of [(1 + √(4 − x))^2 − (3 − x)^2] dx + π ∫ from 3 to 4 of [(1 + √(4 − x))^2 − (1 − √(4 − x))^2] dx",
+                  "steps": [
+                    "Solve the parabola for y: y^2 − 4y + x = 0 gives y = 2 ± √(4 − x). The lower half, y = 2 − √(4 − x), is the bottom of R for every x from 0 to 4.",
+                    "The top of a vertical slice changes: it is the line y = x for 0 ≤ x ≤ 3, but the upper half of the parabola, y = 2 + √(4 − x), for 3 ≤ x ≤ 4. Split at x = 3, the x-coordinate of (3, 3).",
+                    "The line y = 3 is at or above R, so each radius is 3 minus a height. Outer: 3 − (2 − √(4 − x)) = 1 + √(4 − x). Inner: 3 − x on the first piece and 3 − (2 + √(4 − x)) = 1 − √(4 − x) on the second.",
+                    "Write the two integrals with π, the differences of squares, their limits and dx, and stop. (Their total, not required, is 27π/2.)"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

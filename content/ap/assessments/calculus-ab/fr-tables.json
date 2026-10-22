@@ -1,0 +1,340 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-tables",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Functions given by tables",
+  "author": "ab-workshop-author",
+  "directions": "Three free-response questions at the exam's pace of 15 minutes each: Part A (one question, 15 minutes) requires a graphing calculator and Part B (two questions, 30 minutes) allows none. Write answers in the space under each part. Write every sum or difference quotient with the table values in it, show the integral or equation behind every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Justify a conclusion whenever a part asks for a reason. Afterward, score each part with the answer key's rubric and record raw points as practice.",
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Write the sum, integral, derivative or equation you use before its value, and give calculator answers to three decimal places. Justify conclusions when a part asks you to.",
+          "items": [
+            {
+              "id": "ab-fr-tables-fr1",
+              "prompt": "A wind turbine's electrical power output is P(t) kilowatts, where t is measured in hours after 6:00 a.m., for 0 ≤ t ≤ 12. The function P is differentiable. Selected values of P(t) are shown in the table.\n\n| t (hours) | 0 | 2 | 3 | 5 | 8 | 10 | 12 |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| P(t) (kilowatts) | 880 | 1240 | 1300 | 1190 | 1060 | 1010 | 980 |\n\nFor part (d), the power output is modeled by W(t) = 880 + 330t·e^(−t/3) kilowatts for 0 ≤ t ≤ 12.",
+              "context": true,
+              "topics": [
+                "AB.6.2",
+                "AB.2.3",
+                "AB.4.1",
+                "AB.5.1",
+                "AB.8.3"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the data in the table to estimate P′(4). Using correct units, interpret the meaning of your estimate in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Estimates P′(4) ≈ (P(5) − P(3))/(5 − 3) = −55, using the table values on either side of t = 4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets the estimate: at 10:00 a.m. (t = 4), the turbine's power output is decreasing at about 55 kilowatts per hour. The point needs the time, the direction and the units (kilowatts per hour)."
+                    }
+                  ],
+                  "answer": "P′(4) ≈ −55 kilowatts per hour. At 10:00 a.m., the power output is decreasing at about 55 kilowatts per hour.",
+                  "steps": [
+                    "The table values nearest t = 4 on either side are P(3) = 1300 and P(5) = 1190.",
+                    "P′(4) ≈ (1190 − 1300)/(5 − 3) = −110/2 = −55.",
+                    "P is in kilowatts and t in hours, so P′ is in kilowatts per hour. The negative sign means the output is falling at 10:00 a.m."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use a left Riemann sum with the six subintervals indicated by the table to approximate ∫ from 0 to 12 of P(t) dt. Using correct units, explain the meaning of ∫ from 0 to 12 of P(t) dt in the context of the problem.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the left sum with each subinterval's own width: 2(880) + 1(1240) + 2(1300) + 3(1190) + 2(1060) + 2(1010), or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 13310."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Explains that ∫ from 0 to 12 of P(t) dt is the total electrical energy, in kilowatt-hours, that the turbine produces from 6:00 a.m. to 6:00 p.m. (t = 0 to t = 12). The explanation needs the quantity, the units and the time interval."
+                    }
+                  ],
+                  "answer": "∫ from 0 to 12 of P(t) dt ≈ 13310. The integral is the total energy, in kilowatt-hours, that the turbine produces from 6:00 a.m. to 6:00 p.m.",
+                  "steps": [
+                    "The widths are 2, 1, 2, 3, 2 and 2 hours, and a left sum uses the value at the left end of each subinterval.",
+                    "2(880) + 1(1240) + 2(1300) + 3(1190) + 2(1060) + 2(1010) = 1760 + 1240 + 2600 + 3570 + 2120 + 2020 = 13310.",
+                    "Power in kilowatts times time in hours gives energy in kilowatt-hours, so the integral is the energy produced during the 12 hours."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Must there be a time t, for 3 < t < 8, at which P′(t) = −48 kilowatts per hour? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Computes the average rate of change (P(8) − P(3))/(8 − 3) = (1060 − 1300)/5 = −48."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers yes, citing the Mean Value Theorem with its hypotheses: P is differentiable, so it is continuous on [3, 8] and differentiable on (3, 8)."
+                    }
+                  ],
+                  "answer": "Yes. P is differentiable, hence continuous on [3, 8] and differentiable on (3, 8), and (P(8) − P(3))/(8 − 3) = −48. By the Mean Value Theorem, P′(t) = −48 for some t in (3, 8).",
+                  "steps": [
+                    "(P(8) − P(3))/(8 − 3) = (1060 − 1300)/5 = −240/5 = −48.",
+                    "Differentiability implies continuity, so both hypotheses of the Mean Value Theorem hold on [3, 8].",
+                    "The theorem gives some t with 3 < t < 8 and P′(t) = −48 kilowatts per hour."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Using the model W, find the time T, 0 < T < 12, by which the turbine has produced half of the energy it produces from t = 0 to t = 12. Show the setup that leads to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes ∫ from 0 to T of W(t) dt = (1/2)∫ from 0 to 12 of W(t) dt, with the total ∫ from 0 to 12 of W(t) dt ≈ 13258.013 shown or used, or an equivalent equation such as ∫ from 0 to T of W(t) dt = ∫ from T to 12 of W(t) dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains T ≈ 5.641 hours, or a value within 0.001."
+                    }
+                  ],
+                  "answer": "T ≈ 5.641 hours, about 11:38 a.m.",
+                  "steps": [
+                    "The energy produced by time T is ∫ from 0 to T of W(t) dt, which increases with T because W(t) > 0.",
+                    "The calculator gives ∫ from 0 to 12 of W(t) dt ≈ 13258.012763, so T solves ∫ from 0 to T of W(t) dt = 6629.006381.",
+                    "A solver gives T ≈ 5.640860, so T ≈ 5.641 hours after 6:00 a.m. The answer is not 6: W is largest at t = 3 (9:00 a.m.), and the turbine produces more energy from 6:00 a.m. to noon than from noon to 6:00 p.m., so half the energy is produced before noon."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 30,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show your work and give exact answers. Justify conclusions when a part asks you to; answers without supporting work may not earn credit.",
+          "items": [
+            {
+              "id": "ab-fr-tables-fr2",
+              "prompt": "The functions f and g are differentiable for all real numbers, and f′ and g′ are continuous. The function g is strictly increasing, and g^(−1) denotes its inverse function. The table gives selected values of f, f′, g and g′.\n\n| x | 0 | 1 | 2 | 3 | 4 |\n| --- | --- | --- | --- | --- | --- |\n| f(x) | 5 | 3 | 1 | 2 | 6 |\n| f′(x) | −1 | −3 | 0 | 3 | 5 |\n| g(x) | 1 | 2 | 4 | 8 | 13 |\n| g′(x) | 1/2 | 3/2 | 3 | 9/2 | 6 |",
+              "topics": [
+                "AB.3.1",
+                "AB.3.3",
+                "AB.4.6",
+                "AB.6.9",
+                "AB.6.4"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Let h be the function defined by h(x) = f(g(x)). Find h′(2).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Uses the chain rule: h′(2) = f′(g(2))·g′(2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains h′(2) = f′(4)·3 = 15. The values f′(2)·g′(2) = 0 or f′(g(2)) = 5 alone do not earn this point."
+                    }
+                  ],
+                  "answer": "h′(2) = 15",
+                  "steps": [
+                    "By the chain rule, h′(x) = f′(g(x))·g′(x).",
+                    "g(2) = 4, so h′(2) = f′(4)·g′(2) = 5·3 = 15."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Write an equation for the line tangent to the graph of y = g^(−1)(x) at x = 4. Use the tangent line to approximate g^(−1)(4.3).",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the point of tangency: g(2) = 4, so g^(−1)(4) = 2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds the slope (g^(−1))′(4) = 1/g′(2) = 1/3. The value 1/g′(4) = 1/6 does not earn this point."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Writes y = 2 + (1/3)(x − 4) and approximates g^(−1)(4.3) ≈ 2.1. Accepts a line and approximation consistent with an incorrect slope or point."
+                    }
+                  ],
+                  "answer": "y = 2 + (1/3)(x − 4); g^(−1)(4.3) ≈ 2.1.",
+                  "steps": [
+                    "From the table, g(2) = 4, so g^(−1)(4) = 2 and the point of tangency is (4, 2).",
+                    "The derivative of an inverse at x = 4 is the reciprocal of g′ at the matching input: (g^(−1))′(4) = 1/g′(g^(−1)(4)) = 1/g′(2) = 1/3.",
+                    "Tangent line: y = 2 + (1/3)(x − 4). At x = 4.3, y = 2 + (1/3)(0.3) = 2.1."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the value of ∫ from 0 to 2 of f′(g(x))·g′(x) dx. Show the work that leads to your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Finds the antiderivative f(g(x)), by substitution u = g(x) or by recognizing the chain rule, or rewrites the integral as ∫ from g(0) to g(2) of f′(u) du = ∫ from 1 to 4 of f′(u) du."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Evaluates f(g(2)) − f(g(0)) = f(4) − f(1) = 6 − 3 = 3."
+                    }
+                  ],
+                  "answer": "3",
+                  "steps": [
+                    "Let u = g(x), so du = g′(x) dx. When x = 0, u = g(0) = 1; when x = 2, u = g(2) = 4.",
+                    "∫ from 0 to 2 of f′(g(x))·g′(x) dx = ∫ from 1 to 4 of f′(u) du = f(4) − f(1), by the Fundamental Theorem of Calculus (f′ is continuous).",
+                    "f(4) − f(1) = 6 − 3 = 3."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Let w be the function defined by w(x) = ∫ from 1 to g(x) of f(t) dt. Find w(0) and w′(1).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Obtains w(0) = 0, because g(0) = 1 and the integral from 1 to 1 is 0."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses the Fundamental Theorem with the chain rule, w′(x) = f(g(x))·g′(x), and obtains w′(1) = f(2)·(3/2) = 3/2. The value f(g(1)) = 1, without the factor g′(1), does not earn this point."
+                    }
+                  ],
+                  "answer": "w(0) = 0 and w′(1) = 3/2.",
+                  "steps": [
+                    "w(0) = ∫ from 1 to g(0) of f(t) dt = ∫ from 1 to 1 of f(t) dt = 0.",
+                    "f is continuous, so by the Fundamental Theorem of Calculus and the chain rule, w′(x) = f(g(x))·g′(x).",
+                    "w′(1) = f(g(1))·g′(1) = f(2)·(3/2) = 1·(3/2) = 3/2."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-fr-tables-fr3",
+              "prompt": "A scuba diver's tank holds 2400 liters of air, measured at surface pressure, at the start of a dive. The diver uses air at the rate r(t) liters per minute, where t is measured in minutes after the dive begins, for 0 ≤ t ≤ 40. The function r is twice differentiable, and r″(t) > 0 for 0 ≤ t ≤ 40. Selected values of r(t) are shown in the table.\n\n| t (minutes) | 0 | 10 | 15 | 25 | 30 | 40 |\n| --- | --- | --- | --- | --- | --- | --- |\n| r(t) (liters per minute) | 18 | 20 | 22 | 28 | 32 | 44 |",
+              "context": true,
+              "topics": [
+                "AB.6.2",
+                "AB.2.3",
+                "AB.8.3",
+                "AB.5.6",
+                "AB.8.1",
+                "AB.1.16"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Use the data in the table to estimate r′(20). Using correct units, interpret the meaning of your estimate in the context of the problem.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Estimates r′(20) ≈ (r(25) − r(15))/(25 − 15) = 6/10 = 0.6."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Interprets: 20 minutes into the dive, the rate at which the diver uses air is increasing at about 0.6 liter per minute per minute. The point needs the time, the direction and the units."
+                    }
+                  ],
+                  "answer": "r′(20) ≈ 0.6 liter per minute per minute. Twenty minutes into the dive, the diver's rate of air use is increasing at about 0.6 liter per minute each minute.",
+                  "steps": [
+                    "The table values on either side of t = 20 are r(15) = 22 and r(25) = 28.",
+                    "r′(20) ≈ (28 − 22)/(25 − 15) = 0.6.",
+                    "r is in liters per minute and t is in minutes, so r′ is in liters per minute per minute."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Use a trapezoidal sum with the five subintervals indicated by the table to approximate ∫ from 0 to 40 of r(t) dt. Use your approximation to estimate the volume of air left in the tank at time t = 40 minutes.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes the trapezoidal sum with each subinterval's own width: 10(18 + 20)/2 + 5(20 + 22)/2 + 10(22 + 28)/2 + 5(28 + 32)/2 + 10(32 + 44)/2, or equivalent."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains 1075."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Estimates the air left as 2400 − ∫ from 0 to 40 of r(t) dt ≈ 2400 − 1075 = 1325 liters. Accepts a value consistent with an incorrect sum when the expression 2400 − (sum) is shown."
+                    }
+                  ],
+                  "answer": "∫ from 0 to 40 of r(t) dt ≈ 1075, so about 2400 − 1075 = 1325 liters of air are left at t = 40.",
+                  "steps": [
+                    "The widths are 10, 5, 10, 5 and 10 minutes.",
+                    "10(18 + 20)/2 + 5(20 + 22)/2 + 10(22 + 28)/2 + 5(28 + 32)/2 + 10(32 + 44)/2 = 190 + 105 + 250 + 150 + 380 = 1075.",
+                    "The integral is the air used, in liters, during the first 40 minutes. Air left = 2400 − ∫ from 0 to 40 of r(t) dt ≈ 1325 liters."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Is your estimate in part (b) of the volume of air left in the tank at t = 40 an overestimate or an underestimate? Give a reason for your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "States that the trapezoidal sum overestimates ∫ from 0 to 40 of r(t) dt because r″ > 0: the graph of r is concave up, so each trapezoid's top edge (a chord) lies above the graph."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes that 1325 liters is an underestimate of the air left, because a larger amount of air used is subtracted from 2400. A response that answers overestimate does not earn this point."
+                    }
+                  ],
+                  "answer": "An underestimate. Because r″ > 0, the trapezoidal sum overestimates the air used, so subtracting it from 2400 underestimates the air left.",
+                  "steps": [
+                    "r″(t) > 0, so the graph of r is concave up on [0, 40]. On each subinterval the chord joining the two table points lies above the graph, so each trapezoid has more area than the region under the graph.",
+                    "So 1075 > ∫ from 0 to 40 of r(t) dt: the sum overestimates the air used.",
+                    "Air left = 2400 − (air used). Subtracting too large a number gives too small a result, so 1325 liters underestimates the air left."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use your approximation from part (b) to estimate the average rate at which the diver uses air over 0 ≤ t ≤ 40. Must there be a time t, 0 < t < 40, at which r(t) equals this estimate? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Estimates the average rate as (1/40)∫ from 0 to 40 of r(t) dt ≈ 1075/40 = 26.875 liters per minute, with units. Accepts a value consistent with part (b)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Answers yes, citing the Intermediate Value Theorem: r is continuous (it is differentiable) and r(15) = 22 < 26.875 < 28 = r(25), or uses another pair of table values that bracket the estimate."
+                    }
+                  ],
+                  "answer": "About 26.875 liters per minute. Yes: r is continuous and r(15) = 22 < 26.875 < 28 = r(25), so by the Intermediate Value Theorem r(t) = 26.875 for some t in (15, 25).",
+                  "steps": [
+                    "Average rate = (1/(40 − 0))∫ from 0 to 40 of r(t) dt ≈ 1075/40 = 26.875 liters per minute. Divide by the length of the interval, 40, not by the number of subintervals.",
+                    "r is twice differentiable, so it is continuous on [15, 25].",
+                    "r(15) = 22 and r(25) = 28, and 22 < 26.875 < 28, so the Intermediate Value Theorem gives a time t in (15, 25) with r(t) = 26.875."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

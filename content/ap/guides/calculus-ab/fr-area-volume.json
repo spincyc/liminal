@@ -1,0 +1,373 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-area-volume",
+  "kind": "fr-archetype",
+  "title": "Area and volume",
+  "author": "ab-workshop-author",
+  "summary": "How to write a complete answer to a free-response question about regions and solids, an archetype that can appear on the AP® Calculus AB Exam: area between curves in x or in y, regions with several crossings, solids with known cross sections, discs and washers about the axes and other lines, integrals you set up but do not evaluate, and volumes that grow as a solid is built or filled. Every part rewards the same habit, a slice drawn, measured and summed, so this guide shows what earns each kind of point, gives sentences you can reuse, lists the errors that cost points with their repairs, and works one original region in full. Then take the three-question practice set at 15 minutes a question and score it with its rubrics.",
+  "minutes": 35,
+  "figures": [
+    {
+      "id": "ab-fr-area-volume-g1",
+      "alt": "The region under the parabola y = 3x − x^2 and above the x-axis, from x = 0 to x = 3, shaded, with a dashed vertical line at x = 4 to its right. A thick horizontal slice crosses the region at height 1.25. Above it, a double-headed arrow labeled R runs from the slice's left end to the dashed line; below it, a shorter double-headed arrow labeled r runs from the slice's right end to the dashed line.",
+      "caption": "Washers about x = 4: both radii are horizontal distances to the axis."
+    }
+  ],
+  "sections": [
+    {
+      "id": "what-it-asks",
+      "title": "What the question asks and where it appears",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "The stimulus is a region in the plane, given by two or three curves, by a graph, or by a real object such as a mound of soil, a container or a machine part. The parts then ask you to measure the region (area), to build solids from it (revolving it about a line, or standing cross sections of a known shape on it), and sometimes to reason about how a volume changes as the solid is built or filled."
+        },
+        {
+          "type": "text",
+          "text": "It can appear in either part of Section II. With a graphing calculator, the intersections usually need the calculator and the integrals are evaluated numerically, so the points sit in the setups and the three-decimal answers. Without a calculator, the curves are chosen so the antiderivatives come out exact, and a part may ask only for a setup. Expect it to combine with other archetypes: a volume written up to a variable endpoint turns into a related-rates or accumulation part, and a greatest width or height is an optimization part. Arc length and unbounded regions are BC topics and are not part of this course."
+        },
+        {
+          "type": "rule",
+          "title": "One method for every part",
+          "text": "Draw one typical slice, write its size at a general position (length for area, cross-section area for volume), then integrate across every position the slice takes.",
+          "conditions": [
+            "Slices for area and for known cross sections are perpendicular to the axis named in the question; for a solid of revolution they are perpendicular to the axis of rotation.",
+            "The variable of integration is the coordinate that labels the slices: vertical slices use dx, horizontal slices use dy.",
+            "If a boundary changes partway across, or the curves cross, the integrand changes there too: split the integral at that position."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usual-parts",
+      "title": "The usual parts",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "A typical nine-point version uses three or four of these. Points are Liminal's practice weights.",
+          "head": [
+            "Part",
+            "Typical task",
+            "Usual points",
+            "Where the points sit"
+          ],
+          "rows": [
+            [
+              "Area",
+              "Integral of top minus bottom, or right minus left, between intersections; several regions when the curves cross more than twice",
+              "2–3",
+              "The integral with its limits, each region counted positive; the value"
+            ],
+            [
+              "Solid of revolution",
+              "Discs or washers about an axis or a line y = k or x = k",
+              "2–3",
+              "Both radii measured from the axis; π and the difference of squares; the value"
+            ],
+            [
+              "Known cross sections",
+              "Squares, rectangles, semicircles or triangles standing on the region",
+              "2",
+              "The cross-section area written in terms of the slice length; the value"
+            ],
+            [
+              "Set up only",
+              "An integral expression, often in y, about a vertical line, or split where a boundary changes",
+              "2",
+              "Radii or integrand; limits, constant and variable"
+            ],
+            [
+              "Rate of change of a volume",
+              "dV/dt for a solid built or filled up to a moving position",
+              "2–3",
+              "V written as an integral up to the variable; the Fundamental Theorem and the chain rule; the value with units"
+            ],
+            [
+              "Greatest width or height",
+              "Optimize a slice length or a cross-section dimension",
+              "2",
+              "The function to optimize, its critical point, and a candidates or sign argument"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "earning-points",
+      "title": "What earns the points",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Liminal’s rubrics give separate points for the pieces of work below. They are Liminal’s practice weights, not a description of how the exam is scored; the habits they reward are the ones any reader of a written solution needs."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Setup points go to a complete integral: integrand, both limits, the variable, and every constant (π, 1/2, π/8, √3/4). A correct integrand with wrong limits usually loses the setup point. Liminal's rubrics read mathematical notation only; calculator syntax such as fnInt(…) is not a setup.",
+            "Answer points go to the value, to three decimal places in calculator work and exact without a calculator. An answer point needs its setup on the page: a bare number earns nothing, even when it is right.",
+            "Justification points name the function and the test: \"h′ changes from positive to negative at x = 5.024, its only critical point\" earns a point; \"the graph peaks there\" does not.",
+            "Units points ask for units on the number the question asks about: square units for area, cubic units for volume, length per time for the rate at which a position or depth changes.",
+            "Consistency: a later part that reuses an earlier result, usually an intersection, is scored against your earlier value. Write the value you are using (\"with c ≈ 2.499 from part (a)\") so a reader can follow it."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Area between curves",
+          "text": "Area = ∫ from a to b of (top − bottom) dx for vertical slices, or ∫ from c to d of (right − left) dy for horizontal slices. When the curves cross between the limits, the area is ∫ of |f − g|: split at each crossing and make every piece positive.",
+          "conditions": [
+            "Find which curve is on top (or on the right) on each piece by testing one point inside it.",
+            "A single integral of f − g across a crossing gives a net value, which can be 0 even when the regions have area."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Discs and washers",
+          "text": "Volume = π ∫ from a to b of [(R(x))^2 − (r(x))^2] dx, where R is the distance from the axis to the far edge of the slice and r is the distance to the near edge (r = 0 for a disc). For a vertical axis, slice horizontally and write R and r in terms of y.",
+          "conditions": [
+            "The axis does not pass through the interior of the region.",
+            "The slices are perpendicular to the axis of rotation.",
+            "Each radius is a distance: (curve) − k for an axis y = k below the region, k − (curve) for an axis above it; for an axis x = k, write each curve as x in terms of y and use (curve) − k for an axis to the left of the region, k − (curve) for an axis to its right."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Known cross sections",
+          "text": "Volume = ∫ from a to b of A(x) dx, where A(x) is the area of the cross section whose base is the slice of length s(x). Squares have area s^2; semicircles on a diameter s have area (π/8)s^2; equilateral triangles have area (√3/4)s^2; isosceles right triangles with a leg s have area s^2/2; rectangles of height k times the base have area ks^2.",
+          "conditions": [
+            "The cross sections are perpendicular to the axis that labels x (or y, with dy).",
+            "s is the length of the slice of the base region: top minus bottom for slices in x, right minus left for slices in y."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Rate of change of a volume",
+          "text": "If the cross section at position x has area A(x), the volume from a to s is V(s) = ∫ from a to s of A(x) dx, so dV/ds = A(s) and dV/dt = A(s) · ds/dt.",
+          "conditions": [
+            "A is continuous, so the Fundamental Theorem of Calculus applies.",
+            "For a container filled to depth h, A(h) is the area of the liquid's surface; for a solid of revolution about the y-axis, it is π(r(h))^2."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-wording",
+      "title": "Model wording",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Intersections found with the calculator (the region between y = ln(x + 2) and y = x^2 − 1).",
+          "text": "The curves meet at x = −1 and, from the calculator, at x = B ≈ 1.501 (stored). On −1 < x < B, ln(x + 2) > x^2 − 1. Area = ∫ from −1 to B of (ln(x + 2) − (x^2 − 1)) dx = 2.926."
+        },
+        {
+          "type": "model",
+          "prompt": "Washers about a line above the same region, y = 3.",
+          "text": "The line y = 3 lies above the region, so the lower curve is farther from it: R(x) = 3 − (x^2 − 1) = 4 − x^2 and r(x) = 3 − ln(x + 2). Volume = π ∫ from −1 to B of [(4 − x^2)^2 − (3 − ln(x + 2))^2] dx = 53.836."
+        },
+        {
+          "type": "model",
+          "prompt": "Two regions from curves that cross three times (f and g meet at x = −2, 0 and 2, with f above g on −2 < x < 0).",
+          "text": "Total area = ∫ from −2 to 0 of (f(x) − g(x)) dx + ∫ from 0 to 2 of (g(x) − f(x)) dx. Each integral is written top minus bottom for its own region, so both are positive."
+        },
+        {
+          "type": "model",
+          "prompt": "\"Set up but do not evaluate\" (the region between x = 4 − y^2 and the y-axis, revolved about the line x = 5).",
+          "text": "A horizontal slice runs from x = 0 to x = 4 − y^2, and the axis x = 5 is to its right, so R(y) = 5 − 0 = 5 and r(y) = 5 − (4 − y^2) = 1 + y^2. Volume = π ∫ from −2 to 2 of [5^2 − (1 + y^2)^2] dy. Stop there: the expression, with its constant, limits and dy, is the answer."
+        },
+        {
+          "type": "model",
+          "prompt": "Rate of change of a volume (a solid built along the x-axis whose cross section at x = 4 has area 2.5 square meters; volume added at 3 cubic meters per hour).",
+          "text": "Since V(s) = ∫ from 0 to s of A(x) dx, dV/dt = A(s) · ds/dt. At s = 4, 3 = 2.5 · ds/dt, so the finished end is advancing at 1.2 meters per hour."
+        },
+        {
+          "type": "model",
+          "prompt": "Greatest height of a solid whose cross sections are semicircles on a base of width w(x).",
+          "text": "The height at x is the radius, w(x)/2. Its only critical point in the open interval is where w′(x) = 0, and the candidates (that point and both endpoints) show the largest value is there."
+        }
+      ]
+    },
+    {
+      "id": "traps",
+      "title": "Traps",
+      "blocks": [
+        {
+          "type": "trap",
+          "text": "Writing π ∫ of (R − r)^2 for a washer. That is the volume of a disc whose radius is the washer's width, which is a different solid.",
+          "fix": "Square each radius separately: π ∫ of (R^2 − r^2). Check with one slice: at R = 3 and r = 1 the washer face has area 8π, not 4π."
+        },
+        {
+          "type": "trap",
+          "text": "Taking the top curve as the outer radius when the axis lies above the region. For an axis above, the bottom curve is the farther one.",
+          "fix": "Measure from the axis every time: R = distance to the far edge, r = distance to the near edge. Write each radius as a subtraction that is positive, such as 3 − g(x)."
+        },
+        {
+          "type": "trap",
+          "text": "Using f(x) as the radius for a rotation about y = k. A radius measured from the x-axis is right only when k = 0.",
+          "fix": "Radius = |f(x) − k|. About y = −2 the radius to y = f(x) is f(x) + 2. If a slice does not reach the axis, the solid has a hole: the inner radius is the distance from the axis to the near end of the slice, even when the region touches the x-axis."
+        },
+        {
+          "type": "trap",
+          "text": "Integrating in x for a rotation about a vertical line, or using one integral when a boundary changes partway across.",
+          "fix": "For discs and washers about x = k, slice horizontally: solve each boundary for x and integrate in y. Sketch a slice near each end of the region; if they end on different curves, split the integral where the boundary changes."
+        },
+        {
+          "type": "trap",
+          "text": "Finding the area of regions that cross as one integral of f − g, so the pieces cancel.",
+          "fix": "Find every intersection first, then integrate top minus bottom on each piece. A total of 0, or a negative area, is a signal that a crossing was missed."
+        },
+        {
+          "type": "trap",
+          "text": "Rounding an intersection to two or three decimals and then integrating with the rounded value, which can move the third decimal of the answer.",
+          "fix": "Store intersections in the calculator and write \"c ≈ 2.499 (stored)\". Rounding a limit does least harm when the integrand is zero there and most when it is not, as for a solid that ends at a vertical line; storing protects you either way."
+        },
+        {
+          "type": "trap",
+          "text": "Using the wrong area formula for a cross section, most often (π/2)s^2 for a semicircle on a diameter s, or s^2 for an equilateral triangle.",
+          "fix": "Write the shape's area in terms of its own dimension first, then substitute: a semicircle of radius s/2 has area (1/2)π(s/2)^2 = (π/8)s^2."
+        },
+        {
+          "type": "trap",
+          "text": "Treating a solid built or filled over time as a prism, V = A · s, when its cross section changes with position, or differentiating with the cross section held fixed.",
+          "fix": "Write V(s) = ∫ from a to s of A(x) dx. The Fundamental Theorem gives dV/ds = A(s), and only then does the chain rule bring in ds/dt."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving units off, or giving cubic meters for the rate at which a position changes.",
+          "fix": "Read the units from the question: area in square units, volume in cubic units, dV/dt in cubic units per time, ds/dt in length per time."
+        }
+      ]
+    },
+    {
+      "id": "worked-model",
+      "title": "Worked model",
+      "blocks": [
+        {
+          "type": "figure",
+          "id": "ab-fr-area-volume-g1"
+        },
+        {
+          "type": "example",
+          "prompt": "Without a calculator: let Q be the region bounded by the parabola y = 3x − x^2 and the x-axis. Find the volume of the solid generated when Q is revolved about the line y = −2.",
+          "answer": "261π/10",
+          "steps": [
+            "The parabola meets the x-axis at x = 0 and x = 3 and is above it between them.",
+            "The axis y = −2 lies below Q, and a vertical slice runs from the x-axis up to the parabola without reaching the axis, so it sweeps a washer. Outer radius: (3x − x^2) − (−2) = 3x − x^2 + 2. Inner radius: 0 − (−2) = 2.",
+            "R^2 − r^2 = (3x − x^2 + 2)^2 − 4 = (3x − x^2)^2 + 4(3x − x^2) = x^4 − 6x^3 + 5x^2 + 12x.",
+            "Volume = π ∫ from 0 to 3 of (x^4 − 6x^3 + 5x^2 + 12x) dx = π[x^5/5 − 3x^4/2 + 5x^3/3 + 6x^2] from 0 to 3 = π(243/5 − 243/2 + 45 + 54) = 261π/10.",
+            "Sense check: the solid sits inside a cylinder of radius 2 + 9/4 = 17/4 and length 3, of volume about 54π, and 26.1π is well under that."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "For the same region Q, find the volume of the solid generated when Q is revolved about the vertical line x = 4.",
+          "answer": "45π/2",
+          "steps": [
+            "The axis is vertical, so slice horizontally, as in the figure. Solve y = 3x − x^2 for x: x^2 − 3x + y = 0 gives x = (3 ± √(9 − 4y))/2. Q runs from y = 0 to the vertex height y = 9/4.",
+            "A slice at height y runs from x_L = (3 − √(9 − 4y))/2 to x_R = (3 + √(9 − 4y))/2. The axis x = 4 is to the right, so R = 4 − x_L and r = 4 − x_R.",
+            "R^2 − r^2 = (R − r)(R + r) = (x_R − x_L)(8 − x_L − x_R) = √(9 − 4y) · (8 − 3) = 5√(9 − 4y).",
+            "Volume = π ∫ from 0 to 9/4 of 5√(9 − 4y) dy = 5π[−(1/6)(9 − 4y)^(3/2)] from 0 to 9/4 = 5π(27/6) = 45π/2.",
+            "Factoring R^2 − r^2 as a product before expanding is what keeps this exact work short."
+          ],
+          "figureIds": [
+            "ab-fr-area-volume-g1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "title": "Check yourself",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open its solution."
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-area-volume-c1",
+          "prompt": "The base of a solid is the region bounded by y = 2 sin x and the x-axis for 0 ≤ x ≤ π. Each cross section perpendicular to the x-axis is a semicircle whose diameter lies in the base. Find the volume of the solid.",
+          "hint": "Write the area of one semicircle in terms of its diameter before you integrate.",
+          "answer": "π^2/4",
+          "steps": [
+            "On 0 ≤ x ≤ π, 2 sin x ≥ 0, so the diameter at x is s = 2 sin x.",
+            "A semicircle on diameter s has area (1/2)π(s/2)^2 = (π/8)s^2 = (π/8)(4 sin^2 x) = (π/2) sin^2 x.",
+            "Volume = (π/2) ∫ from 0 to π of sin^2 x dx = (π/2) ∫ from 0 to π of (1 − cos 2x)/2 dx = (π/2)[x/2 − sin(2x)/4] from 0 to π = (π/2)(π/2) = π^2/4."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-area-volume-c2",
+          "prompt": "Let R be the region in the first quadrant between y = x and y = x^3 for 0 ≤ x ≤ 1. Find the volume of the solid generated when R is revolved about the line y = 2.",
+          "hint": "Which curve is farther from the line y = 2 on 0 < x < 1?",
+          "answer": "17π/21",
+          "steps": [
+            "On 0 < x < 1, x^3 < x, and y = 2 is above both, so the lower curve y = x^3 is farther: outer radius 2 − x^3, inner radius 2 − x.",
+            "Volume = π ∫ from 0 to 1 of [(2 − x^3)^2 − (2 − x)^2] dx = π ∫ from 0 to 1 of (4x − x^2 − 4x^3 + x^6) dx.",
+            "= π(2 − 1/3 − 1 + 1/7) = 17π/21."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-fr-area-volume-c3",
+          "prompt": "Let R be the region enclosed by the graphs of y = 4/x and y = 5 − x. Find the volume of the solid generated when R is revolved about the x-axis.",
+          "hint": "Where do the curves meet, and which one is the outer radius?",
+          "answer": "9π",
+          "steps": [
+            "The curves meet where 4/x = 5 − x, so x^2 − 5x + 4 = 0 and x = 1 or x = 4.",
+            "On 1 < x < 4 the line is above the curve (at x = 2, 3 > 2), and both are above the x-axis, so a vertical slice sweeps a washer: outer radius 5 − x, inner radius 4/x.",
+            "Volume = π ∫ from 1 to 4 of [(5 − x)^2 − 16/x^2] dx = π[−(5 − x)^3/3 + 16/x] from 1 to 4.",
+            "= π[(−1/3 + 4) − (−64/3 + 16)] = π(11/3 + 16/3) = 9π."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "Practice and review",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Take the set under time, 15 minutes a question, then score it with the rubrics before you read the solutions. For each lost point, write which kind it was: setup, answer, justification, units or consistency."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Practice set: student copy",
+              "ref": "test:fr-area-volume"
+            },
+            {
+              "label": "Answer key and rubrics",
+              "ref": "key:fr-area-volume"
+            },
+            {
+              "label": "Unit 8 review: applications of integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Week 26: accumulation in context; area between curves",
+              "ref": "week:26"
+            },
+            {
+              "label": "Week 27: area with respect to y and several intersections",
+              "ref": "week:27"
+            },
+            {
+              "label": "Week 28: volumes by cross sections and discs",
+              "ref": "week:28"
+            },
+            {
+              "label": "Week 29: discs about other lines and washers",
+              "ref": "week:29"
+            },
+            {
+              "label": "Calculator skills for the calculator parts",
+              "ref": "guide:calculator-skills"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

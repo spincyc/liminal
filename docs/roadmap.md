@@ -1,5 +1,14 @@
 # Roadmap
 
+## Calculus AB exam preparation — 2026-10-22
+
+The Course for AP® Calculus AB gains the exam-preparation layer BC has, at
+`ap.html#calculus-ab/prep`: three more practice exams, six mixed sets, an
+eight-archetype free-response workshop, retrieval-first unit reviews, five
+strategy guides and spaced review plans. The
+[review record](reviews/2026-10-22-ab-exam-prep.md) gives the verification
+and its limits.
+
 ## Calculus BC exam preparation — 2026-10-22
 
 The Course for AP® Calculus BC gains an exam-preparation layer at
@@ -21,7 +30,7 @@ and its limits.
 Next:
 
 - Mirror the week 1–2 teaching fixes into Calculus AB, which shares that text.
-- Decide whether the other AP courses should get a `prep` block.
+- Give the physics courses their `prep` blocks (Calculus AB has one now).
 - Calibrate timing and difficulty against consented student results.
 
 ## SAT Math learning loop — 2026-10-16

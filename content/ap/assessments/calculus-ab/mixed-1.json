@@ -1,0 +1,354 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "mixed-1",
+  "kind": "mixed-set",
+  "title": "Mixed set 1: all units at exam pace",
+  "author": "ab-mixed-1-2-author",
+  "directions": "This original Liminal mixed set draws questions from across the AP® Calculus AB course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which idea or method applies: which limit procedure or derivative rule fits, whether a theorem's hypotheses hold, and whether an extreme value is local or absolute. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians, answers without a calculator are exact, and calculator answers are rounded to three decimal places. Record raw points, 1 per question and 15 in all; they are practice evidence, not AP® scores.",
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "ab-mixed-1-mc01",
+              "prompt": "A function g is defined on the closed interval [−1, 3], with g(−1) = 5 and g(3) = −1. Which additional fact, by itself, is enough to conclude that g(c) = 2 for some c in (−1, 3)?",
+              "choices": [
+                "g is differentiable on the open interval (−1, 3).",
+                "g is decreasing on [−1, 3].",
+                "g is continuous on [−1, 3].",
+                "The average rate of change of g on [−1, 3] is −3/2."
+              ],
+              "key": "C",
+              "rationale": "This is the Intermediate Value Theorem. If g is continuous on the closed interval [−1, 3], it takes every value between g(3) = −1 and g(−1) = 5 somewhere in the interval; 2 lies strictly between them, so g(c) = 2 for some c, and c is not an endpoint because g(−1) and g(3) are not 2.",
+              "distractorNotes": {
+                "A": "Differentiability on the open interval says nothing about the endpoints. For example, g(x) = 1.5 − (5/8)(x + 1) on (−1, 3] with g(−1) = 5 is differentiable on (−1, 3), yet its values there stay between −1 and 1.5 and never reach 2.",
+                "B": "A decreasing function can jump over a value. For example, g(x) = 4.5 − x/2 on [−1, 1) and g(x) = 2 − x on [1, 3] decreases from 5 to −1 but skips every value in (1, 4], including 2.",
+                "D": "This only restates the given values: (−1 − 5)/(3 − (−1)) = −3/2. An average rate of change carries no information about continuity, which the Intermediate Value Theorem needs."
+              },
+              "topics": [
+                "AB.1.16",
+                "AB.1.12"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc02",
+              "prompt": "The function f is differentiable for all x. Selected values of f and its derivative are shown.\n\n| x | 3 | 6 |\n| --- | --- | --- |\n| f(x) | 4 | −1 |\n| f′(x) | 5 | 2 |\n\nLet k(x) = x·f(2x). What is k′(3)?",
+              "choices": [
+                "4",
+                "11",
+                "5",
+                "34"
+              ],
+              "key": "B",
+              "rationale": "k is a product whose second factor is a composition, so it needs the product rule and then the chain rule: k′(x) = f(2x) + x·f′(2x)·2. At x = 3 the inner value is 2·3 = 6, so k′(3) = f(6) + 6f′(6) = −1 + 12 = 11.",
+              "distractorNotes": {
+                "A": "This multiplies the derivatives of the two factors, 1·(2f′(6)) = 4. The derivative of a product is not the product of the derivatives.",
+                "C": "This drops the chain-rule factor 2 from f(2x): f(6) + 3f′(6) = −1 + 6 = 5.",
+                "D": "This evaluates f and f′ at 3 instead of at the inner value 2x = 6: f(3) + 6f′(3) = 4 + 30 = 34."
+              },
+              "topics": [
+                "AB.3.5",
+                "AB.3.1",
+                "AB.2.8"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc03",
+              "prompt": "If y = x^2/(1 + cos x), what is the value of dy/dx at x = π/2?",
+              "choices": [
+                "−π − π^2/4",
+                "−π",
+                "π − π^2/4",
+                "π + π^2/4"
+              ],
+              "key": "D",
+              "rationale": "By the quotient rule, dy/dx = [2x(1 + cos x) − x^2(−sin x)]/(1 + cos x)^2 = [2x(1 + cos x) + x^2 sin x]/(1 + cos x)^2. At x = π/2, cos x = 0 and sin x = 1, so dy/dx = (π + π^2/4)/1 = π + π^2/4.",
+              "distractorNotes": {
+                "A": "This reverses the order of the numerator's terms, computing (uv′ − u′v)/v^2, which changes the sign of the answer.",
+                "B": "This divides the derivative of the numerator by the derivative of the denominator, 2x/(−sin x) = −π. That ratio is L'Hospital's step for a limit, not the derivative of a quotient.",
+                "C": "This uses +sin x as the derivative of 1 + cos x. The derivative of cos x is −sin x, so the second term of the numerator is +x^2 sin x."
+              },
+              "topics": [
+                "AB.2.9",
+                "AB.2.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc04",
+              "prompt": "The curve x^3 − 3xy + y^2 = 3 passes through the point (2, 1). What is dy/dx at this point?",
+              "choices": [
+                "−9/2",
+                "11/6",
+                "9/4",
+                "12"
+              ],
+              "key": "C",
+              "rationale": "Differentiate implicitly, using the product rule on 3xy and the chain rule on y^2: 3x^2 − 3y − 3x(dy/dx) + 2y(dy/dx) = 0. So dy/dx = (3y − 3x^2)/(2y − 3x). At (2, 1): (3 − 12)/(2 − 6) = −9/−4 = 9/4.",
+              "distractorNotes": {
+                "A": "This differentiates 3xy as 3y, treating x as a constant multiplier and missing the 3x(dy/dx) term: 3x^2 − 3y + 2y(dy/dx) = 0 gives (3 − 12)/2 = −9/2.",
+                "B": "This differentiates y^2 as 2y without the chain-rule factor dy/dx: 3x^2 − 3y − 3x(dy/dx) + 2y = 0 gives (12 − 1)/6 = 11/6.",
+                "D": "This differentiates 3xy as 3(dy/dx), multiplying the derivatives of x and y instead of using the product rule: 3x^2 − 3(dy/dx) + 2y(dy/dx) = 0 gives 12/(3 − 2) = 12."
+              },
+              "topics": [
+                "AB.3.2",
+                "AB.2.8"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc05",
+              "prompt": "Let f(x) = |x^2 − 1|. Which statement about the Mean Value Theorem for f on the interval [0, 3] is correct?",
+              "choices": [
+                "The theorem applies, and c = 7/6 satisfies its conclusion.",
+                "The theorem does not apply, yet c = 7/6 satisfies its conclusion.",
+                "The theorem does not apply, so no c in (0, 3) satisfies its conclusion.",
+                "The theorem applies, and c = 3/2 satisfies its conclusion."
+              ],
+              "key": "B",
+              "rationale": "f is continuous on [0, 3] but has a corner at x = 1, where the one-sided derivatives are −2 and 2, so f is not differentiable on (0, 3) and the theorem does not apply. Its conclusion can still hold: the secant slope is (f(3) − f(0))/3 = (8 − 1)/3 = 7/3, and on (1, 3) f′(x) = 2x = 7/3 at x = 7/6, which lies in (1, 3).",
+              "distractorNotes": {
+                "A": "The value of c is right, but the hypotheses fail: f is not differentiable at x = 1, inside the interval.",
+                "C": "Failing a hypothesis means the theorem gives no promise either way; it does not mean the conclusion is false. Here f′(7/6) = 7/3 anyway.",
+                "D": "The midpoint of the interval is not, in general, the value the theorem provides, and the theorem does not apply here. f′(3/2) = 3, not 7/3."
+              },
+              "topics": [
+                "AB.5.1",
+                "AB.2.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc06",
+              "prompt": "At what value of x does f(x) = x^3 − 3x^2 − 24x attain its absolute maximum on the closed interval [−3, 8]?",
+              "choices": [
+                "x = 8",
+                "x = −2",
+                "x = 4",
+                "x = 1"
+              ],
+              "key": "A",
+              "rationale": "f′(x) = 3x^2 − 6x − 24 = 3(x − 4)(x + 2), so the critical points are x = −2 and x = 4. The candidates test compares f(−3) = 18, f(−2) = 28, f(4) = −80, and f(8) = 128. The absolute maximum, 128, occurs at the endpoint x = 8.",
+              "distractorNotes": {
+                "B": "f′ changes from positive to negative at x = −2, so f has a relative maximum there, but f(−2) = 28 is less than f(8) = 128. The first derivative test finds relative extrema; the absolute maximum needs the endpoints too.",
+                "C": "f′ changes from negative to positive at x = 4, so f(4) = −80 is the absolute minimum, not the maximum.",
+                "D": "This is where f″(x) = 6x − 6 = 0, a point of inflection, not an extremum."
+              },
+              "topics": [
+                "AB.5.5",
+                "AB.5.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc07",
+              "prompt": "Let g(x) = ∫ from 0 to x of (t − 2)(t − 5) dt. What is the absolute maximum value of g on the closed interval [0, 7]?",
+              "choices": [
+                "25/6",
+                "26/3",
+                "10",
+                "77/6"
+              ],
+              "key": "D",
+              "rationale": "By the Fundamental Theorem of Calculus, g′(x) = (x − 2)(x − 5), so the critical points are 2 and 5. Since g(x) = x^3/3 − 7x^2/2 + 10x, the candidates are g(0) = 0, g(2) = 26/3, g(5) = 25/6, and g(7) = 343/3 − 343/2 + 70 = 77/6. The largest is 77/6, at the endpoint x = 7.",
+              "distractorNotes": {
+                "A": "This is g(5), where g′ changes from negative to positive: a relative minimum, not a maximum.",
+                "B": "This is g(2), the relative maximum found by the first derivative test. The endpoint value g(7) = 77/6 is larger.",
+                "C": "This is g′(7) = 5·2 = 10, the rate of change of g at the endpoint, not the value of g."
+              },
+              "topics": [
+                "AB.6.4",
+                "AB.5.5"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc08",
+              "prompt": "Which function is a solution of the differential equation dy/dx = y + e^x?",
+              "choices": [
+                "y = x e^x",
+                "y = e^(x + e^x)",
+                "y = e^x/(1 − x)",
+                "y = 2e^x"
+              ],
+              "key": "A",
+              "rationale": "Verify by substitution. For y = x e^x the product rule gives dy/dx = e^x + x e^x, and y + e^x = x e^x + e^x. The two sides agree for every x.",
+              "distractorNotes": {
+                "B": "This treats the equation as separable, dy/y = (1 + e^x) dx, which it is not: y + e^x is not a product of a function of x and a function of y. Its derivative is (1 + e^x)y = y + y e^x, not y + e^x.",
+                "C": "This integrates both sides while holding y constant, y = xy + e^x, then solves for y. Substituting back, dy/dx = e^x(2 − x)/(1 − x)^2, but y + e^x = e^x(2 − x)/(1 − x).",
+                "D": "This guesses a constant multiple of e^x. Then dy/dx = 2e^x while y + e^x = 3e^x; no multiple k e^x works, because k e^x = k e^x + e^x is impossible."
+              },
+              "topics": [
+                "AB.7.2",
+                "AB.2.8"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc09",
+              "prompt": "What is lim as x→0 of (cos(2x) − 1)/(x sin x)?",
+              "choices": [
+                "−2",
+                "−1/2",
+                "0",
+                "The limit does not exist."
+              ],
+              "key": "A",
+              "rationale": "The form is 0/0, so L'Hospital's rule applies: the limit equals lim of −2sin(2x)/(sin x + x cos x), using the product rule in the denominator. That is still 0/0, so apply the rule again: lim of −4cos(2x)/(2cos x − x sin x) = −4/2 = −2.",
+              "distractorNotes": {
+                "B": "This drops the chain-rule factor 2 each time cos(2x) and sin(2x) are differentiated: −sin(2x)/(sin x + x cos x), then −cos(2x)/(2cos x − x sin x) → −1/2.",
+                "C": "This differentiates x sin x as cos x, multiplying the factors' derivatives. Then −2sin(2x)/cos x → 0/1 = 0, which looks final but comes from the wrong denominator.",
+                "D": "After one application the quotient is again 0/0. That form is indeterminate, not a sign that the limit fails to exist; check the conditions again and apply the rule a second time."
+              },
+              "topics": [
+                "AB.4.7",
+                "AB.2.8",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc10",
+              "prompt": "Let f(x) = x^2 for x ≤ 2 and f(x) = 4x − 3 for x > 2. Which statement is true?",
+              "choices": [
+                "f is continuous and differentiable at x = 2.",
+                "f is continuous but not differentiable at x = 2.",
+                "f is differentiable but not continuous at x = 2.",
+                "f is neither continuous nor differentiable at x = 2."
+              ],
+              "key": "D",
+              "rationale": "Check continuity first. lim as x→2⁻ of f(x) = 4 = f(2), but lim as x→2⁺ of f(x) = 4·2 − 3 = 5, so f has a jump at x = 2 and is not continuous there. A function that is not continuous at a point is not differentiable there.",
+              "distractorNotes": {
+                "A": "The two formulas have the same derivative at x = 2 (2x = 4 and 4), but matching derivative formulas does not make f differentiable when the pieces do not meet. The right-hand difference quotient (f(2 + h) − f(2))/h = (4h + 1)/h is unbounded as h→0⁺.",
+                "B": "The one-sided limits are 4 and 5, so f is not continuous at 2.",
+                "C": "Differentiability at a point implies continuity there, so no function is differentiable but not continuous at a point."
+              },
+              "topics": [
+                "AB.2.4",
+                "AB.1.11"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "id": "ab-mixed-1-mc11",
+              "prompt": "Let f(x) = ln(2 + x^3). For what value of c in the interval (0, 2) does f(c) equal the average value of f on [0, 2]?",
+              "choices": [
+                "0.831",
+                "1.000",
+                "1.138",
+                "1.245"
+              ],
+              "key": "C",
+              "rationale": "The average value is (1/2)∫ from 0 to 2 of ln(2 + x^3) dx = 1.245361. Because f is continuous, it takes this value somewhere in the interval; f is increasing on [0, 2], so solving ln(2 + c^3) = 1.245361 gives the single value c = 1.138111 ≈ 1.138.",
+              "distractorNotes": {
+                "A": "This applies the Mean Value Theorem for derivatives instead: it solves f′(c) = 3c^2/(2 + c^3) = (f(2) − f(0))/2, the c where the tangent slope equals the secant slope. The question asks where f equals its average value.",
+                "B": "This is the midpoint of the interval. f(1) = ln 3 ≈ 1.099, which is not the average value.",
+                "D": "This is the average value of f itself, not the input c at which f attains it."
+              },
+              "topics": [
+                "AB.8.1",
+                "AB.6.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc12",
+              "prompt": "What is the absolute maximum value of f(x) = e^(x/2) + 4sin x on the closed interval [0, 5]?",
+              "choices": [
+                "6.371",
+                "8.347",
+                "5.000",
+                "1.900"
+              ],
+              "key": "B",
+              "rationale": "Solve f′(x) = (1/2)e^(x/2) + 4cos x = 0 on the calculator: x = 1.899903 and x = 3.755557. The candidates test gives f(0) = 1, f(1.899903) = 6.370910, f(3.755557) = 4.234513, and f(5) = e^2.5 + 4sin 5 = 8.346797. The absolute maximum is 8.347, at the endpoint x = 5.",
+              "distractorNotes": {
+                "A": "This is the relative maximum, where f′ changes from positive to negative. It is not the largest value on the interval, because the endpoint x = 5 gives more.",
+                "C": "This is the location x = 5 of the absolute maximum, not the maximum value f(5).",
+                "D": "This is the location of the relative maximum, x ≈ 1.900, not a value of f."
+              },
+              "topics": [
+                "AB.5.5",
+                "AB.5.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc13",
+              "prompt": "The temperature in a greenhouse, in degrees Celsius, is modeled by G(t) = 20 + 8sin(t/2)e^(−t/8), where t is measured in hours and 0 ≤ t ≤ 12. At what time is the temperature decreasing most rapidly?",
+              "choices": [
+                "t = 0",
+                "t = 5.303",
+                "t = 2.652",
+                "t = 8.935"
+              ],
+              "key": "B",
+              "rationale": "The temperature decreases most rapidly where G′(t) is least, so the task is to minimize G′ on [0, 12], not G. Graph G′(t) = e^(−t/8)(4cos(t/2) − sin(t/2)) (product and chain rules) on the calculator: its least value on [0, 12] is G′(5.303271) = −2.061, an interior minimum, while G′(0) = 4 and G′(12) = 0.919. So t ≈ 5.303.",
+              "distractorNotes": {
+                "A": "G′(0) = 4 is the greatest value of G′, so at t = 0 the temperature is increasing most rapidly, not decreasing.",
+                "C": "This is where G′(t) = 0 and G has its maximum. The temperature is momentarily not changing there.",
+                "D": "This is where G′(t) = 0 again and G has its minimum: the temperature is lowest there, but it has stopped decreasing."
+              },
+              "topics": [
+                "AB.4.3",
+                "AB.5.5",
+                "AB.4.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc14",
+              "prompt": "Let f(x) = x + ln(1 + x^2), and let g be the inverse function of f. What is the value of g′(4)?",
+              "choices": [
+                "0.572",
+                "0.680",
+                "1.749",
+                "2.220"
+              ],
+              "key": "A",
+              "rationale": "g′(4) = 1/f′(g(4)). Solve f(x) = 4 on the calculator: g(4) = 2.220140. Since f′(x) = 1 + 2x/(1 + x^2), f′(2.220140) = 1.748906, so g′(4) = 1/1.748906 = 0.571786 ≈ 0.572.",
+              "distractorNotes": {
+                "B": "This evaluates f′ at 4 instead of at g(4): 1/f′(4) = 1/(1 + 8/17) = 0.680. The input 4 is an output of f.",
+                "C": "This is f′(g(4)) without taking the reciprocal. The derivative of the inverse is 1/f′(g(4)).",
+                "D": "This is g(4), the value of the inverse function, not its derivative."
+              },
+              "topics": [
+                "AB.3.3",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-1-mc15",
+              "prompt": "Let y = f(x) be the solution of the differential equation dy/dx = x/(y^2 + 1) with the initial condition f(0) = 1. What is f(2)?",
+              "choices": [
+                "1.000",
+                "1.288",
+                "1.699",
+                "2.000"
+              ],
+              "key": "C",
+              "rationale": "Separate the variables: (y^2 + 1) dy = x dx, so y^3/3 + y = x^2/2 + C. The initial condition gives 1/3 + 1 = C, so C = 4/3. At x = 2, y^3/3 + y = 2 + 4/3 = 10/3. The left side is increasing in y, so this implicit equation has one solution; the calculator gives y = 1.698885 ≈ 1.699.",
+              "distractorNotes": {
+                "A": "This uses the tangent line at (0, 1), whose slope is 0/(1 + 1) = 0, as if it were the solution over the whole interval [0, 2].",
+                "B": "This omits the constant of integration: y^3/3 + y = x^2/2 gives y^3/3 + y = 2 and y = 1.288, which does not satisfy f(0) = 1.",
+                "D": "This holds y at its initial value 1 on the right side, integrating dy/dx = x/2 to get y = 1 + x^2/4. But y changes as x changes, so the equation must be separated."
+              },
+              "topics": [
+                "AB.7.7",
+                "AB.7.6",
+                "AB.3.2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

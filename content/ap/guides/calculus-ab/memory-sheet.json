@@ -1,0 +1,1086 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "memory-sheet",
+  "kind": "strategy",
+  "title": "What to know without a formula sheet",
+  "author": "ab-strategy-author",
+  "summary": "A recall drill for the AP® Calculus AB Exam: standard limits and continuity, derivative rules and the derivatives of the basic functions, linearization and motion, antiderivatives and the techniques AB uses, unit-circle values and identities, theorems with their hypotheses, the justifications to have ready, Riemann and trapezoidal sums, area and volume formulas, and differential-equation facts, in tables you quiz yourself on by covering a column, with ten mixed recall checks.",
+  "minutes": 40,
+  "sections": [
+    {
+      "id": "how-to-use",
+      "title": "How to use this sheet",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Every table below is a recall drill. The first column is the cue. Cover the column to its right (or every column to its right, when the caption says so), say or write the answer, then uncover it and check. Reading the tables through is the weakest way to use them: the act of remembering is what makes a fact stay."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Take one group at a time. Cover the answer column and answer every row aloud or on paper before you look.",
+            "Put a small mark beside each row you missed or hesitated on.",
+            "Go through the marked rows again in a different order until each has come back right once.",
+            "Return to the group two or three days later and start with the marked rows. A row that comes back right on three separate days can rest until after your next practice exam.",
+            "When a group is solid, do the mixed checks at the end. They ask you to choose the fact as well as recall it."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "Why it matters: on the AP® Calculus AB Exam, Section I Part A (29 multiple-choice questions in 62 minutes) and Section II Part B (4 free-response questions in 60 minutes) allow no calculator, and College Board's student page weights them at 35% and 33.3% of the exam score (College Board's exam pages, checked 2026-10-22). Liminal's practice exams are taken without a formula sheet; those pages do not mention one, so check the current exam page before you sit the exam. In the calculator parts the calculator evaluates an integral, but you still write the setup, and in Liminal's practice rubrics the setup earns its own point."
+        },
+        {
+          "type": "text",
+          "text": "When this method fails: recalling a formula is not the same as choosing it in a new problem. A row you can recite may still be the wrong tool for the question in front of you. Recall is the floor; the mixed sets and practice exams are where you practise choosing."
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "title": "Limits and continuity",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Standard limits, with x in radians. Cover the right-hand column.",
+          "head": [
+            "Limit",
+            "Value"
+          ],
+          "rows": [
+            [
+              "lim as x→0 of (sin x)/x",
+              "1"
+            ],
+            [
+              "lim as x→0 of (sin(kx))/x, for a constant k",
+              "k"
+            ],
+            [
+              "lim as x→0 of (1 − cos x)/x",
+              "0"
+            ],
+            [
+              "lim as x→0 of (e^x − 1)/x",
+              "1 (it is the derivative of e^x at 0)"
+            ],
+            [
+              "lim as x→∞ of x^n/e^x, for a positive integer n",
+              "0: exponentials outgrow powers"
+            ],
+            [
+              "lim as x→∞ of (ln x)/x",
+              "0: powers outgrow logarithms"
+            ],
+            [
+              "lim as x→∞ of p(x)/q(x), for polynomials p and q",
+              "0 if deg p < deg q; the ratio of the leading coefficients if deg p = deg q; unbounded (→ ∞ or −∞) if deg p > deg q"
+            ],
+            [
+              "lim as x→∞ of e^(−x), and lim as x→0⁺ of ln x",
+              "0, and −∞"
+            ],
+            [
+              "lim as h→0 of (f(a + h) − f(a))/h, and lim as x→a of (f(x) − f(a))/(x − a)",
+              "f′(a), when the limit exists. Read any limit of this shape as a derivative."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Continuity, discontinuities and asymptotes. Cover the right-hand column.",
+          "head": [
+            "Cue",
+            "What to recall"
+          ],
+          "rows": [
+            [
+              "f is continuous at x = a",
+              "Three conditions: f(a) is defined, lim as x→a of f(x) exists, and lim as x→a of f(x) = f(a)"
+            ],
+            [
+              "lim as x→a of f(x) exists",
+              "Both one-sided limits exist and are equal"
+            ],
+            [
+              "Removable discontinuity",
+              "The limit exists but f(a) is undefined or differs from it: a hole. Redefining f(a) as the limit removes it."
+            ],
+            [
+              "Jump discontinuity",
+              "Both one-sided limits exist but are different"
+            ],
+            [
+              "Infinite discontinuity",
+              "At least one one-sided limit is ∞ or −∞; the graph has a vertical asymptote there"
+            ],
+            [
+              "Vertical asymptote x = a",
+              "lim as x→a⁺ or lim as x→a⁻ of f(x) is ∞ or −∞. For a rational function, a zero of the denominator that is not cancelled by the numerator."
+            ],
+            [
+              "Horizontal asymptote y = L",
+              "lim as x→∞ or lim as x→−∞ of f(x) = L. Check both directions; they can differ."
+            ],
+            [
+              "Where polynomials, rational, trigonometric, exponential and logarithmic functions are continuous",
+              "At every point of their domains"
+            ]
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "L'Hospital's Rule",
+          "text": "When the conditions hold, lim as x→a of f(x)/g(x) = lim as x→a of f′(x)/g′(x). It also works for one-sided limits and for a = ∞ or a = −∞.",
+          "conditions": [
+            "The limit has the form 0/0 or ±∞/±∞. Substitute first and write the form down before you differentiate.",
+            "f and g are differentiable near a, and g′(x) ≠ 0 near a (a itself may be left out).",
+            "lim as x→a of f′(x)/g′(x) exists or is ±∞. If it does not exist, the rule says nothing; try another method."
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Using L'Hospital's Rule on a limit that is not indeterminate. For lim as x→0 of (2 + sin x)/(x + 4), substituting gives 2/4 = 1/2, but differentiating the top and bottom gives cos 0/1 = 1, which is wrong.",
+          "fix": "Substitute first. Use the rule only after writing 0/0 or ±∞/±∞, and differentiate the numerator and the denominator separately, never with the quotient rule."
+        }
+      ]
+    },
+    {
+      "id": "derivatives",
+      "title": "Derivatives",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Rules. Cover the right-hand column.",
+          "head": [
+            "Derivative of",
+            "Rule"
+          ],
+          "rows": [
+            [
+              "x^n, for a real constant n",
+              "n·x^(n−1), wherever x^(n−1) is defined"
+            ],
+            [
+              "c·f(x), and f(x) ± g(x)",
+              "c·f′(x), and f′(x) ± g′(x)"
+            ],
+            [
+              "f(x)·g(x) (product rule)",
+              "f′(x)g(x) + f(x)g′(x)"
+            ],
+            [
+              "f(x)/g(x) (quotient rule), where g(x) ≠ 0",
+              "(f′(x)g(x) − f(x)g′(x))/(g(x))^2"
+            ],
+            [
+              "f(g(x)) (chain rule)",
+              "f′(g(x))·g′(x)"
+            ],
+            [
+              "f^(−1)(x), for a one-to-one differentiable f",
+              "1/f′(f^(−1)(x)), wherever f′(f^(−1)(x)) ≠ 0"
+            ],
+            [
+              "y^n, where y is a function of x (implicit differentiation)",
+              "n·y^(n−1)·dy/dx"
+            ],
+            [
+              "x·y, where y is a function of x",
+              "y + x·dy/dx (the product rule, with dy/dx for the derivative of y)"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Basic functions. Cover the right-hand column.",
+          "head": [
+            "Derivative of",
+            "Result"
+          ],
+          "rows": [
+            [
+              "sin x",
+              "cos x"
+            ],
+            [
+              "cos x",
+              "−sin x"
+            ],
+            [
+              "tan x",
+              "sec^2 x"
+            ],
+            [
+              "cot x",
+              "−csc^2 x"
+            ],
+            [
+              "sec x",
+              "sec x tan x"
+            ],
+            [
+              "csc x",
+              "−csc x cot x"
+            ],
+            [
+              "arcsin x",
+              "1/√(1 − x^2), for −1 < x < 1"
+            ],
+            [
+              "arccos x",
+              "−1/√(1 − x^2), for −1 < x < 1"
+            ],
+            [
+              "arctan x",
+              "1/(1 + x^2), for every x"
+            ],
+            [
+              "e^x",
+              "e^x"
+            ],
+            [
+              "a^x, for a constant a > 0",
+              "a^x·ln a"
+            ],
+            [
+              "ln x (for x > 0) and ln|x| (for x ≠ 0)",
+              "1/x"
+            ],
+            [
+              "e^(g(x))",
+              "e^(g(x))·g′(x)"
+            ],
+            [
+              "ln|g(x)|",
+              "g′(x)/g(x), where g(x) ≠ 0"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Local linearity, rates and motion. Cover the right-hand column.",
+          "head": [
+            "Cue",
+            "What to recall"
+          ],
+          "rows": [
+            [
+              "Tangent line to y = f(x) at x = a",
+              "y = f(a) + f′(a)(x − a)"
+            ],
+            [
+              "Linear approximation of f(x) near a",
+              "f(x) ≈ f(a) + f′(a)(x − a). The estimate is too low where the graph is concave up between a and x, too high where it is concave down."
+            ],
+            [
+              "Estimating f′(c) from a table",
+              "The difference quotient (f(b) − f(a))/(b − a) over the closest inputs a < c < b, in output units per input unit"
+            ],
+            [
+              "Average rate of change versus instantaneous rate",
+              "(f(b) − f(a))/(b − a) over an interval; f′(c) at one input"
+            ],
+            [
+              "Velocity, speed and acceleration from position x(t)",
+              "v(t) = x′(t), speed = |v(t)|, a(t) = v′(t) = x″(t)"
+            ],
+            [
+              "Speeding up or slowing down",
+              "Speeding up when v and a have the same sign; slowing down when the signs differ"
+            ],
+            [
+              "Related rates, in order",
+              "Name the variables and the rates given and wanted; write an equation relating the variables that holds at every moment; differentiate with respect to t; substitute the values at the moment asked about only after differentiating"
+            ],
+            [
+              "Second derivative of an implicit relation",
+              "Differentiate dy/dx with respect to x, then substitute the expression for dy/dx wherever it appears"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Dropping the inner derivative: writing the derivative of cos(4x^3) as −sin(4x^3).",
+          "fix": "Name the inside function before you differentiate, then multiply by its derivative: −sin(4x^3)·12x^2."
+        },
+        {
+          "type": "trap",
+          "text": "Writing (f^(−1))′(b) = 1/f′(b).",
+          "fix": "Evaluate f′ at the input a with f(a) = b: (f^(−1))′(b) = 1/f′(a). Find a from a table or by solving f(a) = b."
+        },
+        {
+          "type": "trap",
+          "text": "In a related-rates problem, substituting a changing value, such as the radius at the moment asked about, before differentiating.",
+          "fix": "Differentiate the general relation first. A quantity that changes with time must stay a variable until after you differentiate; only constants may be substituted earlier."
+        }
+      ]
+    },
+    {
+      "id": "integrals",
+      "title": "Antiderivatives and techniques",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Each row reverses a derivative above, so you can test a row you doubt by differentiating its right-hand side. That test confirms the antiderivative but not its conditions, such as n ≠ −1, so learn those with the row."
+        },
+        {
+          "type": "table",
+          "caption": "Antiderivatives. Cover the right-hand column.",
+          "head": [
+            "Integral",
+            "Antiderivative"
+          ],
+          "rows": [
+            [
+              "∫ x^n dx, for n ≠ −1",
+              "x^(n+1)/(n + 1) + C"
+            ],
+            [
+              "∫ 1/x dx",
+              "ln|x| + C"
+            ],
+            [
+              "∫ e^x dx",
+              "e^x + C"
+            ],
+            [
+              "∫ e^(kx) dx, for a constant k ≠ 0",
+              "(1/k)e^(kx) + C"
+            ],
+            [
+              "∫ a^x dx, for a > 0, a ≠ 1",
+              "a^x/ln a + C"
+            ],
+            [
+              "∫ sin x dx",
+              "−cos x + C"
+            ],
+            [
+              "∫ cos x dx",
+              "sin x + C"
+            ],
+            [
+              "∫ sec^2 x dx",
+              "tan x + C"
+            ],
+            [
+              "∫ csc^2 x dx",
+              "−cot x + C"
+            ],
+            [
+              "∫ sec x tan x dx",
+              "sec x + C"
+            ],
+            [
+              "∫ csc x cot x dx",
+              "−csc x + C"
+            ],
+            [
+              "∫ 1/(1 + x^2) dx",
+              "arctan x + C"
+            ],
+            [
+              "∫ 1/(a^2 + x^2) dx, for a > 0",
+              "(1/a)arctan(x/a) + C"
+            ],
+            [
+              "∫ 1/√(1 − x^2) dx",
+              "arcsin x + C"
+            ],
+            [
+              "∫ 1/√(a^2 − x^2) dx, for a > 0",
+              "arcsin(x/a) + C"
+            ],
+            [
+              "∫ g′(x)/g(x) dx",
+              "ln|g(x)| + C"
+            ],
+            [
+              "∫ tan x dx",
+              "−ln|cos x| + C, by substitution with u = cos x"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Techniques in AB. Cover the right-hand column.",
+          "head": [
+            "Technique",
+            "How it goes"
+          ],
+          "rows": [
+            [
+              "Substitution",
+              "With u = g(x) and du = g′(x) dx, ∫ f(g(x))g′(x) dx = ∫ f(u) du. Look for a factor that is, up to a constant, the derivative of an inside function."
+            ],
+            [
+              "Substitution in a definite integral",
+              "Change the limits to u = g(a) and u = g(b), or return to x before using the original limits. Never mix u with x-limits."
+            ],
+            [
+              "Numerator degree ≥ denominator degree",
+              "Divide first (long division), then integrate the polynomial part and the remainder over the divisor separately."
+            ],
+            [
+              "Quadratic denominator with no real roots",
+              "Complete the square, x^2 + bx + c = (x + b/2)^2 + k with k > 0, then use the arctangent row with u = x + b/2."
+            ],
+            [
+              "A sum in the numerator",
+              "Split the fraction: one piece may be g′/g (a logarithm) and the other an arctangent or a power."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Properties of definite integrals. Cover the right-hand column.",
+          "head": [
+            "Property",
+            "Statement"
+          ],
+          "rows": [
+            [
+              "Equal limits",
+              "∫ from a to a of f(x) dx = 0"
+            ],
+            [
+              "Reversed limits",
+              "∫ from b to a of f(x) dx = −∫ from a to b of f(x) dx"
+            ],
+            [
+              "Adjacent intervals",
+              "∫ from a to b of f(x) dx + ∫ from b to c of f(x) dx = ∫ from a to c of f(x) dx"
+            ],
+            [
+              "Constant multiples and sums",
+              "∫ (k·f(x) ± g(x)) dx = k∫ f(x) dx ± ∫ g(x) dx over the same interval"
+            ],
+            [
+              "Integral from a graph",
+              "Signed area: regions above the x-axis count positive, regions below count negative"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Writing ∫ from 0 to 2 of x(x^2 + 1)^3 dx = (1/8)(u^4) from 0 to 2 after the substitution u = x^2 + 1, keeping the x-limits.",
+          "fix": "The limits belong to x. With u = x^2 + 1, x = 0 gives u = 1 and x = 2 gives u = 5, so the value is (1/8)(5^4 − 1^4) = 78."
+        },
+        {
+          "type": "trap",
+          "text": "Writing ∫ from −2 to 1 of 1/x^2 dx = [−1/x] from −2 to 1 = −3/2. A positive integrand cannot have a negative integral.",
+          "fix": "Before using F(b) − F(a), check that the integrand is continuous on the whole closed interval. This one is undefined at x = 0, inside the interval, so the Fundamental Theorem does not apply. (The integral is improper, a topic beyond AB, and it has no finite value.)"
+        }
+      ]
+    },
+    {
+      "id": "trigonometry",
+      "title": "Trigonometry that calculus uses",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Unit-circle values. Cover every column after θ.",
+          "head": [
+            "θ",
+            "sin θ",
+            "cos θ",
+            "tan θ"
+          ],
+          "rows": [
+            [
+              "0",
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "π/6",
+              "1/2",
+              "√3/2",
+              "√3/3"
+            ],
+            [
+              "π/4",
+              "√2/2",
+              "√2/2",
+              "1"
+            ],
+            [
+              "π/3",
+              "√3/2",
+              "1/2",
+              "√3"
+            ],
+            [
+              "π/2",
+              "1",
+              "0",
+              "undefined"
+            ],
+            [
+              "2π/3",
+              "√3/2",
+              "−1/2",
+              "−√3"
+            ],
+            [
+              "3π/4",
+              "√2/2",
+              "−√2/2",
+              "−1"
+            ],
+            [
+              "5π/6",
+              "1/2",
+              "−√3/2",
+              "−√3/3"
+            ],
+            [
+              "π",
+              "0",
+              "−1",
+              "0"
+            ],
+            [
+              "3π/2",
+              "−1",
+              "0",
+              "undefined"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "text": "For any other angle, find the reference angle and attach the sign of the quadrant. The point at angle θ on the unit circle is (cos θ, sin θ): cosine is the x-coordinate, sine the y-coordinate."
+        },
+        {
+          "type": "table",
+          "caption": "Inverse trigonometric outputs. Cover the right-hand column.",
+          "head": [
+            "Function",
+            "Outputs"
+          ],
+          "rows": [
+            [
+              "arcsin x, for −1 ≤ x ≤ 1",
+              "−π/2 ≤ arcsin x ≤ π/2"
+            ],
+            [
+              "arccos x, for −1 ≤ x ≤ 1",
+              "0 ≤ arccos x ≤ π"
+            ],
+            [
+              "arctan x, for every real x",
+              "−π/2 < arctan x < π/2"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Identities. Cover the right-hand column.",
+          "head": [
+            "Identity",
+            "Statement"
+          ],
+          "rows": [
+            [
+              "Pythagorean",
+              "sin^2 θ + cos^2 θ = 1"
+            ],
+            [
+              "Pythagorean, divided by cos^2 θ",
+              "tan^2 θ + 1 = sec^2 θ"
+            ],
+            [
+              "Pythagorean, divided by sin^2 θ",
+              "1 + cot^2 θ = csc^2 θ"
+            ],
+            [
+              "Double angle, sine",
+              "sin(2θ) = 2 sin θ cos θ"
+            ],
+            [
+              "Double angle, cosine",
+              "cos(2θ) = cos^2 θ − sin^2 θ = 2cos^2 θ − 1 = 1 − 2sin^2 θ"
+            ],
+            [
+              "Quotients and reciprocals",
+              "tan θ = sin θ/cos θ, cot θ = cos θ/sin θ, sec θ = 1/cos θ, csc θ = 1/sin θ"
+            ],
+            [
+              "Symmetry and period",
+              "sin(−θ) = −sin θ and cos(−θ) = cos θ; sine and cosine have period 2π, tangent has period π"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Answering arccos(−√2/2) = 5π/4. Its cosine is −√2/2, but 5π/4 is not an output of arccos.",
+          "fix": "Pick the angle inside the function's output range: arccos(−√2/2) = 3π/4, while arcsin(−√2/2) = −π/4."
+        }
+      ]
+    },
+    {
+      "id": "theorems",
+      "title": "Theorems and their hypotheses",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "A theorem with a missing hypothesis is not a justification. State the hypotheses about the function by name, then the conclusion."
+        },
+        {
+          "type": "table",
+          "caption": "Cover both right-hand columns. The hypotheses are as much a part of the answer as the conclusion.",
+          "head": [
+            "Theorem",
+            "Hypotheses",
+            "Conclusion"
+          ],
+          "rows": [
+            [
+              "Squeeze Theorem",
+              "g(x) ≤ f(x) ≤ h(x) for x near a (a itself may be left out), and lim as x→a of g(x) = lim as x→a of h(x) = L",
+              "lim as x→a of f(x) = L"
+            ],
+            [
+              "Intermediate Value Theorem",
+              "f is continuous on [a, b], and k is a number between f(a) and f(b)",
+              "f(c) = k for at least one c in [a, b]; c is in (a, b) when k is strictly between f(a) and f(b)"
+            ],
+            [
+              "Extreme Value Theorem",
+              "f is continuous on the closed interval [a, b]",
+              "f has an absolute maximum value and an absolute minimum value on [a, b], each at a critical point in (a, b) or at an endpoint"
+            ],
+            [
+              "Mean Value Theorem",
+              "f is continuous on [a, b] and differentiable on (a, b)",
+              "f′(c) = (f(b) − f(a))/(b − a) for at least one c in (a, b)"
+            ],
+            [
+              "Differentiability implies continuity",
+              "f is differentiable at x = a",
+              "f is continuous at x = a. The converse is false: |x − 2| is continuous at 2 but not differentiable there."
+            ],
+            [
+              "Fundamental Theorem of Calculus, accumulation form",
+              "f is continuous on an interval I that contains a",
+              "A(x) = ∫ from a to x of f(t) dt is differentiable on I, and A′(x) = f(x)"
+            ],
+            [
+              "Variable upper limit",
+              "f is continuous on an interval containing a and every value of g(x), and g is differentiable",
+              "d/dx of ∫ from a to g(x) of f(t) dt = f(g(x))·g′(x)"
+            ],
+            [
+              "Fundamental Theorem of Calculus, evaluation form",
+              "f is continuous on [a, b], and F′(x) = f(x) on [a, b]",
+              "∫ from a to b of f(x) dx = F(b) − F(a)"
+            ],
+            [
+              "Net change",
+              "f′ is continuous on [a, b]",
+              "f(b) = f(a) + ∫ from a to b of f′(t) dt"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Justifications to have ready. Cover the right-hand column.",
+          "head": [
+            "Claim",
+            "What justifies it"
+          ],
+          "rows": [
+            [
+              "f is increasing on an interval",
+              "f′(x) > 0 on that interval"
+            ],
+            [
+              "f has a relative minimum at x = c (first derivative test)",
+              "f is continuous at c, and f′ changes from negative to positive at x = c"
+            ],
+            [
+              "f has a relative maximum at x = c (second derivative test)",
+              "f′(c) = 0 and f″(c) < 0. If f″(c) = 0 the test gives no conclusion."
+            ],
+            [
+              "Absolute maximum or minimum on [a, b] (candidates test)",
+              "f is continuous on [a, b]; compare f at every critical point in (a, b) and at both endpoints"
+            ],
+            [
+              "The graph of f is concave up on an interval",
+              "f″(x) > 0 there, or f′ is increasing there"
+            ],
+            [
+              "The graph of f has a point of inflection at x = c",
+              "f is continuous at c, and f″ changes sign at x = c (or f′ changes from increasing to decreasing, or the reverse)"
+            ],
+            [
+              "A particle changes direction at t = c",
+              "v(t) changes sign at t = c"
+            ],
+            [
+              "A particle is speeding up at t = c",
+              "v(c) and a(c) are nonzero and have the same sign"
+            ]
+          ]
+        },
+        {
+          "type": "model",
+          "prompt": "A justification that quotes its hypotheses, for a function k that is differentiable on [2, 9].",
+          "text": "Because k is differentiable on [2, 9], k is continuous on [2, 9] and differentiable on (2, 9). By the Mean Value Theorem, there is a c in (2, 9) with k′(c) = (k(9) − k(2))/(9 − 2)."
+        },
+        {
+          "type": "trap",
+          "text": "Giving f′(c) = 0 as the reason for an extremum. The function f(x) = (x − 1)^3 has f′(1) = 0 and no extremum at x = 1.",
+          "fix": "Give the sign change of f′ at c, or f′(c) = 0 together with the sign of f″(c), and name the function whose sign you mean."
+        },
+        {
+          "type": "trap",
+          "text": "Using the Mean Value Theorem or the Intermediate Value Theorem on a function given only by a table, without stating continuity or differentiability.",
+          "fix": "Quote what the problem gives, for example \"f is differentiable, so f is continuous on [a, b] and differentiable on (a, b).\" A table alone shows neither property."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "title": "Accumulation, area and volume",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Cover the right-hand column. In every row a < b (or c < d) and the integrand is continuous on the interval.",
+          "head": [
+            "Quantity",
+            "Formula"
+          ],
+          "rows": [
+            [
+              "Left, right and midpoint Riemann sums on [a, b], with subintervals [x_(i−1), x_i] of widths Δx_i",
+              "Σ from i = 1 to n of f(c_i)·Δx_i, where c_i is the left endpoint, the right endpoint or the midpoint of the ith subinterval. The widths may differ: use the table's own spacing."
+            ],
+            [
+              "Trapezoidal sum on [a, b]",
+              "Σ from i = 1 to n of ((f(x_(i−1)) + f(x_i))/2)·Δx_i, the average of the left and right sums"
+            ],
+            [
+              "Definite integral as a limit of Riemann sums",
+              "With Δx = (b − a)/n, lim as n→∞ of Σ from i = 1 to n of f(a + iΔx)·Δx = ∫ from a to b of f(x) dx"
+            ],
+            [
+              "Average value of f on [a, b]",
+              "(1/(b − a))·∫ from a to b of f(x) dx"
+            ],
+            [
+              "Average rate of change of f on [a, b]",
+              "(f(b) − f(a))/(b − a), which is not an integral of f"
+            ],
+            [
+              "Amount at time b from a rate r(t) and the amount at time a",
+              "Q(b) = Q(a) + ∫ from a to b of r(t) dt, in the quantity's units"
+            ],
+            [
+              "Position at time b on a line",
+              "x(b) = x(a) + ∫ from a to b of v(t) dt"
+            ],
+            [
+              "Displacement from t = a to t = b",
+              "∫ from a to b of v(t) dt"
+            ],
+            [
+              "Total distance traveled from t = a to t = b",
+              "∫ from a to b of |v(t)| dt"
+            ],
+            [
+              "Area between y = f(x) and y = g(x), with f(x) ≥ g(x) on [a, b]",
+              "∫ from a to b of (f(x) − g(x)) dx, top minus bottom. If the curves cross, split at each crossing or integrate |f(x) − g(x)|."
+            ],
+            [
+              "Area between x = f(y) and x = g(y), with f(y) ≥ g(y) on [c, d]",
+              "∫ from c to d of (f(y) − g(y)) dy, right minus left"
+            ],
+            [
+              "Disc method, the region under y = f(x) revolved about the x-axis",
+              "π∫ from a to b of (f(x))^2 dx"
+            ],
+            [
+              "Washer method about a horizontal line y = k",
+              "π∫ from a to b of ((R(x))^2 − (r(x))^2) dx, where R(x) and r(x) are the distances from the line y = k to the region's far and near edges"
+            ],
+            [
+              "Revolving about a vertical line x = h",
+              "The same formulas in y: π∫ from c to d of ((R(y))^2 − (r(y))^2) dy, with the radii measured from x = h"
+            ],
+            [
+              "Known cross sections perpendicular to the x-axis, with area A(x)",
+              "∫ from a to b of A(x) dx"
+            ],
+            [
+              "Cross-section area for a side or base of length s",
+              "Square: s^2. Rectangle of height h: hs. Semicircle with diameter s: (π/8)s^2. Equilateral triangle: (√3/4)s^2. Isosceles right triangle with leg s: s^2/2."
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Writing π∫ (R(x) − r(x))^2 dx for a washer.",
+          "fix": "Square each radius separately: π∫ ((R(x))^2 − (r(x))^2) dx. With R = 5 and r = 2, the washer's area is π(25 − 4) = 21π, not π(5 − 2)^2 = 9π."
+        },
+        {
+          "type": "trap",
+          "text": "Using ∫ from a to b of v(t) dt for the total distance when v changes sign.",
+          "fix": "Integrate |v(t)|, or split the interval where v changes sign and add the absolute values of the pieces. The two integrals agree only when v keeps one sign."
+        }
+      ]
+    },
+    {
+      "id": "differential-equations",
+      "title": "Differential equations",
+      "blocks": [
+        {
+          "type": "table",
+          "caption": "Cover the right-hand column.",
+          "head": [
+            "Topic",
+            "What to recall"
+          ],
+          "rows": [
+            [
+              "Verifying a solution",
+              "Substitute y and its derivatives into both sides of the equation and show that they agree for every x in the interval"
+            ],
+            [
+              "Separation of variables for dy/dx = g(x)h(y)",
+              "∫ 1/h(y) dy = ∫ g(x) dx, one constant C added when you integrate, the initial condition used to find C, then y isolated if asked. Dividing by h(y) loses any constant solution y = c with h(c) = 0, so check those separately."
+            ],
+            [
+              "Exponential model dy/dt = ky",
+              "y = y(0)·e^(kt): growth when k > 0, decay when k < 0. The rate of change is proportional to the amount."
+            ],
+            [
+              "Half-life (k < 0) or doubling time (k > 0)",
+              "ln 2/|k|"
+            ],
+            [
+              "Slope field",
+              "The segment at (x, y) has slope dy/dx evaluated there. When dy/dx depends only on y, the segments along each horizontal line are parallel; when it depends only on x, the segments along each vertical line are parallel."
+            ],
+            [
+              "Equilibrium (constant) solution",
+              "y = c is a solution when dy/dx = 0 at every point of the line y = c"
+            ],
+            [
+              "Concavity of a solution curve",
+              "Differentiate dy/dx with respect to x, replacing each dy/dx that appears by the equation's right-hand side; the sign of d^2y/dx^2 at a point gives the concavity there"
+            ],
+            [
+              "Tangent line to a solution curve at (x_0, y_0)",
+              "y ≈ y_0 + m(x − x_0), where m is dy/dx evaluated at (x_0, y_0)"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Adding the constant at the end: solving dy/dx = 3x^2 y as y = e^(x^3) + C.",
+          "fix": "Add C at the moment you integrate, then solve. ln|y| = x^3 + C gives |y| = e^C·e^(x^3), so y = Ae^(x^3), with A fixed by the initial condition."
+        }
+      ]
+    },
+    {
+      "id": "mixed-checks",
+      "title": "Mixed recall checks",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "These checks jump between groups on purpose, as the exam does. Answer each on paper before you open it. A miss points to a row above: find that row, cover it, and test yourself on it again on a later day, not straight away."
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c1",
+          "prompt": "Evaluate each limit exactly: (a) lim as x→0 of sin(7x)/(3x); (b) lim as x→∞ of (6x^3 − x)/(5 − 2x^3); (c) lim as h→0 of (√(16 + h) − 4)/h, by reading it as a derivative; (d) lim as x→0 of (e^(4x) − 1 − 4x)/x^2, naming the form each time you use L'Hospital's Rule.",
+          "hint": "For (c), which function and which input make this a difference quotient? For (d), substitute first.",
+          "answer": "(a) 7/3; (b) −3; (c) 1/8; (d) 8.",
+          "steps": [
+            "(a) sin(7x)/(3x) = (7/3)·sin(7x)/(7x), and sin(7x)/(7x) → 1, so the limit is 7/3.",
+            "(b) The degrees are equal, so the limit is the ratio of the leading coefficients: 6/(−2) = −3.",
+            "(c) This is the derivative of f(x) = √x at x = 16: f′(x) = 1/(2√x), so f′(16) = 1/8.",
+            "(d) At x = 0 the numerator is 1 − 1 − 0 = 0 and the denominator is 0: form 0/0. Differentiating gives lim as x→0 of (4e^(4x) − 4)/(2x), again 0/0. Differentiating again gives lim as x→0 of 16e^(4x)/2 = 8, which is no longer indeterminate."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c2",
+          "prompt": "Let g(x) = (x^2 − 3x − 10)/(x − 5) for x < 5 and g(x) = k√(x − 1) + 3 for x ≥ 5. Find the value of k for which g is continuous at x = 5, and state the three conditions you checked.",
+          "hint": "Simplify the left piece before taking its limit.",
+          "answer": "k = 2. The conditions: g(5) is defined, lim as x→5 of g(x) exists, and the limit equals g(5).",
+          "steps": [
+            "For x < 5, (x^2 − 3x − 10)/(x − 5) = (x − 5)(x + 2)/(x − 5) = x + 2, so lim as x→5⁻ of g(x) = 7.",
+            "g(5) = k√4 + 3 = 2k + 3, and lim as x→5⁺ of g(x) is also 2k + 3, because the right piece is continuous.",
+            "The limit exists and equals g(5) exactly when 2k + 3 = 7, so k = 2.",
+            "With k = 2, g(5) = 7 is defined, both one-sided limits are 7, and the limit equals g(5)."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c3",
+          "prompt": "From memory, write the derivatives of csc x, arccos x, ln(cos x) and 5^x. Then let f(x) = 2x + e^(x − 1), which is increasing for every x, and find (f^(−1))′(3).",
+          "hint": "For the inverse, first find the input a with f(a) = 3.",
+          "answer": "−csc x cot x; −1/√(1 − x^2); −tan x; 5^x ln 5. (f^(−1))′(3) = 1/3.",
+          "steps": [
+            "The derivative of ln(cos x) is (−sin x)/(cos x) = −tan x, by the chain rule. The other three come straight from the function table.",
+            "Solve f(a) = 3: 2a + e^(a − 1) = 3 gives a = 1, since 2 + e^0 = 3. Because f is increasing, a = 1 is the only such input.",
+            "f′(x) = 2 + e^(x − 1), so f′(1) = 3.",
+            "(f^(−1))′(3) = 1/f′(1) = 1/3. The tempting 1/f′(3) = 1/(2 + e^2) evaluates f′ at the wrong input."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c4",
+          "prompt": "Evaluate: (a) ∫ from 0 to 2 of x/(x^2 + 4) dx; (b) ∫ 1/(x^2 − 4x + 13) dx; (c) ∫ (x^2 + 2)/(x − 1) dx; (d) ∫ from 0 to π/6 of sec^2(2x) dx.",
+          "hint": "Before you integrate, decide what each integrand needs: a substitution, completing the square, or division.",
+          "answer": "(a) (1/2)ln 2; (b) (1/3)arctan((x − 2)/3) + C; (c) x^2/2 + x + 3 ln|x − 1| + C; (d) √3/2.",
+          "steps": [
+            "(a) With u = x^2 + 4, du = 2x dx, and the limits become 4 and 8: (1/2)∫ from 4 to 8 of (1/u) du = (1/2)(ln 8 − ln 4) = (1/2)ln 2.",
+            "(b) Complete the square: x^2 − 4x + 13 = (x − 2)^2 + 9. With u = x − 2 and a = 3, the arctangent row gives (1/3)arctan((x − 2)/3) + C.",
+            "(c) Divide: x^2 + 2 = (x − 1)(x + 1) + 3, so (x^2 + 2)/(x − 1) = x + 1 + 3/(x − 1), which integrates to x^2/2 + x + 3 ln|x − 1| + C.",
+            "(d) An antiderivative of sec^2(2x) is (1/2)tan(2x), so the value is (1/2)(tan(π/3) − tan 0) = √3/2."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c5",
+          "prompt": "A function f is continuous on [0, 4], with f(0) = 6 and f(4) = −2, and f is not differentiable at x = 1. For each claim, name the theorem that makes it certain and the hypothesis you use, or say that nothing given makes it certain. (a) f(c) = 0 for some c in (0, 4). (b) f′(c) = −2 for some c in (0, 4). (c) f has an absolute minimum value on [0, 4].",
+          "hint": "Check each theorem's hypotheses against exactly what is given. For a claim you doubt, try to draw a function that meets every given fact and breaks the claim.",
+          "answer": "(a) Certain, by the Intermediate Value Theorem: f is continuous on [0, 4], and 0 is between −2 and 6. (b) Not certain: the Mean Value Theorem needs f differentiable on (0, 4), which fails at x = 1. (c) Certain, by the Extreme Value Theorem: f is continuous on the closed interval [0, 4].",
+          "steps": [
+            "(a) f(4) = −2 < 0 < 6 = f(0), and f is continuous on [0, 4], so some c in (0, 4) has f(c) = 0.",
+            "(b) The average rate of change is (−2 − 6)/4 = −2, but the Mean Value Theorem's hypothesis fails at x = 1.",
+            "(b) A counterexample: the broken line from (0, 6) to (1, 10) to (4, −2) is continuous, has a corner at x = 1, and has slopes 4 and −4 only, so f′ is never −2.",
+            "(c) The Extreme Value Theorem needs only continuity on a closed interval."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c6",
+          "prompt": "Let G(x) = ∫ from x^3 to 8 of 1/(3 + cos t) dt. Find G′(x) and G(2), and decide whether G is increasing or decreasing.",
+          "hint": "Reverse the limits so that the variable is in the upper limit, then treat x^3 as the inside of a composition.",
+          "answer": "G′(x) = −3x^2/(3 + cos(x^3)); G(2) = 0; G is decreasing.",
+          "steps": [
+            "G(x) = −∫ from 8 to x^3 of 1/(3 + cos t) dt.",
+            "The integrand is continuous everywhere, so G′(x) = −(1/(3 + cos(x^3)))·3x^2.",
+            "G(2) = ∫ from 8 to 8 of 1/(3 + cos t) dt = 0, since 2^3 = 8.",
+            "3 + cos(x^3) ≥ 2 > 0 and 3x^2 ≥ 0, so G′(x) ≤ 0, with G′(x) = 0 only at x = 0. G is decreasing for all x.",
+            "Common slip: dropping the minus sign that comes from the variable being in the lower limit."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c7",
+          "prompt": "R is the region between y = √x and y = x^3 for 0 ≤ x ≤ 1. Find (a) the area of R; (b) the volume of the solid formed when R is revolved about the x-axis; (c) the volume of the solid with base R whose cross sections perpendicular to the x-axis are squares.",
+          "hint": "Decide which curve is on top on (0, 1), then write the area of one slice at position x before integrating.",
+          "answer": "(a) 5/12; (b) 5π/14; (c) 25/126.",
+          "steps": [
+            "On (0, 1), √x > x^3 (for example at x = 1/4, 1/2 > 1/64), so y = √x is the top curve.",
+            "(a) ∫ from 0 to 1 of (√x − x^3) dx = 2/3 − 1/4 = 5/12.",
+            "(b) Washers with outer radius √x and inner radius x^3: π∫ from 0 to 1 of (x − x^6) dx = π(1/2 − 1/7) = 5π/14.",
+            "(c) Each square has side √x − x^3: ∫ from 0 to 1 of (x − 2x^(7/2) + x^6) dx = 1/2 − 4/9 + 1/7 = 25/126.",
+            "Squaring the difference of the radii, π∫ from 0 to 1 of (√x − x^3)^2 dx = 25π/126, is the washer slip; it is the square-section volume times π, not the solid of revolution."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c8",
+          "prompt": "A particle moves along the x-axis with velocity v(t) = 12 − 3t^2 for 0 ≤ t ≤ 3, and x(0) = −5. Find x(3), the total distance traveled from t = 0 to t = 3, and whether the particle is speeding up or slowing down at t = 3.",
+          "hint": "Find where v changes sign before computing the distance.",
+          "answer": "x(3) = 4; the total distance is 23; the particle is speeding up at t = 3.",
+          "steps": [
+            "∫ from 0 to 3 of (12 − 3t^2) dt = 36 − 27 = 9, so x(3) = −5 + 9 = 4.",
+            "v(t) = 0 at t = 2 (t ≥ 0), with v > 0 on (0, 2) and v < 0 on (2, 3).",
+            "∫ from 0 to 2 of v(t) dt = 24 − 8 = 16 and ∫ from 2 to 3 of v(t) dt = 9 − 16 = −7, so the distance is 16 + 7 = 23.",
+            "v(3) = −15 and a(t) = −6t gives a(3) = −18: the same sign, so the speed is increasing."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c9",
+          "prompt": "Consider dy/dx = (y + 1)(2 − x). (a) Which horizontal line is a solution? (b) For the solution curve through (0, 1), find dy/dx and d^2y/dx^2 at that point. (c) Use the tangent line at (0, 1) to approximate y(0.1) for that solution, and say whether the approximation is too high or too low.",
+          "hint": "For (b), differentiate with the product rule, treating y as a function of x.",
+          "answer": "(a) y = −1. (b) dy/dx = 4 and d^2y/dx^2 = 6. (c) y(0.1) ≈ 1.4, an underestimate.",
+          "steps": [
+            "(a) dy/dx = 0 for every x exactly when y + 1 = 0, so y = −1 is the equilibrium solution.",
+            "(b) At (0, 1): dy/dx = 2·2 = 4.",
+            "(b) d^2y/dx^2 = (dy/dx)(2 − x) + (y + 1)(−1). At (0, 1): 4·2 − 2 = 6.",
+            "(c) y(0.1) ≈ 1 + 4(0.1) = 1.4.",
+            "(c) In general d^2y/dx^2 = (y + 1)((2 − x)^2 − 1). The solution through (0, 1) stays above the equilibrium y = −1, so y + 1 > 0, and (2 − x)^2 − 1 > 0 for 0 ≤ x ≤ 0.1. The curve is concave up there and lies above its tangent line, so 1.4 is too low."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-memory-sheet-c10",
+          "prompt": "The mass M of a medicine in a patient's bloodstream, in milligrams, satisfies dM/dt = −0.04M, where t is in hours and M(0) = 150. Write M(t), find the half-life exactly, and find exactly when 30 milligrams remain.",
+          "hint": "Match the equation to the exponential model and read off k.",
+          "answer": "M(t) = 150e^(−0.04t); the half-life is 25 ln 2 hours; 30 milligrams remain at t = 25 ln 5 hours.",
+          "steps": [
+            "dM/dt = kM with k = −0.04, so M(t) = M(0)e^(kt) = 150e^(−0.04t).",
+            "Half-life: e^(−0.04t) = 1/2 gives t = ln 2/0.04 = 25 ln 2 hours.",
+            "30 milligrams: 150e^(−0.04t) = 30 gives e^(−0.04t) = 1/5, so t = ln 5/0.04 = 25 ln 5 hours."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "related",
+      "title": "Where to go next",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Recall is the first step. The pages below ask you to use these facts under exam conditions and to write them into full justifications."
+        },
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "How the exam runs and how to pace it",
+              "ref": "guide:exam-format"
+            },
+            {
+              "label": "Writing free-response answers",
+              "ref": "guide:free-response-writing"
+            },
+            {
+              "label": "Calculator skills for the calculator parts",
+              "ref": "guide:calculator-skills"
+            },
+            {
+              "label": "Unit 1 review: Limits and Continuity",
+              "ref": "guide:review-u1"
+            },
+            {
+              "label": "Unit 5 review: Analytical Applications of Differentiation",
+              "ref": "guide:review-u5"
+            },
+            {
+              "label": "Unit 6 review: Integration and Accumulation of Change",
+              "ref": "guide:review-u6"
+            },
+            {
+              "label": "Unit 8 review: Applications of Integration",
+              "ref": "guide:review-u8"
+            },
+            {
+              "label": "Mixed set 1, timed",
+              "ref": "test:mixed-1"
+            },
+            {
+              "label": "Taking and learning from a practice exam",
+              "ref": "guide:practice-exam-method"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

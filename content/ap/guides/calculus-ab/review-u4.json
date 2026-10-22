@@ -1,0 +1,528 @@
+{
+  "format": "liminal-ap-guide",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "review-u4",
+  "kind": "unit-review",
+  "unitId": "u4",
+  "title": "Unit 4 review: Contextual Applications of Differentiation",
+  "author": "ab-review-3-4-author",
+  "summary": "A retrieval-first review of Unit 4 for the AP® Calculus AB Exam: derivatives as rates with units, straight-line motion, rates in other applied settings, related rates, local linearization, and L'Hospital's Rule. Answer five recall checks and five mixed problems before you read the results to know, the model justifications and traps, and three worked examples.",
+  "minutes": 55,
+  "figures": [
+    {
+      "id": "ab-review-u4-g1",
+      "alt": "Graph of a velocity v(t), in meters per second, against t, in seconds, for 0 ≤ t ≤ 10 on a unit grid with v from −3 to 3. It is made of five line segments joining the marked points (0, −2), (2, 2), (4, 0), (6, 2), (8, 2) and (10, −3).",
+      "caption": "The velocity of the particle, made of line segments."
+    }
+  ],
+  "sections": [
+    {
+      "id": "recall",
+      "title": "Recall first",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "Answer each check on paper before you open it: write the statement, formula or condition in full, then compare. A check you could recognize but not produce counts as a miss. Mark your misses; each one names the section to study, and the check is worth retrying a few days later."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c1",
+          "see": "know",
+          "prompt": "E(d) is the elevation of a mountain road, in meters above sea level, at the point d kilometers along the road from its start.\n\n(a) Give the units of E′(d) and of E″(d).\n(b) Interpret E′(12) = −15 in a sentence.\n(c) Does E′(12) = −15 mean that E(13) = E(12) − 15? Explain.",
+          "answer": "(a) E′: meters per kilometer; E″: meters per kilometer per kilometer. (b) At the point 12 kilometers along the road, the elevation is decreasing at a rate of 15 meters per kilometer. (c) Not exactly: E′(12) is an instantaneous rate, so E(13) ≈ E(12) − 15 only if the rate stays close to −15 over that kilometer.",
+          "steps": [
+            "The units of a derivative are the output's units over the input's units. E″ is the rate of change of E′, so it has one more \"per kilometer\".",
+            "A full interpretation names where (or when), the quantity, the direction and the size with units; the minus sign becomes the word \"decreasing\".",
+            "E(12) − 15 is the tangent-line estimate of E(13). It is close only when the slope of the road changes little over the next kilometer."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c2",
+          "see": "know",
+          "prompt": "A particle moves along the x-axis with position x(t). Write its velocity, acceleration and speed in terms of x(t). Then state the condition for each:\n\n(a) the particle moves to the left at time t;\n(b) it changes direction at t = c;\n(c) its speed is decreasing at t = c.",
+          "answer": "v(t) = x′(t), a(t) = v′(t) = x″(t), and speed = |v(t)|. (a) v(t) < 0. (b) v changes sign at t = c. (c) v(c) and a(c) are nonzero and have opposite signs.",
+          "steps": [
+            "Velocity is the rate of change of position, acceleration is the rate of change of velocity, and speed is the size of the velocity.",
+            "(a) With the positive direction to the right, a negative velocity means motion to the left.",
+            "(b) v(c) = 0 alone is not enough: v must be positive on one side of c and negative on the other. An endpoint of the time interval is never a change of direction.",
+            "(c) When the acceleration points against the motion, it reduces the size of the velocity."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c3",
+          "see": "know",
+          "prompt": "State L'Hospital's Rule for lim as x→a of f(x)/g(x), with every condition you must check, including the forms it applies to.",
+          "answer": "If f(x) → 0 and g(x) → 0, or f(x) → ±∞ and g(x) → ±∞, as x→a; f and g are differentiable on an open interval containing a, except possibly at a, with g′(x) ≠ 0 there for x ≠ a; and lim as x→a of f′(x)/g′(x) is a number or ±∞; then lim as x→a of f(x)/g(x) equals that same limit. The same holds for one-sided limits and for x→∞ or x→−∞.",
+          "steps": [
+            "The form comes first: substitution must give 0/0 or ∞/∞. Write the form down before using the rule.",
+            "The numerator and the denominator are differentiated separately. The rule is not the quotient rule.",
+            "If the new limit is again 0/0 or ∞/∞, the rule may be applied again, checking the conditions again.",
+            "If the new limit does not exist and is not infinite, the rule gives no conclusion; try algebra instead."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c4",
+          "see": "know",
+          "prompt": "Write the local linearization L(x) of f at x = a, with its condition. Then explain how the sign of f″ between a and x decides whether L(x) overestimates or underestimates f(x).",
+          "answer": "L(x) = f(a) + f′(a)(x − a), where f is differentiable at a, and f(x) ≈ L(x) for x near a. If f″ > 0 between a and x, L(x) is an underestimate; if f″ < 0 there, L(x) is an overestimate.",
+          "steps": [
+            "L is the tangent line at (a, f(a)), with the slope at the base point a.",
+            "A graph that is concave up lies above its tangent lines, so the tangent line gives values that are too small.",
+            "A graph that is concave down lies below its tangent lines, so the tangent line gives values that are too large.",
+            "The sign of f″ must hold on the whole interval from a to x. If f″ changes sign there, concavity decides nothing."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c5",
+          "see": "know",
+          "prompt": "For each situation, write an equation that holds at every instant, then differentiate it with respect to t.\n\n(a) A cone of water whose radius r is always half its depth h: its volume V in terms of h alone.\n(b) The surface area S of a sphere of radius r.\n(c) A rod of fixed length 10 m whose ends are x meters from a corner along the floor and y meters up the wall.",
+          "answer": "(a) V = πh^3/12, so dV/dt = (πh^2/4)(dh/dt). (b) S = 4πr^2, so dS/dt = 8πr(dr/dt). (c) x^2 + y^2 = 100, so x(dx/dt) + y(dy/dt) = 0.",
+          "steps": [
+            "(a) V = (1/3)πr^2h with r = h/2 gives V = (1/3)π(h^2/4)h = πh^3/12. Eliminating r before differentiating leaves one rate to find.",
+            "(b) The chain rule supplies the factor dr/dt.",
+            "(c) The Pythagorean theorem holds at every instant. The length 10 is fixed, so its derivative is 0; dividing 2x(dx/dt) + 2y(dy/dt) = 0 by 2 gives the result."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problems",
+      "title": "Problems",
+      "blocks": [
+        {
+          "type": "text",
+          "text": "These are mixed on purpose: decide what each problem needs before you start. Work without a calculator unless a problem says otherwise, and give exact answers; give calculator answers to three decimal places. If a problem goes wrong, study the section its answer names, then retry the problem a day later without notes."
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c6",
+          "see": "justify",
+          "prompt": "A particle moves along the x-axis. The graph of its velocity v(t), in meters per second, for 0 ≤ t ≤ 10 seconds is made of line segments, as shown.\n\n(a) At what times in 0 < t < 10 does the particle change direction? Justify.\n(b) Is the speed of the particle increasing or decreasing at t = 3? At t = 9? Justify each answer.\n(c) Find the acceleration of the particle at t = 5. Give units.",
+          "figureIds": [
+            "ab-review-u4-g1"
+          ],
+          "hint": "For (a), look at the sign of v on both sides of every time where the graph meets the t-axis. For (b), read two things from the graph at each time.",
+          "answer": "(a) At t = 1 and t = 8.8, but not at t = 4. (b) Decreasing at t = 3; increasing at t = 9. (c) a(5) = 1 m/s^2",
+          "steps": [
+            "(a) The graph meets the t-axis at t = 1, t = 4 and once between 8 and 10.",
+            "At t = 1, v changes from negative to positive, so the particle changes direction.",
+            "At t = 4, v(4) = 0 but v > 0 on both sides of 4, so the particle stops for an instant and keeps moving to the right: no change of direction.",
+            "For 8 < t < 10, v(t) = 2 − (5/2)(t − 8), which is 0 at t = 8.8. There v changes from positive to negative, so the particle changes direction.",
+            "(b) At t = 3: v(3) = 1 > 0, and a(3) is the slope of the segment from (2, 2) to (4, 0), which is −1 < 0. Opposite signs, so the speed is decreasing.",
+            "At t = 9: v(9) = 2 − 5/2 = −1/2 < 0, and a(9) = −5/2 < 0, the slope of the last segment. Same signs, so the speed is increasing.",
+            "(c) a(5) is the slope of the segment from (4, 0) to (6, 2): (2 − 0)/(6 − 4) = 1 m/s^2."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c7",
+          "see": "know",
+          "prompt": "A point P moves along the graph of y = 1/x in the first quadrant, and its x-coordinate increases at 2 units per second. Let D be the distance from P to the origin, and let θ be the angle between the segment from the origin to P and the positive x-axis. At the instant when P is at (2, 1/2):\n\n(a) how fast is D changing? Is D increasing or decreasing?\n(b) how fast is θ changing?",
+          "hint": "Before you differentiate, write a relation for each of D and θ that holds at every instant and uses x alone.",
+          "answer": "(a) dD/dt = 15√17/34 (about 1.819) units per second; D is increasing. (b) dθ/dt = −8/17 radian per second: θ is decreasing at 8/17 radian per second.",
+          "steps": [
+            "x, y = 1/x, D and θ all change with time t, and dx/dt = 2.",
+            "(a) At every instant, D^2 = x^2 + y^2 = x^2 + 1/x^2. Differentiating with respect to t: 2D(dD/dt) = (2x − 2/x^3)(dx/dt).",
+            "At x = 2: D^2 = 4 + 1/4 = 17/4, so D = √17/2, and 2x − 2/x^3 = 4 − 1/4 = 15/4.",
+            "So 2(√17/2)(dD/dt) = (15/4)(2), that is √17(dD/dt) = 15/2, and dD/dt = 15/(2√17) = 15√17/34 units per second. It is positive, so D is increasing.",
+            "(b) At every instant, tan θ = y/x = 1/x^2. Differentiating with respect to t: sec^2 θ·(dθ/dt) = −(2/x^3)(dx/dt).",
+            "At x = 2: tan θ = 1/4, so sec^2 θ = 1 + 1/16 = 17/16, and the right side is −(2/8)(2) = −1/2. So dθ/dt = (−1/2)(16/17) = −8/17 radian per second.",
+            "Sense check: to the right of (1, 1), P moves away from the origin while the segment from the origin to P flattens, so D should increase and θ should decrease."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c8",
+          "see": "justify",
+          "prompt": "The water temperature T(x), in degrees Celsius, at depth x meters in a lake is a twice-differentiable, decreasing function with T″(x) > 0 for 0 ≤ x ≤ 15. Selected values are shown, and T′(10) = −0.6.\n\n| x (m) | 0 | 4 | 10 | 15 |\n| --- | --- | --- | --- | --- |\n| T(x) (°C) | 22.0 | 18.2 | 14.0 | 11.5 |\n\n(a) Use the table to estimate T′(7). Using correct units, explain the meaning of your estimate.\n(b) Use the line tangent to the graph of T at x = 10 to approximate T(11.5). Is the approximation an overestimate or an underestimate? Explain.",
+          "hint": "For (a), choose the two table values that sit on either side of 7. For (b), write the line through the point x = 10 first.",
+          "answer": "(a) T′(7) ≈ −0.7 °C per meter: at a depth of 7 meters, the water temperature is decreasing at about 0.7 degree Celsius per meter of depth. (b) T(11.5) ≈ 13.1 °C, an underestimate.",
+          "steps": [
+            "(a) 7 lies between the table values 4 and 10, so use the difference quotient over that interval: T′(7) ≈ (T(10) − T(4))/(10 − 4) = (14.0 − 18.2)/6 = −0.7.",
+            "The units are the output's units over the input's: degrees Celsius per meter.",
+            "(b) The tangent line at x = 10 is L(x) = 14.0 − 0.6(x − 10), so T(11.5) ≈ L(11.5) = 14.0 − 0.9 = 13.1 °C.",
+            "T″(x) > 0 on 10 ≤ x ≤ 11.5, so the graph of T is concave up there and lies above its tangent line. The tangent-line value is below the true value: an underestimate."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c9",
+          "see": "know",
+          "prompt": "Evaluate each limit. For each one, say whether L'Hospital's Rule applies before you use it.\n\n(a) lim as x→0 of (x·e^x − sin x)/x^2\n(b) lim as x→∞ of (5x + ln x)/(2x + √x)\n(c) lim as x→0 of e^(2x)/(1 + sin x)",
+          "hint": "Begin every part the same way: substitute, or let x grow, and write down the form you get.",
+          "answer": "(a) 1: the form is 0/0 and the rule applies. (b) 5/2: the form is ∞/∞ and the rule applies (dividing by x also works). (c) 1: the form is 1/1, which is not indeterminate, so the rule does not apply.",
+          "steps": [
+            "(a) Substitution gives (0 − 0)/0, the form 0/0, and both parts are differentiable near 0 with (x^2)′ = 2x ≠ 0 for x ≠ 0. By the rule, the limit equals lim of (e^x + x·e^x − cos x)/(2x), provided that limit exists.",
+            "Substitution gives (1 + 0 − 1)/0, the form 0/0 again, so check the conditions again ((2x)′ = 2 ≠ 0) and apply the rule a second time: lim of (2e^x + x·e^x + sin x)/2 = (2 + 0 + 0)/2 = 1.",
+            "(b) Both parts grow without bound, the form ∞/∞, and (2x + √x)′ = 2 + 1/(2√x) ≠ 0. The rule gives lim of (5 + 1/x)/(2 + 1/(2√x)) = 5/2.",
+            "(c) Substitution gives e^0/(1 + 0) = 1, so the limit is 1. Using the rule anyway would give lim of 2e^(2x)/cos x = 2, which is wrong."
+          ]
+        },
+        {
+          "type": "check",
+          "id": "ab-review-u4-c10",
+          "see": "justify",
+          "prompt": "(Calculator allowed.) The depth of the water at a dock is modeled by D(t) = 2.4 + 1.1 sin(0.5t) + 0.25 cos(1.3t) meters, where t is measured in hours after 6 a.m., for 0 ≤ t ≤ 10.\n\n(a) Find D′(5). Using correct units, interpret this value in context.\n(b) At t = 5, is the water falling faster or more slowly as time passes? Justify.\n(c) Find the first time t in 0 < t < 10 at which the depth is falling at a rate of 0.4 meter per hour.",
+          "hint": "In (b), the question is about how the rate itself is changing. In (c), translate the words into an equation before you reach for the calculator.",
+          "answer": "(a) D′(5) = −0.511: at 11 a.m. the depth of the water is decreasing at 0.511 meter per hour. (b) Faster, because D′(5) < 0 and D″(5) = −0.577 < 0. (c) t = 4.814",
+          "steps": [
+            "(a) With the calculator in radian mode, the numerical derivative gives D′(5) = −0.511 (by hand, D′(t) = 0.55 cos(0.5t) − 0.325 sin(1.3t)). t = 5 is 11 a.m., and the negative sign means the depth is decreasing.",
+            "A result near 0.009 means the calculator is in degree mode.",
+            "(b) The rate of change of D′ is D″. The numerical derivative of D′ at t = 5 gives D″(5) = −0.577 < 0, so D′ is decreasing at t = 5.",
+            "Since D′(5) is already negative and is getting more negative, the water is falling faster.",
+            "(c) Falling at 0.4 meter per hour means D′(t) = −0.4, not 0.4. Graph y = D′(t) and y = −0.4 and find their first intersection: t = 4.814.",
+            "D′(t) > −0.4 for 0 < t < 4.814 (the depth is rising until about t = 4.123 and then falls more slowly than 0.4 meter per hour), so this is the first such time."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "know",
+      "title": "What to know",
+      "blocks": [
+        {
+          "type": "rule",
+          "title": "The derivative as a rate in context",
+          "text": "f′(a) is the instantaneous rate of change of f at a, in units of the output per unit of the input. f″(a) is the rate of change of that rate, in output units per input unit squared.",
+          "conditions": [
+            "f is differentiable at a (twice, for f″).",
+            "The sign gives the direction (increasing or decreasing); the sentence gives the size with units.",
+            "From a table, estimate f′(a) by the difference quotient over the closest interval of table values that contains a."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Straight-line motion",
+          "text": "With position x(t): velocity v(t) = x′(t), acceleration a(t) = v′(t) = x″(t), and speed |v(t)|. The particle moves in the positive direction when v(t) > 0 and in the negative direction when v(t) < 0.",
+          "conditions": [
+            "At rest at t = c means v(c) = 0. A change of direction at c needs v to change sign at c.",
+            "An endpoint of the time interval is never a change of direction.",
+            "Total distance traveled adds the distances of the separate legs between direction changes; it is not the change in position."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Speeding up and slowing down",
+          "text": "The speed is increasing at t when v(t) and a(t) have the same sign, and decreasing when they have opposite signs.",
+          "conditions": [
+            "v(t) ≠ 0 and a(t) exists at that time; at a corner of a velocity graph, a(t) does not exist.",
+            "From a velocity graph, a is the slope; the speed grows where the graph moves away from the t-axis."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Rates in other applied settings",
+          "text": "Every derivative is a rate: a marginal cost C′(q) in dollars per item, the linear density m′(x) of a rod in grams per centimeter, a population's growth rate P′(t) in individuals per year, the rate R′(t) at which a flow rate changes in liters per minute per minute.",
+          "conditions": [
+            "Name the input and its units before you interpret; the same number means different things per item, per centimeter or per hour.",
+            "A rate of change of a rate (a second derivative) describes whether the first rate is growing or shrinking."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Related rates",
+          "text": "If an equation linking several quantities holds at every instant, differentiating it implicitly with respect to t gives an equation linking their rates.",
+          "conditions": [
+            "The equation must hold at every instant, not only at the moment asked about; fixed measurements may be numbers in it.",
+            "Every changing quantity brings its rate by the chain rule: d/dt of r^2 is 2r(dr/dt).",
+            "Substitute the values at the instant only after differentiating. Use a second relation (similar triangles, a fixed ratio) to remove a quantity whose rate is not known."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Local linearization",
+          "text": "L(x) = f(a) + f′(a)(x − a), and f(x) ≈ L(x) for x near a.",
+          "conditions": [
+            "f is differentiable at a.",
+            "The slope is f′(a), at the base point, never at the target.",
+            "The error usually grows as |x − a| grows."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "Overestimate or underestimate",
+          "text": "If f″ > 0 on the interval between a and x, then L(x) < f(x), an underestimate. If f″ < 0 there, L(x) > f(x), an overestimate.",
+          "conditions": [
+            "The sign of f″ must hold on the whole interval from a to x.",
+            "If you are told instead that f′ is increasing on the interval, the graph is concave up there and L(x) is an underestimate; if f′ is decreasing, L(x) is an overestimate."
+          ]
+        },
+        {
+          "type": "rule",
+          "title": "L'Hospital's Rule",
+          "text": "If f(x) and g(x) both approach 0, or both approach ±∞, as x→a, then lim as x→a of f(x)/g(x) = lim as x→a of f′(x)/g′(x), provided the limit on the right exists or is ±∞.",
+          "conditions": [
+            "f and g are differentiable on an open interval containing a, except possibly at a, with g′(x) ≠ 0 there for x ≠ a.",
+            "a may be a number, a one-sided approach, ∞ or −∞.",
+            "Write the form before each use. If the new limit is still 0/0 or ∞/∞, apply the rule again or simplify; if it neither exists nor is infinite, the rule decides nothing."
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Reading motion from the signs of v and a",
+          "head": [
+            "v(t)",
+            "a(t)",
+            "At that instant the particle is"
+          ],
+          "rows": [
+            [
+              "positive",
+              "positive",
+              "moving in the positive direction and speeding up"
+            ],
+            [
+              "positive",
+              "negative",
+              "moving in the positive direction and slowing down"
+            ],
+            [
+              "negative",
+              "negative",
+              "moving in the negative direction and speeding up"
+            ],
+            [
+              "negative",
+              "positive",
+              "moving in the negative direction and slowing down"
+            ],
+            [
+              "0",
+              "any",
+              "at rest; it changes direction only if v changes sign"
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "caption": "Relations that come up in related rates. Differentiate each with respect to t; every changing quantity brings its own rate.",
+          "head": [
+            "Situation",
+            "Relation at every instant",
+            "After differentiating"
+          ],
+          "rows": [
+            [
+              "Area of a circle",
+              "A = πr^2",
+              "dA/dt = 2πr(dr/dt)"
+            ],
+            [
+              "Volume of a sphere",
+              "V = (4/3)πr^3",
+              "dV/dt = 4πr^2(dr/dt)"
+            ],
+            [
+              "Volume of a cylinder, radius fixed",
+              "V = πr^2h",
+              "dV/dt = πr^2(dh/dt)"
+            ],
+            [
+              "Cone with r = kh (k fixed)",
+              "V = (1/3)πk^2h^3",
+              "dV/dt = πk^2h^2(dh/dt)"
+            ],
+            [
+              "Right triangle",
+              "x^2 + y^2 = z^2",
+              "x(dx/dt) + y(dy/dt) = z(dz/dt)"
+            ],
+            [
+              "Angle with a fixed adjacent side b",
+              "tan θ = y/b",
+              "sec^2 θ(dθ/dt) = (1/b)(dy/dt)"
+            ],
+            [
+              "Triangle with fixed sides p, q and included angle θ",
+              "A = (1/2)pq sin θ; c^2 = p^2 + q^2 − 2pq cos θ",
+              "dA/dt = (1/2)pq cos θ(dθ/dt); 2c(dc/dt) = 2pq sin θ(dθ/dt)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justify",
+      "title": "Justifications and traps",
+      "blocks": [
+        {
+          "type": "model",
+          "prompt": "Interpret a derivative in context (C(q) is the cost, in dollars, of producing q helmets; C′(50) = 18).",
+          "text": "When 50 helmets are being produced, the cost of production is increasing at a rate of 18 dollars per helmet."
+        },
+        {
+          "type": "model",
+          "prompt": "Estimate a derivative from a table and state its meaning.",
+          "text": "T′(7) ≈ (T(10) − T(4))/(10 − 4) = −0.7 degree Celsius per meter. At a depth of 7 meters, the water temperature is decreasing at about 0.7 degree Celsius per meter of depth."
+        },
+        {
+          "type": "model",
+          "prompt": "Speeding up or slowing down.",
+          "text": "At t = 9, v(9) = −0.5 < 0 and a(9) = −2.5 < 0. Because the velocity and the acceleration have the same sign at t = 9, the speed of the particle is increasing at t = 9."
+        },
+        {
+          "type": "model",
+          "prompt": "A change of direction, and a stop without one.",
+          "text": "v(t) changes from positive to negative at t = 8.8, so the particle changes direction at t = 8.8. At t = 4, v(4) = 0 but v(t) > 0 on both sides of t = 4, so the particle does not change direction there."
+        },
+        {
+          "type": "model",
+          "prompt": "Overestimate or underestimate.",
+          "text": "Because T″(x) > 0 for 10 ≤ x ≤ 11.5, the graph of T is concave up on that interval and lies above its tangent line at x = 10. So the tangent-line approximation of T(11.5) is an underestimate."
+        },
+        {
+          "type": "model",
+          "prompt": "Using L'Hospital's Rule.",
+          "text": "lim as x→0 of arctan(2x) = 0 and lim as x→0 of (e^(5x) − 1) = 0, so the limit has the form 0/0. Both functions are differentiable, and the derivative of the denominator, 5e^(5x), is never 0, so by L'Hospital's Rule, lim as x→0 of arctan(2x)/(e^(5x) − 1) = lim as x→0 of (2/(1 + 4x^2))/(5e^(5x)) = 2/5."
+        },
+        {
+          "type": "model",
+          "prompt": "Stating a related rate.",
+          "text": "dθ/dt = −8/17 radian per second, so when P is at (2, 1/2) the angle θ is decreasing at 8/17 radian per second."
+        },
+        {
+          "type": "trap",
+          "text": "Substituting a changing value before differentiating: writing D^2 = 17/4, so 2D(dD/dt) = 0.",
+          "fix": "Write the relation that holds at every instant (D^2 = x^2 + 1/x^2), differentiate with respect to t, and only then put in x = 2 and D = √17/2."
+        },
+        {
+          "type": "trap",
+          "text": "Using the quotient rule in L'Hospital's Rule: replacing f/g by (f′g − fg′)/g^2.",
+          "fix": "Differentiate the numerator and the denominator separately, and take f′/g′."
+        },
+        {
+          "type": "trap",
+          "text": "Applying L'Hospital's Rule to a limit that is not 0/0 or ∞/∞, such as one that substitutes to 1/1.",
+          "fix": "Substitute first and write the form. A number over a nonzero number is already the limit."
+        },
+        {
+          "type": "trap",
+          "text": "Deciding speed from the acceleration alone: \"a(t) > 0, so the particle speeds up.\"",
+          "fix": "Compare the signs of v and a. With v < 0, a positive acceleration slows the particle down."
+        },
+        {
+          "type": "trap",
+          "text": "Claiming a change of direction because v(c) = 0.",
+          "fix": "Show that v changes sign at c, with a sign chart or with values of v on both sides of c."
+        },
+        {
+          "type": "trap",
+          "text": "Using the slope at the target in a linearization: T(11.5) ≈ T(10) + T′(11.5)(1.5).",
+          "fix": "The tangent line uses the slope at the base point, where the value and the derivative are known: T(11.5) ≈ T(10) + T′(10)(1.5)."
+        },
+        {
+          "type": "trap",
+          "text": "A double negative in a rate sentence: \"the depth is decreasing at −0.511 meter per hour.\"",
+          "fix": "Let the verb carry the sign: \"decreasing at 0.511 meter per hour\", or write D′(5) = −0.511 with no verb."
+        },
+        {
+          "type": "trap",
+          "text": "Reading \"falling at 0.4 meter per hour\" as D′(t) = 0.4.",
+          "fix": "A falling quantity has a negative derivative: falling at 0.4 meter per hour means D′(t) = −0.4."
+        },
+        {
+          "type": "trap",
+          "text": "Leaving the calculator in degree mode for trigonometric models.",
+          "fix": "Calculus with sine and cosine assumes radians. A rate with the wrong sign or an unlikely size is a reason to check the mode."
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "title": "Worked examples",
+      "blocks": [
+        {
+          "type": "example",
+          "prompt": "A drone flies horizontally at a constant altitude of 40 m, moving directly away from an observer on the ground at 6 m/s. How fast is the angle of elevation from the observer to the drone changing when the horizontal distance between them is 30 m?",
+          "answer": "The angle of elevation is decreasing at 12/125 = 0.096 radian per second.",
+          "steps": [
+            "Label the quantities. Let x be the horizontal distance from the observer to the point below the drone and θ the angle of elevation. x and θ change; the altitude 40 m is fixed. dx/dt = 6 m/s.",
+            "A relation at every instant: tan θ = 40/x.",
+            "Differentiate with respect to t: sec^2 θ·(dθ/dt) = −(40/x^2)(dx/dt).",
+            "At the instant, x = 30, so tan θ = 4/3 and sec^2 θ = 1 + 16/9 = 25/9. θ itself is not needed.",
+            "(25/9)(dθ/dt) = −(40/900)(6) = −4/15, so dθ/dt = −(4/15)(9/25) = −12/125 radian per second.",
+            "Sense check: as the drone moves away, the angle of elevation shrinks, so the rate should be negative. It is."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "Evaluate lim as x→0 of (tan x − x)/x^3.",
+          "answer": "1/3",
+          "steps": [
+            "Name the form: tan 0 − 0 = 0 and 0^3 = 0, so the form is 0/0. Both parts are differentiable near 0, and (x^3)′ = 3x^2 ≠ 0 for x ≠ 0.",
+            "By L'Hospital's Rule, the limit equals lim as x→0 of (sec^2 x − 1)/(3x^2), provided that limit exists.",
+            "That is 0/0 again. Before differentiating again, simplify: sec^2 x − 1 = tan^2 x, so the quotient is (1/3)·(tan x/x)^2.",
+            "tan x/x = (sin x/x)·(1/cos x) → 1·1 = 1, using lim as x→0 of (sin x)/x = 1 from Unit 1.",
+            "So the limit is (1/3)·1^2 = 1/3. Applying the rule two more times also works, but the identity is shorter and leaves fewer derivatives to get wrong."
+          ]
+        },
+        {
+          "type": "example",
+          "prompt": "A particle moves along the x-axis with position x(t) = t + 2cos t for 0 ≤ t ≤ 2π. Find the intervals on which the particle moves to the left, the intervals on which its speed is increasing, and the total distance the particle travels.",
+          "answer": "It moves left on π/6 < t < 5π/6. Its speed increases on π/6 < t < π/2 and on 5π/6 < t < 3π/2. Total distance: 4√3 + 2π/3 (about 9.023).",
+          "steps": [
+            "v(t) = 1 − 2sin t and a(t) = −2cos t.",
+            "v(t) = 0 where sin t = 1/2: t = π/6 and t = 5π/6. v < 0 between them and v > 0 on the rest of the interval, so the particle moves left on π/6 < t < 5π/6 and changes direction at both times.",
+            "a(t) < 0 where cos t > 0 (0 ≤ t < π/2 and 3π/2 < t ≤ 2π) and a(t) > 0 on π/2 < t < 3π/2.",
+            "Same signs: on π/6 < t < π/2 both are negative, and on 5π/6 < t < 3π/2 both are positive. There the speed increases; on the other pieces the signs differ and it decreases.",
+            "Positions at the endpoints and turning points: x(0) = 2, x(π/6) = π/6 + √3, x(5π/6) = 5π/6 − √3, x(2π) = 2π + 2.",
+            "Total distance = (x(π/6) − x(0)) + (x(π/6) − x(5π/6)) + (x(2π) − x(5π/6)) = (π/6 + √3 − 2) + (2√3 − 2π/3) + (7π/6 + 2 + √3) = 4√3 + 2π/3.",
+            "The displacement x(2π) − x(0) = 2π is smaller, because the leftward leg is subtracted rather than added."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "more",
+      "title": "Practise more",
+      "blocks": [
+        {
+          "type": "links",
+          "items": [
+            {
+              "label": "Week 11: Derivatives in context and straight-line motion",
+              "ref": "week:11"
+            },
+            {
+              "label": "Week 12: Related rates",
+              "ref": "week:12"
+            },
+            {
+              "label": "Week 13: Linearization and L'Hospital's Rule",
+              "ref": "week:13"
+            },
+            {
+              "label": "Unit 4 plan",
+              "ref": "unit:u4"
+            },
+            {
+              "label": "Unit 4 test",
+              "ref": "test:unit-4"
+            },
+            {
+              "label": "Unit 4 test key",
+              "ref": "key:unit-4"
+            },
+            {
+              "label": "Free-response workshop: Motion along a line",
+              "ref": "guide:fr-linear-motion"
+            },
+            {
+              "label": "Free-response workshop: Implicit differentiation and related rates",
+              "ref": "guide:fr-implicit-rates"
+            },
+            {
+              "label": "Free-response workshop: Functions given by tables",
+              "ref": "guide:fr-tables"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

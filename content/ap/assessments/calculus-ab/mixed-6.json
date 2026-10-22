@@ -1,0 +1,357 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "mixed-6",
+  "kind": "mixed-set",
+  "title": "Mixed set 6: all units at exam pace",
+  "author": "ab-mixed-5-6-author",
+  "directions": "This original Liminal mixed set draws questions from across the AP® Calculus AB course at the exam's pace: Part A has 10 multiple-choice questions in 21 minutes without a calculator, and Part B has 5 questions in 15 minutes with a graphing calculator. The questions are mixed on purpose, so part of each one is deciding which method or principle applies: a disc or a washer, and about which axis; displacement or total distance; a critical point or an endpoint; a tangent line and the size and sign of its error; a slope field or the solution curve through a point. Expect it to feel slower than practising one topic at a time. Unless stated otherwise, angles are in radians, answers without a calculator are exact, and calculator answers are rounded to three decimal places. Record raw points, 1 per question and 15 in all; they are practice evidence, not AP® scores.",
+  "figures": [
+    {
+      "id": "ab-mixed-6-f1",
+      "alt": "Slope field on the grid −1 ≤ x ≤ 4 and −2 ≤ y ≤ 2 at half-unit steps, with no segments drawn on the coordinate axes. Segments along the horizontal line y = −1 and along the vertical line x = 1 are horizontal. Above y = −1, segments slope upward to the left of x = 1 and downward to the right of it; below y = −1 the pattern is reversed. Segments are steeper farther from the line x = 1 and farther from the line y = −1."
+    }
+  ],
+  "sections": [
+    {
+      "id": "I",
+      "title": "Multiple choice",
+      "kind": "mc",
+      "parts": [
+        {
+          "id": "A",
+          "minutes": 21,
+          "calculator": "none",
+          "directions": "Select the best answer for each question. No calculator is allowed.",
+          "items": [
+            {
+              "id": "ab-mixed-6-mc01",
+              "prompt": "What is lim as x→0 of (x·sin(2/x) + sin(2x)/x)?",
+              "choices": [
+                "4",
+                "2",
+                "1",
+                "The limit does not exist."
+              ],
+              "key": "B",
+              "rationale": "The two terms need different procedures. For the first, sin(2/x) oscillates between −1 and 1, so −|x| ≤ x·sin(2/x) ≤ |x| for x ≠ 0, and the Squeeze Theorem gives x·sin(2/x) → 0. For the second, sin(2x)/x = 2·sin(2x)/(2x) → 2·1 = 2. The limit is 0 + 2 = 2.",
+              "distractorNotes": {
+                "A": "This treats x·sin(2/x) like sin(2x)/x and gives each term the value 2. The product x·sin(2/x) tends to 2 only as x→∞, where 2/x→0; as x→0 it is squeezed to 0.",
+                "C": "This uses sin(2x)/x → 1, dropping the factor 2. Write sin(2x)/x = 2·sin(2x)/(2x), which tends to 2·1 = 2.",
+                "D": "sin(2/x) has no limit as x→0, but the factor x forces x·sin(2/x) to 0 by the Squeeze Theorem, so the oscillation does not prevent the sum from having a limit."
+              },
+              "topics": [
+                "AB.1.8",
+                "AB.1.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc02",
+              "prompt": "Which of the following integrals has the value 2 − π/2?",
+              "choices": [
+                "∫ from 0 to 2 of x/(4 + x^2) dx",
+                "∫ from 0 to 2 of 1/(4 + x^2) dx",
+                "∫ from 0 to 2 of 4x/(4 + x^2)^2 dx",
+                "∫ from 0 to 2 of x^2/(4 + x^2) dx"
+              ],
+              "key": "D",
+              "rationale": "Each integrand calls for a different technique. For x^2/(4 + x^2) the degree of the numerator equals that of the denominator, so divide first: x^2/(4 + x^2) = 1 − 4/(4 + x^2). Then ∫ from 0 to 2 of (1 − 4/(4 + x^2)) dx = [x − 2arctan(x/2)] from 0 to 2 = 2 − 2(π/4) = 2 − π/2.",
+              "distractorNotes": {
+                "A": "The numerator is half the derivative of the denominator, so u = 4 + x^2 gives (1/2)ln(4 + x^2) from 0 to 2, which is (1/2)ln 2, a logarithm rather than an arctangent.",
+                "B": "This is an arctangent form: (1/2)arctan(x/2) from 0 to 2 is π/8. It supplies the π term of the correct choice only after the division there, with a factor of 4.",
+                "C": "u = 4 + x^2 turns this into a power of u: −2/(4 + x^2) from 0 to 2 is −1/4 + 1/2 = 1/4."
+              },
+              "topics": [
+                "AB.6.14",
+                "AB.6.10"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc03",
+              "prompt": "Let f(x) = 2x + ln x for x > 0, and let g be the inverse function of f. What is g′(2)?",
+              "choices": [
+                "1/3",
+                "2/5",
+                "3",
+                "1/(4 + ln 2)"
+              ],
+              "key": "A",
+              "rationale": "f(1) = 2 + ln 1 = 2, so g(2) = 1. Since f′(x) = 2 + 1/x, g′(2) = 1/f′(g(2)) = 1/f′(1) = 1/3.",
+              "distractorNotes": {
+                "B": "This is 1/f′(2) = 1/(2 + 1/2). The derivative of f must be evaluated at g(2) = 1, the input at which f equals 2.",
+                "C": "This is f′(1). The derivative of the inverse function is the reciprocal, 1/f′(1).",
+                "D": "This is 1/f(2), which treats the inverse function g as the reciprocal function 1/f."
+              },
+              "topics": [
+                "AB.3.3"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc04",
+              "prompt": "Let R be the region bounded by the graph of y = √x, the line y = 2, and the y-axis. What is the volume of the solid generated when R is revolved about the line y = 2?",
+              "choices": [
+                "8π",
+                "40π/3",
+                "8π/3",
+                "32π/5"
+              ],
+              "key": "C",
+              "rationale": "R lies between y = √x and y = 2 for 0 ≤ x ≤ 4, and its top edge lies on the axis of revolution, so slices perpendicular to the x-axis are discs, not washers, with radius 2 − √x. V = π ∫ from 0 to 4 of (2 − √x)^2 dx = π ∫ from 0 to 4 of (4 − 4√x + x) dx = π(16 − 64/3 + 8) = 8π/3.",
+              "distractorNotes": {
+                "A": "This is π ∫ from 0 to 4 of (2^2 − (√x)^2) dx, the washer volume for revolving R about the x-axis. About the line y = 2 each radius is measured from y = 2.",
+                "B": "This is π ∫ from 0 to 4 of (2^2 − (2 − √x)^2) dx, a washer whose outer radius reaches down to the x-axis. That is the volume for the region between y = √x and the x-axis revolved about y = 2, not for R.",
+                "D": "This is π ∫ from 0 to 2 of (y^2)^2 dy, the disc volume for revolving R about the y-axis."
+              },
+              "topics": [
+                "AB.8.10"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc05",
+              "prompt": "A truck makes a 300-kilometer trip at a constant speed of v kilometers per hour, where highway rules require 60 ≤ v ≤ 80. While the truck is driving, the trip costs 100 + v^2/100 dollars per hour (the driver’s wage plus fuel). What is the least possible total cost of the trip, in dollars?",
+              "choices": [
+                "600",
+                "615",
+                "680",
+                "164"
+              ],
+              "key": "B",
+              "rationale": "The trip takes 300/v hours, so the total cost is C(v) = (300/v)(100 + v^2/100) = 30000/v + 3v for 60 ≤ v ≤ 80. C′(v) = 3 − 30000/v^2 is zero only at v = 100, which is outside the allowed speeds, and C′(v) < 0 for 60 ≤ v ≤ 80 because v^2 < 10000 there. So C decreases on the whole interval and is least at the endpoint v = 80: C(80) = 375 + 240 = 615 dollars.",
+              "distractorNotes": {
+                "A": "This is C(100), the cost at the critical number v = 100, but that speed breaks the 80-kilometer-per-hour limit. When the critical number is outside the domain, the least value is at an endpoint.",
+                "C": "This is C(60) = 500 + 180, the cost at the lower speed limit. C is decreasing on [60, 80], so the slower trip costs more.",
+                "D": "This is the hourly cost at v = 80, 100 + 6400/100. The trip lasts 300/80 = 3.75 hours, so the hourly cost must be multiplied by the time."
+              },
+              "topics": [
+                "AB.5.11",
+                "AB.5.5"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc06",
+              "prompt": "What is lim as h→0 of (ln(3 + 2h) − ln 3)/h?",
+              "choices": [
+                "2/3",
+                "1/3",
+                "1/6",
+                "0"
+              ],
+              "key": "A",
+              "rationale": "The quotient is a difference quotient for f(x) = ln x at x = 3 with step 2h: (ln(3 + 2h) − ln 3)/h = 2·(ln(3 + 2h) − ln 3)/(2h), which tends to 2f′(3) = 2·(1/3) = 2/3. Equivalently, it is the derivative of ln(3 + 2x) at x = 0, which is 2/(3 + 0) = 2/3.",
+              "distractorNotes": {
+                "B": "This is f′(3) for f(x) = ln x, the limit if the input changed by h. Here the input changes by 2h, so the quotient over h is twice as large.",
+                "C": "This divides f′(3) by 2. Rewriting the quotient over 2h requires multiplying by 2: (ln(3 + 2h) − ln 3)/h = 2·(ln(3 + 2h) − ln 3)/(2h).",
+                "D": "The numerator tends to 0, but so does the denominator. This 0/0 form is a derivative in disguise, not 0."
+              },
+              "topics": [
+                "AB.2.2",
+                "AB.2.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc07",
+              "prompt": "The slope field for the differential equation dy/dx = (1 − x)(y + 1)/2 is shown. Let y = f(x) be the particular solution with f(0) = 0. Which statement about f is true?",
+              "choices": [
+                "f has a relative minimum at x = 1, and f(x) approaches −1 as x increases without bound.",
+                "f has a relative maximum at x = 1, and f(x) approaches −1 as x increases without bound.",
+                "f has a relative maximum at x = 1, and f(x) decreases without bound as x increases without bound.",
+                "f has a relative maximum at x = 1, and the graph of f crosses the line y = −1 at some x > 1."
+              ],
+              "key": "B",
+              "rationale": "The line y = −1 is an equilibrium solution, and the solution through (0, 0) stays above it, so y + 1 > 0 and dy/dx has the sign of 1 − x: f increases for x < 1 and decreases for x > 1, a relative maximum at x = 1. As x grows, the slopes flatten as the curve approaches y = −1. Separating variables confirms this: dy/(y + 1) = ((1 − x)/2) dx gives ln(y + 1) = (2x − x^2)/4 + C, and f(0) = 0 gives C = 0, so f(x) = −1 + e^((2x − x^2)/4), which approaches −1 as x increases without bound.",
+              "distractorNotes": {
+                "A": "Above y = −1 the slopes are positive just left of the line x = 1 and negative just right of it, so f increases and then decreases: a maximum at x = 1, not a minimum.",
+                "C": "Negative slopes show that f is decreasing, not that it is unbounded. The slopes shrink toward 0 as the curve nears y = −1, and the solution levels off there.",
+                "D": "Every segment on the line y = −1 is horizontal, and y = −1 is itself a solution. The solution through (0, 0) approaches that line from above but never reaches it: f(x) = −1 + e^((2x − x^2)/4) > −1."
+              },
+              "topics": [
+                "AB.7.4",
+                "AB.7.3",
+                "AB.7.7"
+              ],
+              "figureIds": [
+                "ab-mixed-6-f1"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc08",
+              "prompt": "The function f is differentiable. Selected values of f and f′ are shown in the table.\n\n| x | 1 | 3 |\n| --- | --- | --- |\n| f(x) | 4 | −2 |\n| f′(x) | 5 | 6 |\n\nLet h(x) = f(2x + 1). The line tangent to the graph of h at x = 1 is used to approximate h(1.1). What is the approximation?",
+              "choices": [
+                "−1.4",
+                "−1",
+                "5.2",
+                "−0.8"
+              ],
+              "key": "D",
+              "rationale": "h(1) = f(2·1 + 1) = f(3) = −2. By the chain rule, h′(x) = 2f′(2x + 1), so h′(1) = 2f′(3) = 12. The tangent line at x = 1 gives h(1.1) ≈ h(1) + h′(1)(0.1) = −2 + 1.2 = −0.8.",
+              "distractorNotes": {
+                "A": "This uses f′(3) = 6 as the slope of h, giving −2 + 6(0.1). The chain rule multiplies by the derivative of the inside function, 2.",
+                "B": "This evaluates f′ at x = 1 instead of at the inside value 2(1) + 1 = 3: −2 + 2·5·(0.1) = −1.",
+                "C": "This uses f(1) = 4 as h(1). The value of h at 1 is f at the inside value 3, so h(1) = −2."
+              },
+              "topics": [
+                "AB.4.6",
+                "AB.3.1"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc09",
+              "prompt": "The velocity of a particle moving along a line is v(t) = t^2 − 5t + 4 for 0 ≤ t ≤ 5. How far does the particle travel, in total, over this time interval?",
+              "choices": [
+                "5/6",
+                "9/2",
+                "49/6",
+                "11/3"
+              ],
+              "key": "C",
+              "rationale": "v(t) = (t − 1)(t − 4) is positive for 0 ≤ t < 1, negative for 1 < t < 4, and positive for 4 < t ≤ 5, so the particle reverses direction at t = 1 and at t = 4. With F(t) = t^3/3 − 5t^2/2 + 4t, F(0) = 0, F(1) = 11/6, F(4) = −8/3 and F(5) = −5/6. Total distance = ∫ from 0 to 5 of |v(t)| dt = 11/6 + |−8/3 − 11/6| + (−5/6 + 8/3) = 11/6 + 27/6 + 11/6 = 49/6.",
+              "distractorNotes": {
+                "A": "This is the size of the displacement, |∫ from 0 to 5 of v(t) dt| = |−5/6|, in which the motion in the two directions partly cancels.",
+                "B": "This splits the integral only at t = 4: |F(4) − F(0)| + |F(5) − F(4)| = 8/3 + 11/6. The velocity also changes sign at t = 1, so the forward motion on [0, 1] cancels part of the backward motion on [1, 4].",
+                "D": "This counts only the motion while v(t) > 0, on [0, 1] and [4, 5]. The 9/2 units traveled in the negative direction also count toward distance."
+              },
+              "topics": [
+                "AB.8.2"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc10",
+              "prompt": "A train moves along a straight track. Its position s(t), in kilometers from a station, is a twice-differentiable function of the time t, in hours, and its velocity is v(t) = s′(t). The train leaves the station from rest at t = 0 and comes to rest at the next station, 150 kilometers away, at t = 2, so s(0) = 0, s(2) = 150, and v(0) = v(2) = 0. Which statement must be true?",
+              "choices": [
+                "v(c) = 75 for some c in the open interval (0, 2).",
+                "v(c) = 150 for some c in the open interval (0, 2).",
+                "v(c) = 0 for some c in the open interval (0, 2).",
+                "s(1) = 75"
+              ],
+              "key": "A",
+              "rationale": "s is differentiable on [0, 2], so the Mean Value Theorem applies to s: for some c in (0, 2), s′(c) = (s(2) − s(0))/(2 − 0) = 150/2 = 75. So v(c) = 75 for some c in (0, 2).",
+              "distractorNotes": {
+                "B": "150 kilometers is the change in position; the Mean Value Theorem divides it by the 2 hours elapsed. A trip with v(t) = 112.5t(2 − t) covers 150 kilometers without ever reaching 150 kilometers per hour.",
+                "C": "Rolle’s Theorem applied to v, which has v(0) = v(2), gives a time when the acceleration v′ is 0, not the velocity. The velocity can stay positive for 0 < t < 2, as v(t) = 112.5t(2 − t) does.",
+                "D": "The Intermediate Value Theorem gives some time at which s = 75, not necessarily t = 1. A train that starts slowly, such as one with v(t) = 112.5t^2(2 − t), has s(1) = 46.875."
+              },
+              "topics": [
+                "AB.5.1",
+                "AB.4.2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "Use a graphing calculator as appropriate. Select the best answer for each question.",
+          "items": [
+            {
+              "id": "ab-mixed-6-mc11",
+              "prompt": "A function f satisfies f(1) = 2 and f′(x) = arctan(x^2) for all x. Let T(x) be the line tangent to the graph of f at x = 1. What is f(1.5) − T(1.5), the error when T(1.5) is used to approximate f(1.5)?",
+              "choices": [
+                "−0.103",
+                "−0.081",
+                "0.495",
+                "0.103"
+              ],
+              "key": "D",
+              "rationale": "T(x) = 2 + (π/4)(x − 1), so T(1.5) = 2 + π/8 ≈ 2.392699. The actual value needs the Fundamental Theorem of Calculus: f(1.5) = 2 + ∫ from 1 to 1.5 of arctan(x^2) dx ≈ 2 + 0.495265 = 2.495265. The error is f(1.5) − T(1.5) ≈ 0.103. It is positive, as the concavity predicts: f″(x) = 2x/(1 + x^4) > 0 for x > 0, so the tangent line lies below the graph.",
+              "distractorNotes": {
+                "A": "This is T(1.5) − f(1.5), the reverse subtraction. f is concave up, so the tangent line lies below the graph and f(1.5) − T(1.5) is positive.",
+                "B": "This builds the line with slope f′(1.5) = arctan(2.25) instead of f′(1) = π/4, so it is not the line tangent at x = 1.",
+                "C": "This is ∫ from 1 to 1.5 of f′(x) dx = f(1.5) − f(1), the change in f, not the difference between f(1.5) and its tangent-line approximation."
+              },
+              "topics": [
+                "AB.4.6",
+                "AB.6.7"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc12",
+              "prompt": "Let R be the region bounded by the graph of y = arctan x, the x-axis, and the line x = 2. What is the volume of the solid generated when R is revolved about the y-axis?",
+              "choices": [
+                "3.758",
+                "6.605",
+                "11.108",
+                "2.805"
+              ],
+              "key": "C",
+              "rationale": "Slices perpendicular to the y-axis are washers. Writing the curve as x = tan y, R runs from x = tan y to x = 2 for 0 ≤ y ≤ arctan 2. The outer radius is 2 and the inner radius is tan y, so V = π ∫ from 0 to arctan 2 of (4 − tan^2 y) dy ≈ 11.108 (store arctan 2 ≈ 1.107149 as the upper limit).",
+              "distractorNotes": {
+                "A": "This is π ∫ from 0 to 2 of (arctan x)^2 dx, the disc volume for revolving R about the x-axis. Revolving about the y-axis calls for slices perpendicular to the y-axis.",
+                "B": "This is π ∫ from 0 to arctan 2 of (2 − tan y)^2 dy, which uses the width of R as a disc radius. That is the volume when R is revolved about the line x = 2, not about the y-axis.",
+                "D": "This is π ∫ from 0 to arctan 2 of tan^2 y dy, the disc volume for the region between the curve and the y-axis. R lies to the right of the curve, so each slice is a washer with outer radius 2."
+              },
+              "topics": [
+                "AB.8.11"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc13",
+              "prompt": "Water is pumped into a stormwater retention basin at a constant rate of 12 cubic meters per minute. When the water is y meters deep, the area of its surface is A(y) = 40 + 25y^2 square meters, so the volume of water when the depth is h meters is V(h) = ∫ from 0 to h of A(y) dy cubic meters. At the instant when the basin holds 300 cubic meters of water, at what rate, in meters per minute, is the depth increasing?",
+              "choices": [
+                "0.050",
+                "0.300",
+                "0.113",
+                "0.040"
+              ],
+              "key": "A",
+              "rationale": "By the Fundamental Theorem of Calculus and the chain rule, dV/dt = A(h)(dh/dt), so dh/dt = 12/A(h). Find the depth first: V(h) = 40h + (25/3)h^3 = 300 gives h ≈ 2.821334 meters, so A(h) ≈ 238.998 square meters and dh/dt ≈ 12/238.998 ≈ 0.050 meter per minute.",
+              "distractorNotes": {
+                "B": "This uses the surface area at the bottom, A(0) = 40. The rate depends on the surface area at the current depth.",
+                "C": "This divides by V/h = 300/2.821, the average cross-sectional area, instead of the surface area A(h). By the Fundamental Theorem of Calculus, dV/dh = A(h).",
+                "D": "This divides the inflow by the volume, 12/300. The depth’s rate depends on the area of the water’s surface, not on the amount of water."
+              },
+              "topics": [
+                "AB.4.5",
+                "AB.6.4"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc14",
+              "prompt": "A factory’s discharge carries a pollutant into a lake, and the lake’s outflow removes some of it. The amount P(t) of pollutant in the lake, in kilograms, satisfies the differential equation dP/dt = 6 − 0.15P, where t is measured in days, and P(0) = 0. At what time t is the amount of pollutant increasing at a rate of 2 kilograms per day?",
+              "choices": [
+                "0.342",
+                "7.324",
+                "26.667",
+                "19.972"
+              ],
+              "key": "B",
+              "rationale": "Separate variables: dP/(6 − 0.15P) = dt gives −(1/0.15)ln|6 − 0.15P| = t + C, and P(0) = 0 leads to P(t) = 40(1 − e^(−0.15t)). Then dP/dt = 6e^(−0.15t), and 6e^(−0.15t) = 2 gives t = ln(3)/0.15 ≈ 7.324 days. (Equivalently, dP/dt = 2 when 6 − 0.15P = 2, that is, P = 80/3, and P(t) = 80/3 at the same time.)",
+              "distractorNotes": {
+                "A": "This solves P(t) = 2, the time when the amount is 2 kilograms, instead of the time when the rate dP/dt is 2 kilograms per day.",
+                "C": "This treats the right side as a function of t, solving 6 − 0.15t = 2. The rate depends on the amount P, so P(t) must first be found from the differential equation.",
+                "D": "This differentiates P(t) = 40(1 − e^(−0.15t)) as 40e^(−0.15t), dropping the chain-rule factor 0.15, and solves 40e^(−0.15t) = 2."
+              },
+              "topics": [
+                "AB.7.7",
+                "AB.7.6"
+              ]
+            },
+            {
+              "id": "ab-mixed-6-mc15",
+              "prompt": "Customers arrive at a café at a rate of r(t) = 40t·e^(−t/3) customers per hour, where t is the number of hours after the café opens, for 0 ≤ t ≤ 10. The manager will add one worker for the 2-hour period from t = a to t = a + 2, with 0 ≤ a ≤ 8, during which the most customers arrive. What value of a should the manager choose?",
+              "choices": [
+                "2.000",
+                "3.000",
+                "1.000",
+                "2.110"
+              ],
+              "key": "D",
+              "rationale": "The number of customers arriving from t = a to t = a + 2 is W(a) = ∫ from a to a + 2 of r(t) dt. By the Fundamental Theorem of Calculus, W′(a) = r(a + 2) − r(a). A calculator gives r(a + 2) = r(a) at a ≈ 2.110, where W′ changes from positive to negative. Comparing W(2.110) ≈ 86.689 with the endpoint values W(0) ≈ 51.950 and W(8) ≈ 36.067 confirms the maximum at a ≈ 2.110.",
+              "distractorNotes": {
+                "A": "This centers the 2-hour period on the peak arrival rate at t = 3. The arrival rate falls more slowly after the peak than it rises before it, so the best period starts a little later.",
+                "B": "This starts the period at the peak arrival rate, where r′(3) = 0, which leaves out the busy hour just before the peak.",
+                "C": "This maximizes r(a + 2) alone, as if the derivative of the number of arrivals were r(a + 2). The lower limit a also moves, which subtracts r(a)."
+              },
+              "topics": [
+                "AB.6.4",
+                "AB.5.11",
+                "AB.8.3"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

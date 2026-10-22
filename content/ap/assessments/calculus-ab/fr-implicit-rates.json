@@ -1,0 +1,373 @@
+{
+  "format": "liminal-ap-assessment",
+  "version": 1,
+  "courseId": "calculus-ab",
+  "id": "fr-implicit-rates",
+  "kind": "fr-set",
+  "title": "Free-response workshop: Implicit differentiation and related rates",
+  "author": "ab-workshop-author",
+  "directions": "Work each question in 15 minutes, the exam's pace, writing answers in the space under each part. Part A requires a graphing calculator; Part B allows none. Show supporting work and justify requested conclusions; write the equation or expression behind every calculator result, give calculator answers to three decimal places, and give exact answers in Part B. Include units where a part asks for them. Then score your work with the answer key's rubric and record raw points.",
+  "figures": [
+    {
+      "id": "ab-fr-implicit-rates-f1",
+      "alt": "Cross section through the center of a bowl-shaped pond whose sides curve up like a parabola. Shaded water fills the bottom of the bowl. A dashed vertical segment labeled h runs from the lowest point of the bowl up to the water's flat surface, and a double-headed arrow labeled r runs from the center of the surface to its edge.",
+      "caption": "The pond in question 1, cut through its center.",
+      "notToScale": true
+    },
+    {
+      "id": "ab-fr-implicit-rates-f2",
+      "alt": "A square with a base at each corner: home plate at the bottom, first base at the right, second base at the top and third base at the left. The side from home plate to first base is labeled 18 m. A runner, a dot labeled R, is on the side from first base to second base, at distance x from first base. Dashed segments join R to home plate and R to third base.",
+      "caption": "The softball field in question 3, seen from above.",
+      "notToScale": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "II",
+      "title": "Free response",
+      "kind": "fr",
+      "parts": [
+        {
+          "id": "A",
+          "title": "Graphing calculator required",
+          "minutes": 15,
+          "calculator": "graphing",
+          "directions": "A graphing calculator is required. Show your work: write the derivative, integral or equation you use before its value. Calculator answers are to three decimal places. Justify answers when a question asks you to.",
+          "items": [
+            {
+              "id": "ab-fr-implicit-rates-fr1",
+              "prompt": "A garden pond is shaped so that, when the water at its center is h meters deep, the water's surface is a circle of radius r meters with r^2 = 20h, as shown in the figure. The volume of water in the pond is then V = 10πh^2 cubic meters. At time t = 0 hours the water at the center is 0.4 meter deep. For 0 ≤ t ≤ 8, water is pumped into the pond at the rate R(t) = 2 + sin(0.3t^2) cubic meters per hour, and no water leaves the pond.",
+              "context": true,
+              "figureIds": [
+                "ab-fr-implicit-rates-f1"
+              ],
+              "topics": [
+                "AB.4.5",
+                "AB.4.4",
+                "AB.8.3",
+                "AB.6.4",
+                "AB.4.1"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the volume of water in the pond at time t = 3. Find the depth h at that time.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "V(3) = 10π(0.4)^2 + ∫ from 0 to 3 of R(t) dt = 1.6π + 7.582 = 12.608 cubic meters. The initial volume 1.6π must be included."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "h = √(V(3)/(10π)) = 0.634 meter, or the depth that follows correctly from the response's volume."
+                    }
+                  ],
+                  "answer": "V(3) = 12.608 cubic meters, and h = 0.634 meter.",
+                  "steps": [
+                    "At t = 0, V = 10π(0.4)^2 = 1.6π ≈ 5.027 cubic meters.",
+                    "Water only enters, at rate R(t), so V(3) = 1.6π + ∫ from 0 to 3 of (2 + sin(0.3t^2)) dt. The calculator gives ∫ from 0 to 3 of R(t) dt ≈ 7.582, so V(3) ≈ 12.608 cubic meters.",
+                    "From V = 10πh^2: h = √(12.608/(10π)) ≈ 0.634 meter."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the rate at which the depth of the water at the center of the pond is changing at time t = 3. Indicate units of measure.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates V = 10πh^2 with respect to t: dV/dt = 20πh(dh/dt)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses dV/dt = R(3) = 2.427 together with h from part (a)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains dh/dt = 0.061 meter per hour (with units), or the value that follows from the response's h."
+                    }
+                  ],
+                  "answer": "dh/dt = 0.061 meter per hour at t = 3.",
+                  "steps": [
+                    "V = 10πh^2 holds at every time, so dV/dt = 20πh(dh/dt).",
+                    "The volume changes only because of the pump, so dV/dt = R(t). At t = 3, R(3) = 2 + sin(2.7) ≈ 2.427 cubic meters per hour.",
+                    "dh/dt = R(3)/(20π·h(3)) = 2.427/(20π(0.6335)) ≈ 0.061 meter per hour. The depth is rising."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "The area of the water's surface is A = πr^2. Find the rate at which A is changing at time t = 3. Indicate units of measure.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Relates A to h, A = π(20h) = 20πh, and differentiates: dA/dt = 20π(dh/dt). Accepts dA/dt = 2πr(dr/dt) with dr/dt found from r^2 = 20h."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains dA/dt = 3.832 square meters per hour (with units), or 20π times the response's dh/dt from part (b)."
+                    }
+                  ],
+                  "answer": "dA/dt = 3.832 square meters per hour at t = 3.",
+                  "steps": [
+                    "Substitute r^2 = 20h, a relation that holds at every time: A = πr^2 = 20πh.",
+                    "So dA/dt = 20π(dh/dt) = 20π(0.06098) ≈ 3.832 square meters per hour.",
+                    "Check: combining with part (b), dA/dt = R(t)/h(t) = 2.427/0.6335 ≈ 3.832."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the time T at which the water at the center of the pond is 0.8 meter deep. At time T, how fast is the radius r of the water's surface increasing? Indicate units of measure.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets up 1.6π + ∫ from 0 to T of R(t) dt = 10π(0.8)^2 = 6.4π (or an equivalent equation) and solves to get T = 6.937."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Uses 2r(dr/dt) = 20(dh/dt) with r = 4 and dh/dt = R(T)/(20π(0.8)), and obtains dr/dt = 0.147 meter per hour (with units)."
+                    }
+                  ],
+                  "answer": "T = 6.937 hours. At that time the radius is increasing at 0.147 meter per hour.",
+                  "steps": [
+                    "At depth 0.8 m, V = 10π(0.8)^2 = 6.4π. So T solves 1.6π + ∫ from 0 to T of R(t) dt = 6.4π, that is, ∫ from 0 to T of R(t) dt = 4.8π. R(t) > 0, so the volume increases and there is one solution; the calculator gives T ≈ 6.937 hours.",
+                    "At T: R(T) ≈ 2.956, so dh/dt = R(T)/(20π(0.8)) ≈ 0.0588 meter per hour.",
+                    "Differentiate r^2 = 20h: 2r(dr/dt) = 20(dh/dt). At h = 0.8, r = √16 = 4, so dr/dt = (10/4)(0.0588) ≈ 0.147 meter per hour."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "No calculator",
+          "minutes": 30,
+          "calculator": "none",
+          "directions": "No calculator is allowed. Show supporting work, justify requested conclusions, and give exact answers.",
+          "items": [
+            {
+              "id": "ab-fr-implicit-rates-fr2",
+              "prompt": "Consider the curve given by x^2 − 4xy + 5y^2 = 4.",
+              "context": false,
+              "topics": [
+                "AB.3.2",
+                "AB.5.12",
+                "AB.3.6",
+                "AB.5.7",
+                "AB.2.8"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Show that dy/dx = (x − 2y)/(2x − 5y).",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates implicitly with respect to x: 2x − 4y − 4x(dy/dx) + 10y(dy/dx) = 0, with the product rule on 4xy and the chain-rule factor dy/dx on 5y^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Collects the dy/dx terms and solves: (10y − 4x)(dy/dx) = 4y − 2x, reaching the given expression (or the equivalent (2y − x)/(5y − 2x)). A response that starts from the given answer earns neither point."
+                    }
+                  ],
+                  "answer": "2x − 4y − 4x(dy/dx) + 10y(dy/dx) = 0, so (10y − 4x)(dy/dx) = 4y − 2x and dy/dx = (2y − x)/(5y − 2x) = (x − 2y)/(2x − 5y).",
+                  "steps": [
+                    "Differentiate each side with respect to x, treating y as a function of x. The product rule gives d/dx(4xy) = 4y + 4x(dy/dx), and the chain rule gives d/dx(5y^2) = 10y(dy/dx).",
+                    "So 2x − 4y − 4x(dy/dx) + 10y(dy/dx) = 0.",
+                    "Collect the dy/dx terms: (10y − 4x)(dy/dx) = 4y − 2x, so dy/dx = (4y − 2x)/(10y − 4x) = (2y − x)/(5y − 2x).",
+                    "Multiply the numerator and the denominator by −1: dy/dx = (x − 2y)/(2x − 5y)."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "Find the coordinates of each point on the curve at which the line tangent to the curve is horizontal.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets the numerator x − 2y equal to 0 and substitutes x = 2y into the equation of the curve: y^2 = 4."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds both points, (4, 2) and (−4, −2), and checks that the denominator 2x − 5y is not 0 at either."
+                    }
+                  ],
+                  "answer": "(4, 2) and (−4, −2)",
+                  "steps": [
+                    "A horizontal tangent needs dy/dx = 0: the numerator x − 2y = 0 and the denominator 2x − 5y ≠ 0. So x = 2y.",
+                    "Substitute x = 2y into the equation of the curve: 4y^2 − 8y^2 + 5y^2 = 4, so y^2 = 4 and y = ±2.",
+                    "The points are (4, 2) and (−4, −2). The denominator 2x − 5y is 8 − 10 = −2 at (4, 2) and −8 + 10 = 2 at (−4, −2), not 0, so both tangent lines are horizontal."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Find the value of d^2y/dx^2 at each point found in part (b). At each of those points, does the curve have a local maximum, a local minimum, or neither? Justify your answer.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates a second time correctly, keeping the dy/dx terms: from (2x − 5y)(dy/dx) = x − 2y, obtains (2 − 5(dy/dx))(dy/dx) + (2x − 5y)(d^2y/dx^2) = 1 − 2(dy/dx), or applies the quotient rule to (x − 2y)/(2x − 5y)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Substitutes dy/dx = 0 and each point to obtain d^2y/dx^2 = −1/2 at (4, 2) and d^2y/dx^2 = 1/2 at (−4, −2)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes a local maximum at (4, 2) and a local minimum at (−4, −2), because dy/dx = 0 and d^2y/dx^2 is negative or positive there (Second Derivative Test), or by an equivalent sign argument. The conclusions must agree with the signs the response found."
+                    }
+                  ],
+                  "answer": "d^2y/dx^2 = −1/2 at (4, 2), where the curve has a local maximum, and d^2y/dx^2 = 1/2 at (−4, −2), where it has a local minimum. At each point dy/dx = 0, and the sign of d^2y/dx^2 decides by the Second Derivative Test.",
+                  "steps": [
+                    "Write the result of part (a) as (2x − 5y)(dy/dx) = x − 2y and differentiate with respect to x by the product rule: (2 − 5(dy/dx))(dy/dx) + (2x − 5y)(d^2y/dx^2) = 1 − 2(dy/dx).",
+                    "At a point from part (b), dy/dx = 0, so (2x − 5y)(d^2y/dx^2) = 1 and d^2y/dx^2 = 1/(2x − 5y).",
+                    "At (4, 2), 2x − 5y = −2, so d^2y/dx^2 = −1/2. At (−4, −2), 2x − 5y = 2, so d^2y/dx^2 = 1/2.",
+                    "Alternatively, the quotient rule gives d^2y/dx^2 = [(1 − 2(dy/dx))(2x − 5y) − (x − 2y)(2 − 5(dy/dx))]/(2x − 5y)^2, which is (2x − 5y)/(2x − 5y)^2 = 1/(2x − 5y) where dy/dx = 0 and x − 2y = 0.",
+                    "At (4, 2), dy/dx = 0 and d^2y/dx^2 = −1/2 < 0, so the curve has a local maximum there. At (−4, −2), dy/dx = 0 and d^2y/dx^2 = 1/2 > 0, so the curve has a local minimum there.",
+                    "A check: the curve is an ellipse, and these are its highest and lowest points."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Find the coordinates of each point on the curve at which the line tangent to the curve is vertical.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Sets the denominator 2x − 5y equal to 0 and substitutes x = 5y/2 (or y = 2x/5) into the equation of the curve, reaching y^2 = 16/5 (or x^2 = 20)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Finds both points, (2√5, 4√5/5) and (−2√5, −4√5/5) (or equivalent forms such as (2√5, 4/√5)), and checks that the numerator x − 2y is not 0 there."
+                    }
+                  ],
+                  "answer": "(2√5, 4√5/5) and (−2√5, −4√5/5)",
+                  "steps": [
+                    "A vertical tangent needs the denominator 2x − 5y = 0 with the numerator not 0. So x = 5y/2.",
+                    "Substitute into the equation of the curve: 25y^2/4 − 10y^2 + 5y^2 = 4, so (5/4)y^2 = 4, y^2 = 16/5 and y = ±4/√5 = ±4√5/5.",
+                    "Then x = 5y/2 = ±2√5, so the points are (2√5, 4√5/5) and (−2√5, −4√5/5).",
+                    "There the numerator x − 2y = ±(2√5 − 8√5/5) = ±2√5/5 is not 0, so both tangent lines are vertical."
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "ab-fr-implicit-rates-fr3",
+              "prompt": "The bases of a softball field are at the corners of a square 18 meters on a side, as shown in the figure. A runner R runs along the straight base path from first base to second base at a constant speed of 7 meters per second. Let x be the runner's distance from first base, in meters, and let D be the distance from the runner to home plate, in meters.",
+              "context": true,
+              "figureIds": [
+                "ab-fr-implicit-rates-f2"
+              ],
+              "topics": [
+                "AB.4.5",
+                "AB.4.4",
+                "AB.4.1",
+                "AB.4.6",
+                "AB.3.6"
+              ],
+              "parts": [
+                {
+                  "label": "a",
+                  "prompt": "Find the rate at which D is changing at the instant the runner is halfway from first base to second base. Indicate units of measure.",
+                  "points": 3,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes a relation that holds at every instant: D^2 = 18^2 + x^2."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Differentiates with respect to t: 2D(dD/dt) = 2x(dx/dt), with dx/dt = 7."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains dD/dt = 7/√5 = 7√5/5 meters per second (with units), using x = 9 and D = 9√5."
+                    }
+                  ],
+                  "answer": "dD/dt = 7√5/5 meters per second (that is, 7/√5): D is increasing.",
+                  "steps": [
+                    "First base is 18 m from home plate, and the path from first to second base is perpendicular to that side, so D^2 = 18^2 + x^2 at every instant.",
+                    "Differentiate with respect to t: 2D(dD/dt) = 2x(dx/dt), so dD/dt = (x/D)(dx/dt).",
+                    "Halfway: x = 9, so D = √(324 + 81) = √405 = 9√5, and dx/dt = 7.",
+                    "dD/dt = (9/(9√5))(7) = 7/√5 = 7√5/5 meters per second."
+                  ]
+                },
+                {
+                  "label": "b",
+                  "prompt": "At the same instant, is the distance between the runner and third base increasing or decreasing? Find the rate at which this distance is changing.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Writes E^2 = 18^2 + (18 − x)^2 for the distance E to third base, and differentiates: 2E(dE/dt) = −2(18 − x)(dx/dt)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Obtains dE/dt = −7√5/5 meters per second and concludes that the distance to third base is decreasing."
+                    }
+                  ],
+                  "answer": "Decreasing, at 7√5/5 meters per second: dE/dt = −7√5/5 m/s.",
+                  "steps": [
+                    "Third base is 18 m from second base along the side perpendicular to the runner's path, and the runner is 18 − x meters from second base, so E^2 = 18^2 + (18 − x)^2.",
+                    "Differentiate: 2E(dE/dt) = 2(18 − x)(−dx/dt), so dE/dt = −((18 − x)/E)(dx/dt).",
+                    "At x = 9: E = 9√5 and dE/dt = −(9/(9√5))(7) = −7√5/5 meters per second.",
+                    "The rate is negative, so the distance to third base is decreasing."
+                  ]
+                },
+                {
+                  "label": "c",
+                  "prompt": "Is there any instant, while the runner is between first base and second base, at which D is increasing at 5 meters per second? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Expresses the rate in terms of x: dD/dt = 7x/√(324 + x^2) for 0 ≤ x ≤ 18 (or sets this equal to 5)."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes no, with a valid reason: the equation 7x/√(324 + x^2) = 5 gives x^2 = 337.5 > 324, so x > 18; or dD/dt is increasing in x and its largest value, at x = 18, is 7/√2 < 5 because 49/2 < 25."
+                    }
+                  ],
+                  "answer": "No. dD/dt = 7x/√(324 + x^2) is at most 7/√2, which is less than 5.",
+                  "steps": [
+                    "From part (a), dD/dt = 7x/D = 7x/√(324 + x^2) at every instant.",
+                    "Set 7x/√(324 + x^2) = 5: 49x^2 = 25(324 + x^2), so 24x^2 = 8100 and x^2 = 337.5.",
+                    "Then x = √337.5 > √324 = 18, which is beyond second base. No instant on the path from first to second base works.",
+                    "Equivalently, x/√(324 + x^2) increases with x, so the greatest rate is at x = 18: 7(18)/(18√2) = 7/√2, and (7/√2)^2 = 24.5 < 25 = 5^2."
+                  ]
+                },
+                {
+                  "label": "d",
+                  "prompt": "Use the line tangent to the graph of D as a function of time at the instant described in part (a) to estimate D 0.5 second later. Is this estimate an overestimate or an underestimate? Justify your answer.",
+                  "points": 2,
+                  "rubric": [
+                    {
+                      "points": 1,
+                      "criterion": "Estimates D ≈ 9√5 + (7√5/5)(0.5) = 9.7√5 meters, or the value that follows from the response's dD/dt."
+                    },
+                    {
+                      "points": 1,
+                      "criterion": "Concludes underestimate because d^2D/dt^2 > 0 on the interval, so the graph of D is concave up and lies above its tangent line. Needs a reason that d^2D/dt^2 is positive on the whole half second, not only at the instant: for example, (dD/dt)^2 + D(d^2D/dt^2) = 49 with |dD/dt| < 7."
+                    }
+                  ],
+                  "answer": "D ≈ 9.7√5 meters. This is an underestimate: d^2D/dt^2 > 0 throughout, so the graph of D is concave up and lies above its tangent line.",
+                  "steps": [
+                    "Tangent-line estimate: D ≈ 9√5 + (7√5/5)(0.5) = 9√5 + 0.7√5 = 9.7√5 meters.",
+                    "Differentiate D(dD/dt) = x(dx/dt) again with dx/dt = 7 constant: (dD/dt)^2 + D(d^2D/dt^2) = (dx/dt)^2 = 49.",
+                    "So d^2D/dt^2 = (49 − (dD/dt)^2)/D. Since dD/dt = 7x/√(324 + x^2) < 7 for every position on the path, 49 − (dD/dt)^2 > 0 and d^2D/dt^2 > 0 throughout the half second (the runner moves from x = 9 to x = 12.5, still on the path).",
+                    "At the instant itself, d^2D/dt^2 = (49 − 49/5)/(9√5) = 196/(45√5) > 0.",
+                    "A function that is concave up lies above its tangent lines, so 9.7√5 meters is too small. (The actual distance is √(324 + 12.5^2) ≈ 21.915 m, against an estimate of about 21.690 m.)"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
