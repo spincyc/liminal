@@ -51,7 +51,7 @@ numbers are retained; completed item 1 is recorded below.
 | 5 | P2 | Progress export excludes unfinished sessions and essay drafts | Local resume and separate essay download work |
 | 6 | P2 | Some historical question details cannot be reconstructed | Outcomes preserved; unverifiable details withheld |
 | 7 | P2 | Browser, accessibility, concurrency and print coverage is incomplete | Verification gap; no corresponding open failure established |
-| 8 | P2 | Two unreviewed WIP branches exist only in this workspace | Preserved, unmerged and absent from fetched remote refs |
+| 8 | P2 | Two unreviewed WIP branches exist only in this workspace | Reconciled 2026-11-16: report drift check ported; remainder not landable as-is |
 | 9 | P3 | Archived SAT banks and large modules remain | Maintenance backlog; compatibility paths still use banks |
 | 10 | P3 | No in-site calculator: students open desmos.com/calculator themselves | Owner's decision (2026-10-16); embedding would also need Desmos's written consent (Terms §5) |
 
@@ -224,6 +224,32 @@ advice to merge platform wholesale first is superseded. Neither proposal may und
 current identity safeguards, reviews or validation; require relevant full/deep checks
 and browser verification before integration. An old detached review worktree also exists
 and is not new work created by this handoff.
+
+**Reconciliation, 2026-11-16** (against `main` at `50336b0`):
+
+- `b68714f` on `lane/act-math` (approximation keys, visible-text slips, declared tiers)
+  was already on `main` as `6355419`, with identical changes.
+- The platform proposal's report drift check is ported: `node tools/report-content.js
+  --check` now runs in the gate. It found the report still listing 200 SAT Math
+  templates where there were 218.
+- Not ported from `ba6c6ba`: deleting the SAT banks (the app still loads them to show
+  old questions again; define historical-ID behavior first, item 9, and it needs the
+  owner); the `core.js` split (written against a `core.js` that has since gained five
+  exports and against script lists now in `practice.html`; a trial cherry-pick conflicts
+  in 23 files, so redo it from `main` if wanted); and `lib/recording.js` (its tests were
+  never written, and attempts have since gained content and visible identities and
+  `setKind`/`setSkill`).
+- Not ported from `0e4ad3a`: all 63 ACT Math templates pass `node
+  tools/check-families.js --section act-mathematics` under the current gates, but they
+  cannot be registered as they stand. Their choice ordering lives in the shared
+  `instantiate.js`, which every template's source fingerprint includes, so it re-versions
+  all 381 SAT templates and makes their 381 independent reviews stale. Adding
+  `act-mathematics` to `TEMPLATE_SECTIONS` also makes `tools/lib/content.js` treat the
+  live ACT Math bank as retired. The templates have no independent reviews, and serving
+  them (progress, practice, Progress, Learn) was never built. Move ACT-only ordering out
+  of the shared file before reusing them.
+
+As of 2026-11-16 both branches are still local to this clone and absent from `origin`.
 
 ## P3 — maintenance and enhancements
 
