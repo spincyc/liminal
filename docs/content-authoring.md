@@ -94,10 +94,13 @@ node tools/validate-content.js --complete
 ```
 
 The generated coverage report records counts, distributions, and remaining
-human-review work:
+human-review work. `npm run check` fails until `docs/content-report.md`
+matches the templates and banks, so write it whenever counts or statuses
+change:
 
 ```sh
-npm run report
+npm run report         # print it
+npm run report:write   # write docs/content-report.md
 ```
 
 ## Generator limitations

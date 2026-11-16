@@ -1,10 +1,22 @@
 #!/usr/bin/env node
 "use strict";
 
+// The coverage report of the SAT templates and the fixed ACT banks, as
+// docs/content-report.md holds it.
+//
+//   node tools/report-content.js           # print it
+//   node tools/report-content.js --write   # write docs/content-report.md
+//   node tools/report-content.js --check   # fail unless that file is current
+//
+// The full gate runs --check, so the counts in the doc cannot drift from the
+// templates and banks.
+
 const fs = require("node:fs");
 const path = require("node:path");
 const { validateAll, bankSections } = require("./lib/content");
 const { TEMPLATE_SECTIONS } = require("./lib/families");
+
+const TARGET = path.join(__dirname, "..", "docs", "content-report.md");
 
 const result = validateAll();
 const active = bankSections(result.catalog);
@@ -64,8 +76,14 @@ lines.push("", "## Validation status", "",
   "Automated checks and agent editorial reviews do not establish independent human approval or empirical exam calibration.", "");
 const output = `${lines.join("\n")}\n`;
 if (process.argv.includes("--write")) {
-  const target = path.join(__dirname, "..", "docs/content-report.md");
-  fs.writeFileSync(target, output);
-  console.log(`Wrote ${path.relative(process.cwd(), target)}.`);
+  fs.writeFileSync(TARGET, output);
+  console.log(`Wrote ${path.relative(process.cwd(), TARGET)}.`);
+} else if (process.argv.includes("--check")) {
+  const current = fs.existsSync(TARGET) ? fs.readFileSync(TARGET, "utf8") : "";
+  if (current !== output) {
+    console.error(`${path.relative(process.cwd(), TARGET)} is out of date with the templates and banks. ` +
+      "Run `npm run report:write` and commit it.");
+    process.exitCode = 1;
+  } else console.log(`${path.relative(process.cwd(), TARGET)} matches the templates and banks.`);
 } else process.stdout.write(output);
 if (result.errors.length) process.exitCode = 1;

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 "use strict";
 
-// The full gate: syntax, complete content validation, a fresh build, a smoke
-// test of the built site, the study-guide links, the Learn pages, and the
-// unit tests.
+// The full gate: syntax, complete content validation, the content report
+// kept current, a fresh build, a smoke test of the built site, the
+// study-guide links, the Learn pages, and the unit tests.
 
 const fs = require("node:fs");
 const path = require("node:path");
@@ -29,6 +29,7 @@ const checks = [
   ["node", ["tools/check-science.js"]],
   ["node", ["tools/check-shapes.js", "act-mathematics"]],
   ["node", ["tools/check-answer-positions.js"]],
+  ["node", ["tools/report-content.js", "--check"]],
   ["node", ["tools/update-templates.js", "--check"]],
   ["node", ["tools/check-template-reviews.js"]],
   ["node", ["tools/check-families.js"]],

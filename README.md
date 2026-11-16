@@ -382,6 +382,7 @@ npm run serve      # serve dist/ at http://localhost:8080 (reachable from a phon
 npm run check      # the full gate: validation, templates, build, smoke test of dist/, guides, Learn pages, unit tests
 npm run check:families -- --reps 3000   # a deeper pass over every template
 npm run templates  # register new templates and re-version changed ones
+npm run report:write  # rewrite docs/content-report.md; the gate fails while it is stale
 node tools/check-lesson-modules.js # validate grade expansions and worksheet generation
 node tools/build-weekly.js  # validate and build available weekly courses
 node tools/check-ap.js --complete # require all four AP courses' assessments, exam-prep guides and references

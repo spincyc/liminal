@@ -50,7 +50,8 @@ and ids still resolve, so never regenerate them. A template change follows
 `docs/question-templates.md`: pass `npm run check:families` (and a
 `--reps 3000` deep pass), read at least three seeds of every changed template
 as a strong test-taker, then run `npm run templates` and commit the registry,
-whose version bumps when what a template builds changes.
+whose version bumps when what a template builds changes (and
+`npm run report:write` when template counts or tiers change).
 
 Template source changes also need renewed independent review recorded in
 `content/template-reviews.json`, following `docs/question-templates.md`. The
@@ -80,7 +81,9 @@ For a coherent ACT bank batch:
    `tools/generators/`.
 2. Validate, inspect failures, and never weaken a gate merely to reach a count.
 3. Manually sample every affected domain, difficulty, and response format.
-4. Run `npm run check`, and `npm run report:write` when counts or statuses change.
+4. Run `npm run check`, and `npm run report:write` when counts or statuses
+   change (the gate fails until `docs/content-report.md` matches the
+   templates and banks).
 5. Commit source, tests, documentation, and audit notes together.
 
 ## Application notes

@@ -15,6 +15,7 @@
     "validate": "node tools/validate-content.js",
     "report": "node tools/report-content.js",
     "report:write": "node tools/report-content.js --write",
+    "report:check": "node tools/report-content.js --check",
     "audit": "node tools/audit-questions.js",
     "audit:strict": "node tools/audit-questions.js --strict",
     "check:difficulty": "node tools/check-difficulty.js",
