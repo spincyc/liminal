@@ -19,11 +19,13 @@ function pageScripts(page) {
 const root = path.resolve(__dirname, "..", "dist");
 // Reader/plan templates share the same controls, including their print hiding
 // and keyboard treatment. Keep their assets present and loaded before use.
-for (const page of ["daily-reading", "weeks", "lessons", "curriculum", "high-school", "ap", "reading-level", "learn"]) {
+for (const page of ["daily-reading", "library", "weeks", "lessons", "curriculum", "high-school", "ap", "reading-level", "learn"]) {
   const template = fs.readFileSync(path.join(root, page + ".html"), "utf8");
   if (!template.includes('href="styles/reader-controls.css"')) throw new Error(page + " must load the shared reader controls");
-  if (["daily-reading", "weeks", "lessons"].includes(page)) {
+  if (["daily-reading", "library", "weeks", "lessons"].includes(page)) {
     const scripts = pageScripts(template), entry = page === "weeks" ? "weekly" : page;
+    // Readings modules capture LiminalReaderControls when they load.
+    if (page === "daily-reading" && scripts.slice(scripts.indexOf("app/reader-controls.js")).filter(script => /^app\/daily-reading/.test(script)).length !== 4) throw new Error("daily-reading must load reader controls before its browse, calendar and print modules");
     const shared = scripts.indexOf("app/reader-controls.js"), app = scripts.indexOf("app/" + entry + ".js");
     if (shared < 0 || app <= shared) throw new Error(page + " must load reader controls before its application");
   }
@@ -318,7 +320,7 @@ for (const script of siteHeader.SCRIPTS) {
 // Grouping the primary destinations must not strand a former destination.
 const linkedPages = new Set(builtPages.flatMap(page => [...siteHeader.render(page).matchAll(/href="([^"]+)"/g)]
   .map(match => match[1].split(/[?#]/)[0])));
-for (const page of ["curriculum.html", "weeks.html", "high-school.html", "daily-reading.html", "reading-level.html", "ap.html", "practice.html"]) {
+for (const page of ["curriculum.html", "weeks.html", "high-school.html", "daily-reading.html", "library.html", "reading-level.html", "ap.html", "practice.html"]) {
   if (!linkedPages.has(page)) throw new Error(`Shared navigation does not reach ${page}`);
 }
 
@@ -527,14 +529,15 @@ if (apDisclaimer.length) throw new Error(apDisclaimer.join("; "));
 // Nightly texts remain in separately loaded grade files, with a small index.
 const dailyHtml = fs.readFileSync(path.join(root, "daily-reading.html"), "utf8");
 const dailyScripts = pageScripts(dailyHtml);
-if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "app/daily-reading-render.js", "app/daily-reading-browse.js", "app/reader-controls.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
+if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "lib/reading-calendar.js", "lib/reading-library.js", "lib/reading-level.js", "app/daily-reading-render.js", "app/reader-controls.js",
+  "app/daily-reading-browse.js", "app/daily-reading-calendar.js", "app/daily-reading-print.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
 for (const match of dailyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
   if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing daily-reading asset: " + target);
 }
 const dailyIds = [...dailyHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
 if (new Set(dailyIds).size !== dailyIds.length) throw new Error("Duplicate daily-reading element IDs");
-for (const script of ["app/daily-reading-browse.js", "app/daily-reading.js"]) {
+for (const script of ["app/daily-reading-browse.js", "app/daily-reading-calendar.js", "app/daily-reading-print.js", "app/daily-reading.js"]) {
   const source = fs.readFileSync(path.join(root, script), "utf8");
   for (const [, id] of source.matchAll(/(?:getElementById|\$)\("([^"]+)"\)/g)) if (!dailyIds.includes(id) && id !== "dailyHeading") throw new Error(script + " references a missing element: " + id);
 }
@@ -559,6 +562,38 @@ for (let i = 0; i < dailyIndex.grades.length; i++) {
     const weekFile = path.join(root, DR.weekFile(entry.grade, week));
     if (!fs.existsSync(weekFile)) throw new Error("Missing daily-reading week file: " + DR.weekFile(entry.grade, week));
     if (JSON.stringify(JSON.parse(fs.readFileSync(weekFile, "utf8"))) !== JSON.stringify(DR.weekSlice(dailySource.courses[i], week))) throw new Error("Daily-reading week file differs from source: " + DR.weekFile(entry.grade, week));
+  }
+}
+
+// One file per reading for the date view and library links, and a date
+// calendar exactly for the levels the index says have one.
+{
+  const DR = require("../src/lib/daily-reading");
+  for (const entry of dailyIndex.grades) {
+    const folder = path.join(root, "content/reading-daily/readings", DR.gradeKey(entry.grade));
+    const files = fs.existsSync(folder) ? fs.readdirSync(folder) : [];
+    if (files.length !== entry.readings || files.some(file => !DR.validReadingId(entry.grade, file.replace(/\.json$/, "")))) throw new Error("Daily-reading reading files do not match the index for " + entry.file);
+    if (fs.existsSync(path.join(root, DR.calendarFile(entry.grade))) !== entry.calendar) throw new Error("Daily-reading calendar file does not match the index for " + entry.file);
+  }
+}
+// The library page: its scripts in order, its elements, and the built
+// library data (an index, and per work its record and text chunks).
+const libraryHtml = fs.readFileSync(path.join(root, "library.html"), "utf8");
+if (JSON.stringify(pageScripts(libraryHtml)) !== JSON.stringify(["lib/daily-reading.js", "lib/reading-library.js", "app/daily-reading-render.js", "app/reader-controls.js", "app/library.js"])) throw new Error("Library scripts are missing or out of order");
+for (const match of libraryHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
+  const target = match[1].split(/[?#]/)[0];
+  if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing library asset: " + target);
+}
+const libraryIds = [...libraryHtml.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
+if (new Set(libraryIds).size !== libraryIds.length) throw new Error("Duplicate library element IDs");
+for (const [, id] of fs.readFileSync(path.join(root, "app/library.js"), "utf8").matchAll(/\$\("([^"]+)"\)/g)) if (!libraryIds.includes(id)) throw new Error("library.js references a missing element: " + id);
+pageScripts(libraryHtml).forEach(script => new vm.Script(fs.readFileSync(path.join(root, script), "utf8"), { filename: script }));
+{
+  const libraryIndex = JSON.parse(fs.readFileSync(path.join(root, "content/reading-library/index.json"), "utf8"));
+  if (libraryIndex.schemaVersion !== 1 || !Array.isArray(libraryIndex.works) || libraryIndex.works.length !== dailySource.library.size) throw new Error("Library index differs from source");
+  for (const work of libraryIndex.works) {
+    const meta = JSON.parse(fs.readFileSync(path.join(root, work.file), "utf8"));
+    if (meta.work.id !== work.id || !meta.chunks.every(chunk => fs.existsSync(path.join(root, chunk.file)))) throw new Error("Library work files are incomplete: " + work.id);
   }
 }
 
@@ -587,7 +622,7 @@ if (!levelContext.window.LiminalReadingLevel || levelContext.window.LiminalReadi
 
 // Every page names its icon, which is built with it, so no page asks the
 // server for a favicon.ico that is not there.
-for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "lessons.html", "curriculum.html", "weeks.html", "high-school.html", "ap.html", "daily-reading.html"]) {
+for (const page of ["index.html", "practice.html", "learn.html", "print.html", "courses.html", "lessons.html", "curriculum.html", "weeks.html", "high-school.html", "ap.html", "daily-reading.html", "library.html"]) {
   const file = path.join(root, page);
   if (!fs.existsSync(file)) continue;
   const icon = (fs.readFileSync(file, "utf8").match(/<link rel="icon" href="([^"]+)"/) || [])[1];
