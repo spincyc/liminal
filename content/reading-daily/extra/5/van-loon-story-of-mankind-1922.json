@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "van-loon-story-of-mankind-1922",
+  "readings": [
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-01",
+      "title": "The Story of Mankind: up the tower of Saint Lawrence (Foreword, first part)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a climb floor by floor and notice how each level changes what the boy hears and sees.",
+      "focus": "Van Loon opens a history book with a childhood memory, building a comparison he explains only at the end.",
+      "context": "Hendrik Willem van Loon grew up in the Netherlands and wrote The Story of Mankind in New York for his sons Hansje and Willem; in 1922 it won the first Newbery Medal for American children’s literature. Saint Lawrence is the great medieval church of Rotterdam. A sexton looks after a church building; an apothecary is an old word for a chemist or pharmacist.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Foreword, from “For Hansje and Willem” through the boy’s first view from the highest gallery; opens “For Hansje and Willem:”; closes “It was my first glimpse of the big world.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-5-van-loon-story-of-mankind-1922-02",
+        "blocks": [
+          4,
+          12
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c20655b721dbfc0c784012a8cf387c4ef748189aa4491748063c4f4833e93f2d"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-01-q1",
+          "prompt": "List the floors of the tower in order. What does the boy find on each one?",
+          "facilitatorNotes": [
+            "Dark stairs; a storeroom of old carved images under dust; a room of pigeons and barred windows; the town clock; the bells; the highest gallery. Each level brings a new sense: silence, darkness, light, music, rhythm, sound and at last the whole view."
+          ],
+          "evidence": [
+            "We went to the next floor and then to the next and the next until I had lost count",
+            "We had reached the highest gallery."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-01-q2",
+          "prompt": "What could “audible silence” and “tangible darkness” mean? Why put such opposite-seeming words together?",
+          "facilitatorNotes": [
+            "Silence so complete that you seem to hear it, darkness so thick that you seem to touch it. The paradoxes show a boy meeting experiences for which ordinary words do not work."
+          ],
+          "evidence": [
+            "the phenomenon of audible silence",
+            "that of tangible darkness"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-01-q3",
+          "prompt": "How does the noise of the town change when it is heard from high up? Which words show the change?",
+          "facilitatorNotes": [
+            "Carts, hoofs, cranes and steam are “purified and cleansed by the distance” into “a softly rustling whisper.” Distance turns noise into music, which prepares for the Foreword’s later claim that a height, and history, can turn confusion into order."
+          ],
+          "evidence": [
+            "purified and cleansed by the distance",
+            "a softly rustling whisper"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-01-q4",
+          "prompt": "In the storeroom, carved saints lie in dust among rats and spiders. What does van Loon want us to notice about things that once “meant life and death”?",
+          "facilitatorNotes": [
+            "Objects at the centre of people’s faith became junk when beliefs changed (Rotterdam’s church became Protestant in the sixteenth century, and its Catholic images were put away). Readers may find the scene sad, funny (“opened up shop”) or both; either way the past is stored, forgotten and waiting to be found."
+          ],
+          "evidence": [
+            "That which had meant life and death to our ancestors was here reduced to junk and rubbish."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-02",
+      "title": "The Story of Mankind: the watchman’s view and the Tower of Experience (Foreword, end)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 10,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a comparison from a real tower to an idea, and explain what each part of it stands for.",
+      "focus": "The Foreword turns a remembered view into an argument for why history is worth the climb.",
+      "context": "Recap: as a boy, van Loon climbed with his uncle to the top gallery of the Saint Lawrence tower in Rotterdam and saw the city from above for the first time. The watchman points to Dutch places and people: William the Silent, Prince of Orange, who led the Dutch revolt against Spain in the 1500s; the admirals De Ruyter and Tromp; Grotius, a scholar of law; and Erasmus, a famous writer. Leyden, Delft and Gouda are Dutch towns.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Foreword, from “Since then, whenever I have had the opportunity” to the signature; opens “Since then, whenever I have had the opportunity, I have gone to the top of the tower and…”; closes “HENDRIK WILLEM VAN LOON.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-van-loon-story-of-mankind-1922-01",
+        "continuesTo": "reading-5-van-loon-story-of-mankind-1922-03",
+        "blocks": [
+          13,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7176bde31386e5cc5416b73d5bb368431fd265b2e3814c3a2047b472dd7d8137"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-02-q1",
+          "prompt": "What did the watchman know, and how had he learned it?",
+          "facilitatorNotes": [
+            "He had little schooling and rarely read a book, but living on the tower he had “absorbed the wisdom” of the land around him, so history was “a living thing” he could point to. Readers may discuss whether learning by place counts as knowing history."
+          ],
+          "evidence": [
+            "he had rarely read a book",
+            "History he knew well, for it was a living thing with him."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-02-q2",
+          "prompt": "Choose one place the watchman points to. What happened there, and how does seeing the place change the story?",
+          "facilitatorNotes": [
+            "The bend of the river where the dikes were cut to save Leyden; Delft, where William the Silent was murdered; Gouda, Erasmus’s early home. The landscape becomes a map of events, and the river turns from a harbour into “a wonderful highroad.”"
+          ],
+          "evidence": [
+            "That is where the Prince of Orange cut the dikes to drown the land and save Leyden.",
+            "became a wonderful highroad"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-02-q3",
+          "prompt": "Complete the comparison: if history is the tower, what are the climb, the view and the key?",
+          "facilitatorNotes": [
+            "The climb is the hard work of learning (“no easy task”); the view is understanding how the present came to be; the key is this book. “Young feet are strong” tells young readers he expects them to manage it."
+          ],
+          "evidence": [
+            "History is the mighty Tower of Experience",
+            "Here I give you the key that will open the door."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-02-q4",
+          "prompt": "How does the view change the way the boy sees his ordinary home? Do you think knowing history can do the same?",
+          "facilitatorNotes": [
+            "Confused commotion becomes “the well-ordered expression of human energy and purpose,” and the past gives “new courage.” Readers may agree, or argue that history can also be discouraging; ask for a reason either way."
+          ],
+          "evidence": [
+            "But the tower showed us the old home in a new light.",
+            "gave us new courage to face the problems of the future"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-03",
+      "title": "The Story of Mankind: a question mark and the first living things (Chapter 1, first part)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 9,
+        "totalMinutes": 19
+      },
+      "challenge": "Tell apart what the writer says is known, what he says is guessed, and what is a storyteller’s way of putting things.",
+      "focus": "A history of mankind begins with unimaginable time and with the writer’s admission of how little anyone knows.",
+      "context": "Recap: the Foreword compared history to a tower that gives a wide view. The book itself opens with a legend about eternity (Svithjod is an old name for Sweden). The book was written in 1921, and some of its science and dates have since been corrected; the notes point out the main changes. Where van Loon writes “a line of this length,” his book shows a long line beside a tiny one; the drawing is not reproduced here.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Opening epigraph and “The Setting of the Stage,” from its start through the first amphibians; opens “High up in the North in the land called Svithjod, there stands a rock. It is a hundred…”; closes “…your path can tell you all about the pleasures of the double existence of the amphibian.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-van-loon-story-of-mankind-1922-02",
+        "continuesTo": "reading-5-van-loon-story-of-mankind-1922-04",
+        "blocks": [
+          22,
+          41
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ccbe1a13061989ea295db73053e2d31e6984064f056e8a64c7a293499bf945e8"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-03-q1",
+          "prompt": "What does the legend of the rock and the little bird ask you to imagine? Why might a history book begin with it?",
+          "facilitatorNotes": [
+            "A rock a hundred miles high, worn away by one bird’s visits every thousand years, to make a single day of eternity: time beyond imagining. It prepares readers for the millions of years in the chapter and makes human history look very short."
+          ],
+          "evidence": [
+            "Once every thousand years a little bird comes to this rock to sharpen its beak.",
+            "then a single day of eternity will have gone by."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-03-q2",
+          "prompt": "Find words in which van Loon admits that he is not certain. Why does he need so many in this chapter?",
+          "facilitatorNotes": [
+            "“We still know very little,” “with a fair degree of accuracy,” “according to our best belief,” “as far as we now know.” No one saw the beginning of life; it is reconstructed from evidence. Ask which later sentences carry no such warning."
+          ],
+          "evidence": [
+            "We still know very little",
+            "according to our best belief",
+            "as far as we now know"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-03-q3",
+          "prompt": "Van Loon says plants “reluctantly” left the water and “after centuries of training” learned to live in the air. Is that how it really happened? Why might he write it this way?",
+          "facilitatorNotes": [
+            "Plants did not choose or train. Over very many generations, those suited to new places survived and spread. The wording turns a slow process into a story with characters. Readers can rewrite one sentence without the choosing words and compare the two."
+          ],
+          "evidence": [
+            "Reluctantly they left the water",
+            "After centuries of training"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-03-q4",
+          "prompt": "Why, according to van Loon, does the book study human beings rather than cats or horses? Is it a fair reason?",
+          "facilitatorNotes": [
+            "Humans were “the first to use his brain for the purpose of conquering the forces of nature.” Some readers accept that people make history in a way animals do not; others point out that he himself grants animals “a very interesting historical development.”"
+          ],
+          "evidence": [
+            "Man was the last to come but the first to use his brain",
+            "have a very interesting historical development behind them"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-04",
+      "title": "The Story of Mankind: giant reptiles, birds and mammals (Chapter 1, end)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 10,
+        "totalMinutes": 19
+      },
+      "challenge": "Compare the writer’s confident explanations with what he admits he does not know, and notice where he speaks directly to the reader.",
+      "focus": "Van Loon makes a huge stretch of time feel familiar through cats, kittens and a child learning to walk.",
+      "context": "Recap: van Loon has followed life from the first cell in the sea to plants and amphibians on land. Since he wrote, scientists have found that birds descend from small feathered dinosaurs and that a giant asteroid helped end the age of the great reptiles; human beings are not descended from today’s apes or monkeys but share distant ancestors with them.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Setting of the Stage,” from “Once outside of the water” to the end of the chapter; opens “Once outside of the water, these animals gradually adapted themselves more and more to…”; closes “This creature, though you may hardly believe it, was your first “man-like” ancestor.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-van-loon-story-of-mankind-1922-03",
+        "continuesTo": "reading-5-van-loon-story-of-mankind-1922-05",
+        "blocks": [
+          42,
+          50
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "02bf03e21e9337ec27a4dd203b7b7bd10eb8068a89f4cd73e45e916650822c22"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-04-q1",
+          "prompt": "What does van Loon say about why the giant reptiles died? How certain is he?",
+          "facilitatorNotes": [
+            "“We do not know the reason,” followed by two “Perhaps” guesses: a change in climate, or growing too big to move. His caution was right in 1921; scientists now point to an asteroid impact."
+          ],
+          "evidence": [
+            "We do not know the reason.",
+            "Perhaps it was due to a sudden change in climate."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-04-q2",
+          "prompt": "How does van Loon explain the way birds came to be? Which parts sound like a guess told as a fact?",
+          "facilitatorNotes": [
+            "Tree-living reptiles turned skin into a “parachute,” covered it with feathers and made their tails into “steering gear.” No “perhaps” appears, though the evidence was thin; scientists now trace birds to small feathered dinosaurs. A useful habit: notice confident sentences about things no one could watch."
+          ],
+          "evidence": [
+            "they changed a part of their skin into a sort of parachute",
+            "developed into true birds"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-04-q3",
+          "prompt": "What gave mammals an advantage, according to the chapter? Which everyday example does van Loon use?",
+          "facilitatorNotes": [
+            "They kept and sheltered their young, who learned from their mothers, as a cat teaches her kittens to wash and catch mice. A familiar sight explains something no one saw."
+          ],
+          "evidence": [
+            "the mammals kept their young with them for a long time",
+            "a cat teaching her kittens"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-04-q4",
+          "prompt": "Find two places where van Loon speaks to “you.” What effect does that have?",
+          "facilitatorNotes": [
+            "“You know them well,” “your less familiar cousins behind the bars of the zoological garden,” “though you may hardly believe it.” He makes the reader part of the story, and he expects surprise at the last sentence."
+          ],
+          "evidence": [
+            "your less familiar cousins behind the bars of the zoological garden",
+            "This creature, though you may hardly believe it, was your first “man-like” ancestor."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-05",
+      "title": "The Story of Mankind: our earliest ancestors (Chapter 2)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Weigh a vivid description against the writer’s own admission of how little is known.",
+      "focus": "A chapter that paints early life in detail ends by saying that “the rest is darkness.”",
+      "context": "Recap: Chapter 1 ended with a “man-like” creature that could stand on its hind legs and was beginning to turn grunts into speech. Anthropologists study human beings, including ancient bones. Many more fossils have been found since 1921, and scientists now think the first humans arose in Africa.",
+      "contentNote": "Van Loon writes that the first people lived in forests “as the pygmies of Africa do to this very day,” a comparison that treats a living people as if they belonged to the distant past. It reflects a prejudice common in his time and is wrong.",
+      "excerpt": {
+        "locator": "“Our Earliest Ancestors,” the whole chapter; opens “We know very little about the first “true” men. We have never seen their pictures. In the…”; closes “It is little enough we know and the rest is darkness.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-van-loon-story-of-mankind-1922-04",
+        "continuesTo": "reading-5-van-loon-story-of-mankind-1922-06",
+        "blocks": [
+          52,
+          60
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "17c47bf91936676adfb332c62e77177b26251253e22cbce5e0d6c9650f0657d9"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-05-q1",
+          "prompt": "What evidence of the first “true” men does van Loon say scientists have?",
+          "facilitatorNotes": [
+            "Pieces of bone from the deepest layers of soil, among skeletons of extinct animals: “a few collar-bones and a few pieces of his skull.” No pictures, tools or houses. The chapter’s last line admits how little that is."
+          ],
+          "evidence": [
+            "In the deepest layer of clay of an ancient soil we have sometimes found pieces of their bones.",
+            "It is little enough we know and the rest is darkness."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-05-q2",
+          "prompt": "Choose three details of early man’s daily life from the chapter. Could bones alone tell us those things?",
+          "facilitatorNotes": [
+            "Hiding his family in hollow trees, catching a sparrow or a rabbit, liking to “jabber.” Bones might show size or the shape of a jaw, but not habits or feelings; much is imagined so that readers can picture the past. Sort details into “could be shown by evidence” and “imagined.”"
+          ],
+          "evidence": [
+            "he hid his wife and his children in a hollow tree",
+            "he endlessly repeated the same unintelligible gibberish"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-05-q3",
+          "prompt": "How does van Loon think language began? Which word tells you it is a guess?",
+          "facilitatorNotes": [
+            "Warning shrieks came to mean “there is a tiger!” and others grunted back. “Probably” marks it as a guess, and a reasonable one."
+          ],
+          "evidence": [
+            "And this was probably the origin of all language."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-05-q4",
+          "prompt": "The chapter calls this ancestor “very ugly and unattractive” and compares him with “the pygmies of Africa.” What do these judgments tell us about the writer and his time rather than about early humans?",
+          "facilitatorNotes": [
+            "“Ugly” is an opinion, not evidence. The pygmy comparison wrongly treats living people as left over from the past, a prejudice common in 1921 that scientists and historians reject. Practise separating a writer’s judgments from his evidence."
+          ],
+          "evidence": [
+            "a very ugly and unattractive mammal",
+            "as the pygmies of Africa do to this very day"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-06",
+      "title": "The Story of Mankind: ice, fire and the first tools (Chapter 3)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 10,
+        "totalMinutes": 19
+      },
+      "challenge": "Notice where history is told as a story with invented moments, and ask what each story is meant to explain.",
+      "focus": "Van Loon argues that hardship made people inventive: the ice became mankind’s “greatest teacher.”",
+      "context": "Recap: van Loon has described the earliest people as wanderers who left little behind but bones. This chapter turns to the Ice Ages, when glaciers covered much of northern Europe. “Hibernal” means wintry. Scientists now count many advances of the ice rather than four, and think people used fire long before the last Ice Age.",
+      "contentNote": "Starving strangers are driven off in a battle in which whole families are killed; people die in blizzards and under a glacier.",
+      "excerpt": {
+        "locator": "“Prehistoric Man,” the whole chapter; opens “Early man did not know what time meant. He kept no records of birthdays or wedding…”; closes “…the human race, became its greatest teacher because it forced man to use his brain.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-van-loon-story-of-mankind-1922-05",
+        "continuesTo": "reading-5-van-loon-story-of-mankind-1922-07",
+        "blocks": [
+          63,
+          73
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "04685e5bc0e03cecc3669752ac94c452d4371fc7c1b2e4acddab589e7d75511b"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-06-q1",
+          "prompt": "What signs told the people of the forest that something was wrong?",
+          "facilitatorNotes": [
+            "Summer came late, fruit did not ripen, snow buried the grassy mountaintops, starving strangers came down from the peaks, and the days shortened too soon. The warnings build before the glacier arrives."
+          ],
+          "evidence": [
+            "Something was the matter with the weather.",
+            "The fruits had not ripened."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-06-q2",
+          "prompt": "List the problems the cold created and how people solved each one.",
+          "facilitatorNotes": [
+            "Clothing: pit traps, and the skins of bears and hyenas. Housing: caves taken from animals. Cold: fire. Winter food: stores kept in clay jars. Each solution answers a problem, which is how van Loon organizes the chapter."
+          ],
+          "evidence": [
+            "In the first place it was necessary that man clothe himself lest he freeze to death.",
+            "Next came the housing problem."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-06-q3",
+          "prompt": "“One evening a dead chicken fell into the fire.” Could anyone know that? Why might van Loon include it?",
+          "facilitatorNotes": [
+            "No one could; it is an invented scene showing how cooking might have been discovered, turning a slow change into one memorable moment. Discuss whether invented scenes help or mislead in a history book, and how a reader can tell them from evidence."
+          ],
+          "evidence": [
+            "And then one evening a dead chicken fell into the fire."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-06-q4",
+          "prompt": "How can a terrible danger become a “teacher”? Do you agree with van Loon’s conclusion?",
+          "facilitatorNotes": [
+            "Hardship forced people to think, invent tools and plan ahead. Some readers agree; others note that luck, cooperation and place also mattered, and that the same hardship killed many. Ask for reasons drawn from the chapter."
+          ],
+          "evidence": [
+            "Only the people with the cleverest brains survived.",
+            "became its greatest teacher because it forced man to use his brain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-07",
+      "title": "The Story of Mankind: the Rosetta Stone (Chapter 4, first part)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a story of discovery step by step, separating the clue, the plan and the result.",
+      "focus": "Writing preserves experience, and one stone with three inscriptions made a lost script readable again.",
+      "context": "Recap: van Loon left the early Europeans in their caves, learning to use fire and tools, and now turns to Egypt. Bonaparte is Napoleon, the French general who later became emperor; papyrus is a writing material made from reeds. Some of van Loon’s details are wrong: hieroglyphs were still carved for some four hundred years after the Romans came, and Champollion, a boy of eleven in 1802, announced his breakthrough in 1822.",
+      "contentNote": "Van Loon calls the early Europeans “savages” and generalizes about “Indian” picture messages in adventure stories of the American West.",
+      "excerpt": {
+        "locator": "“Hieroglyphics,” from the chapter’s opening through Champollion’s discovery of phonetic writing; opens “These earliest ancestors of ours who lived in the great European wilderness were rapidly…”; closes “…words into a written form, with the help of only a few dots and dashes and pothooks.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-5-van-loon-story-of-mankind-1922-06",
+        "continuesTo": null,
+        "blocks": [
+          76,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f25496142fedf6655738205de4f6f4bc5f1ff8f7186c3f06cb66bd00a221ee7a"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-07-q1",
+          "prompt": "Why does van Loon call writing “the most important of all inventions”? What comparison does he use?",
+          "facilitatorNotes": [
+            "Without writing we would be like cats and dogs, who teach their young a few things but cannot use the experience of earlier generations. Readers may weigh other candidates, such as fire or the wheel."
+          ],
+          "evidence": [
+            "writing, the most important of all inventions, is quite new",
+            "possess no way in which they can make use of the experience of those generations"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-07-q2",
+          "prompt": "What made the Rosetta stone different from every other carved stone in Egypt?",
+          "facilitatorNotes": [
+            "It carried three inscriptions, one of them in Greek, which scholars could read. If all three said the same thing, the known Greek could unlock the unknown Egyptian."
+          ],
+          "evidence": [
+            "It carried three inscriptions. One of these was in Greek.",
+            "is to compare the Greek text with the Egyptian figures"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-07-q3",
+          "prompt": "The officer thought the task would be simple. What happened instead?",
+          "facilitatorNotes": [
+            "It took more than twenty years. The distance between the confident plan (“at once”) and the result shows how hard decipherment is."
+          ],
+          "evidence": [
+            "The plan sounded simple enough but it took more than twenty years to solve the riddle."
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-07-q4",
+          "prompt": "Explain the riddle of the man with the saw in your own words. What did Champollion discover?",
+          "facilitatorNotes": [
+            "A picture cannot always mean the thing it shows: a queen of eighty-two does not use a saw. So some pictures must stand for sounds, and Egyptian writing used signs for sounds as well as for things. Readers can invent a picture-pun of their own, such as an eye for “I.”"
+          ],
+          "evidence": [
+            "Queens of eighty-two do not handle saws.",
+            "a system of characters which reproduce the “sound” (or phone) of the spoken word"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-van-loon-story-of-mankind-1922-08",
+      "title": "The Story of Mankind: the Nile, the dead and the pyramids (Chapter 5)",
+      "sourceId": "van-loon-story-of-mankind-1922",
+      "genre": "history",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Trace a chain of causes from a river’s flood to a five-hundred-foot tomb.",
+      "focus": "Plentiful food gave the Egyptians leisure, leisure gave them questions, and the answers made a “land devoted to the Dead.”",
+      "context": "Van Loon has told how the Egyptian script was deciphered; the rest of that chapter, which shows a sentence in hieroglyphs with drawings that cannot be printed here, is skipped. Osiris and Isis were Egyptian gods; natron is a natural salt used to dry bodies. Some details are out of date: archaeologists now think the Great Pyramid’s builders numbered perhaps twenty to thirty thousand, and “pyramid” comes from a Greek word, not an Egyptian one.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Nile Valley,” the whole chapter; opens “The history of man is the record of a hungry creature in search of food. Wherever food…”; closes “…by the weight of those thousands of tons of stone which press upon it from all sides.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          101,
+          110
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5522c4702289597521c71c5d4d4aa75227669c3a20662a2ce718829064191d3b"
+      },
+      "questions": [
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-08-q1",
+          "prompt": "How did the Nile “do the work of a million men”?",
+          "facilitatorNotes": [
+            "Each summer its flood covered the fields with fertile clay, and canals and well-sweeps carried the water further. Farmers needed less labour, so large cities could be fed."
+          ],
+          "evidence": [
+            "In Egypt a kindly river did the work of a million men",
+            "covered with several inches of the most fertile clay"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-08-q2",
+          "prompt": "What did the Egyptians do with the leisure that easy farming gave them?",
+          "facilitatorNotes": [
+            "They made ornaments that were “not the least bit useful” and asked large questions: where the stars come from, who makes the thunder, why the Nile rises, who they themselves are. Leisure leads to art, science and religion."
+          ],
+          "evidence": [
+            "He used this spare time to make himself many things that were merely ornamental",
+            "Where did the stars come from?"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-08-q3",
+          "prompt": "Follow the steps from graves cut in rock to the Great Pyramid. What caused each change?",
+          "facilitatorNotes": [
+            "Moving north meant burying in the desert; animals and robbers broke in; mounds of stones protected the graves; the rich competed to build higher; King Khufu built the highest. Readers may question whether rivalry alone explains the pyramids."
+          ],
+          "evidence": [
+            "there was a good deal of competition to see who could make the highest hill of stones",
+            "The record was made by King Khufu"
+          ]
+        },
+        {
+          "id": "reading-5-van-loon-story-of-mankind-1922-08-q4",
+          "prompt": "Where does van Loon admit that he does not understand something? How does that affect your trust in the rest?",
+          "facilitatorNotes": [
+            "Of ferrying the stones across the Nile he says “we do not understand.” An honest admission can make a writer more believable, though readers should still check his confident claims, such as the number of workers."
+          ],
+          "evidence": [
+            "how they ever managed to do this, we do not understand"
+          ]
+        }
+      ]
+    }
+  ]
+}
