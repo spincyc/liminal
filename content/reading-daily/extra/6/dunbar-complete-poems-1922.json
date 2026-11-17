@@ -1,0 +1,887 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "dunbar-complete-poems-1922",
+  "readings": [
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-01",
+      "title": "Frederick Douglass",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow images of battle and mourning through a long, formal elegy.",
+      "focus": "An elegy that grieves a leader also turns grief into a promise to continue his work.",
+      "context": "Paul Laurence Dunbar (1872–1906), the son of parents who had been enslaved, wrote this elegy in 1895, the year Frederick Douglass died. Douglass had escaped slavery and became the most famous abolitionist speaker and writer in America. The lists are the fenced ground of a tournament; Ethiopia stands for Africa and its descendants, as it often did then; a clarion is a trumpet; imprecations are curses.",
+      "contentNote": "Slavery, the lash and oppression appear in figurative language.",
+      "excerpt": {
+        "locator": "“Frederick Douglass,” complete poem; opens “A hush is over all the teeming lists, And there is pause, a breath-space in the strife; A…”; closes “…And, rising from beneath the chast'ning rod, She stretches out her bleeding hands to God!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          28,
+          37
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "99f353695ec37f4548f2389df1539cde3f1f045e25290b61319f8dee545539f4"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-01-q1",
+          "prompt": "Who mourns Douglass in the first two stanzas, and how is that mourner pictured?",
+          "facilitatorNotes": [
+            "Ethiopia, as a mother weeping for her son “with bosom torn.” The poem makes Douglass the child of a whole people, not only of a family."
+          ],
+          "evidence": [
+            "And Ethiopia, with bosom torn,",
+            "She weeps for him a mother's burning tears--"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-01-q2",
+          "prompt": "Find the weapons and battle words. What kind of fighter was Douglass, according to the poem?",
+          "facilitatorNotes": [
+            "His voice is a trumpet, his words are arrows sent into Oppression’s den, he answers thunder with thunder and dies “with his armor on.” His weapons are speech and truth."
+          ],
+          "evidence": [
+            "For her his voice, a fearless clarion, rung",
+            "And answered thunder with his thunder back."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-01-q3",
+          "prompt": "“He was no soft-tongued apologist.” What does the line praise, and what does it hint about other speakers?",
+          "facilitatorNotes": [
+            "He named wrongs plainly instead of excusing or softening them. The line implies that others did soften their words to please listeners, which makes his plainness a kind of courage."
+          ],
+          "evidence": [
+            "And he was no soft-tongued apologist;",
+            "He spoke straightforward, fearlessly uncowed;"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-01-q4",
+          "prompt": "How do the last two stanzas turn from grief toward the future?",
+          "facilitatorNotes": [
+            "The mourners have “touched his hand” and promise to “triumph yet” under his banner. The final picture of bleeding hands stretched to God joins suffering and hope; readers may find the ending confident or still sorrowful."
+          ],
+          "evidence": [
+            "O'er all that holds us we shall triumph yet,",
+            "She stretches out her bleeding hands to God!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-02",
+      "title": "The Old Apple-Tree",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow one memory through the stages of a life, and notice how the speaker answers a listener’s doubt.",
+      "focus": "An ugly old tree is the dearest in the orchard because a whole life has been lived around it.",
+      "context": "Paul Laurence Dunbar wrote in standard English and in several dialects; this poem uses the country speech of the Midwest, where he grew up. An old man remembers by the fire. Verdant means green; a sanctum is a private room; sugared nonsense is sweet, silly talk.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Old Apple-Tree,” complete poem; opens “There's a memory keeps a-runnin' Through my weary head to-night, An' I see a picture…”; closes “…my last request shall be,-- That they 'll bury me an' Hallie 'Neath the old apple tree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          62,
+          67
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e53c3861627607f8bbeafd97e26c6951b7f7e542267a57bcf9a6ce1d34cf1d64"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-02-q1",
+          "prompt": "What does the speaker admit about how the tree looks to a stranger?",
+          "facilitatorNotes": [
+            "Its boughs are gnarled and crooked, its leaves thin, its harvest smaller: “You perhaps would call it ugly.” He grants the point, then insists it is still the dearest, so its value comes from memory, not looks."
+          ],
+          "evidence": [
+            "You perhaps would call it ugly,",
+            "Unadorned by memory's glow;"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-02-q2",
+          "prompt": "Trace the stages of the speaker’s life that happened in or under the tree.",
+          "facilitatorNotes": [
+            "Reading in its shelter, swinging on its boughs as a boy, courting Hallie on the seat beneath it, growing old with her, and finally wishing to be buried there. The tree holds childhood, love, marriage and death."
+          ],
+          "evidence": [
+            "It's the place where me an' Hallie--",
+            "That they 'll bury me an' Hallie"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-02-q3",
+          "prompt": "How does the last stanza mix happiness and sorrow? Is the ending sad?",
+          "facilitatorNotes": [
+            "He admits life “ain't all been summer” yet says their load was never too heavy to carry; the burial wish puts death beside the place of their courtship. Some readers find it peaceful, others melancholy."
+          ],
+          "evidence": [
+            "Life for us ain't all been summer,",
+            "That we longed to lay it down."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-03",
+      "title": "An Ante-Bellum Sermon",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Hear two messages in one sermon and notice how the preacher protects himself.",
+      "focus": "A Bible story becomes a hidden hope for freedom, preached where those who would punish it may be listening.",
+      "context": "Ante-bellum means before the Civil War. In this dialect poem by Paul Laurence Dunbar, an enslaved preacher speaks to his congregation about Moses leading the Hebrews out of slavery in Egypt, a story enslaved people often told about their own hopes. The vials of power are the plagues; brigity means bold or uppity; reco'nised ez citiz' means recognised as citizens.",
+      "contentNote": "Set among enslaved people; mentions chains, shackles and masters. Uses historical literary dialect; read it for voice and rhythm, not as caricature.",
+      "excerpt": {
+        "locator": "“An Ante-Bellum Sermon,” complete poem; opens “We is gathahed hyeah, my brothahs, In dis howlin' wildaness, Fu' to speak some words of…”; closes “…mighty reck'nin' day, When we 'se reco'nised ez citiz'-- Huh uh! Chillun, let us pray!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          93,
+          103
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d4ef82eccd950c5efb987917aef2c04efe993510530095f5d33dfbfadc7f64b4"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-03-q1",
+          "prompt": "What Bible story does the preacher tell, and what does it say about God and slavery?",
+          "facilitatorNotes": [
+            "God sends Moses to tell Pharaoh to free the Hebrew children, punishes Pharaoh when he refuses, and frees them. In the story God sides with the enslaved."
+          ],
+          "evidence": [
+            "Fu' to let dem chillun go.",
+            "But de Lawd will sen' some Moses"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-03-q2",
+          "prompt": "Why does the preacher keep stopping to say he is talking only about ancient times? Do you believe him?",
+          "facilitatorNotes": [
+            "He fears someone will tell the masters he is “preachin' discontent.” The denials are a shield, and each one also points straight at the real meaning, so most readers hear irony."
+          ],
+          "evidence": [
+            "I ain't talkin' 'bout to-day.",
+            "Dat I's preachin' discontent."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-03-q3",
+          "prompt": "How does the preacher use the Bible as evidence against slavery?",
+          "facilitatorNotes": [
+            "God made “Evah mothah's son” free, and Scripture says a servant is worthy of his hire, so anyone who defends slavery must call the Scripture a liar. He argues from the masters’ own sacred book."
+          ],
+          "evidence": [
+            "Evah mothah's son was free.",
+            "But dey calls de Scriptuah liar,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-03-q4",
+          "prompt": "What is the preacher about to say in the last lines, and why does he stop?",
+          "facilitatorNotes": [
+            "He begins to say they will be recognised as citizens, then breaks off into prayer. He has said openly what he has been hinting, and he retreats at once; the break is both comic and tense."
+          ],
+          "evidence": [
+            "When we 'se reco'nised ez citiz'--",
+            "Huh uh! Chillun, let us pray!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-04",
+      "title": "Not They Who Soar",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a contrast between two ways of travelling and decide which one the poem honours.",
+      "focus": "The poem redefines heroism as hard, unhelped labour on the ground.",
+      "context": "Paul Laurence Dunbar uses an old French form, the rondeau, in which the opening words return as a short refrain. To plod is to walk slowly and heavily; the sod and the clod are the earth; a share is a plough blade.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Not They Who Soar,” complete poem; opens “Not they who soar, but they who plod Their rugged way, unhelped, to God Are heroes; they…”; closes “…flight is ever free and rare; But heroes they the soil who 've trod, Not they who soar!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          127,
+          128
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "22a4ef610b82934fb25a54ef0323f7cc30fbe94ea8619e15583ee8fbadc39a28"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-04-q1",
+          "prompt": "Who are the heroes in this poem, and who are not?",
+          "facilitatorNotes": [
+            "Those who plod “unhelped” along a rugged way, not those who soar above it. Flight is easy and free; heroism lies in the difficulty."
+          ],
+          "evidence": [
+            "Not they who soar, but they who plod",
+            "Their rugged way, unhelped, to God"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-04-q2",
+          "prompt": "Which details show the plodders’ hardship, and what might they suggest?",
+          "facilitatorNotes": [
+            "Backs that have “felt the rod,” bare feet, thorns, hidden boulders, the plough. The rod may suggest whipping, and from Dunbar it may recall slavery; readers can discuss how far the poem invites that reading."
+          ],
+          "evidence": [
+            "'Tis they whose backs have felt the rod,",
+            "Whose feet have pressed the path unshod,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-04-q3",
+          "prompt": "Why do the soarers lose something by missing the toil? Do you agree?",
+          "facilitatorNotes": [
+            "Those who fly never struggle, so they never earn the right to “smile upon defeated care.” The poem implies hardship gives worth or understanding; some readers will question whether suffering always ennobles."
+          ],
+          "evidence": [
+            "Miss all the toil that hugs the sod.",
+            "May smile upon defeated care,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-05",
+      "title": "The Colored Soldiers",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow an argument addressed to “you” through a poem of praise.",
+      "focus": "A war song becomes a demand that the nation remember what it owes.",
+      "context": "Paul Laurence Dunbar honours the nearly 200,000 Black soldiers and sailors who fought for the Union in the Civil War. Fort Wagner, Olustee and Fort Pillow were battles of 1863–64; at Fort Pillow, Confederate troops killed many Black soldiers after they had surrendered. “Sons of Ham” is an old biblical name for African peoples, once used to defend slavery, which Dunbar turns into praise.",
+      "contentNote": "War, wounds and death; refers to the massacre at Fort Pillow; uses historical racial terms.",
+      "excerpt": {
+        "locator": "“The Colored Soldiers,” complete poem; opens “If the muse were mine to tempt it And my feeble voice were strong, If my tongue were…”; closes “…glory To those noble sons of Ham-- The gallant colored soldiers Who fought for Uncle Sam!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          313,
+          323
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d7c1d5223ae66a95f136d07a1a4560e4955be88e16059edce72bbc205ec23b01"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-05-q1",
+          "prompt": "Who is “you” in the second and third stanzas, and how did “you” first treat the colored soldiers?",
+          "facilitatorNotes": [
+            "The white North and its army, who scorned Black volunteers and called the war “the white man's,” then called on them when the flag was “drooping low.” The poem speaks to those who rejected and then needed them."
+          ],
+          "evidence": [
+            "These battles are the white man's,",
+            "Then you called the colored soldiers,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-05-q2",
+          "prompt": "Why does the poem pause on Fort Pillow? How is that stanza different from the others?",
+          "facilitatorNotes": [
+            "It turns from praise to prayer: mercy on the deeds done there and on victims sent “without a prayer.” It names an atrocity without describing it, and the restraint gives it force."
+          ],
+          "evidence": [
+            "And at Pillow! God have mercy",
+            "Sent to Thee without a prayer."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-05-q3",
+          "prompt": "“Are they more or less to-day?” What is the poem asking, and why ask it about thirty years after the war?",
+          "facilitatorNotes": [
+            "Whether the nation still treats Black veterans and citizens as comrades and equals. The question challenges readers who praise soldiers’ courage but forget their rights; readers can say what answer the following stanzas imply."
+          ],
+          "evidence": [
+            "They were comrades then and brothers,",
+            "Are they more or less to-day?"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-05-q4",
+          "prompt": "The poem opens by doubting its own voice. Does that modest beginning fit what follows?",
+          "facilitatorNotes": [
+            "Wishing for the muse and a stronger voice is a traditional modest opening, and the poem then sings the stirring song anyway. Some readers see only a convention, others a real worry about being heard."
+          ],
+          "evidence": [
+            "And my feeble voice were strong,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-06",
+      "title": "Ships That Pass in the Night",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Read an extended metaphor and decide what the ship might stand for.",
+      "focus": "A desperate cry to a passing ship expresses longing for something just out of reach.",
+      "context": "Paul Laurence Dunbar takes his title from a phrase of Longfellow’s for people who meet once and pass on. Pregnant night is night full of what is about to happen; glassing here means mirroring; a bark is a ship.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Ships That Pass in the Night,” complete poem; opens “Out in the sky the great dark clouds are massing; I look far out into the pregnant night,…”; closes “…may sight and check that speeding bark Which out of sight and sound is passing, passing?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          430,
+          432
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d016a3e23980b236b7b00aff90e1cc5436bab90c9f6761568702f23d3bc24628"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-06-q1",
+          "prompt": "What does the speaker actually see and hear of the ship?",
+          "facilitatorNotes": [
+            "Only a booming gun and a random gleam of light; the ship itself is never seen. The speaker follows it through faint signs."
+          ],
+          "evidence": [
+            "Where I can hear a solemn booming gun"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-06-q2",
+          "prompt": "What happens when the speaker calls out? Why is that image so painful?",
+          "facilitatorNotes": [
+            "The voice “falls dead a foot from mine own lips,” and only its ghost reaches the ship. The speaker cannot even be heard; the effort fails almost at once."
+          ],
+          "evidence": [
+            "My voice falls dead a foot from mine own lips,",
+            "And but its ghost doth reach that vessel"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-06-q3",
+          "prompt": "What could the “ship of ships” stand for? Support one reading and acknowledge another.",
+          "facilitatorNotes": [
+            "A lost love, a chance, success, faith or hope; the poem never says. The repeated “passing, passing” at the end of each stanza stresses that it is going and will not return."
+          ],
+          "evidence": [
+            "For I would hail and check that ship of ships.",
+            "Which out of sight and sound is passing, passing?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-07",
+      "title": "When Malindy Sings",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Hear a speaker’s argument about music and judge how fair it is.",
+      "focus": "Natural, heartfelt singing is set above trained, book-learned music.",
+      "context": "In this dialect poem by Paul Laurence Dunbar, the speaker tells Miss Lucy, who is practising from a music book, that no training can match Malindy’s singing. Melojous means melodious; heish means hush; “Come to Jesus” and “Rock of Ages” are hymns, and “Swing Low, Sweet Chariot” is a spiritual.",
+      "contentNote": "Uses historical literary dialect; read it for voice and rhythm, not as caricature.",
+      "excerpt": {
+        "locator": "“When Malindy Sings,” complete poem; opens “G'way an' quit dat noise, Miss Lucy-- Put dat music book away; What's de use to keep on…”; closes “…de bresh of angels' wings, Sof an' sweet, \"Swing Low, Sweet Chariot,\" Ez Malindy sings.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          563,
+          571
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2de61795dc8c1331572e00482821690415d58fb3252addd9f54563a3774fbc9a"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-07-q1",
+          "prompt": "What is the speaker’s complaint about Miss Lucy’s singing?",
+          "facilitatorNotes": [
+            "She reads “lines an' dots” but lacks the natural voice and the turns and twistings of real singing; practising until she is gray will not help. The speaker sets feeling and gift above notation."
+          ],
+          "evidence": [
+            "Put dat music book away;",
+            "Lookin' at de lines an' dots,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-07-q2",
+          "prompt": "How does the poem show the power of Malindy’s voice without our hearing it?",
+          "facilitatorNotes": [
+            "By its effects: birds hush and hide, fiddlers and banjo players stop, sinners tremble toward the hymn, listeners cry. Everyone else’s response proves her art."
+          ],
+          "evidence": [
+            "Heish dey moufs an' hides dey faces",
+            "An' you fin' yo' teahs a-drappin'"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-07-q3",
+          "prompt": "Who is the expert in this poem? Does the speaker convince you that training cannot compete?",
+          "facilitatorNotes": [
+            "The speaker claims to know real singing better than the girl with the music book, quietly reversing who usually teaches whom. Readers may still argue that training and natural gift need not be rivals."
+          ],
+          "evidence": [
+            "When hit comes to raal right singin',",
+            "'T ain't no easy thing to do."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-07-q4",
+          "prompt": "In the last stanza the speaker hushes the dog and the child. What does that show about how the poem ends?",
+          "facilitatorNotes": [
+            "Malindy is singing right now, and the speaker wants silence to listen. The poem ends in the present moment, as if we might hear her too, with the spiritual drifting from valley to hill."
+          ],
+          "evidence": [
+            "Towsah, stop dat ba'kin', hyeah me!",
+            "Ez Malindy sings."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-08",
+      "title": "Sympathy",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow the three things the speaker knows and how the refrain changes.",
+      "focus": "A caged bird’s song is revealed as a prayer from pain, not a sign of joy.",
+      "context": "Paul Laurence Dunbar, the son of parents who had been enslaved, published this poem in 1899. Opes means opens; a chalice is a cup, here a flower’s; fain means gladly; a carol is a joyful song.",
+      "contentNote": "A caged bird bloodies its wings against the bars; the suffering is figurative.",
+      "excerpt": {
+        "locator": "“Sympathy,” complete poem; opens “I know what the caged bird feels, alas! When the sun is bright on the upland slopes; When…”; closes “…deep core, But a plea, that upward to Heaven he flings-- I know why the caged bird sings!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          704,
+          706
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dc1ca95ce2a7001eed23d70b1adbd83cfd647c66c517c81569b312f4baa9867d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-08-q1",
+          "prompt": "What does the caged bird sense of the world outside in the first stanza?",
+          "facilitatorNotes": [
+            "Sun on the slopes, soft wind in the grass, a river like glass, the first bird and bud, a flower’s scent. The beauty of the free world makes the cage sharper."
+          ],
+          "evidence": [
+            "When the wind stirs soft through the springing grass,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-08-q2",
+          "prompt": "How do the three refrains differ: what the bird “feels,” why it “beats his wing,” why it “sings”?",
+          "facilitatorNotes": [
+            "Feeling, then struggle, then song: the speaker moves from sharing the bird’s longing to its useless fight to the meaning of its music. Each stanza claims a deeper knowledge."
+          ],
+          "evidence": [
+            "I know what the caged bird feels!",
+            "I know why he beats his wing!"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-08-q3",
+          "prompt": "Why does the bird sing, according to the last stanza? What would a careless listener assume?",
+          "facilitatorNotes": [
+            "Not for “joy or glee” but as a prayer and a plea sent up to Heaven. A careless listener hears cheerfulness; the speaker hears suffering beneath it."
+          ],
+          "evidence": [
+            "It is not a carol of joy or glee,",
+            "But a plea, that upward to Heaven he flings--"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-08-q4",
+          "prompt": "The speaker never names his own cage. Why might Dunbar leave it unstated?",
+          "facilitatorNotes": [
+            "Leaving it open lets the poem speak for many kinds of confinement. Many readers connect it with racial injustice in Dunbar’s America; others with any trapped life. The repeated “I know” insists the knowledge comes from experience."
+          ],
+          "evidence": [
+            "And a pain still throbs in the old, old scars"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-09",
+      "title": "Little Brown Baby",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear a father’s teasing game and find where it turns tender.",
+      "focus": "Pretending to give the child away becomes a way of showing how fiercely he is loved.",
+      "context": "In this dialect poem by Paul Laurence Dunbar, a father plays with his small son at the end of the day. Merlasses is molasses; a straggler is a stray; the buggah-man is the bogeyman; a pallet is a bed made up on the floor.",
+      "contentNote": "A father pretends, in play, to give his child to the bogeyman. Uses historical literary dialect; read it for voice and rhythm, not as caricature.",
+      "excerpt": {
+        "locator": "“Little Brown Baby,” complete poem; opens “Little brown baby wif spa'klin' eyes, Come to yo' pappy an' set on his knee. What you…”; closes “…Wisht you could stay jes' a chile on my breas'-- Little brown baby wif spa'klin' eyes!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          966,
+          969
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "19c6a473cc537152f2ddc5eb15a826a6bc21eaeafa09fe4247aff74ee859cea9"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-09-q1",
+          "prompt": "Which details show the end of a long, messy, happy day?",
+          "facilitatorNotes": [
+            "Sand pies, a dirty bib, a mouth sticky with molasses, the call to Maria to wipe his hands. The father notices everything about his son."
+          ],
+          "evidence": [
+            "What you been doin', suh--makin' san' pies?",
+            "Look at dat mouf--dat's merlasses, I bet;"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-09-q2",
+          "prompt": "Why does the father pretend not to know the baby and offer him to the bogeyman?",
+          "facilitatorNotes": [
+            "It is a game: the frightened baby hugs him close, and the father “rescues” him. Mock rejection gives the child the pleasure of being claimed again."
+          ],
+          "evidence": [
+            "Pappy do' know you--I b'lieves you 's a tramp;",
+            "Dah, now, I t'ought dat you 'd hug me up close."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-09-q3",
+          "prompt": "What does the father wish in the last lines, and why might he wish it?",
+          "facilitatorNotes": [
+            "That his son could always know ease and clear skies and stay a child on his breast. The wish hints at a hard world waiting; readers may think of the dangers facing a Black child in Dunbar’s America. The tender ending gives weight to the play."
+          ],
+          "evidence": [
+            "Wisht you could allus know ease an' cleah skies;",
+            "Wisht you could stay jes' a chile on my breas'--"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-10",
+      "title": "Douglass",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a storm-at-sea image through a sonnet addressed to the dead.",
+      "focus": "The poet calls on a dead leader because the present seems worse than the past he fought through.",
+      "context": "Paul Laurence Dunbar wrote this sonnet several years after Frederick Douglass died in 1895, when Black Americans were losing rights won after the Civil War. Salient means standing out; devious means winding; stark means stiff in death; a bark is a boat.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Douglass,” complete poem; opens “Ah, Douglass, we have fall'n on evil days, Such days as thou, not even thou didst know,…”; closes “…bark, The blast-defying power of thy form, To give us comfort through the lonely dark.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1516,
+          1517
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a780f5d52f2321077025f9f1afd3bd1d64bdcda5cd62171fd0db56104f2709f6"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-10-q1",
+          "prompt": "Why does the speaker say “we have fall'n on evil days,” worse even than Douglass knew?",
+          "facilitatorNotes": [
+            "Douglass faced slavery, but the speaker sees a new “tempest of dispraise” and quarrelling, with Honor dead at the helm. The claim is startling and asks readers how progress can be lost."
+          ],
+          "evidence": [
+            "Ah, Douglass, we have fall'n on evil days,",
+            "Such days as thou, not even thou didst know,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-10-q2",
+          "prompt": "Trace the sea-storm image across the poem.",
+          "facilitatorNotes": [
+            "A battling tide, a tempest, waves of dissension, a dead pilot, a shivering boat in the dark. The nation, or Dunbar’s people, is a small boat in danger without its guide."
+          ],
+          "evidence": [
+            "And Honor, the strong pilot, lieth stark,",
+            "to guide the shivering bark,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-10-q3",
+          "prompt": "What does the speaker ask of Douglass, and can a dead man give it? What is the poem really doing?",
+          "facilitatorNotes": [
+            "His voice, his arm, his presence, to comfort them in the dark. He cannot return, so the call expresses grief and need and holds up his example for the living. Readers may hear despair or a summons to new leaders."
+          ],
+          "evidence": [
+            "Oh, for thy voice high-sounding o'er the storm,",
+            "To give us comfort through the lonely dark."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-11",
+      "title": "The Debt",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow an extended money metaphor and decide what the poem leaves out on purpose.",
+      "focus": "One reckless day is paid for with years of regret.",
+      "context": "Paul Laurence Dunbar compresses a life into three short stanzas built on the language of money. Riotous means wild and unrestrained; interest is the extra money owed on a loan.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Debt,” complete poem; opens “This is the debt I pay Just for one riotous day, Years of regret and grief, Sorrow…”; closes “…bought, Small was the debt I thought, Poor was the loan at best-- God! but the interest!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1565,
+          1567
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c531bc93ffe00f51e126aeb1a9e55431cc6007ae0ad25ed11681c3577a06d985"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-11-q1",
+          "prompt": "Which words belong to borrowing and paying, and how do they shape the poem?",
+          "facilitatorNotes": [
+            "Debt, pay, bought, loan, interest. A moment of pleasure becomes a purchase on credit, and regret is the repayment."
+          ],
+          "evidence": [
+            "This is the debt I pay",
+            "Poor was the loan at best--"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-11-q2",
+          "prompt": "Why is the last line so sudden? What does it reveal?",
+          "facilitatorNotes": [
+            "After calm, even lines, the outburst shows the cost has grown far beyond what the speaker expected: the thing was “slight,” the interest enormous."
+          ],
+          "evidence": [
+            "Slight was the thing I bought,",
+            "God! but the interest!"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-11-q3",
+          "prompt": "The poem never says what happened on the “riotous day.” Weakness or strength?",
+          "facilitatorNotes": [
+            "Leaving it out lets the poem fit any rash act and keeps attention on the cost. Some readers want the story; others find that the silence makes the regret belong to everyone."
+          ],
+          "evidence": [
+            "Just for one riotous day,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-12",
+      "title": "Robert Gould Shaw",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Read the question of a sonnet’s first eight lines and the bitter answer of its last six.",
+      "focus": "A tribute to a hero turns into a judgment that his sacrifice seems wasted.",
+      "context": "Robert Gould Shaw, a young white officer from a wealthy Boston family, commanded the 54th Massachusetts, one of the first Black regiments of the Civil War, and died with many of his men at Fort Wagner in 1863. Paul Laurence Dunbar wrote this sonnet about forty years later. Pallas is the Greek goddess of wisdom; a fane is a temple; droves are herds or crowds.",
+      "contentNote": "Death in battle. The phrase “unlettered and despised droves” echoes how many people regarded the soldiers at the time.",
+      "excerpt": {
+        "locator": "“Robert Gould Shaw,” complete poem; opens “Why was it that the thunder voice of Fate Should call thee, studious, from the classic…”; closes “…thou and those who with thee died for right Have died, the Present teaches, but in vain!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1644,
+          1645
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "57564c4a15edb2f1026bedfb3cb8fec6bb00cc3ab13630f832d1a42b3f922411"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-12-q1",
+          "prompt": "What life does the poem say Shaw left behind?",
+          "facilitatorNotes": [
+            "Study among “classic groves,” where wisdom walks calmly, and home, family and comfort. The poem stresses that he chose danger over ease."
+          ],
+          "evidence": [
+            "Should call thee, studious, from the classic groves,",
+            "Leave home and kindred and thy spicy loaves,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-12-q2",
+          "prompt": "What did Shaw go to do, in the poem’s words, and how does it describe the men he led?",
+          "facilitatorNotes": [
+            "To lead them “To manhood's home,” to win recognition of their full humanity. “Unlettered and despised” describes how the world saw them, not Dunbar’s own judgment; discuss the difference."
+          ],
+          "evidence": [
+            "To lead th' unlettered and despised droves",
+            "To manhood's home and thunder at the gate?"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-12-q3",
+          "prompt": "Why does the last line say they died “in vain”? Does Dunbar want us to accept that?",
+          "facilitatorNotes": [
+            "The present seems to show that the rights they died for have been lost. The ending may be despair, or a protest meant to shame readers into making the sacrifice count; “the Present teaches” suggests the blame lies with the living."
+          ],
+          "evidence": [
+            "Have died, the Present teaches, but in vain!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-dunbar-complete-poems-1922-13",
+      "title": "Life’s Tragedy",
+      "sourceId": "dunbar-complete-poems-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Rank griefs as the speaker does and test whether you agree.",
+      "focus": "Coming close to the perfect thing can hurt more than never trying.",
+      "context": "Paul Laurence Dunbar, who published his first book at twenty, writes here about the gap between near success and perfection. A half-tone is the smallest step between notes in Western music; untempered means unrestrained.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Life’s Tragedy,” complete poem; opens “It may be misery not to sing at all And to go silent through the brimming day. It may be…”; closes “…We count our joys not by the things we have, But by what kept us from the perfect thing.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1687,
+          1690
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "438e87d95d984e679a23312721a98bc48b17f459f6c0db20f70ccb95bf82651d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-13-q1",
+          "prompt": "Which sorrows does the first stanza name, and how does it set them aside?",
+          "facilitatorNotes": [
+            "Never singing and never being loved: real griefs, but “deeper griefs than these” are coming. The stanza clears the ground for a surprising claim."
+          ],
+          "evidence": [
+            "It may be misery not to sing at all",
+            "But deeper griefs than these beset the way."
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-13-q2",
+          "prompt": "What does it mean to lose the key “only by a half-tone”? Why might a small miss hurt more?",
+          "facilitatorNotes": [
+            "Missing perfection by the smallest possible step makes success feel as if it was almost in hand. Readers may compare near misses in music or sport."
+          ],
+          "evidence": [
+            "And only by a half-tone lost the key,"
+          ]
+        },
+        {
+          "id": "reading-6-dunbar-complete-poems-1922-13-q3",
+          "prompt": "Do you agree with the last two lines about how people count their joys?",
+          "facilitatorNotes": [
+            "The poem says we measure happiness by what kept us from “the perfect thing.” Some readers find this true to regret; others think it is a trap the poem describes rather than recommends."
+          ],
+          "evidence": [
+            "We count our joys not by the things we have,",
+            "But by what kept us from the perfect thing."
+          ]
+        }
+      ]
+    }
+  ]
+}

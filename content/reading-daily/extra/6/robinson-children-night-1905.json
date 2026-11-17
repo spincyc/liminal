@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "robinson-children-night-1905",
+  "readings": [
+    {
+      "id": "reading-6-robinson-children-night-1905-01",
+      "title": "Luke Havergal",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Work out who is speaking and what the voice urges, while keeping open what the poem never states.",
+      "focus": "A voice from the grave offers a grieving man a way forward that sounds both comforting and dangerous.",
+      "context": "Edwin Arlington Robinson (1869–1935) grew up in Gardiner, Maine, and many poems in this early book portray people of a small New England town. An unnamed voice speaks to Luke Havergal, who has lost the woman he loves. Rift means split open; quench means put out; riddle here means puzzle out.",
+      "contentNote": "A voice speaks from the grave to a grieving man. Many readers hear in its “one way to where she is” a hint of death, even suicide; the poem never says so, and adults may want to be ready to talk about it.",
+      "excerpt": {
+        "locator": "“Luke Havergal,” complete poem; opens “Go to the western gate, Luke Havergal, -- There where the vines cling crimson on the…”; closes “…you trust her she will call. There is the western gate, Luke Havergal -- Luke Havergal.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          82,
+          85
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ebbf3f5d954f6e8a32613ed9bfe94974aff797c1f410e9315c4b8ce37a306763"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-01-q1",
+          "prompt": "Where is Luke told to go, and which details of that place return at the end?",
+          "facilitatorNotes": [
+            "The western gate, where crimson vines cling to the wall and leaves fall at twilight. The last stanza repeats the gate, the leaves and the promise almost word for word, so the instruction sounds like a summons or a spell."
+          ],
+          "evidence": [
+            "Go to the western gate, Luke Havergal,",
+            "There where the vines cling crimson on the wall,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-01-q2",
+          "prompt": "Who speaks in the third stanza, and how does that change the advice you heard in the first?",
+          "facilitatorNotes": [
+            "The voice comes “Out of a grave”: it may be the dead woman or another spirit. Advice from the dead about reaching the dead is less reassuring than it first sounded; some readers find it loving, others sinister."
+          ],
+          "evidence": [
+            "Out of a grave I come to tell you this,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-01-q3",
+          "prompt": "Why does the voice deny Luke a dawn in the east and point him west?",
+          "facilitatorNotes": [
+            "East is sunrise and a new day; west is sunset and ending. The voice refuses him a fresh start and says only darkness can end his darkness. Readers may hear patience, faith or despair in that line."
+          ],
+          "evidence": [
+            "No, there is not a dawn in eastern skies",
+            "The dark will end the dark, if anything:"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-01-q4",
+          "prompt": "What is the “one way to where she is”? Separate what the poem states from what readers guess.",
+          "facilitatorNotes": [
+            "Stated: the way is bitter and needs faith. Guessed: it could mean waiting faithfully until his own death, keeping faith with her memory, or something more dangerous. The poem refuses to choose, and a careful answer says so."
+          ],
+          "evidence": [
+            "Yes, there is yet one way to where she is",
+            "Bitter, but one that faith can never miss."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-02",
+      "title": "The House on the Hill",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Track two repeating lines and decide what changes each time they return.",
+      "focus": "Repetition turns a short statement of loss into the speakers’ inability to stop circling it.",
+      "context": "Edwin Arlington Robinson wrote this as a villanelle, an old French form of nineteen lines in which two lines come back again and again. A sill is the ledge at the foot of a door or window; fancy-play means imagining.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The House on the Hill,” complete poem; opens “They are all gone away, The House is shut and still, There is nothing more to say.”; closes “…and decay In the House on the Hill: They are all gone away, There is nothing more to say.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          87,
+          92
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "48a4f761f35286880a9bc10b40068a1cc7b347274b7f23d486524c822fe5b0a7"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-02-q1",
+          "prompt": "Follow the two refrains. Where do they finally stand together, and what does that do to the ending?",
+          "facilitatorNotes": [
+            "“They are all gone away” and “There is nothing more to say” take turns, then stand side by side in the last stanza. Joined, they close the poem as if no more words could follow."
+          ],
+          "evidence": [
+            "They are all gone away, There is nothing more to say."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-02-q2",
+          "prompt": "If there is “nothing more to say,” why do the speakers keep returning to the house?",
+          "facilitatorNotes": [
+            "They admit it is empty, yet they still “stray” around it and imagine its people. The refrain claims silence while the form keeps repeating it, which shows memory or grief that will not settle. Some readers find the visitors foolish, others loyal."
+          ],
+          "evidence": [
+            "Why is it then we stray",
+            "Around that sunken sill?"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-02-q3",
+          "prompt": "Who are “they,” and who is “we”? What does the poem gain by never telling us?",
+          "facilitatorNotes": [
+            "No names and no story of why the people left or died. Leaving them unnamed lets the house stand for any lost home or past, and the speakers themselves call their imagining “wasted skill.”"
+          ],
+          "evidence": [
+            "And our poor fancy-play",
+            "For them is wasted skill:"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-03",
+      "title": "Richard Cory",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice who is telling the story and what they could not see.",
+      "focus": "A whole town’s admiration rests on surfaces, and the last line shows how little it knew.",
+      "context": "Edwin Arlington Robinson’s portraits of a small New England town often look at a neighbour from outside. Here “we” are the town’s working people. Clean favored means good-looking; arrayed means dressed; in fine means in short.",
+      "contentNote": "The last line tells, without detail, that a man shot himself. Adults may want to be ready to talk about suicide.",
+      "excerpt": {
+        "locator": "“Richard Cory,” complete poem; opens “Whenever Richard Cory went down town, We people on the pavement looked at him: He was a…”; closes “…And Richard Cory, one calm summer night, Went home and put a bullet through his head.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          94,
+          97
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "586193c13c5be649f6a3a71bcd812ea54b40f0d2dc1d431f1412703e2adf08ed"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-03-q1",
+          "prompt": "List what the townspeople admire about Richard Cory. Which of these could they actually see or hear?",
+          "facilitatorNotes": [
+            "His looks, clothes, manners, greeting, wealth and schooling: all public surfaces. They watch him from the pavement, and nothing they report comes from inside his life."
+          ],
+          "evidence": [
+            "We people on the pavement looked at him:",
+            "and he glittered when he walked."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-03-q2",
+          "prompt": "Which words make him sound royal, and why might the speakers reach for them?",
+          "facilitatorNotes": [
+            "“from sole to crown,” “imperially slim,” “richer than a king.” Royal words show how far above themselves the townspeople place him; they may also hint at the distance between him and everyone else."
+          ],
+          "evidence": [
+            "He was a gentleman from sole to crown,",
+            "richer than a king"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-03-q3",
+          "prompt": "What does the third stanza tell us about the speakers’ own lives, and why does it come just before the end?",
+          "facilitatorNotes": [
+            "They work, wait “for the light,” go without meat and curse the bread. The contrast suggests they assume money and grace would end their troubles; the last line contradicts that assumption at once."
+          ],
+          "evidence": [
+            "So on we worked, and waited for the light,",
+            "And went without the meat, and cursed the bread;"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-03-q4",
+          "prompt": "The poem gives no reason for its ending. Is that a weakness or the point?",
+          "facilitatorNotes": [
+            "A strong answer: the silence is the point, because the town never knew him and neither do we. Others may want a cause; that wish is worth discussing, as long as the discussion stays with what watching from outside cannot show."
+          ],
+          "evidence": [
+            "one calm summer night,",
+            "To make us wish that we were in his place."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-04",
+      "title": "Aaron Stark",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a chain of hard comparisons and decide what the final laugh reveals.",
+      "focus": "A sonnet builds a miser out of harsh images, then shows how he answers pity.",
+      "context": "One of Edwin Arlington Robinson’s portraits of townspeople, written as a sonnet. Withal means besides; morose means gloomy; renown is reputation; chary means sparing or cautious; a cur is a bad-tempered dog.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Aaron Stark,” complete poem; opens “Withal a meagre man was Aaron Stark, -- Cursed and unkempt, shrewd, shrivelled, and…”; closes “…A sound of alien pity, touched with tears, -- And then (and only then) did Aaron laugh.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          128,
+          129
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "89d707e7fd2169d14501fb0001073ed294f01b9cb30a63773c0e1b4563ab4749"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-04-q1",
+          "prompt": "Which comparisons tie Aaron Stark to money, and which to an animal?",
+          "facilitatorNotes": [
+            "His eyes are “like little dollars in the dark,” so greed is part of his body; his words come out as if “a cur were chary of its bark,” a guarded, snapping dog."
+          ],
+          "evidence": [
+            "And eyes like little dollars in the dark.",
+            "As if a cur were chary of its bark."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-04-q2",
+          "prompt": "Why is he “Glad” of his “hard renown”?",
+          "facilitatorNotes": [
+            "He enjoys being disliked or feared; the reputation confirms him. Readers may see pride, or a man who has chosen loneliness as protection."
+          ],
+          "evidence": [
+            "Glad for the murmur of his hard renown,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-04-q3",
+          "prompt": "Why does Aaron laugh only when he hears pity? What do you make of that laugh?",
+          "facilitatorNotes": [
+            "Pity treats him as someone to be sorry for, and he rejects it. The laugh may be scorn, bitter pride or self-defence; the parenthesis stresses that nothing else amuses him. Some readers pity him more for it, others find him repellent."
+          ],
+          "evidence": [
+            "A sound of alien pity, touched with tears, --",
+            "And then (and only then) did Aaron laugh."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-05",
+      "title": "Charles Carville’s Eyes",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare two parts of one face and connect them to how the town listened.",
+      "focus": "A face that looks sad hides gladness, and a quiet man’s ideas are heard only after his death.",
+      "context": "Edwin Arlington Robinson often wrote sonnets about people his small town misread. Redeemed means made up for; insufficient means not enough; whims and theories are notions and ideas.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Charles Carville’s Eyes,” complete poem; opens “A melancholy face Charles Carville had, But not so melancholy as it seemed, -- When once…”; closes “…he was dead, so those blank eyes of his Might speak them. Then we heard them, every word.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          137,
+          138
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a923df2f773d81ca1456459ace535c34be14bb36372f72559cbd2dad2500866b"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-05-q1",
+          "prompt": "How do Charles Carville’s eyes and mouth disagree?",
+          "facilitatorNotes": [
+            "His eyes are “forever sad” and lifeless; his mouth “redeemed” them and “beamed.” People who knew him read the mouth; strangers saw only melancholy."
+          ],
+          "evidence": [
+            "His eyes were sorry, but his mouth was glad.",
+            "But not so melancholy as it seemed, --"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-05-q2",
+          "prompt": "What does “we were out of touch” admit about the speaker and the town?",
+          "facilitatorNotes": [
+            "Many did not even hear half of what he said and ignored his ideas. The speaker counts himself among them, so the poem is partly a confession."
+          ],
+          "evidence": [
+            "half of what he did say was not heard",
+            "we were out of touch"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-05-q3",
+          "prompt": "How can dead eyes “speak”? Explain the last two lines.",
+          "facilitatorNotes": [
+            "Only after his death did people attend to what he had thought; the blank eyes, remembered, seem to hold the meaning they missed. Readers may hear regret, or a comment on honouring people too late."
+          ],
+          "evidence": [
+            "Till he was dead, so those blank eyes of his",
+            "Then we heard them, every word."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-06",
+      "title": "The Dead Village",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Read the turn of a sonnet from what a place was to what it is.",
+      "focus": "Music becomes the poem’s image for a living community, and its loss comes without an explanation.",
+      "context": "Edwin Arlington Robinson sets this sonnet in an abandoned village. Sardis was a rich city of the ancient world that later lay in ruins; unrememberable means impossible to remember.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Dead Village,” complete poem; opens “Here there is death. But even here, they say, -- Here where the dull sun shines this…”; closes “…in dreams. The music failed, and then God frowned, and shut the village from His sight.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          140,
+          141
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8b82187420a1d7f57d1e075fd3f881aa84354523eca544aa200c1125c02d713b"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-06-q1",
+          "prompt": "What did the village have before “the change came,” and how does the speaker know?",
+          "facilitatorNotes": [
+            "Gaiety, men, children at play, music. But “they say”: the happy past is reported, not witnessed, so even the memory is secondhand."
+          ],
+          "evidence": [
+            "But even here, they say,",
+            "And there were little children here to play,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-06-q2",
+          "prompt": "How does music describe both the village’s life and its death?",
+          "facilitatorNotes": [
+            "The children’s hands kept “in tune / The strings that stretch from heaven”; then the music “passed away” and “failed.” Music suggests harmony and a link with heaven, so its failure is the village’s death."
+          ],
+          "evidence": [
+            "The strings that stretch from heaven",
+            "The music failed, and then"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-06-q3",
+          "prompt": "The poem never says what killed the village. What does the last line add, and how should we read it?",
+          "facilitatorNotes": [
+            "No plague, war or poverty is named. “God frowned” may be the speaker’s way of naming a disaster he cannot explain, a bitter accusation, or a statement of faith; readers should say which words support their reading."
+          ],
+          "evidence": [
+            "God frowned, and shut the village from His sight."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-07",
+      "title": "Fleming Helphenstine",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Follow a friendly meeting that turns in a single moment, and notice what stays unexplained.",
+      "focus": "Easy talk breaks into shared embarrassment that neither man can name.",
+      "context": "A sonnet by Edwin Arlington Robinson about a brief meeting with a stranger. Superfine means too refined; persuasion here means air or manner; chaffed means teased; clogged means stuck in the throat.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Fleming Helphenstine,” complete poem; opens “At first I thought there was a superfine Persuasion in his face; but the free glow That…”; closes “…sounded half confused and half amazed, He dodged, -- and I have never seen him since.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          155,
+          156
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e76a3f31e646a25c7b18016f121cc78ddd7836a8ccf5c90ec6d0f735b5814b30"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-07-q1",
+          "prompt": "What first impression does the speaker form, and how does it change in the first eight lines?",
+          "facilitatorNotes": [
+            "He suspects something too polished, then the joyful “Hollo!” wins him over, and they talk and joke like old friends."
+          ],
+          "evidence": [
+            "At first I thought there was a superfine",
+            "And laughed and chaffed like any friend of mine."
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-07-q2",
+          "prompt": "What happens at the turn? Find the words that show both men’s feelings.",
+          "facilitatorNotes": [
+            "A “queer, quick frown,” a hard look both ways, then “strained shame” that makes both “cringe and wince.” Something passes between them that both recognise and neither names."
+          ],
+          "evidence": [
+            "But soon, with a queer, quick frown, he looked at me,",
+            "With a strained shame that made us cringe and wince:"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-07-q3",
+          "prompt": "Why might the speaker add “be that as it may” to the stranger’s name? What explanations does the poem leave open?",
+          "facilitatorNotes": [
+            "He doubts the name, hinting the man is not what he seems. They may have recognised each other, seen something false in each other, or felt their sudden friendliness was unearned. Good answers stay with the shame and the dodge rather than inventing a plot."
+          ],
+          "evidence": [
+            "He said his name was Fleming Helphenstine,",
+            "He dodged, -- and I have never seen him since."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-08",
+      "title": "Reuben Bright",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice how the speaker argues against an assumption and lets actions show grief.",
+      "focus": "A butcher’s grief appears in plain acts rather than described feelings.",
+      "context": "A sonnet from Edwin Arlington Robinson’s portraits of small-town people. A sexton looks after a church and its graveyard; cedar boughs keep moths out of stored cloth; a slaughter-house is where animals are killed for meat.",
+      "contentNote": "A wife’s death and her husband’s grief; a slaughter-house is mentioned.",
+      "excerpt": {
+        "locator": "“Reuben Bright,” complete poem; opens “Because he was a butcher and thereby Did earn an honest living (and did right), I would…”; closes “…and put some chopped-up cedar boughs In with them, and tore down the slaughter-house.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          168,
+          169
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7762ccba44c542d639d713882bc68f22757ff86fb2768b41ae90deb84acb7c76"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-08-q1",
+          "prompt": "What does the speaker not want us to think about Reuben Bright, and why might a reader think it?",
+          "facilitatorNotes": [
+            "That a butcher is “any more a brute than you or I.” Killing animals for a living might seem to harden a man; the speaker heads off that idea and includes the reader in the comparison."
+          ],
+          "evidence": [
+            "Was any more a brute than you or I;"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-08-q2",
+          "prompt": "How does the poem show Reuben’s grief? Point to actions rather than named feelings.",
+          "facilitatorNotes": [
+            "He stares, shakes, cries “like a great baby” until the women cry too; afterwards he packs away the things she made with cedar to keep them. The actions carry the feeling."
+          ],
+          "evidence": [
+            "And cried like a great baby half that night,",
+            "He packed a lot of things that she had made"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-08-q3",
+          "prompt": "Why does he tear down the slaughter-house? Offer more than one reason and test each against the poem.",
+          "facilitatorNotes": [
+            "He may be unable to face killing after facing death, or the place may be bound up with their life together, or the act may be grief that gives up his living. The poem gives no reason, so the act speaks for itself; connect it to the opening defence of the butcher."
+          ],
+          "evidence": [
+            "and tore down the slaughter-house."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-robinson-children-night-1905-09",
+      "title": "The Tavern",
+      "sourceId": "robinson-children-night-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Separate what the speaker sees, what he imagines, and what nobody knows.",
+      "focus": "A ruined building holds a story the town can only partly tell.",
+      "context": "Tilbury Town is Edwin Arlington Robinson’s name for the small town of many of his poems, and John Evereldown is the title character of another poem in the book. Rank means overgrown; aglaze means glassy; a reprobate is a person of bad character.",
+      "contentNote": "Mentions a murdered innkeeper and calls a man a “skirt-crazed reprobate” (one who chases women). Nothing violent is described.",
+      "excerpt": {
+        "locator": "“The Tavern,” complete poem; opens “Whenever I go by there nowadays And look at the rank weeds and the strange grass, The…”; closes “…brushed, and scared, and all but overran That skirt-crazed reprobate, John Evereldown.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          174,
+          175
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2bfac8f6ff6850bb9f1ca88040a64486abf20bc23b40c9747c3edf37c548147c"
+      },
+      "questions": [
+        {
+          "id": "reading-6-robinson-children-night-1905-09-q1",
+          "prompt": "What does the speaker see when he passes the Tavern now?",
+          "facilitatorNotes": [
+            "Rank weeds, strange grass, torn blue curtains and broken glass: present facts of neglect, with the broken glass hinting at violence."
+          ],
+          "evidence": [
+            "The torn blue curtains and the broken glass,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-09-q2",
+          "prompt": "What frightens him: the place itself, or something he imagines?",
+          "facilitatorNotes": [
+            "He feels “as if” he saw the ghost of the murdered host. The fear comes from the past he pictures; words like “seem” and “as if” mark it as imagination."
+          ],
+          "evidence": [
+            "For all the world as if I saw the ghost",
+            "Of old Ham Amory, the murdered host,"
+          ]
+        },
+        {
+          "id": "reading-6-robinson-children-night-1905-09-q3",
+          "prompt": "What does the town actually know about the Tavern’s story, and what does the poem invite us to guess?",
+          "facilitatorNotes": [
+            "Only that years ago a stranger galloped up after midnight and nearly ran down John Evereldown. Readers may connect the rider with the murder, but the poem offers no proof; good answers keep fact and guess apart."
+          ],
+          "evidence": [
+            "The Tavern has a story, but no man",
+            "A stranger galloped up from Tilbury Town,"
+          ]
+        }
+      ]
+    }
+  ]
+}
