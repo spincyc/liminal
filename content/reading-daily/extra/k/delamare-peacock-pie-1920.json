@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "delamare-peacock-pie-1920",
+  "readings": [
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-01",
+      "title": "Tired Tim",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear how a poem can begin and end with nearly the same line.",
+      "focus": "A boy with nothing to do is so bored that even sleeping is too much effort.",
+      "context": "Walter de la Mare’s Peacock Pie is a book of rhymes for children. To lag is to fall behind; to moon and mope is to drift about gloomily; the livelong day is the whole long day. The printed poem ends without a full stop.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Up and Down, “Tired Tim,” the complete poem; opens “POOR tired Tim! It's sad for him. He lags the long bright morning through, Ever so tired…”; closes “…candle to creep, Too tired to yawn, too tired to sleep: Poor tired Tim! It's sad for him”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          10,
+          10
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8753faa80fa011c38d52857e2f50c09647ee589032e9d44dc91c0de72a12868e"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-01-q1",
+          "prompt": "What is Tim tired of?",
+          "facilitatorNotes": [
+            "Of having nothing to do. Ask whether that is a funny thing to be tired of."
+          ],
+          "evidence": [
+            "Ever so tired of nothing to do;"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-01-q2",
+          "prompt": "What is Tim too tired to do at bedtime?",
+          "facilitatorNotes": [
+            "Too tired to yawn and too tired to sleep. That sounds impossible, which is part of the joke and part of the sadness."
+          ],
+          "evidence": [
+            "Up to bed with his candle to creep,",
+            "Too tired to yawn, too tired to sleep:"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-01-q3",
+          "prompt": "The first and last lines are almost the same. Does the speaker feel sorry for Tim, or tease him?",
+          "facilitatorNotes": [
+            "“It’s sad for him” sounds sorry, but the silly details, like being too tired to yawn, also tease. Both readings fit; children can suggest what might help Tim, kept separate from the poem."
+          ],
+          "evidence": [
+            "POOR tired Tim! It's sad for him.",
+            "Nothing to think about, nothing to say;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-02",
+      "title": "The Ship of Rio",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture a ship sailed only by monkeys, in a storm, in a calm and coming to land.",
+      "focus": "Ninety-nine jolly monkeys run a ship by swinging from their tails, and the poem relishes every sight.",
+      "context": "Rio is Rio de Janeiro, a port in Brazil; jovial means jolly. On a ship the bos’un looks after ropes and sails and the cabin boy is the youngest helper; fore and aft mean front and back; the keel is the bottom; shrouds are ropes holding the mast; to reef is to fold in the sails in a storm. Calico, breeches and reach-me-downs are cloth and clothes, which these monkeys do without.",
+      "contentNote": "In calm weather the monkeys squat round a keg of rum, an old sailors’ drink, in a comic picture.",
+      "excerpt": {
+        "locator": "Up and Down, “The Ship of Rio,” the complete poem; opens “THERE was a ship of Rio Sailed out into the blue, And nine and ninety monkeys Were all…”; closes “…When in she sailed to land, To see them all a-scampering skip For nuts across the sand!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          38,
+          38
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e853b3e6360ccd5149d2868fd8e8a26b5462d30da9914dd14c46d94b22f59550"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-02-q1",
+          "prompt": "How many monkeys sail the ship, and what are they wearing?",
+          "facilitatorNotes": [
+            "Ninety-nine, and not a stitch of clothes among them."
+          ],
+          "evidence": [
+            "And nine and ninety monkeys",
+            "There weren't a stitch of calico"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-02-q2",
+          "prompt": "What do the monkeys do when the deep-sea gales roar?",
+          "facilitatorNotes": [
+            "They fold in the sails, swinging by their tails. Children can show a monkey swinging."
+          ],
+          "evidence": [
+            "To see them reef her fore and aft,",
+            "A-swinging by their tails!"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-02-q3",
+          "prompt": "The speaker calls three sights “gladsome,” or joyful. Which would you most like to see, and why?",
+          "facilitatorNotes": [
+            "The monkeys swinging in the storm, squatting round the keg in the calm, or scampering for nuts across the sand. Any choice with a reason works."
+          ],
+          "evidence": [
+            "Oh, wasn't it a gladsome sight,",
+            "For nuts across the sand!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-03",
+      "title": "Jim Jay",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a strange story by the clock, hour by hour.",
+      "focus": "A boy who gets “stuck fast in Yesterday” slowly drifts out of sight while his friends cannot pull him free.",
+      "context": "This is a dreamlike nonsense poem. A weathercock shows which way the wind blows, and “the wind was spent” means it had died away. Handkerchee is handkerchief; “past crying for” means gone beyond helping. Read it lightly, like a puzzle rather than a fright.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Up and Down, “Jim Jay,” the complete poem; opens “DO diddle di do, Poor Jim Jay Got stuck fast In Yesterday. Squinting he was, On…”; closes “…by. Come tomorrow, The neighbours say, He'll be past crying for; Poor Jim Jay.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          40,
+          41
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1328a5da3a054e83e6e2dcdb6b1f39d8dca72f4a053d74b7564fc545e8a43177"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-03-q1",
+          "prompt": "Where does Jim Jay get stuck?",
+          "facilitatorNotes": [
+            "In Yesterday. Ask what it could mean to be stuck in yesterday; there is no single right answer."
+          ],
+          "evidence": [
+            "Got stuck fast",
+            "In Yesterday."
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-03-q2",
+          "prompt": "What do Jim’s friends do, and does it work?",
+          "facilitatorNotes": [
+            "They pull from seven till twelve, but all in vain, and Jim is too frightened to help himself."
+          ],
+          "evidence": [
+            "We pulled and we pulled",
+            "But all in vain."
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-03-q3",
+          "prompt": "What can the friends still see of Jim as the hours go by?",
+          "facilitatorNotes": [
+            "At one o’clock he is a little bit gone; at half-past five they glimpse only his flapping handkerchief; by noon he is a speck slipping by. Some children find this funny, some sad or spooky; the poem lets in all these feelings."
+          ],
+          "evidence": [
+            "A little bit gone.",
+            "Jim was a speck"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-04",
+      "title": "Nicholas Nye",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Get to know an old donkey from the details the speaker remembers.",
+      "focus": "A child alone and a lonely old donkey share a quiet friendship that needs no words.",
+      "context": "Thistle, darnell and dock are weeds; may is hawthorn blossom. To sprawl is to lie spread out. Foaled means born, for a donkey or a horse. Gumption is good sense and spirit; widowed and worn means alone and tired out; knobble-kneed means bony at the knees. A glow-worm is a beetle whose tail glows in the dark.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Beasts, “Nicholas Nye,” the complete poem; opens “THISTLE and darnell and dock grew there, And a bush, in the corner, of may, On the…”; closes “…wherefore nor why, Would brood like a ghost, and as still as a post, Old Nicholas Nye.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          206,
+          211
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0ee3c497ada6689a76658094b3bf7145d9fc2038afc7bbd627eddb4a528cd32b"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-04-q1",
+          "prompt": "Where does the speaker lie in the heat of the day, and who is there with him?",
+          "facilitatorNotes": [
+            "On the orchard wall, with no one but Nicholas Nye."
+          ],
+          "evidence": [
+            "On the orchard wall I used to sprawl",
+            "And nobody there my lone to share"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-04-q2",
+          "prompt": "What does Nicholas Nye look like? Find two details.",
+          "facilitatorNotes": [
+            "Lean and grey, lame in one leg, old, bony and knobble-kneed. Children can describe or draw him."
+          ],
+          "evidence": [
+            "Nicholas Nye was lean and grey,",
+            "Knobble-kneed, lonely and grey;"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-04-q3",
+          "prompt": "Something passes between the boy and the donkey that is “much better than words.” What could it be?",
+          "facilitatorNotes": [
+            "A feeling of friendship: the donkey seems to smile at him across the grass. Children may say comfort, kindness or company; ask how the boy can tell, since the donkey never speaks."
+          ],
+          "evidence": [
+            "Seem to be smiling at me, he would,",
+            "Something much better than words between me"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-05",
+      "title": "Silver",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Count the things the moonlight turns to silver.",
+      "focus": "Moonlight changes everything it touches into silver, and the night grows quiet and still.",
+      "context": "Shoon is an old word for shoes; to peer is to look closely; casements are windows; thatch is a roof made of straw. A harvest mouse is a tiny field mouse; moveless means not moving. Read slowly and softly, as the moon walks.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Earth and Air, “Silver,” the complete poem; opens “SLOWLY, silently, now the moon Walks the night in her silver shoon; This way, and that,…”; closes “…and silver eye; And moveless fish in the water gleam, By silver reeds in a silver stream.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          266,
+          266
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ff3d3daa96b2ee0dc8a1cf8e5cf556b238cbc082e4e54c05e3f1ed53dd5cd8e2"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-05-q1",
+          "prompt": "How does the moon walk through the night?",
+          "facilitatorNotes": [
+            "Slowly and silently, in silver shoes."
+          ],
+          "evidence": [
+            "SLOWLY, silently, now the moon",
+            "Walks the night in her silver shoon;"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-05-q2",
+          "prompt": "Which animals does the moonlight touch?",
+          "facilitatorNotes": [
+            "A sleeping dog with silver paws, doves in silver-feathered sleep, a harvest mouse with silver claws and eye, and fish gleaming in the stream."
+          ],
+          "evidence": [
+            "With paws of silver sleeps the dog;",
+            "With silver claws, and silver eye;"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-05-q3",
+          "prompt": "Why do you think the poet uses the word “silver” so many times?",
+          "facilitatorNotes": [
+            "Moonlight makes everything look pale and shining, so the repeated word paints the whole scene one colour and keeps it calm. Children may count the silvers or say it sounds like a song; both notice the pattern."
+          ],
+          "evidence": [
+            "Silver fruit upon silver trees;",
+            "By silver reeds in a silver stream."
+          ]
+        }
+      ]
+    }
+  ]
+}

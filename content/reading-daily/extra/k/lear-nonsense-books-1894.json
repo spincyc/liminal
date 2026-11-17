@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "lear-nonsense-books-1894",
+  "readings": [
+    {
+      "id": "reading-k-lear-nonsense-books-1894-01",
+      "title": "The Duck and the Kangaroo",
+      "sourceId": "lear-nonsense-books-1894",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a conversation in which each animal answers the other’s worry.",
+      "focus": "A bored duck talks a kangaroo into giving her a ride, solving every problem until they hop round the world together.",
+      "context": "Edward Lear wrote nonsense poems to make children laugh. The Dee is a real river and the Jelly Bo Lee an invented place. Reflection means careful thinking. The Kangaroo splits the word “rheumatiz” (rheumatism, aching joints) across two lines as a joke. Worsted socks are woollen socks.",
+      "contentNote": "The Duck promises to smoke a cigar every day, a joke from a time when smoking was common.",
+      "excerpt": {
+        "locator": "Nonsense Songs, “The Duck and the Kangaroo,” the complete poem (stanzas I–V); opens “Said the Duck to the Kangaroo, \"Good gracious! how you hop Over the fields, and the water…”; closes “…whole world three times round. And who so happy, oh! who, As the Duck and the Kangaroo?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          140,
+          149
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "de4a21c6ae3a01fccac843eb1aa1b18ac90cc8ee21d94fa4e31e6d7bde943d6e"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-01-q1",
+          "prompt": "Why does the Duck want to leave her pond?",
+          "facilitatorNotes": [
+            "Her life there is a bore and she longs for the world beyond; she wishes she could hop like the Kangaroo."
+          ],
+          "evidence": [
+            "My life is a bore in this nasty pond;",
+            "I wish I could hop like you,"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-01-q2",
+          "prompt": "What is the Kangaroo’s one objection, and how does the Duck answer it?",
+          "facilitatorNotes": [
+            "Her wet, cold feet might make his joints ache, so she buys four pairs of woollen socks and a cloak. Children can picture socks on webbed feet."
+          ],
+          "evidence": [
+            "Your feet are unpleasantly wet and cold,",
+            "And I bought four pairs of worsted socks,"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-01-q3",
+          "prompt": "Where does the Duck sit for the ride, and how do the friends feel at the end?",
+          "facilitatorNotes": [
+            "At the very end of his tail, to balance him. They hop round the world three times, and the last question means no one could be happier."
+          ],
+          "evidence": [
+            "And quite at the end of my tail.",
+            "And who so happy, oh! who,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-02",
+      "title": "The Daddy Long-legs and the Fly",
+      "sourceId": "lear-nonsense-books-1894",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear two friends each explain a sadness, then find how they solve it together.",
+      "focus": "One friend’s legs are too long and the other’s too short, so together they sail away to a place where neither matters.",
+      "context": "A daddy long-legs is an insect with very long thin legs; Mr. Floppy Fly is Lear’s invention. Court is the palace of the king and queen. “Battlecock and shuttledore” mixes up battledore and shuttlecock, a game like badminton. Periwinkle-wine, “mumbian” and the Gromboolian Plain are nonsense, and “sponge-taneous” is a joke on “spontaneous,” meaning sudden.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Nonsense Songs, “The Daddy Long-legs and the Fly,” the complete poem (stanzas I–VII); opens “Once Mr. Daddy Long-legs, Dressed in brown and gray, Walked about upon the sands Upon a…”; closes “…great Gromboolian Plain; And there they play forevermore At battlecock and shuttledore.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          151,
+          164
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ef861bd0679e09c0677d3f823dcf56b3e18f5c61f86d9605ebd6e7bf0064973f"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-02-q1",
+          "prompt": "Why won’t Mr. Floppy Fly go to court?",
+          "facilitatorNotes": [
+            "His legs are too short, and he fears the king and queen would say he is not fit to come."
+          ],
+          "evidence": [
+            "Are so extremely short.",
+            "You Fly, to come to court a bit!"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-02-q2",
+          "prompt": "Why can’t Mr. Daddy Long-legs sing any more?",
+          "facilitatorNotes": [
+            "His legs have grown too long. Ask whether long legs could really stop anyone singing; this is Lear’s nonsense, and children enjoy saying so."
+          ],
+          "evidence": [
+            "I can never sing again;",
+            "My legs are grown too long!"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-02-q3",
+          "prompt": "How do the two friends solve their troubles at the end?",
+          "facilitatorNotes": [
+            "They sail off in a little boat to the Gromboolian Plain and play there forever, where court and singing no longer matter. Some children will say they ran away from their problems, others that they found a happier place together; both fit the poem."
+          ],
+          "evidence": [
+            "And off they sailed among the waves,",
+            "And there they play forevermore"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-03",
+      "title": "The Nutcrackers and the Sugar-Tongs",
+      "sourceId": "lear-nonsense-books-1894",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture a whole house of kitchen things coming to life.",
+      "focus": "Two bored table tools borrow ponies and ride away for good, while the rest of the household looks on amazed.",
+      "context": "Nutcrackers crack nuts open; sugar-tongs pick up lumps of sugar. Remorse means feeling sorry. A casement and a lattice are windows; a salt-cellar holds salt; veal-patties are little meat pies; a delusion is something that is not real. Lear’s lines gallop, so read them with a riding rhythm.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Nonsense Songs, “The Nutcrackers and the Sugar-Tongs,” the complete poem (stanzas I–VI); opens “The Nutcrackers sate by a plate on the table; The Sugar-tongs sate by a plate at his…”; closes “…far in the distance their forms disappearing, They faded away; and they never came back!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          179,
+          190
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c15f6aa4deed5b2627bb8ab3c57e3c1ddcc9de4a91110e062d7cd413152476ab"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-03-q1",
+          "prompt": "What do the Nutcrackers and the Sugar-tongs wish they could do?",
+          "facilitatorNotes": [
+            "Ride horses over the hills and meadows instead of sitting idle by a plate on the table."
+          ],
+          "evidence": [
+            "The Nutcrackers sate by a plate on the table;",
+            "Along the blue hills and green meadows to ride?"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-03-q2",
+          "prompt": "Pick one thing in the house. What does it do when the riders set off?",
+          "facilitatorNotes": [
+            "The cups and saucers dance, the salt-cellar stands on his head, the mustard-pot climbs the gooseberry pies, the tea-kettle hisses. Any matching pair counts, and children can act it out."
+          ],
+          "evidence": [
+            "The Salt-cellar stood on his head with a shout;",
+            "The Tea-kettle hissed, and grew black in the face;"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-03-q3",
+          "prompt": "Do the Nutcrackers and the Sugar-tongs ever come back? How do you feel about that?",
+          "facilitatorNotes": [
+            "No: they ride out of hearing and never return. Some children feel glad for their freedom; others miss them or worry about the kitchen. Ask which line helps them decide."
+          ],
+          "evidence": [
+            "\"We will never go back any more!\"",
+            "They faded away; and they never came back!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-lear-nonsense-books-1894-04",
+      "title": "Calico Pie",
+      "sourceId": "lear-nonsense-books-1894",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen for the line that returns at the end of every verse.",
+      "focus": "Birds, a fish, mice and insects all come and go, and the speaker is left missing them.",
+      "context": "Calico is a printed cotton cloth; “calico pie,” “calico jam” and the others are nonsense openings chosen for their sound. A syllabub is a frothy pudding; the Sole and the Sprat are fish, and the Willeby-wat is Lear’s invention. Read the repeated last lines a little more slowly each time.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Nonsense Songs, “Calico Pie,” the complete poem (stanzas I–IV); opens “Calico pie, The little birds fly Down to the calico-tree: Their wings were blue, And they…”; closes “…never came back, They never came back, They never came back. They never came back to me.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          192,
+          199
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "97bcd6b42e2d0f65e1228b675459ab5f2da104983a00b0f03d777546b6403306"
+      },
+      "questions": [
+        {
+          "id": "reading-k-lear-nonsense-books-1894-04-q1",
+          "prompt": "What do the little birds do before they fly away?",
+          "facilitatorNotes": [
+            "They fly down to the calico-tree and sing “Tilly-loo!”; their wings are blue."
+          ],
+          "evidence": [
+            "Down to the calico-tree:",
+            "And they sang \"Tilly-loo!\""
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-04-q2",
+          "prompt": "Which creatures come in each verse?",
+          "facilitatorNotes": [
+            "Birds, then a fish, then mice, then grasshoppers with a butterfly, a beetle and a bee. Children can show each one moving."
+          ],
+          "evidence": [
+            "The little Fish swam",
+            "The little Mice ran"
+          ]
+        },
+        {
+          "id": "reading-k-lear-nonsense-books-1894-04-q3",
+          "prompt": "“They never came back to me.” How does the speaker feel? Is the poem funny, sad, or both?",
+          "facilitatorNotes": [
+            "The speaker seems to miss them, and the repeating makes it sound wistful, yet the nonsense words are playful. Accept funny, sad or both, with a line to support it."
+          ],
+          "evidence": [
+            "They never came back to me!",
+            "Flippity flup,"
+          ]
+        }
+      ]
+    }
+  ]
+}
