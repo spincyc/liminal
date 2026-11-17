@@ -1,0 +1,608 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "kipling-jungle-book-1910",
+  "readings": [
+    {
+      "id": "reading-6-kipling-jungle-book-1910-01",
+      "title": "Road-Song of the Bandar-Log",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Hear the monkeys’ boasts in their bouncing rhythm, and notice where each stanza breaks off.",
+      "focus": "Kipling lets the Monkey-People mock themselves: grand plans, borrowed words and nothing finished.",
+      "context": "In “Kaa’s Hunting,” from Rudyard Kipling’s The Jungle Book (1894), the Bandar-log, or Monkey-People, carry the boy Mowgli off through the treetops; the other animals scorn them as a people without a law who chatter, boast and forget. Kipling placed this song after the story. A festoon is a hanging loop, like a garland; a Cupid’s bow is the curved bow of Cupid, the archer god of love. “Scumfish” is a rare word: let the leaping lines suggest its sense.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Road-Song of the Bandar-Log,” complete poem; opens “Here we go in a flung festoon, Half-way up to the jealous moon! Don't you envy our…”; closes “…and the noble noise we make, Be sure, be sure, we're going to do some splendid things!_”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          363,
+          366
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "345e6f660d9607e2fa052b4ccffc6e24dff1e1c7fd5694db5a22aaffbf0a4b1e"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-01-q1",
+          "prompt": "What do the monkeys want their listeners to envy? Is any of it a real achievement?",
+          "facilitatorNotes": [
+            "Their prancing bands, their extra hands and their curly tails: things they were born with, not things they have done. Boasting about their bodies takes the place of deeds."
+          ],
+          "evidence": [
+            "Don't you envy our pranceful bands?",
+            "Don't you wish you had extra hands?"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-01-q2",
+          "prompt": "Each of the first three stanzas turns on “never mind.” What is broken off each time?",
+          "facilitatorNotes": [
+            "An insult (“Now you’re angry”), a plan (“Now we’re going to”) and a pretence (“Let’s pretend we are”) are all dropped for the same taunt about a tail. The refrain acts out their short attention."
+          ],
+          "evidence": [
+            "Now we're going to--never mind,",
+            "Brother, thy tail hangs down behind"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-01-q3",
+          "prompt": "“Now we are talking just like men.” What is the joke, and at whom might it be aimed?",
+          "facilitatorNotes": [
+            "They jabber every sound they have heard “all together” and call it talk. The line mocks the monkeys’ imitation of people and, perhaps, people who repeat what they have heard without understanding it; readers can argue whether Kipling meant the joke to land on humans too."
+          ],
+          "evidence": [
+            "Jabber it quickly and all together!",
+            "Now we are talking just like men."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-01-q4",
+          "prompt": "The last stanza switches to long, rushing lines. What proof do the monkeys offer that they will “do some splendid things”?",
+          "facilitatorNotes": [
+            "Only “the rubbish in our wake” and “the noble noise we make.” Mess and noise stand in for accomplishment, and the galloping rhythm makes the boast sound even emptier, or, to some readers, rather joyful."
+          ],
+          "evidence": [
+            "By the rubbish in our wake, and the noble noise we make,",
+            "Be sure, be sure, we're going to do some splendid things!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-02",
+      "title": "Mowgli’s Song",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a victory chant that turns into a string of unanswered questions, and track the singer’s two feelings.",
+      "focus": "Triumph over Shere Khan cannot settle where Mowgli belongs; the song holds pride and grief together.",
+      "context": "In “Tiger! Tiger!” from Rudyard Kipling’s The Jungle Book (1894), Mowgli, the boy raised by wolves, lives for a time in a village as a herd-boy. When the tiger Shere Khan, who has sworn to kill him, sleeps after a meal in a ravine, Mowgli and his wolf brothers drive the buffalo herd down on him and he is trampled to death. Mowgli skins him, keeping a promise to bring the hide to the wolves’ Council Rock, and the villagers, believing him a sorcerer, drive him out with stones. Rama is the lead buffalo bull; Akela and Gray Brother are wolves; Ikki is the porcupine and Mang the bat; the Waingunga is the river. Read the long chanting lines aloud.",
+      "contentNote": "The song celebrates the tiger’s death and describes skinning him with a knife; villagers throw stones and Mowgli’s mouth bleeds.",
+      "excerpt": {
+        "locator": "“Mowgli’s Song, that he sang at the Council Rock when he danced on Shere Khan’s hide,” complete poem; opens “The Song of Mowgli--I, Mowgli, am singing. Let the jungle listen to the things I have…”; closes “…well, O Wolves! _Ahae!_ My heart is heavy with the things that I do not understand.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          486,
+          487
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "698e5db11567aaecf3f57967e116d8af7f638ecb766ccf3fea9a219f784a047d"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-02-q1",
+          "prompt": "How does Mowgli turn Shere Khan’s own words against him in the opening lines?",
+          "facilitatorNotes": [
+            "He repeats the tiger’s boast and his insulting name for Mowgli, then taunts the tiger about his last drink. A threat becomes a mockery now that the tiger is dead."
+          ],
+          "evidence": [
+            "Shere Khan said he would kill--would kill!",
+            "Mowgli, the Frog!",
+            "Drink deep, Shere Khan, for when wilt thou drink again?"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-02-q2",
+          "prompt": "Why does Mowgli speak as if the dead tiger were asleep and could lend him his coat?",
+          "facilitatorNotes": [
+            "The pretended politeness is mocking triumph, the enemy treated as a host. It may strike readers as cruel gloating or as a way of honouring a great foe; both have support."
+          ],
+          "evidence": [
+            "We will not wake him, for his strength is very great.",
+            "Lend me thy coat, Shere Khan."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-02-q3",
+          "prompt": "Several sections in a row end with “Why?” What is Mowgli asking, and does the song answer?",
+          "facilitatorNotes": [
+            "Why the village cast him out, why the wolves did too, why he lives between village and jungle, and why he laughs while crying. No answer comes: the victory has not settled where he belongs."
+          ],
+          "evidence": [
+            "I did them no harm, but they were afraid of me. Why?",
+            "As Mang flies between the beasts and the birds so fly I between the village and the jungle. Why?"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-02-q4",
+          "prompt": "“I am two Mowglis, but the hide of Shere Khan is under my feet.” Who are the two Mowglis, and why does the hide come after “but”?",
+          "facilitatorNotes": [
+            "One belongs to the jungle and one to the village; one rejoices and one grieves. The hide is a solid fact to stand on against a self he cannot settle, though the last line admits there is much he does not understand; readers may take the hide as comfort or as a lonely prize."
+          ],
+          "evidence": [
+            "I am two Mowglis, but the hide of Shere Khan is under my feet.",
+            "My heart is heavy with the things that I do not understand."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-03",
+      "title": "The White Seal — A white coat on a crowded beach",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Picture an enormous, noisy setting from a few exact numbers and details, and notice who claims to be telling the tale.",
+      "focus": "The story begins with a beach of fighting fur seals, a proud father and a baby who is not like the rest.",
+      "context": "“The White Seal” comes from Rudyard Kipling’s The Jungle Book (1894), the book of the Mowgli stories and “Rikki-tikki-tavi.” It is set on St. Paul, an island in the Bering Sea between Alaska and Russia, where fur seals came ashore by the hundreds of thousands each summer to raise their young. A comber is a long curling wave; basalt is dark volcanic rock; a nursery here is a family’s stretch of beach; the holluschickie are the young unmarried males.",
+      "contentNote": "Bull seals fight savagely for places on the beach and are badly wounded.",
+      "excerpt": {
+        "locator": "“The White Seal,” from the Seal Lullaby through Kotick’s birth and his mother’s song; opens “Oh! hush thee, my baby, the night is behind us, And black are the waters that sparkled so…”; closes “…as bad can be; But splash and grow strong, And you can't be wrong, Child of the Open Sea!”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-kipling-jungle-book-1910-04",
+        "blocks": [
+          489,
+          510
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "664edc83e6b0e3144d87ef0e04dd6a8958f2240c26b91608fd2de4a57baa86f1"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-03-q1",
+          "prompt": "Who is said to have told this story to the narrator, and why might Kipling begin this way?",
+          "facilitatorNotes": [
+            "Limmershin the Winter Wren, blown onto a steamer and nursed in the narrator’s cabin. The playful frame makes the tale both a joke and a witness’s report; readers may notice the narrator vouching for a bird’s honesty."
+          ],
+          "evidence": [
+            "Limmershin, the Winter Wren, told me the tale",
+            "Limmershin is a very odd little bird, but he knows how to tell the truth."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-03-q2",
+          "prompt": "What makes Sea Catch frightening, and which rule shows he is not simply cruel?",
+          "facilitatorNotes": [
+            "His size, teeth, scars and trick of striking from a feigned sideways look; yet he never chases a beaten seal. He fights for room by the sea, not for the pleasure of hurting."
+          ],
+          "evidence": [
+            "he was always ready for just one fight more",
+            "Yet Sea Catch never chased a beaten seal, for that was against the Rules of the Beach."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-03-q3",
+          "prompt": "Why will Sea Catch not move to quieter Otter Island, as Matkah suggests?",
+          "facilitatorNotes": [
+            "Others “would say we were afraid,” so they must “preserve appearances.” Kipling uses the seals to poke fun at human pride, and says so outright when he calls them as unaccommodating as men."
+          ],
+          "evidence": [
+            "If we went there they would say we were afraid.",
+            "they were just as stupid and unaccommodating as men"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-03-q4",
+          "prompt": "How do Kotick’s parents react to the news that he will be white, and what might that predict?",
+          "facilitatorNotes": [
+            "Sea Catch snorts that there has never been a white seal; Matkah answers that there will be now and sings to him. A seal who is the first of his kind may see what others cannot; readers might predict trouble, greatness or both."
+          ],
+          "evidence": [
+            "There never has been such a thing in the world as a white seal.",
+            "there's going to be now"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-04",
+      "title": "The White Seal — Learning the sea",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a long sequence of lessons, and sort those that come from his mother, from other creatures and from his own experience.",
+      "focus": "Kotick becomes a creature of the open sea through teaching, danger and his own senses.",
+      "context": "Recap: on the island of St. Paul in the Bering Sea, where a million fur seals come ashore each summer, the great fighter Sea Catch and his gentle wife Matkah have a son, Kotick, whose coat is turning white, though no white seal has ever been seen. Matkah sings him a song warning that baby seals must not swim too soon. Mange is a skin disease; the Grampus is the killer whale; a fathom is six feet of depth; Juan Fernandez is an island far south, off Chile.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The White Seal,” from Kotick’s first weeks through his return to the island as a yearling; opens “Of course the little fellow did not understand the words at first. He paddled and…”; closes “…they had been born and heard the old seals, their fathers, fighting in the rolling mist.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-03",
+        "continuesTo": "reading-6-kipling-jungle-book-1910-05",
+        "blocks": [
+          511,
+          522
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9a86aaa08937dd825fc88fa4ede6e715626c47267ac3832252073127d3375bdb"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-04-q1",
+          "prompt": "What happens the first time Kotick goes into the sea, and how does it connect with his mother’s song?",
+          "facilitatorNotes": [
+            "A wave carries him out and he nearly drowns, his head sinking and flippers flying up just as the song warned. The song was practical advice, learned the hard way."
+          ],
+          "evidence": [
+            "exactly as his mother had told him in the song",
+            "if the next wave had not thrown him back again he would have drowned"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-04-q2",
+          "prompt": "What is the “feel of the water,” and why is it useful?",
+          "facilitatorNotes": [
+            "A tingling of the skin that warns of bad weather; the porpoise steers by the same feeling in his tail. The seals read the sea with their bodies, a skill that matters later in the story."
+          ],
+          "evidence": [
+            "tingly, prickly feelings meant bad weather coming",
+            "My tail tingles, youngster"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-04-q3",
+          "prompt": "In the long list of Matkah’s lessons, which seems strangest to you, and why might it be there?",
+          "facilitatorNotes": [
+            "Many readers pick the warning never to look at a boat, “particularly a row boat”: a lesson about men set among fishing skills and given without explanation. Others may choose the polite wave to the albatross; any choice should explain its place in the list."
+          ],
+          "evidence": [
+            "never to stop and look at a boat or a ship, but particularly a row boat"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-04-q4",
+          "prompt": "What calls Kotick back north, and how do the other seals greet him?",
+          "facilitatorNotes": [
+            "A spring laziness and the memory of the beaches, the seaweed and the roar; his mates ask where he got his coat. He belongs to the young seals and yet is marked out from them."
+          ],
+          "evidence": [
+            "he remembered the good firm beaches of Novastoshnah seven thousand miles away",
+            "But where did you get that coat?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-05",
+      "title": "The White Seal — The killing-grounds",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 10,
+        "totalMinutes": 25
+      },
+      "challenge": "Notice how a terrible scene is told in plain, quick sentences, and compare how different animals answer Kotick’s horror.",
+      "focus": "One seal sees what the others ignore, and his elders advise him to accept it.",
+      "context": "Recap: Kotick, the only white fur seal ever born on the island of St. Paul, has spent his first year learning the Pacific and has come home, almost pure white, with the other young seals (the holluschickie). The Fire-dance is played in sea water lit up by tiny glowing creatures. In Kipling’s time, the island’s Aleut hunters, working for a fur company, drove young seals inland each summer and killed them for their skins. Sea Vitch is a walrus; “Stareek” means old man; the burgomaster is a large gull.",
+      "contentNote": "Men drive young seals inland, club them to death and skin them, seen through Kotick’s eyes. The narrator calls the Aleut hunters “not clean people” and describes their faces in a demeaning way; these are prejudiced generalizations of Kipling’s time about the Indigenous people of the islands.",
+      "excerpt": {
+        "locator": "“The White Seal,” from the Fire-dance through Kotick’s return from Walrus Islet and his parents’ advice; opens “That night Kotick danced the Fire-dance with the yearling seals. The sea is full of fire…”; closes “…Kotick.\" And Kotick went off and danced the Fire-dance with a very heavy little heart.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-04",
+        "continuesTo": "reading-6-kipling-jungle-book-1910-06",
+        "blocks": [
+          523,
+          555
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "221647b700691c14623d70b6a9e23b936cd5b2c2f0d78a628f04a0e27d13d15e"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-05-q1",
+          "prompt": "How do the hunters react to the white seal, and what does their fear show?",
+          "facilitatorNotes": [
+            "Kerick turns pale, prays and wonders whether Kotick is a drowned man’s ghost; Patalamon calls him unlucky. The hunters are superstitious about the one seal who does not behave like the rest, and who follows them alone."
+          ],
+          "evidence": [
+            "Perhaps it is old Zaharrof's ghost.",
+            "That's the first time a seal has ever come to the killing-grounds alone."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-05-q2",
+          "prompt": "How is the killing told differently from the lively descriptions earlier in the story?",
+          "facilitatorNotes": [
+            "Plainly and quickly: the watch, the cooling-off, a command, clubs “as fast as they could,” skins whipped off. The flat telling, from Kotick’s point of view, is more shocking than description would be."
+          ],
+          "evidence": [
+            "and then the men clubbed the seals on the head as fast as they could",
+            "little Kotick did not recognize his friends any more"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-05-q3",
+          "prompt": "What is reasonable in the sea-lion’s answer, and what is missing from it?",
+          "facilitatorNotes": [
+            "He is right that men return wherever seals come, and he points Kotick to someone who may know more; but he treats the killing as routine. The seals on the beach do the same, and Kipling says the difference is that they have not seen it."
+          ],
+          "evidence": [
+            "unless you can find an island where no men ever come, you will always be driven",
+            "But none of the other seals had seen the killing, and that made the difference between him and his friends."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-05-q4",
+          "prompt": "Kotick’s father and mother both tell him to give up. Are they wrong?",
+          "facilitatorNotes": [
+            "Sea Catch advises him to grow big enough to fight for himself; Matkah says the killing cannot be stopped. Both speak from experience and love, but they offer safety for one seal, not an answer for all; readers may defend their realism or side with Kotick."
+          ],
+          "evidence": [
+            "In another five years you ought to be able to fight for yourself.",
+            "You will never be able to stop the killing. Go and play in the sea, Kotick."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-06",
+      "title": "The White Seal — Five seasons of searching",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 11,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow years of travel compressed into a few pages, and notice how a remembered insult becomes the clue.",
+      "focus": "Kotick keeps searching through failure, and a dying seal’s story gives him a reason to try once more.",
+      "context": "Recap: Kotick, the only white fur seal ever born on the island of St. Paul, saw men club and skin the young seals. Searching for an island where men never come, he was told by a walrus to ask Sea Cow, and a gull screamed that Sea Cow was the only thing in the sea uglier than the walrus, with worse manners. His parents told him to grow up and stop worrying. Whalers boiled whale blubber for oil; Kerguelen, the Galapagos and the other islands named lie scattered across the southern oceans; Masafuera is an island off Chile where seals were once killed by the hundred thousand.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The White Seal,” from Kotick’s first voyage of exploration through his discovery of Sea Cow; opens “That autumn he left the beach as soon as he could, and set off alone because of a notion…”; closes “…and he tumbled backward in the water, for he knew that he had found Sea Cow at last.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-05",
+        "continuesTo": "reading-6-kipling-jungle-book-1910-07",
+        "blocks": [
+          556,
+          571
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f74cb74c9ba562d3cb29b83399db753af04ac255cc55d1db82adf521d9fa97a5"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-06-q1",
+          "prompt": "What does Kotick find on every island that looks right, and how does he read the signs?",
+          "facilitatorNotes": [
+            "A whaler’s smoke on the horizon, or traces of a former seal nursery, and he reasons that where men have come once they will come again. His search depends on reading evidence of what happened before he arrived."
+          ],
+          "evidence": [
+            "there was always the smoke of a whaler on the horizon",
+            "where men had come once they would come again"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-06-q2",
+          "prompt": "Why does the dying seal of Masafuera tell him to try once more?",
+          "facilitatorNotes": [
+            "He remembers a story that a white seal would one day lead the seals to a quiet place. The legend gives Kotick’s difference a purpose, though readers may argue that he succeeds because he alone keeps looking, as he says himself."
+          ],
+          "evidence": [
+            "some day a white seal would come out of the north and lead the seal people to a quiet place",
+            "I am the only seal, black or white, who ever thought of looking for new islands."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-06-q3",
+          "prompt": "What does Kotick mean when he tells his mother about the seventh wave?",
+          "facilitatorNotes": [
+            "That a later effort may reach farther than the earlier ones. He uses the sea’s own pattern as a reason to try again instead of marrying and settling down."
+          ],
+          "evidence": [
+            "Give me another season",
+            "Remember, Mother, it is always the seventh wave that goes farthest up the beach."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-06-q4",
+          "prompt": "How does Kotick realize he has found Sea Cow, and why is the moment funny?",
+          "facilitatorNotes": [
+            "Losing patience with the bowing, speechless creatures, he insults them in the very words the gull once used, and the insult turns out to be the identification. His bad temper solves the puzzle."
+          ],
+          "evidence": [
+            "you're the only people I've ever met uglier than Sea Vitch--and with worse manners",
+            "he knew that he had found Sea Cow at last"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-07",
+      "title": "The White Seal — The tunnel and the fight",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "literary-narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 10,
+        "totalMinutes": 24
+      },
+      "challenge": "Weigh a hero’s methods: patience while following the sea cows, force when persuading the seals.",
+      "focus": "Kotick finds a safe home, but the seals will follow him only after he beats them.",
+      "context": "Recap: Kotick, the white fur seal, has spent five seasons searching the oceans for a beach where men never come, to save the seals of St. Paul from the yearly killing. A dying seal told him a legend that a white seal would lead the seals to safety, and at last, off Copper Island, he has found Sea Cow: huge, slow, silent sea-grazers that a walrus said might know such a place. (Kipling’s Sea Cow is based on Steller’s sea cow, which hunters had in fact wiped out by about 1770.) A telegraphic code is signalling by taps; twenty fathoms is 120 feet deep.",
+      "contentNote": "Kotick fights and wounds many seals, including a young seal who mocks him; the beach is left “torn and bleeding.”",
+      "excerpt": {
+        "locator": "“The White Seal,” from Kotick’s journey with the sea cows to the end of the story; opens “The sea cows went on schlooping and grazing, and chumping in the weed, and Kotick asked…”; closes “…each year, while the holluschickie play round him, in that sea where no man comes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-kipling-jungle-book-1910-06",
+        "continuesTo": null,
+        "blocks": [
+          572,
+          599
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "29f0902eae6861f533a71ef04f39d3d0b752e85ed0cf0e2f950afae5dba250f7"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-07-q1",
+          "prompt": "What makes Kotick begin to respect the sea cows he first thought so foolish?",
+          "facilitatorNotes": [
+            "He notices they are following a warm current, then sees them swim fast and dive through a hidden tunnel. He concludes they must be wiser than he thought; judging by looks proved wrong."
+          ],
+          "evidence": [
+            "till he saw that they were following up a warm current of water, and then he respected them more",
+            "Sea Cow must be wiser than I thought."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-07-q2",
+          "prompt": "What makes the new beaches safe? Which feature matters most?",
+          "facilitatorNotes": [
+            "A tunnel deep under a cliff, cliffs men cannot climb down, shoals that would wreck a ship six miles out, good fishing, and the feel of water no man has visited. Readers may argue for the tunnel or the shoals, using the text."
+          ],
+          "evidence": [
+            "a line of bars and shoals and rocks that would never let a ship come within six miles of the beach",
+            "no men had ever come there"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-07-q3",
+          "prompt": "Kotick asks, “What’s the use of fighting?” Why does he fight anyway?",
+          "facilitatorNotes": [
+            "The young seal says he never fought for a nursery and has no right to give orders, and the others laugh. The seals will only believe someone who proves himself on their terms."
+          ],
+          "evidence": [
+            "you can't come from no one knows where and order us off like this",
+            "unless your heads are dragged off your silly necks you won't believe"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-07-q4",
+          "prompt": "At the end Kotick is “red from head to tail.” Is his victory a triumph, a sad necessity or both?",
+          "facilitatorNotes": [
+            "He saves the seals with the same kind of violence he wanted them to escape, and persuasion failed where force succeeded. Yet his father joins him, the seals follow, and the story ends in a sea “where no man comes,” so many readers will call it a triumph with a cost."
+          ],
+          "evidence": [
+            "He was not a white seal any more, but red from head to tail.",
+            "in that sea where no man comes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-kipling-jungle-book-1910-08",
+      "title": "Lukannon",
+      "sourceId": "kipling-jungle-book-1910",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 15,
+        "totalMinutes": 21
+      },
+      "challenge": "Compare the three stanzas that begin “I met my mates in the morning” and notice how small changes mark a great loss.",
+      "focus": "A seal anthem remembers a crowded, joyful home and mourns what the sealers have done to it.",
+      "context": "Kipling placed this song after “The White Seal” in The Jungle Book (1894). That story follows Kotick, a white fur seal from St. Paul in the Bering Sea, who sees hunters drive young seals inland and kill them for their skins, and who searches for a beach where men never come. Sealers killed fur seals in enormous numbers in the nineteenth century. Lukannon is one of the island’s beaches; ground-swell is a deep rolling sea; the offing is open water off the shore; the Salt House is where the skins were kept; the Gooverooska is a seabird; a viceroy rules in a king’s place.",
+      "contentNote": "The song mourns seals that sealers shoot, club and drive to slaughter.",
+      "excerpt": {
+        "locator": "“Lukannon,” Kipling’s headnote and the complete song; opens “This is the great deep-sea song that all the St. Paul seals sing when they are heading…”; closes “…egg the tempest flings ashore, The beaches of Lukannon shall know their sons no more!_”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          601,
+          607
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a9f913f397a0e374a7942388aadd36b0ac49ff0ea4a050de109bf95552dd23ff"
+      },
+      "questions": [
+        {
+          "id": "reading-6-kipling-jungle-book-1910-08-q1",
+          "prompt": "The line “I met my mates in the morning” comes three times. What changes in it?",
+          "facilitatorNotes": [
+            "First “and oh, but I am old!”, then “I’ll never meet them more!”, then the tense changes: “I meet my mates,” now “a broken, scattered band.” A remembered crowd becomes a present handful of survivors."
+          ],
+          "evidence": [
+            "I met my mates in the morning (and oh, but I am old!)",
+            "I meet my mates in the morning, a broken, scattered band."
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-08-q2",
+          "prompt": "What do the italic stanzas remember about Lukannon, and why might they be set apart?",
+          "facilitatorNotes": [
+            "Pleasant stations, dances that churned the sea to flame, fog, lichens and smooth playgrounds: home as a chorus remembers it. The italics mark the shared refrain, a song inside the song, as fits Kipling’s description of a “National Anthem.”"
+          ],
+          "evidence": [
+            "The song of midnight dances that churned the sea to flame",
+            "The beaches of Lukannon--the home where we were born!",
+            "a sort of very sad seal National Anthem"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-08-q3",
+          "prompt": "How does the stanza about men connect with “The White Seal”?",
+          "facilitatorNotes": [
+            "In the story the hunters drive the young seals inland “just like sheep” to the killing-grounds near the Salt House. The seals’ own word “silly” admits a helplessness that Kotick refused to accept."
+          ],
+          "evidence": [
+            "Men shoot us in the water and club us on the land;",
+            "Men drive us to the Salt House like silly sheep and tame,"
+          ]
+        },
+        {
+          "id": "reading-6-kipling-jungle-book-1910-08-q4",
+          "prompt": "What does the last stanza ask, and what does the shark’s egg predict?",
+          "facilitatorNotes": [
+            "The singers send the birds south to tell their woe before the beaches are emptied, like a shark’s egg-case thrown ashore with nothing inside. The anthem ends in fear, not hope; readers may contrast it with Kotick’s safe sea or connect it with real animals hunted to extinction."
+          ],
+          "evidence": [
+            "Ere, empty as the shark's egg the tempest flings ashore,",
+            "The beaches of Lukannon shall know their sons no more!"
+          ]
+        }
+      ]
+    }
+  ]
+}
