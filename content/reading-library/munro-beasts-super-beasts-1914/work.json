@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "munro-beasts-super-beasts-1914",
+  "author": "Saki (H. H. Munro)",
+  "title": "Beasts and Super-Beasts",
+  "translator": null,
+  "edition": "London: John Lane, The Bodley Head, 1914. Project Gutenberg English transcription, eBook 269. Plain-text paragraph boundaries retained, with wrapped prose lines joined and surrounding indentation removed; inline underscore emphasis conventions retained. Embedded verse line breaks retained. No front matter or digitizer boilerplate included.",
+  "publicationYear": 1914,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/269",
+  "textUrl": "https://www.gutenberg.org/ebooks/269.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1914, before 1931, and its US term has expired by 2026. Project Gutenberg explicitly identifies this eBook as public domain in the USA. No later introduction, translation, or editorial notes are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/269"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/269/pg269.txt",
+    "downloadSha256": "058d0cda5a3c8449cbce06e0698048251881be4c6fc8d06fd0bc3a1bb8ec8587",
+    "method": "Project Gutenberg 269 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Removed the PG header and footer, the transcriber's credit line and the title-page imprint; kept the author's note and all thirty-six stories in printed order. Lines of each paragraph joined with single spaces, keeping the transcription's double spaces after sentences; passages whose lines are all indented (embedded verse, a telegram) kept as stanza lines with indentation removed. Story titles are level-2 headings under the book title."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1357,
+    "sha256": "b36d8e4d19dc87bea832a63801a6a74781c675ec955296f7668174bac34d40bb"
+  }
+}

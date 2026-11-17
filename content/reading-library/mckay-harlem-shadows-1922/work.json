@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mckay-harlem-shadows-1922",
+  "author": "Claude McKay",
+  "title": "Harlem Shadows: The Poems of Claude McKay",
+  "translator": null,
+  "edition": "New York: Harcourt, Brace and Company, 1922. Project Gutenberg English transcription, eBook 64989. HTML verse-line and stanza boundaries retained; indentation and within-line whitespace normalized; page-number furniture omitted; typography and transcription spellings retained. No introduction or digitizer notes included.",
+  "publicationYear": 1922,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/64989",
+  "textUrl": "https://www.gutenberg.org/cache/epub/64989/pg64989-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1922, before 1931, and its US term has expired by 2026. Project Gutenberg explicitly identifies this eBook as public domain in the USA. No later introduction, translation, or editorial notes are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/64989"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/64989/pg64989-images.html",
+    "downloadSha256": "f72171de9ef786fbea2f2a66fc0fb671bfe3c6ab6ad39ca0d032307bd796114e",
+    "method": "Project Gutenberg 64989 HTML from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, contents, images, page numbers and transcriber matter, and Max Eastman's introduction. Kept the acknowledgment and the author's word, then every poem in printed order: poem titles as level-2 headings (numbered parts level 3), each stanza element one stanza with its verse lines, indentation removed; HTML italics as _underscores_."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 272,
+    "sha256": "e664fdf060e6c9e352410f15a2e1970d509bf806ee4e95ebf02d84567478b2e7"
+  }
+}

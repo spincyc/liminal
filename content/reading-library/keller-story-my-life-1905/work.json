@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "keller-story-my-life-1905",
+  "author": "Helen Keller",
+  "title": "The Story of My Life",
+  "translator": null,
+  "edition": "New York: Doubleday, Page & Company, 1905. Part I, Helen Keller’s memoir, in the University of Pennsylvania A Celebration of Women Writers transcription of that dated edition. HTML emphasis markup and illustrations omitted; prose whitespace normalized and original verse line breaks retained. This is not the unidentified Project Gutenberg print exemplar. Editorial footnote markers and cross-reference notes omitted; inset verse retained. One transcription error corrected to the Doubleday, Page print: “The two stories were so much alike” (chapter XIV; Internet Archive storyofmylife00kell, 1903, and storymylife00sullgoog, 1905). The library text holds the whole 1905 book: Part I (the memoir), Part II (her letters, 1887-1901, with John Albert Macy's introduction and connecting notes) and Part III (Macy's supplementary account, quoting Anne Mansfield Sullivan's letters and reports); the editor's preface and end notes are omitted.",
+  "publicationYear": 1905,
+  "translationYear": null,
+  "url": "https://digital.library.upenn.edu/women/keller/life/life.html",
+  "textUrl": "https://digital.library.upenn.edu/women/keller/life/life.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Original English memoir in the explicitly dated 1905 Doubleday, Page edition transcribed by the University of Pennsylvania library. The title page and library bibliographic statement identify 1905; this publication is more than 95 years before 2026 and is public domain in the United States.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://digital.library.upenn.edu/women/keller/life/life.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://digital.library.upenn.edu/women/keller/life/life.html",
+    "downloadSha256": "344429e67d24c1ef24bf1a8b4908a9064f8def957214283bad89cf44843b63d5",
+    "method": "UPenn A Celebration of Women Writers HTML (life.html). Kept the dedication and the whole body from PART I to the editor's NOTES (excluded): Part I, Part II with its introduction and letters, Part III. Removed the site header and footer, title page, copyright leaf, editor's preface, contents, list of illustrations, illustration captions and images, page counters, footnote reference numbers and the editor's end notes. Each P is one paragraph with whitespace collapsed (BR as a space; letter titles, addresses, closings and signatures stay separate paragraphs); a verse BLOCKQUOTE is one stanza with BR as line breaks and the HTML's other whitespace collapsed to single spaces (so continuation lines keep one leading space); H3 headings become headings (parts level 1, chapters and sections level 2; the running title before Chapter I dropped); table rows are tab-separated paragraphs; italics are not marked. The declared emendation (we to were, chapter XIV) is applied before conversion."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1616,
+    "sha256": "6e3c8696ef0c30c14e37b64248b0bd2d3d6511b9ee38d36c67a10f540f290371"
+  }
+}

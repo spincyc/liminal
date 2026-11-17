@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "doyle-adventures-sherlock-holmes-1892",
+  "author": "Arthur Conan Doyle",
+  "title": "Adventures of Sherlock Holmes",
+  "translator": null,
+  "edition": "Project Gutenberg 48320 transcription of New York: Harper & Brothers text, copyright 1892; printing undated. Prepared from Internet Archive/American Libraries scans. Prose line wrapping normalized; original paragraphs, spelling, punctuation, and underscore emphasis retained. Publisher illustration captions and digitizer matter omitted.",
+  "publicationYear": 1892,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/48320",
+  "textUrl": "https://www.gutenberg.org/ebooks/48320.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text is identified by the supplied 1892 publisher and copyright leaf. Its US copyright term has expired by 2026; Project Gutenberg explicitly marks this transcription public domain in the USA. No modern introduction, translation, or illustrations are supplied.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/48320/pg48320-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/48320/pg48320.txt",
+    "downloadSha256": "bf63b19ade817616aa64b5dcaf32e8685592c315fd22e336defe685baa02d419",
+    "method": "Project Gutenberg 48320 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept from \"Adventure I\" to THE END; removed the PG header and footer, the title-page imprint, copyright leaf, contents and illustrations lists, illustration captions, the publisher's advertisements and the transcriber's note. Lines of each paragraph joined with single spaces (runs of spaces inside a line, as in letter signatures and section-break asterisks, kept); indented letters stay paragraphs. Adventure numbers and story titles are level-2 headings and numbered sections level-3 headings, under the book title."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2555,
+    "sha256": "5b7b2b7cd2b6f2fb367dfb362e5a3b933db09ec3f2307a661c67c27bf3531b06"
+  }
+}
