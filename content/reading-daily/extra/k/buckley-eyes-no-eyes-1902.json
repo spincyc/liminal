@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "buckley-eyes-no-eyes-1902",
+  "readings": [
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-01",
+      "title": "Spiders on the Common, part 1: the wheel web",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "Spiders on the Common",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture a spider’s web from the outside in, then watch the spider at work.",
+      "focus": "Close looking shows how a round web is built, how it catches food and how the spider makes her silk.",
+      "context": "In this old nature reader three children, Peter, Peggy and Paul, tell what they see on their way to school. A common is open land shared by a village; gorse is a prickly bush with yellow flowers; spokes run from the middle of a wheel to its rim; fangs are sharp biting parts. If you can, look at a real web together afterwards, without touching the spider.",
+      "contentNote": "The spider bites a bee, tears off its wings and sucks its body; Paul picks up the spider and turns her over to look at her.",
+      "excerpt": {
+        "locator": "First Book, Lesson I, “Spiders on the Common,” paragraphs 1–5; opens “When we cross the common on a fine summer morning, we see many spiders' webs sparkling in…”; closes “…She draws it through the combs on her legs, and so makes her web as she runs along.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-02",
+        "blocks": [
+          14,
+          18
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fe636724947f70a7052c0c545b8654fd9729fa6efa8989621fb555b49dec1810"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-01-q1",
+          "prompt": "What makes the web on the gorse sparkle like diamonds?",
+          "facilitatorNotes": [
+            "Drops of gum on its rings of silk, shining in the sun."
+          ],
+          "evidence": [
+            "There are drops of gum all over the rings.",
+            "It is these drops which sparkle like diamonds"
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-01-q2",
+          "prompt": "Where does the spider wait, and how does she know something is caught?",
+          "facilitatorNotes": [
+            "In a little tent in the middle of the web. She feels the web shake and darts out."
+          ],
+          "evidence": [
+            "The spider spins a little tent in the centre of the web.",
+            "Then she feels the web shake"
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-01-q3",
+          "prompt": "What are the comb-like claws on her legs for, and how did the children find out?",
+          "facilitatorNotes": [
+            "She uses them to guide her silk as she makes the web. The children caught her and looked closely, even turning her over to see the pockets the silk comes from. Ask whether it was all right to handle her; children may disagree."
+          ],
+          "evidence": [
+            "She uses them to guide the silk threads as she makes her web.",
+            "six little pockets, out of which she pulls the silk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-02",
+      "title": "Spiders on the Common, part 2: the tunnel and the hunting-spider",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "Spiders on the Common",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare two more kinds of spider with the web-spinner from last time.",
+      "focus": "Spiders catch food in different ways: some lie in wait in tunnels, some hunt without webs, and a mother keeps her eggs close.",
+      "context": "Recap: the children saw round webs shining on the gorse, watched a spider catch a bee, and found the combs on her legs that guide her silk. Now they look at spiders that live close to the ground. A beetle is an insect with a hard shell; a tunnel is a hole that runs underground.",
+      "contentNote": "Peter takes a mother spider’s egg bag away three times to see what she will do.",
+      "excerpt": {
+        "locator": "First Book, Lesson I, “Spiders on the Common,” paragraphs 6–9 (end of lesson); opens “Besides the webs on the gorse, there are webs all over the common close to the ground…”; closes “…times. Each time she caught it up again, and at last ran away before we could catch her.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-01",
+        "continuesTo": null,
+        "blocks": [
+          19,
+          22
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b222b5cd3210d83f8ee462a83ed6da66a3b8e276d75e0e9d1ebf74df9db6ee39"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-02-q1",
+          "prompt": "How are the webs near the ground different from the round webs on the gorse?",
+          "facilitatorNotes": [
+            "They have no spokes; their threads are mixed up like wool."
+          ],
+          "evidence": [
+            "These are not made with spokes like the round webs.",
+            "The threads are mixed up like wool."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-02-q2",
+          "prompt": "Where was the spider hiding, and what did she do when a beetle shook her web?",
+          "facilitatorNotes": [
+            "In a silk-lined hole in the middle of the web. She darted out, seized the beetle and carried it down before anyone could catch her."
+          ],
+          "evidence": [
+            "It goes down into the ground.",
+            "the spider darted out from the tunnel in the ground and seized the beetle"
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-02-q3",
+          "prompt": "What did the mother hunting-spider do each time Peter took her egg ball away? What does that show?",
+          "facilitatorNotes": [
+            "She ran up and seized it, three times, and then ran off with it. It shows how hard she works to keep her eggs; ask whether Peter should have kept testing her."
+          ],
+          "evidence": [
+            "When he let her go, she ran up and seized it.",
+            "Each time she caught it up again"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-03",
+      "title": "The Humble Bee’s Nest, part 1: a nest in the grass",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "The Humble Bee’s Nest",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow the children’s clues from a buzzing bee to her hidden nest.",
+      "focus": "Patient watching shows how a mother bumble bee starts a family by herself in spring.",
+      "context": "A humble bee is a bumble bee, a big furry bee. A fortnight is two weeks. Halfpennies and farthings were small old British coins. The yellow dust from flowers is pollen. Children of that time often opened wild nests; today we watch bees from a distance and never disturb a nest.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "First Book, Lesson IX, “The Humble Bee’s Nest,” paragraphs 1–3; opens “Last March, when the days began to be warm, we saw a big Humble Bee, or Bumble Bee, as…”; closes “…had already been hatched from eggs. These were feeding on the brown balls near them.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-04",
+        "blocks": [
+          114,
+          116
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f4e6ee0b29ff6765d25cc915ee81ef1d8f06d7f684e96606e1387061177c37a6"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q1",
+          "prompt": "Why does Peggy think the big bee is making a nest?",
+          "facilitatorNotes": [
+            "She is a mother bee who has slept all winter, and now the days are warm. Peter follows her to a grassy bank."
+          ],
+          "evidence": [
+            "that is a mother humble bee, who has been asleep all the winter. She must be making a nest."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q2",
+          "prompt": "Why did the children wait two weeks before looking in?",
+          "facilitatorNotes": [
+            "They were afraid she would go away if they disturbed her too soon."
+          ],
+          "evidence": [
+            "But we did not look in, for fear she should go away."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-03-q3",
+          "prompt": "What did they find inside the little wax pockets?",
+          "facilitatorNotes": [
+            "Seven tiny eggs and little brown balls of honey and pollen; in another pocket, grubs eating the balls. Ask what the balls are for: food for the babies."
+          ],
+          "evidence": [
+            "we found inside seven tiny eggs, as small as poppy seeds",
+            "These were feeding on the brown balls near them."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-04",
+      "title": "The Humble Bee’s Nest, part 2: from June to Christmas",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "The Humble Bee’s Nest",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hold three visits in mind: March, June and Christmas.",
+      "focus": "The nest grows into a busy home in summer and is empty by winter, while a few mothers sleep until spring.",
+      "context": "Recap: in March the children followed a mother bumble bee to her nest in a bank and found eggs and grubs in little wax pockets. Hay is grass cut and dried for animals; cocoons are silk cases in which grubs turn into bees; bee-bread is pollen food for the grubs.",
+      "contentNote": "The children cut into the nest to look inside; by winter all but a few mother bees have died.",
+      "excerpt": {
+        "locator": "First Book, Lesson IX, “The Humble Bee’s Nest,” paragraphs 4–7 (end of lesson); opens “The mother bee was very uneasy while we were looking at her nest. She sat down quite…”; closes “…The roof was broken, and the cells all crushed. There was not one humble bee to be found.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-03",
+        "continuesTo": null,
+        "blocks": [
+          117,
+          120
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ad22aa116be6d4468fec6f79996cd593e65c450f33215fc9de8e4f87d6b0b4ef"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q1",
+          "prompt": "How did the mother bee behave while the children looked at her nest?",
+          "facilitatorNotes": [
+            "She sat close by, uneasy, but did not sting; she was afraid they would hurt her grubs. Paul says humble bees are gentle."
+          ],
+          "evidence": [
+            "The mother bee was very uneasy while we were looking at her nest.",
+            "She did not sting us."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q2",
+          "prompt": "Why did the children go back in June, and how had the nest changed?",
+          "facilitatorNotes": [
+            "They feared the horses would tread on it when the hay was cut. It had grown big, with a strong moss roof, a tunnel and many cocoons."
+          ],
+          "evidence": [
+            "We were afraid the horses might tread on the nest when the hay was cut.",
+            "Oh! how big it was now."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-04-q3",
+          "prompt": "What happens to the bumble bees when the cold weather comes?",
+          "facilitatorNotes": [
+            "Most die; a few mothers creep into holes in trees or warm haystacks and sleep till spring. That is why the lesson began with a mother waking in March: the year comes round again."
+          ],
+          "evidence": [
+            "except a few mothers",
+            "There was not one humble bee to be found."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-05",
+      "title": "The Greedy Stranger, part 1: an extra egg",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "The Greedy Stranger",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Count the eggs day by day and notice the one that does not fit.",
+      "focus": "A careful count tells the children that a cuckoo has secretly left her egg in a titlark’s nest.",
+      "context": "The cuckoo lays her eggs in other birds’ nests and lets them raise her chick. A titlark is a small brown bird that nests on the ground; the book’s own footnote says it is now called a pipit. A fortnight is two weeks. Children of that time often visited wild nests; today we watch nests from a distance.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "First Book, Lesson XI, “The Greedy Stranger,” from the beginning through the titlark sitting on her nest (with the author’s footnote); opens “It was the middle of April this year when we first heard the cuckoo. We love to hear it,…”; closes “…She was a pretty little bird, with brown spotted wings and a yellow throat and chin.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-buckley-eyes-no-eyes-1902-06",
+        "blocks": [
+          135,
+          142
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "814986ae61536bf22a622390ff90862c427f39d743919bcece034f04a4bc3a07"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q1",
+          "prompt": "What sound tells the children that a mother cuckoo is near?",
+          "facilitatorNotes": [
+            "A funny cry like “kik-kik-kik,” which Peggy’s father says is the mother cuckoo’s call."
+          ],
+          "evidence": [
+            "One day we heard such a funny noise, like kik-kik-kik."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q2",
+          "prompt": "Count the eggs with the children. How many were there each time they looked?",
+          "facilitatorNotes": [
+            "Two, then three, then four, then five on the same afternoon. Count on fingers together."
+          ],
+          "evidence": [
+            "Two small dull-grey eggs",
+            "But as we came back from school that afternoon there were five eggs."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-05-q3",
+          "prompt": "Why does Peter think the fifth egg belongs to a cuckoo?",
+          "facilitatorNotes": [
+            "A titlark cannot lay two eggs in one day, and a cuckoo carries her egg in her beak to another bird’s nest. Praise a child who follows this reasoning from the count."
+          ],
+          "evidence": [
+            "The titlark cannot have laid two eggs in one day,",
+            "brings it in her wide beak to the nest of some other bird"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-buckley-eyes-no-eyes-1902-06",
+      "title": "The Greedy Stranger, part 2: the cuckoo in the nest",
+      "sourceId": "buckley-eyes-no-eyes-1902",
+      "workTitle": "The Greedy Stranger",
+      "genre": "nature prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Tell two kinds of chick apart by their beaks and toes, then follow what the stranger does.",
+      "focus": "The cuckoo chick takes the whole nest for himself, and the titlark parents feed him anyway.",
+      "context": "Recap: the children found a titlark’s nest and saw two eggs appear in one day, so they guessed a cuckoo had left an egg there. Quills are the beginnings of feathers. A thrush is a bird about the size of a blackbird; a sparrow is much smaller.",
+      "contentNote": "The young cuckoo pushes all four titlark chicks out of the nest, and they die.",
+      "excerpt": {
+        "locator": "First Book, Lesson XI, “The Greedy Stranger,” from the hatching to the end of the lesson; opens “At the end of a fortnight two little titlarks came out of their shells, and the next day…”; closes “…we knew the old birds were all gone. We wondered if it was our young \"greedy stranger.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-buckley-eyes-no-eyes-1902-05",
+        "continuesTo": null,
+        "blocks": [
+          143,
+          150
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a5baa2feee81efdd44f91de838f57927cdfe93d23d83b3a2d72af729b56e531f"
+      },
+      "questions": [
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q1",
+          "prompt": "How do the children know which chick is the cuckoo?",
+          "facilitatorNotes": [
+            "By his curved beak and his toes, two in front and two behind; titlarks have straight beaks and three toes in front."
+          ],
+          "evidence": [
+            "It had a curved beak",
+            "So we knew our young cuckoo by his beak and toes."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q2",
+          "prompt": "What does the young cuckoo do to the titlark chicks?",
+          "facilitatorNotes": [
+            "He pushes them out of the nest one by one until he sits alone, and they die on the bank. The children put one back, but by the afternoon it is out again."
+          ],
+          "evidence": [
+            "We put it back in the nest",
+            "He had pushed them all out."
+          ]
+        },
+        {
+          "id": "reading-k-buckley-eyes-no-eyes-1902-06-q3",
+          "prompt": "Why is the cuckoo called a “greedy stranger”? Is the name fair?",
+          "facilitatorNotes": [
+            "He is not the titlarks’ own chick, and he takes all the room and all the food; the parents go on feeding him after he is bigger than they are. A child who says he cannot help being a cuckoo is giving a thoughtful answer the lesson leaves open."
+          ],
+          "evidence": [
+            "They were so busy feeding the big hungry stranger.",
+            "let these little birds carry all his food"
+          ]
+        }
+      ]
+    }
+  ]
+}
