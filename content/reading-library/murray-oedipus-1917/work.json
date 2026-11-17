@@ -4,7 +4,7 @@
   "author": "Sophocles",
   "title": "Oedipus King of Thebes",
   "translator": "Gilbert Murray",
-  "edition": "London: George Allen & Unwin Ltd., Fourteenth Thousand, July 1917 reprint; Gilbert Murray’s English rhyming-verse translation first published February 1911. Project Gutenberg 27673 retains this title/imprint and reprint table. Only the play, including this edition’s speaker labels and stage directions, is supplied; preface, argument, notes and digital boilerplate excluded. Page markers removed; verse lines and indentation retained from the source HTML; prose whitespace collapsed. The library text is the whole play, from its title and opening scene direction to the final stage direction; the title page, reprint table, Preface, list of characters, Argument, scene-division rules and Murray's Notes are omitted. Each speech, opened by its centred speaker label or entrance, is one stanza block; the transcription's verse indentation is kept as that many spaces per indentation step (the two lines set at one and a half steps are flush left), and stage directions wrapped across source lines keep those line breaks.",
+  "edition": "London: George Allen & Unwin Ltd., Fourteenth Thousand, July 1917 reprint; Gilbert Murray’s English rhyming-verse translation first published February 1911. Project Gutenberg 27673 retains this title/imprint and reprint table. Only the play, including this edition’s speaker labels and stage directions, is supplied; preface, argument, notes and digital boilerplate excluded. Page markers removed; verse lines and indentation retained from the source HTML; prose whitespace collapsed. The library text is the whole play, from its title and opening scene direction to the final stage direction, followed by Murray's Notes to Oedipus, King of Thebes under their printed heading; the title page, reprint table, Preface, list of characters, Argument and scene-division rules are omitted. Murray's notes are keyed to page and line and have no calls in the text, so each printed note paragraph is a paragraph block as printed (its page-and-line reference included); one Greek word is given in the transcription's form [Greek: empeplêgmenên]. Each speech, opened by its centred speaker label or entrance, is one stanza block; the transcription's verse indentation is kept as that many spaces per indentation step (the two lines set at one and a half steps are flush left), and stage directions wrapped across source lines keep those line breaks.",
   "publicationYear": 1917,
   "translationYear": 1911,
   "url": "https://www.gutenberg.org/ebooks/27673",
@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/27673/pg27673-images.html",
     "downloadSha256": "8dddea22b46d31a3c3d60c43396e557fa9298cb3bd73a053f7c7ce0a1f310a3f",
-    "method": "Project Gutenberg HTML (pglaf mirror of ebook 27673, pg27673-images.html), converted with a scratch script: kept the source from the play heading OEDIPUS, KING OF THEBES up to the NOTES heading; removed page-number spans with their verse ranges; the opening scene paragraph became a paragraph with whitespace collapsed; inside the verse division every source line became a verse line, prefixed with N spaces for an iN indentation class, a new stanza block beginning at every centred (ia) line; strophe labels and emphasis kept as plain text; blank lines and rules dropped."
+    "method": "Project Gutenberg HTML (pglaf mirror of ebook 27673, pg27673-images.html), converted with a scratch script: kept the source from the play heading OEDIPUS, KING OF THEBES up to the NOTES heading, and the notes from that heading to the transcriber's note box; removed page-number spans with their verse ranges; the opening scene paragraph became a paragraph with whitespace collapsed; inside the verse division every source line became a verse line, prefixed with N spaces for an iN indentation class, a new stanza block beginning at every centred (ia) line; strophe labels and emphasis kept as plain text; blank lines and rules dropped; the notes heading became a level-2 heading and each notes paragraph a paragraph block with whitespace collapsed and page-number spans removed."
   },
   "scope": {
     "complete": true,
     "note": null
   },
   "text": {
-    "blocks": 448,
-    "sha256": "37e9562760a96e9673b966b18de590b52bf0b9ff45407afb51e66ed086462bb4"
+    "blocks": 473,
+    "sha256": "910ad26739c1cd562eaa4f37445fc88585f17e518f04fc6353e745cc40793158"
   }
 }

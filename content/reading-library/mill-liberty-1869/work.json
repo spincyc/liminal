@@ -4,7 +4,7 @@
   "author": "John Stuart Mill",
   "title": "On Liberty",
   "translator": null,
-  "edition": "Fourth edition (London: Longmans, Green, Reader, and Dyer, 1869). Scan-backed Wikisource transcription. Prose line wrapping is collapsed within retained paragraphs; HTML emphasis becomes plain text. Printed page numbers, navigation, footnote reference markers, and zero-width page-boundary characters are omitted; main-text wording and punctuation are retained. Original verse line breaks are preserved where present. Apparent errors present in the linked transcription are retained rather than silently corrected; this extraction check is not a fresh complete print-image collation. The library text holds the Humboldt epigraph, Mill's dedication and Chapters I to V with their printed titles, ending with THE END; the title page, contents and printer's colophon are omitted, and so are Mill's nine footnotes (five in Chapter II, three in Chapter III, one in Chapter IV).",
+  "edition": "Fourth edition (London: Longmans, Green, Reader, and Dyer, 1869). Scan-backed Wikisource transcription. Prose line wrapping is collapsed within retained paragraphs; HTML emphasis becomes plain text. Printed page numbers, navigation, footnote reference markers, and zero-width page-boundary characters are omitted; main-text wording and punctuation are retained. Original verse line breaks are preserved where present. Apparent errors present in the linked transcription are retained rather than silently corrected; this extraction check is not a fresh complete print-image collation. The library text holds the Humboldt epigraph, Mill's dedication and Chapters I to V with their printed titles, ending with THE END; the title page, contents and printer's colophon are omitted; Mill's nine footnotes (five in Chapter II, three in Chapter III, one in Chapter IV) are kept, each anchor as [n] in the transcription's numbering, which restarts in each chapter, and each note as a paragraph [Footnote n: text] after its chapter's text, where the Wikisource transcription lists them.",
   "publicationYear": 1869,
   "translationYear": null,
   "url": "https://en.wikisource.org/wiki/Index:On_Liberty_(4th_Edition).djvu",
@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://en.wikisource.org/w/index.php?title=On_Liberty&action=render",
     "downloadSha256": "fd5152400bded815947edb077ee096e148948af49121afbce02bc55f44174bed",
-    "method": "Wikisource rendered page HTML (index.php action=render) for the main page and its five chapter subpages in printed order, On Liberty and On Liberty/Chapter 1 to Chapter 5 (revisions 16132207, 3944546, 8111605, 8203199, 8246968, 8253810); downloadSha256 is the SHA-256 of the six responses concatenated in that order and downloadUrl the first of them. Only the transcluded scan text is used, from the epigraph on: Wikisource headers, page-number anchors, footnote markers and lists, and zero-width page-boundary characters removed; centred chapter numbers and titles became headings; paragraphs joined with whitespace collapsed to single spaces and emphasis flattened."
+    "method": "Wikisource rendered page HTML (index.php action=render) for the main page and its five chapter subpages in printed order, On Liberty and On Liberty/Chapter 1 to Chapter 5 (revisions 16132207, 3944546, 8111605, 8203199, 8246968, 8253810); downloadSha256 is the SHA-256 of the six responses concatenated in that order and downloadUrl the first of them. Only the transcluded scan text is used, from the epigraph on: Wikisource headers, page-number anchors, and zero-width page-boundary characters removed; centred chapter numbers and titles became headings; paragraphs joined with whitespace collapsed to single spaces and emphasis flattened; footnote calls kept as [n] in Wikisource's per-subpage numbering, attached to the word before them; each subpage's reference list, which the transcription prints after the subpage's text, became one paragraph per note in Project Gutenberg's form [Footnote n: text], its paragraphs and line breaks joined with single spaces (a note that runs on from one scan page to the next is one note, its continuation marker dropped)."
   },
   "scope": {
     "complete": true,
     "note": null
   },
   "text": {
-    "blocks": 138,
-    "sha256": "02627d7a2991da3f200bb6ed1c8f8379fec8d7919bd24ade219ea033d974bf8c"
+    "blocks": 147,
+    "sha256": "9284915782d085f3ff57830a0ee7c8326f9438e6952720b6e901acc7b1ee9659"
   }
 }
