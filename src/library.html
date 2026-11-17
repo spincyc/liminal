@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="The complete public-domain works behind Liminal's nightly readings: search the library, read any work whole, and see every nightly passage marked and linked." />
+    <title>Library — Liminal</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/daily-reading.css" />
+    <link rel="stylesheet" href="styles/library.css" />
+    <link rel="stylesheet" href="styles/brand.css" />
+    <link rel="stylesheet" href="styles/reader-controls.css" />
+    <script defer src="lib/daily-reading.js"></script>
+    <script defer src="lib/reading-library.js"></script>
+    <script defer src="app/daily-reading-render.js"></script>
+    <script defer src="app/reader-controls.js"></script>
+    <script defer src="app/library.js"></script>
+  </head>
+  <body class="daily-page library-page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <!-- liminal:site-header -->
+    <main id="main" class="page-width daily-main library-main" tabindex="-1">
+      <nav class="daily-crumbs" aria-label="Breadcrumb"><ol id="libraryCrumbs"><li><a href="daily-reading.html">Readings</a></li><li><span aria-current="page">Library</span></li></ol></nav>
+      <noscript><p>Turn on JavaScript to search and read the library. You can also <a href="content/reading-library/index.json">download its index</a>.</p></noscript>
+      <p id="libraryStatus" class="daily-status daily-sr" role="status" aria-live="polite">Opening the library…</p>
+      <section id="libraryIndex" class="library-index" aria-labelledby="libraryHeading" hidden>
+        <h1 id="libraryHeading" tabindex="-1">Library</h1>
+        <p id="librarySummary" class="daily-browse-summary"></p>
+        <form class="daily-search library-search" role="search" aria-label="Find works">
+          <label class="daily-query">Search<input id="libraryQuery" type="search" autocomplete="off" spellcheck="false" placeholder="Title, author or translator" /></label>
+          <label>Level<select id="libraryLevel"></select></label>
+          <label>Kind<select id="libraryFamily"></select></label>
+          <label>Author<select id="libraryAuthor"></select></label>
+          <label>Period<select id="libraryPeriod"></select></label>
+        </form>
+        <p id="libraryCount" class="daily-count" role="status" aria-live="polite"></p>
+        <ol id="libraryWorks" class="library-works"></ol>
+      </section>
+      <article id="libraryWork" class="library-work" hidden>
+        <header class="daily-heading"><h1 id="libraryWorkTitle" tabindex="-1"></h1><p id="libraryWorkBy" class="daily-author"></p><p id="libraryWorkMeta" class="daily-browse-summary"></p></header>
+        <div id="libraryWorkAbout"></div>
+        <div class="reader-toolbar daily-toolbar library-toolbar">
+          <form class="reader-selectors" aria-label="Go to a part of the work"><label class="reader-select-wide"><span class="daily-label">Go to</span><select id="libraryJump"></select></label></form>
+          <div id="libraryNavigation"></div>
+        </div>
+        <div id="libraryText" class="library-text" aria-busy="false"></div>
+        <div id="libraryBottom"></div>
+      </article>
+    </main>
+    <footer class="home-footer page-width daily-footer"><p>Independent educational coursework. Not affiliated with standards bodies or publishers.</p><p>SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.</p></footer>
+  </body>
+</html>
