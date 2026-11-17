@@ -10110,12 +10110,7 @@
         "isCompleteWork": false,
         "continuesFrom": null,
         "continuesTo": null,
-        "blocks": [
-          59,
-          65
-        ],
-        "startChar": null,
-        "endChar": null,
+        "inlineReason": "The reading prints Wallace’s footnote call after “Bali,” as a bare 1 and the footnote itself as a paragraph beginning “1 I was informed”; the library text gives the call as [1] and the note as a [Footnote 1: …] paragraph (the library’s single note form), so the reading’s text differs from the work in those two places only.",
         "textHash": "bec149072385bbbf9a7899bd7588ff3f53c9be020122499c18f63dc286d7bf17"
       },
       "questions": [
@@ -10148,6 +10143,36 @@
             "Borneo and New Guinea, as alike physically as two distinct countries can be, are zoologically wide as the poles asunder"
           ],
           "id": "reading-6-w32-d2-q3"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Turning our attention now to the remaining portion of the Archipelago, we shall find that all the islands from Celebes and Lombock eastward exhibit almost as close a resemblance to Australia and New Guinea as the Western Islands do to Asia. It is well known that the natural productions of Australia differ from those of Asia more than those of any of the four ancient quarters of the world differ from each other. Australia, in fact, stands alone: it possesses no apes or monkeys, no cats or tigers, wolves, bears, or hyenas; no deer or antelopes, sheep or oxen; no elephant, horse, squirrel, or rabbit; none, in short, of those familiar types of quadruped which are met with in every other part of the world. Instead of these, it has Marsupials only, kangaroos and opossums, wombats and the duck-billed Platypus. In birds it is almost as peculiar. It has no woodpeckers and no pheasants, families which exist in every other part of the world; but instead of them it has the mound-making brush-turkeys, the honeysuckers, the cockatoos, and the brush-tongued lories, which are found nowhere else upon the globe. All these striking peculiarities are found also in those islands which form the Austro-Malayan division of the Archipelago."
+        },
+        {
+          "type": "paragraph",
+          "text": "The great contrast between the two divisions of the Archipelago is nowhere so abruptly exhibited as on passing from the island of Bali to that of Lombock, where the two regions are in closest proximity. In Bali we have barbets, fruit-thrushes, and woodpeckers; on passing over to Lombock these are seen no more, but we have abundance of cockatoos, honeysuckers, and brush-turkeys, which are equally unknown in Bali,1 or any island further west."
+        },
+        {
+          "type": "paragraph",
+          "text": "1 I was informed, however, that there were a few cockatoos at one spot on the west of Bali, showing that the intermingling of the productions of these islands is now going on."
+        },
+        {
+          "type": "paragraph",
+          "text": "The strait is here fifteen miles wide, so that we may pass in two hours from one great division of the earth to another, differing as essentially in their animal life as Europe does from America. If we travel from Java or Borneo to Celebes or the Moluccas, the difference is still more striking. In the first, the forests abound in monkeys of many kinds, wild cats, deer, civets, and otters, and numerous varieties of squirrels are constantly met with. In the latter none of these occur; but the prehensile-tailed Cuscus is almost the only terrestrial mammal seen, except wild pigs, which are found in all the islands, and deer (which have probably been recently introduced) in Celebes and the Moluccas. The birds which are most abundant in the Western Islands are woodpeckers, barbets, trogons, fruit-thrushes, and leaf-thrushes: they are seen daily, and form the great ornithological features of the country. In the Eastern Islands these are absolutely unknown, honeysuckers and small lories being the most common birds; so that the naturalist feels himself in a new world, and can hardly realize that he has passed from the one region to the other in a few days, without ever being out of sight of land."
+        },
+        {
+          "type": "paragraph",
+          "text": "The inference that we must draw from these facts is undoubtedly, that the whole of the islands eastwards beyond Java and Borneo do essentially form a part of a former Australian or Pacific continent, although some of them may never have been actually joined to it. This continent must have been broken up not only before the Western Islands were separated from Asia, but probably before the extreme south-eastern portion of Asia was raised above the waters of the ocean; for a great part of the land of Borneo and Java is known to be geologically of quite recent formation, while the very great difference of species, and in many cases of genera also, between the productions of the Eastern Malay Islands and Australia, as well as the great depth of the sea now separating them, all point to a comparatively long period of isolation."
+        },
+        {
+          "type": "paragraph",
+          "text": "It is interesting to observe among the islands themselves, how a shallow sea always intimates a recent land-connexion. The Aru Islands, Mysol, and Waigiou, as well as Jobie, agree with New Guinea in their species of mammalia and birds much more closely than they do with the Moluccas, and we find that they are all united to New Guinea by a shallow sea. In fact, the 100-fathom line round New Guinea marks out accurately the range of the true Paradise birds."
+        },
+        {
+          "type": "paragraph",
+          "text": "It is further to be noted—and this is a very interesting point in connexion with theories of the dependence of special forms of life on external conditions—that this division of the Archipelago into two regions characterised by a striking diversity in their natural productions, does not in any way correspond to the main physical or climatal divisions of the surface. The great volcanic chain runs through both parts, and appears to produce no effect in assimilating their productions. Borneo closely resembles New Guinea not only in its vast size and its freedom from volcanoes, but in its variety of geological structure, its uniformity of climate, and the general aspect of the forest vegetation that clothes its surface. The Moluccas are the counterpart of the Philippines in their volcanic structure, their extreme fertility, their luxuriant forests, and their frequent earthquakes; and Bali with the east end of Java has a climate almost as dry and a soil almost as arid as that of Timor. Yet between these corresponding groups of islands, constructed as it were after the same pattern, subjected to the same climate, and bathed by the same oceans, there exists the greatest possible contrast when we compare their animal productions. Nowhere does the ancient doctrine—that differences or similarities in the various forms of life that inhabit different countries are due to corresponding physical differences or similarities in the countries themselves—meet with so direct and palpable a contradiction. Borneo and New Guinea, as alike physically as two distinct countries can be, are zoologically wide as the poles asunder; while Australia, with its dry winds, its open plains, its stony deserts, and its temperate climate, yet produces birds and quadrupeds which are closely related to those inhabiting the hot damp luxuriant forests which everywhere clothe the plains and mountains of New Guinea."
         }
       ]
     },

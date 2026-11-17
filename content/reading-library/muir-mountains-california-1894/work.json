@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/10012/pg10012.txt",
     "downloadSha256": "97de559c987a0380ddc5a81df16bb7f58d60a0270514fab5a67e47eeec0a242b",
-    "method": "Whole library text: Project Gutenberg plain text (eBook 10012, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl), Chapters I–XVI with Muir’s own footnotes as [n] paragraphs where PG places them; the PG header and footer, title, contents and list of illustrations, and every [Illustration] caption are excluded. Prose line wrapping was joined with single spaces and runs of spaces collapsed; each chapter number and title form one heading; Burns’s couplet is a two-line stanza. Within the fourteen passages the Grade 6 nightly readings use, the readings the curator collated against the 1894 Century scan were substituted for PG’s, token by token (21 token edits: the documented corrections such as minor → miner, Rod → Red, flue → fine, polytriclium → polytrichum, ruined → ruffled, failing → falling, snow → snaw, the restored æ/Æ ligatures, and some punctuation); every substitution is logged in the scratch lane (logs/muir-mountains-california-1894.patch.txt). Converted by a scratch Node script; every nightly reading was located exactly."
+    "method": "Whole library text: Project Gutenberg plain text (eBook 10012, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl), Chapters I–XVI with Muir’s own footnotes as [Footnote n: …] paragraphs where PG places them (calls [n]); the PG header and footer, title, contents and list of illustrations, and every [Illustration] caption are excluded. Prose line wrapping was joined with single spaces and runs of spaces collapsed; each chapter number and title form one heading; Burns’s couplet is a two-line stanza. Within the fourteen passages the Grade 6 nightly readings use, the readings the curator collated against the 1894 Century scan were substituted for PG’s, token by token (21 token edits: the documented corrections such as minor → miner, Rod → Red, flue → fine, polytriclium → polytrichum, ruined → ruffled, failing → falling, snow → snaw, the restored æ/Æ ligatures, and some punctuation); every substitution is logged in the scratch lane (logs/muir-mountains-california-1894.patch.txt). Converted by a scratch Node script; every nightly reading was located exactly."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 615,
-    "sha256": "31b18d883f72bdd969f614927e60b712a1a757774eff0329520905fb06155f24"
+    "sha256": "9284a3b122d960ddbe6da302046ebe1ae484db43c5c0f6cf71fd016ebf404894"
   }
 }

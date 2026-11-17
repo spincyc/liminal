@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/30393/pg30393.txt",
     "downloadSha256": "3eeafa1850400739d8092a426f212546d5167dad999516b1848e6fd490b4609a",
-    "method": "Project Gutenberg plain text (eBook 30393, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl). Kept the whole of Volume VI after its contents: Treasure Island (dedication, the verses To the Hesitating Purchaser, Parts I–VI, Chapters I–XXXIV), Will o’ the Mill and The Treasure of Franchard, up to END OF VOL. VI; removed the PG header and footer, the transcriber’s note, the series title, title and contents pages, the repeated TREASURE ISLAND half-title after the Part I heading, and the printer’s imprint. Blank-line separated paragraphs were joined with single spaces at line ends; indented letters and notes are prose with runs of spaces collapsed (so right-set signatures join the text, as in the nightly readings); indented verse (lines of at most 50 characters) is a stanza whose first line loses its indentation while later lines keep the transcription’s, as the nightly readings have it; part and chapter numbers are joined with their titles as headings; the volume’s footnotes stay as [n] paragraphs. Converted by a scratch Node script; every nightly reading was located exactly."
+    "method": "Project Gutenberg plain text (eBook 30393, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl). Kept the whole of Volume VI after its contents: Treasure Island (dedication, the verses To the Hesitating Purchaser, Parts I–VI, Chapters I–XXXIV), Will o’ the Mill and The Treasure of Franchard, up to END OF VOL. VI; removed the PG header and footer, the transcriber’s note, the series title, title and contents pages, the repeated TREASURE ISLAND half-title after the Part I heading, and the printer’s imprint. Blank-line separated paragraphs were joined with single spaces at line ends; indented letters and notes are prose with runs of spaces collapsed (so right-set signatures join the text, as in the nightly readings); indented verse (lines of at most 50 characters) is a stanza whose first line loses its indentation while later lines keep the transcription’s, as the nightly readings have it; part and chapter numbers are joined with their titles as headings; the volume’s two footnotes are [Footnote n: …] paragraphs after their FOOTNOTE: labels, with calls [n]. Converted by a scratch Node script; every nightly reading was located exactly."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 1969,
-    "sha256": "9e19e406824f3d45a160a6594814bd1e93cfdbb5101b4cfbc43cd37422fa91be"
+    "sha256": "5225eb077a03f865c274a97d9fcba6e4d3894b1f0120a4a1bc3308c1b0082fad"
   }
 }

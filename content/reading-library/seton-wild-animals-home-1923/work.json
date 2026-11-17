@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/27887/pg27887.txt",
     "downloadSha256": "6d9deac15eaeb160a4436ced540c2e2376a4eeffb069804ec15ae6bec15d7ac8",
-    "method": "Project Gutenberg plain text (eBook 27887, UTF-8) from the PG mirror. Kept Seton’s Foreword and signature, Chapters I–XII with their section titles, his three footnotes as transcribed ([A]–[C] calls, “[Footnote …]” paragraphs under each chapter’s FOOTNOTES:) and the closing list of species found in the Park in 1912; removed the PG header and footer, title and copyright pages, contents, list of half-tone plates, the starred half-title pages that repeat each chapter title, [Illustration] placeholders and plate captions, ornamental star dividers and the transcriber’s notes. Blank-line separated paragraphs were joined into single-spaced prose (each species entry with its indented note is one paragraph); the indented list of four bats keeps its lines. Chapter numbers are joined with their titles as headings; capitalised section titles are subheadings. Converted by a scratch Node script; every nightly reading was located exactly."
+    "method": "Project Gutenberg plain text (eBook 27887, UTF-8) from the PG mirror. Kept Seton’s Foreword and signature, Chapters I–XII with their section titles, his three footnotes as transcribed ([A]–[C] calls, “[Footnote …]” paragraphs after each chapter’s FOOTNOTES: label, which is a paragraph) and the closing list of species found in the Park in 1912; removed the PG header and footer, title and copyright pages, contents, list of half-tone plates, the starred half-title pages that repeat each chapter title, [Illustration] placeholders and plate captions, ornamental star dividers and the transcriber’s notes. Blank-line separated paragraphs were joined into single-spaced prose (each species entry with its indented note is one paragraph); the indented list of four bats keeps its lines. Chapter numbers are joined with their titles as headings; capitalised section titles are subheadings. Converted by a scratch Node script; every nightly reading was located exactly."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 679,
-    "sha256": "56401e61596c40f633cd1aacb78c9ba242ffa0b9f97744a8ac4edf2d8582ff90"
+    "sha256": "c55e0f1f11d83d88de6699ccf3b7cb481bbede1d8091140c7d078bd601dfc5ca"
   }
 }
