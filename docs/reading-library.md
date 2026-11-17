@@ -128,4 +128,7 @@ search and filters (level, genre family, author, period) and opens each work
 with its record, its contents from headings, and the text one part at a time,
 marking every passage used as a nightly reading with a link to it. Every
 nightly reading links back to its passage (`library.html#<work-id>/<reading-id>`);
-routes and filters live in `src/lib/reading-library.js`.
+routes and filters live in `src/lib/reading-library.js`. A reading that keeps
+its own text (`excerpt.inlineReason`) is listed with the work's readings but
+marks nothing, and its "Read it in the full work" opens the work. Notes in the
+`[Footnote <mark>: …]` form are set smaller and muted (`isFootnote`).

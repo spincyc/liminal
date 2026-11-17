@@ -79,7 +79,7 @@
   // ---- A work ----
   function disclosure(label, className) { return R.disclosure(label, className); }
   function about(meta) {
-    const work = meta.work, wrap = R.el("div", undefined, "library-about"), uses = (meta.uses || []).filter(use => Array.isArray(use.blocks));
+    const work = meta.work, wrap = R.el("div", undefined, "library-about"), uses = meta.uses || [];
     // The nightly readings drawn from this work, by level.
     const readings = disclosure(uses.length ? "Nightly readings from this work (" + uses.length + ")" : "No nightly readings from this work yet", "library-uses");
     const byLevel = new Map();
@@ -88,7 +88,11 @@
       readings.append(R.el("h2", D.gradeLabel(grade) + " (" + items.length + ")"));
       const ol = R.el("ol");
       items.forEach(use => {
-        const li = R.el("li"); li.append(R.link(use.title, Lib.useHref(use)), R.el("span", " · " + (use.week ? D.nightLabel(use.week, use.day) : "calendar reading") + " · ", "daily-muted"), R.link("in the text", Lib.route(work.id, use.id)));
+        // A reading that keeps its own text is listed, but has no passage here.
+        const li = R.el("li"), where = use.week ? D.nightLabel(use.week, use.day) : "calendar reading";
+        li.append(R.link(use.title, Lib.useHref(use)));
+        if (Lib.hasRange(use)) li.append(R.el("span", " · " + where + " · ", "daily-muted"), R.link("in the text", Lib.route(work.id, use.id)));
+        else li.append(R.el("span", " · " + where + " · its own text, not marked here", "daily-muted"));
         ol.append(li);
       });
       readings.append(ol);
@@ -120,7 +124,8 @@
   }
   function blockElement(block, piecesRendered) {
     const tag = block.type === "heading" ? "h" + Math.min(4, (block.level || 1) + 1) : "p";
-    const node = R.el(tag, undefined, block.type === "heading" ? "library-heading" : "library-" + block.type);
+    const original = block.pieces.map(piece => piece.text).join("");
+    const node = R.el(tag, undefined, block.type === "heading" ? "library-heading" : "library-" + block.type + (block.type === "paragraph" && Lib.isFootnote(original) ? " library-footnote" : ""));
     node.id = "b" + block.index;
     piecesRendered(node);
     return node;
@@ -157,7 +162,7 @@
       const meta = await getJson(Lib.metaFile(selected.id));
       if (meta.schemaVersion !== 1 || !meta.work || meta.work.id !== selected.id || !Array.isArray(meta.chunks) || !meta.chunks.length) throw new Error("Work mismatch");
       if (current !== request) return;
-      const use = selected.reading ? (meta.uses || []).find(item => item.id === selected.reading && Array.isArray(item.blocks)) : null;
+      const cited = selected.reading ? (meta.uses || []).find(item => item.id === selected.reading) : null, use = Lib.hasRange(cited) ? cited : null;
       const block = use ? use.blocks[0] : selected.block !== null ? selected.block : 0, i = Math.max(0, Lib.chunkAt(meta, block));
       const part = meta.chunks[i], chunk = await getJson(part.file);
       if (current !== request) return;
@@ -178,7 +183,8 @@
       const target = use ? $("passage-" + use.id) : selected.block !== null ? $("b" + selected.block) : null;
       if (target) { target.scrollIntoView({ block: "start" }); if (use) { const link = target.querySelector("a"); if (link) link.focus({ preventScroll: true }); } }
       else if (focusNext) { $("libraryWorkTitle").focus({ preventScroll: true }); window.scrollTo({ top: 0 }); }
-      if (selected.reading && !use) announce("That reading is not in this work. Showing the work from its beginning.", true);
+      if (selected.reading && cited && !use) announce(cited.title + " keeps its own text, so no passage is marked. Showing " + work.title + " from its beginning.");
+      else if (selected.reading && !use) announce("That reading is not in this work. Showing the work from its beginning.", true);
     } catch (_) {
       if (current !== request) return;
       setCrumbs([{ label: "Unavailable" }]);

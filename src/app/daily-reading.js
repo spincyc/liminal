@@ -204,7 +204,7 @@
   async function fillRelated(section, { grade, reading, source, current, date: shown }) {
     const work = source && source.library && Lib.validWorkId(source.library) ? source.library : null;
     const place = [];
-    if (work) place.push({ label: "Read it in the full work", href: Lib.href(work, reading.id), note: "(" + source.title + ")" });
+    if (work) place.push({ label: "Read it in the full work", href: Lib.fullWorkHref(work, reading), note: "(" + source.title + ")" });
     if (reading.week && D.hasCalendar(index, grade)) {
       try {
         // On a date page the reading's own date is already shown; name the next one.
@@ -221,7 +221,7 @@
       const others = Lib.related(meta, reading.id), here = (meta.uses || []).findIndex(use => use.id === reading.id);
       // The readings nearest this passage in the work, any level.
       const nearest = others.map(use => ({ use, distance: Math.abs((meta.uses || []).indexOf(use) - here) })).sort((a, b) => a.distance - b.distance).slice(0, 6)
-        .map(({ use }) => use).sort((a, b) => a.blocks[0] - b.blocks[0]);
+        .map(({ use }) => use).sort((a, b) => meta.uses.indexOf(a) - meta.uses.indexOf(b));
       const fromWork = nearest.map(use => ({ label: use.title, href: Lib.useHref(use), note: "· " + Lib.useLabel(use) }));
       if (others.length > nearest.length) fromWork.push({ label: "All " + (others.length + 1) + " readings from this work", href: Lib.href(work) });
       relatedGroup(section, "More from " + source.title, fromWork);
@@ -282,7 +282,7 @@
   // `print` is { meta, run } for the PDF: its footer and place in a run.
   function showReading({ grade, reading, source, packet, run, current, bottom, before, extraActions = [], print = {} }) {
     const article = R.reading(packet, { notes: reading.questions, challenge: reading.challenge, run,
-      fullWork: source.library && Lib.validWorkId(source.library) ? Lib.href(source.library, reading.id) : null });
+      fullWork: source.library && Lib.validWorkId(source.library) ? Lib.fullWorkHref(source.library, reading) : null });
     const related = relatedSection();
     container.replaceChildren(...(before ? [before] : []), article, ...(bottom ? [bottom] : []), related);
     packetShown = packet;

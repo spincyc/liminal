@@ -171,8 +171,21 @@
     return hash ? "daily-reading.html" + hash : "";
   }
   function useSpan(use) { return { first: use.blocks[0], last: use.blocks[1], startChar: use.startChar == null ? null : use.startChar, endChar: use.endChar == null ? null : use.endChar }; }
-  // The other readings from the same work (any level), in work order.
-  function related(meta, readingId) { return ((meta && meta.uses) || []).filter(use => use.id !== readingId && Array.isArray(use.blocks)); }
+  // The other readings from the same work (any level), in work order; those
+  // that keep their own text (no range, blocks: null) come last.
+  function related(meta, readingId) { return ((meta && meta.uses) || []).filter(use => use.id !== readingId); }
+  // "Read it in the full work": the reading's passage when it cites a range of
+  // the work, otherwise the work itself (a reading that keeps its own text,
+  // excerpt.inlineReason, cites the work but marks nothing in it).
+  function fullWorkHref(workId, reading) {
+    const ranged = reading && reading.excerpt && Array.isArray(reading.excerpt.blocks) && !reading.excerpt.inlineReason;
+    return href(workId, ranged ? reading.id : null);
+  }
+  // A use that marks a passage in the online text.
+  function hasRange(use) { return !!use && Array.isArray(use.blocks); }
+  // A note printed in the edition, in the library's one form:
+  // "[Footnote 1: text]" (docs/reading-library.md "Notes and illustrations").
+  function isFootnote(text) { return /^\s*\[Footnote [^\]:\s][^\]:]*:[\s\S]*\]\s*$/.test(String(text || "")); }
   // Which chunk of the online text holds a block.
   function chunkAt(meta, block) { return ((meta && meta.chunks) || []).findIndex(chunk => chunk.first <= block && block <= chunk.last); }
   // The blocks of one chunk, each split into pieces marked by the nightly
@@ -200,5 +213,5 @@
     });
   }
   return { WORK_ID, TYPES, validWorkId, serializeText, parseText, checkBlock, rangeOf, checkRange, resolveRange, span, overlaps, contents, chunks, slug,
-    route, href, parseRoute, metaFile, INDEX_FILE, PERIODS, period, families, filterWorks, choices, useLabel, useHref, related, chunkAt, markedBlocks };
+    route, href, parseRoute, metaFile, INDEX_FILE, PERIODS, period, families, filterWorks, choices, useLabel, useHref, related, fullWorkHref, hasRange, isFootnote, chunkAt, markedBlocks };
 });

@@ -187,14 +187,27 @@ test("library uses label and link their readings, and mark exact passages inside
   const calendarReading = { id: "reading-12-a-work-1900-02", grade: 12, title: "C", blocks: [3, 5], startChar: 6, endChar: null };
   assert.equal(Lib.useLabel(night), "Grade 5 · Week 3, Day 2"); assert.equal(Lib.useHref(night), "daily-reading.html#5/3/2");
   assert.equal(Lib.useLabel(calendarReading), "Grade 12 · Calendar reading"); assert.equal(Lib.useHref(calendarReading), "daily-reading.html#12/reading/reading-12-a-work-1900-02");
-  const meta = { uses: [night, calendarReading, { id: "inline", blocks: null }], chunks: [{ first: 0, last: 2 }, { first: 3, last: 9 }] };
-  assert.deepEqual(Lib.related(meta, night.id).map(use => use.id), [calendarReading.id]);
+  const inline = { id: "reading-5-a-work-1900-03", grade: 5, title: "I", blocks: null, startChar: null, endChar: null };
+  const meta = { uses: [night, calendarReading, inline], chunks: [{ first: 0, last: 2 }, { first: 3, last: 9 }] };
+  // A reading that keeps its own text is listed with the others but marks nothing.
+  assert.deepEqual(Lib.related(meta, night.id).map(use => use.id), [calendarReading.id, inline.id]);
+  assert.equal(Lib.hasRange(inline), false); assert.equal(Lib.hasRange(night), true);
   assert.equal(Lib.chunkAt(meta, 3), 1); assert.equal(Lib.chunkAt(meta, 10), -1);
   const marked = Lib.markedBlocks({ first: 2, blocks: [{ type: "paragraph", text: "before" }, { type: "paragraph", text: "abcdefghij" }, { type: "heading", level: 2, text: "Next" }] }, meta.uses);
   assert.deepEqual(marked[0].pieces.map(piece => [piece.text, piece.uses.map(use => use.id)]), [["before", [night.id]]]);
   assert.deepEqual(marked[1].pieces.map(piece => [piece.text, piece.uses.length]), [["abcd", 1], ["ef", 0], ["ghij", 1]]);
   assert.deepEqual(marked[1].starts.map(use => use.id), [calendarReading.id]);
   assert.equal(marked[2].level, 2); assert.equal(marked[2].pieces[0].uses[0].id, calendarReading.id);
+  assert.ok(marked.every(block => block.pieces.every(piece => !piece.uses.includes(inline)) && !block.starts.includes(inline)));
+  // "Read it in the full work" opens the passage, or the work for a reading with its own text.
+  assert.equal(Lib.fullWorkHref("a-work-1900", { id: "reading-5-a-work-1900-01", excerpt: { blocks: [3, 5] } }), "library.html#a-work-1900/reading-5-a-work-1900-01");
+  assert.equal(Lib.fullWorkHref("a-work-1900", { id: "reading-5-a-work-1900-03", excerpt: { inlineReason: "Another translation." } }), "library.html#a-work-1900");
+  assert.equal(Lib.fullWorkHref("a-work-1900", null), "library.html#a-work-1900");
+});
+
+test("library notes in the edition's one form are recognised as notes", () => {
+  for (const text of ["[Footnote 1: See the preface.]", "[Footnote A: Two\nlines.]", "  [Footnote 12: x]  "]) assert.equal(Lib.isFootnote(text), true, text);
+  for (const text of ["FOOTNOTES:", "See [1] above.", "[Footnote: no mark]", "[Footnote 1 no colon]", "[Footnote 1: open", "", null]) assert.equal(Lib.isFootnote(text), false, String(text));
 });
 
 test("a reading-level plan names tonight's night, or the next one", () => {
