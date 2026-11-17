@@ -529,7 +529,8 @@ if (apDisclaimer.length) throw new Error(apDisclaimer.join("; "));
 // Nightly texts remain in separately loaded grade files, with a small index.
 const dailyHtml = fs.readFileSync(path.join(root, "daily-reading.html"), "utf8");
 const dailyScripts = pageScripts(dailyHtml);
-if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "lib/reading-calendar.js", "lib/reading-library.js", "lib/reading-level.js", "app/daily-reading-render.js", "app/reader-controls.js",
+if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "lib/reading-calendar.js", "lib/reading-library.js", "lib/reading-level.js",
+  "native-tex/config.js", "vendor/colophon/native-tex.js", "lib/reading-tex.js", "app/daily-reading-render.js", "app/reader-controls.js", "app/pdf-action.js",
   "app/daily-reading-browse.js", "app/daily-reading-calendar.js", "app/daily-reading-print.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
 for (const match of dailyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];

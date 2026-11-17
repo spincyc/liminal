@@ -18,6 +18,16 @@
   let packetShown = null, remembered = null;
   const more = C.menu("More");
   $("dailyMore").append(more.element);
+  // Generate PDF typesets the reading shown, in the packet style
+  // (lib/reading-tex.js), in this browser (app/pdf-action.js; see
+  // docs/printing.md). It lives in the More menu; its progress shows under
+  // the toolbar. Without the typesetter the button is disabled and the menu
+  // says why.
+  const T = window.LiminalReadingTeX, A = window.LiminalPdfAction;
+  let pdfJob = null;
+  const pdf = T && A ? A.control({ prepare: () => pdfJob && { ...T.nightTeX(pdfJob.entry), filename: pdfJob.filename } }) : null;
+  const pdfLine = R.el("p", undefined, "daily-pdf");
+  if (pdf && pdf.available) { pdfLine.append(pdf.status, " ", pdf.credits); toolbar.after(pdfLine); }
 
   // ---- Loading ----
   // One main load at a time: a newer choice cancels the download it
@@ -86,7 +96,7 @@
     document.body.dataset.readingView = name;
     browsePanel.hidden = name !== "browse"; reader.hidden = !["read", "date", "reading"].includes(name);
     monthPanel.hidden = name !== "month"; printPanel.hidden = name !== "print";
-    if (name !== "read" && name !== "date" && name !== "reading") { printFooter.textContent = ""; packetShown = null; }
+    if (name !== "read" && name !== "date" && name !== "reading") { printFooter.textContent = ""; packetShown = null; clearPdf(); }
     weekField.hidden = dayField.hidden = name !== "read"; dateField.hidden = name !== "date";
   }
   // One breadcrumb names the place; the last item is the current page.
@@ -110,12 +120,22 @@
 
   // ---- The More menu: secondary actions for the reading shown ----
   function menuItems(items) {
-    more.panel.replaceChildren(...items.filter(Boolean).map(item => {
+    more.panel.replaceChildren(...items.filter(Boolean).flatMap(item => {
+      if (item.node) return [item.node, ...(item.after ? [item.after] : [])];
       const node = item.href ? R.link(item.label, item.href) : button(item.label, item.run);
       if (item.disabled) node.disabled = true;
-      return node;
+      return [node];
     }));
   }
+  // The PDF control for the reading shown; a new reading cancels a PDF in progress.
+  function pdfItem() {
+    if (!pdf) return null;
+    pdf.button.disabled = !pdf.available || !pdfJob;
+    const after = pdf.available ? null : R.el("p", undefined, "reader-more-note");
+    if (after) after.append(pdf.status);
+    return { node: pdf.button, after };
+  }
+  function clearPdf() { if (pdf) pdf.cancel(); pdfJob = null; }
   function printStudent() { if (!packetShown) return; window.print(); }
   function printAdult() {
     if (!packetShown) return;
@@ -141,7 +161,7 @@
     return [...extra,
       { label: "Print student copy", run: printStudent, disabled: !packetShown },
       { label: "Print adult copy, with discussion help", run: printAdult, disabled: !packetShown },
-      { label: "Download student copy (HTML)", run: () => download(packetShown), disabled: !packetShown }];
+      { label: "Download student copy (HTML)", run: () => download(packetShown), disabled: !packetShown }, pdfItem()];
   }
 
   // ---- Sequence navigation (top keeps focus and position; bottom returns to the top) ----
@@ -167,6 +187,7 @@
   }
   function busy(on) {
     container.setAttribute("aria-busy", String(on));
+    if (on) clearPdf();
     for (const control of more.panel.querySelectorAll("button")) if (on) control.disabled = true;
   }
 
@@ -258,12 +279,15 @@
   }
 
   // ---- One reading shown in the reader (school night, date or id) ----
-  function showReading({ grade, reading, source, packet, run, current, bottom, before, extraActions = [] }) {
+  // `print` is { meta, run } for the PDF: its footer and place in a run.
+  function showReading({ grade, reading, source, packet, run, current, bottom, before, extraActions = [], print = {} }) {
     const article = R.reading(packet, { notes: reading.questions, challenge: reading.challenge, run,
       fullWork: source.library && Lib.validWorkId(source.library) ? Lib.href(source.library, reading.id) : null });
     const related = relatedSection();
     container.replaceChildren(...(before ? [before] : []), article, ...(bottom ? [bottom] : []), related);
     packetShown = packet;
+    pdfJob = T ? { entry: { day: reading, source, meta: print.meta || D.printMeta(grade, { date: packet.date }), run: print.run || null },
+      filename: "liminal-" + reading.id + (packet.date ? "-" + packet.date : "") + ".pdf" } : null;
     menuItems(documentActions(extraActions));
     printFooter.textContent = R.printFooterText(packet);
     shownTitle = reading.title;
@@ -301,7 +325,10 @@
       if (!day || !packet) throw new Error("Night unavailable");
       const bottom = C.navigation({ label: "Nightly readings, bottom", steps: ["previous", "next"],
         previous: pages.previous && { href: pages.previous.href, text: "‹ Previous: " + label(pages.previous) }, next: pages.next && { href: pages.next.href, text: "Next: " + label(pages.next) + " ›" } });
-      showReading({ grade: selected.grade, reading: day, source, packet, run: D.continuation(selected.grade, nights, selected.week, selected.day), current: () => current === request, bottom,
+      // The browse list knows a run across week boundaries; the week file alone may not.
+      const run = D.continuation(selected.grade, nights, selected.week, selected.day), tex = T && T.entry(course, day, T.schoolMeta(selected.grade, day));
+      showReading({ grade: selected.grade, reading: day, source, packet, run, current: () => current === request, bottom,
+        print: { meta: tex ? tex.meta : null, run: run ? { part: run.part, of: run.of } : tex && tex.run },
         extraActions: [pages.first && { label: "First night of the year", href: pages.first.href }, pages.last && { label: "Last night of the year", href: pages.last.href },
           { label: "Print this night for several levels", href: D.printRoute({ week: selected.week, day: selected.day, grades: [selected.grade] }) }] });
       setTitle([day.title, D.gradeLabel(selected.grade) + ", " + D.nightLabel(day.week, day.day)]);
@@ -328,7 +355,7 @@
       { label: "Print this date for several levels", href: D.printRoute({ date, grades: [grade] }) }];
     if (!D.hasCalendar(index, grade)) {
       // Honest absence: say so, and offer the school year.
-      packetShown = null; menuItems(calendarActions.slice(0, 1)); printFooter.textContent = "";
+      packetShown = null; clearPdf(); menuItems(calendarActions.slice(0, 1)); printFooter.textContent = "";
       const note = R.el("section", undefined, "daily-unavailable");
       note.append(R.el("h1", "The date calendar for " + D.gradeLabel(grade) + " is not available yet"), R.el("p", "Each level’s calendar appears once it has a reading for every day of three years. Meanwhile, the school year’s 180 nights are ready."));
       const links = R.el("p"); links.append(R.link("Open the " + D.gradeLabel(grade) + " school year", D.browseRoute(grade)));
@@ -355,7 +382,8 @@
       if (entry.week) { before.append(document.createTextNode(" Also the school year’s ")); before.append(R.link(D.nightLabel(entry.week, entry.day), D.route(grade, entry.week, entry.day)), document.createTextNode(".")); }
       const bottom = C.navigation({ label: "Calendar days, bottom", steps: ["previous", "next"],
         previous: { href: D.dateRoute(grade, previous), text: "‹ " + Cal.shortDate(previous) }, next: { href: D.dateRoute(grade, next), text: Cal.shortDate(next) + " ›" } });
-      showReading({ grade, reading: data.reading, source: data.source, packet, run: runLinks, current: () => current === request, bottom, before, extraActions: calendarActions });
+      showReading({ grade, reading: data.reading, source: data.source, packet, run: runLinks, current: () => current === request, bottom, before, extraActions: calendarActions,
+        print: { meta: D.printMeta(grade, { date }), run: run && { part: run.part, of: run.of } } });
       setTitle([data.reading.title, D.gradeLabel(grade) + ", " + Cal.shortDate(date)]);
       announce((selected.invalid ? "That date was not recognized. Showing today: " : "Showing ") + D.gradeLabel(grade) + ", " + Cal.longDate(date) + ": " + data.reading.title + ".", selected.invalid);
       afterRender(movement, focus);

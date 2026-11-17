@@ -64,6 +64,11 @@ test("the calendar reading projection carries no school week and withholds discu
   assert.equal(Object.hasOwn(packet.day, "week"), false); assert.equal(packet.source.textUrl, null);
   assert.doesNotMatch(JSON.stringify(packet), /SECRET/);
   assert.equal(D.studentPacket(17, reading, source), null);
+  // Its PDF has a dated footer and a part, with no school week, and no discussion help.
+  const T = require("../src/lib/reading-tex");
+  const tex = T.nightTeX({ day: { ...reading, excerpt: { ...reading.excerpt, continuesFrom: "reading-5-t-00" } }, source, meta: D.printMeta(5, { date: "2026-11-17" }), run: { part: 2, of: 3 } }).tex;
+  assert.ok(tex.includes("\\renewcommand{\\papermeta}{Grade 5 \\textperiodcentered{} Tuesday 17 November 2026}")); assert.match(tex, /Part 2 of 3/);
+  assert.doesNotMatch(tex, /Week /); assert.equal(tex.match(/SECRET/g).length, 1, "only the challenge, never the notes");
 });
 
 test("remembered places are parsed as untrusted data and updated by the views", () => {
@@ -100,6 +105,10 @@ test("the day print says what each level prints, or why it cannot", () => {
   assert.equal(plan[0].footer, "Kindergarten · Tue, Nov 17"); assert.match(plan[1].reason, /Grade 3 is not available yet/);
   assert.equal(D.printPlan(index, { week: 3, day: 2, grades: [3] })[0].footer, "Grade 3 · Week 3 · Day 2");
   assert.equal(D.printPlan(index, { grades: [3] })[0].available, false);
+  assert.equal(D.printPlan(index, { date: "2026-11-17", grades: [5] })[0].footer, "Grade 5 · Tuesday 17 November 2026");
+  assert.equal(D.printMeta(0, { date: "2028-02-29" }), "Kindergarten · Tuesday 29 February 2028");
+  assert.equal(D.printMeta(5, { week: 3, day: 2 }), "Grade 5 · Week 3 · Day 2");
+  assert.equal(D.printMeta(5), "Grade 5 · Calendar reading"); assert.equal(D.printMeta(5, { date: "2026-02-30" }), "Grade 5 · Calendar reading"); assert.equal(D.printMeta(99), null);
 });
 
 test("free-text genres fall into a few families, in a fixed order", () => {

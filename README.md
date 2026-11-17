@@ -127,6 +127,10 @@ open the reading for any calendar date or month, and print one day for several
 levels at once. The **Library** (`library.html`) reads every source work whole,
 with each nightly passage marked and linked. See the
 [corpus, provenance, and progression contract](docs/daily-reading.md).
+Generate PDF typesets the reading on screen, or one day for several levels,
+in the browser, in the
+[printed packet style](docs/reading-packets.md); nothing is uploaded and no PDFs
+are stored ([printing](docs/printing.md)).
 
 **Reading level** (`reading-level.html`) finds a starting point in that library
 from a few short, self-scored passages: a student reads, presses Done, and

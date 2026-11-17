@@ -255,13 +255,30 @@
   // calendar cannot print a date; it says so instead of printing nothing.
   // `formatDate` names a date in the footer (reading-calendar's shortDate in
   // the browser); footers follow the packets' "Grade 5 · Week 3 · Day 2".
-  function printPlan(index, { date = null, week = null, day = null, grades = [], formatDate = value => value } = {}) {
+  // Printed footers. A school night's matches reading-tex's schoolMeta
+  // ("Grade 5 · Week 3 · Day 2"); a calendar reading has no week or day, so
+  // it names its date ("Grade 5 · Tuesday 17 November 2026"), and a reading
+  // opened by id names itself a calendar reading.
+  const WEEKDAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function longDate(date) {
+    if (!validDate(date)) return null;
+    const [year, month, day] = date.split("-").map(Number), weekday = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
+    return WEEKDAY_NAMES[weekday] + " " + day + " " + MONTH_NAMES[month - 1] + " " + year;
+  }
+  function printMeta(grade, { date = null, week = null, day = null } = {}) {
+    if (!validGrade(grade)) return null;
+    if (validDate(date)) return gradeLabel(grade) + " · " + longDate(date);
+    if (validDay(week, day)) return gradeLabel(grade) + " · Week " + week + " · Day " + day;
+    return gradeLabel(grade) + " · Calendar reading";
+  }
+  function printPlan(index, { date = null, week = null, day = null, grades = [], formatDate = null } = {}) {
     return grades.filter(grade => gradeAt(index, grade)).map(grade => {
       if (validDate(date)) return hasCalendar(index, grade)
-        ? { grade, label: gradeLabel(grade), available: true, footer: gradeLabel(grade) + " · " + formatDate(date) }
+        ? { grade, label: gradeLabel(grade), available: true, footer: formatDate ? gradeLabel(grade) + " · " + formatDate(date) : printMeta(grade, { date }) }
         : { grade, label: gradeLabel(grade), available: false, reason: "The date calendar for " + gradeLabel(grade) + " is not available yet." };
       return validDay(week, day)
-        ? { grade, label: gradeLabel(grade), available: true, footer: gradeLabel(grade) + " · Week " + week + " · Day " + day }
+        ? { grade, label: gradeLabel(grade), available: true, footer: printMeta(grade, { week, day }) }
         : { grade, label: gradeLabel(grade), available: false, reason: "Choose a date or a school night." };
     });
   }
@@ -367,6 +384,6 @@
     navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, sourceNote, selectionCredit, studentReading, studentPacket,
     MODES, browseFile, browseRoute, browseIndex, view, validDate, validReadingId, dateRoute, monthRoute, readingRoute, printRoute,
     readingFile, calendarFile, SPANS_FILE, hasCalendar, nightLabel, documentTitle, beforeYouRead, continuation,
-    STORAGE_KEY, parseRemembered, remember, tonight, printPlan, printFilename, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
+    STORAGE_KEY, parseRemembered, remember, tonight, printPlan, printMeta, printFilename, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
     genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan, weekFile, weekSlice, tableRows, emphasis };
 });

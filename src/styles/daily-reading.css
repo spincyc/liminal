@@ -87,6 +87,13 @@
 .daily-toolbar.reader-toolbar input[type="date"] { min-width: 9.5rem; min-height: var(--tap); font-size: 1rem; }
 .daily-toolbar.reader-toolbar .reader-selectors label[hidden] { display: none; }
 .daily-toolbar #dailyMore { margin-left: auto; }
+/* Generate PDF progress, under the toolbar and the day print's actions;
+   the licenses link shows only beside a message. */
+.daily-pdf { margin: -8px 0 12px; color: var(--color-muted); font-size: .8125rem; }
+.daily-pdf:has(.pdf-action-status:empty) { display: none; }
+.daily-pdf .pdf-action-notices { color: inherit; margin-left: 6px; }
+.daily-print-setup .daily-pdf { margin: 8px 0 0; }
+.reader-more-note { max-width: 16rem; margin: 0; padding: 2px 14px 8px; color: var(--color-muted); font-size: .8125rem; }
 .daily-today { display: inline-flex; align-items: center; min-height: var(--tap); padding: 4px 6px; color: var(--color-ink); }
 .daily-date-note { margin-block: 2px 4px; color: var(--color-muted); font-size: .875rem; }
 .daily-date-long { color: var(--color-ink); font-weight: 600; }

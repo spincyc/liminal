@@ -1,27 +1,30 @@
 /* Print a day for several levels: choose a calendar date or a school night
    and the levels, see what will print, then make one PDF in which every
    level starts on a fresh sheet. Decisions (what each level prints, footers,
-   file names) come from lib/daily-reading.js.
-
-   PDF seam: the PDF engine is a separate module (lib/reading-tex.js with
-   the page's PDF action). When the page loads both, `window.LiminalReadingTeX
-   .dayTeX(entries)` turns [{ day, source, meta, run }] into { tex, engine },
-   and `window.LiminalPdfAction.run({ tex, engine, filename })` makes and
-   saves the PDF with its own progress and cancel. Without them the page says
-   so and offers browser printing. */
+   file names) come from lib/daily-reading.js; the TeX from lib/reading-tex.js
+   (dayTeX); typesetting and saving from app/pdf-action.js (see
+   docs/printing.md). Without the typesetter the PDF button is disabled with
+   a sentence saying so, and browser printing remains. */
 (function () {
   "use strict";
   const D = window.LiminalDailyReading, Cal = window.LiminalReadingCalendar, R = window.LiminalDailyReadingRender;
   const $ = id => document.getElementById(id);
   const form = $("dailyPrintForm"), byDate = $("dailyPrintByDate"), byNight = $("dailyPrintByNight"), dateInput = $("dailyPrintDate");
   const weekSelect = $("dailyPrintWeek"), daySelect = $("dailyPrintDay"), levels = $("dailyPrintLevels"), preview = $("dailyPrintPreview");
-  const pdfButton = $("dailyPrintPdf"), browserButton = $("dailyPrintBrowser"), note = $("dailyPrintNote"), pages = $("dailyPrintPages");
-  let ctx = null, ready = false, loaded = [], version = 0;
+  const browserButton = $("dailyPrintBrowser"), note = $("dailyPrintNote"), pages = $("dailyPrintPages");
+  const T = window.LiminalReadingTeX, A = window.LiminalPdfAction;
+  let ctx = null, ready = false, loaded = [], version = 0, pdf = null;
 
-  function engine() {
-    const T = window.LiminalReadingTeX, A = window.LiminalPdfAction;
-    return T && typeof T.dayTeX === "function" && A && typeof A.run === "function" ? { T, A } : null;
+  // The PDF control replaces the placeholder button; its status line follows the actions.
+  function setupPdf() {
+    const placeholder = $("dailyPrintPdf");
+    if (!T || !A) { placeholder.disabled = true; note.before(R.el("p", "PDF generation is unavailable in this copy of the site.", "daily-pdf")); return null; }
+    const control = A.control({ label: "Make one PDF", prepare: () => loaded.length ? { ...T.dayTeX(entries()), filename: D.printFilename({ ...selection(), grades: loaded.map(item => item.grade) }) } : null });
+    control.button.id = "dailyPrintPdf"; control.button.classList.add("daily-primary"); placeholder.replaceWith(control.button);
+    const line = R.el("p", undefined, "daily-pdf"); line.append(control.status, " ", control.credits); note.before(line);
+    return control;
   }
+  const engine = () => !!(pdf && pdf.available);
   function option(label, value) { const node = R.el("option", label); node.value = value; return node; }
   function setup(index) {
     if (ready) return;
@@ -38,7 +41,7 @@
     });
     form.addEventListener("change", changed);
     form.addEventListener("submit", event => event.preventDefault());
-    pdfButton.addEventListener("click", makePdf);
+    pdf = setupPdf();
     browserButton.addEventListener("click", printHere);
   }
   // The form is the state; its route is kept in the address without
@@ -82,14 +85,16 @@
     return { ...item, reading: day, source, run: run && { part: run.part, of: run.of }, packet: D.studentReading(course, chosen.week, chosen.day) };
   }
   async function update(chosen) {
-    const mine = ++version, plan = D.printPlan(ctx.index, { ...chosen, formatDate: Cal.shortDate }), pdf = engine();
+    const mine = ++version, plan = D.printPlan(ctx.index, chosen), canPdf = engine();
+    if (pdf) pdf.cancel();
+    const pdfButton = $("dailyPrintPdf");
     preview.setAttribute("aria-busy", "true"); pdfButton.disabled = browserButton.disabled = true;
     const results = await Promise.all(plan.map(item => item.available ? resolve(item, chosen).catch(() => ({ ...item, available: false, reason: "This reading could not be loaded." })) : item));
     if (mine !== version) return;
     loaded = results.filter(item => item.available);
     preview.replaceChildren(...(results.length ? results.map((item, i) => {
       const li = R.el("li", undefined, item.available ? "daily-print-item" : "daily-print-item is-unavailable");
-      li.append(R.el("p", item.label + (item.available && loaded.indexOf(item) > 0 ? pdf ? " · starts on a fresh sheet" : " · starts on a new page" : ""), "daily-print-level"));
+      li.append(R.el("p", item.label + (item.available && loaded.indexOf(item) > 0 ? canPdf ? " · starts on a fresh sheet" : " · starts on a new page" : ""), "daily-print-level"));
       if (!item.available) { li.append(R.el("p", item.reason, "daily-muted")); return li; }
       const credit = D.selectionCredit(item.reading, item.source);
       li.append(R.el("p", item.reading.title, "daily-print-title"),
@@ -97,27 +102,14 @@
       return li;
     }) : [R.el("li", "Choose at least one level.", "daily-print-item is-unavailable")]));
     preview.setAttribute("aria-busy", "false");
-    $("dailyPrintIntro").textContent = pdf ? "One PDF in which each level starts on a fresh sheet, so two-sided printing never puts two levels on one sheet of paper." :
+    $("dailyPrintIntro").textContent = canPdf ? "One PDF in which each level starts on a fresh sheet, so two-sided printing never puts two levels on one sheet of paper." :
       "Every chosen level’s reading for one day, each starting on a new page.";
-    pdfButton.hidden = !pdf; pdfButton.disabled = !pdf || !loaded.length; browserButton.disabled = !loaded.length;
-    note.textContent = pdf ? "The PDF starts each level on an odd page, adding a blank back where needed." :
-      "Making a PDF is not available on this page yet. Printing from this browser starts each level on a new page; on a two-sided printer a level can share a sheet with the one before it.";
+    pdfButton.disabled = !canPdf || !loaded.length; browserButton.disabled = !loaded.length;
+    note.textContent = canPdf ? "The PDF starts each level on an odd page, adding a blank back where needed." :
+      "Printing from this browser starts each level on a new page; on a two-sided printer a level can share a sheet with the one before it.";
   }
 
   function entries() { return loaded.map(item => ({ day: item.reading, source: item.source, meta: item.footer, run: item.run })); }
-  async function makePdf() {
-    const pdf = engine();
-    if (!pdf || !loaded.length) return;
-    const chosen = selection();
-    try {
-      const doc = pdf.T.dayTeX(entries());
-      pdfButton.disabled = true;
-      await pdf.A.run({ tex: doc.tex, engine: doc.engine, filename: D.printFilename({ ...chosen, grades: loaded.map(item => item.grade) }) });
-      ctx.announce("The PDF is ready.");
-    } catch (error) {
-      ctx.announce("The PDF could not be made" + (error && error.message ? ": " + error.message : "") + ". You can still print from this browser.", true);
-    } finally { pdfButton.disabled = !loaded.length; }
-  }
   // Browser printing: every level's student copy, each starting a new page.
   function printHere() {
     if (!loaded.length) return;

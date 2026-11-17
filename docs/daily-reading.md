@@ -157,8 +157,8 @@ unavailable); nothing leaves the browser.
 **Reading.** A school night, a date and a reading by ID share one reader. A
 compact toolbar holds Grade, Week and Day (or Date), Previous and Next, and a
 **More** menu: print student copy, print adult copy with discussion help,
-download the student copy (HTML), First and Last night, and links to the
-month and the day print. On phones the toolbar is one row. Under the title a
+download the student copy (HTML), Generate PDF ([printing](printing.md)),
+First and Last night, and links to the month and the day print. On phones the toolbar is one row. Under the title a
 **Before you read** disclosure gives the time, reading mode, challenge,
 discussion focus and any content note; it is open for adult read-aloud and
 shared reading. A continued reading says "Part 2 of 3 · continued from Week 3,
@@ -189,13 +189,13 @@ continued story, and a mark starts each shared span, the days on which every
 level begins something new.
 
 **Print a day.** Choose a calendar date or a school night and any levels; the
-preview lists what each level prints, or why it cannot. With the PDF engine on
-the page, **Make one PDF** builds a single document in which every level starts
-on a fresh sheet; the page only calls `LiminalReadingTeX.dayTeX` and
-`LiminalPdfAction.run` when both exist (see the comment at the top of
-`src/app/daily-reading-print.js`). Without it, **Print from this browser**
-prints each level's student copy on a new page, and the page says that on a
-two-sided printer a level may share a sheet with the one before it.
+preview lists what each level prints, or why it cannot. **Make one PDF**
+typesets a single document (`LiminalReadingTeX.dayTeX`) in which every level
+starts on a fresh sheet; footers name a school night by week and day and a
+calendar reading by its date. Without the typesetter the button is disabled
+and says so. **Print from this browser** prints each level's student copy on a
+new page; on a two-sided printer a level may then share a sheet with the one
+before it, which the page says.
 
 Printed readings use bundled Computer Modern Unicode Serif, 10-point body type,
 two columns, a centered title and author, and a small footer containing the grade,
