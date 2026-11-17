@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "crane-red-badge-1895",
+  "author": "Stephen Crane",
+  "title": "The Red Badge of Courage: An Episode of the American Civil War",
+  "translator": null,
+  "edition": "Wikisource transcription (Index: Red Badge of Courage (1895).djvu) of New York: D. Appleton and Company, 1895 (copyright 1894, 1895). Every selected word was collated against OCR of a dated Appleton scan (Internet Archive redbadgeofcourag00cranrich, 1896 printing, copyright 1895) with Project Gutenberg #73 as a second witness; one Wikisource misreading ('lie' for 'He') was corrected, and the Appleton readings that differ from Gutenberg (e.g. 'wide bank', 'cammand', 'Se he went', 'with a air') were confirmed on the page images. Dialect spellings and apostrophe spacing are retained as printed; HTML presentation removed and whitespace normalized. The library holds the whole novel, Chapters I–XXIV, with their chapter headings. The collation and correction above cover the passages used as nightly readings; elsewhere the Wikisource transcription is reproduced as transcribed.",
+  "publicationYear": 1895,
+  "translationYear": null,
+  "url": "https://archive.org/details/redbadgeofcourag00cranrich",
+  "textUrl": "https://en.wikisource.org/wiki/Red_Badge_of_Courage_(1895)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Original English novel published in 1895 by D. Appleton and Company, before 1931; its US term has expired as of 2026. The dated scan is marked NOT_IN_COPYRIGHT.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/redbadgeofcourag00cranrich"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&prop=text%7Crevid&format=json&formatversion=2&page=Red_Badge_of_Courage_(1895)",
+    "downloadSha256": "8f781ffe06bfe4b36305589b35ec0ec5daef11193ca3e26769cb5ea1dd3ea47c",
+    "method": "MediaWiki parse API (action=parse, prop=text|revid) for the Wikisource subpages Chapter 1–24 of Red_Badge_of_Courage_(1895), fetched in the printed order of the main page (revisions 7729471–7790128); downloadSha256 is the SHA-256 of the twenty-four JSON responses concatenated in that order. Removed the Wikisource header, page-number anchors, licence and other no-export elements; each HTML paragraph, and each run of text set directly in a section, became a paragraph with whitespace (including no-break spaces) collapsed to single spaces and italics dropped to plain text; centred verse with line breaks became stanzas; the centred chapter titles became level-2 headings. The one correction the nightly selections carry from the edition’s declared collation (‘lie’ to ‘He’) was applied at the same place."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 996,
+    "sha256": "9403924cfeca63aca5a3bd467114a90c39212ead7c30706c83775939893881c0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "thomas-poems-1917",
+  "author": "Edward Thomas",
+  "title": "Poems",
+  "translator": null,
+  "edition": "Selwyn & Blount, London, 1917; Project Gutenberg 22423 transcription identifies the 1917 printing. Common left-margin indentation is removed; CRLF becomes LF. In Tears, the source-wrapped continuation word “out” is rejoined to its verse line; all stanza and other line boundaries are retained. The library holds all sixty-four poems, each under its title as printed above the poem; the title page, printing history, dedication, contents, “THE END” and printer’s imprint are omitted.",
+  "publicationYear": 1917,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/22423",
+  "textUrl": "https://www.gutenberg.org/ebooks/22423.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text is in this 1917 publication/transcription of the dated collection, published before 1931 and in the US public domain by 2026. Project Gutenberg catalogue explicitly labels this text Public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/22423"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/22423/pg22423.txt",
+    "downloadSha256": "f60af6efc7f81e677bb75e0657d466b7d7e4a141c6e368d5ad49d0df2762122b",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 22423), CRLF line ends normalised to LF. Removed the Gutenberg header, footer and licence, the producer credit and everything before the first poem, and “THE END” with everything after it; each poem title (matched against the volume’s contents list, with the three titles printed differently above their poems) became a level-2 heading and every other blank-line-separated group a stanza with its lines and indentation as in the file; applied the edition’s one declared rejoining in Tears (“combed” / “out”)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 254,
+    "sha256": "ade7f835c2016b1859e74eb21e024f6e0f387928a7b2054f8be5cc8562136bd2"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "gilman-yellow-wall-paper-1901",
+  "author": "Charlotte Perkins Gilman (as Charlotte Perkins Stetson)",
+  "title": "The Yellow Wall Paper",
+  "translator": null,
+  "edition": "Wikisource validated transcription (Index: The Yellow Wall Paper.djvu) of Boston: Small, Maynard & Company, MCMI [1901] (copyright 1892 New England Magazine Corporation; copyright 1899 Small, Maynard & Company). The complete story is supplied across three nights. All nine word-level differences from Project Gutenberg's text were checked on a dated 1901 Small, Maynard scan (Internet Archive yellowwallpaper1901gilm), which confirms the Wikisource readings. Section spacing between journal entries is not marked; HTML presentation removed and whitespace normalized; the opening capitals ('IT is') are retained as transcribed. The library holds the story under its title heading; the title page, copyright and printer’s notices and the publisher’s reprint note are omitted.",
+  "publicationYear": 1901,
+  "translationYear": null,
+  "url": "https://archive.org/details/yellowwallpaper1901gilm",
+  "textUrl": "https://en.wikisource.org/wiki/The_Yellow_Wall_Paper",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Original English story first published in January 1892 (New England Magazine) and in book form by Small, Maynard in 1899; this 1901 printing was published before 1931, so its US term has expired as of 2026.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/yellowwallpaper1901gilm"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&prop=text%7Crevid&format=json&formatversion=2&page=The_Yellow_Wall_Paper",
+    "downloadSha256": "ceb9f45bf5723801ad2002b517b0c956ecd928708143ae0a95b2d1cc2be2efeb",
+    "method": "MediaWiki parse API (action=parse, prop=text|revid) for the single Wikisource page The_Yellow_Wall_Paper (revision 15679493). Removed the Wikisource header, page-number anchors, licence footer and other no-export elements and everything before the story’s title; each HTML paragraph, and each run of text set directly in a section without a paragraph element, became a paragraph block with whitespace (including no-break spaces) collapsed to single spaces; small capitals kept as transcribed."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 268,
+    "sha256": "4c2c95a94b22c5ff463f32d748ae81d50b502aae1538e08d49562153466bb58b"
+  }
+}

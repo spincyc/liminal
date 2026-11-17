@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "bronte-jane-eyre-1897",
+  "author": "Charlotte Brontë",
+  "title": "Jane Eyre: An Autobiography",
+  "translator": null,
+  "edition": "Project Gutenberg 1260 English transcription, whose title page identifies London: Service & Paton, 1897, illustrated by F. H. Townsend. Only the narrative text is used; illustrations and their duplicated alt-text captions are omitted. Plain-text underscore emphasis is retained. Prose line wrapping is joined with spaces; verse line and stanza breaks are preserved. The library text runs from the author's Preface and Note to the Third Edition through the end of Chapter XXXVIII; the title page, illustration notice and dedication are omitted.",
+  "publicationYear": 1897,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/1260",
+  "textUrl": "https://www.gutenberg.org/ebooks/1260.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The identified 1897 English edition was published before 1931 and its US publication term has expired as of 2026. Project Gutenberg explicitly marks this ebook public domain in the USA; no modern introduction or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/1260"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/1260/pg1260.txt",
+    "downloadSha256": "13414dee2951c3ee731d76d2ffd822016b2479c892162760c5d0eb2aa5fa7631",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 1260). Removed the Gutenberg header, footer and licence and everything before the Preface; dropped the fourteen illustration captions that the plain text repeats as stand-alone lines (identified from the alt text of the same release's HTML file); joined wrapped prose lines with single spaces; kept verse and letter-closing lines as stanzas with their indentation; split the salutation of John Eyre's letter from its body; chapter and preface titles became headings. Underscore emphasis kept as printed in the file."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 4094,
+    "sha256": "f3e72cb40ddd821e58135dbcc300b59705ac848854ba5a3640646cc9df7a85dd"
+  }
+}
