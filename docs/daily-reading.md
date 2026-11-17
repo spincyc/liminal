@@ -86,13 +86,26 @@ reads a story over seven days, another may read four days and then three, or
 five days and two single readings, and every level starts something new on the
 same day. February 29 is always a one-day span, and no run crosses the end of
 a cycle year. `content/reading-daily/calendar/spans.json` holds the spans and
-`calendar/<grade-key>.json` a level's three years of reading IDs. They are
-written by `node tools/layout-reading-calendar.js --write` once every K–12
-level has its 1,098 readings: within a level a story's runs follow one another,
-single readings from different works alternate, and a reading with `months`
-lands in one of those months when it can. The check validates the committed
-files rather than recomputing them; regenerate deliberately, because a new
-layout moves readings to different dates.
+`calendar/<grade-key>.json` a level's three years of reading IDs.
+
+The calendar is written one cycle year at a time (owner direction,
+2026-11-17): Year 2 (2027) first, then Year 3 (2028), then Year 1 (2029), so
+the site can serve dates as each year's readings are finished. A year not yet
+written is `null` in the spans and in every level's calendar; a written year
+is written for every K–12 level at once, because the spans are shared. The
+written years never repeat a reading, and once all three are written every
+reading of a level is placed exactly once. `node tools/layout-reading-calendar.js`
+reports how many unplaced readings each level has; once every K–12 level has
+at least 366 (exactly as many as the remaining days, for the last year),
+`node tools/layout-reading-calendar.js --write --years 2` writes that year and
+keeps the years already written exactly as they are. Within a level a story's
+runs follow one another in reading order, a story begun in an earlier year
+comes first, single readings from different works alternate, and a reading
+with `months` lands in one of those months when it can. Short runs and single
+nights give the shared spans room: a level made only of long runs can leave
+another level without the single readings a span needs. The check validates
+the committed files rather than recomputing them; regenerate only deliberately,
+because a new layout moves readings to different dates.
 
 Calendar readings live in `content/reading-daily/extra/<grade-key>/<work-id>.json`:
 
