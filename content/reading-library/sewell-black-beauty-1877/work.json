@@ -4,7 +4,7 @@
   "author": "Anna Sewell",
   "title": "Black Beauty: His Grooms and Companions. The Autobiography of a Horse",
   "translator": null,
-  "edition": "London: Jarrold and Sons, 1877, the first edition. Scan-backed Wikisource transcription (Index:Black Beauty (1877).djvu); all 247 transcluded pages are validated, that is proofread twice against the page images. The library text holds the title-page wording (“Translated from the Original Equine”), the dedication, the Kingsley epigraph, the forty-nine chapters and the closing note on “The Horse Book” that Sewell signs as “the Translator”; the frontispiece caption, the publisher’s imprint and the table of contents are left out. The contents page groups the chapters into Parts I–IV, but the transcribed body carries no part headings and none is added. Each chapter’s number and title are two headings. Prose line wrapping is joined with single spaces; the three verses in Chapters XXXV and XXXVI keep their lines and indentation. Wikisource’s straight quotation marks and apostrophes are kept as transcribed, the small capitals of each chapter’s first word become ordinary letters, and paired underscores mark italics. Sewell’s one footnote (Chapter XXXVI, on cab licences) stands inline at its reference as {footnote …}. No letter is emended. This 1877 text differs in many words, and in a few passages, from the later American text in Project Gutenberg #271 (for example “plantation” where that text has “grove”); the first edition is followed throughout.",
+  "edition": "London: Jarrold and Sons, 1877, the first edition. Scan-backed Wikisource transcription (Index:Black Beauty (1877).djvu); all 247 transcluded pages are validated, that is proofread twice against the page images. The library text holds the title-page wording (“Translated from the Original Equine”), the dedication, the Kingsley epigraph, the forty-nine chapters and the closing note on “The Horse Book” that Sewell signs as “the Translator”; the frontispiece caption, the publisher’s imprint and the table of contents are left out. The contents page groups the chapters into Parts I–IV, but the transcribed body carries no part headings and none is added. Each chapter’s number and title are two headings. Prose line wrapping is joined with single spaces; the three verses in Chapters XXXV and XXXVI keep their lines and indentation. Wikisource’s straight quotation marks and apostrophes are kept as transcribed, the small capitals of each chapter’s first word become ordinary letters, and paired underscores mark italics. Sewell’s one footnote (Chapter XXXVI, on cab licences, p. 177) is a paragraph “[Footnote *: …]” after the paragraph that cites it, whose anchor is the printed asterisk, “[*]”. No letter is emended. This 1877 text differs in many words, and in a few passages, from the later American text in Project Gutenberg #271 (for example “plantation” where that text has “grove”); the first edition is followed throughout.",
   "publicationYear": 1877,
   "translationYear": null,
   "url": "https://en.wikisource.org/wiki/Black_Beauty",
@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://en.wikisource.org/w/index.php?title=Black_Beauty&action=render",
     "downloadSha256": "6a81f782760542bfac0df908939eacb56182baed88e37871820799421e06310e",
-    "method": "The text spans fifty Wikisource pages, so the rendered HTML (action=render) of Black_Beauty and of its subpages Black_Beauty/1 to Black_Beauty/49 was fetched on 2026-11-17; downloadSha256 is the SHA-256 of those fifty responses concatenated in that order. A one-off script kept each paragraph element as a paragraph block and each poem division as a stanza, dropped page-number anchors, navigation headers and licence boxes, joined whitespace, turned italic elements into paired underscores and moved the footnote inline. As a check for dropped or duplicated text, the result was compared word by word with Project Gutenberg #271: every difference is a variant between the two editions."
+    "method": "The text spans fifty Wikisource pages, so the rendered HTML (action=render) of Black_Beauty and of its subpages Black_Beauty/1 to Black_Beauty/49 was fetched on 2026-11-17; downloadSha256 is the SHA-256 of those fifty responses concatenated in that order. A one-off script kept each paragraph element as a paragraph block and each poem division as a stanza, dropped page-number anchors, navigation headers and licence boxes, joined whitespace, turned italic elements into paired underscores and turned the footnote reference into the anchor [*] with the note as its own paragraph after it. As a check for dropped or duplicated text, the result was compared word by word with Project Gutenberg #271: every difference is a variant between the two editions."
   },
   "scope": {
     "complete": true,
     "note": null
   },
   "text": {
-    "blocks": 922,
-    "sha256": "b1fc3ebf9b981c20e72a5f9010b82090f45272e36a41dec93f51b86a53883058"
+    "blocks": 923,
+    "sha256": "1a3452d4e889a4eabba00adad8841a313fab1dd7efd5759586c1d07940b82113"
   }
 }
