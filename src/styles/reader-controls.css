@@ -65,3 +65,37 @@
   .reader-toolbar .reader-select-wide { flex-wrap: wrap; }
   .reader-toolbar .reader-select-wide select { width: auto; min-width: 0; }
 }
+/* Compact sequence: arrows always, their words from 641px up (the
+   aria-label names the destination). */
+.reader-step-arrow { font-size: 1.25em; line-height: 1; }
+.reader-pagination :is(.reader-step-arrow, .reader-step-word) { min-width: 0; min-height: 0; padding: 0; }
+.reader-pagination-compact .reader-step-word { margin-inline: 4px; }
+.reader-pagination-compact :is(a, span[aria-disabled]) { box-sizing: border-box; }
+/* "More": secondary actions and far jumps in a native disclosure. */
+.reader-more { position: relative; }
+.reader-more > summary { display: inline-flex; align-items: center; gap: 4px; min-height: var(--tap); min-width: var(--tap); padding: 4px 8px; cursor: pointer; list-style: none; border-radius: var(--radius-sm); }
+.reader-more > summary::-webkit-details-marker { display: none; }
+.reader-more > summary::after { content: "▾"; font-size: .8em; }
+.reader-more > summary:hover { background: var(--color-soft); }
+.reader-more > summary:focus-visible { outline: var(--focus-width) solid var(--color-accent); outline-offset: var(--focus-offset); }
+.reader-more-menu { position: absolute; right: 0; top: 100%; z-index: 20; display: grid; min-width: 16rem; max-width: calc(100vw - 32px); padding: 6px 0; border: 1px solid var(--color-line-strong); border-radius: var(--radius); background: var(--color-surface); box-shadow: var(--shadow-card); }
+.reader-more-menu :is(a, button) { display: flex; align-items: center; min-height: var(--tap); padding: 6px 14px; border: 0; border-radius: 0; background: transparent; color: var(--color-ink); font: 400 1rem/1.3 var(--font-sans); text-align: left; text-decoration: none; cursor: pointer; }
+.reader-more-menu :is(a, button):hover { background: var(--color-soft); }
+.reader-more-menu button:disabled { color: var(--color-muted); opacity: .65; cursor: default; }
+.reader-more-menu :is(a, button):focus-visible { outline: var(--focus-width) solid var(--color-accent); outline-offset: -3px; }
+@media (max-width: 640px) {
+  .reader-pagination-compact .reader-step-word { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .reader-toolbar { gap: 0 6px; }
+}
+@media (max-width: 400px) {
+  .reader-toolbar { gap: 0 2px; }
+  .reader-toolbar .reader-pagination ul { gap: 0; }
+  .reader-more > summary { padding-inline: 4px; }
+}
+/* The narrowest phones keep "More" as its accessible name and show ⋯. */
+@media (max-width: 360px) {
+  .reader-more-word { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .reader-more > summary { justify-content: center; }
+  .reader-more > summary::after { content: "⋯"; font-size: 1.25em; }
+}
+@media print { .reader-more { display: none !important; } }
