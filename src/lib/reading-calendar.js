@@ -74,6 +74,10 @@
     const year = calendar.years[where.cycle - 1];
     return year && year[where.slot - 1] || null;
   }
+  // Which cycle years a calendar (or the spans) has written: [bool x 3].
+  function writtenYears(calendar) {
+    return Array.from({ length: CYCLE }, (_, y) => !!(calendar && Array.isArray(calendar.years) && Array.isArray(calendar.years[y])));
+  }
   // Spans as [first slot, last slot] per cycle year from their lengths.
   function spanRanges(lengths) {
     let next = 1;
@@ -95,9 +99,13 @@
     return out;
   }
   // Structural check of the shared spans; tools add the readings' checks.
+  // The calendar is written a cycle year at a time: a year not written yet
+  // is null, in the spans and in every level's calendar alike.
   function checkSpans(spans) {
     if (!spans || spans.schemaVersion !== 1 || !Array.isArray(spans.years) || spans.years.length !== CYCLE) throw new Error("Calendar spans: expected three cycle years");
+    if (spans.years.every(lengths => lengths === null)) throw new Error("Calendar spans: no cycle year is written");
     spans.years.forEach((lengths, y) => {
+      if (lengths === null) return;
       const where = "Calendar spans year " + (y + 1);
       if (!Array.isArray(lengths) || !lengths.every(n => Number.isInteger(n) && n >= 1 && n <= MAX_SPAN)) throw new Error(where + ": span lengths must be 1-" + MAX_SPAN);
       if (lengths.reduce((a, b) => a + b, 0) !== SLOTS) throw new Error(where + ": spans must cover 366 slots");
@@ -140,6 +148,7 @@
     const start = parseDate(from);
     if (!start || !calendar || !Array.isArray(calendar.years)) return null;
     for (let cycle = 0; cycle < calendar.years.length; cycle++) {
+      if (!Array.isArray(calendar.years[cycle])) continue;
       const slot = calendar.years[cycle].findIndex(entry => (entry && typeof entry === "object" ? entry.id : entry) === id) + 1;
       if (!slot) continue;
       for (let year = start.year; year < start.year + 4 * CYCLE + 1; year++) {
@@ -180,6 +189,6 @@
     const index = Number(match[1]) * 12 + Number(match[2]) - 1 + delta;
     return String(Math.floor(index / 12)).padStart(4, "0") + "-" + String(index % 12 + 1).padStart(2, "0");
   }
-  return { EPOCH, CYCLE, SLOTS, LEAP_SLOT, MAX_SPAN, MONTH_DAYS, MONTHS, isLeap, cycleYear, parseDate, formatDate, slotOf, monthDayOf, place, dateOf, addDays, today,
+  return { EPOCH, CYCLE, SLOTS, LEAP_SLOT, MAX_SPAN, MONTH_DAYS, MONTHS, isLeap, cycleYear, writtenYears, parseDate, formatDate, slotOf, monthDayOf, place, dateOf, addDays, today,
     longDate, shortDate, readingOn, spanRanges, spanAt, spanDates, checkSpans, returnYear, cycleNote, runOn, nextDateOf, monthGrid, addMonths };
 });

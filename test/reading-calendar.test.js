@@ -1,7 +1,7 @@
 "use strict";
 const test = require("node:test"), assert = require("node:assert/strict");
 const C = require("../src/lib/reading-calendar");
-const { layout } = require("../tools/layout-reading-calendar");
+const { layout, merge } = require("../tools/layout-reading-calendar");
 const B = require("../tools/build-daily-reading");
 
 test("cycle years repeat every three calendar years from 2026", () => {
@@ -39,7 +39,7 @@ test("spans cover each year, cap at the maximum and isolate February 29", () => 
 });
 
 // Synthetic levels: runs of several lengths, single readings, a seasonal one.
-function level(grade, shape) {
+function level(grade, shape, total = 1098) {
   const readings = new Map(); let n = 0;
   const run = (length, work, months) => {
     let previous = null;
@@ -51,7 +51,7 @@ function level(grade, shape) {
   };
   shape(run);
   let w = 0;
-  while (n < 1098) run(1, "poems-" + grade + "-" + (w++ % 7));
+  while (n < total) run(1, "poems-" + grade + "-" + (w++ % 7));
   return { grade, readings };
 }
 test("the layout lines up continuous runs across levels inside shared spans", () => {
@@ -69,6 +69,15 @@ test("the layout lines up continuous runs across levels inside shared spans", ()
     B.validateCalendar(spans, [{ key: String(calendar.grade || "k"), data: calendar }], new Map([[calendar.grade, readings]]));
     void courses; void placed;
   }
+  // Each work's runs keep reading order across the whole calendar.
+  for (const calendar of calendars) {
+    const { readings } = levels.find(item => item.grade === calendar.grade), seen = new Map();
+    for (const id of calendar.years.flat()) {
+      const reading = readings.get(id), position = reading.excerpt.blocks[0];
+      assert.ok(!(seen.get(reading.sourceId) > position), "runs of " + reading.sourceId + " out of order");
+      seen.set(reading.sourceId, position);
+    }
+  }
   // The seasonal reading lands in December.
   const k = calendars.find(calendar => calendar.grade === 0), carol = [...levels[0].readings.values()].find(reading => reading.months);
   const year = k.years.findIndex(ids => ids.includes(carol.id)), slot = k.years[year].indexOf(carol.id) + 1;
@@ -80,4 +89,44 @@ test("calendar validation refuses a run broken across a span boundary", () => {
   const year = calendar.years[0], i = year.findIndex(id => levels[0].readings.get(id).excerpt.continuesTo);
   [year[i], year[i + 1]] = [year[i + 1], year[i]];
   assert.throws(() => B.validateCalendar(spans, [{ key: "k", data: calendar }], new Map([[0, levels[0].readings]])), /continuous run/);
+});
+test("the calendar is written a cycle year at a time and keeps written years", () => {
+  const shapes = [run => { for (let i = 0; i < 20; i++) run(7, "story-a"); }, run => { for (let i = 0; i < 60; i++) { run(4, "story-b"); run(3, "story-c"); } }];
+  const full = shapes.map((shape, grade) => level(grade, shape));
+  // Year 2 first, from whole runs of a level's stories plus single poems:
+  // more readings than one year needs, but not all of them.
+  const subset = (readings, stories, poems) => {
+    const list = [...readings], story = list.filter(([, r]) => r.sourceId.startsWith("story")), poem = list.filter(([, r]) => r.sourceId.startsWith("poems"));
+    return new Map([...story.slice(0, stories), ...poem.slice(0, poems)]);
+  };
+  const first = [{ grade: 0, readings: subset(full[0].readings, 140, 260) }, { grade: 1, readings: subset(full[1].readings, 280, 200) }];
+  const year2 = layout(first, { years: [2] });
+  assert.deepEqual(year2.spans.years.map(Boolean), [false, true, false]);
+  for (const calendar of year2.calendars) {
+    assert.deepEqual(calendar.years.map(Boolean), [false, true, false]);
+    B.validateCalendar(year2.spans, [{ key: String(calendar.grade || "k"), data: calendar }], new Map([[calendar.grade, full[calendar.grade].readings]]));
+  }
+  // A level's calendar must match the spans' written years.
+  const wrong = { ...year2.calendars[0], years: [year2.calendars[0].years[1], null, null] };
+  assert.throws(() => B.validateCalendar(year2.spans, [{ key: "k", data: wrong }], new Map([[0, full[0].readings]])), /null when they do not/);
+  // Then the remaining years from everything not yet placed, exhausting it.
+  const rest = full.map(({ grade, readings }) => {
+    const placed = new Set(year2.calendars[grade].years.filter(Boolean).flat());
+    return { grade, readings: new Map([...readings].filter(([id]) => !placed.has(id))), begun: new Set(["story-a", "story-b", "story-c"]) };
+  });
+  const later = layout(rest, { years: [3, 1], exhaust: true });
+  const done = merge({ spans: year2.spans, calendars: new Map(year2.calendars.map(calendar => [calendar.grade, calendar])) }, later);
+  C.checkSpans(done.spans);
+  for (const calendar of done.calendars) {
+    assert.deepEqual(calendar.years[1], year2.calendars[calendar.grade].years[1]);
+    assert.equal(new Set(calendar.years.flat()).size, 1098);
+    B.validateCalendar(done.spans, [{ key: String(calendar.grade || "k"), data: calendar }], new Map([[calendar.grade, full[calendar.grade].readings]]));
+  }
+  // A story begun in year 2 and not finished continues first in year 3.
+  const k = done.calendars[0], b = done.calendars[1];
+  const unfinished = [...rest[1].readings.values()].some(reading => ["story-b", "story-c"].includes(reading.sourceId));
+  assert.ok(unfinished, "fixture: grade 1's stories run past year 2");
+  assert.ok(["story-b", "story-c"].includes(full[1].readings.get(b.years[2][0]).sourceId));
+  assert.equal(C.nextDateOf({ years: [null, k.years[1], null] }, k.years[1][0], "2026-11-17"), "2027-01-01");
+  assert.deepEqual(C.writtenYears({ years: [null, [], null] }), [false, true, false]);
 });

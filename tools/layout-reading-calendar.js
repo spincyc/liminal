@@ -1,19 +1,24 @@
 #!/usr/bin/env node
 "use strict";
 // Lays out the three-year date calendar (docs/daily-reading.md, "Date
-// calendar"): every level with its full 1,098 readings gets three cycle
-// years of 366 days, and all of those levels share one set of spans. A run
-// of continued readings sits on consecutive days inside one span, so when one
-// level reads a seven-day story, another may read four days and then three,
-// or five days and two single readings, and all of them start afresh together.
+// calendar"): three cycle years of 366 days per K–12 level, all levels
+// sharing one set of spans. A run of continued readings sits on consecutive
+// days inside one span, so when one level reads a seven-day story, another may
+// read four days and then three, or five days and two single readings, and all
+// of them start afresh together.
 //
-//   node tools/layout-reading-calendar.js            report what a layout would do
-//   node tools/layout-reading-calendar.js --write    write content/reading-daily/calendar/
+// The calendar is written a cycle year at a time (owner direction,
+// 2026-11-17): years already written are kept exactly, and a new year is laid
+// out from the readings no written year uses yet.
+//
+//   node tools/layout-reading-calendar.js                      report on the next year (2, then 3, then 1)
+//   node tools/layout-reading-calendar.js --write              write that year
+//   node tools/layout-reading-calendar.js --write --years 3,1  write named years, in that order
 //
 // Deterministic: the same readings always give the same calendar. Within a
-// level, a story's runs follow one another; single readings from different
-// works alternate between them; a reading with `months` is placed in one of
-// those months when it can be.
+// level, a story's runs follow one another (a story begun in an earlier year
+// comes first); single readings from different works alternate between them;
+// a reading with `months` is placed in one of those months when it can be.
 const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
@@ -22,7 +27,7 @@ const C = require("../src/lib/reading-calendar");
 const L = require("../src/lib/reading-library");
 const { loadDailyReading } = require("./build-daily-reading");
 const ROOT = path.resolve(__dirname, "..");
-const TOTAL = C.CYCLE * C.SLOTS;
+const FILL_ORDER = [2, 3, 1];
 const order = value => crypto.createHash("sha256").update(value).digest("hex");
 
 // A level's readings as units: a continued run, or one reading. Units of one
@@ -41,7 +46,7 @@ function units(readings) {
   return out;
 }
 
-function levelState(grade, readings) {
+function levelState(grade, readings, begun = new Set()) {
   const all = units(readings), works = new Map();
   for (const unit of all) { if (!works.has(unit.work)) works.set(unit.work, []); works.get(unit.work).push(unit); }
   for (const list of works.values()) list.sort((a, b) => a.position - b.position || a.sequence - b.sequence);
@@ -50,7 +55,7 @@ function levelState(grade, readings) {
   for (const [work, list] of works) {
     const plain = list.filter(unit => !unit.months.length);
     if (!plain.length) continue;
-    (plain.some(unit => unit.length > 1) ? serials : fillers).push({ work, queue: plain, key: order(grade + ":" + work) });
+    (plain.some(unit => unit.length > 1) ? serials : fillers).push({ work, queue: plain, key: (begun.has(work) ? "0" : "1") + order(grade + ":" + work) });
   }
   serials.sort((a, b) => a.key.localeCompare(b.key)); fillers.sort((a, b) => a.key.localeCompare(b.key));
   return { grade, serials, fillers, seasonal, current: 0, filler: 0, placed: [] };
@@ -71,12 +76,13 @@ const take = (queue, unit) => queue.splice(queue.indexOf(unit), 1);
 // Choose units filling exactly `size` days, without changing the state.
 // Preference: this month's seasonal readings, then the current story,
 // then single readings in rotation, then anything that completes the sum.
-function plan(state, size, month, cycle) {
+function plan(state, size, month, pressed) {
   const chosen = [], used = new Set();
   let left = size;
   const add = unit => { chosen.push(unit); used.add(unit); left -= unit.length; };
-  // In the last cycle year, a seasonal reading whose months have passed is due now.
-  const due = unit => unit.months.includes(month) || (cycle === C.CYCLE && unit.months.every(m => m < month));
+  // When a level has no readings to spare in the years being written, a
+  // seasonal reading whose months have passed is due now.
+  const due = unit => unit.months.includes(month) || (pressed && unit.months.every(m => m < month));
   for (const unit of state.seasonal) if (due(unit) && unit.length <= left) add(unit);
   let serialIndex = state.current;
   while (left > 0 && serialIndex < state.serials.length) {
@@ -92,13 +98,20 @@ function plan(state, size, month, cycle) {
     if (next) { add(next); idle = 0; } else idle++;
   }
   if (left > 0) {
-    // Exact completion from everything left (small subset sum over lengths).
-    const pool = remaining(state).filter(unit => !used.has(unit) && unit.length <= left && (!unit.months.length || due(unit)));
+    // Exact completion (a small subset sum over lengths). A work offers only
+    // its next units in reading order, so no story's runs are taken out of
+    // order; a seasonal reading that is due may complete the span too.
+    const groups = [...state.serials, ...state.fillers].map(item => item.queue.filter(unit => !used.has(unit)));
+    for (const unit of state.seasonal) if (!used.has(unit) && due(unit)) groups.push([unit]);
     const reach = new Map([[0, []]]);
-    for (const unit of pool) {
-      for (const [sum, picks] of [...reach]) {
-        const next = sum + unit.length;
-        if (next <= left && !reach.has(next)) reach.set(next, [...picks, unit]);
+    for (const queue of groups) {
+      const prefixes = [];
+      let total = 0;
+      for (const unit of queue) { total += unit.length; if (total > left) break; prefixes.push({ total, units: queue.slice(0, prefixes.length + 1) }); }
+      if (!prefixes.length) continue;
+      for (const [sum, picks] of [...reach]) for (const prefix of prefixes) {
+        const next = sum + prefix.total;
+        if (next <= left && !reach.has(next)) reach.set(next, [...picks, ...prefix.units]);
       }
       if (reach.has(left)) break;
     }
@@ -115,11 +128,18 @@ function commit(state, result) {
   state.filler = result.fillerTurn;
 }
 
-function layout(levels) {
-  const states = levels.map(({ grade, readings }) => levelState(grade, readings));
-  const years = [];
-  for (let cycle = 1; cycle <= C.CYCLE; cycle++) {
-    const lengths = [];
+const count = state => remaining(state).reduce((sum, unit) => sum + unit.length, 0);
+
+// Lays out the cycle years `years` (1-3, in the order given) for every level.
+// `levels`: [{ grade, readings (Map id -> reading, those not yet placed),
+// begun (works already read in written years) }]. When `exhaust` is set the
+// levels must end with nothing left over (the last years of the cycle).
+function layout(levels, { years = [1, 2, 3], exhaust = years.length === C.CYCLE } = {}) {
+  const states = levels.map(({ grade, readings, begun }) => levelState(grade, readings, begun));
+  const written = new Map();
+  let slotsLeft = years.length * C.SLOTS;
+  for (const cycle of years) {
+    const lengths = [], start = states.map(state => state.placed.length);
     let slot = 1;
     while (slot <= C.SLOTS) {
       const month = C.monthDayOf(slot).month;
@@ -128,44 +148,73 @@ function layout(levels) {
       let size = slot === C.LEAP_SLOT ? 1 : Math.min(room, Math.max(...states.map(state => desired(state, month))));
       let results = null;
       for (; size >= 1 && !results; size--) {
-        const attempt = states.map(state => plan(state, size, month, cycle));
+        const attempt = states.map(state => plan(state, size, month, count(state) <= slotsLeft));
         if (attempt.every(Boolean)) results = { size, attempt };
       }
       if (!results) throw new Error("Calendar layout: no common span fits at cycle year " + cycle + ", slot " + slot + "; a level has run out of single readings");
       states.forEach((state, i) => commit(state, results.attempt[i]));
       lengths.push(results.size);
-      slot += results.size;
+      slot += results.size; slotsLeft -= results.size;
     }
-    years.push(lengths);
+    written.set(cycle, { lengths, ids: states.map((state, i) => state.placed.slice(start[i])) });
   }
-  for (const state of states) if (remaining(state).length) throw new Error("Calendar layout: readings left over for " + D.gradeLabel(state.grade));
-  const spans = { schemaVersion: 1, years };
-  const calendars = states.map(state => ({ schemaVersion: 1, grade: state.grade,
-    years: Array.from({ length: C.CYCLE }, (_, y) => state.placed.slice(y * C.SLOTS, (y + 1) * C.SLOTS)) }));
+  if (exhaust) for (const state of states) if (remaining(state).length) throw new Error("Calendar layout: readings left over for " + D.gradeLabel(state.grade));
+  const spans = { schemaVersion: 1, years: Array.from({ length: C.CYCLE }, (_, y) => written.has(y + 1) ? written.get(y + 1).lengths : null) };
+  const calendars = states.map((state, i) => ({ schemaVersion: 1, grade: state.grade,
+    years: Array.from({ length: C.CYCLE }, (_, y) => written.has(y + 1) ? written.get(y + 1).ids[i] : null) }));
   return { spans, calendars };
 }
 
+// Adds newly laid-out years to the calendar already written.
+function merge(existing, laid) {
+  const pick = (old, fresh) => old.map((year, y) => fresh[y] !== null ? fresh[y] : year);
+  const spans = existing.spans ? { schemaVersion: 1, years: pick(existing.spans.years, laid.spans.years) } : laid.spans;
+  const calendars = laid.calendars.map(calendar => {
+    const old = existing.calendars.get(calendar.grade);
+    return old ? { schemaVersion: 1, grade: calendar.grade, years: pick(old.years, calendar.years) } : calendar;
+  });
+  return { spans, calendars };
+}
+
+function option(argv, name) { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : null; }
 function run(argv) {
   const write = argv.includes("--write");
   const loaded = loadDailyReading();
+  const existing = { spans: loaded.spans, calendars: loaded.calendars };
+  const writtenYears = existing.spans ? existing.spans.years.map(lengths => lengths !== null) : [false, false, false];
+  const open = [1, 2, 3].filter(cycle => !writtenYears[cycle - 1]);
+  // Year by year, in the order the dates arrive: 2027, 2028, 2029.
+  const next = FILL_ORDER.find(cycle => open.includes(cycle));
+  const years = option(argv, "--years") ? option(argv, "--years").split(",").map(Number) : next ? [next] : [];
+  if (!years.length) { console.log("All three cycle years are written."); return; }
+  for (const cycle of years) if (!open.includes(cycle) || years.indexOf(cycle) !== years.lastIndexOf(cycle)) throw new Error("--years must name cycle years not yet written (" + (open.join(", ") || "none") + "), once each");
+  const exhaust = years.length === open.length, need = years.length * C.SLOTS;
   const levels = [], short = [];
   for (const [grade, readings] of loaded.readingsByGrade) {
     if (D.isAdvanced(grade)) continue;
-    if (readings.size === TOTAL) levels.push({ grade, readings }); else short.push(D.gradeLabel(grade) + " has " + readings.size + " of " + TOTAL);
+    const old = existing.calendars.get(grade), placed = new Set(old ? old.years.filter(Boolean).flat() : []);
+    const free = new Map([...readings].filter(([id]) => !placed.has(id)));
+    const begun = new Set([...placed].map(id => readings.get(id).sourceId));
+    if (exhaust ? free.size !== need : free.size < need) short.push(D.gradeLabel(grade) + " has " + free.size + " unplaced of " + (exhaust ? "exactly " : "at least ") + need);
+    levels.push({ grade, readings: free, begun });
   }
-  if (short.length) console.log("Not laid out (a level needs exactly " + TOTAL + " readings): " + short.join("; ") + ".");
-  if (!levels.length) { console.log("No level is complete; nothing to lay out."); return; }
-  if (short.length && write) throw new Error("Every K–12 level must be complete before the shared calendar is written: the spans are shared.");
-  const { spans, calendars } = layout(levels);
-  const counts = spans.years.flat().reduce((map, n) => map.set(n, (map.get(n) || 0) + 1), new Map());
+  console.log("Cycle years written: " + (writtenYears.map((done, y) => done ? y + 1 : null).filter(Boolean).join(", ") || "none") + "; laying out " + years.join(", ") + ".");
+  if (short.length) {
+    console.log("Not enough readings: " + short.join("; ") + ".");
+    if (write) throw new Error("Every K–12 level needs enough readings before a shared year is written: the spans are shared.");
+    return;
+  }
+  const laid = layout(levels, { years, exhaust });
+  const counts = laid.spans.years.filter(Boolean).flat().reduce((map, n) => map.set(n, (map.get(n) || 0) + 1), new Map());
   console.log("Spans per length: " + [...counts].sort((a, b) => a[0] - b[0]).map(([n, c]) => n + "d×" + c).join(", "));
   if (!write) return;
+  const { spans, calendars } = merge(existing, laid);
   const directory = path.join(ROOT, "content/reading-daily/calendar");
-  fs.rmSync(directory, { recursive: true, force: true }); fs.mkdirSync(directory, { recursive: true });
+  fs.mkdirSync(directory, { recursive: true });
   fs.writeFileSync(path.join(directory, "spans.json"), JSON.stringify(spans) + "\n");
   for (const calendar of calendars) fs.writeFileSync(path.join(directory, D.gradeKey(calendar.grade) + ".json"), JSON.stringify(calendar, null, 1) + "\n");
-  loadDailyReading({ completeCalendar: true });
-  console.log("Wrote the calendar for " + calendars.length + " levels and checked it.");
+  loadDailyReading({ completeCalendar: spans.years.every(Boolean) });
+  console.log("Wrote cycle year" + (years.length > 1 ? "s " : " ") + years.join(", ") + " for " + calendars.length + " levels and checked the calendar.");
 }
-module.exports = { units, layout };
+module.exports = { units, layout, merge };
 if (require.main === module) { try { run(process.argv.slice(2)); } catch (error) { console.error(error.message); process.exitCode = 1; } }

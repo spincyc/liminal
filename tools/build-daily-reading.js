@@ -228,21 +228,28 @@ function validateCorpus(courses, { complete = false, completeAdvanced = false, e
 // The date calendar (docs/daily-reading.md): calendar/spans.json, shared by
 // every level, and calendar/<grade-key>.json with a level's three cycle
 // years of 366 reading ids. A level may be absent until it is complete.
+// The calendar is written a cycle year at a time (owner direction,
+// 2026-11-17): a year not yet written is null in the spans and in every
+// level's calendar. Written years never repeat a reading, and once all three
+// are written every reading of the level is placed exactly once.
 function validateCalendar(spans, calendars, readingsByGrade) {
   if (!calendars.length) return;
   C.checkSpans(spans);
+  const written = spans.years.map(lengths => lengths !== null);
   for (const calendar of calendars) {
     const where = "calendar " + calendar.key;
     record(calendar.data, where);
     const grade = D.gradeFromKey(calendar.key), data = calendar.data, readings = readingsByGrade.get(grade);
     assert(data.schemaVersion === 1 && data.grade === grade, "schema version or grade does not match its path at " + where);
     assert(readings, "no readings for " + where);
-    assert(Array.isArray(data.years) && data.years.length === C.CYCLE && data.years.every(year => Array.isArray(year) && year.length === C.SLOTS), "three years of 366 slots required at " + where);
-    const placed = data.years.flat();
+    assert(Array.isArray(data.years) && data.years.length === C.CYCLE && data.years.every((year, y) => written[y] ? Array.isArray(year) && year.length === C.SLOTS : year === null),
+      "each cycle year is 366 slots when the spans write it and null when they do not, at " + where);
+    const placed = data.years.filter(Boolean).flat();
     unique(placed, where + " (a reading placed twice)");
     assert(placed.every(id => readings.has(id)), "a slot names a reading this level does not have at " + where);
-    assert(placed.length === readings.size, where + " places " + placed.length + " of the level's " + readings.size + " readings; every reading must be placed exactly once");
+    if (written.every(Boolean)) assert(placed.length === readings.size, where + " places " + placed.length + " of the level's " + readings.size + " readings; every reading must be placed exactly once");
     data.years.forEach((ids, y) => {
+      if (!ids) return;
       const spanOf = new Map();
       C.spanRanges(spans.years[y]).forEach(([first, last], n) => { for (let slot = first; slot <= last; slot++) spanOf.set(slot, n); });
       ids.forEach((id, i) => {
@@ -294,9 +301,13 @@ function loadDailyReading({ directory = path.join(ROOT, "content/reading-daily")
   if (calendarFiles.length) assert(spans, "calendar files need calendar/spans.json");
   validateCalendar(spans, calendarFiles, readingsByGrade);
   const calendars = new Map(calendarFiles.map(file => [D.gradeFromKey(file.key), file.data]));
-  if (completeCalendar) assert(courses.filter(course => !D.isAdvanced(course.grade)).every(course => calendars.has(course.grade)), "complete calendar requires a three-year calendar for every grade K–12");
+  // The spans are shared, so a written year is written for every K–12 level.
+  const schoolLevels = courses.filter(course => !D.isAdvanced(course.grade));
+  if (calendars.size) assert(schoolLevels.every(course => calendars.has(course.grade)), "the shared calendar needs a calendar file for every grade K–12");
+  if (completeCalendar) assert(schoolLevels.every(course => calendars.has(course.grade) && C.writtenYears(calendars.get(course.grade)).every(Boolean)), "complete calendar requires all three cycle years for every grade K–12");
   const index = { schemaVersion: 1, grades: courses.map(course => ({ grade: course.grade, title: course.title, nights: course.days.length,
     readings: readingsByGrade.get(course.grade).size, calendar: calendars.has(course.grade),
+    calendarYears: C.writtenYears(calendars.get(course.grade)),
     file: "content/reading-daily/" + D.gradeKey(course.grade) + ".json" })) };
   return { index, courses, extras, calendars, spans, library, readingsByGrade };
 }
@@ -350,7 +361,7 @@ function build(options = {}) {
           mode: reading.readingMode, genre: reading.genre, continuesFrom: !!reading.excerpt.continuesFrom, continuesTo: !!reading.excerpt.continuesTo,
           ...(reading.week ? { week: reading.week, day: reading.day } : {}) }; };
       fs.writeFileSync(path.join(directory, "calendar", D.gradeKey(grade) + ".json"),
-        JSON.stringify({ schemaVersion: 1, grade, years: calendar.years.map(ids => ids.map(entry)) }) + "\n");
+        JSON.stringify({ schemaVersion: 1, grade, years: calendar.years.map(ids => ids && ids.map(entry)) }) + "\n");
     }
   }
   fs.writeFileSync(path.join(directory, "index.json"), JSON.stringify(index) + "\n");
