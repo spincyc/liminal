@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "grade": 1,
+  "work": "milne-winnie-the-pooh-1931",
+  "readings": [
+    {
+      "id": "reading-1-milne-winnie-the-pooh-1931-01",
+      "title": "Winnie-the-Pooh: the Introduction",
+      "sourceId": "milne-winnie-the-pooh-1931",
+      "genre": "literary-prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 6,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen for the author talking straight to you, and for his jokes.",
+      "focus": "Milne explains a name, admits what he has forgotten, and lets Piglet interrupt him.",
+      "context": "A. A. Milne wrote this introduction to Winnie-the-Pooh (1926), a book about his son Christopher Robin and his toy animals. The “other book about Christopher Robin” is Milne’s book of poems, When We Were Very Young. Winnie was a real bear at the London Zoo. “A. A. M.” are Milne’s initials.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The author’s Introduction, the whole of it; opens “If you happen to have read another book about Christopher Robin, you may remember that he…”; closes “A. A. M.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2,
+          7
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "95bdd6b1bb7067f20a7d4a48a2b33241200f3c07f5d65cfc22019b3caf03d836"
+      },
+      "questions": [
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-01-q1",
+          "prompt": "Where did the “Pooh” part of the name come from?",
+          "facilitatorNotes": [
+            "From a swan Christopher Robin used to call Pooh; when they said good-bye to the swan they kept the name. Milne even jokes that perhaps the swan had Christopher Robin."
+          ],
+          "evidence": [
+            "he used to call this swan Pooh"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-01-q2",
+          "prompt": "How does Christopher Robin visit the Zoo differently from people who walk from WAYIN to WAYOUT?",
+          "facilitatorNotes": [
+            "He goes straight to the animal he loves most and stays there; Milne calls those “the nicest people.” Ask how the child would visit."
+          ],
+          "evidence": [
+            "the nicest people go straight to the animal they love the most, and stay there"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-01-q3",
+          "prompt": "Why is Piglet jealous, and what is good about being small, according to Milne?",
+          "facilitatorNotes": [
+            "He thinks Pooh is getting a Grand Introduction all to himself. Being small, Piglet fits in a pocket and gets taken to school."
+          ],
+          "evidence": [
+            "Piglet is so small that he slips into a pocket"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-01-q4",
+          "prompt": "Is twice seven twelve or twenty-two? Why does Milne put a wrong sum in?",
+          "facilitatorNotes": [
+            "Neither: it is fourteen. The joke shows a child unsure of a sum at school, which is just when a Piglet in your pocket is comforting."
+          ],
+          "evidence": [
+            "whether twice seven is twelve or twenty-two"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-milne-winnie-the-pooh-1931-02",
+      "title": "The Expotition to the North Pole — Pooh’s song and the Big Boots",
+      "sourceId": "milne-winnie-the-pooh-1931",
+      "genre": "literary-prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 5,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice when Pooh pretends to understand a word he doesn’t know.",
+      "focus": "A song that has to stay true, and a big word nobody is quite sure of.",
+      "context": "From Chapter VIII of A. A. Milne’s Winnie-the-Pooh (1926). Christopher Robin is a boy, and Pooh and his friends are his toy animals, alive in the stories. An expedition is a journey to explore or find something; Pooh calls it an “Expotition.” Provisions are food packed for a journey. The North Pole is a real place, the farthest point north on Earth, across frozen sea.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, from the start to Pooh setting off to tell the others; opens “One fine day Pooh had stumped up to the top of the Forest to see if his friend…”; closes “…Pooh happily. \"I thought you said Provisions. I'll go and tell them.\" And he stumped off.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-milne-winnie-the-pooh-1931-03",
+        "blocks": [
+          759,
+          784
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a22a21a224a5c227114647db2ffa72680d267ce53792f99f2be3aad67b8d9c2f"
+      },
+      "questions": [
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-02-q1",
+          "prompt": "Why does Pooh turn his song into a hum?",
+          "facilitatorNotes": [
+            "If he keeps singing it will be time for “a little something,” and then the last line won’t be true. He wants his song to stay true."
+          ],
+          "evidence": [
+            "it will be time for the little something, and then the last line won't be true"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-02-q2",
+          "prompt": "What does Pooh know as soon as he sees the Big Boots?",
+          "facilitatorNotes": [
+            "That an Adventure is coming. He brushes the honey off his nose to look Ready for Anything."
+          ],
+          "evidence": [
+            "As soon as he saw the Big Boots, Pooh knew that an Adventure was going to happen"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-02-q3",
+          "prompt": "Pooh says “I know,” but he doesn’t really. Who else isn’t quite sure what a word means?",
+          "facilitatorNotes": [
+            "Christopher Robin: he calls the North Pole “just a thing you discover” because he is not quite sure himself."
+          ],
+          "evidence": [
+            "said Christopher Robin carelessly, not being quite sure himself"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-02-q4",
+          "prompt": "Pooh says, “I thought you said Provisions.” Why is that funny?",
+          "facilitatorNotes": [
+            "Christopher Robin did say Provisions. Pooh acts as if the explanation were what he had known all along."
+          ],
+          "evidence": [
+            "I thought you said Provisions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-milne-winnie-the-pooh-1931-03",
+      "title": "The Expotition to the North Pole — passing the message along",
+      "sourceId": "milne-winnie-the-pooh-1931",
+      "genre": "literary-prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 5,
+        "totalMinutes": 11
+      },
+      "challenge": "Follow a message as it changes from one animal to the next.",
+      "focus": "Each friend takes the news differently: Rabbit plays with it, Piglet worries, and Eeyore grumbles.",
+      "context": "Recap: Christopher Robin is leading an “Expotition” to discover the North Pole, though he is not sure what it is, and Pooh has gone to tell everyone to bring Provisions, which means things to eat. Rabbit’s friends-and-relations are his many small animal relatives. “Here we go gathering Nuts and May” is an old ring game.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, from Pooh meeting Rabbit to Pooh’s song about the Pole; opens “The first person he met was Rabbit.”; closes “…too— And where the Pole was none of them knew.... Sing Hey! for Owl and Rabbit and all!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-milne-winnie-the-pooh-1931-02",
+        "continuesTo": "reading-1-milne-winnie-the-pooh-1931-04",
+        "blocks": [
+          785,
+          825
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9f7c3146803bd3a1515a8c8c56bc95fb1a75af79481690cced72d14a2dfc5fb2"
+      },
+      "questions": [
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-03-q1",
+          "prompt": "What does Pooh tell Rabbit an Expotition is, and what does he say they will discover?",
+          "facilitatorNotes": [
+            "“A sort of boat,” and a Pole, or perhaps a Mole. The message is already changing as it travels."
+          ],
+          "evidence": [
+            "A sort of boat, I think",
+            "Or was it a Mole?"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-03-q2",
+          "prompt": "What worries Piglet, and what makes him feel better?",
+          "facilitatorNotes": [
+            "Something fierce with teeth; but if Christopher Robin is coming he doesn’t mind anything."
+          ],
+          "evidence": [
+            "It isn't their necks I mind",
+            "But if Christopher Robin is coming I don't mind anything."
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-03-q3",
+          "prompt": "Why does Eeyore say this isn’t an Expo-whatever at all, but “simply a Confused Noise”?",
+          "facilitatorNotes": [
+            "Rabbit’s relations crowd the end of the line, so he has to brush them away to sit down. Some children will agree it is a muddle; others will say Eeyore always finds something to grumble about."
+          ],
+          "evidence": [
+            "it's simply a Confused Noise"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-03-q4",
+          "prompt": "Pooh’s song says nobody knew where the Pole was. Is the song right?",
+          "facilitatorNotes": [
+            "Yes, and that is the joke: the song is truer than anyone will admit out loud. Enjoy the rhyme of “Pole” and “tole.”"
+          ],
+          "evidence": [
+            "where the Pole was none of them knew"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-milne-winnie-the-pooh-1931-04",
+      "title": "The Expotition to the North Pole — Hush, an Ambush, and a quiet question",
+      "sourceId": "milne-winnie-the-pooh-1931",
+      "genre": "literary-prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 5,
+        "totalMinutes": 12
+      },
+      "challenge": "Listen to “Hush!” travel down the line, and notice what happens at the very end.",
+      "focus": "Big words cause small muddles, and even the leaders keep a secret: they don’t know what they are looking for.",
+      "context": "Recap: the whole Expotition, from Christopher Robin at the front to Rabbit’s smallest relations at the back, has set off to discover the North Pole, and Pooh has made up a song about it. An ambush is a surprise attack from a hiding place. Gorse is a prickly bush, and a thistle is a prickly plant that donkeys like to eat.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, from the “Hush!” passed down the line to Christopher Robin’s talk with Rabbit; opens “\"Hush!\" said Christopher Robin turning round to Pooh, \"we're just coming to a Dangerous…”; closes “\"That's what we're looking for,\" said Christopher Robin.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-milne-winnie-the-pooh-1931-03",
+        "continuesTo": "reading-1-milne-winnie-the-pooh-1931-05",
+        "blocks": [
+          826,
+          866
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c9ec9f4a9f747809bbc663d74e242411ca63c689eb0a5a5d2faf7ec54c8af647"
+      },
+      "questions": [
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-04-q1",
+          "prompt": "What happens to the very last and smallest friend-and-relation when everyone says “Hush!” to him?",
+          "facilitatorNotes": [
+            "He buries himself head down for two days and then goes home to live quietly with his Aunt. A small word grows frightening by the end of the line."
+          ],
+          "evidence": [
+            "His name was Alexander Beetle."
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-04-q2",
+          "prompt": "Pooh thinks an Ambush might be a gorse-bush. Is he completely wrong?",
+          "facilitatorNotes": [
+            "A gorse-bush once “sprang” at him when he fell, so in Pooh’s way he has a point, which annoys Owl. Some children will side with Pooh, some with Owl."
+          ],
+          "evidence": [
+            "So is a gorse-bush sometimes"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-04-q3",
+          "prompt": "Eeyore gets Pooh’s thistle and then talks about “Thought for Others.” Why is that funny?",
+          "facilitatorNotes": [
+            "He is the one who just took Pooh’s seat and lunch, yet he lectures everyone else on thinking of others."
+          ],
+          "evidence": [
+            "A little Consideration, a little Thought for Others, makes all the difference."
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-04-q4",
+          "prompt": "Why does Christopher Robin take Rabbit aside? What do they both pretend?",
+          "facilitatorNotes": [
+            "He doesn’t want the others to hear that he doesn’t know what the North Pole looks like. Both pretend they knew once and forgot."
+          ],
+          "evidence": [
+            "I didn't want the others to hear",
+            "I did know once, only I've sort of forgotten"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-milne-winnie-the-pooh-1931-05",
+      "title": "The Expotition to the North Pole — Roo falls in and Pooh finds the Pole",
+      "sourceId": "milne-winnie-the-pooh-1931",
+      "genre": "literary-prose",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice what each friend does when Roo falls in, and who actually helps.",
+      "focus": "An ordinary pole, picked up to rescue a friend, becomes a great discovery.",
+      "context": "Recap: the Expotition has stopped beside a stream to eat its Provisions. Christopher Robin and Rabbit have agreed that the North Pole is probably “just a pole stuck in the ground,” but nobody knows where. Immersion means falling into water. To revive is to bring back strength.",
+      "contentNote": "Little Roo falls into the stream and is swept over two small waterfalls before he is pulled out safe.",
+      "excerpt": {
+        "locator": "Chapter VIII, from the return to the others to the end of the chapter; opens “They went back to the others. Piglet was lying on his back, sleeping peacefully. Roo was…”; closes “…and feeling very proud of what he had done, had a little something to revive himself.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-milne-winnie-the-pooh-1931-04",
+        "continuesTo": null,
+        "blocks": [
+          867,
+          918
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "832560bf92492f8b79d99b72f6818534444e1e95db66f0b0477db3f48a5707c4"
+      },
+      "questions": [
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-05-q1",
+          "prompt": "What does each friend do when Roo falls in? Whose help works?",
+          "facilitatorNotes": [
+            "Piglet jumps and squeaks, Owl gives advice, Kanga runs along the bank, Eeyore hangs his tail in the water, Christopher Robin and Rabbit rush about. Pooh and Kanga hold a pole across the stream, and Roo climbs out."
+          ],
+          "evidence": [
+            "Two pools below Roo he was standing with a long pole in his paws"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-05-q2",
+          "prompt": "What does Roo keep saying in the water? How does he feel about falling in?",
+          "facilitatorNotes": [
+            "“Look at me swimming!” He is proud, not frightened, while Kanga is anxious."
+          ],
+          "evidence": [
+            "Look at me swimming!"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-05-q3",
+          "prompt": "Why does Christopher Robin say Pooh has found the North Pole?",
+          "facilitatorNotes": [
+            "They decided the Pole would be a pole stuck in the ground, and Pooh has found a pole. Some children will think Christopher Robin believes it; others that he knows better and wants to honour Pooh. Both fit."
+          ],
+          "evidence": [
+            "You have found the North Pole!"
+          ]
+        },
+        {
+          "id": "reading-1-milne-winnie-the-pooh-1931-05-q4",
+          "prompt": "Eeyore says, “Well, anyhow—it didn’t rain.” What does that show about how he sees things?",
+          "facilitatorNotes": [
+            "He is not impressed, or he always expects the worst and is surprised by a small good thing. Ask which sounds more like the Eeyore they know."
+          ],
+          "evidence": [
+            "Well, anyhow—it didn't rain"
+          ]
+        }
+      ]
+    }
+  ]
+}
