@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "steel-english-fairy-tales-1922",
+  "author": "Flora Annie Steel (reteller of traditional English tales)",
+  "title": "English Fairy Tales",
+  "translator": null,
+  "edition": "New York: Macmillan, 1922; title page MCMXXII, original copyright 1918. Selected paragraphs and stanzas transcribed from the New York Public Library scan, with PG 17034 used only as a typing aid. In finalization every selected passage was re-screened against the scan OCR and flagged differences were checked against page images; three transcription errors were corrected (The Bogey-Beast, p. 270, “to see if her treasure”; The Three Bears, p. 24, “truant no one can say”; Lawkamercyme, p. 332, “all in the dark;”), and The Old Woman and Her Pig was typed from PG 17034 and corrected to pp. 252–255 (“hay-stack” as printed). Print line wraps joined, split-word line-end hyphens removed, typographic quotes represented in ASCII, dashes by -- (double dash by ----), initial small capitals in ordinary initial case and dialogue small capitals as capitals; italic type not separately encoded. Original paragraph and stanza boundaries retained; captions excluded. The library text holds the whole book under the same conventions (spaced ellipsis points written \" ...\" as in the nights; the book has no preface or other front matter by Steel). Outside the nights it was established from the scan's OCR, corrected by alignment with PG 17034: of 1,367 OCR/PG disagreements, 1,126 were decided on page images (genuine 1922 readings and misprints such as \"afaid\" kept), 239 OCR quote-mark and letter-confusion errors took the PG reading after sample image checks, and 2 line-end hyphens followed the book's own usage; PG paragraphing was corrected to the print in 15 places.",
+  "publicationYear": 1922,
+  "translationYear": null,
+  "url": "https://archive.org/details/englishfairytales00stee",
+  "textUrl": "https://archive.org/download/englishfairytales00stee/englishfairytales00stee_djvu.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "These original-English retellings are supplied from the Macmillan 1922 edition, dated MCMXXII on its title page and identified as 1922 by the contributing New York Public Library catalogue. Publication before 1931 places this edition in the US public domain as of 2026. Only historical narrative and verse are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/englishfairytales00stee"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://archive.org/download/englishfairytales00stee/englishfairytales00stee_djvu.xml",
+    "downloadSha256": "dcbfde8fb158dfe12c891c432947efb2b75f1ecc20d397878123bf314a293339",
+    "method": "Three files, hashed together in this order: (1) https://archive.org/download/englishfairytales00stee/englishfairytales00stee_djvu.xml (scan OCR with word boxes; downloadUrl), (2) https://archive.org/download/englishfairytales00stee/englishfairytales00stee.pdf (page images, 448 pages), (3) https://aleph.pglaf.org/cache/epub/17034/pg17034.txt (Project Gutenberg 17034, a later setting used only as a second witness); downloadSha256 is the SHA-256 of the three responses concatenated in that order. Pipeline (Python 3 and Node scripts): the OCR word layer was read page by page; running heads, folios, plate pages (illustrations, \"To face page\" captions, the illustration list), the title, contents and imprint pages, library stamps, signature marks and lettering inside headpieces were dropped by position and by 12 listed exceptions; words sharing a printed row were merged in reading order. The OCR was tokenised, line-end split words joined, and aligned with the PG 17034 body (illustration captions and transcriber matter removed) by difflib with local edit-distance realignment, giving 1,192 non-equal operations plus 173 case/hyphen differences inside equal spans. Mechanical classes, each checked on a sample of page images: OCR quote-mark debris against a PG quote (164 operations; sample 21 of 21 correct) and OCR glyph confusions such as li/h, ff/fl, y/3r (75; sample 29 of 29) took PG's reading; line-end hyphenated words took the book's own nearest unbroken spelling where it has one, otherwise PG's (295 breaks; book usage differed from PG twice: \"bedridden\", \"hay-stack\"). Every other disagreement was decided from a numbered crop of the page image, with full-line views where needed: 953 operations (593 scan reading kept, 331 PG reading, 29 other readings such as a double dash or the stacked alternatives \"me/she\" and \"we/you\" on p. 106) and 173 equal-span case/hyphen differences (80 scan form, 92 PG form, 1 other); genuine 1922 readings win over PG (e.g. \"sate\", \"Goldilocks'\", \"hand gallop\", the misprints \"afaid\" and \"Milk-White\"); all 1,367 decisions are logged with their evidence. Blocks follow PG's blank-line paragraphs, corrected to the print where its indentation disagrees (4 joins, 11 splits, each checked on the image); a quote mark falling at a block edge was moved to its paragraph by quote parity (6 places). Indented PG chunks became stanzas with the scan's printed lines (two turnover lines rejoined, one single printed display line made a paragraph); single display lines are paragraphs. Headings: the book title (level 1), the 41 tale titles in capitals as printed (level 2), Jack the Giant-Killer's part numerals I-VII and the six Gotham episode titles in caps and small caps as printed (level 3). Edition conventions as in edition; spaced ellipsis points written \" ...\". 11 of the 12 Kindergarten nights from this book were located block for block; the Three Bears night reading-k-w04-d2 was not, because it breaks the display line \"SOMEBODY HAS BEEN SITTING IN MY CHAIR, AND HAS SATE THE BOTTOM THROUGH!\", printed as one line on p. 22, into a two-line stanza following PG 17034's line wrap."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2033,
+    "sha256": "49839ffa8c7935eef9799ddbf39bf9b1fd4e54eb2d7a8e8695c752eec7f27838"
+  }
+}

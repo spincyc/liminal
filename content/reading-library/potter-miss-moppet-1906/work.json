@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "potter-miss-moppet-1906",
+  "author": "Beatrix Potter",
+  "title": "The Story of Miss Moppet",
+  "translator": null,
+  "edition": "Project Gutenberg 14848 transcription of Frederick Warne text first published and copyrighted in 1906; printing undated (William Clowes). No earlier scan was located; the Wikisource transcription of a later Warne printing agrees in wording. Narrative only; illustrations, publisher and digitizer matter excluded. Prose line wrapping joined; paragraph and verse boundaries, punctuation, spelling and plain-text emphasis markers (underscores) retained. The library text holds the whole tale: its title as a heading, and every paragraph of the narrative; the title, copyright and printer’s pages, illustrations and “THE END” are omitted.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/14848",
+  "textUrl": "https://www.gutenberg.org/cache/epub/14848/pg14848.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Potter’s original English narrative was published in 1906, before 1931; its US publication term has expired as of 2026. Project Gutenberg identifies this English text as public domain in the USA. No modern introduction, illustration, or new editorial matter is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/14848"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/14848/pg14848.txt",
+    "downloadSha256": "cd8d876248cb0136b6852e753d0c046c2d35232e8c1e29d5653e2ed52fb83181",
+    "method": "Project Gutenberg plain text (pg14848.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and any transcriber’s or production notes removed; [Illustration] placeholders, the title, copyright and printer’s pages and “THE END” omitted. The tale’s title became a level-1 heading; every flush-left blank-line separated group became a paragraph with wrapped lines joined by single spaces, and indented verse groups became stanzas with leading indentation removed. Underscore italics and double-hyphen dashes kept as transcribed. Every Kindergarten night from this tale was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 15,
+    "sha256": "dc98f7479dd76f2e8da7daebcf6f61fd1d43c87ffb79e497e09a409645a6f673"
+  }
+}

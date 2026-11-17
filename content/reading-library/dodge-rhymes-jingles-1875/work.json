@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "dodge-rhymes-jingles-1875",
+  "author": "Mary Mapes Dodge",
+  "title": "Rhymes and Jingles",
+  "translator": null,
+  "edition": "New York: Scribner, Armstrong, and Company, 1875 (copyright 1874). Project Gutenberg transcription; line indentation and separator whitespace normalized, prose hard-wraps joined, and illustration placeholders omitted; verse lines and stanzas retained. The library text holds the dedication “TO THE CHILDREN.” and every rhyme from “RHYMES AND JINGLES.” to the CHILDREN’S HYMN, with the book’s one footnote; poem titles are headings, including titles the PG transcriber moved from the printed page headers to above their poems; the printed rules between untitled rhymes, the publisher’s advertisements, title and copyright pages and contents are omitted.",
+  "publicationYear": 1875,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/46486",
+  "textUrl": "https://www.gutenberg.org/cache/epub/46486/pg46486.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in the stated 1875 edition, before 1931, and its US copyright term has expired as of 2026. The Gutenberg catalogue expressly marks this ebook public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/46486"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/46486/pg46486.txt",
+    "downloadSha256": "85e57e58de159f4a904fab378be394b0899ca52d998b5eaf2f50368528b5410f",
+    "method": "Project Gutenberg plain text (pg46486.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and transcriber’s notes removed; [Illustration] placeholders and their captions removed; the Hans Brinker advertisements at both ends, the title and copyright pages and the contents omitted, and the dashed rules printed between rhymes dropped. Flush-left capitalised one-line titles became headings (level 1 for “RHYMES AND JINGLES.” and the section “GARDEN SONGS.”, level 3 for Roman part numbers inside a poem, level 2 otherwise); indented blank-line separated groups became stanzas with leading indentation removed; the hymn tune line “AIR, …” and the footnote are paragraphs, the footnote in Project Gutenberg’s form “[Footnote 1: …]” with its [1] anchor kept in the title. The transcription’s =equals= bold markers, _underscore_ italics and double-hyphen dashes are kept, and its notes record repaired punctuation errors and one corrected misprint (“litttle”). Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 886,
+    "sha256": "b12a721c5efd4688600065ae4b8dbc6cc00b374e51c7e3b703f111bfc29cde43"
+  }
+}

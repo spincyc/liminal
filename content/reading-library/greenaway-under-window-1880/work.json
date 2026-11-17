@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "greenaway-under-window-1880",
+  "author": "Kate Greenaway",
+  "title": "Under the Window: Pictures & Rhymes for Children",
+  "translator": null,
+  "edition": "New York: George Routledge & Sons, 416 Broome Street; Michigan copy catalogued 1880, Internet Archive aek2791.0001.001.umich.edu. Direct transcription of the scanned pages, visually proofread line by line. Small capitals represented by ordinary capitals; typeface and indentation omitted. Poems are unheaded and identified by opening words and printed page. This is not the undated Frederick Warne Gutenberg reprint. The library text holds every rhyme of the book (printed pages 15–64) in page order as unheaded stanzas under the book title; the title page, contents, illustrations, artist’s monogram and page numbers are omitted. Italic type (bow-wow, you, us) is not encoded, curly quotation marks and apostrophes follow the print, and spaces the print sets before punctuation and inside contractions are closed up.",
+  "publicationYear": 1880,
+  "translationYear": null,
+  "url": "https://archive.org/details/aek2791.0001.001.umich.edu",
+  "textUrl": "https://archive.org/download/aek2791.0001.001.umich.edu/aek2791.0001.001.umich.edu.pdf",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in 1880, before 1931, and its US publication copyright term has expired by 2026. Only the historical poem text is reproduced; modern editorial material and illustrations are excluded.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/metadata/aek2791.0001.001.umich.edu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://archive.org/download/aek2791.0001.001.umich.edu/aek2791.0001.001.umich.edu.pdf",
+    "downloadSha256": "85b813cf147cf23e178cefda84b6ca36f707af359b4b8d3c82920e8d21e3f746",
+    "method": "Direct transcription from the Michigan scan (aek2791.0001.001.umich.edu.pdf, with its djvu.xml OCR as a draft): every page from printed 15 to 64 was viewed whole to find all its text (the OCR misses lines set in or beside pictures, e.g. the first stanza on p. 36 and the rhymes on pp. 21, 35 and 64), then each text block was read from 120–600 dpi crops. The seventeen pages already proofread for Kindergarten nights (pp. 15, 17–19, 22–24, 27–29, 34, 38, 40, 42, 47, 49, 51) are carried over verbatim from those nights. Each page’s rhyme became stanza blocks, leading small capitals given as capitals; two-column pages are read column by column, except the Twelve Miss Pelicoes (p. 56), whose stanzas are set top right, bottom left, bottom right and are given in that sense order, the order of the later Warne setting (Gutenberg 22888). Printed readings are kept: p. 26 ends “say ‘No.’” with no closing double quotation mark; p. 35 has no stop after “tune”; the five spaced asterisks on p. 53 are kept as a stanza. The faint accent in “charmèd” (p. 21) is read as a grave. Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 112,
+    "sha256": "2963cb159becb53eac333e49655f463d0f5dfa1da5edaf6f0bf9987a44c43ce1"
+  }
+}

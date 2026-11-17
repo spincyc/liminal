@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "allingham-rhymes-young-folk-1887",
+  "author": "William Allingham",
+  "title": "Rhymes for the Young Folk",
+  "translator": null,
+  "edition": "Cassell and Company, Limited, London, Paris, New York and Melbourne, Smithsonian copy catalogued 1887 (Internet Archive Rhymesyoungfolk00Alli). Selected text fully collated line by line against its primary page images, using Gutenberg 46702 as transcription base without claiming its print exemplar is known. The second stanza of I Love You, Dear ends with the comma in the scan, correcting the period in Gutenberg. Plain-text conventions retained: straight quotation marks and apostrophes, double hyphens for em dashes, underscores for italics, capitals for small capitals; indentation normalized; illustrations and repeated musical setting excluded. The library text holds the whole book from the dedication and motto verse to “A RIDDLE”, taken from Gutenberg 46702 with the one scan correction above; only the poems used as nightly readings were collated with the scan, and the other poems follow Gutenberg 46702 as transcribed. Poem titles are headings; the title page, contents, list of illustrations, the pictorial “Introduction” page, illustrations, musical settings and the publisher’s catalogue are omitted.",
+  "publicationYear": 1887,
+  "translationYear": null,
+  "url": "https://archive.org/details/Rhymesyoungfolk00Alli",
+  "textUrl": "https://archive.org/download/Rhymesyoungfolk00Alli/Rhymesyoungfolk00Alli.pdf",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in 1887, before 1931, and its US publication copyright term has expired by 2026. Only the historical poem text is reproduced; modern editorial material and illustrations are excluded.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/metadata/Rhymesyoungfolk00Alli"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/46702/pg46702.txt",
+    "downloadSha256": "53b3decd88ad7683014efaa4fd53d7ea96ee2ec3168c7ff927154c11a6e6047a",
+    "method": "Project Gutenberg plain text (pg46702.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and transcriber’s note removed; [Illustration] placeholders (including the pictured musical settings), the title page, contents, list of illustrations, the “Introduction.” picture heading and the Cassell catalogue omitted. The dedication lines became one stanza; the italic motto verse one stanza; flush-left capitalised titles level-2 headings (“THE LEPRACAUN; OR, FAIRY SHOEMAKER.” joined from three lines); flush-left Roman part numbers level-3 headings; other flush-left lines (“(A JUVENILE CHORUS.)”, “(_Tyrol._)”, “[AD INFINITUM.]”) paragraphs; indented groups stanzas with leading indentation removed. One emendation from the scan, already declared for the nightly reading: the second stanza of “I LOVE YOU, DEAR.” ends “beside you, Dear,” with a comma where Gutenberg has a period. Straight quotes, double-hyphen dashes, _underscore_ italics and =equals= bold kept as transcribed. Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 162,
+    "sha256": "ede276a96f17f3adeff06a8b65ec6274a44efca1202bd93ed14ae420fdfd8912"
+  }
+}

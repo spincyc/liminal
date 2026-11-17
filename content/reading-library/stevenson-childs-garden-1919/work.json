@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "stevenson-childs-garden-1919",
+  "author": "Robert Louis Stevenson",
+  "title": "A Child’s Garden of Verses",
+  "translator": null,
+  "edition": "Project Gutenberg 28722 transcription of the J. B. Lippincott Company (Philadelphia and London) illustrated text, “Fifth Impression”; illustrations copyright 1919 by J. B. Lippincott Company; printing undated. Stevenson’s verse was first published in 1885. Line indentation and separator whitespace normalized, prose hard-wraps joined, and illustration placeholders omitted; verse lines and stanzas retained. The library text holds the whole book from the author’s dedication to the last envoy: each poem’s printed number and title form one heading, joined as in the printed contents (“I. BED IN SUMMER”); the publisher’s series list, title and imprint pages, contents, list of illustrations, illustration captions and transcriber’s note are omitted.",
+  "publicationYear": 1919,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/28722",
+  "textUrl": "https://www.gutenberg.org/cache/epub/28722/pg28722.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Stevenson’s original English verse was first published in 1885, and this Lippincott text carries a 1919 copyright leaf; both precede 1931, so the US term has expired as of 2026. The Gutenberg catalogue expressly marks this ebook public domain in the USA. Maria L. Kirk’s illustrations are not reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/28722"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/28722/pg28722.txt",
+    "downloadSha256": "09bd8bde1e454150477cf6b7a1d0191ff14e11c8d7f87b7787e82acf0a5069a8",
+    "method": "Project Gutenberg plain text (pg28722.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed; [Illustration] placeholders and their captions removed; publisher series list, title and imprint pages, contents and list of illustrations dropped; the dedication “TO ALISON CUNNINGHAM FROM HER BOY” kept. Blank-line separated groups became blocks: verse groups as stanzas with each line’s leading indentation removed; the section titles (A CHILD’S GARDEN OF VERSES, THE CHILD ALONE, GARDEN DAYS, ENVOYS) as level-1 headings; each poem’s Roman number and title as one level-2 heading; part numbers inside poems as level-3 headings; the dedication signature “R. L. S.” as a paragraph. Underscore italics and double-hyphen dashes kept as transcribed. Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 321,
+    "sha256": "ad524bdbde7131886cbed6bbf65012ca4ce6a09290861b5fffc7a1e90a3dca7a"
+  }
+}

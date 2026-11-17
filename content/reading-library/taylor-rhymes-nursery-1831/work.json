@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "taylor-rhymes-nursery-1831",
+  "author": "Ann Taylor and Jane Taylor",
+  "title": "Rhymes for the Nursery",
+  "translator": null,
+  "edition": "London: Harvey and Darton, twenty-third edition, 1831. Individual poems retain their wording; the authors’ initials printed after poems are not part of any poem’s text. Project Gutenberg transcription; line indentation and separator whitespace normalized, prose hard-wraps joined, and illustration placeholders omitted; verse lines and stanzas retained. The library text holds the authors’ preface and every poem with its printed title as a heading, keeping as separate lines the authors’ initials (A.T., J.T.) that close some poems; the frontispiece, title page, contents, printer’s imprint, publisher’s catalogue and transcriber’s notes are omitted.",
+  "publicationYear": 1831,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/77549",
+  "textUrl": "https://www.gutenberg.org/cache/epub/77549/pg77549.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in the stated 1831 edition, before 1931, and its US copyright term has expired as of 2026. The Gutenberg catalogue expressly marks this ebook public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/77549"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/77549/pg77549.txt",
+    "downloadSha256": "3ad9b9e416a70f0ba6c9bef4076ad9f9dde9d6801c85ced220c70936bcb1a953",
+    "method": "Project Gutenberg plain text (pg77549.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed; cover and frontispiece placeholders, the title page, contents, “THE END” and printer’s imprint, the Harvey and Darton catalogue and the transcriber’s notes omitted. The PREFACE (two prose paragraphs, wrapped lines joined) and the poems from “RHYMES FOR THE NURSERY.” on were converted: the centred book title as one level-1 heading, each centred one-line poem title as a level-2 heading, every indented blank-line separated group as a stanza with leading indentation removed (right-set refrains such as “My baby.” become ordinary lines), and a closing author initial line (A.T. or J.T.) split into its own paragraph. The transcriber’s note (omitted) records that the PG text corrects misspellings and printer errors and changed the heading “The Flower and the Lady, about getting up” to match the contents. Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 444,
+    "sha256": "4cbdc5e10fa91a1216a6da0011880fd9e49d78d7302e1b7a44b707bc5c73849e"
+  }
+}

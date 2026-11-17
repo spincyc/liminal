@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "rossetti-sing-song-1893",
+  "author": "Christina Rossetti",
+  "title": "Sing-Song: A Nursery Rhyme Book",
+  "translator": null,
+  "edition": "London: Macmillan and Co., 1893, with illustrations by Arthur Hughes omitted. Project Gutenberg transcription; line indentation and separator whitespace normalized, prose hard-wraps joined, and illustration placeholders omitted; verse lines and stanzas retained. The library text holds every rhyme of the book in printed order as untitled stanzas, as the book prints them; the title page and the contents (an index of first lines) are omitted.",
+  "publicationYear": 1893,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/76703",
+  "textUrl": "https://www.gutenberg.org/cache/epub/76703/pg76703.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in the stated 1893 edition, before 1931, and its US copyright term has expired as of 2026. The Gutenberg catalogue expressly marks this ebook public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/76703"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/76703/pg76703.txt",
+    "downloadSha256": "878c65ec43a4519f6b6053052ed9016f844ef6fbf8881b52b35b8180f6c73c9e",
+    "method": "Project Gutenberg plain text (pg76703.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed; the title page and the first-line contents omitted; every blank-line separated group from the first rhyme (“Angels at the foot,”) to the last became one stanza, line breaks kept and no leading indentation present. The rhymes are untitled in the book, so the work has no headings. Typographic quotes and dashes kept as transcribed. Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 215,
+    "sha256": "c5a267b23dfcc0225668dd1eb7a6a7a5f7285d548c3a20e46c30e28465552557"
+  }
+}
