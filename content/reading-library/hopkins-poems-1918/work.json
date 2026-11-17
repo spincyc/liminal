@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "hopkins-poems-1918",
+  "author": "Gerard Manley Hopkins",
+  "title": "Poems of Gerard Manley Hopkins, now first published",
+  "translator": null,
+  "edition": "Edited by Robert Bridges; London: Humphrey Milford, 1918. Project Gutenberg 22403 transcription. Poem numbers/titles are in metadata; original verse and stanza boundaries, including the transcription’s displayed continuation lines and indentation, are retained. Underscore emphasis and double hyphens are retained; boilerplate and editorial notes omitted. The library text holds Hopkins's own Author's Preface and every poem and fragment (Early Poems, Poems 1876-1889, Unfinished Poems & Fragments); the title page, Bridges's dedicatory sonnet, the Editor's Preface to Notes and Notes, two editorial footnotes inside the Author's Preface, a facsimile reference and the transcriber's notes are omitted. Poem numbers and titles become headings without their italic underscores.",
+  "publicationYear": 1918,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/22403",
+  "textUrl": "https://www.gutenberg.org/cache/epub/22403/pg22403.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The English text in this 1918 edition was published before 1931; its US publication copyright term has expired as of 2026. The linked primary transcription/catalogue identifies its US public-domain status. No later editorial introduction is included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/22403"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/22403/pg22403.txt",
+    "downloadSha256": "4d0bc2a9ebf06d55852844997172fa2c968f0ddc5c5b43677f548052de696d49",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 22403), CRLF line ends normalised. Kept the text from the Author's Preface up to EDITOR'S NOTES; removed the Gutenberg header, footer and licence, the page markers (1) and (7), the two bracketed editorial footnotes in the Author's Preface, the facsimile reference and transcriber's note after poem 67. Author's Preface paragraphs joined with single spaces; every block after it kept line for line as a stanza, with the transcription's leading indentation and continuation lines exactly as displayed. Poem number and title lines (joined when the title ran across a blank line) became level-3 headings, the book's section titles level-2 headings."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 378,
+    "sha256": "7eb3dabc1afe7588eed1660663ed280e2cd7064bd8248bc70fb618e7d08ba0f3"
+  }
+}

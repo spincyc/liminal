@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "wollstonecraft-vindication-1792",
+  "author": "Mary Wollstonecraft",
+  "title": "A Vindication of the Rights of Woman",
+  "translator": null,
+  "edition": "Boston: printed by Peter Edes for Thomas and Andrews, 1792 (MDCCXCII on the title page). Scan-backed Wikisource transcription. Prose line wrapping is collapsed within retained paragraphs; HTML emphasis becomes plain text. Printed page numbers, navigation, footnote reference markers, and zero-width page-boundary characters are omitted; main-text wording and punctuation are retained. Original verse line breaks are preserved where present. Apparent errors present in the linked transcription are retained rather than silently corrected; this extraction check is not a fresh complete print-image collation. The library text holds the dedication to Talleyrand-Périgord, the Introduction and Chapters I to XIII with their printed chapter, part and section headings; the title page and contents are omitted, and so are the author's seventy-five footnotes. Rule lines are left out; the rows of spaced points in Chapter V are kept as paragraphs.",
+  "publicationYear": 1792,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:Vindication_Women%27s_Rights_(Wollstonecraft).djvu",
+  "textUrl": "https://en.wikisource.org/wiki/A_Vindication_of_the_Rights_of_Woman",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1792, before 1931, and is public domain in the United States as of 2026. The linked scan index identifies the printed edition; no modern editorial material is supplied.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:Vindication_Women%27s_Rights_(Wollstonecraft).djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/index.php?title=A_Vindication_of_the_Rights_of_Woman/Dedication&action=render",
+    "downloadSha256": "70bf35fa8a12340b35ae5196d672ab6a5f8b12cc1d86e71f5c991ba096a9c4f9",
+    "method": "Wikisource rendered page HTML (index.php action=render) for the fifteen subpages in printed order: A Vindication of the Rights of Woman/Dedication, /Introduction and /Chapter I to /Chapter XIII (revisions 7347881, 7347877, 7347882, 7347326, 7347325, 7347324, 7347323, 7346277, 7346261, 7347320, 7353640, 7347884, 7347885, 7357171, 7359631); downloadSha256 is the SHA-256 of the fifteen responses concatenated in that order and downloadUrl the first of them. Only the transcluded scan text is used: Wikisource headers, page-number anchors, footnote markers and lists, gap spacers and zero-width page-boundary characters removed; chapter, part and section headings and centred chapter titles became headings (the three-line half-title before Chapter I joined as one); centred verse quotations became stanza blocks, one line per line break; other paragraphs joined with whitespace collapsed; emphasis flattened."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 811,
+    "sha256": "f81fa24b5803cd16258cbd235e774687578002405a0251ee0f3a9cba9e89444b"
+  }
+}

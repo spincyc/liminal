@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "russell-problems-1912",
+  "author": "Bertrand Russell",
+  "title": "The Problems of Philosophy",
+  "translator": null,
+  "edition": "London: Williams and Norgate; New York: Henry Holt and Co., 1912, Home University Library of Modern Knowledge. Scan-backed Wikisource transcription. Prose line wrapping is collapsed within retained paragraphs; HTML emphasis becomes plain text. Printed page numbers, navigation, footnote reference markers, and zero-width page-boundary characters are omitted; main-text wording and punctuation are retained. Original verse line breaks are preserved where present. Apparent errors present in the linked transcription are retained rather than silently corrected; this extraction check is not a fresh complete print-image collation. The library text holds Russell's Preface, Chapters I to XV with their printed numbers and titles, and the Bibliographical Note; the series title page, imprint, contents and the book's index are omitted, and so is the author's single footnote.",
+  "publicationYear": 1912,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:Russell_-_The_Problems_of_Philosophy,_1912.djvu",
+  "textUrl": "https://en.wikisource.org/wiki/The_Problems_of_Philosophy",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1912, before 1931, and is public domain in the United States as of 2026. The linked scan index identifies the printed edition; no modern editorial material is supplied.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:Russell_-_The_Problems_of_Philosophy,_1912.djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/index.php?title=The_Problems_of_Philosophy&action=render",
+    "downloadSha256": "e8f6846b0694349ef89f4c3663081ae5c135e25690f71472191afe526ebc8a20",
+    "method": "Wikisource rendered page HTML (index.php action=render) for the main page and its sixteen subpages in printed order: The Problems of Philosophy (for the Preface), /Chapter 1 to /Chapter 15 and /Bibliographical Note (revisions 10776472, 4983373, 4983681, 4983679, 4986625, 4987838, 4987971, 4995436, 11514645, 4996131, 4996387, 4996412, 4997116, 4997120, 4997136, 4997141, 4995648); downloadSha256 is the SHA-256 of the seventeen responses concatenated in that order and downloadUrl the first of them. Only the transcluded scan text is used: Wikisource headers, page-number anchors, footnote markers and lists and zero-width page-boundary characters removed; the title page, imprint and contents of the main page dropped; centred titles became headings; paragraphs and bibliography entries joined with whitespace collapsed; emphasis flattened."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 318,
+    "sha256": "18ed60c1674ada50dcf582a9d43b7958c1b62683291194e1da42f50570a86ef8"
+  }
+}

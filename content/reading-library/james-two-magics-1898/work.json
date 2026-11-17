@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "james-two-magics-1898",
+  "author": "Henry James",
+  "title": "The Turn of the Screw, in The Two Magics",
+  "translator": null,
+  "edition": "New York: The Macmillan Company; London: Macmillan & Co., Ltd., 1898. Scan-backed Wikisource transcription of this edition; chapter headings, navigation and page-number anchors omitted from prose excerpts; HTML line-wrapping whitespace collapsed. The library text holds the whole volume's fiction: The Turn of the Screw (the untitled prologue and Chapters I to XXIV) and Covering End (Chapters I to VIII), each under its printed title and chapter numerals; the title page, contents and publisher's advertisements are omitted. The Wikisource Covering End Chapter 7 page also transcludes the opening of Chapter VIII from the shared scan page; that repeated passage is kept once, under Chapter VIII.",
+  "publicationYear": 1898,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/The_Two_Magics_(New_York:_The_Macmillan_Company,_1898)",
+  "textUrl": "https://en.wikisource.org/wiki/The_Two_Magics_(New_York:_The_Macmillan_Company,_1898)/The_Turn_of_the_Screw",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This 1898 English-language edition was published before 1931 and is in the US public domain as of 2026; only James’s narrative is supplied, with no modern annotation.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Page:Two_Magics.djvu/7"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/index.php?title=The_Two_Magics_(New_York:_The_Macmillan_Company,_1898)/The_Turn_of_the_Screw&action=render",
+    "downloadSha256": "3ba3acf27f7ef4f08c85270f7015358b01b8fb7a251396574fc0a40f1a85403f",
+    "method": "Wikisource rendered page HTML (index.php action=render) for thirty-four pages in printed order: The Two Magics (New York: The Macmillan Company, 1898)/The Turn of the Screw, its /Chapter 1 to /Chapter 24, /Covering End and its /Chapter 1 to /Chapter 8 (revisions 13915428, 13915455, 13895741, 13896472, 13896103, 13896010, 13896125, 13896269, 13895629, 13896400, 13895096, 13895356, 13896017, 13895502, 13895704, 13895210, 13896672, 13894956, 13894990, 13895709, 13896697, 13896076, 13895133, 13895141, 13897026, 14020747, 13915467, 13894551, 13904177, 13894746, 13904132, 13894745, 13903843, 13896030); downloadSha256 is the SHA-256 of the thirty-four responses concatenated in that order and downloadUrl the first of them. Only the transcluded scan text is used: Wikisource headers, page-number anchors and zero-width page-boundary characters removed (the transcription has no footnotes); the Covering End title page dropped; story titles and chapter numerals became headings; paragraphs joined with whitespace collapsed; emphasis flattened."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1847,
+    "sha256": "f110ad5ba867feb66930dabef70e881452d82aaeac6d9b1398b1175174a051fb"
+  }
+}
