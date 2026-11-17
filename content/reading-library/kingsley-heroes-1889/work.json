@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "kingsley-heroes-1889",
+  "author": "Charles Kingsley",
+  "title": "The Heroes; Or, Greek Fairy Tales for My Children",
+  "translator": null,
+  "edition": "London and New York: Macmillan and Co., 1889, explicitly identified by the transcriber and printed title page. Kingsley composed this English retelling; it is not a modern English translation of an ancient text. Project Gutenberg transcription; only prose line-wrap whitespace is collapsed to single spaces, paragraph boundaries and punctuation are retained; embedded verse retains its line breaks. Illustrations, captions, front matter and digitizer notes are not selected. The library text holds the author’s dedication and preface and all three stories; runs of spaces are collapsed, and each part number is joined with its title as a heading.",
+  "publicationYear": 1889,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/677",
+  "textUrl": "https://www.gutenberg.org/cache/epub/677/pg677.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original-English text is from the 1889 edition described above, before 1931. Project Gutenberg explicitly lists this ebook as public domain in the USA; no modern editorial introduction or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/677"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/677/pg677.txt",
+    "downloadSha256": "2f2993305b1c2b3b772caa887275bcf697ff24c706ba2656e4cbccf49e5230ec",
+    "method": "Project Gutenberg plain text (eBook 677, UTF-8, CRLF normalised to LF) from the PG mirror. Kept Kingsley’s dedication to his children, his preface with its place and date, and the three stories in all their parts, up to THE END; removed the PG header and footer, title page, contents, [Picture: …] captions, the closing printer’s line and star rows. Blank-line separated paragraphs were joined with single spaces, runs of spaces collapsed to one (the transcription’s double spaces after sentences are not kept, as in the nightly readings); the dedication and the preface’s place and date keep their lines; story titles are level-1 headings and each part number is joined with its title in a level-2 heading; the one star divider inside the Argonauts stays as a one-line paragraph. Converted by a scratch Node script; every nightly reading was located exactly. Kingsley’s footnotes, which PG gathers after the end of the book under Footnotes (keyed {96} … {133} by printed page), follow THE END there: the label is a paragraph and each note a [Footnote mark: …] paragraph, and their calls in the text are [96] … [133]."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 858,
+    "sha256": "174f9a429250bf2a6d48a5885e2ab9422262bfe6db24bf6e7820b1e861907449"
+  }
+}

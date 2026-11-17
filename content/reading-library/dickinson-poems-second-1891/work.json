@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "dickinson-poems-second-1891",
+  "author": "Emily Dickinson",
+  "title": "Poems: Second Series",
+  "translator": null,
+  "edition": "Boston: Roberts Brothers, 1891, edited by Thomas Wentworth Higginson and Mabel Loomis Todd. Scan-backed Wikisource transcription of this early editorial text, not a modern restored manuscript edition. HTML emphasis is flattened, nonbreaking spaces become spaces, and layout indentation/trailing whitespace are normalized. Poetry lines and stanza boundaries are retained; titles and page-navigation labels are excluded from blocks. Each poem locator names the corresponding subpage. The library text holds every poem in the book; the editors’ preface and the facsimile are not included.",
+  "publicationYear": 1891,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Poems:_Second_Series_(Dickinson)",
+  "textUrl": "https://en.wikisource.org/wiki/Poems:_Second_Series_(Dickinson)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text in this 1891 edition was published before 1931 and is public domain in the United States in 2026. The dated source and its public-domain record are linked; no modern introductions, annotations, or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Poems:_Second_Series_(Dickinson)"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?format=json&formatversion=2&action=parse&title=Poems%3A+Second+Series+%28Dickinson%29&text=%3Cpages+index%3D%22Emily+Dickinson+Poems+-+second+series+%281891%29.djvu%22+from%3D1+to%3D248+%2F%3E&prop=text&contentmodel=wikitext",
+    "downloadSha256": "0b0282ba70a9bea1cf14aeb1204b8fb6348c4077bc75af725b0b9ed1d60cff6a",
+    "method": "Whole library text: every page of the scan-backed Wikisource transcription (Index: Emily Dickinson Poems - second series (1891).djvu, pages 1–248) rendered in one MediaWiki API request that transcludes them in order (the download URL; sent as a POST with the same parameters), converted by a scratch Node script. Kept the prelude poem and all four books (Life, Love, Nature, Time and Eternity) with every poem; excluded the publisher’s advertisement, the facsimile frontispiece, title and copyright pages, Mabel Loomis Todd’s preface (with the letter it quotes) and the contents, which are the editors’, not the author’s. Each book’s number and name form one heading, the page caption POEMS. is kept as printed, and each poem’s number and title form one heading; stanzas are split at the transcription’s blank lines and keep their lines without indentation; the drop capital and capitalised opening word, small capitals and inline emphasis are flattened to plain text (the opening word stays in capitals as printed). Transcription spellings are kept as given. Every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 679,
+    "sha256": "00295e58ff6815e2b776cf46d43af8060fd7ae0a80592d7d8a638a92d638acac"
+  }
+}

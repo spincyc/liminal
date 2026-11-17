@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "lamb-tales-shakespeare-1908",
+  "author": "Charles Lamb and Mary Lamb",
+  "title": "Tales from Shakespeare",
+  "translator": null,
+  "edition": "London: J. M. Dent & Co.; New York: E. P. Dutton & Co., Everyman’s Library, January 1908 reprint (first issued in this series February 1906), with illustrations by Arthur Rackham. Source is the scan-backed Wikisource transcription of this dated volume; illustrations, captions, navigation and modern introductory matter are excluded. Inline emphasis and drop-cap styling are flattened, page labels removed, and line wrapping joined. Verse lines are retained, and the printed heading SONG in Twelfth Night is kept as a heading. Paragraphs split solely by inserted illustration pages in As You Like It and Twelfth Night are rejoined. Because the Wikisource pages are proofread only once (level 3), every page of the four tales was collated, words and punctuation, against two independent OCRs of the same scan (Internet Archive talesfromshakesp1908lamb, the source of the Wikisource index): a fresh tesseract OCR of the full-size page images and the Archive’s own OCR. Every place where both OCRs disagreed with the transcription, and every punctuation or capitalisation disagreement from either OCR, was checked on the page image. 98 transcription errors are corrected to the print: in A Midsummer Night’s Dream 17 (daughter’s, father’s, stern, Duke, Fairies, forsworn, churn with dairy-maid, honey-bags and nine punctuation marks), in As You Like It 16 (including moralising, forego, lover, “to agree to this”, lady Rosalind four times and newly-conceived), in The Comedy of Errors 24 and in Twelfth Night 41 (including him, even, this, three hours’, Lady Olivia, love-songs and mean time); in those two tales the transcriber had typed a colon before quoted speech where the print has a comma, and 40 such colons are restored to commas. Two marks the scan leaves ambiguous (after “living” on p. 189 and after “after” on p. 192) are left as transcribed. The full list is kept with the verification scripts. The four selected tales are Mary Lamb’s: Charles Lamb’s letter to Wordsworth of 29 January 1807, printed in E. V. Lucas’s edition of their Works (vol. III, 1903), names the six tragedies he wrote and says “The rest is my Sister’s,” and the volume’s Editor’s Note (Ernest Rhys) names A Midsummer Night’s Dream among her tales. Outside A Midsummer Night’s Dream, As You Like It, The Comedy of Errors and Twelfth Night the library text is the Wikisource transcription as proofread there, without the page-by-page collation.",
+  "publicationYear": 1908,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Tales_from_Shakespeare,_illus._Rackham_(1908)",
+  "textUrl": "https://en.wikisource.org/wiki/Tales_from_Shakespeare,_illus._Rackham_(1908)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The scan-backed volume’s publishing history states Reprinted January 1908 and names J. M. Dent and E. P. Dutton. The selected original-English Lamb prose was therefore published before 1931 and is public domain in the United States in 2026. No modern adaptation, editorial introduction or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:Tales_from_Shakespeare_-_Lamb_C_and_M,_Rackham_A_(1908).djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?format=json&formatversion=2&action=parse&title=Tales+from+Shakespeare%2C+illus.+Rackham+%281908%29&text=%3Cpages+index%3D%22Tales+from+Shakespeare+-+Lamb+C+and+M%2C+Rackham+A+%281908%29.djvu%22+from%3D1+to%3D372+%2F%3E&prop=text&contentmodel=wikitext",
+    "downloadSha256": "f366c6b3cbfcbc200aff913dac63470eab3764325ce9788c209ff1a75dfd55da",
+    "method": "Whole library text: every page of the scan-backed Wikisource transcription (Index: Tales from Shakespeare - Lamb C and M, Rackham A (1908).djvu, pages 1–372) rendered in one MediaWiki API request that transcludes them in order (the download URL; sent as a POST with the same parameters), converted by a scratch Node script. Kept the Lambs’ Preface and all twenty tales; excluded the series and title pages, the publisher’s list, Ernest Rhys’s Editor’s Note, the contents and list of illustrations, the printer’s imprint, and Arthur Rackham’s plates with their captions (11 plates inside the text). Tale titles are headings, as are PREFACE and the printed SONG in Twelfth Night; verse quotations are stanzas split at the transcription’s blank lines; inline emphasis and drop capitals are flattened; page labels are removed and the six paragraphs split by an inserted plate page are rejoined with a space. Outside the four tales the nightly readings use, the text is the transcription as given (proofread once). Inside them the corrections declared in the edition statement were applied by collating the transcription with the nightly readings made from the same pages: 103 token edits, all of the declared kinds (40 colons before quoted speech restored to commas; the named words; the other punctuation marks; three marks moved across a closing quotation mark count as two edits each); the full list is kept with the scratch scripts. Every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 841,
+    "sha256": "daed6c371ff023e080abab9a12ca838a3a4f9b42b1dad80b6b99bb28ccd6c45b"
+  }
+}

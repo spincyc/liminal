@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "frost-boys-will-1915",
+  "author": "Robert Frost",
+  "title": "A Boy's Will",
+  "translator": null,
+  "edition": "New York: Henry Holt and Company, 1915. Scan-backed Wikisource transcription of the dated print edition. The missing apostrophe in the online Rose Pogonias transcription is restored from printed p. 25; its final stanza is joined across the pp. 25–26 pagebreak, as confirmed against both scanned pages. HTML emphasis is flattened, nonbreaking spaces become spaces, and layout indentation/trailing whitespace are normalized. Poetry lines and stanza boundaries are retained; titles and page-navigation labels are excluded from blocks. Each poem locator names the corresponding subpage. The library text holds every poem in the book with the contents and Frost’s glosses.",
+  "publicationYear": 1915,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/A_Boy%27s_Will",
+  "textUrl": "https://en.wikisource.org/wiki/A_Boy%27s_Will",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text in this 1915 edition was published before 1931 and is public domain in the United States in 2026. The dated source and its public-domain record are linked; no modern introductions, annotations, or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/A_Boy%27s_Will"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?format=json&formatversion=2&action=parse&title=A+Boy%27s+Will&text=%3Cpages+index%3D%22Frost+-+A+Boy%27s+Will%2C+1915.djvu%22+from%3D1+to%3D76+%2F%3E&prop=text&contentmodel=wikitext",
+    "downloadSha256": "4ca1284c3174afd4f66799e3030d406d7c4074332b840ed9d54115f5f64974f1",
+    "method": "Whole library text: every page of the scan-backed Wikisource transcription (Index: Frost - A Boy's Will, 1915.djvu, pages 1–76) rendered in one MediaWiki API request that transcludes them in order (the download URL; sent as a POST with the same parameters), converted by a scratch Node script; the per-poem subpages the nightly readings name transclude these same pages. Kept the book title, the dedication (TO E. M. F.), the contents with Frost’s glosses (poem titles and glosses as paragraphs, part names as headings, page numbers dropped), every poem and the closing acknowledgement note; excluded the title-page imprint. Poem titles are headings (the subtitle Afield at Dusk is a paragraph); each stanza keeps its lines with the transcription’s leading nonbreaking spaces as spaces; a line holding only a nonbreaking space is a stanza break; trailing spaces, small capitals and emphasis are dropped. Where a stanza runs over a page break the two parts are joined: Rose Pogonias (as the edition statement records), Love and a Question, Waiting, In a Vale, The Trial by Existence, Pan with Us and A Line-Storm Song; other page breaks fall between stanzas. The apostrophe in sun’s (Rose Pogonias) is restored as declared. A stray table-closing mark from the transcription is dropped. Every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 252,
+    "sha256": "225e59fc87582edad878d45c2a2917ff03bbce96fd5aa00ea0867d55ea53e425"
+  }
+}

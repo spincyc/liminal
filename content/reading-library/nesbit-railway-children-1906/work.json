@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "nesbit-railway-children-1906",
+  "author": "E. Nesbit",
+  "title": "The Railway Children",
+  "translator": null,
+  "edition": "Indiana University Victorian Women Writers Project transcription of the London Wells Gardner, Darton & Co. text, copyright 1906; printing undated. Indiana catalogues the copy as London, 1906, 309 pp., but its verso reads “Copyright, 1906, By E. Nesbit … PRINTED IN GREAT BRITAIN … WELLS GARDNER, DARTON AND CO., LTD.”, which suggests a later impression of the 1906 text; no page images of it are available. Text is taken directly from the university transcription, not from the edition-unspecified Gutenberg 1874 text. Two transcription errors are corrected against the dated Macmillan, New York, 1905 printing (Library of Congress copyright-deposit copy, Internet Archive railwaychildren00nesb_1, page images viewed), with which Gutenberg 1874 also agrees: “as firmly as he could” (Indiana: “ha”; Macmillan p. 45) and “We’ll make it our great day” (Indiana: “male”; Macmillan p. 84). Prose line wrapping is joined with spaces; verse line and stanza boundaries are retained; page-navigation labels and illustration captions are omitted; a section milestone is rendered as its printed asterism. Inline emphasis is flattened to plain text without changing words. Original spelling, punctuation and small-cap opening words are otherwise retained. The library text holds the whole book as the Indiana transcription gives it, with Nesbit’s dedication.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://webapp1.dlib.indiana.edu/vwwp/view?docId=VAB7139",
+  "textUrl": "https://webapp1.dlib.indiana.edu/vwwp/view?docId=VAB7139",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The university transcription reproduces the text’s copyright notice, Copyright, 1906, By E. Nesbit; the novel was first published in book form in 1905–1906 (the Macmillan, New York, edition is copyright 1905). Its original English text was published before 1931 and is public domain in the United States in 2026. No modern editorial introduction or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://webapp1.dlib.indiana.edu/vwwp/view?docId=VAB7139"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://webapp1.dlib.indiana.edu/vwwp/view?docId=VAB7139&doc.view=print",
+    "downloadSha256": "6268256fa332df631a0d0ca7dddbc897fc7d5b6819517a5a6b7dace3777a7b4d",
+    "method": "Whole library text: the Indiana University Victorian Women Writers Project transcription (the textUrl), downloaded as its single-page print view and converted by a scratch Node script; kept Nesbit’s dedication and everything from the book title before Chapter I through the last chapter. Excluded: the project’s navigation, record and contents list, and the page labels (page: N) set between and inside paragraphs. Paragraphs and letter blocks broken by a page label were rejoined; a display line set inside a paragraph (a label, a banner, a pair of numbers) stays part of that paragraph, as in the nightly readings; each chapter number and title form one heading; each verse group the transcription sets as a list is one stanza of plain lines (its indented-line marking dropped); separate list items in prose (the Given and Promised lists) and their centred titles are paragraphs; inline emphasis and small capitals are flattened; the one word the transcription marks as struck through (It’s, before Its) is left out. The two corrections declared in the edition statement are made: as firmly as he could (Indiana: ha) and We'll make it our great day (Indiana: male). Every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2163,
+    "sha256": "665c54414d0dff0ba9f99f6bc70b715cdd99dab59e5a686e7f706c84eae27792"
+  }
+}

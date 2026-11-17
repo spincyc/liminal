@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "jackson-calendar-sonnets-1891",
+  "author": "Helen Hunt Jackson",
+  "title": "A Calendar of Sonnets",
+  "translator": null,
+  "edition": "Boston: Roberts Brothers, 1891, Harvard University copy at Internet Archive acalendarsonnet01jackgoog; the printed title page reads 1891 although the catalogue uses copyright 1886. Gutenberg 9825 does not identify its print exemplar: every line of all 12 selected poems was therefore collated against this dated primary witness. The chosen words and punctuation match; Gutenberg plain-text straight apostrophes, double-hyphen em dashes, flattened small-cap openings and indentation are retained, with trailing whitespace removed. July has 13 printed lines in the witness; none are supplied or omitted. Publisher and digitizer matter and illustrations are excluded. The library text holds all twelve sonnets under their month headings. In August, “middle-agèd” takes its grave accent from the HTML file of the same Gutenberg eBook; the plain-text file has “middle-aged”.",
+  "publicationYear": 1891,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/9825",
+  "textUrl": "https://www.gutenberg.org/ebooks/9825.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text in this 1891 edition was published before 1931 and is public domain in the United States in 2026. The dated source and its public-domain record are linked; no modern introductions, annotations, or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/acalendarsonnet01jackgoog"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/9825/pg9825.txt",
+    "downloadSha256": "8de01d41c1d3943a418d51cfc325e4a153f826462e69781bb6b612a888864b81",
+    "method": "Project Gutenberg plain text (eBook 9825, UTF-8, CRLF normalised to LF) from the PG mirror. Kept the twelve month headings and sonnets; removed the PG header and footer and the transcription’s title lines (title, author, 1886). Month names are headings; each sonnet is one stanza with the transcription’s lines and two-space indentation (and the indented second half of a split line) kept, only trailing spaces removed. The files, in order: https://aleph.pglaf.org/cache/epub/9825/pg9825.txt (the download URL), then the HTML file of the same eBook, https://aleph.pglaf.org/cache/epub/9825/pg9825-images.html; the hash is of the two downloads concatenated in that order. One letter follows the HTML file, as the nightly reading has it: “middle-agèd” in August, where the plain-text file prints “middle-aged”. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 24,
+    "sha256": "57749e6e18f26b8aede162e132003c197b0e90ef96f39c854aa2c17614847ca4"
+  }
+}
