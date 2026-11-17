@@ -1,20 +1,22 @@
 #!/usr/bin/env node
 "use strict";
 // Typesets nightly readings as printable packets in the fixed Liminal packet
-// style: a classic two-column TeX article set in Computer Modern (CMU Serif)
-// with a title, author and abstract block. docs/reading-packets.md is the
-// specification; test/reading-packet.test.js pins it so the style cannot drift.
+// style (src/lib/reading-tex.js) with a local TeX installation: the same TeX
+// the site's Generate PDF action typesets in the browser. docs/reading-packets.md
+// is the specification; test/reading-packet.test.js pins it so the style
+// cannot drift.
 //
 //   node tools/reading-packet.js --dates 2026-10-08,2026-10-09,2026-10-12 --out .scratch/packets --pdf
 //   node tools/reading-packet.js --nights k:w7d4,5:w12d3 --out .scratch/packets --pdf --rotate-backs
 //
-// Output is never committed. --pdf needs XeLaTeX with fontspec, the CMU fonts
+// Output is never committed. --pdf needs pdfLaTeX with Latin Modern (lmodern),
+// or XeLaTeX with fontspec and FreeSerif when a night holds Greek or Cyrillic,
 // and (for --rotate-backs) pdfpages.
 const fs = require("node:fs");
 const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 const D = require("../src/lib/daily-reading");
-const ROOT = path.resolve(__dirname, "..");
+const T = require("../src/lib/reading-tex");
 
 // The school calendar: five nights a week, Monday to Friday, 36 weeks from the
 // Monday the year starts. Weekends and dates outside the year have no night.
@@ -30,109 +32,13 @@ function schoolNight(date, start = DEFAULT_START) {
   return offset < 0 || weekday === 0 || weekday === 6 || week > 36 ? null : { week, day: weekday };
 }
 
-// The fixed packet style. Changing any of it changes what families print, so the
-// test pins these lines; update docs/reading-packets.md and the test together.
-const PREAMBLE = String.raw`\documentclass[10pt,twocolumn,twoside,letterpaper]{article}
-\usepackage[letterpaper,top=0.75in,bottom=0.8in,left=0.75in,right=0.75in,columnsep=0.28in,headsep=0.25in]{geometry}
-\usepackage{fontspec}
-\setmainfont{CMU Serif}[Ligatures=Common]
-\setsansfont{CMU Sans Serif}
-\setmonofont{CMU Typewriter Text}
-\usepackage[protrusion=true]{microtype}
-\usepackage{fancyhdr,enumitem}
-\usepackage[hidelinks]{hyperref}
-\setlength{\parindent}{1.2em}
-\setlength{\parskip}{0pt}
-\setlist[enumerate]{leftmargin=1.6em,itemsep=1ex}
-\makeatletter
-\def\cleardoublepage{\clearpage\if@twoside\ifodd\c@page\else\hbox{}\thispagestyle{empty}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
-\renewenvironment{verse}{\let\\\@centercr\list{}{\itemsep\z@\itemindent-1.5em\listparindent\itemindent\rightmargin\leftmargin\advance\leftmargin1.5em\topsep0.6ex\parsep0.9ex}\raggedright\item\relax}{\endlist}
-\newcommand{\readingsectionrule}{\vspace{-0.6ex}\noindent\rule{\linewidth}{0.35pt}\par\nobreak\vspace{0.8ex}\@afterindentfalse\@afterheading}
-\makeatother
-\newcommand{\readingsource}[1]{\par\addvspace{1.5ex}\noindent\begin{minipage}{\linewidth}\footnotesize\raggedright\hrule height0.35pt\vspace{0.8ex}\textbf{Source.} #1\par\end{minipage}\par}
-\newcommand{\paperstart}{1}
-\newcommand{\papermeta}{}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[C]{\scriptsize \papermeta \quad Liminal \quad\the\numexpr\value{page}-\paperstart+1\relax}
-\renewcommand{\headrulewidth}{0pt}
-`;
-
-const escape = s => String(s).replace(/\\/g, "\u0000").replace(/([{}$&#%_])/g, "\\$1")
-  .replace(/\^/g, "\\^{}").replace(/~/g, "\\textasciitilde{}").replace(/\u0000/g, "\\textbackslash{}");
-// Print-only typography, never wording: straight double quotes become curly
-// (CMU Serif draws ASCII " as a closing quote) and paired _underscores_, a
-// plain-text transcription convention, become italics.
-const curly = s => String(s).replace(/(^|[\s(\[{\u2014-])"/g, "$1\u201c").replace(/"/g, "\u201d");
-const inline = s => escape(curly(s)).replace(/\\_([^_\n]+?)\\_/g, "\\emph{$1}");
-const lineStart = s => /^[[*]/.test(s) ? "{}" + s : s;
-function verse(text) {
-  return text.split("\n").map(line => {
-    const [, lead, rest] = line.match(/^(\s*)(.*)$/), indent = lead.replace(/\t/g, "    ").length;
-    return (indent ? "\\hspace*{" + (indent * 0.5).toFixed(1) + "em}" : "") + lineStart(inline(rest));
-  }).join("\\\\\n");
-}
-// A tab-separated source table (D.tableRows) as a tabular. Its cells keep
-// their characters: ditto marks stay straight, not curled into quotes.
-function table(rows) {
-  const width = Math.max(...rows.map(row => row.cells.length));
-  const cell = (text, row) => (row.header ? "\\textit{" : "{") + escape(text).replace(/"/g, "\\textquotedbl{}") + "}";
-  const spec = width > 1 ? "@{}" + "l".repeat(width - 1) + "p{0.4\\linewidth}@{}" : "@{}l@{}";
-  const lines = rows.map(row => row.cells.length === 1
-    ? "\\multicolumn{" + width + "}{@{}l}{" + cell(row.cells[0], row) + "}\\tabularnewline"
-    : Array.from({ length: width }, (_, i) => (i === width - 1 && width > 1 ? "\\raggedright " : "") + cell(row.cells[i] || "", row)).join(" & ") + "\\tabularnewline");
-  return "\\par\\smallskip\\noindent{\\small\\begin{tabular}{" + spec + "}\n" + lines.join("\n") + "\n\\end{tabular}}\\par\\smallskip\n";
-}
-function blocks(day) {
-  const out = [];
-  let inVerse = false;
-  for (const block of day.blocks) {
-    if (block.type === "stanza") {
-      if (!inVerse) { out.push("\\begin{verse}"); inVerse = true; }
-      out.push(verse(block.text) + "\n");
-      continue;
-    }
-    if (inVerse) { out.push("\\end{verse}"); inVerse = false; }
-    const rows = block.type === "paragraph" && D.tableRows(block.text);
-    if (rows) { out.push(table(rows)); continue; }
-    out.push(block.type === "heading" ? "\\begin{center}\\textsc{" + inline(block.text) + "}\\end{center}" : lineStart(inline(block.text)) + "\n");
-  }
-  if (inVerse) out.push("\\end{verse}");
-  return out.join("\n");
-}
-const PRINT_MODES = { "adult-read-aloud": "Read aloud by an adult", shared: "Read together" };
-const longDate = date => new Date(date + "T00:00:00Z").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "UTC" });
-
-// One night as one paper. Only reader-facing fields are used: the text,
-// context, content note, focus, challenge and question prompts; facilitator
-// notes and evidence never reach a packet.
-function paper(course, day, { date = null, newSheet = false } = {}) {
-  const source = course.sources.find(item => item.id === day.sourceId);
-  if (!source) throw new Error("unresolved source for " + day.id);
-  const where = D.gradeLabel(course.grade) + " · Week " + day.week + " · Day " + day.day + (date ? " · " + longDate(date) : "");
-  const title = day.workTitle || day.title.replace(/\s+—\s+excerpt$/, "");
-  const note = D.sourceNote(source);
-  const reference = inline(note.credit) + ". " + inline(note.rights) + (note.url
-    ? " \\href{" + note.url.replace(/[%#]/g, "\\$&") + "}{\\nolinkurl{" + note.linkText.replace(/[%#]/g, "\\$&") + "}}" : "");
-  const estimate = "About " + day.time.totalMinutes + " min · read " + day.time.readingMinutes + " + discuss " + day.time.discussionMinutes;
-  return [newSheet ? "\\cleardoublepage" : "\\clearpage",
-    "\\edef\\paperstart{\\the\\value{page}}", "\\setcounter{section}{0}", "\\renewcommand{\\papermeta}{" + escape(where) + "}",
-    "\\twocolumn[{\\begin{center}",
-    "{\\LARGE\\bfseries " + inline(title) + "\\par}\\vspace{1.4ex}",
-    "{\\large " + escape(day.author || source.author) + "\\par}\\vspace{0.8ex}",
-    ...(PRINT_MODES[day.readingMode] ? ["{\\small\\itshape " + escape(PRINT_MODES[day.readingMode]) + "\\par}"] : []),
-    "\\end{center}", "\\vspace{0.6ex}",
-    "\\begin{center}\\begin{minipage}{0.78\\textwidth}\\small", "\\centerline{\\bfseries Abstract}\\vspace{0.6ex}",
-    "\\noindent " + inline(day.focus) + " " + inline(day.challenge), "\\end{minipage}\\end{center}", "\\vspace{1.2ex}}]",
-    "\\section{Context}", inline(day.context) + (day.contentNote ? "\n\n\\noindent\\textit{Content note.} " + inline(day.contentNote) : ""), "",
-    "\\section{Text}\\readingsectionrule", blocks(day), "",
-    "\\section{Questions for discussion}\\readingsectionrule", "\\begin{enumerate}", ...day.questions.map(question => "\\item " + inline(question.prompt)), "\\end{enumerate}", "",
-    "\\readingsource{" + reference + "\\par\\smallskip\\noindent " + escape(estimate) + "}", ""].join("\n");
+// One entry per night for src/lib/reading-tex.js, with its footer line.
+function entries(group) {
+  return group.nights.map(({ day, date }) => T.entry(group.course, day, T.schoolMeta(group.course.grade, day, date)));
 }
 // Each grade's packet starts on a fresh sheet so duplex packets separate.
 function documentTex(groups) {
-  return PREAMBLE + "\\begin{document}\n" + groups.map(({ course, nights }) =>
-    nights.map(({ day, date }, i) => paper(course, day, { date, newSheet: i === 0 })).join("\n")).join("\n") + "\\end{document}\n";
+  return T.documentTeX(groups.map(group => ({ nights: entries(group) })));
 }
 // Some duplex printers turn back sides upside down; this wrapper pre-rotates
 // every even page by 180 degrees so they come out upright.
@@ -182,26 +88,36 @@ function selections(options, load) {
   }
   return [...groups.values()].sort((a, b) => a.course.grade - b.course.grade);
 }
+// Runs a TeX engine until its cross-references settle (at most three passes;
+// the packet style keeps no auxiliary files, so one pass normally suffices).
+function typeset(engine, name, out) {
+  const result = spawnSync(engine, ["-interaction=nonstopmode", "-halt-on-error", "-no-shell-escape", name], { cwd: out, encoding: "utf8" });
+  const log = path.join(out, name.replace(/\.tex$/, ".log"));
+  if (result.error) throw new Error(engine + " is not available: " + result.error.message);
+  if (result.status !== 0) throw new Error(engine + " failed on " + name + "; see " + log);
+  const text = fs.readFileSync(log, "utf8");
+  const problem = /^(! .*|Missing character.*|LaTeX Font Warning: Font shape .* undefined.*)$/m.exec(text);
+  if (problem) throw new Error(engine + " could not typeset " + name + " faithfully (" + problem[1] + "); see " + log);
+}
 function run(argv) {
   const options = parseArgs(argv);
-  const load = key => JSON.parse(fs.readFileSync(path.join(ROOT, "content/reading-daily", key + ".json"), "utf8"));
+  // Courses as the build resolves them, sources attached.
+  const courses = require("./build-daily-reading").loadDailyReading().courses;
+  const load = key => courses.find(item => D.gradeKey(item.grade) === key) || (() => { throw new Error("grade " + key + " is not published"); })();
   const out = path.resolve(options.out); fs.mkdirSync(out, { recursive: true });
-  fs.writeFileSync(path.join(out, "packet.tex"), documentTex(selections(options, load)));
-  console.log("Wrote " + path.join(out, "packet.tex"));
+  const { tex, engine } = T.documentTeX(selections(options, load).map(group => ({ nights: entries(group) })));
+  fs.writeFileSync(path.join(out, "packet.tex"), tex);
+  console.log("Wrote " + path.join(out, "packet.tex") + " (" + engine + ")");
   if (!options.pdf) return;
-  const xelatex = name => { for (let pass = 0; pass < 2; pass++) {
-    const result = spawnSync("xelatex", ["-interaction=nonstopmode", "-halt-on-error", name], { cwd: out, encoding: "utf8" });
-    if (result.status !== 0) throw new Error("xelatex failed on " + name + "; see " + path.join(out, name.replace(/\.tex$/, ".log")));
-  } };
-  xelatex("packet.tex");
+  typeset(engine, "packet.tex", out);
   console.log("Wrote " + path.join(out, "packet.pdf"));
   if (!options.rotateBacks) return;
   const info = spawnSync("pdfinfo", ["packet.pdf"], { cwd: out, encoding: "utf8" });
   const pages = Number((/Pages:\s+(\d+)/.exec(info.stdout || "") || [])[1]);
   if (!pages) throw new Error("could not count pages with pdfinfo");
   fs.writeFileSync(path.join(out, "packet-duplex.tex"), rotatedBacksTex("packet.pdf", pages));
-  xelatex("packet-duplex.tex");
+  typeset("pdflatex", "packet-duplex.tex", out);
   console.log("Wrote " + path.join(out, "packet-duplex.pdf") + " (even pages rotated for duplex printers that flip backs)");
 }
-module.exports = { PREAMBLE, DEFAULT_START, schoolNight, escape, inline, verse, table, blocks, paper, documentTex, rotatedBacksTex, parseArgs, selections };
+module.exports = { DEFAULT_START, schoolNight, entries, documentTex, rotatedBacksTex, parseArgs, selections };
 if (require.main === module) { try { run(process.argv.slice(2)); } catch (error) { console.error(error.message); process.exitCode = 1; } }
