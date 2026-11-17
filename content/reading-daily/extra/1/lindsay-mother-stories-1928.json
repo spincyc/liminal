@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "grade": 1,
+  "work": "lindsay-mother-stories-1928",
+  "readings": [
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-01",
+      "title": "The Little Girl with the Light",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Work out what the girl’s “light” is, since it is never a lamp or a candle.",
+      "focus": "Goodness and courage pictured as a light that changes how everyone else sees and acts.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. A maiden is a girl. To flee is to run away. A dell is a small valley in the woods. Tanglewood is thick, tangled undergrowth.",
+      "contentNote": "Enemies seize the palace and imprison the king and queen, and a lost child walks alone through a dark forest past hunters and wild animals that want to harm her. Nothing harms her, and her father finds her in the morning.",
+      "excerpt": {
+        "locator": "“The Little Girl with the Light,” the whole story without the motto for the mother printed before it; opens “There once lived a little maiden to whom God had given a wonderful light, which made her…”; closes “…creatures she gave love and protection, and she lived happily all the days of her life.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          96,
+          125
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "251e23dd0e1f3026271024d5f248213e111797d5d54a29036af112beaf027fbc"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-01-q1",
+          "prompt": "Where does the girl’s light show? Find two places.",
+          "facilitatorNotes": [
+            "In her smile as a baby, in her eyes like sunshine, and on her forehead like a star. The story repeats the sunshine-and-star words later, in the forest."
+          ],
+          "evidence": [
+            "it lighted up her eyes like sunshine, and gleamed on her forehead like a star"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-01-q2",
+          "prompt": "In the forest she sees a giant waiting by the path. What is it really, and what does her light change?",
+          "facilitatorNotes": [
+            "Only a pine tree with “friendly arms.” Seeing clearly turns her fear into laughter, and the woods laugh with her."
+          ],
+          "evidence": [
+            "it was only a pine tree, stretching out its friendly arms"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-01-q3",
+          "prompt": "The rabbit will not come to the palace. Why does it want to go home, and why does she let it?",
+          "facilitatorNotes": [
+            "Its babies are waiting and it has work to do. She loves it enough to let it go; caring for someone does not always mean keeping them."
+          ],
+          "evidence": [
+            "My babies are waiting",
+            "So the child kissed it and bade it go"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-01-q4",
+          "prompt": "What do you think the light stands for? Use something she does to explain.",
+          "facilitatorNotes": [
+            "Kindness, goodness, courage or love are all defensible. Ask the child to tie the answer to an action: not being afraid, sheltering the rabbit, or ruling kindly when she grows up."
+          ],
+          "evidence": [
+            "But she was not afraid,—no! not even when she came to a great forest, at evening;—for she carried her light with her."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-02",
+      "title": "The Open Gate — out into the world",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 5,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice how the farm animals talk like neighbours, and find the first sign of trouble.",
+      "focus": "Freedom looks wonderful to the brown colt until it begins to hurt.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. A colt is a young horse. Brindle means brown with darker streaks. A threshing machine separates grain from straw, and the old steam ones had a loud whistle. Barbs are the sharp points on a wire fence.",
+      "contentNote": "The frightened colt jumps a barbed-wire fence and cuts himself.",
+      "excerpt": {
+        "locator": "“The Open Gate,” from the start of the story, after the motto for the mother, to the colt’s wish to see Dick; opens “One bright summer afternoon, Fleet, the good old shepherd dog that helped to take care of…”; closes “…and cut his feet as he leaped awkwardly over, \"Oh! how I wish I could see Dick now.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-lindsay-mother-stories-1928-03",
+        "blocks": [
+          236,
+          256
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "48e35f896407a8ecdf1f962558fa2a11e3345830d6539864fd55d3214cf83681"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-02-q1",
+          "prompt": "Before the trouble, what makes Fleet bark “with satisfaction”?",
+          "facilitatorNotes": [
+            "Everything on the farm is in its place: hens in the dust, the calf asleep, ducks at the pond, horses at work. It is all calm."
+          ],
+          "evidence": [
+            "so Fleet barked with satisfaction"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-02-q2",
+          "prompt": "What do the three geese say has happened? How can you tell they are excited?",
+          "facilitatorNotes": [
+            "The gate is open, the colt is gone, the calf is going, and they are “thinking about it”; they say it all in one breath and end with a honk."
+          ],
+          "evidence": [
+            "The gate is open, the brown colt's gone, the brindle calf's going and we are thinking about it; quawk! quawk!"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-02-q3",
+          "prompt": "Why does the colt shout “Hurrah!”? Does he know what it means?",
+          "facilitatorNotes": [
+            "He copies Dick; he does not know the word, but he feels free and excited."
+          ],
+          "evidence": [
+            "not because he knew what it meant but because he had heard Dick say it"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-02-q4",
+          "prompt": "What changes the colt’s mind about being free?",
+          "facilitatorNotes": [
+            "A loud whistle frightens him over a barbed fence; he tears his coat and cuts his feet, and wishes he could see Dick."
+          ],
+          "evidence": [
+            "Oh! how I wish I could see Dick now."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-03",
+      "title": "The Open Gate — the way home",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 6,
+        "totalMinutes": 11
+      },
+      "challenge": "Find out who left the gate open, and notice how the boy and the colt are alike.",
+      "focus": "Carelessness has a cost, and both Dick and the colt come home changed.",
+      "context": "Recap: someone left the farmyard gate open, and the brown colt ran away. He loved his freedom until a loud whistle frightened him over a barbed-wire fence. Now the story goes back to the farm. A pike road is a main road. A cotton field grows cotton plants.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Open Gate,” from Dick at home to the end of the story; opens “But Dick was at home. He had run after the brown colt as fast as his feet could carry…”; closes “…them will ever forget the day when Dick was careless and did not shut the farmyard gate.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-lindsay-mother-stories-1928-02",
+        "continuesTo": null,
+        "blocks": [
+          257,
+          269
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7063b27eb33da11c8123f6972886fca9586ca8a48a2a119321ee9e9413951e23"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-03-q1",
+          "prompt": "Who left the gate open? What does Father say about it?",
+          "facilitatorNotes": [
+            "Dick himself. Father says everyone, big or small, must take care of the things they want to keep."
+          ],
+          "evidence": [
+            "for he was the very one who had forgotten to shut the farmyard gate",
+            "big boys and little boys and everybody else must take care of the things they wanted to keep"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-03-q2",
+          "prompt": "Find two ways the colt and Dick are alike in this part of the story.",
+          "facilitatorNotes": [
+            "Both hang their heads, and both think about each other all night. Both are sorry."
+          ],
+          "evidence": [
+            "But the brown colt hung his head, as Dick had done"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-03-q3",
+          "prompt": "The birds ask, “Is this the same brown colt that raised such a dust yesterday?” What do they mean?",
+          "facilitatorNotes": [
+            "Yesterday he galloped proudly; today he limps home slowly. They notice how much he has changed."
+          ],
+          "evidence": [
+            "Is this the same brown colt that raised such a dust yesterday?"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-03-q4",
+          "prompt": "Dick and Fleet ask the colt no questions “because they understood.” What did they understand?",
+          "facilitatorNotes": [
+            "That he was sorry and glad to be home, the way Dick was sorry. Some children may say they understood he was hurt; that fits too."
+          ],
+          "evidence": [
+            "Dick and Friend Fleet asked no questions, because they understood"
+          ]
+        }
+      ]
+    }
+  ]
+}
