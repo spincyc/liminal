@@ -51,8 +51,11 @@ same as for nightly sources in [daily reading](daily-reading.md#source-research-
 `acquisition` records the exact file downloaded and its SHA-256, so the
 conversion can be repeated and compared. `scope.complete` is false only when
 the whole edition is impractical to hold (a complete-works volume of several
-megabytes); the library then holds every whole individual work used from it,
-and `scope.note` says exactly what is included. `text` binds the record to
+megabytes), when the source is a periodical issue of which only the author's
+contribution belongs here (a story instalment in a magazine), or when only part
+of the edition has a transcription verified against its printing; the library
+then holds every whole individual work used from it, and `scope.note` says
+exactly what is included and why. `text` binds the record to
 its text: run `node tools/reading-library.js seal <work-id>` after any change.
 
 ## Text conventions
@@ -70,11 +73,17 @@ letter, is stated in `edition` and `acquisition.method`.
 
 ### Notes and illustrations
 
-Notes printed in the edition (the author's, or the original editor's) are part
-of the work and stay, in one form: each note is its own paragraph block
-`[Footnote <mark>: <text>]` (Project Gutenberg's form), placed where the
-transcription places it, after its paragraph, at the end of the chapter, or at
-the end of the book, and its anchor in the text stays as `[<mark>]`. A shared
+Notes that belong to the work as first published (the author's, the
+translator's, or the original publisher's or editor's) stay, in one form: each
+note is its own paragraph block `[Footnote <mark>: <text>]` (Project Gutenberg's
+form), placed where the transcription places it, after its paragraph, at the
+end of the chapter, or at the end of the book; its anchor stays in the text as
+the transcription marks it, normally `[<mark>]`. The apparatus of a later
+scholarly edition (a modern editor's commentary, collation notes, glossary or
+endnotes, such as Turpin's notes to Emerson or the Cambridge Shakespeare's
+collations) is left out and declared in `edition`, like a modern introduction.
+A night that omits an anchor the library keeps is not a range of the work: it
+keeps its own text and names the anchor in `excerpt.inlineReason`. A shared
 label such as "FOOTNOTES:" is a paragraph, never a heading, so it stays out of
 the contents. Transcriber's notes, illustration markers (`[Illustration]`) and
 captions are left out (the checker refuses the markers and a notes heading).
