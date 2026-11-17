@@ -4,7 +4,7 @@
   "author": "Frederick Douglass",
   "title": "My Bondage and My Freedom",
   "translator": null,
-  "edition": "New York and Auburn: Miller, Orton & Mulligan, 1855. UNC Documenting the American South transcription of the Rare Book Collection copy, call number E4499.D738; scanned title page and verso and source description identify the printing. All 79 selected paragraphs are taken directly from that transcription. Original wording, spelling, punctuation and paragraph boundaries retained; HTML entities decoded, page labels and running matter omitted, prose line wrapping joined. Inline italic markup is omitted without changing its words. No modern introduction is included. The library text holds the Editor's Preface (which carries Douglass's letter of July 2, 1855), Part I (Life as a Slave), Part II (Life as a Freeman) and the Appendix of speeches and letters, with the chapter synopses and the book's asterisk footnotes (each footnote a block after the paragraph or heading that cites it); the title page, dedication, contents, Dr. James M'Cune Smith's Introduction, the illustrations and the publisher's advertisements at the end are omitted. Verse quotations keep their printed lines.",
+  "edition": "New York and Auburn: Miller, Orton & Mulligan, 1855. UNC Documenting the American South transcription of the Rare Book Collection copy, call number E4499.D738; scanned title page and verso and source description identify the printing. All 79 selected paragraphs are taken directly from that transcription. Original wording, spelling, punctuation and paragraph boundaries retained; HTML entities decoded, page labels and running matter omitted, prose line wrapping joined. Inline italic markup is omitted without changing its words. No modern introduction is included. The library text holds the Editor's Preface (which carries Douglass's letter of July 2, 1855), Part I (Life as a Slave), Part II (Life as a Freeman) and the Appendix of speeches and letters, with the chapter synopses and the book's six asterisk footnotes in that range, kept in Project Gutenberg’s note form: “[*]” at the citing word and the note after the paragraph or heading that cites it as “[Footnote *: …]”, a note of several paragraphs (the bill of sale and deed of manumission) opened in its first and closed at the end of its last. Where the transcription sets a note in the middle of a paragraph, the paragraph is given whole and the note follows it; the title page, dedication, contents, Dr. James M'Cune Smith's Introduction, the illustrations and the publisher's advertisements at the end are omitted. Verse quotations keep their printed lines.",
   "publicationYear": 1855,
   "translationYear": null,
   "url": "https://docsouth.unc.edu/neh/douglass55/menu.html",
@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://docsouth.unc.edu/neh/douglass55/douglass55.html",
     "downloadSha256": "388a2b34deff054e209abd5a075c02b3cf8e3ab588b4b003fa8a817c1eaa0b2c",
-    "method": "UNC Documenting the American South HTML file. Took the Editor's Preface and everything from “Life as a Slave” to the end of the Appendix; removed the page-number anchors and rules (rejoining paragraphs split across pages with a space) and illustration placeholders; decoded entities; dropped inline markup (italics, colour) keeping its words; collapsed whitespace and removed leading indentation; paragraphs with line breaks became stanzas, and a list became one paragraph with an item per line; HTML headings became level-2 headings, each chapter number joined with its title."
+    "method": "UNC Documenting the American South HTML file. Took the Editor's Preface and everything from “Life as a Slave” to the end of the Appendix; removed the page-number anchors and rules (rejoining paragraphs split across pages with a space) and illustration placeholders; decoded entities; dropped inline markup (italics, colour) keeping its words; each footnote callout (a linked superscript asterisk) became “[*]”, and each note (the coloured block after it) became “[Footnote *: …]” in place of its printed “* ”, the two halves of a paragraph it interrupted being rejoined with a space before the note; collapsed whitespace and removed leading indentation; paragraphs with line breaks became stanzas, and a list became one paragraph with an item per line; HTML headings became level-2 headings, each chapter number joined with its title."
   },
   "scope": {
     "complete": true,
     "note": null
   },
   "text": {
-    "blocks": 676,
-    "sha256": "fc71ac3b1c1f1c7990c265a79d8161c449152ebd2fe0c6fb88b1fa3d0a785321"
+    "blocks": 674,
+    "sha256": "855fb958475aec72858482bb5534fb9bdef370048de9f7fd3cbdd4f5f9cae8c5"
   }
 }
