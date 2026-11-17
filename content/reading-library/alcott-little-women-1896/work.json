@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "alcott-little-women-1896",
+  "author": "Louisa May Alcott",
+  "title": "Little Women; Or, Meg, Jo, Beth, and Amy",
+  "translator": null,
+  "edition": "Boston: Little, Brown and Company illustrated text, New York Public Library copy catalogued c1896 (Internet Archive littlewomenormeg00alco2). Its print impression is undated; publicationYear records the catalogue/copyright edition date, not a claimed printing date. Project Gutenberg 37106 supplies the transcription. All 22 selected excerpts were collated at word level with this identified scan, and every OCR word discrepancy was visually checked. Two Gutenberg readings are changed to follow the scan: its apparent printing error “weet” (p. 68) and “buttonholes” (p. 146). The 2026-10-07 review showed that three earlier reversals were not supported by the scan, so Gutenberg’s readings, which the scan supports, are restored: “mantel-piece” (the hyphen falls at a line end on p. 62, and the same copy prints mantel-piece mid-line elsewhere), “merriment.” (a faint period on p. 64) and “I remain,” (a damaged mark after remain on p. 79). The ink-damaged phrase “mischief, is” (p. 145) follows Gutenberg, as confirmed in the visibly dated Roberts Brothers 1887 edition, printed page 133 (Internet Archive littlewomenormeg00alco3). Prose line wrapping and discretionary line-end hyphens are normalized; Gutenberg transcription typography (straight quotation marks, -- for long dashes, underscores for italics, closed-up contractions where the 1896 print spaces them) is retained. Full character-by-character punctuation collation was not performed beyond the spots named. Paragraph boundaries are retained; nonliterary illustrations and captions are excluded. The library text holds the Bunyan verse preface and all forty-seven chapters; the two scan readings above apply wherever they fall, and the rest of the book follows Gutenberg 37106 uncollated. Chapter numerals are joined with their titles as headings; indented verse lines are given without indentation; the publisher’s advertisements are excluded.",
+  "publicationYear": 1896,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/37106",
+  "textUrl": "https://www.gutenberg.org/cache/epub/37106/pg37106.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original-English text is from the 1896 edition described above, before 1931. Project Gutenberg explicitly lists this ebook as public domain in the USA; no modern editorial introduction or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/littlewomenormeg00alco2"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/37106/pg37106.txt",
+    "downloadSha256": "494309c7c4b1a750f19bb69258760a602032ebb0a52955f5153818b3508d5fe0",
+    "method": "Project Gutenberg plain text (eBook 37106, UTF-8, CRLF normalised to LF) from the PG mirror. Kept the Bunyan verse preface with its attribution, all forty-seven chapters and the ‘The Second Part’ division; removed the PG header and footer, the title, copyright, contents and illustration-list pages, every [Illustration] caption, and the publisher’s advertisements and transcriber’s notes after the story. Blank-line separated paragraphs were joined with single spaces at line ends, keeping spacing inside lines, underscores and -- dashes; indented verse (lines of at most 50 characters) is a stanza with each line’s indentation removed, as the nightly readings have it; other indented passages (letters, single quoted lines, the Pickwick Portfolio titles) are prose paragraphs; the star dividers stay as one-line paragraphs; chapter numerals are joined with their titles as headings. Then the edition’s two scan readings were applied: “weet” (p. 68, PG “sweet”) and “buttonholes” (p. 146, PG “button-holes”). Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 3978,
+    "sha256": "603a760fb4306473d5b014f60fedc1ac6fde7077ceeb12df622048c2d87c3553"
+  }
+}

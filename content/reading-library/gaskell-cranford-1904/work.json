@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "gaskell-cranford-1904",
+  "author": "Elizabeth Cleghorn Gaskell",
+  "title": "Cranford",
+  "translator": null,
+  "edition": "J. M. Dent & Co., London / E. P. Dutton & Co., New York, 1904, illustrated by C. E. Brock; original novel first published 1853. Project Gutenberg transcription. Prose line-wrap whitespace is folded to spaces; literary paragraphs and source spelling/punctuation (including plain-text emphasis marks) are retained. Illustration captions and publication apparatus are omitted; verse lineation is retained. The library text holds all sixteen chapters; runs of spaces are collapsed and chapter numbers are joined with their titles as headings.",
+  "publicationYear": 1904,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/394",
+  "textUrl": "https://www.gutenberg.org/ebooks/394.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The exact English print edition is dated 1904 in the transcription title matter; publication before 1931 places that text in the US public domain by 2026. Project Gutenberg separately labels ebook 394 public domain in the USA. No separate modern introduction or images are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/394/pg394-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/394/pg394.txt",
+    "downloadSha256": "3bb263075a97afd4058933534549f6176d881f7a9f74bb62eb52be26670e3cb0",
+    "method": "Project Gutenberg plain text (eBook 394, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl). Kept Chapters I–XVI; removed the PG header and footer, title page, contents and list of illustrations, every [Picture: …] caption, and the closing printer’s imprint. Blank-line separated paragraphs were joined with single spaces and runs of spaces collapsed to one, as in the nightly readings; the indented letter and single quoted lines are prose paragraphs; the one indented two-line verse quotation is a stanza without indentation; each chapter number is joined with its title in one heading. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 692,
+    "sha256": "0545a14d09ba3871a0c405f82ba4ee2be0ab5020395cb3202059a3e24f05ec61"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "robinson-children-night-1905",
+  "author": "Edwin Arlington Robinson",
+  "title": "Children of the Night",
+  "translator": null,
+  "edition": "PG313 explicitly identifies its exemplar as the 1905 printing of the 1897 edition. Its transcription capitalizes italicized words and breaks long lines according to metre; these conventions are retained. Original English poems only; none of the translated Horace selections is used. Common left indentation removed, outer blank lines and line-end spaces removed, CRLF normalized to LF; original verse line breaks and transcription stanza breaks retained. Source spelling and punctuation are preserved; no modern introduction or digitizer boilerplate is supplied. The library text holds the whole collection, including the translated Horace to Leuconoe.",
+  "publicationYear": 1905,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/313",
+  "textUrl": "https://www.gutenberg.org/cache/epub/313/pg313.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The source transcription expressly states 1905 printing of the 1897 edition, tying this English text to its historical printing. Project Gutenberg ebook 313 expressly labels the text public domain in the USA. The dated English publication predates 1931, so its US publication term has expired as of 2026; no translation is involved.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/313/pg313.txt"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/313/pg313.txt",
+    "downloadSha256": "c4dc55e3fb147bba1a79a6225781a8c0e817a1bb4afc5d5880d79966348ec511",
+    "method": "Whole library text: Project Gutenberg plain text (eBook 313, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl): Robinson’s dedication and every poem from The Children of the Night to L’Envoi, including his version Horace to Leuconoe; the PG header and footer, the title lines, the transcriber’s note on the text and the contents list are excluded. The transcription’s five-space verse margin is removed from every line, so its further indents (turned lines, five extra spaces for italic stanzas) stay relative to it; poem titles are headings, part numerals, ENVOY lines and part titles minor headings, and parenthetical dedications under titles one-line paragraphs. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 293,
+    "sha256": "14a207d9e470323e2135b0d895847de5f50f6a1c57a0eef0329eeab13a754ae5"
+  }
+}

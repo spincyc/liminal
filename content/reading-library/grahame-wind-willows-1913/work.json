@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "grahame-wind-willows-1913",
+  "author": "Kenneth Grahame",
+  "title": "The Wind in the Willows",
+  "translator": null,
+  "edition": "New York: Charles Scribner’s Sons, October 1913, explicitly dated MCMXIII and Published October 1913 in Project Gutenberg 27805. Prose line-wrap whitespace is collapsed; paragraph boundaries and original punctuation are retained. Illustration captions are omitted; embedded verse preserves lines and stanzas. The library text holds all twelve chapters; chapter numerals are joined with their titles as headings, song titles keep the transcription’s indentation, and the star dividers between sections are kept.",
+  "publicationYear": 1913,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/27805",
+  "textUrl": "https://www.gutenberg.org/ebooks/27805.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text in this 1913 edition was published before 1931 and is public domain in the United States in 2026. The dated source and its public-domain record are linked; no modern introductions, annotations, or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/27805"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/27805/pg27805.txt",
+    "downloadSha256": "f34490d89e9ad50c9a5a39916d375a8e91cab4a934020563fd15c883cbfc9793",
+    "method": "Project Gutenberg plain text (eBook 27805, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl). Kept Chapters I–XII; removed the PG header and footer, title and copyright pages, contents, list of illustrations, [Illustration] captions, and the closing repeated title. Blank-line separated paragraphs were joined with single spaces at line ends, keeping spacing inside lines and the transcription’s _underscore_ italics and -- dashes; every indented chunk (the songs, the doorplate, Toad’s programme) is a stanza with the transcription’s lines and indentation kept and only trailing spaces removed; the indented song titles (DUCKS’ DITTY, CAROL, TOAD’S LAST LITTLE SONG) are headings kept exactly as indented in the transcription, as the nightly readings keep them; the star dividers between sections stay as one-line paragraphs; chapter numerals are joined with their titles as headings. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 930,
+    "sha256": "b8fc65b25cd141baab3a048990c6adef950b981dc355146114b7feb8f84f1432"
+  }
+}

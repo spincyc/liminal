@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "spyri-heidi-1919",
+  "author": "Johanna Spyri",
+  "title": "Heidi",
+  "translator": "Elisabeth P. Stork",
+  "edition": "Gift Edition, Philadelphia and London: J. B. Lippincott Company, 1919. The title page names Elisabeth P. Stork; copyright is 1915 for the text and 1919 for additional illustrations and decorations. The transcription’s documented corrections of typographical errors are retained. Prose soft line-wraps are joined; paragraph boundaries, wording, punctuation, and transcription emphasis markers remain. Illustration placeholders, captions, and ornamental star dividers are excluded, without omitting narrative text. One comma that the transcription omits after “A,B,C” (Chapter X, “not even learned the A,B,C, for”) is restored from the Lippincott scans (archive.org heidi00spyr_7, 1919; heidi00spyrgoog, 1915), which print “A,B,C,” without spaces. The library text holds both parts and all twenty-three chapters from “Part I” to the closing paragraph before “The End.”; the translator’s relative Charles Wharton Stork’s introduction, the title and contents pages, the list of illustrations and the transcriber’s notes are excluded. Part titles and chapter numbers with their titles are given as headings; short indented hymn and alphabet rhymes keep their lines as stanzas.",
+  "publicationYear": 1919,
+  "translationYear": 1915,
+  "url": "https://www.gutenberg.org/ebooks/20781",
+  "textUrl": "https://www.gutenberg.org/cache/epub/20781/pg20781.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The 1919 English edition, using Elisabeth P. Stork’s 1915 translation, was published before 1931 and its US copyright term has expired as of 2026. Project Gutenberg explicitly marks the transcription public domain in the USA. Only the original literary text is reproduced, not later editorial matter or illustrations.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/20781"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/20781/pg20781.txt",
+    "downloadSha256": "9694a65b4aab3150d546d192918a3977c9299095fdc3e2c2947176d743b95c9d",
+    "method": "Project Gutenberg plain text (eBook 20781, UTF-8) from the PG mirror. Kept the text from “Part I” to the end of the story; removed the PG header and footer, the front matter, introduction, illustration list and [Illustration] placeholders and captions, the ornamental star dividers and the end transcriber’s note. Blank-line separated paragraphs were joined into single-spaced prose; indented verse kept its line breaks with common indentation removed; Clara’s indented letter stays prose. Part and chapter headings were joined with their titles. One comma restored as described in the edition note. Converted by a scratch Node script and checked by locating every nightly reading exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1274,
+    "sha256": "b0af5b9e7ebdd327b11a9fe4558b02c28e6454ee6ea6e87ee2750679b0faf616"
+  }
+}

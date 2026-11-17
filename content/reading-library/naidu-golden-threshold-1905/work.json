@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "naidu-golden-threshold-1905",
+  "author": "Sarojini Naidu",
+  "title": "The Golden Threshold",
+  "translator": null,
+  "edition": "London: William Heinemann, 1905. Scan-backed Wikisource transcription, The Golden Threshold.djvu; individual poem subpages preserve stanza and line boundaries. HTML emphasis/small caps are flattened without altering words; nonbreaking spaces become spaces, indentation and trailing layout whitespace are normalized. The Wikisource pages are proofread once (level 3) except Palanquin-Bearers (validated), so all eight poems first selected were collated line by line, including punctuation, with the 1905 page images (pp. 27–32, 39, 44–45, 49, 53). Five transcription errors are corrected to the print: Indian Weavers “solemn and still,” (p. 30); Coromandel Fishers “pray to the morning light,” (p. 31); In Praise of Henna “afloat on the tide,” “ere the dawn be old,” and “fingers and feet,” (p. 39). The other poems match the print; Cradle-Song and Alabaster, which also match, are no longer in the sequence. Selected poems were composed in English, not translated. The library text holds the dedication and every poem in the book; Arthur Symons’s introduction is not included.",
+  "publicationYear": 1905,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/The_Golden_Threshold",
+  "textUrl": "https://en.wikisource.org/wiki/The_Golden_Threshold",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text in this 1905 edition was published before 1931 and is public domain in the United States in 2026. The dated source and its public-domain record are linked; no modern introductions, annotations, or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/The_Golden_Threshold"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&title=The+Golden+Threshold&text=%3Cpages+index%3D%22The+Golden+Threshold.djvu%22+from%3D1+to%3D108+%2F%3E&prop=text&contentmodel=wikitext&format=json&formatversion=2",
+    "downloadSha256": "30c1343bb5da4b6e5ccfe1c7613a81fdda5f1ced633f3657f567438dc440a81d",
+    "method": "Whole library text: every page of the scan-backed Wikisource transcription (Index: The Golden Threshold.djvu, pages 1–108) rendered in one MediaWiki API request that transcludes them in order (the download URL; sent as a POST with the same parameters), converted by a scratch Node script. Kept Naidu’s dedication to Edmund Gosse (with its London, 1896 / Hyderabad, 1905 lines, as one stanza) and the three sections Folk Songs, Songs for Music and Poems with every poem; excluded the publisher’s advertisements, title and copyright pages, the contents, and Arthur Symons’s introduction, which is not the author’s. Section names and poem titles are headings, the parenthetical subtitles one-line paragraphs; each stanza keeps its lines without indentation; inline emphasis, small capitals and the transcription’s tooltip notes are flattened. The five corrections to the print declared in the edition statement are made (solemn and still, pray to the morning light, afloat on the tide, ere the dawn be old, fingers and feet). Every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 208,
+    "sha256": "72d6f00842c7f5a7d08d8b5442affcc1418552b986ea0a4bd2d9bc3936f65262"
+  }
+}

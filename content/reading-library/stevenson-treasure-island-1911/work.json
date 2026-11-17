@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "stevenson-treasure-island-1911",
+  "author": "Robert Louis Stevenson",
+  "title": "Treasure Island, in The Works of Robert Louis Stevenson, Swanston Edition, Volume VI",
+  "translator": null,
+  "edition": "Chatto and Windus, in association with Cassell, William Heinemann, and Longmans Green, London, 1911 (MDCCCCXI on title page); original novel first published 1883. Project Gutenberg transcription. Prose line-wrap whitespace is folded to spaces; literary paragraphs and source spelling/punctuation (including plain-text emphasis marks) are retained. Illustration captions and publication apparatus are omitted; verse lineation is retained. The library text holds the whole of Volume VI: Treasure Island with its dedication and prefatory verses, followed by Will o’ the Mill and The Treasure of Franchard. Part and chapter numbers are joined with their titles as headings; in verse, a stanza’s first line is given without the transcription’s two-space indent.",
+  "publicationYear": 1911,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/30393",
+  "textUrl": "https://www.gutenberg.org/ebooks/30393.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The exact English print edition is dated 1911 in the transcription title matter; publication before 1931 places that text in the US public domain by 2026. Project Gutenberg separately labels ebook 30393 public domain in the USA. No separate modern introduction or images are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/30393/pg30393-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/30393/pg30393.txt",
+    "downloadSha256": "3eeafa1850400739d8092a426f212546d5167dad999516b1848e6fd490b4609a",
+    "method": "Project Gutenberg plain text (eBook 30393, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl). Kept the whole of Volume VI after its contents: Treasure Island (dedication, the verses To the Hesitating Purchaser, Parts I–VI, Chapters I–XXXIV), Will o’ the Mill and The Treasure of Franchard, up to END OF VOL. VI; removed the PG header and footer, the transcriber’s note, the series title, title and contents pages, the repeated TREASURE ISLAND half-title after the Part I heading, and the printer’s imprint. Blank-line separated paragraphs were joined with single spaces at line ends; indented letters and notes are prose with runs of spaces collapsed (so right-set signatures join the text, as in the nightly readings); indented verse (lines of at most 50 characters) is a stanza whose first line loses its indentation while later lines keep the transcription’s, as the nightly readings have it; part and chapter numbers are joined with their titles as headings; the volume’s two footnotes are [Footnote n: …] paragraphs after their FOOTNOTE: labels, with calls [n]. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1969,
+    "sha256": "5225eb077a03f865c274a97d9fcba6e4d3894b1f0120a4a1bc3308c1b0082fad"
+  }
+}

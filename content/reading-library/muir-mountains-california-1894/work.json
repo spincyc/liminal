@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "muir-mountains-california-1894",
+  "author": "John Muir",
+  "title": "The Mountains of California",
+  "translator": null,
+  "edition": "PG transcription (ebook 10012); print exemplar unidentified; every selected paragraph collated against The Mountains of California, New York: The Century Co., 1894, University of California Libraries copy, Internet Archive mountainsofcalif01muir. The dated title and copyright leaves are PDF pages 13–14. Selected-text print locators and the full collation coverage are recorded in muir-facsimile-collation.json. Specific transcription corrections, including restored printed æ/Æ ligatures, are recorded in muir-corrections.json; the original printed error “Silver First” is retained. Source underscores marking italics are retained as a plain-text convention; printer line-end word divisions are rejoined, running heads/page numbers and illustration captions omitted, and prose line wrapping normalized. Burns’s two-line quotation retains its verse line break. This does not claim that the unidentified PG exemplar was the scanned copy. Outside the passages used by the nightly readings the library text has not been collated: there it keeps PG 10012’s words and punctuation, including ae where the print may have æ.",
+  "publicationYear": 1894,
+  "translationYear": null,
+  "url": "https://archive.org/details/mountainsofcalif01muir",
+  "textUrl": "https://www.gutenberg.org/ebooks/10012.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "All supplied words were collated to the original-English 1894 Century Co. witness, whose title and copyright leaves explicitly date this edition. That edition was published before 1931 and is in the US public domain in 2026. PG ebook 10012 also identifies the work as public domain in the USA; that catalogue label alone is not used to date its unidentified print exemplar.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/download/mountainsofcalif01muir/mountainsofcalif01muir.pdf"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/10012/pg10012.txt",
+    "downloadSha256": "97de559c987a0380ddc5a81df16bb7f58d60a0270514fab5a67e47eeec0a242b",
+    "method": "Whole library text: Project Gutenberg plain text (eBook 10012, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl), Chapters I–XVI with Muir’s own footnotes as [Footnote n: …] paragraphs where PG places them (calls [n]); the PG header and footer, title, contents and list of illustrations, and every [Illustration] caption are excluded. Prose line wrapping was joined with single spaces and runs of spaces collapsed; each chapter number and title form one heading; Burns’s couplet is a two-line stanza. Within the fourteen passages the Grade 6 nightly readings use, the readings the curator collated against the 1894 Century scan were substituted for PG’s, token by token (21 token edits: the documented corrections such as minor → miner, Rod → Red, flue → fine, polytriclium → polytrichum, ruined → ruffled, failing → falling, snow → snaw, the restored æ/Æ ligatures, and some punctuation); every substitution is logged in the scratch lane (logs/muir-mountains-california-1894.patch.txt). Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 615,
+    "sha256": "9284a3b122d960ddbe6da302046ebe1ae484db43c5c0f6cf71fd016ebf404894"
+  }
+}

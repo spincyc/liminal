@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "jefferies-wild-life-1879",
+  "author": "Richard Jefferies",
+  "title": "Wild Life in a Southern County",
+  "translator": null,
+  "edition": "Smith, Elder, & Co., London, 1879. Base transcription Project Gutenberg ebook 36949, which names this edition but normalizes its typography (TeX-style quotes, “--” dashes, “etc” for “&c.”, “pounds” for “l.”) and differs from the print in some words, hyphens and punctuation. Every selected word was therefore collated against the dated 1879 scan (Internet Archive jefferieswildlife) and the printed readings adopted: quotation marks, apostrophes and em dashes as printed, “&c.” and “l.”, and 43 page-image-verified corrections recorded in jefferies1879-corrections.json in the curator’s scratch lane (for example “comas” → “comes”, “fanner” → “farmer”, “timekeeping” → “time keeping”, “glossy” → “glassy”). Printed oddities are retained (“downwards. or”; “a single meadow,” at a paragraph end). Italic is shown with underscores; line-end word divisions are rejoined, keeping a hyphen only for compounds; running heads and page numbers are omitted. Outside the passages used by the nightly readings the library text has not been collated: there it keeps PG 36949’s words, hyphenation and punctuation (including “pounds” for “l.” and double quotation marks wherever the print may use single ones), with only the mechanical typographic mapping described in the acquisition method.",
+  "publicationYear": 1879,
+  "translationYear": null,
+  "url": "https://archive.org/details/jefferieswildlife",
+  "textUrl": "https://www.gutenberg.org/ebooks/36949.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The supplied text follows the original-English London edition of 1879, whose dated title page is in the Internet Archive scan jefferieswildlife (Public Domain Mark). Publication before 1931 places it in the US public domain in 2026; Project Gutenberg also labels ebook 36949 public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/jefferieswildlife"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/36949/pg36949.txt",
+    "downloadSha256": "f8689c2c8dd72c5e3ee1af5312509ddafa9296a96b2abf8b970197b1165f4b8d",
+    "method": "Whole library text: Project Gutenberg plain text (eBook 36949, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl), from the author’s Preface to the end of Chapter Twenty; the PG header and footer and the title lines are excluded. Prose line wrapping was joined with single spaces (none after a line-end dash) and runs of spaces collapsed; each chapter number and its contents summary are headings; the one quoted song couplet is a stanza. PG’s typography was mapped mechanically throughout to the print’s: the grave accent and straight apostrophe to ‘ and ’, paired straight double quotes to “ and ”, double hyphens to —, and etc to &c. Then, within the fifteen passages the Grade 6 nightly readings use, the readings the curator collated against the 1879 scan were substituted for PG’s, token by token (55 token edits, among them the documented corrections such as fanner → farmer and timekeeping → time keeping, ‘…’ where the print has single quotation marks, and l. for pounds); every substitution is logged in the scratch lane (logs/jefferies-wild-life-1879.patch.txt). Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 757,
+    "sha256": "8b6c1068e271eb97ccf22181176ef0a1f4c526459965f8ae81d8ca5103c8e1ca"
+  }
+}

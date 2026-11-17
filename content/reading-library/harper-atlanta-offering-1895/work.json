@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "harper-atlanta-offering-1895",
+  "author": "Frances Ellen Watkins Harper",
+  "title": "Atlanta Offering: Poems",
+  "translator": null,
+  "edition": "Philadelphia: 1006 Bainbridge Street, 1895; copyright 1895 by Frances E. W. Harper; George S. Ferguson Co., printers and electrotypers. Emory University copy, digitized in the University of Pennsylvania-hosted scan, which ends with Songs for the People on page 70. The library text holds the whole book as that scan shows it (the Isaiah epigraph and thirty-four poems), taken from Project Gutenberg eBook 679, a transcription of the later enlarged Poems printing whose pages 1–70 carry the same poems; PG’s seven added poems are excluded. The twelve poems used as nightly readings were collated in full against the 1895 scan: eight punctuation differences in PG are corrected to the scan and their stanzas follow the printed boundaries across page breaks. The other twenty-two poems and the epigraph follow PG 679 as transcribed, with PG’s stanza divisions, and are not collated with the scan. Running heads and page numbers omitted; PG’s ASCII quotation marks, double-hyphen dashes and two-space verse indentation retained. No modern editorial text or images reproduced.",
+  "publicationYear": 1895,
+  "translationYear": null,
+  "url": "https://web.english.upenn.edu/~cavitch/pdf-library/Harper_Atlanta_Offerings.pdf",
+  "textUrl": "https://www.gutenberg.org/ebooks/679",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The identified original-English edition has an 1895 title page and 1895 copyright page, verified in the scan. Its US publication term has expired as of 2026; the scan also identifies its rights as Public Domain. All twelve complete selected poems are collated against this witness. No Black Heritage reprint front matter, modern editorial text or images are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://web.english.upenn.edu/~cavitch/pdf-library/Harper_Atlanta_Offerings.pdf"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/679/pg679.txt",
+    "downloadSha256": "4fc1f2c6581d644428f30cf0e811881dc13ec95b2be1cc3f17cfc6b7847058c7",
+    "method": "Project Gutenberg plain text (eBook 679, Poems, UTF-8) from the PG mirror, compared with the Penn-hosted scan of the 1895 Atlanta Offering (https://web.english.upenn.edu/~cavitch/pdf-library/Harper_Atlanta_Offerings.pdf, retrieved 2026-11-17, SHA-256 e65a1b11c72214506bb3bac8769a347a6a088e7b69962535f9798fd8f41bdb5a). Kept the Isaiah epigraph and the poems from My Mother’s Kiss through Songs for the People, which is where the 1895 scan ends (p. 70); the seven further poems in PG 679 (Let the Light Enter to The Burdens of All, one of them on Maceo’s death in 1896) belong to a later enlarged printing and are excluded, as are the PG header and footer, the reprint title pages, the contents and the running heads with page numbers that PG keeps. Each blank-line chunk became a stanza with PG’s lines and two-space indentation kept; poem titles are headings. The twelve poems used as nightly readings were then replaced, block range for block range, by their collated text: eight punctuation marks corrected to the scan and stanzas re-joined across printed page breaks (log in the curator’s scratch lane). Converted by a scratch Node script; every nightly reading was located exactly. Harper’s one footnote, printed with an asterisk in Tried and True, is a [Footnote *: …] paragraph where the transcription places it, and its call in the verse is [*]."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 397,
+    "sha256": "afc4d3e08f29b4568a6854ef327611abaa573cdc265036f16b16d613058b7a4d"
+  }
+}

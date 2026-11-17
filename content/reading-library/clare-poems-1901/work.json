@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "clare-poems-1901",
+  "author": "John Clare",
+  "title": "Poems",
+  "translator": null,
+  "edition": "Selected and introduced by Norman Gale, bibliography by C. Ernest Smith; Rugby: George E. Over, 1901. PG52601 reproduces the explicit 1901 title page; only Clare’s complete individual poems are supplied, excluding introduction and bibliography. Common left indentation removed, outer blank lines and line-end spaces removed, CRLF normalized to LF; original verse line breaks and transcription stanza breaks retained. Source spelling and punctuation are preserved; no modern introduction or digitizer boilerplate is supplied. The library text holds all of Clare’s poems in this selection, in the book’s order, without the editor’s introduction or the bibliography.",
+  "publicationYear": 1901,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/52601",
+  "textUrl": "https://www.gutenberg.org/cache/epub/52601/pg52601.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The exact English edition is identified by the transcribed title page, RUGBY: GEORGE E. OVER, 1901. Project Gutenberg ebook 52601 expressly labels the text public domain in the USA. The dated English publication predates 1931, so its US publication term has expired as of 2026; no translation is involved.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/52601/pg52601.txt"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/52601/pg52601.txt",
+    "downloadSha256": "9c076bde97730283d120df77595c27cf7621ddf580e6fd505cb65148681e1e70",
+    "method": "Whole library text: Project Gutenberg plain text (eBook 52601, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl), every poem from What is Life? to I Am! Yet What I Am in the book’s order; the publisher’s notice, title and contents pages, Gale’s Biography and Comment, the closing star divider and Smith’s bibliography are excluded with the PG header and footer. Each poem’s common left indentation is removed (so its own indents and outdents stay relative to one another); the capitalised titles are headings and the subtitle and dedication lines under them minor headings; the transcription’s internal star dividers stay as * * * * * paragraphs. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 358,
+    "sha256": "7fefe0ac07d2c4f9768adc6105acfb92398357755ed8d02674613c6a1fc6eea1"
+  }
+}

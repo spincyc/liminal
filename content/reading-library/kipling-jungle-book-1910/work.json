@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "kipling-jungle-book-1910",
+  "author": "Rudyard Kipling",
+  "title": "The Jungle Book",
+  "translator": null,
+  "edition": "The Century Co., New York, 1910; copyright notices 1893–1894. The selected prose is from the dated transcription, not an undated modern adaptation. Project Gutenberg transcription. Prose line-wrap whitespace is folded to spaces; literary paragraphs and source spelling/punctuation (including plain-text emphasis marks) are retained. Illustration captions and publication apparatus are omitted; verse lineation is retained. The library text holds all seven stories with their epigraphs and the songs after them; each story title appears once as a heading, and in verse a stanza’s first line is given without the transcription’s indent.",
+  "publicationYear": 1910,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/35997",
+  "textUrl": "https://www.gutenberg.org/ebooks/35997.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The exact English print edition is dated 1910 in the transcription title matter; publication before 1931 places that text in the US public domain by 2026. Project Gutenberg separately labels ebook 35997 public domain in the USA. No separate modern introduction or images are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/35997/pg35997-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/35997/pg35997.txt",
+    "downloadSha256": "702dcf213efccf27768778ff44434f78557d1e7d2ba7a532899bec64633e55ca",
+    "method": "Project Gutenberg plain text (eBook 35997, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl). Kept the book from its opening Night-Song in the Jungle to the end of the Parade-Song of the Camp Animals, under the book title as a heading; removed the PG header and footer, the title, copyright, contents and illustration-list pages, every [Illustration] caption and the transcriber’s notes. Story and song titles are headings (each story title is printed twice, before its epigraph and again after it; the second is dropped), with the parenthetical song subtitles as minor headings; verse is a stanza whose first line loses its indentation while later lines keep the transcription’s, as the nightly readings have it; the italic attributions under the epigraphs are one-line paragraphs; prose paragraphs were joined with single spaces. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 987,
+    "sha256": "7c818cba58ff282b27b924b631b87e3b5c756beb2da7be93da0f760c173a6d1b"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "alcott-little-men-1871",
+  "author": "Louisa May Alcott",
+  "title": "Little Men: Life at Plumfield with Jo’s Boys",
+  "translator": null,
+  "edition": "Boston: Roberts Brothers, 1871, first edition; text taken from the scan-backed Wikisource transcription (Index:Little Men - Alcott (1871).djvu) and collated character by character against the OCR text of two scans of the 1871 printing (Library of Congress copy, archive.org littlemenlifeatp01alco; University of California copy, archive.org littlemenlifeatp00alcoiala). Where both scans agree, the printed punctuation, capitalization, word division and wording are adopted (for example “just round the corner, and Mrs. Bhaer close by, to fill”, “They were”, “O Aunty! please”, “apple-pie”, “a three mile drive”); corrections are listed in the collation log. The printed misprints “lowed” and “coriopsis” on page 307 are retained; one transcription paragraph break absent from printed page 42 is removed. Navigation, page labels and a mid-paragraph illustration caption are omitted; prose wraps and separated drop-cap letters are joined, verse line breaks retained, and italics not marked. Outside the passages used by the nightly readings the library text has not been collated: there it keeps the Wikisource transcription’s words and punctuation, which in places follow a later typography (for example everything and anything closed up).",
+  "publicationYear": 1871,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Little_Men",
+  "textUrl": "https://en.wikisource.org/wiki/Little_Men",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The scan-backed edition’s title page reads Boston: Roberts Brothers, 1871, and its copyright leaf dates Alcott’s original English work to 1871. The index explicitly identifies this first edition and provides its scanned pages. This published text is in the US public domain by publication date; no later introduction, annotations or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:Little_Men_-_Alcott_(1871).djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&page=Little_Men&prop=text&format=json&formatversion=2",
+    "downloadSha256": "345533eb41b84c422664af0165c1815c739db2c8034389bd1bca7e579d80d59b",
+    "method": "Whole library text: the Wikisource transcription itself (the textUrl’s work), fetched as rendered HTML through the MediaWiki API (action=parse) for the front-matter page Little_Men and its subpages Chapter_1 to Chapter_21 in printed order, and converted by a scratch Node script; the files, in order, are the API responses for Little_Men, Little_Men/Chapter_1, Little_Men/Chapter_2, Little_Men/Chapter_3, Little_Men/Chapter_4, Little_Men/Chapter_5, Little_Men/Chapter_6, Little_Men/Chapter_7, Little_Men/Chapter_8, Little_Men/Chapter_9, Little_Men/Chapter_10, Little_Men/Chapter_11, Little_Men/Chapter_12, Little_Men/Chapter_13, Little_Men/Chapter_14, Little_Men/Chapter_15, Little_Men/Chapter_16, Little_Men/Chapter_17, Little_Men/Chapter_18, Little_Men/Chapter_19, Little_Men/Chapter_20, Little_Men/Chapter_21 (each https://en.wikisource.org/w/api.php?action=parse&page=TITLE&prop=text&format=json&formatversion=2); the download URL names the first (the front-matter page), and the hash is of the 22 responses concatenated in that order. Kept the dedication (its display lines as one stanza), the book title over Chapter I, and Chapters I–XXI to THE END.; excluded the Wikisource headers and navigation, the title, copyright and contents pages, the frontispiece, page-number anchors, every illustration plate with its title and caption (including the one placed mid-paragraph), decorative rules and the closing printer’s imprint. Inline markup is dropped (italic and small capitals are not marked); the separated drop-cap letters and floating opening quotation marks are joined to their words; each chapter number and title form one heading; centred lines in the text (a sign and the titles of the boys’ compositions) are paragraphs; verse keeps its line breaks without indentation. Within the twenty passages the Grade 4 nightly readings use, the readings the curator collated against the two 1871 scans were substituted for the transcription’s, token by token, and in three passages whose paragraph division follows the print the passage’s blocks were replaced as a whole (214 token edits in all, such as Everyone → Every one, everything → every thing, new-made → new made, show-man → showman, millionaire → millionnaire, out → ought); every substitution is logged in the scratch lane (logs/alcott-little-men-1871.patch.txt). Every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2436,
+    "sha256": "264489727ff8420e1bd92c316fa0031fdcf3d3b41741122dd21e5fd5dcf77e64"
+  }
+}

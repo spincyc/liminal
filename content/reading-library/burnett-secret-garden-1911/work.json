@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "burnett-secret-garden-1911",
+  "author": "Frances Hodgson Burnett",
+  "title": "The Secret Garden",
+  "translator": null,
+  "edition": "New York: Frederick A. Stokes Company, August 1911, as explicitly dated in the transcribed front matter. Project Gutenberg transcription; only prose line-wrap whitespace is collapsed to single spaces, paragraph boundaries and punctuation are retained; embedded verse retains its line breaks. Illustrations, captions, front matter and digitizer notes are not selected. The library text holds all twenty-seven chapters; chapter numbers are joined with their titles as headings, and the star dividers between sections are kept.",
+  "publicationYear": 1911,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/17396",
+  "textUrl": "https://www.gutenberg.org/cache/epub/17396/pg17396.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original-English text is from the 1911 edition described above, before 1931. Project Gutenberg explicitly lists this ebook as public domain in the USA; no modern editorial introduction or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/17396"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/17396/pg17396.txt",
+    "downloadSha256": "438e61f5639bbe77d8730516944a312f4bb0704d59a36b6b8d57a7b66457bcae",
+    "method": "Project Gutenberg plain text (eBook 17396, UTF-8, CRLF normalised to LF) from the PG mirror. Kept Chapters I–XXVII up to “THE END”; removed the PG header and footer, the title, copyright and contents pages and [Illustration] placeholders. Blank-line separated paragraphs were joined with single spaces at line ends, keeping spacing inside lines and the transcription’s _underscore_ italics; the indented letters are prose (salutation, body and signature each one paragraph); indented verse is a stanza with the transcription’s lines and indentation kept; the star dividers between sections stay as one-line paragraphs; each chapter number is joined with its title in one heading. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2167,
+    "sha256": "b2423d356b12221a049762bfb84839fb17496bc6737de81514b5bde7253d015e"
+  }
+}

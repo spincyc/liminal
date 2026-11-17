@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "larcom-new-england-girlhood-1889",
+  "author": "Lucy Larcom",
+  "title": "A New England Girlhood: Outlined from Memory",
+  "translator": null,
+  "edition": "Boston and New York: Houghton, Mifflin and Company, 1889; copyright 1889 by Lucy Larcom. Text supplied from Project Gutenberg eBook 2293, a transcription whose print exemplar is unidentified; every selected excerpt was collated character by character against OCR of two scans of the 1889 plates (the Library of Congress deposit copy, title page dated 1889 and stamped DEC 2 1889, archive.org newenglandgirlho00lar; and a Boston Public Library copy, archive.org newenglandgirlho00larc_1). Where both scans agree against the PG transcription, the printed reading is used (for example “hill” for PG “bill”, “resolution” for “solution”, “figures,” for “figurines”, and the printed spaced contractions “has n’t”, “does n’t”, “is n’t”); three further punctuation and wording readings were confirmed from page images. PG’s straight quotation marks and double-hyphen dashes are retained as transcription conventions, and words divided at printed line ends follow PG. Prose soft line-wraps are joined; paragraph boundaries follow the transcription. In the library text, only the passages used as nightly readings carry these collated print readings; the rest of the book is the Project Gutenberg 2293 transcription as published (wrapping joined), not collated. The author’s dedication, epigraphs and preface are included; chapter numbers are joined with their titles as headings.",
+  "publicationYear": 1889,
+  "translationYear": null,
+  "url": "https://archive.org/details/newenglandgirlho00lar",
+  "textUrl": "https://www.gutenberg.org/cache/epub/2293/pg2293.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Published in Boston in 1889 with a copyright notice dated 1889 (title and copyright pages of the Library of Congress deposit copy); the US copyright term for this 1889 publication has expired. Project Gutenberg also marks eBook 2293 public domain in the USA. Only the original memoir text is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/newenglandgirlho00lar"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/2293/pg2293.txt",
+    "downloadSha256": "e787b0b1a24c5f0d834c7f8ed991891b95fc78e859516114585b58bbbe1bff41",
+    "method": "Project Gutenberg plain text (eBook 2293, UTF-8) from the PG mirror. Kept Larcom’s dedication, the two epigraphs, her preface and Chapters I–XII; removed the PG header and footer, the title page and the contents. Blank-line separated paragraphs were joined with single spaces at line ends (spacing inside lines kept); indented verse keeps its lines with common indentation removed; chapter numbers are joined with their titles as headings. Within the ten passages used as nightly readings, the readings established by the earlier collation against the 1889 scans were then substituted, block for block: 48 token-level changes (for example “bill” → “hill”, “solution” → “resolution”, “figurines” → “figures,”, “hasn’t” → “has n’t”), logged in the curator’s scratch lane. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 882,
+    "sha256": "18d225842d4bb5de6349001700f4dc2aed29f06e208295c7b68aa96ceae3c4a9"
+  }
+}

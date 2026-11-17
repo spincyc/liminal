@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "dunbar-complete-poems-1922",
+  "author": "Paul Laurence Dunbar",
+  "title": "The Complete Poems of Paul Laurence Dunbar",
+  "translator": null,
+  "edition": "New York: Dodd, Mead and Company, 1922. PG18338 reproduces this dated title page and the historical copyright notices; selected individual poems exclude the Howells introduction. Common left indentation removed, outer blank lines and line-end spaces removed, CRLF normalized to LF; original verse line breaks and transcription stanza breaks retained. Source spelling and punctuation are preserved; no modern introduction or digitizer boilerplate is supplied. The library text holds Dunbar’s dedications and all of his poems in this edition, without Howells’s introduction, the indexes or the musical-score illustrations in Whistling Sam.",
+  "publicationYear": 1922,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/18338",
+  "textUrl": "https://www.gutenberg.org/cache/epub/18338/pg18338.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The reproduced title page explicitly identifies the Dodd, Mead 1922 edition, and the reproduced copyright notices run no later than 1913. Project Gutenberg ebook 18338 expressly labels the text public domain in the USA. The dated English publication predates 1931, so its US publication term has expired as of 2026; no translation is involved.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/18338/pg18338.txt"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/18338/pg18338.txt",
+    "downloadSha256": "6f3ed4920c38370851255600ed035297bacac503bc1dc06fcf618d06de4ce409",
+    "method": "Whole library text: Project Gutenberg plain text (eBook 18338, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl): Dunbar’s dedications and every poem in all seven sections, from Lyrics of Lowly Life to Miscellaneous; the frontispiece caption, title and copyright pages, Howells’s introduction, the indexes of titles and first lines, the five [Illustration: Musical score.] markers in Whistling Sam and the transcriber’s notes are excluded with the PG header and footer. The transcription’s two-space verse margin is removed from every line, so further indents stay relative to it; section names, poem titles and capitalised part titles and subtitles are headings, and the two parenthetical subtitles are one-line paragraphs. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2239,
+    "sha256": "aed6f4621ac20d32b4f7cda0c2a02a7721cc8f41ec20a14595a7c2c20ccea757"
+  }
+}

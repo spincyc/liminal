@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "frost-north-boston-1915",
+  "author": "Robert Frost",
+  "title": "North of Boston",
+  "translator": null,
+  "edition": "New York: Henry Holt and Company, 1915. Scan-backed Wikisource transcription of the dated print edition. The title-page impression statement identifies the 1915 edition. The Good Hours page is proofread once (level 3), so the poem was collated with the scanned printed page 137: three punctuation errors are corrected to the print, “talk,” (line 2), “found.” (line 10) and “leave,” (line 15). HTML emphasis is flattened, nonbreaking spaces become spaces, and layout indentation/trailing whitespace are normalized. Poetry lines and stanza boundaries are retained; titles and page-navigation labels are excluded from blocks. Each poem locator names the corresponding subpage.",
+  "publicationYear": 1915,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/North_of_Boston",
+  "textUrl": "https://en.wikisource.org/wiki/North_of_Boston",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text in this 1915 edition was published before 1931 and is public domain in the United States in 2026. The dated source and its public-domain record are linked; no modern introductions, annotations, or illustrations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/North_of_Boston"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?format=json&formatversion=2&action=parse&page=North+of+Boston&prop=text%7Clinks",
+    "downloadSha256": "528b32babf74121f1ac5b4b53285f86e29d4325a5655a2306f56b63891cf86e5",
+    "method": "Partial library text from four MediaWiki API responses, fetched in this order and hashed as their concatenated bytes: (1) the North of Boston main page, https://en.wikisource.org/w/api.php?format=json&formatversion=2&action=parse&page=North+of+Boston&prop=text%7Clinks ; (2) The Pasture, https://en.wikisource.org/w/api.php?format=json&formatversion=2&action=parse&page=North_of_Boston%2FThe_Pasture&prop=text ; (3) Mending Wall, https://en.wikisource.org/w/api.php?format=json&formatversion=2&action=parse&page=North_of_Boston%2FMending_Wall&prop=text ; (4) Good Hours, https://en.wikisource.org/w/api.php?format=json&formatversion=2&action=parse&page=North_of_Boston%2FGood_Hours&prop=text . Converted by a scratch Node script. Only the parts of the Wikisource text that are transcribed from the scanned 1915 Holt edition are kept: from the main page the book title and dedication (TO E. M. F. THIS BOOK OF PEOPLE, as one paragraph), then The Pasture, Mending Wall (with its printed headnote, a paragraph before the title, as transcribed) and Good Hours, each poem’s title a heading. The advertisement, title-page imprint, contents and Wikisource licence notes are excluded. Stanzas keep their lines; Mending Wall, one unbroken verse paragraph set over three pages, is joined into one stanza; other page breaks fall between stanzas. The three corrections to Good Hours declared in the edition statement are made (talk, / found. / leave,). The nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Partial: the other fourteen poems’ Wikisource subpages are not transcribed from this scan (the scan’s Page namespace holds only pp. 1–24 and 143–156 of the djvu, and those subpages carry no page links), so they would not be the edition the record names and are left out. The library text holds the front matter, The Pasture, Mending Wall and Good Hours."
+  },
+  "text": {
+    "blocks": 13,
+    "sha256": "4e874489c0f675a4625cdc291f4362aad1b9afe5b53fd5b7bdf506ef3d32ec7f"
+  }
+}

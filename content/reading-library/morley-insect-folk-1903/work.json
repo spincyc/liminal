@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "morley-insect-folk-1903",
+  "author": "Margaret Warner Morley",
+  "title": "The Insect Folk",
+  "translator": null,
+  "edition": "Boston: Ginn & Company, 1903; title page and copyright 1903 by Margaret Warner Morley. Original English prose. Original paragraph breaks retained; hard-wrapped lines joined by spaces. The embedded four-line memory verse is retained as a stanza. Nontextual [Illustration] placeholders omitted as documented; no prose wording omitted within selected boundaries. The library text holds the author’s preface to the children, all chapters and the glossary, keeping the transcription’s ~bold~ markers and [=a] macron notation; the contents and the transcriber’s note are excluded.",
+  "publicationYear": 1903,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/18790",
+  "textUrl": "https://www.gutenberg.org/cache/epub/18790/pg18790.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original English text was published in 1903, before 1931, and its US copyright term has expired as of 2026. Project Gutenberg explicitly lists this ebook as Public domain in the USA. No modern editorial front matter, illustrations or translations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/18790"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/18790/pg18790.txt",
+    "downloadSha256": "a993a87c55a627f5e330301a842bb84c8787bff7e6e1dec1daab6da8d8224b2b",
+    "method": "Project Gutenberg plain text (eBook 18790, UTF-8) from the PG mirror. Kept Morley’s A Word to the Children with its signature, every chapter, and her glossary; removed the PG header and footer, the title and copyright pages, the contents, the boxed transcriber’s note on macron and breve notation, [Illustration] placeholders and one ornamental star divider. Blank-line separated paragraphs were joined with single spaces at line ends; indented chunks (the memory verse, the Orthoptera list) are stanzas with the transcription’s lines and indentation kept; capitalised one-line titles are headings, insect order names at level 1 (the tildes the transcription puts round NEUROPTERA and TRICHOPTERA dropped). The transcription’s _italic_ and ~bold~ markers and its [=a]/[)a] pronunciation notation are kept in the text. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2024,
+    "sha256": "2bb01436561e7175b1b8bd382a8dd353850eb6d06c1d6ffa3e83599269944101"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "teasdale-flame-shadow-1920",
+  "author": "Sara Teasdale",
+  "title": "Flame and Shadow",
+  "translator": null,
+  "edition": "New York: Macmillan, 1920. PG591 is an undated-print-exemplar transcription: every selected poem was visually collated in full against the digitized Harvard copy, IA flameandshadow00teasgoog, whose copyright page states Published, October, 1920. PG straight quotes, double-hyphen dashes, indentation, stanza spacing and metrical lineation are retained; scan typographic quotes, display capitals and printer-wrapped lines differ. Common left indentation removed, outer blank lines and line-end spaces removed, CRLF normalized to LF; original verse line breaks and transcription stanza breaks retained. Source spelling and punctuation are preserved; no modern introduction or digitizer boilerplate is supplied. The library text holds the whole of Flame and Shadow: the dedication and every poem in all its sections.",
+  "publicationYear": 1920,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/591",
+  "textUrl": "https://www.gutenberg.org/cache/epub/591/pg591.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected complete poems all occur in the dated 1920 Macmillan primary witness; full collation locators are recorded in witness-collation.json. This does not infer a publication year from the electronic release date. Project Gutenberg ebook 591 expressly labels the text public domain in the USA. The dated English publication predates 1931, so its US publication term has expired as of 2026; no translation is involved.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/download/flameandshadow00teasgoog/flameandshadow00teasgoog.pdf#page=9"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/591/pg591.txt",
+    "downloadSha256": "35957a4171c9f603127f41212ae6f5ac3e3ca3ccdc5d96bf1de3df9fef99591d",
+    "method": "Whole library text: Project Gutenberg plain text (eBook 591, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl), from the dedication through the last poem; the PG header and footer, the transcriber’s note on the text, the repeated title and contents pages, the [End of original text.] marker and the appended biographical note are excluded. The transcription’s uniform two-space left margin is removed from every line, so the further indentation it uses for turned lines and (five spaces) for italicised stanzas is kept relative to it; tildes marking italic words are kept as transcribed; the book title, the section numerals and the poem titles are headings, and the parenthetical subtitles under two titles are one-line paragraphs. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 347,
+    "sha256": "b01ddb2536a2ec67f7ed92f4802de67d0325d2ebdd4135cbcfe8a613f93cd749"
+  }
+}

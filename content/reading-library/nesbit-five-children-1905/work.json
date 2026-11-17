@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "nesbit-five-children-1905",
+  "author": "E. Nesbit",
+  "title": "Five Children and It",
+  "translator": null,
+  "edition": "New York: Dodd, Mead & Company, 1905; published October 1905, as explicitly reproduced on the title and copyright pages of Project Gutenberg eBook 17314. Produced by Jason Isbell and the Online Distributed Proofreading Team from Library of Congress images. This American English edition has minor wording differences from the 1902 British text; the supplied passages use the 1905 wording throughout. Prose wraps are joined; illustrations and underscore markup denoting italics are omitted; paragraph boundaries and words are preserved. The earlier PG778 and Indiana1902 drafts were replaced, not silently combined with this edition. The library text holds the dedication verse, the author’s note and all eleven chapters; the transcription’s spacing inside lines and its star dividers are kept, and chapter numbers are joined with their titles as headings.",
+  "publicationYear": 1905,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/17314",
+  "textUrl": "https://www.gutenberg.org/ebooks/17314.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This identified English edition was published in New York by Dodd, Mead & Company in October1905, as shown on the reproduced title and copyright pages. Gutenberg explicitly credits its Library of Congress image source and marks eBook17314 public domain in the USA. The dated1905 text is in the US public domain by publication date. Only the literary text is used; illustrations and later editorial material are excluded.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/files/17314/17314-h/17314-h.htm"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/17314/pg17314.txt",
+    "downloadSha256": "a9c2ee0019bbb010939a81e4c75208c6f51255fc3017fa843dbbf69765f05cdb",
+    "method": "Project Gutenberg plain text (eBook 17314, UTF-8) from the PG mirror (the same eBook as the textUrl). Kept Nesbit’s dedication to John Bland with its verse, her NOTE and Chapters I–XI; removed the PG header and footer, title and copyright pages, contents, list of illustrations, [Illustration] placeholders and the transcriber’s notes, and deleted every underscore italic marker. Blank-line separated paragraphs were joined with single spaces at line ends, keeping the transcription’s spacing inside lines; the children’s indented letters stay prose; the ornamental star dividers are kept as one-line paragraphs, as the nightly readings keep them; chapter numbers are joined with their titles as headings. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1534,
+    "sha256": "e592fd929817097af49987148a6398b2ce480ec6313b83e0df6c3a14a3b9cfa1"
+  }
+}
