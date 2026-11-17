@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "cox-brownies-their-book-1887",
+  "author": "Palmer Cox",
+  "title": "The Brownies: Their Book",
+  "translator": null,
+  "edition": "PG plain-text transcription (pg32210.txt) of the Appleton-Century-Crofts printing of the Century original-English text, copyright 1887; printing undated. The copyright leaf also records renewal in 1915; that is not a printing date. PublicationYear identifies the copyright-dated original text, supported by these primary leaves and the catalogue’s explicit US-public-domain determination. Verse line breaks and illustration-separated text blocks retained; indentation whitespace omitted. Plain-text emphasis markers retained where present. Electronic illustration markers, illustrations, and front matter excluded. No claim of collation with a different print witness is made.",
+  "publicationYear": 1887,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/32210",
+  "textUrl": "https://www.gutenberg.org/cache/epub/32210/pg32210.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original-English Century text is identified by its copyright 1887 leaf in the undated Appleton-Century-Crofts printing, which also records the 1915 renewal. The original 1887 text is outside its US publication term as of 2026; the PG catalogue explicitly labels this transcription public domain in the USA. Printing year is not inferred from either copyright date. No illustrations or later front matter are selected.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/32210"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/32210/pg32210.txt",
+    "downloadSha256": "c89d6565e781e72f87fd2178b1bded1d9b7ef1baf2d8efa31a113ff92429f61f",
+    "method": "Downloaded the Project Gutenberg plain text pg32210.txt (the textUrl file) from the aleph.pglaf.org mirror and converted it with a scratch script: CR line ends removed; every story title line (unindented \"THE BROWNIES ...\") becomes a heading; the verse between blank lines or [Illustration] markers becomes one stanza per text block, lines kept with their indentation dropped; the plain text's _underscore_ emphasis is kept. Omitted: the Project Gutenberg header, footer and licence, the cover, the bookplate form, the title page and copyright leaf, the contents, every [Illustration] marker, and the three captioned illustrations (the frontispiece note on Brownies, \"Brownie.\", and the song lettered in the singing-school picture) and the closing \"THE END\" picture. Kept: all twenty-four stories in order."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 326,
+    "sha256": "f78f08fa79999daf1e787d45198a30a8ecd6a3688181e0ec5ba22a3fac35eb86"
+  }
+}

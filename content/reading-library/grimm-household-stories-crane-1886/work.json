@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "grimm-household-stories-crane-1886",
+  "author": "Jacob Grimm and Wilhelm Grimm",
+  "title": "Household Stories from the Collection of the Brothers Grimm",
+  "translator": "Lucy Crane",
+  "edition": "English translation by Lucy Crane (1882); text of Macmillan 1886 edition as reproduced unabridged by Dover in 1963 and transcribed in Project Gutenberg 19068. Only the underlying story text is selected, without Dover front matter or illustrations. Line-wrapping whitespace is normalized; paragraph and verse boundaries are preserved. Story titles, which the book prints as lettered headpiece images, are taken from the images’ alt text; Mother Hulda is supplied with the book’s own footnote, marked [A]. The transcriber's punctuation corrections listed in the transcription's notes stand in the library text.",
+  "publicationYear": 1886,
+  "translationYear": 1882,
+  "url": "https://www.gutenberg.org/ebooks/19068",
+  "textUrl": "https://www.gutenberg.org/files/19068/19068-h/19068-h.htm",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The Project Gutenberg 19068 front matter states: “This new Dover edition, first published in 1963, is an unabridged republication of the work first published by Macmillan and Company in 1886.” The supplied story text is that 1886 English text of Lucy Crane’s translation (first published 1882); it is public domain in the United States in 2026, and Gutenberg expressly lists US public-domain status. Dover front matter and illustrations are excluded.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/19068/pg19068-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/1/9/0/6/19068/19068-h/19068-h.htm",
+    "downloadSha256": "6768e4454f1f811584c14c95eb9b610fa659d26b4a554ff71b5f0c9e9fb82cb3",
+    "method": "Downloaded the Project Gutenberg HTML 19068-h.htm (the textUrl file) from the aleph.pglaf.org mirror and converted it with a scratch HTML parser: each story's headpiece title image (src ending -title.jpg) becomes a heading from its alt text; h3 version and part headings, p paragraphs, stanza divs as stanzas (indentation dropped); the hidden span that repeats each drop-capital letter is kept so that words are whole; inline emphasis plain; prose whitespace folded. Omitted: the Project Gutenberg header, footer and licence, the 1963 Dover publisher's note, the transcriber's notes, page-number anchors, drop-capital and illustration images and captions. Kept: every story from \"The Rabbit's Bride\" to the end in the transcription's order, with the footnote to \"Mother Hulda\" (marker [A] in the text; the note as its own paragraph \"[Footnote A: …]\") where the transcription places it."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2560,
+    "sha256": "abc1cb9d40eb8640fe89e4aefd6316e8fd0d9e110c21ebc66458f9168456a719"
+  }
+}

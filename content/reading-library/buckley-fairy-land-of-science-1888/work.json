@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "buckley-fairy-land-of-science-1888",
+  "author": "Arabella B. Buckley",
+  "title": "The Fairy-Land of Science",
+  "translator": null,
+  "edition": "Philadelphia: J. B. Lippincott, 1888, the explicitly identified base edition of the Project Gutenberg Canada transcription; first published 1878. Text is selected from the 1888 edition, excluding later front matter and annotations. Primary scan provenance and publication data appear in that transcription’s header. Transcription treatment: HTML inline emphasis is represented as plain text; page numbers, image captions, illustrations, and digitizer boilerplate are excluded. Prose line-wrap whitespace is collapsed within each paragraph; verse line breaks and stanza boundaries are retained, with indentation whitespace normalized. Original wording, spelling, and punctuation are retained, including apparent historical or transcription oddities.",
+  "publicationYear": 1888,
+  "translationYear": null,
+  "url": "https://gutenberg.ca/ebooks/buckley-fairyland/buckley-fairyland-00-h-dir/buckley-fairyland-00-h.html",
+  "textUrl": "https://gutenberg.ca/ebooks/buckley-fairyland/buckley-fairyland-00-h-dir/buckley-fairyland-00-h.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The exact base edition is Philadelphia: J. B. Lippincott, 1888, explicitly identified in the transcription header; its maximum 95-year US publication term has expired. Original English text, not a later translation. US Project Gutenberg ebook 5726 independently identifies this literary work as public domain in the USA. Canadian status alone is not the US basis.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/5726"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://web.archive.org/web/20241216112243id_/https://gutenberg.ca/ebooks/buckley-fairyland/buckley-fairyland-00-h-dir/buckley-fairyland-00-h.html",
+    "downloadSha256": "dc44f2093298318ce931a366f73962485b2ec3c8c3504c9cae34ffc381c47de2",
+    "method": "gutenberg.ca now answers this file only after a login, so the identical transcription file (the textUrl) was downloaded from the Internet Archive Wayback Machine capture of 16 December 2024 in its raw form (id_ URL) and decoded as Windows-1252, the encoding its meta tag declares as ISO-8859-1. Converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs stanzas (indentation dropped), inline emphasis plain, prose whitespace folded. Omitted: the Project Gutenberg Canada header and closing line, the title page and imprint, the table of contents, page numbers, illustrations with their captions and the lettered keys printed beside the figures, the index, and the publisher's catalogue at the end. Kept: the title-page epigraph (\"Folk Lore.\"), the author's preface with signature and date, the half-title \"THE FAIRY-LAND OF SCIENCE.\" (its two lines joined), all ten lectures with their numbers and titles, the footnote markers in the text, and the author's nineteen footnotes after the last lecture under the transcription's label \"FOOTNOTES:\" (kept as a paragraph, not a heading), each note its own paragraph \"[Footnote n: …]\"."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 549,
+    "sha256": "39de5de228687f72a89811aaf9a87a26e06fbdaa541eedf027c3be7a7ff63e5d"
+  }
+}

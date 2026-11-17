@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "farjeon-london-town-punch-may24-1916",
+  "author": "Eleanor Farjeon",
+  "title": "Nursery Rhymes of London Town, in Punch, Vol. 150, May 24, 1916",
+  "translator": null,
+  "edition": "Original 1916 Punch printing, Project Gutenberg HTML transcription; line and stanza boundaries retained with indentation whitespace omitted; only Ladywell and Shepherdess Walk are selected. Attribution corroboration: contemporary review, The Spectator, December 16, 1916, page 17, https://archive.spectator.co.uk/article/16th-december-1916/17/gift---books (names King’s Cross and Bishopsgate); primary 1916 collection catalogue, https://catalog.hathitrust.org/api/volumes/full/recordnumber/101711765.json (MARC245: by Eleanor Farjeon; MARC260: London, Duckworth, c1916). The unsigned Punch series is attributed through these records; the separate 1922 anthology directly credits MISS E. FARJEON. Direct signed witness for the series: Poems from Punch, 1909–1920 (Macmillan, 1922), https://www.gutenberg.org/cache/epub/77833/pg77833-images.html, whose London-rhyme selections end with the credit MISS E. FARJEON.",
+  "publicationYear": 1916,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/45561",
+  "textUrl": "https://www.gutenberg.org/cache/epub/45561/pg45561-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original-English text was published in 1916, before 1931, and its US publication term has expired as of 2026. The linked Project Gutenberg catalogue explicitly labels this edition public domain in the USA. No modern editorial notes or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/45561"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/45561/pg45561-images.html",
+    "downloadSha256": "162edf519aa80985a797b0ca57a096455ff8974f9123c18e3dc8456a26b3214a",
+    "method": "Downloaded Project Gutenberg HTML pg45561-images.html (this Punch issue) from the aleph.pglaf.org mirror. A scratch script cut out the issue's \"NURSERY RHYMES OF LONDON TOWN\" section, from its heading to the next rule (hr), and a scratch HTML parser converted it: the series heading and each numbered poem title (\"VIII.—Orchard Street.\" and the like) become headings; each stanza div or br-broken paragraph becomes stanzas, a blank line (double br) starting a new stanza; one line per printed line, indentation dropped; small capitals and inline emphasis as plain text."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds only Eleanor Farjeon's instalment of \"Nursery Rhymes of London Town\" in this issue of Punch: the series heading, the numbered poem titles and the poems. The rest of the issue (other contributors' prose, verse, cartoons and notices) is not by Farjeon and is not included."
+  },
+  "text": {
+    "blocks": 7,
+    "sha256": "66daa118536418c25e911a8d6411e1f3ea7a9f915aa8ad7047b3436fefafe186"
+  }
+}

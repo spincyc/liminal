@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "bangs-half-hours-with-jimmieboy-1893",
+  "author": "John Kendrick Bangs",
+  "title": "Half-Hours with Jimmieboy",
+  "translator": null,
+  "edition": "New York: R. H. Russell & Son, MDCCCXCIII (1893), dated title page. Project Gutenberg HTML transcription. Prose line-wrap whitespace normalized, paragraph boundaries retained; embedded verse uses the source br line breaks. Page numbers, illustrations, publisher front matter, and electronic notices excluded.",
+  "publicationYear": 1893,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/39757",
+  "textUrl": "https://www.gutenberg.org/cache/epub/39757/pg39757-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original-English text was published in 1893, before 1931, and its US publication term has expired as of 2026. The linked Project Gutenberg catalogue explicitly labels this edition public domain in the USA. No modern editorial notes or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/39757"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/39757/pg39757-images.html",
+    "downloadSha256": "e8f78ca44fc7cc85830823a3f8d92b35507dbe6202040e3f71da8b5b254c251e",
+    "method": "Downloaded Project Gutenberg HTML pg39757-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page and the contents. Kept: the dedication, the author's note of thanks to Harper & Brothers (joined from its three centred lines), every chapter with its number and title headings, the in-text sum in chapter III as one stanza, and the closing \"(THE END.)\"."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 977,
+    "sha256": "c425dec2eaf0546e8e199fcd51b25425c545a4c877edbe96888770906cb044c9"
+  }
+}

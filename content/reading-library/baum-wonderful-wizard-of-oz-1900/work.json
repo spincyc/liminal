@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "baum-wonderful-wizard-of-oz-1900",
+  "author": "L. Frank Baum",
+  "title": "The Wonderful Wizard of Oz",
+  "translator": null,
+  "edition": "George M. Hill Company, Chicago and New York, 1900, as transcribed in Project Gutenberg 43936; its reproduced illustrated title page explicitly names the publisher and year. This replaces the unspecified-exemplar Gutenberg 55 transcription. Paragraph wrapping is reflowed, page numbers and illustration captions are excluded, and source spelling, capitalization and punctuation are retained. The transcription's closing note says obvious punctuation and spelling errors were fixed throughout; those fixes stand in the library text. The chapter titles, drawn as pictures in this edition, are given as headings in the words of the book's printed List of Chapters.",
+  "publicationYear": 1900,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/43936",
+  "textUrl": "https://www.gutenberg.org/cache/epub/43936/pg43936-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The reproduced title page identifies George M. Hill Company and 1900. This original English text was published before 1931 and its US term has expired; the Project Gutenberg 43936 catalogue independently states public domain in the USA. No later adaptation is used.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/43936/images/i001_edit.jpg"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/43936/pg43936-images.html",
+    "downloadSha256": "d3d1b28b90912b3d9b7b177d86e1391381d4f2d3f20190ad0b73a1bb9c535097",
+    "method": "Downloaded Project Gutenberg HTML pg43936-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the picture title page and the dedication (both drawn as images), the List of Chapters (used only to name the chapters) and the transcriber's notes. Kept: the author's introduction with its signature and date joined into one paragraph, as the selected excerpt gives it, and all twenty-four chapters; each chapter's pictured heading (image alt \"Chapter I\" and so on) is replaced by the matching line of the printed List of Chapters, for example \"CHAPTER I.—The Cyclone.\"."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1170,
+    "sha256": "21b273589106c74a8661833f7e6c4adb6071d1245fb538db2aecec0c14470ccb"
+  }
+}

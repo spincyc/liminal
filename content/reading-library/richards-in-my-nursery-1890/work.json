@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "richards-in-my-nursery-1890",
+  "author": "Laura E. Richards",
+  "title": "In My Nursery",
+  "translator": null,
+  "edition": "Project Gutenberg 39741 transcription from an undated Little, Brown and Company reprint; its print date is unidentified. Every selected poem was collated in full against the Roberts Brothers, Boston, 1890 primary witness (https://archive.org/details/inmynursery00richiala; dated title page at scan leaf 4). All selected words agree after whitespace normalization; Gutenberg punctuation, apostrophe spacing, pronunciation accents and plain-text typography are retained. Paragraph wrapping is reflowed; stanza and verse line breaks are retained; page numbers and illustration captions are excluded.",
+  "publicationYear": 1890,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/39741",
+  "textUrl": "https://www.gutenberg.org/cache/epub/39741/pg39741-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The identified Roberts Brothers witness explicitly dates its title page 1890. Every supplied poem was collated against that original English text, published before 1931 and public domain in the United States as of 2026. Project Gutenberg 39741 also explicitly states public domain in the USA; the undated reprint is not assigned an invented printing date.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/download/inmynursery00richiala/page/n4.jpg"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/39741/pg39741-images.html",
+    "downloadSha256": "5b4dce87f4473b1927fc18d1f0eb2d7b3ad993cbfee4855be4680e676f028eb7",
+    "method": "Downloaded Project Gutenberg HTML pg39741-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page and copyright leaf, the contents, and the publisher's \"Books by Laura E. Richards\" at the end. Kept: the verse dedication to Julia Ward Howe and every poem and prose piece with its printed notes in brackets, and the one footnote (to \"Hoddy-Doddy\", quoting Edward Lear) as its own paragraph \"[Footnote 1: …]\" where the transcription places it, its marker [1] kept in the verse."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1010,
+    "sha256": "6afea182d20e9db7c355ec46658dd277b6c6b871891a13fe218e926434443393"
+  }
+}

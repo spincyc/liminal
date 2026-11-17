@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "brown-saints-and-friendly-beasts-1900",
+  "author": "Abbie Farwell Brown",
+  "title": "The Book of Saints and Friendly Beasts",
+  "translator": null,
+  "edition": "Project Gutenberg transcription of the Houghton, Mifflin and Company text, copyright 1900 by Abbie Farwell Brown; printing undated. The year identifies the original English text shown on the copyright leaf, not a dated first edition. Project Gutenberg HTML transcription; soft prose line wraps and within-line whitespace normalized to single spaces; verse line and stanza boundaries retained. Illustrations, captions, page-number anchors, publisher matter, prefatory teaching mottos and digitizer matter are excluded. Original wording, spelling and punctuation retained. Each legend’s opening paragraph, printed with a decorative initial (div “cap” in the HTML), is supplied as transcribed, including its capitalized first words; one quoted couplet in “Saint Francis of Assisi” is kept as verse. Revised 2026-10-08 so that every selected legend is read from its opening, and Gerasimus, Blaise, Cuthbert, Comgall, Fronto, Francis and Launomar to their ends.",
+  "publicationYear": 1900,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/28990",
+  "textUrl": "https://www.gutenberg.org/cache/epub/28990/pg28990-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The publisher and original-text copyright leaf identify this English text as copyright 1900; the printing is undated. This identified pre-1931 text has an expired US publication term as of 2026, and the Project Gutenberg catalogue explicitly labels the transcription Public domain in the USA. No illustrations or later editorial material are included.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/28990"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/28990/pg28990-images.html",
+    "downloadSha256": "78ce7d1c306417a091f2eecb4a1b4bd4b31945e2dce4f7123dfebd20c48158fe",
+    "method": "Downloaded Project Gutenberg HTML pg28990-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped, a blank line of two br elements starting a new stanza), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the publisher's list of the author's books, the title page and copyright leaf, the contents with its note on first publication, and the printer's imprint. Kept: the dedication, the epigraph from Saint Guthlac, the author's foreword, every legend with its numbered sections and the book's closing line, and \"A Calendar\" with its table given as tab-separated rows (date and saint, empty cells dropped)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 630,
+    "sha256": "5a3fde084102d58f2006e325b2cc1b774d26d7d2337135557c21f8148845eaef"
+  }
+}

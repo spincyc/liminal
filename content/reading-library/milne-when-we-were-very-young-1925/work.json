@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "milne-when-we-were-very-young-1925",
+  "author": "A. A. Milne",
+  "title": "When We Were Very Young",
+  "translator": null,
+  "edition": "New York: E. P. Dutton; twenty-third printing, March 1925, of the text first published and copyrighted in 1924. The printing table is preserved in the source. Transcription treatment: HTML inline emphasis is represented as plain text; page numbers, image captions, illustrations, and digitizer boilerplate are excluded. Prose line-wrap whitespace is collapsed within each paragraph; verse line breaks and stanza boundaries are retained, with indentation whitespace normalized. Original wording, spelling, and punctuation are retained, including apparent historical or transcription oddities.",
+  "publicationYear": 1925,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/70271",
+  "textUrl": "https://www.gutenberg.org/cache/epub/70271/pg70271-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected English literary text was published in 1925, before 1931, and its maximum 95-year US publication term has expired as of 2026. Project Gutenberg explicitly identifies this ebook as public domain in the USA. ",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/70271"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/70271/pg70271-images.html",
+    "downloadSha256": "a0848ae78189ab5e9610d3dd77ccfb844b641a2d82647187014ee59137d7658a",
+    "method": "Downloaded Project Gutenberg HTML pg70271-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page, the copyright and printing table, and the contents with its note on the Queen's Dolls' House. Kept: the dedication, the author's preface \"Just Before We Begin\" with its signature, and every poem; hidden layout spans (class ns) are dropped, and stanzas split in the HTML only to permit a page break (class stanza00) are rejoined."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 244,
+    "sha256": "fb23fe1bde813bb933aea948fe2caf605d4a7b2fd2a9ffa3388ff83b7f28d7eb"
+  }
+}

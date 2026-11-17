@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "baldwin-fifty-famous-stories-1896",
+  "author": "James Baldwin",
+  "title": "Fifty Famous Stories Retold",
+  "translator": null,
+  "edition": "Project Gutenberg 18442 transcription of the American Book Company text, copyright 1896; printing undated. The primary publisher and original-text copyright leaf identify the supplied English retellings without claiming a dated first printing. Printed pronunciation hyphens and accent marks are preserved. Paragraph wrapping is reflowed; verse line breaks are retained; page numbers and illustration captions are excluded.",
+  "publicationYear": 1896,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/18442",
+  "textUrl": "https://www.gutenberg.org/cache/epub/18442/pg18442-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The reproduced American Book Company copyright leaf identifies this original English text as copyright 1896, before 1931; its US term has expired. Project Gutenberg 18442 explicitly states public domain in the USA. The later printing date is not identified or invented.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/18442"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/18442/pg18442-images.html",
+    "downloadSha256": "8a2a0004adcca9db300eb7643ec366efc12d9e1598aa95b3571f218263aa5a5a",
+    "method": "Downloaded Project Gutenberg HTML pg18442-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page, copyright line and contents. Kept: the author's preface \"Concerning These Stories\" and all fifty stories with their part headings, pronunciation hyphens and accents as printed. The bell's chime in \"The Bell of Atri\", printed as spaced lines, is one paragraph with its lines joined by single spaces, as the selected excerpt gives it."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1054,
+    "sha256": "4d6bb200fc0ba345c4013492ac660d5c979044c2e9640191ee994448b8a6db8b"
+  }
+}
