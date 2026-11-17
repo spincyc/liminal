@@ -85,12 +85,18 @@ function sourceRecord(work) {
 // level, title, range and where it can be opened.
 function libraryFile(id) { return "content/reading-library/" + id + "/meta.json"; }
 function chunkFile(id, n) { return "content/reading-library/" + id + "/" + n + ".json"; }
+// Readings in book order, then by grade; a reading that keeps its own text
+// (excerpt.inlineReason) cites the work without a range and sorts last.
+function byPosition(a, b) {
+  const start = use => use.blocks ? use.blocks[0] : Infinity;
+  return start(a) === start(b) ? a.grade - b.grade : start(a) < start(b) ? -1 : 1;
+}
 function buildLibrary({ library, uses = new Map(), output = path.join(ROOT, "dist") }) {
   const directory = path.join(output, "content/reading-library");
   fs.rmSync(directory, { recursive: true, force: true }); fs.mkdirSync(directory, { recursive: true });
   const works = [];
   for (const [id, { work, blocks }] of library) {
-    const chunks = L.chunks(blocks), used = (uses.get(id) || []).slice().sort((a, b) => a.blocks[0] - b.blocks[0] || a.grade - b.grade);
+    const chunks = L.chunks(blocks), used = (uses.get(id) || []).slice().sort(byPosition);
     const words = blocks.reduce((sum, block) => sum + block.text.split(/\s+/).filter(Boolean).length, 0);
     const record = { schemaVersion: 1, work: sourceRecord(work), scope: work.scope, words, blocks: blocks.length,
       contents: L.contents(blocks), chunks: chunks.map(([first, last], n) => ({ file: chunkFile(id, n), first, last })), uses: used };
