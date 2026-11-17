@@ -61,7 +61,7 @@
     const parts = String(location.hash || "").replace(/^#/, "").split("/");
     let area = null, track = "common-core-math", key = "k", week = "1", course = null;
     if (["curriculum.html", "weeks.html", "high-school.html", "courses.html", "lessons.html"].includes(page)) area = "courses";
-    if (["daily-reading.html", "reading-level.html"].includes(page)) area = "readings";
+    if (["daily-reading.html", "reading-level.html", "library.html"].includes(page)) area = "readings";
     if (["practice.html", "learn.html", "print.html"].includes(page)) area = "prep";
     if (page === "ap.html") area = "ap";
 
@@ -93,8 +93,11 @@
       if (context.trackId) { track = context.trackId; key = gradeKey(context.grade); }
     }
     else if (page === "daily-reading.html") {
-      const requested = parts[0] === "browse" ? parts.length === 2 ? parts[1] : null : parts[0];
+      // #browse/<grade>[/<week>], #<grade>/<week>/<day>, and the grade's date,
+      // month and reading routes (#<grade>/date/..., /month/..., /reading/...).
+      const browse = parts[0] === "browse", requested = browse ? parts.length <= 3 ? parts[1] : null : parts[0];
       key = READING_GRADE.test(requested) ? requested : "k";
+      if (browse && parts.length === 3 && READING_GRADE.test(parts[1]) && WEEK.test(parts[2])) week = parts[2];
       if (READING_GRADE.test(parts[0]) && parts.length === 3 && WEEK.test(parts[1]) && /^[1-5]$/.test(parts[2])) week = parts[1];
     }
     if (track === "common-core-reading") area = "readings";
@@ -125,14 +128,20 @@
     } else if (area === "readings") {
       const advanced = /^a[1-4]$/.test(key), planGrade = advanced ? "k" : key;
       const readingNight = page === "daily-reading.html" && READING_GRADE.test(parts[0]) && parts.length === 3 && WEEK.test(parts[1]) && /^[1-5]$/.test(parts[2]);
+      // Without a grade in the address, the page itself resumes the
+      // reader's remembered grade.
       const dailyHref = page === "weeks.html" || readingNight ?
-        "daily-reading.html#" + key + "/" + week + "/" + (readingNight ? parts[2] : "1") : "daily-reading.html#browse/" + key;
+        "daily-reading.html#" + key + "/" + week + "/" + (readingNight ? parts[2] : "1") :
+        ["reading-level.html", "library.html"].includes(page) ? "daily-reading.html" : "daily-reading.html#browse/" + key;
+      // One vocabulary (docs/daily-reading.md): Nightly readings, Library,
+      // Reading level, Year plans, Weekly lessons.
       secondary = [
-        { id: "daily", label: "Daily reading", href: dailyHref, current: page === "daily-reading.html" ? "page" : null },
+        { id: "daily", label: "Nightly readings", href: dailyHref, current: page === "daily-reading.html" ? "page" : null },
+        { id: "library", label: "Library", href: "library.html", current: page === "library.html" ? "page" : null },
         { id: "level", label: "Reading level", href: "reading-level.html", current: page === "reading-level.html" ? "page" : null },
         { id: "plans", label: "Year plans" + (advanced ? " (K–12)" : ""), href: "curriculum.html#common-core-reading/" + planGrade,
           current: page === "curriculum.html" ? "page" : null },
-        { id: "weeks", label: "Weekly work" + (advanced ? " (K–12)" : ""), href: "weeks.html#common-core-reading/" + planGrade + "/" + (advanced ? "1" : week),
+        { id: "weeks", label: "Weekly lessons" + (advanced ? " (K–12)" : ""), href: "weeks.html#common-core-reading/" + planGrade + "/" + (advanced ? "1" : week),
           current: page === "weeks.html" ? "page" : null },
       ];
     }

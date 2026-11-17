@@ -109,6 +109,12 @@
         });
         body.append(lessons);
       }
+      // Reading units point at the nightly readings for the same weeks.
+      if (track.track.id === "common-core-reading") {
+        const nightly = el("p", undefined, "plan-nightly");
+        nightly.append(link("Nightly readings, weeks " + unit.startWeek + "–" + unit.endWeek, "daily-reading.html#browse/" + (course.grade === 0 ? "k" : course.grade) + "/" + unit.startWeek));
+        body.append(nightly);
+      }
       const topics = expansion && (expansion.units || []).filter(topic => (topic.planUnitIds || []).includes(unit.id));
       if (topics && topics.length) {
         const related = el("div", undefined, "plan-block");
