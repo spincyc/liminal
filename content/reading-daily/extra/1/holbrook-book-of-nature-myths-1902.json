@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 1,
+  "grade": 1,
+  "work": "holbrook-book-of-nature-myths-1902",
+  "readings": [
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-01",
+      "title": "The Story of the First Humming-Bird, Part I: The Great Fire-Mountain",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Follow two hunters from a puzzling light to an answer, and notice how their guesses change.",
+      "focus": "Not knowing turns into knowing: the hunters are afraid, then brave enough to go and look.",
+      "context": "From Florence Holbrook’s The Book of Nature Myths (1902), a schoolbook of retold “why” stories that imagine how things in nature began. A mountain of fire like this one is what we call a volcano. The story is set among an Indigenous American people: a wigwam and a lodge are homes, and the Great Spirit is the maker of the world in Holbrook’s telling. The northern lights are colored lights in the night sky; a comet is a bright star-like light with a tail. To perish is to die.",
+      "contentNote": "Holbrook’s 1902 retelling uses the historical words “Indians” and “wigwam” and a general “Great Spirit” without naming any one people. Indigenous nations have many distinct cultures and stories; this is a schoolbook adaptation, not a reliable account of any of them, and not science.",
+      "excerpt": {
+        "locator": "“The Story of the First Humming-Bird,” Part I, “The Great Fire-Mountain,” the whole part; opens “Long, long ago, when the earth was very young, two hunters were traveling through the…”; closes “…for the Spirit of Fire is our good friend, and she keeps her people from perishing.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-holbrook-book-of-nature-myths-1902-02",
+        "blocks": [
+          5,
+          18
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0ab9933cb2d3d269566cb7ed33d93a5ee790f1627d9da03a5996ca2be71dc7ad"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-01-q1",
+          "prompt": "What do the hunters guess the bright light might be? Why do they say no to each guess?",
+          "facilitatorNotes": [
+            "The moon, the northern lights, or a comet. They know the moon well from watching it rise, and the other lights do not look like this either."
+          ],
+          "evidence": [
+            "That is not the moon.",
+            "it is not a comet"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-01-q2",
+          "prompt": "The hunters wait in terror all night. What do they do when morning comes?",
+          "facilitatorNotes": [
+            "They decide to go and see, and they climb right to the top. Ask what changed: perhaps daylight, perhaps wanting to know more than being afraid."
+          ],
+          "evidence": [
+            "we will go and see what it is",
+            "Shall we go on?"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-01-q3",
+          "prompt": "Why are the village people glad to move to the foot of the mountain?",
+          "facilitatorNotes": [
+            "They have been cold on winter nights, and now they can light their fires from the mountain’s flames."
+          ],
+          "evidence": [
+            "We can light our wigwam fires from its flames"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-01-q4",
+          "prompt": "The people say the Spirit of Fire is their good friend. Do you think living there is safe? What might happen?",
+          "facilitatorNotes": [
+            "A prediction: some children will trust the friendly Fire Spirit; others will worry about living beside a fire that never goes out. Keep the guesses for the next part."
+          ],
+          "evidence": [
+            "the Spirit of Fire is our good friend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-02",
+      "title": "The Story of the First Humming-Bird, Part II: The Frolic of the Flames",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice how the flames are described as if they were people, and what their “play” does.",
+      "focus": "Something friendly becomes dangerous when it will not listen.",
+      "context": "Recap: two hunters found a mountain of fire, and their village moved to its foot to stay warm in winter, calling the Fire Spirit their friend. A frolic is wild, happy play. “Many a moon” means many months. To heed is to listen and obey. A war-dance is a dance warriors once did before a battle.",
+      "contentNote": "Burning rock pours down the mountain, destroying the forest and the village; the animals flee and the people run into the forest. The story does not say that anyone dies.",
+      "excerpt": {
+        "locator": "“The Story of the First Humming-Bird,” Part II, “The Frolic of the Flames,” the whole part; opens “For many and many a moon the people of the village lived at the foot of the great…”; closes “…blue smoke still floats up to the sky, but the mountain will never again be our friend.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-holbrook-book-of-nature-myths-1902-01",
+        "continuesTo": "reading-1-holbrook-book-of-nature-myths-1902-03",
+        "blocks": [
+          20,
+          24
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "83e01308cb5814ea3aac5ef6789a849cf89573e3f397b8bef64744df5a04105e"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-02-q1",
+          "prompt": "What does the gentle Spirit of Fire call to her flames? Do they listen?",
+          "facilitatorNotes": [
+            "“Come back, my flames, come back again!” They do not heed her; the river of fire runs on."
+          ],
+          "evidence": [
+            "Come back, my flames, come back again!",
+            "The flames did not heed her words"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-02-q2",
+          "prompt": "The flames “danced” and later “feasted.” Why might the writer describe fire as if it were alive?",
+          "facilitatorNotes": [
+            "It makes the flames feel like wild children or warriors who will not obey, and makes the danger easier to picture. Some children may say it makes the fire scarier; others, more exciting."
+          ],
+          "evidence": [
+            "the flames in the mountain had a great frolic",
+            "the flames feasted upon the homes they loved"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-02-q3",
+          "prompt": "Who wakes the village, and how does he know something is wrong?",
+          "facilitatorNotes": [
+            "A warrior wakes with smoke in his nose and the noise of the flames in his ears."
+          ],
+          "evidence": [
+            "The thick smoke was in his nostrils."
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-02-q4",
+          "prompt": "Why do the hunters say the mountain will never again be their friend? Do you agree?",
+          "facilitatorNotes": [
+            "No flowers, no birds, no living creature are left, and the people cannot trust it now. Some children will point out that the Fire Spirit tried to stop the flames, so she is not to blame."
+          ],
+          "evidence": [
+            "but the mountain will never again be our friend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-03",
+      "title": "The Story of the First Humming-Bird, Part III: The Bird of Flame",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Listen to two sides of an argument, and see how the ending keeps something from each.",
+      "focus": "The cruel fire ends, but its beauty lives on in a tiny, gentle bird.",
+      "context": "Recap: the mountain’s flames ran wild one night, burning the forest and the village, and the people fled. Now the Great Spirit, the maker of all things in this story, has seen what the flames did. A war-club is a heavy club; marvelous means wonderful.",
+      "contentNote": "Holbrook’s 1902 retelling uses a general “Great Spirit” and “wigwam” without naming any one people; it is a schoolbook adaptation, not a reliable account of any Indigenous nation’s stories, and not science.",
+      "excerpt": {
+        "locator": "“The Story of the First Humming-Bird,” Part III, “The Bird of Flame,” the whole part; opens “When the Great Spirit saw the work of the flames, he was very angry. \"The fires of this…”; closes “…every child in all the earth loves it and is glad to see it fluttering over the flowers.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-holbrook-book-of-nature-myths-1902-02",
+        "continuesTo": null,
+        "blocks": [
+          26,
+          31
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "64d49200607979a0ff66afe1ab77c6299861cd70542463ab542b45cc19881bc2"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-03-q1",
+          "prompt": "What does the Great Spirit decide must happen to the fires, and why?",
+          "facilitatorNotes": [
+            "They must perish, because they were cruel to his people."
+          ],
+          "evidence": [
+            "The fires of this mountain must perish"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-03-q2",
+          "prompt": "What does the Fire Spirit say to speak up for the flames?",
+          "facilitatorNotes": [
+            "For many moons they were good: they kept the village warm in winter and made the children laugh. She asks him to remember the good as well as the harm."
+          ],
+          "evidence": [
+            "They drove the frost and cold of winter from the wigwams of the village.",
+            "The little children laughed to see their red light in the sky."
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-03-q3",
+          "prompt": "The fires must end, but the Great Spirit keeps something “because the children once loved them.” What does he keep?",
+          "facilitatorNotes": [
+            "Their beautiful colors, which live on in one little flame that becomes a bird. He listened to both sides: the fire goes, the beauty stays."
+          ],
+          "evidence": [
+            "the beautiful colors of the flames shall still live"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-03-q4",
+          "prompt": "Why is a humming-bird a good bird to come from a flame? Think about how it looks and moves.",
+          "facilitatorNotes": [
+            "Bright colors on its head and wings, and it flickers quickly over flowers like a small flame, yet it is gentle. Children may think of other reasons from what they have seen."
+          ],
+          "evidence": [
+            "The light of the flames was still on its head; their marvelous colors were on its wings.",
+            "It is the bird of flame"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-04",
+      "title": "The Story of the First Woodpecker",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice something that happens three times, and what the woman chooses each time.",
+      "focus": "Stinginess toward a hungry guest brings a punishment that fits.",
+      "context": "From Florence Holbrook’s The Book of Nature Myths (1902), a schoolbook of retold “why” stories that imagine how things in nature began. Here the Great Spirit, the maker of the world in this telling, comes to a woman’s wigwam, her home, looking like an old man. To fast is to go without food. A marvel is a wonder.",
+      "contentNote": "The Great Spirit punishes the woman by turning her into a bird. Holbrook’s 1902 retelling uses a general “Great Spirit” and “wigwam” without naming any one people; it is a schoolbook adaptation, not a reliable account of any Indigenous nation’s stories, and not science.",
+      "excerpt": {
+        "locator": "“The Story of the First Woodpecker,” the whole story; opens “In the days of long ago the Great Spirit came down from the sky and talked with men. Once…”; closes “…this day all woodpeckers live in the forest and hunt for their food in the bark of trees.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          39,
+          47
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a8266183413503cb2ae7eaf69570c729ba29feedd00a90aef7ba7515145b2bfa"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-04-q1",
+          "prompt": "What does the old man ask for, and what does he say each time he is made to wait?",
+          "facilitatorNotes": [
+            "Some food, because he has fasted for many days. Each time he answers patiently, “I will wait.” Say it together."
+          ],
+          "evidence": [
+            "Will you give me some food?",
+            "I will wait"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-04-q2",
+          "prompt": "What happens to each cake while it bakes? Who is making that happen?",
+          "facilitatorNotes": [
+            "Each one grows larger than she meant, even the smallest. The Great Spirit’s magic does it, though she does not know."
+          ],
+          "evidence": [
+            "She did not know that the Great Spirit's magic had made each cake larger"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-04-q3",
+          "prompt": "Why does the woman keep the cakes for herself? Where does she tell him to find food instead?",
+          "facilitatorNotes": [
+            "They look too big to give away, so she saves one for a feast. She sends him to look in the bark of the trees."
+          ],
+          "evidence": [
+            "I will keep it for a feast",
+            "You can find it in the bark of the trees"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-04-q4",
+          "prompt": "Is her punishment a good fit? Use what she said to the old man.",
+          "facilitatorNotes": [
+            "She told him to find food in tree bark, and now she must do exactly that, as a woodpecker. Some children will think it too harsh for not sharing a cake; let them say why."
+          ],
+          "evidence": [
+            "You shall go out into the forest and hunt for your food in the bark of trees."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-05",
+      "title": "Why the Woodpecker’s Head Is Red",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Connect the short talk at the beginning with the battle that follows.",
+      "focus": "A small bird finds its chance to help, and a strong warrior is wise enough to listen.",
+      "context": "From Florence Holbrook’s The Book of Nature Myths (1902), a schoolbook of retold “why” stories that imagine how things in nature began. The magician in this story is an evil wizard. A fever is an illness; fatal means deadly. A quiver holds arrows, and flint is a hard stone once used for arrowheads. A crest is a tuft of feathers on top of the head.",
+      "contentNote": "A magician spreads a deadly sickness, and a warrior kills him with an arrow; the warrior then marks the woodpecker’s head with the magician’s blood. Holbrook’s 1902 retelling uses a general “Great Spirit” and “wigwam” without naming any one people; it is a schoolbook adaptation, not a reliable account of any Indigenous nation’s stories, and not science.",
+      "excerpt": {
+        "locator": "“Why the Woodpecker’s Head Is Red,” the whole story; opens “One day the woodpecker said to the Great Spirit, \"Men do not like me. I wish they did.\"”; closes “…that he was the friend of man, and all his children to this day are as proud as he was.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          48,
+          62
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dab3c7798942bcaf3df8b7a206cde9664a1a5b5a36f6b8ee9da1a90e49650658"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-05-q1",
+          "prompt": "What does the woodpecker wish for at the beginning, and what does the Great Spirit tell him?",
+          "facilitatorNotes": [
+            "He wishes men liked him. He is told to help them, and that someone who wishes to help will one day get the chance."
+          ],
+          "evidence": [
+            "Men do not like me. I wish they did.",
+            "If one wishes to help, the day will come when he can help"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-05-q2",
+          "prompt": "Why can’t the warrior’s arrows hurt the magician?",
+          "facilitatorNotes": [
+            "The magician wears a magic cloak that arrows cannot go through."
+          ],
+          "evidence": [
+            "the magician had on his magic cloak, and the arrows could not wound him"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-05-q3",
+          "prompt": "What secret does the woodpecker tell, and what does the story say about the warrior for listening?",
+          "facilitatorNotes": [
+            "Aim at the crest of feathers on his head. The warrior “was not so proud” that he could not take a little bird’s advice; strong people can still learn from small ones."
+          ],
+          "evidence": [
+            "Aim your arrow at his head, O warrior!",
+            "The warrior was not so proud that he could not listen to a little bird."
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-05-q4",
+          "prompt": "Why is the woodpecker proud of his red head? How does that answer his wish at the beginning?",
+          "facilitatorNotes": [
+            "It shows everyone he is the friend of man, the very thing he wished for. His chance to help came, just as the Great Spirit said."
+          ],
+          "evidence": [
+            "because it showed that he was the friend of man"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-06",
+      "title": "Why the Cat Always Falls upon Her Feet",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice what the cat can see that the sleeping man cannot.",
+      "focus": "A small, frightened cat chooses to be brave for a friend.",
+      "context": "From Florence Holbrook’s The Book of Nature Myths (1902), a schoolbook of retold “why” stories that imagine how things in nature began. This magician is a kind one. A serpent is a big snake, and a thicket is a thick clump of bushes. To lull is to soothe to sleep.",
+      "contentNote": "A snake creeps up to kill a sleeping man, and the cat fights and kills the snake.",
+      "excerpt": {
+        "locator": "“Why the Cat Always Falls upon Her Feet,” the whole story; opens “Some magicians are cruel, but others are gentle and good to all the creatures of the…”; closes “…as you live, you shall leap where you will, and you shall always fall upon your feet.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          63,
+          69
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e06429ae8f9ac55d44f65ad1ac1e9edf4d586a959f8b1f819696f73012f8dadd"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-06-q1",
+          "prompt": "What sounds lull the magician to sleep?",
+          "facilitatorNotes": [
+            "The birds’ song, the lazy buzz of the wasp, and the wind in the leaves: “all the music of the forest.” Make the sounds softly together."
+          ],
+          "evidence": [
+            "All the music of the forest lulled him to slumber"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-06-q2",
+          "prompt": "Why does the serpent want to kill the magician?",
+          "facilitatorNotes": [
+            "The night before, the magician called a warning to the cat, and the snake lost its meal. It wants revenge."
+          ],
+          "evidence": [
+            "I could have eaten that cat last night if he had not called"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-06-q3",
+          "prompt": "The cat “quivered with anger and with fear.” Why does she leap anyway?",
+          "facilitatorNotes": [
+            "She remembers that the magician was good to her. Being brave here means being afraid and acting anyway. Some children may say anger made her brave; both are in the sentence."
+          ],
+          "evidence": [
+            "The little cat's body quivered with anger and with fear",
+            "The magician was very good to me"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-06-q4",
+          "prompt": "Why does the magician give the cat the gift of always landing on her feet?",
+          "facilitatorNotes": [
+            "Because she leapt from the high tree to save him; the reward matches the brave deed. Real cats do twist in the air to land on their feet; the story imagines a reason why."
+          ],
+          "evidence": [
+            "you leaped from the high tree to kill the deadly serpent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-07",
+      "title": "Why the Swallow’s Tail Is Forked",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Keep track of a secret: who finds the answer, and who changes it.",
+      "focus": "A quick-thinking friend changes the answer to save man, and pays a small price.",
+      "context": "From Florence Holbrook’s The Book of Nature Myths (1902), a schoolbook of retold “why” stories that imagine how things in nature began. A lodge is a home. Erect means standing up straight. A swallow is a fast bird whose long tail splits into two points, called a forked tail. “A year and a day” is an old way of saying a long, set time.",
+      "contentNote": "The swallow tears out the mosquito’s tongue, and the serpent tears off part of the swallow’s tail. Holbrook’s 1902 retelling uses a general “Great Spirit” and “wigwam” without naming any one people; it is a schoolbook adaptation, not a reliable account of any Indigenous nation’s stories, and not science.",
+      "excerpt": {
+        "locator": "“Why the Swallow’s Tail Is Forked,” the whole story; opens “This is the story of how the swallow's tail came to be forked.”; closes “…swallow's tail is forked, and it is why man always looks upon the swallow as his friend.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          70,
+          102
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0a311b890bceb7fbaf02f726f418d35db097a6f9d00f5453009a945ad821ced1"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-07-q1",
+          "prompt": "What does man ask the Great Spirit, and what reason does he give?",
+          "facilitatorNotes": [
+            "He asks that the serpent be given other food than his blood, because he is “the first of all the creatures.” The other animals are angry at his pride."
+          ],
+          "evidence": [
+            "Because I am the first of all the creatures you have made"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-07-q2",
+          "prompt": "How does the Great Spirit answer man? Do you think that is fair?",
+          "facilitatorNotes": [
+            "Man is first, but the Great Spirit is “the father of all,” and every creature, even the serpent, has its rights. Some children will feel sorry for man; the answer treats all creatures alike."
+          ],
+          "evidence": [
+            "Each one has his rights, and the serpent must have his food."
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-07-q3",
+          "prompt": "How does the swallow stop the mosquito from telling the answer?",
+          "facilitatorNotes": [
+            "He tears out the mosquito’s tongue, so it can only buzz “Kss-ksss-ksssss!” Make the sound, the way the story says a mosquito still does."
+          ],
+          "evidence": [
+            "he tore out the mosquito's tongue",
+            "Kss-ksss-ksssss!"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-07-q4",
+          "prompt": "The swallow saves man by telling a lie, and the frog pays for it. What do you think of what the swallow did?",
+          "facilitatorNotes": [
+            "He is a loyal, quick-thinking friend to man; he is also cruel to the mosquito and unfair to the frog. Accept either judgment, or both, when the child points to what happened."
+          ],
+          "evidence": [
+            "It is the blood of the frog",
+            "it is why man always looks upon the swallow as his friend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-holbrook-book-of-nature-myths-1902-08",
+      "title": "Why the White Hares Have Black Ears",
+      "sourceId": "holbrook-book-of-nature-myths-1902",
+      "genre": "literary myth",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice a story told inside another story, and who is listening to it.",
+      "focus": "A gentle spirit tries a story to teach the hares, and then a harsh punishment when the story does not work.",
+      "context": "From Florence Holbrook’s The Book of Nature Myths (1902), a schoolbook of retold “why” stories that imagine how things in nature began. Hares are like big rabbits, and some kinds really do turn white in winter. A firebrand is a burning stick taken from a fire. Fretful means grumbly and cross.",
+      "contentNote": "The spirit beats the quarrelling hares with a burning stick until their ears turn black. The story treats this as a lesson; talk about it as a punishment in an old tale, not as a way to treat anyone.",
+      "excerpt": {
+        "locator": "“Why the White Hares Have Black Ears,” the whole story; opens “In the forest there is a beautiful spirit. All the beasts and all the birds are dear to…”; closes “…and fighting again, it may be that we shall see their bodies as black as their ears.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          103,
+          116
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dda87f50edfa0c40d0315768d5a7efb9b1d1e52e594bb39539ed06a1aec39828"
+      },
+      "questions": [
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-08-q1",
+          "prompt": "What are the hares doing at the start that makes the spirit of the forest sad?",
+          "facilitatorNotes": [
+            "Fighting, each trying to grab the best of the food for itself."
+          ],
+          "evidence": [
+            "each trying to seize the best of the food"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-08-q2",
+          "prompt": "What do the hares say they want, and what story does the spirit tell them?",
+          "facilitatorNotes": [
+            "A story, and they promise to be good. He tells how magic snowflakes from the sky children’s snowball game turned into the first white hares."
+          ],
+          "evidence": [
+            "Tell us a story and we will be good",
+            "Every snowflake showed two bright eyes, then two long ears, then some soft feet"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-08-q3",
+          "prompt": "The spirit says the hares will stay white “if you are gentle and good.” What happens instead?",
+          "facilitatorNotes": [
+            "They are soon scolding and fighting again, and they are beaten with the firebrand until their ears are black."
+          ],
+          "evidence": [
+            "if you are gentle and good, you will always be white",
+            "till their ears were black as night"
+          ]
+        },
+        {
+          "id": "reading-1-holbrook-book-of-nature-myths-1902-08-q4",
+          "prompt": "Did the story or the punishment change the hares? What does the last sentence warn?",
+          "facilitatorNotes": [
+            "The story does not say either one made them good; it warns their bodies may turn black too. Some children will question beating as a way to teach, and notice the spirit tried a story first."
+          ],
+          "evidence": [
+            "it may be that we shall see their bodies as black as their ears"
+          ]
+        }
+      ]
+    }
+  ]
+}
