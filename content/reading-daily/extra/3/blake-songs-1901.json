@@ -1,0 +1,910 @@
+{
+  "schemaVersion": 1,
+  "grade": 3,
+  "work": "blake-songs-1901",
+  "readings": [
+    {
+      "id": "reading-3-blake-songs-1901-01",
+      "title": "The Little Black Boy (Songs of Innocence)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "The Little Black Boy",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 9,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a story told inside a story: a boy repeats his mother’s words, then adds his own.",
+      "focus": "A child uses his mother’s comfort to imagine a day when he and an English boy are equal before God.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Innocence. Blake wrote it while British ships still carried enslaved Africans across the ocean and people argued about ending slavery. The speaker is a Black child born in Africa, “the southern wild.” Bereaved means robbed of something loved.",
+      "contentNote": "The speaker uses the ideas of Blake’s time that joined whiteness with goodness and darkness with the lack of light (“my soul is white”; “as if bereaved of light”). Many readers think Blake set down those ideas in order to question them; they are the poem’s historical language, not the site’s view, and are worth talking about openly.",
+      "excerpt": {
+        "locator": "Songs of Innocence, “The Little Black Boy,” the complete poem; opens “My mother bore me in the southern wild, And I am black, but O my soul is white! White as…”; closes “…then I’ll stand and stroke his silver hair, And be like him, and he will then love me.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          19,
+          25
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2d2a09f88441e8eaff1303b6c2afd5822b651dfa71d9ce01e81e27fa5bcbcd10"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-01-q1",
+          "prompt": "Where did the boy’s mother teach him, and which way did she point?",
+          "facilitatorNotes": [
+            "Under a tree, before the heat of the day, pointing East toward the rising sun. Everything she teaches grows from that sunrise."
+          ],
+          "evidence": [
+            "My mother taught me underneath a tree,",
+            "And, pointing to the East, began to say:"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-01-q2",
+          "prompt": "What does the mother say the sun gives away, and who receives it?",
+          "facilitatorNotes": [
+            "Light and heat; flowers, trees, beasts and men all receive comfort and joy from it. She describes a gift shared by every living thing, not only some."
+          ],
+          "evidence": [
+            "And gives His light, and gives His heat away,",
+            "And flowers and trees and beasts and men receive"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-01-q3",
+          "prompt": "The mother calls their dark skin “a cloud” and “a shady grove.” What does she believe will happen to the cloud one day?",
+          "facilitatorNotes": [
+            "It will vanish when their souls have learned to bear the heat of God’s love, and God will call them out to rejoice. In her picture a body is like a cloud over the soul. Notice that the boy later gives the English child a “white cloud” too: everyone has one."
+          ],
+          "evidence": [
+            "Are but a cloud, and like a shady grove.",
+            "The cloud will vanish, we shall hear His voice,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-01-q4",
+          "prompt": "At the end the boy plans to shade the English boy “till he can bear” the heat, and hopes “he will then love me.” What does that hope tell you about the boy now? What do you think of his plan?",
+          "facilitatorNotes": [
+            "He is the stronger and kinder one in his own picture, yet he still has to hope for love, which suggests he does not have it now. Some readers hear generosity in the ending; others hear sadness and unfairness, because the Black child must earn a love the English child is simply given. Both readings use the text."
+          ],
+          "evidence": [
+            "I’ll shade him from the heat till he can bear",
+            "And be like him, and he will then love me."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-02",
+      "title": "The Chimney-Sweeper (Songs of Innocence)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "The Chimney-Sweeper",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 8,
+        "totalMinutes": 16
+      },
+      "challenge": "Hear one word with two meanings, and decide whether the speaker believes his own ending.",
+      "focus": "A small sweep comforts his friend, and a dream offers the freedom that daytime does not.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Innocence. In Blake’s London, boys as young as four or five were sold or bound to master sweeps and sent up inside narrow chimneys to brush out soot, the black dust left by coal fires. They walked the streets calling “Sweep!”",
+      "contentNote": "A mother dies and a father sells his young son into hard, dangerous work. In a dream, children lie locked in coffins until an angel frees them.",
+      "excerpt": {
+        "locator": "Songs of Innocence, “The Chimney-Sweeper,” the complete poem; opens “When my mother died I was very young, And my father sold me while yet my tongue Could…”; closes “…was cold, Tom was happy and warm: So, if all do their duty, they need not fear harm.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          30,
+          35
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8bac05b72e97c85132e533fabec1e8a068df9bfc887c4d22ccb3cb837740ad2c"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-02-q1",
+          "prompt": "The boy could “scarcely cry” the sweep’s street call. What comes out instead, and what two meanings can you hear in it?",
+          "facilitatorNotes": [
+            "He is too young to say “sweep” clearly, so it comes out “weep”: his street call and the sound of crying at once."
+          ],
+          "evidence": [
+            "Could scarcely cry ‘Weep! weep! weep! weep!’"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-02-q2",
+          "prompt": "How does the speaker comfort Tom Dacre when his curly hair is shaved?",
+          "facilitatorNotes": [
+            "He says that now the soot cannot spoil his white hair. It is a strange comfort, since there is no hair left to spoil; ask whether it would comfort them."
+          ],
+          "evidence": [
+            "‘Hush, Tom! never mind it, for, when your head’s bare,",
+            "You know that the soot cannot spoil your white hair.’"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-02-q3",
+          "prompt": "Compare the sweepers in Tom’s dream before and after the angel comes.",
+          "facilitatorNotes": [
+            "Before, they are locked in black coffins; after, they leap and laugh down a green plain, wash in a river, shine in the sun, and leave their bags behind. Darkness, soot and stillness change to light, water and play."
+          ],
+          "evidence": [
+            "Were all of them locked up in coffins of black.",
+            "And wash in a river, and shine in the sun."
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-02-q4",
+          "prompt": "The poem ends, “So, if all do their duty, they need not fear harm.” Does the rest of the poem make you believe that lesson?",
+          "facilitatorNotes": [
+            "The speaker seems to believe it, and Tom wakes happy. But the boys rise in the dark, the morning is cold, and the people who sold them are never blamed. Many readers think Blake wants us to doubt a lesson the child has been taught; others hear real comfort. Ask for a line on each side."
+          ],
+          "evidence": [
+            "Though the morning was cold, Tom was happy and warm:",
+            "So, if all do their duty, they need not fear harm."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-03",
+      "title": "Night (Songs of Innocence)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "Night",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 8,
+        "totalMinutes": 17
+      },
+      "challenge": "Keep track of who is speaking when the poem’s last two stanzas give a voice to a lion.",
+      "focus": "Night is watched over by unseen angels, and a fierce animal is imagined made gentle.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Innocence. As night falls, Blake imagines angels moving unseen among sleeping animals and people. A fold is a fenced pen that keeps sheep safe at night; wrath is fierce anger; meekness is gentleness.",
+      "contentNote": "Wolves and tigers hunt sheep, and the poem says the angels receive the spirits of those that are killed.",
+      "excerpt": {
+        "locator": "Songs of Innocence, “Night,” the complete poem; opens “The sun descending in the West, The evening star does shine; The birds are silent in…”; closes “…river, My bright mane for ever Shall shine like the gold, As I guard o’er the fold.’”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          66,
+          71
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a213b314a60b8f9164d4072e5b909f5ea41b847afe29842d0d73e7fa98a9f5c1"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-03-q1",
+          "prompt": "Find three signs of evening in the first stanza.",
+          "facilitatorNotes": [
+            "The sun goes down in the West, the evening star shines, the birds are silent, and the moon “sits and smiles.”"
+          ],
+          "evidence": [
+            "The sun descending in the West,",
+            "The birds are silent in their nest,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-03-q2",
+          "prompt": "What do the angels do when they find someone weeping who should be asleep?",
+          "facilitatorNotes": [
+            "They pour sleep on the weeper’s head and sit down by the bed, as a parent might."
+          ],
+          "evidence": [
+            "They pour sleep on their head,",
+            "And sit down by their bed."
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-03-q3",
+          "prompt": "The angels cannot always stop the wolves and tigers. What does the poem say happens then?",
+          "facilitatorNotes": [
+            "They weep and try to drive the hunger away; if the beasts rush in anyway, the angels receive each “mild spirit” into new worlds. Blake does not pretend the danger is gone; the comfort is what comes after."
+          ],
+          "evidence": [
+            "But, if they rush dreadful,",
+            "Receive each mild spirit,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-03-q4",
+          "prompt": "In the last two stanzas the lion speaks. How has he changed, and why might Blake end the poem with him?",
+          "facilitatorNotes": [
+            "The lion weeps golden tears, lies down beside the lamb and guards the fold he once threatened. Ending with him shows the poem’s biggest hope: that fierceness itself can turn gentle. Some readers notice this happens in “our immortal day,” another world, not this one."
+          ],
+          "evidence": [
+            "I can lie down and sleep,",
+            "As I guard o’er the fold.’"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-04",
+      "title": "On Another’s Sorrow (Songs of Innocence)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "On Another’s Sorrow",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 7,
+        "totalMinutes": 15
+      },
+      "challenge": "Answer a chain of questions that all expect the same answer, and notice how the chain grows.",
+      "focus": "If people cannot see sorrow without sharing it, the poem argues, God cannot either.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Innocence. It speaks from Christian belief: the God who “becomes an infant small” is Jesus. Those are the poem’s beliefs, which readers may or may not share. Woe means great sadness.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Songs of Innocence, “On Another’s Sorrow,” the complete poem; opens “Can I see another’s woe, And not be in sorrow too? Can I see another’s grief, And not…”; closes “…our grief He may destroy: Till our grief is fled and gone He doth sit by us and moan.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          91,
+          99
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "92887ca5c640fa297411178632f0f6f8941a93eec8ce0d50acb7be000ac7839f"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-04-q1",
+          "prompt": "What answer does the speaker give to the poem’s questions? How many times does he give it?",
+          "facilitatorNotes": [
+            "“No, no! never can it be!” and then “O no! never can it be!”, each followed by “Never, never can it be!”: twice, at the end of the third and sixth stanzas."
+          ],
+          "evidence": [
+            "No, no! never can it be!",
+            "O no! never can it be!"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-04-q2",
+          "prompt": "Find the small creature whose sorrows the poem mentions. Why might Blake choose such a small one?",
+          "facilitatorNotes": [
+            "The wren, with “sorrows small.” If the smallest bird’s grief is noticed, then no grief is too small to matter."
+          ],
+          "evidence": [
+            "Hear the wren with sorrows small,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-04-q3",
+          "prompt": "The first three stanzas ask about “I,” a father and a mother. How do they prepare for the questions about God?",
+          "facilitatorNotes": [
+            "They show that ordinary people cannot watch someone suffer without suffering too; then the poem asks the same about God. It argues from what we know to what we cannot see."
+          ],
+          "evidence": [
+            "Can I see another’s woe,",
+            "And can He who smiles on all"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-04-q4",
+          "prompt": "The poem ends with Him who “doth sit by us and moan.” Is that a comforting ending or a sad one?",
+          "facilitatorNotes": [
+            "The comfort is company rather than a quick fix: someone grieves beside you until the grief is gone. Some readers find “moan” sad; others find it the kindest word in the poem. Either view can be supported."
+          ],
+          "evidence": [
+            "Till our grief is fled and gone",
+            "He doth sit by us and moan."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-05",
+      "title": "The Clod and the Pebble (Songs of Experience)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "The Clod and the Pebble",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Compare two songs that use almost the same words to say opposite things.",
+      "focus": "Two small things answer the question “What is love?” and Blake leaves readers to judge.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Experience. A clod is a lump of earth; “metres meet” means fitting verses; “in heaven’s despite” means in spite of heaven.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Songs of Experience, “The Clod and the Pebble,” the complete poem; opens “‘Love seeketh not itself to please, Nor for itself hath any care, But for another gives…”; closes “…to its delight, Joys in another’s loss of ease, And builds a hell in heaven’s despite.’”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          113,
+          115
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5a6800661237c15424130e612a86367ef23207dc4f79c3b0534679d7628b3dc5"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-05-q1",
+          "prompt": "Where is each singer? What has happened to the clod?",
+          "facilitatorNotes": [
+            "The clod lies where cattle have trodden on it; the pebble lies in a brook."
+          ],
+          "evidence": [
+            "Trodden with the cattle’s feet,",
+            "But a pebble of the brook"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-05-q2",
+          "prompt": "Compare the first line of each song. Which words stay the same, and which change?",
+          "facilitatorNotes": [
+            "“Love seeketh … to please” stays; “not itself” becomes “only Self.” The last lines swap too: a heaven built in hell becomes a hell built in heaven. A tiny change of words turns the meaning around."
+          ],
+          "evidence": [
+            "Love seeketh not itself to please,",
+            "Love seeketh only Self to please,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-05-q3",
+          "prompt": "Why might a soft clod sing about giving, and a hard, smooth pebble sing about getting?",
+          "facilitatorNotes": [
+            "The clod gives way under every foot; the pebble stays hard while the water runs over it. Each song fits its singer. Some readers say the clod has learned love by suffering; others think it simply cannot help being stepped on."
+          ],
+          "evidence": [
+            "So sung a little clod of clay,",
+            "Warbled out these metres meet:"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-05-q4",
+          "prompt": "Blake never says which singer is right. Which song describes love better, in your view? Could both be true?",
+          "facilitatorNotes": [
+            "No single answer is expected. Many readers think both kinds of love are real; the pebble’s love wants “to bind another,” which sounds like owning someone. Ask for an example from a story or from life."
+          ],
+          "evidence": [
+            "But for another gives its ease,",
+            "To bind another to its delight,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-06",
+      "title": "Holy Thursday (Songs of Experience)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "Holy Thursday",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Notice when a poet describes weather that is not really weather.",
+      "focus": "A rich country lets its children go hungry, and the speaker refuses to call that holy.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Experience. Once a year thousands of poor children from London’s charity schools were marched into St Paul’s Cathedral to sing; Blake’s “Holy Thursday” in Songs of Innocence describes that service. This poem looks at the same children again. A usurous hand gives only to get back more; to appal is to horrify.",
+      "contentNote": "The poem is about children going hungry in a wealthy country.",
+      "excerpt": {
+        "locator": "Songs of Experience, “Holy Thursday,” the complete poem; opens “Is this a holy thing to see In a rich and fruitful land,— Babes reduced to misery, Fed…”; closes “…And where’er the rain does fall, Babe can never hunger there, Nor poverty the mind appal.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          117,
+          120
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4b572d898a5ed582f3b62d04fa95d268222398b1860c85305a1bfcac4f4f6611"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-06-q1",
+          "prompt": "What question opens the poem? What kind of land does the speaker finally say it is?",
+          "facilitatorNotes": [
+            "Whether it is holy to see babies in misery in a rich land; he answers that it is “a land of poverty,” though it is rich and fruitful."
+          ],
+          "evidence": [
+            "In a rich and fruitful land,—",
+            "It is a land of poverty!"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-06-q2",
+          "prompt": "The children are singing. What does the speaker hear instead of a song?",
+          "facilitatorNotes": [
+            "A “trembling cry.” He doubts that it can be a song of joy when so many children are poor."
+          ],
+          "evidence": [
+            "Is that trembling cry a song?",
+            "Can it be a song of joy?"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-06-q3",
+          "prompt": "“It is eternal winter there.” Is the speaker describing real weather? What could the winter stand for?",
+          "facilitatorNotes": [
+            "No: the land is fruitful. The sunless days, bare fields and thorny paths stand for the children’s hard, uncared-for lives. Some readers see cold hearts as well as cold lives."
+          ],
+          "evidence": [
+            "And their fields are bleak and bare,",
+            "It is eternal winter there."
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-06-q4",
+          "prompt": "Why does the last stanza say that where the sun shines and the rain falls, no baby can go hungry?",
+          "facilitatorNotes": [
+            "The land has plenty of both, so hunger there cannot be blamed on nature: it must be people who let it happen. The ending turns a picture into an accusation."
+          ],
+          "evidence": [
+            "For where’er the sun does shine,",
+            "Babe can never hunger there,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-07",
+      "title": "The Chimney-Sweeper (Songs of Experience)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "The Chimney-Sweeper",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Find where the child’s own words begin, and follow his reasons to the end.",
+      "focus": "A small sweep explains why being cheerful does not mean he has not been harmed.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Experience. Sweeps were small boys sent up inside chimneys to brush out soot; they called “Sweep!” in the streets, which a young child might pronounce “’weep.” A heath is open, wild land.",
+      "contentNote": "A small child works in the snow while his parents are at church; he blames them, and the church and king they praise, for his misery.",
+      "excerpt": {
+        "locator": "Songs of Experience, “The Chimney-Sweeper,” the complete poem; opens “A little black thing among the snow, Crying! ‘weep! weep!’ in notes of woe! ‘Where are…”; closes “…And are gone to praise God and His priest and king, Who made up a heaven of our misery.’”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          150,
+          152
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c1a8e6d818c2a3565491a55257c7d15dad6f06c1a3d12f380764d0ed426d7746"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-07-q1",
+          "prompt": "Who asks the question in the third line, and who answers? Where do the child’s words begin and end?",
+          "facilitatorNotes": [
+            "Someone passing asks where his parents are; the child answers from “They are both gone up” to the end of the poem. The quotation marks show it."
+          ],
+          "evidence": [
+            "‘Where are thy father and mother? Say!’—"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-07-q2",
+          "prompt": "What are “the clothes of death” the child was dressed in?",
+          "facilitatorNotes": [
+            "The sweep’s black, sooty clothes. The work was dangerous and could kill a child, so his work clothes are also death’s clothes."
+          ],
+          "evidence": [
+            "They clothed me in the clothes of death,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-07-q3",
+          "prompt": "The child still dances and sings. What do his parents think that proves? Does he agree?",
+          "facilitatorNotes": [
+            "They think it proves they have done him no injury. He does not agree: being cheerful is just how he was before, on the heath, and it hides the harm."
+          ],
+          "evidence": [
+            "And because I am happy and dance and sing,",
+            "They think they have done me no injury,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-07-q4",
+          "prompt": "Why might Blake put “God and His priest and king” in the same stanza as “our misery”?",
+          "facilitatorNotes": [
+            "The child says the people his parents praise “made up a heaven” out of children’s suffering: they talk of heaven while children work. Some readers hear him blaming the church and king; others think he blames the parents for praising them. Both readings fit the line."
+          ],
+          "evidence": [
+            "And are gone to praise God and His priest and king,",
+            "Who made up a heaven of our misery.’"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-08",
+      "title": "Nurse’s Song (Songs of Experience)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "Nurse’s Song",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Read a very short poem twice, and decide how its speaker feels.",
+      "focus": "A grown-up watches children play and feels something that is not joy.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Experience. A nurse here is a woman who looks after children. Songs of Innocence has a “Nurse’s Song” that begins almost the same way, in which the nurse lets the children play until dark. A dale is a valley; “in disguise” means hiding what is really felt.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Songs of Experience, “Nurse’s Song,” the complete poem; opens “When the voices of children are heard on the green, And whisperings are in the dale, The…”; closes “…Your spring and your day are wasted in play, And your winter and night in disguise.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          154,
+          155
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "54ac61b1b30805fa746fe6fd01243d7244474060ba8eb8c6d99f0f32cab2f5ba"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-08-q1",
+          "prompt": "What does the nurse hear, and what does it make her remember?",
+          "facilitatorNotes": [
+            "Children’s voices on the green and whispering in the valley; they bring back the days of her own youth."
+          ],
+          "evidence": [
+            "When the voices of children are heard on the green,",
+            "The days of my youth rise fresh in my mind,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-08-q2",
+          "prompt": "“My face turns green and pale.” What feeling might turn a face green? Why might the nurse feel it?",
+          "facilitatorNotes": [
+            "Envy, jealousy or sickness. She may envy the children’s freedom or regret her own lost youth; readers may also suggest worry."
+          ],
+          "evidence": [
+            "My face turns green and pale."
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-08-q3",
+          "prompt": "What does she say the children are wasting? Do you agree that play is wasted time?",
+          "facilitatorNotes": [
+            "Their spring and their day: their youth. Readers may well disagree with her, and Blake may want them to."
+          ],
+          "evidence": [
+            "Your spring and your day are wasted in play,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-08-q4",
+          "prompt": "What might “your winter and night in disguise” mean for the children’s lives?",
+          "facilitatorNotes": [
+            "Winter and night may be grown-up life, which she expects them to spend hiding their real feelings. It is a hard line; accept careful guesses that use the seasons."
+          ],
+          "evidence": [
+            "And your winter and night in disguise."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-09",
+      "title": "The Fly (Songs of Experience)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "The Fly",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Read very short lines slowly enough to follow one long thought.",
+      "focus": "A small careless act makes the speaker wonder whether he is any different from a fly.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Experience. The speaker has just brushed a fly away without thinking.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Songs of Experience, “The Fly,” the complete poem; opens “Little Fly, Thy summer’s play My thoughtless hand Has brushed away.”; closes “Then am I A happy fly. If I live, Or if I die.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          160,
+          164
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f6744f077a32e1dca97de1705158617f9652be796208e758486974e0d2845118"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-09-q1",
+          "prompt": "What has the speaker done to the fly, and how did it happen?",
+          "facilitatorNotes": [
+            "His “thoughtless hand” brushed away the fly’s summer play: he did not mean it or even think about it."
+          ],
+          "evidence": [
+            "My thoughtless hand",
+            "Has brushed away."
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-09-q2",
+          "prompt": "How does the speaker say he is like a fly? Find what he does.",
+          "facilitatorNotes": [
+            "He dances, drinks and sings until some “blind hand” brushes his wing: his life could end just as suddenly."
+          ],
+          "evidence": [
+            "For I dance,",
+            "Shall brush my wing."
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-09-q3",
+          "prompt": "Who or what might the “blind hand” be?",
+          "facilitatorNotes": [
+            "Death, chance, fate or God are all possible. The word “blind” matters: the hand does not see what it does, just as his own hand was “thoughtless.”"
+          ],
+          "evidence": [
+            "Till some blind hand"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-09-q4",
+          "prompt": "The poem says that “thought is life.” Why does that make the speaker “a happy fly” whether he lives or dies?",
+          "facilitatorNotes": [
+            "If thinking is what makes life, then while he thinks he is alive and content, and dying does not take that away. The ending is a puzzle; readers can say what they make of it, and that puzzling over it is itself thinking."
+          ],
+          "evidence": [
+            "If thought is life",
+            "A happy fly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-10",
+      "title": "The Tiger (Songs of Experience)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "The Tiger",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 8,
+        "totalMinutes": 16
+      },
+      "challenge": "Hear a poem made almost entirely of questions, and notice the one word that changes at the end.",
+      "focus": "The speaker wonders who could make a creature so beautiful and so terrible.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Experience. Symmetry is the matching of two sides, as in a face or a pair of stripes; sinews are strong cords that join muscle to bone; an anvil is the iron block a blacksmith hammers hot metal on.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Songs of Experience, “The Tiger,” the complete poem; opens “Tiger, tiger, burning bright In the forests of the night, What immortal hand or eye Could…”; closes “…In the forests of the night, What immortal hand or eye Dare frame thy fearful symmetry?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          171,
+          176
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4dd464df0b1901e44e302d0a114160ca538a6198bc405509cb2e0b8c0387b66e"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-10-q1",
+          "prompt": "Why might the tiger seem to be “burning bright” in a forest at night? What do you picture?",
+          "facilitatorNotes": [
+            "Orange and black stripes like flames, glowing eyes, standing out against the dark trees. The fire returns later in “the fire of thine eyes.”"
+          ],
+          "evidence": [
+            "Tiger, tiger, burning bright",
+            "Burnt the fire of thine eyes?"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-10-q2",
+          "prompt": "Stanza four is full of tools. What kind of work does the maker seem to be doing?",
+          "facilitatorNotes": [
+            "A blacksmith’s work: hammer, chain, furnace and anvil. The tiger seems forged like hot iron, not born."
+          ],
+          "evidence": [
+            "What the hammer? what the chain?",
+            "In what furnace was thy brain?"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-10-q3",
+          "prompt": "Which question compares the tiger with another animal? Why is it a surprising question?",
+          "facilitatorNotes": [
+            "“Did He who made the lamb make thee?” The lamb is gentle and the tiger fierce; could one maker have made both? Blake has a poem called “The Lamb” in Songs of Innocence."
+          ],
+          "evidence": [
+            "Did He who made the lamb make thee?"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-10-q4",
+          "prompt": "The first and last stanzas are almost the same, but “Could frame” becomes “Dare frame.” What difference does that one word make?",
+          "facilitatorNotes": [
+            "“Could” asks who was able to make the tiger; “dare” asks who was brave enough. By the end, the speaker’s wonder has grown into something closer to fear. Some readers hear admiration in “dare” as well."
+          ],
+          "evidence": [
+            "Could frame thy fearful symmetry?",
+            "Dare frame thy fearful symmetry?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-11",
+      "title": "A Poison Tree (Songs of Experience)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "A Poison Tree",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 8,
+        "totalMinutes": 15
+      },
+      "challenge": "Follow a comparison that runs through a whole poem: anger grown like a plant.",
+      "focus": "Anger that is hidden instead of spoken grows into something deadly.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Experience. Wrath is anger; a foe is an enemy; “deceitful wiles” are tricks; “when the night had veiled the pole” means when night had covered the sky.",
+      "contentNote": "The poem ends with the speaker glad to see his enemy lying under the tree, apparently killed by the poisoned apple.",
+      "excerpt": {
+        "locator": "Songs of Experience, “A Poison Tree,” the complete poem; opens “I was angry with my friend: I told my wrath, my wrath did end. I was angry with my foe: I…”; closes “…had veiled the pole; In the morning, glad, I see My foe outstretched beneath the tree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          210,
+          213
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "26c852be16e53e0443e64dc75cebf3d0fd42291688cdbcd0c0017007001a5e35"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-11-q1",
+          "prompt": "What happened when the speaker told his friend he was angry? What happened when he did not tell his foe?",
+          "facilitatorNotes": [
+            "With the friend, the anger ended; with the foe, it grew. The whole poem grows from that difference."
+          ],
+          "evidence": [
+            "I told my wrath, my wrath did end.",
+            "I told it not, my wrath did grow."
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-11-q2",
+          "prompt": "The speaker grows his anger like a plant. What does he water it and give it sunshine with?",
+          "facilitatorNotes": [
+            "He waters it with fears and tears and suns it with smiles and tricks: false friendliness that hides the anger."
+          ],
+          "evidence": [
+            "And I watered it in fears",
+            "And I sunnèd it with smiles"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-11-q3",
+          "prompt": "Why does the foe creep into the garden at night?",
+          "facilitatorNotes": [
+            "He sees the bright apple and knows it belongs to the speaker; he wants it, perhaps out of envy or rivalry. The foe does wrong too: he steals."
+          ],
+          "evidence": [
+            "And my foe beheld it shine,",
+            "And he knew that it was mine,—"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-11-q4",
+          "prompt": "How does the speaker feel in the morning? What do you think Blake wants readers to notice about that?",
+          "facilitatorNotes": [
+            "He is “glad.” The gladness is the most frightening part: hidden anger has turned him cruel. Many readers take the poem as a warning to speak about anger before it grows; others notice that both men chose badly."
+          ],
+          "evidence": [
+            "In the morning, glad, I see",
+            "My foe outstretched beneath the tree."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-blake-songs-1901-12",
+      "title": "The Schoolboy (Songs of Experience)",
+      "sourceId": "blake-songs-1901",
+      "workTitle": "The Schoolboy",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 8,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a comparison from a bird to a child to a growing plant.",
+      "focus": "A boy argues that a child kept from joy cannot grow well.",
+      "context": "William Blake (1757–1827) was a London poet and painter who printed his own books, etching each poem and its pictures onto copper and coloring the pages by hand. Songs of Innocence (1789) and Songs of Experience (1794) often answer each other: the same subject seen first with trusting eyes, then with troubled ones. This poem is from Songs of Experience. Schools in Blake’s time were often strict places where children sat silent for hours. A huntsman “winds his horn” by blowing it; a bower is a shady shelter of leaves; drooping means hanging down, tired and sad.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Songs of Experience, “The Schoolboy,” the complete poem; opens “I love to rise in a summer morn, When the birds sing on every tree; The distant huntsman…”; closes “…what griefs destroy, Or bless the mellowing year, When the blasts of winter appear?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          243,
+          248
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c98364c1283e67ea2acf619bce9c86219325c81001f64e954ce9a0e1bd3933c1"
+      },
+      "questions": [
+        {
+          "id": "reading-3-blake-songs-1901-12-q1",
+          "prompt": "What does the boy love about a summer morning? Find the sounds he hears.",
+          "facilitatorNotes": [
+            "Birds singing on every tree, a huntsman’s horn far off, and a skylark that sings “with me.” He calls them “sweet company.”"
+          ],
+          "evidence": [
+            "When the birds sing on every tree;",
+            "And the skylark sings with me:"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-12-q2",
+          "prompt": "What happens to his joy at school? Which words describe the teacher?",
+          "facilitatorNotes": [
+            "School “drives all joy away”; the teacher is only “a cruel eye outworn,” a tired and unkind eye always watching."
+          ],
+          "evidence": [
+            "O it drives all joy away!",
+            "Under a cruel eye outworn,"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-12-q3",
+          "prompt": "Stanza four compares a child to a bird. What is the cage?",
+          "facilitatorNotes": [
+            "School, or any place that keeps a child from joy. A bird born for joy cannot sing in a cage."
+          ],
+          "evidence": [
+            "How can the bird that is born for joy",
+            "Sit in a cage and sing?"
+          ]
+        },
+        {
+          "id": "reading-3-blake-songs-1901-12-q4",
+          "prompt": "In the last two stanzas the boy talks to his parents about buds, blossoms and summer fruit. What is he warning them about?",
+          "facilitatorNotes": [
+            "If a child’s joy is “nipped” like a bud, the child will not grow well, and the “summer” of later life will not come in joy. Some readers think he exaggerates and that school matters; ask which lines make his case strongest."
+          ],
+          "evidence": [
+            "O father and mother if buds are nipped,",
+            "How shall the summer arise in joy,"
+          ]
+        }
+      ]
+    }
+  ]
+}
