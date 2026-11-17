@@ -180,13 +180,14 @@
     links.forEach(item => { const li = R.el("li"); li.append(R.link(item.label, item.href)); if (item.note) li.append(R.el("span", " " + item.note, "daily-muted")); list.append(li); });
     group.append(R.el("h2", heading), list); section.append(group); section.hidden = false;
   }
-  async function fillRelated(section, { grade, reading, source, current }) {
+  async function fillRelated(section, { grade, reading, source, current, date: shown }) {
     const work = source && source.library && Lib.validWorkId(source.library) ? source.library : null;
     const place = [];
     if (work) place.push({ label: "Read it in the full work", href: Lib.href(work, reading.id), note: "(" + source.title + ")" });
     if (reading.week && D.hasCalendar(index, grade)) {
       try {
-        const date = Cal.nextDateOf(await calendarData(grade), reading.id, today());
+        // On a date page the reading's own date is already shown; name the next one.
+        const from = shown && shown >= today() ? Cal.addDays(shown, 1) : today(), date = Cal.nextDateOf(await calendarData(grade), reading.id, from);
         if (date && current()) place.push({ label: "On the date calendar: " + Cal.longDate(date), href: "daily-reading.html" + D.dateRoute(grade, date) });
       } catch (_) { /* The calendar is optional here. */ }
     }
@@ -266,7 +267,7 @@
     menuItems(documentActions(extraActions));
     printFooter.textContent = R.printFooterText(packet);
     shownTitle = reading.title;
-    fillRelated(related, { grade, reading, source, current });
+    fillRelated(related, { grade, reading, source, current, date: packet.date || null });
   }
   function failed(current, message) {
     if (current !== request) return;
