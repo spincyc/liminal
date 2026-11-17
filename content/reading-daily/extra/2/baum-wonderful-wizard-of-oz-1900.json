@@ -1,0 +1,881 @@
+{
+  "schemaVersion": 1,
+  "grade": 2,
+  "work": "baum-wonderful-wizard-of-oz-1900",
+  "readings": [
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-01",
+      "title": "Oz, chapter IV, part 1: no place like home",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Weigh one character’s reason against another’s, and notice when a joke also makes a point.",
+      "focus": "Dorothy explains why people choose a gray home, and the Scarecrow remembers being painted one part at a time.",
+      "context": "Recap: a cyclone carried Dorothy and Toto to the Land of Oz. They are following the road of yellow brick to the Emerald City, where the Wizard Oz may send her home to Kansas. Dorothy has just lifted the Scarecrow down from his pole in a cornfield, and he has come along to ask Oz for brains. Dreary means gloomy and dull.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, “The Road Through the Forest,” from the start through the farmer leaving the Scarecrow in the cornfield; opens “After a few hours the road began to be rough, and the walking grew so difficult that the…”; closes “…stick, where you found me. He and his friend soon after walked away and left me alone.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-02",
+        "blocks": [
+          148,
+          168
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d6e30b0ed12dda54fb18a7509fe33758280147beb2a6cb2d74e26e0d64161570"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-01-q1",
+          "prompt": "Why does the Scarecrow keep falling on the broken road when Toto and Dorothy do not?",
+          "facilitatorNotes": [
+            "Toto jumps across the holes and Dorothy walks around them; the Scarecrow, “having no brains,” walks straight ahead. Notice that falling never hurts him and that he laughs at his own mishap."
+          ],
+          "evidence": [
+            "having no brains he walked straight ahead",
+            "joined her in laughing merrily at his own mishap"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-01-q2",
+          "prompt": "Why does the Scarecrow refuse Dorothy’s bread?",
+          "facilitatorNotes": [
+            "His mouth is only painted. If he cut a hole to eat, the straw would come out and spoil the shape of his head. The reason is funny and also quite sensible."
+          ],
+          "evidence": [
+            "For my mouth is only painted"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-01-q3",
+          "prompt": "Dorothy says, “There is no place like home.” What reason does she give, and what does the Scarecrow decide from it?",
+          "facilitatorNotes": [
+            "She says people of flesh and blood would rather live at home, however gray. The Scarecrow says straw-headed people would all live in beautiful places, so it is lucky for Kansas that people have brains. Some children will side with Dorothy; others may enjoy his joke that brains make people choose the dull place."
+          ],
+          "evidence": [
+            "No matter how dreary and gray our homes are",
+            "It is fortunate for Kansas that you have brains."
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-01-q4",
+          "prompt": "The farmer paints the Scarecrow one part at a time. What can the Scarecrow do after each part is painted?",
+          "facilitatorNotes": [
+            "Ears first, so he hears the farmer; then one eye, and he looks around with curiosity; a bigger second eye, so he sees better; then a mouth, though he does not speak because he does not know what a mouth is for. He meets the world one sense at a time."
+          ],
+          "evidence": [
+            "one of the first things he did was to paint my ears, so that I heard what was going on",
+            "I didn't know what a mouth was for"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-02",
+      "title": "Oz, chapter IV, part 2: the old crow’s advice",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow a story told inside the story, and test what a character says about himself against what he does.",
+      "focus": "An old crow persuades the Scarecrow that brains are worth having; then the travellers enter a dark forest.",
+      "context": "Recap: walking the yellow brick road, the Scarecrow has begun telling Dorothy his life story. The farmer painted his ears, eyes and mouth, set him on a pole in the cornfield and walked away. Untilled land has not been ploughed or planted.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, “The Road Through the Forest,” from the crows in the cornfield to the end of the chapter; opens “\"I did not like to be deserted this way; so I tried to walk after them, but my feet would…”; closes “…who was never tired, stood up in another corner and waited patiently until morning came.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-01",
+        "continuesTo": null,
+        "blocks": [
+          169,
+          185
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f450bb00210f169e4f9ec6a5dbb181797c8785f46f609048dd59f15a621e23d6"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-02-q1",
+          "prompt": "How do the crows find out that the Scarecrow is not a real man?",
+          "facilitatorNotes": [
+            "An old crow looks at him carefully, perches on his shoulder and eats the corn. When the other birds see he is not harmed, they come too. The crow tested the scarecrow instead of simply flying away."
+          ],
+          "evidence": [
+            "after looking at me carefully he perched upon my shoulder",
+            "seeing he was not harmed by me"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-02-q2",
+          "prompt": "The crow says brains are “the only things worth having in this world.” What does the Scarecrow decide to do about it?",
+          "facilitatorNotes": [
+            "He thinks it over and decides to try hard to get some brains, which is why he is going to Oz. Children may notice that this advice comes from the crow who has just eaten his corn, and wonder whether the crow is a good adviser."
+          ],
+          "evidence": [
+            "Brains are the only things worth having in this world",
+            "decided I would try hard to get some brains"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-02-q3",
+          "prompt": "The Scarecrow says, “If this road goes in, it must come out.” Is that a brainless thing to say?",
+          "facilitatorNotes": [
+            "It is good reasoning. When Dorothy says anyone would know it, he answers that this is exactly why he knows it. He keeps thinking well and then saying he cannot think."
+          ],
+          "evidence": [
+            "If this road goes in, it must come out",
+            "If it required brains to figure it out, I never should have said it."
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-02-q4",
+          "prompt": "In the dark forest, who can see and who cannot? How does the group manage?",
+          "facilitatorNotes": [
+            "Dorothy cannot see; Toto and the Scarecrow can. She holds his arm, and he finds the cottage. The friend who says he knows nothing is the one who leads."
+          ],
+          "evidence": [
+            "Dorothy could not see at all, but Toto could",
+            "So she took hold of his arm, and managed to get along fairly well."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-03",
+      "title": "Oz, chapter V, part 1: a groan in the forest",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow a rescue step by step and notice what each helper does.",
+      "focus": "Dorothy and the Scarecrow free a rusted tin man, one joint at a time.",
+      "context": "Recap: a cyclone carried Dorothy and her dog Toto to the Land of Oz, and they are following the yellow brick road to ask the Wizard Oz to send her home to Kansas. The Scarecrow has joined them to ask for brains. They spent the night in an empty cottage in a dark forest. Rust is the reddish crust that forms on iron when it gets wet and makes it stiff.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, “The Rescue of the Tin Woodman,” from the start through oiling the Tin Woodman’s legs; opens “When Dorothy awoke the sun was shining through the trees and Toto had long been out…”; closes “…again and again for his release, for he seemed a very polite creature, and very grateful.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-04",
+        "blocks": [
+          187,
+          209
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c4ba630ff68e6ee218d723c7b64c7fae4a6fb911f37ea337e78e3a40dcc849db"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-03-q1",
+          "prompt": "Why does the Scarecrow think it must be “inconvenient to be made of flesh”?",
+          "facilitatorNotes": [
+            "People must sleep, eat and drink. He adds that brains are worth all that bother. Ask whether he would trade his straw for flesh."
+          ],
+          "evidence": [
+            "for you must sleep, and eat and drink"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-03-q2",
+          "prompt": "What tells Dorothy that someone nearby needs help, even before she sees him?",
+          "facilitatorNotes": [
+            "First a deep groan, then another groan behind them, then something shining in a ray of sunshine. Sound comes first and sight second."
+          ],
+          "evidence": [
+            "she was startled to hear a deep groan near by",
+            "something shining in a ray of sunshine"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-03-q3",
+          "prompt": "How long has the tin man been standing still, and what is the first thing he is glad to do?",
+          "facilitatorNotes": [
+            "More than a year, groaning with no one to hear. Once his arms move, he puts down the axe he has held in the air all that time. Children can imagine holding an arm up for a year."
+          ],
+          "evidence": [
+            "I've been groaning for more than a year, and no one has ever heard me before",
+            "I have been holding that axe in the air ever since I rusted"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-03-q4",
+          "prompt": "Dorothy does the oiling, but the Scarecrow does something too. Why does the rescue need both of them?",
+          "facilitatorNotes": [
+            "Oil alone does not free the joints; the Scarecrow moves the head from side to side and bends the arms until they work. Their two jobs fit together."
+          ],
+          "evidence": [
+            "the Scarecrow took hold of the tin head and moved it gently from side to side",
+            "the Scarecrow bent them carefully"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-04",
+      "title": "Oz, chapter V, part 2: a third traveller",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice how a new character’s wish echoes the others’, and what he adds to the company.",
+      "focus": "The Tin Woodman joins the party, clears the road, and says a heart is better than brains.",
+      "context": "Recap: in the forest Dorothy and the Scarecrow found a man made of tin, rusted so stiff he could not move, and oiled his joints until he could. A comrade is a companion.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, “The Rescue of the Tin Woodman,” from the Tin Woodman’s thanks to the start of his story; opens “\"I might have stood there always if you had not come along,\" he said; \"so you have…”; closes “\"I will tell you my story, and then you will know.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-03",
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-05",
+        "blocks": [
+          210,
+          228
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3474e747e0834792c85549f05c51908bd53dd099475465ee358f20ee0f1ebc05"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-04-q1",
+          "prompt": "What does the Tin Woodman ask after he hears why the others are going to Oz?",
+          "facilitatorNotes": [
+            "Whether Oz could give him a heart. Dorothy guesses it would be as easy as giving the Scarecrow brains; she does not yet know how hard any of these wishes will be."
+          ],
+          "evidence": [
+            "Do you suppose Oz could give me a heart?",
+            "it would be as easy as to give the Scarecrow brains"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-04-q2",
+          "prompt": "Why does the Tin Woodman ask Dorothy to carry the oil-can?",
+          "facilitatorNotes": [
+            "Rain could rust him again. He is planning for a danger he already knows. Children may guess that the oil-can will be needed later."
+          ],
+          "evidence": [
+            "if I should get caught in the rain, and rust again, I would need the oil-can badly"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-04-q3",
+          "prompt": "How does the Tin Woodman prove useful almost at once?",
+          "facilitatorNotes": [
+            "Branches grow so thick over the road that no one can pass, and his axe clears a way. The narrator calls it good luck to have him."
+          ],
+          "evidence": [
+            "chopped so well that soon he cleared a passage for the entire party"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-04-q4",
+          "prompt": "The Scarecrow wants brains and the Tin Woodman would rather have a heart. Why might the Tin Woodman’s opinion count for more?",
+          "facilitatorNotes": [
+            "He says he once had both, so he has “tried them both”; the Scarecrow has never had either. Some children will say trying both makes him the better judge; others may say his opinion is still only his own."
+          ],
+          "evidence": [
+            "once I had brains, and a heart also; so, having tried them both, I should much rather have a heart."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-05",
+      "title": "Oz, chapter V, part 3: the Tin Woodman’s story",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 6,
+        "totalMinutes": 15
+      },
+      "challenge": "Follow a long story told by one character, then weigh two friends’ opposite answers.",
+      "focus": "A witch takes the woodman’s body piece by piece, and the loss he minds most is his heart.",
+      "context": "Recap: the Tin Woodman, freed from rust, has joined Dorothy and the Scarecrow on the road to Oz. He told the Scarecrow he once had brains and a heart and would rather have a heart, and now he explains why. Munchkins are the little people of the eastern part of Oz; a tinsmith or tinner makes things of tin.",
+      "contentNote": "In his story an enchanted axe cuts off the woodman’s legs, arms and head one at a time and splits his body; the telling is fanciful and bloodless.",
+      "excerpt": {
+        "locator": "Chapter V, “The Rescue of the Tin Woodman,” the Tin Woodman’s story to the end of the chapter; opens “So, while they were walking through the forest, the Tin Woodman told the following story:”; closes “…anything, but she was not made of tin nor straw, and could not live unless she was fed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-04",
+        "continuesTo": null,
+        "blocks": [
+          229,
+          239
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c5c4892e6a00fd592e3ea3816f68562f29069bbf81de171b8990b9b898e19081"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-05-q1",
+          "prompt": "Why did the old woman want to stop the marriage, and what did she pay the Witch?",
+          "facilitatorNotes": [
+            "She was so lazy she wanted the girl to stay and do the cooking and housework, and she promised two sheep and a cow. Selfishness, not danger, starts the trouble."
+          ],
+          "evidence": [
+            "she was so lazy she wished the girl to remain with her",
+            "promised her two sheep and a cow"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-05-q2",
+          "prompt": "Each time the axe slips, what does the woodman do next? What does that show about him?",
+          "facilitatorNotes": [
+            "He goes back to the tinsmith for a new tin part and keeps chopping, “nothing daunted,” because he wants to build the house and marry. Some children call that brave; others call it stubborn."
+          ],
+          "evidence": [
+            "nothing daunted, I had them replaced with tin ones",
+            "I thought I had beaten the wicked Witch then"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-05-q3",
+          "prompt": "Of everything he lost, which loss does the Tin Woodman call the greatest, and why?",
+          "facilitatorNotes": [
+            "His heart, because without one he cannot love. He worked this out while he stood rusted for a year. His shining tin body made him proud, yet the loss he minds is one no one can see."
+          ],
+          "evidence": [
+            "the greatest loss I had known was the loss of my heart",
+            "no one can love who has not a heart"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-05-q4",
+          "prompt": "Who do you think is right, the Scarecrow or the Tin Woodman? What does Dorothy think?",
+          "facilitatorNotes": [
+            "The Scarecrow says a fool would not know what to do with a heart; the Woodman says brains do not make anyone happy. Dorothy is puzzled and mostly worried about the bread running out. Both friends can be defended, and her practical worry is a third answer."
+          ],
+          "evidence": [
+            "a fool would not know what to do with a heart if he had one",
+            "brains do not make one happy, and happiness is the best thing in the world",
+            "she was puzzled to know which of her two friends was right"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-06",
+      "title": "Oz, chapter VI, part 1: a roar in the forest",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice when a character’s actions and words do not agree.",
+      "focus": "A great Lion attacks, Dorothy slaps his nose, and he admits he is a coward.",
+      "context": "Recap: Dorothy and her dog Toto are walking the yellow brick road through a forest to the Emerald City, to ask the Wizard Oz to send her home to Kansas. With her are the Scarecrow, who wants brains, and the Tin Woodman, who wants a heart. Earlier, the good Witch of the North kissed Dorothy’s forehead and said the mark would protect her. People have long called the lion the King of Beasts.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, “The Cowardly Lion,” from the start through the Lion explaining how roaring has kept him safe; opens “All this time Dorothy and her companions had been walking through the thick woods. The…”; closes “…soon as they hear me roar they all try to get away from me, and of course I let them go.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-07",
+        "blocks": [
+          241,
+          264
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9a3f4866acffe49d28ee7dfc2aa247f700e19745f146b2caeae102183e88e7b1"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-06-q1",
+          "prompt": "Who does the Tin Woodman say is safe in the forest, and who is not? What does he say they must do?",
+          "facilitatorNotes": [
+            "He has his oil-can, nothing can hurt the Scarecrow, and Dorothy has the good Witch’s kiss; Toto has nothing, so they must protect him themselves. Listen for how this sets up what happens next."
+          ],
+          "evidence": [
+            "We must protect him ourselves, if he is in danger"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-06-q2",
+          "prompt": "The Lion is as big as a small horse. Why does Dorothy slap him?",
+          "facilitatorNotes": [
+            "She is afraid Toto will be killed and rushes forward “heedless of danger.” She acts from love for Toto, not because she knows she is safe. Some children call it brave; others call it rash."
+          ],
+          "evidence": [
+            "fearing Toto would be killed, and heedless of danger"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-06-q3",
+          "prompt": "Why does Dorothy call Toto “a meat dog”?",
+          "facilitatorNotes": [
+            "The Lion asks whether Toto is tin or stuffed, so she has to find words for an ordinary dog made of flesh. The joke is that in this company, being made of meat is the unusual thing."
+          ],
+          "evidence": [
+            "Is he made of tin, or stuffed?",
+            "He's a—a—a meat dog"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-06-q4",
+          "prompt": "How has the Lion managed to seem brave all his life?",
+          "facilitatorNotes": [
+            "He roars, and every creature runs away, so he never has to fight. His fame comes from noise, not courage. Ask whether the animals who run are braver than he is."
+          ],
+          "evidence": [
+            "I learned that if I roared very loudly every living thing was frightened and got out of my way"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-07",
+      "title": "Oz, chapter VI, part 2: a beetle on the road",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Hear a pattern of repeated lines, and decide what a careful action shows about a character.",
+      "focus": "The Lion joins the journey to ask for courage, and the Tin Woodman, who says he has no heart, weeps over a beetle.",
+      "context": "Recap: in the forest a great Lion attacked the travellers until Dorothy slapped his nose for trying to bite Toto. Then he admitted that he is a coward and has only seemed brave by roaring.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VI, “The Cowardly Lion,” from the Scarecrow’s answer to the end of the chapter; opens “\"But that isn't right. The King of Beasts shouldn't be a coward,\" said the Scarecrow.”; closes “…so I must be very careful. When Oz gives me a heart of course I needn't mind so much.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-06",
+        "continuesTo": null,
+        "blocks": [
+          265,
+          287
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6297aeebaecc3c16ab5a50e0469d341cdafbbf91ffa93e375bf59c418ddf6c95"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-07-q1",
+          "prompt": "Why does the Tin Woodman say the Lion ought to be glad if he has heart disease?",
+          "facilitatorNotes": [
+            "It would prove the Lion has a heart, the thing the Woodman wants most. He looks at the Lion’s trouble through his own wish."
+          ],
+          "evidence": [
+            "for it proves you have a heart"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-07-q2",
+          "prompt": "Listen to the four friends answer one another about Oz. What pattern do you hear?",
+          "facilitatorNotes": [
+            "Each says a wish in turn: brains, a heart, Kansas, and then courage, with “Just as easily,” “Or give me,” “Or send me.” The repeated lines make four travellers into one company with a shared hope."
+          ],
+          "evidence": [
+            "Just as easily as he could give me brains",
+            "Or give me a heart",
+            "Or send me back to Kansas"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-07-q3",
+          "prompt": "What happens after the Tin Woodman steps on a beetle, and what does he do differently afterwards?",
+          "facilitatorNotes": [
+            "He weeps, his tears rust his jaws shut, and the Scarecrow oils them. From then on he watches the road and steps over even a tiny ant."
+          ],
+          "evidence": [
+            "crying rusts my jaw so that I cannot speak",
+            "when he saw a tiny ant toiling by he would step over it"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-07-q4",
+          "prompt": "The Tin Woodman says he has no heart, yet he cries over a beetle. Does he have a heart or not?",
+          "facilitatorNotes": [
+            "He explains that he must be extra careful because he has no heart to guide him. Many children will say his kindness shows the very heart he thinks he lacks; others will take his explanation at its word. Either way, the reader notices something he does not."
+          ],
+          "evidence": [
+            "he took great care never to be cruel or unkind to anything",
+            "You people with hearts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-08",
+      "title": "Oz, chapter VII, part 1: a leap across the ditch",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Follow a problem and its solution, and notice who thinks of what.",
+      "focus": "Each traveller gives what he can: nuts from the Scarecrow, a fire from the Woodman’s wood, a great leap from the Lion.",
+      "context": "Recap: Dorothy, her dog Toto, the Scarecrow, the Tin Woodman and the Cowardly Lion are walking to the Emerald City to ask the great Wizard Oz for help: Dorothy wants to go home to Kansas, the Scarecrow wants brains, the Tin Woodman a heart and the Lion courage. They are still in a thick forest on the yellow brick road. A gulf here is a deep ditch.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “The Journey to The Great Oz,” from the night under the tree through the Lion’s three leaps; opens “They were obliged to camp out that night under a large tree in the forest, for there were…”; closes “…had made his breath short, and he panted like a big dog that has been running too long.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-09",
+        "blocks": [
+          289,
+          306
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5935a2d955eb80462a85d19dfd1b5ae353c7f36e1a71cfa12247ebefacd42140"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-08-q1",
+          "prompt": "Dorothy’s bread is gone. What do the Lion and the Scarecrow each offer her, and which offer upsets the Tin Woodman?",
+          "facilitatorNotes": [
+            "The Lion offers to kill a deer for her breakfast; the Woodman begs him not to, because he would weep and rust. The Scarecrow fills her basket with nuts."
+          ],
+          "evidence": [
+            "Don't! please don't",
+            "found a tree full of nuts and filled Dorothy's basket"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-08-q2",
+          "prompt": "Why doesn’t the Scarecrow mind how long it takes him to pick up the nuts?",
+          "facilitatorNotes": [
+            "The slow job keeps him away from the fire, which could set his straw alight. A clumsy job is also a safe one."
+          ],
+          "evidence": [
+            "it enabled him to keep away from the fire"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-08-q3",
+          "prompt": "Why does the Scarecrow say he should be the first to cross on the Lion’s back?",
+          "facilitatorNotes": [
+            "If the Lion fell short, Dorothy would be killed or the Woodman dented, but a fall could not hurt the Scarecrow. That is careful thinking from someone who says he has no brains."
+          ],
+          "evidence": [
+            "But if I am on your back it will not matter so much, for the fall would not hurt me at all."
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-08-q4",
+          "prompt": "The Lion says he is terribly afraid of falling. What does he do anyway, and what might that say about courage?",
+          "facilitatorNotes": [
+            "He jumps the ditch again and again until everyone is across. He is afraid and does it anyway. Children can say whether that is courage, or wait to see what the book decides."
+          ],
+          "evidence": [
+            "I am terribly afraid of falling, myself",
+            "there is nothing to do but try it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-09",
+      "title": "Oz, chapter VII, part 2: the Kalidahs",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 6,
+        "totalMinutes": 15
+      },
+      "challenge": "Track a quick run of dangers and find the idea that saves the party.",
+      "focus": "A fallen tree becomes a bridge and then a trap, and the frightened Lion stands and roars.",
+      "context": "Recap: the Lion carried his friends one at a time across a deep ditch in the forest, though he was afraid of falling. Now they hear strange noises ahead.",
+      "contentNote": "Two fierce beasts chase the travellers and are killed when they fall with a tree onto the rocks of a ditch.",
+      "excerpt": {
+        "locator": "Chapter VII, “The Journey to The Great Oz,” from the dark forest beyond the ditch to the end of the chapter; opens “They found the forest very thick on this side, and it looked dark and gloomy. After the…”; closes “…City, and of the good Wizard Oz, who would soon send her back to her own home again.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-08",
+        "continuesTo": null,
+        "blocks": [
+          307,
+          329
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "974ee399def5ebfd67626498c516de912788f120c405eaca3ed23704880f42d0"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-09-q1",
+          "prompt": "What are the Kalidahs, as the Lion describes them?",
+          "facilitatorNotes": [
+            "Beasts with bodies like bears, heads like tigers and long sharp claws. Hearing the Lion’s fear first makes them sound worse before they appear."
+          ],
+          "evidence": [
+            "They are monstrous beasts with bodies like bears and heads like tigers"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-09-q2",
+          "prompt": "The Scarecrow has two ideas about the same tree. What are they?",
+          "facilitatorNotes": [
+            "First, chop it down so it falls across the ditch as a bridge; later, chop off its end so it drops into the gulf with the Kalidahs on it. The Lion’s joke that he “almost” has brains comes true twice."
+          ],
+          "evidence": [
+            "If the Tin Woodman can chop it down",
+            "One would almost suspect you had brains in your head"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-09-q3",
+          "prompt": "The Lion begins to tremble when he sees the Kalidahs. What does he do next?",
+          "facilitatorNotes": [
+            "He turns to face them, roars so loudly that they stop, and promises to fight as long as he is alive. He is frightened and brave at the same moment."
+          ],
+          "evidence": [
+            "stand close behind me, and I will fight them as long as I am alive"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-09-q4",
+          "prompt": "After the danger, the Lion says his heart is still beating, and the Tin Woodman answers sadly. Why does that small exchange matter?",
+          "facilitatorNotes": [
+            "The Woodman wishes he had a heart to beat, even a frightened one. Each friend hears the same event through his own wish."
+          ],
+          "evidence": [
+            "my heart is beating yet",
+            "I wish I had a heart to beat"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-10",
+      "title": "Oz, chapter VIII, part 1: swept down the river",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow a plan that goes wrong, and listen for a pattern that returns from earlier in the book.",
+      "focus": "The river carries the raft off course and leaves the Scarecrow stuck on a pole in the middle of the water.",
+      "context": "Recap: Dorothy, her dog Toto, the Scarecrow, the Tin Woodman and the Cowardly Lion are walking to the Emerald City to ask the great Wizard Oz for help: Dorothy wants to go home to Kansas, the Scarecrow wants brains, the Tin Woodman a heart and the Lion courage. After escaping the fierce Kalidahs in the forest, they reached a broad river, and the Tin Woodman built a raft. A current is the strong flow of water in a river.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “The Deadly Poppy Field,” from the start through the walk back along the bank; opens “Our little party of travellers awakened next morning refreshed and full of hope, and…”; closes “…and had they not felt so sorry for the poor Scarecrow they could have been very happy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-11",
+        "blocks": [
+          331,
+          351
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "692165fa6fa3f9f0e9c7573ce30d893dc63ce4b38e02a2c4b21f18dc77942729"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-10-q1",
+          "prompt": "Listen to the four sentences that begin with “And I should.” What is each traveller afraid of losing?",
+          "facilitatorNotes": [
+            "Brains, courage, a heart and the way back to Kansas: the same four wishes the friends repeated when the Lion joined them, now spoken as fears."
+          ],
+          "evidence": [
+            "And then I should get no brains",
+            "And I should never get back to Kansas"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-10-q2",
+          "prompt": "How does the Scarecrow end up alone in the middle of the river?",
+          "facilitatorNotes": [
+            "He pushes so hard on his pole that it sticks in the mud, and the raft is swept away while he hangs on. Trying hardest to help is what strands him."
+          ],
+          "evidence": [
+            "he pushed so hard on his long pole that it stuck fast in the mud"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-10-q3",
+          "prompt": "The Scarecrow thinks he is now worse off than when he was in the cornfield. Why?",
+          "facilitatorNotes": [
+            "In the cornfield he could at least pretend to scare crows; on a pole in a river he is of no use at all. He judges himself by being useful."
+          ],
+          "evidence": [
+            "there is no use for a Scarecrow stuck on a pole in the middle of a river"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-10-q4",
+          "prompt": "How do the others get to shore, and why can’t they enjoy the lovely country afterwards?",
+          "facilitatorNotes": [
+            "The Lion swims with the Tin Woodman holding his tail, and Dorothy pushes with a pole. They are too sorry about the Scarecrow to be happy."
+          ],
+          "evidence": [
+            "hold fast to the tip of my tail",
+            "had they not felt so sorry for the poor Scarecrow they could have been very happy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-11",
+      "title": "Oz, chapter VIII, part 2: the kind Stork",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice how a weakness from earlier turns into a help.",
+      "focus": "A passing Stork carries the Scarecrow back to his friends.",
+      "context": "Recap: the river swept the raft downstream and left the Scarecrow clinging to a pole in the middle of the water. The others reached the shore far below and are walking back up the bank.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VIII, “The Deadly Poppy Field,” from seeing the Scarecrow on his pole through the Stork flying away; opens “They walked along as fast as they could, Dorothy only stopping once to pick a beautiful…”; closes “…replied Dorothy, and then the kind Stork flew into the air and was soon out of sight.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-10",
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-12",
+        "blocks": [
+          352,
+          370
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "880ebb2df2c7c26dc661b05d681e558aeef59163197c4a57e6672872cd8f92f5"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-11-q1",
+          "prompt": "Why does the Stork worry about carrying the Scarecrow, and why does Dorothy say she need not?",
+          "facilitatorNotes": [
+            "The Stork fears he is too heavy and says she might have to drop him. Dorothy explains that he is stuffed with straw. The lightness that made him tumble so easily now saves him."
+          ],
+          "evidence": [
+            "If he wasn't so big and heavy I would get him for you",
+            "He isn't heavy a bit"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-11-q2",
+          "prompt": "How does the Scarecrow show how glad he is to be back?",
+          "facilitatorNotes": [
+            "He hugs everyone, even the Lion and Toto, and sings “Tol-de-ri-de-oh!” at every step."
+          ],
+          "evidence": [
+            "he hugged them all, even the Lion and Toto"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-11-q3",
+          "prompt": "What does the Scarecrow promise the Stork, and how does she answer?",
+          "facilitatorNotes": [
+            "He promises to do her a kindness in return if he ever gets brains. She says she always likes to help anyone in trouble. Ask whether a person needs brains to repay a kindness, and whether the Stork wants to be repaid at all."
+          ],
+          "evidence": [
+            "if I ever get any brains I shall find the Stork again and do it some kindness in return",
+            "I always like to help anyone in trouble"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-12",
+      "title": "Oz, chapter VIII, part 3: the deadly poppy field",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Notice when the narrator tells readers something a character does not know.",
+      "focus": "A beautiful field of poppies puts Dorothy, Toto and the Lion to sleep, and their friends must decide what they can do.",
+      "context": "Recap: a kind Stork lifted the Scarecrow off his pole in the river and carried him back to his friends. Now they are walking through flowery country to find the yellow brick road again. Scarlet is bright red; an odor is a smell.",
+      "contentNote": "The poppies’ scent puts Dorothy, Toto and the Lion into a sleep that could kill them; the chapter ends with the Lion left behind asleep.",
+      "excerpt": {
+        "locator": "Chapter VIII, “The Deadly Poppy Field,” from the meadow of flowers to the end of the chapter; opens “They walked along listening to the singing of the bright-colored birds and looking at the…”; closes “…here they laid her gently on the soft grass and waited for the fresh breeze to waken her.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-11",
+        "continuesTo": null,
+        "blocks": [
+          371,
+          388
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cdcb6aebb7cdb8ee3adcf668a5225b8633c6eaffb0b5c1f873f6320501bc5336"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-12-q1",
+          "prompt": "What does each of Dorothy’s three friends say about the flowers? How do their answers fit their wishes?",
+          "facilitatorNotes": [
+            "The Scarecrow will like them better when he has brains, the Tin Woodman would love them if he had a heart, and the Lion has always liked flowers because they seem “helpless and frail.” Each answer comes from the speaker’s own wish or nature."
+          ],
+          "evidence": [
+            "When I have brains I shall probably like them better",
+            "If I only had a heart I should love them",
+            "they seem so helpless and frail"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-12-q2",
+          "prompt": "The narrator tells us something about poppies that Dorothy does not know. What is it, and how does it change the way the lovely field feels?",
+          "facilitatorNotes": [
+            "Their smell makes sleepers sleep on forever. Because the reader knows the danger before Dorothy does, the beautiful field becomes frightening."
+          ],
+          "evidence": [
+            "But Dorothy did not know this"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-12-q3",
+          "prompt": "Why can the Scarecrow and the Tin Woodman carry Dorothy out when the Lion cannot stay awake?",
+          "facilitatorNotes": [
+            "They are not made of flesh, so the scent cannot touch them. The straw and tin bodies they wish to change are exactly what save Dorothy."
+          ],
+          "evidence": [
+            "not being made of flesh, were not troubled by the scent of the flowers"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-12-q4",
+          "prompt": "Leaving the Lion asleep among the poppies is a hard choice. Do you think it was the right one?",
+          "facilitatorNotes": [
+            "He is far too heavy to lift, and the plan to run ahead was a fair one. Some children will want the friends to try anyway; others will say they must save Dorothy first. The next chapter answers what happens."
+          ],
+          "evidence": [
+            "We can do nothing for him",
+            "for he is much too heavy to lift"
+          ]
+        }
+      ]
+    }
+  ]
+}
