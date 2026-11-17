@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "farjeon-london-town-poems-from-punch-1922",
+  "author": "Eleanor Farjeon",
+  "title": "Nursery Rhymes of London Town selections in Poems from Punch, 1909–1920",
+  "translator": null,
+  "edition": "Macmillan and Co., London, 1922 anthology with introductory essay by W. B. Drayton Henderson, explicitly crediting MISS E. FARJEON after the three selected poems. Project Gutenberg #77833 HTML; original poem wording, stanza and line boundaries retained; indentation omitted. No introductory essay or modern annotations selected. Series attribution is also corroborated by the contemporary review in The Spectator, 16 December 1916, p. 17, https://archive.spectator.co.uk/article/16th-december-1916/17/gift---books.",
+  "publicationYear": 1922,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/77833",
+  "textUrl": "https://www.gutenberg.org/cache/epub/77833/pg77833-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original-English text was published in 1922, before 1931, and its US publication term has expired as of 2026. The linked Project Gutenberg catalogue explicitly labels this edition public domain in the USA. No modern editorial notes or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/77833"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/77833/pg77833-images.html",
+    "downloadSha256": "6a4e35abf41453e0ed9acc0e37fbb5152bac42f433fd7426c6bbce750402e2bf",
+    "method": "Downloaded Project Gutenberg HTML pg77833-images.html from the aleph.pglaf.org mirror. A scratch script cut out the anthology section from its heading \"Nursery Rhymes of London Town\" (anchor nursery) to the next poem's heading (anchor booklover), and a scratch HTML parser converted it: the section heading and the three poem titles become headings; each br-broken poem paragraph becomes a stanza, one line per printed line with the leading indentation dropped; the printed date line after Kingsway is a paragraph and the closing credit with its date a two-line stanza, as printed."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds only the section \"Nursery Rhymes of London Town\" of Poems from Punch, 1909–1920: Eleanor Farjeon's Kingsway (dated March 2, 1916), Haymarket and The Angel, with the closing credit \"MISS E. FARJEON.\" and date June 4, 1916. The anthology's other poems by other contributors and W. B. Drayton Henderson's introduction are not included."
+  },
+  "text": {
+    "blocks": 13,
+    "sha256": "5df530f178f8cd214b7c385f64c37cfc8aa6695cff7bdf7ee3398a8b57313f50"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "blanchan-bird-neighbors-1923",
+  "author": "Neltje Blanchan",
+  "title": "Bird Neighbors",
+  "translator": null,
+  "edition": "New York: Doubleday, Page & Company, 1923, dated title page; original work first published 1897. Project Gutenberg HTML transcription of this dated edition. Selected narrative paragraphs only; identification tables, quotations outside the selected ranges, illustrations, front matter, and electronic notices excluded. Prose line-wrap whitespace normalized; paragraph boundaries and original punctuation retained. This historical nature writing is not a current taxonomy or bird-care reference. The library text holds Blanchan's preface and the whole of the book proper (Bird Families, Habitats, Seasons, Sizes, and the descriptions grouped by colour, each with its identification fields); John Burroughs's two introductory essays and the index are not included.",
+  "publicationYear": 1923,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/37735",
+  "textUrl": "https://www.gutenberg.org/cache/epub/37735/pg37735-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original-English text was published in 1923, before 1931, and its US publication term has expired as of 2026. The linked Project Gutenberg catalogue explicitly labels this edition public domain in the USA. No modern editorial notes or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/37735"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/37735/pg37735-images.html",
+    "downloadSha256": "f21f90aa16dcf1fd4044e1ddbca195f38f7ae1be0390900a9febf3995004cfa0",
+    "method": "Downloaded Project Gutenberg HTML pg37735-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page and copyright leaves, the table of contents, John Burroughs's \"The Nature Library\" and \"Introduction\" (not Blanchan's text), the lists of coloured and half-tone plates, the index, and the transcriber's notes (whose six listed corrections stand in the text). Kept: Blanchan's preface with its signature and the whole book proper. The book's section titles (div caption1) are level-1 headings and its family and bird-entry titles (caption2, name and Latin name joined by a space) level-2 headings; each entry's \"Called also\" line and identification fields (Length, Male, Female, Range, Migrations and so on) are paragraphs with their line breaks folded; verse quotations are stanzas, and the narrative that resumes after a verse quotation stays its own paragraph as in the HTML. The heading \"HEIR CHARACTERISTICS ...\" is kept as transcribed."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1507,
+    "sha256": "6a29c27bfb287102a14690ad36e36ed0a0247088494dbce5a14a8b92f6919e6e"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "grahame-dream-days-1902",
+  "author": "Kenneth Grahame",
+  "title": "Dream Days",
+  "translator": null,
+  "edition": "Original English text in Dream Days, John Lane / The Bodley Head, London and New York, 1902. Supplied directly from the scan-linked Wikisource transcription of that edition, chapter The Reluctant Dragon, pp. 149–204. Its paragraph boundaries and closing carol lines are retained. HTML markup, page-number markers and zero-width page anchors are removed; prose line-wrap whitespace is folded. No Gutenberg print-exemplar claim is made. Illustrations, captions and modern editorial material are excluded. The 1902 printing sets contractions with a space before the apostrophe (for example “I 'm”); as in the transcription, these are closed up (“I'm”), a typographic normalization only. In “Oh, if you won't be sensible” the transcription’s “wont” is corrected to the printed “won't” (p. 168). Library text: the whole book as transcribed on Wikisource, all eight chapters in printed order (The Twenty-First of October, Dies Iræ, Mutabile Semper, The Magic Ring, Its Walls Were as of Jasper, A Saga of the Seas, The Reluctant Dragon, A Departure), with the transcription's wording, paragraphing and the closing carol's four lines; the single correction is “wont” to “won't” on p. 168 as above. Two spaced contractions the transcription leaves (“I 'm sure”, “and I 'm so tired”) are kept as transcribed. Excluded: the front matter (frontispiece, advertisement, title page, contents), Maxfield Parrish's full-page plates with their tissue-guard titles and quoted captions, head- and tailpieces, and the half-title of The Magic Ring that the Mutabile Semper page transcludes.",
+  "publicationYear": 1902,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:Dream_days.djvu",
+  "textUrl": "https://en.wikisource.org/wiki/Dream_days",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The dated 1902 John Lane / The Bodley Head English edition is identified by the scan index and transcluded page witnesses. It was published before 1931 and its original story text is public domain in the United States in 2026; Wikisource explicitly states that US basis. Modern editorial material and illustrations are not reproduced.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:Dream_days.djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FThe_twenty-first_of_October&prop=text%7Crevid&format=json",
+    "downloadSha256": "300a3a53060112f945cafafd8e264e275aaa54a2a27c03339f17ad8cf8da8a1f",
+    "method": "Downloaded the eight chapter pages of the Wikisource transcription as rendered HTML through the MediaWiki API (action=parse), one request per chapter in printed order, spaced out after the API's rate limit returned HTTP 429; downloadUrl names the first request and downloadSha256 is the SHA-256 of the eight JSON responses concatenated in printed order. The requests: https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FThe_twenty-first_of_October&prop=text%7Crevid&format=json (revision 6190058, SHA-256 79623b4b4a51d6e2f54ae3f88ce5c4f70b4189112ccd6dafdeaffb15527027e8); https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FDies_ir%C3%A6&prop=text%7Crevid&format=json (revision 6190056, SHA-256 e45967783314b6c3faaf6ff3701f348aff6943a1d5c08aa232bcc4df2ad969f9); https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FMutabile_semper&prop=text%7Crevid&format=json (revision 6190049, SHA-256 10a939115e71faeabb0d3c645eed86c4810102cc3d71e2cebe361ed901721309); https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FThe_magic_ring&prop=text%7Crevid&format=json (revision 6190064, SHA-256 a9ec49107d3d671b0680c309aafcf8ecc8b6b44fad1734088a50787e45e95977); https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FIts_walls_were_as_of_jasper&prop=text%7Crevid&format=json (revision 6190072, SHA-256 7fda41a791959a0f1f6d5f70b3e2ba63601516658395aac9981b5b861f0f9502); https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FA_saga_of_the_seas&prop=text%7Crevid&format=json (revision 6190076, SHA-256 5c6d4a6c454e8abde4e95e58bf4a41768ec62cc21d8cc9b9e7dbc784310662b1); https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FThe_reluctant_dragon&prop=text%7Crevid&format=json (revision 6190077, SHA-256 f6b8f680d0640d3030bf0ae8cf22eb06ca011d0661c2a918ca17d94f83162c72); https://en.wikisource.org/w/api.php?action=parse&page=Dream_days%2FA_departure&prop=text%7Crevid&format=json (revision 6190078, SHA-256 1de61218101e683f1d35e356d46de41f3726a5f6dcc4538c044a37ad76ee525e). The chapter order was taken from the work's main page, https://en.wikisource.org/wiki/Dream_days. A scratch script took each page's transcluded text (the prp-pages-output part, after the Wikisource header), made the centred chapter title a heading, cut the unnumbered plate pages (page number “—”) that are empty or begin with the chapter title, i.e. the tissue guard with its quoted caption and the picture page (the unnumbered last text page of The Reluctant Dragon is kept), and wrapped the paragraphs that MediaWiki leaves as bare text after a page break in paragraph elements. A scratch HTML parser converted the result: p elements become paragraphs with whitespace folded; the br-broken carol becomes a stanza, one line per printed line; drop initials join their word (“IN the matter”); page-number anchors, zero-width spaces, figures and inline italics (rendered as plain text) are dropped. The correction is a single-occurrence replacement."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 448,
+    "sha256": "1f256f75ba177cef9d0a02f5cb7d0373a9527ca7fd5d68122c786aaa1fcdb8fb"
+  }
+}

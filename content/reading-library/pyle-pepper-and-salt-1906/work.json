@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pyle-pepper-and-salt-1906",
+  "author": "Howard Pyle",
+  "title": "Pepper & Salt; or, Seasoning for Young Folk",
+  "translator": null,
+  "edition": "Text used: the Project Gutenberg 15664 plain-text transcription (https://www.gutenberg.org/ebooks/15664.txt.utf-8) of the E. M. Hale and Company, Eau Claire, Wisconsin, special edition \"published by arrangement with the publishers of the regular edition, Harper & Brothers\". In that plain-text file the transcribed title-page block carries the line \"1885, reissued 1913.\"; the HTML transcription of the same Hale title page (https://www.gutenberg.org/cache/epub/15664/pg15664-images.html) prints no date. That line is therefore not treated as a printed date of the exemplar: the Hale printing is undated and its relation to any one print copy is not asserted. Every selected passage was collated in full against a dated Harper & Brothers, New York, printing (https://archive.org/details/peppersaltorseas00pyle2): its title page (scan leaf n8) reads MCMVI (1906), and its verso (leaf n9) reads “Entered according to Act of Congress, in the year 1885, by Harper & Brothers.” publicationYear records that 1906 witness. Six transcription errors in the Gutenberg text are corrected to its page images and nothing else is changed: \"he is wandering\" to \"he's wandering\" (Three Fortunes); \"The he left\" to \"Then he left\", \"said that done\" to \"said than done\", and \"If we had two wishes\" to \"If we had had two wishes\" (Ye Two Wishes); \"This man\" to \"That man\" (A Verse with a Moral but No Name); \"dairies\" to \"daisies\" (The Force of Need); and the printed \"Jame- / -s;\" line break is restored in Superficial Culture. The nine poems are supplied from the plain-text file; the prose preface is supplied from the HTML transcription of the same Gutenberg edition, which renders the printed dashes as em dashes where the plain text uses double hyphens. Poems retain Gutenberg ASCII punctuation, emphasis underscores and indentation; prose wrapping is reflowed; illustrations, captions and signatures are excluded. Library text: the whole plain-text file (textUrl) with the six corrections and the restored line break above applied, except the prose preface, which follows the HTML transcription as the selected excerpt does; the stories therefore keep the plain text's double hyphens while the preface has em dashes.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/15664",
+  "textUrl": "https://www.gutenberg.org/ebooks/15664.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The collated witness is the Harper & Brothers printing dated MCMVI (1906) on its title page; its verso records the 1885 copyright entry of this original English text. Both dates are before 1931, so the text is public domain in the United States as of 2026. Project Gutenberg 15664 independently states public domain in the USA. Every selected passage was checked against the dated witness.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://archive.org/download/peppersaltorseas00pyle2/page/n8.jpg"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/15664/pg15664.txt",
+    "downloadSha256": "19ada1b4575f5e80ea491bc19c2052dfa3769f3bf3c5bb96c385dbf0cf653121",
+    "method": "Downloaded the Project Gutenberg plain text pg15664.txt from the aleph.pglaf.org mirror (the same file as textUrl) and converted it with a scratch script: CR line ends removed; text between blank lines forms blocks; uppercase title lines (and the mixed-case title \"Ye song of ye foolish old woman.\", the \"(Ye first opinion)\"/\"(Ye second opinion)\" labels and the part number \"II\") become headings; within poems every block is a stanza keeping its lines and leading-space indentation, and within the seven prose tales a block is a stanza only when a line is indented or every line is shorter than 60 characters, otherwise a paragraph with its lines joined by single spaces; _underscore_ emphasis and double hyphens kept. Omitted: the Project Gutenberg header, footer and licence, the title page and Hale imprint, the contents and list of illustrations, every [Illustration] marker with its transcriber's description of the picture, and the artist's signatures under the pictures (\"H. Pyle\", \"HP\", \"H.P. MDCCCLXXXIII\" and the like). The PREFACE heading comes from the plain text; its eight paragraphs come from the HTML transcription pg15664-images.html of the same edition (downloaded from the same mirror, SHA-256 3040c4d0bd9f10080d67de39cce40a3de0b47da80d0d0bce2e9b0f02dbbf6ceb), converted with the same HTML parser. Corrections applied as single-occurrence replacements: “he is wandering to this day” to “he's wandering to this day”; “The he left” to “Then he left”; “said that done” to “said than done”; “If we had two wishes” to “If we had had two wishes”; “This man of great renown” to “That man of great renown”; “nodding dairies” to “nodding daisies”; “Was James; /   and whose” to “Was Jame- /   -s; and whose”."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 708,
+    "sha256": "8ced9a1455bb8739dbb22c494f6a3f1ea876f499ea97bf4d083cbf04c6eb1d1f"
+  }
+}

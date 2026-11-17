@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "sandburg-rootabaga-stories-1922",
+  "author": "Carl Sandburg",
+  "title": "Rootabaga Stories",
+  "translator": null,
+  "edition": "PG transcription of the Harcourt, Brace and Company, New York, original-English text, copyright 1922 (copyright leaf: \"Copyright, 1922, by Harcourt, Brace and Company, Inc.\"; printed by the Quinn & Boden Company, Rahway, N. J.); printing undated. Project Gutenberg 27085 HTML, made from Rosetta Project scans. Paragraph boundaries retained; prose line-wrap whitespace folded; italic emphasis rendered as plain text; page numbers, illustrations, captions, the Petershams' decorations and the book's numbered section-group headings are excluded.",
+  "publicationYear": 1922,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/27085",
+  "textUrl": "https://www.gutenberg.org/cache/epub/27085/pg27085-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The transcription reproduces the publisher title page and the 1922 Harcourt, Brace copyright leaf of this original-English text. Works published in the United States in 1922 entered the US public domain no later than 1 January 2018; the Project Gutenberg 27085 catalogue explicitly labels the text public domain in the USA. Only Sandburg's 1922 story text is supplied; the Petershams' illustrations are not reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/27085"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/27085/pg27085-images.html",
+    "downloadSha256": "e8e9fe68da1e070a4c7a9d3d0cb95c672a1032a02936d725585220547d71d3a3",
+    "method": "Downloaded Project Gutenberg HTML pg27085-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page, copyright leaf, contents and list of full-page illustrations. Kept: the dedication (joined as one stanza), the eight numbered section-group titles as headings, each group's list of \"People\" as tab-separated table rows, and every story."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 771,
+    "sha256": "248f90f92cf94c3e463448f732776a2ea189f647125331637051671bca918315"
+  }
+}
