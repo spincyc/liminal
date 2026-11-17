@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "london-call-wild-1903",
+  "author": "Jack London",
+  "title": "The Call of the Wild",
+  "translator": null,
+  "edition": "Original English, New York: The Macmillan Company, July 1903; scan-backed Wikisource transcription of London - The Call of the Wild, 1903.djvu. Copyright and first-publication statements appear in front matter. Selected paragraphs preserve transcription spelling and punctuation; HTML styling and page-number anchors removed, line-wrap whitespace reflowed, invisible zero-width page markers removed. Plate captions, which repeat a sentence of the text, are omitted from w08-d1, w14-d5, w24-d2, w30-d3 and w30-d4.",
+  "publicationYear": 1903,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:London_-_The_Call_of_the_Wild,_1903.djvu",
+  "textUrl": "https://en.wikisource.org/wiki/The_Call_of_the_Wild_(London)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original-English Macmillan edition was published in July 1903, as its dated front matter states, before 1931. Wikisource identifies its text as public domain in the US. Project Gutenberg catalog 215 also identifies the English work as public domain in the USA, but the selected transcription is the dated Wikisource edition.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/The_Call_of_the_Wild_(London)"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2&prop=text%7Crevid&page=The_Call_of_the_Wild_(London)",
+    "downloadSha256": "7e1bb089696a459f6bad9816c36640f4688f2b2062379b87d4d256338de09c3f",
+    "method": "MediaWiki API action=parse (formatversion 2, prop text|revid) for the main page and its seven chapter subpages in printed order; downloadUrl is the main page's call, each chapter used the same call with page=The_Call_of_the_Wild_(London)/Chapter_N, and downloadSha256 hashes the eight API responses concatenated in that order. Kept the transcluded chapter text; removed the header templates, licence footer, page-number anchors, zero-width page markers, plates and their captions (a paragraph broken by a plate is rejoined), and line-wrap whitespace. The title and each chapter's numeral and title are headings (title level 1, chapters level 2); chapter I's verse epigraph is one stanza with its lines trimmed; prose paragraphs keep transcription spelling and punctuation with italic styling dropped. Files in order, each https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2&prop=text%7Crevid&page= followed by the page title with underscores (revision fetched): The_Call_of_the_Wild_(London) (rev 13844394); The_Call_of_the_Wild_(London)/Chapter_1 (rev 6165049); The_Call_of_the_Wild_(London)/Chapter_2 (rev 12608930); The_Call_of_the_Wild_(London)/Chapter_3 (rev 12608928); The_Call_of_the_Wild_(London)/Chapter_4 (rev 12608927); The_Call_of_the_Wild_(London)/Chapter_5 (rev 14517933); The_Call_of_the_Wild_(London)/Chapter_6 (rev 12609003); The_Call_of_the_Wild_(London)/Chapter_7 (rev 12614872)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 341,
+    "sha256": "ef5525e6d5c64255a4d15186146e64966015f560d51f6f12d8545e5164abdd2f"
+  }
+}

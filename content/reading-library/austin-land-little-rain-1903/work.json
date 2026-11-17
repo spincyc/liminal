@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "austin-land-little-rain-1903",
+  "author": "Mary Austin",
+  "title": "The Land of Little Rain",
+  "translator": null,
+  "edition": "Boston and New York: Houghton, Mifflin and Company, 1903; title page and copyright page identify the edition. Prose line wraps are reflowed to spaces; paragraph boundaries and poetry line/stanza breaks are retained. Outer block whitespace, illustration markers, and publisher/digitizer matter are omitted; original transcription punctuation and emphasis conventions are retained. Text follows the Project Gutenberg plain-text file, including its underscore emphasis and double-hyphen dash conventions.",
+  "publicationYear": 1903,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/51893",
+  "textUrl": "https://www.gutenberg.org/ebooks/51893.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text/edition was published in 1903, before 1931, and its US publication term has expired as of 2026. Project Gutenberg explicitly identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/51893"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/51893/pg51893.txt",
+    "downloadSha256": "711c69bd6bd8b3cfff3aa3122b982d3b1844cadbd0d864299e92d619af9ff97f",
+    "method": "Project Gutenberg 51893 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, the publishers' note on the illustrations, contents, illustration markers and captions, the printer's imprint and the transcriber's notes; kept the dedication, the author's preface and all fourteen chapters. Lines of each paragraph joined with single spaces; passages whose lines are all indented (verse) kept as stanza lines with indentation removed. Chapter titles are level-2 headings under the book title."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 247,
+    "sha256": "98fa8277717eaae1c54e76bc17d1fa6993e15ba0d8ae3bb6081397cd4b9d3b11"
+  }
+}

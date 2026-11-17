@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "scott-ivanhoe-1820",
+  "author": "Walter Scott",
+  "title": "Ivanhoe; A Romance",
+  "translator": null,
+  "edition": "Ivanhoe; a Romance, by “the Author of Waverley,” in three volumes, Volume I. Edinburgh: printed for Archibald Constable and Co.; London: Hurst, Robinson, and Co., 1820 (first edition; title page in the scan). Text from the scan-backed, proofread Wikisource transcription of “Ivanhoe (1820 Volume 1).pdf”, chapters I–V. HTML styling, running heads, page-number anchors and footnote reference marks are removed and line-wrap whitespace is reflowed; the edition’s spelling and the transcription’s straight quotation marks are retained. Five transcription errors are corrected to the page scans (printed pp. 39 “severities”, 50 “formed”, 70 “belonged”, 77 “Bois-Guilbert”, 84 “doffed”); the printed misprint “acccomplishment” (p. 63) is retained. Scott’s three “L. T.” footnotes that fall within selections are given as separate paragraphs immediately after the paragraph that cites them. The library text holds the whole three-volume romance (the Dedicatory Epistle and all chapters) with Scott's footnotes; the five corrections apply to the whole work.",
+  "publicationYear": 1820,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:Ivanhoe_(1820_Volume_1).pdf",
+  "textUrl": "https://en.wikisource.org/wiki/Ivanhoe_(1820)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "First edition published in Edinburgh and London in 1820 (Scott died in 1832); a work published before 1931 is in the US public domain as of 2026. The scan’s title page is dated 1820 and Wikisource marks the transcription PD-old.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Page:Ivanhoe_(1820_Volume_1).pdf/8"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2&prop=text%7Crevid&page=Ivanhoe_(1820)",
+    "downloadSha256": "f989639de6257f74316cc7d3768b6630c484f72323935886d2791c759a3460b6",
+    "method": "MediaWiki API action=parse (formatversion 2, prop text|revid) for the main page, the Dedicatory Epistle and the 44 chapter subpages in printed order; downloadSha256 hashes the 46 API responses concatenated in that order. From the main page only the title is used (as the level-1 heading IVANHOE; A ROMANCE.); its title-page motto, the publishers' advertisement and the chapter list are left out. From the subpages every transcluded page block is kept, with header templates, licence footer, page-number anchors, zero-width page markers, running heads, the typographic brace in the Epistle's signature the closing printer's imprint, and one stray closing poem tag that the transcription shows as literal text after the first stanza of the Barefooted Friar's song (Volume II, Chapter III; subpage Chapter 17) removed, italic styling dropped and line-wrap whitespace joined (a line break inside a paragraph, as in chapter mottoes, becomes a space). The Dedicatory Epistle and each chapter heading, as printed (the volumes number their chapters afresh, and the 1820 misnumberings such as a second CHAPTER VII. and CHAPTER X. stand), are level-2 headings; the printed end of volume first. and end of volume second. lines stay as paragraphs. Scott's footnotes stay where the transcription places them, at the end of each chapter, in the form [Footnote n: text], with their [n] anchors in the running text. The five declared corrections are applied as exact replacements, each matching once. Files in order, each https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2&prop=text%7Crevid&page= followed by the page title with underscores (revision fetched): Ivanhoe_(1820) (rev 14969889); Ivanhoe_(1820)/Dedicatory_Epistle (rev 13757253); Ivanhoe_(1820)/Chapter_1 (rev 12234057); Ivanhoe_(1820)/Chapter_2 (rev 12234055); Ivanhoe_(1820)/Chapter_3 (rev 14969802); Ivanhoe_(1820)/Chapter_4 (rev 12236157); Ivanhoe_(1820)/Chapter_5 (rev 14969798); Ivanhoe_(1820)/Chapter_6 (rev 12246732); Ivanhoe_(1820)/Chapter_7 (rev 12247065); Ivanhoe_(1820)/Chapter_8 (rev 12247347); Ivanhoe_(1820)/Chapter_9 (rev 12247473); Ivanhoe_(1820)/Chapter_10 (rev 12251635); Ivanhoe_(1820)/Chapter_11 (rev 12252119); Ivanhoe_(1820)/Chapter_12 (rev 14969792); Ivanhoe_(1820)/Chapter_13 (rev 12254302); Ivanhoe_(1820)/Chapter_14 (rev 14969789); Ivanhoe_(1820)/Chapter_15 (rev 14969790); Ivanhoe_(1820)/Chapter_16 (rev 12312095); Ivanhoe_(1820)/Chapter_17 (rev 14969787); Ivanhoe_(1820)/Chapter_18 (rev 14969785); Ivanhoe_(1820)/Chapter_19 (rev 12313911); Ivanhoe_(1820)/Chapter_20 (rev 12315328); Ivanhoe_(1820)/Chapter_21 (rev 14969782); Ivanhoe_(1820)/Chapter_22 (rev 14969781); Ivanhoe_(1820)/Chapter_23 (rev 14969778); Ivanhoe_(1820)/Chapter_24 (rev 12381775); Ivanhoe_(1820)/Chapter_25 (rev 14969776); Ivanhoe_(1820)/Chapter_26 (rev 12389575); Ivanhoe_(1820)/Chapter_27 (rev 14969772); Ivanhoe_(1820)/Chapter_28 (rev 14969771); Ivanhoe_(1820)/Chapter_29 (rev 14969759); Ivanhoe_(1820)/Chapter_30 (rev 14969755); Ivanhoe_(1820)/Chapter_31 (rev 14969756); Ivanhoe_(1820)/Chapter_32 (rev 14969752); Ivanhoe_(1820)/Chapter_33 (rev 14969751); Ivanhoe_(1820)/Chapter_34 (rev 14969750); Ivanhoe_(1820)/Chapter_35 (rev 14969747); Ivanhoe_(1820)/Chapter_36 (rev 14969746); Ivanhoe_(1820)/Chapter_37 (rev 14969743); Ivanhoe_(1820)/Chapter_38 (rev 14969742); Ivanhoe_(1820)/Chapter_39 (rev 14969741); Ivanhoe_(1820)/Chapter_40 (rev 14969739); Ivanhoe_(1820)/Chapter_41 (rev 14969738); Ivanhoe_(1820)/Chapter_42 (rev 14969736); Ivanhoe_(1820)/Chapter_43 (rev 14969732); Ivanhoe_(1820)/Chapter_44 (rev 14969730)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2908,
+    "sha256": "7f5c1cafa4c04739cdc684082c5ce446862ea8104fa2e5cd48100b8ee5eb977d"
+  }
+}

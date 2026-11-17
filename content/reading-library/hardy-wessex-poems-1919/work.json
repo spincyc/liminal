@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "hardy-wessex-poems-1919",
+  "author": "Thomas Hardy",
+  "title": "Wessex Poems and Other Verses",
+  "translator": null,
+  "edition": "Poems from Wessex Poems and Other Verses in the combined Macmillan 1919 edition with Poems of the Past and the Present; the transcription explicitly identifies this printing. Prose line wraps are reflowed to spaces; paragraph boundaries and poetry line/stanza breaks are retained. Outer block whitespace, illustration markers, and publisher/digitizer matter are omitted; original transcription punctuation and emphasis conventions are retained. Text follows the Project Gutenberg plain-text file, including its underscore emphasis and double-hyphen dash conventions.",
+  "publicationYear": 1919,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/3167",
+  "textUrl": "https://www.gutenberg.org/ebooks/3167.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text/edition was published in 1919, before 1931, and its US publication term has expired as of 2026. Project Gutenberg explicitly identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/3167"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/3167/pg3167.txt",
+    "downloadSha256": "796536a9c21535b87c6266f95cb46d0ebae4310ea2627b21081491f080e17d65",
+    "method": "Project Gutenberg 3167 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Removed the PG header and footer, the transcriber's credit, title-page imprint, copyright leaf, contents, the transcriber's descriptions of Hardy's sketches ([Picture: ...]) and the star rows that frame them (star rows inside poems kept); kept the author's preface and every poem in printed order. Poem titles with their subtitle lines are level-2 headings (lines joined by line breaks); stanzas keep their lines with the block's outer whitespace trimmed and inner indentation kept; prose and date lines joined with single spaces, keeping the transcription's double spaces."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds the whole of Wessex Poems and Other Verses (preface, poems and Additions) as PG 3167 transcribes it from the combined 1919 volume; the volume's second collection, Poems of the Past and the Present, is a separate work and is not held."
+  },
+  "text": {
+    "blocks": 563,
+    "sha256": "4404b6f57bf15b0e97fe85f9c64cb655fee4abbfe21c0ac1c5d1f4dd3fa6f576"
+  }
+}

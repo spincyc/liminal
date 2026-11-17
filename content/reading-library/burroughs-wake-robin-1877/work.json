@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "burroughs-wake-robin-1877",
+  "author": "John Burroughs",
+  "title": "Wake-Robin",
+  "translator": null,
+  "edition": "New York: Hurd and Houghton, 1877; the transcribed title page reads “Second Edition, corrected, enlarged, and illustrated”. Prose line wraps are reflowed to spaces; paragraph boundaries and poetry line/stanza breaks are retained. Outer block whitespace, illustration markers, and publisher/digitizer matter are omitted; original transcription punctuation and emphasis conventions are retained. Text follows the Project Gutenberg plain-text file, including its underscore emphasis and double-hyphen dash conventions.",
+  "publicationYear": 1877,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/35712",
+  "textUrl": "https://www.gutenberg.org/ebooks/35712.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text/edition was published in 1877, before 1931, and its US publication term has expired as of 2026. Project Gutenberg explicitly identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/35712"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/35712/pg35712.txt",
+    "downloadSha256": "8332b8de66c8ed4642de8d670b5028920441a455b1fc3e7b7bf6440a93b9330d",
+    "method": "Project Gutenberg 35712 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Removed the PG header and footer, producer credits, title-page imprint, copyright leaf, the publishers' note, contents, illustration markers, the page-referenced index and the transcriber's notes; kept the author's preface and the eight chapters. Lines of each paragraph joined with single spaces (indented prose quotations too); multi-line indented verse kept as stanza lines with the block's outer whitespace trimmed and the inner lines' original indentation kept. Chapter titles are level-2 headings under the book title. Burroughs's three footnotes stay where the transcription places them, each after a FOOTNOTES: paragraph label at the end of its essay, in the form [Footnote n: text], with the [n] anchors kept in the running text."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 470,
+    "sha256": "e6a9837a7dcf8547d1c3f1c6aa0e83fbbc19593fb7d9a3770cfdb3aec5c791e3"
+  }
+}
