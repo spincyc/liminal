@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "van-loon-story-of-mankind-1922",
+  "author": "Hendrik Willem van Loon",
+  "title": "The Story of Mankind",
+  "translator": null,
+  "edition": "PG transcription of the Boni and Liveright text, New York, copyright 1921; its printing record ends “Twentieth Printing, December, 1922” (Project Gutenberg eBook #46399). The library text holds the dedication to Jimmie with its Alice epigraph, the Foreword, the opening Svithjod epigraph and every chapter through “As It Ever Shall Be” with its closing address and date. Left out: the title pages, contents, lists of pictures, all illustrations and their captions, the Animated Chronology (pictures only), “Concerning the Pictures”, the reading list compiled by Leonore St. John Power and the index. Where a drawing stands inside a sentence (the hieroglyph and cuneiform examples in “Hieroglyphics” and “The Sumerians”), the transcription’s marker for it is left out, so those sentences have a gap where the printed picture stood (for example “The either means one of these two round objects in your head”); none of them is in a calendar reading. Chapter titles and subtitles are headings; prose line wrapping is joined with single spaces; paired underscores mark italics; the transcription prints the book’s small capitals in the body as capitals. The transcriber silently corrected punctuation errors and listed spelling corrections; the six listed for the body text are restored to the printed spellings “adminster” (p. 106), “cemetary” (p. 248), “transubstantition” (p. 262), “millenium” (p. 295), “Napolean” and “Hollstein” (p. 374). The passages read as Grade 5 calendar readings (the Foreword, Chapters 1–3, Chapter 4 through the discovery of phonetic writing, and Chapter 5) were collated word by word, punctuation included, with the OCR of the fifth printing, February 1922 (Internet Archive storymankind01loongoog), and every difference was checked against its page images: they agree except that the fifth printing reads “we would be like cats and dogs” (p. 18) where this text has “we should be like cats and dogs”; the later printing’s reading is kept. “Mud-banks” (p. 5) is hyphenated at a line end in print, and the transcription’s hyphen is kept.",
+  "publicationYear": 1922,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/46399",
+  "textUrl": "https://www.gutenberg.org/cache/epub/46399/pg46399.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Published in New York by Boni and Liveright in November 1921 with a 1921 copyright notice; the printing transcribed is dated December 1922. A work published in the United States before 1931 is public domain there in 2026; Project Gutenberg records the eBook as public domain in the USA. The author’s own drawings are not reproduced, and no modern introduction or annotation is included.",
+    "verifiedDate": "2026-11-17",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/46399"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/46399/pg46399.txt",
+    "downloadSha256": "542847fb58a44ab5df1bf68c128b1c017b0d193f85aee0c33966c9d1497212b9",
+    "method": "Project Gutenberg plain text (CRLF line ends removed) converted by a one-off script: a single short line after three or more blank lines is a chapter title (level 2) and an all-capital block directly after it the chapter’s subtitle (level 3); every other blank-line-separated group is a paragraph with its wrapping joined; illustration caption blocks are dropped and the markers for pictures inside sentences are deleted with the space before them; the six listed spelling corrections are reversed. The sixty-five chapter titles match the book’s contents plus the Foreword and the closing chapter."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1298,
+    "sha256": "c9b79db5a6ec4961e02c79062e07edffcc6d460896cff5a16cb9ce189345264c"
+  }
+}

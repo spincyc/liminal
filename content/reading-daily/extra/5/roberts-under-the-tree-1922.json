@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "roberts-under-the-tree-1922",
+  "readings": [
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-01",
+      "title": "The Sky",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 10,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a child’s explanation of what she sees, and mark where the explanation goes beyond what she observed.",
+      "focus": "How a young speaker builds a theory of chains and a puller from a passing shadow and a sky that seems to move.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. The poet was a grown woman; the child’s way of seeing is something she made on purpose. A bluejay is a loud blue bird; a poplar is a tall, narrow tree.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Sky” (p. 1), complete poem; opens “I saw a shadow on the ground And heard a bluejay going by; A shadow went across the…”; closes “…every time I look to see, The sky is always slipping back And getting far away from me.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          10,
+          13
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9644203a09f1d56d3e1378c58fe906db68063c68b2d80179633cf6a122701048"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-01-q1",
+          "prompt": "What does the child see and hear in the first stanza before she looks up?",
+          "facilitatorNotes": [
+            "A shadow crossing the ground and a bluejay going by; only then does she look up. The poem starts with evidence on the ground, which may be why the sky seems to move: something has just passed across it."
+          ],
+          "evidence": [
+            "I saw a shadow on the ground",
+            "And heard a bluejay going by;"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-01-q2",
+          "prompt": "The sky “hung up on the poplar tree.” What does that tell you about where she is standing and how she judges distance?",
+          "facilitatorNotes": [
+            "From the ground the sky seems to rest on the treetops, as near as the poplar. Her picture of the sky comes from her position, which is why she can believe it later moves away."
+          ],
+          "evidence": [
+            "It hung up on the poplar tree,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-01-q3",
+          "prompt": "What explanation does she offer in the third stanza, and which words show she is guessing?",
+          "facilitatorNotes": [
+            "“I think” and “must be” mark a theory: the sky is tied with chains and pulled from the top. She explains the unfamiliar with something familiar, such as a bucket or gate on a chain. Readers can say what might really be moving: clouds, the bird, or nothing at all."
+          ],
+          "evidence": [
+            "I think it must be tied with chains",
+            "And something pulls it from the top."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-01-q4",
+          "prompt": "The sky is “always slipping back / And getting far away from me.” Is this only about the sky, or could it describe a feeling too?",
+          "facilitatorNotes": [
+            "Literally, the sky never comes closer however often she looks. Some readers hear a small disappointment, something wanted that keeps withdrawing; others hear only wonder. Either view should rest on words such as “never,” “always” and “from me.”"
+          ],
+          "evidence": [
+            "It never has come down again,",
+            "The sky is always slipping back"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-02",
+      "title": "On the Hill",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Track how the speaker’s attention moves from the whole town to her own house, and notice what she tries and fails to see.",
+      "focus": "A view from above makes a familiar place strange, and the child tries to picture herself inside it.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. The book’s epigraph quotes two lines of this poem. The courthouse where wagons stop, the public scales for weighing loads and the blacksmith shop mark a small country town of about a century ago.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“On the Hill” (p. 24), complete poem; opens “Mother said that we could go Up on the hill where the strawberries grow.”; closes “But Dickie said, \"Come on, let's race\"; And Will had found the strawberry place.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          93,
+          103
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "60a7d4a1bffa58e9d42af999f8c91cfef28ecd76df646c651efc023e5190c27c"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-02-q1",
+          "prompt": "List the places the child picks out from the hill. In what order does she find them, and where does the list stop?",
+          "facilitatorNotes": [
+            "Playing field, roads, courthouse, bridge, scales, blacksmith shop, church steeple, then her own house under the poplar. The view narrows from the whole town to home, as if she had been searching for it all along."
+          ],
+          "evidence": [
+            "And I found the house that we live in."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-02-q2",
+          "prompt": "Why might the still swing ropes matter more than a swing in motion would?",
+          "facilitatorNotes": [
+            "Nobody is at home to swing; seen from far off, home looks empty without her family. That stillness leads straight into her wish to see “some of us” there."
+          ],
+          "evidence": [
+            "The ropes were hanging very still."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-02-q3",
+          "prompt": "What does she try to see that cannot be seen from the hill that day?",
+          "facilitatorNotes": [
+            "Her house in rain and at lamplight, and her family, herself included, walking under the tree. She is imagining other times and trying to see herself from outside, which no one can quite do."
+          ],
+          "evidence": [
+            "Our house when the rain is over it,",
+            "And how it looks when I am there."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-02-q4",
+          "prompt": "Why might the poet end with Dickie’s race and Will’s strawberries?",
+          "facilitatorNotes": [
+            "Other children pull her back from quiet looking into play, and the strawberries return to the reason for the walk in the first lines. Readers may feel the ending as a relief, a small loss, or both."
+          ],
+          "evidence": [
+            "But Dickie said, \"Come on, let's race\";",
+            "And Will had found the strawberry place."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-03",
+      "title": "Father’s Story",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how a young speaker retells a story she has only half taken in.",
+      "focus": "The poem cares more about the father, the circle of children and the feel of listening than about the story told.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. “Dan Tucker” is the popular nineteenth-century comic song “Old Dan Tucker.” Jason, the golden fleece and Troy come from Greek legends.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Father’s Story” (p. 30), complete poem; opens “We put more coal on the big red fire, And while we are waiting for dinner to cook, Our…”; closes “…my place. And I push my fingers into his skin To make little dents in his big rough face.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          121,
+          125
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b3856f60c509c3253c58de701b3d8a8175a082656ed659a0bcf5120b9d823b18"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-03-q1",
+          "prompt": "Who is there, who is missing, and where does each child sit or stand?",
+          "facilitatorNotes": [
+            "Everyone but Clarence. Some sit on Father’s legs, one on the little red chair, and the speaker stands at his arm, “my place.” The fixed places show a family custom repeated many evenings."
+          ],
+          "evidence": [
+            "And all of us but Clarence are there.",
+            "I stand by his arm, for that is my place."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-03-q2",
+          "prompt": "How much of the golden fleece story does the child understand? Which words show it?",
+          "facilitatorNotes": [
+            "She calls it “golden wool” and runs Jason, a ship and Troy together, though Troy belongs to a different legend. “Some of it is about” shows she remembers fragments and the sound of names. Readers who know Jason from The Heroes may enjoy catching the mix-up."
+          ],
+          "evidence": [
+            "He tells about the golden wool,",
+            "And some is about a town called Troy."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-03-q3",
+          "prompt": "What do the song and the Greek legend have in common in this room, even though they are very different?",
+          "facilitatorNotes": [
+            "Father moves from a comic song to an ancient legend without the children minding; both are simply Father’s performances. The occasion, coal on the fire while dinner cooks, matters as much as the material."
+          ],
+          "evidence": [
+            "He sings Dan Tucker Went to Town,",
+            "Or he tells us about the golden fleece."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-03-q4",
+          "prompt": "Why does the poem end with the child making dents in her father’s face instead of with the end of the story?",
+          "facilitatorNotes": [
+            "The last image is touch: closeness to her father outlasts the tale. “Big rough face” gives his size and texture as a small child feels them. Some readers find it tender, some funny; both readings fit."
+          ],
+          "evidence": [
+            "To make little dents in his big rough face."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-04",
+      "title": "Christmas Morning",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow an imagined scene built on “if” and “would,” and catch the place where the speaker slips.",
+      "focus": "A child sets the Nativity on her own farm, and one slip of the tongue shows whose faces she imagines.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. In the Christian Gospels, Jesus is born in a stable in Bethlehem and laid in a manger, a feeding trough for animals, and wise men come to visit. The speaker imagines that birth happening in her own family’s barn.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Christmas Morning” (pp. 32–34), complete poem; opens “If Bethlehem were here today, Or this were very long ago, There wouldn't be a winter time…”; closes “…talk would soon begin. And when I'd tiptoe softly out I'd meet the wise men going in.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          127,
+          136
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "86bdcf27d76e2b957c31c4a42458cd77a7317e4414d80fef2b0d3f6af352db21"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-04-q1",
+          "prompt": "What does the opening “If” set up? Where does the poem come back to it?",
+          "facilitatorNotes": [
+            "The whole visit is imagined: if Bethlehem were here, or if this were long ago. The fourth stanza ends by repeating the condition with its two halves reversed, a reminder that none of this is happening."
+          ],
+          "evidence": [
+            "If Bethlehem were here today,",
+            "If this were very long ago"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-04-q2",
+          "prompt": "Which details come from the speaker’s own farm rather than from the Christmas story?",
+          "facilitatorNotes": [
+            "The garden gate, pasture walk and cattle barns, the heavy iron chain and wooden pin, the pigeons and yellow hens. Familiar things let the old story happen in her world."
+          ],
+          "evidence": [
+            "I'd move the heavy iron chain",
+            "The pigeons and the yellow hens"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-04-q3",
+          "prompt": "Reread “And Mother held my hand and smiled-- / I mean the lady would.” What has the speaker done, and why does she correct herself?",
+          "facilitatorNotes": [
+            "She slips into describing her own mother, in the past tense, as if it had really happened, then corrects herself to “the lady would.” Her Mary seems modeled on her mother, as the baby “would look like our John.” Discuss whether the slip makes the poem feel more real or more personal."
+          ],
+          "evidence": [
+            "I mean the lady would",
+            "And he would look like our John,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-04-q4",
+          "prompt": "Why might the poem end as she meets the wise men going in?",
+          "facilitatorNotes": [
+            "She has had a private visit before the story’s famous scene, and hands the stable back to the familiar story as she leaves. Some readers find that modest; others feel she was there first."
+          ],
+          "evidence": [
+            "I'd meet the wise men going in."
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-05",
+      "title": "People Going By",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Infer what each passer-by is like from a line or two, and separate what the child knows from what she guesses.",
+      "focus": "A neighbourhood seen from under a tree: sounds first, then names, habits and rumours.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. A rosary is a string of prayer beads used by Catholics. Charming away warts with muttered words was an old country folk practice.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“People Going By” (pp. 35–37), complete poem; opens “Before they come I hear their talk And hear their feet go on the walk.”; closes “I can feel them almost speak to me, When they pass by our tree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          138,
+          151
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "95e01de8f10c8942bffe70f57c90b87ca1b29cf77de747486018b5a90be348af"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-05-q1",
+          "prompt": "How does the child know people are coming before she sees them?",
+          "facilitatorNotes": [
+            "She hears their talk and their feet on the walk. The repeated “some go fast and some go slow” also describes how footsteps sound."
+          ],
+          "evidence": [
+            "Before they come I hear their talk",
+            "And hear their feet go on the walk."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-05-q2",
+          "prompt": "Choose one passer-by. What does the child know for certain about that person, and what does she only think or hear said?",
+          "facilitatorNotes": [
+            "Mrs. Warner hurries to the church with the cross; only “I think” tells us she prays there daily. Uncle Mells is lame; the spells are what people say about him. Help readers point to signal words such as “I think,” “maybe” and “almost.”"
+          ],
+          "evidence": [
+            "I think she goes there every day",
+            "He takes off warts by mumbling words,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-05-q3",
+          "prompt": "What might “far-off looks” suggest about Miss Jane Anne and Mr. Paul?",
+          "facilitatorNotes": [
+            "They walk together at nightfall but hardly talk: perhaps shy, perhaps sad, perhaps simply tired. The child notices without explaining, which leaves room for several readings."
+          ],
+          "evidence": [
+            "They go along with far-off looks",
+            "And hardly ever talk at all."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-05-q4",
+          "prompt": "The poem repeats “some of them I almost know” and ends “I can feel them almost speak to me.” What does “almost” say about the child’s place in this neighbourhood?",
+          "facilitatorNotes": [
+            "She knows names and habits but stays outside their lives, watching from under the tree; the passers-by nearly include her. Some readers hear longing, others contentment."
+          ],
+          "evidence": [
+            "And some of them I almost know.",
+            "I can feel them almost speak to me,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-06",
+      "title": "The Worm",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how one question changes what the children are doing, and what the poem leaves unanswered.",
+      "focus": "A digging game turns into wondering about another creature’s mind.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. The children are playing at digging wells with a broken spade, a piece of tin and a shell. A clod is a lump of earth.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Worm” (pp. 50–51), complete poem; opens “Dickie found a broken spade And said he'd dig himself a well; And then Charles took a…”; closes “…in a little wad, And then he stretched himself again And went back home inside the clod.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          187,
+          192
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f66c7ba085f51ebfa40a69a0f433f7c8a7f41034900ceb0b7800a963be2b1df3"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-06-q1",
+          "prompt": "How do the children treat the worm before Will asks his question?",
+          "facilitatorNotes": [
+            "Dickie makes him wait and stay; the speaker pokes him to watch him squirm. He is something to look at and play with."
+          ],
+          "evidence": [
+            "But Dickie made him wait and stay.",
+            "I poked him once to see him squirm."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-06-q2",
+          "prompt": "Which words make the worm’s movements easy to picture?",
+          "facilitatorNotes": [
+            "“Pucker up himself,” “stretch himself,” “puckered in a little wad”; “shining skin was soft and wet.” The verbs treat him as a “himself,” which suits the question that follows."
+          ],
+          "evidence": [
+            "We watched him pucker up himself",
+            "His shining skin was soft and wet."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-06-q3",
+          "prompt": "What changes after Will wonders whether the worm knows he is a worm?",
+          "facilitatorNotes": [
+            "They sit back, forget their wells and try to answer. The question stops the game and turns the worm from a plaything into someone who might have a point of view."
+          ],
+          "evidence": [
+            "He knows that he's a worm.",
+            "And we forgot to dig our wells"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-06-q4",
+          "prompt": "Does the poem answer Will’s question? What does the worm do at the end, and why might the poet stop there?",
+          "facilitatorNotes": [
+            "No answer comes. While they think, the worm goes “back home inside the clod”; calling it home suggests he has his own life whether or not he “knows.” Some readers find it funny that the worm simply leaves the thinkers behind."
+          ],
+          "evidence": [
+            "And went back home inside the clod."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-07",
+      "title": "Water Noises",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 10,
+        "totalMinutes": 16
+      },
+      "challenge": "Hear how a repeated phrase works like the sound it imitates.",
+      "focus": "Alone by the stream, the child turns sounds into words and the water into a questioner.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. The killdeer is a bird named for its cry; “Killdee” is the child’s way of writing that call.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Water Noises” (pp. 56–57), complete poem; opens “When I am playing by myself, And all the boys are lost around, Then I can hear the water…”; closes “…and have a drink. But when she goes I still can hear The water say, \"And do you think?\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          207,
+          210
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "30d85935b2649a1fc65b4e41c3e73e3487b3563469f1b04e08e814951f61b953"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-07-q1",
+          "prompt": "When does the child hear the water talk?",
+          "facilitatorNotes": [
+            "Only when she plays by herself and the boys are “lost around,” out of sight. Quiet lets her hear it; readers may compare times they noticed sounds when alone."
+          ],
+          "evidence": [
+            "When I am playing by myself,",
+            "It makes a little talking sound."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-07-q2",
+          "prompt": "What does the water seem to say, and how is that different from what the bird says?",
+          "facilitatorNotes": [
+            "The water asks a question that has no end; the bird calls out its own name. The question begins with “And,” as if a conversation had already been going on."
+          ],
+          "evidence": [
+            "\"And do you think? And do you think?\"",
+            "\"Killdee, killdee!\""
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-07-q3",
+          "prompt": "Read the poem aloud. Which words imitate the noises they describe?",
+          "facilitatorNotes": [
+            "“Snaps and ticks,” “ripple up and wink.” “Wink” and “drink” rhyme with “think,” so the water’s question echoes through the poem’s sounds."
+          ],
+          "evidence": [
+            "A bug shoots by that snaps and ticks,",
+            "I see it ripple up and wink;"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-07-q4",
+          "prompt": "Why does the poem end with the cow leaving and the water still speaking?",
+          "facilitatorNotes": [
+            "Visitors come and go, the bug, the bird, the cow, but the water keeps asking. The question stays with the child, and perhaps it is meant for her, or for the reader, to answer."
+          ],
+          "evidence": [
+            "But when she goes I still can hear",
+            "The water say, \"And do you think?\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-08",
+      "title": "In the Night",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Decide what is happening in a frightening poem that never says it is a dream.",
+      "focus": "How the poem makes fear physical and leaves the reader to tell what is real from what is imagined.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. The lamp has been turned down low for the night.",
+      "contentNote": "A child’s night fright: a panther with “bloody bubbles” on its face, and a one-eyed figure whose jaw is “torn away.”",
+      "excerpt": {
+        "locator": "“In the Night” (pp. 60–62), complete poem; opens “The light was burning very dim, The little blaze was brown and red, And I waked just in…”; closes “…save myself at all, And so I only waited there And turned my face against the wall.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          222,
+          229
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "164e41649feff034a747ec5a1bb6f14daeab69dd0ba72003f6bada2f0cc0cc16"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-08-q1",
+          "prompt": "What clues suggest that the panther and the Something may not be real?",
+          "facilitatorNotes": [
+            "She has only just waked; the light is dim, brown and red; “long marks of light” seem to come from her own eyes, as happens when you are half asleep. Nothing moves toward her. The poem never says “dream,” so readers must judge from such details."
+          ],
+          "evidence": [
+            "The light was burning very dim,",
+            "Long marks of light came out of my eyes"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-08-q2",
+          "prompt": "How does the poem show fear in the child’s body?",
+          "facilitatorNotes": [
+            "Her throat is shut and dry, her heart jumps, she can neither talk nor cry, and she turns her face to the wall. The fear is shown through her body, never named."
+          ],
+          "evidence": [
+            "But all my throat was shut and dry.",
+            "My little heart was jumping fast,"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-08-q3",
+          "prompt": "Why might the poet give the Something a capital letter and no name?",
+          "facilitatorNotes": [
+            "It cannot be named, and the capital makes it a strange, important presence. Its stillness, staring without moving or speaking, can be more frightening than an attack."
+          ],
+          "evidence": [
+            "Was Something waiting in the room--",
+            "But did not move or say a thing."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-08-q4",
+          "prompt": "In the last stanza, does the child find a way to be safe, or only a way to bear it?",
+          "facilitatorNotes": [
+            "She says she could not save herself, so she waited and turned away. Some readers call her helpless; others say turning away is the one choice left to her. The poem ends without morning or rescue."
+          ],
+          "evidence": [
+            "I couldn't save myself at all,",
+            "And turned my face against the wall."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-09",
+      "title": "Shells in Rock",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Connect many separate observations to one idea, then follow the last stanza’s “Suppose.”",
+      "focus": "A child finds fossil shells everywhere and imagines the sea coming back for them.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. Much of Kentucky’s limestone formed on the floor of ancient seas and is full of fossil shells. A quarry is a pit where stone is cut.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Shells in Rock” (pp. 78–79), complete poem; opens “I've been along the quarry road, And I have watched men digging wells, And everywhere it…”; closes “…under all the hills. Suppose the sea should come back here And gather up its shells.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          277,
+          281
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "30700f70fd5337fc2feabe23742a6b9fe47afd50d9565553dcab3efce38948ed"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-09-q1",
+          "prompt": "Where has the child seen the shells? What does the length of the list show?",
+          "facilitatorNotes": [
+            "The quarry road, wells, a church, a bridge, foundation stones, creeks, waterfalls, the jail, roads and hills. The shells are everywhere, under the whole landscape and inside its buildings."
+          ],
+          "evidence": [
+            "The stones were full of little shells.",
+            "And once I saw them on the jail--"
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-09-q2",
+          "prompt": "How does the child explain the shells, and where did the explanation come from?",
+          "facilitatorNotes": [
+            "“Some one said” they were left when the ocean went away: a secondhand explanation she accepts. It is close to what geologists say about ancient seas, though she cannot check it herself."
+          ],
+          "evidence": [
+            "And some one said that they were left",
+            "When the ocean went away."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-09-q3",
+          "prompt": "Why might the poet put a church, a bridge and a jail in the same list?",
+          "facilitatorNotes": [
+            "The shells take no notice of what people use the stone for; holy, useful and shameful buildings are all made of old sea floor. The point is how ordinary and how widespread the shells are."
+          ],
+          "evidence": [
+            "A church, and in a bridge.",
+            "More little shells in walls."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-09-q4",
+          "prompt": "What does the last stanza ask the reader to imagine, and how does it make you feel?",
+          "facilitatorNotes": [
+            "That the sea might return and gather up its shells, taking back the roads and hills built of them. Some find this exciting, others unsettling; the solid ground becomes something on loan from the ocean."
+          ],
+          "evidence": [
+            "Suppose the sea should come back here",
+            "And gather up its shells."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-roberts-under-the-tree-1922-10",
+      "title": "Horse",
+      "sourceId": "roberts-under-the-tree-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Separate what the child sees from what she imagines the horse says.",
+      "focus": "A silent horse “talks” through the child’s imagination and insists on being himself.",
+      "context": "Under the Tree (1922) is Elizabeth Madox Roberts’s book of poems in the voice of a small child growing up in the Kentucky countryside. Drab is a dull brownish grey. A bridle is the headgear used to guide a horse; here it hangs on a hitching post.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Horse” (pp. 80–81), complete poem; opens “His bridle hung around the post. The sun and the leaves made spots come down; I looked…”; closes “…as they had been before. He said for me to run along And not to bother him any more.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          283,
+          288
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bd63b100db8c3d5eafccca072d8014326ebbd5f5c616fb8db9d2397de6543a48"
+      },
+      "questions": [
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-10-q1",
+          "prompt": "What does the child see before the horse begins to “talk”?",
+          "facilitatorNotes": [
+            "Spots of sun through leaves, the drab post, the brown horse, his long hard still nose and chalky specks on his lip. She looks closely, through the fence."
+          ],
+          "evidence": [
+            "The post was drab and he was brown.",
+            "And on his lip were specks like chalk."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-10-q2",
+          "prompt": "The horse “didn’t talk out with his mouth.” How, then, does he talk?",
+          "facilitatorNotes": [
+            "“The talk was there along his nose; / It seemed and then it was.” She reads his face and stillness and turns them into speech; “it seemed and then it was” traces how an imagined thing becomes real to her."
+          ],
+          "evidence": [
+            "The talk was there along his nose;",
+            "It seemed and then it was."
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-10-q3",
+          "prompt": "Why does the horse object to being compared with the post?",
+          "facilitatorNotes": [
+            "She had set them side by side as drab and brown; he allows that the colours are nearly the same, but he is not a post to hold a fence. “I’m horse” claims being alive and himself. Readers of Black Beauty may compare another horse who speaks for himself."
+          ],
+          "evidence": [
+            "\"I'm horse,\" he said, \"that's what!\""
+          ]
+        },
+        {
+          "id": "reading-5-roberts-under-the-tree-1922-10-q4",
+          "prompt": "How does the horse end the conversation, and what does that show about him?",
+          "facilitatorNotes": [
+            "He shuts his eyes and tells her to run along: hot, bothered by flies, dignified and a little grumpy. The child imagines a horse with moods of his own and accepts being sent away."
+          ],
+          "evidence": [
+            "He said for me to run along",
+            "And not to bother him any more."
+          ]
+        }
+      ]
+    }
+  ]
+}
