@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/28990/pg28990-images.html",
     "downloadSha256": "78ce7d1c306417a091f2eecb4a1b4bd4b31945e2dce4f7123dfebd20c48158fe",
-    "method": "Downloaded Project Gutenberg HTML pg28990-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the publisher's list of the author's books, the title page and copyright leaf, the contents with its note on first publication, and the printer's imprint. Kept: the dedication, the epigraph from Saint Guthlac, the author's foreword, every legend with its numbered sections and the book's closing line, and \"A Calendar\" with its table given as tab-separated rows (date and saint, empty cells dropped)."
+    "method": "Downloaded Project Gutenberg HTML pg28990-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped, a blank line of two br elements starting a new stanza), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the publisher's list of the author's books, the title page and copyright leaf, the contents with its note on first publication, and the printer's imprint. Kept: the dedication, the epigraph from Saint Guthlac, the author's foreword, every legend with its numbered sections and the book's closing line, and \"A Calendar\" with its table given as tab-separated rows (date and saint, empty cells dropped)."
   },
   "scope": {
     "complete": true,
     "note": null
   },
   "text": {
-    "blocks": 529,
-    "sha256": "9ed8de3b83a4b0e9c67bd07f893ad524c121cc26544d4acae802b0affcc63afd"
+    "blocks": 630,
+    "sha256": "5a3fde084102d58f2006e325b2cc1b774d26d7d2337135557c21f8148845eaef"
   }
 }
