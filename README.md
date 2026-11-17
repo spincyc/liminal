@@ -124,6 +124,9 @@ text-specific questions. Adult read-aloud and shared reading are explicit;
 facilitator notes stay separate from student printouts. Browse a grade's year
 at a glance, search it by title, author, work or genre, and open any night. See the
 [corpus, provenance, and progression contract](docs/daily-reading.md).
+Generate PDF typesets the night on screen in the browser, in the
+[printed packet style](docs/reading-packets.md); nothing is uploaded and no PDFs
+are stored ([printing](docs/printing.md)).
 
 **Reading level** (`reading-level.html`) finds a starting point in that library
 from a few short, self-scored passages: a student reads, presses Done, and

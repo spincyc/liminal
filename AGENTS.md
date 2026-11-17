@@ -96,6 +96,12 @@ For a coherent ACT bank batch:
   Computer Modern faces in `styles/print.css`; use the same ruled question
   headings and two-column flow as SAT/ACT, with offline fonts/license intact.
 
+- PDFs are generated on demand and never committed or kept as a collection
+  (`docs/printing.md`). Reading packets come from `src/lib/reading-tex.js`;
+  the engine under `src/vendor/colophon/` and `tools/vendor/colophon/` is
+  vendored from Colophon: change it there and re-sync with
+  `tools/sync-colophon.js`, never by editing the copies.
+
 - Grade lesson expansions use `content/lesson-modules/<track>/<grade>/`,
   `src/lib/lesson-modules/<track>/<grade>/`, and `lessons.html`. They belong to
   the matching curriculum pathway and grade; Grade 8 mathematics is not a
