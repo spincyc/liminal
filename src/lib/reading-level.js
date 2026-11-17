@@ -319,6 +319,15 @@
     return { core, stretch, stage: planInputs.stage + Math.floor(weekIndex / RECHECK_EVERY_WEEKS) };
   }
 
+  // The plan's night for a date (a built plan from makePlan): the night
+  // dated that day, or else the next one dated after it; null when the plan
+  // has no night left. The daily reader's Tonight card uses this.
+  function nightOn(plan, date) {
+    if (!plan || !Array.isArray(plan.weeks) || !validDate(date)) return null;
+    const night = plan.weeks.flatMap(week => week.nights).find(item => item.date >= date);
+    return night ? { level: night.level, week: night.week, day: night.day, date: night.date, kind: night.kind } : null;
+  }
+
   // ---- Re-checks ----
   // An unconfirmed placement re-checks itself; otherwise the stretch level
   // (or, at the top of the ladder, the placement level). When the stretch
@@ -472,7 +481,7 @@
     FORMS, SKILLS, SKILL_LABELS, RATINGS, STORAGE_KEY, STATE_VERSION,
     validLevel, levelKey, levelLabel, itemCount, comfortableFloor, route, nightAt, nightIndex,
     tableRows, wordCount, score, comprehension, pace, evaluate, ladderLevels, startLevel, nextStep, placement, skillSummary,
-    validDate, addDays, weekday, planCursors, makePlan, cursorsOn, recheckLevel, chooseForm, applyRecheck, reasonText,
+    validDate, addDays, weekday, planCursors, makePlan, cursorsOn, nightOn, recheckLevel, chooseForm, applyRecheck, reasonText,
     emptyState, parseState, serializeState, replay, seenHistory, markSeen, localDate,
   };
 });
