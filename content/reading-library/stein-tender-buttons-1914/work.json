@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "stein-tender-buttons-1914",
+  "author": "Gertrude Stein",
+  "title": "Tender Buttons",
+  "translator": null,
+  "edition": "The 1914 English text, explicitly dated 1914 on the title page of Project Gutenberg ebook 15396, produced by Suzanne Shell, Josephine Paolucci, and the Online Distributed Proofreading Team. Titles, paragraph divisions, unusual grammar, and punctuation are retained without correction; Gutenberg line wrapping within prose paragraphs is joined with spaces. The library text holds all three sections, Objects, Food and Rooms, complete; the title page and contents are omitted.",
+  "publicationYear": 1914,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/15396",
+  "textUrl": "https://www.gutenberg.org/ebooks/15396.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The supplied transcription explicitly dates Tender Buttons to 1914. Project Gutenberg identifies this exact ebook as public domain in the USA; the 1914 published English text is outside its US copyright term. No modern interpretation is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/15396"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/15396/pg15396.txt",
+    "downloadSha256": "a0c0e46ad2645dc1a1c9d4aa990b2c95668899ff99988d789101109c332ebfb5",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 15396). Removed the Gutenberg header, footer, licence, producer credit, title page and contents; joined wrapped prose lines with single spaces; the three section names became level-1 headings and every capitalised piece title a level-2 heading."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 533,
+    "sha256": "e6b9f8f9d9dd3116fb263426f114d11dddca28528569fc082e8bc6d48053440e"
+  }
+}

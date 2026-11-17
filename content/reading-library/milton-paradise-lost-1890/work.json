@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "milton-paradise-lost-1890",
+  "author": "John Milton",
+  "title": "Paradise Lost, in Twelve Books",
+  "translator": null,
+  "edition": "Chicago: Donohue & Henneberry, catalogued [1890] by the scan repository; the printed title and colophon are undated. Scan-backed Wikisource transcription, Index:Paradise lost by Milton, John.djvu, from Internet Archive paradiselot00milt. This modern-spelling nineteenth-century edition is distinct from the undated Gutenberg Beeching transcription. Page and line-number apparatus omitted; page-spanning verse joined, original verse lines and indented verse-paragraph boundaries retained as stanza blocks, indentation normalized. Spelling and punctuation, including evident printer or transcription errors, are retained. Downloaded-transcription fidelity is checked for every excerpt; a full independent print collation is not claimed. The library text holds all twelve books, each with its printed running title, book title and Argument; the title page is omitted. Leading spaces typed before indented verse paragraphs in the transcription are removed with the rest of the indentation.",
+  "publicationYear": 1890,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:Paradise_lost_by_Milton,_John.djvu",
+  "textUrl": "https://en.wikisource.org/wiki/Paradise_Lost_(1890)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The specific Chicago Donohue & Henneberry edition is catalogued 1890 in the scan index and linked Internet Archive witness paradiselot00milt, well before 1931. The original English text in that edition is public domain in the United States as of 2026; the Wikisource landing page explicitly identifies pre-1931 publication. No modern editorial annotations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Paradise_Lost_(1890)"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/index.php?title=Paradise_Lost_(1890)/Book_1&action=render",
+    "downloadSha256": "382557d1efac424215205b1eaf9f43eba7ba6162a454c027aa3c7f65dc27dbca",
+    "method": "Wikisource rendered page HTML (index.php action=render), one request per book subpage in printed order, Paradise Lost (1890)/Book 1 to Book 12 (revisions 8897117, 8897170, 8897224, 8897274, 8897276, 8897279, 8897280, 8897282, 8897283, 8897284, 8897286, 8897288); downloadSha256 is the SHA-256 of the twelve responses concatenated in that order and downloadUrl the first of them. Only the transcluded scan text is used: page-number anchors, line numbers and zero-width page-boundary characters removed; the verse of each book was joined across page boundaries and split into one stanza block per verse paragraph at each indented line, one verse line per line with indentation removed; centred titles became headings and each Argument a paragraph; whitespace collapsed and emphasis flattened."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 445,
+    "sha256": "4f330d81cc13ffbbcae776d9554f5ac9242998eb4a701424f39cfd365793ece8"
+  }
+}

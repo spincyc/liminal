@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "woolf-room-1929",
+  "author": "Virginia Woolf",
+  "title": "A Room of One’s Own",
+  "translator": null,
+  "edition": "London: published by Leonard and Virginia Woolf at the Hogarth Press, 1929; printed by R. & R. Clark, Edinburgh. Scan-backed Wikisource transcription of the identified 1929 edition, not the undated later printing of Mrs Dalloway. Navigation, page markers and note-call anchors excluded; prose whitespace collapsed; displayed verse/list lines retained. The library text holds Chapters I to VI with the book's title and chapter headings, ending with THE END; the title page and list of the author's other books are omitted; Woolf's thirteen footnotes are kept, each anchor as [n] in the transcription's numbering, which restarts in each chapter (the first is on the book's title), and each note as a paragraph [Footnote n: text] after its chapter's text, where the Wikisource transcription lists them. Indentation inside quoted verse is kept as the transcription's em spaces.",
+  "publicationYear": 1929,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/A_Room_of_One%27s_Own_%28Hogarth_1929%29",
+  "textUrl": "https://en.wikisource.org/wiki/A_Room_of_One%27s_Own_%28Hogarth_1929%29",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The identified Hogarth English-language edition was published in 1929, before 1931, and is in the US public domain as of 2026. The source reproduces the dated title page and declares US public-domain status. No modern introduction or annotation is included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/A_Room_of_One%27s_Own_%28Hogarth_1929%29"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/index.php?title=A_Room_of_One%27s_Own_(Hogarth_1929)/Chapter_1&action=render",
+    "downloadSha256": "4d4e9b3cfd2cc7c313a7453aa54142fa2efc60c2a9fc59644f86b317234a4a3e",
+    "method": "Wikisource rendered page HTML (index.php action=render) for the six chapter subpages in printed order, A Room of One's Own (Hogarth 1929)/Chapter 1 to Chapter 6 (revisions 14907454, 14907457, 14909051, 14909273, 14909241, 14909251); downloadSha256 is the SHA-256 of the six responses concatenated in that order and downloadUrl the first of them. Only the transcluded scan text is used: Wikisource headers, page-number anchors, gap spacers and zero-width page-boundary characters removed; the book title and chapter numbers became headings; other centred lines and paragraphs became paragraphs with whitespace collapsed; quoted verse and lists became stanza blocks, one line per line break, split at blank lines; emphasis flattened; footnote calls kept as [n] in Wikisource's per-subpage numbering, attached to the word before them; each subpage's reference list, which the transcription prints after the subpage's text, became one paragraph per note in Project Gutenberg's form [Footnote n: text], its paragraphs and line breaks joined with single spaces (a note that runs on from one scan page to the next is one note, its continuation marker dropped)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 162,
+    "sha256": "5cc4720a3fca0b50b558d0e194eceea16df008c6cd51e04e66c23d59820a6fa3"
+  }
+}

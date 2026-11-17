@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "thoreau-walden-1854",
+  "author": "Henry David Thoreau",
+  "title": "Walden; or, Life in the Woods",
+  "translator": null,
+  "edition": "Boston: Ticknor and Fields, 1854, first edition, from Wikisource’s fully validated scan-backed transcription of Index:Walden, or, Life in the Woods.djvu. Chapter HTML files were saved and every selected paragraph was extracted directly from its text nodes. HTML formatting is rendered as plain text; explicit poem line breaks and paragraph boundaries are retained. U+200B page-anchor controls are removed and outer layout whitespace is trimmed; no words, punctuation, spelling, or paragraph boundaries are modernized. Stray source line breaks inside prose paragraphs are joined with spaces, and blank lines between the lines of short verse quotations are removed (whitespace only). The earlier unidentified Gutenberg Walden printing is not the supplied source. The library text holds all eighteen chapters, Economy through Conclusion, and the closing “THE END.”; the title page (with its epigraph), copyright page and contents are omitted, as are the short decorative rules under chapter titles. Where the transcription has a space both before and after a page-boundary anchor, both spaces are kept, so a few words are separated by two spaces, exactly as in the nightly extracts.",
+  "publicationYear": 1854,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:Walden,_or,_Life_in_the_Woods.djvu",
+  "textUrl": "https://en.wikisource.org/wiki/Walden_(1854)_Thoreau",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The scan-backed index identifies Boston, Ticknor and Fields, 1854; the transcluded title and copyright leaves explicitly show 1854. The original English 1854 publication is outside its US copyright term. Wikisource identifies the work as public domain and the complete text as validated; only the historical work, not modern editorial prose, is included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Walden_(1854)_Thoreau"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&page=Walden_(1854)_Thoreau/Economy&prop=text%7Crevid&format=json&formatversion=2",
+    "downloadSha256": "e47193062a532c65b8cec26687255f7abaff254148b5734161d51262bae75997",
+    "method": "Wikisource MediaWiki parse API (action=parse, prop=text|revid), one request per chapter subpage in printed order: Economy, Where I Lived, and What I Lived for, Reading, Sounds, Solitude, Visitors, The Bean-Field, The Village, The Ponds, Baker Farm, Higher Laws, Brute Neighbors, House-Warming, Former Inhabitants; and Winter Visitors, Winter Animals, The Pond in Winter, Spring, Conclusion (revisions 6776364, 6776390, 6776372, 7478744, 6776374, 6776388, 6776380, 6776386, 6776384, 6776358, 6776368, 6776360, 6776370, 6776366, 6776392, 11454293, 6776378, 6776362). downloadSha256 is the SHA-256 of the 18 JSON responses concatenated in that order; downloadUrl is the first of them. Wikisource headers, notes, page-number anchors and zero-width characters removed; HTML italics dropped to plain text; whitespace runs containing a source line break became one space, other spaces kept, and an inline gap became one space; each HTML paragraph became a paragraph, and verse with line breaks a stanza with its lines trimmed and blank lines between them removed; centred capitalised chapter and poem titles became level-2 headings."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 549,
+    "sha256": "e1ec35304cf242475794f645ab6a613ee87055c4786da3146b12cccbf9629a8f"
+  }
+}

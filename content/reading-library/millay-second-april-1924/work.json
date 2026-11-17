@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "millay-second-april-1924",
+  "author": "Edna St. Vincent Millay",
+  "title": "Second April",
+  "translator": null,
+  "edition": "University of Pennsylvania A Celebration of Women Writers transcription of the fourth edition, New York: Mitchell Kennerley, April 1924 (copyright 1921), identified on its transcribed title and printing pages. HTML tags, page numbers and rules removed; BR markers become verse-line breaks, HTML entities decoded and common display margins removed. Stanza boundaries retained; paragraphs that merely carry text across page boundaries are rejoined in Journey, Exiled, Lament and To a Poet That Died Young. Original wording and punctuation preserved, including the source’s en dashes and spacing; italic and small-cap styling represented as plain text. This is the identified 1924 transcription, not the unspecified PG 1247 print exemplar. The library holds every poem of the volume, from Spring through Wild Swans, under its title, with numbered parts as level-3 headings; the half-title, title and copyright pages and the site’s About This Edition note are omitted. The page-break rejoining was checked only in the four poems named; elsewhere a stanza the transcription splits at a page break stays as two stanzas.",
+  "publicationYear": 1924,
+  "translationYear": null,
+  "url": "https://digital.library.upenn.edu/women/millay/april/second-april.html",
+  "textUrl": "https://digital.library.upenn.edu/women/millay/april/second-april.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English poems appear in the identified April 1924 fourth edition transcribed by UPenn. This edition was published before 1931 and is in the US public domain by 2026. The text has no translator or modern translated text; no modern editorial introduction is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://digital.library.upenn.edu/women/millay/april/second-april.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://digital.library.upenn.edu/women/millay/april/second-april.html",
+    "downloadSha256": "f1a1882c1eb2394c60cf8fc4a4347d4c4601c38b25457f8f87c7508ba5cf94f7",
+    "method": "UPenn A Celebration of Women Writers HTML. Kept the main section from the SPRING heading to its end; each H2 became a level-2 heading and each H3 a level-3 heading; each P became a stanza, with line-break tags as line ends, the HTML file’s own line ends removed, entities decoded (no-break spaces as spaces), tags and page-number markers dropped, trailing spaces trimmed and each poem’s common left margin removed. In Journey, Exiled, Lament and To a Poet That Died Young the stanzas the HTML splits at a page break were rejoined (five places), as the edition states."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 269,
+    "sha256": "32a3045d2e75cf8721c92ea6cc478d8f603c8ca969a53425507b50475a9f5847"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "yeats-robartes-1920",
+  "author": "W. B. Yeats",
+  "title": "Michael Robartes and the Dancer",
+  "translator": null,
+  "edition": "Dundrum: The Cuala Press, title-page imprint MCMXX (1920), Project Gutenberg 72987 transcription from Internet Archive scans. Original stanzas and verse lines retained; HTML emphasis becomes plain text; datelines, editorial notes and front matter omitted. The library text holds Yeats's Preface, all fifteen poems (with the He/She speaker labels of the dialogue poems) and his Notes; the cover, title page, contents, the poems' datelines, the diagram in the Notes and the transcriber's note are omitted, and the transcription's verse indentation is not reproduced. The transcriber reports correcting the nested quotation marks near the end of the Notes.",
+  "publicationYear": 1920,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/72987",
+  "textUrl": "https://www.gutenberg.org/cache/epub/72987/pg72987-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The English text in this 1920 edition was published before 1931; its US publication copyright term has expired as of 2026. The linked primary transcription/catalogue identifies its US public-domain status. No later editorial introduction is included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/72987"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/72987/pg72987-images.html",
+    "downloadSha256": "e39882b3ac9254312e911f08cc1144c5ad141b7856a74e940892dbdd73d442ba",
+    "method": "Project Gutenberg HTML (pglaf mirror of ebook 72987, pg72987-images.html). Kept the text between the Gutenberg start and end separators from the Preface heading up to the Transcriber's Notes. Each stanza division became a stanza block, one verse line per line, with indentation classes dropped and emphasis flattened to plain text; poem titles and the Notes' section titles became headings; prose paragraphs, the Preface signature and speaker labels became paragraphs with whitespace collapsed; dateline paragraphs and the figure were left out."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 105,
+    "sha256": "d8aa651e556a5c347b2293ceb49eaab5a7c7bbed09bb5dc29ab8af88db7906d7"
+  }
+}

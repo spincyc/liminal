@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "doolittle-sea-garden-1916",
+  "author": "H.D. (Hilda Doolittle)",
+  "title": "Sea Garden",
+  "translator": null,
+  "edition": "London: Constable and Company Ltd., 1916, as shown on the title page transcribed in Project Gutenberg ebook 28665. PG transcription of the Constable text; the transcriber lists a small number of typographical corrections. Paragraph and stanza boundaries and line breaks are retained; prose layout whitespace is joined. Page numbers, running heads, and footnote callout numerals are omitted. The library text holds the twenty-seven poems from “Sea Rose” through the closing untitled poem (“The city is peopled”); the acknowledgements note, title page, contents and printer's colophon are omitted.",
+  "publicationYear": 1916,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/28665",
+  "textUrl": "https://www.gutenberg.org/ebooks/28665.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Published in 1916, before 1931; the US copyright term has expired as of 2026. Project Gutenberg identifies ebook 28665 as public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/28665"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/28665/pg28665.txt",
+    "downloadSha256": "6f98e44e5237a4e789ecfb64982686dc66e32d7d6d6ae2e7f2f96d6466a617f8",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 28665). Removed the Gutenberg header, footer, licence, producer credit and both transcriber's-note boxes, and everything before “Sea Rose” and after the last poem (illustration marker and colophon); every poem title became a level-2 heading and every section numeral a level-3 heading; every other block is a stanza with the file's common left indent removed and its line breaks kept. The transcriber's corrections listed in the file stand as transcribed; underscore italics kept as in the file."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 252,
+    "sha256": "45f1a51dd47363ad712865608f226189a2b777a2543e4cdc42ae62bd4ae647d7"
+  }
+}

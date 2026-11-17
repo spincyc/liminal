@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "chopin-awakening-1899",
+  "author": "Kate Chopin",
+  "title": "The Awakening",
+  "translator": null,
+  "edition": "Wikisource transcription (Index: The Awakening - Kate Chopin.djvu) of Chicago and New York: Herbert S. Stone & Company, 1899 (copyright 1899), identified by its transcribed title and copyright leaves. Every selected word was collated against OCR of the dated 1899 first-edition scan (Internet Archive awakeningthe00choprich), with the University of Virginia 'Literature in Context' transcription as a second witness; 35 Wikisource word errors in the selected chapters were corrected to the scan's readings (several confirmed visually); the missing comma in 'Why, it seems' (Chapter XXXIX) was restored and a stray comma left in Chapter XXXIII ('that is, , it') removed, both from the scan. HTML presentation removed and whitespace normalized; chapter numerals separate consecutive chapters. The library holds the whole novel, Chapters I–XXXIX, under its title. The collation and corrections above cover the chapters used as nightly readings; elsewhere the Wikisource transcription is reproduced as transcribed.",
+  "publicationYear": 1899,
+  "translationYear": null,
+  "url": "https://archive.org/details/awakeningthe00choprich",
+  "textUrl": "https://en.wikisource.org/wiki/The_Awakening_(Chopin)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Original English novel published in 1899 by Herbert S. Stone & Company, before 1931; its US term has expired as of 2026. The dated scan is marked NOT_IN_COPYRIGHT.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/awakeningthe00choprich"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&prop=text%7Crevid&format=json&formatversion=2&page=The_Awakening_(Chopin)",
+    "downloadSha256": "44787b318ceca4651eb84ef9cbf873bd69160c953125812a6651ff0a12283db9",
+    "method": "MediaWiki parse API (action=parse, prop=text|revid) for the Wikisource subpages Chapter I–XXXIX of The_Awakening_(Chopin), fetched in the printed order of the main page The_Awakening_(Chopin): Chapter I (revision 4611731); Chapter II (revision 4613173); Chapter III (revision 4614207); Chapter IV (revision 4614986); Chapter V (revision 4617556); Chapter VI (revision 4618164); Chapter VII (revision 4621068); Chapter VIII (revision 4622433); Chapter IX (revision 4624563); Chapter X (revision 4625053); Chapter XI (revision 4626640); Chapter XII (revision 4627583); Chapter XIII (revision 4628877); Chapter XIV (revision 4630329); Chapter XV (revision 4631154); Chapter XVI (revision 4633414); Chapter XVII (revision 4633916); Chapter XVIII (revision 4634874); Chapter XIX (revision 4636160); Chapter XX (revision 4638080); Chapter XXI (revision 4640170); Chapter XXII (revision 4642131); Chapter XXIII (revision 4643403); Chapter XXIV (revision 4643934); Chapter XXV (revision 4644914); Chapter XXVI (revision 4646050); Chapter XXVII (revision 4646587); Chapter XXVIII (revision 4647724); Chapter XXIX (revision 4648887); Chapter XXX (revision 4651250); Chapter XXXI (revision 4653161); Chapter XXXII (revision 4655711); Chapter XXXIII (revision 4656992); Chapter XXXIV (revision 4657842); Chapter XXXV (revision 4659350); Chapter XXXVI (revision 4659646); Chapter XXXVII (revision 4661097); Chapter XXXVIII (revision 4661829); Chapter XXXIX (revision 4662753); downloadSha256 is the SHA-256 of the thirty-nine JSON responses concatenated in that order. Removed the Wikisource header, page-number anchors, licence and other no-export elements and the ornamental rule; each HTML paragraph, and each run of text set directly in a section, became a paragraph with whitespace (including no-break spaces) collapsed to single spaces; italics dropped to plain text; the book title became a level-1 heading and the centred chapter numerals level-2 headings. The 36 word- and punctuation-level corrections that the nightly selections carry from the collation declared in the edition were applied at the same places."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1109,
+    "sha256": "af8295bd2175c1ebb9cfe2a1e4b204eb2f196769120f13be61c5eb6b4b3e4316"
+  }
+}

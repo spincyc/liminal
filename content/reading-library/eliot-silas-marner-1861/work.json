@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "eliot-silas-marner-1861",
+  "author": "George Eliot",
+  "title": "Silas Marner: The Weaver of Raveloe",
+  "translator": null,
+  "edition": "Project Gutenberg Canada #491 transcription of the narrative text from Edinburgh and London: William Blackwood and Sons, 1861, first edition, as explicitly identified in its source statement. The separate 1907 illustrations and their captions are omitted. Latin-1 source decoded without changing characters; underscore emphasis and double-hyphen dash convention retained; prose line wraps joined and verse line breaks preserved. Two transcription errors are corrected against the digitized 1861 edition (Internet Archive silasmarnerweave00eliorich): “his hit of pork” to “his bit of pork” (printed page 78) and “during the owners absence” to “during the owner’s absence” (printed page 72). No other wording is altered. The library text runs from the Part I heading through the last paragraph before “THE END.”; the title page, its Wordsworth epigraph, the printer’s line and the publisher’s advertisements are omitted.",
+  "publicationYear": 1861,
+  "translationYear": null,
+  "url": "https://gutenberg.ca/ebooks/eliotg-silas/eliotg-silas-00-h-dir/eliotg-silas-00-h.html",
+  "textUrl": "https://gutenberg.ca/ebooks/eliotg-silas/eliotg-silas-00-t.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The explicitly identified original English Blackwood 1861 text was published before 1931 and its US publication term has expired as of 2026. The dated edition is independently catalogued and scanned by Internet Archive. This US basis rests on the 1861 narrative publication, not on Gutenberg Canada’s Canadian status or the 1907 illustrations, which are excluded.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/silasmarnerweave00eliorich"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://web.archive.org/web/20260917115856id_/https://gutenberg.ca/ebooks/eliotg-silas/eliotg-silas-00-t.txt",
+    "downloadSha256": "274b361a81d4a8c09a953317bcb1f9e5b1f73691dfaae230b9dc4dde0d781afd",
+    "method": "Project Gutenberg Canada #491 plain text (eliotg-silas-00-t.txt). gutenberg.ca now redirects that file to a login page, so the identical file was taken from the Internet Archive Wayback Machine capture of 2026-09-17 (served gzip-compressed; the SHA-256 is of the decompressed 427,800-byte Latin-1 text). Decoded Latin-1 to UTF-8 without changing characters; removed the ebook header, title page and everything before “PART I.”, all [Illustration] lines, “THE END.” and everything after it (printer’s line, advertisements, transcriber’s note); joined wrapped prose lines with single spaces; verse kept as stanzas with the first line’s leading space trimmed and later lines’ indentation kept; part, chapter and conclusion titles became headings. Applied the edition’s two declared emendations (“owners” to “owner's”, “hit of pork” to “bit of pork”)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 839,
+    "sha256": "48b2f51f02b0a4be2dea6ad4772d9de33ef1803433923e52ad8838ed01bbe616"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "eliot-prufrock-1917",
+  "author": "T. S. Eliot",
+  "title": "Prufrock and Other Observations",
+  "translator": null,
+  "edition": "London: The Egoist Ltd., 1917. Every selected poem is taken from Wikisource’s scan-backed transcription of Index:Prufrock and Other Observations (1917).djvu (saved poem HTML), not from Project Gutenberg 1459. Stanzas divided only by a printed page break are rejoined. Paragraph and stanza boundaries and line breaks are retained; prose layout whitespace is joined. Page numbers, running heads, and footnote callout numerals are omitted. The library text holds the dedication and all twelve poems in printed order; the title pages, contents, printer’s imprint and the note on first publication are omitted. Where a page break falls inside a poem, the text continues the stanza unless the transcription opens the new page with a line break (its mark of a stanza break) or ends the old page with a blank line; rows of asterisks are kept as their own blocks.",
+  "publicationYear": 1917,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:Prufrock_and_Other_Observations_(1917).djvu",
+  "textUrl": "https://en.wikisource.org/wiki/Prufrock_and_Other_Observations",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Published in 1917, before 1931; its US copyright term has expired as of 2026.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:Prufrock_and_Other_Observations_(1917).djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&page=Prufrock_and_Other_Observations&prop=text%7Crevid&format=json&formatversion=2",
+    "downloadSha256": "b1ff9b255ff673c0afd319fe18a3e62ed7e457ec558c21b6990d11bfbd1b81a0",
+    "method": "Wikisource MediaWiki parse API (action=parse, prop=text|revid), one request for the main page and one per poem subpage in printed order: The Love Song of J. Alfred Prufrock, Portrait of a Lady, Preludes, Rhapsody on a Windy Night, Morning at the Window, The Boston Evening Transcript, Aunt Helen, Cousin Nancy, Mr. Apollinax, Hysteria, Conversation Galante, La Figlia Che Piange (revisions 14646172, 14646154, 14646153, 14646174, 14646176, 14646177, 14646374, 14646179, 14646180, 14646181, 14646183, 14646186, 14646446, main page first). downloadSha256 is the SHA-256 of the 13 JSON responses concatenated in that order; downloadUrl is the first of them. From the main page only the dedication is kept. Wikisource headers, page-number anchors, inline gaps and zero-width characters removed; HTML italics dropped to plain text; poem text split into stanzas on blank lines (separate poem blocks on one page stay separate; across a page break as the edition note says), lines trimmed; centred poem titles became level-2 headings and section numerals level-3 headings; the prose poem Hysteria is a paragraph."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 88,
+    "sha256": "3c8ab567d83a393c02332f7f6c08ac7bf280735eb0f04528fb5acaa04ee5399d"
+  }
+}

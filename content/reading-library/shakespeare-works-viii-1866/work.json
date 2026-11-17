@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "shakespeare-works-viii-1866",
+  "author": "William Shakespeare",
+  "title": "The Works of William Shakespeare, Cambridge Edition, Volume VIII: Hamlet, the 1603 quarto of Hamlet, King Lear and Othello",
+  "translator": null,
+  "edition": "Edited by William George Clark and William Aldis Wright; London and Cambridge: Macmillan and Co., 1866, Volume VIII. Project Gutenberg 49008. The library holds every play of the volume in printed order, each under its own headings: Hamlet (title, Dramatis Personae, Acts I to V), the reprint of the 1603 quarto, The Tragicall Historie of HAMLET Prince of Denmarke (scenes i to xviii as the editors bracket them), King Lear (title, Dramatis Personae, Acts I to V) and Othello (title, Dramatis Personae, Acts I to V), with every scene heading, speech and stage direction. The editors' title page, contents, Preface and Addenda, the Notes after Hamlet, King Lear and Othello, and the footnoted textual apparatus are omitted as editorial matter. Footnote anchors, variant readings and page and line numbers omitted; HTML emphasis flattened and horizontal indentation normalized. Speech boundaries, stage directions and the transcription's displayed verse and prose line breaks retained; the quarto's numbered speech prefixes (1., 2.) are the edition's own. An existing dotted lacuna belongs to this printed edition, not to the selection editor. Three plain-text note references the transcription types into the verse are removed: [619] after Hamlet's “I do not know,”, [284, 285] in King Lear and [8, 9] in Othello. One transcription error is corrected: in Hamlet, Act I, scene V, Gutenberg's “0 villain” (digit zero) is printed here as “O villain.”",
+  "publicationYear": 1866,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/49008",
+  "textUrl": "https://www.gutenberg.org/cache/epub/49008/pg49008-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected English text is from the identified Macmillan 1866 Cambridge edition, published before 1931 and public domain in the United States as of 2026. Project Gutenberg explicitly lists this edition as public domain in the USA; its dated title page identifies the print text. Modern site boilerplate and apparatus are excluded.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/49008"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/49008/pg49008-images.html",
+    "downloadSha256": "f7f76f8f8355a117c6316733facb3884041438fcb8ecb5922f430047eb96bb83",
+    "method": "Project Gutenberg HTML (pglaf mirror of ebook 49008, pg49008-images.html). Kept four spans of the volume in order: from the HAMLET. heading to the first NOTES. heading, from The Tragicall Historie of HAMLET Prince of Denmarke. to KING LEAR., from KING LEAR. to the following NOTES. heading, and from OTHELLO. to the following NOTES. heading. Removed page numbers, line numbers, footnote anchors and the footnote divisions; play titles became level-1 headings, Dramatis Personae and act titles level-2 and scene titles level-3 headings; centred stage directions and Dramatis Personae lines became paragraphs; each stanza division (one speech) became a stanza block with a line per HTML line break; runs of ASCII whitespace collapsed to one space (no-break spaces kept), emphasis and small capitals flattened; the three plain-text note references removed and 'O villain' printed for the transcription's digit zero, as the edition note states."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 4774,
+    "sha256": "5b8d3d17288c1061adc22064a5879bec7de4b1c8f66b41de0f34d1d308ffbd67"
+  }
+}

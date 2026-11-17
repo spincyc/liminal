@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "lowell-sword-blades-1914",
+  "author": "Amy Lowell",
+  "title": "Sword Blades and Poppy Seed",
+  "translator": null,
+  "edition": "PG transcription; print exemplar unidentified; all 12 selected complete poems collated word for word against Amy Lowell, Sword Blades and Poppy Seed (New York: Macmillan, 1914), Harvard copy digitized at https://archive.org/details/swordbladesandp02lowegoog. The title page dates the volume 1914 and the copyright page states Published October, 1914 (PDF pages 8–9). Selected poems occur on printed pages 31–38, 43–49, 85, 94, 96–97, 234–235 and 240–245. Every selected word matches; the dated witness supplies stanza grouping where PG differs in A Lady, The Captured Goddess and Astigmatism. Small capitals and italics become plain text, curved quotation marks use PG straight equivalents, and spacing before punctuation is closed; hanging print wraps and the split honey-combed are rejoined. No word is modernized or omitted. Original Astigmatism dedication retained as headings. No digitizer commentary or modern introduction reproduced. The library holds Lowell’s Preface and every poem of the volume under its title, with the section titles SWORD BLADES and POPPY SEED; the Régnier epigraph, the contents and the etext’s end notes are omitted. The same normalisations apply throughout; only the twelve selected poems were collated, so elsewhere the PG transcription stands as transcribed, including the changes its end notes record (two corrected words, flattened accents in some names and lines, and Arabic for Roman section numerals in The Great Adventure of Max Breuck).",
+  "publicationYear": 1914,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/1020",
+  "textUrl": "https://www.gutenberg.org/ebooks/1020.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "All selected words have been collated against the identified Macmillan October 1914 English edition, with no substantive variants; its original English poems are in the US public domain by 2026 because the edition was published before 1931. This claim concerns the selected text, not an invented identity for the PG print exemplar. Project Gutenberg also explicitly marks ebook 1020 Public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/swordbladesandp02lowegoog"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/1020/pg1020.txt.utf8",
+    "downloadSha256": "fe786cde03e97ae2293c50bacf03447e0790e5870e32b04003942edf22ea3df3",
+    "method": "Project Gutenberg 1020 plain text (pglaf mirror, pg1020.txt.utf8), CRLF normalised to LF. Removed the Gutenberg header, footer and licence, the epigraph, contents and the end notes after “[End of original text.]”. The Preface became paragraphs (its signature and date separate); in the poems each column-0 line became a heading (section titles level 1, poem titles level 2), each poem’s common left margin was removed, lines that the etext’s 78-character limit had cut and continued with a two-space hanging indent were rejoined, blank-line-separated groups became stanzas (first line’s leading space trimmed, later indentation kept), groups of long wrapped lines in the prose poems became paragraphs, and lone section numerals (Roman, or Arabic where the etext changed them) became level-3 headings. Underscores (italics) were dropped and spaces before , ; : ! ? closed. For A Lady, The Captured Goddess and Astigmatism the stanza grouping (and Astigmatism’s dedication headings) follows the 1914 witness as the collated nightly selections carry it, after checking that every line is identical and in the same order."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 564,
+    "sha256": "5536484a1733012b96a76d7ec853813d3ad2e92e3ad2cbeb49a0aac605abc499"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "browning-shorter-poems-1917",
+  "author": "Robert Browning",
+  "title": "Browning’s Shorter Poems",
+  "translator": null,
+  "edition": "Selected and edited by Franklin T. Baker, fourth edition revised and enlarged, Macmillan, New York, 1917 (copyright 1899), as identified by the transcribed title and printing pages. Selected poems only; editor notes and separators omitted. Superscript-style degree-sign note callouts and right-margin line numbers removed; wording, stanza breaks and verse lines retained. The library holds Browning’s poems as the volume prints them, from The Pied Piper of Hamelin through One Word More, with their titles, subtitles and section numerals as headings; Baker’s preface, introduction, chronological list, bibliography and notes are omitted as editorial matter.",
+  "publicationYear": 1917,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/16376",
+  "textUrl": "https://www.gutenberg.org/ebooks/16376.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text is in this 1917 publication/transcription of the dated collection, published before 1931 and in the US public domain by 2026. Project Gutenberg catalogue explicitly labels this text Public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/16376"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/1/6/3/7/16376/16376-8.txt",
+    "downloadSha256": "48bf4760cbf53a7ff872167208d7639e709c7e1ad76e0cfff1b0037828bda3a3",
+    "method": "Project Gutenberg 16376 in its original Latin-1 plain-text file (16376-8.txt, the same transcription as the UTF-8 text but keeping accented letters such as “Frà” and “RÉGIME” that the current pg16376.txt flattens), decoded to UTF-8 with CRLF normalised to LF. Kept only the poems section (from THE PIED PIPER OF HAMELIN to the NOTES heading); removed every degree-sign note callout and every right-margin line number, and the rows of asterisks between poems; single all-capital lines became headings (level 2 for titles in the contents, level 3 for subtitles and section numerals); every other blank-line-separated group became a stanza with its lines and indentation as in the file."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 611,
+    "sha256": "cf14b9eac3990798bd4034020e0d89858830d3148bbca9a84536989bec9f5cef"
+  }
+}

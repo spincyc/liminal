@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "twain-life-on-the-mississippi-1883",
+  "author": "Mark Twain (Samuel L. Clemens)",
+  "title": "Life on the Mississippi",
+  "translator": null,
+  "edition": "Boston: James R. Osgood and Company, 1883, with more than 300 illustrations, as shown by the photographed title page in Project Gutenberg eBook245 HTML (https://www.gutenberg.org/files/245/245-h/images/titlepage.jpg). Original English prose transcription; line wrapping is joined within paragraphs. Original paragraph boundaries, dialect, punctuation, underscore emphasis and transcribed footnotes are retained. Twain’s own footnotes, which Project Gutenberg sets inline in bracketed markup, are given in Project Gutenberg’s note form: the citing word carries “[1]” (“[2]” for a second note in the same paragraph), and the note follows that paragraph as its own block, “[Footnote 1: …]”. No modern introduction or digitizer boilerplate is included. The library text runs from the prefatory extract “The ‘Body of the Nation’” through Chapters 1–60 and Appendices A–D; the table of contents is omitted. A note with no citing word in the transcription (Chapter 40, “Illustrations of it thoughtlessly omitted by the advertiser”, which the file sets as its own paragraph) follows the paragraph before it with no anchor, as “[Footnote 1: …]” opened in its first paragraph and closed at the end of its last, its own paragraphs kept.",
+  "publicationYear": 1883,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/245",
+  "textUrl": "https://www.gutenberg.org/ebooks/245.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The associated photographed title page identifies this as the Boston Osgood1883 printing, outside the US copyright term in2026. Project Gutenberg explicitly identifies eBook245 as public domain in the USA. The dated title-page image was visually checked on2026-10-07.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/245"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/245/pg245.txt",
+    "downloadSha256": "91388a58a49f9c321fc5b1611560b0302d043a7e955c2f3f6c619d91befc8f01",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 245). Removed the Gutenberg header, footer, licence, producer credit and table of contents; replaced each of the transcription’s inline braced footnotes with an anchor “[1]” (“[2]” for a second in one paragraph) at the citing word, absorbing the space or line break before it, and placed the note after its paragraph as “[Footnote n: …]”, dropping the transcription's “1.” note label; joined wrapped prose lines with single spaces; chapter numbers became level-2 headings with the chapter title as a level-3 heading, and the prefatory extract and appendix titles became level-2 headings. Underscore emphasis kept as in the file."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2054,
+    "sha256": "a248f1b03c7106db5dedae40ed5dce089254a78bd67bb30d8d657eebbe16adb4"
+  }
+}

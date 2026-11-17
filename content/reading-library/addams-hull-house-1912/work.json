@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "addams-hull-house-1912",
+  "author": "Jane Addams",
+  "title": "Twenty Years at Hull-House, with Autobiographical Notes",
+  "translator": null,
+  "edition": "University of Pennsylvania 'A Celebration of Women Writers' transcription of New York: The Macmillan Company, 1912 printing (copyright 1910; first published November 1910), identified by its transcribed title, imprint and copyright leaves. Used in place of Project Gutenberg #1325, which derives from an earlier version of this transcription but alters dashes and several words. HTML tags, page numbers and illustration captions are omitted; a word divided across a page break is rejoined, and a compound hyphenated at a source line end (self-government, Hull-House) is closed up; a paragraph that the HTML splits around an illustration is rejoined; whitespace normalized. Chapter-opening small capitals appear as capitals, as transcribed. The library holds the Preface and Chapters I–XVIII with their numbers and titles as headings; the title page, contents, lists of plates and illustrations, and the site’s About This Edition note are omitted. The normalisations above are applied throughout the book: every word divided across a page break is rejoined (the three divided compounds Hull-House, half-crazed and junk-shops keep their hyphen), and every paragraph split around an illustration is rejoined.",
+  "publicationYear": 1912,
+  "translationYear": null,
+  "url": "https://digital.library.upenn.edu/women/addams/hullhouse/hullhouse.html",
+  "textUrl": "https://digital.library.upenn.edu/women/addams/hullhouse/hullhouse.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Original English memoir first published in 1910 (Macmillan; magazine portions copyright 1910 Phillips Publishing); the 1912 printing used was also published before 1931, so its US term has expired as of 2026.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://digital.library.upenn.edu/women/addams/hullhouse/hullhouse.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://digital.library.upenn.edu/women/addams/hullhouse/hullhouse.html",
+    "downloadSha256": "4fb96d0650c3a868e4d4ddc9a0383d2bbb901eb8bd4c406215e966432f955521",
+    "method": "UPenn A Celebration of Women Writers HTML. Kept the Preface and the chapters; removed comments, page-number, facing-page and verso markers, rules, every image with its centred caption paragraph, and the contents and illustration lists. Each P became a paragraph (whitespace collapsed, entities decoded, small-capital spans joined to their initials as transcribed); block-indented P elements (quoted verse) became stanzas with line-break tags as line ends and no-break-space indentation kept; each chapter H2 gave a level-2 number heading and a level-3 title heading. A word hyphenated before a page-number marker was joined without the hyphen, except three compounds (Hull-House twice, half-crazed, junk-shops); a hyphen at an HTML line end was closed up without a space. A paragraph resumed after an illustration (or in a P marked as a continuation) was joined to the previous paragraph when that one ended without closing punctuation or the resumed text began in lower case (41 places)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 635,
+    "sha256": "068855056c015d9a5371c464b58f3adf0e45b478d9a68a03aaf03f7f17bfde5e"
+  }
+}

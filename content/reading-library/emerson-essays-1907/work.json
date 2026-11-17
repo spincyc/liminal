@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "emerson-essays-1907",
+  "author": "Ralph Waldo Emerson",
+  "title": "Essays by Ralph Waldo Emerson",
+  "translator": null,
+  "edition": "Selected and edited by Edna H. L. Turpin, Merrill’s English Texts, New York: Charles E. Merrill Co., 1907, as transcribed in Project Gutenberg ebook 16643. Only Emerson’s essay text is selected, not Turpin’s introduction or endnotes. Original paragraph boundaries and emphasis markers are retained without wording normalization. Turpin’s bracketed editorial note-reference numbers (for example “[457]”) are omitted from the supplied text, and Gutenberg line wrapping within prose paragraphs is joined with spaces; verse quotations keep their lines. The library text holds Emerson's text of all ten pieces in the volume (The American Scholar, Compensation, Self-Reliance, Friendship, Heroism, Manners, Gifts, Nature, Prudence, Circles), with their verse epigraphs and the paragraph numbers the volume prints; Turpin's publisher's note, life of Emerson, critical opinions, chronology, headnote to The American Scholar and endnotes are omitted, as is the row of asterisks between the two epigraphs of Self-Reliance. In verse blocks the first line is flush and later lines keep the transcription's indentation.",
+  "publicationYear": 1907,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/16643",
+  "textUrl": "https://www.gutenberg.org/ebooks/16643.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The transcription’s title page explicitly dates the selected Merrill edition to 1907. Project Gutenberg identifies ebook 16643 as public domain in the USA; the 1907 published English edition is outside its US copyright term.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/16643"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/16643/pg16643.txt",
+    "downloadSha256": "bd1e8cd9feb2c331b560dbb254cde873cb3db4b5d5464996d98f6e43649ad1e1",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 16643). Removed the Gutenberg header, footer and licence, all of Turpin's apparatus before The American Scholar and the Notes section after Circles, and every bracketed note-reference number and the two bracketed transcriber’s notes (on the spelling Shakspeare, and on a missing paragraph number); joined wrapped prose lines with single spaces (the indented letter in Friendship included); indented verse became stanzas, trimmed at the start and with trailing spaces removed; essay titles became level-2 headings. Underscore emphasis kept as in the file."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 367,
+    "sha256": "16fd08d8e88525a6b5e73b6bdbd998b37194f1bb52be6355bcb4de014895cd14"
+  }
+}

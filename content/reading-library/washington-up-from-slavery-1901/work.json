@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "washington-up-from-slavery-1901",
+  "author": "Booker T. Washington",
+  "title": "Up from Slavery: An Autobiography",
+  "translator": null,
+  "edition": "Wikisource transcription (Index: Up From Slavery.djvu) of New York: Doubleday, Page & Co., 1901 (copyright 1900, 1901; Norwood Press), identified by its transcribed title and copyright leaves. Every selected word was collated against OCR of the dated 1901 Doubleday, Page scan (Internet Archive upfromslaveryaut00wash_0, Wellesley College Library), with UNC Documenting the American South's independent transcription as a second witness; 75 Wikisource transcription errors (omitted, misspelled or substituted words) were corrected to the scan's readings, and one further flagged word was confirmed as printed. HTML presentation and page markers removed and whitespace normalized; paragraph boundaries, the embedded verse, and chapter-opening capitals are retained. The library holds the Preface and Chapters I–XVII with their chapter titles; the printed index is omitted. The collation and corrections above cover the passages used as nightly readings; elsewhere the Wikisource transcription is reproduced as transcribed.",
+  "publicationYear": 1901,
+  "translationYear": null,
+  "url": "https://archive.org/details/upfromslaveryaut00wash_0",
+  "textUrl": "https://en.wikisource.org/wiki/Up_From_Slavery",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Original English memoir published in New York by Doubleday, Page & Co. in 1901, before 1931; its US copyright term has expired as of 2026. (The Internet Archive record for the dated scan carries no copyright-status field; the basis rests on the 1901 publication date shown on the title and copyright leaves.)",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/upfromslaveryaut00wash_0"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&prop=text%7Crevid&format=json&formatversion=2&page=Up_From_Slavery",
+    "downloadSha256": "c214dd9b81b56897f9e9b6127bc4606a4a9e08ae2635d2071ee74300a7cac5d2",
+    "method": "MediaWiki parse API (action=parse, prop=text|revid) for the Wikisource subpages Preface and Chapter 1–17, fetched in the printed order of the main page Up_From_Slavery: Preface (revision 12310918); Chapter 1 (revision 13944836); Chapter 2 (revision 13959715); Chapter 3 (revision 13973101); Chapter 4 (revision 13982261); Chapter 5 (revision 13988769); Chapter 6 (revision 13995350); Chapter 7 (revision 14000883); Chapter 8 (revision 14007696); Chapter 9 (revision 14016463); Chapter 10 (revision 14027557); Chapter 11 (revision 14039860); Chapter 12 (revision 14050707); Chapter 13 (revision 14090926); Chapter 14 (revision 14119690); Chapter 15 (revision 14147449); Chapter 16 (revision 14170130); Chapter 17 (revision 14180828); downloadSha256 is the SHA-256 of the eighteen JSON responses concatenated in that order. Removed the Wikisource header, page-number anchors, audio and other no-export elements and the repeated title “UP FROM SLAVERY”; each HTML paragraph, and each run of text set directly in a section without a paragraph element, became a block with whitespace (including no-break spaces) collapsed to single spaces and line-break tags kept as line breaks; centred and right-aligned passages with line breaks (verse, a letter’s dateline) became stanzas; chapter numbers became level-2 and chapter titles level-3 headings; drop capitals joined to their words. The 78 word-level corrections that the nightly selections carry from the collation declared in the edition (Wikisource misreadings and omissions corrected to the 1901 scan) were applied at the same places."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 639,
+    "sha256": "3c3664353459b748e9d02101b65b2fd783580fb4abd7b874173d90049da4429e"
+  }
+}

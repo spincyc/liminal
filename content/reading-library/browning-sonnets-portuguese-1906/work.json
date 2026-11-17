@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "browning-sonnets-portuguese-1906",
+  "author": "Elizabeth Barrett Browning",
+  "title": "Sonnets from the Portuguese",
+  "translator": null,
+  "edition": "Caradoc Press, Bedford Park, Chiswick, London, 1906, transcribed by David Price. Original English poems, not a translation. Common three-space display margin removed; CRLF becomes LF; original punctuation, words and 14-line sonnet boundaries retained. The library holds all forty-four sonnets under their numerals; the cover and decorative-graphic placeholders, title page and index of first lines are omitted.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/2002",
+  "textUrl": "https://www.gutenberg.org/ebooks/2002.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text is in this 1906 publication/transcription of the dated collection, published before 1931 and in the US public domain by 2026. Project Gutenberg catalogue explicitly labels this text Public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/2002"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/2002/pg2002.txt",
+    "downloadSha256": "b193a12e83b20378cb0d25e97468ef0ed915b760732b8c1deeb3d6fe5d7ed65d",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 2002), CRLF line ends normalised to LF. Removed the Gutenberg header, footer and licence and everything before Sonnet I (picture placeholders, title page, index of first lines); each sonnet numeral became a level-2 heading and each sonnet one stanza, with the file’s three-space display margin removed from every line."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 88,
+    "sha256": "d267c518babc0d68f1e0732caeeab4ecf2ecaf3ac28add06c93a661a5cb83cd7"
+  }
+}
