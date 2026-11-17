@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "milne-winnie-the-pooh-1931",
+  "author": "A. A. Milne",
+  "title": "Winnie-the-Pooh",
+  "translator": null,
+  "edition": "Project Gutenberg 67098 transcription of McClelland & Stewart, Toronto, fifth printing March 1931, as dated in its front matter; original English text first published October 1926. Retains the Project Gutenberg transcriber’s explicitly documented correction of the Kanga reference near a chapter ending. No illustrations reproduced. Original prose paragraph boundaries and verse line/stanza breaks retained; HTML entities decoded and inline emphasis rendered as plain text. Prose line-wrap whitespace normalized to single spaces. Page numbers, illustrations, captions, publisher front matter and digitizer boilerplate omitted; no narrative abridgment within an excerpt. Rabbit’s numbered plan in Chapter VII, a table in the HTML, is given as one paragraph per numbered item.",
+  "publicationYear": 1931,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/67098",
+  "textUrl": "https://www.gutenberg.org/cache/epub/67098/pg67098-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original 1926 English text has an expired US publication term as of 2026; the source is a 1931 reprint, not a claim that newly authored 1931 matter has expired. Only the original literary text is selected. Project Gutenberg explicitly labels this text public domain in the USA.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/67098"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/67098/pg67098-images.html",
+    "downloadSha256": "a7ec9e52f5e196b36894f0c0d7326a13abf0ed5f0564b04e1cf103f31621f594",
+    "method": "Downloaded Project Gutenberg HTML pg67098-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the publisher's list of the author's books, the title page, copyright and printing leaf, the contents, the printer's imprint and the closing transcriber's note (whose correction near the end of Chapter VI stays in the text, as the edition says). Kept: the dedication \"To Her\", the author's introduction with signature, and every chapter with its number and \"In which\" title as headings; Rabbit's numbered plan in Chapter VII, a table in the HTML, is one paragraph per numbered item, number and text joined by a space."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1095,
+    "sha256": "41b4c797f9943019f20be74c8093881e42fc2747305408099b25d4cec395ef22"
+  }
+}

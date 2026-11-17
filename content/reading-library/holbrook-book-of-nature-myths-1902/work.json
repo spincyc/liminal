@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "holbrook-book-of-nature-myths-1902",
+  "author": "Florence Holbrook",
+  "title": "The Book of Nature Myths",
+  "translator": null,
+  "edition": "PG transcription of Houghton Mifflin Company text, copyright 1902; printing undated. The publisher and original-text copyright leaf identify these English retellings, and the PG catalogue explicitly determines US public-domain status. These are Holbrook’s historical adaptations, not verbatim translations or reliable accounts of the beliefs of all Indigenous peoples. Transcription treatment: HTML inline emphasis is represented as plain text; page numbers, image captions, illustrations, and digitizer boilerplate are excluded. Prose line-wrap whitespace is collapsed within each paragraph; verse line breaks and stanza boundaries are retained, with indentation whitespace normalized. Original wording, spelling, and punctuation are retained, including apparent historical or transcription oddities.",
+  "publicationYear": 1902,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/22420",
+  "textUrl": "https://www.gutenberg.org/cache/epub/22420/pg22420-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected English literary text was published in 1902, before 1931, and its maximum 95-year US publication term has expired as of 2026. Project Gutenberg explicitly identifies this ebook as public domain in the USA. ",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/22420"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/22420/pg22420-images.html",
+    "downloadSha256": "e70ed198c5201449584bc00a1749c069bf5f20011b49dd88778b5f49e6c69001",
+    "method": "Downloaded Project Gutenberg HTML pg22420-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page and imprint, the contents, and the closing \"Vocabulary of the Book of Nature Myths\" (a word list keyed to printed page numbers). Kept: Holbrook's preface and every myth with its part headings."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 942,
+    "sha256": "97e937de48427ed6b8ac6a4672d321fa3099500ef2f9f75116b0c472af787594"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "williams-velveteen-rabbit-1922",
+  "author": "Margery Williams",
+  "title": "The Velveteen Rabbit; or, How Toys Become Real",
+  "translator": null,
+  "edition": "Project Gutenberg 11757 transcription, credited to UPenn; its undated Doubleday & Company print exemplar is unidentified. Every selected excerpt collated against the New York Public Library scan of London: Heinemann, 1922 (Internet Archive velveteenrabbito00bian, title page leaf7, literary text pp1–19). Selected words follow that dated witness, including verified wording, spelling and capitalization variants. Straight quotation marks and plain emphasis follow PG; prose line-wrap whitespace is collapsed, page furniture and illustrations omitted. The opening paragraph, whose drop capital PG renders only as an image, is supplied from the 1922 witness p. 1 (decorative initial and small capitals in ordinary case). Punctuation was corrected to the witness at pp. 9, 12 and 13; elsewhere punctuation follows PG and was compared only at OCR-flagged points. Library text: the whole PG 11757 transcription, with the corrections to the 1922 Heinemann witness that the selected excerpts adopt (listed in acquisition.method) applied in place; the selected excerpts cover the whole story.",
+  "publicationYear": 1922,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/11757",
+  "textUrl": "https://www.gutenberg.org/cache/epub/11757/pg11757-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The identified Heinemann 1922 English text has an expired US publication term as of 2026. Archive metadata for the NYPL scan explicitly records NOT_IN_COPYRIGHT in the US. Every selected excerpt was collated against that dated primary witness and actual variants resolved from page images; PG also marks 11757 public domain in the USA. Illustrations and later editorial matter are excluded.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://archive.org/details/velveteenrabbito00bian/page/n7/mode/1up"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/11757/pg11757-images.html",
+    "downloadSha256": "dc80cd5e63841ec1b7d7166cd3f8284ad9a34c9c9a088491a5ff0f264715e8a8",
+    "method": "Downloaded Project Gutenberg HTML pg11757-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions (paragraphs repeating the list of illustrations under each picture), the UPenn courtesy line, the title page and imprint, and the list of illustrations. Kept: the dedication and the whole story. Corrections from the selected excerpts' collation with the 1922 witness, applied as single-occurrence replacements: “HERE was once” to “There was once”; “happen often” to “often happen”; “are real?\" said” to “are Real?\" said”; “tail becoming unsewn,” to “tail coming unsewn,”; “and brand-new. They” to “and bran-new. They”; “as anything,\" And” to “as anything.\" And”; “all night and” to “all night, and”; “picture-books,” to “picture books,”; “For the boy had often” to “For the Boy had often”; “and dew-drops, and” to “and dewdrops, and”; “Rabbit-land,” to “Rabbitland,” (the first supplies the drop capital PG renders only as an image)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 82,
+    "sha256": "d3014f039c4cffb9efdc1978d41a2bd5363a458c1eaa425a53c45aa5f545ff21"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "field-poems-of-childhood-1904",
+  "author": "Eugene Field",
+  "title": "Poems of Childhood",
+  "translator": null,
+  "edition": "New York: Charles Scribner’s Sons, September 1904. This collection reprints earlier English poems; no illustrations or later editorial matter are included. Transcription treatment: HTML inline emphasis is represented as plain text; page numbers, image captions, illustrations, and digitizer boilerplate are excluded. Prose line-wrap whitespace is collapsed within each paragraph; verse line breaks and stanza boundaries are retained, with indentation whitespace normalized. Original wording, spelling, and punctuation are retained, including apparent historical or transcription oddities.",
+  "publicationYear": 1904,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/75578",
+  "textUrl": "https://www.gutenberg.org/cache/epub/75578/pg75578-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected English literary text was published in 1904, before 1931, and its maximum 95-year US publication term has expired as of 2026. Project Gutenberg explicitly identifies this ebook as public domain in the USA. ",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/75578"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/75578/pg75578-images.html",
+    "downloadSha256": "675efb30ec7c2598b8d6bcd139fe23b68b1656ba504e84d30682ac244e81ca28",
+    "method": "Downloaded Project Gutenberg HTML pg75578-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page, copyright list, contents and list of illustrations. Kept: every poem from the half-title \"POEMS OF CHILDHOOD\" to the end, with speaker labels as paragraphs."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 544,
+    "sha256": "6278dcef475cdbae17fd9ebc0bdbdbb9f3abc842a1cfe367a21816a6f21b1ff7"
+  }
+}

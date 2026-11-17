@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "browne-grannys-wonderful-chair-1906",
+  "author": "Frances Browne",
+  "title": "Granny’s Wonderful Chair & Its Tales of Fairy Times",
+  "translator": null,
+  "edition": "Project Gutenberg transcription of the identified 1906 Everyman’s Library text edition, J. M. Dent / E. P. Dutton; the actual printing is undated. Identification rests on the Everyman and publisher title-page identity, Dollie Radford’s preface dated August 1906, and the matching Oxford/Google catalogue (178 pages and chapter pagination): https://books.google.com/books?id=IxYgkxwxnfQC. This does not claim that the scanned copy is a dated first edition. Only Browne’s narrative is selected, not Radford’s introduction. Six sentence continuations divided by illustrations or physical page breaks are joined with one space to restore their paragraph boundaries; all source words and punctuation, including marked Project Gutenberg transcription corrections, are retained. Project Gutenberg HTML transcription; soft prose line wraps and within-line whitespace normalized to single spaces; verse line and stanza boundaries retained. Illustrations, captions, page-number anchors, publisher matter, prefatory teaching mottos and digitizer matter are excluded. Original wording, spelling and punctuation retained. The Christmas Cuckoo and The Story of Merrymind are read contiguously (revised 2026-10-08). The library text applies the same joining wherever the transcription splits a sentence at an illustration or page break: eleven places in all, the six inside selected excerpts among them.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/35820",
+  "textUrl": "https://www.gutenberg.org/cache/epub/35820/pg35820-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The Everyman and publisher identity, Radford preface dated August 1906, and matching Oxford/Google catalogue with 178 pages and matching chapter pagination identify the 1906 English text edition. The printing itself is undated. The selected Browne narrative is public domain in the United States as a pre-1931 text, and Project Gutenberg explicitly marks this transcription Public domain in the USA. No illustrations or later introductory material are reproduced.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/35820"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/35820/pg35820-images.html",
+    "downloadSha256": "8751891f1c43a1a10001dad99aaaa75cc28990d5e7cabf553e2252a2b52b7936",
+    "method": "Downloaded Project Gutenberg HTML pg35820-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the series title page and imprint, Dollie Radford's 1906 preface and the bibliography (not Browne's text), the contents and list of illustrations, and the printer's imprint. Kept: Browne's narrative from the title heading \"Granny's Wonderful Chair\" through \"THE END\", chapter numbers and titles as headings, and the transcriber's marked corrections as transcribed. Eleven paragraphs that the HTML splits mid-sentence at an illustration or page break are joined to the preceding paragraph with one space."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 487,
+    "sha256": "bda837885be63e0a954d1ec0cf6ede4d8244873a9a42e50d9c0e7cb3d11430a0"
+  }
+}

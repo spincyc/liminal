@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "brooke-johnny-crows-garden-1903",
+  "author": "L. Leslie Brooke",
+  "title": "Johnny Crow’s Garden",
+  "translator": null,
+  "edition": "First edition, 1903, identified in the source. Only the original verse is supplied; picture captions, advertisements, and illustrations are omitted. Transcription treatment: HTML inline emphasis is represented as plain text; page numbers, image captions, illustrations, and digitizer boilerplate are excluded. Prose line-wrap whitespace is collapsed within each paragraph; verse line breaks and stanza boundaries are retained, with indentation whitespace normalized. Original wording, spelling, and punctuation are retained, including apparent historical or transcription oddities.",
+  "publicationYear": 1903,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/10469",
+  "textUrl": "https://www.gutenberg.org/cache/epub/10469/pg10469-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected English literary text was published in 1903, before 1931, and its maximum 95-year US publication term has expired as of 2026. Project Gutenberg explicitly identifies this ebook as public domain in the USA. ",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/10469"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/10469/pg10469-images.html",
+    "downloadSha256": "ac2d1d07f34f95000396f324efc6182ad5ade8fb15a4c4e3ba32f930d5c7f679",
+    "method": "Downloaded Project Gutenberg HTML pg10469-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page, and the publisher's advertisement pages after the verse. The book's text is the single verse picture-book: its title heading and each picture's verse (set in the HTML as h2 cells beside the pictures) as one stanza; the closing \"GOOD-BYE!\" is kept as a stanza."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 46,
+    "sha256": "2cb9da607eb3001fec9b3fc52ff7f68875244559f5346af05ec922818b95dc41"
+  }
+}

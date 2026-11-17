@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "lindsay-mother-stories-1928",
+  "author": "Maud Lindsay",
+  "title": "Mother Stories",
+  "translator": null,
+  "edition": "Springfield, Massachusetts: Milton Bradley Company, twenty-eighth edition, 1928. Only stories are selected; prefatory teaching mottos, picture captions, and illustrations are omitted where they stand outside the selected story boundary. Transcription treatment: HTML inline emphasis is represented as plain text; page numbers, image captions, illustrations, and digitizer boilerplate are excluded. Prose line-wrap whitespace is collapsed within each paragraph; verse line breaks and stanza boundaries are retained, with indentation whitespace normalized. Original wording, spelling, and punctuation are retained, including apparent historical or transcription oddities. The song footnote marker in “The Wind’s Work” is omitted; its note (“Air Nancy Lee”) is given in the night’s context. The library text omits that footnote marker and also the note itself, which the transcription prints at the end of the book.",
+  "publicationYear": 1928,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/15929",
+  "textUrl": "https://www.gutenberg.org/cache/epub/15929/pg15929-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected English literary text was published in 1928, before 1931, and its maximum 95-year US publication term has expired as of 2026. Project Gutenberg explicitly identifies this ebook as public domain in the USA. ",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/15929"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/15929/pg15929-images.html",
+    "downloadSha256": "a0a9a8e75cf6d3be94d2d6cd13bafdafbc1b3381d327ff49d75269dd65b530d9",
+    "method": "Downloaded Project Gutenberg HTML pg15929-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions (set here as h4 lines under each picture), the title page and imprint, the cover images, the contents and list of stories, the one footnote marker with its note \"Air Nancy Lee.\" (see edition), and the \"Footnote\" label. Kept: the dedication, the author's preface with signature, and every story with its motto for the mother and part headings."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 690,
+    "sha256": "3c56c0700fdc762a6b2fa4d147c7dcb4d91b88abe544d1d74d0afec27b163454"
+  }
+}
