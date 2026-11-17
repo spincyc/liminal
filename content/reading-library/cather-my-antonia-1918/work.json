@@ -4,7 +4,7 @@
   "author": "Willa Cather",
   "title": "My Ántonia",
   "translator": null,
-  "edition": "Project Gutenberg 19810 transcription identifying Boston and New York: Houghton Mifflin Company, The Riverside Press Cambridge, 1918 on its title page. Original 1918 introduction retained, including the agreement that both friends will write and the statement that Jim’s manuscript follows; not the 1926 revision. Prose line wrapping is joined; paragraph boundaries, source spelling, spacing of contractions, and underscore emphasis are retained. Illustrations/captions are omitted; the isolated pronunciation-footnote marker “(1)” after the first narrative occurrence of Ántonia is omitted. No modern editorial matter is reproduced. The library text runs from the Introduction through the last chapter of Book V, followed by Cather’s own pronunciation footnote under its FOOTNOTES heading (its number dropped with the in-text marker); the title page, Virgil epigraph, dedication, contents, list of illustrations and “THE END” are omitted.",
+  "edition": "Project Gutenberg 19810 transcription identifying Boston and New York: Houghton Mifflin Company, The Riverside Press Cambridge, 1918 on its title page. Original 1918 introduction retained, including the agreement that both friends will write and the statement that Jim’s manuscript follows; not the 1926 revision. Prose line wrapping is joined; paragraph boundaries, source spelling, spacing of contractions, and underscore emphasis are retained. Illustrations/captions are omitted; the isolated pronunciation-footnote marker “(1)” after the first narrative occurrence of Ántonia is omitted. No modern editorial matter is reproduced. The library text runs from the Introduction through the last chapter of Book V, followed by Cather’s own pronunciation footnote after the FOOTNOTES label, in Project Gutenberg’s form “[Footnote 1: …]”, with its in-text marker given as the anchor “[1]” (the nightly selections, as this edition declares, omit that marker); the title page, Virgil epigraph, dedication, contents, list of illustrations and “THE END” are omitted.",
   "publicationYear": 1918,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/19810",
@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/19810/pg19810.txt",
     "downloadSha256": "1d0e8fc74be8e4f47a5c938bc03e1f0548a85afee9e81acd4151ee11d8312d38",
-    "method": "Project Gutenberg plain text (pglaf mirror of ebook 19810, CRLF line ends normalised to LF). Removed the Gutenberg header, footer and licence and everything before the Introduction; removed every [Illustration] line, the in-text footnote marker “(1)” and “THE END”; joined wrapped prose lines with single spaces; verse kept as stanzas with the first line’s leading space trimmed and later lines’ indentation kept; book titles became level-1 headings and the Introduction, chapter numerals and FOOTNOTES level-2 headings. Underscore emphasis kept as in the file."
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 19810, CRLF line ends normalised to LF). Removed the Gutenberg header, footer and licence and everything before the Introduction; removed every illustration line and “THE END”; the footnote marker “(1)” became the anchor “[1]” and the footnote became “[Footnote 1: …]” after its FOOTNOTES label, kept as a paragraph; joined wrapped prose lines with single spaces; verse kept as stanzas with the first line’s leading space trimmed and later lines’ indentation kept; book titles became level-1 headings and the Introduction and chapter numerals level-2 headings. Underscore emphasis kept as in the file."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 1110,
-    "sha256": "a7437fdd818d88cf923227a013b1efbee0ccdb414384eb1b7e70b5ce4697a4a2"
+    "sha256": "180aabe454efdfb9f3fcb7383274ae9228a27fcd5e322dab85ebaa29c6bddd2b"
   }
 }
