@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "wilde-happy-prince-1910",
+  "author": "Oscar Wilde",
+  "title": "The Happy Prince, and Other Tales",
+  "translator": null,
+  "edition": "David Nutt, London, seventh impression, March 1910; first edition 1888. Project Gutenberg transcription. Prose line-wrap whitespace is folded to spaces; literary paragraphs and source spelling/punctuation (including plain-text emphasis marks) are retained. Illustration captions and publication apparatus are omitted; verse lineation is retained. The library text holds the dedication and all five tales; runs of spaces are collapsed and the tale titles are headings.",
+  "publicationYear": 1910,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/902",
+  "textUrl": "https://www.gutenberg.org/ebooks/902.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The exact English print edition is dated 1910 in the transcription title matter; publication before 1931 places that text in the US public domain by 2026. Project Gutenberg separately labels ebook 902 public domain in the USA. No separate modern introduction or images are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/902/pg902-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/902/pg902.txt",
+    "downloadSha256": "77ae1b3c7be77aea82b1f935e531e53f4df43db572cbc14af39d6cd0d5ba50da",
+    "method": "Project Gutenberg plain text (eBook 902, UTF-8, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl). Kept Wilde’s dedication (given as one line, TO CARLOS BLACKER, without the transcription’s italic underscores) and the five tales; removed the PG header and footer, the title, impressions and contents pages, every [Picture: …] caption, and the closing printer’s imprint. Blank-line separated paragraphs were joined with single spaces and runs of spaces collapsed to one, as in the nightly readings; story titles are headings; the three centred lines of the Giant’s notice-board stay three one-line paragraphs; the star divider after the last tale is not kept. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 403,
+    "sha256": "da6a948e70d0dc620cea3d51b3baa383974d072270c16cf66aa29b129b0ce24c"
+  }
+}

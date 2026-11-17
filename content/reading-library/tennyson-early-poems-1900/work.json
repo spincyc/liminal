@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "tennyson-early-poems-1900",
+  "author": "Alfred, Lord Tennyson",
+  "title": "The Early Poems of Alfred, Lord Tennyson",
+  "translator": null,
+  "edition": "Edited by John Churton Collins; London: Methuen & Co., 1900 primary witness, IA earlypoemsalfre00tenngoog (title page PDF 10). PG8601 does not establish its print exemplar date; all twelve selected poems were visually collated in full to this dated witness. PG typography, metrical lines and stanza spacing are retained, including underscore italic markers. Collins’s bracketed editorial-reference tokens [n] and separate historical variant commentary are omitted as apparatus; all poem words and section headings remain. One documented correction: The Blackbird’s four-line opening stanza, omitted in PG8601, is restored by direct transcription of printed page 128 (PDF 181); small capitals and punctuation spacing are normalized. The remaining twenty lines preserve PG words, with editorial-reference tokens omitted. Common left indentation removed, outer blank lines and line-end spaces removed, CRLF normalized to LF; original verse line breaks and transcription stanza breaks retained. Source spelling and punctuation are preserved; no modern introduction or digitizer boilerplate is supplied.",
+  "publicationYear": 1900,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/8601",
+  "textUrl": "https://www.gutenberg.org/cache/epub/8601/pg8601.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The complete selected verse is witnessed in the dated Methuen 1900 edition; all twelve poems were collated, with the Blackbird omission restored from its dated page. No assumed 1901 PG print exemplar is asserted. Project Gutenberg ebook 8601 expressly labels the text public domain in the USA. The dated English publication predates 1931, so its US publication term has expired as of 2026; no translation is involved.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/download/earlypoemsalfre00tenngoog/earlypoemsalfre00tenngoog.pdf#page=10"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/8601/pg8601.txt",
+    "downloadSha256": "71906f15b2cf2fa6ab7c2221de6f1323b3f1e202e1c09610dc5c266f9890a9c4",
+    "method": "Project Gutenberg plain text (eBook 8601, CRLF normalised to LF) from the PG mirror (the same eBook as the textUrl). Collins’s edition prints his headnotes, variant readings (often quoted verse) and numbered notes between and inside the poems, and that apparatus cannot be separated from Tennyson’s verse across the whole book mechanically and reliably; this text therefore holds only the nine complete poems the Grade 6 nightly readings use, in the book’s order, under the book’s Early Poems and Appendix divisions: each poem’s title (with The Eagle’s printed (fragment) line), then its numbered sections and stanzas from the first verse to the end of the poem. Collins’s headnotes, the verse quoted in them, his notes and the [n] reference tokens are omitted; each stanza’s common left indentation is removed. The Blackbird’s opening stanza, omitted in PG 8601, is supplied from the curator’s transcription of printed page 128 that the edition statement documents. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Partial: the nine complete poems used by the Grade 6 nightly readings (Song—The Owl, The Poet’s Mind, The Blackbird, A Farewell, The Eagle, Move eastward, happy earth..., The Poet’s Song, and from the Appendix The Grasshopper and The Tears of Heaven). The rest of the edition is not included because Collins’s editorial headnotes, quoted variant verse and notes are interleaved with the poems and could not be removed reliably across the whole book."
+  },
+  "text": {
+    "blocks": 40,
+    "sha256": "35189e5fb9ddd9a510a7055053d8ace21ca8b9b17f3b92ed1f03a84cd48ac6d3"
+  }
+}
