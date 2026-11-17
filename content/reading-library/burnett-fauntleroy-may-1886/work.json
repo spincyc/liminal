@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "burnett-fauntleroy-may-1886",
+  "author": "Frances Hodgson Burnett",
+  "title": "Little Lord Fauntleroy, Chapter VII, in St. Nicholas, Vol. XIII, No. 7, May 1886",
+  "translator": null,
+  "edition": "St. Nicholas, Vol. XIII, No. 7, May 1886; Chapter VII of Burnett’s serial, from the explicitly dated magazine issue. Source is the serial wording, not an assertion about an undated later book transcription. Text extracted from source HTML paragraphs; line-wrap whitespace folded to single spaces, page-number spans and illustration captions excluded; typographic inline emphasis rendered as plain text without changing words or punctuation. The library text holds Burnett’s whole installment from this issue: its serial title as a level-1 heading, the byline, the Chapter VII. heading at level 2, every paragraph of the chapter, and the closing “(To be continued.)”; the issue’s other contributions and its illustrations and captions are not included.",
+  "publicationYear": 1886,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/32622",
+  "textUrl": "https://www.gutenberg.org/cache/epub/32622/pg32622-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The English edition used was published in 1886, before 1931, and its maximum US publication term had expired by 2026. Project Gutenberg catalogue explicitly identifies this text as public domain in the USA. Only the original literary text is included, not modern introductions or illustrations.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/32622"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/32622/pg32622-images.html",
+    "downloadSha256": "f614ae478d71154f209de6d6f4b2429dcb79720efbd12a6da131972d008a64d8",
+    "method": "Project Gutenberg HTML (pg32622-images.html from the aleph.pglaf.org mirror), the whole May 1886 issue, parsed with Python's html.parser; only the LITTLE LORD FAUNTLEROY. installment was taken, from its title heading up to the next article (GEORGE WASHINGTON). Within it, the illustrations with their captions, page-number markers and rules were dropped; the title became the level-1 heading, Chapter VII. a level-2 heading, and the byline, every HTML paragraph and the closing (To be continued.) became paragraph blocks with whitespace folded to single spaces; italics and small capitals rendered as plain text; straight quotation marks and em dashes kept as transcribed. Every Grade 3 night from this installment was located block for block."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds only Frances Hodgson Burnett’s Little Lord Fauntleroy installment (Chapter VII) from the May 1886 St. Nicholas issue; the issue’s other contributions by other writers, its departments and its illustrations are not included."
+  },
+  "text": {
+    "blocks": 52,
+    "sha256": "826beb0b77cffde6efe7ee1e66319202aebdfa4c9bc783859afd4d97db0c12af"
+  }
+}

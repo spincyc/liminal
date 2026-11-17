@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "blake-songs-1901",
+  "author": "William Blake",
+  "title": "Songs of Innocence and Songs of Experience",
+  "translator": null,
+  "edition": "London: R. Brimley Johnson; Guildford: A. C. Curtis, 1901. Only Songs of Innocence is selected. Project Gutenberg transcription of this dated printing. Paragraph line wrapping and HTML spacing are normalized; verse line and stanza boundaries are retained. Image-only initial letters are restored from their source alt text and joined to the following word. Page numbers, images, illustration captions, and publisher/digitizer matter are omitted. The library text holds the whole book, Songs of Innocence and Songs of Experience: the book title, then each part title as a level-1 heading and each poem title as a level-2 heading, with stanza lines stripped of their display indentation; the title page, imprint, contents and illustrations are omitted.",
+  "publicationYear": 1901,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/1934",
+  "textUrl": "https://www.gutenberg.org/cache/epub/1934/pg1934-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1901, before 1931; its US publication copyright term has expired as of 2026. No modern introduction or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/1934/pg1934-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/1934/pg1934-images.html",
+    "downloadSha256": "13f1057257bb5d57c2033f18bd290ca01007cb79bbdfc186dd39536cf1f44ed4",
+    "method": "Project Gutenberg HTML (pg1934-images.html from the aleph.pglaf.org mirror) parsed with Python's html.parser: the PG header, footer and licence removed; the title-page byline and imprint, the contents table and every illustration image dropped. The three-line title heading became one level-1 heading, with its small-capitals “and” written in capitals; the part titles SONGS OF INNOCENCE and SONGS OF EXPERIENCE became level-1 headings and the 47 poem titles level-2 headings. Each poem paragraph became one stanza, its HTML line breaks kept as lines and each line's leading indentation removed. Typographic quotation marks, dashes and accents kept as transcribed. Every Grade 3 night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 251,
+    "sha256": "5d636c798d9d20636de86b67bf92a46c7947d8e3e7c022f156ffcf637960b71d"
+  }
+}

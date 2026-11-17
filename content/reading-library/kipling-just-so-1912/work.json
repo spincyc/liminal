@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "kipling-just-so-1912",
+  "author": "Rudyard Kipling",
+  "title": "Just So Stories",
+  "translator": null,
+  "edition": "Garden City, New York: Doubleday, Page & Company, 1912; Project Gutenberg transcription of the illustrated edition. Author illustration captions are omitted with the illustrations. Paragraph line wrapping and HTML spacing are normalized; verse line and stanza boundaries are retained. Image-only initial letters are restored from their source alt text and joined to the following word. Page numbers, images, illustration captions, and publisher/digitizer matter are omitted. The library text holds the whole book: the book title as a level-1 heading and the twelve story titles at level 2, each story's prose followed by its verses as stanzas with display indentation removed; the title, copyright and contents pages, the transcriber's notes, the illustrations with Kipling's captions, and the printer's closing imprint are omitted.",
+  "publicationYear": 1912,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/32488",
+  "textUrl": "https://www.gutenberg.org/cache/epub/32488/pg32488-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1912, before 1931; its US publication copyright term has expired as of 2026. No modern introduction or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/32488/pg32488-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/32488/pg32488-images.html",
+    "downloadSha256": "984f8fc407c61a108f79bd3e9c2de6e19a9be67e12a8ed2a1c92f746d6f1240a",
+    "method": "Project Gutenberg HTML (pg32488-images.html from the aleph.pglaf.org mirror) parsed with Python's html.parser: the PG header, footer and licence, transcriber's notes, page-number markers, illustration captions (caption, caption2), the frontispiece, title, copyright and contents pages, and the closing Country Life Press imprint dropped. JUST SO STORIES became the level-1 heading and each story title a level-2 heading. Each decorative initial image's alt text (one letter, or the whole words NOT and HEAR) was joined to the paragraph that follows it, with a space only where the source has one. Paragraph and unindented divisions became paragraph blocks with whitespace runs folded to single spaces; each poem division was split into stanzas at its blank lines, with HTML line breaks kept as lines and their indentation removed; italics rendered as plain text. Straight quotation marks and em dashes kept as transcribed. Every Grade 3 night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 704,
+    "sha256": "8e4c9ff25e7dbe6702e7df03ae7641dea890ef7496dfd47a5c1be4b36684d68d"
+  }
+}

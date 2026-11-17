@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "barbauld-hymns-prose-1781",
+  "author": "Anna Laetitia Barbauld",
+  "title": "Hymns in Prose for Children",
+  "translator": null,
+  "edition": "London: J. Johnson, 1781. University of Pennsylvania A Celebration of Women Writers transcription of the first edition. Historical spelling and displayed split words are retained. Paragraph line wrapping and HTML spacing are normalized; verse line and stanza boundaries are retained. Image-only initial letters are restored from their source alt text and joined to the following word. Page numbers, images, illustration captions, and publisher/digitizer matter are omitted. The library text holds the whole book as transcribed (the transcription’s copytext is the 1977 facsimile of the 1781 edition, with long s printed as s): the title from the title page as a level-1 heading, the author’s Preface signed A. L. B., and Hymns I–XII each under its printed heading at level 2, ending with THE END.; the transcriber’s editorial contents table and About This Edition note are omitted.",
+  "publicationYear": 1781,
+  "translationYear": null,
+  "url": "https://digital.library.upenn.edu/women/barbauld/hymns/hymns-in-prose.html",
+  "textUrl": "https://digital.library.upenn.edu/women/barbauld/hymns/hymns-in-prose.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1781, before 1931; its US publication copyright term has expired as of 2026. No modern introduction or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://digital.library.upenn.edu/women/barbauld/hymns/hymns-in-prose.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://digital.library.upenn.edu/women/barbauld/hymns/hymns-in-prose.html",
+    "downloadSha256": "9577188e97567d1129d105130e5d4aace2a820bae12633063be8f61769663ce7",
+    "method": "UPenn A Celebration of Women Writers HTML (hymns-in-prose.html) parsed with Python's html.parser: the site banner and catalogue heading, the title-page author and imprint lines, the editor-supplied contents table, the empty page-number markers and page-break comments, and the closing About This Edition note and editor credit dropped; the title-page title HYMNS IN PROSE FOR CHILDREN. kept as the level-1 heading. The Preface and each Hymn heading became level-2 headings and every HTML paragraph one paragraph block, with all whitespace runs (line wraps and the transcription’s double spaces after sentences) folded to single spaces; split words displayed across a page break (for example ten- der) kept as transcribed. Every Grade 3 night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 183,
+    "sha256": "176035481285543491c0361a73ff00ebd65c2143f033b61b4e53c92a1a96b602"
+  }
+}

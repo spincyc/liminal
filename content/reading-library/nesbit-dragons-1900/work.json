@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "nesbit-dragons-1900",
+  "author": "E. Nesbit",
+  "title": "The Book of Dragons",
+  "translator": null,
+  "edition": "Text actually used: Project Gutenberg no. 23661, a transcription of the Dover Publications (Mineola, N.Y.) edition first published in 2004. Dover’s scanned bibliographical note (PG page image f003.png) states that this edition “is an unabridged republication of the work originally published by Harper & Brothers, New York, in 1900.” publicationYear therefore records the 1900 publication of the republished story text, not the 2004 carrier, which is not itself claimed as a 1900 printing and was not collated against a 1900 copy. Only Nesbit’s story text is selected; Dover’s front matter, H. R. Millar and H. Granville Fell illustrations, captions, and page numbers are excluded. HTML entities are decoded, typographic emphasis is represented as plain text, and line-wrap whitespace is normalized within original paragraphs. The library text holds the whole book: the title as a level-1 heading, Nesbit’s dedication to Rosamund as one paragraph, and the eight stories under their numbered titles at level 2 (I. The Book of Beasts … VIII. Kind Little Edmund, or The Caves and the Cockatrice), with the transcription’s within-story section rules dropped. Where the transcriber marked a correction, the printed reading is restored: “a around piece” (p. 22–23), “nearly chocked” (p. 152) and “with that he coughed” (p. 154), none inside a selected night; the transcription’s unmarked repairs of obvious punctuation remain.",
+  "publicationYear": 1900,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/23661",
+  "textUrl": "https://www.gutenberg.org/files/23661/23661-h/23661-h.htm",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected English story text was first published by Harper & Brothers, New York, in 1900, before 1931, and is in the US public domain as of 2026. The 2004 Dover carrier is described by its publisher as an unabridged republication; no Dover-added material is used. Project Gutenberg explicitly labels this transcription public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/files/23661/23661-page-images/f003.png"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/23661/pg23661-images.html",
+    "downloadSha256": "90bc355259c97db63397b3e65633ca7f203b289740cc22a471748c1d76547c68",
+    "method": "Project Gutenberg HTML (pg23661-images.html from the aleph.pglaf.org mirror) parsed with Python's html.parser: the PG header, footer and licence, the Dover title page, contents and list of illustrations, the repeated half-title, page-number markers, every illustration and caption, the horizontal rules, and the closing transcriber's notes dropped. The three transcriber-marked corrections in the story text (ins elements whose titles give the original reading) were replaced by the printed readings around, chocked and he before parsing. The dedication became one paragraph, each story title a level-2 heading, the single verse-set answer slip in The Island of the Nine Whirlpools a stanza with its line breaks, and every other HTML paragraph one paragraph block with whitespace folded to single spaces; italics rendered as plain text; straight quotation marks and em dashes kept as transcribed. Every Grade 3 night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 980,
+    "sha256": "b09abacb493014c7f5440d419852343fa08a071e63da1bcb534634d32e313b30"
+  }
+}

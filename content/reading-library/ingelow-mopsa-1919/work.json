@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "ingelow-mopsa-1919",
+  "author": "Jean Ingelow",
+  "title": "Mopsa the Fairy",
+  "translator": null,
+  "edition": "Boston: Little, Brown, and Company, 1919; Author’s Edition, as printed on the transcription's title and edition pages. Text extracted from source HTML paragraphs; line-wrap whitespace folded to single spaces, page-number spans and illustration captions excluded; typographic inline emphasis rendered as plain text without changing words or punctuation. The library text holds the whole story: the title as a level-1 heading and the sixteen chapters, each printed CHAPTER number and title joined as one level-2 heading (“CHAPTER I. ABOVE THE CLOUDS.”), with the chapter epigraphs and songs as stanzas (indentation removed, the song title and its part numerals as level-3 headings, attributions as paragraphs); the title page, contents, list of illustrations, illustrations and captions are omitted.",
+  "publicationYear": 1919,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/32867",
+  "textUrl": "https://www.gutenberg.org/cache/epub/32867/pg32867-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The English edition used was published in 1919, before 1931, and its maximum US publication term had expired by 2026. Project Gutenberg catalogue explicitly identifies this text as public domain in the USA. Only the original literary text is included, not modern introductions or illustrations.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/32867"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/32867/pg32867-images.html",
+    "downloadSha256": "83a8109f40969436b92e46a2966bf485405216b9e2787772a521b1e83cbcc16f",
+    "method": "Project Gutenberg HTML (pg32867-images.html from the aleph.pglaf.org mirror) parsed with Python's html.parser: the PG header, footer and licence, the cover, title page and imprint lines, contents and list-of-illustrations tables, figures and their captions, page-number markers and rules dropped. MOPSA THE FAIRY became the level-1 heading; each chapter heading’s two lines (CHAPTER n. and the title) were joined with a space into one level-2 heading; the one song title (LIKE A LAVEROCK IN THE LIFT.) and the centred part numerals inside songs became level-3 headings. Every verse stanza division became one stanza block, one line per HTML paragraph with indentation removed; right-aligned attributions, the prose epigraph lines and every other paragraph became paragraph blocks with whitespace folded to single spaces; drop-cap letters and their opening quotation marks stay joined to their words as the HTML spans run; italics rendered as plain text; typographic quotation marks and dashes kept as transcribed. Every Grade 3 night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1055,
+    "sha256": "06f86dc2728f33d9c0ecbe432604cb7134e481d3eee70273c35598fccee90f3c"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "roberts-kindred-1907",
+  "author": "Charles G. D. Roberts",
+  "title": "The Kindred of the Wild: A Book of Animal Life",
+  "translator": null,
+  "edition": "Boston: L. C. Page & Company; tenth impression, July 1907, with Charles Livingston Bull illustrations (not reproduced). Three of its stories are read to their endings. Text extracted from source HTML paragraphs; line-wrap whitespace folded to single spaces, page-number spans and illustration captions excluded, as are the printed section numerals “II.” and “III.” of “The Moonlight Trails” (omitted inside reading-3-w07-d2 and reading-3-w07-d4); typographic inline emphasis rendered as plain text without changing words or punctuation. The library text holds the whole book: the title as a level-1 heading, Roberts’s dedication “To My People”, the introductory essay (its two printed lines joined as “Introductory. The Animal Story”) and the twelve stories under their titles at level 2, with the printed section numerals inside stories (“II.”, “III.”) kept as level-3 headings, ending with THE END.; the publisher’s list, title and copyright pages, contents, list of drawings, illustrations and plate captions are omitted.",
+  "publicationYear": 1907,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/46040",
+  "textUrl": "https://www.gutenberg.org/cache/epub/46040/pg46040-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The English edition used was published in 1907, before 1931, and its maximum US publication term had expired by 2026. Project Gutenberg catalogue explicitly identifies this text as public domain in the USA. Only the original literary text is included, not modern introductions or illustrations.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/46040"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/46040/pg46040-images.html",
+    "downloadSha256": "d4c070f8f0bb635bd03e3645ae53350d0cf1685546138663fe2ce93c07818590",
+    "method": "Project Gutenberg HTML (pg46040-images.html from the aleph.pglaf.org mirror) parsed with Python's html.parser: the PG header, footer and licence, the publisher’s list of Roberts’s works, the title, copyright and imprint pages, the contents (with its University Society permission footnote) and list of full-page drawings, every image, the centred plate captions, page-number markers, rules and the closing transcriber’s notes dropped; the dedication To My People kept as a paragraph. The book title became the level-1 heading, the essay and story titles level-2 headings, and the section numerals II., III. … inside stories level-3 headings; every other HTML paragraph became one paragraph block with whitespace folded to single spaces; italics rendered as plain text; typographic quotation marks and dashes kept as transcribed. 13 of the 15 Grade 3 nights were located block for block; reading-3-w07-d2 and reading-3-w07-d4 skip the printed section numerals II. and III. inside their passages, so they keep their inline text (see their inlineReason)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 466,
+    "sha256": "8f019632b4236596c1514264dcb7a1e0ae6cc49f185827a79e2de40e2b6d0bd7"
+  }
+}

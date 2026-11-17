@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "comstock-nature-study-1916",
+  "author": "Anna Botsford Comstock",
+  "title": "Handbook of Nature-Study",
+  "translator": null,
+  "edition": "Ithaca, New York: Comstock Publishing Company, sixth edition, 1916 (copyright 1911); Project Gutenberg transcription. Selected historical observations are read critically, not as a current field manual. Paragraph line wrapping and HTML spacing are normalized; verse line and stanza boundaries are retained. Image-only initial letters are restored from their source alt text and joined to the following word. Page numbers, images, illustration captions, and publisher/digitizer matter are omitted. The library text holds the whole book from the author’s dedication and preface through the Books of Reference, carrying the Project Gutenberg transcriber’s declared corrections as transcribed; the title and copyright pages, contents, index, illustrations, captions and photo credits are omitted, italics are rendered as plain text, the weather-signal table is kept as tab-separated rows, and the transcription’s invisible word-joiner characters are removed.",
+  "publicationYear": 1916,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/78142",
+  "textUrl": "https://www.gutenberg.org/files/78142/78142-h/78142-h.htm",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1916, before 1931; its US publication copyright term has expired as of 2026. No modern introduction or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/files/78142/78142-h/78142-h.htm"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/78142/pg78142-images.html",
+    "downloadSha256": "264da8805d372e0628918f65bc20cf61a4d897c97e94c96dac4fcab998549738",
+    "method": "Project Gutenberg HTML (pg78142-images.html from the aleph.pglaf.org mirror) parsed with Python's html.parser. Removed: the PG header, footer, licence, transcriber’s note and added audio line; the title, copyright and contents pages; the index; every figure with its caption and photo credit; page-number spans; hidden duplicate headings; decorative rules; 25 U+2060 word-joiner characters. Kept: the dedication and preface. Paragraphs and list items became paragraph blocks with wrapped lines joined by single spaces; decorative initial letters (single-letter image alt text) were joined to their words; italics became plain text; each verse stanza became a stanza block with indentation removed; the weather-signal table became tab-separated rows; the one footnote stays where the transcription places it, with its [A] anchor in the heading it annotates and the note as a paragraph at the end of that section, its FOOTNOTE label dropped. Headings: level 1 for the book title and the four parts (part number and subtitle joined, with a full stop added after PART III and PART IV); level 2 for the preface, the divisions named in the printed contents (including CULTIVATED-PLANT STUDY and TREE STUDY, printed at subject size) and Books of Reference; level 3 for subjects, lessons (number and title joined with a full stop and space), Teacher’s Story and subheads. Every Grade 3 night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 6580,
+    "sha256": "55bcad4f3a423713b113608c8552e6bd9e8007bd5bc743688aabea2be399af0e"
+  }
+}
