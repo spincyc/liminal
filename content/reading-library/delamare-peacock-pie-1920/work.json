@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "delamare-peacock-pie-1920",
+  "author": "Walter de la Mare",
+  "title": "Collected Poems, 1901–1918, Volume II: Peacock Pie",
+  "translator": null,
+  "edition": "New York: Henry Holt and Company, 1920, Volume II. Peacock Pie poems as transcribed from this scan by Wikisource; browser spacing inside initial small-cap words removed, line and stanza breaks restored. Not the undated Gutenberg 3753 text, which has wording variants. The library text holds the whole of Peacock Pie as printed in this volume, from its section title page (printed page 91, djvu 107) through “The Song of Finis” (page 218, djvu 234). Pages 91–165 (djvu 107–181) and djvu 189, 191, 198, 220 and 221 follow the Wikisource transcription, corrected against the scan; the remaining pages (djvu 182–188, 192–197, 199, 201, 203–217, 219, 222–225 and 227–234), which Wikisource had not transcribed, were transcribed from the archive.org scan.",
+  "publicationYear": 1920,
+  "translationYear": null,
+  "url": "https://archive.org/details/collectedpoems02dela",
+  "textUrl": "https://en.wikisource.org/wiki/Collected_Poems,_1901-1918/Volume_2",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in 1920, before 1931, and its US publication copyright term has expired by 2026. Only the historical poem text is reproduced; modern editorial material and illustrations are excluded.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:Collected_poems_vol_2_de_la_mare.djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/index.php?title=Page:Collected_poems_vol_2_de_la_mare.djvu/107&action=render",
+    "downloadSha256": "4cdd8189646f21a5c017aa82caaeb8e60ce7f71937b791b61fe2d6eb4c291556",
+    "method": "Files used, in this order: the Wikisource page renders https://en.wikisource.org/w/index.php?title=Page:Collected_poems_vol_2_de_la_mare.djvu/N&action=render for N = 107, 109, 111 through 133, 135, 137 through 147, 149 through 171, 173 through 181, 189, 191, 198, 220 and 221 (74 renders, in page order; the blank pages 108, 110, 134, 136, 148 and 172 and the untranscribed pages were not fetched), then the archive.org scan https://archive.org/download/collectedpoems02dela/collectedpoems02dela.pdf (djvu page n = PDF page n; printed page = djvu page − 16). downloadSha256 is the SHA-256 of all 75 responses concatenated in exactly that order. Each Wikisource page was taken without its running head and page number; djvu pages 182–188, 192–197, 199, 201, 203–217, 219, 222–225 and 227–234, which Wikisource had not transcribed, were typed from the scan. Every page was then read against the scan, every line end compared on 300-dpi renders, and doubtful marks magnified; because the Wikisource text inherits the archive.org OCR, agreement with the OCR was not taken as proof. Fifty-four Wikisource readings were corrected to the scan (chiefly line-end commas and periods, OCR letter errors such as “Watthet”, “pone”, “ihrouph”, “tree-fop”, “felse”, and lost italics), and three poem titles were set in capitals as printed; printed oddities were kept (“Abracadeeebra”, Tired Tim’s last line without a period, “And once in a while: he’d smile: —”). Two dot-like marks read as commas with lost tails (“Scullion,”, djvu 157; “kindly,”, 163) and the stanza breaks kept at the page junctions of Sam’s Three Wishes (161/162, 162/163, 165/166, 167/168, 168/169; that poem is not in Project Gutenberg 3753) are the uncertain readings. Stanzas running across a page break were joined where the sentence continues or Project Gutenberg 3753 prints no break (junctions before djvu 145, 150, 153, 154, 155, 157, 158, 160, 164, 165, 167, 170, 177, 179, 181), and two false stanza breaks inside djvu 191 and 220 were closed. Headings: level 1 “PEACOCK PIE” with the paragraph “A BOOK OF RHYMES”, level 2 the eight section titles (UP AND DOWN through SONGS), level 3 the eighty poem titles; small capitals and each poem’s opening small-capital word are written in capitals with the drop initial joined; italics are marked _thus_; quotes and apostrophes straight, dashes as a spaced em dash, line indentation omitted, turnover lines and line-end hyphens joined; blank pages omitted. Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 312,
+    "sha256": "0e5c6dde002d5bd2d27e730dcdd0ad384c8f9fbe2154195169a025177aecb73a"
+  }
+}

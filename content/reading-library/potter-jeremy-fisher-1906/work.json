@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "potter-jeremy-fisher-1906",
+  "author": "Beatrix Potter",
+  "title": "The Tale of Mr. Jeremy Fisher",
+  "translator": null,
+  "edition": "Project Gutenberg 15077 transcription of Frederick Warne & Co., Inc., New York text, copyright 1906; printing undated. Every selected paragraph was compared with OCR of the University of Toronto copy (London, Warne, copyright 1906; printing undated; taleofmrjeremyfi00pottuoft): one wording variant, “fastened the boat” in this text for “fastened his boat” in the Toronto copy (p. 22). Narrative only; illustrations, publisher and digitizer matter excluded. Prose line wrapping joined; paragraph and verse boundaries, punctuation, spelling and plain-text emphasis markers (underscores) retained. The library text holds the whole tale: its title as a heading, the author’s dedication as set lines, and every paragraph of the narrative; the title, copyright and printer’s pages, illustrations and “THE END” are omitted.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/15077",
+  "textUrl": "https://www.gutenberg.org/cache/epub/15077/pg15077.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Potter’s original English narrative was published in 1906, before 1931; its US publication term has expired as of 2026. Project Gutenberg identifies this English text as public domain in the USA. No modern introduction, illustration, or new editorial matter is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/15077"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/15077/pg15077.txt",
+    "downloadSha256": "979ecc43530866c1517f323ad2cc3a05c6b672030a44150a028220ec07ae8c2b",
+    "method": "Project Gutenberg plain text (pg15077.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and any transcriber’s or production notes removed; [Illustration] placeholders, the title, copyright and printer’s pages and “THE END” omitted. The tale’s title became a level-1 heading and the dedication one stanza keeping its printed line breaks; every flush-left blank-line separated group became a paragraph with wrapped lines joined by single spaces, and indented verse groups became stanzas with leading indentation removed. Underscore italics and double-hyphen dashes kept as transcribed. Every Kindergarten night from this tale was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 35,
+    "sha256": "313455ecf0a202c07e7497a125da175779131ed608a7e31508b80bd93f77789f"
+  }
+}

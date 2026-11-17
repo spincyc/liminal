@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "potter-ginger-pickles-1909",
+  "author": "Beatrix Potter",
+  "title": "The Tale of Ginger and Pickles",
+  "translator": null,
+  "edition": "Project Gutenberg 14877 transcription of Frederick Warne text, copyright 1909; printing undated (William Clowes). The only scan located, Internet Archive gingerpickles0000unse (New York, Warne; copyright 1909, renewed 1937), agrees in wording apart from spelling (license for licence, cannisters for canisters). Narrative only; illustrations, publisher and digitizer matter excluded. Prose line wrapping joined; paragraph and verse boundaries, punctuation, spelling and plain-text emphasis markers (underscores) retained. The library text holds the whole tale: its title as a heading, the author’s dedication as set lines, and every paragraph of the narrative; the title, copyright and printer’s pages, illustrations and “THE END” are omitted. One plain-text substitution is reversed: the plain file’s “L3 19 11-3/4” is given as “£3 19 11-3/4”, the pound sign shown in the PG HTML file of the same transcription (pg14877-images.html); and the dedication’s line break before “(THREE YEARS IN BED …)” follows that HTML file.",
+  "publicationYear": 1909,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/14877",
+  "textUrl": "https://www.gutenberg.org/cache/epub/14877/pg14877.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Potter’s original English narrative was published in 1909, before 1931; its US publication term has expired as of 2026. Project Gutenberg identifies this English text as public domain in the USA. No modern introduction, illustration, or new editorial matter is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/14877"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/14877/pg14877.txt",
+    "downloadSha256": "baddf2b9b417600e7ee63c68a5b5d1fb20bb585fc57affd6f8285f9c2645e122",
+    "method": "Project Gutenberg plain text (pg14877.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and any transcriber’s or production notes removed; [Illustration] placeholders, the title, copyright and printer’s pages and “THE END” omitted. The tale’s title became a level-1 heading and the dedication one stanza keeping its printed line breaks; every flush-left blank-line separated group became a paragraph with wrapped lines joined by single spaces, and indented verse groups became stanzas with leading indentation removed. Underscore italics and double-hyphen dashes kept as transcribed. One plain-text substitution is reversed: the plain file’s “L3 19 11-3/4” is given as “£3 19 11-3/4”, the pound sign shown in the PG HTML file of the same transcription (pg14877-images.html); and the dedication’s line break before “(THREE YEARS IN BED …)” follows that HTML file. Every Kindergarten night from this tale was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 65,
+    "sha256": "9f3d2a2f4fedeab7fa02fce65d87d0c3eb32dcdd521d5a582bfddac02d9a4338"
+  }
+}

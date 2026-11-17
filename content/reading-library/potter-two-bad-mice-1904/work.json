@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "potter-two-bad-mice-1904",
+  "author": "Beatrix Potter",
+  "title": "The Tale of Two Bad Mice",
+  "translator": null,
+  "edition": "Project Gutenberg 45264 transcription of the edition whose title page reads London and New York, Frederick Warne and Co., 1904 (copyright 1904). Every selected paragraph was also compared word by word with OCR of the Brigham Young University copy of that 1904 printing (Internet Archive taleoftwobadmice001904pott); no wording differences were found. Narrative only; illustrations, publisher and digitizer matter excluded. Prose line wrapping joined; paragraph and verse boundaries, punctuation, spelling and plain-text emphasis markers (underscores) retained. The library text holds the whole tale: its title as a heading, the author’s dedication as set lines, and every paragraph of the narrative; the title, copyright and printer’s pages, illustrations and “THE END” are omitted.",
+  "publicationYear": 1904,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/45264",
+  "textUrl": "https://www.gutenberg.org/cache/epub/45264/pg45264.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Potter’s original English narrative was published in 1904, before 1931; its US publication term has expired as of 2026. Project Gutenberg identifies this English text as public domain in the USA. No modern introduction, illustration, or new editorial matter is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/45264"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/45264/pg45264.txt",
+    "downloadSha256": "04d7d8f513adb00ce2e2b6194d7b4c3078c00b84bd1f83dd1a5b729ebaf212d5",
+    "method": "Project Gutenberg plain text (pg45264.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and any transcriber’s or production notes removed; [Illustration] placeholders, the title, copyright and printer’s pages and “THE END” omitted. The tale’s title became a level-1 heading and the dedication one stanza keeping its printed line breaks; every flush-left blank-line separated group became a paragraph with wrapped lines joined by single spaces, and indented verse groups became stanzas with leading indentation removed. Underscore italics and double-hyphen dashes kept as transcribed. Every Kindergarten night from this tale was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 43,
+    "sha256": "0b5cbcf34b55f9cf9b73c2dbffb34649db8a328b61187efabea3f4d6855f8fef"
+  }
+}

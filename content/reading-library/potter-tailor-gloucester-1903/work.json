@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "potter-tailor-gloucester-1903",
+  "author": "Beatrix Potter",
+  "title": "The Tailor of Gloucester",
+  "translator": null,
+  "edition": "New York: Frederick Warne & Co., Ltd., 26 East 22d Street; copyright 1903. Text of the University of North Carolina copy (Internet Archive tailorofgloucestpott), catalogued 1903; its title page names only The Tale of Peter Rabbit and The Tale of Squirrel Nutkin among the author’s books, consistent with a 1903–04 printing. Typed from the Wikisource proofread transcription of the same New York setting (a printing with the 1931 renewal) and collated with the UNC scan by full-text OCR comparison, every flagged difference checked against the page image; the UNC print is followed where they differ (two paragraph joins across plates, “NO MORE TWIST” in capitals on p. 26, no stop after “said Simpkin” on p. 57). Printed defects are reproduced, including “aid” for “said” on p. 33. Conventions: straight quotation marks and apostrophes, dashes as —, verse lines kept, italic type not separately encoded; illustrations excluded. Used instead of Project Gutenberg 14868, a much later printing (renewal 1931 and later ISBNs) whose wording departs from every early printing examined (for example “and he mewed” and “swept clean” for the early “and mewed” and “swept and clean”). The library text holds the whole tale: its title as a heading, the author’s dedication (“MY DEAR FREDA: …”, wording as in both the Wikisource transcription and the UNC scan), and the complete narrative as collated above; the title and copyright pages, the Richard III epigraph on the title page and “THE END” are omitted.",
+  "publicationYear": 1903,
+  "translationYear": null,
+  "url": "https://archive.org/details/tailorofgloucestpott",
+  "textUrl": "https://en.wikisource.org/wiki/The_Tailor_of_Gloucester",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Potter’s original English text was published by Frederick Warne in 1903 (copyright 1903); this New York printing dates from 1903–04. Publication before 1931 places the text in the US public domain as of 2026. No illustrations or later editorial matter are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://archive.org/details/tailorofgloucestpott"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&page=The_Tailor_of_Gloucester&prop=text&format=json&formatversion=2",
+    "downloadSha256": "92a89e762c42ff891adac3b987cee5266e49e4e6d6c27418c0e5c4e48f3f1628",
+    "method": "Downloaded the Wikisource parse of The Tailor of Gloucester (MediaWiki API, the proofread transcription of the New York Warne setting) and the UNC copy’s OCR (archive.org tailorofgloucestpott_djvu.txt). The narrative blocks are the project’s collated transcription already used by the seven Kindergarten nights, which together hold the whole narrative in order (paragraphs 1–101); compared with the downloaded Wikisource text with markup removed and whitespace collapsed, every word and punctuation mark agrees, and paragraph breaks follow the UNC print as declared in the edition. The dedication was taken from the Wikisource text and checked against the UNC OCR (same wording; the drop-capital “M” of “MY DEAR FREDA:” restored). Title heading level 1; dedication and narrative paragraphs as paragraph blocks; the mouse songs as stanzas with their printed line breaks. Every Kindergarten night from this tale was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 107,
+    "sha256": "c055aa030e4c0744eab690e0ffac3346b1019f97eecd39a61bd0bea034a8f739"
+  }
+}

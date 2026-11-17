@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "carroll-looking-glass-1899",
+  "author": "Lewis Carroll",
+  "title": "Through the Looking-Glass",
+  "translator": null,
+  "edition": "New York: M. F. Mansfield and A. Wessels, copyright 1899, with illustrations by Blanche McManus; the edition and copyright imprint are reproduced on Kellscraft Studio’s title/contents transcription. Story text follows that edition’s chapter transcriptions, retaining their wording and punctuation; illustrations and navigation are excluded. HTML entities are decoded and prose line wraps/indentation normalized; verse line and stanza boundaries are preserved. Matching University of Florida scan UF00086461/00001 confirms the title imprint and copyright 1899 (scan images 00011 and 00012). Six scan-checked transcription repairs restore here I wish (p.14), flat (p.19), remove a stray apostrophe before poker (p.20), restore the exclamation after got on (p.79), and restore Of course you don't and the dash after mean (p.81). Other distinctive print wording is retained, including can can (p.14) and some else (p.63); those are visible in the historical edition. The correction ledger identifies every changed substring and its scan evidence. A second, complete collation of all twenty selected nights against the UF00086461 scan OCR, with doubtful readings checked on the page images (pp. 26, 33, 52–54, 56), corrected 43 further Kellscraft errors to the printed text: 25 restored or corrected dashes and colons/semicolons (for example “begin with—how old are you?”, “To talk of many things;”), “Nohow” for “No-how” (five times), “Twopence” for “Two-pence”, “steam-engine”, stray or misplaced quotation marks, “ask!” for “ask l”, a doubled full stop, “dnA” in the mirror-printed stanza, and one printed paragraph division restored. Printed 1899 readings are retained where the scan shows them: “I afraid I'm”, “borogroves”, “just and now”, the single opening quotation mark in “‘Have a biscuit?”” and the missing closing mark after “Do you admire the view?”. Kellscraft's plain-text conventions (straight quotation marks, “--” for the printed dash) are kept. The library text holds the whole of Kellscraft’s twelve chapter transcriptions, from Chapter I to THE END., under the book title and one level-2 heading per chapter joining its printed number and title (“CHAPTER I. Looking-Glass House”); Kellscraft navigation, copyright notices and illustrations are omitted, and its pages carry no prefatory poem or preface. The corrections above are applied where the selected nights read them; the rest of the text was not collated against the scan and keeps Kellscraft’s readings.",
+  "publicationYear": 1899,
+  "translationYear": null,
+  "url": "https://ufdc.ufl.edu/UF00086461/00001",
+  "textUrl": "https://www.kellscraft.com/throughthelookingglassch1.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original English text in the explicitly copyright-1899 Mansfield and Wessels edition was published before 1931 and is in the US public domain as of 2026. No modern commentary or illustrations are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://ufdcimages.uflib.ufl.edu/UF/00/08/64/61/00001/00012.jpg"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://www.kellscraft.com/throughthelookingglasscontent.html",
+    "downloadSha256": "d6239813c7f547badd4d598c7a9ac40ca3d8a522d20ecf60dd2821f48539241a",
+    "method": "Kellscraft Studio HTML, thirteen files fetched in this order: the contents page https://www.kellscraft.com/throughthelookingglasscontent.html (downloadUrl; title, imprint and chapter order), then the chapter pages https://www.kellscraft.com/throughthelookingglassch1.html through https://www.kellscraft.com/throughthelookingglassch12.html in chapter order; downloadSha256 is the SHA-256 of those thirteen responses concatenated in that order. Each page’s navigation table (Kellscraft copyright, return links, logo), its continue footer, the closing Kellscraft notice and all images were removed. Blocks break at each P element; a paragraph holding line breaks became a stanza with one line per break and whitespace collapsed; table and centring tags inside a paragraph count as spaces, so verse set in a table stays with its paragraph; other paragraphs were joined with single spaces. Italic tags were dropped and entities decoded; Kellscraft’s straight quotation marks and double-hyphen dashes were kept. Each chapter’s number and title became one level-2 heading (Chapter XII’s printed “Chapter XII:” normalised to “CHAPTER XII.”), and the title-page title a level-1 heading. The edition’s six scan-checked repairs and its further collation corrections were applied at the night passages where they occur. 17 of the 20 Grade 3 nights were located block for block; three keep their inline text because each carries one reading that is neither in the Kellscraft text nor among the declared corrections (see their inlineReason)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 940,
+    "sha256": "2ee79eafd2c8f900a386ac41bbea37d668ece8130f4f54337f061739a90047f6"
+  }
+}

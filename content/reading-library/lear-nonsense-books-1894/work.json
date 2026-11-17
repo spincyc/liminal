@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "lear-nonsense-books-1894",
+  "author": "Edward Lear",
+  "title": "Nonsense Books",
+  "translator": null,
+  "edition": "1894 collected edition, as dated on the transcribed title page; selections come from the original verse, excluding the later electronic index. Project Gutenberg transcription; line indentation and separator whitespace normalized, prose hard-wraps joined, and illustration placeholders omitted; verse lines and stanzas retained. The library text holds the four books complete (A Book of Nonsense with Lear’s original dedication; Nonsense Songs, Stories, Botany and Alphabets; More Nonsense with Lear’s own introduction of 1871; Laughable Lyrics), preceded by the volume’s note and Lear’s “How pleasant to know Mr. Lear!”; the publishers’ notice, Ruskin quotation, the memorial introduction and review extracts by other writers, the separate title pages and contents, illustrations and the pictured sheet music are omitted, while the Nonsense Botany names printed under Lear’s drawings are kept as lines of text.",
+  "publicationYear": 1894,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/13650",
+  "textUrl": "https://www.gutenberg.org/cache/epub/13650/pg13650.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in the stated 1894 edition, before 1931, and its US copyright term has expired as of 2026. The Gutenberg catalogue expressly marks this ebook public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/13650"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/13650/pg13650.txt",
+    "downloadSha256": "284c4a29169b8995cf8ec4e01b0e3802fe57bc542f009b9a73ab940940b35c90",
+    "method": "Project Gutenberg plain text (pg13650.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed. Kept: the note and poem “How pleasant to know Mr. Lear!”, then each of the four books from its title through its last alphabet, and Lear’s 1871 introduction to More Nonsense; omitted: the publishers’ notice, Ruskin quotation, the 1888 memorial introduction, the Spectator examination extract, each book’s title-page lines (“by”, “EDWARD LEAR”, illustration notices, subtitles) and contents, star separators, [Illustration] placeholders and captions (including the pictured sheet music). The Nonsense Botany captions, which are Lear’s botanical names for his drawings, became paragraphs. Flush-left capitalised lines became headings (level 1 for the four book titles, level 2 for sections and poem or story titles, level 3 for chapters, joined with their titles); indented Roman stanza numbers and alphabet letters became level-3 headings; flush-left prose became paragraphs with wrapped lines joined; indented groups became stanzas with leading indentation removed; the dedication and the signature and date lines became paragraphs. Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1041,
+    "sha256": "9ea9ecaae3bf18710db9bcf589faf911ff47577428d8e7288b01d90395ac90f7"
+  }
+}

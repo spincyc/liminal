@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "hawthorne-wonder-tanglewood-1910",
+  "author": "Nathaniel Hawthorne",
+  "title": "A Wonder Book and Tanglewood Tales, for Girls and Boys",
+  "translator": null,
+  "edition": "New York: Duffield & Company, 1910 (MCMX on title page; copyright 1910); selections from A Wonder Book only. Text extracted from source HTML paragraphs; line-wrap whitespace folded to single spaces, page-number spans and illustration captions excluded; typographic inline emphasis rendered as plain text without changing words or punctuation. The library text holds the whole volume: the title as a level-1 heading, Hawthorne’s Preface, then A Wonder Book and Tanglewood Tales (its half-title lines joined as one heading) as level-1 headings, each story at level 2 with its frame sections (Tanglewood Porch, Introductory to …, After the Story, and so on) at level 3, and The Wayside introduction to Tanglewood Tales with its place and date lines; the title and copyright pages, contents, list of illustrations, Maxfield Parrish pictures and their captions, and the repeated TANGLEWOOD TALES half-title are omitted.",
+  "publicationYear": 1910,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/35377",
+  "textUrl": "https://www.gutenberg.org/cache/epub/35377/pg35377-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The English edition used was published in 1910, before 1931, and its maximum US publication term had expired by 2026. Project Gutenberg catalogue explicitly identifies this text as public domain in the USA. Only the original literary text is included, not modern introductions or illustrations.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/35377"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/35377/pg35377-images.html",
+    "downloadSha256": "55e1f86e1d41d74dce066b222b71bd2b3864e7d07f0014645cf9af4e800dcfaa",
+    "method": "Project Gutenberg HTML (pg35377-images.html from the aleph.pglaf.org mirror) parsed with Python's html.parser: the PG header, footer and licence, the title, imprint and copyright lines, the contents and list of illustrations, every picture together with the caption heading that follows it, page-number markers, rules and the repeated TANGLEWOOD TALES heading dropped. The volume title (A WONDER BOOK AND TANGLEWOOD TALES FOR GIRLS AND BOYS, from the title page’s lines) is the level-1 heading; the Preface and each story title became level-2 headings, the frame-section titles level-3 headings, A Wonder Book and the Tanglewood Tales half-title (its three lines joined with spaces) level-1 headings. Every HTML paragraph, the Preface’s place and date line and the two signature lines of The Wayside became paragraph blocks with whitespace folded to single spaces; italics and small capitals rendered as plain text; straight quotation marks and em dashes kept as transcribed. Every Grade 3 night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1638,
+    "sha256": "e1e91c13b822fc9bd78b9bc94ba4fd49cea7b389b05fc294fba09cdf35e1d46b"
+  }
+}

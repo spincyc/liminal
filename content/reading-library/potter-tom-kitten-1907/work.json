@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "potter-tom-kitten-1907",
+  "author": "Beatrix Potter",
+  "title": "The Tale of Tom Kitten",
+  "translator": null,
+  "edition": "Project Gutenberg 14837 transcription of Frederick Warne text first published and copyrighted in 1907; the transcribed printing (William Clowes, Beccles) is undated. Every selected paragraph was compared with OCR of two library copies, University of Toronto [c1907] (taleoftomkitten00pottuoft) and University of California, New York, copyright 1907 (taleoftomkitten00pottrich): the wording agrees; the Toronto copy prints a comma before each of the two parenthetical names (p. 13 “faces, (this one is Moppet)”), which this printing omits. Narrative only; illustrations, publisher and digitizer matter excluded. Prose line wrapping joined; paragraph and verse boundaries, punctuation, spelling and plain-text emphasis markers (underscores) retained. The library text holds the whole tale: its title as a heading, the author’s dedication as set lines, and every paragraph of the narrative; the title, copyright and printer’s pages, illustrations and “THE END” are omitted.",
+  "publicationYear": 1907,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/14837",
+  "textUrl": "https://www.gutenberg.org/cache/epub/14837/pg14837.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Potter’s original English narrative was published in 1907, before 1931; its US publication term has expired as of 2026. Project Gutenberg identifies this English text as public domain in the USA. No modern introduction, illustration, or new editorial matter is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/14837"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/14837/pg14837.txt",
+    "downloadSha256": "3a309584134b03b00f1ba9bf3c848082d949eda9cab54d66d3ee974c22e44986",
+    "method": "Project Gutenberg plain text (pg14837.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and any transcriber’s or production notes removed; [Illustration] placeholders, the title, copyright and printer’s pages and “THE END” omitted. The tale’s title became a level-1 heading and the dedication one stanza keeping its printed line breaks; every flush-left blank-line separated group became a paragraph with wrapped lines joined by single spaces, and indented verse groups became stanzas with leading indentation removed. Underscore italics and double-hyphen dashes kept as transcribed. Every Kindergarten night from this tale was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 39,
+    "sha256": "bdcc0480c68793e7d571904b3e8bf1f6fe4e3e73fa2ab315e7f93e88c1646b5d"
+  }
+}

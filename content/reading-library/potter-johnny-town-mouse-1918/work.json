@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "potter-johnny-town-mouse-1918",
+  "author": "Beatrix Potter",
+  "title": "The Tale of Johnny Town-Mouse",
+  "translator": null,
+  "edition": "Project Gutenberg 15284 transcription of Frederick Warne & Co., Inc., New York text whose title page gives 1918, the copyright year (the “Inc.” imprint indicates a later printing). No earlier scan was located; the Wikisource transcription of a later printing (copyright renewed 1946) agrees in wording. Narrative only; illustrations, publisher and digitizer matter excluded. Prose line wrapping joined; paragraph and verse boundaries, punctuation, spelling and plain-text emphasis markers (underscores) retained. The library text holds the whole tale: its title as a heading, the author’s dedication as set lines, and every paragraph of the narrative; the title, copyright and printer’s pages, illustrations and “THE END” are omitted.",
+  "publicationYear": 1918,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/15284",
+  "textUrl": "https://www.gutenberg.org/cache/epub/15284/pg15284.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Potter’s original English narrative was published in 1918, before 1931; its US publication term has expired as of 2026. Project Gutenberg identifies this English text as public domain in the USA. No modern introduction, illustration, or new editorial matter is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/15284"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/15284/pg15284.txt",
+    "downloadSha256": "9d5b3d34c4acbf6bd1bfb4c666ea7169879602ddf533557493072ad10f7b4ea5",
+    "method": "Project Gutenberg plain text (pg15284.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and any transcriber’s or production notes removed; [Illustration] placeholders, the title, copyright and printer’s pages and “THE END” omitted. The tale’s title became a level-1 heading and the dedication one stanza keeping its printed line breaks; every flush-left blank-line separated group became a paragraph with wrapped lines joined by single spaces, and indented verse groups became stanzas with leading indentation removed. Underscore italics and double-hyphen dashes kept as transcribed. Every Kindergarten night from this tale was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 36,
+    "sha256": "e69b99cef8c3ef8ff20a6c2b9bc298c2242b2ac61ed87d090b726ac8c199f374"
+  }
+}

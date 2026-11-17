@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "potter-jemima-puddle-duck-1908",
+  "author": "Beatrix Potter",
+  "title": "The Tale of Jemima Puddle-Duck",
+  "translator": null,
+  "edition": "Project Gutenberg 14814 transcription of Frederick Warne & Co., Inc., New York text, copyright 1908; printing undated. Every selected paragraph was compared with OCR of the University of California copy (London, Warne; catalogued [1908]; printing undated; taleofjemimapudd00pottiala): one wording variant, “both the puppies” in this text for “both of the puppies” in the California copy (p. 54). Narrative only; illustrations, publisher and digitizer matter excluded. Prose line wrapping joined; paragraph and verse boundaries, punctuation, spelling and plain-text emphasis markers (underscores) retained. The library text holds the whole tale: its title as a heading, the author’s dedication as set lines, and every paragraph of the narrative; the title, copyright and printer’s pages, illustrations and “THE END” are omitted.",
+  "publicationYear": 1908,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/14814",
+  "textUrl": "https://www.gutenberg.org/cache/epub/14814/pg14814.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Potter’s original English narrative was published in 1908, before 1931; its US publication term has expired as of 2026. Project Gutenberg identifies this English text as public domain in the USA. No modern introduction, illustration, or new editorial matter is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/14814"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/14814/pg14814.txt",
+    "downloadSha256": "2c606a3717616c5b0e1b00c2f79d7b70bfc75e0dfff7aebfb8359fa77552f7e1",
+    "method": "Project Gutenberg plain text (pg14814.txt from the aleph.pglaf.org mirror) with the PG header, footer, licence and any transcriber’s or production notes removed; [Illustration] placeholders, the title, copyright and printer’s pages and “THE END” omitted. The tale’s title became a level-1 heading and the dedication one stanza keeping its printed line breaks; every flush-left blank-line separated group became a paragraph with wrapped lines joined by single spaces, and indented verse groups became stanzas with leading indentation removed. Underscore italics and double-hyphen dashes kept as transcribed. Every Kindergarten night from this tale was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 63,
+    "sha256": "83628c6b80c6828040283bcd9a32694ddb76666efe554096e197b32492da4ad4"
+  }
+}

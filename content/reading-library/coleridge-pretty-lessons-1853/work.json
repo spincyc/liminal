@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "coleridge-pretty-lessons-1853",
+  "author": "Sara Coleridge",
+  "title": "Pretty Lessons in Verse for Good Children; with Some Lessons in Latin in Easy Rhyme",
+  "translator": null,
+  "edition": "Fifth edition. London: John W. Parker and Son, West Strand. Title-page imprint MDCCCLIII (1853), visually verified on PDF page 6 (an earlier note misread it as 1852; the Internet Archive date of 1853 is correct). Direct transcription of printed pages 11, 15 and 16, visually proofread. Small capitals represented by ordinary capitals; indentation omitted. These four poems were written in English; the book’s separate Latin lessons are not used. The library text now transcribes the whole book from this scan (printed pages vii and 9–142; the nights still come from printed pages 11, 15 and 16): the author’s dedication (headed “BENONI.”), every English poem, and the Lessons in Latin, which no night uses, with the edition’s italics as paired _underscores_, its printed Latin quantity marks (ĕ, ī, ŭ, y̆ and the like) and its æ/œ ligatures, its author’s footnote as a “[Footnote *: …]” paragraph, and its misprints. Title page, contents, publisher’s advertisements, running heads, page numbers, signatures, illustrations, library stamps and “THE END.” are omitted; verse turnover lines are rejoined and typographic spaces before punctuation and apostrophes are closed up. Only one reading is supplied: on printed page 134 the scan crops the page edge after “brandish and re”, and “rear;” is completed from the 1839 Parker edition (archive.org prettylessonsin01colegoog, printed page 122).",
+  "publicationYear": 1853,
+  "translationYear": null,
+  "url": "https://archive.org/details/prettylessonsin00colegoog",
+  "textUrl": "https://archive.org/download/prettylessonsin00colegoog/prettylessonsin00colegoog.pdf",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in the 1853 fifth edition (title page MDCCCLIII), before 1931, and its US publication copyright term has expired by 2026. Only the historical poem text is reproduced; modern editorial material and illustrations are excluded.",
+    "verifiedDate": "2026-10-08",
+    "evidenceUrl": "https://archive.org/stream/prettylessonsin00colegoog#page/n5/mode/1up"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://archive.org/download/prettylessonsin00colegoog/prettylessonsin00colegoog.pdf",
+    "downloadSha256": "fe526d1426c16530e4673460e8e51553932d3d3396d02dd8782160735708bb42",
+    "method": "Hand transcription from the scan, using the item's djvu.txt OCR only as a draft. Every text page (PDF page indexes 5, 11 and 13–146 of 157; printed pages vii and 9–142) was viewed whole, three pages per image at 165 dpi with white margins trimmed, rendered by pdftoppm from the downloaded PDF (the djvu.xml word boxes are at half the PDF's scale, so crops were taken from the PDF page itself); doubtful marks, italics and Latin quantity marks were checked in 250–600 dpi crops (about 115 images viewed in all); the remaining pages (covers, an owner's inscription, the printer's imprint, blanks and advertisements) were viewed at 50 dpi and excluded. The four Kindergarten nights' blocks were taken verbatim and confirmed on printed pages 11, 15 and 16. Conventions follow the nights: small capitals as capitals, indentation omitted, verse line breaks kept, one stanza per printed stanza, curly quotation marks and apostrophes, em dashes; spaces before punctuation and before apostrophes (\"he ’s\") are closed up; turnover lines are joined to their verse line; a page turn is a stanza break unless the stanza pattern or the absence of any break shows the stanza continuing (this applies to THE HUMMING-BIRDS, printed as one verse block over four pages). Headings: book title (level 1, from the title page); \"BENONI.\", \"PRETTY LESSONS.\" and \"LESSONS IN LATIN.\" (level 2); \"DEDICATION.\" and every poem or lesson title (level 3), subtitles joined to their title, and the song titles under THE DECLENSIONS (\"_Musa_—A SONG.\" etc.) as level-3 headings. Italic words are marked with paired underscores, punctuation outside them; a word is marked when most of its letters print italic, which includes stray italic patches on several page-foot lines that look like plate repairs (\"Go your\", \"Or to\", \"Dining\", \"To lose\", \"When\", \"In\", \"Arātor is\", \"And nauta\", \"For\", and the turnover \"crave\"). The author's footnote on printed page 32 is a paragraph \"[Footnote *: A sort of lynx that follows the lion, like the jackal.]\" with anchor \"Caracal[*]\", placed after the stanza in which the page ends. Misprints and irregular quotation marks are kept as printed (for example \"clasping wine\", \"healthy brae\", \"‘Cut it off!” cried the wag\", unopened quotations on printed pages 30 and 72). Readings under ink blots or damage were read from the surviving letters and context and, where available, the 1839 Parker edition (archive.org prettylessonsin01colegoog, OCR text and page images): \"Chiff-chaffs\" (p. 16), \"Tapioca\", \"West\", \"Humming\" (p. 17), \"sundry fine things\" (p. 34), \"rages:\" (p. 41), \"receive:\" (p. 139); on the over-inked page 19 the stop after \"isles\" is read as a full point (1839 OCR agrees). One word ending is supplied: on printed page 134 the scan crops the line after \"brandish and re\", completed as \"rear;\" from the 1839 page image. Uncertain small-capital reading: \"NO wonder\" (p. 73). A scratch script assembled the page-tagged transcription into JSONL (checks for straight quotes, stray spaces, unpaired underscores and NFC). Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 572,
+    "sha256": "a857a356f194ec172a0e2ecabd51abf8b09e6f7a59e2bb4671dc17ef4060dfc9"
+  }
+}

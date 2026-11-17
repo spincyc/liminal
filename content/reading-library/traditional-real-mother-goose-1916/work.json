@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "traditional-real-mother-goose-1916",
+  "author": "Traditional English nursery rhymes; collection illustrated by Blanche Fisher Wright",
+  "title": "The Real Mother Goose",
+  "translator": null,
+  "edition": "Project Gutenberg 10607 transcription of The Real Mother Goose, illustrated by Blanche Fisher Wright, title page dated 1916; traditional English rhymes, no translator. Line endings and leading indentation normalized; stanza and line boundaries, spelling and punctuation retained. Illustrations excluded. The library text holds every rhyme in printed order under its printed title; the title page, the list of rhymes and the alphabetical list of first lines are omitted.",
+  "publicationYear": 1916,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/10607",
+  "textUrl": "https://www.gutenberg.org/cache/epub/10607/pg10607.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in 1916, before 1931, and its US publication copyright term has expired by 2026. Only the historical poem text is reproduced; modern editorial material and illustrations are excluded.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/10607/pg10607-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/10607/pg10607.txt",
+    "downloadSha256": "d514f0fd2cd40967eb6cf35b140a6cddc11200126e07d76603fae3f88bf1e0ab",
+    "method": "Project Gutenberg plain text (pg10607.txt from the aleph.pglaf.org mirror) with the PG header, footer and licence removed; the title page, “A LIST OF THE RHYMES” and “AN ALPHABETICAL LIST OF FIRST LINES” omitted. From the half-title “THE REAL MOTHER GOOSE” (a level-1 heading) on, each capitalised one-line rhyme title became a level-2 heading and every other blank-line separated group a stanza, line breaks kept and leading indentation removed. Every Kindergarten night from this book was located block for block."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 763,
+    "sha256": "931e8476ab4884c537610c6e3403986e4b39986d47f98be1cdfb39b611d7e7fb"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "carroll-alice-rackham-1916",
+  "author": "Lewis Carroll",
+  "title": "Alice's Adventures in Wonderland",
+  "translator": null,
+  "edition": "Heinemann / Doubleday, Page edition illustrated by Arthur Rackham, transcribed by Project Gutenberg no. 28885 from University of Florida images. UF item UF00077000/00001 catalogues this copy as circa 1916 and records copyright 1907; publicationYear 1916 is that catalogue’s approximate issue date (printing undated), not a dated title page. Only Carroll story text is selected, from chapters VII–XII. Page numbers, illustrations, Rackham plate captions, the chapter-title sidenotes (for example “The Queen's Croquet-Ground”), and front matter are excluded from the selected text, whose only printed headings are the bare “CHAPTER X” and “CHAPTER XII” lines that close two nights; each night's title and locator name its chapter; decorative initial letters supplied by the source image alt text are joined to their original words. HTML entities and typographic emphasis become plain text; prose line wraps are normalized and verse line/stanza breaks preserved. The library text holds Carroll’s whole book: the title as a level-1 heading, his prefatory poem “All in the golden afternoon”, and the twelve chapters, each printed CHAPTER heading joined to its chapter-title sidenote as one level-2 heading (“CHAPTER VII. A Mad Tea-party”), verses as stanzas with display indentation removed, ending with THE END; Austin Dobson’s prefatory poem, the contents and list of plates, the plates and their captions, and the printer’s imprints are omitted.",
+  "publicationYear": 1916,
+  "translationYear": null,
+  "url": "https://ufdc.ufl.edu/UF00077000/00001",
+  "textUrl": "https://www.gutenberg.org/files/28885/28885-h/28885-h.htm",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The UF source copy is catalogued circa 1916 with copyright 1907, both before 1931; Carroll original English text and this historical edition are in the US public domain as of 2026. Project Gutenberg no. 28885 explicitly records public domain in the USA and credits the UF source images.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://ufdcimages.uflib.ufl.edu/UF/00/07/70/00/00001/UF00077000_00001.mets.xml"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/28885/pg28885-images.html",
+    "downloadSha256": "fd161b8eb6769f2dcf9d46d14919fa25ca9fe76c9ac3232d7e8bf9344f2bd0c7",
+    "method": "Project Gutenberg HTML (pg28885-images.html from the aleph.pglaf.org mirror) parsed with Python's html.parser: the PG header, footer and licence, the note on other PG editions, the endpapers, frontispiece and title-page images, the Printed in England line, Austin Dobson’s prefatory poem and signature, the contents and list-of-plates tables, every illustration with its caption (including the plate captions set in tables), page-number markers, horizontal rules, the closing Hentschel/Ballantyne imprint and the transcriber's note dropped. Each chapter’s CHAPTER line and its sidenote title became one level-2 heading joined with a full stop and space; each decorative initial image's alt text (one letter, with its opening quotation mark where it has one) was joined to the paragraph that follows. Poem divisions were split into stanzas at their blank lines, with HTML line breaks kept as lines and indentation removed (the mouse’s tail keeps its printed short lines); other paragraphs and the two Chorus lines became paragraph blocks with whitespace folded to single spaces; italics rendered as plain text; straight quotation marks and em dashes kept as transcribed. Every Grade 3 night from this book was located block for block; the two nights that end with the next chapter’s bare “CHAPTER X” or “CHAPTER XII” heading end inside that joined heading."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 809,
+    "sha256": "69d164e8e1e21ac40ec4b385521f38c6bb2025dc91c4733c026bf7ba00239e97"
+  }
+}
