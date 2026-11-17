@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "stevenson-childs-garden-1919",
+  "readings": [
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-01",
+      "title": "Young Night Thought",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a parade that grows faster until it reaches a surprising place.",
+      "focus": "A child turns the dark before sleep into a grand procession that carries him off to the “town of Sleep.”",
+      "context": "Robert Louis Stevenson wrote these poems from memories of his own childhood. Here a child lies in bed after the light goes out. Emperors and kings are rulers; a caravan is a long line of travellers. Read the first stanza steadily and let the last one speed up a little, as the marchers do.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "IV, “Young Night Thought,” the complete poem; opens “ALL night long and every night, When my mamma puts out the light, I see the people…”; closes “…faster on they go, And still beside them close I keep Until we reach the town of Sleep.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          14,
+          17
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3fca806a0b0ba314e9ec1fd240b2b25368b2d14b91af1874804b26dc2f42f209"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-01-q1",
+          "prompt": "When does the child see the people marching by?",
+          "facilitatorNotes": [
+            "Every night, after his mother puts out the light. He says he sees them “as plain as day,” even though the room is dark; ask what is strange about that."
+          ],
+          "evidence": [
+            "When my mamma puts out the light,",
+            "As plain as day, before my eye."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-01-q2",
+          "prompt": "Who is in the parade? Name or act out some of the marchers.",
+          "facilitatorNotes": [
+            "Armies, emperors, kings, and every kind of beast and man, like a circus. Any listed marcher counts; children may march, wave, or carry pretend things."
+          ],
+          "evidence": [
+            "Armies and emperors and kings,",
+            "For every kind of beast and man"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-01-q3",
+          "prompt": "Where does the march end, and what do you think the “town of Sleep” really is?",
+          "facilitatorNotes": [
+            "The child keeps close beside the marchers until they reach the town of Sleep. A good reading is that he falls asleep while imagining the parade, so the march is his way of drifting off. A child who pictures a real dream town is also listening closely if they connect it with sleeping."
+          ],
+          "evidence": [
+            "But still the faster on they go,",
+            "Until we reach the town of Sleep."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-02",
+      "title": "Pirate Story",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear how three children turn a basket in a meadow into a ship at sea.",
+      "focus": "Pretend play changes ordinary things into a voyage, until real cows make the danger feel real.",
+      "context": "Three children sit in a basket by the swing and pretend it is a boat. A lea is a meadow; a squadron is a group of warships; a wicket is a small gate; a harbour is a safe place for boats. Africa, Providence, Babylon and Malabar are faraway places the children have heard of.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "VII, “Pirate Story,” the complete poem; opens “THREE of us afloat in the meadow by the swing, Three of us aboard in the basket on the…”; closes “…they're as mad as they can be, The wicket is the harbour and the garden is the shore.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          23,
+          25
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d78138d99d00b47d24cb708a13cc80be4543f3cf657c8797a0d090b5ad565214"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-02-q1",
+          "prompt": "What is the children’s “boat” really, and where is it?",
+          "facilitatorNotes": [
+            "A basket in the meadow by the swing. The poem says they are “aboard,” but the place words show it is a game."
+          ],
+          "evidence": [
+            "Three of us aboard in the basket on the lea."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-02-q2",
+          "prompt": "What makes the meadow look like the sea?",
+          "facilitatorNotes": [
+            "The wind blows the long grass into waves. Children can show the moving grass with their hands."
+          ],
+          "evidence": [
+            "And waves are on the meadow like the waves there are at sea."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-02-q3",
+          "prompt": "What is the “squadron” that charges at the children, and where do they escape to?",
+          "facilitatorNotes": [
+            "The cattle in the meadow, which the children turn into an enemy fleet; the gate becomes their harbour and the garden their shore. Ask whether the children are truly frightened or enjoying the game; both readings can use “they're as mad as they can be.”"
+          ],
+          "evidence": [
+            "Cattle on the meadow a-charging with a roar!",
+            "The wicket is the harbour and the garden is the shore."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-03",
+      "title": "The Land of Nod",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare where the child goes by day with where he goes at night.",
+      "focus": "Dreams become a faraway land the child must visit alone and cannot find again by day.",
+      "context": "“Nod” is an old joke name for sleep, from nodding off. Abroad here means away from home; afar means far away; curious means strange.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XVII, “The Land of Nod,” the complete poem; opens “FROM breakfast on through all the day At home among my friends I stay; But every night I…”; closes “…can get back by day, Nor can remember plain and clear The curious music that I hear.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          58,
+          61
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "974f27f4c08360c331aee7e34b722d1bb5a37f1c6dc35920aae7557e3f7fb960"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-03-q1",
+          "prompt": "Where does the child stay all day, and where does he go every night?",
+          "facilitatorNotes": [
+            "At home with his friends by day; far away in the land of Nod at night. The first stanza is built on this contrast between day and night."
+          ],
+          "evidence": [
+            "At home among my friends I stay;",
+            "Afar into the land of Nod."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-03-q2",
+          "prompt": "Who goes with him to the land of Nod?",
+          "facilitatorNotes": [
+            "No one: he goes all by himself, with nobody to tell him what to do. Some children will find that lonely and some exciting; let them choose and point to the line."
+          ],
+          "evidence": [
+            "All by myself I have to go,",
+            "With none to tell me what to do--"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-03-q3",
+          "prompt": "Why can’t he find the way back in the daytime? What is the land of Nod really?",
+          "facilitatorNotes": [
+            "It is the land of dreams, which vanish on waking; he cannot even remember the music clearly. Children may connect this with forgetting their own dreams."
+          ],
+          "evidence": [
+            "I never can get back by day,",
+            "The curious music that I hear."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-04",
+      "title": "Escape at Bedtime",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture a sky full of stars and listen for the things the child compares them with.",
+      "focus": "A child who slips outside at bedtime is so dazzled by the stars that they keep shining in his head after he is caught.",
+      "context": "The child has slipped out of the house when he should be going to bed. The Dog, the Plough and the Hunter are names of star pictures, or constellations; the Star of the Sailor is the North Star, which sailors steered by. Ne'er means never.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XXI, “Escape at Bedtime,” the complete poem; opens “THE lights from the parlour and kitchen shone out Through the blinds and the windows and…”; closes “…But the glory kept shining and bright in my eyes, And the stars going round in my head.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          77,
+          77
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "17bec621e22286db2fe0882a5f9e17dea9b624216e6235c12c78cae8e0046ff6"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-04-q1",
+          "prompt": "The stars are more than what? Find one thing the child compares them with.",
+          "facilitatorNotes": [
+            "More than the leaves on a tree, or the people in church or the park. Any one comparison is enough; the point is that there are too many stars to count."
+          ],
+          "evidence": [
+            "There ne'er were such thousands of leaves on a tree,",
+            "Nor of people in church or the Park,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-04-q2",
+          "prompt": "Where else does the child see stars besides the sky?",
+          "facilitatorNotes": [
+            "In the pail by the wall, half full of water that reflects them. Ask how water can “hold” stars."
+          ],
+          "evidence": [
+            "Would be half full of water and stars."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-04-q3",
+          "prompt": "Who are “they” who chase him, and what can’t they take away from him?",
+          "facilitatorNotes": [
+            "Probably the grown-ups of the house, who pack him into bed. They can put him to bed, but the glory of the stars keeps shining in his eyes and head. Some children think he is in trouble, others that he is happy; the last lines support both."
+          ],
+          "evidence": [
+            "And they soon had me packed into bed;",
+            "And the stars going round in my head."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-05",
+      "title": "Marching Song",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Keep time with a pretend parade and notice who has each job.",
+      "focus": "Children make a grand army out of a comb, a drum and a napkin, then cheerfully march home again.",
+      "context": "Children play at soldiers. To play upon a comb, you hum against paper wrapped round a comb. A highland bonnet is a Scottish cap; a Grenadier is a soldier; martial means soldierly. Fame and pillage, glory and plunder, are words from real wars used here in fun. Read with a marching beat.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XXII, “Marching Song,” the complete poem; opens “BRING the comb and play upon it! Marching, here we come! Willie cocks his highland…”; closes “…Great commander Jane! Now that we've been round the village, Let's go home again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          79,
+          82
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4083ec96dc4915c43483cd0d62f493360d3c876386c8f59c5d15af83c46cadea"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-05-q1",
+          "prompt": "What does Johnnie do, and what does Mary Jane do?",
+          "facilitatorNotes": [
+            "Johnnie beats the drum and Mary Jane commands the party. Children can act out one of the jobs, or Willie’s or Peter’s."
+          ],
+          "evidence": [
+            "Johnnie beats the drum.",
+            "Mary Jane commands the party,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-05-q2",
+          "prompt": "What do the children use for a flag?",
+          "facilitatorNotes": [
+            "A napkin waving on a stick. The poem shows play turning household things into an army’s gear."
+          ],
+          "evidence": [
+            "While the napkin like a banner",
+            "Waves upon the stick!"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-05-q3",
+          "prompt": "How far does the army march, and why do you think they go home?",
+          "facilitatorNotes": [
+            "Round the village. They may be tired, hungry, or simply finished with the game; the poem calls it “enough of fame,” as if the adventure were complete. Accept any reason tied to the last stanza."
+          ],
+          "evidence": [
+            "Now that we've been round the village,",
+            "Let's go home again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-06",
+      "title": "The Cow",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Notice everything the cow does in the open air.",
+      "focus": "A child thanks a cow for her cream and pictures her calm and free in the meadow.",
+      "context": "Lowing is the soft sound a cow makes. To stray is to wander off and get lost. Cream is the rich top of fresh milk.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XXIII, “The Cow,” the complete poem; opens “THE friendly cow all red and white, I love with all my heart: She gives me cream with all…”; closes “…wet with all the showers, She walks among the meadow grass And eats the meadow flowers.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          84,
+          86
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e0935cf4f7185c0a85861c340a238a470819b399ccbf7f04a444874bf1e066f7"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-06-q1",
+          "prompt": "What does the cow give the child, and what does he eat it with?",
+          "facilitatorNotes": [
+            "Cream, to eat with apple tart. The child’s love begins with a treat."
+          ],
+          "evidence": [
+            "She gives me cream with all her might,",
+            "To eat with apple-tart."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-06-q2",
+          "prompt": "The cow wanders “here and there,” yet “cannot stray.” How can both be true?",
+          "facilitatorNotes": [
+            "She can roam about her field, but a hedge or fence keeps her from getting lost. Children may offer other answers, such as that she always comes home; accept them if they explain both lines."
+          ],
+          "evidence": [
+            "She wanders lowing here and there,",
+            "And yet she cannot stray,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-06-q3",
+          "prompt": "What weather does the cow meet in the last stanza? Do you think she minds it?",
+          "facilitatorNotes": [
+            "Wind and showers. She simply walks and eats the meadow flowers, so she seems calm; a child who says being wet would bother them is making a fair comparison with themselves."
+          ],
+          "evidence": [
+            "And blown by all the winds that pass",
+            "And wet with all the showers,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-07",
+      "title": "The Sun’s Travels",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Imagine two places on the earth at the same moment.",
+      "focus": "When it is bedtime for one child, the sun is making morning for children far away.",
+      "context": "“Indian” here means children in India, far to the east of Britain; “the children in the West” are across the Atlantic Ocean, in America. The poem says the sun goes round the earth, as it seems to; really the earth turns. A lamp and a ball can show day and night.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XXIX, “The Sun's Travels,” the complete poem; opens “THE sun is not a-bed, when I At night upon my pillow lie; Still round the earth his way…”; closes “…the Atlantic Sea, And all the children in the West Are getting up and being dressed.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          113,
+          115
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6c0602104d1c1ea6f5a80ebb8fc6667669abf73f030aba6bb4b9912098bf269b"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-07-q1",
+          "prompt": "Where is the sun when the child lies in bed at night?",
+          "facilitatorNotes": [
+            "Not in bed: it is still travelling, making morning somewhere else. The first line answers a child’s question about where the sun goes."
+          ],
+          "evidence": [
+            "THE sun is not a-bed, when I",
+            "Still round the earth his way he takes,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-07-q2",
+          "prompt": "What are children in India doing while this child plays in the sunny garden?",
+          "facilitatorNotes": [
+            "Being kissed and put to bed. The poem pairs each scene with its opposite."
+          ],
+          "evidence": [
+            "Is being kissed and put to bed."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-07-q3",
+          "prompt": "Why are children in the West getting up just when this child rises from tea?",
+          "facilitatorNotes": [
+            "Because the day is only now dawning across the Atlantic. Two hands or a lamp and a ball can show that morning reaches different places at different times; children need not explain the whole earth."
+          ],
+          "evidence": [
+            "Day dawns beyond the Atlantic Sea,",
+            "Are getting up and being dressed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-08",
+      "title": "The Lamplighter",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear what the child wants to be when he grows up and compare it with the others’ wishes.",
+      "focus": "A child admires the man who lights the street lamps and asks him for one small kindness.",
+      "context": "Before electric streetlights, a lamplighter walked through town each evening with a ladder and a flame to light the gas lamps. Leerie is the child’s name for him. Posting means hurrying; tea is the early evening meal; a banker looks after money.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XXX, “The Lamplighter,” the complete poem; opens “MY tea is nearly ready and the sun has left the sky; It's time to take the window to see…”; closes “…by with ladder and with light, O Leerie, see a little child and nod to him to-night!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          117,
+          119
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "465b0a3f19dd9872a8138d5442b74bbb9f366faf02dea2c2894571d5175e3ecc"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-08-q1",
+          "prompt": "What does Leerie carry as he comes up the street?",
+          "facilitatorNotes": [
+            "A lantern and a ladder, so he can climb to each lamp and light it."
+          ],
+          "evidence": [
+            "With lantern and with ladder he comes posting up the street."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-08-q2",
+          "prompt": "Tom wants to be a driver and Maria wants to go to sea. What does this child want to do?",
+          "facilitatorNotes": [
+            "Go round at night lighting the lamps with Leerie. Ask why that might seem better to him than being rich like Papa; children may mention the light, the ladder, or being out after dark."
+          ],
+          "evidence": [
+            "O Leerie, I'll go round at night and light the lamps with you!"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-08-q3",
+          "prompt": "What does the child ask Leerie to do at the very end, and why might it matter so much?",
+          "facilitatorNotes": [
+            "To notice a little child and nod to him. He wants someone he admires to see him; some children will say he wants to be Leerie’s friend."
+          ],
+          "evidence": [
+            "O Leerie, see a little child and nod to him to-night!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-09",
+      "title": "The Moon",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Sort creatures into those that love the night and those that belong to the day.",
+      "focus": "The moon shines on everyone, but only the creatures of the night come out to enjoy her.",
+      "context": "Harbour quays are where boats tie up. A bat sleeps through the day and flies at night. Read the noisy middle stanza with its squalls and howls, then the last stanza softly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XXXII, “The Moon,” the complete poem; opens “THE moon has a face like the clock in the hall; She shines on thieves on the garden wall,…”; closes “…And flowers and children close their eyes Till up in the morning the sun shall arise.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          126,
+          128
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fce3e9342bc8ea7b4e8aeab3154c61bdbffb911cb51790613036a4a1222173b6"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-09-q1",
+          "prompt": "What does the moon’s face look like, according to the first line?",
+          "facilitatorNotes": [
+            "The clock in the hall. A round, pale face fits both."
+          ],
+          "evidence": [
+            "THE moon has a face like the clock in the hall;"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-09-q2",
+          "prompt": "Which animals love to be out by the light of the moon?",
+          "facilitatorNotes": [
+            "The cat, the mouse, the dog and the bat. Children can make one of their sounds."
+          ],
+          "evidence": [
+            "The squalling cat and the squeaking mouse,",
+            "All love to be out by the light of the moon."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-09-q3",
+          "prompt": "Who hides from the moon, and when will they wake?",
+          "facilitatorNotes": [
+            "The things that belong to the day, flowers and children among them, cuddle to sleep until the sun rises. Ask whether the listener is a day thing or a night thing."
+          ],
+          "evidence": [
+            "Cuddle to sleep to be out of her way;",
+            "Till up in the morning the sun shall arise."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-10",
+      "title": "Time to Rise",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a tiny scene and the joke at its end.",
+      "focus": "A bird plays the part of a grown-up waking a lazy child.",
+      "context": "A window sill is the ledge under a window. 'Shamed means ashamed; a sleepy-head is someone who will not get up. Read the bird’s question in a cheeky voice.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "XXXIV, “Time to Rise,” the complete poem; opens “A BIRDIE with a yellow bill Hopped upon the window sill, Cocked his shining eye and said:…”; closes “…the window sill, Cocked his shining eye and said: 'Ain't you 'shamed, you sleepy-head?'”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          134,
+          134
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9278e3e31366286b9f815cfe3e717a25dc3046a9c62f5438e1fcd877a71509c2"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-10-q1",
+          "prompt": "Where does the birdie hop?",
+          "facilitatorNotes": [
+            "Onto the window sill, where the child in bed can see him."
+          ],
+          "evidence": [
+            "Hopped upon the window sill,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-10-q2",
+          "prompt": "What does the bird look like? Find two details.",
+          "facilitatorNotes": [
+            "A yellow bill and a shining eye, which he cocks, or tilts. Children can show the head tilt."
+          ],
+          "evidence": [
+            "A BIRDIE with a yellow bill",
+            "Cocked his shining eye and said:"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-10-q3",
+          "prompt": "Who is the sleepy-head, and why is it funny that a bird asks the question?",
+          "facilitatorNotes": [
+            "The child still in bed. Birds are up at dawn, so this one can tease; usually a grown-up would say it. Accept other ideas about the joke."
+          ],
+          "evidence": [
+            "'Ain't you 'shamed, you sleepy-head?'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-11",
+      "title": "Picture-Books in Winter",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Find what winter takes away and where the child finds it again.",
+      "focus": "Picture books keep summer’s pretty things for children through the cold months.",
+      "context": "Rooks are big black birds; robins come close to windows in winter. Crooks are shepherds’ hooked sticks. A nursery nook is a cosy corner of a children’s room, and chimney-corner days are days spent by the fire.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Child Alone, IV, “Picture-Books in Winter,” the complete poem; opens “SUMMER fading, winter comes-- Frosty mornings, tingling thumbs, Window robins, winter…”; closes “…Happy chimney-corner days, Sitting safe in nursery nooks, Reading picture story-books?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          194,
+          198
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3bcbff89c65f0f680ff6f16101225c79d0c2a80d21368b13cde7a74b9851acab"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-11-q1",
+          "prompt": "What tells the child that winter has come?",
+          "facilitatorNotes": [
+            "Frosty mornings, tingling thumbs, robins at the window and rooks. Children can add a sign of winter of their own, kept separate from the poem’s."
+          ],
+          "evidence": [
+            "Frosty mornings, tingling thumbs,",
+            "Window robins, winter rooks,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-11-q2",
+          "prompt": "What has happened to the water, and where can the child still find flowing brooks?",
+          "facilitatorNotes": [
+            "It has frozen hard as stone, so he and Nurse can walk on it; the flowing brooks are still in the picture books."
+          ],
+          "evidence": [
+            "Water now is turned to stone",
+            "Still we find the flowing brooks"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-11-q3",
+          "prompt": "Every stanza ends with the picture story-books. Why do you think the poet keeps coming back to them?",
+          "facilitatorNotes": [
+            "The books are where every good thing in the poem is kept, so each stanza leads back to them, and the last asks how to praise them. Some children will simply enjoy the echo, which is part of the answer too."
+          ],
+          "evidence": [
+            "In the picture story-books.",
+            "Reading picture story-books?"
+          ]
+        }
+      ],
+      "months": [
+        12,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "reading-k-stevenson-childs-garden-1919-12",
+      "title": "Nest Eggs",
+      "sourceId": "stevenson-childs-garden-1919",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hold a before-and-after picture in mind: eggs now, flying birds soon.",
+      "focus": "Children watching a nest realize that the tiny birds will soon do what children never can.",
+      "context": "An arbour is a shady shelter of leaves; the laurel is a bushy evergreen; gabies are silly people who stare; frail means easily broken. Children of Stevenson’s time often looked into wild nests. Today wild birds’ nests and eggs are protected by law, so we watch without touching.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Garden Days, II, “Nest Eggs,” the complete poem; opens “BIRDS all the sunny day Flutter and quarrel Here in the arbour-like Tent of the laurel.”; closes “In spite of our wisdom And sensible talking, We on our feet must go Plodding and walking.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          248,
+          255
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f76422d72264fd52e2047ce8d324fe8866b8455c4aa91bae677adcef00003b89"
+      },
+      "questions": [
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-12-q1",
+          "prompt": "How many eggs are in the nest, and what colour are they?",
+          "facilitatorNotes": [
+            "Four little blue eggs, which the mother keeps warm."
+          ],
+          "evidence": [
+            "Four little blue eggs",
+            "The mother keeps heated."
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-12-q2",
+          "prompt": "What will the baby birds do soon after they hatch?",
+          "facilitatorNotes": [
+            "Chip their way out and fill the April woods with singing, then fly into the blue air."
+          ],
+          "evidence": [
+            "Merry with singing.",
+            "Soon in blue air they'll be,"
+          ]
+        },
+        {
+          "id": "reading-k-stevenson-childs-garden-1919-12-q3",
+          "prompt": "The children are older and stronger. Why will they no longer “look down” on the birds?",
+          "facilitatorNotes": [
+            "The birds will fly high in the beeches while the children must walk. Being bigger does not let them fly; some children hear the speaker as a little envious, others as happy for the birds."
+          ],
+          "evidence": [
+            "We shall look down on the Birdies no longer.",
+            "We on our feet must go"
+          ]
+        }
+      ],
+      "months": [
+        4,
+        5
+      ]
+    }
+  ]
+}
