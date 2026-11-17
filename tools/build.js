@@ -117,6 +117,14 @@ require("./build-ap").build();
 require("./build-daily-reading").build();
 require("./build-reading-level").build();
 
+// The WebAssembly TeX runtime behind Generate PDF (docs/printing.md), from
+// the local cache filled by `node tools/native-tex.js fetch`. Without it the
+// site still builds and says PDF generation is unavailable, unless
+// LIMINAL_REQUIRE_NATIVE_TEX=1 (CI) makes a missing runtime an error.
+const nativeTeX = require("./native-tex").stage(DIST);
+if (nativeTeX.config) console.log("Staged the PDF runtime " + nativeTeX.config.id + " (" + nativeTeX.config.url + ")");
+else console.log("PDF generation unavailable in this build: " + nativeTeX.reason.split("\n")[0] + " (run node tools/native-tex.js fetch)");
+
 // Serve files as they are; GitHub Pages would otherwise run Jekyll.
 fs.writeFileSync(path.join(DIST, ".nojekyll"), "");
 

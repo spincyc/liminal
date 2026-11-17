@@ -1,0 +1,2678 @@
+{
+ "schema": "colophon-native-tex-runtime/v1",
+ "id": "wasmtex-2026-47ff73bab1a2e548",
+ "upstream": {
+  "project": "https://github.com/corca-ai/wasmtex",
+  "release": "2026-47ff73bab1a2e548",
+  "texlive_source_commit": "fb6158926661cb7a7246b3a94a0cb170a9624d5a",
+  "emscripten_version": "3.1.46",
+  "upstream_manifest_sha256": "03dd2549f480190641ae859d19af2ffd036a1adb8fdd28417c2a81f9c38ff1ec",
+  "package_policy": "Exact retained resource bytes, selected by native engine lookup and current canonical source/font coverage; no runtime network package fallback.",
+  "format_snapshot": "TeX Live 2026, 2026-08-26, 2026-ba38749b8714505a",
+  "font_family_closures": [
+   {
+    "family": "latin-modern",
+    "files": 874,
+    "bytes": 14528200,
+    "source_archive_sha256": "71c48809cb50fbfe09c8eddaa251398957c7b243acdf69f7f807268f0d42c939",
+    "scope": "Complete native TFM, VF, Type1, encoding and TeX font-definition files; unchanged, each byte-matched to the retained official complete distribution. No AFM or unused OpenType families."
+   },
+   {
+    "family": "libertinus-type1",
+    "files": 1841,
+    "bytes": 14664709,
+    "source_archive_sha256": "f2ab405a5d00681a164db84a8d098d9f3622adb9fc51e4ea9a310b799ac5aefa",
+    "scope": "Complete native TFM, VF, Type1, encoding and TeX font-definition files; unchanged, each byte-matched to the retained official complete distribution. No AFM or unused OpenType families."
+   }
+  ],
+  "font_database": {
+   "schema": "triptych-native-font-index-derivation/v1",
+   "description": "Retain original upstream metadata for 21 native optical-size Latin Modern Roman faces, four Junicode faces and four FreeSerif OTF faces. Renumber only record IDs in retained source order.",
+   "sources": [
+    {
+     "url": "https://github.com/spincyc/triptych-artifacts/releases/download/native-tex-runtime-2026-47ff73bab1a2e548-v1/native-tex-font-index-upstream.txt",
+     "bytes": 1481806,
+     "sha256": "604a7bb1e8e7f5d2be623f9f666f398f7619cc1d3428a9d6499d54b7efe6789e"
+    },
+    {
+     "url": "https://github.com/spincyc/triptych-artifacts/releases/download/native-tex-runtime-2026-47ff73bab1a2e548-v1/native-tex-font-index-filter.py",
+     "bytes": 1179,
+     "sha256": "5677db6134424944f0bdaee037163a106ab84bce1051de10a779bd09c7e43058"
+    }
+   ],
+   "output_sha256": "257b2575f23634cd9563fcec261745ccb09ae2037c228935788348cfb4bcdc34"
+  },
+  "package_sources": {
+   "schema": "triptych-native-package-source-offer/v1",
+   "assets": [
+    {
+     "title": "Babel English 3.3r complete original distribution",
+     "license": "LPPL-1.3-or-later",
+     "url": "https://github.com/spincyc/triptych-artifacts/releases/download/native-tex-runtime-2026-47ff73bab1a2e548-v1/native-tex-package-source-babel-english-3.3r.zip",
+     "bytes": 136656,
+     "sha256": "b0090b5c5b50aa4f50fc01124a218198a539f95faf575e0d7e5aa978482d296d",
+     "upstream": "https://mirrors.mit.edu/CTAN/macros/latex/contrib/babel-contrib/english.zip"
+    },
+    {
+     "title": "Babel 26.3 complete official source",
+     "license": "LPPL-1.3-or-later",
+     "url": "https://github.com/spincyc/triptych-artifacts/releases/download/native-tex-runtime-2026-47ff73bab1a2e548-v1/native-tex-package-source-babel-26.3.zip",
+     "bytes": 5126969,
+     "sha256": "10bcc1b42b2adf4d4ac64370a1515342a2ea8f9638b93e1f9776a2f7b8b39dab",
+     "upstream": "https://github.com/latex3/babel/tree/0c4d78ff9e7334168e9a1741483da9dc5dad9a3f"
+    }
+   ],
+   "source_match": {
+    "english.ldf": {
+     "generated_exists": true,
+     "source_generated_byte_equal": true,
+     "native_bytes": 7008,
+     "native_sha256": "5a636696c3bb3c13820ebbcf667d5d38756109ac50247533c1b8608a4c9dd030"
+    },
+    "babel.sty": {
+     "generated_exists": true,
+     "source_generated_byte_equal": true,
+     "native_bytes": 147019,
+     "native_sha256": "f0e8fda2b1ccc6e2926442258f124f6487e07e9344b2476d24266542bbda7a32",
+     "generated_sha256": "f0e8fda2b1ccc6e2926442258f124f6487e07e9344b2476d24266542bbda7a32"
+    },
+    "errbabel.def": {
+     "generated_exists": true,
+     "source_generated_byte_equal": true,
+     "native_bytes": 10649,
+     "native_sha256": "5a097b7d541ce5ba47b36b78a15307c40baebbd62d5b7e8006739ca3533cc31d",
+     "generated_sha256": "5a097b7d541ce5ba47b36b78a15307c40baebbd62d5b7e8006739ca3533cc31d"
+    },
+    "babel-en.ini": {
+     "generated_exists": true,
+     "source_generated_byte_equal": true,
+     "native_bytes": 3936,
+     "native_sha256": "0245d0eb3732cac2b81b55b65729f8498f7291df8eadbd0f5681cd8be68fa825"
+    },
+    "babel-english.tex": {
+     "source_archive_byte_equal": true,
+     "bytes": 374,
+     "sha256": "4aae05e9125e81791e22edde092cfff5861ac4c596895825820f683d9d1a099a"
+    },
+    "babel-en-US.ini": {
+     "source_archive_byte_equal": true,
+     "bytes": 4073,
+     "sha256": "b23357259251fb30601c7f444d578a96f68b23ccf8cf11c4d0f16ea244b34432"
+    }
+   },
+   "derivation": "Original Babel 26.3 source reproduces retained native babel.sty and errbabel.def byte for byte when unpacked with Unicode XeTeX docstrip; only local overwrite prompting was disabled. The unchanged English distribution reproduces english.ldf byte for byte. Original locale files remain byte-identical."
+  },
+  "importedFrom": {
+   "project": "https://github.com/spincyc/triptych",
+   "file": "src/common/native-tex-runtime.json",
+   "schema": "triptych-native-tex-runtime/v1",
+   "registry_sha256": "3c254b2c40f993d3d2f3728fc3e896aebb4071e01ed0ac9c172e757a3e74e475"
+  }
+ },
+ "engines": {
+  "pdflatex": {
+   "worker": {
+    "url": "wasmtex-pdftex.worker.js",
+    "sha256": "ff3497f5ac9e7595d529280a788f4d941fa45b132870a0ed7866a861b12093c6",
+    "bytes": 102316
+   },
+   "core": {
+    "url": "wasmtex-pdftex.js",
+    "sha256": "de4d948569653e054975d95abf96fb86fb86b6d2719c33a1c70d00a6ef6ab20d",
+    "bytes": 107252
+   },
+   "wasm": {
+    "url": "wasmtex-pdftex.wasm",
+    "sha256": "ca307eeb0a2b47d58abed3fdd0930e9d2a059ff167ee64c846f0095efe37ee47",
+    "bytes": 1674174
+   },
+   "format": {
+    "url": "wasmtex-pdftex.fmt",
+    "sha256": "fd1f4c0411b9bceb8562acd847b62da030b3b803b72799bff6c73dc095935bb5",
+    "bytes": 3657154
+   }
+  },
+  "xelatex": {
+   "worker": {
+    "url": "wasmtex-xetex.worker.js",
+    "sha256": "16594f9f31723ee2b3a6b592a695f5effdc51475df9e6fb503b539051ef77acc",
+    "bytes": 18855
+   },
+   "core": {
+    "url": "wasmtex-xetex.js",
+    "sha256": "87a1a4a6dc407fcaddf1f51f7772265bc152967ce3a5eb775adf328f827e4063",
+    "bytes": 108974
+   },
+   "wasm": {
+    "url": "wasmtex-xetex.wasm",
+    "sha256": "631979a8147cd63d2926a53268ae5ffd9ccd3ad1fd3551a6898e332b115122c5",
+    "bytes": 3495192
+   },
+   "format": {
+    "url": "wasmtex-xetex.fmt.gz",
+    "sha256": "0b2bb28f6de7793488fdc11cfc1f6ff42c631d93486530f879036ec4b5307513",
+    "bytes": 3920543
+   },
+   "support": [
+    {
+     "url": "wasmtex-xetex-resolver-evidence.js",
+     "sha256": "f42ab09591de3108ac07635f060cc1fca27571f62a852edf5e6307515b83b728",
+     "bytes": 589
+    }
+   ],
+   "icu": {
+    "url": "icudt68l.dat",
+    "sha256": "d8e42c5c797e98f934a6a31e959231c2396ab68242f95d9e7b9f7783f71dc611",
+    "bytes": 28566176
+   }
+  },
+  "dvipdfmx": {
+   "worker": {
+    "url": "wasmtex-dvipdfm.worker.js",
+    "sha256": "035da82f748a8dc86ce216c47de41e8521412806a27dbf7fb214f5d09b313e7a",
+    "bytes": 20023
+   },
+   "core": {
+    "url": "wasmtex-dvipdfm.js",
+    "sha256": "5ef4528725ab2475a9a00d4eabe7b216d5637e2620bcaae494b91503056c5312",
+    "bytes": 86724
+   },
+   "wasm": {
+    "url": "wasmtex-dvipdfm.wasm",
+    "sha256": "d43b768b3900afe001d901313eb12c2ac0db7addbe8297a2108c35f26dcf2fea",
+    "bytes": 834985
+   },
+   "support": [
+    {
+     "url": "wasmtex-xetex-resolver-evidence.js",
+     "sha256": "f42ab09591de3108ac07635f060cc1fca27571f62a852edf5e6307515b83b728",
+     "bytes": 589
+    }
+   ]
+  }
+ },
+ "texFiles": [
+  {
+   "format": 3,
+   "name": "ec-lmbx10",
+   "url": "tex/0895c940bd2e763b70dcab18ebf27fd3f93c2490f43b2a8c028fc7fc24b2e855.bin",
+   "sha256": "0895c940bd2e763b70dcab18ebf27fd3f93c2490f43b2a8c028fc7fc24b2e855",
+   "bytes": 12076,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbx10.tfm",
+   "url": "tex/0895c940bd2e763b70dcab18ebf27fd3f93c2490f43b2a8c028fc7fc24b2e855.bin",
+   "sha256": "0895c940bd2e763b70dcab18ebf27fd3f93c2490f43b2a8c028fc7fc24b2e855",
+   "bytes": 12076,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbx12",
+   "url": "tex/d19c45859d453c0802699d27aa2bff735574b9bc97d8791aa76e3c7de6c38a36.bin",
+   "sha256": "d19c45859d453c0802699d27aa2bff735574b9bc97d8791aa76e3c7de6c38a36",
+   "bytes": 12088,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbx12.tfm",
+   "url": "tex/d19c45859d453c0802699d27aa2bff735574b9bc97d8791aa76e3c7de6c38a36.bin",
+   "sha256": "d19c45859d453c0802699d27aa2bff735574b9bc97d8791aa76e3c7de6c38a36",
+   "bytes": 12088,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbx8",
+   "url": "tex/bacfd8c7fb1096a76986fcc5a222b940c61fd5b4e277bd33648d200a827a6ec2.bin",
+   "sha256": "bacfd8c7fb1096a76986fcc5a222b940c61fd5b4e277bd33648d200a827a6ec2",
+   "bytes": 12076,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbx8.tfm",
+   "url": "tex/bacfd8c7fb1096a76986fcc5a222b940c61fd5b4e277bd33648d200a827a6ec2.bin",
+   "sha256": "bacfd8c7fb1096a76986fcc5a222b940c61fd5b4e277bd33648d200a827a6ec2",
+   "bytes": 12076,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbx9",
+   "url": "tex/c6cbec1d83b81845060d8505d1172666aa270bfaaec1fa18284648f3c4fd8f63.bin",
+   "sha256": "c6cbec1d83b81845060d8505d1172666aa270bfaaec1fa18284648f3c4fd8f63",
+   "bytes": 12080,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbx9.tfm",
+   "url": "tex/c6cbec1d83b81845060d8505d1172666aa270bfaaec1fa18284648f3c4fd8f63.bin",
+   "sha256": "c6cbec1d83b81845060d8505d1172666aa270bfaaec1fa18284648f3c4fd8f63",
+   "bytes": 12080,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbxi10",
+   "url": "tex/61e8b89cab10af86bcba97cc3e15037b39d9cca868c48d229704c6401ba3edb7.bin",
+   "sha256": "61e8b89cab10af86bcba97cc3e15037b39d9cca868c48d229704c6401ba3edb7",
+   "bytes": 17180,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmbxi10.tfm",
+   "url": "tex/61e8b89cab10af86bcba97cc3e15037b39d9cca868c48d229704c6401ba3edb7.bin",
+   "sha256": "61e8b89cab10af86bcba97cc3e15037b39d9cca868c48d229704c6401ba3edb7",
+   "bytes": 17180,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmcsc10",
+   "url": "tex/0918c1e4cc3cbe056794ec14697f38e266aab7475d48ea182912360c287b9e05.bin",
+   "sha256": "0918c1e4cc3cbe056794ec14697f38e266aab7475d48ea182912360c287b9e05",
+   "bytes": 11276,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmcsc10.tfm",
+   "url": "tex/0918c1e4cc3cbe056794ec14697f38e266aab7475d48ea182912360c287b9e05.bin",
+   "sha256": "0918c1e4cc3cbe056794ec14697f38e266aab7475d48ea182912360c287b9e05",
+   "bytes": 11276,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr10",
+   "url": "tex/cd13479f463b9a575d053dd7bf0884daa46bfdeffe4b7f537c193861652ac9e5.bin",
+   "sha256": "cd13479f463b9a575d053dd7bf0884daa46bfdeffe4b7f537c193861652ac9e5",
+   "bytes": 12056,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr10.tfm",
+   "url": "tex/cd13479f463b9a575d053dd7bf0884daa46bfdeffe4b7f537c193861652ac9e5.bin",
+   "sha256": "cd13479f463b9a575d053dd7bf0884daa46bfdeffe4b7f537c193861652ac9e5",
+   "bytes": 12056,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr12",
+   "url": "tex/299021120f0a29ef61278a2363903bd8defbb8faaade458eb79067342aecb56f.bin",
+   "sha256": "299021120f0a29ef61278a2363903bd8defbb8faaade458eb79067342aecb56f",
+   "bytes": 12092,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr12.tfm",
+   "url": "tex/299021120f0a29ef61278a2363903bd8defbb8faaade458eb79067342aecb56f.bin",
+   "sha256": "299021120f0a29ef61278a2363903bd8defbb8faaade458eb79067342aecb56f",
+   "bytes": 12092,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr17",
+   "url": "tex/67fb845ec934b2d50e788280d2c6d63ae719c9d8ac16a02d42fd346c81196c0c.bin",
+   "sha256": "67fb845ec934b2d50e788280d2c6d63ae719c9d8ac16a02d42fd346c81196c0c",
+   "bytes": 12156,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr17.tfm",
+   "url": "tex/67fb845ec934b2d50e788280d2c6d63ae719c9d8ac16a02d42fd346c81196c0c.bin",
+   "sha256": "67fb845ec934b2d50e788280d2c6d63ae719c9d8ac16a02d42fd346c81196c0c",
+   "bytes": 12156,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr5",
+   "url": "tex/4f75f4f48232bcc51274bdfc7c04a44324f028345517d7f07c21dfde4ca9b804.bin",
+   "sha256": "4f75f4f48232bcc51274bdfc7c04a44324f028345517d7f07c21dfde4ca9b804",
+   "bytes": 12020,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr5.tfm",
+   "url": "tex/4f75f4f48232bcc51274bdfc7c04a44324f028345517d7f07c21dfde4ca9b804.bin",
+   "sha256": "4f75f4f48232bcc51274bdfc7c04a44324f028345517d7f07c21dfde4ca9b804",
+   "bytes": 12020,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr6",
+   "url": "tex/db2ec8f82b5dd559b686afb9da660c397f79c819905ed2706c86b0fd3e1017c7.bin",
+   "sha256": "db2ec8f82b5dd559b686afb9da660c397f79c819905ed2706c86b0fd3e1017c7",
+   "bytes": 12048,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr6.tfm",
+   "url": "tex/db2ec8f82b5dd559b686afb9da660c397f79c819905ed2706c86b0fd3e1017c7.bin",
+   "sha256": "db2ec8f82b5dd559b686afb9da660c397f79c819905ed2706c86b0fd3e1017c7",
+   "bytes": 12048,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr7",
+   "url": "tex/8cbbca3361fad7a70510d9e506bed78c1288065c1d83adce828df8c31afeedaf.bin",
+   "sha256": "8cbbca3361fad7a70510d9e506bed78c1288065c1d83adce828df8c31afeedaf",
+   "bytes": 12064,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr7.tfm",
+   "url": "tex/8cbbca3361fad7a70510d9e506bed78c1288065c1d83adce828df8c31afeedaf.bin",
+   "sha256": "8cbbca3361fad7a70510d9e506bed78c1288065c1d83adce828df8c31afeedaf",
+   "bytes": 12064,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr8",
+   "url": "tex/9c60dbef6aea9e108bd6512f10bd2855331b31ffa49bfb6161bf4ee9ac570584.bin",
+   "sha256": "9c60dbef6aea9e108bd6512f10bd2855331b31ffa49bfb6161bf4ee9ac570584",
+   "bytes": 12064,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr8.tfm",
+   "url": "tex/9c60dbef6aea9e108bd6512f10bd2855331b31ffa49bfb6161bf4ee9ac570584.bin",
+   "sha256": "9c60dbef6aea9e108bd6512f10bd2855331b31ffa49bfb6161bf4ee9ac570584",
+   "bytes": 12064,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr9",
+   "url": "tex/9e5b21c43423010fb28b078b34f2c10e5c5f4f871ec51fb84dca9caf05fae31f.bin",
+   "sha256": "9e5b21c43423010fb28b078b34f2c10e5c5f4f871ec51fb84dca9caf05fae31f",
+   "bytes": 12084,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmr9.tfm",
+   "url": "tex/9e5b21c43423010fb28b078b34f2c10e5c5f4f871ec51fb84dca9caf05fae31f.bin",
+   "sha256": "9e5b21c43423010fb28b078b34f2c10e5c5f4f871ec51fb84dca9caf05fae31f",
+   "bytes": 12084,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmri10",
+   "url": "tex/372f968b4eeb47bf6a6c941c8793bce118d1800f12e194a351c7493ecc158f2a.bin",
+   "sha256": "372f968b4eeb47bf6a6c941c8793bce118d1800f12e194a351c7493ecc158f2a",
+   "bytes": 17148,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmri10.tfm",
+   "url": "tex/372f968b4eeb47bf6a6c941c8793bce118d1800f12e194a351c7493ecc158f2a.bin",
+   "sha256": "372f968b4eeb47bf6a6c941c8793bce118d1800f12e194a351c7493ecc158f2a",
+   "bytes": 17148,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmri7",
+   "url": "tex/e7807ea6471b5fc7a14544fd6f72bb82fbb14230d79196f68509a3589e62a678.bin",
+   "sha256": "e7807ea6471b5fc7a14544fd6f72bb82fbb14230d79196f68509a3589e62a678",
+   "bytes": 17168,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmri7.tfm",
+   "url": "tex/e7807ea6471b5fc7a14544fd6f72bb82fbb14230d79196f68509a3589e62a678.bin",
+   "sha256": "e7807ea6471b5fc7a14544fd6f72bb82fbb14230d79196f68509a3589e62a678",
+   "bytes": 17168,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmri8",
+   "url": "tex/1440665458738428540918b90c7a3556d6ed3118ff2e0237bd739c60f6edb889.bin",
+   "sha256": "1440665458738428540918b90c7a3556d6ed3118ff2e0237bd739c60f6edb889",
+   "bytes": 17152,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmri8.tfm",
+   "url": "tex/1440665458738428540918b90c7a3556d6ed3118ff2e0237bd739c60f6edb889.bin",
+   "sha256": "1440665458738428540918b90c7a3556d6ed3118ff2e0237bd739c60f6edb889",
+   "bytes": 17152,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmri9",
+   "url": "tex/81efc6c5104f8f7a7cc295daeb3dc923309d186e862c6cfc869299a6fdcdbb69.bin",
+   "sha256": "81efc6c5104f8f7a7cc295daeb3dc923309d186e862c6cfc869299a6fdcdbb69",
+   "bytes": 17148,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmri9.tfm",
+   "url": "tex/81efc6c5104f8f7a7cc295daeb3dc923309d186e862c6cfc869299a6fdcdbb69.bin",
+   "sha256": "81efc6c5104f8f7a7cc295daeb3dc923309d186e862c6cfc869299a6fdcdbb69",
+   "bytes": 17148,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmtt8",
+   "url": "tex/652fdd0072f23a0a8cda0b1669bb6878f3527873fc60f0cdd24f87f8149d76e6.bin",
+   "sha256": "652fdd0072f23a0a8cda0b1669bb6878f3527873fc60f0cdd24f87f8149d76e6",
+   "bytes": 1380,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ec-lmtt8.tfm",
+   "url": "tex/652fdd0072f23a0a8cda0b1669bb6878f3527873fc60f0cdd24f87f8149d76e6.bin",
+   "sha256": "652fdd0072f23a0a8cda0b1669bb6878f3527873fc60f0cdd24f87f8149d76e6",
+   "bytes": 1380,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ecrm1000",
+   "url": "tex/6538d396bf70b360a36c6af2ba424f1f25ecb1700fda4a22462a3044e1bce5b4.bin",
+   "sha256": "6538d396bf70b360a36c6af2ba424f1f25ecb1700fda4a22462a3044e1bce5b4",
+   "bytes": 3584,
+   "engines": [
+    "pdflatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ecrm1000.tfm",
+   "url": "tex/6538d396bf70b360a36c6af2ba424f1f25ecb1700fda4a22462a3044e1bce5b4.bin",
+   "sha256": "6538d396bf70b360a36c6af2ba424f1f25ecb1700fda4a22462a3044e1bce5b4",
+   "bytes": 3584,
+   "engines": [
+    "pdflatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmex10",
+   "url": "tex/9547b25fd525782610200d794a82de33037887422751fcc29c5768cfa650e626.bin",
+   "sha256": "9547b25fd525782610200d794a82de33037887422751fcc29c5768cfa650e626",
+   "bytes": 992,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmex10.tfm",
+   "url": "tex/9547b25fd525782610200d794a82de33037887422751fcc29c5768cfa650e626.bin",
+   "sha256": "9547b25fd525782610200d794a82de33037887422751fcc29c5768cfa650e626",
+   "bytes": 992,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi10",
+   "url": "tex/d9fce8963e8cb075bf31a5715a8f4a54688f7026b3a06e882ff2eb9c0d110320.bin",
+   "sha256": "d9fce8963e8cb075bf31a5715a8f4a54688f7026b3a06e882ff2eb9c0d110320",
+   "bytes": 1528,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi10.tfm",
+   "url": "tex/d9fce8963e8cb075bf31a5715a8f4a54688f7026b3a06e882ff2eb9c0d110320.bin",
+   "sha256": "d9fce8963e8cb075bf31a5715a8f4a54688f7026b3a06e882ff2eb9c0d110320",
+   "bytes": 1528,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi12",
+   "url": "tex/06870b7e003008214eefcf9bc4215006faff9edf5d99bee75211de57620d1818.bin",
+   "sha256": "06870b7e003008214eefcf9bc4215006faff9edf5d99bee75211de57620d1818",
+   "bytes": 1524,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi12.tfm",
+   "url": "tex/06870b7e003008214eefcf9bc4215006faff9edf5d99bee75211de57620d1818.bin",
+   "sha256": "06870b7e003008214eefcf9bc4215006faff9edf5d99bee75211de57620d1818",
+   "bytes": 1524,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi5",
+   "url": "tex/7bc98c12006eb1d784ce276f5dc008e0d631ee6bc659efadec24801c00d2a462.bin",
+   "sha256": "7bc98c12006eb1d784ce276f5dc008e0d631ee6bc659efadec24801c00d2a462",
+   "bytes": 1508,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi5.tfm",
+   "url": "tex/7bc98c12006eb1d784ce276f5dc008e0d631ee6bc659efadec24801c00d2a462.bin",
+   "sha256": "7bc98c12006eb1d784ce276f5dc008e0d631ee6bc659efadec24801c00d2a462",
+   "bytes": 1508,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi6",
+   "url": "tex/e7305bead3f6b2c8313e1234cb52376219d4283227c23295fe2f654e3ba3b551.bin",
+   "sha256": "e7305bead3f6b2c8313e1234cb52376219d4283227c23295fe2f654e3ba3b551",
+   "bytes": 1512,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi6.tfm",
+   "url": "tex/e7305bead3f6b2c8313e1234cb52376219d4283227c23295fe2f654e3ba3b551.bin",
+   "sha256": "e7305bead3f6b2c8313e1234cb52376219d4283227c23295fe2f654e3ba3b551",
+   "bytes": 1512,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi7",
+   "url": "tex/8548d4d19fc2b3671a5e11526f9013df8828b5b9b0f8277dc0ae7148bd1d33f5.bin",
+   "sha256": "8548d4d19fc2b3671a5e11526f9013df8828b5b9b0f8277dc0ae7148bd1d33f5",
+   "bytes": 1528,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi7.tfm",
+   "url": "tex/8548d4d19fc2b3671a5e11526f9013df8828b5b9b0f8277dc0ae7148bd1d33f5.bin",
+   "sha256": "8548d4d19fc2b3671a5e11526f9013df8828b5b9b0f8277dc0ae7148bd1d33f5",
+   "bytes": 1528,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi8",
+   "url": "tex/8d8514f9b0d11e443d9a3cdc059622b06797c1dbcb3cee994f6ac3329c462a82.bin",
+   "sha256": "8d8514f9b0d11e443d9a3cdc059622b06797c1dbcb3cee994f6ac3329c462a82",
+   "bytes": 1520,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi8.tfm",
+   "url": "tex/8d8514f9b0d11e443d9a3cdc059622b06797c1dbcb3cee994f6ac3329c462a82.bin",
+   "sha256": "8d8514f9b0d11e443d9a3cdc059622b06797c1dbcb3cee994f6ac3329c462a82",
+   "bytes": 1520,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi9",
+   "url": "tex/270036d0f099a1bd4aea0e2bb0c58dfef4b456d029b853bd8c02473aaf578a13.bin",
+   "sha256": "270036d0f099a1bd4aea0e2bb0c58dfef4b456d029b853bd8c02473aaf578a13",
+   "bytes": 1524,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmmi9.tfm",
+   "url": "tex/270036d0f099a1bd4aea0e2bb0c58dfef4b456d029b853bd8c02473aaf578a13.bin",
+   "sha256": "270036d0f099a1bd4aea0e2bb0c58dfef4b456d029b853bd8c02473aaf578a13",
+   "bytes": 1524,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy10",
+   "url": "tex/11f429b2c08f944627faa5942277297d7f8fef40edae2bae46cb238b838400ba.bin",
+   "sha256": "11f429b2c08f944627faa5942277297d7f8fef40edae2bae46cb238b838400ba",
+   "bytes": 1308,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy10.tfm",
+   "url": "tex/11f429b2c08f944627faa5942277297d7f8fef40edae2bae46cb238b838400ba.bin",
+   "sha256": "11f429b2c08f944627faa5942277297d7f8fef40edae2bae46cb238b838400ba",
+   "bytes": 1308,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy5",
+   "url": "tex/cac282b076edc89a2bbc8cdd1bd899117cd1af05612bca2b203e8b5ebe715431.bin",
+   "sha256": "cac282b076edc89a2bbc8cdd1bd899117cd1af05612bca2b203e8b5ebe715431",
+   "bytes": 1296,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy5.tfm",
+   "url": "tex/cac282b076edc89a2bbc8cdd1bd899117cd1af05612bca2b203e8b5ebe715431.bin",
+   "sha256": "cac282b076edc89a2bbc8cdd1bd899117cd1af05612bca2b203e8b5ebe715431",
+   "bytes": 1296,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy6",
+   "url": "tex/8548e4b09655eb2b166bf95df4be4f2a7ae54d5df2069bc04ef233bfd941167b.bin",
+   "sha256": "8548e4b09655eb2b166bf95df4be4f2a7ae54d5df2069bc04ef233bfd941167b",
+   "bytes": 1300,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy6.tfm",
+   "url": "tex/8548e4b09655eb2b166bf95df4be4f2a7ae54d5df2069bc04ef233bfd941167b.bin",
+   "sha256": "8548e4b09655eb2b166bf95df4be4f2a7ae54d5df2069bc04ef233bfd941167b",
+   "bytes": 1300,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy7",
+   "url": "tex/3e92767469b4df54c985a533b8064789df60f21ab69d381dbf01bb608e3fbff8.bin",
+   "sha256": "3e92767469b4df54c985a533b8064789df60f21ab69d381dbf01bb608e3fbff8",
+   "bytes": 1304,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy7.tfm",
+   "url": "tex/3e92767469b4df54c985a533b8064789df60f21ab69d381dbf01bb608e3fbff8.bin",
+   "sha256": "3e92767469b4df54c985a533b8064789df60f21ab69d381dbf01bb608e3fbff8",
+   "bytes": 1304,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy8",
+   "url": "tex/b6b96268d56481a5bc7cbb34b140ca1fa5017d2767acc4e11a94b30eabd114f7.bin",
+   "sha256": "b6b96268d56481a5bc7cbb34b140ca1fa5017d2767acc4e11a94b30eabd114f7",
+   "bytes": 1304,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy8.tfm",
+   "url": "tex/b6b96268d56481a5bc7cbb34b140ca1fa5017d2767acc4e11a94b30eabd114f7.bin",
+   "sha256": "b6b96268d56481a5bc7cbb34b140ca1fa5017d2767acc4e11a94b30eabd114f7",
+   "bytes": 1304,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy9",
+   "url": "tex/05daea5b4dd62b9ff70d99531e077ff11f56a5c26dfa6d6c6cfb643f42b9dc4a.bin",
+   "sha256": "05daea5b4dd62b9ff70d99531e077ff11f56a5c26dfa6d6c6cfb643f42b9dc4a",
+   "bytes": 1300,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "lmsy9.tfm",
+   "url": "tex/05daea5b4dd62b9ff70d99531e077ff11f56a5c26dfa6d6c6cfb643f42b9dc4a.bin",
+   "sha256": "05daea5b4dd62b9ff70d99531e077ff11f56a5c26dfa6d6c6cfb643f42b9dc4a",
+   "bytes": 1300,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "pzdr",
+   "url": "tex/6b4254217851e285d1d5c6dfe677284396eeffc59f709ad775404b76dc99d513.bin",
+   "sha256": "6b4254217851e285d1d5c6dfe677284396eeffc59f709ad775404b76dc99d513",
+   "bytes": 1528,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr10",
+   "url": "tex/50dc8240a67003c1ec5bcd55f703c87189aeab0d199c42b4dc3e141a02488998.bin",
+   "sha256": "50dc8240a67003c1ec5bcd55f703c87189aeab0d199c42b4dc3e141a02488998",
+   "bytes": 11868,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr10.tfm",
+   "url": "tex/50dc8240a67003c1ec5bcd55f703c87189aeab0d199c42b4dc3e141a02488998.bin",
+   "sha256": "50dc8240a67003c1ec5bcd55f703c87189aeab0d199c42b4dc3e141a02488998",
+   "bytes": 11868,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr12",
+   "url": "tex/9d4e3d8e39a41b93d91f79c1c47d2297efb7b1af220b94860693c08361f227aa.bin",
+   "sha256": "9d4e3d8e39a41b93d91f79c1c47d2297efb7b1af220b94860693c08361f227aa",
+   "bytes": 11888,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr12.tfm",
+   "url": "tex/9d4e3d8e39a41b93d91f79c1c47d2297efb7b1af220b94860693c08361f227aa.bin",
+   "sha256": "9d4e3d8e39a41b93d91f79c1c47d2297efb7b1af220b94860693c08361f227aa",
+   "bytes": 11888,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr17",
+   "url": "tex/f404bd1bd2b76b1ad534597ceb6abdc39fd8e57e3a955eeae27c09f39ee51d37.bin",
+   "sha256": "f404bd1bd2b76b1ad534597ceb6abdc39fd8e57e3a955eeae27c09f39ee51d37",
+   "bytes": 11948,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr17.tfm",
+   "url": "tex/f404bd1bd2b76b1ad534597ceb6abdc39fd8e57e3a955eeae27c09f39ee51d37.bin",
+   "sha256": "f404bd1bd2b76b1ad534597ceb6abdc39fd8e57e3a955eeae27c09f39ee51d37",
+   "bytes": 11948,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr5",
+   "url": "tex/420a4fc1563b171e5a791bb71211d85e6bf62fd2f2ed2a7f34f742049d6e5071.bin",
+   "sha256": "420a4fc1563b171e5a791bb71211d85e6bf62fd2f2ed2a7f34f742049d6e5071",
+   "bytes": 11804,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr5.tfm",
+   "url": "tex/420a4fc1563b171e5a791bb71211d85e6bf62fd2f2ed2a7f34f742049d6e5071.bin",
+   "sha256": "420a4fc1563b171e5a791bb71211d85e6bf62fd2f2ed2a7f34f742049d6e5071",
+   "bytes": 11804,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr6",
+   "url": "tex/eb0bfdf8db3ae1409639fac9c88f84923872500d882d9ff8dc37aff445c723fe.bin",
+   "sha256": "eb0bfdf8db3ae1409639fac9c88f84923872500d882d9ff8dc37aff445c723fe",
+   "bytes": 11836,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr6.tfm",
+   "url": "tex/eb0bfdf8db3ae1409639fac9c88f84923872500d882d9ff8dc37aff445c723fe.bin",
+   "sha256": "eb0bfdf8db3ae1409639fac9c88f84923872500d882d9ff8dc37aff445c723fe",
+   "bytes": 11836,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr7",
+   "url": "tex/373a4f72b5a088f9caee2cfd75adb2b25116e0cba3ad2bfa99b5f8a7e902a482.bin",
+   "sha256": "373a4f72b5a088f9caee2cfd75adb2b25116e0cba3ad2bfa99b5f8a7e902a482",
+   "bytes": 11852,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr7.tfm",
+   "url": "tex/373a4f72b5a088f9caee2cfd75adb2b25116e0cba3ad2bfa99b5f8a7e902a482.bin",
+   "sha256": "373a4f72b5a088f9caee2cfd75adb2b25116e0cba3ad2bfa99b5f8a7e902a482",
+   "bytes": 11852,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr8",
+   "url": "tex/80bcbfd844d2310ac1d3bead45aee25e91b1a4a0a60ff1771959b9a1e90ec1a2.bin",
+   "sha256": "80bcbfd844d2310ac1d3bead45aee25e91b1a4a0a60ff1771959b9a1e90ec1a2",
+   "bytes": 11864,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr8.tfm",
+   "url": "tex/80bcbfd844d2310ac1d3bead45aee25e91b1a4a0a60ff1771959b9a1e90ec1a2.bin",
+   "sha256": "80bcbfd844d2310ac1d3bead45aee25e91b1a4a0a60ff1771959b9a1e90ec1a2",
+   "bytes": 11864,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr9",
+   "url": "tex/ef6f318763d0052fc82dde4d73071a894ab6dfaa06890800ddd9b4a65657c0df.bin",
+   "sha256": "ef6f318763d0052fc82dde4d73071a894ab6dfaa06890800ddd9b4a65657c0df",
+   "bytes": 11884,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "rm-lmr9.tfm",
+   "url": "tex/ef6f318763d0052fc82dde4d73071a894ab6dfaa06890800ddd9b4a65657c0df.bin",
+   "sha256": "ef6f318763d0052fc82dde4d73071a894ab6dfaa06890800ddd9b4a65657c0df",
+   "bytes": 11884,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmbx12",
+   "url": "tex/b8f16ac44be1e266a194580e9c14853c53fa950b4a65d2651420731327638b23.bin",
+   "sha256": "b8f16ac44be1e266a194580e9c14853c53fa950b4a65d2651420731327638b23",
+   "bytes": 1600,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmbx12.tfm",
+   "url": "tex/b8f16ac44be1e266a194580e9c14853c53fa950b4a65d2651420731327638b23.bin",
+   "sha256": "b8f16ac44be1e266a194580e9c14853c53fa950b4a65d2651420731327638b23",
+   "bytes": 1600,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmcsc10",
+   "url": "tex/56dddaf4b8cdd44c11fed91fba723a6dd14637e30c46fa291a537fcc18fddc16.bin",
+   "sha256": "56dddaf4b8cdd44c11fed91fba723a6dd14637e30c46fa291a537fcc18fddc16",
+   "bytes": 1580,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmcsc10.tfm",
+   "url": "tex/56dddaf4b8cdd44c11fed91fba723a6dd14637e30c46fa291a537fcc18fddc16.bin",
+   "sha256": "56dddaf4b8cdd44c11fed91fba723a6dd14637e30c46fa291a537fcc18fddc16",
+   "bytes": 1580,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr10",
+   "url": "tex/080be3dc1bf1bac9eb612e44718ea630d2bd2ebf4d8e8e00333a78b5332ca6b3.bin",
+   "sha256": "080be3dc1bf1bac9eb612e44718ea630d2bd2ebf4d8e8e00333a78b5332ca6b3",
+   "bytes": 1556,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr10.tfm",
+   "url": "tex/080be3dc1bf1bac9eb612e44718ea630d2bd2ebf4d8e8e00333a78b5332ca6b3.bin",
+   "sha256": "080be3dc1bf1bac9eb612e44718ea630d2bd2ebf4d8e8e00333a78b5332ca6b3",
+   "bytes": 1556,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr12",
+   "url": "tex/8b05e23c3ae967fd0ec8e3071fcb4d1081b71e2c17a948f465b65ad85c138e33.bin",
+   "sha256": "8b05e23c3ae967fd0ec8e3071fcb4d1081b71e2c17a948f465b65ad85c138e33",
+   "bytes": 1596,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr12.tfm",
+   "url": "tex/8b05e23c3ae967fd0ec8e3071fcb4d1081b71e2c17a948f465b65ad85c138e33.bin",
+   "sha256": "8b05e23c3ae967fd0ec8e3071fcb4d1081b71e2c17a948f465b65ad85c138e33",
+   "bytes": 1596,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr7",
+   "url": "tex/3234126c23165ed092bb588424c779802413fd6c6f19f8c3d8b9e5e9a8f06d85.bin",
+   "sha256": "3234126c23165ed092bb588424c779802413fd6c6f19f8c3d8b9e5e9a8f06d85",
+   "bytes": 1576,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr7.tfm",
+   "url": "tex/3234126c23165ed092bb588424c779802413fd6c6f19f8c3d8b9e5e9a8f06d85.bin",
+   "sha256": "3234126c23165ed092bb588424c779802413fd6c6f19f8c3d8b9e5e9a8f06d85",
+   "bytes": 1576,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr8",
+   "url": "tex/2cfebf34600254ef1d6981785fa7c50875d07934a1645b547cf98cc5d93152c7.bin",
+   "sha256": "2cfebf34600254ef1d6981785fa7c50875d07934a1645b547cf98cc5d93152c7",
+   "bytes": 1584,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr8.tfm",
+   "url": "tex/2cfebf34600254ef1d6981785fa7c50875d07934a1645b547cf98cc5d93152c7.bin",
+   "sha256": "2cfebf34600254ef1d6981785fa7c50875d07934a1645b547cf98cc5d93152c7",
+   "bytes": 1584,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr9",
+   "url": "tex/c3d77e6841eee2e5f5f4edf8a9a406b1662d9102f1032741f18af8e387303de9.bin",
+   "sha256": "c3d77e6841eee2e5f5f4edf8a9a406b1662d9102f1032741f18af8e387303de9",
+   "bytes": 1576,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmr9.tfm",
+   "url": "tex/c3d77e6841eee2e5f5f4edf8a9a406b1662d9102f1032741f18af8e387303de9.bin",
+   "sha256": "c3d77e6841eee2e5f5f4edf8a9a406b1662d9102f1032741f18af8e387303de9",
+   "bytes": 1576,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmri10",
+   "url": "tex/de0b6d29be7c752d1b54196bac3c1c77521d93c1612ee8d6e2e1e6ca5fe262cf.bin",
+   "sha256": "de0b6d29be7c752d1b54196bac3c1c77521d93c1612ee8d6e2e1e6ca5fe262cf",
+   "bytes": 1764,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmri10.tfm",
+   "url": "tex/de0b6d29be7c752d1b54196bac3c1c77521d93c1612ee8d6e2e1e6ca5fe262cf.bin",
+   "sha256": "de0b6d29be7c752d1b54196bac3c1c77521d93c1612ee8d6e2e1e6ca5fe262cf",
+   "bytes": 1764,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmri9",
+   "url": "tex/512a6b7ef520da98687c68ecaeba920de243277cee49d48d1691ed4818f4f7a6.bin",
+   "sha256": "512a6b7ef520da98687c68ecaeba920de243277cee49d48d1691ed4818f4f7a6",
+   "bytes": 1772,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 3,
+   "name": "ts1-lmri9.tfm",
+   "url": "tex/512a6b7ef520da98687c68ecaeba920de243277cee49d48d1691ed4818f4f7a6.bin",
+   "sha256": "512a6b7ef520da98687c68ecaeba920de243277cee49d48d1691ed4818f4f7a6",
+   "bytes": 1772,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 11,
+   "name": "ckx.map",
+   "url": "tex/52859584f1baa4aea9e5c6318ded82b1b5bfa713dcdc945bda7e26b206c8bdc4.bin",
+   "sha256": "52859584f1baa4aea9e5c6318ded82b1b5bfa713dcdc945bda7e26b206c8bdc4",
+   "bytes": 1289,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 11,
+   "name": "glyphlist.txt",
+   "url": "tex/1d090feeb2cef487186d67f42d0b106bf09abf67e2cd94ab99e238d57c561d56.bin",
+   "sha256": "1d090feeb2cef487186d67f42d0b106bf09abf67e2cd94ab99e238d57c561d56",
+   "bytes": 77146,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 11,
+   "name": "kanjix.map",
+   "url": "tex/a16b5280d45bdfee4e61fdab843b9a903c50b4cb1491b5b1d6549b8a55f5b14a.bin",
+   "sha256": "a16b5280d45bdfee4e61fdab843b9a903c50b4cb1491b5b1d6549b8a55f5b14a",
+   "bytes": 309,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 11,
+   "name": "pdfglyphlist.txt",
+   "url": "tex/9d7bee92b7cfdaa6e03c7df895003145ed982be0bf6d1e78fdd5eb71bf4945aa.bin",
+   "sha256": "9d7bee92b7cfdaa6e03c7df895003145ed982be0bf6d1e78fdd5eb71bf4945aa",
+   "bytes": 5117,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 11,
+   "name": "pdftex.map",
+   "url": "tex/778e689ec809a07c897c671852781b203455f8bed6b47af9deb744e4900bb9fd.bin",
+   "sha256": "778e689ec809a07c897c671852781b203455f8bed6b47af9deb744e4900bb9fd",
+   "bytes": 5380854,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 11,
+   "name": "texglyphlist.txt",
+   "url": "tex/4b11bf2dcd65b004ee2023c5392339aaf89429bef0d3ace13b7b098d108cd991.bin",
+   "sha256": "4b11bf2dcd65b004ee2023c5392339aaf89429bef0d3ace13b7b098d108cd991",
+   "bytes": 10227,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "article.cls",
+   "url": "tex/f9c8770a909e5b6526eb72284e457cd379b9bedbf3b508a96bd7f922d4cb24ec.bin",
+   "sha256": "f9c8770a909e5b6526eb72284e457cd379b9bedbf3b508a96bd7f922d4cb24ec",
+   "bytes": 20144,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "bigintcalc.sty",
+   "url": "tex/050f2ad3a3671a1f4f9bcf97784836301bc751507e7ada546632379406aea103.bin",
+   "sha256": "050f2ad3a3671a1f4f9bcf97784836301bc751507e7ada546632379406aea103",
+   "bytes": 40635,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "bitset.sty",
+   "url": "tex/af5c7196c69dc9d28225189169b60c9b9039125bc1756c04d54886f0a3e1891e.bin",
+   "sha256": "af5c7196c69dc9d28225189169b60c9b9039125bc1756c04d54886f0a3e1891e",
+   "bytes": 33961,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "enumitem.sty",
+   "url": "tex/628ef5b6916c682f586a066e735ceb6191e73fe3216dfb2fb4aa8e2f4c819dba.bin",
+   "sha256": "628ef5b6916c682f586a066e735ceb6191e73fe3216dfb2fb4aa8e2f4c819dba",
+   "bytes": 52272,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "etoolbox.sty",
+   "url": "tex/e48026fcea59b4906d1fd47bde658cb5caf0a7928c45a45ea563b18d5b40ebd4.bin",
+   "sha256": "e48026fcea59b4906d1fd47bde658cb5caf0a7928c45a45ea563b18d5b40ebd4",
+   "bytes": 46885,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "expl3.sty",
+   "url": "tex/5d07bdcf246af2e85f4d6e64a0889e18ce1bb75a3c7e2af936f7222bbac75d05.bin",
+   "sha256": "5d07bdcf246af2e85f4d6e64a0889e18ce1bb75a3c7e2af936f7222bbac75d05",
+   "bytes": 6558,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "fancyhdr.sty",
+   "url": "tex/9130c52f91087abc6d223164ffa587e207e3257fcbcd069ef09ecb5391043f14.bin",
+   "sha256": "9130c52f91087abc6d223164ffa587e207e3257fcbcd069ef09ecb5391043f14",
+   "bytes": 31715,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "fontenc.sty",
+   "url": "tex/9ac0a88ddda40526aa1ec403c27a6325d3723c14fa9f02918011a79f93a72ef0.bin",
+   "sha256": "9ac0a88ddda40526aa1ec403c27a6325d3723c14fa9f02918011a79f93a72ef0",
+   "bytes": 5275,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "fontspec-xetex.sty",
+   "url": "tex/8af8f4ba9a24ca38688ae3000ee1fbefd62aa4b04c9f1b3debcf01341fbde259.bin",
+   "sha256": "8af8f4ba9a24ca38688ae3000ee1fbefd62aa4b04c9f1b3debcf01341fbde259",
+   "bytes": 164714,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "fontspec.cfg",
+   "url": "tex/f31d038ca5322ef4fc3fbe391f42695bf1305567a04b6ac1005964703dd1232a.bin",
+   "sha256": "f31d038ca5322ef4fc3fbe391f42695bf1305567a04b6ac1005964703dd1232a",
+   "bytes": 549,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "fontspec.sty",
+   "url": "tex/14fdcaeea0c2f2278c03ecf0ccea5dc383a045b3d60cb4373ff2bbd800771fe6.bin",
+   "sha256": "14fdcaeea0c2f2278c03ecf0ccea5dc383a045b3d60cb4373ff2bbd800771fe6",
+   "bytes": 3804,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "geometry.sty",
+   "url": "tex/d5d36ad74051ad36288242b51438e2d9a5db2bd6c063b9b5704d0931fbc9f439.bin",
+   "sha256": "d5d36ad74051ad36288242b51438e2d9a5db2bd6c063b9b5704d0931fbc9f439",
+   "bytes": 41601,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "gettitlestring.sty",
+   "url": "tex/26ab10fd43fd5a90f98bcbed3a99978808da8878eb73835db4e0346371aee41e.bin",
+   "sha256": "26ab10fd43fd5a90f98bcbed3a99978808da8878eb73835db4e0346371aee41e",
+   "bytes": 8371,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "hpdftex.def",
+   "url": "tex/586ebf72aa9ef78a8cf7b44060977700f1a749d0d5beca276d2c0fe028430d2f.bin",
+   "sha256": "586ebf72aa9ef78a8cf7b44060977700f1a749d0d5beca276d2c0fe028430d2f",
+   "bytes": 48140,
+   "engines": [
+    "pdflatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "hxetex.def",
+   "url": "tex/12dc52c0d91c6880a7aac5042289f9245149094e4d03ad5c3482702a4c11897c.bin",
+   "sha256": "12dc52c0d91c6880a7aac5042289f9245149094e4d03ad5c3482702a4c11897c",
+   "bytes": 44484,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "hycolor.sty",
+   "url": "tex/8acaa03eda19a8158780356701e905e354e1dc47dc736e6e26fc860c12a15e14.bin",
+   "sha256": "8acaa03eda19a8158780356701e905e354e1dc47dc736e6e26fc860c12a15e14",
+   "bytes": 17914,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "hyperref.sty",
+   "url": "tex/16f517b35f656dc26b6917f2bbb31e3af0ccd734806b1ce0ba70efc3e7ffb41c.bin",
+   "sha256": "16f517b35f656dc26b6917f2bbb31e3af0ccd734806b1ce0ba70efc3e7ffb41c",
+   "bytes": 223349,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "iftex.sty",
+   "url": "tex/0dc0cefe2131f82330a3b8e62034c184455329d7d9bb94abe21e740821630381.bin",
+   "sha256": "0dc0cefe2131f82330a3b8e62034c184455329d7d9bb94abe21e740821630381",
+   "bytes": 7984,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "ifvtex.sty",
+   "url": "tex/1138730b9ad7d9f664b4760a4ea0ae0945afd21c006b76b67e623e863bbf3756.bin",
+   "sha256": "1138730b9ad7d9f664b4760a4ea0ae0945afd21c006b76b67e623e863bbf3756",
+   "bytes": 1057,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "infwarerr.sty",
+   "url": "tex/8c3e23b8bb7d940ff26cb0cf96e0151f540acf55020dc3c1aa8bcdb2eb66305c.bin",
+   "sha256": "8c3e23b8bb7d940ff26cb0cf96e0151f540acf55020dc3c1aa8bcdb2eb66305c",
+   "bytes": 8356,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "intcalc.sty",
+   "url": "tex/1343ba1b10b245bfd199c22947249af1d756808690c7811c90f07fe0a3772080.bin",
+   "sha256": "1343ba1b10b245bfd199c22947249af1d756808690c7811c90f07fe0a3772080",
+   "bytes": 31769,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "keyval.sty",
+   "url": "tex/d3faa310a1e4485b8efb1ed3ae8b11f9552e70b630dc35290a7aabdcd064b09a.bin",
+   "sha256": "d3faa310a1e4485b8efb1ed3ae8b11f9552e70b630dc35290a7aabdcd064b09a",
+   "bytes": 2671,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "kvdefinekeys.sty",
+   "url": "tex/c42f0c2628dc5fbd95b535cf8cd3cc964347653c099d38c0d416f896d84e8240.bin",
+   "sha256": "c42f0c2628dc5fbd95b535cf8cd3cc964347653c099d38c0d416f896d84e8240",
+   "bytes": 5412,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "kvoptions.sty",
+   "url": "tex/70595629ec990ba8c0b6e6a54afcff2603464e6fce380a54a98549a78d2fc74a.bin",
+   "sha256": "70595629ec990ba8c0b6e6a54afcff2603464e6fce380a54a98549a78d2fc74a",
+   "bytes": 22555,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "kvsetkeys.sty",
+   "url": "tex/e3fcf7f3372a27bb478eb9488eca1e25ed382480d02a6898f190bd955388e055.bin",
+   "sha256": "e3fcf7f3372a27bb478eb9488eca1e25ed382480d02a6898f190bd955388e055",
+   "bytes": 13815,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "l3backend-pdftex.def",
+   "url": "tex/24c194c31928335f4e29eee52bd200efac11263d4b69ef7350ef989e55ffe111.bin",
+   "sha256": "24c194c31928335f4e29eee52bd200efac11263d4b69ef7350ef989e55ffe111",
+   "bytes": 30662,
+   "engines": [
+    "pdflatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "l3backend-xetex.def",
+   "url": "tex/760955e68d0cc81842936802b967b2ecd41824327837143c44cd6cc5013a1cb7.bin",
+   "sha256": "760955e68d0cc81842936802b967b2ecd41824327837143c44cd6cc5013a1cb7",
+   "bytes": 32682,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "lmodern.sty",
+   "url": "tex/d2877369dcb4bfe7b1b6bba1a3d96c46e93366459c9b46576f1b221009bbe359.bin",
+   "sha256": "d2877369dcb4bfe7b1b6bba1a3d96c46e93366459c9b46576f1b221009bbe359",
+   "bytes": 1608,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "ltxcmds.sty",
+   "url": "tex/8fea89995d37ba4c69137186faafc589c470edcc5026d8a31aadbe5cef47dcb4.bin",
+   "sha256": "8fea89995d37ba4c69137186faafc589c470edcc5026d8a31aadbe5cef47dcb4",
+   "bytes": 17865,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "microtype-pdftex.def",
+   "url": "tex/591554be1f787c98c3b9751750c53eb35a848e9d7260951d42b54f02d29e308c.bin",
+   "sha256": "591554be1f787c98c3b9751750c53eb35a848e9d7260951d42b54f02d29e308c",
+   "bytes": 49656,
+   "engines": [
+    "pdflatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "microtype-xetex.def",
+   "url": "tex/a38750263afef9d7e04a381cc53978c6eb59baaf78789af49082145fde2dd773.bin",
+   "sha256": "a38750263afef9d7e04a381cc53978c6eb59baaf78789af49082145fde2dd773",
+   "bytes": 28582,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "microtype.cfg",
+   "url": "tex/38ed6ed6c40d85163281b6d45ad9949c9566acf5f9fa03b1363e42f18b5e1258.bin",
+   "sha256": "38ed6ed6c40d85163281b6d45ad9949c9566acf5f9fa03b1363e42f18b5e1258",
+   "bytes": 27642,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "microtype.sty",
+   "url": "tex/49f84ac779174f3295733b64fcf382fde6178b09c2c67c198fdf0167c2f3e71d.bin",
+   "sha256": "49f84ac779174f3295733b64fcf382fde6178b09c2c67c198fdf0167c2f3e71d",
+   "bytes": 102845,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "mt-LatinModernRoman.cfg",
+   "url": "tex/1c4b8811b46ff22b107ce00048bba8008bdf731dcabdd91da3e08eb78d130101.bin",
+   "sha256": "1c4b8811b46ff22b107ce00048bba8008bdf731dcabdd91da3e08eb78d130101",
+   "bytes": 10016,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "mt-cmr.cfg",
+   "url": "tex/302d0751b785aff3eafd8fa714fd19548cc5669c562d3d6545175dec4095b30a.bin",
+   "sha256": "302d0751b785aff3eafd8fa714fd19548cc5669c562d3d6545175dec4095b30a",
+   "bytes": 22906,
+   "engines": [
+    "pdflatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "nameref.sty",
+   "url": "tex/567afe6847e20afcd0cbc5898274b815055cf96db3bee2fc74b97b310d17f602.bin",
+   "sha256": "567afe6847e20afcd0cbc5898274b815055cf96db3bee2fc74b97b310d17f602",
+   "bytes": 11459,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "omllmm.fd",
+   "url": "tex/0713fd8996320f03e8085c8da713bdc3a238b32c7ef83f5729151450d4bebbb5.bin",
+   "sha256": "0713fd8996320f03e8085c8da713bdc3a238b32c7ef83f5729151450d4bebbb5",
+   "bytes": 890,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "omslmsy.fd",
+   "url": "tex/e1df006d08c2a73bba6b1a1f804e96160f2f8aeb7d8518b07da455b7dd45d1ff.bin",
+   "sha256": "e1df006d08c2a73bba6b1a1f804e96160f2f8aeb7d8518b07da455b7dd45d1ff",
+   "bytes": 807,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "omxlmex.fd",
+   "url": "tex/57ae2bb311d1126b02d61b9d26de8590d831f7f9a98ca1788cb62de920a495c1.bin",
+   "sha256": "57ae2bb311d1126b02d61b9d26de8590d831f7f9a98ca1788cb62de920a495c1",
+   "bytes": 568,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "ot1lmr.fd",
+   "url": "tex/51291fc1c1086c51d64f914ecc8051fe0dbe3f7601e89f2a5e18a5df5c6da1ea.bin",
+   "sha256": "51291fc1c1086c51d64f914ecc8051fe0dbe3f7601e89f2a5e18a5df5c6da1ea",
+   "bytes": 1882,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "pd1enc.def",
+   "url": "tex/ff70c355a16fe9c4331f46a606f7180233e83b88bb4b3f685cbe7cb43bafa59f.bin",
+   "sha256": "ff70c355a16fe9c4331f46a606f7180233e83b88bb4b3f685cbe7cb43bafa59f",
+   "bytes": 14249,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "pdfescape.sty",
+   "url": "tex/b3f0e56366c11b85dae521f9a48a6fd415dec1ce8c83152fde813a9f64445b49.bin",
+   "sha256": "b3f0e56366c11b85dae521f9a48a6fd415dec1ce8c83152fde813a9f64445b49",
+   "bytes": 19007,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "pdftexcmds.sty",
+   "url": "tex/2df7e0bd148c99d8097352b8ac9948dccf91d61ba360dcf43f82206933b6045b.bin",
+   "sha256": "2df7e0bd148c99d8097352b8ac9948dccf91d61ba360dcf43f82206933b6045b",
+   "bytes": 20089,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "puenc.def",
+   "url": "tex/7b135494506277e77229b64f3b924f7519e0a3929bf42cefa51e782515b1fa4b.bin",
+   "sha256": "7b135494506277e77229b64f3b924f7519e0a3929bf42cefa51e782515b1fa4b",
+   "bytes": 117118,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "refcount.sty",
+   "url": "tex/1bd5d42025520bef74f8808af99cf3f3be7d2e3774b9931bf85c11ba81bb6cab.bin",
+   "sha256": "1bd5d42025520bef74f8808af99cf3f3be7d2e3774b9931bf85c11ba81bb6cab",
+   "bytes": 9878,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "rerunfilecheck.sty",
+   "url": "tex/7771d8fb8f76147d1d6fc5b205c8989feb270bafccd6021570cd7e5152ead1d6.bin",
+   "sha256": "7771d8fb8f76147d1d6fc5b205c8989feb270bafccd6021570cd7e5152ead1d6",
+   "bytes": 9684,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "size10.clo",
+   "url": "tex/2896162dd5ed894689ca1f336fe2e084007114dc07f8ab17203281911479548f.bin",
+   "sha256": "2896162dd5ed894689ca1f336fe2e084007114dc07f8ab17203281911479548f",
+   "bytes": 8448,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "stringenc.sty",
+   "url": "tex/b134a7bba648a6987afc83ddfb6a3fcdad43bcae6b616e533eb484306d56ac45.bin",
+   "sha256": "b134a7bba648a6987afc83ddfb6a3fcdad43bcae6b616e533eb484306d56ac45",
+   "bytes": 21514,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "t1lmr.fd",
+   "url": "tex/6b61abc8a6796f1884f819afcfc4c33558564f7e5c1d47b720e50ee15dba829a.bin",
+   "sha256": "6b61abc8a6796f1884f819afcfc4c33558564f7e5c1d47b720e50ee15dba829a",
+   "bytes": 1867,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "t1lmtt.fd",
+   "url": "tex/eb5aca0fcd27d1d7d97d35e7a4d01eb12ba1a054f9fe1114a779c9ae084be602.bin",
+   "sha256": "eb5aca0fcd27d1d7d97d35e7a4d01eb12ba1a054f9fe1114a779c9ae084be602",
+   "bytes": 2682,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "ts1lmr.fd",
+   "url": "tex/ecda20924242346d91d241e19c89a9a36c7423dc76b1c94e4a3d4d8b51d235d7.bin",
+   "sha256": "ecda20924242346d91d241e19c89a9a36c7423dc76b1c94e4a3d4d8b51d235d7",
+   "bytes": 1914,
+   "engines": [
+    "pdflatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "uniquecounter.sty",
+   "url": "tex/9d11c81501953d689787ff14c073d2f1eda5874068db9e882b8dbbf9a9d863b0.bin",
+   "sha256": "9d11c81501953d689787ff14c073d2f1eda5874068db9e882b8dbbf9a9d863b0",
+   "bytes": 7008,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "url.sty",
+   "url": "tex/2373f56849ac606473e77053e5c1d14c92aba312b3f684e02a130eaf36f2de47.bin",
+   "sha256": "2373f56849ac606473e77053e5c1d14c92aba312b3f684e02a130eaf36f2de47",
+   "bytes": 12796,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "xetexfontlist.txt",
+   "url": "tex/257b2575f23634cd9563fcec261745ccb09ae2037c228935788348cfb4bcdc34.bin",
+   "sha256": "257b2575f23634cd9563fcec261745ccb09ae2037c228935788348cfb4bcdc34",
+   "bytes": 8024,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 26,
+   "name": "xparse.sty",
+   "url": "tex/0280c6a086e4fc115c66589db0c5883a3e2eded2e2e2bfdd73d947a5b8092933.bin",
+   "sha256": "0280c6a086e4fc115c66589db0c5883a3e2eded2e2e2bfdd73d947a5b8092933",
+   "bytes": 10176,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmbx10.pfb",
+   "url": "tex/4acd67f9ece59a12e073aa863dbb1d5cea194f7f7b88ecce4659184d8275aa42.bin",
+   "sha256": "4acd67f9ece59a12e073aa863dbb1d5cea194f7f7b88ecce4659184d8275aa42",
+   "bytes": 121021,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmbx12.pfb",
+   "url": "tex/fb9b7cf1d13a8a837c2c6b238e7255f8d6f4cd6608bf3024ee68e43d04f01a08.bin",
+   "sha256": "fb9b7cf1d13a8a837c2c6b238e7255f8d6f4cd6608bf3024ee68e43d04f01a08",
+   "bytes": 116908,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmbx8.pfb",
+   "url": "tex/95928ecf4c5fee779ae19f949cb9bc7f27f7bf7b469339a6c2bcb55a563cdd88.bin",
+   "sha256": "95928ecf4c5fee779ae19f949cb9bc7f27f7bf7b469339a6c2bcb55a563cdd88",
+   "bytes": 125241,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmbx9.pfb",
+   "url": "tex/ce9210e86ff32cc60ea84cfa672ee69e034ad41658cf281274ab6d870814deca.bin",
+   "sha256": "ce9210e86ff32cc60ea84cfa672ee69e034ad41658cf281274ab6d870814deca",
+   "bytes": 126646,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmbxi10.pfb",
+   "url": "tex/ded0e2d41ca950cb92df5d82634656cf649606252c770006e5895ec1c828649e.bin",
+   "sha256": "ded0e2d41ca950cb92df5d82634656cf649606252c770006e5895ec1c828649e",
+   "bytes": 112766,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmcsc10.pfb",
+   "url": "tex/cd00eadf0b9cd4641146a2ef8ff218861e4dc80c7eeb749871dc1f639ded1928.bin",
+   "sha256": "cd00eadf0b9cd4641146a2ef8ff218861e4dc80c7eeb749871dc1f639ded1928",
+   "bytes": 116427,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmr10.pfb",
+   "url": "tex/84eb01245abb17c0530ca3909427256d73df8bed2d7243b9f2717ca08c010ac8.bin",
+   "sha256": "84eb01245abb17c0530ca3909427256d73df8bed2d7243b9f2717ca08c010ac8",
+   "bytes": 119235,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmr12.pfb",
+   "url": "tex/d5fd4fdecfdbc8f97e955964aa2574927182303df178fe0c2e568fe9056e326c.bin",
+   "sha256": "d5fd4fdecfdbc8f97e955964aa2574927182303df178fe0c2e568fe9056e326c",
+   "bytes": 113634,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmr5.pfb",
+   "url": "tex/584815958b6e66cf4ec2b590f93bd853117f862f4f0fa8b06f4ee6eb6035e845.bin",
+   "sha256": "584815958b6e66cf4ec2b590f93bd853117f862f4f0fa8b06f4ee6eb6035e845",
+   "bytes": 120387,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmr6.pfb",
+   "url": "tex/0169c3fcc2685ba53356a09c1b96c8f71c250ba5177da7b23e7a819e583ccf88.bin",
+   "sha256": "0169c3fcc2685ba53356a09c1b96c8f71c250ba5177da7b23e7a819e583ccf88",
+   "bytes": 123394,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmr7.pfb",
+   "url": "tex/cf94a1a79a32c446f11e585164463234a515721d509d2f2cfb0ab61f6f744ddc.bin",
+   "sha256": "cf94a1a79a32c446f11e585164463234a515721d509d2f2cfb0ab61f6f744ddc",
+   "bytes": 121145,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmr8.pfb",
+   "url": "tex/4a117a1dd9cf4f8b7eea4587eaa4f612be7ca329cb1d8255a2c6bb20febbfa69.bin",
+   "sha256": "4a117a1dd9cf4f8b7eea4587eaa4f612be7ca329cb1d8255a2c6bb20febbfa69",
+   "bytes": 122174,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmr9.pfb",
+   "url": "tex/0a28c017128947f0b23cef511dac5499bdd73b7c8f218f605b632aa9f3e2e2d4.bin",
+   "sha256": "0a28c017128947f0b23cef511dac5499bdd73b7c8f218f605b632aa9f3e2e2d4",
+   "bytes": 121065,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmri10.pfb",
+   "url": "tex/1239c71330ac8f0584e22f4d6abd0f016421fc73c545b15512ccf80b263f5c66.bin",
+   "sha256": "1239c71330ac8f0584e22f4d6abd0f016421fc73c545b15512ccf80b263f5c66",
+   "bytes": 112593,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmri7.pfb",
+   "url": "tex/202363e10f3d30fecace3c86d900b156908fce9781b777dfb511a16b45ef6445.bin",
+   "sha256": "202363e10f3d30fecace3c86d900b156908fce9781b777dfb511a16b45ef6445",
+   "bytes": 111437,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmri8.pfb",
+   "url": "tex/77e9972e38fc26a42f00a55b396b4afd1d88676ff2bd4f5a45de64ec54292ea5.bin",
+   "sha256": "77e9972e38fc26a42f00a55b396b4afd1d88676ff2bd4f5a45de64ec54292ea5",
+   "bytes": 109952,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmri9.pfb",
+   "url": "tex/27d581e40bcdf85010a1da0001d6f753608c6588b932cf9a021908ef150731c7.bin",
+   "sha256": "27d581e40bcdf85010a1da0001d6f753608c6588b932cf9a021908ef150731c7",
+   "bytes": 109598,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 32,
+   "name": "lmtt8.pfb",
+   "url": "tex/c097263e8510e0cfcdd59c7dcf0086db674dcd8118016ce5b707b93d6a8556a3.bin",
+   "sha256": "c097263e8510e0cfcdd59c7dcf0086db674dcd8118016ce5b707b93d6a8556a3",
+   "bytes": 115291,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 44,
+   "name": "lm-ec.enc",
+   "url": "tex/7f9932c402d22a937b853406cfdf4166b80260e3ff21a03fe9a4c05105a2918c.bin",
+   "sha256": "7f9932c402d22a937b853406cfdf4166b80260e3ff21a03fe9a4c05105a2918c",
+   "bytes": 2375,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 44,
+   "name": "lm-ts1.enc",
+   "url": "tex/c6e18df2fc30431ddebe5e4e3f7abebeef2d355bd97b81b574a685f8ded408c4.bin",
+   "sha256": "c6e18df2fc30431ddebe5e4e3f7abebeef2d355bd97b81b574a685f8ded408c4",
+   "bytes": 3031,
+   "engines": [
+    "pdflatex",
+    "xelatex"
+   ]
+  },
+  {
+   "format": 47,
+   "name": "FreeSerif.otf",
+   "url": "tex/aab33b5d0efd450d3ac3153b176f542315e171db79e494aa287cd940ae16231b.bin",
+   "sha256": "aab33b5d0efd450d3ac3153b176f542315e171db79e494aa287cd940ae16231b",
+   "bytes": 2047320,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 47,
+   "name": "FreeSerifBold.otf",
+   "url": "tex/e5d664c1448e3976fbbc68b1d9ab69d00383efb376e67a3a6b79279233e152cc.bin",
+   "sha256": "e5d664c1448e3976fbbc68b1d9ab69d00383efb376e67a3a6b79279233e152cc",
+   "bytes": 954748,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 47,
+   "name": "FreeSerifBoldItalic.otf",
+   "url": "tex/7d3a5e140353cf13dc2f51471bd33f88bd7464d159c72760a0b44a3a88948916.bin",
+   "sha256": "7d3a5e140353cf13dc2f51471bd33f88bd7464d159c72760a0b44a3a88948916",
+   "bytes": 425684,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 47,
+   "name": "FreeSerifItalic.otf",
+   "url": "tex/4c815172f18223f5ecfae908d8fae0eed5708c8f12c257cfb59150464f9b8599.bin",
+   "sha256": "4c815172f18223f5ecfae908d8fae0eed5708c8f12c257cfb59150464f9b8599",
+   "bytes": 597888,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 47,
+   "name": "lmroman10-bold.otf",
+   "url": "tex/102fe06c430a8b681b2bf6876b7cd967ae4d47b4b6b41d915eb7913b726d9fb1.bin",
+   "sha256": "102fe06c430a8b681b2bf6876b7cd967ae4d47b4b6b41d915eb7913b726d9fb1",
+   "bytes": 111240,
+   "engines": [
+    "xelatex"
+   ]
+  },
+  {
+   "format": 47,
+   "name": "lmroman10-regular.otf",
+   "url": "tex/1aa18cfefa58132c52ce5de70db1fd1154201c19cd2b2cdaffba4906a33e6852.bin",
+   "sha256": "1aa18cfefa58132c52ce5de70db1fd1154201c19cd2b2cdaffba4906a33e6852",
+   "bytes": 111536,
+   "engines": [
+    "xelatex"
+   ]
+  }
+ ],
+ "notices": [
+  {
+   "url": "notices/BUILD-RECEIPT.pdftex.json",
+   "sha256": "dc7dd94286da7546cdb62be0e4732fe43aea826cc4e86619ffdfe1c37df9bda8",
+   "bytes": 6715
+  },
+  {
+   "url": "notices/BUILD-RECEIPT.xetex.json",
+   "sha256": "d7a9028cfc5467a5eed407379d68b17d332cd5df442cfb57812174af268b4d4f",
+   "bytes": 6647
+  },
+  {
+   "url": "notices/LICENSE-MANIFEST.json",
+   "sha256": "ea33e53239d2c04d257efe4ca7b53dd44fdafdd437598ac09d51f631ef5712ba",
+   "bytes": 3206
+  },
+  {
+   "url": "notices/d2b2359cb88729dddef8cd94e6bc60621432954ff70d056c29d84852d1ed7b47.txt",
+   "sha256": "d2b2359cb88729dddef8cd94e6bc60621432954ff70d056c29d84852d1ed7b47",
+   "bytes": 403
+  },
+  {
+   "url": "notices/9d85bd9642b629a83a27219bfc776f60da39725629ca2d8a0e38683afc24b2a4.txt",
+   "sha256": "9d85bd9642b629a83a27219bfc776f60da39725629ca2d8a0e38683afc24b2a4",
+   "bytes": 1338
+  },
+  {
+   "url": "notices/03da6f090c4fa7735bd5a96cfc3f50d9f53b35ff6b9cad56cd99a45b0a00113c.txt",
+   "sha256": "03da6f090c4fa7735bd5a96cfc3f50d9f53b35ff6b9cad56cd99a45b0a00113c",
+   "bytes": 1539
+  },
+  {
+   "url": "notices/5030e211523e0c0c78b6f6686f146dc3360f6c9656604eff9d4e6e8897071baa.txt",
+   "sha256": "5030e211523e0c0c78b6f6686f146dc3360f6c9656604eff9d4e6e8897071baa",
+   "bytes": 1082
+  },
+  {
+   "url": "notices/cc870fb9e6bd81f3ebdadd9146d12832c53df1f12f80b738ec0f10ada5849da5.txt",
+   "sha256": "cc870fb9e6bd81f3ebdadd9146d12832c53df1f12f80b738ec0f10ada5849da5",
+   "bytes": 2002
+  },
+  {
+   "url": "notices/dc7dd94286da7546cdb62be0e4732fe43aea826cc4e86619ffdfe1c37df9bda8.txt",
+   "sha256": "dc7dd94286da7546cdb62be0e4732fe43aea826cc4e86619ffdfe1c37df9bda8",
+   "bytes": 6715
+  },
+  {
+   "url": "notices/d7a9028cfc5467a5eed407379d68b17d332cd5df442cfb57812174af268b4d4f.txt",
+   "sha256": "d7a9028cfc5467a5eed407379d68b17d332cd5df442cfb57812174af268b4d4f",
+   "bytes": 6647
+  },
+  {
+   "url": "notices/34d2211b3bf5a6961ef8232170dc363cd7eceb5f0f0c3ceba7fce20977deb8d4.txt",
+   "sha256": "34d2211b3bf5a6961ef8232170dc363cd7eceb5f0f0c3ceba7fce20977deb8d4",
+   "bytes": 12622
+  },
+  {
+   "url": "notices/0ebaa7c162e462a291c3ce29735c7a1296d917843b3b93379624014736b34c38.txt",
+   "sha256": "0ebaa7c162e462a291c3ce29735c7a1296d917843b3b93379624014736b34c38",
+   "bytes": 3144
+  },
+  {
+   "url": "notices/0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594.txt",
+   "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+   "bytes": 10174
+  },
+  {
+   "url": "notices/c319f297b9e5156b7d4a09c637f6187884e213f7483933b51f5243f1070d6464.txt",
+   "sha256": "c319f297b9e5156b7d4a09c637f6187884e213f7483933b51f5243f1070d6464",
+   "bytes": 1143
+  },
+  {
+   "url": "notices/620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86.txt",
+   "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+   "bytes": 5093
+  },
+  {
+   "url": "notices/832e75434619e56c81ca252fecd7c50711fda68b7208df37000a7c4370f70e8c.txt",
+   "sha256": "832e75434619e56c81ca252fecd7c50711fda68b7208df37000a7c4370f70e8c",
+   "bytes": 6743
+  },
+  {
+   "url": "notices/edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6.txt",
+   "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+   "bytes": 17984
+  },
+  {
+   "url": "notices/8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903.txt",
+   "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+   "bytes": 35147
+  },
+  {
+   "url": "notices/2c272829ff23f182c8bf7ea12fedea69b0ae148663123ed5240c117cb129c9c1.txt",
+   "sha256": "2c272829ff23f182c8bf7ea12fedea69b0ae148663123ed5240c117cb129c9c1",
+   "bytes": 1235
+  },
+  {
+   "url": "notices/ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64.txt",
+   "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+   "bytes": 1971
+  },
+  {
+   "url": "notices/7915b19db903070778581ae05d8bf4ea241b34a05deb51ca4f5cbb15ea1cbba3.txt",
+   "sha256": "7915b19db903070778581ae05d8bf4ea241b34a05deb51ca4f5cbb15ea1cbba3",
+   "bytes": 21025
+  },
+  {
+   "url": "notices/94b03f1a60a7fd5007149530626a895a6ef5a8b9342abfd56860c5f3956f5d23.txt",
+   "sha256": "94b03f1a60a7fd5007149530626a895a6ef5a8b9342abfd56860c5f3956f5d23",
+   "bytes": 25265
+  },
+  {
+   "url": "notices/dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551.txt",
+   "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+   "bytes": 26530
+  },
+  {
+   "url": "notices/ddabf2be4dbf3d983bce354836ed5b72221aba21e807e308948f182423c79306.txt",
+   "sha256": "ddabf2be4dbf3d983bce354836ed5b72221aba21e807e308948f182423c79306",
+   "bytes": 883
+  },
+  {
+   "url": "notices/ac08f17bfcd1e8a9eab1b4cd86eb7cd609c35b3501284fa97ebf82fc034fc001.txt",
+   "sha256": "ac08f17bfcd1e8a9eab1b4cd86eb7cd609c35b3501284fa97ebf82fc034fc001",
+   "bytes": 1077
+  },
+  {
+   "url": "notices/9d5e61c11b7fb39807ee397cb902efcdd29b1d61a578bcf67afc39a75319f60e.txt",
+   "sha256": "9d5e61c11b7fb39807ee397cb902efcdd29b1d61a578bcf67afc39a75319f60e",
+   "bytes": 1414
+  },
+  {
+   "url": "notices/ee0e2749997200d05f317d121c2fe98cf21f7655285cd22d042b29acccd6dfe9.txt",
+   "sha256": "ee0e2749997200d05f317d121c2fe98cf21f7655285cd22d042b29acccd6dfe9",
+   "bytes": 2081
+  },
+  {
+   "url": "notices/33e4ff1a06ef62ba21788ea162564ee8165269a24a9ce6ef301837447eab0ac6.txt",
+   "sha256": "33e4ff1a06ef62ba21788ea162564ee8165269a24a9ce6ef301837447eab0ac6",
+   "bytes": 1098
+  },
+  {
+   "url": "notices/5647bc20c2aeae2164d72a27bc96315262d4fbf749b1fcb82d75f955395bb679.txt",
+   "sha256": "5647bc20c2aeae2164d72a27bc96315262d4fbf749b1fcb82d75f955395bb679",
+   "bytes": 3312
+  },
+  {
+   "url": "notices/5b7614c8b5f0fc8a88332984d0fc64e9b4989cf8cfb7a74dd0fe6cd91a322775.txt",
+   "sha256": "5b7614c8b5f0fc8a88332984d0fc64e9b4989cf8cfb7a74dd0fe6cd91a322775",
+   "bytes": 1736
+  },
+  {
+   "url": "notices/ecc26c87f90420fb025e3563231f00b983448b244fa36ef5a6ee4b69ab939bb2.txt",
+   "sha256": "ecc26c87f90420fb025e3563231f00b983448b244fa36ef5a6ee4b69ab939bb2",
+   "bytes": 2441
+  },
+  {
+   "url": "notices/b158ee0196388efcf852b8d54b7fc4fa71c49c983fd879cab6247c56198721d2.txt",
+   "sha256": "b158ee0196388efcf852b8d54b7fc4fa71c49c983fd879cab6247c56198721d2",
+   "bytes": 1638
+  },
+  {
+   "url": "notices/91df39d1816bfb17a4dda2d3d2c83b1f6f2d38d53e53e41e8f97ad5ac46a0cad.txt",
+   "sha256": "91df39d1816bfb17a4dda2d3d2c83b1f6f2d38d53e53e41e8f97ad5ac46a0cad",
+   "bytes": 17982
+  },
+  {
+   "url": "notices/6f3f6abc77a8d7ef26e003a4436e145b583f7621c7aaa795af75c0deddab6118.txt",
+   "sha256": "6f3f6abc77a8d7ef26e003a4436e145b583f7621c7aaa795af75c0deddab6118",
+   "bytes": 13780
+  },
+  {
+   "url": "notices/680aa3d935860a0c69c4d33af2a3b444567a4e4133e33ff5b1c2e5220cb9848b.txt",
+   "sha256": "680aa3d935860a0c69c4d33af2a3b444567a4e4133e33ff5b1c2e5220cb9848b",
+   "bytes": 13778
+  },
+  {
+   "url": "notices/16d9daaafbf63a31a5bdc91d4600972548fef5aaa1244202393288dbd079c49a.txt",
+   "sha256": "16d9daaafbf63a31a5bdc91d4600972548fef5aaa1244202393288dbd079c49a",
+   "bytes": 5345
+  },
+  {
+   "url": "notices/d3cd0d01f32365ab813cb7f8ebdb4b166868d68379bac89280ffd8f4a4d2cc7a.txt",
+   "sha256": "d3cd0d01f32365ab813cb7f8ebdb4b166868d68379bac89280ffd8f4a4d2cc7a",
+   "bytes": 1410
+  },
+  {
+   "url": "notices/f2c9fc00fdb66eb99ac156ba52d734af66d8d309f65753ae809ad34ee2883bcb.txt",
+   "sha256": "f2c9fc00fdb66eb99ac156ba52d734af66d8d309f65753ae809ad34ee2883bcb",
+   "bytes": 1070
+  },
+  {
+   "url": "notices/845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243.txt",
+   "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+   "bytes": 1002
+  },
+  {
+   "url": "notices/eb92020572a460079f998e343f7d622276f41e3a7853e6de0558ddfdfa795c8a.txt",
+   "sha256": "eb92020572a460079f998e343f7d622276f41e3a7853e6de0558ddfdfa795c8a",
+   "bytes": 2356
+  },
+  {
+   "url": "notices/cf866d372e8d50ab97634be15a91cfec265cda5717b685f9fc9a28f4c9b8cbb5.txt",
+   "sha256": "cf866d372e8d50ab97634be15a91cfec265cda5717b685f9fc9a28f4c9b8cbb5",
+   "bytes": 9496
+  },
+  {
+   "url": "notices/9eb3c61c2aec0557ce9a5d749f74eb2eb05c34063279d348354716236ed58f52.txt",
+   "sha256": "9eb3c61c2aec0557ce9a5d749f74eb2eb05c34063279d348354716236ed58f52",
+   "bytes": 22212
+  },
+  {
+   "url": "notices/3d262cdf34dafa6955f703c634a8c238ec44109bc8dd6ef34fb7aa54809f7e66.txt",
+   "sha256": "3d262cdf34dafa6955f703c634a8c238ec44109bc8dd6ef34fb7aa54809f7e66",
+   "bytes": 19102
+  },
+  {
+   "url": "notices/2e2ced3494d3e5f04345804b85c1acb67c23bdd742f3e71f8772f768a59ed451.txt",
+   "sha256": "2e2ced3494d3e5f04345804b85c1acb67c23bdd742f3e71f8772f768a59ed451",
+   "bytes": 14649
+  },
+  {
+   "url": "notices/f1c022008dc7e763b1625c121ac50f4bf635179c809ca987af65e984659ce492.txt",
+   "sha256": "f1c022008dc7e763b1625c121ac50f4bf635179c809ca987af65e984659ce492",
+   "bytes": 23821
+  },
+  {
+   "url": "notices/aa783fdd47e92743bafe79277ac4067d20339344dc5b64a09c2d0f869b2999dc.txt",
+   "sha256": "aa783fdd47e92743bafe79277ac4067d20339344dc5b64a09c2d0f869b2999dc",
+   "bytes": 12520
+  },
+  {
+   "url": "notices/df37bc99ee2ed981004fc36690f9dbd44045348ae1b63b7ef2894e5b02d0f1a5.txt",
+   "sha256": "df37bc99ee2ed981004fc36690f9dbd44045348ae1b63b7ef2894e5b02d0f1a5",
+   "bytes": 3608
+  },
+  {
+   "url": "notices/32efefa5813c6d5a256ab3824a90f0a7a79688e872926db87e4510ef0f3ee382.txt",
+   "sha256": "32efefa5813c6d5a256ab3824a90f0a7a79688e872926db87e4510ef0f3ee382",
+   "bytes": 3821
+  },
+  {
+   "url": "notices/e4fefd1eeeb4838060455cdfd560b914d5eadd4d242836dfccdf223ce1a61a65.txt",
+   "sha256": "e4fefd1eeeb4838060455cdfd560b914d5eadd4d242836dfccdf223ce1a61a65",
+   "bytes": 3934
+  },
+  {
+   "url": "notices/6b5b6133f2c82650d6fb0b53c13caad3042d1242ae3c680ac840e694a32ed69d.txt",
+   "sha256": "6b5b6133f2c82650d6fb0b53c13caad3042d1242ae3c680ac840e694a32ed69d",
+   "bytes": 1709
+  },
+  {
+   "url": "notices/ff60c4b3c1099ca7ec439fc3c7fa141f0ebde71ff0e54fd68b03de6a98151974.txt",
+   "sha256": "ff60c4b3c1099ca7ec439fc3c7fa141f0ebde71ff0e54fd68b03de6a98151974",
+   "bytes": 2918
+  },
+  {
+   "url": "notices/1baa0cba3f6004ac1277a25c79ab5efb45011102f9ef2ab3a5b7d262088a1f5a.txt",
+   "sha256": "1baa0cba3f6004ac1277a25c79ab5efb45011102f9ef2ab3a5b7d262088a1f5a",
+   "bytes": 6904
+  },
+  {
+   "url": "notices/e228b6fe1c1454157915e2842d2a6d05e92a662f70cf088bc1636614bf5791ef.txt",
+   "sha256": "e228b6fe1c1454157915e2842d2a6d05e92a662f70cf088bc1636614bf5791ef",
+   "bytes": 432211
+  },
+  {
+   "url": "notices/bdc52c0c66d1b1f98015fe4c845b5406587dd2ca729d5776a05773ad67fe5952.txt",
+   "sha256": "bdc52c0c66d1b1f98015fe4c845b5406587dd2ca729d5776a05773ad67fe5952",
+   "bytes": 3439
+  },
+  {
+   "url": "notices/dd204a11d40bdce127f47bc4f30bd775513d0eca5dd6e1a158714ee4d576e7da.txt",
+   "sha256": "dd204a11d40bdce127f47bc4f30bd775513d0eca5dd6e1a158714ee4d576e7da",
+   "bytes": 2798
+  },
+  {
+   "url": "notices/d7375e3982a2e0afc471f8900c46ac6ea41b1112de1f5cdb9ca5c820adf25a33.txt",
+   "sha256": "d7375e3982a2e0afc471f8900c46ac6ea41b1112de1f5cdb9ca5c820adf25a33",
+   "bytes": 5115
+  },
+  {
+   "url": "notices/169dd648656f147a93e6ed059b53b3e983cc9a8746d931dd291baa3e00f0bfb5.txt",
+   "sha256": "169dd648656f147a93e6ed059b53b3e983cc9a8746d931dd291baa3e00f0bfb5",
+   "bytes": 1697
+  },
+  {
+   "url": "notices/6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822.txt",
+   "sha256": "6078ed582d53a416f761fd2fdeb384320b69191bf316234c21aabe71e2416822",
+   "bytes": 4356
+  },
+  {
+   "url": "notices/a485b160d5cdd410a9390f39abcb9ef5842072b1a9b376f8e3cda79a8182f86e.txt",
+   "sha256": "a485b160d5cdd410a9390f39abcb9ef5842072b1a9b376f8e3cda79a8182f86e",
+   "bytes": 4356
+  },
+  {
+   "url": "notices/3ab489ffc8dc50e48d51ebff3a7f3eb88bd67ad276c52fee9423d7354575c691.txt",
+   "sha256": "3ab489ffc8dc50e48d51ebff3a7f3eb88bd67ad276c52fee9423d7354575c691",
+   "bytes": 4368
+  },
+  {
+   "url": "notices/c7f8be3da310abe408e8df54761e27c13448069afa56b231f825ad421f3bf944.txt",
+   "sha256": "c7f8be3da310abe408e8df54761e27c13448069afa56b231f825ad421f3bf944",
+   "bytes": 3269
+  },
+  {
+   "url": "notices/f0c71e16523be44cf839e830de1e1da07ec2099e5f8ccaffded1450be9e62aec.txt",
+   "sha256": "f0c71e16523be44cf839e830de1e1da07ec2099e5f8ccaffded1450be9e62aec",
+   "bytes": 4427
+  },
+  {
+   "url": "notices/7cac4a4a78985ccb1ed429bb2eddf32eeb2e413c94493c7b268385bb7b525250.txt",
+   "sha256": "7cac4a4a78985ccb1ed429bb2eddf32eeb2e413c94493c7b268385bb7b525250",
+   "bytes": 33548
+  },
+  {
+   "url": "notices/49ea6cb9257bbee0a3979c48a774cd221550ac1c20c95549efe45fc99cc18050.txt",
+   "sha256": "49ea6cb9257bbee0a3979c48a774cd221550ac1c20c95549efe45fc99cc18050",
+   "bytes": 1377
+  },
+  {
+   "url": "notices/402c79f4ede8548a6fe6f82f42f0288cb0243ba2403dfdeeaadf55d189a46fae.txt",
+   "sha256": "402c79f4ede8548a6fe6f82f42f0288cb0243ba2403dfdeeaadf55d189a46fae",
+   "bytes": 52635
+  },
+  {
+   "url": "notices/6a4c447a99f11efed6c3af5ca3e34c37b56638877c6080c4d5d4326e6c741d86.txt",
+   "sha256": "6a4c447a99f11efed6c3af5ca3e34c37b56638877c6080c4d5d4326e6c741d86",
+   "bytes": 6631
+  },
+  {
+   "url": "notices/84f9598df562544653abe4136e54f45a78cfce0c4d8bec24601c5f10f261be2d.txt",
+   "sha256": "84f9598df562544653abe4136e54f45a78cfce0c4d8bec24601c5f10f261be2d",
+   "bytes": 847
+  },
+  {
+   "url": "notices/d2877369dcb4bfe7b1b6bba1a3d96c46e93366459c9b46576f1b221009bbe359.txt",
+   "sha256": "d2877369dcb4bfe7b1b6bba1a3d96c46e93366459c9b46576f1b221009bbe359",
+   "bytes": 1608
+  },
+  {
+   "url": "notices/4b7b784c675b87fa2219ee3adcc2c2055c2e116eaa03939d14a7b697d0a90676.txt",
+   "sha256": "4b7b784c675b87fa2219ee3adcc2c2055c2e116eaa03939d14a7b697d0a90676",
+   "bytes": 21394
+  },
+  {
+   "url": "notices/7a534711552e77853e1f56973e02d333ff5c27b923f7b52e99aa922c2d7f0f07.txt",
+   "sha256": "7a534711552e77853e1f56973e02d333ff5c27b923f7b52e99aa922c2d7f0f07",
+   "bytes": 3871
+  },
+  {
+   "url": "notices/c86e9125eb42202d921e9234e519c88e765f253f5532d321e2bdbbe8f335675f.txt",
+   "sha256": "c86e9125eb42202d921e9234e519c88e765f253f5532d321e2bdbbe8f335675f",
+   "bytes": 4322
+  },
+  {
+   "url": "notices/f16af8dde5d0bdc8d6a8c243a714985ce9f9f52d72f062926d3c44448a0e3e9b.txt",
+   "sha256": "f16af8dde5d0bdc8d6a8c243a714985ce9f9f52d72f062926d3c44448a0e3e9b",
+   "bytes": 1116
+  },
+  {
+   "url": "notices/font-index-derivation.json",
+   "sha256": "f410ed86a4de88266799fc9da30ada76fccf144f0118f1316879b519f3543beb",
+   "bytes": 925
+  },
+  {
+   "url": "notices/font-source-offer.json",
+   "sha256": "91d93ca10b12ba0f84091813c944f8394289889f5bd72c4465c95ac5137ef6b1",
+   "bytes": 6323
+  },
+  {
+   "url": "notices/font-source-offer.txt",
+   "sha256": "4cb756ce11c33b49901c426f9874fc1055c9cc543fd044529d506dc324c3e95b",
+   "bytes": 4068
+  },
+  {
+   "url": "notices/package-source-offer.json",
+   "sha256": "02963e24dbc0e517b73a2e2cf41d9ec498260f9b16b0c7e225ee832e1648f4b9",
+   "bytes": 2821
+  },
+  {
+   "url": "notices/babel-LPPL.txt",
+   "sha256": "5f05fcf6ef25a6c31bccd2df7c0c46b23107bbeb2ce5cdba74efb5cc357f4dbb",
+   "bytes": 19106
+  },
+  {
+   "url": "notices/babel-README.txt",
+   "sha256": "a1e6ea2fdbbeddd0f0bd455ffaabfc9b29f9e0e6e99e3623d791feaee7e0991b",
+   "bytes": 2466
+  },
+  {
+   "url": "notices/babel-english-README.txt",
+   "sha256": "0b777fbac4dceaff1bff302ee2440c81c2394deb1756f1c8b04d1c94c1965525",
+   "bytes": 308
+  }
+ ],
+ "correspondingSource": {
+  "url": "https://github.com/spincyc/triptych-artifacts/releases/download/native-tex-runtime-2026-47ff73bab1a2e548-v1/wasmtex-2026-47ff73bab1a2e548-source.tar.xz",
+  "bytes": 156842160,
+  "sha256": "feb99c1a339643f5711487f75e86505df904df0686b2e71e10750c2766afa225"
+ },
+ "delivery": {
+  "memberPrefix": "native-tex/wasmtex-2026-47ff73bab1a2e548/",
+  "archives": [
+   {
+    "name": "triptych-native-tex-runtime-0001-ffec64052785212f.tar",
+    "sha256": "ffec64052785212ff0e30f75111d071d13f2d6659ac794dc08940c2613bcc76f",
+    "bytes": 98652160,
+    "urls": [
+     "https://github.com/spincyc/colophon/releases/download/runtime-wasmtex-2026-47ff73bab1a2e548-v1/colophon-runtime-wasmtex-2026-47ff73bab1a2e548.tar",
+     "https://github.com/spincyc/triptych-artifacts/releases/download/native-tex-runtime-2026-47ff73bab1a2e548-v1/triptych-native-tex-runtime-0001-ffec64052785212f.tar"
+    ]
+   }
+  ]
+ },
+ "subset": {
+  "of": "463c9e83358d15d75df2e4bbb0840d1c1c09ca837cabb32e6b13c8f8329a2e2d",
+  "note": "Files opened while typesetting tools/lib/pdf-corpus.js (node tools/native-tex.js derive)."
+ },
+ "registry_sha256": "ef9152547704b6f56da01055f038eda55a0576f14c9cf132e1c06f1338a70bda"
+}
