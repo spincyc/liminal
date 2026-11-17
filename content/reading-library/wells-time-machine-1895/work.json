@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "wells-time-machine-1895",
+  "author": "H. G. Wells",
+  "title": "The Time Machine",
+  "translator": null,
+  "edition": "Original English, London: William Heinemann, 1895 (MDCCCXCV on title page); scan-backed Wikisource Heinemann text, not the distinct Holt version. Selected paragraphs preserve transcription spelling and punctuation; HTML styling and page-number anchors removed, line-wrap whitespace reflowed, invisible zero-width page markers removed. Epilogue heading retained.",
+  "publicationYear": 1895,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/The_Time_Machine_(Heinemann_text)",
+  "textUrl": "https://en.wikisource.org/wiki/The_Time_Machine_(Heinemann_text)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The title page dates this original-English William Heinemann edition to 1895, before 1931. Wikisource explicitly identifies this edition as public domain in the United States. Project Gutenberg catalog 35 corroborates US public-domain status of the English work; the dated Heinemann transcription supplies these excerpts.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/The_Time_Machine_(Heinemann_text)"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2&prop=text%7Crevid&page=The_Time_Machine_(Heinemann_text)",
+    "downloadSha256": "9eedd1d14f2ed923114d8e70c822a723997362f4c84db56e615654008604fba4",
+    "method": "MediaWiki API action=parse (formatversion 2, prop text|revid) for the main page and its sixteen chapter subpages in printed order; downloadUrl is the main page's call, each chapter used the same call with page=The_Time_Machine_(Heinemann_text)/Chapter_N, and downloadSha256 hashes the seventeen API responses concatenated in that order. From the main page only Wells's prefatory NOTE and the dedication are kept (publisher's advertisements, title page and contents left out); from the chapters the transcluded text, with header templates, licence footer, page-number anchors, zero-width page markers, the printer's imprint and line-wrap whitespace removed and italic styling dropped. Each chapter's numeral and title are joined into one level-2 heading, the Epilogue heading is level 2, the title level 1. Files in order, each https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2&prop=text%7Crevid&page= followed by the page title with underscores (revision fetched): The_Time_Machine_(Heinemann_text) (rev 14499179); The_Time_Machine_(Heinemann_text)/Chapter_1 (rev 13194353); The_Time_Machine_(Heinemann_text)/Chapter_2 (rev 13194355); The_Time_Machine_(Heinemann_text)/Chapter_3 (rev 13194358); The_Time_Machine_(Heinemann_text)/Chapter_4 (rev 13194360); The_Time_Machine_(Heinemann_text)/Chapter_5 (rev 13194362); The_Time_Machine_(Heinemann_text)/Chapter_6 (rev 13194364); The_Time_Machine_(Heinemann_text)/Chapter_7 (rev 13194366); The_Time_Machine_(Heinemann_text)/Chapter_8 (rev 13194369); The_Time_Machine_(Heinemann_text)/Chapter_9 (rev 13194377); The_Time_Machine_(Heinemann_text)/Chapter_10 (rev 13194378); The_Time_Machine_(Heinemann_text)/Chapter_11 (rev 13194380); The_Time_Machine_(Heinemann_text)/Chapter_12 (rev 13194383); The_Time_Machine_(Heinemann_text)/Chapter_13 (rev 13194385); The_Time_Machine_(Heinemann_text)/Chapter_14 (rev 13194387); The_Time_Machine_(Heinemann_text)/Chapter_15 (rev 13194388); The_Time_Machine_(Heinemann_text)/Chapter_16 (rev 13194397). The book's one footnote (the narrator's editorial note signed Ed. in chapter XI) stays where the transcription places it, at the end of that chapter, in the form [Footnote 1: text], with its [1] anchor kept in the running text."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 327,
+    "sha256": "ca2680af610499c4a9b3e7ce1b4116aea8a973c755a72f8e6cb7730ecaf69e56"
+  }
+}

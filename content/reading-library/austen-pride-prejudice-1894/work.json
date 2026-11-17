@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "austen-pride-prejudice-1894",
+  "author": "Jane Austen",
+  "title": "Pride and Prejudice",
+  "translator": null,
+  "edition": "London: George Allen, 1894, with illustrations by Hugh Thomson; Project Gutenberg 1342 HTML transcription. Novel body only, excluding illustration captions, page numbers, and editorial front matter. HTML entities decoded; italic/small-cap markup becomes plain text; decorative initial image alt text supplies the printed initial letters. Prose line wraps are joined, and paragraphs physically interrupted by illustrations are rejoined when the continuation is marked nind and begins in lowercase. Original wording, punctuation, and paragraph boundaries otherwise retained.",
+  "publicationYear": 1894,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/1342",
+  "textUrl": "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The downloaded title matter identifies the 1894 English edition. This publication predates 1931 and its United States copyright term has expired. Project Gutenberg explicitly identifies this transcription as public domain in the USA. Only historical work text is supplied, without later editorial commentary.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/1342"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/1/3/4/1342/1342-h/1342-h.htm",
+    "downloadSha256": "89d7fe7e4a048b7d3549aa95eb84275d9f55fd4ccc4bb847c443c35eec45fcf8",
+    "method": "Project Gutenberg 1342 HTML (1342-h.htm) from the PG mirror aleph.pglaf.org. Kept Chapters I to LXI; removed the PG header and footer, George Saintsbury's preface, the title pages, contents and list of illustrations, illustrations and captions, page numbers and the printer's imprint. Each P is one paragraph with line-wrap whitespace collapsed; the decorative initial images are replaced by their alt-text letters; the seven paragraphs interrupted by an illustration (continuation marked nind and beginning in lower case) are rejoined with a space; italic and small-capital markup becomes plain text. Chapter headings are level-2 headings under the book title."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 2113,
+    "sha256": "3d3606660a56cbefd0145d711d4b8db29ed9d3836dacd32a0af41e8cfd85ab53"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "hughes-weary-blues-1926",
+  "author": "Langston Hughes",
+  "title": "The Weary Blues",
+  "translator": null,
+  "edition": "New York: Alfred A. Knopf, 1926. Project Gutenberg English transcription, eBook 74745. HTML verse-line and stanza boundaries retained; indentation and within-line whitespace normalized; page-number furniture omitted; typography and transcription spellings retained. No introduction or digitizer notes included.",
+  "publicationYear": 1926,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/74745",
+  "textUrl": "https://www.gutenberg.org/cache/epub/74745/pg74745-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1926, before 1931, and its US term has expired by 2026. Project Gutenberg explicitly identifies this eBook as public domain in the USA. No later introduction, translation, or editorial notes are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/74745"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/74745/pg74745-images.html",
+    "downloadSha256": "d967fc509edaa69278add2fe6c3cac53522e7f340e91ba88658da1a7e8b300d5",
+    "method": "Project Gutenberg 74745 HTML from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, contents, images, page numbers and transcriber matter, and Carl Van Vechten's introduction. Kept the author's dedication and acknowledgment, then every section and poem in printed order: section and poem titles as headings (level 2 and 3), each stanza element one stanza with its verse lines, indentation removed; dedication lines and epigraphs as paragraphs; HTML italics as _underscores_. PG's marked corrections (two title readings) are kept as the transcription prints them."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 250,
+    "sha256": "34191e930de08968119daaf47ebde4321356aab5444578921577ede61a51821a"
+  }
+}

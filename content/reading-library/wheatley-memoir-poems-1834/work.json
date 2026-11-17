@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "wheatley-memoir-poems-1834",
+  "author": "Phillis Wheatley",
+  "title": "Poems, in Memoir and Poems of Phillis Wheatley, a Native African and a Slave",
+  "translator": null,
+  "edition": "Boston: Geo. W. Light, 1834. Poems only, excluding Margaretta Matilda Odell’s memoir. UNC Documenting the American South transcription identifies the Duke University copy C-7 W557M and the exact 1834 source. This printing’s spelling, punctuation, titles, poetic lines and stanza divisions are preserved; HTML markup, indentation and page labels removed. The library text holds the 1773 Poems on Various Subjects as this 1834 edition reprints them, with Wheatley's dedication, every poem and its notes; Margaretta Matilda Odell's memoir and the 1773 front matter by others (preface, John Wheatley's letter, the attestation) are not held.",
+  "publicationYear": 1834,
+  "translationYear": null,
+  "url": "https://docsouth.unc.edu/neh/wheatley/menu.html",
+  "textUrl": "https://docsouth.unc.edu/neh/wheatley/wheatley.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The identified Boston 1834 edition was published before 1931; its US copyright term has expired. UNC marks the source No Copyright in US. Only historical poem text is reproduced, not modern introductory material.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://docsouth.unc.edu/neh/wheatley/wheatley.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://docsouth.unc.edu/neh/wheatley/wheatley.html",
+    "downloadSha256": "2859939a2a0b719ea3c743f5ed6ab62bf0d9fa2f2e57e922326cb1ea5a93ce82",
+    "method": "UNC Documenting the American South HTML (read as Latin-1), converted with a scratch tokenizer over the poems' part of the book, from its title page (POEMS ON VARIOUS SUBJECTS, RELIGIOUS AND MORAL. BY PHILLIS WHEATLEY., a level-1 heading, its imprint a paragraph) to FINIS.; the site header and footer, the 1834 title pages and Odell's memoir before it, the 1773 preface, John Wheatley's letter and the attestation TO THE PUBLIC (front matter by others), the page-image links and the page labels are left out. Section and poem titles (H3, a title's own line break joined with a space) are level-2 headings; prose paragraphs join their lines with single spaces (the dedication's printed line breaks and the attestation's list of names are kept as lines within one paragraph); verse lines (each BR-started line, layout spaces removed) form stanzas that end at each empty P, a page label inside a stanza not ending it. The page-foot notes stay after the block in which the transcription places them, in the form [Footnote mark: text] with the printed asterisk as the mark, and their references keep the printed asterisks in the running text."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds the Poems on Various Subjects part of the 1834 Memoir and Poems (Wheatley's dedication, every poem and the page-foot notes); Odell's memoir and the 1773 front matter by others are not held."
+  },
+  "text": {
+    "blocks": 240,
+    "sha256": "7d69c2be61d0f1b53ceb64ccdf0f62b76ac9c61913f89215e54ae68e563e0650"
+  }
+}

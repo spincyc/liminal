@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "poe-raven-other-poems-1845",
+  "author": "Edgar Allan Poe",
+  "title": "The Raven and Other Poems",
+  "translator": null,
+  "edition": "New York: Wiley and Putnam, 1845. Original printed poem text transcribed by the Edgar Allan Poe Society of Baltimore; each selection locator names its individual transcription URL. HTML markup, page-location labels and modern double-bracket correction suggestions are excluded while the printed words preceding them remain. HTML entities decoded and layout spaces normalized; poetic line and stanza boundaries preserved. The library text holds the whole 1845 volume: the dedication, preface, every poem, the Politian scenes, POEMS WRITTEN IN YOUTH and Poe's notes.",
+  "publicationYear": 1845,
+  "translationYear": null,
+  "url": "https://www.eapoe.org/works/editions/raopc.htm",
+  "textUrl": "https://www.eapoe.org/works/editions/raop.htm",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original-English text in this 1845 edition was published well before 1931 and its US term has expired. The repository reproduces the dated 1845 printed edition; modern editorial notes and page labels are excluded.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.eapoe.org/works/editions/raopc.htm"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://www.eapoe.org/works/editions/raopc.htm",
+    "downloadSha256": "5e81400722b1fbc3862d4815a85d262546c85caeb98cffed35d4d7b0f47a91b7",
+    "method": "Edgar Allan Poe Society of Baltimore XHTML pages for the 1845 printing, fetched in the volume's contents order and hashed as one concatenation in this order: https://www.eapoe.org/works/editions/raopc.htm, https://www.eapoe.org/works/editions/raopded.htm, https://www.eapoe.org/works/misc/raoppref.htm, https://www.eapoe.org/works/poems/ravenj.htm, https://www.eapoe.org/works/poems/valleye.htm, https://www.eapoe.org/works/poems/bridale.htm, https://www.eapoe.org/works/poems/sleeperh.htm, https://www.eapoe.org/works/poems/colisemj.htm, https://www.eapoe.org/works/poems/lenoref.htm, https://www.eapoe.org/works/poems/hymng.htm, https://www.eapoe.org/works/poems/israfelf.htm, https://www.eapoe.org/works/poems/drmlandc.htm, https://www.eapoe.org/works/poems/zantee.htm, https://www.eapoe.org/works/poems/cityseae.htm, https://www.eapoe.org/works/poems/paradsm.htm, https://www.eapoe.org/works/poems/eulaliee.htm, https://www.eapoe.org/works/poems/toe01f.htm, https://www.eapoe.org/works/poems/francese.htm, https://www.eapoe.org/works/poems/silencef.htm, https://www.eapoe.org/works/poems/cwormf.htm, https://www.eapoe.org/works/poems/palacej.htm, https://www.eapoe.org/works/poems/politnd.htm, https://www.eapoe.org/works/poems/sciencej.htm, https://www.eapoe.org/works/poems/aaraafk.htm, https://www.eapoe.org/works/poems/tamerlnh.htm, https://www.eapoe.org/works/poems/dreame.htm, https://www.eapoe.org/works/poems/romanceg.htm, https://www.eapoe.org/works/poems/fairylh.htm, https://www.eapoe.org/works/poems/to02d.htm, https://www.eapoe.org/works/poems/riverg.htm, https://www.eapoe.org/works/poems/lakef.htm, https://www.eapoe.org/works/poems/songf.htm, https://www.eapoe.org/works/poems/tohelnf.htm. The first page (title page and contents) gives the level-1 heading; from every other page only the transcription panels (pnltextm) are converted, leaving out the site navigation, the society's headers, notes and variant listings. Page-location labels, the Society's double-bracket correction suggestions (the printed words before them kept), its bracketed statements of where footnotes fall, its [[Footnotes]] headings and one bracketed attribution it adds to a note ([William Shakespeare]) are removed; ornament rows and the half-title repeated on page 1 are dropped; HTML entities decoded, thin and layout spaces normalised to single spaces, italics and small capitals rendered as plain text. Poem and section titles are headings (level 2; the poems after POEMS WRITTEN IN YOUTH. at level 3), the scene numbers of Politian level-3 headings, and the Al Aaraaf part labels, stage directions, preface prose and the dedication (its lines kept) paragraphs; each run of verse lines up to a stanza break is a stanza with indentation removed. Poe's footnotes follow the poem as the Society places them, each in the form [Footnote mark: text] with the printed mark (a note running over several blocks closes its bracket on the last), and their references keep the printed mark in the running text."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 377,
+    "sha256": "652e9a0dbefe3a8fb8923edb21439202680e66430294427f43faf5f3b348fbee"
+  }
+}

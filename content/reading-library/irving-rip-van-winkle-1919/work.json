@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "irving-rip-van-winkle-1919",
+  "author": "Washington Irving",
+  "title": "Rip Van Winkle",
+  "translator": null,
+  "edition": "London: William Heinemann; New York: Doubleday, Page & Co. Cheaper issue (1916), new impression 1919, as stated in the printed publication history reproduced by PG60976. Story text only; illustration captions excluded; prose hard wraps reflowed. The separate introduction, Note and Postscript are outside the selected main-narrative scenes. The library text holds Irving's whole Rip Van Winkle as this edition prints it, with its introduction, note and postscript; Rackham's illustrations and their captions are not held.",
+  "publicationYear": 1919,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/60976",
+  "textUrl": "https://www.gutenberg.org/cache/epub/60976/pg60976.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original-English text in this 1919 edition was published well before 1931 and its US term has expired. The named Project Gutenberg catalogue explicitly records public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/60976"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/60976/pg60976.txt",
+    "downloadSha256": "3085b99a7b6a9d5f527dfb97351c858a6f7fc97f2c654570f5defbbfb50e5042",
+    "method": "Project Gutenberg 60976 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept Irving's text from the Cartwright motto through the INTRODUCTION, the tale, the NOTE and the POSTSCRIPT; removed the PG header and footer, the publisher's list of Rackham books, the title and publication-history pages, the list of illustrations, every illustration marker and caption, the printer's imprint and the transcriber's note. The book's title (RIP VAN WINKLE, from its title page) is a level-1 heading and the four section titles level-2 headings; prose lines joined with single spaces, the transcription's spacing within lines kept; the indented motto, with its right-set attribution, is a stanza with indentation removed."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 75,
+    "sha256": "c5dccabdcf878d3255a9db259c13cb0dbebe82161a5f2f74ca3daed62e964b37"
+  }
+}

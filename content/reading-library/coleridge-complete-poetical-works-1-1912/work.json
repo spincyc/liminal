@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "coleridge-complete-poetical-works-1-1912",
+  "author": "Samuel Taylor Coleridge",
+  "title": "The Complete Poetical Works of Samuel Taylor Coleridge, Volume I: Poems",
+  "translator": null,
+  "edition": "Edited by Ernest Hartley Coleridge. Oxford: Clarendon Press, 1912, as the transcribed title page states. The seven Mariner parts retain all verse and interleaved marginal gloss in this edition, including its bracketed wording variant within one gloss. Kubla Khan supplies the complete published verse fragment, without its prose preface. Poetry line and stanza breaks and transcription emphasis marks are retained. Printed right-margin line numbers and numeric footnote-reference anchors are removed; the separate textual/bibliographic apparatus is not selected. Marginal-gloss hard wraps are joined to spaces, without the plain-text transcription’s “Sidenote” labels (each gloss is a separate paragraph, as in the HTML transcription); outer block whitespace is trimmed. No verse wording is modernized. Text follows the Project Gutenberg plain-text file (pg29091.txt).",
+  "publicationYear": 1912,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/29091",
+  "textUrl": "https://www.gutenberg.org/ebooks/29091.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The English Clarendon Press edition is explicitly dated 1912 on its title page, before 1931. Its US copyright term has expired as of 2026; Project Gutenberg separately marks this edition public domain in the USA. Coleridge’s original English poems need no translator.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/29091"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/29091/pg29091.txt",
+    "downloadSha256": "bebf30e6e781dd7ecdd882b895492a5c00a29be4929cc6f2b155007049ea80c5",
+    "method": "Project Gutenberg 29091 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept the POEMS section of volume I (from its POEMS heading to the index of first lines); removed the PG header and footer, the transcriber's notes, title page, the editor's preface, contents, the index, every LINENOTES and FOOTNOTES block (the editor's textual and bibliographical notes) and the bracketed footnote reference anchors. Each section that the transcription opens after four blank lines starts with its title as a level-2 heading; single-line capitalised labels (PART I, FIRST VOICE) are headings (level 3 when indented), and lone stanza numerals level-3 headings. Verse paragraphs are stanzas with right-margin line numbers removed and the block's outer whitespace trimmed (inner indentation kept); marginal glosses become paragraphs without their Sidenote labels; prose lines are joined with single spaces. The transcription's italics underscores, {superscript} braces and editorial brackets are kept."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds every poem of volume I (Poems) with Coleridge's own prefaces, arguments and glosses, in printed order; Ernest Hartley Coleridge's preface, contents, index, line notes and footnotes (which also carry a few of Coleridge's own notes) are not held."
+  },
+  "text": {
+    "blocks": 2505,
+    "sha256": "8b28d7f946d2a03dc25aa83807d21c5de399e540511eb923ad8625d9a8448676"
+  }
+}

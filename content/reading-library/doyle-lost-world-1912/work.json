@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "doyle-lost-world-1912",
+  "author": "Arthur Conan Doyle",
+  "title": "The Lost World",
+  "translator": null,
+  "edition": "Original English, Hodder and Stoughton, London/New York/Toronto, from the scan-backed Wikisource transcription of “The Lost World.djvu”. The title page names the publisher but is undated; the year 1912 comes from the scan index metadata and matches the first Hodder and Stoughton edition. Selected prose follows the scan: HTML styling, page-number anchors and zero-width page markers are removed and line-wrap whitespace is reflowed. Illustrations and their captions are excluded; paragraphs interrupted by inserted illustration leaves are rejoined at the exact continuations. Where the transcription departs from the scan, the scan’s reading is adopted: off-coloured and dull grey landscape (p. 55), plus 53 further readings (54 places) in selected passages (for example humour, colour, slate-coloured, grey, sharp-like, programme, kerb, “vegetation, fringed”, “completed our circuit”, “it was over. Thirty”). Each was confirmed by OCR of the scan page together with at least one independent print witness (archive.org dli.ministry.16512, Hodder and Stoughton; in.ernet.dli.2015.149086); the full list and method are kept in the curator’s fidelity scratch. No narrative words are omitted or added. The library text is the Wikisource transcription with the scan readings above adopted only at the places the nights cover; elsewhere the transcription stands as published and was not checked against the scan.",
+  "publicationYear": 1912,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:The_Lost_World.djvu",
+  "textUrl": "https://en.wikisource.org/wiki/The_Lost_World",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This Hodder and Stoughton English edition is dated 1912 by the Wikisource scan index (the title page itself is undated; the novel was first published in book form in 1912), before 1931; the title page names its publisher. Wikisource identifies the work as public domain in the United States. These passages use that scan-backed text, not an inferred print exemplar for Project Gutenberg 139.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:The_Lost_World.djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2&prop=text%7Crevid&page=The_Lost_World",
+    "downloadSha256": "5f611bc7c371bfea5790f03dc26d0e345e99610e69bdeb858c893145301fb4bb",
+    "method": "MediaWiki API action=parse (formatversion 2, prop text|revid) for the main page and its sixteen chapter subpages (Chapter I to Chapter XVI) in printed order; downloadUrl is the main page's call, each chapter used the same call with page=The_Lost_World/Chapter_N, and downloadSha256 hashes the seventeen API responses concatenated in that order. From the main page only Doyle's verse epigraph and the FOREWORD are kept (frontispiece, title page and contents left out); from the chapters every transcluded page block, with header templates, licence footer, page-number anchors, zero-width page markers, inserted plates with their captions and facing-page notes, the closing THE END and line-wrap whitespace removed, small capitals and italic styling dropped, and paragraphs broken by a plate leaf rejoined. Each chapter's number and title are one level-2 heading. The scan readings the edition adopts were applied as token replacements found by aligning each night with the transcription, at exactly these places (zero-based text.jsonl lines; ∅ is nothing): line 59 “,”→∅; line 60 ∅→“,”; line 67 ∅→“a ”; line 137 “exceeding”→“exceedingly”; line 138 “,”→“.”; line 140 “humor”→“humour”; line 151 ∅→“,”; line 262 “matter”→“latter”; line 268 “color”→“colour”; line 268 “color”→“colour”; line 268 ∅→“,”; line 272 “,”→∅; line 272 ∅→“the ”; line 280 “Catharine”→“Catherine”; line 297 ∅→“,”; line 316 “colored”→“coloured”; line 316 “gray”→“grey”; line 330 “the”→“a”; line 428 “curb”→“kerb”; line 515 ∅→“,”; line 535 “,”→∅; line 590 ∅→“,”; line 641 “first ”→∅; line 653 ∅→“,”; line 666 “trees”→“tree”; line 666 ∅→“that ”; line 747 “colored”→“coloured”; line 852 “onto”→“on to”; line 900 ∅→“,”; line 902 “colored”→“coloured”; line 903 “exist”→“exists”; line 904 “,”→∅; line 908 ∅→“,”; line 945 ∅→“on ”; line 947 ∅→“then ”; line 948 ∅→“,”; line 951 “telling”→“tellin'”; line 951 “sitting”→“sittin'”; line 951 “,”→∅; line 954 “knittin'”→“knitting”; line 955 ∅→“,”; line 971 “,”→∅; line 971 “coloring”→“colouring”; line 972 ∅→“up ”; line 977 “,”→∅; line 1049 “was”→“were”; line 1051 “companion”→“companions”; line 1051 “s”→∅; line 1051 “forever”→“for ever”; line 1056 “,”→“.”; line 1056 “forever”→“for ever”; line 1113 “Then”→“When”; line 1123 ∅→“,”; line 1128 “the”→“our”; line 1171 “shark”→“sharp”; line 1171 “gray”→“grey”; line 1171 ∅→“,”; line 1172 “program”→“programme”. Files in order, each https://en.wikisource.org/w/api.php?action=parse&format=json&formatversion=2&prop=text%7Crevid&page= followed by the page title with underscores (revision fetched): The_Lost_World (rev 12052104); The_Lost_World/Chapter_I (rev 12049459); The_Lost_World/Chapter_II (rev 12049462); The_Lost_World/Chapter_III (rev 12049465); The_Lost_World/Chapter_IV (rev 12049467); The_Lost_World/Chapter_V (rev 12049470); The_Lost_World/Chapter_VI (rev 12049471); The_Lost_World/Chapter_VII (rev 12049472); The_Lost_World/Chapter_VIII (rev 12049473); The_Lost_World/Chapter_IX (rev 12049468); The_Lost_World/Chapter_X (rev 12049474); The_Lost_World/Chapter_XI (rev 6182895); The_Lost_World/Chapter_XII (rev 12049475); The_Lost_World/Chapter_XIII (rev 12049476); The_Lost_World/Chapter_XIV (rev 12049477); The_Lost_World/Chapter_XV (rev 6182896); The_Lost_World/Chapter_XVI (rev 12049478)."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1216,
+    "sha256": "832e6e47fe8ad8ffaaac4aa70e26db55b12554a7a9a37e83aabf396cdcf5c01d"
+  }
+}

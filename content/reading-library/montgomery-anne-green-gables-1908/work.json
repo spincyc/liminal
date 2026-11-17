@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "montgomery-anne-green-gables-1908",
+  "author": "L. M. Montgomery",
+  "title": "Anne of Green Gables",
+  "translator": null,
+  "edition": "Boston: L. C. Page & Company, fourth impression, September 1908 (copyright 1908; impression date printed in front matter). Project Gutenberg 64365 transcription prepared from Internet Archive scans. Prose line wrapping and verse indentation normalized; original paragraph boundaries, verse and letter-signature line breaks, spelling, punctuation and underscore emphasis retained. Illustration captions and digitizer material omitted.",
+  "publicationYear": 1908,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/64365",
+  "textUrl": "https://www.gutenberg.org/ebooks/64365.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English fourth impression was published in September 1908, as its front matter states, and its US copyright term has expired by 2026. Project Gutenberg explicitly marks this scan-based transcription public domain in the USA. No later introduction, translation, illustrations, or digitizer notes are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/cache/epub/64365/pg64365-images.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/64365/pg64365.txt",
+    "downloadSha256": "fa42f8e7269cb1836c27db17f788c8bb72318da2969acdf14c594ea649f32a22",
+    "method": "Project Gutenberg 64365 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept from the start of Chapter I to THE END; removed the PG header and footer, the title-page imprint, copyright leaf, contents list, illustration markers and the transcriber's note. Prose lines joined with single spaces; multi-line indented passages (verse, letter signatures) kept as stanza lines with their indentation removed. Chapter numbers are level-2 headings and chapter titles level-3 headings; the author's title, Browning epigraph and dedication open the text."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1877,
+    "sha256": "7d5bd013104e569a1068728e2b70ee5ad47c7068a6a9b43224edb65345dedb12"
+  }
+}

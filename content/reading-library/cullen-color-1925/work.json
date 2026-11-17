@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "cullen-color-1925",
+  "author": "Countee Cullen",
+  "title": "Color",
+  "translator": null,
+  "edition": "New York and London: Harper & Brothers, 1925. Project Gutenberg English transcription, eBook 70543. HTML verse-line and stanza boundaries retained; indentation and within-line whitespace normalized; page-number furniture omitted; typography and transcription spellings retained. No introduction or digitizer notes included.",
+  "publicationYear": 1925,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/70543",
+  "textUrl": "https://www.gutenberg.org/cache/epub/70543/pg70543-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1925, before 1931, and its US term has expired by 2026. Project Gutenberg explicitly identifies this eBook as public domain in the USA. No later introduction, translation, or editorial notes are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/70543"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/70543/pg70543-images.html",
+    "downloadSha256": "11d11f0d3d2663e09a84108ad3a7e09abefb6c24fa6f0d34a5482cc06c3fee49",
+    "method": "Project Gutenberg 70543 HTML from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, contents, images, page numbers and transcriber matter. Kept the dedication, the acknowledgment and its list of periodicals, then every section and poem in printed order: section and poem titles as headings (level 2 and 3), each stanza (or unstanzaed poem) one stanza block with its verse lines, indentation removed; dedications under titles as paragraphs; HTML italics as _underscores_. The author's one footnote (Spring, 1924) follows its poem, keeping PG's [A] anchor in the title, the note itself in the form [Footnote A: Spring, 1924]."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 311,
+    "sha256": "63a89fb7ef7d998ab60d4997294dde820df2ce626e5ef7b9479dd7788ac77666"
+  }
+}

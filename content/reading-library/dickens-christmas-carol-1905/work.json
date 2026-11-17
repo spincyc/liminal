@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "dickens-christmas-carol-1905",
+  "author": "Charles Dickens",
+  "title": "A Christmas Carol",
+  "translator": null,
+  "edition": "Original English text of the edition explicitly identified by Project Gutenberg 19337 as published in 1905: New York, The Platt & Peck Co.; front matter states Copyright, 1905, by The Baker & Taylor Company. Prose taken directly from that edition’s HTML transcription. Source paragraph boundaries, spelling and punctuation retained; HTML formatting and page-number anchors removed, within-paragraph line-wrap whitespace reflowed. The edition’s introduction and illustrations are not included.",
+  "publicationYear": 1905,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/19337",
+  "textUrl": "https://www.gutenberg.org/files/19337/19337-h/19337-h.htm",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "Project Gutenberg identifies this particular edition as published in 1905, gives its 1905 copyright statement and explicitly marks eBook 19337 public domain in the USA. The original-English prose edition predates 1931; no modern introduction or illustration is supplied.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/19337"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/1/9/3/3/19337/19337-h/19337-h.htm",
+    "downloadSha256": "798def8b4dab44c2f6d0c7cb039539416ad1ae9ed1190959f94c046714f887cc",
+    "method": "Project Gutenberg 19337 HTML (19337-h.htm, ISO-8859-1) from the PG mirror aleph.pglaf.org. Kept everything from the second title (A CHRISTMAS CAROL, In Prose, Being a Ghost Story of Christmas) through the end of Stave Five; removed the PG header and footer, the title page, the edition's introduction, contents and list of illustrations, illustrations and captions, and page numbers. Each P is one paragraph with line-wrap whitespace collapsed; the carol couplet is one stanza; headings keep their levels (titles level 2, subtitles level 3); italics are not marked."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 721,
+    "sha256": "21ae0ae267bf4f4e6f9b67ec571d72e3e9f55c810396661083cd894bc6f99309"
+  }
+}

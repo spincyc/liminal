@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "johnson-fifty-years-1917",
+  "author": "James Weldon Johnson",
+  "title": "Fifty Years & Other Poems",
+  "translator": null,
+  "edition": "Boston: The Cornhill Company, 1917; dated title page. Only Johnson’s original English poems are selected. Prose line wraps are reflowed to spaces; paragraph boundaries and poetry line/stanza breaks are retained. Outer block whitespace, illustration markers, and publisher/digitizer matter are omitted; original transcription punctuation and emphasis conventions are retained. Text follows the Project Gutenberg plain-text file, including its underscore emphasis and double-hyphen dash conventions.",
+  "publicationYear": 1917,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/17884",
+  "textUrl": "https://www.gutenberg.org/ebooks/17884.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text/edition was published in 1917, before 1931, and its US publication term has expired as of 2026. Project Gutenberg explicitly identifies this transcription as public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/17884"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/17884/pg17884.txt",
+    "downloadSha256": "be3b01494c9a2e711d0d93d454743328208912ce22cae00e6d5463585e85038b",
+    "method": "Project Gutenberg 17884 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Removed the PG header and footer, the title page, contents and Brander Matthews's introduction; kept the dedication, the acknowledgment and every poem in printed order, including the translations and the Jingles & Croons section and the closing italic envoi. Poem and section titles are level-2 headings (title and subtitle lines joined by line breaks); stanzas keep their lines with the block's outer whitespace trimmed and inner indentation kept; prose lines joined with single spaces."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 427,
+    "sha256": "77c40ffd56aa2542967931af7acfc4fcfa72900f4e427cebff66d3b1b9b534fa"
+  }
+}

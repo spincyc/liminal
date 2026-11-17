@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "mukerji-kari-elephant-1922",
+  "author": "Dhan Gopal Mukerji",
+  "title": "Kari the Elephant",
+  "translator": null,
+  "edition": "New York: E. P. Dutton & Company, 1922, as transcribed in Project Gutenberg 24460. Prose line wrapping and surrounding whitespace normalized; paragraph boundaries and verse lines retained. Illustration captions and images omitted. Source spelling, punctuation and underscore emphasis notation retained.",
+  "publicationYear": 1922,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/24460",
+  "textUrl": "https://www.gutenberg.org/ebooks/24460.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English text was published in 1922, more than 95 years before 2026; Project Gutenberg explicitly identifies its transcription as public domain in the USA. The dated source edition, rather than the electronic release date, supplies the publication year.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/files/24460/24460-h/24460-h.htm"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/24460/pg24460.txt",
+    "downloadSha256": "1340664f9e5552ac1aa6c6853fb8ada73db1fe5f9e3e2778d20ab490ce0cdc25",
+    "method": "Project Gutenberg 24460 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Removed the PG header and footer, producer credits, title-page imprint, copyright leaf, contents and illustration captions; kept the author's dedication and the ten chapters. Lines of each paragraph joined with single spaces; the indented prayer kept as stanza lines with indentation removed. Chapter numbers are level-2 and chapter titles level-3 headings under the book title."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 227,
+    "sha256": "b7d003d7ebfe0aba3d0495592ba97d6a4f7c4db4d2317aba21dad73001406c39"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "yeats-wild-swans-coole-1919",
+  "author": "W. B. Yeats",
+  "title": "The Wild Swans at Coole",
+  "translator": null,
+  "edition": "New York: The Macmillan Company, March 1919 expanded edition. Project Gutenberg English transcription, eBook 32491. HTML verse-line and stanza boundaries retained; indentation and within-line whitespace normalized; page-number furniture omitted; typography and transcription spellings retained. No introduction or digitizer notes included.",
+  "publicationYear": 1919,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/32491",
+  "textUrl": "https://www.gutenberg.org/cache/epub/32491/pg32491-images.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "This original English edition was published in 1919, before 1931, and its US term has expired by 2026. Project Gutenberg explicitly identifies this eBook as public domain in the USA. No later introduction, translation, or editorial notes are included.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/32491"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/32491/pg32491-images.html",
+    "downloadSha256": "b2ff902f69114c188c8b5e91a3ebc3b7620ffcc8d0e9b29affc6d1cadea4cee7",
+    "method": "Project Gutenberg 32491 HTML from the PG mirror aleph.pglaf.org. Removed the PG header and footer, cover and title-page imprint, copyright leaf, contents, images, page numbers and transcriber matter, and the printer's line. Kept the author's preface and closing note; every poem in printed order with titles as level-2 headings (numbered parts level 3), each stanza element and each speech of the dialogue poems one stanza with its verse lines, indentation removed; speaker names as paragraphs; HTML italics as _underscores_; straight quotation marks as transcribed."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 309,
+    "sha256": "6c0990de40920f1d8b7182e9cac2c0e63e422b0870a584f0dff8a43efbd315cc"
+  }
+}

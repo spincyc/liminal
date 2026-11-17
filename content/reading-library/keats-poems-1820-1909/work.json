@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "keats-poems-1820-1909",
+  "author": "John Keats",
+  "title": "Keats: Poems Published in 1820",
+  "translator": null,
+  "edition": "Oxford: Clarendon Press, 1909, edited by M. Robertson; Project Gutenberg 23684. The editor identifies the poetic text as a page-for-page and line-for-line reprint of the 1820 edition, with one or two corrected misprints and added line numbers. Only Keats’s poems are supplied. Editorial line numbers and leading indentation are removed; source words, punctuation, poetic lines, and stanza boundaries are retained. Printed stanza numbering is omitted while stanza boundaries remain.",
+  "publicationYear": 1909,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/23684",
+  "textUrl": "https://www.gutenberg.org/cache/epub/23684/pg23684.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The downloaded title matter identifies the 1909 English edition. This publication predates 1931 and its United States copyright term has expired. Project Gutenberg explicitly identifies this transcription as public domain in the USA. Only historical work text is supplied, without later editorial commentary.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/23684"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/23684/pg23684.txt",
+    "downloadSha256": "3f30a25b5087d8ffbce8e97f581b9e48e0ee3d34b6ca0302ed894f7d507b1f15",
+    "method": "Project Gutenberg 23684 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept the reprinted 1820 volume from LAMIA to THE END; removed the PG header and footer, Robertson's preface, contents, life of Keats, introductions and notes, the 1820 title page and the publishers' advertisement, the Oxford imprint and the transcriber's notes. Verse paragraphs are stanzas with right-margin line numbers and leading indentation removed; printed stanza numerals are left out (stanza boundaries kept); the Burton quotation that the 1820 volume prints as a note to Lamia stays where the transcription places it, after the poem and a FOOTNOTES: paragraph label, in the form [Footnote 45:A: text] (its right-set attribution joined as the closing paragraph), with the [45:A] anchor kept after the poem's last line. Poem titles (multi-line title pages joined) are level-2 headings and parts and books level-3 headings, under the 1820 title."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 200,
+    "sha256": "4579923d1ad6d64047771d9f0bd64f275968507c5ffdcbaaa8617180a3cadd92"
+  }
+}
