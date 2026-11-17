@@ -11,6 +11,10 @@
 .daily-page button { cursor: pointer; }
 .daily-page select { width: 100%; font-size: 1rem; }
 .daily-status { margin-block: 12px; }
+/* Generate PDF progress, under the reading actions. */
+.daily-pdf { margin: 0 0 4px 6px; color: var(--color-muted); font-size: .8125rem; }
+.daily-pdf:not(:has(.pdf-action-status:not(:empty))) .pdf-action-notices { display: none; }
+.daily-pdf .pdf-action-notices { color: inherit; margin-left: 6px; }
 .daily-heading { padding-top: 4px; }
 .daily-meta, .daily-mode, .daily-muted { color: var(--color-muted); }
 .daily-meta { font-size: .8125rem; }

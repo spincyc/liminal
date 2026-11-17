@@ -1,6 +1,7 @@
 (function () {
   "use strict";
   const D = window.LiminalDailyReading, R = window.LiminalDailyReadingRender, B = window.LiminalDailyReadingBrowse, C = window.LiminalReaderControls;
+  const T = window.LiminalReadingTeX, P = window.LiminalPdfAction;
   const status = document.getElementById("dailyStatus"), reader = document.getElementById("dailyReader"), container = document.getElementById("dailyContent");
   const views = document.getElementById("dailyViews"), browsePanel = document.getElementById("dailyBrowse");
   const browseLink = document.getElementById("dailyBrowseLink"), readLink = document.getElementById("dailyReadLink");
@@ -9,7 +10,13 @@
   const toolbar = document.getElementById("dailyToolbar"), topNav = document.getElementById("dailyNavigation");
   let topNavigation, packetShown = null, pendingNavigation = null;
   const actions = C.actions([{ label: "Print", run: () => window.print() }, { label: "Download", run: () => download(packetShown) }]);
-  document.getElementById("dailyActions").append(actions);
+  // Generate PDF typesets the night shown in the packet style
+  // (src/lib/reading-tex.js) in this browser; see docs/printing.md.
+  let nightShown = null;
+  const pdf = P.control({ prepare: () => nightShown && { ...T.nightTeX(T.entry(nightShown.course, nightShown.day, T.schoolMeta(nightShown.course.grade, nightShown.day))), filename: nightShown.day.id + ".pdf" } });
+  actions.append(pdf.button);
+  const pdfLine = R.el("p"); pdfLine.className = "daily-pdf"; pdfLine.append(pdf.status, " ", pdf.credits);
+  document.getElementById("dailyActions").append(actions, pdfLine);
   reader.addEventListener("click", event => {
     const link = event.target.closest("a[data-reader-step]");
     if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return;
@@ -108,6 +115,7 @@
     topNavigation = navigation(selected, "top", topNavigation);
     if (!topNavigation.parentElement) topNav.append(topNavigation);
     if (movement && movement.top) C.focusNavigation(topNavigation, movement.step);
+    pdf.cancel(); nightShown = null;
     for (const button of actions.children) button.disabled = true;
     announce("Opening " + D.gradeLabel(selected.grade) + ", week " + selected.week + ", day " + selected.day + "…", !container.childElementCount);
     try {
@@ -127,8 +135,8 @@
       const article = R.reading(packet, { notes: day.questions });
       const guide = R.disclosure("Tonight’s reading focus", "daily-focus"); guide.append(R.el("p", day.challenge));
       container.replaceChildren(article, navigation(selected, "bottom"), guide, R.progression(course, selected.week));
-      packetShown = packet;
-      for (const button of actions.children) button.disabled = false;
+      packetShown = packet; nightShown = { course, day };
+      for (const button of actions.children) button.disabled = button === pdf.button && !pdf.available;
       printFooter.textContent = R.printFooterText(packet);
       // Browser-generated print headers use this title; metadata stays in the footer.
       document.title = day.title;
