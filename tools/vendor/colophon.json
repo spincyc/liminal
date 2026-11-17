@@ -1,0 +1,30 @@
+{
+  "repository": "https://github.com/spincyc/colophon",
+  "commit": "38099245fa36219a22de0cea678b12402671b407",
+  "files": {
+    "src/vendor/colophon/native-tex.js": {
+      "from": "src/native-tex.js",
+      "sha256": "707816cf8544aba8d388ba8baa663a0e5a4e8e3d14bd5e29caab0761e2d62dad"
+    },
+    "tools/vendor/colophon/harness.js": {
+      "from": "node/harness.js",
+      "sha256": "63410e0273e70192b726d4e9229e215c7ec7f6ea5f76f86bf29f1b2dc62f5e20"
+    },
+    "tools/vendor/colophon/runtime.js": {
+      "from": "tools/runtime.js",
+      "sha256": "ca9bee3f06193578f7a5ef0f8b3bac2165d1b546b185358b0c511cf7aa51b7c8"
+    },
+    "tools/vendor/colophon/tar.js": {
+      "from": "tools/tar.js",
+      "sha256": "ff77ab275148743332bf41e7bb4bb26d3b9d05c8f5f15b93a8388a1c823c34dc"
+    },
+    "tools/vendor/colophon/LICENSE": {
+      "from": "LICENSE",
+      "sha256": "ec9dc7a74f659a1de419caef3f777e7301a229831a3ffc251f6b4cd68f2ca7ec"
+    },
+    "tools/vendor/colophon/THIRD-PARTY-NOTICES.md": {
+      "from": "THIRD-PARTY-NOTICES.md",
+      "sha256": "e3769e40690a219613d09cda6e3529fc2e661e49020688d64e75becfe7863c74"
+    }
+  }
+}
