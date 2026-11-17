@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "spyri-heidi-1919",
+  "readings": [
+    {
+      "id": "reading-4-spyri-heidi-1919-01",
+      "title": "Heidi: the climb from Mayenfeld (Chapter I, first part)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Build a picture of a character from what other people say before he ever appears.",
+      "focus": "Village talk makes the Alm-Uncle frightening long before the reader meets him.",
+      "context": "Heidi (1880–81) is by the Swiss writer Johanna Spyri; this English translation by Elisabeth P. Stork appeared in 1915. Deta, a young woman of twenty-six, is taking her five-year-old niece Heidi up a mountain in Switzerland. An Alm is a high mountain pasture; Mayenfeld, Doerfli and Praetiggan are places in the Swiss Alps, and Frankfurt is a large city in Germany.",
+      "contentNote": "Barbara compares the old man to “a heathen or an old Indian,” a dated and insulting comparison that shows the villagers’ fear and prejudice rather than the author’s judgment of the grandfather.",
+      "excerpt": {
+        "locator": "Chapter I, “Going Up to the Alm-Uncle,” from the opening to Barbara’s promise to keep a secret; opens “The little old town of Mayenfeld is charmingly situated. From it a footpath leads through…”; closes “…keep things to myself, if I have to. You won't repent of having told me, I assure you!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-spyri-heidi-1919-02",
+        "blocks": [
+          2,
+          23
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "efc740d849d39701e1970445c2fc224cb024d83e818c027353e00c9484272610"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-01-q1",
+          "prompt": "Why is Heidi so hot on a sunny June morning?",
+          "facilitatorNotes": [
+            "She is wearing two or three dresses, a large red shawl and heavy hob-nailed boots, “as if she had to brave a bitter frost.” The narrator’s “Small wonder though!” asks readers to notice. Readers will learn the reason for the layers later in the chapter."
+          ],
+          "evidence": [
+            "bundled up as if she had to brave a bitter frost",
+            "she wore two dresses, if not three"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-01-q2",
+          "prompt": "What does Barbara believe about the Alm-Uncle, and where have her ideas come from?",
+          "facilitatorNotes": [
+            "She says he speaks to no one, stays away from church and frightens everyone with his eyebrows and beard. But she has lived in the village only since her marriage, and people speak of him “as if they were afraid.” Her picture is built from rumour, not from knowing him."
+          ],
+          "evidence": [
+            "We all fear him",
+            "Nobody had a good word for him"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-01-q3",
+          "prompt": "Deta says, “He won't do her any harm; and if he should, he is responsible, not I.” What does this show about her?",
+          "facilitatorNotes": [
+            "She has decided to take her new job and wants to be free of blame in advance, even though she is not sure the plan is safe. Some readers will add that she has cared for Heidi for four years and needs to earn a living; both views can use the text."
+          ],
+          "evidence": [
+            "if he should, he is responsible, not I",
+            "The child shall not hinder me from accepting it, I tell you that!"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-01-q4",
+          "prompt": "Barbara says, “People do not gossip much in Praetiggan.” Why might a reader smile at that?",
+          "facilitatorNotes": [
+            "She has “long been anxious” to hear about the old man and grabs Deta’s arm to get the secret, so she is gossiping while she denies it. The gap between what she says and what she does is gentle comedy."
+          ],
+          "evidence": [
+            "People do not gossip much in Praetiggan",
+            "Barbara had long been anxious to know something about the old uncle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-02",
+      "title": "Heidi: the Alm-Uncle’s story (Chapter I, second part)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 8,
+        "totalMinutes": 18
+      },
+      "challenge": "Keep track of a family history told in one long speech, and remember who is telling it.",
+      "focus": "Deta’s story explains the old man’s loneliness, but she has her own reasons for telling it this way.",
+      "context": "Recap: Deta is taking Heidi up the mountain to leave her with her grandfather, the Alm-Uncle, whom the villagers fear. Barbara, a neighbour, has begged to hear his story. A goatherd looks after goats on the pasture; an apprentice who finishes training becomes a master of his trade.",
+      "contentNote": "Deta tells how Heidi’s father was killed by a falling beam and her mother died soon after of grief and fever. She also says the grandfather lost his farm through drinking and gambling.",
+      "excerpt": {
+        "locator": "Chapter I, “Going Up to the Alm-Uncle,” from Deta’s search for Heidi through the description of Peter’s family; opens “\"All right, but keep your word!\" said Deta warningly. Then she looked around to see that…”; closes “…blind grandmother was called by young and old from many miles about just \"grandmother.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-01",
+        "continuesTo": "reading-4-spyri-heidi-1919-03",
+        "blocks": [
+          24,
+          37
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "76c0cbcb33efa41fa853b1b3fc29eb9d62964b71046b453f6d68a5ef27160bd4"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-02-q1",
+          "prompt": "Where is Heidi while the two women talk, and how does Deta react when she sees her?",
+          "facilitatorNotes": [
+            "Heidi has gone off with Peter and the goats, and the women “had not noticed her absence” for some time. Deta is glad Peter can watch her so the story can go on without interruption. Readers may see this as carelessness, or as trust in a child who “keeps her eyes wide open.”"
+          ],
+          "evidence": [
+            "they had not noticed her absence",
+            "she is bright for her five years and keeps her eyes wide open"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-02-q2",
+          "prompt": "List the losses in the old man’s life. Which one does Deta say changed him most?",
+          "facilitatorNotes": [
+            "He lost his farm “with drink and play,” his parents died of grief, his son Tobias was killed, and Tobias’s wife Adelheid died. Deta says that after his son’s death he never spoke to anyone again."
+          ],
+          "evidence": [
+            "he soon lost everything with drink and play",
+            "After the death of his son he never spoke to a living soul."
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-02-q3",
+          "prompt": "“People said that heaven had punished the uncle for his misdeeds.” Is Deta telling what is true, or what people say? Why does it matter?",
+          "facilitatorNotes": [
+            "She repeats the village’s judgment and admits “many strange rumors” went round. She cannot prove them, and she wants to justify leaving Heidi with him, so readers should hold her account at a distance."
+          ],
+          "evidence": [
+            "People said that heaven had punished the uncle for his misdeeds.",
+            "Many strange rumors went round about the uncle"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-02-q4",
+          "prompt": "What do we learn about Peter’s life from the last long paragraph?",
+          "facilitatorNotes": [
+            "He spends every day alone with the goats, sees other children only in the evening, and lives with his mother and his blind grandmother; his father died in an accident. The paragraph prepares for the friendships Heidi will make."
+          ],
+          "evidence": [
+            "the rest of the day the animals were his sole companions",
+            "At home lived his mother and an old blind grandmother"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-03",
+      "title": "Heidi: a heap of clothes on the hillside (Chapter I, third part)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Compare how two characters judge the same action.",
+      "focus": "Heidi solves her own problem in a way that shocks her aunt.",
+      "context": "Recap: Deta has told Barbara the sad story of Heidi’s family and of the grandfather, who turned away from everyone after his son died. Meanwhile Heidi has been climbing behind Peter the goatherd. A petticoat is a light underskirt; a five-penny-piece is a small coin.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter I, “Going Up to the Alm-Uncle,” from Deta’s wait above Peter’s hut until Peter carries the bundle; opens “Deta waited about ten minutes to see if the children were coming up behind with the…”; closes “…and his right swinging the stick. Heidi jumped along gaily by his side with the goats.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-02",
+        "continuesTo": "reading-4-spyri-heidi-1919-04",
+        "blocks": [
+          38,
+          49
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fd2ccb90875b2c3debff4788072ccda5a1af0ad00aec5a5c6f70232f25d12ce9"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-03-q1",
+          "prompt": "Why does Heidi take off her clothes? What explanation does the narrator give?",
+          "facilitatorNotes": [
+            "She is panting in heavy clothes and envies Peter’s bare feet and the goats’ slender legs. The narrator explains that Deta had dressed her in her Sunday clothes over her workday ones to avoid carrying them. Heidi’s choice is practical."
+          ],
+          "evidence": [
+            "To save the trouble of carrying them, her aunt had dressed her in her Sunday clothes over her workday garments.",
+            "She was now as light-footed as any of them."
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-03-q2",
+          "prompt": "Deta calls Heidi stupid; Heidi says, “Because I do not need them.” Who do you think is right?",
+          "facilitatorNotes": [
+            "Deta worries about the new shoes and the stockings she made herself; Heidi thinks only of comfort and is not sorry. Notice that Heidi folded her dresses neatly. Each has a reason, and readers may side with either."
+          ],
+          "evidence": [
+            "Because I do not need them",
+            "Heidi arranged her dresses neatly in a heap"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-03-q3",
+          "prompt": "What do Peter’s grin, his silence and the coin tell you about him?",
+          "facilitatorNotes": [
+            "He grins wider and wider but says nothing; he will not move until Deta offers money, then runs fast. The coin is “a treasure” he seldom gets, which hints at how poor his family is."
+          ],
+          "evidence": [
+            "he grinned yet more, till his mouth seemed to reach from ear to ear; but he said never a word",
+            "He did not often get such a treasure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-04",
+      "title": "Heidi: “Good evening, grandfather!” (Chapter I, end)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Read faces, gestures and silences as carefully as words.",
+      "focus": "The meeting everyone feared takes a few lines; Deta’s uneasy conscience sends her running.",
+      "context": "Recap: Heidi has shed her heavy clothes and climbed with Peter and the goats, and Deta paid Peter to fetch the bundle. Now they reach the grandfather’s hut at the top. A conscience is the inner sense of right and wrong.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter I, “Going Up to the Alm-Uncle,” from the grandfather’s hut to the end of the chapter; opens “After three quarters of an hour they reached the height where the hut of the old man…”; closes “…who interfered in her affairs, and looked forward with great delight to her new place.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-03",
+        "continuesTo": null,
+        "blocks": [
+          50,
+          61
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e3d2ea83a768321e296f4689ddc5b0252ecb9e765a1e41220349e8f96e6af588"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-04-q1",
+          "prompt": "How does Heidi greet her grandfather, and how is this different from what the villagers would expect?",
+          "facilitatorNotes": [
+            "She reaches him first, holds out her hand and says good evening, then studies him “with much curiosity.” The villagers fear him; Heidi looks back at him without fear."
+          ],
+          "evidence": [
+            "Heidi reached the top first",
+            "Heidi gazed back at him with an unwinking glance and examined him with much curiosity"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-04-q2",
+          "prompt": "Deta “had said more in her excitement than she had intended.” What did she say, and why does it anger the old man?",
+          "facilitatorNotes": [
+            "She tells him that if Heidi comes to harm he is responsible and that he would not want to “burden your conscience any further,” which reminds him of his past. The narrator adds that her own conscience was “not quite clear.”"
+          ],
+          "evidence": [
+            "I am sure you do not want to burden your conscience any further",
+            "just because her conscience was not quite clear"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-04-q3",
+          "prompt": "Why is Deta uneasy as she runs down the mountain, and how does she comfort herself?",
+          "facilitatorNotes": [
+            "The village women cry “The poor little dear!”, and she remembers her mother asked her on her deathbed to care for Heidi. She tells herself she can help more by earning money. Readers can decide whether that is a reason or an excuse."
+          ],
+          "evidence": [
+            "to tell the truth, she herself was uneasy",
+            "she would be able to do more for the child if she could earn some money"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-04-q4",
+          "prompt": "Are there any clues that the grandfather may not be as terrible as people say?",
+          "facilitatorNotes": [
+            "He sits quietly watching the children climb, and his first worry is being “helpless” if she cries, not that she will be a nuisance. His anger is aimed at Deta, not Heidi. Other readers may think the clues are too few to judge yet."
+          ],
+          "evidence": [
+            "He quietly watched the children climbing up with the goats",
+            "then I'll be helpless"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-05",
+      "title": "Heidi: the pastor’s visit (Chapter V, first part)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Weigh two adults’ arguments about what is best for a child.",
+      "focus": "The grandfather wants Heidi “free and happy as a bird”; the pastor says she must learn.",
+      "context": "Heidi (1880–81) is by the Swiss writer Johanna Spyri; this English translation by Elisabeth P. Stork appeared in 1915. Earlier chapters: Heidi, an orphan, was left by her aunt Deta with her grandfather, the Alm-Uncle, who lives alone high on a Swiss mountain pasture and avoids the village. Heidi has come to love him, the goats, Peter the goatherd and Peter’s blind grandmother, whose cottage the grandfather has mended. A parson or pastor is the minister of the village church.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, “Two Visitors,” from the opening through the pastor’s departure; opens “Two winters had nearly passed. Heidi was happy, for the spring was coming again, with the…”; closes “\"God be with you,\" said the parson, and left him sadly.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-spyri-heidi-1919-06",
+        "blocks": [
+          241,
+          261
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4dd02827ebe333424ee83675418983421aac406f41adfdfd8df381aab15c2387"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-05-q1",
+          "prompt": "What reasons does the grandfather give for keeping Heidi out of school? Which seems strongest to you?",
+          "facilitatorNotes": [
+            "He wants her free; the walk is two hours through wind and storm; and her mother was delicate, with sleep-walking and fainting fits. The pastor himself agrees that the walk is too much."
+          ],
+          "evidence": [
+            "I want her to be free and happy as a bird!",
+            "It is a two hours' walk, and I shall not let her go"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-05-q2",
+          "prompt": "Which part of the old man’s argument does the pastor accept, and what does he suggest instead?",
+          "facilitatorNotes": [
+            "He agrees she cannot go to school from the mountain, and suggests the grandfather come back to live in the village and make his peace."
+          ],
+          "evidence": [
+            "You could not send her to school from here.",
+            "Why don't you come down to live among us again?"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-05-q3",
+          "prompt": "“The people there and I despise each other.” Does the pastor’s visit show that the village feels that way about the grandfather?",
+          "facilitatorNotes": [
+            "The pastor calls him “neighbor,” shakes his hand and promises a glad welcome, so at least one villager does not despise him. The old man may be wrong about the village, or the pastor may speak only for himself."
+          ],
+          "evidence": [
+            "the people there and I despise each other",
+            "We shall receive you gladly, reconciled with God and man."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-06",
+      "title": "Heidi: Aunt Deta comes back (Chapter V, end)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice when a character tells only part of the truth to get what she wants.",
+      "focus": "Deta talks Heidi away from the mountain with promises she does not mean.",
+      "context": "Recap: the village pastor has climbed up to tell the grandfather that Heidi, now nearly eight, must go to school, and has urged him to move back to the village. The old man refused. Deta now works for a rich family in Frankfurt. A dress with a train has a long back that sweeps along the floor.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, “Two Visitors,” from Deta’s arrival to the end of the chapter; opens “The old man was out of humor that day, and when Heidi begged to go to the grandmother, he…”; closes “…could hear Heidi's voice before I die,\" the poor old woman would exclaim, day after day.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-05",
+        "continuesTo": "reading-4-spyri-heidi-1919-07",
+        "blocks": [
+          262,
+          291
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e3c6596a567555fa35a92d026e830bd736325835008bf4c6565e8359388b20aa"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-06-q1",
+          "prompt": "Which words does Deta use to make the place in Frankfurt sound wonderful?",
+          "facilitatorNotes": [
+            "“A splendid chance,” the “largest house in Frankfurt,” “very rich relations,” and “a lucky chance.” The child there is a lame girl who needs a companion for her lessons."
+          ],
+          "evidence": [
+            "she had found a splendid chance for her",
+            "who owned the largest house in Frankfurt"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-06-q2",
+          "prompt": "What does Deta threaten when the grandfather refuses, and why might he give in?",
+          "facilitatorNotes": [
+            "She says she will get people to back her and that in court old stories “might be warmed up.” He storms out with “Take her and ruin her.” Readers may see hurt pride and anger, or a fear of his past being told; both fit."
+          ],
+          "evidence": [
+            "some things might be warmed up that you would not care to hear about",
+            "Take her and ruin her"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-06-q3",
+          "prompt": "Heidi asks, “Can I come home again to-night?” Is Deta’s answer honest?",
+          "facilitatorNotes": [
+            "She never says yes to tonight; she says “I told you you could come back” and talks of trains that “fly.” She also uses Heidi’s wish to bring rolls to the grandmother to hurry her along. She is leading Heidi on."
+          ],
+          "evidence": [
+            "Come now, I told you you could come back.",
+            "She also suggested that Heidi might bring a lovely present to the grandmother when she came back."
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-06-q4",
+          "prompt": "The villagers decide Heidi was glad to go. Why are they wrong, and who alone speaks up for the grandfather?",
+          "facilitatorNotes": [
+            "They saw her hurrying, but she hurried so she could return sooner with the rolls. Only Peter’s blind grandmother tells of the old man’s care, and people “only half believed” her."
+          ],
+          "evidence": [
+            "they thought that she had been glad to go",
+            "The old grandmother alone stuck to him faithfully."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-spyri-heidi-1919-07",
+      "title": "Heidi: arriving at the Sesemann house (Chapter VI, opening)",
+      "sourceId": "spyri-heidi-1919",
+      "genre": "literary fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Hear how a new place is shown through the way people speak.",
+      "focus": "A grand house full of servants and rules meets a child who answers every question honestly.",
+      "context": "Recap: Aunt Deta has taken Heidi from her grandfather to Frankfurt, promising she can soon go home with soft white rolls for Peter’s grandmother. Now they arrive at the house of Mr. Sesemann, whose daughter Clara cannot walk. A butler and a maid are servants; a housekeeper runs a household. A Christian name is the first name given at baptism.",
+      "contentNote": "Deta gives Heidi two small blows to stop her answering, and the housekeeper calls her ignorant.",
+      "excerpt": {
+        "locator": "Chapter VI, “A New Chapter with New Things,” from the opening until Deta hurries away; opens “In a beautiful house in Frankfurt lived a sick child by the name of Clara Sesemann. She…”; closes “…her and tried to call her back, for she wanted to ask Deta a number of questions.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-spyri-heidi-1919-06",
+        "continuesTo": null,
+        "blocks": [
+          293,
+          322
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1c6cc78bb0c879dbe03e056a4cfe2b2473688747e16daa034bc74fc86a14e24c"
+      },
+      "questions": [
+        {
+          "id": "reading-4-spyri-heidi-1919-07-q1",
+          "prompt": "The coachman and the butler both say, “That's not my business.” What does the repeated line suggest about this house?",
+          "facilitatorNotes": [
+            "Each servant has one job and passes Deta on to the next, and the maid speaks “scornfully.” The house is grand, formal and not very welcoming."
+          ],
+          "evidence": [
+            "That's not my business",
+            "asked scornfully"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-07-q2",
+          "prompt": "Why does Deta say Heidi is “about ten,” and how does Heidi spoil the story?",
+          "facilitatorNotes": [
+            "The family wanted a companion of twelve to share Clara’s lessons, so Deta makes Heidi older. Heidi repeats what her grandfather told her: she is eight."
+          ],
+          "evidence": [
+            "I think she is about ten years old.",
+            "Grandfather said that I was eight years old"
+          ]
+        },
+        {
+          "id": "reading-4-spyri-heidi-1919-07-q3",
+          "prompt": "Heidi answers “None” and “Nothing.” Is she being pert, as Miss Rottenmeier wonders, or honest?",
+          "facilitatorNotes": [
+            "The narrator says she replied “truthfully” and did not even know why she was being hit. Readers may feel Miss Rottenmeier judges her by city expectations; others may understand the housekeeper’s surprise."
+          ],
+          "evidence": [
+            "replied Heidi, truthfully",
+            "as the child had no idea why, she did not get embarrassed"
+          ]
+        }
+      ]
+    }
+  ]
+}
