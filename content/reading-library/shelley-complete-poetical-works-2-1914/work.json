@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "shelley-complete-poetical-works-2-1914",
+  "author": "Percy Bysshe Shelley",
+  "title": "The Complete Poetical Works of Percy Bysshe Shelley, Volume 2",
+  "translator": null,
+  "edition": "Oxford edition, edited with textual notes by Thomas Hutchinson, 1914, as dated in Project Gutenberg 4798 title matter. Only the historical poems are supplied, excluding introductions, textual variants, and editorial notes. Editorial line numbers and stanza numbers are omitted; leading indentation is removed. Original words, punctuation, poetic lines, and stanza boundaries are retained.",
+  "publicationYear": 1914,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/4798",
+  "textUrl": "https://www.gutenberg.org/cache/epub/4798/pg4798.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The downloaded title matter identifies the 1914 English edition. This publication predates 1931 and its United States copyright term has expired. Project Gutenberg explicitly identifies this transcription as public domain in the USA. Only historical work text is supplied, without later editorial commentary.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/4798"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/4798/pg4798.txt",
+    "downloadSha256": "095062184d815c8b49598a525f121a7d8975801ca27fef69fc50de12fa55f749",
+    "method": "Project Gutenberg 4798 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept everything from EARLY POEMS [1814, 1815] to the last poem; removed the PG header and footer, title page and contents, Hutchinson's bracketed headnotes and editorial notes attached to titles, every NOTE: block of textual variants, the *** separators and Mrs. Shelley's notes on each year. Each section that the transcription opens after two blank lines is a heading (year groups level 1, poem titles with their subtitle lines level 2); verse paragraphs are stanzas with the _N line numbers removed, printed stanza numerals left out (stanza boundaries kept) and lines trimmed; prose paragraphs (long wrapped lines without line numbers, such as Shelley's note to the West Wind ode) are joined with single spaces."
+  },
+  "scope": {
+    "complete": false,
+    "note": "Holds every poem in Project Gutenberg's volume 2 of Hutchinson's Oxford edition (the shorter poems of 1814-1822) with Shelley's own notes, in printed order; Hutchinson's headnotes and textual notes and Mrs. Shelley's notes are not held."
+  },
+  "text": {
+    "blocks": 1161,
+    "sha256": "58c656d8c6c076acb18944ad5e053bb907743b8606473931dc5ebff3450ee42b"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "shelley-frankenstein-1831",
+  "author": "Mary Wollstonecraft Shelley",
+  "title": "Frankenstein; or, The Modern Prometheus",
+  "translator": null,
+  "edition": "London: Henry Colburn and Richard Bentley; Edinburgh: Bell and Bradfute; Dublin: Cumming, 1831. Revised, corrected edition with a new introduction by the author; Project Gutenberg 42324, explicitly produced from a photo-reprint of the 1831 edition. Original English spelling and punctuation retained; prose line-wrap whitespace normalized within paragraphs. Author introduction and novel text only, without digitizer boilerplate. Illustrations and their captions are omitted, as are Shelley’s three brief footnotes and their reference markers (attributions of the quoted Coleridge and Wordsworth verse, and the gloss “The moon.”); the Coleridge attribution is supplied in editorial context. Quoted verse retains printed line breaks with indentation removed. The library text keeps those three footnotes and their markers, which the nightly excerpts omit.",
+  "publicationYear": 1831,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/42324",
+  "textUrl": "https://www.gutenberg.org/cache/epub/42324/pg42324.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The downloaded title matter identifies the 1831 English edition. This publication predates 1931 and its United States copyright term has expired. Project Gutenberg explicitly identifies this transcription as public domain in the USA. Only historical work text is supplied, without later editorial commentary.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/42324"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/42324/pg42324.txt",
+    "downloadSha256": "a94b1be5cf19ad0b9965577b86f683f8ee898bb8b0effe964bbd7421cd80abb5",
+    "method": "Project Gutenberg 42324 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept the author's introduction, the 1818 preface and the whole novel to THE END; removed the PG header and footer, the title page and the transcriber's notes (the transcription's two corrected printer errors stay as PG prints them), illustration captions and the printer's imprint. Shelley's three footnotes stay where the transcription places them, each after the paragraph or verse that cites it, in the form [Footnote n: text], with the [n] anchors kept in the running text. Lines of each paragraph joined with single spaces; quoted verse (multi-line, indented) kept as stanza lines with indentation removed. Introduction, preface, letters and chapters are level-2 headings under the book title."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 829,
+    "sha256": "3ad5b13097ed4fdd5a4d0e4cbe6c61f3aecc15b3f83adde4ebde20a58ef4ed5a"
+  }
+}

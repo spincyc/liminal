@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "matthews-oxford-american-essays-1914",
+  "author": "Washington Irving",
+  "title": "John Bull and The Mutability of Literature, in The Oxford Book of American Essays",
+  "translator": null,
+  "edition": "Chosen by Brander Matthews. New York: Oxford University Press, American Branch, 1914; dated title and copyright matter reproduced in PG40196. Only Irving’s two essays are selected, with this edition’s wording, punctuation and paragraph boundaries; prose hard wraps reflowed. In The Mutability of Literature, Irving’s four footnotes (supporting quotations from Chaucer’s Testament of Love, Holinshed, Harvey, and an Elizabethan verse) and their reference markers are omitted. The library text holds the whole anthology's essays as this edition prints them, with their notes; the editor's introduction is not held.",
+  "publicationYear": 1914,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/40196",
+  "textUrl": "https://www.gutenberg.org/cache/epub/40196/pg40196.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original-English text in this 1914 edition was published well before 1931 and its US term has expired. The named Project Gutenberg catalogue explicitly records public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/40196"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/40196/pg40196.txt",
+    "downloadSha256": "188190480082016a2fd116f875390b5eb51192c9bbeb1d641348153b6159f1c9",
+    "method": "Project Gutenberg 40196 plain text from the PG mirror aleph.pglaf.org. Kept all 32 essays from THE EPHEMERA to ON TRANSLATING THE ODES OF HORACE and the footnotes the transcription gathers at the end of the book; removed the PG header and footer, the producer credits, the title and copyright pages, the contents, Brander Matthews's introduction and the publishers' permissions note, and the transcriber's list of corrected typographical errors (with the asterisk rows around it). The anthology title is a level-1 heading; each essay's title (set after three or more blank lines) is a level-2 heading and its following capitalised lines (subtitle, addressee, author) level-3 headings; prose lines joined with single spaces, _underscores_ kept for italics; blocks whose lines are all indented are stanzas with leading indentation removed; the transcription's asterisk rows inside essays stay as paragraphs. Notes follow a FOOTNOTES: paragraph label in the form [Footnote n: text] (a note running over several blocks closes its bracket on the last), with their [n] anchors kept in the running text."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1259,
+    "sha256": "12ef757b0d9165e3cd7380834be826a5c33123e817d2d369802f10ed2d2ed9ba"
+  }
+}

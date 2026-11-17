@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "douglass-narrative-1845",
+  "author": "Frederick Douglass",
+  "title": "Narrative of the Life of Frederick Douglass, an American Slave. Written by Himself.",
+  "translator": null,
+  "edition": "Boston: Anti-Slavery Office, 1845. Original English text from the University of North Carolina Documenting the American South transcription (electronic edition 1999), based on the 1845 copy identified as E 449 D746 1845. Source transcription spelling and punctuation retained, except nine transcription errors in the selected text corrected to the 1845 print after checking page images of the Internet Archive scan narrativeoflifeo1845doug: “be” for “he” (pp. 7, 18, 99), “Yea, sir” for “Yes, sir” (p. 18), the omitted words “and” (p. 16) and “if” (p. 66), “failing” for “falling” in the Whittier quotation (p. 48), and stray periods in “mistress. proved” (p. 32) and “she. said” (p. 90); printed page milestones omitted and line-wrap whitespace normalized. Quoted verse, including the Great House Farm song, retains its lines as separate stanza blocks; the embedded protection letter retains its paragraph, signature, and dateline as separate blocks. Footnotes outside selected passages are not supplied; original asterisks remain. The library work holds the Narrative from Chapter I through the Appendix with Douglass's own footnotes where the transcription places them; William Lloyd Garrison's preface and Wendell Phillips's letter (front matter by others) are not held. The nine corrections above apply to the whole work.",
+  "publicationYear": 1845,
+  "translationYear": null,
+  "url": "https://docsouth.unc.edu/neh/douglass/menu.html",
+  "textUrl": "https://docsouth.unc.edu/neh/douglass/douglass.xml",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The source identifies the Boston 1845 publication. This original English work was published long before 1931 and its US term has expired; UNC explicitly marks this digitized item No Copyright - United States. Only the historical body text is supplied.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://docsouth.unc.edu/neh/douglass/douglass.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://docsouth.unc.edu/neh/douglass/douglass.xml",
+    "downloadSha256": "41856e46f9f15c3862c2b5669e20d386533e28e62e18eb304e135b7e3f79c5ce",
+    "method": "TEI XML from Documenting the American South converted with a scratch walker: kept the body (Chapters I-XI) and back matter (Appendix, A Parody, closing signature and dateline); left out the TEI header, the cover, frontispiece, title-page and back-cover image divisions, Garrison's preface and Wendell Phillips's letter, and every page milestone. Paragraph line wrapping is joined with single spaces and italic styling dropped; each verse line group is one stanza; letters quoted inside a paragraph split it into the surrounding paragraphs, the letter's paragraph, and its signature, dateline and salutation as separate paragraphs; Douglass's four footnotes stay where the transcription places them, after the paragraph in which each falls at its page foot, in the form [Footnote mark: text] with the printed asterisk or dagger as the mark, and their references keep the printed * and † (not bracketed) in the running text; the closing THE END is left out. The nine declared corrections were applied as exact string replacements, each matching once."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 189,
+    "sha256": "6c3ef38973a675a1844c75f4e0259b0e792252f143349802e260eb62a491c24a"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "defoe-robinson-crusoe-1808",
+  "author": "Daniel Defoe",
+  "title": "The Life and Adventures of Robinson Crusoe",
+  "translator": null,
+  "edition": "London, 1808 edition explicitly dated in the source title matter, Project Gutenberg 12623 transcription. Novel text only: the separate biographical introduction, illustrations and editorial apparatus are excluded. Prose hard-wrap newlines reflowed; paragraph boundaries, historical spelling and punctuation retained.",
+  "publicationYear": 1808,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/12623",
+  "textUrl": "https://www.gutenberg.org/cache/epub/12623/pg12623.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The original-English text in this 1808 edition was published well before 1931 and its US term has expired. The named Project Gutenberg catalogue explicitly records public domain in the USA.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/12623"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/12623/pg12623.txt",
+    "downloadSha256": "d2dc9cbd9dc8791cf897131335bdcca50b47ae369d37666e96a34ff412a8e571",
+    "method": "Project Gutenberg 12623 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept the narrative from its title (THE / LIFE AND ADVENTURES / OF / ROBINSON CRUSOE, / &c. &c., joined as one level-1 heading) to the last paragraph; removed the PG header and footer, the frontispiece illustration marker, G.D.'s biographical Life of De Foe with its footnote, and the rows of asterisks. Prose lines joined with single spaces, _underscores_ kept for italics; THE JOURNAL. is a level-2 heading; indented prose (Crusoe's N.B. notes and the bracketed asides in the Atkins dialogue) is joined as paragraphs; the Evil and Good account is one paragraph with a tab between the columns of each printed row (each column's wrapped lines joined); the seasons table, the casualty and company lists and the quoted couplets are stanzas with leading indentation removed."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1894,
+    "sha256": "6d09849e0a9076e2add420310312cc399d89f36baedc6b5f5d9adb29afc188ff"
+  }
+}
