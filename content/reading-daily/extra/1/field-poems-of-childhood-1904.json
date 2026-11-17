@@ -1,0 +1,660 @@
+{
+  "schemaVersion": 1,
+  "grade": 1,
+  "work": "field-poems-of-childhood-1904",
+  "readings": [
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-01",
+      "title": "The Naughty Doll",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Work out who is speaking: a little girl playing mother to her doll.",
+      "focus": "A child copies grown-up talk about marriage, and the joke is how serious she sounds.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. A girl tells us about her doll, Miss Amandy, whom she wants to marry the china vase on the mantel, the shelf above the fireplace. Dresden is a famous kind of fine china. Some old words: “forsooth” means truly; a spinster is a woman who never marries; beaux are boyfriends; to acquiesce is to agree; a suitor is someone who wants to marry. Taffy is a chewy sweet.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Naughty Doll,” the whole poem; opens “My dolly is a dreadful care,— Her name is Miss Amandy; I dress her up and curl her hair,…”; closes “…pretty as this vase is,— Oh, how we’ll hate the noisy men With whiskers on their faces!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          11,
+          16
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "278646e07f439f55cf3a4e7a0b5e0bc4898595b35fe7daa390c5c44fa27b846f"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-01-q1",
+          "prompt": "Who is the “devoted mother” in this poem, and who is her naughty child?",
+          "facilitatorNotes": [
+            "The girl is the mother and her doll, Miss Amandy, is the child. She is playing at being a grown-up."
+          ],
+          "evidence": [
+            "Her name is Miss Amandy;",
+            "Of her devoted mother,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-01-q2",
+          "prompt": "Whom does the girl want Amandy to marry, and whom does Amandy love?",
+          "facilitatorNotes": [
+            "The china vase, a pinkish Dresden “youth”; but Amandy loves the drum. Let the child say which toy they would choose."
+          ],
+          "evidence": [
+            "I’d have her wed the china vase,—",
+            "She loves the drum—that’s very plain—"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-01-q3",
+          "prompt": "The girl says the drum’s promises are “hollow.” Why is that a funny word to use about a drum?",
+          "facilitatorNotes": [
+            "Hollow promises are empty ones, and a drum really is hollow inside. Some children will take Amandy’s side: a noisy drum is more fun than a vase."
+          ],
+          "evidence": [
+            "The protestations of the drum I am convinced are hollow;"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-01-q4",
+          "prompt": "In the last stanza the girl says what she will do when she is grown up. Do you believe her?",
+          "facilitatorNotes": [
+            "She promises to wait for her mama’s choice and to hate noisy men with whiskers, the opposite of Amandy. She sounds like a grown-up and a small child at once. Some children will predict she will turn out just like her doll."
+          ],
+          "evidence": [
+            "I sha’n’t encourage beaux at all",
+            "Oh, how we’ll hate the noisy men With whiskers on their faces!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-02",
+      "title": "Nightfall in Dordrecht",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Listen for the line that ends every stanza, and who sings it each time.",
+      "focus": "Everything in a little Dutch town, even a creaking windmill, seems to sing a child to sleep.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Dordrecht is an old town in Holland, a country of windmills, tulips and fishing boats. A windmill’s big wings are called sails. Some words: reefed means rolled up; kine are cows; a mart is a market; brine is salty water for keeping fish. The Dream-One is the poet’s name for a kind spirit who brings sleep.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Nightfall in Dordrecht,” the whole poem; opens “The mill goes toiling slowly around With steady and solemn creak, And my little one hears…”; closes “…Dream-One sweep, And rocking your cradle she softly sings: “Sleep, little tulip, sleep!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          17,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bd22cd354f1286385398b3e02f0275c87da44c807297ded04c8538280ca2964d"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-02-q1",
+          "prompt": "What does the child hear the old mill sing? What does the mill call the child?",
+          "facilitatorNotes": [
+            "“Sleep, little tulip, sleep!” The child is a little tulip, the flower Holland is famous for."
+          ],
+          "evidence": [
+            "My little one hears that the old mill sings:",
+            "Sleep, little tulip, sleep!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-02-q2",
+          "prompt": "The mill’s wings creep “Grimly and ghostlike.” Is the mill scary or kind? Find words for both.",
+          "facilitatorNotes": [
+            "Both: a “kindly sound” and a “steady and solemn creak,” but also grim and ghostlike in the dark. The child hears the kind side. Some children may find it spooky; that is in the words too."
+          ],
+          "evidence": [
+            "And my little one hears in the kindly sound",
+            "Grimly and ghostlike creep,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-02-q3",
+          "prompt": "What jobs are planned for tomorrow? Why might a parent talk about tomorrow at bedtime?",
+          "facilitatorNotes": [
+            "Old dog Fritz will pull the new milk-cart, and the child will help with the cows, sheep and herring. Something to look forward to can make it easier to stop for today."
+          ],
+          "evidence": [
+            "Hitched to our new milk-cart!",
+            "But now, little tulip, sleep!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-02-q4",
+          "prompt": "What does the Dream-One do to the child’s eyes? What picture does that make?",
+          "facilitatorNotes": [
+            "She comes “to button the eyes,” as if eyelids could be buttoned shut like a coat. Ask the child to button their own eyes."
+          ],
+          "evidence": [
+            "A Dream-One comes to button the eyes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-03",
+      "title": "Pittypat and Tippytoe",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Hear a grown-up complain and love at the same time.",
+      "focus": "Messes, squabbles and torn clothes become proof of love.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Pittypat and Tippytoe are pet names a parent gives two small children, from the sound of their feet. Some words: “by these presents” is an old way of saying “by these signs”; an internecine spat is a squabble inside a family; duds are clothes; hose are stockings; smutched means smudged; havoc is a big mess.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Pittypat and Tippytoe,” the whole poem; opens “All day long they come and go— Pittypat and Tippytoe; Footprints up and down the hall,…”; closes “…Just such trade-marks, if you sought; Oh, how glad I am ’tis so, Pittypat and Tippytoe!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          26,
+          33
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3a0e9ad321dc4ea3c974e84da67c74ef253e0e001088a6888e43d1cc9e098a22"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-03-q1",
+          "prompt": "What signs tell the grown-up that the two children have been about?",
+          "facilitatorNotes": [
+            "Footprints in the hall, toys on the floor, finger-marks on the wall, smudges on the door. Ask which signs your own house might show."
+          ],
+          "evidence": [
+            "Footprints up and down the hall,",
+            "Finger-marks along the wall,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-03-q2",
+          "prompt": "What do the children ask for a dozen times a day, and why can’t the grown-up say no?",
+          "facilitatorNotes": [
+            "Buttered bread, inches thick with sugar. The grown-up loves them too much to refuse, even when it is silly."
+          ],
+          "evidence": [
+            "Inches thick with sugar too!",
+            "And I never can say, “No,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-03-q3",
+          "prompt": "The grown-up lists many worries. Do they sound really upset? Which words tell you?",
+          "facilitatorNotes": [
+            "Partly: “Fie, for shame!” scolds, but “Many a little bump to kiss” is tender. Accept either reading if the child points to words; most of the poem is teasing complaint."
+          ],
+          "evidence": [
+            "Fie, for shame! to quarrel so—",
+            "Many a little bump to kiss;"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-03-q4",
+          "prompt": "At the end, the grown-up says the heart has “trade-marks” on it, like the smudges on the wall. What does that mean?",
+          "facilitatorNotes": [
+            "The children have left marks of love inside the parent, just as they leave marks all over the house, and the parent is glad of both."
+          ],
+          "evidence": [
+            "Just such trade-marks, if you sought;",
+            "Oh, how glad I am ’tis so,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-04",
+      "title": "Little Blue Pigeon",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice which sounds in the night are gentle and which one is sad.",
+      "focus": "A star, a moonbeam and the sea each join the lullaby, and the mother keeps singing through the sadness.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. A lullaby is a song to sing a baby to sleep. Here a mother calls her baby a little blue pigeon and the cradle a nest. Anguish is great pain or sorrow; to bemoan is to be sad about something.",
+      "contentNote": "One stanza hears the waves mourning “the ship that shall come no more,” a sad hint of a ship lost at sea. The poem does not explain it.",
+      "excerpt": {
+        "locator": "“Little Blue Pigeon,” the whole poem; opens “Sleep, little pigeon, and fold your wings— Little blue pigeon with velvet eyes; Sleep to…”; closes “…eyes; Am I not singing?—see, I am swinging— Swinging the nest where my darling lies.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          45,
+          50
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f1c5ee864080cca665b12c16420667035931f43411abf814001f3e0e6acaa6ba"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-04-q1",
+          "prompt": "What does the mother call her baby, and what is the nest?",
+          "facilitatorNotes": [
+            "A little blue pigeon; the nest is the cradle she is swinging."
+          ],
+          "evidence": [
+            "Little blue pigeon with velvet eyes;",
+            "Swinging the nest where her little one lies."
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-04-q2",
+          "prompt": "What does the moonbeam want to know?",
+          "facilitatorNotes": [
+            "Whether the baby is sleeping and dreaming while the mother sings. The moonbeam creeps in quietly, like someone checking on a sleeping child."
+          ],
+          "evidence": [
+            "Sleeping and dreaming while mother sings?"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-04-q3",
+          "prompt": "Which sound in the poem is sad? How is it different from the star’s song?",
+          "facilitatorNotes": [
+            "The star tinkles and calls; the waves sob, groan and moan for a ship that will not come back. Read the two stanzas in different voices."
+          ],
+          "evidence": [
+            "Calling and tinkling the night along.",
+            "Bemoaning the ship that shall come no more."
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-04-q4",
+          "prompt": "In the first stanza the pigeon has “velvet eyes.” In the last, “mournful eyes.” Why might the poet change that word?",
+          "facilitatorNotes": [
+            "Mournful means sad. Perhaps the sea’s sadness has come into the room, or the mother sees her own sadness in her baby; either way she keeps singing. Accept other ideas tied to the change."
+          ],
+          "evidence": [
+            "Little blue pigeon with mournful eyes;",
+            "Am I not singing?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-05",
+      "title": "Teeny-Weeny",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Follow a game that slides from play into a dream.",
+      "focus": "A knee-ride becomes a brave night journey, told with a grown-up’s tender pride.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Teeny-Weeny is a small boy who rides a grown-up’s knee as if it were a horse. Some words: a palfrey is a gentle riding horse; “plies his lash” means waves his whip; the folk of fay are fairies; to put a host to rout is to chase away a crowd; By-low is the land of sleep.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Teeny-Weeny,” the whole poem; opens “Every evening, after tea, Teeny-Weeny comes to me, And, astride my willing knee, Plies…”; closes “…When, with an exulting cry, Teeny-Weeny, vaulting high, Plies his lash and rides away!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          56,
+          63
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "04b0585c0192655318b0a76126f36bcab428b44cd9ba210902a55cd37808ebcb"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-05-q1",
+          "prompt": "Who is the horse in this poem, and who gives the orders?",
+          "facilitatorNotes": [
+            "The grown-up’s knee is the horse, and Teeny-Weeny is in charge: “He commands, and I obey!”"
+          ],
+          "evidence": [
+            "And, astride my willing knee,",
+            "He commands, and I obey!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-05-q2",
+          "prompt": "What does Teeny-Weeny shout, and what does he never shout? Why?",
+          "facilitatorNotes": [
+            "“More!” and never “Whoa!” He loves to go fast and never wants to stop. Try a gentle knee-ride and see which word comes."
+          ],
+          "evidence": [
+            "“More!” he cries, and never “Whoa!”"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-05-q3",
+          "prompt": "Where does Teeny-Weeny ride when his eyes close, and who tells about it?",
+          "facilitatorNotes": [
+            "To the land of By-low, where he chases off the fairies. He tells the tale himself “every night.” Ask whether the grown-up believes it, or just enjoys it."
+          ],
+          "evidence": [
+            "Where the land of By-low is.",
+            "Every night he tells it so."
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-05-q4",
+          "prompt": "What happened once when Teeny-Weeny went away? What does that tell you about the grown-up?",
+          "facilitatorNotes": [
+            "The grown-up was very lonely and glad to have him back. The game is as much a joy for the horse as for the rider."
+          ],
+          "evidence": [
+            "I was very lonely then;",
+            "Teeny-Weeny back again!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-06",
+      "title": "Norse Lullaby",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Count the three singers and compare their songs.",
+      "focus": "A storm, a tree and a mother sing almost the same words, but only one song is close enough to comfort.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Norse means from the far north of Europe, a land of snow and pine forests. The storm-king is the poem’s name for the winter storm. “Yonder” means over there; “a-next” means next to.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Norse Lullaby,” the whole poem; opens “The sky is dark and the hills are white As the storm-king speeds from the north to-night;…”; closes “…sleep, little one, sleep; Weary thou art, a-next my heart Sleep, little one, sleep.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          68,
+          71
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "38074a12e9ad3b487cc92e4b1df8b8f5b6c71b4b60ce9cd6e78e3414173dac3f"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-06-q1",
+          "prompt": "Who are the three singers in this poem?",
+          "facilitatorNotes": [
+            "The storm-king, the mother pine singing to the vine, and the speaker singing to the child."
+          ],
+          "evidence": [
+            "And this is the song the storm-king sings,",
+            "Clings at the foot of a mother pine;"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-06-q2",
+          "prompt": "The storm-king and the pine sing nearly the same words. How are their songs different?",
+          "facilitatorNotes": [
+            "The storm sings “gruffly” in “bitter flight”; the pine bends over the vine and promises protection. Same words, different voices: try both."
+          ],
+          "evidence": [
+            "He rustles his wings and gruffly sings:",
+            "What shall you fear when I am here?"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-06-q3",
+          "prompt": "Who is “the little snowflake at my breast”? Why might the poet call a child a snowflake?",
+          "facilitatorNotes": [
+            "The baby being sung to. A snowflake is small, soft and white, and belongs to this winter night. Accept other reasons."
+          ],
+          "evidence": [
+            "But the little snowflake at my breast"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-06-q4",
+          "prompt": "Whose song does the child like best, and why do you think so?",
+          "facilitatorNotes": [
+            "The speaker’s own song, sung “a-next my heart.” Closeness matters more than a grand voice. Some children may like the storm-king’s best; ask why."
+          ],
+          "evidence": [
+            "Liketh the song I sing the best—",
+            "Weary thou art, a-next my heart"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-07",
+      "title": "The Fire-Hangbird’s Nest",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 8,
+        "totalMinutes": 14
+      },
+      "challenge": "Hear a grown man remember being a boy, and notice how he feels about it now.",
+      "focus": "Years of failing to reach a nest become a happy memory, and the clever bird wins.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. The fire-hangbird is an old country name for the Baltimore oriole, an orange-and-black bird that weaves a hanging nest at the tip of a high branch. A grown man looks at the elm tree he tried to climb as a boy. Some words: a deacon is a church officer; a trophy is a prize; to covet is to want badly; a callow brood is a nest of baby birds; prudent means careful.",
+      "contentNote": "Boys fall and hurt themselves climbing the tree, and the poem remembers trying to take a bird’s nest; the speaker’s mother tells him it would be wicked to destroy the eggs.",
+      "excerpt": {
+        "locator": "“The Fire-Hangbird’s Nest,” the whole poem; opens “As I am sitting in the sun upon the porch to-day, I look with wonder at the elm that…”; closes “…youth I’m sure the best Would be of how they sought in vain the old fire-hangbird’s nest!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          85,
+          92
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9a3e834c1f7ce4c6ee0c3e2196b5afbacb135e8e134f8331decca44bfa38eeb7"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-07-q1",
+          "prompt": "What did the boys try to do, and why couldn’t they?",
+          "facilitatorNotes": [
+            "Reach the nest; it hung from the “upper outer twig,” too high and too thin to climb to. Boys fell and broke legs and arms trying."
+          ],
+          "evidence": [
+            "That dangled from that upper outer twig in taunting wise,",
+            "Philetus Baker broke his leg and Orrin Root his arm—"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-07-q2",
+          "prompt": "What did the boy’s mother tell him about the nest?",
+          "facilitatorNotes": [
+            "That it would be wicked to destroy a hangbird’s eggs. She also called on father and grandpa to say they never robbed a nest as boys; some children may doubt them."
+          ],
+          "evidence": [
+            "She told me ’twould be wicked to destroy a hangbird’s eggs,"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-07-q3",
+          "prompt": "The man says the elm “is not as tall as years ago it used to be.” Has the tree shrunk? Why does it look shorter?",
+          "facilitatorNotes": [
+            "He has grown; places from childhood often look smaller to grown-ups. He even says so again near the end."
+          ],
+          "evidence": [
+            "That elm is not as tall as years ago it used to be!"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-07-q4",
+          "prompt": "The boys never got the nest. Is the man sorry? What does the last line say his best memory is?",
+          "facilitatorNotes": [
+            "Not sorry: the best memory is “how they sought in vain,” the trying, not the winning. Some children may think he still wishes he had climbed it."
+          ],
+          "evidence": [
+            "Would be of how they sought in vain the old fire-hangbird’s nest!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-08",
+      "title": "Gold and Love for Dearie",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Compare three songs and listen for the words that change in the last one.",
+      "focus": "Trolls and a hard-working father sing of gold; the mother sings of love.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. Trolls and elves are creatures from northern fairy tales who live in hills. Some words: to delve is to dig; dolorous means sad; furtive means sneaky; the burthen is the chorus of a song; stanch means strong and loyal. “Dearie” is the child.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Gold and Love for Dearie,” the whole poem; opens “Out on the mountain over the town, All night long, all night long, The trolls go up and…”; closes “…is not of gold; But it’s “Love, love! nothing but love— Mother’s love for dearie!””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          97,
+          100
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ae95669f6e334595f904d5e577244fcf063556ff47012410e4730f9337b6c128"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-08-q1",
+          "prompt": "Who sings in each of the three stanzas?",
+          "facilitatorNotes": [
+            "The trolls on the mountain, a father digging inside the hill, and the mother rocking the bed."
+          ],
+          "evidence": [
+            "The trolls go up and the trolls go down,",
+            "Deep in the hill a father delves",
+            "Mother is rocking thy lowly bed"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-08-q2",
+          "prompt": "The trolls and the father sing the same words. Do they sound the same? Is the father like the trolls?",
+          "facilitatorNotes": [
+            "The trolls’ tune is “dolorous,” sad; the father sings “merrily” because he digs for his child. Some children will say wanting gold makes them alike; others that the father works out of love."
+          ],
+          "evidence": [
+            "This is ever their dolorous tune:",
+            "And merrily ever this song he sings:"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-08-q3",
+          "prompt": "What does the mother’s song have instead of gold? Which song does the poem seem to like best?",
+          "facilitatorNotes": [
+            "Love, “nothing but love.” Coming last and different, it sounds like the answer. A child may argue that the father’s gold is love too; the poem lets us think about both."
+          ],
+          "evidence": [
+            "And the burthen it beareth is not of gold;",
+            "Mother’s love for dearie!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-field-poems-of-childhood-1904-09",
+      "title": "Croodlin’ Doo",
+      "sourceId": "field-poems-of-childhood-1904",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a grown-up’s voice change from searching, to finding, to singing.",
+      "focus": "A little game of hide-and-find ends in a lullaby.",
+      "context": "From Poems of Childhood (1904) by Eugene Field, an American newspaper writer who wrote many poems for and about children. “Croodlin’ doo” is an old Scottish pet name for a baby, like “cooing dove.” The poem is written the way someone might talk: “er” means her, “ever’where” is everywhere, “withouten” is without. The lea is a meadow; jinkin’ is darting about; to “go balow” is to go to sleep.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Croodlin’ Doo,” the whole poem; opens “Ho, pretty bee, did you see my croodlin’ doo? Ho, little lamb, is she jinkin’ on the lea?…”; closes “…winkin’ an’ blinkin’ an’ singin’ to you, As you go balow, my wee, wee croodlin’ doo!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          119,
+          122
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3522efbbfb94416c4710cd3037df1174d8a8aa71cc8537d84f2b1076d90a2389"
+      },
+      "questions": [
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-09-q1",
+          "prompt": "Whom does the grown-up ask about the croodlin’ doo in the first stanza?",
+          "facilitatorNotes": [
+            "A bee, a lamb and a fairy, and offers a lump of sugar and a posy as a reward. A posy is a little bunch of flowers."
+          ],
+          "evidence": [
+            "Ho, pretty bee, did you see my croodlin’ doo?"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-09-q2",
+          "prompt": "Where did the grown-up look? Where do you think the little one really was?",
+          "facilitatorNotes": [
+            "In the cradle and everywhere. The poem never says; maybe hiding close by. Let the child guess and give a reason."
+          ],
+          "evidence": [
+            "Looked in er cradle, but didn’t find you there—"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-09-q3",
+          "prompt": "How has the grown-up felt all day?",
+          "facilitatorNotes": [
+            "Lonesome, “kind lonesome,” without the little one."
+          ],
+          "evidence": [
+            "B’en kind lonesome all er day withouten you—"
+          ]
+        },
+        {
+          "id": "reading-1-field-poems-of-childhood-1904-09-q4",
+          "prompt": "How does the last stanza sound different from the first?",
+          "facilitatorNotes": [
+            "The first calls out “Ho!”; the last rocks slowly, “Rockaby, rockaby,” a lullaby. Read them one after the other and hear the voice grow quiet."
+          ],
+          "evidence": [
+            "Rockaby, rockaby up to the star"
+          ]
+        }
+      ]
+    }
+  ]
+}
