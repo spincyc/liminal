@@ -1,0 +1,712 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "longfellow-complete-poetical-works-1902",
+  "readings": [
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-01",
+      "title": "Woods in Winter",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Track a pattern of then-and-now as the speaker compares winter with summer.",
+      "focus": "A walker who first misses summer learns to hear winter’s own music.",
+      "context": "Henry Wadsworth Longfellow wrote this as a young man in the 1820s, and later printed it among his “Earlier Poems.” An upland is high ground and a vale a valley; a lay is a song; “chastely” here means gently and purely; the “frozen urns” are the icy sources of springs. Read it once for the pictures, then again listening for sounds.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Earlier Poems, “Woods in Winter,” the whole poem; opens “When winter winds are piercing chill, And through the hawthorn blows the gale, With…”; closes “…familiar with your song; I hear it in the opening year, I listen, and it cheers me long.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          127,
+          133
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "91aadef7105003c266a779495ad66156508397049f427a59ecf570e9d4060d80"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-01-q1",
+          "prompt": "Find a summer detail in the poem and the winter detail that takes its place.",
+          "facilitatorNotes": [
+            "The vine that “in beauty clung” round the oak is replaced by a hanging icicle; singing birds give way to the wind piping in the reeds; green woods become “bare upland.” The poem is built from these pairs."
+          ],
+          "evidence": [
+            "The summer vine in beauty clung,",
+            "The crystal icicle is hung."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-01-q2",
+          "prompt": "Even in winter, where does the speaker find music and voices?",
+          "facilitatorNotes": [
+            "The skaters’ iron blades ring on the ice and their voices fill the woods; the gathering wind pipes loudly in the reeds. Winter has its own “wild music.”"
+          ],
+          "evidence": [
+            "Shrilly the skater's iron rings,",
+            "But still wild music is abroad,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-01-q3",
+          "prompt": "The fifth stanza begins “Alas!” but the poem ends “it cheers me long.” How does the speaker’s feeling change?",
+          "facilitatorNotes": [
+            "He first mourns the lost summer, then decides he has grown used to the winter wind’s song and enjoys it. Some readers will think he still misses summer a little; the last stanza shows he has made peace with winter."
+          ],
+          "evidence": [
+            "Alas! how changed from the fair scene,",
+            "I listen, and it cheers me long."
+          ]
+        }
+      ],
+      "months": [
+        12,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-02",
+      "title": "The Wreck of the Hesperus",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 10,
+        "totalMinutes": 17
+      },
+      "challenge": "Follow a story told in short rhyming stanzas, and notice what the repeated questions build up.",
+      "focus": "A captain’s pride and a winter storm lead to a shipwreck told through a child’s eyes.",
+      "context": "Longfellow wrote this ballad in 1839 after winter storms wrecked many ships off the Massachusetts coast; Norman’s Woe is a real reef near Gloucester. A schooner is a sailing ship and the skipper its captain; the helm steers it; a spar is a pole that holds a sail; the Spanish Main is the Caribbean coast. This edition prints “month” for “mouth” in the third stanza. Read it aloud: ballads were made to be heard.",
+      "contentNote": "The skipper freezes to death and his young daughter drowns; a fisherman finds her body on the shore.",
+      "excerpt": {
+        "locator": "Ballads and Other Poems, “The Wreck of the Hesperus,” the whole poem; opens “It was the schooner Hesperus, That sailed the wintry sea; And the skipper had taken his…”; closes “…and the snow! Christ save us all from a death like this, On the reef of Norman's Woe!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          188,
+          209
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c7b1a0506aca830ea04a04bbe033f925c23f653148bd4194fffe93b3a6948102"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-02-q1",
+          "prompt": "What warning does the old sailor give, and what is it based on? How does the skipper answer?",
+          "facilitatorNotes": [
+            "He saw a golden ring round the moon last night and no moon tonight, so he fears a hurricane and asks to put into port. The skipper laughs scornfully, and his pride sets up the disaster."
+          ],
+          "evidence": [
+            "Last night, the moon had a golden ring,",
+            "And a scornful laugh laughed he."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-02-q2",
+          "prompt": "The daughter asks three questions that begin the same way. How do her father’s answers change?",
+          "facilitatorNotes": [
+            "The bells are a fog-bell warning of rocks, the guns come from another ship in distress, and to the light there is no answer at all, because he is dead. The repeated question builds dread, and the third answer is silence."
+          ],
+          "evidence": [
+            "O say, what may it be?",
+            "But the father answered never a word,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-02-q3",
+          "prompt": "The waves look “soft as carded wool,” but the rocks are “Like the horns of an angry bull.” Why put these two comparisons side by side?",
+          "facilitatorNotes": [
+            "The sea looks gentle while the rocks are deadly, so the pair shows danger hiding under a soft surface. Readers may find other comparisons, such as the ship sinking “Like a vessel of glass,” just as strong."
+          ],
+          "evidence": [
+            "Looked soft as carded wool,",
+            "Like the horns of an angry bull."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-02-q4",
+          "prompt": "Who or what is to blame for the wreck? Use the poem to explain.",
+          "facilitatorNotes": [
+            "The skipper ignored a warning out of pride, yet he also wrapped his daughter in his coat and tied her to the mast to save her, and the storm itself is “cruel.” Readers may blame pride, the sea, or both. The last stanza asks for mercy rather than blame."
+          ],
+          "evidence": [
+            "He wrapped her warm in his seaman's coat",
+            "Christ save us all from a death like this,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-03",
+      "title": "Excelsior",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Interpret a character who is never explained, from what he refuses and what he repeats.",
+      "focus": "A young traveller climbs past every warning toward a goal no one else understands.",
+      "context": "Longfellow published “Excelsior” in 1841. Excelsior is a Latin word meaning “higher” or “ever upward.” The poem is set in the Alps; the monks of the Great Saint Bernard Pass kept dogs that searched for travellers lost in the snow. A falchion is a curved sword; a clarion is a trumpet; a device is a picture or motto on a banner.",
+      "contentNote": "The young traveller is found dead in the snow.",
+      "excerpt": {
+        "locator": "Ballads and Other Poems, “Excelsior,” the whole poem; opens “The shades of night were falling fast, As through an Alpine village passed A youth, who…”; closes “…he lay, And from the sky, serene and far, A voice fell, like a falling star, Excelsior!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          294,
+          302
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "17ba6f0a7047e8d084b643243ddffaccdd987f5136726f78a9270b63a2a575c5"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-03-q1",
+          "prompt": "What warnings and invitations does the youth refuse on his way up?",
+          "facilitatorNotes": [
+            "The light of warm homes, an old man’s warning about the pass and the flooding river, a young woman’s offer of rest, and a peasant’s warning of avalanches. Each time his only answer is “Excelsior!”"
+          ],
+          "evidence": [
+            "Try not the Pass!",
+            "Beware the awful avalanche!"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-03-q2",
+          "prompt": "The villagers hear his word as “that unknown tongue.” Why might Longfellow leave its meaning hidden from them?",
+          "facilitatorNotes": [
+            "They cannot understand what drives him, and neither, at first, can the reader. The mystery makes the youth stand for anyone who follows a high aim that others cannot see."
+          ],
+          "evidence": [
+            "The accents of that unknown tongue,",
+            "A banner with the strange device,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-03-q3",
+          "prompt": "Is the ending a defeat or a victory? Find words that support each view.",
+          "facilitatorNotes": [
+            "He is “Lifeless,” his hand is ice, so he has lost his life; yet he is “beautiful,” and a voice falls from a calm sky, as if he has gone higher still. Longfellow seems to admire his aim; many readers think he threw his life away. Both readings use the text."
+          ],
+          "evidence": [
+            "Lifeless, but beautiful, he lay,",
+            "A voice fell, like a falling star,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-04",
+      "title": "The Emperor’s Bird’s-Nest",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Notice how a joke changes the meaning of an action.",
+      "focus": "In a muddy army camp, a powerful emperor protects a swallow’s nest.",
+      "context": "Charles V (1500–1558) ruled Spain and much of Europe and fought many wars against France. Flanders is a region in what is now Belgium. Hidalgos are Spanish noblemen; “swarthy” means dark-skinned; a dragoon is a mounted soldier; golondrina is Spanish for a swallow, and macho here is Spanish for a mule. A siege surrounds a town until it gives in; a breach is a hole broken in a wall.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Birds of Passage, Flight the First, “The Emperor’s Bird’s-Nest,” the whole poem; opens “Once the Emperor Charles of Spain, With his swarthy, grave commanders, I forget in what…”; closes “…fledged and flown, Singing o'er those walls of stone Which the cannon-shot had shattered.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2085,
+          2095
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "686de26c24ca6c2e8e075c98e1d91d00a59f463c0c86c087810c8e6a8cf338ce"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-04-q1",
+          "prompt": "What is the swallow’s nest made of, and why is that surprising in an army camp?",
+          "facilitatorNotes": [
+            "Clay and the hair of horses’ manes, tails and a soldier’s crest, gathered after skirmishes. The bird has built its home from what the fighting left behind."
+          ],
+          "evidence": [
+            "Built of clay and hair of horses,",
+            "After skirmish of the forces."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-04-q2",
+          "prompt": "Why does the old Hidalgo’s joke bring the Emperor out “half in anger, half in shame”?",
+          "facilitatorNotes": [
+            "The joke says the bird thinks the Emperor’s tent a shed and the Emperor a mule. Instead of punishing anyone, the Emperor answers with his own joke and protects the bird, turning an insult into kindness."
+          ],
+          "evidence": [
+            "Half in anger, half in shame,",
+            "Golondrina is my guest,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-04-q3",
+          "prompt": "The cannon shatter the town’s walls, but the swallow’s young fly safely. What does that contrast suggest about the Emperor?",
+          "facilitatorNotes": [
+            "A conqueror who batters a town orders his own tent left standing for a bird’s sake. Readers may admire his gentleness, or find it strange that his mercy reaches a swallow but not the besieged town."
+          ],
+          "evidence": [
+            "Leave it standing!",
+            "Singing o'er those walls of stone"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-05",
+      "title": "Paul Revere’s Ride",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 9,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a night journey through time and place, and notice where the poem turns history into legend.",
+      "focus": "One rider’s warning becomes a story about a whole people waking up.",
+      "context": "Longfellow wrote this poem in 1860 as the landlord’s story in Tales of a Wayside Inn, a book of tales told by friends round an inn fire. It retells the night of April 18, 1775, when Paul Revere rode to warn Massachusetts towns that British soldiers were coming; the fighting at Lexington and Concord the next day began the American Revolution. Longfellow changed facts for the story: the real Revere arranged the lantern signal for others to see, rode with other messengers, and was stopped before he reached Concord. Middlesex is the county; grenadiers are soldiers; a man-of-war is a warship.",
+      "contentNote": "The poem looks ahead to the first soldier killed at Concord bridge.",
+      "excerpt": {
+        "locator": "Tales of a Wayside Inn, Part First, “The Landlord’s Tale: Paul Revere’s Ride,” the whole poem; opens “Listen, my children, and you shall hear Of the midnight ride of Paul Revere, On the…”; closes “…to hear The hurrying hoof-beats of that steed, And the midnight message of Paul Revere.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2350,
+          2362
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "593999b940e35a348e2337b946f8fbc619d5c507905cd5a4449444ff46b89cce"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-05-q1",
+          "prompt": "What plan does the second stanza set up? Why does the signal have two possible answers?",
+          "facilitatorNotes": [
+            "One lantern if the British march by land, two if they cross by sea, while Revere waits across the river ready to ride. Knowing the code, the reader watches the belfry with him until the second lamp appears."
+          ],
+          "evidence": [
+            "One, if by land, and two, if by sea;",
+            "A second lamp in the belfry burns!"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-05-q2",
+          "prompt": "Three stanzas begin “It was twelve … one … two by the village clock.” What does this repetition do?",
+          "facilitatorNotes": [
+            "It marks the ride like a clock through Medford, Lexington and Concord, adding sounds and sights each time. The Lexington and Concord stanzas also look ahead to the fighting the next day."
+          ],
+          "evidence": [
+            "It was one by the village clock,",
+            "At the bloody work they would look upon."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-05-q3",
+          "prompt": "“The fate of a nation was riding that night.” Is the poem fair to everyone else who took part?",
+          "facilitatorNotes": [
+            "The poem makes one spark from one horse light a whole country. It gives the friend in the tower little credit and leaves out the other riders. Some readers will say a poem may shape history into legend; others will want the full story told."
+          ],
+          "evidence": [
+            "The fate of a nation was riding that night;",
+            "Kindled the land into flame with its heat."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-05-q4",
+          "prompt": "The last stanza calls the cry “a cry of defiance and not of fear.” Who does Longfellow imagine hearing it in the future?",
+          "facilitatorNotes": [
+            "Americans in any later “hour of darkness and peril and need.” Longfellow wrote just before the Civil War, so he may have meant his own readers."
+          ],
+          "evidence": [
+            "A cry of defiance and not of fear,",
+            "In the hour of darkness and peril and need,"
+          ]
+        }
+      ],
+      "months": [
+        4
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-06",
+      "title": "The Bell of Atri",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 10,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a story poem to its judgment, and test whether the judgment is fair.",
+      "focus": "A bell meant for wronged people is rung by a starving horse.",
+      "context": "In Tales of a Wayside Inn (1863), Longfellow imagines friends telling stories round the fire of an old inn in Massachusetts; this one, an old Italian legend, is told by a young Sicilian. Atri is a hill town in the Abruzzo region of Italy; Re Giovanni is King John; a Syndic is a town official who judges disputes; briony is a climbing vine; provender is animal feed; “Domeneddio!” is Italian for “Lord God!” This text prints “Syndie” once for “Syndic” and “an food” for “and food.”",
+      "contentNote": "An old horse is starved and turned out into the street by his owner.",
+      "excerpt": {
+        "locator": "Tales of a Wayside Inn, Part Second, “The Sicilian’s Tale: The Bell of Atri,” the whole poem; opens “At Atri in Abruzzo, a small town Of ancient Roman date, but scant renown, One of those…”; closes “…And this shall make, in every Christian clime, The Bell of Atri famous for all time.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          2843,
+          2852
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e2eaa39814ece5c47535e2227ee6bc4d89e4cc9a53357a5a979b916ea3be1cd4"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-06-q1",
+          "prompt": "What was the bell for, and why does its rope end up made of vines?",
+          "facilitatorNotes": [
+            "Anyone who had been wronged could ring it, and the Syndic would judge the case. When the old rope wore out, someone mended it with briony vine, which is exactly what a hungry horse would tug."
+          ],
+          "evidence": [
+            "Was done to any man, he should but ring",
+            "Mended the rope with braids of briony,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-06-q2",
+          "prompt": "How has the knight changed as he grew old? Which details show it?",
+          "facilitatorNotes": [
+            "He once loved hunting, falcons, hounds and horses; now he loves only gold. He sells the animals, keeps one horse to “starve and shiver,” and finally turns it out to save the cost of feed."
+          ],
+          "evidence": [
+            "His only passion was the love of gold.",
+            "To starve and shiver in a naked stall,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-06-q3",
+          "prompt": "The bell was meant for wrongs done to “any man.” Was the Syndic right to hear a horse’s case? What does the King think?",
+          "facilitatorNotes": [
+            "The Syndic says the horse “pleads his cause as loudly as the best,” and the King is delighted that his bell speaks for “creatures dumb.” Some readers may point out that the horse only wanted food; the poem treats that accident as justice."
+          ],
+          "evidence": [
+            "He calls for justice, being sore distressed,",
+            "Of creatures dumb and unknown to the laws;"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-06-q4",
+          "prompt": "“He who serves well and speaks not, merits more / Than they who clamor loudest.” What does the Syndic mean, and who in the story clamors loudest?",
+          "facilitatorNotes": [
+            "The silent horse who served for years deserves more than noisy people. The crowd tells the story “in five-and-twenty different ways,” and the knight argues angrily that he may do what he likes with his own."
+          ],
+          "evidence": [
+            "He who serves well and speaks not, merits more",
+            "In five-and-twenty different ways at least,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-07",
+      "title": "Christmas Bells",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow how a repeated line changes meaning as the poem goes on.",
+      "focus": "The sound of Christmas bells and the sound of cannon compete in one speaker’s mind.",
+      "context": "Longfellow wrote this poem at Christmas 1863, during the American Civil War; a few weeks before, his son Charles had been badly wounded fighting in the Union army. Christendom means the Christian countries of the world; belfries are bell towers; “rent” means tore apart.",
+      "contentNote": "The poem was written during the Civil War and speaks of cannon fire and despair. The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Flower-de-Luce, “Christmas Bells,” the whole poem; opens “I heard the bells on Christmas Day Their old, familiar carols play, And wild and sweet…”; closes “…sleep! The Wrong shall fail, The Right prevail, With peace on earth, good-will to men!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3309,
+          3315
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fb666440b5a1d1576f2834650d8a1e69724d695dad348239e3d663f37803233a"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-07-q1",
+          "prompt": "Every stanza ends with “Of peace on earth, good-will to men!” How does the meaning of that line change?",
+          "facilitatorNotes": [
+            "At first it is a carol the whole world sings; then the cannon drown it; then the speaker says hate “mocks the song.” The words stay the same while the speaker’s feeling about them changes."
+          ],
+          "evidence": [
+            "The carols drowned",
+            "There is no peace on earth,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-07-q2",
+          "prompt": "What interrupts the bells, and what does the earthquake comparison suggest?",
+          "facilitatorNotes": [
+            "Cannon “in the South,” the war. Like an earthquake splitting the hearth-stones of a whole continent, the war breaks apart families and homes."
+          ],
+          "evidence": [
+            "The cannon thundered in the South,",
+            "The hearth-stones of a continent,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-07-q3",
+          "prompt": "Who seems to speak in the last stanza, and does it answer the speaker’s despair?",
+          "facilitatorNotes": [
+            "The bells themselves seem to answer that God is not dead and that right will win. Some readers find this real comfort; others notice that the war is not over and the hope comes without proof. Both responses fit the poem."
+          ],
+          "evidence": [
+            "God is not dead; nor doth he sleep!",
+            "The Right prevail,"
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-08",
+      "title": "The Sermon of St. Francis",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Separate what a speaker says from whether his listeners understood it.",
+      "focus": "A saint preaches to hungry birds, unsure whether they understand him.",
+      "context": "St. Francis of Assisi (about 1181–1226) was an Italian friar known for his love of the poor and of animals; old stories tell of him preaching to birds. A sermon or homily is a religious talk; the Seraphim are angels pictured as fire; a mere is a pond; a dole is a share of food given out; manna is the food from heaven in the Bible; lays are songs.",
+      "contentNote": "The poem speaks from Christian belief. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Birds of Passage, Flight the Fourth, “The Sermon of St. Francis,” the whole poem; opens “Up soared the lark into the air, A shaft of song, a winged prayer, As if a soul, released…”; closes “…homily had understood; He only knew that to one ear The meaning of his words was clear.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3825,
+          3833
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7c4d173f62157bed51c6ea9ec290443f135b5f1d2740dfdc357c30f88b92fc98"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-08-q1",
+          "prompt": "What does St. Francis see in the lark’s flight?",
+          "facilitatorNotes": [
+            "A “shaft of song” and a “winged prayer,” like a soul flying up to heaven. To him the bird stands for the fiery upward longing of the angels."
+          ],
+          "evidence": [
+            "A shaft of song, a winged prayer,",
+            "An emblem of the Seraphim;"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-08-q2",
+          "prompt": "Francis says his words are “Not mine, though mine they seem to be.” Whose does he mean, and why say so?",
+          "facilitatorNotes": [
+            "He believes he only passes on God’s message, so he does not take credit for it. The line shows his humility."
+          ],
+          "evidence": [
+            "Not mine, though they be spoken through me."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-08-q3",
+          "prompt": "What does Francis tell the birds to be thankful for? Why might a reader smile at “Who for yourselves so little care”?",
+          "facilitatorNotes": [
+            "Their feathers, crimson hoods and brown cloaks, their wings and the high air. Birds do not plan or worry, yet they are cared for; calling their colours hoods and cloaks makes them sound like little friars."
+          ],
+          "evidence": [
+            "Your crimson hoods, your cloaks of brown.",
+            "Who for yourselves so little care!"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-08-q4",
+          "prompt": "Did the birds understand the sermon? Whose ear was the meaning clear to?",
+          "facilitatorNotes": [
+            "Francis does not know. The “one ear” may be his own, since preaching gave him peace, or God’s. Either reading fits; the poem leaves it open."
+          ],
+          "evidence": [
+            "He knew not if the brotherhood",
+            "The meaning of his words was clear."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-09",
+      "title": "From My Arm-Chair",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 11,
+        "totalMinutes": 17
+      },
+      "challenge": "Trace how one object carries a speaker back through memory.",
+      "focus": "A chair made from a famous tree brings an old poet’s youth back to life.",
+      "context": "Longfellow’s “The Village Blacksmith” (1840) begins “Under a spreading chestnut tree.” When that real tree in Cambridge, Massachusetts was cut down, the town’s schoolchildren gave the poet an armchair made from its wood for his seventy-second birthday, and he answered with this poem. Ebon means dark like ebony; affluent means rich and plentiful; a jubilee is a celebration; three-score years and ten is seventy. The Danish king is Canute, who in an old story showed that even a king cannot order back the sea.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Ultima Thule, “From My Arm-Chair: To the Children of Cambridge,” the whole poem with its headnote; opens “Who presented to me on my Seventy-second Birth-day, February 27, 1879, this Chair, made…”; closes “…to this dead wood, And make these branches, leafless now so long, Blossom again in song.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4070,
+          4082
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1446e88a23357f5bc2145d1730acabd592c9c7aee77fcd7def15e768cdd7a1bb"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-09-q1",
+          "prompt": "What was the chair made from, and why did the children choose it for Longfellow?",
+          "facilitatorNotes": [
+            "Wood from the chestnut tree beside the blacksmith’s forge, the tree he had written about long before. The poet says the chair belongs to him only by “right divine of song.”"
+          ],
+          "evidence": [
+            "Only because the spreading chestnut tree",
+            "Of old was sung by me."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-09-q2",
+          "prompt": "Which senses does Longfellow use to remember the tree and the forge? Find two.",
+          "facilitatorNotes": [
+            "Sight (white blossoms, the forge glowing), sound (bees murmuring like a hive, the bellows, the hammers on the anvil, children shouting) and heat (iron “white with heat”). Memory comes back through every sense."
+          ],
+          "evidence": [
+            "And murmured like a hive.",
+            "The iron white with heat!"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-09-q3",
+          "prompt": "King Canute could not hold back the tide, but “seated in this chair, I can in rhyme / Roll back the tide of Time.” What does the poet mean?",
+          "facilitatorNotes": [
+            "Memory and poetry carry him back to his youth, which the sea cannot do for a king. The gift has “Brought back my youth again.”"
+          ],
+          "evidence": [
+            "Roll back the tide of Time.",
+            "Brought back my youth again."
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-09-q4",
+          "prompt": "In the last stanza, what makes the “dead wood” blossom again?",
+          "facilitatorNotes": [
+            "The children’s love and remembrance. A keepsake matters because of “the giver’s loving thought,” and the blossoming is the poem itself, “in song.”"
+          ],
+          "evidence": [
+            "Give life to this dead wood,",
+            "The giver's loving thought."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-longfellow-complete-poetical-works-1902-10",
+      "title": "The Tide Rises, the Tide Falls",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Infer what happens to a character when the poem never says it directly.",
+      "focus": "A traveller vanishes while the sea keeps its endless rhythm.",
+      "context": "Longfellow wrote this poem in 1879, near the end of his life. The curlew is a long-billed shore bird with a lonely call; a hostler looks after horses at an inn; to efface is to wipe out. Read it slowly, letting the refrain fall at the end of each stanza.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Ultima Thule, Folk Songs, “The Tide Rises, the Tide Falls,” the whole poem; opens “The tide rises, the tide falls, The twilight darkens, the curlew calls; Along the…”; closes “…but nevermore Returns the traveller to the shore, And the tide rises, the tide falls.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4154,
+          4156
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5f811ac418d18cf63c107246d5f44f69742e80214f37240efb4d3d75519df300"
+      },
+      "questions": [
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-10-q1",
+          "prompt": "What happens to the traveller? How can you tell, when the poem never says it?",
+          "facilitatorNotes": [
+            "He hurries toward town at twilight; in the dark the waves wipe out his footprints; in the morning he “nevermore” returns. Readers may infer that he has died, or simply that he is gone for good; the poem leaves it open."
+          ],
+          "evidence": [
+            "The traveller hastens toward the town,",
+            "Returns the traveller to the shore,"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-10-q2",
+          "prompt": "The refrain repeats in every stanza. What does it suggest about the sea compared with the traveller?",
+          "facilitatorNotes": [
+            "The tide keeps its rhythm whatever happens to one person; morning comes, the horses stamp, the day returns. The sea goes on while a single life passes."
+          ],
+          "evidence": [
+            "The day returns, but nevermore",
+            "But the sea in the darkness calls and calls;"
+          ]
+        },
+        {
+          "id": "reading-4-longfellow-complete-poetical-works-1902-10-q3",
+          "prompt": "Why might Longfellow give the waves “soft, white hands” rather than something fierce?",
+          "facilitatorNotes": [
+            "Erasing the footprints is gentle and quiet, not violent, so loss feels calm and natural. Some readers find that peaceful; others find it all the sadder."
+          ],
+          "evidence": [
+            "The little waves, with their soft, white hands,",
+            "Efface the footprints in the sands,"
+          ]
+        }
+      ]
+    }
+  ]
+}
