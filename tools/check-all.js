@@ -3,7 +3,7 @@
 
 // The full gate: syntax, complete content validation, the content report
 // kept current, a fresh build, a smoke test of the built site, the
-// study-guide links, the Learn pages, and the unit tests.
+// PDF typesetter, the study-guide links, the Learn pages, and the unit tests.
 
 const fs = require("node:fs");
 const path = require("node:path");
@@ -42,6 +42,8 @@ const checks = [
   ["node", ["tools/check-reading-level.js"]],
   ["node", ["tools/build.js"]],
   ["node", ["tools/smoke-static.js"]],
+  // Generate PDF: the real WebAssembly TeX against the runtime staged in dist/.
+  ["node", ["tools/check-pdf.js"]],
   ["node", ["tools/check-guides.js"]],
   ["node", ["tools/check-learn.js"]],
   ["node", ["--test", "test/**/*.test.js"]],

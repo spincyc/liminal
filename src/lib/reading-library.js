@@ -43,7 +43,12 @@
       if (!(keys === "text,type" || keys === "level,text,type")) throw new Error(where + ": unexpected heading fields");
       if (block.level !== undefined && ![1, 2, 3].includes(block.level)) throw new Error(where + ": heading level must be 1-3");
     } else if (keys !== "text,type") throw new Error(where + ": unexpected block fields");
+    // docs/reading-library.md "Notes and illustrations": one form for notes,
+    // no digitiser markers, and a notes label is never a contents heading.
+    if (block.type === "heading" && NOTES_LABEL.test(block.text)) throw new Error(where + ": a notes label is a paragraph, not a heading");
+    if (/\[Illustration|\{footnote|\[Transcriber/i.test(block.text)) throw new Error(where + ": illustration markers, ad hoc note forms and transcriber notes stay out of the text");
   }
+  const NOTES_LABEL = /^\s*foot-?notes?\s*[:.]?\s*$/i;
 
   // An excerpt cites blocks [first, last] of a work, optionally starting or
   // ending inside a block (JavaScript string offsets). The nightly reader

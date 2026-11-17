@@ -527,7 +527,7 @@ if (apDisclaimer.length) throw new Error(apDisclaimer.join("; "));
 // Nightly texts remain in separately loaded grade files, with a small index.
 const dailyHtml = fs.readFileSync(path.join(root, "daily-reading.html"), "utf8");
 const dailyScripts = pageScripts(dailyHtml);
-if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "app/daily-reading-render.js", "app/daily-reading-browse.js", "app/reader-controls.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
+if (JSON.stringify(dailyScripts) !== JSON.stringify(["lib/daily-reading.js", "app/daily-reading-render.js", "app/daily-reading-browse.js", "app/reader-controls.js", "native-tex/config.js", "vendor/colophon/native-tex.js", "lib/reading-tex.js", "app/pdf-action.js", "app/daily-reading.js"])) throw new Error("Daily-reading scripts are missing or out of order");
 for (const match of dailyHtml.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1].split(/[?#]/)[0];
   if (!/^https?:/.test(target) && !fs.existsSync(path.join(root, target))) throw new Error("Missing daily-reading asset: " + target);
