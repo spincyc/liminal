@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "clare-poems-1901",
+  "readings": [
+    {
+      "id": "reading-6-clare-poems-1901-01",
+      "title": "The Harvest Morning",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 14,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a working morning hour by hour, and notice where the poet stops describing and speaks to someone directly.",
+      "focus": "A cheerful picture of harvest also pleads for the poor who glean and for the labourers poets ignore.",
+      "context": "John Clare (1793–1864), a farm labourer’s son from Helpston in Northamptonshire, worked in the fields he wrote about. Each stanza here follows the nine-line pattern Edmund Spenser invented. To teem is to unload; the bird-boy scares birds off the crops; gleaners gather the grain left after reaping; the stubs are the stubble; the bevering hour is the mid-morning break for food and drink, and the horn is a drinking horn.",
+      "contentNote": "Harvest workers pass round a bottle; one stanza dwells admiringly on a poor girl’s beauty.",
+      "excerpt": {
+        "locator": "“The Harvest Morning,” complete poem; opens “Cocks wake the early morn with many a crow; Loud-striking village clock has counted four;…”; closes “…Wealth, which you in vain deride, Beauties of richest bloom, superior to your pride.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          20,
+          27
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c4080fdad15e61fa41c788c59521352470abacf1e2c6ce859c34b7f5d5c93076"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-01-q1",
+          "prompt": "Which sounds wake the farm and keep it busy? Find at least three.",
+          "facilitatorNotes": [
+            "Cocks crowing, the village clock striking four, the bird-boy’s horn, rattling waggons, grunting hogs and gabbling geese, the mower whetting his scythe. The noise shows a whole community at work before the heat of the day."
+          ],
+          "evidence": [
+            "Cocks wake the early morn with many a crow;",
+            "The bird-boy’s pealing horn is loudly blow’d;"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-01-q2",
+          "prompt": "In the fifth stanza the poet turns to the farmers. What does he ask of them, and what does he warn?",
+          "facilitatorNotes": [
+            "To let the poor glean, since winter and poverty are near and the farmer will never miss the scraps; whoever refuses is a “harden’d, hungry hound” who will lack blessings. Description becomes a plea for fairness."
+          ],
+          "evidence": [
+            "The humble gleaner entrance in your ground;",
+            "But he shall never lack, that giveth to the poor."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-01-q3",
+          "prompt": "What does the stanza about Emma add to the poem’s thinking about poverty?",
+          "facilitatorNotes": [
+            "Her beauty goes “unseen” because she is poor, and the poet blames Poverty for confining worth. Some readers find the admiring description old-fashioned or uncomfortable; it still supports the claim that rural people deserve notice."
+          ],
+          "evidence": [
+            "Thy beauties blooming in low life unseen,",
+            "Had Fortune blest, sweet girl, this lot had ne’er been thine."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-01-q4",
+          "prompt": "The last stanza says poets “disdain to sing” rural life. How does the whole poem answer that?",
+          "facilitatorNotes": [
+            "By singing it in detail, from scythe to sheaves to the bevering hour; Clare, a labourer himself, claims country life for poetry and tells Wealth its pride is mistaken. Readers may ask whether the poem shows the hardship as clearly as the charm."
+          ],
+          "evidence": [
+            "What sweet descriptions bards disdain to sing;",
+            "Beauties of richest bloom, superior to your pride."
+          ]
+        }
+      ],
+      "months": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-02",
+      "title": "The Gipsy’s Camp",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Separate what a speaker’s description tells us about the person described from what it tells us about him.",
+      "focus": "A remembered fortune-telling becomes a comic story of a boy’s hope, his growing doubt and a curse he still half fears.",
+      "context": "John Clare grew up poor in a Northamptonshire village, where Romani families, then called gipsies, often camped on the commons. Here he remembers a fortune-teller from his boyhood. A Sybil is a prophetess; clack is chatter; morts means lots; a groat (fourpence) and a farthing are small coins; Job is the man in the Bible who loses everything.",
+      "contentNote": "The speaker describes the Romani fortune-teller in demeaning words (“midnight hags,” “tawny smoked flesh,” “gibberish”), stereotypes common in Clare’s time. She curses the boy, half comically.",
+      "excerpt": {
+        "locator": "“The Gipsy’s Camp,” complete poem; opens “How oft on Sundays, when I’d time to tramp, My rambles led me to a gipsy’s camp, Where…”; closes “…Of not a hoarded farthing be possest, And when all’s done, be shov’d to hell at last!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          69,
+          69
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "96d08e4329efed09007743e051c0a1e1d21e187195aae5fe9445d3da122d1490"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-02-q1",
+          "prompt": "How does the speaker describe the fortune-teller and her shelter? Which words record what he saw, and which are judgments?",
+          "facilitatorNotes": [
+            "Observed: rags, hat and cloak, hazel sticks bent into a tent, a hedge keeping off the wind. Judged: “midnight hags,” “Uncouth,” “gibberish.” The insults belong to the prejudices of Clare’s time; the exact account of how she builds her shelter shows real knowledge of her skill."
+          ],
+          "evidence": [
+            "Her pliant bending hazel’s arching sticks;",
+            "To hear her gibberish tale so quaintly spoke,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-02-q2",
+          "prompt": "What did the boy pay for, and what did he get?",
+          "facilitatorNotes": [
+            "A groat bought a fortune in which squires and lords seemed within his reach. The comic line shows how cheap the promise was and how much the boy wanted it."
+          ],
+          "evidence": [
+            "And Squire and Lord were purchas’d with a groat."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-02-q3",
+          "prompt": "What changes when “man’s unbelieving taste” comes round, and how does the fortune-teller answer?",
+          "facilitatorNotes": [
+            "Growing up, he stops believing and stops paying; she stamps, spits and curses him with poverty and damnation. The curse is furious, yet the scene is also funny, partly at the boy’s expense."
+          ],
+          "evidence": [
+            "But as man’s unbelieving taste came round,",
+            "She furious stampt her shoeless foot aground,"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-02-q4",
+          "prompt": "Read the two lines in parentheses. Is the older speaker joking, or does the curse still trouble him?",
+          "facilitatorNotes": [
+            "A whole fate settled “for fourpence” sounds mock-tragic. Clare himself lived and died poor, so some readers hear real bitterness under the joke; both readings can use the exclamations."
+          ],
+          "evidence": [
+            "(Alas, for fourpence how my die is cast!)",
+            "And when all’s done, be shov’d to hell at last!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-03",
+      "title": "The Autumn Robin",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 12,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a long poem stanza by stanza and collect what different people do when they meet the robin.",
+      "focus": "Praise of a plain, common bird becomes an argument about which beauty deserves notice.",
+      "context": "John Clare worked outdoors all his life and wrote about common birds. The English robin goes on singing through autumn and winter, after most birds fall quiet. Livery is a servant’s uniform, here the bird’s russet coat; hinds are farm workers; a clown is a country fellow, not a circus performer; the tube is a gun barrel; to prune a wing is to preen it.",
+      "contentNote": "A farm worker shoots birds for food in winter but spares the robin.",
+      "excerpt": {
+        "locator": "“The Autumn Robin,” complete poem; opens “Sweet little bird in russet coat, The livery of the closing year! I love thy lonely…”; closes “…thy autumn praise prolong, As they would share the happy prime Of thy eternal song.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          279,
+          293
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8585983607533f7abdfdc51b47521fc76bec2ddb948c8b33dd4159b04ad9ab02"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-03-q1",
+          "prompt": "List the people who stop for the robin. What does each one change or give up?",
+          "facilitatorNotes": [
+            "The shepherd sits to listen, the hedger pauses, the boy who mocks songbirds leaves the gate unclapped, the milkmaid stops her song, the man with the gun turns it away, the hungry gipsy boy leaves berries. Small acts show the bird’s hold on ordinary people."
+          ],
+          "evidence": [
+            "The hedger pauses, ere he knocks",
+            "He turns the tube away."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-03-q2",
+          "prompt": "Clare compares the robin with the swallow, martin, sparrow and wren. What makes the robin different?",
+          "facilitatorNotes": [
+            "The others build “with doubtful faith,” out of reach; the robin trusts people and nests so low a toddler could touch it. Its trust wins it favour, though the poem also notices it seems to “court” danger."
+          ],
+          "evidence": [
+            "Domestic and confiding bird!",
+            "May reach with tiny hands."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-03-q3",
+          "prompt": "Why is the robin “missing and forgot” in summer, and who wins attention instead?",
+          "facilitatorNotes": [
+            "A thousand summer singers drown its quiet notes, and the famous nightingale takes the public praise. Fame goes to the showy; the robin sings when nothing else does."
+          ],
+          "evidence": [
+            "The far-famed nightingale, that shares",
+            "Thou at the dull and dying year."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-03-q4",
+          "prompt": "In the last stanza Clare wishes his verse could imitate the robin’s song. What might he be saying about himself as a poet?",
+          "facilitatorNotes": [
+            "Like the robin he is a plain rural singer, easily overlooked beside louder voices; if his words matched its song, Time would keep even his “meanest verse.” Some readers hear modesty, others a quiet claim to lasting worth."
+          ],
+          "evidence": [
+            "My words but imitate thy lay,",
+            "Nor throw the meanest verse away,"
+          ]
+        }
+      ],
+      "months": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "reading-6-clare-poems-1901-04",
+      "title": "I Am! Yet What I Am",
+      "sourceId": "clare-poems-1901",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 14,
+        "totalMinutes": 21
+      },
+      "challenge": "Hold together the poem’s claim to exist and its account of losing nearly everything else.",
+      "focus": "In deep isolation the speaker still insists “I am,” and longs for a peace beyond people.",
+      "context": "John Clare spent the last twenty-three years of his life in an asylum in Northampton, far from his family, and wrote this poem there. Oblivious means forgetful; a host is a crowd; esteem is self-respect; vaulted means arched like a roof.",
+      "contentNote": "The speaker describes loneliness, abandonment and losing his sense of self; the poem was written in a mental hospital.",
+      "excerpt": {
+        "locator": "“I Am! Yet What I Am,” complete poem; opens “I am! yet what I am who cares, or knows? My friends forsake me like a memory lost. I am…”; closes “…Full of high thoughts, unborn. So let me lie, The grass below; above the vaulted sky.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          355,
+          357
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7e23ebef45aa65e02748087e02c040e22e8cd1f4642fd22f2377564233b165f0"
+      },
+      "questions": [
+        {
+          "id": "reading-6-clare-poems-1901-04-q1",
+          "prompt": "The poem opens with a statement and a question. What does the speaker know for certain, and what does he not know?",
+          "facilitatorNotes": [
+            "He knows he exists; he does not know what he is, and no one else cares or knows. Existence remains after friends, esteem and identity have gone."
+          ],
+          "evidence": [
+            "I am! yet what I am who cares, or knows?"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-04-q2",
+          "prompt": "Find the images of being lost at sea. What do they show about his state of mind?",
+          "facilitatorNotes": [
+            "He is “toss’d” into a “living sea of waking dream” and suffers the “shipwreck” of his self-respect. He is adrift, and the waking dream blurs what is real."
+          ],
+          "evidence": [
+            "Into the living sea of waking dream,",
+            "But the huge shipwreck of my own esteem"
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-04-q3",
+          "prompt": "Why might those he loved best now seem “stranger than the rest”?",
+          "facilitatorNotes": [
+            "Losing the closest people hurts most, so their absence feels strangest; or his illness makes even familiar faces unrecognisable. Either reading should use the step from “strange” to “stranger.”"
+          ],
+          "evidence": [
+            "Are strange--nay, they are stranger than the rest."
+          ]
+        },
+        {
+          "id": "reading-6-clare-poems-1901-04-q4",
+          "prompt": "What does he long for in the last stanza? Is the ending peaceful, sad or both?",
+          "facilitatorNotes": [
+            "A place no person has touched, alone with God, sleeping as in childhood, with grass below and sky above. Some readers hear calm and relief, others a wish for death; the image holds both rest and the grave."
+          ],
+          "evidence": [
+            "I long for scenes where man has never trod,",
+            "The grass below; above the vaulted sky."
+          ]
+        }
+      ]
+    }
+  ]
+}
