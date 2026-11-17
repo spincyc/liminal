@@ -109,6 +109,24 @@ document applies to them unchanged: authentic text, the grade's time budget,
 three or more original text-specific questions with notes and exact evidence,
 no duplicates within or between levels.
 
+To write a work's calendar readings, author a compact spec outside the
+repository (its format is in the header of `tools/build-extra-readings.js`)
+and build the file from it:
+
+```sh
+node tools/build-extra-readings.js <spec.js>           # report words, minutes and problems
+node tools/build-extra-readings.js <spec.js> --write   # write extra/<grade-key>/<work-id>.json
+node tools/check-daily-reading.js --complete
+```
+
+The tool numbers the readings and questions, writes each locator from the
+resolved text, computes `textHash`, links continued readings both ways, and
+refuses evidence missing from the cited text, fewer than three questions,
+overlapping ranges, and continued readings that do not start where the
+previous one ends (only heading blocks may lie between them, so chapter
+headings stay out of the nights). Edit the spec and rebuild rather than
+editing the written file by hand.
+
 ## Browsing and reading online
 
 `daily-reading.html` has two views with their own links. **Browse**
