@@ -68,6 +68,24 @@ established. Front matter belongs only when it is the author's own (a
 dedication, a preface by the author). Every such choice, and every emended
 letter, is stated in `edition` and `acquisition.method`.
 
+### Notes and illustrations
+
+Notes printed in the edition (the author's, or the original editor's) are part
+of the work and stay, in one form: each note is its own paragraph block
+`[Footnote <mark>: <text>]` (Project Gutenberg's form), placed where the
+transcription places it, after its paragraph, at the end of the chapter, or at
+the end of the book, and its anchor in the text stays as `[<mark>]`. A shared
+label such as "FOOTNOTES:" is a paragraph, never a heading, so it stays out of
+the contents. Transcriber's notes, illustration markers (`[Illustration]`) and
+captions are left out (the checker refuses the markers and a notes heading).
+
+### Several source files
+
+When the transcription spans several files (Wikisource subpages, a multi-part
+archive), `acquisition.downloadUrl` names the first or the index page,
+`acquisition.method` lists every file in order, and `downloadSha256` is the
+SHA-256 of the responses concatenated in that order.
+
 ## Citing a range
 
 A reading whose `sourceId` is a library work names its text with

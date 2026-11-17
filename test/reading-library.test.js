@@ -37,6 +37,10 @@ test("text serialises one canonical block per line and refuses anything else", (
   assert.throws(() => L.parseText('{"type":"heading","level":4,"text":"x"}\n'), /level/);
   assert.throws(() => L.parseText('{"type":"note","text":"x"}\n'), /type/);
   assert.throws(() => L.parseText('{"type":"paragraph","text":"x","extra":1}\n'), /fields/);
+  assert.throws(() => L.parseText('{"type":"heading","level":2,"text":"FOOTNOTES:"}\n'), /notes label/);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"[Illustration: A cab]"}\n'), /illustration/);
+  assert.throws(() => L.parseText('{"type":"paragraph","text":"Fare {footnote A shilling.}"}\n'), /illustration/);
+  assert.deepEqual(L.parseText('{"type":"heading","level":1,"text":"NOTES"}\n{"type":"paragraph","text":"FOOTNOTES:"}\n{"type":"paragraph","text":"[Footnote 1: Tweed.]"}\n').length, 3);
 });
 test("ranges resolve whole blocks and partial first and last blocks", () => {
   assert.deepEqual(L.resolveRange(blocks, { blocks: [1, 2] }), [{ type: "paragraph", text: blocks[1].text }, { type: "stanza", text: blocks[2].text }]);
@@ -82,12 +86,14 @@ test("a night citing a range resolves to the same text and hash as inline text",
 test("the browser library index lists works with the readings drawn from them", t => {
   const directory = scratch(t); writeWork(directory, "test-work-1908");
   const library = RL.loadLibrary({ directory });
-  const uses = new Map([["test-work-1908", [{ id: "reading-5-w01-d1", grade: 5, title: "One", genre: "fiction", blocks: [1, 1], startChar: null, endChar: null }]]]);
+  const uses = new Map([["test-work-1908", [
+    { id: "reading-6-w02-d1", grade: 6, title: "Inline", genre: "fiction", blocks: null, startChar: null, endChar: null },
+    { id: "reading-5-w01-d1", grade: 5, title: "One", genre: "fiction", blocks: [1, 1], startChar: null, endChar: null }]]]);
   RL.buildLibrary({ library, uses, output: directory });
   const index = JSON.parse(fs.readFileSync(path.join(directory, "content/reading-library/index.json")));
-  assert.deepEqual(index.works[0].levels, [5]);
+  assert.deepEqual(index.works[0].levels, [5, 6]);
   const meta = JSON.parse(fs.readFileSync(path.join(directory, RL.libraryFile("test-work-1908"))));
-  assert.equal(meta.contents[0].text, "CHAPTER I"); assert.equal(meta.uses[0].id, "reading-5-w01-d1");
+  assert.equal(meta.contents[0].text, "CHAPTER I"); assert.deepEqual(meta.uses.map(use => use.id), ["reading-5-w01-d1", "reading-6-w02-d1"]);
   const chunk = JSON.parse(fs.readFileSync(path.join(directory, meta.chunks[0].file)));
   assert.equal(chunk.blocks.length, 4);
 });
