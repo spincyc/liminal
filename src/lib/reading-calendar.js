@@ -106,6 +106,80 @@
     });
     return spans;
   }
+  // ---- Browsing a level's calendar (build output: entries with an id and
+  // continuesFrom/continuesTo flags, docs/daily-reading.md) ----
+  // The year this date's reading comes round again: three years on, or for
+  // February 29 the next leap year in the same cycle year.
+  function returnYear(value) {
+    const date = parseDate(value);
+    if (!date) return null;
+    for (let year = date.year + CYCLE; ; year += CYCLE) if (!(date.month === 2 && date.day === 29) || isLeap(year)) return year;
+  }
+  function cycleNote(value) {
+    const where = place(value), back = returnYear(value);
+    return where ? "Year " + where.cycle + " of " + CYCLE + " · this date’s reading returns in " + back : "";
+  }
+  // A continued run around a date: the part, the length, and the run's first
+  // and last dates. Runs sit on consecutive dates inside one span, so walking
+  // the neighbouring days finds them. Null for a reading that stands alone.
+  function runOn(calendar, value) {
+    const entry = readingOn(calendar, value);
+    if (!entry || typeof entry !== "object" || !(entry.continuesFrom || entry.continuesTo)) return null;
+    let first = value, last = value, part = 1, guard = 0;
+    while (guard++ < MAX_SPAN) { const before = readingOn(calendar, addDays(first, -1)); if (!(readingOn(calendar, first).continuesFrom && before && before.continuesTo)) break; first = addDays(first, -1); part++; }
+    guard = 0;
+    while (guard++ < MAX_SPAN) { const after = readingOn(calendar, addDays(last, 1)); if (!(readingOn(calendar, last).continuesTo && after && after.continuesFrom)) break; last = addDays(last, 1); }
+    let of = 1;
+    for (let date = first; date !== last; date = addDays(date, 1)) of++;
+    return { part, of, first, last };
+  }
+  // The next date, on or after `from`, when a reading id falls: the
+  // calendar repeats every three years, so this searches at most three
+  // (twelve for February 29) calendar years.
+  function nextDateOf(calendar, id, from) {
+    const start = parseDate(from);
+    if (!start || !calendar || !Array.isArray(calendar.years)) return null;
+    for (let cycle = 0; cycle < calendar.years.length; cycle++) {
+      const slot = calendar.years[cycle].findIndex(entry => (entry && typeof entry === "object" ? entry.id : entry) === id) + 1;
+      if (!slot) continue;
+      for (let year = start.year; year < start.year + 4 * CYCLE + 1; year++) {
+        if (cycleYear(year) !== cycle + 1) continue;
+        const date = dateOf(year, slot);
+        if (date && date >= formatDate(start)) return date;
+      }
+    }
+    return null;
+  }
+  // A month of a level's calendar as weeks of seven cells (Sunday first;
+  // null pads the first and last week). Each cell holds its date, the entry,
+  // where it sits in a continued run (single, start, middle, end) and
+  // whether a shared span starts there, so a multi-day story shows as one bar
+  // and every level's fresh starts line up.
+  function monthGrid(calendar, spans, month) {
+    const match = /^(\d{4})-(\d{2})$/.exec(String(month || ""));
+    if (!match) return null;
+    const year = Number(match[1]), m = Number(match[2]);
+    if (m < 1 || m > 12) return null;
+    const days = m === 2 && !isLeap(year) ? 28 : MONTH_DAYS[m - 1], cycle = cycleYear(year);
+    const starts = new Set(spanRanges((spans && spans.years && spans.years[cycle - 1]) || []).map(([first]) => first));
+    const cells = [];
+    for (let d = 1; d <= days; d++) {
+      const date = formatDate({ year, month: m, day: d }), entry = readingOn(calendar, date), slot = slotOf(m, d);
+      const from = !!(entry && entry.continuesFrom), to = !!(entry && entry.continuesTo);
+      cells.push({ date, day: d, entry: entry || null, run: from && to ? "middle" : from ? "end" : to ? "start" : "single", spanStart: starts.has(slot) });
+    }
+    const lead = new Date(Date.UTC(year, m - 1, 1)).getUTCDay(), padded = [...Array(lead).fill(null), ...cells];
+    while (padded.length % 7) padded.push(null);
+    const weeks = [];
+    for (let i = 0; i < padded.length; i += 7) weeks.push(padded.slice(i, i + 7));
+    return { year, month: m, label: MONTHS[m - 1] + " " + year, cycle, weeks };
+  }
+  function addMonths(month, delta) {
+    const match = /^(\d{4})-(\d{2})$/.exec(String(month || ""));
+    if (!match) return null;
+    const index = Number(match[1]) * 12 + Number(match[2]) - 1 + delta;
+    return String(Math.floor(index / 12)).padStart(4, "0") + "-" + String(index % 12 + 1).padStart(2, "0");
+  }
   return { EPOCH, CYCLE, SLOTS, LEAP_SLOT, MAX_SPAN, MONTH_DAYS, MONTHS, isLeap, cycleYear, parseDate, formatDate, slotOf, monthDayOf, place, dateOf, addDays, today,
-    longDate, shortDate, readingOn, spanRanges, spanAt, spanDates, checkSpans };
+    longDate, shortDate, readingOn, spanRanges, spanAt, spanDates, checkSpans, returnYear, cycleNote, runOn, nextDateOf, monthGrid, addMonths };
 });

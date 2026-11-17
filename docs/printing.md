@@ -97,9 +97,19 @@ SHA-256 and every member's SHA-256 decide acceptance.
 
 ## In the browser
 
-The Read view's **Generate PDF** typesets the night on screen and saves
-`<reading-id>.pdf`. While it runs, the button becomes **Cancel PDF** and small
-progress text shows each stage. Print and Download (HTML) are unchanged.
+In nightly readings, **Generate PDF** is in the reader's **More** menu, beside
+the print and download actions. It typesets the reading on screen (a school
+night, a calendar date or a reading opened by ID) and saves
+`liminal-<reading-id>[-<date>].pdf`. The footer names a school night "Grade 5 ·
+Week 3 · Day 2" (`schoolMeta`) and a calendar reading by its date, "Grade 5 ·
+Tuesday 17 November 2026" (`printMeta` in `src/lib/daily-reading.js`). A
+continued reading's "Part N of M" comes from the grade's browse list, so a run
+that crosses a week boundary keeps it. While it runs, progress shows under the
+toolbar and the menu item becomes **Cancel PDF**; opening another reading
+cancels it. **Print a day for several levels** (`#print/…`) makes one PDF with
+`dayTeX`, each level on a fresh sheet. Without the runtime both buttons are
+disabled and say that PDF generation is unavailable; browser print and the
+HTML student download remain.
 
 Other pages can reuse the helper. `LiminalPdfAction.run({ tex, engine,
 filename, onProgress, signal })` typesets and saves. `LiminalPdfAction.control({

@@ -76,9 +76,14 @@
   // fields out of downloadable student files, even if a disclosure is open.
   function studentReading(course, week, dayNumber) {
     const day = dayAt(course, week, dayNumber), source = sourceAt(course, day);
-    if (!day || !source) return null;
-    return { format: "liminal-daily-reading-student", version: 1, grade: course.grade,
-      day: { id: day.id, week: day.week, day: day.day, title: day.title, genre: day.genre, readingMode: day.readingMode,
+    return day && source ? studentPacket(course.grade, day, source) : null;
+  }
+  // The same projection for any one reading: a school night or a calendar
+  // reading (which has no week or day), with its resolved source record.
+  function studentPacket(grade, day, source) {
+    if (!validGrade(grade) || !day || !source) return null;
+    return { format: "liminal-daily-reading-student", version: 1, grade,
+      day: { id: day.id, ...(day.week ? { week: day.week, day: day.day } : {}), title: day.title, genre: day.genre, readingMode: day.readingMode,
         ...(day.author === undefined ? {} : { author: day.author }), ...(day.workTitle === undefined ? {} : { workTitle: day.workTitle }),
         time: { readingMinutes: day.time.readingMinutes, discussionMinutes: day.time.discussionMinutes, totalMinutes: day.time.totalMinutes },
         context: day.context, contentNote: day.contentNote, focus: day.focus,
@@ -97,7 +102,7 @@
   // text, questions, facilitator notes or evidence.
   const MODES = Object.freeze(["adult-read-aloud", "shared", "independent"]);
   function browseFile(grade) { return validGrade(grade) ? "content/reading-daily/browse/" + gradeKey(grade) + ".json" : ""; }
-  function browseRoute(grade) { return validGrade(grade) ? "#browse/" + gradeKey(grade) : ""; }
+  function browseRoute(grade, week = null) { return validGrade(grade) ? "#browse/" + gradeKey(grade) + (validDay(week, 1) ? "/" + week : "") : ""; }
   function browseIndex(course) {
     return { schemaVersion: 1, grade: course.grade, title: course.title, overview: course.overview,
       progression: course.progression.map(stage => ({ weeks: [stage.weeks[0], stage.weeks[1]], focus: stage.focus })),
@@ -108,26 +113,216 @@
           continuesFrom: !!day.excerpt.continuesFrom, continuesTo: !!day.excerpt.continuesTo };
       }) };
   }
-  // Which view a hash asks for. An empty hash and #browse[/<grade>] browse;
-  // anything else is a night, resolved as before.
-  function view(index, hash) {
-    const raw = String(hash || "").replace(/^#/, ""), parts = raw.split("/");
-    if (raw && parts[0] !== "browse") return { view: "read", ...resolve(index, hash) };
-    const requested = parts.length === 2 ? gradeAt(index, gradeFromKey(parts[1])) : null;
-    const course = requested || (index && index.grades || [])[0] || null;
-    return { view: "browse", course, grade: course ? course.grade : null, invalid: parts.length > 2 || parts.length === 2 && !requested };
+  // Which view a hash asks for (docs/daily-reading.md, "Routes"):
+  //   (empty)                      the Year view of the remembered grade, with Tonight
+  //   #browse/<grade>[/<week>]     a grade's year, optionally opened at a week
+  //   #<grade>/<week>/<day>        a school night
+  //   #<grade>/date[/<YYYY-MM-DD>] the date calendar's reading for a date (today by default)
+  //   #<grade>/month/<YYYY-MM>     a month of a grade's date calendar
+  //   #<grade>/reading/<id>        any one reading by its id
+  //   #print[/date/<YYYY-MM-DD> | /night/<week>/<day>][/<grade>,<grade>...]
+  // `options.grade` is the remembered grade for an empty hash; `options.today`
+  // is the date a date route without a valid date falls back to.
+  const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/, ISO_MONTH = /^\d{4}-(?:0[1-9]|1[0-2])$/;
+  function validDate(value) {
+    if (typeof value !== "string" || !ISO_DATE.test(value)) return false;
+    const [y, m, d] = value.split("-").map(Number), time = Date.UTC(y, m - 1, d), date = new Date(time);
+    return date.getUTCFullYear() === y && date.getUTCMonth() === m - 1 && date.getUTCDate() === d;
+  }
+  function validReadingId(grade, id) { return validGrade(grade) && typeof id === "string" && id.length <= 120 && new RegExp("^reading-" + gradeKey(grade) + "-[a-z0-9]+(?:-[a-z0-9]+)*$").test(id); }
+  function view(index, hash, options = {}) {
+    const raw = String(hash || "").replace(/^#/, ""), parts = raw.split("/"), grades = index && index.grades || [];
+    const fallback = gradeAt(index, options.grade) || grades[0] || null, today = validDate(options.today) ? options.today : null;
+    const at = course => ({ course, grade: course ? course.grade : null });
+    if (!raw) return { view: "browse", ...at(fallback), week: null, home: true, invalid: false };
+    if (parts[0] === "browse") {
+      const requested = parts.length >= 2 ? gradeAt(index, gradeFromKey(parts[1])) : null;
+      const week = parts.length === 3 && /^(?:[1-9]|[12][0-9]|3[0-6])$/.test(parts[2]) ? Number(parts[2]) : null;
+      return { view: "browse", ...at(requested || fallback), week, home: false,
+        invalid: parts.length > 3 || parts.length >= 2 && !requested || parts.length === 3 && !week };
+    }
+    if (parts[0] === "print") {
+      let date = null, week = null, day = null, rest = parts.slice(1), invalid = false;
+      if (rest[0] === "date") { date = validDate(rest[1]) ? rest[1] : today; invalid = !validDate(rest[1]); rest = rest.slice(2); }
+      else if (rest[0] === "night") {
+        const ok = rest.length >= 3 && validDay(Number(rest[1]), Number(rest[2])) && /^\d+$/.test(rest[1] + rest[2]);
+        week = ok ? Number(rest[1]) : 1; day = ok ? Number(rest[2]) : 1; invalid = !ok; rest = rest.slice(3);
+      } else date = today;
+      const keys = rest.length === 1 ? rest[0].split(",") : [], chosen = keys.map(gradeFromKey).filter(grade => gradeAt(index, grade));
+      if (rest.length > 1 || keys.length !== chosen.length) invalid = true;
+      return { view: "print", course: null, grade: null, date, week, day, grades: [...new Set(chosen)].sort((x, y) => x - y), invalid };
+    }
+    const requested = gradeAt(index, gradeFromKey(parts[0]));
+    if (requested && parts[1] === "date" && parts.length <= 3) {
+      const given = parts.length === 3 ? parts[2] : null;
+      return { view: "date", ...at(requested), date: validDate(given) ? given : today, invalid: given !== null && !validDate(given) };
+    }
+    if (requested && parts[1] === "month" && parts.length === 3) {
+      const month = ISO_MONTH.test(parts[2]) ? parts[2] : today ? today.slice(0, 7) : null;
+      return { view: "month", ...at(requested), month, invalid: !ISO_MONTH.test(parts[2]) };
+    }
+    if (requested && parts[1] === "reading" && parts.length === 3 && validReadingId(requested.grade, parts[2])) {
+      return { view: "reading", ...at(requested), id: parts[2], invalid: false };
+    }
+    return { view: "read", ...resolve(index, hash) };
+  }
+  function dateRoute(grade, date) { return validGrade(grade) && validDate(date) ? "#" + gradeKey(grade) + "/date/" + date : ""; }
+  function monthRoute(grade, month) { return validGrade(grade) && ISO_MONTH.test(String(month)) ? "#" + gradeKey(grade) + "/month/" + month : ""; }
+  function readingRoute(grade, id) { return validReadingId(grade, id) ? "#" + gradeKey(grade) + "/reading/" + id : ""; }
+  function printRoute({ date = null, week = null, day = null, grades = [] } = {}) {
+    const keys = grades.filter(validGrade).map(gradeKey).join(",");
+    const what = validDate(date) ? "/date/" + date : validDay(week, day) ? "/night/" + week + "/" + day : "";
+    return "#print" + what + (keys ? "/" + keys : "");
+  }
+  // Built files a view loads. Paths come from validated grades and ids only.
+  function readingFile(grade, id) { return validReadingId(grade, id) ? "content/reading-daily/readings/" + gradeKey(grade) + "/" + id + ".json" : ""; }
+  function calendarFile(grade) { return validGrade(grade) ? "content/reading-daily/calendar/" + gradeKey(grade) + ".json" : ""; }
+  const SPANS_FILE = "content/reading-daily/calendar/spans.json";
+  function hasCalendar(index, grade) { const course = gradeAt(index, grade); return !!(course && course.calendar); }
+  // A school night's place, as people say it.
+  function nightLabel(week, day) { return validDay(week, day) ? "Week " + week + ", Day " + day : ""; }
+  // Tab and history titles: the most specific part first, then the grade.
+  function documentTitle(parts) { return parts.filter(Boolean).join(" · ") + " — Liminal"; }
+  // What an adult needs before the text: time, mode, the night's challenge
+  // and discussion focus, and any content note. `challenge` is adult guidance
+  // that student projections do not carry; pass the full reading to show it.
+  function beforeYouRead(day) {
+    if (!day || !day.time) return [];
+    return [["Time", "About " + day.time.totalMinutes + " min: read " + day.time.readingMinutes + ", discuss " + day.time.discussionMinutes],
+      ["Reading", modeLabel(day.readingMode)], ["Challenge", day.challenge], ["Discussion focus", day.focus], ["Content note", day.contentNote]]
+      .filter(([, text]) => typeof text === "string" && text.trim()).map(([label, text]) => ({ label, text }));
+  }
+  // Continued school nights: the run's part and length and links to the
+  // neighbouring parts, from the grade's browse nights (which cross weeks).
+  function continuation(grade, nights, week, day) {
+    const list = nights || [], i = list.findIndex(night => night.week === week && night.day === day), part = i >= 0 ? runs(list)[i] : null;
+    if (!part) return null;
+    const link = night => night && { label: nightLabel(night.week, night.day), href: route(grade, night.week, night.day) };
+    return { part: part.part, of: part.of, from: part.part > 1 ? link(list[i - 1]) : null, to: part.part < part.of ? link(list[i + 1]) : null };
+  }
+
+  // Remembered place: the last grade and reading opened in this browser, so
+  // a return visit offers to continue. Stored as untrusted JSON and parsed
+  // with an allowlist; nothing else is kept.
+  const STORAGE_KEY = "liminal:readings:v1";
+  function parseRemembered(raw) {
+    let value;
+    try { value = JSON.parse(String(raw)); } catch { return null; }
+    if (!value || typeof value !== "object" || value.version !== 1 || !validGrade(value.grade)) return null;
+    const out = { version: 1, grade: value.grade, night: null, date: null };
+    const night = value.night;
+    if (night && typeof night === "object" && validGrade(night.grade) && validDay(night.week, night.day)) out.night = { grade: night.grade, week: night.week, day: night.day };
+    if (value.date && typeof value.date === "object" && validGrade(value.date.grade) && validDate(value.date.date)) out.date = { grade: value.date.grade, date: value.date.date };
+    return out;
+  }
+  // The state after opening a view (selected = a view() result).
+  function remember(state, selected) {
+    if (!selected || !validGrade(selected.grade)) return state;
+    const next = { version: 1, grade: selected.grade, night: state && state.night || null, date: state && state.date || null };
+    if (selected.view === "read" && validDay(selected.week, selected.day)) next.night = { grade: selected.grade, week: selected.week, day: selected.day };
+    if (selected.view === "date" && validDate(selected.date)) next.date = { grade: selected.grade, date: selected.date };
+    return next;
+  }
+  // The Tonight card: where to continue the school year, the plan's night for
+  // today (when the reading-level plan has one), and today's date reading.
+  // `planNight` is { level, week, day, date } or null; `nights` are the
+  // remembered grade's browse nights, for titles. Every entry links somewhere.
+  function tonight({ index, state = null, planNight = null, today, nights = null } = {}) {
+    const entries = [], title = (grade, week, day) => {
+      const night = state && state.night && grade === state.night.grade && (nights || []).find(item => item.week === week && item.day === day);
+      return night ? night.title : null;
+    };
+    if (planNight && gradeAt(index, planNight.level) && validDay(planNight.week, planNight.day)) {
+      entries.push({ kind: "plan", grade: planNight.level, label: (planNight.date === today ? "Tonight in your plan" : "Next in your plan") + ": " + gradeLabel(planNight.level) + ", " + nightLabel(planNight.week, planNight.day),
+        href: route(planNight.level, planNight.week, planNight.day), title: title(planNight.level, planNight.week, planNight.day) });
+    }
+    const last = state && state.night;
+    if (last && gradeAt(index, last.grade)) {
+      const next = adjacent(last.grade, last.week, last.day, 1);
+      entries.push({ kind: "continue", grade: last.grade, label: "Last opened: " + gradeLabel(last.grade) + ", " + nightLabel(last.week, last.day),
+        href: route(last.grade, last.week, last.day), title: title(last.grade, last.week, last.day),
+        next: next && { label: "Next: " + nightLabel(next.week, next.day), href: next.href, title: title(next.grade, next.week, next.day) } });
+    }
+    const grade = state && gradeAt(index, state.grade) ? state.grade : (index && index.grades && index.grades[0] || {}).grade;
+    // Today's date reading; a level without a calendar yet offers the start
+    // of its school year instead, unless the card already has a place.
+    if (validGrade(grade) && validDate(today) && hasCalendar(index, grade)) entries.push({ kind: "date", grade, label: "Today’s reading: " + gradeLabel(grade), href: dateRoute(grade, today) });
+    else if (validGrade(grade) && !entries.length) entries.push({ kind: "start", grade, label: "Start the " + gradeLabel(grade) + " school year: " + nightLabel(1, 1), href: route(grade, 1, 1) });
+    return entries;
+  }
+  // The multi-level day print: what each chosen level prints for a date or a
+  // school night, and the footer that names it. A level without a date
+  // calendar cannot print a date; it says so instead of printing nothing.
+  // `formatDate` names a date in the footer (reading-calendar's shortDate in
+  // the browser); footers follow the packets' "Grade 5 · Week 3 · Day 2".
+  // Printed footers. A school night's matches reading-tex's schoolMeta
+  // ("Grade 5 · Week 3 · Day 2"); a calendar reading has no week or day, so
+  // it names its date ("Grade 5 · Tuesday 17 November 2026"), and a reading
+  // opened by id names itself a calendar reading.
+  const WEEKDAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function longDate(date) {
+    if (!validDate(date)) return null;
+    const [year, month, day] = date.split("-").map(Number), weekday = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
+    return WEEKDAY_NAMES[weekday] + " " + day + " " + MONTH_NAMES[month - 1] + " " + year;
+  }
+  function printMeta(grade, { date = null, week = null, day = null } = {}) {
+    if (!validGrade(grade)) return null;
+    if (validDate(date)) return gradeLabel(grade) + " · " + longDate(date);
+    if (validDay(week, day)) return gradeLabel(grade) + " · Week " + week + " · Day " + day;
+    return gradeLabel(grade) + " · Calendar reading";
+  }
+  function printPlan(index, { date = null, week = null, day = null, grades = [], formatDate = null } = {}) {
+    return grades.filter(grade => gradeAt(index, grade)).map(grade => {
+      if (validDate(date)) return hasCalendar(index, grade)
+        ? { grade, label: gradeLabel(grade), available: true, footer: formatDate ? gradeLabel(grade) + " · " + formatDate(date) : printMeta(grade, { date }) }
+        : { grade, label: gradeLabel(grade), available: false, reason: "The date calendar for " + gradeLabel(grade) + " is not available yet." };
+      return validDay(week, day)
+        ? { grade, label: gradeLabel(grade), available: true, footer: printMeta(grade, { week, day }) }
+        : { grade, label: gradeLabel(grade), available: false, reason: "Choose a date or a school night." };
+    });
+  }
+  function printFilename({ date = null, week = null, day = null, grades = [] } = {}) {
+    return "liminal-readings-" + (validDate(date) ? date : validDay(week, day) ? "w" + week + "d" + day : "day") + "-" + grades.filter(validGrade).map(gradeKey).join("-") + ".pdf";
+  }
+  // Genre families. The corpus records 50-odd free-text genres; browsing
+  // groups them into a few families people recognise. Order matters: the
+  // first rule that matches wins ("science fiction" is a story, "historical
+  // narrative" nonfiction, "prose poetry" poetry).
+  const GENRE_FAMILIES = Object.freeze(["Poetry", "Stories", "Myth and legend", "Nonfiction", "Drama", "Other"]);
+  const FAMILY_RULES = [
+    ["Drama", /\b(?:drama|play|scene|dialogue in verse)\b/],
+    ["Poetry", /\b(?:poetry|poems?|verse|ballads?|rhymes?|songs?|sonnets?|lyric)\b/],
+    ["Stories", /\b(?:science fiction)\b/],
+    ["Myth and legend", /\b(?:myths?|legends?|fables?|folk ?tales?|fairy|epic|sagas?)\b/],
+    ["Nonfiction", /\b(?:essays?|memoir|autobiography|biography|nonfiction|non-fiction|informational|documentary|documents?|scientific|science writing|nature (?:prose|writing)|dialogue|devotional|letters?|speech|sermon|introduction|historical|history|journal|diary|report)\b/],
+    ["Stories", /\b(?:fiction|stor(?:y|ies)|novel|tales?|narrative|prose|anecdote|fantasy|adventure)\b/],
+  ];
+  function genreFamily(genre) {
+    const value = searchable(genre).replace(/[-_]+/g, " ");
+    const rule = FAMILY_RULES.find(([, pattern]) => pattern.test(value));
+    return rule ? rule[0] : "Other";
+  }
+  function genreFamilies(nights) { const used = new Set((nights || []).map(night => genreFamily(night.genre))); return GENRE_FAMILIES.filter(family => used.has(family)); }
+  // A week of the year at a glance: its works (in order, without repeats),
+  // and its minutes.
+  function weekSummary(nights, week) {
+    const list = (nights || []).filter(night => night.week === week), works = [];
+    for (const night of list) { const name = night.work || night.title; if (!works.includes(name)) works.push(name); }
+    return { works, minutes: list.reduce((sum, night) => sum + night.minutes, 0), span: minutesSpan(list) };
   }
   function genreLabel(genre) { return String(genre || "").replace(/-/g, " "); }
   function searchable(value) { return String(value || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’‘]/g, "'").toLowerCase(); }
   // The work is shown only when the night's title does not already name it.
   function workLabel(night) { return night.work && !searchable(night.title).includes(searchable(night.work)) ? night.work : null; }
   // Every query word must appear in the title, author, work or genre.
-  function filterNights(nights, { query = "", mode = "", genre = "" } = {}) {
+  function filterNights(nights, { query = "", mode = "", genre = "", family = "" } = {}) {
     const words = searchable(query).split(/\s+/).filter(Boolean);
     return (nights || []).filter(night => {
       if (mode && night.mode !== mode) return false;
       if (genre && night.genre !== genre) return false;
-      const haystack = searchable([night.title, night.author, night.work, genreLabel(night.genre)].join(" "));
+      if (family && genreFamily(night.genre) !== family) return false;
+      const haystack = searchable([night.title, night.author, night.work, genreLabel(night.genre), genreFamily(night.genre)].join(" "));
       return words.every(word => haystack.includes(word));
     });
   }
@@ -186,7 +381,9 @@
     return value.split("_").map((part, index) => ({ text: part, em: index % 2 === 1 })).filter(segment => segment.text);
   }
   return { GRADES, validGrade, isAdvanced, gradeKey, gradeLabel, gradeFromKey, validDay, route, gradeAt, resolve, dayAt, sourceAt, progressionAt,
-    navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, sourceNote, selectionCredit, studentReading,
-    MODES, browseFile, browseRoute, browseIndex, view, genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan,
-    weekFile, weekSlice, tableRows, emphasis };
+    navigation, lessonLinks, modeLabel, minuteRange, safeHttps, sourceLabel, sourceNote, selectionCredit, studentReading, studentPacket,
+    MODES, browseFile, browseRoute, browseIndex, view, validDate, validReadingId, dateRoute, monthRoute, readingRoute, printRoute,
+    readingFile, calendarFile, SPANS_FILE, hasCalendar, nightLabel, documentTitle, beforeYouRead, continuation,
+    STORAGE_KEY, parseRemembered, remember, tonight, printPlan, printMeta, printFilename, GENRE_FAMILIES, genreFamily, genreFamilies, weekSummary,
+    genreLabel, workLabel, filterNights, runs, genres, modes, minutesSpan, weekFile, weekSlice, tableRows, emphasis };
 });

@@ -123,5 +123,12 @@ lane; only the work folders are committed.
 The build writes `content/reading-library/index.json` (every work with its
 levels, genres and number of readings) and, per work, `meta.json` (record,
 contents from headings, the readings drawn from it with their ranges) and the
-text in chunks that break at headings. The library pages read the whole work
-online and mark each passage used as a nightly reading.
+text in chunks that break at headings. `library.html` lists the works with
+search and filters (level, genre family, author, period) and opens each work
+with its record, its contents from headings, and the text one part at a time,
+marking every passage used as a nightly reading with a link to it. Every
+nightly reading links back to its passage (`library.html#<work-id>/<reading-id>`);
+routes and filters live in `src/lib/reading-library.js`. A reading that keeps
+its own text (`excerpt.inlineReason`) is listed with the work's readings but
+marks nothing, and its "Read it in the full work" opens the work. Notes in the
+`[Footnote <mark>: …]` form are set smaller and muted (`isFootnote`).

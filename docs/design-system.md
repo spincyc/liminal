@@ -23,7 +23,9 @@ dependency-free implementation.
 - `styles/reader-controls.css` owns compact selectors, sequence controls and
   document actions. Load after section styles. `app/reader-controls.js` renders
   shared navigation and action groups; pure modules supply destinations.
-- Screen controls use system sans-serif; sustained reading uses the serif face.
+- Screen controls use system sans-serif; sustained reading uses the serif face
+  at `--reading-size`, `--reading-leading` and `--reading-measure` (tokens.css),
+  so nightly readings and the library read alike.
   Screen colors follow light/dark preferences. Printed content is black on white.
 - Keep interactive targets at least 44 CSS pixels tall; compact means reducing
   unnecessary width, padding and competing panels. This exceeds the base size
@@ -34,14 +36,18 @@ dependency-free implementation.
 
 | Template | Concrete pages/states | Required arrangement |
 | --- | --- | --- |
-| Library | `index.html`, daily Browse, Learn index | Small page title, brief purpose, grouped destinations or search, browsable results. Secondary explanation is a disclosure. No document pagination until a document is open. |
-| Sequential reader | daily Read, weekly Learn/Read, selected classroom lessons | Compact selectors; sequence navigation and quiet document actions above content; title/metadata; readable body; sequence navigation below. |
-| Plan browser | `curriculum.html`, `high-school.html`, AP course plans | Compact pathway/course selection; short scope statement; consistent expandable unit rows with week ranges; links into weekly work. Compare and Print are utilities. |
-| Lesson and packet workspace | `lessons.html`, weekly Worksheets | Explicit selection scope; reader preview; student print/download near the preview's top. Answer keys remain a separate disclosure/document. Packet setup stays separate from the active lesson. |
+| Library | `index.html`, nightly readings Year, `library.html` index, Learn index | Small page title, brief purpose, grouped destinations or search, browsable results. Secondary explanation is a disclosure. No document pagination until a document is open. |
+| Sequential reader | nightly reading (school night, date, reading), library work page, weekly Learn/Read, selected classroom lessons | Compact selectors; sequence navigation and quiet document actions above content; title/metadata; readable body; sequence navigation below. |
+| Plan browser | `curriculum.html`, `high-school.html`, AP course plans, nightly readings month calendar | Compact pathway/course selection; short scope statement; consistent expandable unit rows with week ranges; links into weekly work. Compare and Print are utilities. |
+| Lesson and packet workspace | `lessons.html`, weekly Worksheets, nightly readings Print a day | Explicit selection scope; reader preview; student print/download near the preview's top. Answer keys remain a separate disclosure/document. Packet setup stays separate from the active lesson. |
 | Assessment/check | reading-level check, AP student/key documents, SAT/ACT active test shell | Clear start, progress and completion; task-specific Next/Submit controls. Never introduce First/Last that could skip assessment state. Student and key routes remain distinguishable. |
 | Practice and progress | `practice.html` setup, progress, review, study tips | Coherent test-prep navigation beneath the shared header; one primary task per region; optional setup and secondary explanation in disclosures. Active test uses its established assessment palette and tools. |
 | Reference lesson | Learn lesson | Back-to-library/context links, bounded reading measure, in-page section navigation, examples and practice links. Topic documents have no artificial chronological order. SAT Math Try it problems open hints and answers from buttons in place; printing omits them from the problems and lists every hint, answer and worked solution at the end of the page, numbered to match, built from the page data. |
 | Printable document | daily HTML/TeX, SAT/ACT books, classroom/weekly/AP sheets | Shared Computer Modern typography and two-column worksheets; no screen navigation. Protect student/key separation and preserve complete text, math and figures. See print contracts below. |
+
+Readings pages lead with one breadcrumb (Readings › level › place) instead of
+a page title, view tabs and a metadata line; the document title repeats it
+(title · level · place — Liminal) so tabs and history are distinguishable.
 
 Every new page or substantially changed state must choose one of these templates,
 name any justified exception in its section documentation, and reuse its shared
@@ -66,14 +72,33 @@ hover treatment for every control. Let the groups wrap naturally on phones; keep
 each numeric label beside its value. The wider, boxed selector variant above is
 for forms and packet setup outside a reading toolbar.
 
+Toolbar variants:
+
+- **Full** (weekly reader, classroom lessons): selectors, First/Previous/Next/Last
+  and visible Print/Download buttons.
+- **Compact** (nightly readings, library work pages): selectors, Previous/Next
+  only, and a **More** menu (`LiminalReaderControls.menu(label)`, a native
+  `details` with a list of buttons and links) holding the document actions and
+  rarely used jumps such as First and Last night. At 640px and below the
+  selector labels become visually hidden (each select keeps its accessible
+  name) and Previous/Next show only their arrows, so the toolbar fits one row
+  at 320px. The menu closes on Escape, an outside click or a choice.
+
 ### Sequence navigation
 
-Use `LiminalReaderControls.navigation({ label, first, previous, next, last })`.
-Each destination is `{ href, label }`, or `{ run, label }` for an in-page selection
+Use `LiminalReaderControls.navigation({ label, first, previous, next, last, steps, compact })`.
+Each destination is `{ href, label, text? }`, or `{ run, label }` for an in-page selection
 whose state cannot be encoded in a link. The label gives the destination's
-context; visible labels are always First, Previous, Next and Last. `null`
-destinations render disabled, non-focusable text. Optional `index: { href, label }`
+context; visible words are First, Previous, Next and Last unless `text` names
+the destination ("‹ Previous: Week 3, Day 1"). `steps` limits the controls
+(default all four); `compact` renders an arrow and a word that hides on phones.
+`null` destinations render disabled, non-focusable text. Optional `index: { href, label }`
 adds a return-to-index link where the surrounding template does not have one.
+
+Emphasis follows use. Families move one night at a time, so nightly readings
+show only Previous and Next, name the destination in the bottom bar, and put
+First and Last in the More menu; the weekly and classroom readers, where
+teachers jump to the ends of a unit, keep all four.
 
 Render identical sequence scope above and below the document, with distinct
 navigation landmark labels identifying top/bottom. Daily navigation stays in the
@@ -132,9 +157,14 @@ Daily readings use the bundled Computer Modern Unicode Serif, 10pt body text,
 two columns and a centered title/author. Reading, Questions and the compact Source
 note have distinct hierarchy and rules. Grade/week/day and Liminal appear only
 in the small footer. Suppress “Read independently.” Retain helpful adult/shared
-reading guidance. Time estimates belong in the endnotes/source area, including
-the digital reader, rather than the title block. Full provenance remains in a
-digital disclosure. Font data and license travel in offline HTML and TeX packets.
+reading guidance. On paper, time estimates belong in the source note rather
+than the title block. On screen, the time, reading mode, challenge, discussion
+focus and any content note sit in a **Before you read** disclosure under the
+title, open for adult read-aloud and shared reading and closed for independent
+reading, and the time appears again in the Source and rights disclosure. Full
+provenance remains in that digital disclosure. One printed format serves every
+age (owner decision, 2026-11-17); browser print and the student download do not
+vary type by grade. Font data and license travel in offline HTML and TeX packets.
 See [reading packets](reading-packets.md).
 
 SAT/ACT books use the same Computer Modern family, with numbered problem

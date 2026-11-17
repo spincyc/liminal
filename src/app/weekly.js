@@ -266,7 +266,7 @@
       const links = R.el("div", undefined, "weekly-links");
       const yearRoute = W.planRoute(course.trackId, W.courseKey(course));
       links.append(R.link("Year plan", yearRoute), R.link("Unit and standards", yearRoute + "/" + encodeURIComponent(week.unitId)));
-      if (course.trackId === "common-core-reading") links.append(R.link("Nightly reading", "daily-reading.html#" + W.courseKey(course) + "/" + week.week + "/1"));
+      if (course.trackId === "common-core-reading") links.append(R.link("Nightly readings this week", "daily-reading.html#" + W.courseKey(course) + "/" + week.week + "/1"));
       const N = window.LiminalNavigation;
       const expansion = N && N.moduleAt(window.LIMINAL_LESSON_MODULES, course.trackId, course.grade);
       if (expansion) {

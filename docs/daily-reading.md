@@ -111,31 +111,91 @@ no duplicates within or between levels.
 
 ## Browsing and reading online
 
-`daily-reading.html` has two views with their own links. **Browse**
-(`#browse/<grade>`, and the page's default) shows one grade's year at a
-glance: the grades in the library, read from the index so new levels appear
-without code; the year's progression stages; and expandable weeks containing
-five nights with title, author, work, minutes, reading mode and genre. The
-first or most recently read week opens initially; search expands matching
-weeks across the full year. Continued readings are
-marked "Part 2 of 5" and joined by a rule. Search matches every word against
-titles, authors, works and genres, ignoring case and accents, and narrows by
-reading mode and genre. Each night links to **Read**
-(`#<grade>/<week>/<day>`), the full text with discussion, print and download;
-returning to Browse opens its week and marks the night just read. Related
-year-plan and weekly-instruction links retain the current K–12 grade/week.
-Advanced levels offer explicitly labelled K–12 library links.
+The Readings area uses one vocabulary: **Readings** (the area), **Nightly
+readings** (`daily-reading.html`), **Library** (`library.html`), **Reading
+level**, **Year plans** and **Weekly lessons**. Each view opens with one
+breadcrumb (Readings › Grade 5 › Week 3, Day 2) and its document title carries
+the same place, so tabs and history stay distinguishable.
 
-The Read view follows the [sequential reader template](design-system.md): compact
-Grade/Week/Day selectors, First/Previous/Next/Last above and below the reading,
-and quiet Print/Download controls above the text. Sequence navigation stays within
-the grade and disables unavailable endpoints. All top controls share one persistent
-strip, ordered Grade, Week, Day, sequence, then Print and Download. Top pagination
-keeps its control focused and in the same viewport position for repeated clicks
-or Enter presses. Bottom pagination returns to that top strip. Select changes
-retain picker focus. While a week loads, the previous document stays mounted and
-Print/Download are disabled until the current reading is ready. Time estimates live in Endnotes and source
-record, after the questions, rather than in the heading.
+Routes of `daily-reading.html` (parsed by `view` in `src/lib/daily-reading.js`;
+an unrecognized part falls back to the nearest valid view and says so):
+
+| Route | View |
+| --- | --- |
+| (none) | Year of the remembered grade, with Tonight |
+| `#browse/<grade>[/<week>]` | Year, with that week open |
+| `#<grade>/<week>/<day>` | A school night |
+| `#<grade>/date[/<YYYY-MM-DD>]` | The reading for a calendar date (default today) |
+| `#<grade>/month/<YYYY-MM>` | A month of the date calendar |
+| `#<grade>/reading/<reading-id>` | Any reading by ID (school-night IDs redirect to their night) |
+| `#print[/date/<YYYY-MM-DD>\|/night/<week>/<day>][/<grade>,<grade>…]` | Print a day for several levels |
+
+`<grade>` is the grade key (`k`, `1`–`12`, `a1`…). `library.html` has `#<work-id>`,
+`#<work-id>/<reading-id>` (the passage marked as current) and `#<work-id>/b<n>`
+(a block of the text).
+
+**Year.** One grade's school year as a single column of 36 weeks. Each week's
+summary names its works and total minutes; the current week is marked and
+opens first, and "Go to week" jumps to any other. An open week lists five
+nights with title, author, minutes, genre and, only when the grade mixes
+modes, the reading mode. Continued readings say "Part 2 of 5 · began Week 3,
+Day 4". Search matches every word against titles, authors, works and genres,
+ignoring case and accents; "Kind" narrows by genre family (Poetry, Stories,
+Myth and legend, Nonfiction, Drama, Other: `genreFamily` derives them from the
+free-text genres without changing content), and "Reading" by mode when the
+grade has more than one. Printing the Year opens every week as a reading log
+with a box per night.
+
+**Tonight.** Above the year, a card offers up to three places: tonight's night
+in a saved [reading-level plan](reading-level.md) (loaded only when a plan
+exists), the last night opened and the one after it, and today's date reading;
+on a first visit to a level without a date calendar, its first night. The page
+remembers the grade, the last night and the last date in `localStorage`
+(`liminal:readings:v1`, parsed as untrusted data and ignored when storage is
+unavailable); nothing leaves the browser.
+
+**Reading.** A school night, a date and a reading by ID share one reader. A
+compact toolbar holds Grade, Week and Day (or Date), Previous and Next, and a
+**More** menu: print student copy, print adult copy with discussion help,
+download the student copy (HTML), Generate PDF ([printing](printing.md)),
+First and Last night, and links to the month and the day print. On phones the toolbar is one row. Under the title a
+**Before you read** disclosure gives the time, reading mode, challenge,
+discussion focus and any content note; it is open for adult read-aloud and
+shared reading. A continued reading says "Part 2 of 3 · continued from Week 3,
+Day 1" with links to its neighbours. The questions follow the text under
+"Talk about it", with one **Show discussion help** toggle for all facilitator
+notes. **Source and rights** holds the full record and the time, and links to
+the passage in the library. The bottom bar names its destinations ("‹ Previous:
+Week 3, Day 1"). Selector changes keep focus on the selector; the previous
+reading stays mounted while the next loads. Changing grade keeps the week and
+day, or the date.
+
+**Cross-references**, all computed from built data rather than authored:
+the passage in its full library work; the next date the reading falls on in
+the date calendar, and for a school night its date; the other readings from
+the same work (the nearest six, then all in the library) and the author's other
+library works; Year plans and Weekly lessons in the area navigation, which keep
+the grade and week; from each Common Core reading unit of the year plan, the
+nightly readings for its weeks; and from each weekly reading lesson, that
+week's nights.
+
+**Date.** The reader shows the date's reading with the date, the cycle year
+("Year 1 of 3 · this date's reading returns in 2029") and, when the reading is
+also a school night, a link to it. Previous and Next move a day; More offers
+Today, the month and the day print. A level without a calendar says so and
+links to its school year. **Month** shows a level's month as seven columns on
+wide screens and a list of days on phones. A bar joins the days of one
+continued story, and a mark starts each shared span, the days on which every
+level begins something new.
+
+**Print a day.** Choose a calendar date or a school night and any levels; the
+preview lists what each level prints, or why it cannot. **Make one PDF**
+typesets a single document (`LiminalReadingTeX.dayTeX`) in which every level
+starts on a fresh sheet; footers name a school night by week and day and a
+calendar reading by its date. Without the typesetter the button is disabled
+and says so. **Print from this browser** prints each level's student copy on a
+new page; on a two-sided printer a level may then share a sheet with the one
+before it, which the page says.
 
 Printed readings use bundled Computer Modern Unicode Serif, 10-point body type,
 two columns, a centered title and author, and a small footer containing the grade,
@@ -165,7 +225,13 @@ loads only its week, `content/reading-daily/weeks/<grade>/<week>.json`
 grade's overview and progression; about 17–100 KB instead of a 0.5–2 MB
 grade file). A newer choice cancels a download it supersedes. The complete
 grade files are still built and remain the canonical download.
-`tools/smoke-static.js` compares every browse and week file with its source.
+A date, a reading by ID and the day print load the level's calendar
+(`calendar/<grade-key>.json`, about 265 KB, only for levels the index marks
+`calendar: true`) and one reading, `readings/<grade-key>/<reading-id>.json`
+(the reading and its source). The library loads its index, then per work its
+`meta.json` and one text chunk at a time.
+`tools/smoke-static.js` compares every browse and week file with its source,
+and checks that reading files and calendars match the index.
 
 The reader presents the supplied text without changing its words. In a block
 with an even number of underscores, each consecutive pair of the editions'

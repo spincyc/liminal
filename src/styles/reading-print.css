@@ -4,7 +4,6 @@
 @font-face { font-family: "Liminal Reading Serif"; font-style: normal; font-weight: 700; src: url("../fonts/computer-modern/cmunbx.woff2") format("woff2"); }
 @font-face { font-family: "Liminal Reading Serif"; font-style: italic; font-weight: 400; src: url("../fonts/computer-modern/cmunti.woff2") format("woff2"); }
 @font-face { font-family: "Liminal Reading Serif"; font-style: italic; font-weight: 700; src: url("../fonts/computer-modern/cmunbi.woff2") format("woff2"); }
-.daily-print-footer, .daily-print-heading, .daily-print-label { display: none; }
 @media print {
   @page { size: letter; margin: .75in .75in .8in; }
   html { scroll-behavior: auto; }
@@ -15,37 +14,45 @@
     color: #000;
     font: 400 10pt/1.25 var(--font-serif);
   }
-  .daily-page :is(.lm-header, .skip-link, .daily-views, .daily-browse, .daily-intro, .daily-filters, .daily-status, .daily-nav, .daily-actions, .daily-related, .daily-facilitator, .daily-source, .daily-focus, .daily-year, .daily-about, .daily-footer, .daily-export-footer) { display: none !important; }
-  .daily-meta, .daily-screen-label, .daily-budget { display: none; }
+  .daily-page :is(.lm-header, .skip-link, .daily-crumbs, .daily-toolbar, .daily-status, .daily-before, .daily-date-note, .daily-help-toggle, .daily-related, .daily-facilitator, .daily-source, .daily-year, .daily-about, .daily-footer, .daily-export-footer, .daily-month, .daily-unavailable) { display: none !important; }
+  .daily-screen-label { display: none; }
   .daily-print-label { display: inline; }
+  .daily-print-only { display: block; }
+  /* The adult copy adds "Before you read" and the discussion help. */
+  .daily-print-adult :is(.daily-before, .daily-facilitator) { display: block !important; }
+  .daily-print-adult .daily-before { margin-bottom: 10pt; padding: 0; border: 0; font-size: 9pt; }
+  .daily-print-adult .daily-before > summary { display: none; }
+  .daily-print-adult .daily-before dl > div { display: grid; grid-template-columns: 6em 1fr; gap: 0 6pt; }
+  .daily-print-adult .daily-before dd { margin: 0; }
+  .daily-print-adult .daily-facilitator { margin-top: 3pt; padding: 0 0 0 6pt; border-left: .5pt solid #777; background: none; color: #000; font-size: 8.5pt; }
   .daily-page :is(.page-width, #dailyReader) { width: 100%; max-width: none; }
   /* Reserve footer space in every printed fragment, including long readings. */
   .daily-main { padding: 0 0 .3in; box-decoration-break: clone; }
   /* Fill each page left to right, including short works and the final page. */
   .daily-reading { columns: 2; column-gap: .28in; column-fill: auto; }
   .daily-heading { column-span: all; border: 0; padding: 0; margin-bottom: 16pt; text-align: center; break-inside: avoid; }
-  .daily-heading :is(h1, h2) { font: 700 18pt/1.15 var(--font-serif); letter-spacing: normal; margin-block: 6pt; }
+  .daily-heading h1 { font: 700 18pt/1.15 var(--font-serif); letter-spacing: normal; margin-block: 6pt; }
   .daily-mode { font: italic 9pt/1.25 var(--font-serif); color: #333; }
   .daily-author { margin-top: 6pt; font-size: 12pt; }
   .daily-work-title { font-size: 10pt; margin-top: 4pt; color: #333; }
   .daily-mode { margin-top: 3pt; }
   .daily-print-heading { display: block; margin: 0 0 8pt; font: 700 12pt/1.25 var(--font-serif); }
-  .daily-context { margin: 0 0 10pt; font-size: 10pt; }
+  .daily-context { max-width: none; margin: 0 0 10pt; font-size: 10pt; color: #000; }
   .daily-content-note { margin-block: 6pt; padding: 0; border: 0; font-size: 9pt; font-style: italic; }
   .daily-continuation { margin-block: 6pt; color: #333; font-size: 9pt; }
-  .daily-passage { margin-block: 10pt; font: inherit; text-align: justify; hyphens: auto; }
+  .daily-passage { max-width: none; margin-block: 10pt; font: inherit; text-align: justify; hyphens: auto; }
   .daily-passage p + p { margin-top: 0; }
   .daily-passage .daily-paragraph { text-indent: 1.2em; white-space: normal; }
   .daily-passage .daily-paragraph:first-child { text-indent: 0; }
   .daily-passage .daily-stanza { text-align: left; text-indent: 0; line-height: 1.25; break-inside: avoid; hyphens: none; }
   .daily-passage .daily-stanza + .daily-stanza { margin-top: .7em; }
-  .daily-passage .daily-heading { column-span: none; margin-block: 10pt 5pt; font: 700 11pt/1.25 var(--font-serif); letter-spacing: normal; }
+  .daily-passage .daily-text-heading { column-span: none; margin-block: 10pt 5pt; font: 700 11pt/1.25 var(--font-serif); letter-spacing: normal; }
   .daily-table-wrap { margin-block: 8pt; overflow: visible; }
   .daily-table { width: 100%; table-layout: fixed; font: 400 9pt/1.2 var(--font-serif); }
   .daily-table tr { break-inside: avoid; }
   .daily-table :is(th, td) { padding: 3pt; border-color: #777; overflow-wrap: anywhere; }
   .daily-discussion { border-top: 1pt solid #333; margin-top: 20pt; padding-top: 10pt; break-inside: avoid; }
-  .daily-discussion h3 { font: 700 12pt/1.25 var(--font-serif); }
+  .daily-discussion h2 { font: 700 12pt/1.25 var(--font-serif); }
   .daily-discussion > p { margin-top: 6pt; color: #333; font-size: 9pt; }
   .daily-questions { padding-left: 1.6em; margin-block: 10pt 0; }
   .daily-questions > li { padding-left: 0; break-inside: avoid; margin-bottom: 8pt; }
@@ -56,4 +63,23 @@
   .daily-print-footer { display: block; position: fixed; inset: auto 0 0; text-align: center; font: italic 8pt/1 var(--font-serif); color: #555; }
   .daily-page :is(h1, h2, h3) { break-after: avoid; }
   .daily-page p { orphans: 3; widows: 3; }
+  /* The year prints as a reading log: every week, every night, a box to tick. */
+  .daily-page[data-reading-view="browse"] :is(.daily-browse-grade, .daily-tonight, .daily-browse-links, .daily-search, .daily-count, .daily-stage-focus, .daily-week-works) { display: none !important; }
+  .daily-page[data-reading-view="browse"] :is(.daily-browse, .daily-crumbs) { max-width: none; }
+  .daily-browse h1 { font: 700 16pt/1.2 var(--font-serif); }
+  .daily-week { break-inside: avoid; border-color: #777; }
+  .daily-week > summary { min-height: 0; padding-block: 4pt 2pt; }
+  .daily-week-head::before { content: none !important; }
+  .daily-night a { grid-template-columns: 1.2em 3em 1fr; min-height: 0; padding-block: 2pt; border-color: #bbb; color: #000; }
+  .daily-night a::before { content: "☐"; }
+  .daily-night-meta, .daily-night-run { color: #333; font-size: 8pt; }
+  .daily-night:is(.is-continued, .continues) .daily-night-body { border-left: 0; padding-left: 0; }
+  /* One day for several levels from the browser: each level a new page.
+     (Only the PDF can start each level on a fresh sheet.) */
+  .daily-printing-day :is(#dailyBrowse, #dailyReader, .daily-print-footer) { display: none !important; }
+  .daily-printing-day .daily-print-setup { max-width: none; }
+  .daily-printing-day .daily-print-setup > :not(.daily-print-pages) { display: none !important; }
+  .daily-printing-day .daily-print-pages { display: block; }
+  .daily-print-level-copy + .daily-print-level-copy { break-before: page; }
+  .daily-print-level-meta { margin-bottom: 8pt; text-align: center; font: italic 8pt/1 var(--font-serif); color: #555; }
 }

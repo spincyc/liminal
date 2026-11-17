@@ -81,6 +81,7 @@ test("current markers distinguish AP, readings, courses and test preparation", (
     ["curriculum.html", "#common-core-reading/8/u1", "readings", "plans"],
     ["weeks.html", "#common-core-reading/8/7", "readings", "weeks"],
     ["daily-reading.html", "#browse/8", "readings", "daily"], ["reading-level.html", "#plan", "readings", "level"],
+    ["library.html", "#nesbit-railway-children-1906", "readings", "library"], ["daily-reading.html", "#5/date/2026-11-17", "readings", "daily"],
     ["weeks.html", "#ap/physics-1/7", "ap", null], ["ap.html", "#physics-1/student/unit-1", "ap", null],
     ...["practice.html", "learn.html", "print.html"].map(page => [page, "", "prep", null]),
   ]) {
@@ -276,4 +277,17 @@ test("legacy course and lesson bookmarks retain the requested lesson during repl
   });
   assert.equal(replaced, "lessons.html#common-core-math/8/2-1");
   assert.equal(anchor.href, replaced);
+});
+
+test("the Readings area uses one vocabulary and keeps grade and week across its new routes", () => {
+  assert.deepEqual(navAt("daily-reading.html", "#browse/5").secondary.map(item => item.label),
+    ["Nightly readings", "Library", "Reading level", "Year plans", "Weekly lessons"]);
+  assert.equal(href(navAt("daily-reading.html", "#browse/5/12"), "weeks"), "weeks.html#common-core-reading/5/12");
+  for (const hash of ["#5/date/2026-11-17", "#5/month/2026-11", "#5/reading/reading-5-a-work-1900-01"]) {
+    assert.equal(href(navAt("daily-reading.html", hash), "plans"), "curriculum.html#common-core-reading/5", hash);
+    assert.equal(href(navAt("daily-reading.html", hash), "daily"), "daily-reading.html#browse/5", hash);
+  }
+  // Without a grade in the address, Nightly readings resumes the remembered grade.
+  for (const page of ["library.html", "reading-level.html"]) assert.equal(href(navAt(page, ""), "daily"), "daily-reading.html", page);
+  assert.equal(href(navAt("library.html", ""), "library"), "library.html");
 });

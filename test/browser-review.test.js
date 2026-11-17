@@ -763,3 +763,22 @@ test("reader pagination updates reused button actions and removes obsolete index
   assert.equal(selected, 2);
   assert.equal(nav.querySelector(".reader-index"), null);
 });
+
+test("reader pagination can show only Previous/Next, with destination text or compact arrows", () => {
+  const { window, load } = environment();
+  load("reader-controls.js");
+  const controls = window.LiminalReaderControls;
+  const nav = controls.navigation({ label: "Nights, bottom", steps: ["previous", "next"], previous: { href: "#5/3/1", text: "‹ Previous: Week 3, Day 1" }, next: null });
+  assert.equal(nav.querySelectorAll("li").length, 2);
+  assert.equal(nav.querySelector('[data-reader-step="previous"]').textContent, "‹ Previous: Week 3, Day 1");
+  assert.equal(nav.querySelector('[data-reader-step="next"]').getAttribute("aria-disabled"), "true");
+  const top = controls.navigation({ label: "Nights, top", compact: true, steps: ["previous", "next"], previous: { href: "#5/3/1", label: "Previous night: Week 3, Day 1" }, next: { href: "#5/3/3", label: "Next night: Week 3, Day 3" } });
+  const next = top.querySelector('[data-reader-step="next"]');
+  assert.equal(next.textContent, "Next›"); assert.equal(next.getAttribute("aria-label"), "Next night: Week 3, Day 3");
+  controls.navigation({ label: "Nights, top", compact: true, steps: ["previous", "next"], previous: { href: "#5/3/2" }, next: { href: "#5/3/4", label: "Next night: Week 3, Day 4" } }, top);
+  assert.equal(top.querySelector('[data-reader-step="next"]'), next, "a reused control keeps its identity and focus");
+  assert.equal(next.href, "#5/3/4");
+  // Narrowing the steps drops controls that are no longer shown.
+  controls.navigation({ label: "Nights, top", steps: ["next"], next: { href: "#5/3/4" } }, top);
+  assert.equal(top.querySelectorAll("li").length, 1);
+});

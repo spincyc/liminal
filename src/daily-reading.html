@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- liminal:reading-font-license -->
     <meta name="color-scheme" content="light dark" />
-    <meta name="description" content="A year of nightly reading for each grade, kindergarten through Grade 12: browse the year, then read authentic public-domain literature and documents with focused discussion." />
-    <title>Liminal — Daily reading</title>
+    <meta name="description" content="Nightly readings for each grade, kindergarten through Grade 12: tonight's reading, the school year, a reading for any calendar date, and authentic public-domain literature with focused discussion." />
+    <title>Nightly readings — Liminal</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles/tokens.css" />
     <link rel="stylesheet" href="styles/home.css" />
@@ -15,49 +15,86 @@
     <link rel="stylesheet" href="styles/reader-controls.css" />
     <link rel="stylesheet" href="styles/reading-print.css" />
     <script defer src="lib/daily-reading.js"></script>
-    <script defer src="app/daily-reading-render.js"></script>
-    <script defer src="app/daily-reading-browse.js"></script>
-    <script defer src="app/reader-controls.js"></script>
+    <script defer src="lib/reading-calendar.js"></script>
+    <script defer src="lib/reading-library.js"></script>
+    <script defer src="lib/reading-level.js"></script>
     <script defer src="native-tex/config.js"></script>
     <script defer src="vendor/colophon/native-tex.js"></script>
     <script defer src="lib/reading-tex.js"></script>
+    <script defer src="app/daily-reading-render.js"></script>
+    <script defer src="app/reader-controls.js"></script>
     <script defer src="app/pdf-action.js"></script>
+    <script defer src="app/daily-reading-browse.js"></script>
+    <script defer src="app/daily-reading-calendar.js"></script>
+    <script defer src="app/daily-reading-print.js"></script>
     <script defer src="app/daily-reading.js"></script>
   </head>
   <body class="daily-page">
     <a class="skip-link" href="#main">Skip to main content</a>
     <!-- liminal:site-header -->
     <main id="main" class="page-width daily-main" tabindex="-1">
-      <header class="daily-intro"><h1>Daily reading</h1><p>Five nights a week, a full year per grade. <a href="reading-level.html">Find a starting level and plan</a>.</p></header>
+      <nav id="dailyCrumbs" class="daily-crumbs" aria-label="Breadcrumb"><ol id="dailyCrumbList"><li><a href="daily-reading.html" aria-current="page">Readings</a></li></ol></nav>
       <noscript><p>Turn on JavaScript to browse and read. You can also <a href="content/reading-daily/index.json">download the grade index</a>.</p></noscript>
-      <p id="dailyStatus" class="daily-status" role="status" aria-live="polite">Opening the reading library…</p>
-      <nav id="dailyViews" class="daily-views" aria-label="Daily reading views" hidden><a id="dailyBrowseLink" href="#browse">Browse year</a><a id="dailyReadLink" href="#k/1/1">Read</a></nav>
+      <p id="dailyStatus" class="daily-status daily-sr" role="status" aria-live="polite">Opening the readings…</p>
       <section id="dailyBrowse" class="daily-browse" aria-labelledby="dailyBrowseHeading" hidden>
-        <nav class="daily-grades" aria-label="Grades"><ul id="dailyGrades"></ul></nav>
-        <h2 id="dailyBrowseHeading" tabindex="-1"></h2>
+        <div class="daily-browse-head">
+          <h1 id="dailyBrowseHeading" tabindex="-1">Nightly readings</h1>
+          <form id="dailyBrowseGradeForm" class="reader-selectors daily-browse-grade" aria-label="Grade"><label class="reader-select-wide">Grade<select id="dailyBrowseGrade"></select></label></form>
+        </div>
         <p id="dailyBrowseSummary" class="daily-browse-summary"></p>
+        <section id="dailyTonight" class="daily-tonight" aria-labelledby="dailyTonightHeading" hidden><h2 id="dailyTonightHeading">Tonight</h2><ul id="dailyTonightList"></ul></section>
+        <p class="daily-browse-links"><a href="reading-level.html">Not sure which grade? Find a starting level</a><a id="dailyMonthLink" href="#browse">This month’s date calendar</a><a id="dailyPrintLink" href="#print">Print a day for several levels</a></p>
+        <h2 class="daily-year-heading">The school year</h2>
         <form class="daily-search" role="search" aria-label="Find nights">
-          <label class="daily-query">Search<input id="dailyQuery" type="search" autocomplete="off" spellcheck="false" placeholder="Title, author, work or genre" /></label>
-          <label>Reading<select id="dailyMode"></select></label>
-          <label>Genre<select id="dailyGenre"></select></label>
+          <label class="daily-query">Search<input id="dailyQuery" type="search" autocomplete="off" spellcheck="false" placeholder="Title, author, work or kind" /></label>
+          <label id="dailyModeField">Reading<select id="dailyMode"></select></label>
+          <label>Kind<select id="dailyGenre"></select></label>
+          <label>Go to week<select id="dailyJump"></select></label>
         </form>
         <p id="dailyCount" class="daily-count" role="status" aria-live="polite"></p>
         <div id="dailyYear" class="daily-year-list" aria-busy="false"></div>
+        <details class="daily-about"><summary>Using nightly readings</summary><p>Read aloud, together, or independently as indicated. Use the suggested minutes for reading, rereading, and conversation; actual pace varies. A short poem can reward several readings. Stop at a useful point and return when needed.</p><p>The school year has 36 weeks of five nights. The date calendar gives every level a reading for every day of the year, and does not repeat a date’s reading for three years. Discussion questions invite supported interpretations; discussion help is optional and stays out of student printouts and downloads. Every text is public domain in the United States and carries its source and edition.</p></details>
       </section>
       <div id="dailyReader" hidden>
-        <div id="dailyToolbar" class="reader-toolbar">
-          <form class="daily-filters reader-selectors" aria-label="Choose a nightly reading">
-            <label>Grade<select id="dailyGrade"></select></label>
-            <label>Week<select id="dailyWeek"></select></label>
-            <label>Day<select id="dailyDay"></select></label>
+        <div id="dailyToolbar" class="reader-toolbar daily-toolbar">
+          <form class="daily-filters reader-selectors" aria-label="Choose a reading">
+            <label><span class="daily-label">Grade</span><select id="dailyGrade"></select></label>
+            <label id="dailyWeekField"><span class="daily-label">Week</span><select id="dailyWeek"></select></label>
+            <label id="dailyDayField"><span class="daily-label">Day</span><select id="dailyDay"></select></label>
+            <label id="dailyDateField" hidden><span class="daily-label">Date</span><input id="dailyDate" type="date" required /></label>
           </form>
           <div id="dailyNavigation"></div>
-          <div id="dailyActions"></div>
+          <div id="dailyMore"></div>
         </div>
         <div id="dailyContent" aria-busy="false"></div>
       </div>
-      <nav class="daily-related" aria-label="Related reading lessons"><a id="dailyInstructionLink" href="weeks.html#common-core-reading/k/1">K–12 reading instruction</a><a id="dailyPlanLink" href="curriculum.html#common-core-reading/k">K–12 reading year plans</a></nav>
-      <details class="daily-about"><summary>Using daily reading</summary><p>Read aloud, together, or independently as indicated. Use the suggested minutes for reading, rereading, and conversation; actual pace varies. A short poem can reward several readings. Stop at a useful point and return when needed.</p><p>Discussion questions invite supported interpretations. Facilitator notes are optional and stay out of student printouts and downloads. Literary selections are public domain in the United States; each reading carries its source and edition.</p></details>
+      <section id="dailyMonth" class="daily-month" aria-labelledby="dailyMonthHeading" hidden>
+        <h1 id="dailyMonthHeading" tabindex="-1"></h1>
+        <p id="dailyMonthNote" class="daily-browse-summary"></p>
+        <div class="reader-toolbar daily-toolbar">
+          <form id="dailyMonthForm" class="reader-selectors" aria-label="Choose a grade"><label><span class="daily-label">Grade</span><select id="dailyMonthGrade"></select></label></form>
+          <div id="dailyMonthNavigation"></div>
+        </div>
+        <div id="dailyMonthGrid" aria-busy="false"></div>
+      </section>
+      <section id="dailyPrint" class="daily-print-setup" aria-labelledby="dailyPrintHeading" hidden>
+        <h1 id="dailyPrintHeading" tabindex="-1">Print a day for several levels</h1>
+        <p id="dailyPrintIntro" class="daily-browse-summary">Every chosen level’s reading for one day.</p>
+        <form id="dailyPrintForm" class="daily-print-form">
+          <fieldset><legend>Which day</legend>
+            <label class="daily-choice"><input type="radio" name="dailyPrintKind" id="dailyPrintByDate" value="date" /> A calendar date</label>
+            <label class="daily-field">Date<input id="dailyPrintDate" type="date" /></label>
+            <label class="daily-choice"><input type="radio" name="dailyPrintKind" id="dailyPrintByNight" value="night" /> A school night</label>
+            <span class="reader-selectors daily-print-night"><label>Week<select id="dailyPrintWeek"></select></label><label>Day<select id="dailyPrintDay"></select></label></span>
+          </fieldset>
+          <fieldset><legend>Levels</legend><div id="dailyPrintLevels" class="daily-print-levels"></div></fieldset>
+        </form>
+        <h2>What will print</h2>
+        <ol id="dailyPrintPreview" class="daily-print-preview" aria-busy="false"></ol>
+        <div class="daily-print-actions"><button id="dailyPrintPdf" type="button" class="daily-primary">Make one PDF</button><button id="dailyPrintBrowser" type="button">Print from this browser</button></div>
+        <p id="dailyPrintNote" class="daily-print-note"></p>
+        <div id="dailyPrintPages" class="daily-print-pages"></div>
+      </section>
     </main>
     <footer id="dailyPrintFooter" class="daily-print-footer"></footer>
     <footer class="home-footer page-width daily-footer"><p>Independent educational coursework. Not affiliated with standards bodies or publishers.</p><p>SAT® and ACT® are trademarks of College Board and ACT, Inc.; no affiliation.</p></footer>
