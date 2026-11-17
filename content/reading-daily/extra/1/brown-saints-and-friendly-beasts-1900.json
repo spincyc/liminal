@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "grade": 1,
+  "work": "brown-saints-and-friendly-beasts-1900",
+  "readings": [
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-01",
+      "title": "Saint Bridget and the King’s Wolf — Part 1: The tame wolf",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice what the countryman fails to look at before he shoots.",
+      "focus": "One hasty mistake and a hot-tempered King put a foolish man in terrible danger.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. Saint Bridget is a much-loved saint of Ireland who lived about fifteen hundred years ago. A chamberlain is a king’s chief servant; a dungeon is a dark prison underground; a cell is a small, plain room where a holy person lives.",
+      "contentNote": "A hunter shoots the King’s tame wolf dead with an arrow, and the angry King orders that the man be put to death the next day.",
+      "excerpt": {
+        "locator": "“Saint Bridget and the King’s Wolf,” from the start to the founding of Kildare; opens “EVERY one has heard of Bridget, the little girl saint of Ireland. Her name is almost as…”; closes “…a palace and a park there. And it was in this park that the King's wolf had been killed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-brown-saints-and-friendly-beasts-1900-02",
+        "blocks": [
+          5,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3c4df888049769f3ad141dd10ee8ad9b3be00206f36054a4a8cabdbb0be8bef3"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-01-q1",
+          "prompt": "How did the King’s tame wolf get into trouble?",
+          "facilitatorNotes": [
+            "He climbed over the high park wall and wandered far from home, frisky because it was his first time out."
+          ],
+          "evidence": [
+            "But one morning he got over the high wall which surrounded the park"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-01-q2",
+          "prompt": "What should the countryman have noticed before he shot? Why didn’t he?",
+          "facilitatorNotes": [
+            "The King’s mark on the wolf’s ear. He was thinking of the gold piece and didn’t stop to think or look closely."
+          ],
+          "evidence": [
+            "without stopping to think about it or to look closely at the wolf, who had the King's mark upon his ear"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-01-q3",
+          "prompt": "The countryman calls himself “the valiant hunter.” Is he? What does the storyteller think of him?",
+          "facilitatorNotes": [
+            "Valiant means brave, but he only shot a tame animal by mistake. The storyteller calls him silly and vain. Some children may feel sorry for him; his mistake was foolish, not wicked."
+          ],
+          "evidence": [
+            "Open to the valiant hunter who has shot a wolf for the King",
+            "too vain of his great deed"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-01-q4",
+          "prompt": "Why does the story stop to tell how a village grew up around Bridget’s little hut?",
+          "facilitatorNotes": [
+            "It shows how much people loved her, and it puts her home right beside the King’s park, close to the trouble. Ask the child to guess what she will do."
+          ],
+          "evidence": [
+            "We will live here, too, where Saint Bridget is."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-02",
+      "title": "Saint Bridget and the King’s Wolf — Part 2: A better wolf",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Notice how Bridget asks the King, and why her plan works on him.",
+      "focus": "A gift that suits a vain King saves a man’s life, and the lesson is to value friendly creatures.",
+      "context": "Recap: a silly countryman shot the King of Ireland’s tame wolf by mistake, and the hot-tempered King threw him into a dungeon to be put to death. Little Saint Bridget, whose home at Kildare is close to the King’s park, has heard what happened. A chariot is a carriage pulled by horses; bogs of peat are soft, wet ground; “Sire” is a way of speaking to a king; “Sirrah” is an old, rude way of addressing a man.",
+      "contentNote": "In the legend a wild wolf leaps into Bridget’s chariot and is gentle at once; real wild wolves should never be approached. Bridget scolds the man harshly, calling him “Sirrah Stupid.”",
+      "excerpt": {
+        "locator": "“Saint Bridget and the King’s Wolf,” from Bridget hearing of the man’s trouble to the end of the legend; opens “Now Bridget knew the man who had shot the wolf, and when she heard into what terrible…”; closes “…and Bridget came often to see him, so that he had no time to grow homesick or lonesome.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-brown-saints-and-friendly-beasts-1900-01",
+        "continuesTo": null,
+        "blocks": [
+          22,
+          32
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6b9bf93863fc9853d9d31abc1cb6b74e36dc07985395fc27d5289d92cb796e8f"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-02-q1",
+          "prompt": "How is the white wolf different from the King’s old wolf?",
+          "facilitatorNotes": [
+            "He is wild and has never been touched by a person, yet he lies at Bridget’s feet like a dog. He is also white, and there is no other white wolf in the land."
+          ],
+          "evidence": [
+            "He was no tame wolf, but a wild one, who had never before felt a human being's hand upon him."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-02-q2",
+          "prompt": "How does Bridget show the King that the wolf is tame?",
+          "facilitatorNotes": [
+            "She pulls his ears and puts her hand in his mouth, and he does not snarl or bite."
+          ],
+          "evidence": [
+            "I can put my little hand into his great red mouth, and he will not bite"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-02-q3",
+          "prompt": "Why does the King agree to let the man go? Find more than one reason.",
+          "facilitatorNotes": [
+            "He likes the look of the wolf, he likes Bridget’s eyes, he enjoys her story, and he is vain enough to want a beast no one else has."
+          ],
+          "evidence": [
+            "For he was a vain man, and it pleased him mightily",
+            "he was wonderfully pleased with Saint Bridget's story, also"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-02-q4",
+          "prompt": "Bridget says it is better for two wicked wolves to escape than for one kind beast to be killed. What does she mean? Is she fair to the man?",
+          "facilitatorNotes": [
+            "Think before you kill; friendly creatures are precious. Some children will say the man deserved her scolding; others that calling him “Stupid” is unkind after she saved him. Both can be argued."
+          ],
+          "evidence": [
+            "it is better that two wicked wolves escape than that one kind beast be killed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-03",
+      "title": "Saint Keneth of the Gulls — Part 1: The land-fish",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "See the baby through the gull’s eyes before the story tells us who he is.",
+      "focus": "Wild seabirds are kinder to a lost baby than his own mother was.",
+      "context": "Abbie Farwell Brown retold old legends of saints and animals for children in 1900. A legend is an old story about a real or remembered person, with wonders in it that may not have happened. Saint Keneth was a holy man of Wales. Gulls are seabirds that catch fish; talons are claws. The gulls call the baby a “land-fish” because they have never seen a human baby out on the sea.",
+      "contentNote": "A baby has been set adrift alone on the sea by his cruel mother. In the legend the gulls rescue him.",
+      "excerpt": {
+        "locator": "“Saint Keneth of the Gulls,” from the start to the story of Keneth’s mother; opens “ONCE upon a time, more than a thousand years ago, a great white sea-gull was circling…”; closes “…she would have been if she could have called him \"Son!\" But that was many years later.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-brown-saints-and-friendly-beasts-1900-04",
+        "blocks": [
+          74,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "767f321e84343b3bc3bcccd22d4963fa8fd133bf416e037a5171a8a4e2521ae6"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-03-q1",
+          "prompt": "What does the White Gull think he sees at first, and what does he really find?",
+          "facilitatorNotes": [
+            "He hopes for a fish dinner, then sees “a land-fish” with yellow seaweed on its head: a baby with yellow hair in a floating basket."
+          ],
+          "evidence": [
+            "smooth land-fishes with yellow seaweed growing on its head"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-03-q2",
+          "prompt": "Why do the mother gulls decide the baby must be saved?",
+          "facilitatorNotes": [
+            "His cry sounds like their own word “Cree-e-e,” so they say he speaks their language. Ask the child to make both sounds."
+          ],
+          "evidence": [
+            "He talks our language, he must be saved."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-03-q3",
+          "prompt": "How do the gulls make the baby a soft bed, and what does it cost them?",
+          "facilitatorNotes": [
+            "They pull the soft feathers from their own breasts, though they lay their own eggs on bare rock."
+          ],
+          "evidence": [
+            "they pulled the downy feathers from their breasts"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-03-q4",
+          "prompt": "The storyteller says this “goes to show that birds are sometimes kinder than human folk.” Do you agree, from this part?",
+          "facilitatorNotes": [
+            "The gulls save the baby his own mother sent away. Some children will add that many people are kind too; the word “sometimes” leaves room for that."
+          ],
+          "evidence": [
+            "And it goes to show that birds are sometimes kinder than human folk."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-brown-saints-and-friendly-beasts-1900-04",
+      "title": "Saint Keneth of the Gulls — Part 2: Carried home again",
+      "sourceId": "brown-saints-and-friendly-beasts-1900",
+      "genre": "religious legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Keep track of who loves Keneth and how each one shows it.",
+      "focus": "Keneth’s wild family of gulls and a deer is the family he chooses.",
+      "context": "Recap: a baby set adrift on the sea by his mother was rescued by a flock of gulls, who carried him in his purple cloth to a rocky ledge above the sea and made him a nest of their own feathers. The baby is Keneth, who will grow up to be a saint. A doe is a female deer. A moor is open, wild land. The Gower peninsula is a stretch of coast in Wales. To revere is to honour deeply.",
+      "contentNote": "A shepherd carries the baby away, and the gulls swoop into his cottage to take him back. Keneth grows up lame, with one leg shorter than the other.",
+      "excerpt": {
+        "locator": "“Saint Keneth of the Gulls,” from the gulls finding food for Keneth to the end of the legend; opens “Now when the gulls had made Keneth this comfortable nest, they next wondered what they…”; closes “…all the wild creatures of shore and forest, who did their kindly best to make him happy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-brown-saints-and-friendly-beasts-1900-03",
+        "continuesTo": null,
+        "blocks": [
+          90,
+          105
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "299dc68b7faf10545db71078b5ed8e0d557ae9a8563c06a1ef6eef0777b2e622"
+      },
+      "questions": [
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-04-q1",
+          "prompt": "Who feeds baby Keneth, and how did that happen?",
+          "facilitatorNotes": [
+            "A mother Deer, whom the White Gull asked to come; she leaves her own little ones to feed him with her milk and wash him with her tongue."
+          ],
+          "evidence": [
+            "So Keneth found a new mother who loved him far better than his own had done"
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-04-q2",
+          "prompt": "The Shepherd takes Keneth home for his wife. Is the Shepherd a bad man?",
+          "facilitatorNotes": [
+            "Not really: his wife has no child, and he thinks he has found a treasure. But Keneth wants his own home and cries for it. Children may weigh this differently."
+          ],
+          "evidence": [
+            "I will take him home to my wife, who has no child of her own."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-04-q3",
+          "prompt": "How do the gulls learn that Keneth is in danger, and who leads them to him?",
+          "facilitatorNotes": [
+            "A breeze carries his cry out over the water, and the Deer guides them to the cottage. Each friend does the part it can."
+          ],
+          "evidence": [
+            "a messenger breeze carried the baby voice out over the water",
+            "Guide us to the place, mother Deer."
+          ]
+        },
+        {
+          "id": "reading-1-brown-saints-and-friendly-beasts-1900-04-q4",
+          "prompt": "Keneth grows up lame. How does the story say he felt about it?",
+          "facilitatorNotes": [
+            "It troubled him very little; he was happy, full of singing and kind words, and the gulls were kind to him."
+          ],
+          "evidence": [
+            "But this troubled Keneth very little, and the gulls were kind."
+          ]
+        }
+      ]
+    }
+  ]
+}
