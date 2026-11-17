@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "kingsley-madam-how-1889",
+  "author": "Charles Kingsley",
+  "title": "Madam How and Lady Why; or, First Lessons in Earth Lore for Children",
+  "translator": null,
+  "edition": "London: Macmillan, 1889. The Gutenberg transcription explicitly identifies the 1889 Macmillan edition. Historical scientific claims remain unchanged and are contextualized outside the source. Prose soft line-wraps are joined; paragraph boundaries, wording, punctuation, and transcription emphasis markers remain. Illustration placeholders, captions, and ornamental star dividers are excluded, without omitting narrative text. The library text holds the author’s dedication and preface, all twelve chapters and his footnote; the transcription’s double spaces after sentences are kept, and its ASCII drawing of the Chapter III volcano figure is omitted as an illustration.",
+  "publicationYear": 1889,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/1697",
+  "textUrl": "https://www.gutenberg.org/cache/epub/1697/pg1697.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The 1889 English edition was published before 1931 and its US copyright term has expired as of 2026. Project Gutenberg explicitly marks the transcription public domain in the USA. Only the original literary text is reproduced, not later editorial matter or illustrations.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/1697"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/1697/pg1697.txt",
+    "downloadSha256": "de5f8818fbdb1bf06a9f6addc5e7d0259317054b062965da177ec230b44b0cdb",
+    "method": "Project Gutenberg plain text (eBook 1697, UTF-8) from the PG mirror. Kept Kingsley’s dedication and preface, Chapters I–XII and his one footnote (under FOOTNOTES, with its {1} call in Chapter VIII); removed the PG header, transcriber line, title and the PG footer and licence. Blank-line separated paragraphs were joined with single spaces at line ends, keeping the transcription’s double spaces after sentences; indented verse quotations keep their lines with common indentation removed; chapter titles are headings. The transcriber’s ASCII drawing of the volcano section figure in Chapter III is omitted with the other illustrations. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1145,
+    "sha256": "7c95b79920fe44a314f19ba37a3342c121b97e4b49aea3fab677ae38c83c2c3c"
+  }
+}

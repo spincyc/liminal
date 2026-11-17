@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "hemans-poems-1875",
+  "author": "Felicia Hemans",
+  "title": "The Poems of Felicia Hemans",
+  "translator": null,
+  "edition": "Complete Copyright Edition, William P. Nimmo, London and Edinburgh, 1875, as transcribed by Project Gutenberg. The library text holds the whole collection from Juvenile Poems to the last poem, with the 1875 edition’s footnotes and bracketed editorial headnotes as transcribed (footnote calls such as [411] and [414] stay in the text; the nightly readings of The Summer’s Call and Echo-Song end just before them); the editorial chronology of the author’s life, the title and contents pages, the indexes and the transcriber’s notes are excluded. Source indentation and stanza line breaks are retained; titles and subtitles are headings. Nightly readings use original English poems only, with printed titles identified outside the poem, and keep the full poems including their final lines.",
+  "publicationYear": 1875,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/66785",
+  "textUrl": "https://www.gutenberg.org/cache/epub/66785/pg66785.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original English text was published in 1875, before 1931, and its US copyright term has expired as of 2026. Project Gutenberg explicitly lists this ebook as Public domain in the USA. No modern editorial front matter, illustrations or translations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/66785"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/66785/pg66785.txt",
+    "downloadSha256": "03e01d21f387a2263e5f6042594cc52d489c42b391391ac4d88022506bd6fdbe",
+    "method": "Project Gutenberg plain text (eBook 66785, UTF-8, CRLF normalised to LF) from the PG mirror. Kept everything from JUVENILE POEMS to the end of the last poem’s notes; removed the PG header and footer, the frontispiece placeholder, title page, contents, the editorial chronology of Mrs Hemans’s life before the poems, the two indexes and the transcriber’s notes. Footnotes are kept as transcribed paragraphs ([n] …) after the poems that call them; two transcriber remarks that a note was missing were dropped, and three remarks that a printed note’s anchor was not found were removed while the printed note text was kept under the transcriber’s number. Chunks whose every line is indented are stanzas with the transcription’s lines and indentation kept (only trailing spaces removed); short all-capital chunks are headings (titles and subtitles); other chunks are prose joined with single spaces at line ends. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 9744,
+    "sha256": "1806e849dff13864c84f1f0ae7e60c6d1fb927949bcaf8e3f29e0c91e76e33a7"
+  }
+}

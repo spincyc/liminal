@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "longfellow-complete-poetical-works-1902",
+  "author": "Henry Wadsworth Longfellow",
+  "title": "The Complete Poetical Works of Henry Wadsworth Longfellow",
+  "translator": null,
+  "edition": "Household Edition, Houghton Mifflin Company; publisher note dated Boston, Autumn 1902. Original English poems only; PG plain-text spelling, punctuation, line breaks and indentation retained; blank space outside stanzas trimmed. The library text holds the whole Gutenberg volume from Voices of the Night to the end of the translations (original poems, dramas, translations and Longfellow’s own notes); only the quoted publisher’s note, the contents and the separators between books are left out. Verse keeps its transcription lines and indentation; wrapped prose notes and stage directions are joined as paragraphs.",
+  "publicationYear": 1902,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/1365",
+  "textUrl": "https://www.gutenberg.org/cache/epub/1365/pg1365.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The selected original English text was published in 1902, before 1931, and its US copyright term has expired as of 2026. Project Gutenberg explicitly lists this ebook as Public domain in the USA. No modern editorial front matter, illustrations or translations are reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/1365"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/1365/pg1365.txt",
+    "downloadSha256": "9889340fd77d801429306af64a272646b0cbaaf259e4bc9089f5ca691856e641",
+    "method": "Project Gutenberg plain text (eBook 1365, UTF-8, CRLF normalised to LF) from the PG mirror. Kept everything from VOICES OF THE NIGHT to the last translation; removed the PG header and footer, the quoted publisher’s note and the contents, the transcriber’s angle-bracketed pointers to the Hiawatha notes, and the row-of-asterisks separators between books. Each blank-line separated chunk became a block: a single capitalised line is a heading (level 1 after a separator, otherwise level 2); verse chunks are stanzas with the transcription’s lines and indentation kept and only trailing spaces removed; chunks of wrapped prose (Longfellow’s prefatory notes, his Hiawatha notes, and stage directions) were detected by long lines whose continuations start in lower case and joined into paragraphs, keeping spacing inside lines. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 8838,
+    "sha256": "84ab08d5c832bc2e7217b2149e11e26c43433e393c47f7a57fb10ec07089b6e5"
+  }
+}

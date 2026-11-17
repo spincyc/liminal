@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "dodge-donald-dorothy-1906",
+  "author": "Mary Mapes Dodge",
+  "title": "Donald and Dorothy",
+  "translator": null,
+  "edition": "New York: The Century Co., 1906; title page dated 1906, copyright 1883 by Mary Mapes Dodge. Prose soft line-wraps are joined; paragraph boundaries, wording, punctuation, and transcription emphasis markers remain. Illustration placeholders, captions, and ornamental star dividers are excluded, without omitting narrative text. The library text holds all thirty-five chapters; the title, copyright and contents pages, illustration list and transcriber’s notes are excluded. Chapter numbers are joined with their titles as headings, the ASCII-ruled trunk label is given as its lines of text and the rifle-club team list as tab-separated rows.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/28856",
+  "textUrl": "https://www.gutenberg.org/cache/epub/28856/pg28856.txt",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The 1906 English edition was published before 1931 and its US copyright term has expired as of 2026. Project Gutenberg explicitly marks the transcription public domain in the USA. Only the original literary text is reproduced, not later editorial matter or illustrations.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/28856"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/28856/pg28856.txt",
+    "downloadSha256": "5f67ccbee40b1ed1e6a9ad900e1d9da4750adefb358413ee8142386341d2e1c0",
+    "method": "Project Gutenberg plain text (eBook 28856, UTF-8) from the PG mirror. Kept Chapters I–XXXV; removed the PG header and footer, the title, copyright and contents pages, the list of illustrations, [Illustration] placeholders and captions, ornamental star dividers and the closing transcriber’s notes. Blank-line separated paragraphs were joined into single-spaced prose; indented letters and the sermon stay prose; indented verse keeps its lines (common indentation removed); each chapter number is joined with its title in one heading (the printed unnumbered “CHAPTER.” before A FROLIC ON THE WATER is kept as printed); the centred section title “THANK-YOU” GAME! is a heading. The trunk label drawn in ASCII rules is given as its four lines, and the two-column team list as tab-separated rows. Converted by a scratch Node script; every nightly reading was located exactly."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1829,
+    "sha256": "011e69845e11afcb34dcfd1c227c1827cecb039130aa4604e8903433ce520585"
+  }
+}
