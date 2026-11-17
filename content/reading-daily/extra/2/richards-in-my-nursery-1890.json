@@ -1,0 +1,889 @@
+{
+  "schemaVersion": 1,
+  "grade": 2,
+  "work": "richards-in-my-nursery-1890",
+  "readings": [
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-01",
+      "title": "The Ballad of the Fairy Spoon",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow a story told in short verses, and decide how serious the speaker is.",
+      "focus": "A mother tells how her crying baby got back the lucky spoon the wind blew away.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A ballad is a poem that tells a story in short verses. A nosegay is a small bunch of flowers; a boon is a gift or favour; hazel is a kind of wood. People used to say a lucky child was “born with a silver spoon in its mouth”; this poem plays with that saying.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Ballad of the Fairy Spoon,” the whole poem; opens “The little wee baby came tripping All out of the fairy land, With a nosegay of fairy…”; closes “…are crying in pain, To send for the fairy Spoonman, And get them their spoons again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          48,
+          71
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3ff03b8a9f6595ad4899c941742f2738769f364bce4bc3d5c5772877e1c65f3a"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-01-q1",
+          "prompt": "Why does the baby keep “sighing and sobbing”?",
+          "facilitatorNotes": [
+            "As he stooped to sip a dewdrop, the south wind blew away the fairy spoon the queen had given him. The poem lets the baby explain in his own words."
+          ],
+          "evidence": [
+            "And it blew my little wee spoonie"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-01-q2",
+          "prompt": "How does the mother call the fairy Spoonman, and how does he arrive?",
+          "facilitatorNotes": [
+            "She whispers up a moonbeam; something comes sliding down from the moon and gliding in at the window. The doubled words “sliding, sliding” and “gliding, gliding” slow the magic moment down."
+          ],
+          "evidence": [
+            "Then I whispered along a moonbeam",
+            "Then something came sliding, sliding"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-01-q3",
+          "prompt": "The Spoonman asks two things before he gives back a spoon. What are they, and why might they matter?",
+          "facilitatorNotes": [
+            "Whether the baby lost it carelessly, and whether he knows which spoon was his own. The baby did not drop it, and he knows it was silver, so he passes both tests. Children may say the rules reward honesty and knowing yourself."
+          ],
+          "evidence": [
+            "For if you had carelessly lost your spoon",
+            "If you know your spoon again"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-01-q4",
+          "prompt": "The mother says some people may think she is foolish or mad. Do you think she believes her own story?",
+          "facilitatorNotes": [
+            "She may be playing, the way grown-ups tell bedtime tales, or she may mean it lovingly; her advice to “all anxious mothers” sounds like a joke shared with other parents. Either reading is fine with a line to support it."
+          ],
+          "evidence": [
+            "Now some may think I am foolish",
+            "Has my baby been cross or sad."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-02",
+      "title": "Good-Night Song and Another “Good-Night”",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare two bedtime poems: whom each one speaks to, and how each one sounds.",
+      "focus": "One poem sends the sun, sky, flowers and birds to bed; the other hushes the whole world for two children.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A night-cap is a soft cap worn in bed; a sleeping-draught is a drink that brings sleep; a linden is a tree; a lattice is a window of crossed strips; to waft is to blow gently. Read each poem slowly, as if putting someone to sleep.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Good-Night Song” and “Another ‘Good-Night,’” two whole poems printed one after the other; opens “Good-night, Sun! go to bed! Take your crown from your shining head. Now put on your gray…”; closes “…your dancing stay. Low, low lay each golden head! Two little children are going to bed.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          77,
+          84
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2b4350ee5b99e872208745331068f69e63da93e9fed2977268506fd363d32551"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-02-q1",
+          "prompt": "In the first poem, who is told to go to sleep, and who is told to stay awake?",
+          "facilitatorNotes": [
+            "The sun, the flowers, the birds and the child go to sleep; the sky must keep watch all night with its twinkling eyes, the stars."
+          ],
+          "evidence": [
+            "Not a wink of sleep for you."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-02-q2",
+          "prompt": "What does the sun take off and put on before bed?",
+          "facilitatorNotes": [
+            "He takes off his shining crown and puts on a gray night-cap, like a person getting ready for bed: bright for day, gray for evening."
+          ],
+          "evidence": [
+            "Take your crown from your shining head.",
+            "Now put on your gray night-cap"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-02-q3",
+          "prompt": "In the second poem many lines begin with a word said twice, like “Birds, birds” and “Low, low.” Why might the poet do that?",
+          "facilitatorNotes": [
+            "Doubled words sound like rocking or a soft voice calling, and they slow the reader down. Children may say it sounds like a parent hushing."
+          ],
+          "evidence": [
+            "Birds, birds, in the linden-tree",
+            "Low, low let your music be!"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-02-q4",
+          "prompt": "Which poem would put you to sleep faster? Choose a line that shows why.",
+          "facilitatorNotes": [
+            "Either can be defended: the first says a friendly good-night to everything, and the second quiets the world and then the child’s own eyes, lips and feet."
+          ],
+          "evidence": [
+            "Little Baby dear, good-night!",
+            "Two little children are going to bed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-03",
+      "title": "Baby’s Journey",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear how four questions build a poem, one verse for each.",
+      "focus": "Where, how, when and why: a bouncing rhyme answers each question with a grander journey.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. This is a knee-bouncing rhyme: try bouncing gently in time with “Hoppety hoppety ho!” Limerick is a town in Ireland; a coach-and-seven is a carriage pulled by seven horses; grooms look after horses; a jig is a quick dance.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Baby’s Journey,” the whole poem; opens “Hoppety hoppety ho! Where shall the baby go? Over dale and down, To Limerick town, And…”; closes “…the baby go? To dance a new jig, And to buy a new wig, And that's why the baby shall go.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          98,
+          101
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "79ff483bb95392b868a03ecfe725fb02598c981b70121ec8889bb033a9882743"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-03-q1",
+          "prompt": "Each verse asks a different question. What are the four question words?",
+          "facilitatorNotes": [
+            "Where, how, when and why. Each verse answers its own question."
+          ],
+          "evidence": [
+            "Where shall the baby go?",
+            "How shall the baby go?",
+            "When shall the baby go?",
+            "Why shall the baby go?"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-03-q2",
+          "prompt": "How does the baby travel? Is that a likely way for a baby to go?",
+          "facilitatorNotes": [
+            "In a carriage with seven horses and eleven grooms: far too grand for a baby. The joke is in the size."
+          ],
+          "evidence": [
+            "In a coach-and-seven,",
+            "With grooms eleven,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-03-q3",
+          "prompt": "Why is the baby going to Limerick? Which reason is the funniest?",
+          "facilitatorNotes": [
+            "To dance a new jig and buy a new wig, neither of which a baby needs. Children can choose and say why."
+          ],
+          "evidence": [
+            "To dance a new jig,",
+            "And to buy a new wig,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-03-q4",
+          "prompt": "Where do you think the baby is really going?",
+          "facilitatorNotes": [
+            "Probably nowhere but up and down on a grown-up’s knee; the bounce is the journey. Others may hear a dream journey at bedtime, since the baby goes “By the light of the moon.”"
+          ],
+          "evidence": [
+            "Hoppety hoppety ho!",
+            "By the light of the moon,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-04",
+      "title": "Young (One)’s Night Thoughts",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen to a speaker’s voice and decide whose thoughts the poem really shows.",
+      "focus": "A wide-awake baby announces that it will not go to sleep, until it does.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. The title jokes about a famous long poem called “Night Thoughts” by Edward Young; here the young one is a baby. A pother is a fuss; perchance means perhaps; vainly means uselessly; to balk someone is to spoil their plan.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Young (One)’s Night Thoughts,” the whole poem; opens “\"Hi!\" said the baby. \"Ho!\" said the baby. \"Ha!\" said the baby, \"I won't go to sleep!…”; closes “…I'll be scorning, When, towards the morning, Without any warning Asleep I will fall.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          108,
+          112
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e4f4ee6abc81feca46045f3f82dba341dbbfb810574f1948bde300ca5b24e1a5"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-04-q1",
+          "prompt": "What does the baby refuse to do, and what does it want instead?",
+          "facilitatorNotes": [
+            "It refuses to sleep and wants dancing, singing, rattles and toys, so that its mother stays awake too."
+          ],
+          "evidence": [
+            "I won't go to sleep!",
+            "My rattles and toys."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-04-q2",
+          "prompt": "Each verse begins with three short rhyming shouts. What do you notice about them?",
+          "facilitatorNotes": [
+            "Hi, Ho, Ha; Dance, Prance, Perchance; Sing, Ring, Bring; Walk, Talk, Balk. They sound like orders. “Perchance” and “balk” are grown-up words, which makes the baby sound comically clever."
+          ],
+          "evidence": [
+            "\"Prance!\" said the baby.",
+            "\"I'll balk,\" said the baby,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-04-q3",
+          "prompt": "How does the poem end? Who wins, the baby or sleep?",
+          "facilitatorNotes": [
+            "The baby says it will fall asleep toward morning “without any warning.” It wins by staying awake a long time, but sleep wins in the end. Children can argue either way."
+          ],
+          "evidence": [
+            "Without any warning",
+            "Asleep I will fall."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-04-q4",
+          "prompt": "The words are the baby’s, but who do you think is really telling this poem?",
+          "facilitatorNotes": [
+            "A tired parent imagining what the baby would say if it could talk; jokes like “Naughty old mother” sound like a grown-up laughing at herself. Some children will simply enjoy it as the baby’s voice."
+          ],
+          "evidence": [
+            "Naughty old mother,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-05",
+      "title": "Little John Bottlejohn",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Notice one changed word in a repeated line, and decide what an open ending means.",
+      "focus": "A cheerful little man answers a mermaid’s song and follows her into the sea.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A mermaid is a creature of old stories, part woman and part fish, who lives in the sea. Blithe means cheerful; to quail is to shrink back in fear; the main is the open sea.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Little John Bottlejohn,” the whole poem; opens “Little John Bottlejohn lived on the hill, And a blithe little man was he. And he won the…”; closes “…foaming main. And little John Bottlejohn, pretty John Bottlejohn, Never was seen again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          142,
+          145
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "469ba9b818dc88b625738e13eeb5eaa10552d009a7d6a445d38bcc8b0d8d4a35"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-05-q1",
+          "prompt": "What does the mermaid sing each evening, and how does her song change in the third verse?",
+          "facilitatorNotes": [
+            "“Won’t you come out to me?” becomes “Won’t you come down with me?” Out to the shore turns into down into the sea; one small word warns what is coming."
+          ],
+          "evidence": [
+            "Won't you come out to me?",
+            "Won't you come down with me?"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-05-q2",
+          "prompt": "How does John go down to the shore? What does that show about him?",
+          "facilitatorNotes": [
+            "He hops and skips, skips and hops: happy and eager, with no worry at all."
+          ],
+          "evidence": [
+            "And he hopped and he skipped, and he skipped and he hopped,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-05-q3",
+          "prompt": "John says he will not mind her tail, “For perhaps I may grow one too.” Is that a wise thing to say?",
+          "facilitatorNotes": [
+            "It is funny and cheerful, but he does not think about living under water. Some children find him brave; others think he is too charmed to think clearly."
+          ],
+          "evidence": [
+            "For perhaps I may grow one too."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-05-q4",
+          "prompt": "The poem ends, “Never was seen again.” Is that a happy ending or a sad one?",
+          "facilitatorNotes": [
+            "It can be read both ways: perhaps he lives happily under the sea, perhaps he is gone for good. Old stories warned that mermaids lured people into the sea; this poem keeps the tone light and lets the listener decide."
+          ],
+          "evidence": [
+            "Never was seen again."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-06",
+      "title": "Jemima Brown",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Work out who is to blame from questions the speaker asks instead of saying it outright.",
+      "focus": "A mother asks her daughter to be kind to the broken doll she has stopped loving.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A doll’s crown is the top of its head; azure is sky blue; comely means good-looking; methinks means I think; forlorn means sad and lonely.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Jemima Brown,” the whole poem in five numbered verses; opens “I.”; closes “…cradle ready, And we'll lay her down; And we'll ask Papa to mend her, Poor Jemima Brown!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          147,
+          156
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ee3b2e99e10d4af077ff312c4cf8cb60c0089b1a2184b8f9723211ebe85bc415"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-06-q1",
+          "prompt": "What did Jemima Brown look like once, and what does she look like now?",
+          "facilitatorNotes": [
+            "Once rosy, blue-eyed and golden-haired, as finely dressed as any doll in town; now bald, with a broken head, one arm missing and ragged clothes. Each verse sets “once” against “now.”"
+          ],
+          "evidence": [
+            "Once she was a lovely dolly,",
+            "Now, alas! no hair's remaining"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-06-q2",
+          "prompt": "Who broke the doll? How can you tell, even though the speaker never says it straight out?",
+          "facilitatorNotes": [
+            "Alice. The questions “Did she pull her pretty hair out?” and the line about “Little hands” point to her without a loud scolding."
+          ],
+          "evidence": [
+            "Did she pull her pretty hair out?",
+            "Little hands that did the mischief,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-06-q3",
+          "prompt": "Why should Alice be kind to Jemima now?",
+          "facilitatorNotes": [
+            "It is not the doll’s fault that Alice prefers other dolls. The speaker asks Alice to make up for the damage."
+          ],
+          "evidence": [
+            "'Tis no fault of hers"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-06-q4",
+          "prompt": "How does the poem end? Is it a scolding, or something gentler?",
+          "facilitatorNotes": [
+            "With a plan: make the cradle ready, lay her down and ask Papa to mend her. Most children hear kindness; some may hear a scolding hidden inside it."
+          ],
+          "evidence": [
+            "And we'll ask Papa to mend her,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-07",
+      "title": "Alice’s Supper",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a chain of steps from a field to a plate.",
+      "focus": "Reapers, a miller, a cook and a nurse each sing about the food on its way to Alice.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. Reapers cut ripe grain with sickles, curved blades; to whet a blade is to sharpen it. A miller grinds grain into flour between millstones; to knead dough is to press and fold it. Maggie and Nannie are helpers in the house.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Alice’s Supper,” the whole poem; opens “Far down in the meadow the wheat grows green, And the reapers are whetting their sickles…”; closes “…\"'Tis the best bread-and-butter I ever did see! And it is for Alice's supper, he! he!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          158,
+          161
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "11f402902020ae4c0860fc59f03242bfb7a27d0e15d882ea6ad30da06b5eb6c2"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-07-q1",
+          "prompt": "Put the four places in order. Where does Alice’s supper start, and where does it end up?",
+          "facilitatorNotes": [
+            "The meadow (wheat), the mill in the valley (flour), the kitchen (dough), and the nursery (bread and butter). Each verse brings the food closer to Alice."
+          ],
+          "evidence": [
+            "Far down in the meadow the wheat grows green,",
+            "Downstairs in the kitchen the fire doth glow,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-07-q2",
+          "prompt": "What changes from verse to verse, and what stays the same?",
+          "facilitatorNotes": [
+            "The worker and the food change; each singer calls theirs the finest, and each song ends “for Alice’s supper” with a different laugh: ho, hi, ha, he."
+          ],
+          "evidence": [
+            "And it is for Alice's supper, ho! ho!",
+            "And it is for Alice's supper, he! he!"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-07-q3",
+          "prompt": "Every singer says theirs is the best. Can they all be right?",
+          "facilitatorNotes": [
+            "Each is proud of their own part. In a way they are all right, since it is the same food at each stage. Ask how Alice’s bread depends on all four."
+          ],
+          "evidence": [
+            "'Tis the finest wheat that ever did grow!",
+            "'Tis the best bread-and-butter I ever did see!"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-07-q4",
+          "prompt": "Alice’s supper is only bread and butter. Why make a whole poem about it?",
+          "facilitatorNotes": [
+            "It shows how many people’s work goes into something simple, and it makes Alice feel cared for. Other answers are welcome if they use the poem."
+          ],
+          "evidence": [
+            "'Tis a plate full of something all yellow and white,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-08",
+      "title": "Sleepyland",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear how stretched and invented words give a poem its sound.",
+      "focus": "On a rainy morning, a napping baby visits a bright land where only the very young may go.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. Sleepyland is the land of dreams. A cinnamon bear is a reddish-brown bear; “Would I could go” means “I wish I could go.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Sleepyland,” the whole poem; opens “Baby's been in Sleepyland, Over the hills, over the hills. Baby's been in Sleepyland All…”; closes “…go after three years old, So poor old Mammy stays out in the cold, Every rainy morning.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          170,
+          174
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c6876ff7bf4d255941174d95f2447d7d4a73dff5255afad83b4a64ab032506c4"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-08-q1",
+          "prompt": "What did the baby see, hear and do in Sleepyland?",
+          "facilitatorNotes": [
+            "Saw the sun, grass and brook; heard winds, doves and cows; sang with a canary, danced with a fairy and rode a cinnamon bear."
+          ],
+          "evidence": [
+            "Saw the brook that flowed so tinkily,",
+            "Rode about on a cinnamon beary,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-08-q2",
+          "prompt": "Are “twinkily,” “crinkily” and “mooingly” real words? Why use them?",
+          "facilitatorNotes": [
+            "They are made-up or stretched words that rhyme and sound like baby talk, and they make the dream playful. Even “beary” is bent to rhyme with “canary” and “fairy.”"
+          ],
+          "evidence": [
+            "Saw the sun that shone so twinkily,",
+            "Heard the cows that mooed so mooingly,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-08-q3",
+          "prompt": "It is raining at home. What is the weather like in Sleepyland?",
+          "facilitatorNotes": [
+            "Bright and gay, with the sun shining. Notice how the line “All the rainy morning” turns into “All the lovely morning.”"
+          ],
+          "evidence": [
+            "For Sleepyland is bright and gay",
+            "All the lovely morning."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-08-q4",
+          "prompt": "Why can’t Mammy go to Sleepyland? Do you believe the rule?",
+          "facilitatorNotes": [
+            "No one over three years old may go, she has been told. It may be a playful way to say grown-ups miss baby dreams, or a mother wishing she could join in. Some children will protest that they still dream."
+          ],
+          "evidence": [
+            "No one may go after three years old,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-09",
+      "title": "Phil’s Secret",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Notice how a speaker gives away the very secret he says he is keeping.",
+      "focus": "A small boy will not tell who, where or when, but he tells a great deal.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. Phil is a little boy, and the whole poem is in his voice.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Phil’s Secret,” the whole poem; opens “I know a little girl, But I won't tell who! Her hair is of the gold, And her eyes are of…”; closes “…as father, You may ask about it then. Such a pretty little girl!— But I won't tell when.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          178,
+          180
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fa68d99040a44f0969e4afa1701e3efb65b9a23c60b872dd5e98f59321026881"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-09-q1",
+          "prompt": "Phil keeps three things secret. What are they?",
+          "facilitatorNotes": [
+            "Who the girl is, where he sees her, and when he will marry her. Each verse ends with one of them."
+          ],
+          "evidence": [
+            "But I won't tell who.",
+            "But I won't tell where.",
+            "But I won't tell when."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-09-q2",
+          "prompt": "Does Phil really keep his secret? What does he give away?",
+          "facilitatorNotes": [
+            "He describes her hair, eyes, smile and heart and names the places she might be. The fun is that he keeps hinting."
+          ],
+          "evidence": [
+            "Her hair is of the gold,",
+            "It may be in the lane,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-09-q3",
+          "prompt": "Phil says, “The very smallest boys / Make the very biggest men.” Why does he say it?",
+          "facilitatorNotes": [
+            "He is small now but will grow up, and he seems to answer someone who might laugh at a little boy planning to marry. Children may notice he is arguing with a listener we never hear."
+          ],
+          "evidence": [
+            "The very smallest boys",
+            "When I'm as tall as father,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-10",
+      "title": "A Song for Hal",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 6,
+        "totalMinutes": 11
+      },
+      "challenge": "Join in a chorus and notice the one time it changes.",
+      "focus": "An early-morning boat trip wakes the grumbling creatures of the sea.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A keel is the bottom of a boat; minnows, skates and sturgeons are fish; quoth he means he said; to courtesy is to curtsy, a polite bow. White caps are small waves with foam on top. Sing or chant the chorus together.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“A Song for Hal,” the whole poem with its chorus; opens “Once I saw a little boat, and a pretty, pretty boat, When daybreak the hills was…”; closes “…And every little wave took its nightcap off, And courtesied to the sun in the morning.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          182,
+          191
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "519887c1dc6de6db3e9b1da07255a7e0cdd69ccf523986fb9e76b170db874c58"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-10-q1",
+          "prompt": "What are the waves’ “nightcaps”?",
+          "facilitatorNotes": [
+            "The white foam on top of small waves, which sailors call white caps. The poem turns that word into a bedtime picture."
+          ],
+          "evidence": [
+            "Its nightcap, white cap, nightcap on."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-10-q2",
+          "prompt": "Which sea creatures complain about being woken, and what does each one say?",
+          "facilitatorNotes": [
+            "The minnow and skate think they must be late; the lobster refuses to have his sleep spoiled; the sturgeon wishes people would warn them. Each sounds like a grumpy sleeper."
+          ],
+          "evidence": [
+            "We must certainly be late",
+            "if I'll have my slumber spoiled",
+            "People ought to let us know when a-sailing they would go,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-10-q3",
+          "prompt": "How does the last chorus change, and why?",
+          "facilitatorNotes": [
+            "The waves take their nightcaps off and curtsy to the sun, because morning has come. The change ends the poem."
+          ],
+          "evidence": [
+            "And every little wave took its nightcap off,",
+            "And courtesied to the sun in the morning."
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-10-q4",
+          "prompt": "When the sun comes up, the fishes feel bad about their laziness. Were they really lazy?",
+          "facilitatorNotes": [
+            "It was very early, and the boat woke them. Some children will defend the fish; others will enjoy the joke that the sun makes them feel guilty anyway."
+          ],
+          "evidence": [
+            "For their laziness at once fell a-mourning."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-11",
+      "title": "The Eve of the Glorious Fourth",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Compare a plan in the first verse with how things turn out in the last.",
+      "focus": "Seven boys plan a whole noisy night before the Fourth of July, and an angry neighbour ends it.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. The Fourth of July celebrates the day in 1776 when the American colonies declared their independence from Britain, and in Richards’s time boys marked it with noise-makers and firecrackers. A fish-horn is a tin horn; elephant crackers and torpedoes were large firecrackers and snapping fireworks; a constable is a police officer; to carouse is to celebrate noisily.",
+      "contentNote": "The boys play with toy pistols and gunpowder, and a neighbour chases them and beats them with sticks and a watering-can; the poem treats it as slapstick.",
+      "excerpt": {
+        "locator": "“The Eve of the Glorious Fourth,” the whole poem in seven numbered verses; opens “I.”; closes “…And when they awaked, so sorely they ached, That they just could do nothing but cry.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          298,
+          311
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "418e13f574d71c977cc01b77a61f49c7541a30f7ca89e526b7b2803d14fda175"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-11-q1",
+          "prompt": "How do the seven boys plan to get ready for the Fourth?",
+          "facilitatorNotes": [
+            "They spend all their money on noise-makers and sweets and plan to sit up all night, drumming until the constable comes and then running away."
+          ],
+          "evidence": [
+            "They spent all their money on trumpets and drums,",
+            "We will sit up all night,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-11-q2",
+          "prompt": "Every verse starts with the same two lines of names. What does repeating them do?",
+          "facilitatorNotes": [
+            "It makes the boys sound like one gang, always together, and gives the poem a marching beat. By the end the same names sound sorry instead of proud."
+          ],
+          "evidence": [
+            "Robby and Bobby and Billy and Ned,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-11-q3",
+          "prompt": "Who is the “horrid great man,” and why do you think he does what he does?",
+          "facilitatorNotes": [
+            "A neighbour behind the door, kept awake by the din; the neighbours were “ready to choke” with rage. His punishment is far too rough, and children may take either side."
+          ],
+          "evidence": [
+            "With fury were ready to choke,",
+            "A horrid great man with a watering-can"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-11-q4",
+          "prompt": "How is the last verse the opposite of the first?",
+          "facilitatorNotes": [
+            "In the first the boys vow to have “glorious fun”; in the last they say “it wasn’t much fun” and cry in bed. The poem ends where its plan began, turned upside down."
+          ],
+          "evidence": [
+            "they'd have glorious fun",
+            "it wasn't much fun"
+          ]
+        }
+      ],
+      "months": [
+        7
+      ]
+    },
+    {
+      "id": "reading-2-richards-in-my-nursery-1890-12",
+      "title": "The Dandy Cat",
+      "sourceId": "richards-in-my-nursery-1890",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice two things happening at the same time and how the poem makes a joke of them.",
+      "focus": "A grand cat takes so long dressing for battle that the mice and rats finish the pantry first.",
+      "context": "Laura E. Richards wrote these poems for her own children in the 1870s and 1880s; Alice, Hal and John were among them. A dandy is someone who cares too much about fine clothes. Grimalkin and Tabby are old names for cats; a pelisse is a long cloak; girt on means fastened on; aghast means shocked; to rate someone sore is to scold hard; thrice means three times.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Dandy Cat,” the whole poem; opens “To Sir Green-eyes Grimalkin de Tabby de Sly His mistress remarked one day, \"I'm…”; closes “…A cat who cares less for the beauties of dress Than Sir Green-eyes Grimalkin de Sly.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          313,
+          324
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5d1ade7fc9d9f63b2666f05019761f9d994f1ed48621f42c359e9021c113fa92"
+      },
+      "questions": [
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-12-q1",
+          "prompt": "What does the mistress ask the cat to do, and what does she say about him?",
+          "facilitatorNotes": [
+            "To rid the house of mice and rats. She complains that he has never shown the fighting spirit of his famous family."
+          ],
+          "evidence": [
+            "Come rid me of them, I pray!",
+            "Yet never a trace of the blood of your race"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-12-q2",
+          "prompt": "What does Sir Green-eyes do before he goes to the pantry?",
+          "facilitatorNotes": [
+            "He washes, curls his whiskers, combs his hair, puts on perfumed gloves and a sword, and admires himself in the mirror."
+          ],
+          "evidence": [
+            "And he curled his whiskers, and combed his hair,",
+            "On the looking-glass tall and fair,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-12-q3",
+          "prompt": "What were the mice and rats doing while the cat got dressed?",
+          "facilitatorNotes": [
+            "Finishing their feast and trotting calmly away, leaving only a ham bone. The two things happen at the same time, which is the joke."
+          ],
+          "evidence": [
+            "They had finished their feast, without hurry the least,"
+          ]
+        },
+        {
+          "id": "reading-2-richards-in-my-nursery-1890-12-q4",
+          "prompt": "The cat’s name is long and grand. How does it fit the story, and has he learned anything by the end?",
+          "facilitatorNotes": [
+            "A fancy name, fancy clothes and no work: the name is part of the joke. At the end he cares less for dress than any cat alive. Some children think he learned; others think he was only frightened."
+          ],
+          "evidence": [
+            "Sir Green-eyes Grimalkin de Tabby de Sly",
+            "A cat who cares less for the beauties of dress"
+          ]
+        }
+      ]
+    }
+  ]
+}
