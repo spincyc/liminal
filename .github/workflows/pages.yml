@@ -21,8 +21,23 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      # Validates content, builds dist/, smoke-tests the built site, runs tests.
+      # The WebAssembly TeX runtime behind Generate PDF (docs/printing.md):
+      # the subset pinned in tools/native-tex/runtime.json, from Colophon's
+      # release archive. Cached bytes stay untrusted; every file is verified
+      # against the manifest before it is staged.
+      - name: Restore the PDF runtime
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/liminal/native-tex
+          key: liminal-native-tex-v1-${{ hashFiles('tools/native-tex/runtime.json') }}
+      - name: Fetch and verify the PDF runtime
+        run: node tools/native-tex.js fetch
+      # Validates content, builds dist/, smoke-tests the built site, typesets
+      # the PDF corpus with the real engines, runs tests. A missing runtime
+      # fails here rather than deploying a site without Generate PDF.
       - run: npm run check
+        env:
+          LIMINAL_REQUIRE_NATIVE_TEX: "1"
       - if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
