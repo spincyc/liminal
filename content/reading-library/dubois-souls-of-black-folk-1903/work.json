@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "dubois-souls-of-black-folk-1903",
+  "author": "W. E. B. Du Bois",
+  "title": "The Souls of Black Folk",
+  "translator": null,
+  "edition": "Chicago: A. C. McClurg & Co., second edition, June 1, 1903. UNC Documenting the American South transcription of the Guilford College Library copy, call number E185.5.D81; source description, title page and copyright page identify the printing. All selected paragraphs are taken directly from that verified transcription. Original wording, spelling, punctuation, paragraphs and list-item line breaks retained; HTML entities decoded, page labels omitted, prose line wrapping joined, inline italic markup omitted without changing words. The closing quoted German line retains its verse block. No modern introduction is included. The library text runs from The Forethought through The After-Thought, with every chapter's verse epigraph; the title page, dedication, contents (“Herein is Written”) and the bars of music printed before each chapter (images) are omitted. Lists printed inside a paragraph keep one item per line within that paragraph.",
+  "publicationYear": 1903,
+  "translationYear": null,
+  "url": "https://docsouth.unc.edu/church/duboissouls/menu.html",
+  "textUrl": "https://docsouth.unc.edu/church/duboissouls/dubois.html",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The specifically identified Chicago McClurg second edition was published June 1, 1903, outside the US copyright term in 2026. UNC source description identifies the physical copy and printing, gives scanned title/copyright pages, and explicitly labels the text No Copyright in US. UNC states its transcription was compared and corrected against the original. Every selected paragraph uses that dated-witness transcription; the variant PG408 text has been replaced. No modern editorial prose is reproduced.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://docsouth.unc.edu/church/duboissouls/dubois.html"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://docsouth.unc.edu/church/duboissouls/dubois.html",
+    "downloadSha256": "0fcd695745be11c58f20bb9b29acaf68e35f530e8839d37ecd533aaec0d484f9",
+    "method": "UNC Documenting the American South HTML file. Took The Forethought and everything from the half-title “The Souls of Black Folk” to “The End”, leaving out the contents page; removed the page-number anchors and rules (rejoining paragraphs split across pages with a space) and the music images; decoded entities; dropped inline markup (italics, citation tags) keeping its words; collapsed whitespace and removed leading indentation; lines broken by explicit line breaks became stanzas, and list items became lines of their paragraph; HTML headings became level-2 headings."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 501,
+    "sha256": "7a2401c9d9755b81d11436b07a906d65332c2be9cd5f8f1e13d5c974e311d4fc"
+  }
+}

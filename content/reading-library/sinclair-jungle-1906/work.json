@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "sinclair-jungle-1906",
+  "author": "Upton Sinclair",
+  "title": "The Jungle",
+  "translator": null,
+  "edition": "New York: Doubleday, Page & Company, 1906. Every selected paragraph is taken from Wikisource’s scan-backed transcription of Index:The Jungle (1906).djvu (saved chapter HTML), not from Project Gutenberg 140, whose print exemplar is unidentified. Chapter I’s pronunciation footnote (“Pronounced Yoorghis”) and its callout are not supplied. Paragraph and stanza boundaries and line breaks are retained; prose layout whitespace is joined. Page numbers, running heads, and footnote callout numerals are omitted. The library text holds the dedication and Chapters I–XXXI complete; the list of other books, title page and copyright page are omitted, and so are all the edition’s footnotes and their callouts, as with Chapter I’s.",
+  "publicationYear": 1906,
+  "translationYear": null,
+  "url": "https://en.wikisource.org/wiki/Index:The_Jungle_(1906).djvu",
+  "textUrl": "https://en.wikisource.org/wiki/The_Jungle_(Sinclair,_1906)",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The Doubleday, Page edition was published in 1906, before 1931; its US copyright term has expired as of 2026.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://en.wikisource.org/wiki/Index:The_Jungle_(1906).djvu"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://en.wikisource.org/w/api.php?action=parse&page=The_Jungle_(Sinclair,_1906)&prop=text%7Crevid&format=json&formatversion=2",
+    "downloadSha256": "baaf0d8f5efa479bd9f7a7726005fb2ab6f91dfcd0728f7586ff65fbefda0fa8",
+    "method": "Wikisource MediaWiki parse API (action=parse, prop=text|revid), one request for the main page and one per chapter subpage in printed order, Chapter 1 through Chapter 31 (revisions 13886195, 13885999, 13886021, 13886043, 13886049, 13886051, 13886053, 13886055, 13886057, 13886059, 14309383, 14435559, 15049553, 15049573, 15049584, 15049624, 15049675, 15049704, 15051174, 15051222, 15051242, 15051291, 15051301, 15051320, 15051371, 15079501, 15081667, 15081668, 15081701, 15081714, 15081757, 15081775, main page first). downloadSha256 is the SHA-256 of the 32 JSON responses concatenated in that order; downloadUrl is the first of them. From the main page only the dedication is kept. Wikisource headers, footnote callouts and notes, page-number anchors and zero-width characters removed; HTML italics dropped to plain text; whitespace collapsed to single spaces, with an inline gap rendered as one space; each HTML paragraph became a paragraph, verse with line breaks a stanza (lines trimmed); each centred chapter number became a level-2 heading and the repeated book title at Chapter I was dropped."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 1530,
+    "sha256": "1398f392ca220a60b0ed6987e8cf2fdffbb6be7e12980020d62bdba2ddbdf647"
+  }
+}

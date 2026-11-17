@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "darwin-origin-of-species-1859",
+  "author": "Charles Darwin",
+  "title": "On the Origin of Species By Means of Natural Selection",
+  "translator": null,
+  "edition": "London: John Murray, 1859, first edition, as explicitly identified in Project Gutenberg ebook 1228. Original paragraph boundaries, punctuation, and emphasis markers are retained; Gutenberg line wrapping within paragraphs is joined with spaces. No editorial reconstruction is made. The library text runs from the Introduction through the end of Chapter XIV, with each chapter's printed summary of contents; the title page, epigraphs, table of contents and index are omitted. Ramsay's table of strata thicknesses in Chapter IX, which the transcription wraps across lines, is given one stratum per line with its words and figures unchanged.",
+  "publicationYear": 1859,
+  "translationYear": null,
+  "url": "https://www.gutenberg.org/ebooks/1228",
+  "textUrl": "https://www.gutenberg.org/ebooks/1228.txt.utf-8",
+  "rights": {
+    "jurisdiction": "US",
+    "status": "public-domain",
+    "basis": "The supplied English first edition was published in London by John Murray in 1859, as shown by the transcription title page and edition list. Project Gutenberg explicitly identifies ebook 1228 as public domain in the USA; this 1859 publication is outside its US copyright term.",
+    "verifiedDate": "2026-10-07",
+    "evidenceUrl": "https://www.gutenberg.org/ebooks/1228"
+  },
+  "acquisition": {
+    "retrieved": "2026-11-17",
+    "downloadUrl": "https://aleph.pglaf.org/cache/epub/1228/pg1228.txt",
+    "downloadSha256": "362142cb7c6f90850477520cfe2a62fe423ae92ea8eb6d9cd8b30ddb39de60b9",
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 1228). Removed the Gutenberg header, footer, licence and edition list, everything before the Introduction and the index; joined wrapped prose lines with single spaces; each chapter number and title became one level-2 heading; the one table became a stanza, one row per line. Underscore emphasis kept as in the file."
+  },
+  "scope": {
+    "complete": true,
+    "note": null
+  },
+  "text": {
+    "blocks": 710,
+    "sha256": "b278bf88ea730ec6b5aca6df49bbc47f53b3187e95830db5559d09bd6b5aabdf"
+  }
+}
