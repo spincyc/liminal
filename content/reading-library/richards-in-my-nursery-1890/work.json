@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/39741/pg39741-images.html",
     "downloadSha256": "5b4dce87f4473b1927fc18d1f0eb2d7b3ad993cbfee4855be4680e676f028eb7",
-    "method": "Downloaded Project Gutenberg HTML pg39741-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page and copyright leaf, the contents, and the publisher's \"Books by Laura E. Richards\" at the end. Kept: the verse dedication to Julia Ward Howe and every poem and prose piece with its printed notes in brackets."
+    "method": "Downloaded Project Gutenberg HTML pg39741-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page and copyright leaf, the contents, and the publisher's \"Books by Laura E. Richards\" at the end. Kept: the verse dedication to Julia Ward Howe and every poem and prose piece with its printed notes in brackets, and the one footnote (to \"Hoddy-Doddy\", quoting Edward Lear) as its own paragraph \"[Footnote 1: …]\" where the transcription places it, its marker [1] kept in the verse."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 1010,
-    "sha256": "b5ea922b3c847958296f48a82f6abc8d98bd0873073b1b872c723e25988c9ba5"
+    "sha256": "6afea182d20e9db7c355ec46658dd277b6c6b871891a13fe218e926434443393"
   }
 }

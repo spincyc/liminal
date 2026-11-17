@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/28/pg28-images.html",
     "downloadSha256": "47567c630fe3b37c0e30a06629feec086e4fe7fafeb5811ee1a23847fb87dcd3",
-    "method": "Downloaded Project Gutenberg HTML pg28-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page and the contents. Kept: the dedication, Jacobs's preface and \"A Short History of the Æsopic Fable\" with its six footnotes in place after the paragraphs that cite them (as the HTML sets them), and every fable with its moral to the closing \"HURRAH!\". The notes and pedigree the preface mentions are not in this transcription."
+    "method": "Downloaded Project Gutenberg HTML pg28-images.html from the aleph.pglaf.org mirror of the Gutenberg cache and converted with a scratch HTML parser: h1–h6 become headings, p elements paragraphs, stanza divs and br-broken lines stanzas (one line per printed line, indentation dropped), HTML entities decoded, inline emphasis rendered as plain text, prose whitespace folded to single spaces. Omitted throughout: the Project Gutenberg header, footer and licence, page-number anchors, illustrations and their captions, the title page and the contents. Kept: the dedication, Jacobs's preface and \"A Short History of the Æsopic Fable\" with its six footnotes in place after the paragraphs that cite them (as the HTML sets them), each note its own paragraph \"[Footnote n: …]\" and its marker [n] kept in the text, and every fable with its moral to the closing \"HURRAH!\". The notes and pedigree the preface mentions are not in this transcription."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 340,
-    "sha256": "1e3506d97af4a28a941215b1e0666cfb5904c30975c915299d91c6d9cc38e037"
+    "sha256": "931c1633642cf6dd0e7c3f242adfa04be4c1779a9e11ada30abd3eb45da9102e"
   }
 }
