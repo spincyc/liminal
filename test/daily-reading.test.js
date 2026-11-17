@@ -162,6 +162,7 @@ function documentFixture() {
     append(...nodes) { this.childNodes.push(...nodes); }
     set textContent(value) { this.childNodes = [new Text(value)]; }
     setAttribute(name, value) { this.attributes[name] = String(value); }
+    getAttribute(name) { return Object.hasOwn(this.attributes, name) ? this.attributes[name] : null; }
     addEventListener(name, action) { this.events[name] = action; }
     get outerHTML() { const attrs = { ...this.attributes }; for (const key of ["id", "className", "href", "lang"]) if (this[key]) attrs[key === "className" ? "class" : key] = this[key]; return "<" + this.tagName + Object.entries(attrs).map(([key, value]) => " " + key + '="' + escape(value) + '"').join("") + ">" + this.childNodes.map(node => node.outerHTML).join("") + "</" + this.tagName + ">"; }
   }
@@ -175,9 +176,15 @@ test("reader preserves stanzas, escapes markup and only adds notes when opened",
   assert.match(article.outerHTML, /daily-stanza/); assert.match(article.outerHTML, /night 1\.\nA second line/);
   assert.match(article.outerHTML, /&lt;img/); assert.doesNotMatch(article.outerHTML, /<img|FACILITATOR_SECRET/);
   function find(node, name) { if (node.className === name) return node; return (node.childNodes || []).map(child => find(child, name)).find(Boolean); }
-  const notes = find(article, "daily-facilitator"); notes.open = true; notes.events.toggle(); notes.events.toggle();
+  // One "Show discussion help" toggle for every question; notes join the
+  // page only once requested, and only once.
+  assert.equal(find(article, "daily-facilitator"), undefined);
+  const toggle = find(article, "daily-help-toggle");
+  assert.equal(toggle.attributes["aria-expanded"], "false");
+  toggle.events.click(); assert.equal(toggle.attributes["aria-expanded"], "true"); toggle.events.click(); toggle.events.click();
   assert.equal(article.outerHTML.match(/FACILITATOR_SECRET 0/g).length, 1);
-  assert.match(article.outerHTML, /Endnotes and source record/); assert.match(article.outerHTML, /Public domain in the United States/);
+  assert.equal(article.outerHTML.match(/class="daily-facilitator"/g).length, 3);
+  assert.match(article.outerHTML, /Source and rights/); assert.match(article.outerHTML, /Public domain in the United States/);
 }));
 test("offline student document keeps provenance and questions without scripts or facilitator material", () => withDOM(() => {
   const course = fixture(), packet = D.studentReading(course, 1, 1);
@@ -186,12 +193,14 @@ test("offline student document keeps provenance and questions without scripts or
   assert.match(html, /name="font-license" content="Font copyright and license"/);
   assert.ok(html.indexOf('charset="utf-8"') < html.indexOf('name="font-license"'), "declare UTF-8 before the full font license");
   assert.match(html, /<footer class="daily-print-footer">Kindergarten · Week 1 · Day 1 · Liminal<\/footer>/);
-  assert.match(html, /class="daily-print-heading">Reading<\/h3>/);
+  assert.match(html, /class="daily-print-heading">Reading<\/h2>/);
   assert.match(html, /class="daily-print-label">Questions<\/span>/);
   assert.match(html, /class="daily-attribution"><h3>Source<\/h3>/);
   assert.doesNotMatch(html, /daily-export-brand|brand-symbol|<svg/);
   assert.match(html, /Question 3/); assert.match(html, /no affiliation/); assert.match(html, /Return to this reading/);
-  assert.match(html, /class="daily-budget">About 10 min · read 6 \+ discuss 4/);
+  assert.match(html, /<details class="daily-before"><summary>Before you read<\/summary><dl><div><dt>Time<\/dt><dd>About 10 min: read 6, discuss 4<\/dd>/);
+  assert.match(html, /class="daily-source-budget">About 10 min · read 6 \+ discuss 4/);
+  assert.doesNotMatch(html, /daily-help-toggle|Challenge/);
   assert.doesNotMatch(html, /FACILITATOR_SECRET|daily-facilitator|<script|<iframe|application\/json/);
   course.sources[0].textUrl = "javascript:alert(1)"; assert.equal(D.studentReading(course, 1, 1).source.textUrl, null);
 }));
@@ -210,19 +219,22 @@ test("printed source notes stay brief while downloads retain complete source rec
     for (const detail of [source.edition, source.rights.basis, packet.day.excerpt.locator]) assert.ok(html.includes(detail), "complete digital record retained");
   }
 }));
-test("print keeps useful shared-reading guidance and moves estimates into the source note", () => withDOM(() => {
+test("print keeps useful shared-reading guidance and the estimate in the source note; screens show both before the text", () => withDOM(() => {
   const course = fixture(5);
   for (const mode of ["independent", "adult-read-aloud", "shared"]) {
     course.days[0].readingMode = mode;
     const packet = D.studentReading(course, 1, 1);
     for (const html of [R.reading(packet).outerHTML, R.exportDocument(packet).documentElement.outerHTML]) {
-      const className = mode === "independent" ? "daily-mode daily-screen-label" : "daily-mode";
-      assert.ok(html.includes('class="' + className + '">' + D.modeLabel(mode)), "mode guidance stays on screen; only independent is hidden in print");
+      const header = html.match(/<header class="daily-heading">([\s\S]*?)<\/header>/)[1];
+      // The title block keeps adult or shared guidance on paper; "Read independently" is never printed.
+      if (mode === "independent") assert.doesNotMatch(header, /daily-mode/);
+      else assert.ok(header.includes('class="daily-mode daily-print-only">' + D.modeLabel(mode)));
+      assert.doesNotMatch(header, /About \d+ min/);
       const note = html.match(/<footer class="daily-attribution">([\s\S]*?)<\/footer>/)[1];
       assert.match(note, /class="daily-source-budget">About 15 min · read 11 \+ discuss 4/);
       assert.doesNotMatch(note, /Read independently/);
-      assert.doesNotMatch(html.match(/<header class="daily-heading">([\s\S]*?)<\/header>/)[1], /About \d+ min/);
-      assert.match(html.match(/<details class="daily-source">([\s\S]*?)<\/details>/)[1], /About 15 min · read 11 \+ discuss 4/);
+      const before = html.match(/<details class="daily-before"( open="")?>([\s\S]*?)<\/details>/);
+      assert.match(before[2], /About 15 min: read 11, discuss 4/); assert.match(before[2], new RegExp(D.modeLabel(mode)));
     }
   }
 }));
@@ -268,7 +280,8 @@ test("browse files are a text-free allowlist that keeps credits, runs and lazy p
 });
 test("browse routes, search and filters are pure and forgiving", () => {
   const index = { grades: [{ grade: 0 }, { grade: 5 }, { grade: 13 }] };
-  assert.deepEqual(D.view(index, ""), { view: "browse", course: index.grades[0], grade: 0, invalid: false });
+  assert.deepEqual(D.view(index, ""), { view: "browse", course: index.grades[0], grade: 0, week: null, home: true, invalid: false });
+  assert.equal(D.view(index, "", { grade: 13 }).grade, 13); assert.equal(D.view(index, "", { grade: 7 }).grade, 0);
   assert.equal(D.view(index, "#browse/5").grade, 5); assert.equal(D.view(index, "#browse/a1").grade, 13);
   assert.equal(D.view(index, "#browse/zz").invalid, true); assert.equal(D.view(index, "#browse/zz").grade, 0);
   assert.equal(D.view(index, "#5/2/3").view, "read"); assert.equal(D.view(index, "#5/2/3").week, 2);

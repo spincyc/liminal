@@ -36,6 +36,13 @@
   --tap: 44px;
   --bar-h: 64px;
 
+  /* Sustained reading (nightly readings, reading-level passages): one type
+     size, leading and measure, so every reading screen sets text alike. The
+     measure is about 66 characters of the serif face. */
+  --reading-size: 1.1875rem;
+  --reading-leading: 1.6;
+  --reading-measure: 34em;
+
   /* Layout */
   --page-max: 1180px;
   --gutter: 24px;
@@ -153,6 +160,7 @@
 @media (max-width: 640px) {
   :root {
     --gutter: 16px;
+    --reading-size: 1.125rem;
   }
 }
 
