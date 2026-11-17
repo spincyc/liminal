@@ -1,0 +1,710 @@
+{
+  "schemaVersion": 1,
+  "grade": 0,
+  "work": "steel-english-fairy-tales-1922",
+  "readings": [
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-01",
+      "title": "Titty Mouse and Tatty Mouse, part 1: the stool, the broom and the walnut tree",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Titty Mouse and Tatty Mouse",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Keep a growing list in order: each new thing repeats everything that happened before it.",
+      "focus": "One sad event sets off a silly chain of things that copy one another.",
+      "context": "Flora Annie Steel retold these old English tales. To glean is to gather the grain left in a field after harvest, and an ear of corn is the grainy top of a stalk. A form is a long wooden bench; to jar is to bang and rattle. This nonsense chain story is read over two nights; let the child chant the growing list with you.",
+      "contentNote": "Titty Mouse is scalded to death when the pot tips over, and Tatty weeps; the household things answer with silly actions.",
+      "excerpt": {
+        "locator": "“Titty Mouse and Tatty Mouse,” from the beginning to the walnut tree shedding its leaves; opens “Titty Mouse and Tatty Mouse both lived in a house.”; closes “…tree, \"I'll shed my leaves.\" So the walnut tree shed all its beautiful green leaves.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-02",
+        "blocks": [
+          701,
+          727
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4a0a3926315b2862ab0ddd9e1113f17ee637363bfad68db23fd4a1fd59ac22e7"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-01-q1",
+          "prompt": "What do Titty Mouse and Tatty Mouse both do at the start?",
+          "facilitatorNotes": [
+            "Everything together: they both glean, both find an ear of corn and both make a pudding. The doubled sentences set up the pattern."
+          ],
+          "evidence": [
+            "So they both went a-gleaning.",
+            "So they both made a pudding."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-01-q2",
+          "prompt": "What happens when Titty puts her pudding into the pot?",
+          "facilitatorNotes": [
+            "The pot tumbles over and scalds her to death, and Tatty sits down and weeps. This is the event that starts the whole chain."
+          ],
+          "evidence": [
+            "the pot tumbled over, and scalded her to death, and Tatty sat down and wept."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-01-q3",
+          "prompt": "The stool hops, the broom sweeps and the door jars. Why does each one do something?",
+          "facilitatorNotes": [
+            "Each hears the news from the one before and adds its own action, as if sharing Tatty’s sorrow in its own odd way. Children may find it funny that a stool hops for sadness; the story holds both the joke and the sorrow."
+          ],
+          "evidence": [
+            "\"Then,\" said the stool, \"I'll hop,\" so the stool hopped.",
+            "So the walnut tree shed all its beautiful green leaves."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-02",
+      "title": "Titty Mouse and Tatty Mouse, part 2: everything comes tumbling down",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Titty Mouse and Tatty Mouse",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow the chain to its biggest link, then hear everything fall at once.",
+      "focus": "The chain grows until it brings the whole house down in one long tumble.",
+      "context": "Recap: when Titty Mouse died, Tatty wept, and then the stool, the broom, the door, the window, the old bench and the walnut tree each did something odd. To moult is to lose feathers; a pitcher is a jug; thatching a rick means covering a haystack with straw. Let the child join in on the long list.",
+      "contentNote": "An old man falls from a ladder and breaks his neck, and the house falls on Tatty Mouse.",
+      "excerpt": {
+        "locator": "“Titty Mouse and Tatty Mouse,” from the little bird to the end of the tale; opens “Now there was a little bird perched on one of the boughs of the tree, and when all the…”; closes “…and the broom upset the stool, and poor little Tatty Mouse was buried beneath the ruins.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-01",
+        "continuesTo": null,
+        "blocks": [
+          728,
+          737
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f249da8b15cf10bccee3233d6717b189734dc8389b06a626eb0f0159a8245907"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-02-q1",
+          "prompt": "What does the little bird do, and what does the little girl do?",
+          "facilitatorNotes": [
+            "The bird moults all its feathers, and the girl drops her jug and spills the milk meant for supper."
+          ],
+          "evidence": [
+            "so he moulted all his gay feathers.",
+            "So she dropt the pitcher and spilt the milk."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-02-q2",
+          "prompt": "Why is the old man cross with the little girl?",
+          "facilitatorNotes": [
+            "Her brothers and sisters will go without their supper. He is the first to see what a silly action costs, and then he does something sillier still."
+          ],
+          "evidence": [
+            "your little brothers and sisters must go without their suppers."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-02-q3",
+          "prompt": "The last sentence knocks everything down. What falls first, and who is under it all at the end?",
+          "facilitatorNotes": [
+            "The great walnut tree falls first, and then the bench, the house, the window, the door, the broom and the stool, until Tatty Mouse is buried. The fall runs back through the chain; children can name a few in order with help."
+          ],
+          "evidence": [
+            "the great walnut tree fell down with a crash",
+            "poor little Tatty Mouse was buried beneath the ruins."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-03",
+      "title": "The Three Little Pigs, part 1: straw and furze",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Little Pigs",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a pattern happen twice and get ready for a third time.",
+      "focus": "Two polite pigs are given building things, but houses of straw and furze cannot keep out the wolf.",
+      "context": "A sow is a mother pig; to seek your fortune is to go out and make your own way. Furze is a prickly bush, also called gorse. “By the hair of my chinny chin chin” is a pig’s promise. Use a big voice for the wolf and a small one for the pigs; the story goes on for four nights.",
+      "contentNote": "The wolf blows down two houses and eats the first two pigs.",
+      "excerpt": {
+        "locator": "“The Three Little Pigs,” from the beginning to the wolf eating the second pig; opens “Once upon a time there was an old sow who had three little pigs, and as she had not…”; closes “…and he puffed and he blew the house in. Then he ate up little piggy and went on his way.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-04",
+        "blocks": [
+          948,
+          969
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "42fc057807d6f5b8ab7cfe5206fa68752fb186a9467d788179605cf6de9cf876"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-03-q1",
+          "prompt": "Why does the old sow send her pigs out into the world?",
+          "facilitatorNotes": [
+            "She has not enough food for them, so they must seek their fortunes."
+          ],
+          "evidence": [
+            "as she had not enough for them to eat"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-03-q2",
+          "prompt": "Why does the man give the first little pig his straw?",
+          "facilitatorNotes": [
+            "Because the pig asks so politely: the man likes his good manners. The second man gives his furze for the same reason."
+          ],
+          "evidence": [
+            "If you please, sir, could you give me that straw to build me a house?",
+            "seeing what good manners the little pig had"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-03-q3",
+          "prompt": "What does each pig see through the keyhole? What might the third pig see?",
+          "facilitatorNotes": [
+            "The first sees the wolf’s big paws and the second his great ears, so each knows it is the wolf. Ask what the third pig might see; the story answers next time."
+          ],
+          "evidence": [
+            "saw the wolf's big paws through the keyhole",
+            "saw the wolf's great ears"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-04",
+      "title": "The Three Little Pigs, part 2: the brick house and the turnips",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Little Pigs",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Notice where the pattern breaks, and how the pig gets the better of a trick.",
+      "focus": "The brick house holds, so the wolf turns to tricks, and the pig is cleverer than he is.",
+      "context": "Recap: an old sow sent her three pigs to seek their fortunes; the wolf blew in the straw house and the furze house and ate the first two pigs. Now the third pig asks for bricks. Chaff is the dry husk of grain, so “not one to be taken in with chaff” means not easily fooled. A sluggard is a lazy slowcoach.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Three Little Pigs,” from the third pig and the bricks to the turnip breakfast; opens “Now the third little piggy, when he started, met a man carrying a load of bricks, and,…”; closes “…to the field and come back again, and I'm having a nice potful of turnips for breakfast.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-03",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-05",
+        "blocks": [
+          970,
+          986
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bf180bc5234b680051ed211bedb3c974834e2061f88e2c81b2b1ab8bdc561cd1"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-04-q1",
+          "prompt": "What happens when the wolf huffs and puffs at the brick house?",
+          "facilitatorNotes": [
+            "He cannot blow it down and runs out of breath. The pattern of the first two houses breaks here."
+          ],
+          "evidence": [
+            "but he could not blow the house down."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-04-q2",
+          "prompt": "Why does the wolf want the pig to go to the turnip field with him?",
+          "facilitatorNotes": [
+            "So he can catch the pig outside his strong house and eat him; the turnips are only bait."
+          ],
+          "evidence": [
+            "I know where there is ever such a nice field of turnips.",
+            "if you will be ready at six o'clock to-morrow morning"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-04-q3",
+          "prompt": "How does the little pig trick the wolf?",
+          "facilitatorNotes": [
+            "He gets up at five, fetches the turnips and is home eating them when the wolf arrives, then calls the wolf a sluggard. Ask why the pig did not tell the wolf his plan."
+          ],
+          "evidence": [
+            "so he got up at five",
+            "Why! what a sluggard you are!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-05",
+      "title": "The Three Little Pigs, part 3: the apple tree",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Little Pigs",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare the wolf’s second trick with his first and see what he has learned.",
+      "focus": "This time the wolf sets out early too, so the pig must think fast up in the tree.",
+      "context": "Recap: the wolf could not blow down the brick house, and the third pig fooled him by fetching the turnips an hour early. Now the wolf tries again with apples. Merry gardens is an orchard; “an early bird” is someone up before everyone else.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Three Little Pigs,” from the wolf’s second offer to the pig running home with his apples; opens “Then the wolf grew red with rage; but he was determined to eat little piggy, so he said,…”; closes “…gone to pick it up, the little pig was able to jump down with his basket and run home.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-04",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-06",
+        "blocks": [
+          987,
+          995
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f8b4efbc112aa57b9dbaf383d8bc4604c34ea944d1f476e35826ebcc46148785"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-05-q1",
+          "prompt": "What does the wolf offer this time, and at what time?",
+          "facilitatorNotes": [
+            "Apples from a tree in Merry gardens, at five o’clock the next morning."
+          ],
+          "evidence": [
+            "A nice apple tree down in Merry gardens",
+            "if you will be ready at five o'clock to-morrow morning"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-05-q2",
+          "prompt": "Why does the wolf set out at four o’clock this time?",
+          "facilitatorNotes": [
+            "He was fooled once and will not be fooled again: he has learned the pig’s trick."
+          ],
+          "evidence": [
+            "the wolf had been taken in once and wasn't going to be taken in again"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-05-q3",
+          "prompt": "How does the pig escape from the tree?",
+          "facilitatorNotes": [
+            "He throws an apple far away, and while the wolf goes after it he jumps down and runs home. Ask whether this trick is cleverer than the turnip trick."
+          ],
+          "evidence": [
+            "I'll throw you down one to try.",
+            "And he threw it so far away"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-06",
+      "title": "The Three Little Pigs, part 4: the butter-churn and the chimney",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Little Pigs",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow the last two tricks and decide whether the ending fits the story.",
+      "focus": "A rolling churn frightens the wolf, and when he tries the chimney the pig is ready for him.",
+      "context": "Recap: the third pig has fooled the wolf twice, getting the turnips early and escaping from the apple tree by throwing an apple. A fairing is a present bought at a fair; a butter-churn is a wooden barrel for making butter. “As mild as milk” means gently, pretending to be kind.",
+      "contentNote": "The wolf falls into a pot of boiling water, and the pig cooks and eats him.",
+      "excerpt": {
+        "locator": "“The Three Little Pigs,” from the invitation to the fair to the end of the tale; opens “Well, the wolf was fair angry; but he went next day to the little piggy's house and…”; closes “So the little piggy put on the cover again, boiled the wolf up, and ate him for supper.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-05",
+        "continuesTo": null,
+        "blocks": [
+          996,
+          1008
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1a74bf1b939d4711a33baa44e93e28e95b7c62831f8d37ed1fb2a4786650a129"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-06-q1",
+          "prompt": "What does the pig buy at the fair, and how does it save him?",
+          "facilitatorNotes": [
+            "A butter-churn. He hides in it, and it rolls down the hill at the wolf and frightens him away."
+          ],
+          "evidence": [
+            "bought himself a butter-churn as a fairing",
+            "Bumpety, bumpety, bump!"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-06-q2",
+          "prompt": "What does the wolf think the rolling churn was, and what does the pig tell him?",
+          "facilitatorNotes": [
+            "An awful, dreadful, terrible Thing; the pig cheerfully says it was only him. Ask why telling the truth this time makes the wolf so angry."
+          ],
+          "evidence": [
+            "an awful, dreadful, terrible Thing",
+            "that must have been me!"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-06-q3",
+          "prompt": "How is the pig ready when the wolf comes down the chimney?",
+          "facilitatorNotes": [
+            "He has a blazing fire and a big pot of water boiling, so the wolf falls in. Some children find the ending fair after all the wolf has done, and some find it too much; both can point to the story."
+          ],
+          "evidence": [
+            "the little pig made up a blazing fire and put on a big pot full of water to boil"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-07",
+      "title": "Henny-Penny, part 1: the sky is falling",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Henny-Penny",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Remember the friends in order as the line of walkers grows.",
+      "focus": "A hen mistakes a falling acorn for the falling sky, and every bird she meets believes her.",
+      "context": "In this old tale each new animal joins the line, and the list of names grows every time. A rickyard is a farmyard where the haystacks stand. Henny-penny is a hen; her friends are a cock, a duck, a goose and a turkey. Say the growing list of names together.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Henny-Penny,” from the beginning to Turkey-lurkey joining the others; opens “One day Henny-penny was picking up corn in the rickyard when--whack!--an acorn hit her…”; closes “…Goosey-poosey, and Turkey-lurkey all went to tell the King the sky was a-falling.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-08",
+        "blocks": [
+          1184,
+          1188
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4d8ea6f4b398c3312bd36fc0442f4ece426a97feb056ef01bfc75817c5347d75"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-07-q1",
+          "prompt": "What really hits Henny-penny on the head, and what does she think it means?",
+          "facilitatorNotes": [
+            "An acorn; she thinks the sky is falling and sets off to tell the King."
+          ],
+          "evidence": [
+            "an acorn hit her upon the head",
+            "the sky's a-going to fall; I must go and tell the King."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-07-q2",
+          "prompt": "Who joins Henny-penny on the road? Can you say them in order?",
+          "facilitatorNotes": [
+            "Cocky-locky, Ducky-daddles, Goosey-poosey and Turkey-lurkey. Help with the first sounds if needed."
+          ],
+          "evidence": [
+            "till she met Cocky-locky",
+            "till they met Turkey-lurkey"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-07-q3",
+          "prompt": "Does anyone ask Henny-penny how she knows the sky is falling? Why might that matter?",
+          "facilitatorNotes": [
+            "No one asks; each just asks to come along. If someone had asked, they might have found the acorn. Children may say the birds trusted their friend, which is also true."
+          ],
+          "evidence": [
+            "\"May I come with you?\" says Cocky-locky.",
+            "So Henny-penny and Cocky-locky went to tell the King the sky was falling."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-08",
+      "title": "Henny-Penny, part 2: Foxy-woxy’s short cut",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Henny-Penny",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Spot the trick before the birds do.",
+      "focus": "A fox offers to show the way, and only Henny-penny escapes, by luck rather than good sense.",
+      "context": "Recap: an acorn fell on Henny-penny, and she set off to tell the King the sky was falling, with Cocky-locky, Ducky-daddles, Goosey-poosey and Turkey-lurkey behind her. A burrow is an animal’s hole in the ground; a short cut is a quicker way. Read Foxy-woxy’s words smoothly and kindly, as a trickster would speak.",
+      "contentNote": "Foxy-woxy snaps off the heads of four of the birds; Henny-penny escapes.",
+      "excerpt": {
+        "locator": "“Henny-Penny,” from meeting Foxy-woxy to the end of the tale; opens “So they went along, and they went along, and they went along, till they met Foxy-woxy,…”; closes “…bustled off to her nest; so she escaped, but she never told the King the sky was falling!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-07",
+        "continuesTo": null,
+        "blocks": [
+          1189,
+          1201
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "19d59434effe00ccedca95c533718d70a39c37060f2b376d212ad1700847d380"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-08-q1",
+          "prompt": "What does Foxy-woxy offer to do, and where does his “short cut” really lead?",
+          "facilitatorNotes": [
+            "He offers to show the proper way to the King, but the dark hole is the door of his own burrow."
+          ],
+          "evidence": [
+            "I know the proper way; shall I show it you?",
+            "Now this was the door of Foxy-woxy's burrow."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-08-q2",
+          "prompt": "Why does Henny-penny turn round and go home?",
+          "facilitatorNotes": [
+            "She hears Cocky-locky crow and thinks it is dawn, time to lay her egg. She escapes by luck, not because she saw the danger."
+          ],
+          "evidence": [
+            "My goodness! it must be dawn. Time for me to lay my egg."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-08-q3",
+          "prompt": "Did Henny-penny ever tell the King? What do you think this story teaches?",
+          "facilitatorNotes": [
+            "No. One lesson: check before believing something big, and be careful of strangers who offer help. Children may find other lessons; ask which bird they would warn, and what they would say."
+          ],
+          "evidence": [
+            "she never told the King the sky was falling!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-09",
+      "title": "The Wise Men of Gotham: Of Buying of Sheep",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Of Buying of Sheep",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Work out what the two men are arguing about, and whether it is there at all.",
+      "focus": "Two men fight over sheep that do not exist, and a third man shows them how foolish that is.",
+      "context": "Gotham is a real village in England, and for hundreds of years people have told jokes about its foolish “wise men.” “Marry” was an old exclamation, like “Why!”; staves are walking sticks; strife is quarrelling; meal is ground grain, like flour; wit means good sense. The last sentence asks the listener to judge.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Wise Men of Gotham,” the episode “Of Buying of Sheep,” complete; opens “There were two men of Gotham, and one of them was going to market to Nottingham to buy…”; closes “Which was the wisest of these three persons, judge yourself.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1609,
+          1630
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cb2e879f05f825a15f3691ee9f67f2dc07ba8494745f9e6dda23d2604027ca83"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-09-q1",
+          "prompt": "Where do the two men meet, and what do they quarrel about?",
+          "facilitatorNotes": [
+            "On Nottingham bridge, about whether the sheep one of them means to buy may cross it."
+          ],
+          "evidence": [
+            "they both met together upon Nottingham bridge",
+            "\"Buy sheep?\" said the other, \"and which way will you bring them home?\""
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-09-q2",
+          "prompt": "How many sheep are really on the bridge?",
+          "facilitatorNotes": [
+            "None. The men beat their sticks as if a hundred sheep were there; ask the child to listen for the words that show it."
+          ],
+          "evidence": [
+            "as if there had been a hundred sheep between them"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-09-q3",
+          "prompt": "Why does the third man shake his meal into the river? Was he the wisest of the three?",
+          "facilitatorNotes": [
+            "To show that their heads hold as little sense as his empty sack holds meal. The story asks us to judge: he threw away his own meal to make his point, so a child who calls him foolish too has a fair reason."
+          ],
+          "evidence": [
+            "how much meal is there in my sack?",
+            "Which was the wisest of these three persons, judge yourself."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-10",
+      "title": "The Wise Men of Gotham: Of Hedging a Cuckoo",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Of Hedging a Cuckoo",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Find the men’s plan and the reason it could never work.",
+      "focus": "The men try to keep spring all year by fencing in a bird that can fly.",
+      "context": "The cuckoo’s call is heard only in spring and early summer; then the bird flies away to warmer lands. A hedge is a wall of bushes; “round in compass” means in a circle. “A vengeance on her!” is an old curse, like “Bother her!”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Wise Men of Gotham,” the episode “Of Hedging a Cuckoo,” complete; opens “Once upon a time the men of Gotham would have kept the Cuckoo so that she might sing all…”; closes “…flew away. \"A vengeance on her!\" said they. \"We did not make our hedge high enough.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1632,
+          1632
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c9ddb6953b0a14c10d4108ff623cfd7d80f9c54c8a19f3c9d1479708fab0032a"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-10-q1",
+          "prompt": "Why do the men of Gotham want to keep the cuckoo?",
+          "facilitatorNotes": [
+            "So that she will sing all through the year, and spring will seem to last."
+          ],
+          "evidence": [
+            "so that she might sing all the year"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-10-q2",
+          "prompt": "What do they build to keep her in?",
+          "facilitatorNotes": [
+            "A round hedge in the middle of their town."
+          ],
+          "evidence": [
+            "in the midst of their town they made a hedge round in compass"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-10-q3",
+          "prompt": "The men say their hedge was not high enough. What was their real mistake?",
+          "facilitatorNotes": [
+            "A bird can fly over any hedge, and the cuckoo leaves with the season anyway. Some children will say a roof was needed; ask whether even a cage could keep the spring."
+          ],
+          "evidence": [
+            "flew away",
+            "We did not make our hedge high enough."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-11",
+      "title": "The Wise Men of Gotham: Of Counting",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Of Counting",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Find the counting mistake that every man makes.",
+      "focus": "Each man forgets to count himself, so they all mourn a neighbour who was never lost.",
+      "context": "Twelve men of Gotham go fishing. Ventured means taken risks; lamentation is loud crying; a courtier is a gentleman from a king’s court. Act out the counting with twelve toys, leaving out the one that does the counting.",
+      "contentNote": "The courtier hits each man to “count” him and takes all their money, and the men thank him.",
+      "excerpt": {
+        "locator": "“The Wise Men of Gotham,” the episode “Of Counting,” complete; opens “On a certain time there were twelve men of Gotham who went fishing, and some went into…”; closes “\"God bless you on your heart,\" said all the company; \"you have found our neighbour.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1659,
+          1665
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9f98287022f433e97cd5c52249e6b1d3058d612c62f4dfc6dfc1e44a8ceaa008"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-11-q1",
+          "prompt": "How many men went fishing, and how many does each man count?",
+          "facilitatorNotes": [
+            "Twelve went fishing, but each man counts eleven."
+          ],
+          "evidence": [
+            "Twelve of us came out.",
+            "every man did count eleven"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-11-q2",
+          "prompt": "Why does each man count only eleven?",
+          "facilitatorNotes": [
+            "He never counts himself. Try it with toys, then ask the child who was left out."
+          ],
+          "evidence": [
+            "the twelfth man did never count himself"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-11-q3",
+          "prompt": "How does the courtier find the twelfth man? Was he being kind?",
+          "facilitatorNotes": [
+            "He whacks each man as he counts, ending with “Here is the twelfth man.” He solves the puzzle, but he hurts them and takes all their money, and they thank him anyway. Children may call him clever or a bully; both can use the story."
+          ],
+          "evidence": [
+            "Give me the money,",
+            "Here is the twelfth man."
+          ]
+        }
+      ]
+    }
+  ]
+}
