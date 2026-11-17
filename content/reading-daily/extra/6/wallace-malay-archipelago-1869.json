@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 1,
+  "grade": 6,
+  "work": "wallace-malay-archipelago-1869",
+  "readings": [
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-01",
+      "title": "Between Asia and Australia: a region apart — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 7,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow a writer’s comparisons of size and decide what each one is meant to make an English reader see.",
+      "focus": "How a traveller’s experience corrects a map-reader’s first impression, and the surprising claim the book sets out to prove.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. This is the opening of his first chapter. The Rafflesia has the largest single flower known; Ornithoptera are huge birdwing butterflies; the Isle of Wight is a small island off southern England; Tenasserim is now part of Myanmar, and Celebes is now Sulawesi. Wallace wrote for British readers, so “our possessions” means British colonies.",
+      "contentNote": "Wallace calls the Malay people “a peculiar and interesting race of mankind,” using the nineteenth-century idea of fixed human races, and calls the orangutan “man-like.”",
+      "excerpt": {
+        "locator": "Volume I, Chapter I, “Physical Geography,” from the opening through “Extent of the Archipelago and Islands”; opens “IF we look at a globe or a map of the Eastern hemisphere, we shall perceive between Asia…”; closes “…over which the islands are spread, than to the quantity of land which they contain.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          28,
+          33
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6485c5a69e3acec8caed0d2766e601434f9cc1a0db28a366c9487490e0fc87c5"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-01-q1",
+          "prompt": "Why, according to Wallace, do so few English readers know this part of the world?",
+          "facilitatorNotes": [
+            "Britain holds few colonies there, few British travellers go, and many maps split the islands between Asia and the Pacific, so the region hardly appears as a whole. Ask what a map’s way of dividing the world can hide."
+          ],
+          "evidence": [
+            "Our possessions in it are few and scanty",
+            "in many collections of maps it is almost ignored"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-01-q2",
+          "prompt": "Which of Wallace’s comparisons of size works best for you, and why did he choose comparisons like these?",
+          "facilitatorNotes": [
+            "He measures the islands against places his British readers already knew: Borneo could hold the British Isles, Java is about the size of Ireland. Readers today might prefer other measures; the point is to turn numbers into a picture."
+          ],
+          "evidence": [
+            "in one of them, Borneo, the whole of the British Isles might be set down",
+            "Java, Luzon, and Celebes are each about the size of Ireland"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-01-q3",
+          "prompt": "How does the traveller’s view of the islands differ from the map-reader’s?",
+          "facilitatorNotes": [
+            "On a map they look like scattered pieces of other regions; the traveller sails for weeks along a single coast and comes to see the region as a world of its own. Experience changes the category the islands belong to."
+          ],
+          "evidence": [
+            "He sails for days, or even for weeks, along the shores of one of these great islands",
+            "He soon comes to look upon this region as one apart from the rest of the world"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-01-q4",
+          "prompt": "What “unexpected fact” does Wallace promise to prove, and why might he state it before telling his travels?",
+          "facilitatorNotes": [
+            "That islands which seem one connected whole divide into two nearly equal parts belonging to two different primary divisions of the earth. Stating it first lets readers watch for the evidence in later chapters; some may feel it would be more exciting to discover it along the way."
+          ],
+          "evidence": [
+            "they are divisible into two portions nearly equal in extent",
+            "our first impression will be that they form a connected whole"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-02",
+      "title": "Singapore: a crowded port and a square mile of beetles — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 7,
+        "totalMinutes": 25
+      },
+      "challenge": "Sort a crowded description into what Wallace saw, what he was told, and what he concluded.",
+      "focus": "A port built from many peoples, a missionary’s way of earning trust, and a naturalist’s explanation for an unusually rich patch of forest.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. Singapore, an island at the tip of the Malay Peninsula, was then a British trading port. Klings was a period name for South Indian, mostly Tamil, people (Wallace places them in “Western India”); Mahometans are Muslims; Parsees are Zoroastrians whose families came from Persia; praus, junks and sampans are kinds of boats; a joss-house is a Chinese temple. The Chinese man’s “tail” is the long braid the Qing emperors required men to wear. Gambir is a plant used in tanning and dyeing; 30l. means thirty pounds a year; Longicorns are long-horned beetles.",
+      "contentNote": "Wallace sorts people by origin and judges whole groups, and uses period labels such as “coolie” and “Chinaman” that are now considered offensive. He reports that tigers killed people daily and describes concealed tiger pits.",
+      "excerpt": {
+        "locator": "Volume I, Chapter II, “Singapore,” the whole chapter; opens “(A SKETCH OF THE TOWN AND ISLAND AS SEEN DURING SEVERAL VISITS FROM 1854 TO 1862.)”; closes “…my first attempts to gain a knowledge of the Natural History of the Malay Archipelago.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          75,
+          82
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "04e3b56caaa24c1dd8e2d2705e91750c316ce8133b2bcf43d6f77e5e9634a094"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-02-q1",
+          "prompt": "In the first paragraph, how is work divided among Singapore’s peoples? What does this suggest about who held power?",
+          "facilitatorNotes": [
+            "Government, garrison and chief merchants are English; most people, including some of the richest merchants, the farmers and the labourers, are Chinese; Malays are fishermen, boatmen and police; others are clerks, shopkeepers, grooms or sailors. Power sits with the British, though wealth is spread more widely. Readers may question whether any town divides as neatly as his list."
+          ],
+          "evidence": [
+            "The government, the garrison, and the chief merchants are English",
+            "but the great mass of the population is Chinese"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-02-q2",
+          "prompt": "Find one statement about a particular shop or price and one about a whole people. Which kind could a traveller check?",
+          "facilitatorNotes": [
+            "The price of gimlets is something he could observe and pay; the claim that Klings always overcharge, like the portrait of the merchant who “gets fatter and richer every year,” is a generalization about a group. Discuss how a traveller’s quick judgments can be written to sound like facts."
+          ],
+          "evidence": [
+            "You may buy gimlets at a penny each",
+            "who almost always ask twice what they are willing to take"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-02-q3",
+          "prompt": "Why does Wallace think the Jesuit missionaries win converts? Which detail about his friend at Bukit-tima best supports the explanation?",
+          "facilitatorNotes": [
+            "Their poverty shows they are sincere. His friend gives away half his rice or half his purse, and when he is in want he asks his flock in return, so trust runs both ways. Some readers may think the school and the help in sickness matter as much as the poverty."
+          ],
+          "evidence": [
+            "One secret of the success of these missions is the rigid economy practised in the expenditure of the funds",
+            "he would give him half of what he had in the house"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-02-q4",
+          "prompt": "Wallace gives two causes for the many beetles in one square mile of jungle. Which does he stress, and how sure can he be?",
+          "facilitatorNotes": [
+            "Soil, climate and a bright season helped, but he stresses the Chinese woodcutters, whose dead wood, bark and sawdust fed insects and their larvae. “I feel sure” marks a reasoned judgment rather than a tested result: he never compared a patch without woodcutters, though he never found so rich a spot again."
+          ],
+          "evidence": [
+            "due in part no doubt to some favourable conditions in the soil, climate, and vegetation",
+            "it was also in a great measure dependent, I feel sure, on the labours of the Chinese wood-cutters"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-03",
+      "title": "The Durian, king of fruits — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 7,
+        "totalMinutes": 22
+      },
+      "challenge": "Notice how a writer describes a taste his readers have never tried, and follow one fruit to a general lesson.",
+      "focus": "Delight in a strange fruit becomes evidence against the idea that nature is arranged for human convenience.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. He is finishing a journey through the interior of Saráwak, in north-west Borneo, among the Dyaks, the island’s inland peoples. Linschott and Paludanus were travel writers of about 1600. Mangosteen, rambutan and lansat are other tropical fruits; carpels are the sections of a fruit; subacid means slightly sour; the Brazil-nut fruit is a hard, heavy pod packed with Brazil nuts.",
+      "contentNote": "A falling Durian can wound or kill; Wallace describes the wound and a chief struck on the head. His explanation of why such wounds rarely kill reflects nineteenth-century medical ideas.",
+      "excerpt": {
+        "locator": "Volume I, Chapter V, “Borneo—Journey in the Interior,” from the return to Saráwak through the paragraphs on the Durian; opens “I slept that night in the village of the Sebungow Dyaks, and the next day reached…”; closes “…do not appear to be organized with exclusive reference to the use and convenience of man.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          173,
+          177
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3b4a1128ba5b4411d40e2d62c85d281734d69fe6eef76f9f28f9d15f25ecc7e9"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-03-q1",
+          "prompt": "Why did Wallace dislike the Durian in Malacca but love it in Borneo?",
+          "facilitatorNotes": [
+            "In a house the smell is often “so offensive” that people never taste it; in Borneo he found a ripe fruit on the ground and ate it outdoors. Ripeness and setting changed the experience. Ask whether readers have changed their minds about a food in a similar way."
+          ],
+          "evidence": [
+            "This was my own case when I first tried it in Malacca",
+            "eating it out of doors, I at once became a confirmed Durian eater"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-03-q2",
+          "prompt": "Wallace calls the flavour “indescribable,” then describes it. How does he do it, and does it work?",
+          "facilitatorNotes": [
+            "He starts from something familiar, a custard flavoured with almonds, adds surprising “incongruities” such as cream-cheese and onion-sauce, and ends by saying what the fruit is not. The strange mixture may make readers doubt it or want to try it; both responses fit the text."
+          ],
+          "evidence": [
+            "A rich butter-like custard highly flavoured with almonds gives the best general idea of it",
+            "It is neither acid, nor sweet, nor juicy"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-03-q3",
+          "prompt": "Why does Wallace stop short of calling the Durian the best of all fruits?",
+          "facilitatorNotes": [
+            "He sorts fruits into two kinds: rich, exquisite foods and refreshing, juicy ones. The Durian cannot replace an orange’s cooling quality, so he crowns the two together. The qualification shows him judging by kinds rather than on a single scale."
+          ],
+          "evidence": [
+            "It would not, perhaps, be correct to say that the Durian is the best of all fruits",
+            "I should certainly choose the Durian and the Orange as the king and queen of fruits"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-03-q4",
+          "prompt": "What two lessons does Wallace draw from heavy fruits that fall from tall trees? Do you agree with the second?",
+          "facilitatorNotes": [
+            "First, not to generalize from a narrow view of nature, as poets did from English trees; second, that fruits do not seem made for people’s use and convenience. Readers may agree, or argue that a fruit people love and a fruit that can hurt them are both side effects of how the tree lives; the text supports doubting a world arranged for humans."
+          ],
+          "evidence": [
+            "not to draw general conclusions from a very partial view of nature",
+            "do not appear to be organized with exclusive reference to the use and convenience of man"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-04",
+      "title": "Temples in the Javanese forest — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 7,
+        "totalMinutes": 23
+      },
+      "challenge": "Separate what Wallace saw himself from what he took from another book, and weigh the judgments he adds to his facts.",
+      "focus": "Ruins raise questions about a vanished society, and Wallace’s answers show both admiration and the prejudices of his time.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. In Java, then ruled by the Netherlands, he rides through forest toward Wonosalem, a village on a mountain’s lower slopes. His “Brambanam” is the Hindu temple group now called Prambanan, and “Borobodo” the great Buddhist monument now called Borobudur; both were built in the ninth century, and later Javanese kingdoms went on building temples into the 1400s. Sir Stamford Raffles, a British governor of Java, published a History of Java in 1817. A bas-relief is a carving that stands out from a flat surface; trachytic rock is a hard volcanic stone.",
+      "contentNote": "Wallace says a “highly artistic and constructive race” was replaced by one “very far its inferior,” and that the present inhabitants look on the ruins “with ignorant amazement”: nineteenth-century racial and cultural judgments, not facts.",
+      "excerpt": {
+        "locator": "Volume I, Chapter VII, “Java,” from the ruined tomb on the road to Wonosalem through Wallace’s account of the island’s ruins; opens “The road to Wonosalem led through a magnificent forest, in the depths of which we passed…”; closes “…for the collection of the fine sculptures which are everywhere scattered over the land.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          221,
+          227
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fa04d900ac8e5e8320cdcb7d3f10aa58669d624225b65ad1bbbe832ff14645e4"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-04-q1",
+          "prompt": "What makes the tomb on the road to Wonosalem so striking to come upon?",
+          "facilitatorNotes": [
+            "It appears suddenly on a small rise beside the road, carved and ruined, overgrown with creepers and shadowed by enormous trees. The meeting of careful stonework and wild forest produces the solemn beauty he describes."
+          ],
+          "evidence": [
+            "as the traveller comes suddenly upon it on a small elevation by the roadside",
+            "overrun with plants and creepers"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-04-q2",
+          "prompt": "Most of this passage describes ruins Wallace never visited. Where does he say so, and why does he break his own rule?",
+          "facilitatorNotes": [
+            "He admits it is against “the plan of this book” and takes his account from Raffles, because he wants wealthy explorers to record the sculptures before they are lost. His numbers are second-hand, which matters when judging them."
+          ],
+          "evidence": [
+            "It is altogether contrary to the plan of this book to describe what I have not myself seen",
+            "perchance to excite wealthy amateurs to explore them thoroughly"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-04-q3",
+          "prompt": "How does Wallace try to make Borobodo’s size and labour imaginable?",
+          "facilitatorNotes": [
+            "He gives measurements, counts about four hundred figures, adds up nearly three miles of carved wall, and sets the work above the Great Pyramid. Readers can say which method works best; the exclamation mark shows his own astonishment."
+          ],
+          "evidence": [
+            "which must therefore occupy an extent of nearly three miles in length!",
+            "The amount of human labour and skill expended on the Great Pyramid of Egypt sinks into insignificance"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-04-q4",
+          "prompt": "Wallace calls the change in Java a law of progress that “looks so like retrogression.” What in his account is fact, and what is judgment?",
+          "facilitatorNotes": [
+            "Fact: people who are gone built these temples, and villagers now live in bamboo houses and tell of giants and demons. Judgment: that the newcomers are “very far its inferior,” and that religious ideas explain the change. Readers may suggest other causes, such as war, new rulers or new faiths; Wallace himself says the society behind the temples may “ever remain a mystery.”"
+          ],
+          "evidence": [
+            "which looks so like retrogression",
+            "What could have been the state of society, what the amount of population, what the means of subsistence which rendered such gigantic works possible"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-05",
+      "title": "Leaping monkeys, a gliding lemur and a walled-up hornbill — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 7,
+        "totalMinutes": 24
+      },
+      "challenge": "Notice when Wallace measures, when he estimates, and when he relies on what others tell him.",
+      "focus": "Animals of the Sumatran forest, watched by a collector who sometimes regrets what he does to them.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. At Lobo Raman, a village with a guard-house in eastern Sumatra, he watches the animals around him. The Siamang is a large gibbon; the Galeopithecus or “flying lemur,” now called a colugo, is a gliding mammal and not a true lemur; marsupials are pouched mammals such as kangaroos; prehensile means able to grip. A rupee was a silver coin. Hornbills are large forest birds with enormous beaks.",
+      "contentNote": "Wallace beats a captive Siamang that bit him and says he regretted it; the animal later dies. Animals are shot for specimens, including a mother flying lemur carrying her baby and a male hornbill killed while feeding its mate.",
+      "excerpt": {
+        "locator": "Volume I, Chapter VIII, “Sumatra,” from the monkeys at Lobo Raman to the end of the chapter; opens “In Sumatra, monkeys are very abundant, and at Lobo Raman they used to frequent the trees…”; closes “…and is one of those strange facts in natural history which are \"stranger than fiction.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          265,
+          271
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ce81b7173e273da05fc533f5929328cdc70525ab7cb1832b6e7dfa2aa52971e9"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-05-q1",
+          "prompt": "What happens when the leader of the monkeys makes a big leap? What makes the scene funny?",
+          "facilitatorNotes": [
+            "The leader jumps boldly, the rest follow nervously, and the last ones hesitate until, afraid of being left behind, they fling themselves into the air and sometimes crash to the ground. The comedy comes from very human-looking hesitation."
+          ],
+          "evidence": [
+            "as if in desperation at being left alone, they throw themselves frantically into the air",
+            "often go crashing through the slender branches and fall to the ground"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-05-q2",
+          "prompt": "Wallace admits beating the Siamang. Why might he include this, and what does the result show?",
+          "facilitatorNotes": [
+            "He lost patience after a sharp bite; afterwards the Siamang disliked him more than ever while it played for hours with his Malay boys. Telling it shows honesty and regret, and the outcome suggests the animal remembered how it was treated. Readers may judge him harshly or notice that he judges himself."
+          ],
+          "evidence": [
+            "I lost patience and gave it rather a severe beating, which I regretted afterwards",
+            "It would allow my Malay boys to play with it"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-05-q3",
+          "prompt": "What does Wallace measure when he watches the flying lemur glide, and what does he conclude?",
+          "facilitatorNotes": [
+            "He paces seventy yards between the trees and estimates a drop of no more than thirty-five or forty feet. Landing exactly on a trunk after so long a glide suggests the animal can steer. The distance is paced but the drop only estimated, so “I think proves” is a reasoned conclusion rather than a certain one."
+          ],
+          "evidence": [
+            "I paced the distance from the one tree to the other, and found it to be seventy yards",
+            "This I think proves that the animal must have some power of guiding itself through the air"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-05-q4",
+          "prompt": "Wallace had “often read” about hornbills walling up their mates. How much of the hornbill story did he see, and how much was he told?",
+          "facilitatorNotes": [
+            "A hunter said he shot the male while it was feeding the female; Wallace went to the tree, saw the small hole and the mud, heard the bird and saw its beak, but was only “assured” that the mud had sealed a larger opening, and the bird and chick were fetched after he left. He mixes his own observation with trusted reports, as much natural history does."
+          ],
+          "evidence": [
+            "which one of them assured me he had shot while feeding the female",
+            "which I was assured had been used in stopping up the large hole"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-06",
+      "title": "The Rajah’s census: rice that goes missing — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 7,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a ruler’s reasoning: what he knows, what he cannot prove, and why the obvious method would fail.",
+      "focus": "A problem of honest counting, set up as carefully as a puzzle before its solution.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. Lombock (now Lombok), the island east of Bali, was ruled by a Rajah, or king, from his capital, Mataram. Wallace tells this chapter like a tale, in a style unlike the rest of his book. A census is an official count of people; tribute is a tax paid to a ruler. A Kapala kampong is a village head, a Waidono a district officer, and a Gusti a prince. A kris is a dagger with a wavy blade; betel nut and sirih leaf are chewed together; Gunong means mountain, and the “great fire mountain” is the island’s volcano.",
+      "contentNote": "Wallace mocks the Rajah’s thinking (“as hard as a Malay Rajah can be expected to think”), a period ethnic sneer. A visiting captain with a squint is nearly killed because the court fears his “evil eye”; cock-fighting is mentioned, and cattle are slaughtered for the journey.",
+      "excerpt": {
+        "locator": "Volume I, Chapter XII, “Lombock: How the Rajah Took the Census,” from the opening to the chiefs’ camp at Mataram; opens “THE Rajah of Lombock was a very wise man, and he showed his wisdom greatly in the way he…”; closes “…fires frighted away the ghouls and evil spirits that nightly haunt the gloomy avenues.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-6-wallace-malay-archipelago-1869-07",
+        "blocks": [
+          348,
+          353
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f4782fbbfdd9424594cfd09513e6eb0d9ba98b17423a3d66aecd88886b5eab02"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-06-q1",
+          "prompt": "How does the rice go missing? Trace it from the villages to the Rajah’s storehouses.",
+          "facilitatorNotes": [
+            "Each level takes a little: the village head excuses the poor and keeps his own granary full, the Waidonos in debt help themselves, and the princes do the same. Small, often excusable takings add up to a shrinking tribute. Ask which taking seems most forgivable."
+          ],
+          "evidence": [
+            "it had to pass through many hands before it reached the Government storehouses",
+            "the quantity was found to be less each year than the one before"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-06-q2",
+          "prompt": "What does the Rajah notice that shows the officials’ excuses are false? Why can he still do nothing?",
+          "facilitatorNotes": [
+            "The villages look full and well fed in spite of claims of sickness and failed crops, and his chiefs’ kris handles change from wood to ivory to gold. He knows where the rice goes but cannot prove who took it: strong circumstantial evidence, not proof."
+          ],
+          "evidence": [
+            "the handles that were of yellow wood were changed for ivory, and those of ivory were changed for gold",
+            "But as he could not prove it he kept silence"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-06-q3",
+          "prompt": "Why would an ordinary census fail, according to the Rajah’s reasoning?",
+          "facilitatorNotes": [
+            "Officers sent to count would guess the purpose and make the count match last year’s rice. To work, nobody may know that a count is being taken at all. The problem shows how a measurement can be corrupted by the people who make it."
+          ],
+          "evidence": [
+            "the census would be sure to agree exactly with the quantity of rice he got last year",
+            "no one must know that there was any census taken at all"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-06-q4",
+          "prompt": "The Rajah announces a dream. What clues suggest it may be a plan rather than a vision?",
+          "facilitatorNotes": [
+            "It arrives just after days of brooding over an unsolved problem, and its commands gather every village and every man of rank. Readers do not yet know the plan, so some may take the dream at face value; the chapter’s first sentence, praising the Rajah’s wisdom in taking the census, invites suspicion."
+          ],
+          "evidence": [
+            "he showed his wisdom greatly in the way he took the census",
+            "now the trouble is cleared away, for I have had a dream"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-07",
+      "title": "The Rajah’s census: needles for the sacred krisses — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 7,
+        "totalMinutes": 25
+      },
+      "challenge": "Work out the Rajah’s plan before he explains it, then judge what it cost the people who obeyed.",
+      "focus": "A clever solution that works by turning people’s own beliefs into a counting machine.",
+      "context": "Recap: the Rajah of Lombock knew his officials were keeping back the rice tax but could not prove it, and an open count of his people would be falsified. After days of brooding he announced that the spirit of the great fire mountain had called him to its summit, and the whole island cleared a road and prepared for the journey. Waringin trees are banyans; the “white-skinned Hollanders” are the Dutch.",
+      "contentNote": "The Rajah deceives his people with a false religious message, and the tale mentions his power to kill officials who cheat a second time. Hunters shoot deer and wild cattle for the procession’s meals.",
+      "excerpt": {
+        "locator": "Volume I, Chapter XII, “Lombock: How the Rajah Took the Census,” from the procession to the end of the chapter; opens “In the morning a great procession was formed to conduct the Rajah to the mountain. And…”; closes “…head men with heavy hearts, but still with all honour,—for was not the fault their own?”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-6-wallace-malay-archipelago-1869-06",
+        "continuesTo": null,
+        "blocks": [
+          354,
+          363
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f468cbce743a8ac66d4990ff79062c3960dc8cd6337757d30cc0f205c6525b74"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-07-q1",
+          "prompt": "What actually happens at the top of the mountain, and how does the storyteller let readers know?",
+          "facilitatorNotes": [
+            "The Rajah leaves the two boys under a rock, they fall asleep, and he goes a little way off and falls asleep too; the repeated warm, pleasant sun makes the comedy plain. His later report of a trance and a golden-faced spirit contradicts what readers saw."
+          ],
+          "evidence": [
+            "and he too fell asleep",
+            "he had fallen into a trance, and the great spirit had appeared to him with a face like burnished gold"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-07-q2",
+          "prompt": "How do the needles work as a census, and why does nobody suspect it?",
+          "facilitatorNotes": [
+            "Every village must send one needle per person, so the Rajah gets an exact head count, labelled by village. Because the needles are to make sacred krisses against plague, people fear that one missing needle will doom them, and count with great care. Their own belief makes the count accurate."
+          ],
+          "evidence": [
+            "a needle for every head in the village",
+            "for they feared that if but one were wanting the whole village would suffer"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-07-q3",
+          "prompt": "How does the Rajah use the needles at harvest time? Why does he speak “mildly”?",
+          "facilitatorNotes": [
+            "He compares each village’s tribute with its needles and tells short-paying chiefs to go back and find who has not paid. He accuses no one directly; the chiefs understand him, and fear does the rest the following year."
+          ],
+          "evidence": [
+            "The needles which you sent from your village were many more than came from such-a-one's village, yet your tribute is less than his",
+            "for they feared that the Rajah might justly kill those who a second time kept back the right tribute"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-07-q4",
+          "prompt": "The chapter ends: “for was not the fault their own?” Whose reasoning is this, and how does Wallace want readers to take it?",
+          "facilitatorNotes": [
+            "It repeats the villagers’ reasoning: when a kris fails, they blame a miscounted needle, never the kris, so the scheme can never be disproved. Wallace tells it with irony. Readers may admire the Rajah’s cleverness, condemn the deception, or point out that the officials cheated first; the opening called this wisdom, and the ending lets readers question the word."
+          ],
+          "evidence": [
+            "for was not the fault their own?",
+            "everybody was convinced that there had been a mistake in the number of needles sent from that village"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-08",
+      "title": "The bee-hunter of Timor — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 7,
+        "totalMinutes": 23
+      },
+      "challenge": "Follow a skilled task step by step, and notice where the observer admits he cannot explain what he sees.",
+      "focus": "Local skill that outruns a scientist’s understanding, and Wallace’s attempt to account for it.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. Timor, a dry island east of Java, was divided between Dutch and Portuguese rulers; Delli (now Dili) was the Portuguese capital. Sandal-wood is a fragrant wood burned as incense. Apis dorsata, the giant honey bee of southern Asia, builds single huge combs in the open air. A bush-rope or creeper is a long woody vine; stupified means stunned; pertinaciously means stubbornly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Volume I, Chapter XIII, “Timor,” from the island’s soil and exports to the end of the chapter; opens “The soil seems very poor, consisting chiefly of decomposing clayey shales; and the bare…”; closes “…pain and learn to bear it impassively, as without doing so no man could be a bee-hunter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          393,
+          397
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1d49c5096db6ca666a8abdacdc427f358b6c8e8137aaa77238354d194f9004ef"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-08-q1",
+          "prompt": "What preparations do the bee-hunters make before the climb?",
+          "facilitatorNotes": [
+            "One man splits a tough stem and wraps it in palm leaves as a torch, wraps cloth around his loins, head, neck and body but leaves his face, arms and legs bare, and carries a thin cord; a companion ties the lit torch and a knife to a long creeper. Each item has a job later in the climb."
+          ],
+          "evidence": [
+            "leaving his face, arms, and legs completely bare",
+            "to one end of which the wood-torch was fastened, and lighted at the bottom, emitting a steady stream of smoke"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-08-q2",
+          "prompt": "How does the climber use the creeper to walk up a smooth trunk with no branches for seventy feet?",
+          "facilitatorNotes": [
+            "He loops it around the trunk, holds one end in each hand, sets his feet against the bark and leans back, jerking the loop higher whenever he finds a hold. Wallace stresses skill in using every tiny unevenness of the bark."
+          ],
+          "evidence": [
+            "he set his foot against the trunk, and leaning back began walking up it",
+            "the slightest irregularities of the bark"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-08-q3",
+          "prompt": "Find two places where Wallace says he could not understand what he saw. Why are these admissions valuable?",
+          "facilitatorNotes": [
+            "He cannot see how the man got onto the branch with both hands holding the creeper, or how he bore the stings so calmly. An honest observer marks the limits of what he knows instead of inventing an answer, and the admissions show the bee-hunter’s skill outrunning the scientist’s understanding."
+          ],
+          "evidence": [
+            "in a manner quite unintelligible to me",
+            "how he bore their stings so coolly, and went on with his work at that giddy height so deliberately, was more than I could understand"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-08-q4",
+          "prompt": "What explanation does Wallace finally offer for the bee-hunters’ safety? Does his own experience support it?",
+          "facilitatorNotes": [
+            "Slow, deliberate movement and no attempt to escape may make a bee treat a still person like a tree; Wallace himself ran and was chased for half a mile. He adds that the men must still suffer and have learned to bear pain. “I am inclined to think” marks a guess, not a test; readers might also weigh the smoke, which he says cannot cover the whole body."
+          ],
+          "evidence": [
+            "I am inclined to think that slow and deliberate motion, and no attempt at escape, are perhaps the best safeguards",
+            "Still they must often suffer, but they are used to the pain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-09",
+      "title": "The Maleo’s eggs in the black sand — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 7,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow an argument from a bird’s body to its behaviour, and notice which steps are observed and which are reasoned.",
+      "focus": "Why a bird might leave its eggs to sun-warmed sand, and why Wallace thinks such habits can be explained at all.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. In the north of Celebes (now Sulawesi) he camps with a hunting party on a remote beach of black volcanic sand. The Maleo is a large ground bird found only there; its relatives the Megapodii and Talegalli (megapodes, or brush turkeys) bury their eggs in great heaps of earth and leaves. Incubation is keeping eggs warm until they hatch; a casque is a helmet-like bump. “Variation” and “natural selection” were the terms of the theory of evolution that Darwin and Wallace first published together in 1858.",
+      "contentNote": "Wallace shoots Maleos for specimens and mentions dissecting the females; his companions hunt wild pigs. The eggs are collected and eaten.",
+      "excerpt": {
+        "locator": "Volume I, Chapter XVII, “Celebes,” from the camp on the Maleo beach through Wallace’s explanation of the bird’s habits; opens “Arrived at our destination we built a hut and prepared for a stay of some days, I to…”; closes “…structure, and by means of \"variation\" and \"natural selection\" both are kept in harmony.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          528,
+          534
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0d8cf54fbcbd781c4ef22b5514d460c0379282ab1b366e6a5802177350885134"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-09-q1",
+          "prompt": "How does Wallace explain the black sand of this beach, and what detail supports his idea?",
+          "facilitatorNotes": [
+            "He proposes an ancient lava stream from the Klabat volcano that has broken down into sand, and points out that the beaches beyond the small rivers on either side are white. The contrast in colour is his supporting clue."
+          ],
+          "evidence": [
+            "We have here probably an ancient lava stream from the Klabat volcano",
+            "the beaches beyond the small rivers in both directions are of white sand"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-09-q2",
+          "prompt": "How does Wallace know that a Maleo can carry only one large egg at a time?",
+          "facilitatorNotes": [
+            "The eggs are so large that the body could hold only one, and in every female he shot the other eggs were no bigger than peas. The conclusion rests on dissection as well as on the size of the eggs."
+          ],
+          "evidence": [
+            "it is not possible for the body of the bird to contain more than one fully-developed egg at the same time",
+            "none of the eggs besides the one large one exceeded the size of peas"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-09-q3",
+          "prompt": "Wallace says the parents “neither do nor can watch” their eggs. What reasons does he give?",
+          "facilitatorNotes": [
+            "Many hens lay in the same hole, so none could know its own egg; and hundreds of large birds living on fallen fruit could not all find food near one beach. Chicks that run off, and perhaps fly, on the day they hatch fit a life without parents."
+          ],
+          "evidence": [
+            "would render it impossible for each to distinguish its own",
+            "many would perish of hunger"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-09-q4",
+          "prompt": "What does Wallace criticize in the usual way of explaining instincts, and what does he propose instead?",
+          "facilitatorNotes": [
+            "Writers treated habits as fixed and said bodies were designed to fit them, which ends inquiry. Wallace reverses the direction: the huge eggs and weak, sand-scratching feet help explain the habit, and habit and structure stay matched through variation and natural selection. Readers may find this convincing or note that he offers a probable account (“I think”), not a proof."
+          ],
+          "evidence": [
+            "This assumption is however an arbitrary one, and has the bad effect of stifling inquiry",
+            "will often, as in this case, throw much light on the origin of its habits and instincts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-6-wallace-malay-archipelago-1869-10",
+      "title": "Banda: a smoking volcano and a nutmeg garden — excerpt",
+      "sourceId": "wallace-malay-archipelago-1869",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 7,
+        "totalMinutes": 24
+      },
+      "challenge": "Follow a writer from what he sees to what it makes him think, and find the evidence he reads in rocks and dead trees.",
+      "focus": "Why a volcano is stranger than familiarity lets us feel, and how a tiny, dangerous island became valuable.",
+      "context": "Alfred Russel Wallace (1823–1913), an English naturalist, spent eight years (1854–1862) collecting animals and plants in the islands between Asia and Australia; The Malay Archipelago (1869) is his account of those travels. The Banda Islands, a small volcanic group far east of Java, were the world’s chief source of nutmeg, a trade the Dutch government controlled. A fathom (a measure of depth) is six feet; Aden is a dry port in Arabia. Sulphureous means smelling of sulphur; an efflorescence is a powdery crust; basalt and lava are volcanic rocks; Ceram is a large island to the north. Mace, the red net around the nutmeg, is sold as a separate spice.",
+      "contentNote": "The steamer serves gin, beer and wine. Wallace describes earthquakes and a flood from the sea that destroyed houses and forest.",
+      "excerpt": {
+        "locator": "Volume I, Chapter XIX, “Banda,” from the voyage on the Dutch mail steamer through the description of the nutmeg tree; opens “THE Dutch mail steamer in which I travelled from Macassar to Banda and Amboyna was a…”; closes “…pigeons of Banda, which digest the mace but cast up the nut with its seed uninjured.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          580,
+          586
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bc08f6ea1fe79cb170653b6eaacb5456fc53a329f0e64462882415d10f755f72"
+      },
+      "questions": [
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-10-q1",
+          "prompt": "How does Wallace show that life on the Dutch steamer revolved around food and drink?",
+          "facilitatorNotes": [
+            "He lists the refreshments by the clock, from six in the morning to eight at night, with bitters and beer in between. The long, exact timetable sets up his closing joke about the “gastronomical excitements” that relieve a dull voyage."
+          ],
+          "evidence": [
+            "At six A.M. a cup of tea or coffee is provided for those who like it",
+            "so there is no lack of little gastronomical excitements to while away the tedium of a sea voyage"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-10-q2",
+          "prompt": "Why, according to Wallace, do people fail to feel how strange a volcano really is?",
+          "facilitatorNotes": [
+            "Knowing about volcanoes from childhood makes them seem ordinary, while a northern European’s whole experience teaches that the earth is solid and holds water, never fire. He argues that if volcanoes were reported for the first time from a distant country, no one would believe it."
+          ],
+          "evidence": [
+            "The knowledge from childhood, of the fact that volcanoes and earthquakes exist, has taken away somewhat of the strange and exceptional character that really belongs to them",
+            "it would not be believed on any human testimony"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-10-q3",
+          "prompt": "What evidence on the islands does Wallace use to reconstruct their past?",
+          "facilitatorNotes": [
+            "The rocks: coral limestone up to three or four hundred feet with lava and basalt above, suggesting the islands are fragments of a larger land broken up by volcanic forces. The recent past: a stand of dead but upright trees records the sea flooding in after an earthquake two years earlier. Both are traces read as records."
+          ],
+          "evidence": [
+            "The larger island has coral rock to a height of three or four hundred feet, while above is lava and basalt",
+            "This was a record of the last great earthquake only two years ago"
+          ]
+        },
+        {
+          "id": "reading-6-wallace-malay-archipelago-1869-10-q4",
+          "prompt": "Why are such small, earthquake-shaken islands so valuable? Which reasons are about nature and which about people?",
+          "facilitatorNotes": [
+            "Nature: light volcanic soil, shade and rain in every month suit the nutmeg so well that it needs no manure and little care, while forced cultivation elsewhere failed. People: the value goes to the Dutch government through its control of the trade. Readers can discuss how geography and power combine."
+          ],
+          "evidence": [
+            "they have been and still are of considerable value to the Dutch Government, as the chief nutmeg-garden in the world",
+            "which requires no manure and scarcely any attention"
+          ]
+        }
+      ]
+    }
+  ]
+}
