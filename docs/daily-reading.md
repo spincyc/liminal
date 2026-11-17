@@ -70,6 +70,45 @@ K–12 corpus and the Advanced levels complete separately:
 Printed packets use one fixed two-column style, specified in
 [reading packets](reading-packets.md).
 
+## Date calendar
+
+Families who do not follow the 36-week school schedule can open the reading
+for any calendar date. Each level's calendar has three cycle years of 366
+days (`src/lib/reading-calendar.js`): 2026 is Year 1, 2027 Year 2, 2028 Year 3,
+2029 Year 1 again, and February 29 has its own reading, used only in leap
+years. So a level holds 1,098 distinct readings, and its reading for a date
+does not repeat for three years (owner request, 2026-11-17). The 180 school
+nights are among them; the rest are calendar readings.
+
+All levels share one set of spans (owner direction, 2026-11-17). A run of
+continued readings stays on consecutive days inside one span, so when one level
+reads a story over seven days, another may read four days and then three, or
+five days and two single readings, and every level starts something new on the
+same day. February 29 is always a one-day span, and no run crosses the end of
+a cycle year. `content/reading-daily/calendar/spans.json` holds the spans and
+`calendar/<grade-key>.json` a level's three years of reading IDs. They are
+written by `node tools/layout-reading-calendar.js --write` once every K–12
+level has its 1,098 readings: within a level a story's runs follow one another,
+single readings from different works alternate, and a reading with `months`
+lands in one of those months when it can. The check validates the committed
+files rather than recomputing them; regenerate deliberately, because a new
+layout moves readings to different dates.
+
+Calendar readings live in `content/reading-daily/extra/<grade-key>/<work-id>.json`:
+
+```json
+{ "schemaVersion": 1, "grade": 5, "work": "<library work id>", "readings": [ … ] }
+```
+
+A calendar reading has every field of a school night except `week` and `day`;
+its ID is `reading-<grade-key>-<work-id>-<nn>` in reading order, it cites a
+range of its library work ([reading library](reading-library.md)), and it may
+carry `months` (1–12) when the text is genuinely seasonal. Continued readings
+link neighbours in the file, at most ten nights in one run. Every rule of this
+document applies to them unchanged: authentic text, the grade's time budget,
+three or more original text-specific questions with notes and exact evidence,
+no duplicates within or between levels.
+
 ## Browsing and reading online
 
 `daily-reading.html` has two views with their own links. **Browse**
@@ -142,7 +181,10 @@ shown as written.
 
 Each `content/reading-daily/{k,1,...,12,a1,...,a4}.json` is one complete grade
 or level. Content is
-plain text, with no trusted HTML or UI instructions embedded in reading blocks.
+plain text, with no trusted HTML or UI instructions embedded in reading blocks. Since 2026-11-17 a night normally cites a range of a
+[reading library](reading-library.md) work instead of carrying `blocks`, and
+the grade's `sources` list holds only records not yet moved into the library;
+the loader resolves both, so the example below shows the resolved shape.
 
 ```json
 {
