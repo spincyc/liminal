@@ -4,7 +4,7 @@
   "author": "William Allingham",
   "title": "Rhymes for the Young Folk",
   "translator": null,
-  "edition": "Cassell and Company, Limited, London, Paris, New York and Melbourne, Smithsonian copy catalogued 1887 (Internet Archive Rhymesyoungfolk00Alli). Selected text fully collated line by line against its primary page images, using Gutenberg 46702 as transcription base without claiming its print exemplar is known. The second stanza of I Love You, Dear ends with the comma in the scan, correcting the period in Gutenberg. Plain-text conventions retained: straight quotation marks and apostrophes, double hyphens for em dashes, underscores for italics, capitals for small capitals; indentation normalized; illustrations and repeated musical setting excluded. The library text holds the whole book from the dedication and motto verse to “A RIDDLE”, taken from Gutenberg 46702 with the one scan correction above; only the poems used as nightly readings were collated with the scan, and the other poems follow Gutenberg 46702 as transcribed. Poem titles are headings; the title page, contents, list of illustrations, the pictorial “Introduction” page, illustrations, musical settings and the publisher’s catalogue are omitted.",
+  "edition": "Cassell and Company, Limited, London, Paris, New York and Melbourne, Smithsonian copy catalogued 1887 (Internet Archive Rhymesyoungfolk00Alli). Selected text fully collated line by line against its primary page images, using Gutenberg 46702 as transcription base without claiming its print exemplar is known. The second stanza of I Love You, Dear ends with the comma in the scan, correcting the period in Gutenberg. Plain-text conventions retained: straight quotation marks and apostrophes, double hyphens for em dashes, underscores for italics, capitals for small capitals; indentation normalized; illustrations and repeated musical setting excluded. The library text holds the whole book from the dedication and motto verse to “A RIDDLE”, taken from Gutenberg 46702 with the one scan correction above; only the poems used as nightly readings were collated with the scan, and the other poems follow Gutenberg 46702 as transcribed. Poem titles are headings; the title page, contents, list of illustrations, the pictorial “Introduction” page, illustrations, musical settings and the publisher’s catalogue are omitted. On 2026-11-18 “The Fairies” and “Robin Redbreast” (blocks 3–8 and 23–25), read by Kindergarten calendar readings, were collated word by word with the same scan in the same way (its Internet Archive OCR compared after whitespace normalisation, every difference decided on the page image); both match the library text, and no reading changed.",
   "publicationYear": 1887,
   "translationYear": null,
   "url": "https://archive.org/details/Rhymesyoungfolk00Alli",
@@ -27,8 +27,16 @@
     "note": null,
     "collated": [
       [
+        3,
+        8
+      ],
+      [
         19,
         21
+      ],
+      [
+        23,
+        25
       ],
       [
         27,
