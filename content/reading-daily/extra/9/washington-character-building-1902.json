@@ -589,6 +589,86 @@
     },
     {
       "id": "reading-9-washington-character-building-1902-09",
+      "title": "Individual Responsibility",
+      "sourceId": "washington-character-building-1902",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Washington builds this talk on two true stories from the school. Retell each in a sentence, then decide what single habit separates them.",
+      "focus": "Washington argues that each person is responsible for the outcome of the work that passes through his hands, and that “luck” is often another name for that habit.",
+      "context": "Booker T. Washington (1856–1915), born into slavery in Virginia, founded Tuskegee Institute in Alabama in 1881 and led it until his death. Character Building (1902) collects the Sunday evening talks he gave to Tuskegee’s students and teachers. A recitation was a class session in which students answered questions on the day’s lesson. Chehaw was the railway junction a few miles from Tuskegee, where trains north and south could be met; Montgomery is the capital of Alabama; Phelps Hall was a building on the campus. An “eye-servant,” from the Bible’s warning against “eyeservice,” is someone who works only while being watched.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Character Building, complete address “Individual Responsibility”; opens “I have referred in a general way, before this, when I have been speaking to you, to the…”; closes “…or \"lucky?\" I think it would be much more suitable to say of him: \"He is responsible.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          341,
+          351
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3dea3ac6a79d6866868aac5d22ff62b8d635ddba16bd6dd944d27ace21aef498"
+      },
+      "questions": [
+        {
+          "id": "reading-9-washington-character-building-1902-09-q1",
+          "prompt": "Washington says that failing a recitation is not “nobody's business but my own.” Whom else does it affect, according to him? Do you find the argument convincing?",
+          "facilitatorNotes": [
+            "It lowers the class average and so the teacher’s reputation, and it sets an example: another student reasons that if one boy fails and “still he gets along,” failing once cannot matter. Our actions always “touch” other lives.",
+            "Some students will think the teacher argument is weak, since the teacher should not be blamed for lazy pupils, a point Washington himself admits. The example argument is stronger."
+          ],
+          "evidence": [
+            "It is nobody's business but my own if I fail in a recitation.",
+            "He has failed in class ever so many times, and still he gets along. It can't make much difference if I fail once."
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-09-q2",
+          "prompt": "Retell the story of the note to the barn. Who was to blame? What does Washington say a person should do when a task passes out of his hands?",
+          "facilitatorNotes": [
+            "The note passed from boy to boy, and no one made sure it arrived, so no carriage came and the visitor nearly missed his train. Each could blame the next; that is exactly the problem. Washington says responsibility does not end when you hand a task on: you must impress it on the next person.",
+            "He dismisses apologies after the fact: “no amount of saying, ‘I am sorry’ ... will help the matter any.” Students can think of group projects where the same thing happens."
+          ],
+          "evidence": [
+            "no one had taken enough interest in the errand to see that whatever business the note referred to received proper attention",
+            "do not feel that your responsibility in the matter ends until you have impressed it upon the minds and heart of the person to whom you turn over the further performance of the duty"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-09-q3",
+          "prompt": "The boy who saw smoke at Phelps Hall turned out to be worried for nothing. Why does Washington praise him anyway?",
+          "facilitatorNotes": [
+            "Others would not have noticed, or would have said it was none of their business. He searched the building to the attic because unusual smoke might mean danger. The value lies in the habit of caring, not in this one result.",
+            "Washington says the buildings are “safer for his being here.” Ask whether such a habit can be taught, and how."
+          ],
+          "evidence": [
+            "still others would have said that it was none of their business anyway, and would have gone along",
+            "I shall feel that all of our buildings are safer for his being here"
+          ]
+        },
+        {
+          "id": "reading-9-washington-character-building-1902-09-q4",
+          "prompt": "Washington rejects the word “lucky” for the successful boy and prefers “He is responsible.” What is persuasive about this, and what might it leave out?",
+          "facilitatorNotes": [
+            "He shows the first boy doing more than he is paid for and the second watching the clock, so success follows character. Calling it luck hides the choices that made the difference.",
+            "But he assumes the two boys “started out in life equal-handed.” Students may point out that for many people, especially Black workers in the South of his day, prejudice and poverty limited how far effort could carry them. Washington’s answer would be that effort is the part each person controls."
+          ],
+          "evidence": [
+            "There is no such nonsense as that.",
+            "The second boy was an eye-servant who was afraid that he would do more than he was paid to do",
+            "I think it would be much more suitable to say of him: \"He is responsible.\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-washington-character-building-1902-10",
       "title": "What Would Father and Mother Say?",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -617,7 +697,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-09-q1",
+          "id": "reading-9-washington-character-building-1902-10-q1",
           "prompt": "Washington offers a test: “What would my father or my mother think of this?” Why does he think it works, and when might it fail?",
           "facilitatorNotes": [
             "It reminds students of the people who sacrificed for them and makes every act something they would or would not be willing to report home. He adds that knowledge and skill are worthless without “high, upright character.”",
@@ -629,7 +709,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-09-q2",
+          "id": "reading-9-washington-character-building-1902-10-q2",
           "prompt": "How does Washington make the story of the mother’s message powerful? Look at its timing and his questions.",
           "facilitatorNotes": [
             "The message from a struggling mother arrives after her son “had already disgraced himself” and been sent away. Washington asks “where was that boy?” and answers himself, so the audience feels the gap between the mother’s hopes and the son’s conduct.",
@@ -642,7 +722,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-09-q3",
+          "id": "reading-9-washington-character-building-1902-10-q3",
           "prompt": "What does Washington call “the greatest lesson of all,” and why does he end with the seminary students who offered to black his boots?",
           "facilitatorNotes": [
             "Brotherly love shown in small acts: giving a seat in chapel to a stranger, inviting a new student to share a table. General Armstrong’s unselfishness and the seminary students’ eagerness to serve their guest are his models.",
@@ -657,7 +737,7 @@
       ]
     },
     {
-      "id": "reading-9-washington-character-building-1902-10",
+      "id": "reading-9-washington-character-building-1902-11",
       "title": "Substance vs. Shadow",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -686,7 +766,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-10-q1",
+          "id": "reading-9-washington-character-building-1902-11-q1",
           "prompt": "Washington claims that education “increase[s] a person’s wants.” Why does that create a crisis, and what is his solution?",
           "facilitatorNotes": [
             "Once educated, a person wants more rooms, better clothes, a collar and tie. The crisis comes if education has not also increased the ability to pay for these things; his solution is industrial education, which builds skill alongside culture.",
@@ -698,7 +778,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-10-q2",
+          "id": "reading-9-washington-character-building-1902-11-q2",
           "prompt": "Choose one of the three examples (the wedding, the titles or the memorial collection) and explain what the shadow and the substance are in it. Which example is the most persuasive?",
           "facilitatorNotes": [
             "The $150 wedding is show, followed by a rented one-room cabin; the many “doctors, professors, or colonels” are titles without worth; the $6.00 engrossing leaves sixty-five cents for the school. The memorial story is the most exact, because Washington counts the cost.",
@@ -710,7 +790,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-10-q3",
+          "id": "reading-9-washington-character-building-1902-11-q3",
           "prompt": "Washington jokes about “five dollar hats on heads that at most are not worth more than fifty cents.” Is his ridicule fair? Consider why fine clothes and titles might have mattered to Black Americans in 1902.",
           "facilitatorNotes": [
             "Washington uses humour to shame his own listeners into thrift. But in the Jim Crow South, white people commonly refused to call Black adults “Mr.” or “Mrs.,” so dress and titles could be claims to the dignity that was being denied.",
@@ -724,7 +804,7 @@
       ]
     },
     {
-      "id": "reading-9-washington-character-building-1902-11",
+      "id": "reading-9-washington-character-building-1902-12",
       "title": "Character as Shown in Dress",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -753,7 +833,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-11-q1",
+          "id": "reading-9-washington-character-building-1902-12-q1",
           "prompt": "Washington opens by saying “we can tell about a person’s character by his dress.” Does the rest of the talk support that claim, or limit it?",
           "facilitatorNotes": [
             "He shows dress revealing priorities: the person who goes in rags all week to be showy on Sunday, or spends a month’s wages on gloves and jewellery. But he ends by saying that if students “get something into your head,” dress “will adjust” itself; dress follows character, it does not make it.",
@@ -766,7 +846,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-11-q2",
+          "id": "reading-9-washington-character-building-1902-12-q2",
           "prompt": "What economic argument lies under Washington’s jokes about fops and brass jewellery?",
           "facilitatorNotes": [
             "Money spent on display is money not saved for land, homes or education: a man earning “twenty dollars a month” in kid gloves, or jewellery bought by the piece that wholesales “a bushel” for a few dollars. Multiplied across a whole people, he says, it is “thousands of dollars every year.”",
@@ -779,7 +859,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-11-q3",
+          "id": "reading-9-washington-character-building-1902-12-q3",
           "prompt": "In the shoes and face-powder passages, what does Washington say people are trying to disguise, and what does he value instead?",
           "facilitatorNotes": [
             "They squeeze into small shoes to seem to have small feet, and some powder their faces to “improve our colour,” that is, to look lighter. He answers that “it is just as honourable to have a large foot as a small one” and that there is “no use” in changing one’s colour: nothing about their bodies needs hiding.",
@@ -794,7 +874,7 @@
       ]
     },
     {
-      "id": "reading-9-washington-character-building-1902-12",
+      "id": "reading-9-washington-character-building-1902-13",
       "title": "Sing the Old Songs",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -823,7 +903,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-12-q1",
+          "id": "reading-9-washington-character-building-1902-13-q1",
           "prompt": "How does Washington explain “A little child shall lead them”? What quality, in his view, has made great leaders?",
           "facilitatorNotes": [
             "A child is always its true self, “never appearing big when it is little.” Leaders of every faith and race who stood on that “rock of truth” drew people to them, and his list runs from Luther and Lincoln to Frederick Douglass.",
@@ -835,7 +915,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-12-q2",
+          "id": "reading-9-washington-character-building-1902-13-q2",
           "prompt": "Washington calls the spirituals “simple” and “child-like.” Look closely at the Daniel song and the boy’s song. Do they seem simple to you?",
           "facilitatorNotes": [
             "“Why can’t He deliber me?” argues from evidence: God freed Daniel, Jonah and the three young men, so why not the enslaved singer? The boy who is to be sold sings “I’m gwine to tell God how-a’ you sarved me,” a promise to testify against those who mistreated him. Both voice protest within faith.",
@@ -847,7 +927,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-12-q3",
+          "id": "reading-9-washington-character-building-1902-13-q3",
           "prompt": "“Why does every attempt at improvement spoil them?” How does Washington move from the songs to a lesson for “an individual or a race”? Is the promise of his final sentence convincing?",
           "facilitatorNotes": [
             "The songs are admired because they are real, not imitation; likewise, a person or people who reject “sham” and plant themselves on “the solid granite of nature” will win respect, and prejudice will “hide” its face.",
@@ -861,7 +941,7 @@
       ]
     },
     {
-      "id": "reading-9-washington-character-building-1902-13",
+      "id": "reading-9-washington-character-building-1902-14",
       "title": "Getting Down to Mother Earth",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -890,7 +970,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-13-q1",
+          "id": "reading-9-washington-character-building-1902-14-q1",
           "prompt": "Follow the metaphor of foundations through the talk. How does it change from the first paragraph to the last, and what does it let Washington argue?",
           "facilitatorNotes": [
             "It begins as a house: without bed-rock, everything is “plaster” and “make-believe.” It ends as a tree whose roots in “clay, and rocks, and sand” feed its blossoms. The first image dismisses show without substance; the second answers critics who say he ignores morals and culture, which grow from economic roots.",
@@ -903,7 +983,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-13-q2",
+          "id": "reading-9-washington-character-building-1902-14-q2",
           "prompt": "What makes the story of the Alabama farmer persuasive? What does Washington mean by saying he “seemed to be what the white men about him were”?",
           "facilitatorNotes": [
             "For twenty years the farmer looked prosperous on borrowed mules, a borrowed buggy and unpaid clothes; he imitated the appearance of his white neighbours without their ownership. By giving everything back and pulling the plough himself by moonlight, he built a debt-free life and became a bank stockholder.",
@@ -916,7 +996,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-13-q3",
+          "id": "reading-9-washington-character-building-1902-14-q3",
           "prompt": "Washington hopes the race “will remain” agricultural and wants schools to produce “job-makers.” How persuasive do you find his programme?",
           "facilitatorNotes": [
             "He argues from numbers (eighty-five per cent farm), from history (nearly every people began on the land) and from independence: ministers who farm can lead rather than cater. He also insists that “nature draws no colour line.”",
@@ -931,7 +1011,7 @@
       ]
     },
     {
-      "id": "reading-9-washington-character-building-1902-14",
+      "id": "reading-9-washington-character-building-1902-15",
       "title": "Last Words",
       "sourceId": "washington-character-building-1902",
       "genre": "essay",
@@ -960,7 +1040,7 @@
       },
       "questions": [
         {
-          "id": "reading-9-washington-character-building-1902-14-q1",
+          "id": "reading-9-washington-character-building-1902-15-q1",
           "prompt": "Washington’s first caution is about how students treat their parents. Why does he think this matters so much, and how does the story of the painted house answer it?",
           "facilitatorNotes": [
             "He fears education will make students feel “better than the rest of the folks” and ashamed of parents who sacrificed for them; he says it would be better to have no education. The son who repairs and paints his parents’ home shows the opposite: education put to use for the family.",
@@ -972,7 +1052,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-14-q2",
+          "id": "reading-9-washington-character-building-1902-15-q2",
           "prompt": "Why does Washington advise graduates to go to the country rather than the cities? How does he describe the patient work of building a school?",
           "facilitatorNotes": [
             "Most Black Southerners live in the country, and the cities already have more help and more temptation. A teacher should begin with a three-month school and add a month at a time, then a proper school-house, while buying land and staying put to win the people’s trust.",
@@ -984,7 +1064,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-14-q3",
+          "id": "reading-9-washington-character-building-1902-15-q3",
           "prompt": "What does Washington mean by going out “in a spirit of liberality toward the white people”? How does he guard against this being taken as servility?",
           "facilitatorNotes": [
             "Liberality means generosity, helping a white person as gladly as a Black one. He insists it does not mean “lowering your manhood or your dignity”; students are to act “in a manly way.”",
@@ -996,7 +1076,7 @@
           ]
         },
         {
-          "id": "reading-9-washington-character-building-1902-14-q4",
+          "id": "reading-9-washington-character-building-1902-15-q4",
           "prompt": "The book ends: “when we possess them, nobody can take them from us by speaking ill of us.” What are “them,” and why might Washington choose this as his last word?",
           "facilitatorNotes": [
             "They are usefulness, morality, liberality, economy and property: “those qualities which go to make a people and a nation great and strong.” Praise cannot give them and insult cannot remove them, so they are safe from what other people say.",
