@@ -123,7 +123,8 @@ the authentic text, source and edition, a focused reading challenge, and
 text-specific questions. Adult read-aloud and shared reading are explicit;
 facilitator notes stay separate from student printouts. Start from Tonight,
 browse a grade's year week by week, search it by title, author, work or kind,
-open the reading for any calendar date or month, and print one day for several
+open the reading for a calendar date or month (the date calendar is written
+one year at a time), and print one day for several
 levels at once. The **Library** (`library.html`) reads every source work whole,
 with each nightly passage marked and linked. See the
 [corpus, provenance, and progression contract](docs/daily-reading.md).
