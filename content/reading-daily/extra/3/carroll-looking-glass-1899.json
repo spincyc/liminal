@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "grade": 3,
+  "work": "carroll-looking-glass-1899",
+  "readings": [
+    {
+      "id": "reading-3-carroll-looking-glass-1899-01",
+      "title": "Looking-Glass, chapter VII, part 1: Messengers and ham-sandwiches",
+      "sourceId": "carroll-looking-glass-1899",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 6,
+        "totalMinutes": 17
+      },
+      "challenge": "Catch the jokes that come from taking ordinary words exactly as they are spoken.",
+      "focus": "The White King turns everyday words, like “nobody” and “nothing like,” into puzzles.",
+      "context": "Through the Looking-Glass (1871) is Lewis Carroll’s second book about Alice. She climbs through the mirror over her fireplace into a world where things are reversed and the countryside is laid out like a giant chessboard; Alice is a pawn trying to cross the board and become a queen, and the White King and White Queen are chess pieces. This edition was printed in New York in 1899. Alice has just left Humpty Dumpty when a crash shakes the forest. A memorandum-book is a notebook; Messengers carry news; the Anglo-Saxons lived in England long ago, and the King jokes that Haigha’s stiff, odd poses are “Anglo-Saxon attitudes”; sal-volatile is a strong-smelling salt once used to revive people who felt faint. “I love my love with an H” is an old alphabet game: you fill each blank with a word beginning with the letter.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter VII, “The Lion and the Unicorn,” from the soldiers in the wood to the King’s hay; opens “THE NEXT moment soldiers came running through the wood, at first in twos and threes, then…”; closes “…King replied. \"I said there was nothing like it.\" Which Alice did not venture to deny.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-3-carroll-looking-glass-1899-02",
+        "blocks": [
+          572,
+          595
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "720d600d6b8789e211da04073acd47a381896a9932b6147f1a87a63e51f2ca7c"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-looking-glass-1899-01-q1",
+          "prompt": "What is odd about the King’s soldiers and horses? How does the King know exactly how many soldiers there are?",
+          "facilitatorNotes": [
+            "They keep tripping, so the ground is covered with “little heaps of men,” and riders fall off whenever a horse stumbles. The King has the exact number written in his notebook: four thousand two hundred and seven."
+          ],
+          "evidence": [
+            "the ground was soon covered with little heaps of men.",
+            "Four thousand two hundred and seven, that's the exact number,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-01-q2",
+          "prompt": "Alice says, “I see nobody on the road.” How does the King understand her? Why is that funny?",
+          "facilitatorNotes": [
+            "He treats “nobody” as a person she can see, and envies her eyes for spotting him so far away. Ordinary English becomes a puzzle when taken literally."
+          ],
+          "evidence": [
+            "I only wish I had such eyes,",
+            "To be able to see nobody."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-01-q3",
+          "prompt": "How does Alice’s alphabet game work, and how does the King join in without meaning to?",
+          "facilitatorNotes": [
+            "She fills each blank with an H-word: Happy, Hideous, Ham-sandwiches, Hay, Haigha. While she searches for a town beginning with H, the King simply says Haigha lives “on the Hill,” not knowing it is a game. Try playing it with another letter."
+          ],
+          "evidence": [
+            "I love my love with an H,",
+            "without the least idea that he was joining in the game,"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-01-q4",
+          "prompt": "The King says, “There’s nothing like eating hay when you’re faint.” Alice suggests something better. How does the King win the argument?",
+          "facilitatorNotes": [
+            "He says he never claimed nothing was better, only that nothing was like it. “Nothing like” can mean “nothing as good as” or “nothing similar to,” and he switches meanings. Readers can decide whether that is clever or a cheat."
+          ],
+          "evidence": [
+            "There's nothing like eating hay when you're faint,",
+            "I said there was nothing like it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-looking-glass-1899-02",
+      "title": "Looking-Glass, chapter VII, part 2: The Lion and the Unicorn",
+      "sourceId": "carroll-looking-glass-1899",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Compare an old nursery song with what Alice actually sees.",
+      "focus": "A nursery rhyme comes to life, with a King who will not hurry for anyone.",
+      "context": "Recap: in the Looking-Glass world, laid out like a giant chessboard, Alice has met the White King, who has sent off all his soldiers and is waiting for his two Messengers, Haigha and Hatta. Haigha has just arrived, out of breath, and fed the faint King ham-sandwiches and hay. A Bandersnatch is a fierce creature from the poem “Jabberwocky”; “buttered” is the King’s silly threat. The book prints “Unicom” once in the song, a misprint for “Unicorn.”",
+      "contentNote": "Hatta has just come out of prison, and the Lion and the Unicorn are fighting.",
+      "excerpt": {
+        "locator": "Chapter VII, from the King asking who the Messenger passed on the road to the White Queen running by; opens “\"Who did you pass on the road?\" the King went on, holding out his hand to the Messenger…”; closes “…himself, as he opened his memorandum-book. \"Do you spell 'creature' with a double 'e'?\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-looking-glass-1899-01",
+        "continuesTo": "reading-3-carroll-looking-glass-1899-03",
+        "blocks": [
+          596,
+          626
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e4fed2f8805916073e173038e4083be2abf2dd35cb8cdf3d6a627be3820d6589"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-looking-glass-1899-02-q1",
+          "prompt": "The King turns “Nobody” into a person again. What does he decide about Nobody, and how does the Messenger answer?",
+          "facilitatorNotes": [
+            "Since Alice saw Nobody on the road and the Messenger passed Nobody, Nobody must walk slower than the Messenger. The Messenger says nobody walks much faster than he does; the King replies that if Nobody did, he would have arrived first. The same word means two things."
+          ],
+          "evidence": [
+            "So of course Nobody walks slower than you.",
+            "I'm sure nobody walks much faster than I do!"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-02-q2",
+          "prompt": "How does Haigha “whisper” the news? Why is that funny?",
+          "facilitatorNotes": [
+            "He cups his hands like a trumpet at the King’s ear and shouts “They’re at it again!” A whisper is meant to be quiet, and this is the loudest possible kind."
+          ],
+          "evidence": [
+            "instead of whispering, he simply shouted at the top of his voice,",
+            "Do you call that a whisper?"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-02-q3",
+          "prompt": "Compare the old song Alice says with what she sees. Which parts of the song come true?",
+          "facilitatorNotes": [
+            "The Lion and the Unicorn really are fighting for the crown (the King’s own crown), and trays of white and brown bread are carried round in the break. Readers may predict that the drums of the last line are coming too."
+          ],
+          "evidence": [
+            "Some gave them white bread, some gave them brown;",
+            "carrying round trays of white and brown bread."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-02-q4",
+          "prompt": "The White Queen runs past, perhaps chased by an enemy. Why doesn’t the King help her? What does he do instead?",
+          "facilitatorNotes": [
+            "He says it is no use, she runs too fast, and makes a note about her in his book instead, asking how to spell “creature.” Readers may find him funny, useless, or both; he does call her “a dear good creature.”"
+          ],
+          "evidence": [
+            "No use, no use!",
+            "But I'll make a memorandum about her, if you like"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-3-carroll-looking-glass-1899-03",
+      "title": "Looking-Glass, chapter VII, part 3: Fabulous monsters and a Looking-Glass cake",
+      "sourceId": "carroll-looking-glass-1899",
+      "genre": "fantasy fiction",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 6,
+        "totalMinutes": 19
+      },
+      "challenge": "Notice how each creature sees the others as strange, and work out the Looking-Glass rule for cutting a cake.",
+      "focus": "Alice, the Lion and the Unicorn each think the others are “fabulous monsters,” and a cake must be served before it is cut.",
+      "context": "Recap: in the Looking-Glass world Alice has run with the White King to watch the Lion and the Unicorn fight for his crown, just as in the old nursery song. Now they are resting while white and brown bread is handed round. A fabulous monster is a creature from fables, not real life; “animal, vegetable or mineral” is the start of an old guessing game; a conjuring-trick is a magic trick; provoking means annoying.",
+      "contentNote": "The Unicorn has wounded the Lion with his horn in their fight.",
+      "excerpt": {
+        "locator": "Chapter VII, from the Unicorn sauntering by to the end of the chapter; opens “At this moment the Unicorn sauntered by them, with his hands in his pockets. \"I had the…”; closes “\"If that doesn't drum them out of town,'\" she thought to herself, \"nothing ever will!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-3-carroll-looking-glass-1899-02",
+        "continuesTo": null,
+        "blocks": [
+          627,
+          660
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9f38f25257307f662728aac4d1fe8a96460942e4440b0ce83ede7b9aea9926ed"
+      },
+      "questions": [
+        {
+          "id": "reading-3-carroll-looking-glass-1899-03-q1",
+          "prompt": "What did the Unicorn think children were, and what did Alice think Unicorns were? What bargain do they make?",
+          "facilitatorNotes": [
+            "Each thought the other was a “fabulous monster,” not real. The Unicorn offers, “if you’ll believe in me, I’ll believe in you,” and Alice agrees."
+          ],
+          "evidence": [
+            "I always thought they were fabulous monsters!",
+            "if you'll believe in me, I'll believe in you. Is that a bargain?"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-03-q2",
+          "prompt": "When the Lion and the Unicorn start to quarrel again, how does the nervous King stop them?",
+          "facilitatorNotes": [
+            "He changes the subject to a harmless question: which way did they go “all round the town,” by the old bridge or the market place? The Lion says there was too much dust to see."
+          ],
+          "evidence": [
+            "Did you go by the old bridge, or the market place?"
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-03-q3",
+          "prompt": "Why won’t the cake cut? What does the Unicorn tell Alice to do, and why is that the Looking-Glass way?",
+          "facilitatorNotes": [
+            "The slices join on again. The Unicorn says to hand it round first and cut it afterward: the usual order reversed, like everything in a mirror. It sounds like nonsense, but it works."
+          ],
+          "evidence": [
+            "they always join on again!",
+            "Hand it round first, and cut it afterward."
+          ]
+        },
+        {
+          "id": "reading-3-carroll-looking-glass-1899-03-q4",
+          "prompt": "The Unicorn complains that the Lion got twice as much cake. What does the Lion notice instead? What does that show about each of them?",
+          "facilitatorNotes": [
+            "The Lion notices that Alice kept none for herself and asks if she likes plum cake; the Unicorn thinks only of his own share. Readers may see the Lion as kinder, or simply as the one who got more. Then the drums begin, “to drum them out of town,” as the song said."
+          ],
+          "evidence": [
+            "I say, this isn't fair!",
+            "She's kept none for herself, anyhow,"
+          ]
+        }
+      ]
+    }
+  ]
+}
