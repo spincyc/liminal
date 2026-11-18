@@ -18,13 +18,14 @@
 // collation restores a paragraph break; later apparatus is taken out). <map>
 // says, in order, what became of every old block, as comma-separated parts:
 // "a-b=n" old a..b are now n.. (unchanged text), "a-b=-" removed, "k=n..m"
-// old block k was split into new n..m, "+k" k new blocks inserted here (a
+// old block k was split into new n..m, "a~b=n" old a..b were joined into new
+// block n (one printed paragraph), "+k" k new blocks inserted here (a
 // restored passage), and "a-=n" for the rest. The old text
 // is the committed one (git HEAD) unless --old names a file. Every school
 // night and calendar reading citing the work, and its scope.collated, are
 // shifted and their text hashes recomputed; a citation that touches a removed
-// block, or starts or ends inside a split block at a character offset, is
-// refused for a hand fix, and so is one that would now take in inserted
+// block, starts or ends inside a split block at a character offset, or starts
+// or ends partway through joined blocks, is refused for a hand fix, and so is one that would now take in inserted
 // blocks, unless --grow says it should. Old blocks must keep their text (up to spacing):
 // make wording corrections separately. With --write the files are rewritten;
 // then seal the work and run the checks. Locators are not touched: their
@@ -177,6 +178,15 @@ function parseMap(text, oldCount, newCount) {
       for (let k = 0; k < Number(add[1]); k++) inserted.add(++lastNew);
       continue;
     }
+    const join = part.match(/^(\d+)~(\d+)=(\d+)$/);
+    if (join) {
+      const a = Number(join[1]), b = Number(join[2]), n = Number(join[3]);
+      if (a !== expect || b <= a || b >= oldCount) throw new Error("remap: a join names two or more old blocks continuing at " + expect + ": " + part);
+      if (n !== lastNew + 1) throw new Error("remap: new blocks must follow on at " + (lastNew + 1) + " in " + part);
+      for (let i = a; i <= b; i++) table.set(i, { first: n, last: n, split: false, joined: [a, b] });
+      lastNew = n; expect = b + 1;
+      continue;
+    }
     const m = part.match(/^(\d+)(?:-(\d*))?=(?:(-)|(\d+)(?:\.\.(\d+))?)$/);
     if (!m) throw new Error("remap: cannot read part " + JSON.stringify(part));
     const a = Number(m[1]), b = m[2] === undefined ? a : m[2] === "" ? oldCount - 1 : Number(m[2]);
@@ -206,6 +216,8 @@ function remapExcerpt(excerpt, table, { grow = false } = {}) {
   for (let i = first; i <= last; i++) if (table.get(i) === null) return "cites removed block " + i;
   if (a.split && excerpt.startChar != null) return "starts inside split block " + first;
   if (b.split && excerpt.endChar != null) return "ends inside split block " + last;
+  if (a.joined && first !== a.joined[0]) return "starts partway through joined blocks " + a.joined.join("–");
+  if (b.joined && (last !== b.joined[1] || excerpt.endChar != null)) return "ends partway through joined blocks " + b.joined.join("–");
   const taken = [...(table.inserted || [])].filter(n => a.first < n && n < b.last);
   if (taken.length && !grow) return "would take in inserted blocks " + taken[0] + (taken.length > 1 ? "–" + taken[taken.length - 1] : "") + " (pass --grow if it should)";
   excerpt.blocks = [a.first, b.last];
@@ -217,9 +229,10 @@ function remap(id, mapText, { write = false, old = null, grow = false } = {}) {
   const after = L.parseText(fs.readFileSync(path.join(folder, "text.jsonl"), "utf8"), id);
   const table = parseMap(mapText, before.length, after.length);
   for (const [i, to] of table) {
-    if (!to) continue;
+    if (!to || (to.joined && i !== to.joined[0])) continue;
+    const old = to.joined ? before.slice(to.joined[0], to.joined[1] + 1) : [before[i]], label = to.joined ? to.joined.join("–") : String(i);
     const joined = spaced(after.slice(to.first, to.last + 1).map(block => block.text).join(" "));
-    if (joined !== spaced(before[i].text)) throw new Error("remap: old block " + i + " does not match new " + to.first + (to.last > to.first ? ".." + to.last : "") + "; make text changes separately");
+    if (joined !== spaced(old.map(block => block.text).join(" "))) throw new Error("remap: old block " + label + " does not match new " + to.first + (to.last > to.first ? ".." + to.last : "") + "; make text changes separately");
   }
   const problems = [], files = [], grown = [];
   const data = citingFiles(id, (file, list) => {

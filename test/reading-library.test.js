@@ -151,4 +151,13 @@ test("remap maps every old block once, shifts citations and refuses ones it cann
   const after = { blocks: [10, 11] }, before = { blocks: [2, 9] };
   assert.equal(remapExcerpt(after, restored), null); assert.equal(remapExcerpt(before, restored), null);
   assert.deepEqual([before.blocks, after.blocks], [[2, 9], [13, 14]]);
+  // One printed paragraph that the transcription split in two: old 5–6 become new 5.
+  const joinedUp = parseMap("0-4=0, 5~6=5, 7-=6", 20, 19);
+  const across = { blocks: [3, 6], startChar: null, endChar: null };
+  assert.equal(remapExcerpt(across, joinedUp), null);
+  assert.deepEqual(across.blocks, [3, 5]);
+  assert.match(remapExcerpt({ blocks: [6, 9] }, joinedUp), /starts partway through joined blocks 5–6/);
+  assert.match(remapExcerpt({ blocks: [2, 5] }, joinedUp), /ends partway through joined blocks 5–6/);
+  assert.match(remapExcerpt({ blocks: [2, 6], endChar: 4 }, joinedUp), /ends partway/);
+  assert.throws(() => parseMap("0-4=0, 5~5=5, 6-=6", 20), /two or more old blocks/);
 });
