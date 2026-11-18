@@ -68,6 +68,69 @@
     },
     {
       "id": "reading-k-delamare-peacock-pie-1920-02",
+      "title": "The Bandog",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture an animal from a list of odd comparisons.",
+      "focus": "An owner describes his lost dog with pride and strange comparisons, down to the polite way he must be called.",
+      "context": "A bandog is a big watchdog. Comely means handsome. Charles the Fifth was an emperor of long ago, so the colour of the dog’s hair is a puzzle for the listener. Abreast means side by side; civilly means politely. Draw Mopser together after reading.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Up and Down, “The Bandog,” the complete poem; opens “HAS anybody seen my Mopser? — A comely dog is he, With hair of the colour of a Charles…”; closes “…stand two abreast, And he answers to the simple name of Mopser, When civilly addressed.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          18,
+          18
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "099461e847564a38878716194b0674519c95dd37703a591f26247e707ce5bf6c"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-02-q1",
+          "prompt": "Who is lost, and what does his owner think of him?",
+          "facilitatorNotes": [
+            "Mopser, his dog, and he thinks him handsome. The whole poem is the owner asking for help to find him."
+          ],
+          "evidence": [
+            "A comely dog is he,"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-02-q2",
+          "prompt": "What are Mopser’s teeth, tail and ears like?",
+          "facilitatorNotes": [
+            "Teeth like ships at sea, a tail that curls straight up, and ears that stand side by side. Ask what teeth like ships might look like: big, pointed, sailing in a row."
+          ],
+          "evidence": [
+            "And teeth like ships at sea,",
+            "His tail it curls straight upwards,"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-02-q3",
+          "prompt": "How must you speak to Mopser if you want him to come? What does that tell you about him?",
+          "facilitatorNotes": [
+            "Politely: he answers only when “civilly addressed.” He seems a proud dog with fine manners, which is funny for a fierce watchdog. Children may decide he is proud, grand or just fussy."
+          ],
+          "evidence": [
+            "And he answers to the simple name of Mopser,",
+            "When civilly addressed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-03",
       "title": "The Ship of Rio",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -96,7 +159,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-02-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-03-q1",
           "prompt": "How many monkeys sail the ship, and what are they wearing?",
           "facilitatorNotes": [
             "Ninety-nine, and not a stitch of clothes among them."
@@ -107,7 +170,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-02-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-03-q2",
           "prompt": "What do the monkeys do when the deep-sea gales roar?",
           "facilitatorNotes": [
             "They fold in the sails, swinging by their tails. Children can show a monkey swinging."
@@ -118,7 +181,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-02-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-03-q3",
           "prompt": "The speaker calls three sights “gladsome,” or joyful. Which would you most like to see, and why?",
           "facilitatorNotes": [
             "The monkeys swinging in the storm, squatting round the keg in the calm, or scampering for nuts across the sand. Any choice with a reason works."
@@ -131,7 +194,7 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-03",
+      "id": "reading-k-delamare-peacock-pie-1920-04",
       "title": "Jim Jay",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -160,7 +223,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-03-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-04-q1",
           "prompt": "Where does Jim Jay get stuck?",
           "facilitatorNotes": [
             "In Yesterday. Ask what it could mean to be stuck in yesterday; there is no single right answer."
@@ -171,7 +234,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-03-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-04-q2",
           "prompt": "What do Jim’s friends do, and does it work?",
           "facilitatorNotes": [
             "They pull from seven till twelve, but all in vain, and Jim is too frightened to help himself."
@@ -182,7 +245,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-03-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-04-q3",
           "prompt": "What can the friends still see of Jim as the hours go by?",
           "facilitatorNotes": [
             "At one o’clock he is a little bit gone; at half-past five they glimpse only his flapping handkerchief; by noon he is a speck slipping by. Some children find this funny, some sad or spooky; the poem lets in all these feelings."
@@ -195,7 +258,71 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-04",
+      "id": "reading-k-delamare-peacock-pie-1920-05",
+      "title": "Berries",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a story poem from the hedges, to home, to the jam pot.",
+      "focus": "A fairy shows an old woman where the best blackberries grow, and her basket turns into a year of jam.",
+      "context": "Weep and Wicking are made-up village names. A pottle is a small basket; a grot is a little cave; “’ee” means you and “mo” more; a curtsey is a small polite bow. Betimes means early; Dutchmen’s coffers are treasure chests; William and Mary were a king and queen. Towser is Jill’s dog; hugger-mugger means a cheerful muddle; gallipots are small jars; Faërie is fairyland.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Four Queer Tales, “Berries,” the complete poem; opens “THERE was an old woman Went blackberry picking Along the hedges From Weep to Wicking.…”; closes “…inch high; And that she's hidden A good thumb deep, Half way over From Wicking to Weep.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          84,
+          87
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7b8e5e77a384deed8b8002e1852df45f44eac369a8b69891b1923c712e7c3d03"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-05-q1",
+          "prompt": "How many berries had Jill picked when the Fairy came?",
+          "facilitatorNotes": [
+            "Only half a small basket. The Fairy steps out of her little green cave."
+          ],
+          "evidence": [
+            "No more she had got,",
+            "When out steps a Fairy"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-05-q2",
+          "prompt": "Where does the Fairy send Jill, and what does she find there?",
+          "facilitatorNotes": [
+            "Over the meadows to a little green lane by Farmer Grimes’s hayfields, where the hedges shine with fruit like jewels."
+          ],
+          "evidence": [
+            "To the little green lane,",
+            "With jewellery rich"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-05-q3",
+          "prompt": "What does Jill make with the berries, and why do you think she hides one tiny pot?",
+          "facilitatorNotes": [
+            "Syrup, jelly and blackberry jam: twelve pots and one tiny one. She hides the tiny pot halfway between Wicking and Weep, perhaps as a thank-you for the Fairy; the poem does not say, so children can guess."
+          ],
+          "evidence": [
+            "And blackberry jam.",
+            "And one little teeny one,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-06",
       "title": "Nicholas Nye",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -224,7 +351,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-04-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-06-q1",
           "prompt": "Where does the speaker lie in the heat of the day, and who is there with him?",
           "facilitatorNotes": [
             "On the orchard wall, with no one but Nicholas Nye."
@@ -235,7 +362,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-04-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-06-q2",
           "prompt": "What does Nicholas Nye look like? Find two details.",
           "facilitatorNotes": [
             "Lean and grey, lame in one leg, old, bony and knobble-kneed. Children can describe or draw him."
@@ -246,7 +373,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-04-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-06-q3",
           "prompt": "Something passes between the boy and the donkey that is “much better than words.” What could it be?",
           "facilitatorNotes": [
             "A feeling of friendship: the donkey seems to smile at him across the grass. Children may say comfort, kindness or company; ask how the boy can tell, since the donkey never speaks."
@@ -259,7 +386,133 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-05",
+      "id": "reading-k-delamare-peacock-pie-1920-07",
+      "title": "Five Eyes",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Solve a counting puzzle hidden in a poem.",
+      "focus": "Three cats guard a mill all night, and the title is a riddle the last line answers.",
+      "context": "A mill grinds grain into flour, called meal. The bins hold the grain. Smouldering means glowing like hot coals. Hans is the miller. Read the squeaking line quickly and quietly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Beasts, “Five Eyes,” the complete poem; opens “IN Hans' old Mill his three black cats Watch the bins for the thieving rats. Whisker and…”; closes “…mill, Out come his cats all grey with meal — Jekkel, and Jessup, and one-eyed Jill.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          218,
+          218
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "19dd4aff887d7d360d3d7248648aa46331fda27b0a7cbdc84de21abcb58cee76"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-07-q1",
+          "prompt": "How many cats are there? Why does the poem say five eyes?",
+          "facilitatorNotes": [
+            "Three cats, and one of them, Jill, has only one eye: two and two and one make five."
+          ],
+          "evidence": [
+            "his three black cats",
+            "Jekkel, and Jessup, and one-eyed Jill."
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-07-q2",
+          "prompt": "What do the cats do all night while Hans snores?",
+          "facilitatorNotes": [
+            "They watch the grain bins for rats and pounce in and out after them."
+          ],
+          "evidence": [
+            "Watch the bins for the thieving rats.",
+            "Then down they pounce, now in, now out,"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-07-q3",
+          "prompt": "The cats are black at night. Why are they grey in the morning?",
+          "facilitatorNotes": [
+            "They are covered in meal, the flour dust of the mill. Children may enjoy picturing floury cats."
+          ],
+          "evidence": [
+            "Out come his cats all grey with meal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-08",
+      "title": "Summer Evening",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Visit each animal on a farm as the day ends.",
+      "focus": "Cat, dog, cattle and horse each settle with their supper, and the summer day quietly ends.",
+      "context": "Dainty fare is tasty food. Rover is the dog, and his moss-greened house is his old kennel. To mumble is to chew slowly. Cattle chewing the cud are chewing their grass a second time. Dobbin is the horse, and a manger is his feeding box. Read slowly and softly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Beasts, “Summer Evening,” the complete poem; opens “THE sandy cat by the Farmer's chair Mews at his knee for dainty fare; Old Rover in his…”; closes “…cud 'neath a fading sky; Dobbin at manger pulls his hay: Gone is another summer's day.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          222,
+          222
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6a9c8e2c0f9f7ed70f545b3a31491f528c3882b3c08da6fc1aefdc326454b825"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-08-q1",
+          "prompt": "What does each animal do at the end of the day?",
+          "facilitatorNotes": [
+            "The cat mews for a treat, Rover chews a bone and barks at a mouse, the cattle chew the cud, and Dobbin pulls his hay. Children can act one out."
+          ],
+          "evidence": [
+            "Mews at his knee for dainty fare;",
+            "Dobbin at manger pulls his hay:"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-08-q2",
+          "prompt": "Which animals are inside, and which are out in the fields?",
+          "facilitatorNotes": [
+            "The cat is by the Farmer’s chair, Rover in his kennel, Dobbin at his manger; only the cattle lie out in the dewy fields."
+          ],
+          "evidence": [
+            "In the dewy fields the cattle lie"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-08-q3",
+          "prompt": "What does the last line tell us? Does the poem feel busy or quiet?",
+          "facilitatorNotes": [
+            "Another summer’s day is over. Most children will hear it as quiet and sleepy, with everyone eating and resting under a fading sky; a child who hears the mewing and barking as busy can point to those lines."
+          ],
+          "evidence": [
+            "'neath a fading sky;",
+            "Gone is another summer's day."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-09",
       "title": "Silver",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -288,7 +541,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-05-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-09-q1",
           "prompt": "How does the moon walk through the night?",
           "facilitatorNotes": [
             "Slowly and silently, in silver shoes."
@@ -299,7 +552,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-05-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-09-q2",
           "prompt": "Which animals does the moonlight touch?",
           "facilitatorNotes": [
             "A sleeping dog with silver paws, doves in silver-feathered sleep, a harvest mouse with silver claws and eye, and fish gleaming in the stream."
@@ -310,7 +563,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-05-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-09-q3",
           "prompt": "Why do you think the poet uses the word “silver” so many times?",
           "facilitatorNotes": [
             "Moonlight makes everything look pale and shining, so the repeated word paints the whole scene one colour and keeps it calm. Children may count the silvers or say it sounds like a song; both notice the pattern."
