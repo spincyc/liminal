@@ -1406,6 +1406,151 @@
     },
     {
       "id": "reading-1-aesop-fables-jacobs-1894-21",
+      "title": "The Horse, Hunter, and Stag",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice what the Horse agrees to before the fight, and what he forgets to ask.",
+      "focus": "The Horse gets his revenge on the Stag and loses his freedom to the man who helped him.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A stag is a male deer. Revenge is hurting someone back because they hurt you. A bit is the piece of iron in a horse’s mouth, and reins are the straps a rider holds to steer; to be bridled is to have them put on. Spurs are spikes on a rider’s heels for making a horse go faster.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Horse, Hunter, and Stag,” the whole fable with its moral; opens “A quarrel had arisen between the Horse and the Stag, so the Horse came to a Hunter to ask…”; closes “If you allow men to use you for your own purposes, they will use you for theirs.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          142,
+          145
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "41ac59eadf799c48ea0716209a153c4d39e22c1db26736d3de2037e6421fcbeb"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-21-q1",
+          "prompt": "Why does the Horse go to the Hunter in the first place?",
+          "facilitatorNotes": [
+            "He has quarrelled with the Stag and wants help to take revenge. The fable never says what the quarrel was about."
+          ],
+          "evidence": [
+            "the Horse came to a Hunter to ask his help to take revenge on the Stag"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-21-q2",
+          "prompt": "What does the Hunter put on the Horse, and what does he say each thing is for?",
+          "facilitatorNotes": [
+            "Iron between the jaws with reins, to guide him, and a saddle, to sit steady. Every reason is about chasing the Stag, so the Horse agrees."
+          ],
+          "evidence": [
+            "this piece of iron between your jaws",
+            "allow this saddle to be placed upon your back"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-21-q3",
+          "prompt": "When the Stag is beaten, what does the Horse ask, and what does the Hunter answer?",
+          "facilitatorNotes": [
+            "“Now, get off”; the Hunter says “Not so fast” and means to keep him as he is. Ask how the Horse feels now."
+          ],
+          "evidence": [
+            "Now, get off, and remove those things from my mouth and back.",
+            "prefer to keep you as you are at present"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-21-q4",
+          "prompt": "Who really won in this fable: the Horse, the Stag or the Hunter?",
+          "facilitatorNotes": [
+            "The Hunter, who now has a horse to ride for good. The Horse won his fight and lost his freedom. Some children will say the Stag lost most; ask what the Horse paid for winning."
+          ],
+          "evidence": [
+            "If you allow men to use you for your own purposes, they will use you for theirs."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-22",
+      "title": "The Lion and the Statue",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen for the proof the Man offers, and the Lion’s reason for not believing it.",
+      "focus": "A picture or a statue shows what its maker wants it to show.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. Intelligence is being clever and able to think things out. A statue is a figure carved in stone or cast in metal. Hercules was a very strong hero of old Greek stories, said to have beaten a lion with his bare hands. To represent something is to show or picture it.",
+      "contentNote": "The statue shows a man tearing a lion’s mouth in two.",
+      "excerpt": {
+        "locator": "“The Lion and the Statue,” the whole fable with its moral; opens “A Man and a Lion were discussing the relative strength of men and lions in general. The…”; closes “We can easily represent things as we wish them to be.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          149,
+          152
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "39c15defc93a4847bbec20046e47f153f42147ada5ca7a1c0b93225e898c172e"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-22-q1",
+          "prompt": "What are the Man and the Lion arguing about?",
+          "facilitatorNotes": [
+            "Whether men or lions are stronger. The Man says men are, because they are cleverer."
+          ],
+          "evidence": [
+            "the relative strength of men and lions in general",
+            "by reason of their greater intelligence"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-22-q2",
+          "prompt": "What does the statue show, and why does the Man think it proves he is right?",
+          "facilitatorNotes": [
+            "Hercules, a man, beating a lion. To the Man, a picture of a man winning shows that men win."
+          ],
+          "evidence": [
+            "a statue of Hercules overcoming the Lion"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-22-q3",
+          "prompt": "What does the Lion notice that the Man has not?",
+          "facilitatorNotes": [
+            "A man made the statue, so of course it shows a man winning. It proves only what its maker wanted."
+          ],
+          "evidence": [
+            "it was a man who made the statue"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-22-q4",
+          "prompt": "If lions could carve statues, what might a lion’s statue show? What does that tell you about pictures and stories?",
+          "facilitatorNotes": [
+            "A lion beating a man, perhaps. A picture or story shows what its maker chooses; children may think of a story told by only one side of a quarrel. Accept any example where the teller chooses what to show."
+          ],
+          "evidence": [
+            "We can easily represent things as we wish them to be."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-23",
       "title": "The Ant and the Grasshopper",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1434,7 +1579,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-21-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-23-q1",
           "prompt": "What is the Grasshopper doing on the summer day, and what is the Ant doing?",
           "facilitatorNotes": [
             "The Grasshopper hops, chirps and sings; the Ant carries an ear of corn to the nest with great effort."
@@ -1445,7 +1590,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-21-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-23-q2",
           "prompt": "What does the Grasshopper say about winter? Why is he wrong?",
           "facilitatorNotes": [
             "“Why bother about winter?” He has plenty now, but summer food does not last and winter will come."
@@ -1455,7 +1600,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-21-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-23-q3",
           "prompt": "In winter the ants share out corn every day. Should they share with the Grasshopper?",
           "facilitatorNotes": [
             "The fable does not say. Some children will say kindness means sharing; others that he must learn. Both can point to the words."
@@ -1465,7 +1610,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-21-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-23-q4",
           "prompt": "Is the moral saying that singing and playing are bad?",
           "facilitatorNotes": [
             "No: it says to get ready for days of need as well. The Grasshopper’s mistake was doing nothing else."
@@ -1477,7 +1622,7 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-22",
+      "id": "reading-1-aesop-fables-jacobs-1894-24",
       "title": "The Fox and the Cat",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1506,7 +1651,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-22-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-24-q1",
           "prompt": "How many tricks does the Fox say he has? How many does the Cat have?",
           "facilitatorNotes": [
             "The Fox has a whole bag, a hundred ways of escaping; the Cat has only one."
@@ -1517,7 +1662,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-22-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-24-q2",
           "prompt": "What is the Cat’s one trick? Why does it work?",
           "facilitatorNotes": [
             "She runs straight up a tree and hides. She does not need to think, so she is safe at once."
@@ -1527,7 +1672,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-22-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-24-q3",
           "prompt": "Why do the Fox’s hundred tricks not save him?",
           "facilitatorNotes": [
             "He spends the time deciding which to use, and the hounds reach him while he is still thinking."
@@ -1537,7 +1682,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-22-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-24-q4",
           "prompt": "Is it better to know one thing well or many things a little?",
           "facilitatorNotes": [
             "The moral chooses one safe way. Some children will say many tricks are good if you choose fast; that is a fair answer to discuss."
@@ -1549,7 +1694,7 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-23",
+      "id": "reading-1-aesop-fables-jacobs-1894-25",
       "title": "The Wolf in Sheep’s Clothing",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1578,7 +1723,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-23-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-25-q1",
           "prompt": "Why can the Wolf not get at the sheep at the start?",
           "facilitatorNotes": [
             "The shepherd and his dogs watch them carefully."
@@ -1588,7 +1733,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-23-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-25-q2",
           "prompt": "How does the Wolf trick the sheep? Why does the Lamb follow him?",
           "facilitatorNotes": [
             "He wears a sheep’s skin over his own. It was the skin of the Lamb’s own mother, so the Lamb follows what looks like her."
@@ -1598,7 +1743,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-23-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-25-q3",
           "prompt": "In this telling the Wolf is not caught. Why might the fable end that way?",
           "facilitatorNotes": [
             "To show how well a disguise can work, so we are careful. Many children will want the Wolf caught; ask why the fable does not give them that."
@@ -1608,7 +1753,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-23-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-25-q4",
           "prompt": "What does “Appearances are deceptive” mean for the sheep in this fable?",
           "facilitatorNotes": [
             "What looked like a sheep was really a wolf; looking safe is not the same as being safe."
@@ -1620,7 +1765,7 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-24",
+      "id": "reading-1-aesop-fables-jacobs-1894-26",
       "title": "The Shepherd’s Boy",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1649,7 +1794,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-24-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-26-q1",
           "prompt": "Why does the Shepherd Boy first cry “Wolf”?",
           "facilitatorNotes": [
             "He is lonely all day and wants company and excitement."
@@ -1659,7 +1804,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-24-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-26-q2",
           "prompt": "What do the villagers do the first two times, and what do they do the third time?",
           "facilitatorNotes": [
             "They run out and stay with him; the third time nobody comes, because they think he is tricking them again."
@@ -1669,7 +1814,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-24-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-26-q3",
           "prompt": "When the Wolf really comes, the boy shouts louder than ever. Why does being louder not help?",
           "facilitatorNotes": [
             "The trouble is not how loud he is but whether people believe him, and he has used up their trust."
@@ -1679,7 +1824,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-24-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-26-q4",
           "prompt": "The boy was lonely. What could he have done instead of tricking people?",
           "facilitatorNotes": [
             "Asked someone to keep him company, or told the truth about being lonely. Connect it to the wise man’s words."
@@ -1691,7 +1836,79 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-25",
+      "id": "reading-1-aesop-fables-jacobs-1894-27",
+      "title": "The Nurse and the Wolf",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice who overhears the Nurse’s words and takes them seriously.",
+      "focus": "The Wolf mistakes a cross grown-up’s empty threat for a real promise.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A nurse here is a woman paid to look after a child at home, like a nanny. To crouch is to bend down low. A dainty morsel is a delicious bite of food. An enemy’s promise is one you cannot count on.",
+      "contentNote": "A nurse threatens to throw a crying child to the Wolf, and the Wolf waits, hoping to eat the child. She never meant it, and the child is safe.",
+      "excerpt": {
+        "locator": "“The Nurse and the Wolf,” the whole fable with its moral; opens ““Be quiet now,” said an old Nurse to a child sitting on her lap. “If you make that noise…”; closes ““Enemies’ promises were made to be broken.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          190,
+          193
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "de84c3c717fc2ee19dfd6fc9bd05663448f87c78834fdbf2ea058d9fcbe755e8"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-27-q1",
+          "prompt": "What does the Nurse say to make the child be quiet?",
+          "facilitatorNotes": [
+            "That she will throw the child to the Wolf if it makes that noise again. She is trying to frighten the child into hushing; she does not mean it."
+          ],
+          "evidence": [
+            "If you make that noise again I will throw you to the Wolf."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-27-q2",
+          "prompt": "Why does the Wolf think he is in good luck?",
+          "facilitatorNotes": [
+            "He happened to be under the window, heard the words, and believed them. He expects the child to cry soon."
+          ],
+          "evidence": [
+            "I am in good luck to-day",
+            "It is sure to cry soon"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-27-q3",
+          "prompt": "The fable says “he waited, and he waited, and he waited.” Why say it three times?",
+          "facilitatorNotes": [
+            "To show how long and how greedily the Wolf waits. Read it slowly, and listeners have to wait too."
+          ],
+          "evidence": [
+            "So he waited, and he waited, and he waited"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-27-q4",
+          "prompt": "The Wolf calls the Nurse’s words a promise. Was it one? Who made the mistake?",
+          "facilitatorNotes": [
+            "Not really: it was a threat to make a child behave, and no nurse would hand a child to a wolf. Some children will say the Wolf was foolish to believe it; others that the Nurse should not say what she does not mean. Both can be true."
+          ],
+          "evidence": [
+            "Enemies’ promises were made to be broken."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-28",
       "title": "The Tortoise and the Birds",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1720,7 +1937,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-25-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-28-q1",
           "prompt": "What does the Tortoise want, and how does he plan to get there?",
           "facilitatorNotes": [
             "To move to a new home, carried by the Eagle, who is promised a reward."
@@ -1730,7 +1947,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-25-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-28-q2",
           "prompt": "What does the Crow say, and what does the Eagle do with the hint?",
           "facilitatorNotes": [
             "That tortoise is good to eat and rocks will crack the shell; the Eagle drops him on a rock."
@@ -1740,7 +1957,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-25-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-28-q3",
           "prompt": "The Eagle agreed to help. Why does the moral call her an enemy?",
           "facilitatorNotes": [
             "Eagles eat creatures like tortoises, so she could gain more by hurting him than by helping him. Some children will blame the Crow most; both birds share the meal."
@@ -1752,7 +1969,79 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-26",
+      "id": "reading-1-aesop-fables-jacobs-1894-29",
+      "title": "The Ass in the Lion’s Skin",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice what the Lion’s skin hides, and what gives the Ass away.",
+      "focus": "A disguise works until the Ass opens his mouth.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. An ass is a donkey. Hunters had skinned a lion and left its skin out to dry. A native village is the one where you were born. To bray is to make a donkey’s loud “hee-haw.” A cudgelling is a beating with a stick. To disguise is to hide who you are; to disclose is to show it.",
+      "contentNote": "The donkey’s owner beats him with a stick for frightening everyone.",
+      "excerpt": {
+        "locator": "“The Ass in the Lion’s Skin,” the whole fable with its moral; opens “An Ass once found a Lion’s skin which the hunters had left out in the sun to dry. He put…”; closes “Fine clothes may disguise, but silly words will disclose a fool.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          201,
+          203
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dc7c3f329fa794d99aee68915dd473d3eddcaf93351a6b24f78f0f6b49737fd3"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-29-q1",
+          "prompt": "Why does everyone run away from the Ass?",
+          "facilitatorNotes": [
+            "In the Lion’s skin he looks like a lion, so people and animals flee."
+          ],
+          "evidence": [
+            "All fled at his approach, both men and animals"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-29-q2",
+          "prompt": "How does the Ass feel, and what does that feeling make him do?",
+          "facilitatorNotes": [
+            "Proud and delighted, so he brays, and the bray tells everyone he is only a donkey."
+          ],
+          "evidence": [
+            "he was a proud Ass that day",
+            "In his delight he lifted up his voice and brayed"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-29-q3",
+          "prompt": "The Fox says, “I knew you by your voice.” Would the Fox have been fooled if the Ass had kept quiet?",
+          "facilitatorNotes": [
+            "Perhaps for a while: the skin fooled eyes but not ears. Some children will think the Fox was too clever to be fooled anyway."
+          ],
+          "evidence": [
+            "Ah, I knew you by your voice."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-29-q4",
+          "prompt": "The moral is about silly words. What can the way someone talks show that fine clothes cannot hide?",
+          "facilitatorNotes": [
+            "Whether they are kind, sensible or silly. Clothes change how you look, not who you are. Accept examples from the child’s own life."
+          ],
+          "evidence": [
+            "Fine clothes may disguise, but silly words will disclose a fool."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-30",
       "title": "The Two Fellows and the Bear",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1781,7 +2070,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-26-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-30-q1",
           "prompt": "What does each traveller do when the Bear rushes out?",
           "facilitatorNotes": [
             "The one in front climbs a tree and hides; the other lies flat with his face in the dust."
@@ -1792,7 +2081,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-26-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-30-q2",
           "prompt": "Why does the Bear go away?",
           "facilitatorNotes": [
             "He thinks the man is dead, and the fable says bears will not touch dead meat. That is an old belief, not a fact: real bears sometimes do eat dead animals."
@@ -1802,7 +2091,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-26-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-30-q3",
           "prompt": "Did the Bear really whisper something? Why does the man say it did?",
           "facilitatorNotes": [
             "No. It is a clever way to tell his friend what he thinks of him without saying it straight out."
@@ -1813,7 +2102,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-26-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-30-q4",
           "prompt": "The man in the tree comes down laughing. What does that show about him?",
           "facilitatorNotes": [
             "He does not seem sorry or ashamed; he treats his friend’s danger as a joke. Some children will say he is laughing from relief; ask whether he says sorry."
@@ -1825,7 +2114,7 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-27",
+      "id": "reading-1-aesop-fables-jacobs-1894-31",
       "title": "The Two Pots",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1854,7 +2143,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-27-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-31-q1",
           "prompt": "Which pot is strong and which is weak? How do you know?",
           "facilitatorNotes": [
             "The brass pot is strong and the earthenware pot is weak, because clay breaks and metal does not. The earthenware pot keeps away."
@@ -1864,7 +2153,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-27-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-31-q2",
           "prompt": "The brass pot promises not to hit. Why is the earthenware pot still afraid?",
           "facilitatorNotes": [
             "Any bump will break it, whichever pot does the bumping."
@@ -1874,7 +2163,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-27-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-31-q3",
           "prompt": "Is the brass pot kind? Does its kindness help?",
           "facilitatorNotes": [
             "It means well, but kind words cannot change what the pots are made of. Some children will say the strong pot should just be careful; the moral says they cannot keep company. Let them disagree."
@@ -1887,7 +2176,7 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-28",
+      "id": "reading-1-aesop-fables-jacobs-1894-32",
       "title": "The Four Oxen and the Lion",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1916,7 +2205,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-28-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-32-q1",
           "prompt": "How do the Four Oxen keep the Lion away? Show it with four fingers.",
           "facilitatorNotes": [
             "They stand tail to tail, so wherever the Lion comes he meets a pair of horns."
@@ -1926,7 +2215,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-28-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-32-q2",
           "prompt": "What changes, and what happens then?",
           "facilitatorNotes": [
             "They quarrel and each grazes alone in a different corner, so the Lion can attack them one at a time."
@@ -1937,7 +2226,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-28-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-32-q3",
           "prompt": "What do you think the Oxen quarrelled about? Why does the fable not tell us?",
           "facilitatorNotes": [
             "We are not told; it does not matter what the quarrel was, only that it split them. Children may invent reasons."
@@ -1947,7 +2236,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-28-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-32-q4",
           "prompt": "What does “United we stand, divided we fall” mean?",
           "facilitatorNotes": [
             "Together we stay safe and strong; apart, each one can be beaten."
@@ -1959,7 +2248,78 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-29",
+      "id": "reading-1-aesop-fables-jacobs-1894-33",
+      "title": "The Fisher and the Little Fish",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Weigh the Fish’s offer against the Fisher’s answer.",
+      "focus": "A small thing for sure now, or a bigger thing perhaps later.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A fisher is a fisherman. “Pray” here means please. Hereafter means later on. In prospect means hoped for in the future.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Fisher and the Little Fish,” the whole fable with its moral; opens “It happened that a Fisher, after fishing all day, caught only a little fish. “Pray, let…”; closes “A little thing in hand is worth more than a great thing in prospect.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          215,
+          218
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3ec321c1ae7e0a9ee3cb224efb45ec84ce7d9eb9ce96271010e24671957716a3"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-33-q1",
+          "prompt": "What does the little Fish ask, and what reason does it give?",
+          "facilitatorNotes": [
+            "To be put back, because it is too small to eat now; it promises to grow into a fine meal."
+          ],
+          "evidence": [
+            "I am much too small for your eating just now."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-33-q2",
+          "prompt": "How long had the Fisher been fishing, and what had he caught? How might that make him feel?",
+          "facilitatorNotes": [
+            "All day, and only this one little fish. A tired fisher with nothing else to take home wants to keep what he has."
+          ],
+          "evidence": [
+            "after fishing all day, caught only a little fish"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-33-q3",
+          "prompt": "Why does the Fisher say no?",
+          "facilitatorNotes": [
+            "He might never catch that fish again; a fish in the river is not his."
+          ],
+          "evidence": [
+            "I may not catch you hereafter."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-33-q4",
+          "prompt": "Was the Fisher wise? Can you think of a time when waiting would be better?",
+          "facilitatorNotes": [
+            "The moral says he was. Some children will side with the Fish, since letting small fish grow keeps a river full; ask whether the Fish’s offer was really for the Fisher’s good."
+          ],
+          "evidence": [
+            "A little thing in hand is worth more than a great thing in prospect."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-34",
       "title": "The Crow and the Pitcher",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -1988,7 +2348,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-29-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-34-q1",
           "prompt": "What is the Crow’s problem?",
           "facilitatorNotes": [
             "He is very thirsty, and the little water left in the pitcher is too low for his beak."
@@ -1998,7 +2358,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-29-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-34-q2",
           "prompt": "Say the pebble sentence with me each time it comes. How many pebbles does it take?",
           "facilitatorNotes": [
             "Six are told one by one, and then “a few more.” The repeating makes us feel how long and patient the work is."
@@ -2008,7 +2368,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-29-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-34-q3",
           "prompt": "Why does the water rise when the Crow drops in pebbles? Try it with a glass of water and some stones.",
           "facilitatorNotes": [
             "The stones take up room at the bottom and push the water up. Scientists have seen some real crows and rooks solve a puzzle like this."
@@ -2018,7 +2378,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-29-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-34-q4",
           "prompt": "“Little by little does the trick.” What would have happened if the Crow had given up after two pebbles?",
           "facilitatorNotes": [
             "He would still be thirsty; only many small steps raised the water. Children may give examples of their own."
@@ -2030,7 +2390,79 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-30",
+      "id": "reading-1-aesop-fables-jacobs-1894-35",
+      "title": "The Man and the Satyr",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice the two times the Man blows, and the reason each time.",
+      "focus": "The Satyr will not trust a breath that can warm and cool.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A satyr is a creature of old Greek stories, part man and part goat, who lives in the woods. A cell here is a small, plain home. Numb means so cold you can hardly feel. Nought means nothing. To “blow hot and cold” has become a saying for someone who says one thing and then the opposite.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Man and the Satyr,” the whole fable; opens “A Man had lost his way in a wood one bitter winter’s night. As he was roaming about, a…”; closes “…“I will have nought to do with a man who can blow hot and cold with the same breath.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          225,
+          230
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "baeb82e171fb36901e9cbf58778e1f364dd954b5072bc8af6905117aa317176d"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-35-q1",
+          "prompt": "What two kindnesses does the Satyr promise the lost Man?",
+          "facilitatorNotes": [
+            "A bed for the night and a guide out of the forest in the morning."
+          ],
+          "evidence": [
+            "promised to give him a lodging for the night, and guide him out of the forest in the morning"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-35-q2",
+          "prompt": "Why does the Man blow on his hands, and why on his porridge?",
+          "facilitatorNotes": [
+            "To warm his cold hands and to cool his hot porridge. Let the child try both: a slow open-mouthed breath feels warm, a quick breath through rounded lips feels cool."
+          ],
+          "evidence": [
+            "my breath warms them",
+            "my breath will cool it"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-35-q3",
+          "prompt": "Why does the Satyr send him out into the night? Was that fair?",
+          "facilitatorNotes": [
+            "He thinks a breath that does opposite things must be a trick. Most children will see that the Man did nothing wrong and the Satyr misunderstood; some will say the Satyr is right to be wary of anyone who says opposite things."
+          ],
+          "evidence": [
+            "I will have nought to do with a man who can blow hot and cold with the same breath."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-35-q4",
+          "prompt": "People say someone “blows hot and cold” when they are friendly one day and unfriendly the next. Why is that hard for their friends?",
+          "facilitatorNotes": [
+            "You never know which to expect, so it is hard to trust them. Ask whether the Man in the fable deserved the name."
+          ],
+          "evidence": [
+            "blow hot and cold"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-36",
       "title": "The Goose With the Golden Eggs",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -2059,7 +2491,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-30-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-36-q1",
           "prompt": "Why does the man almost throw the first egg away?",
           "facilitatorNotes": [
             "It is as heavy as lead, and he thinks someone is playing a trick on him."
@@ -2069,7 +2501,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-30-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-36-q2",
           "prompt": "How does the man change as he gets rich?",
           "facilitatorNotes": [
             "He grows greedy."
@@ -2079,7 +2511,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-30-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-36-q3",
           "prompt": "Why does he kill the Goose, and what does he find?",
           "facilitatorNotes": [
             "He wants all the gold at once, but there is nothing inside, and now there will be no more eggs."
@@ -2089,7 +2521,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-30-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-36-q4",
           "prompt": "If he had been patient, what would he have had?",
           "facilitatorNotes": [
             "A golden egg every morning, for as long as the Goose lived."
@@ -2101,7 +2533,149 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-31",
+      "id": "reading-1-aesop-fables-jacobs-1894-37",
+      "title": "The Labourer and the Nightingale",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen for the bird’s three pieces of advice, and decide which one the Labourer needed most.",
+      "focus": "A caught bird will not sing, and the freed bird’s advice comes just too late.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A labourer works with his hands. A nightingale is a small brown bird that sings beautifully at night. Thee and thou are old words for “you,” and thy for “your.” A captive is someone caught and kept. To sorrow is to be sad. The book prints “is dainty morsel” without an “a,” and a full stop where we would put a comma after two of the speeches.",
+      "contentNote": "The Labourer traps the bird and threatens to eat it; it gets away.",
+      "excerpt": {
+        "locator": "“The Labourer and the Nightingale,” the whole fable; opens “A Labourer lay listening to a Nightingale’s song throughout the summer night. So pleased…”; closes “…piece of advice is: Sorrow not over what is lost forever.” Then the song-bird flew away.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          234,
+          238
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8485256a79fac74473851ffc14474d83c11b58fa7d14d94be409afb5740c6221"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-37-q1",
+          "prompt": "Why does the Labourer trap the Nightingale?",
+          "facilitatorNotes": [
+            "He loved its song so much he wanted it to sing to him always. Ask whether loving something is a good reason to cage it."
+          ],
+          "evidence": [
+            "thou shalt always sing to me"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-37-q2",
+          "prompt": "What does the bird say about singing in a cage?",
+          "facilitatorNotes": [
+            "Nightingales never sing in one. Catching the bird loses the very thing the Labourer wanted."
+          ],
+          "evidence": [
+            "We Nightingales never sing in a cage."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-37-q3",
+          "prompt": "How does the Nightingale get free?",
+          "facilitatorNotes": [
+            "It promises three things worth more than its little body, and the Labourer lets it go first."
+          ],
+          "evidence": [
+            "let me free, and I’ll tell thee three things far better worth than my poor body"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-37-q4",
+          "prompt": "The first advice is “Never believe a captive’s promise.” Why is that a joke on the Labourer?",
+          "facilitatorNotes": [
+            "He has just believed a captive’s promise; that is how he lost the bird. The bird did keep its word, though the advice comes too late to help. Some children find the bird clever, others a little unkind."
+          ],
+          "evidence": [
+            "Never believe a captive’s promise; that’s one thing."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-38",
+      "title": "The Fox, the Cock, and the Dog",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Watch how the Cock uses the Fox’s own story against him.",
+      "focus": "A trickster runs away from his own made-up news.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A cock is a rooster. To prowl is to creep about looking for something to catch; a hen-coop is a hen-house; to roost is to perch for the night. A truce is an agreement to stop fighting, and universal means for everyone, everywhere. A decree is an order from a ruler. Tidings are news.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Fox, the Cock, and the Dog,” the whole fable with its moral; opens “One moonlight night a Fox was prowling about a farmer’s hen-coop, and saw a Cock roosting…”; closes “Cunning often outwits itself.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          239,
+          247
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "577aa11e4a7afab7662515ea68b5db6860d6b5ac3be33fd5bb180fc83c04b1fd"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-38-q1",
+          "prompt": "Where is the Cock when the Fox sees him? Why does that matter?",
+          "facilitatorNotes": [
+            "High up, out of reach. The Fox cannot get at him, so he tries words instead."
+          ],
+          "evidence": [
+            "saw a Cock roosting high up beyond his reach"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-38-q2",
+          "prompt": "What is the Fox’s “good news,” and why does he tell it?",
+          "facilitatorNotes": [
+            "That King Lion has said no beast may hurt a bird. He hopes the Cock will come down; nothing shows the news is true."
+          ],
+          "evidence": [
+            "No beast may hurt a bird henceforth"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-38-q3",
+          "prompt": "Why does the Fox hurry off when he hears the Dog is coming?",
+          "facilitatorNotes": [
+            "Dogs chase foxes. If his news were true he would have nothing to fear, so leaving gives his lie away."
+          ],
+          "evidence": [
+            "I fear he may not have heard of King Lion’s decree."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-38-q4",
+          "prompt": "Did the Cock believe the Fox? How can you tell?",
+          "facilitatorNotes": [
+            "Probably not: he stays on his perch, praises the news, and then tests it with the Dog. Some children think he believed it at first; ask what he never did (come down)."
+          ],
+          "evidence": [
+            "there I see some one coming, with whom we can share the good tidings"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-39",
       "title": "The Wind and the Sun",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -2130,7 +2704,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-31-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-39-q1",
           "prompt": "How do the Wind and the Sun decide which is stronger?",
           "facilitatorNotes": [
             "Whichever can make the traveller take off his cloak wins."
@@ -2140,7 +2714,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-31-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-39-q2",
           "prompt": "What happens the harder the Wind blows?",
           "facilitatorNotes": [
             "The traveller wraps his cloak more tightly around him."
@@ -2150,7 +2724,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-31-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-39-q3",
           "prompt": "The Sun lets the Wind go first. Why might the Sun do that?",
           "facilitatorNotes": [
             "Perhaps the Sun already knows blowing will fail and wants the Wind to see it; or it is simply polite. Both fit."
@@ -2160,7 +2734,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-31-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-39-q4",
           "prompt": "When might a gentle way work better than a rough one?",
           "facilitatorNotes": [
             "Like the traveller, people often hold on tighter when pushed and give way when treated warmly. Accept examples tied to the story."
@@ -2172,7 +2746,78 @@
       ]
     },
     {
-      "id": "reading-1-aesop-fables-jacobs-1894-32",
+      "id": "reading-1-aesop-fables-jacobs-1894-40",
+      "title": "The Miser and His Gold",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice what the Miser did with his gold every week, and what he never did.",
+      "focus": "Gold that is never used is no better than an empty hole.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A miser keeps money and hates to spend any. To gloat is to look at something with greedy pleasure. To decamp is to run off. To tear your hair is to pull at it in despair. Wealth is money and riches.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Miser and His Gold,” the whole fable with its moral; opens “Once upon a time there was a Miser who used to hide his gold at the foot of a tree in his…”; closes “Wealth unused might as well not exist.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          255,
+          259
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "417b690ec967c617f2497aa4a8de4599cf9a4566ebd3bd8c7bde4af6942007b4"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-40-q1",
+          "prompt": "Where does the Miser keep his gold, and what does he do with it every week?",
+          "facilitatorNotes": [
+            "In a hole at the foot of a tree; he digs it up and gloats over it."
+          ],
+          "evidence": [
+            "every week he used to go and dig it up and gloat over his gains"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-40-q2",
+          "prompt": "How does the robber know where the gold is?",
+          "facilitatorNotes": [
+            "He had noticed the Miser digging; the weekly visits gave the secret away."
+          ],
+          "evidence": [
+            "A robber, who had noticed this"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-40-q3",
+          "prompt": "Why does the neighbour tell the Miser to come and look at the hole?",
+          "facilitatorNotes": [
+            "He never used the gold, only looked at it, so looking at the hole will do him “just as much good.” It is a joke, and also true."
+          ],
+          "evidence": [
+            "Then come again and look at the hole"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-40-q4",
+          "prompt": "Should the neighbours feel sorry for the Miser? What could he have done with his gold?",
+          "facilitatorNotes": [
+            "Some children will feel sorry, since he was robbed; others think he wasted it. He could have bought food, helped others, or kept it somewhere safe."
+          ],
+          "evidence": [
+            "Wealth unused might as well not exist."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-41",
       "title": "The Man, the Boy, and the Donkey",
       "sourceId": "aesop-fables-jacobs-1894",
       "genre": "fable",
@@ -2201,7 +2846,7 @@
       },
       "questions": [
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-32-q1",
+          "id": "reading-1-aesop-fables-jacobs-1894-41-q1",
           "prompt": "Who tells the Man what to do along the road? What does the first one say?",
           "facilitatorNotes": [
             "A countryman, a group of men, two women, and people in the town. The countryman says a donkey is for riding."
@@ -2211,7 +2856,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-32-q2",
+          "id": "reading-1-aesop-fables-jacobs-1894-41-q2",
           "prompt": "Each time someone speaks, what does the Man change?",
           "facilitatorNotes": [
             "First the Boy rides, then the Man rides, then both ride, and at last they carry the Donkey."
@@ -2221,7 +2866,7 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-32-q3",
+          "id": "reading-1-aesop-fables-jacobs-1894-41-q3",
           "prompt": "Carrying the Donkey on a pole is the silliest plan of all. How did the Man end up there?",
           "facilitatorNotes": [
             "He kept changing to please whoever spoke last, until nothing sensible was left."
@@ -2231,13 +2876,649 @@
           ]
         },
         {
-          "id": "reading-1-aesop-fables-jacobs-1894-32-q4",
+          "id": "reading-1-aesop-fables-jacobs-1894-41-q4",
           "prompt": "What should the Man have done? What does the old man mean?",
           "facilitatorNotes": [
             "Decided for himself what was sensible, perhaps walking as they began. You cannot please everyone, and trying pleases no one."
           ],
           "evidence": [
             "Please all, and you will please none."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-42",
+      "title": "The Fox and the Mosquitoes",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen to the Fox’s reason for saying no to help, and decide whether it makes sense.",
+      "focus": "An odd choice: keep the trouble you have rather than invite a fresh one.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. Mosquitoes are small flying insects that bite and suck blood. Entangled means caught and tangled up. A plight is a bad fix. Undisturbed means with no one stopping them. To bleed someone is to take their blood. This fable has no moral line; listeners find the lesson themselves.",
+      "contentNote": "Mosquitoes feed on the trapped Fox, and he fears new ones would bleed him to death.",
+      "excerpt": {
+        "locator": "“The Fox and the Mosquitoes,” the whole fable; opens “A Fox after crossing a river got its tail entangled in a bush, and could not move. A…”; closes “…if you drive these away, others will come with fresh appetite and bleed me to death.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          268,
+          272
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "adc981d0edd10e4831580e16d7e844b4492ce89fed8b65f62742ce9974eeb197"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-42-q1",
+          "prompt": "Why can the Fox not drive the Mosquitoes away himself?",
+          "facilitatorNotes": [
+            "His tail, which he could swish at them, is caught in a bush."
+          ],
+          "evidence": [
+            "got its tail entangled in a bush, and could not move",
+            "undisturbed by its tail"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-42-q2",
+          "prompt": "What does the hedgehog offer to do?",
+          "facilitatorNotes": [
+            "Drive the Mosquitoes away. He takes pity on the Fox and calls him neighbour."
+          ],
+          "evidence": [
+            "shall I relieve you by driving off those Mosquitoes"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-42-q3",
+          "prompt": "Why does the Fox say, “I would rather not”?",
+          "facilitatorNotes": [
+            "These Mosquitoes are full; new hungry ones would come and drink more."
+          ],
+          "evidence": [
+            "these Mosquitoes have had their fill"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-42-q4",
+          "prompt": "There is no moral at the end. What lesson would you write for this fable?",
+          "facilitatorNotes": [
+            "Perhaps “Better the trouble you know than a new one,” or “Help can make things worse.” Some children will say the Fox should have asked the hedgehog to free his tail. Accept any lesson tied to the Fox’s reason."
+          ],
+          "evidence": [
+            "others will come with fresh appetite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-43",
+      "title": "The Fox Without a Tail",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen to the Fox’s reasons, and then to the one reason the old fox gives for doubting them.",
+      "focus": "The Fox tries to make everyone share his loss so that he will not feel ashamed.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. The trap is a hunter’s trap that snaps shut. A stump is the short piece left. Inconvenient means awkward or in the way. An encumbrance is something heavy and useless to carry; to dispense with something is to do without it; an ornament is a decoration. Interested advice is advice that helps the one who gives it.",
+      "contentNote": "The Fox loses most of his tail in a trap.",
+      "excerpt": {
+        "locator": "“The Fox Without a Tail,” the whole fable with its moral; opens “It happened that a Fox caught its tail in a trap, and in struggling to release himself…”; closes “Distrust interested advice.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          273,
+          275
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1c09a6539680ea349a3b9b35a0846cace1b07a5d8578cff1fa88fa95a7add1e2"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-43-q1",
+          "prompt": "How does the Fox lose his tail, and how does he feel at first?",
+          "facilitatorNotes": [
+            "In a trap; he is ashamed to be seen."
+          ],
+          "evidence": [
+            "At first he was ashamed to show himself among his fellow foxes."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-43-q2",
+          "prompt": "What reasons does he give for all foxes doing away with their tails?",
+          "facilitatorNotes": [
+            "Tails are in the way when dogs chase them and when foxes sit down to talk, and a tail is useless to carry."
+          ],
+          "evidence": [
+            "how inconvenient a tail was when they were pursued by their enemies, the dogs"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-43-q3",
+          "prompt": "What does the older fox notice?",
+          "facilitatorNotes": [
+            "That the Fox thinks tails useless only because he has lost his own. The advice is for the giver’s sake."
+          ],
+          "evidence": [
+            "if you had not happened to lose it yourself"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-43-q4",
+          "prompt": "Why might the Fox want every fox to lose its tail? What would have been a better way to face his trouble?",
+          "facilitatorNotes": [
+            "So no one would look different from him or laugh at him. He might have told the truth and carried on; some children will feel sorry for him. Ask whether his “bolder face” was brave or sly."
+          ],
+          "evidence": [
+            "he determined to put a bolder face upon his misfortune"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-44",
+      "title": "The Hare and the Tortoise",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice how the Hare and the Tortoise each talk before the race.",
+      "focus": "Steady work beats a speed that stops to show off.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A tortoise is a slow animal with a shell that lives on land. To boast is to brag. A challenge is a dare to a contest. Contempt is looking down on someone. To plod is to walk slowly and steadily. The winning-post marks the end of the race.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Hare and the Tortoise,” the whole fable with its moral; opens “The Hare was once boasting of his speed before the other animals. “I have never yet been…”; closes ““Plodding wins the race.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          283,
+          289
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e94c8e3dc1a370d17170c7eba31c6e34ea8bc8d57cb78122a5f751a6faff52cd"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-44-q1",
+          "prompt": "What does the Hare boast about, and how does the Tortoise answer?",
+          "facilitatorNotes": [
+            "That he has never been beaten. The Tortoise answers quietly that it accepts. Ask how the two voices should sound."
+          ],
+          "evidence": [
+            "I have never yet been beaten",
+            "The Tortoise said quietly"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-44-q2",
+          "prompt": "Why does the Hare lie down for a nap?",
+          "facilitatorNotes": [
+            "To show how little he thinks of the Tortoise; he is sure he will win anyway."
+          ],
+          "evidence": [
+            "to show his contempt for the Tortoise, lay down to have a nap"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-44-q3",
+          "prompt": "The fable says the Tortoise “plodded on and plodded on.” What does that tell you about how it won?",
+          "facilitatorNotes": [
+            "It never stopped. Saying the words twice makes the slow steps feel long and steady; read them slowly."
+          ],
+          "evidence": [
+            "The Tortoise plodded on and plodded on"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-44-q4",
+          "prompt": "Was the Tortoise faster, or did the Hare lose the race by himself?",
+          "facilitatorNotes": [
+            "The Hare was much faster and lost by stopping. Some children will say the Tortoise won by never giving up, others that the Hare beat himself; both fit “Plodding wins the race.”"
+          ],
+          "evidence": [
+            "Plodding wins the race."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-45",
+      "title": "The Hare With Many Friends",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 8,
+        "totalMinutes": 12
+      },
+      "challenge": "Count the friends the Hare asks, and listen to each one’s excuse.",
+      "focus": "Friends who each pass her on to the next leave the Hare to save herself.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. Hounds are hunting dogs. To decline is to say no politely. An appointment is a meeting fixed for a certain time. A ram is a male sheep, and a calf a young cow or bull. To repel is to drive back. To take to your heels is to run away.",
+      "contentNote": "Hunting dogs chase the Hare; she escapes.",
+      "excerpt": {
+        "locator": "“The Hare With Many Friends,” the whole fable with its moral; opens “A Hare was very popular with the other beasts who all claimed to be her friends. But one…”; closes “He that has many friends, has no friends.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          295,
+          297
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c8dfb436276ed4cdd17f717b3e08f551fab1d8d3380710c3976175fdaa1af9e2"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-45-q1",
+          "prompt": "How many friends does the Hare ask for help? Name them in order.",
+          "facilitatorNotes": [
+            "Five: the horse, the bull, the goat, the ram and the calf."
+          ],
+          "evidence": [
+            "she went to the horse",
+            "applied, as a last hope, to the calf"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-45-q2",
+          "prompt": "Each friend says no and names someone else who will surely help. Why do they all do that?",
+          "facilitatorNotes": [
+            "It lets each one say no without feeling bad. Every excuse sounds polite, and none of them helps."
+          ],
+          "evidence": [
+            "that all her other friends would come to her assistance"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-45-q3",
+          "prompt": "Which excuse is the silliest? Which is the most honest?",
+          "facilitatorNotes": [
+            "Children may choose the bull’s appointment, or the calf, who will not help because older animals would not. The ram is the most honest: he is afraid of the hounds himself. Accept reasons tied to the words."
+          ],
+          "evidence": [
+            "I have an appointment with a lady",
+            "hounds have been known to eat sheep as well as hares"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-45-q4",
+          "prompt": "The moral says, “He that has many friends, has no friends.” Is that true for the Hare? Is it always true?",
+          "facilitatorNotes": [
+            "For the Hare, yes: all of them together helped less than one true friend would. Many children will say it is not always true; ask what makes a real friend."
+          ],
+          "evidence": [
+            "He that has many friends, has no friends."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-46",
+      "title": "The Bundle of Sticks",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Watch what changes between the father’s two orders, “Break it” and “Now, break.”",
+      "focus": "A father shows his sons, without a speech, why they should stay together.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A faggot is a bundle of sticks tied together. On the point of death means about to die, and parting advice is what someone tells you as they leave you. Union means being joined together.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Bundle of Sticks,” the whole fable with its moral; opens “An old man on the point of death summoned his sons around him to give them some parting…”; closes “Union gives strength.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          301,
+          303
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6f907c583eecd027ddb483eea23d3fb9e5361b71d8194002508c7be4249d913c"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-46-q1",
+          "prompt": "What happens when the sons try to break the whole bundle?",
+          "facilitatorNotes": [
+            "None of them can, though the eldest strains and strains."
+          ],
+          "evidence": [
+            "with all his efforts was unable to break the Bundle"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-46-q2",
+          "prompt": "What is different the second time?",
+          "facilitatorNotes": [
+            "The bundle is untied, each son has one stick, and each stick breaks easily."
+          ],
+          "evidence": [
+            "each stick was easily broken"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-46-q3",
+          "prompt": "The father says, “You see my meaning.” What is his meaning, and why does he show it instead of just saying it?",
+          "facilitatorNotes": [
+            "Together the brothers are strong; apart, each is easy to break. Showing lets them feel it in their own hands, so they will remember. Some children will add that he wants them not to quarrel after he is gone."
+          ],
+          "evidence": [
+            "You see my meaning",
+            "Union gives strength."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-47",
+      "title": "The Lion, the Fox, and the Beasts",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Look at the ground with the Fox and work out what happened inside the cave.",
+      "focus": "The Fox reads the footprints and stays outside.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. Sick unto death means so ill he is about to die. A will, or last Will and Testament, says who gets your things when you die. To pay your respects is to make a polite visit. Toils are nets or traps.",
+      "contentNote": "The Lion pretends to be dying so that animals will come into his cave, and they never come out. The fable only hints that he eats them.",
+      "excerpt": {
+        "locator": "“The Lion, the Fox, and the Beasts,” the whole fable with its moral; opens “The Lion once gave out that he was sick unto death and summoned the animals to come and…”; closes “It is easier to get into the enemy’s toils than out again.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          304,
+          307
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d96d66cf5a0f6ef0c9f69fd01c6d6ff2d8751fb0460376651c1d0ea70034cce6"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-47-q1",
+          "prompt": "Which animals go into the Lion’s cave, and what does he say he wants them for?",
+          "facilitatorNotes": [
+            "A Goat, a Sheep and a Calf, to hear his last wishes."
+          ],
+          "evidence": [
+            "summoned the animals to come and hear his last Will and Testament"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-47-q2",
+          "prompt": "What clue does the Fox see on the ground?",
+          "facilitatorNotes": [
+            "Many hoof-marks going in and none coming out."
+          ],
+          "evidence": [
+            "while I see many hoof-marks going in, I see none coming out"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-47-q3",
+          "prompt": "What does the clue tell you about the Goat, the Sheep and the Calf, and about the Lion’s sickness?",
+          "facilitatorNotes": [
+            "They never came out: the Lion caught them, and he only “seemed” to be sick. The fable lets the listener work it out."
+          ],
+          "evidence": [
+            "But soon the Lion seemed to recover"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-47-q4",
+          "prompt": "The Fox answers the Lion very politely. Why doesn’t he just call him a liar?",
+          "facilitatorNotes": [
+            "The Lion is dangerous and close by; polite words keep the Fox safe while he still says no. Some children will think him cheeky. His words are polite and his meaning is not."
+          ],
+          "evidence": [
+            "I beg your Majesty’s pardon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-48",
+      "title": "The Cat-Maiden",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen for the test each god uses to prove a point.",
+      "focus": "A cat may look like a bride, but she still chases mice.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. In old Greek and Roman stories Jupiter is the king of the gods and Venus the goddess of love. Disputing means arguing. A maiden is a young woman. Becomingly means nicely and properly. “Nature will out” means that what you really are shows in the end.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Cat-Maiden,” the whole fable with its moral; opens “The gods were once disputing whether it was possible for a living being to change its…”; closes ““Nature will out.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          315,
+          318
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fcc03193f0c12ec33755c11070c56d30ec01a3a2af1566eb8b56ea3f5e6f075e"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-48-q1",
+          "prompt": "What question are Jupiter and Venus arguing about?",
+          "facilitatorNotes": [
+            "Whether a living thing can change its nature, what it really is inside. Jupiter says yes; Venus says no."
+          ],
+          "evidence": [
+            "whether it was possible for a living being to change its nature"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-48-q2",
+          "prompt": "How does Jupiter try to prove he is right?",
+          "facilitatorNotes": [
+            "He turns a Cat into a Maiden, gives her to a young man for a wife, and points out how nicely she behaves at the feast."
+          ],
+          "evidence": [
+            "Who could tell that yesterday she was but a Cat?"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-48-q3",
+          "prompt": "What does Venus do, and what happens?",
+          "facilitatorNotes": [
+            "She lets a mouse loose, and the bride jumps up to pounce on it. Venus needs only a minute."
+          ],
+          "evidence": [
+            "Wait a minute",
+            "tried to pounce upon the mouse"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-48-q4",
+          "prompt": "Do you agree that “Nature will out”? Can people change what they are like?",
+          "facilitatorNotes": [
+            "The fable says no. Many children will say people can change habits, such as learning to share, even if some things stay. Accept either, tied to the cat’s pounce."
+          ],
+          "evidence": [
+            "Nature will out."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-49",
+      "title": "The Buffoon and the Countryman",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Notice what the crowd thinks it hears, and what it really hears.",
+      "focus": "The crowd cheers the copy and hisses at the real thing.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A country fair is a market with shows and games. A buffoon is a clown. To imitate is to copy. A porker is a pig, and concealed means hidden. A countryman lives and works on the land. The spectators or audience are the people watching. To hiss is to make an angry “sss” at a performer.",
+      "contentNote": "The Countryman pinches a little pig’s ear to make it squeal, and the crowd throws stones at him.",
+      "excerpt": {
+        "locator": "“The Buffoon and the Countryman,” the whole fable with its moral; opens “At a country fair there was a Buffoon who made all the people laugh by imitating the…”; closes “Men often applaud an imitation and hiss the real thing.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          330,
+          332
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "333a2ba36160374067cbe1e0e99ee606c8f2ecb6d269eed40b225654251ab746"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-49-q1",
+          "prompt": "What makes the crowd laugh and cheer the Buffoon?",
+          "facilitatorNotes": [
+            "He copies animal cries, and his pig’s squeak is so good they think he has a pig hidden on him."
+          ],
+          "evidence": [
+            "the spectators thought that he had a porker concealed about him"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-49-q2",
+          "prompt": "What does the Countryman promise to do?",
+          "facilitatorNotes": [
+            "Come back the next day and show them what a pig’s squeak is really like."
+          ],
+          "evidence": [
+            "You give me till tomorrow and I will show you what it’s like."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-49-q3",
+          "prompt": "Why does the crowd hiss and throw stones at the Countryman?",
+          "facilitatorNotes": [
+            "They think his squeal is a hideous copy, though it is a real pig. They expected the clown to be the good one."
+          ],
+          "evidence": [
+            "squealed so hideously that the spectators hissed"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-49-q4",
+          "prompt": "Why is the crowd foolish? And was it fair to the little pig?",
+          "facilitatorNotes": [
+            "They praise the copy and hate the real sound, so they were not really listening. Some children will be upset that the pig’s ear was pinched; that is fair to say, and the fable does not stop to care."
+          ],
+          "evidence": [
+            "Men often applaud an imitation and hiss the real thing."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-aesop-fables-jacobs-1894-50",
+      "title": "The Fox and the Goat",
+      "sourceId": "aesop-fables-jacobs-1894",
+      "genre": "fable",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 8,
+        "totalMinutes": 11
+      },
+      "challenge": "Listen to the Fox’s story, and ask why he tells it.",
+      "focus": "A Fox in trouble gives advice that helps only himself; then the book ends with a cheer.",
+      "context": "From Joseph Jacobs’s 1894 retelling of Aesop’s fables, very old stories that end with a lesson called the moral. A well is a deep hole dug down to water. A drought is a long time without rain, when water runs short. The very last line is not part of the fable: it is Jacobs saying goodbye at the end of his book.",
+      "contentNote": "The Fox leaves the Goat stuck in the well.",
+      "excerpt": {
+        "locator": "“The Fox and the Goat,” the whole fable with its moral, and the book’s closing line; opens “By an unlucky chance a Fox fell into a deep well from which he could not get out. A Goat…”; closes “And this is the end of Æsop’s Fables. HURRAH!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          336,
+          339
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1a83621d9d5c1f91d559da63e788360c2238ecaa836295fed4851554099ed5ba"
+      },
+      "questions": [
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-50-q1",
+          "prompt": "How did the Fox really get into the well, and what does he tell the Goat?",
+          "facilitatorNotes": [
+            "He fell in by accident, but tells the Goat he jumped in on purpose to have water during a drought."
+          ],
+          "evidence": [
+            "By an unlucky chance a Fox fell into a deep well",
+            "so I jumped down here in order to be sure to have water by me"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-50-q2",
+          "prompt": "How does the Fox use the Goat to get out?",
+          "facilitatorNotes": [
+            "He jumps on her back and steps on her long horns to reach the edge."
+          ],
+          "evidence": [
+            "by putting his foot on her long horns"
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-50-q3",
+          "prompt": "Why should the Goat have doubted the Fox’s advice?",
+          "facilitatorNotes": [
+            "He was stuck and needed help, so anything he said might be meant to get himself out. Some children will say she should have asked why he was really down there."
+          ],
+          "evidence": [
+            "Never trust the advice of a man in difficulties."
+          ]
+        },
+        {
+          "id": "reading-1-aesop-fables-jacobs-1894-50-q4",
+          "prompt": "The book ends “HURRAH!” Who is speaking now, and why might he cheer?",
+          "facilitatorNotes": [
+            "Not the Fox: it is Jacobs, who retold the fables, cheering at the end of the whole book, and perhaps the listener too. Ask the child which fable was a favourite."
+          ],
+          "evidence": [
+            "And this is the end of Æsop’s Fables. HURRAH!"
           ]
         }
       ]
