@@ -770,6 +770,521 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-13",
+      "title": "Jane Eyre excerpt: Grace Poole sews new curtains (Chapter XVI, first part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Read a conversation in which both speakers are fishing for information, and notice how Jane’s suspicion shapes what she sees.",
+      "focus": "An unshakeable servant, a master apparently in her power, and Jane’s first honest look at her own hopes.",
+      "context": "Charlotte Brontë’s Jane Eyre (1847) is told by Jane herself, looking back from middle age on her early life. Recap: Jane, eighteen, is governess at Thornfield Hall to Adèle, the French ward of its owner, Mr. Rochester. One night she woke to a strange laugh outside her door, found Rochester’s bed curtains on fire and put the fire out with water from the jugs. He told her to say nothing, hinted that Grace Poole, a sewing-woman who works on the third storey, was to blame, and thanked her with unusual warmth. A ewer is a water jug; porter is dark beer; sago is a starchy pudding; a Quakeress is a woman of the Quaker faith, known for plain, sober speech; to be “given into custody” is to be handed to the law; Pilot is Rochester’s dog. Adèle’s French: “What is the matter, mademoiselle? Your fingers are trembling like a leaf, and your cheeks are red: as red as cherries!”",
+      "contentNote": "Contains suspicion of an attempted murder by fire.",
+      "excerpt": {
+        "locator": "Chapter XVI, from the morning after the fire to Jane’s waiting for Mr. Rochester at dusk; opens “I both wished and feared to see Mr. Rochester on the day which followed this sleepless…”; closes “…still meet him in argument without fear or uneasy restraint; this suited both him and me.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-14",
+        "blocks": [
+          1295,
+          1332
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b46dcf7640735b2026cae1e01453ad5566afd398a0df3b6482f0562a098fe6bd"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-13-q1",
+          "prompt": "Jane expects Grace Poole to look like a guilty woman. What does she see instead, and how does she explain the difference to herself?",
+          "facilitatorNotes": [
+            "Grace sews calmly, says “Good morning, Miss,” and shows no fear. Jane reads the calm as “inscrutable hypocrisy,” but her own parenthesis “(as I believed)” admits that the charge rests on her belief. A careful reader can hold two possibilities: that Grace is a cool criminal, or that Jane is wrong about what Grace has to hide."
+          ],
+          "evidence": [
+            "was nothing either of the paleness or desperation one would have expected to see marking the countenance of a woman who had attempted murder",
+            "most inscrutable hypocrisy"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-13-q2",
+          "prompt": "Jane sets out to “put her to some test.” Where does the interview turn, so that Grace seems to be questioning Jane? What might each woman want to learn?",
+          "facilitatorNotes": [
+            "After the laugh is mentioned, Grace asks whether Jane has told the master, whether she looked out, whether she bolts her door. Jane hears a plot (“Fiend!”) and answers defiantly. Grace may want to know how much Jane heard and whether she will talk; her advice to keep “a drawn bolt” could be a threat or a real warning. The scene leaves both readings open."
+          ],
+          "evidence": [
+            "She appeared to be cross-questioning me, attempting to draw from me information unawares.",
+            "Have you told master that you heard a laugh?"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-13-q3",
+          "prompt": "Jane rejects the idea that Rochester once loved Grace because Grace is plain, and then a “secret voice” answers her. What does the voice say, and why does the thought both disgust and excite her?",
+          "facilitatorNotes": [
+            "The voice turns her own argument round: Jane is not beautiful either, and Rochester seems to approve of her. She drives the “hateful notion” away by reminding herself she is “a lady,” which is a class answer to a question about love. The blush Adèle notices shows which part of the thought stayed with her."
+          ],
+          "evidence": [
+            "and perhaps Mr. Rochester approves you: at any rate, you have often felt as if he did",
+            "I compared myself with her, and found we were different."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-13-q4",
+          "prompt": "Jane says she liked “vexing and soothing him by turns” and never went beyond “the extreme brink.” What kind of relationship does she believe she has with Rochester? Is she as much in control as she claims?",
+          "facilitatorNotes": [
+            "She sees herself as his equal in argument while keeping every outward form of a servant, and she enjoys the power that gives her. Yet she has spent the whole day listening for his step and imagining him in the doorway. Readers can decide whether her confidence is self-knowledge or a way of not admitting how much she waits for him."
+          ],
+          "evidence": [
+            "I knew the pleasure of vexing and soothing him by turns",
+            "Retaining every minute form of respect, every propriety of my station, I could still meet him in argument without fear or uneasy restraint"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-14",
+      "title": "Jane Eyre excerpt: two portraits (Chapter XVI, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow Jane’s questions to Mrs. Fairfax, then the trial she holds on herself, and weigh how fair the verdict is.",
+      "focus": "A rival described in loving detail, and a governess sentencing her own hopes.",
+      "context": "Recap: the morning after the fire, Jane found Grace Poole calmly sewing new curtains for Mr. Rochester’s bed and answering questions with questions. Jane, sure that Grace had tried to kill him, could not understand why he kept her on, and spent the day waiting for him to send for her. The Leas is a neighbour’s house; when estates are “entailed” they pass by law to the eldest son; an ignis fatuus is a marsh light that leads travellers astray; a miniature is a small portrait, often painted on ivory; camel-hair pencils are fine brushes; indigent means poor; a plebeian is a commoner.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVI, from tea with Mrs. Fairfax to the end of the chapter; opens “A tread creaked on the stairs at last. Leah made her appearance; but it was only to…”; closes “…found me unprepared, I should probably have been unequal to maintain, even externally.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-13",
+        "continuesTo": null,
+        "blocks": [
+          1333,
+          1371
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "63442908d28875b7b5689724ed1d74c28f7c88308f912d01a3f24c80386b2eab"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-14-q1",
+          "prompt": "How does Jane draw information about Blanche Ingram out of Mrs. Fairfax without seeming to? What do her questions, and her appetite, give away?",
+          "facilitatorNotes": [
+            "She moves from looks to voice to fortune to marriage, ending with Rochester himself; Mrs. Fairfax answers innocently, but notices that Jane eats nothing and looks “flushed and feverish.” The older narrator lets the questions betray the younger Jane without comment."
+          ],
+          "evidence": [
+            "And this beautiful and accomplished lady, she is not yet married?",
+            "No: I am too thirsty to eat."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-14-q2",
+          "prompt": "Jane puts herself on trial. Who gives evidence, what is the verdict, and how harsh is the language of the sentence?",
+          "facilitatorNotes": [
+            "Memory and Reason testify; Jane is judge and prisoner at once. The verdict, that no greater fool “had never breathed,” is delivered in violent words (“Blind puppy!”, “accursed senselessness”). Readers may see bracing honesty, or a cruelty toward herself that she would never use on anyone else."
+          ],
+          "evidence": [
+            "Arraigned at my own bar",
+            "That a greater fool than Jane Eyre had never breathed the breath of life"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-14-q3",
+          "prompt": "Compare the two portraits Jane orders herself to make: their materials, their titles, what each leaves out. What does the exercise assume about why Rochester would prefer Blanche?",
+          "facilitatorNotes": [
+            "Her own face is to be done in chalk “without softening one defect”; Blanche’s, imagined from a description, on ivory in the “finest, clearest tints.” The titles reduce each woman to rank, money and looks, the very measures Jane elsewhere refuses to accept. Even inside the exercise she slips: “What! you revert to Mr. Rochester as a model!”"
+          ],
+          "evidence": [
+            "Portrait of a Governess, disconnected, poor, and plain.",
+            "Blanche, an accomplished lady of rank."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-14-q4",
+          "prompt": "Jane says the discipline helped her keep “a decent calm” when later things happened. Does the cure sound complete? Why might the older narrator end the chapter by looking ahead?",
+          "facilitatorNotes": [
+            "The contrast between the pictures is “as great as self-control could desire,” which admits that the pictures were made to produce it. “Even externally” concedes that the calm was on the surface. The forward glance builds suspense about the “subsequent occurrences” the next chapter will bring."
+          ],
+          "evidence": [
+            "the contrast was as great as self-control could desire",
+            "I should probably have been unequal to maintain, even externally."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-15",
+      "title": "Jane Eyre excerpt: a letter from the master, and a whisper (Chapter XVII, first part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Set what Jane tells herself against what her hands and face do, and listen for what the servants will not say in front of her.",
+      "focus": "Self-command tested by a letter, and a household secret from which Jane is shut out.",
+      "context": "Charlotte Brontë’s Jane Eyre (1847) is told by Jane herself, looking back from middle age on her early life. Recap: Jane is governess at Thornfield Hall to Adèle, the French ward of its owner, Mr. Rochester, and has begun to love him. After she saved him from a fire in his bedroom, which she believes Grace Poole, a servant on the third storey, set, he left for a house party where the beautiful Blanche Ingram is a guest; Jane put herself “on trial” for her hopes and painted two portraits to cure herself. A protégée is someone in another’s care; caste is fixed social rank; lustres are chandeliers; to truss game is to tie birds for roasting; chimeras are wild fancies; a list slipper is made of strips of cloth; a charwoman cleans by the day. Passées means out of fashion.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVII, from the week without news to the servants’ talk about Grace Poole; opens “A week passed, and no news arrived of Mr. Rochester: ten days, and still he did not come.…”; closes “…at Thornfield; and that from participation in that mystery I was purposely excluded.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-16",
+        "blocks": [
+          1373,
+          1393
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c2f708a79e70d0bc37afa66f3ba69e7228558d1f5df35235eb0bc61b8d587a86"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-15-q1",
+          "prompt": "Compare Jane’s speech to herself at the start of the chapter with what happens to her coffee cup when the letter comes. What does each show?",
+          "facilitatorNotes": [
+            "The speech is a firm lecture: she is paid staff, Rochester is “not of your order.” The cup shows what the lecture cannot control, and the older narrator’s dry “I did not choose to consider” admits that she knew. Note too that Jane refuses a “slavish notion of inferiority” even while telling herself to keep to her caste."
+          ],
+          "evidence": [
+            "He is not of your order: keep to your caste",
+            "Why my hand shook, and why I involuntarily spilt half the contents of my cup into my saucer, I did not choose to consider."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-15-q2",
+          "prompt": "During the preparations Jane has “no time to nurse chimeras,” yet Grace Poole keeps interrupting her cheerfulness. What does Jane notice about Grace’s life in the house, and how does she imagine it?",
+          "facilitatorNotes": [
+            "Grace comes down once a day, eats, smokes a pipe, takes her porter and returns upstairs to sit and sew. Jane pictures her laughing alone “as companionless as a prisoner in his dungeon” and is surprised that no one else wonders about her. The image is Jane’s guess; ask what it suggests about the third storey."
+          ],
+          "evidence": [
+            "During the intervening period I had no time to nurse chimeras",
+            "as companionless as a prisoner in his dungeon"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-15-q3",
+          "prompt": "What does Jane learn from the talk between Leah and the charwoman, and why does she conclude that she is “purposely excluded”?",
+          "facilitatorNotes": [
+            "Grace earns more than five times Leah’s wages, saves at the bank, and does a job “not every one could fill.” The charwoman starts to wonder about “the master,” and is stopped with a nudge: “Doesn’t she know?” The servants share a secret about Grace’s real work, and Jane, neither family nor servant, is kept outside it."
+          ],
+          "evidence": [
+            "but they’re not one fifth of the sum Mrs. Poole receives",
+            "Doesn’t she know?",
+            "and that from participation in that mystery I was purposely excluded"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-16",
+      "title": "Jane Eyre excerpt: the guests arrive (Chapter XVII, second part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice where Jane places herself to watch the guests, and what she hears when she is not supposed to be listening.",
+      "focus": "A governess on the edge of a great house’s gaiety: seeing without being seen.",
+      "context": "Recap: after two weeks’ silence Mr. Rochester wrote that he would bring a party of guests home, and Thornfield has been scrubbed from top to bottom. Jane has overheard the servants hint that Grace Poole is paid far more than a sewing-woman and that there is a mystery in the house from which Jane is kept. Jane has tried to cure herself of loving Rochester. Equestrians are riders; a cavalcade is a procession of riders; abigails are ladies’ maids and “gentlemen’s gentlemen” are valets; contumacy is stubborn disobedience; the new “member for Millcote” is its Member of Parliament. “Some natural tears she shed” adapts a line near the end of Milton’s Paradise Lost. Adèle’s French: “They are changing their dresses”; “At Mama’s, when there was company, I followed them everywhere, to the drawing-room and to their rooms; I often watched the maids do the ladies’ hair and dress them, and it was such fun: that is how one learns”; “Yes indeed, mademoiselle: we have not eaten for five or six hours”; “and then what a pity!”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVII, from the Thursday of the arrival to Mrs. Fairfax’s advice about the drawing-room; opens “Thursday came: all work had been completed the previous evening; carpets were laid down,…”; closes “…him: it surprises me that he has already made so protracted a stay at Thornfield.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-15",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-17",
+        "blocks": [
+          1394,
+          1426
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e3c1f9dc6ad76d972f1b1f31c4197ae3ef99a3b734c706ca289b6e0eacf145f1"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-16-q1",
+          "prompt": "Jane watches the arrival “screened by the curtain,” and later stands in the dark gallery while the ladies pass. Why does Brontë keep placing Jane where she can see without being seen?",
+          "facilitatorNotes": [
+            "A governess is neither guest nor servant: she belongs nowhere in the evening’s order, so she watches from its edges. The position shuts her out, but it also gives her the observer’s power, and her impressions (“a bright mist rolls down a hill”) are those of someone looking at glamour from outside. Readers may connect this with the secret she is also kept from."
+          ],
+          "evidence": [
+            "screened by the curtain, I could see without being seen",
+            "so I stood still at this end, which, being windowless, was dark"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-16-q2",
+          "prompt": "How does Jane manage Adèle on the evening of the arrival, and what do Adèle’s memories of her mother’s house suggest?",
+          "facilitatorNotes": [
+            "Jane forbids her to go near the ladies unless sent for, the same rule of invisibility Jane obeys herself, and then raids the larder so they can eat, since “every one downstairs was too much engaged to think of us.” Adèle remembers following her mother’s guests everywhere; her world before Thornfield was one of company and dress. The mock-heroic “booty” and “cargo of victualage” keep the scene light."
+          ],
+          "evidence": [
+            "she must not on any account think of venturing in sight of the ladies, either now or at any other time, unless expressly sent for",
+            "every one downstairs was too much engaged to think of us"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-16-q3",
+          "prompt": "Listening to the music on the stairs, Jane suddenly finds her ear “wholly intent” on one voice. What does this moment show about the cure she attempted in Chapter XVI?",
+          "facilitatorNotes": [
+            "It has not worked: without meaning to, she sorts the voices to find Rochester’s, then tries to turn his tones into words. “Suddenly I discovered” shows her catching herself. The next day she points out to Mrs. Fairfax that he rides beside Miss Ingram, still testing the evidence."
+          ],
+          "evidence": [
+            "suddenly I discovered that my ear was wholly intent on analysing the mingled sounds",
+            "you see Mr. Rochester evidently prefers her to any of the other ladies"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-16-q4",
+          "prompt": "Rochester sends word that if Jane resists he will “come and fetch her.” Why might he insist, and why does Jane agree to go?",
+          "facilitatorNotes": [
+            "He may want to be kind to Adèle and Jane, to show his authority, or to see Jane among his guests and Blanche; the text does not say. Jane goes from pride and duty (“I will not give him that trouble”) though she dislikes it, and Mrs. Fairfax supplies the practical tactic of arriving early. Readers can weigh the possible motives as the next scene unfolds."
+          ],
+          "evidence": [
+            "If she objects, tell her it is my particular wish",
+            "I will go, if no better may be; but I don’t like it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-17",
+      "title": "Jane Eyre excerpt: a flock of white plumy birds (Chapter XVII, third part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Separate Jane’s descriptions of the ladies from her judgments of them, and ask whether she is a fair witness.",
+      "focus": "Jane meets the women of Rochester’s world, and Blanche Ingram in person.",
+      "context": "Recap: Mr. Rochester’s guests have arrived at Thornfield, with Blanche Ingram riding at his side, and he has insisted that Jane bring Adèle to the drawing-room after dinner. Jane has tried to cure herself of loving him. Miss Temple was Jane’s teacher and friend at Lowood school; her marriage ended Jane’s time there. A dowager is a titled widow; Dian is Diana, the Roman goddess of the hunt; saturnine means gloomy; in Jane’s word, to be “trailing” someone is to make fun of her while seeming polite; minois chiffoné is a pert, irregularly pretty face. Adèle’s French: “Couldn’t I take just one of those magnificent flowers, mademoiselle? Only to complete my outfit,” and “Good day, ladies.”",
+      "contentNote": "Jane calls Adèle’s love of dress “innate” in “the little Parisienne,” a national stereotype of the period.",
+      "excerpt": {
+        "locator": "Chapter XVII, from dressing for the drawing-room to Adèle among the ladies; opens “It was with some trepidation that I perceived the hour approach when I was to repair with…”; closes “…but that of Mrs. Eshton and Lady Lynn, and getting spoilt to her heart’s content.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-16",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-18",
+        "blocks": [
+          1427,
+          1451
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e1361fa6869e34c3b0dfbb35c97c6548f338f0a988ffb15807aa5d56c1a62915"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-17-q1",
+          "prompt": "How do Jane and Adèle each prepare for the evening, and why does Jane find Adèle’s devotion to dress “ludicrous as well as painful”?",
+          "facilitatorNotes": [
+            "Jane’s preparation takes three short clauses and one ornament; Adèle’s is a solemn ceremony ending with a rose in her sash. The devotion is comic in a child, and painful because it shows what she has been taught to value. Jane’s word “innate” blames her French birth, a judgment readers can question."
+          ],
+          "evidence": [
+            "my sole ornament, the pearl brooch, soon assumed",
+            "there was something ludicrous as well as painful in the little Parisienne’s earnest and innate devotion to matters of dress"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-17-q2",
+          "prompt": "Jane first sees the ladies as a mist and a flock of birds, then describes them one by one. Which details are description and which are judgment? Is she a fair witness?",
+          "facilitatorNotes": [
+            "The first impressions are of lightness and size; the portraits then move into verdicts. She prefers quiet Mrs. Dent to the “titled dame,” and condemns Lady Ingram partly because her eye “reminded me of Mrs. Reed’s,” the aunt who mistreated Jane as a child. Jane admits her bias, which makes her honest, but not necessarily fair."
+          ],
+          "evidence": [
+            "reminding me, by the lightness and buoyancy of their movements, of a flock of white plumy birds",
+            "it reminded me of Mrs. Reed’s"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-17-q3",
+          "prompt": "Jane gives three reasons for studying Blanche, and the third comes out with “it will out!” What does she conclude about Blanche, and what evidence does she use?",
+          "facilitatorNotes": [
+            "Blanche matches the portrait and the description point for point, but her face shows her mother’s pride and a satirical laugh. Jane’s strongest evidence is behaviour: Blanche shows off her botany to embarrass gentle Mrs. Dent. Yet Jane concedes that “most gentlemen would admire her.”"
+          ],
+          "evidence": [
+            "and thirdly—it will out!—whether it were such as I should fancy likely to suit Mr. Rochester’s taste",
+            "but it was decidedly not good-natured"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-17-q4",
+          "prompt": "How do the ladies receive Adèle? What does each response tell you about the speaker?",
+          "facilitatorNotes": [
+            "Blanche mocks her as “a little puppet”; Lady Lynn files her as “the little French girl”; Mrs. Dent kisses her; the Eshton girls pet and spoil her. Each response works as a small test of character, and it supports Jane’s judgments of Blanche and Mrs. Dent."
+          ],
+          "evidence": [
+            "Oh, what a little puppet!",
+            "Mrs. Dent had kindly taken her hand, and given her a kiss."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-18",
+      "title": "Jane Eyre excerpt: the gentlemen come in (Chapter XVII, fourth part)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice the sudden change of tense, and follow Jane’s argument with herself to its end.",
+      "focus": "Rochester enters without looking at her, and Jane admits what her portraits were meant to cure.",
+      "context": "Recap: Jane, the governess, has brought Adèle to the drawing-room at Thornfield and watched Mr. Rochester’s lady guests, especially the proud, accomplished Blanche Ingram, whom Jane expects him to marry. Jane last spoke with Rochester alone on the night she saved him from the fire, when he held her hand and thanked her warmly; since then she has tried to cure herself of loving him. Sparks are fashionable young men; a “père noble de théâtre” is the dignified father of French stage comedy; netting-needles make a beaded purse; irids are the irises of the eyes; to extirpate is to root out; pith is strength.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVII, from the summoning of the gentlemen to Jane’s admission that she must love him; opens “At last coffee is brought in, and the gentlemen are summoned. I sit in the shade—if any…”; closes “…that we are for ever sundered:—and yet, while I breathe and think, I must love him.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-17",
+        "continuesTo": "reading-10-bronte-jane-eyre-1897-19",
+        "blocks": [
+          1452,
+          1457
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f45b22a5f5ada81c126b6347c7122f47e7b4d0f6466bc3e03837c6253ed53da"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-18-q1",
+          "prompt": "Brontë suddenly changes tense: “At last coffee is brought in.” Why might the narrator, writing years later, switch to the present at this moment?",
+          "facilitatorNotes": [
+            "The present tense makes the scene happen again as she tells it, as if the memory still has the force of the moment. The short question that follows imitates her impatience. Readers may notice that the narration slips back into the past when she begins to judge her feelings."
+          ],
+          "evidence": [
+            "At last coffee is brought in, and the gentlemen are summoned.",
+            "And where is Mr. Rochester?"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-18-q2",
+          "prompt": "“I am not looking at the arch, yet I see him enter.” Describe the struggle between where Jane makes herself look and where her eyes go. What does the comparison to the poisoned well add?",
+          "facilitatorNotes": [
+            "She fixes on her netting and its silver beads, but her eyes rise on their own (“I could not keep their lids under control”). The pleasure is “pure gold, with a steely point of agony”: like a dying man drinking from a well he knows is poisoned, she takes a joy she believes will harm her."
+          ],
+          "evidence": [
+            "I am not looking at the arch, yet I see him enter.",
+            "I could not keep their lids under control"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-18-q3",
+          "prompt": "Jane admits Rochester is “not beautiful, according to rule.” On what grounds does she prefer him to the handsomer guests?",
+          "facilitatorNotes": [
+            "She values energy, decision and will, “native pith and genuine power,” over the guests’ grace and elegance, whose smiles have as much soul as candlelight. This is a different standard from the one her two portraits assumed, where looks and rank decided everything. “He made me love him without looking at me” sums up how little the guests’ standard now matters to her."
+          ],
+          "evidence": [
+            "were not beautiful, according to rule; but they were more than beautiful to me",
+            "the light of the candles had as much soul in it as their smile"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-18-q4",
+          "prompt": "“He is not of their kind. I believe he is of mine.” Compare this with Jane’s lecture earlier in the chapter, “He is not of your order.” Which Jane should we believe?",
+          "facilitatorNotes": [
+            "Both describe something real: rank and wealth divide them, and something “in my brain and heart” joins them. She now calls her earlier rule “Blasphemy against nature!” yet ends by resolving to hide her feelings and “smother hope.” Readers can argue whether this is self-knowledge or a more eloquent form of self-deception."
+          ],
+          "evidence": [
+            "though rank and wealth sever us widely, I have something in my brain and heart, in my blood and nerves, that assimilates me mentally to him",
+            "and yet, while I breathe and think, I must love him."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-bronte-jane-eyre-1897-19",
+      "title": "Jane Eyre excerpt: governesses, Bothwell, and the foot of the stairs (Chapter XVII, end)",
+      "sourceId": "bronte-jane-eyre-1897",
+      "genre": "novel excerpt",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 12,
+        "totalMinutes": 27
+      },
+      "challenge": "Listen to a conversation about governesses held in front of one, and judge what Rochester reveals when he and Jane are finally alone.",
+      "focus": "Blanche Ingram on display, class contempt spoken aloud, and an endearment broken off.",
+      "context": "Recap: in the drawing-room at Thornfield the governess, Jane, has watched Mr. Rochester’s guests, especially the proud Blanche Ingram, and has admitted to herself that she loves Rochester, though rank divides them and he has not looked at her all evening. Incubi are nightmares (literally, evil spirits); “Tant pis” means “so much the worse”; physiognomy is judging character from the face; a charivari is a din of pots and pans; “in the pip” means sickly; la belle passion is love; au reste means besides; a foil sets something off by contrast. Signior Eduardo and Donna Bianca are Italian forms of Edward and Blanche. David Rizzio, a musician, was the favourite of Mary, Queen of Scots, and was murdered in 1566; James Hepburn, Earl of Bothwell, became her third husband. A Corsair is a pirate, as in Byron’s poem The Corsair; con spirito means with spirit; “Gardez-vous en bien” means “take good care not to.”",
+      "contentNote": "Contains guests boasting of tormenting their governesses and tutor, and open contempt for governesses as a class.",
+      "excerpt": {
+        "locator": "Chapter XVII, from the coffee and conversation to the end of the chapter; opens “Coffee is handed. The ladies, since the gentlemen entered, have become lively as larks;…”; closes “…send Sophie for Adèle. Good-night, my—” He stopped, bit his lip, and abruptly left me.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-10-bronte-jane-eyre-1897-18",
+        "continuesTo": null,
+        "blocks": [
+          1458,
+          1528
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ac3772ce7f923fcbb37f3661de11dce90c15feef54f547fd2c052cd750df0b30"
+      },
+      "questions": [
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-19-q1",
+          "prompt": "Blanche asks why Rochester keeps “such a little doll” and complains of governesses’ cost while Jane can hear. How does Rochester answer, and why might he never look at Jane?",
+          "facilitatorNotes": [
+            "His answers are short and dry (“schools are so dear,” from a rich man, is a joke), and he will not be drawn. He keeps looking “straight before him,” perhaps to spare Jane, perhaps from indifference, perhaps to watch without seeming to. Jane herself is unsure whether she “feared—or should I say, hoped?” that he would glance her way."
+          ],
+          "evidence": [
+            "I did not pick her up; she was left on my hands.",
+            "said he indifferently, looking straight before him"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-19-q2",
+          "prompt": "Blanche and her brother remember how they drove out their governesses and a tutor. What does their story reveal, and how does Lady Ingram’s list of “reasons” sound with a governess in the room?",
+          "facilitatorNotes": [
+            "They treated cruelty as sport and used a suspected love affair as “a sort of lever” to get two employees dismissed. Lady Ingram’s fear of “liaisons” and of servants allying against their masters is spoken loudly enough for Jane, a governess who loves her employer, to hear. Brontë lets the speakers condemn themselves."
+          ],
+          "evidence": [
+            "we employed it as a sort of lever to hoist our dead-weights from the house",
+            "I see all the faults of her class"
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-19-q3",
+          "prompt": "Blanche prefers “black Bothwell” to Rizzio, then describes the husband she wants. Do her two statements agree? How does Rochester respond to her?",
+          "facilitatorNotes": [
+            "She admires a wild, fierce “bandit hero,” yet wants a husband who is “a foil” and pays her “undivided homage”: a fierce man who will obey. Rochester answers with extravagant compliments (“I shall now endeavour to fail”) that may be gallantry or quiet mockery. Readers can decide which, and what Jane would make of it."
+          ],
+          "evidence": [
+            "to my mind a man is nothing without a spice of the devil in him",
+            "I am resolved my husband shall not be a rival, but a foil to me."
+          ]
+        },
+        {
+          "id": "reading-10-bronte-jane-eyre-1897-19-q4",
+          "prompt": "At the foot of the stairs Rochester sees what Jane denies. What does he notice, what does he order, and what might he have been about to say?",
+          "facilitatorNotes": [
+            "Though he has ignored her all evening, he sees she is pale, “a little depressed,” and near tears. He orders her to appear every evening, fears being overheard by “some prating prig of a servant,” and breaks off at “Good-night, my—” before an endearment. Readers can debate whether his order is care or a strange cruelty while he courts Blanche."
+          ],
+          "evidence": [
+            "And a little depressed",
+            "He stopped, bit his lip, and abruptly left me."
+          ]
+        }
+      ]
     }
   ]
 }
