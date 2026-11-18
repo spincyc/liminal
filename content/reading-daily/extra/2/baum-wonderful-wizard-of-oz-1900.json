@@ -1752,6 +1752,893 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-25",
+      "title": "Oz, chapter XIII, part 1: the Winkies set free",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Notice how each character shows feeling, and why a tin man has to be careful when he cries.",
+      "focus": "Dorothy frees the Winkies, who mend the battered Tin Woodman; the chapter is full of happy tears.",
+      "context": "Recap: a cyclone carried Dorothy, a girl from Kansas, to the Land of Oz. The Wizard Oz would help her and her friends, the Scarecrow, the Tin Woodman and the Cowardly Lion, only if they destroyed the Wicked Witch of the West. The Witch’s Winged Monkeys scattered the friends, and Dorothy, kept as a servant in the Witch’s castle, melted the Witch with a bucket of water. Bondage means slavery; a tinsmith makes and mends things of tin; to solder is to join metal with melted metal.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIII, “How the Four were Reunited,” from the Lion’s release to the Lion drying his tail in the sun; opens “The Cowardly Lion was much pleased to hear that the Wicked Witch had been melted by a…”; closes “…and he was obliged to go out into the court-yard and hold it in the sun till it dried.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-26",
+        "blocks": [
+          688,
+          700
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7d6ca078be5857920db00fcbafec38ad6e4addbb04f6d36da29f32147e888bf1"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-25-q1",
+          "prompt": "What is the first thing Dorothy does in the castle, and how do the Winkies remember the day?",
+          "facilitatorNotes": [
+            "She calls the Winkies together and tells them they are no longer slaves. They keep the day as a holiday “then and ever after,” with feasting and dancing. Ask why a whole people would keep that day for ever."
+          ],
+          "evidence": [
+            "tell them that they were no longer slaves",
+            "They kept this day as a holiday, then and ever after"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-25-q2",
+          "prompt": "Why are the Winkies glad to help rescue Dorothy’s friends?",
+          "facilitatorNotes": [
+            "Because she set them free. Her kindness to them comes back as help for her friends."
+          ],
+          "evidence": [
+            "who had set them free from bondage"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-25-q3",
+          "prompt": "Listen to the long list of things the tinsmiths do. Why does the narrator pile up so many “ands”?",
+          "facilitatorNotes": [
+            "Hammering and twisting and bending and soldering and polishing and pounding: the list sounds like a busy workshop and makes three days and four nights of work feel long. The Woodman ends with patches but does not mind, because he is not vain."
+          ],
+          "evidence": [
+            "hammering and twisting and bending and soldering and polishing and pounding",
+            "as the Woodman was not a vain man he did not mind the patches at all"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-25-q4",
+          "prompt": "Everyone cries at the end. Whose tears must be wiped away, whose need not be, and what happens to the Lion’s?",
+          "facilitatorNotes": [
+            "The Woodman’s tears would rust his joints, so Dorothy wipes them with her apron; her own tears can fall. The Lion wipes his eyes with his tail until it is so wet he must dry it in the sun. Some children find the scene funny, others touching; it is both."
+          ],
+          "evidence": [
+            "so his joints would not be rusted",
+            "these tears did not need to be wiped away",
+            "hold it in the sun till it dried"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-26",
+      "title": "Oz, chapter XIII, part 2: gifts and a Golden Cap",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Match each gift to the one who receives it, and notice an object that may matter later.",
+      "focus": "The Scarecrow is restuffed, the grateful Winkies give the friends gifts, and Dorothy puts on the Golden Cap without knowing its charm.",
+      "context": "Recap: Dorothy melted the Wicked Witch of the West and set the yellow Winkies free from slavery. Their tinsmiths mended the Tin Woodman, who had been dropped on the rocks by the Winged Monkeys. Only the Scarecrow is still missing: the Monkeys pulled out his straw and threw his clothes into a tall tree. Burnished means polished bright; studded means set all over.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIII, from the search for the Scarecrow to the end of the chapter; opens “\"If we only had the Scarecrow with us again,\" said the Tin Woodman, when Dorothy had…”; closes “…City; and the Winkies gave them three cheers and many good wishes to carry with them.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-25",
+        "continuesTo": null,
+        "blocks": [
+          701,
+          718
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "38d86d45816a2be1f5ce916be7cf8e8b7c326a09db9537fcf5f67628d2ccca7e"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-26-q1",
+          "prompt": "Nobody can climb the tree. How does the Tin Woodman’s mended axe solve the problem?",
+          "facilitatorNotes": [
+            "The trunk is too smooth to climb, so he chops the tree down, and the clothes fall out. A Winkie goldsmith has given the axe a new handle of solid gold."
+          ],
+          "evidence": [
+            "the trunk was so smooth that no one could climb it",
+            "an axe-handle of solid gold"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-26-q2",
+          "prompt": "Which gift from the Winkies fits its owner best? Explain why.",
+          "facilitatorNotes": [
+            "The Scarecrow’s walking stick is meant to keep him from stumbling, as he so often does; the Woodman’s jewelled oil-can keeps his joints moving; Toto and the Lion get collars. Accept any choice with a reason."
+          ],
+          "evidence": [
+            "a gold-headed walking stick, to keep him from stumbling",
+            "a silver oil-can, inlaid with gold"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-26-q3",
+          "prompt": "The others speak joyfully, but the Lion speaks “thoughtfully.” Why might he be thoughtful when he talks about courage?",
+          "facilitatorNotes": [
+            "He may doubt that courage can be given, or wonder whether he already showed some at the castle. Some children think he is simply calm. The one word invites several readings."
+          ],
+          "evidence": [
+            "said the Lion, thoughtfully"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-26-q4",
+          "prompt": "Dorothy wears the Golden Cap only because it is pretty. Why does the narrator tell us she knows nothing about its charm?",
+          "facilitatorNotes": [
+            "Readers know the Cap can call the Winged Monkeys three times; Dorothy does not. The sentence is a clue that the Cap will matter. Children can predict how."
+          ],
+          "evidence": [
+            "She did not know anything about the charm of the Golden Cap"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-27",
+      "title": "Oz, chapter XIV, part 1: lost in the yellow fields",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Find the reason a group gets lost, and notice who remembers a helpful friend.",
+      "focus": "With no road to follow, the travellers walk the wrong way for days until Dorothy calls the Field Mice, whose Queen tells her about the Golden Cap.",
+      "context": "Recap: Dorothy and her friends, the Scarecrow, the Tin Woodman and the Cowardly Lion, have destroyed the Wicked Witch of the West and are going back to the Emerald City, so that the Wizard Oz will keep his promises: brains for the Scarecrow, a heart for the Woodman, courage for the Lion and a way home to Kansas for Dorothy. Long ago the Queen of the Field Mice, whose life the Woodman saved, gave Dorothy a whistle to call her mice. Dorothy is wearing the Witch’s Golden Cap only because it is pretty. To plague is to tease and pester.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIV, “The Winged Monkeys,” from the start to the Queen of the Mice running away; opens “You will remember there was no road—not even a pathway—between the castle of the Wicked…”; closes “…the Cap. Good-bye!\" And she scampered out of sight, with all the mice hurrying after her.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-28",
+        "blocks": [
+          720,
+          737
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b62c14a1590cbc016c18f7a8c578e2d190da8c57a150f9146efdc9e00e8564d4"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-27-q1",
+          "prompt": "Why do the travellers get lost? Find the narrator’s reason.",
+          "facilitatorNotes": [
+            "They know they must walk east, toward the rising sun, but at noon the sun is straight overhead and they cannot tell east from west; the next morning a cloud hides it. With no road, they cannot steer."
+          ],
+          "evidence": [
+            "at noon, when the sun was over their heads, they did not know which was east and which was west"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-27-q2",
+          "prompt": "Each friend grumbles in his own way. How does each complaint fit what he wants from Oz?",
+          "facilitatorNotes": [
+            "The Scarecrow fears he will never get his brains, the Woodman says he can scarcely wait for his heart, and the Lion says he hasn’t “the courage” to keep tramping. The Lion’s joke about his own wish is worth enjoying."
+          ],
+          "evidence": [
+            "unless we find it again in time to reach the Emerald City I shall never get my brains",
+            "I haven't the courage to keep tramping forever"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-27-q3",
+          "prompt": "How does the narrator show how tired and hopeless everyone feels?",
+          "facilitatorNotes": [
+            "Dorothy loses heart and sits down; they all sit and look at one another; Toto, for the first time in his life, is too tired to chase a butterfly. A small dog’s tiredness shows the whole group’s mood."
+          ],
+          "evidence": [
+            "Then Dorothy lost heart.",
+            "for the first time in his life he was too tired to chase a butterfly"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-27-q4",
+          "prompt": "The Queen of the Mice says the Emerald City has been “at your backs all this time.” How does a small friend solve a big problem?",
+          "facilitatorNotes": [
+            "She knows the way and also tells Dorothy about the charm of the Cap. A kindness done long ago, saving the Queen, brings help now. Some children notice that the travellers could have asked sooner, as the Scarecrow says."
+          ],
+          "evidence": [
+            "you have had it at your backs all this time",
+            "why didn't we think of that before?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-28",
+      "title": "Oz, chapter XIV, part 2: the charm of the Golden Cap",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Hear a story begin inside another story, and notice who is telling it.",
+      "focus": "Dorothy calls the Winged Monkeys with the Cap’s nonsense charm, and on the flight the Monkey King begins to tell how his people came to obey it.",
+      "context": "Recap: Dorothy and her friends were lost in the yellow fields on the way back to the Emerald City. The Queen of the Field Mice told Dorothy that the charm written inside the Golden Cap would call the Winged Monkeys, who must obey the Cap’s wearer, and then ran off, because the Monkeys love to tease mice. A sorceress is a woman who works magic; a ruby is a red jewel.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIV, from Dorothy reading the charm to the Monkey King’s account of Gayelette and Quelala; opens “Dorothy looked inside the Golden Cap and saw some words written upon the lining. These,…”; closes “…that Gayelette loved him dearly, and hastened to make everything ready for the wedding.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-27",
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-29",
+        "blocks": [
+          738,
+          753
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cbd3327cb725918ef96d9e7f5bcd82ba4bd0c037bfa7fb2e3e28fa05d5bbddd7"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-28-q1",
+          "prompt": "What must Dorothy do with her feet while she says the charm? Try saying it the same way.",
+          "facilitatorNotes": [
+            "Left foot for the first line, right foot for the second, both feet for the last. Saying “Ep-pe, pep-pe, kak-ke!” on one foot is part of the fun."
+          ],
+          "evidence": [
+            "standing on her left foot",
+            "Ziz-zy, zuz-zy, zik!"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-28-q2",
+          "prompt": "The Scarecrow and the Tin Woodman do not know what Dorothy is doing. How does the Woodman’s answer make the charm funny?",
+          "facilitatorNotes": [
+            "When she says “hel-lo,” he calmly says “Hello!” back, as if she were greeting him. He treats magic words as ordinary talk."
+          ],
+          "evidence": [
+            "replied the Tin Woodman, calmly"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-28-q3",
+          "prompt": "Why are the Scarecrow and the Woodman frightened at first, and what changes their minds?",
+          "facilitatorNotes": [
+            "They remember how the Monkeys tore and battered them before. When they see no harm is meant, they enjoy the view of gardens and woods below."
+          ],
+          "evidence": [
+            "they remembered how badly the Winged Monkeys had treated them before",
+            "they saw that no harm was intended"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-28-q4",
+          "prompt": "The Monkey King says his people were once “a free people.” What were they like then? Does he sound proud, or sorry?",
+          "facilitatorNotes": [
+            "Careless, happy and mischievous: pulling animals’ tails, chasing birds, throwing nuts at people. He admits they were “rather too full of mischief,” but he tells it with a laugh. Children may hear pride, regret, or both."
+          ],
+          "evidence": [
+            "Perhaps some of us were rather too full of mischief at times",
+            "careless and happy and full of fun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-29",
+      "title": "Oz, chapter XIV, part 3: a joke and its price",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Decide whether a punishment fits what was done.",
+      "focus": "A prank that ruins Quelala’s wedding clothes costs the Winged Monkeys their freedom: they must obey the owner of the Golden Cap three times.",
+      "context": "Recap: Dorothy has called the Winged Monkeys with the charm of the Golden Cap, and they are flying her and her friends to the Emerald City. On the way the Monkey King tells how his people, once free and full of mischief, came to obey the Cap. Long ago a princess and sorceress named Gayelette chose a wise and handsome young man, Quelala, to be her husband. A costume here means a suit of clothes; to plead is to beg.",
+      "contentNote": "As a joke the Monkeys drop a man into a river, and the princess first means to drown them with their wings tied.",
+      "excerpt": {
+        "locator": "Chapter XIV, from the Monkey King’s grandfather and Quelala to the end of the chapter; opens “\"My grandfather was at that time the King of the Winged Monkeys which lived in the forest…”; closes “…our troubles.\" replied the Lion. \"How lucky it was you brought away that wonderful Cap!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-28",
+        "continuesTo": null,
+        "blocks": [
+          754,
+          762
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bd40296d894f8d3af00b71bf4e25c84bd3dea9863c756cf993f34090b635ba9e"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-29-q1",
+          "prompt": "What joke does the King’s grandfather play on Quelala, and how does Quelala take it?",
+          "facilitatorNotes": [
+            "The Monkeys drop him into the middle of the river in his silk and velvet. He laughs, swims to shore, and is “not in the least spoiled.”"
+          ],
+          "evidence": [
+            "He laughed, when he came to the top of the water, and swam in to shore."
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-29-q2",
+          "prompt": "Who is angrier about the joke, Quelala or Gayelette? Why might that be?",
+          "facilitatorNotes": [
+            "Gayelette. Quelala laughs, but she finds his wedding clothes ruined just before the wedding. Some children think she cares too much about clothes; others that she is right, since the joke was dangerous."
+          ],
+          "evidence": [
+            "The princess was very angry"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-29-q3",
+          "prompt": "What punishment does Gayelette choose in the end, and who helps the Monkeys? Is it fair?",
+          "facilitatorNotes": [
+            "The grandfather pleads and Quelala speaks for them, so instead of drowning they must obey the owner of the Golden Cap three times. Some will find that fair for a dangerous prank; others will say serving any owner, even a wicked one, is too much."
+          ],
+          "evidence": [
+            "Quelala said a kind word for them also",
+            "three times the bidding of the owner of the Golden Cap"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-29-q4",
+          "prompt": "The Monkeys once had to obey the Wicked Witch. Does this story change how you feel about what they did to the Scarecrow and the Tin Woodman?",
+          "facilitatorNotes": [
+            "They had no choice: they are slaves of whoever owns the Cap. Some children forgive them; others say they still did harm. Both can use the King’s words."
+          ],
+          "evidence": [
+            "three times the slaves of the owner of the Golden Cap, whomsoever he may be"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-30",
+      "title": "Oz, chapter XV, part 1: a Voice in an empty room",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice when a powerful character starts to sound less sure of himself.",
+      "focus": "Back in the Emerald City, the travellers are kept waiting, then find the Throne Room empty except for a Voice that wants more time.",
+      "context": "Recap: the great Wizard Oz promised to send Dorothy home to Kansas and to give the Scarecrow brains, the Tin Woodman a heart and the Cowardly Lion courage, but only after they destroyed the Wicked Witch of the West. Dorothy melted the Witch, and the Winged Monkeys have flown the friends back to the Emerald City, where everyone must wear green spectacles. Each time they saw Oz before, he had a different shape: a great Head, a lovely Lady, a terrible Beast, a Ball of Fire. Vexed means annoyed; mortals are ordinary people; to converse is to talk.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XV, “The Discovery of Oz the Terrible,” from the return to the city gate to Dorothy’s demand that Oz keep his promises; opens “The four travellers walked up to the great gate of the Emerald City and rang the bell.…”; closes “\"You must keep your promises to us!\" exclaimed Dorothy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-31",
+        "blocks": [
+          764,
+          796
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3735d7b8e0985a832e051c7e2aa102a4290d5a62aeab9c888e1c34a00668a543"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-30-q1",
+          "prompt": "How does the Guardian of the Gate treat Dorothy when he hears she melted the Witch?",
+          "facilitatorNotes": [
+            "He exclaims and bows very low before her, and the crowd follows the travellers to the Palace. The girl is now a hero."
+          ],
+          "evidence": [
+            "he bowed very low indeed before her"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-30-q2",
+          "prompt": "Oz keeps them waiting day after day. What finally makes him send for them?",
+          "facilitatorNotes": [
+            "The Scarecrow threatens to call the Winged Monkeys, whom Oz met once in the West. Ask why a great Wizard would be frightened of them; the exact time, four minutes after nine, is a funny touch."
+          ],
+          "evidence": [
+            "he was so frightened that he sent word for them",
+            "he did not wish to meet them again"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-30-q3",
+          "prompt": "Why is the empty room more frightening than any shape Oz took before?",
+          "facilitatorNotes": [
+            "They can see nothing, so they cannot tell what to expect; the silence is worse than a Head or a Beast. Some children agree, others find the monsters scarier."
+          ],
+          "evidence": [
+            "the stillness of the empty room was more dreadful than any of the forms they had seen Oz take"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-30-q4",
+          "prompt": "Listen to the Voice when Dorothy says she melted the Witch. What clues suggest something is wrong with the Great and Terrible Oz?",
+          "facilitatorNotes": [
+            "It seems to tremble, says “Dear me ... how sudden!” and asks for time to think. A great wizard would not need to. Children may guess he is afraid or has nothing to give."
+          ],
+          "evidence": [
+            "Dorothy thought it trembled a little",
+            "how sudden!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-31",
+      "title": "Oz, chapter XV, part 2: behind the screen",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 7,
+        "totalMinutes": 14
+      },
+      "challenge": "Compare what each friend believed with what is really there.",
+      "focus": "Toto knocks over a screen, and the Great and Terrible Oz turns out to be a little old man who has been making believe with paper, masks and a thrown voice.",
+      "context": "Recap: the four travellers have come back to the Emerald City to claim the Wizard’s promises after melting the Wicked Witch of the West. In the Throne Room they saw no one, only heard a Voice, which trembled at their news and told them to come back to-morrow. They refused to wait. A humbug is someone who fools people by pretending; a ventriloquist can speak without moving his lips so that his voice seems to come from somewhere else; dismay is shocked disappointment.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XV, from the Lion’s roar to the Wizard’s offer to tell his story; opens “The Lion thought it might be as well to frighten the Wizard, so he gave a large, loud…”; closes “…I could do. Sit down, please, there are plenty of chairs; and I will tell you my story.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-30",
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-32",
+        "blocks": [
+          797,
+          825
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c8dcafa945f25fccae294220028ebb6090c15e23014f904b4eb48d5b7ff1562c"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-31-q1",
+          "prompt": "Who really discovers the Wizard, and how?",
+          "facilitatorNotes": [
+            "Toto. The Lion roars to frighten Oz, Toto jumps away in alarm, and he tips over the screen. The smallest member of the group uncovers the secret, by accident."
+          ],
+          "evidence": [
+            "Toto jumped away from him in alarm and tipped over the screen"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-31-q2",
+          "prompt": "Each friend says what he thought Oz was. Why did each one see something different?",
+          "facilitatorNotes": [
+            "Oz made himself a Head, a Lady, a Beast and a Ball of Fire, a different trick for each visitor. All four were wrong because he was “making believe.”"
+          ],
+          "evidence": [
+            "No; you are all wrong",
+            "I have been making believe."
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-31-q3",
+          "prompt": "When he is found out, what does Oz worry about most? What does that show about him?",
+          "facilitatorNotes": [
+            "Being overheard and ruined. He asks the friends to think of his trouble instead of their own wishes. Some children find him selfish; others feel a little sorry for a frightened old man."
+          ],
+          "evidence": [
+            "Think of me, and the terrible trouble I'm in at being found out."
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-31-q4",
+          "prompt": "How did Oz work his tricks? Which one do you think was cleverest?",
+          "facilitatorNotes": [
+            "The Head was paper on a wire with threads for the eyes and mouth, his voice was thrown, the Lady was a dress and mask, the Beast was skins and slats, the Ball of Fire was cotton soaked in oil. Accept any choice with a reason."
+          ],
+          "evidence": [
+            "I stood behind the screen and pulled a thread",
+            "It was really a ball of cotton"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-32",
+      "title": "Oz, chapter XV, part 3: the Wizard’s own story",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 7,
+        "totalMinutes": 14
+      },
+      "challenge": "Follow a life story told in order, and check it against what you already know about the Emerald City.",
+      "focus": "A circus balloonist from Omaha drifted into the land, let the people think he was a wizard, and had them build a city that looks green only through spectacles.",
+      "context": "Recap: Toto knocked over a screen in the Throne Room, and the great Wizard Oz turned out to be a little old man who fooled everyone with tricks: a paper Head, a mask, a sewn-up Beast and a burning ball of cotton. He calls himself a humbug and has offered to tell his story. Omaha is a city in Nebraska, just north of Kansas. A balloonist went up in a balloon at the circus to draw a crowd.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XV, from “I was born in Omaha” to the Wizard’s admission that he cannot keep his promises; opens “So they sat down and listened while he told the following tale:”; closes “…but, now that you have melted her, I am ashamed to say that I cannot keep my promises.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-31",
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-33",
+        "blocks": [
+          826,
+          838
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4dc7f42f8d2d7536cda20f07933ac11298e2e4d792a77338ff2cb9099b331d39"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-32-q1",
+          "prompt": "How did Oz come to this land, and why did the people think he was a wizard?",
+          "facilitatorNotes": [
+            "His balloon’s ropes twisted, a current of air carried it for a day and a night, and it came down among people who saw him arrive from the clouds."
+          ],
+          "evidence": [
+            "seeing me come from the clouds, thought I was a great Wizard"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-32-q2",
+          "prompt": "Why does everything in the Emerald City look green? Were Dorothy and her friends fooled too?",
+          "facilitatorNotes": [
+            "Everyone wears green spectacles, locked on at the gate, so the travellers were fooled as well. The city is still beautiful and full of jewels, so some children say it is partly real."
+          ],
+          "evidence": [
+            "when you wear green spectacles, why of course everything you see looks green to you"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-32-q3",
+          "prompt": "Oz says, “Of course I let them think so.” Why did he, and was it wrong?",
+          "facilitatorNotes": [
+            "They were afraid of him and would do anything he wished, so he had them build a city and a palace. He says he has been good to them. Some children call this lying; others say nobody was hurt."
+          ],
+          "evidence": [
+            "Of course I let them think so, because they were afraid of me",
+            "I have been good to the people, and they like me"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-32-q4",
+          "prompt": "What was Oz most afraid of? How does that explain why he sent Dorothy to the Wicked Witch?",
+          "facilitatorNotes": [
+            "The wicked Witches of the East and West, who had real magic. He would promise anything to be rid of the Witch of the West, even with nothing to give."
+          ],
+          "evidence": [
+            "I was willing to promise anything if you would only do away with the other Witch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-33",
+      "title": "Oz, chapter XV, part 4: a good man but a bad Wizard",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 8,
+        "totalMinutes": 14
+      },
+      "challenge": "Weigh an argument that the friends already have what they ask for.",
+      "focus": "Oz tells the Scarecrow, the Lion and the Tin Woodman that they do not need what they want, then promises to give it to them anyway.",
+      "context": "Recap: the great Wizard Oz is a humbug, a circus balloonist from Omaha who drifted into this land and let the people believe he was a wizard. He sent Dorothy and her friends to destroy the Wicked Witch of the West because he was afraid of her, and he has just admitted that he cannot keep his promises. Experience is what you learn by doing and living; confidence is trust in yourself.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XV, from Dorothy calling Oz a bad man to the end of the chapter; opens “\"I think you are a very bad man,\" said Dorothy.”; closes “…to send her back to Kansas, and if he did that she was willing to forgive him everything.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-32",
+        "continuesTo": null,
+        "blocks": [
+          839,
+          857
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "90c5e105bb87b23e93cd3a8d7e15a5de0652b1b92dac6dc5f60a4e3ba2bddb32"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-33-q1",
+          "prompt": "Dorothy calls Oz a very bad man. How does he answer, and do you agree?",
+          "facilitatorNotes": [
+            "He says he is a very good man but a very bad Wizard. Some children agree, since he was kind to his people; others point out that he lied and sent the friends into danger."
+          ],
+          "evidence": [
+            "I'm really a very good man; but I'm a very bad Wizard"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-33-q2",
+          "prompt": "Where does Oz say knowledge comes from? Has the Scarecrow been learning on the journey?",
+          "facilitatorNotes": [
+            "From experience, not from brains alone. Children can recall the Scarecrow’s plans, such as covering his friends with straw against the bees."
+          ],
+          "evidence": [
+            "Experience is the only thing that brings knowledge"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-33-q3",
+          "prompt": "Oz says true courage is “facing danger when you are afraid.” Why isn’t the Lion satisfied?",
+          "facilitatorNotes": [
+            "He wants the kind of courage that makes him forget he is afraid. Ask which kind is braver: being afraid and going on, or not feeling afraid at all."
+          ],
+          "evidence": [
+            "True courage is in facing danger when you are afraid",
+            "the sort of courage that makes one forget he is afraid"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-33-q4",
+          "prompt": "Why does Oz agree to give them things he thinks they do not need?",
+          "facilitatorNotes": [
+            "They say they will be unhappy without them, he has played the Wizard so long he may as well go on, and he wants them to keep his secret. Some children call it kindness, others more humbug."
+          ],
+          "evidence": [
+            "I have played Wizard for so many years that I may as well continue the part a little longer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-34",
+      "title": "Oz, chapter XVI: brains, a heart and courage",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Find the jokes hidden in the gifts, and decide whether the gifts are real.",
+      "focus": "Oz gives the Scarecrow brains of bran and pins, the Tin Woodman a silk heart and the Lion a dish of courage, and then wonders how he can help being a humbug.",
+      "context": "Dorothy, the Scarecrow, the Tin Woodman and the Cowardly Lion destroyed the Wicked Witch of the West, then found that the great Wizard Oz is a humbug, an ordinary man from Omaha who fools people with tricks. He told the Scarecrow he could already learn, the Lion that he already had courage and the Woodman that a heart makes people unhappy, but they still wanted their gifts, so he promised them. Bran is the husks of grain; “bran-new” plays on brand-new; tinners’ shears are strong scissors for cutting tin.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVI, “The Magic Art of the Great Humbug,” the whole chapter; opens “Next morning the Scarecrow said to his friends:”; closes “…to carry Dorothy back to Kansas, and I'm sure I don't know how it can be done.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          859,
+          900
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "25daf43b9da108760b814d05708a5ee8004fe006fb2a56aedcfb800ade41ac4c"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-34-q1",
+          "prompt": "What does Oz put in the Scarecrow’s head, and what jokes do the friends make about it?",
+          "facilitatorNotes": [
+            "Bran mixed with pins and needles, which he calls “bran-new brains.” When the Woodman asks about the pins, the Lion says they prove the Scarecrow is sharp, a word that also means clever."
+          ],
+          "evidence": [
+            "a lot of bran-new brains",
+            "That is proof that he is sharp"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-34-q2",
+          "prompt": "The Tin Woodman asks, “But is it a kind heart?” Why is that his question?",
+          "facilitatorNotes": [
+            "Kindness is what he wants a heart for; he already weeps over beetles. Oz answers “Oh, very!” though the heart is silk and sawdust. Ask whether the answer matters."
+          ],
+          "evidence": [
+            "But is it a kind heart?"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-34-q3",
+          "prompt": "Oz says the drink “cannot be called courage until you have swallowed it.” Is he tricking the Lion or telling the truth in a tricky way?",
+          "facilitatorNotes": [
+            "Both can be argued: the dish holds no magic, but Oz says courage is always inside one, as he said the day before. The Lion feels full of courage afterwards."
+          ],
+          "evidence": [
+            "courage is always inside one"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-34-q4",
+          "prompt": "Dorothy tells the Scarecrow, “I have always liked you as you were.” What does Oz think the gifts really do?",
+          "facilitatorNotes": [
+            "He smiles because he gave them “exactly what they thought they wanted”: the gifts work because the friends believe in them. Some children say the gifts are fake; others that the friends’ happiness is real."
+          ],
+          "evidence": [
+            "I have always liked you as you were",
+            "exactly what they thought they wanted"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-34-q5",
+          "prompt": "Why does Oz say it will “take more than imagination” to send Dorothy home?",
+          "facilitatorNotes": [
+            "The friends’ wishes could be met by belief, but Kansas is a real place across a real desert. Her wish is the one a humbug cannot fake."
+          ],
+          "evidence": [
+            "it will take more than imagination to carry Dorothy back to Kansas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-35",
+      "title": "Oz, chapter XVII, part 1: a plan for a balloon",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow a problem and its solution step by step.",
+      "focus": "Oz plans to carry Dorothy over the desert in a balloon filled with hot air, and decides to go with her.",
+      "context": "Recap: the Wizard Oz turned out to be a humbug, a circus balloonist from Omaha. He gave the Scarecrow brains of bran and pins, the Tin Woodman a silk heart and the Lion a dish of courage, and they are all delighted. But he did not know how to send Dorothy home across the great desert around the Land of Oz. A cyclone is a whirling windstorm, like the one that carried Dorothy’s house to Oz.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVII, “How the Balloon was Launched,” from the three sad days to Oz asking Dorothy to help him sew; opens “For three days Dorothy heard nothing from Oz. These were sad days for the little girl,…”; closes “…\"Now, if you will help me sew the silk together, we will begin to work on our balloon.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-baum-wonderful-wizard-of-oz-1900-36",
+        "blocks": [
+          902,
+          917
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "38a1a732464bc695f410c2559b7844320104fd94694781059d66dbe7164852a1"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-35-q1",
+          "prompt": "How does each friend feel with his new gift? Find one detail for each.",
+          "facilitatorNotes": [
+            "The Scarecrow has wonderful thoughts he will not share because no one else could understand them; the Woodman feels his heart rattling and finds it kinder than his old one; the Lion says he is afraid of nothing on earth. Children may enjoy the Scarecrow’s excuse."
+          ],
+          "evidence": [
+            "he would not say what they were because he knew no one could understand them but himself",
+            "he felt his heart rattling around in his breast"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-35-q2",
+          "prompt": "Why does Oz think the way across the desert is through the air?",
+          "facilitatorNotes": [
+            "He came in a balloon, and Dorothy came in a cyclone; both arrived through the air."
+          ],
+          "evidence": [
+            "You also came through the air, being carried by a cyclone."
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-35-q3",
+          "prompt": "What problem does Oz find with his balloon, how does he solve it, and what danger is left?",
+          "facilitatorNotes": [
+            "There is no gas in the country, so he will use hot air; but if the air cools, the balloon will come down in the desert."
+          ],
+          "evidence": [
+            "if the air should get cold the balloon would come down in the desert"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-35-q4",
+          "prompt": "Why does Oz want to go too? Is he running away or going home?",
+          "facilitatorNotes": [
+            "He is tired of being a humbug, shut up in his rooms, and afraid his people will discover him; he would rather be in a circus again. Both readings fit."
+          ],
+          "evidence": [
+            "I am tired of being such a humbug",
+            "be in a circus again"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baum-wonderful-wizard-of-oz-1900-36",
+      "title": "Oz, chapter XVII, part 2: the balloon goes up",
+      "sourceId": "baum-wonderful-wizard-of-oz-1900",
+      "genre": "fantasy",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Notice how a small accident changes a whole plan.",
+      "focus": "The green balloon is filled over a fire, Toto runs off after a kitten, and the ropes break before Dorothy can climb in.",
+      "context": "Recap: Oz, the humbug Wizard, plans to fly Dorothy across the desert in a balloon filled with hot air, and to go with her, because he is tired of pretending and would like to work in a circus again. Air-tight means letting no air out.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVII, from sewing the silk to the end of the chapter; opens “So Dorothy took a needle and thread, and as fast as Oz cut the strips of silk into proper…”; closes “…many days they grieved over the loss of the Wonderful Wizard, and would not be comforted.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-baum-wonderful-wizard-of-oz-1900-35",
+        "continuesTo": null,
+        "blocks": [
+          918,
+          934
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "59d5b108dd400d06d552696ae293252e2b688fc81abd6243c11b24b0de80ab3a"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-36-q1",
+          "prompt": "What greens go into the balloon, and why?",
+          "facilitatorNotes": [
+            "Light green, dark green and emerald green, because Oz fancies matching the colour all around them, even though he knows the city’s green comes from spectacles."
+          ],
+          "evidence": [
+            "a strip of light green silk, then a strip of dark green and then a strip of emerald green"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-36-q2",
+          "prompt": "Where does Oz tell his people he is going, and whom does he leave in charge? Why are those surprising?",
+          "facilitatorNotes": [
+            "To visit “a great brother Wizard” in the clouds, which keeps up his pretending to the end, and the Scarecrow is to rule. Children may say the Scarecrow’s new brains earn it, or that Oz picks him because the people think he is wise."
+          ],
+          "evidence": [
+            "a great brother Wizard who lived in the clouds",
+            "the Scarecrow will rule over you"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-36-q3",
+          "prompt": "Why is Dorothy not in the basket when the ropes break?",
+          "facilitatorNotes": [
+            "Toto ran into the crowd to bark at a kitten, and she would not leave him behind. A dog’s chase changes everything."
+          ],
+          "evidence": [
+            "Toto had run into the crowd to bark at a kitten"
+          ]
+        },
+        {
+          "id": "reading-2-baum-wonderful-wizard-of-oz-1900-36-q4",
+          "prompt": "The people remember Oz “lovingly.” After all his tricks, were they right to miss him?",
+          "facilitatorNotes": [
+            "He built their beautiful city and was good to them, though he fooled them for years. Some children agree with the people; others think they would feel differently if they knew the truth."
+          ],
+          "evidence": [
+            "Oz was always our friend",
+            "would not be comforted"
+          ]
+        }
+      ]
     }
   ]
 }
