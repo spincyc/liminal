@@ -135,6 +135,324 @@
     },
     {
       "id": "reading-k-steel-english-fairy-tales-1922-03",
+      "title": "The Three Sillies, part 1: the mallet in the cellar",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Sillies",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a long chain of “supposing” and decide whether the danger is real.",
+      "focus": "A girl imagines a whole future just to worry about it, and her mother sits down and cries with her.",
+      "context": "This English folk tale is read over five nights. A squire is a young gentleman who owns land, and the Hall is his big house; to court someone is to visit them hoping to marry. A cellar is a cool room under the house; cider is an apple drink kept in a barrel, or cask, with a tap. A mallet is a heavy wooden hammer; a beam holds up the ceiling. “Lawks a mercy me!” means “Goodness me!” Read each “supposing” a little faster than the one before.",
+      "contentNote": "The daughter imagines a future son killed by the falling mallet; nothing happens to anyone.",
+      "excerpt": {
+        "locator": "“The Three Sillies,” from the beginning to the daughter and her mother crying together; opens “Once upon a time, when folk were not so wise as they are nowadays, there lived a farmer…”; closes “So they both sat a-crying.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-04",
+        "blocks": [
+          531,
+          541
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7eba9682e9dfe1e2e1057aec47fe7dd5e0e83bf961e03c808518ab7d5fe33be2"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-03-q1",
+          "prompt": "What does the daughter see when she looks up at the cellar ceiling?",
+          "facilitatorNotes": [
+            "A big wooden mallet stuck in a beam, all covered in cobwebs, which she had never noticed before."
+          ],
+          "evidence": [
+            "there she saw a big wooden mallet stuck in one of the beams.",
+            "It must have been there for ages and ages,"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-03-q2",
+          "prompt": "What does she imagine could happen? Count the “supposings” on your fingers.",
+          "facilitatorNotes": [
+            "That she marries the squire, they have a son, he grows up, comes down to draw cider, and the mallet falls on him. Every step is only “supposing”; none of it has happened."
+          ],
+          "evidence": [
+            "supposing the mallet were to fall on his head and kill him"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-03-q3",
+          "prompt": "Has anything bad happened yet? What is really going wrong in the cellar while they cry?",
+          "facilitatorNotes": [
+            "Nothing has happened, and the mallet has hung there for ages. Meanwhile the cider tap is still open and the cider is running all over the floor: a real mess made by worrying about a pretend one."
+          ],
+          "evidence": [
+            "the cider running all over the floor."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-04",
+      "title": "The Three Sillies, part 2: the squire’s promise",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Sillies",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Notice who joins the crying and who stops it.",
+      "focus": "The father cries too; the squire turns off the tap, pulls out the mallet, and sets himself a test before he will marry.",
+      "context": "Recap: the farmer’s daughter saw an old mallet in the cellar ceiling and cried at the thought that it might one day fall on a son she does not even have; her mother sat down and cried with her while the cider ran over the floor. “Zounds!” is an old cry of surprise; man’s estate means grown up. Sillies are foolish people.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Three Sillies,” from the farmer going down to the cellar to the squire setting off on his travels; opens “Now after a time, when they did not come back, the farmer began to wonder what had…”; closes “…again on his travels, leaving them all crying; this time because the marriage was off!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-03",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-05",
+        "blocks": [
+          542,
+          550
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9e4172bd516c075efa02f752e280b0a73ce52578bd2697afa91812b7695ef5af"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-04-q1",
+          "prompt": "Who comes down to the cellar next, and what does he do?",
+          "facilitatorNotes": [
+            "The farmer, the girl’s father. When he hears about the mallet, he sits down and cries too."
+          ],
+          "evidence": [
+            "started a-crying too."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-04-q2",
+          "prompt": "What two things does the squire do that nobody else thought of?",
+          "facilitatorNotes": [
+            "He turns off the tap, and he pulls the mallet out and puts it safely on the floor. Both take a moment; the danger is gone."
+          ],
+          "evidence": [
+            "the first thing he did was to run straight and turn off the tap.",
+            "he reached up to the old mallet and pulled it out, and put it safe on the floor."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-04-q3",
+          "prompt": "What does the squire decide to do before he will marry the daughter? Is that a fair test?",
+          "facilitatorNotes": [
+            "He will travel, and come back to marry her only if he finds three people sillier than her family. Some children will think it is unkind, since they are left crying; others will find it fair or funny. Ask what they think he will find."
+          ],
+          "evidence": [
+            "if I can find three bigger sillies than you three, then I'm come back and be married--not otherwise.",
+            "this time because the marriage was off!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-05",
+      "title": "The Three Sillies, part 3: the cow on the roof",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Sillies",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Compare the squire’s easy idea with the old woman’s plan, and predict what will go wrong.",
+      "focus": "An old woman refuses good advice, and her clever-sounding plan ends in disaster.",
+      "context": "Recap: the squire found the farmer’s family crying over trouble that might never happen. He pulled out the mallet and set off to find three bigger sillies before he would marry the daughter. A thatched roof is made of straw, and grass can grow on it. To cudgel is to beat with a stick; durst not means dared not; flustered means hot and muddled; obstinate means stubborn; coaxed and codgered mean begged and wheedled; a hullabaloo is a great noise.",
+      "contentNote": "The old woman beats her cow to make it climb. The cow falls off the roof and is strangled by the rope, and the old woman is pulled up the chimney and smothered in soot; it is told in one sentence, as a joke.",
+      "excerpt": {
+        "locator": "“The Three Sillies,” from the old woman’s cottage to the squire finding the first bigger silly; opens “Well, the young man travelled far and he travelled fast, but never did he find a bigger…”; closes “…is one bigger silly,\" quoth the young squire as he journeyed on. \"So now for two more!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-04",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-06",
+        "blocks": [
+          551,
+          557
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "325b5fa1b0ec87f1ce7e63a5af04fb2de67cd1f598446dd11babacf72cf928b7"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-05-q1",
+          "prompt": "What is the old woman trying to make her cow do?",
+          "facilitatorNotes": [
+            "Climb a ladder onto the roof to eat the grass growing there. The cow is afraid and will not go."
+          ],
+          "evidence": [
+            "cudgel her cow into going up a ladder to eat the grass."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-05-q2",
+          "prompt": "What easier way does the squire suggest, and what does the old woman answer?",
+          "facilitatorNotes": [
+            "She could climb up herself, cut the grass, and throw it down. She says a cow can cut grass for herself and tells him to mind his own business."
+          ],
+          "evidence": [
+            "It would be easier if you went up the ladder, cut the grass, and threw it down for the cow to eat.",
+            "So mind your own business, young sir."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-05-q3",
+          "prompt": "Why does the squire call her “one bigger silly” than the farmer’s family?",
+          "facilitatorNotes": [
+            "The family cried over a danger that was not real; she would not listen to good advice, and her plan for a real danger went badly wrong. Children may also say she was silly to think a rope would keep the cow safe."
+          ],
+          "evidence": [
+            "That is one bigger silly,",
+            "she can't fall off the roof without my knowing it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-06",
+      "title": "The Three Sillies, part 4: the breeches",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Sillies",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Picture a silly way of doing an everyday job, and the sensible way.",
+      "focus": "A pleasant stranger has spent years jumping into his trousers each morning, and is grateful to be shown how.",
+      "context": "Recap: the squire is travelling to find three people sillier than the farmer’s family before he will marry their daughter. He has found one: an old woman who would not listen to his advice about her cow. An inn is a place where travellers sleep; breeches are trousers that end at the knee; a tallboy is a tall chest of drawers with knobs. Foregathered means made friends. Act out the stranger’s run and jump.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Three Sillies,” from the crowded inn to the stranger learning to put on his breeches; opens “He did not find any, however, till late one night he arrived at a little inn. And the inn…”; closes “…and the stranger was ever so grateful and said he never should have thought of that way.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-05",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-07",
+        "blocks": [
+          558,
+          564
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9647be61a362f6edac7da28289ec838319e9afe70128dca13afbd4c7b983dfda"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-06-q1",
+          "prompt": "How does the stranger try to put on his breeches?",
+          "facilitatorNotes": [
+            "He hangs them on the knobs of the tallboy, runs from the other end of the room, and tries to jump into them, again and again."
+          ],
+          "evidence": [
+            "takes a little run, and tried to jump into the breeches."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-06-q2",
+          "prompt": "How long does this take him every morning?",
+          "facilitatorNotes": [
+            "The best part of an hour, and it makes him hot and sweaty."
+          ],
+          "evidence": [
+            "It takes me the best part of an hour every morning before I get them on."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-06-q3",
+          "prompt": "The squire laughs, but he also helps. Is the stranger a different kind of silly from the old woman with the cow?",
+          "facilitatorNotes": [
+            "Yes: he asks “How do you manage yours?” and is grateful to learn, while she refused help. Children may say he is still a bigger silly for never having thought of it; both are fair."
+          ],
+          "evidence": [
+            "How do you manage yours?",
+            "the stranger was ever so grateful and said he never should have thought of that way."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-07",
+      "title": "The Three Sillies, part 5: the moon in the pond",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "The Three Sillies",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Tell something real from its reflection, and hear how the story ends.",
+      "focus": "A whole village tries to rake the moon out of a pond, and the squire decides there are sillies everywhere.",
+      "context": "Recap: the squire has found two people sillier than the farmer’s family, an old woman with a cow on her roof and a man who jumped into his trousers; he needs one more before he will go back and marry the farmer’s daughter. Rakes, pitchforks and brooms are long-handled tools. “Can't ee see” is country speech for “Can’t you see”; nohow means in any way. To abuse someone roundly is to shout insults at them; to duck someone is to push them under water. If you can, show the child a reflection in a spoon or a puddle first.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Three Sillies,” from the village pond to the end of the tale; opens “\"So that,\" quoth young squire to himself, \"is a second bigger silly.\" But he travelled…”; closes “…didn't live happy ever after, that has nothing to do with the story of the three sillies.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-06",
+        "continuesTo": null,
+        "blocks": [
+          565,
+          570
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d91f75f348d862acc40baa65d84a266ebb247dba31418c30eef1b307412bae1d"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-07-q1",
+          "prompt": "What are the villagers doing at the pond, and why?",
+          "facilitatorNotes": [
+            "Raking, forking and sweeping the water, because they think the moon has fallen in and they cannot get her out."
+          ],
+          "evidence": [
+            "Can't ee see moon's fallen into the pond, an' we can't get her out nohow?"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-07-q2",
+          "prompt": "Where is the moon really? Why won’t the villagers believe the squire?",
+          "facilitatorNotes": [
+            "Up in the sky, shining broad and full; the moon in the pond is only a reflection. They will not look up, and they get angry with him instead."
+          ],
+          "evidence": [
+            "bade them look up over their heads where the moon was riding broad and full.",
+            "they wouldn't believe that what they saw in the water was only a reflection."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-07-q3",
+          "prompt": "Why does the squire go back and marry the farmer’s daughter after all? Do you like his reason?",
+          "facilitatorNotes": [
+            "He has found that there are sillies everywhere, so she is “no sillier than the rest.” Some children will find that a kind ending; others will say it is not a very loving reason, which the last line jokes about too."
+          ],
+          "evidence": [
+            "There are many more sillies in this world than I thought for;",
+            "She is no sillier than the rest."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-08",
       "title": "Titty Mouse and Tatty Mouse, part 1: the stool, the broom and the walnut tree",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Titty Mouse and Tatty Mouse",
@@ -153,7 +471,7 @@
         "locator": "“Titty Mouse and Tatty Mouse,” from the beginning to the walnut tree shedding its leaves; opens “Titty Mouse and Tatty Mouse both lived in a house.”; closes “…tree, \"I'll shed my leaves.\" So the walnut tree shed all its beautiful green leaves.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-04",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-09",
         "blocks": [
           701,
           727
@@ -164,7 +482,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-03-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-08-q1",
           "prompt": "What do Titty Mouse and Tatty Mouse both do at the start?",
           "facilitatorNotes": [
             "Everything together: they both glean, both find an ear of corn and both make a pudding. The doubled sentences set up the pattern."
@@ -175,7 +493,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-03-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-08-q2",
           "prompt": "What happens when Titty puts her pudding into the pot?",
           "facilitatorNotes": [
             "The pot tumbles over and scalds her to death, and Tatty sits down and weeps. This is the event that starts the whole chain."
@@ -185,7 +503,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-03-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-08-q3",
           "prompt": "The stool hops, the broom sweeps and the door jars. Why does each one do something?",
           "facilitatorNotes": [
             "Each hears the news from the one before and adds its own action, as if sharing Tatty’s sorrow in its own odd way. Children may find it funny that a stool hops for sadness; the story holds both the joke and the sorrow."
@@ -198,7 +516,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-04",
+      "id": "reading-k-steel-english-fairy-tales-1922-09",
       "title": "Titty Mouse and Tatty Mouse, part 2: everything comes tumbling down",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Titty Mouse and Tatty Mouse",
@@ -216,7 +534,7 @@
       "excerpt": {
         "locator": "“Titty Mouse and Tatty Mouse,” from the little bird to the end of the tale; opens “Now there was a little bird perched on one of the boughs of the tree, and when all the…”; closes “…and the broom upset the stool, and poor little Tatty Mouse was buried beneath the ruins.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-03",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-08",
         "continuesTo": null,
         "blocks": [
           728,
@@ -228,7 +546,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-04-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-09-q1",
           "prompt": "What does the little bird do, and what does the little girl do?",
           "facilitatorNotes": [
             "The bird moults all its feathers, and the girl drops her jug and spills the milk meant for supper."
@@ -239,7 +557,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-04-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-09-q2",
           "prompt": "Why is the old man cross with the little girl?",
           "facilitatorNotes": [
             "Her brothers and sisters will go without their supper. He is the first to see what a silly action costs, and then he does something sillier still."
@@ -249,7 +567,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-04-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-09-q3",
           "prompt": "The last sentence knocks everything down. What falls first, and who is under it all at the end?",
           "facilitatorNotes": [
             "The great walnut tree falls first, and then the bench, the house, the window, the door, the broom and the stool, until Tatty Mouse is buried. The fall runs back through the chain; children can name a few in order with help."
@@ -262,7 +580,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-05",
+      "id": "reading-k-steel-english-fairy-tales-1922-10",
       "title": "The Three Little Pigs, part 1: straw and furze",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Three Little Pigs",
@@ -281,7 +599,7 @@
         "locator": "“The Three Little Pigs,” from the beginning to the wolf eating the second pig; opens “Once upon a time there was an old sow who had three little pigs, and as she had not…”; closes “…and he puffed and he blew the house in. Then he ate up little piggy and went on his way.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-06",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-11",
         "blocks": [
           948,
           969
@@ -292,7 +610,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-05-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-10-q1",
           "prompt": "Why does the old sow send her pigs out into the world?",
           "facilitatorNotes": [
             "She has not enough food for them, so they must seek their fortunes."
@@ -302,7 +620,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-05-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-10-q2",
           "prompt": "Why does the man give the first little pig his straw?",
           "facilitatorNotes": [
             "Because the pig asks so politely: the man likes his good manners. The second man gives his furze for the same reason."
@@ -313,7 +631,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-05-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-10-q3",
           "prompt": "What does each pig see through the keyhole? What might the third pig see?",
           "facilitatorNotes": [
             "The first sees the wolf’s big paws and the second his great ears, so each knows it is the wolf. Ask what the third pig might see; the story answers next time."
@@ -326,7 +644,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-06",
+      "id": "reading-k-steel-english-fairy-tales-1922-11",
       "title": "The Three Little Pigs, part 2: the brick house and the turnips",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Three Little Pigs",
@@ -344,8 +662,8 @@
       "excerpt": {
         "locator": "“The Three Little Pigs,” from the third pig and the bricks to the turnip breakfast; opens “Now the third little piggy, when he started, met a man carrying a load of bricks, and,…”; closes “…to the field and come back again, and I'm having a nice potful of turnips for breakfast.\"”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-05",
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-07",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-10",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-12",
         "blocks": [
           970,
           986
@@ -356,7 +674,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-06-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-11-q1",
           "prompt": "What happens when the wolf huffs and puffs at the brick house?",
           "facilitatorNotes": [
             "He cannot blow it down and runs out of breath. The pattern of the first two houses breaks here."
@@ -366,7 +684,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-06-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-11-q2",
           "prompt": "Why does the wolf want the pig to go to the turnip field with him?",
           "facilitatorNotes": [
             "So he can catch the pig outside his strong house and eat him; the turnips are only bait."
@@ -377,7 +695,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-06-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-11-q3",
           "prompt": "How does the little pig trick the wolf?",
           "facilitatorNotes": [
             "He gets up at five, fetches the turnips and is home eating them when the wolf arrives, then calls the wolf a sluggard. Ask why the pig did not tell the wolf his plan."
@@ -390,7 +708,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-07",
+      "id": "reading-k-steel-english-fairy-tales-1922-12",
       "title": "The Three Little Pigs, part 3: the apple tree",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Three Little Pigs",
@@ -408,8 +726,8 @@
       "excerpt": {
         "locator": "“The Three Little Pigs,” from the wolf’s second offer to the pig running home with his apples; opens “Then the wolf grew red with rage; but he was determined to eat little piggy, so he said,…”; closes “…gone to pick it up, the little pig was able to jump down with his basket and run home.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-06",
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-08",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-11",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-13",
         "blocks": [
           987,
           995
@@ -420,7 +738,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-07-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-12-q1",
           "prompt": "What does the wolf offer this time, and at what time?",
           "facilitatorNotes": [
             "Apples from a tree in Merry gardens, at five o’clock the next morning."
@@ -431,7 +749,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-07-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-12-q2",
           "prompt": "Why does the wolf set out at four o’clock this time?",
           "facilitatorNotes": [
             "He was fooled once and will not be fooled again: he has learned the pig’s trick."
@@ -441,7 +759,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-07-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-12-q3",
           "prompt": "How does the pig escape from the tree?",
           "facilitatorNotes": [
             "He throws an apple far away, and while the wolf goes after it he jumps down and runs home. Ask whether this trick is cleverer than the turnip trick."
@@ -454,7 +772,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-08",
+      "id": "reading-k-steel-english-fairy-tales-1922-13",
       "title": "The Three Little Pigs, part 4: the butter-churn and the chimney",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Three Little Pigs",
@@ -472,7 +790,7 @@
       "excerpt": {
         "locator": "“The Three Little Pigs,” from the invitation to the fair to the end of the tale; opens “Well, the wolf was fair angry; but he went next day to the little piggy's house and…”; closes “So the little piggy put on the cover again, boiled the wolf up, and ate him for supper.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-07",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-12",
         "continuesTo": null,
         "blocks": [
           996,
@@ -484,7 +802,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-08-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-13-q1",
           "prompt": "What does the pig buy at the fair, and how does it save him?",
           "facilitatorNotes": [
             "A butter-churn. He hides in it, and it rolls down the hill at the wolf and frightens him away."
@@ -495,7 +813,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-08-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-13-q2",
           "prompt": "What does the wolf think the rolling churn was, and what does the pig tell him?",
           "facilitatorNotes": [
             "An awful, dreadful, terrible Thing; the pig cheerfully says it was only him. Ask why telling the truth this time makes the wolf so angry."
@@ -506,7 +824,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-08-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-13-q3",
           "prompt": "How is the pig ready when the wolf comes down the chimney?",
           "facilitatorNotes": [
             "He has a blazing fire and a big pot of water boiling, so the wolf falls in. Some children find the ending fair after all the wolf has done, and some find it too much; both can point to the story."
@@ -518,7 +836,328 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-09",
+      "id": "reading-k-steel-english-fairy-tales-1922-14",
+      "title": "Mr. and Mrs. Vinegar, part 1: the broken pickle-jar",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Mr. and Mrs. Vinegar",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Meet two characters who meet the same accident in opposite ways.",
+      "focus": "Mrs. Vinegar breaks their pickle-jar house and cries; cheerful Mr. Vinegar decides they will seek their fortune, carrying the door.",
+      "context": "This English folk tale is read over five nights. Vinegar is a sour liquid used to pickle vegetables, so a pickle-jar is just the right house for the Vinegars. Snug means cosy; to till a garden is to dig it; clean as a new pin means spotless. Mettle means spirit; to seek your fortune is to go out looking for a way to get rich; quoth means said; trudged means walked heavily.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Mr. and Mrs. Vinegar,” from the beginning to the couple setting out with their door; opens “Mr. and Mrs. Vinegar, a worthy couple, lived in a glass pickle-jar. The house, though…”; closes “…to seek fortune, Mr. Vinegar bearing the door on his back like a snail carries its house.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-15",
+        "blocks": [
+          1088,
+          1094
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c576843bb298be4107a0c029c921833ced46f850a74a70719c6f2493910f3d19"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-14-q1",
+          "prompt": "How does the pickle-jar house get broken?",
+          "facilitatorNotes": [
+            "Mrs. Vinegar loses her temper with a cobweb and sweeps so hard that the broom handle goes right through the glass."
+          ],
+          "evidence": [
+            "she lost her temper with a cobweb",
+            "the broom-handle went right through the glass"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-14-q2",
+          "prompt": "How does Mrs. Vinegar feel about it, and how does Mr. Vinegar feel? What does he say?",
+          "facilitatorNotes": [
+            "She cries bitterly; he stays cheerful and says, “Accidents will happen, lovey!” and that they can buy another jar if they find money."
+          ],
+          "evidence": [
+            "And with that she fell to crying bitterly.",
+            "Accidents will happen, lovey!"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-14-q3",
+          "prompt": "Mr. Vinegar takes the door so that nobody can open it. Is that a clever idea? Why does Mrs. Vinegar say nothing?",
+          "facilitatorNotes": [
+            "It is silly, because there is no house left behind the door to keep anyone out of. She cannot see how it helps but keeps quiet. Some children may guess the door will be useful later; the next night shows whether they are right."
+          ],
+          "evidence": [
+            "Then no one will be able to open it, will they?",
+            "Mrs. Vinegar did not quite see how this fact would mend matters"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-15",
+      "title": "Mr. and Mrs. Vinegar, part 2: the robbers under the tree",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Mr. and Mrs. Vinegar",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a frightening night that ends in luck nobody planned.",
+      "focus": "Mr. Vinegar’s trembling shakes the door, with his sleeping wife on it, down onto a band of robbers, who run off and leave their gold.",
+      "context": "Recap: Mrs. Vinegar broke the pickle-jar the Vinegars lived in, and cheerful Mr. Vinegar said they would go out and seek their fortune; he carried their door on his back. A brass farthing is a tiny coin; the fork of a tree is where a branch splits; spoils and booty are stolen goods; an aspen is a tree whose leaves tremble in the lightest breeze; to parcel out is to share out. Guineas are gold coins. Whisper the robbers’ part.",
+      "contentNote": "The door falls on a band of robbers; in the morning one is found “squashed flat as a pancake,” told as a joke.",
+      "excerpt": {
+        "locator": "“Mr. and Mrs. Vinegar,” from the night in the forest to the forty golden guineas; opens “Well, they walked all day long, but not a brass farthing did they make, and when night…”; closes “My goodness! How Mr. and Mrs. Vinegar jumped for joy!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-14",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-16",
+        "blocks": [
+          1095,
+          1107
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "09addad3975f22f4d47728b5f4505bf5ba2bd621b4caf7beef61a7b48fc67eba"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-15-q1",
+          "prompt": "Where do the Vinegars sleep in the forest?",
+          "facilitatorNotes": [
+            "Up a tree, on the door, which Mr. Vinegar fixes in a fork of the branches so his wife will be safe from wild beasts."
+          ],
+          "evidence": [
+            "fix the door firmly in a fork"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-15-q2",
+          "prompt": "Mr. Vinegar whispers, “It is only the wind in the trees.” Is that true? What is really shaking the door?",
+          "facilitatorNotes": [
+            "No. He is trembling with fear as he listens to the robbers below, though he does not want his wife to know."
+          ],
+          "evidence": [
+            "It is only the wind in the trees.",
+            "he was not really very brave inside"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-15-q3",
+          "prompt": "How did the Vinegars get their gold: by bravery, by cleverness, or by luck?",
+          "facilitatorNotes": [
+            "Mostly luck: his shaking knocked the door down, and the robbers thought the sky had fallen and ran. Some children may give him credit for the door idea; the tale lets them argue."
+          ],
+          "evidence": [
+            "they thought the sky had fallen",
+            "forty golden guineas all scattered about!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-16",
+      "title": "Mr. and Mrs. Vinegar, part 3: the red cow",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Mr. and Mrs. Vinegar",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen for a good plan, and for the moment it starts to go wrong.",
+      "focus": "Mrs. Vinegar sends her husband to buy a cow, and he pays everything he has for the first one he sees.",
+      "context": "Recap: the Vinegars lost their pickle-jar house and spent a night in a tree; by luck their door fell on a band of robbers, who ran off and left forty golden guineas. A market-town is a town where people buy and sell animals and goods. “Money makes the mare to go” is an old saying: money gets things done. A bargain is a good buy; a simpleton is someone easily fooled; proud as Punch means very pleased with yourself.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Mr. and Mrs. Vinegar,” from Mrs. Vinegar’s plan to Mr. Vinegar leading off the cow; opens “\"Now, Vinegar!\" said his wife when they had gathered up all the gold pieces, \"I will tell…”; closes “…cow, marching her up and down the market, much against her will, to show off his bargain.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-15",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-17",
+        "blocks": [
+          1108,
+          1117
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6031f94738753ff7604ad912a395e05cdf6c130ead87b78807cea78f4159f55b"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-16-q1",
+          "prompt": "Why does Mrs. Vinegar want a cow instead of keeping the money?",
+          "facilitatorNotes": [
+            "Money gets spent, but a cow stays and gives milk and butter they can sell, so they will live in comfort."
+          ],
+          "evidence": [
+            "Now a cow won't run away, but will give us milk and butter, which we can sell."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-16-q2",
+          "prompt": "Mr. Vinegar says he always makes good bargains. Which two does he name?",
+          "facilitatorNotes": [
+            "Marrying such a clever wife, and shaking her down from the tree onto the robbers. He ends, “I am the happiest man alive!”"
+          ],
+          "evidence": [
+            "I made a better one when I shook her down from the tree.",
+            "I am the happiest man alive!"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-16-q3",
+          "prompt": "How much does Mr. Vinegar pay for the cow? Was it a good bargain? How do you know?",
+          "facilitatorNotes": [
+            "Everything in his pocket, all forty guineas. The owner asks that much because he sees Mr. Vinegar is a simpleton, so it was not a good bargain. Some children may say he got what he wanted; ask what Mrs. Vinegar would say."
+          ],
+          "evidence": [
+            "What you've got in your pocket.",
+            "seeing he was a simpleton"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-17",
+      "title": "Mr. and Mrs. Vinegar, part 4: bagpipes and gloves",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Mr. and Mrs. Vinegar",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a chain of swaps and keep track of what Mr. Vinegar has after each one.",
+      "focus": "Each time Mr. Vinegar sees something new, he swaps what he has for it, sure that it will make him the happiest man alive.",
+      "context": "Recap: the Vinegars found forty gold guineas, and Mrs. Vinegar sent her husband to market to buy a cow. He paid all forty for an old red cow. Bagpipes are played by blowing into a bag and fingering holes in the pipes; they are hard to play. A livelihood is a way of earning a living; churning is shaking cream until it becomes butter; hootings and peltings are jeers and things thrown.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Mr. and Mrs. Vinegar,” from the bagpiper in the market to Mr. Vinegar setting off home with the gloves; opens “Now, as he drove it about, proud as Punch, he noticed a man who was playing the bagpipes.…”; closes “…pleased with himself. \"Warm hands, warm heart!\" he thought. \"I'm the happiest man alive!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-16",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-18",
+        "blocks": [
+          1118,
+          1129
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "42bc5de27052ffae8fc51f74c83b14ccf6016d73504766628b0e4928e0835575"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-17-q1",
+          "prompt": "Why does Mr. Vinegar want the bagpipes?",
+          "facilitatorNotes": [
+            "The piper has children dancing after him and pennies showering into his cap; Mr. Vinegar thinks that is easier than feeding and milking a cow."
+          ],
+          "evidence": [
+            "a perfect shower of pennies fell into his cap",
+            "That is an easier way of earning a livelihood than by driving about a beast of a cow!"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-17-q2",
+          "prompt": "What happens when Mr. Vinegar tries to play?",
+          "facilitatorNotes": [
+            "At first no sound at all, then a terrible squeal that sends the children running and makes people cover their ears. He earns nothing."
+          ],
+          "evidence": [
+            "such a terrific squeal and screech that all the children ran away frightened"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-17-q3",
+          "prompt": "What does Mr. Vinegar say each time he wants something new? Does it come true?",
+          "facilitatorNotes": [
+            "That he would be the happiest man alive if he had it. He is happy for a moment after each swap, but each one leaves him with something worth less. Some children may admire how cheerful he stays."
+          ],
+          "evidence": [
+            "I should be the happiest man alive if I had those bagpipes!",
+            "I'm the happiest man alive!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-18",
+      "title": "Mr. and Mrs. Vinegar, part 5: the magpie",
+      "sourceId": "steel-english-fairy-tales-1922",
+      "workTitle": "Mr. and Mrs. Vinegar",
+      "genre": "narrative",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear all of Mr. Vinegar’s bargains added up, and decide what he has learned.",
+      "focus": "A laughing magpie tells Mr. Vinegar the truth, and he goes home with nothing at all.",
+      "context": "Recap: Mr. Vinegar went to market with forty gold guineas. He paid them all for a cow, swapped the cow for bagpipes he could not play, and the bagpipes for a pair of warm gloves. A stout stick is a strong walking stick; a magpie is a black-and-white bird with a loud, chattering call; forsooth means truly; a blockhead is a foolish person; guffaws are loud laughs. To turn over a new leaf is to start again and do better; a housemaid is paid to clean a house.",
+      "contentNote": "When Mr. Vinegar comes home with nothing, his wife beats him; it is told in one sentence as part of the joke, and he says she nearly broke every bone in his body.",
+      "excerpt": {
+        "locator": "“Mr. and Mrs. Vinegar,” from the man with the stick to the end of the tale; opens “But as he trudged he grew very, very tired, and at last began to limp. Then he saw a man…”; closes “And that is the story of Mr. and Mrs. Vinegar.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-17",
+        "continuesTo": null,
+        "blocks": [
+          1130,
+          1139
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f070331de6028e671c9c311815cad26e6b712c1db3bd6d153226f4882f72e78f"
+      },
+      "questions": [
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-18-q1",
+          "prompt": "What does Mr. Vinegar swap his gloves for, and why?",
+          "facilitatorNotes": [
+            "A stick, because he is tired and limping and thinks warm hands are no use if his feet ache."
+          ],
+          "evidence": [
+            "What is the use of warm hands if your feet ache!"
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-18-q2",
+          "prompt": "The magpie counts up all his bargains. Tell them in order, from the forty guineas to the stick.",
+          "facilitatorNotes": [
+            "Forty guineas for a cow, the cow for bagpipes, the bagpipes for gloves, the gloves for a stick, and then the stick is lost in a tree. Children can count on their fingers."
+          ],
+          "evidence": [
+            "You bought a cow for forty guineas when she wasn't worth ten,",
+            "and the pair of gloves for a miserable stick."
+          ]
+        },
+        {
+          "id": "reading-k-steel-english-fairy-tales-1922-18-q3",
+          "prompt": "At the end Mr. Vinegar says almost what he said at the very beginning: there are good jars in the shop. Has he changed, or not?",
+          "facilitatorNotes": [
+            "He is still cheerful and ready to start again, so in one way he has not changed. But this time he plans to work as a gardener to earn the money, which may show he has learned something. Children may argue either way."
+          ],
+          "evidence": [
+            "I think we had better turn over a new leaf and begin afresh.",
+            "There are as good ones in the shop as ever came out of it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-steel-english-fairy-tales-1922-19",
       "title": "Henny-Penny, part 1: the sky is falling",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Henny-Penny",
@@ -537,7 +1176,7 @@
         "locator": "“Henny-Penny,” from the beginning to Turkey-lurkey joining the others; opens “One day Henny-penny was picking up corn in the rickyard when--whack!--an acorn hit her…”; closes “…Goosey-poosey, and Turkey-lurkey all went to tell the King the sky was a-falling.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-10",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-20",
         "blocks": [
           1184,
           1188
@@ -548,7 +1187,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-09-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-19-q1",
           "prompt": "What really hits Henny-penny on the head, and what does she think it means?",
           "facilitatorNotes": [
             "An acorn; she thinks the sky is falling and sets off to tell the King."
@@ -559,7 +1198,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-09-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-19-q2",
           "prompt": "Who joins Henny-penny on the road? Can you say them in order?",
           "facilitatorNotes": [
             "Cocky-locky, Ducky-daddles, Goosey-poosey and Turkey-lurkey. Help with the first sounds if needed."
@@ -570,7 +1209,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-09-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-19-q3",
           "prompt": "Does anyone ask Henny-penny how she knows the sky is falling? Why might that matter?",
           "facilitatorNotes": [
             "No one asks; each just asks to come along. If someone had asked, they might have found the acorn. Children may say the birds trusted their friend, which is also true."
@@ -583,7 +1222,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-10",
+      "id": "reading-k-steel-english-fairy-tales-1922-20",
       "title": "Henny-Penny, part 2: Foxy-woxy’s short cut",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Henny-Penny",
@@ -601,7 +1240,7 @@
       "excerpt": {
         "locator": "“Henny-Penny,” from meeting Foxy-woxy to the end of the tale; opens “So they went along, and they went along, and they went along, till they met Foxy-woxy,…”; closes “…bustled off to her nest; so she escaped, but she never told the King the sky was falling!”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-09",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-19",
         "continuesTo": null,
         "blocks": [
           1189,
@@ -613,7 +1252,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-10-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-20-q1",
           "prompt": "What does Foxy-woxy offer to do, and where does his “short cut” really lead?",
           "facilitatorNotes": [
             "He offers to show the proper way to the King, but the dark hole is the door of his own burrow."
@@ -624,7 +1263,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-10-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-20-q2",
           "prompt": "Why does Henny-penny turn round and go home?",
           "facilitatorNotes": [
             "She hears Cocky-locky crow and thinks it is dawn, time to lay her egg. She escapes by luck, not because she saw the danger."
@@ -634,7 +1273,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-10-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-20-q3",
           "prompt": "Did Henny-penny ever tell the King? What do you think this story teaches?",
           "facilitatorNotes": [
             "No. One lesson: check before believing something big, and be careful of strangers who offer help. Children may find other lessons; ask which bird they would warn, and what they would say."
@@ -646,7 +1285,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-11",
+      "id": "reading-k-steel-english-fairy-tales-1922-21",
       "title": "The Wee Bannock, part 1: away it trundles",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Wee Bannock",
@@ -665,7 +1304,7 @@
         "locator": "“The Wee Bannock,” from the beginning to the old wife giving up the chase; opens “Once upon a time there was an old man and his old wife who lived in a wee cottage beside…”; closes “…out of sight, and the old wife was obliged to go back and tussle with the kittens again.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-12",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-22",
         "blocks": [
           1377,
           1378
@@ -676,7 +1315,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-11-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-21-q1",
           "prompt": "Who looks after what in the old couple’s cottage?",
           "facilitatorNotes": [
             "The old man looks after the cows, the cock the hens, the cat a mouse, and the kittens “look after” the old wife’s spindle, which really means they play with it. Children may enjoy the joke."
@@ -687,7 +1326,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-11-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-21-q2",
           "prompt": "Why does the second bannock run away?",
           "facilitatorNotes": [
             "The old man took a bite out of the first one, so the other decided it was time to be off."
@@ -698,7 +1337,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-11-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-21-q3",
           "prompt": "Can the old wife catch it? What do you think will happen to the bannock next?",
           "facilitatorNotes": [
             "No: it rolls faster than she can run, so she goes back to the kittens. Let children guess where it goes; the next night tells."
@@ -710,7 +1349,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-12",
+      "id": "reading-k-steel-english-fairy-tales-1922-22",
       "title": "The Wee Bannock, part 2: the tailors and the weaver",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Wee Bannock",
@@ -728,8 +1367,8 @@
       "excerpt": {
         "locator": "“The Wee Bannock,” from the tailors’ house to the weaver’s door; opens “The wee bannock meanwhile trundled gaily down the hill till it came to a big thatched…”; closes “…was out at the door, trundling away over the hill like a new tarred sheep or a mad cow!”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-11",
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-13",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-21",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-23",
         "blocks": [
           1379,
           1388
@@ -740,7 +1379,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-12-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-22-q1",
           "prompt": "What do the tailors do when the bannock rolls in?",
           "facilitatorNotes": [
             "They are dreadfully afraid and jump up to hide behind the goodwife. Ask why grown men would fear a little oatcake; the story is teasing them."
@@ -750,7 +1389,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-12-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-22-q2",
           "prompt": "What do the tailors and the goodwife throw at the bannock? Does anything work?",
           "facilitatorNotes": [
             "The iron, the ironing-board and the carders, and nothing hits it; it dodges out of the door."
@@ -761,7 +1400,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-12-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-22-q3",
           "prompt": "Why does the weaver want the bannock so much, and how does it get away?",
           "facilitatorNotes": [
             "His porridge was thin this morning, so he is hungry. While his wife reaches and he shouts, the bannock dodges and races off over the hill “like a mad cow.”"
@@ -774,7 +1413,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-13",
+      "id": "reading-k-steel-english-fairy-tales-1922-23",
       "title": "The Wee Bannock, part 3: the churn, the miller and the smith",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Wee Bannock",
@@ -792,8 +1431,8 @@
       "excerpt": {
         "locator": "“The Wee Bannock,” from the cowherd’s house to the smithy; opens “And it trundled away till it came to a cowherd's house where the goodwife was churning…”; closes “…out flax and combing it. So it ran into the fireside and began to toast itself again.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-12",
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-14",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-22",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-24",
         "blocks": [
           1389,
           1395
@@ -804,7 +1443,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-13-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-23-q1",
           "prompt": "What happens to the cowherd’s wife and her churn?",
           "facilitatorNotes": [
             "Trying to grab the bannock, she knocks the churn over, and while she sets it straight the bannock rolls away."
@@ -814,7 +1453,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-13-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-23-q2",
           "prompt": "The miller and the smith both tap their fat stomachs. What kind of “lodging” do they mean?",
           "facilitatorNotes": [
             "Inside their stomachs: they mean to eat the bannock, with cheese or with ale. The stomach-tapping gives the joke away."
@@ -825,7 +1464,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-13-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-23-q3",
           "prompt": "Why doesn’t the bannock trust them, and how does it escape the smith?",
           "facilitatorNotes": [
             "It guesses they want to eat it, so it runs. The smith chases it and throws his hammer, but misses."
@@ -838,7 +1477,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-14",
+      "id": "reading-k-steel-english-fairy-tales-1922-24",
       "title": "The Wee Bannock, part 4: halves, soup and a shut door",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Wee Bannock",
@@ -856,8 +1495,8 @@
       "excerpt": {
         "locator": "“The Wee Bannock,” from the flax-combers’ farm to the house at supper; opens “\"Janet,\" says the goodman, \"yon is a well-toasted wee bannock. I'll have the half of it.\"”; closes “…his best hat, the wee bannock was too clever for them, and was out of sight in a crack.”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-13",
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-15",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-23",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-25",
         "blocks": [
           1396,
           1405
@@ -868,7 +1507,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-14-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-24-q1",
           "prompt": "How do the farmer and his wife plan to share the bannock?",
           "facilitatorNotes": [
             "Half each. But the bannock dodges, and the flax comb she throws misses."
@@ -879,7 +1518,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-14-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-24-q2",
           "prompt": "What goes wrong in the house where the soup is cooking?",
           "facilitatorNotes": [
             "The chair tips over, the goodman falls among the thorns, and the hot soup from the spoon spills on him; the bannock runs out."
@@ -890,7 +1529,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-14-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-24-q3",
           "prompt": "At supper, the cautious goodman wants to shut the door first. Is that a good plan? Why does it fail?",
           "facilitatorNotes": [
             "It is the cleverest plan so far, but he says it aloud: the bannock hears him and is off before the door is shut. Children may say he should have shut it quietly."
@@ -903,7 +1542,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-15",
+      "id": "reading-k-steel-english-fairy-tales-1922-25",
       "title": "The Wee Bannock, part 5: the breeches and the fox",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "The Wee Bannock",
@@ -921,7 +1560,7 @@
       "excerpt": {
         "locator": "“The Wee Bannock,” from the house at bedtime to the end of the tale; opens “Then away it trundled till it came to a house where the folk were just away to their…”; closes “…two! For he snapped the wee bannock into halves with one bite. So that was an end of it!”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-14",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-24",
         "continuesTo": null,
         "blocks": [
           1406,
@@ -933,7 +1572,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-15-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-25-q1",
           "prompt": "What does the goodman throw at the bannock, and what happens?",
           "facilitatorNotes": [
             "His breeches. The bannock wriggles out, and he chases it without them over the park and through the bushes, then comes back scratched and shivering."
@@ -944,7 +1583,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-15-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-25-q2",
           "prompt": "Where does the bannock go when it is too dark to see?",
           "facilitatorNotes": [
             "Into a fox’s hole in a big whinbush, to spend the night."
@@ -954,7 +1593,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-15-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-25-q3",
           "prompt": "The fox says, “I wish there were two of you!” What does he mean, and how does the story end?",
           "facilitatorNotes": [
             "He has had no food for three days and wishes there were more to eat. He bites the bannock in half, so “there were two!” Children may feel sorry for the bannock, or say it should not have trusted a friendly welcome after running from everyone else."
@@ -967,7 +1606,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-16",
+      "id": "reading-k-steel-english-fairy-tales-1922-26",
       "title": "How Jack Went Out to Seek His Fortune, part 1: the more the merrier",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "How Jack Went Out to Seek His Fortune",
@@ -986,7 +1625,7 @@
         "locator": "“How Jack Went Out to Seek His Fortune,” from the beginning to the robbers running away; opens “Once on a time there was a boy named Jack, and one morning he started to go and seek his…”; closes “…laugh, Jack and his companions went in and took possession of the house and the gold.”.",
         "isCompleteWork": false,
         "continuesFrom": null,
-        "continuesTo": "reading-k-steel-english-fairy-tales-1922-17",
+        "continuesTo": "reading-k-steel-english-fairy-tales-1922-27",
         "blocks": [
           1418,
           1451
@@ -997,7 +1636,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-16-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-26-q1",
           "prompt": "Which animals join Jack, in order?",
           "facilitatorNotes": [
             "A cat, a dog, a goat, a bull and a rooster. The child can count them on their fingers."
@@ -1007,7 +1646,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-16-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-26-q2",
           "prompt": "What does Jack see through the window?",
           "facilitatorNotes": [
             "A band of robbers at a table counting great bags of gold."
@@ -1017,7 +1656,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-16-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-26-q3",
           "prompt": "How do Jack and the animals get the robbers out of the house? Why does it work?",
           "facilitatorNotes": [
             "At Jack’s word they all make as much noise as they can, each in its own way, and the robbers run off in fright, perhaps thinking something huge is coming. Make the noises together."
@@ -1030,7 +1669,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-17",
+      "id": "reading-k-steel-english-fairy-tales-1922-27",
       "title": "How Jack Went Out to Seek His Fortune, part 2: the robber’s fearsome tale",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "How Jack Went Out to Seek His Fortune",
@@ -1048,7 +1687,7 @@
       "excerpt": {
         "locator": "“How Jack Went Out to Seek His Fortune,” from bedtime in the robbers’ house to the end of the tale; opens “Now Jack was a wise boy, and he knew that the robbers would come back in the dead of the…”; closes “\" Cock-a-doodle-do, Cook him in a stew!\"”.",
         "isCompleteWork": false,
-        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-16",
+        "continuesFrom": "reading-k-steel-english-fairy-tales-1922-26",
         "continuesTo": null,
         "blocks": [
           1452,
@@ -1060,7 +1699,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-17-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-27-q1",
           "prompt": "Where does Jack put each animal before he goes to bed?",
           "facilitatorNotes": [
             "The cat in the rocking-chair, the dog under the table, the goat upstairs, the bull in the cellar, and the rooster on the roof."
@@ -1071,7 +1710,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-17-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-27-q2",
           "prompt": "The robber says an old woman stuck knitting-needles into him. Who was it really?",
           "facilitatorNotes": [
             "The cat, scratching him with her claws. The child can match the others too: the shoemaker was the dog, the thresher the goat, the woodchopper the bull."
@@ -1082,7 +1721,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-17-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-27-q3",
           "prompt": "What does the robber think the rooster was shouting? Why does Jack give the rooster a coin to carry in its beak?",
           "facilitatorNotes": [
             "“Cook him in a stew!” when the rooster was only crowing “cock-a-doodle-do.” Jack gives it a gold coin to hold so that it cannot crow all the way home. Children may enjoy saying the two sounds one after the other."
@@ -1095,7 +1734,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-18",
+      "id": "reading-k-steel-english-fairy-tales-1922-28",
       "title": "The Wise Men of Gotham: Of Buying of Sheep",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Of Buying of Sheep",
@@ -1125,7 +1764,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-18-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-28-q1",
           "prompt": "Where do the two men meet, and what do they quarrel about?",
           "facilitatorNotes": [
             "On Nottingham bridge, about whether the sheep one of them means to buy may cross it."
@@ -1136,7 +1775,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-18-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-28-q2",
           "prompt": "How many sheep are really on the bridge?",
           "facilitatorNotes": [
             "None. The men beat their sticks as if a hundred sheep were there; ask the child to listen for the words that show it."
@@ -1146,7 +1785,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-18-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-28-q3",
           "prompt": "Why does the third man shake his meal into the river? Was he the wisest of the three?",
           "facilitatorNotes": [
             "To show that their heads hold as little sense as his empty sack holds meal. The story asks us to judge: he threw away his own meal to make his point, so a child who calls him foolish too has a fair reason."
@@ -1159,7 +1798,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-19",
+      "id": "reading-k-steel-english-fairy-tales-1922-29",
       "title": "The Wise Men of Gotham: Of Hedging a Cuckoo",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Of Hedging a Cuckoo",
@@ -1189,7 +1828,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-19-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-29-q1",
           "prompt": "Why do the men of Gotham want to keep the cuckoo?",
           "facilitatorNotes": [
             "So that she will sing all through the year, and spring will seem to last."
@@ -1199,7 +1838,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-19-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-29-q2",
           "prompt": "What do they build to keep her in?",
           "facilitatorNotes": [
             "A round hedge in the middle of their town."
@@ -1209,7 +1848,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-19-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-29-q3",
           "prompt": "The men say their hedge was not high enough. What was their real mistake?",
           "facilitatorNotes": [
             "A bird can fly over any hedge, and the cuckoo leaves with the season anyway. Some children will say a roof was needed; ask whether even a cage could keep the spring."
@@ -1222,7 +1861,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-20",
+      "id": "reading-k-steel-english-fairy-tales-1922-30",
       "title": "The Wise Men of Gotham: Of Drowning Eels",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Of Drowning Eels",
@@ -1252,7 +1891,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-20-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-30-q1",
           "prompt": "What do the men put into their pond, and what do they hope will happen?",
           "facilitatorNotes": [
             "Their salted fish, hoping it will breed so they can eat like lords next year. Ask whether dead, salted fish can have babies."
@@ -1263,7 +1902,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-20-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-30-q2",
           "prompt": "What do they find in the pond the next year, and who do they blame?",
           "facilitatorNotes": [
             "Only a great eel, and they blame it for eating all their fish."
@@ -1274,7 +1913,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-20-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-30-q3",
           "prompt": "How do they punish the eel? Why is that silly?",
           "facilitatorNotes": [
             "They put it in another pond to drown. An eel is a fish and lives in water, so they have really set it free. Children who see the joke can explain it in their own words."
@@ -1287,7 +1926,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-21",
+      "id": "reading-k-steel-english-fairy-tales-1922-31",
       "title": "The Wise Men of Gotham: Of Sending Rent",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Of Sending Rent",
@@ -1317,7 +1956,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-21-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-31-q1",
           "prompt": "What have the men of Gotham forgotten to do?",
           "facilitatorNotes": [
             "Pay their landlord his rent, and pay-day is tomorrow."
@@ -1327,7 +1966,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-21-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-31-q2",
           "prompt": "Who do they choose to carry the money, and why?",
           "facilitatorNotes": [
             "A hare one of them has caught, because it is a fast runner. They tie the purse and letter round its neck."
@@ -1337,7 +1976,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-21-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-31-q3",
           "prompt": "When the hare runs off another way, what do the men say? Will the landlord get his money?",
           "facilitatorNotes": [
             "They say it knows a nearer way, and that it keeps off the highway for fear of dogs. Almost certainly the hare has run home to the fields with the money. Children may also notice the men cannot decide whether the hare is “he” or “she.”"
@@ -1350,7 +1989,7 @@
       ]
     },
     {
-      "id": "reading-k-steel-english-fairy-tales-1922-22",
+      "id": "reading-k-steel-english-fairy-tales-1922-32",
       "title": "The Wise Men of Gotham: Of Counting",
       "sourceId": "steel-english-fairy-tales-1922",
       "workTitle": "Of Counting",
@@ -1380,7 +2019,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-22-q1",
+          "id": "reading-k-steel-english-fairy-tales-1922-32-q1",
           "prompt": "How many men went fishing, and how many does each man count?",
           "facilitatorNotes": [
             "Twelve went fishing, but each man counts eleven."
@@ -1391,7 +2030,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-22-q2",
+          "id": "reading-k-steel-english-fairy-tales-1922-32-q2",
           "prompt": "Why does each man count only eleven?",
           "facilitatorNotes": [
             "He never counts himself. Try it with toys, then ask the child who was left out."
@@ -1401,7 +2040,7 @@
           ]
         },
         {
-          "id": "reading-k-steel-english-fairy-tales-1922-22-q3",
+          "id": "reading-k-steel-english-fairy-tales-1922-32-q3",
           "prompt": "How does the courtier find the twelfth man? Was he being kind?",
           "facilitatorNotes": [
             "He whacks each man as he counts, ending with “Here is the twelfth man.” He solves the puzzle, but he hurts them and takes all their money, and they thank him anyway. Children may call him clever or a bully; both can use the story."
