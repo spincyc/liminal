@@ -361,6 +361,508 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-06",
+      "title": "The Search for a Good Child — Part 1: Five knights and Florimond",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 5,
+        "totalMinutes": 13
+      },
+      "challenge": "Remember each knight’s name and what it means, and listen for what the knights care about most.",
+      "focus": "A king sends five good knights to find a good child, and the first “wonderful” child they meet is not one.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. Knights were soldiers on horseback who served a king and promised to be brave and good. A king’s court is the place where he lives with his helpers. Plumes are feathers on helmets, and to draw rein is to stop a horse. A baron and baroness are a lord and lady who own a castle. Pure means good and clean in heart, and true means honest and loyal.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Search for a Good Child,” from the start of the story, after the motto for the mother, to the knights leaving the Baron’s castle; opens “Long, long ago there lived, in a kingdom far away, five knights who were so good and so…”; closes “…when they left him; but the knights did not care to stay with a child who was not good.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-lindsay-mother-stories-1928-07",
+        "blocks": [
+          471,
+          489
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8b87a4195c0eda06468f22ab5e889d01007504abfaa93d441a1a74ed790017c"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-06-q1",
+          "prompt": "What are the five knights called, and what does each name tell you?",
+          "facilitatorNotes": [
+            "Brian the Brave, Gerald the Glad, Kenneth the Kind, Percival the Pure and Tristram the True. Each name tells his best quality. Help the child hear that each name begins with the same sound twice."
+          ],
+          "evidence": [
+            "each one was known by a name that meant something beautiful"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-06-q2",
+          "prompt": "What kind of child does the king want, and why?",
+          "facilitatorNotes": [
+            "A good child, to live at court and learn to be a knight; he says a good child is worth more than a kingdom. Notice “if he will come willingly.”"
+          ],
+          "evidence": [
+            "Only a good child can be chosen. A good child is worth more than a kingdom."
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-06-q3",
+          "prompt": "Many parents send messages praising their children. Why don’t the knights hurry to see them?",
+          "facilitatorNotes": [
+            "The parents say their sons are beautiful or smart, but the knights care only whether a child is good."
+          ],
+          "evidence": [
+            "as the knights cared nothing for a child who was not good"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-06-q4",
+          "prompt": "Puff says Florimond is the most wonderful child in the world. What do the knights find out, and why do they leave?",
+          "facilitatorNotes": [
+            "He is merry at first, but next morning he roars “Boo-hoo-hoo-hoo” because it is raining and he wants to play outdoors, and nobody can quiet him. Being handsome and clever is not the same as being good. Some children may feel a little sorry for him; ask whether everyone has bad mornings."
+          ],
+          "evidence": [
+            "because the rain was coming down, when he wanted to play out of doors!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-07",
+      "title": "The Search for a Good Child — Part 2: Little Gauvain",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Watch what little Gauvain does before he helps the knight, and why.",
+      "focus": "Sir Tristram meets a boy who keeps his promises, and sees what kind of child he is at home.",
+      "context": "Recap: an old king sent five knights, Brian the Brave, Gerald the Glad, Kenneth the Kind, Percival the Pure and Tristram the True, to find a good child to bring up at his court. Their first visit, to a rich boy named Florimond, ended when he screamed because it was raining. “Greeting to you” means hello. A comrade is a friend who shares your work. A fawn is a young deer.",
+      "contentNote": "Gauvain’s father died fighting in the king’s wars when Gauvain was a baby.",
+      "excerpt": {
+        "locator": "“The Search for a Good Child,” from the knights parting at the oak tree to Sir Tristram’s night at Gauvain’s home; opens “The knights began to think that their mission was a difficult one; but they rode on,…”; closes “…scarcely wait for the time to come when he should meet his comrades under the oak tree.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-lindsay-mother-stories-1928-06",
+        "continuesTo": "reading-1-lindsay-mother-stories-1928-08",
+        "blocks": [
+          490,
+          508
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3ac24ff12ac9ca7c830d20df7c1801a37451882bd6a5201d8aec38064a676ac5"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-07-q1",
+          "prompt": "What do the knights ask at every house, and how does their search go?",
+          "facilitatorNotes": [
+            "“Is there a good boy here?” They are disappointed many times, so at last they part to search alone."
+          ],
+          "evidence": [
+            "Is there a good boy here?"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-07-q2",
+          "prompt": "Gauvain wants to help the knight. Why does he make him wait first?",
+          "facilitatorNotes": [
+            "He promised to bring sticks and water to Granny Slowsteps before sunset, and he keeps his promise though he would rather help the knight."
+          ],
+          "evidence": [
+            "for I promised to be there before the setting of the sun"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-07-q3",
+          "prompt": "How do the animals and Gauvain’s mother greet him when he comes home? What does that tell you?",
+          "facilitatorNotes": [
+            "The dog runs out, the cat rubs against him, and his mother calls him her sunbeam. He is loved at home, and he loves them back."
+          ],
+          "evidence": [
+            "Is that my sunbeam coming home to roost?"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-07-q4",
+          "prompt": "What does Sir Tristram notice about Gauvain at home? Which of these things would be hardest for you?",
+          "facilitatorNotes": [
+            "He comes when called, feeds the cat and dog after his own supper, and goes to bed without fretting even while the knight is telling of lions and battles. Many children will say going to bed in the middle of a lion story is hardest. Ask why such small things show goodness."
+          ],
+          "evidence": [
+            "went to bed when he was told, without fretting"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-08",
+      "title": "The Search for a Good Child — Part 3: Gauvain the Good",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 5,
+        "totalMinutes": 13
+      },
+      "challenge": "Listen to each knight’s story and work out who the child is before the knights do.",
+      "focus": "Five knights have found the same good child, and his mother’s answer surprises them.",
+      "context": "Recap: an old king sent five knights to find a good child to bring up at his court. Sir Tristram the True spent a night at the home of little Gauvain, who kept his promise to old Granny Slowsteps and was loving and good at home with his mother. Now the knights meet again under the oak tree. To torment is to hurt or tease cruelly. To tarry is to stay. A clown here is a rough, rude fellow. Knighted means made a knight.",
+      "contentNote": "Rough men try to hurt a small dog, and a boy rescues it.",
+      "excerpt": {
+        "locator": "“The Search for a Good Child,” from the knights meeting under the oak tree to the end of the story; opens “\"I have found a child whom you must see,\" he said, as soon as they came together.”; closes “…true. And he was beloved by all the people in the world, but most of all by his mother.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-lindsay-mother-stories-1928-07",
+        "continuesTo": null,
+        "blocks": [
+          509,
+          529
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "67b1242c179b4225ad40b939c7c8932765a9c0c0e2a2f2ba7b7494b672f892eb"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-08-q1",
+          "prompt": "What did each of the other four knights see or hear? Who was it every time?",
+          "facilitatorNotes": [
+            "Gerald heard a boy singing under a heavy load; Brian saw a boy save a dog from rough men; Kenneth heard about the boy who helps Granny Slowsteps; Percival saw a boy wait patiently when the water was muddied. Every time it was Gauvain."
+          ],
+          "evidence": [
+            "a little boy ran up, as brave as a knight, and took the dog in his arms"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-08-q2",
+          "prompt": "Brian the Brave saw Gauvain being brave, and Percival the Pure saw him keep his temper. Why do you think each knight noticed what he did?",
+          "facilitatorNotes": [
+            "Each noticed the goodness that matches his own name, perhaps because it is what he cares about most. Put together, they show that Gauvain has all five."
+          ],
+          "evidence": [
+            "he spoke no angry words, and waited patiently till the water was clear again"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-08-q3",
+          "prompt": "Why does Gauvain’s mother say no to the king? Is she right?",
+          "facilitatorNotes": [
+            "She loves him more than a thousand kingdoms and cannot spare him. Some children will think Gauvain missed a great chance; others that home is where he belongs. The king himself agrees with her."
+          ],
+          "evidence": [
+            "he is dearer to me than a thousand kingdoms"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-08-q4",
+          "prompt": "The knights ride home sad, but the king rejoices. Why?",
+          "facilitatorNotes": [
+            "He sees that such a child with such a mother will grow into a knight at home, and he is right: Gauvain the Good comes to his court in the end."
+          ],
+          "evidence": [
+            "Such a child, with such a mother, will grow into a knight at home."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-09",
+      "title": "The Closing Door — Part 1: The goblin comes in",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice the one door that is always open, and what the goblin says about calling Mother.",
+      "focus": "Little Daughter’s white room is full of treasures, and a strange visitor asks her to keep him secret.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. This is a picture-story: the room, the pearls and the door stand for something more, and listeners can wonder what. Swan’s down is a swan’s softest feathers. A goblin is a mischievous little creature of fairy tales. A playfellow is a playmate. To bid is to tell or ask.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Closing Door,” from the start of the story, after the motto for the mother, to the goblin’s first visit; opens “There was once a little girl (her best and sweetest name was Little Daughter), who had a…”; closes “…of fine lace for her darling, did not dream that a goblin was in the little white room.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-lindsay-mother-stories-1928-10",
+        "blocks": [
+          533,
+          541
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1af767414cb583cd6ee0613071ee06e08d243fdff06485b8b1031f02cfb49194"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-09-q1",
+          "prompt": "What is Little Daughter’s room like? Find words that make it white and shining.",
+          "facilitatorNotes": [
+            "A snowy floor, a ceiling like a fleecy cloud, curtains like lily petals, a bed like swan’s down, white pansies and a dove."
+          ],
+          "evidence": [
+            "it was white and shining from the snowy floor to the ceiling"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-09-q2",
+          "prompt": "Where do her pearls come from, and what must she do with them?",
+          "facilitatorNotes": [
+            "The king gives her a new one every morning, and she must keep them fair, ready to wear when he sends for her."
+          ],
+          "evidence": [
+            "a new pearl was given her as soon as she waked up each morning",
+            "who bade her keep them fair"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-09-q3",
+          "prompt": "Which door is always open? What does Little Daughter do when her mother calls?",
+          "facilitatorNotes": [
+            "The door into her mother’s room. She always runs out at the first call and jumps into her mother’s arms."
+          ],
+          "evidence": [
+            "there was one door which was always open, and that was the one which led into her mother's room"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-09-q4",
+          "prompt": "Why does the goblin tell her not to call her mother? What do you think will happen?",
+          "facilitatorNotes": [
+            "He says they are having a nice time and her mother is busy; really he does not want her mother to see him, or the room changing. Children may predict trouble, since the room is already growing like him. Ask whether a playmate who asks you to keep him secret from your mother is a good friend."
+          ],
+          "evidence": [
+            "Oh! no; we are having such a nice time together, and she's busy, you know."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-10",
+      "title": "The Closing Door — Part 2: The pearl turns dark",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Watch what happens to the room, the dove and the pearl, and what the goblin wants Little Daughter to do.",
+      "focus": "A darkened pearl and a creaking door bring Little Daughter running back to her mother.",
+      "context": "Recap: Little Daughter had a shining white room full of treasures, and a string of pearls from the king, one for every morning, to keep fair. The door to her mother’s room was always open. One day a goblin as black as coal came in to play and told her not to call her mother, and the room began to look more like him. Dingy means dull and dirty, and smutty means sooty. Hinges are the metal joints a door swings on. Fair here means clean and white.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Closing Door,” from the goblin’s tiptoeing to the end of the story; opens “The goblin did not make any noise, you know, for he tip-toed all the time, as if he were…”; closes “…put two golden hearts against it and nothing in this world could have shut it then.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-lindsay-mother-stories-1928-09",
+        "continuesTo": null,
+        "blocks": [
+          542,
+          552
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "497e131b234c2b0a557b7427765792d5f55e67307cb2b3366122c3f6ebb9386c"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-10-q1",
+          "prompt": "What happens to the room while the goblin plays? Why doesn’t Little Daughter notice?",
+          "facilitatorNotes": [
+            "The curtains grow dingy, the floor dusty, the ceiling like a rain cloud; the pansies droop and the dove moans. The goblin amuses her so much that she does not see."
+          ],
+          "evidence": [
+            "he amused the little girl so much that she did not notice the change in her dear room"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-10-q2",
+          "prompt": "What happens to the last pearl, and what does the goblin say about it?",
+          "facilitatorNotes": [
+            "It grows dark when he touches it. He says they can wash it, and asks what one pearl matters."
+          ],
+          "evidence": [
+            "what difference does it make about one pearl?"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-10-q3",
+          "prompt": "Why does the goblin want the door shut? What makes the mother look up?",
+          "facilitatorNotes": [
+            "So that the mother will not see. The door has been open so long that it creaks, and the creak tells the mother something is wrong; she fears it might never open again."
+          ],
+          "evidence": [
+            "it creaked on its hinges as the little girl tried to close it"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-10-q4",
+          "prompt": "The pearl stays “a little blue always.” Why do you think the story keeps that one mark? What might the open door stand for?",
+          "facilitatorNotes": [
+            "Some wrongs can be mostly mended but leave a mark, so it is better to call for help early. The door may stand for telling your mother, or whoever loves you, everything; accept other readings tied to the text, such as trust or love. The golden hearts keep it open."
+          ],
+          "evidence": [
+            "except for the one pearl which was a little blue always",
+            "put two golden hearts against it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-11",
+      "title": "The Minstrel’s Song — Part 1: The wind’s song",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice what the other minstrels talk about, and what Harmonius does instead.",
+      "focus": "Minstrels hurry to the king’s court, and only Harmonius stops to listen.",
+      "context": "From Maud Lindsay’s Mother Stories, a book of tales for mothers to tell young children. The book prints a short motto for the mother before each story; it is left out here. Minstrels were singers who travelled about long ago, playing the harp and telling stories in song. Heralds carried a king’s messages and blew trumpets to announce them. May-day is the first of May, a spring holiday. A cot is a little cottage. “Thee” is an old word for “you,” and “ye” means “you” said to many people. The chorus is the part of a song that comes back again and again.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Minstrel’s Song,” from the start of the story, after the motto for the mother, to Harmonius learning the wind’s song; opens “Once, long, long ago, there lived in a country over the sea a king called René, who…”; closes “…reached his friends, who were still talking of the grand sights that they were to see.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-1-lindsay-mother-stories-1928-12",
+        "blocks": [
+          557,
+          572
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "acf5ffc87b6ad9162fc8073d8f8d4282437468fdf774646fad6be3ed08820c15"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-11-q1",
+          "prompt": "Why does King René send for all the minstrels?",
+          "facilitatorNotes": [
+            "To please Queen Imogen, who wants to hear them; every morning he asks how he can please her."
+          ],
+          "evidence": [
+            "What can I do to please thee to-day?"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-11-q2",
+          "prompt": "Why was everyone so glad when the minstrels came, long ago?",
+          "facilitatorNotes": [
+            "There were no story books, so minstrels brought songs of knights, battles, hunters, fairies and goblins."
+          ],
+          "evidence": [
+            "because there were no story books in those days"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-11-q3",
+          "prompt": "What do the oldest and the youngest minstrels say they will sing about? What does Harmonius do while they talk?",
+          "facilitatorNotes": [
+            "Drums and battles; ladies and their fair faces. Harmonius gathers wild flowers and whispers “Listen! listen!”"
+          ],
+          "evidence": [
+            "I can sing of the drums and battles",
+            "Listen! listen!"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-11-q4",
+          "prompt": "The others hear “nothing but the wind.” What does Harmonius hear in it?",
+          "facilitatorNotes": [
+            "A song of the wind’s travels over the sea, the hills and the valleys, with a chorus. Say the chorus together. Some children will say the others could have heard it too if they had stopped."
+          ],
+          "evidence": [
+            "Nobody follows me where I go,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-1-lindsay-mother-stories-1928-12",
+      "title": "The Minstrel’s Song — Part 2: Three singers",
+      "sourceId": "lindsay-mother-stories-1928",
+      "genre": "literary tale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Count the singers Harmonius listens to, and see who at court can name them.",
+      "focus": "Harmonius’s song from the wind, the brook and the bird wins the court, and the queen knows where it came from.",
+      "context": "Recap: King René called all the minstrels of his land to sing for his new queen, Imogen, on May-day. On the way, the other minstrels talked of the grand sights they would see, but young Harmonius stopped to listen and learned the wind’s song. Comrades are friends travelling together. A court is a king’s palace and the people in it. Mad here means out of his mind.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Minstrel’s Song,” from the minstrels walking on through the wood to the end of the story; opens “\"We shall see the king and speak to him,\" said the oldest minstrel.”; closes “…it when I was a little child; and I can name the singers three.\" And so she did. Can you?”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-1-lindsay-mother-stories-1928-11",
+        "continuesTo": null,
+        "blocks": [
+          573,
+          596
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6cfd3fb45f5898b68dd49e58ac94d728a89c0d54b1592615aca325a0f5053a2c"
+      },
+      "questions": [
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-12-q1",
+          "prompt": "What two other songs does Harmonius stop to hear? What do the others say each time?",
+          "facilitatorNotes": [
+            "The brook’s and a bird’s. They say it is “only” a brook and “only” a bird, and hurry on to the king’s court."
+          ],
+          "evidence": [
+            "Oh! that is only the sound of the brook trickling over the stones.",
+            "Oh! that is only a bird!"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-12-q2",
+          "prompt": "What is Queen Imogen thinking of while the minstrels sing?",
+          "facilitatorNotes": [
+            "Her old home and the butterflies she chased as a little child; she is a little homesick."
+          ],
+          "evidence": [
+            "the queen thought of her old home, and of the butterflies she had chased when she was a little child"
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-12-q3",
+          "prompt": "How does Harmonius’s song sound? Why does it please the king and queen more than the others?",
+          "facilitatorNotes": [
+            "Like wind, roaring sea and creaking trees, then a trickling brook, then all the birds in spring. Nobody had sung that before, and it brings back the queen’s childhood. Some children will say the others only sang what everyone already sings about."
+          ],
+          "evidence": [
+            "It was as if you heard all the birds in Spring."
+          ]
+        },
+        {
+          "id": "reading-1-lindsay-mother-stories-1928-12-q4",
+          "prompt": "The story ends, “Can you?” Who were the three singers, and why could the other minstrels not hear them?",
+          "facilitatorNotes": [
+            "The wind, the brook and the bird. The others were too busy talking about the king, the crown and the jewels to listen. Ask what the child might hear outside if they stopped to listen."
+          ],
+          "evidence": [
+            "Three singers sang along our way,",
+            "And so she did. Can you?"
+          ]
+        }
+      ]
     }
   ]
 }
