@@ -1462,6 +1462,608 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21",
+      "title": "A governess asks for advice: part 1 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow an argument between two friends and decide whether each of them has a point.",
+      "focus": "Holmes complains that Watson’s stories are both too sensational and too trivial, just before a case arrives that looks trivial.",
+      "context": "“The Adventure of the Copper Beeches” is the twelfth and last story in Arthur Conan Doyle’s The Adventures of Sherlock Holmes (1892). Dr. Watson narrates, from the rooms at Baker Street he once shared with Holmes. Holmes and Watson mention earlier cases from the same book: the King of Bohemia’s, Mary Sutherland’s (“A Case of Identity”), the man with the twisted lip, the noble bachelor and the blue carbuncle. A governess lived with a family and taught its children at home. Causes célèbres are famous cases; to embellish is to decorate or exaggerate; a compositor set type for printing; Montague Place is a London street.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from the opening, Holmes’s complaint about Watson’s stories through Violet Hunter’s arrival at Baker Street; opens ““To the man who loves art for its own sake,” remarked Sherlock Holmes, tossing aside the…”; closes “…himself, with his lids drooping and his finger tips together, to listen to her story.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-22",
+        "blocks": [
+          2343,
+          2364
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "84c2585c67dcb8f8f25375b91640378928b037333bb8c0e7016a36a816374398"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21-q1",
+          "prompt": "Holmes says Watson has turned “a course of lectures into a series of tales.” What does Holmes want the stories to be about, and what does Watson think makes them worth reading?",
+          "facilitatorNotes": [
+            "Holmes wants a record of “severe reasoning from cause to effect”: the logic, not the crime or the color. Watson answers that the methods were “novel and of interest,” and he is hurt. Ask readers which kind of story they would rather read; Doyle lets his own character criticize the very kind of tale we are holding."
+          ],
+          "evidence": [
+            "Crime is common. Logic is rare.",
+            "You have degraded what should have been a course of lectures into a series of tales."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21-q2",
+          "prompt": "Watson accuses Holmes of “egotism,” and Holmes answers that it is “not selfishness or conceit.” Who is right? Use the paragraph about the foggy morning to explain Holmes’s mood.",
+          "facilitatorNotes": [
+            "Holmes claims to value his art as something “beyond myself.” But Watson shows us a man who has searched the advertisement columns all morning without result and comes out “in no very sweet temper.” Readers can decide that both are partly right: the claim may be sincere, and the bad temper sharpens it."
+          ],
+          "evidence": [
+            "If I claim full justice for my art, it is because it is an impersonal thing—a thing beyond myself.",
+            "he had emerged in no very sweet temper to lecture me upon my literary shortcomings"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21-q3",
+          "prompt": "Why does Holmes call Miss Hunter’s note his “zero-point”? What hints suggest that the case may be more than it looks?",
+          "facilitatorNotes": [
+            "He thinks his practice has sunk to “recovering lost lead pencils” and advising young ladies; a question about whether to take a job seems the lowest point. Watson reminds him that the blue carbuncle began as “a mere whim.” Miss Hunter herself says she has had “a very strange experience” and has no family to ask, so she is alone."
+          ],
+          "evidence": [
+            "This note I had this morning marks my zero-point, I fancy.",
+            "which appeared to be a mere whim at first, developed into a serious investigation",
+            "as I have no parents or relations of any sort from whom I could ask advice"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-21-q4",
+          "prompt": "What does Watson’s first description of Violet Hunter tell you about her, and how does Holmes respond to her?",
+          "facilitatorNotes": [
+            "She is plainly but neatly dressed, quick and bright, with “the brisk manner of a woman who has had her own way to make in the world”: independent, working, not rich. Holmes, who was grumbling a minute before, is “favorably impressed” and settles down to listen."
+          ],
+          "evidence": [
+            "with the brisk manner of a woman who has had her own way to make in the world",
+            "Holmes was favorably impressed by the manner and speech of his new client"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22",
+      "title": "An offer too good to be true: part 2 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice details that a narrator reports without judging them, and decide which ones are warnings.",
+      "focus": "A generous stranger whose conditions grow stranger with every question.",
+      "context": "Recap: Holmes, in a bad temper about the dullness of his recent cases, received a note from Violet Hunter, a governess who wants advice about a post she has been offered. She has just arrived at Baker Street and begins her story. £ stands for pounds; four pounds a month is about £48 a year. The West End is the fashionable part of London. “Sweating” meant paying workers starvation wages. Halifax, in Nova Scotia, is in Canada; Hampshire is a county in the south of England, and Winchester its chief city. “Faddy” means full of odd fancies.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, Miss Hunter’s account of her interview at Westaway’s agency, through her refusal; opens ““I have been a governess for five years,” said she, “in the family of Colonel Spence…”; closes “…to you, Miss Hunter.’ She struck a gong upon the table, and I was shown out by the page.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-21",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-23",
+        "blocks": [
+          2365,
+          2402
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4c5ea9bd5d393128bd6d6dbd8a32c39e0ad301e2093ebb591262e1b0e3c475a8"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22-q1",
+          "prompt": "List what the stout gentleman offers and what he asks in return. At what point does the offer turn from generous to strange?",
+          "facilitatorNotes": [
+            "He offers £100 a year, more than double her old wage, half of it in advance, one small child and “the dearest old country-house.” Then he asks her to obey his wife, wear a dress they give her, sit where she is told, and cut her hair short. Readers may choose different turning points; the delighted story about killing cockroaches is an early odd note."
+          ],
+          "evidence": [
+            "Your salary with me, madam, would commence at £100 a year.",
+            "Or to cut your hair quite short before you come to us?"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22-q2",
+          "prompt": "Miss Hunter calls him “so fascinating and so thoughtful a man.” Which details in her own description might make a listener trust him less than she did?",
+          "facilitatorNotes": [
+            "He jumps in his chair when she enters, his eyes become “two little shining slits,” a shadow crosses his face when she refuses, and he laughs at a child’s slipper-killing. She herself felt “something unnatural.” The warnings are in her story even while she reports being charmed, which is why Holmes listens so closely."
+          ],
+          "evidence": [
+            "As I came in he gave quite a jump in his chair",
+            "there was something unnatural about the whole transaction",
+            "I could see a shadow pass over his face as I spoke"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22-q3",
+          "prompt": "He says “I could not ask for anything better” before she has said a word, and he waves away her French, German, music and drawing. What does that suggest he is really choosing her for?",
+          "facilitatorNotes": [
+            "Not her accomplishments: he has decided from her looks alone, and calls her skills “beside the question.” His talk of “the bearing and deportment of a lady” may be a cover. Readers can predict that her appearance matters to his plan; the story has not said why."
+          ],
+          "evidence": [
+            "‘That will do,’ said he; ‘I could not ask for anything better. Capital! capital!’",
+            "‘Tut, tut!’ he cried. ‘This is all quite beside the question."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-22-q4",
+          "prompt": "Was Miss Hunter right to refuse to cut her hair? What does Miss Stoper’s reaction show about the agency?",
+          "facilitatorNotes": [
+            "She refuses an “off-hand” demand on something she is proud of, which shows self-respect, though she is poor and in debt. Miss Stoper is annoyed because she has lost “a handsome commission” and threatens not to help her again: the agency’s interest is its fee, not the governess’s safety. Readers may call the refusal brave or rash."
+          ],
+          "evidence": [
+            "I could not dream of sacrificing it in this off-hand fashion.",
+            "she had lost a handsome commission through my refusal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23",
+      "title": "Too good, and a telegram: part 3 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 13,
+        "totalMinutes": 23
+      },
+      "challenge": "Compare two explanations of a puzzle, and notice which questions Holmes refuses to answer.",
+      "focus": "Miss Hunter talks herself into the post; Holmes cannot name the danger, only promise to come.",
+      "context": "Recap: At a London agency for governesses, a stout, smiling gentleman offered Violet Hunter £100 a year, far more than her old wage, if she would wear a dress his wife chose, sit where she was told and cut her chestnut hair short. She refused, and the agency’s manager was annoyed. A quarter is three months; a dog-cart is a light two-wheeled carriage; an asylum was a hospital for people judged insane. Bradshaw was the book of railway timetables.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from Miss Hunter’s second thoughts and Mr. Rucastle’s letter through Holmes’s advice, the fortnight’s wait and the telegram from Winchester; opens ““Well, Mr. Holmes, when I got back to my lodgings and found little enough in the…”; closes “…postpone my analysis of the acetones, as we may need to be at our best in the morning.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-22",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-24",
+        "blocks": [
+          2403,
+          2432
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6a2f4af875f4e3594f5c34a6cef86f3915b42a1c959d8b39e4cffb4025c78ca1"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23-q1",
+          "prompt": "In his letter, what has Mr. Rucastle changed, and on what point will he not give way? Why might the hair matter so much?",
+          "facilitatorNotes": [
+            "He raises the salary to £120, explains the dress (“electric blue,” belonging to his daughter Alice, “now in Philadelphia”) and makes the sitting sound harmless, but he stays “firm” about the hair. Paying more rather than give up one condition suggests that condition is the heart of the plan."
+          ],
+          "evidence": [
+            "I am afraid that I must remain firm upon this point",
+            "we have one belonging to my dear daughter Alice (now in Philadelphia)"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23-q2",
+          "prompt": "How does Miss Hunter persuade herself to change her mind? Find her reasons.",
+          "facilitatorNotes": [
+            "An almost empty cupboard and unpaid bills; the thought that strange people are “at least ready to pay for their eccentricity”; and the question “what use was my hair to me?” Need wins over doubt, and readers can understand why: she has no savings and no family."
+          ],
+          "evidence": [
+            "found little enough in the cupboard, and two or three bills upon the table",
+            "Besides, what use was my hair to me?"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23-q3",
+          "prompt": "Miss Hunter suggests a mad wife, and Holmes calls this “the most probable” explanation. Why is he still uneasy?",
+          "facilitatorNotes": [
+            "He accepts it only “as matters stand” and reasons from the money: the Rucastles could hire a governess for £40, so £120 means “some strong reason behind.” Pay that is too good is itself evidence. He also says he would not like a sister of his to take the post."
+          ],
+          "evidence": [
+            "That is a possible solution—in fact, as matters stand, it is the most probable one.",
+            "Why should they give you £120 a year, when they could have their pick for £40? There must be some strong reason behind."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-23-q4",
+          "prompt": "“It would cease to be a danger if we could define it.” What does Holmes mean? How does Watson show that the case keeps troubling him during the fortnight?",
+          "facilitatorNotes": [
+            "A danger you can name you can prepare for; the unknown kind is worse. Holmes sits with “knitted brows,” refuses to guess without data, and still mutters that no sister of his should have accepted. The telegram proves his prediction, and he sends Watson to the timetable at once."
+          ],
+          "evidence": [
+            "It would cease to be a danger if we could define it",
+            "“Data! data! data!” he cried, impatiently. “I can’t make bricks without clay.”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24",
+      "title": "Lonely houses and a smiling family: part 4 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 12,
+        "totalMinutes": 24
+      },
+      "challenge": "Weigh a character’s fair words against the details she reports.",
+      "focus": "Holmes sees danger in a beautiful countryside; Miss Hunter describes a household that is pleasant only on the surface.",
+      "context": "Recap: Violet Hunter took the post at the Copper Beeches, near Winchester, after Mr. Rucastle raised her salary to £120 a year; she cut her hair, and Holmes promised to come if she telegraphed. A fortnight later her telegram called Holmes and Watson to the Black Swan inn at Winchester. Aldershot is a town near the Hampshire border; the dock is where the accused stands in a courtroom. Lord Southerton’s “preserves” are woods kept for hunting; a nonentity is a person who seems to count for nothing.",
+      "contentNote": "Holmes imagines cruelty hidden in lonely country houses; a small boy enjoys hurting animals; a servant drinks heavily.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from the section break and the train to Winchester through Miss Hunter’s account of the house, the family and the servants; opens “* * * * *”; closes “…the nursery and my own room, which are next to each other in one corner of the building.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-23",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-25",
+        "blocks": [
+          2433,
+          2457
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d549cd5f1f5bfc1fc5d5935b6d4d8276d5a36fe36b9072b8dc7d53709caaeef4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24-q1",
+          "prompt": "Watson sees beauty in the farmhouses, and Holmes sees “isolation.” Explain Holmes’s reasoning about why crime is easier to hide in the country than in a London alley. Do you agree?",
+          "facilitatorNotes": [
+            "In town, neighbors hear a scream or a blow and complain, and “the whole machinery of justice is ever so close.” In a lonely house, cruelty can go on unseen “year in, year out.” His point is about witnesses and help, not about country people being worse, though calling them “poor ignorant folk” is his own prejudice. Readers may argue that cities hide crime too."
+          ],
+          "evidence": [
+            "The pressure of public opinion can do in the town what the law cannot accomplish.",
+            "It is the five miles of country which makes the danger."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24-q2",
+          "prompt": "Miss Hunter says she has met with “no actual ill-treatment.” Which details in her account still make the household seem wrong?",
+          "facilitatorNotes": [
+            "The house is “stained and streaked”; Mrs. Rucastle is silent and often in tears with “some secret sorrow”; the daughter is said to have left because she disliked her step-mother; the boy delights in giving pain; Toller is drunk and his master ignores it. She is careful to be fair, but her details pile up."
+          ],
+          "evidence": [
+            "I have met, on the whole, with no actual ill-treatment from Mr. and Mrs. Rucastle",
+            "More than once I have surprised her in tears."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24-q3",
+          "prompt": "Holmes has “devised seven separate explanations” but tells Watson none of them. Why not? What does Miss Hunter’s first piece of news do to the theory from Baker Street?",
+          "facilitatorNotes": [
+            "He waits for “fresh information” to decide among them; naming one would be guessing. Her news that “Mrs. Rucastle is not mad” removes the explanation that seemed most probable in London, which shows why Holmes would not commit to it."
+          ],
+          "evidence": [
+            "I have devised seven separate explanations, each of which would cover the facts as far as we know them.",
+            "Mrs. Rucastle is not mad."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-24-q4",
+          "prompt": "Miss Hunter would rather not talk about the little boy, “the creature.” Why might Holmes want to hear about him anyway?",
+          "facilitatorNotes": [
+            "Holmes is glad of all details, relevant or not; a child who enjoys giving pain may tell him something about the household that raised him, and the father laughed at it in London. Note that her linking the boy’s large head to his nature reflects an old habit of reading character in looks; readers need not accept it."
+          ],
+          "evidence": [
+            "Giving pain to any creature weaker than himself seems to be his one idea of amusement",
+            "I am glad of all details,” remarked my friend, “whether they seem to you to be relevant or not."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25",
+      "title": "The blue dress and the coil of hair: part 5 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 12,
+        "totalMinutes": 24
+      },
+      "challenge": "Keep a list of strange events and look for one explanation that could join them.",
+      "focus": "Miss Hunter is made to play a part she does not understand, and she begins to investigate.",
+      "context": "Recap: At the Black Swan, Miss Hunter has begun her account of the Copper Beeches: a stained old house above the Southampton road, a jovial master, a pale, silent wife who weeps in secret, a cruel little boy, and two unpleasant servants, Toller and his wife. A mastiff is a very large guard dog; a groom looks after horses; a yellow-backed novel was a cheap popular book; a répertoire is a stock of pieces a performer can give.",
+      "contentNote": "A huge guard dog is kept hungry and let loose at night against trespassers.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, Miss Hunter’s account of the blue dress, the man in the road, the mastiff and the hair in the drawer; opens ““For two days after my arrival at the Copper Beeches my life was very quiet; on the…”; closes “…as I felt that I had put myself in the wrong by opening a drawer which they had locked.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-24",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-26",
+        "blocks": [
+          2458,
+          2477
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9956f21cd70540aa7efe7bd265b69cff86a578bde86a9aeb546f363187c95394"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25-q1",
+          "prompt": "Describe the “performance” in the drawing-room. What exactly is Miss Hunter told to do, and what are the Rucastles doing meanwhile?",
+          "facilitatorNotes": [
+            "She wears the electric-blue dress, sits close to the central window with her back to it, laughs at Mr. Rucastle’s comic stories and once reads aloud; then she changes and goes to the nursery. He acts the entertainer, while his wife never smiles. The scene seems staged for someone she cannot see."
+          ],
+          "evidence": [
+            "A chair had been placed close to the central window, with its back turned towards it.",
+            "Mrs. Rucastle, however, who has evidently no sense of humor, never so much as smiled"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25-q2",
+          "prompt": "How does Miss Hunter find out what is behind her, and what does her method show about her?",
+          "facilitatorNotes": [
+            "She hides a piece of broken mirror in her handkerchief and looks while pretending to wipe her eyes: resourceful and observant, the kind of method Holmes admires. She also notices that Mrs. Rucastle has noticed her."
+          ],
+          "evidence": [
+            "I concealed a piece of the glass in my handkerchief",
+            "she had divined that I had a mirror in my hand"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25-q3",
+          "prompt": "Why might the Rucastles make her wave the man in the road away? Suggest an explanation, and say what further evidence would test it.",
+          "facilitatorNotes": [
+            "One reading: the man must be made to believe something about the woman he sees in the window, perhaps that she is happy and does not want him. Who he is, and whose dress she is wearing, would test it. Holmes will offer his own explanation later; any guess that fits the details is fair now."
+          ],
+          "evidence": [
+            "Kindly turn round and wave him away like that.",
+            "who seemed to be looking in my direction"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-25-q4",
+          "prompt": "The coil of hair in the locked drawer seems “impossible.” What does Miss Hunter do with it, and why does she keep quiet?",
+          "facilitatorNotes": [
+            "She compares it with her own cut hair from her trunk, finds them identical, returns it and says nothing, because she opened a drawer they had locked. Readers can connect it to the dress that had been “worn before” and fitted her perfectly: another woman like her has been here."
+          ],
+          "evidence": [
+            "I laid the two tresses together, and I assure you that they were identical.",
+            "I felt that I had put myself in the wrong by opening a drawer which they had locked"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26",
+      "title": "The forbidden wing: part 6 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 12,
+        "totalMinutes": 23
+      },
+      "challenge": "Notice the difference between what a character says and what his face shows.",
+      "focus": "Miss Hunter gets into the locked rooms and sees Mr. Rucastle’s true face.",
+      "context": "Recap: In the borrowed blue dress Miss Hunter was made to sit with her back to the window and laugh; with a piece of mirror she saw a man watching from the road, and she was made to wave him away. A hungry mastiff roams the grounds at night, and in a locked drawer she found a coil of hair exactly like her own. A suite is a set of connected rooms; a dark room is where photographs were developed; a wire is a telegram.",
+      "contentNote": "Mr. Rucastle threatens to throw the governess to the savage dog, and she is badly frightened.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, Miss Hunter’s account of the locked wing and Mr. Rucastle’s threat, to the end of her story; opens ““I am naturally observant, as you may have remarked, Mr. Holmes, and I soon had a pretty…”; closes “…be very glad if you could tell me what it all means, and, above all, what I should do.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-25",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-27",
+        "blocks": [
+          2478,
+          2499
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d5783ad75ab16f82eeac71cd650e4718ef0985873f122be3313bad863c2308da"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26-q1",
+          "prompt": "How does Mr. Rucastle explain the shuttered window, and why doesn’t Miss Hunter believe him?",
+          "facilitatorNotes": [
+            "He says he has made a photographer’s dark room. But she has just seen him come through the locked door with his face red and crinkled with anger, and now he is “merry and jovial” again; while he jokes, “there was no jest in his eyes.” The quick change of face is the evidence."
+          ],
+          "evidence": [
+            "He spoke in a jesting tone, but there was no jest in his eyes as he looked at me.",
+            "a look on his face which made him a very different person to the round, jovial man to whom I was accustomed"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26-q2",
+          "prompt": "Miss Hunter says she wanted to enter the rooms from “a feeling of duty,” not mere curiosity. Do you believe her? Find evidence both ways.",
+          "facilitatorNotes": [
+            "She admits she has her “share” of curiosity, and later that it was “almost as strong as my fears,” strong enough to keep her from leaving. She also felt that “some good might come” of it, and the barred door proves her right. Readers can decide that both motives were real."
+          ],
+          "evidence": [
+            "It was not mere curiosity, though I have my share of that. It was more a feeling of duty",
+            "my curiosity was almost as strong as my fears"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26-q3",
+          "prompt": "List what she sees and hears in the passage. Which details show that the room is a prison and that someone is inside?",
+          "facilitatorNotes": [
+            "Empty, dirty rooms; a centre door barred on the outside with an iron bed-bar, padlocked and tied, and locked as well; light from a skylight; then steps and a shadow moving beneath the door. A bar on the outside keeps someone in, not out."
+          ],
+          "evidence": [
+            "across the outside of it had been fastened one of the broad bars of an iron bed",
+            "I suddenly heard the sound of steps within the room, and saw a shadow pass backward and forward"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-26-q4",
+          "prompt": "Mr. Rucastle’s smile “hardened into a grin of rage.” How does Doyle build up to that moment, and why is the soothing voice before it frightening too?",
+          "facilitatorNotes": [
+            "He repeats “my dear young lady,” asks gentle questions and keeps smiling, but she notices that he “overdid it.” The sudden threat shows that the kindness was a mask, which makes all his earlier charm, back to the London interview, look false."
+          ],
+          "evidence": [
+            "But his voice was just a little too coaxing. He overdid it.",
+            "‘I’ll throw you to the mastiff.’"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27",
+      "title": "Holmes explains, and the room is empty: part 7 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Check each part of Holmes’s explanation against clues from earlier nights, and notice where he may be wrong.",
+      "focus": "Holmes joins the dress, the hair, the man in the road and the dog into one account, but the prisoner is gone.",
+      "context": "Recap: Miss Hunter crept into the locked wing of the Copper Beeches, found a door barred from the outside, heard steps behind it and fled, straight into Mr. Rucastle, who threatened to throw her to the mastiff. Tonight the Rucastles are going out, and Toller, the groom who alone can handle the dog, is drunk. To personate is to pretend to be someone; a fiancé is the man a woman is engaged to marry; a trap is a small carriage; to be circumspect is to be cautious; eaves are the edges of a roof.",
+      "contentNote": "A young woman has been kept locked in a room; Watson readies his pistol.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from Holmes’s questions and explanation at the Black Swan through the empty room and the ladder; opens “Holmes and I had listened spellbound to this extraordinary story. My friend rose now and…”; closes “…the stair. I think, Watson, that it would be as well for you to have your pistol ready.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-26",
+        "continuesTo": "reading-7-doyle-adventures-sherlock-holmes-1892-28",
+        "blocks": [
+          2500,
+          2527
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c5f009d105d779af08d7207b770a35979dbf998a5b68995f52a20960b4007e48"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27-q1",
+          "prompt": "Holmes says there is “only one feasible explanation.” Match each part of it to a clue from earlier in the story. Which parts does he only guess at?",
+          "facilitatorNotes": [
+            "Personation: she was chosen for height, figure and hair, which explains the jump in the chair and the insistence on cutting her hair. The daughter’s hair was cut in an illness, hence the coil in the drawer; the dress was Alice’s; the man in the road is her suitor, fooled by the laughter and the wave; the dog keeps him off. Words like “very possibly” and “possibly her fiancé” mark the guesses."
+          ],
+          "evidence": [
+            "You have been brought there to personate some one, and the real person is imprisoned in this chamber.",
+            "You were chosen, doubtless, as resembling her in height, figure, and the color of your hair."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27-q2",
+          "prompt": "Holmes calls the child’s disposition “the most serious point.” What is his reasoning, and how convincing is it?",
+          "facilitatorNotes": [
+            "He reasons from child to parent: a boy cruel “merely for cruelty’s sake” suggests a cruel father, which bodes evil for the prisoner. It fits what Miss Hunter saw of the smiling father, but as a general rule it is shaky, since children are not simply copies of their parents. Readers can weigh it."
+          ],
+          "evidence": [
+            "I have frequently gained my first real insight into the character of parents by studying their children.",
+            "it bodes evil for the poor girl who is in their power"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27-q3",
+          "prompt": "What does Holmes ask Miss Hunter to do, and how does he speak of her? What has she done to earn it?",
+          "facilitatorNotes": [
+            "He asks her to lock Mrs. Toller in the wine-cellar, calling her “very brave and sensible” and “a quite exceptional woman.” She noticed, investigated, telegraphed and kept her head. She proves him right: Mrs. Toller is locked in and Toller’s keys are in her hand."
+          ],
+          "evidence": [
+            "You seem to me to have acted all through this matter like a very brave and sensible girl, Miss Hunter.",
+            "Here are his keys, which are the duplicates of Mr. Rucastle’s."
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-27-q4",
+          "prompt": "The room is empty. How does Holmes explain it, and could there be another explanation?",
+          "facilitatorNotes": [
+            "He decides Rucastle guessed the plan, came back and took his victim out through the skylight by the ladder. Miss Hunter objects that the ladder was not there when the Rucastles left. Someone else could have set it there, such as the man from the road. Readers who notice this are checking Holmes as he taught Watson to observe."
+          ],
+          "evidence": [
+            "this beauty has guessed Miss Hunter’s intentions, and has carried his victim off",
+            "the ladder was not there when the Rucastles went away"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28",
+      "title": "The mastiff and Mrs. Toller’s story: part 8 of 8 (Sherlock Holmes, the copper beeches)",
+      "sourceId": "doyle-adventures-sherlock-holmes-1892",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Revise an explanation when a new witness speaks.",
+      "focus": "The trap Mr. Rucastle set for others closes on him, and a servant supplies what Holmes could not know.",
+      "context": "Recap: Holmes explained that Miss Hunter had been hired to impersonate Mr. Rucastle’s daughter Alice, kept locked in the barred room so that the young man watching from the road would give her up. But when Holmes and Watson broke in, the room was empty, the skylight open and a ladder against the eaves, and Holmes decided that Rucastle had carried her off. “Brain-fever” was a name then given to a dangerous illness with high fever. Locus standi is Latin for the right to be somewhere or take part. A special license let a couple marry at once; Mauritius is an island in the Indian Ocean; Walsall is a town in the English Midlands.",
+      "contentNote": "A starving dog mauls a man and Watson shoots it; a father is described as tormenting his daughter into a serious illness and imprisoning her.",
+      "excerpt": {
+        "locator": "The Adventure of the Copper Beeches, from Mr. Rucastle’s return to the end of the story; opens “The words were hardly out of his mouth before a man appeared at the door of the room, a…”; closes “…a private school at Walsall, where I believe that she has met with considerable success.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-doyle-adventures-sherlock-holmes-1892-27",
+        "continuesTo": null,
+        "blocks": [
+          2528,
+          2553
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "18572c485b3335b71b244c852211278e122e2fd700239889daece52a60cd6616"
+      },
+      "questions": [
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28-q1",
+          "prompt": "How is Mr. Rucastle caught by his own plan? Connect his end to what he said and did earlier.",
+          "facilitatorNotes": [
+            "He kept the dog half-starved and threatened to throw Miss Hunter to it; now he runs to loose it on the visitors, and the dog, unfed for two days and handled only by Toller, attacks him. The ending is an irony: the danger he made for others falls on him. He lives, but “a broken man.”"
+          ],
+          "evidence": [
+            "It’s not been fed for two days.",
+            "Mr. Rucastle survived, but was always a broken man"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28-q2",
+          "prompt": "What does Mrs. Toller’s story add to Holmes’s explanation? Which part of his account was wrong?",
+          "facilitatorNotes": [
+            "She gives the motive, money: Alice had rights of her own under a will, and her father wanted her to sign them away before a husband could claim them. She also shows that Mr. Fowler kept Toller drunk and set the ladder, so Alice escaped with him; Holmes was wrong that Rucastle carried her off. Holmes then fills in the rest with her help."
+          ],
+          "evidence": [
+            "He wanted her to sign a paper, so that whether she married or not, he could use her money.",
+            "that a ladder should be ready at the moment when your master had gone out"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28-q3",
+          "prompt": "Holmes says, “I am sure we owe you an apology, Mrs. Toller.” Why? Is she a villain, a friend, or something in between?",
+          "facilitatorNotes": [
+            "They locked her in the cellar as an enemy, yet she was Alice’s friend and helped her escape. She also took Mr. Fowler’s money (“free-handed”) and served Rucastle for years, and she wants credit if the police come. Readers can call her a mixed character and defend their view from her own words."
+          ],
+          "evidence": [
+            "you’ll remember that I was the one that stood your friend, and that I was Miss Alice’s friend too",
+            "Mr. Fowler was a very kind-spoken, free-handed gentleman"
+          ]
+        },
+        {
+          "id": "reading-7-doyle-adventures-sherlock-holmes-1892-28-q4",
+          "prompt": "Read Watson’s last paragraph. What does he think of how Holmes treats Violet Hunter, and what becomes of her? Is it a satisfying ending?",
+          "facilitatorNotes": [
+            "Watson is disappointed that Holmes loses interest once she is no longer “the centre of one of his problems,” which matches the Holmes of the opening, who cares for logic more than people. She becomes head of a private school and succeeds, an independent ending for a woman who began the story nearly penniless. Readers may want more, or think the ending suits her."
+          ],
+          "evidence": [
+            "manifested no further interest in her when once she had ceased to be the centre of one of his problems",
+            "she is now the head of a private school at Walsall, where I believe that she has met with considerable success"
+          ]
+        }
+      ]
     }
   ]
 }
