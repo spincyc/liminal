@@ -132,6 +132,202 @@
     },
     {
       "id": "reading-k-dodge-rhymes-jingles-1875-03",
+      "title": "Two Little Froggies",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear two small stories and find how they meet.",
+      "focus": "Hungry frogs wait on the bank while cheerful ants march off to the bogs, and the last line joins the two.",
+      "context": "Mary Mapes Dodge wrote these jingles for children. Liquor here just means liquid, the puddle water; meat means food. Bogs are wet, muddy places; gayly means happily; a dainty dinner is a tasty one.",
+      "contentNote": "The frogs eat the forty little ants.",
+      "excerpt": {
+        "locator": "“Two Little Froggies,” the complete poem; opens “TWO little froggies they sighed to one another: \"Our puddle is all liquor and no meat.”; closes “…little ants never dreamed they were going Just to make a dainty dinner for the frogs.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          182,
+          184
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "12a47729f9d9c5e2b32f23c46ede3c84ac055222e9dd9bc3185f489f543e27ef"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-03-q1",
+          "prompt": "Why are the two little froggies unhappy with their puddle?",
+          "facilitatorNotes": [
+            "It is all water and no food. They hope to find something good to eat on the bank."
+          ],
+          "evidence": [
+            "Our puddle is all liquor and no meat."
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-03-q2",
+          "prompt": "Where do the forty little ants say they are going, and how do they feel?",
+          "facilitatorNotes": [
+            "To the bogs, and they say it happily. Ask what the ants might expect to find there."
+          ],
+          "evidence": [
+            "Forty little ants said gayly to their mother:",
+            "\"O mother! we are going to the bogs;\""
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-03-q3",
+          "prompt": "What do the ants not know? Why is the ending a surprise?",
+          "facilitatorNotes": [
+            "That they are walking right to the hungry frogs, who will eat them for dinner. Some children will feel sorry for the ants and some will laugh; the jingle allows both."
+          ],
+          "evidence": [
+            "And maybe we'll see something good to eat.",
+            "Just to make a dainty dinner for the frogs."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-04",
+      "title": "The Sand Man",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen for all the places where sleep catches children.",
+      "focus": "A make-believe traveller with sleepy sand visits every child, though no one ever sees him come or go.",
+      "context": "The Sand Man is a make-believe figure from old stories who sprinkles sand in children’s eyes to make them sleepy. Elfish means like an elf; a rover is a wanderer; tricksome means playful; drowsy means sleepy; lambkins are little lambs; fragrant means sweet-smelling; whence and whither mean from where and to where. Read it more and more softly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Sand Man,” the complete poem; opens “OHO! but he travels the country over, The queer little, kind little, elfish rover!…”; closes “…knows; For just when the right time comes to peep, All the children are falling asleep.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          330,
+          332
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2768051fef2f92aeb92e55de0b0fbfcc2cee65cf7bcd7ecc55b1059c4a898c05"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-04-q1",
+          "prompt": "What does the Sand Man carry, and what does he do with it?",
+          "facilitatorNotes": [
+            "A silvery horn full of sleepy sand, which he shakes over flowers, lambs and birds and sprinkles over children’s heads."
+          ],
+          "evidence": [
+            "A silvery horn full of sleepy sand,",
+            "And sprinkles his sand over children's heads,"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-04-q2",
+          "prompt": "Where do the children fall asleep?",
+          "facilitatorNotes": [
+            "On the carpet, on chairs, curled up on the stairs, in the grass, deep in the hay, and in their mother’s arms. Children may say where they once fell asleep."
+          ],
+          "evidence": [
+            "Some curled up on the nursery stairs;",
+            "Some hidden deep in the fragrant hay,"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-04-q3",
+          "prompt": "Does anyone know where the Sand Man comes from? What do you think really makes us sleepy?",
+          "facilitatorNotes": [
+            "Nobody knows, because he is make-believe. Children may say playing hard, the dark, or a warm bed; the poem gives sleep a friendly face instead of a reason."
+          ],
+          "evidence": [
+            "Every one wonders and nobody knows;",
+            "All the children are falling asleep."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-05",
+      "title": "The Frost-King",
+      "sourceId": "dodge-rhymes-jingles-1875",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Decide whether a stern-looking character is kind or unkind.",
+      "focus": "Winter frost is pictured as a pale king who freezes the land but also makes snow, ice and fun.",
+      "context": "The Frost-King is winter’s frost pictured as a king. Hoary means white with frost; chill means cold; birdlings are little birds; wrath means anger. Coasting means sledding downhill. Jack is Jack Frost, who in stories paints ice patterns on windows. “Till Earth grows young again” means until spring.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Frost-King,” the complete poem; opens “OHO! have you seen the Frost-King, A-marching up the hill? His hoary face is stern and…”; closes “…Till gone are hill and plain: Whenever Winter comes to stay, The hoary King shall reign.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          602,
+          606
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b993845088ef65444699cc98c7ef37686bba23da1019b7b12607f3ead89bd9bc"
+      },
+      "questions": [
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-05-q1",
+          "prompt": "What does the Frost-King look like, and what does his touch do?",
+          "facilitatorNotes": [
+            "His face is white, stern and pale, and his touch is icy cold. He sends the birds south and makes the brooks still by freezing them."
+          ],
+          "evidence": [
+            "His hoary face is stern and pale,",
+            "He bids the brooks be still;"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-05-q2",
+          "prompt": "What fun does the Frost-King make for children?",
+          "facilitatorNotes": [
+            "Snow for sledding, frozen rivers for skating, and Jack Frost’s merry tricks that call the children out to play."
+          ],
+          "evidence": [
+            "That coasting boys may play.",
+            "That skating crowds may shout;"
+          ]
+        },
+        {
+          "id": "reading-k-dodge-rhymes-jingles-1875-05-q3",
+          "prompt": "The poem says he marches “not in wrath or cruelty.” Is the Frost-King kind or unkind?",
+          "facilitatorNotes": [
+            "He looks stern and makes everything cold, but he is not angry: he rests to watch the sunbeams and makes snow and ice for play. Children may say he is both, which fits a king who is strict but fair."
+          ],
+          "evidence": [
+            "Yet not in wrath or cruelty",
+            "He will often rest at noontime,"
+          ]
+        }
+      ],
+      "months": [
+        12,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "reading-k-dodge-rhymes-jingles-1875-06",
       "title": "Out of the Shell",
       "sourceId": "dodge-rhymes-jingles-1875",
       "genre": "poetry",
@@ -160,7 +356,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-03-q1",
+          "id": "reading-k-dodge-rhymes-jingles-1875-06-q1",
           "prompt": "What does the duckling call its eggshell?",
           "facilitatorNotes": [
             "A pretty mean house: too small and poor for such a fine bird."
@@ -170,7 +366,7 @@
           ]
         },
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-03-q2",
+          "id": "reading-k-dodge-rhymes-jingles-1875-06-q2",
           "prompt": "What was it like inside the shell?",
           "facilitatorNotes": [
             "The duckling could not stand up or sit down and lay squeezed from toes to head. Children can curl up small to show it."
@@ -181,7 +377,7 @@
           ]
         },
         {
-          "id": "reading-k-dodge-rhymes-jingles-1875-03-q3",
+          "id": "reading-k-dodge-rhymes-jingles-1875-06-q3",
           "prompt": "Will the duckling ever go back into its shell? Why is that funny?",
           "facilitatorNotes": [
             "“Not very soon,” it says, as if it might choose to; of course it never can. The joke is that it talks as if it had a choice."
