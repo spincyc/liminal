@@ -763,6 +763,383 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-11",
+      "title": "The Jungle: the price of a house (Chapter X, opening)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Track how Sinclair turns a list of expenses and seasons into an argument.",
+      "focus": "A family that can never stop thinking about money, and the classes of Packingtown.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. In Chapter IX Jurgis joined the union and learned of the graft and the diseased meat of Packingtown. The family (Jurgis; his wife, Ona; her stepmother, Teta Elzbieta, with her children; Elzbieta’s brother Jonas; and Ona’s cousin Marija) has bought a house on instalments from an agent who kept quiet about many of its costs. Marija, laid off when the canning-factory closed, has lent the family her savings and is engaged to the violinist Tamoszius. Jurgis works on the killing-beds at Durham’s. The plague of flies is one of the plagues of Egypt in Exodus.",
+      "contentNote": "Describes filthy and deadly working conditions on the killing-beds, including men dying of sunstroke.",
+      "excerpt": {
+        "locator": "Chapter X, from the family’s second spring to the line between the office and the killing-beds; opens “During the early part of the winter the family had had money enough to live and a little…”; closes “…the people who worked with their hands were a class apart, and were made to feel it.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-sinclair-jungle-1906-12",
+        "blocks": [
+          248,
+          253
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "79d0b11b743a613b7e1cdcf3535e46f257f700792618f922a06b72511155b414"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-11-q1",
+          "prompt": "List the unforeseen costs that come upon the family. Why does Sinclair give the exact figures?",
+          "facilitatorNotes": [
+            "The plumber at seventy-five cents an hour, with as much again for a man who only watched; insurance at seven dollars; taxes, water-tax, a sewer and a sidewalk. Exact sums let the reader do the family’s arithmetic and see the trap the agent hid until the deed was signed."
+          ],
+          "evidence": [
+            "and seventy-five cents for another man who had stood and watched him",
+            "the deed was signed, and so the agent had no longer anything to gain by keeping quiet"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-11-q2",
+          "prompt": "“This was in truth not living; it was scarcely even existing.” What makes the family’s life worse than physical hardship alone?",
+          "facilitatorNotes": [
+            "The constant strain of worry: never a single instant free from the thought of money. Their question, whether people who do their best ought not to be able to keep alive, is the moral claim of the whole novel."
+          ],
+          "evidence": [
+            "a single instant in which they were not haunted by the thought of money",
+            "when people did their best, ought they not to be able to keep alive?"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-11-q3",
+          "prompt": "How does each season bring “trials of its own”? Which details of the summer on the killing-beds are hardest to read, and why does Sinclair include them?",
+          "facilitatorNotes": [
+            "Spring rains turn streets to bogs; summer brings sunstroke (three men dead in a day), rivers of hot blood, a stench of years, no place to wash and plagues of flies. Even a fly becomes torture because the men’s hands are never free. Sinclair makes the reader feel the work in the body."
+          ],
+          "evidence": [
+            "each season had its trials, as they found",
+            "it was a torture like being burned alive"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-11-q4",
+          "prompt": "Sinclair speaks to the reader directly: “Perhaps the summer-time suggests to you thoughts of the country.” Why? What does the bookkeeper show about class in Packingtown?",
+          "facilitatorNotes": [
+            "The address sets the reader’s leisure against workers who never see a green thing. The bookkeeper, poorly paid himself, would rather be a gentleman than rub elbows with a laborer: those who work with their hands are “a class apart,” divided even from other poor men."
+          ],
+          "evidence": [
+            "Perhaps the summer-time suggests to you thoughts of the country, visions of green fields and mountains and sparkling lakes.",
+            "the people who worked with their hands were a class apart, and were made to feel it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-12",
+      "title": "The Jungle: Marija loses her place (Chapter X)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice whose judgment the narrator repeats, and whether he seems to mean it.",
+      "focus": "Marija’s fight for her pay, the lesson the family draws, and the price of a job.",
+      "context": "Recap: the family has found that their house carries hidden costs (insurance, taxes, a sewer and a sidewalk), and has lived through a hungry spring and a summer of heat, filth and flies in the packing-houses, where the workers are “a class apart.” Ona is expecting a baby. Marija has joined the union and urges it on the foreign workers. A forelady supervises women workers; to be “confined” is to give birth; a beef-trimmer cuts meat from the bones.",
+      "contentNote": "A worker is cheated of her pay and fired for complaining; a woman replaces a man at little more than half his pay; cold, wet work brings poisoned wounds.",
+      "excerpt": {
+        "locator": "Chapter X, from the reopening of the canning-factory to Marija’s work as a beef-trimmer; opens “In the late spring the canning-factory started up again, and so once more Marija was…”; closes “…wailing melodies the voices of the unborn generations which cried out in her for life.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-sinclair-jungle-1906-11",
+        "continuesTo": "reading-11-sinclair-jungle-1906-13",
+        "blocks": [
+          254,
+          260
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7561de41dcffdebe9212a77e646880d54515e28b1823bb9c3b8b5f4421a089f7"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-12-q1",
+          "prompt": "What reasons are given for Marija’s firing, and which does the narrator call “the known facts”? Why might the chapter leave the cause uncertain?",
+          "facilitatorNotes": [
+            "Marija blames her union work, and the packers did keep spies. The known facts are the miscounted cans and her complaints, first to the forelady and then to the superintendent. A worker can never know why she is dismissed, and either way there is “no redress.”"
+          ],
+          "evidence": [
+            "Marija insisted that it was because of her activity in the union.",
+            "when this happened, there was no redress"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-12-q2",
+          "prompt": "“It was a cruel lesson; but then Marija was headstrong.” Whose voice is this? Does the novel agree?",
+          "facilitatorNotes": [
+            "It echoes the forelady and the cautious neighbors (“know her place, as the forelady expressed it”). The novel shows what the lesson teaches, to hang on to a job “come what will,” and the irony condemns a system that trains workers to submit."
+          ],
+          "evidence": [
+            "The next time she would know her place, as the forelady expressed it",
+            "that when you have once got a job in Packingtown, you hang on to it, come what will"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-12-q3",
+          "prompt": "How does Marija get her new job, and what does the boss’s choice show?",
+          "facilitatorNotes": [
+            "He sees her strength, fires a man and pays her a little more than half the man’s wage. Labor is bought as cheaply as possible, and the women’s lower pay is used against the men. Marija, meanwhile, gives up on the union."
+          ],
+          "evidence": [
+            "he discharged a man and put Marija to do his work, paying her a little more than half what he had been paying before",
+            "She lost all interest in the union"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-12-q4",
+          "prompt": "Why does the passage end with Tamoszius’s violin and “the voices of the unborn generations”? What has the new work cost Marija besides her health?",
+          "facilitatorNotes": [
+            "Her marriage is put off again, since the family cannot do without her wages. The music voices a longing for children and a home of her own, the future the wedding of Chapter I seemed to promise."
+          ],
+          "evidence": [
+            "they had waited a long time, and they could wait a little longer",
+            "the voices of the unborn generations which cried out in her for life"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-13",
+      "title": "The Jungle: little Antanas (Chapter X, end)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Hold two strands together, a corrupt workplace and a new baby, and see how each changes the other.",
+      "focus": "Ona’s danger at work, the birth of her son, and the cost of going back too soon.",
+      "context": "Recap: Marija lost her place at the canning-factory after protesting a miscount of her pay, and after weeks of hunting now trims beef in a cold, wet room for little more than half a man’s wage; she and Tamoszius must put off their marriage again. Ona sews hams at Brown’s packing-house and is about to have her baby; Jurgis has insisted on a doctor rather than a midwife. A kept-woman is a man’s paid mistress; a bawdy-house is a brothel. Chattel slavery is slavery in which people are owned as property. Patent medicines were bottled remedies sold without prescription.",
+      "contentNote": "Describes the sexual exploitation of women workers by a forelady and a loading-boss, prostitution, and a mother’s lasting illness after returning to work a week after giving birth; Sinclair calls the workers “low-class and mostly foreign” and the boss “a coarse, red-faced Irishman.”",
+      "excerpt": {
+        "locator": "Chapter X, from Ona’s forelady to the end of the chapter; opens “Marija's lesson came just in time to save Ona from a similar fate. Ona, too, was…”; closes “…chasing the phantom of good health, and losing it because she was too poor to continue.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-sinclair-jungle-1906-12",
+        "continuesTo": null,
+        "blocks": [
+          261,
+          267
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5e76649a2461241da21ebe55d8b3d28871c06d55d7119b812fb6fdadfdb616c9"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-13-q1",
+          "prompt": "What does Ona learn about Miss Henderson? Why compare the house down-town to “the odor of the Packingtown rendering-plants”?",
+          "facilitatorNotes": [
+            "The forelady is a superintendent’s former mistress who runs her department together with a brothel, favoring the girls who flatter her. The comparison makes the corruption a smell that seeps through the whole workplace, part of the same rot as the stockyards’ stench."
+          ],
+          "evidence": [
+            "it would not be too much to say that she managed her department at Brown's in conjunction with it",
+            "like the odor of the Packingtown rendering-plants at night, when the wind shifted suddenly"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-13-q2",
+          "prompt": "Sinclair compares Packingtown with “the system of chattel slavery.” What exactly is compared, and where does the comparison hold or fail?",
+          "facilitatorNotes": [
+            "Workers who depend for bread on brutal bosses cannot refuse them, so sexual abuse becomes as “inevitable” as under slavery, only less visible because master and worker share a color. The workers are not owned and can leave, at the risk of starving; students can judge whether the comparison clarifies or overstates."
+          ],
+          "evidence": [
+            "under such circumstances immorality was exactly as inevitable, and as prevalent, as it was under the system of chattel slavery",
+            "because there was no difference in color between master and slave"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-13-q3",
+          "prompt": "How does the baby change Jurgis? Which details make his wonder believable?",
+          "facilitatorNotes": [
+            "He becomes “irrevocably a family man” and leaves the saloons. Comic, exact details carry it: the black eyes and ringlets, the “comical imitation of its father's nose,” his alarm at the shortness of the legs."
+          ],
+          "evidence": [
+            "It made him irrevocably a family man",
+            "that it should have come with a comical imitation of its father's nose was simply uncanny",
+            "It took him quite a while to get over his alarm at the incredible shortness of the little creature's legs."
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-13-q4",
+          "prompt": "Ona goes back to work after a week. What does Sinclair mean by “the punishment was so out of all proportion”? How does the last sentence sum up the family’s situation?",
+          "facilitatorNotes": [
+            "To save her place and a week’s wages she ruins her health for life, and no one connects cause and effect. Patent medicines help only while she can pay for them: she is “chasing the phantom of good health” and losing it to poverty, as the family chases security."
+          ],
+          "evidence": [
+            "it seemed such a slight offence, and the punishment was so out of all proportion",
+            "and so she was always chasing the phantom of good health, and losing it because she was too poor to continue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-14",
+      "title": "The Jungle: speeding-up and a run on the bank (Chapter XI, opening)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow Sinclair from the system to one woman’s panic, and ask what each shows.",
+      "focus": "The speeding-up, the Beef Trust, and Marija’s savings in a run on the bank.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. In Chapter X the family survived a hungry year: hidden costs on their house, Marija’s firing and new work as a beef-trimmer, and the birth of Jurgis and Ona’s son, Antanas, after which Ona went back to work too soon and fell ill. Pace-makers set the speed of a gang; piece-work is paid by the amount done. The red flag was a symbol of socialism and of workers’ revolt. A trust was a combination of companies that agreed on prices instead of competing. In a run on a bank, depositors rush to withdraw their money for fear it will fail; bank deposits then had no government insurance.",
+      "contentNote": "Describes punishing speed-ups and wage cuts, and a crowd fighting and trampling at a bank.",
+      "excerpt": {
+        "locator": "Chapter XI, from the summer’s new hands to the end of the run on Marija’s bank; opens “During the summer the packing-houses were in full activity again, and Jurgis made more…”; closes “…drawn a crowd at the hour the people were on their way to work, and so started the \"run.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-sinclair-jungle-1906-15",
+        "blocks": [
+          269,
+          277
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ca0e52a9316a04da78fac9997075dd0ec732678c5e2ca3e910fd22279c07efe7"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-14-q1",
+          "prompt": "Why do the packers keep hiring new hands when there is not enough work? What does the narrator mean by “how very cunning a trick”?",
+          "facilitatorNotes": [
+            "Extra hands keep wages low in the slack season, and the old men train the newcomers who will one day break their strike. The exclamation is sarcasm: the trick is cunning only for the packers."
+          ],
+          "evidence": [
+            "The men were to teach new hands, who would some day come and break their strike",
+            "And how very cunning a trick was that!"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-14-q2",
+          "prompt": "Explain the cycle of the piece-work “speeding-up.” What happens to the girls who march with a red flag?",
+          "facilitatorNotes": [
+            "The packers demand the same work in less time for the same pay, then cut the rate to match the new speed. The girls strike without plan; new labor breaks the strike in three days, and the flag-bearer ends in a department store at two dollars and a half a week. Anger without organization fails."
+          ],
+          "evidence": [
+            "they would reduce the rate of payment to correspond with the reduction in time!",
+            "the impromptu strike went to pieces in three days, owing to the rush of new labor"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-14-q3",
+          "prompt": "Jurgis learns that Packingtown is “one great firm, the Beef Trust,” but calls its price-fixing something he did not “understand or care about.” What does the reader understand that Jurgis does not?",
+          "facilitatorNotes": [
+            "With one wage scale there is no rival employer to go to, and a combine that fixes the prices of cattle and meat holds power over farmers and buyers as well as workers. Jurgis’s indifference is dramatic irony: the Trust decides his fate."
+          ],
+          "evidence": [
+            "Packingtown was really not a number of firms at all, but one great firm, the Beef Trust",
+            "but that was something he did not understand or care about"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-14-q4",
+          "prompt": "Retell Marija’s run on the bank. How is it both comic and serious, and what started the panic?",
+          "facilitatorNotes": [
+            "Comic: her fear that her bills will burn, her daily detour to see the bank is still there, her dollars sewn into her clothes. Serious: two days in rain and cold, people trampled, police, and the knowledge that she could lose everything. The cause was a policeman arresting a drunk next door: the poor have no way to judge “frenzied finance.”"
+          ],
+          "evidence": [
+            "what possible chance has a poor foreign working-girl to understand the banking business, as it is conducted in this land of frenzied finance?",
+            "The cause of the panic had been the attempt of a policeman to arrest a drunken man in a saloon next door"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-15",
+      "title": "The Jungle: the blizzard and the trap (Chapter XI)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 9,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow the picture of Jurgis as a fighter, and what happens to it.",
+      "focus": "Strength, chance and the limits of one man’s will.",
+      "context": "Recap: the packers have sped up the work and cut pay, a strike of canning girls has failed, and Jurgis has learned that Packingtown is one combine, the Beef Trust. Marija nearly lost her savings in a run on her bank. The family has paid back what it owed and begun to save. Votes were openly bought in Chicago elections, and “grafters” were corrupt politicians. Stanislovas is Teta Elzbieta’s young son. In Greek myth Prometheus, who gave fire to humans, was chained to a rock as punishment.",
+      "contentNote": "Describes a steer loose on a crowded killing-floor, a boss firing a rifle into the steam, a crippling injury and a man’s despair.",
+      "excerpt": {
+        "locator": "Chapter XI, from election day to Jurgis lying helpless with his injured ankle; opens “About this time Jurgis and Ona also began a bank-account. Besides having paid Jonas and…”; closes “…wild-beast powers of nature, just as truly as ever they were in the days of the cave-men!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-sinclair-jungle-1906-14",
+        "continuesTo": null,
+        "blocks": [
+          278,
+          286
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "278c78ebb1909b06e81bcdd5e389c7b196280c38cff6c635fc68b8214ea43103"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-15-q1",
+          "prompt": "Jurgis sells his vote because “every one did it.” How does the narrator present his reasoning? Is it fair?",
+          "facilitatorNotes": [
+            "He knows it is “not supposed to be right,” but his refusal would change nothing, so refusing never occurs to him. The narrator explains rather than excuses: corruption becomes normal when one person’s choice seems powerless."
+          ],
+          "evidence": [
+            "it was not supposed to be right to sell your vote",
+            "his refusal to join would not have made the slightest difference in the results"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-15-q2",
+          "prompt": "How does Sinclair describe Jurgis’s fight through the blizzard? What do the lion and the buffalo say about him?",
+          "facilitatorNotes": [
+            "The snow becomes an enemy that trips him and builds walls; he carries Ona like a sack of meal. The animal images show strength and rage. Victory makes him feel “the master of his fate,” which echoes W. E. Henley’s poem “Invictus.”"
+          ],
+          "evidence": [
+            "the soul of Jurgis rose up within him like a sleeping lion",
+            "plunging like a wounded buffalo, puffing and snorting in rage"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-15-q3",
+          "prompt": "Why does Sinclair warn of a “cowardly trap” before the accident? What makes the injury a trap?",
+          "facilitatorNotes": [
+            "The warning turns triumph into foreboding. The accident is slight, a turned ankle while dodging a steer loosed by the speeding-up, but no strength protects against it, and the company owes him nothing: the doctor blames his “folly.”"
+          ],
+          "evidence": [
+            "felt himself the master of his fate",
+            "The injury was not one that Durham and Company could be held responsible for, and so that was all there was to it"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-15-q4",
+          "prompt": "Lying in bed, Jurgis thinks, “It was true, it was true.” What does he now believe, and why compare him with Prometheus and with the cave-men?",
+          "facilitatorNotes": [
+            "That the best powers of a man may not be enough, and that in a city of heaped-up wealth people may perish unheard. Prometheus is strength chained and helpless; the cave-men suggest that this civilization leaves the poor as exposed as the first humans. The book’s title takes on its meaning."
+          ],
+          "evidence": [
+            "It was for all the world the old story of Prometheus bound.",
+            "that the best powers of a man might not be equal to it",
+            "just as truly as ever they were in the days of the cave-men"
+          ]
+        }
+      ]
     }
   ]
 }
