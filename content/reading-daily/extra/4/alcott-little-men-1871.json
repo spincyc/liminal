@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "grade": 4,
+  "work": "alcott-little-men-1871",
+  "readings": [
+    {
+      "id": "reading-4-alcott-little-men-1871-01",
+      "title": "Little Men: Nat’s first lessons (Chapter IV, first part)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Find the different kinds of help that change a boy’s life, and decide which matters most.",
+      "focus": "Nat is far behind at school, but Plumfield finds many ways for him to grow.",
+      "context": "Little Men (1871) is by Louisa May Alcott, the author of Little Women. Jo March, now Mrs. Bhaer, and her husband, the German Professor Bhaer, run Plumfield, a school and home for boys. Nat Blake, a twelve-year-old orphan who used to play the fiddle in the streets for a living, has just arrived, sent by their friend Mr. Laurence (Laurie). A copy-book is for practising handwriting; the Bay of Biscay is a sea off France and Spain; a patron is a supporter; a turning-lathe is a machine for shaping wood; Edgeworth’s Tales are stories by Maria Edgeworth.",
+      "contentNote": "Nat says his father’s beatings taught him to keep his temper.",
+      "excerpt": {
+        "locator": "Chapter IV, “Stepping-Stones,” from the opening through Mr. Bhaer’s words on giving a boy a trade; opens “WHEN Nat went into school on Monday morning, he quaked inwardly, for now he thought he…”; closes “…it for poetry or ploughing, it shall be cultivated and made useful to them if possible.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-4-alcott-little-men-1871-02",
+        "blocks": [
+          282,
+          299
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "93af3cb1e96b171f2184422a6c41fb706ead2797566ff6affa62b65da39c8aa0"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-01-q1",
+          "prompt": "How does Mr. Bhaer keep Nat from being embarrassed on his first school day?",
+          "facilitatorNotes": [
+            "He seats him in the deep window with his back to the class, and Franz hears his lessons there, so no one sees his blots or hears his mistakes."
+          ],
+          "evidence": [
+            "where he could turn his back on the others",
+            "so no one could hear his blunders"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-01-q2",
+          "prompt": "Nat thinks he knows nothing. What does Mr. Bhaer say he knows, and what is “best of all”?",
+          "facilitatorNotes": [
+            "He can keep his temper and play the violin, which none of the other boys can do; best of all, he truly wants to learn, which is “half the battle.”"
+          ],
+          "evidence": [
+            "you really care to learn something, and that is half the battle",
+            "you can play the violin, and not one of the lads can"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-01-q3",
+          "prompt": "Mrs. Bhaer says, “This is the crop I like best.” What does she mean?",
+          "facilitatorNotes": [
+            "Nat himself: his thin cheeks are filling out and his bent shoulders straightening, as if he were growing like the beans in his garden. The joke shows that she cares more about the boy than about the vegetables."
+          ],
+          "evidence": [
+            "This is the crop I like best",
+            "the bent shoulders that were slowly straightening up"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-01-q4",
+          "prompt": "Why do the Bhaers encourage the boys to be “in business”?",
+          "facilitatorNotes": [
+            "Most of the boys are poor and will have to make their own way; Mr. Bhaer believes work is wholesome and that a trade makes a boy independent. Readers may compare the boys’ businesses and decide which seems most useful."
+          ],
+          "evidence": [
+            "most of them were poor, and knowing that they would have their own way to make by and by",
+            "Give a boy a trade, and he is independent."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-alcott-little-men-1871-02",
+      "title": "Little Men: fiddling for money, and a fault (Chapter IV, second part)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 7,
+        "totalMinutes": 18
+      },
+      "challenge": "Notice how a character’s past explains a fault without excusing it.",
+      "focus": "Nat earns money with his fiddle, but he has a habit of telling lies.",
+      "context": "Recap: at Plumfield, Nat has begun lessons, worked in his garden, learned to read with Demi’s help, and seen the boys earn money with their own skills. Nicolo was the man Nat used to fiddle for in the streets; Beth was Mrs. Jo’s sister, who died young. Docile means gentle and easy to teach; Nuremberg is a city in Germany.",
+      "contentNote": "Mr. Bhaer tells how, when he was a boy, his grandmother cut his tongue with scissors as a punishment for lying.",
+      "excerpt": {
+        "locator": "Chapter IV, “Stepping-Stones,” from Nat’s request to play at a picnic until Mr. Bhaer proposes a new kind of punishment; opens “So, when Nat came running to him one day to ask with an excited face—”; closes “\"How?\" asked Nat, startled at the idea.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-alcott-little-men-1871-01",
+        "continuesTo": "reading-4-alcott-little-men-1871-03",
+        "blocks": [
+          300,
+          320
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c080996ad6e60cb150bcbdf51f8f851ef26c614f80fdab609115fcf8d1d1c2cf"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-02-q1",
+          "prompt": "Why does Nat like fiddling at picnics better than fiddling in the street?",
+          "facilitatorNotes": [
+            "Now he keeps all the money and has a good time too; in the street he got none of it. He also brings treats home for Daisy and little Ted."
+          ],
+          "evidence": [
+            "for then I got none of the money, and now I have it all, and a good time besides",
+            "whom he never forgot"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-02-q2",
+          "prompt": "What reasons does Nat give for telling lies? Do they explain his fault, or excuse it?",
+          "facilitatorNotes": [
+            "He lied out of fear of his father and Nicolo, and now sometimes because the boys laugh at him. The narrator says fear made the habit stronger, but still insists “a lie is a lie.” Readers can see why he lies without thinking it right."
+          ],
+          "evidence": [
+            "I used to tell 'em because I was afraid of father and Nicolo",
+            "a lie is a lie"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-02-q3",
+          "prompt": "The narrator sorts lies into black, gray and white. Does she think white lies are all right?",
+          "facilitatorNotes": [
+            "No: even polite untruths are “not right, and everybody knows it,” though she admits everyone tells them. Readers may disagree about small polite fibs; the text gives her firm view."
+          ],
+          "evidence": [
+            "Not very black ones, seldom getting deeper than gray, and often the mildest of white fibs",
+            "it is not right, and everybody knows it"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-02-q4",
+          "prompt": "Mr. Bhaer says that the next time Nat lies, “you shall punish me.” Why might he think this will work better than punishing Nat?",
+          "facilitatorNotes": [
+            "Nat loves him and would hate to hurt him, so the fear of causing pain may guard his tongue better than fear for himself. Readers can predict what will happen next."
+          ],
+          "evidence": [
+            "when you tell a lie I will not punish you, but you shall punish me"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-alcott-little-men-1871-03",
+      "title": "Little Men: six strokes (Chapter IV, end)",
+      "sourceId": "alcott-little-men-1871",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 8,
+        "totalMinutes": 19
+      },
+      "challenge": "Watch a scene through a spying boy’s eyes, and decide what each character learns.",
+      "focus": "Mr. Bhaer makes Nat strike his hand, and the punishment teaches more than a beating would.",
+      "context": "Recap: Nat sometimes tells lies out of old fear, and Mr. Bhaer has said that the next time he lies, Nat must punish him instead. To ferule is to strike a pupil’s hand with a ruler, once a common school punishment. Bübchen is German for “little boy”; a settee is a bench; hills of corn are mounds where corn is planted.",
+      "contentNote": "The teacher makes the boy strike his hand six times with a ruler, turning round the beatings pupils then received.",
+      "excerpt": {
+        "locator": "Chapter IV, “Stepping-Stones,” from Mr. Bhaer’s explanation of the punishment to the end of the chapter; opens “\"You shall ferule me in the good old-fashioned way; I seldom do it myself, but it may…”; closes “…hand he never touched without remembering that it had willingly borne pain for his sake.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-4-alcott-little-men-1871-02",
+        "continuesTo": null,
+        "blocks": [
+          321,
+          356
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fcbeafb2420128bb98a6c7b6a0bae61212140a4823fce172aca1ae9ef801f9fd"
+      },
+      "questions": [
+        {
+          "id": "reading-4-alcott-little-men-1871-03-q1",
+          "prompt": "Tommy watches through the window. How do his thoughts change as he watches?",
+          "facilitatorNotes": [
+            "He expects Nat to be feruled and wishes he had not told; then he is so astonished to see Mr. Bhaer hand Nat the rule that he nearly falls down the bank."
+          ],
+          "evidence": [
+            "Wish I hadn't told",
+            "Tommy was so staggered by this last speech"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-03-q2",
+          "prompt": "Why does striking Mr. Bhaer hurt Nat more than being struck would? Find words that show it.",
+          "facilitatorNotes": [
+            "Each stroke “hurt the giver more”; Nat throws the rule away and sobs over the hand he has hit. His love for Mr. Bhaer makes the punishment unbearable."
+          ],
+          "evidence": [
+            "yet hurt the giver more",
+            "hugging the kind hand in both his own"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-03-q3",
+          "prompt": "Emil once had to do the same. What does his story add, and what do the boys decide afterwards?",
+          "facilitatorNotes": [
+            "Emil meant to enjoy it, but after one blow he remembered all his uncle had done for him and could not go on. The boys agree not to speak of it and leave Nat alone; Daisy keeps him company."
+          ],
+          "evidence": [
+            "everything he had ever done for me came into my head all at once somehow",
+            "so don't let's say a word about it"
+          ]
+        },
+        {
+          "id": "reading-4-alcott-little-men-1871-03-q4",
+          "prompt": "Was Mr. Bhaer’s method a good way to teach truthfulness? What might someone say against it?",
+          "facilitatorNotes": [
+            "It worked: Nat never touched that hand again without remembering. Some readers may still feel it was hard on Nat to make him cause pain, or that guilt is a heavy teacher. Both views can use the scene."
+          ],
+          "evidence": [
+            "whose kind hand he never touched without remembering that it had willingly borne pain for his sake",
+            "\"Isn't that enough?\" he asked"
+          ]
+        }
+      ]
+    }
+  ]
+}
