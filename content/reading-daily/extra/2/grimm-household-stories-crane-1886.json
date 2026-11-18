@@ -1,0 +1,1757 @@
+{
+  "schemaVersion": 1,
+  "grade": 2,
+  "work": "grimm-household-stories-crane-1886",
+  "readings": [
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-01",
+      "title": "Cat and Mouse in Partnership",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Hear a pattern repeat three times, and notice what listeners understand before the mouse does.",
+      "focus": "A cat steals the winter store one lick at a time and hides each theft in a made-up name.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. To stand godfather is to make promises for a baby at its christening, the church service where it is named. Provision is food stored for later; the altar is the table at the front of a church; the calendar here means the list of saints’ names that babies were given.",
+      "contentNote": "At the end the cat kills and eats the mouse.",
+      "excerpt": {
+        "locator": "“Cat & Mouse in Partnership,” the whole tale; opens “A cat having made acquaintance with a mouse, professed such great love and friendship for…”; closes “…and the cat leaped upon her and made an end of her. And that is the way of the world.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          289,
+          322
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b77eeaae4bd7392b7c3340110445312578b9074ef659916e0cf9f7fe7f30112d"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-01-q1",
+          "prompt": "Where do the cat and mouse hide their pot of fat, and why there?",
+          "facilitatorNotes": [
+            "Under the altar in the church, because nobody would steal from a church. The joke is that the thief is one of the partners."
+          ],
+          "evidence": [
+            "there could not be a better place than the church, for nobody would steal there"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-01-q2",
+          "prompt": "What are the three names the cat gives his “godchildren”? What do they really describe?",
+          "facilitatorNotes": [
+            "Top-off, Half-gone and All-gone: how much of the fat he has eaten each time. Listeners can guess long before the mouse."
+          ],
+          "evidence": [
+            "Top-off",
+            "Half-gone",
+            "It is called All-gone."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-01-q3",
+          "prompt": "When the mouse wonders aloud about the strange names, how does the cat stop her?",
+          "facilitatorNotes": [
+            "He mocks her for always sitting at home in her little grey frock and never seeing the world. He makes her feel foolish so she will stop asking."
+          ],
+          "evidence": [
+            "That's because you are always sitting at home"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-01-q4",
+          "prompt": "The tale ends, “And that is the way of the world.” Do you agree?",
+          "facilitatorNotes": [
+            "The storyteller says the strong and greedy often win. Some children agree sadly; others say it should not be so, or that a mouse should never trust a cat. The ending invites an argument, not comfort."
+          ],
+          "evidence": [
+            "And that is the way of the world."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-02",
+      "title": "The Wolf and the Seven Little Goats, part 1: three knocks at the door",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow how the wolf changes his disguise each time the kids see through it.",
+      "focus": "The kids test the voice and then the paws, and the wolf fixes each clue until they open the door.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. Kids are young goats. Hoarse means rough and croaky; meal is ground grain, like flour; to give someone short shrift is to deal with them quickly and without mercy.",
+      "contentNote": "The wolf swallows six of the kids whole; this part ends with only the youngest safe.",
+      "excerpt": {
+        "locator": "“The Wolf and the Seven Little Goats,” from the start through the wolf falling asleep in the meadow; opens “There was once an old goat who had seven little ones, and was as fond of them as ever…”; closes “…forth into the green meadows, and laying himself down under a tree, he fell asleep.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-03",
+        "blocks": [
+          324,
+          343
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "15c8c03e138bee086ca1876a0cc94f86d662ede66da0a14f1614be705bfe73c4"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-02-q1",
+          "prompt": "What two clues does the mother tell the kids to watch for?",
+          "facilitatorNotes": [
+            "The wolf’s hoarse voice and his black paws. The whole story turns on these two clues."
+          ],
+          "evidence": [
+            "he may always be known by his hoarse voice and black paws"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-02-q2",
+          "prompt": "How does the wolf fix each clue?",
+          "facilitatorNotes": [
+            "He eats chalk to soften his voice, then has the baker spread dough and the miller sprinkle white meal on his paws. Each time he is caught, he fixes exactly what gave him away."
+          ],
+          "evidence": [
+            "ate it up to make his voice soft",
+            "strew me some white meal over my paws"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-02-q3",
+          "prompt": "The miller refuses at first. Why does he give in, and what does the storyteller think of him?",
+          "facilitatorNotes": [
+            "The wolf threatens to eat him, so he does what he guessed was wrong. The storyteller grumbles, “that just shows what men are.” Children can say whether they blame him."
+          ],
+          "evidence": [
+            "But the miller refused, thinking the wolf must be meaning harm to some one.",
+            "And that just shows what men are."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-02-q4",
+          "prompt": "The kids had been careful twice. Why does their test fail the third time?",
+          "facilitatorNotes": [
+            "They ask only to see his paws, and once the paws look white, “all seemed right.” Ask what else they could have checked before opening the door."
+          ],
+          "evidence": [
+            "First show us your paws",
+            "when they saw that they were white, all seemed right"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-03",
+      "title": "The Wolf and the Seven Little Goats, part 2: the mother’s scissors",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice how careful looking leads to a rescue, and decide whether the ending is fair.",
+      "focus": "The mother finds her youngest kid, then finds the sleeping wolf, and turns his greed against him.",
+      "context": "Recap: while their mother was in the wood, the wolf disguised his voice and paws, tricked the seven kids into opening the door and swallowed six of them whole. The youngest hid in the clock-case. Shears are large scissors; to devour is to eat greedily; betide means happen to.",
+      "contentNote": "The mother goat cuts the sleeping wolf open to free her children and fills him with stones, and he drowns in the brook.",
+      "excerpt": {
+        "locator": "“The Wolf and the Seven Little Goats,” from the mother’s return to the end of the tale; opens “Not long after, the mother goat came back from the wood; and, oh! what a sight met her…”; closes “…dead!\" they cried, and taking hands, they danced with their mother all about the place.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-02",
+        "continuesTo": null,
+        "blocks": [
+          344,
+          353
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "884e97070edd15939c2a632bd18baf30c49ddf6384654f7cb5d48ab0eae966c6"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-03-q1",
+          "prompt": "What does the mother find when she comes home, and how does she find her youngest?",
+          "facilitatorNotes": [
+            "The door wide open, furniture thrown about, dishes broken. She calls every name, and only the youngest answers, from the clock-case."
+          ],
+          "evidence": [
+            "the door was standing wide open",
+            "here, in the clock-case"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-03-q2",
+          "prompt": "What does the mother notice about the sleeping wolf, and what does she guess?",
+          "facilitatorNotes": [
+            "Something moving and struggling inside him, so her children may be alive. She looks at him “carefully on all sides” before she acts."
+          ],
+          "evidence": [
+            "The mother goat looked at him carefully on all sides",
+            "something inside his body was moving and struggling"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-03-q3",
+          "prompt": "Why are the six kids still alive?",
+          "facilitatorNotes": [
+            "The wolf was so greedy that he swallowed them whole. His greed is what saves them."
+          ],
+          "evidence": [
+            "in his greediness the rogue had swallowed them down whole"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-03-q4",
+          "prompt": "The wolf’s rhyme says, “They were kids, and now they’re stones.” Why is that funny, and is the ending fair?",
+          "facilitatorNotes": [
+            "He does not know what happened, but the listener does. Some children think he got what he deserved; others find it harsh. Folktales often end with the villain completely punished."
+          ],
+          "evidence": [
+            "They were kids, and now they're stones."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-04",
+      "title": "The Straw, the Coal, and the Bean",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Explain how each traveller’s own nature decides what happens to it.",
+      "focus": "Three escapees from an old woman’s fire set out together, and only one survives the brook, with a scar to show for it.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. A mess of beans is a dish of them; a hearth is the floor of a fireplace; ardent means fiery and eager; prudently means carefully; compassionate means kind; to give up the ghost is to die. This is a “why” story: it explains how something came to be.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Straw, the Coal, and the Bean,” the whole tale; opens “There lived in a certain village a poor old woman who had collected a mess of beans, and…”; closes “…but as he had sewn her up with black stitches, all beans since then have a black seam.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          876,
+          885
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4189f1ec26c035bdaa9be84d04cee536030155e4ca386ff607bd6fbd9831db29"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-04-q1",
+          "prompt": "How did each of the three escape the old woman’s fire?",
+          "facilitatorNotes": [
+            "The coal jumped out of the fire, the bean fell out of the pot, and the straw slipped through her fingers. Each tells its own lucky escape."
+          ],
+          "evidence": [
+            "I jumped out of the fire by great good luck",
+            "Very luckily I managed to slip through her fingers."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-04-q2",
+          "prompt": "Whose idea is the bridge, and why does it fail?",
+          "facilitatorNotes": [
+            "The straw’s. The coal is frightened by the rushing water, stops in the middle and burns through the straw. Some children blame the coal’s fear; others say a straw bridge and a hot coal never belonged together."
+          ],
+          "evidence": [
+            "I will lay myself across",
+            "she was struck with terror, and stopped"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-04-q3",
+          "prompt": "Why does the bean burst?",
+          "facilitatorNotes": [
+            "It laughs so hard at its friends’ accident that it bursts. Laughing at someone else’s trouble brings trouble of its own."
+          ],
+          "evidence": [
+            "could not help laughing at the sight"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-04-q4",
+          "prompt": "What does the tale explain at the very end?",
+          "facilitatorNotes": [
+            "Why beans have a black seam: the kind tailor sewed the bean up with black thread. If a dried bean is handy, look for the seam."
+          ],
+          "evidence": [
+            "all beans since then have a black seam"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-05",
+      "title": "The Mouse, the Bird, and the Sausage",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow how one change leads to another until everything goes wrong.",
+      "focus": "Three housemates who live happily swap jobs because one of them is told he works too hard.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. In this tale a sausage, who seasons the stew by stirring himself through it, is a character just like the bird and the mouse. Victuals are food; to draw lots is to let chance decide; forged letters are false papers; to lodge a complaint is to accuse someone formally.",
+      "contentNote": "One after another the three friends die: a dog eats the sausage, the mouse perishes in the cooking pot, and the bird falls into the well. The tale treats each death as a comic turn.",
+      "excerpt": {
+        "locator": "“The Mouse, the Bird, and the Sausage,” the whole tale; opens “Once on a time, a mouse and a bird and a sausage lived and kept house together in perfect…”; closes “…and himself after it, and as he could not get out again, he was obliged to be drowned.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1150,
+          1155
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b096534fe6934dba5913618fa41bdad194a3084afda0ce93e9f615c1608fcc04"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-05-q1",
+          "prompt": "What was each housemate’s job at first?",
+          "facilitatorNotes": [
+            "The bird fetched wood; the mouse drew water, lit the fire and set the table; the sausage did the cooking by stirring himself through the pot."
+          ],
+          "evidence": [
+            "It was the bird's business to fly to the forest every day and bring back wood."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-05-q2",
+          "prompt": "Who puts the idea of changing into the bird’s head?",
+          "facilitatorNotes": [
+            "Another bird, who calls him a simpleton for working so hard while the others have easy lives. The storyteller has already warned that no one is content."
+          ],
+          "evidence": [
+            "the other bird called him a poor simpleton",
+            "Nobody is content in this world: much will have more!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-05-q3",
+          "prompt": "Why does each new job go wrong?",
+          "facilitatorNotes": [
+            "Each old job suited the one who had it. A sausage on the road is prey for a dog; a mouse cannot stir the stew by climbing into it; the bird falls in after the bucket. The new jobs do not fit their natures."
+          ],
+          "evidence": [
+            "looking upon the sausage as lawful prey",
+            "but then she had to part with fur and skin, and lastly with life!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-05-q4",
+          "prompt": "The storyteller calls their first life “most satisfactory.” Whose fault is it that they lost it?",
+          "facilitatorNotes": [
+            "The bird insisted on a change after listening to an outsider, and the others went along. Some children blame the bird, some the other bird, some bad luck. Each answer can point to a line."
+          ],
+          "evidence": [
+            "It really was a most satisfactory life.",
+            "the bird was determined to have his own way"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-06",
+      "title": "The Bremen Town Musicians, part 1: four old travellers",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 6,
+        "totalMinutes": 12
+      },
+      "challenge": "Notice the pattern as each new animal joins the journey, and what each one is escaping.",
+      "focus": "An old donkey, dog, cat and rooster, each about to be got rid of, set off together to be musicians.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. Bremen is a city in northern Germany. An ass is a donkey; a lute is a stringed instrument; serenading is singing at night under a window; Lady-day is a spring holiday; Chanticleer is an old name for a rooster; something that bodes no good is a sign of trouble.",
+      "contentNote": "Each animal has run away because its owner meant to kill it now that it is old.",
+      "excerpt": {
+        "locator": "“The Bremen Town Musicians,” from the start through the rooster seeing a light from the treetop; opens “There was once an ass whose master had made him carry sacks to the mill for many a long…”; closes “…that there must be a house not far off, as he could see a light, so the ass said,”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-07",
+        "blocks": [
+          1226,
+          1239
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b2134529ba72885de591fc421313ab310af3de878772bdeab2e2208701bdeb0d"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-06-q1",
+          "prompt": "Why does each animal leave home?",
+          "facilitatorNotes": [
+            "Each has grown old and less useful: the donkey is to be turned out, the dog killed, the cat drowned and the rooster made into soup. Ask the child to name one animal’s reason."
+          ],
+          "evidence": [
+            "now I am old, I get weaker every day",
+            "my mistress wanted to drown me"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-06-q2",
+          "prompt": "What does the donkey say to persuade each animal to come along?",
+          "facilitatorNotes": [
+            "He finds a musical talent in each: the dog can drum, the cat knows serenading, the rooster has a powerful voice. He looks for what they can do, not what they can no longer do."
+          ],
+          "evidence": [
+            "You understand serenading.",
+            "You have a powerful voice"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-06-q3",
+          "prompt": "The donkey tells the rooster, “At any rate that will be better than dying.” What does that show about their plan?",
+          "facilitatorNotes": [
+            "It is not a sure plan; anything is better than staying. They set out hopeful but uncertain."
+          ],
+          "evidence": [
+            "At any rate that will be better than dying."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-06-q4",
+          "prompt": "Why does the rooster sleep at the very top of the tree, and what does he see from there?",
+          "facilitatorNotes": [
+            "It is the safest place, and from that high perch he spots a light in the distance. Ask the child to guess what the light will turn out to be."
+          ],
+          "evidence": [
+            "as that was the safest place for him",
+            "perceived in the distance a little light shining"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-07",
+      "title": "The Bremen Town Musicians, part 2: a concert for robbers",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Compare what really happened with a frightened person’s report of it.",
+      "focus": "Four old animals frighten off a band of robbers and find a home.",
+      "context": "Recap: an old donkey, dog, cat and rooster, each about to be got rid of by its owner, are walking to Bremen to become town musicians. Night has fallen in a wood, and the rooster has seen a light. To reconnoitre is to go and look around secretly; a spectre is a ghost; a justice is a judge; grewsome is an old spelling of gruesome.",
+      "contentNote": "A robber who comes back in the dark is scratched, bitten and kicked.",
+      "excerpt": {
+        "locator": "“The Bremen Town Musicians,” from the walk toward the light to the end of the tale; opens “\"We had better get up and go there, for these are uncomfortable quarters.\" The dog began…”; closes “…there they stayed. And the person who last related this tale is still living, as you see.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-06",
+        "continuesTo": null,
+        "blocks": [
+          1240,
+          1247
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "29f2c90f2e22868423ac8ddb2070a61d15ae22bbaf3faf18f7ed097ef86f9738"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-07-q1",
+          "prompt": "How do the four animals drive the robbers out?",
+          "facilitatorNotes": [
+            "They climb onto one another’s backs at the window, all perform at once, and crash through the glass. Together they make a noise the robbers take for a goblin."
+          ],
+          "evidence": [
+            "The ass brayed, the dog barked, the cat mewed, and the cock crowed"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-07-q2",
+          "prompt": "Where does each animal choose to sleep, and why does each place suit it?",
+          "facilitatorNotes": [
+            "The donkey on the dunghill outside, the dog behind the door, the cat by the warm ashes and the rooster up in the loft: each place suits its “nature and habits.”"
+          ],
+          "evidence": [
+            "each sought out a sleeping-place to suit his nature and habits"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-07-q3",
+          "prompt": "The robber reports a witch, a man with a knife, a black spectre and a judge. What was each one really?",
+          "facilitatorNotes": [
+            "The cat scratching, the dog biting, the donkey kicking and the rooster crowing. Fear turns four old animals into monsters; even “Cock-a-doodle-doo” becomes “Bring that rogue here!”"
+          ],
+          "evidence": [
+            "there is a grewsome witch",
+            "Bring that rogue here!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-07-q4",
+          "prompt": "The animals never get to Bremen. Is the ending still a happy one?",
+          "facilitatorNotes": [
+            "Most children will say yes: they find a home, which is what they needed. Others may wish they had become real musicians. Both readings fit the last lines."
+          ],
+          "evidence": [
+            "found themselves so well off where they were, that there they stayed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-08",
+      "title": "The Elves: the shoemaker’s helpers",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow how a gift is answered with another gift.",
+      "focus": "A poor shoemaker’s work is finished every night by unseen helpers, until he and his wife decide to thank them.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. The Grimms printed three short stories together under the title “The Elves”; this is the first (a school night reads the second). A conscience is a sense of right and wrong; a purchaser is a buyer; waistcoats and breeches are vests and knee-length trousers; spruce means neat and smart; a cobbler makes and mends shoes.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Elves,” the first of its three stories (the shoemaker); opens “There was once a shoemaker, who, through no fault of his own, became so poor that at last…”; closes “…went well with the shoemaker as long as he lived, and whatever he took in hand prospered.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1671,
+          1680
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "aa3d2ed5be3201b9025386f241ceb3bc2be03cf50669695fa31f7e0be53a3eb8"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-08-q1",
+          "prompt": "How does the shoemaker go from almost nothing to doing well?",
+          "facilitatorNotes": [
+            "One finished pair sells for more than usual, which buys leather for two pairs, then four, and so on. Each night’s gift grows into more work."
+          ],
+          "evidence": [
+            "had enough money to buy leather for two more pairs of shoes",
+            "enough for four new pairs"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-08-q2",
+          "prompt": "What do the shoemaker and his wife see when they hide and watch?",
+          "facilitatorNotes": [
+            "Two tiny men with no clothes, stitching, piercing and hammering faster than the shoemaker’s eyes can follow."
+          ],
+          "evidence": [
+            "they saw come in two neatly-formed naked little men",
+            "the shoemaker's eyes could scarcely follow them"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-08-q3",
+          "prompt": "Whose idea is the thank-you gift, and why does she choose clothes?",
+          "facilitatorNotes": [
+            "The wife’s. She thinks the little men must be cold with nothing to cover them. She notices what they need, not only what they did."
+          ],
+          "evidence": [
+            "they must be very cold"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-08-q4",
+          "prompt": "Once they have clothes, the elves say they will be cobblers no longer and never come back. Was the gift a good idea?",
+          "facilitatorNotes": [
+            "The shoemaker loses his helpers but goes on doing well, and the elves are delighted. Some children think the couple lost out; others say a thank-you should not be about getting more. Both can be defended."
+          ],
+          "evidence": [
+            "No longer cobblers we will be.",
+            "it always went well with the shoemaker as long as he lived"
+          ]
+        }
+      ],
+      "months": [
+        12
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-09",
+      "title": "The Elves, the third story: the changeling",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Work out why a strange trick works.",
+      "focus": "A mother follows her neighbours’ odd advice to get her own baby back from the elves.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. This is the last of three short stories the Grimms told under the title “The Elves.” People once believed that elves might steal a baby and leave one of their own, a changeling, in its place. The hearth is the fireplace.",
+      "contentNote": "The elves take a baby from its mother; at the end it is brought back safe.",
+      "excerpt": {
+        "locator": "“The Elves,” the third of its three stories (III), whole; opens “The elves once took a child away from its mother, and left in its place a changeling with…”; closes “…right child; and they laid it near the hearth, and carried the changeling away with them.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1684,
+          1686
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "57c91ace5965b8a50423d38855a6b35cb08dd45c5d50f018dc1a3663d5a04e3e"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-09-q1",
+          "prompt": "How is the changeling different from the mother’s child?",
+          "facilitatorNotes": [
+            "It has a big head and staring eyes and does nothing but eat and drink."
+          ],
+          "evidence": [
+            "a changeling with a big head and staring eyes, who did nothing but eat and drink"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-09-q2",
+          "prompt": "What do the neighbours tell the mother to do, and what is supposed to happen?",
+          "facilitatorNotes": [
+            "Boil water in two egg-shells by the fire; that will make the changeling laugh, and if he laughs, it will be all over with him."
+          ],
+          "evidence": [
+            "boil water in two egg-shells",
+            "if he laughed, it would be all over with him"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-09-q3",
+          "prompt": "Why does the changeling laugh? What does his rhyme give away?",
+          "facilitatorNotes": [
+            "Cooking in an egg-shell is so silly that he has never seen it, though he is “old as forest tree.” The baby-looking creature turns out to be very old, so his laugh gives him away."
+          ],
+          "evidence": [
+            "Though old I be",
+            "Cooking in an egg-shell never did I see!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-09-q4",
+          "prompt": "The mother was in trouble, and help came from her neighbours. Could she have solved it alone?",
+          "facilitatorNotes": [
+            "The story suggests not: the neighbours knew the old trick. Some children may say she was brave to try something so strange; both help and courage matter."
+          ],
+          "evidence": [
+            "The mother in her trouble went to her neighbours and asked their advice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-10",
+      "title": "Old Sultan",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 6,
+        "totalMinutes": 15
+      },
+      "challenge": "Decide whether a character is loyal, tricky, or both.",
+      "focus": "An old dog escapes being put down by a trick his friend the wolf invents, then stays loyal to his master.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. A peasant is a poor farmer. A threshing-flail is a farm tool for beating grain. In old duels each fighter brought a helper called a “second”; satisfaction means paying back an insult. A sabre is a curved sword; the culprit is the one to blame.",
+      "contentNote": "The peasant means to kill his old dog because it is no longer useful, and the wolf carries off the baby as part of a trick (the child is not hurt). The master beats the wolf with a flail.",
+      "excerpt": {
+        "locator": "“Old Sultan,” the whole story; opens “There was once a peasant who owned a faithful dog called Sultan, now grown so old that he…”; closes “…who came down, quite ashamed of his timidity, and made peace with the dog once more.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1892,
+          1908
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1092408d0cdafc9079fb9c83219b612426ec474ab9f4e9476a55a9597a0fb4bd"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-10-q1",
+          "prompt": "Why does the peasant want to get rid of Sultan, and what does his wife say?",
+          "facilitatorNotes": [
+            "Sultan has lost all his teeth, so no thief would fear him. The wife says he has served them faithfully for years and deserves food and shelter in his old age."
+          ],
+          "evidence": [
+            "he has never a tooth, and no thief would mind him in the least",
+            "he deserves food and shelter in his old age"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-10-q2",
+          "prompt": "What is the wolf’s plan?",
+          "facilitatorNotes": [
+            "The wolf will carry off the baby while the parents are hay-making, Sultan will chase him, the wolf will drop it, and Sultan will bring it back, so the parents will be grateful."
+          ],
+          "evidence": [
+            "you must rush after me, as if to save it from me"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-10-q3",
+          "prompt": "What does the wolf ask in return, and how does Sultan answer?",
+          "facilitatorNotes": [
+            "To be allowed to carry off a fat sheep. Sultan refuses, because he must stay true to his master, and even warns the master."
+          ],
+          "evidence": [
+            "I cannot consent to it; I must remain true to my master."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-10-q4",
+          "prompt": "Is Sultan a good friend to the wolf? Is he a good dog to his master? Can he be both?",
+          "facilitatorNotes": [
+            "He used the wolf’s trick to save himself but would not let the wolf steal. Some children will say he is loyal where it matters; others that he cheated his master once. After a duel won by fear (the wolf mistakes the three-legged cat’s raised tail for a sword), the two make peace."
+          ],
+          "evidence": [
+            "made peace with the dog once more"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-11",
+      "title": "The Sleeping Beauty, part 1: the thirteenth wise woman",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 7,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice how a promise and a curse are both kept.",
+      "focus": "A wise woman left out of a feast curses the baby princess, and another softens the curse.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. Thou, thy and thee are old words for “you” and “your.” Wise women here are fairies. To bestow is to give; a prophecy tells the future; a spindle is a pointed stick used for spinning thread; flax is a plant spun into linen; a scullion is a kitchen boy.",
+      "contentNote": "The thirteenth wise woman says the princess will die when she pricks her finger; the twelfth changes this to a hundred years’ sleep.",
+      "excerpt": {
+        "locator": "“The Sleeping Beauty,” from the king and queen’s wish to the whole castle’s falling asleep; opens “In times past there lived a king and queen, who said to each other every day of their…”; closes “…went to sleep. And the wind ceased, and not a leaf fell from the trees about the castle.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-12",
+        "blocks": [
+          1941,
+          1952
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "70ee710b477bd9cf0eb7e6309793adfda8bad8043ff59e04f022ecd1c566e25f"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-11-q1",
+          "prompt": "Why is one wise woman left out of the feast?",
+          "facilitatorNotes": [
+            "There are thirteen, but the king has only twelve golden plates for them to eat from."
+          ],
+          "evidence": [
+            "as he had only provided twelve golden plates for them to eat from, one of them had to be left out"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-11-q2",
+          "prompt": "Why can’t the twelfth wise woman simply cancel the curse?",
+          "facilitatorNotes": [
+            "She can only soften it, not undo it, so she changes death to a deep sleep of a hundred years."
+          ],
+          "evidence": [
+            "though she could not do away with the evil prophecy, yet she could soften it"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-11-q3",
+          "prompt": "The king burns every spindle in the kingdom. Why doesn’t that keep the princess safe?",
+          "facilitatorNotes": [
+            "An old woman in a hidden tower is still spinning, and the princess has never seen a spindle, so she does not know to be careful."
+          ],
+          "evidence": [
+            "What thing is that that twists round so briskly?"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-11-q4",
+          "prompt": "When the princess falls asleep, what else stops? Which detail do you like best?",
+          "facilitatorNotes": [
+            "The king, queen and court, horses, dogs, pigeons, flies, the fire, the roasting meat, the cook in the middle of pulling the scullion’s hair, even the wind. Let children choose and explain."
+          ],
+          "evidence": [
+            "the meat on the spit ceased roasting",
+            "not a leaf fell from the trees about the castle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-12",
+      "title": "The Sleeping Beauty, part 2: the hedge of thorns",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Ask why one person succeeds where many failed.",
+      "focus": "A hundred years later a prince finds the thorn hedge turned to flowers, and the whole castle wakes.",
+      "context": "Recap: an angry wise woman, left out of a feast, cursed a baby princess to prick herself with a spindle and die. Another changed the curse to a hundred years’ sleep. At fifteen the princess pricked her finger, and the whole castle fell asleep with her. Lamentable means very sad; to dissuade is to talk someone out of something; wonderment is amazement.",
+      "contentNote": "Many young princes are caught in the thorns and die there; the cook boxes the scullion’s ear when he wakes.",
+      "excerpt": {
+        "locator": "“The Sleeping Beauty,” from the hedge of thorns to the end; opens “Then round about that place there grew a hedge of thorns thicker every year, until at…”; closes “…was held with all splendour, and they lived very happily together until their lives' end.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-11",
+        "continuesTo": null,
+        "blocks": [
+          1953,
+          1956
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "224e42fce5eb081d56a0986dfea1feb3e873e2500d5c1983b794367e883a032a"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-12-q1",
+          "prompt": "What grows around the castle, and what happens to the princes who try to get through?",
+          "facilitatorNotes": [
+            "A hedge of thorns that hides all but the roof’s weather-vane; the thorns hold them like strong hands and they die."
+          ],
+          "evidence": [
+            "the thorns held fast together like strong hands"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-12-q2",
+          "prompt": "Is the last prince braver than the others, or luckier? What does the story say?",
+          "facilitatorNotes": [
+            "He is brave, but the story says the hundred years were just over, so the thorns turned to flowers and let him through. Children may argue for courage, luck, or good timing."
+          ],
+          "evidence": [
+            "For now the hundred years were at an end"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-12-q3",
+          "prompt": "As the prince walks in, everything is just as it was when the sleep began. Which details from part 1 come back?",
+          "facilitatorNotes": [
+            "The horses and dogs, the pigeons with heads under wings, the flies on the wall, the cook with his hand raised to strike the scullion, the king and queen asleep."
+          ],
+          "evidence": [
+            "the cook in the kitchen had his hand uplifted to strike the scullion"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-12-q4",
+          "prompt": "When everyone wakes, the story lists them all again. Why tell the list a second time?",
+          "facilitatorNotes": [
+            "It shows the whole frozen world starting up at once, and it is funny: the cook finishes the blow he began a hundred years ago. Some children will enjoy the sound of the list; others the joke."
+          ],
+          "evidence": [
+            "the cook gave the scullion such a box on the ear that he roared out",
+            "the flies on the wall crept on a little farther"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-13",
+      "title": "King Thrushbeard, part 1: the proud princess",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Hear how a repeated question and answer change a character.",
+      "focus": "A princess who mocks every suitor is married to a beggar and learns what her pride has cost her.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. Suitors are men who want to marry someone. An epithet is a nickname; a thrush is a songbird with a pointed beak; a ballad-singer sings songs for money; alms are gifts to the poor; afeared means afraid; fare is food.",
+      "contentNote": "The king forces his daughter to marry a beggar because of an angry oath. The beggar makes her work until her hands bleed and calls her useless.",
+      "excerpt": {
+        "locator": "“King Thrushbeard,” from the princess’s mocking of her suitors to her failure at spinning; opens “A king had a daughter who was beautiful beyond measure, but so proud and overbearing that…”; closes “…and tried to spin, but the harsh thread cut her soft fingers, so that the blood flowed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-14",
+        "blocks": [
+          1958,
+          1998
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7bc27d96e07868704acd30fa6c2a548c195ed0fd5b25f1e8a0fe0156aa516532"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-13-q1",
+          "prompt": "What does the princess say about the suitors? Choose one of her insults.",
+          "facilitatorNotes": [
+            "“What a tub!” for a fat one, “A game-cock” for a red-faced one, and a chin “like a thrush’s beak” for the good tall king. She laughs at how they look, not at who they are."
+          ],
+          "evidence": [
+            "What a tub!",
+            "he has a chin like a thrush's beak"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-13-q2",
+          "prompt": "What oath does the king swear, and why does he keep it?",
+          "facilitatorNotes": [
+            "That she shall marry the first beggar who comes to the door. He says an oath must be kept, so it must be done."
+          ],
+          "evidence": [
+            "I took an oath to give you to the first beggar that came, and so it must be done."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-13-q3",
+          "prompt": "Three times she asks whose land they are passing. What does she learn, and how does her answer change her?",
+          "facilitatorNotes": [
+            "Each time it is King Thrushbeard’s and “might have been thine,” and each time she wishes she had married him. The repeated rhyme shows her pride turning to regret."
+          ],
+          "evidence": [
+            "It is King Thrushbeard's, and might have been thine.",
+            "Would I had taken that good King Thrushbeard!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-13-q4",
+          "prompt": "What goes wrong when she tries to make baskets and spin?",
+          "facilitatorNotes": [
+            "The hard twigs hurt her hands, and the thread cuts her fingers until they bleed. She has never had to work."
+          ],
+          "evidence": [
+            "the hard twigs wounded her tender hands",
+            "the harsh thread cut her soft fingers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-14",
+      "title": "King Thrushbeard, part 2: the broken pots",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 7,
+        "totalMinutes": 15
+      },
+      "challenge": "Look back at earlier events once a secret is told.",
+      "focus": "The princess sells pots, works as a kitchen-maid, and learns who her beggar husband really is.",
+      "context": "Recap: a proud princess mocked every man who wanted to marry her, nicknaming a good king “Thrushbeard.” Her angry father married her to a beggar, who took her to a tiny hut and made her work. Earthen vessels are clay pots; victuals are food; to bewail is to be sorry; a fathom is six feet; in the guise of means dressed up as.",
+      "contentNote": "A drunken soldier smashes her pots, and the court laughs at her when food spills from her pockets. The husband says he did it all to punish her pride.",
+      "excerpt": {
+        "locator": "“King Thrushbeard,” from selling pots in the market to the end; opens “\"Look now!\" said the man, \"you are no good at any sort of work; I made a bad bargain when…”; closes “…began in good earnest. I cannot help wishing that you and I could have been there too.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-13",
+        "continuesTo": null,
+        "blocks": [
+          1999,
+          2010
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "07f1bc64f12f53165171a838aae825f4c8443a19a1037ab9326c7b19d740f1ff"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-14-q1",
+          "prompt": "What happens to her pots on the second market day?",
+          "facilitatorNotes": [
+            "A drunken horse-soldier rides straight into them and breaks them into a thousand pieces."
+          ],
+          "evidence": [
+            "breaking them into a thousand pieces"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-14-q2",
+          "prompt": "Standing at the wedding door, what does she think about?",
+          "facilitatorNotes": [
+            "Her own fate, and how her pride and haughtiness brought her so low."
+          ],
+          "evidence": [
+            "bewailed her former pride and haughtiness which had brought her so low"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-14-q3",
+          "prompt": "What three people turn out to be King Thrushbeard in disguise?",
+          "facilitatorNotes": [
+            "The beggar-man, the horse-soldier who broke her pots, and of course the king at the wedding."
+          ],
+          "evidence": [
+            "I and the beggar-man with whom you lived in the wretched little hut are one",
+            "it was I who broke your pots in the guise of a horse-soldier"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-14-q4",
+          "prompt": "He says he did it all to bring down her proud heart. Was his plan kind, fair, or cruel?",
+          "facilitatorNotes": [
+            "She was cruel to others and is truly sorry now; but he lied to her, made her poor and shamed her. Many readers today find his tricks unkind; others say the story wants to show pride punished. Let children take a side and give reasons."
+          ],
+          "evidence": [
+            "I did all that to bring down your proud heart",
+            "I have done great wrong, and am not worthy to be your wife."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-15",
+      "title": "Rumpelstiltskin, part 1: straw into gold",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Track what each bargain costs, and notice when the price goes up.",
+      "focus": "A miller’s boast traps his daughter, and a little man spins gold for her for a higher price each night.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. A miller grinds grain into flour. To give himself consequence means to make himself seem important. A spindle and bobbin hold thread on a spinning wheel; avaricious means greedy for money.",
+      "contentNote": "The king says the girl will die if she does not spin the straw into gold.",
+      "excerpt": {
+        "locator": "“Rumpelstiltskin,” from the miller’s boast to the wedding; opens “There was once a miller who was poor, but he had one beautiful daughter. It happened one…”; closes “…caused the wedding to be held at once, and the miller's pretty daughter became a queen.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-16",
+        "blocks": [
+          2158,
+          2177
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fb5028e0570c33f150f6037632dfc134355e34d155eb79d3ad942d669d0e19b0"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-15-q1",
+          "prompt": "How does the miller get his daughter into trouble?",
+          "facilitatorNotes": [
+            "He boasts to the king that she can spin straw into gold, just to seem important."
+          ],
+          "evidence": [
+            "to give himself consequence, he told him that he had a daughter who could spin gold out of straw"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-15-q2",
+          "prompt": "What does the girl give the little man each night?",
+          "facilitatorNotes": [
+            "Her necklace, then the ring from her finger, and the third night, when she has nothing left, a promise of her first child."
+          ],
+          "evidence": [
+            "My necklace",
+            "The ring from my finger",
+            "Then you must promise me the first child you have after you are queen"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-15-q3",
+          "prompt": "Why does the king keep asking for more?",
+          "facilitatorNotes": [
+            "He is greedy: he could never have enough gold. He marries her because he thinks no one richer can be found."
+          ],
+          "evidence": [
+            "as he could never have enough of gold"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-15-q4",
+          "prompt": "The girl thinks, “But who knows whether that will happen?” Was it wise to make the promise?",
+          "facilitatorNotes": [
+            "She was desperate and the danger was now; but a promise about the future still has to be kept. Children may blame her, the miller, or the greedy king."
+          ],
+          "evidence": [
+            "\"But who knows whether that will happen?\" thought the girl"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-16",
+      "title": "Rumpelstiltskin, part 2: guessing the name",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Follow a three-day search and notice how the answer is found.",
+      "focus": "The queen has three days to guess the little man’s name, and a messenger overhears it.",
+      "context": "Recap: a miller boasted that his daughter could spin straw into gold. A little man spun it for her three nights, and the last time she promised him her first child. She married the king and became queen. To lament is to cry out in sorrow; singular means unusual; Caspar, Melchior and Balthazar are the names of the three wise men in Christmas stories.",
+      "contentNote": "The little man comes to take the queen’s baby. In his rage at the end he tears himself in two.",
+      "excerpt": {
+        "locator": "“Rumpelstiltskin,” from the little man’s return to the end; opens “In a year's time she brought a fine child into the world, and thought no more of the…”; closes “…with both his hands in such a fury that he split in two, and there was an end of him.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-15",
+        "continuesTo": null,
+        "blocks": [
+          2178,
+          2198
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "af32496845f00c6a6d40f93dacdd52f4bd0bc41375627002c91076d11fc671b5"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-16-q1",
+          "prompt": "What does the little man want more than all the treasures of the world?",
+          "facilitatorNotes": [
+            "Something living: the child. That is why riches will not make him go away."
+          ],
+          "evidence": [
+            "I would rather have something living than all the treasures of the world."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-16-q2",
+          "prompt": "Why does he give the queen three days?",
+          "facilitatorNotes": [
+            "She weeps so much that he takes pity on her. Ask whether that surprises children."
+          ],
+          "evidence": [
+            "the little man had pity upon her"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-16-q3",
+          "prompt": "How does the queen search for names on each day?",
+          "facilitatorNotes": [
+            "First all the names she knows, then the unusual names of the neighbours’ servants, then the messenger’s report from the woods."
+          ],
+          "evidence": [
+            "Perhaps you are called Roast-ribs, or Sheepshanks, or Spindleshanks?"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-16-q4",
+          "prompt": "On the last day she first asks “Jack?” and “Harry?” Why not say the right name at once?",
+          "facilitatorNotes": [
+            "She is teasing him and enjoying it, letting him think he has won before the surprise. Some children may think she was nervous and wanted to be sure."
+          ],
+          "evidence": [
+            "Are you called Jack?",
+            "Then perhaps your name is Rumpelstiltskin!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-17",
+      "title": "The Golden Bird, part 1: a feather and a fox",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Hear a pattern of three begin, and predict what the youngest son will do differently.",
+      "focus": "A golden feather sends the king’s sons after the bird, and the two eldest laugh at a talking fox’s advice.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. Plumage means feathers; counsel means advice; a tavern is an inn where travellers eat, drink and sleep; to live in clover is to live in comfort; to revel is to make merry. The king thinks his youngest son will “acquit himself” worse, that is, do the job worse.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Golden Bird,” from the missing apples to the second son at the merry inn; opens “In times gone by there was a king who had at the back of his castle a beautiful…”; closes “…of merriment; so he could not resist, but went in and revelled to his heart's content.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-18",
+        "blocks": [
+          2228,
+          2233
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f52091d412ad4f6ab04be7ee4e20e627841750f996695ca27f21d2013b74d66f"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-17-q1",
+          "prompt": "How does the youngest son succeed on the watch where his brothers failed?",
+          "facilitatorNotes": [
+            "He makes up his mind that sleep will not be his master, stays awake past midnight, and shoots an arrow that knocks off a golden feather."
+          ],
+          "evidence": [
+            "resolved that sleep should not be master"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-17-q2",
+          "prompt": "The council says the feather is worth more than the whole kingdom. What does the king decide, and what does that show about him?",
+          "facilitatorNotes": [
+            "One feather is not enough; he must have the whole bird. Children may call him greedy, or simply curious about a wonder."
+          ],
+          "evidence": [
+            "one is not enough for me; I must and will have the whole bird."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-17-q3",
+          "prompt": "What advice does the fox give, and why does the eldest son ignore it?",
+          "facilitatorNotes": [
+            "Stay at the dull inn, not the merry one. The son thinks a “silly beast” cannot give sensible advice, and even shoots at the fox."
+          ],
+          "evidence": [
+            "How can a silly beast give one any rational advice?"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-17-q4",
+          "prompt": "Why might the fox send them to the dull, uninviting inn? What happens to the brothers who choose the merry one?",
+          "facilitatorNotes": [
+            "The merry inn tempts them away from their task: they forget the bird, their father and all good counsel. Children can predict whether the youngest will listen."
+          ],
+          "evidence": [
+            "quite forgetting the bird and his father, and all good counsel"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-18",
+      "title": "The Golden Bird, part 2: the golden cage and the golden saddle",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice when a character makes the same mistake twice, and ask why.",
+      "focus": "The kind youngest son rides on the fox’s tail, but twice chooses the golden thing over the plain one the fox told him to use.",
+      "context": "Recap: a golden bird stole golden apples from a king’s tree, and the king sent his sons to fetch it. A talking fox advised each to sleep at the plain, dull inn, not the merry one; the two eldest laughed at him and stayed at the merry inn, forgetting their task. The king thinks his youngest son’s wits are “none of the best.” Over stock and stone means over everything in the way; grooms look after horses; disgraced means shamed; to convey thither is to bring there.",
+      "contentNote": "The young man is twice condemned to death, though each time a king offers to spare him.",
+      "excerpt": {
+        "locator": "“The Golden Bird,” from the youngest son setting out to his second sentence of death; opens “And then, as time went on, the youngest son wished to go forth, and to try his luck, but…”; closes “…the golden horse, if he could convey thither the beautiful princess of the golden castle.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-17",
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-19",
+        "blocks": [
+          2234,
+          2245
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "795b2d920b94c1d7b509c1650d887ba934dce772e2016972f1621a1ae4091905"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-18-q1",
+          "prompt": "How does the youngest son treat the fox, and how does the fox repay him?",
+          "facilitatorNotes": [
+            "He spares the fox’s life kindly, and the fox carries him on his tail and tells him what to do."
+          ],
+          "evidence": [
+            "Be easy, little fox, I will do you no harm."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-18-q2",
+          "prompt": "What does the fox warn him about the cage, and why does he do it anyway?",
+          "facilitatorNotes": [
+            "Not to move the bird into the golden cage. He thinks it foolish to leave such a beautiful bird in a mean, ugly cage, and the bird’s cry wakes the soldiers."
+          ],
+          "evidence": [
+            "thinking it foolish to let the beautiful bird stay in that mean and ugly cage"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-18-q3",
+          "prompt": "The same thing happens with the saddle. Why do you think he makes the same mistake twice?",
+          "facilitatorNotes": [
+            "He wants beautiful things to look as fine as they are, and does not trust the plain choice. Some children call it a kind wish for the animals; others say he just does not listen."
+          ],
+          "evidence": [
+            "Such a beautiful animal would be disgraced were I not to put on him the good saddle"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-18-q4",
+          "prompt": "Listen for a sentence that comes back each time the fox carries him. What does it add to the story?",
+          "facilitatorNotes": [
+            "Over stock and stone, with the wind whistling in their hair: it shows how fast they go and marks the start of each new adventure, like a refrain."
+          ],
+          "evidence": [
+            "off they went over stock and stone, so that the wind whistled in their hair"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-19",
+      "title": "The Golden Bird, part 3: the princess and the mountain",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Count the young man’s mistakes, and notice how the fox’s words to him change.",
+      "focus": "A third mistake leaves him a mountain to dig away, but the fox rescues him again and plans how to keep the princess, the horse and the bird.",
+      "context": "Recap: a kind but careless king’s son is seeking the golden bird with the help of a talking fox. Twice he chose the golden thing instead of the plain one the fox told him to use, and was caught; now a king will give him the golden horse only if he brings the princess of the golden castle. Forfeit means lost as a punishment; to level a mountain is to flatten it; a behest is an order; to alight is to get down.",
+      "contentNote": "The young man is condemned to death once more. As in many old tales, a princess is promised as a reward and carried off.",
+      "excerpt": {
+        "locator": "“The Golden Bird,” from the journey to the golden castle to the fox’s plan carried out; opens “With a heavy heart the king's son set out, but by great good luck he soon met with the…”; closes “…carried out; and when the young man returned with the treasure, the fox said,”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-18",
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-20",
+        "blocks": [
+          2246,
+          2260
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d388714c0f7b714077769483be1409c46359ed3d23952dba124900808e0d603c"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-19-q1",
+          "prompt": "What does the fox say before he helps this time, and again at the mountain? How have his words changed since he first met the young man?",
+          "facilitatorNotes": [
+            "“I ought now to leave you to your own ill-luck” and “You do not deserve that I should help you”: he is losing patience, yet he still helps. Ask why he keeps coming back."
+          ],
+          "evidence": [
+            "I ought now to leave you to your own ill-luck",
+            "You do not deserve that I should help you"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-19-q2",
+          "prompt": "Why does the young man let the princess say good-bye to her parents? Was that a bad choice?",
+          "facilitatorNotes": [
+            "She weeps and falls at his feet, and he gives in. It wakes the castle, but some children will say letting her say good-bye was the right and kind thing."
+          ],
+          "evidence": [
+            "as she wept so much the more, and fell at his feet, he gave in at last"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-19-q3",
+          "prompt": "How long does he have to dig away the mountain, and how does it get done?",
+          "facilitatorNotes": [
+            "Eight days. By the seventh he has done almost nothing and gives up hope; the fox does it in one night while he sleeps."
+          ],
+          "evidence": [
+            "all his work was as nothing",
+            "the mountain had disappeared"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-19-q4",
+          "prompt": "The fox’s plan lets the young man keep the princess, the horse and the bird. Is it a fair plan, or a trick?",
+          "facilitatorNotes": [
+            "He hands over the princess, gets the horse, and swings her up behind him; then the same with the bird. The kings had threatened him with death, so some children call it fair; others call it cheating."
+          ],
+          "evidence": [
+            "swing her up on the horse behind you, and off you go!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-20",
+      "title": "The Golden Bird, part 4: gallows-meat and the brook",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 5,
+        "totalMinutes": 14
+      },
+      "challenge": "Remember a strange warning and watch for the moment it comes true.",
+      "focus": "The young man forgets the fox’s two warnings, his brothers betray him, and the bird, the horse and the princess know him when no one else does.",
+      "context": "Recap: with a talking fox’s help, the king’s youngest son has won the golden bird, the golden horse that runs faster than the wind and the princess of the golden castle, though three times he did not do as the fox said. His two elder brothers never came home: they stayed at a merry inn and forgot their task. Gallows-meat means people about to be hanged; to redeem is to buy someone free; sentinels are guards; clad in that wise means dressed that way.",
+      "contentNote": "The fox asks to have his head and feet cut off. The two elder brothers are about to be hanged, then push their brother into a brook to be rid of him, and at the end are put to death. When the young man at last does as the fox asks, the fox is freed from a spell.",
+      "excerpt": {
+        "locator": "“The Golden Bird,” from the fox asking for his reward to the end of the tale; opens “\"Now, what will you give me for my reward?\"”; closes “And now, indeed, there lacked nothing to their happiness as long as they lived.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-19",
+        "continuesTo": null,
+        "blocks": [
+          2261,
+          2286
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6efc8f1fe35fffa19c2f4a0344070da6b250a8a888d38e7c7fe20c5929b3607f"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-20-q1",
+          "prompt": "What two things does the fox warn against, and how do both come true?",
+          "facilitatorNotes": [
+            "Buying gallows-meat and sitting by a brook. He buys his brothers free from hanging, then sits by the brook, where they push him in."
+          ],
+          "evidence": [
+            "buy no gallows-meat, and sit at no brook-side"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-20-q2",
+          "prompt": "The people ask why he would spend money on “such worthless men.” Was he right to save his brothers?",
+          "facilitatorNotes": [
+            "It was loyal and kind, though they betray him. Some children say kindness is still right; others that he should have remembered the warning."
+          ],
+          "evidence": [
+            "why should you spend your money in redeeming such worthless men?"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-20-q3",
+          "prompt": "How do the horse, the bird and the princess behave with the brothers, and how do they change when the young man comes in rags?",
+          "facilitatorNotes": [
+            "The horse will not eat, the bird will not sing and the princess weeps; when he comes in, they all recover. They know the true owner when no one else does."
+          ],
+          "evidence": [
+            "the horse did not feed, the bird did not chirp, and the princess sat still and wept",
+            "it is to me as if my rightful bridegroom had returned"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-20-q4",
+          "prompt": "Why do you think the fox kept helping someone who so often did not listen? What do we learn about him at the end?",
+          "facilitatorNotes": [
+            "He is the princess’s brother under a spell, and only the young man can free him. Some children think he helped out of kindness; others that he needed the young man. Both fit the tale."
+          ],
+          "evidence": [
+            "my misfortunes never come to an end",
+            "was no other than the brother of the beautiful princess"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-21",
+      "title": "Fred and Kate, part 1: the sausage and the beer",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow a chain of mishaps in which each one causes the next.",
+      "focus": "Kate loses a sausage, a cask of beer and a sack of flour one after another, and tells Fred he should have told her.",
+      "context": "The brothers Jacob and Wilhelm Grimm collected these German folktales in the early 1800s, and Lucy Crane translated them into English in 1882. Tales about a person who does everything wrong were told about men and women alike; Hans in Luck is another. To draw beer is to let it run out of the barrel, or cask, through a tap; meal is ground grain, here flour; to quench thirst is to satisfy it.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Fred and Kate,” from the start to Fred deciding to look after things better; opens “There were once a young husband and wife, and their names were Fred and Kate. One day…”; closes “\"If my wife is like this, I must look after things a little better.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-22",
+        "blocks": [
+          2336,
+          2354
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "82bbaa5b70e6e94ee021170b67a1065d39af768320e62ffbafa95b67d8b73e0d"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-21-q1",
+          "prompt": "Why does Kate leave the sausage frying and go down to the cellar?",
+          "facilitatorNotes": [
+            "To save time by drawing the beer while the sausage cooks. It sounds sensible at first."
+          ],
+          "evidence": [
+            "While the sausage is cooking I might as well be drawing the beer in the cellar."
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-21-q2",
+          "prompt": "Follow the chain: what does each mistake lead to?",
+          "facilitatorNotes": [
+            "She remembers the dog and runs up; the dog has the sausage; while she chases it the tap is still open and the beer runs out; she throws flour on the beer and knocks over the can."
+          ],
+          "evidence": [
+            "Kate had not turned off the tap"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-21-q3",
+          "prompt": "Kate says, “Where some goes the rest must follow.” Is that a good reason? Why is it funny?",
+          "facilitatorNotes": [
+            "It is backwards: because some is lost, she wastes the rest. Then she is “highly pleased” with how neat the floury cellar looks."
+          ],
+          "evidence": [
+            "where some goes the rest must follow",
+            "thought how clean and neat it looked"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-21-q4",
+          "prompt": "Kate tells Fred, “You should have told me.” Is she right? What does Fred decide?",
+          "facilitatorNotes": [
+            "Nobody could tell her everything, though some children may say Fred only gave orders. Fred decides he must look after things better himself."
+          ],
+          "evidence": [
+            "Well, Fred, I did not know; you should have told me",
+            "I must look after things a little better"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-22",
+      "title": "Fred and Kate, part 2: yellow counters and runaway cheeses",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Notice what Fred did not tell Kate, and how she talks about things that cannot think.",
+      "focus": "Kate trades Fred’s buried gold for pots to hang on the fence, then butters the cart-ruts and sends cheese after cheese down a mountain.",
+      "context": "Recap: while Fred worked in the fields, Kate let the dog take his sausage, let all the beer run out, spilled a sack of flour on it, and said, “You should have told me.” Counters are flat pieces for keeping score in games; pedlars travel about selling things; capital here is all the money they had saved; cart-ruts are grooves cut by wheels; to anoint is to rub with oil or butter.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Fred and Kate,” from Fred burying his gold to Kate leaving the cheeses behind; opens “Now he had saved a very pretty sum of money, and he changed it all to gold, and said to…”; closes “…she overtook Fred, who was standing still and waiting, as he wanted something to eat.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-21",
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-23",
+        "blocks": [
+          2355,
+          2375
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f7e3ee115d1dd30706fb1bde783acf339e3319e51356b20f04aa9bb5ec11b51f"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-22-q1",
+          "prompt": "Why does Fred call his gold “yellow counters,” and how does that cause trouble?",
+          "facilitatorNotes": [
+            "Perhaps to keep Kate from spending it. Because she does not know it is gold, she trades it for pots and pans."
+          ],
+          "evidence": [
+            "Do you see these yellow counters?",
+            "they were not counters, but pure gold"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-22-q2",
+          "prompt": "Fred told Kate not to meddle with the counters. How does she keep that promise and still lose them?",
+          "facilitatorNotes": [
+            "She sends the pedlars to dig them up, so she never goes near the place herself. She obeys his words exactly and misses what he meant."
+          ],
+          "evidence": [
+            "I did not go there myself; the pedlars had to dig them up for themselves"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-22-q3",
+          "prompt": "Why does Kate butter the cart-ruts? What does she imagine about the ground?",
+          "facilitatorNotes": [
+            "She feels sorry for the earth, as if it could be hurt, and wants to soothe it. Her heart is kind even when her thinking is not."
+          ],
+          "evidence": [
+            "How sad to see the poor earth torn, and vexed, and oppressed in this way!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-22-q4",
+          "prompt": "What does Kate think the cheeses will do? Why does her reasoning sound sensible and silly at once?",
+          "facilitatorNotes": [
+            "She talks about them like people: they may want company, one may have lost its way, their legs are younger than hers. That would make sense for people, not for cheeses rolling downhill."
+          ],
+          "evidence": [
+            "Perhaps they are waiting for company, and are not used to travelling alone.",
+            "your legs are younger than mine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-23",
+      "title": "Fred and Kate, part 3: a door in a tree",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Hear a pattern repeat, and notice how each repetition is a little different.",
+      "focus": "Kate carries the back door all the way into the wood, and from a tree drops apples, vinegar and at last the door on the robbers below.",
+      "context": "Recap: Kate gave Fred’s buried gold to pedlars for pots and pans, because Fred had called it “yellow counters.” Chasing the thieves, she smeared the butter on the cart-ruts and rolled all the cheeses down a mountain. Prudent means sensible and careful; spoil means stolen goods; besprinkled means sprinkled all over; in a passion means in a temper.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Fred and Kate,” from Fred asking for the butter and cheese to the robbers running away; opens “\"Now, be quick,\" he said, \"and hand over what you have brought.\" And she handed him the…”; closes “…Fred and Kate came down from the tree they got all their gold again and carried it home.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-22",
+        "continuesTo": "reading-2-grimm-household-stories-crane-1886-24",
+        "blocks": [
+          2376,
+          2415
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "261e3476ac094f8c517ed74503a4cff5dcbd245357ded590f19f37e4764cfdd2"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-23-q1",
+          "prompt": "How does Kate “lock up” the house?",
+          "facilitatorNotes": [
+            "She bolts the front door and takes the back door off its hinges to carry with her, since if the door is safe, she reasons, the house is safe."
+          ],
+          "evidence": [
+            "if the house-door is safe, no harm can come to the house"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-23-q2",
+          "prompt": "Fred says, “What a prudent wife have I!” Does he mean it?",
+          "facilitatorNotes": [
+            "No. He means the opposite: she has left the house wide open. Saying the opposite of what you mean, in an annoyed voice, is called sarcasm."
+          ],
+          "evidence": [
+            "what a prudent wife have I!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-23-q3",
+          "prompt": "Up in the tree, three things fall. How do the robbers explain each one?",
+          "facilitatorNotes": [
+            "The apples are birds, the vinegar is morning dew, and the door means something is wrong with the tree, so they run. Each time Kate says it weighs her down and Fred says no, then gives in."
+          ],
+          "evidence": [
+            "There are birds in this tree!",
+            "The morning dew is beginning to fall already.",
+            "There is something wrong about this tree!"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-23-q4",
+          "prompt": "Kate’s foolishness gets the gold back. Was it luck, or was there something sensible in it?",
+          "facilitatorNotes": [
+            "Mostly luck; she never planned to frighten the robbers. Some children may say carrying the door turned out to be the cleverest thing she did."
+          ],
+          "evidence": [
+            "they got all their gold again and carried it home"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-grimm-household-stories-crane-1886-24",
+      "title": "Fred and Kate, part 4: is this really I?",
+      "sourceId": "grimm-household-stories-crane-1886",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Explain why a silly question makes sense to the character who asks it.",
+      "focus": "Kate cuts her own clothes to rags, decides she is not herself, and frightens a parson and the man carrying him.",
+      "context": "Recap: Kate has lost Fred’s sausage, beer, flour, gold, butter and cheeses, but by dropping the back door out of a tree onto the robbers she got the gold back. Industrious means hard-working; to cut corn is to harvest grain; a parson is a minister of a church; to take to your heels is to run away.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Fred and Kate,” from Kate going to cut corn to the end of the tale; opens “And when they reached their house again Fred said,”; closes “…with his lame foot than the man who had carried him on his back with both legs sound.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-2-grimm-household-stories-crane-1886-23",
+        "continuesTo": null,
+        "blocks": [
+          2416,
+          2436
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "856eaf794f78ff1c07195140da699266e348a2896ad414fe466eb4a2f56038b2"
+      },
+      "questions": [
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-24-q1",
+          "prompt": "Kate asks, “Shall I eat before I cut, or shall I sleep before I cut?” What does she do, and what happens?",
+          "facilitatorNotes": [
+            "She eats, grows sleepy, and cuts half asleep, slicing her own skirts and gown to rags."
+          ],
+          "evidence": [
+            "Shall I eat before I cut, or shall I sleep before I cut?"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-24-q2",
+          "prompt": "Why does Kate decide she is not Kate, and how does she “find out” where Kate is?",
+          "facilitatorNotes": [
+            "In rags she does not know herself. She asks Fred whether Kate is at home, he says Kate is asleep, and she believes him. Ask why Fred answers that way: he may be half asleep, or tired of her."
+          ],
+          "evidence": [
+            "Is this really I or not? oh dear, it is not I!",
+            "she is lying here fast asleep"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-24-q3",
+          "prompt": "Why do the thieves want to be rid of Kate?",
+          "facilitatorNotes": [
+            "She walks in front of the houses calling out to ask what there is to steal, which is the last thing thieves want."
+          ],
+          "evidence": [
+            "Good people, what have you for us to steal?"
+          ]
+        },
+        {
+          "id": "reading-2-grimm-household-stories-crane-1886-24-q4",
+          "prompt": "Why is the ending with the parson funny?",
+          "facilitatorNotes": [
+            "He is too lame to walk, so a man carries him; but when he is frightened he runs faster than the man with two good legs. Fear works better than legs."
+          ],
+          "evidence": [
+            "able, out of his great fear, to run faster with his lame foot"
+          ]
+        }
+      ]
+    }
+  ]
+}
