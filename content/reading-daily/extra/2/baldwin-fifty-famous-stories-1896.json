@@ -2110,6 +2110,228 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-30",
+      "title": "The Endless Tale",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "folktale",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Notice how a clever storyteller turns a king’s own wish against him.",
+      "focus": "A king who wants a story without an end gets one, and finds he did not want it after all.",
+      "context": "Baldwin printed hyphens inside longer words to help young readers sound them out. An heir is the one who will rule after the king; a granary is a storehouse for grain, and corn here means grain of any kind; a crevice is a narrow crack; a cubit is an old measure, about the length of a grown-up’s forearm.",
+      "contentNote": "The king says any storyteller who tries and fails will have his head cut off, and the story hints that one young man did. As in many old tales, the king’s daughter is offered as a prize.",
+      "excerpt": {
+        "locator": "“The Endless Tale,” the whole story; opens “In the Far East there was a great king who had no work to do. Every day, and all day…”; closes “…many years. But his father-in-law, the king, did not care to listen to any more stories.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          752,
+          774
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cad0cfc0e82b93926599cf36702d0dbf08e0038fc95069836d1bedb9b5414855"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-30-q1",
+          "prompt": "What is the one fault the king finds with every story?",
+          "facilitatorNotes": [
+            "It is too short. A king with nothing to do wants stories to fill all his days."
+          ],
+          "evidence": [
+            "it is too short"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-30-q2",
+          "prompt": "Why do only a few young men try to win the prize?",
+          "facilitatorNotes": [
+            "The hard condition: whoever tries and fails loses his head. The young man whose story lasted three months became “a warning to others.”"
+          ],
+          "evidence": [
+            "he shall have his head cut off",
+            "His fate was a warning to others"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-30-q3",
+          "prompt": "How does the stranger make his story last for ever? Try telling it his way for a little while.",
+          "facilitatorNotes": [
+            "He repeats one sentence, a locust carrying away one grain at a time, and the granary holds thousands of cubits of grain. Saying it aloud a few times shows how quickly it would wear a listener out."
+          ],
+          "evidence": [
+            "then another locust went in and carried away a grain of corn",
+            "there are many thousand cubits in the granary"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-30-q4",
+          "prompt": "Did the stranger win fairly, or by a trick? What has the king learned by the last sentence?",
+          "facilitatorNotes": [
+            "The tale never ended, so he did what was asked, though not in the way the king meant. Some children call it clever, others a cheat. The king, who once found every story too short, no longer cares to hear any."
+          ],
+          "evidence": [
+            "But do not let me hear another word about those horrible locusts!",
+            "did not care to listen to any more stories"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-31",
+      "title": "The Inchcape Rock",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow a cause from the start of a story to its end, and notice a wish that comes back.",
+      "focus": "A sea robber cuts away the bell that warns ships of a hidden rock, and later wrecks his own ship on it.",
+      "context": "The Inchcape Rock, also called the Bell Rock, is a real reef off the east coast of Scotland, and an old story says an abbot once hung a bell there; the poet Robert Southey told it in a ballad. An abbot is the head of an abbey, a home for monks; a buoy is a float fastened in the water to mark a danger; to plunder is to rob; breakers are waves breaking on rocks; the pilot steers the ship.",
+      "contentNote": "The robber’s ship strikes the rock and sinks, and he drowns.",
+      "excerpt": {
+        "locator": "“The Inchcape Rock,” the whole story; opens “In the North Sea there is a great rock called the Inch-cape Rock. It is twelve miles from…”; closes “…over him? Was it the abbot's bell, ringing for him far down at the bottom of the sea?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          829,
+          852
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "57b958820d1cc0d2579d42c7a46bbc839f0632f78aff3fc573f68b7b9ea2004f"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-31-q1",
+          "prompt": "Why does the abbot put a bell on the rock, and how does it ring with no one to ring it?",
+          "facilitatorNotes": [
+            "So that sailors can hear where the hidden rock is and steer around it. The waves knock the floating buoy and ring the bell."
+          ],
+          "evidence": [
+            "when the waves dashed against it, the bell would ring out loud and clear"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-31-q2",
+          "prompt": "Why is the bell silent on the day Ralph the Rover sees it?",
+          "facilitatorNotes": [
+            "The sea is as smooth as glass, so there are no waves to move it. The calm gives him time and the idea."
+          ],
+          "evidence": [
+            "There were no waves to set it in motion."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-31-q3",
+          "prompt": "Ralph calls cutting the bell a trick. What does he expect to happen, and what does happen?",
+          "facilitatorNotes": [
+            "He expects the next ship to wreck and curse the abbot instead of blessing him. Instead his own ship is the one that strikes the rock, and he calls himself a wretch."
+          ],
+          "evidence": [
+            "The next one that comes this way will not bless the abbot",
+            "This is what comes of the joke that I played on the good abbot!"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-31-q4",
+          "prompt": "In the fog Ralph says, “I wish we could hear the good abbot's bell.” Why is that wish so sad? What does the last question in the story suggest?",
+          "facilitatorNotes": [
+            "He wishes for the very bell he destroyed. The ending imagines the bell ringing for him under the sea, like a bell for the dead, or like the sound of justice. Some children feel he got what he deserved; others feel sorry for the sailors who sank with him."
+          ],
+          "evidence": [
+            "I wish we could hear the good abbot's bell.",
+            "ringing for him far down at the bottom of the sea"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-32",
+      "title": "Casabianca",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "literary anecdote",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 8,
+        "totalMinutes": 13
+      },
+      "challenge": "Notice how the storyteller changes the way he tells the story as it reaches its end.",
+      "focus": "A boy obeys his father’s order to stay at his post on a burning warship, not knowing that his father is already dead.",
+      "context": "Casabianca was a real boy, the son of the captain of a French warship. In 1798, in a battle near the mouth of the Nile in Egypt, the ship caught fire and blew up. Felicia Hemans wrote a poem about him nearly thirty years later, and generations of schoolchildren learned it by heart. The flag-ship carries the fleet’s commander; powder means gunpowder; the hold is the space below the deck; spars are the poles that carry the sails.",
+      "contentNote": "In a sea battle many men are killed, and the boy dies when the burning ship’s gunpowder explodes. His father had been killed at the start of the fight.",
+      "excerpt": {
+        "locator": "“Casabianca,” the whole story, with the opening stanzas of Mrs. Hemans’s poem that Baldwin quotes; opens “There was a great battle at sea. One could hear nothing but the roar of the big guns. The…”; closes “…As born to rule the storm— A creature of heroic blood, A proud though childlike form.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          932,
+          951
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f9ebe74515bcfa5e69eddf3dc6bdfb0d78a2f10011d35bc1ab8bfd7b1b25f07d"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-32-q1",
+          "prompt": "Why won’t young Casabianca leave with the men in the boat?",
+          "facilitatorNotes": [
+            "His father told him to stand at his post, he has been taught always to obey, and he trusts his father to tell him when to go."
+          ],
+          "evidence": [
+            "When father bids me, I will go",
+            "he had been taught always to obey"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-32-q2",
+          "prompt": "What does the boy not know that the reader knows?",
+          "facilitatorNotes": [
+            "That his father lies dead in the cabin below, struck by a cannon ball at the very beginning of the fight. Only the reader knows no answer can come; the boy thinks he hears one."
+          ],
+          "evidence": [
+            "a cannon ball had struck him dead at the very be-gin-ning of the fight",
+            "he fancied that his father's voice came faintly to him"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-32-q3",
+          "prompt": "Near the end the story suddenly asks, “But what is that?” and tells the rest as if it were happening now. Why might Baldwin do that? Which earlier sentence warned us?",
+          "facilitatorNotes": [
+            "The short sentences, the question and the “Boom!” put the listener on the ship at that moment. “There was powder in the hold” was said near the start, so the ending feels both sudden and expected."
+          ],
+          "evidence": [
+            "But what is that?",
+            "There was powder in the hold!"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-32-q4",
+          "prompt": "Was it brave or foolish for Casabianca to stay? Baldwin also says the famous poem is “not a very well written poem.” What do you think of each?",
+          "facilitatorNotes": [
+            "Some children admire his loyalty; others think his father would have wanted him to live, and that obeying should have limits. Baldwin admires the boy but criticises the poem, so a story and a poem can be judged separately."
+          ],
+          "evidence": [
+            "It is not a very well written poem",
+            "The boy stood on the burning deck"
+          ]
+        }
+      ]
     }
   ]
 }
