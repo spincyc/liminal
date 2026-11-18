@@ -133,6 +133,70 @@
     },
     {
       "id": "reading-k-taylor-rhymes-nursery-1831-03",
+      "title": "Questions and Answers",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear three questions about clever animals, and the poet’s answer to them all.",
+      "focus": "An ant, a sparrow and a bee each know how to build or to save food, and the poem asks who taught them.",
+      "context": "Ann and Jane Taylor wrote these rhymes in England about two hundred years ago, often to teach children about God. To bore a hole is to dig it; a store is food saved for later; skill is knowing how to do something well; God’s holy will is what God wants. The last verse gives the poets’ own answer; families can talk about it in their own way.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Questions and Answers,” the complete poem; opens “Who show’d the little ant the way Her narrow hole to bore, And spend the pleasant summer…”; closes “…And gave their little skill, And teaches children, if they pray, To do his holy will.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          122,
+          125
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7c2a2b2298d4a069a01fe5e4699a0fc605dbad9300aa294cb142df67135809b9"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q1",
+          "prompt": "What does each animal know how to do?",
+          "facilitatorNotes": [
+            "The ant digs a narrow hole and fills it with food; the sparrow weaves a nest of wool, hay and moss with twigs across; the bee flies among the flowers and stores honey."
+          ],
+          "evidence": [
+            "Her narrow hole to bore,",
+            "Of wool, and hay, and moss;"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q2",
+          "prompt": "Why do the ant and the bee work so hard in summer?",
+          "facilitatorNotes": [
+            "To save food for winter, when there is none to find."
+          ],
+          "evidence": [
+            "In laying up her store?",
+            "To eat in winter hours?"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-03-q3",
+          "prompt": "What answer does the poem give to all three questions? What do you think?",
+          "facilitatorNotes": [
+            "The poets answer that God showed the animals the way and gave them their skill. Families may share their own beliefs; children may also say the animals are born knowing, or learn by watching their parents. Treat each answer with respect."
+          ],
+          "evidence": [
+            "’Twas God who show’d them all the way,",
+            "And gave their little skill,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-04",
       "title": "The Spring Nosegay",
       "sourceId": "taylor-rhymes-nursery-1831",
       "genre": "poetry",
@@ -161,7 +225,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-03-q1",
+          "id": "reading-k-taylor-rhymes-nursery-1831-04-q1",
           "prompt": "What does the speaker want to make, and when?",
           "facilitatorNotes": [
             "A bright posy, in pleasant spring. The speaker asks “my love,” a child or friend, to help."
@@ -172,7 +236,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-03-q2",
+          "id": "reading-k-taylor-rhymes-nursery-1831-04-q2",
           "prompt": "Name some flowers that go into the spring posy.",
           "facilitatorNotes": [
             "Daisies, May blossom, violets, primroses, cowslips, a buttercup or two, snowdrops and crocuses. Any of these is right."
@@ -183,7 +247,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-03-q3",
+          "id": "reading-k-taylor-rhymes-nursery-1831-04-q3",
           "prompt": "Where do they look for the flowers? Where would you look near your home?",
           "facilitatorNotes": [
             "Along the hedge, in the meadows and up and down the garden walk. Children can name places near them."
@@ -201,7 +265,76 @@
       ]
     },
     {
-      "id": "reading-k-taylor-rhymes-nursery-1831-04",
+      "id": "reading-k-taylor-rhymes-nursery-1831-05",
+      "title": "The Summer Nosegay",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Notice which flowers are fading and which are ready for a summer posy.",
+      "focus": "As the spring flowers fade in the wood, a walk to the garden gathers the bright flowers of summer.",
+      "context": "A nosegay or posy is a small bunch of flowers. Cowslips and primroses are spring flowers; to blow means to bloom; brier is the wild rose; an arbour is a shady seat under climbing plants; enroll’d means wrapped; larkspur, pinks and marigolds are garden flowers. If you can, look at some summer flowers together after reading.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Summer Nosegay,” the complete poem; opens “Now the yellow cowslips fade, All along the woody walk; And the primrose hangs her head…”; closes “…Streaky pink, and marigold: These shall make our posy gay, In the cheerful summer day.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          347,
+          349
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9c54e30a670468fc35e3ac9634f0b34a983497d2c38559828aa579c280522719"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-05-q1",
+          "prompt": "Which flowers are fading as the poem begins?",
+          "facilitatorNotes": [
+            "The yellow cowslips, and the primrose, which hangs her head on her stalk: spring flowers whose time is over."
+          ],
+          "evidence": [
+            "Now the yellow cowslips fade,",
+            "And the primrose hangs her head"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-05-q2",
+          "prompt": "Name some flowers that go into the summer posy. What colours are they?",
+          "facilitatorNotes": [
+            "Brier, a lily, red honeysuckle, a budding rose, red and blue larkspur, a streaky pink and a marigold. Any of these is right."
+          ],
+          "evidence": [
+            "With a honeysuckle red,",
+            "With the larkspur red and blue,"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-05-q3",
+          "prompt": "Why do they go to the garden, and not to the wood, for this posy?",
+          "facilitatorNotes": [
+            "The spring flowers along the woody walk are fading, and the summer flowers grow in the garden. Children can say where summer flowers grow near them."
+          ],
+          "evidence": [
+            "Let us to the garden go,",
+            "Where the flow’rs of summer grow."
+          ]
+        }
+      ],
+      "months": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-06",
       "title": "The Autumn Nosegay",
       "sourceId": "taylor-rhymes-nursery-1831",
       "genre": "poetry",
@@ -230,7 +363,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-04-q1",
+          "id": "reading-k-taylor-rhymes-nursery-1831-06-q1",
           "prompt": "What is the weather like on this autumn morning?",
           "facilitatorNotes": [
             "Foggy and chilly, with blue sky peeping through here and there."
@@ -241,7 +374,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-04-q2",
+          "id": "reading-k-taylor-rhymes-nursery-1831-06-q2",
           "prompt": "What has happened to the leaves?",
           "facilitatorNotes": [
             "They have turned yellow and fallen from the bare branches all over the garden."
@@ -252,7 +385,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-04-q3",
+          "id": "reading-k-taylor-rhymes-nursery-1831-06-q3",
           "prompt": "Which flowers can they still find? Why so few?",
           "facilitatorNotes": [
             "Only the autumn daisy, the lavender and the golden rod; most flowers have faded in the cold. Children may say the posy is small but still pretty."
@@ -270,7 +403,76 @@
       ]
     },
     {
-      "id": "reading-k-taylor-rhymes-nursery-1831-05",
+      "id": "reading-k-taylor-rhymes-nursery-1831-07",
+      "title": "The Winter Nosegay",
+      "sourceId": "taylor-rhymes-nursery-1831",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hunt for anything bright in a snowy winter field.",
+      "focus": "With no flowers left, the winter posy is made of berries and evergreens that are brave enough to stay.",
+      "context": "A nosegay or posy is a small bunch of flowers. Holly and ivy stay green all winter; lauristinus (laurustinus) is a bush with winter flowers; a sloe is the small dark berry of the blackthorn bush; a hip is the red fruit left on a wild rose; darksome means dark; a spray is a little branch. If you can, look for a winter berry or evergreen leaf together.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Winter Nosegay,” the complete poem (the authors’ initials printed after it are not part of the poem); opens “Now the winds of winter blow Fiercely through the chilly air; Now the fields are white…”; closes “…beneath a cap of snow; These are all that dare to stay Through the cutting winter’s day.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          355,
+          357
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0a10596ad3b311bb416518e1eeac295b935ca0919da1626458c2b785bc10ecac"
+      },
+      "questions": [
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-07-q1",
+          "prompt": "Can they find any flowers or grass in the snowy fields?",
+          "facilitatorNotes": [
+            "No; there is not a single blade of grass to be found."
+          ],
+          "evidence": [
+            "Can we find a posy there?",
+            "A single blade of grass be found."
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-07-q2",
+          "prompt": "What do they find instead? Name the colours.",
+          "facilitatorNotes": [
+            "Bright holly with its berries, red and white lauristinus, ivy, a dark blue sloe, and a shining red hip."
+          ],
+          "evidence": [
+            "Nothing but the holly bright,",
+            "With a sloe of darksome blue,"
+          ]
+        },
+        {
+          "id": "reading-k-taylor-rhymes-nursery-1831-07-q3",
+          "prompt": "The poem says these are all that “dare to stay.” Why might the poet call them brave?",
+          "facilitatorNotes": [
+            "They stay through the wind and snow when every flower has gone; the red hip even peeps out from under a cap of snow. Children may say the plants are tough rather than brave; both fit."
+          ],
+          "evidence": [
+            "These are all that dare to stay",
+            "From beneath a cap of snow;"
+          ]
+        }
+      ],
+      "months": [
+        12,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "reading-k-taylor-rhymes-nursery-1831-08",
       "title": "The little Ants",
       "sourceId": "taylor-rhymes-nursery-1831",
       "genre": "poetry",
@@ -299,7 +501,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-05-q1",
+          "id": "reading-k-taylor-rhymes-nursery-1831-08-q1",
           "prompt": "What problem does the first little ant have?",
           "facilitatorNotes": [
             "He has found a grain of wheat too heavy to lift or roll into his hole."
@@ -310,7 +512,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-05-q2",
+          "id": "reading-k-taylor-rhymes-nursery-1831-08-q2",
           "prompt": "What does the neighbour do when asked for help, and what does the brother do?",
           "facilitatorNotes": [
             "The neighbour says he has his own work and crawls off, cross, to sleep; the brother comes up and helps carry the load in."
@@ -321,7 +523,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-05-q3",
+          "id": "reading-k-taylor-rhymes-nursery-1831-08-q3",
           "prompt": "What lesson do the last two verses give? Do you agree?",
           "facilitatorNotes": [
             "If little insects can be kind to each other, children certainly should be; and children are sometimes as cross as the selfish ant. Children may agree, or say that sometimes you really are too busy; ask what the selfish ant could have said instead."
@@ -334,7 +536,7 @@
       ]
     },
     {
-      "id": "reading-k-taylor-rhymes-nursery-1831-06",
+      "id": "reading-k-taylor-rhymes-nursery-1831-09",
       "title": "A Wasp and a Bee",
       "sourceId": "taylor-rhymes-nursery-1831",
       "genre": "poetry",
@@ -363,7 +565,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-06-q1",
+          "id": "reading-k-taylor-rhymes-nursery-1831-09-q1",
           "prompt": "What is the wasp proud of?",
           "facilitatorNotes": [
             "Its shining gold-yellow back and its elegant shape."
@@ -373,7 +575,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-06-q2",
+          "id": "reading-k-taylor-rhymes-nursery-1831-09-q2",
           "prompt": "Why does the bee say people do not love the wasp?",
           "facilitatorNotes": [
             "Because of its sting and the mischief it does, not because of its looks."
@@ -383,7 +585,7 @@
           ]
         },
         {
-          "id": "reading-k-taylor-rhymes-nursery-1831-06-q3",
+          "id": "reading-k-taylor-rhymes-nursery-1831-09-q3",
           "prompt": "The last verse turns the story into a lesson for people. What is the lesson?",
           "facilitatorNotes": [
             "Unkind people will not be loved however good-looking they are: kindness matters more than looks. Some children will point out that bees can sting too, a fair point the poem does not answer."
