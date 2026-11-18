@@ -130,3 +130,49 @@ test("the calendar is written a cycle year at a time and keeps written years", (
   assert.equal(C.nextDateOf({ years: [null, k.years[1], null] }, k.years[1][0], "2026-11-17"), "2027-01-01");
   assert.deepEqual(C.writtenYears({ years: [null, [], null] }), [false, true, false]);
 });
+
+// The calendar as it first goes live: only Year 2 (2027, 2030, ...) written,
+// with a three-day run at each end of the year.
+function year2Only() {
+  const year = Array.from({ length: C.SLOTS }, (_, i) => ({ id: "r2-" + (i + 1), continuesFrom: false, continuesTo: false }));
+  for (const [first, last] of [[1, 3], [364, 366]]) for (let slot = first; slot <= last; slot++) Object.assign(year[slot - 1], { continuesFrom: slot > first, continuesTo: slot < last });
+  return { schemaVersion: 1, grade: 5, years: [null, year, null] };
+}
+test("a year not written yet is named, never promised, and points to the nearest date with readings", () => {
+  const calendar = year2Only(), written = C.writtenYears(calendar);
+  assert.deepEqual(written, [false, true, false]); assert.deepEqual(C.writtenYears([false, true, false]), written); assert.deepEqual(C.writtenYears(null), [false, false, false]);
+  assert.equal(C.isWritten(written, "2026-11-18"), false); assert.equal(C.isWritten(calendar, "2027-12-31"), true);
+  assert.equal(C.isWritten(written, 2030), true); assert.equal(C.isWritten(written, "2027-02-30"), false);
+  // Today, 18 November 2026, is in Year 1: the calendar begins on 1 January 2027.
+  assert.deepEqual(C.nearestWritten(written, "2026-11-18"), { before: "2024-12-31", after: "2027-01-01", nearest: "2027-01-01" });
+  assert.deepEqual(C.unwritten(written, "2026-11-18"), { year: 2026, heading: "Readings for dates in 2026 are not written yet",
+    text: "The date calendar is being written one year at a time. It begins on Friday, January 1, 2027.", dates: ["2027-01-01"], begins: "2027-01-01" });
+  // Early 2028 is nearer the end of 2027; the next written date is named too.
+  assert.deepEqual(C.unwritten(written, "2028-02-01").dates, ["2027-12-31", "2030-01-01"]);
+  assert.match(C.unwritten(written, "2028-02-01").text, /nearest date with a reading is Friday, December 31, 2027, and the next is Tuesday, January 1, 2030\.$/);
+  assert.match(C.unwritten(written, "2029-11-18").text, /next date with a reading is Tuesday, January 1, 2030\.$/);
+  assert.equal(C.unwritten(written, "2027-06-01"), null); assert.equal(C.unwritten([false, false, false], "2026-06-01"), null);
+  assert.equal(C.nearestWritten(written, "2027-06-01").nearest, "2027-06-01"); assert.equal(C.nearestWritten(written, "9999-12-31").after, null);
+  assert.equal(C.firstWritten(written), "2027-01-01"); assert.equal(C.firstWritten([false, false, true]), "2028-01-01");
+  assert.equal(C.opening(written, "2026-11-18"), "2027-01-01"); assert.equal(C.opening(written, "2027-03-04"), "2027-03-04"); assert.equal(C.opening([false, false, false], "2026-11-18"), null);
+  // The cycle note promises a return only for a written date.
+  assert.equal(C.cycleNote("2027-03-04", written), "Year 2 of 3 · this date’s reading returns in 2030");
+  assert.equal(C.cycleNote("2026-11-18", written), "Year 1 of 3 · not written yet");
+  assert.equal(C.monthNote("2027-03", written), "Cycle year 2 of 3. Each date’s reading returns three years later.");
+  assert.equal(C.monthNote("2028-03", written), ""); assert.equal(C.monthNote("2028-13", written), "");
+  assert.equal(C.monthLabel("2027-01"), "January 2027"); assert.equal(C.monthLabel("0099-12"), "December 99"); assert.equal(C.monthLabel("2027-13"), "");
+});
+test("runs, spans, months and next dates stop at the edges of a written year", () => {
+  const calendar = year2Only(), spans = C.checkSpans({ schemaVersion: 1, years: [null, [3, 21, 21, 14, 1, ...Array(14).fill(21), 9, 3], null] });
+  assert.deepEqual(C.runOn(calendar, "2027-01-01"), { part: 1, of: 3, first: "2027-01-01", last: "2027-01-03" });
+  assert.deepEqual(C.runOn(calendar, "2027-12-31"), { part: 3, of: 3, first: "2027-12-29", last: "2027-12-31" });
+  assert.deepEqual(C.runOn(calendar, "2030-12-29"), { part: 1, of: 3, first: "2030-12-29", last: "2030-12-31" });
+  assert.equal(C.runOn(calendar, "2026-12-31"), null); assert.equal(C.runOn(calendar, "2028-01-01"), null);
+  assert.equal(C.readingOn(calendar, "2026-11-18"), null);
+  assert.deepEqual(C.spanDates(spans, "2027-12-30"), ["2027-12-29", "2027-12-30", "2027-12-31"]); assert.deepEqual(C.spanDates(spans, "2028-01-01"), []);
+  const empty = C.monthGrid(calendar, spans, "2026-11").weeks.flat().filter(Boolean);
+  assert.ok(empty.every(cell => cell.entry === null && !cell.spanStart && cell.run === "single"));
+  assert.deepEqual(C.monthGrid(calendar, spans, "2027-12").weeks.flat().filter(Boolean).slice(-3).map(cell => cell.run), ["start", "middle", "end"]);
+  // The next date of a reading skips the years not written.
+  assert.equal(C.nextDateOf(calendar, "r2-1", "2026-11-18"), "2027-01-01"); assert.equal(C.nextDateOf(calendar, "r2-1", "2027-01-02"), "2030-01-01");
+});

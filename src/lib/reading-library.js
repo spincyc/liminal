@@ -50,11 +50,17 @@
     // no digitiser markers, and a notes label is never a contents heading.
     if (block.type === "heading" && NOTES_LABEL.test(block.text)) throw new Error(where + ": a notes label is a paragraph, not a heading");
     if (/\[Illustration|\{footnote|\[Transcriber/i.test(block.text)) throw new Error(where + ": illustration markers, ad hoc note forms and transcriber notes stay out of the text");
+    if (HTML_ENTITY.test(block.text)) throw new Error(where + ": an undecoded HTML entity (such as &frac12;) is markup, not text");
+    if (WIKI_SIGNATURE.test(block.text)) throw new Error(where + ": a wiki editor's signature or markup is not the author's text");
     if (MOJIBAKE.test(block.text)) throw new Error(where + ": UTF-8 text decoded as Latin-1 or Windows-1252 (such as Ã¦ for æ) or a replacement character; convert from the downloaded bytes again");
   }
   const NOTES_LABEL = /^\s*foot-?notes?\s*[:.]?\s*$/i;
 // UTF-8 read as a single-byte encoding: Ã or Â before a Latin-1 symbol, â€
 // before punctuation, or U+FFFD. A lone Â (VITÂ, a circumflexed vowel) is text.
+// A wiki talk-page signature ("19Eliza (talk) 02:12, 3 December 2023 (UTC)")
+// or wiki link markup left in a transcription.
+const WIKI_SIGNATURE = /\d{1,2}:\d{2}, \d{1,2} [A-Z][a-z]+ \d{4} \(UTC\)|\[\[(?:User|Special|Page|Index):|~~~~/;
+const HTML_ENTITY = /&(?:[a-zA-Z][a-zA-Z0-9]{1,8}|#\d{2,6}|#x[0-9a-fA-F]{2,5});/;
 const MOJIBAKE = /Ã[\u0080-\u00BF]|Â[\u00A0-\u00BF]|â€|\uFFFD/;
 
   // An excerpt cites blocks [first, last] of a work, optionally starting or
