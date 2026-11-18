@@ -789,6 +789,311 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-12",
+      "title": "The Voice of Spring",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Find the place where a poem turns, and explain why the speaker’s mood changes.",
+      "focus": "Spring speaks, joyfully announcing her return across the world, until she sees that the people greeting her have lost someone.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Here Spring herself is the speaker. Fanes are temples; the larch’s tassels are its hanging flowers; Hesperian means western; sparry caves glitter with crystals; a lyre is a small harp. “Ye have strewn the dust on the sunny brow” means you have buried someone young.",
+      "contentNote": "The second half of the poem mourns young people who have died since the last spring.",
+      "excerpt": {
+        "locator": "“The Voice of Spring,” the whole poem; opens “ I come, I come! ye have call’d me long-- I come o’er the mountains with light and song!…”; closes “…Death midst the blooms of the morn may dwell, I tarry no longer--farewell, farewell!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3246,
+          3256
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ad90fa37277682dc694ec5553b55ed87ae6312fe6179219cf9770cdd68077044"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-12-q1",
+          "prompt": "Spring says, “Ye may trace my step.” Find three signs of her coming in the first five stanzas.",
+          "facilitatorNotes": [
+            "Winds that tell of violets, “primrose-stars” in the grass, opening leaves, chestnut flowers, the larch’s tassels, the swan’s cry, and streams set free from ice. Each sign is something you could see or hear."
+          ],
+          "evidence": [
+            "By the primrose-stars in the shadowy grass,",
+            "From the streams and founts I have loosed the chain,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-12-q2",
+          "prompt": "In the second stanza Spring says it is not for her “To speak of the ruin or the tomb!” Why might Hemans put that line so early?",
+          "facilitatorNotes": [
+            "It mentions death only to push it away, so it quietly prepares for the turn later in the poem. The reader may remember it when Spring is forced to speak of a tomb after all."
+          ],
+          "evidence": [
+            "But it is not for me, in my hour of bloom,",
+            "To speak of the ruin or the tomb!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-12-q3",
+          "prompt": "Where does the poem turn? What does Spring notice about the people?",
+          "facilitatorNotes": [
+            "“But ye!” Their smiles are dimmed, and some of the bright faces she saw last year are missing. She works out that they have “look’d on death.”"
+          ],
+          "evidence": [
+            "But ye!--ye are changed since ye met me last!",
+            "Ye have look’d on death since ye met me last!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-12-q4",
+          "prompt": "How does Spring comfort the mourners, and why can she not stay with them?",
+          "facilitatorNotes": [
+            "She knows “a land where there falls no blight,” where she will find the young people again: an image of heaven from Hemans’s Christian faith. But spring always passes, so she says farewell. Some readers find the ending comforting; others feel its sadness more."
+          ],
+          "evidence": [
+            "But I know of a land where there falls no blight--",
+            "I tarry no longer--farewell, farewell!"
+          ]
+        }
+      ],
+      "months": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-13",
+      "title": "The Treasures of the Deep",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a list that grows, stanza by stanza, toward the thing that matters most.",
+      "focus": "A speaker asks the sea what it hides, lets it keep its pearls and gold, and demands back the dead.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. The poem speaks to the sea, which it calls “the main.” Unreck’d of means unnoticed; argosies are great merchant ships; revelry is noisy feasting; board and hearth are the dinner table and the fireside; festal means of a feast. A note in this edition says the poem first appeared inside a longer poem of Hemans’s.",
+      "contentNote": "The poem mourns people drowned at sea.",
+      "excerpt": {
+        "locator": "“The Treasures of the Deep,” the whole poem; opens “ What hidest thou in thy treasure caves and cells, Thou hollow-sounding and mysterious…”; closes “…dead! Earth shall reclaim her precious things from thee!-- Restore the dead, thou sea!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5438,
+          5443
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d14950d8e0ce3ebaf04df2634155f6e48d42bfba0c7d5ee51da04465bb16ee7d"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-13-q1",
+          "prompt": "What does the sea hide? Put its treasures in the order the poem names them.",
+          "facilitatorNotes": [
+            "Pearls and shells; gold and jewels from sunken ships; drowned cities; brave men killed in battle; and the people missed at home. The list moves from things, to places, to people."
+          ],
+          "evidence": [
+            "Pale glistening pearls, and rainbow-colour’d shells",
+            "Above the cities of a world gone by!",
+            "Give back the true and brave!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-13-q2",
+          "prompt": "“Yet more, the depths have more!” Why does Hemans repeat this line?",
+          "facilitatorNotes": [
+            "Each time it takes us deeper, toward something more precious, like a diver going further down. The repetition builds suspense about what lies at the bottom."
+          ],
+          "evidence": [
+            "Yet more, the depths have more!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-13-q3",
+          "prompt": "What does the speaker let the sea keep, and what does she demand back? Why the difference?",
+          "facilitatorNotes": [
+            "It may keep its riches, its spoils and its drowned towers; it must give back the brave and the loved. Wealth does not matter to her; the people do."
+          ],
+          "evidence": [
+            "Keep, keep thy riches, melancholy sea!",
+            "Restore the dead, thou sea!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-13-q4",
+          "prompt": "In the last stanza the sea “must” hear a voice saying “Restore the dead!” Whose voice could it be? What does the speaker believe will happen?",
+          "facilitatorNotes": [
+            "It may be God’s voice at the end of the world, echoing a Bible verse in which the sea gives up its dead, or the voice of everyone who mourns. The speaker is sure the earth will take back its “precious things.” Readers need not share the belief to see its force."
+          ],
+          "evidence": [
+            "Yet must thou hear a voice--Restore the dead!",
+            "Earth shall reclaim her precious things from thee!--"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-14",
+      "title": "Bring Flowers",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Follow a repeated command through six scenes, and notice how the meaning of the same gift changes.",
+      "focus": "Flowers fit a feast, a victory, a prison, a wedding, a funeral and a prayer, and mean something different at each.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. Each stanza begins with the same command and names a new occasion. A festal board is a table set for a feast; to wreath is to wind round; a conqueror is a victorious general; a captive is a prisoner; languid means weak and tired; a bier holds a coffin; a shrine is a holy place.",
+      "contentNote": "One stanza is for the funeral of someone who died young.",
+      "excerpt": {
+        "locator": "“Bring Flowers,” the whole poem; opens “ Bring flowers, young flowers, for the festal board, To wreath the cup ere the wine is…”; closes “…dust through the wintry hours, They break forth in glory. Bring flowers, bright flowers!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5448,
+          5453
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d7cde1b785111e2463fde19c2db50b21122a95e394134a5e6ab9d449976e0bca"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-14-q1",
+          "prompt": "List the six places the flowers are brought. Which two seem most different from each other?",
+          "facilitatorNotes": [
+            "A feast, a conqueror’s path, a prisoner’s cell, a bride, a coffin, and a shrine. A wedding and a funeral sit side by side; so do a feast and a prison. The same gift serves joy and grief."
+          ],
+          "evidence": [
+            "Bring flowers to the captive’s lonely cell!",
+            "Bring flowers, pale flowers, o’er the bier to shed,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-14-q2",
+          "prompt": "Look at the conqueror’s stanza. Is Hemans really praising him? Find details that make you doubt it.",
+          "facilitatorNotes": [
+            "He has shaken thrones in “stormy wrath,” crushed the vines, and left the turf red with blood. The flowers are brought only “to die” under his chariot, like the vines. It reads more like a quiet accusation than praise."
+          ],
+          "evidence": [
+            "The vines lie crush’d in his chariot’s track,",
+            "Bring flowers to die in the conqueror’s way!"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-14-q3",
+          "prompt": "What can flowers give the prisoner that nothing else in his cell can?",
+          "facilitatorNotes": [
+            "News of the outside world: the woods, free streams, the sky he cannot see, and memories of his youth. For him they mean freedom."
+          ],
+          "evidence": [
+            "They have tales of the joyous woods to tell--",
+            "And the bright world shut from his languid eye;"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-14-q4",
+          "prompt": "The word before “flowers” keeps changing: young, wild, fresh, pale, bright. Why does each stanza get its own word? Which stanza gets none?",
+          "facilitatorNotes": [
+            "Young for the feast, wild for the prisoner who longs for freedom, fresh for the bride, pale for the dead, bright for the last stanza, where flowers that “sleep in dust” all winter “break forth in glory,” a sign of hope that Hemans links with prayer. The conqueror’s flowers get no kind word at all."
+          ],
+          "evidence": [
+            "Bring ye flowers, pale flowers!",
+            "They break forth in glory. Bring flowers, bright flowers!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-4-hemans-poems-1875-15",
+      "title": "The Graves of a Household",
+      "sourceId": "hemans-poems-1875",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 11,
+        "totalMinutes": 16
+      },
+      "challenge": "Picture where each child lies buried, and connect the places to the history of Hemans’s time.",
+      "focus": "Brothers and a sister who grew up together lie buried in four far-apart places, and the poem asks what love can hope for.",
+      "context": "Felicia Hemans (1793–1835) was one of the most widely read English poets of her century, in Britain and in America. In her time British families sent sons to the colonies, the navy and the wars, and the sick to warmer countries. The forest of the West is North America, and “the Indian” is a Native American. “A blood-red field of Spain” recalls the Peninsular War (1808–1814) against Napoleon’s armies; to wrap your colours round your breast is to die holding your regiment’s flag. The myrtle is an evergreen shrub of southern Europe.",
+      "contentNote": "All four children have died; one son was killed in battle.",
+      "excerpt": {
+        "locator": "“The Graves of a Household,” the whole poem; opens “ They grew in beauty side by side, They fill’d one home with glee;-- Their graves are…”; closes “…with song the hearth!-- Alas, for love! if _thou_ wert all, And naught beyond, O Earth!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          6449,
+          6455
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2627c5b4685efbdf33dc8e74cd36228ad8c900c67d13f7cd07437a9c47701eea"
+      },
+      "questions": [
+        {
+          "id": "reading-4-hemans-poems-1875-15-q1",
+          "prompt": "Where does each of the four lie buried? What might have taken each one so far from home?",
+          "facilitatorNotes": [
+            "One in the American forest, perhaps a settler or traveller; one at sea, a sailor; one in Spain, a soldier killed in battle; the daughter in Italy, where she “faded,” perhaps sent south for her health."
+          ],
+          "evidence": [
+            "One, midst the forest of the West,",
+            "On a blood-red field of Spain."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-15-q2",
+          "prompt": "The poem shows the children together and then apart. Which words make the contrast?",
+          "facilitatorNotes": [
+            "Together: “side by side,” “one home,” the same mother, the same green tree, “one parent knee.” Apart: graves “sever’d far and wide, / By mount, and stream, and sea.” The second stanza’s mother bending over each bed makes the distance hurt more."
+          ],
+          "evidence": [
+            "They grew in beauty side by side,",
+            "Their graves are sever’d far and wide,"
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-15-q3",
+          "prompt": "Why might the sailor’s grave seem the saddest?",
+          "facilitatorNotes": [
+            "He was “the loved of all,” yet no one can stand by his grave and weep, because it is somewhere under the sea. There is no place to visit."
+          ],
+          "evidence": [
+            "He lies where pearls lie deep;",
+            "O’er his low bed may weep."
+          ]
+        },
+        {
+          "id": "reading-4-hemans-poems-1875-15-q4",
+          "prompt": "What do the last lines mean: “Alas, for love! if thou wert all, / And naught beyond, O Earth!”?",
+          "facilitatorNotes": [
+            "If this earth were everything, love would end only in loss; the speaker hopes for something beyond, where the family meets again. Readers can say what they think of that hope and how the poem made them feel."
+          ],
+          "evidence": [
+            "They that with smiles lit up the hall,",
+            "And naught beyond, O Earth!"
+          ]
+        }
+      ]
     }
   ]
 }
