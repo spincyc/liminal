@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "grade": 7,
+  "work": "mckay-harlem-shadows-1922",
+  "readings": [
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-01",
+      "title": "Home Thoughts",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow one long sentence of memory and decide whether the speaker is remembering or imagining.",
+      "focus": "A sudden certainty, in a noisy city, that something is happening at home this minute.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. The poem remembers boys in a Jamaican village. Wis-wis is a tangled vine; guinea grass is a tall grass grown for cattle; mangoes ripen gold with dark specks.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Home Thoughts,” the whole poem; opens “Oh something just now must be happening there! That suddenly and quiveringly here, Amid…”; closes “…daytime dream, there’s something in it, Oh something’s happening there this very minute!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          36,
+          36
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f4cc56c51a12a75104bf90d4bb652b1aa79ef3bbcc011623de279a8078056eb3"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-01-q1",
+          "prompt": "The poem begins and ends with the same certainty. What is the speaker sure of, and where is he when the feeling strikes?",
+          "facilitatorNotes": [
+            "He is “amid the city’s noises,” far from home, and suddenly feels that “something just now must be happening there.” He never says what; the feeling comes first and the pictures follow. The ending insists it is “no daytime dream.”"
+          ],
+          "evidence": [
+            "Oh something just now must be happening there!",
+            "Amid the city’s noises"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-01-q2",
+          "prompt": "Why does the speaker name Davie, Cyril and Georgie instead of simply saying “my friends”?",
+          "facilitatorNotes": [
+            "Names and exact actions (climbing for mangoes, carrying bananas, diving better than anyone) make the memory physical and personal, as if he can see each boy. The boys are quick, skilled and free, which quietly contrasts with the crowded city around the speaker."
+          ],
+          "evidence": [
+            "And Georgie—none could ever dive like him—"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-01-q3",
+          "prompt": "Is the speaker remembering the past or imagining the present? What does his insistence that it is happening “this very minute” reveal?",
+          "facilitatorNotes": [
+            "The scenes may be memories of his own boyhood, but he places them in the present, as if home goes on without him. The insistence shows a homesickness strong enough to feel like being there. Readers may find the ending joyful, painful, or both."
+          ],
+          "evidence": [
+            "This is no daytime dream, there’s something in it,\nOh something’s happening there this very minute!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-02",
+      "title": "The White City",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Explain a speaker’s surprising claim and test whether the poem approves of the feeling it describes.",
+      "focus": "A sonnet in which hatred of racial injustice becomes a source of strength.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. A sonnet is a fourteen-line poem; this one turns after its eighth line. When McKay wrote, Black Americans faced segregation and frequent racial violence. A “goaded mass” is a crowd driven like cattle; “wanton” means wild and unrestrained.",
+      "contentNote": "The speaker declares a lifelong hatred and calls the white world a “hell.” The poem responds to racism in America around 1920.",
+      "excerpt": {
+        "locator": "“The White City,” the whole sonnet; opens “I will not toy with it nor bend an inch. Deep in the secret chambers of my heart I muse…”; closes “…tides, the wharves, the dens I contemplate, Are sweet like wanton loves because I hate.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          74,
+          74
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e698cb08845abf46cc9b8323d46a5cc2ffbe7b84c0b700769ac8580fec231db8"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-02-q1",
+          "prompt": "What does the speaker say his hate does for him?",
+          "facilitatorNotes": [
+            "Without it he would be “a skeleton, a shell”; it “feeds” him “vital blood.” He does not hide it or give in to it but bears it “nobly” and in secret. The claim is startling because hate is usually thought to destroy a person, not keep him alive."
+          ],
+          "evidence": [
+            "My being would be a skeleton, a shell,",
+            "Did not forever feed me vital blood."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-02-q2",
+          "prompt": "In the last six lines the speaker looks at the city. What does he see, and what does the final line mean?",
+          "facilitatorNotes": [
+            "Trains driving the “goaded mass,” towers, the fortified harbour, wharves and dens, all seen “through a mist.” His hate makes these sights “sweet like wanton loves”: it sharpens his attention and gives the city a fierce, almost thrilling beauty. Readers may find this disturbing or honest, or both."
+          ],
+          "evidence": [
+            "I see the mighty city through a mist—",
+            "Are sweet like wanton loves because I hate."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-02-q3",
+          "prompt": "Why is the city called “white”? Does the poem approve of the speaker’s hatred, or only show it?",
+          "facilitatorNotes": [
+            "“White” names the white-ruled world that has made his life a struggle, perhaps also the city’s pale towers in the mist. The speaker is controlled (“I will not toy with it nor bend an inch”) and acts on nothing; his hate is a shield. Some readers will see a defiant strength, others a wound the city has made; the poem lets both stand."
+          ],
+          "evidence": [
+            "I will not toy with it nor bend an inch.",
+            "And makes my heaven in the white world’s hell"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-03",
+      "title": "I Shall Return",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Track how repetition works in a poem, and notice how one final line changes everything before it.",
+      "focus": "A promise to return home that ends by revealing a hidden pain.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. A sonnet is a fourteen-line poem; this one ends with a rhymed pair of lines. A fife is a small flute; runes here are old songs. McKay in fact never went back to Jamaica.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“I Shall Return,” the whole sonnet; opens “I shall return again; I shall return To laugh and love and watch with wonder-eyes At…”; closes “…runes. I shall return, I shall return again, To ease my mind of long, long years of pain.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          105,
+          105
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f27fd3e30c3dd33010e5c826e1de189b28ad8d64d9db3292d6fad075121ba56d"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-03-q1",
+          "prompt": "What does the speaker promise to return to? Which senses does each promise use?",
+          "facilitatorNotes": [
+            "Forest fires burning at noon under “sapphire skies” (sight), streams through grass and rushing mountain water, and the fiddle and fife of village dances (sound). He promises to “laugh and love” again, so the return is to a whole way of feeling, not just a place."
+          ],
+          "evidence": [
+            "To laugh and love and watch with wonder-eyes"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-03-q2",
+          "prompt": "“I shall return” is repeated again and again. Is it a promise, a prayer or a way of persuading himself?",
+          "facilitatorNotes": [
+            "It could be any of these. Repetition makes the promise firm, but repeating it so often may also suggest doubt, as if the speaker must keep saying it to believe it. Knowing that McKay never went back adds sadness, though the poem itself does not tell us that."
+          ],
+          "evidence": [
+            "I shall return, I shall return again,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-03-q3",
+          "prompt": "How does the last line change the poem?",
+          "facilitatorNotes": [
+            "Until then the sonnet is all pleasure; the final line reveals the reason for returning: “long, long years of pain.” The pain is never explained, so readers must infer it from the distance and the life the speaker lives now. The happy pictures become a cure he longs for."
+          ],
+          "evidence": [
+            "To ease my mind of long, long years of pain."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-04",
+      "title": "On a Primitive Canoe",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Explain a metaphor and a question the speaker himself cannot answer.",
+      "focus": "An old hand-carved canoe moves the speaker more than the great ship that brought him across the ocean.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. “Primitive” here means made long ago by simple tools, a word of McKay’s time. An adze is a tool for shaping wood. The speaker crossed the Atlantic, as McKay did, to come to America.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“On a Primitive Canoe,” the whole sonnet; opens “Here, passing lonely down this quiet lane, Before a mud-splashed window long I pause To…”; closes “…nights and days? I cannot answer but, whate’er it be, An old wine has intoxicated me.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          114,
+          114
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d554313b3d660bee93707dfb27d4ef2634ca7dbb7173c8733166d467de6dedd4"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-04-q1",
+          "prompt": "What is the speaker looking at, and where is it?",
+          "facilitatorNotes": [
+            "A canoe behind a “mud-splashed window” in a quiet lane, perhaps in a shop or small museum. It was made “long ago in a dim unknown land” from a single tree, felled with an axe and shaped with an adze. The ordinary, dirty window contrasts with the wonder he feels."
+          ],
+          "evidence": [
+            "Before a mud-splashed window long I pause"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-04-q2",
+          "prompt": "What does it mean that the canoe was made “into a symbol of the tender moon”?",
+          "facilitatorNotes": [
+            "Its curved shape resembles a crescent moon. Calling it a “symbol” lifts a hollowed log into art: the maker shaped wood into something that carries meaning and beauty, not only people. “Tender” gives the moon, and the canoe, a gentle feeling."
+          ],
+          "evidence": [
+            "Into a symbol of the tender moon."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-04-q3",
+          "prompt": "Why does the old canoe thrill him more than the “handsome boat” that carried him across the Atlantic? Does he know?",
+          "facilitatorNotes": [
+            "He says he “cannot answer.” The image of “an old wine” suggests that age itself, and a link to remote ancestors and simpler lives, intoxicates him, away from his “harsh life of fretful nights and days.” Readers may connect the canoe to heritage, to childhood, or to the beauty of handmade things."
+          ],
+          "evidence": [
+            "I cannot answer but, whate’er it be,\nAn old wine has intoxicated me."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-05",
+      "title": "Winter in the Country",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Follow sentences that run across stanza breaks, and find where the poem turns.",
+      "focus": "A winter day in the country, the dreary room the speaker must return to, and what he can carry back.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. The speaker is spending a day in the countryside near the sea. A bureau is a chest of drawers; gaslight was lamplight from burning gas, common in poor city rooms.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Winter in the Country,” the whole poem; opens “Sweet life! how lovely to be here And feel the soft sea-laden breeze Strike my flushed…”; closes “…very wind, the winter birds, The glory of the soft sunset, Come there to me in words.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          116,
+          121
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "59eb6e64de1d6243714eace8de44083e89ce0c15b6ac38dd10b46e9be9ec0ee2"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-05-q1",
+          "prompt": "What makes this winter countryside a “paradise” to the speaker?",
+          "facilitatorNotes": [
+            "The sea breeze on his face, the spruce, the bare trees, the sparrow, the “short brown grass asleep,” and a sense of love and peace “beyond my power to express.” Winter is usually bleak in poems, but here even bare branches are “hands” to touch, and everything feels alive and friendly."
+          ],
+          "evidence": [
+            "Sweet life! how lovely to be here",
+            "Above the short brown grass asleep."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-05-q2",
+          "prompt": "The fourth stanza turns. Describe the room the speaker must return to. How do the words change?",
+          "facilitatorNotes": [
+            "A “dirty basement room” with a few pieces of furniture, “two crippled chairs,” dust, scars and dim gaslight. The words become harsh and the objects seem injured. The room will “welcome” him, an ironic word for such a place."
+          ],
+          "evidence": [
+            "But oh! to leave this paradise\nFor the city’s dirty basement room,",
+            "Will welcome me...."
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-05-q3",
+          "prompt": "“And yet, and yet”: what reaches him even in the basement room, and how?",
+          "facilitatorNotes": [
+            "The wind, the winter birds and the sunset come to him “in words”: through memory and through writing poems like this one. The ending suggests that poetry can carry beauty into an ugly place. Some readers may think words are a poor substitute; the poem’s calm ending suggests the speaker is consoled."
+          ],
+          "evidence": [
+            "This very wind, the winter birds,\nThe glory of the soft sunset,\nCome there to me in words."
+          ]
+        }
+      ],
+      "months": [
+        12,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "reading-7-mckay-harlem-shadows-1922-06",
+      "title": "When Dawn Comes to the City",
+      "sourceId": "mckay-harlem-shadows-1922",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 13,
+        "totalMinutes": 22
+      },
+      "challenge": "Compare two kinds of stanza by their rhythm, sound and repetition.",
+      "focus": "Dawn in New York against dawn on a remembered island.",
+      "context": "Claude McKay (1889–1948) grew up in the hills of Jamaica, then a British colony, and came to the United States in 1912. Harlem Shadows (1922) gathers the poems he wrote in America. Tenements were crowded city apartment buildings; milk carts delivered milk before sunrise; a lea is a meadow; the rose-apple is a tropical fruit tree. Ned is a donkey and Nannie a goat.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“When Dawn Comes to the City,” the whole poem; opens “The tired cars go grumbling by, The moaning, groaning cars, And the old milk carts go…”; closes “…flat rocks joyously! There, oh there! on the island of the sea, There I would be at dawn.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          171,
+          174
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9931d4978acaefb4934d2e9ea9c688b08d64861dbd5bc51e5fc0d54e1d899a42"
+      },
+      "questions": [
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-06-q1",
+          "prompt": "Compare the city stanzas with the island stanzas. How do their lines, sounds and moods differ?",
+          "facilitatorNotes": [
+            "The city stanzas have short, regular lines and heavy words: cars “grumbling,” “moaning, groaning,” workers who “sadly shuffle.” The island stanzas have long lines full of repeated sounds (“crowing, crowing, crowing”) that tumble forward like the stream. The rhythm itself contrasts a tired routine with crowded, joyful life."
+          ],
+          "evidence": [
+            "The tired cars go grumbling by,\nThe moaning, groaning cars,",
+            "Where the cocks are crowing, crowing, crowing,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-06-q2",
+          "prompt": "The island stanza is repeated word for word, but the city stanza changes. What changes the second time, and why might that matter?",
+          "facilitatorNotes": [
+            "The cars become “crazy, lazy,” the stars are “dying,” a lonely newsboy hums, and “red streaks” announce the dawn. The city moves through time while the island stays exactly the same, fixed in memory. Readers may see the island as a perfect dream or as a place the speaker can no longer change by living in it."
+          ],
+          "evidence": [
+            "Under the dying stars.",
+            "Red streaks strike through the gray of the sky,"
+          ]
+        },
+        {
+          "id": "reading-7-mckay-harlem-shadows-1922-06-q3",
+          "prompt": "In New York the speaker sees “dark figures”; on the island he hears “dear old Ned.” What does this difference suggest about what he misses?",
+          "facilitatorNotes": [
+            "The city people are nameless and shadowy, while the island animals are named and loved. He misses belonging among familiar creatures as much as the scenery. Readers might notice the island has no people at all and ask why."
+          ],
+          "evidence": [
+            "Out of the tenements, cold as stone,\nDark figures start for work;",
+            "And dear old Ned is braying, braying, braying,"
+          ]
+        }
+      ]
+    }
+  ]
+}
