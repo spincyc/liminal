@@ -1,0 +1,1298 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "work": "browning-shorter-poems-1917",
+  "readings": [
+    {
+      "id": "reading-10-browning-shorter-poems-1917-01",
+      "title": "Tray",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the poem rejects two kinds of hero before it tells its story, and who turns out to be reasonable.",
+      "focus": "A dog’s rescue, the bystanders’ “reason,” and a proposal that turns the joke into an accusation.",
+      "context": "Robert Browning (1812–1889) wrote “Tray” in the late 1870s, when vivisection, cutting into living animals for scientific study, was fiercely argued over in England; he opposed it. Bards are poets; quoth means said; eke means also; a helm is a helmet and a habergeon a coat of mail; “sin-scathed” means scarred by sin; to reckon “without your host” is to make plans without the person who decides; a balustrade is a railing; “prerogatived / With reason” means granted reason as a special privilege; to secrete is to produce, as a gland does.",
+      "contentNote": "A child falls into a river, and a man proposes to buy the dog and cut into its living brain.",
+      "excerpt": {
+        "locator": "Complete poem TRAY; opens “Sing me a hero! Quench my thirst Of soul, ye bards! Quoth Bard the first: \"Sir Olaf, the…”; closes “…expense Of half-an-hour and eighteen pence, How brain secretes dog's soul, we'll see!'\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          33,
+          41
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "967783cd8d23a53559622418a1930d8b6a76c57271a12482ee0b85deaf3dcb85"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-01-q1",
+          "prompt": "The speaker asks for a hero and cuts off the first two bards. What is wrong with their heroes, and how is the third bard’s opening different?",
+          "facilitatorNotes": [
+            "The first offers a stock knight arming himself in old-fashioned language; the second, a brooding, guilty hero tempted by death on a precipice. Both are worn-out literary types, and the speaker interrupts them. The third begins with a beggar-child singing on a quay: ordinary, poor and present-day."
+          ],
+          "evidence": [
+            "Sir Olaf and his bard----!",
+            "Sat on a quay's edge: like a bird"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-01-q2",
+          "prompt": "How do the bystanders behave, and what do they say about Tray? Where is the irony in “Reason reigns / In man alone”?",
+          "facilitatorNotes": [
+            "Nobody moves: they “reason,” thinking of wives and children. They call Tray a “mere instinctive dog,” and when he brings up the doll they laugh as if it proved dogs have no reason. But the dog acted while the reasoning men stood still, and he dived again because he took the doll for another child. The poem’s irony falls on the people, not the dog."
+          ],
+          "evidence": [
+            "A mere instinctive dog, and pounced",
+            "In man alone, since all Tray's pains"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-01-q3",
+          "prompt": "Why does the poem end with a man who wants to buy Tray and cut open his brain? How does that ending answer the demand, “Sing me a hero”?",
+          "facilitatorNotes": [
+            "The most “reasonable” bystander wants to find out, at the cost of “half-an-hour and eighteen pence,” how a brain “secretes” a dog’s soul. Reason without feeling becomes cruelty, the last step of the crowd’s indifference. The hero is the dog; the villain is a man who sees courage as a mechanism to dissect. Readers may discuss whether the poem is fair to science, or only to this man."
+          ],
+          "evidence": [
+            "By vivisection, at expense",
+            "How brain secretes dog's soul, we'll see!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-02",
+      "title": "Incident of the French Camp",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how long the poem keeps you from seeing the boy’s wound, and whose feelings the last stanza shows.",
+      "focus": "A young soldier’s devotion to his emperor, told by a fellow soldier as glory.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. Here the speaker is one of Napoleon’s soldiers. In 1809 the French army stormed Ratisbon (Regensburg), a walled town in Bavaria, with Marshal Lannes leading the assault. A battery is a group of cannons; the “flag-bird” is the eagle on Napoleon’s standards; vans are wings; anon means soon; to sheathe is to cover.",
+      "contentNote": "A boy soldier dies of a gunshot wound.",
+      "excerpt": {
+        "locator": "Complete poem INCIDENT OF THE FRENCH CAMP; opens “You know, we French stormed Ratisbon: A mile or so away On a little mound, Napoleon Stood…”; closes “…the quick, he said: \"I'm killed, Sire!\" And his chief beside, Smiling, the boy fell dead.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          43,
+          47
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "19b8c4f59619f1c0241787151339ad7f1094d4a589b57d7b24e3bc59af345ef3"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-02-q1",
+          "prompt": "How does the speaker picture Napoleon on the mound? What does the description suggest about him?",
+          "facilitatorNotes": [
+            "Neck thrust out, legs wide, arms locked behind him, his brow heavy “with its mind”: a man carrying the weight of his plans. Those plans “soar” or “fall” with Lannes at the wall, so the emperor is shown thinking of the battle as his design."
+          ],
+          "evidence": [
+            "As if to balance the prone brow",
+            "Let once my army-leader Lannes"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-02-q2",
+          "prompt": "How does the poem delay the discovery of the boy’s wound? Why does the speaker say “You hardly could suspect”?",
+          "facilitatorNotes": [
+            "The boy leaps off “in smiling joy” and holds himself upright by the horse’s mane, lips pressed shut so that little blood shows; only on a second look do we see his chest is “all but shot in two.” The reader discovers the wound as the onlookers did. He hides it so that the news comes first."
+          ],
+          "evidence": [
+            "You hardly could suspect--",
+            "Was all but shot in two."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-02-q3",
+          "prompt": "Why is the boy’s pride “touched to the quick” by “You’re wounded!”? How do you judge his devotion, and the speaker’s admiration for it?",
+          "facilitatorNotes": [
+            "“Wounded” seems to underrate what he has given; he corrects the emperor with “I’m killed,” and dies smiling. Napoleon’s eye softens like a mother eagle’s over her hurt eaglet, a moment of tenderness. The speaker tells it as glory. Readers may find it moving, or troubling: a boy dying gladly for one man’s plans."
+          ],
+          "evidence": [
+            "When her bruised eaglet breathes.",
+            "Smiling, the boy fell dead."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-03",
+      "title": "“How They Brought the Good News from Ghent to Aix”",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the first stanza aloud and feel the rhythm, then follow the ride town by town to its end.",
+      "focus": "A desperate night ride, told by a rider whose attention narrows to his horse.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. Here the speaker is one of three riders carrying news from Ghent to Aix (Aachen), about a hundred miles, sometime in the seventeenth century (“16--”); the towns named lie along the way, in what is now Belgium. A postern is a small back gate; girths are the straps that hold a saddle on; spume is foam; askance means sideways; a roan is a horse with a mixed-colour coat, and the croup is its rump; a buff-coat is a thick leather coat; jack-boots are heavy riding boots; burgesses are a town’s councillors.",
+      "contentNote": "Two horses collapse from the strain of the ride, and one dies.",
+      "excerpt": {
+        "locator": "Complete poem \"HOW THEY BROUGHT THE GOOD NEWS FROM GHENT TO AIX\"; opens “[16--]”; closes “…voted by common consent) Was no more than his due who brought good news from Ghent.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          49,
+          59
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d794fba49c1cfa1538e5d844af4583e90c69608dc942b8f1fbb0e79bd547d7e2"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-03-q1",
+          "prompt": "Read the first stanza aloud. How does the rhythm imitate what it describes?",
+          "facilitatorNotes": [
+            "Each line has four beats, each beat after two light syllables (da-da-DUM), like hoofbeats; “galloped” repeats three times in one line. The words never pause long, so the ride starts at full speed and keeps it."
+          ],
+          "evidence": [
+            "I galloped, Dirck galloped, we galloped all three;",
+            "And into the midnight we galloped abreast."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-03-q2",
+          "prompt": "Towns and times of day pass from moonset to full sun. What do these markers add? Why might the speaker notice the cattle, and Roland’s ear?",
+          "facilitatorNotes": [
+            "They are a map and a clock: the chimes and sunrise measure how much time is left. As exhaustion grows, the speaker’s attention narrows to his horse: one ear bent back for his voice, one eye glancing at him. The ride becomes a bond between two creatures."
+          ],
+          "evidence": [
+            "And from Mecheln church-steeple we heard the half-chime,",
+            "For my voice, and the other pricked out on his track;"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-03-q3",
+          "prompt": "We never learn what the news was. Why might Browning leave it out? Who is the hero, and was the cost worth it?",
+          "facilitatorNotes": [
+            "The poem cares about the ride, the endurance and the horse, not politics. Roland bears “the whole weight / Of the news,” and the speaker throws off coat, boots and pistols to lighten him; the town votes him the last wine as “no more than his due.” Two horses fell on the way. Readers can find the ending tender, or ask whether a cause we never hear justified the cost."
+          ],
+          "evidence": [
+            "Of the news which alone could save Aix from her fate,",
+            "Was no more than his due who brought good news from Ghent."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-04",
+      "title": "Evelyn Hope",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a speaker who addresses a dead girl, and judge what he claims for himself.",
+      "focus": "A love declared too late, and the promise of a meeting after death.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. Here the speaker sits beside a girl of sixteen who has just died. A horoscope is a chart of the stars at a person’s birth; “in fine” means in the end; to spoil the climes is to plunder distant lands.",
+      "contentNote": "The speaker sits beside the body of a sixteen-year-old girl and declares his love for her, though he is three times her age.",
+      "excerpt": {
+        "locator": "Complete poem EVELYN HOPE; opens “Beautiful Evelyn Hope is dead! Sit and watch by her side an hour. That is her book-shelf,…”; closes “…There, that is our secret: go to sleep! You will wake, and remember, and understand.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          94,
+          100
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "774176de51251702c081c97dceeda466a16525d9dbfaee7f8321f8a239d5694a"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-04-q1",
+          "prompt": "What does the first stanza show of Evelyn’s room, and what in it is “Beginning to die too”?",
+          "facilitatorNotes": [
+            "Her bookshelf and bed, closed shutters with two rays of light, and the geranium she picked, wilting in its glass. The room holds a life just stopped; the flower returns later as the colour of her mouth and as the leaf he gives her."
+          ],
+          "evidence": [
+            "She plucked that piece of geranium-flower,",
+            "Beginning to die too, in the glass;"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-04-q2",
+          "prompt": "What obstacles does the speaker admit stood between them, and how does he answer them?",
+          "facilitatorNotes": [
+            "He was three times her age, their paths diverged, and she had “scarcely heard my name.” He answers that God “creates the love to reward the love,” and that after many lives he will claim her."
+          ],
+          "evidence": [
+            "And just because I was thrice as old",
+            "I claim you still, for my own love's sake!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-04-q3",
+          "prompt": "He shuts a leaf in her hand as “our secret.” Is this a moving act of devotion, or is he claiming something that was never his? Use his own words.",
+          "facilitatorNotes": [
+            "Some readers hear sincere grief and faith in a love beyond death. Others notice that she never knew of it, that he loves “for my own love’s sake,” and that “You will wake, and remember, and understand” assumes her answer for her. A monologue lets the reader see more than the speaker does; both readings can be argued from the text."
+          ],
+          "evidence": [
+            "There, that is our secret: go to sleep!",
+            "You will wake, and remember, and understand."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-05",
+      "title": "Misconceptions",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Lay the two stanzas side by side and match each line of the first to its partner in the second.",
+      "focus": "The bird’s brief perch and the queen’s brief favour, as felt by the one left behind.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. Here the speaker is unnamed. A spray is a small twig with leaves or flowers; ere means before; meet means fitting; a dalmatic is a wide-sleeved robe worn by kings at their coronation; erratic means wandering; proffered means offered.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem MISCONCEPTIONS; opens “This is a spray the bird clung to, Making it blossom with pleasure, Ere the high tree-top…”; closes “…poor heart's, ere the wanderer went on-- Love to be saved for it, proffered to, spent on!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          110,
+          111
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1656c8220eddbaf44aa1acd2b30224bf8ddbee6d35d0491dab209d83713aaa0d"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-05-q1",
+          "prompt": "What happened to the spray, and what did it hope?",
+          "facilitatorNotes": [
+            "A bird clung to it for a moment, “making it blossom with pleasure,” then flew on to the high tree-top that suited her nest. The spray had hoped to be “singled out, built in, and sung to”: chosen for the nest itself."
+          ],
+          "evidence": [
+            "This is a spray the bird clung to,",
+            "So to be singled out, built in, and sung to!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-05-q2",
+          "prompt": "How does the second stanza repeat the first? Who are the Queen and the “poor heart”?",
+          "facilitatorNotes": [
+            "Line for line, the queen leans on a heart for a “minute erratic” before turning to the “true bosom” fit for royal love, as the bird left the spray for the tree-top. The heart, like the spray, had dreamed of love “saved for it, proffered to, spent on.” The parallel suggests a lover of lower rank briefly favoured and then passed over."
+          ],
+          "evidence": [
+            "This is a heart the Queen leant on,",
+            "Love to be saved for it, proffered to, spent on!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-05-q3",
+          "prompt": "Whose “misconceptions” does the title mean? Is the poem bitter, tender, or both?",
+          "facilitatorNotes": [
+            "The spray’s and the heart’s: each mistook a moment’s use for a lasting choice. Yet the spray did blossom, and the heart was “thrilled”; the stanzas call their hopes “beyond measure” and “ecstatic,” not foolish. Readers can hear pity, gentle irony, or the speaker’s own hurt; the poem never says which of the two the speaker is."
+          ],
+          "evidence": [
+            "Oh, what a hope beyond measure",
+            "Oh, what a fancy ecstatic"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-06",
+      "title": "Natural Magic",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare the conjuring trick in the first stanza with the “trick” in the second, and notice the change from “say” to “sing.”",
+      "focus": "A magic trick the speaker saw, and a love that worked the same miracle on his empty life.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. The speaker describes a famous Indian conjuring trick in which a performer, shut in an empty room, makes plants grow and bear fruit. A Nautch is an Indian dancing girl; swarth means dark-skinned; embowered means surrounded by leaves and flowers; verdure is greenery; o’erfruited and o’erflowered mean heavy with fruit and flowers; to enshrine is to set in a shrine.",
+      "contentNote": "The performer is pictured through the period’s exotic stereotype (“the swarth little lady,” “No Nautch shall cheat me”), and the speaker boasts that he locked her in “quite as bare.”",
+      "excerpt": {
+        "locator": "Complete poem NATURAL MAGIC; opens “All I can say is--I saw it! The room was as bare as your hand. I locked in the swarth…”; closes “…These fruits of your bearing--nay, birds of your winging! A fairy-tale! Only--I feel it!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          113,
+          114
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b71fdc1ec36de55b72e89644de7d6f29ba56bba51e6b2af31a3d150b5a9e66ca"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-06-q1",
+          "prompt": "What precautions did the speaker take, and what did he find when he drew the bolt?",
+          "facilitatorNotes": [
+            "The room was “as bare as your hand,” and so was the performer; he stood guard at the bolt so no one could cheat him. When he opened it, she was laughing among greenery heavy with fruit and flowers. He insists only on what he saw: “Impossible! Only—I saw it!”"
+          ],
+          "evidence": [
+            "The room was as bare as your hand.",
+            "And there laughs the lady, not bare, but embowered"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-06-q2",
+          "prompt": "How does the second stanza turn the trick into a love poem? Match its details with the first stanza’s.",
+          "facilitatorNotes": [
+            "His life was “as blank as that room”; he let the beloved in, with no precautions, and now finds it full of blooms, fruits and birds she brought, with no May to sow or June to ripen them. The bare room becomes his life, the conjuror becomes the beloved, and the impossible flowers become what love has done to him."
+          ],
+          "evidence": [
+            "This life was as blank as that room;",
+            "Behold you enshrined in these blooms of your bringing,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-06-q3",
+          "prompt": "The first stanza ends “I saw it!”, the second “I feel it!” Why might Browning change “say” to “sing” and “saw” to “feel”?",
+          "facilitatorNotes": [
+            "The first is a witness’s report of an outward wonder; the second is a song of an inward one that cannot be proved, only felt. Calling it “A fairy-tale!” admits it sounds impossible, as the trick did. Some readers find the comparison charming, others think it makes love itself a kind of illusion; the title, “natural magic,” allows both."
+          ],
+          "evidence": [
+            "All I can sing is--I feel it!",
+            "A fairy-tale! Only--I feel it!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-07",
+      "title": "A Wall",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch how a wall covered in creepers turns into a picture of the speaker’s own situation.",
+      "focus": "A watcher shut out by walls, and a spirit that resolves to fly over them.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. The creepers are climbing plants; lush and lithe mean thick and supple; nothing loath means quite willing; lappets are hanging flaps of cloth; to pulsate is to throb; to divine is to guess; cloistered means shut away, as in a convent; rueful means sorrowful or pitiable.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem A WALL; opens “O the old wall here! How I could pass Life in a long midsummer day, My feet confined to a…”; closes “…Account as wood, brick, stone, this ring Of the rueful neighbours, and--forth to thee!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          121,
+          126
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0e59f18111a0a6aaa3b5d6816d0c28b8324416037657c0eba76820dab9a7c747"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-07-q1",
+          "prompt": "What does the speaker watch, and what makes the creepers move?",
+          "facilitatorNotes": [
+            "An old red-brick wall clothed in green creepers; he could spend a whole midsummer day watching it. The leaves tremble as if a body moved beneath a robe; his heart guesses that someone, “she,” passed behind it and perhaps sang, and the wall “throbbed” with her life."
+          ],
+          "evidence": [
+            "My eyes from a wall not once away!",
+            "Who tripped behind; and she sang, perhaps:"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-07-q2",
+          "prompt": "“Wall upon wall are between us.” What kind of walls does the speaker mean now?",
+          "facilitatorNotes": [
+            "Not only brick: whatever separates two people, perhaps the watchers he calls “rueful neighbours,” perhaps custom or distance. He calls himself a “prison-bird” with passion (“a ruddy strife”) in his breast and storm-notes on his lips. The garden wall has become a picture of everything keeping him from her."
+          ],
+          "evidence": [
+            "Wall upon wall are between us: life",
+            "I--prison-bird, with a ruddy strife"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-07-q3",
+          "prompt": "How does the speaker resolve to overcome the walls? Is the ending a real escape?",
+          "facilitatorNotes": [
+            "By trusting “the subtle thing / That’s spirit”: though shut in, it can “soar free,” treating the ring of neighbours as no more than wood and stone, and go “forth to thee.” The escape is in spirit and song, not in body; readers can decide whether that is triumph or consolation."
+          ],
+          "evidence": [
+            "That's spirit: tho' cloistered fast, soar free;",
+            "Of the rueful neighbours, and--forth to thee!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-08",
+      "title": "A Woman’s Last Word",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Read short, quick lines slowly, and work out what quarrel the speaker is ending and on what terms.",
+      "focus": "Ending an argument by giving up one’s own words and thoughts.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. Here a woman speaks to her husband or lover at night after a quarrel. The Eden stanzas recall the serpent, the forbidden tree and its apple in the Book of Genesis.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem A WOMAN'S LAST WORD; opens “Let's contend no more, Love, Strive nor weep: All be as before, Love, --Only sleep!”; closes “--Must a little weep, Love, (Foolish me!) And so fall asleep, Love, Loved by thee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          138,
+          147
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2bbe3e89c3e50a101d8dfa15a482250ece6b42d449d5cab7d2bd2ebb61c3dfd7"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-08-q1",
+          "prompt": "How does the speaker describe words and argument in the second and third stanzas?",
+          "facilitatorNotes": [
+            "Words are “wild”; the two debating are like birds on a bough while a hawk stalks them. Quarrelling exposes them to danger, so she asks to hide the talking, “Cheek on cheek.”"
+          ],
+          "evidence": [
+            "What so wild as words are?",
+            "Hawk on bough!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-08-q2",
+          "prompt": "“What so false as truth is, / False to thee?” What does she mean, and how do the Eden images support it?",
+          "facilitatorNotes": [
+            "A truth that wounds the beloved is a kind of falsehood to him. Like the apple, some knowledge destroys paradise, so she will not pry. Readers can debate whether this is wisdom or avoidance."
+          ],
+          "evidence": [
+            "Where the apple reddens,",
+            "Lest we lose our Edens,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-08-q3",
+          "prompt": "She offers to speak his speech and think his thought, but “to-morrow, / Not to-night.” Is this surrender, strategy, or grief? How do you read the final stanza?",
+          "facilitatorNotes": [
+            "It can be genuine submission, an ideal of wifely obedience many readers today find troubling; a tactic to end the fight; or a delay that leaves her own mind intact for now. The weeping at the end shows what the offer costs her."
+          ],
+          "evidence": [
+            "I will speak thy speech, Love,",
+            "That shall be to-morrow,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-09",
+      "title": "A Pretty Woman",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a speaker’s argument about a woman who can be liked but cannot love, and test his final answer about the rose.",
+      "focus": "Whether beauty without depth should be scorned, improved, destroyed, or simply enjoyed.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. This speaker talks partly to a pretty woman (“Sweet”) and partly to himself. To scout is to dismiss with scorn; brayed means pounded; aye means always; a mould-flower is a real flower used to cast a gold copy.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem A PRETTY WOMAN; opens “That fawn-skin-dappled hair of hers, And the blue eye Dear and dewy, And that infantine…”; closes “…know a way! Leave it, rather. Must you gather? Smell, kiss, wear it--at last, throw away.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          149,
+          166
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ebc9e342d189133bd5ae4bfc7823f74a4d212653e0c81c584dd6f861fd9a8232"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-09-q1",
+          "prompt": "What does the speaker say men cannot get from the pretty woman, however they pray or pay?",
+          "facilitatorNotes": [
+            "Love. She likes men for a glance, a word or a sword, and they can admire her, but she “could not” love even if pounded in a mortar."
+          ],
+          "evidence": [
+            "But for loving, why, you would not, Sweet,",
+            "In a mortar--for you could not, Sweet!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-09-q2",
+          "prompt": "In the second half the speaker asks a run of questions. What options does he consider for such a face, and why does he reject each?",
+          "facilitatorNotes": [
+            "To scorn liking because it is not love; to crush the gaudy fly because it makes no honey; to “mend” her, which would end what she is; to burn her up before she kindles trouble; to “kiss away one’s soul on her.” He rejects them all as either cruel or blind."
+          ],
+          "evidence": [
+            "Crush the fly-king",
+            "Would you mend it"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-09-q3",
+          "prompt": "The craftsman ruins the rose with gold; the speaker’s advice is “Smell, kiss, wear it--at last, throw away.” Is this respectful of the woman’s nature, or careless of her? Defend a view.",
+          "facilitatorNotes": [
+            "It accepts her as complete “of its kind,” refusing to remake her or lock her away like the morose king. But “throw away” treats her as a thing to use and discard. Browning may want readers to see through the speaker’s reasonable tone."
+          ],
+          "evidence": [
+            "Uses fine things that efface the rose.",
+            "Smell, kiss, wear it--at last, throw away."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-10",
+      "title": "Youth and Art",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Reconstruct a might-have-been romance from small details, and weigh what the speaker says was lost.",
+      "focus": "Success that came at the price of a life never fully lived.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. The speaker, Kate Brown, was once a poor young singer; she addresses Smith, a sculptor who lodged across the street. Gibson was a famous sculptor and Grisi a famous opera singer of the day; “on the boards” means on the stage; R.A. marks a member of the Royal Academy of Arts; bals-parés are formal balls.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem YOUTH AND ART; opens “It once might have been, once only: We lodged in a street together, You, a sparrow on the…”; closes “…suppose me clever; This could but have happened once, And we missed it, lost it forever.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          168,
+          184
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ed99b545960cd294d8b3dc88294723ef6811a519d9313832e486f3a33ad079c2"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-10-q1",
+          "prompt": "What were the young sculptor’s and the young singer’s ambitions? What does each boast reveal?",
+          "facilitatorNotes": [
+            "To outdo the famous: Gibson “demolished,” Grisi “embittered.” Both are confident, comic, and measure success by beating a rival."
+          ],
+          "evidence": [
+            "Smith made, and Gibson demolished.",
+            "And Grisi's existence embittered!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-10-q2",
+          "prompt": "List the signals the two exchanged or failed to exchange. Why did nothing happen?",
+          "facilitatorNotes": [
+            "They watched each other’s windows; she put up a blind; he ignored her high notes; she was jealous of his models and he of her piano-tuner. Neither would be “rash”: ambition came first."
+          ],
+          "evidence": [
+            "Why did not you pinch a flower",
+            "No, no: you would not be rash,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-10-q3",
+          "prompt": "Both have succeeded. Why does she call “Each life unfulfilled”? Do you agree that they “missed it, lost it forever”?",
+          "facilitatorNotes": [
+            "They have honours and wealth but have never “sighed deep, laughed free,” or known the whole range of feeling. A reader may agree, or suspect nostalgia: the romance may look perfect only because it never happened. Her light tone can be read as hiding regret."
+          ],
+          "evidence": [
+            "Each life unfulfilled, you see;",
+            "And we missed it, lost it forever."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-11",
+      "title": "Cavalier Tunes",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Hear three soldiers’ songs from one side of a civil war, and listen for what the singers do not say.",
+      "focus": "War songs that rally, toast and mock, in the voices of men loyal to a king.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. These three songs are in the voices of Cavaliers, supporters of King Charles I in the English Civil War, which began in 1642 between the King and Parliament; the King lost and was executed in 1649. The Cavaliers called their enemies Roundheads, or “crop-headed,” for their short hair. Pym, Hampden, Hazelrig, Fiennes and “young Harry” (Sir Henry Vane) were leaders of Parliament; Prince Rupert, the King’s nephew, commanded his cavalry; the King raised his standard at Nottingham in 1642; “Noll” is a nickname for Oliver Cromwell. Carles are low fellows; parles are talks; obsequies are funeral rites; a knell is a funeral bell; to “give a rouse” is to drink a toast; to quaff is to drink; a lay is a song; “by my fay” means by my faith.",
+      "contentNote": "Partisan war songs that wish their enemies in hell; a father toasts the King after his son is shot by enemy soldiers.",
+      "excerpt": {
+        "locator": "Complete poem CAVALIER TUNES, its three songs; opens “Kentish Sir Byng stood for his King, Bidding the crop-headed Parliament swing: And,…”; closes “CHO.-- Boot, saddle, to horse, and away!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          207,
+          235
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "114eed407773f67d56bb487d3c0a5e28537b97a0d35157785f07dd209640ea74"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-11-q1",
+          "prompt": "How do the singers of “Marching Along” describe themselves, and how do they describe their enemies?",
+          "facilitatorNotes": [
+            "They are “Great-hearted gentlemen,” “honest folk” and “loyalists”; their enemies are “rogues,” “carles,” “treasonous,” and should hang (“swing”) or go to hell. Everything is sorted into heroes and villains, as marching songs often do."
+          ],
+          "evidence": [
+            "Bidding the crop-headed Parliament swing:",
+            "Hampden to hell, and his obsequies knell."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-11-q2",
+          "prompt": "In “Give a Rouse,” the singer answers his own questions with “King Charles!” What has he lost, and why does he still drink to the King?",
+          "facilitatorNotes": [
+            "He says the King gave him goods, a house, gold and wine, and all are gone (“went since,” “sank once,” “spent since”); his son George was shot by Cromwell’s troopers while cheering for the King. Loss has not shaken his loyalty; it has hardened it into defiance, “in hell’s despite.” Readers may hear courage, grief, or a man who cannot afford to doubt."
+          ],
+          "evidence": [
+            "Who raised me the house that sank once?",
+            "While Noll's damned troopers shot him?"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-11-q3",
+          "prompt": "Why does “Boot and Saddle” end with Gertrude’s laugh at surrender? What do these songs show about how war songs work, and does Browning, writing two hundred years later, take a side?",
+          "facilitatorNotes": [
+            "The besieged wife scorns surrender and turns the chorus into her own answer: the songs rally everyone, even those at home. Browning catches the swagger, the rhythm and the contempt of partisan song; the reader hears both its energy and its blindness (enemies damned, a son’s death turned into a toast). Some readers think he admires the Cavaliers; others that he admires only their songs."
+          ],
+          "evidence": [
+            "Who? My wife Gertrude; that, honest and gay,",
+            "I've better counsellors; what counsel they?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-12",
+      "title": "Home-Thoughts, from the Sea",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Find each place the speaker names, and ask why seeing them leads him to pray.",
+      "focus": "A sunset voyage past famous battle sites, and the question of what a traveller owes his country.",
+      "context": "Robert Browning (1812–1889) wrote this poem at sea, sailing past the south-west coast of Spain. Cape Saint Vincent and Trafalgar were the sites of British naval victories over Spain and France in 1797 and 1805; Admiral Nelson, Britain’s great naval hero, fought at both and was killed at Trafalgar. Gibraltar, at the mouth of the Mediterranean, has been British since 1704. Cadiz is a Spanish port; Jove’s planet is Jupiter, named for the king of the Roman gods.",
+      "contentNote": "The sunset is pictured as “blood-red, reeking,” calling up the battles fought in these waters.",
+      "excerpt": {
+        "locator": "Complete poem HOME-THOUGHTS, FROM THE SEA; opens “Nobly, nobly, Cape Saint Vincent to the Northwest died away; Sunset ran, one glorious…”; closes “…this evening, turn to God and pray, While Jove's planet rises yonder, silent over Africa.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          237,
+          238
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5576c2fbdd1ec54960d7708424b8a3d3ed54f8d6d5a541d296ec45c268d17cac"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-12-q1",
+          "prompt": "Which places does the speaker see, and in what light? Find the words that colour them.",
+          "facilitatorNotes": [
+            "Cape Saint Vincent dying away “nobly,” sunset running “blood-red, reeking” into Cadiz Bay, Trafalgar “bluish” in the burning water, Gibraltar “grand and gray” in the dim distance. The colours shift from blood and fire to grey dusk, and the sunset seems to replay the battles."
+          ],
+          "evidence": [
+            "Sunset ran, one glorious blood-red, reeking into Cadiz Bay;",
+            "In the dimmest Northeast distance dawned Gibraltar grand and gray;"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-12-q2",
+          "prompt": "“Here and here did England help me: how can I help England?” What help does England give, and what answer does the poem suggest?",
+          "facilitatorNotes": [
+            "Victories in these waters made the sea safe for English travellers like him and are part of his pride; he turns that pride into a question of duty. The poem gives no answer but prayer: whoever passes here, it says, should ask the question and turn to God. Readers can ask whether the poem is patriotic boasting or a call to service."
+          ],
+          "evidence": [
+            "\"Here and here did England help me: how can I help England?\"--say,",
+            "Whoso turns as I, this evening, turn to God and pray,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-12-q3",
+          "prompt": "Every line ends on the same rhyme sound until the last. Why might the poem end on “Africa,” with Jupiter rising “silent”?",
+          "facilitatorNotes": [
+            "Six lines end in “-ay”; the last, “Africa,” stretches the rhyme across the strait to another continent. Jupiter rises silent, as if the heavens look on without comment. The ending widens the view from English glory to a quieter, larger world."
+          ],
+          "evidence": [
+            "While Jove's planet rises yonder, silent over Africa.",
+            "Nobly, nobly, Cape Saint Vincent to the Northwest died away;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-13",
+      "title": "Songs from Pippa Passes",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Read four songs lifted out of a play, then ask how knowing who hears them changes what they mean.",
+      "focus": "A girl’s songs of dawn, faith and love, and the people they reach without her knowing.",
+      "context": "Robert Browning (1812–1889) wrote these songs for his verse play Pippa Passes (1841). Pippa, a girl who works in the silk mills of Asolo, a small Italian town, spends her one holiday of the year walking through the town and singing; she never knows that people overhear her songs at moments of crisis and are changed by them. The first song is her greeting to the dawn; “The year’s at the spring” is overheard by two lovers who murdered the woman’s husband the night before. In the last, a page sings unseen to a queen’s maid. Hist means hush; tresses are long hair; messes are servings of food; jesses are the straps on a hawk’s legs; to cleave is to split.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The four songs printed as SONGS FROM PIPPA PASSES; opens “Day! Faster and more fast, O'er night's brim, day boils at last: Boils, pure gold, o'er…”; closes “…her tresses, \"'Tis only a page that carols unseen, Fitting your hawks their jesses!\")”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          244,
+          248
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7b94a267f7da3c6e6bc1ec038150112232a7f307edd62c5babc8d89ad2078bbd"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-13-q1",
+          "prompt": "In the first song, how does the sunrise “boil” over? Follow the image from the “cloud-cup” to the world.",
+          "facilitatorNotes": [
+            "Night is a cup and day a liquid heating in it: gold froths behind a gap in the grey cloud, spurts, sends out one wavelet then another, and finally “overflowed the world.” The long sentence builds like a pot coming to the boil."
+          ],
+          "evidence": [
+            "Boils, pure gold, o'er the cloud-cup's brim.",
+            "Flickered in bounds, grew gold, then overflowed the world."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-13-q2",
+          "prompt": "“The year's at the spring” is one of the most quoted songs in English. How is it built, and what does its last claim rest on?",
+          "facilitatorNotes": [
+            "It narrows from the year to the season, the day and the hour, then names the hillside, the lark and the snail, each “at” or “on” its proper place. Everything is where it should be, so “All's right with the world!” The logic is a child’s, and the song is happy to be simple."
+          ],
+          "evidence": [
+            "Morning's at seven;",
+            "All's right with the world!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-13-q3",
+          "prompt": "In the last song, what does the page want, and why can’t he have it?",
+          "facilitatorNotes": [
+            "He loves a lady whom fortune has placed above him. He longs for a reason to serve her (a wrong to avenge, poverty to relieve) but she has everything, so his love has nothing to do. The maid’s refrain dismisses him as “only a page.”"
+          ],
+          "evidence": [
+            "Give her but a least excuse to love me!",
+            "But that fortune should have thrust all this upon her!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-13-q4",
+          "prompt": "Two murderers overhear “All's right with the world,” and a mill girl sings that “All service ranks the same with God.” Does knowing this make the songs naïve, ironic, or something else?",
+          "facilitatorNotes": [
+            "To Pippa the songs are simply true; to the guilty lovers the spring song is a rebuke, and in the play it shakes them. The second song says that every kind of work, high or low, counts the same, so her own work counts. Readers may hear innocence, dramatic irony, or a faith that holds its ground even in the presence of evil."
+          ],
+          "evidence": [
+            "All service ranks the same with God:",
+            "Are we: there is no last nor first."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-14",
+      "title": "The Lost Leader",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Hear how the galloping rhythm carries anger, and notice where the anger turns into something else.",
+      "focus": "Betrayal by a leader, and the followers’ resolve to go on without him.",
+      "context": "Robert Browning wrote this in 1845, soon after William Wordsworth, who had sympathized with revolution as a young man, accepted a government pension and the post of Poet Laureate. Browning later said he had used Wordsworth only as a model for an imagined figure. A riband is a ribbon worn as an honour; the van is the front line; quiescence is inactivity.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem THE LOST LEADER; opens “Just for a handful of silver he left us, Just for a riband to stick in his coat-- Found…”; closes “…him receive the new knowledge and wait us, Pardoned in heaven, the first by the throne!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          250,
+          251
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "af3552021f67195a66445db3151f9c18177555e7b969b7c304fcc9e7300ae80a"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-14-q1",
+          "prompt": "What did the leader leave “us” for, and why do “handful” and “silver” make it sound worse?",
+          "facilitatorNotes": [
+            "Money and a ribbon. “A handful of silver” recalls the silver Judas was paid to betray Jesus, and the givers, who had gold, “doled him out silver”: he sold himself cheaply."
+          ],
+          "evidence": [
+            "Just for a handful of silver he left us,",
+            "They, with the gold to give, doled him out silver,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-14-q2",
+          "prompt": "Who are “us”? How does the roll of Shakespeare, Milton, Burns and Shelley define the side the leader has left?",
+          "facilitatorNotes": [
+            "The party of freedom and the people, joined by great poets alive and dead. Against that “van” of “freemen” the leader goes to “the rear and the slaves.”"
+          ],
+          "evidence": [
+            "Shakespeare was of us, Milton was for us,",
+            "He alone sinks to the rear and the slaves!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-14-q3",
+          "prompt": "The poem ends by imagining him “Pardoned in heaven, the first by the throne!” Does this soften the condemnation or sharpen it?",
+          "facilitatorNotes": [
+            "It can be generous: he remains great, and the followers hope to meet him in heaven. It can also wound: he will need pardon. Before it, “Never glad confident morning again!” admits the followers’ own loss; readers can argue which feeling the poem ends on."
+          ],
+          "evidence": [
+            "Never glad confident morning again!",
+            "Pardoned in heaven, the first by the throne!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-15",
+      "title": "Apparent Failure",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a visitor’s tone as it moves from tourist chatter to the bodies themselves, and decide what the title claims.",
+      "focus": "Three men who failed, and a hope that no failure is final.",
+      "context": "Robert Browning wrote this poem in the 1860s, when the Paris Morgue, where unidentified bodies taken from the Seine were displayed behind glass so that relatives could claim them, was to be demolished. The speaker recalls a visit in 1856, when Paris celebrated the baptism of Emperor Napoleon III’s son and diplomats met at the Congress of Paris. Buonaparte (Napoleon) and the Tuileries palace stand for imperial power; red is the colour of revolution, and red and black are also the colours of the gambling table.",
+      "contentNote": "The poem describes the bodies of three men who died by suicide, displayed in a public morgue.",
+      "excerpt": {
+        "locator": "Complete poem APPARENT FAILURE; opens “\"We shall soon lose a celebrated building.\" --_Paris Newspaper_.”; closes “…fetched; That what began best, can't end worst, Nor what God blessed once, prove accurst.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          253,
+          260
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9d0663b39b9c91f3fbf57063747127e4d84b5f7e4308191813c76b826fa45812"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-15-q1",
+          "prompt": "How does the speaker describe his day before he reaches the Morgue? What does that light tone do when he enters?",
+          "facilitatorNotes": [
+            "A royal baptism, diplomats’ names, walking off heat and a headache, sauntering by the river. The tourist’s chatter, down to “No Briton’s to be balked!”, makes the sight of the dead more abrupt."
+          ],
+          "evidence": [
+            "So sauntered till--what met my eyes?",
+            "Let them! No Briton's to be balked!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-15-q2",
+          "prompt": "What story does the speaker imagine for each of the three men? How far should we trust his guesses?",
+          "facilitatorNotes": [
+            "A boy who wanted to be Napoleon; an old “red” socialist; a gambler who wanted money for women. They are guesses from faces and clothes, partly comic and partly tender; some readers find them presumptuous, others humane."
+          ],
+          "evidence": [
+            "You wanted to be Buonaparte",
+            "Oh, women were the prize for you!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-15-q3",
+          "prompt": "Why is the poem called “Apparent Failure”? Does the last stanza’s hope grow from what the speaker has seen, or stand against it?",
+          "facilitatorNotes": [
+            "The failure is only apparent: “their sin’s atoned,” the hats and coats are treated with reverence, and he hopes that “what God blessed once” cannot end cursed. The poem also “saves” the building by remembering it. Some readers find the faith hard-won; others hear the plain moral lines (“It’s wiser being good than bad”) as too easy beside the bodies."
+          ],
+          "evidence": [
+            "I thought, and think, their sin's atoned.",
+            "Nor what God blessed once, prove accurst."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-16",
+      "title": "Instans Tyrannus",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read a tyrant’s own account of a hunt and notice what he reveals without meaning to.",
+      "focus": "Absolute power baffled by one small man.",
+      "context": "Robert Browning (1812–1889) often wrote dramatic monologues, poems spoken by a character who is not the poet. The title is Latin for “the threatening tyrant,” from an ode by the Roman poet Horace praising the just man whom a tyrant’s face cannot shake. Perdue means hidden; cates are delicacies; spilth is what spills over; pelf is money; gravamen is the heart of a grievance; a targe is a shield and its boss the raised centre; marge means edge.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem INSTANS TYRANNUS; opens “Of the million or two, more or less, I rule and possess, One man, for some cause…”; closes “…to his feet, Stood erect, caught at God's skirts, and prayed! --So, _I_ was afraid!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          275,
+          281
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "35aff3e7147e7f504103ce363c4ae7d881524ad4b1a863e3766328d8b5905ea2"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-16-q1",
+          "prompt": "Why does the tyrant choose this one man, and how does the man respond to being struck?",
+          "facilitatorNotes": [
+            "“For some cause undefined” he disliked him: there is no reason. The man grovels but does not moan or curse, which seems to provoke the tyrant further."
+          ],
+          "evidence": [
+            "One man, for some cause undefined,",
+            "And he lay, would not moan, would not curse,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-16-q2",
+          "prompt": "Why can’t the tyrant reach him through bribes, family or friends? What protects the man?",
+          "facilitatorNotes": [
+            "He resists gold and pleasure, has no kin to seize, and is too poor to owe or pay anything. Like a midge or a nit, he is safe “Thro’ minuteness”: his smallness is his armour."
+          ],
+          "evidence": [
+            "Had he kith now or kin, were access",
+            "--Thro' minuteness, to wit."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-16-q3",
+          "prompt": "“But the small turns the great / If it vexes you.” How does the tyrant justify his final plan, and what does the ending, “So, I was afraid!”, show about power?",
+          "facilitatorNotes": [
+            "Being vexed by something so small is itself an insult, so he would waste half his realm to destroy it. But the sky becomes the man’s shield, the man stands and prays, and the tyrant is afraid. Readers may take the Arm literally as God’s, or as the tyrant’s guilty imagination; either way the hunter is exposed as the frightened one."
+          ],
+          "evidence": [
+            "But the small turns the great",
+            "Stood erect, caught at God's skirts, and prayed!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-17",
+      "title": "The Boy and the Angel",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a simple story told in couplets and find what it says about the worth of praise.",
+      "focus": "Great praise and small praise, and what God misses.",
+      "context": "Robert Browning tells this legend-like story in rhyming couplets. Theocrite is a poor craftsman boy and Blaise a monk; on Easter Day the Pope blessed the crowds from St. Peter’s in Rome. “At each period” means at the end of each piece of work; a tiring-room is a dressing room; dight means dressed.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem THE BOY AND THE ANGEL; opens “Morning, evening, noon, and night, \"Praise God!\" sang Theocrite.”; closes “One vanished as the other died: They sought God side by side.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          291,
+          329
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c982b73ccb47402639a1592782199be279b1a04c749571dec25fcd55ec0594d3"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-17-q1",
+          "prompt": "What does Theocrite wish for after Blaise’s remark, and what happens?",
+          "facilitatorNotes": [
+            "To praise God “that great way,” as the Pope does, and die. He vanishes, and the angel Gabriel takes his place at the workbench."
+          ],
+          "evidence": [
+            "Might praise Him that great way, and die!",
+            "Praised God in place of Theocrite."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-17-q2",
+          "prompt": "Gabriel does the work and the praising perfectly. Why does God say “I miss my little human praise”?",
+          "facilitatorNotes": [
+            "The angel’s praise has “no doubt in it, no fear,” like the singing of whole worlds. Human praise matters because it is weak and offered in spite of doubt and fear."
+          ],
+          "evidence": [
+            "There is no doubt in it, no fear:",
+            "I miss my little human praise."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-17-q3",
+          "prompt": "The angel admits “I did not well” and sends Theocrite back. What does the ending suggest about ambition and calling? Does the poem condemn wanting the “great way”?",
+          "facilitatorNotes": [
+            "Each must praise from his own place; the boy’s song at work was irreplaceable, and the last couplet makes the old craftsman and the new Pope equal before God. Some readers find this a celebration of humble work; others think it asks people to stay where they were born."
+          ],
+          "evidence": [
+            "Resume the craftsman and the boy!",
+            "They sought God side by side."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-18",
+      "title": "Why I Am a Liberal",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the sonnet’s argument step by step, as if it answered an examiner’s question.",
+      "focus": "A poet’s case for freedom: what liberty has given him, he cannot deny to anyone else.",
+      "context": "Robert Browning (1812–1889) wrote this sonnet late in life in answer to the question in its title. In Victorian Britain the Liberal Party stood for reform: wider voting rights, religious freedom and free trade. Haply means perhaps, by chance; fetters are chains; convention means custom; emancipated means freed, a word then used of slaves set free.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem WHY I AM A LIBERAL; opens “\"Why?\" Because all I haply can and do, All that I am now, all I hope to be,-- Whence…”; closes “…Who live, love, labour freely, nor discuss A brother's right to freedom. That is \"Why.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          336,
+          336
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "08fe89aa46d7e0041fd3bf370bab9b9f60d1e1d127f480b0ede52cc700ec65b5"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-18-q1",
+          "prompt": "What does the speaker say he owes to freedom in the first four lines?",
+          "facilitatorNotes": [
+            "Everything he can do, is now and hopes to be: fortune set his body and soul free to pursue the purpose God traced for them. He begins from his own life, not from theory."
+          ],
+          "evidence": [
+            "\"Why?\" Because all I haply can and do,",
+            "Body and soul the purpose to pursue,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-18-q2",
+          "prompt": "What is the question in lines 5–8? How would you answer it in the speaker’s place?",
+          "facilitatorNotes": [
+            "If prejudice and convention have fallen from him, should he expect other men, also guided by God, to go on wearing them cheerfully? The question expects “No.” His freedom gives him no right to keep others bound."
+          ],
+          "evidence": [
+            "Of prejudice, convention, fall from me,",
+            "These shall I bid men--each in his degree"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-18-q3",
+          "prompt": "How does the sestet finish the argument? Why might it end “nor discuss / A brother’s right to freedom”?",
+          "facilitatorNotes": [
+            "Even the best can do little, and that little needs liberty; so no one freed himself can hold that his fellow should stay bound. He will not even “discuss” a brother’s right, treating it as beyond debate. Readers can test this: is anything about freedom open to discussion? The final “That is ‘Why’” closes the answer like a proof."
+          ],
+          "evidence": [
+            "That little is achieved thro' Liberty.",
+            "Who live, love, labour freely, nor discuss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-19",
+      "title": "Epilogue to “Asolando”",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a poet’s instructions for how he wants to be remembered, and hear the long lines push forward.",
+      "focus": "A refusal of pity, and a self-portrait as one who “marched breast forward.”",
+      "context": "This is the closing poem of Asolando, Robert Browning’s last book, published on the day he died in December 1889. The speaker imagines someone who loved him thinking of him after his death. Mawkish means feebly sentimental; to drivel is to talk foolishly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem EPILOGUE TO \"ASOLANDO\"; opens “At the midnight in the silence of the sleep-time, When you set your fancies free, Will…”; closes “…either should be, \"Strive and thrive!\" cry \"Speed,--fight on, fare ever There as here!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          341,
+          344
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "22d1cff593b57767908a3c514f1be1bf0aae26f0bf8aaf344fa0da499e223489"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-19-q1",
+          "prompt": "What does the speaker imagine his reader doing “At the midnight,” and why does he object?",
+          "facilitatorNotes": [
+            "Letting their thoughts drift to him in the grave and pitying him. Only “fools” think death imprisons him, so pity misunderstands both death and him."
+          ],
+          "evidence": [
+            "Will they pass to where--by death, fools think, imprisoned--",
+            "--Pity me?"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-19-q2",
+          "prompt": "How does the speaker describe himself in the third stanza? Which phrase best sums up the self-portrait?",
+          "facilitatorNotes": [
+            "One who never turned his back, never doubted clouds would break, and believed “we fall to rise.” Readers may choose “marched breast forward” or “baffled to fight better”; either should be explained."
+          ],
+          "evidence": [
+            "One who never turned his back but marched breast forward,",
+            "Held we fall to rise, are baffled to fight better,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-19-q3",
+          "prompt": "The poem ends with a cheer at “noonday” instead of pity at midnight. Is this confidence admirable, or does it leave out something real about death and grief? Consider his scorn for “the aimless, helpless, hopeless.”",
+          "facilitatorNotes": [
+            "It can be read as brave and generous, sparing the living sorrow. It can also seem harsh toward the weak, and “unmanly” reflects a Victorian ideal of manhood readers may question."
+          ],
+          "evidence": [
+            "With the slothful, with the mawkish, the unmanly?",
+            "Greet the unseen with a cheer!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-shorter-poems-1917-20",
+      "title": "“De Gustibus—”",
+      "sourceId": "browning-shorter-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare two imagined hauntings, one English and one Italian, and notice which details each half chooses.",
+      "focus": "Love of place, and the kind of place each friend’s ghost would return to.",
+      "context": "The title begins a Latin proverb: “there is no disputing about tastes.” Robert Browning, who lived for years in Italy, has the speaker address an English friend. The Apennines are Italy’s mountains; a cicala is a cicada; drouth means drought. The king of Naples, of the Bourbon family, was widely hated. Queen Mary I of England is said to have declared that after she lost Calais, its name would be found written on her heart.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem \"DE GUSTIBUS--\"; opens “Your ghost will walk, you lover of trees, (If our loves remain) In an English lane, By a…”; closes “…inside of it, \"Italy.\" Such lovers old are I and she: So it always was, so shall ever be!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          346,
+          347
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b98567d2087c954cf5e77b598216084e767790d57551d69ba89b394b46b858fe"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-shorter-poems-1917-20-q1",
+          "prompt": "Where will the friend’s ghost walk, and what will it see there?",
+          "facilitatorNotes": [
+            "An English lane by a cornfield bright with poppies; a boy and girl courting in the hazels, blackbird song, May and June. It is gentle and fleeting: they pass “too soon.”"
+          ],
+          "evidence": [
+            "In an English lane,",
+            "And let them pass, as they will too soon,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-20-q2",
+          "prompt": "What details make the speaker’s Italian house different from the English lane? Look at the cypress, the walls and the sea.",
+          "facilitatorNotes": [
+            "Harsh, hot, ruined and grand: a cicada dying of drought, a rusty iron-spiked cypress, frescoes crumbling where a scorpion sprawls, an unbroken blue sea. He loves it partly for its decay and danger."
+          ],
+          "evidence": [
+            "Where the baked cicala dies of drouth,",
+            "From blisters where a scorpion sprawls."
+          ]
+        },
+        {
+          "id": "reading-10-browning-shorter-poems-1917-20-q3",
+          "prompt": "Why include the girl’s news that the king was shot at, and her hope that “they have not caught the felons”? Given the title, does the poem really refuse to dispute tastes?",
+          "facilitatorNotes": [
+            "The news, delivered with melons, shows an Italy alive with politics and on the side of rebellion. The title claims tastes cannot be argued, yet the poem plainly prefers Italy; some readers find the title gently ironic, others sincere."
+          ],
+          "evidence": [
+            "She hopes they have not caught the felons.",
+            "Graved inside of it, \"Italy.\""
+          ]
+        }
+      ]
+    }
+  ]
+}

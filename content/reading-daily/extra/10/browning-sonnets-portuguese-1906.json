@@ -1,0 +1,1799 @@
+{
+  "schemaVersion": 1,
+  "grade": 10,
+  "work": "browning-sonnets-portuguese-1906",
+  "readings": [
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-01",
+      "title": "Sonnet II",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Untangle a sentence that runs across eight lines and find the single “word” the whole poem turns on.",
+      "focus": "A refusal from God set against love’s defiance of every human and natural barrier.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. “This word” is the beloved’s declaration of love. To amerce is to punish by taking something away; death-weights are the coins once laid on the eyelids of the dead; jars are quarrels.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem II; opens “But only three in all God’s universe Have heard this word thou hast said,—Himself, beside…”; closes “…heaven being rolled between us at the end, We should but vow the faster for the stars.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3,
+          3
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0af503c4db1b512bae27d8486a8bd442ee12ed9bdf8949ff6b0bdf46ec4a083c"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-01-q1",
+          "prompt": "Who are the “only three” who heard the beloved’s word, and what did the one who “replied” answer?",
+          "facilitatorNotes": [
+            "God, the beloved and the speaker. God’s reply is “Nay,” given by laying a curse on her eyelids so that she cannot see the beloved. The broken rhythm (“One of us . . . that was God”) hesitates before naming who refused."
+          ],
+          "evidence": [
+            "One of us . . . that was God,",
+            "“Nay” is worse"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-01-q2",
+          "prompt": "What might the “curse” on her eyelids stand for, and why is it worse than the “death-weights” would be?",
+          "facilitatorNotes": [
+            "Literally a blindness to him; figuratively whatever seemed to forbid this love: illness, circumstance, her own conviction that she should not accept. Death would be a lesser exclusion because it is natural and final; this is a refusal while she lives. Readers can propose different barriers if the poem supports them."
+          ],
+          "evidence": [
+            "So darkly on my eyelids, as to amerce",
+            "Less absolute exclusion."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-01-q3",
+          "prompt": "The sestet lists what men, seas and mountains could not do. Does the ending defy God’s “Nay” or turn it into something else?",
+          "facilitatorNotes": [
+            "Nothing on earth could part them, and even “heaven being rolled between us” would only make them vow faster, with the stars as witnesses. One reading is defiance: love outlasts a divine refusal. Another is faith: a refusal of sight is not a refusal of love, and heaven itself becomes the place of the vow."
+          ],
+          "evidence": [
+            "Men could not part us with their worldly jars,",
+            "We should but vow the faster for the stars."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-02",
+      "title": "Sonnet III",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Track a series of contrasts between “thou” and “I,” and notice where the poem finally finds a likeness.",
+      "focus": "Inequality of station and fortune, levelled, the speaker says, only by death.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Gages are pledges or love-tokens; lattice-lights are small window panes; chrism is the holy oil used to anoint kings; the cypress is a tree of mourning.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem III; opens “Unlike are we, unlike, O princely Heart! Unlike our uses and our destinies. Our…”; closes “…is on thine head,—on mine, the dew,— And Death must dig the level where these agree.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5,
+          5
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e4ac6dfff0ffed1e3ef7e8888d0e16885e0e68a1fcd5bdbc88a4ba722d49682f"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-02-q1",
+          "prompt": "List the contrasts between the beloved and the speaker. Which details make him royal and her poor?",
+          "facilitatorNotes": [
+            "He is a “princely Heart,” a guest for queens, a “chief musician” anointed with chrism; she is a tired wandering singer leaning on a cypress, with only dew on her head. The images turn two poets into a prince and a beggar-minstrel."
+          ],
+          "evidence": [
+            "A poor, tired, wandering singer, singing through",
+            "The chrism is on thine head,—on mine, the dew,—"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-02-q2",
+          "prompt": "What do the two guardian angels add to the picture?",
+          "facilitatorNotes": [
+            "Even the angels “look surprise” as their wings cross: the mismatch is visible in heaven, and the meeting looks like an accident of passing rather than a plan."
+          ],
+          "evidence": [
+            "Our ministering two angels look surprise",
+            "Their wings in passing."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-02-q3",
+          "prompt": "“And Death must dig the level where these agree.” Is the last line bitter, resigned, or something else? What does it leave unsaid about love?",
+          "facilitatorNotes": [
+            "Only the grave makes them equal; love is not offered as the leveller. Some readers hear self-pity, others plain realism, others a challenge: the question “What hast thou to do . . . ?” leaves him room to answer that love can do what she says only death can."
+          ],
+          "evidence": [
+            "And Death must dig the level where these agree.",
+            "What hast thou to do"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-03",
+      "title": "Sonnet IV",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the poem’s house as a portrait of the speaker, and hear how the music changes from his to hers.",
+      "focus": "A ruined house that turns away a visitor’s song.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Robert Browning is the “singer of high poems.” A casement is a window; owlets are young owls; aloof means apart.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem IV; opens “Thou hast thy calling to some palace-floor, Most gracious singer of high poems! where The…”; closes “…desolation! there’s a voice within That weeps . . . as thou must sing . . . alone, aloof.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          7,
+          7
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "250e803d183e00b553e861114a11b9ecd83ee4e5b8123ed951f293093e3948b4"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-03-q1",
+          "prompt": "What is the beloved’s “calling,” and what is he doing at the speaker’s door?",
+          "facilitatorNotes": [
+            "He belongs on palace floors where dancers stop to hear him, yet he lifts the latch of a poor house and lets his music fall “In folds of golden fulness” at her door. Courtship appears as an unexpected visit from a great performer."
+          ],
+          "evidence": [
+            "Most gracious singer of high poems!",
+            "In folds of golden fulness at my door?"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-03-q2",
+          "prompt": "How does the house in the sestet describe the speaker herself?",
+          "facilitatorNotes": [
+            "A broken window and bats and owlets nesting in the roof suggest decay, neglect and night. Her “cricket” against his “mandolin” sets a small household sound against courtly music."
+          ],
+          "evidence": [
+            "Look up and see the casement broken in,",
+            "My cricket chirps against thy mandolin."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-03-q3",
+          "prompt": "Why does the last line say she weeps “as thou must sing”? Does the line separate them or make them alike?",
+          "facilitatorNotes": [
+            "Both: each follows a vocation “alone, aloof,” she in grief, he in song. The parallel grammar quietly admits a kinship between two artists that the rest of the poem denies. The pauses (“. . .”) slow the line into hesitation."
+          ],
+          "evidence": [
+            "That weeps . . . as thou must sing . . . alone, aloof.",
+            "Hush, call no echo up in further proof"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-04",
+      "title": "Sonnet V",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a comparison drawn from Greek tragedy and decide what the speaker is actually asking of the beloved.",
+      "focus": "Grief that might burn whoever stays near it.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. In Sophocles’ play Electra, Electra mourns over an urn she believes holds the ashes of her brother Orestes, who is in fact alive and standing before her. Laurels are the poet’s crown; sepulchral means belonging to a tomb.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem V; opens “I lift my heavy heart up solemnly, As once Electra her sepulchral urn, And, looking in…”; closes “…of all the fires shall scorch and shred The hair beneath. Stand further off then! go!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          9,
+          9
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e989009a20343e6b0e4f2573c0232fe46c6b081246053c3d428e2b7946c1591d"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-04-q1",
+          "prompt": "What does the speaker “over-turn” at the beloved’s feet, and what is still alive in it?",
+          "facilitatorNotes": [
+            "Her heart, carried like a funeral urn, is emptied out as ashes of grief, but “red wild sparkles” still burn in the grey. The grief is not dead; it can still catch fire."
+          ],
+          "evidence": [
+            "The ashes at thy feet.",
+            "And how the red wild sparkles dimly burn"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-04-q2",
+          "prompt": "Why compare herself to Electra? What does the myth add if you remember that Orestes was alive?",
+          "facilitatorNotes": [
+            "The comparison gives her gesture tragic solemnity. If we recall the play, Electra mourned someone who stood alive in front of her, which may hint that the speaker’s mourning is for a life that is not, after all, over. Some readers will think the allusion concerns only the solemn gesture; both views can be argued."
+          ],
+          "evidence": [
+            "As once Electra her sepulchral urn,",
+            "I lift my heavy heart up solemnly,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-04-q3",
+          "prompt": "The poem offers two possibilities: he treads out the sparks, or he waits for the wind. Why does it end “Stand further off then! go!”? Do you take the command at face value?",
+          "facilitatorNotes": [
+            "She warns that his laurels will not protect him from being scorched. Sending him away may protect him, test him, or show how strong the fire still is; violent verbs like “scorch and shred” suggest passion as much as grief."
+          ],
+          "evidence": [
+            "Stand further off then! go!",
+            "those laurels on thine head,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-05",
+      "title": "Sonnet VII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice everything the speaker says has been “changed,” and how the poem’s own music is changed with it.",
+      "focus": "Love as rescue from the edge of death, and the renaming of the world.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Dole means grief; fain means glad; anear means near; the lute stands for her poetry.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem VII; opens “The face of all the world is changed, I think, Since first I heard the footsteps of thy…”; closes “…(The singing angels know) are only dear Because thy name moves right in what they say.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          13,
+          13
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5febc5c8aca455fcb8ad13b3d3bdb0b249b3ddd43f3234854c6b4b3072819be3"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-05-q1",
+          "prompt": "From what was the speaker “caught up”? Find the words for where she had been.",
+          "facilitatorNotes": [
+            "From “the dreadful outer brink / Of obvious death”: the beloved’s soul stepped between her and it. Given her long illness, the phrase can be read almost literally."
+          ],
+          "evidence": [
+            "Betwixt me and the dreadful outer brink",
+            "Was caught up into love, and taught the whole"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-05-q2",
+          "prompt": "“The cup of dole / God gave for baptism, I am fain to drink.” How has grief itself changed?",
+          "facilitatorNotes": [
+            "The suffering she was given is now sweet because he is near, and the pun “sweetness, Sweet” makes him the source. Some readers find it moving that love redeems suffering; others will question praising a cup of grief. The phrase “a new rhythm” marks the change as one of music."
+          ],
+          "evidence": [
+            "And praise its sweetness, Sweet, with thee anear.",
+            "Of life in a new rhythm."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-05-q3",
+          "prompt": "Her “lute and song,” loved yesterday, are now dear only because his name moves in them. Is that a loss or a gain for a poet?",
+          "facilitatorNotes": [
+            "It can be read as a poet subordinating her art to a man, or as love becoming the new subject of her art, which is exactly what this sequence of sonnets is. Ask readers which the poem itself supports."
+          ],
+          "evidence": [
+            "Because thy name moves right in what they say.",
+            "loved yesterday,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-06",
+      "title": "Sonnet VIII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a question and its answer, and test whether “not cold, but very poor” is a fair defence.",
+      "focus": "Gift and debt between unequal lovers.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Liberal means generous; largesse is a great person’s generous giving; purple was the colour of royalty; “stuff” is cloth.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem VIII; opens “What can I give thee back, O liberal And princely giver, who hast brought the gold And…”; closes “…done To give the same as pillow to thy head. Go farther! let it serve to trample on.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          15,
+          15
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4fff6f3c35b43307a594419f9c14abaa0ca3c571f65edfa49c011484520ac389"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-06-q1",
+          "prompt": "How does the poem describe the beloved’s gifts, and where has he left them?",
+          "facilitatorNotes": [
+            "The “gold / And purple” of his heart, “unstained, untold,” laid outside the wall for her to take or leave: royal gifts offered without pressure."
+          ],
+          "evidence": [
+            "And laid them on the outside of the wall",
+            "In unexpected largesse?"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-06-q2",
+          "prompt": "The speaker asks whether she is “cold, / Ungrateful.” What is her answer, and what has made her poor?",
+          "facilitatorNotes": [
+            "Not cold but poor: tears have run the colours out of her life and left a pale, dead cloth. The faded fabric answers his gold and purple."
+          ],
+          "evidence": [
+            "Not so; not cold,—but very poor instead.",
+            "For frequent tears have run"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-06-q3",
+          "prompt": "The last line tells him to use her life as something to “trample on.” Is this humility, despair, or a challenge?",
+          "facilitatorNotes": [
+            "Too pale to be his pillow, it can serve only underfoot. Some read self-abasement; some bitterness; some a test inviting him to refuse. Ask which reading the abrupt “Go farther!” supports best."
+          ],
+          "evidence": [
+            "Go farther! let it serve to trample on.",
+            "To give the same as pillow to thy head."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-07",
+      "title": "Sonnet IX",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Find the sonnet’s turn in its last line and decide whether it overturns everything before it.",
+      "focus": "Whether a sorrowful person may rightly give love at all.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Renunciative means giving things up; adjurations are earnest pleas; peers are equals; Venice-glass is fine glass, once said to shatter at the touch of poison.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem IX; opens “Can it be right to give what I can give? To let thee sit beneath the fall of tears As…”; closes “…Nor give thee any love—which were unjust. Beloved, I only love thee! let it pass.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          17,
+          17
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0049e64fda0397efbad1522da3a589dfd959f275e284aa2f36a3077fec3e83c4"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-07-q1",
+          "prompt": "What does the speaker fear she would give the beloved along with her love?",
+          "facilitatorNotes": [
+            "Her tears, her “sighing years” and smiles that “fail to live”: a share in her sorrow. Giving love would mean giving him her grief."
+          ],
+          "evidence": [
+            "To let thee sit beneath the fall of tears",
+            "the sighing years"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-07-q2",
+          "prompt": "How do “dust” and “poison” work against “purple” and “Venice-glass”?",
+          "facilitatorNotes": [
+            "Low and corrupting things are set against royal and fragile ones; she imagines herself as something that would stain or shatter him."
+          ],
+          "evidence": [
+            "I will not soil thy purple with my dust,",
+            "Nor breathe my poison on thy Venice-glass,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-07-q3",
+          "prompt": "“Nor give thee any love—which were unjust. / Beloved, I only love thee! let it pass.” How can she refuse to give love and yet love him?",
+          "facilitatorNotes": [
+            "She separates giving love, a gift that would bind him to her sorrow, from simply loving, which she cannot help. The exclamation breaks through the argument, and “let it pass” asks him to overlook it. Readers can debate whether the last line undoes the reasoning or completes it."
+          ],
+          "evidence": [
+            "Nor give thee any love—which were unjust.",
+            "Beloved, I only love thee! let it pass."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-08",
+      "title": "Sonnet X",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a comparison between love and fire, and see how it lets the speaker change her mind.",
+      "focus": "Love whose worth does not depend on the worth of the lover.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. This sonnet answers the one before it, in which the speaker feared her sorrowful love was unfit to offer. Flax is a plant fibre; “at need” means when it matters; “conscience” here means awareness.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem X; opens “Yet, love, mere love, is beautiful indeed And worthy of acceptation. Fire is bright, Let…”; closes “…Of what I am, doth flash itself, and show How that great work of Love enhances Nature’s.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          19,
+          19
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "da5ff69bf2b83c92d48a0fbfc01d9b3dccd990fa5b5ae81fbcf5c8059f196759"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-08-q1",
+          "prompt": "What does the fire comparison claim about love?",
+          "facilitatorNotes": [
+            "A flame is equally bright whether it burns a temple or a weed; love’s light does not depend on what it burns in. So her love can be worth having even if she is not."
+          ],
+          "evidence": [
+            "Leaps in the flame from cedar-plank or weed:",
+            "And love is fire."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-08-q2",
+          "prompt": "What happens to the speaker at the moment she says “I love thee”?",
+          "facilitatorNotes": [
+            "She stands “transfigured, glorified,” with new rays shining from her face toward his, as a saint’s or a prophet’s face shines. The broken phrasing (“. . . mark! . . .”) makes the moment of saying it the event."
+          ],
+          "evidence": [
+            "I stand transfigured, glorified aright,",
+            "Out of my face toward thine."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-08-q3",
+          "prompt": "Does the ending resolve the doubts of Sonnet IX, or only restate them in a happier key?",
+          "facilitatorNotes": [
+            "She moves the question from her own worth to love’s: “There’s nothing low / In love,” as God accepts the meanest creatures who love Him. Yet she still calls her features “inferior.” Some readers find real release here; others see the old self-doubt surviving inside the new argument."
+          ],
+          "evidence": [
+            "There’s nothing low",
+            "Of what I am, doth flash itself, and show"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-09",
+      "title": "Sonnet XI",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the opening “therefore” continues an argument, and how the ending holds two opposite acts together.",
+      "focus": "Love as both the speaker’s justification and her reason to give the beloved up.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. This sonnet follows one arguing that love is worthy whoever feels it. Desert means deserving; Aornus was a rock fortress that Alexander the Great captured, here a figure for high ambition; girt means equipped; to advert is to turn attention to something.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XI; opens “And therefore if to love can be desert, I am not all unworthy. Cheeks as pale As these…”; closes “…To live on still in love, and yet in vain,— To bless thee, yet renounce thee to thy face.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          21,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0992ae7afd02ab1a8897cde48447a978636a87b3b5dcd5d0fee944e7017e0160"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-09-q1",
+          "prompt": "What evidence of weakness does the speaker give in the first eight lines?",
+          "facilitatorNotes": [
+            "Pale cheeks, trembling knees, and a “minstrel-life” that once aimed at Aornus and now can barely pipe against a nightingale: failing body and failing ambition."
+          ],
+          "evidence": [
+            "trembling knees that fail",
+            "This weary minstrel-life that once was girt"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-09-q2",
+          "prompt": "“Why advert / To these things?” Why does she interrupt her own list?",
+          "facilitatorNotes": [
+            "The catalogue threatens to become self-pity, and the point is already plain: she is not his equal. The interruption also shows the speaker controlling her grief rather than indulging it."
+          ],
+          "evidence": [
+            "why advert",
+            "I am not of thy worth nor for thy place!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-09-q3",
+          "prompt": "How can love give her the “grace” both to bless him and to renounce him “to thy face”? Is this a paradox she accepts, or one the sequence will have to resolve?",
+          "facilitatorNotes": [
+            "Love justifies her life and also makes her give him up, loving “in vain” by choice. Within the poem she accepts the paradox; readers who know the sequence (and that the poets married) may see it as a stage to be passed. Both views can be defended."
+          ],
+          "evidence": [
+            "To live on still in love, and yet in vain,—",
+            "To bless thee, yet renounce thee to thy face."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-10",
+      "title": "Sonnet XII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Trace where the speaker’s love came from, according to the poem, and what she can therefore claim as her own.",
+      "focus": "Love received and returned: even her own love, she says, is his gift.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. This sonnet follows two in which the speaker defended her love as her one worth. Enow means enough; withal here means with.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XII; opens “Indeed this very love which is my boast, And which, when rising up from breast to brow,…”; closes “…throne,— And that I love (O soul, we must be meek!) Is by thee only, whom I love alone.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          23,
+          23
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c46ca3a28d88eca1f87d1f14ffaea0cea124b019be4ce1d07f217d868ca8e72c"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-10-q1",
+          "prompt": "What does the image of the ruby crown say about the speaker’s love?",
+          "facilitatorNotes": [
+            "Rising from breast to brow, love crowns her with a ruby large enough to draw eyes and “prove the inner cost”: visible, precious, and paid for, perhaps in pain, given the colour."
+          ],
+          "evidence": [
+            "Doth crown me with a ruby large enow",
+            "To draw men’s eyes and prove the inner cost,—"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-10-q2",
+          "prompt": "Why can’t she speak of love “as a good thing of my own”?",
+          "facilitatorNotes": [
+            "She would not have loved at all unless he had loved first and “shown me how”; even her boast belongs to him."
+          ],
+          "evidence": [
+            "Hadst set me an example, shown me how,",
+            "Of love even, as a good thing of my own:"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-10-q3",
+          "prompt": "“O soul, we must be meek!” Is the meekness humility, or a way of being raised up? Consider the golden throne.",
+          "facilitatorNotes": [
+            "His soul lifts hers, “all faint and weak,” onto a golden throne beside him, so meekness means accepting exaltation as a gift. Some readers find this generous and mutual; others a troubling dependence. Ask for evidence either way."
+          ],
+          "evidence": [
+            "And placed it by thee on a golden throne,—",
+            "(O soul, we must be meek!)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-11",
+      "title": "Sonnet XV",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare the two directions in which the lovers “look,” and what each one sees.",
+      "focus": "The beloved’s untroubled confidence against the speaker’s awareness that love ends.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. A crystalline is a crystal, here like the amber that preserves an insect; oblivion is being utterly forgotten.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XV; opens “Accuse me not, beseech thee, that I wear Too calm and sad a face in front of thine; For…”; closes “…beyond memory; As one who sits and gazes from above, Over the rivers to the bitter sea.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          29,
+          29
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e6a840e909045d5b09935cc09fa32792765fa4bd272ed5eca298c6e7107c96f2"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-11-q1",
+          "prompt": "Why does the speaker ask not to be accused of looking “too calm and sad”?",
+          "facilitatorNotes": [
+            "Because “we two look two ways”: he looks at her with no doubt, while she looks at him and sees beyond love to its end. Her expression answers what she sees, not a lack of love."
+          ],
+          "evidence": [
+            "Too calm and sad a face in front of thine;",
+            "For we two look two ways, and cannot shine"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-11-q2",
+          "prompt": "What does “a bee shut in a crystalline” say about how the beloved sees her?",
+          "facilitatorNotes": [
+            "Safe, held, preserved: sorrow has shut her “safe in love’s divine,” and flying out would be failure. The image also suggests stillness close to death, as a preserved insect is."
+          ],
+          "evidence": [
+            "As on a bee shut in a crystalline;",
+            "Since sorrow hath shut me safe in love’s divine,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-11-q3",
+          "prompt": "The last lines look “over the rivers to the bitter sea.” What is she seeing, and does the poem invite the beloved to share her view or to argue her out of it?",
+          "facilitatorNotes": [
+            "The end of love and “oblivion beyond memory”: rivers run to the sea as lives run to death. Readers may take this as clear-eyed wisdom, or as a fear the beloved’s steady gaze is meant to answer."
+          ],
+          "evidence": [
+            "Beholding, besides love, the end of love,",
+            "Over the rivers to the bitter sea."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-12",
+      "title": "Sonnet XVI",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the comparison of love to a battle, and decide who wins and what winning means.",
+      "focus": "Surrender redefined: a conqueror who lifts the conquered up instead of crushing her.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. In the sonnets before this one the speaker argued, again and again, that she was unworthy of his love. Purple is the colour of a king’s robe; abasement is humiliation.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XVI; opens “And yet, because thou overcomest so, Because thou art more noble and like a king, Thou…”; closes “…me forth, I rise above abasement at the word. Make thy love larger to enlarge my worth!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          31,
+          31
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4dd947aa2adbbc587ddafda0b60bfe797aeaebcdbf4e6ae6b2cc339b7c5705a7"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-12-q1",
+          "prompt": "The sonnet opens “And yet,” as if answering an argument. What does the speaker now give up, and why does she say she can?",
+          "facilitatorNotes": [
+            "She gives up her resistance to his love: because he is “more noble and like a king,” he can overcome her fears and wrap her in his royal purple until her heart forgets how it “shook when alone.” The opening words concede that her earlier objections have lost."
+          ],
+          "evidence": [
+            "And yet, because thou overcomest so,",
+            "How it shook when alone."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-12-q2",
+          "prompt": "Explain the simile of the vanquished soldier. Who yields, who lifts, and what new idea of conquest does it express?",
+          "facilitatorNotes": [
+            "She is the soldier who hands over her sword; he is the victor who lifts her “from the bloody earth” instead of killing her. Conquest, she argues, can be as complete by “lifting upward” as by “crushing low.” Her defeat becomes a rescue."
+          ],
+          "evidence": [
+            "In lifting upward, as in crushing low!",
+            "To one who lifts him from the bloody earth,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-12-q3",
+          "prompt": "The last line asks him to “Make thy love larger to enlarge my worth!” Is the speaker giving up her self-worth or claiming it?",
+          "facilitatorNotes": [
+            "Both readings have support. Her worth depends on his love, which can sound like dependence; yet she says she will “rise above abasement,” ending the self-humiliation of the earlier sonnets, and she gives him an order. Some readers hear a woman of her century deferring to a man; others hear a confident bargain between equals."
+          ],
+          "evidence": [
+            "I rise above abasement at the word.",
+            "Make thy love larger to enlarge my worth!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-13",
+      "title": "Sonnet XVII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how much the speaker praises the beloved’s gift, and how she sets out her own possible uses.",
+      "focus": "A poet in love asks another poet what she should be to him, from hope to grave.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. In 1845 Elizabeth Barrett was one of the best-known poets in England, while Robert Browning was admired by few. Medicated music is music that heals; antidotes are cures; to interfuse is to blend into something; the palm and the pine are trees of the warm south and the cold north.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XVII; opens “My poet, thou canst touch on all the notes God set between His After and Before, And…”; closes “…shade, in which to sing—of palm or pine? A grave, on which to rest from singing? Choose.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          33,
+          33
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b6bfc9664268f7a517a3caf48c1b6def521f6284f4e9fa96ecd8dc21e222ea61"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-13-q1",
+          "prompt": "What powers does the speaker give her “poet” in the first eight lines? What kind of poetry is she describing?",
+          "facilitatorNotes": [
+            "He can play every note God set between the beginning and the end of time, draw a pure melody out of “the general roar” of the world, and pour healing music into the ears of suffering mankind. Poetry here is harmony made out of noise and a medicine for human sorrow."
+          ],
+          "evidence": [
+            "Of the rushing worlds a melody that floats",
+            "Mankind’s forlornest uses, thou canst pour"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-13-q2",
+          "prompt": "“God’s will devotes / Thine to such ends, and mine to wait on thine.” How does the speaker see her own role? How might knowing that she was the more famous poet change your reading?",
+          "facilitatorNotes": [
+            "She casts herself as his helper, waiting on his calling. Since she was the better-known writer, the line can read as loving humility, as an echo of the roles expected of women, or as a generous exaggeration that the poem itself, so skilful, quietly contradicts."
+          ],
+          "evidence": [
+            "Thine to such ends, and mine to wait on thine.",
+            "How, Dearest, wilt thou have me for most use?"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-13-q3",
+          "prompt": "She offers four things she might be: a hope, a memory, a shade, a grave. What does the order suggest, and why does the poem end with the single word “Choose”?",
+          "facilitatorNotes": [
+            "The list moves from the future to the past to rest to death: she might live to inspire him, or die and become a sad memory or a grave. The blunt last word hands him the decision but also challenges him to face what loving an invalid might mean. Readers may hear surrender, a test, or both."
+          ],
+          "evidence": [
+            "A hope, to sing by gladly? or a fine",
+            "A grave, on which to rest from singing?  Choose."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-14",
+      "title": "Sonnet XVIII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Track what the speaker’s hair has meant at three stages of her life, and what the gift carries with it.",
+      "focus": "A lock of hair as a love-token that holds youth, grief and a mother’s last kiss.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Late in 1845 the two poets exchanged locks of hair, a common token between lovers. Her mother died in 1828, when Elizabeth was twenty-two. Myrtle is a flower once sacred to the goddess of love and worn by brides; funeral-shears cut a lock from someone who has died, to be kept in memory; “justified” here means proved right.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XVIII; opens “I never gave a lock of hair away To a man, Dearest, except this to thee, Which now upon…”; closes “…it thou,—finding pure, from all those years, The kiss my mother left here when she died.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          35,
+          35
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f6c8ca0c953731c6b91a747af23c99065ae57af1b8a005b9e027ad318f64b7ec"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-14-q1",
+          "prompt": "How has the speaker’s hair changed from girlhood to now? Find the details for each stage.",
+          "facilitatorNotes": [
+            "Once it “bounded” as she ran and she decorated it with roses or myrtle “as girls do”; now it only droops to shade “two pale cheeks” and the marks of tears, from a head bowed by “sorrow’s trick.” The hair tells the story of her youth and her long illness and grief."
+          ],
+          "evidence": [
+            "My hair no longer bounds to my foot’s glee,",
+            "Now shade on two pale cheeks the mark of tears,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-14-q2",
+          "prompt": "“I thought the funeral-shears / Would take this first.” What custom does she mean, and what does she reveal about what she expected for her life?",
+          "facilitatorNotes": [
+            "A lock was cut from the dead as a keepsake; she expected that her hair would first be cut after her death, not given in love. Love has come before death, and “Love is justified” in claiming it. The line shows how near death she had felt."
+          ],
+          "evidence": [
+            "I thought the funeral-shears",
+            "Would take this first, but Love is justified,—"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-14-q3",
+          "prompt": "Why might the sonnet end with her mother rather than with herself or the beloved? What does that last line add to the gift?",
+          "facilitatorNotes": [
+            "He will find on the hair “the kiss my mother left here when she died.” The gift carries her family love and her grief, kept “pure” through the years, so he receives her whole past with it. Some readers find the ending consoling, a mother’s blessing passed to the lover; others feel the shadow of death that hangs over this courtship."
+          ],
+          "evidence": [
+            "Take it thou,—finding pure, from all those years,",
+            "The kiss my mother left here when she died."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-15",
+      "title": "Sonnet XIX",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the language of trade and of poetry, and notice where the poem turns from receiving the gift to making a vow.",
+      "focus": "The exchange completed: his lock of hair received, honoured, and kept on her heart.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. In the sonnet before this one she gave him a lock of her hair; here she receives his. The Rialto is the old business centre of Venice; a mart is a market; argosies are great merchant ships; erst means once. Pindar was an ancient Greek poet who called the Muses, the nine goddesses of the arts, violet-haired; the bay (laurel) crown honours poets; a fillet is a band for tying hair; hindereth means hinders.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XIX; opens “The soul’s Rialto hath its merchandize; I barter curl for curl upon that mart, And from…”; closes “…Here on my heart, as on thy brow, to lack No natural heat till mine grows cold in death.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          37,
+          37
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "06dd9a35f2af012dbf12c8d9cfc7fb9b6fdbddb70e4a6119da5d5afc8cb9a4eb"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-15-q1",
+          "prompt": "What is “the soul’s Rialto,” and what bargain is struck there? Why use the language of trade for a love-token?",
+          "facilitatorNotes": [
+            "A market of the soul, where she exchanges “curl for curl.” His lock “outweighs argosies,” whole fleets of merchant ships. Commercial language makes the exchange sound like a fair bargain between equals, and then shows it to be worth more than any wealth."
+          ],
+          "evidence": [
+            "I barter curl for curl upon that mart,",
+            "Receive this lock which outweighs argosies,—"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-15-q2",
+          "prompt": "Why compare his black hair with the Muses’ hair as Pindar saw it, and imagine the shadow of his “bay crown” on it?",
+          "facilitatorNotes": [
+            "The comparison makes him a poet among the Muses, and she explains the hair’s darkness as the lingering shade of the laurel crown he has earned. It is playful exaggeration with a serious point: she honours his gift. Readers may also notice how much learning she brings to a lover’s compliment."
+          ],
+          "evidence": [
+            "The nine white Muse-brows.  For this counterpart, . . .",
+            "Still lingers on thy curl, it is so black!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-15-q3",
+          "prompt": "How does the last sentence turn the token into a vow? Compare its final line with the end of Sonnet XVIII.",
+          "facilitatorNotes": [
+            "She ties the lock with a breath of kisses so that the shadows cannot slip back, and lays it on her heart, where it will stay warm “till mine grows cold in death.” Sonnet XVIII ended with a mother’s death in the past; this one ends with her own death in the future, but as a promise of lifelong faithfulness rather than a fear."
+          ],
+          "evidence": [
+            "Thus, with a fillet of smooth-kissing breath,",
+            "No natural heat till mine grows cold in death."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-16",
+      "title": "Sonnet XX",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare the speaker’s life “a year ago” with her present wonder, and test the comparison in the last two lines.",
+      "focus": "Wonder that the beloved existed all along while she lived unaware, alone in her chains.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Before their letters began in January 1845 she had lived for years as an invalid, rarely leaving her room in her father’s London house. To cull is to pick; prescience is knowledge of something before it happens.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XX; opens “Belovëd, my Belovëd, when I think That thou wast in the world a year ago, What time I sat…”; closes “…Thou sawest growing! Atheists are as dull, Who cannot guess God’s presence out of sight.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          39,
+          39
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "164beb187e5113092c43042bf1c01e34ba5ebb113d075b48bda49cad0a536f1e"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-16-q1",
+          "prompt": "What was the speaker’s life like a year ago? Pick out the images of isolation and captivity.",
+          "facilitatorNotes": [
+            "She sat “alone here in the snow,” saw no footprint, heard only silence, and counted her chains link by link as if no blow could ever break them. The images make her room a winter prison."
+          ],
+          "evidence": [
+            "What time I sat alone here in the snow",
+            "Went counting all my chains as if that so"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-16-q2",
+          "prompt": "What exactly does she find “Wonderful”? Why does the thought make her “drink / Of life’s great cup of wonder”?",
+          "facilitatorNotes": [
+            "That he was alive in the world while she felt nothing of him: no sense of his acts or words, no hint of him among the white blossoms he saw. Looking back, his existence then seems a miracle she could not perceive. The word may also carry a rueful note: how strange to have been so blind."
+          ],
+          "evidence": [
+            "Of life’s great cup of wonder!  Wonderful,",
+            "Some prescience of thee with the blossoms white"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-16-q3",
+          "prompt": "The final lines call atheists “dull” because they cannot sense an unseen God. How does the comparison work, and is it a fair one?",
+          "facilitatorNotes": [
+            "She was as “dull” as an atheist: unable to guess the presence of someone real but out of sight. The comparison implies that her love, like faith, proves what was always there. It is a lover’s and a believer’s claim; readers may question whether it is fair to unbelievers, and notice that she counts herself among the dull."
+          ],
+          "evidence": [
+            "Atheists are as dull,",
+            "Who cannot guess God’s presence out of sight."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-17",
+      "title": "Sonnet XXIII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the speaker from astonishment to decision, and decide what she gives up.",
+      "focus": "Learning that she matters to someone, and choosing life over a welcome death.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. She had been gravely ill for years and often wrote as if she expected to die young. Grave-damps are the chill and moisture of the grave; “degree” means social rank, and “acres” stands for an estate.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXIII; opens “Is it indeed so? If I lay here dead, Wouldst thou miss any life in losing mine? And would…”; closes “…the grave for thy sake, and exchange My near sweet view of heaven, for earth with thee!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          45,
+          45
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "79dfb41e6d87094f5b159da360ea0e78f2c4279f6464a70e3b7bb7ddcb9165d5"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-17-q1",
+          "prompt": "What has the beloved written in his letter, and why does it astonish her?",
+          "facilitatorNotes": [
+            "That if she died he would miss a life in losing hers, and the sun would shine more coldly for him. She has thought of herself as dying and of little use to anyone, so the idea that her death would harm him is new: “I am thine— / But . . . so much to thee?”"
+          ],
+          "evidence": [
+            "Wouldst thou miss any life in losing mine?",
+            "Thy thought so in the letter.  I am thine—"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-17-q2",
+          "prompt": "“Can I pour thy wine / While my hands tremble?” What does the image of serving wine suggest about how she sees her place and her fears?",
+          "facilitatorNotes": [
+            "Pouring wine is a host’s or servant’s act of giving; her trembling hands suggest illness, nerves and doubt that she can give him what a partner should. The question is half humble and half practical."
+          ],
+          "evidence": [
+            "Can I pour thy wine",
+            "While my hands tremble?  Then my soul, instead"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-17-q3",
+          "prompt": "She compares herself with “brighter ladies” who give up “acres and degree” for love. What does she give up, and is it a sacrifice or a gain?",
+          "facilitatorNotes": [
+            "She yields “the grave” and her “near sweet view of heaven”: the peaceful death she had prepared for. Choosing earth with him is a return to life, which sounds like gain, yet she frames it as a sacrifice like a noblewoman marrying beneath her. The paradox shows how fully she had resigned herself to dying."
+          ],
+          "evidence": [
+            "As brighter ladies do not count it strange,",
+            "My near sweet view of heaven, for earth with thee!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-18",
+      "title": "Sonnet XXVI",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare the speaker’s “visions” with the real man, and weigh the claim in the last line.",
+      "focus": "Imagination outdone by life: the dreams of a solitary poet fulfilled in a person.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. For years before they met she lived mostly alone with her books, her writing and her imagination. Fronts are foreheads; a font is a basin of holy water used for baptism.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXVI; opens “I lived with visions for my company Instead of men and women, years ago, And found them…”; closes “…soul with satisfaction of all wants: Because God’s gifts put man’s best dreams to shame.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          51,
+          51
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8668e670e20d0925187092cc25a368ee83d1480a64770235d0f2d731cf7c2f7"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-18-q1",
+          "prompt": "Who were the “visions” she lived with, and what happened to them?",
+          "facilitatorNotes": [
+            "Imagined companions, the figures of poetry and dream, who were “gentle mates” and made sweet music. In time their royal purple gathered dust, their lutes fell silent, and she grew “faint and blind” beneath them: the imagination itself faded in her solitude."
+          ],
+          "evidence": [
+            "I lived with visions for my company",
+            "Of this world’s dust, their lutes did silent grow,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-18-q2",
+          "prompt": "He came “to be . . . what they seemed.” What does the river-water simile say about the relation between her dreams and the real man?",
+          "facilitatorNotes": [
+            "The visions’ splendours meet in him, “better, yet the same,” as ordinary river water poured into a font is the same water made holy. He does not replace her dreams but fulfils and consecrates them."
+          ],
+          "evidence": [
+            "Their songs, their splendours, (better, yet the same,",
+            "As river-water hallowed into fonts)"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-18-q3",
+          "prompt": "The last line says “God’s gifts put man’s best dreams to shame.” Is this a rejection of imagination? Consider that the claim is made in a poem.",
+          "facilitatorNotes": [
+            "Not entirely: reality outdoes dream, but the poet still uses imagery, the font and the purple, to say so. One reading is that she chooses life over art; another, that love has given her art a real subject. Readers may also notice that she credits God, not the man, with the gift."
+          ],
+          "evidence": [
+            "My soul with satisfaction of all wants:",
+            "Because God’s gifts put man’s best dreams to shame."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-19",
+      "title": "Sonnet XXVII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the images of rescue, and work out who is alive and who is dead in the comparison that closes the poem.",
+      "focus": "Love as a rescue from death, and a claim that love can bring back what death takes.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Ringlets are curls and languid means limp, without energy. Asphodel is the flower that grows, in Greek myth, in the meadows of the dead; “the upper life” is life on earth above. “Love is strong as death” comes from the Bible’s Song of Solomon.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXVII; opens “My own Belovëd, who hast lifted me From this drear flat of earth where I was thrown, And,…”; closes “…here, between the good and bad, That Love, as strong as Death, retrieves as well.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          53,
+          53
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3ad595799b4f24d08750cd74c1a5795a664aade97159c15c7d0ab7bb237551df"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-19-q1",
+          "prompt": "What has the beloved done for the speaker, according to the first six lines? Find the images of rescue and revival.",
+          "facilitatorNotes": [
+            "He has lifted her from the “drear flat of earth” where she was thrown, breathed life into her limp curls until her forehead “hopefully” shines again, and given a “saving kiss.” The images are of someone raised from the ground, almost from the dead."
+          ],
+          "evidence": [
+            "From this drear flat of earth where I was thrown,",
+            "Before thy saving kiss!  My own, my own,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-19-q2",
+          "prompt": "“And I who looked for only God, found thee!” What did she expect from life before, and what does the line suggest about his place now?",
+          "facilitatorNotes": [
+            "When “the world was gone” she expected nothing but death and God. Finding him instead is described like a religious discovery. Some readers find it daring, the lover put where God was expected; others read him as God’s answer. The plain next line, “I am safe, and strong, and glad,” shows its effect."
+          ],
+          "evidence": [
+            "Who camest to me when the world was gone,",
+            "And I who looked for only God, found thee!"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-19-q3",
+          "prompt": "In the sestet she is like a soul among the asphodel looking back on “the upper life.” How does that simile work? How does the last line change the Bible’s “love is strong as death”?",
+          "facilitatorNotes": [
+            "The soul in the meadows of the dead, at peace, looks back on earthly life as “tedious”; she looks back on her old life the same way, from a new state so different it is like another world. Then she goes beyond the Bible: love is not only as strong as death but “retrieves as well,” bringing back what death had nearly taken. Readers may find the simile strange, since it places her among the dead, or apt, since her old life was a kind of death."
+          ],
+          "evidence": [
+            "As one who stands in dewless asphodel,",
+            "That Love, as strong as Death, retrieves as well."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-20",
+      "title": "Sonnet XXX",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a mood that swings from a smiling day to a tearful night, and work out what the fainting acolyte has to do with it.",
+      "focus": "Doubt after joy: was the glory of this love real, or dreamed?",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. An acolyte is an assistant who serves the priest at a church service; insensate means unconscious; to “refer the cause” is to say where something comes from; to dilate is to widen or swell.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXX; opens “I see thine image through my tears to-night, And yet to-day I saw thee smiling. How Refer…”; closes “…my soul’s eyes? Will that light come again, As now these tears come—falling hot and real?”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          59,
+          59
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "655d2d65739747875f7a88a1f6c184a9159f24f857f394a4bccb2f16e5c2259c"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-20-q1",
+          "prompt": "She saw him smiling today and sees his image through tears tonight. What question does she ask about her sadness, and what answer does the poem hint at?",
+          "facilitatorNotes": [
+            "“Is it thou / Or I, who makes me sad?” He has done nothing wrong that she names; the sadness comes when he is “out of sight,” so it seems to rise from her own uncertainty. She asks the question honestly rather than accusing him."
+          ],
+          "evidence": [
+            "Or I, who makes me sad?",
+            "Perplexed, uncertain, since thou art out of sight,"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-20-q2",
+          "prompt": "Explain the comparison with the acolyte. What happens to him, and what in her experience matches each part?",
+          "facilitatorNotes": [
+            "In the middle of a joyful service he faints on the altar-stair and hears the choir’s amen only dimly. She has had the joy of his visit and his “voice and vow,” and now hears them faintly, as if from a swoon. The comparison suggests that the doubt comes from too much joy, not too little love."
+          ],
+          "evidence": [
+            "May so fall flat, with pale insensate brow,",
+            "As he, in his swooning ears, the choir’s amen."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-20-q3",
+          "prompt": "Why are the tears “hot and real” while “that light” is in doubt? Does the poem end in despair or in hope?",
+          "facilitatorNotes": [
+            "The tears are physical and present; the glory may have been a dream, her “ideal” swollen by “too vehement light.” The final question can be heard as fear that only the tears are real, or as hope that the light will return as surely as the tears do. (The next sonnet opens with his arrival.)"
+          ],
+          "evidence": [
+            "Too vehement light dilated my ideal,",
+            "As now these tears come—falling hot and real?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-21",
+      "title": "Sonnet XXXI",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Read this sonnet as an answer to the one before it, and notice exactly what the speaker regrets.",
+      "focus": "Doubt dissolved by presence, and a plea for nearness.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. In the sonnet before this one she sat alone at night, wondering whether his love was real. Unaverred means unspoken; to rue is to regret; unministered means without help or care; to brood is to sit on and cover young birds, as a mother bird does; callow birds are nestlings too young to fly, and “desert” here means deserted. The dove is an old emblem of peace and of the Holy Spirit.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXXI; opens “Thou comest! all is said without a word. I sit beneath thy looks, as children do In the…”; closes “…thoughts which tremble when bereft of those, Like callow birds left desert to the skies.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          61,
+          61
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c493eb44dd891434da5ffabcbcb84f5755d198b656d41b699b8a956b226e902e"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-21-q1",
+          "prompt": "“Thou comest! all is said without a word.” How does his arrival change her? What does the comparison with children in the noon sun suggest?",
+          "facilitatorNotes": [
+            "Words are no longer needed: she sits under his looks like children basking with their eyes shut, their joy trembling through their eyelids. The joy is “unaverred” (unspoken) yet “prodigal” (lavish), as if presence alone answers every doubt."
+          ],
+          "evidence": [
+            "I sit beneath thy looks, as children do",
+            "Yet prodigal inward joy."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-21-q2",
+          "prompt": "She admits she was wrong to doubt, but says she cannot regret “the sin most.” What does she regret instead? Is that an excuse or an insight?",
+          "facilitatorNotes": [
+            "She regrets “the occasion”: the moment they were apart, without each other’s presence. The doubt came only because he was absent. Some readers hear an excuse; others a shrewd observation that her trust depends on nearness, which is why the sestet asks him to stay close."
+          ],
+          "evidence": [
+            "In that last doubt! and yet I cannot rue",
+            "The sin most, but the occasion—that we two"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-21-q3",
+          "prompt": "In the sestet she asks him to “brood down” on her fears. What do the bird images make him, and her thoughts? Is the request weakness or trust?",
+          "facilitatorNotes": [
+            "He becomes the parent bird, “dove-like,” covering the nest; her thoughts are “callow birds,” unable to fly and left exposed when he is gone. The image makes her fears helpless rather than shameful. Readers may find the dependence troubling, or notice that she names her weakness exactly and asks for the one thing that helps."
+          ],
+          "evidence": [
+            "Thou dove-like help! and when my fears would rise,",
+            "Like callow birds left desert to the skies."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-22",
+      "title": "Sonnet XXXV",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Count what the speaker would give up, and find the one loss she thinks he may not be able to replace.",
+      "focus": "Leaving home for love, and a grief that makes her “hard to love.”",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. In September 1846 the two poets married secretly and left for Italy; her father, who had forbidden his children to marry, never forgave her. Her mother had died in 1828, and her favourite brother, Edward, drowned in 1840. Home-talk is family conversation; a range is a row or stretch.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXXV; opens “If I leave all for thee, wilt thou exchange And be all to me? Shall I never miss…”; closes “…Yet love me—wilt thou? Open thy heart wide, And fold within, the wet wings of thy dove.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          69,
+          69
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1f327fd7aebd67a0e07aef0f7a35fb3982d0cfbcd670f10bd73d10af09725ca1"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-22-q1",
+          "prompt": "What would she “leave all” behind, and what does she ask him to become in return?",
+          "facilitatorNotes": [
+            "The talk and blessings of home, the “common kiss” each family member receives in turn, and the familiar walls and floors. In exchange he must “be all” to her and fill every place her family filled. The question form shows that she is weighing a real cost, not making a romantic gesture."
+          ],
+          "evidence": [
+            "If I leave all for thee, wilt thou exchange",
+            "Home-talk and blessing and the common kiss"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-22-q2",
+          "prompt": "Which place is hardest to fill? Why does grief make her “hard to love”?",
+          "facilitatorNotes": [
+            "The place filled by “dead eyes too tender to know change”: the love of the dead, which cannot alter now. Grief is “love and grief beside,” love for the dead plus pain, so it is harder to conquer than love alone. She fears that her sorrow will be a burden to him."
+          ],
+          "evidence": [
+            "Filled by dead eyes too tender to know change",
+            "Alas, I have grieved so I am hard to love."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-22-q3",
+          "prompt": "The poem moves from questions to a command. What does the final image of the “wet wings” offer him, and is she still asking or now giving?",
+          "facilitatorNotes": [
+            "“Yet love me—wilt thou?” is still a question, but “Open thy heart wide” is a plea that already trusts the answer. A dove with wet wings has come through storm or tears and needs shelter; she offers herself grief and all. Some readers hear Noah’s dove, looking for a place to rest."
+          ],
+          "evidence": [
+            "Yet love me—wilt thou?",
+            "And fold within, the wet wings of thy dove."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-23",
+      "title": "Sonnet XXXVI",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a fear the speaker says has not gone away, and make sense of a startling last command.",
+      "focus": "Love that distrusts its own good fortune, and a lover willing to release her beloved.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. To build “with marble” is to raise something meant to last, like a monument; pendulous means hanging and swinging; to overlean is to lean too heavily; troth is a pledge of faithfulness, as in “betrothal”; a person’s star is the fate the stars were once thought to foretell.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXXVI; opens “When we met first and loved, I did not build Upon the event with marble. Could it mean To…”; closes “…Love, be false! if he, to keep one oath, Must lose one joy, by his life’s star foretold.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          71,
+          71
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cf1e6d1011955bf260057a3340ade7430f27470c747cffb0cb69ca111d63da98"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-23-q1",
+          "prompt": "Why didn’t she “build upon the event with marble” when they first met and loved? What images show how she felt?",
+          "facilitatorNotes": [
+            "Their love hung “pendulous between / Sorrow and sorrow,” between past grief and grief to come, so she did not expect it to last. She distrusted every bright sign on the path and was afraid to lean even a finger on it, as if it might give way."
+          ],
+          "evidence": [
+            "Upon the event with marble.",
+            "Distrusting every light that seemed to gild"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-23-q2",
+          "prompt": "She is now “serene and strong,” yet God has willed “a still renewable fear.” What is the fear, and why might the lines break off in dots?",
+          "facilitatorNotes": [
+            "That their clasped hands will never hold, and the kiss will drop between them “as an unowned thing” once her lips are cold: that death will part them. The dots and the broken cry “O love, O troth” show her voice faltering before she can name it."
+          ],
+          "evidence": [
+            "A still renewable fear . . . O love, O troth . . .",
+            "As an unowned thing, once the lips being cold."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-23-q3",
+          "prompt": "Explain the last two lines. What does she tell Love to do, and what does that show about her love?",
+          "facilitatorNotes": [
+            "If keeping his oath to her would cost him one joy that fate holds for him, then let Love be false and the oath broken. She puts his happiness before her claim on him. Some readers hear generosity; others hear the old fear that her illness makes her a burden, so that she gives him leave to go."
+          ],
+          "evidence": [
+            "And Love, be false! if he, to keep one oath,",
+            "Must lose one joy, by his life’s star foretold."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-24",
+      "title": "Sonnet XXXVII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Find the comparison that turns a solemn apology comic, and decide what the joke is doing.",
+      "focus": "An apology for doubting, ending in a sculpture that gets its god badly wrong.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Sovranty is sovereignty, royal rule. In ancient times a sailor who survived a shipwreck might set up an offering in a temple to thank the god who saved him. A porpoise is a small whale; a counterfeit is a fake.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXXVII; opens “Pardon, oh, pardon, that my soul should make Of all that strong divineness which I know…”; closes “…Should set a sculptured porpoise, gills a-snort And vibrant tail, within the temple-gate.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          73,
+          73
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1c004d6c3e71d79275bf224c7fca94f76ea9ab040dc8d3b20d53b7f5cff88154"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-24-q1",
+          "prompt": "What does she ask pardon for, and what does she blame for it?",
+          "facilitatorNotes": [
+            "She has turned his “strong divineness” into an image “formed of the sand,” likely to shift and break: she has doubted that his love will last. She blames the “distant years” of hardship that forced their “doubt and dread” on her and made her “forsake” his true likeness."
+          ],
+          "evidence": [
+            "Formed of the sand, and fit to shift and break.",
+            "Have forced my swimming brain to undergo"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-24-q2",
+          "prompt": "Explain the comparison in the sestet. Who is the pagan, who is the sea-god, and what is the porpoise?",
+          "facilitatorNotes": [
+            "She is the shipwrecked pagan, safe at last; he is the guardian sea-god who saved her; the porpoise is the clumsy image she has made of him. The pagan means to honour the god and produces something absurd, as her doubts distort his love into a “worthless counterfeit.”"
+          ],
+          "evidence": [
+            "As if a shipwrecked Pagan, safe in port,",
+            "Thy worthiest love to a worthless counterfeit."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-24-q3",
+          "prompt": "Why end a solemn apology with “gills a-snort / And vibrant tail”? Does the humour weaken the apology or strengthen it?",
+          "facilitatorNotes": [
+            "The image laughs at her own failure; its comedy shows the gap between the god and the image. Humour also suggests she trusts him to forgive. Readers can argue that the joke makes the apology more convincing because it does not ask for pity."
+          ],
+          "evidence": [
+            "Should set a sculptured porpoise, gills a-snort",
+            "And vibrant tail, within the temple-gate."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-25",
+      "title": "Sonnet XXXIX",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Hold your place in one long sentence that keeps saying “because” and delays its main clause until the last two lines.",
+      "focus": "Being seen truly, in spite of everything that makes others turn away.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Blanchingly means so as to whiten or fade; lethargy is heavy, sleepy weariness; “death’s neighbourhood” is nearness to death; “nor . . . nor” means “neither . . . nor.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XXXIX; opens “Because thou hast the power and own’st the grace To look through and behind this mask of…”; closes “…repels thee, . . . Dearest, teach me so To pour out gratitude, as thou dost, good!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          77,
+          77
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4d7a7da287d0de854b893bfe8d9ea75ebc2e5d1b2e4ca4273e7bc215c02fbf72"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-25-q1",
+          "prompt": "What does he see when he looks “through and behind this mask of me”? What made the mask?",
+          "facilitatorNotes": [
+            "Her “soul’s true face,” worn and weary from life’s race, and behind that “the patient angel” waiting for heaven. The mask was made by years beating on her like rain until they faded her: illness, grief and age."
+          ],
+          "evidence": [
+            "To look through and behind this mask of me,",
+            "The patient angel waiting for a place"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-25-q2",
+          "prompt": "Lines 9–13 list what does not repel him. Which things come from outside her, and which from within?",
+          "facilitatorNotes": [
+            "From outside: woe, “God’s infliction” (her illness), being near death, and whatever makes others “turn to go.” From within: sin, and “all which makes me tired of all, self-viewed,” her own weariness with herself. The list piles up until it reaches “Nothing repels thee.”"
+          ],
+          "evidence": [
+            "Nor all which others viewing, turn to go,",
+            "Nor all which makes me tired of all, self-viewed,—"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-25-q3",
+          "prompt": "The poem ends with a request instead of thanks. What does “teach me so / To pour out gratitude, as thou dost, good” mean, and why might she ask it?",
+          "facilitatorNotes": [
+            "As he pours out goodness freely, she asks to learn to pour out gratitude as freely; she feels unable to thank him enough. The long run of “because” clauses gives reasons for gratitude and ends by admitting its limit. Readers may notice that she still sees an inequality between them, or that the request is itself a form of thanks."
+          ],
+          "evidence": [
+            "Nothing repels thee, . . . Dearest, teach me so",
+            "To pour out gratitude, as thou dost, good!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-26",
+      "title": "Sonnet XL",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Sort the images of other people’s love in the octave, and find where the poem turns to “thou.”",
+      "focus": "Love that a smile starts and a slip ends, set against a love that waits through sickness.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. Forsooth (“indeed”) is ironic here: love so called. Mussulmans are Muslims and Giaours, a Turkish word, non-Muslims; throwing a kerchief at a smile recalls the tale of an Eastern ruler who chose a woman by tossing her a handkerchief. Ruth is pity. Polypheme is Polyphemus, the one-eyed giant of Greek myth who loved the sea-nymph Galatea and, rejected, killed the youth she loved. To gainsay is to deny.",
+      "contentNote": "“Mussulmans and Giaours” draws on the period’s stereotype of Eastern lovers as careless and cruel.",
+      "excerpt": {
+        "locator": "Complete poem XL; opens “Oh, yes! they love through all this world of ours! I will not gainsay love, called love…”; closes “…and sickness, to bring souls to touch, And think it soon when others cry “Too late.””.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          79,
+          79
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1836f5766f2748a2fabeb31f0fc8596e217ae126b4c7e3a69fc2b8dfa58ae1b1"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-26-q1",
+          "prompt": "What does the speaker grant in the first lines, and how does her tone show she is not impressed?",
+          "facilitatorNotes": [
+            "She grants that people love everywhere; she will not deny love, or what is “called love forsooth.” She has heard it talked of since her youth. “Called love forsooth” and the shrug of “Oh, yes!” suggest that much of what passes for love is talk."
+          ],
+          "evidence": [
+            "Oh, yes! they love through all this world of ours!",
+            "I will not gainsay love, called love forsooth:"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-26-q2",
+          "prompt": "What do the “kerchiefs” and Polypheme’s “white tooth” say about ordinary love? How little does it take to turn it?",
+          "facilitatorNotes": [
+            "Lovers who choose at a smile and have no pity for weeping; a giant’s tooth that slips on a nut when rain has made the shell too smooth. Something as slight as a slippery shell can turn love “aside to hate / Or else to oblivion,” as Polyphemus’s love turned to murderous jealousy."
+          ],
+          "evidence": [
+            "Throw kerchiefs at a smile, and have no ruth",
+            "Will turn the thing called love, aside to hate"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-26-q3",
+          "prompt": "The turn comes in the middle of line 11: “But thou art not such / A lover.” What makes him different, and why might “Too late” matter to this speaker in particular?",
+          "facilitatorNotes": [
+            "He can wait “through sorrow and sickness” and still think it soon when others would say it is too late. The speaker was nearly forty and long an invalid; she had believed love had come too late for her. His patience answers her fear, and the sonnet runs past the usual break, as if it could not wait."
+          ],
+          "evidence": [
+            "Through sorrow and sickness, to bring souls to touch,",
+            "And think it soon when others cry “Too late.”"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-27",
+      "title": "Sonnet XLI",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare two kinds of listener, and find what the second one gave up to listen.",
+      "focus": "Gratitude to admirers, deeper gratitude to one listener, and a poem meant to outlive its writer.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. A mart is a market; to harken is to listen; to salute is to greet; “Art” here means his own art of poetry.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XLI; opens “I thank all who have loved me in their hearts, With thanks and love from mine. Deep…”; closes “…they should lend it utterance, and salute Love that endures, from life that disappears!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          81,
+          81
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ffc405d9b12af64ef076279a011d982f444df3d93e64f9618a0c08db58558e4c"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-27-q1",
+          "prompt": "Whom does she thank in the octave, and how does she picture them?",
+          "facilitatorNotes": [
+            "Everyone who loved her: people who paused near the “prison-wall” (her years shut in as an invalid) to hear her music “in its louder parts,” then went on to market or temple. They are admirers of her published poetry; her thanks are real, but they did not stay."
+          ],
+          "evidence": [
+            "Who paused a little near the prison-wall",
+            "Ere they went onward, each one to the mart’s"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-27-q2",
+          "prompt": "How is he different? What does he drop, and what does he listen for?",
+          "facilitatorNotes": [
+            "He lays down the “instrument” of his own “divinest Art,” his poetry, to listen to what she said “between my tears”: not the loud public parts of her music, but the moment her voice failed in a sob. He attended to her private grief rather than her reputation."
+          ],
+          "evidence": [
+            "When the sob took it, thy divinest Art’s",
+            "To harken what I said between my tears, . . ."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-27-q3",
+          "prompt": "“Instruct me how to thank thee!” What answer does the sestet find? Can a poem do what she hopes?",
+          "facilitatorNotes": [
+            "She wishes to send her “soul’s full meaning” into future years, so that they will greet “Love that endures” from a life that will end. The poems themselves become her thanks, and modern readers are the future years she addressed. Readers can debate whether a poem can carry love beyond its writer’s life, or only the memory of it."
+          ],
+          "evidence": [
+            "My soul’s full meaning into future years,",
+            "Love that endures, from life that disappears!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-10-browning-sonnets-portuguese-1906-28",
+      "title": "Sonnet XLII",
+      "sourceId": "browning-sonnets-portuguese-1906",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Find the line she once wrote and the line she wants written now, and explain what changed between them.",
+      "focus": "A poet revises her own prophecy of despair: the future need not copy the past.",
+      "context": "Elizabeth Barrett Browning wrote these sonnets, original English poems despite the title, to Robert Browning during their courtship in 1845–46, when she was a celebrated poet nearly forty, long confined to her room by illness, and he a younger poet who had written to praise her work. The first line quotes her own earlier sonnet “Past and Future” (1844). A ministering angel is a guardian spirit; the white throne of God comes from the Book of Revelation; “copy fair” means to make a clean copy. A pilgrim’s staff that puts out green leaves recalls legends of saints’ staffs that blossomed as a sign of grace. To impearl is to adorn with pearl-like drops; an epigraph is an inscription or motto set at the head of a book or chapter.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem XLII; opens “My future will not copy fair my past— I wrote that once; and thinking at my side My…”; closes “…curled, And write me new my future’s epigraph, New angel mine, unhoped for in the world!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          83,
+          83
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "283c4c37fd8124dd316d6c99ad00eff0ca8665441be0ed202836dae12f687f64"
+      },
+      "questions": [
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-28-q1",
+          "prompt": "“My future will not copy fair my past.” What did that line mean when she first wrote it, and whom did she expect to confirm it?",
+          "facilitatorNotes": [
+            "It meant her future would not repeat her happy past; grief and illness had ended it. She imagined her “ministering life-angel” looking up to God’s throne as if agreeing. When she “turned at last,” she saw instead the beloved, a human being “not unallied / To angels.”"
+          ],
+          "evidence": [
+            "My future will not copy fair my past—",
+            "And there, instead, saw thee, not unallied"
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-28-q2",
+          "prompt": "What happens to her “pilgrim’s staff”? What does the image suggest about her life?",
+          "facilitatorNotes": [
+            "At the sight of him the dry staff of a weary pilgrim buds and puts out green leaves wet with morning dew. A life she thought finished, a stick for walking toward death, revives; the miracle, borrowed from saints’ legends, makes the change seem like grace."
+          ],
+          "evidence": [
+            "While budding, at thy sight, my pilgrim’s staff",
+            "Gave out green leaves with morning dews impearled."
+          ]
+        },
+        {
+          "id": "reading-10-browning-sonnets-portuguese-1906-28-q3",
+          "prompt": "In the last lines she rejects one book and asks for another. What does she want him to write, and what does “copy” now mean?",
+          "facilitatorNotes": [
+            "She no longer wants a fair copy of “life’s first half”; she leaves the old pages, curled with long brooding, and asks him to write her “future’s epigraph.” She once used “copy” to say the past could not return; now she wants something new, not a copy at all. The beloved, “New angel mine,” takes the place of the guardian angel of the first quatrain."
+          ],
+          "evidence": [
+            "I seek no copy now of life’s first half:",
+            "And write me new my future’s epigraph,"
+          ]
+        }
+      ]
+    }
+  ]
+}
