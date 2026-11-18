@@ -272,6 +272,329 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-05",
+      "title": "Robinson Crusoe: taken by a Sallee rover",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a sea fight told in sailors’ terms, then notice how Crusoe, telling the story as an old man, interprets his own captivity.",
+      "focus": "Crusoe reads his enslavement as his father’s warning come true, and a chain of small events slowly opens a way out.",
+      "context": "Robinson Crusoe (1719), by Daniel Defoe, is told by Crusoe himself late in life. Against his father’s advice he went to sea, survived a shipwreck, and made a profitable trading voyage to Guinea, the West African coast; now he sets out again. Sallee (Salé), on the Atlantic coast of Morocco, was a base for corsairs who seized European ships and kept or sold their crews as slaves; Crusoe calls them “Turkish” and “Moors,” European names of his time for North African Muslims. A rover is a pirate ship; a broadside is the fire of all the guns on one side; a pinnace is a ship’s small boat; a Maresco (Morisco) is a Moor of Spanish descent; the “road” is the anchorage outside a port; a league is about three miles; fuzees are light muskets; an “ancient” is a flag.",
+      "contentNote": "A sea fight in which three of Crusoe’s shipmates are killed; Crusoe is enslaved. His names for North Africans reflect European attitudes of 1719.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, from the second Guinea voyage through Crusoe’s first thought of escape in his master’s boat; opens “I was now set up for a Guinea trader; and my friend, to my great misfortune, dying soon…”; closes “…as consider, whither I should steer; for any where to get out of that place was my way.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-defoe-robinson-crusoe-1808-06",
+        "blocks": [
+          35,
+          44
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7a9867fbe8d6233d2894b6dd2336d05ec06028e0acaa5abb7b5ffe3b675fa6c6"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-05-q1",
+          "prompt": "How does the fight with the rover go? Find the moment when Crusoe’s ship has the advantage, and the place where he stops giving details.",
+          "facilitatorNotes": [
+            "The pirate comes alongside “by mistake” at the ship’s side instead of its stern, so eight guns can fire a broadside into it. Then sixty men board, and Crusoe cuts the story short: “to cut short this melancholy part of our story,” the ship is disabled and they surrender.",
+            "Ask why a narrator might hurry past defeat. Some students will say pain; others that Crusoe cares more about what happened to him afterwards."
+          ],
+          "evidence": [
+            "bringing to by mistake just athwart our quarter, instead of athwart our stern, as he intended",
+            "However, to cut short this melancholy part of our story"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-05-q2",
+          "prompt": "What does Crusoe think when he becomes a slave, and how does the older narrator correct that thought?",
+          "facilitatorNotes": [
+            "He remembers his father’s “prophetic discourse” and believes “the hand of Heaven” has overtaken him, so that he “could not be worse.” The older Crusoe adds, “this was but a taste of the misery I was to go through.”",
+            "The narrator knows the whole story and lets the reader know that worse is coming. Ask what effect that foreknowledge has: suspense, or a sense that the story is a lesson."
+          ],
+          "evidence": [
+            "now I looked back upon my father’s prophetic discourse to me",
+            "but, alas! this was but a taste of the misery I was to go through, as will appear in the sequel of this story"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-05-q3",
+          "prompt": "Why can Crusoe find no way to escape for two years? What earns him the chance at last?",
+          "facilitatorNotes": [
+            "He has “nobody to communicate it to”: no fellow slave from Britain to trust. His skill at catching fish makes his master take him on every trip and later send him out without the master himself.",
+            "Students may notice that Crusoe’s usefulness to his master, the very thing that keeps him enslaved, becomes the means of escape."
+          ],
+          "evidence": [
+            "I had nobody to communicate it to that would embark with me, no fellow slave, no Englishman, Irishman, or Scotsman there but myself",
+            "as I was most dexterous to catch fish for him, he never went without me"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-05-q4",
+          "prompt": "Trace the chain of events that puts “a little ship at my command.” Which links depend on chance, and which on Crusoe himself?",
+          "facilitatorNotes": [
+            "A fog strands the fishing party at sea; the frightened master fits out the long-boat with a cabin, a compass and provisions; on one day his guests put off their trip and he sends Crusoe out anyway. Chance supplies the fog and the cancellation; Crusoe’s reliability supplies the trust.",
+            "Crusoe often credits Providence elsewhere in the book, but here he simply says the idea “darted into my thoughts.” Ask whether the passage presents luck, design or both."
+          ],
+          "evidence": [
+            "a fog rose so thick, that though we were not half a league from the shore we lost sight of it",
+            "This moment my former notions of deliverance darted into my thoughts, for now I found I was like to have a little ship at my command"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-06",
+      "title": "Robinson Crusoe: escape from Sallee",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch Crusoe’s tricks one by one, and ask how the narrator wants you to judge them.",
+      "focus": "Crusoe wins his liberty by deceit and the threat of a gun, and the boy Xury becomes his companion in a strange land.",
+      "context": "Recap: Captured by corsairs from Sallee in Morocco, Crusoe has been the slave of the rover’s captain for two years, sent out fishing in a well-stocked boat with a Moor named Ismael and a boy called Xury. One morning the master’s guests cancel and he sends the three out alone. Rusk is a hard biscuit; half a hundredweight is about 56 pounds; Cadiz is a Spanish port; “the Straits’ mouth” is the Strait of Gibraltar; Mahomet is the Prophet Muhammad; “Barbarian” here means the Barbary coast of North Africa.",
+      "contentNote": "Crusoe throws a man overboard, threatens to shoot him, and threatens to drown a boy. He imagines Africa as full of “savages” who will devour travellers; these fears and the word “Negroes” reflect European prejudice of his time. Xury’s English is printed as Defoe wrote it.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, from Crusoe’s tricks to stock the boat through the first night at anchor on the African coast; opens “My first contrivance was to make a pretence to speak to this Moor, to get something for…”; closes “…the hands of lions and tigers; at least we were equally apprehensive of the danger of it.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-defoe-robinson-crusoe-1808-05",
+        "continuesTo": "reading-9-defoe-robinson-crusoe-1808-07",
+        "blocks": [
+          45,
+          52
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "06ffa689d4bdadf078f46a55c6ce22dc1e1bb053396823faedbb7492672af90b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-06-q1",
+          "prompt": "List the tricks Crusoe uses to stock the boat. What do they show about how well he knows Ismael and his master’s house?",
+          "facilitatorNotes": [
+            "He tells Ismael they must not eat the master’s bread, so Ismael fetches food and water; he smuggles in the master’s bottles, beeswax and tools; he asks for powder to shoot birds “for ourselves”; he even refills a bottle with powder. He knows where everything is kept and what Ismael will believe.",
+            "The narrator says Ismael “innocently came into” the trick. Ask whether that word makes Crusoe look clever, ruthless or both."
+          ],
+          "evidence": [
+            "I told him we must not presume to eat of our patron’s bread",
+            "Another trick I tried upon him, which he innocently came into also"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-06-q2",
+          "prompt": "Crusoe throws Ismael overboard and then tells him, “I had done him no hurt.” How do you judge that claim?",
+          "facilitatorNotes": [
+            "He has seized him by surprise, thrown him into the sea a league from shore, and aimed a gun at him while he begs to come aboard; Crusoe counts it “no hurt” because Ismael can swim and is not shot. He justifies it in one sentence: “I am resolved to have my liberty.”",
+            "Many readers think escaping slavery justifies the trick; others notice that Ismael had done him no wrong and offered to “go all over the world” with him. Both judgments can use the passage."
+          ],
+          "evidence": [
+            "I took him by surprise with my arm under his twist, and tossed him clear overboard into the sea",
+            "told him, I had done him no hurt, and if he would be quiet I would do him none",
+            "for I am resolved to have my liberty"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-06-q3",
+          "prompt": "“I could have been content to have taken this Moor with me, and have drowned the boy.” What does this sentence reveal about Crusoe, and why does he keep Xury instead?",
+          "facilitatorNotes": [
+            "He weighs two lives purely by usefulness and trust: the man would be more help but cannot be trusted. He keeps the boy by threatening to throw him in the sea too unless he swears loyalty, and is won over when Xury “smiled in my face.”",
+            "Crusoe, just freed from slavery, now holds absolute power over someone weaker. Students may see the irony, or argue that a fugitive had no safe choice."
+          ],
+          "evidence": [
+            "I could have been content to have taken this Moor with me, and have drowned the boy, but there was no venturing to trust him",
+            "The boy smiled in my face, and spoke so innocently, that I could not mistrust him"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-06-q4",
+          "prompt": "Crusoe expects a coast of “savage beasts, or more merciless savages of human kind.” What do the first night’s events actually show, and how does his fear shape what he expects?",
+          "facilitatorNotes": [
+            "They see no people at all, only hear and glimpse animals, one of which he drives off with a shot. Yet he concludes that falling among “the savages” would be as bad as falling among lions, putting people he has never met beside beasts.",
+            "Ask students to separate what Crusoe observes from what he assumes. Xury, though terrified, makes good decisions: “After all, Xury’s advice was good.”"
+          ],
+          "evidence": [
+            "where we could never once go on shore but we should be devoured by savage beasts, or more merciless savages of human kind",
+            "to have fallen into the hands of any of the savages, had been as bad as to have fallen into the hands of lions and tigers",
+            "After all, Xury’s advice was good, and I took it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-07",
+      "title": "Robinson Crusoe: Xury, the water and the lion",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice what Crusoe learns from Xury, and how much of his geography is guesswork.",
+      "focus": "On an empty coast the boy’s courage and skill complicate the master and servant relation that Crusoe assumes.",
+      "context": "Recap: Crusoe escaped from slavery at Sallee by tricking a Moor overboard and sailing south with the boy Xury, who swore to be faithful. Afraid of pursuit, they sailed for five days and anchored in a river mouth where wild animals roared all night. The Canaries and the Cape de Verd (Cape Verde) Islands lie off the north-west coast of Africa, and the Pico of Teneriffe is the high peak of the Canaries; the Gambia and the Senegal are West African rivers where European ships traded. “Wild mans” is Xury’s English for wild men; to “take an observation” is to measure the sun’s height to find one’s latitude.",
+      "contentNote": "Crusoe and Xury shoot a sleeping lion and skin it. Both fear being eaten by “savages,” and Crusoe repeats European ideas of his time about Africa; Xury’s English is printed as Defoe wrote it.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, from the search for water through the resolve to make for Cape de Verd; opens “Be that as it would, we were obliged to go on shore somewhere or other for water, for we…”; closes “…fortune upon this single point, either that I must meet with some ship, or must perish.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-defoe-robinson-crusoe-1808-06",
+        "continuesTo": "reading-9-defoe-robinson-crusoe-1808-08",
+        "blocks": [
+          53,
+          62
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e4c91226d6f64a103514d92da0602f9281e82f656a50875d554a076015891a57"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-07-q1",
+          "prompt": "Why does Xury offer to go ashore alone for water, and how does Crusoe answer? What does the narrator say this made him feel?",
+          "facilitatorNotes": [
+            "Xury says that if “wild mans” come they will eat him and Crusoe can escape: he offers to take the danger himself. Crusoe answers that they will both go, and says the boy’s answer “made me love him ever after.”",
+            "Ask what “ever after” means from a narrator who knows how their story ends, and keep the phrase in mind for the next part."
+          ],
+          "evidence": [
+            "If wild mans come, they eat me, you go wey.",
+            "The boy answered with so much affection, that made me love him ever after."
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-07-q2",
+          "prompt": "In this passage, who first notices danger, who does the skilled work, and who gives the orders? What does that suggest about the two of them?",
+          "facilitatorNotes": [
+            "Xury spots the lion (“whose eyes were more about him than it seems mine were”), finds the water, and is “much the better workman” at skinning; Crusoe orders and shoots. The narrator admits his dependence even while he treats the boy as his servant.",
+            "Crusoe’s order, “you shall go on shore and kill him,” may be a joke at the frightened boy’s expense; Xury later finishes the lion bravely. Students can discuss whether Crusoe’s respect grows."
+          ],
+          "evidence": [
+            "Xury, whose eyes were more about him than it seems mine were",
+            "Xury was much the better workman at it, for I knew very ill how to do it",
+            "“Xury,” says I, “you shall go on shore and kill him.”"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-07-q3",
+          "prompt": "Crusoe is “very sorry to lose three charges of powder and shot upon a creature that was good for nothing to us.” Why did he shoot the lion, and how does he change his mind about its value?",
+          "facilitatorNotes": [
+            "The lion is asleep and has not threatened them; Crusoe shoots it, apparently from fear or for sport, then regrets the waste because it is not food. Then the merchant in him finds a use: the skin “might one way or other be of some value.”",
+            "Ask what this shows about how Crusoe measures things. Students may connect it with his trading life; the skin will matter again."
+          ],
+          "evidence": [
+            "I was very sorry to lose three charges of powder and shot upon a creature that was good for nothing to us",
+            "perhaps the skin of him might one way or other be of some value to us"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-07-q4",
+          "prompt": "Crusoe describes a land abandoned by Africans and Moors alike. How does he know this, and how far should we trust his account?",
+          "facilitatorNotes": [
+            "He says it is “by the best of my calculation”: he has no instruments, cannot remember latitudes, and pieces together what he once heard with what he sees from the boat. What he observes is limited to an empty shore by day and howling by night.",
+            "His final resolve, to “put the whole of my fortune upon this single point,” shows a man acting on guesses because he must. Ask students to sort the paragraph into observation, report and inference."
+          ],
+          "evidence": [
+            "By the best of my calculation, that place where I now was, must be that country",
+            "I had no instruments to take an observation to know what latitude we were in",
+            "I put the whole of my fortune upon this single point"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-defoe-robinson-crusoe-1808-08",
+      "title": "Robinson Crusoe: the leopard, the Portuguese captain and Xury",
+      "sourceId": "defoe-robinson-crusoe-1808",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Compare two exchanges, one with the people on the shore and one with the Portuguese captain, and decide what each side gives and gets.",
+      "focus": "Crusoe is rescued by a stranger’s generosity and then sells the boy who helped him win his freedom.",
+      "context": "Recap: Escaping from slavery in Morocco, Crusoe and the boy Xury have sailed south along the African coast for weeks, shooting a lion and taking its skin. Crusoe has staked everything on reaching Cape de Verd, where European ships pass on their way to Guinea, Brazil and the East Indies. Portugal then ruled Brazil, whose plantations were worked by enslaved Africans, and ships sailing to Guinea “for Negroes” were slave ships. Pieces of eight were Spanish silver coins and ducats gold coins; perspective-glasses are telescopes; to “bring to” or “lie by” is to stop a ship; All Saints’ Bay is at Bahia in Brazil; “Seignor Inglese” is the captain’s “Mr. Englishman.”",
+      "contentNote": "Crusoe calls the Africans he meets “quite black, and stark naked” and “poor creatures,” and kills a leopard. He sells Xury, the boy who helped him escape, to the Portuguese captain on the promise of freedom in ten years if Xury becomes a Christian, and mentions slave ships without objection. Period racial language is kept.",
+      "excerpt": {
+        "locator": "Robinson Crusoe, from the first sight of people on the shore through Crusoe’s landing in Brazil; opens “When I had passed this resolution about ten days longer, as I have said, I began to see…”; closes “…pieces of eight of all my cargo; and with this stock I went on shore in the Brasils.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-defoe-robinson-crusoe-1808-07",
+        "continuesTo": null,
+        "blocks": [
+          63,
+          75
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2e6b55547006de54c6d633c72e94820410bab51b18782df3b962cef5cefb3a03"
+      },
+      "questions": [
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-08-q1",
+          "prompt": "How do Crusoe and the people on the shore manage an exchange when neither side trusts the other? Who thinks of the “safe way for us all”?",
+          "facilitatorNotes": [
+            "The people on shore do: they fetch dried meat and corn, lay it on the beach, and stand “a great way off” until Crusoe has collected it. They give first, unasked, and he has “nothing to make them amends.”",
+            "Compare this with Crusoe’s fear of “merciless savages” in the last part. Ask what he learns, and whether his words for them change (“my friendly Negroes”)."
+          ],
+          "evidence": [
+            "they took a safe way for us all, for they brought it to the shore and laid it down, and went and stood a great way off till we fetched it on board",
+            "We made signs of thanks to them, for we had nothing to make them amends"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-08-q2",
+          "prompt": "After the leopard is killed, what does each side receive? Who gets the better bargain, by Crusoe’s reckoning and by yours?",
+          "facilitatorNotes": [
+            "The people take the meat, skin the animal far more skilfully than Crusoe could, give him the skin “very freely,” and bring water and more food. Crusoe later sells the skin to the captain for twenty ducats, so the exchange profits him most.",
+            "The gun’s noise terrifies the people and makes them admire “what it was I had killed him with.” Ask how the weapon shapes the whole meeting."
+          ],
+          "evidence": [
+            "made signs for the skin, which they gave me very freely",
+            "the Negroes held up their hands with admiration to think what it was I had killed him with",
+            "gave me twenty ducats for the leopard’s skin"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-08-q3",
+          "prompt": "Why does the Portuguese captain refuse to take Crusoe’s goods? What two reasons does he give?",
+          "facilitatorNotes": [
+            "He saved Crusoe “on no other terms than I would be glad to be saved myself,” since he might one day need rescue; and taking Crusoe’s goods would leave him to starve in Brazil, so “I only take away that life I have given.” Crusoe praises him as charitable in promise and “just in the performance to a tittle.”",
+            "Students may call this pure kindness or a practical code among sailors. The captain’s own words allow both."
+          ],
+          "evidence": [
+            "I have saved your life on no other terms than I would be glad to be saved myself",
+            "then I only take away that life I have given",
+            "As he was charitable in his proposal, so he was just in the performance to a tittle"
+          ]
+        },
+        {
+          "id": "reading-9-defoe-robinson-crusoe-1808-08-q4",
+          "prompt": "Crusoe is “very loath to sell the poor boy’s liberty,” yet he lets the captain have Xury. What is the captain’s “medium,” and how do you judge the bargain, given Crusoe’s own escape from slavery?",
+          "facilitatorNotes": [
+            "The captain offers sixty pieces of eight and, when Crusoe objects, promises to free Xury in ten years “if he turned Christian”; Xury says he is “willing.” Crusoe names the wrong exactly (“who had assisted me so faithfully in procuring my own”) and does it anyway, for money.",
+            "Some readers argue that Crusoe protects Xury as well as the times allowed; others ask what choice a boy alone on a foreign ship had, and note that Crusoe calmly mentions ships going to Guinea “for Negroes.” Keep the discussion on the sentence’s own words: “not that I was not willing to let the captain have him.”"
+          ],
+          "evidence": [
+            "I was very loath to sell the poor boy’s liberty, who had assisted me so faithfully in procuring my own",
+            "he would give the boy an obligation to set him free in ten years, if he turned Christian",
+            "not that I was not willing to let the captain have him"
+          ]
+        }
+      ]
     }
   ]
 }
