@@ -5,6 +5,70 @@
   "readings": [
     {
       "id": "reading-k-delamare-peacock-pie-1920-01",
+      "title": "Alas, Alack!",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Hear a surprise told in a rush, and find the sad words the fish says.",
+      "focus": "A fish in the frying-pan speaks one mournful word, then goes back to sizzling.",
+      "context": "Walter de la Mare’s Peacock Pie is a book of rhymes for children. “Alas!” and “Alack!” are old words people cried when they were sad. The fat is the hot cooking fat in the pan; sizzling is the hissing sound of frying. The word talks is printed in slanting letters, so say it with extra surprise. Read the first lines quickly, as if calling Ann to come and see.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Up and Down, “Alas, Alack!,” the complete poem; opens “ANN, Ann! Come! quick as you can! There's a fish that _talks_ In the frying-pan. Out of…”; closes “…\"Alas!\" Oh, most mournful, \"Alas, alack!\" Then turned to his sizzling, And sank him back.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          8,
+          8
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d202eba5d9b0e55ec074ff3958984e5c0a82140e3643eb9dee7d935137d29c4f"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-01-q1",
+          "prompt": "Why does the speaker call Ann to come quickly?",
+          "facilitatorNotes": [
+            "Because a fish in the frying-pan is talking."
+          ],
+          "evidence": [
+            "There's a fish that _talks_",
+            "In the frying-pan."
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-01-q2",
+          "prompt": "What does the fish say? How does it sound?",
+          "facilitatorNotes": [
+            "“Alas!” and then “Alas, alack!”: very sad, a moan. Children can try saying it in a mournful fishy voice."
+          ],
+          "evidence": [
+            "And moaned \"Alas!\"",
+            "Oh, most mournful,"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-01-q3",
+          "prompt": "What does the fish do after it speaks? Do you think Ann got there in time?",
+          "facilitatorNotes": [
+            "It turns back to its sizzling and sinks down into the fat. Most children will say Ann was too late and saw only a frying fish, which is the joke; some may imagine she heard it too."
+          ],
+          "evidence": [
+            "Then turned to his sizzling,",
+            "And sank him back."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-02",
       "title": "Tired Tim",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -33,7 +97,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-01-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-02-q1",
           "prompt": "What is Tim tired of?",
           "facilitatorNotes": [
             "Of having nothing to do. Ask whether that is a funny thing to be tired of."
@@ -43,7 +107,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-01-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-02-q2",
           "prompt": "What is Tim too tired to do at bedtime?",
           "facilitatorNotes": [
             "Too tired to yawn and too tired to sleep. That sounds impossible, which is part of the joke and part of the sadness."
@@ -54,7 +118,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-01-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-02-q3",
           "prompt": "The first and last lines are almost the same. Does the speaker feel sorry for Tim, or tease him?",
           "facilitatorNotes": [
             "“It’s sad for him” sounds sorry, but the silly details, like being too tired to yawn, also tease. Both readings fit; children can suggest what might help Tim, kept separate from the poem."
@@ -67,7 +131,7 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-02",
+      "id": "reading-k-delamare-peacock-pie-1920-03",
       "title": "The Bandog",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -96,7 +160,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-02-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-03-q1",
           "prompt": "Who is lost, and what does his owner think of him?",
           "facilitatorNotes": [
             "Mopser, his dog, and he thinks him handsome. The whole poem is the owner asking for help to find him."
@@ -106,7 +170,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-02-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-03-q2",
           "prompt": "What are Mopser’s teeth, tail and ears like?",
           "facilitatorNotes": [
             "Teeth like ships at sea, a tail that curls straight up, and ears that stand side by side. Ask what teeth like ships might look like: big, pointed, sailing in a row."
@@ -117,7 +181,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-02-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-03-q3",
           "prompt": "How must you speak to Mopser if you want him to come? What does that tell you about him?",
           "facilitatorNotes": [
             "Politely: he answers only when “civilly addressed.” He seems a proud dog with fine manners, which is funny for a fierce watchdog. Children may decide he is proud, grand or just fussy."
@@ -130,7 +194,7 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-03",
+      "id": "reading-k-delamare-peacock-pie-1920-04",
       "title": "The Ship of Rio",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -159,7 +223,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-03-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-04-q1",
           "prompt": "How many monkeys sail the ship, and what are they wearing?",
           "facilitatorNotes": [
             "Ninety-nine, and not a stitch of clothes among them."
@@ -170,7 +234,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-03-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-04-q2",
           "prompt": "What do the monkeys do when the deep-sea gales roar?",
           "facilitatorNotes": [
             "They fold in the sails, swinging by their tails. Children can show a monkey swinging."
@@ -181,7 +245,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-03-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-04-q3",
           "prompt": "The speaker calls three sights “gladsome,” or joyful. Which would you most like to see, and why?",
           "facilitatorNotes": [
             "The monkeys swinging in the storm, squatting round the keg in the calm, or scampering for nuts across the sand. Any choice with a reason works."
@@ -194,7 +258,7 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-04",
+      "id": "reading-k-delamare-peacock-pie-1920-05",
       "title": "Jim Jay",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -223,7 +287,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-04-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-05-q1",
           "prompt": "Where does Jim Jay get stuck?",
           "facilitatorNotes": [
             "In Yesterday. Ask what it could mean to be stuck in yesterday; there is no single right answer."
@@ -234,7 +298,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-04-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-05-q2",
           "prompt": "What do Jim’s friends do, and does it work?",
           "facilitatorNotes": [
             "They pull from seven till twelve, but all in vain, and Jim is too frightened to help himself."
@@ -245,7 +309,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-04-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-05-q3",
           "prompt": "What can the friends still see of Jim as the hours go by?",
           "facilitatorNotes": [
             "At one o’clock he is a little bit gone; at half-past five they glimpse only his flapping handkerchief; by noon he is a speck slipping by. Some children find this funny, some sad or spooky; the poem lets in all these feelings."
@@ -258,7 +322,71 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-05",
+      "id": "reading-k-delamare-peacock-pie-1920-06",
+      "title": "The Lost Shoe",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 6,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a search that grows from one house to the whole world.",
+      "focus": "Lucy’s lost shoe is hunted for everywhere, and she is still hopping round the world to find it.",
+      "context": "Walter de la Mare’s Peacock Pie is a book of rhymes for children. By some mischance means by bad luck. A dovecote is a house for pigeons; a dairy is where milk and butter are kept. “Oyez” (say “oh-yes”) is what a town crier shouted before calling out news. French, Dutch, Latin and Portuguese are languages. Shingle is a beach of small stones. Hindustan is an old name for India; Java is an island; Pernambuco is in Brazil and Peru in South America; “lamped Japan” is Japan lit with lanterns. Point to a globe or map if you have one.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Boys and Girls, “The Lost Shoe,” the complete poem; opens “POOR little Lucy By some mischance, Lost her shoe As she did dance: 'Twas not on the…”; closes “…To gold Peru; Mountain and forest, And river too, All the world over For her lost shoe.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          75,
+          75
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "96d014c808280b1804c99bb23b98133d7bf9e927db23afeb682c04d4be80a064"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-06-q1",
+          "prompt": "How did Lucy lose her shoe, and where did she look for it first?",
+          "facilitatorNotes": [
+            "She lost it while dancing. It was not on the stairs, in the hall or at supper; then she looked in the garden, the henhouse, the kennel and the dovecote."
+          ],
+          "evidence": [
+            "Lost her shoe",
+            "She looked in the garden,"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-06-q2",
+          "prompt": "How do people try to spread the news about the lost shoe?",
+          "facilitatorNotes": [
+            "A crier calls it out, “Oyez and Oyez!”, in many languages, and ships sail the seas, but nobody brings news."
+          ],
+          "evidence": [
+            "It was cried and cried,",
+            "In French, Dutch, Latin,"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-06-q3",
+          "prompt": "Why does Lucy hop, and why do you think she keeps searching all over the world for one shoe?",
+          "facilitatorNotes": [
+            "She hops because she has only one shoe on. Children may say the shoe was special, or that she is very stubborn, or that it is a make-believe poem that never ends. Any reason they can explain fits."
+          ],
+          "evidence": [
+            "She hops — hops through,",
+            "For her lost shoe."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-07",
       "title": "Berries",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -287,7 +415,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-05-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-07-q1",
           "prompt": "How many berries had Jill picked when the Fairy came?",
           "facilitatorNotes": [
             "Only half a small basket. The Fairy steps out of her little green cave."
@@ -298,7 +426,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-05-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-07-q2",
           "prompt": "Where does the Fairy send Jill, and what does she find there?",
           "facilitatorNotes": [
             "Over the meadows to a little green lane by Farmer Grimes’s hayfields, where the hedges shine with fruit like jewels."
@@ -309,7 +437,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-05-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-07-q3",
           "prompt": "What does Jill make with the berries, and why do you think she hides one tiny pot?",
           "facilitatorNotes": [
             "Syrup, jelly and blackberry jam: twelve pots and one tiny one. She hides the tiny pot halfway between Wicking and Weep, perhaps as a thank-you for the Fairy; the poem does not say, so children can guess."
@@ -322,7 +450,71 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-06",
+      "id": "reading-k-delamare-peacock-pie-1920-08",
+      "title": "Off the Ground",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 5,
+        "totalMinutes": 10
+      },
+      "challenge": "Follow a dance from a meadow through village after village, all the way to the sea.",
+      "focus": "Three farmers dance for miles to win a bet; two stop at the sea, and the third dances straight into it.",
+      "context": "Walter de la Mare’s Peacock Pie is a book of rhymes for children. To bet a pound is to promise money to whoever wins; forty shillings is two pounds. Shoon is an old word for shoes; a stile is a set of steps over a fence; a tee-to-tum is a spinning top; the Parish bound is the edge of the village lands. Whipham, Week, Watchet, Wye and Wool are village names. A league is about three miles. Gaiters cover the lower legs; mermaids are make-believe sea women with fishes’ tails; minstrelsy is music. The farmers talk in country English (“I puffs and I blows,” “Us knows not”); sartin means certain. Read with a light, dancing beat.",
+      "contentNote": "One farmer dances into the sea and does not come back; the poem imagines him feasting with the mermaids, and his friends pay him the bet he has won.",
+      "excerpt": {
+        "locator": "Four Queer Tales, “Off the Ground,” the complete poem; opens “THREE jolly Farmers Once bet a pound Each dance the others would Off the ground. Out of…”; closes “…it's sartin sure, Turvey, Safe and sound, You danced us square, Turvey, Off the ground!\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          89,
+          89
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "92a4b275804f255435f55e91671d96fd220d8c1af8f451d587b2fce79df38d80"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-08-q1",
+          "prompt": "What did the three farmers bet about?",
+          "facilitatorNotes": [
+            "Each bet a pound that he could dance the others off the ground, that is, keep dancing longer than they could."
+          ],
+          "evidence": [
+            "Once bet a pound",
+            "Each dance the others would"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-08-q2",
+          "prompt": "What happens when they reach the sea? What do Bates and Giles do, and what does Turvey do?",
+          "facilitatorNotes": [
+            "Bates is out of breath and Giles feels weak, so they sit on the stony beach; Turvey pulls up his gaiters and dances into the water."
+          ],
+          "evidence": [
+            "On the shingle sat,",
+            "And in he goes:"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-08-q3",
+          "prompt": "Bates and Giles do not know where Turvey is, but they pay him anyway. Why? Where do you think he is?",
+          "facilitatorNotes": [
+            "They agree he won: he danced them “off the ground.” The poem pictures him under the sea eating off plates of gold with the mermaids. Some children will believe that; some may worry that something sadder happened. The poem keeps it a mystery, like a dream."
+          ],
+          "evidence": [
+            "You danced us square, Turvey,",
+            "Off plates of gold."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-09",
       "title": "Nicholas Nye",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -351,7 +543,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-06-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-09-q1",
           "prompt": "Where does the speaker lie in the heat of the day, and who is there with him?",
           "facilitatorNotes": [
             "On the orchard wall, with no one but Nicholas Nye."
@@ -362,7 +554,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-06-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-09-q2",
           "prompt": "What does Nicholas Nye look like? Find two details.",
           "facilitatorNotes": [
             "Lean and grey, lame in one leg, old, bony and knobble-kneed. Children can describe or draw him."
@@ -373,7 +565,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-06-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-09-q3",
           "prompt": "Something passes between the boy and the donkey that is “much better than words.” What could it be?",
           "facilitatorNotes": [
             "A feeling of friendship: the donkey seems to smile at him across the grass. Children may say comfort, kindness or company; ask how the boy can tell, since the donkey never speaks."
@@ -386,7 +578,7 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-07",
+      "id": "reading-k-delamare-peacock-pie-1920-10",
       "title": "Five Eyes",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -415,7 +607,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-07-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-10-q1",
           "prompt": "How many cats are there? Why does the poem say five eyes?",
           "facilitatorNotes": [
             "Three cats, and one of them, Jill, has only one eye: two and two and one make five."
@@ -426,7 +618,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-07-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-10-q2",
           "prompt": "What do the cats do all night while Hans snores?",
           "facilitatorNotes": [
             "They watch the grain bins for rats and pounce in and out after them."
@@ -437,7 +629,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-07-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-10-q3",
           "prompt": "The cats are black at night. Why are they grey in the morning?",
           "facilitatorNotes": [
             "They are covered in meal, the flour dust of the mill. Children may enjoy picturing floury cats."
@@ -449,7 +641,7 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-08",
+      "id": "reading-k-delamare-peacock-pie-1920-11",
       "title": "Summer Evening",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -478,7 +670,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-08-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-11-q1",
           "prompt": "What does each animal do at the end of the day?",
           "facilitatorNotes": [
             "The cat mews for a treat, Rover chews a bone and barks at a mouse, the cattle chew the cud, and Dobbin pulls his hay. Children can act one out."
@@ -489,7 +681,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-08-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-11-q2",
           "prompt": "Which animals are inside, and which are out in the fields?",
           "facilitatorNotes": [
             "The cat is by the Farmer’s chair, Rover in his kennel, Dobbin at his manger; only the cattle lie out in the dewy fields."
@@ -499,7 +691,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-08-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-11-q3",
           "prompt": "What does the last line tell us? Does the poem feel busy or quiet?",
           "facilitatorNotes": [
             "Another summer’s day is over. Most children will hear it as quiet and sleepy, with everyone eating and resting under a fading sky; a child who hears the mewing and barking as busy can point to those lines."
@@ -512,7 +704,7 @@
       ]
     },
     {
-      "id": "reading-k-delamare-peacock-pie-1920-09",
+      "id": "reading-k-delamare-peacock-pie-1920-12",
       "title": "Silver",
       "sourceId": "delamare-peacock-pie-1920",
       "genre": "poetry",
@@ -541,7 +733,7 @@
       },
       "questions": [
         {
-          "id": "reading-k-delamare-peacock-pie-1920-09-q1",
+          "id": "reading-k-delamare-peacock-pie-1920-12-q1",
           "prompt": "How does the moon walk through the night?",
           "facilitatorNotes": [
             "Slowly and silently, in silver shoes."
@@ -552,7 +744,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-09-q2",
+          "id": "reading-k-delamare-peacock-pie-1920-12-q2",
           "prompt": "Which animals does the moonlight touch?",
           "facilitatorNotes": [
             "A sleeping dog with silver paws, doves in silver-feathered sleep, a harvest mouse with silver claws and eye, and fish gleaming in the stream."
@@ -563,7 +755,7 @@
           ]
         },
         {
-          "id": "reading-k-delamare-peacock-pie-1920-09-q3",
+          "id": "reading-k-delamare-peacock-pie-1920-12-q3",
           "prompt": "Why do you think the poet uses the word “silver” so many times?",
           "facilitatorNotes": [
             "Moonlight makes everything look pale and shining, so the repeated word paints the whole scene one colour and keeps it calm. Children may count the silvers or say it sounds like a song; both notice the pattern."
@@ -571,6 +763,70 @@
           "evidence": [
             "Silver fruit upon silver trees;",
             "By silver reeds in a silver stream."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-k-delamare-peacock-pie-1920-13",
+      "title": "The Bees’ Song",
+      "sourceId": "delamare-peacock-pie-1920",
+      "genre": "poetry",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Listen for the buzzing sound hidden in the words.",
+      "focus": "The song is spelled with z’s so that it buzzes like bees, while it tells of a fairy princess’s zebra among the roses.",
+      "context": "Walter de la Mare’s Peacock Pie is a book of rhymes for children. Bees sing this song, so many s sounds are spelled with z to make them buzz: “thouzandz of thornz” is thousands of thorns, “Rozez” are roses, “blozzomz” blossoms, and “nozez the poziez” noses the posies. Zee is a make-believe land; a steed is a horse to ride; Abracadeeebra is a magic word; incense is something with a sweet smell; to solace is to comfort. Read it with plenty of buzz.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Songs, “The Bees' Song,” the complete poem; opens “THOUZANDZ of thornz there be On the Rozez where gozez The Zebra of Zee: Sleek, striped,…”; closes “…honeyed for he, But to breathe a sweet incense To solace the Princess Of far-away Zee.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          290,
+          293
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fcb26a5562035eb929faaec0a05fe6c0fda986582d38537a7490a8fb03daceac"
+      },
+      "questions": [
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-13-q1",
+          "prompt": "Which animal lives among the roses of Zee, and whom does it carry?",
+          "facilitatorNotes": [
+            "A zebra, sleek and striped, the horse of the Fairy Princess of Zee."
+          ],
+          "evidence": [
+            "The Zebra of Zee:",
+            "The steed of the Fairy"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-13-q2",
+          "prompt": "Why do you think this song is full of z’s? Buzz a line together.",
+          "facilitatorNotes": [
+            "The bees are singing it, and z is the sound bees make. Let the child buzz “Thouzandz of thornz.”"
+          ],
+          "evidence": [
+            "THOUZANDZ of thornz there be",
+            "Heavy with blozzomz be"
+          ]
+        },
+        {
+          "id": "reading-k-delamare-peacock-pie-1920-13-q3",
+          "prompt": "The zebra knows the roses are not for him. Who are they for? How do you think he feels?",
+          "facilitatorNotes": [
+            "They grow to give their sweet smell to comfort the Princess. He sniffs them carefully, watching out for the fairy; children may say he is sad not to have them, or that he is guarding them for her."
+          ],
+          "evidence": [
+            "Were not honeyed for he,",
+            "To solace the Princess"
           ]
         }
       ]
