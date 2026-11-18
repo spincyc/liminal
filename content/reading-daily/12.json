@@ -288,7 +288,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "1ef8fe67c85b169f52bf90fcfc8338365bc55603ca270eba82966fd937850d0b"
+        "textHash": "19cc3d52ec07dfea1dea8f296c1f3f7aadf98648b8f661f5d7a161c40ab16e45"
       },
       "questions": [
         {
@@ -341,7 +341,7 @@
       "context": "A moving light prompts speculation about strangers. The poem later admits a failure of the observer’s own attention.",
       "contentNote": null,
       "excerpt": {
-        "locator": "The Lantern out of Doors; complete individual work; opens “SOMETIMES a lantern moves along the night, That interests our eyes. And who goes there? I think; whe”; closes “art wants, care haunts, foot follows kind, Their ransom, their rescue, and first, fast, last friend.”.",
+        "locator": "The Lantern out of Doors; complete individual work; opens “SOMETIMES a lantern moves along the night, That interests our eyes. And who goes there? I think; whe”; closes “art wánts, care haúnts, foot fóllows kínd, Their ránsom, théir rescue, ánd first, fást, last friénd.”.",
         "isCompleteWork": true,
         "continuesFrom": null,
         "continuesTo": null,
@@ -351,7 +351,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "10198b378dd3b3264633c121ad5b05c6634e34a7559ba5ac1b6e3b01cd5fe344"
+        "textHash": "b6738fb8c4852c3f3f1995a54642f20d343d815f1cdd3840e1f6abf1d6248710"
       },
       "questions": [
         {
@@ -381,7 +381,7 @@
             "Seeing becomes wanting, caring, following, ransoming and rescuing. Christ’s care is active and continuous; readers can analyze that claim without sharing its theology."
           ],
           "evidence": [
-            "Their ransom, their rescue, and first, fast, last friend."
+            "Their ránsom, théir rescue, ánd first, fást, last friénd."
           ]
         }
       ]
@@ -408,27 +408,14 @@
         "isCompleteWork": true,
         "continuesFrom": null,
         "continuesTo": null,
-        "inlineReason": "The night prints the closing tercet's first line, “Have lost that cheer and charm of earth's past prime:”, flush left, but the Project Gutenberg 22403 transcription indents it three spaces like the other short-rhymed lines; the words are otherwise identical, so the night is not an exact range of the stored work.",
-        "textHash": "706bf5edc37f94ca62a4f401c034dc11ed78c4d85aadcd9da4f410705e0e9f74"
+        "blocks": [
+          105,
+          108
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4386a4e753afc8a155ff18072108340d509b5f5b58c74365f187e38ac4857d5f"
       },
-      "blocks": [
-        {
-          "type": "stanza",
-          "text": "ON ear and ear two noises too old to end\n   Trench--right, the tide that ramps against the shore;\n   With a flood or a fall, low lull-off or all roar,\nFrequenting there while moon shall wear and wend."
-        },
-        {
-          "type": "stanza",
-          "text": "Left hand, off land, I hear the lark ascend,\n   His rash-fresh re-winded new-skeined score\n   In crisps of curl off wild winch whirl, and pour\nAnd pelt music, till none's to spill nor spend."
-        },
-        {
-          "type": "stanza",
-          "text": "How these two shame this shallow and frail town!\n   How ring right out our sordid turbid time,\nBeing pure! We, life's pride and cared-for crown,"
-        },
-        {
-          "type": "stanza",
-          "text": "Have lost that cheer and charm of earth's past prime:\nOur make and making break, are breaking, down\n    To man's last dust, drain fast towards man's first slime."
-        }
-      ],
       "questions": [
         {
           "id": "reading-12-w01-d5-q1",
@@ -447,7 +434,7 @@
             "Unwinding thread and rotating machinery suggest repeated, intricately produced sound. The language borrows human craft to praise nature, complicating the later rejection of human making."
           ],
           "evidence": [
-            "His rash-fresh re-winded new-skeined score"
+            "His rash-fresh re-winded new-skeinèd score"
           ]
         },
         {
@@ -490,7 +477,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "afbcd8dc8fade4c7d353222a605c0085b361bf153f5eb4212666076ce749501e"
+        "textHash": "f12d0b2d4d184e75f726ea55a3ad04458f0380c684e74958b4ec997aa15c88a4"
       },
       "questions": [
         {
@@ -510,7 +497,7 @@
             "Human making joins the catalogue of particular forms. This praise complicates any assumption that Hopkins values only untouched nature."
           ],
           "evidence": [
-            "And all trades, their gear and tackle and trim."
+            "And áll trádes, their gear and tackle and trim."
           ]
         },
         {
@@ -543,7 +530,7 @@
       "context": "The bird and human spirit appear parallel at first. Watch how the sestet resists a simple body-bad/spirit-good reading.",
       "contentNote": null,
       "excerpt": {
-        "locator": "Caged Skylark; complete individual work; opens “As a dare-gale skylark scanted in a dull cage Man's mounting spirit in his bone-house, mean house, d”; closes “, But uncumbered: meadow-down is not distressed For a rainbow footing it nor he for his bones risen.”.",
+        "locator": "Caged Skylark; complete individual work; opens “As a dare-gale skylark scanted in a dull cage Man's mounting spirit in his bone-house, mean house, d”; closes “, But uncumbered: meadow-down is not distressed For a rainbow footing it nor he for his bónes rísen.”.",
         "isCompleteWork": true,
         "continuesFrom": null,
         "continuesTo": null,
@@ -553,7 +540,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "5355220c145800f74318705b82311871bb0f5ba5d8076ad439b9843a67d2023f"
+        "textHash": "c8434dfac7eaad4f0b17cbf2d224afaa926f911e8c6add3c83f3fe2d4524c6b3"
       },
       "questions": [
         {
@@ -583,7 +570,7 @@
             "A rainbow touches a meadow without burdening it. The image imagines embodiment without oppressive weight, revising the opening identification of flesh with confinement."
           ],
           "evidence": [
-            "For a rainbow footing it nor he for his bones risen."
+            "For a rainbow footing it nor he for his bónes rísen."
           ]
         }
       ]
@@ -606,7 +593,7 @@
       "context": "The subtitle records the felling of trees in 1879. Read the changes in tempo from moving shade to repeated final lament.",
       "contentNote": null,
       "excerpt": {
-        "locator": "Binsey Poplars felled 1879; complete individual work; opens “MY aspens dear, whose airy cages quelled, Quelled or quenched in leaves the leaping sun, All felled,”; closes “s of havoc unselve The sweet especial scene, Rural scene, a rural scene, Sweet especial rural scene.”.",
+        "locator": "Binsey Poplars felled 1879; complete individual work; opens “MY aspens dear, whose airy cages quelled, Quelled or quenched in leaves the leaping sun, All felled,”; closes “s of havoc únselve The sweet especial scene, Rural scene, a rural scene, Sweet especial rural scene.”.",
         "isCompleteWork": true,
         "continuesFrom": null,
         "continuesTo": null,
@@ -616,7 +603,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "14f676d1f173cc367d2528d6a7044cf01a1cc306556e8626a142a48a462116d2"
+        "textHash": "7c7d38a641ab3f3e8f6b3f6aa581932b3a74585e04e2432acd0ec219e4438115"
       },
       "questions": [
         {
@@ -669,7 +656,7 @@
       "context": "Margaret mourns falling leaves. The adult speaker claims to understand a sorrow she cannot yet name.",
       "contentNote": "Meditation on grief and mortality.",
       "excerpt": {
-        "locator": "Spring and Fall: to a young child; complete individual work; opens “MARGARET, are you grieving Over Goldengrove unleaving? Leaves, like the things of man, you With your”; closes “What heart heard of, ghost guessed: It is the blight man was born for, It is Margaret you mourn for.”.",
+        "locator": "Spring and Fall: to a young child; complete individual work; opens “MÁRGARÉT, áre you gríeving Over Goldengrove unleaving? Leáves, líke the things of man, you With your”; closes “What heart heard of, ghost guessed: It ís the blight man was born for, It is Margaret you mourn for.”.",
         "isCompleteWork": true,
         "continuesFrom": null,
         "continuesTo": null,
@@ -679,7 +666,7 @@
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "1d9d65743e93f24c01df62071f20c5512617bd1957cdca9f76ac3ce0e85cf222"
+        "textHash": "b2ca9015c46b1549b7e3bff7164fd0fd59dae391bafaf6dc5acda9facbc86c42"
       },
       "questions": [
         {
@@ -699,7 +686,7 @@
             "No: older people may react more coldly to leaves yet understand their own reason for weeping. Knowledge changes the object and expression of grief, not its source."
           ],
           "evidence": [
-            "And yet you will weep and know why."
+            "And yet you wíll weep and know why."
           ]
         },
         {
@@ -737,12 +724,12 @@
         "continuesFrom": null,
         "continuesTo": null,
         "blocks": [
-          259,
-          260
+          258,
+          259
         ],
         "startChar": null,
         "endChar": null,
-        "textHash": "a22f6dd83b009e3969b236e554f085375c7396786e9aa1fd7b73768f51df58d6"
+        "textHash": "cd3ebb934197a166a2aff90256cfc74dd66b89d0e7ce9df218bda76f7b7c5303"
       },
       "questions": [
         {
@@ -752,7 +739,7 @@
             "The speaker refuses despair as carrion nourishment and insists on being able to hope, wish or resist. These are small capacities, not a claim that suffering has vanished."
           ],
           "evidence": [
-            "Can something, hope, wish day come, not choose not to be."
+            "Cán something, hope, wish day come, not choose not to be."
           ]
         },
         {
