@@ -459,6 +459,545 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-08",
+      "title": "The missing brooch (Anne of Green Gables, chapter xiv, part 1 of 2)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 12,
+        "totalMinutes": 21
+      },
+      "challenge": "Watch the narrator show you a misunderstanding that one character cannot see.",
+      "focus": "Marilla’s amethyst brooch is gone, and she is sure Anne has taken it and lied.",
+      "context": "In L. M. Montgomery’s Anne of Green Gables (1908), Anne Shirley, an orphan of eleven, has come to live with Marilla Cuthbert and her shy brother Matthew at Green Gables, their farm in Avonlea on Prince Edward Island. In the chapter before this one, the Sunday-school picnic was announced. Anne has never been to a picnic, and there is to be ice-cream. On Sunday she admired the amethyst brooch Marilla always wears to church, Marilla’s most treasured possession. Once before, Marilla kept Anne in her room until she agreed to apologise to Mrs. Rachel Lynde for an outburst of temper. The Aid Society is a church women’s group; a bureau is a chest of drawers.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIV, “Anne’s Confession,” from Marilla’s question about her brooch to the shut door on the evening before the picnic; opens “On the Monday evening before the picnic Marilla came down from her room with a troubled…”; closes “But Marilla had gone out and shut the door.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-09",
+        "blocks": [
+          624,
+          655
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "28860ed8697c441dbd2457bd4d4f92a3756cb4307f1438f30f884259fa54819a"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-08-q1",
+          "prompt": "What exactly does Anne admit, and what does she deny? Follow Marilla’s reasoning: why is she so sure Anne is lying?",
+          "facilitatorNotes": [
+            "Anne admits going into the room and pinning the brooch on; she denies taking it out of the room. Marilla reasons that nobody else has been in the room and the brooch is gone, so Anne must have taken it. Given what she knows, her reasoning is not foolish; what she lacks is a third possibility."
+          ],
+          "evidence": [
+            "I took it up and I pinned it on my breast just to see how it would look.",
+            "there hasn’t been a soul in that room since she was in it, by her own story, until I went up to-night"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-08-q2",
+          "prompt": "Twice the narrator tells us how Marilla hears Anne, not only what Anne says. Find both places. What do they let the reader know that Marilla does not?",
+          "facilitatorNotes": [
+            "Anne speaks “quickly—pertly, Marilla thought,” and her “so there” is “only intended to emphasize her assertion,” but Marilla takes it as defiance. The narrator lets us see that Marilla is misreading Anne’s manner. That makes the reader more inclined than Marilla to believe Anne, though it does not yet prove her innocent."
+          ],
+          "evidence": [
+            "pertly, Marilla thought",
+            "Anne’s “so there” was only intended to emphasize her assertion, but Marilla took it as a display of defiance."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-08-q3",
+          "prompt": "Marilla says she minds the lie more than the loss of the brooch. Why might that be, for someone who has just taken on a child?",
+          "facilitatorNotes": [
+            "She feels “a fearful responsibility”: she must trust a child who lives in her house, and lying seems to her worse than temper. Her worry is about Anne’s character and her own judgment in keeping her. Some readers will add that her pride is hurt, or that she fears Mrs. Rachel was right about Anne all along."
+          ],
+          "evidence": [
+            "I declare I feel worse about that than about the brooch.",
+            "It’s a fearful responsibility to have a child in your house you can’t trust."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-08-q4",
+          "prompt": "Marilla decides Anne will stay in her room until she confesses, and the picnic is the next day. What could go wrong with this method if Anne is telling the truth?",
+          "facilitatorNotes": [
+            "If Anne did not take the brooch, she has nothing true to confess, so the only way out of the room, and to the picnic, is to confess something false. Marilla has set up a choice between honesty and the thing Anne wants most. Readers can predict what Anne will do; the next night shows it."
+          ],
+          "evidence": [
+            "She’ll stay in her room until she confesses",
+            "You’ll not go to picnics nor anywhere else until you’ve confessed, Anne."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-09",
+      "title": "Anne’s confession (Anne of Green Gables, chapter xiv, part 2 of 2)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 10,
+        "totalMinutes": 23
+      },
+      "challenge": "Decide who is responsible when a punishment forces a lie.",
+      "focus": "Anne confesses to losing the brooch, and Marilla finds it.",
+      "context": "Recap: Marilla’s amethyst brooch disappeared on the Monday before the Sunday-school picnic. Anne admitted trying it on but insisted she put it back; Marilla, sure she was lying, shut her in her room in the east gable until she confessed, picnic or no picnic. Idlewild is the place where Anne and Diana Barry play; the Lake of Shining Waters is Anne’s name for Barry’s pond. To put one’s hand to the plough and not look back, from the Gospel of Luke, means to finish what one has begun. A bread sponge is dough set to rise overnight; Jerry Buote is the hired boy.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XIV, “Anne’s Confession,” from the morning of the picnic to the end of the chapter; opens “Wednesday morning dawned as bright and fair as if expressly made to order for the picnic.…”; closes “…all right yet. And there’s one thing certain, no house will ever be dull that she’s in.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-08",
+        "continuesTo": null,
+        "blocks": [
+          656,
+          694
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6a28bd8286308e3b99f704fbe8f080c86b0217d87df0f0737b3f59428b7cc016"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-09-q1",
+          "prompt": "Anne’s confession is full of vivid detail. Which details make it sound true? Which, looking back, should have made Marilla suspicious?",
+          "facilitatorNotes": [
+            "The bridge, the sunlight and the brooch sinking “all purply-sparkling” sound like something witnessed. But she speaks “as if repeating a lesson,” shows no sorrow, and calls it “the best I can do at confessing,” as if it were a performance. Marilla reads the calm as hardness rather than as a sign the story is invented."
+          ],
+          "evidence": [
+            "said Anne, as if repeating a lesson she had learned",
+            "all purply-sparkling, and sank forevermore beneath the Lake of Shining Waters",
+            "And that’s the best I can do at confessing, Marilla."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-09-q2",
+          "prompt": "“Neither the shelves nor the porch needed it—but Marilla did.” What does Marilla’s scrubbing show about her that her words to Anne and Matthew do not?",
+          "facilitatorNotes": [
+            "She is upset, perhaps uneasy about her own severity, and works it off with her hands. To Matthew she insists she has “let her off entirely too easy,” but her actions suggest she is not at peace. Readers might also see plain anger in the scrubbing; both readings fit."
+          ],
+          "evidence": [
+            "Neither the shelves nor the porch needed it—but Marilla did.",
+            "I think I’ve let her off entirely too easy."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-09-q3",
+          "prompt": "Matthew says “she’s never had any bringing up”; Marilla answers “she’s having it now.” What does each think Anne needs?",
+          "facilitatorNotes": [
+            "Matthew asks for allowances: a child with no upbringing cannot be judged by ordinary rules. Marilla thinks firm correction is exactly what is missing. The chapter later tests her view, since her firmness produced a false confession. Some readers will still side with Marilla’s principle, if not with how she applied it."
+          ],
+          "evidence": [
+            "And there should be allowances made, Marilla. You know she’s never had any bringing up.",
+            "Well, she’s having it now,"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-09-q4",
+          "prompt": "Marilla says “I drove you to it” but also that the false confession was “very wrong.” Who is more to blame, and does Marilla’s apology settle it?",
+          "facilitatorNotes": [
+            "A defensible answer is that both are: Marilla made confession the only way out, and Anne chose to invent a crime. Marilla admits her share first and asks Anne’s forgiveness before giving hers, which is unusual for an adult in this book. Readers can also argue that Anne’s lie was the natural result of an unjust rule and hardly her fault at all."
+          ],
+          "evidence": [
+            "But I drove you to it.",
+            "it was very wrong to do so",
+            "anyhow I’m responsible for it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-10",
+      "title": "The way to school (Anne of Green Gables, chapter xv, part 1 of 3)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 11,
+        "totalMinutes": 21
+      },
+      "challenge": "Notice how the narrator both shares and gently teases Anne’s view of the world.",
+      "focus": "Anne and Diana walk to school by the paths Anne has named, and Anne reports on her first day.",
+      "context": "In L. M. Montgomery’s Anne of Green Gables (1908), the orphan Anne Shirley has been living since June with Marilla and Matthew Cuthbert at Green Gables, in Avonlea on Prince Edward Island. Diana Barry, from the next farm, is her bosom friend. In September Anne starts at the Avonlea school. A “tempest in a teapot” is a great fuss about something small. Queen’s Academy is in Charlottetown, the Island’s capital. The “fourth” and “fifth book” are levels of school reader; a slate is a small framed board pupils wrote on.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XV, “A Tempest in the School Teapot,” from Anne’s “What a splendid day!” through her report on her first day at school; opens ““What a splendid day!” said Anne, drawing a long breath. “Isn’t it good just to be alive…”; closes “…were tripping blithely down the Birch Path, two of the happiest little girls in Avonlea.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-11",
+        "blocks": [
+          697,
+          712
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "35e364c384c6390ff9e2f92b28280a6556dda66caace937ee89750a8b0a002be"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-10-q1",
+          "prompt": "Compare Anne’s first speech with Diana’s thoughts about the raspberry tarts. What does each girl notice about the same morning?",
+          "facilitatorNotes": [
+            "Anne feels the whole day and even pities people not yet born for missing it; Diana is working out how many bites ten girls get from three tarts. The narrator enjoys both: Anne’s rapture and Diana’s practical sense. The friendship works partly because they are different."
+          ],
+          "evidence": [
+            "I pity the people who aren’t born yet for missing it.",
+            "mentally calculating if the three juicy, toothsome, raspberry tarts reposing there were divided among ten girls how many bites each girl would have"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-10-q2",
+          "prompt": "Why does a name matter so much to Anne? Use what she says about Lover’s Lane and about Diana’s “Birch Path.”",
+          "facilitatorNotes": [
+            "Naming lets her imagine more into a place than is there (“We can imagine the lovers into it”), and the lane is somewhere she can think out loud. She dismisses “Birch Path” as a name “anybody” could think of. Readers may find this a little vain, and Anne herself admits “It’s nice to be clever at something.”"
+          ],
+          "evidence": [
+            "We can imagine the lovers into it, you know.",
+            "I like that lane because you can think out loud there without people calling you crazy.",
+            "Anybody can think of a name like that."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-10-q3",
+          "prompt": "After Anne calls the Birch Path “one of the prettiest places in the world,” the narrator begins, “It was.” How does the narrator’s description support Anne, and where does it joke about her?",
+          "facilitatorNotes": [
+            "The narrator agrees and adds sensory detail: light “as flawless as the heart of a diamond,” birches, ferns, bird calls. Then comes a joke: you might see a rabbit if you were quiet, which with Anne and Diana happened “about once in a blue moon.” The narrator loves Anne’s world but is not lost in it."
+          ],
+          "evidence": [
+            "It was. Other people besides Anne thought so when they stumbled on it.",
+            "which, with Anne and Diana, happened about once in a blue moon"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-10-q4",
+          "prompt": "Anne’s report on her first day mixes gossip, complaint and delight. What does she notice about the master, Mr. Phillips? Is Marilla right to stop her?",
+          "facilitatorNotes": [
+            "She repeats other girls’ stories that he favours Prissy Andrews, and she resents his showing her marked-up slate to the class. Marilla wants respect for teachers and no tale-bearing. Readers can argue either way: Anne is gossiping, but her observations about a master who shames pupils in public may be worth hearing."
+          ],
+          "evidence": [
+            "He’s all the time curling his moustache and making eyes at Prissy Andrews.",
+            "he held up my slate so that everybody could see it, all marked over",
+            "You don’t go to school to criticize the master."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-11",
+      "title": "“Carrots!” (Anne of Green Gables, chapter xv, part 2 of 3)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 11,
+        "totalMinutes": 22
+      },
+      "challenge": "Weigh a punishment against the offence and the provocation.",
+      "focus": "Gilbert Blythe comes back to school, and Anne meets him in the worst way.",
+      "context": "Recap: Anne has been three weeks at the Avonlea school, where she sits with her friend Diana Barry. She likes the other girls but not the master, Mr. Phillips, who spends his time with sixteen-year-old Prissy Andrews and who held up Anne’s marked-up slate for the class to see. A “take notice” is a joke notice chalked on a wall to pair a boy’s and a girl’s names. To be “head” of a class is to stand first in a spelling contest; “ebullition” means a boiling up. New Brunswick is the province across the strait from Prince Edward Island, and Alberta is far to the west. “The iron has entered into my soul” is an old phrase from the Psalms for lasting pain.",
+      "contentNote": "A boy mocks a girl’s red hair; she breaks her slate over his head, and the master shames her in front of the school. Mr. Phillips’s favouritism toward a sixteen-year-old pupil is reported as gossip.",
+      "excerpt": {
+        "locator": "Chapter XV, “A Tempest in the School Teapot,” from Diana’s news of Gilbert Blythe to the walk home after school; opens ““I guess Gilbert Blythe will be in school to-day,” said Diana. “He’s been visiting his…”; closes “…if nothing else had happened. But when things begin to happen they are apt to keep on.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-10",
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-12",
+        "blocks": [
+          713,
+          754
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5a60c9bd2f89c24f4df8f9a0981718b1884a567e3f3be7ca7cb8504d200ae5a5"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-11-q1",
+          "prompt": "Before Anne meets Gilbert, what does she learn about him from Diana? What does Diana’s voice give away about her own feelings?",
+          "facilitatorNotes": [
+            "He is handsome, teases the girls, and is used to being head of his class, though he lost years of school in Alberta. Diana complains that he torments them, but the narrator says she “rather liked” it. Anne answers that she is glad to have real competition, which sets up a rivalry before they have spoken."
+          ],
+          "evidence": [
+            "Diana’s voice indicated that she rather liked having her life tormented out than not.",
+            "he’s used to being head of his class, I can tell you"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-11-q2",
+          "prompt": "On the walk, Anne says she would “rather be pretty than clever.” How does that help explain why “Carrots!” wounds her more than “crow” wounds Diana?",
+          "facilitatorNotes": [
+            "Anne is sensitive about her freckles and hair and wants above all to be pretty; Diana is admired for her black hair and can laugh at “crow.” Gilbert has hit the place where Anne is weakest, in front of everyone. Readers may add that Gilbert wanted her attention and did not know how much it would hurt."
+          ],
+          "evidence": [
+            "I’d rather be pretty than clever.",
+            "There’s a great deal of difference between being called a crow and being called carrots,"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-11-q3",
+          "prompt": "Gilbert says at once, “It was my fault.” Why does Mr. Phillips ignore him, and how does the narrator judge the master’s punishment?",
+          "facilitatorNotes": [
+            "Mr. Phillips punishes what he saw, the blow, and does not ask about the cause. The narrator mocks his solemnity (“as if the mere fact of being a pupil of his ought to root out all evil passions”) and the cruelty of reading the words aloud for the youngest pupils. A reader can still hold that Anne deserved some punishment for striking Gilbert; the question is whether this one was just."
+          ],
+          "evidence": [
+            "Mr. Phillips paid no heed to Gilbert.",
+            "as if the mere fact of being a pupil of his ought to root out all evil passions from the hearts of small imperfect mortals",
+            "so that even the primer class, who couldn’t read writing, should understand it"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-11-q4",
+          "prompt": "Gilbert apologises, and Anne will not forgive him. Is she right? What does the chapter’s last sentence suggest about what comes next?",
+          "facilitatorNotes": [
+            "His apology seems sincere (“contritely”), and Diana says he has never apologised before. Anne’s hurt and pride, and her taste for drama (“The iron has entered into my soul”), make forgiveness impossible for now. Readers may sympathise with her or find her unfair. The last sentence promises more trouble: “when things begin to happen they are apt to keep on.”"
+          ],
+          "evidence": [
+            "I’m awful sorry I made fun of your hair, Anne,",
+            "I shall never forgive Gilbert Blythe,",
+            "But when things begin to happen they are apt to keep on."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-12",
+      "title": "Anne leaves school (Anne of Green Gables, chapter xv, part 3 of 3)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 9,
+        "totalMinutes": 24
+      },
+      "challenge": "Judge adults’ decisions from what they say to children and what they say to each other.",
+      "focus": "Singled out for punishment again, Anne refuses to go back to school, and Mrs. Rachel gives advice.",
+      "context": "Recap: on the day Gilbert Blythe returned to school he held up Anne’s braid and called her “Carrots!”; she cracked her slate over his head. The master, Mr. Phillips, ignored Gilbert’s confession that he had teased her and made Anne stand before the class under the words “Ann Shirley has a very bad temper.” Anne refused Gilbert’s apology and vowed never to forgive him. Spruce gum is the hardened resin of spruce trees, which children chewed. A scapegoat is someone blamed for what many did; a trustee is one of the local men who hire the teacher. Priscilla is Prissy Andrews’s full name.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XV, “A Tempest in the School Teapot,” from the noon hour in Mr. Bell’s spruce grove to the end of the chapter; opens “Avonlea scholars often spent noon hour picking gum in Mr. Bell’s spruce grove over the…”; closes “…pity’s sake borrow it handier home. I should think you had an imagination, sure enough.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-11",
+        "continuesTo": null,
+        "blocks": [
+          755,
+          798
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3f73ecfec1c6ab21e6687f1b98cd98f97ab25b5e6f4aa5328b0783fa994fc266"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-12-q1",
+          "prompt": "Why does Mr. Phillips punish Anne and no one else? What does the narrator mean when he does it “to save his word”?",
+          "facilitatorNotes": [
+            "A dozen pupils were late, but he does not want the bother of punishing them all, so he picks one to show he meant his threat. Anne, who was not even picking gum, arrived last with flowers in her hair and is an easy target. His sarcastic “so fond of the boys’ company” adds insult."
+          ],
+          "evidence": [
+            "he didn’t want the bother of punishing a dozen pupils; but it was necessary to do something to save his word, so he looked about for a scapegoat",
+            "since you seem to be so fond of the boys’ company we shall indulge your taste for it this afternoon"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-12-q2",
+          "prompt": "While Anne sits beside Gilbert, Mr. Phillips is writing verses “To Priscilla,” and Gilbert slips Anne a candy heart. What does each detail show?",
+          "facilitatorNotes": [
+            "The verses show the master’s mind is on Prissy, not his pupils, so he does not even notice Anne skipping her history class. The candy heart reading “You are sweet” is Gilbert’s peace offering; Anne grinds it to powder in a deliberate, theatrical refusal. Some readers will see Gilbert’s gift as kind, others as more teasing."
+          ],
+          "evidence": [
+            "who had been writing some verses “To Priscilla” before he called the class",
+            "dropped it on the floor, ground it to powder beneath her heel"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-12-q3",
+          "prompt": "Mrs. Rachel tells Marilla that Mr. Phillips was in the wrong, but “it doesn’t do to say so to the children.” What does she really think of him? Is her advice wise?",
+          "facilitatorNotes": [
+            "She thinks him a bad teacher who keeps poor order, neglects the young pupils and holds his job through his uncle; she also thinks Anne was rightly punished the first day but not the second. Her advice is to let Anne stay home until she cools off. The narrator teases her love of giving advice, yet her reading of Anne proves sound. Readers can question whether adults should hide their judgment of a teacher from children."
+          ],
+          "evidence": [
+            "It’s my belief that Mr. Phillips was in the wrong. Of course, it doesn’t do to say so to the children, you know.",
+            "Mr. Phillips isn’t any good at all as a teacher.",
+            "Mrs. Lynde dearly loved to be asked for advice"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-12-q4",
+          "prompt": "The chapter ends not with Gilbert but with Anne weeping over Diana’s imagined wedding. Why does Marilla laugh? How does this ending connect to the chapter title, “A Tempest in the School Teapot”?",
+          "facilitatorNotes": [
+            "Anne is grieving over something that has not happened and may not for years, and she cries “luxuriously,” half enjoying it. Marilla’s “borrow trouble … handier home” means: if you must worry in advance, worry about something closer. The title names the chapter’s pattern: great storms over small things. Readers may also notice that Marilla laughing so hard is itself rare, which shows how Anne is changing her."
+          ],
+          "evidence": [
+            "sobbed Anne luxuriously",
+            "if you must borrow trouble, for pity’s sake borrow it handier home",
+            "When had he heard Marilla laugh like that before?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-13",
+      "title": "Diana comes to tea (Anne of Green Gables, chapter xvi, part 1 of 2)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 11,
+        "totalMinutes": 22
+      },
+      "challenge": "Notice clues the writer plants that a reader can see and a character cannot.",
+      "focus": "Marilla lets Anne give her first tea party, and the girls play at being grown-up.",
+      "context": "In L. M. Montgomery’s Anne of Green Gables (1908), the orphan Anne Shirley lives with Marilla and Matthew Cuthbert at Green Gables in Avonlea, Prince Edward Island. Her bosom friend Diana Barry lives at Orchard Slope, the next farm. After a quarrel with the master, Mr. Phillips, Anne has stopped going to school. The Aid Society is a church women’s group; to let tea “draw” is to let it steep. Preserves that are “beginning to work” are starting to ferment. Raspberry cordial is a sweet, non-alcoholic fruit drink. The Lily Sands is a ship loading potatoes, and an aftermath is a second growth of grass after mowing.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter XVI, “Diana Is Invited to Tea with Tragic Results,” from the October opening to Diana’s praise of the raspberry cordial; opens “October was a beautiful month at Green Gables, when the birches in the hollow turned as…”; closes “…than Mrs. Lynde’s although she brags of hers so much. It doesn’t taste a bit like hers.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-7-montgomery-anne-green-gables-1908-14",
+        "blocks": [
+          801,
+          827
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ea86ba3d3b0c18ac75ecd430d475d96bb1a1dfe89f81663a4f15ed04d0d2d09d"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-13-q1",
+          "prompt": "Why does Marilla hesitate before letting Anne invite Diana? What does Anne look forward to most?",
+          "facilitatorNotes": [
+            "Marilla worries the excitement will make Anne even more forgetful (“more addle-pated than ever”), especially after she forgot the tea last time. Anne looks forward less to the food than to the role: sitting at the head of the table, pouring, asking Diana if she takes sugar when she already knows. She wants to play at being grown-up."
+          ],
+          "evidence": [
+            "it may make you more addle-pated than ever",
+            "It will seem so nice and grown-uppish.",
+            "And asking Diana if she takes sugar! I know she doesn’t but of course I’ll ask her just as if I didn’t know."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-13-q2",
+          "prompt": "The girls greet each other “as gravely as if they had never met before.” What makes their polite conversation funny, and what breaks it up?",
+          "facilitatorNotes": [
+            "They are copying adult manners, knocking at the front door, shaking hands and asking after health they already know is excellent. The narrator’s asides (“just as if she had not seen Mrs. Barry picking apples”) point up the pretence. It breaks when Anne forgets to be dignified and jumps up to go to the orchard."
+          ],
+          "evidence": [
+            "both little girls shook hands as gravely as if they had never met before",
+            "just as if she had not seen Mrs. Barry picking apples that morning in excellent health and spirits",
+            "said Anne, forgetting to be dignified and jumping up quickly"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-13-q3",
+          "prompt": "Diana’s school news comes in one long sentence. What picture of Avonlea school does it give, and why does it stop where it does?",
+          "facilitatorNotes": [
+            "Rivalries, superstitions, take-notices, a whipping and a father’s threat, a new hood, a quarrel between sisters’ beaus: a small world full of drama, told in Diana’s breathless rhythm. It stops at Gilbert Blythe because Anne will not hear his name, which shows she has not forgiven him. Readers might wonder what Diana was going to say about him."
+          ],
+          "evidence": [
+            "and everybody missed Anne so and wished she’d come to school again; and Gilbert Blythe—",
+            "But Anne didn’t want to hear about Gilbert Blythe."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-13-q4",
+          "prompt": "Something may be wrong with the “raspberry cordial.” Which clues has Montgomery planted, and what do you predict?",
+          "facilitatorNotes": [
+            "Marilla said the second shelf of the sitting-room closet, but there is no bottle there and Anne finds one on the top shelf; Anne drinks none; Diana drinks three generous tumblerfuls and says it tastes nothing like Mrs. Lynde’s. A careful reader may suspect the bottle is something else. The chapter title, “with Tragic Results,” adds to the suspicion."
+          ],
+          "evidence": [
+            "there was no bottle of raspberry cordial there. Search revealed it away back on the top shelf.",
+            "I don’t believe I’ll have any just now.",
+            "It doesn’t taste a bit like hers."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-7-montgomery-anne-green-gables-1908-14",
+      "title": "Tragic results (Anne of Green Gables, chapter xvi, part 2 of 2)",
+      "sourceId": "montgomery-anne-green-gables-1908",
+      "genre": "fiction",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 9,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow how one mistake is judged differently by different people.",
+      "focus": "Diana goes home sick, and Mrs. Barry forbids the friendship.",
+      "context": "Recap: Marilla let Anne invite Diana to tea while she was out, and told her she might serve the raspberry cordial on the second shelf of the sitting-room closet. Anne found a bottle on the top shelf instead. Diana drank three big tumblerfuls and said it was the nicest she had ever tasted; Anne drank none. Before Green Gables, Anne lived with a Mrs. Thomas, whose husband drank. “Heaping coals of fire on my head,” from the Bible, means being shamed by kindness. Currant wine is wine made from currants; “malice prepense” means deliberate ill will; a suppliant is someone who begs a favour.",
+      "contentNote": "A child becomes drunk by accident on homemade wine. Anne recalls a drunken man from her past, and Marilla says she would cure a greedy child with “a right good spanking.”",
+      "excerpt": {
+        "locator": "Chapter XVI, “Diana Is Invited to Tea with Tragic Results,” from Anne’s story of the cake and the pudding sauce to the end of the chapter; opens ““I should think Marilla’s raspberry cordial would prob’ly be much nicer than Mrs.…”; closes “…child’s tear-stained face. Then she bent down and kissed the flushed cheek on the pillow.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-7-montgomery-anne-green-gables-1908-13",
+        "continuesTo": null,
+        "blocks": [
+          828,
+          873
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dfd6e103be4eb96517cc4d65d140eb4ba0eb8444602bbf455365217ff8071c34"
+      },
+      "questions": [
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-14-q1",
+          "prompt": "While Anne tells her stories about the cake and the pudding sauce, what is happening to Diana? What is funny, and a little uncomfortable, about the subject of Anne’s stories?",
+          "facilitatorNotes": [
+            "Diana is getting drunk while Anne talks on without looking. Anne’s stories are about her imagination making her forget practical things, the flour and the cover, at the very moment a practical mistake is unfolding in front of her. The reader suspects what Anne cannot see, so the comedy and the dread grow together."
+          ],
+          "evidence": [
+            "I’m a great trial to her.",
+            "Flour is so essential to cakes, you know.",
+            "Diana had stood up very unsteadily; then she sat down again, putting her hands to her head."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-14-q2",
+          "prompt": "How did the mistake happen? Is anyone to blame: Anne, Marilla, Diana or no one?",
+          "facilitatorNotes": [
+            "Marilla put the cordial in the cellar, not where she told Anne, and the currant wine was on the shelf. Anne never tasted it, so she could not know. Marilla blames Diana’s greed and says Anne is not to blame. A defensible answer is that it was an accident with Marilla’s mistake at its root; some readers will say Anne should have noticed that the bottle was not where she was told."
+          ],
+          "evidence": [
+            "Marilla recollected that she had put the bottle of raspberry cordial down in the cellar instead of in the pantry as she had told Anne",
+            "I can’t see as you were to blame although I’m sorry it happened so."
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-14-q3",
+          "prompt": "How does the narrator explain Mrs. Barry’s refusal? Why does Anne’s speech, which would have moved Mrs. Lynde, make Mrs. Barry angrier?",
+          "facilitatorNotes": [
+            "The narrator is fair to her (“To do her justice”): she honestly believes Anne meant harm and wants to protect Diana. But Anne’s “big words and dramatic gestures” sound to her like mockery. The same speech would have softened Mrs. Lynde, so the outcome depends on the listener as much as on Anne. The narrator still calls her reply cold and cruel."
+          ],
+          "evidence": [
+            "To do her justice, she really believed Anne had made Diana drunk out of sheer malice prepense",
+            "She was suspicious of Anne’s big words and dramatic gestures and imagined that the child was making fun of her.",
+            "This speech, which would have softened good Mrs. Lynde’s heart in a twinkling"
+          ]
+        },
+        {
+          "id": "reading-7-montgomery-anne-green-gables-1908-14-q4",
+          "prompt": "Marilla defends Anne to Mrs. Barry, laughs about the story with Matthew, and then kisses Anne asleep. What do these three moments together show about her?",
+          "facilitatorNotes": [
+            "She is fiercely loyal (“Of all the unreasonable women”), she sees the comedy, and she has come to love Anne, though she shows tenderness only when no one sees. “Unaccustomed softness” tells us this is new for her. Readers may contrast her with Mrs. Barry, whose concern for her own daughter makes her hard toward someone else’s child."
+          ],
+          "evidence": [
+            "Of all the unreasonable women I ever saw she’s the worst.",
+            "an unaccustomed softness crept into her face",
+            "Then she bent down and kissed the flushed cheek on the pillow."
+          ]
+        }
+      ]
     }
   ]
 }
