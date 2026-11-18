@@ -1098,6 +1098,1018 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-16",
+      "title": "How Napoleon Crossed the Alps",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Decide what a leader’s short sentences tell us about him.",
+      "focus": "A general refuses to hear that a march over the snowy mountains is impossible.",
+      "context": "Napoleon Bonaparte led the army of France about two hundred years ago (Baldwin wrote “about a hundred years ago” in 1896). The Alps are high, snowy mountains between France and Italy; a pass is a way through mountains; cannon are big guns pulled on wheels.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“How Napoleon Crossed the Alps,” the whole story; opens “About a hundred years ago there lived a great gen-er-al whose name was Na-po´le-on…”; closes “…man who has made up his mind to win,\" said Napoleon, \"will never say 'Im-pos-si-ble.'\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          430,
+          437
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ba7c5d1102b8207584f33680fcccf26d858405be3bd754d1498622f425164788"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-16-q1",
+          "prompt": "The scout begins, “It may be possible, but”—and Napoleon stops him. What do you think the scout was going to say?",
+          "facilitatorNotes": [
+            "Probably that it would be very hard or dangerous: snow, cliffs, no road. Napoleon does not want to hear the reasons not to go."
+          ],
+          "evidence": [
+            "It may be possible, but",
+            "Let me hear no more"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-16-q2",
+          "prompt": "Why did people laugh at the plan?",
+          "facilitatorNotes": [
+            "Sixty thousand men, with horses and cannon, were to cross mountains where there was no road. It sounded foolish."
+          ],
+          "evidence": [
+            "People laughed at the thought of an army of sixty thousand men crossing the Alps where there was no road."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-16-q3",
+          "prompt": "What happens when the army reaches a place where there seems to be no way on?",
+          "facilitatorNotes": [
+            "The trumpets sound “Charge!” and every man does his best, so the whole army keeps moving. Ask whether the trumpets or the men did the work."
+          ],
+          "evidence": [
+            "the trum-pets sounded \"Charge!\" Then every man did his best"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-16-q4",
+          "prompt": "Napoleon says a person who has made up his mind to win will never say “Impossible.” Is he right?",
+          "facilitatorNotes": [
+            "He was right this time. Children may also think of times when listening to a warning is wise; the scout may have had good reasons. Both views are fair."
+          ],
+          "evidence": [
+            "will never say 'Im-pos-si-ble.'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-17",
+      "title": "The Story of Cincinnatus",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 5,
+        "totalMinutes": 15
+      },
+      "challenge": "Follow bad news from a faraway valley to a farmer’s field.",
+      "focus": "A poor farmer is given all the power in Rome, saves the city, and gives the power back.",
+      "context": "This is an old Roman legend. The “Fathers” were the old men who made Rome’s laws. To till the soil is to farm it; plundering means robbing; a pass is a narrow way between mountains; entrapped means caught in a trap.",
+      "contentNote": "Soldiers are killed in the fighting. Baldwin calls the mountain tribe “savage” and “half-wild,” the way old Roman stories spoke of Rome’s enemies.",
+      "excerpt": {
+        "locator": "“The Story of Cincinnatus,” the whole story; opens “There was a man named Cin-cin-na´tus who lived on a little farm not far from the city of…”; closes “He had been the ruler of Rome for sixteen days.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          439,
+          458
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d14146c2e3b749c9eaced342d8ca8748185d69be67a48f2c8abcbcbe1433b957"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-17-q1",
+          "prompt": "What do the neighbors always say when someone is in trouble?",
+          "facilitatorNotes": [
+            "“Go and tell Cincinnatus. He will help you.” Later the Fathers say almost the same words, so the story shows his reputation reaching all the way to the rulers."
+          ],
+          "evidence": [
+            "Go and tell Cincinnatus. He will help you.",
+            "Send for Cincinnatus. He will help us."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-17-q2",
+          "prompt": "How was the Roman army caught in a trap?",
+          "facilitatorNotes": [
+            "It was in a narrow valley; the mountain men blocked the way in front and behind and threw rocks from above, so the soldiers could not fight or go back."
+          ],
+          "evidence": [
+            "The fierce men of the mountains were before us and behind us"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-17-q3",
+          "prompt": "What is Cincinnatus doing when the messengers come, and what does he do first?",
+          "facilitatorNotes": [
+            "Plowing his field. He greets them kindly, asks whether all is well with Rome, and puts on his cloak to hear them. He thinks of Rome before himself."
+          ],
+          "evidence": [
+            "Is all well with Rome?"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-17-q4",
+          "prompt": "Why were some people afraid of Cincinnatus, and what does he do that shows they need not have been?",
+          "facilitatorNotes": [
+            "He had all the power in Rome and could have made himself king. Instead he gave the power back after sixteen days and went home to his plow. Ask why that might be harder than winning the battle."
+          ],
+          "evidence": [
+            "he had all power in Rome to do what he pleased",
+            "he gave back the power to the white-haired Roman Fathers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-18",
+      "title": "The Story of Regulus",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 7,
+        "totalMinutes": 14
+      },
+      "challenge": "Weigh a promise against what a person loves most.",
+      "focus": "A Roman general keeps his word to his enemies, though it means leaving his family for prison.",
+      "context": "Rome and Carthage, a great city across the sea in Africa, fought long wars more than two thousand years ago. A prisoner of war is a soldier held by the enemy. Bade them good-by means said goodbye to them.",
+      "contentNote": "Regulus goes back to Carthage knowing he will be put to death; the story names his “cruel death” but does not describe it. His family weeps at the parting.",
+      "excerpt": {
+        "locator": "“The Story of Regulus,” the whole story; opens “On the other side of the sea from Rome there was once a great city named Car-thage. The…”; closes “This was the kind of courage that made Rome the greatest city in the world.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          460,
+          477
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e681fa2d8632d0223c270be845f8f00a8e1f57da43c3b31ba89281b5af5dbf68"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-18-q1",
+          "prompt": "What two things does Carthage make Regulus promise?",
+          "facilitatorNotes": [
+            "To tell the Romans the war is going badly for them, and to come back to prison if they will not make peace."
+          ],
+          "evidence": [
+            "you must promise us, that, if they will not make peace, you will come back to your prison"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-18-q2",
+          "prompt": "Why do the men of Carthage let him go?",
+          "facilitatorNotes": [
+            "They know that a great Roman keeps his word. His good name is what sets him free."
+          ],
+          "evidence": [
+            "for they knew that a great Roman would keep his word"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-18-q3",
+          "prompt": "What does Regulus tell the Fathers about making peace? Is that what Carthage wanted?",
+          "facilitatorNotes": [
+            "The opposite: he tells them to keep fighting because Carthage is afraid and Rome is winning. He keeps his promise to return, but he tells the truth about the war."
+          ],
+          "evidence": [
+            "But it will not be wise to make peace."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-18-q4",
+          "prompt": "His sons beg him to stay. Should he keep his promise? Talk about both sides.",
+          "facilitatorNotes": [
+            "Regulus says a Roman must keep his word, and the story praises his courage. Many children will feel for his family and think the promise was made to enemies; let them say why. The story’s answer and theirs may differ."
+          ],
+          "evidence": [
+            "Shall a Roman not keep his word?",
+            "His wife and little children wept"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-19",
+      "title": "Androclus and the Lion",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 6,
+        "totalMinutes": 13
+      },
+      "challenge": "Notice how one act of kindness is repaid years later.",
+      "focus": "A runaway slave pulls a thorn from a lion’s paw, and the lion remembers him in the arena.",
+      "context": "In ancient Rome some people were slaves, owned by masters and forced to work. Crowds watched fights in great arenas, which Baldwin compares to a circus or a ball game. Befriended means was a friend to; liberty means freedom.",
+      "contentNote": "By the law of the time, a runaway slave is made to face a hungry lion before a crowd that expects to see him killed. No one is hurt.",
+      "excerpt": {
+        "locator": "“Androclus and the Lion,” the whole story; opens “In Rome there was once a poor slave whose name was An´dro-clus. His master was a cruel…”; closes “…the lion was given to him for his own. And they lived together in Rome for many years.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          496,
+          514
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "90f0c872ac98f7009e7a527fb0850f5c1b33b49db622e1f2b9e7be86f2c8b7a9"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-19-q1",
+          "prompt": "How does Androclus know the lion is not angry?",
+          "facilitatorNotes": [
+            "It limps as though its foot hurts, stands still, and rubs its head against his shoulder."
+          ],
+          "evidence": [
+            "he limped as though his foot hurt him"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-19-q2",
+          "prompt": "What does the lion do after the thorn comes out?",
+          "facilitatorNotes": [
+            "Jumps about like a dog, licks Androclus’s hands and feet, sleeps beside him, and brings him food every day."
+          ],
+          "evidence": [
+            "He jumped about like a dog"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-19-q3",
+          "prompt": "Androclus gives a great cry in the arena, “not of fear, but of gladness.” Why gladness?",
+          "facilitatorNotes": [
+            "He recognizes the hungry lion as his friend from the cave."
+          ],
+          "evidence": [
+            "Androclus gave a great cry, not of fear, but of gladness."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-19-q4",
+          "prompt": "Androclus says, “no man has ever befriended me.” What does the crowd learn, and how does it change?",
+          "facilitatorNotes": [
+            "That a lion was kinder to him than any person. The people who came to see him killed shout for his freedom. Ask whether the lion taught the crowd something about kindness."
+          ],
+          "evidence": [
+            "This poor lion alone has been kind to me",
+            "Live and be free!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-20",
+      "title": "Horatius at the Bridge",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 7,
+        "totalMinutes": 14
+      },
+      "challenge": "Follow two things happening at once on either side of a bridge.",
+      "focus": "One Roman guard holds back an army while his friends chop down the bridge behind him.",
+      "context": "This is an old Roman legend. The Tiber is the river that flows through Rome. To keep the foe at bay is to hold the enemy back; to hew is to chop. The verses come from a famous poem about Horatius by Thomas Babington Macaulay; spake means spoke.",
+      "contentNote": "A soldier’s dart puts out Horatius’s left eye, and spears are thrown at him as he swims.",
+      "excerpt": {
+        "locator": "“Horatius at the Bridge,” the whole story, with its lines of verse; opens “Once there was a war between the Roman people and the E-trus´cans who lived in the towns…”; closes “…Still was the story told, How well Horatius kept the bridge In the brave days of old.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          516,
+          533
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cb1193fea431fdc7ff8c770c735a454ca6a4e70b1a480941a2607da1bd7df333"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-20-q1",
+          "prompt": "Why must the bridge come down?",
+          "facilitatorNotes": [
+            "If the Etruscans cross it, the Romans cannot stop them, and the city will be lost."
+          ],
+          "evidence": [
+            "If they once gain the bridge, we cannot hinder them from crossing"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-20-q2",
+          "prompt": "What are the Romans doing behind Horatius while he fights?",
+          "facilitatorNotes": [
+            "Chopping at the beams and posts with axes until the bridge trembles and falls. The two scenes happen at the same time."
+          ],
+          "evidence": [
+            "Their axes rang, the chips flew fast"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-20-q3",
+          "prompt": "What does Horatius tell his two friends to do, and why do you think he stays?",
+          "facilitatorNotes": [
+            "To run for their lives while he keeps the road. Someone has to hold the horsemen back until the bridge falls; he takes the greatest danger himself."
+          ],
+          "evidence": [
+            "Run for your lives!",
+            "I will keep the road."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-20-q4",
+          "prompt": "Even Porsena’s men cheer when Horatius reaches the bank. Why would enemies cheer?",
+          "facilitatorNotes": [
+            "They had never seen anyone so brave and strong, and they could not help praising the deed even though it beat them. Children may find this surprising; ask what it says about courage."
+          ],
+          "evidence": [
+            "Then Porsena's men shouted also",
+            "he had done a deed which they could not help but praise"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-21",
+      "title": "Julius Cæsar",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Put two short episodes together to describe one person.",
+      "focus": "A proud mayor and a frightened boat captain show what Cæsar thought about greatness.",
+      "context": "Julius Cæsar was a Roman general who made himself ruler of Rome about two thousand years ago. The old letter æ in his name sounds like “ee.” A mayor is the head of a town; to strut is to walk proudly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Julius Cæsar,” the whole story; opens “Nearly two thousand years ago there lived in Rome a man whose name was Julius Cæ´sar. He…”; closes “…should you be afraid?\" he said. \"The boat will not be lost; for you have Cæsar on board.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          535,
+          546
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "21f2a73410a0d86147cee22ed6ed3be57c1874097123eaf500c46e30575b4b9c"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-21-q1",
+          "prompt": "Why do Cæsar’s officers laugh at the village mayor?",
+          "facilitatorNotes": [
+            "He is proud and happy leading only about fifty people, so they think he is silly. They call his villagers his “little flock.”"
+          ],
+          "evidence": [
+            "See how that fellow struts at the head of his little flock!"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-21-q2",
+          "prompt": "Cæsar would rather be the head man of a village than the second man in Rome. What does that tell you about him?",
+          "facilitatorNotes": [
+            "He wants to be first, wherever it is; being second, even in a great city, would not satisfy him. Some children may admire this; others may think it shows too much pride."
+          ],
+          "evidence": [
+            "I would rather be the head man of a village than the second man in Rome!"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-21-q3",
+          "prompt": "How do the captain and Cæsar act differently in the storm?",
+          "facilitatorNotes": [
+            "The captain trembles, falls on his knees and moans that all is lost; Cæsar is not afraid and tells him to take the oars again."
+          ],
+          "evidence": [
+            "All is lost! all is lost!",
+            "But Cæsar was not afraid."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-21-q4",
+          "prompt": "“You have Cæsar on board.” Is that a good reason not to be afraid of a storm?",
+          "facilitatorNotes": [
+            "A storm does not know who is in the boat, so it is not really a reason. But his confidence may have helped the captain row again. The story asks us to answer “Why was he so great?”; let children decide whether this is greatness or boasting."
+          ],
+          "evidence": [
+            "for you have Cæsar on board.",
+            "Why was he so great?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-22",
+      "title": "The Sword of Damocles",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Explain a lesson that is shown, not told, by one object.",
+      "focus": "A man who envies a king learns, under a hanging sword, what the king’s life is really like.",
+      "context": "This old Greek story is so well known that people still say a danger hangs “like the sword of Damocles.” A tyrant is a cruel ruler; dread is great fear; a banquet is a feast; a cottage is a small house.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Sword of Damocles,” the whole story; opens “There was once a king whose name was Di-o-nys´i-us. He was so unjust and cruel that he…”; closes “…he never again wanted to be rich, or to change places, even for a moment, with the king.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          548,
+          561
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cd1d03cc445f4cd261ae257fc83abd912fdec0bf74ace5c96d41d191d052de99"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-22-q1",
+          "prompt": "Why does Damocles think the king must be happy?",
+          "facilitatorNotes": [
+            "The king is rich, lives in a fine palace full of beautiful things, and has many servants."
+          ],
+          "evidence": [
+            "You have here everything that any man could wish."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-22-q2",
+          "prompt": "What does Damocles see above his head, and what holds it there?",
+          "facilitatorNotes": [
+            "A sharp sword hanging by a single horse-hair, with its point almost touching his head."
+          ],
+          "evidence": [
+            "It was a sharp sword, and it was hung by only a single horse-hair."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-22-q3",
+          "prompt": "How does Damocles change once he sees the sword? Find the words that show it.",
+          "facilitatorNotes": [
+            "His smile fades, his face goes pale, his hands tremble, and he cannot enjoy the food, wine or music any more."
+          ],
+          "evidence": [
+            "The smile faded from the lips of Damocles.",
+            "He wanted no more food"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-22-q4",
+          "prompt": "The king says he has a sword over his head all the time. What is his sword?",
+          "facilitatorNotes": [
+            "Not a real sword: his fear that someone will kill him, because so many people hate him. Children may add that being cruel made the danger. Damocles decides the rich and powerful are not so happy as they seem."
+          ],
+          "evidence": [
+            "I have a sword over my head all the time.",
+            "the rich and pow-er-ful are not so happy as they seem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-23",
+      "title": "Damon and Pythias",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 5,
+        "discussionMinutes": 7,
+        "totalMinutes": 12
+      },
+      "challenge": "Follow a friendship tested by time running out.",
+      "focus": "A man takes his friend’s place in prison, trusting him to come back before the day of death.",
+      "context": "This is an old Greek story about the same tyrant Dionysius who appears in “The Sword of Damocles.” Affairs are business and duties; in his stead means in his place; hindered means held back.",
+      "contentNote": "Pythias is sentenced to death, and Damon offers to die in his place; in the end both are freed.",
+      "excerpt": {
+        "locator": "“Damon and Pythias,” the whole story; opens “A young man whose name was Pyth´i-as had done something which the tyrant Dionysius did…”; closes “\"I would give all my wealth to have one such friend,\" he said.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          563,
+          574
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9c4a878997edbc89cbb788b7c116850426504c5c26d225e76fa10dfe74e089f7"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-23-q1",
+          "prompt": "Why does the tyrant laugh at Pythias?",
+          "facilitatorNotes": [
+            "He does not believe that a man set free would ever come back to die."
+          ],
+          "evidence": [
+            "How can I know that you will keep your promise?"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-23-q2",
+          "prompt": "What does Damon offer, and why is he so sure?",
+          "facilitatorNotes": [
+            "To be put in prison in his friend’s place and to die if Pythias does not return. He knows Pythias has never broken his word."
+          ],
+          "evidence": [
+            "he is a man who has never broken his word"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-23-q3",
+          "prompt": "When Pythias is late, what does Damon say about it?",
+          "facilitatorNotes": [
+            "That if Pythias does not come back, it will not be his fault: something will have stopped him. Damon keeps trusting even when time is almost gone."
+          ],
+          "evidence": [
+            "If Pythias does not come back in time, it will not be his fault."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-23-q4",
+          "prompt": "Why does the tyrant set them both free? Has he changed?",
+          "facilitatorNotes": [
+            "He sees that friends who trust each other like this ought not to suffer, and he wishes he had such a friend. Some children may say he has changed a little; others that he is still a tyrant who just admires them."
+          ],
+          "evidence": [
+            "I would give all my wealth to have one such friend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-24",
+      "title": "A Laconic Answer",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 3,
+        "discussionMinutes": 7,
+        "totalMinutes": 10
+      },
+      "challenge": "Explain how a one-word answer can say a great deal.",
+      "focus": "The Spartans answer a king’s threat with a single word.",
+      "context": "Greece was once made up of separate states. The Spartans lived in a land called Laconia, so “laconic” came to mean using very few words. To level a city is to knock it flat.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“A Laconic Answer,” the whole story; opens “Many miles beyond Rome there was a famous country which we call Greece. The people of…”; closes “…as to say, \"We are not afraid of you so long as the little word 'if' stands in your way.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          576,
+          583
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "105b62ec529e0794e709b0bfc8575cf36178889ed107b77fdd9e9784a5b5fb21"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-24-q1",
+          "prompt": "What strange rule did the Spartans have about speaking?",
+          "facilitatorNotes": [
+            "To speak briefly and never use more words than were needed."
+          ],
+          "evidence": [
+            "they should speak briefly, and never use more words than were needed"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-24-q2",
+          "prompt": "What does King Philip threaten?",
+          "facilitatorNotes": [
+            "That if he goes into their country, he will level their great city to the ground."
+          ],
+          "evidence": [
+            "If I go down into your country, I will level your great city to the ground."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-24-q3",
+          "prompt": "The Spartans answer only “IF.” What are they telling him?",
+          "facilitatorNotes": [
+            "That he has not come yet, and they are not afraid while that little word stands in his way: he will have to win first. Ask children to say the long answer the one word stands for."
+          ],
+          "evidence": [
+            "It was as much as to say, \"We are not afraid of you so long as the little word 'if' stands in your way.\""
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-24-q4",
+          "prompt": "Is a short answer braver than a long one? Why might it be?",
+          "facilitatorNotes": [
+            "A short answer sounds calm and unafraid; a long one could sound worried. Some children may think a long, clear answer could be just as brave."
+          ],
+          "evidence": [
+            "That word was \"IF.\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-25",
+      "title": "The Ungrateful Guest",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Name the moment a character chooses to break a promise.",
+      "focus": "A soldier saved by a farmer takes the farmer’s land, and the king punishes him.",
+      "context": "King Philip is the same king of Macedon who threatened the Spartans in “A Laconic Answer.” Churlish means rude and mean; base means low and shameful; to shun is to keep away from someone.",
+      "contentNote": "As punishment the king has the words “The Ungrateful Guest” burned into the soldier’s forehead.",
+      "excerpt": {
+        "locator": "“The Ungrateful Guest,” the whole story; opens “Among the soldiers of King Philip there was a poor man who had done some brave deeds. He…”; closes “…tried to enrich himself; and from that day until he died all men shunned and hated him.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          585,
+          595
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f4b9926a7ddba35deb8d971458ff7df914f9c6362d3c0d9b7278049768d54b9e"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-25-q1",
+          "prompt": "What does the farmer do for the soldier, and what does the soldier promise?",
+          "facilitatorNotes": [
+            "He saves him when he is cast half-drowned on the shore and cares for him; the soldier promises to repay him."
+          ],
+          "evidence": [
+            "promised that he would repay him for his kindness"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-25-q2",
+          "prompt": "How does the soldier describe the farmer to the king? Is it true?",
+          "facilitatorNotes": [
+            "As a churlish farmer who has never done anything for his country. It is false: the farmer saved one of the king’s soldiers."
+          ],
+          "evidence": [
+            "Only a churlish farmer, who has never done anything for his country"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-25-q3",
+          "prompt": "What does the farmer do when he loses his home, and what does that tell you about him?",
+          "facilitatorNotes": [
+            "He goes boldly to the king and tells the whole story. He is brave enough to speak to a king about a wrong done to him."
+          ],
+          "evidence": [
+            "He went boldly to the king, and told the whole story from beginning to end."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-25-q4",
+          "prompt": "Why is “guest” a good word for the soldier, and why is his punishment written on his face?",
+          "facilitatorNotes": [
+            "He was the farmer’s guest, cared for in his house, and then repaid him with harm. Writing it on his forehead lets everyone know what he did. Children may find the punishment harsh; let them say whether they think it fits."
+          ],
+          "evidence": [
+            "THE UNGRATEFUL GUEST.",
+            "all the world was made to know of the mean act"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-26",
+      "title": "The Brave Three Hundred",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 4,
+        "discussionMinutes": 7,
+        "totalMinutes": 11
+      },
+      "challenge": "Explain why a small number of people could hold back a huge army.",
+      "focus": "Three hundred Spartans guard a narrow pass against the army of Persia.",
+      "context": "This happened at Thermopylae in Greece in 480 B.C. Persia was a great empire to the east. Earth and water were signs that a land would obey the Persian king. A pass is a narrow way; to keep at bay is to hold back; the slain are the dead.",
+      "contentNote": "This is a battle story: the Spartans fight with spears, swords, daggers and even fists and teeth, and all of them are killed. The story praises their dying for their country.",
+      "excerpt": {
+        "locator": "“The Brave Three Hundred,” the whole story; opens “All Greece was in danger. A mighty army, led by the great King of Persia, had come from…”; closes “…tell the story of Leonidas and the brave three hundred who died for their country's sake.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          626,
+          637
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0a0c6ed744c54fe3bcbfcd052dd5de5259384227744431312c568c4e04c39e06"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-26-q1",
+          "prompt": "What does the King of Persia ask for, and what do the Greeks answer?",
+          "facilitatorNotes": [
+            "Earth and water, as a sign that their land and sea are his. They answer that they will be free."
+          ],
+          "evidence": [
+            "No: we will be free."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-26-q2",
+          "prompt": "Why could three hundred men hold the pass at all?",
+          "facilitatorNotes": [
+            "The pass was the only way in and very narrow, between the mountains and the sea, so the huge army could not all fight at once."
+          ],
+          "evidence": [
+            "a narrow pass between the mountains and the sea"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-26-q3",
+          "prompt": "When they hear the Persian arrows will darken the sun, the Spartans say, “we shall fight in the shade.” What does that answer show?",
+          "facilitatorNotes": [
+            "They joke instead of showing fear. It is a laconic answer, like the Spartans’ “IF” in an earlier story."
+          ],
+          "evidence": [
+            "So much the better",
+            "we shall fight in the shade."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-26-q4",
+          "prompt": "The Spartans all die, yet the story says Greece was saved. How can both be true?",
+          "facilitatorNotes": [
+            "They held the Persians back all day and killed many, which helped Greece. Some children may feel the ending is sad more than glorious; both feelings belong to this story."
+          ],
+          "evidence": [
+            "And Greece was saved.",
+            "there was not one Spartan left alive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-27",
+      "title": "The King and His Hawk",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 6,
+        "totalMinutes": 15
+      },
+      "challenge": "Look back at a character’s actions once you learn something new.",
+      "focus": "A thirsty king kills the hawk that keeps spilling his water, then finds out why it did.",
+      "context": "Genghis Khan was a Mongol ruler who conquered a huge empire about eight hundred years ago. Hunters trained hawks to catch game for them. Trickling means falling a little at a time.",
+      "contentNote": "In anger the king strikes his hawk with his sword, and it dies at his feet. A dead poisonous snake lies in the spring.",
+      "excerpt": {
+        "locator": "“The King and His Hawk,” the whole story; opens “Gen´ghis Khan was a great king and war-rior.”; closes “\"I have learned a sad lesson to-day; and that is, never to do any-thing in anger.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          644,
+          676
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c2beddad65097eeb5d5ce41780615d904f38e66b433aad2430d38cf6652179e7"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-27-q1",
+          "prompt": "Why does it take so long to fill the cup?",
+          "facilitatorNotes": [
+            "The summer heat has dried up the brooks, and the water comes over the rock only one drop at a time."
+          ],
+          "evidence": [
+            "now it came only one drop at a time"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-27-q2",
+          "prompt": "How many times does the hawk knock the cup away, and how does the king feel each time?",
+          "facilitatorNotes": [
+            "Four times. He grows angry, then very angry, and the fourth time he strikes the hawk with his sword."
+          ],
+          "evidence": [
+            "And now the king began to grow angry.",
+            "The king was now very angry indeed."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-27-q3",
+          "prompt": "What does the king find in the pool, and what does it change?",
+          "facilitatorNotes": [
+            "A huge dead snake of the most poisonous kind. He understands that the hawk was keeping him from drinking poisoned water."
+          ],
+          "evidence": [
+            "It was a huge, dead snake of the most poi-son-ous kind.",
+            "The hawk saved my life!"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-27-q4",
+          "prompt": "The king says his lesson is “never to do any-thing in anger.” What else could he have done when the hawk kept spilling the cup?",
+          "facilitatorNotes": [
+            "Stopped to wonder why his best hunting bird was acting so strangely, or looked at the water. Children may suggest other choices; the point is that anger kept him from thinking."
+          ],
+          "evidence": [
+            "never to do any-thing in anger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-28",
+      "title": "The Kingdoms",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 7,
+        "totalMinutes": 13
+      },
+      "challenge": "Follow a riddle game whose last answer is a surprise.",
+      "focus": "A king plays a question game with children in a meadow, and the smallest gives the answer that moves him.",
+      "context": "Frederick William was a king of Prussia, a country that is now part of Germany. People once sorted all things into three “kingdoms”: animal, vegetable (plants) and mineral (stones and metals). The kingdom of heaven is a Christian phrase for God’s kingdom.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Kingdoms,” the whole story; opens “There was once a king of Prussia whose name was Frederick William.”; closes “…arms. Tears were in his eyes as he kissed her, and said, \"So be it, my child! So be it.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          693,
+          717
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7d7f3233497295cde1c0fabd43ed4dc12c9c87d2fc0caea3827bfeb31e599f2a"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-28-q1",
+          "prompt": "Why does the boy say the orange belongs to the vegetable kingdom?",
+          "facilitatorNotes": [
+            "It is the fruit of a plant, and all plants belong to that kingdom."
+          ],
+          "evidence": [
+            "It is the fruit of a plant, and all plants belong to that kingdom"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-28-q2",
+          "prompt": "How do the children know which kingdom the gold piece belongs to?",
+          "facilitatorNotes": [
+            "Gold is a metal, and all metals belong to the mineral kingdom."
+          ],
+          "evidence": [
+            "All metals belong to that kingdom."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-28-q3",
+          "prompt": "Why are the bright boys puzzled by the last question?",
+          "facilitatorNotes": [
+            "The king seems to want “the animal kingdom,” but that sounds rude to say to a grown man, and “the kingdom of Prussia” does not fit the game. They are afraid to answer."
+          ],
+          "evidence": [
+            "Some wanted to say, \"To the animal kingdom.\" But they were a little afraid"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-28-q4",
+          "prompt": "Why do you think the little girl’s answer brings tears to the king’s eyes?",
+          "facilitatorNotes": [
+            "She answers kindly and simply, as if she sees a good man rather than a king. Some children may say he is moved because she does not know he is a king; others that he hopes her answer is true. Accept reasons drawn from the story."
+          ],
+          "evidence": [
+            "I think to the kingdom of heaven.",
+            "Tears were in his eyes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-2-baldwin-fifty-famous-stories-1896-29",
+      "title": "The Barmecide Feast",
+      "sourceId": "baldwin-fifty-famous-stories-1896",
+      "genre": "legend",
+      "readingMode": "adult-read-aloud",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 6,
+        "totalMinutes": 14
+      },
+      "challenge": "Watch two people pretend together, and ask why each one does it.",
+      "focus": "A rich man serves a starving beggar an imaginary supper, then a real one.",
+      "context": "This tale comes from the Arabian Nights, a famous old collection of stories. The Barmecide is a title for a rich lord. Schacabac’s religion forbids wine. A pretense is make-believe; sweetmeats are sweets.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Barmecide Feast,” the whole story; opens “There was once a rich old man who was called the Bar-me-cide. He lived in a beautiful…”; closes “…lived with the Barmecide many years, and never again knew what it was to be hungry.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          719,
+          750
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2a0961ce692cfbca7959ab12c5b35659c9293be32f147c3ac716f1747248df80"
+      },
+      "questions": [
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-29-q1",
+          "prompt": "Why does Schacabac go to the Barmecide’s palace?",
+          "facilitatorNotes": [
+            "He has had nothing to eat for two days and hopes the rich man will help him."
+          ],
+          "evidence": [
+            "it was now two days since he had tasted bread"
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-29-q2",
+          "prompt": "What does Schacabac see when the Barmecide calls for water and supper?",
+          "facilitatorNotes": [
+            "Nothing: no boy, no basin, no water and no food. The rich man only pretends, and Schacabac decides to pretend too."
+          ],
+          "evidence": [
+            "Schacabac saw no boy, nor basin, nor water."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-29-q3",
+          "prompt": "How hungry is Schacabac while he pretends to eat, and why does he keep going?",
+          "facilitatorNotes": [
+            "Almost dead with hunger, but too polite not to do as he is bidden. He also thinks he understands the joke."
+          ],
+          "evidence": [
+            "Schacabac was almost dead with hunger, but he was too polite not to do as he was bidden."
+          ]
+        },
+        {
+          "id": "reading-2-baldwin-fifty-famous-stories-1896-29-q4",
+          "prompt": "Was the pretend feast cruel or a test? What does the Barmecide say he has found?",
+          "facilitatorNotes": [
+            "The Barmecide says Schacabac is a man of good understanding who makes the best of everything, and gives him a real supper and a home. Some children will still think it was unkind to tease a starving man; both views can be argued from the story."
+          ],
+          "evidence": [
+            "I have found you to be a man of good un-der-stand-ing.",
+            "never again knew what it was to be hungry"
+          ]
+        }
+      ]
     }
   ]
 }
