@@ -894,6 +894,328 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-14",
+      "title": "Frankenstein, Chapter XVIII: a father’s question",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Separate what Victor says aloud from what he keeps back: the chapter turns on a conversation in which one speaker hides his real reasons.",
+      "focus": "A promise kept secret begins to shape every other relationship in Victor’s life, beginning with his marriage.",
+      "context": "Frankenstein (1818; revised 1831, the text used here) is Mary Shelley’s novel about a young Genevan scientist, Victor Frankenstein, who brings a being to life and then flees from it. Victor tells his story to the Arctic explorer Robert Walton. Victor has grown up expecting to marry Elizabeth Lavenza, the orphan raised in his family as his cousin. The creature he made has murdered Victor’s small brother William, and Justine, a servant wrongly convicted of the crime, has been executed. On a glacier above Chamounix the creature told Victor his story and demanded a female companion, promising that the two of them would live far from people; Victor agreed. An “exordium” is the opening of a speech; a “philosopher” here means a scientist.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XVIII, from the start through Victor’s answer to his father; opens “Day after day, week after week, passed away on my return to Geneva; and I could not…”; closes “…scene and varied amusement would, before my return, have restored me entirely to myself.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-shelley-frankenstein-1831-15",
+        "blocks": [
+          532,
+          541
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d9daf4033c3a8ed4649b54e4e8c8812aed0d9983b440ff16eddd62592e297ce5"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-14-q1",
+          "prompt": "What change does Victor’s father notice in him, and how does he explain it? Why is his explanation reasonable and still wrong?",
+          "facilitatorNotes": [
+            "He sees Victor’s health return but his gloom remain, and guesses that Victor thinks of Elizabeth as a sister or loves someone else while feeling bound in honour. It is a sensible guess from what he knows; the reader knows the real weight is the promise to the creature.",
+            "His words “so blind is the experience of man” apply to himself more than he realizes."
+          ],
+          "evidence": [
+            "You, perhaps, regard her as your sister, without any wish that she might become your wife.",
+            "so blind is the experience of man"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-14-q2",
+          "prompt": "Victor says his “future hopes and prospects are entirely bound up” in marrying Elizabeth, yet an immediate wedding fills him with “horror and dismay.” How can both be true?",
+          "facilitatorNotes": [
+            "The horror is not of Elizabeth but of celebrating with “this deadly weight yet hanging round my neck.” He pictures the marriage as a reward that must wait until the creature has gone, which is why he fixes it for his return.",
+            "Some readers see more avoidance here: Victor keeps postponing the life he says he wants. Both readings use the same lines."
+          ],
+          "evidence": [
+            "My future hopes and prospects are entirely bound up in the expectation of our union.",
+            "the idea of an immediate union with my Elizabeth was one of horror and dismay",
+            "Could I enter into a festival with this deadly weight yet hanging round my neck"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-14-q3",
+          "prompt": "List the reasons Victor gives himself for doing the work away from home. Which protect his family, and which protect him?",
+          "facilitatorNotes": [
+            "The scientists he needs are in England and letters would be slow; he cannot bear to do the “loathsome task” in his father’s house; an accident might reveal it; and he knows he would lose “all capacity of hiding” what he feels. The last reasons are about keeping his secret as much as sparing his family.",
+            "Students may argue that hiding the work is itself a way of protecting the family from horror. The passage supports both emphases."
+          ],
+          "evidence": [
+            "I had an insurmountable aversion to the idea of engaging myself in my loathsome task in my father's house",
+            "I should often lose all self-command, all capacity of hiding the harrowing sensations"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-14-q4",
+          "prompt": "Victor calls his situation “my slavery” and imagines that “some accident” might destroy the creature. What does this hope reveal about how he understands his promise?",
+          "facilitatorNotes": [
+            "He wants to be released without having to keep or break his word, by chance doing the work for him. The parenthesis “(so my fond fancy imaged)” is the older Victor, telling the story, marking the hope as a foolish fantasy.",
+            "He then lies to his father, “concealing the true reasons,” so the chapter shows a pattern: Victor escapes a hard choice by hiding it. Some readers will sympathize with a man who feels trapped; ask whether calling himself a slave is fair, given that he made the creature."
+          ],
+          "evidence": [
+            "Or (so my fond fancy imaged) some accident might meanwhile occur to destroy him, and put an end to my slavery for ever.",
+            "concealing the true reasons of this request, I clothed my desires under a guise which excited no suspicion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-15",
+      "title": "Frankenstein, Chapter XVIII: down the Rhine with Clerval",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Two travellers see the same river. Compare their descriptions, and notice the moment when Victor, telling the story long afterwards, interrupts himself.",
+      "focus": "Clerval’s delight in the world shows what Victor’s secret has cost him, and Victor’s sudden grief hints at what is coming.",
+      "context": "Recap: Victor’s father has proposed that he marry Elizabeth at once. Victor, unable to say he has promised the creature a mate, asked instead to travel to England, where he can consult scientists and do the work away from home; the wedding is to follow his return. Henry Clerval has been Victor’s closest friend since boyhood. Strasburgh (Strasbourg), Manheim (Mannheim), Mayence (Mainz) and Cologne stand on the Rhine. The quoted verse is by William Wordsworth, as the novel’s own footnote says.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XVIII, from Clerval’s joining the journey to the end of the chapter; opens “The duration of my absence was left to my own choice; a few months, or at most a year,…”; closes “…of London, St. Paul's towering above all, and the Tower famed in English history.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-14",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-16",
+        "blocks": [
+          542,
+          557
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "cabee5bd9fbfb90256b61c063f658280e4032c2151a936a73de4d4570800c0ae"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-15-q1",
+          "prompt": "Who arranged for Clerval to join Victor, and why is Victor both glad and uneasy about it?",
+          "facilitatorNotes": [
+            "His father and Elizabeth arranged it without asking him. Clerval “interfered with the solitude I coveted,” yet Victor is glad to be spared “lonely, maddening reflection” and even hopes Henry “might stand between me and the intrusion of my foe.”",
+            "That last hope uses his friend as a shield without telling him of any danger. Ask whether that is fair to Clerval."
+          ],
+          "evidence": [
+            "This interfered with the solitude I coveted for the prosecution of my task",
+            "Nay, Henry might stand between me and the intrusion of my foe."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-15-q2",
+          "prompt": "Victor decides that the creature will follow him and leave his family safe. Why does he call this thought “dreadful in itself, but soothing,” and how does he later judge his reasoning?",
+          "facilitatorNotes": [
+            "It is dreadful to be followed but soothing because it would mean his friends are safe; he believes it because he needs to. Looking back, he admits he “allowed myself to be governed by the impulses of the moment,” so the older narrator distrusts the younger man’s comfort.",
+            "Readers may note that he never tells his family to be on guard, which the plan would require if he really feared the reverse."
+          ],
+          "evidence": [
+            "This imagination was dreadful in itself, but soothing, inasmuch as it supposed the safety of my friends.",
+            "I allowed myself to be governed by the impulses of the moment"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-15-q3",
+          "prompt": "Compare Clerval’s long speech about the Rhine with Victor’s own account of the voyage. What does Clerval notice that Victor does not?",
+          "facilitatorNotes": [
+            "Clerval watches sunsets and sunrises, compares the Rhine with the Swiss lakes, and notices castles, “that group of labourers,” and a half-hidden village: a landscape with people in it, whose spirit is “more in harmony with man.” Victor “neither saw the descent of the evening star, nor the golden sunrise.”",
+            "Victor is briefly reached (“even I was pleased”), so the contrast is not total. Students can argue whether that moment matters."
+          ],
+          "evidence": [
+            "\"This is what it is to live,\" he cried, \"now I enjoy existence!",
+            "neither saw the descent of the evening star, nor the golden sunrise reflected in the Rhine",
+            "the spirit that inhabits and guards this place has a soul more in harmony with man"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-15-q4",
+          "prompt": "In the middle of the voyage Victor breaks off: “And where does he now exist?” What does this interruption tell the reader, and why place it in the happiest scene of the chapter?",
+          "facilitatorNotes": [
+            "Victor is telling his story to Walton long after these events, and the outburst shows that by then Clerval is dead. Placed amid Clerval’s joy, it turns the reader’s pleasure into dread, since we now read every happy moment knowing it will end.",
+            "Some readers find the interruption heavy-handed; others think it makes Victor’s grief real. His apology, “Pardon this gush of sorrow,” suggests he knows it breaks his tale."
+          ],
+          "evidence": [
+            "Clerval! beloved friend! even now it delights me to record your words",
+            "And where does he now exist? Is this gentle and lovely being lost for ever?",
+            "Pardon this gush of sorrow"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-16",
+      "title": "Frankenstein, Chapter XIX: London, Oxford and the lakes",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 14,
+        "totalMinutes": 26
+      },
+      "challenge": "Victor tours places full of history and beauty. Track the moments when he can enjoy them and what pulls him back each time.",
+      "focus": "Victor sees in Clerval “the image of my former self” and describes his own ruin in images of lightning and chains.",
+      "context": "Recap: Victor has left Geneva for England with his friend Henry Clerval, telling his family nothing of his promise to make the creature a mate. On the Rhine Clerval was delighted while Victor brooded, and Victor, telling the story later, broke off to mourn his friend. Natural philosophers are scientists. Oxford was the headquarters of King Charles I in the English Civil War of the 1640s; John Hampden, a hero of Parliament’s side, was mortally wounded in a skirmish near Oxford. Matlock is in Derbyshire; Cumberland and Westmorland hold England’s Lake District.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XIX, from the start through the stay in Cumberland and Westmorland; opens “London was our present point of rest; we determined to remain several months in this…”; closes “…new, which again engages his attention, and which also he forsakes for other novelties.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-15",
+        "continuesTo": "reading-9-shelley-frankenstein-1831-17",
+        "blocks": [
+          559,
+          570
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6ac13d95348487f46adcf8703996313180fac203c6a3f67c9338a33fc31ce531"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-16-q1",
+          "prompt": "Victor says, “in Clerval I saw the image of my former self.” What is Clerval doing in London, and what does the comparison tell us about the young Victor?",
+          "facilitatorNotes": [
+            "Clerval is “inquisitive,” amused by new manners, and preparing to go to India by studying its languages and society. Victor too was once eager for knowledge; now he visits scientists only for what he must make.",
+            "Clerval’s purpose is to assist “the progress of European colonisation and trade,” and the novel presents it as admirable through Victor’s eyes. Modern readers may question that ambition; ask whether it changes how they see a character the book treats as purely good."
+          ],
+          "evidence": [
+            "But in Clerval I saw the image of my former self",
+            "the means of materially assisting the progress of European colonisation and trade"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-16-q2",
+          "prompt": "Collecting the materials is “like the torture of single drops of water continually falling on the head.” Why does this image fit this stage of Victor’s work?",
+          "facilitatorNotes": [
+            "It is small, slow and endlessly repeated: nothing dramatic, just constant dread that he cannot escape. He also describes a “barrier” between himself and other people, “sealed with the blood of William and Justine,” so the work isolates him in every company.",
+            "Students may contrast this with the feverish excitement of his first creation, described earlier in the novel."
+          ],
+          "evidence": [
+            "this was to me like the torture of single drops of water continually falling on the head",
+            "this barrier was sealed with the blood of William and Justine"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-16-q3",
+          "prompt": "At Oxford and at Hampden’s tomb Victor is lifted for a moment and then sinks again. What images does he use for his condition, and how do they connect with the place?",
+          "facilitatorNotes": [
+            "He is “a blasted tree” struck by a bolt, and a prisoner whose chains have rusted into him: “the iron had eaten into my flesh.” At the grave of a man who died for liberty, he feels free for “an instant” and then remembers he is bound by his promise.",
+            "Readers who remember the lightning-struck oak of Victor’s boyhood in Chapter II may see the tree image as an echo. The point stands on this passage alone."
+          ],
+          "evidence": [
+            "But I am a blasted tree; the bolt has entered my soul",
+            "For an instant I dared to shake off my chains",
+            "but the iron had eaten into my flesh"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-16-q4",
+          "prompt": "Why does the name “Chamounix” make Victor tremble at Matlock, and what does the moment show about the way memory works on him?",
+          "facilitatorNotes": [
+            "Chamounix is the valley where he met the creature and made his promise. The cabinets of natural history are arranged like those there, so a harmless remark by Henry brings back the whole “terrible scene,” and Victor leaves at once.",
+            "Clerval does not know why his friend hurries away, which shows again how the secret separates them."
+          ],
+          "evidence": [
+            "The latter name made me tremble, when pronounced by Henry",
+            "I hastened to quit Matlock, with which that terrible scene was thus associated"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-shelley-frankenstein-1831-17",
+      "title": "Frankenstein, Chapter XIX: the island in the Orkneys",
+      "sourceId": "shelley-frankenstein-1831",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Notice how the setting changes as Victor moves north, and how the last landscape comes to match his work.",
+      "focus": "Victor isolates himself to finish a task he loathes, and for the first time works on a creature “in cold blood.”",
+      "context": "Recap: Victor and Clerval spent the winter in London, where Victor gathered materials for a female creature, then toured Oxford and the English lakes. A friend has invited them to Perth in Scotland. The Orkneys are islands off the far north coast of Scotland. Victor calls the creature “dæmon” (daemon), an old word for a spirit, and “fiend.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Frankenstein (1831), Chapter XIX, from the departure for Scotland to the end of the chapter; opens “We had scarcely visited the various lakes of Cumberland and Westmorland, and conceived an…”; closes “…was intermixed with obscure forebodings of evil, that made my heart sicken in my bosom.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-shelley-frankenstein-1831-16",
+        "continuesTo": null,
+        "blocks": [
+          571,
+          581
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "be50ac5bc154e500435a507d125e6dc107918825c3e869cef3718ab725ec3583"
+      },
+      "questions": [
+        {
+          "id": "reading-9-shelley-frankenstein-1831-17-q1",
+          "prompt": "Victor feels “as if I had committed some great crime” but insists, “I was guiltless.” Do you agree? Use this paragraph and what you know of the story.",
+          "facilitatorNotes": [
+            "He has killed no one, and he is tormented by fear for others. But he made the creature, abandoned it, and kept silent while Justine was condemned, so many readers think his sense of guilt is accurate and his denial is not.",
+            "His own phrase, a curse “as mortal as that of crime,” already blurs the line he is drawing. Accept either view argued from the text."
+          ],
+          "evidence": [
+            "I felt as if I had committed some great crime, the consciousness of which haunted me.",
+            "I was guiltless, but I had indeed drawn down a horrible curse upon my head, as mortal as that of crime."
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-17-q2",
+          "prompt": "How does Victor persuade Clerval to let him go on alone, and what does Clerval’s answer show about their friendship?",
+          "facilitatorNotes": [
+            "He says he is in no mood for strangers and asks to be left “to peace and solitude,” hiding his real purpose once more. Clerval would rather share his “solitary rambles” than stay with people he does not know and begs him to come back soon.",
+            "A few paragraphs earlier Victor followed Henry “as his shadow” to protect him; now he leaves him. Ask what that change suggests about which fear has won."
+          ],
+          "evidence": [
+            "leave me to peace and solitude for a short time",
+            "\"I had rather be with you,\" he said, \"in your solitary rambles, than with these Scotch people, whom I do not know",
+            "followed him as his shadow"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-17-q3",
+          "prompt": "Describe the island Victor chooses. How does he see its five inhabitants, and what does his comment about them reveal?",
+          "facilitatorNotes": [
+            "It is “hardly more than a rock” with three huts; the people are gaunt and poor. He is glad their poverty makes them incurious, and he notes that they hardly thank him for the food and clothes he gives: “so much does suffering blunt even the coarsest sensations of men.”",
+            "Some readers find this a realistic picture of hunger; others notice how coldly Victor watches suffering people, much as people looked at his creature. Both are defensible."
+          ],
+          "evidence": [
+            "It was a place fitted for such a work, being hardly more than a rock",
+            "hardly thanked for the pittance of food and clothes which I gave; so much does suffering blunt even the coarsest sensations of men"
+          ]
+        },
+        {
+          "id": "reading-9-shelley-frankenstein-1831-17-q4",
+          "prompt": "Victor says that in his first experiment “enthusiastic frenzy” blinded him, but “now I went to it in cold blood.” Why might working with open eyes be worse, and what does the last sentence lead us to expect?",
+          "facilitatorNotes": [
+            "Now he sees exactly what he is doing and why, with no excitement to hide its horror; his “heart often sickened at the work of my hands.” He is also afraid every moment that the creature will appear.",
+            "The chapter ends with hope “intermixed with obscure forebodings of evil,” so readers expect the work to be interrupted or to go wrong. Ask what he hopes for and why he “dared not” question that hope."
+          ],
+          "evidence": [
+            "But now I went to it in cold blood, and my heart often sickened at the work of my hands.",
+            "a tremulous and eager hope, which I dared not trust myself to question",
+            "obscure forebodings of evil"
+          ]
+        }
+      ]
     }
   ]
 }
