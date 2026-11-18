@@ -1,0 +1,1682 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "franklin-autobiography-1922",
+  "readings": [
+    {
+      "id": "reading-9-franklin-autobiography-1922-01",
+      "title": "Uncle Benjamin, a hidden Bible and a stolen wharf",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Sort what Franklin remembers himself, what he was told, and what he only half recalls (“if I remember the words rightly”).",
+      "focus": "Family stories of conscience and ingenuity, told by a man looking for the roots of his own character.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. He began in 1771 with a letter to his son William, so “you” is William. His family came from Ecton in Northamptonshire, England. Queen Mary (reigned 1553–1558) persecuted Protestants; an apparitor was an officer of the church courts; conventicles were forbidden religious meetings of Protestants outside the Church of England. A joint-stool is a wooden stool; a tallow-chandler makes candles; the “tithe” of his sons is the one in ten given to the church; emmets are ants.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Ancestry and Early Youth in Boston, from his uncles John and Benjamin through the wharf of stolen stones; opens “John was bred a dyer, I believe of woollens, Benjamin was bred a silk dyer, serving an…”; closes “…usefulness of the work, mine convinced me that nothing was useful which was not honest.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          10,
+          16
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "345c76c5d353e25520ff251ce656e689cedc387a9c60cfb7e67e1525d7e7c557"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-01-q1",
+          "prompt": "What does Franklin tell us about his uncle Benjamin, and why might he dwell on this uncle in particular?",
+          "facilitatorNotes": [
+            "Benjamin was a silk dyer who wrote occasional poems, invented his own shorthand, took down sermons and collected political pamphlets “from 1641 to 1717.” Franklin was named after him and, only lately, came upon his pamphlet collection in London with the uncle’s notes in the margins.",
+            "The uncle is a reader, writer and collector, like Franklin. The comment “too much, perhaps, for his station” shows Franklin’s awareness of rank: a tradesman taking a large interest in politics was unusual. Ask whether Franklin sees himself in that phrase."
+          ],
+          "evidence": [
+            "I was named after this uncle, there being a particular affection between him and my father.",
+            "He was also much of a politician; too much, perhaps, for his station."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-01-q2",
+          "prompt": "Three stories in this passage are about religious freedom: the Bible under the stool, Josiah’s move to New England, and Peter Folger’s verses. What does each show, and what does Franklin admire?",
+          "facilitatorNotes": [
+            "The family hid an English Bible under a stool, with a child watching for the apparitor; Josiah left England with others who “expected to enjoy their mode of religion with freedom”; Folger wrote for “liberty of conscience” for Baptists, Quakers and others. Franklin praises Folger’s “decent plainness and manly freedom.”",
+            "Notice that the stool story is secondhand (“This anecdote I had from my uncle Benjamin”) and Folger’s verse quoted from memory. Franklin is open about how he knows each story."
+          ],
+          "evidence": [
+            "it was fastened open with tapes under and within the cover of a joint-stool",
+            "This anecdote I had from my uncle Benjamin.",
+            "The whole appeared to me as written with a good deal of decent plainness and manly freedom."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-01-q3",
+          "prompt": "Why did Franklin’s father take him out of the grammar school? What does the phrase “reasons that he gave to his friends in my hearing” suggest?",
+          "facilitatorNotes": [
+            "The cost of college for so large a family, and the “mean living” many educated men later earned. The boy overheard the reasons rather than being told them, and he records them along with his own success at the top of his class.",
+            "Some readers sense a lasting regret; others see Franklin simply reporting a sensible decision. He does not comment, which leaves the reader to weigh the loss."
+          ],
+          "evidence": [
+            "from a view of the expense of a college education, which having so large a family he could not well afford",
+            "reasons that he gave to his friends in my hearing"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-01-q4",
+          "prompt": "Franklin says the wharf story “shows an early projecting public spirit, tho' not then justly conducted.” What was public-spirited about it, and what was unjust? Does his father’s lesson settle the matter?",
+          "facilitatorNotes": [
+            "The boys built something useful for all of them, working together “like so many emmets”; but the stones belonged to someone else’s house. Franklin argued for usefulness, and his father “convinced me that nothing was useful which was not honest.”",
+            "The adult Franklin still calls the plan public-spirited, so he keeps some pride in it. Discuss whether usefulness and honesty can really be separated as neatly as the father’s lesson suggests."
+          ],
+          "evidence": [
+            "working with them diligently like so many emmets",
+            "though I pleaded the usefulness of the work, mine convinced me that nothing was useful which was not honest"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-02",
+      "title": "London errata",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Keep track of each “erratum” Franklin names, and notice how quickly he moves from a confession to the next piece of news.",
+      "focus": "An eighteen-year-old on his own in London finds books, clever company and money trouble, and the older Franklin reckons up his mistakes.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In 1724, at eighteen, Franklin sailed to London on the governor of Pennsylvania’s promise of letters of credit that never came, and found himself stranded there. His friend James Ralph came too, leaving a wife and child in Philadelphia. Before leaving, Franklin had an understanding with Deborah Read, his landlady’s daughter. An erratum, in printing, is a mistake listed for correction; a pistole is a gold coin; the Spectator was a famous London periodical of essays; a hackney writer copies documents for hire. Bernard Mandeville’s Fable of the Bees argued that private vices produce public benefits; Sir Hans Sloane was a physician and collector.",
+      "contentNote": "Franklin admits making unwanted advances to a woman who depended on him for loans; she refused him. He also describes neglecting his promise to Deborah Read.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, First Visit to London, from lodgings with Ralph in Little Britain to the move to Watts’s printing-house; opens “Ralph and I were inseparable companions. We took lodgings together in Little Britain at…”; closes “…a still greater printing-house. Here I continued all the rest of my stay in London.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          100,
+          107
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bb654d5654d1a9192b8bdfae88c4a9a6635ec980cf1b1f681d7459afb1d3c913"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-02-q1",
+          "prompt": "Find each mistake Franklin calls an “erratum” in this passage. What do they have in common, and does the printer’s word suit all of them?",
+          "facilitatorNotes": [
+            "Forgetting his engagement to Miss Read, printing his pamphlet on liberty and necessity, and his advances to Mrs. T——. An erratum is a misprint corrected at the back of a book, so the word presents a life as a text that can be revised.",
+            "The three are very different in seriousness, and some readers feel the neat word shrinks the last one. Others think Franklin is unusually frank to confess them at all."
+          ],
+          "evidence": [
+            "This was another of the great errata of my life, which I should wish to correct if I were to live it over again.",
+            "My printing this pamphlet was another erratum.",
+            "I attempted familiarities (another erratum)"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-02-q2",
+          "prompt": "How does Franklin describe Ralph’s search for work and his move to a country school? What does his taking the name “Mr. Franklin” suggest?",
+          "facilitatorNotes": [
+            "Ralph tries acting, a weekly paper and copying, then a school he thinks “below him.” Ashamed to be known as a schoolmaster, he borrows Franklin’s name; Franklin’s “did me the honour to assume mine” is dry irony.",
+            "Ralph is a foil: proud, hopeful of literary fame, and always borrowing. Ask whether the portrait is fair, since Franklin is also the man Ralph owes money to."
+          ],
+          "evidence": [
+            "This, however, he deemed a business below him",
+            "he changed his name, and did me the honour to assume mine"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-02-q3",
+          "prompt": "London offers Franklin books and famous men. Which opportunities does he take, and which slip away? What do they show about how a young printer could rise?",
+          "facilitatorNotes": [
+            "He borrows from Wilcox’s huge stock of second-hand books, meets Mandeville through his pamphlet, and sells his asbestos purse to Sir Hans Sloane; he never gets to meet Newton. Ideas and curiosities open doors that his rank would not.",
+            "Readers who know the later chapters may connect Wilcox’s lending with Franklin’s subscription library in Philadelphia."
+          ],
+          "evidence": [
+            "I might take, read, and return any of his books",
+            "who promis'd to give me an opportunity, sometime or other, of seeing Sir Isaac Newton, of which I was extreamly desirous; but this never happened"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-02-q4",
+          "prompt": "Reread the account of Mrs. T——. How does Franklin judge his own conduct, and how does he describe the end of the friendship? Is his account fair to her and to Ralph?",
+          "facilitatorNotes": [
+            "He admits he was “presuming upon my importance to her”: she needed his loans, and he used that. He calls her refusal “a proper resentment.” Then he turns at once to money and says losing Ralph’s friendship “relieved” him of a burden.",
+            "Some readers find the confession honest and brief; others notice that the sentences after it are about his own advantage. Ask what the speed of the turn suggests."
+          ],
+          "evidence": [
+            "presuming upon my importance to her, I attempted familiarities (another erratum) which she repuls'd with a proper resentment",
+            "in the loss of his friendship I found myself relieved from a burthen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-03",
+      "title": "Paper money, a rival’s fall and a marriage",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Track how each of Franklin’s gains depends on what other people think of him, and notice what he says plainly and what he passes over quickly.",
+      "focus": "A young printer builds credit, reputation and a household, and reckons his marriage as the correction of an earlier fault.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. This is the end of the part he wrote in 1771 as a letter to his son. Around 1729–1730, in his early twenties, Franklin owned a printing house in Philadelphia, still in debt for it. The Junto was his club of young tradesmen for discussion and self-improvement. Keimer was his former employer, and Bradford an older printer who also ran the post office. Deborah Read, whom he had courted before going to London, had in his absence married a man named Rogers, who left her and was rumoured to have another wife in England. Paper money was “sunk” when it was withdrawn; “blanks” are printed forms; a scrivener draws up legal documents.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Business Success and First Public Service, from the paper-money pamphlet to the memorandum that closes the first part; opens “ABOUT this time there was a cry among the people for more paper money, only fifteen…”; closes “…intended for the public. The affairs of the Revolution occasion'd the interruption.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          161,
+          174
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "288b550f9a639f871e7f68cd36ac144db8b46653e9c5ec096f169aa928592118"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-03-q1",
+          "prompt": "How did Franklin’s pamphlet on paper money help him twice over? What does the passage suggest about the link between public argument and private gain?",
+          "facilitatorNotes": [
+            "It helped carry the vote for more currency, and his friends in the House rewarded him with the profitable job of printing the money. He sums up: “This was another advantage gain'd by my being able to write.”",
+            "Franklin does not hide the profit; he presents public service and business as naturally connected. Students may admire the candour or question the arrangement."
+          ],
+          "evidence": [
+            "My friends there, who conceiv'd I had been of some service, thought fit to reward me by employing me in printing the money; a very profitable jobb and a great help to me.",
+            "This was another advantage gain'd by my being able to write."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-03-q2",
+          "prompt": "Franklin took care “not only to be in reality industrious and frugal, but to avoid all appearances to the contrary.” What does he do to manage appearances, and is this honest?",
+          "facilitatorNotes": [
+            "He dresses plainly, avoids “idle diversion,” and wheels his paper home through the streets so that people see him working. His credit with merchants follows from that reputation.",
+            "Some readers call it calculated display; others note that he insists the industry was real and only the advertising was deliberate. His admission that a book sometimes “debauch'd” him from work is a small joke against the image."
+          ],
+          "evidence": [
+            "I drest plainly; I was seen at no places of idle diversion.",
+            "I sometimes brought home the paper I purchas'd at the stores thro' the streets on a wheelbarrow"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-03-q3",
+          "prompt": "Compare Franklin’s account of his rivals, Keimer, David Harry and Bradford, with his account of himself. What pattern does he want the reader to see?",
+          "facilitatorNotes": [
+            "Harry is proud, dresses like a gentleman, lives expensively and neglects business, and fails; Keimer fails too; Bradford is “rich and easy” and blocks Franklin’s papers from the post riders. Franklin presents himself as the opposite in every case and promises never to imitate Bradford’s unkindness.",
+            "The pattern is a lesson in conduct, but it is also self-praise. Ask how Harry might have told the story of the partnership he “rejected with scorn.”"
+          ],
+          "evidence": [
+            "He was very proud, dress'd like a gentleman, liv'd expensively, took much diversion and pleasure abroad, ran in debt, and neglected his business",
+            "when I afterward came into his situation, I took care never to imitate it"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-03-q4",
+          "prompt": "In the Godfrey courtship Franklin asks for money with the bride; with Deborah Read he takes on risks instead. What does he mean by calling the marriage the correction of “that great erratum,” and what does “as well as I could” admit?",
+          "facilitatorNotes": [
+            "He asked the Godfreys for enough to pay his debt, and the match ended. Deborah’s first husband might still be alive and had left debts, yet they married in 1730. The erratum is his neglect of her while he was in London; marrying her repairs it only partly, which “as well as I could” concedes.",
+            "Modern readers may be struck by how businesslike the account is, and by how little we hear of Deborah’s own feelings. Franklin does say they “throve together” and tried “to make each other happy.”"
+          ],
+          "evidence": [
+            "I let her know that I expected as much money with their daughter as would pay off my remaining debt for the printing-house",
+            "Thus I corrected that great erratum as well as I could."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-04",
+      "title": "Begun again at Passy: the library, a china bowl and a sermon",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice how Franklin, writing thirteen years after the first part and without it in hand, rebuilds his story, and test his advice against what he actually did.",
+      "focus": "Franklin turns his own habits, a subscription library, strategic modesty and a practical religion, into lessons for public readers.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. The first part, addressed to his son, ends with the founding of a subscription library in Philadelphia around 1730. Franklin took up the story again in 1784 at Passy, near Paris, where he was serving as the American minister to France; friends had written urging him to continue (their letters are not part of this text), and he did not have the first part with him. A conveyancer or scrivener draws up legal documents; a porringer is a small bowl; “plate” means silver tableware; a “mite” is a small gift. The Bible verse quoted is from Paul’s letter to the Philippians.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Business Success and First Public Service, from the continuation begun at Passy in 1784 to the end of the chapter; opens “[Continuation of the Account of my Life, begun at Passy, near Paris, 1784.]”; closes “…excuse it; my present purpose being to relate facts, and not to make apologies for them.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          175,
+          186
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ce6596ce29d5b2fe8ea3fb5614ec196f51571a2d16f3121d1a1f1c57fdd82b2c"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-04-q1",
+          "prompt": "How does Franklin begin again after thirteen years? What does he admit about his memory and his papers, and how should that affect our trust in what follows?",
+          "facilitatorNotes": [
+            "He writes away from home “among my papers,” cannot check dates, and does not know whether he already told the library story, so he offers an account that “may be struck out.” In fact the first part had ended with that story, so readers can compare the two.",
+            "Admitting the limits makes him more trustworthy, not less, and the two versions agree on the key facts: fifty subscribers paying forty shillings each. His proud aside about standing before five kings shows the distance he has travelled since."
+          ],
+          "evidence": [
+            "It might, too, be much better done if I were at home among my papers, which would aid my memory, and help to ascertain dates",
+            "which may be struck out if found to have been already given"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-04-q2",
+          "prompt": "Franklin learned to present the library as “a scheme of a number of friends.” Why did that work, and is his advice about vanity humble or clever?",
+          "facilitatorNotes": [
+            "People resisted a project that might raise one neighbour above the others, so he hid his own role and the subscriptions went “more smoothly.” He claims that someone vainer will try to take the credit and envy will then restore it to the real owner.",
+            "The advice is both: a small “sacrifice of your vanity” that is “amply repaid.” Notice that Franklin now claims the credit in print, which some students will find funny."
+          ],
+          "evidence": [
+            "I therefore put myself as much as I could out of sight",
+            "The present little sacrifice of your vanity will afterwards be amply repaid."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-04-q3",
+          "prompt": "Retell the story of the china bowl. What does “mark how luxury will enter families” mean, and what is Franklin’s tone toward his wife?",
+          "facilitatorNotes": [
+            "Deborah bought a china bowl and silver spoon for twenty-three shillings because her husband “deserv'd” them as much as the neighbours; from there the family’s china and silver grew to several hundred pounds’ worth. The mock-solemn warning is a joke at his own principles.",
+            "Readers differ on the tone: affectionate teasing, or a husband treating his wife as the weak point in his thrift. He also praises her as a partner who folded pamphlets and tended shop."
+          ],
+          "evidence": [
+            "But mark how luxury will enter families, and make a progress, in spite of principle",
+            "she thought her husband deserv'd a silver spoon and China bowl as well as any of his neighbors"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-04-q4",
+          "prompt": "Why does Franklin stop going to hear the Presbyterian minister? What did he expect from the text from Philippians, and what does this show about what he thinks religion is for?",
+          "facilitatorNotes": [
+            "He expected moral teaching from a verse about whatever is “true, honest, just, pure, lovely”; he got five duties to the church. He judged that the sermons aimed “rather to make us Presbyterians than good citizens,” since he held that the best service of God is “doing good to man.”",
+            "His last sentence refuses to apologize: his purpose is “to relate facts.” Students can debate whether that is honesty or a way of avoiding judgment."
+          ],
+          "evidence": [
+            "their aim seeming to be rather to make us Presbyterians than good citizens",
+            "the most acceptable service of God was the doing good to man",
+            "my present purpose being to relate facts, and not to make apologies for them"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-05",
+      "title": "A plan for moral perfection",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the thirteen precepts slowly and decide which govern conduct and which govern thought. Then treat the little ruled book and the daily schedule as tools of a method.",
+      "focus": "Virtue treated as habit, trained by design and by keeping a record.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. He wrote this part at Passy, near Paris, in 1784, while serving as the American minister to France, recalling a project from his years as a young Philadelphia printer around 1730. “Elevation” here means tipsiness; venery is sexual activity. Pythagoras’s Golden Verses are ancient moral maxims. The mottoes come from Joseph Addison’s play Cato, the Roman orator Cicero (his Latin praises philosophy as the guide of life, which seeks out virtues and drives out vices), the Book of Proverbs, and the poet James Thomson.",
+      "contentNote": "The precept for Chastity refers briefly and frankly to sexual conduct.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter IX, from the start through his scheme of employment for the day; opens “IT was about this time I conceived the bold and arduous project of arriving at moral…”; closes “Night 10 Sleep. 11 12 1 2 3 4”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-franklin-autobiography-1922-06",
+        "blocks": [
+          188,
+          238
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c4d93fe69a430acc441365e6b5c6ed556050aec9f3184a455dfec8db44f5f8a1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-05-q1",
+          "prompt": "Why did Franklin’s first attempt to be faultless fail? What did he conclude about knowing what is right?",
+          "facilitatorNotes": [
+            "While guarding against one fault he was surprised by another; “habit took the advantage of inattention.” He concluded that conviction alone does not prevent slipping: bad habits must be broken and good ones built.",
+            "Some readers find the insight obvious; others think its consequence, a practical method, is the original part. Both can be argued."
+          ],
+          "evidence": [
+            "habit took the advantage of inattention; inclination was sometimes too strong for reason",
+            "the mere speculative conviction that it was our interest to be completely virtuous, was not sufficient to prevent our slipping"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-05-q2",
+          "prompt": "Choose two of the thirteen precepts and restate them in your own words. Does Franklin’s wording make it easier or harder to tell each day whether you kept them?",
+          "facilitatorNotes": [
+            "He chose “more names, with fewer ideas annex’d to each,” so most precepts are concrete enough to check nightly: “Eat not to dullness” sets a test, while “Imitate Jesus and Socrates” is open-ended.",
+            "Readers may notice that the list mixes outward conduct (Order, Frugality) with inner states (Tranquillity, or Sincerity’s “think innocently”). Strong answers connect wording to the black spots in the book."
+          ],
+          "evidence": [
+            "to use rather more names, with fewer ideas annex'd to each, than a few names with more ideas",
+            "Eat not to dullness; drink not to elevation."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-05-q3",
+          "prompt": "How is the order of the virtues part of the plan? Explain one link in his chain and say whether you find it persuasive.",
+          "facilitatorNotes": [
+            "Temperance gives a clear head; Silence helps him learn by listening and break a habit of “prattling, punning, and joking”; Order frees time; Resolution sustains the rest; Frugality and Industry free him from debt, which makes Sincerity and Justice easier.",
+            "Some readers question the economic link, that honesty comes easier with money; others find it realistic about the pressures of debt."
+          ],
+          "evidence": [
+            "as the previous acquisition of some might facilitate the acquisition of certain others, I arrang'd them with that view",
+            "Frugality and Industry freeing me from my remaining debt, and producing affluence and independence, would make more easy the practice of Sincerity and Justice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-06",
+      "title": "The speckled ax, and the trouble with pride",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Weigh what Franklin says the project achieved against what he admits it did not, and notice how his humour handles failure.",
+      "focus": "Partial success, the appearance and the reality of a virtue, and the persistence of pride.",
+      "context": "Recap: As a young printer Franklin set out to “arrive at moral perfection” by practising thirteen virtues, one each week, and marking each day’s faults with black spots in a little ruled book. A journeyman printer works for wages; a master runs his own shop. Foppery is fussy vanity. The Junto was a club of young Philadelphia tradesmen that Franklin founded for discussion. A Quaker is a member of the Religious Society of Friends.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter IX, from his use of the method through his remarks on humility and the note “Thus far written at Passy, 1784”; opens “I enter'd upon the execution of this plan for self-examination, and continu'd it with…”; closes “[Thus far written at Passy, 1784.]”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-franklin-autobiography-1922-05",
+        "continuesTo": "reading-9-franklin-autobiography-1922-07",
+        "blocks": [
+          239,
+          250
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e17ce65922e0c69c9ac2bcbe5826517b2ba68255a013d093cf37e8ce3e69d011"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-06-q1",
+          "prompt": "Retell the story of the speckled ax. What arguments for giving up does “something, that pretended to be reason” suggest to Franklin?",
+          "facilitatorNotes": [
+            "The neighbour tired of turning the grindstone and decided he liked “a speckled ax best.” The pretended reason said that strict perfection might be “foppery in morals,” would invite envy, and that a kind man should keep a few faults to make his friends comfortable.",
+            "The excuses are witty and partly true, which is why they tempt; Franklin calls them reason only in pretence. Students may decide whether any of them is actually sound."
+          ],
+          "evidence": [
+            "but I think I like a speckled ax best",
+            "a benevolent man should allow a few faults in himself, to keep his friends in countenance"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-06-q2",
+          "prompt": "Franklin says he never reached perfection but became “a better and a happier man” for trying. How does the comparison with copying engraved handwriting support this?",
+          "facilitatorNotes": [
+            "Learners who copy a perfect model never match it, but their hand is improved by the effort; the ideal works as a direction rather than a finish line.",
+            "Readers can test this against the rewards he lists for his descendants (health, fortune, reputation, his country’s confidence), which some find complacent and others candid."
+          ],
+          "evidence": [
+            "yet I was, by the endeavour, a better and a happier man than I otherwise should have been if I had not attempted it",
+            "their hand is mended by the endeavour"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-06-q3",
+          "prompt": "Franklin planned to argue that “vicious actions are not hurtful because they are forbidden, but forbidden because they are hurtful.” What is the difference, and why would it suit a book meant for “people in all religions”?",
+          "facilitatorNotes": [
+            "If harm is the reason, morality can be argued from human nature and self-interest without appealing to any one church’s authority, which fits his deliberate avoidance of sectarian doctrines.",
+            "Some readers welcome a practical, inclusive ethic; others worry that grounding virtue in interest, even in making “a poor man’s fortune,” turns goodness into a business strategy."
+          ],
+          "evidence": [
+            "vicious actions are not hurtful because they are forbidden, but forbidden because they are hurtful",
+            "no qualities were so likely to make a poor man's fortune as those of probity and integrity"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-06-q4",
+          "prompt": "Franklin admits more success with the appearance of humility than with its reality. Is the habit he describes honest modesty or a persuasive technique? How does his final sentence on pride complicate your answer?",
+          "facilitatorNotes": [
+            "He banned words such as “certainly” and began replies by granting cases where the other person was right; his views met “less contradiction,” and he credits the habit for his influence despite being “a bad speaker.” It is at least partly strategy.",
+            "The closing joke, that he would “probably be proud of my humility,” concedes the limits of self-mastery and wins the reader’s sympathy. Accept arguments for modesty, technique, or both."
+          ],
+          "evidence": [
+            "I cannot boast of much success in acquiring the reality of this virtue, but I had a good deal with regard to the appearance of it.",
+            "I should probably be proud of my humility"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-07",
+      "title": "A United Party for Virtue",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Read the 1731 “Observations” as an argument in numbered steps. Then compare the proposed creed and secret society with the scheme of virtues that came before.",
+      "focus": "A young man’s theory of politics as competing interests, and his plan for an organized remedy.",
+      "context": "Recap: Franklin described his thirteen-week method of practising the virtues, admitted that he never mastered Order or overcame pride, and mentioned a “great and extensive project” he never completed. Here he resumes writing in Philadelphia in 1788, after the Revolution, and explains that project from a note he made in 1731, aged twenty-five. A sect is a religious group; the “professors” of a religion are those who profess it; “ingenuous” means candid and open.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter IX, from Franklin’s note on resuming at home in 1788 to the end of the chapter; opens “[\"I am now about to write at home, August, 1788, but cannot have the help expected from…”; closes “…divert his attention, makes the execution of that same plan his sole study and business.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-franklin-autobiography-1922-06",
+        "continuesTo": null,
+        "blocks": [
+          251,
+          272
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "71bf267cc28069adb4a1d2d2a97c2bc52f51a20c0bb7378e56e8e3f98b436c11"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-07-q1",
+          "prompt": "Summarize the 1731 “Observations” in two sentences. What does the young Franklin think drives “the great affairs of the world”?",
+          "facilitatorNotes": [
+            "Parties pursue what they take to be their general interest; once they win, members turn to private interests and split, causing more confusion. Few act for their country’s good, and fewer for mankind’s, even when their actions do some good.",
+            "It is a realistic, almost cynical account from someone who would spend his life in parties and public business. Students may test it against politics they know."
+          ],
+          "evidence": [
+            "That the great affairs of the world, the wars, revolutions, etc., are carried on and effected by parties.",
+            "That fewer still, in public affairs, act with a view to the good of mankind."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-07-q2",
+          "prompt": "Franklin says his creed contains “the essentials of every known religion.” What does it include, and what does it leave out?",
+          "facilitatorNotes": [
+            "One God, providence, worship, an immortal soul, reward and punishment, and above all “doing good to man.” It leaves out the doctrines and practices that divide churches.",
+            "Some readers see an inclusive common ground; others see a creed so thin that it mainly serves his practical aims. Both readings are defensible from the list."
+          ],
+          "evidence": [
+            "But that the most acceptable service of God is doing good to man.",
+            "containing, as I thought, the essentials of every known religion"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-07-q3",
+          "prompt": "Why should the Society of the Free and Easy be secret and begin among “young and single men only”? What does its name promise, and what does the final sentence reveal about Franklin’s view of himself?",
+          "facilitatorNotes": [
+            "Secrecy keeps out “improper persons,” and members would advance one another’s business: part moral club, part network. “Free” means free from vice and from debt, which he calls “a species of slavery to his creditors.”",
+            "The last sentence, that one able man with a good plan and single focus “may work great changes,” reads like a summary of his own career. Readers may also notice whom the society excludes."
+          ],
+          "evidence": [
+            "free from debt, which exposes a man to confinement, and a species of slavery to his creditors",
+            "one man of tolerable abilities may work great changes, and accomplish great affairs among mankind"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-08",
+      "title": "A brother’s son, secret clubs and a borrowed book",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Franklin turns almost every event into a lesson for the reader. Separate each event from the lesson he draws, and test whether the lesson follows.",
+      "focus": "Family repair, a hard-won lesson about smallpox, and Franklin’s methods for gaining influence: secret networks, a borrowed book and careful accounts.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In the 1730s Franklin, now in his thirties, ran a successful printing house and newspaper in Philadelphia. As a teenager he had run away from his apprenticeship to his older brother James, a Boston printer. The Junto was Franklin’s club of tradesmen who debated questions (“queries”) for mutual improvement. Smallpox inoculation meant deliberately giving someone a mild case through a small cut; it usually protected against the deadly natural disease but carried some risk. The General Assembly was Pennsylvania’s elected legislature; Bradford, his “old competitor,” was the printer who had also run the post office.",
+      "contentNote": "Franklin briefly recalls the death of his four-year-old son from smallpox.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Poor Richard’s Almanac and Other Activities, from the visit to Boston through the post office; opens “After ten years' absence from Boston, and having become easy in my circumstances, I made…”; closes “…is the most powerful of all recommendations to new employments and increase of business.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          285,
+          291
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "25398d87a77c14cd6e218159c44cf0a4fb45847e20101dba19ed0b84e4261099"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-08-q1",
+          "prompt": "Two family events open the passage. How does Franklin present each as making up for, or learning from, a mistake?",
+          "facilitatorNotes": [
+            "He takes in his dying brother’s son and later gives him new types, “ample amends” for having left his apprenticeship to that brother. His son’s death from smallpox becomes advice: parents who fear inoculation should know “the regret may be the same either way.”",
+            "Ask how it feels to read a child’s death turned into a public argument in two sentences. Some readers find it cold; others see grief that he “still” feels being put to use."
+          ],
+          "evidence": [
+            "Thus it was that I made my brother ample amends for the service I had depriv'd him of by leaving him so early.",
+            "I long regretted bitterly, and still regret that I had not given it to him by inoculation.",
+            "the regret may be the same either way, and that, therefore, the safer should be chosen"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-08-q2",
+          "prompt": "The Junto’s members each formed a “subordinate club” without telling its members about the connection. What advantages does Franklin list, and how do you judge the secrecy?",
+          "facilitatorNotes": [
+            "Improving more young citizens, learning what people thought, helping members’ business, and spreading the Junto’s views to influence public opinion. The new clubs did not know they were being used for that last purpose.",
+            "Some readers see an early civic network; others see quiet manipulation. Franklin seems untroubled and even promises “instances” of how well it worked."
+          ],
+          "evidence": [
+            "without informing them of the connection with the Junto",
+            "our power of doing good by spreading thro' the several clubs the sentiments of the Junto",
+            "our views of influencing the public opinion on particular occasions"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-08-q3",
+          "prompt": "Explain the borrowed-book strategy. Why might asking a favour win over an opponent better than doing him one?",
+          "facilitatorNotes": [
+            "Instead of flattering the new member, Franklin asked to borrow a rare book and thanked him warmly; the man became a friend for life. Having helped Franklin once, he had a reason to think well of him, as the maxim says.",
+            "Students may notice that the request also flattered the man’s taste and learning. Ask whether the method is sincere friendship or skilful management, or both."
+          ],
+          "evidence": [
+            "He that has once done you a kindness will be more ready to do you another, than he whom you yourself have obliged.",
+            "I did not, however, aim at gaining his favour by paying any servile respect to him"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-08-q4",
+          "prompt": "Franklin explains what he gained as clerk and as postmaster, then offers lessons to “young men.” How does he mix self-interest and advice, and does his conduct toward Bradford show the virtue he claims?",
+          "facilitatorNotes": [
+            "He openly values the clerkship for the printing jobs it secured and the post office for his newspaper. Bradford lost the post office through careless accounts; Franklin says he did not retaliate by barring Bradford’s papers, as Bradford had once barred his.",
+            "He still enjoys reporting that his rival’s paper “declin'd proportionately.” Readers can decide whether the restraint is generosity, prudence, or both."
+          ],
+          "evidence": [
+            "which secur'd to me the business of printing the votes, laws, paper money, and other occasional jobbs for the public, that, on the whole, were very profitable",
+            "I was satisfy'd without retaliating his refusal",
+            "Thus he suffer'd greatly from his neglect in due accounting"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-09",
+      "title": "The city watch and the Union Fire Company",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 19,
+        "totalMinutes": 25
+      },
+      "challenge": "Notice how Franklin turns a complaint into a proposal and a proposal into an institution. Track each step.",
+      "focus": "Civic improvement by a club of tradesmen: a fairer tax, and a volunteer fire company that outlived its founders.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. He wrote this part in Philadelphia in 1788, looking back to the 1730s. The Junto was the club of young tradesmen he had founded in 1727 to discuss ideas and improve themselves. The city was divided into wards, each with a constable who organised the night watch from local householders (“housekeepers”). Six shillings was a modest sum, fifty pounds a small estate; “tippling” is drinking; conflagrations are large fires.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter XI, from the start through the history of the Union Fire Company; opens “I BEGAN now to turn my thoughts a little to public affairs, beginning, however, with…”; closes “…have often been extinguished before the house in which they began has been half consumed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          293,
+          296
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "32b8b313aab5efca22e56d9de46881c4bd6c581f9186a5623d8a3e8bc78954d6"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-09-q1",
+          "prompt": "Franklin finds two faults with the city watch. What are they, and which does he stress “more particularly”?",
+          "facilitatorNotes": [
+            "The watch was badly kept, with drinking “ragamuffins” and neglected rounds, and it was paid for unfairly: a poor widow paid the same six shillings as the richest merchant. He stresses the unfairness, proposing paid watchmen and a tax “proportion’d to the property.”",
+            "Students may connect this with modern arguments over flat and proportional taxes. Franklin’s argument rests on what each person has to protect."
+          ],
+          "evidence": [
+            "insisting more particularly on the inequality of this six-shilling tax",
+            "the levying a tax that should be proportion'd to the property"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-09-q2",
+          "prompt": "The plan was passed to the other clubs “as arising in each of them.” Why might Franklin hide his authorship, and why does he count the plan a success though it was not adopted at once?",
+          "facilitatorNotes": [
+            "If each club believed the idea its own, members would support it without envy of its author. And though no law passed immediately, the plan prepared “the minds of people,” so that the change came easily years later.",
+            "Some readers admire this patient, self-effacing method; others find it a little calculating. Either way, Franklin is telling how change happens slowly."
+          ],
+          "evidence": [
+            "was communicated to the other clubs, but as arising in each of them",
+            "by preparing the minds of people for the change, it paved the way for the law obtained a few years after"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-09-q3",
+          "prompt": "How did the fire company work, and what made it last more than fifty years?",
+          "facilitatorNotes": [
+            "Members kept buckets, bags and baskets ready, came to every fire, and met monthly for “a social evening.” Fines for missing meetings bought fire-engines and ladders, so even absence improved the equipment, and new companies formed as more people wanted to join.",
+            "Franklin’s pride shows: “I question whether there is a city in the world better provided.” Students may weigh that boast against his evidence about houses lost to fire."
+          ],
+          "evidence": [
+            "we agreed to meet once a month and spend a social evening together",
+            "The small fines that have been paid by members for absence at the monthly meetings have been apply'd to the purchase of fire-engines",
+            "I question whether there is a city in the world better provided"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-10",
+      "title": "Franklin and the preacher Whitefield",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch Franklin observing Whitefield: as a listener, a friend and a scientist. Find one moment when he laughs at himself.",
+      "focus": "A sceptic’s portrait of a great preacher, full of affection, comedy and measurement.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. He wrote this part in Philadelphia in 1788. George Whitefield (1714–1770), an English preacher, toured the colonies drawing enormous outdoor crowds; his preaching fed the religious revival later called the Great Awakening. “Itinerant” means travelling; Georgia had been founded in 1733. Pistoles were Spanish gold coins; Westminster Hall is a great medieval hall in London; the Mufti of Constantinople was the chief Islamic scholar of the Ottoman Empire. Quakers addressed one another as “Friend” and used “thee.” Litera scripta manet is Latin for “the written word remains”; votaries and proselytes are devoted followers and converts.",
+      "contentNote": "Franklin uses “Mohammedanism,” an old term for Islam that many Muslims find offensive.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter XI, the passage on George Whitefield; opens “In 1739 arrived among us from Ireland the Reverend Mr. Whitefield, who had made himself…”; closes “…variety of excellences as their enthusiastic admiration might wish him to have possessed.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          297,
+          306
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1fd266fa8c5e2c7188f29ac5daeaae72376f7a4ff6ce10f5754b8676f4d86d68"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-10-q1",
+          "prompt": "Retell the story of the collection for the Orphan House. How does Franklin make it comic, and what does it prove?",
+          "facilitatorNotes": [
+            "He resolves to give nothing, then moves from copper to silver to gold as the sermon goes on, and ends by emptying his pocket. The escalation, told in his own deadpan voice, shows Whitefield’s power over “hearts and purses,” with Franklin himself as the evidence.",
+            "The second story doubles the joke: a friend who emptied his pockets in advance tries to borrow money, and a Quaker neighbour refuses because he “seems to be out of thy right senses.”"
+          ],
+          "evidence": [
+            "I silently resolved he should get nothing from me.",
+            "I empty'd my pocket wholly into the collector's dish, gold and all.",
+            "for thee seems to be out of thy right senses."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-10-q2",
+          "prompt": "Describe Franklin’s experiment on Whitefield’s voice. What does it show about how Franklin thinks?",
+          "facilitatorNotes": [
+            "He walked backward down Market Street until the voice faded, imagined a half-circle with that distance as its radius, allowed two square feet per listener, and calculated that more than thirty thousand people could hear. The result made him believe newspaper reports of huge crowds and ancient stories of generals addressing armies.",
+            "Even at a revival he measures and tests. His remark that rehearsed sermons please like “an excellent piece of musick” shows the same habit of analysing his own pleasure."
+          ],
+          "evidence": [
+            "Imagining then a semicircle, of which my distance should be the radius",
+            "I computed that he might well be heard by more than thirty thousand.",
+            "a pleasure of much the same kind with that receiv'd from an excellent piece of musick"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-10-q3",
+          "prompt": "Franklin calls theirs “a mere civil friendship.” How does the “for Christ’s sake” exchange show its terms, and what does Franklin think of Whitefield’s writing?",
+          "facilitatorNotes": [
+            "Whitefield thanks him in religious terms; Franklin insists the offer was “for your sake,” personal friendship rather than piety, and a friend jokes that he kept the debt “on earth.” Franklin also vouches for Whitefield’s honesty, saying his word counts more because they shared no religion.",
+            "On writing, Franklin observes that printed sermons gave critics something fixed to attack; had Whitefield written nothing, followers could have imagined any virtues for him. Students may find the remark shrewd, cynical, or both."
+          ],
+          "evidence": [
+            "it was not for Christ's sake, but for your sake.",
+            "my testimony in his favour ought to have the more weight, as we had no religious connection",
+            "his proselytes would be left at liberty to feign for him as great a variety of excellences"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-11",
+      "title": "Plain Truth and the Association",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "List the steps Franklin takes to defend a colony that has no militia. For each, ask what made it work.",
+      "focus": "A private citizen organizes a volunteer army, a lottery and a borrowed battery, and deals carefully with a pacifist legislature.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In the 1740s Britain was at war with Spain and then France, and enemy privateers threatened Philadelphia from the sea. Pennsylvania had no militia, because its Assembly was controlled by Quakers, members of a Christian group whose principles forbid war. The proprietaries were the Penn family, who owned the colony. Franklin had been clerk of the Assembly since 1736. A battery is a set of cannon in a fortification; merlons are the solid parts of its wall between the gun openings; a bumper is a full glass. The Philosophical Society he mentions became the American Philosophical Society.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Defense of the Province, from the plan for an academy to the Quakers’ view of defensive war; opens “I HAD, on the whole, abundant reason to be satisfied with my being established in…”; closes “…Quakers, in favour of defense, which I believe convinc'd most of their younger people.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          310,
+          317
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "28e9e5598c355aa51218ed4f504402fe2d6cb61266d39988e7ea6d4f356b076d"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-11-q1",
+          "prompt": "How did Franklin turn his pamphlet Plain Truth into an army? What preparations at the meeting help explain the result?",
+          "facilitatorNotes": [
+            "He promised an association in the pamphlet, then held a meeting with printed copies ready and “pens and ink dispers'd all over the room,” explained it briefly, and let people sign at once. Twelve hundred signed that night and over ten thousand in the end.",
+            "Franklin knew how to make agreement easy. Students can compare this with how petitions and sign-ups work today."
+          ],
+          "evidence": [
+            "I had prepared a number of printed copies, and provided pens and ink dispers'd all over the room.",
+            "the subscribers amounted at length to upward of ten thousand"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-11-q2",
+          "prompt": "Franklin declines to be colonel but takes his turn on guard “as a common soldier.” Why might he describe both choices, and what does the cannon story at Governor Clinton’s dinner add?",
+          "facilitatorNotes": [
+            "He presents himself as an organizer without personal ambition, which fits his rule of keeping out of sight to win cooperation. The Madeira story, six cannon becoming ten and then eighteen as the glasses empty, shows the comic side of getting things done.",
+            "Some readers will see modesty; others will see a carefully managed image. Both are supported by what he chooses to tell."
+          ],
+          "evidence": [
+            "chose me for their colonel; but, conceiving myself unfit, I declin'd that station",
+            "After a few more bumpers he advanc'd to ten; and at length he very good-naturedly conceded eighteen.",
+            "I regularly took my turn of duty there as a common soldier"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-11-q3",
+          "prompt": "Franklin, who seldom went to church, proposes a public fast “Calling in the aid of religion.” What was the fast for? Is this sincere, practical, or both?",
+          "facilitatorNotes": [
+            "He wanted to “implore the blessing of Heaven,” but he also notes the result: the clergy of every sect could urge their congregations to join the association. His New England upbringing supplied the form of the proclamation.",
+            "The phrase “Calling in the aid of religion” makes religion sound like an ally to recruit. Students can weigh it against his stated beliefs about doing good."
+          ],
+          "evidence": [
+            "Calling in the aid of religion, I propos'd to them the proclaiming a fast",
+            "This gave the clergy of the different sects an opportunity of influencing their congregations to join in the association"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-11-q4",
+          "prompt": "Explain Franklin’s rule about offices: “never ask, never refuse, nor ever resign.” What does his last remark about the Quakers suggest about how he reads people?",
+          "facilitatorNotes": [
+            "He would not resign under pressure, because resigning would surrender “my right of some time or other making reprisals.” He judges that the Quakers did not mind defence as long as they did not have to take part: many were against offensive war but not defensive.",
+            "The tone is dry rather than contemptuous. Ask whether he is fair to people trying to keep a religious principle in a dangerous time."
+          ],
+          "evidence": [
+            "I shall never ask, never refuse, nor ever resign an office.",
+            "the defense of the country was not disagreeable to any of them, provided they were not requir'd to assist in it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-12",
+      "title": "The fire company vote and “other grain”",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Follow the fire-company meeting minute by minute, then collect every way in which Quakers found to support defence without saying so.",
+      "focus": "Franklin’s amused, respectful account of how a pacifist people handled the demands of war.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In the late 1740s Franklin organized a volunteer association to defend Philadelphia and proposed a lottery to pay for a battery of cannon. Pennsylvania’s Assembly was controlled by Quakers (who call themselves Friends), whose principles forbid war. The Union Fire Company was a volunteer firefighting club Franklin had founded. William Penn, a Quaker, founded Pennsylvania; James Logan came over as his secretary. Louisburg was a French fortress on Cape Breton Island captured by New England troops in 1745. A fire-engine was a hand pump on wheels; a “great gun” is a cannon.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Defense of the Province, from the vote in the fire company to the joke about a fire-engine; opens “A transaction in our fire company gave me some insight into their prevailing sentiments.…”; closes “…Assembly; your equivocal project would be just a match for their wheat or other grain.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          318,
+          323
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d34c7d6a35f914b883a4414cdfb42aa6c829bf24f9447a1e94636d83d729802a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-12-q1",
+          "prompt": "How did Franklin win the fire-company vote? Why did he agree to wait “another hour” after “a little seeming hesitation”?",
+          "facilitatorNotes": [
+            "Eight Quaker members waiting at a nearby tavern promised to vote with him if needed but hoped not to be called. Knowing he had a majority, he could appear generous by granting the delay; no opponents came, and the resolution passed eight to one.",
+            "The “seeming hesitation” is a small performance. Franklin then turns the vote into evidence: he estimates that only one Quaker in twenty-one sincerely opposed defence."
+          ],
+          "evidence": [
+            "Being thus secure of a majority, I went up, and after a little seeming hesitation, agreed to a delay of another hour.",
+            "I afterward estimated the proportion of Quakers sincerely against defense as one to twenty-one only"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-12-q2",
+          "prompt": "What does James Logan’s answer to William Penn reveal? Why might Franklin include this story?",
+          "facilitatorNotes": [
+            "Penn rebuked Logan for staying on deck to help fight, but Logan points out that Penn did not order him below while danger seemed real. The retort exposes how a principle can be kept by letting others do the fighting.",
+            "Logan was himself a Quaker who supported defence, so the story supports Franklin’s case from inside the sect. Students may find it unfair to Penn, who did, after all, go below."
+          ],
+          "evidence": [
+            "I being thy servant, why did thee not order me to come down?",
+            "But thee was willing enough that I should stay and help to fight the ship when thee thought there was danger."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-12-q3",
+          "prompt": "Explain “for the king’s use” and “other grain is gunpowder.” Are these evasions hypocrisy, or a reasonable compromise?",
+          "facilitatorNotes": [
+            "The Assembly granted war money without naming its purpose, and voted funds for “bread, flour, wheat or other grain” so the governor could buy gunpowder. They kept their principle in words while meeting the demand in fact.",
+            "Some readers see hypocrisy; others see a practical way to live with both conscience and duty. Franklin’s own joke about buying a “great gun” as a “fire-engine” shows he enjoys the trick, and his friend Syng teases him for learning it from the Assembly."
+          ],
+          "evidence": [
+            "The common mode at last was, to grant money under the phrase of its being \"for the king's use,\" and never to inquire how it was applied.",
+            "I shall take the money, for I understand very well their meaning; other grain is gunpowder",
+            "we will buy a great gun, which is certainly a fire-engine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-13",
+      "title": "The Dunkers’ caution and the Pennsylvania fireplace",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 19,
+        "totalMinutes": 26
+      },
+      "challenge": "Restate the Dunker founder’s reason in one sentence, then test Franklin’s fog image against your own experience of being sure you are right.",
+      "focus": "Two kinds of modesty: a church that refuses to fix its beliefs in print, and an inventor who refuses a patent.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. Franklin has just told how Pennsylvania’s Quakers, who held that all war was unlawful, found ways to vote money for defence without saying so. The Dunkers were a small German Baptist sect in Pennsylvania, named for baptism by dipping. To calumniate is to slander; a confession of faith is a church’s written statement of beliefs. A patent gives an inventor the sole right to make or sell an invention for a term of years; an ironmonger sells iron goods.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Defense of the Province, from the Dunkers’ refusal to print their beliefs to the end of the chapter; opens “These embarrassments that the Quakers suffer'd from having establish'd and published it…”; closes “…the neighbouring colonies, has been, and is, a great saving of wood to the inhabitants.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          324,
+          327
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7c1c21c27ea49e318aea348e052b71461842527a2ae44f66694a2afd01986cca"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-13-q1",
+          "prompt": "Why will the Dunkers not publish their beliefs, even to stop slander?",
+          "facilitatorNotes": [
+            "Their beliefs have kept improving as God gave them “farther light,” and they are not sure they have reached the end. A printed creed might bind them, and their successors would treat it as “something sacred, never to be departed from.”",
+            "Franklin links this to the Quakers’ trouble: having published that all war is unlawful, they could not easily change their minds. Ask which is the stronger reason, fear of error or fear of becoming rigid."
+          ],
+          "evidence": [
+            "we fear that, if we should once print our confession of faith, we should feel ourselves as if bound and confin'd by it",
+            "never to be departed from"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-13-q2",
+          "prompt": "Explain Franklin’s image of the man walking in fog. What does it say about every sect, and is it fair?",
+          "facilitatorNotes": [
+            "Everyone else, ahead, behind and to the sides, seems wrapped in fog, while “near him all appears clear,” though he is “as much in the fog as any of them.” Each sect thinks itself in possession of all truth.",
+            "Some readers find it a wise warning against certainty; others note that Franklin, outside every sect, may be walking in his own patch of clear-seeming air. Ask students for a modern example."
+          ],
+          "evidence": [
+            "like a man traveling in foggy weather",
+            "tho' in truth he is as much in the fog as any of them"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-13-q3",
+          "prompt": "Franklin calls the Quakers’ withdrawal from public office a choice “to quit their power than their principle.” Is that praise, criticism, or both?",
+          "facilitatorNotes": [
+            "It respects their consistency, since they would rather leave office than act against their beliefs. But it also shows the cost of a principle fixed in public, which the Dunker story has just warned about.",
+            "Accept either reading if it uses the order of the paragraphs: the Dunkers’ prudence is set against the Quakers’ “embarrassments.”"
+          ],
+          "evidence": [
+            "choosing rather to quit their power than their principle"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-13-q4",
+          "prompt": "Why does Franklin refuse a patent for his stove, and what happens when someone else takes one?",
+          "facilitatorNotes": [
+            "He states a rule: “as we enjoy great advantages from the inventions of others, we should be glad of an opportunity to serve others by any invention of ours.” A London ironmonger copies the pamphlet, changes the stove for the worse, patents it and makes “a little fortune.”",
+            "Franklin does not contest it, “having no desire of profiting by patents myself, and hating disputes,” and ends with the wood his stoves have saved. Some readers admire this; others ask whether patents might protect inventions from being spoiled. Both views are fair."
+          ],
+          "evidence": [
+            "we should be glad of an opportunity to serve others by any invention of ours; and this we should do freely and generously",
+            "made, as I was told, a little fortune by it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-14",
+      "title": "An academy, a seat in the Assembly and a treaty at Carlisle",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how Franklin presents his own motives, and where his tone toward other people turns cold.",
+      "focus": "Franklin founds a school by keeping himself in the background, accepts public offices with frank pleasure, and judges the Native people at a treaty with contempt.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. The war of the 1740s had ended (“Peace being concluded”), so Franklin’s volunteer militia, the Association, was no longer needed. The Junto was his club of tradesmen; the large hall built in Philadelphia for the preacher George Whitefield’s hearers was open to preachers of every sect. The academy he describes became the University of Pennsylvania. A justice of the peace was a local judge; an alderman, a senior city official; a burgess, an elected member of the Pennsylvania Assembly. In 1753 Pennsylvania commissioners met Native American leaders at Carlisle, on the frontier, to make a treaty.",
+      "contentNote": "Franklin calls Native people “savages,” describes them drunk and fighting in a scene “resembling our ideas of hell,” and suggests that rum may be Providence’s means to “extirpate” them to make room for farmers.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Public Services and Duties, from the founding of the academy through the Carlisle treaty; opens “PEACE being concluded, and the association business therefore at an end, I turn'd my…”; closes “…means. It has already annihilated all the tribes who formerly inhabited the sea-coast.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          329,
+          340
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2c8d68b2b2315920e39f536a5c72e5da04268f21af24d8a6fc0ce361b2f4b59b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-14-q1",
+          "prompt": "How does Franklin get the academy started? What “usual rule” does he follow, and why might it work?",
+          "facilitatorNotes": [
+            "He gathers friends, publishes a pamphlet, distributes it free, then opens a subscription paid in yearly quotas, which he thinks made it larger. He presents the proposal as the work of “publick-spirited gentlemen,” not his own.",
+            "Keeping himself out of view avoids envy and lets others feel ownership. Students who remember the library project may note the same method there."
+          ],
+          "evidence": [
+            "avoiding as much as I could, according to my usual rule, the presenting myself to the publick as the author of any scheme for their benefit"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-14-q2",
+          "prompt": "Why is Franklin chosen as a trustee of the preaching hall, and how does he use the position?",
+          "facilitatorNotes": [
+            "The trustees wanted no sect to dominate, and he was “merely an honest man, and of no sect at all.” Serving on both boards, he negotiates the hall’s transfer to the academy, keeping a hall open for preachers and a free school for poor children.",
+            "Being outside every sect is presented as a public asset. Ask whether this fits with the Dunkers’ fog image he has just used about sects."
+          ],
+          "evidence": [
+            "I was merely an honest man, and of no sect at all",
+            "maintain a free-school for the instruction of poor children"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-14-q3",
+          "prompt": "Franklin says his ambition “was flatter’d” by his new offices. Why include that admission? What does he do about the office he is not fit for?",
+          "facilitatorNotes": [
+            "He is honest that “considering my low beginning, they were great things to me,” while stressing that he never asked for a vote. He gives up the justice’s bench because he lacks “knowledge of the common law.”",
+            "Readers may see sincere self-knowledge, or a skilful way to look modest while listing honours. The magic squares he drew as a bored clerk add a human touch."
+          ],
+          "evidence": [
+            "I would not, however, insinuate that my ambition was not flatter'd by all these promotions; it certainly was",
+            "finding that more knowledge of the common law than I possess'd was necessary to act in that station with credit"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-14-q4",
+          "prompt": "Read the orator’s apology and Franklin’s comment on it. How does Franklin turn the speech toward his own conclusion, and what should a reader make of that conclusion?",
+          "facilitatorNotes": [
+            "The orator blames the rum and then, with some irony of his own, says the Great Spirit made rum “for the Indians to get drunk with.” Franklin takes this up and suggests rum may be Providence’s way to “extirpate these savages” for “cultivators of the earth.”",
+            "The commissioners themselves promised “plenty of rum” as a reward. Franklin’s cold remark shows a settler’s view that treated the destruction of Native peoples as natural. Readers should judge it plainly, as they would judge any narrator’s prejudice, not as the site’s view; some may also notice that the orator’s answer can be read as a pointed reply to the people who sold the rum."
+          ],
+          "evidence": [
+            "we would give them plenty of rum when business was over",
+            "Let this be for the Indians to get drunk with",
+            "if it be the design of Providence to extirpate these savages in order to make room for cultivators of the earth"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-15",
+      "title": "Paving, lamps and the sweeping of streets",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow each improvement from problem to solution, then decide whether the closing argument about small things persuades you.",
+      "focus": "Practical civic improvement, from a fundraising rule to a street lamp, defended in one of Franklin’s best-known sentences about happiness.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. Gilbert Tennent was a Presbyterian minister in Philadelphia; a meeting-house is a church building. In the 1700s most city streets were unpaved, and London’s were swept only by private effort. Scavengers were men paid to clear the streets; the kennel is the gutter. Craven Street, the Strand and Fleet Street are in London, where Franklin lived for years; Vauxhall was a London pleasure garden lit by lamps. A shilling was twelve pence; tallow is animal fat used for candles, which were taxed in Britain.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Public Services and Duties, from Gilbert Tennent’s subscription through Franklin’s defence of “trifling matters”; opens “It was about this time that another projector, the Rev. Gilbert Tennent, came to me with…”; closes “…having lived many years in it very happily, and perhaps to some of our towns in America.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          346,
+          358
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c659b74dac5aeb4a2cda7a0c09673e56f46ef83df9222c4b3e567ec5282ba825"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-15-q1",
+          "prompt": "What advice does Franklin give Tennent, and why does its last part work?",
+          "facilitatorNotes": [
+            "Ask those who will give; then the uncertain, showing them the list of givers; and do not skip those “you are sure will give nothing, for in some of them you may be mistaken.” Tennent asks everyone and raises more than he expected.",
+            "The advice is funny and shrewd: it admits that our judgments of others can be wrong. Ask how the list of givers works on the undecided."
+          ],
+          "evidence": [
+            "do not neglect those who you are sure will give nothing, for in some of them you may be mistaken"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-15-q2",
+          "prompt": "How did the paving of Philadelphia come about? Trace the steps, from one market street to a law.",
+          "facilitatorNotes": [
+            "Franklin talks and writes until the street to the market is paved; he hires a poor man to sweep it for sixpence a month per house and prints a paper of the advantages; the clean pavement makes people want all streets paved and accept a tax. Then he drafts a bill.",
+            "He begins with a small, visible example that persuades by experience. He also gives credit for street lighting to John Clifton: ask why he makes a point of these corrections."
+          ],
+          "evidence": [
+            "it was unanimously sign'd, and for a time well executed",
+            "made the people more willing to submit to a tax for that purpose",
+            "The honour of this public benefit has also been ascrib'd to me, but it belongs truly to that gentleman."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-15-q3",
+          "prompt": "What does Franklin learn from the poor woman who sweeps his street in London, and how does he use it?",
+          "facilitatorNotes": [
+            "Though “very pale and feeble,” she sweeps the whole street in three hours; he concludes that “a strong, active man might have done it in half the time,” and proposes that watchmen have the dust swept before the shops open.",
+            "He turns one person’s need into data for a plan. Some readers notice that he observes her mainly as evidence; others point out that he pays her and listens to her. Both can be argued."
+          ],
+          "evidence": [
+            "if that feeble woman could sweep such a street in three hours, a strong, active man might have done it in half the time"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-15-q4",
+          "prompt": "“Human felicity is produced not so much by great pieces of good fortune that seldom happen, as by little advantages that occur every day.” How does the razor example support this claim? Do you agree?",
+          "facilitatorNotes": [
+            "A thousand guineas may be spent and leave only regret, but knowing how to shave yourself spares daily small vexations for life. Small benefits, repeated, add up, as dust in a crowded city does.",
+            "Readers can test the claim on their own lives. Some may say great fortunes still matter more; Franklin anticipates the objection that these are “trifling matters.” Note the joke about Londoners who “sleep by sunshine” and complain about candle taxes."
+          ],
+          "evidence": [
+            "Human felicity is produced not so much by great pieces of good fortune that seldom happen, as by little advantages that occur every day.",
+            "Some may think these trifling matters not worth minding or relating"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-16",
+      "title": "The Albany Plan and the proprietary governors",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow two stories of colonial government: a plan that failed and a quarrel that was solved by a trick of finance. Ask what Franklin wants the reader to conclude about each.",
+      "focus": "A plan of union rejected from both sides, the manners of political enemies, and the money behind the quarrels.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. He wrote this part in 1788. In 1754, with war against France and its Native allies expected, commissioners from several colonies met at Albany, New York, with chiefs of the Six Nations (the Haudenosaunee, or Iroquois Confederacy). The Lords of Trade oversaw the colonies from London; “prerogative” is the crown’s power. Pennsylvania was a proprietary colony: the Penn family owned it and appointed its governors, who followed their instructions, while the elected Assembly, long led by Quakers, voted taxes. The couplet is from John Dryden’s translation of the Roman poet Juvenal; Sancho Panza is the squire in Don Quixote; Crown Point was a French fort on Lake Champlain. The Loan Office lent paper money to colonists; an excise is a tax on goods.",
+      "contentNote": "At a dinner the governor and a friend joke about selling enslaved Black people, and Franklin replies with a pun on “blacken” and the racist word “negrofied.” Native nations are called “the Indians.”",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapters XIV and XV, complete; opens “IN 1754, war with France being again apprehended, a congress of commissioners from the…”; closes “…of his embassy, and ever after bore for me the most cordial and affectionate friendship.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          362,
+          376
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b70dd33d58deb2c2524591b89f42be6d937ad3b3b95897ad4b40abfebefc3a7e"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-16-q1",
+          "prompt": "Why did the Albany Plan fail, and why does Franklin treat its double rejection as evidence that it was right?",
+          "facilitatorNotes": [
+            "The colonial assemblies thought it gave too much power to the crown; in England it seemed “too much of the democratic.” Franklin concludes that opposite objections suggest “the true medium,” and that the plan would have made British troops and taxes unnecessary and so avoided “the bloody contest,” the Revolution.",
+            "Students may test the logic: a plan attacked from both sides is not necessarily right. Franklin is also writing in 1788, with hindsight."
+          ],
+          "evidence": [
+            "the assemblies did not adopt it, as they all thought there was too much prerogative in it, and in England it was judg'd to have too much of the democratic",
+            "makes me suspect that it was really the true medium",
+            "the subsequent pretence for taxing America, and the bloody contest it occasioned, would have been avoided"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-16-q2",
+          "prompt": "What does Franklin think of “disputing, contradicting, and confuting people”? How does his friendship with Governor Morris complicate the picture?",
+          "facilitatorNotes": [
+            "Disputers “get victory sometimes, but they never get good will.” Morris loved argument and broke his promise to avoid disputes at once. Yet though their public messages were “indecently abusive,” the two men stayed friends and often dined together.",
+            "Students may compare this separation of public battle and private civility with politics today, and decide whether it is admirable or strange."
+          ],
+          "evidence": [
+            "They get victory sometimes, but they never get good will, which would be of more use to them.",
+            "no personal difference between him and me was occasion'd by the contest, and we often din'd together"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-16-q3",
+          "prompt": "At the governor’s dinner, how do the jokes work, and what do they reveal about the men at the table and their time?",
+          "facilitatorNotes": [
+            "Morris jokes about Sancho Panza wanting to govern Black people so he could sell them; a guest suggests Franklin “sell” the Quakers. Franklin’s reply turns “blacken” (to smear a reputation) into a political point: the governor’s attacks have only blackened himself.",
+            "The wit wins the exchange, but every joke depends on treating enslaved people as goods for sale and Blackness as disgrace, and no one at the table objects. Franklin owned enslaved people in these years; late in life he became president of an abolition society. Students can discuss how a reader should hold both facts."
+          ],
+          "evidence": [
+            "requested it might be a government of blacks, as then, if he could not agree with his people, he might sell them",
+            "has not yet blacked them enough."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-16-q4",
+          "prompt": "What, according to Franklin, lay “at bottom” of the quarrels? How did he get the aid to New England past the governor?",
+          "facilitatorNotes": [
+            "The proprietors told their governors to pass no tax for defence “unless their vast estates” were exempted, which Franklin calls “incredible meanness.” He had the Assembly issue interest-bearing orders on the Loan Office, which people bought eagerly and used as money, so the provisions were paid for without the governor’s consent.",
+            "“Thus this important affair was by my means completed”: Franklin is never shy about his own part. Students may judge whether the scheme was clever, sly, or both."
+          ],
+          "evidence": [
+            "unless their vast estates were in the same act expressly excused",
+            "I then suggested a method of doing the business without the governor",
+            "Thus this important affair was by my means completed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-17",
+      "title": "Braddock’s confidence and defeat",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow Franklin’s warning, the general’s reply and the ambush as one argument about judgment. Then notice where the narrator writing in 1788 shows through.",
+      "focus": "Overconfidence, the tact of a warning, and an early crack in colonial faith in British power.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In 1755, early in the war between Britain and France for North America, the British general Edward Braddock marched against Fort Duquesne, a French fort where Pittsburgh now stands; Franklin, a Pennsylvania leader, had found wagons and horses for his army. Regulars are professional soldiers; militia are part-time local soldiers; an ambuscade is an ambush; Niagara and Frontenac were other French forts. Franklin wrote this section in 1788, after the Revolution.",
+      "contentNote": "Battle deaths are reported in numbers, and soldiers plunder settlers. Braddock calls Native warriors “savages,” a slur; Franklin’s “Indians” is the usual term of his time.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Chapter XVI, Braddock’s Expedition, from Franklin’s judgment of the general through Braddock’s last words; opens “This general was, I think, a brave man, and might probably have made a figure as a good…”; closes “…shall better know how to deal with them another time\"; and dy'd in a few minutes after.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          398,
+          403
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e190fe6ea1b5303ec7900bc8cb24c9fb23f4d2d0055a716bea8b03089b60d8b5"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-17-q1",
+          "prompt": "What three faults does Franklin find in Braddock, and how does the general’s treatment of George Croghan’s hundred scouts illustrate them?",
+          "facilitatorNotes": [
+            "Too much self-confidence, too high an opinion of regular troops, and too low an opinion of Americans and Indians. He “slighted and neglected” the Native scouts who could have guided him, and they left; then the fire from the woods was his “first intelligence” of the enemy.",
+            "Franklin also grants that Braddock was brave and might have done well “in some European war.” Ask why he opens with that concession."
+          ],
+          "evidence": [
+            "too much self-confidence, too high an opinion of the validity of regular troops, and too mean a one of both Americans and Indians",
+            "which was the first intelligence the general had of an enemy's being near him"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-17-q2",
+          "prompt": "Look at how Franklin voices his warning. Why does he begin “To be sure, sir,” and why does he stop after Braddock’s reply? Do you trust this account, written more than thirty years later?",
+          "facilitatorNotes": [
+            "He flatters before cautioning, gives the vivid image of an army “cut like a thread,” then defers to “a military man in matters of his profession.” The scene makes him both prophet and model of tact, much like the humility he describes practising in Chapter IX.",
+            "Readers may accept it, or suspect that hindsight has polished the memory. The narrator knows the outcome while he tells the conversation."
+          ],
+          "evidence": [
+            "to be cut like a thread into several pieces",
+            "I was conscious of an impropriety in my disputing with a military man in matters of his profession, and said no more"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-17-q3",
+          "prompt": "What larger conclusion does Franklin draw from the defeat and the soldiers’ conduct on the march? How does his comparison with “our French friends in 1781” reveal when he was writing?",
+          "facilitatorNotes": [
+            "The rout gave Americans “the first suspicion” that British regulars were overrated, and their plundering put colonists out of conceit of such defenders. Writing after the Revolution, he sets them beside the French allies who took not “a pig, a chicken, or even an apple.”",
+            "The memoir reads 1755 through the lens of independence. Braddock’s dying “Who would have thought it?” can serve as the epitaph of the overconfidence Franklin described, or as a moment of human surprise that invites some sympathy."
+          ],
+          "evidence": [
+            "This whole transaction gave us Americans the first suspicion that our exalted ideas of the prowess of British regulars had not been well founded.",
+            "Who would have thought it?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-18",
+      "title": "Building a fort at Gnadenhut",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Separate what Franklin saw from what he concluded from it; he turns nearly every event into a general rule.",
+      "focus": "A printer turned commander builds a fort in a week and draws lessons about work, discipline and the skill of his enemies.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In the war between Britain and France for North America (the French and Indian War), Native American allies of the French raided the Pennsylvania frontier after General Braddock’s defeat in 1755. The Moravians were a German Protestant church whose chief settlement was Bethlehem, Pennsylvania; Gnadenhut was their mission village, burned in a raid. Franklin was then about fifty. A stockade or palisade is a fence of upright pointed logs; a swivel gun is a small cannon; a gill is a quarter of a pint; an aide-de-camp is an officer’s assistant.",
+      "contentNote": "Ten farmers are killed in a raid; the soldiers bury the dead of a burned village. Franklin writes of “the Indians” only as the enemy.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Franklin’s Defense of the Frontier, from his commission through his handing over the command; opens “WHILE the several companies in the city and country were forming, and learning their…”; closes “…from my hard lodging on the floor of our hut at Gnaden wrapt only in a blanket or two.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          411,
+          420
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3064df2fc4b2316d4cccf1a4d72a2eed6b33b1a1650b8ccce96a4fecc7889ce0"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-18-q1",
+          "prompt": "What surprised Franklin at Bethlehem, and what conclusion does he draw?",
+          "facilitatorNotes": [
+            "The Moravians, exempted by Parliament from military duty, had a stockade, arms, and stones ready for the women to throw from the windows. Their bishop explains that pacifism was never truly their principle.",
+            "Franklin concludes that “common sense, aided by present danger, will sometimes be too strong for whimsical opinions.” Some readers find this realistic; others think he is too quick to call religious principles “whimsical.”"
+          ],
+          "evidence": [
+            "common sense, aided by present danger, will sometimes be too strong for whimsical opinions"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-18-q2",
+          "prompt": "What happened to the eleven farmers, and what does the episode show about the two sides?",
+          "facilitatorNotes": [
+            "Franklin gave them guns; in the day-long rain their priming got wet, and ten were killed. His own men could not keep their gun locks dry either, while “The Indians are dexterous in contrivances for that purpose, which we had not.”",
+            "He admits the colonists’ disadvantage plainly. Ask what the short, flat telling of the deaths does to the reader."
+          ],
+          "evidence": [
+            "They met that day the eleven poor farmers above mentioned, and killed ten of them.",
+            "The Indians are dexterous in contrivances for that purpose, which we had not."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-18-q3",
+          "prompt": "How does Franklin describe the building of the fort, and why does he add the story of the sea-captain?",
+          "facilitatorNotes": [
+            "He times two men felling a pine in six minutes and gives the number of palisades, the trench depth and the wagon wheels used as carts. When his men had work they were cheerful; on idle days they were “mutinous and quarrelsome.” The captain’s “make them scour the anchor” sums it up.",
+            "He calls his fort “so miserable a stockade,” mocking his own pride in it. Students might debate whether busy work really makes people content or only quiet."
+          ],
+          "evidence": [
+            "when men are employ'd, they are best content'd",
+            "\"Oh,\" says he, \"make them scour the anchor.\""
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-18-q4",
+          "prompt": "Franklin suggests the chaplain hand out the rum just after prayers. What does this show about how he gets people to do things?",
+          "facilitatorNotes": [
+            "He uses the men’s existing habit (they were “as punctual” for rum as they were absent from prayers) rather than punishment, and he finds the result “preferable to the punishment inflicted by some military laws.”",
+            "It is practical and a little comic, but some readers will question tying worship to a reward. Ask whether attendance won this way means anything."
+          ],
+          "evidence": [
+            "never were prayers more generally and more punctually attended",
+            "I thought this method preferable to the punishment inflicted by some military laws for non-attendance on divine service"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-19",
+      "title": "Moravian marriages, a colonel’s parade and a lawyer governor",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Several short episodes: for each, find the moment where Franklin is caught out, or catches himself.",
+      "focus": "Franklin observes a community’s customs, gets an answer he cannot refute, and shows how a small vanity of others brought him real trouble.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. Recap: Franklin has just commanded the building of forts on the Pennsylvania frontier and returned through Bethlehem, the Moravian settlement. Hautboys are oboes. His Dialogue was a pamphlet he wrote supporting the new militia law. The proprietor was Thomas Penn, son of the founder William Penn, who owned much of Pennsylvania’s land and appointed its governors; the Assembly, where Franklin sat, wanted his estates taxed for the colony’s defence. Fort Duquesne was a French fort where Pittsburgh now stands; Dunbar commanded what remained of Braddock’s army.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Franklin’s Defense of the Frontier, from his visit to the Moravian settlement to the end of the chapter; opens “While at Bethlehem, I inquir'd a little into the practice of the Moravians: some of them…”; closes “…was dropt, and he soon after left the government, being superseded by Captain Denny.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          421,
+          427
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "368d06041bdd43544d683a2c2b1149862426e2660c7e006fad9118d3b0fae40d"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-19-q1",
+          "prompt": "What does Franklin notice about the Moravian children, and what does he suspect?",
+          "facilitatorNotes": [
+            "The sermon suits them and they behave “very orderly,” but they look “pale and unhealthy,” so he suspects they are kept indoors too much. He also approves of the dormitory air-holes.",
+            "He watches like a scientist and a reformer at once. Ask what other details show his eye for practical things."
+          ],
+          "evidence": [
+            "They behav'd very orderly, but looked pale and unhealthy",
+            "which I thought judiciously placed for change of air"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-19-q2",
+          "prompt": "Franklin objects to marriages arranged by elders. What reply does he get, and why does he say he “could not deny” it?",
+          "facilitatorNotes": [
+            "He says matches not made by “mutual choice” may be unhappy; the Moravian answers, “And so they may … if you let the parties chuse for themselves.” Free choice gives no guarantee either.",
+            "The answer is witty, and Franklin is honest enough to record a point he lost. Students may still defend free choice on other grounds, such as the right to choose, not just the odds of happiness."
+          ],
+          "evidence": [
+            "\"And so they may,\" answer'd my informer, \"if you let the parties chuse for themselves;\" which, indeed, I could not deny."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-19-q3",
+          "prompt": "How does Franklin treat Dr. B.’s claim of credit, and what does he say about his own “vanity”?",
+          "facilitatorNotes": [
+            "He had believed his Dialogue did it all, but lets the doctor “enjoy his opinion, which I take to be generally the best way in such cases.” The salute that breaks his electrical glasses leads to a joke: his “new honour proved not much less brittle.”",
+            "Franklin mocks his own pride several times in a few lines. Some readers find this charming; others note how carefully he controls his image."
+          ],
+          "evidence": [
+            "I let him enjoy his opinion, which I take to be generally the best way in such cases",
+            "And my new honour proved not much less brittle"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-19-q4",
+          "prompt": "Why did the officers’ escort offend the proprietor so much? How does Franklin explain the governor’s lack of personal resentment?",
+          "facilitatorNotes": [
+            "Riding with drawn swords was an honour fit “only … to princes of the blood royal,” and the proprietor used it as proof that Franklin meant to seize the government. Franklin says he was “chagrin’d” and ignorant of such etiquette.",
+            "The governor, a lawyer, may have seen them as “merely advocates for contending clients.” Ask whether this is a generous explanation, a realistic one, or both."
+          ],
+          "evidence": [
+            "he instanced this parade with my officers as a proof of my having an intention to take the government of the province out of his hands by force",
+            "he might consider us both as merely advocates for contending clients in a suit"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-20",
+      "title": "Lord Loudoun, always on horseback",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Franklin never calls Loudoun a fool. Collect the evidence he lets other people supply, and decide what verdict it adds up to.",
+      "focus": "A portrait of an indecisive commander built from anecdotes, a messenger’s joke and a contrast with a modest predecessor.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. In 1757 the Pennsylvania Assembly sent Franklin to London to argue its case against the colony’s proprietors, the Penn family, who would not let their estates be taxed for defence. Lord Loudoun was the British commander-in-chief in America during the war with France. A packet (packet-boat) carried mail and passengers across the Atlantic; sea-stores were food a passenger brought for the voyage; an embargo forbade ships to leave port; entre nous is French for “between ourselves”; an escritoire is a writing desk. Louisburg was a French fortress in Nova Scotia; Sandy Hook is at the entrance to New York harbour. William Shirley, governor of Massachusetts, had commanded the British forces in America before Loudoun.",
+      "contentNote": "Franklin calls the Native allies of the French “savages” and mentions the massacre of a surrendered garrison.",
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Agent of Pennsylvania in London, from Lord Loudoun’s arrival in Philadelphia through Franklin’s unpaid accounts; opens “I had agreed with Captain Morris, of the packet at New York, for my passage, and my…”; closes “…employments. As to my balance, I am not paid it to this day, of which more hereafter.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          442,
+          452
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f8710d6b63ed35aa2a7291f2ba189beca350dd9c54370bae3d856519159b44ac"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-20-q1",
+          "prompt": "How does Franklin lose his first passage and gain nothing for his work as peacemaker?",
+          "facilitatorNotes": [
+            "While he negotiates between the governor and the Assembly at Loudoun’s request, the packet sails with his sea-stores, and “all the credit of obtaining the accommodation” goes to Loudoun. The Assembly gives way only under protest, “thro’ force.”",
+            "The episode introduces Loudoun as a man who takes credit and spends other people’s time. Ask how Franklin’s dry phrase “my only recompense was his lordship’s thanks” sets the tone."
+          ],
+          "evidence": [
+            "my only recompense was his lordship's thanks for my service, all the credit of obtaining the accommodation falling to his share"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-20-q2",
+          "prompt": "Explain Innis’s joke that Loudoun is “like St. George on the signs.” Why does Franklin let a messenger deliver the judgment?",
+          "facilitatorNotes": [
+            "Inn signs showed St. George on a rearing horse that never moves: Loudoun is always at his desk “pen in hand,” but no letter ever goes out. The joke is funnier and more damning than a direct accusation.",
+            "Franklin adds that the prime minister, Pitt, later gave the same reason for removing him. Letting others speak makes Franklin seem fair while the evidence piles up."
+          ],
+          "evidence": [
+            "he is like St. George on the signs, always on horseback, and never rides on",
+            "whoever waited on him found him always at his desk, pen in hand"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-20-q3",
+          "prompt": "What were the costs of Loudoun’s indecision, according to Franklin? Which are proven and which are rumours?",
+          "facilitatorNotes": [
+            "Packets held for months, merchants’ insurance and letters delayed, an army taken to Halifax for “sham attacks upon sham forts” and back, Fort George lost, a Carolina fleet ruined by shipworm during the embargo.",
+            "He marks one charge as uncertain: that Loudoun shared contractors’ profits was “said, perhaps from suspicion only.” Ask why it matters that he flags this, and whether the rest of the evidence needs it."
+          ],
+          "evidence": [
+            "sham attacks upon sham forts",
+            "in whose profits, it was said, perhaps from suspicion only, he had a share"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-20-q4",
+          "prompt": "What does Shirley’s remark about the “low seat” show, and why does Franklin place it just after his judgment of Loudoun?",
+          "facilitatorNotes": [
+            "Superseded by Loudoun, Shirley is given a low chair at the dinner and says, “I find a low seat the easiest.” He is gracious and relieved, not proud; Franklin has just praised him as “sensible and sagacious.”",
+            "The contrast flatters Shirley and condemns Loudoun without another word. Then Loudoun’s sneer that every army supplier “finds means … to fill his own pockets” shows how he judges others. Ask how Franklin answers it."
+          ],
+          "evidence": [
+            "\"No matter,\" says he, \"Mr. Franklin, I find a low seat the easiest.\"",
+            "every one concerned in supplying the army finds means, in the doing it, to fill his own pockets"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-21",
+      "title": "The voyage to England, a lighthouse and Lord Granville",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch how Franklin turns each event into a general observation, then read the Granville conversation for the two opposite ideas of law it sets side by side.",
+      "focus": "Practical experiments at sea, a near-wreck that makes Franklin a friend of lighthouses, and a first warning of the quarrel between Britain and its colonies.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. Recap: in 1757 Franklin sailed from New York as the Pennsylvania Assembly’s agent in London, after long delays caused by the British commander Lord Loudoun. Britain was at war with France, so French privateers (armed private ships) hunted merchant ships near the English Channel. A knot is a speed of one nautical mile an hour, measured by throwing a knotted “log-line” over the stern; to “wear” a ship is to turn it with the wind behind. The Scilly Isles lie off Cornwall; Sir Cloudesley Shovel’s fleet was wrecked there in 1707; Falmouth is a Cornish port. Lord Granville was President of the King’s Council. In 1765 Parliament passed the Stamp Act, taxing the colonies directly.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Agent of Pennsylvania in London, from the packet’s slow sailing through Franklin’s conversation with Lord Granville; opens “Our captain of the packet had boasted much, before we sailed, of the swiftness of his…”; closes “…that point of sovereignty to the king only that they might reserve it for themselves.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          453,
+          461
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f3a32f22b9979badcac11f8c760137aa6b3017df4396b3b9020c00643f94b51a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-21-q1",
+          "prompt": "How is the mystery of the slow ship solved, and what general lesson does Franklin draw from the wager about speed?",
+          "facilitatorNotes": [
+            "Moving all forty people aft speeds her up, so the water casks are moved back and she becomes “the best sailer in the fleet.” From the thirteen-knot wager he draws a general point: no one can tell how a new ship will sail, partly because one man builds, another rigs and a third loads her, and none knows what the others know.",
+            "He proposes “a set of experiments” and says, “This is an age of experiments.” Ask how this fits with what students know of Franklin the scientist."
+          ],
+          "evidence": [
+            "which prov'd clearly what our captain suspected, that she was loaded too much by the head",
+            "This is an age of experiments, and I think a set accurately made and combin'd would be of great use."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-21-q2",
+          "prompt": "What nearly wrecks the ship, and who saves it? What does Franklin resolve afterwards?",
+          "facilitatorNotes": [
+            "A strong current probably carries them off course in the night; the bow watchman answers “Ay, ay” perhaps “mechanically” and misses a light; Captain Kennedy, not the sleeping captain, orders the dangerous turn. Franklin resolves to encourage lighthouses in America.",
+            "Notice the human error in the watchman’s automatic reply, and Franklin’s habit of turning danger into a public project."
+          ],
+          "evidence": [
+            "they sometimes answering, as is said, mechanically",
+            "This deliverance impressed me strongly with the utility of lighthouses"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-21-q3",
+          "prompt": "Describe the arrival at Falmouth. Why does Franklin compare the lifting fog to a theatre curtain?",
+          "facilitatorNotes": [
+            "The fog rises “like the curtain at a play-house,” revealing the town, ships and fields all at once, after weeks of “a vacant ocean” and the fear of war.",
+            "It is one of the few purely pictorial moments in the book. Ask what the image adds: a sense of a new scene beginning, as Franklin’s London years do."
+          ],
+          "evidence": [
+            "seem'd to be lifted up from the water like the curtain at a play-house"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-21-q4",
+          "prompt": "Lord Granville says “the king is the Legislator of the Colonies.” What does Franklin answer, and why does he write the conversation down that night?",
+          "facilitatorNotes": [
+            "Franklin holds that colonial laws are made by the assemblies with the king’s assent, and that the king cannot make laws for them without theirs. Granville calls this “totally mistaken.” Alarmed about the court’s views, Franklin records it at once.",
+            "The paragraph ends by looking forward to 1765, when Parliament claimed the same power for itself. Ask readers how this conversation foreshadows the American Revolution, and whose idea of the constitution seems stronger from the text alone."
+          ],
+          "evidence": [
+            "for the king is the Legislator of the Colonies",
+            "so neither could he make a law for them without theirs",
+            "they had refus'd that point of sovereignty to the king only that they might reserve it for themselves"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-franklin-autobiography-1922-22",
+      "title": "The proprietaries, Lord Mansfield and the unfinished end",
+      "sourceId": "franklin-autobiography-1922",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 18,
+        "totalMinutes": 27
+      },
+      "challenge": "Read for tone: find every place where Franklin’s politeness carries an insult. Then think about what it means that the book simply stops.",
+      "focus": "Franklin’s negotiation with the Penn family over taxing their estates, a quiet bargain struck in a side room, and the last page of an unfinished book.",
+      "context": "Benjamin Franklin (1706–1790) wrote his Autobiography in several stages between 1771 and his last years; this edition divides it into chapters. Recap: Franklin was in London as the Pennsylvania Assembly’s agent, sent to settle the quarrel with the colony’s proprietors, Thomas and Richard Penn, the sons of the founder William Penn, who would not let their vast estates be taxed for the colony’s defence. Colonial laws could be cancelled by the king in Council, the committee of royal advisers that heard such appeals. The Attorney-General and Solicitor-General were the Crown’s chief lawyers; Lord Mansfield was one of the most powerful judges in England. Viva voce is Latin for “by word of mouth.” The province had printed paper money to pay for the war, so cancelling the tax that backed it would have made the notes worthless. Franklin never finished the Autobiography; the last part was written shortly before his death in 1790.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Autobiography of Benjamin Franklin, Agent of Pennsylvania in London, from the meeting with the Penns to the point where the book breaks off; opens “After some days, Dr. Fothergill having spoken to the proprietaries, they agreed to a…”; closes “…at court, despis'd the threats and they were never put in execution.... [unfinished]”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          463,
+          467
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "68de56550d9d9bf9a7b2e7cfa1efe69a24257b9750f143e23c6a5f815a06057a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-franklin-autobiography-1922-22-q1",
+          "prompt": "Franklin says the meeting began with “mutual declarations of disposition to reasonable accommodations.” How does the rest of his sentence undercut this?",
+          "facilitatorNotes": [
+            "He adds that “each party had its own ideas of what should be meant by reasonable.” The polite words hid complete disagreement, and the next sentences show the two sides “very wide” apart.",
+            "It is a dry joke about diplomatic language that readers will recognize from modern politics. Ask for a present-day example of a word both sides use with opposite meanings."
+          ],
+          "evidence": [
+            "I suppose each party had its own ideas of what should be meant by reasonable",
+            "We now appeared very wide, and so far from each other in our opinions as to discourage all hope of agreement."
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-22-q2",
+          "prompt": "Why does Franklin refuse to negotiate with the lawyer Paris? What does the complaint about “want of formality” turn out to mean?",
+          "facilitatorNotes": [
+            "Paris was “a proud, angry man” who hated Franklin for criticising his papers, so Franklin would deal only with the Penns themselves. The “rudeness” was probably that Franklin left out their “assum’d titles” of “True and Absolute Proprietaries.”",
+            "The Penns’ message asked for “some person of candour,” “intimating thereby that I was not such.” Ask how Franklin answers the insult: not directly, but by showing how small the complaint was. The word “assum’d” is his own quiet insult."
+          ],
+          "evidence": [
+            "He was a proud, angry man",
+            "my not having address'd the paper to them with their assum'd titles of True and Absolute Proprietaries of the Province of Pennsylvania",
+            "intimating thereby that I was not such"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-22-q3",
+          "prompt": "What did each side argue at the hearing, and how did Lord Mansfield settle it?",
+          "facilitatorNotes": [
+            "The Penns said the people would use the tax to ruin them; Franklin’s side said the assessors were honest men under oath, and that cancelling the law would make the paper money worthless. Mansfield took Franklin aside and asked whether he would promise in writing that the estate would not be harmed; Franklin said “None at all,” and the law was allowed to pass.",
+            "A deal in a side room decided what the formal pleading could not. The Assembly’s later committee, which included friends of the Penns, found the tax assessed “with perfect equity,” which vindicates Franklin’s promise."
+          ],
+          "evidence": [
+            "you can have little objection to enter into an engagement to assure that point",
+            "they found the tax had been assess'd with perfect equity"
+          ]
+        },
+        {
+          "id": "reading-9-franklin-autobiography-1922-22-q4",
+          "prompt": "The book breaks off with Governor Denny dismissed by the Penns and unafraid of their threats. Is this a fitting last scene? What would you have wanted Franklin to write next?",
+          "facilitatorNotes": [
+            "Denny passed the tax law and was “turn’d out with threats,” but he “despis’d the threats and they were never put in execution”: power in London shields him from the proprietors. The quarrel between colonists and a distant authority is left unresolved.",
+            "Some readers find the ending abrupt and accidental; others see it pointing ahead, since Franklin’s remarks to Granville already looked forward to the break with Britain. Accept answers that name the Revolution, his scientific fame or his diplomacy in France as the missing chapters."
+          ],
+          "evidence": [
+            "despis'd the threats and they were never put in execution"
+          ]
+        }
+      ]
+    }
+  ]
+}

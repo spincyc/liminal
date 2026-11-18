@@ -1,0 +1,974 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "wheatley-memoir-poems-1834",
+  "readings": [
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-01",
+      "title": "To Mæcenas",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Track the speaker’s comparisons between herself, the great poets and her patron. Reread the stanza about Terence slowly, with the footnote.",
+      "focus": "A modest dedication that also stakes a claim to poetic fame.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. This opening poem addresses an unnamed patron as Mæcenas, the Roman friend and supporter of the poets Virgil and Horace. In Homer’s Iliad, Patroclus begs his friend Achilles (“Pelides,” son of Peleus) for help. Maro and “the Mantuan sage” are Virgil; the Nine are the Muses, whose mountains are Helicon and Parnassus. Terence was a Roman playwright born in North Africa. Phoebus is the sun god and Aurora the dawn; lays are songs.",
+      "contentNote": "Wheatley uses the period phrase “Afric’s sable race” (sable means black).",
+      "excerpt": {
+        "locator": "To Mæcenas; complete poem with Wheatley’s note, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “MÆCENAS, you, beneath the myrtle shade, Read o'er what poets sung, and shepherds played.…”; closes “…ring. Then grant, Mæcenas, thy paternal rays; Hear me propitious, and defend my lays.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5,
+          13
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "91bdcd14882b38a11753abad0cac1d5fb63847ba2c2bdaf016262ea879490217"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-01-q1",
+          "prompt": "How does the speaker compare herself with Homer, Virgil and her patron? Find the lines where she seems to make her own gift small.",
+          "facilitatorNotes": [
+            "Homer moves her to “horror” and tears; she wishes she could rival Virgil, but mourns “a grovelling mind”; the patron’s breast is “the Muses’ home,” while “The faltering music dies upon my tongue.”",
+            "Such modesty was a convention of dedications. Readers may take it as convention, as real anxiety, or as a strategic pose: she displays command of the very classics she says she cannot rival."
+          ],
+          "evidence": [
+            "But here I sit, and mourn a grovelling mind,",
+            "The faltering music dies upon my tongue."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-01-q2",
+          "prompt": "Why does she ask the Muses about Terence? What exactly is she asking, and what might she be hoping for?",
+          "facilitatorNotes": [
+            "Terence, “an African by birth,” received the Muses’ favour; she asks why that grace went “To one alone of Afric’s sable race.” The question protests that only one African poet is remembered.",
+            "It also quietly places her in his line. Accept answers that hear complaint, ambition, or both, if they rest on the wording of the question."
+          ],
+          "evidence": [
+            "To one alone of Afric's sable race,",
+            "He was an African by birth."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-01-q3",
+          "prompt": "She says she will “snatch a laurel from thine honored head.” What is bold about the image, and how does the ending balance it?",
+          "facilitatorNotes": [
+            "The laurel is the poet’s prize; snatching one from the patron is playful daring, softened at once by “While you, indulgent, smile upon the deed.” The closing lines return to praise and ask him to protect her songs.",
+            "The poem pays tribute and asserts her right to fame in the same breath. Some readers find the gesture charming; others find it pointed."
+          ],
+          "evidence": [
+            "I 'll snatch a laurel from thine honored head,",
+            "Hear me propitious, and defend my lays."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-02",
+      "title": "On Being Brought from Africa to America",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 19,
+        "totalMinutes": 25
+      },
+      "challenge": "Read the eight lines several times: first for the speaker’s story, then for whom she addresses, then for the grammar and punctuation of the last two lines.",
+      "focus": "A short poem that answers racial scorn with the audience’s own professed faith.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. She wrote this poem around 1768, as a teenager. “Benighted” means in darkness, without knowledge; “sable” means black. In Genesis, Cain murdered his brother and received a mark from God, which some people of her time falsely claimed was dark skin. “Refined” can mean both purified, as metal is, and cultivated.",
+      "contentNote": "The poem calls Africa a “pagan land,” uses the period word “Negroes,” and quotes a racist claim in order to answer it.",
+      "excerpt": {
+        "locator": "On Being Brought from Africa to America; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “'T WAS mercy brought me from my pagan land, Taught my benighted soul to understand That…”; closes “…Remember, Christians, Negroes black as Cain May be refined, and join the angelic train.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          16,
+          17
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d4cb215b36b63c7b3ecec74ee7806060fe78044a87bd1adb3a514cf9a241d3f4"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-02-q1",
+          "prompt": "The first four lines call being brought from Africa “mercy.” What does the speaker say she gained, and what does the poem leave unsaid?",
+          "facilitatorNotes": [
+            "She gained Christian faith, the knowledge of “a God” and “a Saviour.” The poem says nothing of capture, the ocean crossing or slavery, and the verb “brought” hides who brought her.",
+            "Readers debate whether this is sincere faith, the constraint of writing for white patrons, or a strategic opening that wins the audience before the challenge. The text supports discussing all three; the omission alone does not prove a single motive."
+          ],
+          "evidence": [
+            "'T WAS mercy brought me from my pagan land,",
+            "Once I redemption neither sought nor knew."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-02-q2",
+          "prompt": "Who are the “some” of line five, and how does the poem answer them? Notice the quotation marks and the word “Christians.”",
+          "facilitatorNotes": [
+            "They view her people “with scornful eye” and say their colour is “a diabolic dye.” Setting their words in quotation marks makes them a view to be examined, not hers.",
+            "She then turns to “Christians” directly and reminds them that Black people may be “refined” and join “the angelic train,” equal candidates for salvation, as the scorners’ own faith requires them to accept."
+          ],
+          "evidence": [
+            "Some view our sable race with scornful eye--",
+            "'Their color is a diabolic dye.'"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-02-q3",
+          "prompt": "Is the ending humble or commanding? Look at the verb “Remember” and at what the last line claims.",
+          "facilitatorNotes": [
+            "“Remember” is an imperative addressed to Christian readers, so a young enslaved poet takes the position of teacher. The last line claims a full share in salvation, which undercuts the scorn just quoted.",
+            "Some critics also read “black as Cain” against the Christians who scorn, though the grammar here most naturally attaches it to “Negroes.” Students may hear humility, rebuke or both; ground each claim in the syntax."
+          ],
+          "evidence": [
+            "Remember, Christians, Negroes black as Cain",
+            "May be refined, and join the angelic train."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-03",
+      "title": "To the University of Cambridge, in New England",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Decide who is speaking to whom, and what each side has that the other lacks. Then reread the line where the speaker names herself.",
+      "focus": "An enslaved teenager advising the students of Harvard on how to use their privileges.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. She wrote this poem in 1767, when she was about fourteen, addressing the students of Harvard College in Cambridge, Massachusetts, which educated young white men. The Muses are goddesses of poetry; “ardor” is passion; “etherial space” is the heavens; to “redeem” each hour is to use it well; “remit your guard” means relax your watch; perdition is damnation. “Ethiop” was a general word for an African.",
+      "contentNote": "The poem calls Africa, the speaker’s homeland, “The land of errors and Egyptian gloom,” echoing the Christian teaching of her time.",
+      "excerpt": {
+        "locator": "To the University of Cambridge, in New England; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “WHILE an intrinsic ardor prompts to write, The Muses promise to assist my pen. 'T was not…”; closes “…Its transient sweetness turns to endless pain, And in immense perdition sinks the soul.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          19,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "84718826d655f0f0dfb511d7142034dc663927eaf324d6e00539ccfbcc6f0c0b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q1",
+          "prompt": "How does the speaker present herself in the first stanza? What gives her the right to address Harvard students?",
+          "facilitatorNotes": [
+            "She writes from “intrinsic ardor,” inner passion, with the Muses’ help, not from the schooling the students have. She was brought from Africa by God’s “gracious hand,” so she speaks with the authority of experience and faith.",
+            "Her description of Africa as “errors and Egyptian gloom” repeats what she had been taught. Readers differ on how far it is her own view and how far it is what her audience expected; the poem does not settle the question."
+          ],
+          "evidence": [
+            "WHILE an intrinsic ardor prompts to write, The Muses promise to assist my pen.",
+            "The land of errors and Egyptian gloom:"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q2",
+          "prompt": "What privileges do the students enjoy, according to the second stanza, and which does the speaker rank higher?",
+          "facilitatorNotes": [
+            "They study the heavens, the “systems of revolving worlds,” the learning of a college. But “Still more” they receive the Christian message, which she ranks above science.",
+            "She describes Christ as one who “hears revilers, nor resents their scorn.” Some readers hear a personal echo in an enslaved writer choosing that detail; others read it simply as devotion."
+          ],
+          "evidence": [
+            "Students, to you 't is given to scan the heights Above,",
+            "Still more, ye sons of science, ye receive",
+            "He hears revilers, nor resents their scorn."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-03-q3",
+          "prompt": "“An Ethiop tells you.” Why does she name herself at this point, and what is surprising about the situation?",
+          "facilitatorNotes": [
+            "An enslaved African girl, shut out of the education they have, lectures privileged young men on how to spend their time and avoid sin. Naming herself makes the reversal plain: the outsider has become the teacher.",
+            "“Improve your privileges while they stay” reminds them that privilege can be lost or wasted. Readers may hear humility, boldness or quiet irony; ask students to defend their choice from the wording."
+          ],
+          "evidence": [
+            "Improve your privileges while they stay,",
+            "Ye blooming plants of human race divine, An Ethiop tells you, 't is your greatest foe;"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-04",
+      "title": "On the Death of the Rev. Mr. George Whitefield",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Find where the elegy turns from loss to vision. Then look closely at the speech Wheatley gives Whitefield and at the word “we.”",
+      "focus": "An elegy that consoles through faith and quietly imagines a community that includes Africans as equals.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. George Whitefield (1714–1770) was an English preacher of the evangelical revival whose outdoor sermons drew enormous crowds in Britain and America; he died in Massachusetts in September 1770. Wheatley’s elegy, printed that year as a single sheet, made her name known on both sides of the Atlantic. The Countess of Huntingdon, his patron, is the noblewoman to whom Wheatley later dedicated her book. Zion here means heaven; an auditory is an audience.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "On the Death of the Rev’d Mr. George Whitefield, 1770; complete poem with Wheatley’s note, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “HAIL, happy saint! on thine immortal throne, Possest of glory, life, and bliss unknown;…”; closes “…While the tomb, safe, retains its sacred trust, Till life divine re-animates the dust.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          31,
+          37
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b7261234042d34473819a38319cdbf0612fd2e7a5fa46797d135f1ad0d1770d1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q1",
+          "prompt": "How does the elegy move from mourning to celebration? Find the line where its direction changes.",
+          "facilitatorNotes": [
+            "It opens with loss: no more “music of thy tongue,” and a setting sun that “shines no more.” Then it turns upward: “Behold the prophet in his towering flight!” The last stanza sets his stilled breath beside a vision of the skies.",
+            "Readers may notice that the earthly grief (crowds, orphans, the Countess) remains real even as faith consoles it."
+          ],
+          "evidence": [
+            "Unhappy, we the setting sun deplore,",
+            "Behold the prophet in his towering flight!"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q2",
+          "prompt": "Wheatley puts words into Whitefield’s mouth. Whom does he invite, and why might “Take him, ye Africans” matter in a poem by an enslaved African woman?",
+          "facilitatorNotes": [
+            "He invites the wretched, starving sinners, preachers, Americans and Africans alike: an “Impartial Saviour.” Africans stand on the same footing as “my dear Americans” and are promised they shall be “sons, and kings, and priests to God,” titles of dignity for people the law treated as property.",
+            "Some readers see bold social meaning; others see conventional evangelical language. Both readings rest on this stanza."
+          ],
+          "evidence": [
+            "Take him, ye Africans, he longs for you;",
+            "Impartial Saviour is his title due:"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-04-q3",
+          "prompt": "The poem says Whitefield “longed to see America excel” and speaks of “we Americans.” What community does the elegy imagine, and where does the speaker place herself in it?",
+          "facilitatorNotes": [
+            "A shared American and Christian public: New England, its youth, the orphans, the Countess across the ocean. The speaker includes herself in “we Americans,” an identity still new in 1770.",
+            "For an enslaved poet to claim that “we” is notable. Students may ask whom it includes and whom it leaves out."
+          ],
+          "evidence": [
+            "He longed to see America excel;",
+            "we Americans revere"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-05",
+      "title": "Goliath of Gath",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "If you know the Bible story, watch for what Wheatley adds. Mark the speeches: who speaks, to whom, and with what boast or warning.",
+      "focus": "Wheatley retells David and Goliath as a classical epic, with speeches, similes and a heavenly messenger.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. The story of the shepherd boy David, son of Jesse, who kills the Philistine giant Goliath with a sling, is told in the First Book of Samuel, chapter 17. Wheatley tells it in the manner of Homer’s epics as English readers knew them from Alexander Pope’s translations, in rhyming pairs of lines. The Nine are the Muses; Phoebus is the sun; greaves are leg armour and a targe a shield; a shekel was a weight; “Jacob’s race” means Israel; Saul is the king, Eliab David’s eldest brother, and the son of Ner is Abner, Saul’s general; Salem is Jerusalem.",
+      "contentNote": "Describes the giant’s death in bloody detail, including his beheading, and the slaughter of the fleeing army.",
+      "excerpt": {
+        "locator": "Goliath of Gath; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “YE martial powers, and all ye tuneful Nine, Inspire my song, and aid my high design. The…”; closes “…bride. \"Knit to my soul, forever thou remain \"With me, nor quit my regal roof again.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          47,
+          68
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b1f16bf2827bf63bb7aacf16b1050ff5af399666ca0e87c66d19e30c0f2158ca"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q1",
+          "prompt": "The poem opens by calling on “martial powers” and the Muses, and the sun god Phoebus shines on Goliath’s shield. Why might Wheatley tell a Bible story in the language of classical epic?",
+          "facilitatorNotes": [
+            "Epic style lifts the story to the level of Homer and shows the poet’s command of the grandest form. It also turns David into a hero like Achilles or Hector, with speeches before battle.",
+            "Some readers find the mix of pagan gods and the God of Israel awkward; others see it as normal for the poetry of her time. For a young enslaved poet, writing epic was itself a bold claim."
+          ],
+          "evidence": [
+            "YE martial powers, and all ye tuneful Nine,",
+            "While Phoebus blazed refulgent on his shield."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q2",
+          "prompt": "How do Eliab and Saul each doubt David? How does David answer each of them?",
+          "facilitatorNotes": [
+            "Eliab accuses him of “base ambition” and sends him back to his sheep; David answers mildly, “What have I done?” Saul thinks a boy cannot fight a lifelong warrior; David tells how he killed a lion and a bear with only his crook, and trusts the same God.",
+            "David then refuses Saul’s armour as “untry'd.” Ask students what the poem suggests about using the weapons you know rather than borrowed ones."
+          ],
+          "evidence": [
+            "I know the base ambition of thine heart,",
+            "And with no other weapon than my crook,",
+            "Nor chose to venture with those arms untry'd;"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q3",
+          "prompt": "The Bible has no angel visiting Goliath; Wheatley invents one. What does the cherub tell him, and how does the scene change the meaning of the fight?",
+          "facilitatorNotes": [
+            "The angel calls Goliath a “Rebellious wretch” who has denied God, foretells that “a beardless boy” will kill him, and says that even he could not stop the sentence. The fight becomes the carrying out of a divine judgment that Goliath has been warned of and ignores.",
+            "The scene builds suspense and dramatic irony, since we know what Goliath does not believe. Some readers feel it reduces David’s courage; others think it makes Goliath’s pride the real subject."
+          ],
+          "evidence": [
+            "And thou shalt perish by a beardless boy.",
+            "Myself a rebel to my king would prove.",
+            "\"Your words are lost on me,\" the giant cries,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-05-q4",
+          "prompt": "After the bloody victory, how does David describe himself to the king? What might the closing lines suggest about who is “small” and who is great?",
+          "facilitatorNotes": [
+            "He answers humbly: his tribe and city are small, but valiant and loyal. The boy who has just beheaded a giant claims nothing for himself, and the king binds him to his house.",
+            "Readers may connect the old story of the weak overcoming the mighty with the situation of its author, though the poem never says so. Ask whether that reading adds to the poem or goes beyond the evidence."
+          ],
+          "evidence": [
+            "What scenes of slaughter, and what seas of blood!",
+            "Small is my tribe, but valiant in the fight;",
+            "Small is my city, but thy royal right."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-06",
+      "title": "Isaiah 63: the wine-press trodden alone",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "The poem opens with a question and answers it in a borrowed voice. Work out who asks, who answers, and what the purple on the conqueror’s robe really is.",
+      "focus": "Wheatley turns a fierce prophecy of judgment into a Christian picture of a lone saviour who is both warrior and sacrifice.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. The poem paraphrases the opening of chapter 63 of the Book of Isaiah, which begins: “Who is this that cometh from Edom, with dyed garments from Bozrah?” Edom (Idumea) was an ancient enemy of Israel, and Bozrah one of its cities; “dies” is an old spelling of “dyes.” Christian readers of Wheatley’s time took the passage as a prophecy of Christ. To tread a wine-press is to crush grapes underfoot. Zion is Jerusalem, and by extension God’s people.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Isaiah—63d Chap. 1st and 8th Verses; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “SAY, heavenly Muse, what king, or mighty God, That moves sublime from Idumea's road? In…”; closes “…Yet she serenely on thy bosom lies, Smiles at their arts, and all their force defies.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          102,
+          108
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "dc5493bbbfb2c81c246e58fd6674f42358e35d16fdead5e9e0815ace75da871a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q1",
+          "prompt": "What does the speaker see in the first stanza, and what puzzles her about it?",
+          "facilitatorNotes": [
+            "A king or god approaching from Edom in a purple robe, “with martial glories joined.” She asks why he chooses to appear “In the dread image of the Power of war.”",
+            "The question form, addressed to the Muse, builds suspense and makes the reader share the puzzle before the answer comes."
+          ],
+          "evidence": [
+            "what king, or mighty God, That moves sublime from Idumea's road?",
+            "In the dread image of the Power of war?"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q2",
+          "prompt": "Look at the two-line stanza about the wine-press. What is the “gushing purple”: wine, blood, or both? Why does it matter?",
+          "facilitatorNotes": [
+            "The press “groaned” and “bled”: the poem gives the machine a body, so the purple juice becomes blood. The stain on the robe is the stain of judgment.",
+            "Treading grapes is ordinary farm work; making it an image of divine wrath is what gives the poem its terror. Ask students where else they have met the image (some may know “The Battle Hymn of the Republic”)."
+          ],
+          "evidence": [
+            "Compressed in wrath, the swelling wine-press groaned; It bled, and poured the gushing purple round."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q3",
+          "prompt": "In the speech of “the Almighty Saviour,” whose wrath is he bearing, and for whom? How does this change the meaning of the wine-press?",
+          "facilitatorNotes": [
+            "He has borne “the wrath of an immortal God” himself, “For man’s release,” sacrificing his own soul and “Atoning thus, for vices not my own.” In this reading the blood is partly his own.",
+            "The next stanza returns to battle and “the dying and the dead,” so the poem holds both pictures, sacrifice and vengeance. Ask which one the poem leaves stronger."
+          ],
+          "evidence": [
+            "When all forsook, I trod the press alone,",
+            "Atoning thus, for vices not my own."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-06-q4",
+          "prompt": "The saviour finds “no created succors” and fights alone; the poem ends with Zion lying “serenely on thy bosom.” Why might a poem about a lonely, terrible power end in calm?",
+          "facilitatorNotes": [
+            "Because that power protects: Zion “Smiles at their arts, and all their force defies.” The terror is directed at her enemies.",
+            "Some readers connect the image of a defender who acts when “all forsook” with Wheatley’s own position, an enslaved young woman writing in Boston; others read it simply as doctrine. Ask for evidence, and keep the question open."
+          ],
+          "evidence": [
+            "Surveyed, but no created succors found;",
+            "Yet she serenely on thy bosom lies, Smiles at their arts, and all their force defies."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-07",
+      "title": "On Imagination",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 17,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow the poem’s journey: where does Imagination carry the speaker, and where is she brought back? Mark the stanza where the poem turns.",
+      "focus": "A hymn to the mind’s freedom that ends, surprisingly, with a retreat.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. Here Imagination is a queen and Fancy her winged messenger; the two words were near synonyms. Helicon is the mountain of the Muses; “empyreal” means belonging to the highest heaven; “pinions” are wings; Flora is the Roman goddess of flowers and Sylvanus the god of woods; Aurora, the dawn, rises from the bed of her husband Tithonus (“Tithon”). A lay is a song; “unequal” here means not equal to its subject. The poem is written in heroic couplets, rhymed pairs of ten-syllable lines.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "On Imagination; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “THY various works, imperial queen, we see How bright their forms! how decked with pomp by…”; closes “…chill the tides of Fancy's flowing' sea,-- Cease then my song, cease the unequal lay.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          118,
+          123
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "44e7b9fcb7c2a06aa26aa215001f32524a5e97754c07357ff74a45b3e8849919"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-07-q1",
+          "prompt": "How does the poem show Imagination’s power over space? Find the lines where the mind travels.",
+          "facilitatorNotes": [
+            "On Imagination’s “pinions” the mind can “surpass the wind,” leave “the rolling universe behind,” rove “From star to star” and grasp “the mighty whole” in one view. Nothing limits where thought can go.",
+            "Earlier, Fancy’s pleasures are “silken fetters” and “soft captivity.” Some readers find those images striking from an enslaved poet, and read the freedom of mind against the body’s captivity; others warn against reading every image biographically."
+          ],
+          "evidence": [
+            "We on thy pinions can surpass the wind, And leave the rolling universe behind:",
+            "From star to star the mental optics rove,",
+            "Whose silken fetters all the senses bind, And soft captivity involves the mind."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-07-q2",
+          "prompt": "How does Imagination defeat winter in the fourth stanza? Look closely at the verbs.",
+          "facilitatorNotes": [
+            "Though “Winter frowns,” the fields “may flourish,” frozen rivers “may burst their iron bands,” and Flora and Sylvanus restore flowers and leaves. Every verb is “may”: these are possibilities in the mind, not facts outside the window.",
+            "Students may notice the “iron bands” bursting and ask whether the image suggests release from more than ice."
+          ],
+          "evidence": [
+            "Though Winter frowns to Fancy's raptured eyes, The fields may flourish, and gay scenes arise;",
+            "The frozen deeps may burst their iron bands,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-07-q3",
+          "prompt": "Just as she is about to describe the sunrise, the speaker stops. Why does the poem end by giving up?",
+          "facilitatorNotes": [
+            "She leaves “reluctant” because “Winter austere forbids me to aspire” and northern storms chill her fancy. Imagination, which conquered winter in the fourth stanza, is now conquered by it, and she calls her song “unequal” to its subject.",
+            "It may be a modest convention for ending a poem, a real Boston winter, or a sign that the mind’s freedom has limits in the world. Accept any reading that explains the turn from the text."
+          ],
+          "evidence": [
+            "But I reluctant leave the pleasing views,",
+            "Winter austere forbids me to aspire,",
+            "Cease then my song, cease the unequal lay."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-08",
+      "title": "Three sea poems: Neptune, a voyage north and a hurricane",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "All three poems are about the sea, and Wheatley was not aboard for any of them. Find how she gets there in each poem, and which powers she credits with calming or raising the waves.",
+      "focus": "Occasional poems for friends travelling by sea, in which classical gods of wind and water play their parts under a Christian God.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. Wheatley wrote many poems for particular people and occasions. In classical myth Neptune rules the sea, Æolus keeps the winds, Boreas is the north wind, and the Nereids are sea nymphs, the “daughters of the main”; Sol is the sun, and “the fair mother of the blooming loves” is Venus, mother of the Cupids. Britannia is Britain. Jamaica was a British sugar colony worked by enslaved Africans; its heat was thought unhealthy for Europeans.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Ode to Neptune; To a Lady, on Her Coming to North America with Her Son; and To a Lady, on Her Remarkable Preservation in a Hurricane; three complete poems, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “WHILE raging tempests shake the shore, While Æolus' thunders round us roar, And sweep…”; closes “…Oh come, and joyful show thy spouse his heir, And what the blessings of maternal care!”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          135,
+          149
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5091973e053556c7adb826dd7a1a2b2ba31c981c6e9136604e6dab07fd136727"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-08-q1",
+          "prompt": "In “Ode to Neptune,” the speaker orders the sea god to be still. How does the second stanza suggest the order has worked, and how sure is the ending?",
+          "facilitatorNotes": [
+            "She tells “the tyrant of the main” not to frown while “my Susannah” sails; then “The Power propitious hears the lay”: sea nymphs, the Thames and the sun all join in. The last stanza turns back to pleading: “Thy promise, Neptune, keep.”",
+            "Confidence gives way to prayer. Ask why a poem that celebrates the answer still ends by asking."
+          ],
+          "evidence": [
+            "Be still, O tyrant of the main;",
+            "The Power propitious hears the lay,",
+            "Nor give my wishes to the empty air."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-08-q2",
+          "prompt": "In “To a Lady, on Her Coming to North America,” how does the speaker travel with the lady? Where does the poem take her?",
+          "facilitatorNotes": [
+            "“In my ideal view” the winds obey and the ship flies; the speaker sees the husband mourning in Jamaica, then follows the ship to Philadelphia and attends the lady to Boston, and finally imagines her return home in health.",
+            "Imagination does the travelling. Compare Wheatley’s “On Imagination,” where fancy can “surpass the wind.”"
+          ],
+          "evidence": [
+            "Soon as she spoke, in my ideal view, The winds assented, and the vessel flew.",
+            "Thence I attend you to Bostonia's arms,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-08-q3",
+          "prompt": "The hurricane poem says the storm was “To me unknown.” How does Wheatley make it vivid anyway?",
+          "facilitatorNotes": [
+            "She turns the storm into a mythological drama: Boreas drives the reluctant Nereids onto the land, Æolus arrives “In gloomy grandeur” with his “winged sons,” and the ship is torn apart and “strews with planks the watery element.”",
+            "Personification lets her describe what she never saw. Ask which image comes closest to a real storm."
+          ],
+          "evidence": [
+            "Compelled the Nereids to usurp the land.",
+            "Broken by waves, the vessel's frame is rent,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-08-q4",
+          "prompt": "Who saves Maria from drowning, a Nereid or God? How do the classical gods and the Christian God share the work in these poems?",
+          "facilitatorNotes": [
+            "A “kind Nereid’s shield” holds her up, but it is “thy God’s command” that releases her, and the danger was meant to teach her “Things of eternal consequence.” The sea gods act; God commands.",
+            "Classical mythology was the ordinary decoration of poetry in Wheatley’s time; the faith is the frame. Ask whether the gods feel like characters or ornaments, and why she uses them in a Christian poem."
+          ],
+          "evidence": [
+            "But thee, Maria, a kind Nereid's shield Preserved from sinking,",
+            "\"Resign her Nereid,\" 't was thy God's command.",
+            "Things of eternal consequence to weigh,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-09",
+      "title": "To a Gentleman and Lady, on the Death of the Lady’s Brother and Sister, and a Child",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "workTitle": "To a Gentleman and Lady, on the Death of the Lady’s Brother and Sister, and a Child of the Name of Avis, Aged One Year",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Follow the poem’s movement in three stages: a vision of Death, a request to the grieving mother, and a vision of heaven. Mark the line where each stage begins.",
+      "focus": "An elegy that sets a family’s three deaths against all of human history, then asks a mother to give up her one-year-old daughter without complaint.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. An elegy is a poem of mourning; elegies of Wheatley’s time usually moved from lament to praise to Christian consolation. Many people then reckoned the world to be about six thousand years old, counting from the Bible. Infant and child deaths were common in eighteenth-century Boston.",
+      "contentNote": "The poem mourns a baby and urges her mother to stop grieving.",
+      "excerpt": {
+        "locator": "To a Gentleman and Lady, on the Death of the Lady’s Brother and Sister, and a Child of the Name of Avis, Aged One Year; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “ON Death's domain intent I fix my eyes, Where human nature in vast ruin lies: With…”; closes “…this. With tow'ring hopes, and growing grace arise, And seek beatitude beyond the skies.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          153,
+          156
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e81944f878bb0d0722f0e2a6ef3056e52ae8ad92e19de5afb56a2606bd235fe1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-09-q1",
+          "prompt": "The poem opens with a vision of “Death’s domain.” What does the speaker see there, and why might she begin with all of human history before turning to this family?",
+          "facilitatorNotes": [
+            "The dead of “six thousand years,” whole kingdoms and nations “thrust” into Death’s den; only then, “See here a brother, here a sister spread, / And a sweet daughter.” The family’s loss becomes part of all mortality.",
+            "This could console (they are not alone) or crush (Death always wins). Ask students which effect they feel."
+          ],
+          "evidence": [
+            "There, there the offspring of six thousand years, In endless numbers to my view appears:",
+            "See here a brother, here a sister spread, And a sweet daughter mingled with the dead."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-09-q2",
+          "prompt": "How is Death pictured in the first two stanzas? What words make him a conqueror or a tyrant?",
+          "facilitatorNotes": [
+            "He is “the dread conqueror” with his “spoils,” “Insatiate,” glutting the tomb, owning “the present” and “the age to come,” and he “reigns tyrant o’er this mortal shore.”",
+            "The language of war and tyranny is common in elegies of the period. Notice that the poem’s second stanza says tears are useless precisely because Death rules here."
+          ],
+          "evidence": [
+            "Insatiate still, he gluts the ample tomb;",
+            "While Death reigns tyrant o'er this mortal shore."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-09-q3",
+          "prompt": "What does the speaker ask the mother to do with Avis? Does the poem admit how much it is asking?",
+          "facilitatorNotes": [
+            "To resign her friends to God and give up Avis “without a murmuring heart.” The next line admits the cost: “Though half thy soul be fated to depart.”",
+            "Some readers find this consolation harsh; others find the honesty of “half thy soul” tender. Ask what a modern elegy would say instead."
+          ],
+          "evidence": [
+            "Thine Avis give without a murmuring heart, Though half thy soul be fated to depart."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-09-q4",
+          "prompt": "How has the picture of death changed by the end of the poem?",
+          "facilitatorNotes": [
+            "The tyrant’s den has become a passage: “shining guards” carry the child up, her soul “enlarged,” and the speaker imagines Avis “leaning forward with a filial love” to invite her parents to heaven.",
+            "The baby who could barely speak now “feeds on truth.” Ask students to compare this ending with the opening and decide which one the poem believes more fully."
+          ],
+          "evidence": [
+            "Her soul, enlarged, to heavenly pleasure springs,",
+            "Methinks I hear her in the realms above,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-10",
+      "title": "To the Rev. Dr. Thomas Amory, on Reading His Sermons on Daily Devotion",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "workTitle": "To the Rev. Dr. Thomas Amory, on Reading His Sermons on Daily Devotion",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "This is a poem of praise that contains an argument. Find the argument, put it in your own words, and decide whether it works.",
+      "focus": "Wheatley thanks an English preacher for his sermons and uses the occasion to answer atheists with the image of a potter and his clay.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. Thomas Amory was an English Protestant minister whose sermons on the duty of daily prayer were read in Boston. In the eighteenth century many writers argued that the order of nature proves a designer, as a watch proves a watchmaker. The Bible often pictures God as a potter shaping clay. “Effulgent” means shining; a “sable veil” is a black one.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "To the Rev. Dr. Thomas Amory, on Reading His Sermons on Daily Devotion, in Which That Duty Is Recommended and Assisted; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “To cultivate in ev'ry noble mind Habitual grace, and sentiments refined, Thus while you…”; closes “…Fame's no more, May Amory triumph in immortal fame, A nobler title and superior name!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          167,
+          170
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3f9fb1345020abca215addbbc347538aba0a212a80afcce3c4b25d60fa6bfe1d"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-10-q1",
+          "prompt": "What does Wheatley hope Amory’s sermons will do, and for whom?",
+          "facilitatorNotes": [
+            "“Mend the human heart,” build “habitual grace,” and inspire “youthful minds” toward virtue. Once God’s ways are shown, vice cannot hide: “Wisdom’s eye pervades the sable veil.”",
+            "Wheatley herself was young when she wrote this. Ask whether the poem sounds like a pupil’s thanks or a fellow writer’s praise."
+          ],
+          "evidence": [
+            "Thus while you strive to mend the human heart,",
+            "And youthful minds to Virtue's throne aspire!",
+            "For Wisdom's eye pervades the sable veil."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-10-q2",
+          "prompt": "Explain the comparison between artists and Amory. What can a sermon show that a painting cannot?",
+          "facilitatorNotes": [
+            "A painter can show “the sun’s effulgent rays”; Amory’s pen shows “the brighter God” who made the sun. Art shows creation; the preacher shows the Creator.",
+            "Compare Wheatley’s poem “To S. M., a Young African Painter,” where she praises painting much more warmly."
+          ],
+          "evidence": [
+            "Artists may paint the sun's effulgent rays, But Amory's pen the brighter God displays:"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-10-q3",
+          "prompt": "What is the atheist’s claim, and how does the poem answer it? Put the argument in your own words.",
+          "facilitatorNotes": [
+            "The atheist credits “chance, or nature.” The poem answers that this is like clay rising into shapes “self-made” without a potter, or planets running their courses “Self-moved”: order needs a mind behind it. “It cannot be—unerring Wisdom guides.”",
+            "This is the argument from design. Ask students whether the comparison proves the point or only states it vividly, and how someone who disagreed might reply."
+          ],
+          "evidence": [
+            "As if the clay, without the potter's aid, Should rise in various forms and shapes self-made,",
+            "It cannot be--unerring Wisdom guides"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-10-q4",
+          "prompt": "The poem ends by wishing Amory “immortal fame.” How does it distinguish that fame from ordinary fame?",
+          "facilitatorNotes": [
+            "Ordinary fame is “fleeting” and ends “When kingdoms fall”; she wishes him fame after “this transitory state is o’er,” “A nobler title and superior name,” the reward of heaven.",
+            "Ask whether a poet who hoped for fame herself might mean both kinds at once."
+          ],
+          "evidence": [
+            "When kingdoms fall, and fleeting Fame's no more,",
+            "May Amory triumph in immortal fame, A nobler title and superior name!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-11",
+      "title": "Niobe in Distress, part 1: Niobe’s boast",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "The poem is full of names from Greek myth. Use the context to keep track of the family trees, then focus on what each speaker claims and why.",
+      "focus": "A proud queen insults a goddess, and a narrator who has warned us already lets the gods prepare their revenge.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. The poem is a free retelling of the story of Niobe from the Roman poet Ovid’s Metamorphoses, and of a well-known painting of it by the Welsh painter Richard Wilson. Niobe, queen of Thebes, is the daughter of Tantalus and wife of the musician Amphion; her lands in Asia Minor are Phrygia and Mæonia. Latona (Leto in Greek), daughter of the Titan Coeus, is the mother of Apollo (Phoebus) and Diana (Phebe); when she was pregnant, no land would shelter her except the small island of Delos, where Mount Cynthus stands. Manto is a prophetess, daughter of the seer Tiresias; Cadmus founded Thebes; Aurora is the dawn.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Niobe in Distress for Her Children Slain by Apollo, from the title and opening invocation through Apollo’s answer to Latona, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “APOLLO'S wrath, to man the dreadful spring Of ills innumerous, tuneful goddess sing! Thou…”; closes “…thy complaints, mine be the task assigned \"To punish and to scourge the rebel mind.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-wheatley-memoir-poems-1834-12",
+        "blocks": [
+          187,
+          200
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8af48325abe7b52922863f62b270494bb23f40e16bbe416b803ae0edaf7fa482"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-11-q1",
+          "prompt": "Wheatley asks the Muse to inspire “What Wilson painted, and what Ovid wrote,” and calls herself “last and meanest of the rhyming train.” What is she claiming she will do, and how should we take her modesty?",
+          "facilitatorNotes": [
+            "She will turn a Roman poem and an English painting into her own English verse, combining two arts. Calling herself the least of poets was a convention of the time.",
+            "Coming from an enslaved young woman in Boston, the convention may also be strategic, disarming readers before she attempts a grand subject. Compare her opening of “To Mæcenas.”"
+          ],
+          "evidence": [
+            "What Wilson painted, and what Ovid wrote.",
+            "Though last and meanest of the rhyming train!"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-11-q2",
+          "prompt": "Before anything goes wrong, the narrator tells Niobe she would have been a “happier mother” if her children had been “less beloved.” What is the narrator warning about? Is it really love that destroys them?",
+          "facilitatorNotes": [
+            "The warning foreshadows the slaughter: her “too vehement” love turns into pride in her children, and pride brings punishment. The poem says love, but the story shows boasting.",
+            "Some students will say that blaming her love is unfair to a mother; others will see the narrator naming the root of her pride. Ask them to decide after part 2."
+          ],
+          "evidence": [
+            "But thou hadst far the happier mother proved, If this fair offspring had been less beloved:",
+            "Thy love, too vehement, hastens to destroy"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-11-q3",
+          "prompt": "What reasons does Niobe give why she, rather than Latona, deserves worship? Which of her arguments is the most dangerous?",
+          "facilitatorNotes": [
+            "Her divine ancestry, her wealth, her fame among the Phrygians, and above all her fourteen children, which make her safe: even if some are taken, “More than Latona's number will remain.” She mocks Latona as a homeless wanderer taken in by Delos.",
+            "The last boast is the most dangerous, since it invites exactly the loss she says cannot hurt her. Her contempt for a goddess who was once homeless is also cruel."
+          ],
+          "evidence": [
+            "Lo here an empress with a goddess joined.",
+            "Till pitying Delos took the wanderer in.",
+            "More than Latona's number will remain."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-11-q4",
+          "prompt": "Latona asks Apollo to kill Niobe’s sons for their mother’s words, and he agrees to “scourge the rebel mind.” Is this justice? What words do the gods use for Niobe?",
+          "facilitatorNotes": [
+            "They call her blaspheming, imperious, rebellious, and say “all her father in her tongue rebels.” The punishment falls on children who did nothing, which many readers find unjust.",
+            "In the ancient story the gods’ honour comes first. Ask whether Wheatley’s poem accepts that view or lets us question it; keep the question open for part 2."
+          ],
+          "evidence": [
+            "But all her father in her tongue rebels;",
+            "Wrap her own sons, for her blaspheming breath,",
+            "To punish and to scourge the rebel mind."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-12",
+      "title": "Niobe in Distress, part 2: the seven-fold funeral",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice how the poet varies the deaths so that each child is a person, and watch Niobe’s pride rise and fall.",
+      "focus": "The gods’ revenge, a mother’s grief and defiance, and an ending in stone.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. Part 1 told how Niobe, queen of Thebes, boasted that her fourteen children made her greater than the goddess Latona, and stopped the women of Thebes from worshipping her; Latona asked her son Apollo (Phoebus) to punish Niobe through her sons, and Apollo’s sister Diana (Phebe) joined him. Here the archer gods strike the children one by one. Fame is pictured as a winged messenger; a corse is a corpse; “sable vestures” are black mourning clothes. The asterisk on the last stanza points to a note saying that stanza is “the work of another hand,” someone other than Wheatley.",
+      "contentNote": "Describes in detail the killing of fourteen children with arrows, one wound graphic, and the suicide of their father with a dagger.",
+      "excerpt": {
+        "locator": "Niobe in Distress for Her Children Slain by Apollo, from the descent of Apollo and Diana on Thebes to the end, with the closing stanza marked as by another hand, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “This Phebe joined. They wing their instant flight, Thebes trembled as the immortal powers…”; closes “[Footnote *: This verse to end is the work of another hand.]”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-wheatley-memoir-poems-1834-11",
+        "continuesTo": null,
+        "blocks": [
+          201,
+          207
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7f144a9b7bdedf1309eca933a8f97aaf9ec84d213380fd71ff862f707c6d61a5"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-12-q1",
+          "prompt": "How does the poet make each son’s death different? Which death affects you most, and why?",
+          "facilitatorNotes": [
+            "Ismenus falls while racing; Sypylus flees like a sailor before a storm; two brothers die wrestling, “Together”; Alphenor dies trying to lift them; Ilioneus prays, and Apollo pities him “too late.” The variety turns a list into separate losses.",
+            "Many readers are struck by Apollo’s pity: even the god regrets the arrow he cannot recall. Others notice the poem calls the arrow “crime-avenging,” though the sons committed no crime."
+          ],
+          "evidence": [
+            "Together they their cruel fate bemoaned,",
+            "Apollo heard, and pity touched his heart, But ah! too late, for he had sent the dart:",
+            "Attempts to extract the crime-avenging rod;"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-12-q2",
+          "prompt": "Trace Niobe’s changes after the sons die. Why, at her lowest point, does she boast again?",
+          "facilitatorNotes": [
+            "At first she is “less haughty,” weeping “nor weeps unpitied by the foe”; then she calls Latona cruel and boasts that her daughters still outnumber the goddess’s children. Grief makes her “more presumptuous” rather than humble, and the bow-string sounds again.",
+            "Some readers see stubborn pride; others see a mother’s defiance of cruel gods. Her challenge to Latona to “show the cause” of her triumph is a real question about justice."
+          ],
+          "evidence": [
+            "How strangely changed! yet beautiful in woe, She weeps, nor weeps unpitied by the foe.",
+            "Yet greater numbers to my lot remain.",
+            "By her distresses more presumptuous grown."
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-12-q3",
+          "prompt": "When Niobe begs “spare me one,” “the vocal hills replied.” What is the effect of the echo, and of the daughter dying in her arms?",
+          "facilitatorNotes": [
+            "The hills repeat her plea as if all nature joins it, or as if no one but the echo is listening. The youngest daughter dies in the very embrace that tries to protect her.",
+            "The daughter who tries “To soothe her mother” and blames “the inclement skies” gives the poem a voice that questions the gods. Ask whether the poem now sides with Niobe."
+          ],
+          "evidence": [
+            "the vocal hills replied:",
+            "And blames the fury of the inclement skies,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-12-q4",
+          "prompt": "The final stanza, by “another hand,” turns Niobe to stone. How does its ending image sum up the story? Why might the book mark it as not Wheatley’s?",
+          "facilitatorNotes": [
+            "Bereft of everyone, she freezes into a marble statue, but the marble still weeps: grief outlasts pride and even life. The image is the famous end of Ovid’s story.",
+            "The note keeps the book honest about who wrote what, which mattered for a volume meant to prove an African woman’s authorship. Students can compare the added stanza’s style with Wheatley’s."
+          ],
+          "evidence": [
+            "But from the marble steal the silent tears.",
+            "This verse to end is the work of another hand."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-wheatley-memoir-poems-1834-13",
+      "title": "To S. M., a Young African Painter, on Seeing His Works",
+      "sourceId": "wheatley-memoir-poems-1834",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Mark every word that connects painting with life or creation, then follow the poem’s turn from this world to the next.",
+      "focus": "One young Black artist addressing another as an equal in a shared vocation.",
+      "context": "Phillis Wheatley (about 1753–1784) was taken from West Africa as a child and enslaved in Boston by the Wheatley family, who taught her to read. Her Poems on Various Subjects, Religious and Moral (London, 1773) was the first book of poems published by an African American; this text is the 1834 Boston reprint. S. M. is generally identified as Scipio Moorhead, an enslaved young artist in Boston, who is thought to have drawn the portrait of Wheatley printed at the front of her book. “Pencil” here means paintbrush. Salem (Jerusalem) with its “twice six gates” is the heavenly city of the Book of Revelation. Damon and Aurora are stock names from pastoral and classical verse; seraphic means angelic.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "To S. M., a Young African Painter, On seeing his Works; complete poem, Memoir and Poems of Phillis Wheatley (Boston, 1834); opens “To show the lab'ring bosom's deep intent, And thought in living characters to paint, When…”; closes “…Cease, gentle Muse! the solemn gloom of night Now seals the fair creation from my sight.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          208,
+          209
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "01b89ef938dc8b8d5553a8b7daa9ade1012186a4ab7699a21a3e5a95b6658ce4"
+      },
+      "questions": [
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-13-q1",
+          "prompt": "What does Wheatley praise in S. M.’s work? Which words show her treating painting as a kind of creation?",
+          "facilitatorNotes": [
+            "He paints “thought in living characters,” and his “breathing figures” live; the effect is “A new creation rushing on my sight!” Bringing figures to life was the highest praise in the art talk of her day.",
+            "She also joins his gift to hers: “the painter’s and the poet’s fire.”"
+          ],
+          "evidence": [
+            "And breathing figures learnt from thee to live,",
+            "A new creation rushing on my sight!"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-13-q2",
+          "prompt": "Why might it matter that this poem, by an enslaved African poet, addresses a young African painter as an artistic equal?",
+          "facilitatorNotes": [
+            "It is one artist encouraging another, wishing him “immortal fame” and imagining them together in heaven, where his tongue and her muse both rise. In colonial Boston, few would have granted two enslaved young people such a vocation.",
+            "Some readers stress the poem’s religious hope; others its mutual recognition. Both are present in the text."
+          ],
+          "evidence": [
+            "Still may the painter's and the poet's fire,",
+            "There shall thy tongue in heavenly murmurs flow,"
+          ]
+        },
+        {
+          "id": "reading-9-wheatley-memoir-poems-1834-13-q3",
+          "prompt": "Near the end she says that in heaven there will be “No more” of Damon’s sighs or Aurora’s eyes. What is she setting aside, and why does the poem end with night?",
+          "facilitatorNotes": [
+            "She sets aside the pastoral and classical conventions of earthly verse for “nobler themes” and “purer language.” Night then “seals the fair creation from my sight,” ending where seeing and painting stop, to wait for the day she has imagined.",
+            "Some read the close as calm devotion; others as a sober acknowledgment of limits in this world."
+          ],
+          "evidence": [
+            "For nobler themes demand a nobler strain,",
+            "Now seals the fair creation from my sight."
+          ]
+        }
+      ]
+    }
+  ]
+}

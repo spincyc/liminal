@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "douglass-narrative-1845",
+  "readings": [
+    {
+      "id": "reading-9-douglass-narrative-1845-01",
+      "title": "Narrative excerpt: a pious and mean master",
+      "sourceId": "douglass-narrative-1845",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 13,
+        "totalMinutes": 29
+      },
+      "challenge": "Sort Douglass’s charges against Thomas Auld into those about character and those about religion. Mark every word he uses ironically, meaning the opposite of what it says.",
+      "focus": "A portrait of contemptible authority, and religion used to sanction cruelty.",
+      "context": "Frederick Douglass (about 1818–1895) escaped from slavery in Maryland in 1838 and published his Narrative in 1845, while working as an antislavery lecturer in Massachusetts. After about seven years in Baltimore, where he had secretly learned to read, Douglass, about fourteen, was sent in 1832 to Thomas Auld at St. Michael’s, a town on Maryland’s Eastern Shore. A camp-meeting was an outdoor religious revival; class-leaders and exhorters were lay officers in the Methodist church; a cowskin is a heavy whip. To pray to be blessed “in basket and store” is to ask for plenty, in the words of the Bible. To “let” an enslaved person was to hire him out.",
+      "contentNote": "Douglass describes hunger and the repeated whipping of Henny, a young woman disabled by burns, with Scripture quoted to justify it. He quotes the slur used for Edward Covey’s reputation.",
+      "excerpt": {
+        "locator": "Narrative of the Life of Frederick Douglass, Chapter IX, complete; opens “I HAVE now reached a period of my life when I can give dates. I left Baltimore, and went…”; closes “…sure of getting enough to eat, which is not the smallest consideration to a hungry man.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          82,
+          87
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "69b6834500bba465900aff27aecc6202d1313e734bdcaff6ea6a5eef440dd153"
+      },
+      "questions": [
+        {
+          "id": "reading-9-douglass-narrative-1845-01-q1",
+          "prompt": "Douglass says that most slaveholders have some quality “commanding respect,” but Thomas Auld had none. What makes Auld contemptible rather than only cruel?",
+          "facilitatorNotes": [
+            "He became a slaveholder by marriage and imitated “born slaveholders” badly; he commanded “without firmness,” lacked even the power to deceive, and could not make the enslaved call him master. “He might have passed for a lion, but for his ears,” like the donkey in a lion’s skin in the fable.",
+            "The enslaved people’s refusal to say “master” is a quiet form of resistance. Readers may ask why Douglass bothers to ridicule Auld instead of only condemning him."
+          ],
+          "evidence": [
+            "He might have passed for a lion, but for his ears.",
+            "He was a slaveholder without the ability to hold slaves."
+          ]
+        },
+        {
+          "id": "reading-9-douglass-narrative-1845-01-q2",
+          "prompt": "Why does Douglass think Auld became “a much worse man after his conversion”? What evidence does he give, and what exception does he allow?",
+          "facilitatorNotes": [
+            "Religion gave Auld “sanction and support” for cruelty: he quoted Scripture while whipping Henny, fed visiting preachers while starving the enslaved (“while he starved us, he stuffed them”), and church class-leaders broke up a Sabbath school for enslaved people. The exception is Mr. Cookman, whose sympathy the enslaved could see.",
+            "The exception shows that Douglass’s charge is aimed at hypocrisy, not at faith as such; he makes this explicit in the Appendix."
+          ],
+          "evidence": [
+            "after his conversion, he found religious sanction and support for his slaveholding cruelty",
+            "for while he starved us, he stuffed them"
+          ]
+        },
+        {
+          "id": "reading-9-douglass-narrative-1845-01-q3",
+          "prompt": "Douglass calls Auld “benevolent” and St. Michael’s “pious.” Find another ironic word or phrase. Why might irony condemn more sharply than direct statement?",
+          "facilitatorNotes": [
+            "Other examples: “the very charitable purpose of taking care of them,” or his own “carelessness, or carefulness” with the runaway horse that leads him to food. Irony uses the slaveholders’ own vocabulary and shows its emptiness, and it makes the reader do the judging.",
+            "Some readers find the irony bitterly funny; others find it chilling next to Henny’s suffering. Notice too that Douglass goes “gladly” to Covey because he will be fed, which shows how hunger narrows choices."
+          ],
+          "evidence": [
+            "Master Thomas was one of the many pious slaveholders who hold slaves for the very charitable purpose of taking care of them.",
+            "Thus ended our little Sabbath school in the pious town of St. Michael's."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-douglass-narrative-1845-02",
+      "title": "Narrative excerpt: the Appendix on two Christianities",
+      "sourceId": "douglass-narrative-1845",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 14,
+        "totalMinutes": 29
+      },
+      "challenge": "State Douglass’s central distinction in one sentence. Then choose one pair of opposites from the long first paragraph and explain how its sentence is built.",
+      "focus": "An argument against hypocrisy that uses religion’s own words as its weapon.",
+      "context": "Frederick Douglass (about 1818–1895) escaped from slavery in Maryland in 1838 and published his Narrative in 1845, while working as an antislavery lecturer in Massachusetts. He added this Appendix to answer readers who might think him an enemy of all religion. The verses after the first paragraph are from “Clerical Oppressors” by the antislavery poet John Greenleaf Whittier; Pilate and Herod, who became friends at Jesus’s trial, stand for rulers allied in wrong. The long quotation is Jesus condemning the hypocrisy of the scribes and Pharisees in Matthew 23. The closing “Parody” mocks a hymn called “Heavenly Union.” Many northern churches stayed in fellowship with slaveholding churches in the South. A misnomer is a wrong name; livery is a servant’s uniform; mammon is wealth.",
+      "contentNote": "The Appendix names the abuses of slavery, including the sale of women for prostitution and the breaking up of families. The parody describes whippings and uses the period word “negroes.”",
+      "excerpt": {
+        "locator": "Narrative of the Life of Frederick Douglass, Appendix, complete, with the closing signature; opens “I FIND, since reading over the foregoing Narrative that I have, in several instances,…”; closes “LYNN, Mass., April 28, 1845.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          163,
+          188
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "eef054d8a2a9c4597c4e2165246651d782beadbbb2dd93c86f3b7b2182dae30f"
+      },
+      "questions": [
+        {
+          "id": "reading-9-douglass-narrative-1845-02-q1",
+          "prompt": "What distinction does Douglass draw, and why does he say a reader cannot accept both sides of it?",
+          "facilitatorNotes": [
+            "He separates “the slaveholding religion of this land” from “the Christianity of Christ”; they are so opposed that to call one good is to call the other wicked. He loves the “pure, peaceable, and impartial” faith and hates its “partial and hypocritical” counterfeit.",
+            "Some readers see a strategic move that protects his credibility with Christian readers; others see a sincere theological argument. The text supports both."
+          ],
+          "evidence": [
+            "between the Christianity of this land, and the Christianity of Christ, I recognize the widest, possible difference",
+            "I love the pure, peaceable, and impartial Christianity of Christ"
+          ]
+        },
+        {
+          "id": "reading-9-douglass-narrative-1845-02-q2",
+          "prompt": "Choose one sentence from the long first paragraph that sets two things side by side. How does its structure make the argument?",
+          "facilitatorNotes": [
+            "Sentences such as “The man who wields the blood-clotted cowskin during the week fills the pulpit on Sunday” and the two bells that “chime in with each other” place cruelty and worship in the same subject or the same moment. Repetition and balance make the hypocrisy impossible to separate or ignore.",
+            "Strong answers name the pairing (week and Sunday, auction bell and church bell, prison and church) and explain what joining them accuses."
+          ],
+          "evidence": [
+            "The man who wields the blood-clotted cowskin during the week fills the pulpit on Sunday",
+            "The slave auctioneer's bell and the church-going bell chime in with each other"
+          ]
+        },
+        {
+          "id": "reading-9-douglass-narrative-1845-02-q3",
+          "prompt": "Douglass answers the churches with Jesus’s words and then with a mocking hymn. Why use the Bible and parody rather than argument alone? Why does he insist that the North shares the blame?",
+          "facilitatorNotes": [
+            "Scripture turns the churches’ own authority against them: they “strain at a gnat, and swallow a camel.” The parody’s refrain twists “heavenly union” to expose a union of piety with whipping, and of northern churches with southern slaveholders.",
+            "His definition of “the religion of this land” includes bodies “north and south,” so northern readers cannot feel innocent. Some readers find the parody too savage; others find mockery the right answer to hypocrisy."
+          ],
+          "evidence": [
+            "They strain at a gnat, and swallow a camel.",
+            "those bodies, north and south, calling themselves Christian churches, and yet in union with slaveholders"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,811 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "matthews-oxford-american-essays-1914",
+  "readings": [
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-01",
+      "title": "The Ephemera: An Emblem of Human Life",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Benjamin Franklin",
+      "workTitle": "The Ephemera",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 18,
+        "totalMinutes": 25
+      },
+      "challenge": "Enjoy the joke first, then reread the old fly’s speech as a serious meditation. Decide where satire ends and self-portrait begins.",
+      "focus": "A comic fable that shrinks a lifetime to a few hours to test what ambition, politics and fame are worth.",
+      "context": "Franklin wrote this playful letter, a “bagatelle” or trifle, while he was the American envoy in France, for his friend and neighbour Madame Brillon, a gifted musician who lived in Passy, near Paris. He wrote it in 1778, when he was over seventy. An ephemera is a mayfly, an insect that lives as an adult for about a day. The Moulin Joly was a garden estate on an island in the Seine. The two “musicians,” a cousin and a moscheto, are gnats standing for rival composers whose admirers were quarrelling in Paris. “Art is long, and life is short” translates an ancient proverb.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Ephemera: An Emblem of Human Life, by Benjamin Franklin in The Oxford Book of American Essays (1914), complete letter; opens “You may remember, my dear friend, that when we lately spent that happy day in the…”; closes “…ephemeræ, and now and then a kind smile and a tune from the ever amiable _Brillante_.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          4,
+          6
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6fc1959249275a4b2ce60f7a9ad7b8a8c4e037f08bf445e830728fa4194615da"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-01-q1",
+          "prompt": "How does Franklin set up the joke in his first paragraph? Which details make the flies’ world a miniature of human society?",
+          "facilitatorNotes": [
+            "He claims to “understand all the inferior animal tongues,” hears the flies quarrelling over foreign musicians, and praises their government because they have no grievance but music. They behave “as if they had been sure of living a month.”",
+            "The fable flatters Madame Brillon’s world of music while teasing people who spend brief lives on fashionable disputes, Franklin perhaps among them."
+          ],
+          "evidence": [
+            "You know I understand all the inferior animal tongues.",
+            "as regardless of the shortness of life as if they had been sure of living a month"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-01-q2",
+          "prompt": "The old ephemera has lived “four hundred and twenty minutes.” Which of his laments could a human being make, and what makes them comic or sad in a fly’s mouth?",
+          "facilitatorNotes": [
+            "He mourns the friends of his youth, his toil gathering honey-dew, his political struggles, the slowness of philosophy, and the emptiness of a famous name after death. Shrinking a life to hours makes ambition look absurd.",
+            "The laments are also Franklin’s own: he was an aged statesman and scientist far from home. Readers may hear satire, a self-portrait, or both, and his question “what can laws do without morals?” is not only a joke."
+          ],
+          "evidence": [
+            "Alas! art is long, and life is short!",
+            "But what will fame be to an ephemera who no longer exists?"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-01-q3",
+          "prompt": "What “solid pleasures” remain to the old ephemera at the end? How does the ending change the purpose of the piece?",
+          "facilitatorNotes": [
+            "Not fame or politics but a life “spent in meaning well,” good conversation, and a tune from “Brillante,” a compliment to Madame Brillon. The meditation on vanity turns into a gallant letter.",
+            "Some readers find the ending a graceful answer to the fly’s despair; others think the compliment lightly sidesteps the hard question he has raised."
+          ],
+          "evidence": [
+            "the reflection of a long life spent in meaning well",
+            "and now and then a kind smile and a tune from the ever amiable"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-02",
+      "title": "The Whistle",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Benjamin Franklin",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 18,
+        "totalMinutes": 26
+      },
+      "challenge": "Follow how a childhood story becomes a saying and then a test applied to six kinds of people. Ask whether every example fits the rule equally well.",
+      "focus": "A parable about the “false estimates” people make of the value of things.",
+      "context": "Franklin wrote this playful letter, a “bagatelle” or trifle, while he was the American envoy in France, for his friend and neighbour Madame Brillon, a gifted musician who lived in Passy, near Paris. This letter dates from 1779; Madame Brillon had written to him about her idea of Paradise. Coppers are copper coins. Levees were morning receptions held by kings and great men; equipages are carriages with horses and servants. Franklin does not explain “the apples of King John,” which seems to be a private joke; read it as a temptation he hopes never to be offered.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Whistle, by Benjamin Franklin in The Oxford Book of American Essays (1914), complete letter; opens “I received my dear friend's two letters, one for Wednesday and one for Saturday. This is…”; closes “…my dear friend, and believe me ever yours very sincerely and with unalterable affection.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          10,
+          24
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "edec2957108eed1f202de359053cc09e2e87a0f7a1b27b7f5b410f2424f21dd1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-02-q1",
+          "prompt": "Retell the childhood story in a sentence. What made the seven-year-old unhappy: the whistle, the price, or the laughter?",
+          "facilitatorNotes": [
+            "He gave all his coppers for a whistle worth a quarter of that; his family pointed out what else he could have bought and laughed until he cried. The pain came from comparing what he had with what he might have had.",
+            "Some students will argue that without the laughter he would have been content, which raises the question of who decides what a thing is worth."
+          ],
+          "evidence": [
+            "told me I had given four times as much for it as it was worth",
+            "and laughed at me so much for my folly, that I cried with vexation"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-02-q2",
+          "prompt": "Franklin applies the lesson to six kinds of people. Which example seems strongest to you, and which most questionable? Consider especially the “beautiful sweet-tempered girl.”",
+          "facilitatorNotes": [
+            "The courtier, the politician, the miser, the pleasure-seeker, the spendthrift and the unhappily married girl each trade something valuable for something less. The repeated pattern builds the rule by accumulation.",
+            "The last example treats a woman’s marriage as her bargain, though in Franklin’s day she often had little choice; readers may find it unfair, or simply a sign of the period. Accept any judgment grounded in the examples."
+          ],
+          "evidence": [
+            "When I see a beautiful sweet-tempered girl married to an ill-natured brute of a husband",
+            "If I knew a miser, who gave up every kind of comfortable living"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-02-q3",
+          "prompt": "Why does Franklin end by admitting that he too might “ruin” himself? Does the admission weaken or strengthen his argument?",
+          "facilitatorNotes": [
+            "After “all this wisdom of which I am boasting,” he confesses that some temptations are irresistible and asks for “charity” toward the unhappy. The lecture becomes a shared weakness, keeping the letter’s affectionate tone.",
+            "Some readers find the humility persuasive; others see a witty escape from his own rule. The letter’s audience, a close friend, helps explain the choice."
+          ],
+          "evidence": [
+            "Yet I ought to have charity for these unhappy people",
+            "with all this wisdom of which I am boasting"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-03",
+      "title": "Dialogue between Franklin and the Gout",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Benjamin Franklin",
+      "workTitle": "Dialogue between Franklin and the Gout",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the dialogue aloud with a partner, one taking each part. Then decide who wins the argument and how Franklin, the author, feels about Franklin, the character.",
+      "focus": "A comic self-portrait in which a famous moralist is lectured, and punished, by his own disease.",
+      "context": "Franklin wrote this playful letter, a “bagatelle” or trifle, while he was the American envoy in France, for his friend and neighbour Madame Brillon, a gifted musician who lived in Passy, near Paris. He wrote it in October 1780, aged seventy-four, during an attack of gout, a painful swelling of the joints that doctors then blamed on rich food, drink and idleness. Older medicine explained health by the balance of bodily fluids called “humors.” Passy, Auteuil and Montmartre were villages near Paris; M. Brillon is Madame Brillon’s husband. Poor Richard was the character whose sayings filled Franklin’s almanac. Palsy, dropsy and apoplexy are paralysis, swelling with fluid, and stroke.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Dialogue between Franklin and the Gout, by Benjamin Franklin in The Oxford Book of American Essays (1914), complete; opens “Midnight, 22 October, 1780.”; closes “…place; for my object is your good, and you are sensible now that I am your _real friend_.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          26,
+          74
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "75a2f5e7bcf358c7949123bf59ed214bbcd5381ee1f1fee6bfce11f154ac514b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-03-q1",
+          "prompt": "Franklin calls the Gout “my enemy”; the Gout calls herself his physician and friend. How does the dialogue turn a disease into a character, and what does each side claim?",
+          "facilitatorNotes": [
+            "The Gout speaks like a stern doctor or conscience who has “a list of offenses” and administers “wholesome corrections” in twinges. Franklin protests and bargains like a patient who knows he is in the wrong. Making the illness a person lets Franklin argue with his own body.",
+            "The Gout’s final claim, that the disease is “no disease, but a remedy” that saved him from worse illnesses, is medically odd but comically consistent. Students may enjoy the Gout’s politeness about her own cruelty."
+          ],
+          "evidence": [
+            "What! my enemy in person?",
+            "it should not be forgotten that I am your physician",
+            "the gout, in such a subject as you are, is no disease, but a remedy"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-03-q2",
+          "prompt": "Which piece of the Gout’s evidence is most damaging to Franklin, and how does he try to defend himself?",
+          "facilitatorNotes": [
+            "Franklin pleads his “sedentary state” and counts carriage rides as exercise. The Gout answers with detail: a heavy breakfast, hours of chess, the hundred garden steps at the Brillons’ never once descended, and broken promises to walk counted exactly, “one hundred and ninety-nine times.” The comic precision makes the case unanswerable.",
+            "Some readers will choose the neighbour who walks to visit him while he always drives, since “it is no farther from Passy to Auteuil than from Auteuil to Passy.”"
+          ],
+          "evidence": [
+            "going out to dine and returning in my carriage",
+            "the gross amount is one hundred and ninety-nine times",
+            "it is no farther from Passy to Auteuil than from Auteuil to Passy"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-03-q3",
+          "prompt": "“You philosophers are sages in your maxims, and fools in your conduct.” How does the dialogue use Franklin’s own sayings against him, and what does the ending predict?",
+          "facilitatorNotes": [
+            "The Gout quotes his maxim about walking up and down stairs, and Franklin himself recalls Poor Richard: “Our debts and our sins are always greater than we think for.” He knows the rules and does not keep them. When he promises reform, the Gout predicts his promises will fade “like the forms of the last year’s clouds.”",
+            "The joke is on the author himself, which keeps the moralising light. The Gout’s suggestion that he give rides to tired old vineyard workers adds kindness to the cure; students may notice that virtue and health arrive together."
+          ],
+          "evidence": [
+            "Our debts and our sins are always greater than we think for.",
+            "You philosophers are sages in your maxims, and fools in your conduct.",
+            "your fine promises will be forgotten like the forms of the last year's clouds"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-04",
+      "title": "Consolation for the Old Bachelor",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Francis Hopkinson",
+      "workTitle": "Consolation for the Old Bachelor",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Enjoy the comic pace of the dashes and lists, then ask what the narrator leaves out, and whose misfortunes he treats as merely inconvenient.",
+      "focus": "A satirical letter about a family journey that also reveals the assumptions of its time.",
+      "context": "Francis Hopkinson (1737–1791) was a Philadelphia lawyer, musician and writer of satire, and a signer of the Declaration of Independence. This letter is addressed to the Philadelphia printer and magazine publisher Robert Aitken, answering an earlier piece in which an “Old Bachelor” regretted never having married. A chair (or chaise) is a light two-wheeled carriage; a bandbox is a box for hats and caps; to “mortify” is to turn gangrenous. The route runs from Philadelphia through Trenton and Princeton to New York. Choler is anger; an opiate is a medicine to ease pain.",
+      "contentNote": "The narrator calls an elderly Black woman in his household, probably enslaved, “the old negro wench,” and lists her terrible injury among comic misfortunes. The portrait of the scolding wife is a stock joke of the period.",
+      "excerpt": {
+        "locator": "Consolation for the Old Bachelor, by Francis Hopkinson in The Oxford Book of American Essays (1914), complete; opens “MR. AITKEN: Your Old Bachelor having pathetically represented the miseries of his…”; closes “…be sufficient to give him some ease, I may, perhaps, send him a stronger dose hereafter.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          77,
+          95
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3ed9e1dcd8dee1e4742259dc681cf98bcf32ea50ee12cc959011b1118621502e"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-04-q1",
+          "prompt": "How does Hopkinson build comedy out of repetition and dashes? Choose one passage and describe its rhythm.",
+          "facilitatorNotes": [
+            "The wife’s phrase “which we could not possibly do without” returns each time money is spent, and the journey is told in clipped bursts (“Miss Jenny frightened--my wife very impatient”) that rise and fall like the family’s moods. Against all this the narrator’s one weapon is “silent patience.”",
+            "Students might point to “My purse sweat at every pore” as the most compressed joke: the shoemaker feels spending as bodily pain."
+          ],
+          "evidence": [
+            "My purse sweat at every pore.",
+            "Silent patience was my only remedy."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-04-q2",
+          "prompt": "Who is blamed for each mishap, and how reliable is the narrator’s account of his marriage?",
+          "facilitatorNotes": [
+            "The wife blames him for the forgotten bandbox, the toothache, the ruined cap and finally every disaster at home; he answers with a footnote-like defence (“N. B. I had been twice for him”). But we hear only his side, and the letter’s purpose, to console a bachelor, gives him reason to exaggerate.",
+            "Some readers see a believable portrait of an unhappy marriage; others see the familiar comic figure of the shrewish wife. He also admits agreeing with everything “for fear of discomposing her,” which may be part of the problem."
+          ],
+          "evidence": [
+            "all my fault because I had not made the glazier replace a broken pane in her chamber window",
+            "N. B. I had been twice for him, and he promised to come, but was not so good as his word.",
+            "My good wife contrived, with her usual ingenuity, to throw the blame of all these misfortunes upon me."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-04-q3",
+          "prompt": "On the family’s return, the narrator lists a runaway apprentice, the old woman’s burned eye and a broken china bowl in one sentence. What does that list reveal?",
+          "facilitatorNotes": [
+            "The list format makes every item equal, so a woman’s maiming counts for no more than a bowl; all three are his “manifold losses.” She is the household’s Black servant, almost certainly enslaved in the Philadelphia of Hopkinson’s day, and the essay never gives her a name.",
+            "It is doubtful that Hopkinson meant this as irony. Students can discuss how satire aimed at one target (a wife’s extravagance) can expose what its author and his readers took for granted about another."
+          ],
+          "evidence": [
+            "the old negro had got drunk, fallen into the fire, and burnt out one of her eyes; and our best china-bowl was broken",
+            "the old negro wench was called in, and the charge of the house committed to her care",
+            "in order to retrieve my manifold losses"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-05",
+      "title": "The Philosophy of Composition: beginning with the end",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Edgar Allan Poe",
+      "workTitle": "The Philosophy of Composition",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 14,
+        "totalMinutes": 26
+      },
+      "challenge": "Restate Poe’s method in your own words before judging it. Then test his argument about length one step at a time.",
+      "focus": "A writer’s claim that a poem can be built like a mathematical problem, starting from its intended effect.",
+      "context": "Edgar Allan Poe published “The Raven” in 1845 and this essay in Graham’s Magazine in 1846, claiming to show step by step how the poem was made. Many readers doubt that it was composed as coolly as he says, so the essay is both criticism and performance. Reading “The Raven” first (a Grade 9 school night in Week 12) helps. Charles Dickens and William Godwin were English novelists. A dénouement is the final unravelling of a plot; histrio is Latin for actor; a desideratum is something needed; modus operandi means method of working; ceteris paribus, other things being equal.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from the start through the length of “The Raven”; opens “CHARLES DICKENS, in a note now lying before me, alluding to an examination I once made of…”; closes “…intended poem--a length of about one hundred lines. It is, in fact, a hundred and eight.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-matthews-oxford-american-essays-1914-06",
+        "blocks": [
+          271,
+          282
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8aa7067433468aefc72458d36f254af01513655ed33705c53c8c47ab14e040ac"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q1",
+          "prompt": "What is the “radical error” Poe finds in the usual way of constructing a story, and what does he do instead?",
+          "facilitatorNotes": [
+            "Most writers begin with a thesis or a striking event and fill the “crevices” as they go. Poe begins with an effect on the reader, then chooses incidents and tone to produce it, with the ending always in view.",
+            "Students may find this a useful method or an incomplete account of how writing happens; either view can be argued from the paragraph."
+          ],
+          "evidence": [
+            "There is a radical error, I think, in the usual mode of constructing a story.",
+            "I prefer commencing with the consideration of an effect."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q2",
+          "prompt": "Why, according to Poe, do most writers hide how they work? What does his long list of theatre properties suggest about writing?",
+          "facilitatorNotes": [
+            "Vanity: they prefer to seem inspired by “a species of fine frenzy.” The wheels, scene-shifting tackle and red paint make the poet an actor staging an illusion, and Poe offers to show the machinery.",
+            "Some readers notice the irony that his own essay may be just as staged, a performance of cool control instead of frenzy."
+          ],
+          "evidence": [
+            "Most writers--poets in especial--prefer having it understood that they compose by a species of fine frenzy",
+            "the tackle for scene-shifting"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-05-q3",
+          "prompt": "Poe claims the poem proceeded “with the precision and rigid consequence of a mathematical problem,” beginning with its length. Is his reasoning about length convincing?",
+          "facilitatorNotes": [
+            "He argues that unity of impression needs a single sitting and that intense excitement is brief, so a long poem is “merely a succession of brief ones,” and half of Paradise Lost is prose. Then he arrives at about a hundred lines, in fact a hundred and eight.",
+            "Readers can test the premise that poetic effect must be brief, and many find the exact figure a little comic. Note his exception for prose such as Robinson Crusoe."
+          ],
+          "evidence": [
+            "with the precision and rigid consequence of a mathematical problem",
+            "What we term a long poem is, in fact, merely a succession of brief ones"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-06",
+      "title": "The Philosophy of Composition: Beauty, melancholy and “Nevermore”",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Edgar Allan Poe",
+      "workTitle": "The Philosophy of Composition",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the chain of decisions (tone, refrain, word, speaker, subject, climax) and at each link ask whether the choice was really forced, as Poe claims.",
+      "focus": "Poe’s theory of Beauty and his account of “Nevermore” as a product of design.",
+      "context": "Recap: Poe argued that a writer should begin with the ending and with the effect he wants, and promised to show that “The Raven” was built like a mathematical problem, starting from a length of about a hundred lines. A refrain, or burden, is a repeated line or word; nonchalance is casual unconcern; Aidenn is Poe’s version of Eden, meaning paradise.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from Poe’s choice of effect through his account of composing the climactic stanza first; opens “My next thought concerned the choice of an impression, or effect, to be conveyed: and…”; closes “…have purposely enfeebled them, so as not to interfere with the climacteric effect.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-matthews-oxford-american-essays-1914-05",
+        "continuesTo": "reading-9-matthews-oxford-american-essays-1914-07",
+        "blocks": [
+          283,
+          294
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e8a77de2701d7a2b42b8f54b86784f4063606163ce8b5efd27f0a24f563a7441"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-06-q1",
+          "prompt": "Poe separates Beauty from Truth and Passion. What does each satisfy, and why does he think poetry belongs to Beauty?",
+          "facilitatorNotes": [
+            "Beauty is “an effect,” an elevation of the soul; Truth satisfies the intellect and demands precision; Passion excites the heart and demands homeliness. Truth and Passion are “far more readily attainable in prose,” so they may enter a poem only as subordinate contrasts, like discords in music.",
+            "Students can test the theory against poems they know that argue a case or express anger."
+          ],
+          "evidence": [
+            "Beauty is the sole legitimate province of the poem",
+            "far more readily attainable in prose"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-06-q2",
+          "prompt": "How does Poe arrive at the word “Nevermore,” and then at a raven? Which step looks most like logic and which most like taste?",
+          "facilitatorNotes": [
+            "A varied refrain must be brief, so a single word; sonorous, so a long o with r; melancholy, so “Nevermore.” A reasoning person would not repeat it, so a non-reasoning creature: first a parrot, then a raven, more “in keeping” with the tone.",
+            "The sound argument sounds technical, while raven over parrot is plainly taste. Readers may also doubt that “Nevermore” really came first to mind."
+          ],
+          "evidence": [
+            "In fact, it was the very first which presented itself.",
+            "a parrot, in the first instance, suggested itself, but was superseded forthwith by a Raven"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-06-q3",
+          "prompt": "Poe calls the death of a beautiful woman “unquestionably, the most poetical topic in the world.” How does he reach this conclusion, and what does the reasoning leave out?",
+          "facilitatorNotes": [
+            "Melancholy is the proper tone; death is the most melancholy topic; it is most poetical when joined to Beauty; so a beautiful woman’s death, mourned by her lover. The woman exists only as the occasion of someone else’s feeling.",
+            "Many readers challenge the word “unquestionably”; others defend it as a description of a long tradition of elegy. Notice too that he began writing “at the end.”"
+          ],
+          "evidence": [
+            "the death, then, of a beautiful woman is, unquestionably, the most poetical topic in the world",
+            "at the end, where all works of art should begin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-07",
+      "title": "The Philosophy of Composition: a chamber, a storm and an emblem",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Edgar Allan Poe",
+      "workTitle": "The Philosophy of Composition",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 13,
+        "totalMinutes": 29
+      },
+      "challenge": "Match each claim about setting, contrast and ending with the lines Poe quotes. Decide where his explanation stops describing mechanics and starts interpreting meaning.",
+      "focus": "Frame, contrast and “suggestiveness”: how a plain narrative becomes an emblem.",
+      "context": "Recap: Poe has traced “The Raven” from its chosen effect, a melancholy Beauty, through the refrain “Nevermore,” the raven as a speaker without reason, and a bereaved lover; he wrote the climactic stanza first. Trochaic verse uses feet of a stressed syllable followed by an unstressed one; octameter has eight feet; catalectic means a syllable short. Pallas Athena was the Greek goddess of wisdom. The “transcendentalists” were New England writers such as Emerson, whose work Poe disliked.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Philosophy of Composition, by Edgar Allan Poe in The Oxford Book of American Essays (1914), from the remarks on versification to the end; opens “And here I may as well say a few words of the versification. My first object (as usual)…”; closes “…soul _from out that shadow_ that lies floating on the floor Shall be lifted--nevermore.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-matthews-oxford-american-essays-1914-06",
+        "continuesTo": null,
+        "blocks": [
+          295,
+          315
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "72d2a38152f55074b968514773c089736d9937bad931f7d690a128dda2359425"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-07-q1",
+          "prompt": "Why does Poe insist on “a close circumscription of space”? How do the storm and the marble bust serve the same principle?",
+          "facilitatorNotes": [
+            "A small room works like “a frame to a picture,” concentrating attention. The storm outside contrasts with the stillness within, and white marble with black plumage; Pallas suits a scholar and sounds well. Each choice is justified by effect, not realism.",
+            "Students may ask whether readers actually notice such contrasts, or feel them without noticing, which is what Poe would claim."
+          ],
+          "evidence": [
+            "it has the force of a frame to a picture",
+            "for the effect of contrast between the marble and the plumage"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-07-q2",
+          "prompt": "Poe says that, read as a simple narrative, the poem never oversteps “the limits of the real.” What keeps the student asking questions when he can guess the answer?",
+          "facilitatorNotes": [
+            "An escaped tame raven seeks shelter from a storm and repeats its one learned word. The student “guesses the state of the case” but keeps asking, driven by superstition and “the human thirst for self-torture,” to enjoy “the luxury of sorrow.”",
+            "This psychological claim is one of the essay’s most interesting; students may compare it with their own reading of the poem or with grief they have observed."
+          ],
+          "evidence": [
+            "the human thirst for self-torture",
+            "so far there has been no overstepping of the limits of the real"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-07-q3",
+          "prompt": "What does Poe mean by “suggestiveness,” and why does he save the poem’s first metaphor for the end? Do you accept his statement of what the Raven stands for?",
+          "facilitatorNotes": [
+            "A bare narrative has “hardness or nakedness”; it needs an “undercurrent, however indefinite, of meaning,” though not so much that meaning becomes the upper current, his jab at the transcendentalists. “From out my heart” turns readers toward a moral, and the last stanza makes the Raven an emblem of mournful and never-ending remembrance.",
+            "Students may accept the label or argue that the poem suggests more than any label, which is the indefinite undercurrent Poe himself praises."
+          ],
+          "evidence": [
+            "some undercurrent, however indefinite, of meaning",
+            "the first metaphorical expression in the poem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-08",
+      "title": "The Tyranny of Things",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Edward Sandford Martin",
+      "workTitle": "The Tyranny of Things",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "The essay jokes nearly all the way through. Find the serious claim under each joke, and notice where the examples come from.",
+      "focus": "A comic essay of the 1890s on how possessions, big houses and rich friends take over the lives of people who cannot afford them.",
+      "context": "Edward Sandford Martin (1856–1939) was an American essayist and magazine editor; the anthology reprints this essay from his book Windfalls of Observation (1893). The “Patagonians” are Native people whom a traveller saw from a steamer in the Strait of Magellan, at the southern tip of South America. Thetis dipped her baby Achilles in a river to make him invulnerable; Tarpeia, in Roman legend, was crushed under the shields of the Sabines she let into Rome; Sindbad, in the Arabian Nights, was ridden by the Old Man of the Sea, who would not get off his shoulders. Res angustae domi is Latin for “narrow means at home”; a cormorant is a greedy sea bird; jimcracks are knick-knacks; usufruct is the right to use another’s property. Hawthorne and Emerson lived in modest houses at Lenox and Concord, Massachusetts.",
+      "contentNote": "The opening uses a traveller’s anecdote about Indigenous people as a curiosity, from the outside.",
+      "excerpt": {
+        "locator": "The Tyranny of Things, by Edward Sandford Martin in The Oxford Book of American Essays (1914), complete; opens “A traveler newly returned from the Pacific Ocean tells pleasant stories of the…”; closes “…it inevitably contracts the circle of those who will find it profitable to share them.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1126,
+          1142
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c227eac574910a5be994a1b365bf58355c65ea7271dc79735a4dfa8251bde8a8"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q1",
+          "prompt": "How does Martin use the traveller’s story of the Patagonians? What does it let him say about “civilization,” and what is missing from the way he tells it?",
+          "facilitatorNotes": [
+            "The people who need no clothes or houses make modern comforts look like burdens; he concludes that “civilization is the mere cultivation of our wants” and jokes that they should “send missionaries to us.”",
+            "The joke reverses the usual direction of missions. But the Patagonians are seen only through a passing steamer’s view, as a picture of simplicity; readers can ask what their own lives were like, which the essay never considers."
+          ],
+          "evidence": [
+            "civilization is the mere cultivation of our wants",
+            "it seems a pity that those simple Patagonians could not send missionaries to us to show us how to do without"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q2",
+          "prompt": "Why does Martin tell the story of the hospital? What makes it different from a story about waste?",
+          "facilitatorNotes": [
+            "Its managers were not extravagant; they did “only … what the enlightened experience of the day has considered to be necessary,” yet expenses doubled. The point is that standards rise faster than means: “the enlightened experience of the day invents more necessaries than we can get the money to pay for.”",
+            "The dry last sentence about the receiver finding “a well-appointed institution” is the joke. Ask readers for a modern example of a rising standard that costs more than people can pay."
+          ],
+          "evidence": [
+            "the enlightened experience of the day invents more necessaries than we can get the money to pay for",
+            "the receiver will find a well-appointed institution of which the managers have no reason to be ashamed"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q3",
+          "prompt": "Pick two exaggerations from the paragraph about the big house. What truth does each one carry?",
+          "facilitatorNotes": [
+            "The grass must be cut “even though funerals in the family have to be put off for the mowing”; the owner learns to do everything in the house “except enjoy himself.” Both say the house sets the schedule, not its owners.",
+            "The paragraph assumes a husband who mends and a wife who is “a slave to carpets and curtains,” which shows the period’s division of work. Students may discuss whether the essay notices that."
+          ],
+          "evidence": [
+            "the grass about it must be cut even though funerals in the family have to be put off for the mowing",
+            "Presently he will know how to do everything that can be done in the house, except enjoy himself."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-08-q4",
+          "prompt": "Why does Martin say the tyranny of things is harder to resist than the tyranny of a man? What does he mean by preferring the verb “to be” to “to have”?",
+          "facilitatorNotes": [
+            "A human oppressor is recognized and fought; things come “so masked with seeming benefits” that a person is “bound before he suspects his fetters,” until “it is the things that own him.” When having and being compete, being is what “best repays concentration.”",
+            "He limits his advice to “us poor” and excuses the rich. Some readers find his last section, on the time it costs to keep up with rich friends, the sharpest part; others think it shrinks a moral point into a practical one."
+          ],
+          "evidence": [
+            "the tyranny of _things_ is so subtle, so gradual in its approach, and comes so masked with seeming benefits, that it has him hopelessly bound before he suspects his fetters",
+            "Presently he begins to realize that it is the things that own him.",
+            "the verb _to be_ is the one that best repays concentration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-09",
+      "title": "Free Trade vs. Protection in Literature",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Samuel McChord Crothers",
+      "workTitle": "Free Trade vs. Protection in Literature",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow an extended comparison borrowed from economics. Separate the jokes from the serious claim they carry.",
+      "focus": "Why living writers compete with every book ever written, and why the reader’s privacy is a kind of freedom.",
+      "context": "Samuel McChord Crothers (1857–1927) was a Unitarian minister in Cambridge, Massachusetts, and a popular essayist. In his day Americans argued fiercely about tariffs, taxes on imported goods meant to “protect” home industries from foreign competition; “free trade” meant no such taxes. The “Australian ballot” is the secret printed ballot that American states adopted around 1890. Mrs. Grundy is a byword for prudish disapproval; Garrick and Booth were famous actors; Sancho Panza is Don Quixote’s squire. The line about adding “a cubit to his stature” comes from the Sermon on the Mount.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Free Trade vs. Protection in Literature, by Samuel McChord Crothers in The Oxford Book of American Essays (1914), complete; opens “In the old-fashioned text-book we used to be told that the branch of learning that was…”; closes “…we are exposed, we must improve the quality of our work. Perhaps that may be good for us.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1146,
+          1171
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7239dd02240b4ac9ab0dc453794e89596a3ef9df8b288416168fb2202dc2e586"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-09-q1",
+          "prompt": "Crothers says lasting literature is “an accident.” What does the young man at the Social Justice meeting add to that claim?",
+          "facilitatorNotes": [
+            "The young man reasons that equal rights should mean an equal right to be a genius, and asks “Then why ain’t I?” Crothers cannot answer. Genius cannot be claimed as a right, planned by critics, or produced by effort alone; it “happens.”",
+            "Some readers find this humbling, others discouraging. The essay’s last paragraph suggests a middle view: we cannot command genius, but we can “improve the quality of our work.”"
+          ],
+          "evidence": [
+            "The literature that is of lasting value is an accident.",
+            "Then why ain't I?",
+            "I had to confess that I didn't know."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-09-q2",
+          "prompt": "Explain the title’s comparison. Why, according to Crothers, can literature never be a “protected industry”?",
+          "facilitatorNotes": [
+            "Actors and singers sell their work only in the present, so the living hold a kind of monopoly. A reader, though, can choose any book from any century, and an old book is often cheaper: “The book which has just come from the press has no advantage over the book that is a century old.”",
+            "His joke about a writers’ strike, broken by “strike-breakers” from every century, makes the same point. Students may test the claim against their own reading: how much of it was written in their lifetime?"
+          ],
+          "evidence": [
+            "Literature can never be made one of the protected industries.",
+            "The book which has just come from the press has no advantage over the book that is a century old.",
+            "We tremble to think of the army of strike-breakers that would rush in from all centuries."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-09-q3",
+          "prompt": "Compare the visitor at the art exhibition with the reader alone in the library. Why does privacy matter so much to Crothers’s argument?",
+          "facilitatorNotes": [
+            "At the exhibition the visitor feels watched and tries “to look pleased”; in the library he is like a voter in a secret ballot, free to enjoy what he enjoys. Literary fashions fail because “Few people will follow a fashion except when other people are looking at them.”",
+            "The pun on “making an exhibition of himself” mocks art that is all self-display. Students may ask whether reading is still private today, when what we read is often shared, rated and recommended."
+          ],
+          "evidence": [
+            "Conscious of this espionage, you endeavor to look pleased.",
+            "He is making an exhibition of himself.",
+            "Few people will follow a fashion except when other people are looking at them."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-10",
+      "title": "Dante and the Bowery",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Theodore Roosevelt",
+      "workTitle": "Dante and the Bowery",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 11,
+        "totalMinutes": 29
+      },
+      "challenge": "Roosevelt piles up names on purpose; you do not need to know them all. Follow the one argument they serve, and notice how each list is built.",
+      "focus": "A former president argues that Dante’s greatness lay partly in treating the people of his own day as freely as the heroes of the past, which modern writers are too self-conscious to do.",
+      "context": "Theodore Roosevelt (1858–1919), president of the United States from 1901 to 1909, was also a prolific writer; the anthology reprints this essay from History as Literature and Other Essays (1913). Dante Alighieri (1265–1321) of Florence wrote the Divine Comedy, whose first part, the Inferno, describes Hell and names many of his own contemporaries among the damned. Guelphs and Ghibellines were rival political factions in medieval Italy. The Bowery was a crowded, poor and lively street in Lower Manhattan; Fulton Market, the Brooklyn Navy Yard, Castle Garden (the old immigrant station) and Tammany (New York’s Democratic political machine) are New York places of Roosevelt’s time. Thomas Hart Benton of Missouri was a Union senator; Jefferson Davis was president of the Confederacy. Simony is buying and selling church offices; barratry here means corruption in public office.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Dante and the Bowery, by Theodore Roosevelt in The Oxford Book of American Essays (1914), complete; opens “It is the conventional thing to praise Dante because he of set purpose \"used the language…”; closes “…worshiped only for art's sake, without reference to the dread lessons it teaches mankind.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1174,
+          1184
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "365722e0ce0d7b5493202fc046d63783f49723d1a7dbf8f2f93163a6749b04c1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-10-q1",
+          "prompt": "What does Roosevelt say Dante did that modern poets will not do? Why, according to him, do they hold back?",
+          "facilitatorNotes": [
+            "Dante illustrated qualities of the soul with examples “alike from human nature as he saw it around him and from human nature as he read of it,” putting local captains beside Cyrus and Attila. Modern writers fear that any illustration will be read as a comparison of greatness, and that “cultivated people would ridicule” them.",
+            "He blames self-consciousness and an over-developed “critical faculty.” Ask whether readers today would laugh at a poem that set a local figure beside a hero of the past."
+          ],
+          "evidence": [
+            "cultivated people would ridicule the poet who illustrated fundamental truths, as Dante did six hundred years ago",
+            "we are so self-conscious as always to read a comparison into any illustration"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-10-q2",
+          "prompt": "Roosevelt says Whitman alone “dared use the Bowery,” yet “was not quite natural in doing so.” What is the difference between Whitman’s boldness and Dante’s?",
+          "facilitatorNotes": [
+            "Whitman wrote of “homely things and every-day men,” but knew he was “defying the conventions,” and the defiance shows. Dante was not defying anything; his age simply allowed it.",
+            "Roosevelt values naturalness over daring. Some readers will think defiance is exactly what made Whitman new; others accept the point that a writer at ease with his material writes better."
+          ],
+          "evidence": [
+            "his self-consciousness made him a little defiant",
+            "Dante was not defiant of conventions"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-10-q3",
+          "prompt": "Look at the paragraph on Farinata, Benton and Jefferson Davis. What quality does Roosevelt admire in all three, and what does his pairing of Benton and Davis leave out?",
+          "facilitatorNotes": [
+            "The “frowning defiance, the high heart, and the stubborn will” of a man who “held hell in great scorn.” He sets Benton, “the champion of the Union,” beside Davis, who fought “for what he deemed right in trying to break up the Union,” as equally “colossal.”",
+            "The comparison is about courage, not causes, as his own argument says. But readers may fairly point out that it never names what the Confederacy fought to preserve, slavery, so admiring Davis’s will is not a neutral choice. Ask whether Roosevelt’s principle can be applied without that blind spot."
+          ],
+          "evidence": [
+            "fronted an adverse fate with the frowning defiance, the high heart, and the stubborn will",
+            "fought for what he deemed right in trying to break up the Union"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-10-q4",
+          "prompt": "In his last paragraph Roosevelt says imitating Dante would make a writer “ridiculous.” What, then, does he want us to learn from Dante?",
+          "facilitatorNotes": [
+            "Not the form (“We do not express ourselves nowadays in epics at all”) but his “high simplicity of soul”: seeing in the people around us “the eternal qualities which we admire or condemn” in the great figures of history. He also wants the poem read for its “dread lessons,” not only “for art’s sake.”",
+            "Ask whether he is right that a great work’s lessons matter more than its art, and how he might answer someone who reads Dante mainly for beauty. Notice too his aside that Dante sometimes confused “his own hatreds” with heaven’s."
+          ],
+          "evidence": [
+            "it would be a good thing if we could, in some measure, achieve the mighty Florentine's high simplicity of soul",
+            "without reference to the dread lessons it teaches mankind"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-matthews-oxford-american-essays-1914-11",
+      "title": "The Revolt of the Unfit",
+      "sourceId": "matthews-oxford-american-essays-1914",
+      "author": "Nicholas Murray Butler",
+      "workTitle": "The Revolt of the Unfit",
+      "genre": "essay",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Butler writes with heavy irony. For each paragraph, decide whether he is stating his own view or mimicking someone else’s, and keep a note of the moment his own position comes clear.",
+      "focus": "An essay that seems to mock the “unfit” for revolting against evolution, then argues that cooperation and moral law rightly overrule the struggle for existence.",
+      "context": "Nicholas Murray Butler (1862–1947) was president of Columbia University; the anthology reprints this essay from his book Why Should We Change Our Form of Government? (1912). Charles Darwin’s theory of evolution by natural selection was published in 1859; “survival of the fittest” is the philosopher Herbert Spencer’s phrase. In Butler’s day some writers argued that poverty and failure among human beings were nature’s sorting of the “fit” from the “unfit,” and that laws helping the poor interfered with nature. T. H. Huxley was a leading defender of Darwin. Ipso facto is Latin for “by that very fact”; the Contrat social is Rousseau’s Social Contract; Linnaeus named the human species Homo sapiens, “wise man.” Robert Louis Stevenson wrote the closing fable.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Revolt of the Unfit, by Nicholas Murray Butler in The Oxford Book of American Essays (1914), complete; opens “THERE are wars and rumors of wars in a portion of the territory occupied by the doctrine…”; closes “'\"The first thing,' said the third, 'is to abolish mankind.'\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          1188,
+          1215
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "463b403ad0c57d82cf7c024f9e7bb92d1727e8a824bba8f92baa5564849ec6ae"
+      },
+      "questions": [
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-11-q1",
+          "prompt": "Butler says the theory treats “fit” and “unfit” as it did with earthworms and birds. What happens when the theory is applied to people, according to him?",
+          "facilitatorNotes": [
+            "The “consciously fit” look on with “complacent scorn,” while the unfit “rage and roar” and set out to repeal the law of nature by legislation. Unlike earthworms, people protest, vote and form reform societies.",
+            "The tone seems to side with the fit, but the joke about earthworms needing “a coroner’s inquest” cuts both ways. Ask readers to hold off deciding where Butler stands until later."
+          ],
+          "evidence": [
+            "The consciously unfit rage and roar loudly",
+            "the organized unfit can always lead a large majority to the polls"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-11-q2",
+          "prompt": "What fallacy does Huxley point out about the phrase “survival of the fittest”? Why does it matter to Butler’s argument?",
+          "facilitatorNotes": [
+            "People assume “fittest means best,” but fitness means only adaptation to conditions; it contains “no element of beauty, no element of morality, no element of progress toward an ideal.”",
+            "Once fitness is not goodness, the “revolt” of the unfit is no longer a revolt against what is right. This is the turning point of the essay."
+          ],
+          "evidence": [
+            "One jumps to the conclusion that fittest means best; whereas, of course, it has in it no moral element whatever.",
+            "Into this conception of fitness there enters no element of beauty, no element of morality, no element of progress toward an ideal."
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-11-q3",
+          "prompt": "Where does Butler say the “real successes and permanences of life” are found? How does this change the meaning of the title?",
+          "facilitatorNotes": [
+            "Among species that build “something like what we call a social system”: individuals who “transcend” themselves through sympathy and cooperation escape the fate of the solitary competitor. The revolt of the unfit aims to “substitute interdependence on a higher plane for the struggle for existence on a lower one.”",
+            "So the “unfit” turn out to be acting on a moral principle: “moral considerations must outweigh the mere blind struggle for existence.” Some readers think Butler supports them; others find him still wary, since he calls the revolt “ominous.” Both words are in the text."
+          ],
+          "evidence": [
+            "the real successes and permanences of life are to be found among those species that have been able to institute something like what we call a social system",
+            "moral considerations must outweigh the mere blind struggle for existence in human affairs",
+            "Who dares attempt to picture what will happen if this revolt shall not succeed?"
+          ]
+        },
+        {
+          "id": "reading-9-matthews-oxford-american-essays-1914-11-q4",
+          "prompt": "Why does Butler end with Stevenson’s fable of the four reformers? What does it add to, or take back from, his argument?",
+          "facilitatorNotes": [
+            "The reformers each want to abolish something until the last proposes “to abolish mankind.” The fable mocks reformers who would remove property, marriage, religion and law, and suggests the only way to get rid of such problems is to get rid of people.",
+            "It may warn that moral reform can overreach, or simply admit that these problems “will persist as long as humanity itself.” Accept readings that connect it to his remark that “man is not ruled by thinking.”"
+          ],
+          "evidence": [
+            "There is only one way of getting rid of them",
+            "When man thinks he thinks, he usually merely feels"
+          ]
+        }
+      ]
+    }
+  ]
+}

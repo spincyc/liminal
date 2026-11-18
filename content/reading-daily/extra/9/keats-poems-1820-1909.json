@@ -1,0 +1,1233 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "keats-poems-1820-1909",
+  "readings": [
+    {
+      "id": "reading-9-keats-poems-1820-1909-01",
+      "title": "Isabella, stanzas I–XX: two lovers and two brothers",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Isabella; or, The Pot of Basil",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the first stanzas aloud for their repetitions. Then notice where the poet stops telling the story to speak in his own voice, and why.",
+      "focus": "A tender love story interrupted by the poet’s anger at the wealth that will destroy it.",
+      "context": "John Keats (1795–1821) published this narrative poem in 1820, in the volume used here. It retells a tale from Boccaccio’s Decameron (about 1353), a collection of Italian prose stories, and is set in Florence. A palmer is a pilgrim; vespers are evening prayers; to “shrive” is to confess. Ariadne (“Theseus’ spouse”) and Dido are heroines of classical legend abandoned by their lovers. Ceylon is Sri Lanka; a “lazar” is a leper or beggar; a ghittern is an old kind of guitar. Each stanza has eight lines rhymed abababcc, an Italian form called ottava rima.",
+      "contentNote": "Stanzas XIV–XVI describe the suffering of miners, divers and whipped labourers who make the brothers rich. Stanza XVII compares the greedy brothers to “two close Hebrews,” an antisemitic stereotype of Keats’s time.",
+      "excerpt": {
+        "locator": "Isabella; or, The Pot of Basil, stanzas I–XX; opens “Fair Isabel, poor simple Isabel! Lorenzo, a young palmer in Love's eye! They could not in…”; closes “…To stead thee as a verse in English tongue, An echo of thee in the north-wind sung.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-keats-poems-1820-1909-02",
+        "blocks": [
+          28,
+          47
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "622128de4fa4c02a8dd7278f13433759c5e400c50939107f96ca74df9c50c72a"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q1",
+          "prompt": "The first stanzas repeat “They could not…” and “With every morn… With every eve.” What do the repetitions, and the long delay before anyone speaks, show about the two lovers?",
+          "facilitatorNotes": [
+            "The parallel lines make their love grow evenly and in step, as if neither can move without the other. Yet each vows privately to speak “To-morrow,” and Lorenzo lets “Honeyless days and days” pass, too shy to say anything until Isabella breaks the silence with his name.",
+            "Keats sums up the paradox in “Alas! when passion is both meek and wild!” Students may find the delay touching or slightly comic; the gentle opening makes what follows harsher."
+          ],
+          "evidence": [
+            "They could not in the self-same mansion dwell",
+            "Honeyless days and days did he let pass",
+            "Alas! when passion is both meek and wild!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q2",
+          "prompt": "In stanzas XIV–XVI the poem turns from the lovers to the brothers’ wealth. Whose suffering does Keats list, and what is the effect of asking four times “Why were they proud?”",
+          "facilitatorNotes": [
+            "Miners, factory hands, labourers under the whip, river workers, the Ceylon pearl diver and the hunted seal all labour “for them,” while the brothers turn “an easy wheel” far from the pain they cause. The repeated question demands a reason for their pride and finds none: fountains, orange groves and “red-lin’d accounts” are not worth a beggar’s tears.",
+            "Keats attacks commerce itself, not only two villains. In the next stanza he insults the brothers with an antisemitic comparison; students should notice that the poet who condemns cruelty here borrows a prejudice of his age, and can discuss that without repeating it."
+          ],
+          "evidence": [
+            "And for them many a weary hand did swelt In torched mines and noisy factories",
+            "Half-ignorant, they turn'd an easy wheel, That set sharp racks at work, to pinch and peel.",
+            "Why in the name of Glory were they proud?"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-01-q3",
+          "prompt": "Why does the poet ask Boccaccio’s pardon in stanzas XIX–XX? What has he done that the old tale did not?",
+          "facilitatorNotes": [
+            "He admits that his outburst (“venturing syllables”) does not suit “such a piteous theme,” and promises that the tale “Shall move on soberly.” He has turned a simple story into an attack on greed, and he knows it.",
+            "Some readers find the digressions the most powerful part of the poem; others think they interrupt a story that is already moving. Note that he interrupted once before, at stanza XII (“Were they unhappy then?”)."
+          ],
+          "evidence": [
+            "O eloquent and famed Boccaccio!",
+            "For venturing syllables that ill beseem The quiet glooms of such a piteous theme.",
+            "Shall move on soberly, as it is meet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-02",
+      "title": "Isabella, stanzas XXI–XLI: the forest and the vision",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Isabella; or, The Pot of Basil",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch for words that tell you what will happen before it happens. Then read the ghost’s speech aloud and listen to how it sounds.",
+      "focus": "A murder told in two stanzas, and a ghost whose grief is more loving than frightening.",
+      "context": "Recap: in Florence, Isabella and Lorenzo, who works for her two rich merchant brothers, have declared their love and meet in secret. Keats has interrupted the story to condemn the brothers’ wealth, built on others’ suffering. The Apennines are the mountains of central Italy, and the Arno the river of Florence; a matin-song is a morning song; freshets are floods; a widow’s weed is mourning dress. The valley of Hinnom, outside Jerusalem, was associated with hell. Whortle-berries are bilberries.",
+      "contentNote": "Lorenzo is murdered and buried in a forest, and his ghost describes his grave.",
+      "excerpt": {
+        "locator": "Isabella; or, The Pot of Basil, stanzas XXI–XLI; opens “These brethren having found by many signs What love Lorenzo for their sister had, And how…”; closes “…up and boil: It made sad Isabella's eyelids ache, And in the dawn she started up awake;”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-01",
+        "continuesTo": "reading-9-keats-poems-1820-1909-03",
+        "blocks": [
+          48,
+          68
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b9527a4b0913299d76e40df22a958047a87d709fab6c6c81740f6dce400be2ac"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q1",
+          "prompt": "Why do the brothers kill Lorenzo? Find the phrases where Keats names their motive.",
+          "facilitatorNotes": [
+            "Lorenzo is “the servant of their trade designs,” an employee, and they had planned to marry their sister to “some high noble and his olive-trees.” Money and rank, not honour, decide the crime. Keats ends the murder stanza with the bitter irony that each is “richer by his being a murderer.”",
+            "Students may notice that “richer” means wealthier in the brothers’ terms and poorer in every other sense."
+          ],
+          "evidence": [
+            "That he, the servant of their trade designs, Should in their sister's love be blithe and glad",
+            "To some high noble and his olive-trees",
+            "Each richer by his being a murderer."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q2",
+          "prompt": "How does Keats build suspense into Lorenzo’s last morning? Look at the brothers’ invitation, the lovers’ goodbye and the phrase “their murder’d man.”",
+          "facilitatorNotes": [
+            "The brothers’ courteous speech is a “serpents’ whine”; Lorenzo pauses to hear Isabella’s song and promises “I’ll soon be back”; and Keats calls him “their murder’d man” while he is still riding beside them. The reader knows more than either lover, which makes the cheerful goodbye painful.",
+            "Some readers find the early “murder’d” clumsy, giving the plot away; others think it makes the ride feel already doomed."
+          ],
+          "evidence": [
+            "Bow'd a fair greeting to these serpents' whine",
+            "Goodbye! I'll soon be back.",
+            "So the two brothers and their murder'd man"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-02-q3",
+          "prompt": "Lorenzo’s ghost says, “I am a shadow now.” How does Keats make the ghost both frightening and tender?",
+          "facilitatorNotes": [
+            "His voice strains “To speak as when on earth,” his hair is spoiled by earth, and he describes the grave exactly (“Red whortle-berries droop above my head”), which will let Isabella find it. Yet his eyes keep “all phantom fear aloof,” and death has only deepened his love: “Thy beauty grows upon me.”",
+            "The line “thou art distant in Humanity” shows death as a kind of exile from ordinary life. Students may find the vision eerie, consoling, or both."
+          ],
+          "evidence": [
+            "Red whortle-berries droop above my head, And a large flint-stone weighs upon my feet",
+            "And thou art distant in Humanity.",
+            "Thy beauty grows upon me"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-03",
+      "title": "Isabella, stanzas XLII–LXIII: the pot of basil",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Isabella; or, The Pot of Basil",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Notice where the poet hesitates to describe what Isabella does, and decide whether the hesitation softens the horror or sharpens it.",
+      "focus": "Grief turned into devotion so intense that it becomes strange, and a story that ends as a song.",
+      "context": "Recap: Isabella’s brothers murdered Lorenzo in a forest and told her he had gone abroad on their business. As she wasted away, his ghost appeared in a dream, told her of the murder and described his grave. The “champaign” is open country. Perseus cut off the head of the monster Medusa. Melpomene is the Muse of tragedy; Lethe is the river of forgetting. “Baalites of pelf” means worshippers of money; a guerdon is a reward; the “burthen” of a song is its refrain.",
+      "contentNote": "Isabella digs up her lover’s body, cuts off his head and buries it in a pot of basil.",
+      "excerpt": {
+        "locator": "Isabella; or, The Pot of Basil, stanzas XLII–LXIII, to the end of the poem; opens “\"Ha! ha!\" said she, \"I knew not this hard life, I thought the worst was simple misery; I…”; closes “…pass'd: Still is the burthen sung--\"O cruelty, To steal my Basil-pot away from me!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-02",
+        "continuesTo": null,
+        "blocks": [
+          69,
+          90
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "85432e137231ac03567be457d148fe019c2e4d60b3dd6ca7b721f5cc7958bd46"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q1",
+          "prompt": "“Ha! ha!” Isabella cries on waking. What has she learned, and how does it change her?",
+          "facilitatorNotes": [
+            "She thought life offered only happiness or “simple misery”; now she knows there is “crime,” her own brother’s. The dream has “school’d my infancy”: she stops wasting away and makes a plan, setting out with her old nurse and a knife.",
+            "Her laughter can be read as madness, as bitterness, or as the release of finally knowing the truth. The text supports all three."
+          ],
+          "evidence": [
+            "I thought the worst was simple misery",
+            "But there is crime--a brother's bloody knife!",
+            "Sweet Spirit, thou hast school'd my infancy"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q2",
+          "prompt": "“Ah! wherefore all this wormy circumstance?” Why does the poet interrupt here, and does he really avoid the gruesome details?",
+          "facilitatorNotes": [
+            "He wishes for “the gentleness of old Romance” and sends the reader to Boccaccio’s plainer tale, as if ashamed of lingering at the grave. Then he tells the worst anyway, comparing the cutting of the head to Perseus beheading Medusa, except that this head belongs to no monster but a gentle man.",
+            "Some readers find the hesitation sincere; others think it makes the horror stronger by making us wait for it. The reversal of the myth asks who the real monsters are."
+          ],
+          "evidence": [
+            "Ah! wherefore all this wormy circumstance?",
+            "O for the gentleness of old Romance",
+            "With duller steel than the Persean sword They cut away no formless monster's head"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-03-q3",
+          "prompt": "The basil grows “thick, and green, and beautiful.” What does the plant come to mean, and why does losing it kill Isabella?",
+          "facilitatorNotes": [
+            "It is fed by her tears and by “the fast mouldering head,” so beauty grows out of decay and love keeps living on death. It is the last thing she has of Lorenzo. Her brothers, looking at the same pot, see only something “vile” that exposes their guilt, and flee.",
+            "The final stanza turns her story into a folk song sung “From mouth to mouth,” which is also what Keats’s poem is doing. Students may read the basil as devotion, as obsession, or as the poem’s own image of art made from grief."
+          ],
+          "evidence": [
+            "for it drew Nurture besides, and life, from human fears, From the fast mouldering head there shut from view",
+            "The thing was vile with green and livid spot, And yet they knew it was Lorenzo's face",
+            "To steal my Basil-pot away from me!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-04",
+      "title": "The Eve of St. Agnes, stanzas I–XIII: a bitter night and a lover’s risk",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "The Eve of St. Agnes",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 14,
+        "totalMinutes": 26
+      },
+      "challenge": "Read the first stanzas aloud for their slow, cold sounds, then notice when the poem’s temperature and pace change. Keep track of who knows what as Porphyro enters the castle.",
+      "focus": "A frame of age, cold and devotion around a young woman’s superstition and a young man’s dangerous hope.",
+      "context": "John Keats (1795–1821) wrote this narrative poem in 1819 and published it in 1820, in the volume used here. It is set in a medieval castle on St. Agnes’ Eve, January 20, when, by folk belief, a girl who performed certain rites might dream of her future husband. A Beadsman is an old man paid to pray, telling his rosary beads; “argent” means silver; “amort” means as if dead; St. Agnes’s emblem is a lamb. Each stanza has eight lines of ten syllables and a ninth of twelve, the form Edmund Spenser invented. Porphyro’s family and Madeline’s are enemies.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "The Eve of St. Agnes, stanzas I–XIII; opens “St. Agnes' Eve--Ah, bitter chill it was! The owl, for all his feathers, was a-cold; The…”; closes “…Which none but secret sisterhood may see, When they St. Agnes' wool are weaving piously.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-keats-poems-1820-1909-05",
+        "blocks": [
+          92,
+          104
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "8eab6502a96a9bb118eb4d911b9a972c31dd66a380693a987480c6b09c416164"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-04-q1",
+          "prompt": "The poem opens not with the lovers but with the Beadsman. What do the cold, the carved dead and his penance establish before the music begins?",
+          "facilitatorNotes": [
+            "Bitter cold reaches even the owl; the Beadsman’s frosted breath seems to rise “for heaven, without a death”; the tomb sculptures freeze behind black rails. Age, death and self-denial frame the young lovers before we meet them, and he turns away from “Music’s golden tongue” to sit in ashes.",
+            "Readers may see him as a foil, renunciation set against desire, or as a reminder that all this passion will end in death. Keep him in mind for the last stanza."
+          ],
+          "evidence": [
+            "Seem'd taking flight for heaven, without a death,",
+            "The sculptur'd dead, on each side, seem to freeze,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-04-q2",
+          "prompt": "What must Madeline do to have her vision, and how does Keats show her absorption at the ball? Is the narrator mocking her “whim”?",
+          "facilitatorNotes": [
+            "She must go to bed without supper, lie on her back and look only upward. At the ball she sees “many a sweeping train” without heeding it, and the cavaliers retreat unnoticed.",
+            "“Hoodwink’d with faery fancy” and “whim” carry gentle irony, yet the verse also enters her yearning. Students can argue whether the poem respects or teases her belief."
+          ],
+          "evidence": [
+            "Nor look behind, nor sideways, but require",
+            "Hoodwink'd with faery fancy; all amort,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-04-q3",
+          "prompt": "How dangerous is the castle for Porphyro? Look at the language Angela and the narrator use for Madeline’s kinsmen.",
+          "facilitatorNotes": [
+            "“Barbarian hordes,” “Hyena foemen,” dogs that would curse his lineage, “the whole blood-thirsty race”: the danger raises the stakes and makes old Angela his only ally.",
+            "Some readers notice that we hear only one side; the hostile family is caricature, as in a romance. Comparisons with Romeo entering the Capulet house are fair."
+          ],
+          "evidence": [
+            "Hyena foemen, and hot-blooded lords,",
+            "They are all here to-night, the whole blood-thirsty race!"
+          ]
+        }
+      ],
+      "months": [
+        1
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-05",
+      "title": "The Eve of St. Agnes, stanzas XIV–XXVII: the stratagem and the chamber",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "The Eve of St. Agnes",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow the argument between Angela and Porphyro step by step. Then read the chamber stanzas slowly for colour and light, asking whose eyes we are seeing through.",
+      "focus": "A lover’s plan that the poem both romanticizes and questions, and a heroine seen as a sacred picture.",
+      "context": "Recap: On St. Agnes’ Eve, a bitterly cold night, Madeline left the noisy feast in her family’s castle hoping to dream of her future husband. Porphyro, from an enemy family, slipped into the castle, and the old nurse Angela has hidden him in a little moonlit room. A beldame is an old woman; “mickle” means much; cates are delicacies; a tambour frame holds embroidery. Merlin, the wizard of Arthurian legend, was imprisoned by an enchantress, the “Demon” of stanza XIX. Gules is the heraldic word for red; a missal is a prayer book; “swart Paynims” are dark-skinned pagans.",
+      "contentNote": "With the nurse’s help Porphyro hides in Madeline’s bedroom to watch her, unseen, as she prays and undresses; the description is not explicit. A simile mentions “swart Paynims,” a period phrase for dark-skinned non-Christians.",
+      "excerpt": {
+        "locator": "The Eve of St. Agnes, stanzas XIV–XXVII; opens “\"St. Agnes! Ah! it is St. Agnes' Eve-- Yet men will murder upon holy days: Thou must hold…”; closes “…alike from sunshine and from rain, As though a rose should shut, and be a bud again.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-04",
+        "continuesTo": "reading-9-keats-poems-1820-1909-06",
+        "blocks": [
+          105,
+          118
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7c3e7610b54c579a2742b1655535302e1e0eb29dd53554309e1b252a75030fac"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-05-q1",
+          "prompt": "Angela calls Porphyro “A cruel man and impious.” What is his “stratagem,” and why does she finally agree to it?",
+          "facilitatorNotes": [
+            "To be hidden in Madeline’s chamber “that he might see her beauty unespied, / And win perhaps that night a peerless bride.” Angela yields after his oath, his threat to rouse his enemies, and a “gentler speech” the poem does not quote; she insists he must marry the lady.",
+            "Readers differ: an ardent lover’s romance, or a deception the poem lets us notice. The narrator’s own comparison with Merlin’s betrayal is a clue worth discussing."
+          ],
+          "evidence": [
+            "A cruel man and impious thou art:",
+            "That he might see her beauty unespied,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-05-q2",
+          "prompt": "The moonlight through the stained-glass window colours Madeline as she kneels. What do the colours and comparisons make her seem, and to whom?",
+          "facilitatorNotes": [
+            "Warm gules, rose-bloom, amethyst and “a glory, like a saint”: she looks like “a splendid angel, newly drest, / Save wings.” The heraldry of the window adds rank and blood to the picture.",
+            "Much of this is Porphyro’s view, and he “grew faint.” Ask whether the poem worships her or turns her into an object to be looked at; both answers can cite the stanza."
+          ],
+          "evidence": [
+            "And on her hair a glory, like a saint:",
+            "She seem'd a splendid angel, newly drest,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-05-q3",
+          "prompt": "The passage ends: “As though a rose should shut, and be a bud again.” What does the simile suggest about Madeline’s sleep, and why might it be unsettling here?",
+          "facilitatorNotes": [
+            "Sleep encloses her, “Blissfully haven’d both from joy and pain,” clasped like a closed prayer book. A rose cannot become a bud again, so the image of protected innocence is beautiful and impossible.",
+            "With Porphyro watching from the closet, some readers feel tension beneath the loveliness; others read the stanza as pure enchantment. Let students defend either."
+          ],
+          "evidence": [
+            "As though a rose should shut, and be a bud again.",
+            "Blissfully haven'd both from joy and pain;"
+          ]
+        }
+      ],
+      "months": [
+        1
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-06",
+      "title": "The Eve of St. Agnes, stanzas XXVIII–XLII: the waking and the flight",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "The Eve of St. Agnes",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the feast stanzas for sound and texture, then follow the shift when Madeline wakes. In the last stanza notice the sudden change of tense and distance.",
+      "focus": "Dream against waking, and an ending that turns a warm romance into an old, cold tale.",
+      "context": "Recap: Hidden by the nurse Angela in Madeline’s chamber, Porphyro has watched her pray, undress and fall asleep, awaiting the dream St. Agnes promises. A Morphean amulet would bring sleep (Morpheus was god of dreams); Fez, Samarcand and Lebanon are distant places of luxury trade; an eremite is a hermit; “La belle dame sans mercy” means the beautiful lady without pity. “Vermeil” is vermilion red; wassaillers are revellers; Rhenish is Rhine wine; an arras is a wall tapestry.",
+      "contentNote": "The lovers’ union while Madeline is half-dreaming is implied rather than described (“Into her dream he melted”), and readers have long debated it. The last stanza reports the deaths of Angela and the Beadsman.",
+      "excerpt": {
+        "locator": "The Eve of St. Agnes, stanzas XXVIII–XLII, to the end of the poem; opens “Stol'n to this paradise, and so entranced, Porphyro gazed upon her empty dress, And…”; closes “…The Beadsman, after thousand aves told, For aye unsought for slept among his ashes cold.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-05",
+        "continuesTo": null,
+        "blocks": [
+          119,
+          133
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6ac3a7dc65060b77d5c2660016174d4724228e43f711ba3650a514f1ad11e44b"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-06-q1",
+          "prompt": "Why does Porphyro set out a feast that no one eats? Choose two lines from the list and say what they add.",
+          "facilitatorNotes": [
+            "Candied fruit, jellies, syrups “tinct with cinnamon,” manna and dates carried from Fez to Lebanon: an extravagant offering of sensation in a cold room, more like a ritual or dream than a meal. The rich sounds slow the poem before the waking.",
+            "Readers may see devotion, seduction, or Keats’s own delight in the senses. The feast is never touched, which is worth noticing."
+          ],
+          "evidence": [
+            "And lucent syrops, tinct with cinnamon;",
+            "From silken Samarcand to cedar'd Lebanon."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-06-q2",
+          "prompt": "When Madeline wakes, why does she weep? Compare the Porphyro of her dream with the one kneeling before her.",
+          "facilitatorNotes": [
+            "Her dream gave a voice of sweet vows and eyes “spiritual and clear”; the real man is “pallid, chill, and drear.” When she understands “No dream,” she calls herself “a deceived thing.” Porphyro answers with promises of marriage and a home.",
+            "Readers disagree whether the night is romance (she begs him not to leave and flees with him) or deception (she was half-dreaming and calls herself deceived). The text supports discussing both, carefully."
+          ],
+          "evidence": [
+            "How chang'd thou art! how pallid, chill, and drear!",
+            "Though thou forsakest a deceived thing;--"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-06-q3",
+          "prompt": "The final stanza jumps backward: “ay, ages long ago / These lovers fled away into the storm.” How does this ending change the story you have just read?",
+          "facilitatorNotes": [
+            "The warm present-tense romance suddenly becomes distant legend; the lovers vanish into the storm, the Baron’s guests have nightmares, Angela dies, and the Beadsman sleeps “among his ashes cold.” The cold of the opening returns.",
+            "Some readers find the escape triumphant, framed as an old tale; others find the coda a reminder that all of it is long dead. The shift of tense and distance supports either."
+          ],
+          "evidence": [
+            "And they are gone: ay, ages long ago",
+            "For aye unsought for slept among his ashes cold."
+          ]
+        }
+      ],
+      "months": [
+        1
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-07",
+      "title": "Robin Hood: To a Friend",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Robin Hood",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 17,
+        "totalMinutes": 26
+      },
+      "challenge": "Read aloud to hear the quick ballad rhythm, then mark every “no more,” “never,” “gone” and “Honour.” Decide where the poem turns, and why.",
+      "focus": "Nostalgia for an outlaw greenwood, set against a present of rents, money and felled oaks.",
+      "context": "Keats wrote this in 1818 in reply to his friend, the poet John Hamilton Reynolds, who had sent him sonnets about Robin Hood. Robin Hood, Little John and Maid Marian are the outlaws of English ballads, living in Sherwood Forest and dressed in Lincoln green. Gamelyn is a medieval outlaw tale; “grene shawe” is old English for green wood; the Trent is a river near Sherwood. A pall is a cloth over a coffin; a wight is a person; to “try a burden” is to sing a refrain. Oaks felled with “dockyard strokes” went to build the navy’s ships.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Complete poem: Robin Hood. To a Friend; opens “No! those days are gone away, And their hours are old and gray, And their minutes buried…”; closes “…And to all the Sherwood-clan! Though their days have hurried by Let us two a burden try.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          168,
+          172
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a72841937d666d89728acc55df3c0819f9483ae4ff89d577dd68935af725a3bf"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-07-q1",
+          "prompt": "The poem begins “No!” What is the speaker contradicting, and what has replaced the world of Robin Hood?",
+          "facilitatorNotes": [
+            "He answers an unspoken wish that the old days might return. The outlaws’ hours lie buried under the leaves of many years; the land now has rents and leases, its oaks have gone to the dockyards, and honey “Can’t be got without hard money!”",
+            "Students may notice the playful exaggeration: the poem knows it is idealizing."
+          ],
+          "evidence": [
+            "Since men knew nor rent nor leases.",
+            "Can't be got without hard money!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-07-q2",
+          "prompt": "How does the poem’s music change from lament to celebration? Use the repeated words.",
+          "facilitatorNotes": [
+            "The first stanzas pile up negatives (“no more,” “never,” “Gone”) in quick ballad couplets that sound merry even while mourning. The last stanza turns to a toast of “Honour to…” and ends with “Let us two a burden try,” a song for two friends.",
+            "Loss becomes an occasion to sing together. Some readers hear consolation; others hear wistful irony."
+          ],
+          "evidence": [
+            "Gone, the merry morris din;",
+            "Let us two a burden try."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-07-q3",
+          "prompt": "If Robin and Marian came back, “She would weep, and he would craze.” Is the poem only nostalgic, or also a criticism of its own time?",
+          "facilitatorNotes": [
+            "Marian’s wild bees charging for honey is a joke, but the felled oaks and the rents point to land turned into property and forests turned into a navy. The outlaws are idealized in order to judge the present.",
+            "Both readings, light nostalgia and quiet social criticism, fit; strong answers show how the comic lines carry the serious point."
+          ],
+          "evidence": [
+            "She would weep, and he would craze:",
+            "Fall'n beneath the dockyard strokes,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-08",
+      "title": "Lamia, Part I: Hermes and the serpent",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Lamia",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the long verse paragraphs for the story first, then reread the description of the serpent and the transformation slowly, line by line.",
+      "focus": "Keats makes his heroine beautiful and dangerous at once and refuses to say which she is.",
+      "context": "John Keats (1795–1821) published Lamia as the first poem of his 1820 volume, the last book of his short life. The story comes from Robert Burton’s Anatomy of Melancholy (1621), which Keats printed as a note at the end of the poem. In Greek legend a lamia is a female monster, sometimes part serpent, who preys on young men. Hermes, messenger of the gods, has winged heels and a staff twined with snakes (the caduceus) that works magic; Jove rules Olympus. Oberon is king of the fairies of English folklore; nymphs, satyrs, dryads, fauns and tritons are nature spirits of Greek myth; a pard is a leopard; Proserpine was carried off from Sicily to the underworld. Keats writes in rhyming couplets, with occasional three-line rhymes and long lines.",
+      "contentNote": "Sensual description of lovers, including Hermes’s pursuit of a nymph who is at first afraid; a painful transformation.",
+      "excerpt": {
+        "locator": "Lamia, Part I, from the opening through the description of Lamia as a newly made woman; opens “Upon a time, before the faery broods Drove Nymph and Satyr from the prosperous woods,…”; closes “…days a lovely graduate, still unshent, And kept his rosy terms in idle languishment.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-keats-poems-1820-1909-09",
+        "blocks": [
+          3,
+          8
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "266468dd0eaa809d2ef394dab7fa8f7bd5467fecef362dd0f04d50418d6eda19"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-08-q1",
+          "prompt": "How does Keats describe the serpent? Choose three of the comparisons and say what impression their mixture creates.",
+          "facilitatorNotes": [
+            "She is “Striped like a zebra, freckled like a pard, / Eyed like a peacock,” with silver moons and a woman’s mouth: dazzling, exotic and unsettling all at once. The pile of comparisons makes her impossible to picture as one thing.",
+            "The narrator then offers three identities, a punished elf, a demon’s mistress, or “the demon’s self,” without choosing. That uncertainty is the poem’s central question."
+          ],
+          "evidence": [
+            "Striped like a zebra, freckled like a pard, Eyed like a peacock, and all crimson barr'd;",
+            "She seem'd, at once, some penanced lady elf, Some demon's mistress, or the demon's self."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-08-q2",
+          "prompt": "What bargain do Hermes and the serpent make? What does each want, and who seems to hold the power?",
+          "facilitatorNotes": [
+            "Hermes wants to see the invisible nymph; the serpent wants “A woman's shape” to reach a youth of Corinth. She makes him swear twice before she speaks, and only she can lift the spell on the nymph, so the god is the one who begs.",
+            "Her claim, “I was a woman,” is never confirmed. Her kindness in hiding the nymph from unwanted lovers may be real, or it may be her bargaining piece; students can argue either."
+          ],
+          "evidence": [
+            "I was a woman, let me have once more A woman's shape, and charming as before.",
+            "Thou shalt behold her, Hermes, thou alone, If thou wilt, as thou swearest, grant my boon!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-08-q3",
+          "prompt": "Compare the union of Hermes and the nymph with the serpent’s transformation. How does Keats make one gentle and the other violent?",
+          "facilitatorNotes": [
+            "The lovers are described in flower images, and the passage ends “Nor grew they pale, as mortal lovers do.” The serpent’s change is foam, fire and lava, until “Nothing but pain and ugliness were left,” before she vanishes calling “Lycius!”",
+            "The line about mortal lovers sets up a question for the rest of the poem: what happens to love that is not immortal?"
+          ],
+          "evidence": [
+            "Nor grew they pale, as mortal lovers do.",
+            "And, as the lava ravishes the mead,",
+            "Nothing but pain and ugliness were left."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-08-q4",
+          "prompt": "The new Lamia is “Not one hour old, yet of sciential brain / To unperplex bliss from its neighbour pain.” What does the narrator say she knows, and why might that knowledge be both attractive and troubling?",
+          "facilitatorNotes": [
+            "She is innocent (“A virgin purest lipp'd”) and yet expert in love, able to separate pleasure from the pain that usually comes with it. That promises a perfect love, but also suggests a skill that no one an hour old could honestly have.",
+            "Ask whether “Ah, happy Lycius!” is sincere or ironic. Both readings are possible at this point, and the poem will test them."
+          ],
+          "evidence": [
+            "Not one hour old, yet of sciential brain To unperplex bliss from its neighbour pain;",
+            "A virgin purest lipp'd, yet in the lore Of love deep learned to the red heart's core:",
+            "Ah, happy Lycius!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-09",
+      "title": "Lamia, Part I: the road to Corinth",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Lamia",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Keep track of who knows what: Lamia has planned a meeting that Lycius believes is chance.",
+      "focus": "Lamia wins Lycius by putting off the goddess and “playing woman’s part,” and the first sight of his teacher casts a shadow.",
+      "context": "Recap: Hermes, searching Crete for a hidden nymph, met a dazzling serpent with a woman’s voice. In exchange for showing him the nymph, she asked him to give her back a woman’s shape, saying she loved a youth of Corinth; after a painful transformation she vanished calling “Lycius!” She now waits as a beautiful woman beside the road from Cenchreas, Corinth’s port. In Greek myth Orpheus lost his wife Eurydice by looking back at her as he led her from the underworld; a Pleiad is one of seven star sisters; Pyrrha and her husband remade humankind after the flood from stones. Apollonius of Tyana was a philosopher and wonder-worker of the first century.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Lamia, Part I, from “Why this fair creature chose so fairily” to the end of Part I; opens “Why this fair creature chose so fairily By the wayside to linger, we shall see; But first…”; closes “…humour many a heart to leave them thus, Shut from the busy world of more incredulous.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-08",
+        "continuesTo": "reading-9-keats-poems-1820-1909-10",
+        "blocks": [
+          9,
+          12
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "734f2efcd3ba84e14a6a7e72307a182225eac08dc96bfeb8730a222c2bf30f28"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-09-q1",
+          "prompt": "How did Lamia first see Lycius, while she was still a serpent? Why does Keats tell us this before the meeting?",
+          "facilitatorNotes": [
+            "Her spirit wandered in dreams, and in Corinth she saw him winning a chariot race and fell in love. She knows he will come this way, so the meeting is her design, though the narrator calls his solitary walk “some freakful chance.”",
+            "The reader watches Lycius walk into a plan he cannot see, which makes the scene suspenseful rather than simply romantic."
+          ],
+          "evidence": [
+            "She saw the young Corinthian Lycius Charioting foremost in the envious race,",
+            "For by some freakful chance he made retire From his companions"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-09-q2",
+          "prompt": "Lycius looks back “Orpheus-like at an Eurydice.” What does the comparison suggest, given how the story of Orpheus ends?",
+          "facilitatorNotes": [
+            "Orpheus lost Eurydice for ever by looking back. The image makes Lycius’s first glance at Lamia a sign of loss to come, and his own words, “Even as thou vanishest so I shall die,” already fear it.",
+            "Some readers take the comparison only as a sign of how intensely he looks. Both readings use the same line."
+          ],
+          "evidence": [
+            "But Orpheus-like at an Eurydice;",
+            "Even as thou vanishest so I shall die."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-09-q3",
+          "prompt": "Lamia first speaks as a goddess who cannot stay on earth, then “threw the goddess off.” Why does she change her approach, and what does the narrator think of it?",
+          "facilitatorNotes": [
+            "She judges “aright” that Lycius “could not love in half a fright,” so she tells him she is a woman with ordinary blood who has seen him in Corinth. The narrator praises “a real woman” over fairies and goddesses, though Lamia is only “playing woman's part.”",
+            "The praise is ironic, since she is not a real woman, or else it is the narrator joining in her pretence. Students can argue which; her story about living in Corinth is also hard to check."
+          ],
+          "evidence": [
+            "Thus gentle Lamia judg'd, and judg'd aright, That Lycius could not love in half a fright,",
+            "So threw the goddess off, and won his heart More pleasantly by playing woman's part,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-09-q4",
+          "prompt": "Lycius hides his face from Apollonius and calls him “The ghost of folly haunting my sweet dreams.” What do Lamia’s reaction and the last lines of Part I suggest about what is coming?",
+          "facilitatorNotes": [
+            "Lamia trembles and her palm turns to “dew”; Lycius hides from the man he calls his “trusty guide.” The narrator then says only the duty of telling “what woe afterwards befel” keeps him from leaving the lovers happy, so the reader knows the story will end badly.",
+            "Notice too that the miles to Corinth shrink “by a spell” that “blinded Lycius” never suspects. Ask how much of his happiness depends on not seeing."
+          ],
+          "evidence": [
+            "'Tis Apollonius sage, my trusty guide And good instructor; but to-night he seems The ghost of folly haunting my sweet dreams.",
+            "While hurried Lamia trembled",
+            "For truth's sake, what woe afterwards befel,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-10",
+      "title": "Lamia, Part II: the wedding plan",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Lamia",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow a quarrel between lovers through speeches and the narrator’s comments, and notice when the narrator speaks to a character directly.",
+      "focus": "Lycius’s wish to show off his bride turns love into possession, and Lamia must build a splendid hall for a wedding she dreads.",
+      "context": "Recap: Lamia, a serpent changed by Hermes into a beautiful woman, met the young Corinthian Lycius on the road, enchanted him, and led him to a palace in Corinth that no one had noticed before. On the way Lycius hid his face from his old teacher, the philosopher Apollonius, and Lamia trembled at the sight of him. Part II begins some time later. “Empery” is rule; a passing bell is rung for someone dying; a “paramour” is a lover; a “sophist” is a clever, sometimes deceptive, arguer.",
+      "contentNote": "Lycius takes pleasure in Lamia’s distress and overrides her pleas; the poem calls his passion “cruel” and says she “lov'd the tyranny.”",
+      "excerpt": {
+        "locator": "Lamia, Part II, from the opening through Apollonius’s arrival at the wedding; opens “Love in a hut, with water and a crust, Is--Love, forgive us!--cinders, ashes, dust; Love…”; closes “…With reconciling words and courteous mien Turning into sweet milk the sophist's spleen.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-09",
+        "continuesTo": "reading-9-keats-poems-1820-1909-11",
+        "blocks": [
+          14,
+          18
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "4d57b4153c0827bee602ecdf08e776ad7d471d2d7a59ecb2f6a8898f97f517bd"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-10-q1",
+          "prompt": "The opening lines offer a “moral” about love in a hut and love in a palace. What is it, and does the narrator trust it?",
+          "facilitatorNotes": [
+            "Love in poverty turns to “cinders, ashes, dust,” and love in luxury may be a worse torment. The narrator calls this “a doubtful tale” and says the lovers’ bliss was “too short” to test it.",
+            "Ask why a poem would offer a moral and doubt it in the same breath. The playful tone keeps the reader from settling on an easy lesson."
+          ],
+          "evidence": [
+            "Love in a hut, with water and a crust, Is--Love, forgive us!--cinders, ashes, dust;",
+            "That is a doubtful tale from faery land,"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-10-q2",
+          "prompt": "What breaks the lovers’ calm, and why does Lamia take it so hard? Explain “but a moment's thought is passion's passing bell.”",
+          "facilitatorNotes": [
+            "A sound of trumpets from the city leaves “a thought” in Lycius’s head, the first since he entered the palace. A passing bell tolls for the dying, so Lamia hears his thinking as the death of the enchantment that holds him.",
+            "The line connects thought with danger to Lamia, which the end of the poem will develop."
+          ],
+          "evidence": [
+            "came a thrill Of trumpets--Lycius started--the sounds fled, But left a thought, a buzzing in his head.",
+            "That but a moment's thought is passion's passing bell."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-10-q3",
+          "prompt": "Why does Lycius want a public wedding, and how does the poem judge his insistence when Lamia weeps?",
+          "facilitatorNotes": [
+            "He wants to show his “prize” so that other men are “confounded and abash'd” and his foes “choke.” When she begs him to change his mind, he becomes “Perverse” and takes “delight / Luxurious in her sorrows”; the narrator calls his passion “cruel grown.”",
+            "The poem says Lamia “lov'd the tyranny,” which many readers find troubling. Discuss whether the narrator is describing her feelings, excusing his, or exposing a possessive kind of love."
+          ],
+          "evidence": [
+            "What mortal hath a prize, that other men May be confounded and abash'd withal,",
+            "he took delight Luxurious in her sorrows, soft and new.",
+            "His passion, cruel grown, took on a hue"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-10-q4",
+          "prompt": "Lamia has “no friends” and asks only that Apollonius be kept away. How does she prepare for the wedding, and what do “pale contented sort of discontent” and “dreadful guests” suggest about her feelings?",
+          "facilitatorNotes": [
+            "Invisible servants with a “noise of wings” build a hall of carved cedar and lamps; she approves it all, then shuts it up “close, hush'd and still.” She is satisfied with her work and miserable about its purpose, and to her the guests are invaders of her solitude.",
+            "The narrator’s cry “O senseless Lycius! Madman!” and Apollonius’s knowing laugh both point the same way: the public wedding will expose her."
+          ],
+          "evidence": [
+            "In pale contented sort of discontent,",
+            "When dreadful guests would come to spoil her solitude.",
+            "O senseless Lycius! Madman!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-11",
+      "title": "Lamia, Part II: the banquet and the philosopher’s eye",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Lamia",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the climax twice: once for what happens, once for sound and silence. Then compare the poem’s ending with Burton’s version of the story in the note.",
+      "focus": "Philosophy exposes an illusion and kills a man; the narrator’s attack on “cold philosophy” leaves readers to decide who is to blame.",
+      "context": "Recap: Lycius has insisted on a public wedding to show off his mysterious bride. Lamia, who has no family, begged him not to invite his old teacher Apollonius, and filled her palace with an enchanted banquet hall. The guests marvel at a palace they never saw in a street they know; Apollonius came uninvited, laughing as if a puzzle were solved. Ceres is goddess of grain and Bacchus of wine; a thyrsus is Bacchus’s staff; willow and adder’s tongue are plants of grief and of snakes; “perceant” means piercing. The note quotes Robert Burton’s Anatomy of Melancholy (1621), which gave Keats the story.",
+      "contentNote": "A man dies at his wedding feast; enslaved servants attend the banquet, as in the ancient setting.",
+      "excerpt": {
+        "locator": "Lamia, Part II, from the banquet-room to the end of the poem, with the passage from Burton that Keats printed as its note; opens “Of wealthy lustre was the banquet-room, Fill'd with pervading brilliance and perfume:…”; closes “Burton's 'Anatomy of Melancholy.' _Part_ 3. _Sect._ 2 _Memb._ 1. _Subs._ 1.]”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-10",
+        "continuesTo": null,
+        "blocks": [
+          19,
+          26
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "81fb3166d7f8f4dd316002f02b1ed2ca9e75ae054c5f5fc055eb2d5e3ed93852"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-11-q1",
+          "prompt": "Why does the splendour seem “No more so strange” to the guests as the feast goes on? What does that suggest about how people stop questioning what should puzzle them?",
+          "facilitatorNotes": [
+            "At first they wonder “Whence all this mighty cost and blaze of wealth could spring,” but once the wine “has done its rosy deed” even Lamia and the impossible hall seem ordinary. Pleasure dulls curiosity.",
+            "Apollonius is the one guest who stays sober in this sense, which prepares his role."
+          ],
+          "evidence": [
+            "wondering Whence all this mighty cost and blaze of wealth could spring.",
+            "Now, when the wine has done its rosy deed,",
+            "No more so strange;"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-11-q2",
+          "prompt": "The narrator stops the story to hand out wreaths and to attack “cold philosophy.” What does he say philosophy does to a rainbow, and is he on Lamia’s side?",
+          "facilitatorNotes": [
+            "Philosophy, which in Keats’s day included natural science, puts the rainbow “In the dull catalogue of common things”: it will “clip an Angel's wings” and “Unweave a rainbow,” as it is about to unmake Lamia. The narrator mourns the loss of wonder.",
+            "Yet in the story Apollonius uncovers a real deception that has kept his pupil enchanted. Readers can argue that the narrator’s sympathy and the plot pull in different directions, or that both mourn something that had to be lost."
+          ],
+          "evidence": [
+            "Do not all charms fly At the mere touch of cold philosophy?",
+            "Philosophy will clip an Angel's wings,",
+            "Unweave a rainbow, as it erewhile made The tender-person'd Lamia melt into a shade."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-11-q3",
+          "prompt": "Trace the change in the hall after Apollonius fixes his eye on the bride. How does Keats use sound and silence?",
+          "facilitatorNotes": [
+            "Lamia’s hand turns icy, then hot; she does not answer; the music and talk fade “By faint degrees” until “A deadly silence step by step increased.” Lycius’s shriek and its echo are the only sounds, until the sophist’s quiet, contemptuous “Fool!”",
+            "Students may notice that the loud revelry of the earlier stanzas makes the silence more frightening."
+          ],
+          "evidence": [
+            "By faint degrees, voice, lute, and pleasure ceased; A deadly silence step by step increased,",
+            "\"Lamia!\" he shriek'd; and nothing but the shriek With its sad echo did the silence break."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-11-q4",
+          "prompt": "Apollonius says he has preserved Lycius “from every ill.” Is he a rescuer or a destroyer? Compare the poem’s ending with Burton’s account in the note.",
+          "facilitatorNotes": [
+            "In Burton, the young man is saved from an illusion: when Lamia is found out she weeps and the house vanishes, and nothing is said of his death. Keats adds that Lycius dies that night, so the truth that frees him also kills him.",
+            "Some readers blame Apollonius’s cruelty (“Keen, cruel, perceant”); others blame Lamia’s deception or Lycius’s pride in showing her off. Keats’s change to his source is the best evidence for what he wanted readers to feel."
+          ],
+          "evidence": [
+            "from every ill Of life have I preserv'd thee to this day, And shall I see thee made a serpent's prey?",
+            "And Lycius' arms were empty of delight, As were his limbs of life, from that same night.",
+            "When she saw herself descried, she wept, and desired Apollonius to be silent, but he would not be moved"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-12",
+      "title": "Hyperion, Book I: Saturn fallen",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Hyperion. A Fragment",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Keats’s sentences run across many lines. Read aloud, and for each long sentence find its subject and main verb before you interpret it.",
+      "focus": "Defeat shown as stillness, and a god who has lost his throne discovering that he has lost himself.",
+      "context": "John Keats (1795–1821) closed his 1820 volume, the last book of his short life, with Hyperion, an unfinished epic he began in 1818 and gave up in 1819. Written in unrhymed blank verse after the model of Milton’s Paradise Lost, it tells how the Titans, the older gods of Greek myth, were overthrown by the younger Olympians. Saturn, king of the Titans, has been dethroned by his son Jove (Jupiter); “the rebel three” are Jove and his brothers Neptune and Pluto. Thea is the wife of Hyperion, the Titan of the sun, the one Titan still in power. A Naiad is a water nymph; Ixion was bound to an ever-turning wheel as punishment; Memphis was a city of ancient Egypt; Druids were priests of ancient Britain.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Hyperion. A Fragment, Book I, from the opening through Saturn’s following Thea out of the vale; opens “Deep in the shady sadness of a vale Far sunken from the healthy breath of morn, Far from…”; closes “…aged boughs, that yielded like the mist Which eagles cleave upmounting from their nest.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-keats-poems-1820-1909-13",
+        "blocks": [
+          183,
+          188
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a15fa5c64431b61a8980fef272d45a818a8328cc0204fb16250a3075bf501201"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-12-q1",
+          "prompt": "The poem opens with a scene where nothing moves. List three details that make the stillness felt. What is it a picture of?",
+          "facilitatorNotes": [
+            "No air stirs; the dead leaf rests where it falls; the stream goes “voiceless”; the Naiad presses her finger to her lips; Saturn sits “quiet as a stone” with his hand “nerveless, listless, dead, / Unsceptred.”",
+            "The stillness is the shape of defeat: even nature seems to hush around a fallen god. Some readers also hear death in it, since Saturn is described almost as a corpse."
+          ],
+          "evidence": [
+            "But where the dead leaf fell, there did it rest.",
+            "Press'd her cold finger closer to her lips.",
+            "His old right hand lay nerveless, listless, dead, Unsceptred"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-12-q2",
+          "prompt": "Thea comes to wake Saturn, then tells him, “Saturn, sleep on.” Why does she change her mind? What does the narrator say about how her words reach us?",
+          "facilitatorNotes": [
+            "She has “no comfort” to give: heaven, earth, ocean and air have all passed from him, and his own thunder serves “the new command.” Waking him would only show him “the monstrous truth.”",
+            "The narrator says her speech, put into “our feeble tongue,” is a poor copy of the gods’ “large utterance.” Ask what this does to the scale of the poem: we are hearing giants through a translation."
+          ],
+          "evidence": [
+            "Saturn, sleep on:--O thoughtless, why did I Thus violate thy slumbrous solitude?",
+            "which in our feeble tongue Would come in these like accents; O how frail To that large utterance of the early Gods!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-12-q3",
+          "prompt": "Saturn says, “I have left / My strong identity, my real self, / Somewhere between the throne, and where I sit.” What does he think he has lost, and what does that say about him?",
+          "facilitatorNotes": [
+            "He feels his self was his power: governing planets, winds, seas and harvests. Without the throne he does not recognize his own shape, voice or brow, and asks Thea to “search” space for it.",
+            "Some readers find this a tragic insight about power and identity; others see a ruler who cannot imagine himself apart from ruling. Both fit his anxious questions “Who had power / To make me desolate?”"
+          ],
+          "evidence": [
+            "I am gone Away from my own bosom: I have left My strong identity, my real self, Somewhere between the throne, and where I sit",
+            "Search, Thea, search!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-12-q4",
+          "prompt": "Follow Saturn’s mood from grief to “Saturn must be King” to “Where is another chaos?” Is he regaining strength or losing touch with reality?",
+          "facilitatorNotes": [
+            "He moves from despair to a vision of “golden victory,” then to the wish to create a new universe to crush this one. The word “chaos” reaches Olympus and makes the rebels “quake,” and Thea feels “a sort of hope.”",
+            "Defensible readings differ: a king rousing himself, or a broken mind clutching at power, since he calls “Thea! Thea! Thea! where is Saturn?” Ask which details support each."
+          ],
+          "evidence": [
+            "Yes, there must be a golden victory",
+            "Thea! Thea! Thea! where is Saturn?",
+            "But cannot I create? Cannot I form? Cannot I fashion forth Another world, another universe"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-13",
+      "title": "Hyperion, Book I: the sun god’s palace",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Hyperion. A Fragment",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Track the omens that trouble Hyperion and the long simile that ends each section. Then read Coelus’s speech for its one main idea.",
+      "focus": "The last Titan still in power senses his fall in his senses before he knows it in his mind; his grandfather tells him that the gods have begun to feel like men.",
+      "context": "Recap: Saturn, king of the Titans, overthrown by his son Jove, sat motionless in a dark vale until Thea, wife of Hyperion, woke him; he raved about lost identity and a war to win back heaven, and she led him away to the other fallen Titans. Hyperion, Titan of the sun, still rules his blazing palace. Aurora is the dawn; the Hours were goddesses of the seasons and times of day; Tellus is the Earth; Zephyrs are west winds; a colure is a great circle of the heavens used by astronomers; a demesne is a domain. Coelus, the Sky (Uranus), was the first ruler and father of the Titans.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Hyperion. A Fragment, Book I, from the Titans’ mourning in other realms to the end of Book I; opens “Meanwhile in other realms big tears were shed, More sorrow like to this, and such like…”; closes “…Forward he stoop'd over the airy shore, And plung'd all noiseless into the deep night.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-12",
+        "continuesTo": "reading-9-keats-poems-1820-1909-14",
+        "blocks": [
+          189,
+          190
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b8dfa901b4a8534ccd791585ca772cd1b84a0c2884addbff60959e1bdff17ec6"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-13-q1",
+          "prompt": "What omens trouble Hyperion? How are they different from the ones that frighten mortals?",
+          "facilitatorNotes": [
+            "Not a dog’s howl or a screech owl but “horrors, portion’d to a giant nerve”: his palace glares “blood-red,” unknown eagles and horses appear, and incense tastes of “poisonous brass and metal sick.”",
+            "The fear begins in the senses: sight, sound, taste. Ask why Keats has the god feel his doom before he can name it."
+          ],
+          "evidence": [
+            "But horrors, portion'd to a giant nerve, Oft made Hyperion ache.",
+            "Savour of poisonous brass and metal sick"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-13-q2",
+          "prompt": "Hyperion vows to “scare that infant thunderer, rebel Jove.” What happens as soon as he speaks, and what does the theatre simile say about it?",
+          "facilitatorNotes": [
+            "The phantoms grow “thrice horrible and cold,” a mist rises, and “an agony” crawls through his body like a serpent. Calling “Hush!” in a crowded theatre only makes the noise louder: his defiance increases what it tries to silence.",
+            "The heroic boast is undercut at once. Some readers see self-delusion; others, a real but doomed courage."
+          ],
+          "evidence": [
+            "Shall scare that infant thunderer, rebel Jove",
+            "For as in theatres of crowded men Hubbub increases more they call out \"Hush!\""
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-13-q3",
+          "prompt": "Hyperion wants to start the day early, “if but for change,” but cannot. Why not, and what does that limit show?",
+          "facilitatorNotes": [
+            "“The sacred seasons might not be disturb’d”: even a primeval god must keep the order of dawn. So he lies in grief along the clouds, “by hard compulsion” bending his spirit.",
+            "Power in this poem has laws it cannot break. Ask how this prepares for Coelus’s advice to act while he still can."
+          ],
+          "evidence": [
+            "He might not:--No, though a primeval God: The sacred seasons might not be disturb'd."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-13-q4",
+          "prompt": "Coelus says the sign of ruin is that his children now show “fear, hope, and wrath.” Why would feeling like mortals mean the gods are falling?",
+          "facilitatorNotes": [
+            "The Titans once lived “like high Gods,” “solemn, undisturb’d”; now they act with “rage and passion … In men who die.” Passion is the mark of mortality, so to feel it is to begin to fall.",
+            "The idea is strange and rich: suffering makes the gods more human. Readers may connect it with Saturn’s lost identity, or argue that it makes the gods more sympathetic. Notice the stars that look down on him “with pity” and stay “the same bright, patient stars.”"
+          ],
+          "evidence": [
+            "Now I behold in you fear, hope, and wrath; Actions of rage and passion; even as I see them, on the mortal world beneath, In men who die.",
+            "And still they were the same bright, patient stars."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-14",
+      "title": "Hyperion, Book II: the den of the Titans",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Hyperion. A Fragment",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Read the catalogue of fallen Titans as a gallery: for three of them, name the pose and what it shows about the figure’s feeling.",
+      "focus": "The defeated gods in their cave, and a king who cannot find, in all his learning, why they have fallen.",
+      "context": "Recap: Saturn, the dethroned king of the Titans, has been led by Thea toward the other fallen Titans. Hyperion, the sun Titan and last of them still in power, was shaken by omens; his grandfather Coelus told him that the Titans now feel fear and anger like mortals, and sent him down toward Saturn. Ops (also called Cybele) is Saturn’s queen; Mnemosyne is Memory; Phoebe is a moon goddess; Enceladus is a giant, and Oceanus is the Titan of the sea. Druid stones are ancient stone circles like Stonehenge; the Oxus and Ganges are rivers of Asia; Uranus is another name for Coelus. Keats’s list of Titans echoes the roll-call of fallen angels in Paradise Lost.",
+      "contentNote": "Some Titans are described chained in torture.",
+      "excerpt": {
+        "locator": "Hyperion. A Fragment, Book II, from the opening through Saturn’s appeal to Oceanus; opens “Just at the self-same beat of Time's wide wings Hyperion slid into the rustled air, And…”; closes “…I see, astonied, that severe content Which comes of thought and musing: give us help!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-13",
+        "continuesTo": "reading-9-keats-poems-1820-1909-15",
+        "blocks": [
+          192,
+          193
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "473b25c6cf4158f23480a1c46cbf4eb868e525c3fbf078840a25cd80a79f383e"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-14-q1",
+          "prompt": "Describe the Titans’ den. How does the setting itself express defeat?",
+          "facilitatorNotes": [
+            "It is a place where “no insulting light” reaches their tears, their groans drowned by waterfalls; they sit on “hard flint” instead of thrones. Rocks seem “just rising from a sleep,” forehead to forehead like horned beasts.",
+            "Keats calls it “this nest of woe.” Ask how the den answers Saturn’s silent vale in Book I: there stillness, here noise that silences grief."
+          ],
+          "evidence": [
+            "Instead of thrones, hard flint they sat upon",
+            "Made a fit roofing to this nest of woe."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-14-q2",
+          "prompt": "Choose two Titans from the catalogue. What does each one’s posture or object reveal?",
+          "facilitatorNotes": [
+            "Creues lies by his mace and “a shatter’d rib of rock” that shows his past rage; Iaepetus grips a dead serpent that could not spit poison at Jove; Asia leans on a tusk, prophesying “her glory”; Enceladus, once “tame and mild,” is now “tiger-passion’d” and plotting war.",
+            "Different kinds of defeat: spent rage, frustrated revenge, hope for a future elsewhere, new fury. Accept any pair supported by the lines."
+          ],
+          "evidence": [
+            "a shatter'd rib of rock Told of his rage, ere he thus sank and pined",
+            "More thought than woe was in her dusky face, For she was prophesying of her glory",
+            "once tame and mild As grazing ox unworried in the meads; Now tiger-passion'd, lion-thoughted, wroth"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-14-q3",
+          "prompt": "Thea watches Saturn’s face and sees “direst strife.” What is he struggling with, and what do the words “disanointing poison” suggest?",
+          "facilitatorNotes": [
+            "Grief, rage, fear, anxiety, revenge, remorse, spleen, hope, “but most of all despair.” A king is anointed with holy oil at his crowning; Fate has poured “a mortal oil” that undoes his kingship.",
+            "“Mortal” matters: as Coelus said, the gods are becoming like men who die. Some readers see Saturn as tragic, others as weak."
+          ],
+          "evidence": [
+            "Remorse, spleen, hope, but most of all despair.",
+            "Had pour'd a mortal oil upon his head, A disanointing poison"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-14-q4",
+          "prompt": "Saturn says he has searched every book and sign and cannot “find reason why ye should be thus.” What does this admission show? Why does he turn to Oceanus?",
+          "facilitatorNotes": [
+            "He has studied the oldest lore and the war of the elements, yet the fall makes no sense to him; their conquerors have “untremendous might.” Every command he imagines (“Arise!” “Crouch!”) only draws a groan.",
+            "A king who cannot explain his own defeat asks for counsel. He sees in Oceanus “that severe content / Which comes of thought,” which prepares for the next speech. Readers may find his helplessness moving or damning."
+          ],
+          "evidence": [
+            "Can I find reason why ye should be thus",
+            "O Titans, shall I say 'Arise!'--Ye groan: Shall I say 'Crouch!'--Ye groan.",
+            "that severe content Which comes of thought and musing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-15",
+      "title": "Hyperion, Book II: three answers to defeat",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Hyperion. A Fragment",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Three speakers answer Saturn. Summarize each answer in one sentence, then decide which the poem seems to favour.",
+      "focus": "Oceanus argues that beauty rightly overthrows power, Clymene tells of hearing Apollo’s music, Enceladus calls for war, and Hyperion arrives in defeat.",
+      "context": "Recap: the fallen Titans lie in a dark cave of waterfalls. Saturn, their dethroned king, has told them he can find no reason for their fall and has asked Oceanus, the Titan of the sea, for counsel. Oceanus has been replaced by a young sea god (Neptune). Clymene is a young Titaness; Apollo is the young Olympian god of music, poetry and light, who will take Hyperion’s place as sun god. A sophist was a teacher of argument in ancient Athens; Memnon’s statue in Egypt was said to make a sound at sunrise; Numidia was in North Africa.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Hyperion. A Fragment, Book II, from Oceanus’s speech to the end of Book II; opens “So ended Saturn; and the God of the Sea, Sophist and sage, from no Athenian grove, But…”; closes “…face was no joy, though all the Gods Gave from their hollow throats the name of \"Saturn!\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-14",
+        "continuesTo": "reading-9-keats-poems-1820-1909-16",
+        "blocks": [
+          194,
+          197
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "492bc95b88b3b8d97ab9cf191bbdfa329107f51489a591db3304d87e387ca1b4"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-15-q1",
+          "prompt": "Put Oceanus’s argument in your own words. What is “the eternal law” he states?",
+          "facilitatorNotes": [
+            "Chaos gave way to Heaven and Earth, and the Titans to a younger race “more strong in beauty”; so “first in beauty should be first in might.” The soil does not quarrel with the forest it feeds.",
+            "His comfort is truth accepted calmly: “to bear all naked truths … That is the top of sovereignty.” Some readers find this wise; others note that it excuses the conquerors and comforts no one in the cave."
+          ],
+          "evidence": [
+            "for 'tis the eternal law That first in beauty should be first in might",
+            "to bear all naked truths, And to envisage circumstance, all calm, That is the top of sovereignty"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-15-q2",
+          "prompt": "What did Clymene hear on the shore, and why did it make her “sick / Of joy and grief at once”?",
+          "facilitatorNotes": [
+            "She was playing her sad music on a shell when a “new blissful golden melody” came from an island, and a voice cried “Apollo! young Apollo!” It was more beautiful than anything she could make.",
+            "Her story is Oceanus’s argument felt in the body: the new beauty is undeniable and it means her world is over. Ask why she throws her shell away."
+          ],
+          "evidence": [
+            "I threw my shell away upon the sand",
+            "A voice came sweeter, sweeter than all tune, And still it cried, 'Apollo! young Apollo!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-15-q3",
+          "prompt": "How does Enceladus answer the other two? What does he mourn besides “loss of realms”?",
+          "facilitatorNotes": [
+            "He scorns “the over-wise” and “the over-foolish” and calls for fire and revenge. But he also grieves for “days of peace and slumberous calm,” before the gods knew that victory “might be lost, or might be won.”",
+            "His rage hides a loss of innocence: war itself has changed them. Readers might find him the most human voice in the cave, or the most dangerous."
+          ],
+          "evidence": [
+            "Or shall we listen to the over-wise, Or to the over-foolish, Giant-Gods?",
+            "That was before we knew the winged thing, Victory, might be lost, or might be won."
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-15-q4",
+          "prompt": "When Hyperion appears, his light makes the cave “terrible.” Why does the poem end Book II with Saturn’s name shouted and Ops’s joyless face?",
+          "facilitatorNotes": [
+            "Hyperion’s brilliance shows the Titans their misery “to the most hateful seeing of itself,” and he stands in silent sighs. A few Titans rally, shouting “Saturn!”, but the Mother of the Gods shows “no joy.”",
+            "The shouting may be the start of war or an empty echo. Ask readers which of the three answers the ending seems to support."
+          ],
+          "evidence": [
+            "The misery his brilliance had betray'd To the most hateful seeing of itself.",
+            "In whose face was no joy, though all the Gods Gave from their hollow throats the name of \"Saturn!\""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-keats-poems-1820-1909-16",
+      "title": "Hyperion, Book III: Apollo’s change",
+      "sourceId": "keats-poems-1820-1909",
+      "workTitle": "Hyperion. A Fragment",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 11,
+        "discussionMinutes": 16,
+        "totalMinutes": 27
+      },
+      "challenge": "Read to the broken last line, then reread Apollo’s speech for the exact moment his grief turns into knowledge.",
+      "focus": "The young god who will replace Hyperion becomes a god by knowing the history of suffering; the poem breaks off at the moment of change.",
+      "context": "Recap: the fallen Titans, gathered in a cave, heard three answers to their defeat: Oceanus’s calm law that beauty must rule, Clymene’s story of hearing young Apollo’s overwhelming music, and Enceladus’s call to war; then Hyperion, the sun Titan, came among them in despair. Apollo, son of Jove and Latona, was born on the Greek island of Delos with his twin sister Diana; he is the god of music, poetry and light, the “Father of all verse.” Mnemosyne, Memory, is a Titaness and mother of the Muses. The Delphic harp and Dorian flute are instruments of ancient Greek song. Keats stopped work here; the 1820 volume printed the rows of asterisks as they stand.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Hyperion. A Fragment, Book III, the whole of what Keats wrote, ending in mid-line; opens “Thus in alternate uproar and sad peace, Amazed were those Titans utterly. O leave them,…”; closes “…length Apollo shriek'd;--and lo! from all his limbs Celestial * * * * * * * * * * * *”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-keats-poems-1820-1909-15",
+        "continuesTo": null,
+        "blocks": [
+          199,
+          199
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2184478fb5a76daed5b391fb4784e9b6abca021ca64630ac5c73e69bf39ba281"
+      },
+      "questions": [
+        {
+          "id": "reading-9-keats-poems-1820-1909-16-q1",
+          "prompt": "The narrator tells the Muse to “leave” the Titans. Why, and how does the scene on Delos differ from the Titans’ cave?",
+          "facilitatorNotes": [
+            "The Muse is “weak to sing such tumults dire” and suits “a solitary sorrow.” Delos is full of colour, roses, wine, birdsong and waves; the cave was dark and roaring.",
+            "The shift is also from old gods to new, and from epic war to the lonely making of a poet. Ask why Keats calls Apollo “once more the golden theme.”"
+          ],
+          "evidence": [
+            "O leave them, Muse! O leave them to their woes; For thou art weak to sing such tumults dire",
+            "Apollo is once more the golden theme!"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-16-q2",
+          "prompt": "Apollo weeps though he is “so gifted.” What questions does he ask Mnemosyne, and what is he missing?",
+          "facilitatorNotes": [
+            "He feels “curs’d and thwarted,” “Like one who once had wings,” and asks about other regions, the stars, and “Where is power?” He has a golden lyre but no knowledge of the world’s history.",
+            "His sorrow comes from ignorance, “aching ignorance.” Some readers connect this with Keats’s own sense that a poet must know suffering to write."
+          ],
+          "evidence": [
+            "Like one who once had wings.",
+            "I have heard the cloudy thunder: Where is power?",
+            "In fearless yet in aching ignorance?"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-16-q3",
+          "prompt": "“Knowledge enormous makes a God of me.” What knowledge pours into Apollo, and why does it come from Mnemosyne’s silent face?",
+          "facilitatorNotes": [
+            "“Names, deeds, gray legends, dire events, rebellions, / Majesties, sovran voices, agonies, / Creations and destroyings”: the history of the world, including the Titans’ fall. Memory gives it to him; he reads it in her face.",
+            "He becomes a god by knowing suffering, not by battle, which is Oceanus’s “beauty” made deeper. Readers might ask whether this is a fair way to win a throne."
+          ],
+          "evidence": [
+            "Knowledge enormous makes a God of me.",
+            "Creations and destroyings, all at once Pour into the wide hollows of my brain"
+          ]
+        },
+        {
+          "id": "reading-9-keats-poems-1820-1909-16-q4",
+          "prompt": "Apollo’s change is like a “struggle at the gate of death,” or rather like one who should “Die into life.” Explain the paradox. What is the effect of the poem stopping where it does?",
+          "facilitatorNotes": [
+            "Becoming immortal feels like dying in reverse: the pain is “As hot as death’s is chill.” The old self dies so a god can be born.",
+            "The poem breaks at “Celestial” and rows of asterisks. Some readers feel the unfinished ending is fitting for a change beyond words; others simply regret what Keats did not write. Both are honest responses."
+          ],
+          "evidence": [
+            "Die into life: so young Apollo anguish'd",
+            "Apollo shriek'd;--and lo! from all his limbs Celestial"
+          ]
+        }
+      ]
+    }
+  ]
+}

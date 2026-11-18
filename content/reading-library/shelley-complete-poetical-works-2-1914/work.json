@@ -20,14 +20,14 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/4798/pg4798.txt",
     "downloadSha256": "095062184d815c8b49598a525f121a7d8975801ca27fef69fc50de12fa55f749",
-    "method": "Project Gutenberg 4798 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept everything from EARLY POEMS [1814, 1815] to the last poem; removed the PG header and footer, title page and contents, Hutchinson's bracketed headnotes and editorial notes attached to titles, every NOTE: block of textual variants, the *** separators and Mrs. Shelley's notes on each year. Each section that the transcription opens after two blank lines is a heading (year groups level 1, poem titles with their subtitle lines level 2); verse paragraphs are stanzas with the _N line numbers removed, printed stanza numerals left out (stanza boundaries kept) and lines trimmed; prose paragraphs (long wrapped lines without line numbers, such as Shelley's note to the West Wind ode) are joined with single spaces."
+    "method": "Project Gutenberg 4798 plain text (UTF-8) from the PG mirror aleph.pglaf.org. Kept everything from EARLY POEMS [1814, 1815] to the last poem; removed the PG header and footer, title page and contents, Hutchinson's bracketed headnotes and editorial notes attached to titles, every NOTE: block of textual variants, the *** separators and Mrs. Shelley's notes on each year. Each section that the transcription opens after two blank lines is a heading (year groups level 1, poem titles with their subtitle lines level 2); verse paragraphs are stanzas with the _N line numbers removed, printed stanza numerals left out (stanza boundaries kept) and lines trimmed; prose paragraphs (long wrapped lines without line numbers, such as Shelley's note to the West Wind ode) are joined with single spaces. The 84 NOTE: blocks of textual variants that the first conversion had left in as stanzas were taken out on 2026-11-18."
   },
   "scope": {
     "complete": false,
     "note": "Holds every poem in Project Gutenberg's volume 2 of Hutchinson's Oxford edition (the shorter poems of 1814-1822) with Shelley's own notes, in printed order; Hutchinson's headnotes and textual notes and Mrs. Shelley's notes are not held."
   },
   "text": {
-    "blocks": 1161,
-    "sha256": "58c656d8c6c076acb18944ad5e053bb907743b8606473931dc5ebff3450ee42b"
+    "blocks": 1077,
+    "sha256": "30c370ea27c28848344728c300392e398e29417c4d402c64528b9044724e48ce"
   }
 }

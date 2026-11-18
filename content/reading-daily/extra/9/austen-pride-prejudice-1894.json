@@ -1,0 +1,1681 @@
+{
+  "schemaVersion": 1,
+  "grade": 9,
+  "work": "austen-pride-prejudice-1894",
+  "readings": [
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-01",
+      "title": "Pride and Prejudice excerpt: A truth universally acknowledged",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 13,
+        "totalMinutes": 26
+      },
+      "challenge": "Reread the first sentence after finishing Chapter I and decide whose “truth” it really is. Austen often drops speech tags, so track who is speaking in each exchange.",
+      "focus": "Irony in the narrator’s generalization and in a marriage conducted as a contest of teasing and misreading.",
+      "context": "Pride and Prejudice (1813) is Jane Austen’s comedy of courtship among the landowning families of an English village; this text follows an 1894 London edition. The Bennets of Longbourn have five daughters and no son. Netherfield Park, a large house nearby, has just been rented (“let”). By custom the father of a family called on a newly arrived gentleman before his wife and daughters could be introduced to him. Four or five thousand pounds a year was a very large income; Michaelmas is September 29.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapters I and II, complete; opens “IT is a truth universally acknowledged, that a single man in possession of a good fortune…”; closes “…he would return Mr. Bennet’s visit, and determining when they should ask him to dinner.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-02",
+        "blocks": [
+          2,
+          63
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "effc1c6f2ceaa7c303059c31e2e19bc0b03951c7001aa429e045708b2addd6b2"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-01-q1",
+          "prompt": "The first sentence calls a belief “universally acknowledged.” Whose belief does the second paragraph, and then Mrs. Bennet, show it to be?",
+          "facilitatorNotes": [
+            "The second paragraph moves the “truth” into “the minds of the surrounding families,” who treat a wealthy newcomer as the “rightful property” of their daughters, while his own feelings are “little known.” Mrs. Bennet then acts it out. The irony is that a neighbourhood’s wish is dressed as a law of nature.",
+            "Some readers also hear a real economic truth reversed: the daughters need husbands more than the rich man needs a wife. Both readings depend on noticing that the sentence is not as neutral as it sounds."
+          ],
+          "evidence": [
+            "he is considered as the rightful property of some one or other of their daughters",
+            "However little known the feelings or views of such a man may be"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-01-q2",
+          "prompt": "How does Mr. Bennet turn his wife’s words against her? Choose one reply and explain what makes it a joke at her expense.",
+          "facilitatorNotes": [
+            "He answers her marriage plan with “Is that his design in settling here?”, treating her hope as Bingley’s intention, and he calls her nerves “my old friends.” He prefers provoking her to informing her.",
+            "Readers may find him witty, unkind, or both. The narrator’s summary of him as “so odd a mixture of quick parts, sarcastic humour, reserve, and caprice” supports more than one judgment."
+          ],
+          "evidence": [
+            "Is that his design in settling here?",
+            "I have a high respect for your nerves. They are my old friends."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-01-q3",
+          "prompt": "In Chapter II Mr. Bennet reveals that he visited Bingley all along. Why does he hide it, and how does Mrs. Bennet rewrite the event once she knows?",
+          "facilitatorNotes": [
+            "He stages a surprise for its effect: “The astonishment of the ladies was just what he wished.” She immediately claims she “had expected” it and credits her own persuasion. One partner performs; the other revises the record so her view stays intact.",
+            "Some students read the trick as affectionate; others notice that it works only because she is kept in ignorance."
+          ],
+          "evidence": [
+            "The astonishment of the ladies was just what he wished",
+            "she began to declare that it was what she had expected all the while"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-02",
+      "title": "Pride and Prejudice excerpt: The assembly at Meryton",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "Follow how Darcy’s reputation changes within one evening, and separate what he actually says from what the room reports about him.",
+      "focus": "Public opinion forms quickly from income, manners and a single overheard remark.",
+      "context": "Recap: Mrs. Bennet hopes the wealthy newcomer Mr. Bingley will marry one of her five daughters, and Mr. Bennet, after teasing her, has called on him. An assembly is a public ball held in a town’s assembly rooms; partners “stood up” for two dances at a time. Darcy’s ten thousand a year makes him far richer than Bingley; Derbyshire is a county in the north Midlands.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter III, complete; opens “NOT all that Mrs. Bennet, however, with the assistance of her five daughters, could ask…”; closes “…been there, my dear, to have given him one of your set-downs. I quite detest the man.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-01",
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-03",
+        "blocks": [
+          65,
+          84
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "6b56d862ab04032827c56d6929f77b7d7646f3f2fe7595fc6038d7d69b869334"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-02-q1",
+          "prompt": "How long does it take the assembly to decide that Darcy is admirable, and then that he is not? Which words show the judgment shifting?",
+          "facilitatorNotes": [
+            "His income is “in general circulation within five minutes”; he is admired “for about half the evening” until his manners turn “the tide of his popularity.” “His character was decided” reports the room’s verdict in the narrator’s voice, with irony: a whole character settled in one night.",
+            "Some readers think the verdict is fair, since he really does refuse to be introduced to anyone. The question is less whether he behaved badly than how much one evening can prove."
+          ],
+          "evidence": [
+            "the report, which was in general circulation within five minutes after his entrance, of his having ten thousand a year",
+            "His character was decided."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-02-q2",
+          "prompt": "What exactly does Darcy say about Elizabeth, and what does she do with it? Why might it matter that she “told the story … with great spirit”?",
+          "facilitatorNotes": [
+            "He calls her “tolerable” and refuses to “give consequence to young ladies who are slighted by other men.” She turns the insult into a comic story because she “delighted in anything ridiculous.”",
+            "Her laughter may show she is unhurt, or it may be a defence of wounded pride. Both readings are available; the novel’s title invites readers to keep the question open."
+          ],
+          "evidence": [
+            "She is tolerable: but not handsome enough to tempt me",
+            "She told the story, however, with great spirit among her friends"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-02-q3",
+          "prompt": "Compare Mrs. Bennet’s report of the ball with the narrator’s account. What does she include, exaggerate or leave out?",
+          "facilitatorNotes": [
+            "She counts Bingley’s partners in exhausting detail, dismisses Charlotte (“nobody can” admire her), and tells of Darcy’s rudeness “with much bitterness of spirit, and some exaggeration.” Mr. Bennet’s interruptions show his impatience with her way of telling.",
+            "The chapter trains readers to set a character’s version beside the narrator’s. Students may also notice that her anger at Darcy is the loyal reaction of a mother, however overstated."
+          ],
+          "evidence": [
+            "related, with much bitterness of spirit, and some exaggeration, the shocking rudeness of Mr. Darcy",
+            "he did not admire her at all; indeed, nobody can, you know"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-03",
+      "title": "Pride and Prejudice excerpt: Two sisters, and a debate about pride",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Slow down for the long narrative paragraphs about the Bingleys and Darcy, which give information no character has. Then sort the different definitions of pride offered during the Lucases’ visit.",
+      "focus": "Jane’s generosity and Elizabeth’s quickness as two ways of judging people; pride distinguished from vanity.",
+      "context": "Recap: At the Meryton assembly Bingley danced twice with Jane, the eldest Bennet sister, while Darcy refused to dance with Elizabeth, calling her only “tolerable,” and the neighbourhood decided he was proud. “Candour” here means generosity in judging others. A fortune “acquired by trade” (commerce) ranked below inherited land. Sir William Lucas was knighted after presenting an address to the king at St. James’s Palace. A hack chaise is a hired carriage.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapters IV and V, complete; opens “WHEN Jane and Elizabeth were alone, the former, who had been cautious in her praise of…”; closes “…not; she continued to declare that she would; and the argument ended only with the visit.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-02",
+        "continuesTo": null,
+        "blocks": [
+          86,
+          125
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5d1140d3bd14f1fafc00bb32c15db5c2c3f3ab318c3716d27c4aa4da43627807"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-03-q1",
+          "prompt": "Elizabeth praises Jane for being “candid without ostentation or design.” What does she admire, and what does she think it costs Jane?",
+          "facilitatorNotes": [
+            "Jane takes “the good of everybody’s character” and says nothing of the bad. Elizabeth admires the honesty of it but calls her sister “honestly blind” to others’ follies, so the praise carries a warning.",
+            "Readers may side with Jane, whose charity the novel does not simply dismiss, or with Elizabeth, whose sharper judgment the narrator credits with “more quickness of observation.”"
+          ],
+          "evidence": [
+            "With your good sense, to be so honestly blind to the follies and nonsense of others!",
+            "to be candid without ostentation or design"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-03-q2",
+          "prompt": "The narrator says the Bingley sisters were “in every respect entitled to think well of themselves and meanly of others.” Is the narrator agreeing with them? Use the reasons listed and the clause that follows.",
+          "facilitatorNotes": [
+            "The “therefore” rests their entitlement on a fashionable school, money, overspending and rank, none of which is a virtue, so the sentence is ironic. The next clause exposes what they prefer to forget: their fortune “had been acquired by trade.”",
+            "The narrator here knows more than Elizabeth does, which lets the reader test her quick judgment against fuller information."
+          ],
+          "evidence": [
+            "were, therefore, in every respect entitled to think well of themselves and meanly of others",
+            "a circumstance more deeply impressed on their memories than that their brother’s fortune and their own had been acquired by trade"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-03-q3",
+          "prompt": "Charlotte, Elizabeth, Mary and young Lucas each comment on Darcy’s pride. Whose view is most convincing, and whose is most self-revealing?",
+          "facilitatorNotes": [
+            "Charlotte says his advantages give him “a right to be proud”; Elizabeth would forgive his pride “if he had not mortified mine”; Mary distinguishes pride from vanity; the boy wants foxhounds and wine. Elizabeth’s joke admits a wounded pride of her own, and Mary’s sound distinction is delivered as display.",
+            "Encourage readers to apply Mary’s definitions to Darcy and to Elizabeth. Several answers are defensible if they rest on what each speaker reveals."
+          ],
+          "evidence": [
+            "I could easily forgive his pride, if he had not mortified mine",
+            "Pride relates more to our opinion of ourselves; vanity to what we would have others think of us."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-04",
+      "title": "Pride and Prejudice excerpt: Charlotte’s advice and a pair of fine eyes",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Treat Charlotte’s view of courtship as an argument rather than only a joke. Then notice how the narrator shows Darcy’s changing opinion while Elizabeth sees none of it.",
+      "focus": "Strategy and feeling in courtship, and the dramatic irony of a reader who knows what Elizabeth does not.",
+      "context": "Pride and Prejudice (1813) is Jane Austen’s comedy of courtship among the landowning families of an English village; this text follows an 1894 London edition. Elizabeth Bennet, the second of five daughters, was slighted at a ball by the proud and wealthy Mr. Darcy, while his friend Mr. Bingley admired her elder sister Jane. Charlotte Lucas, twenty-seven, is Elizabeth’s closest friend. Vingt-un and Commerce are card games; to “fix” a man is to secure his proposal; St. James’s is the royal court.",
+      "contentNote": "Darcy’s retort that “every savage can dance” uses a period slur for non-European peoples; it belongs to his voice and his era.",
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter VI, complete; opens “THE ladies of Longbourn soon waited on those of Netherfield. The visit was returned in…”; closes “…this manner; and as his composure convinced her that all was safe, her wit flowed along.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-05",
+        "blocks": [
+          127,
+          180
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "690cc037bb61de336635639e0597a465798bce164693636fcd7ce97e6c76b2d0"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-04-q1",
+          "prompt": "Charlotte claims that “Happiness in marriage is entirely a matter of chance.” Reconstruct her reasoning. Is Elizabeth right that it “is not sound”?",
+          "facilitatorNotes": [
+            "Charlotte argues that affection needs encouragement, that married people grow unlike anyway, and that it is better to know little of a partner’s defects. Elizabeth laughs and insists Charlotte would never act on it herself.",
+            "Given how few choices women in Charlotte’s position had, her reasoning is coherent, and some readers find her more realistic than Elizabeth. Keep Elizabeth’s confident prediction in mind as the novel continues."
+          ],
+          "evidence": [
+            "Happiness in marriage is entirely a matter of chance.",
+            "You know it is not sound, and that you would never act in this way yourself."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-04-q2",
+          "prompt": "How does the narrator report Darcy’s growing interest? Which words show that each discovery happens against his will?",
+          "facilitatorNotes": [
+            "He first finds “hardly a good feature,” then eyes made “uncommonly intelligent”; he is “forced to acknowledge” her figure and “caught by” her playfulness. Each discovery is “mortifying” because it contradicts what he has already declared.",
+            "The paragraph ends inside Elizabeth’s view of him, so readers know more than she does, a pattern Austen uses throughout."
+          ],
+          "evidence": [
+            "To this discovery succeeded some others equally mortifying.",
+            "to her he was only the man who made himself agreeable nowhere"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-04-q3",
+          "prompt": "Darcy says a lady’s imagination “jumps from admiration to love, from love to matrimony, in a moment.” Does Miss Bingley prove him right? What does her teasing reveal?",
+          "facilitatorNotes": [
+            "She leaps at once to “when am I to wish you joy?” and mocks a future “charming mother-in-law,” so she seems to prove his point. Yet her wit flows only once she is sure “all was safe,” which suggests the teasing covers anxiety about her own hopes of Darcy.",
+            "Some readers note that Darcy’s generalization about women is itself condescending, even when one woman fits it."
+          ],
+          "evidence": [
+            "it jumps from admiration to love, from love to matrimony, in a moment",
+            "as his composure convinced her that all was safe, her wit flowed along"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-05",
+      "title": "Pride and Prejudice excerpt: Rain, a note and a three-mile walk",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the opening paragraphs about money as the background for every later choice. Then compare how each member of the family responds to news of Jane’s illness.",
+      "focus": "Economic facts beneath the comedy, and Elizabeth’s walk as a choice that others read differently.",
+      "context": "Recap: Charlotte Lucas argued that Jane should show Bingley more affection to secure him, and Darcy, unseen by Elizabeth, has begun to admire her “fine eyes.” An estate “entailed, in default of heirs male” must pass to the nearest male relative, so the Bennet daughters will not inherit their father’s land. A militia regiment was a home-defence force, here quartered in Meryton for the winter; an ensign was the most junior officer. Mr. Jones, an apothecary, was the local medical practitioner.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter VII, complete; opens “MR. BENNET’S property consisted almost entirely in an estate of two thousand a year,…”; closes “…to Longbourn, to acquaint the family with her stay, and bring back a supply of clothes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-04",
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-06",
+        "blocks": [
+          182,
+          230
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0d1c107ec0903e3713ded2bb06ccf639e93854b9d86c3ce59ccfd069d3c11fec"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-05-q1",
+          "prompt": "What do the first two paragraphs tell you about the Bennets’ money and connections? How do those facts change the way you read Mrs. Bennet’s schemes?",
+          "facilitatorNotes": [
+            "The estate is entailed away from the daughters, and their mother’s four thousand pounds “could but ill supply the deficiency.” Her urgency about marriage has a material cause even when it is comic.",
+            "Her relatives in law and trade also prepare for later sneers about the family’s connections. Students may still judge her methods foolish while recognizing the pressure behind them."
+          ],
+          "evidence": [
+            "entailed, in default of heirs male, on a distant relation",
+            "could but ill supply the deficiency of his"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-05-q2",
+          "prompt": "Mrs. Bennet sends Jane on horseback and is pleased when it rains. How do the narrator and Mr. Bennet each judge her plan?",
+          "facilitatorNotes": [
+            "The narrator mocks her: she speaks “as if the credit of making it rain were all her own.” Mr. Bennet’s grim joke, that if Jane died it would be “in pursuit of Mr. Bingley, and under your orders,” points to a real risk under the comedy.",
+            "Some readers hear his remark as a fair rebuke; others hear a father who mocks rather than intervenes."
+          ],
+          "evidence": [
+            "as if the credit of making it rain were all her own",
+            "it would be a comfort to know that it was all in pursuit of Mr. Bingley, and under your orders"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-05-q3",
+          "prompt": "Elizabeth arrives with “dirty stockings, and a face glowing.” How do the people at Netherfield read her appearance, and what do their readings reveal about them?",
+          "facilitatorNotes": [
+            "The sisters find the walk “almost incredible” and hold her in contempt; Bingley shows “good-humour and kindness”; Darcy is divided between admiration and doubt about her coming “so far alone”; Mr. Hurst thinks of breakfast. One sight, several judgments, and each tells us about the viewer.",
+            "Mary’s maxim that exertion should be “in proportion to what is required” offers yet another frame; readers can decide whether Elizabeth’s walk was proportionate."
+          ],
+          "evidence": [
+            "The former was divided between admiration of the brilliancy which exercise had given to her complexion and doubt as to the occasion’s justifying her coming so far alone.",
+            "The latter was thinking only of his breakfast."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-06",
+      "title": "Pride and Prejudice excerpt: The accomplished woman",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Listen for what each speaker gains from the judgments they make. In the argument about accomplishments, follow how the definition grows with each speaker.",
+      "focus": "Contempt disguised as concern, and a debate about what makes a woman “accomplished.”",
+      "context": "Recap: Jane fell ill at Netherfield after riding there in the rain, and Elizabeth walked three muddy miles to nurse her; Bingley’s sisters were scornful and Darcy admired her complexion. Cheapside was a commercial street in London, so an uncle living near it was in trade. Loo is a card game played for money. Pemberley is Darcy’s estate in Derbyshire. Netting purses and covering screens were genteel handicrafts.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter VIII, complete; opens “AT five o’clock the two ladies retired to dress, and at half-past six Elizabeth was…”; closes “…directions that every possible attention might be paid to the sick lady and her sister.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-05",
+        "continuesTo": null,
+        "blocks": [
+          232,
+          290
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c35ef19990cbb7c63a839d617708e31f0a3ffc8003e7cc0231f585d5871d71d4"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-06-q1",
+          "prompt": "When the sisters mock Elizabeth’s walk and laugh at the uncle near Cheapside, how do Bingley and Darcy answer? How do their answers differ?",
+          "facilitatorNotes": [
+            "Bingley praises her affection for her sister and says uncles enough “to fill all Cheapside” would not make the Bennets less agreeable. Darcy says such connections lessen their chance of marrying “men of any consideration.” Bingley judges character; Darcy states a social fact, coldly and perhaps accurately.",
+            "Some readers think Darcy is only describing the world; others hear him endorsing its snobbery. His earlier admiration of her eyes complicates either view."
+          ],
+          "evidence": [
+            "If they had uncles enough to fill all Cheapside",
+            "it must very materially lessen their chance of marrying men of any consideration in the world"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-06-q2",
+          "prompt": "Trace how the definition of an “accomplished” woman grows from Bingley to Miss Bingley to Darcy. What is Elizabeth’s reply really saying?",
+          "facilitatorNotes": [
+            "Bingley thinks every young lady is accomplished; Miss Bingley adds music, languages and “a certain something” in manner; Darcy adds “extensive reading.” Elizabeth replies that she never saw such a woman: the ideal is impossible, and the list says more about the speakers than about women.",
+            "Some readers notice that Darcy’s addition describes the one person in the room who chose a book over cards. Others find his standard as unreal as Miss Bingley’s."
+          ],
+          "evidence": [
+            "and to all she must yet add something more substantial in the improvement of her mind by extensive reading",
+            "I never saw such capacity, and taste, and application, and elegance, as you describe, united."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-06-q3",
+          "prompt": "Miss Bingley calls Elizabeth’s manner “a paltry device.” How does Darcy’s reply turn the charge back on Miss Bingley?",
+          "facilitatorNotes": [
+            "He condemns “all the arts which ladies sometimes condescend to employ for captivation.” Her flattery of Pemberley and praise of his sister are exactly such arts, which is why she is “not so entirely satisfied” and drops the subject.",
+            "Students might also question Darcy’s sweeping statement about “ladies,” which is as much a generalization as hers."
+          ],
+          "evidence": [
+            "there is meanness in all the arts which ladies sometimes condescend to employ for captivation",
+            "Miss Bingley was not so entirely satisfied with this reply as to continue the subject."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-07",
+      "title": "Pride and Prejudice excerpt: Mrs. Bennet at Netherfield",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare what the narrator tells you about Mrs. Bennet’s motives with what she says aloud. In the quarrel about the country, work out what Darcy meant and what Mrs. Bennet heard.",
+      "focus": "A mother’s visit turns a sickroom into a stage for matchmaking, and Elizabeth must defend Darcy’s meaning against her own family.",
+      "context": "Pride and Prejudice (1813) is Jane Austen’s comedy of courtship among the landowning families of an English village; this text follows an 1894 London edition. Recap: Jane fell ill while visiting Netherfield, Mr. Bingley’s rented house, and Elizabeth walked three miles to nurse her, to the scorn of Bingley’s sisters. Mr. Jones is the local apothecary, a medical man below the rank of physician. A girl was “brought into public” when she began attending balls and dinners as a grown woman; most families waited until a daughter was older than fifteen. Captain Carter and Colonel Forster are officers of a militia regiment stationed at Meryton for the winter. To “tax” someone here means to challenge him with something.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter IX, complete; opens “ELIZABETH passed the chief of the night in her sister’s room, and in the morning had the…”; closes “…to join in their censure of her, in spite of all Miss Bingley’s witticisms on fine eyes.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-08",
+        "blocks": [
+          292,
+          330
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "f795639ed3e1ce55f8b769919953ed90aa1b229e5e8e78f9f0a0783b61ff68c7"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-07-q1",
+          "prompt": "Mrs. Bennet tells Bingley that Jane is “a great deal too ill to be moved.” What has the narrator already told you that Bingley does not know?",
+          "facilitatorNotes": [
+            "The narrator reports that Mrs. Bennet was “satisfied on seeing her that her illness was not alarming” and did not want her to recover quickly, because recovery would send her home from Netherfield. Her speech to Bingley is a performance aimed at keeping Jane near him.",
+            "Students may say she still loves Jane, and her praise of Jane’s “sweetest temper” can be sincere. The irony is that her love is expressed as strategy: the daughter’s comfort matters less than the daughter’s chances."
+          ],
+          "evidence": [
+            "she had no wish of her recovering immediately, as her restoration to health would probably remove her from Netherfield",
+            "She is a great deal too ill to be moved."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-07-q2",
+          "prompt": "Darcy says country society is “confined and unvarying.” How does Mrs. Bennet hear the remark, and why does her answer about “four-and-twenty families” prove his point rather than hers?",
+          "facilitatorNotes": [
+            "Darcy means that a village offers few new kinds of people; Mrs. Bennet hears an insult to the country and believes she has “gained a complete victory.” Boasting that the family dines with twenty-four households shows exactly how small the circle is, which is why Bingley can barely “keep his countenance” and Miss Bingley smiles at Darcy.",
+            "Elizabeth, “blushing for her mother,” explains Darcy’s meaning against her own family. Some readers also find Darcy’s remark condescending, so Mrs. Bennet’s offence is not baseless even if her reply is absurd."
+          ],
+          "evidence": [
+            "In a country neighbourhood you move in a very confined and unvarying society.",
+            "I know we dine with four-and-twenty families.",
+            "Elizabeth, blushing for her mother"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-07-q3",
+          "prompt": "Elizabeth jokes that poetry drives love away, and Darcy calls poetry “the food of love.” Why does she make the joke at this moment, and what does her reply say about strong and weak feelings?",
+          "facilitatorNotes": [
+            "She interrupts her mother’s story about the gentleman who wrote verses on Jane, turning an embarrassing boast into a general witticism. Her reply argues that writing about love only feeds a “fine, stout, healthy love” but finishes off a “slight, thin sort of inclination.”",
+            "Darcy’s line echoes a familiar idea (Shakespeare opens Twelfth Night with “If music be the food of love”). Some readers hear the start of a real debate between the two; others see Elizabeth simply rescuing the family from another exposure, since she is soon trembling “lest her mother should be exposing herself again.”"
+          ],
+          "evidence": [
+            "I wonder who first discovered the efficacy of poetry in driving away love!",
+            "I have been used to consider poetry as the food of love",
+            "one good sonnet will starve it entirely away"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-08",
+      "title": "Pride and Prejudice excerpt: A letter, a reel and the picturesque",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a long argument that changes its subject: from writing letters, to modesty, to whether a friend should yield to persuasion. Then notice where the narrator lets you into Darcy’s thoughts.",
+      "focus": "Elizabeth and Darcy argue on principle while the narrator shows what neither knows about the other.",
+      "context": "Recap: Mrs. Bennet visited Netherfield and quarrelled with Darcy about country society, and Lydia made Bingley promise to give a ball. Jane is slowly recovering. Piquet is a card game for two players. A quill pen had to be “mended,” cut to a fresh point with a penknife. A reel is a lively Scottish dance. The “picturesque” was a fashionable taste for scenery and groups arranged as if for a painting.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter X, complete; opens “THE day passed much as the day before had done. Mrs. Hurst and Miss Bingley had spent…”; closes “…so much recovered as to intend leaving her room for a couple of hours that evening.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-07",
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-09",
+        "blocks": [
+          332,
+          397
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2f2fa85b8f1646773f01e57cbfec4822e875ae8cc59569738ce2999d2a508794"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-08-q1",
+          "prompt": "In the letter-writing scene Miss Bingley speaks and Darcy replies. What pattern do their exchanges follow, and what does it show about each of them?",
+          "facilitatorNotes": [
+            "She praises everything about his letter, often inaccurately (“You write uncommonly fast”), and he corrects, deflects or stays silent. Elizabeth enjoys the “curious dialogue” because it confirms her opinion of both: one flatters, the other receives flattery with “perfect unconcern.”",
+            "Some readers find Darcy rude; others think he is simply refusing to be flattered. Either way, the scene shows that Miss Bingley’s method of pleasing him does not work."
+          ],
+          "evidence": [
+            "You write uncommonly fast.",
+            "You are mistaken. I write rather slowly.",
+            "the perfect unconcern with which her praises were received"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-08-q2",
+          "prompt": "Darcy calls Bingley’s modesty “an indirect boast,” and the argument moves to whether one should yield to a friend’s request. What does each of them value?",
+          "facilitatorNotes": [
+            "Darcy values reason and consistency: “To yield without conviction is no compliment to the understanding of either.” Elizabeth values affection: a friend may comply “without waiting to be argued into it.” Bingley, the subject of the argument, prefers to stop it.",
+            "Students can take either side; both positions have costs. It is worth remembering how quickly, according to Darcy, Bingley could be talked into staying or going, because the novel returns to how easily he is persuaded."
+          ],
+          "evidence": [
+            "Nothing is more deceitful,” said Darcy, “than the appearance of humility.",
+            "To yield without conviction is no compliment to the understanding of either.",
+            "You appear to me, Mr. Darcy, to allow nothing for the influence of friendship and affection."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-08-q3",
+          "prompt": "Elizabeth decides that Darcy looks at her because he finds her “more wrong and reprehensible” than anyone else. What does the narrator tell you that she does not know?",
+          "facilitatorNotes": [
+            "After she refuses the reel, the narrator enters Darcy’s mind: he had “never been so bewitched by any woman,” and only the “inferiority of her connections” keeps him safe. Elizabeth’s interpretation fits her low opinion of him, not the evidence; the reader now knows more than the heroine.",
+            "Some readers see her reading as reasonable, given his first insult at the assembly. Others notice that she has made up her mind and fits each new glance to it."
+          ],
+          "evidence": [
+            "she drew his notice because there was something about her more wrong and reprehensible, according to his ideas of right, than in any other person present",
+            "Darcy had never been so bewitched by any woman as he was by her",
+            "were it not for the inferiority of her connections, he should be in some danger"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-08-q4",
+          "prompt": "In the shrubbery Miss Bingley mocks Elizabeth’s relations, and Mrs. Hurst then leaves Elizabeth to walk alone. How does Elizabeth turn the slight into a joke at their expense?",
+          "facilitatorNotes": [
+            "Miss Bingley suggests hanging the Philipses, a country attorney and his wife, beside Darcy’s great-uncle the judge, a sneer at the Bennets’ connections in trade and law. Mrs. Hurst then takes Darcy’s free arm on a path that “just admitted three.” Elizabeth refuses Darcy’s offer to move and calls the three of them “charmingly grouped,” as if they were a picture that a fourth figure would spoil.",
+            "Her laughter lets her leave on her own terms. Some readers hear real hurt beneath the wit; Darcy, at least, “felt their rudeness.”"
+          ],
+          "evidence": [
+            "Do let the portraits of your uncle and aunt Philips be placed in the gallery at Pemberley.",
+            "You are charmingly grouped, and appear to uncommon advantage.",
+            "Mr. Darcy felt their rudeness"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-09",
+      "title": "Pride and Prejudice excerpt: A turn about the room",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Watch how characters use reading, walking and music to attract or avoid attention. In the argument about faults, decide how far each speaker’s charge against the other is fair.",
+      "focus": "Darcy and Elizabeth name each other’s defects, and the visit to Netherfield ends.",
+      "context": "Recap: at Netherfield Darcy and Elizabeth argued about whether yielding to a friend is a virtue, she refused to dance a reel with him, and the narrator revealed that he is attracted to her despite her family. Miss Bingley, jealous, mocks the Bennets. White soup was a rich dish served at balls; Bingley will “send round” printed invitation cards. Thorough bass is the theory of musical harmony. The officers belong to the militia regiment in Meryton.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapters XI and XII, complete; opens “WHEN the ladies removed after dinner Elizabeth ran up to her sister, and seeing her well…”; closes “…flogged; and it had actually been hinted that Colonel Forster was going to be married.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-08",
+        "continuesTo": null,
+        "blocks": [
+          399,
+          440
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "63c93d67827d89b3f667013830acbadf0eefa00f0fd05b21feb1b52d5b922601"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-09-q1",
+          "prompt": "Miss Bingley declares that “there is no enjoyment like reading.” What has the narrator already told you about her book?",
+          "facilitatorNotes": [
+            "She chose it “only” because it was the second volume of Darcy’s, she watches his page more than her own, and she yawns before and after her praise of reading. Her speech is aimed at Darcy, who was praised in Chapter VIII for adding “extensive reading” to the accomplished woman.",
+            "The comedy depends on the narrator giving the motive first, so readers hear her line as a performance. Some may feel sympathy for a woman so plainly failing to be noticed."
+          ],
+          "evidence": [
+            "which she had only chosen because it was the second volume of his",
+            "I declare, after all, there is no enjoyment like reading!"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-09-q2",
+          "prompt": "Darcy says he has studied to avoid weaknesses that expose a strong mind to ridicule. When Elizabeth says “Such as vanity and pride,” how does he separate the two, and why does she turn away “to hide a smile”?",
+          "facilitatorNotes": [
+            "He grants that vanity is a weakness but says pride, “where there is a real superiority of mind,” will be “under good regulation.” Elizabeth smiles because the claim itself sounds proud: he assumes his own superiority while defending it.",
+            "Some readers think Darcy is making a fair distinction between self-respect and showing off. The novel’s title keeps the question open."
+          ],
+          "evidence": [
+            "Such as vanity and pride.",
+            "pride—where there is a real superiority of mind—pride will be always under good regulation",
+            "Elizabeth turned away to hide a smile."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-09-q3",
+          "prompt": "Darcy calls his own temper resentful, and the two end by naming each other’s “defect.” What does each accuse the other of, and which charge do you find more accurate so far?",
+          "facilitatorNotes": [
+            "Darcy admits that his “good opinion once lost is lost for ever.” Elizabeth sums this up as “a propensity to hate everybody”; he answers that her defect is “wilfully to misunderstand them.” Each charge exaggerates, but each touches something the reader has seen: Darcy’s unbending judgments, and Elizabeth’s readiness to read his looks as contempt.",
+            "Accept either answer with evidence from earlier chapters. The exchange ends with a smile, which suggests both are enjoying the contest."
+          ],
+          "evidence": [
+            "My good opinion once lost is lost for ever.",
+            "And your defect is a propensity to hate everybody.",
+            "And yours,” he replied, with a smile, “is wilfully to misunderstand them."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-09-q4",
+          "prompt": "In Chapter XII Darcy decides to show no “sign of admiration” on the last day. What does his reasoning assume about Elizabeth, and what do we know that he does not?",
+          "facilitatorNotes": [
+            "He fears she might be encouraged in “the hope of influencing his felicity,” that is, of marrying him. He assumes she wants his attention, while the reader knows she “liked him too little to care for his approbation.” His careful silence is wasted on someone who is not waiting for it.",
+            "Students may also notice the contrast with Kitty and Lydia’s news from the regiment, where a flogging is listed beside a rumoured marriage, as if both were equally good gossip."
+          ],
+          "evidence": [
+            "nothing that could elevate her with the hope of influencing his felicity",
+            "he adhered most conscientiously to his book, and would not even look at her",
+            "a private had been flogged; and it had actually been hinted that Colonel Forster was going to be married"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-10",
+      "title": "Pride and Prejudice excerpt: The Gardiners come for Christmas",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare how Mrs. Bennet, Elizabeth and Mrs. Gardiner explain the same disappointment, and notice the places where the narrator quietly corrects a speaker.",
+      "focus": "A sensible aunt from outside the family’s quarrels tests both Mrs. Bennet’s grievances and Elizabeth’s certainties, while her own memory bends to fit a story she has just heard.",
+      "context": "Pride and Prejudice (1813) is Jane Austen’s comedy of courtship among the landowning families of an English village; this text follows an 1894 London edition. By this point Elizabeth has refused a proposal from her cousin Mr. Collins, the clergyman who will inherit Longbourn because the estate is entailed on the male line, and within days he became engaged to her friend Charlotte Lucas instead. Mr. Bingley, who seemed in love with Jane, has gone to London, and his sister Caroline has written that he will not return; Elizabeth blames his friend Mr. Darcy. Mr. Wickham, a charming officer, has told Elizabeth that Darcy cheated him of a church living that Darcy’s father meant him to have. Mrs. Bennet’s brother, Mr. Gardiner, is a London merchant who lives in Gracechurch Street, near his warehouses in the commercial City of London, far from the fashionable streets where the Bingleys stay.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XXV, complete; opens “AFTER a week spent in professions of love and schemes of felicity, Mr. Collins was called…”; closes “…having heard Mr. Fitzwilliam Darcy formerly spoken of as a very proud, ill-natured boy.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-11",
+        "blocks": [
+          826,
+          845
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e4dab98d46b02ad2a9fdf7c67edd534827f7779a4c188fdefea23698279fe392"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-10-q1",
+          "prompt": "How does the narrator introduce Mr. Gardiner? What does the sentence about “the Netherfield ladies” suggest about their idea of people in trade?",
+          "facilitatorNotes": [
+            "He is “sensible, gentlemanlike” and “greatly superior to his sister, as well by nature as education.” The narrator imagines Bingley’s sisters unable to believe that a man living “within view of his own warehouses” could be well-bred: the joke is on their snobbery, not on him.",
+            "Readers who remember Chapter IV may add that the Bingleys’ own fortune came from trade, which makes the sisters’ contempt sharper. The point stands without that detail."
+          ],
+          "evidence": [
+            "Mr. Gardiner was a sensible, gentlemanlike man, greatly superior to his sister, as well by nature as education.",
+            "a man who lived by trade, and within view of his own warehouses, could have been so well-bred and agreeable"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-10-q2",
+          "prompt": "Mrs. Bennet blames Elizabeth’s “perverseness” and the Lucases’ selfishness in one breath. How does the narration make her grievance comic, and is there anything real underneath it?",
+          "facilitatorNotes": [
+            "The narrator repeats her complaint in her own exaggerated terms (“They had all been very ill-used”), and her speech accuses the Lucases of thinking of themselves while she thinks only of her own family. It ends by swerving to the news of “long sleeves,” which deflates everything before it.",
+            "Underneath the comedy the worry is real: with the estate “just as much entailed as ever,” her daughters may have no home when Mr. Bennet dies. Students can hold both readings."
+          ],
+          "evidence": [
+            "They had all been very ill-used since she last saw her sister.",
+            "Longbourn estate is just as much entailed as ever",
+            "I am very glad to hear what you tell us of long sleeves"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-10-q3",
+          "prompt": "Mrs. Gardiner doubts the phrase “violently in love.” What evidence does Elizabeth give that Bingley really loved Jane, and how certain is she, according to the narrator, that he is gone for good?",
+          "facilitatorNotes": [
+            "She offers symptoms: he neglected other people, offended young ladies by not dancing with them, and twice failed to answer Elizabeth herself. Her question “Is not general incivility the very essence of love?” is a joke that still makes a serious point.",
+            "She tells her aunt a meeting is “quite impossible,” but the narrator says she only “affected” that certainty and privately thought renewed affection “possible, and sometimes … probable.” Ask why someone might speak more certainly than she feels: to protect Jane, or herself, from hope."
+          ],
+          "evidence": [
+            "that expression of ‘violently in love’ is so hackneyed, so doubtful, so indefinite",
+            "Is not general incivility the very essence of love?",
+            "in spite of the certainty in which Elizabeth affected to place this point"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-10-q4",
+          "prompt": "Read the last sentence closely. How does Mrs. Gardiner arrive at her memory of young Darcy, and what does the order of the sentence suggest about how reliable that memory is?",
+          "facilitatorNotes": [
+            "She hears Wickham’s account first, then “tried to remember something … which might agree with it,” and only “at last” becomes “confident” that she heard Darcy called a proud, ill-natured boy. The memory is searched for to fit a story, not recalled on its own.",
+            "This does not prove the memory false; it shows how testimony can be shaped by what a listener already believes. Students may connect it with how quickly Meryton judged Darcy at the first ball."
+          ],
+          "evidence": [
+            "she tried to remember something of that gentleman’s reputed disposition, when quite a lad, which might agree with it",
+            "was confident, at last, that she recollected having heard Mr. Fitzwilliam Darcy formerly spoken of as a very proud, ill-natured boy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-11",
+      "title": "Pride and Prejudice excerpt: A caution, a wedding and a letter from London",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Weigh three kinds of evidence, an aunt’s warning, Charlotte’s letters and Jane’s long letter, and ask of each what it leaves unsaid.",
+      "focus": "Elizabeth reads other people’s letters shrewdly, yet the narrator shows her excusing in Wickham the kind of prudent marriage she condemned in Charlotte.",
+      "context": "Recap: Mrs. Gardiner, Elizabeth’s sensible aunt from London, has spent Christmas at Longbourn, invited Jane to stay with her in town, and noticed how much Elizabeth likes Mr. Wickham. Charlotte Lucas is about to marry Mr. Collins, whose parsonage is at Hunsford in Kent, beside Rosings, the great house of his patroness Lady Catherine de Bourgh. Caroline Bingley is Mr. Bingley’s sister; Miss Darcy is Mr. Darcy’s younger sister. Miss King, a young woman of the neighbourhood, has just inherited ten thousand pounds.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XXVI, complete; opens “MRS. GARDINER’S caution to Elizabeth was punctually and kindly given on the first…”; closes “…conviction that handsome young men must have something to live on as well as the plain.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-10",
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-12",
+        "blocks": [
+          847,
+          876
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "effe8304475d150dcbd94057aba1efc7520693f627c52f9ca7d2041b9560c2b2"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-11-q1",
+          "prompt": "Elizabeth answers her aunt’s warning first with a joke and then “seriously.” What does her second answer promise, and what does it refuse to promise?",
+          "facilitatorNotes": [
+            "She promises only “not to be in a hurry”: not to believe herself Wickham’s first object and not to be “wishing.” She will not promise to resist an attachment, because she sees young people marry without fortune “every day” and asks how she can be “wiser” than they are.",
+            "Some readers find the answer honest; others hear her keeping a door open. The narrator’s comment, “a wonderful instance of advice being given on such a point without being resented,” is gently ironic about how rare her calm response is."
+          ],
+          "evidence": [
+            "All that I can promise you, therefore, is not to be in a hurry.",
+            "how can I promise to be wiser than so many of my fellow-creatures, if I am tempted",
+            "a wonderful instance of advice being given on such a point without being resented"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-11-q2",
+          "prompt": "Why can Elizabeth’s letters with Charlotte no longer be “unreserved”? What does she notice about Charlotte’s cheerful reports from Hunsford?",
+          "facilitatorNotes": [
+            "Charlotte has married a man Elizabeth thinks foolish, so “all the comfort of intimacy was over.” Charlotte’s letters praise everything and mention “nothing which she could not praise”; Elizabeth reads them as Mr. Collins’s boasting “rationally softened” and decides she must see for herself.",
+            "Students may argue that Charlotte is simply content and Elizabeth is reading in a disappointment that is not there. The chapter gives grounds for both, which is why Elizabeth waits for her visit."
+          ],
+          "evidence": [
+            "that it should be equally unreserved was impossible",
+            "mentioned nothing which she could not praise",
+            "It was Mr. Collins’s picture of Hunsford and Rosings rationally softened"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-11-q3",
+          "prompt": "Jane’s long letter admits that she was deceived. Where does she come closest to accusing Caroline Bingley, and how does she soften the accusation?",
+          "facilitatorNotes": [
+            "“A strong appearance of duplicity” is her harshest phrase, and even it is wrapped in conditions: “If I were not afraid of judging harshly, I should be almost tempted to say.” She also excuses Caroline as anxious for her brother and defends her own trust as “as natural as your suspicion.”",
+            "Readers may admire Jane’s fairness or find it painful self-deception. Note that she still refuses to blame Bingley himself: “if he had at all cared about me, we must have met long, long ago.”"
+          ],
+          "evidence": [
+            "If I were not afraid of judging harshly, I should be almost tempted to say, that there is a strong appearance of duplicity in all this.",
+            "my confidence was as natural as your suspicion",
+            "if he had at all cared about me, we must have met long, long ago"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-11-q4",
+          "prompt": "Elizabeth was disgusted when Charlotte married for security, yet she does not “quarrel with” Wickham for courting an heiress. What does the narrator signal with the words “less clear-sighted perhaps in this case than in Charlotte’s”?",
+          "facilitatorNotes": [
+            "The narrator points out an inconsistency Elizabeth does not see: she forgives in a man she likes the same prudence she condemned in her friend. Her own explanation, that her heart was “but slightly touched” and her “vanity was satisfied,” suggests feeling is shaping her judgment.",
+            "A defensible alternative: Elizabeth’s reasoning is consistent, since she accepts that people without money must marry with money in mind, and her bitter last line about young men who “must have something to live on” applies to both cases. The word “perhaps” leaves room for this debate."
+          ],
+          "evidence": [
+            "less clear-sighted perhaps in this case than in Charlotte’s, did not quarrel with him for his wish of independence",
+            "her vanity was satisfied with believing that she would have been his only choice, had fortune permitted it",
+            "handsome young men must have something to live on as well as the plain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-12",
+      "title": "Pride and Prejudice excerpt: Mercenary or prudent?",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 16,
+        "totalMinutes": 26
+      },
+      "challenge": "Follow the quick exchange between Elizabeth and her aunt, in which many speeches have no speaker named, and decide who has the better of each turn.",
+      "focus": "Elizabeth tries to erase the line between prudence and greed, and her aunt hears disappointment under the wit.",
+      "context": "Recap: Jane is staying with the Gardiners in London and has learned that Caroline Bingley wants nothing more to do with her. Mr. Wickham has turned his attentions from Elizabeth to Miss King, who has just inherited ten thousand pounds, and Elizabeth has written to her aunt that she was never much in love. Charlotte, now Mrs. Collins, has asked Elizabeth to visit her in Kent with Charlotte’s father, Sir William Lucas, and her sister Maria. A chaise is a hired travelling carriage; the Lakes are the Lake District of northern England, admired for its mountains and lakes.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XXVII, complete; opens “WITH no greater events than these in the Longbourn family, and otherwise diversified by…”; closes “…our first effusions be less insupportable than those of the generality of travellers.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-11",
+        "continuesTo": null,
+        "blocks": [
+          878,
+          900
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "da118827fcdc0d1695ced133a3e75955a6306c9abcb9f377b53944bccd56e96c"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-12-q1",
+          "prompt": "Elizabeth had not at first thought seriously of going to Hunsford. What reasons does the first paragraph give for her change of mind, and which seems strongest?",
+          "facilitatorNotes": [
+            "Absence has made her miss Charlotte and “weakened her disgust of Mr. Collins”; the trip is a novelty; home, “with such a mother and such uncompanionable sisters,” is not faultless; and she can see Jane in London on the way.",
+            "Students can rank them differently. The phrase “a little change was not unwelcome for its own sake” suggests restlessness as much as friendship."
+          ],
+          "evidence": [
+            "Absence had increased her desire of seeing Charlotte again, and weakened her disgust of Mr. Collins.",
+            "with such a mother and such uncompanionable sisters, home could not be faultless"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-12-q2",
+          "prompt": "Reread the long sentence about Elizabeth’s farewell to Wickham. Whose view of him does it give, and what makes its last words sound ironic to a careful reader?",
+          "facilitatorNotes": [
+            "It reports Elizabeth’s feelings in the narrator’s voice: the repeated “the first” lists everything that flatters her, and she leaves “convinced” he “must always be her model of the amiable and pleasing.” The word “convinced” and the grand “always” invite the reader to doubt a judgment built on being admired.",
+            "Some readers take the sentence at face value, as a friendly parting. Ask what Wickham has actually done in the last two chapters, and whether being pleasing is the same as being good."
+          ],
+          "evidence": [
+            "the first to excite and to deserve his attention, the first to listen and to pity, the first to be admired",
+            "she parted from him convinced, that, whether married or single, he must always be her model of the amiable and pleasing"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-12-q3",
+          "prompt": "Elizabeth asks, “Where does discretion end, and avarice begin?” How does she turn her aunt’s own warning against her, and does she win the argument?",
+          "facilitatorNotes": [
+            "She points out that last Christmas her aunt thought a marriage between Elizabeth and Wickham “imprudent” because neither had money, so his pursuit of a richer girl is only the prudence the aunt recommended. Mrs. Gardiner shifts ground to timing (“so soon after this event”) and to Miss King’s judgment.",
+            "Elizabeth’s last word, “He shall be mercenary, and she shall be foolish,” gives up the argument with sarcasm rather than winning it. Many readers think the aunt’s distinction between a motive and the indelicate way it is pursued is fair."
+          ],
+          "evidence": [
+            "Where does discretion end, and avarice begin?",
+            "Last Christmas you were afraid of his marrying me, because it would be imprudent",
+            "He shall be mercenary, and she shall be foolish."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-12-q4",
+          "prompt": "Mrs. Gardiner says Elizabeth’s outburst against men “savours strongly of disappointment.” Read Elizabeth’s reply to the invitation to the Lakes. Has she recovered, or is she still disappointed?",
+          "facilitatorNotes": [
+            "Her rapture (“What are men to rocks and mountains?”) can be read as relief and a real love of new scenes, or as the same disappointment turned into extravagance. Her earlier line, “Stupid men are the only ones worth knowing,” is plainly bitter.",
+            "Her plan to remember accurately what she sees, so that lakes and rivers are not “jumbled together,” also fits a heroine who prides herself on clear judgment. Accept either reading that uses both speeches."
+          ],
+          "evidence": [
+            "Stupid men are the only ones worth knowing, after all.",
+            "that speech savours strongly of disappointment",
+            "What are men to rocks and mountains?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-13",
+      "title": "Pride and Prejudice excerpt: The last week at Rosings",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Read Lady Catherine’s speeches with what you know from Darcy’s letter in mind. Mark each place where the reader knows something she does not.",
+      "focus": "Lady Catherine talks and commands while Elizabeth silently weighs the letter that has overturned her judgments.",
+      "context": "Pride and Prejudice (1813) is Jane Austen’s comedy of courtship among the landowning families of an English village; this text follows an 1894 London edition. Recap: Elizabeth is visiting her friend Charlotte, now married to the pompous clergyman Mr. Collins, whose patron is the domineering Lady Catherine de Bourgh of Rosings. Lady Catherine’s nephews, Mr. Darcy and Colonel Fitzwilliam, have been staying there. Darcy proposed to Elizabeth in a proud, insulting way, and she refused him angrily, blaming him for separating her sister Jane from Mr. Bingley and for wronging Mr. Wickham. Next morning he gave her a letter: he admitted parting Bingley from Jane, whom he believed indifferent, and revealed that Wickham had wasted the money left him and had tried to elope with Darcy’s fifteen-year-old sister, Georgiana, for her fortune. Rereading the letter, Elizabeth has seen how prejudiced she was. To travel “post” is to hire fresh horses at each stage; the barouche-box is the driver’s seat of an open carriage; Ramsgate is a seaside town.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XXXVII, complete; opens “THE two gentlemen left Rosings the next morning; and Mr. Collins having been in waiting…”; closes “…and Miss de Bourgh exerted herself so far as to courtesy and hold out her hand to both.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-14",
+        "blocks": [
+          1136,
+          1156
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "c01e9685af2e1deba5be0dbeaa7add181a7a37700dd812c81411610f23bf1ad2"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-13-q1",
+          "prompt": "Lady Catherine says Darcy “seemed to feel it most acutely” and that “His attachment to Rosings certainly increases.” Why is this funny to Elizabeth and to us?",
+          "facilitatorNotes": [
+            "We know Darcy is unhappy because Elizabeth has just refused him, not because he is leaving his aunt. Elizabeth amuses herself imagining Lady Catherine’s fury had she accepted and been presented as her “future niece.”",
+            "The scene depends on dramatic irony: Lady Catherine claims to feel more than anyone and understands nothing. Students can find other lines where her self-praise gives her away."
+          ],
+          "evidence": [
+            "I believe nobody feels the loss of friends so much as I do.",
+            "His attachment to Rosings certainly increases."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-13-q2",
+          "prompt": "Lady Catherine insists that young women be “properly guarded” and cites Georgiana’s trip to Ramsgate as her example. What does the reader know about Ramsgate that she does not?",
+          "facilitatorNotes": [
+            "Darcy’s letter revealed that at Ramsgate Wickham nearly persuaded Georgiana to elope, despite all the proper attendants. Her proudest example of propriety is the place where it failed.",
+            "Austen never points this out; she trusts the reader to remember. Ask what the irony suggests about rules that care more for appearances than for real protection."
+          ],
+          "evidence": [
+            "Young women should always be properly guarded and attended, according to their situation in life.",
+            "When my niece Georgiana went to Ramsgate last summer, I made a point of her having two men-servants go with her."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-13-q3",
+          "prompt": "On her solitary walks Elizabeth enjoys “all the delight of unpleasant recollections.” How do her feelings toward Darcy change as she rereads the letter, and where do they stop?",
+          "facilitatorNotes": [
+            "She moves between indignation at his manner, anger at herself, compassion for his disappointment, gratitude for his love and respect for his character. But she “could not approve him” and does not regret refusing him.",
+            "The paradox of delightful unpleasantness suggests she is relieved to be thinking honestly at last. Students should notice how carefully Austen limits the change: no sudden love."
+          ],
+          "evidence": [
+            "in which she might indulge in all the delight of unpleasant recollections",
+            "His attachment excited gratitude, his general character respect: but she could not approve him"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-13-q4",
+          "prompt": "Why does the letter make Elizabeth judge her own family more harshly? Is the narrator’s verdict on Kitty and Lydia fair?",
+          "facilitatorNotes": [
+            "Darcy said the family’s improper behaviour helped turn him against the match with Jane, and Elizabeth now sees that Jane lost Bingley “by the folly and indecorum of her own family.” She blames her father for laughing instead of acting and her mother for not seeing the problem.",
+            "“They were ignorant, idle, and vain” is severe, and some readers will defend the girls as young and badly brought up, which is partly the narrator’s point. Lady Catherine’s fuss over packing the gowns closes the chapter in comedy."
+          ],
+          "evidence": [
+            "Her father, contented with laughing at them, would never exert himself to restrain the wild giddiness of his youngest daughters",
+            "They were ignorant, idle, and vain.",
+            "Jane had been deprived, by the folly and indecorum of her own family!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-14",
+      "title": "Pride and Prejudice excerpt: Leaving Hunsford",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 18,
+        "totalMinutes": 26
+      },
+      "challenge": "Listen to Mr. Collins’s farewell speeches for the gap between what he says he means and what he actually says.",
+      "focus": "Mr. Collins boasts by way of modesty, Charlotte keeps her own counsel, and Elizabeth carries home secrets she cannot yet share.",
+      "context": "Recap: Elizabeth is ending a six-week visit to Charlotte and Mr. Collins at Hunsford parsonage, near Lady Catherine de Bourgh’s great house, Rosings. She has refused a proposal from Mr. Darcy, Lady Catherine’s nephew, and has since learned from his letter that she misjudged him and that the charming Mr. Wickham is a liar. Charlotte’s young sister Maria Lucas travels home with her. Mr. Gardiner is Elizabeth’s uncle in London, where her sister Jane has been staying.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XXXVIII, complete; opens “ON Saturday morning Elizabeth and Mr. Collins met for breakfast a few minutes before the…”; closes “…hurried into repeating something of Bingley, which might only grieve her sister further.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-13",
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-15",
+        "blocks": [
+          1157,
+          1174
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e210be03e074698aaca8ea5128b1cefc6660133149b79c744584e8d3769e89b4"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-14-q1",
+          "prompt": "Mr. Collins begins by apologizing for his “humble abode.” How does the speech turn into boasting? What does Elizabeth do in reply?",
+          "facilitatorNotes": [
+            "He lists the small rooms and few servants only to set against them “very superior society” at Rosings, so his modesty becomes a display of his great connection. Elizabeth tries “to unite civility and truth in a few short sentences,” saying only what she honestly can.",
+            "Austen’s phrase describes a skill every polite guest needs. Students can discuss times when politeness and honesty pull apart."
+          ],
+          "evidence": [
+            "We know how little there is to tempt anyone to our humble abode.",
+            "while Elizabeth tried to unite civility and truth in a few short sentences"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-14-q2",
+          "prompt": "What was Mr. Collins about to say before he stopped himself, and how do his words about Charlotte compare with what Elizabeth sees?",
+          "facilitatorNotes": [
+            "He was about to say that Charlotte had not drawn an unfortunate lot in marrying him, a delicate subject, since Elizabeth had refused him before Charlotte accepted. He claims they have “but one mind,” yet Elizabeth thinks “Poor Charlotte!”",
+            "The narrator adds that Charlotte chose “with her eyes open” and still enjoys her house, parish and poultry. Readers can decide whether Charlotte is to be pitied, admired, or both."
+          ],
+          "evidence": [
+            "your friend has drawn an unfortunate—but on this point it will be as well to be silent",
+            "We seem to have been designed for each other.",
+            "Her home and her housekeeping, her parish and her poultry, and all their dependent concerns, had not yet lost their charms."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-14-q3",
+          "prompt": "Maria cries, “How much I shall have to tell!” and Elizabeth privately adds, “And how much I shall have to conceal!” What must Elizabeth conceal, and why is she still tempted to tell Jane?",
+          "facilitatorNotes": [
+            "Darcy’s proposal, the letter, the truth about Wickham, and Darcy’s part in separating Jane from Bingley. Telling Jane would gratify “whatever of her own vanity” remains, but she fears hurting Jane further by mentioning Bingley.",
+            "The two lines set Maria’s innocent list of dinners against Elizabeth’s secrets. Austen admits her heroine still has some vanity “not yet been able to reason away.”"
+          ],
+          "evidence": [
+            "How much I shall have to tell!",
+            "And how much I shall have to conceal!",
+            "so highly gratify whatever of her own vanity she had not yet been able to reason away"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-15",
+      "title": "Pride and Prejudice excerpt: Lydia at the inn",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Lydia talks almost nonstop in this chapter. Read her speeches aloud and note what she reveals about herself without meaning to.",
+      "focus": "The youngest Bennets bring the noise of home back into the story, and Elizabeth recognizes a fault in herself.",
+      "context": "Recap: Elizabeth has left Hunsford after refusing Mr. Darcy’s proposal and learning from his letter that she misjudged him and that the charming officer Mr. Wickham is a liar. She stopped at her aunt and uncle Gardiner’s house in London and now travels home with her sister Jane and Maria Lucas, troubled by her younger sisters’ silliness and her family’s lack of decorum. Wickham had turned his attentions to Miss Mary King after she inherited ten thousand pounds. The militia regiment quartered in Meryton, near the Bennets’ home, is about to go to a summer camp at Brighton, a fashionable seaside town. A milliner makes and sells hats; a band-box is a hatbox.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XXXIX, complete; opens “IT was the second week in May, in which the three young ladies set out together from…”; closes “…her mother, though often disheartened, had never yet despaired of succeeding at last.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-14",
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-16",
+        "blocks": [
+          1175,
+          1201
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "65e6344dffcc2e8a3a537ee85bf8ff7888e3dcea79559ae990291df6ba933335"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-15-q1",
+          "prompt": "Lydia announces a treat and then asks to borrow the money; she buys a bonnet she does not like. What do these details show about her?",
+          "facilitatorNotes": [
+            "She is careless with money, wants credit for generosity she cannot afford, and buys things on impulse. Her reason for not minding the ugly bonnet, that nothing will matter once the officers leave, shows that her whole summer revolves around soldiers.",
+            "Austen lets Lydia condemn herself in her own words, with almost no comment from the narrator."
+          ],
+          "evidence": [
+            "but you must lend us the money, for we have just spent ours at the shop out there",
+            "I do not think it is very pretty; but I thought I might as well buy it as not."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-15-q2",
+          "prompt": "Why does the news of Brighton alarm Elizabeth? What does her silent exclamation suggest might happen?",
+          "facilitatorNotes": [
+            "She imagines Lydia and Kitty in a whole camp of soldiers when one regiment in Meryton has already “overset” them. Her irony (“a delightful scheme, indeed”) masks real fear for the family’s reputation.",
+            "Readers can treat this as foreshadowing and predict what Brighton might bring; ask them to hold their predictions and check them later."
+          ],
+          "evidence": [
+            "Brighton and a whole campful of soldiers, to us, who have been overset already by one poor regiment of militia"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-15-q3",
+          "prompt": "Lydia calls Mary King “a nasty little freckled thing.” Why is Elizabeth shocked, and what does she recognize in herself?",
+          "facilitatorNotes": [
+            "The coarse words disgust her, but she realizes she had held much the same view: that Wickham could not really care for Miss King and courted her for her money, which Elizabeth had excused as natural and thought broad-minded (“liberal”).",
+            "This is another moment of self-recognition after Darcy’s letter. Ask whether noticing a fault in someone else is often how we discover it in ourselves."
+          ],
+          "evidence": [
+            "Who could about such a nasty little freckled thing?",
+            "the coarseness of the sentiment was little other than her own breast had formerly harboured and fancied liberal!"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-15-q4",
+          "prompt": "At dinner at Longbourn, what do Mr. Bennet, Lydia and Mary each say or do? What picture of the family does the chapter leave?",
+          "facilitatorNotes": [
+            "Mr. Bennet says more than once, “I am glad you are come back, Lizzy,” as if he has missed the one sensible companion he has. Lydia shouts about her fun to anyone; Mary answers with a solemn speech about books, which Lydia does not hear.",
+            "Everyone talks and almost no one listens. Some readers find Mr. Bennet touching here; others remember that Elizabeth has just blamed him for laughing at his daughters instead of guiding them."
+          ],
+          "evidence": [
+            "I am glad you are come back, Lizzy.",
+            "I should infinitely prefer a book.",
+            "She seldom listened to anybody for more than half a minute, and never attended to Mary at all."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-16",
+      "title": "Pride and Prejudice excerpt: Elizabeth tells Jane",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 12,
+        "discussionMinutes": 15,
+        "totalMinutes": 27
+      },
+      "challenge": "Compare how the two sisters react to the same news. Then decide whether their decision about Wickham is wise.",
+      "focus": "Elizabeth shares part of her secret, laughs at her own prejudice, and chooses silence about Wickham; Mrs. Bennet consoles herself in her own way.",
+      "context": "Recap: Elizabeth has come home from Kent after refusing Mr. Darcy’s proposal. His letter has shown her that the charming officer Mr. Wickham lied about him, wasted his inheritance and tried to elope with Darcy’s young sister for her fortune, and that Darcy had persuaded his friend Mr. Bingley to give up Jane. Jane, Elizabeth’s gentle elder sister, still loves Bingley, who has stayed away. Wickham’s regiment leaves Meryton in a fortnight. Longbourn, the Bennets’ home, is entailed: it must pass to a male heir, so Mr. Collins will inherit it when Mr. Bennet dies.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XL, complete; opens “ELIZABETH’S impatience to acquaint Jane with what had happened could no longer be…”; closes “…own, so much the better. I should be ashamed of having one that was only entailed on me.””.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-15",
+        "continuesTo": null,
+        "blocks": [
+          1202,
+          1237
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bfd1fb40fae21423c9660aa5124c1fecd0667e8b7b7451cd00b9edf8cf826eb0"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-16-q1",
+          "prompt": "Jane tries to “clear one, without involving the other.” How does Elizabeth answer, and what does her joke about a “quantity of merit” say?",
+          "facilitatorNotes": [
+            "Jane wants to think well of both Darcy and Wickham; Elizabeth says there is only enough merit between them for one good man, and it has been shifting about. Jane must choose, and Elizabeth believes it all belongs to Darcy.",
+            "Her line “One has got all the goodness, and the other all the appearance of it” sums up the novel’s interest in appearance against reality."
+          ],
+          "evidence": [
+            "Most earnestly did she labour to prove the probability of error, and seek to clear one, without involving the other.",
+            "There is but such a quantity of merit between them; just enough to make one good sort of man",
+            "One has got all the goodness, and the other all the appearance of it."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-16-q2",
+          "prompt": "Elizabeth says she “meant to be uncommonly clever” in disliking Darcy. What does she now understand about how prejudice works?",
+          "facilitatorNotes": [
+            "A strong dislike gave her wit something to work on: “one cannot be always laughing at a man without now and then stumbling on something witty.” Her bitter words about Wickham were “a most natural consequence of the prejudices I had been encouraging.”",
+            "The word “encouraging” matters: she admits prejudice was something she fed. She can laugh at herself now, but she also tells Jane how unhappy she was at first."
+          ],
+          "evidence": [
+            "And yet I meant to be uncommonly clever in taking so decided a dislike to him, without any reason.",
+            "the misfortune of speaking with bitterness is a most natural consequence of the prejudices I had been encouraging"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-16-q3",
+          "prompt": "Why do the sisters decide not to expose Wickham? Weigh each reason. Is the decision right?",
+          "facilitatorNotes": [
+            "Darcy did not authorize her to make his letter public, and Georgiana’s story must stay private; no one in Meryton would believe good of Darcy anyway; and Wickham is leaving soon. Jane adds that exposure might “ruin him” and make him “desperate.”",
+            "The reasons are decent and practical, but they leave other families unwarned. Readers can judge the choice now and again later in the novel."
+          ],
+          "evidence": [
+            "Mr. Darcy has not authorized me to make his communication public.",
+            "if I endeavour to undeceive people as to the rest of his conduct, who will believe me?",
+            "We must not make him desperate."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-16-q4",
+          "prompt": "What comfort does Mrs. Bennet find about Jane and about the Collinses? What do her speeches show about her, and why does Elizabeth hardly answer?",
+          "facilitatorNotes": [
+            "She takes comfort in imagining Jane dying of a broken heart so that Bingley will be sorry, and resents the Collinses’ prospect of inheriting Longbourn while claiming she would be ashamed to hold an entailed estate. Her feelings are about grievance and property, not her daughter’s pain.",
+            "Elizabeth’s short or silent replies are the only polite answers possible. Meanwhile she keeps back the part of Darcy’s letter about Bingley; her thought that the liberty of telling “cannot be mine till it has lost all its value” is a witty sigh."
+          ],
+          "evidence": [
+            "my comfort is, I am sure Jane will die of a broken heart, and then he will be sorry for what he has done",
+            "I should be ashamed of having one that was only entailed on me.",
+            "The liberty of communication cannot be mine till it has lost all its value!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-17",
+      "title": "Pride and Prejudice excerpt: Brighton, a father’s answer and a last word with Wickham",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow an argument between a daughter and a father who answers seriousness with jokes. Then read the dialogue with Wickham for what each speaker hides.",
+      "focus": "Elizabeth warns her father about Lydia and is turned aside by wit; she then lets Wickham feel, without saying so, that she knows the truth.",
+      "context": "Pride and Prejudice (1813) is Jane Austen’s comedy of courtship among the landowning families of an English village; this text follows an 1894 London edition. Recap: Elizabeth has come home from Kent after refusing Mr. Darcy’s proposal. His letter has shown her that the charming officer Mr. Wickham lied about him and once tried to elope with Darcy’s fifteen-year-old sister for her fortune; Elizabeth and Jane have agreed to keep this private. Wickham’s militia regiment is leaving Meryton for a summer camp at Brighton, a fashionable seaside resort (a “watering-place”), where sea-bathing was thought good for health. Colonel Forster commands the regiment.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XLI, complete; opens “THE first week of their return was soon gone. The second began. It was the last of the…”; closes “…bidding farewell, the more gentle adieus of her sisters were uttered without being heard.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-18",
+        "blocks": [
+          1239,
+          1278
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2f7e85928c86905bfe044f1d9cd2d310f08c3d608e4624d08ec3944c6d7989f6"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-17-q1",
+          "prompt": "Mr. Bennet first assumes Elizabeth has a private grievance. What does he guess, and how does she correct him?",
+          "facilitatorNotes": [
+            "He jokes that Lydia must have “frightened away some of your lovers.” Elizabeth answers that her complaint is “not of peculiar, but of general evils”: the reputation of the whole family, and Kitty’s too, not her own romance.",
+            "His guess turns a serious warning into teasing about suitors. Ask why a joke is an easy way for him to avoid the duty she is pointing to."
+          ],
+          "evidence": [
+            "What! has she frightened away some of your lovers?",
+            "It is not of peculiar, but of general evils, which I am now complaining."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-17-q2",
+          "prompt": "List Mr. Bennet’s reasons for letting Lydia go. Which are sound, and which are mainly for his own comfort?",
+          "facilitatorNotes": [
+            "Peace at home (“We shall have no peace at Longbourn”); Colonel Forster’s good sense; Lydia’s poverty making her no “object of prey”; and the hope that Brighton will “teach her her own insignificance.”",
+            "Some readers find him shrewd: Lydia may matter less among many women. Others see that the first reason gives the game away, and that his closing joke about locking her up admits how bad things are while doing nothing about it."
+          ],
+          "evidence": [
+            "We shall have no peace at Longbourn if Lydia does not go to Brighton.",
+            "she is luckily too poor to be an object of prey to anybody",
+            "Let us hope, therefore, that her being there may teach her her own insignificance."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-17-q3",
+          "prompt": "Reread the paragraph of Lydia’s daydream. How does the repeated “She saw” build the joke, and where does it land?",
+          "facilitatorNotes": [
+            "Each “She saw” enlarges the fantasy, from streets of officers to the whole camp “dazzling with scarlet,” until the last clause drops to “at least six officers at once.” The grand phrasing of “the creative eye of fancy” makes the ending comic.",
+            "The narrator shows Lydia’s mind from inside while plainly judging it. Ask whether the comedy makes Lydia seem harmless or more worrying, given Elizabeth’s warning."
+          ],
+          "evidence": [
+            "She saw, with the creative eye of fancy, the streets of that gay bathing-place covered with officers.",
+            "tenderly flirting with at least six officers at once"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-17-q4",
+          "prompt": "At the farewell dinner, Elizabeth says Darcy “improves on acquaintance,” then explains what she meant. Why does Wickham become alarmed, and what is Elizabeth doing?",
+          "facilitatorNotes": [
+            "Wickham fears she has learned the truth about him. Her explanation, that Darcy’s “disposition was better understood,” means she now knows him better, which is exactly what Wickham dreads. He tries to recover by blaming Darcy’s good conduct on fear of his aunt.",
+            "She never accuses him, yet she lets him feel the change and smiles at his excuse. Readers may admire her control or wonder whether she enjoys his discomfort; the narrator’s “possibly a mutual desire of never meeting again” leaves both readings open."
+          ],
+          "evidence": [
+            "He looked surprised, displeased, alarmed",
+            "from knowing him better, his disposition was better understood",
+            "Elizabeth could not repress a smile at this"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-18",
+      "title": "Pride and Prejudice excerpt: An unsuitable marriage and a tour cut short",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 13,
+        "totalMinutes": 27
+      },
+      "challenge": "The narrator judges Mr. Bennet’s marriage directly. Decide what is blamed and how sharply, then watch Elizabeth manage her own expectations.",
+      "focus": "A frank account of the Bennets’ marriage, a lesson about looking forward, and a change of plan that brings Elizabeth near Pemberley.",
+      "context": "Recap: despite Elizabeth’s warning, Mr. Bennet has let Lydia go to Brighton with Mrs. Forster, the colonel’s young wife, and Wickham has left with the regiment. Elizabeth had planned a summer tour of the Lake District with her uncle and aunt Gardiner, a sensible London couple. Derbyshire, further south, is the county of Mr. Darcy’s estate, Pemberley. Matlock, Chatsworth, Dovedale and the Peak were famous Derbyshire sights; “petrified spars” are mineral crystals that tourists collected there. Lambton is a fictional town.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XLII, complete; opens “HAD Elizabeth’s opinion been all drawn from her own family, she could not have formed a…”; closes “To Pemberley, therefore, they were to go.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-17",
+        "continuesTo": null,
+        "blocks": [
+          1280,
+          1297
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "fb441ad09d2100f0e131bb1021b95877ae568e6100105bd8d54babd47bd1569e"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-18-q1",
+          "prompt": "According to the first paragraph, why did Mr. Bennet marry, and what has he done since with his disappointment?",
+          "facilitatorNotes": [
+            "He was “captivated by youth and beauty” and married without judging the mind behind them; affection ended early. He consoled himself with the country, books, and laughing at his wife’s “ignorance and folly.”",
+            "The narrator calls the marriage his “own imprudence” and then gives him a mock title, “the true philosopher.” Ask whether that phrase praises him or mocks him."
+          ],
+          "evidence": [
+            "captivated by youth and beauty, and that appearance of good-humour which youth and beauty generally give",
+            "the true philosopher will derive benefit from such as are given"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-18-q2",
+          "prompt": "What does Elizabeth now see clearly about her father that she used to push out of mind? What words show how serious it is?",
+          "facilitatorNotes": [
+            "She sees his “continual breach of conjugal obligation and decorum”: by mocking his wife he exposes her “to the contempt of her own children.” She also sees his talents misused, when they might have kept his daughters respectable.",
+            "This is a hard turn for Elizabeth, who is her father’s favourite and shares his wit. Some readers will hear self-criticism in it too, since she has laughed with him."
+          ],
+          "evidence": [
+            "in exposing his wife to the contempt of her own children, was so highly reprehensible",
+            "so ill-judged a direction of talents"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-18-q3",
+          "prompt": "Elizabeth says it is “fortunate” that Jane cannot come on the tour. Explain her reasoning. Is it wisdom or a joke?",
+          "facilitatorNotes": [
+            "She notices that a long-awaited event, the regiment’s departure, did not bring the happiness she expected. So a plan with “one ceaseless source of regret” is safer than a perfect one, which is bound to disappoint.",
+            "It is both: comic self-consolation and a real observation about anticipation. The narrator’s “what has been sometimes found before” treats it as a general human truth."
+          ],
+          "evidence": [
+            "Were the whole arrangement complete, my disappointment would be certain.",
+            "an event to which she had looked forward with impatient desire, did not, in taking place, bring all the satisfaction she had promised herself"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-18-q4",
+          "prompt": "How does Elizabeth handle the plan to see Pemberley? What does her private inquiry to the chambermaid show about her?",
+          "facilitatorNotes": [
+            "She invents a dislike of great houses rather than explain, then quietly asks whether the family is at home, and only after a “most welcome negative” agrees, “with a proper air of indifference.”",
+            "She hides her feelings and checks facts before acting. Ask why the chapter ends on the flat sentence “To Pemberley, therefore, they were to go,” after so much worry."
+          ],
+          "evidence": [
+            "She must own that she was tired of great houses",
+            "with a proper air of indifference, that she had not really any dislike to the scheme",
+            "To Pemberley, therefore, they were to go."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-19",
+      "title": "Pride and Prejudice excerpt: Pemberley and its housekeeper",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Weigh a new witness. Decide how far a housekeeper’s praise should change a judgment formed in Hertfordshire.",
+      "focus": "A house and a servant’s testimony speak for Darcy before he appears; then he appears, and both are thrown off balance.",
+      "context": "Pride and Prejudice (1813) is Jane Austen’s comedy of courtship among the landowning families of an English village; this text follows an 1894 London edition. Recap: on a summer tour with her uncle and aunt Gardiner, Elizabeth has agreed to visit Pemberley, Mr. Darcy’s estate in Derbyshire, after being told the family is away. Months earlier she refused Darcy’s proposal; his letter then showed her that Mr. Wickham, whose father was steward (estate manager) to Darcy’s father, had lied about him and had tried to elope with Darcy’s young sister at Ramsgate. Great houses were often shown to visitors by the housekeeper. Miniatures are small portraits.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XLIII, from the start through Darcy’s first, hurried leave-taking; opens “ELIZABETH, as they drove along, watched for the first appearance of Pemberley Woods with…”; closes “…a few moments without saying a word, he suddenly recollected himself, and took leave.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-20",
+        "blocks": [
+          1299,
+          1351
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5afe3304c9d99ec08c3f823c9449a441a99cf4c617c7f521f4b6681c3c4ab0e1"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-19-q1",
+          "prompt": "How does the narrator describe Pemberley’s grounds and rooms? What qualities of taste does Elizabeth admire?",
+          "facilitatorNotes": [
+            "Nature “had done more” and was “so little counteracted by an awkward taste”; the stream is enlarged “without any artificial appearance”; the furniture is “neither gaudy nor uselessly fine,” with “less of splendour, and more real elegance” than Rosings.",
+            "The house is described in the words one would use for a good character: natural, unaffected, not showy. Ask whether the description is already arguing about its owner."
+          ],
+          "evidence": [
+            "where natural beauty had been so little counteracted by an awkward taste",
+            "with less of splendour, and more real elegance, than the furniture of Rosings"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-19-q2",
+          "prompt": "“And of this place … I might have been mistress!” What stops Elizabeth’s regret, and is the reason a good one?",
+          "facilitatorNotes": [
+            "She reminds herself that she would not have been allowed to invite her uncle and aunt, whom Darcy despised as tradespeople’s relations. The narrator calls it “a lucky recollection.”",
+            "“Lucky” is ironic: the reason saves her feelings, but the chapter will soon test whether it is true. Students may also notice her first thought is about the house, which some read as worldly and others as honest."
+          ],
+          "evidence": [
+            "“And of this place,” thought she, “I might have been mistress!",
+            "This was a lucky recollection—it saved her from something like regret."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-19-q3",
+          "prompt": "Mrs. Reynolds says she has “never had a cross word from him.” Why does this count so heavily with Elizabeth, and how do the Gardiners discount it?",
+          "facilitatorNotes": [
+            "A servant who has known him “ever since he was four years old” sees him at home, not in society. Elizabeth asks, “What praise is more valuable than the praise of an intelligent servant?” and thinks how much happiness depends on him as brother, landlord and master.",
+            "Mr. Gardiner puts it down to “family prejudice,” and Mrs. Gardiner remembers Wickham’s story. The chapter lets readers test testimony, the skill Elizabeth failed at with Wickham."
+          ],
+          "evidence": [
+            "I have never had a cross word from him in my life, and I have known him ever since he was four years old.",
+            "What praise is more valuable than the praise of an intelligent servant?",
+            "highly amused by the kind of family prejudice"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-19-q4",
+          "prompt": "Before the portrait in the gallery Elizabeth feels “a more gentle sensation” than ever before. How does seeing a picture prepare for seeing the man?",
+          "facilitatorNotes": [
+            "She looks for “the only face whose features would be known to her,” and finds his smile “as she remembered to have sometimes seen, when he looked at her”; the painted eyes “fixed his eyes upon herself.” Within a few paragraphs the real Darcy appears.",
+            "The meeting reverses her expectation: he is not proud but flustered, repeating his questions “so often, and in so hurried a way.” Ask what each of them seems most afraid of in those minutes."
+          ],
+          "evidence": [
+            "with such a smile over the face, as she remembered to have sometimes seen, when he looked at her",
+            "fixed his eyes upon herself",
+            "so often, and in so hurried a way, as plainly spoke the distraction of his thoughts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-20",
+      "title": "Pride and Prejudice excerpt: The walk by the river",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 12,
+        "totalMinutes": 29
+      },
+      "challenge": "Track Elizabeth’s questions to herself. Separate what she observes in Darcy from what she fears or hopes it means.",
+      "focus": "Darcy seeks out the very relations he once scorned; Elizabeth watches him meet her uncle and cannot explain the change.",
+      "context": "Recap: visiting Pemberley because the family was said to be away, Elizabeth heard the housekeeper praise Darcy as the best of masters and brothers, then met him by surprise on the lawn. Both blushed; he asked after her family with unusual gentleness and left abruptly. When Darcy proposed, he called her family connections a degradation; her uncle Gardiner is a London merchant. Bakewell is a Derbyshire town; a tête-à-tête is a private conversation between two people.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XLIII, from Elizabeth’s shame after the meeting to the end of the chapter; opens “The others then joined her, and expressed their admiration of his figure; but Elizabeth…”; closes “…Darcy’s civility, and, above all, of his wishing her to be acquainted with his sister.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-19",
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-21",
+        "blocks": [
+          1352,
+          1377
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1bf3df7e6ef0cfd5ae5dc51bccdd9bd1a8cf708e3173a872cf3b77bfad39b554"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-20-q1",
+          "prompt": "Why is Elizabeth so ashamed after the first meeting? Find the sentence that shows what she imagines Darcy thinks.",
+          "facilitatorNotes": [
+            "She fears he will think she came to put herself in his way: “It might seem as if she had purposely thrown herself in his way again!” She still thinks of him as “so vain a man,” even while she puzzles over how changed his manner is.",
+            "Her questions pile up in exclamations. Ask what the free indirect style, the narrator speaking in Elizabeth’s own excited phrases, lets readers feel."
+          ],
+          "evidence": [
+            "It might seem as if she had purposely thrown herself in his way again!",
+            "Oh! why did she come?"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-20-q2",
+          "prompt": "When Darcy asks to be introduced to her companions, Elizabeth expects him to “decamp.” What happens instead, and why does she feel triumph?",
+          "facilitatorNotes": [
+            "He is surprised to learn they are her relations but “sustained it, however, with fortitude,” turns back with them, talks with Mr. Gardiner and invites him to fish. Elizabeth “gloried” in her uncle’s good sense and manners.",
+            "Her triumph is double: Darcy behaves well, and her family is shown to have members “for whom there was no need to blush.” Ask how this answers his proposal speech."
+          ],
+          "evidence": [
+            "he sustained it, however, with fortitude",
+            "It was consoling that he should know she had some relations for whom there was no need to blush."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-20-q3",
+          "prompt": "“It cannot be for me … It is impossible that he should still love me.” How does the walk test that statement?",
+          "facilitatorNotes": [
+            "He explains his early arrival, mentions Bingley’s coming, and asks to introduce his sister, “a compliment of the highest kind.” Then they stand on the lawn talking of Matlock and Dovedale “with great perseverance” because no real subject feels safe.",
+            "Her denial is part hope: she repeats it as if to stop herself believing otherwise. Some readers take the awkward silence as proof of feeling on both sides."
+          ],
+          "evidence": [
+            "It is impossible that he should still love me.",
+            "His wish of introducing his sister to her was a compliment of the highest kind.",
+            "they talked of Matlock and Dovedale with great perseverance"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-20-q4",
+          "prompt": "The Gardiners now judge Darcy from one morning. What do they get right, what do they get wrong, and why does Elizabeth speak up for him?",
+          "facilitatorNotes": [
+            "They find him “perfectly well-behaved, polite, and unassuming” but suspect his civility is “whimsical,” and Mrs. Gardiner still credits Wickham’s story and laughs at the housekeeper’s “flaming character.”",
+            "Elizabeth, “in as guarded a manner as she could,” corrects the record about the money dealings without naming Darcy’s letter. Ask why she does it now, when she and Jane chose silence in Hertfordshire."
+          ],
+          "evidence": [
+            "He is perfectly well-behaved, polite, and unassuming",
+            "But perhaps he may be a little whimsical in his civilities",
+            "in as guarded a manner as she could"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-21",
+      "title": "Pride and Prejudice excerpt: Georgiana Darcy, and a sleepless night",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 16,
+        "discussionMinutes": 12,
+        "totalMinutes": 28
+      },
+      "challenge": "Read the visit through three sets of watchers, then follow Elizabeth’s long night of sorting out her feelings word by word.",
+      "focus": "A shy sister, a hopeful Bingley and an altered Darcy; Elizabeth names what she feels, from respect to gratitude, and stops short of love.",
+      "context": "Recap: at Pemberley Elizabeth met Darcy by surprise. He was courteous to her uncle and aunt, the merchant relations he once despised, and asked to introduce his sister, Georgiana, who is about sixteen. Mr. Bingley, who left Jane last autumn on Darcy’s advice, is staying at Pemberley with his sisters; Miss Bingley had hoped to marry Darcy and had pictured Georgiana as Bingley’s future wife. A curricle is a light two-wheeled carriage; livery is the uniform colours of a household’s servants.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XLIV, complete; opens “ELIZABETH had settled it that Mr. Darcy would bring his sister to visit her the very day…”; closes “…and a positive engagement made of his meeting some of the gentlemen at Pemberley by noon.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-20",
+        "continuesTo": "reading-9-austen-pride-prejudice-1894-22",
+        "blocks": [
+          1379,
+          1396
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0fb227012a5fd27f202766ae7b6c4279982331227741bdc3becb71cd0ab3da85"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-21-q1",
+          "prompt": "Elizabeth expected Miss Darcy to be proud. What does she find, and what does the mistake suggest about first impressions?",
+          "facilitatorNotes": [
+            "Georgiana is “exceedingly shy,” not proud, and hardly speaks “beyond a monosyllable”; “sense and good-humour” are in her face. Elizabeth had heard otherwise in Lambton.",
+            "The reversal echoes the whole novel: reserve can look like pride. Ask who else in the book has been misjudged this way."
+          ],
+          "evidence": [
+            "she had heard that Miss Darcy was exceedingly proud; but the observation of a very few minutes convinced her that she was only exceedingly shy"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-21-q2",
+          "prompt": "What signs of Jane does Elizabeth find in Bingley’s behaviour? How sure can she be of them?",
+          "facilitatorNotes": [
+            "He shows no special regard for Miss Darcy; he says it is “above eight months” since they met and names “the 26th of November”; he asks whether all her sisters are at Longbourn.",
+            "The narrator warns that “this might be imaginary” and calls her reading “anxious interpretation.” The exact date is the strongest evidence, but Elizabeth wants to find it."
+          ],
+          "evidence": [
+            "We have not met since the 26th of November, when we were all dancing together at Netherfield.",
+            "in her anxious interpretation"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-21-q3",
+          "prompt": "How do the Gardiners interpret Darcy, and how do they treat what they have guessed?",
+          "facilitatorNotes": [
+            "They decide that “one of them at least knew what it was to love” and that he is “very much in love with her,” but they do not press Elizabeth: they saw “nothing to justify inquiry.” They also now have “an interest” in believing the housekeeper.",
+            "They are tactful and fair-minded, which matters after Darcy’s scorn for them. Ask whether their wish to think well of him makes their judgment less reliable."
+          ],
+          "evidence": [
+            "one of them at least knew what it was to love",
+            "They saw much to interest, but nothing to justify inquiry.",
+            "There was now an interest, however, in believing the housekeeper"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-21-q4",
+          "prompt": "In the long paragraph about her sleepless night, Elizabeth moves through several feelings. Put them in order. Why is gratitude the one the narrator dwells on?",
+          "facilitatorNotes": [
+            "Hatred is gone; then respect, esteem, a “friendlier” feeling, and “above all” gratitude, for his loving her “still well enough to forgive” her rejection. She ends wanting to know “how far she wished that welfare to depend upon herself.”",
+            "Gratitude responds to his change and her own past injustice; it is not yet love. Some readers think Austen is cautious about sudden passion; others hear love just beneath the careful words."
+          ],
+          "evidence": [
+            "She certainly did not hate him.",
+            "It was gratitude;—gratitude, not merely for having once loved her, but for loving her still well enough to forgive all the petulance and acrimony of her manner in rejecting him",
+            "she only wanted to know how far she wished that welfare to depend upon herself"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-9-austen-pride-prejudice-1894-22",
+      "title": "Pride and Prejudice excerpt: Miss Bingley’s attack",
+      "sourceId": "austen-pride-prejudice-1894",
+      "genre": "novel",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 14,
+        "totalMinutes": 27
+      },
+      "challenge": "Watch a scene of politeness used as a weapon. Track who knows what about Wickham, and how that changes the meaning of one question.",
+      "focus": "Miss Bingley’s jealous civility backfires twice, and Darcy finally says plainly what he thinks of Elizabeth.",
+      "context": "Recap: Darcy has brought his shy sister Georgiana to meet Elizabeth at the inn in Lambton, and the Gardiners have guessed that he loves her. Elizabeth now calls at Pemberley with her aunt. Mrs. Hurst and Miss Bingley are Bingley’s sisters; Miss Bingley has long hoped to marry Darcy and has always mocked Elizabeth. Mrs. Annesley is Georgiana’s companion. Only Darcy, Georgiana and Elizabeth know of Georgiana’s near-elopement with Wickham. Novels of the time often printed a dash in place of a real county’s name, as in “——shire.”",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Pride and Prejudice, Chapter XLV, complete; opens “CONVINCED as Elizabeth now was that Miss Bingley’s dislike of her had originated in…”; closes “…and Mrs. Gardiner would have been highly gratified by her niece’s beginning the subject.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-9-austen-pride-prejudice-1894-21",
+        "continuesTo": null,
+        "blocks": [
+          1398,
+          1417
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "622ac95f8372785aef992bf2f73f4fcc993c4ef573877d5db9b9b491afdf563f"
+      },
+      "questions": [
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-22-q1",
+          "prompt": "How does Mrs. Annesley show that she is “more truly well-bred” than the Bingley sisters?",
+          "facilitatorNotes": [
+            "She breaks the awkward silence and keeps the conversation going with Mrs. Gardiner, while the sisters give only a curtsy, and Miss Bingley asks one “cold inquiry.” She also prompts Georgiana with looks to serve the refreshments.",
+            "Austen measures good breeding by effort to put others at ease, not by rank. Ask how this fits the earlier contrast between Pemberley’s housekeeper and Elizabeth’s expectations."
+          ],
+          "evidence": [
+            "whose endeavour to introduce some kind of discourse proved her to be more truly well-bred than either of the others",
+            "a cold inquiry after the health of her family"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-22-q2",
+          "prompt": "Miss Bingley asks about the ——shire militia. What does she intend, and what does she actually do?",
+          "facilitatorNotes": [
+            "She means to embarrass Elizabeth by recalling Wickham and her family’s follies with the officers. But she does not know about Georgiana’s near-elopement, so the hint wounds Georgiana and Darcy instead.",
+            "The narrator spells out the dramatic irony: “Had Miss Bingley known what pain she was then giving her beloved friend.” Elizabeth’s calm answer turns the attack into a credit to her."
+          ],
+          "evidence": [
+            "Pray, Miss Eliza, are not the ——shire militia removed from Meryton?",
+            "Not a syllable had ever reached her of Miss Darcy’s meditated elopement."
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-22-q3",
+          "prompt": "Look at Miss Bingley’s catalogue of Elizabeth’s face. What does its detail reveal about the speaker?",
+          "facilitatorNotes": [
+            "She lists face, complexion, features, nose, teeth and eyes, finding fault with each, ending with “a self-sufficiency without fashion.” The length and care show how much she has studied her rival.",
+            "The narrator’s comment, “angry people are not always wise,” turns the speech against her. Students might compare it with Darcy’s first remark about Elizabeth at the Meryton ball."
+          ],
+          "evidence": [
+            "Her nose wants character; there is nothing marked in its lines.",
+            "angry people are not always wise"
+          ]
+        },
+        {
+          "id": "reading-9-austen-pride-prejudice-1894-22-q4",
+          "prompt": "Darcy finally replies “one of the handsomest women of my acquaintance.” Why does Austen end the scene with Miss Bingley’s “satisfaction,” and then with the drive home?",
+          "facilitatorNotes": [
+            "Miss Bingley forced the remark that “gave no one any pain but herself”: the word “satisfaction” is ironic. In the carriage, aunt and niece discuss “everything but himself.”",
+            "The silence in the carriage is as telling as Darcy’s speech. Ask why neither woman will start the subject they both care about."
+          ],
+          "evidence": [
+            "for it is many months since I have considered her as one of the handsomest women of my acquaintance",
+            "Miss Bingley was left to all the satisfaction of having forced him to say what gave no one any pain but herself",
+            "They talked of his sister, his friends, his house, his fruit, of everything but himself"
+          ]
+        }
+      ]
+    }
+  ]
+}
