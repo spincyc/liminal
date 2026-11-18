@@ -200,16 +200,18 @@ function validateCorpus(courses, { complete = false, completeAdvanced = false, e
   // never blocks the K–12 gate.
   if (complete) assert(D.GRADES.filter(grade => !D.isAdvanced(grade)).every(has), "complete corpus requires 13 grades and 2340 nights");
   if (completeAdvanced) assert(D.GRADES.filter(D.isAdvanced).every(has), "complete advanced corpus requires Advanced 1–4 and 720 nights");
-  const selections = new Map(), ids = new Set(), ranges = new Map();
+  const selections = new Map(), ids = new Set(), ranges = new Map(), uniqueBlocks = new Map();
   for (const { reading } of allReadings(courses, extras)) {
     const normalized = normalizedText(blockText(reading));
     assert(!selections.has(normalized), "duplicate reading across corpus at " + reading.id + " (first at " + selections.get(normalized) + ")");
     selections.set(normalized, reading.id);
     for (const item of [reading, ...reading.questions]) { assert(!ids.has(item.id), "duplicate corpus ID " + item.id); ids.add(item.id); }
     const range = L.rangeOf(reading.excerpt);
-    if (range && library.has(reading.sourceId)) {
+    if (library.has(reading.sourceId)) {
       if (!ranges.has(reading.sourceId)) ranges.set(reading.sourceId, []);
-      ranges.get(reading.sourceId).push({ id: reading.id, ...L.span(range, library.get(reading.sourceId).blocks) });
+      const spans = ranges.get(reading.sourceId), work = library.get(reading.sourceId).blocks;
+      if (range) spans.push({ id: reading.id, ...L.span(range, work) });
+      else for (const block of coveredBlocks(reading, reading.sourceId, work, uniqueBlocks)) spans.push({ id: reading.id, start: [block, 0], end: [block, work[block].text.length] });
     }
   }
   // No passage of a work is read twice anywhere in the corpus.
@@ -223,6 +225,23 @@ function validateCorpus(courses, { complete = false, completeAdvanced = false, e
     }
   }
   return courses;
+}
+
+// A reading that keeps its own text (excerpt.inlineReason) but cites a
+// library work still reads a passage of it. The work's substantial blocks that
+// occur once in the work and appear, spacing aside, inside the reading's text
+// mark the blocks it covers, so no other reading can repeat that passage
+// unnoticed. Note anchors such as [1] and spacing are set aside, so a night
+// that leaves out an anchor or divides lines differently still covers it.
+const spaced = text => text.replace(/\[(?:\d+|[*†‡§A-Za-z])\]/g, "").replace(/\s+/g, " ").trim();
+function coveredBlocks(reading, id, work, cache) {
+  if (!cache.has(id)) {
+    const count = new Map();
+    for (const block of work) { const text = spaced(block.text); count.set(text, (count.get(text) || 0) + 1); }
+    cache.set(id, work.map((block, index) => ({ index, text: spaced(block.text) })).filter(item => item.text.length >= 30 && count.get(item.text) === 1));
+  }
+  const whole = spaced((reading.blocks || []).map(block => block.text).join(" "));
+  return cache.get(id).filter(item => whole.includes(item.text)).map(item => item.index);
 }
 
 // The date calendar (docs/daily-reading.md): calendar/spans.json, shared by
@@ -371,5 +390,5 @@ function build(options = {}) {
     + extraCount + " calendar readings, " + calendars.size + " date calendars, " + library.size + " library works.");
   return index;
 }
-module.exports = { validateGrade, validateReading, validateExtra, validateCorpus, validateCalendar, resolveCourse, resolveReading, chainLengths, loadDailyReading, libraryUses, build, textHash, blockText, normalizedText, MAX_EXTRA_CHAIN };
+module.exports = { coveredBlocks, validateGrade, validateReading, validateExtra, validateCorpus, validateCalendar, resolveCourse, resolveReading, chainLengths, loadDailyReading, libraryUses, build, textHash, blockText, normalizedText, MAX_EXTRA_CHAIN };
 if (require.main === module) { try { build({ complete: process.argv.includes("--complete"), completeAdvanced: process.argv.includes("--complete-advanced"), completeCalendar: process.argv.includes("--complete-calendar") }); } catch (error) { console.error(error.message); process.exitCode = 1; } }
