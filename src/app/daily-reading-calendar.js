@@ -9,7 +9,7 @@
   let monthNav = null;
 
   function navigation(grade, month) {
-    const previous = Cal.addMonths(month, -1), next = Cal.addMonths(month, 1), name = value => Cal.MONTHS[Number(value.slice(5)) - 1] + " " + value.slice(0, 4);
+    const previous = Cal.addMonths(month, -1), next = Cal.addMonths(month, 1), name = Cal.monthLabel;
     // Months end at 0001-01 and 9999-12: past either end there is no link.
     const step = (value, word) => { const href = value && D.monthRoute(grade, value); return href ? { href, label: word + " month: " + name(value) } : null; };
     monthNav = C.navigation({ label: "Months", compact: true, steps: ["previous", "next"], previous: step(previous, "Previous"), next: step(next, "Next") }, monthNav);
@@ -48,9 +48,35 @@
   function unavailable(grid, grade) {
     document.getElementById("dailyMonthNavigation").replaceChildren(); monthNav = null;
     const note = R.el("section", undefined, "daily-unavailable");
-    note.append(R.el("p", "The date calendar for " + D.gradeLabel(grade) + " is not available yet."));
-    const links = R.el("p"); links.append(R.link("Open the " + D.gradeLabel(grade) + " school year", D.browseRoute(grade))); note.append(links);
+    note.append(R.el("p", "The date calendar for " + D.gradeLabel(grade) + " is not available yet. " + WRITTEN_BY_YEAR));
+    note.append(links([{ label: "Open the " + D.gradeLabel(grade) + " school year", href: D.browseRoute(grade) }]));
     grid.replaceChildren(note);
   }
-  window.LiminalDailyReadingCalendar = { show, unavailable };
+  const WRITTEN_BY_YEAR = "The date calendar is written one year at a time, and a level’s calendar appears with its first written year.";
+  function links(items) {
+    const list = R.el("ul", undefined, "daily-unavailable-links");
+    items.forEach(item => { const li = R.el("li"); li.append(R.link(item.label, item.href)); list.append(li); });
+    return list;
+  }
+  // A date or month whose cycle year is not written yet (`note` from
+  // lib/reading-calendar.js unwritten): what is missing, why, and links to
+  // the nearest dates (or their months) with readings and to the school
+  // year, so the view is never empty.
+  function notice(grade, note, { month = false, heading = "h1" } = {}) {
+    const section = R.el("section", undefined, "daily-unavailable daily-unwritten"), title = R.el(heading, note.heading);
+    if (heading === "h1") title.tabIndex = -1;
+    section.append(title, R.el("p", note.text));
+    section.append(links([...note.dates.map(date => month
+      ? { label: "Open " + Cal.monthLabel(date.slice(0, 7)), href: D.monthRoute(grade, date.slice(0, 7)) }
+      : { label: "Open " + Cal.longDate(date), href: D.dateRoute(grade, date) }),
+    { label: "Open the " + D.gradeLabel(grade) + " school year", href: D.browseRoute(grade) }]));
+    return section;
+  }
+  // A month in a year not written yet keeps its month navigation, so the
+  // months either side stay one step away.
+  function unwritten(grid, { grade, month, note }) {
+    navigation(grade, month);
+    grid.replaceChildren(notice(grade, note, { month: true, heading: "h2" }));
+  }
+  window.LiminalDailyReadingCalendar = { show, unavailable, unwritten, notice, links, WRITTEN_BY_YEAR };
 })();
