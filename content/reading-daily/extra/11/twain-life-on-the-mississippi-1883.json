@@ -1,0 +1,601 @@
+{
+  "schemaVersion": 1,
+  "grade": 11,
+  "work": "twain-life-on-the-mississippi-1883",
+  "readings": [
+    {
+      "id": "reading-11-twain-life-on-the-mississippi-1883-01",
+      "title": "Painting the date 1542 — excerpt",
+      "sourceId": "twain-life-on-the-mississippi-1883",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 9,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice how Twain chooses the facts he groups around a date, and what attitude the choice reveals.",
+      "focus": "History made visible by comparison, and exploration explained by usefulness rather than curiosity.",
+      "context": "Mark Twain (Samuel Clemens, 1835–1910) grew up in Hannibal, Missouri, and was a Mississippi steamboat pilot before the Civil War. Life on the Mississippi (1883) mixes history, memoir and travel. Chapter 1 has described the river’s physical oddities. Hernando de Soto, the Spanish conquistador, reached the river in 1541–42; La Salle explored it in the 1680s. Lagniappe is a Louisiana word for a small extra given with a purchase; children “by brevet” is Twain’s joke for children born outside marriage.",
+      "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Twain’s satire mentions the Inquisition’s burnings and the Spanish robbing, killing and enslaving Native peoples.",
+      "excerpt": {
+        "locator": "Chapter 1, “The River and Its History,” from the turn to the river’s “historical history” to the end of the chapter; opens “Let us drop the Mississippi's physical history, and say a word about its historical…”; closes “…the supposition had been that it emptied into the Atlantic, or Sea of Virginia.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          15,
+          24
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "14515274eb730fab1d7dbc990dab63b7c463bfb3998b2a16f45f031409b7a361"
+      },
+      "questions": [
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-01-q1",
+          "prompt": "Why does Twain say that the bare date 1542 “states a fact without interpreting it,” and what does he compare it to?",
+          "facilitatorNotes": [
+            "A date alone is like measuring a sunset astronomically: you get “the bald fact” but do not see it. Grouping neighbouring events around it gives “perspective and color.” It is a claim about how history should be written."
+          ],
+          "evidence": [
+            "is a remark which states a fact without interpreting it",
+            "you get the bald fact of the sunset, but you don't see the sunset"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-01-q2",
+          "prompt": "Which events does Twain group around 1542, and what attitude do his choices reveal?",
+          "facilitatorNotes": [
+            "The choices are not neutral: the Inquisition “roasting, and racking,” Henry VIII’s “harem,” “absurd chivalry,” and the remark that wit outlasts holiness. “Religion was in a peculiarly blooming condition” is irony. Dating the river becomes a satire of Old World violence and piety."
+          ],
+          "evidence": [
+            "religion was in a peculiarly blooming condition",
+            "wit and indelicacy being sometimes better literature preservers than holiness"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-01-q3",
+          "prompt": "How does Twain make the long gap between De Soto and the next explorer felt, and what is he mocking in the North Pole joke?",
+          "facilitatorNotes": [
+            "He measures the interval by Shakespeare’s birth, life and long burial. Then he contrasts that apathy with modern exploring fever: fifteen expeditions for one Arctic creek, fourteen of them searching for each other."
+          ],
+          "evidence": [
+            "In our day we don't allow a hundred and thirty years to elapse between glimpses of a marvel.",
+            "one to explore the creek, and the other fourteen to hunt for each other"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-01-q4",
+          "prompt": "Why, according to Twain, did no one want the river for a century and a half, and why did La Salle’s generation suddenly want it?",
+          "facilitatorNotes": [
+            "Nobody needed it, so it stayed “out of the market”; interest came only with the belief that it led to the Gulf of California and so to China. Exploration follows use and profit. His sketch of how Spanish, English and French colonists treated Native peoples (robbery, whiskey, the fur trade) points the same way."
+          ],
+          "evidence": [
+            "so, for a century and a half the Mississippi remained out of the market and undisturbed",
+            "afforded a short cut from Canada to China"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-twain-life-on-the-mississippi-1883-02",
+      "title": "Joliet and Marquette on the river — excerpt",
+      "sourceId": "twain-life-on-the-mississippi-1883",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Separate Twain’s voice from the historian he quotes, and decide what each contributes.",
+      "focus": "Exploration told twice over: in a historian’s grave prose and in Twain’s deflating asides.",
+      "context": "Twain retells the French exploration of the Mississippi, quoting the American historian Francis Parkman. Louis Joliet, a merchant, and Jacques Marquette, a Jesuit priest, reached the river in 1673. Palaver means long talk; fol-de-rol is trifling ceremony.",
+      "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Twain’s humour about Native hosts relies on period condescension, and his sources call Native peoples “savages.”",
+      "excerpt": {
+        "locator": "Chapter 2, “The River and Its Explorers,” from La Salle’s privileges to the feast at the mouth of the Arkansas; opens “LA SALLE himself sued for certain high privileges, and they were graciously accorded him…”; closes “…so in place of a fight there was a feast, and plenty of pleasant palaver and fol-de-rol.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-twain-life-on-the-mississippi-1883-03",
+        "blocks": [
+          27,
+          36
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2c16c519a5198db63d7be2b964dde2e626f18c49164fc94e51c1944d31a400b0"
+      },
+      "questions": [
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-02-q1",
+          "prompt": "What “privileges” did Louis XIV grant La Salle, and what does the list reveal?",
+          "facilitatorNotes": [
+            "The privilege to explore, build forts, stake out continents, hand them to the king, and pay for it all himself. The ironic list shows who profits; “of inflated memory” deflates the king."
+          ],
+          "evidence": [
+            "and hand the same over to the king, and pay the expenses himself",
+            "Louis XIV. of inflated memory"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-02-q2",
+          "prompt": "Twain quotes Parkman’s stately prose, then adds his own six-foot catfish. What does the mixture of voices do?",
+          "facilitatorNotes": [
+            "Parkman supplies grave narrative; Twain adds comic deflation and the authority of a river man who has seen such a fish. The reader gets the romance of exploration and its comic underside at once."
+          ],
+          "evidence": [
+            "Before them a wide and rapid current coursed athwart their way",
+            "he had a fair right to think the river's roaring demon was come"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-02-q3",
+          "prompt": "How does Twain treat the explorers’ meetings with Native peoples, and whom does his humour target?",
+          "facilitatorNotes": [
+            "Warned of ferocity, the explorers are feasted instead; at the Arkansas a threatened attack becomes a feast after an appeal to the Virgin. Twain mocks European piety, but also the chief’s dress and his hosts’ manners. Readers should notice condescension sitting beside the irony."
+          ],
+          "evidence": [
+            "were hospitably received and well treated--if to be received by an Indian chief who has taken off his last rag",
+            "so in place of a fight there was a feast"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-02-q4",
+          "prompt": "“The river was an awful solitude, then. And it is now, over most of its stretch.” What does this present-tense aside add?",
+          "facilitatorNotes": [
+            "It joins 1673 to 1883: the modern traveller confirms the old account, and the river is not as tamed as readers might assume. It also reminds us that the narrator knows the river at first hand."
+          ],
+          "evidence": [
+            "The river was an awful solitude, then. And it is now, over most of its stretch."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-twain-life-on-the-mississippi-1883-03",
+      "title": "La Salle’s cross and a voice inaudible at half a mile — excerpt",
+      "sourceId": "twain-life-on-the-mississippi-1883",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Track Twain’s irony about the taking of land, and test it against the historian’s closing sentence.",
+      "focus": "Proof, possession and the absurdity of claiming a continent by ceremony.",
+      "context": "Recap: Joliet and Marquette reached the Mississippi in 1673, floated south through weeks of solitude, were feasted rather than attacked by the peoples they met, and turned back at the mouth of the Arkansas. Henri de Tonty was La Salle’s lieutenant; the tontine was a form of shared annuity; Napoleon, Arkansas, was a river town; in 1803 Napoleon Bonaparte sold Louisiana to the United States.",
+      "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Twain calls the taking of the land robbery while also using “savages” and “simple children of the forest”; a quoted description mentions skulls of sacrificed enemies.",
+      "excerpt": {
+        "locator": "Chapter 2, “The River and Its Explorers,” from Joliet and Marquette’s return to the end of the chapter; opens “They had proved to their satisfaction, that the Mississippi did not empty into the Gulf…”; closes “…of Versailles; and all by virtue of a feeble human voice, inaudible at half a mile.'”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-twain-life-on-the-mississippi-1883-02",
+        "continuesTo": null,
+        "blocks": [
+          37,
+          46
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "65df46ea62cc5bb6c29622c94c2c40463c3b910050ea70bfd9a7855708384991"
+      },
+      "questions": [
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-03-q1",
+          "prompt": "“But belief is not proof.” What did Joliet and Marquette believe, and what did La Salle add?",
+          "facilitatorNotes": [
+            "They believed the river reached the Gulf of Mexico; La Salle followed it to the Gulf in 1682 and proved it. Twain’s line also states a principle he applies elsewhere in the book."
+          ],
+          "evidence": [
+            "They believed it emptied into the Gulf of Mexico.",
+            "But belief is not proof."
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-03-q2",
+          "prompt": "How does Twain’s account of the cross at the Arkansas differ in tone from the Parkman passage about spring just before it?",
+          "facilitatorNotes": [
+            "Parkman writes of “the realms of spring”; Twain writes of a “confiscation-cross,” a priest who “consecrated the robbery with a hymn,” heaven offered in exchange for land, and “Louis the Putrid.” He names the ceremony as theft and calls its ironies colossal."
+          ],
+          "evidence": [
+            "while the priest piously consecrated the robbery with a hymn",
+            "Nobody smiled at these colossal ironies."
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-03-q3",
+          "prompt": "What is Twain’s point about the site of the future town of Napoleon, Arkansas?",
+          "facilitatorNotes": [
+            "Three of the four great events happened there by chance, and Napoleon later “gave the country back”: restitution “not to the owners, but to their white American heirs.” The joke turns the irony on the United States as well as France."
+          ],
+          "evidence": [
+            "make restitution, not to the owners, but to their white American heirs"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-03-q4",
+          "prompt": "The chapter ends with Parkman’s grand summary. How does its last phrase work after Twain’s commentary?",
+          "facilitatorNotes": [
+            "Parkman lists a continent of plains, rivers and tribes passing to “the Sultan of Versailles,” then ends on “a feeble human voice, inaudible at half a mile.” After Twain’s satire the disproportion reads as irony; readers may debate whether Parkman meant it admiringly or ironically himself."
+          ],
+          "evidence": [
+            "passed beneath the sceptre of the Sultan of Versailles",
+            "and all by virtue of a feeble human voice, inaudible at half a mile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-twain-life-on-the-mississippi-1883-04",
+      "title": "Keelboatmen and a borrowed chapter — excerpt",
+      "sourceId": "twain-life-on-the-mississippi-1883",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Read a portrait built from opposites, and ask why a historian would borrow a chapter of fiction.",
+      "focus": "The rise and death of keelboating, and fiction offered as evidence of how people talked.",
+      "context": "Twain moves from exploration to the river’s first commerce. Keelboats and broadhorns were large hand-powered barges; to warp a boat is to haul it upstream by ropes; Natchez-under-the-hill was a notorious riverfront district. The novel he mentions became Adventures of Huckleberry Finn (1884), which left this chapter out.",
+      "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Twain’s summary of the novel calls Jim “a slave of the widow's” and “the negro,” period terms.",
+      "excerpt": {
+        "locator": "Chapter 3, “Frescoes from the Past,” from the slow settlement of the river to Twain’s introduction of the Huck Finn chapter; opens “APPARENTLY the river was ready for business, now. But no, the distribution of a…”; closes “…under cover of the darkness, and gathering the needed information by eavesdropping:--”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-twain-life-on-the-mississippi-1883-05",
+        "blocks": [
+          49,
+          55
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b17a3c4a3bd4a5dc93d26d56a1d2cf8c04d57444b108dcf107fd07d4e75a693a"
+      },
+      "questions": [
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-04-q1",
+          "prompt": "How does Twain make the slowness of settlement and commerce vivid?",
+          "facilitatorNotes": [
+            "The same device as with 1542: a list of European events between La Salle and real river commerce, seven English sovereigns, American independence, the French Revolution, Napoleon. Then the one-line punch: “there were snails in those days.”"
+          ],
+          "evidence": [
+            "Truly, there were snails in those days."
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-04-q2",
+          "prompt": "Twain’s description of the keelboatmen is a long list of contrasts. What picture of them results?",
+          "facilitatorNotes": [
+            "Rude, hard-drinking, profane, prodigious braggarts, “yet” honest, faithful to duty and “picturesquely magnanimous.” The list piles up vices before turning, so the praise lands with force. The portrait is affectionate without being sentimental."
+          ],
+          "evidence": [
+            "prodigious braggarts; yet, in the main, honest, trustworthy, faithful to promises and duty"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-04-q3",
+          "prompt": "How did the steamboat change the keelboatmen’s lives?",
+          "facilitatorNotes": [
+            "Steamers first took the upstream trade, then all of it; keelboating “died a permanent death,” and the men became deck hands, mates, pilots or raftsmen. A new technology ends a way of life, while younger raftsmen keep its manners alive by imitation."
+          ],
+          "evidence": [
+            "keelboating died a permanent death",
+            "the ex-keelboatmen and their admiringly patterning successors"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-04-q4",
+          "prompt": "Why does Twain “throw in” a chapter from a novel, and what does his introduction tell the reader to expect?",
+          "facilitatorNotes": [
+            "To show “keelboat talk and manners” more vividly than description could, using fiction as a kind of evidence. The setup gives Huck’s situation: a runaway boy and Jim, escaping slavery, past Cairo in a fog, and a night swim to eavesdrop. Readers can ask whether fiction can serve as documentary."
+          ],
+          "evidence": [
+            "By way of illustrating keelboat talk and manners, and that now-departed and hardly-remembered raft-life",
+            "gathering the needed information by eavesdropping"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-twain-life-on-the-mississippi-1883-05",
+      "title": "Huck Finn on the raft: the song and the brag — excerpt",
+      "sourceId": "twain-life-on-the-mississippi-1883",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Enjoy the tall talk, then ask what the narrator’s flat voice lets the reader see.",
+      "focus": "Frontier bragging as performance, punctured by a small man’s fists.",
+      "context": "Recap: Twain has described the rough, boastful, honest keelboatmen and introduced a chapter from his novel in progress: Huck Finn, floating downriver with Jim, a man escaping slavery, swims to a big raft at night to learn whether they have passed Cairo. Sweeps are long oars; a break-down is a lively dance; to “pat juba” is to keep time by clapping and slapping the body. Huck narrates in his own dialect.",
+      "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Huck’s narration twice uses a racial slur, as speech of his time and place, and the word “Injun”; the raftsmen’s brags boast of killing, and a fistfight follows.",
+      "excerpt": {
+        "locator": "Chapter 3, “Frescoes from the Past,” from Huck’s swim to the raft to the keelboat break-down after the fight; opens “But you know a young person can't wait very well when he is impatient to find a thing…”; closes “…that up very long without getting winded, so by and by they settled around the jug again.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-twain-life-on-the-mississippi-1883-04",
+        "continuesTo": "reading-11-twain-life-on-the-mississippi-1883-06",
+        "blocks": [
+          56,
+          73
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b420d004527689566f45a1ebc4280d2a5ea3bd7b0f99430e547cdd3a9581f703"
+      },
+      "questions": [
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-05-q1",
+          "prompt": "How does Huck’s first description of Jim show both respect and the prejudice he has absorbed?",
+          "facilitatorNotes": [
+            "Jim has “a wonderful level head” and starts the plan, yet Huck qualifies the praise with a slur and “for a.” The narration exposes his society’s assumptions; the novel goes on to test them."
+          ],
+          "evidence": [
+            "Jim had a wonderful level head",
+            "he could most always start a good plan when you wanted one"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-05-q2",
+          "prompt": "Compare the two brags. What do their exaggerations share, and how does the second outdo the first?",
+          "facilitatorNotes": [
+            "Both are tall-talk boasting in the frontier tradition: Bob is sired by a hurricane and breakfasts on alligators; the Child of Calamity drags the Atlantic with the lines of latitude and bites the moon. The second moves from monstrous appetite to cosmic scale."
+          ],
+          "evidence": [
+            "Sired by a hurricane, dam'd by an earthquake",
+            "I use the meridians of longitude and parallels of latitude for a seine"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-05-q3",
+          "prompt": "What does the arrival of “little Davy” reveal about the two braggarts?",
+          "facilitatorNotes": [
+            "He thrashes both in two minutes: the boasts were performance. Afterwards they shake hands solemnly and claim they always respected each other. Twain satirises bravado without making the men simply contemptible."
+          ],
+          "evidence": [
+            "Come back here, you couple of chicken-livered cowards, and I'll thrash the two of ye!",
+            "said they had always respected each other and was willing to let bygones be bygones"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-05-q4",
+          "prompt": "How does Huck’s matter-of-fact voice shape the comedy?",
+          "facilitatorNotes": [
+            "He reports outrageous scenes deadpan, without judging: the song “was kind of poor,” and Davy simply “done it, too.” The gap between the wild events and the plain telling lets the reader see the absurdity."
+          ],
+          "evidence": [
+            "It was kind of poor",
+            "And he done it, too."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-twain-life-on-the-mississippi-1883-06",
+      "title": "Huck Finn on the raft: Ed’s yarn begins — excerpt",
+      "sourceId": "twain-life-on-the-mississippi-1883",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Separate river lore from tall tale, and notice how a storyteller builds suspense.",
+      "focus": "A storyteller claims eyewitness authority for a ghost story.",
+      "context": "Recap: hidden among bundles of shingles on the raft, Huck has watched two raftsmen out-brag each other until a small man named Davy thrashed them both. The crew settles round the jug again. “Stabboard” is starboard, the right-hand side; a crossing is where a raft moves from one side of the channel to the other.",
+      "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. The talk includes “what ought to be done with the Injuns,” a period slur.",
+      "excerpt": {
+        "locator": "Chapter 3, “Frescoes from the Past,” from the raftsmen’s talk to the captain’s doubts about the barrel; opens “They sung 'jolly, jolly raftsman's the life for me,' with a rousing chorus, and then they…”; closes “…it was in a little better current than what we was. He said it would leave by and by.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-twain-life-on-the-mississippi-1883-05",
+        "continuesTo": "reading-11-twain-life-on-the-mississippi-1883-07",
+        "blocks": [
+          74,
+          97
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e0aa6091d58ac8a6781bf02b1d55d764a856952f9dfea942d0831f8405b6e9ef"
+      },
+      "questions": [
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-06-q1",
+          "prompt": "What does the list of conversation topics in the first paragraph tell you about the raftsmen?",
+          "facilitatorNotes": [
+            "Hogs, women, fires, kings, cat fights, fits and rivers: practical, random and opinionated talk, ready to slide into theory, as it does with Ed’s claims about muddy water."
+          ],
+          "evidence": [
+            "and next about how to make cats fight"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-06-q2",
+          "prompt": "How seriously should a reader take the claims about Mississippi water and the St. Louis graveyards?",
+          "facilitatorNotes": [
+            "Nutritious mud and eight-hundred-foot graveyard trees are tall tale; the band of clear Ohio water along the Mississippi’s east side is real river lore. Mixing fact and exaggeration is the raftsmen’s style, and Twain’s."
+          ],
+          "evidence": [
+            "a man that drunk Mississippi water could grow corn in his stomach",
+            "you'll find a wide band of clear water all the way down the east side of the Mississippi"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-06-q3",
+          "prompt": "Ed asks, “Why don’t you tell something that you’ve seen yourselves?” How does he make his story seem trustworthy, and how does he build suspense?",
+          "facilitatorNotes": [
+            "He claims to have been there and gives exact details: five years ago, a moonlit night, his post at the starboard oar. The barrel approaches slowly, and Dick Allbright’s evasive answers drag out the reveal that it is “hanted.”"
+          ],
+          "evidence": [
+            "Why don't you tell something that you've seen yourselves?",
+            "I've seen it before; lots has seen it; they says it's a hanted bar'l."
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-06-q4",
+          "prompt": "The captain of the watch offers a natural explanation for the barrel. Why include it?",
+          "facilitatorNotes": [
+            "A sceptic gives the tale something to defeat, raising the stakes. His explanation, a faster current, is the kind of river reasoning the rest of Twain’s book values, so readers can watch which account the story rewards."
+          ],
+          "evidence": [
+            "The captain of the watch said he didn't believe in it.",
+            "he reckoned the bar'l gained on us because it was in a little better current than what we was"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-twain-life-on-the-mississippi-1883-07",
+      "title": "Huck Finn on the raft: the haunted barrel — excerpt",
+      "sourceId": "twain-life-on-the-mississippi-1883",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Track how a ghost story escalates, and how its listeners take it apart.",
+      "focus": "Dread, deflation and disbelief in a tall tale told among raftsmen.",
+      "context": "Recap: Ed has begun a story he says he witnessed: on another raft a barrel followed the crew by moonlight, and a raftsman named Dick Allbright called it haunted, while the captain blamed the current. To “plant” the dead is to bury them; Orleans is New Orleans.",
+      "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. Ed’s tale includes men killed by lightning, a father who choked his baby and hid the body, a threatened lynching, and the father’s drowning with the child.",
+      "excerpt": {
+        "locator": "Chapter 3, “Frescoes from the Past,” from the barrel’s first night beside the raft to Ed walking off amid the crew’s jeers; opens “'So then we went to talking about other things, and we had a song, and then a breakdown;…”; closes “…they yelling and jeering at him, and roaring and laughing so you could hear them a mile.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-twain-life-on-the-mississippi-1883-06",
+        "continuesTo": "reading-11-twain-life-on-the-mississippi-1883-08",
+        "blocks": [
+          98,
+          123
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "371e5511d0fdb981556de319c2c179176d5ebecd7bd533f71c59e0a9cf3ccc2f"
+      },
+      "questions": [
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-07-q1",
+          "prompt": "How does Ed build dread across three nights?",
+          "facilitatorNotes": [
+            "Repetition with escalation: songs fall flat, storms come, ankles are sprained, then lightning kills two men; the crew drinks alone, huddles, and shuns Dick. Each night the barrel returns to its “old roost.”"
+          ],
+          "evidence": [
+            "here she comes again, and took her old roost on the stabboard side",
+            "the lightning killed two men of the after watch, and crippled two more"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-07-q2",
+          "prompt": "“Crippled them how, says you? Why, sprained their ankles!” What happens to the tone here?",
+          "facilitatorNotes": [
+            "An anticlimax inside a horror story: the grim tally collapses into comedy. It may also hint that Ed’s yarn is not to be trusted."
+          ],
+          "evidence": [
+            "Crippled them how, says you? Why, sprained their ankles!"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-07-q3",
+          "prompt": "How does Ed’s account of Dick Allbright’s confession complicate the listener’s response?",
+          "facilitatorNotes": [
+            "Dick’s fine phrases (“my own lamented darling”) and Ed’s remark on his way with words make him a performer; Ed doubts that he did not mean to kill the child, yet ends calling him a “poor old suffering soul.” Sympathy, suspicion and the grotesque are mixed."
+          ],
+          "evidence": [
+            "for he could curl his tongue around the bulliest words in the language",
+            "which was prob'ly a lie"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-07-q4",
+          "prompt": "How do the listeners’ questions dismantle Ed’s story?",
+          "facilitatorNotes": [
+            "Who wept, how could the body keep, was the child’s hair parted, where are the statistics, and was Ed both of the men killed? Bill offers to swallow a thirteenth of the yarn if the others take the rest. Ed’s claim to eyewitness truth meets the crew’s certainty that it is a tall tale."
+          ],
+          "evidence": [
+            "Have you got the papers for them statistics, Edmund?",
+            "Thar's thirteen of us. I can swaller a thirteenth of the yarn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-twain-life-on-the-mississippi-1883-08",
+      "title": "Huck Finn on the raft: Charles William Allbright — excerpt",
+      "sourceId": "twain-life-on-the-mississippi-1883",
+      "genre": "memoir",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a boy improvising lies under pressure, and notice what the episode finally serves.",
+      "focus": "Huck caught and questioned, and the novel put back to work as history.",
+      "context": "Recap: Ed’s ghost story of the haunted barrel ended in a father’s confession and the crew’s jeering disbelief. As the men go to split a watermelon, one of them puts his hand on Huck, still hiding naked among the shingle bundles. A scow is a flat-bottomed boat; to rawhide is to whip; a cub is a youngster.",
+      "contentNote": "Historical memoir and humour; judgments, measurements and language belong to the nineteenth-century narrator and should not be treated as current factual guidance. The raftsmen threaten to throw Huck overboard and to paint him, and one warns that other raftsmen would whip him.",
+      "excerpt": {
+        "locator": "Chapter 3, “Frescoes from the Past,” from Huck’s discovery among the shingles to the end of the chapter; opens “'Boys, we'll split a watermelon on that,' says the Child of Calamity; and he come…”; closes “…as displayed there. I believe there has been nothing like it elsewhere in the world.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-twain-life-on-the-mississippi-1883-07",
+        "continuesTo": null,
+        "blocks": [
+          124,
+          166
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "52745c652ffccbbc5eaf0fbccac5a95a723e04da27e73b44ce3fa6c0b345a54e"
+      },
+      "questions": [
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-08-q1",
+          "prompt": "Why is “Charles William Allbright” such a good answer in the moment, though Huck says he “didn’t know what to say”?",
+          "facilitatorNotes": [
+            "He borrows the dead baby’s name from Ed’s story, and the crew roars with laughter, which eases their hostility. Huck’s instinct for improvisation saves him."
+          ],
+          "evidence": [
+            "Charles William Allbright, sir.",
+            "I was mighty glad I said that, because maybe laughing would get them in a better humor"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-08-q2",
+          "prompt": "How does Huck’s cover story change under questioning, and what does Davy want from him?",
+          "facilitatorNotes": [
+            "He claims a trading scow and a message for a man in Cairo, still fishing for the information he came for; laughed down, he retreats to “first trip,” then admits he only wanted a ride. Davy wants “a straight story” and protects him once he gets something like one."
+          ],
+          "evidence": [
+            "Come, now, tell a straight story, and nobody'll hurt you",
+            "It was only to get a ride on the raft. All boys does that."
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-08-q3",
+          "prompt": "What does Davy’s behaviour here and earlier in the chapter add up to?",
+          "facilitatorNotes": [
+            "He thrashed the braggarts, stops the painting because the boy is “nothing but a cub,” questions him fairly and lets him go with a warning. He embodies the “picturesquely magnanimous” side Twain claimed for these men."
+          ],
+          "evidence": [
+            "He 's nothing but a cub.",
+            "some raftsmen would rawhide you till you were black and blue!"
+          ]
+        },
+        {
+          "id": "reading-11-twain-life-on-the-mississippi-1883-08-q4",
+          "prompt": "Twain’s closing comment says the boy “did not get the information he was after.” How does that frame the episode, and where does the chapter turn next?",
+          "facilitatorNotes": [
+            "The episode failed Huck’s purpose but served Twain’s, a “glimpse of the departed raftsman.” The fiction is put to documentary use, and the last sentence turns to the book’s central subject, the “science of piloting.”"
+          ],
+          "evidence": [
+            "The boy did not get the information he was after, but his adventure has furnished the glimpse of the departed raftsman",
+            "the marvellous science of piloting"
+          ]
+        }
+      ]
+    }
+  ]
+}

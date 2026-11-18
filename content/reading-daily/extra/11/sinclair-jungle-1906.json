@@ -1,0 +1,1145 @@
+{
+  "schemaVersion": 1,
+  "grade": 11,
+  "work": "sinclair-jungle-1906",
+  "readings": [
+    {
+      "id": "reading-11-sinclair-jungle-1906-01",
+      "title": "The Jungle: Marija’s song and the dancers (Chapter I)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a narrator who moves from comic spectator to informant in the middle of a paragraph.",
+      "focus": "The wedding as a portrait of a community, and the injuries hidden inside it.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. Chapter I is the wedding feast (veselija) of Jurgis and Ona Lukoszaite in the back room of a saloon near the stockyards, told in the present tense. Marija Berczynskas is Ona’s cousin; Dede (grandfather) Antanas is Jurgis’s father; Teta (aunt) Elzbieta is Ona’s stepmother; Tamoszius Kuszleika leads the three hired musicians. Ona has been too excited to eat. Marija’s Lithuanian song is a lover’s farewell, roughly: “Farewell, little flower, my dearest; farewell, happiness, to poor me; I see the Most High has so ordained, that I must toil in the world alone.” A beef-boner cuts the meat from the bones.",
+      "contentNote": "The narrator describes the immigrant guests with affectionate but sometimes condescending comedy. The passage tells of a worker’s knife wounds and blood-poisoning.",
+      "excerpt": {
+        "locator": "Chapter I, from Marija’s song through the dancers Jadvyga and Mikolas; opens “In this crisis, however, she is saved by Marija Berczynskas, whom the muses suddenly…”; closes “…cents an hour, but, perhaps, these people have never looked into a beef-boner's hands.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-sinclair-jungle-1906-02",
+        "blocks": [
+          19,
+          25
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2e4d1dc8cedff97130646649f46faea23ab3488c5307db973d70e2fedf3686d2"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-01-q1",
+          "prompt": "Sinclair introduces Marija with a carving-fork, “brawny arms,” and a voice that “leaves no portion of the room vacant.” What does the comic portrait tell you about her, and what fact about her work does it slip in?",
+          "facilitatorNotes": [
+            "She is loud, strong, and in command; the musicians follow her “averaging one note behind.” Her strength comes from the canning factory, where she lifts fourteen-pound cans all day. The comedy (“you cannot help thinking of a horse”) is affectionate but looks down on her; readers can disagree about whether it is warm or condescending, and can notice that even the joke carries information about labor."
+          ],
+          "evidence": [
+            "all day long she handles cans of beef that weigh fourteen pounds",
+            "averaging one note behind"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-01-q2",
+          "prompt": "What has America already done to Dede Antanas in six months, and how does his speech change the mood of the feast?",
+          "facilitatorNotes": [
+            "His cough, gone in the country, has returned in the cold damp of Durham’s pickle-rooms. Convinced he has “not much longer to stay,” he makes the guests weep, and Jokubas Szedvilas has to cheer them with a jollier speech. The cough is planted early, and a reader may suspect it will matter."
+          ],
+          "evidence": [
+            "the change has not done him good",
+            "he has not much longer to stay with his children"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-01-q3",
+          "prompt": "Compare the older guests with the young ones: their clothes, their dances, their language. What does the contrast suggest about what America is doing to this community?",
+          "facilitatorNotes": [
+            "The old keep embroidered waistcoats and “dances from home” performed “with grave solemnity”; the young avoid such things, speak English, and wear ready-made clothes, though the young men still keep their hats on indoors. Assimilation is under way and not quite complete. Some readers see loss; others see the young people’s choices as their own."
+          ],
+          "evidence": [
+            "All these things are carefully avoided by the young",
+            "strange and complicated steps which they execute with grave solemnity"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-01-q4",
+          "prompt": "“You would smile, perhaps, to see them—but you would not smile if you knew all the story.” How does this sentence change what the reader is doing, and what is the force of the paragraph’s last sentence about statistics?",
+          "facilitatorNotes": [
+            "The reader is moved from watching a sweet couple to hearing why they cannot marry. The narration even puts “you” at the cutting bench (“Your hands are slippery”). The last sentence sets an average wage against the evidence of a scarred hand: Sinclair’s method of answering numbers with bodies. Some readers find the turn sentimental; others find it the novel’s argument in small."
+          ],
+          "evidence": [
+            "you would not smile if you knew all the story",
+            "perhaps, these people have never looked into a beef-boner's hands"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-02",
+      "title": "The Jungle: the acziavimas (Chapter I)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Hear the narrator argue with himself about whether the feast is foolish or glorious.",
+      "focus": "A ritual that costs more than a year’s wages, and why the family will not give it up.",
+      "context": "Recap: at the wedding feast of Jurgis and Ona, Marija has taught the band her song, Dede Antanas has made a tearful speech, and the dancing has begun; among the couples is Jadvyga, engaged for five years to a beef-boner whose injuries keep postponing their marriage. Here Sinclair explains the acziavimas, the ceremonial dance in which the guests pay. “Stay, thou art fair!” comes from Goethe’s Faust, who bets his soul that no moment will ever make him wish it to stay. Ponas means “Mr.”; Marija’s Lithuanian cries mean roughly “Away! Wait! Out of the way!”",
+      "contentNote": "The guests drink heavily, and a three-year-old is given beer.",
+      "excerpt": {
+        "locator": "Chapter I, from the Lithuanian dance through Marija’s accident with little Sebastijonas; opens “When Tamoszius and his companions stop for a rest, as perforce they must, now and then,…”; closes “…upon the bar, and standing beside him and holding to his lips a foaming schooner of beer.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-sinclair-jungle-1906-01",
+        "continuesTo": null,
+        "blocks": [
+          26,
+          32
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ec85586400a363acea90040ad41812287400e9e78958fdaf0a3d8531d5641017"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-02-q1",
+          "prompt": "What is the acziavimas, and how is it supposed to pay for the wedding? Why does Sinclair stop to set its cost beside the guests’ yearly earnings?",
+          "facilitatorNotes": [
+            "Each man dances with the bride and drops money in Teta Elzbieta’s hat, “according to his power”; the guests are expected to cover the feast and leave something over for the couple. A feast of two or three hundred dollars is set against men in ice-cold cellars and children whose parents “lied to get them their places.” The comparison makes the ritual’s generosity and its risk visible at once."
+          ],
+          "evidence": [
+            "Into it he drops a sum of money",
+            "three hundred dollars is more than the year's income of many a person in this room"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-02-q2",
+          "prompt": "The next paragraph opens, “It is very imprudent, it is tragic—but, ah, it is so beautiful!” What is the difference, as the narrator puts it, between being defeated and acknowledging defeat, and why does the veselija matter so much?",
+          "facilitatorNotes": [
+            "To give up the feast would be to admit that poverty has won. Once in a lifetime a person may “break his chains” and treat life as “a bubble” to toss like a juggler’s ball, then go back to toil “and live upon the memory.” The cave and shadows recall Plato. Readers can debate whether the narrator honors this defiance or pities it; the paragraph does both."
+          ],
+          "evidence": [
+            "not merely to be defeated, but to acknowledge defeat",
+            "once in his lifetime he could break his chains, and feel his wings, and behold the sun"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-02-q3",
+          "prompt": "At “Endlessly the dancers swung round and round,” the narration moves from present tense to past. What else changes in the scene at that point?",
+          "facilitatorNotes": [
+            "Night has fallen, the room is dim with two smoky lamps, and the musicians play a single tune “wearily, ploddingly,” over and over; when they stop, Marija flies at them. The present-tense spectacle gives way to endurance. Some readers will take the tense change as deliberate, others as a slip; either way it marks a turn from celebration to exhaustion."
+          ],
+          "evidence": [
+            "Endlessly the dancers swung round and round",
+            "played only one tune, wearily, ploddingly"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-02-q4",
+          "prompt": "Marija “threatened horrid murder a hundred times a day, and would weep over the injury of a fly.” How does the accident with little Sebastijonas show both sides of her, and what does its ending suggest about the feast?",
+          "facilitatorNotes": [
+            "Her kick slams the door on the child; then she smothers him with kisses and makes peace by holding beer to his lips. The scene is comic and uneasy at once: drink is the feast’s fuel, offered even to a three-year-old. Readers may laugh, wince, or both, and the text seems to invite both."
+          ],
+          "evidence": [
+            "the soul of Marija was alone unconquered",
+            "holding to his lips a foaming schooner of beer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-03",
+      "title": "The Jungle: after midnight, and a promise (Chapter I, end)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Connect an image of a dance that cannot stop to the rules of the workplace.",
+      "focus": "How the feast’s ending previews the working week, and the meaning of Jurgis’s vow.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. Chapter I is the wedding feast (veselija) of Jurgis and Ona Lukoszaite in the back room of a saloon near the stockyards, told in the present tense. Marija Berczynskas is Ona’s cousin; Dede (grandfather) Antanas is Jurgis’s father; Teta (aunt) Elzbieta is Ona’s stepmother; Tamoszius Kuszleika leads the three hired musicians. Earlier in the evening the family learned that many guests had eaten and drunk without paying into the collection, leaving the young couple in debt. A worker’s brass check was his numbered tag; turning it to the wall meant he had lost his place. “In the Good Old Summer Time” was a popular American song of 1902.",
+      "contentNote": "Heavy drinking and fighting; the narrator jokes grimly about police clubbing and about men whose work is killing animals.",
+      "excerpt": {
+        "locator": "Chapter I, from the stupor after midnight to the end of the chapter; opens “The last sob of little Sebastijonas has been stifled, and the orchestra has once more…”; closes “…her again: \"Leave it to me; leave it to me. I will earn more money—I will work harder.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          37,
+          43
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "954b624a23756aac2c75aeb556c7e8728a7784dd88e64a89f49df946c9a07d77"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-03-q1",
+          "prompt": "How does Sinclair make the dancing after midnight feel different from the dancing earlier in the evening? Point to the words that do the work.",
+          "facilitatorNotes": [
+            "The dancers move “with eyes fixed upon vacancy,” in “a constantly growing stupor”; couples do not see each other’s faces; drink turns maudlin or quarrelsome. Motion continues without joy, which prepares the image of the tune no one can stop."
+          ],
+          "evidence": [
+            "with eyes fixed upon vacancy, as if they were only half conscious",
+            "in a constantly growing stupor"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-03-q2",
+          "prompt": "Explain the joke about “head-cracking” at the end of the first paragraph. At whom, finally, is it aimed?",
+          "facilitatorNotes": [
+            "On the surface it explains the policeman’s club and men who “practise on their friends” after cracking animals’ heads all day. Its last sentence turns on the reader: a few men do the killing “for the whole of the cultured world,” which eats the meat and congratulates itself. Some readers find the humor callous toward the workers; others read it as an attack on the comfortable."
+          ],
+          "evidence": [
+            "men who have to crack the heads of animals all day seem to get into the habit",
+            "a very few men can do the painfully necessary work of head-cracking for the whole of the cultured world"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-03-q3",
+          "prompt": "Why does the narrator call the tune “In the good old summer time” hypnotic? Connect it to what the same paragraph says about seven o’clock on Monday morning.",
+          "facilitatorNotes": [
+            "The repeated line and its “endlessly-recurring dominant” hold the dancers as the work rhythm holds them: no one can think of stopping, and in a few hours they must all be at their places, where a minute late costs an hour’s pay. An American song has replaced the Lithuanian ones; its cheerful words sound ironic in a stupefied room in the small hours."
+          ],
+          "evidence": [
+            "endlessly-recurring dominant",
+            "If one of them be a minute late, he will be docked an hour's pay"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-03-q4",
+          "prompt": "The chapter ends with Jurgis’s words, “I will work harder.” What has the reader just learned about Ona’s request, and how should we hear his promise?",
+          "facilitatorNotes": [
+            "Ona asked for one unpaid day after her wedding and was refused, because there are always others willing to work “as you wish.” Her terror (“It will ruin us!”) shows she knows the rules better than he does. Jurgis’s vow is tender and strong; it is also the answer of a man who believes effort will be rewarded, and the narration has just shown a system that does not care. Readers can hear it as hope, as tragic irony, or as both."
+          ],
+          "evidence": [
+            "who has asked for a holiday the day after her wedding-day, a holiday without pay, and been refused",
+            "I will work harder."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-04",
+      "title": "The Jungle: a job and the sea of pens (Chapter III, opening)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Separate what the characters see from what the narrator wants the reader to see.",
+      "focus": "Hiring by the body, pride in a “marvellous machine,” and the first sight of the stockyards.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. The family (Jurgis; his father Antanas; Ona, her stepmother Teta Elzbieta and the children; her cousin Marija; Elzbieta’s brother Jonas) has just reached Packingtown and is lodging with a widow. Jokubas Szedvilas, who keeps a delicatessen, has lived there for years. In the hiring scene the boss tries a few Lithuanian words, and “Je” means yes.",
+      "contentNote": "The cattle and hogs are on their way to slaughter; the killing itself comes later in the chapter.",
+      "excerpt": {
+        "locator": "Chapter III, from Jokubas’s friend the policeman through the guide’s jest about the squeal; opens “In his capacity as delicatessen vender, Jokubas Szedvilas had many acquaintances. Among…”; closes “…the stock in trade of all the guides, is the one gleam of humor that you will find there.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          71,
+          94
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "bada7fff93a8327b3d2346c805e39555aad6d3f6a73e7dcfa6285b3c676ce8b7"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-04-q1",
+          "prompt": "Read the hiring scene as a script. How much language do Jurgis and the boss share, and what does the scene show about how workers are chosen?",
+          "facilitatorNotes": [
+            "Almost none: a few English words, a few Lithuanian, and mime. The boss picks Jurgis for “his form towering above the rest” within half an hour; the job, shovelling guts, is agreed before Jurgis understands it. Jurgis has rehearsed one word, “Lít-uanian.” The scene is comic, and it is also chilling about a man hired for his body."
+          ],
+          "evidence": [
+            "one of the bosses noticed his form towering above the rest",
+            "Shovel guts?"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-04-q2",
+          "prompt": "Jokubas shows the yards “with the air of a country gentleman escorting a party of visitors over his estate.” What does the narrator mean by “The packers might own the land, but he claimed the landscape”?",
+          "facilitatorNotes": [
+            "Jokubas owns nothing there, but he takes pride in the spectacle and repeats statistics from a newspaper article to make his guests cry out. Jurgis shares the feeling, glad to be “a cog in this marvellous machine.” The narrator treats this borrowed pride gently but ironically: the workers admire a machine that belongs to someone else."
+          ],
+          "evidence": [
+            "The packers might own the land, but he claimed the landscape",
+            "a cog in this marvellous machine"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-04-q3",
+          "prompt": "Find the sentence that calls the stream of animals “a very river of death.” Why does the narrator add at once that “Our friends were not poetical”?",
+          "facilitatorNotes": [
+            "The narrator supplies the metaphor the family cannot see: creatures “pressing on to their fate, all unsuspicious.” The family sees only “the wonderful efficiency of it all.” The gap is dramatic irony, and the image invites the reader to apply it to the newly hired men as well. Some readers find the hint heavy-handed; it is at least deliberate."
+          ],
+          "evidence": [
+            "a very river of death",
+            "Our friends were not poetical, and the sight suggested to them no metaphors of human destiny"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-04-q4",
+          "prompt": "The section ends with the guide’s joke and a tiny plot of grass. What do the only green thing and the only “gleam of humor” in Packingtown say about the place?",
+          "facilitatorNotes": [
+            "The jest that the packers use “everything about the hog except the squeal” praises an efficiency that turns every living thing into product, and even the joke is not the guide’s own but “the stock in trade of all the guides.” Nature and humor survive only as tokens. Readers might notice that Sinclair’s own narration is often funny, which makes the claim a pointed exaggeration."
+          ],
+          "evidence": [
+            "They use everything about the hog except the squeal.",
+            "the one gleam of humor that you will find there"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-05",
+      "title": "The Jungle: the beef floor and the wonderful machine (Chapter III, end)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Read a catalogue for its argument, and test the source of its numbers.",
+      "focus": "Specialized labor, total use of the animal, and Jurgis’s faith in the system.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. Jurgis has been hired at Brown’s, to start the next morning, and Jokubas Szedvilas is taking the family on the public tour of the packing-plants; they have just watched the hogs killed at Durham’s. Kosher meat is killed and certified under Jewish law. The last paragraph refers to the federal antitrust law, which required large firms to compete rather than combine.",
+      "contentNote": "Close description of cattle being stunned, bled, and cut up.",
+      "excerpt": {
+        "locator": "Chapter III, from the floor where the waste was treated to the end of the chapter; opens “The party descended to the next floor, where the various waste materials were treated.…”; closes “…the land, and ordered to try to ruin each other under penalty of fine and imprisonment!”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          106,
+          112
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a8ff342c252a2f381593c10ecdcb71caf7d51d3e0b87c6781ca2d9b540f2f7a2"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-05-q1",
+          "prompt": "Name the jobs on the beef-killing floor in the order the carcass meets them. What does this division of labor do to each man’s skill and to the pace?",
+          "facilitatorNotes": [
+            "Knocker, butcher, headsman, floorsman, skinners, splitters, gutters, men with hoses. Each man makes “two or three specific cuts” and runs on to the next carcass, “at a pace with which there is nothing to be compared except a football game.” Skill becomes narrow and very fast; the floor half an inch deep in blood must be slippery, “but no one could have guessed this.” Admiration and danger sit side by side."
+          ],
+          "evidence": [
+            "each man having his task to do; generally this would consist of only two or three specific cuts",
+            "at a pace with which there is nothing to be compared except a football game"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-05-q2",
+          "prompt": "The long paragraph on by-products is a catalogue. What is its effect, and how does it answer the guide’s morning joke about the squeal?",
+          "facilitatorNotes": [
+            "Horns become combs and buttons, blood albumen, entrails violin strings: “No tiniest particle of organic matter was wasted.” The list overwhelms the reader as the plant overwhelms the visitors, and it makes the joke literal. The violin strings may recall Tamoszius’s fiddle at the wedding; readers can decide whether the echo is grim or merely curious."
+          ],
+          "evidence": [
+            "No tiniest particle of organic matter was wasted in Durham's.",
+            "violin strings from the ill-smelling entrails"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-05-q3",
+          "prompt": "Where do the great numbers at the end of the catalogue come from, and how far should a reader trust them?",
+          "facilitatorNotes": [
+            "They come “so Jokubas informed them,” from a man who earlier repeated statistics from a newspaper. The narrator marks them as hearsay and as the plant’s own boast. The scale was real (the packers did feed millions), so a fair reading trusts the size while noticing who is speaking."
+          ],
+          "evidence": [
+            "so Jokubas informed them",
+            "the greatest aggregation of labor and capital ever gathered in one place"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-05-q4",
+          "prompt": "Jurgis feels the establishment “had taken him under its protection.” How do the comparison with the universe and the closing fact about Brown and Durham prepare the reader to judge that faith?",
+          "facilitatorNotes": [
+            "He treats a business like nature, beyond questioning, to be accepted with gratitude “for the sunshine and the rain.” The last sentence notes that the rival firms were required by law to compete, though the previous paragraph has just said they “were now really all one.” His ignorance of business is the point. Some students will defend his gratitude as natural for a man who has just found work."
+          ],
+          "evidence": [
+            "it was a thing as tremendous as the universe",
+            "were even required to be deadly rivals by the law of the land"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-06",
+      "title": "The Jungle: the house on the circular (Chapter IV)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Analyze a sales pitch and a family argument as two kinds of persuasion.",
+      "focus": "How hope, deference, and necessity decide a purchase the family cannot judge.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. In their first days in Packingtown Jurgis has been hired at Brown’s, and the family has pored over a colorful advertisement for new houses sold on a “no-rent plan”: a payment down and the rest month by month instead of rent. Teta Elzbieta is Ona’s stepmother, Szedvilas the delicatessen keeper Jokubas, and Jonas her brother.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter IV, from Marija’s new job through the family’s decision to buy; opens “The next day Marija went to see her \"forelady,\" and was told to report the first of the…”; closes “…by their delay. They drew a deep breath when he told them that they were still in time.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          121,
+          127
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ad666818d5f4ed205aced985d63423943aa6f2fffa555472f9286c5203b247fc"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-06-q1",
+          "prompt": "List the pressure tactics the agent uses before the family has seen the house. Which works best on them, and why?",
+          "facilitatorNotes": [
+            "He claims to have “no interest” in the sale, says the company is closing and the houses may be gone, and offers to telephone “at his own expense” to hold one. Scarcity and a favor work on Teta Elzbieta’s visible grief. Every tactic depends on their trusting a “gentleman.”"
+          ],
+          "evidence": [
+            "he had himself no interest in their sale",
+            "there was just a little uncertainty as to whether there was a single house left",
+            "he would send a telephone message at his own expense"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-06-q2",
+          "prompt": "Check Ona’s arithmetic. What does the family’s monthly budget assume?",
+          "facilitatorNotes": [
+            "That the killing-gang keeps working “at full pressure,” that Marija and Jonas pay board and share the house, and that old Antanas finds work. The phrase “ought surely to be sufficient” is the narrator’s quiet irony: the budget has no room for slack weeks, illness, or costs they do not know about."
+          ],
+          "evidence": [
+            "That would make ninety-three dollars.",
+            "which ought surely to be sufficient for the support of a family of twelve"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-06-q3",
+          "prompt": "What do they notice wrong with the house, and why do they “shut their eyes to other defects”?",
+          "facilitatorNotes": [
+            "It does not match the picture; the street is unpaved and unlit; the neighboring houses look old and empty; the basement and attic are unfinished. But the agent never stops talking, and the sink with running water outdoes anything Teta Elzbieta had dreamed of. Their habit of deference to a “gentleman” keeps them from pressing questions."
+          ],
+          "evidence": [
+            "the house was not as it was shown in the picture",
+            "the sink in the kitchen, with running water and a faucet",
+            "except with deference and humility"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-06-q4",
+          "prompt": "Szedvilas tells them, “It was all robbery, for a poor man,” and Jonas answers by pointing at Szedvilas’s shop. Who wins the argument, and what actually decides it?",
+          "facilitatorNotes": [
+            "Neither: Jonas’s reply attacks the speaker rather than the claim, which may still be true. The decision comes from necessity (they must leave their lodging) and from Jurgis’s sense that “the man of the family” must decide and carry it through. The closing irony, that they “drew a deep breath” to learn they were “still in time,” leaves the reader uneasy. Some readers judge the family naive; others see reasonable people with no good choice."
+          ],
+          "evidence": [
+            "It was all robbery, for a poor man.",
+            "the delicatessen business was a failure, according to its proprietor",
+            "It was the kind of thing the man of the family had to decide and carry through"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-07",
+      "title": "The Jungle: “Feather your nest” (Chapter V, opening)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Hear irony in a narrator who sounds as if he is praising.",
+      "focus": "Advertising, buying on installments, and a family’s happiness in its first home.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. The family has signed the papers for the house it was shown, after a lawyer assured them that the contract was “all right,” and has been lodging with a widow, Aniele. The brand names of the advertisements are Sinclair’s inventions. A toilet-set was a washbasin, pitcher, and dishes for a bedroom stand.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Chapter V, from the bought home through the first mornings in it; opens “They had bought their home. It was hard for them to realize that the wonderful house was…”; closes “…butter—and some onions and a piece of cheese, and so they would tramp away to work.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          143,
+          148
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "2ea4d71300426d2a8991f75c0987680b0ce0ac1d4dd88056f8b5e971958f9f36"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-07-q1",
+          "prompt": "“It was quite touching, the zeal of people to see that his health and happiness were provided for.” What is the tone of this sentence, and how do the advertisements Sinclair quotes support it?",
+          "facilitatorNotes": [
+            "It is ironic: the signs that sell cigars also sell a cure for smoking; one advertisement is “tenderly solicitous,” another slaps you on the back. Packingtown’s advertisements are “adapted to the peculiar population,” newcomers who are easy to reach and to sell to."
+          ],
+          "evidence": [
+            "It was quite touching, the zeal of people",
+            "Here was a remedy for the smoking habit"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-07-q2",
+          "prompt": "Why does the “Feather your nest” advertisement catch the family, and what does the section’s last sentence do with its image?",
+          "facilitatorNotes": [
+            "Its pictures of birds speak to people who cannot read it, and only “a small part of the money need be had at once.” Elzbieta signs another paper; a plate arrives broken and a saucepan missing. The closing joke, that the nest “had not included feathers for quite so many birds,” turns the advertisement’s image back on it: the family is twelve people."
+          ],
+          "evidence": [
+            "only a small part of the money need be had at once",
+            "The nest which had been advertised had not included feathers for quite so many birds as there were in this family."
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-07-q3",
+          "prompt": "What does the comedy of the hammer scene show about Jurgis and Ona, and about the family’s money?",
+          "facilitatorNotes": [
+            "Ona would not spend fifteen cents more for a bigger hammer; Jurgis hits his fingers, Ona hurts her thumb, and the thumb must be kissed. The shopping trips are “a perpetual adventure.” Their thrift and their affection are both on display, and the scene is one of the novel’s happiest."
+          ],
+          "evidence": [
+            "Ona had refused to let him pay fifteen cents more and get a bigger hammer",
+            "which necessitated the thumb's being kissed by Jurgis"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-07-q4",
+          "prompt": "How does the last paragraph keep the reader’s pleasure in the new home and doubt about it in play together?",
+          "facilitatorNotes": [
+            "The house is “really home,” yet the men sleep on “the very level floor,” Elzbieta wakes them at a quarter past five, and they carry bread and lard because “they could not afford butter.” The narrator states these facts without comment. Some readers see dignity in the routine; others see the trap beginning to close."
+          ],
+          "evidence": [
+            "it was really home, and almost as exciting as the placard had described it",
+            "having nothing but the very level floor to rest on for the present",
+            "they could not afford butter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-08",
+      "title": "The Jungle: what Antanas, Marija and Jonas learned (Chapter V, end)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Weigh secondhand reports against what a character sees for himself.",
+      "focus": "Graft, disposable workers, and diseased meat passed by the inspectors.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. Older workers have told Jurgis that men are speeded up and thrown out, and that the bosses take graft. His father, old Antanas, has searched for work for weeks; a man has offered to get him a place if he hands over a third of his wages. A “squeedgie” man used a squeegee, a rubber-edged mop. “Slunk” calves are unborn calves; “downers” are animals that arrive injured or dead. Consumption is tuberculosis. The name “Jones” for Jonas is a misprint in the 1906 edition, kept as printed.",
+      "contentNote": "Describes spoiled and diseased meat sold as food, a worker crushed to death, and a sick woman dismissed. Period words describe a disabled child (“a cripple, and an epileptic”), and a sentence reports bosses kicking non-English-speaking workers “like so many dogs.”",
+      "excerpt": {
+        "locator": "Chapter V, from old Antanas’s bargain for a job to the end of the chapter; opens “He tried to persuade his father to have nothing to do with the offer. But old Antanas had…”; closes “…to see at last how those might be right who had laughed at him for his faith in America.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          158,
+          163
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3fec2bb49159ba81acccdc3e88e655178f730584a654b254aeba5306dcd1f56d"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-08-q1",
+          "prompt": "Why does Antanas, “the meekest man that God ever put on earth,” come home cursing Durham’s after two days? What exactly is he made to do?",
+          "facilitatorNotes": [
+            "He mops up the pickle, which drains into a sink and is “used over again forever,” and cleans the trap of meat scraps and refuse, which go back into the trucks “with the rest of the meat.” He has also paid a third of his wages for the job. The meekest man’s anger is evidence in itself."
+          ],
+          "evidence": [
+            "where it was caught and used over again forever",
+            "shovel their contents into one of the trucks with the rest of the meat"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-08-q2",
+          "prompt": "Marija and Jonas each learn that they got their jobs by “the misfortune of some other person.” How do the two stories make that point, and why does Sinclair give the dismissed woman a name and a history?",
+          "facilitatorNotes": [
+            "Marija replaced Mary Dennis, who had worked there fifteen years and was turned off when consumption weakened her; Jonas replaced a man crushed by a truck “in a horrible and nameless manner.” Naming Mary makes her a person, where the system treats her as a part; the crushed man stays nameless, which is its own comment. Readers may note that the new hands’ luck is built on others’ ruin and that they have no choice about it."
+          ],
+          "evidence": [
+            "She had taken the place of an Irish woman",
+            "had gotten his job by the misfortune of some other person"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-08-q3",
+          "prompt": "How do the boss and the government inspector deal with a “slunk” calf? What does their stroll suggest?",
+          "facilitatorNotes": [
+            "The boss starts a conversation, the two “stroll away,” and the carcass is cleaned out; the unborn calves are butchered for meat, skins and all. The inspector is either complicit or easily distracted; either way inspection is a ritual. The phrase “used even the skins” echoes the morning boast that nothing is wasted."
+          ],
+          "evidence": [
+            "the boss would start up a conversation with the government inspector, and the two would stroll away",
+            "and used even the skins of them"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-08-q4",
+          "prompt": "Why is the night of the “downers,” rather than the stories about his father, Mary Dennis, or Jonas’s predecessor, the moment that shakes Jurgis’s faith in America?",
+          "facilitatorNotes": [
+            "He sees it himself and takes part; the carcasses are “carefully scattered” so they cannot be identified, which shows deliberate concealment, not accident. Some readers will say he should have been moved sooner by the human stories, and that Sinclair is criticizing him; others that belief often changes only through what one witnesses."
+          ],
+          "evidence": [
+            "trifles compared to what Jurgis saw with his own eyes",
+            "being carefully scattered here and there so that they could not be identified",
+            "how those might be right who had laughed at him for his faith in America"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-09",
+      "title": "The Jungle: old Antanas and the winter (Chapter VII)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Track an analogy from nature that the narrator uses against itself.",
+      "focus": "A worker’s death from his work, and winter as the season of replacement.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. By the first winter the family has learned that the house payments carry interest, so Ona and Teta Elzbieta’s young son Stanislovas have gone to work too. Old Antanas, Jurgis’s father, works in a cold, wet cellar at Durham’s. Saltpetre (potassium nitrate) was used in curing meat. The “One-Horse Shay” is Oliver Wendell Holmes’s comic poem about a carriage built so evenly that it lasted a hundred years and then fell to pieces all at once. A hack is a hired carriage.",
+      "contentNote": "A slow death from work-related illness, described plainly; men freeze at the factory gates and in the snow.",
+      "excerpt": {
+        "locator": "Chapter VII, from old Antanas’s last illness through the winter winds off the lake; opens “Then there was old Antanas. The winter came, and the place where he worked was a dark,…”; closes “…many a man gave out in these battles with the snowdrifts, and lay down and fell asleep.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-sinclair-jungle-1906-10",
+        "blocks": [
+          204,
+          207
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "913b484a1d3099eb70e7a1a4d7670c5a486005839c73615dfa1d3cd1f12c165b"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-09-q1",
+          "prompt": "Trace the stages of Antanas’s decline. Where does the narration report flatly, and where does it allow itself a comment?",
+          "facilitatorNotes": [
+            "Cough, chemical sores, collapse, wasting, hemorrhage, death: most of it is reported without comment, down to the bones poking through. The narrator comments in small touches: the “One-Horse Shay,” the doctor who “mercifully” spoke out of the old man’s hearing. The restraint makes the facts heavier."
+          ],
+          "evidence": [
+            "it was the saltpetre",
+            "like the One-Horse Shay",
+            "Mercifully the doctor did not say this so that the old man could hear"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-09-q2",
+          "prompt": "Jurgis bribes a man to tell his father the job is being kept, and bargains for the funeral “in the presence of witnesses.” What has Jurgis learned, and what has it cost him?",
+          "facilitatorNotes": [
+            "He has learned the methods of the place: a lie bought for his father’s comfort, a contract guarded against swindles. The cost is grief itself: he “had no time to indulge in memories and grief.” Some readers see the bribe as love; others as the first sign that Packingtown is changing him."
+          ],
+          "evidence": [
+            "Jurgis had bribed one of the men to come one Sunday afternoon and say they had",
+            "Jurgis, who was learning things fast",
+            "had no time to indulge in memories and grief"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-09-q3",
+          "prompt": "How does the forest analogy in the second paragraph work? Whose way of seeing does it take, and does the narrator share it?",
+          "facilitatorNotes": [
+            "Weak branches lose the battle for light and are stripped by winter; in Packingtown the weak die “in hordes” and are replaced. The machine image (“cogs,” “the replacing of damaged parts”) is the packers’ view, in which a death is only a vacancy. Calling it natural is the point being attacked. Readers who know Darwin’s “struggle for existence” can compare how Sinclair borrows it."
+          ],
+          "evidence": [
+            "the branches of the trees do battle for light, and some of them lose and die",
+            "now was the time for the renovating of it, and the replacing of damaged parts",
+            "there was a chance for a new hand"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-09-q4",
+          "prompt": "The ice-cutting story ends with a joke about a “printer’s error.” Explain the joke. Is it funny?",
+          "facilitatorNotes": [
+            "Three thousand starving men answered an advertisement for two hundred; Durham’s chose twenty, so the number was either a mistake or a lie. The dry last sentence lands after a night in a jammed station-house and a riot. Black humor sharpens the anger for some readers; others find the joke too light for the suffering."
+          ],
+          "evidence": [
+            "proved to have been a printer's error",
+            "fighting with each other for a chance for life"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-10",
+      "title": "The Jungle: cold, the killing-beds and Whiskey Row (Chapter VII, end)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow a chain of causes, then judge a sudden change of style.",
+      "focus": "How cold, work, and the saloons combine, and the cold made into a monster.",
+      "context": "Recap: old Antanas has died of a cough and saltpetre sores after Jurgis bribed a man to tell him his job was being kept, and Packingtown’s first winter has come: thousands of starving men at the gates and blizzards off the lake. Stanislovas, Teta Elzbieta’s young son, works at a lard machine for five cents an hour. A “car” is a streetcar. The packers paid wages by check.",
+      "contentNote": "A child’s frozen ears break off; men work with knives in freezing blood; drinking draws whole families in.",
+      "excerpt": {
+        "locator": "Chapter VII, from the children in the cold to the end of the chapter; opens “And if it was bad for the men, one may imagine how the women and children fared. Some…”; closes “…a little nearer to the time when it would be their turn to be shaken from the tree.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-sinclair-jungle-1906-09",
+        "continuesTo": null,
+        "blocks": [
+          208,
+          212
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "387551c9c9a76755be72ece2d37bb989ec414b0894598216a225dc2fd584abc0"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-10-q1",
+          "prompt": "What happens to the boy who works beside Stanislovas, and how is it told? Why might Sinclair choose so flat a sentence?",
+          "facilitatorNotes": [
+            "His frozen ears are rubbed and “break them short off” in two or three rubs. The plain report forces the reader to supply the horror, as the world in the novel does not. The result is Stanislovas’s terror of the cold, “almost a mania,” and Jurgis carrying him on his shoulders."
+          ],
+          "evidence": [
+            "it took only two or three rubs to break them short off",
+            "a terror of the cold that was almost a mania"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-10-q2",
+          "prompt": "Find two images in the killing-beds paragraph that make the cold and the work a single danger. What does the last sentence suggest?",
+          "facilitatorNotes": [
+            "Blood freezes on the men; a hand on a knife may leave its skin; feet wrapped in sacks become “lumps the size of the feet of an elephant”; steam blinds men running with knives. The last clause sets men beside cattle as things slaughtered on the same floor."
+          ],
+          "evidence": [
+            "you would run a chance of leaving your skin on it",
+            "great lumps the size of the feet of an elephant",
+            "there were not more men slaughtered than cattle"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-10-q3",
+          "prompt": "What is the saloons’ “one condition,” and why is the men’s belief that they get “something for nothing” mistaken? What final fact “completes the chain”?",
+          "facilitatorNotes": [
+            "You must drink. One drink means treating and being treated, warmth that wears off, late suppers, and wives and children drawn in “as the current of a river drifts down-stream.” The packers pay by check, which only a saloon will cash. The names (“Home Circle,” “Firesides,” “Union Headquarters”) offer the home and solidarity the men lack."
+          ],
+          "evidence": [
+            "There was only one condition attached,—you must drink.",
+            "they believed that by it they were getting something for nothing",
+            "the packers all paid their men in checks"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-10-q4",
+          "prompt": "In the last paragraph the cold becomes “a living thing, a demon-presence.” How does the style change, and does the heightened language strengthen or weaken the documentary account before it?",
+          "facilitatorNotes": [
+            "Plain facts (one small stove, children in one bed) give way to a Gothic and cosmic register (“a power primeval, cosmic”), and the paragraph ends on the forest image from the start of the chapter, the branch “shaken from the tree.” Some readers find it overwrought; others think it gives the terror from inside, after the documentary detail has earned it."
+          ],
+          "evidence": [
+            "a living thing, a demon-presence in the room",
+            "a power primeval, cosmic",
+            "to be shaken from the tree"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-11",
+      "title": "The Jungle: the price of a house (Chapter X, opening)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Track how Sinclair turns a list of expenses and seasons into an argument.",
+      "focus": "A family that can never stop thinking about money, and the classes of Packingtown.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. In Chapter IX Jurgis joined the union and learned of the graft and the diseased meat of Packingtown. The family (Jurgis; his wife, Ona; her stepmother, Teta Elzbieta, with her children; Elzbieta’s brother Jonas; and Ona’s cousin Marija) has bought a house on instalments from an agent who kept quiet about many of its costs. Marija, laid off when the canning-factory closed, has lent the family her savings and is engaged to the violinist Tamoszius. Jurgis works on the killing-beds at Durham’s. The plague of flies is one of the plagues of Egypt in Exodus.",
+      "contentNote": "Describes filthy and deadly working conditions on the killing-beds, including men dying of sunstroke.",
+      "excerpt": {
+        "locator": "Chapter X, from the family’s second spring to the line between the office and the killing-beds; opens “During the early part of the winter the family had had money enough to live and a little…”; closes “…the people who worked with their hands were a class apart, and were made to feel it.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-sinclair-jungle-1906-12",
+        "blocks": [
+          248,
+          253
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "79d0b11b743a613b7e1cdcf3535e46f257f700792618f922a06b72511155b414"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-11-q1",
+          "prompt": "List the unforeseen costs that come upon the family. Why does Sinclair give the exact figures?",
+          "facilitatorNotes": [
+            "The plumber at seventy-five cents an hour, with as much again for a man who only watched; insurance at seven dollars; taxes, water-tax, a sewer and a sidewalk. Exact sums let the reader do the family’s arithmetic and see the trap the agent hid until the deed was signed."
+          ],
+          "evidence": [
+            "and seventy-five cents for another man who had stood and watched him",
+            "the deed was signed, and so the agent had no longer anything to gain by keeping quiet"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-11-q2",
+          "prompt": "“This was in truth not living; it was scarcely even existing.” What makes the family’s life worse than physical hardship alone?",
+          "facilitatorNotes": [
+            "The constant strain of worry: never a single instant free from the thought of money. Their question, whether people who do their best ought not to be able to keep alive, is the moral claim of the whole novel."
+          ],
+          "evidence": [
+            "a single instant in which they were not haunted by the thought of money",
+            "when people did their best, ought they not to be able to keep alive?"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-11-q3",
+          "prompt": "How does each season bring “trials of its own”? Which details of the summer on the killing-beds are hardest to read, and why does Sinclair include them?",
+          "facilitatorNotes": [
+            "Spring rains turn streets to bogs; summer brings sunstroke (three men dead in a day), rivers of hot blood, a stench of years, no place to wash and plagues of flies. Even a fly becomes torture because the men’s hands are never free. Sinclair makes the reader feel the work in the body."
+          ],
+          "evidence": [
+            "each season had its trials, as they found",
+            "it was a torture like being burned alive"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-11-q4",
+          "prompt": "Sinclair speaks to the reader directly: “Perhaps the summer-time suggests to you thoughts of the country.” Why? What does the bookkeeper show about class in Packingtown?",
+          "facilitatorNotes": [
+            "The address sets the reader’s leisure against workers who never see a green thing. The bookkeeper, poorly paid himself, would rather be a gentleman than rub elbows with a laborer: those who work with their hands are “a class apart,” divided even from other poor men."
+          ],
+          "evidence": [
+            "Perhaps the summer-time suggests to you thoughts of the country, visions of green fields and mountains and sparkling lakes.",
+            "the people who worked with their hands were a class apart, and were made to feel it"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-12",
+      "title": "The Jungle: Marija loses her place (Chapter X)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Notice whose judgment the narrator repeats, and whether he seems to mean it.",
+      "focus": "Marija’s fight for her pay, the lesson the family draws, and the price of a job.",
+      "context": "Recap: the family has found that their house carries hidden costs (insurance, taxes, a sewer and a sidewalk), and has lived through a hungry spring and a summer of heat, filth and flies in the packing-houses, where the workers are “a class apart.” Ona is expecting a baby. Marija has joined the union and urges it on the foreign workers. A forelady supervises women workers; to be “confined” is to give birth; a beef-trimmer cuts meat from the bones.",
+      "contentNote": "A worker is cheated of her pay and fired for complaining; a woman replaces a man at little more than half his pay; cold, wet work brings poisoned wounds.",
+      "excerpt": {
+        "locator": "Chapter X, from the reopening of the canning-factory to Marija’s work as a beef-trimmer; opens “In the late spring the canning-factory started up again, and so once more Marija was…”; closes “…wailing melodies the voices of the unborn generations which cried out in her for life.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-sinclair-jungle-1906-11",
+        "continuesTo": "reading-11-sinclair-jungle-1906-13",
+        "blocks": [
+          254,
+          260
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "7561de41dcffdebe9212a77e646880d54515e28b1823bb9c3b8b5f4421a089f7"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-12-q1",
+          "prompt": "What reasons are given for Marija’s firing, and which does the narrator call “the known facts”? Why might the chapter leave the cause uncertain?",
+          "facilitatorNotes": [
+            "Marija blames her union work, and the packers did keep spies. The known facts are the miscounted cans and her complaints, first to the forelady and then to the superintendent. A worker can never know why she is dismissed, and either way there is “no redress.”"
+          ],
+          "evidence": [
+            "Marija insisted that it was because of her activity in the union.",
+            "when this happened, there was no redress"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-12-q2",
+          "prompt": "“It was a cruel lesson; but then Marija was headstrong.” Whose voice is this? Does the novel agree?",
+          "facilitatorNotes": [
+            "It echoes the forelady and the cautious neighbors (“know her place, as the forelady expressed it”). The novel shows what the lesson teaches, to hang on to a job “come what will,” and the irony condemns a system that trains workers to submit."
+          ],
+          "evidence": [
+            "The next time she would know her place, as the forelady expressed it",
+            "that when you have once got a job in Packingtown, you hang on to it, come what will"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-12-q3",
+          "prompt": "How does Marija get her new job, and what does the boss’s choice show?",
+          "facilitatorNotes": [
+            "He sees her strength, fires a man and pays her a little more than half the man’s wage. Labor is bought as cheaply as possible, and the women’s lower pay is used against the men. Marija, meanwhile, gives up on the union."
+          ],
+          "evidence": [
+            "he discharged a man and put Marija to do his work, paying her a little more than half what he had been paying before",
+            "She lost all interest in the union"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-12-q4",
+          "prompt": "Why does the passage end with Tamoszius’s violin and “the voices of the unborn generations”? What has the new work cost Marija besides her health?",
+          "facilitatorNotes": [
+            "Her marriage is put off again, since the family cannot do without her wages. The music voices a longing for children and a home of her own, the future the wedding of Chapter I seemed to promise."
+          ],
+          "evidence": [
+            "they had waited a long time, and they could wait a little longer",
+            "the voices of the unborn generations which cried out in her for life"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-13",
+      "title": "The Jungle: little Antanas (Chapter X, end)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Hold two strands together, a corrupt workplace and a new baby, and see how each changes the other.",
+      "focus": "Ona’s danger at work, the birth of her son, and the cost of going back too soon.",
+      "context": "Recap: Marija lost her place at the canning-factory after protesting a miscount of her pay, and after weeks of hunting now trims beef in a cold, wet room for little more than half a man’s wage; she and Tamoszius must put off their marriage again. Ona sews hams at Brown’s packing-house and is about to have her baby; Jurgis has insisted on a doctor rather than a midwife. A kept-woman is a man’s paid mistress; a bawdy-house is a brothel. Chattel slavery is slavery in which people are owned as property. Patent medicines were bottled remedies sold without prescription.",
+      "contentNote": "Describes the sexual exploitation of women workers by a forelady and a loading-boss, prostitution, and a mother’s lasting illness after returning to work a week after giving birth; Sinclair calls the workers “low-class and mostly foreign” and the boss “a coarse, red-faced Irishman.”",
+      "excerpt": {
+        "locator": "Chapter X, from Ona’s forelady to the end of the chapter; opens “Marija's lesson came just in time to save Ona from a similar fate. Ona, too, was…”; closes “…chasing the phantom of good health, and losing it because she was too poor to continue.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-sinclair-jungle-1906-12",
+        "continuesTo": null,
+        "blocks": [
+          261,
+          267
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5e76649a2461241da21ebe55d8b3d28871c06d55d7119b812fb6fdadfdb616c9"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-13-q1",
+          "prompt": "What does Ona learn about Miss Henderson? Why compare the house down-town to “the odor of the Packingtown rendering-plants”?",
+          "facilitatorNotes": [
+            "The forelady is a superintendent’s former mistress who runs her department together with a brothel, favoring the girls who flatter her. The comparison makes the corruption a smell that seeps through the whole workplace, part of the same rot as the stockyards’ stench."
+          ],
+          "evidence": [
+            "it would not be too much to say that she managed her department at Brown's in conjunction with it",
+            "like the odor of the Packingtown rendering-plants at night, when the wind shifted suddenly"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-13-q2",
+          "prompt": "Sinclair compares Packingtown with “the system of chattel slavery.” What exactly is compared, and where does the comparison hold or fail?",
+          "facilitatorNotes": [
+            "Workers who depend for bread on brutal bosses cannot refuse them, so sexual abuse becomes as “inevitable” as under slavery, only less visible because master and worker share a color. The workers are not owned and can leave, at the risk of starving; students can judge whether the comparison clarifies or overstates."
+          ],
+          "evidence": [
+            "under such circumstances immorality was exactly as inevitable, and as prevalent, as it was under the system of chattel slavery",
+            "because there was no difference in color between master and slave"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-13-q3",
+          "prompt": "How does the baby change Jurgis? Which details make his wonder believable?",
+          "facilitatorNotes": [
+            "He becomes “irrevocably a family man” and leaves the saloons. Comic, exact details carry it: the black eyes and ringlets, the “comical imitation of its father's nose,” his alarm at the shortness of the legs."
+          ],
+          "evidence": [
+            "It made him irrevocably a family man",
+            "that it should have come with a comical imitation of its father's nose was simply uncanny",
+            "It took him quite a while to get over his alarm at the incredible shortness of the little creature's legs."
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-13-q4",
+          "prompt": "Ona goes back to work after a week. What does Sinclair mean by “the punishment was so out of all proportion”? How does the last sentence sum up the family’s situation?",
+          "facilitatorNotes": [
+            "To save her place and a week’s wages she ruins her health for life, and no one connects cause and effect. Patent medicines help only while she can pay for them: she is “chasing the phantom of good health” and losing it to poverty, as the family chases security."
+          ],
+          "evidence": [
+            "it seemed such a slight offence, and the punishment was so out of all proportion",
+            "and so she was always chasing the phantom of good health, and losing it because she was too poor to continue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-14",
+      "title": "The Jungle: speeding-up and a run on the bank (Chapter XI, opening)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow Sinclair from the system to one woman’s panic, and ask what each shows.",
+      "focus": "The speeding-up, the Beef Trust, and Marija’s savings in a run on the bank.",
+      "context": "Upton Sinclair wrote The Jungle (1906) after seven weeks among the stockyard workers of Chicago. It follows Jurgis Rudkus, a young Lithuanian immigrant, and the family he brings to “Packingtown,” the district of the meat-packing plants. In Chapter X the family survived a hungry year: hidden costs on their house, Marija’s firing and new work as a beef-trimmer, and the birth of Jurgis and Ona’s son, Antanas, after which Ona went back to work too soon and fell ill. Pace-makers set the speed of a gang; piece-work is paid by the amount done. The red flag was a symbol of socialism and of workers’ revolt. A trust was a combination of companies that agreed on prices instead of competing. In a run on a bank, depositors rush to withdraw their money for fear it will fail; bank deposits then had no government insurance.",
+      "contentNote": "Describes punishing speed-ups and wage cuts, and a crowd fighting and trampling at a bank.",
+      "excerpt": {
+        "locator": "Chapter XI, from the summer’s new hands to the end of the run on Marija’s bank; opens “During the summer the packing-houses were in full activity again, and Jurgis made more…”; closes “…drawn a crowd at the hour the people were on their way to work, and so started the \"run.\"”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-sinclair-jungle-1906-15",
+        "blocks": [
+          269,
+          277
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ca0e52a9316a04da78fac9997075dd0ec732678c5e2ca3e910fd22279c07efe7"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-14-q1",
+          "prompt": "Why do the packers keep hiring new hands when there is not enough work? What does the narrator mean by “how very cunning a trick”?",
+          "facilitatorNotes": [
+            "Extra hands keep wages low in the slack season, and the old men train the newcomers who will one day break their strike. The exclamation is sarcasm: the trick is cunning only for the packers."
+          ],
+          "evidence": [
+            "The men were to teach new hands, who would some day come and break their strike",
+            "And how very cunning a trick was that!"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-14-q2",
+          "prompt": "Explain the cycle of the piece-work “speeding-up.” What happens to the girls who march with a red flag?",
+          "facilitatorNotes": [
+            "The packers demand the same work in less time for the same pay, then cut the rate to match the new speed. The girls strike without plan; new labor breaks the strike in three days, and the flag-bearer ends in a department store at two dollars and a half a week. Anger without organization fails."
+          ],
+          "evidence": [
+            "they would reduce the rate of payment to correspond with the reduction in time!",
+            "the impromptu strike went to pieces in three days, owing to the rush of new labor"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-14-q3",
+          "prompt": "Jurgis learns that Packingtown is “one great firm, the Beef Trust,” but calls its price-fixing something he did not “understand or care about.” What does the reader understand that Jurgis does not?",
+          "facilitatorNotes": [
+            "With one wage scale there is no rival employer to go to, and a combine that fixes the prices of cattle and meat holds power over farmers and buyers as well as workers. Jurgis’s indifference is dramatic irony: the Trust decides his fate."
+          ],
+          "evidence": [
+            "Packingtown was really not a number of firms at all, but one great firm, the Beef Trust",
+            "but that was something he did not understand or care about"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-14-q4",
+          "prompt": "Retell Marija’s run on the bank. How is it both comic and serious, and what started the panic?",
+          "facilitatorNotes": [
+            "Comic: her fear that her bills will burn, her daily detour to see the bank is still there, her dollars sewn into her clothes. Serious: two days in rain and cold, people trampled, police, and the knowledge that she could lose everything. The cause was a policeman arresting a drunk next door: the poor have no way to judge “frenzied finance.”"
+          ],
+          "evidence": [
+            "what possible chance has a poor foreign working-girl to understand the banking business, as it is conducted in this land of frenzied finance?",
+            "The cause of the panic had been the attempt of a policeman to arrest a drunken man in a saloon next door"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-sinclair-jungle-1906-15",
+      "title": "The Jungle: the blizzard and the trap (Chapter XI)",
+      "sourceId": "sinclair-jungle-1906",
+      "genre": "narrative",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 19,
+        "discussionMinutes": 9,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow the picture of Jurgis as a fighter, and what happens to it.",
+      "focus": "Strength, chance and the limits of one man’s will.",
+      "context": "Recap: the packers have sped up the work and cut pay, a strike of canning girls has failed, and Jurgis has learned that Packingtown is one combine, the Beef Trust. Marija nearly lost her savings in a run on her bank. The family has paid back what it owed and begun to save. Votes were openly bought in Chicago elections, and “grafters” were corrupt politicians. Stanislovas is Teta Elzbieta’s young son. In Greek myth Prometheus, who gave fire to humans, was chained to a rock as punishment.",
+      "contentNote": "Describes a steer loose on a crowded killing-floor, a boss firing a rifle into the steam, a crippling injury and a man’s despair.",
+      "excerpt": {
+        "locator": "Chapter XI, from election day to Jurgis lying helpless with his injured ankle; opens “About this time Jurgis and Ona also began a bank-account. Besides having paid Jonas and…”; closes “…wild-beast powers of nature, just as truly as ever they were in the days of the cave-men!”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-sinclair-jungle-1906-14",
+        "continuesTo": null,
+        "blocks": [
+          278,
+          286
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "278c78ebb1909b06e81bcdd5e389c7b196280c38cff6c635fc68b8214ea43103"
+      },
+      "questions": [
+        {
+          "id": "reading-11-sinclair-jungle-1906-15-q1",
+          "prompt": "Jurgis sells his vote because “every one did it.” How does the narrator present his reasoning? Is it fair?",
+          "facilitatorNotes": [
+            "He knows it is “not supposed to be right,” but his refusal would change nothing, so refusing never occurs to him. The narrator explains rather than excuses: corruption becomes normal when one person’s choice seems powerless."
+          ],
+          "evidence": [
+            "it was not supposed to be right to sell your vote",
+            "his refusal to join would not have made the slightest difference in the results"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-15-q2",
+          "prompt": "How does Sinclair describe Jurgis’s fight through the blizzard? What do the lion and the buffalo say about him?",
+          "facilitatorNotes": [
+            "The snow becomes an enemy that trips him and builds walls; he carries Ona like a sack of meal. The animal images show strength and rage. Victory makes him feel “the master of his fate,” which echoes W. E. Henley’s poem “Invictus.”"
+          ],
+          "evidence": [
+            "the soul of Jurgis rose up within him like a sleeping lion",
+            "plunging like a wounded buffalo, puffing and snorting in rage"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-15-q3",
+          "prompt": "Why does Sinclair warn of a “cowardly trap” before the accident? What makes the injury a trap?",
+          "facilitatorNotes": [
+            "The warning turns triumph into foreboding. The accident is slight, a turned ankle while dodging a steer loosed by the speeding-up, but no strength protects against it, and the company owes him nothing: the doctor blames his “folly.”"
+          ],
+          "evidence": [
+            "felt himself the master of his fate",
+            "The injury was not one that Durham and Company could be held responsible for, and so that was all there was to it"
+          ]
+        },
+        {
+          "id": "reading-11-sinclair-jungle-1906-15-q4",
+          "prompt": "Lying in bed, Jurgis thinks, “It was true, it was true.” What does he now believe, and why compare him with Prometheus and with the cave-men?",
+          "facilitatorNotes": [
+            "That the best powers of a man may not be enough, and that in a city of heaped-up wealth people may perish unheard. Prometheus is strength chained and helpless; the cave-men suggest that this civilization leaves the poor as exposed as the first humans. The book’s title takes on its meaning."
+          ],
+          "evidence": [
+            "It was for all the world the old story of Prometheus bound.",
+            "that the best powers of a man might not be equal to it",
+            "just as truly as ever they were in the days of the cave-men"
+          ]
+        }
+      ]
+    }
+  ]
+}

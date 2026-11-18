@@ -4,7 +4,7 @@
   "author": "H.D. (Hilda Doolittle)",
   "title": "Sea Garden",
   "translator": null,
-  "edition": "London: Constable and Company Ltd., 1916, as shown on the title page transcribed in Project Gutenberg ebook 28665. PG transcription of the Constable text; the transcriber lists a small number of typographical corrections. Paragraph and stanza boundaries and line breaks are retained; prose layout whitespace is joined. Page numbers, running heads, and footnote callout numerals are omitted. The library text holds the twenty-seven poems from “Sea Rose” through the closing untitled poem (“The city is peopled”); the acknowledgements note, title page, contents and printer's colophon are omitted.",
+  "edition": "London: Constable and Company Ltd., 1916, as shown on the title page transcribed in Project Gutenberg ebook 28665. PG transcription of the Constable text; the transcriber lists a small number of typographical corrections. Paragraph and stanza boundaries and line breaks are retained; prose layout whitespace is joined. Page numbers, running heads, and footnote callout numerals are omitted. The library text holds the twenty-seven poems from “Sea Rose” through the closing untitled poem (“The city is peopled”); the acknowledgements note, title page, contents and printer's colophon are omitted. The poems read by the Grade 11 calendar readings (blocks 15–35, 52–75, 91–93, 104–128, 139–161 and 215–221) were compared word by word, punctuation and capitals included, with the OCR text of a copy of the 1916 Constable printing (Internet Archive seagarden00hdhirich) and, where they differed, its page images. Two of the transcriber’s corrections fall there and are reversed to the printed text: “your shoulders are level” (block 65, which the transcriber capitalised) and the misprint “fragant” (block 148, which the transcriber corrected to “fragrant”), which stands as printed. No other readings changed.",
   "publicationYear": 1916,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/28665",
@@ -20,7 +20,7 @@
     "retrieved": "2026-11-17",
     "downloadUrl": "https://aleph.pglaf.org/cache/epub/28665/pg28665.txt",
     "downloadSha256": "6f98e44e5237a4e789ecfb64982686dc66e32d7d6d6ae2e7f2f96d6466a617f8",
-    "method": "Project Gutenberg plain text (pglaf mirror of ebook 28665). Removed the Gutenberg header, footer, licence, producer credit and both transcriber's-note boxes, and everything before “Sea Rose” and after the last poem (illustration marker and colophon); every poem title became a level-2 heading and every section numeral a level-3 heading; every other block is a stanza with the file's common left indent removed and its line breaks kept. The transcriber's corrections listed in the file stand as transcribed; underscore italics kept as in the file."
+    "method": "Project Gutenberg plain text (pglaf mirror of ebook 28665). Removed the Gutenberg header, footer, licence, producer credit and both transcriber's-note boxes, and everything before “Sea Rose” and after the last poem (illustration marker and colophon); every poem title became a level-2 heading and every section numeral a level-3 heading; every other block is a stanza with the file's common left indent removed and its line breaks kept. The transcriber's corrections listed in the file stand as transcribed, except in blocks 65 and 148, where collation with the 1916 printing restored its “your” and “fragant” (see edition); underscore italics kept as in the file."
   },
   "scope": {
     "complete": true,
@@ -28,6 +28,6 @@
   },
   "text": {
     "blocks": 252,
-    "sha256": "45f1a51dd47363ad712865608f226189a2b777a2543e4cdc42ae62bd4ae647d7"
+    "sha256": "87b91ab76f14bfb0f9d1ab4184c210a59e33496492962e9dc726099f750ea8ec"
   }
 }
