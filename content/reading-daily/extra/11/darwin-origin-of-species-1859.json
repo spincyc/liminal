@@ -670,6 +670,751 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-10",
+      "title": "Origin of Species: What keeps numbers down? (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 10,
+        "totalMinutes": 30
+      },
+      "challenge": "Sort Darwin’s checks on increase by kind, and notice where he admits he does not know.",
+      "focus": "Food, enemies, climate and disease as checks on numbers, and why climate mostly acts through other species.",
+      "context": "Darwin has argued that every species tends to multiply far faster than its food and space allow, so that many more are born than can survive: the struggle for existence. Here he asks what actually keeps numbers down. Vermin here means animals that prey on game, such as foxes, stoats and hawks; game is animals hunted for sport; rape-seed is an oil crop; a naturalised plant spreads by itself in a new country.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter III, “Struggle for Existence,” from the obscurity of the checks to the need for a large stock; opens “What checks the natural tendency of each species to increase in number is most obscure.…”; closes “…into play in some of these cases; but on this intricate subject I will not here enlarge.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          96,
+          101
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9e6ba155751e851e0d5ac0d45e60e7ebca4ae3355f87a57f61b14b27da937971"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-10-q1",
+          "prompt": "Darwin opens, “What checks the natural tendency of each species to increase in number is most obscure.” How does he handle his own ignorance in the first paragraph?",
+          "facilitatorNotes": [
+            "He admits “We know not exactly what the checks are in even one single instance,” compares our ignorance about mankind, promises a fuller treatment later, and offers only “a few remarks.” Admitting the limits of knowledge makes the observations that follow more credible, not less."
+          ],
+          "evidence": [
+            "We know not exactly what the checks are in even one single instance."
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-10-q2",
+          "prompt": "What did Darwin do on his plot of cleared ground, and what did it show? What does the plot of turf add?",
+          "facilitatorNotes": [
+            "He marked every seedling of native weeds on a cleared patch three feet by two: of 357, 295 were destroyed, chiefly by slugs and insects, with no other plants to choke them. Left to grow, a plot of turf lost nine of its twenty species to more vigorous ones. Two small, counted observations show destruction by enemies and by competitors separately."
+          ],
+          "evidence": [
+            "out of the 357 no less than 295 were destroyed, chiefly by slugs and insects",
+            "nine species perished from the other species being allowed to grow up freely"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-10-q3",
+          "prompt": "Darwin predicts that if no game were shot and no vermin destroyed for twenty years, there would be less game in England. Why is this surprising, and what principle does it illustrate?",
+          "facilitatorNotes": [
+            "One expects game to multiply if no one hunts it. But predators kill more than hunters, so “serving as prey,” not food, sets the average numbers. The thought experiment separates two causes that ordinary experience confuses."
+          ],
+          "evidence": [
+            "it is not the obtaining food, but the serving as prey to other animals, which determines the average numbers of a species",
+            "there would, in all probability, be less game than at present"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-10-q4",
+          "prompt": "When a species grows rarer toward the north, why does Darwin call it “a very false view” to blame the climate alone?",
+          "facilitatorNotes": [
+            "Climate mostly acts indirectly, by reducing food or by favouring the species’ enemies and competitors; garden plants that can bear the English climate still never run wild, because they cannot compete. Only at the extremes, the Arctic or the desert, is the struggle “almost exclusively with the elements.” Students can test the claim with the garden example."
+          ],
+          "evidence": [
+            "But this is a very false view",
+            "they cannot compete with our native plants, nor resist destruction by our native animals"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-11",
+      "title": "Origin of Species: The entangled bank and the nearest rivals (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Follow Darwin from a picture of complex causes to a claim about who competes hardest.",
+      "focus": "Why the mix of plants on a bank is not chance, and why the struggle is fiercest between close relatives.",
+      "context": "Darwin has listed the checks that keep each species from multiplying without limit: food, enemies, climate and disease. Here he looks at how many checks combine and who competes with whom. The “Indian mounds” are earthworks built centuries earlier by Native American peoples in the Mississippi and Ohio valleys; a congener is a species of the same genus; the missel-thrush is the mistle thrush; charlock is a weedy wild mustard.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference. Darwin calls Native American earthworks “Indian mounds” and “old Indian ruins,” period terms.",
+      "excerpt": {
+        "locator": "Chapter III, “Struggle for Existence,” from the many checks on every species to the competition of allied species; opens “In the case of every species, many different checks, acting at different periods of life,…”; closes “…say why one species has been victorious over another in the great battle of life.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-darwin-origin-of-species-1859-12",
+        "blocks": [
+          105,
+          107
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "9344789d3840b20ac86db176373fd824ceb09ae623d34a38c5df6137aa1968e2"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-11-q1",
+          "prompt": "Darwin warns against attributing the mix of plants on “an entangled bank” to chance. What evidence does he give from the trees on the old mounds?",
+          "facilitatorNotes": [
+            "Trees growing on the ancient mounds show “the same beautiful diversity and proportion of kinds” as the virgin forest around them. If chance ruled, the mounds should differ; the same result reached independently points to definite causes working over centuries. A cut forest, by contrast, grows back different, because its conditions have changed."
+          ],
+          "evidence": [
+            "we are tempted to attribute their proportional numbers and kinds to what we call chance. But how false a view is this!",
+            "display the same beautiful diversity and proportion of kinds as in the surrounding virgin forests"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-11-q2",
+          "prompt": "What is the comparison with a handful of feathers claiming?",
+          "facilitatorNotes": [
+            "Feathers fall “according to definite laws,” yet the problem is simple. The plants and animals of a forest are also governed by causes, only far more of them, acting and reacting for centuries. What we call chance is a name for causes too many to follow."
+          ],
+          "evidence": [
+            "Throw up a handful of feathers, and all must fall to the ground according to definite laws"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-11-q3",
+          "prompt": "Why does Darwin think the struggle is “most severe between the individuals of the same species”? What do the wheat and sweet-peas show?",
+          "facilitatorNotes": [
+            "They share districts, food and dangers. Mixed varieties of wheat sown together end with the best-suited varieties supplanting the rest, and coloured sweet-peas must be harvested separately each year or “the weaker kinds will steadily decrease in numbers and disappear.” Farmers’ practice serves as an experiment."
+          ],
+          "evidence": [
+            "for they frequent the same districts, require the same food, and are exposed to the same dangers",
+            "otherwise the weaker kinds will steadily decrease in numbers and disappear"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-11-q4",
+          "prompt": "What do the swallows, thrushes, rats and cockroaches have in common, and what limit does Darwin admit at the end?",
+          "facilitatorNotes": [
+            "Each is a species replacing a close relative of the same genus, which fills “nearly the same place in the economy of nature.” But he concedes that in no single case could we say exactly why one won. He can show the pattern without knowing the mechanism in any instance."
+          ],
+          "evidence": [
+            "One species of charlock will supplant another",
+            "probably in no one case could we precisely say why one species has been victorious over another"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-12",
+      "title": "Origin of Species: Every structure answers to its rivals (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 13,
+        "discussionMinutes": 15,
+        "totalMinutes": 28
+      },
+      "challenge": "Test a general principle against the examples that seem least to fit it.",
+      "focus": "Darwin’s corollary that each being’s structure is shaped by other beings, and his consoling close.",
+      "context": "Recap: Darwin has argued that the struggle for existence is fiercest between individuals of the same species and between closely related species, though no one can say exactly why one wins. Here he draws a conclusion and closes Chapter III. A corollary follows from something already shown; the confines of a range are its outer edges; increase at a geometrical ratio multiplies, as 2, 4, 8, 16.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter III, “Struggle for Existence,” from the corollary on structure to the end of the chapter; opens “A corollary of the highest importance may be deduced from the foregoing remarks, namely,…”; closes “…generally prompt, and that the vigorous, the healthy, and the happy survive and multiply.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-darwin-origin-of-species-1859-11",
+        "continuesTo": null,
+        "blocks": [
+          108,
+          112
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5cfb7b3c0def7705ce62c36228a611f55d05caa3f4b247720811061f014e3b4a"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-12-q1",
+          "prompt": "State the “corollary of the highest importance” in your own words. Why does Darwin choose the dandelion seed and the water-beetle rather than the tiger’s teeth to illustrate it?",
+          "facilitatorNotes": [
+            "Every organism’s structure is related, often in hidden ways, to the organisms it competes with, escapes or eats. The tiger is obvious; the plumed seed and the diving beetle seem shaped only by air and water. Showing that even these answer to other living things (crowded ground, rival insects, predators) makes the principle stronger."
+          ],
+          "evidence": [
+            "the structure of every organic being is related, in the most essential yet often hidden manner, to that of all other organic beings",
+            "the relation seems at first confined to the elements of air and water"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-12-q2",
+          "prompt": "How does Darwin reason about the food stored in seeds, and how confident is he?",
+          "facilitatorNotes": [
+            "From peas and beans growing strongly in long grass, he suspects the store is for the seedling “whilst struggling with other plants.” It is an inference from one kind of observation, and “I suspect” marks it as a hypothesis."
+          ],
+          "evidence": [
+            "I suspect that the chief use of the nutriment in the seed is to favour the growth of the young seedling"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-12-q3",
+          "prompt": "Darwin asks the reader to imagine giving a plant an advantage. What does this thought experiment teach?",
+          "facilitatorNotes": [
+            "We would have to give it an edge over competitors or enemies, and a different edge in a new country, and “Probably in no single instance should we know what to do.” The exercise is meant to fail: it exposes our ignorance of how living things depend on one another, a conviction Darwin calls necessary and hard to acquire."
+          ],
+          "evidence": [
+            "Probably in no single instance should we know what to do, so as to succeed.",
+            "a conviction as necessary, as it seems to be difficult to acquire"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-12-q4",
+          "prompt": "The chapter ends with consolation: the war of nature “is not incessant,” “no fear is felt,” “death is generally prompt.” Is this a scientific claim, or something else? Has the chapter earned it?",
+          "facilitatorNotes": [
+            "Part of it follows from the chapter (destruction comes at intervals and seasons); “no fear is felt” is not something Darwin has shown. Readers may see a humane reassurance to Victorian readers troubled by a “war of nature,” or a softening that sits oddly with 295 dead seedlings in 357. Both judgments should rest on the wording."
+          ],
+          "evidence": [
+            "we may console ourselves with the full belief, that the war of nature is not incessant",
+            "the vigorous, the healthy, and the happy survive and multiply"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-13",
+      "title": "Origin of Species: Small features and every stage of life (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Identify the objection Darwin is answering in each paragraph.",
+      "focus": "Natural selection acting on colour, on the young, and never for another species’ sake.",
+      "context": "Darwin has introduced natural selection, the preservation of favourable variations and the destruction of harmful ones in the struggle for existence, and compared it with a breeder’s selection. Here he answers the objection that small features such as colour cannot matter. The ptarmigan and grouse are game birds; a curculio is a weevil; correlation of growth means that a change in one part brings changes in others; tumbler-pigeons are a fancy breed with very short beaks; fanciers are hobby breeders.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter IV, “Natural Selection,” from characters of trifling importance to the beaks of nestling pigeons; opens “Although natural selection can act only through and for the good of each being, yet…”; closes “…be selected, the thickness of the shell being known to vary like every other structure.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          120,
+          123
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "1a7155ba8bd173d26a4aff116c0a348d9a62167909186903d55eebb1e27da48b"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-13-q1",
+          "prompt": "Darwin argues that features “of very trifling importance” can be acted on by natural selection. What is his evidence from grouse and from fruit?",
+          "facilitatorNotes": [
+            "Insects and grouse match their backgrounds, and hawks hunt by sight, so that white pigeons are the first taken. Downing reports that smooth-skinned fruits suffer more from a weevil than downy ones, and that colour affects disease. If such differences matter even in a tended orchard, they would decide survival in the wild."
+          ],
+          "evidence": [
+            "hawks are guided by eyesight to their prey",
+            "smooth-skinned fruits suffer far more from a beetle, a curculio, than those with down"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-13-q2",
+          "prompt": "Why does Darwin mention that a sheep farmer must destroy “every lamb with the faintest trace of black”?",
+          "facilitatorNotes": [
+            "It answers the objection that occasional deaths of one colour would have little effect. The breeder’s practice shows that steady removal of a trait keeps a flock uniform; predators that take conspicuous birds act the same way."
+          ],
+          "evidence": [
+            "Nor ought we to think that the occasional destruction of an animal of any particular colour would produce little effect",
+            "how essential it is in a flock of white sheep to destroy every lamb with the faintest trace of black"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-13-q3",
+          "prompt": "What does Darwin say natural selection “cannot do,” and what kind of evidence would prove him wrong?",
+          "facilitatorNotes": [
+            "It cannot modify one species, without any advantage to it, purely for the good of another. He says he has found no claimed case that “will bear investigation.” A single well-established case would refute him, which makes this a testable claim; students can see how a theory states what it forbids."
+          ],
+          "evidence": [
+            "What natural selection cannot do, is to modify the structure of one species, without giving it any advantage, for the good of another species",
+            "I cannot find one case which will bear investigation"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-13-q4",
+          "prompt": "What problem do short-beaked tumbler-pigeons pose, and what two solutions does Darwin imagine for nature?",
+          "facilitatorNotes": [
+            "The best short-beaked birds often cannot break out of the egg, so fanciers help them hatch. In nature, selection would favour chicks with the hardest beaks inside the egg, or thinner shells. The example shows selection working at every stage of life, even before hatching."
+          ],
+          "evidence": [
+            "more perish in the egg than are able to get out of it",
+            "more delicate and more easily broken shells might be selected"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-14",
+      "title": "Origin of Species: Sexual selection, and an imaginary wolf (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 20,
+        "discussionMinutes": 10,
+        "totalMinutes": 30
+      },
+      "challenge": "Distinguish a definition, a reported observation and an imagined illustration.",
+      "focus": "A second kind of selection, between rivals for mates, and a thought experiment about wolves.",
+      "context": "Darwin has argued that natural selection can act on small features and at every stage of life. Here he names a second process, sexual selection, then offers “imaginary illustrations.” Polygamous animals are those in which one male mates with many females; bantams are small ornamental chickens; carriers are a pigeon breed and the wattle a fleshy growth on the head; Sir R. Heron, Mr. St. John and Mr. Pierce are observers whose reports Darwin cites.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference. Darwin compares fighting alligators to “Indians in a war-dance,” a period stereotype of Native Americans.",
+      "excerpt": {
+        "locator": "Chapter IV, “Natural Selection,” the sections on sexual selection and the first illustration of natural selection; opens “_Sexual Selection_.—Inasmuch as peculiarities often appear under domestication in one sex…”; closes “…other more bulky, with shorter legs, which more frequently attacks the shepherd’s flocks.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          124,
+          128
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8a603fab751fbbce9c2e6ac517904d4cc31c35e4e9065e4d4623065ac24d1a4"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-14-q1",
+          "prompt": "How does sexual selection differ from natural selection in Darwin’s definition, and why does he call it “less rigorous”?",
+          "facilitatorNotes": [
+            "It is a struggle between males for females, not a struggle for existence, and losing means few or no offspring rather than death. Since the loser lives, the selection is milder, but it still decides which traits are passed on."
+          ],
+          "evidence": [
+            "This depends, not on a struggle for existence, but on a struggle between the males for possession of the females",
+            "the result is not death to the unsuccessful competitor, but few or no offspring"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-14-q2",
+          "prompt": "Darwin describes two ways males win: battle and attraction. What examples does he give of each, and what part do the females play in the second?",
+          "facilitatorNotes": [
+            "Weapons and shields (horns, spurs, the lion’s mane, the hooked jaw of the salmon) win battles. Among birds, males sing and display, and the females “at last choose the most attractive partner.” Darwin gives females an active role, choosing “according to their standard of beauty,” as a breeder chooses bantams by his."
+          ],
+          "evidence": [
+            "for the shield may be as important for victory, as the sword or spear",
+            "at last choose the most attractive partner",
+            "according to their standard of beauty"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-14-q3",
+          "prompt": "Where does Darwin limit his own explanation, and why does the turkey-cock’s tuft matter to him?",
+          "facilitatorNotes": [
+            "He will not attribute all differences between the sexes to sexual selection: some, like the tuft, seem neither useful in battle nor attractive, and would be called a “monstrosity” in a domestic bird. Naming a case his idea does not explain shows the limits he accepts."
+          ],
+          "evidence": [
+            "I would not wish to attribute all such sexual differences to this agency",
+            "can hardly be either useful or ornamental to this bird"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-14-q4",
+          "prompt": "Darwin calls the wolf an “imaginary illustration.” What conditions does he set for swift wolves to be selected, and what real report does he add at the end?",
+          "facilitatorNotes": [
+            "Swift prey must become commoner, or other prey scarcer, when food is short, and the slim wolves must keep the strength to master prey at other times. Inherited hunting habits in cats support the idea of innate tendencies, and Mr. Pierce reports two forms of wolf in the Catskills, one greyhound-like that hunts deer. Students can judge how far an imagined case plus a report supports the claim."
+          ],
+          "evidence": [
+            "I must beg permission to give one or two imaginary illustrations",
+            "provided always that they retained strength to master their prey",
+            "there are two varieties of the wolf inhabiting the Catskill Mountains"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-15",
+      "title": "Origin of Species: Why flowers cross (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 17,
+        "discussionMinutes": 11,
+        "totalMinutes": 28
+      },
+      "challenge": "Find the facts Darwin says are inexplicable on any other view, and judge whether his law explains them.",
+      "focus": "Darwin’s proposed law that no plant or animal fertilises itself forever.",
+      "context": "Darwin interrupts his account of natural selection with what he calls “a short digression.” Many plants are hermaphrodites, with male and female parts in the same flower: anthers and stamens carry pollen, and the stigma and pistil receive it. Papilionaceous flowers belong to the pea family; a hybridizer crosses plants on purpose; a camel-hair pencil is a fine brush. Andrew Knight, Gärtner, Kölreuter and C. C. Sprengel were earlier students of plant breeding and pollination.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter IV, “Natural Selection,” from “On the Intercrossing of Individuals” to the Lobelia; opens “_On the Intercrossing of Individuals_.—I must here introduce a short digression. In the…”; closes “…of an occasional cross with a distinct individual being advantageous or indispensable!”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": "reading-11-darwin-origin-of-species-1859-16",
+        "blocks": [
+          133,
+          136
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "ea835f974ad6723c99598c7486b108f54f4a7d33f75e9d6c43b9bbbb2b00ace7"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-15-q1",
+          "prompt": "What “general law of nature” does Darwin propose, and what first inclines him to believe it?",
+          "facilitatorNotes": [
+            "That no organism fertilises itself “for an eternity of generations”; an occasional cross with another individual is indispensable. The breeders’ experience that crosses bring vigour and close interbreeding weakness inclines him to it, though he admits he is “utterly ignorant” of the law’s meaning."
+          ],
+          "evidence": [
+            "no organic being self-fertilises itself for an eternity of generations",
+            "utterly ignorant though we be of the meaning of the law"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-15-q2",
+          "prompt": "Darwin says some facts are inexplicable “on any other view.” Choose one, the exposed flowers or the pea-flowers and bees, and explain how his law accounts for it.",
+          "facilitatorNotes": [
+            "Wet harms fertilisation, yet many flowers leave their organs open to the weather: openness admits pollen from other plants. Pea-flowers are closed, but bees push pollen in as they feed, and when Darwin kept bees away their fertility fell. In both, the structure makes sense if crossing matters."
+          ],
+          "evidence": [
+            "what a multitude of flowers have their anthers and stigmas fully exposed to the weather!",
+            "their fertility is greatly diminished if these visits be prevented"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-15-q3",
+          "prompt": "If bees carry pollen from flower to flower, why don’t they make “a multitude of hybrids between distinct species”?",
+          "facilitatorNotes": [
+            "A plant’s own pollen is “prepotent” over pollen of another species and wipes out its influence, as Gärtner showed. Darwin anticipates the objection and answers it with another researcher’s experiments."
+          ],
+          "evidence": [
+            "it must not be supposed that bees would thus produce a multitude of hybrids between distinct species"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-15-q4",
+          "prompt": "What did Darwin observe and do with Lobelia fulgens, and why does he exclaim “How strange are these facts!”?",
+          "facilitatorNotes": [
+            "Its flowers sweep out their pollen before their own stigma is ready; no insects visit it in his garden, so it sets no seed, yet hand-crossing gave “plenty of seedlings,” while a bee-visited Lobelia nearby seeded freely. Organs placed as if for self-fertilisation are often useless to each other, which his law explains."
+          ],
+          "evidence": [
+            "it never sets a seed, though by placing pollen from one flower on the stigma of another, I raised plenty of seedlings",
+            "How strange are these facts!"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-16",
+      "title": "Origin of Species: Cabbages, trees and earthworms (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Count how Darwin qualifies a claim while gathering evidence for it.",
+      "focus": "Experiments, objections and exceptions behind the law of the occasional cross.",
+      "context": "Recap: Darwin has proposed that no plant or animal fertilises itself forever and that an occasional cross with another individual is necessary; flowers, he argues, are built to take pollen from other flowers, often carried by insects. Mongrels are crosses between varieties; prepotent means stronger in effect; cirripedes are barnacles; Hooker, Asa Gray and Huxley were leading naturalists of the day.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter IV, “Natural Selection,” from the mongrel cabbages to the end of the section on intercrossing; opens “If several varieties of the cabbage, radish, onion, and of some other plants, be allowed…”; closes “…long intervals; but in none, as I suspect, can self-fertilisation go on for perpetuity.”.",
+        "isCompleteWork": false,
+        "continuesFrom": "reading-11-darwin-origin-of-species-1859-15",
+        "continuesTo": null,
+        "blocks": [
+          137,
+          141
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "79e07c5ee858a5a9259effdecd9b6918d5f5becbe46b0bd88e7dde876f6b0b60"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-16-q1",
+          "prompt": "What did Darwin find when cabbages of different varieties seeded near one another, and why was the result surprising?",
+          "facilitatorNotes": [
+            "Of 233 seedlings only 78 were true to their kind. Each flower’s pistil is surrounded by its own stamens and those of the same plant, so self-fertilisation should have dominated. He suspects that pollen of another variety is prepotent over a flower’s own, the reverse of what happens between species."
+          ],
+          "evidence": [
+            "I raised 233 seedling cabbages from some plants of different varieties growing near each other, and of these only 78 were true to their kind",
+            "Yet the pistil of each cabbage-flower is surrounded not only by its own six stamens"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-16-q2",
+          "prompt": "What objection about large trees does Darwin raise against himself, and how does he treat the evidence from New Zealand, the United States and Australia?",
+          "facilitatorNotes": [
+            "Pollen may rarely pass from tree to tree, and flowers on one tree are hardly separate individuals; he calls the objection “valid.” He predicts that trees more often have separate sexes, and colleagues’ tables confirm it, but Hooker reports that the rule fails in Australia. He prints the exception and claims only to “call attention to the subject.”"
+          ],
+          "evidence": [
+            "I believe this objection to be valid",
+            "he finds that the rule does not hold in Australia"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-16-q3",
+          "prompt": "Why, on Darwin’s view, do land hermaphrodites such as earthworms always pair, while some water animals fertilise themselves?",
+          "facilitatorNotes": [
+            "On land there is no carrier, like insects or wind for plants, that could bring an occasional cross, so two individuals must meet; in water, currents can carry it. The difference in habitat explains the difference in habit."
+          ],
+          "evidence": [
+            "for we know of no means, analogous to the action of insects and of the wind in the case of plants, by which an occasional cross could be effected with terrestrial animals without the concurrence of two individuals"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-16-q4",
+          "prompt": "How does Darwin state his conclusion, and how confident is it? Count his qualifications.",
+          "facilitatorNotes": [
+            "“Strongly inclined to suspect,” “many cases of difficulty,” “as I suspect”: the conclusion is graded, certain for some organisms and only probable for all. Readers can judge whether the hedging is a weakness or a model of stating a claim at the strength the evidence allows."
+          ],
+          "evidence": [
+            "I am strongly inclined to suspect",
+            "in none, as I suspect, can self-fertilisation go on for perpetuity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-17",
+      "title": "Origin of Species: Numbers, time and crossing (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 14,
+        "discussionMinutes": 14,
+        "totalMinutes": 28
+      },
+      "challenge": "Track how one factor, intercrossing, both hinders and helps.",
+      "focus": "What makes natural selection faster or slower: numbers, time and crossing.",
+      "context": "In Chapter IV Darwin has described natural selection and sexual selection and argued that an occasional cross between individuals is a law of nature. Now he asks what conditions help or hinder selection. The polity or economy of nature is the system of places that species fill; methodical selection is a breeder’s deliberate choice, unconscious selection the slow effect of everyone keeping their best animals; stations are the particular sites a species frequents.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter IV, “Natural Selection,” from “Circumstances favourable to Natural Selection” to the uniforming effect of crosses; opens “_Circumstances favourable to Natural Selection_.—This is an extremely intricate subject.…”; closes “…offspring, solely by natural selection preserving the same favourable variations.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          142,
+          145
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a01e0b6ca039fbf32114f80e0d53f1f564a6d4701b4c6ae5e13fcb4e11dfeb31"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-17-q1",
+          "prompt": "Nature grants “vast periods of time,” Darwin says, but “not an indefinite period.” Why not?",
+          "facilitatorNotes": [
+            "All beings are striving to seize places, so a species that is not improved as fast as its competitors “will soon be exterminated.” Time is limited by the pace of rivals, not by the age of the earth."
+          ],
+          "evidence": [
+            "she does not grant an indefinite period",
+            "it will soon be exterminated"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-17-q2",
+          "prompt": "Why does free crossing stop a breeder’s methodical selection but not the “unconscious” selection Darwin compares with nature?",
+          "facilitatorNotes": [
+            "A breeder aiming at a definite object loses his work if his animals cross freely. But when many people share a rough standard and all keep their best animals, improvement follows even with much crossing. In a confined area nature acts like the many breeders, preserving all individuals that vary “in the right direction.”"
+          ],
+          "evidence": [
+            "free intercrossing will wholly stop his work",
+            "notwithstanding a large amount of crossing with inferior animals"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-17-q3",
+          "prompt": "Which animals does Darwin expect crossing to affect most, and what prediction about birds follows?",
+          "facilitatorNotes": [
+            "Those that pair for each birth, wander widely and breed slowly; so in birds, varieties should be confined to separated countries, which he believes to be so. Animals that stay put and breed fast can form a local variety quickly. The argument produces a checkable prediction."
+          ],
+          "evidence": [
+            "The intercrossing will most affect those animals which unite for each birth, which wander much, and which do not breed at a very quick rate.",
+            "varieties will generally be confined to separated countries"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-17-q4",
+          "prompt": "Crossing can slow the formation of new varieties, yet Darwin says it “plays a very important part” in keeping a species true. How can one process do both?",
+          "facilitatorNotes": [
+            "Crossing blends local differences, so it resists divergence, but by blending it also keeps a species uniform; and crossed offspring gain vigour and fertility, so they survive better. The same mixing that holds back change preserves the type."
+          ],
+          "evidence": [
+            "Intercrossing plays a very important part in nature in keeping the individuals of the same species, or of the same variety, true and uniform in character."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-18",
+      "title": "Origin of Species: Islands, continents and living fossils (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 15,
+        "discussionMinutes": 13,
+        "totalMinutes": 28
+      },
+      "challenge": "Weigh two hypotheses when the decisive comparison cannot be made.",
+      "focus": "Whether new species form best on isolated islands or on large continents, and why some ancient forms survive.",
+      "context": "Darwin is weighing the conditions that favour natural selection: large numbers, time and limited crossing. Now he asks whether new species form best in small isolated areas, such as oceanic islands, or on large continents. Endemic species occur in one place only; oscillations of level are the rise and fall of land; Madeira is an Atlantic island; the Ornithorhynchus is the platypus and Lepidosiren the South American lungfish; Ganoid fishes are an ancient group that includes sturgeons and gars.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter IV, “Natural Selection,” from the effects of isolation to the forms surviving in fresh water; opens “Isolation, also, is an important element in the process of natural selection. In a…”; closes “…inhabited a confined area, and from having thus been exposed to less severe competition.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          146,
+          149
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "e8c56fdf636216ce5d76946b1f2c3e4599e3aaa73358139b343c13552294db08"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-18-q1",
+          "prompt": "List the ways Darwin says isolation helps natural selection, and the way it hurts.",
+          "facilitatorNotes": [
+            "It gives uniform conditions, so all individuals are modified alike; it prevents crossing with neighbours living under other conditions; above all it keeps out better-adapted immigrants, leaving new places for the old inhabitants; and it gives time. But a very small area supports few individuals, and fewness means fewer favourable variations."
+          ],
+          "evidence": [
+            "isolation probably acts more efficiently in checking the immigration of better adapted organisms",
+            "fewness of individuals will greatly retard the production of new species"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-18-q2",
+          "prompt": "Oceanic islands have many endemic species. Why does Darwin refuse to conclude that islands are the best places for new species?",
+          "facilitatorNotes": [
+            "The fair test would compare island and continent “within equal times,” and that cannot be done. Darwin shows a scientist declining a tempting inference because the comparison is uncontrolled."
+          ],
+          "evidence": [
+            "we ought to make the comparison within equal times; and this we are incapable of doing"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-18-q3",
+          "prompt": "On balance Darwin favours large areas. What reasons does he give?",
+          "facilitatorNotes": [
+            "More individuals, so more favourable variations; more species, so more complex conditions and harder competition; room for improved forms to spread; and past breaks in the land that gave some benefits of isolation anyway. Forms that win on a continent have beaten many rivals and spread most widely."
+          ],
+          "evidence": [
+            "on the whole I am inclined to believe that largeness of area is of more importance",
+            "the new forms produced on large areas, which already have been victorious over many competitors, will be those that will spread most widely"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-18-q4",
+          "prompt": "Darwin calls the platypus and the lungfish “living fossils.” What does he mean, and how does his explanation fit his argument?",
+          "facilitatorNotes": [
+            "They are odd forms that link groups now far apart, like fossils, yet still alive. Fresh water is a small, broken area where competition is weaker, so old forms were exterminated more slowly. The coinage follows directly from his claim that area governs the severity of competition."
+          ],
+          "evidence": [
+            "These anomalous forms may almost be called living fossils",
+            "from having thus been exposed to less severe competition"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-11-darwin-origin-of-species-1859-19",
+      "title": "Origin of Species: Slowness and extinction (excerpt)",
+      "sourceId": "darwin-origin-of-species-1859",
+      "genre": "scientific prose",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 18,
+        "discussionMinutes": 10,
+        "totalMinutes": 28
+      },
+      "challenge": "Lay out the premises of an argument that something “inevitably follows.”",
+      "focus": "Darwin admits selection is slow, and argues that extinction is its necessary partner.",
+      "context": "Darwin has weighed numbers, crossing, isolation and the size of an area as conditions for natural selection, and has argued that large areas produce the most successful new forms. Here he sums up, concedes that selection is slow, and introduces extinction, which he treats more fully in his chapters on geology. Subsidence and elevation are the sinking and rising of land; incipient species are species in the making; long-horns and short-horns are breeds of cattle.",
+      "contentNote": "Historical scientific prose from 1859. Darwin’s explanatory hypotheses and terminology are presented for analysis of his reasoning, not as a current biology reference.",
+      "excerpt": {
+        "locator": "Chapter IV, “Natural Selection,” from the summary of favourable circumstances to the section on extinction; opens “To sum up the circumstances favourable and unfavourable to natural selection, as far as…”; closes “…(I quote the words of an agricultural writer) “as if by some murderous pestilence.””.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          150,
+          155
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "31b4e027e9f32d0ef938a9ce3c09cad87688a08cdebfef5eb44608925734a303"
+      },
+      "questions": [
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-19-q1",
+          "prompt": "Darwin’s summary imagines a continent that sinks into islands and later rises again. Trace the stages and what each contributes.",
+          "facilitatorNotes": [
+            "As a continent it holds many individuals in severe competition; as islands, crossing and immigration are checked and varieties have time to improve; rejoined, the improved forms spread, the less improved die out, and selection starts again. The imagined history combines the benefits of large areas and of isolation."
+          ],
+          "evidence": [
+            "When converted by subsidence into large separate islands",
+            "When, by renewed elevation, the islands shall be re-converted into a continental area, there will again be severe competition"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-19-q2",
+          "prompt": "“That natural selection will always act with extreme slowness, I fully admit.” Why does Darwin concede this so readily, and how does he turn it to his advantage?",
+          "facilitatorNotes": [
+            "Slowness is what geology shows of the rate at which living things have changed, so the concession becomes evidence for him. He then argues from the breeder: if “feeble man” achieves so much quickly, nature with vast time has no limit. Readers can ask whether “no limit” goes beyond what the analogy supports."
+          ],
+          "evidence": [
+            "this very slow, intermittent action of natural selection accords perfectly well with what geology tells us",
+            "if feeble man can do much by his powers of artificial selection, I can see no limit to the amount of change"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-19-q3",
+          "prompt": "Follow the argument that many species “inevitably must become extinct.” On what premises does it rest, and where does Darwin qualify it?",
+          "facilitatorNotes": [
+            "Every area is fully stocked; favoured forms increase, so others decrease; rarity precedes extinction; new forms keep appearing while the number of species has not grown without limit. Then he admits that no region may yet be fully stocked: plants naturalised at the Cape of Good Hope drove out no natives. The conclusion is strong; the qualification is honest."
+          ],
+          "evidence": [
+            "Rarity, as geology tells us, is the precursor to extinction.",
+            "Probably no region is as yet fully stocked"
+          ]
+        },
+        {
+          "id": "reading-11-darwin-origin-of-species-1859-19-q4",
+          "prompt": "Why does each new variety “press hardest on its nearest kindred”? What does the quotation about Yorkshire cattle add?",
+          "facilitatorNotes": [
+            "Closest relatives share structure, constitution and habits, so they compete most severely, as Chapter III argued. The quoted agricultural writer, describing breeds swept away “as if by some murderous pestilence,” gives a vivid, practical witness from domestic history rather than theory."
+          ],
+          "evidence": [
+            "will generally press hardest on its nearest kindred, and tend to exterminate them",
+            "as if by some murderous pestilence."
+          ]
+        }
+      ]
     }
   ]
 }
