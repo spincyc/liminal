@@ -4,7 +4,7 @@
   "author": "John Muir",
   "title": "The Story of My Boyhood and Youth",
   "translator": null,
-  "edition": "Boston and New York: Houghton Mifflin, 1913, published March 1913. Every selected excerpt has been collated in full against the dated Boston Public Library copy digitised as Internet Archive storyofmyboyhood00muir_1. Gutenberg 18359 supplied the initial transcription but describes an undated fourteenth impression; no date is invented for that impression. The single substantive selected-word variant is resolved in favour of the 1913 witness: Chapter VIII reads ‘sent me flying to the woods’. Prose line wrapping and words hyphenated solely at line endings are rejoined; Gutenberg typographical punctuation and underscores marking italics are retained. Publisher matter, captions and navigation labels are excluded. The Library of Congress 1913 copy independently corroborates the edition date. The Hickory Hill well excerpt (Chapter VI), added in the 2026-10-07 repair, was collated at word level with the same witness and shows no word variants; its illustration caption is omitted. The library text holds all eight chapters with their printed synopses; the 1913 reading ‘sent me flying to the woods’ is applied, and the rest of the text follows Gutenberg 18359 uncollated. Captions and the index are excluded.",
+  "edition": "Boston and New York: Houghton Mifflin, 1913, published March 1913. Every selected excerpt has been collated in full against the dated Boston Public Library copy digitised as Internet Archive storyofmyboyhood00muir_1. Gutenberg 18359 supplied the initial transcription but describes an undated fourteenth impression; no date is invented for that impression. The single substantive selected-word variant is resolved in favour of the 1913 witness: Chapter VIII reads ‘sent me flying to the woods’. Prose line wrapping and words hyphenated solely at line endings are rejoined; Gutenberg typographical punctuation and underscores marking italics are retained. Publisher matter, captions and navigation labels are excluded. The Library of Congress 1913 copy independently corroborates the edition date. The Hickory Hill well excerpt (Chapter VI), added in the 2026-10-07 repair, was collated at word level with the same witness and shows no word variants; its illustration caption is omitted. The library text holds all eight chapters with their printed synopses; the 1913 reading ‘sent me flying to the woods’ is applied, and the rest of the text follows Gutenberg 18359 uncollated. Captions and the index are excluded. On 2026-11-18 the whole of Chapter I (its synopsis and blocks 1–54) was collated word by word against the same witness, every difference decided on the page image: two readings changed to the 1913 text (‘plain reading- and spelling-lessons’; ‘high roaring waves. “Now where we are,”’), and the printing’s thin-spaced contractions (‘could n’t’, ‘did n’t’) are closed up as in the transcription.",
   "publicationYear": 1913,
   "translationYear": null,
   "url": "https://www.gutenberg.org/ebooks/18359",
@@ -26,6 +26,10 @@
     "complete": true,
     "note": null,
     "collated": [
+      [
+        1,
+        54
+      ],
       [
         130,
         134
@@ -70,6 +74,6 @@
   },
   "text": {
     "blocks": 348,
-    "sha256": "3d49cdce2a5648cf7bfc8307ef2dc0511d9ec5d01749bfb6ac17d58b48b12e02"
+    "sha256": "69807c371351985016877f34b4d6ed9f3c07ccfe67bd88bf56b37afdcfcaa233"
   }
 }
