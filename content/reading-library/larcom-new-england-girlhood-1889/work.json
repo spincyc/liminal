@@ -4,7 +4,7 @@
   "author": "Lucy Larcom",
   "title": "A New England Girlhood: Outlined from Memory",
   "translator": null,
-  "edition": "Boston and New York: Houghton, Mifflin and Company, 1889; copyright 1889 by Lucy Larcom. Text supplied from Project Gutenberg eBook 2293, a transcription whose print exemplar is unidentified; every selected excerpt was collated character by character against OCR of two scans of the 1889 plates (the Library of Congress deposit copy, title page dated 1889 and stamped DEC 2 1889, archive.org newenglandgirlho00lar; and a Boston Public Library copy, archive.org newenglandgirlho00larc_1). Where both scans agree against the PG transcription, the printed reading is used (for example “hill” for PG “bill”, “resolution” for “solution”, “figures,” for “figurines”, and the printed spaced contractions “has n’t”, “does n’t”, “is n’t”); three further punctuation and wording readings were confirmed from page images. PG’s straight quotation marks and double-hyphen dashes are retained as transcription conventions, and words divided at printed line ends follow PG. Prose soft line-wraps are joined; paragraph boundaries follow the transcription. In the library text, only the passages used as nightly readings carry these collated print readings; the rest of the book is the Project Gutenberg 2293 transcription as published (wrapping joined), not collated. The author’s dedication, epigraphs and preface are included; chapter numbers are joined with their titles as headings. Five further passages read by Grade 4 calendar readings (blocks 233–244, 272–283, 293–305, 341–348 and 551–565) were collated the same way in November 2026, every difference decided on the page images of the Library of Congress copy: 18 readings changed to the print, among them a printed line that PG omits (“dropping down through a wide crack in the floor”), “had” for PG “bad”, “took” for “too”, “I had uttered” for “I was uttered”, “sunk” for “stink” and “a taste or talent” for “a taste or”, while the printed misprint “shop-widow” (page 77) is retained.",
+  "edition": "Boston and New York: Houghton, Mifflin and Company, 1889; copyright 1889 by Lucy Larcom. Text supplied from Project Gutenberg eBook 2293, a transcription whose print exemplar is unidentified; every selected excerpt was collated character by character against OCR of two scans of the 1889 plates (the Library of Congress deposit copy, title page dated 1889 and stamped DEC 2 1889, archive.org newenglandgirlho00lar; and a Boston Public Library copy, archive.org newenglandgirlho00larc_1). Where both scans agree against the PG transcription, the printed reading is used (for example “hill” for PG “bill”, “resolution” for “solution”, “figures,” for “figurines”, and the printed spaced contractions “has n’t”, “does n’t”, “is n’t”); three further punctuation and wording readings were confirmed from page images. PG’s straight quotation marks and double-hyphen dashes are retained as transcription conventions, and words divided at printed line ends follow PG. Prose soft line-wraps are joined; paragraph boundaries follow the transcription. In the library text, only the passages used as nightly readings carry these collated print readings; the rest of the book is the Project Gutenberg 2293 transcription as published (wrapping joined), not collated. The author’s dedication, epigraphs and preface are included; chapter numbers are joined with their titles as headings. Five further passages read by Grade 4 calendar readings (blocks 233–244, 272–283, 293–305, 341–348 and 551–565) were collated the same way in November 2026, every difference decided on the page images of the Library of Congress copy: 18 readings changed to the print, among them a printed line that PG omits (“dropping down through a wide crack in the floor”), “had” for PG “bad”, “took” for “too”, “I had uttered” for “I was uttered”, “sunk” for “stink” and “a taste or talent” for “a taste or”, while the printed misprint “shop-widow” (page 77) is retained. Blocks 612–626 (Chapter IX) were collated the same way for Grade 4 calendar readings, every difference decided on the page images of the Boston Public Library copy: four readings changed to the print (“hang” for PG “bang”, “snow-storms”, “stage-coach” and a comma), while the printed italics of the dialect word “aour” are not marked, as elsewhere in this text.",
   "publicationYear": 1889,
   "translationYear": null,
   "url": "https://archive.org/details/newenglandgirlho00lar",
@@ -71,6 +71,10 @@
         565
       ],
       [
+        612,
+        626
+      ],
+      [
         671,
         677
       ],
@@ -82,6 +86,6 @@
   },
   "text": {
     "blocks": 882,
-    "sha256": "0671a62d9809fb55d01d8201d1679232b8d9495fca4241d81a081d3b1ee97e78"
+    "sha256": "0a328d7f367bb291f076a6419f37cec5c864ce0e1addb624ffc993cd266411da"
   }
 }
