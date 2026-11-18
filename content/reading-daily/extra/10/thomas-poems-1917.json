@@ -16,7 +16,7 @@
       },
       "challenge": "Hear how a call to rise turns from dreams and lovers toward “the old wars.”",
       "focus": "A dawn summons that praises the earth and sends men to war in the same breath.",
-      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. He wrote this poem in 1916, while training as an artillery officer; in army camps a trumpet sounded reveille, the morning call to rise.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. He wrote this poem in 1916, while training as an artillery officer; in army camps a trumpet sounded reveille, the morning call to rise. It is read on Veterans Day, first kept as Armistice Day at the end of the war in which Thomas was killed.",
       "contentNote": null,
       "excerpt": {
         "locator": "Complete poem THE TRUMPET; opens “RISE up, rise up, And, as the trumpet blowing Chases the dreams of men, As the dawn…”; closes “…the stars Through all the dewy night: Up with the light, To the old wars; Arise, arise!”.",
@@ -65,7 +65,8 @@
             "Open your eyes to the air"
           ]
         }
-      ]
+      ],
+      "holiday": "veterans-day"
     },
     {
       "id": "reading-10-thomas-poems-1917-02",
@@ -2187,6 +2188,82 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reading-10-thomas-poems-1917-35",
+      "title": "Sowing, When We Two Walked, and In Memoriam (Easter, 1915)",
+      "sourceId": "thomas-poems-1917",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 10,
+        "discussionMinutes": 17,
+        "totalMinutes": 27
+      },
+      "challenge": "Read three short spring poems in the order the book prints them, and ask what the last one does to the first two.",
+      "focus": "Seed safely sown, a Lenten walk remembered, and Easter flowers that no one will gather.",
+      "context": "Edward Thomas (1878–1917) wrote almost all his poems between the end of 1914 and his death in battle at Arras in April 1917; this volume appeared later that year. These three poems stand together in the book; Thomas wrote the last at Easter 1915, before he enlisted, in the first spring of the war, when young men from English villages were already in the trenches in France. Lent is the season of fasting and self-denial in the forty days before Easter. In an old Greek story a king and queen who proudly called each other Jupiter and Juno, the king and queen of the gods, were punished by the jealous gods. The reading falls on Easter because the last poem is set at Eastertide and the second remembers Lent.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "Three complete poems printed in sequence, SOWING, WHEN WE TWO WALKED and IN MEMORIAM (EASTER, 1915); opens “IT was a perfect day For sowing; just As sweet and dry was the ground As tobacco-dust.”; closes “…home, who, with their sweethearts, should Have gathered them and will do never again.”.",
+        "isCompleteWork": false,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          70,
+          80
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "a24e685b9a4d60482487e423f771ecfdfe75f8d3938ac9626aeb32111b3d3117"
+      },
+      "questions": [
+        {
+          "id": "reading-10-thomas-poems-1917-35-q1",
+          "prompt": "In “Sowing,” what has the speaker finished, and how does he spend the hour afterward? What does the rain add at the end?",
+          "facilitatorNotes": [
+            "The early seeds are “All safely sown” in ground as sweet and dry as tobacco-dust, and nothing is left undone. He “tasted deep” the long evening between the owl’s first cry and the first star, savouring rest after work. The rain is just what new seed needs; it says good-night as “Half a kiss, half a tear,” so even its touch of sadness is gentle."
+          ],
+          "evidence": [
+            "All safely sown.",
+            "Half a kiss, half a tear,"
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-35-q2",
+          "prompt": "In “When We Two Walked,” what did the two think about their happiness at the time, and what do they think now?",
+          "facilitatorNotes": [
+            "Walking in Lent, they “imagined that happiness / Was something different,” and their walk “something less.” Now they see that it was happiness. They were wise to hide it, unlike the proud couple who acted Juno and Jupiter and were killed by the jealous gods; their modesty leaves them “free / To recall” it. Lent, a season of doing without, suits a happiness they did not claim."
+          ],
+          "evidence": [
+            "And this was something less.",
+            "To recall our happiness then."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-35-q3",
+          "prompt": "Whom does “In Memoriam (Easter, 1915)” remember? How does it make the loss felt without describing any battle?",
+          "facilitatorNotes": [
+            "The men far from home at the war who should have picked the wood’s flowers with their sweethearts. The flowers lying “thick” at nightfall are evidence of absence: no one has gathered them. The last line moves from “should / Have gathered” to “will do never again,” turning absence into death. The single long sentence holds the shock until its final words."
+          ],
+          "evidence": [
+            "flowers left thick at nightfall in the wood",
+            "Have gathered them and will do never again."
+          ]
+        },
+        {
+          "id": "reading-10-thomas-poems-1917-35-q4",
+          "prompt": "Easter celebrates new life after death. Read together, do these three poems share that hope, question it, or both?",
+          "facilitatorNotes": [
+            "A defensible reading: they set nature’s renewal beside a human loss that is not renewed. The seed buried in “Sowing” will rise and the flowers come back every spring, but the men will not; the Easter poem is a memorial, not a resurrection. Others hear a quieter hope: happiness recognised later in “When We Two Walked,” and the flowers that “call into mind” the men, keep them in memory. Ask students to weigh the order: the book ends the sequence on loss."
+          ],
+          "evidence": [
+            "This Eastertide call into mind the men,",
+            "the early seeds"
+          ]
+        }
+      ],
+      "holiday": "easter"
     }
   ]
 }
