@@ -70,7 +70,7 @@
       return;
     }
     const readings = library.works.reduce((sum, work) => sum + work.readings, 0);
-    $("librarySummary").textContent = library.works.length + " complete public-domain works behind " + readings.toLocaleString("en-US") + " nightly readings. Read any of them whole, with every nightly passage marked.";
+    $("librarySummary").textContent = library.works.length + " public-domain works behind " + readings.toLocaleString("en-US") + " nightly readings. Read any of them whole, with every nightly passage marked.";
     apply();
     announce((invalid ? "That library link was not recognized. " : "") + "Showing " + library.works.length + " works.", invalid);
     if (focusNext) $("libraryHeading").focus();

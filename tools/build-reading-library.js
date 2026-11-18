@@ -109,7 +109,9 @@ function buildLibrary({ library, uses = new Map(), output = path.join(ROOT, "dis
     works.push({ id, author: work.author, title: work.title, translator: work.translator, year: work.publicationYear,
       words, levels, genres, readings: used.length, complete: work.scope.complete, file: libraryFile(id) });
   }
-  works.sort((a, b) => a.author.localeCompare(b.author) || a.title.localeCompare(b.title));
+  // Work ids begin with the author's surname (docs/reading-library.md), so
+  // id order is the library's shelf order: by surname, then title.
+  works.sort((a, b) => a.id.localeCompare(b.id));
   fs.writeFileSync(path.join(directory, "index.json"), JSON.stringify({ schemaVersion: 1, works }) + "\n");
   return { works: works.length };
 }
