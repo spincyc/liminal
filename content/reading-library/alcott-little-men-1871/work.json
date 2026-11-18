@@ -4,7 +4,7 @@
   "author": "Louisa May Alcott",
   "title": "Little Men: Life at Plumfield with Jo’s Boys",
   "translator": null,
-  "edition": "Boston: Roberts Brothers, 1871, first edition; text taken from the scan-backed Wikisource transcription (Index:Little Men - Alcott (1871).djvu) and collated character by character against the OCR text of two scans of the 1871 printing (Library of Congress copy, archive.org littlemenlifeatp01alco; University of California copy, archive.org littlemenlifeatp00alcoiala). Where both scans agree, the printed punctuation, capitalization, word division and wording are adopted (for example “just round the corner, and Mrs. Bhaer close by, to fill”, “They were”, “O Aunty! please”, “apple-pie”, “a three mile drive”); corrections are listed in the collation log. The printed misprints “lowed” and “coriopsis” on page 307 are retained; one transcription paragraph break absent from printed page 42 is removed. Navigation, page labels and a mid-paragraph illustration caption are omitted; prose wraps and separated drop-cap letters are joined, verse line breaks retained, and italics not marked. Outside the passages used by the nightly readings the library text has not been collated: there it keeps the Wikisource transcription’s words and punctuation, which in places follow a later typography (for example everything and anything closed up). Chapter IV (blocks 281–356, read by Grade 4 calendar readings) was collated the same way in November 2026, every difference decided on the page images of the Library of Congress copy: 39 readings changed to the print (for example “sent her the toys”, “more powerful with Nat than fear”, “must have watched over him”, “took real pleasure”, “pic-nics”, “every one”), and the printed “Mrs. Joe” (page 59) and “Mr Bhaer” (page 61) are retained.",
+  "edition": "Boston: Roberts Brothers, 1871, first edition; text taken from the scan-backed Wikisource transcription (Index:Little Men - Alcott (1871).djvu) and collated character by character against the OCR text of two scans of the 1871 printing (Library of Congress copy, archive.org littlemenlifeatp01alco; University of California copy, archive.org littlemenlifeatp00alcoiala). Where both scans agree, the printed punctuation, capitalization, word division and wording are adopted (for example “just round the corner, and Mrs. Bhaer close by, to fill”, “They were”, “O Aunty! please”, “apple-pie”, “a three mile drive”); corrections are listed in the collation log. The printed misprints “lowed” and “coriopsis” on page 307 are retained; one transcription paragraph break absent from printed page 42 is removed. Navigation, page labels and a mid-paragraph illustration caption are omitted; prose wraps and separated drop-cap letters are joined, verse line breaks retained, and italics not marked. Outside the passages used by the nightly readings the library text has not been collated: there it keeps the Wikisource transcription’s words and punctuation, which in places follow a later typography (for example everything and anything closed up). Chapter IV (blocks 281–356, read by Grade 4 calendar readings) was collated the same way in November 2026, every difference decided on the page images of the Library of Congress copy: 39 readings changed to the print (for example “sent her the toys”, “more powerful with Nat than fear”, “must have watched over him”, “took real pleasure”, “pic-nics”, “every one”), and the printed “Mrs. Joe” (page 59) and “Mr Bhaer” (page 61) are retained. Chapter VII (blocks 704–807) was collated the same way in November 2026 against both scans, every difference decided on the page images of the Library of Congress copy: 32 readings changed to the print (for example “You do hurt me”, “To help me make”, “dug it up”, “who was at work”, “sure that sooner or later”, “Mary Anne”, “Giddy gaddy”, and “Mr Bhaer” without a full stop on page 113), and the printed “pooring” (page 119) and the stray closing quotation mark after “school was done.” (page 115) are retained.",
   "publicationYear": 1871,
   "translationYear": null,
   "url": "https://en.wikisource.org/wiki/Little_Men",
@@ -39,6 +39,10 @@
         515
       ],
       [
+        704,
+        807
+      ],
+      [
         2012,
         2018
       ],
@@ -50,6 +54,6 @@
   },
   "text": {
     "blocks": 2436,
-    "sha256": "8909f00aa09a9db5daff01f84336a77c628c4d04410bd9053391b0c47ce6ddea"
+    "sha256": "e4310c42a37b8b8fdac57afc2f9411a6f3406ad21822a3b7304e07ef37249450"
   }
 }
