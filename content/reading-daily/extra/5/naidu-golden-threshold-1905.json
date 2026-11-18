@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "naidu-golden-threshold-1905",
+  "readings": [
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-01",
+      "title": "The Snake-Charmer",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Work out whom the speaker is calling, and why a snake-charmer speaks to a snake as if to someone he loves.",
+      "focus": "A snake-charmer’s flute-song becomes a love song, full of perfumes and promises, to coax a hidden snake out of the jungle.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. Indian snake-charmers played a flute to draw a cobra out of hiding and make it rise and sway; this poem is the charmer’s song. “Whither dost thou hide” means where do you hide; “thee” and “thou” mean you. Keovas are fragrant screw-pine flowers; jasmine has small white scented flowers; oleanders are shrubs with pink flowers; ambrosial means delicious, like the food of the gods; a bower is a leafy shelter; golden-vested means dressed in gold; to loiter is to linger; subtle means clever and hard to catch; mellifluous means sweet-sounding, like honey.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Snake-Charmer,” complete poem; opens “Whither dost thou hide from the magic of my flute-call? In what moonlight-tangled meshes…”; closes “…subtle bride of my mellifluous wooing, Come, thou silver-breasted moonbeam of desire!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          19,
+          21
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "5836f56baf90af26a6439d155f5735ebfced885bdec8d9d837af6cc761cb51cd"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-01-q1",
+          "prompt": "Where does the charmer imagine the snake is hiding? List the places.",
+          "facilitatorNotes": [
+            "In “moonlight-tangled meshes of perfume,” where flowers guard a sleeping squirrel, in deep woods bright with jasmine, by murmuring hollows under oleanders. Every hiding place is lovely and sweet-smelling: he pictures the jungle at night as a garden."
+          ],
+          "evidence": [
+            "In what moonlight-tangled meshes of perfume,",
+            "Where the deep woods glimmer with the jasmine's bloom?"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-01-q2",
+          "prompt": "What does he promise the snake in the second stanza? Which promises would really suit a snake?",
+          "facilitatorNotes": [
+            "Milk and wild honey, a basket of green and white rushes, and a palace-bower where maidens thread flowers and laugh. Milk was a traditional offering to cobras in India, but the palace and the laughing maidens sound like promises to a person. The basket is also where a charmer keeps his snake, so a reader may hear a trap inside the gift."
+          ],
+          "evidence": [
+            "I'll feed thee, O beloved, on milk and wild red honey,",
+            "I'll bear thee in a basket of rushes, green and white,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-01-q3",
+          "prompt": "The snake is called “beloved,” “subtle bride” and “silver-breasted moonbeam of desire.” Why speak to a snake like a lover?",
+          "facilitatorNotes": [
+            "The charmer’s whole art is coaxing, so his song uses the words of courtship; even his flute-playing is “mellifluous wooing.” “Subtle” fits both a clever beloved and a snake. Readers may find the idea beautiful, funny or a little unsettling, since a dangerous creature is called a moonbeam."
+          ],
+          "evidence": [
+            "Come, thou subtle bride of my mellifluous wooing,",
+            "Come, thou silver-breasted moonbeam of desire!"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-01-q4",
+          "prompt": "Read the poem aloud. How do its long lines and repeated sounds work like the charmer’s flute?",
+          "facilitatorNotes": [
+            "The lines are long and rolling, full of m, l and s sounds (“moonlight,” “mellow,” “murmuring,” “mellifluous”), and “Whither,” “Where” and “Come” keep returning. The sound sways and coaxes, the way music is meant to draw the snake out. Ask readers which line sounds most like music to them."
+          ],
+          "evidence": [
+            "Thread with mellow laughter the petals of delight.",
+            "Whither dost thou loiter by what murmuring hollows,"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-02",
+      "title": "Corn-Grinders",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow a pattern of question and answer through three voices, and notice what changes in the third.",
+      "focus": "A mouse, a deer and a young bride each mourn a lost mate in the same refrain, so the song moves from small animals to a human grief.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. This is one of Naidu’s “Folk Songs,” written in the manner of songs Indian women sang while grinding grain (“corn”) between the round stones of a hand-mill. This text prints “in the shy” in the second line, probably a misprint for “sky.” Millet is a small grain; a granary stores grain; a baited snare is a trap with food in it; to slay is to kill; a dart is a light spear; a pyre is the pile of wood on which a body is burned at a Hindu funeral; quenchless means impossible to put out.",
+      "contentNote": "Each verse mourns a death: a mouse caught in a trap, a deer killed by a hunter, and a young bride’s husband, with his funeral fire.",
+      "excerpt": {
+        "locator": "“Corn-Grinders,” complete poem; opens “O little mouse, why dost thou cry While merry stars laugh in the shy?”; closes “…with the quenchless fire That lit my lover's funeral pyre: Alas! alas! my lord is dead.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          23,
+          28
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "b857d85ddef9031089d2196984aebb2c448c7f419cfab37231e28b0a033be40b"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-02-q1",
+          "prompt": "Who asks the questions, and who answers? What is the same in every answer?",
+          "facilitatorNotes": [
+            "An unnamed voice, perhaps the women at the mill, asks a mouse, a deer and a bride why they cry while the world is merry or asleep. Each answer begins and ends with “Alas! alas! my lord is dead!” so the refrain frames every grief."
+          ],
+          "evidence": [
+            "O little mouse, why dost thou cry",
+            "Alas! alas! my lord is dead!"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-02-q2",
+          "prompt": "How did the mouse’s and the deer’s mates die? What do the two deaths have in common?",
+          "facilitatorNotes": [
+            "The mouse’s mate went for a grain of millet in a rich farmer’s shed and was caught in a baited trap; the deer’s went to drink at evening and a hunter killed him. Both were doing something ordinary and necessary, eating and drinking, and both were killed by someone lying in wait."
+          ],
+          "evidence": [
+            "They caught him in a baited snare,",
+            "A waiting hunter threw his dart,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-02-q3",
+          "prompt": "The bride’s verse is different from the animals’. What does she fear besides her grief? What do “hungry tears” and “famished years” suggest?",
+          "facilitatorNotes": [
+            "She asks who will ease “the want of famished years”: as a widow she faces loneliness and perhaps poverty, and her marriage will never be “crowned with love.” Hunger words fit a song sung over grinding grain. The animals’ mates were killed by people; no cause is given for her husband’s death. The verses grow from small creatures to a person."
+          ],
+          "evidence": [
+            "Or still the want of famished years,",
+            "And crown with love my marriage-bed?"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-02-q4",
+          "prompt": "Why might women sing such a sad song while they grind grain? Does the repeating refrain suit the work?",
+          "facilitatorNotes": [
+            "The refrain comes round again and again like the turning millstone, and a work song keeps the rhythm and lets the singers share their feelings. Grief also sits beside happiness in every verse (“With all the happy world asleep”). Some readers think a sad song would make the work heavier; others that singing about sorrow together is a comfort."
+          ],
+          "evidence": [
+            "With all the happy world asleep?",
+            "Alas! alas! my lord is dead."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-03",
+      "title": "Village-Song",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Tell the two speakers apart, and decide what the “fairy-folk” calling the daughter might be.",
+      "focus": "A mother begs her daughter to stay for her wedding; the daughter answers that the forest is calling, and that every joy carries a sorrow.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. “Honey, child” is the mother’s pet name for her daughter. Champa is a tree with fragrant yellow flowers; the köil (koel) is a cuckoo whose call is loud in Indian spring; the lotus is a water lily; saffron is a deep yellow-orange, a colour of Indian bridal clothes; sandal is fragrant sandalwood; a loom is where cloth is woven; cadences are the falling notes at the end of a tune.",
+      "contentNote": "The daughter’s last answer speaks of death, and her leaving can be read as dying.",
+      "excerpt": {
+        "locator": "“Village-Song,” complete poem; opens “Honey, child, honey, child, whither are you going? Would you cast your jewels all to the…”; closes “…forest-streams are falling; O mother mine, I cannot stay, the fairy-folk are calling.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          30,
+          33
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "3eb36e1f0a53d530177a8116180f0d566d25b1b46f12e08936cc00707141c837"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-03-q1",
+          "prompt": "Who speaks in each stanza? How can you tell?",
+          "facilitatorNotes": [
+            "The first and third stanzas begin “Honey, child” and belong to the mother; the second and fourth begin “Mother mine” and belong to the daughter. The poem is a conversation in turns, as many folk songs are."
+          ],
+          "evidence": [
+            "Honey, child, honey, child, whither are you going?",
+            "Mother mine, to the wild forest I am going."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-03-q2",
+          "prompt": "List what the mother says her daughter would leave behind. Which do you think she hopes will persuade her most?",
+          "facilitatorNotes": [
+            "Her jewels, the mother who fed her, and the lover riding to marry her; then the world’s pleasures: bridal songs and cradle songs, wedding robes on the loom, wedding cakes on the hearth. Love, family, marriage and children. Readers can choose and explain."
+          ],
+          "evidence": [
+            "Would you grieve the lover who is riding forth to wed you?",
+            "Your bridal cakes are on the hearth: O whither are you going?"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-03-q3",
+          "prompt": "How does the daughter answer “the world is full of pleasure”? Explain “The laughter of the sun to-day, the wind of death to-morrow.”",
+          "facilitatorNotes": [
+            "Even the happiest songs have “cadences of sorrow”: joy today is followed by death tomorrow. She is drawn to something that does not pass away, and the forest’s music sounds “far sweeter” to her."
+          ],
+          "evidence": [
+            "The bridal-songs and cradle-songs have cadences of sorrow,",
+            "The laughter of the sun to-day, the wind of death to-morrow."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-03-q4",
+          "prompt": "Who or what are the “fairy-folk” calling her? Is she choosing something wonderful or something sad?",
+          "facilitatorNotes": [
+            "The poem never says. She may long for the wild and for freedom; she may be called to a holy life, as some Indians left home to live as hermits in the forest; or, as in many folk songs, the spirits may be calling her away in death. Ask readers to tie their choice to words such as “I cannot stay.” The mother’s grief is real whichever reading they choose."
+          ],
+          "evidence": [
+            "Far sweeter sound the forest-notes where forest-streams are falling;",
+            "O mother mine, I cannot stay, the fairy-folk are calling."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-04",
+      "title": "Harvest Hymn",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 8,
+        "discussionMinutes": 11,
+        "totalMinutes": 19
+      },
+      "challenge": "Follow a hymn sung by three choirs, and match each god to the part of the harvest he or she gives.",
+      "focus": "Men, women and then all the people together thank the sun, the rain, the earth and at last the maker of everything for the harvest.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. A hymn is a song of praise to a god. The singers are Hindu villagers, and the gods they name are Surya, the sun; Varuna, god of the waters and the rain (the “main” is the sea); Prithvi, the earth, praised as a mother; and Brahma (printed “Bramha”), the creator. Om is a sacred sound in Hindu prayer. Tribute is a gift owed to a ruler; munificent and beneficent mean generous; furrows are the lines a plough cuts; garnered means gathered in; opulent means rich; ineffable means too great for words; succour is help.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Harvest Hymn,” complete poem, in its three parts for men’s, women’s and all voices; opens “Lord of the lotus, lord of the harvest, Bright and munificent lord of the morn! Thine is…”; closes “…life and all blessing, we hail thee. We praise thee, O Bramha, with cymbal and prayer.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          38,
+          44
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "94732de7c112e811dbfd78671724daa8b2d05b4ce70934f3487e5c5cc2b1966a"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-04-q1",
+          "prompt": "Which god does each group praise, and what has each done for the harvest?",
+          "facilitatorNotes": [
+            "The men praise Surya, the sun, whose bounty “prospered our sowing” and ripened the grain, and Varuna, who sends rain and dew. The women praise Prithvi, the Earth, who feeds them. All voices together praise Brahma, lord of everything. Sun, rain and soil are just what crops need."
+          ],
+          "evidence": [
+            "We praise thee, O Surya, with cymbal and flute.",
+            "O sender of rain and the dewfall, we hail thee,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-04-q2",
+          "prompt": "Every stanza follows the same pattern. Find it, and find the small changes from stanza to stanza.",
+          "facilitatorNotes": [
+            "Each begins “Lord” (or “Queen”) “of …, lord of the harvest,” says “Thine is the bounty” or “mercy,” brings something “for tribute,” and ends “we hail thee, We praise thee … with cymbal and” another instrument: flute, pipe, drum, and finally prayer. The last stanza needs no instrument at all. Repetition suits a hymn sung by many voices."
+          ],
+          "evidence": [
+            "We bring thee our songs and our garlands for tribute,",
+            "We praise thee, O Bramha, with cymbal and prayer."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-04-q3",
+          "prompt": "Why might the women sing to the Earth as a mother?",
+          "facilitatorNotes": [
+            "She is a “Sweet and omnipotent mother” whose “plentiful bosom” feeds them and whose womb gives birth to their riches: crops grow from the earth as children are born. Women who bear and feed children praise the earth in their own terms. English has the same idea in “Mother Earth.”"
+          ],
+          "evidence": [
+            "Sweet and omnipotent mother, O Earth!",
+            "Thine is the plentiful bosom that feeds us,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-04-q4",
+          "prompt": "At the end all the voices offer “our lives and our labours” instead of songs and fruit. Why does the hymn end this way?",
+          "facilitatorNotes": [
+            "The last god is lord of all, “the Seed and the Scythe,” the beginning and the end of every harvest, and even “our Hands and our Heart and our Home.” The gift grows from garlands and grain to the people’s whole lives. Readers of any faith, or none, can talk about being thankful for food and for the work behind it."
+          ],
+          "evidence": [
+            "Thou art the Seed and the Scythe of our harvests,",
+            "We bring thee our lives and our labours for tribute,"
+          ]
+        }
+      ],
+      "months": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-05",
+      "title": "Nightfall in the City of Hyderabad",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Picture a city at sunset from seven couplets, each its own image, and notice how sights and sounds take turns.",
+      "focus": "Naidu paints her home city at dusk as a procession of colours and sounds that ends with Night arriving like a queen.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. Hyderabad was ruled in her time by the Nizam, a Muslim prince. Opal and peridote are gemstones, opal milky and many-coloured and peridote green; to scintillate is to sparkle; a minaret is a mosque’s tower, from which the muezzin calls Muslims to prayer; “hark” means listen; trellised balconies have screens of crossed strips, behind which women of the time often watched the street unseen; languid means slow and lazy; voluminous means full and flowing; the Char Minar (“four minarets”) is a great arched building in the city’s centre, built in 1591; cavalcades are processions of riders; serenades are songs sung at night; majestical means majestic; sumptuous means splendid.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Nightfall in the City of Hyderabad,” complete poem; opens “See how the speckled sky burns like a pigeon's throat, Jewelled with embers of opal and…”; closes “Over the city bridge Night comes majestical. Borne like a queen to a sumptuous festival.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          186,
+          192
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "974d4f7df4e8e7ca4780b1672d6106d3d9d9a708ddecdd7d7232549b7208e134"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-05-q1",
+          "prompt": "Which couplets are about what you see, and which about what you hear?",
+          "facilitatorNotes": [
+            "“See” opens the sky and the river; “Hark” opens the muezzins’ call. The veiled faces and the elephants are mostly sight (though the elephants’ bells ring), and the Char Minar couplet is sound: riders, cymbals and songs. The poem moves the reader’s attention between eye and ear."
+          ],
+          "evidence": [
+            "See how the speckled sky burns like a pigeon's throat,",
+            "Hark, from the minaret, how the muezzins call"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-05-q2",
+          "prompt": "Choose two comparisons. What does each let you see?",
+          "facilitatorNotes": [
+            "The sunset sky “burns like a pigeon’s throat,” the shimmering grey, pink and green of a pigeon’s neck; the white river curves “like a tusk” from the city-gates, as if the city were an elephant; the call to prayer “Floats like a battle-flag,” rising above the wall, bold and stirring. Ask readers to explain their choices."
+          ],
+          "evidence": [
+            "Curved like a tusk from the mouth of the city-gates.",
+            "Floats like a battle-flag over the city wall."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-05-q3",
+          "prompt": "Read the elephants’ couplet aloud. How does its sound match the way they move?",
+          "facilitatorNotes": [
+            "“wind through the winding lanes” and “silver bells hung from their silver chains” repeat words, so the lines sway slowly back and forth like walking elephants and their swinging bells."
+          ],
+          "evidence": [
+            "Leisurely elephants wind through the winding lanes."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-05-q4",
+          "prompt": "How does Night arrive in the last couplet? What has the rest of the poem prepared her for?",
+          "facilitatorNotes": [
+            "She comes over the bridge “Borne like a queen,” carried in procession, to “a sumptuous festival.” The jewelled sky, the battle-flag, the elephants and the music have been building a royal festival for her. Night here is not dark or frightening but splendid. Readers can compare it with other poems about night they know."
+          ],
+          "evidence": [
+            "Over the city bridge Night comes majestical.",
+            "Borne like a queen to a sumptuous festival."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-naidu-golden-threshold-1905-06",
+      "title": "Street Cries",
+      "sourceId": "naidu-golden-threshold-1905",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 7,
+        "discussionMinutes": 11,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow three times of day through three stanzas, and see how each street cry suits its hour.",
+      "focus": "The calls of street sellers mark a day in an Indian city, from hungry dawn to burning noon to an evening of lovers and flowers.",
+      "context": "Sarojini Naidu (1879–1949) grew up in Hyderabad, in southern India, and wrote her poems in English; The Golden Threshold (1905), her first book, is named after her family’s house there. She later became a leader of India’s struggle for independence. In Indian cities, as in many others, sellers walked the streets calling out what they had to sell. Ardent means eager or burning; to forge here is to make by hard work; fasting means not yet having eaten; to swoon is to faint; implacable means impossible to calm; koils (koels) are cuckoos; languid means weak and slow; succour is help; a bazaar is a market; a canopy is a cloth roof; a lute is a stringed instrument; poignant means sharp and touching, both sweet and sad.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“Street Cries,” complete poem; opens “When dawn's first cymbals beat upon the sky, Rousing the world to labour's various cry,…”; closes “…of life's poignant sweet, Buy flowers, buy flowers, floats down the singing street.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          194,
+          196
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "0a4a4747f5f5854128ffa98a8611525864e39aa16accb80e9fb85f66835f3564"
+      },
+      "questions": [
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-06-q1",
+          "prompt": "What is sold at each time of day, and who wants it?",
+          "facilitatorNotes": [
+            "At dawn, bread for “fasting men” going to work; at noon, fruit for people faint with thirst; at twilight, flowers for lovers sitting on the roof-terraces. Each cry answers a need of its hour."
+          ],
+          "evidence": [
+            "Buy bread, buy bread, rings down the eager street.",
+            "Buy flowers, buy flowers, floats down the singing street."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-06-q2",
+          "prompt": "The street is “eager,” then “panting,” then “singing.” How do the verbs “rings,” “steals” and “floats” change with it?",
+          "facilitatorNotes": [
+            "At dawn the cry rings out loud and lively; at noon it “steals,” as if too hot to shout, and the street pants like a tired animal; in the evening it floats lightly while the street sings. The sound of each cry fits the mood of its hour."
+          ],
+          "evidence": [
+            "Buy fruit, buy fruit, steals down the panting street."
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-06-q3",
+          "prompt": "Find the details that make noon feel cruel.",
+          "facilitatorNotes": [
+            "The earth “falters,” the waters “swoon,” the sunlight is “implacable,” the birds go quiet, and thirsty blood in weak throats begs for help from “the cruel heat.” Naidu makes the heat a merciless power that everything shrinks from."
+          ],
+          "evidence": [
+            "With the implacable radiance of noon,",
+            "Craves liquid succour from the cruel heat,"
+          ]
+        },
+        {
+          "id": "reading-5-naidu-golden-threshold-1905-06-q4",
+          "prompt": "The day moves from “labour’s various cry” to lovers “Drinking together of life’s poignant sweet.” Is the poem about selling, or about the whole shape of a day, or of a life?",
+          "facilitatorNotes": [
+            "Bread for work, fruit to get through the heat, flowers for love: the needs move from the body to the heart, and the cries work like the city’s clock. “Poignant sweet” adds a sting to the evening’s happiness. Some readers will stay with the busy street; others will see a whole life’s shape in one day. Both can point to the three stanzas."
+          ],
+          "evidence": [
+            "Rousing the world to labour's various cry,",
+            "Drinking together of life's poignant sweet,"
+          ]
+        }
+      ]
+    }
+  ]
+}

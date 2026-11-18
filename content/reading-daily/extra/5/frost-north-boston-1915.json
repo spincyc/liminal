@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "frost-north-boston-1915",
+  "readings": [
+    {
+      "id": "reading-5-frost-north-boston-1915-01",
+      "title": "The Pasture",
+      "sourceId": "frost-north-boston-1915",
+      "genre": "poetry",
+      "readingMode": "independent",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 10,
+        "totalMinutes": 16
+      },
+      "challenge": "Read a very short poem twice: once as plain farm chores, once as an invitation to the reader.",
+      "focus": "The poem that opens North of Boston asks “you” to come along on two small jobs, and so invites a reader into the whole book.",
+      "context": "North of Boston (1914; this is the 1915 New York printing) is Robert Frost’s second book, poems about the people of New England farms; its dedication calls it a “book of people.” “The Pasture” comes before all the other poems, and Frost later chose it to open his collected poems as well. A pasture is a field where animals graze; a spring is a place where water rises from the ground, and cleaning one means raking out the leaves so the water runs clear; “sha’n’t” is an old spelling of shan’t.",
+      "contentNote": null,
+      "excerpt": {
+        "locator": "“The Pasture,” complete poem; opens “I'm going out to clean the pasture spring; I'll only stop to rake the leaves away (And…”; closes “…It totters when she licks it with her tongue, I sha'n't be gone long.—You come too.”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          3,
+          4
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "13abf46e1ad5a73014df9a0fd21ae1bf62db31dc1ef800e4ef63479ab1252580"
+      },
+      "questions": [
+        {
+          "id": "reading-5-frost-north-boston-1915-01-q1",
+          "prompt": "What two jobs is the speaker going to do, and what might he stop to watch?",
+          "facilitatorNotes": [
+            "Clean the pasture spring by raking the leaves away, and fetch the little calf. At the spring he “may” wait to watch the water clear, which he adds in brackets, almost as an afterthought he cannot resist."
+          ],
+          "evidence": [
+            "I'm going out to clean the pasture spring;",
+            "(And wait to watch the water clear, I may):"
+          ]
+        },
+        {
+          "id": "reading-5-frost-north-boston-1915-01-q2",
+          "prompt": "What tells you how young the calf is?",
+          "facilitatorNotes": [
+            "“It totters when she licks it with her tongue”: it is so new that its mother’s lick nearly knocks it over. One small, exact picture does the work of a long description."
+          ],
+          "evidence": [
+            "It totters when she licks it with her tongue,"
+          ]
+        },
+        {
+          "id": "reading-5-frost-north-boston-1915-01-q3",
+          "prompt": "Each stanza ends “I sha’n’t be gone long.—You come too.” Who is “you”? Why say it twice?",
+          "facilitatorNotes": [
+            "Inside the poem, someone at the farmhouse, a wife, a child or a friend. Because this is the book’s first poem, “you” is also the reader. The promise to be quick and the invitation are both affectionate, and the repetition turns them into a refrain. Notice the dash: a pause before deciding to ask."
+          ],
+          "evidence": [
+            "I sha'n't be gone long.—You come too."
+          ]
+        },
+        {
+          "id": "reading-5-frost-north-boston-1915-01-q4",
+          "prompt": "Why might a poet open a whole book with such small chores? What might the clearing water and the new calf promise a reader?",
+          "facilitatorNotes": [
+            "Frost’s people live among small jobs like these, so the poem shows where the book will take us. Some readers see more: clearing a spring so you can see into it is like what a poem does, and the calf is new life in spring. Others will say it is simply a friendly invitation; both readings can use the same lines."
+          ],
+          "evidence": [
+            "I'll only stop to rake the leaves away",
+            "That's standing by the mother. It's so young."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-5-frost-north-boston-1915-02",
+      "title": "Mending Wall",
+      "sourceId": "frost-north-boston-1915",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 9,
+        "discussionMinutes": 11,
+        "totalMinutes": 20
+      },
+      "challenge": "Decide which of two neighbours’ views the poem favours, and notice what the speaker admits about himself.",
+      "focus": "Two neighbours rebuild the stone wall between their farms every spring; one questions it, the other repeats his father’s saying, and the poem lets both be heard.",
+      "context": "North of Boston (1914; this is the 1915 New York printing) is Robert Frost’s second book, poems about the people of New England farms; its dedication calls it a “book of people.” In this edition a one-sentence note stands before the poem’s title, linking it to “The Tuft of Flowers” in Frost’s first book, in which a worker feels close to a mower he never meets. New England fields are full of stones, and farmers piled them into walls along their boundaries; every winter frost heaves the ground and topples some. The frozen-ground-swell is the soil swelling as it freezes; abreast means side by side; a spell is a magic charm; “mischief” here is playful naughtiness; an “old-stone savage” is a stone-age man.",
+      "contentNote": "The speaker pictures his neighbour as “an old-stone savage armed”; “savage” was a period word for people thought primitive.",
+      "excerpt": {
+        "locator": "“Mending Wall,” complete poem, with the one-sentence note printed before its title; opens “Mending Wall takes up the theme where A Tuft of Flowers in A Boy's Will laid it down.”; closes “…he likes having thought of it so well He says again, \"Good fences make good neighbours.\"”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          5,
+          7
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "30a8ba05e0f873e5c200f934b63f6d4f8b044ff34284d5b135bb67818d583d52"
+      },
+      "questions": [
+        {
+          "id": "reading-5-frost-north-boston-1915-02-q1",
+          "prompt": "What makes the gaps in the wall? Find two different causes.",
+          "facilitatorNotes": [
+            "Something no one sees: the frozen ground swells under the wall and spills the top stones, making gaps “No one has seen them made or heard them made.” And hunters, who pull the stones apart to get a rabbit out for their dogs. One cause is mysterious, the other human."
+          ],
+          "evidence": [
+            "That sends the frozen-ground-swell under it,",
+            "No one has seen them made or heard them made,"
+          ]
+        },
+        {
+          "id": "reading-5-frost-north-boston-1915-02-q2",
+          "prompt": "How do the two men mend the wall? Why does the speaker call it “just another kind of out-door game”?",
+          "facilitatorNotes": [
+            "They walk the line together, each on his own side, putting back the stones that fell on his side, and some are so round they need a “spell” to stay put. It is like a game, “One on a side,” and it seems to have little purpose: “here there are no cows,” only pines and apple trees that will never cross."
+          ],
+          "evidence": [
+            "We keep the wall between us as we go.",
+            "There where it is we do not need the wall:"
+          ]
+        },
+        {
+          "id": "reading-5-frost-north-boston-1915-02-q3",
+          "prompt": "The neighbour says “Good fences make good neighbours” twice. What would the speaker like to ask him, and why won’t he just say “Elves”?",
+          "facilitatorNotes": [
+            "“Why do they make good neighbours?” Before building a wall he would want to know what he was “walling in or walling out.” “Elves” would be a joke name for the force that knocks walls down, but he would rather the neighbour “said it for himself,” that is, thought it through himself. Notice that he only wonders whether he could put the idea in his head; the poem never shows him saying it aloud."
+          ],
+          "evidence": [
+            "Before I built a wall I'd ask to know",
+            "He said it for himself."
+          ]
+        },
+        {
+          "id": "reading-5-frost-north-boston-1915-02-q4",
+          "prompt": "“He moves in darkness as it seems to me.” Is the speaker fair to his neighbour? Who starts the mending each spring?",
+          "facilitatorNotes": [
+            "He sees the neighbour as stuck in his father’s saying, armed with stones like a stone-age man. But it is the speaker who calls him: “I let my neighbour know beyond the hill,” and he admits “Spring is the mischief in me.” The neighbour may have his reasons, since clear boundaries can keep the peace. Readers can side with either man; the poem gives the speaker its first line and the neighbour its last."
+          ],
+          "evidence": [
+            "I let my neighbour know beyond the hill;",
+            "He will not go behind his father's saying,"
+          ]
+        },
+        {
+          "id": "reading-5-frost-north-boston-1915-02-q5",
+          "prompt": "The note before the title says this poem “takes up the theme where A Tuft of Flowers … laid it down.” “The Tuft of Flowers” ends with the thought that people work together “whether they work together or apart.” How are these two neighbours working both together and apart?",
+          "facilitatorNotes": [
+            "They meet, walk the line and lift stones side by side, so they work together; but the work is building a wall “between us,” each on his own side, so they stay apart. Readers who know “The Tuft of Flowers” can compare: there, two men who never meet feel close; here, two men side by side may hardly understand each other."
+          ],
+          "evidence": [
+            "Mending Wall takes up the theme where A Tuft of Flowers in A Boy's Will laid it down.",
+            "One on a side."
+          ]
+        }
+      ]
+    }
+  ]
+}
