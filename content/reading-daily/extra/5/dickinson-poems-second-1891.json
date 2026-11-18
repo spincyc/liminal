@@ -754,10 +754,7 @@
           ]
         }
       ],
-      "months": [
-        3,
-        4
-      ]
+      "holiday": "easter"
     },
     {
       "id": "reading-5-dickinson-poems-second-1891-11",
@@ -1283,80 +1280,6 @@
           "evidence": [
             "His future a dispute;",
             "That leaves this neighbor out."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "reading-5-dickinson-poems-second-1891-18",
-      "title": "The Oriole (1891 text)",
-      "sourceId": "dickinson-poems-second-1891",
-      "genre": "poetry",
-      "readingMode": "shared",
-      "time": {
-        "readingMinutes": 7,
-        "discussionMinutes": 12,
-        "totalMinutes": 19
-      },
-      "challenge": "Collect the many names the poem gives one bird, and follow its jokes about gold and treasure.",
-      "focus": "The golden oriole is a thief, a cheat and a glorious singer, and the speaker finds in an apple tree the treasure heroes sailed the world to seek.",
-      "context": "This is the complete poem as printed in Poems: Second Series (1891), edited by Thomas Wentworth Higginson and Mabel Loomis Todd five years after Emily Dickinson’s death; she published almost nothing in her lifetime. Early editors changed her punctuation and sometimes her wording, and gave some poems titles; this reading keeps that historical published version. The 1891 editors titled it “The Oriole.” The Baltimore oriole is a brilliant orange-and-black songbird that comes north in May and feeds on fruit and nectar in orchards. In Greek myth King Midas turned everything he touched to gold, and Jason sailed with heroes to win the Golden Fleece. A prodigal spends wildly; to disavow is to deny; badinage is teasing talk; an alighting mine is a gold mine coming down to land; a dissembler is a pretender; an epicure loves fine food; betimes means at times; an oratorio is a great work of music for voices; attar is perfume made from flowers; decamping means leaving in a hurry; Burma (spelt “Burmah”) was famous for rubies and golden temples; bards are poets; an emolument is a payment or treasure.",
-      "contentNote": "The poem calls the bird “The Jesuit of orchards,” using an old prejudice that treated Jesuits, members of a Catholic religious order, as cunning deceivers.",
-      "excerpt": {
-        "locator": "Book III, “Nature,” XIII, “The Oriole,” complete poem; opens “ONE of the ones that Midas touched, Who failed to touch us all, Was that confiding…”; closes “…if there were a Jason, Tradition suffer me Behold his lost emolument Upon the apple-tree.”.",
-        "isCompleteWork": true,
-        "continuesFrom": null,
-        "continuesTo": null,
-        "blocks": [
-          344,
-          350
-        ],
-        "startChar": null,
-        "endChar": null,
-        "textHash": "40079bf191e3524f19410c1d2be40020e0baa889a0a9318de13cc619473fd0a9"
-      },
-      "questions": [
-        {
-          "id": "reading-5-dickinson-poems-second-1891-18-q1",
-          "prompt": "“One of the ones that Midas touched” tells you the oriole’s colour. Find other gold and glitter in the poem.",
-          "facilitatorNotes": [
-            "He is “So dazzling, we mistake him / For an alighting mine”; he has “The splendor of a Burmah”; he is “The meteor of birds”; and at the end he is the Golden Fleece itself, on the apple tree. Gold runs through the whole poem."
-          ],
-          "evidence": [
-            "ONE of the ones that Midas touched,",
-            "For an alighting mine."
-          ]
-        },
-        {
-          "id": "reading-5-dickinson-poems-second-1891-18-q2",
-          "prompt": "Stanza three gives the bird six names. Which are praise and which are blame? Why both?",
-          "facilitatorNotes": [
-            "Dissembler, epicure and thief are blame, pleader nearly so; oratorio and “ecstasy in chief” are praise. He steals fruit and nectar and sings gloriously, so he “cheats as he enchants.” The poem cannot decide whether to scold or applaud him, and enjoys not deciding."
-          ],
-          "evidence": [
-            "A pleader, a dissembler,",
-            "He cheats as he enchants"
-          ]
-        },
-        {
-          "id": "reading-5-dickinson-poems-second-1891-18-q3",
-          "prompt": "“The Jesuit of orchards” uses a group of real people as a word for a sly cheat. What does the speaker mean, and is it fair to use people that way?",
-          "facilitatorNotes": [
-            "She means a charming trickster who wins you over while he robs you. The word comes from an old Protestant prejudice against the Jesuits, a Catholic order. Readers should see that it is a stereotype: judging a whole group by a label is unfair, and we would not use the word this way now. Some may suggest a better word of their own."
-          ],
-          "evidence": [
-            "The Jesuit of orchards,"
-          ]
-        },
-        {
-          "id": "reading-5-dickinson-poems-second-1891-18-q4",
-          "prompt": "The speaker never believed Jason went after a golden fleece. If there were a Jason, where would his treasure be? What is the joke?",
-          "facilitatorNotes": [
-            "On the apple tree: the oriole is the golden fleece, a treasure in a country orchard that no hero needed to sail for. The “rural man, / With thoughts that make for peace” finds wonders at home instead of in war and adventure. Some readers hear the humble speaker as teasing the old heroes; others as quietly boasting."
-          ],
-          "evidence": [
-            "But then I am a rural man,",
-            "Upon the apple-tree."
           ]
         }
       ]

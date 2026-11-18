@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "grade": 5,
+  "work": "longfellow-complete-poetical-works-1902",
+  "readings": [
+    {
+      "id": "reading-5-longfellow-complete-poetical-works-1902-01",
+      "title": "Midnight Mass for the Dying Year",
+      "sourceId": "longfellow-complete-poetical-works-1902",
+      "genre": "poetry",
+      "readingMode": "shared",
+      "time": {
+        "readingMinutes": 6,
+        "discussionMinutes": 12,
+        "totalMinutes": 18
+      },
+      "challenge": "Follow one long comparison, the year as a dying old king, and watch the world around him become a church service.",
+      "focus": "In the storms of late autumn the Old Year dies like a forsaken king, while wind, birds and clouds pray over him.",
+      "context": "Henry Wadsworth Longfellow (1807–1882) was the best-loved American poet of his century; this poem is from his first book of poems, Voices of the Night (1839). It pictures the passing year as an old man dying in the storms of late autumn, and on New Year’s Day that year has just ended. A mass is a church service, held here at midnight; rooks are large black crows; friars are monks, who “tell their beads” by counting prayers on a string of beads. In Shakespeare’s play King Lear an old king, given away by two of his daughters, wanders mad in a storm crowned with wild flowers; when he dies a friend says, “Vex not his ghost.” The voice crying in the wilderness comes from the Bible; Euroclydon is a stormy wind named there too, and Labrador lies in far northeastern Canada. “Kyrie eleison, Christe eleison” is Greek from the mass: “Lord, have mercy; Christ, have mercy.”",
+      "contentNote": "The poem speaks from Christian belief and imagines death and sin. Discuss its images and reasoning without requiring agreement with that belief.",
+      "excerpt": {
+        "locator": "Voices of the Night, “Midnight Mass for the Dying Year,” the whole poem; opens “Yes, the Year is growing old, And his eye is pale and bleared! Death, with frosty hand…”; closes “…from heaven down-cast Like red leaves be swept away! Kyrie, eleyson! Christe, eleyson!”.",
+        "isCompleteWork": true,
+        "continuesFrom": null,
+        "continuesTo": null,
+        "blocks": [
+          100,
+          111
+        ],
+        "startChar": null,
+        "endChar": null,
+        "textHash": "d8f0429281662d2f8e57da3e69da993b4e7008db5a0f1af2f3c37d457b19b908"
+      },
+      "questions": [
+        {
+          "id": "reading-5-longfellow-complete-poetical-works-1902-01-q1",
+          "prompt": "The poem makes the year a person. What does the Old Year look like, and who comes for him in the first stanza?",
+          "facilitatorNotes": [
+            "An old man with a pale, bleared eye and a beard, too weak to resist. Death comes with a frosty hand and plucks him by the beard, as winter’s cold takes hold."
+          ],
+          "evidence": [
+            "And his eye is pale and bleared!",
+            "Death, with frosty hand and cold,"
+          ]
+        },
+        {
+          "id": "reading-5-longfellow-complete-poetical-works-1902-01-q2",
+          "prompt": "Find the sounds and sights of nature that turn into a church service. What do the rooks, the winds and the clouds each do?",
+          "facilitatorNotes": [
+            "The rooks caw like mourners, “a sound of woe”; the winds roll like anthems and chant masses, asking prayers for the dying soul; the hooded clouds are friars counting their beads in raindrops. All nature holds a funeral service, but “their prayers are all in vain.”"
+          ],
+          "evidence": [
+            "The winds, like anthems, roll;",
+            "And the hooded clouds, like friars,",
+            "Tell their beads in drops of rain,"
+          ]
+        },
+        {
+          "id": "reading-5-longfellow-complete-poetical-works-1902-01-q3",
+          "prompt": "Why compare the Old Year to “weak, despised Lear”? When a warm, summer-like day comes, why does he beg it, “Pray do not mock me so”?",
+          "facilitatorNotes": [
+            "Like Lear, the year was once a king, crowned in summer’s flowers, and is now old, powerless and scorned in foul weather. A warm autumn day, gentle as a daughter’s breath, seems to promise his youth back, but it is only one day, so its kindness feels like mockery; then it dies in his arms, as Lear’s loving daughter does. Students who do not know the play can still feel an old ruler losing everything."
+          ],
+          "evidence": [
+            "Like weak, despised Lear,",
+            "Then comes the summer-like day,",
+            "Pray do not mock me so!"
+          ]
+        },
+        {
+          "id": "reading-5-longfellow-complete-poetical-works-1902-01-q4",
+          "prompt": "In the last stanzas the storm sweeps the red leaves away, and the speaker wishes his sins could be swept away too. How does the poem turn from the year’s death to the speaker’s own soul? Is the ending hopeful or fearful?",
+          "facilitatorNotes": [
+            "The cleansing wind makes him wish his own wrongs could go with the old year, much as people make New Year resolutions. But he also foresees a “mightier blast” and a “darker day,” the end of all things, and closes with a prayer for mercy. Some readers find it a fearful ending; others hear hope in asking for mercy at the turn of the year."
+          ],
+          "evidence": [
+            "Would, the sins that thou abhorrest,",
+            "For there shall come a mightier blast,",
+            "Kyrie, eleyson!"
+          ]
+        }
+      ],
+      "holiday": "new-year"
+    }
+  ]
+}
