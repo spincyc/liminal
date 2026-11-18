@@ -78,9 +78,66 @@
     const year = calendar.years[where.cycle - 1];
     return year && year[where.slot - 1] || null;
   }
-  // Which cycle years a calendar (or the spans) has written: [bool x 3].
-  function writtenYears(calendar) {
-    return Array.from({ length: CYCLE }, (_, y) => !!(calendar && Array.isArray(calendar.years) && Array.isArray(calendar.years[y])));
+  // Which cycle years are written: [bool x 3], from a level's calendar or the
+  // spans ({ years }, a year not written being null) or from the index's
+  // calendarYears ([bool x 3]).
+  function writtenYears(source) {
+    const years = Array.isArray(source) ? source : source && Array.isArray(source.years) ? source.years : [];
+    return Array.from({ length: CYCLE }, (_, y) => years[y] === true || Array.isArray(years[y]));
+  }
+  // Whether the date calendar has readings for a date (or a year): whether
+  // its cycle year is written.
+  function isWritten(written, value) {
+    const year = typeof value === "number" ? value : (parseDate(value) || {}).year;
+    return Number.isInteger(year) && year >= 1 && year <= 9999 && writtenYears(written)[cycleYear(year) - 1];
+  }
+  // The dates with readings nearest a date. A written date is its own; for
+  // one in a year not written yet, the last day of the closest written year
+  // before it and the first day of the closest after it (null past 0001 or
+  // 9999), and the nearer of the two (the later on a tie). Null when the
+  // date is invalid or nothing is written.
+  function nearestWritten(written, value) {
+    const date = parseDate(value), years = writtenYears(written);
+    if (!date || !years.some(Boolean)) return null;
+    const here = formatDate(date), on = year => years[cycleYear(year) - 1];
+    if (on(date.year)) return { before: here, after: here, nearest: here };
+    let before = null, after = null;
+    for (let year = date.year - 1; !before && year >= Math.max(1, date.year - CYCLE); year--) if (on(year)) before = formatDate({ year, month: 12, day: 31 });
+    for (let year = date.year + 1; !after && year <= Math.min(9999, date.year + CYCLE); year++) if (on(year)) after = formatDate({ year, month: 1, day: 1 });
+    const gap = (from, to) => Math.round((utc(parseDate(to)) - utc(parseDate(from))) / 86400000);
+    const nearest = !before ? after : !after ? before : gap(before, here) < gap(here, after) ? before : after;
+    return nearest ? { before, after, nearest } : null;
+  }
+  // The first date with readings from 2026, the calendar's first year, on.
+  function firstWritten(written) {
+    const years = writtenYears(written);
+    for (let year = EPOCH; year < EPOCH + CYCLE; year++) if (years[cycleYear(year) - 1]) return formatDate({ year, month: 1, day: 1 });
+    return null;
+  }
+  // What to say for a date whose cycle year is not written yet, and where to
+  // go instead (docs/daily-reading.md, "Date"). Before the first written
+  // year from 2026 on, the calendar begins there; otherwise the nearest date
+  // with a reading is named, and the next one too when the nearest is
+  // earlier. `dates` are those dates in order, the first the one to offer
+  // first. Null for a written or invalid date, or when nothing is written.
+  function unwritten(written, value) {
+    const date = parseDate(value), near = nearestWritten(written, value);
+    if (!date || !near || near.nearest === formatDate(date)) return null;
+    const start = firstWritten(written), begins = start && date.year >= EPOCH && formatDate(date) < start ? start : null;
+    const dates = begins ? [begins] : near.nearest === near.before && near.after ? [near.before, near.after] : [near.nearest];
+    const where = begins ? "It begins on " + longDate(begins) + "."
+      : dates.length > 1 ? "The nearest date with a reading is " + longDate(dates[0]) + ", and the next is " + longDate(dates[1]) + "."
+      : (near.nearest === near.after ? "The next date with a reading is " : "The nearest date with a reading is ") + longDate(near.nearest) + ".";
+    return { year: date.year, heading: "Readings for dates in " + date.year + " are not written yet",
+      text: "The date calendar is being written one year at a time. " + where, dates, begins };
+  }
+  // Where the date calendar opens on `today`: today when its year is
+  // written, otherwise where the calendar begins or the nearest date with a
+  // reading. Null when nothing is written.
+  function opening(written, today) {
+    if (isWritten(written, today)) return formatDate(parseDate(today));
+    const note = unwritten(written, today);
+    return note ? note.dates[0] : null;
   }
   // Spans as [first slot, last slot] per cycle year from their lengths.
   function spanRanges(lengths) {
@@ -127,9 +184,21 @@
     if (!date) return null;
     for (let year = date.year + CYCLE; ; year += CYCLE) if (!(date.month === 2 && date.day === 29) || isLeap(year)) return year;
   }
-  function cycleNote(value) {
-    const where = place(value), back = returnYear(value);
-    return where ? "Year " + where.cycle + " of " + CYCLE + " · this date’s reading returns in " + back : "";
+  // A date's place in the cycle. Given the written years, it promises a
+  // return only for a written date (whose return year, the same cycle year,
+  // is written too).
+  function cycleNote(value, written) {
+    const where = place(value);
+    if (!where) return "";
+    if (written !== undefined && !isWritten(written, value)) return "Year " + where.cycle + " of " + CYCLE + " · not written yet";
+    return "Year " + where.cycle + " of " + CYCLE + " · this date’s reading returns in " + returnYear(value);
+  }
+  // The note under a month's heading; empty for a month not written yet,
+  // whose page says so instead.
+  function monthNote(month, written) {
+    const match = /^(\d{4})-(\d{2})$/.exec(String(month || ""));
+    if (!match || !isWritten(written, Number(match[1]))) return "";
+    return "Cycle year " + cycleYear(Number(match[1])) + " of " + CYCLE + ". Each date’s reading returns three years later.";
   }
   // A continued run around a date: the part, the length, and the run's first
   // and last dates. Runs sit on consecutive dates inside one span, so walking
@@ -187,6 +256,11 @@
     for (let i = 0; i < padded.length; i += 7) weeks.push(padded.slice(i, i + 7));
     return { year, month: m, label: MONTHS[m - 1] + " " + year, cycle, weeks };
   }
+  // "January 2027" for "2027-01".
+  function monthLabel(month) {
+    const match = /^(\d{4})-(\d{2})$/.exec(String(month || ""));
+    return match && Number(match[2]) >= 1 && Number(match[2]) <= 12 ? MONTHS[Number(match[2]) - 1] + " " + Number(match[1]) : "";
+  }
   function addMonths(month, delta) {
     const match = /^(\d{4})-(\d{2})$/.exec(String(month || ""));
     if (!match) return null;
@@ -194,6 +268,7 @@
     if (index < 12 || index >= 10000 * 12) return null;
     return String(Math.floor(index / 12)).padStart(4, "0") + "-" + String(index % 12 + 1).padStart(2, "0");
   }
-  return { EPOCH, CYCLE, SLOTS, LEAP_SLOT, MAX_SPAN, MONTH_DAYS, MONTHS, isLeap, cycleYear, writtenYears, parseDate, formatDate, slotOf, monthDayOf, place, dateOf, addDays, today,
-    longDate, shortDate, readingOn, spanRanges, spanAt, spanDates, checkSpans, returnYear, cycleNote, runOn, nextDateOf, monthGrid, addMonths };
+  return { EPOCH, CYCLE, SLOTS, LEAP_SLOT, MAX_SPAN, MONTH_DAYS, MONTHS, isLeap, cycleYear, writtenYears, isWritten, nearestWritten, firstWritten, unwritten, opening,
+    parseDate, formatDate, slotOf, monthDayOf, place, dateOf, addDays, today,
+    longDate, shortDate, readingOn, spanRanges, spanAt, spanDates, checkSpans, returnYear, cycleNote, monthNote, runOn, nextDateOf, monthGrid, monthLabel, addMonths };
 });
